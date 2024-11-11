@@ -1228,6 +1228,10 @@
       - efficiency
       - transformers
       - inference-optimization
+    models:
+      - llama2
+    sota:
+      - Prefer GQA to MQA or MHA
 
   - title: "K-Planes: Explicit Radiance Fields in Space, Time, and Appearance"
     arxiv_id: "2301.10241"

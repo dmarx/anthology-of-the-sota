@@ -2,16 +2,6 @@ name: Tests
 
 on:
   push:
-    branches:
-      - main
-      - dev
-    paths:
-      - '.github/workflows/test.yml'
-      - 'tests/**'
-  pull_request:
-    branches:
-      - main
-      - dev
   workflow_dispatch:
   workflow_call:
     

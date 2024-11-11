@@ -184,7 +184,7 @@
     first_author: "Smith"
     year: 2017
     key_takeaways:
-      - One-cycle learning rate policy
+      - One-cycle learning rate policy (1cp)
       - Enables much faster training
       - Uses very large learning rates
       - Demonstrates regularization effect
@@ -193,6 +193,8 @@
       - learning-rate-scheduling
       - training-efficiency
       - neural-networks
+    sota:
+      - warmup to a large early lr, anneal throughout training to small final lr
 
   - title: "The Loss Landscape of Neural Networks"
     arxiv_id: "1712.09913"

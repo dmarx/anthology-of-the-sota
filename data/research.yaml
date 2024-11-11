@@ -687,6 +687,23 @@
       - systems
       - scaling
 
+  - tite: "Efficient Large Scale Language Modeling with Mixtures of Experts"
+    year: 2021
+    arxiv_id: 2112.10684
+    key_takeaways:
+      - Analysis of compute/memory trade-offs:
+      - Larger batches → better hardware utilization
+      - Smaller batches → better sample efficiency
+    sota:
+      - Use largest batch that maintains >80% sample efficiency
+      - Scale batch size with model size but sub-linearly
+    topics:
+      - MoE
+      - distributed-training
+      - language-models
+      - training-strategies
+      - efficiency
+
   - title: "Hard Negative Mining in Contrastive Learning"
     arxiv_id: "2104.08892"
     first_author: "Robinson"

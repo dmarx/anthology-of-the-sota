@@ -994,8 +994,9 @@
     sota:
       - smaller batch sizes are more sample efficient (i.e., better loss as a function of tokens seen) earlier in training
       - larger batch sizes are beneficial later in training due to better gradient estimates
+      - throughput (energy efficiency) wins out over theoretically optimal sample efficiency
       - consider rewinding to earlier checkpoint and skipping a few batches to mitigate unusual loss spikes
-
+      
   - title: "Progressive Distillation for Fast Sampling of Diffusion Models"
     arxiv_id: "2202.00512"
     first_author: "Salimans"

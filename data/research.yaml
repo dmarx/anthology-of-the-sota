@@ -579,7 +579,21 @@
       - generalization
     attic:
       reason: superceded by 2103.03386 and 2110.08058
-      
+
+  - title: "Clusterability in Neural Networks"
+    arxiv_id: "2103.03386"
+    year: 2021
+    key_takeaways:
+      - Larger models develop more modular features
+      - More modular learning reduces need for exploration via schedule variation
+      - Spectral regularization promotes parameter clustering, but can be costly
+    topics:
+      - theory
+      - interpretability
+      - architecture
+      - generalization
+    attic:
+      reason: "just doesn't seem that interesting. Not sure why Claude recommended this. Hallucination?"
 
   - title: "PowerNorm: Rethinking Batch Normalization in Transformers"
     arxiv_id: "2003.07845"

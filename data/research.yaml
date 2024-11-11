@@ -44,6 +44,10 @@
       - tokenization
       - machine-translation
       - vocabulary
+    models:
+      - llama2
+    sota:
+      - BPE tokenization for open vocabulary tasks
 
 2016:
   - title: "Layer Normalization"

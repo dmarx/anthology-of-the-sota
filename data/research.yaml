@@ -425,6 +425,7 @@
       - transformers
       - rmsnorm
       - prenorm
+    models:
       - llama2
 
   - title: "Denoising Diffusion Implicit Models"
@@ -471,6 +472,10 @@
       - transfer-learning
       - domain-adaptation
       - pretraining
+      - fine-tuning
+      - post-training
+    sota:
+      - continued pre-training for fine tuning
 
   - title: "GLU Variants Improve Transformer"
     arxiv_id: "2002.05202"
@@ -520,6 +525,8 @@
       - training-stability
       - gradient-clipping
       - theory
+    sota:
+      - use gradient clipping
 
   - title: "Language Models are Few-Shot Learners"
     arxiv_id: "2005.14165"
@@ -535,6 +542,10 @@
       - few-shot-learning
       - scaling
       - transformers
+    sota:
+      - gpt training recipe
+      - LM in-context learning emerges at scale
+      - ICL permits few-shot task adaptability
 
   - title: "Longformer: The Long-Document Transformer"
     arxiv_id: "2004.05150"

@@ -78,3 +78,6 @@ def generate_readme() -> None:
     
     logger.info("Committing changes")
     commit_and_push('README.md')
+
+if __name__ == "__main__":
+    generate_readme()

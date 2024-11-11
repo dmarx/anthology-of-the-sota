@@ -622,6 +622,9 @@
       - language-models
       - efficiency
       - training-optimization
+    sota:
+      - larger models are more sample efficient
+      - lr tuning less important for larger models
 
 2021:
   - title: "A Comprehensive Study on Large Batch Training for DNNs"

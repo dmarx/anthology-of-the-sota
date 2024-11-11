@@ -995,6 +995,7 @@
       - Training efficiency analysis
       - Resource allocation strategies
       - chinchilla scaling laws, relating model size to data/compute budget
+      - don't sleep on data quality
     topics:
       - scaling-laws
       - efficiency

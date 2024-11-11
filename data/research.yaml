@@ -716,6 +716,8 @@
       - positional-encoding
       - architecture
       - theory
+    sota:
+      - use RoPE for LLM (1D sequence) positional embeddings
 
   - title: "SGDR++: Improving Stochastic Gradient Descent with Restarts"
     arxiv_id: "2103.11851"

@@ -196,7 +196,7 @@
     sota:
       - warmup to a large early lr, anneal throughout training to small final lr
 
-  - title: "The Loss Landscape of Neural Networks"
+  - title: "Visualizing the Loss Landscape of Neural Nets"
     arxiv_id: "1712.09913"
     first_author: "Li"
     year: 2017
@@ -210,6 +210,10 @@
       - theory
       - loss-landscapes
       - neural-networks
+    sota:
+      - skip connections promote training stability by smoothing out the loss landscape
+      - visualizing eigenvalues of hessian (ratio of largest to smallest) over training can be useful diagnostics
+      - sharpness in loss landscape corerlates with test error
 
   - title: "Mixed Precision Training"
     arxiv_id: "1710.03740"

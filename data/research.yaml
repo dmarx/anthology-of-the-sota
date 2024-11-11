@@ -994,11 +994,17 @@
       - Data/model size relationships
       - Training efficiency analysis
       - Resource allocation strategies
+      - chinchilla scaling laws, relating model size to data/compute budget
     topics:
       - scaling-laws
       - efficiency
       - language-models
       - optimization
+    models:
+      - chinchilla
+      - llama2
+    sota:
+      - `num_tokens ~ 20 * num_params`
 
   - title: "Using DeepSpeed and Megatron to Train Megatron-Turing NLG 530B"
     arxiv_id: "2201.11990"

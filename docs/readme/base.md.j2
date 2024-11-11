@@ -1,0 +1,6 @@
+# {{ title }}
+
+{% for template in get_section_templates() %}
+{% include "sections/" ~ template %}
+
+{% endfor %}

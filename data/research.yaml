@@ -155,11 +155,14 @@
       - Demonstrates training with very large batches
       - Maintains model accuracy with large batches
       - Scaling strategies for learning rates
+      - Linear warmup
     topics:
       - large-batch-training
       - optimization
       - computer-vision
       - distributed-training
+    sota:
+      - linear warmup of LR stabilizes early training with large batch size.
 
   - title: "Population Based Training of Neural Networks"
     arxiv_id: "1711.09846"

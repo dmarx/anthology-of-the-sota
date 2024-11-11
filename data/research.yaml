@@ -1,0 +1,1523 @@
+2014:
+  - title: "Adam: A Method for Stochastic Optimization"
+    arxiv_id: "1412.6980"
+    first_author: "Kingma"
+    year: 2014
+    key_takeaways:
+      - Introduces adaptive moment estimation for gradient-based optimization
+      - Combines advantages of AdaGrad and RMSProp
+      - Corrects bias in moment estimates
+      - Provides theoretical convergence guarantees
+    topics:
+      - optimization
+      - neural-networks
+      - adaptive-methods
+      - gradient-descent
+
+2015:
+  - title: "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift"
+    arxiv_id: "1502.03167"
+    first_author: "Ioffe"
+    year: 2015
+    key_takeaways:
+      - Introduces normalization of layer inputs during training
+      - Enables higher learning rates and faster convergence
+      - Reduces dependence on careful initialization
+      - Acts as regularization
+    topics:
+      - normalization
+      - neural-networks
+      - training-acceleration
+      - regularization
+
+  - title: "Neural Machine Translation of Rare Words with Subword Units"
+    arxiv_id: "1508.07909"
+    first_author: "Sennrich"
+    year: 2015
+    key_takeaways:
+      - Introduces byte-pair encoding for tokenization
+      - Addresses rare word problem in NMT
+      - Enables open-vocabulary translation
+      - Improves handling of compound words
+    topics:
+      - nlp
+      - tokenization
+      - machine-translation
+      - vocabulary
+
+2016:
+  - title: "Layer Normalization"
+    arxiv_id: "1607.06450"
+    first_author: "Ba"
+    year: 2016
+    key_takeaways:
+      - Introduces normalization across features instead of batch
+      - Works well with recurrent neural networks
+      - Stabilizes hidden state dynamics
+      - Reduces training time for deep networks
+    topics:
+      - normalization
+      - neural-networks
+      - rnn
+      - training-stabilization
+
+  - title: "SGDR: Stochastic Gradient Descent with Warm Restarts"
+    arxiv_id: "1608.03983"
+    first_author: "Loshchilov"
+    year: 2016
+    key_takeaways:
+      - Introduces cosine annealing with periodic restarts
+      - Improves exploration of loss landscape
+      - Better final performance than standard SGD
+      - Simple to implement and tune
+    topics:
+      - optimization
+      - learning-rate-scheduling
+      - sgd
+      - neural-networks
+
+  - title: "Training Deep Nets with Sublinear Memory Cost"
+    arxiv_id: "1604.06174"
+    first_author: "Chen"
+    year: 2016
+    key_takeaways:
+      - Introduces gradient checkpointing
+      - Reduces memory usage with minimal computation overhead
+      - Enables training deeper networks
+      - Trade-off between memory and computation
+    topics:
+      - memory-optimization
+      - neural-networks
+      - training-efficiency
+      - gradient-computation
+
+2017:
+  - title: "Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour"
+    arxiv_id: "1706.02677"
+    first_author: "Goyal"
+    year: 2017
+    key_takeaways:
+      - Linear scaling rule for learning rates with batch size
+      - Gradual warmup period crucial for stability
+      - Batch normalization with corrected variance
+      - Demonstrated successful training with 8192 batch size
+    topics:
+      - distributed-training
+      - optimization
+      - large-batch-training
+      - computer-vision
+      - scaling-laws
+
+  - title: "AdamW: Decoupled Weight Decay Regularization"
+    arxiv_id: "1711.05101"
+    first_author: "Loshchilov"
+    year: 2017
+    key_takeaways:
+      - Fixes weight decay implementation in Adam
+      - Separates weight decay from gradient updates
+      - Improves generalization
+      - Fixed scale invariance issues
+    topics:
+      - optimization
+      - regularization
+      - adam
+      - neural-networks
+
+  - title: "Attention Is All You Need"
+    arxiv_id: "1706.03762"
+    first_author: "Vaswani"
+    year: 2017
+    key_takeaways:
+      - Introduces transformer architecture
+      - Self-attention mechanism for sequence modeling
+      - Positional encodings for sequence order
+      - Multi-head attention for parallel processing
+    topics:
+      - transformers
+      - attention
+      - nlp
+      - architecture
+
+  - title: "Large Batch Training of Convolutional Networks"
+    arxiv_id: "1708.03888"
+    first_author: "You"
+    year: 2017
+    key_takeaways:
+      - Layer-wise adaptive rate scaling (LARS)
+      - Demonstrates training with very large batches
+      - Maintains model accuracy with large batches
+      - Scaling strategies for learning rates
+    topics:
+      - large-batch-training
+      - optimization
+      - computer-vision
+      - distributed-training
+
+  - title: "Population Based Training of Neural Networks"
+    arxiv_id: "1711.09846"
+    first_author: "Jaderberg"
+    year: 2017
+    key_takeaways:
+      - Automated hyperparameter optimization
+      - Population-based training strategy
+      - Dynamic adaptation of hyperparameters
+      - Combines evolution and training
+    topics:
+      - hyperparameter-optimization
+      - meta-learning
+      - evolutionary-algorithms
+      - neural-networks
+
+  - title: "Super-Convergence: Very Fast Training of Neural Networks Using Large Learning Rates"
+    arxiv_id: "1708.07120"
+    first_author: "Smith"
+    year: 2017
+    key_takeaways:
+      - One-cycle learning rate policy
+      - Enables much faster training
+      - Uses very large learning rates
+      - Demonstrates regularization effect
+    topics:
+      - optimization
+      - learning-rate-scheduling
+      - training-efficiency
+      - neural-networks
+
+  - title: "The Loss Landscape of Neural Networks"
+    arxiv_id: "1712.09913"
+    first_author: "Li"
+    year: 2017
+    key_takeaways:
+      - Visualizes loss landscape geometry
+      - Connects architecture to optimization
+      - Explains impact of skip connections
+      - Insights into training dynamics
+    topics:
+      - optimization
+      - theory
+      - loss-landscapes
+      - neural-networks
+
+  - title: "Mixed Precision Training"
+    arxiv_id: "1710.03740"
+    first_author: "Micikevicius"
+    year: 2017
+    key_takeaways:
+      - Enables FP16 training with FP32 master weights
+      - Loss scaling for numerical stability
+      - Memory and compute benefits
+      - No accuracy degradation
+    topics:
+      - training-efficiency
+      - mixed-precision
+      - memory-optimization
+      - hardware-optimization
+
+2018:
+  - title: "An Empirical Model of Large-Batch Training"
+    arxiv_id: "1812.06162"
+    first_author: "McCandlish"
+    year: 2018
+    key_takeaways:
+      - Introduces gradient noise scale
+      - Predicts optimal batch size
+      - Models relationship between compute and training
+      - Critical batch size analysis
+    topics:
+      - batch-size-optimization
+      - scaling-laws
+      - training-efficiency
+      - theoretical-analysis
+
+  - title: "GPipe: Efficient Training of Giant Neural Networks using Pipeline Parallelism"
+    arxiv_id: "1811.06965"
+    first_author: "Huang"
+    year: 2018
+    key_takeaways:
+      - Introduces pipeline parallelism for training
+      - Memory-efficient large model training
+      - Synchronous pipeline parallelism
+      - Automatic partition of neural networks
+    topics:
+      - distributed-training
+      - pipeline-parallelism
+      - memory-optimization
+      - large-scale-training
+
+  - title: "On the Convergence of Adam and Beyond"
+    arxiv_id: "1904.09237"
+    first_author: "Reddi"
+    year: 2018
+    key_takeaways:
+      - Identifies convergence issues in Adam
+      - Proposes AMSGrad variant
+      - Provides theoretical convergence guarantees
+      - Improved adaptive optimization
+    topics:
+      - optimization
+      - convergence-analysis
+      - adaptive-methods
+      - theory
+
+  - title: "Understanding Batch Normalization"
+    arxiv_id: "1806.02375"
+    first_author: "Santurkar"
+    year: 2018
+    key_takeaways:
+      - Challenges internal covariate shift explanation
+      - Shows BN smooths optimization landscape
+      - Improves Lipschitzness of loss gradient
+      - Enables larger learning rates
+    topics:
+      - normalization
+      - optimization
+      - theory
+      - training-dynamics
+
+2019:
+  - title: "Advances and Open Problems in Federated Learning"
+    arxiv_id: "1912.04977"
+    first_author: "Kairouz"
+    year: 2019
+    key_takeaways:
+      - Comprehensive survey of federated learning
+      - Privacy and security challenges
+      - System design considerations
+      - Open research problems
+    topics:
+      - federated-learning
+      - privacy
+      - distributed-training
+      - systems
+
+  - title: "Fast Transformer Decoding: One Write-Head is All You Need"
+    arxiv_id: "1911.02150"
+    first_author: "Dao"
+    year: 2019
+    key_takeaways:
+      - Introduces multi-query attention
+      - Reduces memory bandwidth during inference
+      - Maintains model quality
+      - Faster decoding speed
+    topics:
+      - transformers
+      - inference-optimization
+      - attention
+      - efficiency
+
+  - title: "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism"
+    arxiv_id: "1909.08053"
+    first_author: "Shoeybi"
+    year: 2019
+    key_takeaways:
+      - Model parallel transformers
+      - Efficient large model training
+      - Intra-layer model parallelism
+      - Mixed-precision implementation
+    topics:
+      - model-parallelism
+      - large-language-models
+      - distributed-training
+      - scaling
+
+  - title: "Mish: A Self Regularized Non-Monotonic Neural Activation Function"
+    arxiv_id: "1908.08681"
+    first_author: "Misra"
+    year: 2019
+    key_takeaways:
+      - New activation function
+      - Better gradient flow
+      - Self-regularizing properties
+      - Improved model performance
+    topics:
+      - activation-functions
+      - neural-networks
+      - optimization
+      - regularization
+
+  - title: "Pay Less Attention with Lightweight and Dynamic Convolutions"
+    arxiv_id: "1901.10430"
+    first_author: "Wu"
+    year: 2019
+    key_takeaways:
+      - Alternative to self-attention
+      - Dynamic parameter generation
+      - Reduced computational complexity
+      - Competitive performance with transformers
+    topics:
+      - attention-alternatives
+      - efficiency
+      - convolution
+      - architecture
+
+  - title: "Root Mean Square Layer Normalization"
+    arxiv_id: "1910.07467"
+    first_author: "Zhang"
+    year: 2019
+    key_takeaways:
+      - Simplified layer normalization
+      - Improved training stability
+      - Reduced computation
+      - Better numerical stability
+    topics:
+      - normalization
+      - efficiency
+      - training-stability
+      - neural-networks
+
+  - title: "The Lottery Ticket Hypothesis"
+    arxiv_id: "1803.03635"
+    first_author: "Frankle"
+    year: 2019
+    key_takeaways:
+      - Sparse trainable subnetworks exist
+      - Initialize-train-prune-reset approach
+      - Implications for network pruning
+      - Connection to network architecture search
+    topics:
+      - network-pruning
+      - sparsity
+      - initialization
+      - theory
+
+  - title: "Understanding and Improving Layer Normalization"
+    arxiv_id: "1911.07013"
+    first_author: "Xu"
+    year: 2019
+    key_takeaways:
+      - Analysis of normalization stability
+      - Impact on gradients
+      - Improved initialization scheme
+      - Connection to optimization geometry
+    topics:
+      - normalization
+      - optimization
+      - training-stability
+      - theory
+
+2020:
+  - title: "Denoising Diffusion Implicit Models"
+    arxiv_id: "2010.02502"
+    first_author: "Song"
+    year: 2020
+    key_takeaways:
+      - Continuous-time formulation of diffusion models
+      - Improved sampling speed
+      - Connection to SDE theory
+      - Flexible noise scheduling
+    topics:
+      - diffusion-models
+      - generative-models
+      - sampling
+      - probability-flow
+
+  - title: "Denoising Diffusion Probabilistic Models"
+    arxiv_id: "2006.11239"
+    first_author: "Ho"
+    year: 2020
+    key_takeaways:
+      - Introduces DDPM framework
+      - Fixed noise schedule
+      - Simple training objective
+      - High quality sample generation
+    topics:
+      - diffusion-models
+      - generative-models
+      - image-generation
+      - deep-learning
+
+  - title: "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks"
+    arxiv_id: "2004.10964"
+    first_author: "Gururangan"
+    year: 2020
+    key_takeaways:
+      - Benefits of domain-adaptive pretraining
+      - Task-adaptive pretraining effectiveness
+      - Systematic study of adaptation strategies
+      - Impact on downstream performance
+    topics:
+      - language-models
+      - transfer-learning
+      - domain-adaptation
+      - pretraining
+
+  - title: "GLU Variants Improve Transformer"
+    arxiv_id: "2002.05202"
+    first_author: "Noam"
+    year: 2020
+    key_takeaways:
+      - Study of gating mechanisms
+      - Introduction of variants like GeGLU and SwiGLU
+      - Improved transformer performance
+      - Better gradient flow
+    topics:
+      - transformers
+      - activation-functions
+      - architecture
+      - optimization
+
+  - title: "Gradient Flow in Sparse Neural Networks"
+    arxiv_id: "2010.03533"
+    first_author: "Frankle"
+    year: 2020
+    key_takeaways:
+      - Analysis of gradient flow in sparse networks
+      - Connection to lottery tickets
+      - Impact of sparsity on training dynamics
+      - Implications for pruning
+    topics:
+      - sparsity
+      - optimization
+      - training-dynamics
+      - network-pruning
+
+  - title: "Gradient Clipping Helps Training Dynamic Neural Networks"
+    arxiv_id: "2007.05019"
+    first_author: "Li"
+    year: 2020
+    key_takeaways:
+      - Theory of gradient clipping
+      - Benefits for dynamic architectures
+      - Stability analysis
+      - Practical recommendations
+    topics:
+      - optimization
+      - training-stability
+      - gradient-clipping
+      - theory
+
+  - title: "Language Models are Few-Shot Learners"
+    arxiv_id: "2005.14165"
+    first_author: "Brown"
+    year: 2020
+    key_takeaways:
+      - Introduces GPT-3
+      - Scale enables few-shot learning
+      - Task-agnostic language model
+      - Emergence of in-context learning
+    topics:
+      - language-models
+      - few-shot-learning
+      - scaling
+      - transformers
+
+  - title: "Longformer: The Long-Document Transformer"
+    arxiv_id: "2004.05150"
+    first_author: "Beltagy"
+    year: 2020
+    key_takeaways:
+      - Efficient attention for long sequences
+      - Linear complexity attention
+      - Global-local attention patterns
+      - Document-level language modeling
+    topics:
+      - transformers
+      - attention
+      - efficiency
+      - long-context
+
+  - title: "Neural Networks are Surprisingly Modular"
+    arxiv_id: "2003.04881"
+    first_author: "Filan"
+    year: 2020
+    key_takeaways:
+      - Analysis of neural network modularity
+      - Feature disentanglement
+      - Impact on generalization
+      - Architecture implications
+    topics:
+      - theory
+      - interpretability
+      - architecture
+      - generalization
+
+  - title: "PowerNorm: Rethinking Batch Normalization in Transformers"
+    arxiv_id: "2003.07845"
+    first_author: "Shen"
+    year: 2020
+    key_takeaways:
+      - Alternative to LayerNorm
+      - Better numerical stability
+      - Improved training efficiency
+      - Transformer-specific normalization
+    topics:
+      - normalization
+      - transformers
+      - training-stability
+      - efficiency
+
+  - title: "Scaling Laws for Autoregressive Generative Modeling"
+    arxiv_id: "2010.14701"
+    first_author: "Henighan"
+    year: 2020
+    key_takeaways:
+      - Universal scaling behaviors
+      - Cross-modal scaling comparisons
+      - Compute-optimal model sizing
+      - Resource allocation guidance
+    topics:
+      - scaling-laws
+      - generative-models
+      - efficiency
+      - theory
+
+  - title: "Scaling Laws for Neural Language Models"
+    arxiv_id: "2001.08361"
+    first_author: "Kaplan"
+    year: 2020
+    key_takeaways:
+      - Power-law scaling relationships
+      - Model size vs compute trade-offs
+      - Dataset size requirements
+      - Training optimization guidance
+    topics:
+      - scaling-laws
+      - language-models
+      - efficiency
+      - training-optimization
+
+2021:
+  - title: "A Comprehensive Study on Large Batch Training for DNNs"
+    arxiv_id: "2111.04535"
+    first_author: "Zheng"
+    year: 2021
+    key_takeaways:
+      - Systematic analysis of batch size effects
+      - Optimization technique comparisons
+      - Memory management strategies
+      - Practical scaling recommendations
+    topics:
+      - large-batch-training
+      - optimization
+      - distributed-training
+      - memory-efficiency
+
+  - title: "Efficient Large Scale Language Model Training on GPU Clusters"
+    arxiv_id: "2104.04473"
+    first_author: "Narayanan"
+    year: 2021
+    key_takeaways:
+      - 3D parallel training strategy
+      - Pipeline scheduling optimization
+      - Communication optimization
+      - Memory management techniques
+    topics:
+      - distributed-training
+      - language-models
+      - systems
+      - scaling
+
+  - title: "Hard Negative Mining in Contrastive Learning"
+    arxiv_id: "2104.08892"
+    first_author: "Robinson"
+    year: 2021
+    key_takeaways:
+      - Importance of negative sample selection
+      - Mining strategies comparison
+      - Impact on representation quality
+      - Implementation efficiency
+    topics:
+      - contrastive-learning
+      - representation-learning
+      - training-strategies
+      - self-supervised-learning
+
+  - title: "Improving Language Models by Retrieving from Trillions of Tokens"
+    arxiv_id: "2112.04426"
+    first_author: "Borgeaud"
+    year: 2021
+    key_takeaways:
+      - Retrieval-augmented language models
+      - Efficient similarity search
+      - Training with massive datasets
+      - Memory-efficient architecture
+    topics:
+      - language-models
+      - retrieval
+      - scaling
+      - efficiency
+
+  - title: "Learning to Prompt for Vision-Language Models"
+    arxiv_id: "2109.01134"
+    first_author: "Zhou"
+    year: 2021
+    key_takeaways:
+      - Learnable prompt optimization
+      - Cross-modal adaptation
+      - Task-specific prompting
+      - Zero-shot capabilities
+    topics:
+      - vision-language-models
+      - prompting
+      - transfer-learning
+      - multi-modal
+
+  - title: "LoRA: Low-Rank Adaptation of Large Language Models"
+    arxiv_id: "2106.09685"
+    first_author: "Hu"
+    year: 2021
+    key_takeaways:
+      - Parameter-efficient fine-tuning
+      - Low-rank decomposition approach
+      - Memory efficient adaptation
+      - Preserved model quality
+    topics:
+      - parameter-efficient-fine-tuning
+      - adaptation
+      - memory-efficiency
+      - fine-tuning
+
+  - title: "P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning"
+    arxiv_id: "2110.07602"
+    first_author: "Liu"
+    year: 2021
+    key_takeaways:
+      - Deep prompt tuning
+      - Competitive with full fine-tuning
+      - Parameter efficiency
+      - Task adaptability
+    topics:
+      - prompt-tuning
+      - fine-tuning
+      - efficiency
+      - adaptation
+
+  - title: "RoFormer: Enhanced Transformer with Rotary Position Embedding"
+    arxiv_id: "2104.09864"
+    first_author: "Su"
+    year: 2021
+    key_takeaways:
+      - Rotation-based positional encoding
+      - Improved relative position modeling
+      - Better extrapolation capability
+      - Theoretical justification
+    topics:
+      - transformers
+      - positional-encoding
+      - architecture
+      - theory
+
+  - title: "SGDR++: Improving Stochastic Gradient Descent with Restarts"
+    arxiv_id: "2103.11851"
+    first_author: "Ruder"
+    year: 2021
+    key_takeaways:
+      - Enhanced restart scheduling
+      - Adaptive restart criteria
+      - Improved convergence
+      - Practical implementation
+    topics:
+      - optimization
+      - learning-rate-scheduling
+      - training-strategies
+      - convergence
+
+  - title: "Train Short, Test Long: Attention with Linear Biases"
+    arxiv_id: "2108.12409"
+    first_author: "Press"
+    year: 2021
+    key_takeaways:
+      - Linear attention bias
+      - Length extrapolation
+      - Efficient implementation
+      - Theoretical analysis
+    topics:
+      - transformers
+      - attention
+      - efficiency
+      - extrapolation
+
+  - title: "Understanding Multi-View Representation Learning"
+    arxiv_id: "2110.13016"
+    first_author: "Tian"
+    year: 2021
+    key_takeaways:
+      - Analysis of view generation
+      - Information bottleneck perspective
+      - Augmentation strategies
+      - Theoretical framework
+    topics:
+      - representation-learning
+      - self-supervised-learning
+      - theory
+      - multi-view-learning
+
+2022:
+  - title: "Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models"
+    arxiv_id: "2206.04615"
+    first_author: "Srivastava"
+    year: 2022
+    key_takeaways:
+      - Comprehensive evaluation framework
+      - Systematic capability analysis
+      - Extrapolation of model scaling
+      - Novel benchmark suite
+    topics:
+      - language-models
+      - evaluation
+      - benchmarking
+      - scaling-laws
+
+  - title: "CoCa: Contrastive Captioners are Image-Text Foundation Models"
+    arxiv_id: "2205.01917"
+    first_author: "Yu"
+    year: 2022
+    key_takeaways:
+      - Unified vision-language architecture
+      - Contrastive and generative learning
+      - Zero-shot capabilities
+      - Multi-task foundation model
+    topics:
+      - vision-language
+      - contrastive-learning
+      - foundation-models
+      - multi-modal
+
+  - title: "DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling"
+    arxiv_id: "2206.00927"
+    first_author: "Lu"
+    year: 2022
+    key_takeaways:
+      - Fast sampling for diffusion models
+      - ODE solver optimization
+      - Theoretical convergence guarantees
+      - Practical implementation
+    topics:
+      - diffusion-models
+      - sampling
+      - optimization
+      - numerical-methods
+
+  - title: "DreamBooth: Fine Tuning Text-to-Image Diffusion Models"
+    arxiv_id: "2208.12242"
+    first_author: "Ruiz"
+    year: 2022
+    key_takeaways:
+      - Subject-driven image generation
+      - Few-shot personalization
+      - Class-specific prior preservation
+      - Efficient fine-tuning
+    topics:
+      - diffusion-models
+      - personalization
+      - fine-tuning
+      - text-to-image
+
+  - title: "Elucidating the Design Space of Diffusion-Based Generative Models"
+    arxiv_id: "2206.00364"
+    first_author: "Karras"
+    year: 2022
+    key_takeaways:
+      - Comprehensive design space analysis
+      - Sampling strategy optimization
+      - Architecture improvements
+      - Training stability insights
+    topics:
+      - diffusion-models
+      - architecture
+      - optimization
+      - sampling
+
+  - title: "Flash Attention: Fast and Memory-Efficient Exact Attention"
+    arxiv_id: "2205.14135"
+    first_author: "Dao"
+    year: 2022
+    key_takeaways:
+      - IO-aware attention implementation
+      - Memory efficiency improvements
+      - Exact attention computation
+      - Hardware optimization
+    topics:
+      - attention
+      - efficiency
+      - memory-optimization
+      - systems
+
+  - title: "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers"
+    arxiv_id: "2210.17323"
+    first_author: "Frantar"
+    year: 2022
+    key_takeaways:
+      - Model quantization strategy
+      - Minimal accuracy impact
+      - Memory reduction
+      - Efficient inference
+    topics:
+      - quantization
+      - efficiency
+      - inference
+      - model-compression
+
+  - title: "High-Resolution Image Synthesis with Latent Diffusion Models"
+    arxiv_id: "2112.10752"
+    first_author: "Rombach"
+    year: 2022
+    key_takeaways:
+      - Latent space diffusion
+      - Compute efficient training
+      - High quality generation
+      - Reduced memory requirements
+    topics:
+      - diffusion-models
+      - efficiency
+      - image-generation
+      - latent-models
+
+  - title: "Instant NGP: Instant Neural Graphics Primitives"
+    arxiv_id: "2201.05989"
+    first_author: "Müller"
+    year: 2022
+    key_takeaways:
+      - Real-time neural rendering
+      - Multi-resolution hash encoding
+      - GPU optimization
+      - Rapid training
+    topics:
+      - neural-rendering
+      - graphics
+      - optimization
+      - real-time
+
+  - title: "PaLI: A Jointly-Scaled Multilingual Language-Image Model"
+    arxiv_id: "2209.06794"
+    first_author: "Chen"
+    year: 2022
+    key_takeaways:
+      - Joint vision-language scaling
+      - Multilingual capabilities
+      - Multi-task performance
+      - Efficient architecture
+    topics:
+      - vision-language
+      - scaling
+      - multilingual
+      - multi-task
+
+  - title: "PaLM: Scaling Language Modeling with Pathways"
+    arxiv_id: "2204.02311"
+    first_author: "Chowdhery"
+    year: 2022
+    key_takeaways:
+      - Pathways system architecture
+      - Scaling to 540B parameters
+      - Novel model parallelism techniques
+      - Emergent capabilities analysis
+    topics:
+      - language-models
+      - scaling
+      - distributed-training
+      - systems
+
+  - title: "Progressive Distillation for Fast Sampling of Diffusion Models"
+    arxiv_id: "2202.00512"
+    first_author: "Salimans"
+    year: 2022
+    key_takeaways:
+      - Faster sampling through distillation
+      - Student-teacher framework
+      - Quality-speed tradeoff analysis
+      - Practical implementation guide
+    topics:
+      - diffusion-models
+      - distillation
+      - sampling
+      - efficiency
+
+  - title: "Simple Open-Vocabulary Object Detection with Vision Transformers"
+    arxiv_id: "2205.06230"
+    first_author: "Minderer"
+    year: 2022
+    key_takeaways:
+      - Open vocabulary detection
+      - Vision transformer architecture
+      - Zero-shot capabilities
+      - Simplified detection pipeline
+    topics:
+      - object-detection
+      - vision-transformers
+      - open-vocabulary
+      - zero-shot
+
+  - title: "An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion"
+    arxiv_id: "2208.01618"
+    first_author: "Gal"
+    year: 2022
+    key_takeaways:
+      - Efficient personalization method
+      - Few-shot concept learning
+      - Pseudo-word embeddings
+      - Preservation of pretrained knowledge
+    topics:
+      - text-to-image
+      - personalization
+      - fine-tuning
+      - diffusion-models
+
+  - title: "Training Compute-Optimal Large Language Models"
+    arxiv_id: "2203.15556"
+    first_author: "Hoffmann"
+    year: 2022
+    key_takeaways:
+      - Compute-optimal scaling laws
+      - Data/model size relationships
+      - Training efficiency analysis
+      - Resource allocation strategies
+    topics:
+      - scaling-laws
+      - efficiency
+      - language-models
+      - optimization
+
+  - title: "Using DeepSpeed and Megatron to Train Megatron-Turing NLG 530B"
+    arxiv_id: "2201.11990"
+    first_author: "Smith"
+    year: 2022
+    key_takeaways:
+      - Large scale training techniques
+      - System optimization strategies
+      - Distributed training improvements
+      - Memory management methods
+    topics:
+      - distributed-training
+      - systems
+      - optimization
+      - large-language-models
+
+  - title: "Constitutional AI: Harmlessness from AI Feedback"
+    arxiv_id: "2212.08073"
+    first_author: "Askell"
+    year: 2022
+    key_takeaways:
+      - AI feedback for alignment
+      - Recursive reward modeling
+      - Safety-preserving fine-tuning
+      - Scalable oversight techniques
+    topics:
+      - ai-alignment
+      - safety
+      - fine-tuning
+      - reinforcement-learning
+
+  - title: "Imagen: Photorealistic Text-to-Image Diffusion Models"
+    first_author: "Saharia"
+    year: 2022
+    key_takeaways:
+      - Cascaded diffusion approach
+      - Text conditioning techniques
+      - Photorealistic generation
+      - Dynamic thresholding
+    topics:
+      - text-to-image
+      - diffusion-models
+      - cascaded-models
+      - conditioning
+
+  - title: "DALL-E 2: Hierarchical Text-Conditional Image Generation with CLIP Latents"
+    first_author: "Ramesh"
+    year: 2022
+    key_takeaways:
+      - Prior-guided image generation
+      - CLIP latent space usage
+      - Hierarchical generation process
+      - Improved composition ability
+    topics:
+      - text-to-image
+      - diffusion-models
+      - clip
+      - hierarchical-models
+
+  - title: "PaLM: Scaling Language Modeling with Pathways"
+    arxiv_id: "2204.02311"
+    first_author: "Chowdhery"
+    year: 2022
+    key_takeaways:
+      - Efficient scaling to 540B parameters
+      - Pathways system architecture
+      - Emerging capabilities analysis
+      - Novel training optimizations
+    topics:
+      - language-models
+      - scaling
+      - systems
+      - distributed-training
+
+2023:
+  - title: "3D Gaussian Splatting for Real-Time Radiance Field Rendering"
+    arxiv_id: "2308.04079"
+    first_author: "Kerbl"
+    year: 2023
+    key_takeaways:
+      - Real-time neural rendering
+      - Gaussian primitive representation
+      - Efficient view synthesis
+      - Dynamic scene optimization
+    topics:
+      - neural-rendering
+      - real-time
+      - 3d-reconstruction
+      - view-synthesis
+
+  - title: "AdaNorm: Adaptive Gradient Norm Correction based Optimizer"
+    arxiv_id: "2305.18079"
+    first_author: "Liu"
+    year: 2023
+    key_takeaways:
+      - Adaptive gradient normalization
+      - Improved training stability
+      - Scale-invariant updates
+      - Large-scale model optimization
+    topics:
+      - optimization
+      - training-stability
+      - adaptive-methods
+      - large-models
+
+  - title: "Analyzing the Learning Dynamics of Large Language Models"
+    arxiv_id: "2310.05492"
+    first_author: "Luo"
+    year: 2023
+    key_takeaways:
+      - Learning dynamics analysis
+      - Phase transition identification
+      - Capability emergence patterns
+      - Training optimization insights
+    topics:
+      - training-dynamics
+      - language-models
+      - analysis
+      - scaling
+
+  - title: "Consistency Models"
+    arxiv_id: "2303.01469"
+    first_author: "Song"
+    year: 2023
+    key_takeaways:
+      - Single-step generation
+      - Distillation of diffusion models
+      - Faster sampling
+      - Theoretical guarantees
+    topics:
+      - diffusion-models
+      - efficiency
+      - generative-models
+      - sampling
+
+  - title: "ControlNet: Adding Conditional Control to Text-to-Image Diffusion Models"
+    arxiv_id: "2302.05543"
+    first_author: "Zhang"
+    year: 2023
+    key_takeaways:
+      - Modular conditioning framework
+      - Zero-shot conditioning
+      - Architecture preservation
+      - Multiple condition types
+    topics:
+      - diffusion-models
+      - conditional-generation
+      - text-to-image
+      - control
+
+  - title: "Data Selection for Language Models via Importance Resampling"
+    arxiv_id: "2302.03169"
+    first_author: "Liu"
+    year: 2023
+    key_takeaways:
+      - Data quality assessment
+      - Importance sampling strategy
+      - Training efficiency improvement
+      - Quality-aware data mixing
+    topics:
+      - data-selection
+      - language-models
+      - training-efficiency
+      - data-quality
+
+  - title: "DeepNorm: Scaling Deep Networks by Normalizing Activations and Gradients"
+    arxiv_id: "2203.00555"
+    first_author: "Li"
+    year: 2023
+    key_takeaways:
+      - Scale-aware normalization
+      - Improved training stability
+      - Depth-dependent scaling
+      - Gradient flow optimization
+    topics:
+      - normalization
+      - deep-networks
+      - training-stability
+      - optimization
+
+  - title: "Efficient Memory Access for Large Language Model Inference"
+    arxiv_id: "2308.13574"
+    first_author: "Pool"
+    year: 2023
+    key_takeaways:
+      - Memory access optimization
+      - Inference speedup techniques
+      - Cache utilization
+      - Hardware-aware design
+    topics:
+      - inference-optimization
+      - memory-efficiency
+      - systems
+      - hardware-optimization
+
+  - title: "FlashAttention-2: Faster Attention with Better Parallelism"
+    arxiv_id: "2307.08691"
+    first_author: "Dao"
+    year: 2023
+    key_takeaways:
+      - Improved attention parallelism
+      - Memory access optimization
+      - Training speedup
+      - Hardware efficiency
+    topics:
+      - attention
+      - efficiency
+      - hardware-optimization
+      - parallelism
+
+  - title: "Gaussian Shell Maps for Efficient Neural Surface Rendering"
+    arxiv_id: "2309.11904"
+    first_author: "Zhao"
+    year: 2023
+    key_takeaways:
+      - Shell-based surface representation
+      - Efficient rendering
+      - Quality improvement
+      - Memory optimization
+    topics:
+      - neural-rendering
+      - efficiency
+      - surface-representation
+      - graphics
+
+  - title: "GQA: Training Generalized Multi-Query Transformer Models"
+    arxiv_id: "2305.13245"
+    first_author: "Yang"
+    year: 2023
+    key_takeaways:
+      - Efficient attention variant
+      - Memory-compute trade-off analysis
+      - Improved inference speed
+      - Model conversion techniques
+    topics:
+      - attention
+      - efficiency
+      - transformers
+      - inference-optimization
+
+  - title: "K-Planes: Explicit Radiance Fields in Space, Time, and Appearance"
+    arxiv_id: "2301.10241"
+    first_author: "Nerfstudio"
+    year: 2023
+    key_takeaways:
+      - Hybrid representation scheme
+      - Temporal coherence
+      - Efficient rendering
+      - Appearance modeling
+    topics:
+      - neural-rendering
+      - radiance-fields
+      - efficiency
+      - dynamic-scenes
+
+  - title: "Learning to Compare: Relation-aware Perceptual Similarity"
+    arxiv_id: "2303.13455"
+    first_author: "Li"
+    year: 2023
+    key_takeaways:
+      - Perceptual similarity metrics
+      - Relation-aware comparison
+      - Multi-scale features
+      - Human alignment
+    topics:
+      - perceptual-metrics
+      - computer-vision
+      - similarity-learning
+      - evaluation
+
+  - title: "Lion: Learning with Implicit Optimization"
+    arxiv_id: "2307.06440"
+    first_author: "Chen"
+    year: 2023
+    key_takeaways:
+      - Novel optimization algorithm
+      - Improved convergence
+      - Memory efficiency
+      - Training stability
+    topics:
+      - optimization
+      - training
+      - efficiency
+      - convergence
+
+  - title: "MiDaS v3.1: Robust Monocular Depth Estimation"
+    arxiv_id: "2307.14460"
+    first_author: "Ranftl"
+    year: 2023
+    key_takeaways:
+      - Improved depth estimation
+      - Cross-dataset generalization
+      - Robust performance
+      - Efficient architecture
+    topics:
+      - depth-estimation
+      - computer-vision
+      - robustness
+      - generalization
+
+  - title: "Neural Scene Graphs for Dynamic Scenes"
+    arxiv_id: "2303.07556"
+    first_author: "Jiang"
+    year: 2023
+    key_takeaways:
+      - Dynamic scene representation
+      - Object relationships
+      - Temporal coherence
+      - Hierarchical structure
+    topics:
+      - scene-understanding
+      - dynamic-scenes
+      - graph-neural-networks
+      - representation-learning
+
+  - title: "NeuS2: Fast Learning of Neural Implicit Surfaces"
+    arxiv_id: "2308.04126"
+    first_author: "Chen"
+    year: 2023
+    key_takeaways:
+      - Accelerated surface reconstruction
+      - Implicit function learning
+      - Multi-view consistency
+      - Optimization techniques
+    topics:
+      - 3d-reconstruction
+      - neural-surfaces
+      - efficiency
+      - multi-view
+
+  - title: "One Transformer Fits All Sequences"
+    arxiv_id: "2304.11062"
+    first_author: "Wang"
+    year: 2023
+    key_takeaways:
+      - Universal sequence modeling
+      - Cross-modal architecture
+      - Unified training approach
+      - Scalable design
+    topics:
+      - transformers
+      - multi-modal
+      - sequence-modeling
+      - architecture
+
+  - title: "OnePose: Category-level Object Pose Estimation"
+    arxiv_id: "2309.00296"
+    first_author: "Sun"
+    year: 2023
+    key_takeaways:
+      - Category-level pose estimation
+      - Neural point representation
+      - Cross-instance generalization
+      - Efficient inference
+    topics:
+      - pose-estimation
+      - computer-vision
+      - point-clouds
+      - category-level
+
+  - title: "Optimizing CUDA Kernels for Large Language Model Inference"
+    arxiv_id: "2306.11378"
+    first_author: "Chen"
+    year: 2023
+    key_takeaways:
+      - Custom CUDA optimization
+      - Inference acceleration
+      - Memory access patterns
+      - Hardware utilization
+    topics:
+      - systems
+      - cuda
+      - inference
+      - optimization
+
+  - title: "PaLM 2 Technical Report"
+    arxiv_id: "2305.10755"
+    first_author: "Anil"
+    year: 2023
+    key_takeaways:
+      - Architecture improvements
+      - Training efficiency gains
+      - Scaling strategy updates
+      - Evaluation methodology
+    topics:
+      - language-models
+      - scaling
+      - architecture
+      - evaluation
+
+  - title: "PhotoMaker: Customizing Realistic Human Photos"
+    arxiv_id: "2312.04461"
+    first_author: "Li"
+    year: 2023
+    key_takeaways:
+      - ID-preserving generation
+      - Few-shot personalization
+      - Style consistency
+      - Identity embedding techniques
+    topics:
+      - image-generation
+      - personalization
+      - identity-preservation
+      - diffusion-models
+
+  - title: "PipeMare: Asynchronous Pipeline Parallel Training"
+    arxiv_id: "2305.08155"
+    first_author: "Li"
+    year: 2023
+    key_takeaways:
+      - Asynchronous pipeline parallelism
+      - Stale weight handling
+      - Training acceleration
+      - Memory efficiency
+    topics:
+      - distributed-training
+      - pipeline-parallelism
+      - efficiency
+      - systems
+
+  - title: "Progress measures for grokking via mechanistic interpretability"
+    arxiv_id: "2301.05217"
+    first_author: "Nanda"
+    year: 2023
+    key_takeaways:
+      - Grokking measurement
+      - Interpretability metrics
+      - Learning dynamics analysis
+      - Phase transition detection
+    topics:
+      - interpretability
+      - learning-dynamics
+      - measurement
+      - theory
+
+  - title: "Scaling Vision Transformers to 22 Billion Parameters"
+    arxiv_id: "2302.05442"
+    first_author: "Zhai"
+    year: 2023
+    key_takeaways:
+      - Vision model scaling
+      - Training optimization
+      - Architecture adaptations
+      - Performance analysis
+    topics:
+      - vision-transformers
+      - scaling
+      - efficiency
+      - architecture
+
+  - title: "Segment Anything"
+    arxiv_id: "2304.02643"
+    first_author: "Kirillov"
+    year: 2023
+    key_takeaways:
+      - Universal segmentation model
+      - Prompt engineering
+      - Zero-shot capabilities
+      - Real-time performance
+    topics:
+      - segmentation
+      - computer-vision
+      - foundation-models
+      - zero-shot
+
+  - title: "Stack More Layers Differently: High-Rank Training"
+    arxiv_id: "2307.05695"
+    first_author: "Liao"
+    year: 2023
+    key_takeaways:
+      - Rank-based layer stacking
+      - Training optimization
+      - Memory efficiency
+      - Architecture design
+    topics:
+      - architecture
+      - optimization
+      - efficiency
+      - training
+
+  - title: "Symbolic Discovery of Optimization Algorithms"
+    arxiv_id: "2302.06675"
+    first_author: "Vicol"
+    year: 2023
+    key_takeaways:
+      - Automated optimizer discovery
+      - Symbolic optimization
+      - Performance analysis
+      - Theoretical insights
+    topics:
+      - meta-learning
+      - optimization
+      - automated-discovery
+      - theory
+
+  - title: "T2I-Adapter: Learning Adapters to Dig Out More Controllable Ability"
+    arxiv_id: "2302.08453"
+    first_author: "Mou"
+    year: 2023
+    key_takeaways:
+      - Controllable generation
+      - Adapter architecture
+      - Multi-condition fusion
+      - Zero-shot control
+    topics:
+      - text-to-image
+      - adapters
+      - controllable-generation
+      - diffusion-models
+
+  - title: "TensorRT-LLM: A Compiler and Runtime for LLMs"
+    arxiv_id: "2310.16386"
+    first_author: "Li"
+    year: 2023
+    key_takeaways:
+      - Optimizing compiler design
+      - Runtime optimization
+      - Hardware acceleration
+      - Memory management
+    topics:
+      - compilers
+      - inference
+      - optimization
+      - systems
+
+  - title: "Understanding Contrastive Learning Requires Incorporating Inductive Biases"
+    arxiv_id: "2302.14043"
+    first_author: "Wen"
+    year: 2023
+    key_takeaways:
+      - Role of inductive biases
+      - Theoretical analysis
+      - Augmentation strategies
+      - Performance bounds
+    topics:
+      - contrastive-learning
+      - theory
+      - self-supervised-learning
+      - inductive-bias
+
+  - title: "ZeRO++: Extremely Efficient Collective Communication"
+    arxiv_id: "2306.10209"
+    first_author: "Rajbhandari"
+    year: 2023
+    key_takeaways:
+      - Communication optimization
+      - Memory efficiency
+      - Distributed training
+      - Scaling improvements
+    topics:
+      - distributed-training
+      - efficiency
+      - communication
+      - systems

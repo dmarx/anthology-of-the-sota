@@ -414,6 +414,17 @@
       - transformers
 
 2020:
+  - title: "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models"
+    year: 2020
+    arxiv_id: 1910.02054
+  key_takeaways:
+    - Micro-batch size determined by GPU memory
+    - Gradient accumulation steps determined by target global batch
+    - Introduced DeepSpeed ZeRo optimizations
+    - Large batch size training w/o model parallelism
+  sota:
+    - Parition optimizer state, gradients, and model parameters to reduce memory overhead
+
   - title: "On Layer Normalization in the Transformer Architecture"
     arxiv_id: "2002.04745"
     year: 2020

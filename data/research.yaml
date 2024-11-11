@@ -1051,7 +1051,7 @@
       - Training efficiency analysis
       - Resource allocation strategies
       - chinchilla scaling laws, relating model size to data/compute budget
-      - don't sleep on data quality
+      - "don't sleep on data quality"
     topics:
       - scaling-laws
       - efficiency
@@ -1062,6 +1062,7 @@
       - llama2
     sota:
       - `num_tokens ~ 20 * num_params`
+      - Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`
 
   - title: "Using DeepSpeed and Megatron to Train Megatron-Turing NLG 530B"
     arxiv_id: "2201.11990"

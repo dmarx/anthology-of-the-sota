@@ -1,6 +1,6 @@
 from pathlib import Path
 import pytest
-from scripts.generators.readme_generator import generate_readme
+from scripts.readme_generator import generate_readme
 from scripts.utils import get_project_root, load_config
 
 def test_load_config(mock_repo):

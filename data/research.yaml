@@ -126,6 +126,8 @@
       - regularization
       - adam
       - neural-networks
+    sota_maybe:
+      - I feel like everyone still uses vanilla Adam though...
 
   - title: "Attention Is All You Need"
     arxiv_id: "1706.03762"

@@ -126,8 +126,10 @@
       - regularization
       - adam
       - neural-networks
+      - llama2
     sota_maybe:
       - I feel like everyone still uses vanilla Adam though...
+      - llama2 used - β₁=0.9, β₂=0.95
 
   - title: "Attention Is All You Need"
     arxiv_id: "1706.03762"

@@ -577,6 +577,9 @@
       - interpretability
       - architecture
       - generalization
+    attic:
+      reason: superceded by 2103.03386 and 2110.08058
+      
 
   - title: "PowerNorm: Rethinking Batch Normalization in Transformers"
     arxiv_id: "2003.07845"

@@ -473,6 +473,8 @@
       - activation-functions
       - architecture
       - optimization
+    models:
+      - llama2
     sota:
       - Use SwiGLU activation for transformers
 

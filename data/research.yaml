@@ -639,6 +639,15 @@
       - distributed-training
       - memory-efficiency
 
+  - title: "Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers"
+    year: 2021
+    arxiv_id: 2109.10686
+    key_takeaways:
+      - As model size increases, required warmup period becomes shorter relative to total training time
+      - Initial instability window shrinks with larger layer widths
+    sota:
+      - Warmup needed scales sub-linearly with model size
+
   - title: "Efficient Large Scale Language Model Training on GPU Clusters"
     arxiv_id: "2104.04473"
     first_author: "Narayanan"

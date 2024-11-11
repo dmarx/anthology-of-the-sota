@@ -546,6 +546,7 @@
       - gpt training recipe
       - LM in-context learning emerges at scale
       - ICL permits few-shot task adaptability
+      - single cycle of cosine decay is sufficient lr schedule
 
   - title: "Longformer: The Long-Document Transformer"
     arxiv_id: "2004.05150"
@@ -955,6 +956,12 @@
       - scaling
       - distributed-training
       - systems
+    models:
+      - PaLM
+    sota:
+      - smaller batch sizes are more sample efficient (i.e., better loss as a function of tokens seen) earlier in training
+      - larger batch sizes are beneficial later in training due to better gradient estimates
+      - consider rewinding to earlier checkpoint and skipping a few batches to mitigate unusual loss spikes
 
   - title: "Progressive Distillation for Fast Sampling of Diffusion Models"
     arxiv_id: "2202.00512"

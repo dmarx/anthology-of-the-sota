@@ -13,6 +13,12 @@
       - neural-networks
       - adaptive-methods
       - gradient-descent
+    historical_impact:
+      - "Foundational optimizer still widely used"
+    sota:
+      - "Default choice for neural network training"
+      - "Common hyperparameters: β₁=0.9, β₂=0.999, ε=1e-8"
+      - "Learning rate typically 1e-4 to 1e-3 for most tasks"
 
 2015:
   - title: "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift"
@@ -29,6 +35,12 @@
       - neural-networks
       - training-acceleration
       - regularization
+    historical_impact:
+      - "Fundamental technique enabling deep network training"
+    sota:
+      - "Place BatchNorm after linear/conv layers but before activation functions"
+      - "Use running statistics for inference"
+      - "Consider alternatives like LayerNorm for transformers"
 
   - title: "Neural Machine Translation of Rare Words with Subword Units"
     arxiv_id: "1508.07909"

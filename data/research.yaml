@@ -813,6 +813,7 @@
 
   - title: "Efficient Large Scale Language Modeling with Mixtures of Experts"
     year: 2021
+    first_author: Fedus
     arxiv_id: 2112.10684
     key_takeaways:
       - Analysis of compute/memory trade-offs:
@@ -1696,6 +1697,7 @@
 
   - title: "Monarch Mixer: A Simple Sub-Quadratic GEMM-Based Architecture"
     arxiv_id: "2310.12109"
+    first_author: Bhardwaj
     key_takeaways:
       - Efficient alternative to attention
       - Linear scaling with sequence length

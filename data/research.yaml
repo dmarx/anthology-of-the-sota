@@ -616,7 +616,10 @@
       - architecture
       - generalization
     attic:
-      reason: superceded by 2103.03386 and 2110.08058
+      reason: "Superseded by more practically-oriented work in 'Clusterability in Neural Networks' (2103.03386) and subsequent mechanistic interpretability papers"
+      superseded_by: 
+        - "2103.03386"  # Clusterability paper
+        - "2110.08058"  # Later interpretability work
 
   - title: "Clusterability in Neural Networks"
     arxiv_id: "2103.03386"
@@ -756,6 +759,8 @@
       - representation-learning
       - training-strategies
       - self-supervised-learning
+    attic:
+      reason: "Techniques require careful per-case tuning and haven't shown consistent benefits across domains. More recent work shows simpler sampling strategies often work better."
 
   - title: "Improving Language Models by Retrieving from Trillions of Tokens"
     arxiv_id: "2112.04426"
@@ -848,6 +853,9 @@
       - learning-rate-scheduling
       - training-strategies
       - convergence
+    attic:
+      reason: "Superseded by single-cycle cosine decay as demonstrated in GPT-3 paper (2005.14165). Restart schedules proved less beneficial than initially thought for large-scale training."
+      superseded_by: "2005.14165"  # GPT-3 paper
 
   - title: "Train Short, Test Long: Attention with Linear Biases"
     arxiv_id: "2108.12409"
@@ -878,6 +886,11 @@
       - self-supervised-learning
       - theory
       - multi-view-learning
+    attic:
+      reason: "Primarily theoretical without concrete training recommendations. Better to reference practical implementations in papers like SimCLR and MoCo."
+      see_also:
+        - "2002.05709"  # SimCLR
+        - "1911.05722"  # MoCo
 
 2022:
   - title: "Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models"
@@ -1449,6 +1462,8 @@
       - dynamic-scenes
       - graph-neural-networks
       - representation-learning
+    attic:
+      reason: "Too domain-specific for general ML training recommendations list."
 
   - title: "NeuS2: Fast Learning of Neural Implicit Surfaces"
     arxiv_id: "2308.04126"
@@ -1573,6 +1588,8 @@
       - learning-dynamics
       - measurement
       - theory
+    attic:
+      reason: "Too theoretical and recent. Focuses on measurement rather than providing actionable training recommendations."
 
   - title: "Scaling Vision Transformers to 22 Billion Parameters"
     arxiv_id: "2302.05442"
@@ -1633,6 +1650,8 @@
       - optimization
       - automated-discovery
       - theory
+    attic:
+      reason: "Primarily theoretical research direction without proven practical impact."
 
   - title: "T2I-Adapter: Learning Adapters to Dig Out More Controllable Ability"
     arxiv_id: "2302.08453"
@@ -1678,6 +1697,8 @@
       - theory
       - self-supervised-learning
       - inductive-bias
+    attic:
+      reason: "Primarily theoretical analysis without concrete training recommendations."
 
   - title: "ZeRO++: Extremely Efficient Collective Communication"
     arxiv_id: "2306.10209"

@@ -449,16 +449,16 @@
   - title: "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models"
     year: 2020
     arxiv_id: 1910.02054
-  key_takeaways:
-    - Micro-batch size determined by GPU memory
-    - Gradient accumulation steps determined by target global batch
-    - Introduced DeepSpeed ZeRo optimizations
-    - Large batch size training w/o model parallelism
-  sota:
-    - Stage optimizer states across data parallel ranks (ZeRO-1)
-    - Partition gradients and optimizer states (ZeRO-2) for larger models
-    - Use ZeRO-3 only when other strategies insufficient
-    - Keep micro-batch size per GPU as large as memory allows
+    key_takeaways:
+      - Micro-batch size determined by GPU memory
+      - Gradient accumulation steps determined by target global batch
+      - Introduced DeepSpeed ZeRo optimizations
+      - Large batch size training w/o model parallelism
+    sota:
+      - Stage optimizer states across data parallel ranks (ZeRO-1)
+      - Partition gradients and optimizer states (ZeRO-2) for larger models
+      - Use ZeRO-3 only when other strategies insufficient
+      - Keep micro-batch size per GPU as large as memory allows
 
   - title: "On Layer Normalization in the Transformer Architecture"
     arxiv_id: "2002.04745"
@@ -811,7 +811,7 @@
       - Overlap communication with computation when possible
       - Initialize layer norms with smaller variance (0.02) for stability
 
-  - tite: "Efficient Large Scale Language Modeling with Mixtures of Experts"
+  - title: "Efficient Large Scale Language Modeling with Mixtures of Experts"
     year: 2021
     arxiv_id: 2112.10684
     key_takeaways:

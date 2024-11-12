@@ -234,3 +234,52 @@ def test_full_pipeline(sample_yaml_data, temp_registry_file, temp_output_file):
             assert 'source' in rec
     
     assert 'optimization' in topics
+
+def test_recommendation_status(temp_registry_file):
+    registry = RecommendationRegistry()
+    
+    # Add recommendations with different statuses
+    standard_id = registry.add_recommendation(
+        topic="optimization",
+        recommendation="Standard recommendation",
+        first_author="Smith",
+        source_paper="Smith et al. (2020)",
+        year=2020
+    )
+    
+    experimental_id = registry.add_recommendation(
+        topic="optimization",
+        recommendation="Experimental recommendation",
+        first_author="Jones",
+        source_paper="Jones et al. (2021)",
+        year=2021,
+        experimental=True
+    )
+    
+    deprecated_id = registry.add_recommendation(
+        topic="optimization",
+        recommendation="Deprecated recommendation",
+        first_author="Brown",
+        source_paper="Brown et al. (2019)",
+        year=2019,
+        superseded_by="MLR-2020-Smith001-0001"
+    )
+    
+    # Check status assignments
+    assert registry.recommendations[standard_id].status == MLRStatus.STANDARD
+    assert registry.recommendations[experimental_id].status == MLRStatus.EXPERIMENTAL
+    assert registry.recommendations[deprecated_id].status == MLRStatus.DEPRECATED
+    
+    # Check status-based retrieval
+    standard_recs = registry.get_recommendations_by_status(MLRStatus.STANDARD)
+    experimental_recs = registry.get_recommendations_by_status(MLRStatus.EXPERIMENTAL)
+    deprecated_recs = registry.get_recommendations_by_status(MLRStatus.DEPRECATED)
+    
+    assert len(standard_recs) == 1
+    assert len(experimental_recs) == 1
+    assert len(deprecated_recs) == 1
+    
+    # Check export format
+    exported = registry.export_registry()
+    assert set(exported['recommendations'].keys()) == {status.value for status in MLRStatus}
+    assert all(topic in exported['topics'] for topic in registry._get_all_topics())

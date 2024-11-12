@@ -1159,6 +1159,22 @@
       - Tiling size should match hardware SRAM size
       - Recompute attention during backward pass instead of storing it
 
+  - title: "FSDP: Faster and More Resource-Efficient Distributed Training"
+    arxiv_id: "2204.13702"
+    key_takeaways:
+      - Improved memory efficiency over ZeRO
+      - Better communication patterns
+      - Automatic sharding strategies
+    topics:
+      - distributed-training
+      - memory-optimization
+      - scaling
+    sota:
+      - Use FSDP over DDP when model size exceeds single GPU memory
+      - Overlap communication with computation using backward prefetch
+      - Employ mixed precision to reduce memory usage
+      - Choose sharding factor based on model and GPU memory size
+
   - title: "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers"
     arxiv_id: "2210.17323"
     first_author: "Frantar"
@@ -1515,6 +1531,22 @@
       - deep-networks
       - training-stability
       - optimization
+
+  - title: "Effective Data Mixing for Language Models"
+    arxiv_id: "2310.02263"
+    key_takeaways:
+      - Data quality assessment metrics
+      - Dynamic mixing strategies
+      - Quality-aware sampling
+    topics:
+      - data-quality
+      - training-efficiency
+      - sampling
+    sota:
+      - Use perplexity-based filtering for quality assessment
+      - Implement dynamic temperature scaling for mixing
+      - Adjust mixing ratios based on validation performance
+      - Monitor domain coverage during training
 
   - title: "Efficient Memory Access for Large Language Model Inference"
     arxiv_id: "2308.13574"

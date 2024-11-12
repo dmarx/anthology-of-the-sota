@@ -1678,6 +1678,21 @@
       - robustness
       - generalization
 
+  - title: "Monarch Mixer: A Simple Sub-Quadratic GEMM-Based Architecture"
+    arxiv_id: "2310.12109"
+    key_takeaways:
+      - Efficient alternative to attention
+      - Linear scaling with sequence length
+      - Hardware-friendly design
+    topics:
+      - attention-alternatives
+      - efficiency
+      - architecture
+    sota:
+      - Consider for very long sequence tasks
+      - Use for tasks where attention bottlenecks training
+      - Combine with standard attention for hybrid approaches
+
   - title: "Neural Scene Graphs for Dynamic Scenes"
     arxiv_id: "2303.07556"
     first_author: "Jiang"

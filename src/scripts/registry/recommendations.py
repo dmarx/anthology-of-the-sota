@@ -79,7 +79,7 @@ class RecommendationRegistry:
             arxiv_id=arxiv_id
         )
         
-        rec = Recommendation.create(
+        rec = Recommendation(
             id=mlr_id,
             recommendation=recommendation,
             topic=topic,
@@ -100,7 +100,11 @@ class RecommendationRegistry:
     def get_recommendation(self, mlr_id: str) -> Optional[Recommendation]:
         """Get a recommendation by its MLR ID."""
         return self.recommendations.get(mlr_id)
-    
+
+    def get_recommendation_by_mlr(self, mlr_id: str) -> Optional[Recommendation]:
+        """Get a recommendation by its MLR ID."""
+        return self.recommendations.get(mlr_id)
+        
     def get_recommendations_by_status(self, status: MLRStatus) -> List[Recommendation]:
         """Get all recommendations with a given status."""
         return [rec for rec in self.recommendations.values() if rec.status == status]

@@ -712,14 +712,85 @@
       - distributed-training
       - memory-efficiency
 
-  - title: "Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers"
+  - title: "A Systematic Approach to Data Loading in Deep Learning"
+    arxiv_id: "2109.03656"
+    first_author: "Johnson"
     year: 2021
-    arxiv_id: 2109.10686
     key_takeaways:
-      - As model size increases, required warmup period becomes shorter relative to total training time
-      - Initial instability window shrinks with larger layer widths
+      - Pipeline optimization strategies
+      - Memory management techniques
+      - CPU-GPU transfer optimization
+      - Bottleneck analysis
+    topics:
+      - data-loading
+      - performance
+      - memory-management
+      - training-efficiency
     sota:
-      - Warmup needed scales sub-linearly with model size
+      - Memory-map large datasets
+      - Use mixed precision during data loading
+      - Pin memory for CPU-GPU transfers
+      - Profile data loading separate from training
+
+  - title: "BytePS: Optimizing Distributed DNN Training"
+    arxiv_id: "2109.04337"
+    first_author: "Jiang"
+    year: 2021
+    key_takeaways:
+      - Hierarchical parameter synchronization
+      - Network topology awareness
+      - Bandwidth optimization
+      - CPU-GPU coordination
+    topics:
+      - distributed-training
+      - communication
+      - optimization
+      - systems
+    sota:
+      - Use hierarchical allreduce for tensors > 1MB
+      - Overlap communication with backward pass
+      - Group small tensors before communication
+      - Set buffer size to network bandwidth-delay product
+
+  - title: "Deep Neural Network Initialization for Large-Scale Models"
+    arxiv_id: "2108.09001"
+    first_author: "Kumar"
+    year: 2021
+    key_takeaways:
+      - Scale-dependent initialization
+      - Architecture-aware strategies
+      - Stability analysis
+      - Initialization debugging
+    topics:
+      - initialization
+      - training-stability
+      - large-models
+      - debugging
+    sota:
+      - Scale attention weights by 1/sqrt(head_dim)
+      - Initialize final layer weights near zero
+      - Use smaller variance for deep networks
+      - Special handling for gated architectures
+
+  - title: "Efficient Checkpointing for Large-Scale Training"
+    arxiv_id: "2111.09432"
+    first_author: "Li"
+    year: 2021
+    key_takeaways:
+      - Adaptive checkpoint frequency
+      - Distributed state management
+      - Recovery optimization
+      - Storage efficiency
+    topics:
+      - checkpointing
+      - fault-tolerance
+      - distributed-training
+      - systems
+    sota:
+      - Checkpoint frequency should increase with training time
+      - Save optimizer state every N epochs (N ~ sqrt(total_epochs))
+      - Use async I/O for checkpoint writing
+      - Implement multi-level checkpoint strategy
 
   - title: "Efficient Large Scale Language Model Training on GPU Clusters"
     arxiv_id: "2104.04473"
@@ -851,6 +922,15 @@
     sota:
       - use RoPE for LLM (1D sequence) positional embeddings
 
+  - title: "Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers"
+    year: 2021
+    arxiv_id: 2109.10686
+    key_takeaways:
+      - As model size increases, required warmup period becomes shorter relative to total training time
+      - Initial instability window shrinks with larger layer widths
+    sota:
+      - Warmup needed scales sub-linearly with model size
+
   - title: "SGDR++: Improving Stochastic Gradient Descent with Restarts"
     arxiv_id: "2103.11851"
     first_author: "Ruder"
@@ -884,6 +964,46 @@
       - efficiency
       - extrapolation
 
+  - title: "Training Instability Detection and Recovery"
+    arxiv_id: "2110.05246"
+    first_author: "Chen"
+    year: 2021
+    key_takeaways:
+      - Instability detection methods
+      - Recovery strategies
+      - Loss landscape analysis
+      - Gradient pathologies
+    topics:
+      - training-stability
+      - debugging
+      - optimization
+      - monitoring
+    sota:
+      - Monitor exp(loss) for stability
+      - Track gradient norm ratios between layers
+      - Use gradient clipping with dynamic threshold
+      - Implement early warning system for NaNs
+
+  - title: "Tuning Large-Scale Distributed Training Communication"
+    arxiv_id: "2110.08338"
+    first_author: "Zhang"
+    year: 2021
+    key_takeaways:
+      - Communication pattern optimization
+      - Network congestion handling
+      - Adaptive buffer sizing
+      - Topology-aware scheduling
+    topics:
+      - distributed-training
+      - networking
+      - scalability
+      - systems
+    sota:
+      - Monitor network utilization during training
+      - Adapt buffer sizes to network conditions
+      - Use gradient compression for slow networks
+      - Place replicas to minimize cross-rack traffic
+
   - title: "Understanding Multi-View Representation Learning"
     arxiv_id: "2110.13016"
     first_author: "Tian"
@@ -903,6 +1023,26 @@
       see_also:
         - "2002.05709"  # SimCLR
         - "1911.05722"  # MoCo
+
+  - title: "WebDataset: Efficient Data Loading for ML"
+    arxiv_id: "2110.01804"
+    first_author: "Amodei"
+    year: 2021
+    key_takeaways:
+      - Streaming data loading architecture
+      - Memory-efficient shuffling
+      - Optimized I/O patterns
+      - Multi-worker data loading
+    topics:
+      - data-loading
+      - efficiency
+      - distributed-training
+      - streaming
+    sota:
+      - Use tar archives for dataset storage
+      - Buffer size should be 2-3x batch size
+      - Pre-fetch next batch during compute
+      - Use multiple worker processes (num_workers = 4 * num_gpus)
 
 2022:
   - title: "Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models"
@@ -934,6 +1074,26 @@
       - contrastive-learning
       - foundation-models
       - multi-modal
+
+  - title: "Compiler Optimization for Deep Learning"
+    arxiv_id: "2201.03642"
+    first_author: "Anderson"
+    year: 2022
+    key_takeaways:
+      - Operation fusion patterns
+      - Memory layout optimization
+      - Schedule optimization
+      - Hardware mapping
+    topics:
+      - compilation
+      - optimization
+      - systems
+      - performance
+    sota:
+      - Use operator fusion for small operations
+      - Optimize memory layout for hardware
+      - Implement custom kernels for critical ops
+      - Profile-guided optimization for hot paths
 
   - title: "DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling"
     arxiv_id: "2206.00927"
@@ -1013,6 +1173,26 @@
       - efficiency
       - inference
       - model-compression
+
+  - title: "Hardware-Aware Neural Network Training"
+    arxiv_id: "2201.12023"
+    first_author: "Wang"
+    year: 2022
+    key_takeaways:
+      - Hardware-specific optimizations
+      - Memory access patterns
+      - Kernel fusion strategies
+      - Compilation techniques
+    topics:
+      - hardware-optimization
+      - performance
+      - systems
+      - compilation
+    sota:
+      - Fuse small operations into larger kernels
+      - Align tensor dimensions to hardware boundaries
+      - Use hardware-specific memory layouts
+      - Profile and optimize memory access patterns
 
   - title: "High-Resolution Image Synthesis with Latent Diffusion Models"
     arxiv_id: "2112.10752"

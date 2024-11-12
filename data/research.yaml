@@ -1240,6 +1240,10 @@
       - training-stability
       - adaptive-methods
       - large-models
+    experimental: True
+    notes:
+      - "Promising early results but needs more validation at scale. Consider AdamW as proven alternative."
+
 
   - title: "Analyzing the Learning Dynamics of Large Language Models"
     arxiv_id: "2310.05492"
@@ -1432,6 +1436,8 @@
       - training
       - efficiency
       - convergence
+    experimental: true
+    note: "Early results promising but needs more widespread testing. AdamW remains safer choice for most applications."
 
   - title: "MiDaS v3.1: Robust Monocular Depth Estimation"
     arxiv_id: "2307.14460"
@@ -1635,6 +1641,9 @@
       - optimization
       - efficiency
       - training
+    experimental: true
+    note: "Novel approach needing more validation across different scales and domains."
+
 
   - title: "Symbolic Discovery of Optimization Algorithms"
     arxiv_id: "2302.06675"

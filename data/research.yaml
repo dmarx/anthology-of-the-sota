@@ -1563,6 +1563,22 @@
       - systems
       - hardware-optimization
 
+  - title: "Efficient Memory Management for Large Language Model Serving with PagedAttention"
+    arxiv_id: "2309.06180"
+    year: 2023
+    first_author: "Kwon"
+    key_takeaways:
+      - Introduces vLLM
+      - Introduces PagedAttention
+    topics:
+      - attention
+      - inference optimization
+      - memory efficiency
+      - hardware efficiency
+      - inference throughput
+    sota:
+      - PagedAttention to accelerate batch inference for LLM sampling
+
   - title: "FlashAttention-2: Faster Attention with Better Parallelism"
     arxiv_id: "2307.08691"
     first_author: "Dao"

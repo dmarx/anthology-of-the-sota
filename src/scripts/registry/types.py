@@ -36,7 +36,7 @@ class Source:
 
     def to_dict(self) -> Dict:
         """Convert to dictionary, omitting None values."""
-        return {k: v for k, v in OmegaConf.create(self).to_container() if v is not None}
+        return {k: v for k, v in OmegaConf.to_container(OmegaConf.create(self)) if v is not None}
 
 @dataclass
 class Evidence:
@@ -59,7 +59,7 @@ class Evidence:
 
     def to_dict(self) -> Dict:
         """Convert to dictionary, omitting None values."""
-        return {k: v for k, v in OmegaConf.create(self).to_container() if v is not None}
+        return {k: v for k, v in OmegaConf.to_container(OmegaConf.create(self)) if v is not None}
 
 @dataclass
 class Recommendation:

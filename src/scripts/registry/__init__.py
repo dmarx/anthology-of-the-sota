@@ -7,7 +7,7 @@ from research papers with unique identifiers and status tracking.
 
 from .types import MLRStatus, Recommendation, Source, Evidence
 from .identifiers import MLRIdentifierRegistry
-from .recommendations import RecommendationRegistry
+from .recommendations import RecommendationRegistry, build_registry_from_yaml
 from .io import (
     load_research_yaml,
     save_registry,
@@ -25,6 +25,7 @@ __all__ = [
     'Evidence',
     'MLRIdentifierRegistry',
     'RecommendationRegistry',
+    'build_registry_from_yaml',
     'load_research_yaml',
     'save_registry',
     'load_registry',

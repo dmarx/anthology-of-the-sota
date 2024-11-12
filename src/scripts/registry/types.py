@@ -2,7 +2,7 @@
 """Type definitions for ML recommendation registry."""
 
 from enum import Enum
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, asdict
 from typing import Dict, List, Optional
 from datetime import datetime
 
@@ -21,6 +21,10 @@ class Source:
     first_author: str
     arxiv_id: Optional[str] = None
 
+    def to_dict(self) -> Dict:
+        """Convert source to dictionary."""
+        return {k: v for k, v in asdict(self).items() if v is not None}
+
 @dataclass
 class Evidence:
     """Supporting evidence for a recommendation."""
@@ -28,6 +32,10 @@ class Evidence:
     paper_id: str
     year: int
     arxiv_id: Optional[str] = None
+
+    def to_dict(self) -> Dict:
+        """Convert evidence to dictionary."""
+        return {k: v for k, v in asdict(self).items() if v is not None}
 
 @dataclass
 class Recommendation:
@@ -43,22 +51,20 @@ class Recommendation:
     deprecated_date: Optional[str] = None
     implementations: List[str] = field(default_factory=list)
 
-    @classmethod
-    def create(cls, 
-               id: str,
-               recommendation: str,
-               topic: str,
-               topic_id: str,
-               source: Dict,
-               status: MLRStatus,
-               **kwargs) -> 'Recommendation':
-        """Create a recommendation from raw data."""
-        return cls(
-            id=id,
-            recommendation=recommendation,
-            topic=topic,
-            topic_id=topic_id,
-            source=Source(**source),
-            status=status,
-            **kwargs
-        )
+    def to_dict(self) -> Dict:
+        """Convert recommendation to dictionary."""
+        data = {
+            'id': self.id,
+            'recommendation': self.recommendation,
+            'topic': self.topic,
+            'topic_id': self.topic_id,
+            'source': self.source.to_dict(),
+            'status': self.status.value,
+            'supporting_evidence': [e.to_dict() for e in self.supporting_evidence],
+            'implementations': self.implementations
+        }
+        if self.superseded_by:
+            data['superseded_by'] = self.superseded_by
+        if self.deprecated_date:
+            data['deprecated_date'] = self.deprecated_date
+        return {k: v for k, v in data.items() if v is not None}

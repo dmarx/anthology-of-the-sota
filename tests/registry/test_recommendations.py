@@ -2,15 +2,22 @@
 """Tests for recommendation registry functionality."""
 
 import pytest
+from pathlib import Path
 from datetime import datetime
 
-from scripts.registry.types import MLRStatus, Recommendation
+from scripts.registry.types import MLRStatus, Recommendation, Source, Evidence
 from scripts.registry.recommendations import RecommendationRegistry, generate_topic_id
+from scripts.registry.identifiers import MLRIdentifierRegistry
 
 @pytest.fixture
-def registry(temp_registry_file):
-    """Provide a fresh recommendation registry."""
-    return RecommendationRegistry()
+def id_registry(tmp_path):
+    """Fixture providing a fresh identifier registry."""
+    return MLRIdentifierRegistry(tmp_path / "test_mlr_registry.json")
+
+@pytest.fixture
+def registry(id_registry):
+    """Fixture providing a fresh recommendation registry."""
+    return RecommendationRegistry(id_registry)
 
 def test_topic_id_generation():
     """Test topic ID generation."""
@@ -30,7 +37,7 @@ def test_add_standard_recommendation(registry):
         arxiv_id="2020.12345"
     )
     
-    rec = registry.get_recommendation(mlr_id)
+    rec = registry.get_recommendation_by_mlr(mlr_id)
     assert rec is not None
     assert rec.status == MLRStatus.STANDARD
     assert rec.topic == "optimization"
@@ -47,7 +54,7 @@ def test_add_experimental_recommendation(registry):
         experimental=True
     )
     
-    rec = registry.get_recommendation(mlr_id)
+    rec = registry.get_recommendation_by_mlr(mlr_id)
     assert rec.status == MLRStatus.EXPERIMENTAL
 
 def test_add_deprecated_recommendation(registry):
@@ -61,7 +68,7 @@ def test_add_deprecated_recommendation(registry):
         superseded_by="MLR-2020-Smith001-0001"
     )
     
-    rec = registry.get_recommendation(mlr_id)
+    rec = registry.get_recommendation_by_mlr(mlr_id)
     assert rec.status == MLRStatus.DEPRECATED
     assert rec.superseded_by == "MLR-2020-Smith001-0001"
     assert rec.deprecated_date is not None
@@ -136,22 +143,31 @@ def test_topic_stats(registry):
         experimental=True
     )
     
-    stats = registry.get_topic_stats("optimization")
+    stats = registry._get_topic_stats("optimization")
     assert stats['total_count'] == 2
     assert stats['status_counts'][MLRStatus.STANDARD.value] == 1
     assert stats['status_counts'][MLRStatus.EXPERIMENTAL.value] == 1
     assert stats['years']['earliest'] == 2020
     assert stats['years']['latest'] == 2021
 
-def test_export_registry(registry):
+def test_registry_export(registry):
     """Test registry export functionality."""
-    # Add recommendations
+    # Add recommendations with different statuses
     registry.add_recommendation(
         topic="optimization",
-        recommendation="Rec 1",
+        recommendation="Standard rec",
         first_author="Smith",
         source_paper="Smith et al. (2020)",
         year=2020
+    )
+    
+    registry.add_recommendation(
+        topic="attention",
+        recommendation="Experimental rec",
+        first_author="Jones",
+        source_paper="Jones et al. (2021)",
+        year=2021,
+        experimental=True
     )
     
     exported = registry.export_registry()
@@ -160,4 +176,5 @@ def test_export_registry(registry):
     assert 'topics' in exported
     assert exported['metadata']['schema_version'] == '1.0'
     assert MLRStatus.STANDARD.value in exported['recommendations']
-    assert 'optimization' in exported['topics']
+    assert exported['recommendations'][MLRStatus.STANDARD.value]['optimization']
+    assert exported['recommendations'][MLRStatus.EXPERIMENTAL.value]['attention']

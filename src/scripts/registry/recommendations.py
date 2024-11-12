@@ -154,3 +154,67 @@ class RecommendationRegistry:
                 for topic in self.get_topics()
             }
         }
+
+def build_registry_from_yaml(yaml_data: Dict) -> RecommendationRegistry:
+    """Build a recommendation registry from YAML research data.
+    
+    Args:
+        yaml_data: Dictionary containing research paper data
+        
+    Returns:
+        RecommendationRegistry instance populated with recommendations
+    """
+    registry = RecommendationRegistry()
+    
+    # Process each year's papers
+    for year, papers in yaml_data.items():
+        for paper in papers:
+            # Extract basic paper info
+            first_author = paper['first_author']
+            arxiv_id = paper.get('arxiv_id')
+            paper_id = f"{first_author} et al. ({year})"
+            
+            # Process SOTA recommendations
+            if 'sota' in paper:
+                for rec in paper['sota']:
+                    main_topic = paper['topics'][0] if paper['topics'] else 'general'
+                    mlr_id = registry.add_recommendation(
+                        topic=main_topic,
+                        recommendation=rec,
+                        first_author=first_author,
+                        source_paper=paper_id,
+                        year=int(year),
+                        arxiv_id=arxiv_id,
+                        implementations=paper.get('models', [])
+                    )
+                    logger.info(f"Added recommendation {mlr_id}: {rec}")
+            
+            # Process experimental recommendations
+            if paper.get('experimental', False):
+                for rec in paper.get('sota', []):
+                    mlr_id = registry.add_recommendation(
+                        topic=paper['topics'][0],
+                        recommendation=rec,
+                        first_author=first_author,
+                        source_paper=paper_id,
+                        year=int(year),
+                        arxiv_id=arxiv_id,
+                        experimental=True
+                    )
+                    logger.info(f"Added experimental recommendation {mlr_id}: {rec}")
+            
+            # Process deprecated/superseded recommendations
+            if 'attic' in paper and 'superseded_by' in paper['attic']:
+                for rec in paper.get('sota', []):
+                    mlr_id = registry.add_recommendation(
+                        topic=paper['topics'][0],
+                        recommendation=rec,
+                        first_author=first_author,
+                        source_paper=paper_id,
+                        year=int(year),
+                        arxiv_id=arxiv_id,
+                        superseded_by=paper['attic']['superseded_by']
+                    )
+                    logger.info(f"Added deprecated recommendation {mlr_id}: {rec}")
+
+    return registry

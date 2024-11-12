@@ -27,10 +27,13 @@ When developing this project (or using it as a template), keep in mind these gui
 
 3. **Testing Standards**
    - Every new feature needs tests
+   - Write tests before starting on new features to formalize expected behavior (i.e. TDD)
    - Tests should be clear and focused
    - Use pytest fixtures for common setups
    - All workflows depend on tests passing
    - Test files should follow same modularity principles
+   - Use `pytest` fixtures for common setups
+   - Keep tests focused and well-documented
 
 4. **Why This Matters**
    - LLMs work best with clear, focused contexts
@@ -48,5 +51,11 @@ When developing this project (or using it as a template), keep in mind these gui
    - Use directory structure to organize related components
    - Prefer many small files over few large files
    - Consider splitting when files require partial updates
-   - Write tests alongside new features
-   - Run tests locally before pushing
+
+6. **Project Conventions**
+   - Use `loguru` for all logging
+   - Use `fire` for CLI interfaces
+   - Type hints should use:
+     - Built-in generics over typing module (PEP 585)
+     - Union operator (`|`) over Optional (PEP 604)
+   

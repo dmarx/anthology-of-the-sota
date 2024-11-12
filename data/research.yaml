@@ -229,6 +229,11 @@
       - mixed-precision
       - memory-optimization
       - hardware-optimization
+    sota:
+      - Use dynamic loss scaling that doubles every 2000 successful steps
+      - Maintain master weights in FP32
+      - Store optimizer states in FP32
+      - Perform forward/backward passes in FP16
 
 2018:
   - title: "An Empirical Model of Large-Batch Training"
@@ -260,6 +265,10 @@
       - pipeline-parallelism
       - memory-optimization
       - large-scale-training
+    sota:
+      - Use micro-batch splitting for pipeline parallelism
+      - Balance pipeline stages to minimize bubble overhead
+      - Choose pipeline chunks based on memory vs. compute trade-off
 
   - title: "On the Convergence of Adam and Beyond"
     arxiv_id: "1904.09237"
@@ -290,7 +299,11 @@
       - optimization
       - theory
       - training-dynamics
-
+    sota:
+      - Use larger learning rates with batch normalization
+      - Monitor loss landscape smoothness during training
+      - Place BN after linear/conv layers but before activation functions
+  
 2019:
   - title: "Advances and Open Problems in Federated Learning"
     arxiv_id: "1912.04977"
@@ -321,6 +334,9 @@
       - inference-optimization
       - attention
       - efficiency
+    sota:
+      - Use multi-query attention for decoder-only models to reduce memory bandwidth
+      - Keep key/value projections shared across heads while query projections remain separate
 
   - title: "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism"
     arxiv_id: "1909.08053"
@@ -412,6 +428,10 @@
       - training-stability
       - theory
       - transformers
+    sota:
+      - Initialize LayerNorm weight close to 1 (0.97-1.0)
+      - Initialize LayerNorm bias to 0
+      - Use a smaller learning rate for LayerNorm parameters
 
 2020:
   - title: "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models"
@@ -423,7 +443,10 @@
     - Introduced DeepSpeed ZeRo optimizations
     - Large batch size training w/o model parallelism
   sota:
-    - Parition optimizer state, gradients, and model parameters to reduce memory overhead
+    - Stage optimizer states across data parallel ranks (ZeRO-1)
+    - Partition gradients and optimizer states (ZeRO-2) for larger models
+    - Use ZeRO-3 only when other strategies insufficient
+    - Keep micro-batch size per GPU as large as memory allows
 
   - title: "On Layer Normalization in the Transformer Architecture"
     arxiv_id: "2002.04745"
@@ -697,6 +720,10 @@
       - language-models
       - systems
       - scaling
+    sota:
+      - Use sequence parallelism for attention layers
+      - Overlap communication with computation when possible
+      - Initialize layer norms with smaller variance (0.02) for stability
 
   - tite: "Efficient Large Scale Language Modeling with Mixtures of Experts"
     year: 2021
@@ -942,6 +969,10 @@
       - efficiency
       - memory-optimization
       - systems
+    sota:
+      - Use flash attention for all attention computations when hardware supports it
+      - Tiling size should match hardware SRAM size
+      - Recompute attention during backward pass instead of storing it
 
   - title: "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers"
     arxiv_id: "2210.17323"
@@ -1211,6 +1242,10 @@
       - language-models
       - analysis
       - scaling
+    sota:
+      - Monitor validation loss for unexpected spikes during training
+      - Track gradient norm statistics to detect training instabilities
+      - Use learning rate warmup proportional to model size
 
   - title: "Consistency Models"
     arxiv_id: "2303.01469"
@@ -1301,6 +1336,10 @@
       - efficiency
       - hardware-optimization
       - parallelism
+    sota:
+      - Use flash-attention-2 over original flash-attention when available
+      - Keep sequence lengths multiple of 128 for best performance
+      - Pad attention masks to block boundaries for better hardware utilization
 
   - title: "Gaussian Shell Maps for Efficient Neural Surface Rendering"
     arxiv_id: "2309.11904"
@@ -1470,6 +1509,10 @@
       - cuda
       - inference
       - optimization
+    sota:
+      - Use continuous batching for inference
+      - Fuse attention operations where possible
+      - Overlap prefill and decode compute
 
   - title: "PaLM 2 Technical Report"
     arxiv_id: "2305.10755"

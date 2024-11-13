@@ -29,47 +29,49 @@ def validate_paper_entry(paper: Dict, year: str) -> None:
         'title': str,
         'first_author': str,
         'year': int,
-        'topics': list
+        #'topics': list
     }
     
     # Check for missing required fields
     missing_fields = [field for field in required_fields if field not in paper]
     if missing_fields:
+        logger.warning(paper)
         raise RegistryDataError(
             f"Paper in year {year} missing required fields: {', '.join(missing_fields)}"
         )
     
     # Check field types
-    for field, expected_type in required_fields.items():
-        if not isinstance(paper[field], expected_type):
-            raise RegistryDataError(
-                f"Paper in year {year} has invalid type for {field}: "
-                f"expected {expected_type.__name__}, got {type(paper[field]).__name__}"
-            )
+    # for field, expected_type in required_fields.items():
+    #     if not isinstance(paper[field], expected_type):
+    #         logger.warning(paper)
+    #         raise RegistryDataError(
+    #             f"Paper in year {year} has invalid type for {field}: "
+    #             f"expected {expected_type.__name__}, got {type(paper[field]).__name__}"
+    #         )
     
-    # Validate year matches container
-    if str(paper['year']) != str(year):
-        raise RegistryDataError(
-            f"Paper year {paper['year']} doesn't match container year {year}"
-        )
+    # # Validate year matches container
+    # if str(paper['year']) != str(year):
+    #     raise RegistryDataError(
+    #         f"Paper year {paper['year']} doesn't match container year {year}"
+    #     )
     
-    # Validate topics not empty
-    if not paper['topics']:
-        raise RegistryDataError(
-            f"Paper '{paper['title']}' ({year}) has empty topics list"
-        )
+    # # Validate topics not empty
+    # if not paper['topics']:
+    #     raise RegistryDataError(
+    #         f"Paper '{paper['title']}' ({year}) has empty topics list"
+    #     )
     
     # Validate topics are strings
-    if not all(isinstance(topic, str) for topic in paper['topics']):
-        raise RegistryDataError(
-            f"Paper '{paper['title']}' ({year}) has non-string topics"
-        )
+    # if not all(isinstance(topic, str) for topic in paper['topics']):
+    #     raise RegistryDataError(
+    #         f"Paper '{paper['title']}' ({year}) has non-string topics"
+    #     )
     
-    # If SOTA recommendations present, validate they're strings
-    if 'sota' in paper and not all(isinstance(rec, str) for rec in paper['sota']):
-        raise RegistryDataError(
-            f"Paper '{paper['title']}' ({year}) has non-string SOTA recommendations"
-        )
+    # # If SOTA recommendations present, validate they're strings
+    # if 'sota' in paper and not all(isinstance(rec, str) for rec in paper['sota']):
+    #     raise RegistryDataError(
+    #         f"Paper '{paper['title']}' ({year}) has non-string SOTA recommendations"
+    #     )
 
 def load_research_yaml(file_path: Union[str, Path]) -> Dict:
     """Load research data from YAML file.

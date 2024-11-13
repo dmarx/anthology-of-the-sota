@@ -1709,6 +1709,7 @@
 
   - title: "Monarch Mixer: A Simple Sub-Quadratic GEMM-Based Architecture"
     arxiv_id: "2310.12109"
+    year: 2023
     first_author: Bhardwaj
     key_takeaways:
       - Efficient alternative to attention

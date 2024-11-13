@@ -3,6 +3,7 @@ import tomli
 import os
 import subprocess
 from loguru import logger
+from typing import Optional
 
 def get_project_root() -> Path:
     """

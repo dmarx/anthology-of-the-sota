@@ -7,8 +7,8 @@ on:
     #   - 'src/scripts/registry/**'
     #   - ./.github/workflows/build_registry.yml
   workflow_dispatch:  # Allow manual triggering
-  schedule:
-    - cron: '0 0 * * 0'  # Run weekly on Sunday at midnight
+  # schedule:
+  #   - cron: '0 0 * * 0'  # Run weekly on Sunday at midnight
 
 jobs:
   # Add test job from test workflow
@@ -39,3 +39,9 @@ jobs:
       
       - name: Build registry
         run: python -m scripts.registry.cli build
+
+      #- name: cp to readme section
+        #run: |
+          #cp data/registry.yaml docs/readme/sections/registry.md.j2
+          #python -m scripts.registry.cli build # just run it again for the commit, fuck it
+          # TODO: python -m scripts.utils.commit_and_push

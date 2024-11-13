@@ -1546,6 +1546,7 @@
   - title: "Efficient Online Data Mixing For Language Model Pre-Training"
     arxiv_id: "2312.02406"
     first_author: "Albalak"
+    year: 2023
     key_takeaways:
       - Data quality assessment metrics
       - Dynamic mixing strategies

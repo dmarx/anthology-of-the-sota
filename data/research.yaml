@@ -1845,7 +1845,7 @@
     attic:
       reason: "Too theoretical and recent. Focuses on measurement rather than providing actionable training recommendations."
 
-- title: "PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel"
+  - title: "PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel"
     arxiv_id: "2304.11277"
     first_author: "Zhao"
     year: 2022

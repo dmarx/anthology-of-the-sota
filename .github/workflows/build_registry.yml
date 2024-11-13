@@ -2,10 +2,10 @@ name: Build Registry
 
 on:
   push:
-    paths:
-      - 'data/research.yaml'
-      - 'src/scripts/registry/**'
-      - ./.github/workflows/build_registry.yml
+    # paths:
+    #   - 'data/research.yaml'
+    #   - 'src/scripts/registry/**'
+    #   - ./.github/workflows/build_registry.yml
   workflow_dispatch:  # Allow manual triggering
   schedule:
     - cron: '0 0 * * 0'  # Run weekly on Sunday at midnight

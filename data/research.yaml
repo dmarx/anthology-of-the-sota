@@ -1533,12 +1533,14 @@
       - training-stability
       - optimization
 
-  - title: "Effective Data Mixing for Language Models"
-    arxiv_id: "2310.02263"
+  - title: "Efficient Online Data Mixing For Language Model Pre-Training"
+    arxiv_id: "2312.02406"
+    first_author: "Albalak1"
     key_takeaways:
       - Data quality assessment metrics
       - Dynamic mixing strategies
       - Quality-aware sampling
+      - "Introduces ODM: perplexity + multi-armed bandit"
     topics:
       - data-quality
       - training-efficiency

@@ -447,6 +447,7 @@
 
 2020:
   - title: "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models"
+    first_author: "Rajbhandari"
     year: 2020
     arxiv_id: 1910.02054
     key_takeaways:
@@ -459,6 +460,10 @@
       - Partition gradients and optimizer states (ZeRO-2) for larger models
       - Use ZeRO-3 only when other strategies insufficient
       - Keep micro-batch size per GPU as large as memory allows
+    topics:
+      - memory-efficiency
+      - distributed-training
+      - parallelism
 
   - title: "On Layer Normalization in the Transformer Architecture"
     arxiv_id: "2002.04745"

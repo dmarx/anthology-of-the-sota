@@ -1343,8 +1343,8 @@
       - chinchilla
       - llama2
     sota:
-      - `num_tokens ~ 20 * num_params`
-      - Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`
+      - "`num_tokens ~ 20 * num_params`"
+      - "Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`"
 
   - title: "Using DeepSpeed and Megatron to Train Megatron-Turing NLG 530B"
     arxiv_id: "2201.11990"

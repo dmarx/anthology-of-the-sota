@@ -7,174 +7,275 @@ metadata:
   - deprecated
 recommendations:
   standard:
-    training-dynamics:
-    - id: MLR-2021-Tay001-0001
-      recommendation: Warmup needed scales sub-linearly with model size
-      topic: training-dynamics
-      topic_id: training-dynamics/warmup-needed-scales-sub-linearly-with
+    memory-efficiency:
+    - id: MLR-2020-Rajbhandari001-0001
+      recommendation: Stage optimizer states across data parallel ranks (ZeRO-1)
+      topic: memory-efficiency
+      topic_id: memory-efficiency/stage-optimizer-states-across-data
       source:
-        paper: Tay et al. (2021)
-        paper_id: Tay001
-        year: 2021
-        first_author: Tay
-        arxiv_id: '2109.10686'
+        paper: Rajbhandari et al. (2020)
+        paper_id: Rajbhandari001
+        year: 2020
+        first_author: Rajbhandari
+        arxiv_id: '1910.02054'
       status: standard
       supporting_evidence: []
-      implementations:
-      - vision_transformer
-      - bert
-    - id: MLR-2021-Tay001-0002
-      recommendation: Initialize layer norm weights closer to 1 for larger models
-      topic: training-dynamics
-      topic_id: training-dynamics/initialize-layer-norm-weights-closer
+      implementations: []
+    - id: MLR-2020-Rajbhandari001-0002
+      recommendation: Partition gradients and optimizer states (ZeRO-2) for larger
+        models
+      topic: memory-efficiency
+      topic_id: memory-efficiency/partition-gradients-and-optimizer-states
       source:
-        paper: Tay et al. (2021)
-        paper_id: Tay001
-        year: 2021
-        first_author: Tay
-        arxiv_id: '2109.10686'
+        paper: Rajbhandari et al. (2020)
+        paper_id: Rajbhandari001
+        year: 2020
+        first_author: Rajbhandari
+        arxiv_id: '1910.02054'
       status: standard
       supporting_evidence: []
-      implementations:
-      - vision_transformer
-      - bert
-    - id: MLR-2021-Tay001-0003
-      recommendation: Can use shorter warmup periods for wider models
-      topic: training-dynamics
-      topic_id: training-dynamics/can-use-shorter-warmup-periods
+      implementations: []
+    - id: MLR-2020-Rajbhandari001-0003
+      recommendation: Use ZeRO-3 only when other strategies insufficient
+      topic: memory-efficiency
+      topic_id: memory-efficiency/use-zero-3-only-when-other
       source:
-        paper: Tay et al. (2021)
-        paper_id: Tay001
-        year: 2021
-        first_author: Tay
-        arxiv_id: '2109.10686'
+        paper: Rajbhandari et al. (2020)
+        paper_id: Rajbhandari001
+        year: 2020
+        first_author: Rajbhandari
+        arxiv_id: '1910.02054'
       status: standard
       supporting_evidence: []
-      implementations:
-      - vision_transformer
-      - bert
-    - id: MLR-2021-Tay001-0004
-      recommendation: Monitor loss specifically during first ~5000 steps for instabilities
-      topic: training-dynamics
-      topic_id: training-dynamics/monitor-loss-specifically-during-first
+      implementations: []
+    - id: MLR-2020-Rajbhandari001-0004
+      recommendation: Keep micro-batch size per GPU as large as memory allows
+      topic: memory-efficiency
+      topic_id: memory-efficiency/keep-micro-batch-size-per-gpu
       source:
-        paper: Tay et al. (2021)
-        paper_id: Tay001
-        year: 2021
-        first_author: Tay
-        arxiv_id: '2109.10686'
+        paper: Rajbhandari et al. (2020)
+        paper_id: Rajbhandari001
+        year: 2020
+        first_author: Rajbhandari
+        arxiv_id: '1910.02054'
       status: standard
       supporting_evidence: []
-      implementations:
-      - vision_transformer
-      - bert
-    - id: MLR-2021-Tay001-0005
-      recommendation: Use gradient clipping during early training phase
-      topic: training-dynamics
-      topic_id: training-dynamics/use-gradient-clipping-during-early
+      implementations: []
+    compilation:
+    - id: MLR-2022-Anderson001-0001
+      recommendation: Use operator fusion for small operations
+      topic: compilation
+      topic_id: compilation/use-operator-fusion-for-small
       source:
-        paper: Tay et al. (2021)
-        paper_id: Tay001
-        year: 2021
-        first_author: Tay
-        arxiv_id: '2109.10686'
+        paper: Anderson et al. (2022)
+        paper_id: Anderson001
+        year: 2022
+        first_author: Anderson
+        arxiv_id: '2201.03642'
       status: standard
       supporting_evidence: []
-      implementations:
-      - vision_transformer
-      - bert
-    - id: MLR-2023-Luo001-0001
-      recommendation: Monitor validation loss for unexpected spikes during training
-      topic: training-dynamics
-      topic_id: training-dynamics/monitor-validation-loss-for-unexpected
+      implementations: []
+    - id: MLR-2022-Anderson001-0002
+      recommendation: Optimize memory layout for hardware
+      topic: compilation
+      topic_id: compilation/optimize-memory-layout-for-hardware
       source:
-        paper: Luo et al. (2023)
-        paper_id: Luo001
+        paper: Anderson et al. (2022)
+        paper_id: Anderson001
+        year: 2022
+        first_author: Anderson
+        arxiv_id: '2201.03642'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2022-Anderson001-0003
+      recommendation: Implement custom kernels for critical ops
+      topic: compilation
+      topic_id: compilation/implement-custom-kernels-for-critical
+      source:
+        paper: Anderson et al. (2022)
+        paper_id: Anderson001
+        year: 2022
+        first_author: Anderson
+        arxiv_id: '2201.03642'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2022-Anderson001-0004
+      recommendation: Profile-guided optimization for hot paths
+      topic: compilation
+      topic_id: compilation/profile-guided-optimization-for-hot-paths
+      source:
+        paper: Anderson et al. (2022)
+        paper_id: Anderson001
+        year: 2022
+        first_author: Anderson
+        arxiv_id: '2201.03642'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    hardware-optimization:
+    - id: MLR-2022-Wang001-0001
+      recommendation: Fuse small operations into larger kernels
+      topic: hardware-optimization
+      topic_id: hardware-optimization/fuse-small-operations-into-larger
+      source:
+        paper: Wang et al. (2022)
+        paper_id: Wang001
+        year: 2022
+        first_author: Wang
+        arxiv_id: '2201.12023'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2022-Wang001-0002
+      recommendation: Align tensor dimensions to hardware boundaries
+      topic: hardware-optimization
+      topic_id: hardware-optimization/align-tensor-dimensions-to-hardware
+      source:
+        paper: Wang et al. (2022)
+        paper_id: Wang001
+        year: 2022
+        first_author: Wang
+        arxiv_id: '2201.12023'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2022-Wang001-0003
+      recommendation: Use hardware-specific memory layouts
+      topic: hardware-optimization
+      topic_id: hardware-optimization/use-hardware-specific-memory-layouts
+      source:
+        paper: Wang et al. (2022)
+        paper_id: Wang001
+        year: 2022
+        first_author: Wang
+        arxiv_id: '2201.12023'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2022-Wang001-0004
+      recommendation: Profile and optimize memory access patterns
+      topic: hardware-optimization
+      topic_id: hardware-optimization/profile-and-optimize-memory-access
+      source:
+        paper: Wang et al. (2022)
+        paper_id: Wang001
+        year: 2022
+        first_author: Wang
+        arxiv_id: '2201.12023'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    attention:
+    - id: MLR-2022-Dao002-0001
+      recommendation: Use flash attention for all attention computations when hardware
+        supports it
+      topic: attention
+      topic_id: attention/use-flash-attention-for-all
+      source:
+        paper: Dao et al. (2022)
+        paper_id: Dao002
+        year: 2022
+        first_author: Dao
+        arxiv_id: '2205.14135'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2022-Dao002-0002
+      recommendation: Tiling size should match hardware SRAM size
+      topic: attention
+      topic_id: attention/tiling-size-should-match-hardware
+      source:
+        paper: Dao et al. (2022)
+        paper_id: Dao002
+        year: 2022
+        first_author: Dao
+        arxiv_id: '2205.14135'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2022-Dao002-0003
+      recommendation: Recompute attention during backward pass instead of storing
+        it
+      topic: attention
+      topic_id: attention/recompute-attention-during-backward-pass
+      source:
+        paper: Dao et al. (2022)
+        paper_id: Dao002
+        year: 2022
+        first_author: Dao
+        arxiv_id: '2205.14135'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2023-Kwon001-0001
+      recommendation: PagedAttention to accelerate batch inference for LLM sampling
+      topic: attention
+      topic_id: attention/pagedattention-to-accelerate-batch-inference
+      source:
+        paper: Kwon et al. (2023)
+        paper_id: Kwon001
         year: 2023
-        first_author: Luo
-        arxiv_id: '2310.05492'
+        first_author: Kwon
+        arxiv_id: '2309.06180'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2023-Luo001-0002
-      recommendation: Track gradient norm statistics to detect training instabilities
-      topic: training-dynamics
-      topic_id: training-dynamics/track-gradient-norm-statistics-to
+    - id: MLR-2023-Dao003-0001
+      recommendation: Use flash-attention-2 over original flash-attention when available
+      topic: attention
+      topic_id: attention/use-flash-attention-2-over-original-flash-attention
       source:
-        paper: Luo et al. (2023)
-        paper_id: Luo001
+        paper: Dao et al. (2023)
+        paper_id: Dao003
         year: 2023
-        first_author: Luo
-        arxiv_id: '2310.05492'
+        first_author: Dao
+        arxiv_id: '2307.08691'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2023-Luo001-0003
-      recommendation: Use learning rate warmup proportional to model size
-      topic: training-dynamics
-      topic_id: training-dynamics/use-learning-rate-warmup-proportional
+    - id: MLR-2023-Dao003-0002
+      recommendation: Keep sequence lengths multiple of 128 for best performance
+      topic: attention
+      topic_id: attention/keep-sequence-lengths-multiple-of
       source:
-        paper: Luo et al. (2023)
-        paper_id: Luo001
+        paper: Dao et al. (2023)
+        paper_id: Dao003
         year: 2023
-        first_author: Luo
-        arxiv_id: '2310.05492'
+        first_author: Dao
+        arxiv_id: '2307.08691'
       status: standard
       supporting_evidence: []
       implementations: []
-    checkpointing:
-    - id: MLR-2021-Li003-0001
-      recommendation: Checkpoint frequency should increase with training time
-      topic: checkpointing
-      topic_id: checkpointing/checkpoint-frequency-should-increase-with
+    - id: MLR-2023-Dao003-0003
+      recommendation: Pad attention masks to block boundaries for better hardware
+        utilization
+      topic: attention
+      topic_id: attention/pad-attention-masks-to-block
       source:
-        paper: Li et al. (2021)
-        paper_id: Li003
-        year: 2021
-        first_author: Li
-        arxiv_id: '2111.09432'
+        paper: Dao et al. (2023)
+        paper_id: Dao003
+        year: 2023
+        first_author: Dao
+        arxiv_id: '2307.08691'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2021-Li003-0002
-      recommendation: Save optimizer state every N epochs (N ~ sqrt(total_epochs))
-      topic: checkpointing
-      topic_id: checkpointing/save-optimizer-state-every-n
+    - id: MLR-2023-Yang001-0001
+      recommendation: Prefer GQA to MQA or MHA
+      topic: attention
+      topic_id: attention/prefer-gqa-to-mqa-or
       source:
-        paper: Li et al. (2021)
-        paper_id: Li003
-        year: 2021
-        first_author: Li
-        arxiv_id: '2111.09432'
+        paper: Yang et al. (2023)
+        paper_id: Yang001
+        year: 2023
+        first_author: Yang
+        arxiv_id: '2305.13245'
       status: standard
       supporting_evidence: []
-      implementations: []
-    - id: MLR-2021-Li003-0003
-      recommendation: Use async I/O for checkpoint writing
-      topic: checkpointing
-      topic_id: checkpointing/use-async-io-for-checkpoint
-      source:
-        paper: Li et al. (2021)
-        paper_id: Li003
-        year: 2021
-        first_author: Li
-        arxiv_id: '2111.09432'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2021-Li003-0004
-      recommendation: Implement multi-level checkpoint strategy
-      topic: checkpointing
-      topic_id: checkpointing/implement-multi-level-checkpoint-strategy
-      source:
-        paper: Li et al. (2021)
-        paper_id: Li003
-        year: 2021
-        first_author: Li
-        arxiv_id: '2111.09432'
-      status: standard
-      supporting_evidence: []
-      implementations: []
+      implementations:
+      - llama2
     transformers:
     - id: MLR-2019-Dao001-0001
       recommendation: Use multi-query attention for decoder-only models to reduce
@@ -231,56 +332,108 @@ recommendations:
       status: standard
       supporting_evidence: []
       implementations: []
-    data-quality:
-    - id: MLR-2023-Albalak001-0001
-      recommendation: Use perplexity-based filtering for quality assessment
-      topic: data-quality
-      topic_id: data-quality/use-perplexity-based-filtering-for-quality
+    data-loading:
+    - id: MLR-2021-Johnson001-0001
+      recommendation: Memory-map large datasets
+      topic: data-loading
+      topic_id: data-loading/memory-map-large-datasets
       source:
-        paper: Albalak et al. (2023)
-        paper_id: Albalak001
-        year: 2023
-        first_author: Albalak
-        arxiv_id: '2312.02406'
+        paper: Johnson et al. (2021)
+        paper_id: Johnson001
+        year: 2021
+        first_author: Johnson
+        arxiv_id: '2109.03656'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2023-Albalak001-0002
-      recommendation: Implement dynamic temperature scaling for mixing
-      topic: data-quality
-      topic_id: data-quality/implement-dynamic-temperature-scaling-for
+    - id: MLR-2021-Johnson001-0002
+      recommendation: Use mixed precision during data loading
+      topic: data-loading
+      topic_id: data-loading/use-mixed-precision-during-data
       source:
-        paper: Albalak et al. (2023)
-        paper_id: Albalak001
-        year: 2023
-        first_author: Albalak
-        arxiv_id: '2312.02406'
+        paper: Johnson et al. (2021)
+        paper_id: Johnson001
+        year: 2021
+        first_author: Johnson
+        arxiv_id: '2109.03656'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2023-Albalak001-0003
-      recommendation: Adjust mixing ratios based on validation performance
-      topic: data-quality
-      topic_id: data-quality/adjust-mixing-ratios-based-on
+    - id: MLR-2021-Johnson001-0003
+      recommendation: Pin memory for CPU-GPU transfers
+      topic: data-loading
+      topic_id: data-loading/pin-memory-for-cpu-gpu-transfers
       source:
-        paper: Albalak et al. (2023)
-        paper_id: Albalak001
-        year: 2023
-        first_author: Albalak
-        arxiv_id: '2312.02406'
+        paper: Johnson et al. (2021)
+        paper_id: Johnson001
+        year: 2021
+        first_author: Johnson
+        arxiv_id: '2109.03656'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2023-Albalak001-0004
-      recommendation: Monitor domain coverage during training
-      topic: data-quality
-      topic_id: data-quality/monitor-domain-coverage-during-training
+    - id: MLR-2021-Johnson001-0004
+      recommendation: Profile data loading separate from training
+      topic: data-loading
+      topic_id: data-loading/profile-data-loading-separate-from
       source:
-        paper: Albalak et al. (2023)
-        paper_id: Albalak001
-        year: 2023
-        first_author: Albalak
-        arxiv_id: '2312.02406'
+        paper: Johnson et al. (2021)
+        paper_id: Johnson001
+        year: 2021
+        first_author: Johnson
+        arxiv_id: '2109.03656'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2021-Amodei001-0001
+      recommendation: Use tar archives for dataset storage
+      topic: data-loading
+      topic_id: data-loading/use-tar-archives-for-dataset
+      source:
+        paper: Amodei et al. (2021)
+        paper_id: Amodei001
+        year: 2021
+        first_author: Amodei
+        arxiv_id: '2110.01804'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2021-Amodei001-0002
+      recommendation: Buffer size should be 2-3x batch size
+      topic: data-loading
+      topic_id: data-loading/buffer-size-should-be-2-3x
+      source:
+        paper: Amodei et al. (2021)
+        paper_id: Amodei001
+        year: 2021
+        first_author: Amodei
+        arxiv_id: '2110.01804'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2021-Amodei001-0003
+      recommendation: Pre-fetch next batch during compute
+      topic: data-loading
+      topic_id: data-loading/pre-fetch-next-batch-during-compute
+      source:
+        paper: Amodei et al. (2021)
+        paper_id: Amodei001
+        year: 2021
+        first_author: Amodei
+        arxiv_id: '2110.01804'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2021-Amodei001-0004
+      recommendation: Use multiple worker processes (num_workers = 4 * num_gpus)
+      topic: data-loading
+      topic_id: data-loading/use-multiple-worker-processes-numworkers
+      source:
+        paper: Amodei et al. (2021)
+        paper_id: Amodei001
+        year: 2021
+        first_author: Amodei
+        arxiv_id: '2110.01804'
       status: standard
       supporting_evidence: []
       implementations: []
@@ -410,56 +563,85 @@ recommendations:
       supporting_evidence: []
       implementations:
       - PaLM
-    hardware-optimization:
-    - id: MLR-2022-Wang001-0001
-      recommendation: Fuse small operations into larger kernels
-      topic: hardware-optimization
-      topic_id: hardware-optimization/fuse-small-operations-into-larger
+    MoE:
+    - id: MLR-2021-Fedus001-0001
+      recommendation: Use largest batch that maintains >80% sample efficiency
+      topic: MoE
+      topic_id: moe/use-largest-batch-that-maintains
       source:
-        paper: Wang et al. (2022)
-        paper_id: Wang001
-        year: 2022
-        first_author: Wang
-        arxiv_id: '2201.12023'
+        paper: Fedus et al. (2021)
+        paper_id: Fedus001
+        year: 2021
+        first_author: Fedus
+        arxiv_id: '2112.10684'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2022-Wang001-0002
-      recommendation: Align tensor dimensions to hardware boundaries
-      topic: hardware-optimization
-      topic_id: hardware-optimization/align-tensor-dimensions-to-hardware
+    - id: MLR-2021-Fedus001-0002
+      recommendation: Scale batch size with model size but sub-linearly
+      topic: MoE
+      topic_id: moe/scale-batch-size-with-model
       source:
-        paper: Wang et al. (2022)
-        paper_id: Wang001
-        year: 2022
-        first_author: Wang
-        arxiv_id: '2201.12023'
+        paper: Fedus et al. (2021)
+        paper_id: Fedus001
+        year: 2021
+        first_author: Fedus
+        arxiv_id: '2112.10684'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2022-Wang001-0003
-      recommendation: Use hardware-specific memory layouts
-      topic: hardware-optimization
-      topic_id: hardware-optimization/use-hardware-specific-memory-layouts
+    large-batch-training:
+    - id: MLR-2017-You001-0001
+      recommendation: linear warmup of LR stabilizes early training with large batch
+        size.
+      topic: large-batch-training
+      topic_id: large-batch-training/linear-warmup-of-lr-stabilizes
       source:
-        paper: Wang et al. (2022)
-        paper_id: Wang001
-        year: 2022
-        first_author: Wang
-        arxiv_id: '2201.12023'
+        paper: You et al. (2017)
+        paper_id: You001
+        year: 2017
+        first_author: You
+        arxiv_id: '1708.03888'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2022-Wang001-0004
-      recommendation: Profile and optimize memory access patterns
-      topic: hardware-optimization
-      topic_id: hardware-optimization/profile-and-optimize-memory-access
+    attention-alternatives:
+    - id: MLR-2023-Bhardwaj001-0001
+      recommendation: Consider for very long sequence tasks
+      topic: attention-alternatives
+      topic_id: attention-alternatives/consider-for-very-long-sequence
       source:
-        paper: Wang et al. (2022)
-        paper_id: Wang001
-        year: 2022
-        first_author: Wang
-        arxiv_id: '2201.12023'
+        paper: Bhardwaj et al. (2023)
+        paper_id: Bhardwaj001
+        year: 2023
+        first_author: Bhardwaj
+        arxiv_id: '2310.12109'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2023-Bhardwaj001-0002
+      recommendation: Use for tasks where attention bottlenecks training
+      topic: attention-alternatives
+      topic_id: attention-alternatives/use-for-tasks-where-attention
+      source:
+        paper: Bhardwaj et al. (2023)
+        paper_id: Bhardwaj001
+        year: 2023
+        first_author: Bhardwaj
+        arxiv_id: '2310.12109'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2023-Bhardwaj001-0003
+      recommendation: Combine with standard attention for hybrid approaches
+      topic: attention-alternatives
+      topic_id: attention-alternatives/combine-with-standard-attention-for
+      source:
+        paper: Bhardwaj et al. (2023)
+        paper_id: Bhardwaj001
+        year: 2023
+        first_author: Bhardwaj
+        arxiv_id: '2310.12109'
       status: standard
       supporting_evidence: []
       implementations: []
@@ -530,223 +712,6 @@ recommendations:
       status: standard
       supporting_evidence: []
       implementations: []
-    memory-efficiency:
-    - id: MLR-2020-Rajbhandari001-0001
-      recommendation: Stage optimizer states across data parallel ranks (ZeRO-1)
-      topic: memory-efficiency
-      topic_id: memory-efficiency/stage-optimizer-states-across-data
-      source:
-        paper: Rajbhandari et al. (2020)
-        paper_id: Rajbhandari001
-        year: 2020
-        first_author: Rajbhandari
-        arxiv_id: '1910.02054'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2020-Rajbhandari001-0002
-      recommendation: Partition gradients and optimizer states (ZeRO-2) for larger
-        models
-      topic: memory-efficiency
-      topic_id: memory-efficiency/partition-gradients-and-optimizer-states
-      source:
-        paper: Rajbhandari et al. (2020)
-        paper_id: Rajbhandari001
-        year: 2020
-        first_author: Rajbhandari
-        arxiv_id: '1910.02054'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2020-Rajbhandari001-0003
-      recommendation: Use ZeRO-3 only when other strategies insufficient
-      topic: memory-efficiency
-      topic_id: memory-efficiency/use-zero-3-only-when-other
-      source:
-        paper: Rajbhandari et al. (2020)
-        paper_id: Rajbhandari001
-        year: 2020
-        first_author: Rajbhandari
-        arxiv_id: '1910.02054'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2020-Rajbhandari001-0004
-      recommendation: Keep micro-batch size per GPU as large as memory allows
-      topic: memory-efficiency
-      topic_id: memory-efficiency/keep-micro-batch-size-per-gpu
-      source:
-        paper: Rajbhandari et al. (2020)
-        paper_id: Rajbhandari001
-        year: 2020
-        first_author: Rajbhandari
-        arxiv_id: '1910.02054'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    attention:
-    - id: MLR-2022-Dao002-0001
-      recommendation: Use flash attention for all attention computations when hardware
-        supports it
-      topic: attention
-      topic_id: attention/use-flash-attention-for-all
-      source:
-        paper: Dao et al. (2022)
-        paper_id: Dao002
-        year: 2022
-        first_author: Dao
-        arxiv_id: '2205.14135'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2022-Dao002-0002
-      recommendation: Tiling size should match hardware SRAM size
-      topic: attention
-      topic_id: attention/tiling-size-should-match-hardware
-      source:
-        paper: Dao et al. (2022)
-        paper_id: Dao002
-        year: 2022
-        first_author: Dao
-        arxiv_id: '2205.14135'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2022-Dao002-0003
-      recommendation: Recompute attention during backward pass instead of storing
-        it
-      topic: attention
-      topic_id: attention/recompute-attention-during-backward-pass
-      source:
-        paper: Dao et al. (2022)
-        paper_id: Dao002
-        year: 2022
-        first_author: Dao
-        arxiv_id: '2205.14135'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2023-Kwon001-0001
-      recommendation: PagedAttention to accelerate batch inference for LLM sampling
-      topic: attention
-      topic_id: attention/pagedattention-to-accelerate-batch-inference
-      source:
-        paper: Kwon et al. (2023)
-        paper_id: Kwon001
-        year: 2023
-        first_author: Kwon
-        arxiv_id: '2309.06180'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2023-Dao003-0001
-      recommendation: Use flash-attention-2 over original flash-attention when available
-      topic: attention
-      topic_id: attention/use-flash-attention-2-over-original-flash-attention
-      source:
-        paper: Dao et al. (2023)
-        paper_id: Dao003
-        year: 2023
-        first_author: Dao
-        arxiv_id: '2307.08691'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2023-Dao003-0002
-      recommendation: Keep sequence lengths multiple of 128 for best performance
-      topic: attention
-      topic_id: attention/keep-sequence-lengths-multiple-of
-      source:
-        paper: Dao et al. (2023)
-        paper_id: Dao003
-        year: 2023
-        first_author: Dao
-        arxiv_id: '2307.08691'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2023-Dao003-0003
-      recommendation: Pad attention masks to block boundaries for better hardware
-        utilization
-      topic: attention
-      topic_id: attention/pad-attention-masks-to-block
-      source:
-        paper: Dao et al. (2023)
-        paper_id: Dao003
-        year: 2023
-        first_author: Dao
-        arxiv_id: '2307.08691'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2023-Yang001-0001
-      recommendation: Prefer GQA to MQA or MHA
-      topic: attention
-      topic_id: attention/prefer-gqa-to-mqa-or
-      source:
-        paper: Yang et al. (2023)
-        paper_id: Yang001
-        year: 2023
-        first_author: Yang
-        arxiv_id: '2305.13245'
-      status: standard
-      supporting_evidence: []
-      implementations:
-      - llama2
-    training-efficiency:
-    - id: MLR-2017-Micikevicius001-0001
-      recommendation: Use dynamic loss scaling that doubles every 2000 successful
-        steps
-      topic: training-efficiency
-      topic_id: training-efficiency/use-dynamic-loss-scaling-that
-      source:
-        paper: Micikevicius et al. (2017)
-        paper_id: Micikevicius001
-        year: 2017
-        first_author: Micikevicius
-        arxiv_id: '1710.03740'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2017-Micikevicius001-0002
-      recommendation: Maintain master weights in FP32
-      topic: training-efficiency
-      topic_id: training-efficiency/maintain-master-weights-in-fp32
-      source:
-        paper: Micikevicius et al. (2017)
-        paper_id: Micikevicius001
-        year: 2017
-        first_author: Micikevicius
-        arxiv_id: '1710.03740'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2017-Micikevicius001-0003
-      recommendation: Store optimizer states in FP32
-      topic: training-efficiency
-      topic_id: training-efficiency/store-optimizer-states-in-fp32
-      source:
-        paper: Micikevicius et al. (2017)
-        paper_id: Micikevicius001
-        year: 2017
-        first_author: Micikevicius
-        arxiv_id: '1710.03740'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2017-Micikevicius001-0004
-      recommendation: Perform forward/backward passes in FP16
-      topic: training-efficiency
-      topic_id: training-efficiency/perform-forwardbackward-passes-in-fp16
-      source:
-        paper: Micikevicius et al. (2017)
-        paper_id: Micikevicius001
-        year: 2017
-        first_author: Micikevicius
-        arxiv_id: '1710.03740'
-      status: standard
-      supporting_evidence: []
-      implementations: []
     nlp:
     - id: MLR-2015-Sennrich001-0001
       recommendation: BPE tokenization for open vocabulary tasks
@@ -762,196 +727,171 @@ recommendations:
       supporting_evidence: []
       implementations:
       - llama2
-    MoE:
-    - id: MLR-2021-Fedus001-0001
-      recommendation: Use largest batch that maintains >80% sample efficiency
-      topic: MoE
-      topic_id: moe/use-largest-batch-that-maintains
+    checkpointing:
+    - id: MLR-2021-Li003-0001
+      recommendation: Checkpoint frequency should increase with training time
+      topic: checkpointing
+      topic_id: checkpointing/checkpoint-frequency-should-increase-with
       source:
-        paper: Fedus et al. (2021)
-        paper_id: Fedus001
+        paper: Li et al. (2021)
+        paper_id: Li003
         year: 2021
-        first_author: Fedus
-        arxiv_id: '2112.10684'
+        first_author: Li
+        arxiv_id: '2111.09432'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2021-Fedus001-0002
-      recommendation: Scale batch size with model size but sub-linearly
-      topic: MoE
-      topic_id: moe/scale-batch-size-with-model
+    - id: MLR-2021-Li003-0002
+      recommendation: Save optimizer state every N epochs (N ~ sqrt(total_epochs))
+      topic: checkpointing
+      topic_id: checkpointing/save-optimizer-state-every-n
       source:
-        paper: Fedus et al. (2021)
-        paper_id: Fedus001
+        paper: Li et al. (2021)
+        paper_id: Li003
         year: 2021
-        first_author: Fedus
-        arxiv_id: '2112.10684'
+        first_author: Li
+        arxiv_id: '2111.09432'
       status: standard
       supporting_evidence: []
       implementations: []
-    scaling-laws:
-    - id: MLR-2020-Kaplan001-0001
-      recommendation: larger models are more sample efficient
-      topic: scaling-laws
-      topic_id: scaling-laws/larger-models-are-more-sample
+    - id: MLR-2021-Li003-0003
+      recommendation: Use async I/O for checkpoint writing
+      topic: checkpointing
+      topic_id: checkpointing/use-async-io-for-checkpoint
       source:
-        paper: Kaplan et al. (2020)
-        paper_id: Kaplan001
-        year: 2020
-        first_author: Kaplan
-        arxiv_id: '2001.08361'
+        paper: Li et al. (2021)
+        paper_id: Li003
+        year: 2021
+        first_author: Li
+        arxiv_id: '2111.09432'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2020-Kaplan001-0002
-      recommendation: lr tuning less important for larger models
-      topic: scaling-laws
-      topic_id: scaling-laws/lr-tuning-less-important-for
+    - id: MLR-2021-Li003-0004
+      recommendation: Implement multi-level checkpoint strategy
+      topic: checkpointing
+      topic_id: checkpointing/implement-multi-level-checkpoint-strategy
       source:
-        paper: Kaplan et al. (2020)
-        paper_id: Kaplan001
-        year: 2020
-        first_author: Kaplan
-        arxiv_id: '2001.08361'
+        paper: Li et al. (2021)
+        paper_id: Li003
+        year: 2021
+        first_author: Li
+        arxiv_id: '2111.09432'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2022-Hoffmann001-0001
-      recommendation: '`num_tokens ~ 20 * num_params`'
-      topic: scaling-laws
-      topic_id: scaling-laws/numtokens--20--numparams
+    training-dynamics:
+    - id: MLR-2021-Tay001-0001
+      recommendation: Warmup needed scales sub-linearly with model size
+      topic: training-dynamics
+      topic_id: training-dynamics/warmup-needed-scales-sub-linearly-with
       source:
-        paper: Hoffmann et al. (2022)
-        paper_id: Hoffmann001
-        year: 2022
-        first_author: Hoffmann
-        arxiv_id: '2203.15556'
+        paper: Tay et al. (2021)
+        paper_id: Tay001
+        year: 2021
+        first_author: Tay
+        arxiv_id: '2109.10686'
       status: standard
       supporting_evidence: []
       implementations:
-      - chinchilla
-      - llama2
-    - id: MLR-2022-Hoffmann001-0002
-      recommendation: Optimal batch size scales approximately with compute budget
-        - `B ∝ C^(1/4)`
-      topic: scaling-laws
-      topic_id: scaling-laws/optimal-batch-size-scales-approximately
+      - vision_transformer
+      - bert
+    - id: MLR-2021-Tay001-0002
+      recommendation: Initialize layer norm weights closer to 1 for larger models
+      topic: training-dynamics
+      topic_id: training-dynamics/initialize-layer-norm-weights-closer
       source:
-        paper: Hoffmann et al. (2022)
-        paper_id: Hoffmann001
-        year: 2022
-        first_author: Hoffmann
-        arxiv_id: '2203.15556'
+        paper: Tay et al. (2021)
+        paper_id: Tay001
+        year: 2021
+        first_author: Tay
+        arxiv_id: '2109.10686'
       status: standard
       supporting_evidence: []
       implementations:
-      - chinchilla
-      - llama2
-    optimization:
-    - id: MLR-2014-Kingma001-0001
-      recommendation: Default choice for neural network training
-      topic: optimization
-      topic_id: optimization/default-choice-for-neural-network
+      - vision_transformer
+      - bert
+    - id: MLR-2021-Tay001-0003
+      recommendation: Can use shorter warmup periods for wider models
+      topic: training-dynamics
+      topic_id: training-dynamics/can-use-shorter-warmup-periods
       source:
-        paper: Kingma et al. (2014)
-        paper_id: Kingma001
-        year: 2014
-        first_author: Kingma
-        arxiv_id: '1412.6980'
+        paper: Tay et al. (2021)
+        paper_id: Tay001
+        year: 2021
+        first_author: Tay
+        arxiv_id: '2109.10686'
+      status: standard
+      supporting_evidence: []
+      implementations:
+      - vision_transformer
+      - bert
+    - id: MLR-2021-Tay001-0004
+      recommendation: Monitor loss specifically during first ~5000 steps for instabilities
+      topic: training-dynamics
+      topic_id: training-dynamics/monitor-loss-specifically-during-first
+      source:
+        paper: Tay et al. (2021)
+        paper_id: Tay001
+        year: 2021
+        first_author: Tay
+        arxiv_id: '2109.10686'
+      status: standard
+      supporting_evidence: []
+      implementations:
+      - vision_transformer
+      - bert
+    - id: MLR-2021-Tay001-0005
+      recommendation: Use gradient clipping during early training phase
+      topic: training-dynamics
+      topic_id: training-dynamics/use-gradient-clipping-during-early
+      source:
+        paper: Tay et al. (2021)
+        paper_id: Tay001
+        year: 2021
+        first_author: Tay
+        arxiv_id: '2109.10686'
+      status: standard
+      supporting_evidence: []
+      implementations:
+      - vision_transformer
+      - bert
+    - id: MLR-2023-Luo001-0001
+      recommendation: Monitor validation loss for unexpected spikes during training
+      topic: training-dynamics
+      topic_id: training-dynamics/monitor-validation-loss-for-unexpected
+      source:
+        paper: Luo et al. (2023)
+        paper_id: Luo001
+        year: 2023
+        first_author: Luo
+        arxiv_id: '2310.05492'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2014-Kingma001-0002
-      recommendation: 'Common hyperparameters: β₁=0.9, β₂=0.999, ε=1e-8'
-      topic: optimization
-      topic_id: optimization/common-hyperparameters-09-0999-1e-8
+    - id: MLR-2023-Luo001-0002
+      recommendation: Track gradient norm statistics to detect training instabilities
+      topic: training-dynamics
+      topic_id: training-dynamics/track-gradient-norm-statistics-to
       source:
-        paper: Kingma et al. (2014)
-        paper_id: Kingma001
-        year: 2014
-        first_author: Kingma
-        arxiv_id: '1412.6980'
+        paper: Luo et al. (2023)
+        paper_id: Luo001
+        year: 2023
+        first_author: Luo
+        arxiv_id: '2310.05492'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2014-Kingma001-0003
-      recommendation: Learning rate typically 1e-4 to 1e-3 for most tasks
-      topic: optimization
-      topic_id: optimization/learning-rate-typically-1e-4-to
+    - id: MLR-2023-Luo001-0003
+      recommendation: Use learning rate warmup proportional to model size
+      topic: training-dynamics
+      topic_id: training-dynamics/use-learning-rate-warmup-proportional
       source:
-        paper: Kingma et al. (2014)
-        paper_id: Kingma001
-        year: 2014
-        first_author: Kingma
-        arxiv_id: '1412.6980'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2017-Smith001-0001
-      recommendation: warmup to a large early lr, anneal throughout training to small
-        final lr
-      topic: optimization
-      topic_id: optimization/warmup-to-a-large-early
-      source:
-        paper: Smith et al. (2017)
-        paper_id: Smith001
-        year: 2017
-        first_author: Smith
-        arxiv_id: '1708.07120'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2017-Li001-0001
-      recommendation: skip connections promote training stability by smoothing out
-        the loss landscape
-      topic: optimization
-      topic_id: optimization/skip-connections-promote-training-stability
-      source:
-        paper: Li et al. (2017)
-        paper_id: Li001
-        year: 2017
-        first_author: Li
-        arxiv_id: '1712.09913'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2017-Li001-0002
-      recommendation: visualizing eigenvalues of hessian (ratio of largest to smallest)
-        over training can be useful diagnostics
-      topic: optimization
-      topic_id: optimization/visualizing-eigenvalues-of-hessian-ratio
-      source:
-        paper: Li et al. (2017)
-        paper_id: Li001
-        year: 2017
-        first_author: Li
-        arxiv_id: '1712.09913'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2017-Li001-0003
-      recommendation: sharpness in loss landscape corerlates with test error
-      topic: optimization
-      topic_id: optimization/sharpness-in-loss-landscape-corerlates
-      source:
-        paper: Li et al. (2017)
-        paper_id: Li001
-        year: 2017
-        first_author: Li
-        arxiv_id: '1712.09913'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2020-Li002-0001
-      recommendation: use gradient clipping
-      topic: optimization
-      topic_id: optimization/use-gradient-clipping
-      source:
-        paper: Li et al. (2020)
-        paper_id: Li002
-        year: 2020
-        first_author: Li
-        arxiv_id: '2007.05019'
+        paper: Luo et al. (2023)
+        paper_id: Luo001
+        year: 2023
+        first_author: Luo
+        arxiv_id: '2310.05492'
       status: standard
       supporting_evidence: []
       implementations: []
@@ -1190,6 +1130,166 @@ recommendations:
       status: standard
       supporting_evidence: []
       implementations: []
+    data-quality:
+    - id: MLR-2023-Albalak001-0001
+      recommendation: Use perplexity-based filtering for quality assessment
+      topic: data-quality
+      topic_id: data-quality/use-perplexity-based-filtering-for-quality
+      source:
+        paper: Albalak et al. (2023)
+        paper_id: Albalak001
+        year: 2023
+        first_author: Albalak
+        arxiv_id: '2312.02406'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2023-Albalak001-0002
+      recommendation: Implement dynamic temperature scaling for mixing
+      topic: data-quality
+      topic_id: data-quality/implement-dynamic-temperature-scaling-for
+      source:
+        paper: Albalak et al. (2023)
+        paper_id: Albalak001
+        year: 2023
+        first_author: Albalak
+        arxiv_id: '2312.02406'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2023-Albalak001-0003
+      recommendation: Adjust mixing ratios based on validation performance
+      topic: data-quality
+      topic_id: data-quality/adjust-mixing-ratios-based-on
+      source:
+        paper: Albalak et al. (2023)
+        paper_id: Albalak001
+        year: 2023
+        first_author: Albalak
+        arxiv_id: '2312.02406'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2023-Albalak001-0004
+      recommendation: Monitor domain coverage during training
+      topic: data-quality
+      topic_id: data-quality/monitor-domain-coverage-during-training
+      source:
+        paper: Albalak et al. (2023)
+        paper_id: Albalak001
+        year: 2023
+        first_author: Albalak
+        arxiv_id: '2312.02406'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    initialization:
+    - id: MLR-2021-Kumar001-0001
+      recommendation: Scale attention weights by 1/sqrt(head_dim)
+      topic: initialization
+      topic_id: initialization/scale-attention-weights-by-1sqrtheaddim
+      source:
+        paper: Kumar et al. (2021)
+        paper_id: Kumar001
+        year: 2021
+        first_author: Kumar
+        arxiv_id: '2108.09001'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2021-Kumar001-0002
+      recommendation: Initialize final layer weights near zero
+      topic: initialization
+      topic_id: initialization/initialize-final-layer-weights-near
+      source:
+        paper: Kumar et al. (2021)
+        paper_id: Kumar001
+        year: 2021
+        first_author: Kumar
+        arxiv_id: '2108.09001'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2021-Kumar001-0003
+      recommendation: Use smaller variance for deep networks
+      topic: initialization
+      topic_id: initialization/use-smaller-variance-for-deep
+      source:
+        paper: Kumar et al. (2021)
+        paper_id: Kumar001
+        year: 2021
+        first_author: Kumar
+        arxiv_id: '2108.09001'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2021-Kumar001-0004
+      recommendation: Special handling for gated architectures
+      topic: initialization
+      topic_id: initialization/special-handling-for-gated-architectures
+      source:
+        paper: Kumar et al. (2021)
+        paper_id: Kumar001
+        year: 2021
+        first_author: Kumar
+        arxiv_id: '2108.09001'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    training-efficiency:
+    - id: MLR-2017-Micikevicius001-0001
+      recommendation: Use dynamic loss scaling that doubles every 2000 successful
+        steps
+      topic: training-efficiency
+      topic_id: training-efficiency/use-dynamic-loss-scaling-that
+      source:
+        paper: Micikevicius et al. (2017)
+        paper_id: Micikevicius001
+        year: 2017
+        first_author: Micikevicius
+        arxiv_id: '1710.03740'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2017-Micikevicius001-0002
+      recommendation: Maintain master weights in FP32
+      topic: training-efficiency
+      topic_id: training-efficiency/maintain-master-weights-in-fp32
+      source:
+        paper: Micikevicius et al. (2017)
+        paper_id: Micikevicius001
+        year: 2017
+        first_author: Micikevicius
+        arxiv_id: '1710.03740'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2017-Micikevicius001-0003
+      recommendation: Store optimizer states in FP32
+      topic: training-efficiency
+      topic_id: training-efficiency/store-optimizer-states-in-fp32
+      source:
+        paper: Micikevicius et al. (2017)
+        paper_id: Micikevicius001
+        year: 2017
+        first_author: Micikevicius
+        arxiv_id: '1710.03740'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2017-Micikevicius001-0004
+      recommendation: Perform forward/backward passes in FP16
+      topic: training-efficiency
+      topic_id: training-efficiency/perform-forwardbackward-passes-in-fp16
+      source:
+        paper: Micikevicius et al. (2017)
+        paper_id: Micikevicius001
+        year: 2017
+        first_author: Micikevicius
+        arxiv_id: '1710.03740'
+      status: standard
+      supporting_evidence: []
+      implementations: []
     normalization:
     - id: MLR-2015-Ioffe001-0001
       recommendation: Place BatchNorm after linear/conv layers but before activation
@@ -1309,58 +1409,169 @@ recommendations:
       status: standard
       supporting_evidence: []
       implementations: []
-    attention-alternatives:
-    - id: MLR-2023-Bhardwaj001-0001
-      recommendation: Consider for very long sequence tasks
-      topic: attention-alternatives
-      topic_id: attention-alternatives/consider-for-very-long-sequence
+    scaling-laws:
+    - id: MLR-2020-Kaplan001-0001
+      recommendation: larger models are more sample efficient
+      topic: scaling-laws
+      topic_id: scaling-laws/larger-models-are-more-sample
       source:
-        paper: Bhardwaj et al. (2023)
-        paper_id: Bhardwaj001
-        year: 2023
-        first_author: Bhardwaj
-        arxiv_id: '2310.12109'
+        paper: Kaplan et al. (2020)
+        paper_id: Kaplan001
+        year: 2020
+        first_author: Kaplan
+        arxiv_id: '2001.08361'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2023-Bhardwaj001-0002
-      recommendation: Use for tasks where attention bottlenecks training
-      topic: attention-alternatives
-      topic_id: attention-alternatives/use-for-tasks-where-attention
+    - id: MLR-2020-Kaplan001-0002
+      recommendation: lr tuning less important for larger models
+      topic: scaling-laws
+      topic_id: scaling-laws/lr-tuning-less-important-for
       source:
-        paper: Bhardwaj et al. (2023)
-        paper_id: Bhardwaj001
-        year: 2023
-        first_author: Bhardwaj
-        arxiv_id: '2310.12109'
+        paper: Kaplan et al. (2020)
+        paper_id: Kaplan001
+        year: 2020
+        first_author: Kaplan
+        arxiv_id: '2001.08361'
       status: standard
       supporting_evidence: []
       implementations: []
-    - id: MLR-2023-Bhardwaj001-0003
-      recommendation: Combine with standard attention for hybrid approaches
-      topic: attention-alternatives
-      topic_id: attention-alternatives/combine-with-standard-attention-for
+    - id: MLR-2022-Hoffmann001-0001
+      recommendation: '`num_tokens ~ 20 * num_params`'
+      topic: scaling-laws
+      topic_id: scaling-laws/numtokens--20--numparams
       source:
-        paper: Bhardwaj et al. (2023)
-        paper_id: Bhardwaj001
-        year: 2023
-        first_author: Bhardwaj
-        arxiv_id: '2310.12109'
+        paper: Hoffmann et al. (2022)
+        paper_id: Hoffmann001
+        year: 2022
+        first_author: Hoffmann
+        arxiv_id: '2203.15556'
+      status: standard
+      supporting_evidence: []
+      implementations:
+      - chinchilla
+      - llama2
+    - id: MLR-2022-Hoffmann001-0002
+      recommendation: Optimal batch size scales approximately with compute budget
+        - `B ∝ C^(1/4)`
+      topic: scaling-laws
+      topic_id: scaling-laws/optimal-batch-size-scales-approximately
+      source:
+        paper: Hoffmann et al. (2022)
+        paper_id: Hoffmann001
+        year: 2022
+        first_author: Hoffmann
+        arxiv_id: '2203.15556'
+      status: standard
+      supporting_evidence: []
+      implementations:
+      - chinchilla
+      - llama2
+    optimization:
+    - id: MLR-2014-Kingma001-0001
+      recommendation: Default choice for neural network training
+      topic: optimization
+      topic_id: optimization/default-choice-for-neural-network
+      source:
+        paper: Kingma et al. (2014)
+        paper_id: Kingma001
+        year: 2014
+        first_author: Kingma
+        arxiv_id: '1412.6980'
       status: standard
       supporting_evidence: []
       implementations: []
-    large-batch-training:
-    - id: MLR-2017-You001-0001
-      recommendation: linear warmup of LR stabilizes early training with large batch
-        size.
-      topic: large-batch-training
-      topic_id: large-batch-training/linear-warmup-of-lr-stabilizes
+    - id: MLR-2014-Kingma001-0002
+      recommendation: 'Common hyperparameters: β₁=0.9, β₂=0.999, ε=1e-8'
+      topic: optimization
+      topic_id: optimization/common-hyperparameters-09-0999-1e-8
       source:
-        paper: You et al. (2017)
-        paper_id: You001
+        paper: Kingma et al. (2014)
+        paper_id: Kingma001
+        year: 2014
+        first_author: Kingma
+        arxiv_id: '1412.6980'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2014-Kingma001-0003
+      recommendation: Learning rate typically 1e-4 to 1e-3 for most tasks
+      topic: optimization
+      topic_id: optimization/learning-rate-typically-1e-4-to
+      source:
+        paper: Kingma et al. (2014)
+        paper_id: Kingma001
+        year: 2014
+        first_author: Kingma
+        arxiv_id: '1412.6980'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2017-Smith001-0001
+      recommendation: warmup to a large early lr, anneal throughout training to small
+        final lr
+      topic: optimization
+      topic_id: optimization/warmup-to-a-large-early
+      source:
+        paper: Smith et al. (2017)
+        paper_id: Smith001
         year: 2017
-        first_author: You
-        arxiv_id: '1708.03888'
+        first_author: Smith
+        arxiv_id: '1708.07120'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2017-Li001-0001
+      recommendation: skip connections promote training stability by smoothing out
+        the loss landscape
+      topic: optimization
+      topic_id: optimization/skip-connections-promote-training-stability
+      source:
+        paper: Li et al. (2017)
+        paper_id: Li001
+        year: 2017
+        first_author: Li
+        arxiv_id: '1712.09913'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2017-Li001-0002
+      recommendation: visualizing eigenvalues of hessian (ratio of largest to smallest)
+        over training can be useful diagnostics
+      topic: optimization
+      topic_id: optimization/visualizing-eigenvalues-of-hessian-ratio
+      source:
+        paper: Li et al. (2017)
+        paper_id: Li001
+        year: 2017
+        first_author: Li
+        arxiv_id: '1712.09913'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2017-Li001-0003
+      recommendation: sharpness in loss landscape corerlates with test error
+      topic: optimization
+      topic_id: optimization/sharpness-in-loss-landscape-corerlates
+      source:
+        paper: Li et al. (2017)
+        paper_id: Li001
+        year: 2017
+        first_author: Li
+        arxiv_id: '1712.09913'
+      status: standard
+      supporting_evidence: []
+      implementations: []
+    - id: MLR-2020-Li002-0001
+      recommendation: use gradient clipping
+      topic: optimization
+      topic_id: optimization/use-gradient-clipping
+      source:
+        paper: Li et al. (2020)
+        paper_id: Li002
+        year: 2020
+        first_author: Li
+        arxiv_id: '2007.05019'
       status: standard
       supporting_evidence: []
       implementations: []
@@ -1404,264 +1615,26 @@ recommendations:
       status: standard
       supporting_evidence: []
       implementations: []
-    initialization:
-    - id: MLR-2021-Kumar001-0001
-      recommendation: Scale attention weights by 1/sqrt(head_dim)
-      topic: initialization
-      topic_id: initialization/scale-attention-weights-by-1sqrtheaddim
-      source:
-        paper: Kumar et al. (2021)
-        paper_id: Kumar001
-        year: 2021
-        first_author: Kumar
-        arxiv_id: '2108.09001'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2021-Kumar001-0002
-      recommendation: Initialize final layer weights near zero
-      topic: initialization
-      topic_id: initialization/initialize-final-layer-weights-near
-      source:
-        paper: Kumar et al. (2021)
-        paper_id: Kumar001
-        year: 2021
-        first_author: Kumar
-        arxiv_id: '2108.09001'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2021-Kumar001-0003
-      recommendation: Use smaller variance for deep networks
-      topic: initialization
-      topic_id: initialization/use-smaller-variance-for-deep
-      source:
-        paper: Kumar et al. (2021)
-        paper_id: Kumar001
-        year: 2021
-        first_author: Kumar
-        arxiv_id: '2108.09001'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2021-Kumar001-0004
-      recommendation: Special handling for gated architectures
-      topic: initialization
-      topic_id: initialization/special-handling-for-gated-architectures
-      source:
-        paper: Kumar et al. (2021)
-        paper_id: Kumar001
-        year: 2021
-        first_author: Kumar
-        arxiv_id: '2108.09001'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    data-loading:
-    - id: MLR-2021-Johnson001-0001
-      recommendation: Memory-map large datasets
-      topic: data-loading
-      topic_id: data-loading/memory-map-large-datasets
-      source:
-        paper: Johnson et al. (2021)
-        paper_id: Johnson001
-        year: 2021
-        first_author: Johnson
-        arxiv_id: '2109.03656'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2021-Johnson001-0002
-      recommendation: Use mixed precision during data loading
-      topic: data-loading
-      topic_id: data-loading/use-mixed-precision-during-data
-      source:
-        paper: Johnson et al. (2021)
-        paper_id: Johnson001
-        year: 2021
-        first_author: Johnson
-        arxiv_id: '2109.03656'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2021-Johnson001-0003
-      recommendation: Pin memory for CPU-GPU transfers
-      topic: data-loading
-      topic_id: data-loading/pin-memory-for-cpu-gpu-transfers
-      source:
-        paper: Johnson et al. (2021)
-        paper_id: Johnson001
-        year: 2021
-        first_author: Johnson
-        arxiv_id: '2109.03656'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2021-Johnson001-0004
-      recommendation: Profile data loading separate from training
-      topic: data-loading
-      topic_id: data-loading/profile-data-loading-separate-from
-      source:
-        paper: Johnson et al. (2021)
-        paper_id: Johnson001
-        year: 2021
-        first_author: Johnson
-        arxiv_id: '2109.03656'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2021-Amodei001-0001
-      recommendation: Use tar archives for dataset storage
-      topic: data-loading
-      topic_id: data-loading/use-tar-archives-for-dataset
-      source:
-        paper: Amodei et al. (2021)
-        paper_id: Amodei001
-        year: 2021
-        first_author: Amodei
-        arxiv_id: '2110.01804'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2021-Amodei001-0002
-      recommendation: Buffer size should be 2-3x batch size
-      topic: data-loading
-      topic_id: data-loading/buffer-size-should-be-2-3x
-      source:
-        paper: Amodei et al. (2021)
-        paper_id: Amodei001
-        year: 2021
-        first_author: Amodei
-        arxiv_id: '2110.01804'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2021-Amodei001-0003
-      recommendation: Pre-fetch next batch during compute
-      topic: data-loading
-      topic_id: data-loading/pre-fetch-next-batch-during-compute
-      source:
-        paper: Amodei et al. (2021)
-        paper_id: Amodei001
-        year: 2021
-        first_author: Amodei
-        arxiv_id: '2110.01804'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2021-Amodei001-0004
-      recommendation: Use multiple worker processes (num_workers = 4 * num_gpus)
-      topic: data-loading
-      topic_id: data-loading/use-multiple-worker-processes-numworkers
-      source:
-        paper: Amodei et al. (2021)
-        paper_id: Amodei001
-        year: 2021
-        first_author: Amodei
-        arxiv_id: '2110.01804'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    compilation:
-    - id: MLR-2022-Anderson001-0001
-      recommendation: Use operator fusion for small operations
-      topic: compilation
-      topic_id: compilation/use-operator-fusion-for-small
-      source:
-        paper: Anderson et al. (2022)
-        paper_id: Anderson001
-        year: 2022
-        first_author: Anderson
-        arxiv_id: '2201.03642'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2022-Anderson001-0002
-      recommendation: Optimize memory layout for hardware
-      topic: compilation
-      topic_id: compilation/optimize-memory-layout-for-hardware
-      source:
-        paper: Anderson et al. (2022)
-        paper_id: Anderson001
-        year: 2022
-        first_author: Anderson
-        arxiv_id: '2201.03642'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2022-Anderson001-0003
-      recommendation: Implement custom kernels for critical ops
-      topic: compilation
-      topic_id: compilation/implement-custom-kernels-for-critical
-      source:
-        paper: Anderson et al. (2022)
-        paper_id: Anderson001
-        year: 2022
-        first_author: Anderson
-        arxiv_id: '2201.03642'
-      status: standard
-      supporting_evidence: []
-      implementations: []
-    - id: MLR-2022-Anderson001-0004
-      recommendation: Profile-guided optimization for hot paths
-      topic: compilation
-      topic_id: compilation/profile-guided-optimization-for-hot-paths
-      source:
-        paper: Anderson et al. (2022)
-        paper_id: Anderson001
-        year: 2022
-        first_author: Anderson
-        arxiv_id: '2201.03642'
-      status: standard
-      supporting_evidence: []
-      implementations: []
   experimental: {}
   deprecated: {}
 topics:
-  training-dynamics:
-    total_count: 8
-    status_counts:
-      experimental: 0
-      standard: 8
-      deprecated: 0
-    years:
-      earliest: 2021
-      latest: 2023
-  checkpointing:
+  memory-efficiency:
     total_count: 4
     status_counts:
       experimental: 0
       standard: 4
-      deprecated: 0
-    years:
-      earliest: 2021
-      latest: 2021
-  transformers:
-    total_count: 4
-    status_counts:
-      experimental: 0
-      standard: 4
-      deprecated: 0
-    years:
-      earliest: 2019
-      latest: 2021
-  data-quality:
-    total_count: 4
-    status_counts:
-      experimental: 0
-      standard: 4
-      deprecated: 0
-    years:
-      earliest: 2023
-      latest: 2023
-  language-models:
-    total_count: 9
-    status_counts:
-      experimental: 0
-      standard: 9
       deprecated: 0
     years:
       earliest: 2020
+      latest: 2020
+  compilation:
+    total_count: 4
+    status_counts:
+      experimental: 0
+      standard: 4
+      deprecated: 0
+    years:
+      earliest: 2022
       latest: 2022
   hardware-optimization:
     total_count: 4
@@ -1672,24 +1645,6 @@ topics:
     years:
       earliest: 2022
       latest: 2022
-  training-stability:
-    total_count: 5
-    status_counts:
-      experimental: 0
-      standard: 5
-      deprecated: 0
-    years:
-      earliest: 2020
-      latest: 2021
-  memory-efficiency:
-    total_count: 4
-    status_counts:
-      experimental: 0
-      standard: 4
-      deprecated: 0
-    years:
-      earliest: 2020
-      latest: 2020
   attention:
     total_count: 8
     status_counts:
@@ -1699,24 +1654,33 @@ topics:
     years:
       earliest: 2022
       latest: 2023
-  training-efficiency:
+  transformers:
     total_count: 4
     status_counts:
       experimental: 0
       standard: 4
       deprecated: 0
     years:
-      earliest: 2017
-      latest: 2017
-  nlp:
-    total_count: 1
+      earliest: 2019
+      latest: 2021
+  data-loading:
+    total_count: 8
     status_counts:
       experimental: 0
-      standard: 1
+      standard: 8
       deprecated: 0
     years:
-      earliest: 2015
-      latest: 2015
+      earliest: 2021
+      latest: 2021
+  language-models:
+    total_count: 9
+    status_counts:
+      experimental: 0
+      standard: 9
+      deprecated: 0
+    years:
+      earliest: 2020
+      latest: 2022
   MoE:
     total_count: 2
     status_counts:
@@ -1726,6 +1690,105 @@ topics:
     years:
       earliest: 2021
       latest: 2021
+  large-batch-training:
+    total_count: 1
+    status_counts:
+      experimental: 0
+      standard: 1
+      deprecated: 0
+    years:
+      earliest: 2017
+      latest: 2017
+  attention-alternatives:
+    total_count: 3
+    status_counts:
+      experimental: 0
+      standard: 3
+      deprecated: 0
+    years:
+      earliest: 2023
+      latest: 2023
+  training-stability:
+    total_count: 5
+    status_counts:
+      experimental: 0
+      standard: 5
+      deprecated: 0
+    years:
+      earliest: 2020
+      latest: 2021
+  nlp:
+    total_count: 1
+    status_counts:
+      experimental: 0
+      standard: 1
+      deprecated: 0
+    years:
+      earliest: 2015
+      latest: 2015
+  checkpointing:
+    total_count: 4
+    status_counts:
+      experimental: 0
+      standard: 4
+      deprecated: 0
+    years:
+      earliest: 2021
+      latest: 2021
+  training-dynamics:
+    total_count: 8
+    status_counts:
+      experimental: 0
+      standard: 8
+      deprecated: 0
+    years:
+      earliest: 2021
+      latest: 2023
+  distributed-training:
+    total_count: 18
+    status_counts:
+      experimental: 0
+      standard: 18
+      deprecated: 0
+    years:
+      earliest: 2018
+      latest: 2023
+  data-quality:
+    total_count: 4
+    status_counts:
+      experimental: 0
+      standard: 4
+      deprecated: 0
+    years:
+      earliest: 2023
+      latest: 2023
+  initialization:
+    total_count: 4
+    status_counts:
+      experimental: 0
+      standard: 4
+      deprecated: 0
+    years:
+      earliest: 2021
+      latest: 2021
+  training-efficiency:
+    total_count: 4
+    status_counts:
+      experimental: 0
+      standard: 4
+      deprecated: 0
+    years:
+      earliest: 2017
+      latest: 2017
+  normalization:
+    total_count: 9
+    status_counts:
+      experimental: 0
+      standard: 9
+      deprecated: 0
+    years:
+      earliest: 2015
+      latest: 2019
   scaling-laws:
     total_count: 4
     status_counts:
@@ -1744,42 +1807,6 @@ topics:
     years:
       earliest: 2014
       latest: 2020
-  distributed-training:
-    total_count: 18
-    status_counts:
-      experimental: 0
-      standard: 18
-      deprecated: 0
-    years:
-      earliest: 2018
-      latest: 2023
-  normalization:
-    total_count: 9
-    status_counts:
-      experimental: 0
-      standard: 9
-      deprecated: 0
-    years:
-      earliest: 2015
-      latest: 2019
-  attention-alternatives:
-    total_count: 3
-    status_counts:
-      experimental: 0
-      standard: 3
-      deprecated: 0
-    years:
-      earliest: 2023
-      latest: 2023
-  large-batch-training:
-    total_count: 1
-    status_counts:
-      experimental: 0
-      standard: 1
-      deprecated: 0
-    years:
-      earliest: 2017
-      latest: 2017
   systems:
     total_count: 3
     status_counts:
@@ -1789,30 +1816,3 @@ topics:
     years:
       earliest: 2023
       latest: 2023
-  initialization:
-    total_count: 4
-    status_counts:
-      experimental: 0
-      standard: 4
-      deprecated: 0
-    years:
-      earliest: 2021
-      latest: 2021
-  data-loading:
-    total_count: 8
-    status_counts:
-      experimental: 0
-      standard: 8
-      deprecated: 0
-    years:
-      earliest: 2021
-      latest: 2021
-  compilation:
-    total_count: 4
-    status_counts:
-      experimental: 0
-      standard: 4
-      deprecated: 0
-    years:
-      earliest: 2022
-      latest: 2022

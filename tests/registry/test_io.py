@@ -21,7 +21,7 @@ def sample_research_yaml(tmp_path):
     data = {
         "2020": [{
             "title": "Test Paper",
-            "year": "2020",
+            "year": 2020,
             "first_author": "Smith",
             "arxiv_id": "2020.12345",
             "topics": ["optimization"],

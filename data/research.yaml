@@ -1551,6 +1551,7 @@
       - Data quality assessment metrics
       - Dynamic mixing strategies
       - Quality-aware sampling
+      - "Introduces ODM: perplexity + multi-armed bandit"
     topics:
       - data-quality
       - training-efficiency

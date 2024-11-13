@@ -10,7 +10,12 @@ on:
     - cron: '0 0 * * 0'  # Run weekly on Sunday at midnight
 
 jobs:
+  # Add test job from test workflow
+  test:
+    uses: ./.github/workflows/test.yml
+  
   build:
+    needs: test  # Make build dependent on tests passing
     runs-on: ubuntu-latest
     permissions:
       contents: write

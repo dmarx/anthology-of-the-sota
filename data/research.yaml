@@ -931,13 +931,32 @@
       - use RoPE for LLM (1D sequence) positional embeddings
 
   - title: "Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers"
+    arxiv_id: "2109.10686"
+    first_author: "Tay"
     year: 2021
-    arxiv_id: 2109.10686
     key_takeaways:
       - As model size increases, required warmup period becomes shorter relative to total training time
       - Initial instability window shrinks with larger layer widths
+      - Larger models are more robust to optimization hyperparameters
+      - Layer normalization plays crucial role in stabilizing early training
+      - Training instability primarily occurs in first few thousand steps
+      - Model depth has stronger impact on instability than width
+    topics:
+      - training-dynamics
+      - scaling-laws
+      - optimization
+      - transformers
+      - pretraining
+      - fine-tuning
     sota:
       - Warmup needed scales sub-linearly with model size
+      - Initialize layer norm weights closer to 1 for larger models
+      - Can use shorter warmup periods for wider models
+      - Monitor loss specifically during first ~5000 steps for instabilities
+      - Use gradient clipping during early training phase
+    models:
+      - vision_transformer
+      - bert
 
   - title: "SGDR++: Improving Stochastic Gradient Descent with Restarts"
     arxiv_id: "2103.11851"

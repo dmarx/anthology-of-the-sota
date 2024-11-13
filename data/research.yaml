@@ -1167,22 +1167,6 @@
       - Tiling size should match hardware SRAM size
       - Recompute attention during backward pass instead of storing it
 
-  - title: "FSDP: Faster and More Resource-Efficient Distributed Training"
-    arxiv_id: "2204.13702"
-    key_takeaways:
-      - Improved memory efficiency over ZeRO
-      - Better communication patterns
-      - Automatic sharding strategies
-    topics:
-      - distributed-training
-      - memory-optimization
-      - scaling
-    sota:
-      - Use FSDP over DDP when model size exceeds single GPU memory
-      - Overlap communication with computation using backward prefetch
-      - Employ mixed precision to reduce memory usage
-      - Choose sharding factor based on model and GPU memory size
-
   - title: "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers"
     arxiv_id: "2210.17323"
     first_author: "Frantar"
@@ -1860,6 +1844,25 @@
       - theory
     attic:
       reason: "Too theoretical and recent. Focuses on measurement rather than providing actionable training recommendations."
+
+- title: "PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel"
+    arxiv_id: "2304.11277"
+    first_author: "Zhao"
+    year: 2022
+    key_takeaways:
+      - Improved memory efficiency over ZeRO
+      - Better communication patterns
+      - Automatic sharding strategies
+      - Real-world deployment insights
+    topics:
+      - distributed-training
+      - memory-optimization
+      - scaling
+    sota:
+      - Use FSDP over DDP when model size exceeds single GPU memory
+      - Overlap communication with computation using backward prefetch
+      - Employ mixed precision to reduce memory usage
+      - Choose sharding factor based on model and GPU memory size
 
   - title: "Scaling Vision Transformers to 22 Billion Parameters"
     arxiv_id: "2302.05442"

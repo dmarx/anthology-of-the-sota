@@ -15,7 +15,7 @@ from ..utils import commit_and_push
 
 def build(
     input_path: str | Path = "data/research.yaml",
-    output_dir: str | Path = "output",
+    output_dir: str | Path = "data",
     push: bool = True,
     branch: Optional[str] = None
 ) -> None:
@@ -23,7 +23,7 @@ def build(
     
     Args:
         input_path: Path to research YAML file
-        output_dir: Directory to save outputs
+        output_dir: Directory to save outputs (default: data directory)
         push: Whether to commit and push changes
         branch: Optional branch name to commit to (default: current branch)
     """
@@ -53,11 +53,13 @@ def build(
             force=False
         )
 
+
 def cli():
     """CLI entry point."""
     return fire.Fire({
         'build': build
     })
+
 
 if __name__ == "__main__":
     cli()

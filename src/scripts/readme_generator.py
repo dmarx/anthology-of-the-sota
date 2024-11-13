@@ -72,12 +72,12 @@ def generate_readme() -> None:
     logger.info("Rendering README template")
     output = template.render(**variables)
     
-    readme_path = project_root / 'README.md'
+    readme_path = project_root / 'README.llm'
     logger.debug(f"Writing README to: {readme_path}")
     readme_path.write_text(output)
     
     logger.info("Committing changes")
-    commit_and_push('README.md')
+    commit_and_push(readme_path)
 
 if __name__ == "__main__":
     generate_readme()

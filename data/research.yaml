@@ -447,6 +447,7 @@
 
 2020:
   - title: "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models"
+    first_author: "Rajbhandari"
     year: 2020
     arxiv_id: 1910.02054
     key_takeaways:
@@ -459,9 +460,14 @@
       - Partition gradients and optimizer states (ZeRO-2) for larger models
       - Use ZeRO-3 only when other strategies insufficient
       - Keep micro-batch size per GPU as large as memory allows
+    topics:
+      - memory-efficiency
+      - distributed-training
+      - parallelism
 
   - title: "On Layer Normalization in the Transformer Architecture"
     arxiv_id: "2002.04745"
+    first_author: "Xiong"
     year: 2020
     key_takeaways:
       - RMSNorm pre-norm permits stable training at scale w/reduced overhead relative to full LayerNorm
@@ -633,21 +639,6 @@
         - "2103.03386"  # Clusterability paper
         - "2110.08058"  # Later interpretability work
 
-  - title: "Clusterability in Neural Networks"
-    arxiv_id: "2103.03386"
-    year: 2021
-    key_takeaways:
-      - Larger models develop more modular features
-      - More modular learning reduces need for exploration via schedule variation
-      - Spectral regularization promotes parameter clustering, but can be costly
-    topics:
-      - theory
-      - interpretability
-      - architecture
-      - generalization
-    attic:
-      reason: "just doesn't seem that interesting. Not sure why Claude recommended this. Hallucination?"
-
   - title: "PowerNorm: Rethinking Batch Normalization in Transformers"
     arxiv_id: "2003.07845"
     first_author: "Shen"
@@ -751,6 +742,22 @@
       - Overlap communication with backward pass
       - Group small tensors before communication
       - Set buffer size to network bandwidth-delay product
+
+  - title: "Clusterability in Neural Networks"
+    arxiv_id: "2103.03386"
+    first_author: "Filan"
+    year: 2021
+    key_takeaways:
+      - Larger models develop more modular features
+      - More modular learning reduces need for exploration via schedule variation
+      - Spectral regularization promotes parameter clustering, but can be costly
+    topics:
+      - theory
+      - interpretability
+      - architecture
+      - generalization
+    attic:
+      reason: "just doesn't seem that interesting. Not sure why Claude recommended this. Hallucination?"
 
   - title: "Deep Neural Network Initialization for Large-Scale Models"
     arxiv_id: "2108.09001"
@@ -924,13 +931,32 @@
       - use RoPE for LLM (1D sequence) positional embeddings
 
   - title: "Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers"
+    arxiv_id: "2109.10686"
+    first_author: "Tay"
     year: 2021
-    arxiv_id: 2109.10686
     key_takeaways:
       - As model size increases, required warmup period becomes shorter relative to total training time
       - Initial instability window shrinks with larger layer widths
+      - Larger models are more robust to optimization hyperparameters
+      - Layer normalization plays crucial role in stabilizing early training
+      - Training instability primarily occurs in first few thousand steps
+      - Model depth has stronger impact on instability than width
+    topics:
+      - training-dynamics
+      - scaling-laws
+      - optimization
+      - transformers
+      - pretraining
+      - fine-tuning
     sota:
       - Warmup needed scales sub-linearly with model size
+      - Initialize layer norm weights closer to 1 for larger models
+      - Can use shorter warmup periods for wider models
+      - Monitor loss specifically during first ~5000 steps for instabilities
+      - Use gradient clipping during early training phase
+    models:
+      - vision_transformer
+      - bert
 
   - title: "SGDR++: Improving Stochastic Gradient Descent with Restarts"
     arxiv_id: "2103.11851"
@@ -1160,22 +1186,6 @@
       - Tiling size should match hardware SRAM size
       - Recompute attention during backward pass instead of storing it
 
-  - title: "FSDP: Faster and More Resource-Efficient Distributed Training"
-    arxiv_id: "2204.13702"
-    key_takeaways:
-      - Improved memory efficiency over ZeRO
-      - Better communication patterns
-      - Automatic sharding strategies
-    topics:
-      - distributed-training
-      - memory-optimization
-      - scaling
-    sota:
-      - Use FSDP over DDP when model size exceeds single GPU memory
-      - Overlap communication with computation using backward prefetch
-      - Employ mixed precision to reduce memory usage
-      - Choose sharding factor based on model and GPU memory size
-
   - title: "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers"
     arxiv_id: "2210.17323"
     first_author: "Frantar"
@@ -1343,8 +1353,8 @@
       - chinchilla
       - llama2
     sota:
-      - `num_tokens ~ 20 * num_params`
-      - Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`
+      - "`num_tokens ~ 20 * num_params`"
+      - "Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`"
 
   - title: "Using DeepSpeed and Megatron to Train Megatron-Turing NLG 530B"
     arxiv_id: "2201.11990"
@@ -1535,7 +1545,8 @@
 
   - title: "Efficient Online Data Mixing For Language Model Pre-Training"
     arxiv_id: "2312.02406"
-    first_author: "Albalak1"
+    first_author: "Albalak"
+    year: 2023
     key_takeaways:
       - Data quality assessment metrics
       - Dynamic mixing strategies
@@ -1699,6 +1710,7 @@
 
   - title: "Monarch Mixer: A Simple Sub-Quadratic GEMM-Based Architecture"
     arxiv_id: "2310.12109"
+    year: 2023
     first_author: Bhardwaj
     key_takeaways:
       - Efficient alternative to attention
@@ -1855,6 +1867,25 @@
       - theory
     attic:
       reason: "Too theoretical and recent. Focuses on measurement rather than providing actionable training recommendations."
+
+  - title: "PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel"
+    arxiv_id: "2304.11277"
+    first_author: "Zhao"
+    year: 2022
+    key_takeaways:
+      - Improved memory efficiency over ZeRO
+      - Better communication patterns
+      - Automatic sharding strategies
+      - Real-world deployment insights
+    topics:
+      - distributed-training
+      - memory-optimization
+      - scaling
+    sota:
+      - Use FSDP over DDP when model size exceeds single GPU memory
+      - Overlap communication with computation using backward prefetch
+      - Employ mixed precision to reduce memory usage
+      - Choose sharding factor based on model and GPU memory size
 
   - title: "Scaling Vision Transformers to 22 Billion Parameters"
     arxiv_id: "2302.05442"

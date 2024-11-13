@@ -4,6 +4,7 @@ import os
 import subprocess
 from loguru import logger
 
+
 def get_project_root() -> Path:
     """
     Get the project root directory by looking for pyproject.toml
@@ -41,28 +42,84 @@ def load_config(config_path: str) -> dict:
         logger.error(f"Configuration file not found: {full_path}")
         raise
 
-def commit_and_push(file_to_commit):
-    """Commit and push changes for a specific file"""
-    try:
-        # Configure Git for GitHub Actions
-        subprocess.run(["git", "config", "--global", "user.name", "GitHub Action"], check=True)
-        subprocess.run(["git", "config", "--global", "user.email", "action@github.com"], check=True)
+def commit_and_push(
+    paths: str | Path | list[str | Path],
+    message: str|None = None,
+    branch: str|None = None,
+    base_branch: str|None = None,
+    force: bool = False
+) -> None:
+    """Commit changes and push to specified or current branch.
+    
+    Args:
+        paths: Path or list of paths to commit
+        message: Commit message (defaults to "Update files via automated commit")
+        branch: Branch to push to (defaults to current branch)
+        base_branch: Optional base branch to create new branch from
+        force: If True, create fresh branch and force push (for generated content)
+    """
+    # Ensure paths is a list and convert to strings
+    if isinstance(paths, (str, Path)):
+        paths = [paths]
+    path_strs = [str(p) for p in paths]
+    
+    # Set default commit message
+    if message is None:
+        message = "Update files via automated commit"
+    
+    # Set up git config
+    subprocess.run(["git", "config", "--local", "user.email", "github-actions[bot]@users.noreply.github.com"])
+    subprocess.run(["git", "config", "--local", "user.name", "github-actions[bot]"])
+    
+    # Get current branch if none specified
+    if branch is None:
+        result = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            capture_output=True,
+            text=True
+        )
+        branch = result.stdout.strip()
+        logger.info(f"Using current branch: {branch}")
+    
+    if force:
+        # Create fresh branch from base_branch or HEAD
+        base = base_branch or "HEAD"
+        logger.info(f"Creating fresh branch {branch} from {base}")
+        subprocess.run(["git", "checkout", "-B", branch, base])
+    else:
+        # Normal branch handling
+        if base_branch:
+            logger.info(f"Creating new branch {branch} from {base_branch}")
+            subprocess.run(["git", "checkout", "-b", branch, base_branch])
+        elif branch != subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            capture_output=True,
+            text=True
+        ).stdout.strip():
+            logger.info(f"Switching to branch {branch}")
+            # Try to check out existing branch, create new one if it doesn't exist
+            if subprocess.run(["git", "checkout", branch], capture_output=True).returncode != 0:
+                subprocess.run(["git", "checkout", "-b", branch])
+            subprocess.run(["git", "pull", "origin", branch], capture_output=True)
+    
+    # Stage and commit changes
+    subprocess.run(["git", "add", *path_strs])
+    
+    # Only commit if there are changes
+    result = subprocess.run(
+        ["git", "diff", "--staged", "--quiet"],
+        capture_output=True
+    )
+    if result.returncode == 1:  # Changes exist
+        logger.info("Committing changes")
+        subprocess.run(["git", "commit", "-m", message])
         
-        # Check if there are any changes to commit
-        status = subprocess.run(["git", "status", "--porcelain", file_to_commit], capture_output=True, text=True, check=True)
-        if not status.stdout.strip():
-            logger.info(f"No changes to commit for {file_to_commit}")
-            return
-        
-        subprocess.run(["git", "add", file_to_commit], check=True)
-        subprocess.run(["git", "commit", "-m", f"Update {file_to_commit}"], check=True)
-        subprocess.run(["git", "push"], check=True)
-        
-        logger.success(f"Changes to {file_to_commit} committed and pushed successfully")
-    except subprocess.CalledProcessError as e:
-        logger.error(f"Error during git operations: {e}")
-        if "nothing to commit" in str(e):
-            logger.info("No changes to commit. Continuing execution")
+        # Push changes
+        if force:
+            logger.info(f"Force pushing to {branch} branch")
+            subprocess.run(["git", "push", "-f", "origin", branch])
         else:
-            logger.warning("Exiting early due to Git error")
-            raise
+            logger.info(f"Pushing changes to {branch} branch")
+            subprocess.run(["git", "push", "origin", branch])
+    else:
+        logger.info("No changes to commit")

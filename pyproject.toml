@@ -32,6 +32,9 @@ all = [
     "markdown2>=2.4.0",
 ]
 
+[project.scripts]
+build-registry = "scripts.registry.cli:cli"
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"

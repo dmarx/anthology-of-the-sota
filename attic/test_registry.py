@@ -4,6 +4,7 @@ from pathlib import Path
 import json
 import os
 from scripts.registry import (
+    MLRStatus,
     MLRIdentifierRegistry, 
     RecommendationRegistry,
     build_registry_from_yaml,

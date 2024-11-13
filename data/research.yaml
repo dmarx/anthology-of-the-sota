@@ -467,6 +467,7 @@
 
   - title: "On Layer Normalization in the Transformer Architecture"
     arxiv_id: "2002.04745"
+    first_author: "Xiong"
     year: 2020
     key_takeaways:
       - RMSNorm pre-norm permits stable training at scale w/reduced overhead relative to full LayerNorm

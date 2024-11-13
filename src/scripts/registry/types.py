@@ -122,7 +122,7 @@ class Recommendation:
             'superseded_by': self.superseded_by,
             'deprecated_date': self.deprecated_date
         })
-        return {k: v for k, v in conf.to_container() if v is not None}
+        return {k: v for k, v in OmegaConf.to_container(conf).items() if v is not None}
 
 def create_config_from_dict(data: Dict) -> DictConfig:
     """Create an OmegaConf config from a dictionary."""

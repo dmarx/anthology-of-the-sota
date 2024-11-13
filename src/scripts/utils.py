@@ -3,7 +3,7 @@ import tomli
 import os
 import subprocess
 from loguru import logger
-from typing import Optional
+
 
 def get_project_root() -> Path:
     """
@@ -43,10 +43,10 @@ def load_config(config_path: str) -> dict:
         raise
 
 def commit_and_push(
-    paths: Union[str, Path, List[Union[str, Path]]],
-    message: Optional[str] = None,
-    branch: Optional[str] = None,
-    base_branch: Optional[str] = None,
+    paths: str | Path | list[str | Path],
+    message: str|None = None,
+    branch: str|None = None,
+    base_branch: str|None = None,
     force: bool = False
 ) -> None:
     """Commit changes and push to specified or current branch.

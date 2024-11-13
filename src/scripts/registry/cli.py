@@ -41,15 +41,18 @@ def build(
     
     save_registry(registry, registry_yaml)
     registry_to_markdown(registry, registry_md)
-    
     logger.info(f"Registry outputs saved to {output_dir}")
+
+    rdme= output_dir.parent / "docs/readme/sections/registry.md.j2"
+    registry_to_markdown(registry, rdme)
+    
     
     if push:
         logger.info("Committing changes")
         commit_and_push(
             message="Update ML training registry",
             branch=branch or "main",
-            paths=[registry_yaml, registry_md],
+            paths=[registry_yaml, registry_md, rdme],
             force=False
         )
 

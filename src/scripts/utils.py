@@ -43,27 +43,43 @@ def load_config(config_path: str) -> dict:
         raise
 
 def commit_and_push(
-    paths: list[str | Path],
-    message: str,
-    branch: str,
+    paths: Union[str, Path, List[Union[str, Path]]],
+    message: Optional[str] = None,
+    branch: Optional[str] = None,
     base_branch: Optional[str] = None,
     force: bool = False
 ) -> None:
-    """Commit changes and push to specified branch.
+    """Commit changes and push to specified or current branch.
     
     Args:
-        message: Commit message
-        branch: Branch to push to
-        paths: List of paths to commit
+        paths: Path or list of paths to commit
+        message: Commit message (defaults to "Update files via automated commit")
+        branch: Branch to push to (defaults to current branch)
         base_branch: Optional base branch to create new branch from
         force: If True, create fresh branch and force push (for generated content)
     """
-    # Convert paths to strings
+    # Ensure paths is a list and convert to strings
+    if isinstance(paths, (str, Path)):
+        paths = [paths]
     path_strs = [str(p) for p in paths]
+    
+    # Set default commit message
+    if message is None:
+        message = "Update files via automated commit"
     
     # Set up git config
     subprocess.run(["git", "config", "--local", "user.email", "github-actions[bot]@users.noreply.github.com"])
     subprocess.run(["git", "config", "--local", "user.name", "github-actions[bot]"])
+    
+    # Get current branch if none specified
+    if branch is None:
+        result = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            capture_output=True,
+            text=True
+        )
+        branch = result.stdout.strip()
+        logger.info(f"Using current branch: {branch}")
     
     if force:
         # Create fresh branch from base_branch or HEAD
@@ -75,9 +91,15 @@ def commit_and_push(
         if base_branch:
             logger.info(f"Creating new branch {branch} from {base_branch}")
             subprocess.run(["git", "checkout", "-b", branch, base_branch])
-        else:
+        elif branch != subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            capture_output=True,
+            text=True
+        ).stdout.strip():
             logger.info(f"Switching to branch {branch}")
-            subprocess.run(["git", "checkout", "-b", branch])
+            # Try to check out existing branch, create new one if it doesn't exist
+            if subprocess.run(["git", "checkout", branch], capture_output=True).returncode != 0:
+                subprocess.run(["git", "checkout", "-b", branch])
             subprocess.run(["git", "pull", "origin", branch], capture_output=True)
     
     # Stage and commit changes
@@ -94,10 +116,10 @@ def commit_and_push(
         
         # Push changes
         if force:
-            logger.info(f"Force pushing {branch} branch")
+            logger.info(f"Force pushing to {branch} branch")
             subprocess.run(["git", "push", "-f", "origin", branch])
         else:
-            logger.info("Pushing changes")
+            logger.info(f"Pushing changes to {branch} branch")
             subprocess.run(["git", "push", "origin", branch])
     else:
         logger.info("No changes to commit")

@@ -1,0 +1,32 @@
+name: Convert Logo SVG to PNG
+
+on:
+  workflow_dispatch:  # Manual trigger
+  push:
+    paths:
+      - 'assets/logo.svg'  # Only run when logo changes
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install Inkscape
+        run: |
+          sudo add-apt-repository -y universe
+          sudo apt-get update
+          sudo apt-get install -y inkscape
+      
+      - name: Convert SVG to PNG
+        run: |
+          mkdir -p assets
+          inkscape --export-type=png --export-filename=assets/logo.png assets/logo.svg
+      
+      - name: Commit PNG if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add assets/logo.png
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update logo.png from SVG source"
+          git push

@@ -221,8 +221,7 @@ def registry_to_markdown(registry: RecommendationRegistry, output_file: Union[st
                 if recs:  # Only show topics with recommendations
                     f.write(f"### {topic}\n\n")
                     for rec in recs:
-                        f.write(f"- [{rec['id']}] {rec['recommendation']}\n")
-                        f.write(f"  - Source: {rec['source']['paper']}\n")
+                        f.write(f"- {rec['recommendation']}\n")
                         if rec['implementations']:
                             f.write(f"  - Implementations: {', '.join(rec['implementations'])}\n")
                         f.write("\n")
@@ -239,3 +238,4 @@ def registry_to_markdown(registry: RecommendationRegistry, output_file: Union[st
             f.write(f"- Year range: {stats['years']['earliest']} - {stats['years']['latest']}\n\n")
 
     logger.info(f"Registry exported to markdown: {output_file}")
+

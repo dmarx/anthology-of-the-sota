@@ -1,0 +1,29 @@
+name: Generate Directory Summaries
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  generate-summaries:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install project
+      run: pip install -e ".[all]"
+
+    - name: Generate summaries
+      run: python -m scripts.generate_summaries

@@ -1,13 +1,19 @@
 // frontend/next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',  // Enable static exports
+  output: 'export',
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
   images: {
-    unoptimized: true,  // Required for static export
+    unoptimized: true,
   },
-  // Handle GitHub Pages serving from a subdirectory
   assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.ya?ml$/,
+      use: 'yaml-loader',
+    });
+    return config;
+  },
 }
 
 module.exports = nextConfig

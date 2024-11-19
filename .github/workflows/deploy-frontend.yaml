@@ -54,27 +54,27 @@ jobs:
           mkdir -p frontend/src/data
           cp data/registry.yaml frontend/src/data/
 
-      # Setup styles if they don't exist
-      - name: Ensure styles exist
-        run: |
-          mkdir -p frontend/src/styles
-          if [ ! -f frontend/src/styles/globals.css ]; then
-            cat > frontend/src/styles/globals.css << 'EOL'
-            @tailwind base;
-            @tailwind components;
-            @tailwind utilities;
+      # # Setup styles if they don't exist
+      # - name: Ensure styles exist
+      #   run: |
+      #     mkdir -p frontend/src/styles
+      #     if [ ! -f frontend/src/styles/globals.css ]; then
+      #       cat > frontend/src/styles/globals.css << 'EOL'
+      #       @tailwind base;
+      #       @tailwind components;
+      #       @tailwind utilities;
 
-            :root {
-              --foreground-rgb: 0, 0, 0;
-              --background-rgb: 255, 255, 255;
-            }
+      #       :root {
+      #         --foreground-rgb: 0, 0, 0;
+      #         --background-rgb: 255, 255, 255;
+      #       }
 
-            body {
-              color: rgb(var(--foreground-rgb));
-              background: rgb(var(--background-rgb));
-            }
-            EOL
-          fi
+      #       body {
+      #         color: rgb(var(--foreground-rgb));
+      #         background: rgb(var(--background-rgb));
+      #       }
+      #       EOL
+      #     fi
 
       - name: Build site
         working-directory: frontend

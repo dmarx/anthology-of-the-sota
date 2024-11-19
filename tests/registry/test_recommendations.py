@@ -171,10 +171,44 @@ def test_registry_export(registry):
     )
     
     exported = registry.export_registry()
+    
+    # Check basic structure
     assert 'metadata' in exported
     assert 'recommendations' in exported
     assert 'topics' in exported
     assert exported['metadata']['schema_version'] == '1.0'
-    assert MLRStatus.STANDARD.value in exported['recommendations']
-    assert exported['recommendations'][MLRStatus.STANDARD.value]['optimization']
-    assert exported['recommendations'][MLRStatus.EXPERIMENTAL.value]['attention']
+    
+    # Check recommendations are a flat list
+    assert isinstance(exported['recommendations'], list)
+    assert len(exported['recommendations']) == 2
+    
+    # Check individual recommendations
+    standard_rec = next(
+        (r for r in exported['recommendations'] 
+         if r['status'] == MLRStatus.STANDARD.value), 
+        None
+    )
+    experimental_rec = next(
+        (r for r in exported['recommendations'] 
+         if r['status'] == MLRStatus.EXPERIMENTAL.value),
+        None
+    )
+    
+    assert standard_rec is not None
+    assert experimental_rec is not None
+    
+    # Verify standard recommendation
+    assert standard_rec['recommendation'] == "Standard rec"
+    assert standard_rec['topic'] == "optimization"
+    assert standard_rec['status'] == MLRStatus.STANDARD.value
+    
+    # Verify experimental recommendation
+    assert experimental_rec['recommendation'] == "Experimental rec"
+    assert experimental_rec['topic'] == "attention"
+    assert experimental_rec['status'] == MLRStatus.EXPERIMENTAL.value
+    
+    # Check topic stats
+    assert 'optimization' in exported['topics']
+    assert 'attention' in exported['topics']
+    assert exported['topics']['optimization']['count'] == 1
+    assert exported['topics']['attention']['count'] == 1

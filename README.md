@@ -722,6 +722,7 @@ Model-specific architectural patterns
 │   │       ├── registry_naming_conventions.md.j2
 │   │       └── structure.md.j2
 │   └── readme_llm
+│       ├── base.md.j2
 │       └── sections
 │           └── development.md.j2
 ├── pyproject.toml

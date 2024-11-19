@@ -1,3 +1,4 @@
+// frontend/next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
@@ -13,6 +14,8 @@ const nextConfig = {
     });
     return config;
   },
+  // Add trailingSlash configuration for static export
+  trailingSlash: true,
 }
 
-module.exports = nextConfig;
+module.exports = nextConfig

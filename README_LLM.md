@@ -63,7 +63,6 @@ When developing this project (or using it as a template), keep in mind these gui
    - Github Actions is the only available runtime for script execution
    - All workflows depend on tests passing
    - Syntax permitting, all files should begin with a comment detailing the current file's name and relative path within the project
-
 # ML Training Topics Organization
 
 ## Topic Structure

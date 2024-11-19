@@ -1,10 +1,11 @@
-// src/components/recommendations/RecommendationCard/RecommendationCard.tsx
+// frontend/src/components/recommendations/RecommendationCard/RecommendationCard.tsx
 import React from 'react';
 import { Tag } from 'lucide-react';
 import { ArxivLink } from '../ArxivLink/ArxivLink';
 import { SuccessionChain } from '../SuccessionChain/SuccessionChain';
 import { RelatedRecommendations } from '../RelatedRecommendations/RelatedRecommendations';
-import { Recommendation } from '@/types/recommendations';
+import type { Recommendation } from '../../../types/recommendations';
+
 
 interface RecommendationCardProps {
   recommendation: Recommendation;

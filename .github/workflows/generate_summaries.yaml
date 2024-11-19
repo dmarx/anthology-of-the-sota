@@ -22,8 +22,8 @@ jobs:
         python-version: '3.11'
         cache: 'pip'
 
-    - name: Install project
-      run: pip install -e ".[all]"
+    - name: Install llamero
+      run: pip install llamero
 
     - name: Generate summaries
-      run: python -m scripts.generate_summaries
+      run: llamero summarize all

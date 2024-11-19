@@ -34,7 +34,6 @@ jobs:
           echo "\nRegistry YAML content:"
           cat data/registry.yaml | head -n 20
 
-      # Clean install to avoid any package-lock.json issues
       - name: Clean install
         working-directory: frontend
         run: |
@@ -53,8 +52,10 @@ jobs:
         working-directory: frontend
         env:
           NEXT_PUBLIC_BASE_PATH: '/anthology-of-the-sota'
-          NODE_ENV: 'development'  # Enable error messages
-        run: npm run build
+          NODE_ENV: 'production'  # Changed from development to production
+        run: |
+          echo "Running production build..."
+          npm run build
 
       - name: Add .nojekyll file
         run: touch frontend/out/.nojekyll

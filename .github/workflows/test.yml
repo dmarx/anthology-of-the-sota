@@ -2,6 +2,10 @@ name: Tests
 
 on:
   push:
+    paths:
+      - "src/**"
+      - "tests/**"
+      - ".github/workflows/test.yml"
   workflow_dispatch:
   workflow_call:
     

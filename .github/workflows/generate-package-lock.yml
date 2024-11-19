@@ -22,6 +22,6 @@ jobs:
         node-version: '14'
 
     - name: Generate package-lock.json
-      run: node frontend/src/scripts/generate-package-lock.js
+      run: node src/scripts/generate-package-lock.js
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

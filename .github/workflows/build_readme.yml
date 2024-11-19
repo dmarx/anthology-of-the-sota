@@ -2,6 +2,9 @@ name: Build README
 
 on:
   push:
+    paths:
+      - 'docs/**'
+      - '.github/workflows/build-readme.yml'
   workflow_dispatch:
 
 env:
@@ -31,5 +34,6 @@ jobs:
 
       - name: Generate README
         run: |
-          llamero readme
+          # llamero readme
+          llamero build_template docs/readme
           llamero build_template docs/readme_llm

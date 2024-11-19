@@ -6,7 +6,7 @@ on:
     paths:
       - '.github/workflows/generate-package-lock.yml'
       - 'package.json'
-      - 'src/scripts/generate-package-lock.js'
+      - 'frontend/src/scripts/generate-package-lock.js'
   workflow_dispatch:
 
 jobs:
@@ -22,6 +22,6 @@ jobs:
         node-version: '14'
 
     - name: Generate package-lock.json
-      run: node src/scripts/generate-package-lock.js
+      run: node frontend/src/scripts/generate-package-lock.js
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

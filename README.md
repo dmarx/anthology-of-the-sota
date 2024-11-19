@@ -21,8 +21,11 @@ The main difference here is that where that prior list was focused on big, impac
 
 ├── .github
 │   └── workflows
-│       ├── build_readme.yml
+│       ├── build-readme.yaml
 │       ├── build_registry.yml
+│       ├── deploy-frontend.old
+│       ├── deploy-frontend.yaml
+│       ├── generate-package-lock.yml
 │       ├── generate_summaries.yaml
 │       ├── render_svg.yaml
 │       └── test.yml
@@ -50,9 +53,36 @@ The main difference here is that where that prior list was focused on big, impac
 │       └── sections
 │           ├── development.md.j2
 │           └── registry_naming_conventions.md.j2
+├── frontend
+│   ├── next.config.js
+│   ├── package-lock.json
+│   ├── package.json
+│   └── src
+│       ├── components
+│       │   └── recommendations
+│       │       ├── ArxivLink
+│       │       │   ├── ArxivLink.test.tsx
+│       │       │   └── ArxivLink.tsx
+│       │       ├── RecommendationCard
+│       │       │   ├── RecommendationCard.test.tsx
+│       │       │   └── RecommendationCard.tsx
+│       │       ├── RelatedRecommendations
+│       │       │   ├── RelatedRecommendations.test.tsx
+│       │       │   └── RelatedRecommendations.tsx
+│       │       └── SuccessionChain
+│       │           ├── SuccessionChain.test.tsx
+│       │           └── SuccessionChain.tsx
+│       ├── pages
+│       │   ├── _app.tsx
+│       │   └── index.tsx
+│       ├── types
+│       │   └── recommendations.ts
+│       └── utils
+│           └── recommendations.ts
 ├── pyproject.toml
 ├── src
 │   └── scripts
+│       ├── generate-package-lock.js
 │       ├── generate_summaries
 │       │   ├── __init__.py
 │       │   ├── __main__.py

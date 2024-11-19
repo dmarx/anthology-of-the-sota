@@ -22,59 +22,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      # # Initialize Next.js if this is the first run
-      # - name: Initialize Next.js (if needed)
-      #   run: |
-      #     if [ ! -f frontend/package.json ]; then
-      #       # Create frontend directory
-      #       mkdir -p frontend
-      #       cd frontend
-            
-      #       # Initialize Next.js app
-      #       npm init next-app . --typescript --yes --tailwind --eslint --app --src-dir --import-alias "@/*"
-            
-      #       # Install additional dependencies
-      #       npm install lucide-react
-      #       npm install -D @testing-library/react @testing-library/jest-dom jest jest-environment-jsdom
-            
-      #       # Remove example content
-      #       rm -rf src/app/*
-      #       rm -rf public/*
-      #       rm -rf .git
-      #     fi
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
 
       - name: Install dependencies
         working-directory: frontend
-        run: npm ci
+        run: |
+          npm install yaml-loader
+          npm ci
 
-      # Copy data file into frontend src directory
       - name: Copy data
         run: |
           mkdir -p frontend/src/data
           cp data/registry.yaml frontend/src/data/
-
-      # # Setup styles if they don't exist
-      # - name: Ensure styles exist
-      #   run: |
-      #     mkdir -p frontend/src/styles
-      #     if [ ! -f frontend/src/styles/globals.css ]; then
-      #       cat > frontend/src/styles/globals.css << 'EOL'
-      #       @tailwind base;
-      #       @tailwind components;
-      #       @tailwind utilities;
-
-      #       :root {
-      #         --foreground-rgb: 0, 0, 0;
-      #         --background-rgb: 255, 255, 255;
-      #       }
-
-      #       body {
-      #         color: rgb(var(--foreground-rgb));
-      #         background: rgb(var(--background-rgb));
-      #       }
-      #       EOL
-      #     fi
 
       - name: Build site
         working-directory: frontend

@@ -1,6 +1,4 @@
 // frontend/src/types/recommendations.ts
-// export type RecommendationStatus = 'standard' | 'experimental' | 'deprecated';
-
 export interface Source {
   paper: string
   paper_id: string
@@ -16,8 +14,10 @@ export interface Recommendation {
   topic_id: string
   source: Source
   status: 'standard' | 'experimental' | 'deprecated'
-  supporting_evidence: any[]
-  implementations: string[]
+  supporting_evidence?: any[]
+  implementations?: string[]
+  superseded_by?: string
+  deprecated_date?: string
 }
 
 export type RecommendationsByTopic = Record<string, Recommendation[]>

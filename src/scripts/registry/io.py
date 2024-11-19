@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Dict, Union
 from loguru import logger
 from datetime import datetime
+from collections import defaultdict
 
 from .recommendations import RecommendationRegistry
 from .types import MLRStatus

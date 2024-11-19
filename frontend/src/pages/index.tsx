@@ -1,4 +1,3 @@
-// frontend/src/pages/index.tsx
 import React from 'react';
 import { parse } from 'yaml';
 import { RecommendationCard } from '../components/recommendations/RecommendationCard/RecommendationCard';
@@ -10,7 +9,6 @@ interface HomeProps {
 }
 
 export default function Home({ recommendations, error }: HomeProps) {
-  // If there's an error, display it
   if (error) {
     return (
       <div className="min-h-screen p-4">
@@ -22,7 +20,6 @@ export default function Home({ recommendations, error }: HomeProps) {
     );
   }
 
-  // If no recommendations, show empty state
   if (!recommendations || Object.keys(recommendations).length === 0) {
     return (
       <div className="min-h-screen p-4">
@@ -55,11 +52,9 @@ export async function getStaticProps() {
     const fs = require('fs');
     const path = require('path');
     
-    // Log the current directory and available files for debugging
     console.log('Current directory:', process.cwd());
     console.log('Files in data directory:', fs.readdirSync(path.join(process.cwd(), 'src/data')));
     
-    // Read and parse YAML file
     const yamlPath = path.join(process.cwd(), 'src/data/registry.yaml');
     console.log('Loading YAML from:', yamlPath);
     
@@ -69,28 +64,24 @@ export async function getStaticProps() {
     const data = parse(yamlContent);
     console.log('Parsed data structure:', Object.keys(data));
     
-    // Validate the data structure
     if (!data || !data.recommendations || !data.recommendations.standard) {
       throw new Error('Invalid data structure in registry.yaml');
     }
     
-    // Log the recommendations we're returning
     console.log('Number of recommendations:', Object.keys(data.recommendations.standard).length);
-
     return {
       props: {
         recommendations: data.recommendations.standard
       }
     };
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Error in getStaticProps:', error);
     
-    // Return error in development, empty recommendations in production
     if (process.env.NODE_ENV === 'development') {
       return {
         props: {
           recommendations: {},
-          error: error.message
+          error: error instanceof Error ? error.message : 'An unknown error occurred'
         }
       };
     }

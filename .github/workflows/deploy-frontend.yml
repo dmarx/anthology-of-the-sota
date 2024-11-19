@@ -1,0 +1,121 @@
+# .github/workflows/deploy-frontend.yml
+name: Deploy Frontend
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'frontend/**'
+      - 'data/**'
+      - '.github/workflows/deploy-frontend.yml'
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Create and setup frontend directory
+        run: |
+          # Create frontend directory
+          #mkdir -p frontend
+          cd frontend
+          
+          # Initialize Next.js app
+          npm init next-app . --typescript --yes --tailwind --eslint --app --src-dir --import-alias "@/*"
+          
+          # Install additional dependencies
+          npm install lucide-react
+          npm install -D @testing-library/react @testing-library/jest-dom jest jest-environment-jsdom
+          
+          # Remove example content
+          rm -rf src/app/*
+          rm -rf public/*
+          rm -rf .git
+          
+          # Copy our components
+          #mkdir -p src/components/recommendations
+          
+          # Copy types and utils
+          #mkdir -p src/types
+          #mkdir -p src/utils
+
+      # - name: Setup Next.js config
+      #   run: |
+      #     cat > frontend/next.config.js << 'EOL'
+      #     /** @type {import('next').NextConfig} */
+      #     const nextConfig = {
+      #       output: 'export',
+      #       basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+      #       images: {
+      #         unoptimized: true,
+      #       },
+      #       assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
+      #     }
+      #     module.exports = nextConfig
+      #     EOL
+
+      - name: Setup Jest config
+        run: |
+          cat > frontend/jest.config.js << 'EOL'
+          const nextJest = require('next/jest')
+          const createJestConfig = nextJest({ dir: './' })
+          const customJestConfig = {
+            setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+            testEnvironment: 'jest-environment-jsdom',
+            moduleNameMapper: {
+              '^@/components/(.*)$': '<rootDir>/src/components/$1',
+              '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
+              '^@/types/(.*)$': '<rootDir>/src/types/$1',
+              '^@/utils/(.*)$': '<rootDir>/src/utils/$1',
+            },
+          }
+          module.exports = createJestConfig(customJestConfig)
+          EOL
+
+          echo "import '@testing-library/jest-dom'" > frontend/jest.setup.js
+
+      - name: Copy source files
+        run: |
+          # Copy all our source files
+          # cp -r frontend-src/* frontend/src/
+          
+          # # Ensure proper content in key directories
+          # mkdir -p frontend/src/pages
+          # mkdir -p frontend/src/types
+          # mkdir -p frontend/src/utils
+          
+          # # Copy components
+          # cp -r components/* frontend/src/components/
+          
+          # Copy data
+          mkdir -p frontend/src/data
+          cp data/registry.yaml frontend/src/data/
+
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Build site
+        working-directory: frontend
+        env:
+          NEXT_PUBLIC_BASE_PATH: '/anthology-of-the-sota'
+        run: npm run build
+
+      - name: Add .nojekyll file
+        run: touch frontend/out/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: frontend/out
+          clean: true

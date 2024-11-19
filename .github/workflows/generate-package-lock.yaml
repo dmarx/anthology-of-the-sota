@@ -4,7 +4,7 @@ name: Generate package-lock.json
 on:
   push:
     paths:
-      - '.github/workflows/generate-package-lock.yml'
+      - '.github/workflows/generate-package-lock.yaml'
       - 'package.json'
       - 'frontend/src/scripts/generate-package-lock.js'
   workflow_dispatch:

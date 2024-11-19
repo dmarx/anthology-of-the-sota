@@ -27,7 +27,7 @@ jobs:
           cache: pip
       
       - name: Install package
-        run: pip install -e ".[all]"
-      
+        run: pip install .
+
       - name: Generate README
-        run: python -m scripts.readme_generator
+        run: llamero readme

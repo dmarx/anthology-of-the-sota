@@ -12,7 +12,7 @@ from . import (
     registry_to_markdown
 )
 #from ..utils import commit_and_push
-from llamero import commit_and_push_to_branch #commit_and_push
+from llamero.utils import commit_and_push_to_branch #commit_and_push
 
 def build(
     input_path: str | Path = "data/research.yaml",

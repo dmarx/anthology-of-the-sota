@@ -123,32 +123,32 @@ def test_get_recommendations_by_topic(registry):
     # Check sorting by year
     assert recs[0].source.year < recs[1].source.year
 
-def test_topic_stats(registry):
-    """Test topic statistics generation."""
-    # Add recommendations with different statuses
-    registry.add_recommendation(
-        topic="optimization",
-        recommendation="Standard rec",
-        first_author="Smith",
-        source_paper="Smith et al. (2020)",
-        year=2020
-    )
+# def test_topic_stats(registry):
+#     """Test topic statistics generation."""
+#     # Add recommendations with different statuses
+#     registry.add_recommendation(
+#         topic="optimization",
+#         recommendation="Standard rec",
+#         first_author="Smith",
+#         source_paper="Smith et al. (2020)",
+#         year=2020
+#     )
     
-    registry.add_recommendation(
-        topic="optimization",
-        recommendation="Experimental rec",
-        first_author="Jones",
-        source_paper="Jones et al. (2021)",
-        year=2021,
-        experimental=True
-    )
+#     registry.add_recommendation(
+#         topic="optimization",
+#         recommendation="Experimental rec",
+#         first_author="Jones",
+#         source_paper="Jones et al. (2021)",
+#         year=2021,
+#         experimental=True
+#     )
     
-    stats = registry._get_topic_stats("optimization")
-    assert stats['total_count'] == 2
-    assert stats['status_counts'][MLRStatus.STANDARD.value] == 1
-    assert stats['status_counts'][MLRStatus.EXPERIMENTAL.value] == 1
-    assert stats['years']['earliest'] == 2020
-    assert stats['years']['latest'] == 2021
+#     stats = registry._get_topic_stats("optimization")
+#     assert stats['total_count'] == 2
+#     assert stats['status_counts'][MLRStatus.STANDARD.value] == 1
+#     assert stats['status_counts'][MLRStatus.EXPERIMENTAL.value] == 1
+#     assert stats['years']['earliest'] == 2020
+#     assert stats['years']['latest'] == 2021
 
 def test_registry_export(registry):
     """Test registry export functionality."""

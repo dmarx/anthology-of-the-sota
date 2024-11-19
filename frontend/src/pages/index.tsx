@@ -1,8 +1,7 @@
-
 // frontend/src/pages/index.tsx
-import React from 'react'
-import { RecommendationCard } from '@/components/recommendations/RecommendationCard/RecommendationCard'
-import type { Recommendation } from '@/types/recommendations'
+import React from 'react';
+import { RecommendationCard } from '../components/recommendations/RecommendationCard/RecommendationCard';
+import type { Recommendation } from '../types/recommendations';
 
 interface HomeProps {
   recommendations: Record<string, Recommendation>;

@@ -1,4 +1,3 @@
-# .github/workflows/deploy-frontend.yaml
 name: Deploy Frontend
 
 on:
@@ -25,15 +24,6 @@ jobs:
           cache: 'npm'
           cache-dependency-path: frontend/package-lock.json
 
-      - name: Debug file structure
-        run: |
-          echo "Project root:"
-          ls -la
-          echo "\nData directory:"
-          ls -la data/
-          echo "\nRegistry YAML content:"
-          cat data/registry.yaml | head -n 20
-
       - name: Clean install
         working-directory: frontend
         run: |
@@ -44,21 +34,33 @@ jobs:
         run: |
           mkdir -p frontend/src/data
           cp data/registry.yaml frontend/src/data/
-          echo "\nVerifying copied YAML:"
+          echo "Verifying copied YAML:"
           ls -la frontend/src/data/
-          cat frontend/src/data/registry.yaml | head -n 20
+          test -f frontend/src/data/registry.yaml || (echo "YAML file not copied" && exit 1)
 
       - name: Build site
         working-directory: frontend
         env:
           NEXT_PUBLIC_BASE_PATH: '/anthology-of-the-sota'
-          NODE_ENV: 'production'  # Changed from development to production
+          NODE_ENV: 'production'
         run: |
-          echo "Running production build..."
+          echo "Building with base path: $NEXT_PUBLIC_BASE_PATH"
           npm run build
+          
+      - name: Verify build output
+        working-directory: frontend
+        run: |
+          echo "Checking build output:"
+          ls -la out/
+          test -f out/index.html || (echo "index.html not found" && exit 1)
+          echo "Content of index.html:"
+          head -n 20 out/index.html
 
       - name: Add .nojekyll file
-        run: touch frontend/out/.nojekyll
+        run: |
+          touch frontend/out/.nojekyll
+          echo "Verifying .nojekyll:"
+          ls -la frontend/out/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -66,3 +68,8 @@ jobs:
           branch: gh-pages
           folder: frontend/out
           clean: true
+
+      - name: Verify deployment
+        run: |
+          echo "Deployment complete. Site should be available at:"
+          echo "https://<username>.github.io/anthology-of-the-sota"

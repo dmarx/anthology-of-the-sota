@@ -26,24 +26,24 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
 
       - name: Install dependencies
-        #working-directory: frontend
+        working-directory: frontend
         run: npm ci
 
       - name: Build site
-        #working-directory: frontend
+        working-directory: frontend
         env:
           NEXT_PUBLIC_BASE_PATH: '/anthology-of-the-sota'
         run: npm run build && npm run export
         
       # Add .nojekyll file to bypass Jekyll processing
       - name: Add .nojekyll file
-        #run: touch frontend/out/.nojekyll
+        run: touch frontend/out/.nojekyll
         run: touch out/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages  # The branch the action should deploy to
-          #folder: frontend/out  # The folder the action should deploy
+          folder: frontend/out  # The folder the action should deploy
           folder: out  # The folder the action should deploy
           clean: true  # Automatically remove deleted files from the deployment

@@ -21,6 +21,9 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({
     deprecated: 'bg-red-100 text-red-800'
   };
 
+  // Safely access implementations with default empty array
+  const implementations = recommendation.implementations || [];
+
   return (
     <div className="p-4 border rounded-lg shadow-sm bg-white hover:shadow-md transition-shadow">
       <div className="flex justify-between items-start mb-2">
@@ -48,10 +51,10 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({
         )}
       </div>
 
-      {recommendation.implementations?.length > 0 && (
+      {implementations.length > 0 && (
         <div className="mt-2 text-sm">
           <span className="text-gray-500">Implementations: </span>
-          <span>{recommendation.implementations.join(', ')}</span>
+          <span>{implementations.join(', ')}</span>
         </div>
       )}
 

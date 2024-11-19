@@ -15,15 +15,17 @@ Why we -- AI/ML researchers and practitioners -- do the things that we do, and w
 You might also be interested in my list of significantly impactful works that has more of a historical perspective: https://github.com/dmarx/anthology-of-modern-ml
 
 The main difference here is that where that prior list was focused on big, impactful works, including those which no longer reflect best practice, this list is focused entirely on whatever the current best practice is understood to be and explaining the justification behind that design choice. Where my `Modern ML` anthology focused on paradigm shifts and made no space for important but comparatively "small" (with respect to paradigmatic impact) incremental improvements, I expect this space to be dominated by incremental works. Additional, because the other list operates as a kind of "hall of fame", it generally should not experience churn. This list however, I plan to maintain as a living document with an "attic" in which to deprecate former best practices that have been supplanted.
-
 ## Project Structure
 
 ```
 
 ├── .github
 │   └── workflows
-│       ├── build_readme.yml
+│       ├── build-readme.yaml
 │       ├── build_registry.yml
+│       ├── deploy-frontend.old
+│       ├── deploy-frontend.yaml
+│       ├── generate-package-lock.yaml
 │       ├── generate_summaries.yaml
 │       ├── render_svg.yaml
 │       └── test.yml
@@ -51,9 +53,42 @@ The main difference here is that where that prior list was focused on big, impac
 │       └── sections
 │           ├── development.md.j2
 │           └── registry_naming_conventions.md.j2
+├── frontend
+│   ├── next.config.js
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── src
+│   │   ├── components
+│   │   │   └── recommendations
+│   │   │       ├── ArxivLink
+│   │   │       │   ├── ArxivLink.test.tsx
+│   │   │       │   └── ArxivLink.tsx
+│   │   │       ├── RecommendationCard
+│   │   │       │   ├── RecommendationCard.test.tsx
+│   │   │       │   └── RecommendationCard.tsx
+│   │   │       ├── RelatedRecommendations
+│   │   │       │   ├── RelatedRecommendations.test.tsx
+│   │   │       │   └── RelatedRecommendations.tsx
+│   │   │       └── SuccessionChain
+│   │   │           ├── SuccessionChain.test.tsx
+│   │   │           └── SuccessionChain.tsx
+│   │   ├── pages
+│   │   │   ├── 404.tsx
+│   │   │   ├── 500.tsx
+│   │   │   ├── _app.tsx
+│   │   │   ├── _document.tsx
+│   │   │   └── index.tsx
+│   │   ├── styles
+│   │   │   └── globals.css
+│   │   ├── types
+│   │   │   └── recommendations.ts
+│   │   └── utils
+│   │       └── recommendations.ts
+│   └── tsconfig.json
 ├── pyproject.toml
 ├── src
 │   └── scripts
+│       ├── generate-package-lock.js
 │       ├── generate_summaries
 │       │   ├── __init__.py
 │       │   ├── __main__.py

@@ -1,13 +1,25 @@
 // frontend/next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',  // Enable static exports
+  output: 'export',
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
   images: {
-    unoptimized: true,  // Required for static export
+    unoptimized: true,
   },
-  // Handle GitHub Pages serving from a subdirectory
-  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  // Remove assetPrefix as it's redundant with basePath
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.ya?ml$/,
+      use: 'raw-loader'
+    });
+    return config;
+  },
+  trailingSlash: true,
+  // Add this to properly handle static file serving
+  experimental: {
+    // This gives better error messages during static export
+    instrumentationHook: true
+  }
 }
 
 module.exports = nextConfig

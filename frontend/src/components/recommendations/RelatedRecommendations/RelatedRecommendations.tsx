@@ -1,6 +1,7 @@
-// src/components/recommendations/RelatedRecommendations/RelatedRecommendations.tsx
+// frontend/src/components/recommendations/RelatedRecommendations/RelatedRecommendations.tsx
 import React, { useMemo } from 'react';
-import { Recommendation } from '@/types/recommendations';
+import type { Recommendation } from '../../../types/recommendations';
+
 
 interface RelatedRecommendationsProps {
   paper?: string;

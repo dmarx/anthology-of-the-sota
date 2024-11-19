@@ -1,7 +1,7 @@
-// src/components/recommendations/SuccessionChain/SuccessionChain.tsx
+// frontend/src/components/recommendations/SuccessionChain/SuccessionChain.tsx
 import React from 'react';
 import { GitBranch } from 'lucide-react';
-import { Recommendation } from '@/types/recommendations';
+import type { Recommendation } from '../../../types/recommendations';
 
 interface SuccessionChainProps {
   recommendations: Record<string, Recommendation>;

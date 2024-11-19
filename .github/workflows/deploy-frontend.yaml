@@ -1,4 +1,3 @@
-# .github/workflows/deploy-frontend.yml
 name: Deploy Frontend
 
 on:
@@ -8,7 +7,7 @@ on:
       - 'frontend/**'
       - 'data/**'
       - '.github/workflows/deploy-frontend.yaml'
-  workflow_dispatch:  # Allow manual triggering
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -16,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Needed for getting commit history
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -25,23 +24,52 @@ jobs:
           cache: 'npm'
           cache-dependency-path: frontend/package-lock.json
 
-      - name: Install dependencies
+      - name: Clean install
         working-directory: frontend
-        run: npm ci
+        run: |
+          rm -f package-lock.json
+          npm install
+
+      - name: Copy data and verify
+        run: |
+          mkdir -p frontend/src/data
+          cp data/registry.yaml frontend/src/data/
+          echo "Verifying copied YAML:"
+          ls -la frontend/src/data/
+          test -f frontend/src/data/registry.yaml || (echo "YAML file not copied" && exit 1)
 
       - name: Build site
         working-directory: frontend
         env:
           NEXT_PUBLIC_BASE_PATH: '/anthology-of-the-sota'
-        run: npm run build && npm run export
-        
-      # Add .nojekyll file to bypass Jekyll processing
+          NODE_ENV: 'production'
+        run: |
+          echo "Building with base path: $NEXT_PUBLIC_BASE_PATH"
+          npm run build
+          
+      - name: Verify build output
+        working-directory: frontend
+        run: |
+          echo "Checking build output:"
+          ls -la out/
+          test -f out/index.html || (echo "index.html not found" && exit 1)
+          echo "Content of index.html:"
+          head -n 20 out/index.html
+
       - name: Add .nojekyll file
-        run: touch frontend/out/.nojekyll
+        run: |
+          touch frontend/out/.nojekyll
+          echo "Verifying .nojekyll:"
+          ls -la frontend/out/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages  # The branch the action should deploy to
-          folder: frontend/out  # The folder the action should deploy
-          clean: true  # Automatically remove deleted files from the deployment
+          branch: gh-pages
+          folder: frontend/out
+          clean: true
+
+      - name: Verify deployment
+        run: |
+          echo "Deployment complete. Site should be available at:"
+          echo "https://<username>.github.io/anthology-of-the-sota"

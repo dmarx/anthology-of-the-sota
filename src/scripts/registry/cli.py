@@ -11,13 +11,14 @@ from . import (
     save_registry,
     registry_to_markdown
 )
-from ..utils import commit_and_push
+#from ..utils import commit_and_push
+from llamero.utils import commit_and_push_to_branch #commit_and_push
 
 def build(
     input_path: str | Path = "data/research.yaml",
     output_dir: str | Path = "data",
     push: bool = True,
-    branch: Optional[str] = None
+    branch: Optional[str] = "HEAD"
 ) -> None:
     """Build registry from research YAML and generate outputs.
     
@@ -49,7 +50,8 @@ def build(
     
     if push:
         logger.info("Committing changes")
-        commit_and_push(
+        #commit_and_push([registry_yaml, registry_md, rdme])
+        commit_and_push_to_branch(
             message="Update ML training registry",
             branch=branch or "main",
             paths=[registry_yaml, registry_md, rdme],

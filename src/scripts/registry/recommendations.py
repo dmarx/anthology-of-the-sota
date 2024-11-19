@@ -1,6 +1,5 @@
-# scripts/registry/recommendations.py
+# src/scripts/registry/recommendations.py
 """Core recommendation registry functionality."""
-
 from collections import defaultdict
 from datetime import datetime
 from typing import Dict, List, Optional, Set
@@ -30,23 +29,23 @@ class RecommendationRegistry:
         self.id_registry = id_registry or MLRIdentifierRegistry()
         self._config = create_config_from_dict({
             'recommendations': {},
-            'topics': {},
             'metadata': {
-                'schema_version': '1.0'
+                'schema_version': '1.0',
+                'last_updated': datetime.now().strftime('%Y-%m-%d')
             }
         })
         logger.info("Initialized recommendation registry")
-        
+
     def add_recommendation(self, 
-                          topic: str,
-                          recommendation: str,
-                          first_author: str,
-                          source_paper: str,
-                          year: int,
-                          arxiv_id: Optional[str] = None,
-                          experimental: bool = False,
-                          superseded_by: Optional[str] = None,
-                          implementations: Optional[List[str]] = None) -> str:
+                         topic: str,
+                         recommendation: str,
+                         first_author: str,
+                         source_paper: str,
+                         year: int,
+                         arxiv_id: Optional[str] = None,
+                         experimental: bool = False,
+                         superseded_by: Optional[str] = None,
+                         implementations: Optional[List[str]] = None) -> str:
         """Add a recommendation to the registry."""
         topic_id = generate_topic_id(topic, recommendation)
         paper_id = self.id_registry.get_paper_id(first_author, year, arxiv_id)
@@ -104,50 +103,30 @@ class RecommendationRegistry:
     def get_topics(self) -> Set[str]:
         """Get all unique topics in the registry."""
         return set(self.topic_to_recommendations.keys())
-    
-    def _get_topic_stats(self, topic: str) -> Dict:
-        """Get statistics for a specific topic."""
-        recs = self.get_recommendations_by_topic(topic)
-        return {
-            'total_count': len(recs),
-            'status_counts': {
-                status.value: len([r for r in recs if r.status == status])
-                for status in MLRStatus
-            },
-            'years': {
-                'earliest': min((r.source.year for r in recs), default=None),
-                'latest': max((r.source.year for r in recs), default=None)
-            }
-        }
-    
-    def _get_recommendations_by_topic_and_status(self, status: MLRStatus) -> Dict[str, List[Dict]]:
-        """Get recommendations organized by topic for a given status."""
-        result = defaultdict(list)
-        for topic in self.get_topics():
-            recs = self.get_recommendations_by_topic(topic, status)
-            if recs:
-                result[topic] = [rec.to_dict() for rec in recs]
-        return dict(result)
-    
+
     def export_registry(self) -> Dict:
-        """Export the full registry as a dictionary."""
-        config = {
+        """Export the registry as a list of atomic recommendations."""
+        return {
             'metadata': {
                 'last_updated': datetime.now().strftime('%Y-%m-%d'),
                 'schema_version': '1.0',
                 'status_types': [status.value for status in MLRStatus]
             },
-            'recommendations': {
-                MLRStatus.STANDARD.value: self._get_recommendations_by_topic_and_status(MLRStatus.STANDARD),
-                MLRStatus.EXPERIMENTAL.value: self._get_recommendations_by_topic_and_status(MLRStatus.EXPERIMENTAL),
-                MLRStatus.DEPRECATED.value: self._get_recommendations_by_topic_and_status(MLRStatus.DEPRECATED)
-            },
+            'recommendations': [
+                rec.to_dict() for rec in self.recommendations.values()
+            ],
+            # Include topic stats for informational purposes
             'topics': {
-                topic: self._get_topic_stats(topic)
-                for topic in self.get_topics()
+                topic: {
+                    'count': len(recs),
+                    'years': {
+                        'earliest': min(self.recommendations[rid].source.year for rid in recs),
+                        'latest': max(self.recommendations[rid].source.year for rid in recs)
+                    }
+                }
+                for topic, recs in self.topic_to_recommendations.items()
             }
         }
-        return OmegaConf.to_container(create_config_from_dict(config))
 
 def build_registry_from_yaml(yaml_data: Dict) -> RecommendationRegistry:
     """Build a recommendation registry from YAML research data."""

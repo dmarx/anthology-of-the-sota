@@ -310,201 +310,113 @@ Last updated: 2024-11-19
 
 ## Statistics
 
-### MoE
-
-- Total recommendations: 2
-- By status:
-  - Experimental: 0
-  - Standard: 2
-  - Deprecated: 0
-- Year range: 2021 - 2021
-
-### attention
+### optimization
 
 - Total recommendations: 8
-- By status:
-  - Experimental: 0
-  - Standard: 8
-  - Deprecated: 0
-- Year range: 2022 - 2023
-
-### attention-alternatives
-
-- Total recommendations: 3
-- By status:
-  - Experimental: 0
-  - Standard: 3
-  - Deprecated: 0
-- Year range: 2023 - 2023
-
-### checkpointing
-
-- Total recommendations: 4
-- By status:
-  - Experimental: 0
-  - Standard: 4
-  - Deprecated: 0
-- Year range: 2021 - 2021
-
-### compilation
-
-- Total recommendations: 4
-- By status:
-  - Experimental: 0
-  - Standard: 4
-  - Deprecated: 0
-- Year range: 2022 - 2022
-
-### data-loading
-
-- Total recommendations: 8
-- By status:
-  - Experimental: 0
-  - Standard: 8
-  - Deprecated: 0
-- Year range: 2021 - 2021
-
-### data-quality
-
-- Total recommendations: 4
-- By status:
-  - Experimental: 0
-  - Standard: 4
-  - Deprecated: 0
-- Year range: 2023 - 2023
-
-### distributed-training
-
-- Total recommendations: 18
-- By status:
-  - Experimental: 0
-  - Standard: 18
-  - Deprecated: 0
-- Year range: 2018 - 2023
-
-### hardware-optimization
-
-- Total recommendations: 4
-- By status:
-  - Experimental: 0
-  - Standard: 4
-  - Deprecated: 0
-- Year range: 2022 - 2022
-
-### initialization
-
-- Total recommendations: 4
-- By status:
-  - Experimental: 0
-  - Standard: 4
-  - Deprecated: 0
-- Year range: 2021 - 2021
-
-### language-models
-
-- Total recommendations: 9
-- By status:
-  - Experimental: 0
-  - Standard: 9
-  - Deprecated: 0
-- Year range: 2020 - 2022
-
-### large-batch-training
-
-- Total recommendations: 1
-- By status:
-  - Experimental: 0
-  - Standard: 1
-  - Deprecated: 0
-- Year range: 2017 - 2017
-
-### memory-efficiency
-
-- Total recommendations: 4
-- By status:
-  - Experimental: 0
-  - Standard: 4
-  - Deprecated: 0
-- Year range: 2020 - 2020
-
-### nlp
-
-- Total recommendations: 1
-- By status:
-  - Experimental: 0
-  - Standard: 1
-  - Deprecated: 0
-- Year range: 2015 - 2015
+- Year range: 2014 - 2020
 
 ### normalization
 
 - Total recommendations: 9
-- By status:
-  - Experimental: 0
-  - Standard: 9
-  - Deprecated: 0
 - Year range: 2015 - 2019
 
-### optimization
+### nlp
 
-- Total recommendations: 8
-- By status:
-  - Experimental: 0
-  - Standard: 8
-  - Deprecated: 0
-- Year range: 2014 - 2020
+- Total recommendations: 1
+- Year range: 2015 - 2015
 
-### scaling-laws
+### large-batch-training
 
-- Total recommendations: 4
-- By status:
-  - Experimental: 0
-  - Standard: 4
-  - Deprecated: 0
-- Year range: 2020 - 2022
-
-### systems
-
-- Total recommendations: 3
-- By status:
-  - Experimental: 0
-  - Standard: 3
-  - Deprecated: 0
-- Year range: 2023 - 2023
-
-### training-dynamics
-
-- Total recommendations: 8
-- By status:
-  - Experimental: 0
-  - Standard: 8
-  - Deprecated: 0
-- Year range: 2021 - 2023
+- Total recommendations: 1
+- Year range: 2017 - 2017
 
 ### training-efficiency
 
 - Total recommendations: 4
-- By status:
-  - Experimental: 0
-  - Standard: 4
-  - Deprecated: 0
 - Year range: 2017 - 2017
 
-### training-stability
+### distributed-training
 
-- Total recommendations: 5
-- By status:
-  - Experimental: 0
-  - Standard: 5
-  - Deprecated: 0
-- Year range: 2020 - 2021
+- Total recommendations: 18
+- Year range: 2018 - 2023
 
 ### transformers
 
 - Total recommendations: 4
-- By status:
-  - Experimental: 0
-  - Standard: 4
-  - Deprecated: 0
 - Year range: 2019 - 2021
+
+### memory-efficiency
+
+- Total recommendations: 4
+- Year range: 2020 - 2020
+
+### training-stability
+
+- Total recommendations: 5
+- Year range: 2020 - 2021
+
+### language-models
+
+- Total recommendations: 9
+- Year range: 2020 - 2022
+
+### scaling-laws
+
+- Total recommendations: 4
+- Year range: 2020 - 2022
+
+### data-loading
+
+- Total recommendations: 8
+- Year range: 2021 - 2021
+
+### initialization
+
+- Total recommendations: 4
+- Year range: 2021 - 2021
+
+### checkpointing
+
+- Total recommendations: 4
+- Year range: 2021 - 2021
+
+### MoE
+
+- Total recommendations: 2
+- Year range: 2021 - 2021
+
+### training-dynamics
+
+- Total recommendations: 8
+- Year range: 2021 - 2023
+
+### compilation
+
+- Total recommendations: 4
+- Year range: 2022 - 2022
+
+### attention
+
+- Total recommendations: 8
+- Year range: 2022 - 2023
+
+### hardware-optimization
+
+- Total recommendations: 4
+- Year range: 2022 - 2022
+
+### data-quality
+
+- Total recommendations: 4
+- Year range: 2023 - 2023
+
+### attention-alternatives
+
+- Total recommendations: 3
+- Year range: 2023 - 2023
+
+### systems
+
+- Total recommendations: 3
+- Year range: 2023 - 2023
 

@@ -6,7 +6,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  // Remove assetPrefix as it's redundant with basePath
   webpack: (config) => {
     config.module.rules.push({
       test: /\.ya?ml$/,
@@ -14,8 +14,12 @@ const nextConfig = {
     });
     return config;
   },
-  // Add trailingSlash configuration for static export
   trailingSlash: true,
+  // Add this to properly handle static file serving
+  experimental: {
+    // This gives better error messages during static export
+    instrumentationHook: true
+  }
 }
 
 module.exports = nextConfig

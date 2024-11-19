@@ -16,7 +16,7 @@
     "react": "^18",
     "react-dom": "^18",
     "lucide-react": "^0.263.1",
-    "yaml-loader": "^1.2.0"
+    "yaml-loader": "^2.3.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.5",

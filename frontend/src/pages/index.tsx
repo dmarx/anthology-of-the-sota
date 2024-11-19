@@ -1,5 +1,6 @@
 // frontend/src/pages/index.tsx
 import React from 'react';
+import { parse } from 'yaml';
 import { RecommendationCard } from '../components/recommendations/RecommendationCard/RecommendationCard';
 import type { Recommendation } from '../types/recommendations';
 
@@ -27,11 +28,19 @@ export default function Home({ recommendations }: HomeProps) {
 }
 
 export async function getStaticProps() {
-  // In a static site, we can import the data directly
-  const recommendations = require('../../../data/registry.yaml');
+  const fs = require('fs');
+  const path = require('path');
+  
+  // Read and parse YAML file
+  const yamlFile = fs.readFileSync(
+    path.join(process.cwd(), 'src/data/registry.yaml'),
+    'utf8'
+  );
+  const data = parse(yamlFile);
+  
   return {
     props: {
-      recommendations: recommendations.recommendations.standard
+      recommendations: data.recommendations.standard
     }
   }
 }

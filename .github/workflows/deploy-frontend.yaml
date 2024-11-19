@@ -25,6 +25,15 @@ jobs:
           cache: 'npm'
           cache-dependency-path: frontend/package-lock.json
 
+      - name: Debug file structure
+        run: |
+          echo "Project root:"
+          ls -la
+          echo "\nData directory:"
+          ls -la data/
+          echo "\nRegistry YAML content:"
+          cat data/registry.yaml | head -n 20
+
       # Clean install to avoid any package-lock.json issues
       - name: Clean install
         working-directory: frontend
@@ -32,15 +41,19 @@ jobs:
           rm -f package-lock.json
           npm install
 
-      - name: Copy data
+      - name: Copy data and verify
         run: |
           mkdir -p frontend/src/data
           cp data/registry.yaml frontend/src/data/
+          echo "\nVerifying copied YAML:"
+          ls -la frontend/src/data/
+          cat frontend/src/data/registry.yaml | head -n 20
 
       - name: Build site
         working-directory: frontend
         env:
           NEXT_PUBLIC_BASE_PATH: '/anthology-of-the-sota'
+          NODE_ENV: 'development'  # Enable error messages
         run: npm run build
 
       - name: Add .nojekyll file

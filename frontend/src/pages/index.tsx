@@ -1,3 +1,4 @@
+// frontend/src/pages/index.tsx
 import React from 'react';
 import { parse } from 'yaml';
 import { RecommendationCard } from '../components/recommendations/RecommendationCard/RecommendationCard';
@@ -9,6 +10,9 @@ interface HomeProps {
 }
 
 export default function Home({ recommendations, error }: HomeProps) {
+  // Add debugging
+  console.log('Rendering Home with props:', { recommendations, error });
+  
   if (error) {
     return (
       <div className="min-h-screen p-4">
@@ -49,46 +53,43 @@ export default function Home({ recommendations, error }: HomeProps) {
 
 export async function getStaticProps() {
   try {
+    // Add more debugging
+    console.log('Current directory:', process.cwd());
+    console.log('Environment:', process.env.NODE_ENV);
+    console.log('Base path:', process.env.NEXT_PUBLIC_BASE_PATH);
+    
     const fs = require('fs');
     const path = require('path');
-    
-    console.log('Current directory:', process.cwd());
-    console.log('Files in data directory:', fs.readdirSync(path.join(process.cwd(), 'src/data')));
-    
     const yamlPath = path.join(process.cwd(), 'src/data/registry.yaml');
+    
     console.log('Loading YAML from:', yamlPath);
-    
     const yamlContent = fs.readFileSync(yamlPath, 'utf8');
-    console.log('YAML content length:', yamlContent.length);
     
+    console.log('YAML content length:', yamlContent.length);
     const data = parse(yamlContent);
-    console.log('Parsed data structure:', Object.keys(data));
     
     if (!data || !data.recommendations || !data.recommendations.standard) {
       throw new Error('Invalid data structure in registry.yaml');
     }
-    
-    console.log('Number of recommendations:', Object.keys(data.recommendations.standard).length);
+
+    console.log('Number of recommendations:', 
+      Object.keys(data.recommendations.standard).length
+    );
+
     return {
       props: {
-        recommendations: data.recommendations.standard
+        recommendations: data.recommendations.standard,
+        basePath: process.env.NEXT_PUBLIC_BASE_PATH || ''
       }
     };
-  } catch (error: unknown) {
+  } catch (error: any) {
     console.error('Error in getStaticProps:', error);
-    
-    if (process.env.NODE_ENV === 'development') {
-      return {
-        props: {
-          recommendations: {},
-          error: error instanceof Error ? error.message : 'An unknown error occurred'
-        }
-      };
-    }
     
     return {
       props: {
-        recommendations: {}
+        recommendations: {},
+        error: error.message,
+        basePath: process.env.NEXT_PUBLIC_BASE_PATH || ''
       }
     };
   }

@@ -1,32 +1,20 @@
-// frontend/src/components/recommendations/RelatedRecommendations/RelatedRecommendations.tsx
-import React, { useMemo } from 'react';
-import type { Recommendation } from '../../../types/recommendations';
-
-
-interface RelatedRecommendationsProps {
-  paper?: string;
-  topic?: string;
-  recommendations: Record<string, Recommendation>;
-}
-
+// src/components/recommendations/RelatedRecommendations/RelatedRecommendations.tsx
 export const RelatedRecommendations: React.FC<RelatedRecommendationsProps> = ({ 
   paper, 
-  topic, 
   recommendations 
 }) => {
   const related = useMemo(() => {
     return Object.values(recommendations).filter(rec => 
-      (paper && rec.source.paper === paper) || 
-      (topic && rec.topic === topic)
+      paper && rec.source.paper === paper
     );
-  }, [paper, topic, recommendations]);
+  }, [paper, recommendations]);
 
   if (!related.length) return null;
 
   return (
-    <div className="mt-4">
+    <div className="mt-4" data-testid="related-recommendations">
       <h4 className="text-sm font-medium text-gray-700">
-        {paper ? 'Other recommendations from this paper' : 'Related recommendations in this topic'}
+        Other recommendations from this paper
       </h4>
       <div className="mt-2 space-y-2">
         {related.map(rec => (

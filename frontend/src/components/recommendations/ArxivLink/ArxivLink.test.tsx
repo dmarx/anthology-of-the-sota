@@ -1,4 +1,5 @@
-// src/components/recommendations/ArxivLink/ArxivLink.test.tsx
+// frontend/src/components/recommendations/ArxivLink/ArxivLink.test.tsx
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ArxivLink } from './ArxivLink';
 

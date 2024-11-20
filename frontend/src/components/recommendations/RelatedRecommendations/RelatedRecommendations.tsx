@@ -1,4 +1,12 @@
 // src/components/recommendations/RelatedRecommendations/RelatedRecommendations.tsx
+import React, { useMemo } from 'react';
+import type { Recommendation } from '../../../types/recommendations';
+interface RelatedRecommendationsProps {
+  paper?: string;
+  topic?: string;
+  recommendations: Record<string, Recommendation>;
+}
+
 export const RelatedRecommendations: React.FC<RelatedRecommendationsProps> = ({ 
   paper, 
   recommendations 

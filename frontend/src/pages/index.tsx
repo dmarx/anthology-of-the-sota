@@ -27,7 +27,7 @@ const HomeContent: React.FC<HomeContentProps> = ({ recommendations }) => {
   );
 };
 
-export default function Home({ recommendations }: { recommendations: Recommendation[] }) {
+export default function Home({ recommendations = [] }: { recommendations?: Recommendation[] }) {
   return (
     <SearchProvider>
       <Layout>
@@ -35,4 +35,45 @@ export default function Home({ recommendations }: { recommendations: Recommendat
       </Layout>
     </SearchProvider>
   );
+}
+
+// Add default value to getStaticProps
+export async function getStaticProps() {
+  try {
+    const fs = require('fs');
+    const path = require('path');
+    const { parse } = require('yaml');
+    
+    const yamlPath = path.join(process.cwd(), 'src/data/registry.yaml');
+    console.log('Loading YAML from:', yamlPath);
+    
+    if (!fs.existsSync(yamlPath)) {
+      console.warn('Registry file not found, returning empty array');
+      return { props: { recommendations: [] } };
+    }
+    
+    const yamlContent = fs.readFileSync(yamlPath, 'utf8');
+    const data = parse(yamlContent);
+    
+    if (!data?.recommendations) {
+      console.warn('No recommendations found in registry');
+      return { props: { recommendations: [] } };
+    }
+
+    return {
+      props: {
+        recommendations: Object.values(data.recommendations)
+          .flatMap(topicRecs => Object.values(topicRecs))
+          .flat()
+      }
+    };
+  } catch (error: any) {
+    console.error('Error in getStaticProps:', error);
+    // Return empty array instead of error in production
+    return {
+      props: {
+        recommendations: []
+      }
+    };
+  }
 }

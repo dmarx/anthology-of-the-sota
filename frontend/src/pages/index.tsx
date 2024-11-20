@@ -1,9 +1,9 @@
 // frontend/src/pages/index.tsx
 import React from 'react';
-import { Layout } from '../components/layout/Layout';
-import { RecommendationGrid } from '../components/recommendations/RecommendationGrid/RecommendationGrid';
-import { SearchProvider, useSearch } from '../contexts/search/SearchContext';
-import type { Recommendation } from '../types/recommendations';
+import { Layout } from '@/components/layout/Layout';
+import { RecommendationGrid } from '@/components/recommendations/RecommendationGrid/RecommendationGrid';
+import { SearchProvider, useSearch } from '@/contexts/search/SearchContext';
+import type { Recommendation } from '@/types/recommendations';
 
 interface HomeContentProps {
   recommendations: Recommendation[];
@@ -37,7 +37,6 @@ export default function Home({ recommendations = [] }: { recommendations?: Recom
   );
 }
 
-// Add default value to getStaticProps
 export async function getStaticProps() {
   try {
     const fs = require('fs');
@@ -60,20 +59,22 @@ export async function getStaticProps() {
       return { props: { recommendations: [] } };
     }
 
+    // Fixed type error by adding explicit type casting and safety checks
+    const recommendations = Object.entries(data.recommendations.standard || {})
+      .reduce<Recommendation[]>((acc, [topic, recs]) => {
+        if (typeof recs === 'object' && recs !== null) {
+          return [...acc, ...Object.values(recs as Record<string, Recommendation>)];
+        }
+        return acc;
+      }, []);
+
     return {
       props: {
-        recommendations: Object.values(data.recommendations)
-          .flatMap(topicRecs => Object.values(topicRecs))
-          .flat()
+        recommendations
       }
     };
   } catch (error: any) {
     console.error('Error in getStaticProps:', error);
-    // Return empty array instead of error in production
-    return {
-      props: {
-        recommendations: []
-      }
-    };
+    return { props: { recommendations: [] } };
   }
 }

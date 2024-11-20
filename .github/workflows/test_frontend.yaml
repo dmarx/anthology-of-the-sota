@@ -1,8 +1,8 @@
 name: Test Frontend
 
 on:
-  # push:
-  #   branches: [ main ]
+  push:
+    # branches: [ main ]
   #   paths:
   #     - 'frontend/**'
   #     - 'data/**'

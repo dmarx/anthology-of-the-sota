@@ -1,0 +1,95 @@
+name: Test Frontend
+
+on:
+  # push:
+  #   branches: [ main ]
+  #   paths:
+  #     - 'frontend/**'
+  #     - 'data/**'
+  #     - '.github/workflows/deploy-frontend.yaml'
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Clean install
+        working-directory: frontend
+        run: |
+          rm -f package-lock.json
+          npm install
+
+      # New test steps
+      # - name: Run tests
+      #   working-directory: frontend
+      #   run: |
+      #     echo "Running tests..."
+      #     npm run test
+          
+      # Optional: Add coverage reporting
+      - name: Run tests with coverage
+        working-directory: frontend
+        run: |
+          npm run test:coverage
+          
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v3
+        with:
+          directory: frontend/coverage
+          flags: frontend
+          fail_ci_if_error: true
+
+      # - name: Copy data and verify
+      #   run: |
+      #     mkdir -p frontend/src/data
+      #     cp data/registry.yaml frontend/src/data/
+      #     echo "Verifying copied YAML:"
+      #     ls -la frontend/src/data/
+      #     test -f frontend/src/data/registry.yaml || (echo "YAML file not copied" && exit 1)
+
+      # - name: Build site
+      #   working-directory: frontend
+      #   env:
+      #     NEXT_PUBLIC_BASE_PATH: '/anthology-of-the-sota'
+      #     NODE_ENV: 'production'
+      #   run: |
+      #     echo "Building with base path: $NEXT_PUBLIC_BASE_PATH"
+      #     npm run build
+
+      # - name: Verify build output
+      #   working-directory: frontend
+      #   run: |
+      #     echo "Checking build output:"
+      #     ls -la out/
+      #     test -f out/index.html || (echo "index.html not found" && exit 1)
+      #     echo "Content of index.html:"
+      #     head -n 20 out/index.html
+
+      # - name: Add .nojekyll file
+      #   run: |
+      #     touch frontend/out/.nojekyll
+      #     echo "Verifying .nojekyll:"
+      #     ls -la frontend/out/
+
+      # - name: Deploy to GitHub Pages
+      #   uses: JamesIves/github-pages-deploy-action@v4
+      #   with:
+      #     branch: gh-pages
+      #     folder: frontend/out
+      #     clean: true
+
+      - name: Verify deployment
+        run: |
+          echo "Deployment complete. Site should be available at:"
+          echo "https://<username>.github.io/anthology-of-the-sota"

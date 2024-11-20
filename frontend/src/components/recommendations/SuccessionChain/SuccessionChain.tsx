@@ -1,4 +1,12 @@
 // src/components/recommendations/SuccessionChain/SuccessionChain.tsx
+import React from 'react';
+import { GitBranch } from 'lucide-react';
+import type { Recommendation } from '@/types/recommendations';
+interface SuccessionChainProps {
+  recommendations: Record<string, Recommendation>;
+  currentId: string;
+}
+
 export const SuccessionChain: React.FC<SuccessionChainProps> = ({ recommendations, currentId }) => (
   <div className="mt-4">
     <h4 className="text-sm font-medium text-gray-700">Recommendation Evolution</h4>

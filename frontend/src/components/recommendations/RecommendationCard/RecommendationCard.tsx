@@ -2,7 +2,9 @@
 import React from 'react';
 import { Tag } from 'lucide-react';
 import { ArxivLink } from '../ArxivLink/ArxivLink';
-import type { Recommendation } from '../../../types/recommendations';
+import { SuccessionChain } from '../SuccessionChain/SuccessionChain';
+import { RelatedRecommendations } from '../RelatedRecommendations/RelatedRecommendations';
+import type { Recommendation } from '@/types/recommendations';
 
 interface RecommendationCardProps {
   recommendation: Recommendation;
@@ -15,15 +17,6 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({
   allRecommendations,
   onExpand
 }) => {
-  const statusColors = {
-    standard: 'bg-green-100 text-green-800',
-    experimental: 'bg-yellow-100 text-yellow-800',
-    deprecated: 'bg-red-100 text-red-800'
-  };
-
-  // Safely access implementations with default empty array
-  const implementations = recommendation.implementations || [];
-
   return (
     <div className="p-4 border rounded-lg shadow-sm bg-white hover:shadow-md transition-shadow">
       <div className="flex justify-between items-start mb-2">
@@ -39,8 +32,11 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({
       <p className="font-medium mb-3">{recommendation.recommendation}</p>
       
       <div className="flex flex-wrap gap-2 mb-3">
-        <span className={`px-2 py-1 text-sm rounded ${statusColors[recommendation.status]}`}>
+        <span className="px-2 py-1 text-sm rounded bg-green-100 text-green-800">
           {recommendation.status}
+        </span>
+        <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-sm">
+          {recommendation.topic}
         </span>
       </div>
       
@@ -51,18 +47,23 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({
         )}
       </div>
 
-      {implementations.length > 0 && (
-        <div className="mt-2 text-sm">
-          <span className="text-gray-500">Implementations: </span>
-          <span>{implementations.join(', ')}</span>
-        </div>
+      {recommendation.superseded_by && (
+        <>
+          <div className="mt-2 text-sm text-red-600">
+            Superseded by: {allRecommendations[recommendation.superseded_by]?.recommendation || recommendation.superseded_by}
+          </div>
+          <SuccessionChain
+            recommendations={allRecommendations}
+            currentId={recommendation.id}
+          />
+        </>
       )}
 
-      {recommendation.superseded_by && (
-        <div className="mt-2 text-sm text-red-600">
-          Superseded by: {allRecommendations[recommendation.superseded_by]?.recommendation || recommendation.superseded_by}
-        </div>
-      )}
+      {/* Show related recommendations */}
+      <RelatedRecommendations
+        paper={recommendation.source.paper}
+        recommendations={allRecommendations}
+      />
     </div>
   );
-}
+};

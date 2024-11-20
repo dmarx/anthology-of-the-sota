@@ -1,4 +1,10 @@
 // src/components/recommendations/RecommendationCard/RecommendationInfo.tsx
+import React from 'react';
+import type { Recommendation } from '@/types/recommendations';
+interface RecommendationInfoProps {
+  recommendation: Recommendation;
+}
+
 export const RecommendationInfo: React.FC<RecommendationInfoProps> = ({ recommendation }) => (
   <>
     <div className="flex justify-between items-start mb-2">

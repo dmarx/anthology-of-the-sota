@@ -1,7 +1,9 @@
-// frontend/src/components/recommendations/RecommendationCard/RecommendationCard.tsx
+// src/components/recommendations/RecommendationCard/RecommendationCard.tsx
 import React from 'react';
 import { Tag } from 'lucide-react';
-import { ArxivLink } from '../ArxivLink/ArxivLink';
+import { RecommendationInfo } from './RecommendationInfo';
+import { SourceInfo } from './SourceInfo';
+import { SupersessionInfo } from './SupersessionInfo';
 import { SuccessionChain } from '../SuccessionChain/SuccessionChain';
 import { RelatedRecommendations } from '../RelatedRecommendations/RelatedRecommendations';
 import type { Recommendation } from '@/types/recommendations';
@@ -16,54 +18,27 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({
   recommendation,
   allRecommendations,
   onExpand
-}) => {
-  return (
-    <div className="p-4 border rounded-lg shadow-sm bg-white hover:shadow-md transition-shadow">
-      <div className="flex justify-between items-start mb-2">
-        <div className="text-sm text-gray-500">{recommendation.id}</div>
-        <button 
-          onClick={() => onExpand(recommendation.id)}
-          className="text-blue-500 hover:text-blue-600"
-        >
-          <Tag size={16} />
-        </button>
-      </div>
-      
-      <p className="font-medium mb-3">{recommendation.recommendation}</p>
-      
-      <div className="flex flex-wrap gap-2 mb-3">
-        <span className="px-2 py-1 text-sm rounded bg-green-100 text-green-800">
-          {recommendation.status}
-        </span>
-        <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-sm">
-          {recommendation.topic}
-        </span>
-      </div>
-      
-      <div className="text-sm text-gray-600">
-        <p className="mb-1">{recommendation.source.paper}</p>
-        {recommendation.source.arxiv_id && (
-          <ArxivLink arxivId={recommendation.source.arxiv_id} />
-        )}
-      </div>
+}) => (
+  <div className="p-4 border rounded-lg shadow-sm bg-white hover:shadow-md transition-shadow">
+    <RecommendationInfo recommendation={recommendation} />
+    <SourceInfo source={recommendation.source} />
 
-      {recommendation.superseded_by && (
-        <>
-          <div className="mt-2 text-sm text-red-600">
-            Superseded by: {allRecommendations[recommendation.superseded_by]?.recommendation || recommendation.superseded_by}
-          </div>
-          <SuccessionChain
-            recommendations={allRecommendations}
-            currentId={recommendation.id}
-          />
-        </>
-      )}
+    {recommendation.superseded_by && allRecommendations[recommendation.superseded_by] && (
+      <>
+        <SupersessionInfo 
+          recommendation={recommendation}
+          supersededBy={allRecommendations[recommendation.superseded_by]} 
+        />
+        <SuccessionChain
+          recommendations={allRecommendations}
+          currentId={recommendation.id}
+        />
+      </>
+    )}
 
-      {/* Show related recommendations */}
-      <RelatedRecommendations
-        paper={recommendation.source.paper}
-        recommendations={allRecommendations}
-      />
-    </div>
-  );
-};
+    <RelatedRecommendations 
+      paper={recommendation.source.paper}
+      recommendations={allRecommendations}
+    />
+  </div>
+);

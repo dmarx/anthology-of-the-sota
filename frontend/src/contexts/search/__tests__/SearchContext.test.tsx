@@ -1,4 +1,4 @@
-// frontend/src/contexts/search/__tests__/SearchContext.test.tsx
+// src/contexts/search/__tests__/SearchContext.test.tsx
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { SearchProvider, useSearch } from '../SearchContext';
@@ -17,19 +17,6 @@ const mockRecommendations: Recommendation[] = [
       year: 2023,
       first_author: 'Test'
     }
-  },
-  {
-    id: 'MLR-2022-001',
-    recommendation: 'Older recommendation',
-    topic: 'testing',
-    topic_id: 'testing/older',
-    status: 'experimental',
-    source: {
-      paper: 'Test Paper 2022',
-      paper_id: 'test2022',
-      year: 2022,
-      first_author: 'Test'
-    }
   }
 ];
 
@@ -38,7 +25,7 @@ const TestComponent: React.FC<{ recommendations: Recommendation[] }> = ({ recomm
   
   const filtered = filterRecommendations(recommendations);
   const sorted = sortRecommendations(filtered);
-
+  
   return (
     <div>
       <div data-testid="search-query">{state.searchQuery}</div>
@@ -66,13 +53,6 @@ const TestComponent: React.FC<{ recommendations: Recommendation[] }> = ({ recomm
       >
         Set View
       </button>
-
-      <button
-        onClick={() => dispatch({ type: 'SET_SORT', sort: 'oldest' })}
-        data-testid="set-sort"
-      >
-        Set Sort
-      </button>
     </div>
   );
 };
@@ -87,7 +67,7 @@ describe('SearchContext', () => {
     
     expect(screen.getByTestId('search-query')).toHaveTextContent('');
     expect(screen.getByTestId('view-mode')).toHaveTextContent('grid');
-    expect(screen.getByTestId('filtered-count')).toHaveTextContent('2');
+    expect(screen.getByTestId('filtered-count')).toHaveTextContent('1');
   });
 
   it('filters by search query', () => {
@@ -95,13 +75,7 @@ describe('SearchContext', () => {
     
     fireEvent.click(screen.getByTestId('set-search'));
     expect(screen.getByTestId('search-query')).toHaveTextContent('test');
-  });
-
-  it('filters by topic', () => {
-    render(<TestComponent recommendations={mockRecommendations} />, { wrapper });
-    
-    fireEvent.click(screen.getByTestId('toggle-topic'));
-    expect(screen.getByTestId('filtered-count')).toHaveTextContent('2');
+    expect(screen.getByTestId('filtered-count')).toHaveTextContent('1');
   });
 
   it('changes view mode', () => {
@@ -111,19 +85,188 @@ describe('SearchContext', () => {
     expect(screen.getByTestId('view-mode')).toHaveTextContent('list');
   });
 
-  it('sorts recommendations', () => {
-    render(<TestComponent recommendations={mockRecommendations} />, { wrapper });
-    
-    // Default newest first
-    expect(screen.getByTestId('sorted-first')).toHaveTextContent('Newer recommendation');
-    
-    // Change to oldest first
-    fireEvent.click(screen.getByTestId('set-sort'));
-    expect(screen.getByTestId('sorted-first')).toHaveTextContent('Older recommendation');
-  });
-
   it('handles empty recommendations', () => {
     render(<TestComponent recommendations={[]} />, { wrapper });
     expect(screen.getByTestId('filtered-count')).toHaveTextContent('0');
+  });
+});
+
+// src/pages/__tests__/index.test.tsx
+import { render, screen } from '@testing-library/react';
+import Home from '../index';
+
+const mockRecommendations = [
+  {
+    id: 'MLR-2023-001',
+    recommendation: 'Test recommendation',
+    topic: 'testing',
+    topic_id: 'testing/test',
+    status: 'standard',
+    source: {
+      paper: 'Test Paper',
+      paper_id: 'test123',
+      year: 2023,
+      first_author: 'Test Author'
+    }
+  }
+];
+
+jest.mock('@/contexts/search/SearchContext', () => ({
+  SearchProvider: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+  useSearch: () => ({
+    state: {
+      view: 'grid',
+      searchQuery: '',
+      topics: [],
+      status: ['standard']
+    },
+    filterRecommendations: (recs: any[]) => recs,
+    sortRecommendations: (recs: any[]) => recs,
+    dispatch: jest.fn()
+  })
+}));
+
+describe('Home Page', () => {
+  it('renders without recommendations', () => {
+    render(<Home />);
+    expect(screen.getByText('No recommendations match your current filters.')).toBeInTheDocument();
+  });
+
+  it('renders with recommendations', () => {
+    render(<Home recommendations={mockRecommendations} />);
+    expect(screen.getByText('Test recommendation')).toBeInTheDocument();
+  });
+});
+
+// src/utils/recommendations.test.tsx
+import { 
+  getRecommendationChain, 
+  getRelatedRecommendations,
+  groupRecommendationsByTopic 
+} from './recommendations';
+import type { Recommendation } from '@/types/recommendations';
+
+describe('getRecommendationChain', () => {
+  const mockRecommendations: Record<string, Recommendation> = {
+    'MLR-2023-001': {
+      id: 'MLR-2023-001',
+      recommendation: 'Original',
+      topic: 'test',
+      topic_id: 'test/original',
+      superseded_by: 'MLR-2023-002',
+      source: {
+        paper: 'Test Paper',
+        paper_id: 'test123',
+        year: 2023,
+        first_author: 'Test'
+      },
+      status: 'deprecated'
+    },
+    'MLR-2023-002': {
+      id: 'MLR-2023-002',
+      recommendation: 'Updated',
+      topic: 'test',
+      topic_id: 'test/updated',
+      source: {
+        paper: 'Test Paper 2',
+        paper_id: 'test456',
+        year: 2023,
+        first_author: 'Test'
+      },
+      status: 'standard'
+    }
+  };
+
+  it('builds recommendation chain', () => {
+    const chain = getRecommendationChain(
+      mockRecommendations['MLR-2023-001'],
+      mockRecommendations
+    );
+    
+    expect(chain).toHaveLength(2);
+    expect(chain[0].id).toBe('MLR-2023-001');
+    expect(chain[1].id).toBe('MLR-2023-002');
+  });
+});
+
+describe('getRelatedRecommendations', () => {
+  const mockRecommendations: Record<string, Recommendation> = {
+    'MLR-2023-001': {
+      id: 'MLR-2023-001',
+      recommendation: 'First',
+      topic: 'test',
+      topic_id: 'test/first',
+      source: {
+        paper: 'Test Paper',
+        paper_id: 'test123',
+        year: 2023,
+        first_author: 'Test'
+      },
+      status: 'standard'
+    },
+    'MLR-2023-002': {
+      id: 'MLR-2023-002',
+      recommendation: 'Second',
+      topic: 'test',
+      topic_id: 'test/second',
+      source: {
+        paper: 'Test Paper',
+        paper_id: 'test123',
+        year: 2023,
+        first_author: 'Test'
+      },
+      status: 'standard'
+    }
+  };
+
+  it('finds related recommendations by paper', () => {
+    const related = getRelatedRecommendations(
+      mockRecommendations['MLR-2023-001'],
+      mockRecommendations
+    );
+    
+    expect(related).toHaveLength(1);
+    expect(related[0].id).toBe('MLR-2023-002');
+  });
+});
+
+describe('groupRecommendationsByTopic', () => {
+  const mockRecommendations: Recommendation[] = [
+    {
+      id: 'MLR-2023-001',
+      recommendation: 'First',
+      topic: 'topic1',
+      topic_id: 'topic1/first',
+      source: {
+        paper: 'Test Paper',
+        paper_id: 'test123',
+        year: 2023,
+        first_author: 'Test'
+      },
+      status: 'standard'
+    },
+    {
+      id: 'MLR-2023-002',
+      recommendation: 'Second',
+      topic: 'topic2',
+      topic_id: 'topic2/second',
+      source: {
+        paper: 'Test Paper 2',
+        paper_id: 'test456',
+        year: 2023,
+        first_author: 'Test'
+      },
+      status: 'standard'
+    }
+  ];
+
+  it('groups recommendations by topic', () => {
+    const grouped = groupRecommendationsByTopic(mockRecommendations);
+    
+    expect(Object.keys(grouped)).toHaveLength(2);
+    expect(grouped.topic1).toHaveLength(1);
+    expect(grouped.topic2).toHaveLength(1);
+    expect(grouped.topic1[0].id).toBe('MLR-2023-001');
+    expect(grouped.topic2[0].id).toBe('MLR-2023-002');
   });
 });

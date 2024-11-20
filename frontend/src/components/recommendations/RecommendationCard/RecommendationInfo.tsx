@@ -1,11 +1,4 @@
 // src/components/recommendations/RecommendationCard/RecommendationInfo.tsx
-import React from 'react';
-import type { Recommendation } from '@/types/recommendations';
-
-interface RecommendationInfoProps {
-  recommendation: Recommendation;
-}
-
 export const RecommendationInfo: React.FC<RecommendationInfoProps> = ({ recommendation }) => (
   <>
     <div className="flex justify-between items-start mb-2">
@@ -17,10 +10,16 @@ export const RecommendationInfo: React.FC<RecommendationInfoProps> = ({ recommen
       {recommendation.recommendation}
     </p>
     <div className="flex flex-wrap gap-2 mb-3">
-      <span className="px-2 py-1 text-sm rounded bg-green-100 text-green-800">
+      <span 
+        className="px-2 py-1 text-sm rounded bg-green-100 text-green-800"
+        data-testid="recommendation-status"
+      >
         {recommendation.status}
       </span>
-      <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-sm">
+      <span 
+        className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-sm"
+        data-testid="recommendation-topic"
+      >
         {recommendation.topic}
       </span>
     </div>

@@ -14,43 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-          
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pyyaml
 
-      - name: Process YAML to JSON
+      - name: Copy data file
         run: |
           mkdir -p web/data
-          python -c '
-          import yaml, json
-          from pathlib import Path
-          
-          # Load and process YAML
-          with open("data/registry.yaml") as f:
-              data = yaml.safe_load(f)
-          
-          # Transform data into frontend-friendly format
-          recommendations = []
-          for topic, recs in data["recommendations"]["standard"].items():
-              for rec in recs:
-                  recommendations.append({
-                      "topic": topic,
-                      "recommendation": rec["recommendation"],
-                      "status": rec["status"],
-                      "source": f"{rec["source"]["first_author"]} et al. ({rec["source"]["year"]})"
-                  })
-          
-          # Write JSON
-          with open("web/data/recommendations.json", "w") as f:
-              json.dump(recommendations, f, indent=2)
-          '
+          cp data/registry.yaml web/data/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4

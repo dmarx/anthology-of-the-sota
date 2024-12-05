@@ -7,7 +7,8 @@ let currentSort = {
 };
 
 async function loadData() {
-    const response = await fetch('./data/recommendations.json');
+    //const response = await fetch('./data/recommendations.json');
+    const response = await fetch('./data/registry.json');
     recommendations = await response.json();
     renderView();
 }

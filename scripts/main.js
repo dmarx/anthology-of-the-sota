@@ -1,4 +1,4 @@
-// File: frontend-html/scripts/main.js
+// File: web/scripts/main.js
 let recommendations = [];
 let currentView = 'grid';
 let currentSort = {
@@ -7,25 +7,15 @@ let currentSort = {
 };
 
 async function loadData() {
-    //const response = await fetch('./data/recommendations.json');
-    const response = await fetch('./data/registry.json');
-    recommendations = await response.json();
+    const response = await fetch('../data/registry.yaml');
+    const yamlText = await response.text();
+    const data = jsyaml.load(yamlText);
+    recommendations = data.recommendations;
     renderView();
 }
 
-function setView(view) {
-    currentView = view;
-    document.getElementById('recommendations').classList.toggle('hidden', view !== 'grid');
-    document.getElementById('recommendationsTable').classList.toggle('hidden', view !== 'table');
-    renderView();
-}
-
-function renderView() {
-    if (currentView === 'grid') {
-        renderGrid();
-    } else {
-        renderTable();
-    }
+function formatSource(source) {
+    return `${source.first_author} et al. (${source.year})`;
 }
 
 function renderGrid() {
@@ -36,7 +26,10 @@ function renderGrid() {
                 <h3>${rec.topic}</h3>
                 <p>${rec.recommendation}</p>
                 <div>Status: ${rec.status}</div>
-                <div>Source: ${rec.source}</div>
+                <div>Source: ${formatSource(rec.source)}</div>
+                ${rec.source.arxiv_id ? 
+                    `<div>arXiv: <a href="https://arxiv.org/abs/${rec.source.arxiv_id}" target="_blank">${rec.source.arxiv_id}</a></div>` 
+                    : ''}
             </div>
         `).join('');
 }
@@ -50,7 +43,7 @@ function renderTable() {
                     <th onclick="sortBy('topic')">Topic ${getSortIndicator('topic')}</th>
                     <th onclick="sortBy('recommendation')">Recommendation ${getSortIndicator('recommendation')}</th>
                     <th onclick="sortBy('status')">Status ${getSortIndicator('status')}</th>
-                    <th onclick="sortBy('source')">Source ${getSortIndicator('source')}</th>
+                    <th>Source</th>
                 </tr>
             </thead>
             <tbody>
@@ -59,7 +52,12 @@ function renderTable() {
                         <td>${rec.topic}</td>
                         <td>${rec.recommendation}</td>
                         <td>${rec.status}</td>
-                        <td>${rec.source}</td>
+                        <td>
+                            ${formatSource(rec.source)}
+                            ${rec.source.arxiv_id ? 
+                                `<br><a href="https://arxiv.org/abs/${rec.source.arxiv_id}" target="_blank">arXiv:${rec.source.arxiv_id}</a>` 
+                                : ''}
+                        </td>
                     </tr>
                 `).join('')}
             </tbody>
@@ -76,7 +74,7 @@ function sortBy(column) {
     
     recommendations = _.orderBy(
         recommendations,
-        [currentSort.column],
+        [column],
         [currentSort.direction]
     );
     
@@ -86,6 +84,21 @@ function sortBy(column) {
 function getSortIndicator(column) {
     if (currentSort.column !== column) return '↕';
     return currentSort.direction === 'asc' ? '↑' : '↓';
+}
+
+function setView(view) {
+    currentView = view;
+    document.getElementById('recommendations').classList.toggle('hidden', view !== 'grid');
+    document.getElementById('recommendationsTable').classList.toggle('hidden', view !== 'table');
+    renderView();
+}
+
+function renderView() {
+    if (currentView === 'grid') {
+        renderGrid();
+    } else {
+        renderTable();
+    }
 }
 
 // Initialize

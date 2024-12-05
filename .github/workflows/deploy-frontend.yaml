@@ -15,16 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Create the deployment directory with web files and data
-      - name: Prepare deployment
+      - name: Copy data file
         run: |
-          mkdir -p deploy
-          cp -r web/* deploy/
-          mkdir -p deploy/data
-          cp data/registry.yaml deploy/data/
+          mkdir -p web/data
+          cp data/registry.yaml web/data/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: deploy
+          folder: web
           branch: gh-pages

@@ -14,18 +14,10 @@ async function loadData() {
         }
         const yamlText = await response.text();
         const data = jsyaml.load(yamlText);
-        
-        // Validate and extract recommendations from registry format
-        if (!data?.recommendations?.standard) {
+        if (!data || !data.recommendations) {
             throw new Error('Invalid data format');
         }
-
-        // Flatten recommendations by status and add status field
-        recommendations = Object.entries(data.recommendations)
-            .flatMap(([status, recs]) => 
-                Object.values(recs).map(rec => ({...rec, status}))
-            );
-
+        recommendations = data.recommendations;
         renderView();
     } catch (error) {
         console.error('Error loading data:', error);
@@ -35,17 +27,7 @@ async function loadData() {
 }
 
 function formatSource(source) {
-    const arxivLink = source.arxiv_id ? 
-        `<a href="https://arxiv.org/abs/${source.arxiv_id}" target="_blank">[${source.arxiv_id}]</a>` : '';
-    return `${source.first_author} et al. (${source.year}) ${arxivLink}`;
-}
-
-function getStatusClass(status) {
-    return {
-        'standard': 'status-standard',
-        'experimental': 'status-experimental',
-        'deprecated': 'status-deprecated'
-    }[status] || 'status-standard';
+    return `${source.first_author} et al. (${source.year})`;
 }
 
 function renderGrid() {
@@ -58,19 +40,13 @@ function renderGrid() {
     grid.innerHTML = recommendations
         .map(rec => `
             <div class="recommendation-card">
-                <div class="card-topic">${rec.topic}</div>
-                <p class="card-recommendation">${rec.recommendation}</p>
-                <div class="card-metadata">
-                    <span class="${getStatusClass(rec.status)}">${rec.status}</span>
-                    ${rec.implementations?.length ? 
-                        `<div class="implementations">
-                            Implementations: ${rec.implementations.join(', ')}
-                        </div>` : 
-                        ''}
-                </div>
-                <div class="card-source">
-                    Source: ${formatSource(rec.source)}
-                </div>
+                <h3>${rec.topic}</h3>
+                <p>${rec.recommendation}</p>
+                <div>Status: ${rec.status}</div>
+                <div>Source: ${formatSource(rec.source)}</div>
+                ${rec.source.arxiv_id ? 
+                    `<div>arXiv: <a href="https://arxiv.org/abs/${rec.source.arxiv_id}" target="_blank">${rec.source.arxiv_id}</a></div>` 
+                    : ''}
             </div>
         `).join('');
 }
@@ -90,8 +66,6 @@ function renderTable() {
                     <th onclick="sortBy('recommendation')">Recommendation ${getSortIndicator('recommendation')}</th>
                     <th onclick="sortBy('status')">Status ${getSortIndicator('status')}</th>
                     <th>Source</th>
-                    ${recommendations.some(r => r.implementations?.length) ? 
-                        '<th>Implementations</th>' : ''}
                 </tr>
             </thead>
             <tbody>
@@ -99,10 +73,13 @@ function renderTable() {
                     <tr>
                         <td>${rec.topic}</td>
                         <td>${rec.recommendation}</td>
-                        <td><span class="${getStatusClass(rec.status)}">${rec.status}</span></td>
-                        <td>${formatSource(rec.source)}</td>
-                        ${recommendations.some(r => r.implementations?.length) ? 
-                            `<td>${rec.implementations?.join(', ') || ''}</td>` : ''}
+                        <td>${rec.status}</td>
+                        <td>
+                            ${formatSource(rec.source)}
+                            ${rec.source.arxiv_id ? 
+                                `<br><a href="https://arxiv.org/abs/${rec.source.arxiv_id}" target="_blank">arXiv:${rec.source.arxiv_id}</a>` 
+                                : ''}
+                        </td>
                     </tr>
                 `).join('')}
             </tbody>

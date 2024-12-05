@@ -1,0 +1,30 @@
+<!-- File: web/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Recommendations</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash/4.17.21/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="page-header">
+        <h1>Machine Learning Recommendations</h1>
+        
+        <div class="view-controls">
+            <button onclick="setView('grid')">Grid View</button>
+            <button onclick="setView('table')">Table View</button>
+            
+            <div id="activeFilters" class="filters">
+            </div>
+        </div>
+    </div>
+
+    <div id="recommendations" class="recommendation-grid hidden"></div>
+    <div id="recommendationsTable" class="table-container"></div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

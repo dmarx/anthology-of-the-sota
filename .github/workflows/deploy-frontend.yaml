@@ -4,7 +4,7 @@ name: Deploy Frontend
 on:
   workflow_dispatch:
   push:
-    #branches: [ main ]
+    branches: [ main ]
     paths:
       - 'web/**'
       - 'data/registry.yaml'

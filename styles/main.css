@@ -1,9 +1,10 @@
-/* File: frontend-html/styles/main.css */
+/* File: web/styles/main.css */
 body {
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1.5;
     margin: 0;
     padding: 20px;
+    color: #333;
 }
 
 .page-header {
@@ -14,6 +15,31 @@ body {
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.search-input {
+    min-width: 250px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.topic-select,
+.status-select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-width: 150px;
+    font-size: 0.9rem;
 }
 
 .filters {
@@ -32,11 +58,59 @@ body {
     border: 1px solid #ddd;
     padding: 1rem;
     border-radius: 4px;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card-topic {
+    color: #2563eb;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.card-recommendation {
+    margin: 0.5rem 0;
+}
+
+.card-source {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.status-standard {
+    background: #dcfce7;
+    color: #166534;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 0.875rem;
+}
+
+.status-experimental {
+    background: #fef9c3;
+    color: #854d0e;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 0.875rem;
+}
+
+.status-deprecated {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 0.875rem;
 }
 
 .table-container {
     width: 100%;
     overflow-x: auto;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 table {
@@ -45,22 +119,24 @@ table {
 }
 
 th, td {
-    padding: 0.5rem;
+    padding: 0.75rem 1rem;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
 th {
-    background: #f5f5f5;
+    background: #f8fafc;
+    font-weight: 600;
     cursor: pointer;
+    user-select: none;
+}
+
+th:hover {
+    background: #f1f5f9;
 }
 
 .hidden {
     display: none;
-}
-
-.sort-indicator {
-    color: #999;
 }
 
 .error {
@@ -70,4 +146,17 @@ th {
     padding: 1rem;
     margin: 1rem 0;
     border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .filter-controls {
+        flex-direction: column;
+    }
+    
+    .search-input,
+    .topic-select,
+    .status-select {
+        width: 100%;
+    }
 }

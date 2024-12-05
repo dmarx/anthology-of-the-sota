@@ -170,4 +170,37 @@ function renderTable() {
     `;
 }
 
-// ... rest of the existing code (sortBy, getSortIndicator, setView, renderView) stays the same
+function sortBy(column) {
+    if (currentSort.column === column) {
+        currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+    } else {
+        currentSort = { column, direction: 'asc' };
+    }
+    
+    recommendations = _.orderBy(
+        recommendations,
+        [column],
+        [currentSort.direction]
+    );
+    
+    renderView();
+}
+function getSortIndicator(column) {
+    if (currentSort.column !== column) return '↕';
+    return currentSort.direction === 'asc' ? '↑' : '↓';
+}
+function setView(view) {
+    currentView = view;
+    document.getElementById('recommendations').classList.toggle('hidden', view !== 'grid');
+    document.getElementById('recommendationsTable').classList.toggle('hidden', view !== 'table');
+    renderView();
+}
+function renderView() {
+    if (currentView === 'grid') {
+        renderGrid();
+    } else {
+        renderTable();
+    }
+}
+// Initialize
+loadData();

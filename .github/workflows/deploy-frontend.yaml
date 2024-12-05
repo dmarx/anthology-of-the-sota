@@ -3,7 +3,7 @@ name: Deploy Frontend
 
 on:
   push:
-    #branches: [ main ]
+    branches: [ main ]
     paths:
       - 'web/**'
       - 'data/registry.yaml'
@@ -15,13 +15,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Copy data file
+      # Create the deployment directory with web files and data
+      - name: Prepare deployment
         run: |
-          mkdir -p web/data
-          cp data/registry.yaml web/data/
+          mkdir -p deploy
+          cp -r web/* deploy/
+          mkdir -p deploy/data
+          cp data/registry.yaml deploy/data/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: web
+          folder: deploy
           branch: gh-pages

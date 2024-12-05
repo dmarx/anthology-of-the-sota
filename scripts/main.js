@@ -7,11 +7,23 @@ let currentSort = {
 };
 
 async function loadData() {
-    const response = await fetch('../data/registry.yaml');
-    const yamlText = await response.text();
-    const data = jsyaml.load(yamlText);
-    recommendations = data.recommendations;
-    renderView();
+    try {
+        const response = await fetch('./data/registry.yaml');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const yamlText = await response.text();
+        const data = jsyaml.load(yamlText);
+        if (!data || !data.recommendations) {
+            throw new Error('Invalid data format');
+        }
+        recommendations = data.recommendations;
+        renderView();
+    } catch (error) {
+        console.error('Error loading data:', error);
+        document.getElementById('recommendations').innerHTML = '<div class="error">Error loading recommendations</div>';
+        document.getElementById('recommendationsTable').innerHTML = '<div class="error">Error loading recommendations</div>';
+    }
 }
 
 function formatSource(source) {
@@ -20,6 +32,11 @@ function formatSource(source) {
 
 function renderGrid() {
     const grid = document.getElementById('recommendations');
+    if (!recommendations || recommendations.length === 0) {
+        grid.innerHTML = '<div>No recommendations available</div>';
+        return;
+    }
+    
     grid.innerHTML = recommendations
         .map(rec => `
             <div class="recommendation-card">
@@ -36,6 +53,11 @@ function renderGrid() {
 
 function renderTable() {
     const table = document.getElementById('recommendationsTable');
+    if (!recommendations || recommendations.length === 0) {
+        table.innerHTML = '<div>No recommendations available</div>';
+        return;
+    }
+
     table.innerHTML = `
         <table>
             <thead>

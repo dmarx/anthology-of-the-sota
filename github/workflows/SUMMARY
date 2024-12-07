@@ -1,0 +1,245 @@
+================================================================================
+File: .github/workflows/build-readme.yaml
+================================================================================
+name: Build README
+
+on:
+  push:
+    paths:
+      - 'docs/**'
+      - '.github/workflows/build-readme.yaml'
+  workflow_dispatch:
+
+env:
+  PYTHON_VERSION: "3.11"
+
+jobs:
+  test:
+    uses: ./.github/workflows/test.yml
+
+  build-readme:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      
+      - name: Install package
+        run: pip install llamero
+
+      - name: Generate README
+        run: |
+          # llamero readme
+          llamero tree
+          llamero build_template docs/readme
+          llamero build_template docs/readme_llm
+
+
+
+================================================================================
+File: .github/workflows/build_registry.yml
+================================================================================
+name: Build Registry
+
+on:
+  push:
+    paths:
+      - 'data/research.yaml'
+      - 'src/scripts/registry/**'
+      - './.github/workflows/build_registry.yml'
+  workflow_dispatch:  # Allow manual triggering
+  schedule:
+    - cron: '0 0 * * 0'  # Run weekly on Sunday at midnight
+
+jobs:
+  # Add test job from test workflow
+  test:
+    uses: ./.github/workflows/test.yml
+  
+  build:
+    needs: test  # Make build dependent on tests passing
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[all]"
+      
+      - name: Build registry
+        run: python -m scripts.registry.cli build
+
+      #- name: cp to readme section
+        #run: |
+          #cp data/registry.yaml docs/readme/sections/registry.md.j2
+          #python -m scripts.registry.cli build # just run it again for the commit, fuck it
+          # TODO: python -m scripts.utils.commit_and_push
+
+
+
+================================================================================
+File: .github/workflows/deploy-frontend.yaml
+================================================================================
+# File: .github/workflows/deploy-frontend.yaml
+name: Deploy Frontend
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'web/**'
+      - 'data/registry.yaml'
+      - '.github/workflows/deploy-frontend.yaml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Copy data file
+        run: |
+          mkdir -p web/data
+          cp data/registry.yaml web/data/
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: web
+          branch: gh-pages
+
+
+
+================================================================================
+File: .github/workflows/generate_summaries.yaml
+================================================================================
+name: Generate Directory Summaries
+
+on:
+  #push:
+  workflow_dispatch:
+
+jobs:
+  generate-summaries:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install llamero
+      run: pip install llamero
+
+    - name: Generate summaries
+      run: llamero summarize all
+
+
+
+================================================================================
+File: .github/workflows/render_svg.yaml
+================================================================================
+name: Convert Logo SVG to PNG
+
+on:
+  workflow_dispatch:  # Manual trigger
+  push:
+    paths:
+      - 'assets/logo.svg'  # Only run when logo changes
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install Inkscape
+        run: |
+          sudo add-apt-repository -y universe
+          sudo apt-get update
+          sudo apt-get install -y inkscape
+      
+      - name: Convert SVG to PNG
+        run: |
+          mkdir -p assets
+          inkscape --export-type=png --export-filename=assets/logo.png assets/logo.svg
+      
+      - name: Commit PNG if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add assets/logo.png
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update logo.png from SVG source"
+          git push
+
+
+
+================================================================================
+File: .github/workflows/test.yml
+================================================================================
+name: Tests
+
+on:
+  push:
+    paths:
+      - "src/**"
+      - "tests/**"
+      - ".github/workflows/test.yml"
+  workflow_dispatch:
+  workflow_call:
+    
+env:
+  PYTHON_VERSION: "3.11"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      
+      - name: Install dependencies
+        run: |
+          pip install -e ".[all]"
+      
+      - name: Run tests
+        run: |
+          pytest tests/ -v
+
+

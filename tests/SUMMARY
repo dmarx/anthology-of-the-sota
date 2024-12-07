@@ -1,0 +1,573 @@
+================================================================================
+File: tests/conftest.py
+================================================================================
+# tests/conftest.py
+"""Shared test fixtures."""
+
+import pytest
+from pathlib import Path
+import yaml
+from typing import Dict
+import tempfile
+import shutil
+
+@pytest.fixture
+def temp_dir():
+    """Provide a clean temporary directory"""
+    with tempfile.TemporaryDirectory() as td:
+        yield Path(td)
+
+@pytest.fixture
+def mock_repo(temp_dir):
+    """Create a mock repository structure for testing"""
+    # Create basic structure
+    docs_dir = temp_dir / "docs" / "readme" / "sections"
+    src_dir = temp_dir / "src" / "readme_generator"
+    
+    docs_dir.mkdir(parents=True)
+    src_dir.mkdir(parents=True)
+    
+    # Create mock files
+    (docs_dir / "introduction.md.j2").write_text("## Introduction\n{{ test }}")
+    (temp_dir / "pyproject.toml").write_text("""
+[project]
+name = "test-project"
+version = "0.1.0"
+
+[tool.readme]
+test = "Test Value"
+    """)
+    
+    return temp_dir
+
+@pytest.fixture
+def sample_research_yaml() -> Dict:
+    """Sample research data for testing."""
+    return {
+        "2020": [{
+            "title": "Test Paper 1",
+            "first_author": "Smith",
+            "arxiv_id": "2020.12345",
+            "year": 2020,
+            "topics": ["optimization", "training"],
+            "sota": [
+                "Use gradient clipping with threshold 1.0",
+                "Scale learning rate with batch size"
+            ],
+            "models": ["model1", "model2"]
+        }],
+        "2021": [{
+            "title": "Test Paper 2",
+            "first_author": "Jones",
+            "arxiv_id": "2021.67890",
+            "year": 2021,
+            "topics": ["attention"],
+            "sota": ["Use flash attention for better memory efficiency"],
+            "experimental": True
+        }, {
+            "title": "Test Paper 3",
+            "first_author": "Smith",
+            "year": 2021,
+            "topics": ["optimization"],
+            "sota": ["Old recommendation"],
+            "attic": {
+                "superseded_by": "2021.99999"
+            }
+        }]
+    }
+
+@pytest.fixture
+def sample_yaml_file(tmp_path, sample_research_yaml):
+    """Create a sample YAML file for testing."""
+    yaml_path = tmp_path / "research.yaml"
+    with open(yaml_path, 'w') as f:
+        yaml.safe_dump(sample_research_yaml, f)
+    return yaml_path
+
+@pytest.fixture
+def id_registry(tmp_path):
+    """Fixture providing a fresh identifier registry."""
+    from scripts.registry.identifiers import MLRIdentifierRegistry
+    return MLRIdentifierRegistry(tmp_path / "test_mlr_registry.json")
+
+@pytest.fixture
+def registry(id_registry):
+    """Fixture providing a fresh recommendation registry."""
+    from scripts.registry.recommendations import RecommendationRegistry
+    return RecommendationRegistry(id_registry)
+
+@pytest.fixture
+def populated_registry(registry, sample_research_yaml):
+    """Fixture providing a registry populated with sample data."""
+    from scripts.registry.recommendations import build_registry_from_yaml
+    return build_registry_from_yaml(sample_research_yaml)
+
+
+
+================================================================================
+File: tests/registry/test_identifiers.py
+================================================================================
+# tests/registry/test_identifiers.py
+"""Tests for MLR identifier generation and management."""
+
+import pytest
+from pathlib import Path
+from scripts.registry.identifiers import MLRIdentifierRegistry
+
+@pytest.fixture
+def temp_registry_file(tmp_path):
+    """Provide a temporary registry file path."""
+    return tmp_path / "test_registry.json"
+
+@pytest.fixture
+def identifier_registry(temp_registry_file):
+    """Provide a fresh identifier registry."""
+    return MLRIdentifierRegistry(temp_registry_file)
+
+def test_initialization(temp_registry_file):
+    """Test registry initialization."""
+    registry = MLRIdentifierRegistry(temp_registry_file)
+    assert registry.current_ids == {'paper_ids': {}, 'recommendation_ids': {}}
+    assert isinstance(registry.author_counters, dict)
+
+def test_paper_id_generation(identifier_registry):
+    """Test paper ID generation and consistency."""
+    # Test first paper ID generation
+    paper_id1 = identifier_registry.get_paper_id("Smith", 2020, "2020.12345")
+    assert paper_id1 == "Smith001"
+    
+    # Test same author, different paper
+    paper_id2 = identifier_registry.get_paper_id("Smith", 2020, "2020.99999")
+    assert paper_id2 == "Smith002"
+    
+    # Test different author
+    paper_id3 = identifier_registry.get_paper_id("Jones", 2020, "2020.54321")
+    assert paper_id3 == "Jones001"
+    
+    # Test ID consistency
+    assert identifier_registry.get_paper_id("Smith", 2020, "2020.12345") == "Smith001"
+
+def test_mlr_id_generation(identifier_registry):
+    """Test MLR ID generation."""
+    # Test first recommendation ID
+    mlr_id1 = identifier_registry.generate_id(2020, "Smith001")
+    assert mlr_id1 == "MLR-2020-Smith001-0001"
+    
+    # Test second recommendation from same paper
+    mlr_id2 = identifier_registry.generate_id(2020, "Smith001")
+    assert mlr_id2 == "MLR-2020-Smith001-0002"
+    
+    # Test ID from different paper
+    mlr_id3 = identifier_registry.generate_id(2020, "Jones001")
+    assert mlr_id3 == "MLR-2020-Jones001-0001"
+
+def test_registry_persistence(temp_registry_file):
+    """Test that registry state persists between instances."""
+    # Create and use first registry instance
+    registry1 = MLRIdentifierRegistry(temp_registry_file)
+    paper_id = registry1.get_paper_id("Smith", 2020, "2020.12345")
+    mlr_id = registry1.generate_id(2020, paper_id)
+    
+    # Create new registry instance and verify state
+    registry2 = MLRIdentifierRegistry(temp_registry_file)
+    assert registry2.get_paper_id("Smith", 2020, "2020.12345") == paper_id
+    assert registry2.generate_id(2020, paper_id) == "MLR-2020-Smith001-0002"
+
+def test_special_character_handling(identifier_registry):
+    """Test handling of special characters in author names."""
+    paper_id = identifier_registry.get_paper_id("O'Brien", 2020)
+    assert paper_id == "OBrien001"
+    
+    paper_id2 = identifier_registry.get_paper_id("von Neumann", 2020)
+    assert paper_id2 == "vonNeumann001"
+
+def test_invalid_registry_file(tmp_path):
+    """Test handling of corrupted registry file."""
+    bad_file = tmp_path / "bad_registry.json"
+    bad_file.write_text("invalid json")
+    
+    registry = MLRIdentifierRegistry(bad_file)
+    assert registry.current_ids == {'paper_ids': {}, 'recommendation_ids': {}}
+
+
+
+================================================================================
+File: tests/registry/test_io.py
+================================================================================
+# tests/registry/test_io.py
+"""Tests for registry I/O operations."""
+
+import pytest
+import yaml
+from pathlib import Path
+
+from scripts.registry.io import (
+    load_research_yaml,
+    save_registry,
+    load_registry,
+    registry_to_markdown,
+    RegistryDataError
+)
+from scripts.registry.recommendations import RecommendationRegistry
+
+@pytest.fixture
+def sample_research_yaml(tmp_path):
+    """Create a sample research YAML file."""
+    yaml_path = tmp_path / "research.yaml"
+    data = {
+        "2020": [{
+            "title": "Test Paper",
+            "year": 2020,
+            "first_author": "Smith",
+            "arxiv_id": "2020.12345",
+            "topics": ["optimization"],
+            "sota": ["Test recommendation"]
+        }]
+    }
+    
+    with open(yaml_path, 'w') as f:
+        yaml.safe_dump(data, f)
+    
+    return yaml_path
+
+@pytest.fixture
+def sample_registry():
+    """Create a sample registry with some recommendations."""
+    registry = RecommendationRegistry()
+    registry.add_recommendation(
+        topic="optimization",
+        recommendation="Test recommendation",
+        first_author="Smith",
+        source_paper="Smith et al. (2020)",
+        year=2020,
+        arxiv_id="2020.12345"
+    )
+    return registry
+
+def test_load_research_yaml(sample_research_yaml):
+    """Test loading research data from YAML."""
+    data = load_research_yaml(sample_research_yaml)
+    assert "2020" in data
+    assert len(data["2020"]) == 1
+    assert data["2020"][0]["title"] == "Test Paper"
+
+def test_load_research_yaml_invalid_year(tmp_path):
+    """Test loading YAML with invalid year."""
+    yaml_path = tmp_path / "invalid.yaml"
+    data = {"3000": [{"title": "Future Paper", "first_author": "Smith"}]}
+    
+    with open(yaml_path, 'w') as f:
+        yaml.safe_dump(data, f)
+    
+    with pytest.raises(RegistryDataError):
+        load_research_yaml(yaml_path)
+
+def test_load_research_yaml_missing_fields(tmp_path):
+    """Test loading YAML with missing required fields."""
+    yaml_path = tmp_path / "invalid.yaml"
+    data = {"2020": [{"title": "Incomplete Paper"}]}  # Missing first_author
+    
+    with open(yaml_path, 'w') as f:
+        yaml.safe_dump(data, f)
+    
+    with pytest.raises(RegistryDataError):
+        load_research_yaml(yaml_path)
+
+def test_save_and_load_registry(sample_registry, tmp_path):
+    """Test saving and loading registry."""
+    registry_path = tmp_path / "registry.yaml"
+    
+    # Save registry
+    save_registry(sample_registry, registry_path)
+    assert registry_path.exists()
+    
+    # Load registry
+    data = load_registry(registry_path)
+    assert 'metadata' in data
+    assert 'recommendations' in data
+    assert 'topics' in data
+
+def test_load_registry_invalid_format(tmp_path):
+    """Test loading invalid registry format."""
+    registry_path = tmp_path / "invalid.yaml"
+    
+    with open(registry_path, 'w') as f:
+        yaml.safe_dump({"invalid": "format"}, f)
+    
+    with pytest.raises(RegistryDataError):
+        load_registry(registry_path)
+
+def test_registry_to_markdown(sample_registry, tmp_path):
+    """Test markdown export."""
+    markdown_path = tmp_path / "registry.md"
+    registry_to_markdown(sample_registry, markdown_path)
+    
+    assert markdown_path.exists()
+    content = markdown_path.read_text()
+    
+    # Check basic structure
+    assert "# ML Training Recommendations Registry" in content
+    assert "## Standard Recommendations" in content
+    assert "### optimization" in content
+    assert "Test recommendation" in content
+    assert "## Statistics" in content
+
+def test_nonexistent_file():
+    """Test handling of nonexistent files."""
+    with pytest.raises(FileNotFoundError):
+        load_research_yaml("nonexistent.yaml")
+    
+    with pytest.raises(FileNotFoundError):
+        load_registry("nonexistent.yaml")
+
+def test_invalid_yaml(tmp_path):
+    """Test handling of invalid YAML."""
+    invalid_yaml = tmp_path / "invalid.yaml"
+    invalid_yaml.write_text("invalid: yaml: content:")
+    
+    with pytest.raises(yaml.YAMLError):
+        load_research_yaml(invalid_yaml)
+
+
+
+================================================================================
+File: tests/registry/test_recommendations.py
+================================================================================
+# tests/registry/test_recommendations.py
+"""Tests for recommendation registry functionality."""
+
+import pytest
+from pathlib import Path
+from datetime import datetime
+
+from scripts.registry.types import MLRStatus, Recommendation, Source, Evidence
+from scripts.registry.recommendations import RecommendationRegistry, generate_topic_id
+from scripts.registry.identifiers import MLRIdentifierRegistry
+
+@pytest.fixture
+def id_registry(tmp_path):
+    """Fixture providing a fresh identifier registry."""
+    return MLRIdentifierRegistry(tmp_path / "test_mlr_registry.json")
+
+@pytest.fixture
+def registry(id_registry):
+    """Fixture providing a fresh recommendation registry."""
+    return RecommendationRegistry(id_registry)
+
+def test_topic_id_generation():
+    """Test topic ID generation."""
+    topic = "Optimization"
+    rec = "Use gradient clipping with dynamic threshold"
+    topic_id = generate_topic_id(topic, rec)
+    assert topic_id == "optimization/use-gradient-clipping-with-dynamic"
+
+def test_add_standard_recommendation(registry):
+    """Test adding a standard recommendation."""
+    mlr_id = registry.add_recommendation(
+        topic="optimization",
+        recommendation="Use gradient clipping",
+        first_author="Smith",
+        source_paper="Smith et al. (2020)",
+        year=2020,
+        arxiv_id="2020.12345"
+    )
+    
+    rec = registry.get_recommendation_by_mlr(mlr_id)
+    assert rec is not None
+    assert rec.status == MLRStatus.STANDARD
+    assert rec.topic == "optimization"
+    assert rec.source.year == 2020
+
+def test_add_experimental_recommendation(registry):
+    """Test adding an experimental recommendation."""
+    mlr_id = registry.add_recommendation(
+        topic="attention",
+        recommendation="New attention mechanism",
+        first_author="Jones",
+        source_paper="Jones et al. (2021)",
+        year=2021,
+        experimental=True
+    )
+    
+    rec = registry.get_recommendation_by_mlr(mlr_id)
+    assert rec.status == MLRStatus.EXPERIMENTAL
+
+def test_add_deprecated_recommendation(registry):
+    """Test adding a deprecated recommendation."""
+    mlr_id = registry.add_recommendation(
+        topic="optimization",
+        recommendation="Old method",
+        first_author="Brown",
+        source_paper="Brown et al. (2019)",
+        year=2019,
+        superseded_by="MLR-2020-Smith001-0001"
+    )
+    
+    rec = registry.get_recommendation_by_mlr(mlr_id)
+    assert rec.status == MLRStatus.DEPRECATED
+    assert rec.superseded_by == "MLR-2020-Smith001-0001"
+    assert rec.deprecated_date is not None
+
+def test_get_recommendations_by_status(registry):
+    """Test filtering recommendations by status."""
+    # Add recommendations with different statuses
+    registry.add_recommendation(
+        topic="optimization",
+        recommendation="Standard rec",
+        first_author="Smith",
+        source_paper="Smith et al. (2020)",
+        year=2020
+    )
+    
+    registry.add_recommendation(
+        topic="attention",
+        recommendation="Experimental rec",
+        first_author="Jones",
+        source_paper="Jones et al. (2021)",
+        year=2021,
+        experimental=True
+    )
+    
+    standard_recs = registry.get_recommendations_by_status(MLRStatus.STANDARD)
+    experimental_recs = registry.get_recommendations_by_status(MLRStatus.EXPERIMENTAL)
+    
+    assert len(standard_recs) == 1
+    assert len(experimental_recs) == 1
+
+def test_get_recommendations_by_topic(registry):
+    """Test filtering recommendations by topic."""
+    # Add multiple recommendations for same topic
+    registry.add_recommendation(
+        topic="optimization",
+        recommendation="Rec 1",
+        first_author="Smith",
+        source_paper="Smith et al. (2020)",
+        year=2020
+    )
+    
+    registry.add_recommendation(
+        topic="optimization",
+        recommendation="Rec 2",
+        first_author="Jones",
+        source_paper="Jones et al. (2021)",
+        year=2021
+    )
+    
+    recs = registry.get_recommendations_by_topic("optimization")
+    assert len(recs) == 2
+    # Check sorting by year
+    assert recs[0].source.year < recs[1].source.year
+
+# def test_topic_stats(registry):
+#     """Test topic statistics generation."""
+#     # Add recommendations with different statuses
+#     registry.add_recommendation(
+#         topic="optimization",
+#         recommendation="Standard rec",
+#         first_author="Smith",
+#         source_paper="Smith et al. (2020)",
+#         year=2020
+#     )
+    
+#     registry.add_recommendation(
+#         topic="optimization",
+#         recommendation="Experimental rec",
+#         first_author="Jones",
+#         source_paper="Jones et al. (2021)",
+#         year=2021,
+#         experimental=True
+#     )
+    
+#     stats = registry._get_topic_stats("optimization")
+#     assert stats['total_count'] == 2
+#     assert stats['status_counts'][MLRStatus.STANDARD.value] == 1
+#     assert stats['status_counts'][MLRStatus.EXPERIMENTAL.value] == 1
+#     assert stats['years']['earliest'] == 2020
+#     assert stats['years']['latest'] == 2021
+
+def test_registry_export(registry):
+    """Test registry export functionality."""
+    # Add recommendations with different statuses
+    registry.add_recommendation(
+        topic="optimization",
+        recommendation="Standard rec",
+        first_author="Smith",
+        source_paper="Smith et al. (2020)",
+        year=2020
+    )
+    
+    registry.add_recommendation(
+        topic="attention",
+        recommendation="Experimental rec",
+        first_author="Jones",
+        source_paper="Jones et al. (2021)",
+        year=2021,
+        experimental=True
+    )
+    
+    exported = registry.export_registry()
+    
+    # Check basic structure
+    assert 'metadata' in exported
+    assert 'recommendations' in exported
+    assert 'topics' in exported
+    assert exported['metadata']['schema_version'] == '1.0'
+    
+    # Check recommendations are a flat list
+    assert isinstance(exported['recommendations'], list)
+    assert len(exported['recommendations']) == 2
+    
+    # Check individual recommendations
+    standard_rec = next(
+        (r for r in exported['recommendations'] 
+         if r['status'] == MLRStatus.STANDARD.value), 
+        None
+    )
+    experimental_rec = next(
+        (r for r in exported['recommendations'] 
+         if r['status'] == MLRStatus.EXPERIMENTAL.value),
+        None
+    )
+    
+    assert standard_rec is not None
+    assert experimental_rec is not None
+    
+    # Verify standard recommendation
+    assert standard_rec['recommendation'] == "Standard rec"
+    assert standard_rec['topic'] == "optimization"
+    assert standard_rec['status'] == MLRStatus.STANDARD.value
+    
+    # Verify experimental recommendation
+    assert experimental_rec['recommendation'] == "Experimental rec"
+    assert experimental_rec['topic'] == "attention"
+    assert experimental_rec['status'] == MLRStatus.EXPERIMENTAL.value
+    
+    # Check topic stats
+    assert 'optimization' in exported['topics']
+    assert 'attention' in exported['topics']
+    assert exported['topics']['optimization']['count'] == 1
+    assert exported['topics']['attention']['count'] == 1
+
+
+
+================================================================================
+File: tests/test_generate_readme.py
+================================================================================
+from pathlib import Path
+import pytest
+from scripts.readme_generator import generate_readme, get_section_templates
+from scripts.utils import get_project_root, load_config
+
+def test_load_config(mock_repo):
+    """Test configuration loading"""
+    config = load_config(str(mock_repo / "pyproject.toml"))
+    assert config["project"]["name"] == "test-project"
+    assert config["project"]["version"] == "0.1.0"
+
+def test_project_root(mock_repo, monkeypatch):
+    """Test project root detection"""
+    monkeypatch.chdir(mock_repo)
+    root = get_project_root()
+    assert root.samefile(mock_repo)
+
+

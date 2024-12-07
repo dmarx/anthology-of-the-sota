@@ -1,0 +1,588 @@
+================================================================================
+File: src/scripts/generate_summaries/__init__.py
+================================================================================
+"""Package for generating directory summaries to assist LLM interactions."""
+from pathlib import Path
+from typing import List
+
+__version__ = "0.1.0"
+
+# Re-export main functionality
+from .generator import SummaryGenerator
+
+__all__ = ["SummaryGenerator"]
+
+
+
+================================================================================
+File: src/scripts/generate_summaries/__main__.py
+================================================================================
+import subprocess
+from pathlib import Path
+from typing import Optional
+
+def commit_and_push(
+    message: str,
+    branch: str,
+    paths: list[str | Path],
+    base_branch: Optional[str] = None,
+    force: bool = False
+) -> None:
+    """Commit changes and push to specified branch.
+    
+    Args:
+        message: Commit message
+        branch: Branch to push to
+        paths: List of paths to commit
+        base_branch: Optional base branch to create new branch from
+        force: If True, create fresh branch and force push (for generated content)
+    """
+    # Convert paths to strings
+    path_strs = [str(p) for p in paths]
+    
+    # Set up git config
+    subprocess.run(["git", "config", "--local", "user.email", "github-actions[bot]@users.noreply.github.com"])
+    subprocess.run(["git", "config", "--local", "user.name", "github-actions[bot]"])
+    
+    if force:
+        # Create fresh branch from base_branch or HEAD
+        base = base_branch or "HEAD"
+        logger.info(f"Creating fresh branch {branch} from {base}")
+        subprocess.run(["git", "checkout", "-B", branch, base])
+    else:
+        # Normal branch handling
+        if base_branch:
+            logger.info(f"Creating new branch {branch} from {base_branch}")
+            subprocess.run(["git", "checkout", "-b", branch, base_branch])
+        else:
+            logger.info(f"Switching to branch {branch}")
+            subprocess.run(["git", "checkout", "-b", branch])
+            subprocess.run(["git", "pull", "origin", branch], capture_output=True)
+    
+    # Stage and commit changes
+    subprocess.run(["git", "add", *path_strs])
+    
+    # Only commit if there are changes
+    result = subprocess.run(
+        ["git", "diff", "--staged", "--quiet"],
+        capture_output=True
+    )
+    if result.returncode == 1:  # Changes exist
+        logger.info("Committing changes")
+        subprocess.run(["git", "commit", "-m", message])
+        
+        # Push changes
+        if force:
+            logger.info(f"Force pushing {branch} branch")
+            subprocess.run(["git", "push", "-f", "origin", branch])
+        else:
+            logger.info("Pushing changes")
+            subprocess.run(["git", "push", "origin", branch])
+    else:
+        logger.info("No changes to commit")
+
+
+"""CLI entry point for summary generator."""
+import fire
+from loguru import logger
+from pathlib import Path
+from . import generator
+#from readme_generator.utils import commit_and_push
+from . import special_summaries
+
+
+def generate(root_dir: str = ".", push: bool = True) -> list[Path]:
+    """Generate directory summaries and special summaries.
+    
+    Args:
+        root_dir: Root directory to generate summaries for
+        push: Whether to commit and push changes
+        
+    Returns:
+        List of paths to generated summary files
+    """
+    logger.info(f"Generating summaries for {root_dir}")
+    
+    # Generate regular directory summaries
+    gen = generator.SummaryGenerator(root_dir)
+    summary_files = gen.generate_all_summaries()
+    
+    # Generate special summaries
+    special_files = special_summaries.generate_special_summaries(root_dir)
+    all_files = summary_files + special_files
+    
+    if push:
+        logger.info("Committing and pushing changes")
+        commit_and_push(
+            message="Update directory summaries and special summaries",
+            branch="summaries",
+            paths=all_files,
+            base_branch="main",
+            force=True  # Use force push for generated content
+        )
+    
+    return all_files
+
+def main():
+    """CLI entry point."""
+    fire.Fire(generate)
+
+if __name__ == "__main__":
+    main()
+
+
+
+================================================================================
+File: src/scripts/generate_summaries/generator.py
+================================================================================
+"""Core summary generation functionality."""
+from pathlib import Path
+from typing import List, Set
+from loguru import logger
+
+class SummaryGenerator:
+    """Generate summary files for each directory in the project."""
+    
+    def __init__(self, root_dir: str | Path):
+        """Initialize generator with root directory.
+        
+        Args:
+            root_dir: Root directory to generate summaries for
+        """
+        self.root_dir = Path(root_dir)
+        
+    def should_include_file(self, file_path: Path) -> bool:
+        """Determine if a file should be included in the summary.
+        
+        Args:
+            file_path: Path to file to check
+            
+        Returns:
+            True if file should be included in summary
+        """
+        # Skip common files we don't want to summarize
+        excluded_files = {
+            '.git', '.gitignore', '.pytest_cache', '__pycache__',
+            'SUMMARY', '.coverage', '.env', '.venv', '.idea', '.vscode'
+        }
+        
+        # Skip excluded directories and files
+        if any(part in excluded_files for part in file_path.parts):
+            return False
+            
+        # Skip .github/workflows directory
+        if '.github/workflows' in str(file_path):
+            return False
+            
+        # Only include text files
+        text_extensions = {'.py', '.md', '.txt', '.yml', '.yaml', '.toml', 
+                         '.json', '.html', '.css', '.js', '.j2'}
+        return file_path.suffix in text_extensions
+    
+    def should_include_directory(self, directory: Path) -> bool:
+        """Determine if a directory should have a summary generated.
+        
+        Args:
+            directory: Directory to check
+            
+        Returns:
+            True if directory should have a summary
+        """
+        # Skip .github/workflows directory
+        if '.github/workflows' in str(directory):
+            return False
+            
+        # Skip other excluded directories
+        excluded_dirs = {
+            '.git', '__pycache__', '.pytest_cache',
+            '.venv', '.idea', '.vscode'
+        }
+        
+        return not any(part in excluded_dirs for part in directory.parts)
+    
+    def _collect_directories(self) -> Set[Path]:
+        """Collect all directories containing files to summarize.
+        
+        Returns:
+            Set of directory paths
+        """
+        directories = set()
+        for file_path in self.root_dir.rglob('*'):
+            if (file_path.is_file() and 
+                self.should_include_file(file_path) and
+                self.should_include_directory(file_path.parent)):
+                directories.add(file_path.parent)
+        return directories
+        
+    def generate_directory_summary(self, directory: Path) -> str:
+        """Generate a summary for a single directory.
+        
+        Args:
+            directory: Directory to generate summary for
+            
+        Returns:
+            Generated summary text
+        """
+        logger.debug(f"Generating summary for {directory}")
+        summary = []
+        
+        # Process all files in the directory
+        for file_path in sorted(directory.rglob('*')):
+            if not file_path.is_file() or not self.should_include_file(file_path):
+                continue
+                
+            try:
+                # Get relative path from root for the header
+                rel_path = file_path.relative_to(self.root_dir)
+                
+                # Read file content
+                content = file_path.read_text(encoding='utf-8')
+                
+                # Add to summary with clear separation
+                summary.extend([
+                    '=' * 80,
+                    f'File: {rel_path}',
+                    '=' * 80,
+                    content,
+                    '\n'  # Extra newline for separation
+                ])
+            except Exception as e:
+                logger.error(f"Error processing {file_path}: {e}")
+                
+        return '\n'.join(summary)
+        
+    def generate_all_summaries(self) -> List[Path]:
+        """Generate summary files for all directories.
+        
+        Returns:
+            List of paths to generated summary files
+        """
+        logger.info("Starting summary generation")
+        summary_files = []
+        
+        # Collect directories
+        directories = self._collect_directories()
+        logger.info(f"Found {len(directories)} directories to process")
+        
+        # Generate summaries
+        for directory in sorted(directories):
+            if not self.should_include_directory(directory):
+                continue
+                
+            summary_content = self.generate_directory_summary(directory)
+            summary_path = directory / 'SUMMARY'
+            
+            try:
+                summary_path.write_text(summary_content, encoding='utf-8')
+                logger.info(f"Generated summary for {directory}")
+                summary_files.append(summary_path)
+            except Exception as e:
+                logger.error(f"Error writing summary for {directory}: {e}")
+                
+        return summary_files
+
+
+
+================================================================================
+File: src/scripts/generate_summaries/signature_extractor.py
+================================================================================
+# signature_extractor.py
+"""Extracts and formats Python code signatures with proper nesting."""
+import ast
+from dataclasses import dataclass
+from pathlib import Path
+from typing import List, Dict
+from loguru import logger
+
+@dataclass
+class Signature:
+    """Represents a Python function or class signature with documentation."""
+    name: str
+    kind: str  # 'function', 'method', or 'class'
+    args: list[str]
+    returns: str | None
+    docstring: str | None
+    decorators: list[str]
+    methods: list['Signature']  # For storing class methods
+
+class ParentNodeTransformer(ast.NodeTransformer):
+    """Add parent references to all nodes in the AST."""
+    
+    def visit(self, node: ast.AST) -> ast.AST:
+        """Visit a node and add parent references to all its children."""
+        for child in ast.iter_child_nodes(node):
+            child.parent = node
+        return super().visit(node)
+
+class SignatureExtractor:
+    """Extracts detailed signatures from Python files."""
+    
+    def get_type_annotation(self, node: ast.AST) -> str:
+        """Convert AST annotation node to string representation."""
+        if isinstance(node, ast.Name):
+            return node.id
+        elif isinstance(node, ast.Constant):
+            return repr(node.value)
+        elif isinstance(node, ast.Subscript):
+            container = self.get_type_annotation(node.value)
+            params = self.get_type_annotation(node.slice)
+            return f"{container}[{params}]"
+        elif isinstance(node, ast.BinOp):
+            left = self.get_type_annotation(node.left)
+            right = self.get_type_annotation(node.right)
+            return f"{left} | {right}"
+        elif isinstance(node, ast.Tuple):
+            elts = [self.get_type_annotation(e) for e in node.elts]
+            return f"[{', '.join(elts)}]"
+        return "Any"
+    
+    def get_arg_string(self, arg: ast.arg) -> str:
+        """Convert function argument to string with type annotation."""
+        arg_str = arg.arg
+        if arg.annotation:
+            type_str = self.get_type_annotation(arg.annotation)
+            arg_str += f": {type_str}"
+        return arg_str
+
+    def extract_signatures(self, source: str) -> List[Signature]:
+        """Extract all function and class signatures from source code."""
+        try:
+            # Parse and add parent references
+            tree = ast.parse(source)
+            transformer = ParentNodeTransformer()
+            transformer.visit(tree)
+            
+            signatures: List[Signature] = []
+            classes: Dict[ast.ClassDef, Signature] = {}
+            
+            for node in ast.walk(tree):
+                # Handle functions
+                if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                    args = []
+                    for arg in node.args.args:
+                        args.append(self.get_arg_string(arg))
+                    
+                    returns = None
+                    if node.returns:
+                        returns = self.get_type_annotation(node.returns)
+                    
+                    decorators = []
+                    for decorator in node.decorator_list:
+                        if isinstance(decorator, ast.Name):
+                            decorators.append(f"@{decorator.id}")
+                        elif isinstance(decorator, ast.Call):
+                            if isinstance(decorator.func, ast.Name):
+                                decorators.append(f"@{decorator.func.id}(...)")
+                    
+                    sig = Signature(
+                        name=node.name,
+                        kind='method' if hasattr(node, 'parent') and isinstance(node.parent, ast.ClassDef) else 'function',
+                        args=args,
+                        returns=returns,
+                        docstring=ast.get_docstring(node),
+                        decorators=decorators,
+                        methods=[]
+                    )
+                    
+                    # Add to appropriate parent
+                    if hasattr(node, 'parent') and isinstance(node.parent, ast.ClassDef) and node.parent in classes:
+                        classes[node.parent].methods.append(sig)
+                    else:
+                        signatures.append(sig)
+                
+                # Handle classes
+                elif isinstance(node, ast.ClassDef):
+                    bases = []
+                    for base in node.bases:
+                        if isinstance(base, ast.Name):
+                            bases.append(base.id)
+                    
+                    decorators = []
+                    for decorator in node.decorator_list:
+                        if isinstance(decorator, ast.Name):
+                            decorators.append(f"@{decorator.id}")
+                    
+                    class_sig = Signature(
+                        name=node.name,
+                        kind='class',
+                        args=bases,
+                        returns=None,
+                        docstring=ast.get_docstring(node),
+                        decorators=decorators,
+                        methods=[]
+                    )
+                    
+                    classes[node] = class_sig
+                    signatures.append(class_sig)
+                    
+            return signatures
+        except Exception as e:
+            logger.error(f"Error parsing source: {e}")
+            return []
+
+    def format_signature(self, sig: Signature, indent: int = 0) -> List[str]:
+        """Format a signature for display with proper indentation."""
+        lines = []
+        indent_str = "    " * indent
+        
+        # Add decorators
+        for decorator in sig.decorators:
+            lines.append(f"{indent_str}{decorator}")
+        
+        # Format the signature line
+        if sig.kind == 'class':
+            base_str = f"({', '.join(sig.args)})" if sig.args else ""
+            lines.append(f"{indent_str}class {sig.name}{base_str}")
+        else:
+            async_prefix = "async " if "async" in sig.decorators else ""
+            args_str = ", ".join(sig.args)
+            return_str = f" -> {sig.returns}" if sig.returns else ""
+            lines.append(f"{indent_str}{async_prefix}def {sig.name}({args_str}){return_str}")
+        
+        # Add docstring if present
+        if sig.docstring:
+            doc_lines = sig.docstring.split('\n')
+            if len(doc_lines) == 1:
+                lines.append(f'{indent_str}    """{sig.docstring}"""')
+            else:
+                lines.append(f'{indent_str}    """')
+                for doc_line in doc_lines:
+                    if doc_line.strip():
+                        lines.append(f"{indent_str}    {doc_line}")
+                lines.append(f'{indent_str}    """')
+        
+        # Add methods for classes
+        if sig.methods:
+            lines.append("")  # Add spacing
+            for method in sig.methods:
+                lines.extend(self.format_signature(method, indent + 1))
+                lines.append("")  # Add spacing between methods
+        
+        return lines
+
+def generate_python_summary(root_dir: str | Path) -> str:
+    """Generate enhanced Python project structure summary.
+    
+    Args:
+        root_dir: Root directory of the project
+        
+    Returns:
+        Formatted markdown string of Python signatures
+    """
+    root_dir = Path(root_dir)
+    extractor = SignatureExtractor()
+    content = ["# Python Project Structure\n"]
+    
+    for file in sorted(root_dir.rglob("*.py")):
+        if any(part.startswith('.') for part in file.parts):
+            continue
+        if '__pycache__' in file.parts:
+            continue
+            
+        try:
+            # Get relative path
+            rel_path = file.relative_to(root_dir)
+            
+            # Read and extract signatures
+            source = file.read_text()
+            signatures = extractor.extract_signatures(source)
+            
+            # Only include files that have actual content
+            if signatures:
+                content.append(f"## {rel_path}")
+                content.append("```python")
+                
+                # Format each signature
+                for sig in signatures:
+                    content.extend(extractor.format_signature(sig))
+                    content.append("")  # Add spacing between top-level items
+                
+                content.append("```\n")
+            
+        except Exception as e:
+            logger.error(f"Error processing {file}: {e}")
+    
+    return "\n".join(content)
+
+
+
+================================================================================
+File: src/scripts/generate_summaries/special_summaries.py
+================================================================================
+"""Special summary generators for project-wide summaries."""
+from pathlib import Path
+from typing import List
+from loguru import logger
+from .signature_extractor import SignatureExtractor, generate_python_summary  # New import
+
+class SpecialSummariesGenerator:
+    """Generate special project-wide summary files."""
+    
+    def __init__(self, root_dir: str | Path):
+        """Initialize generator with root directory."""
+        self.root_dir = Path(root_dir)
+        self.summaries_dir = self.root_dir / "SUMMARIES"
+        self.signature_extractor = SignatureExtractor()  # New instance
+    
+    def _find_readmes(self, include_root: bool = True) -> List[Path]:
+        """Find all README files in the project."""
+        readmes = []
+        for file in self.root_dir.rglob("README.md"):
+            if not include_root and file.parent == self.root_dir:
+                continue
+            readmes.append(file)
+        return sorted(readmes)
+    
+    def generate_special_summaries(self) -> List[Path]:
+        """Generate all special summary files.
+        
+        Returns:
+            List of paths to generated summary files
+        """
+        self.summaries_dir.mkdir(exist_ok=True)
+        generated_files = []
+        
+        # Generate READMEs.md
+        readmes_path = self.summaries_dir / "READMEs.md"
+        readme_content = []
+        for readme in self._find_readmes(include_root=True):
+            rel_path = readme.relative_to(self.root_dir)
+            readme_content.extend([
+                "=" * 80,
+                f"# {rel_path}",
+                "=" * 80,
+                readme.read_text(),
+                "\n"
+            ])
+        readmes_path.write_text("\n".join(readme_content))
+        generated_files.append(readmes_path)
+        
+        # Generate README_SUBs.md
+        subs_path = self.summaries_dir / "README_SUBs.md"
+        subs_content = []
+        for readme in self._find_readmes(include_root=False):
+            rel_path = readme.relative_to(self.root_dir)
+            subs_content.extend([
+                "=" * 80,
+                f"# {rel_path}",
+                "=" * 80,
+                readme.read_text(),
+                "\n"
+            ])
+        subs_path.write_text("\n".join(subs_content))
+        generated_files.append(subs_path)
+        
+        # Generate enhanced PYTHON.md
+        python_path = self.summaries_dir / "PYTHON.md"
+        python_content = generate_python_summary(self.root_dir)  # Using new generator
+        python_path.write_text(python_content)
+        generated_files.append(python_path)
+        
+        return generated_files
+
+def generate_special_summaries(root_dir: str | Path = ".") -> List[Path]:
+    """Generate special summaries for the project."""
+    generator = SpecialSummariesGenerator(root_dir)
+    return generator.generate_special_summaries()
+
+

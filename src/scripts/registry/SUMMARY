@@ -1,0 +1,800 @@
+================================================================================
+File: src/scripts/registry/__init__.py
+================================================================================
+# scripts/registry/__init__.py
+"""ML Training Recommendations Registry.
+
+A system for tracking, managing, and organizing machine learning training recommendations
+from research papers with unique identifiers and status tracking.
+"""
+
+from .types import MLRStatus, Recommendation, Source, Evidence
+from .identifiers import MLRIdentifierRegistry
+from .recommendations import RecommendationRegistry, build_registry_from_yaml
+from .io import (
+    load_research_yaml,
+    save_registry,
+    load_registry,
+    registry_to_markdown,
+    RegistryDataError
+)
+
+__version__ = "0.1.0"
+
+__all__ = [
+    'MLRStatus',
+    'Recommendation',
+    'Source',
+    'Evidence',
+    'MLRIdentifierRegistry',
+    'RecommendationRegistry',
+    'build_registry_from_yaml',
+    'load_research_yaml',
+    'save_registry',
+    'load_registry',
+    'registry_to_markdown',
+    'RegistryDataError',
+]
+
+
+
+================================================================================
+File: src/scripts/registry/cli.py
+================================================================================
+# src/scripts/registry/cli.py
+"""Command-line interface for registry operations."""
+
+import fire
+from pathlib import Path
+from loguru import logger
+from typing import Optional
+from . import (
+    build_registry_from_yaml,
+    load_research_yaml, 
+    save_registry,
+    registry_to_markdown
+)
+#from ..utils import commit_and_push
+from llamero.utils import commit_and_push_to_branch #commit_and_push
+
+def build(
+    input_path: str | Path = "data/research.yaml",
+    output_dir: str | Path = "data",
+    push: bool = True,
+    branch: Optional[str] = "HEAD"
+) -> None:
+    """Build registry from research YAML and generate outputs.
+    
+    Args:
+        input_path: Path to research YAML file
+        output_dir: Directory to save outputs (default: data directory)
+        push: Whether to commit and push changes
+        branch: Optional branch name to commit to (default: current branch)
+    """
+    logger.info(f"Building registry from {input_path}")
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Generate registry
+    yaml_data = load_research_yaml(input_path)
+    registry = build_registry_from_yaml(yaml_data)
+    
+    # Save outputs
+    registry_yaml = output_dir / "registry.yaml"
+    registry_md = output_dir / "REGISTRY.md"
+    
+    save_registry(registry, registry_yaml)
+    registry_to_markdown(registry, registry_md)
+    logger.info(f"Registry outputs saved to {output_dir}")
+
+    rdme= output_dir.parent / "docs/readme/sections/registry.md.j2"
+    registry_to_markdown(registry, rdme)
+    
+    
+    if push:
+        logger.info("Committing changes")
+        #commit_and_push([registry_yaml, registry_md, rdme])
+        commit_and_push_to_branch(
+            message="Update ML training registry",
+            branch=branch or "main",
+            paths=[registry_yaml, registry_md, rdme],
+            force=False
+        )
+
+
+def cli():
+    """CLI entry point."""
+    return fire.Fire({
+        'build': build
+    })
+
+
+if __name__ == "__main__":
+    cli()
+
+
+
+================================================================================
+File: src/scripts/registry/identifiers.py
+================================================================================
+# scripts/registry/identifiers.py
+"""MLR identifier generation and management."""
+
+import json
+import os
+import re
+from collections import defaultdict
+from pathlib import Path
+from typing import Dict, Optional
+import logging
+
+logger = logging.getLogger(__name__)
+
+class MLRIdentifierRegistry:
+    """Manages unique identifiers for ML recommendations."""
+    
+    def __init__(self, registry_file: str | Path = "mlr_registry.json"):
+        """Initialize the identifier registry.
+        
+        Args:
+            registry_file: Path to the JSON file storing ID mappings
+        """
+        self.registry_file = Path(registry_file)
+        self.current_ids = self._load_registry()
+        self.author_counters = self._initialize_author_counters()
+        
+    def _load_registry(self) -> Dict[str, Dict]:
+        """Load existing MLR IDs from registry file."""
+        try:
+            if self.registry_file.exists():
+                with open(self.registry_file, 'r') as f:
+                    return json.load(f)
+            logger.info(f"No existing registry found at {self.registry_file}")
+        except json.JSONDecodeError:
+            logger.warning(f"Error reading registry file {self.registry_file}. Starting fresh.")
+        return {'paper_ids': {}, 'recommendation_ids': {}}
+    
+    def _initialize_author_counters(self) -> Dict[str, int]:
+        """Initialize counters for author IDs from existing registry."""
+        counters = defaultdict(int)
+        for paper_id in self.current_ids['paper_ids'].values():
+            if match := re.match(r'([A-Za-z]+)(\d+)', paper_id):
+                author, num = match.groups()
+                counters[author] = max(counters[author], int(num))
+        return counters
+    
+    def _save_registry(self) -> None:
+        """Save current MLR IDs to registry file."""
+        self.registry_file.parent.mkdir(parents=True, exist_ok=True)
+        with open(self.registry_file, 'w') as f:
+            json.dump(self.current_ids, f, indent=2)
+        logger.debug(f"Saved registry to {self.registry_file}")
+    
+    def get_paper_id(self, first_author: str, year: int, arxiv_id: Optional[str] = None) -> str:
+        """Get or generate a paper identifier.
+        
+        Args:
+            first_author: First author's name
+            year: Publication year
+            arxiv_id: Optional arXiv identifier
+            
+        Returns:
+            Unique paper identifier string
+        """
+        paper_key = f"{first_author}-{year}-{arxiv_id if arxiv_id else 'none'}"
+        
+        if paper_key in self.current_ids['paper_ids']:
+            return self.current_ids['paper_ids'][paper_key]
+        
+        author_base = re.sub(r'[^A-Za-z]', '', first_author)
+        self.author_counters[author_base] += 1
+        paper_id = f"{author_base}{self.author_counters[author_base]:03d}"
+        
+        self.current_ids['paper_ids'][paper_key] = paper_id
+        self._save_registry()
+        logger.debug(f"Generated new paper ID {paper_id} for {paper_key}")
+        
+        return paper_id
+            
+    def generate_id(self, year: int, paper_id: str) -> str:
+        """Generate a new unique MLR identifier.
+        
+        Args:
+            year: Publication year
+            paper_id: Unique paper identifier
+            
+        Returns:
+            MLR identifier string
+        """
+        key = f"{year}-{paper_id}"
+        if key not in self.current_ids['recommendation_ids']:
+            self.current_ids['recommendation_ids'][key] = 0
+        
+        self.current_ids['recommendation_ids'][key] += 1
+        mlr_id = f"MLR-{year}-{paper_id}-{self.current_ids['recommendation_ids'][key]:04d}"
+        self._save_registry()
+        logger.debug(f"Generated new MLR ID {mlr_id}")
+        return mlr_id
+
+
+
+================================================================================
+File: src/scripts/registry/io.py
+================================================================================
+# src/scripts/registry/io.py
+"""I/O operations for the ML recommendation registry."""
+
+import yaml
+import json
+from pathlib import Path
+from typing import Dict, Union
+from loguru import logger
+from datetime import datetime
+from collections import defaultdict
+
+from .recommendations import RecommendationRegistry
+from .types import MLRStatus
+
+class RegistryDataError(Exception):
+    """Raised when there are issues with registry data format."""
+    pass
+
+def validate_paper_entry(paper: Dict, year: str) -> None:
+    """Validate a single paper entry.
+    
+    Args:
+        paper: Dictionary containing paper data
+        year: Year the paper is from (for error messages)
+        
+    Raises:
+        RegistryDataError: If paper data is invalid
+    """
+    required_fields = {
+        'title': str,
+        'first_author': str,
+        'year': int,
+        #'topics': list
+    }
+
+    # Check for missing required fields
+    missing_fields = [field for field in required_fields if field not in paper]
+    if missing_fields:
+        logger.warning(paper)
+        raise RegistryDataError(
+            f"Paper in year {year} missing required fields: {', '.join(missing_fields)}"
+        )
+
+    # Check field types
+    # for field, expected_type in required_fields.items():
+    #     if not isinstance(paper[field], expected_type):
+    #         logger.warning(paper)
+    #         raise RegistryDataError(
+    #             f"Paper in year {year} has invalid type for {field}: "
+    #             f"expected {expected_type.__name__}, got {type(paper[field]).__name__}"
+    #         )
+
+    # # Validate year matches container
+    # if str(paper['year']) != str(year):
+    #     raise RegistryDataError(
+    #         f"Paper year {paper['year']} doesn't match container year {year}"
+    #     )
+
+    # # Validate topics not empty
+    # if not paper['topics']:
+    #     raise RegistryDataError(
+    #         f"Paper '{paper['title']}' ({year}) has empty topics list"
+    #     )
+
+    # Validate topics are strings
+    # if not all(isinstance(topic, str) for topic in paper['topics']):
+    #     raise RegistryDataError(
+    #         f"Paper '{paper['title']}' ({year}) has non-string topics"
+    #     )
+
+    # # If SOTA recommendations present, validate they're strings
+    # if 'sota' in paper and not all(isinstance(rec, str) for rec in paper['sota']):
+    #     raise RegistryDataError(
+    #         f"Paper '{paper['title']}' ({year}) has non-string SOTA recommendations"
+    #     )
+
+def load_research_yaml(file_path: Union[str, Path]) -> Dict:
+    """Load research data from YAML file.
+    
+    Args:
+        file_path: Path to the YAML file
+        
+    Returns:
+        Dictionary containing the research data
+        
+    Raises:
+        FileNotFoundError: If the file doesn't exist
+        yaml.YAMLError: If the file contains invalid YAML
+        RegistryDataError: If the data format is invalid
+    """
+    file_path = Path(file_path)
+    if not file_path.exists():
+        raise FileNotFoundError(f"Research data file not found: {file_path}")
+
+    try:
+        with open(file_path, 'r') as f:
+            data = yaml.safe_load(f)
+    except yaml.YAMLError as e:
+        logger.error(f"Error parsing YAML file {file_path}: {e}")
+        raise
+
+    # Validate basic data structure
+    if not isinstance(data, dict):
+        raise RegistryDataError("Research data must be a dictionary")
+
+    # Validate years and entries
+    for year, papers in data.items():
+        try:
+            year_int = int(year)
+            if not 1900 <= year_int <= datetime.now().year:
+                raise RegistryDataError(f"Invalid year: {year}")
+        except ValueError:
+            raise RegistryDataError(f"Invalid year format: {year}")
+
+        if not isinstance(papers, list):
+            raise RegistryDataError(f"Papers for year {year} must be a list")
+
+        # Validate each paper
+        for paper in papers:
+            if not isinstance(paper, dict):
+                raise RegistryDataError(f"Invalid paper entry in year {year}")
+            validate_paper_entry(paper, year)
+
+    return data
+
+def save_registry(registry: RecommendationRegistry, output_file: Union[str, Path]) -> None:
+    """Save registry to a file.
+    
+    Args:
+        registry: RecommendationRegistry instance
+        output_file: Path where to save the file
+    """
+    output_file = Path(output_file)
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    
+    data = registry.export_registry()
+    
+    try:
+        # Write as JSONL if .jsonl extension
+        if output_file.suffix == '.jsonl':
+            with open(output_file, 'w') as f:
+                for rec in data['recommendations']:
+                    f.write(json.dumps(rec) + '\n')
+        # Write as YAML for other extensions
+        else:
+            with open(output_file, 'w') as f:
+                yaml.safe_dump(
+                    data,
+                    f,
+                    sort_keys=False,
+                    allow_unicode=True,
+                    default_flow_style=False
+                )
+        logger.info(f"Registry saved to {output_file}")
+    except Exception as e:
+        logger.error(f"Error saving registry to {output_file}: {e}")
+        raise
+
+def load_registry(file_path: Union[str, Path]) -> Dict:
+    """Load a saved registry file.
+    
+    Args:
+        file_path: Path to the registry file
+        
+    Returns:
+        Dictionary containing the registry data
+    """
+    file_path = Path(file_path)
+    if not file_path.exists():
+        raise FileNotFoundError(f"Registry file not found: {file_path}")
+    
+    try:
+        # Handle JSONL format
+        if file_path.suffix == '.jsonl':
+            recommendations = []
+            with open(file_path, 'r') as f:
+                for line in f:
+                    if line.strip():
+                        recommendations.append(json.loads(line))
+            data = {
+                'metadata': {
+                    'schema_version': '1.0',
+                    'last_updated': datetime.now().strftime('%Y-%m-%d')
+                },
+                'recommendations': recommendations
+            }
+        # Handle YAML format
+        else:
+            with open(file_path, 'r') as f:
+                data = yaml.safe_load(f)
+    except (yaml.YAMLError, json.JSONDecodeError) as e:
+        logger.error(f"Error parsing registry file {file_path}: {e}")
+        raise
+    
+    # Basic validation
+    if not isinstance(data, dict):
+        raise RegistryDataError("Invalid registry format")
+    
+    if 'recommendations' not in data:
+        raise RegistryDataError("Registry missing recommendations")
+    
+    if not isinstance(data['recommendations'], list):
+        raise RegistryDataError("Recommendations must be a list")
+        
+    return data
+
+def registry_to_markdown(registry: RecommendationRegistry, output_file: Union[str, Path]) -> None:
+    """Export registry to a markdown document."""
+    output_file = Path(output_file)
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    
+    data = registry.export_registry()
+    
+    with open(output_file, 'w') as f:
+        f.write("# ML Training Recommendations Registry\n\n")
+        f.write(f"Last updated: {data['metadata']['last_updated']}\n\n")
+        
+        # Group recommendations by status and topic for display
+        status_topics = defaultdict(lambda: defaultdict(list))
+        for rec in data['recommendations']:
+            status = rec.get('status', 'standard')
+            topic = rec.get('topic', 'uncategorized')
+            status_topics[status][topic].append(rec)
+        
+        # Write recommendations by status and topic
+        for status in MLRStatus:
+            f.write(f"## {status.value.title()} Recommendations\n\n")
+            
+            for topic, recs in sorted(status_topics[status.value].items()):
+                if recs:
+                    f.write(f"### {topic}\n\n")
+                    for rec in recs:
+                        f.write(f"- {rec['recommendation']}\n")
+                        if rec.get('implementations'):
+                            f.write(f"  - Implementations: {', '.join(rec['implementations'])}\n")
+                        f.write("\n")
+            f.write("\n")
+        
+        # Write statistics
+        f.write("## Statistics\n\n")
+        for topic_data in data['topics'].items():
+            topic, stats = topic_data
+            f.write(f"### {topic}\n\n")
+            f.write(f"- Total recommendations: {stats['count']}\n")
+            if stats['years']['earliest'] and stats['years']['latest']:
+                f.write(f"- Year range: {stats['years']['earliest']} - {stats['years']['latest']}\n")
+            f.write("\n")
+
+
+
+================================================================================
+File: src/scripts/registry/recommendations.py
+================================================================================
+# src/scripts/registry/recommendations.py
+"""Core recommendation registry functionality."""
+from collections import defaultdict
+from datetime import datetime
+from typing import Dict, List, Optional, Set
+import logging
+from omegaconf import OmegaConf, DictConfig
+
+from .types import MLRStatus, Recommendation, Source, Evidence, create_config_from_dict
+from .identifiers import MLRIdentifierRegistry
+
+logger = logging.getLogger(__name__)
+
+def generate_topic_id(topic: str, recommendation: str) -> str:
+    """Generate a unique topic-based ID for a recommendation."""
+    import re
+    words = recommendation.lower().split()[:5]
+    slug = '-'.join(words)
+    slug = re.sub(r'[^a-z0-9-]', '', slug)
+    return f"{topic.lower().replace(' ', '-')}/{slug}"
+
+class RecommendationRegistry:
+    """Registry for ML training recommendations."""
+    
+    def __init__(self, id_registry: Optional[MLRIdentifierRegistry] = None):
+        """Initialize the recommendation registry."""
+        self.recommendations: Dict[str, Recommendation] = {}
+        self.topic_to_recommendations: Dict[str, List[str]] = defaultdict(list)
+        self.id_registry = id_registry or MLRIdentifierRegistry()
+        self._config = create_config_from_dict({
+            'recommendations': {},
+            'metadata': {
+                'schema_version': '1.0',
+                'last_updated': datetime.now().strftime('%Y-%m-%d')
+            }
+        })
+        logger.info("Initialized recommendation registry")
+
+    def add_recommendation(self, 
+                         topic: str,
+                         recommendation: str,
+                         first_author: str,
+                         source_paper: str,
+                         year: int,
+                         arxiv_id: Optional[str] = None,
+                         experimental: bool = False,
+                         superseded_by: Optional[str] = None,
+                         implementations: Optional[List[str]] = None) -> str:
+        """Add a recommendation to the registry."""
+        topic_id = generate_topic_id(topic, recommendation)
+        paper_id = self.id_registry.get_paper_id(first_author, year, arxiv_id)
+        mlr_id = self.id_registry.generate_id(year, paper_id)
+        
+        source = Source(
+            paper=source_paper,
+            paper_id=paper_id,
+            year=year,
+            first_author=first_author,
+            arxiv_id=arxiv_id
+        )
+        
+        # Determine status
+        if superseded_by:
+            status = MLRStatus.DEPRECATED
+        elif experimental:
+            status = MLRStatus.EXPERIMENTAL
+        else:
+            status = MLRStatus.STANDARD
+            
+        rec = Recommendation.create(
+            id=mlr_id,
+            recommendation=recommendation,
+            topic=topic,
+            topic_id=topic_id,
+            source=source,
+            status=status,
+            superseded_by=superseded_by,
+            deprecated_date=datetime.now().strftime('%Y-%m-%d') if superseded_by else None,
+            implementations=implementations or []
+        )
+        
+        self.recommendations[mlr_id] = rec
+        self.topic_to_recommendations[topic].append(mlr_id)
+        
+        logger.info(f"Added recommendation {mlr_id} with status {status}")
+        return mlr_id
+
+    def get_recommendation_by_mlr(self, mlr_id: str) -> Optional[Recommendation]:
+        """Get a recommendation by its MLR ID."""
+        return self.recommendations.get(mlr_id)
+    
+    def get_recommendations_by_status(self, status: MLRStatus) -> List[Recommendation]:
+        """Get all recommendations with a given status."""
+        return [rec for rec in self.recommendations.values() if rec.status == status]
+    
+    def get_recommendations_by_topic(self, topic: str, status: Optional[MLRStatus] = None) -> List[Recommendation]:
+        """Get recommendations for a topic, optionally filtered by status."""
+        recs = [self.recommendations[mlr_id] for mlr_id in self.topic_to_recommendations[topic]]
+        if status:
+            recs = [rec for rec in recs if rec.status == status]
+        return sorted(recs, key=lambda x: x.source.year)
+
+    def get_topics(self) -> Set[str]:
+        """Get all unique topics in the registry."""
+        return set(self.topic_to_recommendations.keys())
+
+    def export_registry(self) -> Dict:
+        """Export the registry as a list of atomic recommendations."""
+        return {
+            'metadata': {
+                'last_updated': datetime.now().strftime('%Y-%m-%d'),
+                'schema_version': '1.0',
+                'status_types': [status.value for status in MLRStatus]
+            },
+            'recommendations': [
+                rec.to_dict() for rec in self.recommendations.values()
+            ],
+            # Include topic stats for informational purposes
+            'topics': {
+                topic: {
+                    'count': len(recs),
+                    'years': {
+                        'earliest': min(self.recommendations[rid].source.year for rid in recs),
+                        'latest': max(self.recommendations[rid].source.year for rid in recs)
+                    }
+                }
+                for topic, recs in self.topic_to_recommendations.items()
+            }
+        }
+
+def build_registry_from_yaml(yaml_data: Dict) -> RecommendationRegistry:
+    """Build a recommendation registry from YAML research data."""
+    registry = RecommendationRegistry()
+    config = create_config_from_dict(yaml_data)
+    
+    # Process each year's papers
+    for year, papers in config.items():
+        for paper in papers:
+            # Extract basic paper info
+            first_author = paper.first_author
+            arxiv_id = paper.get('arxiv_id', None)
+            paper_id = f"{first_author} et al. ({year})"
+            
+            # Process SOTA recommendations
+            if hasattr(paper, 'sota') and paper.sota:
+                for rec in paper.sota:
+                    main_topic = paper.topics[0] if paper.topics else 'general'
+                    mlr_id = registry.add_recommendation(
+                        topic=main_topic,
+                        recommendation=rec,
+                        first_author=first_author,
+                        source_paper=paper_id,
+                        year=int(year),
+                        arxiv_id=arxiv_id,
+                        implementations=paper.get('models', [])
+                    )
+                    logger.info(f"Added recommendation {mlr_id}: {rec}")
+            
+            # Process experimental recommendations
+            if paper.get('experimental', False):
+                for rec in paper.get('sota', []):
+                    mlr_id = registry.add_recommendation(
+                        topic=paper.topics[0],
+                        recommendation=rec,
+                        first_author=first_author,
+                        source_paper=paper_id,
+                        year=int(year),
+                        arxiv_id=arxiv_id,
+                        experimental=True
+                    )
+                    logger.info(f"Added experimental recommendation {mlr_id}: {rec}")
+            
+            # Process deprecated/superseded recommendations
+            if 'attic' in paper and 'superseded_by' in paper.attic:
+                for rec in paper.get('sota', []):
+                    mlr_id = registry.add_recommendation(
+                        topic=paper.topics[0],
+                        recommendation=rec,
+                        first_author=first_author,
+                        source_paper=paper_id,
+                        year=int(year),
+                        arxiv_id=arxiv_id,
+                        superseded_by=paper.attic.superseded_by
+                    )
+                    logger.info(f"Added deprecated recommendation {mlr_id}: {rec}")
+
+    return registry
+
+
+
+================================================================================
+File: src/scripts/registry/types.py
+================================================================================
+# scripts/registry/types.py
+"""Type definitions for ML recommendation registry."""
+
+from enum import Enum
+from typing import Dict, List, Optional, Union
+from dataclasses import dataclass, field
+from datetime import datetime
+from omegaconf import OmegaConf, DictConfig, MISSING
+
+class MLRStatus(str, Enum):
+    """Status states for ML recommendations."""
+    EXPERIMENTAL = "experimental"
+    STANDARD = "standard"
+    DEPRECATED = "deprecated"
+
+@dataclass
+class Source:
+    """Source information for a recommendation."""
+    paper: str = MISSING
+    paper_id: str = MISSING
+    year: int = MISSING
+    first_author: str = MISSING
+    arxiv_id: Optional[str] = None
+
+    @classmethod
+    def from_dict(cls, data: Union[Dict, DictConfig]) -> 'Source':
+        """Create Source from dictionary or DictConfig."""
+        conf = OmegaConf.create(data)
+        return cls(
+            paper=conf.paper,
+            paper_id=conf.paper_id,
+            year=conf.year,
+            first_author=conf.first_author,
+            arxiv_id=conf.get('arxiv_id', None)
+        )
+
+    def to_dict(self) -> Dict:
+        """Convert to dictionary, omitting None values."""
+        return {k: v for k, v in OmegaConf.to_container(OmegaConf.create(self)).items() if v is not None}
+
+@dataclass
+class Evidence:
+    """Supporting evidence for a recommendation."""
+    paper: str = MISSING
+    paper_id: str = MISSING
+    year: int = MISSING
+    arxiv_id: Optional[str] = None
+
+    @classmethod
+    def from_dict(cls, data: Union[Dict, DictConfig]) -> 'Evidence':
+        """Create Evidence from dictionary or DictConfig."""
+        conf = OmegaConf.create(data)
+        return cls(
+            paper=conf.paper,
+            paper_id=conf.paper_id,
+            year=conf.year,
+            arxiv_id=conf.get('arxiv_id', None)
+        )
+
+    def to_dict(self) -> Dict:
+        """Convert to dictionary, omitting None values."""
+        return {k: v for k, v in OmegaConf.to_container(OmegaConf.create(self)).items() if v is not None}
+
+@dataclass
+class Recommendation:
+    """ML training recommendation."""
+    id: str = MISSING
+    recommendation: str = MISSING
+    topic: str = MISSING
+    topic_id: str = MISSING
+    source: Source = MISSING
+    status: MLRStatus = MISSING
+    supporting_evidence: List[Evidence] = field(default_factory=list)
+    superseded_by: Optional[str] = None
+    deprecated_date: Optional[str] = None
+    implementations: List[str] = field(default_factory=list)
+
+    @classmethod
+    def create(cls, 
+               id: str,
+               recommendation: str,
+               topic: str,
+               topic_id: str,
+               source: Union[Dict, DictConfig, Source],
+               status: MLRStatus,
+               **kwargs) -> 'Recommendation':
+        """Create a recommendation from raw data."""
+        if isinstance(source, (Dict, DictConfig)):
+            source = Source.from_dict(source)
+        
+        evidence_list = kwargs.get('supporting_evidence', [])
+        if evidence_list:
+            evidence_list = [
+                Evidence.from_dict(e) if isinstance(e, (Dict, DictConfig)) else e
+                for e in evidence_list
+            ]
+        
+        return cls(
+            id=id,
+            recommendation=recommendation,
+            topic=topic,
+            topic_id=topic_id,
+            source=source,
+            status=status,
+            supporting_evidence=evidence_list,
+            superseded_by=kwargs.get('superseded_by'),
+            deprecated_date=kwargs.get('deprecated_date'),
+            implementations=kwargs.get('implementations', [])
+        )
+
+    def to_dict(self) -> Dict:
+        """Convert recommendation to dictionary."""
+        conf = OmegaConf.create({
+            'id': self.id,
+            'recommendation': self.recommendation,
+            'topic': self.topic,
+            'topic_id': self.topic_id,
+            'source': self.source.to_dict(),
+            'status': self.status.value,
+            'supporting_evidence': [e.to_dict() for e in self.supporting_evidence],
+            'implementations': self.implementations,
+            'superseded_by': self.superseded_by,
+            'deprecated_date': self.deprecated_date
+        })
+        return {k: v for k, v in OmegaConf.to_container(conf).items() if v is not None}
+
+def create_config_from_dict(data: Dict) -> DictConfig:
+    """Create an OmegaConf config from a dictionary."""
+    return OmegaConf.create(data)
+
+

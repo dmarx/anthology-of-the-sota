@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Preserve existing styles during migration */
+@import '../../styles/main.css';

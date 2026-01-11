@@ -1,6 +1,6 @@
 # ML Training Recommendations Registry
 
-Last updated: 2026-01-04
+Last updated: 2026-01-11
 
 ## Experimental Recommendations
 

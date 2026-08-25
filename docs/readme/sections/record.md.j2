@@ -1,0 +1,28 @@
+## The record
+
+The anthology lives in `record/`, as one document per claim, and is rendered
+into browsable views in `docs/`. Start at **[docs/README.md](docs/README.md)**.
+
+| | Source | Generated view |
+|---|---|---|
+| **Practices** — what to do, and why | `record/practices.d` | [docs/practices](docs/practices/README.md) |
+| **Literature** — the evidence, including the attic | `record/literature.d` | [docs/literature](docs/literature/README.md) |
+| **Decisions** — why the anthology is built this way | `record/decisions.d` | [docs/decisions](docs/decisions/README.md) |
+| **Principles** | `record/principles.d` | [docs/design-principles.md](docs/design-principles.md) |
+| **Curation log** — what entered and what left | `record/curation.d` | [docs/curation](docs/curation/README.md) |
+
+A **practice** is a claim about what you should do; a **note** is a paper's
+standing in the anthology. They carry separate statuses and are allowed to
+disagree — a foundational paper can carry advice that has moved on, and a
+paper in the attic can still be the source of something everybody does.
+
+Nothing is deleted. A practice that stops being right becomes `Superseded`
+or `Rejected` and keeps its body, because the contrast with what it replaced
+is most of what makes the current entry worth stating.
+
+```
+luria new sota    # file a practice (or: lit, adr, dp, changelog)
+luria link --fix  # spell the link targets; never hand-write one
+luria index       # regenerate every view
+luria lint        # the only command that can fail
+```

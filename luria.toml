@@ -117,7 +117,10 @@ blurb       = "Why things entered the anthology, and why they left."
 
 [luria.code]
 globs      = ["src/**/*.py", "docs/**/*.j2", "web/scripts/*.js"]
-historical = ["CHANGELOG.md"]
+# README.md is assembled from the templates under docs/readme/, which are
+# themselves scanned — so a claim in one is still checked, and listing the
+# generated result only keeps the same reference from being reported twice.
+historical = ["CHANGELOG.md", "README.md"]
 
 [luria.site]
 icon    = "assets/logo.svg"

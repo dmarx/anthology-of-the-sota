@@ -16,12 +16,15 @@ def get_section_templates(template_dir: Path) -> List[str]:
     # Define section order
     section_order = {
         "introduction.md.j2": 0,
+        # The record is what this repository is; it goes directly after the
+        # introduction.
+        "record.md.j2": 0.5,
         "prerequisites.md.j2": 1,
         "usage.md.j2": 2,
         "development.md.j2": 3,
         "summaries.md.j2": 4,
         "site.md.j2": 5,
-        "structure.md.j2": 6,
+        "registry.md.j2": 7,
         "todo.md.j2": 999  # Always last if present
     }
     

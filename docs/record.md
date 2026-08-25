@@ -69,6 +69,7 @@ Everything not listed here is at Luria's default.
 |---|---|---|
 | `issue_url` | `https://github.com/dmarx/anthology-of-the-sota/issues/{n}` | *empty* |
 | `code.globs` | `src/**/*.py`, `docs/**/*.j2`, `web/scripts/*.js` | *empty* |
+| `code.historical` | `CHANGELOG.md`, `README.md` | `CHANGELOG.md` |
 | `lint.narrow_terms` | `adam`, `adamw`, `batchnorm`, `layernorm`, `transformer`, `llama2`, `flash-attention`, `arxiv`, `registry` | *empty* |
 | `site.exclude` | `web/**`, `frontend/**` | *empty* |
 | `site.icon` | `assets/logo.svg` | *empty* |

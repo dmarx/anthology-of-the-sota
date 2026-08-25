@@ -1,0 +1,135 @@
+# Luria configuration for the Anthology of the SOTA.
+#
+# The record has four families. Two of them are the anthology itself — `SOTA`
+# is the product (one document per recommendation) and `LIT` is the evidence
+# (one note per paper) — and two are this project reasoning about itself.
+#
+# The split between SOTA and LIT is the point of the whole restructure: the
+# YAML it replaced kept `attic` and `experimental` as fields on a *paper*,
+# while what they actually qualified was a *recommendation*. A paper can be
+# foundational and its specific advice stale; a paper can be atticked and a
+# practice drawn from it still hold. Two schemes, two status fields, and the
+# relationship between them is a citation the lint can follow. See ADR-002.
+[luria]
+issue_url = "https://github.com/dmarx/anthology-of-the-sota/issues/{n}"
+
+[luria.paths]
+docs      = "docs"
+decisions = "record/decisions.d"
+reports   = "docs/reports"
+design_principles = "docs/design-principles.md"
+
+# ── The product: one document per recommendation ─────────────────────────
+# `requires` is the rule that this anthology is about *justified* practice:
+# a recommendation with no paper behind it is an opinion, and fails the lint
+# until someone supplies the citation.
+[luria.schemes.SOTA]
+dir      = "record/practices.d"
+output   = "docs/practices"
+active   = "Active"
+render   = "index"
+requires = ["source"]
+
+# The topic consolidation, enforced. Seven categories, exactly one primary
+# per practice; secondary tags are unconstrained. The vocabulary and the
+# one-primary rule both come from ADR-003, which promoted them out of the
+# Jinja template they had been sitting in, unapplied, since 2024.
+[luria.schemes.SOTA.tag_groups.primary_topic]
+require = "exactly-one"
+tags = ["training-optimization", "systems-optimization", "model-stability",
+        "distributed-optimization", "data-pipeline", "attention-techniques",
+        "model-architecture"]
+
+# ── The evidence: one note per paper ─────────────────────────────────────
+[luria.schemes.LIT]
+dir      = "record/literature.d"
+output   = "docs/literature"
+active   = "Active"
+render   = "index"
+requires = ["arxiv"]
+
+# The literature is broader than the practice registry — the corpus carries
+# substantial generative-vision, theory and inference work that never
+# produced a training recommendation — so LIT's vocabulary is the seven
+# above plus five that only the reading list needs (ADR-003).
+[luria.schemes.LIT.tag_groups.primary_topic]
+require = "exactly-one"
+tags = ["training-optimization", "systems-optimization", "model-stability",
+        "distributed-optimization", "data-pipeline", "attention-techniques",
+        "model-architecture", "generative-modeling", "vision-and-graphics",
+        "adaptation-and-tuning", "inference-optimization",
+        "analysis-and-evaluation"]
+
+# ── This project reasoning about itself ──────────────────────────────────
+[luria.schemes.ADR]
+dir    = "record/decisions.d"
+output = "docs/decisions"
+active = "Active"
+render = "index"
+
+[luria.schemes.DP]
+dir      = "record/principles.d"
+output   = "docs/design-principles.md"
+active   = "Active"
+render   = "document"
+# A principle that names AdamW is a claim about AdamW, not a principle. The
+# terms it must avoid are in [luria.lint] below.
+titles_generalize = true
+
+# ── arXiv as a remote ────────────────────────────────────────────────────
+# Not a Luria record — a `uid` remote, whose references are the prefix plus
+# whatever the pattern matches. Writing `ARXIV-1412.6980` anywhere in the
+# record makes it a resolvable, checkable citation instead of a bare string
+# in a YAML field that nothing could follow.
+[luria.remotes.ARXIV]
+name = "arXiv"
+uid  = "(\\d{4})[.:](\\d{4,5})(v\\d+)?"
+url  = "https://arxiv.org/abs/{1}.{2}"
+
+[luria.remotes.LU]
+name = "luria"
+repo = "dmarx/luria"
+ref  = "main"
+dir  = "record/decisions.d"
+
+[luria.remotes.LU.schemes.DP]
+document = "docs/design-principles.md"
+
+# Fixture codes: `FX-ADR-049` in a template or an example resolves to the note
+# explaining the convention, and can never collide with this record's own
+# numbering. The scheme templates copied from luria cite these.
+[luria.remotes.FX]
+name = "fixtures"
+url  = "https://github.com/dmarx/luria/blob/main/docs/directives.md#fixture-codes"
+
+# ── Churn gets a narrative ───────────────────────────────────────────────
+# Five consecutive commits called "Update ML training registry" are what a
+# living document looks like when nothing records *why* it moved.
+[luria.fragments]
+"record/changelog.d" = { file = "CHANGELOG.md", style = "changelog" }
+
+[luria.journals.curation]
+dir         = "record/curation.d"
+output      = "docs/curation"
+granularity = "month"
+title       = "Curation log"
+blurb       = "Why things entered the anthology, and why they left."
+
+[luria.code]
+globs      = ["src/**/*.py", "docs/**/*.j2", "web/scripts/*.js"]
+historical = ["CHANGELOG.md"]
+
+[luria.site]
+icon    = "assets/logo.svg"
+exclude = ["web/**", "frontend/**"]
+# title, base_url and source_url all derive from issue_url.
+
+# Warn-first. The checks that matter here — `inert-status`, which would have
+# caught 119/119 recommendations sitting at one status, and
+# `unresolved-codes`, which would have caught the attic pointing at papers
+# not in the corpus — are reported on every run and promoted to failures in
+# phase 4, once the backlog they surface has been worked through.
+[luria.lint]
+fail_on = []
+narrow_terms = ["adam", "adamw", "batchnorm", "layernorm", "transformer",
+                "llama2", "flash-attention", "arxiv", "registry"]

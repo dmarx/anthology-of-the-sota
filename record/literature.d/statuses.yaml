@@ -1,0 +1,28 @@
+# What a status means for a paper — which is a different question from what
+# it means for a practice, and the reason the two are separate schemes.
+#
+# A paper's status is about its standing in the anthology, not about whether
+# its findings are true. Adam is `Active` here because it is worth reading;
+# whether any particular thing it recommends is still what you should do is
+# the SOTA scheme's business, and the two can disagree.
+
+Active:
+  label: In the anthology
+  blurb: worth reading, whether or not a practice was drawn from it
+
+Proposed:
+  label: Watching
+  blurb: promising and unproven; the note says what would settle it
+
+Deferred:
+  label: Unreviewed
+  blurb: in the corpus, not yet read closely enough to place
+
+Superseded:
+  label: Superseded
+  blurb: later work covers this better, and the note names it
+
+Rejected:
+  label: Attic
+  blurb: retired with a reason — too narrow, too theoretical, or simply not
+    interesting enough to carry

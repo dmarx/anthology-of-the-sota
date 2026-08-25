@@ -1,0 +1,31 @@
+# What a status means for a practice. The five words are luria's and closed;
+# the meanings are this anthology's.
+#
+# The old schema had three (`experimental`, `standard`, `deprecated`) and used
+# one: all 119 recommendations were `standard`, because the two branches that
+# could set the others read a field that no qualifying paper had. A status
+# every record shares is indistinguishable from no status at all — which is
+# what `luria lint` reports as `inert-status`, and why these five are written
+# down rather than assumed.
+
+Active:
+  label: Current practice
+  blurb: what you should do today, and the reason is one click away
+
+Proposed:
+  label: Promising
+  blurb: early results are good, validation at scale is missing — the old
+    `experimental` flag
+
+Deferred:
+  label: Not yet judged
+  blurb: probably right, not yet worth asserting; usually a question of
+    adoption rather than correctness
+
+Superseded:
+  label: Replaced
+  blurb: something newer does this better, and the record says what
+
+Rejected:
+  label: Retired
+  blurb: no longer believed, with no successor — the attic

@@ -1,0 +1,14 @@
+# Decision tags — display name, blurb, and the order they appear in the index.
+
+record:
+  label: The record
+  blurb: what the schemes hold, and the rules between them
+taxonomy:
+  label: Taxonomy
+  blurb: the topic vocabulary and what enforces it
+mechanism:
+  label: Mechanism
+  blurb: identifiers, generation, the lint
+migration:
+  label: Migration
+  blurb: moving off the YAML registry, and what happens to it

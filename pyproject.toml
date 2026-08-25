@@ -11,7 +11,8 @@ dependencies = [
     "tree-format>=0.1.2",
     "pyyaml", # todo: deprecate in favor of omegaconf
     "omegaconf",
-    "llamero"
+    "llamero",
+    "luria>=0.4.2",
 ]
 
 [project.optional-dependencies]
@@ -64,7 +65,17 @@ ignore_patterns = [
     ".Python",
     "*.so",
     ".gitkeep",
-    "_version.py"
+    "_version.py",
+    # The record: 238 documents, listed one per line, in a section meant to
+    # orient a reader in thirty seconds. The containers stay visible via
+    # record/; docs/README.md is the index for what is inside them.
+    "literature.d",
+    "practices.d",
+    # Generated views of the same documents.
+    "practices",
+    "literature",
+    "curation",
+    "reports"
 ]
 
 [tool.readme.sections.order]
@@ -130,5 +141,7 @@ exclude_directories = [
     '.venv',
     '.idea',
     '.vscode',
-    'data'
+    'data',
+    'record',
+    'docs'
 ]

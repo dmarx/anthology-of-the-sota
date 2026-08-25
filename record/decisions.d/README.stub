@@ -1,0 +1,26 @@
+# Decisions
+
+How this anthology is built and why — as opposed to what it says about
+training models, which is [the practices](../practices/README.md).
+
+Most of these were made years ago and written down for the first time during
+the record migration. That is the honest account: the attic existed, the
+identifier scheme existed, the topic consolidation had been specified and
+never applied. None of them could be cited, so none of them could be
+argued with.
+
+A decision whose **choice** changes is superseded by adding a new one and
+flipping the old one's status — not by rewriting its body. Values these cite
+live in [design-principles.md](../design-principles.md).
+
+File one with `luria new adr`.
+
+<!-- GENERATED below this line by `luria index` — edit README.stub instead. -->
+
+## By tag
+
+{categories}
+
+## Chronological
+
+{table}

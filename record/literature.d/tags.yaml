@@ -1,0 +1,53 @@
+# The reading list's vocabulary: the seven a practice can carry, plus five
+# the corpus needs and the practice registry never did. A paper can be worth
+# reading without having produced a training recommendation, and roughly a
+# third of this corpus is exactly that.
+
+training-optimization:
+  label: Training optimization
+  blurb: optimizers, schedules, batch size, scaling laws, training dynamics
+
+systems-optimization:
+  label: Systems optimization
+  blurb: hardware utilization, kernels, compilation, numerical precision
+
+model-stability:
+  label: Model stability
+  blurb: normalization, initialization, gradient handling, regularization
+
+distributed-optimization:
+  label: Distributed optimization
+  blurb: parallelism, sharding, communication, memory, checkpointing
+
+data-pipeline:
+  label: Data pipeline
+  blurb: loading, quality, selection, tokenization
+
+attention-techniques:
+  label: Attention techniques
+  blurb: attention variants and alternatives, context length, position
+
+model-architecture:
+  label: Model architecture
+  blurb: architectures, components, model families, multi-modal designs
+
+generative-modeling:
+  label: Generative modeling
+  blurb: diffusion, samplers, text-to-image, conditioning and control
+
+vision-and-graphics:
+  label: Vision and graphics
+  blurb: neural rendering, reconstruction, perception, visual foundation
+    models
+
+adaptation-and-tuning:
+  label: Adaptation and tuning
+  blurb: fine-tuning, transfer, parameter-efficient methods, alignment
+
+inference-optimization:
+  label: Inference optimization
+  blurb: serving, quantization, compression, sparsity, distillation
+
+analysis-and-evaluation:
+  label: Analysis and evaluation
+  blurb: theory, interpretability, benchmarks, measurement, debugging

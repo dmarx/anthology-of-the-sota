@@ -1,0 +1,11 @@
+# Principle tags. Shared vocabulary with the decisions where it overlaps.
+
+record:
+  label: The record
+  blurb: what it holds, and what it refuses to lose
+evidence:
+  label: Evidence
+  blurb: citations, provenance, and what makes a claim checkable
+craft:
+  label: Craft
+  blurb: how the machinery is built and kept honest

@@ -1,0 +1,29 @@
+# Practices
+
+What to do when you train a model, and why — one document per recommendation,
+each citing the paper it came from.
+
+A practice is a **claim about what you should do**, held at a status. `Active`
+is current practice; the other four are the machinery that lets this stay a
+living document without quietly rewriting history. Nothing is deleted here: a
+practice that stops being right becomes `Superseded` or `Rejected` and keeps
+its body, because "we used to think this, and here is why we stopped" is worth
+more than a clean list.
+
+Every practice names a `source:`. That is enforced — a recommendation with no
+paper behind it is an opinion, and this is not a list of opinions. Follow the
+source to a [reading note](../literature/README.md) for what the paper
+actually claims.
+
+File one with `luria new sota`. Never hand-write a link target: write the bare
+code and run `luria link --fix`.
+
+<!-- GENERATED below this line by `luria index` — edit README.stub instead. -->
+
+## By topic
+
+{categories}
+
+## Chronological
+
+{table}

@@ -33,9 +33,6 @@ all = [
     "markdown2>=2.4.0",
 ]
 
-[project.scripts]
-build-registry = "scripts.registry.cli:cli"
-
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
@@ -46,7 +43,7 @@ packages = ["src/scripts"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
-addopts = "-v --cov=readme_generator --cov=summary_generator"
+addopts = "-v"
 
 [tool.readme.sections.order]
 "introduction.md.j2" = 0

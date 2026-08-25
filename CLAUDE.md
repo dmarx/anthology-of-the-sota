@@ -17,10 +17,10 @@ it disagrees with `luria --help` or with the record, this file is wrong.
 - `docs/` is where a reader **browses**. Everything in it is generated — see
   [docs/README.md](docs/README.md). Never edit an assembled page; edit the
   `README.stub` beside the sources and run `luria index`.
-<!-- inactive-ok-block: ADR-006 — cited precisely because it is not settled -->
-- `data/` is the pre-migration YAML. It still feeds the frontend and is
-  frozen otherwise — see
-  [ADR-006](record/decisions.d/ADR-006.md), which is `Proposed`, not settled.
+- `data/` is the pre-migration YAML, frozen. Nothing reads it at build time;
+  it is the import's provenance, and keeps
+  `src/scripts/migration/to_record.py` re-runnable. See
+  [ADR-008](record/decisions.d/ADR-008.md) and `data/README.md`.
 
 ## The two schemes, and why there are two
 

@@ -4,8 +4,9 @@
 
 Identifiers, generation, the lint.
 
-1 of 6 decisions. Back to the [full index](../README.md).
+2 of 8 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [ADR-005](../../../record/decisions.d/ADR-005.md) | Replace the derived MLR identifiers with sequential codes | `MLR-2014-Kingma001-0001` was computed from author, year and position, so it was stable only while those were, and `topic_id` was a slug of the recommendation's first five words — an identity that changed when you fixed a typo. Sequential codes with the title in frontmatter instead. | Active |
+| [ADR-007](../../../record/decisions.d/ADR-007.md) | One workflow commits generated files, and it marks its commits to skip CI | Two workflows regenerated and committed to the same branch, and the second one landed after the job that linted the first — leaving the branch tip unchecked and opening a gated run nobody approves. Generation is now one job whose commit carries the skip marker. Rejected: keeping both and marking the generated files unscannable, which treats the symptom. | Active |

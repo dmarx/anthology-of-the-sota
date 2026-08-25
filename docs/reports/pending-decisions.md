@@ -5,11 +5,10 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**5 document(s) awaiting a decision.**
+**4 document(s) awaiting a decision.**
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
-| 2026-08-24 | Proposed | [ADR-006](../../record/decisions.d/ADR-006.md) | 3 | 0 | Generate the registry from the record instead of checking it in |
 | 2026-08-24 | Proposed | [LIT-101](../../record/literature.d/LIT-101.md) | 0 | 0 | AdaNorm: Adaptive Gradient Norm Correction based Optimizer |
 | 2026-08-24 | Proposed | [LIT-104](../../record/literature.d/LIT-104.md) | 0 | 0 | Stack More Layers Differently: High-Rank Training |
 | 2026-08-24 | Proposed | [LIT-105](../../record/literature.d/LIT-105.md) | 0 | 0 | Lion: Learning with Implicit Optimization |

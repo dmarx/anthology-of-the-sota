@@ -4,7 +4,7 @@
 
 What the schemes hold, and the rules between them.
 
-3 of 6 decisions. Back to the [full index](../README.md).
+3 of 8 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

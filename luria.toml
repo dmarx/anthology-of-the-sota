@@ -116,7 +116,7 @@ title       = "Curation log"
 blurb       = "Why things entered the anthology, and why they left."
 
 [luria.code]
-globs      = ["src/**/*.py", "docs/**/*.j2", "web/scripts/*.js"]
+globs      = ["src/**/*.py", "docs/**/*.j2"]
 # README.md is assembled from the templates under docs/readme/, which are
 # themselves scanned — so a claim in one is still checked, and listing the
 # generated result only keeps the same reference from being reported twice.
@@ -124,7 +124,6 @@ historical = ["CHANGELOG.md", "README.md"]
 
 [luria.site]
 icon    = "assets/logo.svg"
-exclude = ["web/**", "frontend/**"]
 # title, base_url and source_url all derive from issue_url.
 
 # Warn-first. The checks that matter here — `inert-status`, which would have

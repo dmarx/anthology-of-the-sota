@@ -6,12 +6,13 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [August 2026](2026-08.md)
 
+- [24 Aug 20:02 — Consolidating the build, and suppressing my own CI while documenting how not to](2026-08.md#20260824200212)
 - [24 Aug 19:27 — Moving the anthology into a record, and what the move found](2026-08.md#20260824192746)
 
 ## All books
 
-1 entry across 1 book, newest first.
+2 entries across 1 book, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-08](2026-08.md) | 1 | 2026-08-24 | 2026-08-24 |
+| [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

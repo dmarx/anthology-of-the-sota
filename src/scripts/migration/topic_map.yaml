@@ -1,0 +1,291 @@
+# The topic consolidation, as data (ADR-003).
+#
+# `research.yaml` accumulated 172 distinct topic strings across 119 papers,
+# most of them used once. This file is the mapping from those strings onto the
+# controlled vocabulary the record enforces.
+#
+# Two vocabularies, because the two schemes cover different ground:
+#
+#   * SOTA gets the seven categories the 2024 naming-conventions document
+#     specified and nothing ever applied. `registry_topics` below is that
+#     document's own "previously covered by" table, transcribed.
+#
+#   * LIT gets those seven plus five the reading list needs and the practice
+#     registry never did — the corpus carries substantial generative, vision
+#     and inference work that produced no training recommendation.
+#
+# `weights` drives the scoring: a paper's first topic counts triple, the rest
+# count once, and the winning category takes the document's primary tag. The
+# scoring is a labour-saving device, not an authority — where it read a paper
+# wrong, `overrides` says so by arXiv id, with the reason.
+
+# ─────────────────────────────────────────────────────────────────────────
+# SOTA: the seven. Transcribed from the naming-conventions document's
+# "previously covered by" lists, which is why the left-hand side is the 22
+# topics the registry actually used rather than the full 172.
+# ─────────────────────────────────────────────────────────────────────────
+registry_topics:
+  optimization: training-optimization
+  training-efficiency: training-optimization
+  training-dynamics: training-optimization
+  large-batch-training: training-optimization
+  scaling-laws: training-optimization
+
+  hardware-optimization: systems-optimization
+  compilation: systems-optimization
+  systems: systems-optimization
+
+  training-stability: model-stability
+  initialization: model-stability
+  normalization: model-stability
+
+  distributed-training: distributed-optimization
+  memory-efficiency: distributed-optimization
+  checkpointing: distributed-optimization
+
+  data-loading: data-pipeline
+  data-quality: data-pipeline
+
+  attention: attention-techniques
+  attention-alternatives: attention-techniques
+
+  transformers: model-architecture
+  nlp: model-architecture
+  MoE: model-architecture
+  # Not in the naming document's table — it postdates it. A language model is
+  # an architecture claim before it is anything else.
+  language-models: model-architecture
+
+# ─────────────────────────────────────────────────────────────────────────
+# LIT: every topic string in research.yaml, mapped.
+# ─────────────────────────────────────────────────────────────────────────
+weights:
+  training-optimization:
+    - optimization
+    - adaptive-methods
+    - adam
+    - sgd
+    - gradient-descent
+    - learning-rate-scheduling
+    - large-batch-training
+    - batch-size-optimization
+    - training-dynamics
+    - training-efficiency
+    - training-optimization
+    - training-strategies
+    - training-acceleration
+    - training
+    - convergence
+    - hyperparameter-optimization
+    - meta-learning
+    - evolutionary-algorithms
+    - automated-discovery
+    - scaling-laws
+    - scaling
+    - large-scale-training
+    - learning-dynamics
+    - efficiency
+    - contrastive-learning
+    - self-supervised-learning
+
+  systems-optimization:
+    - systems
+    - hardware-optimization
+    - hardware efficiency
+    - compilation
+    - compilers
+    - cuda
+    - mixed-precision
+    - numerical-methods
+    - gradient-computation
+    - performance
+    - networking
+    - scalability
+    - real-time
+
+  model-stability:
+    - normalization
+    - rmsnorm
+    - prenorm
+    - initialization
+    - training-stability
+    - training-stabilization
+    - gradient-clipping
+    - regularization
+
+  distributed-optimization:
+    - distributed-training
+    - parallelism
+    - model-parallelism
+    - pipeline-parallelism
+    - communication
+    - checkpointing
+    - fault-tolerance
+    - memory-efficiency
+    - memory efficiency
+    - memory-optimization
+    - memory-management
+    - federated-learning
+    - privacy
+    - large-models
+
+  data-pipeline:
+    - data-loading
+    - data-quality
+    - data-selection
+    - tokenization
+    - vocabulary
+    - streaming
+
+  attention-techniques:
+    - attention
+    - attention-alternatives
+    - long-context
+    - positional-encoding
+    - extrapolation
+
+  model-architecture:
+    - transformers
+    - architecture
+    - MoE
+    - nlp
+    - language-models
+    - large-language-models
+    - foundation-models
+    - vision-transformers
+    - activation-functions
+    - convolution
+    - rnn
+    - sequence-modeling
+    - graph-neural-networks
+    - deep-networks
+    - neural-networks
+    - deep-learning
+    - hierarchical-models
+    - multi-task
+    - multi-modal
+    - vision-language
+    - vision-language-models
+    - clip
+    - multilingual
+    - retrieval
+    - machine-translation
+    # A model name that ended up in a topics list. Preserved in `keywords:`
+    # on the note, where a model name is a reasonable thing to say.
+    - llama2
+
+  generative-modeling:
+    - diffusion-models
+    - generative-models
+    - image-generation
+    - text-to-image
+    - sampling
+    - probability-flow
+    - conditional-generation
+    - controllable-generation
+    - conditioning
+    - control
+    - latent-models
+    - cascaded-models
+    - identity-preservation
+    - personalization
+
+  vision-and-graphics:
+    - neural-rendering
+    - graphics
+    - 3d-reconstruction
+    - view-synthesis
+    - radiance-fields
+    - neural-surfaces
+    - surface-representation
+    - dynamic-scenes
+    - scene-understanding
+    - point-clouds
+    - depth-estimation
+    - pose-estimation
+    - segmentation
+    - object-detection
+    - computer-vision
+    - multi-view
+    - multi-view-learning
+    - category-level
+    - open-vocabulary
+    - zero-shot
+    - perceptual-metrics
+    - similarity-learning
+
+  adaptation-and-tuning:
+    - fine-tuning
+    - transfer-learning
+    - domain-adaptation
+    - adaptation
+    - pretraining
+    - post-training
+    - parameter-efficient-fine-tuning
+    - prompt-tuning
+    - prompting
+    - adapters
+    - few-shot-learning
+    - reinforcement-learning
+    - ai-alignment
+    - safety
+
+  inference-optimization:
+    - inference
+    - inference-optimization
+    - inference optimization
+    - inference throughput
+    - quantization
+    - model-compression
+    - distillation
+    - sparsity
+    - network-pruning
+
+  analysis-and-evaluation:
+    - theory
+    - theoretical-analysis
+    - convergence-analysis
+    - generalization
+    - interpretability
+    - loss-landscapes
+    - analysis
+    - measurement
+    - inductive-bias
+    - benchmarking
+    - evaluation
+    - debugging
+    - monitoring
+    - robustness
+    - representation-learning
+
+# ─────────────────────────────────────────────────────────────────────────
+# Where the scoring read a paper wrong. Each of these was checked by hand.
+# ─────────────────────────────────────────────────────────────────────────
+overrides:
+  '1712.09913': # Visualizing the Loss Landscape of Neural Nets
+    tag: analysis-and-evaluation
+    why: An analysis method, not an optimizer. Its topics lead with
+         `optimization` because that is what it analyses.
+  '1803.03635': # The Lottery Ticket Hypothesis
+    tag: analysis-and-evaluation
+    why: A hypothesis about initialization, not a pruning recipe — the
+         pruning is the instrument.
+  '2110.13016': # Understanding Multi-View Representation Learning
+    tag: analysis-and-evaluation
+    why: Atticked as theory without concrete recommendations; the status
+         and the tag should agree about that.
+  '2301.05217': # Progress measures for grokking
+    tag: analysis-and-evaluation
+    why: Measurement of training dynamics rather than a technique for them.
+  '2005.14165': # Language Models are Few-Shot Learners (GPT-3)
+    tag: model-architecture
+    why: Scored into adaptation-and-tuning on `few-shot-learning`, but the
+         paper's claim is about scale and architecture.
+  '2205.05131': # Scale Efficiently (pre-training and fine-tuning transformers)
+    tag: training-optimization
+    why: Scored into adaptation-and-tuning on `fine-tuning`; the finding is
+         about how scaling interacts with training.
+  '2212.08073': # Constitutional AI
+    tag: adaptation-and-tuning
+    why: Post-training alignment. The only paper here on the subject, and
+         it belongs with the tuning work rather than under analysis.

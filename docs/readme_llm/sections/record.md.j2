@@ -1,0 +1,18 @@
+## The record
+
+The anthology's data is a Luria record, not a YAML registry. Sources live in
+`record/`; every browsable view under `docs/` is generated from them.
+
+- `record/practices.d` — one document per recommendation, each naming the
+  paper it came from in a required `source:` field.
+- `record/literature.d` — one note per paper, including the attic.
+- `record/decisions.d`, `record/principles.d` — why the anthology is built
+  this way.
+
+Start at `docs/README.md`. The topic vocabulary and the one-primary-topic
+rule are specified in `record/decisions.d/ADR-003.md` and enforced by
+`luria lint` — that decision replaced a prose specification which sat in this
+directory for two years without being applied, which is why it is a decision
+now and not a document.
+
+Commands: `luria new`, `luria link --fix`, `luria index`, `luria lint`.

@@ -1,0 +1,39 @@
+# The seven categories a practice can carry as its primary topic, in the
+# order the index shows them. The scopes are transcribed from the 2024
+# naming-conventions document; ADR-003 is where they became binding.
+#
+# `luria.toml` holds the *rule* (exactly one of these per practice); this file
+# holds what each one means. A tag used here but not listed still renders,
+# alphabetically and without a blurb — adding one needs no code change.
+
+training-optimization:
+  label: Training optimization
+  blurb: learning-rate schedules, batch size, optimizers, training dynamics,
+    scaling strategies
+
+systems-optimization:
+  label: Systems optimization
+  blurb: hardware utilization, kernels, compilation, memory access patterns
+
+model-stability:
+  label: Model stability
+  blurb: initialization, normalization, gradient handling, loss-landscape
+    behaviour
+
+distributed-optimization:
+  label: Distributed optimization
+  blurb: distribution strategies, memory management, checkpointing,
+    communication
+
+data-pipeline:
+  label: Data pipeline
+  blurb: loading, quality assessment, preprocessing, batch preparation
+
+attention-techniques:
+  label: Attention techniques
+  blurb: attention variants, implementation optimizations, alternative
+    mechanisms
+
+model-architecture:
+  label: Model architecture
+  blurb: architecture patterns, component design, structural choices

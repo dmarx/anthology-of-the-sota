@@ -1,0 +1,28 @@
+# Literature
+
+The evidence base — one note per paper, with the takeaways that made it worth
+keeping and, where it applies, the reason it is no longer.
+
+A note's status is about the paper's **standing in this anthology**, not about
+whether the paper is correct. That distinction is the point of keeping notes
+and [practices](../practices/README.md) apart: a foundational paper can carry
+advice that is now wrong, and a paper retired as uninteresting can still be
+the source of something everybody does. Under the old schema both facts lived
+in one field on the paper, so neither could be said.
+
+`Rejected` is the attic. It is a real place in the record with real entries,
+and a practice still citing one of them is a finding — `luria lint` reports it
+rather than leaving it to be noticed.
+
+Roughly a third of these notes produced no practice at all. They are here
+because they are worth reading.
+
+<!-- GENERATED below this line by `luria index` — edit README.stub instead. -->
+
+## By topic
+
+{categories}
+
+## Chronological
+
+{table}

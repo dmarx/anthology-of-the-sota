@@ -4,7 +4,7 @@
 
 Neural rendering, reconstruction, perception, visual foundation models.
 
-11 of 119 LIT documents. Back to the [full index](../README.md).
+11 of 129 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

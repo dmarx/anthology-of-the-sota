@@ -36,6 +36,6 @@ parameters between axes, on a STEM-heavy mix:
 
 Conditions: one architecture family, one scale, loss curves and noisy 90M
 benchmarks as the evidence; hence *Proposed*. The depth finding echoes the
-authors' Falcon-H1-1.5B-Deep result at a larger scale. The trade the deep
+authors' Falcon-H1-1.5B-Deep result at a larger scale ([LIT-120](../literature.d/LIT-120.md)). The trade the deep
 option loses on is throughput, which is the reason to state this as a
 parameter-budget rule rather than a compute-budget one.

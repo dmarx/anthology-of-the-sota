@@ -18,7 +18,7 @@ summary: >-
 
 Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
 
-Muon as modified in [ARXIV-2502.16982](https://arxiv.org/abs/2502.16982): weight decay applied to the
+Muon as modified in [ARXIV-2502.16982](https://arxiv.org/abs/2502.16982) ([LIT-122](../literature.d/LIT-122.md)): weight decay applied to the
 orthogonalised update, and the update's RMS rescaled to match what AdamW
 would produce, so that the learning rate and weight decay tuned for AdamW
 carry over. Under that recipe the authors saw stable training at nearly the

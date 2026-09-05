@@ -2,8 +2,9 @@
 
 # LITs tagged `tiny-models`
 
-1 of 119 LIT documents. Back to the [full index](../README.md).
+2 of 129 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [LIT-119](../../../record/literature.d/LIT-119.md) | Falcon-H1-Tiny: A series of extremely small, yet powerful language models redefining capabilities at small scale | Falcon-LLM Team (2026), technical blogpost. Holds the parameter budget at 90M and pulls the other three levers — data strategy, architecture, optimizer — one at a time: pretraining from scratch on the target SFT or reasoning mix beats pretrain-then-finetune at this scale, Muon with learnable multipliers beats the AdamW recipe, and depth and SSM width beat MLP width. | Active |
+| [LIT-129](../../../record/literature.d/LIT-129.md) | Can Tiny Language Models Reason? | Jakimovski (2025), a write-up with code, no paper. SmolLM2-135M-Instruct taken through SFT on plain dialogue, SFT on reasoning traces in think tags, and one epoch of DPO on 50k preference pairs, on a single GPU; the DPO stage converges and the final model gains 3 to 9 points over its base on ARC-C, BBH, MMLU and IFEval. | Active |

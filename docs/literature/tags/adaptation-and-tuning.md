@@ -4,7 +4,7 @@
 
 Fine-tuning, transfer, parameter-efficient methods, alignment.
 
-4 of 119 LIT documents. Back to the [full index](../README.md).
+7 of 129 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -12,3 +12,6 @@ Fine-tuning, transfer, parameter-efficient methods, alignment.
 | [LIT-046](../../../record/literature.d/LIT-046.md) | LoRA: Low-Rank Adaptation of Large Language Models | Hu et al. (2021), [ARXIV-2106.09685](https://arxiv.org/abs/2106.09685). Parameter-efficient fine-tuning. | Active |
 | [LIT-055](../../../record/literature.d/LIT-055.md) | P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning | Liu et al. (2021), [ARXIV-2110.07602](https://arxiv.org/abs/2110.07602). Deep prompt tuning. | Active |
 | [LIT-082](../../../record/literature.d/LIT-082.md) | Constitutional AI: Harmlessness from AI Feedback | Askell et al. (2022), [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). AI feedback for alignment. | Active |
+| [LIT-127](../../../record/literature.d/LIT-127.md) | DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models | Shao et al. (2024), [ARXIV-2402.03300](https://arxiv.org/abs/2402.03300). A 7B model continued-pretrained on 120B math tokens mined from Common Crawl reaches 51.7% on MATH without tools or voting, and introduces Group Relative Policy Optimization — PPO without a critic, with the baseline taken from a group of sampled outputs — the RL algorithm most later reasoning recipes use. | Active |
+| [LIT-128](../../../record/literature.d/LIT-128.md) | Falcon-H1R: Pushing the Reasoning Frontiers with a Hybrid Model for Efficient Test-Time Scaling | Falcon-LLM Team (2026), [ARXIV-2601.02346](https://arxiv.org/abs/2601.02346). Falcon-H1-7B taken to a reasoning model by SFT and RL scaling; it matches or beats reasoning models 2× to 7× larger, and its hybrid architecture makes the parallel test-time scaling it relies on (DeepConf) cheap in inference. Its reasoning corpus is the one [LIT-119](../../../record/literature.d/LIT-119.md)'s tiny reasoning models train on. | Active |
+| [LIT-129](../../../record/literature.d/LIT-129.md) | Can Tiny Language Models Reason? | Jakimovski (2025), a write-up with code, no paper. SmolLM2-135M-Instruct taken through SFT on plain dialogue, SFT on reasoning traces in think tags, and one epoch of DPO on 50k preference pairs, on a single GPU; the DPO stage converges and the final model gains 3 to 9 points over its base on ARC-C, BBH, MMLU and IFEval. | Active |

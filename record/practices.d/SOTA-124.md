@@ -18,7 +18,7 @@ summary: >-
 
 Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
 
-A late checkpoint of FalconMamba-7B, shown training tokens it saw earlier,
+A late checkpoint of FalconMamba-7B (Figure 9 of [LIT-120](../literature.d/LIT-120.md)), shown training tokens it saw earlier,
 has a loss gap against fresh tokens from the same distribution that decays
 with how long ago the tokens were seen. The authors define the
 *memorization window* as the delay after which that gap has closed — around

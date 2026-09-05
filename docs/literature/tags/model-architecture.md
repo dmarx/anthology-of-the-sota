@@ -4,7 +4,7 @@
 
 Architectures, components, model families, multi-modal designs.
 
-20 of 119 LIT documents. Back to the [full index](../README.md).
+21 of 129 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -28,3 +28,4 @@ Architectures, components, model families, multi-modal designs.
 | [LIT-097](../../../record/literature.d/LIT-097.md) | One Transformer Fits All Sequences | Wang et al. (2023), [ARXIV-2304.11062](https://arxiv.org/abs/2304.11062). Universal sequence modeling. | Active |
 | [LIT-099](../../../record/literature.d/LIT-099.md) | PaLM 2 Technical Report | Anil et al. (2023), [ARXIV-2305.10755](https://arxiv.org/abs/2305.10755). Architecture improvements. | Active |
 | [LIT-104](../../../record/literature.d/LIT-104.md) | Stack More Layers Differently: High-Rank Training | Liao et al. (2023), [ARXIV-2307.05695](https://arxiv.org/abs/2307.05695). Rank-based layer stacking. | Proposed |
+| [LIT-120](../../../record/literature.d/LIT-120.md) | Falcon-H1: A Family of Hybrid-Head Language Models Redefining Efficiency and Performance | Zuo et al. (2025), [ARXIV-2507.22448](https://arxiv.org/abs/2507.22448). A parallel hybrid mixer — attention heads and Mamba heads side by side in one block — from 0.5B to 34B, with a µP recipe adapted to it and multi-epoch training on high-quality data; the architecture and the memorization-window measurement [LIT-119](../../../record/literature.d/LIT-119.md) builds on. | Active |

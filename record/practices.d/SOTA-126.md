@@ -26,7 +26,9 @@ Re-run for a single epoch at 1e-6 and 3e-6, IFEval went from about 50 to
 over 65 with the other benchmarks preserved, and the same recipe applied to
 the curriculum-SFT model gave the same pattern (40.8 to 53.5). The
 multilingual 100M model showed the same: DPO was its main gain in
-instruction following.
+instruction following. The prior the authors cite for DPO converging at
+this scale is [LIT-129](../literature.d/LIT-129.md): a 135M model taken through SFT, reasoning SFT and one
+epoch of DPO.
 
 Conditions: the epoch count interacts with the schedule — with cosine decay,
 changing the number of epochs changes the whole trajectory, which is why the

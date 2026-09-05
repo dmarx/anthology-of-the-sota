@@ -4,7 +4,7 @@
 
 Theory, interpretability, benchmarks, measurement, debugging.
 
-6 of 119 LIT documents. Back to the [full index](../README.md).
+7 of 129 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -14,3 +14,4 @@ Theory, interpretability, benchmarks, measurement, debugging.
 | [LIT-041](../../../record/literature.d/LIT-041.md) | Clusterability in Neural Networks | Filan et al. (2021), [ARXIV-2103.03386](https://arxiv.org/abs/2103.03386). Larger models develop more modular features. | Rejected — the result does not look interesting enough to carry |
 | [LIT-057](../../../record/literature.d/LIT-057.md) | Understanding Multi-View Representation Learning | Tian et al. (2021), [ARXIV-2110.13016](https://arxiv.org/abs/2110.13016). Analysis of view generation. | Rejected — theoretical, with no concrete training recommendation |
 | [LIT-085](../../../record/literature.d/LIT-085.md) | Progress measures for grokking via mechanistic interpretability | Nanda et al. (2023), [ARXIV-2301.05217](https://arxiv.org/abs/2301.05217). Grokking measurement. | Rejected — measurement rather than actionable practice |
+| [LIT-123](../../../record/literature.d/LIT-123.md) | Wait, Wait, Wait... Why Do Reasoning Models Loop? | Pipis et al. (2025), [ARXIV-2512.12895](https://arxiv.org/abs/2512.12895). Reasoning models loop — repeat the same text — at low temperature; larger models loop less and distilled students loop far more than their teachers, which the paper traces to errors in learning and, on a synthetic task, to risk aversion: when the progress-making action is hard to learn and a cyclic one is easy, probability shifts to the cycle. | Active |

@@ -19,8 +19,8 @@ summary: >-
 Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
 
 Whether to mask the loss on the prefix and suffix of a FIM sample, as one
-would mask a prompt in SFT, is left unstated in [ARXIV-2207.14255](https://arxiv.org/abs/2207.14255) and only
-implicit in [ARXIV-2409.12186](https://arxiv.org/abs/2409.12186). Two 90M runs on the same mix (80% FIM, 10%
+would mask a prompt in SFT, is left unstated in [ARXIV-2207.14255](https://arxiv.org/abs/2207.14255) ([LIT-124](../literature.d/LIT-124.md)) and only
+implicit in [ARXIV-2409.12186](https://arxiv.org/abs/2409.12186) ([LIT-125](../literature.d/LIT-125.md)). Two 90M runs on the same mix (80% FIM, 10%
 code, 10% web and math), 80 GT with 20 GT of decay, one masking the
 non-middle tokens and one not: the unmasked run was clearly better across
 the coding benchmarks. The authors note the unmasked run simply trains on

@@ -4,7 +4,7 @@
 
 Normalization, initialization, gradient handling, regularization.
 
-12 of 152 LIT documents. Back to the [full index](../README.md).
+14 of 159 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,5 @@ Normalization, initialization, gradient handling, regularization.
 | [LIT-054](../../../record/literature.d/LIT-054.md) v2 | GLM-130B: An Open Bilingual Pre-trained Model | Zeng et al. (2022), [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). A 130B training run reported with its failures intact: the paper's stated purpose is to unveil how a model at this scale can be successfully pre-trained, and most of what it has to say is about loss spikes and divergence. | Active |
 | [LIT-084](../../../record/literature.d/LIT-084.md) | DeepNet: Scaling Transformers to 1,000 Layers | Wang et al. (2022), [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555). Scale-aware normalization. | Active |
 | [LIT-114](../../../record/literature.d/LIT-114.md) v2 | On Layer Normalization in the Transformer Architecture | Xiong et al. (2020), [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). Warmup is not a universal law but a fix for where the normalization sits: Post-LN has large gradients near the output at initialization and needs it, Pre-LN does not. | Active |
+| [LIT-tmpljw73](../../../record/literature.d/LIT-tmpljw73.md) | 2 OLMo 2 Furious | OLMo Team (2025), [ARXIV-2501.00656](https://arxiv.org/abs/2501.00656). A fully open 7B–32B recipe whose stated focus is training stability and per-token efficiency, plus the late-stage specialized data mix that the decay phase is for. | Active |
+| [LIT-tmpna6ep](../../../record/literature.d/LIT-tmpna6ep.md) | Small-scale proxies for large-scale Transformer training instabilities | Wortsman et al. (2023), [ARXIV-2309.14322](https://arxiv.org/abs/2309.14322). Instabilities reported only at frontier scale reappear in small models trained at high learning rate, and the large-scale mitigations work there too — which makes instability something a small budget can study. | Active |

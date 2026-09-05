@@ -44,10 +44,20 @@ ways to the same invariant, and QK-normalisation is the other.
 
 ## Sequence
 
-Muon (a 2024 blog post, not in the record) → weight decay and RMS matching
+Muon ([LIT-tmpxbtiq](../literature.d/LIT-tmpxbtiq.md)) → weight decay and RMS matching
 so AdamW's hyperparameters transfer ([LIT-122](../literature.d/LIT-122.md), [SOTA-121](SOTA-121.md)) → QK-Clip so the
 attention logits stay bounded at scale (this practice) → [LIT-131](../literature.d/LIT-131.md) reports a
 per-head variant of Muon on top. Each step keeps the one before.
+
+## Mechanism
+
+The failure QK-Clip answers is attention-logit growth, which
+[LIT-tmpna6ep](../literature.d/LIT-tmpna6ep.md) established as a distinct instability with a normalization
+remedy, and — the useful part — reproducible in small models at high
+learning rate rather than only at the scale where it first cost someone a
+run. That is also why [LIT-139](../literature.d/LIT-139.md) can decline QK-Clip: an RMSNorm on the queries
+and compressed KV entries bounds the same quantity, so the choice is between
+normalizing the input to the logit and clipping the weights after the fact.
 
 ## Known implementations
 

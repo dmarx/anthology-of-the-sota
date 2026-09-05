@@ -1,0 +1,57 @@
+---
+status: Active
+title: 'SOAP: Improving and Stabilizing Shampoo using Adam'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-05'
+published: '2024-09-01'
+arxiv: '2409.11321'
+first_author: 'Vyas'
+keywords:
+- 'optimizer'
+- 'second-order'
+- 'shampoo'
+- 'preconditioning'
+- 'eigenbasis'
+summary: >-
+  Vyas et al. (2024), [ARXIV-2409.11321](https://arxiv.org/abs/2409.11321). Shampoo at the 1/2 power is
+  Adafactor run in the eigenbasis of Shampoo's preconditioner; running Adam
+  there instead gives one extra hyperparameter over Adam and beats both.
+---
+
+# LIT-tmpscxgl: SOAP: Improving and Stabilizing Shampoo using Adam
+
+Vyas et al. (2024) — [ARXIV-2409.11321](https://arxiv.org/abs/2409.11321)
+
+## Key takeaways
+
+- The result the method falls out of: Shampoo implemented with the 1/2 power
+  is **equivalent to running Adafactor in the eigenbasis of Shampoo's
+  preconditioner**. A formal connection rather than an analogy, and it makes
+  the design question obvious — if that basis is the useful part, run the
+  better optimizer in it.
+- SOAP is Adam in that eigenbasis. Because it is Adam in a rotated space, it
+  adds exactly **one** hyperparameter over Adam: how often to recompute the
+  preconditioner.
+- The obvious efficiency fix for Shampoo — eigendecompose less often —
+  degrades performance, and worse the less often you do it. SOAP avoids that
+  by continuing to update the second-moment running average in the current,
+  slowly-rotating basis, which is what Adam does anyway.
+- At 360M and 660M, in the large-batch regime: over 40% fewer iterations and
+  over 35% less wall-clock than AdamW, and about 20% better than Shampoo on
+  both.
+
+## Standing in the anthology
+
+The second-order line the record's Muon practices are implicitly contrasted
+with, and the reason the contrast is interesting: SOAP and Muon reach the
+same family from opposite directions — SOAP by simplifying a full
+preconditioner until it is affordable, Muon by orthogonalising a momentum
+matrix — and [LIT-tmpqpka6](LIT-tmpqpka6.md) finds them both in the fastest group under fair
+tuning, with the *matrix* preconditioner as the common factor.
+
+Filed as a note rather than a practice. The record recommends Muon
+([SOTA-121](../practices.d/SOTA-121.md)) on production evidence at trillion-parameter scale that SOAP does
+not have; what SOAP supplies is the argument that the win belongs to the
+class rather than to the particular algorithm.

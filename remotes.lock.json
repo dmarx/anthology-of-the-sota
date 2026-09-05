@@ -335,6 +335,12 @@
     "ARXIV/2309.06180": {
       "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention"
     },
+    "ARXIV/2309.06497": {
+      "title": "A Distributed Data-Parallel PyTorch Implementation of the Distributed Shampoo Optimizer for Training Neural Networks At-Scale"
+    },
+    "ARXIV/2309.14322": {
+      "title": "Small-scale proxies for large-scale Transformer training instabilities"
+    },
     "ARXIV/2310.12109": {
       "title": "Monarch Mixer: A Simple Sub-Quadratic GEMM-Based Architecture"
     },
@@ -362,6 +368,9 @@
     "ARXIV/2408.13359": {
       "title": "Power Scheduler: A Batch Size and Token Number Agnostic Learning Rate Scheduler"
     },
+    "ARXIV/2409.11321": {
+      "title": "SOAP: Improving and Stabilizing Shampoo using Adam"
+    },
     "ARXIV/2409.12186": {
       "title": "Qwen2.5-Coder Technical Report"
     },
@@ -370,6 +379,9 @@
     },
     "ARXIV/2412.06464": {
       "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+    },
+    "ARXIV/2501.00656": {
+      "title": "2 OLMo 2 Furious"
     },
     "ARXIV/2502.11089": {
       "title": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention"
@@ -395,6 +407,9 @@
     "ARXIV/2507.22448": {
       "title": "Falcon-H1: A Family of Hybrid-Head Language Models Redefining Efficiency and Performance"
     },
+    "ARXIV/2509.02046": {
+      "title": "Fantastic Pretraining Optimizers and Where to Find Them"
+    },
     "ARXIV/2510.26692": {
       "title": "Kimi Linear: An Expressive, Efficient Attention Architecture"
     },
@@ -418,6 +433,9 @@
     },
     "ARXIV/2603.15031": {
       "title": "Attention Residuals"
+    },
+    "ARXIV/2606.16899": {
+      "title": "Fantastic Pretraining Optimizers and Where to Find Them II: Hyperball Optimization"
     },
     "ARXIV/2606.19348": {
       "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence"

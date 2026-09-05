@@ -1,0 +1,71 @@
+---
+status: Active
+title: 'Fantastic Pretraining Optimizers and Where to Find Them'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-05'
+published: '2025-09-01'
+arxiv: '2509.02046'
+first_author: 'Wen'
+keywords:
+- 'optimizer'
+- 'muon'
+- 'adamw'
+- 'hyperparameter-tuning'
+- 'benchmarking'
+summary: >-
+  Wen et al. (2025), [ARXIV-2509.02046](https://arxiv.org/abs/2509.02046). Ten optimizers, four scales, tuned
+  fairly and judged at the end of training rather than mid-run: the matrix
+  preconditioners really are fastest, and their advantage over a well-tuned
+  AdamW shrinks with scale — 1.4× at 0.1B to 1.1× at 1.2B.
+---
+
+# LIT-tmpqpka6: Fantastic Pretraining Optimizers and Where to Find Them
+
+Wen et al. (2025) — [ARXIV-2509.02046](https://arxiv.org/abs/2509.02046)
+
+## Key takeaways
+
+- The claim under examination is the field's, not one paper's: alternative
+  optimizers have been reported at 1.4–2× AdamW for years, and adoption never
+  followed. The paper's thesis is that two methodological faults explain the
+  gap — unequal hyperparameter tuning between the challenger and the baseline,
+  and evaluation setups too narrow or too early to be informative.
+- Ten optimizers across four model scales (0.1B–1.2B) and data-to-model
+  ratios from 1× to 8× the Chinchilla optimum, each tuned rather than handed
+  the baseline's hyperparameters.
+- **Optimal hyperparameters do not transfer between optimizers.** Blind
+  transfer is the ordinary way a comparison becomes unfair, and it favours
+  whichever optimizer the schedule was tuned for.
+- **Rankings flip mid-run.** Comparing intermediate checkpoints before the
+  target budget is reached can reverse the answer, because learning-rate
+  decay has not finished doing its work. Judgement belongs at the end of
+  training.
+- The positive result: every fastest optimizer — Muon and SOAP among them —
+  preconditions with *matrices*, multiplying gradients by matrices rather
+  than scaling entrywise. That is a real structural finding and it survives
+  the fair comparison.
+- The tempering result: the speedup of matrix-based optimizers is **inversely
+  proportional to model scale**, falling from 1.4× over AdamW at 0.1B to
+  1.1× at 1.2B.
+
+## Standing in the anthology
+
+The controlled comparison the record's Muon practices did not have. [SOTA-121](../practices.d/SOTA-121.md)
+recommends Muon and is sourced to [LIT-122](LIT-122.md), whose scaling-law runs put it at
+roughly 2× AdamW; this paper, tuning both sides and measuring at the end of
+training, gets 1.1–1.4× and a trend in the wrong direction. Both can be true
+— different scales, budgets and baselines — and the practice now names both
+numbers rather than the flattering one.
+
+It does not retire [SOTA-121](../practices.d/SOTA-121.md), and the reason is worth stating: 1.1× at 1.2B
+is still free, Muon's other properties (hyperparameter transferability,
+smaller optimizer state) are not what this measures, and the frontier
+adopters in the record — [LIT-131](LIT-131.md), [LIT-139](LIT-139.md) — train far above the largest
+scale tested here. What it retires is the *number*.
+
+Its own limit is the mirror of that: 1.2B is small next to everything the
+anthology's recent half describes, and the extrapolation from a shrinking
+trend to "no advantage at frontier scale" is the paper's readers' inference,
+not the paper's claim.

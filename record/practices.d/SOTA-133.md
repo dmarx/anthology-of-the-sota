@@ -27,6 +27,12 @@ paper reports a 1.25× compute advantage on scaling laws and under 2%
 inference-latency overhead, with the largest gains on multi-step reasoning
 and code. Kimi K3 ([LIT-131](../literature.d/LIT-131.md)) adopts it at 2.8T.
 
+<!-- inactive-ok: SOTA-136 — a Proposed practice, named as part of the residual chain -->
+The sibling variation is [SOTA-136](SOTA-136.md): where this keeps one stream and lets a
+layer attend over its predecessors, manifold-constrained hyper-connections
+widen the stream and constrain a fixed mixing. Both are Proposed and
+nobody has compared them.
+
 Why *Proposed*: one group, one paper, one production model. The residual
 connection is the most-replicated component in the field, and a replacement
 for it should collect an independent result before the record calls it

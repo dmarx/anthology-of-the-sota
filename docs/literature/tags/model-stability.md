@@ -4,7 +4,7 @@
 
 Normalization, initialization, gradient handling, regularization.
 
-10 of 138 LIT documents. Back to the [full index](../README.md).
+10 of 143 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

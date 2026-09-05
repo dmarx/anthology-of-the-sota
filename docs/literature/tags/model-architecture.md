@@ -4,7 +4,7 @@
 
 Architectures, components, model families, multi-modal designs.
 
-25 of 138 LIT documents. Back to the [full index](../README.md).
+27 of 143 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -33,3 +33,5 @@ Architectures, components, model families, multi-modal designs.
 | [LIT-134](../../../record/literature.d/LIT-134.md) | Attention Residuals | Kimi Team (2026), [ARXIV-2603.15031](https://arxiv.org/abs/2603.15031). Replace the fixed, uniform residual sum with learned, input-dependent attention over preceding layers, computed from one pseudo-query per layer at O(d) parameters; a blocked form keeps it practical at scale, and at 48B parameters on 1.4T tokens it shows a 1.25× compute advantage on scaling laws for under 2% inference overhead. | Active |
 | [LIT-135](../../../record/literature.d/LIT-135.md) | Qwen3.8-27B | Qwen Team (2026), model card and release blog; no technical report. A 27B dense vision-language model with 48 Gated DeltaNet layers and 16 gated full-attention layers, an MTP draft head and a 262k native context; architecturally identical to Qwen3.6-27B four months earlier, with the generation's gains coming from post-training on agentic and coding work. | Active |
 | [LIT-136](../../../record/literature.d/LIT-136.md) | Qwen3-Next: Towards Ultimate Training & Inference Efficiency | Qwen Team (2025), release blog; no paper. An 80B-total, 3B-active MoE that first shipped the 3:1 Gated DeltaNet to gated-attention layout, native multi-token prediction, and zero-centered weight-decayed layernorm; trained on a 15T-token subset for 9.3% of Qwen3-32B's cost while matching it, with over 10× the throughput past 32k tokens. | Active |
+| [LIT-140](../../../record/literature.d/LIT-140.md) | mHC: Manifold-Constrained Hyper-Connections | Xie et al. (2025), [ARXIV-2512.24880](https://arxiv.org/abs/2512.24880). Hyper-Connections widen the residual stream but break the identity mapping a residual guarantees, which destabilises deep stacks; constraining the residual mixing matrices to be doubly stochastic via Sinkhorn-Knopp restores it while keeping the width, at 6–7% overhead at 3B, 9B and 27B — the residual DeepSeek-V4 ships. | Active |
+| [LIT-141](../../../record/literature.d/LIT-141.md) | Hyper-Connections | Zhu et al. (2024), [ARXIV-2409.19606](https://arxiv.org/abs/2409.19606). Replace the residual connection with several parallel streams and learnable mixing between them, at expansion rate 2 or more, to escape the seesaw between vanishing gradients and representation collapse; gains on dense and MoE pretraining — and, per its successor, an identity-mapping property lost along the way. | Superseded — by [LIT-140](../../../record/literature.d/LIT-140.md); mHC restores the identity mapping that free hyper-connection mixing gave up, and scales where this did not |

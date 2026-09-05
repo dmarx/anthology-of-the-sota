@@ -33,6 +33,14 @@ the clip is insurance whose premium is a per-head max-logit check per step —
 cheap, but not free, and unnecessary until the logits say otherwise. The
 threshold is a hyperparameter; the report's value is tuned for its model.
 
+## Variations
+
+DeepSeek-V4 ([LIT-139](../literature.d/LIT-139.md)) pretrains 1.6T and 284B MoE models with Muon and,
+per secondary coverage of its report, without QK-Clip — the RMSNorm it
+already applies to queries and to the compressed KV entries is said to
+bound the logits on its own. If that reading holds, the clip is one of two
+ways to the same invariant, and QK-normalisation is the other.
+
 ## Sequence
 
 Muon (a 2024 blog post, not in the record) → weight decay and RMS matching
@@ -42,4 +50,4 @@ per-head variant of Muon on top. Each step keeps the one before.
 
 ## Known implementations
 
-- Kimi K2, Kimi K3
+- Kimi K2, Kimi K3 (QK-Clip); DeepSeek-V4 (Muon with QK-norm, no clip, reported)

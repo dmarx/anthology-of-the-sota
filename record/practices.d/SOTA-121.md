@@ -37,4 +37,4 @@ out there.
 
 ## Known implementations
 
-- Falcon-H1-Tiny (all released checkpoints)
+- Falcon-H1-Tiny (all released checkpoints); Kimi K2, Kimi K3 and DeepSeek-V4 with the additions in [SOTA-131](SOTA-131.md)

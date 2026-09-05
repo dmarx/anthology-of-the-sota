@@ -1,0 +1,141 @@
+---
+status: Active
+title: A provisional status must say what would change it, and the condition names a kind of evidence
+version: 1
+tags:
+- record
+- mechanism
+date: '2026-09-05'
+summary: >-
+  Four of 144 practices state a promotion condition, all in prose, none of
+  them re-read when the evidence arrived. Two practices filed a day apart
+  carried near-identical conditions, both were satisfied by the same paper on
+  the same day, and only one promoted — because the condition counted papers
+  when what mattered was what the papers were about. Adopts a required
+  `promote_when:` on every non-active practice, phrased as a kind of result
+  rather than a count of them.
+---
+
+# ADR-NNN: A provisional status must say what would change it, and the condition names a kind of evidence
+
+## Context
+
+The record has five statuses and a lint that checks them. It has nothing that
+says what would move a document from one to another.
+
+That reads like a small omission and is not. A practice at `Proposed` is a
+claim the anthology is not yet willing to make. Six months later the only
+thing distinguishing a practice that is genuinely waiting on a specific
+result from one that was filed hesitantly and forgotten is a paragraph in the
+body, if somebody wrote one. Four of 144 practices wrote one. Eight are
+`Proposed` and one is `Deferred`, so more than half of the provisional
+practices in this record say they are provisional and say nothing about what
+provisional is waiting for.
+
+Then the thing this predicts happened, twice over, in one afternoon.
+
+<!-- inactive-ok: SOTA-136 — a Proposed practice, named as the case this decision is about -->
+[SOTA-133](../practices.d/SOTA-133.md) and [SOTA-136](../practices.d/SOTA-136.md) are the two competing replacements for the residual
+connection. They were filed a day apart and their conditions are almost
+word-for-word identical:
+
+> Why *Proposed*: one group's paper and that group's production model.
+> Promote on an independent result.
+
+[LIT-152](../literature.d/LIT-152.md) — a third party's design study, running both against its own
+architecture — is an independent result. By the letter of both conditions,
+both practices promote.
+
+Only one did. On reading the paper, it *tests* Attention Residuals as a
+design variant and merely *mentions* mHC as comparable at that scale. One is
+an independent evaluation; the other is a citation. The condition could not
+tell them apart, because it was counting.
+
+Two separate failures, and only the second is about phrasing:
+
+**The condition was invisible.** It lived in prose, so nothing pointed at it
+when the evidence arrived. It was found because one person happened to be
+re-reading both practices the same afternoon — the same accident
+<!-- inactive-ok: ADR-011 — a Proposed decision, named as the earlier instance of the same failure -->
+[ADR-011](ADR-011.md) documents for lineage prose, in the same corpus, three
+weeks earlier. Twice is a pattern: this record's most load-bearing facts keep
+being paragraphs, and paragraphs are found by luck.
+
+**The condition was the wrong condition.** "An independent result" is a
+quantity of evidence. Quantities are satisfiable by evidence pointing the
+wrong way, and the more carefully a condition is phrased as a threshold the
+more confidently it will be met by something irrelevant. What [SOTA-133](../practices.d/SOTA-133.md)
+actually needed was: *a third party evaluating this against a baseline it
+chose.* That is a kind of result. It is not harder to write. It is only
+harder to satisfy by accident.
+
+## Decision
+
+**Every practice at a non-active status carries `promote_when:`.** Enforced,
+via a conditional field requirement upstream
+([luria#170](https://github.com/dmarx/luria/issues/170)):
+
+```toml
+[luria.schemes.SOTA.fields.promote_when]
+required_when = { status = ["Proposed", "Deferred"] }
+```
+
+**The condition names a kind of result, not a count of them.** This half is
+not enforceable and is not going to be. It is a rule for writing:
+
+> `promote_when: A third party evaluating mHC against a baseline it chose,`
+> `not a design study that cites it as comparable.`
+
+rather than
+
+> `promote_when: An independent result.`
+
+The test when writing one: *could this be satisfied by a paper that does not
+actually change my confidence?* If yes, the condition is counting.
+
+**A satisfied condition is a re-read, not a promotion.** The field says what
+would make the question worth reopening. It does not pre-commit the answer —
+the whole lesson of [SOTA-133](../practices.d/SOTA-133.md)/136 is that the evidence has to be looked at.
+
+**The field is retired with the status.** When a practice goes `Active` the
+condition has been met and the field is removed; what happened belongs in the
+body and in the `version:`/`history:` trail, not in a stale
+field describing a wait that is over.
+
+## Alternatives considered
+
+**Leave it as prose and be disciplined.** This is the status quo and it has
+now failed twice in three weeks, both times on the most carefully written
+documents in the corpus. Prose duplication and prose conditions do not decay
+because people are careless; they decay because nothing points at them.
+
+**Hang the requirement off the status vocabulary** — `statuses.yaml` naming
+which fields each status demands. Reads well for exactly this case and badly
+for anything else: `statuses.yaml` is a vocabulary file, and making it also a
+requirements file gives it two jobs. The requirement is a property of the
+field — *this field is meaningful only while something is pending* — and
+belongs on the field.
+
+**A structured condition** — `promote_when: { independent_evaluations: 2 }`,
+mechanically checkable against the graph. Rejected, and it is the tempting
+one. A machine-checkable condition is necessarily a *count*, and counting is
+the exact error this ADR exists because of. A condition that can be checked
+automatically is a condition that can be met accidentally.
+
+**Require it of every practice, not just provisional ones.** An `Active`
+practice's interesting field is what would *retire* it, which is a different
+and much harder question — most active practices would get "a better method",
+which is noise. If retirement conditions turn out to be writable, they are a
+separate decision.
+
+## Consequences
+
+Nine practices need the field written, and writing nine conditions honestly
+is the real test of the rule: any that can only be phrased as a count is a
+practice whose provisional status nobody can currently justify, and that is
+worth learning.
+
+The record gains a second class of claim that ages — a condition can become
+wrong as the field moves, the way a summary can. That is a cost. It is a
+smaller cost than a condition that was never written down, and unlike a
+paragraph it is somewhere a reader will look.

@@ -4,7 +4,7 @@
 
 What the schemes hold, and the rules between them.
 
-8 of 13 decisions. Back to the [full index](../README.md).
+9 of 14 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -16,3 +16,4 @@ What the schemes hold, and the rules between them.
 | [ADR-011](../../../record/decisions.d/ADR-011.md) | Lineage between documents is a field, not a paragraph repeated in every note | Ten named chains — schedule, residual, Muon, sparse-attention — are the record's most-cited content and exist only as prose, re-described in each participating note, so they drift: two notes both claimed a comparison did not exist and both were wrong on the same day. Proposes `extends:` and `compared_against:` alongside the existing `superseded_by:`, with the chain as a generated view. | Proposed |
 | [ADR-012](../../../record/decisions.d/ADR-012.md) | A practice declares its altitude, and one with no body cannot claim to be a design decision | "Pin memory for CPU-GPU transfers" and "Use Muon in place of AdamW" are both `SOTA` documents with equal standing, and 103 of 144 practices have no body at all — the registry's apparent weight is mostly one synthetic note's bullet lists. Proposes a `kind:` field and a lint tying substance to altitude. | Proposed |
 | [ADR-013](../../../record/decisions.d/ADR-013.md) | Codes are allocated at merge, not at filing | Two branches open the same afternoon both minted [LIT-144](../../../record/literature.d/LIT-144.md) and [LIT-145](../../../record/literature.d/LIT-145.md) for different papers, and the collision was caught by hand. Luria has `allocate = "merge"` and temporary codes for exactly this; the record adopts it. Rejected: reserving ranges per contributor, and merging often enough to avoid overlap. | Active |
+| [ADR-tmppl92l](../../../record/decisions.d/ADR-tmppl92l.md) | A provisional status must say what would change it, and the condition names a kind of evidence | Four of 144 practices state a promotion condition, all in prose, none of them re-read when the evidence arrived. Two practices filed a day apart carried near-identical conditions, both were satisfied by the same paper on the same day, and only one promoted — because the condition counted papers when what mattered was what the papers were about. Adopts a required `promote_when:` on every non-active practice, phrased as a kind of result rather than a count of them. | Active |

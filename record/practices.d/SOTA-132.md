@@ -37,6 +37,16 @@ evaluations, with up to 75% less KV cache and up to 6.3× the decoding
 throughput at 1M tokens. Kimi K3 ([LIT-131](../literature.d/LIT-131.md)) ships the layout at 2.8T
 parameters with 69 KDA layers and 24 gated-MLA layers.
 
+There is a second benefit the practice was filed without, and it only shows
+up in the report rather than the abstract. Kimi K3 applies **no positional
+encoding at all** to its global-attention layers, letting the interleaved
+KDA layers supply position sensitivity and recency instead. The consequence
+the report names: extending the context stops requiring a retuned RoPE
+frequency base or YaRN, because the global layers hold no positional
+parameter to retune. So the hybrid is not only cheaper per token — it makes
+[SOTA-139](SOTA-139.md)'s staged context extension a smaller operation. Whether that
+survives without a recurrence that is itself position-sensitive is untested.
+
 Conditions: the controlled comparison is one group's at one mid scale. The
 layout has two independent adopters in the record with different linear
 modules — Kimi's KDA at 2.8T ([LIT-131](../literature.d/LIT-131.md)) and Alibaba's Gated DeltaNet

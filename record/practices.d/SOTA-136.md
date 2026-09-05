@@ -28,15 +28,45 @@ free mixing gave up. The pre- and post-mixing maps stay non-negative. The
 paper reports the quality gains of hyper-connections at 6–7% training
 overhead across 3B, 9B and 27B, and DeepSeek-V4 ([LIT-139](../literature.d/LIT-139.md)) ships it at 1.6T.
 
-Why *Proposed*: one group's paper and that group's production model, the
-same standing as the other replacement for the residual in the record.
-Promote on an independent result.
+Why *Proposed*: **the condition this was filed under has been met, and is
+not being applied.** That is worth explaining rather than quietly leaving
+the status alone.
+
+The condition was "promote on an independent result". [LIT-152](../literature.d/LIT-152.md) is one: a
+different laboratory ran mHC in its own harness and found it comparable to
+its own design. By the letter of the rule this should now be *Active*.
+
+It is not, because two other independent results arrived at the same time
+and both attack the specific thing this practice recommends — the
+doubly-stochastic constraint. [LIT-151](../literature.d/LIT-151.md) proves the Birkhoff polytope is
+bounded above but not below, so the mixing can only shrink what
+distinguishes the streams and they homogenize with depth. [LIT-181](../literature.d/LIT-181.md) names
+three further defects: identity degeneration, an expressivity bottleneck
+from non-negativity forbidding subtractive interactions, and unstable
+Sinkhorn projection. Different arguments, opposite remedies, same verdict on
+the constraint.
+
+So the honest position is that the practice's *claim* has independent
+support and its *mechanism* has independent opposition, and a condition
+phrased as "an independent result" cannot tell those apart. The condition
+was the wrong condition.
+
+What the five papers in this chain agree on is narrower and better attested
+than what this document currently says: **widen the residual stream into
+several streams and constrain the mixing** — with mHC's doubly stochastic
+matrices, oHC's rotations, sHC's spectral sphere, or Qwen's gate that drops
+the mixing matrix altogether all counting as instances. Restating the
+practice at that level is the right move and is deliberately not made here:
+it changes what the document claims rather than its status, and that is a
+curation decision rather than a backlog pass.
+
+Promote when the constraint question settles, or restate the practice at the
+level its literature agrees on.
 
 ## Sequence and siblings
 
 <!-- inactive-ok: SOTA-137 — a Superseded practice, named as the predecessor in the chain -->
 Residual connection → hyper-connections ([SOTA-137](SOTA-137.md), retired) → this. The sibling
-<!-- inactive-ok: SOTA-133 — a Proposed practice, named as the sibling variation -->
-variation is Attention Residuals ([SOTA-133](SOTA-133.md)): where mHC widens the stream and
+variation is Attention Residuals ([SOTA-133](SOTA-133.md), now Active): where mHC widens the stream and
 constrains a fixed mixing, AttnRes keeps one stream and lets each layer
 attend over its predecessors. Both are Proposed; nobody has compared them.

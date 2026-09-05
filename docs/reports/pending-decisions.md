@@ -5,7 +5,7 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**13 document(s) awaiting a decision.**
+**12 document(s) awaiting a decision.**
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -17,7 +17,6 @@
 | 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 6 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 5 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 4 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
-| 2026-09-05 | Proposed | [SOTA-133](../../record/practices.d/SOTA-133.md) | 4 | 0 | Replace fixed residual accumulation with learned attention over preceding layers |
 | 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 3 | 0 | Decay the learning rate linearly all the way to zero |
 | 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 3 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [ADR-011](../../record/decisions.d/ADR-011.md) | 0 | 0 | Lineage between documents is a field, not a paragraph repeated in every note |

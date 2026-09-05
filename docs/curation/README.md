@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [5 Sep 23:15 — Two promotion conditions were met on the same day; only one of them should have been applied](2026-09.md#20260905231501)
 - [5 Sep 22:21 — Filing the predecessors turns a list of models into a set of arguments](2026-09.md#20260905222121)
 - [5 Sep 21:51 — The first backlog group corrected the practice it was filed to support](2026-09.md#20260905215138)
 - [5 Sep 20:24 — The schema could not represent the problem it had, which is why nobody saw it](2026-09.md#20260905202452)
@@ -16,9 +17,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-9 entries across 2 books, newest first.
+10 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 7 | 2026-09-05 | 2026-09-05 |
+| [2026-09](2026-09.md) | 8 | 2026-09-05 | 2026-09-05 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

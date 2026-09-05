@@ -9,13 +9,13 @@ date: '2026-09-05'
 published: '2026-01-15'
 source:
 # The blogpost is where the practice is stated as a recipe; LIT-122 is the
-# production form and the scaling evidence; LIT-tmpxbtiq is the origin;
-# LIT-tmpqpka6 is the outside comparison that puts a smaller number on it
+# production form and the scaling evidence; LIT-159 is the origin;
+# LIT-156 is the outside comparison that puts a smaller number on it
 # (ADR-010).
 - LIT-119
 - LIT-122
-- LIT-tmpxbtiq
-- LIT-tmpqpka6
+- LIT-159
+- LIT-156
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Stable at nearly the same optimal LR as AdamW, better evaluations; used for every Falcon-H1-Tiny model.
 ---
@@ -48,7 +48,7 @@ out there.
 Less than the record used to say, and the honest range is wide. [LIT-122](../literature.d/LIT-122.md)'s
 scaling-law runs report roughly 2× the compute efficiency of AdamW. An
 outside comparison tuning both optimizers separately and judging at the end
-of training rather than mid-run ([LIT-tmpqpka6](../literature.d/LIT-tmpqpka6.md)) gets 1.4× at 0.1B, falling
+of training rather than mid-run ([LIT-156](../literature.d/LIT-156.md)) gets 1.4× at 0.1B, falling
 to **1.1× at 1.2B** — and finds that ranking two optimizers on intermediate
 checkpoints can reverse the answer, which is one way the larger figures were
 reached.
@@ -59,7 +59,7 @@ hyperparameter transferability are not what that study measures, and every
 frontier adopter in the record ([LIT-131](../literature.d/LIT-131.md), [LIT-132](../literature.d/LIT-132.md), [LIT-139](../literature.d/LIT-139.md)) trains far above
 its largest scale. What should not be quoted any more is the 2×.
 
-[LIT-tmp2hq9o](../literature.d/LIT-tmp2hq9o.md) argues the shrinkage is not intrinsic but an artefact of
+[LIT-153](../literature.d/LIT-153.md) argues the shrinkage is not intrinsic but an artefact of
 constant decoupled weight decay fixing the equilibrium weight norm, and
 recovers 20–30% by pinning the norms instead. If that holds up outside its
 authors' group it changes this section again.

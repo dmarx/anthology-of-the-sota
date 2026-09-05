@@ -4,7 +4,7 @@
 
 The topic vocabulary and what enforces it.
 
-1 of 8 decisions. Back to the [full index](../README.md).
+1 of 9 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

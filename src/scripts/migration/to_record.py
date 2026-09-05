@@ -36,8 +36,9 @@ PRIMARY_WEIGHT = 3
 # and so live here rather than in the topic map.
 # ─────────────────────────────────────────────────────────────────────────
 
-# Two papers reached the corpus with no identifier at all — which is what
-# `requires = ["arxiv"]` in luria.toml exists to make impossible from now on.
+# Two papers reached the corpus with no identifier at all — which is what the
+# LIT scheme's required source (then `requires = ["arxiv"]`, now the `source`
+# field group of ADR-009) exists to make impossible from now on.
 # Both are unambiguous; these are their real ids.
 MISSING_ARXIV = {
     "Imagen: Photorealistic Text-to-Image Diffusion Models": "2205.11487",

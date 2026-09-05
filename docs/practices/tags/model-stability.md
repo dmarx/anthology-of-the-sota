@@ -4,7 +4,7 @@
 
 Initialization, normalization, gradient handling, loss-landscape behaviour.
 
-18 of 120 SOTA documents. Back to the [full index](../README.md).
+18 of 139 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

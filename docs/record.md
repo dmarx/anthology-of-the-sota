@@ -21,6 +21,20 @@ A code — `ADR-012` — resolves to a document, and every reference to it in th
 | `ADR-001` | `record/decisions.d/` | `docs/decisions/README.md` + tag pages | `Active` |
 | `DP-001` | `record/principles.d/` | `docs/design-principles.md` (one page, read as a whole) | `Active` |
 
+## What an entry must carry
+
+Beyond the standard fields, what each scheme's entries must carry — compiled from `luria.toml` into the contract `luria lint` checks, with where each obligation was declared. A finding cites the same line.
+
+**`SOTA`**
+
+- `source` — required (luria.toml: schemes.SOTA.requires)
+- `primary_topic` — exactly one of `attention-techniques`, `data-pipeline`, `distributed-optimization`, `model-architecture`, `model-stability`, `systems-optimization`, `training-optimization` (luria.toml: schemes.SOTA.tag_groups.primary_topic)
+
+**`LIT`**
+
+- `source` — at least one of `arxiv`, `doi`, `url` (luria.toml: schemes.LIT.field_groups.source)
+- `primary_topic` — exactly one of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.toml: schemes.LIT.tag_groups.primary_topic)
+
 ## Journals
 
 Dated observations. An entry is true about the day it was written and is never revised or consumed — the books are a view over sources that stay, which is what makes a journal safe to write into without coordinating.
@@ -44,6 +58,7 @@ A prefixed code reaches into another project's record, so a citation says whose 
 | cited as | project | repository | ref |
 |---|---|---|---|
 | `ARXIV-ADR-001` | arXiv | — | main |
+| `DOI-ADR-001` | DOI | — | main |
 | `LU-DP-001` | luria | dmarx/luria | main |
 | `FX-ADR-001` | fixtures | — | main |
 

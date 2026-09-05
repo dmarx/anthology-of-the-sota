@@ -46,7 +46,17 @@ dir      = "record/literature.d"
 output   = "docs/literature"
 active   = "Active"
 render   = "index"
-requires = ["arxiv"]
+
+# Every note names a SOURCE, and a source is any of several things: an arXiv
+# identifier, a DOI, or failing both a URL. `requires = ["arxiv"]` demanded
+# the wrong thing of a report that was never posted there, and the first
+# such report to arrive (a technical blogpost) could not be filed at all.
+# The group names the need and the fields that satisfy it, and the lint asks
+# for one (ADR-009). Prefer the fields in the order listed: an `arxiv:` or
+# `doi:` resolves through a remote below; a `url:` is a string.
+[luria.schemes.LIT.field_groups.source]
+fields  = ["arxiv", "doi", "url"]
+require = "at-least-one"
 
 # The literature is broader than the practice registry — the corpus carries
 # substantial generative-vision, theory and inference work that never
@@ -85,6 +95,14 @@ titles_generalize = true
 name = "arXiv"
 uid  = "(\\d{4})[.:](\\d{4,5})(v\\d+)?"
 url  = "https://arxiv.org/abs/{1}.{2}"
+
+# DOIs the same way (ADR-009). The delimiter moves out of the way of the
+# dots and slash a DOI carries: `DOI:10.1145/3600006.3613165`.
+[luria.remotes.DOI]
+name  = "DOI"
+uid   = "10\\.\\d{4,9}/[^\\s\\]\\)>,;]+"
+delim = ":"
+url   = "https://doi.org/{uid}"
 
 [luria.remotes.LU]
 name = "luria"

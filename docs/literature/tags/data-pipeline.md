@@ -4,7 +4,7 @@
 
 Loading, quality, selection, tokenization.
 
-4 of 118 LIT documents. Back to the [full index](../README.md).
+7 of 143 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -12,3 +12,6 @@ Loading, quality, selection, tokenization.
 | [LIT-053](../../../record/literature.d/LIT-053.md) | WebDataset: Efficient Data Loading for ML | Amodei et al. (2021), [ARXIV-2110.01804](https://arxiv.org/abs/2110.01804). Streaming data loading architecture. | Active |
 | [LIT-087](../../../record/literature.d/LIT-087.md) | Data Selection for Language Models via Importance Resampling | Liu et al. (2023), [ARXIV-2302.03169](https://arxiv.org/abs/2302.03169). Data quality assessment. | Active |
 | [LIT-117](../../../record/literature.d/LIT-117.md) | Efficient Online Data Mixing For Language Model Pre-Training | Albalak et al. (2023), [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406). Data quality assessment metrics. | Active |
+| [LIT-124](../../../record/literature.d/LIT-124.md) | Efficient Training of Language Models to Fill in the Middle | Bavarian et al. (2022), [ARXIV-2207.14255](https://arxiv.org/abs/2207.14255). Moving a span from the middle of a document to its end teaches an autoregressive model to infill, and doing it to a large fraction of the data costs nothing in left-to-right quality — the FIM-for-free result — so the authors recommend training with FIM by default. | Active |
+| [LIT-125](../../../record/literature.d/LIT-125.md) | Qwen2.5-Coder Technical Report | Hui et al. (2024), [ARXIV-2409.12186](https://arxiv.org/abs/2409.12186). Six code models from 0.5B to 32B, continued-pretrained from Qwen2.5 on over 5.5T tokens with cleaned, synthetic and balanced code/text/math data, and trained for fill-in-the-middle at file and repository level; state of the art on more than ten code benchmarks at release. | Active |
+| [LIT-126](../../../record/literature.d/LIT-126.md) | Structure-Aware Fill-in-the-Middle Pretraining for Code | Gong et al. (2025), [ARXIV-2506.00204](https://arxiv.org/abs/2506.00204). Mask complete syntactic structures chosen from the AST instead of random character spans, so FIM examples match how code is actually edited; on 1B and 8B models AST-FIM beats random-character FIM by up to 5 points, and Real-FIM-Eval, built from 30k+ GitHub commits in 12 languages, measures the real task. | Active |

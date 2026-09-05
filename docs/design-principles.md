@@ -21,11 +21,16 @@ moment of writing, while the person filing the practice still knows where
 they read it. A citation reconstructed six months later costs a session; one
 written at filing time costs a line.
 
-Applied here: `SOTA` requires `source:`, `LIT` requires `arxiv:` — which
-immediately found two papers in the corpus that had reached it with no
-identifier at all. The arXiv remote turns those ids into resolvable
-references rather than strings, so "cite the paper" and "the citation
-resolves" are the same check rather than two.
+Applied here: `SOTA` requires `source:`, and `LIT` requires a source of
+its own — an `arxiv:` or `doi:` a remote can resolve, or failing both a
+`url:`; at least one, enforced ([ADR-009](../record/decisions.d/ADR-009.md)). While the
+requirement was `arxiv:` alone it immediately found two papers in the
+corpus that had reached it with no identifier at all; it was widened when
+the first report worth filing had never been posted there. The arXiv and
+DOI remotes turn those ids into resolvable references rather than strings,
+so "cite the paper" and "the citation resolves" are the same check rather
+than two — which is also why a bare `url:` is the last resort and not the
+general case.
 
 The corollary is the expensive part. Requiring the field is easy; keeping it
 *meaningful* means the evidence has to be a document in the record, not a
@@ -33,7 +38,7 @@ URL — because a URL cannot be found to be retired, cannot be counted, and
 cannot tell you that eleven practices depend on a paper you just decided was
 wrong.
 
-*v1 · shaped by [ADR-001](../record/decisions.d/ADR-001.md), [ADR-002](../record/decisions.d/ADR-002.md) · origin: 119 recommendations carried a `source` field and not one carried the `supporting_evidence` the schema defined for it — the field existed, was empty in every record, and nothing noticed for two years*
+*v2 · shaped by [ADR-001](../record/decisions.d/ADR-001.md), [ADR-002](../record/decisions.d/ADR-002.md), [ADR-009](../record/decisions.d/ADR-009.md) · origin: 119 recommendations carried a `source` field and not one carried the `supporting_evidence` the schema defined for it — the field existed, was empty in every record, and nothing noticed for two years*
 
 <a name="dp-2"></a>
 

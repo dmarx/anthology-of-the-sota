@@ -4,15 +4,15 @@
 
 Why things entered the anthology, and why they left.
 
-## Currently — [August 2026](2026-08.md)
+## Currently — [September 2026](2026-09.md)
 
-- [24 Aug 20:02 — Consolidating the build, and suppressing my own CI while documenting how not to](2026-08.md#20260824200212)
-- [24 Aug 19:27 — Moving the anthology into a record, and what the move found](2026-08.md#20260824192746)
+- [5 Sep 16:31 — Filing the first source that is not an arXiv paper, and moving to luria 0.8](2026-09.md#20260905163147)
 
 ## All books
 
-2 entries across 1 book, newest first.
+3 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
+| [2026-09](2026-09.md) | 1 | 2026-09-05 | 2026-09-05 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

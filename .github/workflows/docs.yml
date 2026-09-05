@@ -73,8 +73,9 @@ jobs:
           llamero build_template docs/readme --commit=False
           llamero build_template docs/readme_llm --commit=False
       - id: generate
-        uses: dmarx/luria/actions/generate@0.4.2
+        uses: dmarx/luria/actions/generate@0.8.1
         with:
+          pip-spec: luria==0.8.1
           # Assign real numbers to merge-allocated temporary codes
           # (LU-ADR-049) — only where merges serialize, never on a pull
           # request. Harmless if no scheme sets `allocate = "merge"`.
@@ -91,7 +92,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - uses: dmarx/luria/actions/lint@0.4.2
+      - uses: dmarx/luria/actions/lint@0.8.1
+        with:
+          pip-spec: luria==0.8.1
 
   collect:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
@@ -103,7 +106,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install luria==0.4.2
+      - run: pip install luria==0.8.1
       - run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

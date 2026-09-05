@@ -4,7 +4,7 @@
 
 Learning-rate schedules, batch size, optimizers, training dynamics, scaling strategies.
 
-29 of 128 SOTA documents. Back to the [full index](../README.md).
+31 of 130 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -37,3 +37,5 @@ Learning-rate schedules, batch size, optimizers, training dynamics, scaling stra
 | [SOTA-121](../../../record/practices.d/SOTA-121.md) | Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Stable at nearly the same optimal LR as AdamW, better evaluations; used for every Falcon-H1-Tiny model. | Active |
 | [SOTA-122](../../../record/practices.d/SOTA-122.md) | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Up to 20% relative gain on MMLU, BBH and GSM8K over a Muon baseline at 200 GT. | Proposed |
 | [SOTA-126](../../../record/practices.d/SOTA-126.md) | Run DPO on tiny models for one epoch only | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. One epoch at LR 1e-6 to 3e-6 took a 90M model's IFEval from about 50 to over 65; a second epoch degraded it while the reward kept rising. | Active |
+| [SOTA-129](../../../record/practices.d/SOTA-129.md) | Build a reasoning model in three stages: pretrain on general data, SFT on reasoning traces, then RL with verifiable rewards | Olmo Team (2025), [LIT-130](../../../record/literature.d/LIT-130.md) — the recipe behind every open reasoning model at 7B and above, released in Olmo 3 with every stage and checkpoint in the open. Filed so its variations ([SOTA-130](../../../record/practices.d/SOTA-130.md)) and its tiny-scale successor ([SOTA-123](../../../record/practices.d/SOTA-123.md)) have something to be traced back to. | Active |
+| [SOTA-130](../../../record/practices.d/SOTA-130.md) | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model | Olmo Team (2025), [LIT-130](../../../record/literature.d/LIT-130.md) — the RL-Zero track: RLVR on the base model with no reasoning SFT in between, released as an open benchmark for studying RL rather than as the recommended recipe; a variation on [SOTA-129](../../../record/practices.d/SOTA-129.md) that the record keeps so the family of reasoning recipes can be traced. | Proposed |

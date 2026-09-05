@@ -18,7 +18,10 @@ summary: >-
 
 Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
 
-The authors' *anti-curriculum*. The argument: a model's memorization window
+The authors' *anti-curriculum*, a departure from the three-stage recipe
+([SOTA-129](SOTA-129.md)) that Olmo 3 states in the open and that its Zero-RL track varies
+<!-- inactive-ok: SOTA-130 — a Proposed variation, named as the sibling -->
+from the other end ([SOTA-130](SOTA-130.md)). The argument: a model's memorization window
 <!-- inactive-ok: SOTA-124 — the hypothesis this recipe rests on, filed as Proposed on purpose -->
 ([SOTA-124](SOTA-124.md)) scales with its size, and at 90M it is about 5 GT — no larger
 than an SFT mix — so the constraint that forces SFT into a short final stage

@@ -4,7 +4,7 @@
 
 Architecture patterns, component design, structural choices.
 
-17 of 128 SOTA documents. Back to the [full index](../README.md).
+17 of 130 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

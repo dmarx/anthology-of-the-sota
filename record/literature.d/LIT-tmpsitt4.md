@@ -1,0 +1,68 @@
+---
+status: Active
+title: 'Beyond the Birkhoff Polytope: Spectral-Sphere-Constrained Hyper-Connections'
+version: 1
+tags:
+- model-architecture
+date: '2026-09-05'
+published: '2026-03-01'
+arxiv: '2603.20896'
+first_author: 'Liu'
+keywords:
+- 'hyper-connections'
+- 'residual-connections'
+- 'spectral-norm'
+- 'doubly-stochastic'
+- 'expressivity'
+implementations:
+- sHC
+summary: >-
+  Liu et al. (2026), [ARXIV-2603.20896](https://arxiv.org/abs/2603.20896). Three named defects in mHC's
+  doubly-stochastic constraint — identity degeneration, an expressivity
+  bottleneck from non-negativity, and parameterization cost — answered by
+  moving the feasible set to a spectral-norm sphere.
+---
+
+<!-- inactive-ok-file: SOTA-136 LIT-141 — the Proposed practice this paper disputes and the Superseded predecessor of the chain -->
+# LIT-tmpsitt4: Beyond the Birkhoff Polytope: Spectral-Sphere-Constrained Hyper-Connections
+
+Liu et al. (2026) — [ARXIV-2603.20896](https://arxiv.org/abs/2603.20896)
+
+## Key takeaways
+
+- Accepts mHC's diagnosis — unconstrained mixing breaks the identity mapping
+  and destabilises training — and attacks its *remedy*, naming three
+  limitations of restricting the residual matrix to the Birkhoff polytope:
+  1. **Identity degeneration** — the learned matrices collapse toward the
+     identity, so the cross-stream interaction the extra width was for
+     diminishes.
+  2. **An expressivity bottleneck** — non-negativity forbids *subtractive*
+     feature disentanglement. A stream can only ever be a positive blend of
+     the others.
+  3. **Parameterization inefficiency** — unstable Sinkhorn iterations, or the
+     factorial scaling of permutation-based alternatives.
+- **sHC** shifts the feasible set from a rigid polytope to a **spectral-norm
+  sphere**, which permits negative entries and so unlocks subtractive
+  interactions, while still bounding the mixing. It removes the Sinkhorn
+  projection and the factorial parameterization together.
+
+## Standing in the anthology
+
+The **second** independent critique of [LIT-140](LIT-140.md), and the pair is now the most
+interesting thing in the record's residual chain. [LIT-151](LIT-151.md)'s oHC says the
+doubly stochastic set is bounded above but not below, so the mixing can only
+shrink what distinguishes the streams; this says the same set is degenerate
+near the identity and cannot subtract at all. Different arguments, same
+verdict, and opposite remedies — the rotation group SO(n) versus a spectral
+sphere.
+
+Both critique a practice the record recommends. [SOTA-136](../practices.d/SOTA-136.md) is `Proposed` and
+stays that way; what has changed since it was filed is that its constraint is
+now the *least* well-defended part of the design, disputed by two groups
+within a month, while the thing all four papers agree on — widen the residual
+stream, constrain the mixing somehow — is untouched. That agreement is
+probably the practice the record should eventually carry.
+
+The chain reads: residual → HC ([LIT-141](LIT-141.md), Superseded) → mHC ([LIT-140](LIT-140.md), shipped in
+DeepSeek-V4) → oHC ([LIT-151](LIT-151.md)) and sHC here, with Qwen's Gated Residual ([LIT-152](LIT-152.md))
+declining the mixing matrix altogether.

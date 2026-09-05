@@ -1,0 +1,60 @@
+---
+status: Active
+title: 'DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models'
+version: 1
+tags:
+- model-architecture
+date: '2026-09-05'
+published: '2024-01-01'
+arxiv: '2401.06066'
+first_author: 'Dai'
+keywords:
+- 'mixture-of-experts'
+- 'expert-specialization'
+- 'shared-experts'
+- 'routing'
+- 'sparsity'
+implementations:
+- DeepSeekMoE
+summary: >-
+  Dai et al. (2024), [ARXIV-2401.06066](https://arxiv.org/abs/2401.06066). Two changes to top-K routing that
+  make experts specialise: cut them finer so the activated combination is
+  more expressive, and isolate a few shared experts to absorb the common
+  knowledge the routed ones were duplicating.
+---
+
+# LIT-tmpe49t1: DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models
+
+Dai et al., DeepSeek-AI (2024) — [ARXIV-2401.06066](https://arxiv.org/abs/2401.06066)
+
+## Key takeaways
+
+- The diagnosis: conventional top-K-of-N routing, as in GShard, does not
+  actually deliver **expert specialisation** — experts end up with
+  overlapping rather than focused knowledge, which wastes the parameters
+  sparsity was meant to buy.
+- Two strategies, both about the granularity of the choice. **Fine
+  segmentation**: split into mN smaller experts and activate mK of them, so
+  the router picks from a much larger space of combinations at the same
+  compute. **Shared experts**: isolate K_s experts that always fire, to hold
+  the common knowledge every routed expert would otherwise learn separately.
+- The results are ratios rather than records, which is the right way to read
+  an efficiency claim: DeepSeekMoE 2B matches GShard 2.9B, which has 1.5×
+  the expert parameters and computation; 16B matches LLaMA2 7B at ~40% of
+  the compute; 145B approaches DeepSeek 67B at 28.5%.
+- DeepSeekMoE 2B nearly reaches its *dense* counterpart at equal total
+  parameters — the upper bound an MoE is trying to approach.
+
+## Standing in the anthology
+
+The first of the record's MoE notes, and the base of a line every frontier
+model it holds is built on. [LIT-tmp0brdl](LIT-tmp0brdl.md) is DeepSeek-V3 adopting it at 671B,
+[LIT-139](LIT-139.md)'s V4 continues it, and Kimi K3's "Stable LatentMoE" ([LIT-131](LIT-131.md)) —
+16 of 896 routed experts — is the same fine-grained-plus-shared shape taken
+further than this paper tried.
+
+Filed as a note. Whether the anthology carries MoE routing as *practice* is
+the open question [#17](https://github.com/dmarx/anthology-of-the-sota/issues/17) raises, and nothing is drawn from this yet: the record
+has no practice that says "use a mixture of experts", and it is not obvious
+it should, since the choice is upstream of almost everything it does
+recommend.

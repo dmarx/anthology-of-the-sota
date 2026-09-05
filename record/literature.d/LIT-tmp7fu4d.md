@@ -21,6 +21,7 @@ summary: >-
   tokens and 9B parameters.
 ---
 
+<!-- inactive-ok-file: SOTA-124 — the Proposed practice this paper is the counter-evidence to; every mention is deliberate -->
 # LIT-tmp7fu4d: Scaling Data-Constrained Language Models
 
 Muennighoff et al. (2023) — [ARXIV-2305.16264](https://arxiv.org/abs/2305.16264)

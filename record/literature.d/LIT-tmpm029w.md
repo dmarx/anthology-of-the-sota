@@ -21,6 +21,7 @@ summary: >-
   and make hundreds of epochs on a fixed corpus productive.
 ---
 
+<!-- inactive-ok-file: SOTA-124 — the Proposed practice this paper offers a third position on -->
 # LIT-tmpm029w: Demystifying Training-Time Augmentation for Data-Constrained Language Model Pretraining
 
 Chen et al. (2026) — [ARXIV-2606.16246](https://arxiv.org/abs/2606.16246)

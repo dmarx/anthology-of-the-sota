@@ -23,6 +23,7 @@ summary: >-
   tokens at the same quality.
 ---
 
+<!-- inactive-ok-file: SOTA-124 — the Proposed practice, named as one of three answers to a finite corpus -->
 # LIT-tmpqhulf: Nemotron-CC: Transforming Common Crawl into a Refined Long-Horizon Pretraining Dataset
 
 Su et al., NVIDIA (2024) — [ARXIV-2412.02595](https://arxiv.org/abs/2412.02595)

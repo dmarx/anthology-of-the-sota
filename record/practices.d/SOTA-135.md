@@ -41,6 +41,19 @@ Attention ([LIT-133](../literature.d/LIT-133.md)), which replaces the scalar dec
 one and is what Kimi K3 uses. Each keeps the delta update; the variation is
 in how the state forgets.
 
+## Where it is incomplete
+
+[LIT-tmpngv1m](../literature.d/LIT-tmpngv1m.md) names an asymmetry in the pairing this practice recommends.
+The delta update is active and targeted — it corrects what is stored at the
+address being written — while the decay gate is passive and global. So stale
+content at a *different* address can never be actively removed, only left to
+decay. Decoupling the erase address from the write address fixes it, and the
+gain persists through 80B tokens of long-context midtraining.
+
+[LIT-133](../literature.d/LIT-133.md)'s channel-wise forgetting gate is the other answer to the same
+pressure: finer *passive* decay rather than active removal. Nobody has
+compared them.
+
 ## Known implementations
 
 - Qwen3-Next, Qwen3.5, Qwen3.6-27B, Qwen3.8-27B (Gated DeltaNet); Kimi Linear, Kimi K3 (as KDA)

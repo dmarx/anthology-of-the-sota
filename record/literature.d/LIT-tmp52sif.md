@@ -1,0 +1,58 @@
+---
+status: Active
+title: 'Better & Faster Large Language Models via Multi-token Prediction'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-05'
+published: '2024-04-01'
+arxiv: '2404.19737'
+first_author: 'Gloeckle'
+keywords:
+- 'multi-token-prediction'
+- 'sample-efficiency'
+- 'speculative-decoding'
+- 'induction-heads'
+- 'auxiliary-objective'
+summary: >-
+  Gloeckle et al. (2024), [ARXIV-2404.19737](https://arxiv.org/abs/2404.19737). Predict the next n tokens
+  from n heads on a shared trunk: better sample efficiency at no training
+  cost, growing with model size, and up to 3× faster inference as a
+  side-effect.
+---
+
+# LIT-tmp52sif: Better & Faster Large Language Models via Multi-token Prediction
+
+Gloeckle et al., Meta (2024) — [ARXIV-2404.19737](https://arxiv.org/abs/2404.19737)
+
+## Key takeaways
+
+- The change is small and the framing matters: at each position, ask the
+  model to predict the following **n** tokens through n independent output
+  heads on a shared trunk, treating it as an *auxiliary* task rather than a
+  replacement for next-token prediction.
+- Improved downstream capability at **no overhead in training time**, for
+  both code and natural language.
+- Two properties that make it a design choice rather than a trick: the
+  benefit **grows with model size**, and it survives multi-epoch training —
+  so it does not wash out where most auxiliary objectives do.
+- Strongest on generative benchmarks. 13B models solve 12% more HumanEval
+  and 17% more MBPP than comparable next-token models.
+- Small algorithmic tasks suggest why: multi-token prediction favours the
+  development of induction heads and algorithmic reasoning.
+- The side-effect that made everyone adopt it: models trained with 4-token
+  prediction are **up to 3× faster at inference**, because the extra heads
+  are a draft model you already trained.
+
+## Standing in the anthology
+
+The origin of the MTP head that Kimi K3 ([LIT-131](LIT-131.md)), Qwen3.8 ([LIT-135](LIT-135.md)) and
+DeepSeek-V3 and V4 ([LIT-tmp0brdl](LIT-tmp0brdl.md), [LIT-139](LIT-139.md)) all ship, and which each of those
+reports mentions as settled. Filed with [LIT-tmpxrntq](LIT-tmpxrntq.md), the draft-model design
+those heads are fine-tuned into.
+
+The reason it is interesting for this record is the double motive. It is
+sold as a *training* objective that improves the model and pays for itself,
+and adopted as an *inference* mechanism that gives speculative decoding for
+free. Which of the two is doing the work at frontier scale is not something
+any of the adopting reports isolates.

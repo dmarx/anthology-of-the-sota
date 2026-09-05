@@ -314,6 +314,9 @@
     "ARXIV/2305.13245": {
       "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints"
     },
+    "ARXIV/2305.16264": {
+      "title": "Scaling Data-Constrained Language Models"
+    },
     "ARXIV/2305.18290": {
       "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model"
     },
@@ -350,11 +353,17 @@
     "ARXIV/2311.17857": {
       "title": "Gaussian Shell Maps for Efficient 3D Human Generation"
     },
+    "ARXIV/2312.00752": {
+      "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces"
+    },
     "ARXIV/2312.02406": {
       "title": "Efficient Online Data Mixing For Language Model Pre-Training"
     },
     "ARXIV/2312.04461": {
       "title": "PhotoMaker: Customizing Realistic Human Photos via Stacked ID Embedding"
+    },
+    "ARXIV/2401.06066": {
+      "title": "DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models"
     },
     "ARXIV/2402.03300": {
       "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models"
@@ -362,14 +371,32 @@
     "ARXIV/2404.06395": {
       "title": "MiniCPM: Unveiling the Potential of Small Language Models with Scalable Training Strategies"
     },
+    "ARXIV/2404.19737": {
+      "title": "Better & Faster Large Language Models via Multi-token Prediction"
+    },
+    "ARXIV/2405.04434": {
+      "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model"
+    },
     "ARXIV/2405.18392": {
       "title": "Scaling Laws and Compute-Optimal Training Beyond Fixed Training Durations"
+    },
+    "ARXIV/2405.21060": {
+      "title": "Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality"
+    },
+    "ARXIV/2406.17557": {
+      "title": "The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale"
     },
     "ARXIV/2407.17465": {
       "title": "u-$\u03bc$P: The Unit-Scaled Maximal Update Parametrization"
     },
+    "ARXIV/2407.21783": {
+      "title": "The Llama 3 Herd of Models"
+    },
     "ARXIV/2408.13359": {
       "title": "Power Scheduler: A Batch Size and Token Number Agnostic Learning Rate Scheduler"
+    },
+    "ARXIV/2408.15664": {
+      "title": "Auxiliary-Loss-Free Load Balancing Strategy for Mixture-of-Experts"
     },
     "ARXIV/2409.11321": {
       "title": "SOAP: Improving and Stabilizing Shampoo using Adam"
@@ -380,11 +407,20 @@
     "ARXIV/2409.19606": {
       "title": "Hyper-Connections"
     },
+    "ARXIV/2411.04330": {
+      "title": "Scaling Laws for Precision"
+    },
     "ARXIV/2411.15124": {
       "title": "Tulu 3: Pushing Frontiers in Open Language Model Post-Training"
     },
+    "ARXIV/2412.02595": {
+      "title": "Nemotron-CC: Transforming Common Crawl into a Refined Long-Horizon Pretraining Dataset"
+    },
     "ARXIV/2412.06464": {
       "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+    },
+    "ARXIV/2412.19437": {
+      "title": "DeepSeek-V3 Technical Report"
     },
     "ARXIV/2501.00656": {
       "title": "2 OLMo 2 Furious"
@@ -401,6 +437,12 @@
     "ARXIV/2502.16982": {
       "title": "Muon is Scalable for LLM Training"
     },
+    "ARXIV/2503.01840": {
+      "title": "EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test"
+    },
+    "ARXIV/2503.14456": {
+      "title": "RWKV-7 \"Goose\" with Expressive Dynamic State Evolution"
+    },
     "ARXIV/2503.14476": {
       "title": "DAPO: An Open-Source LLM Reinforcement Learning System at Scale"
     },
@@ -412,6 +454,9 @@
     },
     "ARXIV/2505.06708": {
       "title": "Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free"
+    },
+    "ARXIV/2505.09388": {
+      "title": "Qwen3 Technical Report"
     },
     "ARXIV/2506.00204": {
       "title": "Structure-Aware Fill-in-the-Middle Pretraining for Code"
@@ -428,6 +473,9 @@
     "ARXIV/2509.02046": {
       "title": "Fantastic Pretraining Optimizers and Where to Find Them"
     },
+    "ARXIV/2510.07019": {
+      "title": "Native Hybrid Attention for Efficient Sequence Modeling"
+    },
     "ARXIV/2510.26692": {
       "title": "Kimi Linear: An Expressive, Efficient Attention Architecture"
     },
@@ -439,6 +487,9 @@
     },
     "ARXIV/2512.13961": {
       "title": "Olmo 3"
+    },
+    "ARXIV/2512.20848": {
+      "title": "Nemotron 3 Nano: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning"
     },
     "ARXIV/2512.24880": {
       "title": "mHC: Manifold-Constrained Hyper-Connections"
@@ -452,11 +503,23 @@
     "ARXIV/2603.15031": {
       "title": "Attention Residuals"
     },
+    "ARXIV/2603.15569": {
+      "title": "Mamba-3: Improved Sequence Modeling using State Space Principles"
+    },
+    "ARXIV/2603.20896": {
+      "title": "Beyond the Birkhoff Polytope: Spectral-Sphere-Constrained Hyper-Connections"
+    },
+    "ARXIV/2606.16246": {
+      "title": "Demystifying Training-Time Augmentation for Data-Constrained Language Model Pretraining"
+    },
     "ARXIV/2606.16899": {
       "title": "Fantastic Pretraining Optimizers and Where to Find Them II: Hyperball Optimization"
     },
     "ARXIV/2606.19348": {
       "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence"
+    },
+    "ARXIV/2606.26560": {
+      "title": "Erase-then-Delta Attention: Decoupling Erase and Write Addresses in Delta-Rule Linear Attention"
     },
     "ARXIV/2607.24653": {
       "title": "Kimi K3: Open Frontier Intelligence"

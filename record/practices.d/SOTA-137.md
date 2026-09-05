@@ -9,10 +9,10 @@ tags:
 - model-architecture
 date: '2026-09-05'
 published: '2024-09-01'
-<!-- inactive-ok: LIT-141 — the superseded paper, named as the predecessor in the chain -->
+# inactive-ok: LIT-141 — this practice's own source, retired with it
 source: LIT-141
+# inactive-ok: LIT-141 — the summary names the retired source on purpose
 summary: >-
-<!-- inactive-ok: LIT-141 — the superseded paper, named as the predecessor in the chain -->
   Zhu et al. (2024), [LIT-141](../literature.d/LIT-141.md) — n parallel residual streams with learnable mixing; gains on dense and MoE pretraining, and an identity-mapping property lost that its successor restores.
 ---
 

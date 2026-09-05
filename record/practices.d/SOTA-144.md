@@ -29,6 +29,13 @@ hardware.
 
 Why *Proposed*: one group and one paper, with no production report in the
 record trained under it. Promote on an independent depth-transfer result.
+
+One arrived that does not count, and is worth naming so the next reader does
+not count it. [LIT-153](../literature.d/LIT-153.md) reports improved learning-rate transfer across widths
+*and depths* from an independent group — the same property this practice
+claims, by an unrelated mechanism (pinning weight-matrix norms rather than
+a depth exponent). Two routes to one property is evidence the property is
+reachable, not evidence that this route works.
 The question it answers — how deep to go at a fixed budget — is the one
 <!-- inactive-ok: SOTA-125 — a Proposed practice, named as the ablation this would replace -->
 [LIT-119](../literature.d/LIT-119.md) settled by ablation ([SOTA-125](SOTA-125.md)), and the reason to want it is to

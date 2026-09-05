@@ -1,5 +1,5 @@
 ---
-status: Proposed
+status: Active
 title: 'Replace fixed residual accumulation with learned attention over preceding layers'
 version: 1
 tags:
@@ -7,7 +7,10 @@ tags:
 date: '2026-09-05'
 published: '2026-03-01'
 source:
+# The paper, and the independent evaluation that promoted this to Active
+# (ADR-010).
 - LIT-134
+- LIT-152
 summary: >-
   Kimi Team (2026), [LIT-134](../literature.d/LIT-134.md) — Attention Residuals: a per-layer pseudo-query chooses which earlier layers to read, at O(d) parameters per layer; 1.25× compute advantage on scaling laws at 48B/1.4T, adopted in Kimi K3.
 ---
@@ -34,11 +37,33 @@ layer attend over its predecessors, manifold-constrained hyper-connections
 widen the stream and constrain a fixed mixing. Both are Proposed and
 nobody has compared them.
 
-Why *Proposed*: one group, one paper, one production model. The residual
-connection is the most-replicated component in the field, and a replacement
-for it should collect an independent result before the record calls it
-practice. Promote when one lands.
+## Promoted from *Proposed*
+
+The condition this practice was filed under — "one group, one paper, one
+production model ... promote when an independent result lands" — is met.
+
+[LIT-152](../literature.d/LIT-152.md) is a different laboratory implementing Attention Residuals in its
+own harness and measuring it against its own design. At 28 layers, Full
+AttnRes reaches 1.762 training loss against 1.789 for the pre-norm residual
+baseline, and lands **level with Qwen's Gated Residual**; the block-summarised
+variant gives up 0.008 at S = 2 and 0.011 at S = 4. At 48 layers the ordering
+holds. That is a reproduction by people with no stake in the result and their
+own competing design, which is the strongest form the condition could have
+asked for.
+
+What it does *not* establish, and the practice should not claim: that
+AttnRes is the best member of its family. The same evaluation finds three
+designs level, so the honest reading is that *replacing fixed accumulation
+with something learned* is what pays, and which learned thing is unsettled.
+The conditions below say so.
+
+Conditions: the block-summarised variant is the one that scales, and it is
+the weaker one — full AttnRes attends over every preceding sublayer, which
+is O(Ld) in memory and communication. Expect to pay about 0.01 of loss for
+the version that is affordable at depth. And the alternatives are live:
+[LIT-140](../literature.d/LIT-140.md)'s mHC and [LIT-152](../literature.d/LIT-152.md)'s Gated Residual measure the same, with the
+latter cheaper at inference because it drops the mixing matrix entirely.
 
 ## Known implementations
 
-- Kimi K3
+- Kimi K3; independently evaluated by the Qwen3.8-Next design study

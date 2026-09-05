@@ -33,8 +33,25 @@ LRMs, on the final 90M architecture. Improvements on most benchmarks, up to a
 every model in the series.
 
 Why *Proposed* and not *Active*: one team, one architecture family, and the
-larger-scale results live in the preprint rather than in this source. Promote
-when an independent reproduction or a result above 1B lands in the record.
+larger-scale results live in the preprint rather than in this source.
+
+The condition as first written — "an independent reproduction **or** a result
+above 1B" — has since been half-met in a way that shows the *or* was doing
+too much work. [LIT-153](../literature.d/LIT-153.md) is an independent group, at up to 1.2B, working on
+exactly the phenomenon this practice rests on: the weight-decay equilibrium
+that fixes a matrix's norm by hyperparameters rather than data. They confirm
+the diagnosis and go further, arguing that equilibrium is *why* matrix
+optimizers' advantage shrinks with scale.
+
+But their remedy is the opposite of this one. Learnable multipliers give the
+scale its own learned parameter; Hyperball pins the Frobenius norms to
+constants and removes the degree of freedom. So an independent group above 1B
+has confirmed the *mechanism* and declined the *fix*, which the original
+condition would read as a promotion and which plainly is not one.
+
+Promote when an independent group reports gains from **learned per-row and
+per-column multipliers specifically** — not from another intervention on the
+same equilibrium.
 
 ## Known implementations
 

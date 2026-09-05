@@ -4,7 +4,7 @@
 
 Optimizers, schedules, batch size, scaling laws, training dynamics.
 
-25 of 130 LIT documents. Back to the [full index](../README.md).
+26 of 134 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -33,3 +33,4 @@ Optimizers, schedules, batch size, scaling laws, training dynamics.
 | [LIT-119](../../../record/literature.d/LIT-119.md) | Falcon-H1-Tiny: A series of extremely small, yet powerful language models redefining capabilities at small scale | Falcon-LLM Team (2026), technical blogpost. Holds the parameter budget at 90M and pulls the other three levers — data strategy, architecture, optimizer — one at a time: pretraining from scratch on the target SFT or reasoning mix beats pretrain-then-finetune at this scale, Muon with learnable multipliers beats the AdamW recipe, and depth and SSM width beat MLP width. | Active |
 | [LIT-121](../../../record/literature.d/LIT-121.md) | Learnable Multipliers: Freeing the Scale of Language Model Matrix Layers | Velikanov et al. (2026), [ARXIV-2601.04890](https://arxiv.org/abs/2601.04890). Weight decay and gradient noise settle a matrix layer at an equilibrium norm set by the hyperparameters, not the data; a learnable scalar per matrix and per row and column frees it, generalises µP, and improves downstream results with both Adam and Muon. | Active |
 | [LIT-122](../../../record/literature.d/LIT-122.md) | Muon is Scalable for LLM Training | Liu et al. (2025), [ARXIV-2502.16982](https://arxiv.org/abs/2502.16982). Two changes make Muon work at scale without re-tuning: decoupled weight decay, and scaling each update so its RMS matches what AdamW would produce; scaling-law runs show about 2× the compute efficiency of AdamW, demonstrated on a 3B/16B MoE trained for 5.7T tokens. | Active |
+| [LIT-132](../../../record/literature.d/LIT-132.md) | Kimi K2: Open Agentic Intelligence | Kimi Team (2025), [ARXIV-2507.20534](https://arxiv.org/abs/2507.20534). A 1T-parameter, 32B-active MoE pretrained on 15.5T tokens with zero loss spikes under MuonClip — Muon plus QK-Clip, which rescales query and key projections whenever the largest attention logit crosses a threshold — then post-trained with large-scale agentic data synthesis and a joint RL stage. | Active |

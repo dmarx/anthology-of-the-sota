@@ -31,6 +31,10 @@ hyperparameters transferable; without it the learning rate has to be
 re-tuned. Muon applies to matrix parameters — embeddings, norms and other
 vectors keep an Adam-style update.
 
+At a trillion parameters this recipe alone let attention logits run past
+1000; [SOTA-131](SOTA-131.md) is the addition that bounds them, and the chain is written
+out there.
+
 ## Known implementations
 
 - Falcon-H1-Tiny (all released checkpoints)

@@ -4,7 +4,7 @@
 
 Architecture patterns, component design, structural choices.
 
-17 of 130 SOTA documents. Back to the [full index](../README.md).
+18 of 133 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -25,3 +25,4 @@ Architecture patterns, component design, structural choices.
 | [SOTA-094](../../../record/practices.d/SOTA-094.md) | throughput (energy efficiency) wins out over theoretically optimal sample efficiency | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
 | [SOTA-095](../../../record/practices.d/SOTA-095.md) | consider rewinding to earlier checkpoint and skipping a few batches to mitigate unusual loss spikes | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
 | [SOTA-125](../../../record/practices.d/SOTA-125.md) | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. 24–27 layers × 512 hidden and a large SSM state dimension won every ablation at 90M; 50 layers gained MMLU but halved throughput. | Proposed |
+| [SOTA-133](../../../record/practices.d/SOTA-133.md) | Replace fixed residual accumulation with learned attention over preceding layers | Kimi Team (2026), [LIT-134](../../../record/literature.d/LIT-134.md) — Attention Residuals: a per-layer pseudo-query chooses which earlier layers to read, at O(d) parameters per layer; 1.25× compute advantage on scaling laws at 48B/1.4T, adopted in Kimi K3. | Proposed |

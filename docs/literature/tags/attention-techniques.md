@@ -4,7 +4,7 @@
 
 Attention variants and alternatives, context length, position.
 
-6 of 130 LIT documents. Back to the [full index](../README.md).
+7 of 134 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -14,3 +14,4 @@ Attention variants and alternatives, context length, position.
 | [LIT-106](../../../record/literature.d/LIT-106.md) | FlashAttention-2: Faster Attention with Better Parallelism | Dao et al. (2023), [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). Improved attention parallelism. | Active |
 | [LIT-112](../../../record/literature.d/LIT-112.md) | Efficient Memory Management for Large Language Model Serving with PagedAttention | Kwon et al. (2023), [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180). Introduces vLLM. | Active |
 | [LIT-115](../../../record/literature.d/LIT-115.md) | Monarch Mixer: A Simple Sub-Quadratic GEMM-Based Architecture | Bhardwaj et al. (2023), [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). Efficient alternative to attention. | Active |
+| [LIT-133](../../../record/literature.d/LIT-133.md) | Kimi Linear: An Expressive, Efficient Attention Architecture | Kimi Team (2025), [ARXIV-2510.26692](https://arxiv.org/abs/2510.26692). Kimi Delta Attention extends Gated DeltaNet with a channel-wise forgetting gate; interleaved with MLA at 3:1 in a 48B-total, 3B-active model trained on 1.4T tokens, the hybrid beats full attention on short-context, long-context and RL evaluations while cutting KV cache by up to 75% and reaching up to 6.3× the decoding throughput at 1M tokens. | Active |

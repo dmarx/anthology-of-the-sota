@@ -4,7 +4,7 @@
 
 Attention variants, implementation optimizations, alternative mechanisms.
 
-11 of 130 SOTA documents. Back to the [full index](../README.md).
+12 of 133 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -19,3 +19,4 @@ Attention variants, implementation optimizations, alternative mechanisms.
 | [SOTA-110](../../../record/practices.d/SOTA-110.md) | Consider for very long sequence tasks | Bhardwaj et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |
 | [SOTA-111](../../../record/practices.d/SOTA-111.md) | Use for tasks where attention bottlenecks training | Bhardwaj et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |
 | [SOTA-112](../../../record/practices.d/SOTA-112.md) | Combine with standard attention for hybrid approaches | Bhardwaj et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |
+| [SOTA-132](../../../record/practices.d/SOTA-132.md) | Interleave linear-attention layers with global attention at about 3:1 instead of using full attention throughout | Kimi Team (2025), [LIT-133](../../../record/literature.d/LIT-133.md) — three Kimi Delta Attention layers per gated-MLA layer beat full MLA at 48B/1.4T while cutting KV cache 75%; the layout [LIT-131](../../../record/literature.d/LIT-131.md) ships at 2.8T with 69 KDA and 24 MLA layers. | Active |

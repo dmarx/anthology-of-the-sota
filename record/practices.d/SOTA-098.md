@@ -5,14 +5,14 @@ version: 1
 tags:
 - training-optimization
 date: '2026-08-24'
-published: '2023-10-01'
-source: LIT-114
+published: '2022-04-01'
+source: LIT-069
 summary: >-
-  Luo et al. (2023), [LIT-114](../literature.d/LIT-114.md) — [ARXIV-2310.05492](https://arxiv.org/abs/2310.05492).
+  Chowdhery et al. (2022), [LIT-069](../literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311).
 ---
 
 # SOTA-098: Monitor validation loss for unexpected spikes during training
 
 ## Source
 
-Luo et al. (2023), [LIT-114](../literature.d/LIT-114.md) — [ARXIV-2310.05492](https://arxiv.org/abs/2310.05492).
+Chowdhery et al. (2022), [LIT-069](../literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311).

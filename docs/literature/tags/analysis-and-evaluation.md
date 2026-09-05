@@ -4,14 +4,15 @@
 
 Theory, interpretability, benchmarks, measurement, debugging.
 
-7 of 150 LIT documents. Back to the [full index](../README.md).
+8 of 152 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [LIT-014](../../../record/literature.d/LIT-014.md) | Visualizing the Loss Landscape of Neural Nets | Li et al. (2017), [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). Visualizes loss landscape geometry. | Active |
-| [LIT-019](../../../record/literature.d/LIT-019.md) | The Lottery Ticket Hypothesis | Frankle et al. (2019), [ARXIV-1803.03635](https://arxiv.org/abs/1803.03635). Sparse trainable subnetworks exist. | Active |
-| [LIT-031](../../../record/literature.d/LIT-031.md) | Neural Networks are Surprisingly Modular | Filan et al. (2020), [ARXIV-2003.04881](https://arxiv.org/abs/2003.04881). Analysis of neural network modularity. | Superseded — by [LIT-041](../../../record/literature.d/LIT-041.md), ARXIV-2110.08058; by later work on clusterability and mechanistic interpretability |
+| [LIT-019](../../../record/literature.d/LIT-019.md) | The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks | Frankle et al. (2019), [ARXIV-1803.03635](https://arxiv.org/abs/1803.03635). Sparse trainable subnetworks exist. | Active |
+| [LIT-031](../../../record/literature.d/LIT-031.md) | Pruned Neural Networks are Surprisingly Modular | Filan et al. (2020), [ARXIV-2003.04881](https://arxiv.org/abs/2003.04881). Analysis of neural network modularity. | Superseded — by [LIT-041](../../../record/literature.d/LIT-041.md), ARXIV-2110.08058; by later work on clusterability and mechanistic interpretability |
 | [LIT-041](../../../record/literature.d/LIT-041.md) | Clusterability in Neural Networks | Filan et al. (2021), [ARXIV-2103.03386](https://arxiv.org/abs/2103.03386). Larger models develop more modular features. | Rejected — the result does not look interesting enough to carry |
-| [LIT-057](../../../record/literature.d/LIT-057.md) | Understanding Multi-View Representation Learning | Tian et al. (2021), [ARXIV-2110.13016](https://arxiv.org/abs/2110.13016). Analysis of view generation. | Rejected — theoretical, with no concrete training recommendation |
+| [LIT-057](../../../record/literature.d/LIT-057.md) | What Makes for Good Views for Contrastive Learning? | Tian et al. (2020), [ARXIV-2005.10243](https://arxiv.org/abs/2005.10243). Analysis of view generation. | Rejected — theoretical, with no concrete training recommendation |
 | [LIT-085](../../../record/literature.d/LIT-085.md) | Progress measures for grokking via mechanistic interpretability | Nanda et al. (2023), [ARXIV-2301.05217](https://arxiv.org/abs/2301.05217). Grokking measurement. | Rejected — measurement rather than actionable practice |
+| [LIT-095](../../../record/literature.d/LIT-095.md) v2 | The Unreasonable Effectiveness of Deep Features as a Perceptual Metric | Zhang et al. (2018), [ARXIV-1801.03924](https://arxiv.org/abs/1801.03924). Deep features from almost any pretrained network, compared layer-wise, match human perceptual judgements far better than L2, SSIM or any hand-designed metric — and the effect is robust to which network and which supervision produced the features. | Active |
 | [LIT-123](../../../record/literature.d/LIT-123.md) | Wait, Wait, Wait... Why Do Reasoning Models Loop? | Pipis et al. (2025), [ARXIV-2512.12895](https://arxiv.org/abs/2512.12895). Reasoning models loop — repeat the same text — at low temperature; larger models loop less and distilled students loop far more than their teachers, which the paper traces to errors in learning and, on a synthetic task, to risk aversion: when the progress-making action is hard to learn and a cyclic one is easy, probability shifts to the cycle. | Active |

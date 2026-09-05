@@ -4,10 +4,11 @@
 
 Serving, quantization, compression, sparsity, distillation.
 
-3 of 150 LIT documents. Back to the [full index](../README.md).
+4 of 152 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [LIT-039](../../../record/literature.d/LIT-039.md) | Gradient Flow in Sparse Neural Networks | Frankle et al. (2020), [ARXIV-2010.03533](https://arxiv.org/abs/2010.03533). Analysis of gradient flow in sparse networks. | Active |
+| [LIT-039](../../../record/literature.d/LIT-039.md) | Gradient Flow in Sparse Neural Networks and How Lottery Tickets Win | Frankle et al. (2020), [ARXIV-2010.03533](https://arxiv.org/abs/2010.03533). Analysis of gradient flow in sparse networks. | Active |
 | [LIT-081](../../../record/literature.d/LIT-081.md) | GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers | Frantar et al. (2022), [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323). Model quantization strategy. | Active |
-| [LIT-110](../../../record/literature.d/LIT-110.md) | Efficient Memory Access for Large Language Model Inference | Pool et al. (2023), [ARXIV-2308.13574](https://arxiv.org/abs/2308.13574). Memory access optimization. | Active |
+| [LIT-103](../../../record/literature.d/LIT-103.md) v2 | SARATHI: Efficient LLM Inference by Piggybacking Decodes with Chunked Prefills | Agrawal et al. (2023), [ARXIV-2308.16369](https://arxiv.org/abs/2308.16369). Prefill saturates the GPU and decode starves it, so split prefills into chunks and fill the rest of each batch with decodes that ride along nearly free. | Active |
+| [LIT-110](../../../record/literature.d/LIT-110.md) v2 | Efficiently Scaling Transformer Inference | Pope et al. (2022), [ARXIV-2211.05102](https://arxiv.org/abs/2211.05102). Inference partitioning derived rather than guessed: an analytical model of communication and memory cost picks the best parallel layout for a given model size, batch and latency target, and the answer changes with the target. | Active |

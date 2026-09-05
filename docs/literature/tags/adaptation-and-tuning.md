@@ -4,13 +4,13 @@
 
 Fine-tuning, transfer, parameter-efficient methods, alignment.
 
-8 of 150 LIT documents. Back to the [full index](../README.md).
+8 of 152 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [LIT-034](../../../record/literature.d/LIT-034.md) | Don't Stop Pretraining: Adapt Language Models to Domains and Tasks | Gururangan et al. (2020), [ARXIV-2004.10964](https://arxiv.org/abs/2004.10964). Benefits of domain-adaptive pretraining. | Active |
 | [LIT-046](../../../record/literature.d/LIT-046.md) | LoRA: Low-Rank Adaptation of Large Language Models | Hu et al. (2021), [ARXIV-2106.09685](https://arxiv.org/abs/2106.09685). Parameter-efficient fine-tuning. | Active |
-| [LIT-055](../../../record/literature.d/LIT-055.md) | P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning | Liu et al. (2021), [ARXIV-2110.07602](https://arxiv.org/abs/2110.07602). Deep prompt tuning. | Active |
+| [LIT-055](../../../record/literature.d/LIT-055.md) | P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks | Liu et al. (2021), [ARXIV-2110.07602](https://arxiv.org/abs/2110.07602). Deep prompt tuning. | Active |
 | [LIT-082](../../../record/literature.d/LIT-082.md) | Constitutional AI: Harmlessness from AI Feedback | Askell et al. (2022), [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). AI feedback for alignment. | Active |
 | [LIT-127](../../../record/literature.d/LIT-127.md) | DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models | Shao et al. (2024), [ARXIV-2402.03300](https://arxiv.org/abs/2402.03300). A 7B model continued-pretrained on 120B math tokens mined from Common Crawl reaches 51.7% on MATH without tools or voting, and introduces Group Relative Policy Optimization — PPO without a critic, with the baseline taken from a group of sampled outputs — the RL algorithm most later reasoning recipes use. | Active |
 | [LIT-128](../../../record/literature.d/LIT-128.md) | Falcon-H1R: Pushing the Reasoning Frontiers with a Hybrid Model for Efficient Test-Time Scaling | Falcon-LLM Team (2026), [ARXIV-2601.02346](https://arxiv.org/abs/2601.02346). Falcon-H1-7B taken to a reasoning model by SFT and RL scaling; it matches or beats reasoning models 2× to 7× larger, and its hybrid architecture makes the parallel test-time scaling it relies on (DeepConf) cheap in inference. Its reasoning corpus is the one [LIT-119](../../../record/literature.d/LIT-119.md)'s tiny reasoning models train on. | Active |

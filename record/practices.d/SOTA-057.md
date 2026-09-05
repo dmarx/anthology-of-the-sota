@@ -5,14 +5,14 @@ version: 1
 tags:
 - distributed-optimization
 date: '2026-08-24'
-published: '2021-11-01'
+published: '2021-02-01'
 source: LIT-059
 summary: >-
-  Li et al. (2021), [LIT-059](../literature.d/LIT-059.md) — [ARXIV-2111.09432](https://arxiv.org/abs/2111.09432).
+  Mohan et al. (2021), [LIT-059](../literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan.
 ---
 
 # SOTA-057: Implement multi-level checkpoint strategy
 
 ## Source
 
-Li et al. (2021), [LIT-059](../literature.d/LIT-059.md) — [ARXIV-2111.09432](https://arxiv.org/abs/2111.09432).
+Mohan et al. (2021), [LIT-059](../literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan.

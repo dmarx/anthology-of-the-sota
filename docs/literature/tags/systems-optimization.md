@@ -4,11 +4,11 @@
 
 Hardware utilization, kernels, compilation, numerical precision.
 
-4 of 150 LIT documents. Back to the [full index](../README.md).
+4 of 152 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [LIT-063](../../../record/literature.d/LIT-063.md) | Compiler Optimization for Deep Learning | Anderson et al. (2022), [ARXIV-2201.03642](https://arxiv.org/abs/2201.03642). Operation fusion patterns. | Active |
-| [LIT-066](../../../record/literature.d/LIT-066.md) | Hardware-Aware Neural Network Training | Wang et al. (2022), [ARXIV-2201.12023](https://arxiv.org/abs/2201.12023). Hardware-specific optimizations. | Active |
-| [LIT-103](../../../record/literature.d/LIT-103.md) | Optimizing CUDA Kernels for Large Language Model Inference | Chen et al. (2023), [ARXIV-2306.11378](https://arxiv.org/abs/2306.11378). Custom CUDA optimization. | Active |
-| [LIT-116](../../../record/literature.d/LIT-116.md) | TensorRT-LLM: A Compiler and Runtime for LLMs | Li et al. (2023), [ARXIV-2310.16386](https://arxiv.org/abs/2310.16386). Optimizing compiler design. | Active |
+| [LIT-059](../../../record/literature.d/LIT-059.md) v2 | CheckFreq: Frequent, Fine-Grained DNN Checkpointing | Mohan et al. (2021), FAST '21. Checkpoint frequency should be computed, not guessed: online profiling picks an iteration-granularity interval, adaptive tuning holds the overhead under a bound, and two-phase checkpointing pipelines the write against compute. | Active |
+| [LIT-063](../../../record/literature.d/LIT-063.md) v2 | TVM: An Automated End-to-End Optimizing Compiler for Deep Learning | Chen et al. (2018), [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799). Graph-level and operator-level optimization in one compiler, with a learned cost model searching the low-level schedule space, so performance is portable across back-ends instead of living in vendor libraries. | Active |
+| [LIT-066](../../../record/literature.d/LIT-066.md) v2 | Data Movement Is All You Need: A Case Study on Optimizing Transformers | Ivanov et al. (2020), [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). Transformer training is bound by data movement, not compute: existing frameworks use suboptimal layouts, and a systematic movement-first optimization cuts data movement 22.91% for a 1.30x speedup on a BERT encoder layer. | Active |
+| [LIT-116](../../../record/literature.d/LIT-116.md) | TensorRT-LLM: A Compiler and Runtime for LLMs | Li et al. (2023), [ARXIV-2310.16386](https://arxiv.org/abs/2310.16386). Optimizing compiler design. | Rejected — software with no published paper behind it, and no reading in the record |

@@ -6,13 +6,14 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [5 Sep 19:19 — Checking twenty-five notes filed without a network, and what that says about which claims to distrust](2026-09.md#20260905191918)
 - [5 Sep 16:31 — Filing the first source that is not an arXiv paper, and moving to luria 0.8](2026-09.md#20260905163147)
 
 ## All books
 
-3 entries across 2 books, newest first.
+4 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 1 | 2026-09-05 | 2026-09-05 |
+| [2026-09](2026-09.md) | 2 | 2026-09-05 | 2026-09-05 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

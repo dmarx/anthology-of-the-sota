@@ -4,7 +4,7 @@
 
 Attention variants and alternatives, context length, position.
 
-12 of 143 LIT documents. Back to the [full index](../README.md).
+12 of 145 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

@@ -4,7 +4,7 @@
 
 Optimizers, schedules, batch size, scaling laws, training dynamics.
 
-26 of 143 LIT documents. Back to the [full index](../README.md).
+26 of 145 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

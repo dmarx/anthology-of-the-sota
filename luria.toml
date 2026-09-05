@@ -108,6 +108,11 @@ titles_generalize = true
 name = "arXiv"
 uid  = "(\\d{4})[.:](\\d{4,5})(v\\d+)?"
 url  = "https://arxiv.org/abs/{1}.{2}"
+# Where to ask what this identifier actually is, and how to read the answer
+# (LU-#166). `luria remotes --resolve` fetches it; `luria lint` compares the
+# recorded title offline against what was recorded here.
+uris.title = "https://export.arxiv.org/api/query?id_list={1}.{2}"
+title_re   = "<entry>.*?<title>(.*?)</title>"
 
 # DOIs the same way (ADR-009). The delimiter moves out of the way of the
 # dots and slash a DOI carries: `DOI:10.1145/3600006.3613165`.

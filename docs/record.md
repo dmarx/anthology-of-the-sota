@@ -27,7 +27,7 @@ Beyond the standard fields, what each scheme's entries must carry — compiled f
 
 **`SOTA`**
 
-- `source` — required (luria.toml: schemes.SOTA.requires)
+- `source` — required, one or more `LIT` codes (luria.toml: schemes.SOTA.references.source)
 - `primary_topic` — exactly one of `attention-techniques`, `data-pipeline`, `distributed-optimization`, `model-architecture`, `model-stability`, `systems-optimization`, `training-optimization` (luria.toml: schemes.SOTA.tag_groups.primary_topic)
 
 **`LIT`**

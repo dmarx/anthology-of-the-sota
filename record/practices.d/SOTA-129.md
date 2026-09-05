@@ -6,7 +6,8 @@ tags:
 - training-optimization
 date: '2026-09-05'
 published: '2025-12-01'
-source: LIT-130
+source:
+- LIT-130
 # inactive-ok: SOTA-130 — a Proposed variation, named in the summary on purpose
 summary: >-
   Olmo Team (2025), [LIT-130](../literature.d/LIT-130.md) — the recipe behind every open reasoning model

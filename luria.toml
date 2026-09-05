@@ -28,7 +28,17 @@ dir      = "record/practices.d"
 output   = "docs/practices"
 active   = "Active"
 render   = "index"
-requires = ["source"]
+allocate = "merge"
+
+# `source:` holds a LIST of LIT codes, and the relationship is declared
+# rather than merely required (ADR-010). Two things this buys that
+# `requires = ["source"]` could not: the lint checks that every element names
+# a real LIT document rather than any truthy value, and a practice can record
+# all the evidence it rests on instead of one paper. The first entry is the
+# primary source; the rest corroborate. Without `many` a list would be
+# stringified and only its first code checked.
+[luria.schemes.SOTA.references]
+source = { scheme = "LIT", required = true, many = true }
 
 # The topic consolidation, enforced. Seven categories, exactly one primary
 # per practice; secondary tags are unconstrained. The vocabulary and the
@@ -46,6 +56,7 @@ dir      = "record/literature.d"
 output   = "docs/literature"
 active   = "Active"
 render   = "index"
+allocate = "merge"
 
 # Every note names a SOURCE, and a source is any of several things: an arXiv
 # identifier, a DOI, or failing both a URL. `requires = ["arxiv"]` demanded
@@ -72,16 +83,18 @@ tags = ["training-optimization", "systems-optimization", "model-stability",
 
 # ── This project reasoning about itself ──────────────────────────────────
 [luria.schemes.ADR]
-dir    = "record/decisions.d"
-output = "docs/decisions"
-active = "Active"
-render = "index"
+dir      = "record/decisions.d"
+output   = "docs/decisions"
+active   = "Active"
+render   = "index"
+allocate = "merge"
 
 [luria.schemes.DP]
 dir      = "record/principles.d"
 output   = "docs/design-principles.md"
 active   = "Active"
 render   = "document"
+allocate = "merge"
 # A principle that names AdamW is a claim about AdamW, not a principle. The
 # terms it must avoid are in [luria.lint] below.
 titles_generalize = true
@@ -95,6 +108,11 @@ titles_generalize = true
 name = "arXiv"
 uid  = "(\\d{4})[.:](\\d{4,5})(v\\d+)?"
 url  = "https://arxiv.org/abs/{1}.{2}"
+# Where to ask what this identifier actually is, and how to read the answer
+# (LU-#166). `luria remotes --resolve` fetches it; `luria lint` compares the
+# recorded title offline against what was recorded here.
+uris.title = "https://export.arxiv.org/api/query?id_list={1}.{2}"
+title_re   = "<entry>.*?<title>(.*?)</title>"
 
 # DOIs the same way (ADR-009). The delimiter moves out of the way of the
 # dots and slash a DOI carries: `DOI:10.1145/3600006.3613165`.

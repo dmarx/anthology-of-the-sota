@@ -6,7 +6,8 @@ tags:
 - model-architecture
 date: '2026-09-05'
 published: '2025-12-01'
-source: LIT-140
+source:
+- LIT-140
 summary: >-
   Xie et al. (2025), [LIT-140](../literature.d/LIT-140.md) — hyper-connections with the residual-mixing matrix constrained to be doubly stochastic, so identity mapping survives; 6–7% overhead at 3B–27B, shipped in DeepSeek-V4.
 ---

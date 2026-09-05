@@ -7,7 +7,8 @@ tags:
 - tiny-models
 date: '2026-09-05'
 published: '2026-01-15'
-source: LIT-119
+source:
+- LIT-119
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Roughly 100–500 GT for a 7B model, scaling linearly; the authors call the understanding early.
 ---

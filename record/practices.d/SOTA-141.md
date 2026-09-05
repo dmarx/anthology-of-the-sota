@@ -6,7 +6,8 @@ tags:
 - training-optimization
 date: '2026-09-05'
 published: '2025-02-01'
-source: LIT-147
+source:
+- LIT-147
 summary: >-
   Bergsma et al. (2025), [LIT-147](../literature.d/LIT-147.md) — with the peak tuned, linear decay to zero beats the customary decay to 10% and other shapes at compute-optimal budgets, more so past them; Proposed because contemporary production runs in the record still decay to a floor.
 ---

@@ -6,7 +6,8 @@ tags:
 - training-optimization
 date: '2026-09-05'
 published: '2025-05-01'
-source: LIT-150
+source:
+- LIT-150
 summary: >-
   Dey et al. (2025), [LIT-150](../literature.d/LIT-150.md) — the depth exponent α = 1 transfers the optimal learning rate across depth and keeps deep layers learning; 11.8% fewer FLOPs than µP at optimal shapes, 34.4% at 179 layers. One group so far.
 ---

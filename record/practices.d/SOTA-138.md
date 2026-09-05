@@ -6,7 +6,8 @@ tags:
 - attention-techniques
 date: '2026-09-05'
 published: '2025-12-01'
-source: LIT-142
+source:
+- LIT-142
 summary: >-
   DeepSeek-AI (2025), [LIT-142](../literature.d/LIT-142.md) — a small FP8 indexer scores past tokens and only the top-k enter attention; initialised for 2.1B tokens with dense attention on and the rest frozen; V4 repeats the pattern with a 1T-token dense warm-up.
 ---

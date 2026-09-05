@@ -7,7 +7,8 @@ tags:
 - tiny-models
 date: '2026-09-05'
 published: '2026-01-15'
-source: LIT-119
+source:
+- LIT-119
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. One epoch at LR 1e-6 to 3e-6 took a 90M model's IFEval from about 50 to over 65; a second epoch degraded it while the reward kept rising.
 ---

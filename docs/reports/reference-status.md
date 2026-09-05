@@ -9,7 +9,7 @@ Every reference in the record is a claim — "this is why things are the way the
 
 Only an `Active` document is in force. `Proposed` and `Deferred` mean *not in force yet* — an open question, being cited as if it were settled — while `Superseded` and `Rejected` mean *no longer in force*, which is often a perfectly good thing to cite: history, or a rejection worth pointing at. Either way the citation should be deliberate, and this section lists the ones nobody has vouched for yet.
 
-**1 document cited without acknowledgement.** Not listed: 39 citations someone has already vouched for with an `inactive-ok:` comment at the citing site.
+**0 documents cited without acknowledgement.** Not listed: 40 citations someone has already vouched for with an `inactive-ok:` comment at the citing site.
 
 To vouch for one, put the reason where the citation is — `inactive-ok:` covers its own line and the line below it, `inactive-ok-block:` its paragraph, `inactive-ok-file:` the whole page:
 
@@ -17,14 +17,7 @@ To vouch for one, put the reason where the citation is — `inactive-ok:` covers
 <!-- inactive-ok: ADR-012 — why this citation is right -->
 ```
 
-### [LIT-141](../../record/literature.d/LIT-141.md) — Superseded
-
-Hyper-Connections
-
-1 citation in 1 file awaits a look; 4 other citations of it are acknowledged.
-
-- [`record/literature.d/LIT-140.md:45`](../../record/literature.d/LIT-140.md)
-
+Nothing unacknowledged. ✅
 ## Codes that resolve to no document
 
 A reference the reader cannot follow: the code names no document in this record. A typo, a number carried in from another project, and an illustrative code in an example all look identical from here — telling them apart takes a human, so this is a report, not an error.

@@ -16,6 +16,7 @@ source:
 - LIT-135
 - LIT-131
 - LIT-137
+- LIT-tmptcwix
 summary: >-
   Kimi Team (2025), [LIT-133](../literature.d/LIT-133.md) — three Kimi Delta Attention layers per gated-MLA layer beat full MLA at 48B/1.4T while cutting KV cache 75%; the layout [LIT-131](../literature.d/LIT-131.md) ships at 2.8T with 69 KDA and 24 MLA layers.
 ---
@@ -54,6 +55,23 @@ September 2025) → Kimi Linear's fair comparison against full attention
 ([LIT-135](../literature.d/LIT-135.md)) and Kimi K3 ([LIT-131](../literature.d/LIT-131.md)) at dense and frontier scale.
 
 ## Variations
+
+A third laboratory has since adopted the layout independently:
+[LIT-tmptcwix](../literature.d/LIT-tmptcwix.md)'s Nemotron 3 Nano is a MoE hybrid Mamba-Transformer at 30B-A3B,
+using Mamba rather than a linear attention as the cheap layer. That widens
+what the practice can claim — from "the 3:1 interleave works" toward "a
+hybrid of a fixed-state mixer with periodic global attention works, and the
+mixer's family is a second-order choice".
+
+A third *layout* also exists now. [LIT-tmpn78h8](../literature.d/LIT-tmpn78h8.md)'s Native Hybrid Attention
+puts the mixture inside one uniform layer — a linear RNN maintains long-term
+KV slots, a sliding window supplies short-term tokens, and a single softmax
+attends over both — so the ratio becomes a continuous hyperparameter instead
+of a layer schedule. The practical argument for it is that an interleave
+makes every fourth layer different, which every cache manager and pipeline
+schedule then has to know about; the infrastructure sections of [LIT-131](../literature.d/LIT-131.md) and
+[LIT-152](../literature.d/LIT-152.md) are largely about managing that. It has no frontier deployment, so
+the practice does not move.
 
 The other hybrid layout in the record is Falcon-H1's ([LIT-120](../literature.d/LIT-120.md)): SSM heads
 and attention heads in parallel within every block, with the split a

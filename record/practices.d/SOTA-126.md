@@ -8,7 +8,11 @@ tags:
 date: '2026-09-05'
 published: '2026-01-15'
 source:
+# The tiny-scale evidence (one epoch, not two) and the algorithm itself,
+# which the practice recommended without citing until now (ADR-010).
 - LIT-119
+- LIT-tmpb8x8u
+- LIT-129
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. One epoch at LR 1e-6 to 3e-6 took a 90M model's IFEval from about 50 to over 65; a second epoch degraded it while the reward kept rising.
 ---
@@ -37,6 +41,19 @@ authors fixed the epoch count and swept the rate rather than the reverse.
 Stated for tiny models because that is where it was measured; the authors
 report that a short DPO stage has helped at every scale they have trained
 (0.5B–34B), but not the epoch-boundary cliff.
+
+## What DPO is
+
+Introduced in [LIT-tmpb8x8u](../literature.d/LIT-tmpb8x8u.md): reparameterise the reward so the optimal policy
+has a closed form, and the whole RLHF apparatus — a fitted reward model, a
+sampling loop, an RL optimiser — collapses into one classification loss over
+preference pairs. That is why it is cheap enough to be worth running at 90M
+at all.
+
+It also predicts the failure this practice guards against. Optimising the
+implicit reward is not the same as improving the policy, so a rising DPO
+reward through a second epoch while benchmarks fall is the objective doing
+exactly what it says while the model gets worse.
 
 ## Known implementations
 

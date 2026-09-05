@@ -4,7 +4,7 @@
 
 Diffusion, samplers, text-to-image, conditioning and control.
 
-14 of 159 LIT documents. Back to the [full index](../README.md).
+14 of 186 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

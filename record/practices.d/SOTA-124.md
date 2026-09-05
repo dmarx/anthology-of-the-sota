@@ -33,13 +33,23 @@ at 100M.
 This decouples the ceiling on the high-quality fraction of a mix from the
 total training length, which is what [SOTA-123](SOTA-123.md) relies on. Falcon-H1-Tiny is
 offered as an implicit confirmation: SFT sources such as Tulu3 were repeated
-on the order of 400 times across 800 GT of SFT-pretraining, and the
+100 or more times across 800 GT of SFT-pretraining, and the
 memorisation sweep (0 to 100% SFT, 2 GT epoch size at the extreme) showed
 no degradation during training.
 
 Why *Proposed*: the source is explicit that this is a hypothesis with one
 measurement behind it and that the systematic study is future work. It is
 filed because the recipes built on it are in the record and this is the
-reason they give. Compare the standing guidance that repetition past about
-four epochs stops paying; the claim here is that the relevant quantity is
-not epoch count but epoch size relative to the window.
+reason they give. The standing guidance it argues with is now in the record:
+[LIT-tmp7fu4d](../literature.d/LIT-tmp7fu4d.md) finds four epochs nearly free and the value of added compute
+decaying to zero thereafter, across 400 runs. The claim here is that the
+relevant quantity is not epoch *count* but epoch *size* relative to the
+window — a distinction that may dissolve the conflict, since that sweep
+repeats a whole corpus at fixed compute while this is about one source
+inside a mixture. Nobody has run the experiment that separates them.
+
+[LIT-tmpm029w](../literature.d/LIT-tmpm029w.md) is a third position worth reading against both: that
+autoregressive pretraining overfits severely under heavy repetition, and
+that the overfitting belongs to the objective rather than to repetition,
+removable with augmentation. If that is right, a recipe repeating a source a
+hundred times is either augmenting implicitly or paying an unmeasured cost.

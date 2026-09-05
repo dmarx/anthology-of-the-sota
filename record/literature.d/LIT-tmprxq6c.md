@@ -1,0 +1,55 @@
+---
+status: Active
+title: 'Group Sequence Policy Optimization'
+version: 1
+tags:
+- adaptation-and-tuning
+date: '2026-09-05'
+published: '2025-07-01'
+arxiv: '2507.18071'
+first_author: 'Zheng'
+keywords:
+- 'grpo'
+- 'reinforcement-learning'
+- 'importance-ratio'
+- 'mixture-of-experts'
+- 'stability'
+implementations:
+- GSPO
+summary: >-
+  Zheng et al. (2025), [ARXIV-2507.18071](https://arxiv.org/abs/2507.18071). Define the importance ratio on
+  sequence likelihood rather than per token, and clip, reward and optimise at
+  sequence level — which stabilises MoE reinforcement learning in particular.
+---
+
+# LIT-tmprxq6c: Group Sequence Policy Optimization
+
+Zheng et al., Qwen Team (2025) — [ARXIV-2507.18071](https://arxiv.org/abs/2507.18071)
+
+## Key takeaways
+
+- The change is one of granularity, and it is the whole paper: previous
+  algorithms take **token-level** importance ratios; GSPO defines the ratio
+  from the **sequence** likelihood and does its clipping, rewarding and
+  optimisation at that level.
+- Reported as more efficient and better-performing than GRPO, and — the
+  specific claim worth carrying — it **stabilises reinforcement learning for
+  mixture-of-experts models**, where token-level ratios interact badly with
+  routing that can differ between the sampling policy and the one being
+  updated.
+- The authors credit it with a simplification of RL infrastructure, and with
+  contributing to the improvements in the Qwen3 models.
+
+## Standing in the anthology
+
+The third GRPO variation, and the one that connects to the record's
+architecture half: every frontier model the anthology now holds is a
+mixture-of-experts, and this says the standard RL objective is unstable on
+exactly those. Filed for that link.
+
+Its lineage runs into the record twice. What it trains is Qwen3, which the
+backlog still has unfiled; the architecture side of the same team's work is
+already here ([LIT-136](LIT-136.md), [LIT-135](LIT-135.md), [LIT-152](LIT-152.md)), so the record holds Qwen's answers
+about layers and about RL from opposite ends without the model report in
+between. Filed as a note; the RL-algorithm question stays out of the
+practice registry until the record decides it wants to carry it.

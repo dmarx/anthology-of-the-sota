@@ -1,0 +1,65 @@
+---
+status: Active
+title: 'Direct Preference Optimization: Your Language Model is Secretly a Reward Model'
+version: 1
+tags:
+- adaptation-and-tuning
+date: '2026-09-05'
+published: '2023-05-01'
+arxiv: '2305.18290'
+first_author: 'Rafailov'
+keywords:
+- 'preference-optimization'
+- 'rlhf'
+- 'reward-model'
+- 'alignment'
+- 'fine-tuning'
+implementations:
+- DPO
+summary: >-
+  Rafailov et al. (2023), [ARXIV-2305.18290](https://arxiv.org/abs/2305.18290). Reparameterise the reward so
+  the optimal policy has a closed form, and RLHF collapses into a single
+  classification loss — no reward model, no sampling during fine-tuning, no
+  RL loop.
+---
+
+# LIT-tmpb8x8u: Direct Preference Optimization: Your Language Model is Secretly a Reward Model
+
+Rafailov et al. (2023) — [ARXIV-2305.18290](https://arxiv.org/abs/2305.18290)
+
+## Key takeaways
+
+- The problem is the machinery, not the objective. RLHF fits a reward model
+  to human preference labels and then optimises the policy against that
+  estimate with RL while a KL term keeps it near the original — a procedure
+  the paper describes as complex and often unstable, with two models, a
+  sampling loop and a sensitive set of hyperparameters.
+- The move: a **new parameterisation of the reward model** under which the
+  corresponding optimal policy can be written in closed form. The reward
+  never has to be materialised, because the policy *is* the reward model, up
+  to a reparameterisation — which is what the title means.
+- What is left is a simple classification loss over preference pairs. No
+  sampling from the language model during fine-tuning, no separate reward
+  network, and little hyperparameter tuning.
+- Empirically it matches or beats PPO-based RLHF: better at controlling
+  sentiment, matching or improving response quality on summarisation and
+  single-turn dialogue, at a fraction of the implementation cost.
+
+## Standing in the anthology
+
+The source [SOTA-126](../practices.d/SOTA-126.md) has been missing. That practice — run DPO on tiny models
+for one epoch only — recommends an algorithm the record described but never
+cited, which is exactly the shape [DP-001](../../docs/design-principles.md#dp-1) exists to prevent, and it survived
+because the practice's *own* finding (one epoch, not more) is about DPO's
+behaviour at 90M rather than about DPO itself.
+
+Read the two together and the division is clear: this paper is why the stage
+exists and why it is cheap; [LIT-119](LIT-119.md) and [LIT-129](LIT-129.md) are the evidence that it still
+converges at 90M–135M, and [LIT-119](LIT-119.md)'s observation that a second epoch degrades
+the model while the DPO reward keeps rising is a caution this paper's
+framing predicts — optimising the implicit reward is not the same as
+improving the policy.
+
+It is also the middle of the post-training sequence the record now holds:
+SFT → DPO → RLVR ([LIT-tmpg34u1](LIT-tmpg34u1.md)), which is the recipe [SOTA-129](../practices.d/SOTA-129.md) records and
+[SOTA-123](../practices.d/SOTA-123.md) collapses at tiny scale.

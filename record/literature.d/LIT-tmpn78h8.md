@@ -1,0 +1,65 @@
+---
+status: Active
+title: 'Native Hybrid Attention for Efficient Sequence Modeling'
+version: 1
+tags:
+- attention-techniques
+date: '2026-09-05'
+published: '2025-10-01'
+arxiv: '2510.07019'
+first_author: 'Du'
+keywords:
+- 'hybrid-attention'
+- 'linear-attention'
+- 'sliding-window'
+- 'recall'
+- 'layer-uniformity'
+implementations:
+- NHA
+summary: >-
+  Du et al. (2025), [ARXIV-2510.07019](https://arxiv.org/abs/2510.07019). Hybridise *within* the layer
+  instead of between layers: a linear RNN maintains long-term KV slots, a
+  sliding window supplies short-term tokens, and one softmax attends over
+  both.
+---
+
+# LIT-tmpn78h8: Native Hybrid Attention for Efficient Sequence Modeling
+
+Du et al. (2025) — [ARXIV-2510.07019](https://arxiv.org/abs/2510.07019)
+
+## Key takeaways
+
+- The trade-off it starts from is the record's: full attention is quadratic,
+  linear attention is efficient and **compromises recall over long
+  contexts**.
+- **NHA puts both intra- and inter-layer hybridisation into one layer
+  design.** Long-term context lives in key-value slots updated by a linear
+  RNN; short-term context comes from a sliding window; and **a single softmax
+  attention operates over all of them together**, so the weighting between
+  long and short term is per-token and per-head and content-dependent — with
+  no extra fusion parameters to learn.
+- Inter-layer behaviour is then controlled by **one hyperparameter**, the
+  sliding-window size, which slides smoothly from purely linear to full
+  attention while every layer stays structurally identical.
+- Beats Transformers and other hybrid baselines on recall-intensive and
+  commonsense tasks, and pretrained LLMs can be structurally hybridised into
+  it after the fact.
+
+## Standing in the anthology
+
+A direct alternative to [SOTA-132](../practices.d/SOTA-132.md), and the record's third answer to the same
+question. The practice records the *layer-interleaved* hybrid — three linear
+layers per global one — and contrasts it with Falcon-H1's *parallel-head*
+layout ([LIT-120](LIT-120.md)); this is a third position, where the mixture happens inside
+a single uniform layer and the ratio is a continuous knob rather than a
+layer schedule.
+
+That uniformity is the practical argument. A 3:1 interleave makes every
+fourth layer different, which every serving stack, cache manager and pipeline
+schedule then has to know about — the infrastructure sections of [LIT-131](LIT-131.md) and
+[LIT-152](LIT-152.md) are largely about managing exactly that. NHA keeps the layers
+identical and moves the dial elsewhere.
+
+Filed as a note. It has no frontier deployment, where [SOTA-132](../practices.d/SOTA-132.md) has two
+independent ones, so the practice does not move — but the practice's
+*Variations* section is now short by one.

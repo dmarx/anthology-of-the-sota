@@ -1,0 +1,51 @@
+---
+status: Active
+title: 'A Distributed Data-Parallel PyTorch Implementation of the Distributed Shampoo Optimizer for Training Neural Networks At-Scale'
+version: 1
+tags:
+- distributed-optimization
+date: '2026-09-05'
+published: '2023-09-01'
+arxiv: '2309.06497'
+first_author: 'Shi'
+keywords:
+- 'optimizer'
+- 'second-order'
+- 'shampoo'
+- 'distributed-training'
+- 'preconditioning'
+summary: >-
+  Shi et al. (2023), [ARXIV-2309.06497](https://arxiv.org/abs/2309.06497). The engineering that made a
+  second-order optimizer usable at scale: block-diagonal Kronecker
+  preconditioners sharded across GPUs, at most 10% per-step wall-clock over
+  diagonal adaptive methods.
+---
+
+# LIT-tmpvlao2: A Distributed Data-Parallel PyTorch Implementation of the Distributed Shampoo Optimizer for Training Neural Networks At-Scale
+
+Shi et al., Meta (2023) — [ARXIV-2309.06497](https://arxiv.org/abs/2309.06497)
+
+## Key takeaways
+
+- Shampoo belongs to the AdaGrad family and builds a block-diagonal
+  preconditioner, each block a coarse Kronecker-product approximation to
+  full-matrix AdaGrad for one parameter. The approximation is what makes the
+  second-order idea tractable at all.
+- The contribution here is not the algorithm but the distribution: memory and
+  computation for each parameter's blocks are spread across ranks via
+  PyTorch's DTensor, with an AllGather on the computed search directions each
+  step.
+- That brings the cost to **at most a 10% per-step wall-clock penalty**
+  against standard diagonal adaptive methods — the number that decides
+  whether a preconditioning optimizer is usable, and the reason the paper is
+  cited by practitioners rather than only by theorists.
+- Validated by ablation on ImageNet ResNet-50, with minimal tuning.
+
+## Standing in the anthology
+
+Filed as the predecessor [LIT-tmpscxgl](LIT-tmpscxgl.md) simplifies and the practical baseline the
+optimizer comparison in [LIT-tmpqpka6](LIT-tmpqpka6.md) includes. It is here mainly for the 10%
+number: the record's optimizer practices trade convergence against
+per-step cost constantly — [SOTA-121](../practices.d/SOTA-121.md)'s Muon, [LIT-131](LIT-131.md)'s per-head variant that is
+*cheaper* because the blocks are smaller — and this is where the overhead
+budget for a matrix preconditioner was first shown to be affordable.

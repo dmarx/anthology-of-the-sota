@@ -13,7 +13,7 @@
 | 2026-08-24 | Proposed | [LIT-104](../../record/literature.d/LIT-104.md) | 0 | 0 | ReLoRA: High-Rank Training Through Low-Rank Updates |
 | 2026-08-24 | Deferred | [SOTA-120](../../record/practices.d/SOTA-120.md) | 0 | 0 | Prefer AdamW's decoupled weight decay to L2 regularization added to the loss |
 | 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 6 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
-| 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 4 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
+| 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 5 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
 | 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 4 | 0 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
 | 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 4 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
 | 2026-09-05 | Proposed | [SOTA-133](../../record/practices.d/SOTA-133.md) | 4 | 0 | Replace fixed residual accumulation with learned attention over preceding layers |

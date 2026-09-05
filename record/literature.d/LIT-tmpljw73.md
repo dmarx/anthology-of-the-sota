@@ -1,0 +1,56 @@
+---
+status: Active
+title: '2 OLMo 2 Furious'
+version: 1
+tags:
+- model-stability
+date: '2026-09-05'
+published: '2025-01-01'
+arxiv: '2501.00656'
+first_author: 'OLMo Team'
+keywords:
+- 'training-stability'
+- 'qk-norm'
+- 'z-loss'
+- 'annealing'
+- 'open-models'
+implementations:
+- OLMo 2
+summary: >-
+  OLMo Team (2025), [ARXIV-2501.00656](https://arxiv.org/abs/2501.00656). A fully open 7B–32B recipe whose
+  stated focus is training stability and per-token efficiency, plus the
+  late-stage specialized data mix that the decay phase is for.
+---
+
+# LIT-tmpljw73: 2 OLMo 2 Furious
+
+OLMo Team, Ai2 (2025) — [ARXIV-2501.00656](https://arxiv.org/abs/2501.00656)
+
+## Key takeaways
+
+- Dense models at 7B, 13B and 32B released with weights, the full training
+  data, the code, the logs and thousands of intermediate checkpoints — which
+  is what makes the stability claims below checkable by someone else, and is
+  the reason this note exists rather than a shorter one.
+- The architecture and recipe changes are presented as being *for* stability
+  and per-token efficiency, not as accuracy wins that happen to be stable.
+- **Dolmino Mix 1124**: a specialized late-stage mixture introduced during
+  the annealing phase of pretraining, reported to improve downstream
+  capability substantially. This is the decay stage used as a place to spend
+  data quality, which is the same argument [SOTA-140](../practices.d/SOTA-140.md) records from the WSD
+  side.
+- Post-training follows Tülu 3, ending in reinforcement learning with
+  verifiable rewards — the stage [SOTA-129](../practices.d/SOTA-129.md) names.
+- Positioned at the Pareto frontier of performance against training compute,
+  matching or beating open-weight-only models of the period at fewer FLOPs.
+
+## Standing in the anthology
+
+The record's second Ai2 note, and the predecessor of [LIT-130](LIT-130.md). Filed for the
+stability recipe: it is the most completely documented account in the corpus
+of the interventions that keep a mid-scale run alive, and unlike the frontier
+reports it ships the checkpoints that would let a reader verify them.
+
+Its annealing result is the same observation [SOTA-140](../practices.d/SOTA-140.md) rests on, reached from
+a data-mixture direction rather than a schedule-shape one, and worth reading
+next to it.

@@ -4,7 +4,7 @@
 
 Architecture patterns, component design, structural choices.
 
-20 of 139 SOTA documents. Back to the [full index](../README.md).
+20 of 144 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -16,7 +16,7 @@ Architecture patterns, component design, structural choices.
 | [SOTA-036](../../../record/practices.d/SOTA-036.md) | gpt training recipe | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
 | [SOTA-037](../../../record/practices.d/SOTA-037.md) | LM in-context learning emerges at scale | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
 | [SOTA-038](../../../record/practices.d/SOTA-038.md) | ICL permits few-shot task adaptability | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
-| [SOTA-039](../../../record/practices.d/SOTA-039.md) | single cycle of cosine decay is sufficient lr schedule | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
+| [SOTA-039](../../../record/practices.d/SOTA-039.md) | single cycle of cosine decay is sufficient lr schedule | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Superseded — by [SOTA-140](../../../record/practices.d/SOTA-140.md); warmup-stable-decay matches it and leaves the token budget open; every report since 2024 in the record uses a stable-then-decay schedule |
 | [SOTA-061](../../../record/practices.d/SOTA-061.md) | Use largest batch that maintains >80% sample efficiency | Fedus et al. (2021), [LIT-061](../../../record/literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684). | Active |
 | [SOTA-062](../../../record/practices.d/SOTA-062.md) | Scale batch size with model size but sub-linearly | Fedus et al. (2021), [LIT-061](../../../record/literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684). | Active |
 | [SOTA-063](../../../record/practices.d/SOTA-063.md) | use RoPE for LLM (1D sequence) positional embeddings | Su et al. (2021), [LIT-045](../../../record/literature.d/LIT-045.md) — [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864). | Active |

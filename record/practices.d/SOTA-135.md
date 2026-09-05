@@ -43,7 +43,7 @@ in how the state forgets.
 
 ## Where it is incomplete
 
-[LIT-tmpngv1m](../literature.d/LIT-tmpngv1m.md) names an asymmetry in the pairing this practice recommends.
+[LIT-177](../literature.d/LIT-177.md) names an asymmetry in the pairing this practice recommends.
 The delta update is active and targeted — it corrects what is stored at the
 address being written — while the decay gate is passive and global. So stale
 content at a *different* address can never be actively removed, only left to

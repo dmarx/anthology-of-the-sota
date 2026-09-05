@@ -31,12 +31,12 @@ data on RL, can be studied from a clean start.
 Why *Proposed*: the source itself calls the track experimental and positions
 it as a benchmark, and the Think models Olmo 3 actually ships go through the
 SFT stage ([SOTA-129](SOTA-129.md)). The idea predates Olmo 3: the "R1-Zero" style of training
-is where the name comes from, and that work is now filed ([LIT-tmp6t0j4](../literature.d/LIT-tmp6t0j4.md)).
+is where the name comes from, and that work is now filed ([LIT-164](../literature.d/LIT-164.md)).
 Olmo 3 remains the source because it is the open, reproducible statement of
 the pathway.
 
 A second reason to stay *Proposed* arrived with the literature.
-[LIT-tmp8p6dy](../literature.d/LIT-tmp8p6dy.md) finds that DeepSeek-V3-Base already exhibits the "Aha moment"
+[LIT-167](../literature.d/LIT-167.md) finds that DeepSeek-V3-Base already exhibits the "Aha moment"
 before any RL, and that Qwen2.5 bases reason without a prompt template — so
 how much of the result belongs to skipping SFT, and how much to what the
 base model already carried, is unsettled. "Run RLVR directly on the base" is

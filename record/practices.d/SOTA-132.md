@@ -16,7 +16,7 @@ source:
 - LIT-135
 - LIT-131
 - LIT-137
-- LIT-tmptcwix
+- LIT-183
 summary: >-
   Kimi Team (2025), [LIT-133](../literature.d/LIT-133.md) — three Kimi Delta Attention layers per gated-MLA layer beat full MLA at 48B/1.4T while cutting KV cache 75%; the layout [LIT-131](../literature.d/LIT-131.md) ships at 2.8T with 69 KDA and 24 MLA layers.
 ---
@@ -57,13 +57,13 @@ September 2025) → Kimi Linear's fair comparison against full attention
 ## Variations
 
 A third laboratory has since adopted the layout independently:
-[LIT-tmptcwix](../literature.d/LIT-tmptcwix.md)'s Nemotron 3 Nano is a MoE hybrid Mamba-Transformer at 30B-A3B,
+[LIT-183](../literature.d/LIT-183.md)'s Nemotron 3 Nano is a MoE hybrid Mamba-Transformer at 30B-A3B,
 using Mamba rather than a linear attention as the cheap layer. That widens
 what the practice can claim — from "the 3:1 interleave works" toward "a
 hybrid of a fixed-state mixer with periodic global attention works, and the
 mixer's family is a second-order choice".
 
-A third *layout* also exists now. [LIT-tmpn78h8](../literature.d/LIT-tmpn78h8.md)'s Native Hybrid Attention
+A third *layout* also exists now. [LIT-176](../literature.d/LIT-176.md)'s Native Hybrid Attention
 puts the mixture inside one uniform layer — a linear RNN maintains long-term
 KV slots, a sliding window supplies short-term tokens, and a single softmax
 attends over both — so the ratio becomes a continuous hyperparameter instead

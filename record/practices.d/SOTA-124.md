@@ -41,14 +41,14 @@ Why *Proposed*: the source is explicit that this is a hypothesis with one
 measurement behind it and that the systematic study is future work. It is
 filed because the recipes built on it are in the record and this is the
 reason they give. The standing guidance it argues with is now in the record:
-[LIT-tmp7fu4d](../literature.d/LIT-tmp7fu4d.md) finds four epochs nearly free and the value of added compute
+[LIT-166](../literature.d/LIT-166.md) finds four epochs nearly free and the value of added compute
 decaying to zero thereafter, across 400 runs. The claim here is that the
 relevant quantity is not epoch *count* but epoch *size* relative to the
 window — a distinction that may dissolve the conflict, since that sweep
 repeats a whole corpus at fixed compute while this is about one source
 inside a mixture. Nobody has run the experiment that separates them.
 
-[LIT-tmpm029w](../literature.d/LIT-tmpm029w.md) is a third position worth reading against both: that
+[LIT-175](../literature.d/LIT-175.md) is a third position worth reading against both: that
 autoregressive pretraining overfits severely under heavy repetition, and
 that the overfitting belongs to the objective rather than to repetition,
 removable with augmentation. If that is right, a recipe repeating a source a

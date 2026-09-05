@@ -314,6 +314,9 @@
     "ARXIV/2305.13245": {
       "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints"
     },
+    "ARXIV/2305.18290": {
+      "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model"
+    },
     "ARXIV/2306.10209": {
       "title": "ZeRO++: Extremely Efficient Collective Communication for Giant Model Training"
     },
@@ -377,11 +380,17 @@
     "ARXIV/2409.19606": {
       "title": "Hyper-Connections"
     },
+    "ARXIV/2411.15124": {
+      "title": "Tulu 3: Pushing Frontiers in Open Language Model Post-Training"
+    },
     "ARXIV/2412.06464": {
       "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule"
     },
     "ARXIV/2501.00656": {
       "title": "2 OLMo 2 Furious"
+    },
+    "ARXIV/2501.12948": {
+      "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
     },
     "ARXIV/2502.11089": {
       "title": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention"
@@ -392,6 +401,12 @@
     "ARXIV/2502.16982": {
       "title": "Muon is Scalable for LLM Training"
     },
+    "ARXIV/2503.14476": {
+      "title": "DAPO: An Open-Source LLM Reinforcement Learning System at Scale"
+    },
+    "ARXIV/2503.20783": {
+      "title": "Understanding R1-Zero-Like Training: A Critical Perspective"
+    },
     "ARXIV/2505.01618": {
       "title": "Don't be lazy: CompleteP enables compute-efficient deep transformers"
     },
@@ -400,6 +415,9 @@
     },
     "ARXIV/2506.00204": {
       "title": "Structure-Aware Fill-in-the-Middle Pretraining for Code"
+    },
+    "ARXIV/2507.18071": {
+      "title": "Group Sequence Policy Optimization"
     },
     "ARXIV/2507.20534": {
       "title": "Kimi K2: Open Agentic Intelligence"

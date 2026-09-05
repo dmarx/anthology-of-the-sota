@@ -5,14 +5,14 @@ version: 1
 tags:
 - systems-optimization
 date: '2026-08-24'
-published: '2023-06-01'
-source: LIT-103
+published: '2023-09-01'
+source: LIT-112
 summary: >-
-  Chen et al. (2023), [LIT-103](../literature.d/LIT-103.md) — [ARXIV-2306.11378](https://arxiv.org/abs/2306.11378).
+  Kwon et al. (2023), [LIT-112](../literature.d/LIT-112.md) — [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180).
 ---
 
 # SOTA-113: Use continuous batching for inference
 
 ## Source
 
-Chen et al. (2023), [LIT-103](../literature.d/LIT-103.md) — [ARXIV-2306.11378](https://arxiv.org/abs/2306.11378).
+Kwon et al. (2023), [LIT-112](../literature.d/LIT-112.md) — [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180).

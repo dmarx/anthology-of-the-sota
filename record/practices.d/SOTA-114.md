@@ -5,14 +5,14 @@ version: 1
 tags:
 - systems-optimization
 date: '2026-08-24'
-published: '2023-06-01'
-source: LIT-103
+published: '2022-05-01'
+source: LIT-074
 summary: >-
-  Chen et al. (2023), [LIT-103](../literature.d/LIT-103.md) — [ARXIV-2306.11378](https://arxiv.org/abs/2306.11378).
+  Dao et al. (2022), [LIT-074](../literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135).
 ---
 
 # SOTA-114: Fuse attention operations where possible
 
 ## Source
 
-Chen et al. (2023), [LIT-103](../literature.d/LIT-103.md) — [ARXIV-2306.11378](https://arxiv.org/abs/2306.11378).
+Dao et al. (2022), [LIT-074](../literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135).

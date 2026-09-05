@@ -4,7 +4,7 @@
 
 Normalization, initialization, gradient handling, regularization.
 
-10 of 145 LIT documents. Back to the [full index](../README.md).
+12 of 145 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -15,6 +15,8 @@ Normalization, initialization, gradient handling, regularization.
 | [LIT-025](../../../record/literature.d/LIT-025.md) | Understanding and Improving Layer Normalization | Xu et al. (2019), [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). Analysis of normalization stability. | Active |
 | [LIT-029](../../../record/literature.d/LIT-029.md) | On Layer Normalization in the Transformer Architecture | Xiong et al. (2020), [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). RMSNorm pre-norm permits stable training at scale w/reduced overhead relative to full LayerNorm. | Active |
 | [LIT-032](../../../record/literature.d/LIT-032.md) | PowerNorm: Rethinking Batch Normalization in Transformers | Shen et al. (2020), [ARXIV-2003.07845](https://arxiv.org/abs/2003.07845). Alternative to LayerNorm. | Active |
-| [LIT-047](../../../record/literature.d/LIT-047.md) | Deep Neural Network Initialization for Large-Scale Models | Kumar et al. (2021), [ARXIV-2108.09001](https://arxiv.org/abs/2108.09001). Scale-dependent initialization. | Active |
-| [LIT-054](../../../record/literature.d/LIT-054.md) | Training Instability Detection and Recovery | Chen et al. (2021), [ARXIV-2110.05246](https://arxiv.org/abs/2110.05246). Instability detection methods. | Active |
+| [LIT-037](../../../record/literature.d/LIT-037.md) v2 | On the difficulty of training Recurrent Neural Networks | Pascanu et al. (2012), [ARXIV-1211.5063](https://arxiv.org/abs/1211.5063). The origin of gradient-norm clipping: exploding gradients are a geometric fact about error surfaces with cliffs, and rescaling the gradient when its norm exceeds a threshold is the cheap, correct response. | Active |
+| [LIT-047](../../../record/literature.d/LIT-047.md) v2 | ReZero is All You Need: Fast Convergence at Large Depth | Bachlechner et al. (2020), [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). Gate every residual branch with a single zero-initialized scalar: the network starts as the identity, satisfies dynamical isometry at initialization, and trains at depths where more elaborate schemes are needed otherwise. | Active |
+| [LIT-054](../../../record/literature.d/LIT-054.md) v2 | GLM-130B: An Open Bilingual Pre-trained Model | Zeng et al. (2022), [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). A 130B training run reported with its failures intact: the paper's stated purpose is to unveil how a model at this scale can be successfully pre-trained, and most of what it has to say is about loss spikes and divergence. | Active |
 | [LIT-084](../../../record/literature.d/LIT-084.md) | DeepNet: Scaling Transformers to 1,000 Layers | Wang et al. (2022), [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555). Scale-aware normalization. | Active |
+| [LIT-114](../../../record/literature.d/LIT-114.md) v2 | On Layer Normalization in the Transformer Architecture | Xiong et al. (2020), [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). Warmup is not a universal law but a fix for where the normalization sits: Post-LN has large gradients near the output at initialization and needs it, Pre-LN does not. | Active |

@@ -16,7 +16,7 @@
 | 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 4 | 0 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
 | 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 4 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
 | 2026-09-05 | Proposed | [SOTA-133](../../record/practices.d/SOTA-133.md) | 3 | 0 | Replace fixed residual accumulation with learned attention over preceding layers |
-| 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 1 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
+| 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 2 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 1 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.

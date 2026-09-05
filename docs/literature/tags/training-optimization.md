@@ -4,7 +4,7 @@
 
 Optimizers, schedules, batch size, scaling laws, training dynamics.
 
-22 of 118 LIT documents. Back to the [full index](../README.md).
+23 of 119 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,7 +20,7 @@ Optimizers, schedules, batch size, scaling laws, training dynamics.
 | [LIT-028](../../../record/literature.d/LIT-028.md) | Scaling Laws for Neural Language Models | Kaplan et al. (2020), [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361). Power-law scaling relationships. | Active |
 | [LIT-037](../../../record/literature.d/LIT-037.md) | Gradient Clipping Helps Training Dynamic Neural Networks | Li et al. (2020), [ARXIV-2007.05019](https://arxiv.org/abs/2007.05019). Theory of gradient clipping. | Active |
 | [LIT-040](../../../record/literature.d/LIT-040.md) | Scaling Laws for Autoregressive Generative Modeling | Henighan et al. (2020), [ARXIV-2010.14701](https://arxiv.org/abs/2010.14701). Universal scaling behaviors. | Active |
-| [LIT-042](../../../record/literature.d/LIT-042.md) | SGDR++: Improving Stochastic Gradient Descent with Restarts | Ruder et al. (2021), [ARXIV-2103.11851](https://arxiv.org/abs/2103.11851). Enhanced restart scheduling. | Superseded — single-cycle cosine decay proved better at scale |
+| [LIT-042](../../../record/literature.d/LIT-042.md) | SGDR++: Improving Stochastic Gradient Descent with Restarts | Ruder et al. (2021), [ARXIV-2103.11851](https://arxiv.org/abs/2103.11851). Enhanced restart scheduling. | Superseded — by [LIT-035](../../../record/literature.d/LIT-035.md); single-cycle cosine decay proved better at scale |
 | [LIT-044](../../../record/literature.d/LIT-044.md) | Hard Negative Mining in Contrastive Learning | Robinson et al. (2021), [ARXIV-2104.08892](https://arxiv.org/abs/2104.08892). Importance of negative sample selection. | Rejected — needs per-case tuning, no consistent cross-domain benefit |
 | [LIT-052](../../../record/literature.d/LIT-052.md) | Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers | Tay et al. (2021), [ARXIV-2109.10686](https://arxiv.org/abs/2109.10686). As model size increases, required warmup period becomes shorter relative to total training time. | Active |
 | [LIT-058](../../../record/literature.d/LIT-058.md) | A Comprehensive Study on Large Batch Training for DNNs | Zheng et al. (2021), [ARXIV-2111.04535](https://arxiv.org/abs/2111.04535). Systematic analysis of batch size effects. | Active |
@@ -30,3 +30,4 @@ Optimizers, schedules, batch size, scaling laws, training dynamics.
 | [LIT-101](../../../record/literature.d/LIT-101.md) | AdaNorm: Adaptive Gradient Norm Correction based Optimizer | Liu et al. (2023), [ARXIV-2305.18079](https://arxiv.org/abs/2305.18079). Adaptive gradient normalization. | Proposed |
 | [LIT-105](../../../record/literature.d/LIT-105.md) | Lion: Learning with Implicit Optimization | Chen et al. (2023), [ARXIV-2307.06440](https://arxiv.org/abs/2307.06440). Novel optimization algorithm. | Proposed |
 | [LIT-114](../../../record/literature.d/LIT-114.md) | Analyzing the Learning Dynamics of Large Language Models | Luo et al. (2023), [ARXIV-2310.05492](https://arxiv.org/abs/2310.05492). Learning dynamics analysis. | Active |
+| [LIT-119](../../../record/literature.d/LIT-119.md) | Falcon-H1-Tiny: A series of extremely small, yet powerful language models redefining capabilities at small scale | Falcon-LLM Team (2026), technical blogpost. Holds the parameter budget at 90M and pulls the other three levers — data strategy, architecture, optimizer — one at a time: pretraining from scratch on the target SFT or reasoning mix beats pretrain-then-finetune at this scale, Muon with learnable multipliers beats the AdamW recipe, and depth and SSM width beat MLP width. | Active |

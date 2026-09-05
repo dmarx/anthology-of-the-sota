@@ -1,0 +1,44 @@
+---
+status: Proposed
+title: 'Repeat high-quality data freely when its epoch size exceeds the model''s memorization window'
+version: 1
+tags:
+- data-pipeline
+- tiny-models
+date: '2026-09-05'
+published: '2026-01-15'
+source: LIT-119
+summary: >-
+  Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Roughly 100–500 GT for a 7B model, scaling linearly; the authors call the understanding early.
+---
+
+# SOTA-124: Repeat high-quality data freely when its epoch size exceeds the model's memorization window
+
+## Source
+
+Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
+
+A late checkpoint of FalconMamba-7B, shown training tokens it saw earlier,
+has a loss gap against fresh tokens from the same distribution that decays
+with how long ago the tokens were seen. The authors define the
+*memorization window* as the delay after which that gap has closed — around
+100 GT, or 500 GT as a conservative estimate, for a 7B model — and argue
+that a data source whose epoch size (its size divided by its share of the
+mix) is larger than the window can be repeated indefinitely without the
+model overfitting to it, while one with a small epoch size will be memorised.
+The window is assumed to scale linearly with parameters, giving about 5 GT
+at 100M.
+
+This decouples the ceiling on the high-quality fraction of a mix from the
+total training length, which is what [SOTA-123](SOTA-123.md) relies on. Falcon-H1-Tiny is
+offered as an implicit confirmation: SFT sources such as Tulu3 were repeated
+on the order of 400 times across 800 GT of SFT-pretraining, and the
+memorisation sweep (0 to 100% SFT, 2 GT epoch size at the extreme) showed
+no degradation during training.
+
+Why *Proposed*: the source is explicit that this is a hypothesis with one
+measurement behind it and that the systematic study is future work. It is
+filed because the recipes built on it are in the record and this is the
+reason they give. Compare the standing guidance that repetition past about
+four epochs stops paying; the claim here is that the relevant quantity is
+not epoch count but epoch size relative to the window.

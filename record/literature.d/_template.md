@@ -23,9 +23,13 @@ tags:
 # The arXiv posting month, from the id: 2205.11487 → 2022-05.
 date: '2026-01-01'
 
-# REQUIRED, and the reason two papers in this corpus had to be identified by
-# hand during the migration. Bare id, no version suffix.
+# A SOURCE is required — at least one of these three, enforced (ADR-009).
+# Prefer them in this order: an arXiv id or a DOI resolves through a remote
+# and can be pinned; a URL is a string nothing can check. Bare id, no
+# version suffix. Delete the lines you don't use.
 arxiv: '0000.00000'
+# doi: '10.0000/example'
+# url: 'https://example.org/report'
 
 first_author: 'Surname'
 

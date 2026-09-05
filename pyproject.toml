@@ -11,7 +11,7 @@ dependencies = [
     "pyyaml", # todo: deprecate in favor of omegaconf
     "omegaconf",
     "llamero",
-    "luria>=0.4.2",
+    "luria>=0.8.0",
 ]
 
 [project.optional-dependencies]

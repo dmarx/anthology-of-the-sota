@@ -35,8 +35,10 @@ still does. Collapsing them is what the old schema did, and
 
 - **Every practice names a `source:`.** A recommendation with no paper behind
   it fails the lint. If the paper is not in the record, `luria new lit` first.
-- **Every note names an `arxiv:`.** Two papers reached the old corpus without
-  one; that is now impossible.
+- **Every note names a source.** At least one of `arxiv:`, `doi:`, `url:`,
+  in that order of preference — the first two resolve through a remote, a
+  URL is a string nothing can check ([ADR-009](record/decisions.d/ADR-009.md)). Two papers reached the old
+  corpus with no identifier at all; that is now impossible.
 - **Exactly one primary topic**, from the seven in
   `record/practices.d/tags.yaml`. Secondary tags are free, but add one only
   when it is true — the import deliberately adds none.

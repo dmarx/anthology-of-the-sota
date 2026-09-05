@@ -4,10 +4,10 @@
 
 Moving off the YAML registry, and what happens to it.
 
-3 of 8 decisions. Back to the [full index](../README.md).
+3 of 9 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [ADR-001](../../../record/decisions.d/ADR-001.md) | Keep the anthology in a Luria record rather than in YAML the build reads | The YAML already modelled a knowledge record — statuses, supersession, an attic, a topic taxonomy — but nothing checked any of it, and three of the four were provably inert. Adopting Luria keeps the model and attaches the checks. Rejected: writing bespoke validators against the existing schema, which is the same work without the generated views or the citation graph. | Active |
-| [ADR-006](../../../record/decisions.d/ADR-006.md) | Generate the registry from the record instead of checking it in | `registry.yaml` and `REGISTRY.md` are already derived from `research.yaml` and committed as though they were sources. Once the record is ground truth they should be built from it as artifacts for the frontend. Proposed, not Active: the inversion is phase 4 and the frontend contract has not been checked yet. | Superseded — by [ADR-008](../../../record/decisions.d/ADR-008.md), which retires the pipeline rather than inverting it |
+| [ADR-006](../../../record/decisions.d/ADR-006.md) | Generate the registry from the record instead of checking it in | `registry.yaml` and `REGISTRY.md` are already derived from `research.yaml` and committed as though they were sources. Once the record is ground truth they should be built from it as artifacts for the frontend. Proposed, not Active: the inversion is phase 4 and the frontend contract has not been checked yet. | Superseded — by [ADR-008](../../../record/decisions.d/ADR-008.md); by [ADR-008](../../../record/decisions.d/ADR-008.md), which retires the pipeline rather than inverting it |
 | [ADR-008](../../../record/decisions.d/ADR-008.md) | Retire the registry pipeline and publish the record itself | [ADR-006](../../../record/decisions.d/ADR-006.md) proposed generating registry.yaml from the record so the frontend could keep consuming it. Publishing the record directly is simpler and removes the projection rather than inverting it: luria stages the record as a site, so the registry builder, REGISTRY.md and the bespoke frontend all retire together. Supersedes [ADR-006](../../../record/decisions.d/ADR-006.md). | Active |

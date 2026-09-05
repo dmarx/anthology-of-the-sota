@@ -21,8 +21,8 @@ because they are worth reading.
 
 ## By topic
 
-**[Training optimization](tags/training-optimization.md)** (22) — optimizers, schedules, batch size, scaling laws, training dynamics:
-[001](../../record/literature.d/LIT-001.md) · [006](../../record/literature.d/LIT-006.md) · [009](../../record/literature.d/LIT-009.md) · [010](../../record/literature.d/LIT-010.md) · [011](../../record/literature.d/LIT-011.md) · [012](../../record/literature.d/LIT-012.md) · [013](../../record/literature.d/LIT-013.md) · [017](../../record/literature.d/LIT-017.md) · [018](../../record/literature.d/LIT-018.md) · [028](../../record/literature.d/LIT-028.md) · [037](../../record/literature.d/LIT-037.md) · [040](../../record/literature.d/LIT-040.md) · [042](../../record/literature.d/LIT-042.md) · [044](../../record/literature.d/LIT-044.md) · [052](../../record/literature.d/LIT-052.md) · [058](../../record/literature.d/LIT-058.md) · [068](../../record/literature.d/LIT-068.md) · [090](../../record/literature.d/LIT-090.md) · [092](../../record/literature.d/LIT-092.md) · [101](../../record/literature.d/LIT-101.md) · [105](../../record/literature.d/LIT-105.md) · [114](../../record/literature.d/LIT-114.md)
+**[Training optimization](tags/training-optimization.md)** (23) — optimizers, schedules, batch size, scaling laws, training dynamics:
+[001](../../record/literature.d/LIT-001.md) · [006](../../record/literature.d/LIT-006.md) · [009](../../record/literature.d/LIT-009.md) · [010](../../record/literature.d/LIT-010.md) · [011](../../record/literature.d/LIT-011.md) · [012](../../record/literature.d/LIT-012.md) · [013](../../record/literature.d/LIT-013.md) · [017](../../record/literature.d/LIT-017.md) · [018](../../record/literature.d/LIT-018.md) · [028](../../record/literature.d/LIT-028.md) · [037](../../record/literature.d/LIT-037.md) · [040](../../record/literature.d/LIT-040.md) · [042](../../record/literature.d/LIT-042.md) · [044](../../record/literature.d/LIT-044.md) · [052](../../record/literature.d/LIT-052.md) · [058](../../record/literature.d/LIT-058.md) · [068](../../record/literature.d/LIT-068.md) · [090](../../record/literature.d/LIT-090.md) · [092](../../record/literature.d/LIT-092.md) · [101](../../record/literature.d/LIT-101.md) · [105](../../record/literature.d/LIT-105.md) · [114](../../record/literature.d/LIT-114.md) · [119](../../record/literature.d/LIT-119.md)
 
 **[Systems optimization](tags/systems-optimization.md)** (4) — hardware utilization, kernels, compilation, numerical precision:
 [063](../../record/literature.d/LIT-063.md) · [066](../../record/literature.d/LIT-066.md) · [103](../../record/literature.d/LIT-103.md) · [116](../../record/literature.d/LIT-116.md)
@@ -56,6 +56,9 @@ because they are worth reading.
 
 **[Analysis and evaluation](tags/analysis-and-evaluation.md)** (6) — theory, interpretability, benchmarks, measurement, debugging:
 [014](../../record/literature.d/LIT-014.md) · [019](../../record/literature.d/LIT-019.md) · [031](../../record/literature.d/LIT-031.md) · [041](../../record/literature.d/LIT-041.md) · [057](../../record/literature.d/LIT-057.md) · [085](../../record/literature.d/LIT-085.md)
+
+**[Tiny-Models](tags/tiny-models.md)** (1):
+[119](../../record/literature.d/LIT-119.md)
 
 ## Chronological
 
@@ -101,7 +104,7 @@ What the status column means in this scheme — the words are luria's, the meani
 | [LIT-028](../../record/literature.d/LIT-028.md) | Scaling Laws for Neural Language Models | Kaplan et al. (2020), [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361). Power-law scaling relationships. | Active |
 | [LIT-029](../../record/literature.d/LIT-029.md) | On Layer Normalization in the Transformer Architecture | Xiong et al. (2020), [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). RMSNorm pre-norm permits stable training at scale w/reduced overhead relative to full LayerNorm. | Active |
 | [LIT-030](../../record/literature.d/LIT-030.md) | GLU Variants Improve Transformer | Noam et al. (2020), [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). Study of gating mechanisms. | Active |
-| [LIT-031](../../record/literature.d/LIT-031.md) | Neural Networks are Surprisingly Modular | Filan et al. (2020), [ARXIV-2003.04881](https://arxiv.org/abs/2003.04881). Analysis of neural network modularity. | Superseded — by later work on clusterability and mechanistic interpretability |
+| [LIT-031](../../record/literature.d/LIT-031.md) | Neural Networks are Surprisingly Modular | Filan et al. (2020), [ARXIV-2003.04881](https://arxiv.org/abs/2003.04881). Analysis of neural network modularity. | Superseded — by [LIT-041](../../record/literature.d/LIT-041.md), ARXIV-2110.08058; by later work on clusterability and mechanistic interpretability |
 | [LIT-032](../../record/literature.d/LIT-032.md) | PowerNorm: Rethinking Batch Normalization in Transformers | Shen et al. (2020), [ARXIV-2003.07845](https://arxiv.org/abs/2003.07845). Alternative to LayerNorm. | Active |
 | [LIT-033](../../record/literature.d/LIT-033.md) | Longformer: The Long-Document Transformer | Beltagy et al. (2020), [ARXIV-2004.05150](https://arxiv.org/abs/2004.05150). Efficient attention for long sequences. | Active |
 | [LIT-034](../../record/literature.d/LIT-034.md) | Don't Stop Pretraining: Adapt Language Models to Domains and Tasks | Gururangan et al. (2020), [ARXIV-2004.10964](https://arxiv.org/abs/2004.10964). Benefits of domain-adaptive pretraining. | Active |
@@ -112,7 +115,7 @@ What the status column means in this scheme — the words are luria's, the meani
 | [LIT-039](../../record/literature.d/LIT-039.md) | Gradient Flow in Sparse Neural Networks | Frankle et al. (2020), [ARXIV-2010.03533](https://arxiv.org/abs/2010.03533). Analysis of gradient flow in sparse networks. | Active |
 | [LIT-040](../../record/literature.d/LIT-040.md) | Scaling Laws for Autoregressive Generative Modeling | Henighan et al. (2020), [ARXIV-2010.14701](https://arxiv.org/abs/2010.14701). Universal scaling behaviors. | Active |
 | [LIT-041](../../record/literature.d/LIT-041.md) | Clusterability in Neural Networks | Filan et al. (2021), [ARXIV-2103.03386](https://arxiv.org/abs/2103.03386). Larger models develop more modular features. | Rejected — the result does not look interesting enough to carry |
-| [LIT-042](../../record/literature.d/LIT-042.md) | SGDR++: Improving Stochastic Gradient Descent with Restarts | Ruder et al. (2021), [ARXIV-2103.11851](https://arxiv.org/abs/2103.11851). Enhanced restart scheduling. | Superseded — single-cycle cosine decay proved better at scale |
+| [LIT-042](../../record/literature.d/LIT-042.md) | SGDR++: Improving Stochastic Gradient Descent with Restarts | Ruder et al. (2021), [ARXIV-2103.11851](https://arxiv.org/abs/2103.11851). Enhanced restart scheduling. | Superseded — by [LIT-035](../../record/literature.d/LIT-035.md); single-cycle cosine decay proved better at scale |
 | [LIT-043](../../record/literature.d/LIT-043.md) | Efficient Large Scale Language Model Training on GPU Clusters | Narayanan et al. (2021), [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). 3D parallel training strategy. | Active |
 | [LIT-044](../../record/literature.d/LIT-044.md) | Hard Negative Mining in Contrastive Learning | Robinson et al. (2021), [ARXIV-2104.08892](https://arxiv.org/abs/2104.08892). Importance of negative sample selection. | Rejected — needs per-case tuning, no consistent cross-domain benefit |
 | [LIT-045](../../record/literature.d/LIT-045.md) | RoFormer: Enhanced Transformer with Rotary Position Embedding | Su et al. (2021), [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864). Rotation-based positional encoding. | Active |
@@ -189,4 +192,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [LIT-116](../../record/literature.d/LIT-116.md) | TensorRT-LLM: A Compiler and Runtime for LLMs | Li et al. (2023), [ARXIV-2310.16386](https://arxiv.org/abs/2310.16386). Optimizing compiler design. | Active |
 | [LIT-117](../../record/literature.d/LIT-117.md) | Efficient Online Data Mixing For Language Model Pre-Training | Albalak et al. (2023), [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406). Data quality assessment metrics. | Active |
 | [LIT-118](../../record/literature.d/LIT-118.md) | PhotoMaker: Customizing Realistic Human Photos | Li et al. (2023), [ARXIV-2312.04461](https://arxiv.org/abs/2312.04461). ID-preserving generation. | Active |
+| [LIT-119](../../record/literature.d/LIT-119.md) | Falcon-H1-Tiny: A series of extremely small, yet powerful language models redefining capabilities at small scale | Falcon-LLM Team (2026), technical blogpost. Holds the parameter budget at 90M and pulls the other three levers — data strategy, architecture, optimizer — one at a time: pretraining from scratch on the target SFT or reasoning mix beats pretrain-then-finetune at this scale, Muon with learnable multipliers beats the AdamW recipe, and depth and SSM width beat MLP width. | Active |
 

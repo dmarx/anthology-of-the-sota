@@ -1,5 +1,6 @@
 ---
-status: 'Deferred — the paper is settled; how widely it is actually adopted is not'
+status: Deferred
+status_note: the paper is settled; how widely it is actually adopted is not
 title: 'Prefer AdamW''s decoupled weight decay to L2 regularization added to the loss'
 version: 1
 tags:

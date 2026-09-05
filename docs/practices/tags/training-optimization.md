@@ -4,7 +4,7 @@
 
 Learning-rate schedules, batch size, optimizers, training dynamics, scaling strategies.
 
-26 of 120 SOTA documents. Back to the [full index](../README.md).
+29 of 128 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -34,3 +34,6 @@ Learning-rate schedules, batch size, optimizers, training dynamics, scaling stra
 | [SOTA-099](../../../record/practices.d/SOTA-099.md) | Track gradient norm statistics to detect training instabilities | Luo et al. (2023), [LIT-114](../../../record/literature.d/LIT-114.md) — [ARXIV-2310.05492](https://arxiv.org/abs/2310.05492). | Active |
 | [SOTA-100](../../../record/practices.d/SOTA-100.md) | Use learning rate warmup proportional to model size | Luo et al. (2023), [LIT-114](../../../record/literature.d/LIT-114.md) — [ARXIV-2310.05492](https://arxiv.org/abs/2310.05492). | Active |
 | [SOTA-120](../../../record/practices.d/SOTA-120.md) | Prefer AdamW's decoupled weight decay to L2 regularization added to the loss | Loshchilov et al. (2017), [LIT-012](../../../record/literature.d/LIT-012.md) — [ARXIV-1711.05101](https://arxiv.org/abs/1711.05101). | Deferred — the paper is settled; how widely it is actually adopted is not |
+| [SOTA-121](../../../record/practices.d/SOTA-121.md) | Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Stable at nearly the same optimal LR as AdamW, better evaluations; used for every Falcon-H1-Tiny model. | Active |
+| [SOTA-122](../../../record/practices.d/SOTA-122.md) | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Up to 20% relative gain on MMLU, BBH and GSM8K over a Muon baseline at 200 GT. | Proposed |
+| [SOTA-126](../../../record/practices.d/SOTA-126.md) | Run DPO on tiny models for one epoch only | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. One epoch at LR 1e-6 to 3e-6 took a 90M model's IFEval from about 50 to over 65; a second epoch degraded it while the reward kept rising. | Active |

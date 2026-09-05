@@ -4,7 +4,7 @@
 
 Architecture patterns, component design, structural choices.
 
-16 of 120 SOTA documents. Back to the [full index](../README.md).
+17 of 128 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -24,3 +24,4 @@ Architecture patterns, component design, structural choices.
 | [SOTA-093](../../../record/practices.d/SOTA-093.md) | larger batch sizes are beneficial later in training due to better gradient estimates | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
 | [SOTA-094](../../../record/practices.d/SOTA-094.md) | throughput (energy efficiency) wins out over theoretically optimal sample efficiency | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
 | [SOTA-095](../../../record/practices.d/SOTA-095.md) | consider rewinding to earlier checkpoint and skipping a few batches to mitigate unusual loss spikes | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
+| [SOTA-125](../../../record/practices.d/SOTA-125.md) | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. 24–27 layers × 512 hidden and a large SSM state dimension won every ablation at 90M; 50 layers gained MMLU but halved throughput. | Proposed |

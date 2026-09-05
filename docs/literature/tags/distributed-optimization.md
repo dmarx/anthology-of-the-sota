@@ -4,7 +4,7 @@
 
 Parallelism, sharding, communication, memory, checkpointing.
 
-14 of 134 LIT documents. Back to the [full index](../README.md).
+14 of 138 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

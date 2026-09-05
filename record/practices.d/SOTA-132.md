@@ -27,12 +27,22 @@ evaluations, with up to 75% less KV cache and up to 6.3× the decoding
 throughput at 1M tokens. Kimi K3 ([LIT-131](../literature.d/LIT-131.md)) ships the layout at 2.8T
 parameters with 69 KDA layers and 24 gated-MLA layers.
 
-Conditions: the evidence is one group's fair comparison at one mid scale
-plus one production adoption at frontier scale; independent replication
-with a different linear-attention module is not in the record. The ratio
+Conditions: the controlled comparison is one group's at one mid scale. The
+layout has two independent adopters in the record with different linear
+modules — Kimi's KDA at 2.8T ([LIT-131](../literature.d/LIT-131.md)) and Alibaba's Gated DeltaNet
+([SOTA-135](SOTA-135.md)) from Qwen3-Next's 80B-A3B ([LIT-136](../literature.d/LIT-136.md)) to the dense Qwen3.8-27B
+([LIT-135](../literature.d/LIT-135.md)) — which is adoption evidence, not a second controlled comparison. The ratio
 is a knob — the paper's ablations settled on 3:1 — and the global layers
 are what keep exact retrieval intact, so they should not be removed to
 chase the throughput number.
+
+## Sequence
+
+The Gated DeltaNet paper's own H1 and H2 hybrids ([LIT-137](../literature.d/LIT-137.md), 2024) → Qwen3-Next
+ships 3:1 Gated DeltaNet to gated attention in production ([LIT-136](../literature.d/LIT-136.md),
+September 2025) → Kimi Linear's fair comparison against full attention
+([LIT-133](../literature.d/LIT-133.md), October 2025, this practice's source) → Qwen3.5, 3.6 and 3.8
+([LIT-135](../literature.d/LIT-135.md)) and Kimi K3 ([LIT-131](../literature.d/LIT-131.md)) at dense and frontier scale.
 
 ## Variations
 
@@ -46,4 +56,4 @@ other.
 
 ## Known implementations
 
-- Kimi Linear 48B-A3B, Kimi K3
+- Kimi Linear 48B-A3B, Kimi K3; Qwen3-Next, Qwen3.5, Qwen3.6-27B, Qwen3.8-27B

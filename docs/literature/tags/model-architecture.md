@@ -4,7 +4,7 @@
 
 Architectures, components, model families, multi-modal designs.
 
-23 of 134 LIT documents. Back to the [full index](../README.md).
+25 of 138 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -31,3 +31,5 @@ Architectures, components, model families, multi-modal designs.
 | [LIT-120](../../../record/literature.d/LIT-120.md) | Falcon-H1: A Family of Hybrid-Head Language Models Redefining Efficiency and Performance | Zuo et al. (2025), [ARXIV-2507.22448](https://arxiv.org/abs/2507.22448). A parallel hybrid mixer — attention heads and Mamba heads side by side in one block — from 0.5B to 34B, with a µP recipe adapted to it and multi-epoch training on high-quality data; the architecture and the memorization-window measurement [LIT-119](../../../record/literature.d/LIT-119.md) builds on. | Active |
 | [LIT-131](../../../record/literature.d/LIT-131.md) | Kimi K3: Open Frontier Intelligence | Kimi Team (2026), [ARXIV-2607.24653](https://arxiv.org/abs/2607.24653). A 2.8T-parameter, 104B-active MoE with a 1M-token context, built from three architectural changes the team had published separately — a 69:24 layerwise hybrid of Kimi Delta Attention and gated MLA, Attention Residuals, and a 896-expert LatentMoE with 16 active — for a claimed 2.5× scaling efficiency over Kimi K2, still trained with MuonClip. | Active |
 | [LIT-134](../../../record/literature.d/LIT-134.md) | Attention Residuals | Kimi Team (2026), [ARXIV-2603.15031](https://arxiv.org/abs/2603.15031). Replace the fixed, uniform residual sum with learned, input-dependent attention over preceding layers, computed from one pseudo-query per layer at O(d) parameters; a blocked form keeps it practical at scale, and at 48B parameters on 1.4T tokens it shows a 1.25× compute advantage on scaling laws for under 2% inference overhead. | Active |
+| [LIT-135](../../../record/literature.d/LIT-135.md) | Qwen3.8-27B | Qwen Team (2026), model card and release blog; no technical report. A 27B dense vision-language model with 48 Gated DeltaNet layers and 16 gated full-attention layers, an MTP draft head and a 262k native context; architecturally identical to Qwen3.6-27B four months earlier, with the generation's gains coming from post-training on agentic and coding work. | Active |
+| [LIT-136](../../../record/literature.d/LIT-136.md) | Qwen3-Next: Towards Ultimate Training & Inference Efficiency | Qwen Team (2025), release blog; no paper. An 80B-total, 3B-active MoE that first shipped the 3:1 Gated DeltaNet to gated-attention layout, native multi-token prediction, and zero-centered weight-decayed layernorm; trained on a 15T-token subset for 9.3% of Qwen3-32B's cost while matching it, with over 10× the throughput past 32k tokens. | Active |

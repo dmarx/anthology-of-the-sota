@@ -4,7 +4,7 @@
 
 Learning-rate schedules, batch size, optimizers, training dynamics, scaling strategies.
 
-32 of 133 SOTA documents. Back to the [full index](../README.md).
+32 of 135 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

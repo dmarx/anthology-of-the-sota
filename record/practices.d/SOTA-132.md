@@ -6,7 +6,16 @@ tags:
 - attention-techniques
 date: '2026-09-05'
 published: '2025-10-01'
-source: LIT-133
+source:
+# Primary: the controlled comparison against full attention. The rest is
+# what corroborates it — the shipped 3:1 layouts and the module they use
+# (ADR-010). Falcon-H1's parallel-head layout (LIT-120, LIT-119) is the
+# contrast, not support, so it stays in Variations rather than here.
+- LIT-133
+- LIT-136
+- LIT-135
+- LIT-131
+- LIT-137
 summary: >-
   Kimi Team (2025), [LIT-133](../literature.d/LIT-133.md) — three Kimi Delta Attention layers per gated-MLA layer beat full MLA at 48B/1.4T while cutting KV cache 75%; the layout [LIT-131](../literature.d/LIT-131.md) ships at 2.8T with 69 KDA and 24 MLA layers.
 ---

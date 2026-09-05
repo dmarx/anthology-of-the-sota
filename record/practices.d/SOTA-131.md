@@ -6,7 +6,8 @@ tags:
 - training-optimization
 date: '2026-09-05'
 published: '2025-07-01'
-source: LIT-132
+source:
+- LIT-132
 summary: >-
   Kimi Team (2025), [LIT-132](../literature.d/LIT-132.md) — MuonClip carried a 1T/32B MoE through 15.5T tokens with zero loss spikes where plain Muon let attention logits pass 1000; confirmed at 2.8T in [LIT-131](../literature.d/LIT-131.md).
 ---

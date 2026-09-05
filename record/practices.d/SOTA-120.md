@@ -7,7 +7,8 @@ tags:
 - training-optimization
 date: '2026-08-24'
 published: '2017-11-01'
-source: LIT-012
+source:
+- LIT-012
 summary: >-
   Loshchilov et al. (2017), [LIT-012](../literature.d/LIT-012.md) — [ARXIV-1711.05101](https://arxiv.org/abs/1711.05101).
 ---

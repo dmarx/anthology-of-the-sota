@@ -6,7 +6,8 @@ tags:
 - training-optimization
 date: '2026-09-05'
 published: '2022-03-01'
-source: LIT-148
+source:
+- LIT-148
 summary: >-
   Yang and Hu (2022), [LIT-148](../literature.d/LIT-148.md) — under the Maximal Update Parametrization the optimal learning rate and friends are stable across width, so tune small and transfer zero-shot; GPT-3 6.7B beaten at 7% of its pretraining cost in tuning. Used by Falcon-H1, MiniCPM and the Power scheduler.
 ---

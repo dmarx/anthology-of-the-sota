@@ -6,7 +6,8 @@ tags:
 - training-optimization
 date: '2026-08-24'
 published: '2017-08-01'
-source: LIT-009
+source:
+- LIT-009
 summary: >-
   You et al. (2017), [LIT-009](../literature.d/LIT-009.md) — [ARXIV-1708.03888](https://arxiv.org/abs/1708.03888).
 ---

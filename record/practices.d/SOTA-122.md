@@ -7,7 +7,8 @@ tags:
 - tiny-models
 date: '2026-09-05'
 published: '2026-01-15'
-source: LIT-119
+source:
+- LIT-119
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Up to 20% relative gain on MMLU, BBH and GSM8K over a Muon baseline at 200 GT.
 ---

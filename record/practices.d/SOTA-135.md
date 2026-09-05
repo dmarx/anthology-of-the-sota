@@ -6,7 +6,8 @@ tags:
 - attention-techniques
 date: '2026-09-05'
 published: '2024-12-01'
-source: LIT-137
+source:
+- LIT-137
 summary: >-
   Yang et al. (2024), [LIT-137](../literature.d/LIT-137.md) — beats Mamba2 and DeltaNet across language modelling, retrieval and long context at 1.3B/100B; the recurrence the Qwen hybrids use for three layers in four, and the one Kimi Delta Attention extends.
 ---

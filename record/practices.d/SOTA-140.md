@@ -6,7 +6,8 @@ tags:
 - training-optimization
 date: '2026-09-05'
 published: '2024-04-01'
-source: LIT-144
+source:
+- LIT-144
 summary: >-
   Hu et al. (2024), [LIT-144](../literature.d/LIT-144.md), with the controlled comparison in [LIT-145](../literature.d/LIT-145.md) — matches or beats cosine, leaves the token budget open, makes every stable-stage checkpoint a usable branch point; the schedule of every 2025–2026 report in the record.
 ---

@@ -6,7 +6,8 @@ tags:
 - model-architecture
 date: '2026-09-05'
 published: '2026-03-01'
-source: LIT-134
+source:
+- LIT-134
 summary: >-
   Kimi Team (2026), [LIT-134](../literature.d/LIT-134.md) — Attention Residuals: a per-layer pseudo-query chooses which earlier layers to read, at O(d) parameters per layer; 1.25× compute advantage on scaling laws at 48B/1.4T, adopted in Kimi K3.
 ---

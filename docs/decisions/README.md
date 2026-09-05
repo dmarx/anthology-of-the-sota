@@ -19,17 +19,20 @@ File one with `luria new adr`.
 
 ## By tag
 
-**[The record](tags/record.md)** (4) — what the schemes hold, and the rules between them:
-[001](../../record/decisions.d/ADR-001.md) · [002](../../record/decisions.d/ADR-002.md) · [004](../../record/decisions.d/ADR-004.md) · [009](../../record/decisions.d/ADR-009.md)
+**[The record](tags/record.md)** (8) — what the schemes hold, and the rules between them:
+[001](../../record/decisions.d/ADR-001.md) · [002](../../record/decisions.d/ADR-002.md) · [004](../../record/decisions.d/ADR-004.md) · [009](../../record/decisions.d/ADR-009.md) · [010](../../record/decisions.d/ADR-010.md) · [011](../../record/decisions.d/ADR-011.md) · [012](../../record/decisions.d/ADR-012.md) · [013](../../record/decisions.d/ADR-013.md)
 
 **[Taxonomy](tags/taxonomy.md)** (1) — the topic vocabulary and what enforces it:
 [003](../../record/decisions.d/ADR-003.md)
 
-**[Mechanism](tags/mechanism.md)** (3) — identifiers, generation, the lint:
-[005](../../record/decisions.d/ADR-005.md) · [007](../../record/decisions.d/ADR-007.md) · [009](../../record/decisions.d/ADR-009.md)
+**[Mechanism](tags/mechanism.md)** (6) — identifiers, generation, the lint:
+[005](../../record/decisions.d/ADR-005.md) · [007](../../record/decisions.d/ADR-007.md) · [009](../../record/decisions.d/ADR-009.md) · [010](../../record/decisions.d/ADR-010.md) · [011](../../record/decisions.d/ADR-011.md) · [012](../../record/decisions.d/ADR-012.md)
 
 **[Migration](tags/migration.md)** (3) — moving off the YAML registry, and what happens to it:
 [001](../../record/decisions.d/ADR-001.md) · [006](../../record/decisions.d/ADR-006.md) · [008](../../record/decisions.d/ADR-008.md)
+
+**[Workflow](tags/workflow.md)** (1):
+[013](../../record/decisions.d/ADR-013.md)
 
 ## Chronological
 
@@ -44,4 +47,8 @@ File one with `luria new adr`.
 | [ADR-007](../../record/decisions.d/ADR-007.md) | One workflow commits generated files, and it marks its commits to skip CI | Two workflows regenerated and committed to the same branch, and the second one landed after the job that linted the first — leaving the branch tip unchecked and opening a gated run nobody approves. Generation is now one job whose commit carries the skip marker. Rejected: keeping both and marking the generated files unscannable, which treats the symptom. | Active |
 | [ADR-008](../../record/decisions.d/ADR-008.md) | Retire the registry pipeline and publish the record itself | [ADR-006](../../record/decisions.d/ADR-006.md) proposed generating registry.yaml from the record so the frontend could keep consuming it. Publishing the record directly is simpler and removes the projection rather than inverting it: luria stages the record as a site, so the registry builder, REGISTRY.md and the bespoke frontend all retire together. Supersedes [ADR-006](../../record/decisions.d/ADR-006.md). | Active |
 | [ADR-009](../../record/decisions.d/ADR-009.md) | Require a source of any kind for a note, not an arXiv identifier | `LIT` required `arxiv:`, and the first technical report worth filing had never been posted there. The requirement is now a field group — at least one of `arxiv:`, `doi:`, `url:` — with a DOI remote so the second kind resolves like the first. Rejected: filing the report under its parent paper's id, which cites the wrong document; and dropping the requirement, which is [DP-001](../../docs/design-principles.md#dp-1)'s failure mode. | Active |
+| [ADR-010](../../record/decisions.d/ADR-010.md) | A practice names every source it rests on, not one | `source:` held a single code while practices routinely leaned on several papers — [SOTA-132](../../record/practices.d/SOTA-132.md)'s body cites seven and its field named one — so the structured field disagreed with the prose and only the prose was true. It is now a list. Rejected: keeping one source and a `see also` convention, which is the state that hid 39 unsourced practices; and a separate `corroborated_by:`, which asks filers to grade evidence they have not weighed. | Active |
+| [ADR-011](../../record/decisions.d/ADR-011.md) | Lineage between documents is a field, not a paragraph repeated in every note | Ten named chains — schedule, residual, Muon, sparse-attention — are the record's most-cited content and exist only as prose, re-described in each participating note, so they drift: two notes both claimed a comparison did not exist and both were wrong on the same day. Proposes `extends:` and `compared_against:` alongside the existing `superseded_by:`, with the chain as a generated view. | Proposed |
+| [ADR-012](../../record/decisions.d/ADR-012.md) | A practice declares its altitude, and one with no body cannot claim to be a design decision | "Pin memory for CPU-GPU transfers" and "Use Muon in place of AdamW" are both `SOTA` documents with equal standing, and 103 of 144 practices have no body at all — the registry's apparent weight is mostly one synthetic note's bullet lists. Proposes a `kind:` field and a lint tying substance to altitude. | Proposed |
+| [ADR-013](../../record/decisions.d/ADR-013.md) | Codes are allocated at merge, not at filing | Two branches open the same afternoon both minted [LIT-144](../../record/literature.d/LIT-144.md) and [LIT-145](../../record/literature.d/LIT-145.md) for different papers, and the collision was caught by hand. Luria has `allocate = "merge"` and temporary codes for exactly this; the record adopts it. Rejected: reserving ranges per contributor, and merging often enough to avoid overlap. | Active |
 

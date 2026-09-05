@@ -6,7 +6,8 @@ tags:
 - training-optimization
 date: '2026-09-05'
 published: '2026-06-01'
-source: LIT-139
+source:
+- LIT-139
 summary: >-
   DeepSeek-AI (2026), [LIT-139](../literature.d/LIT-139.md) — 4K, then 16K, 64K and 1M over 32–33T tokens, with sparse attention introduced at the 64K stage; Kimi K3 ([LIT-131](../literature.d/LIT-131.md)) reaches 1M the same way.
 ---

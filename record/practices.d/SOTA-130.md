@@ -5,6 +5,11 @@ promote_when: >-
   and the same data, on a base whose pre-RL reasoning behaviour is reported.
   LIT-167 makes *which base* the live variable, so a result that does not
   control for it cannot settle this.
+consensus: contested
+consensus_note: >-
+  LIT-167 finds the base model already exhibits the behaviour the track
+  attributes to RLVR, and the source itself ships the SFT path for the
+  models it releases.
 title: 'Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model'
 version: 1
 tags:

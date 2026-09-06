@@ -5,6 +5,11 @@ promote_when: >-
   group's schedule comparison with the peak retuned per schedule. A decay-
   to-zero result sharing one peak learning rate across schedules compares
   peaks, not schedules.
+consensus: emerging
+consensus_note: >-
+  One group's large study, with LIT-145's cooldown pointing the same way —
+  and the frontier recipes in this record still decay to a floor. Nobody
+  argues it is wrong; the field has not moved.
 title: 'Decay the learning rate linearly all the way to zero'
 version: 1
 tags:

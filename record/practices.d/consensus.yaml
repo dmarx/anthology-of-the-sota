@@ -1,0 +1,47 @@
+# How far the FIELD has converged on a practice — which is not the same
+# question as whether this record endorses it.
+#
+# `status:` is our editorial position. It cannot say "shipped in production at
+# one lab and disputed by two others", and mHC is exactly that: a design in a
+# 1.6T-parameter model, attacked by two independent groups within a month, and
+# `Proposed` here. Three facts, one field, until this file existed (ADR-015).
+#
+# The two axes are genuinely orthogonal, and the useful cases are the corners.
+# `Deferred` + `converged` is a practice everybody follows that we have not
+# satisfied ourselves is deliberate. `Active` + `contested` is this record
+# being ahead of the field and saying so — which is a thing an anthology
+# should be able to do, not a contradiction.
+#
+# `unassessed` is the default and most of the corpus carries it. That is
+# honest rather than lazy: a consensus reading is a judgement about a
+# community, it needs grounds, and a value invented to fill a column is worse
+# than an admission. What the record knows, it says; what it has not looked
+# at, it counts.
+
+unassessed:
+  label: Not judged
+  blurb: nobody has assessed where the field stands on this; the default, and
+    true of most of the corpus
+
+unreplicated:
+  label: One source
+  blurb: one group, one result — nobody has agreed or disagreed yet, which is
+    not the same as contested, where people looked and differed
+
+contested:
+  label: In dispute
+  blurb: credible groups publicly disagree, now — the fork in a line of work,
+    whose trunk is agreed and whose branches are not
+
+emerging:
+  label: Spreading
+  blurb: several independent groups, moving toward default without being there
+
+converged:
+  label: Agreed
+  blurb: the field agrees and dissent is marginal, whether or not each
+    adopter made the choice deliberately
+
+universal:
+  label: Assumed
+  blurb: not doing it is what needs justifying

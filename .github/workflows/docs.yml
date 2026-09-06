@@ -84,9 +84,9 @@ jobs:
           llamero build_template docs/readme --commit=False
           llamero build_template docs/readme_llm --commit=False
       - id: generate
-        uses: dmarx/luria/actions/generate@61670b152dc634e1b7f41e58a0a88029256a57f8
+        uses: dmarx/luria/actions/generate@ce12b3397281792876e672faa8456859a799fee8
         with:
-          pip-spec: git+https://github.com/dmarx/luria@61670b152dc634e1b7f41e58a0a88029256a57f8
+          pip-spec: git+https://github.com/dmarx/luria@ce12b3397281792876e672faa8456859a799fee8
           # Assign real numbers to merge-allocated temporary codes
           # (LU-ADR-049) — only where merges serialize, never on a pull
           # request. Harmless if no scheme sets `allocate = "merge"`.
@@ -103,9 +103,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - uses: dmarx/luria/actions/lint@61670b152dc634e1b7f41e58a0a88029256a57f8
+      - uses: dmarx/luria/actions/lint@ce12b3397281792876e672faa8456859a799fee8
         with:
-          pip-spec: git+https://github.com/dmarx/luria@61670b152dc634e1b7f41e58a0a88029256a57f8
+          pip-spec: git+https://github.com/dmarx/luria@ce12b3397281792876e672faa8456859a799fee8
 
   collect:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
@@ -117,7 +117,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install git+https://github.com/dmarx/luria@61670b152dc634e1b7f41e58a0a88029256a57f8
+      - run: pip install git+https://github.com/dmarx/luria@ce12b3397281792876e672faa8456859a799fee8
       - run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

@@ -49,9 +49,9 @@ jobs:
         with:
           python-version: "3.12"
       - id: site
-        uses: dmarx/luria/actions/site@61670b152dc634e1b7f41e58a0a88029256a57f8
+        uses: dmarx/luria/actions/site@ce12b3397281792876e672faa8456859a799fee8
         with:
-          pip-spec: git+https://github.com/dmarx/luria@61670b152dc634e1b7f41e58a0a88029256a57f8
+          pip-spec: git+https://github.com/dmarx/luria@ce12b3397281792876e672faa8456859a799fee8
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ steps.site.outputs.path }}

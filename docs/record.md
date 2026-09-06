@@ -28,6 +28,9 @@ Every entry carries `status`, `title`, `tags` and `date`, and one standard field
 **`SOTA`**
 
 - `source` — required, one or more `LIT` codes (luria.toml: schemes.SOTA.references.source)
+- `extends` — optional, one or more `SOTA` codes when present (luria.toml: schemes.SOTA.references.extends)
+- `compared_against` — optional, one or more `SOTA` codes when present (luria.toml: schemes.SOTA.references.compared_against)
+- `consensus` — one of `unassessed`, `unreplicated`, `contested`, `emerging`, `converged`, `universal`; absent means `unassessed` (luria.toml: schemes.SOTA.fields.consensus; record/practices.d/consensus.yaml: values)
 - `promote_when` — required when `status` is `Proposed`, `Deferred` (luria.toml: schemes.SOTA.fields.promote_when)
 - `primary_topic` — exactly one of `attention-techniques`, `data-pipeline`, `distributed-optimization`, `model-architecture`, `model-stability`, `systems-optimization`, `training-optimization` (luria.toml: schemes.SOTA.tag_groups.primary_topic)
 
@@ -88,6 +91,7 @@ Everything not listed here is at Luria's default.
 | `issue_url` | `https://github.com/dmarx/anthology-of-the-sota/issues/{n}` | *empty* |
 | `code.globs` | `src/**/*.py`, `docs/**/*.j2` | *empty* |
 | `code.historical` | `CHANGELOG.md`, `README.md` | `CHANGELOG.md` |
+| `chains.practice` | *6 keys set* | *unset* |
 | `chains.lineage` | *5 keys set* | *unset* |
 | `lint.narrow_terms` | `adam`, `adamw`, `batchnorm`, `layernorm`, `transformer`, `llama2`, `flash-attention`, `arxiv`, `registry` | *empty* |
 | `site.icon` | `assets/logo.svg` | *empty* |

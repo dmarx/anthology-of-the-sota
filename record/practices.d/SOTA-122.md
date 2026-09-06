@@ -4,6 +4,11 @@ promote_when: >-
   An independent group training with learnable multipliers themselves. A
   group confirming the weight-decay equilibrium this practice diagnoses is
   not it — LIT-153 did that, at 1.2B, without adopting the remedy.
+consensus: unreplicated
+consensus_note: >-
+  One team, one architecture family. LIT-153 confirmed the diagnosis from an
+  independent group and adopted a different remedy, which is not agreement
+  or disagreement about this one.
 title: 'Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD'
 version: 1
 tags:

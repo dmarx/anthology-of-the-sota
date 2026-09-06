@@ -6,6 +6,13 @@ promote_when: >-
   that finds it does not happen, or a production report at depth whose
   streams stay distinct. A further independent evaluation that does not test
   the constraint is not the missing evidence — one already arrived.
+consensus: contested
+consensus_note: >-
+  Two independent groups attacked the doubly-stochastic constraint within a
+  month of each other, by different arguments and with opposite remedies
+  (LIT-151, LIT-181), while it ships at 1.6T in DeepSeek-V4. Production
+  adoption and public dispute at once, which is the state `status:` alone
+  could not express.
 title: 'Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections)'
 version: 1
 tags:
@@ -14,6 +21,10 @@ date: '2026-09-05'
 published: '2025-12-01'
 source:
 - LIT-140
+extends:
+- SOTA-137
+compared_against:
+- SOTA-133
 summary: >-
   Xie et al. (2025), [LIT-140](../literature.d/LIT-140.md) — hyper-connections with the residual-mixing matrix constrained to be doubly stochastic, so identity mapping survives; 6–7% overhead at 3B–27B, shipped in DeepSeek-V4.
 ---

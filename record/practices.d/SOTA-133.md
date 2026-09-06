@@ -1,5 +1,9 @@
 ---
 status: Active
+consensus: emerging
+consensus_note: >-
+  One group's design, one production adoption (LIT-131), and one third-party
+  evaluation in someone else's harness (LIT-152). Moving, not arrived.
 title: 'Replace fixed residual accumulation with learned attention over preceding layers'
 version: 1
 tags:
@@ -11,6 +15,8 @@ source:
 # (ADR-010).
 - LIT-134
 - LIT-152
+compared_against:
+- SOTA-136
 summary: >-
   Kimi Team (2026), [LIT-134](../literature.d/LIT-134.md) — Attention Residuals: a per-layer pseudo-query chooses which earlier layers to read, at O(d) parameters per layer; 1.25× compute advantage on scaling laws at 48B/1.4T, adopted in Kimi K3.
 ---

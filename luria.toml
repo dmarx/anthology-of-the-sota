@@ -37,8 +37,17 @@ allocate = "merge"
 # all the evidence it rests on instead of one paper. The first entry is the
 # primary source; the rest corroborate. Without `many` a list would be
 # stringified and only its first code checked.
+#
+# `extends:` and `compared_against:` are the same two relations the literature
+# carries (ADR-011), at the practice layer. A practice line and a paper line
+# are not the same shape: papers fork where the *designs* differ, practices
+# fork where the *recommendations* do, and a fork can exist at one level and
+# not the other. Declared so the fork this record already argues about — a
+# widened residual stream, mixed how? — is structure rather than paragraphs.
 [luria.schemes.SOTA.references]
-source = { scheme = "LIT", required = true, many = true }
+source           = { scheme = "LIT",  required = true,  many = true }
+extends          = { scheme = "SOTA", required = false, many = true }
+compared_against = { scheme = "SOTA", required = false, many = true }
 
 # A provisional practice must say what would settle it (ADR-014). Required
 # only at the statuses where something is actually pending: an Active
@@ -48,6 +57,22 @@ source = { scheme = "LIT", required = true, many = true }
 # is the error that produced the decision.
 [luria.schemes.SOTA.fields.promote_when]
 required_when = { status = ["Proposed", "Deferred"] }
+
+# Lineage between practices, the same two relations the literature carries
+# (ADR-011). A practice line and a paper line are not the same shape: the
+# papers fork where the *designs* differ, the practices fork where the
+# *recommendations* do, and a fork can exist at one level and not the other.
+# Declared here so the fork the record already argues about — a widened
+# residual stream, mixed how? — is structure rather than three paragraphs.
+# What the FIELD thinks, as distinct from what this record asserts
+# (ADR-015). `status:` is our editorial position and cannot express "shipped
+# in production at one lab, disputed by two others". A second axis can, and
+# the two are orthogonal — a `Deferred` practice can be `converged` and an
+# `Active` one `contested`. Defaulted rather than required: a consensus
+# reading needs grounds, and most of the corpus honestly has none.
+[luria.schemes.SOTA.fields.consensus]
+vocabulary = "consensus"
+default    = "unassessed"
 
 # The topic consolidation, enforced. Seven categories, exactly one primary
 # per practice; secondary tags are unconstrained. The vocabulary and the
@@ -197,6 +222,19 @@ narrow_terms = ["adam", "adamw", "batchnorm", "layernorm", "transformer",
 # came to claim on the same day that a comparison did not exist. Walked from
 # the fields above and rendered once (ADR-011). Order, title and status
 # only: each note keeps explaining its own step.
+# The practice line, walked from the fields above. Separate from the paper
+# line because they answer different questions: what did this *paper* build
+# on, versus what does this *recommendation* replace.
+[luria.chains.practice]
+scheme   = "SOTA"
+relation = "extends"
+sibling  = "compared_against"
+output   = "docs/practice-lines.md"
+title    = "Lines of practice"
+# Show consensus beside status, which is the whole reason both axes exist:
+# without it the page renders an agreed trunk and a disputed fork the same.
+annotate = "consensus"
+
 [luria.chains.lineage]
 scheme   = "LIT"
 relation = "extends"

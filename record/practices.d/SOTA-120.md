@@ -5,6 +5,11 @@ promote_when: >-
   A survey or a frontier training report that states which of the two it
   uses, rather than leaving the choice implicit in a config. The result is
   not in question; what is unmeasured is how many people act on it.
+consensus: converged
+consensus_note: >-
+  AdamW is the default optimizer, so decoupled decay is what nearly everyone
+  runs — deliberately or not. The gap between that and this practice's
+  `Deferred` status is the point of having two axes.
 title: 'Prefer AdamW''s decoupled weight decay to L2 regularization added to the loss'
 version: 1
 tags:

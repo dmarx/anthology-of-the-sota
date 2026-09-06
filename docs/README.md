@@ -9,6 +9,8 @@ The generated views. This directory is for *reading*; filing happens in
   recommendation, each citing its source.
 - [Literature](literature/README.md) — the evidence base, one note per paper,
   including the attic.
+- [Lines of practice](practice-lines.md) — the same shape one level up: what
+  a *recommendation* replaced, and where the record's recommendations fork.
 - [Lines of work](lineage.md) — the sequences: what replaced what, and which
   designs have been measured against each other. Walked from the `extends:`
   and `compared_against:` fields, so it cannot go stale the way the

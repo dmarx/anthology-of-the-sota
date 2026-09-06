@@ -4,6 +4,10 @@ promote_when: >-
   A measurement of the memorization window at a second model scale, by
   anyone, so the linear-in-parameters assumption can be checked instead of
   assumed. The source offers one point and calls the scaling a conjecture.
+consensus: unreplicated
+consensus_note: >-
+  The source calls it a hypothesis with one measurement behind it and the
+  systematic study future work. Nobody has contradicted it either.
 title: 'Repeat high-quality data freely when its epoch size exceeds the model''s memorization window'
 version: 1
 tags:

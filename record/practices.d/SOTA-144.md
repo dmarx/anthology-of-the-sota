@@ -5,6 +5,10 @@ promote_when: >-
   transfer. A result that reaches depth transfer by another mechanism is not
   it — LIT-153 did that, and two routes to one property is evidence the
   property is reachable, not that this route works.
+consensus: unreplicated
+consensus_note: >-
+  One group and one paper, with no production report in the record trained
+  under it.
 title: 'Extend µP''s transfer to depth with CompleteP so one sweep serves deeper models too'
 version: 1
 tags:

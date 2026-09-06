@@ -1,3 +1,14 @@
+# DEMONSTRATION BRANCH — DO NOT MERGE.
+#
+# luria is pinned to the head of dmarx/luria#172 rather than to a release,
+# so these checks exercise the unreleased `required_when`, `template-drift`
+# and `[luria.chains]` machinery this record now declares. The released
+# 0.8.1 cannot parse this luria.toml at all — it rejects
+# `schemes.SOTA.fields.promote_when` before reading any record content.
+#
+# The real change is PR #25, which keeps the released pins and is red for
+# exactly that reason. When luria releases, #25's pins move to the version
+# number and this branch is deleted.
 # Publish the record as a browsable site on GitHub Pages (LU-ADR-042).
 #
 # `luria site` stages every page the record publishes — the decisions, the
@@ -38,7 +49,9 @@ jobs:
         with:
           python-version: "3.12"
       - id: site
-        uses: dmarx/luria/actions/site@0.4.2
+        uses: dmarx/luria/actions/site@61670b152dc634e1b7f41e58a0a88029256a57f8
+        with:
+          pip-spec: git+https://github.com/dmarx/luria@61670b152dc634e1b7f41e58a0a88029256a57f8
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ steps.site.outputs.path }}

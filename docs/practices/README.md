@@ -46,6 +46,10 @@ code and run `luria link --fix`.
 **[Tiny-Models](tags/tiny-models.md)** (8):
 [121](../../record/practices.d/SOTA-121.md) · [122](../../record/practices.d/SOTA-122.md) · [123](../../record/practices.d/SOTA-123.md) · [124](../../record/practices.d/SOTA-124.md) · [125](../../record/practices.d/SOTA-125.md) · [126](../../record/practices.d/SOTA-126.md) · [127](../../record/practices.d/SOTA-127.md) · [128](../../record/practices.d/SOTA-128.md)
 
+**By consensus:** [Not judged](consensus/unassessed.md) (134, the default) · [One source](consensus/unreplicated.md) (4) · [In dispute](consensus/contested.md) (2) · [Spreading](consensus/emerging.md) (2) · [Agreed](consensus/converged.md) (1) · [Assumed](consensus/universal.md) (1)
+
+**By status:** [Current practice](statuses/Active.md) (134) · [Promising](statuses/Proposed.md) (7) · [Not yet judged](statuses/Deferred.md) (1) · [Replaced](statuses/Superseded.md) (2) · [Retired](statuses/Rejected.md) (0)
+
 ## Chronological
 
 What the status column means in this scheme — the words are luria's, the meanings are this project's.

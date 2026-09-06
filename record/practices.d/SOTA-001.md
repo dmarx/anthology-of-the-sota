@@ -1,5 +1,9 @@
 ---
 status: 'Active'
+consensus: universal
+consensus_note: >-
+  Adam as the default optimizer is what a paper departs from rather than
+  argues for.
 title: 'Default choice for neural network training'
 version: 1
 tags:

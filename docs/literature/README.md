@@ -60,6 +60,8 @@ because they are worth reading.
 **[Tiny-Models](tags/tiny-models.md)** (2):
 [119](../../record/literature.d/LIT-119.md) · [129](../../record/literature.d/LIT-129.md)
 
+**By status:** [In the anthology](statuses/Active.md) (172) · [Watching](statuses/Proposed.md) (2) · [Unreviewed](statuses/Deferred.md) (0) · [Superseded](statuses/Superseded.md) (3) · [Attic](statuses/Rejected.md) (9)
+
 ## Chronological
 
 What the status column means in this scheme — the words are luria's, the meanings are this project's.

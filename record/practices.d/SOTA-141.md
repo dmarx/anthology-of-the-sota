@@ -1,5 +1,15 @@
 ---
 status: Proposed
+promote_when: >-
+  A frontier training report that decays to zero and says so, or a second
+  group's schedule comparison with the peak retuned per schedule. A decay-
+  to-zero result sharing one peak learning rate across schedules compares
+  peaks, not schedules.
+consensus: emerging
+consensus_note: >-
+  One group's large study, with LIT-145's cooldown pointing the same way —
+  and the frontier recipes in this record still decay to a floor. Nobody
+  argues it is wrong; the field has not moved.
 title: 'Decay the learning rate linearly all the way to zero'
 version: 1
 tags:
@@ -32,5 +42,4 @@ Why *Proposed*: one group's study, and the frontier recipes filed in the
 record still decay to a floor (Falcon-H1-Tiny's ×64 exponential decay,
 [LIT-119](../literature.d/LIT-119.md)). The claim is compatible with WSD ([SOTA-140](SOTA-140.md)) — it is about the
 end of the decay, not its start — and [LIT-145](../literature.d/LIT-145.md)'s cooldown to zero points the
-same way. Promote when a production report adopts it or a second group
-replicates it.
+same way.

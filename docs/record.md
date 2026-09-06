@@ -23,17 +23,35 @@ A code — `ADR-012` — resolves to a document, and every reference to it in th
 
 ## What an entry must carry
 
-Beyond the standard fields, what each scheme's entries must carry — compiled from `luria.toml` into the contract `luria lint` checks, with where each obligation was declared. A finding cites the same line.
+Every entry carries `title`, `tags` and `date`, and one standard field is conditional: a retiring document names its successor — `superseded_by:` when `status` is `Superseded`, unless the scheme renames the pair (ADR-071). `status` itself is listed below rather than assumed: the words are the scheme's own, declared like any other controlled vocabulary. Beyond those, what each scheme's entries must carry — compiled from `luria.toml` into the contract `luria lint` checks, with where each obligation was declared. A finding cites the same line.
 
 **`SOTA`**
 
 - `source` — required, one or more `LIT` codes (luria.toml: schemes.SOTA.references.source)
+- `extends` — optional, one or more `SOTA` codes when present (luria.toml: schemes.SOTA.references.extends)
+- `extended_by` — optional, one or more `SOTA` codes when present (luria.toml: schemes.SOTA.references.extended_by)
+- `compared_against` — optional, one or more `SOTA` codes when present (luria.toml: schemes.SOTA.references.compared_against)
+- `consensus` — one of `unassessed`, `unreplicated`, `contested`, `emerging`, `converged`, `universal`; absent means `unassessed` (luria.toml: schemes.SOTA.fields.consensus; record/practices.d/consensus.yaml: values)
+- `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.toml: schemes.SOTA.fields.status; record/practices.d/statuses.yaml: values)
+- `promote_when` — required when `status` is `Proposed`, `Deferred` (luria.toml: schemes.SOTA.fields.promote_when)
 - `primary_topic` — exactly one of `attention-techniques`, `data-pipeline`, `distributed-optimization`, `model-architecture`, `model-stability`, `systems-optimization`, `training-optimization` (luria.toml: schemes.SOTA.tag_groups.primary_topic)
 
 **`LIT`**
 
+- `extends` — optional, one or more `LIT` codes when present (luria.toml: schemes.LIT.references.extends)
+- `extended_by` — optional, one or more `LIT` codes when present (luria.toml: schemes.LIT.references.extended_by)
+- `compared_against` — optional, one or more `LIT` codes when present (luria.toml: schemes.LIT.references.compared_against)
+- `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.toml: schemes.LIT.fields.status; record/literature.d/statuses.yaml: values)
 - `source` — at least one of `arxiv`, `doi`, `url` (luria.toml: schemes.LIT.field_groups.source)
 - `primary_topic` — exactly one of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.toml: schemes.LIT.tag_groups.primary_topic)
+
+**`ADR`**
+
+- `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.toml: schemes.ADR.fields.status; record/decisions.d/statuses.yaml: values)
+
+**`DP`**
+
+- `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.toml: schemes.DP.fields.status; record/principles.d/statuses.yaml: values)
 
 ## Journals
 
@@ -85,5 +103,7 @@ Everything not listed here is at Luria's default.
 | `issue_url` | `https://github.com/dmarx/anthology-of-the-sota/issues/{n}` | *empty* |
 | `code.globs` | `src/**/*.py`, `docs/**/*.j2` | *empty* |
 | `code.historical` | `CHANGELOG.md`, `README.md` | `CHANGELOG.md` |
+| `chains.practice` | *6 keys set* | *unset* |
+| `chains.lineage` | *5 keys set* | *unset* |
 | `lint.narrow_terms` | `adam`, `adamw`, `batchnorm`, `layernorm`, `transformer`, `llama2`, `flash-attention`, `arxiv`, `registry` | *empty* |
 | `site.icon` | `assets/logo.svg` | *empty* |

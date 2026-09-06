@@ -48,6 +48,8 @@ code and run `luria link --fix`.
 
 **By consensus:** [Not judged](consensus/unassessed.md) (134, the default) · [One source](consensus/unreplicated.md) (4) · [In dispute](consensus/contested.md) (2) · [Spreading](consensus/emerging.md) (2) · [Agreed](consensus/converged.md) (1) · [Assumed](consensus/universal.md) (1)
 
+**By status:** [Current practice](statuses/Active.md) (134) · [Promising](statuses/Proposed.md) (7) · [Not yet judged](statuses/Deferred.md) (1) · [Replaced](statuses/Superseded.md) (2) · [Retired](statuses/Rejected.md) (0)
+
 ## Chronological
 
 What the status column means in this scheme — the words are luria's, the meanings are this project's.

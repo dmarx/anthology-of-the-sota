@@ -253,7 +253,7 @@ output   = "docs/practice-lines.md"
 title    = "Lines of practice"
 # Show consensus beside status, which is the whole reason both axes exist:
 # without it the page renders an agreed trunk and a disputed fork the same.
-annotate = "consensus"
+facet_by = ["status", "consensus"]
 
 [luria.chains.lineage]
 scheme   = "LIT"
@@ -261,3 +261,17 @@ relation = "extends"
 sibling  = "compared_against"
 output   = "docs/lineage.md"
 title    = "Lines of work"
+
+# `status:` declared as the controlled vocabulary it is (#181),
+# written by `luria upgrade statuses`.
+[luria.schemes.SOTA.fields.status]
+vocabulary = "statuses"
+
+[luria.schemes.LIT.fields.status]
+vocabulary = "statuses"
+
+[luria.schemes.ADR.fields.status]
+vocabulary = "statuses"
+
+[luria.schemes.DP.fields.status]
+vocabulary = "statuses"

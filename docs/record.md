@@ -29,6 +29,7 @@ Every entry carries `status`, `title`, `tags` and `date`, and one standard field
 
 - `source` — required, one or more `LIT` codes (luria.toml: schemes.SOTA.references.source)
 - `extends` — optional, one or more `SOTA` codes when present (luria.toml: schemes.SOTA.references.extends)
+- `extended_by` — optional, one or more `SOTA` codes when present (luria.toml: schemes.SOTA.references.extended_by)
 - `compared_against` — optional, one or more `SOTA` codes when present (luria.toml: schemes.SOTA.references.compared_against)
 - `consensus` — one of `unassessed`, `unreplicated`, `contested`, `emerging`, `converged`, `universal`; absent means `unassessed` (luria.toml: schemes.SOTA.fields.consensus; record/practices.d/consensus.yaml: values)
 - `promote_when` — required when `status` is `Proposed`, `Deferred` (luria.toml: schemes.SOTA.fields.promote_when)
@@ -37,6 +38,7 @@ Every entry carries `status`, `title`, `tags` and `date`, and one standard field
 **`LIT`**
 
 - `extends` — optional, one or more `LIT` codes when present (luria.toml: schemes.LIT.references.extends)
+- `extended_by` — optional, one or more `LIT` codes when present (luria.toml: schemes.LIT.references.extended_by)
 - `compared_against` — optional, one or more `LIT` codes when present (luria.toml: schemes.LIT.references.compared_against)
 - `source` — at least one of `arxiv`, `doi`, `url` (luria.toml: schemes.LIT.field_groups.source)
 - `primary_topic` — exactly one of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.toml: schemes.LIT.tag_groups.primary_topic)

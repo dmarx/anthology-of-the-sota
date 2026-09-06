@@ -46,7 +46,8 @@ allocate = "merge"
 # widened residual stream, mixed how? — is structure rather than paragraphs.
 [luria.schemes.SOTA.references]
 source           = { scheme = "LIT",  required = true,  many = true }
-extends          = { scheme = "SOTA", required = false, many = true }
+extends          = { scheme = "SOTA", required = false, many = true, converse = "extended_by" }
+extended_by      = { scheme = "SOTA", required = false, many = true, converse = "extends" }
 # A comparison is one fact, and its converse is itself — which is what makes
 # it symmetric. Declaring that is what lets `luria link --fix` write the
 # other side, so a comparison is stated once on whichever practice ran it
@@ -117,16 +118,19 @@ require = "at-least-one"
 # comparison against work that did not exist yet, so the author states it
 # once, on the note that ran the comparison.
 #
-# `extends:` deliberately declares NO converse. An `extended_by:` field
-# would be derivable from the forward declaration, and the record already
-# prefers deriving that direction — `superseded_by:` is stored with no
-# `supersedes:`. Worth revisiting if reading a trunk note alone and seeing
-# what forked from it turns out to matter; the chain page shows it today.
+# `extends:` declares `extended_by:` as its converse, so the fork in a line
+# is legible from the TRUNK and not only from the branches. LIT-140 saying
+# `extended_by: [LIT-151, LIT-181]` is the branched-conflict shape this
+# record argues about, readable without opening four other notes or the
+# chain page. Storing it is redundant with the forward declaration, which is
+# the cost; the fixer keeps the two in agreement in both directions,
+# including when a relation is withdrawn.
 #
 # Neither relation is `superseded_by:`: two live designs in different
 # production models are not a retirement.
 [luria.schemes.LIT.references]
-extends          = { scheme = "LIT", required = false, many = true }
+extends          = { scheme = "LIT", required = false, many = true, converse = "extended_by" }
+extended_by      = { scheme = "LIT", required = false, many = true, converse = "extends" }
 compared_against = { scheme = "LIT", required = false, many = true, converse = "compared_against" }
 
 # The literature is broader than the practice registry — the corpus carries

@@ -1,5 +1,10 @@
 ---
 status: Proposed
+promote_when: >-
+  An independent group training under CompleteP itself and reporting depth
+  transfer. A result that reaches depth transfer by another mechanism is not
+  it — LIT-153 did that, and two routes to one property is evidence the
+  property is reachable, not that this route works.
 title: 'Extend µP''s transfer to depth with CompleteP so one sweep serves deeper models too'
 version: 1
 tags:
@@ -28,10 +33,10 @@ range of width-to-depth ratios compute-efficient, so shape can follow the
 hardware.
 
 Why *Proposed*: one group and one paper, with no production report in the
-record trained under it. Promote on an independent depth-transfer result.
+record trained under it.
 
-One arrived that does not count, and is worth naming so the next reader does
-not count it. [LIT-153](../literature.d/LIT-153.md) reports improved learning-rate transfer across widths
+One result has already arrived that does not count, and is worth naming so
+the next reader does not count it either. [LIT-153](../literature.d/LIT-153.md) reports improved learning-rate transfer across widths
 *and depths* from an independent group — the same property this practice
 claims, by an unrelated mechanism (pinning weight-matrix norms rather than
 a depth exponent). Two routes to one property is evidence the property is

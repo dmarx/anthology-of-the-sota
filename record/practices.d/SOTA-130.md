@@ -1,5 +1,10 @@
 ---
 status: Proposed
+promote_when: >-
+  A head-to-head of RLVR-on-base against SFT-then-RLVR from the same base
+  and the same data, on a base whose pre-RL reasoning behaviour is reported.
+  LIT-167 makes *which base* the live variable, so a result that does not
+  control for it cannot settle this.
 title: 'Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model'
 version: 1
 tags:

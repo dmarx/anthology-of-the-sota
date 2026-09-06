@@ -1,5 +1,9 @@
 ---
 status: Proposed
+promote_when: >-
+  A measurement of the memorization window at a second model scale, by
+  anyone, so the linear-in-parameters assumption can be checked instead of
+  assumed. The source offers one point and calls the scaling a conjecture.
 title: 'Repeat high-quality data freely when its epoch size exceeds the model''s memorization window'
 version: 1
 tags:

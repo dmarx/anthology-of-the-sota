@@ -40,6 +40,15 @@ allocate = "merge"
 [luria.schemes.SOTA.references]
 source = { scheme = "LIT", required = true, many = true }
 
+# A provisional practice must say what would settle it (ADR-014). Required
+# only at the statuses where something is actually pending: an Active
+# practice has nothing to be waiting for, and a Superseded one's successor
+# already answers the question. The condition is prose on purpose — a
+# machine-checkable one would have to be a COUNT of evidence, and counting
+# is the error that produced the decision.
+[luria.schemes.SOTA.fields.promote_when]
+required_when = { status = ["Proposed", "Deferred"] }
+
 # The topic consolidation, enforced. Seven categories, exactly one primary
 # per practice; secondary tags are unconstrained. The vocabulary and the
 # one-primary rule both come from ADR-003, which promoted them out of the
@@ -68,6 +77,16 @@ allocate = "merge"
 [luria.schemes.LIT.field_groups.source]
 fields  = ["arxiv", "doi", "url"]
 require = "at-least-one"
+
+# Lineage, as fields rather than a paragraph repeated in every note
+# (ADR-011). `extends:` is the spine of a line — this work builds on that
+# one — and is directed; `compared_against:` is the cross-link that turns a
+# set of rivals into a comparison, and is symmetric, so a one-sided
+# declaration is a finding. Neither is `superseded_by:`: two live designs in
+# different production models are not a retirement.
+[luria.schemes.LIT.references]
+extends          = { scheme = "LIT", required = false, many = true }
+compared_against = { scheme = "LIT", required = false, many = true }
 
 # The literature is broader than the practice registry — the corpus carries
 # substantial generative-vision, theory and inference work that never
@@ -171,3 +190,16 @@ icon    = "assets/logo.svg"
 fail_on = []
 narrow_terms = ["adam", "adamw", "batchnorm", "layernorm", "transformer",
                 "llama2", "flash-attention", "arxiv", "registry"]
+
+# ── The lines of work ────────────────────────────────────────────────────
+# The sequences are the most valuable thing in this record and existed only
+# as prose, re-described in every participating note, which is how two notes
+# came to claim on the same day that a comparison did not exist. Walked from
+# the fields above and rendered once (ADR-011). Order, title and status
+# only: each note keeps explaining its own step.
+[luria.chains.lineage]
+scheme   = "LIT"
+relation = "extends"
+sibling  = "compared_against"
+output   = "docs/lineage.md"
+title    = "Lines of work"

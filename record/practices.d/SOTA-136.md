@@ -1,5 +1,11 @@
 ---
 status: Proposed
+promote_when: >-
+  A result that answers the Birkhoff-polytope objection: a measurement of
+  stream homogenization with depth under the doubly-stochastic constraint
+  that finds it does not happen, or a production report at depth whose
+  streams stay distinct. A further independent evaluation that does not test
+  the constraint is not the missing evidence — one already arrived.
 title: 'Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections)'
 version: 1
 tags:
@@ -60,8 +66,9 @@ practice at that level is the right move and is deliberately not made here:
 it changes what the document claims rather than its status, and that is a
 curation decision rather than a backlog pass.
 
-Promote when the constraint question settles, or restate the practice at the
-level its literature agrees on.
+The alternative to promoting is restating the practice at the level its
+literature agrees on — widen the residual stream and constrain the mixing —
+which all four papers hold and none of them disputes.
 
 ## Sequence and siblings
 

@@ -1,5 +1,9 @@
 ---
 status: Proposed
+promote_when: >-
+  The same parameter-budget trade run on a hybrid from another group, or at
+  a second tiny scale. What would settle this is another ablation in the 90M
+  class, not a result at a size where the trade does not bind.
 title: 'At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width'
 version: 1
 tags:

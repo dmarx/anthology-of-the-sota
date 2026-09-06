@@ -1,5 +1,9 @@
 ---
 status: Proposed
+promote_when: >-
+  An independent group training with learnable multipliers themselves. A
+  group confirming the weight-decay equilibrium this practice diagnoses is
+  not it — LIT-153 did that, at 1.2B, without adopting the remedy.
 title: 'Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD'
 version: 1
 tags:
@@ -48,10 +52,6 @@ scale its own learned parameter; Hyperball pins the Frobenius norms to
 constants and removes the degree of freedom. So an independent group above 1B
 has confirmed the *mechanism* and declined the *fix*, which the original
 condition would read as a promotion and which plainly is not one.
-
-Promote when an independent group reports gains from **learned per-row and
-per-column multipliers specifically** — not from another intervention on the
-same equilibrium.
 
 ## Known implementations
 

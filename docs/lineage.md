@@ -6,7 +6,7 @@
 
 ## From Hyper-Connections
 
-- [LIT-141](../record/literature.d/LIT-141.md) — Hyper-Connections *(Superseded — by [LIT-140](../record/literature.d/LIT-140.md); mHC restores the identity mapping that free hyper-connection mixing gave up, and scales where this did not)*
+- [LIT-141](../record/literature.d/LIT-141.md) — Hyper-Connections *(Superseded)*
   - [LIT-140](../record/literature.d/LIT-140.md) — mHC: Manifold-Constrained Hyper-Connections *(Active)*
     - [LIT-151](../record/literature.d/LIT-151.md) — oHC: Orthogonal Hyper-Connections on SO(4) via Quaternions *(Active)*
     - [LIT-181](../record/literature.d/LIT-181.md) — Beyond the Birkhoff Polytope: Spectral-Sphere-Constrained Hyper-Connections *(Active)*

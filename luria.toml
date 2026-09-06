@@ -47,7 +47,11 @@ allocate = "merge"
 [luria.schemes.SOTA.references]
 source           = { scheme = "LIT",  required = true,  many = true }
 extends          = { scheme = "SOTA", required = false, many = true }
-compared_against = { scheme = "SOTA", required = false, many = true }
+# A comparison is one fact, and its converse is itself — which is what makes
+# it symmetric. Declaring that is what lets `luria link --fix` write the
+# other side, so a comparison is stated once on whichever practice ran it
+# rather than on every member of the family (LU-ADR-tmphedn4).
+compared_against = { scheme = "SOTA", required = false, many = true, converse = "compared_against" }
 
 # A provisional practice must say what would settle it (ADR-014). Required
 # only at the statuses where something is actually pending: an Active
@@ -105,13 +109,25 @@ require = "at-least-one"
 
 # Lineage, as fields rather than a paragraph repeated in every note
 # (ADR-011). `extends:` is the spine of a line — this work builds on that
-# one — and is directed; `compared_against:` is the cross-link that turns a
-# set of rivals into a comparison, and is symmetric, so a one-sided
-# declaration is a finding. Neither is `superseded_by:`: two live designs in
-# different production models are not a retirement.
+# one — and is directed. `compared_against:` is the cross-link that turns a
+# set of rivals into a comparison, and it names ITSELF as its converse,
+# which is what symmetry is: the fact is one fact, so a one-sided
+# declaration is a finding and `luria link --fix` writes the other side
+# (LU-ADR-tmphedn4). A later paper cannot have been made to declare a
+# comparison against work that did not exist yet, so the author states it
+# once, on the note that ran the comparison.
+#
+# `extends:` deliberately declares NO converse. An `extended_by:` field
+# would be derivable from the forward declaration, and the record already
+# prefers deriving that direction — `superseded_by:` is stored with no
+# `supersedes:`. Worth revisiting if reading a trunk note alone and seeing
+# what forked from it turns out to matter; the chain page shows it today.
+#
+# Neither relation is `superseded_by:`: two live designs in different
+# production models are not a retirement.
 [luria.schemes.LIT.references]
 extends          = { scheme = "LIT", required = false, many = true }
-compared_against = { scheme = "LIT", required = false, many = true }
+compared_against = { scheme = "LIT", required = false, many = true, converse = "compared_against" }
 
 # The literature is broader than the practice registry — the corpus carries
 # substantial generative-vision, theory and inference work that never

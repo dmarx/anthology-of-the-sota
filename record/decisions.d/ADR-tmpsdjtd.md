@@ -1,0 +1,169 @@
+---
+status: Proposed
+title: 'Contested is a claim about specific other work, so it must name it'
+version: 1
+tags:
+- record
+- mechanism
+date: '2026-09-07'
+summary: >-
+  [ADR-015](ADR-015.md) gave the record a way to say the field is arguing about a practice
+  and no way to say who is arguing. The reason lived in `consensus_note:`,
+  which is rendered nowhere and so — by Luria's own rule for what counts as
+  prose — carries bare, unlinkable codes. Adds `contested_by:`, a checked LIT
+  reference required exactly when `consensus: contested`, on the ground that
+  contested is the only value on the axis that asserts a specific other
+  document exists.
+---
+
+<!-- inactive-ok-file: SOTA-130, SOTA-133, SOTA-136, SOTA-137 — the worked
+     examples are the record's two contested practices and the line they sit
+     in; a contested practice this record already endorsed would not be the
+     interesting case -->
+
+# ADR-NNN: Contested is a claim about specific other work, so it must name it
+
+## Context
+
+[ADR-015](ADR-015.md) added a second axis so the record could distinguish *we are not
+convinced* from *the field is not convinced*. It works: ten practices are
+assessed, and [SOTA-136](../practices.d/SOTA-136.md) reads `Proposed, contested` where it used to read
+`Proposed` and nothing else.
+
+Follow that word, though. A reader who clicks **In dispute** from the
+practices index lands on `docs/practices/consensus/contested.md`, whose
+columns are `# | Title | Summary | Status`. It names two practices and tells
+you nothing about the dispute. The field that holds the reason,
+`consensus_note:`, appears in no generated view at all — `grep -rl
+consensus_note docs/` returns nothing — and the codes inside it sit bare:
+
+    consensus_note: >-
+      Two independent groups attacked the doubly-stochastic constraint within
+      a month of each other, by different arguments and with opposite
+      remedies ([LIT-151](../literature.d/LIT-151.md), [LIT-181](../literature.d/LIT-181.md)), while it ships at 1.6T in DeepSeek-V4.
+
+Those two facts are one fact. Luria's list of frontmatter keys whose codes get
+linked is a constant, and the comment above it says why: *"a key is prose
+exactly when the generator renders its value as markdown somewhere… a project
+cannot make a field prose by declaring it so, because the rendering is what
+makes it true."* `consensus_note:` is not rendered, so it is correctly not
+prose, so its codes are correctly left bare. Nothing is broken upstream. The
+record simply put its answer somewhere nothing reads.
+
+**What actually directs the reader today is body prose, and only that.**
+[SOTA-136](../practices.d/SOTA-136.md)'s body links [LIT-151](../literature.d/LIT-151.md) and [LIT-181](../literature.d/LIT-181.md) and says what each one proves;
+[SOTA-130](../practices.d/SOTA-130.md)'s links [LIT-167](../literature.d/LIT-167.md). That is good writing and it is entirely
+voluntary — nothing requires it, nothing checks it, and no run would notice a
+contested practice whose body named nobody.
+
+**The two relations that come close mean something else.**
+`compared_against:` on [SOTA-136](../practices.d/SOTA-136.md) names [SOTA-133](../practices.d/SOTA-133.md), which is an alternative design
+sitting at `Active, emerging` — a rival, not an objector. And [LIT-140](../literature.d/LIT-140.md), the
+source [SOTA-136](../practices.d/SOTA-136.md) rests on, carries `extended_by: [LIT-151, LIT-181]`: those
+*are* the contesting papers, and this is the one place the dispute is
+machine-readable. But the relation is spelled "extends", so a paper refuting
+the doubly-stochastic constraint and a paper building on it are stored
+identically, and the path runs two hops through `source:` onto the other
+scheme. For [SOTA-130](../practices.d/SOTA-130.md) it does not exist at all: [LIT-130](../literature.d/LIT-130.md) carries no relation
+naming [LIT-167](../literature.d/LIT-167.md), which is reachable only from prose in two unrelated notes.
+
+## Decision
+
+A practice assessed as contested names what contests it.
+
+    [luria.schemes.SOTA.references]
+    contested_by = { scheme = "LIT", required = false, many = true,
+                     required_when = { consensus = ["contested"] } }
+
+The load-bearing observation is narrower than "annotate the consensus axis":
+**`contested` is the only value on the axis that entails a specific other
+document.** `unassessed` names nobody by definition. `converged` and
+`universal` are readings of a population, not citations. `unreplicated`
+asserts the *absence* of the second document. Only `contested` — "credible
+groups publicly disagree, **now**" — is a claim about work that exists and
+could be pointed at. So the requirement attaches to the one word that already
+implied it, rather than to the axis.
+
+That makes this the same rule as `source:`, deliberately. `source:` is the
+evidence for; `contested_by:` is the evidence against; and a recommendation
+asserting a dispute it cannot cite is the same failure as a recommendation
+with no paper behind it ([ADR-010](ADR-010.md)). It points at `LIT` for the same reason:
+what contests a recommendation is a paper, and both cases here are papers.
+
+**No converse.** Luria's converse is a mutual pair of fields within one
+scheme, and this crosses SOTA→LIT, so one is not expressible. That is the
+right shape anyway — "the practices this paper undercuts" is a fact about
+this record's editorial reading, not about the paper.
+
+**The note keeps the argument; the field carries the citation.**
+`consensus_note:` says *how* they disagree — "by different arguments and with
+opposite remedies" is not recoverable from a list of codes — and stays prose.
+The field says *who*, and is checked.
+
+Fired on real cases before being trusted. Three deliberate breakages, all
+caught:
+
+- the field removed from both contested practices →
+  *no `contested_by:` in frontmatter … because `consensus: contested`*
+- a code naming nothing → *resolves to no LIT document*
+- a code from the wrong scheme → *is not a LIT code — a SOTA document's
+  `contested_by` names a LIT document*
+
+The second and third are what `many = true` plus a declared `scheme` buy over
+`requires = ["contested_by"]`, which would accept any truthy value.
+
+## Alternatives considered
+
+- **Leave it in body prose.** The status quo, and it currently works — for two
+  documents, maintained by one person, with the context loaded. It costs
+  nothing right up until a contested practice is filed without its opposition
+  named, and there is no run that would say so. This record adopted a lint to
+  stop precisely this class of silence: a practice with no source, an attic
+  pointing at papers not in the corpus. Same class.
+
+- **Make `consensus_note:` a prose key, so its codes link.** The tempting one,
+  and upstream is right to refuse it. `PROSE_KEYS` is a constant so that a
+  project cannot declare a field prose; the honest fix in that direction is to
+  *render* the note, which is a Luria change and a different decision. It also
+  would not do this job: prose is not checkable, so a note naming the wrong
+  code, or none, would still pass.
+
+- **Widen `compared_against:` to cover it.** Rejected — rivalry is not
+  dispute. [SOTA-133](../practices.d/SOTA-133.md) is a real alternative to [SOTA-136](../practices.d/SOTA-136.md) that nobody is arguing
+  about, and collapsing "here is another way" into "here is someone saying you
+  are wrong" discards the distinction [ADR-015](ADR-015.md) was written to draw. It is the
+  same error as answering that decision with more statuses.
+
+- **Derive it from the literature graph** — walk `source:` then `extended_by:`.
+  Rejected for the reason [ADR-014](ADR-014.md) and [ADR-015](ADR-015.md) both give: it is a count wearing
+  a relation's clothes. [LIT-140](../literature.d/LIT-140.md)'s `extended_by:` would hold a refutation and a
+  continuation with nothing to tell them apart, and for [SOTA-130](../practices.d/SOTA-130.md) the edge does
+  not exist.
+
+- **Put `contests:` on `LIT` instead**, pointing at practices. Rejected on
+  [ADR-015](ADR-015.md)'s own ground: the axis belongs where the claim lives. No paper is
+  written against a recommendation in this record; the judgement that it
+  undercuts one is ours, and belongs on our document.
+
+## Consequences
+
+Two practices gained the field and 142 did not, which is the conditional
+requirement working: most of the corpus is `unassessed`, and nothing is asked
+of it.
+
+Assessing a practice as contested now costs a citation. That is the intended
+price, and it is the cheapest available check on the risk [ADR-015](ADR-015.md) names as
+its own worst: *"a consensus value ages with nothing to trigger a re-read."* A
+named opposition is at least something a re-reader can go and look at.
+
+`docs/record.md` gained the rule in the generated field list — *`contested_by`
+— required when `consensus` is `contested`* — so the obligation is documented
+where the other field rules already are, without anyone writing it twice.
+
+**Checked is not the same as rendered, and only the first half is done here.**
+`docs/practices/consensus/contested.md` still lists `# | Title | Summary |
+Status`, so a reader following "In dispute" still learns who only by opening
+the document. What changed is that the fact is now structural, verified, and
+impossible to leave out — which is also what makes the other half tractable,
+since the data a value page would need is now guaranteed present rather than
+optional prose. Rendering it is Luria's, and is filed there as [dmarx/luria#193](https://github.com/dmarx/luria/issues/193).

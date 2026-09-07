@@ -31,6 +31,7 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `extends` — optional, one or more `SOTA` codes when present (luria.toml: schemes.SOTA.references.extends)
 - `extended_by` — optional, one or more `SOTA` codes when present (luria.toml: schemes.SOTA.references.extended_by)
 - `compared_against` — optional, one or more `SOTA` codes when present (luria.toml: schemes.SOTA.references.compared_against)
+- `contested_by` — required when `consensus` is `contested`, one or more `LIT` codes when present (luria.toml: schemes.SOTA.references.contested_by)
 - `consensus` — one of `unassessed`, `unreplicated`, `contested`, `emerging`, `converged`, `universal`; absent means `unassessed` (luria.toml: schemes.SOTA.fields.consensus; record/practices.d/consensus.yaml: values)
 - `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.toml: schemes.SOTA.fields.status; record/practices.d/statuses.yaml: values)
 - `promote_when` — required when `status` is `Proposed`, `Deferred` (luria.toml: schemes.SOTA.fields.promote_when)

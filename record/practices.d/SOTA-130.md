@@ -18,6 +18,8 @@ date: '2026-09-05'
 published: '2025-12-01'
 source:
 - LIT-130
+contested_by:
+- LIT-167
 summary: >-
   Olmo Team (2025), [LIT-130](../literature.d/LIT-130.md) — the RL-Zero track: RLVR on the base model with
   no reasoning SFT in between, released as an open benchmark for studying RL

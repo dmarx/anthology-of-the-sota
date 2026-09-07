@@ -49,4 +49,4 @@ None. Every scanned file is checked. ✅
 
 ## Directives that no longer apply
 
-None. Every annotation still governs something. ✅
+- record/literature.d/LIT-tmp66u4l.md:57: annotation names no document code

@@ -4,20 +4,20 @@ consensus: contested
 consensus_note: >-
   Two independent groups, months apart, object to SwiGLU's unboundedness as a
   numerical liability in low-precision training and ship bounded replacements
-  — LIT-131 at 2.8T, LIT-tmpvp6d7 at 124B. Neither disputes its quality, and
+  — LIT-131 at 2.8T, LIT-200 at 124B. Neither disputes its quality, and
   neither compares the two remedies, so the recommendation is qualified
   rather than replaced.
 contested_by:
 - LIT-131
-- LIT-tmpvp6d7
+- LIT-200
 title: 'Use SwiGLU activation for transformers'
 version: 2
 history:
 - version: 2
   date: '2026-09-07'
   note: >-
-    Gained the GLU origin it never had (LIT-tmp83k94), the sibling to K3's
-    SiTU-GLU (LIT-tmpvp6d7), and `contested` on the strength of the two.
+    Gained the GLU origin it never had (LIT-199), the sibling to K3's
+    SiTU-GLU (LIT-200), and `contested` on the strength of the two.
     The recommendation is unchanged at ordinary precision.
 tags:
 - model-architecture
@@ -42,7 +42,7 @@ Noam et al. (2020), [LIT-030](../literature.d/LIT-030.md) — [ARXIV-2002.05202]
 ## Where the gate came from
 
 The record recommended SwiGLU without holding the GLU its name refers to.
-[LIT-tmp83k94](../literature.d/LIT-tmp83k94.md) is that paper, and its argument is about **gradients rather than
+[LIT-199](../literature.d/LIT-199.md) is that paper, and its argument is about **gradients rather than
 expressivity**: an LSTM-style tanh gate puts a downscaling factor on both
 branches, so the gradient shrinks multiplicatively with depth, while gating a
 *linear* unit leaves a path with no downscaling — a multiplicative skip
@@ -73,7 +73,7 @@ constant per branch. Kimi K3 ships it at 2.8T.
 One group, one model, no ablation: the report gives the motivation and the
 functional form and does not measure SiTU-GLU against SwiGLU anywhere.
 
-**PowLU** ([LIT-tmpvp6d7](../literature.d/LIT-tmpvp6d7.md)) is the other one, and it is the better-evidenced of
+**PowLU** ([LIT-200](../literature.d/LIT-200.md)) is the other one, and it is the better-evidenced of
 the pair. Same objection reached from a different angle: for large positive
 inputs SwiGLU approximates x², and that quadratic amplification is what
 enlarges the output range and produces the outliers. The remedy is a rational

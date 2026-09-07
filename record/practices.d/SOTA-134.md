@@ -46,13 +46,13 @@ pattern and the massive activations that come with it", and the record
 described neither. Both now have notes, and read together they change what
 the claim means.
 
-An **attention sink** ([LIT-tmpx7q5l](../literature.d/LIT-tmpx7q5l.md)) is the consequence of a softmax that
+An **attention sink** ([LIT-191](../literature.d/LIT-191.md)) is the consequence of a softmax that
 cannot output zeros. Its scores are normalised to sum to one, so a head with
 nothing it needs to attend to must still put its mass somewhere, and models
 learn to dump the surplus on whatever every query can see — under causal
 masking, the first few tokens, regardless of content. Replacing the first
 four tokens with linebreaks barely moves perplexity; it is the position that
-is doing the work. A **massive activation** ([LIT-tmpmix9m](../literature.d/LIT-tmpmix9m.md)) is how that gets
+is doing the work. A **massive activation** ([LIT-190](../literature.d/LIT-190.md)) is how that gets
 implemented: a handful of scalars running ~100,000× the median, at fixed
 feature dimensions, behaving as constants rather than features — pin them at
 their mean and the model is fine, zero them and it collapses. They ride
@@ -66,8 +66,8 @@ than redirect it. A head that can scale its own output down has nothing to
 shed, so there is no surplus mass to park.
 
 That puts three findings in one line, which is the useful part. An explicit
-learnable attention bias ([LIT-tmpmix9m](../literature.d/LIT-tmpmix9m.md)), a learnable sink token
-([LIT-tmpx7q5l](../literature.d/LIT-tmpx7q5l.md)) and this output gate all eliminate the same phenomenon, and
+learnable attention bias ([LIT-190](../literature.d/LIT-190.md)), a learnable sink token
+([LIT-191](../literature.d/LIT-191.md)) and this output gate all eliminate the same phenomenon, and
 all three work by giving the model a way to *not attend* that softmax alone
 does not provide. Two of the three cost nothing in quality; this one
 improves it, which is why it is the practice and they are the explanation.

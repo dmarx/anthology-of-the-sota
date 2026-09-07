@@ -1,0 +1,79 @@
+---
+status: Active
+title: 'Extending Context Window of Large Language Models via Positional Interpolation'
+version: 1
+tags:
+- attention-techniques
+date: '2026-09-07'
+published: '2023-06-01'
+arxiv: '2306.15595'
+first_author: 'Chen'
+keywords:
+- 'long-context'
+- 'rope'
+- 'position-interpolation'
+- 'context-extension'
+- 'fine-tuning'
+summary: >-
+  Chen et al. (2023), [ARXIV-2306.15595](https://arxiv.org/abs/2306.15595). Down-scale the position indices to
+  fit the window the model was trained on, instead of extrapolating past it.
+  LLaMA 7B-65B reach 32768 tokens — 16× — after fine-tuning for under 1000
+  steps, where naive fine-tuning at the longer length moved the effective
+  window from 2048 to 2560 in more than 10000 batches. The argument is about
+  smoothness: interpolating a learned attention-score function between points
+  it already fits is bounded, extrapolating it is not.
+---
+
+# LIT-tmp9rps9: Extending Context Window of Large Language Models via Positional Interpolation
+
+Chen et al., Meta (2023) — [ARXIV-2306.15595](https://arxiv.org/abs/2306.15595)
+
+The title above is arXiv's, which is what a search returns. The paper's own
+title page reads "via **Position** Interpolation", and it names its method
+Position Interpolation (PI) throughout. `luria lint`'s source-mismatch check
+caught the difference; the record follows the registry and this paragraph is
+the reconciliation.
+
+## Key takeaways
+
+- **The failure it starts from.** RoPE encodes relative position, so it
+  ought to extrapolate; it does not. Pushed past the trained window the
+  perplexity does not degrade gracefully, it explodes to numbers comparable
+  to an untrained model. The paper is precise about how wrong that is: a
+  model trained at 2048 asked a question at position 3000 cannot use evidence
+  at position 2900 either, which no story about "cannot see far enough back"
+  explains.
+- **Why naive fine-tuning does not fix it.** Fine-tuning the pretrained model
+  directly at the longer length is not just expensive but ineffective: after
+  more than 10000 batches the *effective* window had moved from 2048 to 2560.
+- **The method, which is one line.** Linearly down-scale the input position
+  indices by L/L' so they land back in the range the model was pretrained on,
+  then apply RoPE unchanged. The maximum relative distance between two tokens
+  is reduced to what pretraining already saw. No architectural change at all.
+- **Why it works, argued rather than asserted.** A learned attention-score
+  function is well-behaved on the integer grid pretraining enforced, and the
+  paper proves an interpolation bound: between two such points the value stays
+  close to their linear interpolation. Outside that range there is no such
+  guarantee, and in practice almost every randomly fitted curve of this shape
+  goes wild. Interpolation is stable because the basis functions are smooth;
+  extrapolation is not.
+- **What it costs.** Under 1000 fine-tuning steps on the Pile takes LLaMA
+  7B–65B to windows up to 32768, negligible against pretraining. Quality on
+  tasks inside the original window is preserved relatively well.
+- An aside the authors flag and do not pursue: ridge regression with proper
+  regularisation makes the extrapolated magnitudes comparable to the
+  in-range ones, so the catastrophe may be a property of unregularised
+  fitting rather than of extrapolation as such. Left as future work.
+
+## Standing in the anthology
+
+The origin of the "rescale RoPE rather than retrain" line, and half of the
+mechanism [SOTA-tmp55o8w](../practices.d/SOTA-tmp55o8w.md) records. Cited independently by two of this record's
+own model reports — Falcon-H1 ([LIT-120](LIT-120.md)) and Olmo 3 ([LIT-130](LIT-130.md)) — which is what
+the reference pass in [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40) flagged it on.
+
+Superseded in practice rather than in standing: [LIT-tmpsei2t](LIT-tmpsei2t.md) (YaRN) keeps the
+diagnosis and replaces the uniform scaling, and reports that PI runs out at a
+scale factor around 8 even with fine-tuning. The note stays because the
+argument for *why* interpolation beats extrapolation is made here and assumed
+there.

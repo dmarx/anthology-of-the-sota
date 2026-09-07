@@ -4,7 +4,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-136 of 150 SOTA documents. Back to the [full index](../README.md).
+137 of 151 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -144,3 +144,4 @@
 | [SOTA-147](../../../record/practices.d/SOTA-147.md) | Compress the KV cache into one shared latent vector instead of sharing key and value heads | DeepSeek-AI (2024), [LIT-174](../../../record/literature.d/LIT-174.md) — Multi-head Latent Attention projects keys and values into a single low-rank latent and caches that, cutting the KV cache 93.3% and raising maximum generation throughput 5.76× against the same team's dense 67B. Every DeepSeek model since is built on it. | Active |
 | [SOTA-149](../../../record/practices.d/SOTA-149.md) | Build the sparse layers from many small experts plus an always-on shared one, not a few large ones | Dai et al. (2024), [LIT-170](../../../record/literature.d/LIT-170.md) — split into mN smaller experts and activate mK of them so the router chooses from a far larger combination space at the same compute, and isolate a few always-on shared experts to hold the common knowledge every routed expert would otherwise learn separately. | Active |
 | [SOTA-150](../../../record/practices.d/SOTA-150.md) | Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound | Shazeer et al. (2017), [LIT-188](../../../record/literature.d/LIT-188.md) — route each token to a few of many feed-forward experts instead of running one dense feed-forward for every token, so total parameters and per-token compute stop being the same number. Measured against dense by [LIT-170](../../../record/literature.d/LIT-170.md) seven years later: DeepSeekMoE 16B matches LLaMA2 7B at roughly 40% of the compute, 145B approaches the same team's dense 67B at 28.5%. | Active |
+| [SOTA-tmp55o8w](../../../record/practices.d/SOTA-tmp55o8w.md) | Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length | Chen et al. (2023) and Peng et al. (2023) — RoPE does not extrapolate, and fine-tuning at the longer length barely helps: more than 10000 batches moved LLaMA's effective window from 2048 to 2560. Rescaling the position indices so they land back in the trained range reaches 32× that in under 1000 steps. YaRN rescales per wavelength rather than uniformly and gets to 128k with 10× fewer tokens. | Active |

@@ -4,7 +4,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-4 of 147 SOTA documents. Back to the [full index](../README.md).
+4 of 148 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

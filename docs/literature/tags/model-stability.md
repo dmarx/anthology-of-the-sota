@@ -4,7 +4,7 @@
 
 Normalization, initialization, gradient handling, regularization.
 
-14 of 196 LIT documents. Back to the [full index](../README.md).
+15 of 198 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -22,3 +22,4 @@ Normalization, initialization, gradient handling, regularization.
 | [LIT-114](../../../record/literature.d/LIT-114.md) v2 | On Layer Normalization in the Transformer Architecture | Xiong et al. (2020), [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). Warmup is not a universal law but a fix for where the normalization sits: Post-LN has large gradients near the output at initialization and needs it, Pre-LN does not. | Active |
 | [LIT-154](../../../record/literature.d/LIT-154.md) | 2 OLMo 2 Furious | OLMo Team (2025), [ARXIV-2501.00656](https://arxiv.org/abs/2501.00656). A fully open 7B–32B recipe whose stated focus is training stability and per-token efficiency, plus the late-stage specialized data mix that the decay phase is for. | Active |
 | [LIT-155](../../../record/literature.d/LIT-155.md) | Small-scale proxies for large-scale Transformer training instabilities | Wortsman et al. (2023), [ARXIV-2309.14322](https://arxiv.org/abs/2309.14322). Instabilities reported only at frontier scale reappear in small models trained at high learning rate, and the large-scale mitigations work there too — which makes instability something a small budget can study. | Active |
+| [LIT-tmpzoyw8](../../../record/literature.d/LIT-tmpzoyw8.md) | Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention | Qiu et al. (2025), [ARXIV-2510.04212](https://arxiv.org/abs/2510.04212). The first mechanistic account of why training with flash attention in low precision explodes. Two things have to coincide: attention representations that are low-rank and similar across steps and tokens, and rounding error in BF16 addition that is *biased* rather than symmetric. The bias acts as a coefficient on the repeated low-rank update, so the errors accumulate instead of cancelling and the spectral norm of weights runs away. A minimal change to flash attention that de-biases the rounding stops it. | Active |

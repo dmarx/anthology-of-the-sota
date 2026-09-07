@@ -1,0 +1,72 @@
+---
+status: Active
+title: 'Microscaling Data Formats for Deep Learning'
+version: 1
+tags:
+- systems-optimization
+date: '2026-09-07'
+published: '2023-10-01'
+arxiv: '2310.10537'
+first_author: 'Rouhani'
+keywords:
+- 'low-precision'
+- 'quantization'
+- 'mxfp4'
+- 'block-scaling'
+- 'training-precision'
+summary: >-
+  Rouhani et al. (2023), [ARXIV-2310.10537](https://arxiv.org/abs/2310.10537). The MX formats: a block of 32
+  elements sharing one 8-bit power-of-two scale, with the elements themselves
+  in FP8, FP6, FP4 or INT8. Over two dozen benchmarks — 8-bit MX runs
+  inference on FP32 checkpoints with no calibration, 6-bit matches FP32 for
+  training weights, activations *and* gradients with no recipe change, and
+  4-bit weights cost only a minor drop. The first sub-8-bit training result of
+  that kind.
+---
+
+# LIT-tmpt58to: Microscaling Data Formats for Deep Learning
+
+Rouhani et al. (2023) — [ARXIV-2310.10537](https://arxiv.org/abs/2310.10537)
+
+## Key takeaways
+
+- **What the format is.** An MX block is a vector of k elements sharing one
+  scale. The shipped formats all use **block size 32** and an **E8M0** scale
+  — eight bits of exponent, no mantissa, so the scale is a power of two and
+  applying it is an exponent adjustment rather than a multiply. The element
+  type is independent: MXFP8 (E4M3 or E5M2), MXFP6 (E2M3 or E3M2), MXFP4
+  (E2M1), MXINT8.
+- **Why block scaling rather than per-tensor.** A single scale for a whole
+  tensor has to cover its whole dynamic range, so a few large values cost
+  every small one its precision. Thirty-two elements is a small enough
+  neighbourhood that outliers are contained locally — which is the same
+  problem massive activations and quantization outliers pose, met by shrinking
+  the scope of the scale instead of by changing the model.
+- **The results, by regime, and the friction is the point.** 8-bit MX does
+  **direct-cast** inference on FP32 pretrained models with minimal loss and
+  *no calibration or fine-tuning*. 6-bit gets close to FP32 after
+  quantization-aware fine-tuning or a PTQ method. Then the headline: 6-bit MX
+  for **weights, activations and gradients** trains large transformers to FP32
+  accuracy **without modifications to the training recipe**, which the paper
+  claims as the first sub-8-bit instance. 4-bit weights cost a minor drop.
+- The paper is explicit that the third axis is user friction — a format
+  nobody can adopt without changing their recipe does not count as practical,
+  which is why "no recipe change" is stated as a result rather than an aside.
+
+## Standing in the anthology
+
+The format underneath two of the record's frontier reports. DeepSeek-V4
+([LIT-139](LIT-139.md)) runs FP4 quantization-aware training on MoE expert weights and the
+indexer QK path in post-training; Kimi K3 ([LIT-131](LIT-131.md)) does MXFP4
+quantization-aware post-training. Both cite this, and it is what "FP4" and
+"MXFP4" mean in those notes — a 4-bit element inside a 32-element block with
+a shared power-of-two scale, not a bare 4-bit float.
+
+Read against [LIT-186](LIT-186.md)'s framing — that quantization damage grows with how much
+data a model was trained on, so *where in the pipeline* the low precision sits
+is the decision — this note supplies the other half: what the format can bear
+in each position. Direct-cast at 8 bits, fine-tuning at 6, training at 6, and
+weights only at 4.
+
+Filed via the reference pass in [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40); cited independently by Kimi K3 and
+DeepSeek-V4.

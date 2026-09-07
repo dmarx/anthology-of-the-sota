@@ -123,6 +123,7 @@ first drafted:
 | [LIT-187](../literature.d/LIT-187.md) | 2020 | into the transformer, sharded across 2048 TPUs; top-2 routing with a capacity factor |
 | [LIT-189](../literature.d/LIT-189.md) | 2021 | top-1 routing, a float32 router for stability, a trillion parameters |
 | [LIT-170](../literature.d/LIT-170.md) | 2024 | many small experts plus a shared one, and the dense comparisons above |
+| [LIT-160](../literature.d/LIT-160.md) | 2024 | the recipe at frontier scale — 671B total, 37B active, trained end to end and reported in full, which is what made the argument load-bearing rather than a scaling study |
 
 Reading the granularity argument across them is the reason the whole line is
 worth holding: GShard says route to two experts, Switch says one, DeepSeekMoE

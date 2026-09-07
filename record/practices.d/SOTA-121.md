@@ -28,6 +28,12 @@ extended_by:
 
 Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
 
+Muon itself is Jordan et al. (2024), [LIT-159](../literature.d/LIT-159.md) — an optimizer for the hidden
+layers, orthogonalising the momentum update via Newton-Schulz iterations and
+leaving embeddings and the head to AdamW. It is a blog post rather than a
+paper, which is why the record holds it under a `url:` ([ADR-009](../decisions.d/ADR-009.md)), and it is
+what every practice in this line modifies.
+
 Muon as modified in [ARXIV-2502.16982](https://arxiv.org/abs/2502.16982) ([LIT-122](../literature.d/LIT-122.md)): weight decay applied to the
 orthogonalised update, and the update's RMS rescaled to match what AdamW
 would produce, so that the learning rate and weight decay tuned for AdamW

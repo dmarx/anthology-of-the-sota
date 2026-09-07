@@ -5,22 +5,23 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**15 document(s) awaiting a decision.**
+**16 document(s) awaiting a decision.**
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-08-24 | Deferred | [SOTA-120](../../record/practices.d/SOTA-120.md) | 3 | 0 | Prefer AdamW's decoupled weight decay to L2 regularization added to the loss |
 | 2026-08-24 | Proposed | [LIT-101](../../record/literature.d/LIT-101.md) | 0 | 0 | AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs |
 | 2026-08-24 | Proposed | [LIT-104](../../record/literature.d/LIT-104.md) | 0 | 0 | ReLoRA: High-Rank Training Through Low-Rank Updates |
+| 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 15 | 2 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
 | 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 15 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
-| 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 13 | 0 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
 | 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 10 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
-| 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 7 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
+| 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 8 | 1 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 6 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
 | 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 5 | 0 | Decay the learning rate linearly all the way to zero |
 | 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 4 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 0 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 4 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
+| 2026-09-07 | Proposed | [ADR-tmpudmra](../../record/decisions.d/ADR-tmpudmra.md) | 3 | 3 | What `source:` holds, and what the Source section is for |
 | 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 3 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
 | 2026-09-07 | Proposed | [ADR-016](../../record/decisions.d/ADR-016.md) | 1 | 0 | Contested is a claim about specific other work, so it must name it |
 | 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 1 | 0 | Pack training documents by best fit instead of concatenating and splitting |

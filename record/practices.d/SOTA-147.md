@@ -11,17 +11,30 @@ consensus_note: >-
   recommending it slightly ahead of the field on the strength of the
   production numbers.
 title: 'Compress the KV cache into one shared latent vector instead of sharing key and value heads'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Sourced to the one work that ran the comparison. The Evidence section
+    says it in as many words — "four generations of adoption rather than one
+    result" — and then the field listed all four as support anyway. Under
+    ADR-017 they are evidence about the field, and the consensus_note
+    already carried them, so nothing is lost and the `emerging` reading is
+    now countable against a list that means one thing. Neither the status
+    nor the recommendation moves.
 tags:
 - attention-techniques
 date: '2026-09-07'
 published: '2024-05-01'
 source:
+# One comparison: LIT-174 ran MLA against the same team's dense 67B and
+# reports a 93.3% smaller KV cache at 5.76x generation throughput. The four
+# generations after it ship MLA without comparing it to anything, which this
+# practice's own Evidence section calls "four generations of adoption rather
+# than one result" — so they are consensus data (ADR-017), and the
+# consensus_note already names every one of them.
 - LIT-174
-- LIT-160
-- LIT-139
-- LIT-131
-- LIT-133
 compared_against:
 - SOTA-109
 implementations:

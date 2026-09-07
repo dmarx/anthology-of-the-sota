@@ -5,14 +5,16 @@ promote_when: >-
   group's schedule comparison with the peak retuned per schedule. A decay-
   to-zero result sharing one peak learning rate across schedules compares
   peaks, not schedules.
-consensus: emerging
+consensus: unreplicated
 consensus_note: >-
-  One group's large study, with LIT-145's cooldown pointing the same way —
-  and the frontier recipes in this record still decay to a floor, DeepSeek-V4
-  to exactly the 10% this practice's source argues against. Nobody argues it
-  is wrong; the field has not moved.
+  One group's large study (LIT-147). LIT-145 is a second group whose cooldown
+  also decays to zero, but it recommends a shape rather than testing the
+  floor, so it corroborates the endpoint and does not replicate the claim.
+  Against that, every frontier recipe in this record still decays to a floor,
+  DeepSeek-V4 to exactly the 10% this practice's source argues against.
+  Nobody argues it is wrong and nobody has moved.
 title: 'Decay the learning rate linearly all the way to zero'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -22,6 +24,16 @@ history:
     rested on a paper the source list did not name — the disconnect ADR-010
     describes. LIT-145 corroborates the endpoint, not the per-schedule
     comparison promote_when asks for, so the status is unchanged.
+- version: 3
+  date: '2026-09-07'
+  note: >-
+    Consensus re-derived from `emerging` to `unreplicated`. The note already
+    ended "the field has not moved", which is the opposite of what
+    `emerging` means — "several independent groups, moving toward default".
+    The value was set before LIT-145 entered the source list under #58 and
+    was never re-read afterwards. One group tested the claim; a second
+    corroborates its endpoint incidentally; no adopter has moved. The
+    recommendation and the status do not change.
 tags:
 - training-optimization
 date: '2026-09-05'

@@ -12,21 +12,34 @@ consensus_note: >-
   nobody has compared it against a properly extended RoPE model at matched
   cost.
 title: 'Drop positional encoding from the global-attention layers of a hybrid and let the cheap local layers carry position'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    LIT-131 removed from the source list. This practice was filed four days
+    into the source pass and its own comment said "then the deployments" —
+    a deployment named as support, before ADR-017 settled that adoption
+    without a test is consensus data. K3 ships the layout at 2.8T and runs
+    no ablation; Kimi Linear ran it. The consensus_note already named K3, so
+    `emerging` still rests on the same three laboratories.
 tags:
 - attention-techniques
 date: '2026-09-07'
 published: '2025-01-01'
 source:
-# The origin, then the two designs that arrived at the layout independently,
-# then the deployments. LIT-207 is not a hybrid paper — it is the result the
+# The origin, then the two designs that arrived at the layout independently.
+# LIT-207 is not a hybrid paper — it is the result the
 # other three rest on — but it is the source of the claim that the global
 # layers lose nothing by dropping the encoding.
+# LIT-131 came out. The comment below used to end "then the deployments",
+# which is a deployment named as a source — written before ADR-017 said that
+# adoption without a test is consensus data. K3 ships the layout at 2.8T and
+# runs no ablation of its own; Kimi Linear (LIT-133) is the one that did.
 - LIT-208
 - LIT-209
 - LIT-133
 - LIT-207
-- LIT-131
 implementations:
 - 'RNoPE-SWA (Cohere, 8B)'
 - 'SWAN-GPT (NVIDIA, 1B and 8B)'

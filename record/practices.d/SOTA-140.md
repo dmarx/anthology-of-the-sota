@@ -9,7 +9,7 @@ consensus_note: >-
 contested_by:
 - LIT-131
 title: 'Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens'
-version: 2
+version: 3
 tags:
 - training-optimization
 history:
@@ -20,10 +20,23 @@ history:
     schedule and prefers cosine; the summary's claim that WSD was the
     schedule of every 2025-2026 report in the record was false once that
     report was read. The recommendation is unchanged.
+- version: 3
+  date: '2026-09-07'
+  note: >-
+    Sourced to LIT-145 as well as LIT-144. The Source section already named
+    Hägele et al. "for the comparison against cosine", and that comparison is
+    what makes this practice evidenced rather than reported; the frontmatter
+    named only MiniCPM. The recommendation is unchanged.
 date: '2026-09-05'
 published: '2024-04-01'
 source:
+# The practice's own Source section names both — "Hu et al. (2024), LIT-144 —
+# MiniCPM; Hägele et al. (2024), LIT-145, for the comparison against cosine"
+# — and the comparison is what makes this evidenced rather than reported.
+# LIT-146 and LIT-147 are conditions with practices of their own, and the
+# Sequence names LIT-035 and LIT-042 as predecessors; all stay in the body.
 - LIT-144
+- LIT-145
 summary: >-
   Hu et al. (2024), [LIT-144](../literature.d/LIT-144.md), with the controlled comparison in [LIT-145](../literature.d/LIT-145.md) — matches cosine at equal tuning, leaves the token budget open, makes every stable-stage checkpoint a usable branch point; contested at frontier scale by [LIT-131](../literature.d/LIT-131.md), which retuned per schedule and chose cosine.
 extended_by:

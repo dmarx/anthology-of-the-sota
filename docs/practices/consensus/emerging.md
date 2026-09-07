@@ -4,7 +4,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-5 of 150 SOTA documents. Back to the [full index](../README.md).
+6 of 150 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -12,4 +12,5 @@
 | [SOTA-141](../../../record/practices.d/SOTA-141.md) | Decay the learning rate linearly all the way to zero | Bergsma et al. (2025), [LIT-147](../../../record/literature.d/LIT-147.md) — with the peak tuned, linear decay to zero beats the customary decay to 10% and other shapes at compute-optimal budgets, more so past them; Proposed because contemporary production runs in the record still decay to a floor. | Proposed |
 | [SOTA-146](../../../record/practices.d/SOTA-146.md) | Correct the GRPO objective before running it — the published form has three independently identified defects | Liu et al. (2025), [LIT-167](../../../record/literature.d/LIT-167.md); Yu et al. (2025), [LIT-168](../../../record/literature.d/LIT-168.md); Zheng et al. (2025), [LIT-180](../../../record/literature.d/LIT-180.md) — three groups, three defects in GRPO's objective, three published fixes, none of them the same fix. "We ran GRPO" does not say which of these you ran. | Proposed |
 | [SOTA-147](../../../record/practices.d/SOTA-147.md) | Compress the KV cache into one shared latent vector instead of sharing key and value heads | DeepSeek-AI (2024), [LIT-174](../../../record/literature.d/LIT-174.md) — Multi-head Latent Attention projects keys and values into a single low-rank latent and caches that, cutting the KV cache 93.3% and raising maximum generation throughput 5.76× against the same team's dense 67B. Every DeepSeek model since is built on it. | Active |
+| [SOTA-148](../../../record/practices.d/SOTA-148.md) v2 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss | Wang et al. (2024), [LIT-171](../../../record/literature.d/LIT-171.md) — add a per-expert bias to the routing scores before the top-K decision and update it from that expert's recent load, so balancing changes which experts are chosen without adding a gradient to the loss. Better balance *and* better quality than an auxiliary-loss control, and what DeepSeek-V3 runs at 671B. | Proposed |
 | [SOTA-149](../../../record/practices.d/SOTA-149.md) | Build the sparse layers from many small experts plus an always-on shared one, not a few large ones | Dai et al. (2024), [LIT-170](../../../record/literature.d/LIT-170.md) — split into mN smaller experts and activate mK of them so the router chooses from a far larger combination space at the same compute, and isolate a few always-on shared experts to hold the common knowledge every routed expert would otherwise learn separately. | Active |

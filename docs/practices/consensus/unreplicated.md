@@ -4,7 +4,7 @@
 
 **One source** — one group, one result — nobody has agreed or disagreed yet, which is not the same as contested, where people looked and differed.
 
-5 of 150 SOTA documents. Back to the [full index](../README.md).
+4 of 150 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -12,4 +12,3 @@
 | [SOTA-124](../../../record/practices.d/SOTA-124.md) | Repeat high-quality data freely when its epoch size exceeds the model's memorization window | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Roughly 100–500 GT for a 7B model, scaling linearly; the authors call the understanding early. | Proposed |
 | [SOTA-125](../../../record/practices.d/SOTA-125.md) | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. 24–27 layers × 512 hidden and a large SSM state dimension won every ablation at 90M; 50 layers gained MMLU but halved throughput. | Proposed |
 | [SOTA-144](../../../record/practices.d/SOTA-144.md) | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too | Dey et al. (2025), [LIT-150](../../../record/literature.d/LIT-150.md) — the depth exponent α = 1 transfers the optimal learning rate across depth and keeps deep layers learning; 11.8% fewer FLOPs than µP at optimal shapes, 34.4% at 179 layers. One group so far. | Proposed |
-| [SOTA-148](../../../record/practices.d/SOTA-148.md) | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss | Wang et al. (2024), [LIT-171](../../../record/literature.d/LIT-171.md) — add a per-expert bias to the routing scores before the top-K decision and update it from that expert's recent load, so balancing changes which experts are chosen without adding a gradient to the loss. Better balance *and* better quality than an auxiliary-loss control, and what DeepSeek-V3 runs at 671B. | Proposed |

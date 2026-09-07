@@ -8,14 +8,24 @@ promote_when: >-
   A model that merely ships loss-free balancing without running that
   comparison is not the missing evidence — DeepSeek-V3 already did that, and
   it is why this is filed rather than deferred.
-consensus: unreplicated
+consensus: emerging
 consensus_note: >-
-  One lab. The method (LIT-171) and the 671B model that adopted it (LIT-160)
-  are both DeepSeek-AI, and no group outside it has published a result either
-  way. That is not the same as contested: nobody has looked and disagreed,
-  nobody has looked and confirmed.
+  Two labs now. The method (LIT-171) and the 671B model that adopted it
+  (LIT-160) are DeepSeek-AI's, and Kimi K3 (LIT-131) adopts it at 2.8T with
+  896 experts and rewrites the update rule to hold there. Adoption and
+  extension by an outside group, still with no head-to-head against an
+  auxiliary-loss control from anyone but the originating lab.
 title: 'Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Kimi K3 (LIT-131) adopts the method outside DeepSeek at 2.8T and
+    replaces the fixed-step update with Quantile Balancing; DeepSeek-V4
+    (LIT-139) runs a slight sequence-wise balance loss alongside the bias.
+    Consensus moves from unreplicated to emerging. The recommendation is
+    unchanged and the promotion condition is still unmet.
 tags:
 - model-architecture
 date: '2026-09-07'
@@ -76,20 +86,59 @@ the field is going; how to keep its experts evenly loaded once you have is a
 technique with a mechanism and an ablation, and it is answerable without the
 other question being settled.
 
-## Why `Proposed` and `unreplicated`
+## Variations, and one qualification from the originating lab
 
-The evidence is good and it is all from one lab. [LIT-171](../literature.d/LIT-171.md)'s authors are
-DeepSeek-AI and [LIT-160](../literature.d/LIT-160.md) is DeepSeek's own model; nobody outside has
-published a result either way. That is `unreplicated` rather than
-`contested` — people have not looked and disagreed, they have not looked.
+**Kimi K3 ([LIT-131](../literature.d/LIT-131.md)) keeps the recommendation and replaces the update
+rule.** At 896 routed experts per layer it reports that balancing "exceeds
+the regime in which existing auxiliary-loss-free bias updates remain well
+behaved": the fixed-step rule's step size trades slow adaptation against
+load oscillation, and neither end of that trade is acceptable at ~900
+experts. Quantile Balancing sets each expert's bias directly from the
+router-score quantile matching its target load, read from a single forward
+pass — Top-(k+1) selection makes the (k+1)-th entry the cutoff an expert
+must beat — and estimated at scale from a per-expert histogram of margins,
+one all-reduce of bin counts. The parts this practice turns on are kept: the
+bias is excluded from the mixture weights, so no gradient flows through it,
+and the update lands only on the next step, so no batch is routed with a
+bias derived from itself.
+
+So the *bias on the routing score* is what generalised; the *fixed step* is
+what did not, and the report says at roughly what size it stopped.
+
+**DeepSeek-V4 ([LIT-139](../literature.d/LIT-139.md)) runs a small auxiliary loss alongside the bias.**
+Bias update speed 0.001, "augmented by a slight sequence-wise balance loss
+that prevents extreme imbalance within individual sequences" at weight
+0.0001. That is the originating lab qualifying its own result three models
+on, and it is worth being exact about what it concedes. The bias regulates
+load *across a batch*; nothing in the mechanism reaches imbalance *inside
+one sequence*, which is the failure the 0.0001 loss is aimed at. The claim
+this practice makes — that you do not need an auxiliary loss to balance
+experts — survives. The stronger reading, that an auxiliary loss has no
+remaining job at all, does not.
+
+## Why `Proposed`, and why `emerging` now
+
+The head-to-head evidence is still one lab's: [LIT-171](../literature.d/LIT-171.md)'s authors are
+DeepSeek-AI and [LIT-160](../literature.d/LIT-160.md) is DeepSeek's own model. What changed is that
+"nobody outside has published a result either way" stopped being true. K3 is
+an outside group that adopted the method at four times the scale, hit a
+limit in it, and published the fix — stronger evidence than a silent
+adoption, weaker than a controlled comparison.
+
+It still does not meet the promotion condition, and deliberately so: that
+condition asks for balance *and quality* against an auxiliary-loss control,
+and K3 runs no such control. The condition anticipated something like this
+— "a model that merely ships loss-free balancing without running that
+comparison is not the missing evidence" — and K3 does more than ship while
+still not being what was asked for.
 
 <!-- inactive-ok-block: SOTA-122, SOTA-124, SOTA-125, SOTA-144 — all
      Proposed, and that they are Proposed is precisely what is being cited -->
 
-The record's four other `unreplicated` practices are all `Proposed`
+The record's `unreplicated` practices are all `Proposed`
 ([SOTA-122](SOTA-122.md), [SOTA-124](SOTA-124.md),
-[SOTA-125](SOTA-125.md), [SOTA-144](SOTA-144.md)), and this is the same
-shape: a clean mechanism, one group, real scale.
+[SOTA-125](SOTA-125.md), [SOTA-144](SOTA-144.md)). This one has moved off
+that shelf without becoming settled.
 
 ## The MoE material now in the record
 

@@ -4,7 +4,7 @@
 
 Hardware utilization, kernels, compilation, numerical precision.
 
-4 of 193 LIT documents. Back to the [full index](../README.md).
+4 of 195 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

@@ -4,7 +4,7 @@
 
 Loading, quality, selection, tokenization.
 
-11 of 200 LIT documents. Back to the [full index](../README.md).
+12 of 203 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -19,3 +19,4 @@ Loading, quality, selection, tokenization.
 | [LIT-175](../../../record/literature.d/LIT-175.md) | Demystifying Training-Time Augmentation for Data-Constrained Language Model Pretraining | Chen et al. (2026), [ARXIV-2606.16246](https://arxiv.org/abs/2606.16246). Autoregressive pretraining overfits badly under heavy repetition; three orthogonal families of augmentation — token noise, sequence permutation, offset targets — delay it and make hundreds of epochs on a fixed corpus productive. | Active |
 | [LIT-178](../../../record/literature.d/LIT-178.md) | Nemotron-CC: Transforming Common Crawl into a Refined Long-Horizon Pretraining Dataset | Su et al. (2024), [ARXIV-2412.02595](https://arxiv.org/abs/2412.02595). Aggressive model-based filtering throws away 90% of the web, which is fine at 1T tokens and ruinous at 15T; classifier ensembling plus synthetic rephrasing keeps four times the unique tokens at the same quality. | Active |
 | [LIT-184](../../../record/literature.d/LIT-184.md) | The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale | Penedo et al. (2024), [ARXIV-2406.17557](https://arxiv.org/abs/2406.17557). 15T tokens from 96 Common Crawl snapshots, with every design choice documented and ablated — and FineWeb-Edu, the 1.3T educational filter that moves MMLU and ARC sharply. | Active |
+| [LIT-tmp66u4l](../../../record/literature.d/LIT-tmp66u4l.md) | Fewer Truncations Improve Language Modeling | Ding et al. (2024), [ARXIV-2404.10830](https://arxiv.org/abs/2404.10830). Everyone concatenates documents and splits at a fixed length to avoid padding, which shreds documents into incomplete pieces. Best-fit Packing treats the grouping as bin packing instead and eliminates unnecessary truncation at the same training efficiency — no padding added. Across 22 tasks at 7B–13B: +4.7% reading comprehension, +16.8% context following, +9.2% program synthesis, and up to 58.3% less closed-domain hallucination. | Active |

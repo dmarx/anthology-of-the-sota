@@ -4,7 +4,7 @@
 
 **In dispute** — credible groups publicly disagree, now — the fork in a line of work, whose trunk is agreed and whose branches are not.
 
-4 of 151 SOTA documents. Back to the [full index](../README.md).
+4 of 152 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

@@ -5,7 +5,7 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**14 document(s) awaiting a decision.**
+**15 document(s) awaiting a decision.**
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -23,9 +23,10 @@
 | 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 4 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
 | 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 3 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
 | 2026-09-07 | Proposed | [ADR-016](../../record/decisions.d/ADR-016.md) | 1 | 0 | Contested is a claim about specific other work, so it must name it |
+| 2026-09-07 | Proposed | [SOTA-tmpcsora](../../record/practices.d/SOTA-tmpcsora.md) | 0 | 0 | Pack training documents by best fit instead of concatenating and splitting |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (3): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [ADR-012](../../record/decisions.d/ADR-012.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (4): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-tmpcsora](../../record/practices.d/SOTA-tmpcsora.md) — these are the cheapest to close, since nothing depends on the answer.

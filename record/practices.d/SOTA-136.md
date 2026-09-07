@@ -48,6 +48,20 @@ free mixing gave up. The pre- and post-mixing maps stay non-negative. The
 paper reports the quality gains of hyper-connections at 6–7% training
 overhead across 3B, 9B and 27B, and DeepSeek-V4 ([LIT-139](../literature.d/LIT-139.md)) ships it at 1.6T.
 
+The V4 report was read in full for [#18](https://github.com/dmarx/anthology-of-the-sota/issues/18), because half this practice's
+promotion condition asks for "a production report at depth whose streams
+stay distinct" and V4 is the production report at depth. **It does not
+answer the objection.** Its case for the constraint is numerical: projecting
+onto the doubly-stochastic manifold bounds the spectral norm at 1, so the
+residual transformation is non-expansive and both passes are more stable —
+which is the property [LIT-151](../literature.d/LIT-151.md) grants and then argues cuts the other way, since
+a mapping that can only contract is a mapping that can only erode what
+distinguishes the streams. V4 measures no stream statistic, and the words
+homogenize, diversity and distinct do not appear in it. So the condition
+stands unmet by the one report that looked most likely to meet it — which is
+a thing to say out loud, because a reader who knows V4 ships mHC at 1.6T
+will otherwise assume the question was settled by shipping.
+
 Why *Proposed*: **the condition this was filed under has been met, and is
 not being applied.** That is worth explaining rather than quietly leaving
 the status alone.

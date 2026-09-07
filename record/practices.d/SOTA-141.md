@@ -8,8 +8,9 @@ promote_when: >-
 consensus: emerging
 consensus_note: >-
   One group's large study, with LIT-145's cooldown pointing the same way —
-  and the frontier recipes in this record still decay to a floor. Nobody
-  argues it is wrong; the field has not moved.
+  and the frontier recipes in this record still decay to a floor, DeepSeek-V4
+  to exactly the 10% this practice's source argues against. Nobody argues it
+  is wrong; the field has not moved.
 title: 'Decay the learning rate linearly all the way to zero'
 version: 1
 tags:
@@ -43,3 +44,19 @@ record still decay to a floor (Falcon-H1-Tiny's ×64 exponential decay,
 [LIT-119](../literature.d/LIT-119.md)). The claim is compatible with WSD ([SOTA-140](SOTA-140.md)) — it is about the
 end of the decay, not its start — and [LIT-145](../literature.d/LIT-145.md)'s cooldown to zero points the
 same way.
+
+The sharpest version of "the field has not moved" is DeepSeek-V4
+([LIT-139](../literature.d/LIT-139.md)), read for [#18](https://github.com/dmarx/anthology-of-the-sota/issues/18). It decays to **exactly 10% of peak** — 2.7e-4 to
+2.7e-5 for Flash, 2.0e-4 to 2.0e-5 for Pro — which is the customary floor
+this practice's source names in its first sentence and argues against, at
+1.6T parameters over 33T tokens. Not a report that considered decaying to
+zero and declined; a report that used the default.
+
+Kimi K3 ([LIT-131](../literature.d/LIT-131.md)) looks at first like the second half of the promotion
+condition — a schedule comparison with the hyperparameters retuned per
+schedule, which is exactly what that clause asks for. It is not, and the
+reason is in the same sentence of the report: the comparison is run "under a
+fixed minimum learning rate". Holding the floor constant is holding *this*
+practice's variable constant, so K3 settles which schedule to use and says
+nothing about how far to decay it. A study can satisfy the methodology this
+practice demands and still not be about it.

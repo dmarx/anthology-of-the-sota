@@ -37,8 +37,12 @@ multipliers*, LRM) lets the norm be learned, and lets the forward multipliers
 that µP would otherwise fix be learned too.
 
 Evidence: two 200 GT runs (50 GT of decay), Muon alone against Muon with
-LRMs, on the final 90M architecture. Improvements on most benchmarks, up to a
-20% relative gain on MMLU, BBH and GSM8K. The authors then used LRMs for
+LRMs, on the final 90M architecture. Improvements on most benchmarks, up to
+a 20% relative gain on MMLU, BBH and GSM8K — **"from random values"**, in the
+source's own words, a qualifier this practice used to drop. At 90M those
+three benchmarks sit near chance, so a fifth of the distance above chance is
+a much smaller claim than a fifth of the score, and it is the claim the
+blogpost makes. The authors then used LRMs for
 every model in the series.
 
 Why *Proposed* and not *Active*: one team, one architecture family, and the

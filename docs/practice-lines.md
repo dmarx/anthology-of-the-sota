@@ -2,7 +2,12 @@
 
 # Lines of practice
 
-7 lines, walked from `extends:` on SOTA documents. Each step explains itself; this page is the order they came in.
+8 lines, walked from `extends:` on SOTA documents. Each step explains itself; this page is the order they came in.
+
+## From use RoPE for LLM (1D sequence) positional embeddings
+
+- [SOTA-063](../record/practices.d/SOTA-063.md) — use RoPE for LLM (1D sequence) positional embeddings *(Active, unassessed)*
+  - [SOTA-151](../record/practices.d/SOTA-151.md) — Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length *(Active, converged)*
 
 ## From Prefer GQA to MQA or MHA
 

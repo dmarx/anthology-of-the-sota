@@ -43,7 +43,10 @@ encoding at all** to its global-attention layers, letting the interleaved
 KDA layers supply position sensitivity and recency instead. The consequence
 the report names: extending the context stops requiring a retuned RoPE
 frequency base or YaRN, because the global layers hold no positional
-parameter to retune. So the hybrid is not only cheaper per token — it makes
+parameter to retune. The idea is not the report's — [LIT-tmprvzbv](../literature.d/LIT-tmprvzbv.md) established
+it in 2023, and Kimi Linear ([LIT-133](../literature.d/LIT-133.md)) cites it and runs the ablation:
+against a RoPE version of the same 48B configuration, the NoPE variant wins
+on long context and the two are level on short. So the hybrid is not only cheaper per token — it makes
 [SOTA-139](SOTA-139.md)'s staged context extension a smaller operation. Whether that
 survives without a recurrence that is itself position-sensitive is untested.
 

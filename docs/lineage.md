@@ -10,6 +10,14 @@
   - [LIT-030](../record/literature.d/LIT-030.md) — GLU Variants Improve Transformer *(Active)*
     - [LIT-200](../record/literature.d/LIT-200.md) — PowLU: An Activation Function for Stable Pre-Training of LLMs *(Active)*
 
+## From RoFormer: Enhanced Transformer with Rotary Position Embedding
+
+- [LIT-045](../record/literature.d/LIT-045.md) — RoFormer: Enhanced Transformer with Rotary Position Embedding *(Active)*
+  - [LIT-192](../record/literature.d/LIT-192.md) — Extending Context Window of Large Language Models via Positional Interpolation *(Active)*
+    - [LIT-193](../record/literature.d/LIT-193.md) — YaRN: Efficient Context Window Extension of Large Language Models *(Active)*
+- alongside: [LIT-048](../record/literature.d/LIT-048.md) — Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation *(Active)*
+- alongside: [LIT-tmprvzbv](../record/literature.d/LIT-tmprvzbv.md) — The Impact of Positional Encoding on Length Generalization in Transformers *(Active)*
+
 ## From Mamba: Linear-Time Sequence Modeling with Selective State Spaces
 
 - [LIT-161](../record/literature.d/LIT-161.md) — Mamba: Linear-Time Sequence Modeling with Selective State Spaces *(Active)*
@@ -40,8 +48,3 @@
   - [LIT-187](../record/literature.d/LIT-187.md) — GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding *(Active)*
     - [LIT-170](../record/literature.d/LIT-170.md) — DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models *(Active)*
     - [LIT-189](../record/literature.d/LIT-189.md) — Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity *(Active)*
-
-## From Extending Context Window of Large Language Models via Positional Interpolation
-
-- [LIT-192](../record/literature.d/LIT-192.md) — Extending Context Window of Large Language Models via Positional Interpolation *(Active)*
-  - [LIT-193](../record/literature.d/LIT-193.md) — YaRN: Efficient Context Window Extension of Large Language Models *(Active)*

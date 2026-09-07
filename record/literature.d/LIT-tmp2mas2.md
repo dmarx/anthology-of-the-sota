@@ -1,0 +1,57 @@
+---
+status: Active
+title: 'GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding'
+version: 1
+tags:
+- distributed-optimization
+date: '2026-09-07'
+published: '2020-06-01'
+arxiv: '2006.16668'
+first_author: 'Lepikhin'
+keywords:
+- 'mixture-of-experts'
+- 'model-parallelism'
+- 'sharding'
+- 'top-2-routing'
+- 'machine-translation'
+extends:
+- LIT-tmp70cvq
+extended_by:
+- LIT-tmpb4jjp
+- LIT-170
+summary: >-
+  Lepikhin et al. (2020), [ARXIV-2006.16668](https://arxiv.org/abs/2006.16668). Puts the mixture-of-experts
+  layer into a transformer and shards it across 2048 TPUs with annotations
+  rather than a rewrite: a 600B multilingual translation model trained in four
+  days, and the top-2 routing that later work names as the thing to fix.
+---
+
+# LIT-tmp2mas2: GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding
+
+Lepikhin et al. (2020) — [ARXIV-2006.16668](https://arxiv.org/abs/2006.16668)
+
+## Key takeaways
+
+- **MoE moves into the transformer.** [LIT-tmp70cvq](LIT-tmp70cvq.md)'s layer sat between LSTM
+  layers; here every other feed-forward block becomes a mixture of experts,
+  which is the shape every model in this record still uses.
+- **The engineering is the contribution as much as the architecture.**
+  Sharding annotations on tensors, with the compiler deriving the parallel
+  plan — so scaling to 2048 TPU v3 cores did not require rewriting the model.
+  A 600B-parameter translation model over 100 languages in four days.
+- **Top-2 routing with a capacity factor**, plus an auxiliary balancing loss
+  and expert dropout. This is the "conventional top-K-of-N routing" that
+  [LIT-170](LIT-170.md) names four years later and argues does not deliver expert
+  specialisation.
+- Quality gains on low-resource languages that dense scaling had not reached.
+
+## Standing in the anthology
+
+The middle term the record needed. [LIT-170](LIT-170.md) diagnoses GShard by name and
+measures against it — DeepSeekMoE 2B matching GShard 2.9B at two thirds the
+expert parameters and compute — and the corpus held the measurement without
+the thing measured.
+
+Filed for the lineage rather than for a practice of its own: the top-2 routing
+and the capacity factor are the design [LIT-170](LIT-170.md) and [LIT-171](LIT-171.md) both change,
+and reading either of them is easier with this in front of you.

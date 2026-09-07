@@ -23,6 +23,8 @@ published: '2024-08-01'
 source:
 - LIT-171
 - LIT-160
+extends:
+- SOTA-tmpstbim
 implementations:
 - DeepSeek-V3
 summary: >-

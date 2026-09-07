@@ -4,7 +4,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-4 of 148 SOTA documents. Back to the [full index](../README.md).
+5 of 150 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -12,3 +12,4 @@
 | [SOTA-141](../../../record/practices.d/SOTA-141.md) | Decay the learning rate linearly all the way to zero | Bergsma et al. (2025), [LIT-147](../../../record/literature.d/LIT-147.md) — with the peak tuned, linear decay to zero beats the customary decay to 10% and other shapes at compute-optimal budgets, more so past them; Proposed because contemporary production runs in the record still decay to a floor. | Proposed |
 | [SOTA-146](../../../record/practices.d/SOTA-146.md) | Correct the GRPO objective before running it — the published form has three independently identified defects | Liu et al. (2025), [LIT-167](../../../record/literature.d/LIT-167.md); Yu et al. (2025), [LIT-168](../../../record/literature.d/LIT-168.md); Zheng et al. (2025), [LIT-180](../../../record/literature.d/LIT-180.md) — three groups, three defects in GRPO's objective, three published fixes, none of them the same fix. "We ran GRPO" does not say which of these you ran. | Proposed |
 | [SOTA-147](../../../record/practices.d/SOTA-147.md) | Compress the KV cache into one shared latent vector instead of sharing key and value heads | DeepSeek-AI (2024), [LIT-174](../../../record/literature.d/LIT-174.md) — Multi-head Latent Attention projects keys and values into a single low-rank latent and caches that, cutting the KV cache 93.3% and raising maximum generation throughput 5.76× against the same team's dense 67B. Every DeepSeek model since is built on it. | Active |
+| [SOTA-tmpa982c](../../../record/practices.d/SOTA-tmpa982c.md) | Build the sparse layers from many small experts plus an always-on shared one, not a few large ones | Dai et al. (2024), [LIT-170](../../../record/literature.d/LIT-170.md) — split into mN smaller experts and activate mK of them so the router chooses from a far larger combination space at the same compute, and isolate a few always-on shared experts to hold the common knowledge every routed expert would otherwise learn separately. | Active |

@@ -1,0 +1,59 @@
+---
+status: Active
+title: 'Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity'
+version: 1
+tags:
+- model-architecture
+date: '2026-09-07'
+published: '2021-01-01'
+arxiv: '2101.03961'
+first_author: 'Fedus'
+keywords:
+- 'mixture-of-experts'
+- 'top-1-routing'
+- 'sparsity'
+- 'distillation'
+- 'training-stability'
+extends:
+- LIT-tmp2mas2
+summary: >-
+  Fedus et al. (2021), [ARXIV-2101.03961](https://arxiv.org/abs/2101.03961). Route each token to exactly
+  one expert instead of two: simpler, cheaper per token, and stable in bfloat16
+  with selective casting — a 1.6T-parameter model and a 7× pretraining speedup
+  over T5-Base at matched compute.
+---
+
+# LIT-tmpb4jjp: Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity
+
+Fedus et al. (2021) — [ARXIV-2101.03961](https://arxiv.org/abs/2101.03961)
+
+## Key takeaways
+
+- **Top-1 routing.** [LIT-tmp2mas2](LIT-tmp2mas2.md) argued top-2 was the minimum for a useful
+  gradient to the router; this shows one expert per token works, and is
+  cheaper in routing computation, in the expert's batch size, and in
+  communication.
+- **Stability was the blocker, and the fix is small.** Sparse models diverged
+  in low precision; selectively casting only the router to float32 while the
+  rest stays bfloat16 makes them trainable, without the communication cost of
+  full float32.
+- **7× pretraining speedup** over T5-Base at the same compute budget, and a
+  1.6T-parameter model — the first trillion-scale sparse model, five years
+  before the record's frontier entries reach that scale.
+- **Distillation back to dense** preserves about 30% of the sparse model's
+  gain, which is the honest version of "you can have this without serving an
+  MoE".
+
+## Standing in the anthology
+
+The third and last of the originating MoE papers this record was missing, and
+the one that establishes the scale claim: a trillion parameters in 2021.
+
+Its top-1 routing is the other pole of the granularity argument
+[LIT-170](LIT-170.md) makes. GShard says two experts, Switch says one, DeepSeekMoE says
+many small ones and take more of them — three answers to how finely the router
+should choose, which is more interesting read together than any of them alone.
+
+The low-precision router note is worth remembering beside
+[LIT-186](LIT-186.md): sparse models were the first place where precision stopped
+being an implementation detail and became an architecture constraint.

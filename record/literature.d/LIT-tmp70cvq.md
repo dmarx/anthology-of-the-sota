@@ -1,0 +1,65 @@
+---
+status: Active
+title: 'Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer'
+version: 1
+tags:
+- model-architecture
+date: '2026-09-07'
+published: '2017-01-01'
+arxiv: '1701.06538'
+first_author: 'Shazeer'
+keywords:
+- 'mixture-of-experts'
+- 'conditional-computation'
+- 'sparse-gating'
+- 'capacity'
+extended_by:
+- LIT-tmp2mas2
+summary: >-
+  Shazeer et al. (2017), [ARXIV-1701.06538](https://arxiv.org/abs/1701.06538). The sparsely-gated
+  mixture-of-experts layer: thousands of feed-forward experts with a trainable
+  gate selecting a few per example, so model capacity can grow by 1000× at
+  small increases in compute. The paper conditional computation had been
+  promising in theory and not delivering in practice until.
+---
+
+# LIT-tmp70cvq: Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer
+
+Shazeer et al. (2017) — [ARXIV-1701.06538](https://arxiv.org/abs/1701.06538)
+
+## Key takeaways
+
+- **Conditional computation, made to work.** The idea — activate only parts of
+  a network per example, so capacity and compute stop rising together — was
+  a decade old and had never delivered. This paper names why: branching
+  breaks GPU batching, large batches are needed to amortise the gating, loss
+  terms are required to keep experts balanced, and network bandwidth becomes
+  the limit.
+- **The layer.** Up to thousands of feed-forward experts between LSTM layers,
+  with a trainable gating network selecting a sparse combination per example.
+  Capacity up to 137B parameters, more than 1000× a comparable dense model,
+  at minor compute cost.
+- **Load balancing was a problem from the first paper.** The gate self-
+  reinforces — experts that win early get trained more and keep winning — and
+  the remedy here is an auxiliary loss encouraging equal utilisation. That
+  auxiliary loss is what [LIT-171](LIT-171.md) removes seven years later.
+- Results on language modelling and machine translation at lower compute than
+  the state of the art of the time.
+
+## Standing in the anthology
+
+**The origin the record was missing.** Every MoE document here descends from
+this layer, and until now the corpus started at [LIT-170](LIT-170.md) — a 2024 paper that
+opens by diagnosing what its predecessors got wrong. The anthology held the
+critique and not the thing being criticised.
+
+Filed so that the practice recommending sparse feed-forward layers can name
+the paper that introduced them, which is what
+[#17](https://github.com/dmarx/anthology-of-the-sota/issues/17) asks of a
+practice and what it could not do while this was absent.
+
+Two threads run from here into the modern record. The **auxiliary loss** this
+paper introduces for balance is the exact mechanism [LIT-171](LIT-171.md) argues should be
+replaced by a bias, so the record now holds both ends of that argument. And
+the **capacity-without-compute** claim is what [LIT-170](LIT-170.md) measures against dense
+models seven years later.

@@ -4,7 +4,7 @@
 
 Architecture patterns, component design, structural choices.
 
-20 of 147 SOTA documents. Back to the [full index](../README.md).
+21 of 148 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -28,3 +28,4 @@ Architecture patterns, component design, structural choices.
 | [SOTA-133](../../../record/practices.d/SOTA-133.md) | Replace fixed residual accumulation with learned attention over preceding layers | Kimi Team (2026), [LIT-134](../../../record/literature.d/LIT-134.md) — Attention Residuals: a per-layer pseudo-query chooses which earlier layers to read, at O(d) parameters per layer; 1.25× compute advantage on scaling laws at 48B/1.4T, adopted in Kimi K3. | Active |
 | [SOTA-136](../../../record/practices.d/SOTA-136.md) | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) | Xie et al. (2025), [LIT-140](../../../record/literature.d/LIT-140.md) — hyper-connections with the residual-mixing matrix constrained to be doubly stochastic, so identity mapping survives; 6–7% overhead at 3B–27B, shipped in DeepSeek-V4. | Proposed |
 | [SOTA-137](../../../record/practices.d/SOTA-137.md) | Widen the residual stream into several streams with freely learned mixing (hyper-connections) | Zhu et al. (2024), [LIT-141](../../../record/literature.d/LIT-141.md) — n parallel residual streams with learnable mixing; gains on dense and MoE pretraining, and an identity-mapping property lost that its successor restores. | Superseded — by [SOTA-136](../../../record/practices.d/SOTA-136.md); constraining the mixing to a doubly-stochastic manifold keeps the width and restores the identity mapping this gave up |
+| [SOTA-tmpussf5](../../../record/practices.d/SOTA-tmpussf5.md) | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss | Wang et al. (2024), [LIT-171](../../../record/literature.d/LIT-171.md) — add a per-expert bias to the routing scores before the top-K decision and update it from that expert's recent load, so balancing changes which experts are chosen without adding a gradient to the loss. Better balance *and* better quality than an auxiliary-loss control, and what DeepSeek-V3 runs at 671B. | Proposed |

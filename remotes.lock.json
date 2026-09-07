@@ -365,6 +365,9 @@
     "ARXIV/2309.17453": {
       "title": "Efficient Streaming Language Models with Attention Sinks"
     },
+    "ARXIV/2310.10537": {
+      "title": "Microscaling Data Formats for Deep Learning"
+    },
     "ARXIV/2310.12109": {
       "title": "Monarch Mixer: A Simple Sub-Quadratic GEMM-Based Architecture"
     },
@@ -500,6 +503,9 @@
     "ARXIV/2509.02046": {
       "title": "Fantastic Pretraining Optimizers and Where to Find Them"
     },
+    "ARXIV/2510.04212": {
+      "title": "Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention"
+    },
     "ARXIV/2510.07019": {
       "title": "Native Hybrid Attention for Efficient Sequence Modeling"
     },
@@ -526,6 +532,9 @@
     },
     "ARXIV/2601.04890": {
       "title": "Learnable Multipliers: Freeing the Scale of Language Model Matrix Layers"
+    },
+    "ARXIV/2601.18089": {
+      "title": "LatentMoE: Toward Optimal Accuracy per FLOP and Parameter in Mixture of Experts"
     },
     "ARXIV/2603.15031": {
       "title": "Attention Residuals"

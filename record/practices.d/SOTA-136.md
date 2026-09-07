@@ -14,13 +14,30 @@ consensus_note: >-
   adoption and public dispute at once, which is the state `status:` alone
   could not express.
 title: 'Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections)'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Sourced to LIT-152 as well as LIT-140. The body already called it "one:
+    a different laboratory ran mHC in its own harness and found it
+    comparable to its own design", and promote_when calls it an independent
+    evaluation that arrived — while the field named only the source paper.
+    DeepSeek-V4 shipping it at 1.6T stays adoption. Neither the status nor
+    the recommendation moves.
 tags:
 - model-architecture
 date: '2026-09-05'
 published: '2025-12-01'
 source:
+# LIT-140 is mHC. LIT-152 is a different laboratory running mHC in its own
+# harness and finding it comparable to its own design — an independent test,
+# and evidence about the claim even though promote_when says it is not the
+# *missing* evidence. LIT-139 ships mHC at 1.6T without measuring the
+# contested property, so it is adoption (ADR-017); LIT-151 and LIT-181 are
+# the dispute and live in contested_by.
 - LIT-140
+- LIT-152
 contested_by:
 - LIT-151
 - LIT-181

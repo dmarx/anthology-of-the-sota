@@ -56,7 +56,7 @@ and the global layers are what keep exact retrieval intact, so they should
 not be removed to chase the throughput number.
 
 **This practice used to say the controlled comparison was one group's. It is
-not.** [LIT-tmpx22aq](../literature.d/LIT-tmpx22aq.md), filed via [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40), ran the experiment in 2024, two years
+not.** [LIT-195](../literature.d/LIT-195.md), filed via [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40), ran the experiment in 2024, two years
 before the reports that made the layout visible here: DeltaNet interleaved
 with sliding-window attention every other layer, and DeltaNet with just two
 global attention layers (the second and the n/2-th), both beating a strong

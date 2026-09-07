@@ -2,7 +2,7 @@
 
 # Lines of work
 
-6 lines, walked from `extends:` on LIT documents. Each step explains itself; this page is the order they came in.
+6 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 ## From Language Modeling with Gated Convolutional Networks
 

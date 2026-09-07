@@ -24,7 +24,8 @@ source:
 contested_by:
 - LIT-151
 - LIT-181
-extends:
+# Corrective succession (ADR-017): free mixing gives up the identity-mapping property, which is what makes hyper-connections unstable.
+corrects:
 - SOTA-137
 compared_against:
 - SOTA-133

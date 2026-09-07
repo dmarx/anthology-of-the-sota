@@ -26,7 +26,8 @@ source:
 - LIT-167
 - LIT-168
 - LIT-180
-extends:
+# Corrective succession (ADR-017): the published GRPO objective has three independently identified defects.
+corrects:
 - SOTA-145
 implementations: []
 summary: >-

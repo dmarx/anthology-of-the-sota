@@ -53,6 +53,12 @@ extended_by      = { scheme = "SOTA", required = false, many = true, converse = 
 # other side, so a comparison is stated once on whichever practice ran it
 # rather than on every member of the family (LU-ADR-tmphedn4).
 compared_against = { scheme = "SOTA", required = false, many = true, converse = "compared_against" }
+# The same sign at the practice layer (ADR-017). A recommendation that exists
+# because its predecessor breaks — QK-Clip under Muon, mHC under
+# hyper-connections — is a different step from one that refines a predecessor
+# that works.
+corrects = { scheme = "SOTA", required = false, many = true, converse = "corrected_by" }
+corrected_by = { scheme = "SOTA", required = false, many = true, converse = "corrects" }
 
 # The evidence AGAINST, required exactly where the record claims there is
 # some. `consensus: contested` asserts that specific other work exists —
@@ -145,6 +151,14 @@ require = "at-least-one"
 extends          = { scheme = "LIT", required = false, many = true, converse = "extended_by" }
 extended_by      = { scheme = "LIT", required = false, many = true, converse = "extends" }
 compared_against = { scheme = "LIT", required = false, many = true, converse = "compared_against" }
+# Corrective succession (ADR-017). `extends:` says a work builds on its
+# parent; `corrects:` says it exists because the parent is broken, and the
+# test is the child's own text — does it name a defect in the parent as its
+# motivation. Both are the spine of one line, so the chain below walks them
+# together (LU-#211); the sign is which field the code sits in, which is what
+# keeps it an edge property without qualifying a reference (ADR-011).
+corrects = { scheme = "LIT", required = false, many = true, converse = "corrected_by" }
+corrected_by = { scheme = "LIT", required = false, many = true, converse = "corrects" }
 
 # The literature is broader than the practice registry — the corpus carries
 # substantial generative-vision, theory and inference work that never
@@ -260,7 +274,7 @@ narrow_terms = ["adam", "adamw", "batchnorm", "layernorm", "transformer",
 # on, versus what does this *recommendation* replace.
 [luria.chains.practice]
 scheme   = "SOTA"
-relation = "extends"
+relation = ["extends", "corrects"]
 sibling  = "compared_against"
 output   = "docs/practice-lines.md"
 title    = "Lines of practice"
@@ -270,7 +284,7 @@ facet_by = ["status", "consensus"]
 
 [luria.chains.lineage]
 scheme   = "LIT"
-relation = "extends"
+relation = ["extends", "corrects"]
 sibling  = "compared_against"
 output   = "docs/lineage.md"
 title    = "Lines of work"

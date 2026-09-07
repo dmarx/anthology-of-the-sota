@@ -8,9 +8,12 @@ consensus_note: >-
   production: Qwen3.8-27B's own serving configuration extends 262144 to 1M
   through YaRN at factor 4.0. Nobody in the record argues the mechanism is
   wrong; the live question is whether to need it at all.
-# Entirely conditional on the model having used RoPE: this is the step a
-# SOTA-063 model takes when it needs a longer window than it was trained on.
-extends:
+# Corrective succession (ADR-017). Entirely conditional on the model having
+# used RoPE — this is the step a SOTA-063 model takes when it needs a longer
+# window than it was trained on — and the defect it names as its motivation is
+# that RoPE does not extrapolate, with fine-tuning at the longer length barely
+# helping.
+corrects:
 - SOTA-063
 title: "Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length"
 version: 2

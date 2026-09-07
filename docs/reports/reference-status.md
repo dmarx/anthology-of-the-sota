@@ -9,7 +9,7 @@ Every reference in the record is a claim — "this is why things are the way the
 
 Only an `Active` document is in force. `Proposed` and `Deferred` mean *not in force yet* — an open question, being cited as if it were settled — while `Superseded` and `Rejected` mean *no longer in force*, which is often a perfectly good thing to cite: history, or a rejection worth pointing at. Either way the citation should be deliberate, and this section lists the ones nobody has vouched for yet.
 
-**8 documents cited without acknowledgement.** Not listed: 110 citations someone has already vouched for with an `inactive-ok:` comment at the citing site.
+**6 documents cited without acknowledgement.** Not listed: 111 citations someone has already vouched for with an `inactive-ok:` comment at the citing site.
 
 To vouch for one, put the reason where the citation is — `inactive-ok:` covers its own line and the line below it, `inactive-ok-block:` its paragraph, `inactive-ok-file:` the whole page:
 
@@ -17,24 +17,14 @@ To vouch for one, put the reason where the citation is — `inactive-ok:` covers
 <!-- inactive-ok: ADR-012 — why this citation is right -->
 ```
 
-### [ADR-017](../../record/decisions.d/ADR-017.md) — Proposed
-
-What `source:` holds, and where the work it excludes goes
-
-3 citations in 1 file await a look.
-
-- [`record/practices.d/SOTA-142.md:17`](../../record/practices.d/SOTA-142.md)
-- [`record/practices.d/SOTA-142.md:28`](../../record/practices.d/SOTA-142.md)
-- [`record/practices.d/SOTA-142.md:57`](../../record/practices.d/SOTA-142.md)
-
 ### [LIT-141](../../record/literature.d/LIT-141.md) — Superseded
 
 Hyper-Connections
 
 2 citations in 1 file await a look; 6 other citations of it are acknowledged.
 
-- [`record/decisions.d/ADR-017.md:126`](../../record/decisions.d/ADR-017.md)
-- [`record/decisions.d/ADR-017.md:174`](../../record/decisions.d/ADR-017.md)
+- [`record/decisions.d/ADR-017.md:136`](../../record/decisions.d/ADR-017.md)
+- [`record/decisions.d/ADR-017.md:184`](../../record/decisions.d/ADR-017.md)
 
 ### [SOTA-124](../../record/practices.d/SOTA-124.md) — Proposed
 
@@ -42,8 +32,8 @@ Repeat high-quality data freely when its epoch size exceeds the model's memoriza
 
 2 citations in 1 file await a look; 13 other citations of it are acknowledged.
 
-- [`record/decisions.d/ADR-017.md:67`](../../record/decisions.d/ADR-017.md)
-- [`record/decisions.d/ADR-017.md:105`](../../record/decisions.d/ADR-017.md)
+- [`record/decisions.d/ADR-017.md:77`](../../record/decisions.d/ADR-017.md)
+- [`record/decisions.d/ADR-017.md:115`](../../record/decisions.d/ADR-017.md)
 
 ### [ADR-016](../../record/decisions.d/ADR-016.md) — Proposed
 
@@ -51,7 +41,7 @@ Contested is a claim about specific other work, so it must name it
 
 1 citation in 1 file awaits a look; 1 other citation of it is acknowledged.
 
-- [`record/decisions.d/ADR-017.md:250`](../../record/decisions.d/ADR-017.md)
+- [`record/decisions.d/ADR-017.md:260`](../../record/decisions.d/ADR-017.md)
 
 ### [LIT-042](../../record/literature.d/LIT-042.md) — Superseded
 
@@ -77,24 +67,13 @@ Keep key/value projections shared across heads while query projections remain se
 
 - [`record/practices.d/SOTA-109.md:12`](../../record/practices.d/SOTA-109.md)
 
-### [SOTA-122](../../record/practices.d/SOTA-122.md) — Proposed
-
-Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD
-
-1 citation in 1 file awaits a look; 7 other citations of it are acknowledged.
-
-- [`record/decisions.d/ADR-017.md:66`](../../record/decisions.d/ADR-017.md)
-
 ## Codes that resolve to no document
 
 A reference the reader cannot follow: the code names no document in this record. A typo, a number carried in from another project, and an illustrative code in an example all look identical from here — telling them apart takes a human, so this is a report, not an error.
 
-**1 code unaccounted for.** Not listed: 1 mention marked deliberate with an `unresolved-ok:` comment (same syntax and scopes as `inactive-ok:` above).
+**0 codes unaccounted for.** Not listed: 1 mention marked deliberate with an `unresolved-ok:` comment (same syntax and scopes as `inactive-ok:` above).
 
-
-### ADR-076 — resolves to nothing (1 unmarked site)
-
-- [`record/decisions.d/ADR-017.md:155`](../../record/decisions.d/ADR-017.md)
+Every code resolves. ✅
 
 ## Files that opt out of reference checking
 

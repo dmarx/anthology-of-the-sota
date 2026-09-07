@@ -27,10 +27,10 @@ source:
 - LIT-045
 summary: >-
   Su et al. (2021), [LIT-045](../literature.d/LIT-045.md) — [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864).
-extended_by:
-- SOTA-151
 compared_against:
 - SOTA-153
+corrected_by:
+- SOTA-151
 ---
 
 # SOTA-063: use RoPE for LLM (1D sequence) positional embeddings

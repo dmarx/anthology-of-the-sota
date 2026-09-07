@@ -4,7 +4,7 @@
 
 Architecture patterns, component design, structural choices.
 
-23 of 152 SOTA documents. Back to the [full index](../README.md).
+23 of 153 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -19,7 +19,7 @@ Architecture patterns, component design, structural choices.
 | [SOTA-039](../../../record/practices.d/SOTA-039.md) | single cycle of cosine decay is sufficient lr schedule | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Superseded — by [SOTA-140](../../../record/practices.d/SOTA-140.md); warmup-stable-decay matches it and leaves the token budget open; every report since 2024 in the record uses a stable-then-decay schedule |
 | [SOTA-061](../../../record/practices.d/SOTA-061.md) | Use largest batch that maintains >80% sample efficiency | Fedus et al. (2021), [LIT-061](../../../record/literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684). | Active |
 | [SOTA-062](../../../record/practices.d/SOTA-062.md) | Scale batch size with model size but sub-linearly | Fedus et al. (2021), [LIT-061](../../../record/literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684). | Active |
-| [SOTA-063](../../../record/practices.d/SOTA-063.md) v2 | use RoPE for LLM (1D sequence) positional embeddings | Su et al. (2021), [LIT-045](../../../record/literature.d/LIT-045.md) — [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864). | Active |
+| [SOTA-063](../../../record/practices.d/SOTA-063.md) v3 | use RoPE for LLM (1D sequence) positional embeddings | Su et al. (2021), [LIT-045](../../../record/literature.d/LIT-045.md) — [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864). | Active |
 | [SOTA-092](../../../record/practices.d/SOTA-092.md) | smaller batch sizes are more sample efficient (i.e., better loss as a function of tokens seen) earlier in training | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
 | [SOTA-093](../../../record/practices.d/SOTA-093.md) | larger batch sizes are beneficial later in training due to better gradient estimates | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
 | [SOTA-094](../../../record/practices.d/SOTA-094.md) | throughput (energy efficiency) wins out over theoretically optimal sample efficiency | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |

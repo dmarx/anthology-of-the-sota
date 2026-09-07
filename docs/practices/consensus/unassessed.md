@@ -4,7 +4,7 @@
 
 **Not judged** — nobody has assessed where the field stands on this; the default, and true of most of the corpus.
 
-132 of 152 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
+132 of 153 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -68,7 +68,7 @@
 | [SOTA-060](../../../record/practices.d/SOTA-060.md) | Initialize layer norms with smaller variance (0.02) for stability | Narayanan et al. (2021), [LIT-043](../../../record/literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). | Active |
 | [SOTA-061](../../../record/practices.d/SOTA-061.md) | Use largest batch that maintains >80% sample efficiency | Fedus et al. (2021), [LIT-061](../../../record/literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684). | Active |
 | [SOTA-062](../../../record/practices.d/SOTA-062.md) | Scale batch size with model size but sub-linearly | Fedus et al. (2021), [LIT-061](../../../record/literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684). | Active |
-| [SOTA-063](../../../record/practices.d/SOTA-063.md) v2 | use RoPE for LLM (1D sequence) positional embeddings | Su et al. (2021), [LIT-045](../../../record/literature.d/LIT-045.md) — [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864). | Active |
+| [SOTA-063](../../../record/practices.d/SOTA-063.md) v3 | use RoPE for LLM (1D sequence) positional embeddings | Su et al. (2021), [LIT-045](../../../record/literature.d/LIT-045.md) — [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864). | Active |
 | [SOTA-064](../../../record/practices.d/SOTA-064.md) | Warmup needed scales sub-linearly with model size | Tay et al. (2021), [LIT-052](../../../record/literature.d/LIT-052.md) — [ARXIV-2109.10686](https://arxiv.org/abs/2109.10686). | Active |
 | [SOTA-065](../../../record/practices.d/SOTA-065.md) | Initialize layer norm weights closer to 1 for larger models | Tay et al. (2021), [LIT-052](../../../record/literature.d/LIT-052.md) — [ARXIV-2109.10686](https://arxiv.org/abs/2109.10686). | Active |
 | [SOTA-066](../../../record/practices.d/SOTA-066.md) | Can use shorter warmup periods for wider models | Tay et al. (2021), [LIT-052](../../../record/literature.d/LIT-052.md) — [ARXIV-2109.10686](https://arxiv.org/abs/2109.10686). | Active |

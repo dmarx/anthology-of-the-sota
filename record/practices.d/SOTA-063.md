@@ -1,7 +1,7 @@
 ---
 status: 'Active'
 title: 'use RoPE for LLM (1D sequence) positional embeddings'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -11,6 +11,14 @@ history:
     recommendation is unchanged for a dense transformer; the addition is that
     a linear-attention hybrid may be better off with no positional encoding
     at all (LIT-207, LIT-133, LIT-131).
+- version: 3
+  date: '2026-09-07'
+  note: >-
+    The alternative now has a practice of its own (SOTA-tmpslb73) and a
+    correction. Version 2 said RoPE-or-not was not a parameter an existing
+    model can be re-tuned on and left reversibility open; LIT-tmpi3yxw
+    answers it — conversion by continued pretraining, at parity on short
+    benchmarks.
 tags:
 - model-architecture
 date: '2026-08-24'
@@ -21,6 +29,8 @@ summary: >-
   Su et al. (2021), [LIT-045](../literature.d/LIT-045.md) — [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864).
 extended_by:
 - SOTA-151
+compared_against:
+- SOTA-tmpslb73
 ---
 
 # SOTA-063: use RoPE for LLM (1D sequence) positional embeddings
@@ -49,9 +59,11 @@ use. Frontier practice has since split: Kimi Linear ([LIT-133](../literature.d/L
 entirely and let an interleaved recurrence carry position, which is what
 lets K3 reach 1M tokens with no RoPE modification at all.
 
-This practice is not marked `contested`, because the two are not rival
-settings of one knob: RoPE-or-not is an architectural choice made before
-training, not a parameter an existing model can be re-tuned on. How
-reversible it is after the fact is a separate question the record has not
-answered. What a reader should take from it: RoPE remains right for a dense
-transformer, and is not automatically right for a linear-attention hybrid.
+The alternative is filed as [SOTA-tmpslb73](SOTA-tmpslb73.md), and it is not marked as
+contesting this one, because the two are not rival settings of one knob:
+RoPE-or-not is an architectural choice, made before training and reversible
+afterwards only at the cost of continued pretraining ([LIT-tmpi3yxw](../literature.d/LIT-tmpi3yxw.md) converted
+an 8B model that way, at parity on short benchmarks). What a reader should
+take from it: RoPE remains right for a dense transformer, and is not
+automatically right for a hybrid whose cheap layers can carry position
+themselves.

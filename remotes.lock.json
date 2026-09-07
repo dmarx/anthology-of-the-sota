@@ -482,6 +482,9 @@
     "ARXIV/2501.12948": {
       "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
     },
+    "ARXIV/2501.18795": {
+      "title": "Rope to Nope and Back Again: A New Hybrid Attention Strategy"
+    },
     "ARXIV/2502.11089": {
       "title": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention"
     },
@@ -502,6 +505,9 @@
     },
     "ARXIV/2503.20783": {
       "title": "Understanding R1-Zero-Like Training: A Critical Perspective"
+    },
+    "ARXIV/2504.08719": {
+      "title": "SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling"
     },
     "ARXIV/2505.01618": {
       "title": "Don't be lazy: CompleteP enables compute-efficient deep transformers"

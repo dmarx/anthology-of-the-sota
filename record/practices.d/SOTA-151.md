@@ -1,8 +1,10 @@
 ---
 status: Active
+formerly:
+- SOTA-tmp55o8w
 consensus: converged
 consensus_note: >-
-  Two independent groups (LIT-tmp9rps9, LIT-tmpsei2t), and the method ships in
+  Two independent groups (LIT-192, LIT-193), and the method ships in
   production: Qwen3.8-27B's own serving configuration extends 262144 to 1M
   through YaRN at factor 4.0. Nobody in the record argues the mechanism is
   wrong; the live question is whether to need it at all.
@@ -13,8 +15,8 @@ tags:
 date: '2026-09-07'
 published: '2023-06-01'
 source:
-- LIT-tmp9rps9
-- LIT-tmpsei2t
+- LIT-192
+- LIT-193
 summary: >-
   Chen et al. (2023) and Peng et al. (2023) — RoPE does not extrapolate, and
   fine-tuning at the longer length barely helps: more than 10000 batches moved
@@ -24,12 +26,12 @@ summary: >-
   fewer tokens.
 ---
 
-# SOTA-tmp55o8w: Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length
+# SOTA-151: Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length
 
 ## Source
 
-Chen et al. (2023), [LIT-tmp9rps9](../literature.d/LIT-tmp9rps9.md) — Position Interpolation. Peng et al. (2023),
-[LIT-tmpsei2t](../literature.d/LIT-tmpsei2t.md) — YaRN.
+Chen et al. (2023), [LIT-192](../literature.d/LIT-192.md) — Position Interpolation. Peng et al. (2023),
+[LIT-193](../literature.d/LIT-193.md) — YaRN.
 
 The problem is not that a longer window is expensive to train. It is that
 training it directly barely works: fine-tuning a pretrained LLaMA at the

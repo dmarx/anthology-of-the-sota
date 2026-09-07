@@ -4,7 +4,7 @@
 
 **Not judged** — nobody has assessed where the field stands on this; the default, and true of most of the corpus.
 
-134 of 146 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
+134 of 147 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -29,8 +29,8 @@
 | [SOTA-020](../../../record/practices.d/SOTA-020.md) | Use larger learning rates with batch normalization | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Active |
 | [SOTA-021](../../../record/practices.d/SOTA-021.md) | Monitor loss landscape smoothness during training | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Active |
 | [SOTA-022](../../../record/practices.d/SOTA-022.md) | Place BN after linear/conv layers but before activation functions | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Active |
-| [SOTA-023](../../../record/practices.d/SOTA-023.md) | Use multi-query attention for decoder-only models to reduce memory bandwidth | Dao et al. (2019), [LIT-024](../../../record/literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). | Active |
-| [SOTA-024](../../../record/practices.d/SOTA-024.md) | Keep key/value projections shared across heads while query projections remain separate | Dao et al. (2019), [LIT-024](../../../record/literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). | Active |
+| [SOTA-023](../../../record/practices.d/SOTA-023.md) v2 | Use multi-query attention for decoder-only models to reduce memory bandwidth | Shazeer (2019), [LIT-024](../../../record/literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). | Superseded — by [SOTA-109](../../../record/practices.d/SOTA-109.md) |
+| [SOTA-024](../../../record/practices.d/SOTA-024.md) v2 | Keep key/value projections shared across heads while query projections remain separate | Shazeer (2019), [LIT-024](../../../record/literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). | Superseded — by [SOTA-109](../../../record/practices.d/SOTA-109.md) |
 | [SOTA-025](../../../record/practices.d/SOTA-025.md) | Initialize LayerNorm weight close to 1 (0.97-1.0) | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Active |
 | [SOTA-026](../../../record/practices.d/SOTA-026.md) | Initialize LayerNorm bias to 0 | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Active |
 | [SOTA-027](../../../record/practices.d/SOTA-027.md) | Use a smaller learning rate for LayerNorm parameters | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Active |
@@ -115,7 +115,7 @@
 | [SOTA-106](../../../record/practices.d/SOTA-106.md) | Use flash-attention-2 over original flash-attention when available | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Active |
 | [SOTA-107](../../../record/practices.d/SOTA-107.md) | Keep sequence lengths multiple of 128 for best performance | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Active |
 | [SOTA-108](../../../record/practices.d/SOTA-108.md) | Pad attention masks to block boundaries for better hardware utilization | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Active |
-| [SOTA-109](../../../record/practices.d/SOTA-109.md) | Prefer GQA to MQA or MHA | Yang et al. (2023), [LIT-100](../../../record/literature.d/LIT-100.md) — [ARXIV-2305.13245](https://arxiv.org/abs/2305.13245). | Active |
+| [SOTA-109](../../../record/practices.d/SOTA-109.md) v2 | Prefer GQA to MQA or MHA | Ainslie et al. (2023), [LIT-100](../../../record/literature.d/LIT-100.md) — group the query heads and give each group one key/value head: multi-query's cache saving without multi-query's quality loss, and uptrainable from an existing multi-head checkpoint. Still the default for a model not paying MLA's implementation cost. | Active |
 | [SOTA-110](../../../record/practices.d/SOTA-110.md) | Consider for very long sequence tasks | Bhardwaj et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |
 | [SOTA-111](../../../record/practices.d/SOTA-111.md) | Use for tasks where attention bottlenecks training | Bhardwaj et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |
 | [SOTA-112](../../../record/practices.d/SOTA-112.md) | Combine with standard attention for hybrid approaches | Bhardwaj et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |

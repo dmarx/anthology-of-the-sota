@@ -4,13 +4,13 @@
 
 Architecture patterns, component design, structural choices.
 
-20 of 146 SOTA documents. Back to the [full index](../README.md).
+20 of 147 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [SOTA-007](../../../record/practices.d/SOTA-007.md) | BPE tokenization for open vocabulary tasks | Sennrich et al. (2015), [LIT-003](../../../record/literature.d/LIT-003.md) — [ARXIV-1508.07909](https://arxiv.org/abs/1508.07909). | Active |
-| [SOTA-023](../../../record/practices.d/SOTA-023.md) | Use multi-query attention for decoder-only models to reduce memory bandwidth | Dao et al. (2019), [LIT-024](../../../record/literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). | Active |
-| [SOTA-024](../../../record/practices.d/SOTA-024.md) | Keep key/value projections shared across heads while query projections remain separate | Dao et al. (2019), [LIT-024](../../../record/literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). | Active |
+| [SOTA-023](../../../record/practices.d/SOTA-023.md) v2 | Use multi-query attention for decoder-only models to reduce memory bandwidth | Shazeer (2019), [LIT-024](../../../record/literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). | Superseded — by [SOTA-109](../../../record/practices.d/SOTA-109.md) |
+| [SOTA-024](../../../record/practices.d/SOTA-024.md) v2 | Keep key/value projections shared across heads while query projections remain separate | Shazeer (2019), [LIT-024](../../../record/literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). | Superseded — by [SOTA-109](../../../record/practices.d/SOTA-109.md) |
 | [SOTA-033](../../../record/practices.d/SOTA-033.md) | continued pre-training for fine tuning | Gururangan et al. (2020), [LIT-034](../../../record/literature.d/LIT-034.md) — [ARXIV-2004.10964](https://arxiv.org/abs/2004.10964). | Active |
 | [SOTA-034](../../../record/practices.d/SOTA-034.md) | Use SwiGLU activation for transformers | Noam et al. (2020), [LIT-030](../../../record/literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). | Active |
 | [SOTA-036](../../../record/practices.d/SOTA-036.md) | gpt training recipe | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |

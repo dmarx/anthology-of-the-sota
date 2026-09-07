@@ -7,7 +7,7 @@
 ## From Prefer GQA to MQA or MHA
 
 - alongside: [SOTA-109](../record/practices.d/SOTA-109.md) — Prefer GQA to MQA or MHA *(Active, unassessed)*
-- alongside: [SOTA-tmpjolsp](../record/practices.d/SOTA-tmpjolsp.md) — Compress the KV cache into one shared latent vector instead of sharing key and value heads *(Active, emerging)*
+- alongside: [SOTA-147](../record/practices.d/SOTA-147.md) — Compress the KV cache into one shared latent vector instead of sharing key and value heads *(Active, emerging)*
 
 ## From Widen the residual stream into several streams with freely learned mixing (hyper-connections)
 

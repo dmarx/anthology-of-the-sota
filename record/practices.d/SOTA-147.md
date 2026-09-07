@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmpjolsp
 consensus: emerging
 consensus_note: >-
   Two labs, four generations, no third adopter yet. DeepSeek has shipped it in
@@ -35,7 +37,7 @@ summary: >-
   team's dense 67B. Every DeepSeek model since is built on it.
 ---
 
-# SOTA-tmpjolsp: Compress the KV cache into one shared latent vector instead of sharing key and value heads
+# SOTA-147: Compress the KV cache into one shared latent vector instead of sharing key and value heads
 
 The KV cache is what makes long-context serving expensive, and the field has
 two answers to it.

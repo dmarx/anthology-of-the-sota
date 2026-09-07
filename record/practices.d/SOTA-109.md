@@ -27,7 +27,7 @@ summary: >-
   loss, and uptrainable from an existing multi-head checkpoint. Still the
   default for a model not paying MLA's implementation cost.
 compared_against:
-- SOTA-tmpjolsp
+- SOTA-147
 ---
 
 # SOTA-109: Prefer GQA to MQA or MHA
@@ -58,7 +58,7 @@ retiring by status.
 
 ## What this is not the end of
 
-[SOTA-tmpjolsp](SOTA-tmpjolsp.md) is the other live answer to the same
+[SOTA-147](SOTA-147.md) is the other live answer to the same
 problem — compress the cache into a latent instead of sharing heads. It is not
 a successor: GQA stays the default for a model that is not paying MLA's
 implementation cost, which is most of them. The two are `compared_against`,

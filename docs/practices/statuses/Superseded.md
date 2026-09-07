@@ -4,7 +4,7 @@
 
 **Replaced** — something newer does this better, and the record says what.
 
-2 of 144 SOTA documents. Back to the [full index](../README.md).
+2 of 146 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

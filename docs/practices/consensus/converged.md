@@ -4,8 +4,9 @@
 
 **Agreed** — the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately.
 
-1 of 144 SOTA documents. Back to the [full index](../README.md).
+2 of 146 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [SOTA-120](../../../record/practices.d/SOTA-120.md) | Prefer AdamW's decoupled weight decay to L2 regularization added to the loss | Loshchilov et al. (2017), [LIT-012](../../../record/literature.d/LIT-012.md) — [ARXIV-1711.05101](https://arxiv.org/abs/1711.05101). | Deferred — the paper is settled; how widely it is actually adopted is not |
+| [SOTA-tmp8u4ld](../../../record/practices.d/SOTA-tmp8u4ld.md) | Estimate the RL baseline from a group of samples for the same prompt instead of training a critic | Shao et al. (2024), [LIT-127](../../../record/literature.d/LIT-127.md) — Group Relative Policy Optimization: PPO with the value model dropped and the baseline taken from the scores of several outputs sampled for the same prompt, which removes a model-sized chunk of the RL memory footprint and is what every later reasoning recipe in this record actually runs. | Active |

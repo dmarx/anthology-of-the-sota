@@ -4,7 +4,7 @@
 
 Identifiers, generation, the lint.
 
-8 of 15 decisions. Back to the [full index](../README.md).
+9 of 16 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -16,3 +16,4 @@ Identifiers, generation, the lint.
 | [ADR-012](../../../record/decisions.d/ADR-012.md) | A practice declares its altitude, and one with no body cannot claim to be a design decision | "Pin memory for CPU-GPU transfers" and "Use Muon in place of AdamW" are both `SOTA` documents with equal standing, and 103 of 144 practices have no body at all — the registry's apparent weight is mostly one synthetic note's bullet lists. Proposes a `kind:` field and a lint tying substance to altitude. | Proposed |
 | [ADR-014](../../../record/decisions.d/ADR-014.md) v2 | A provisional status must say what would change it, and the condition names a kind of evidence | Four of 144 practices state a promotion condition, all in prose, none of them re-read when the evidence arrived. Two practices filed a day apart carried near-identical conditions, both were satisfied by the same paper on the same day, and only one promoted — because the condition counted papers when what mattered was what the papers were about. Adopts a required `promote_when:` on every non-active practice, phrased as a kind of result rather than a count of them. | Active |
 | [ADR-015](../../../record/decisions.d/ADR-015.md) | What the field thinks is a second axis, and this record's endorsement is not it | mHC is shipped at 1.6T in a production model, attacked by two independent groups within a month, and `Proposed` here — three facts crushed into one field, because `status:` is this record's editorial position and has no room for the field's. Adds a defaulted `consensus:` vocabulary, orthogonal to status, and declares practice-level lineage so an agreed trunk and its disputed forks stop rendering identically. | Active |
+| [ADR-tmpsdjtd](../../../record/decisions.d/ADR-tmpsdjtd.md) | Contested is a claim about specific other work, so it must name it | [ADR-015](../../../record/decisions.d/ADR-015.md) gave the record a way to say the field is arguing about a practice and no way to say who is arguing. The reason lived in `consensus_note:`, which is rendered nowhere and so — by Luria's own rule for what counts as prose — carries bare, unlinkable codes. Adds `contested_by:`, a checked LIT reference required exactly when `consensus: contested`, on the ground that contested is the only value on the axis that asserts a specific other document exists. | Proposed |

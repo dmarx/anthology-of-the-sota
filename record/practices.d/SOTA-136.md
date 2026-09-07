@@ -21,6 +21,9 @@ date: '2026-09-05'
 published: '2025-12-01'
 source:
 - LIT-140
+contested_by:
+- LIT-151
+- LIT-181
 extends:
 - SOTA-137
 compared_against:

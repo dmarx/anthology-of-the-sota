@@ -54,6 +54,19 @@ extended_by      = { scheme = "SOTA", required = false, many = true, converse = 
 # rather than on every member of the family (LU-ADR-tmphedn4).
 compared_against = { scheme = "SOTA", required = false, many = true, converse = "compared_against" }
 
+# The evidence AGAINST, required exactly where the record claims there is
+# some. `consensus: contested` asserts that specific other work exists —
+# "credible groups publicly disagree" is a claim about documents — and it is
+# the only value on the axis that does: `unassessed` and `converged` name
+# nobody. So it is held to the same standard as `source:`, which is the
+# evidence for (ADR-016).
+#
+# `scheme = "LIT"`, not SOTA: what contests a recommendation is a paper, and
+# both cases in the record are papers. No `converse`, because Luria's
+# converse must be same-scheme and this crosses — a note does not carry the
+# list of practices it undercuts.
+contested_by     = { scheme = "LIT",  required = false, many = true, required_when = { consensus = ["contested"] } }
+
 # A provisional practice must say what would settle it (ADR-014). Required
 # only at the statuses where something is actually pending: an Active
 # practice has nothing to be waiting for, and a Superseded one's successor

@@ -12,5 +12,5 @@
 
 ## From Estimate the RL baseline from a group of samples for the same prompt instead of training a critic
 
-- [SOTA-tmp8u4ld](../record/practices.d/SOTA-tmp8u4ld.md) — Estimate the RL baseline from a group of samples for the same prompt instead of training a critic *(Active, converged)*
-  - [SOTA-tmpauaby](../record/practices.d/SOTA-tmpauaby.md) — Correct the GRPO objective before running it — the published form has three independently identified defects *(Proposed, emerging)*
+- [SOTA-145](../record/practices.d/SOTA-145.md) — Estimate the RL baseline from a group of samples for the same prompt instead of training a critic *(Active, converged)*
+  - [SOTA-146](../record/practices.d/SOTA-146.md) — Correct the GRPO objective before running it — the published form has three independently identified defects *(Proposed, emerging)*

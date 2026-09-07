@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmpauaby
 promote_when: >-
   A head-to-head of the published corrections — Dr. GRPO's unbiased length
   term, DAPO's decoupled clip and dynamic sampling, GSPO's sequence-level
@@ -25,7 +27,7 @@ source:
 - LIT-168
 - LIT-180
 extends:
-- SOTA-tmp8u4ld
+- SOTA-145
 implementations: []
 summary: >-
   Liu et al. (2025), [LIT-167](../literature.d/LIT-167.md); Yu et al. (2025), [LIT-168](../literature.d/LIT-168.md); Zheng et al. (2025),
@@ -34,9 +36,9 @@ summary: >-
   you ran.
 ---
 
-# SOTA-tmpauaby: Correct the GRPO objective before running it — the published form has three independently identified defects
+# SOTA-146: Correct the GRPO objective before running it — the published form has three independently identified defects
 
-[SOTA-tmp8u4ld](SOTA-tmp8u4ld.md) is what everyone kept. This is what
+[SOTA-145](SOTA-145.md) is what everyone kept. This is what
 everyone changed, and they did not change the same thing.
 
 | paper | the defect | the fix |

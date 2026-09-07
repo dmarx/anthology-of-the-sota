@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmp8u4ld
 consensus: converged
 consensus_note: >-
   Every reasoning recipe in this record runs it — R1 (LIT-164), Olmo 3's RLVR
@@ -26,10 +28,10 @@ summary: >-
   the RL memory footprint and is what every later reasoning recipe in this
   record actually runs.
 extended_by:
-- SOTA-tmpauaby
+- SOTA-146
 ---
 
-# SOTA-tmp8u4ld: Estimate the RL baseline from a group of samples for the same prompt instead of training a critic
+# SOTA-145: Estimate the RL baseline from a group of samples for the same prompt instead of training a critic
 
 PPO needs a value model to tell it whether an outcome was better than
 expected. At LLM scale that critic is a second network of comparable size,
@@ -64,7 +66,7 @@ people looked hard and changed something else.
 ## What this does not say
 
 It does not say run GRPO as published. That is
-[SOTA-tmpauaby](SOTA-tmpauaby.md), and it is `Proposed` for a reason: the
+[SOTA-146](SOTA-146.md), and it is `Proposed` for a reason: the
 same three papers that kept the group baseline each found a different defect
 in the rest of the objective, and no two of them fixed the same one.
 

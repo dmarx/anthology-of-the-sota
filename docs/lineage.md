@@ -15,6 +15,7 @@
 - [LIT-045](../record/literature.d/LIT-045.md) — RoFormer: Enhanced Transformer with Rotary Position Embedding *(Active)*
   - [LIT-192](../record/literature.d/LIT-192.md) — Extending Context Window of Large Language Models via Positional Interpolation *(Active)*
     - [LIT-193](../record/literature.d/LIT-193.md) — YaRN: Efficient Context Window Extension of Large Language Models *(Active)*
+  - [LIT-tmpt9t71](../record/literature.d/LIT-tmpt9t71.md) — Round and Round We Go! What makes Rotary Positional Encodings useful? *(Active)*
 - [LIT-207](../record/literature.d/LIT-207.md) — The Impact of Positional Encoding on Length Generalization in Transformers *(Active)*
   - [LIT-208](../record/literature.d/LIT-208.md) — Rope to Nope and Back Again: A New Hybrid Attention Strategy *(Active)*
   - [LIT-209](../record/literature.d/LIT-209.md) — SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling *(Active)*

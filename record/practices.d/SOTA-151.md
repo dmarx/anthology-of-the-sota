@@ -86,6 +86,32 @@ current sequence length instead of pinning it at the target. A fixed factor
 costs quality below the target and breaks abruptly above it; the dynamic form
 degrades gracefully and, notably, works on unmodified pretrained models.
 
+## Why the frequencies fail in the first place
+
+The practice was filed on the observation that RoPE does not extrapolate and
+on two remedies for it. [LIT-tmpt9t71](../literature.d/LIT-tmpt9t71.md) supplies the mechanism underneath, by
+opening a trained model rather than reasoning from the encoding's definition.
+
+RoPE's frequency band is used for two jobs. The highest frequencies build
+positional attention heads — robustly, and provably so. The lowest carry
+semantic content in high-norm channels, and Theorem 6.1 shows those channels
+*cannot* be robust once the context is long. So the part of RoPE that breaks
+at length is a specific part, and it is the part [LIT-193](../literature.d/LIT-193.md) already treats
+differently: YaRN leaves the dimensions that never complete a rotation alone
+and interpolates the ones that do, which is this distinction reached from the
+other side.
+
+It also explains the cheap move this practice does not cover. Raising the
+base wavelength from 10,000 to 500,000 — Code Llama's, adopted by Llama 3 —
+pushes the fragile low-frequency channels toward being distance-agnostic, and
+the paper's own remedy is to remove them outright: keeping a fraction p of
+RoPE's frequencies held perplexity and improved it at 2B, with p=1 being RoPE
+and p=0 being NoPE.
+
+Not added to `source:`. This work explains why the problem exists; it does
+not evidence that rescaling is the answer, and the sources of a practice are
+what its recommendation rests on.
+
 ## The alternative: not needing it
 
 Kimi K3 ([LIT-131](../literature.d/LIT-131.md)) reaches 1M tokens with **no** positional encoding on its

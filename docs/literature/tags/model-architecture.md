@@ -4,7 +4,7 @@
 
 Architectures, components, model families, multi-modal designs.
 
-44 of 209 LIT documents. Back to the [full index](../README.md).
+44 of 210 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -15,7 +15,7 @@ Architectures, components, model families, multi-modal designs.
 | [LIT-030](../../../record/literature.d/LIT-030.md) | GLU Variants Improve Transformer | Noam et al. (2020), [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). Study of gating mechanisms. | Active |
 | [LIT-033](../../../record/literature.d/LIT-033.md) | Longformer: The Long-Document Transformer | Beltagy et al. (2020), [ARXIV-2004.05150](https://arxiv.org/abs/2004.05150). Efficient attention for long sequences. | Active |
 | [LIT-035](../../../record/literature.d/LIT-035.md) | Language Models are Few-Shot Learners | Brown et al. (2020), [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). Introduces GPT-3. | Active |
-| [LIT-045](../../../record/literature.d/LIT-045.md) | RoFormer: Enhanced Transformer with Rotary Position Embedding | Su et al. (2021), [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864). Rotation-based positional encoding. | Active |
+| [LIT-045](../../../record/literature.d/LIT-045.md) v2 | RoFormer: Enhanced Transformer with Rotary Position Embedding | Su et al. (2021), [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864). Rotation-based positional encoding. | Active |
 | [LIT-048](../../../record/literature.d/LIT-048.md) | Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation | Press et al. (2021), [ARXIV-2108.12409](https://arxiv.org/abs/2108.12409). Linear attention bias. | Active |
 | [LIT-049](../../../record/literature.d/LIT-049.md) | Learning to Prompt for Vision-Language Models | Zhou et al. (2021), [ARXIV-2109.01134](https://arxiv.org/abs/2109.01134). Learnable prompt optimization. | Active |
 | [LIT-060](../../../record/literature.d/LIT-060.md) | Improving Language Models by Retrieving from Trillions of Tokens | Borgeaud et al. (2021), [ARXIV-2112.04426](https://arxiv.org/abs/2112.04426). Retrieval-augmented language models. | Active |

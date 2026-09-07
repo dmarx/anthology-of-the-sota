@@ -182,6 +182,9 @@
     "ARXIV/2106.09685": {
       "title": "LoRA: Low-Rank Adaptation of Large Language Models"
     },
+    "ARXIV/2107.06499": {
+      "title": "Deduplicating Training Data Makes Language Models Better"
+    },
     "ARXIV/2108.12409": {
       "title": "Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation"
     },
@@ -398,6 +401,9 @@
     "ARXIV/2402.17762": {
       "title": "Massive Activations in Large Language Models"
     },
+    "ARXIV/2403.16952": {
+      "title": "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance"
+    },
     "ARXIV/2404.06395": {
       "title": "MiniCPM: Unveiling the Potential of Small Language Models with Scalable Training Strategies"
     },
@@ -451,6 +457,9 @@
     },
     "ARXIV/2412.06464": {
       "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+    },
+    "ARXIV/2412.14689": {
+      "title": "How to Synthesize Text Data without Model Collapse?"
     },
     "ARXIV/2412.19437": {
       "title": "DeepSeek-V3 Technical Report"

@@ -1,0 +1,65 @@
+---
+status: Active
+title: 'Deduplicating Training Data Makes Language Models Better'
+version: 1
+tags:
+- data-pipeline
+date: '2026-09-07'
+published: '2021-07-01'
+arxiv: '2107.06499'
+first_author: 'Lee'
+keywords:
+- 'deduplication'
+- 'memorization'
+- 'train-test-overlap'
+- 'data-quality'
+summary: >-
+  Lee et al. (2021), [ARXIV-2107.06499](https://arxiv.org/abs/2107.06499). Standard corpora are full of
+  near-duplicates — C4 contains one 61-word English sentence repeated
+  thousands of times. Deduplicating makes models emit memorised text **ten
+  times** less often and reach the same or better accuracy in fewer steps,
+  and it fixes evaluation too: train-test overlap affects a large fraction of
+  standard validation sets.
+---
+
+# LIT-tmp3rg5d: Deduplicating Training Data Makes Language Models Better
+
+Lee et al., Google Research (2021) — [ARXIV-2107.06499](https://arxiv.org/abs/2107.06499)
+
+## Key takeaways
+
+- **The scale of the problem, concretely.** Existing language-modelling
+  datasets contain many near-duplicate examples and long repeated substrings —
+  the paper's example is a single 61-word English sentence appearing
+  thousands of times in C4. Consequently a substantial share of a model's
+  *unprompted* output is copied verbatim from its training data.
+- **Three separate wins, and they are usually conflated into one.**
+  Deduplicated models emit memorised text about **ten times** less
+  frequently; they reach the same or better accuracy in **fewer training
+  steps**; and the evaluation gets more honest, because train-test overlap
+  contaminates a large fraction of the validation sets of standard datasets.
+  Only the second is an efficiency argument — the other two are about what
+  the numbers mean.
+- Two deduplication tools are developed and released, operating at different
+  granularities: exact substring matching and approximate whole-document
+  near-duplicate detection. The distinction matters because the two failure
+  modes are different — a repeated boilerplate paragraph is not a duplicated
+  document.
+
+## Standing in the anthology
+
+The foundation under a step that appears in every pipeline this record
+describes and had no source. Falcon-H1-Tiny ([LIT-119](LIT-119.md)), Kimi K3 ([LIT-131](LIT-131.md)) and
+DeepSeek-V4 ([LIT-139](LIT-139.md)) all deduplicate as a matter of course; Olmo 3 ([LIT-130](LIT-130.md))
+cites this paper for it.
+
+<!-- inactive-ok: SOTA-124 — Proposed, and this note bears on why -->
+It also supplies the measurement [SOTA-124](../practices.d/SOTA-124.md) depends on and does not have.
+That practice says to repeat high-quality data freely when its epoch size
+exceeds the model's memorization window — a claim about *when* repetition is
+safe. This is the paper that establishes repetition is not free by default,
+and that the damage shows up as verbatim emission rather than as loss. The
+two are the same axis read from opposite ends: deliberate repetition of good
+data, against accidental repetition of whatever the crawl caught twice.
+
+Filed via the reference pass in [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40).

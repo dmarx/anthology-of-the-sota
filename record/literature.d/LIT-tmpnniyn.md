@@ -1,0 +1,65 @@
+---
+status: Active
+title: 'How to Synthesize Text Data without Model Collapse?'
+version: 1
+tags:
+- data-pipeline
+date: '2026-09-07'
+published: '2024-12-01'
+arxiv: '2412.14689'
+first_author: 'Zhu'
+keywords:
+- 'synthetic-data'
+- 'model-collapse'
+- 'distribution-shift'
+- 'token-editing'
+summary: >-
+  Zhu et al. (2024), [ARXIV-2412.14689](https://arxiv.org/abs/2412.14689). Pre-training across proportions of
+  synthetic data gives a negative correlation between that proportion and
+  performance, and the statistical signature is distributional shift plus
+  over-concentration of n-gram features. The proposed answer is not better
+  generation but **token-level editing of human text** into semi-synthetic
+  data, with a proof that the test error is then bounded.
+---
+
+# LIT-tmpnniyn: How to Synthesize Text Data without Model Collapse?
+
+Zhu et al. (2024) — [ARXIV-2412.14689](https://arxiv.org/abs/2412.14689)
+
+## Key takeaways
+
+- **The premise, which is not hypothetical.** As AI output proliferates,
+  future models will be trained on a blend of synthetic and human text
+  whether or not anyone chooses that. So the question is not whether to use
+  synthetic data but what happens when you do.
+- **The measurement.** Pre-training across different proportions of synthetic
+  data yields a **negative correlation** between the proportion and
+  performance. Statistical analysis of the synthetic data locates why:
+  distributional shift, and over-concentration of n-gram features. Generated
+  text is narrower than what it imitates, and training on it narrows the next
+  model further.
+- **The remedy inverts the usual move.** Rather than generating better
+  synthetic data, edit **human** data at the token level to produce
+  semi-synthetic data. Because the result stays anchored to a real
+  distribution, the authors prove the test error is bounded above — collapse
+  is prevented by construction rather than by filtering harder.
+- Validated on pre-training from scratch, continual pre-training and
+  supervised fine-tuning.
+
+## Standing in the anthology
+
+<!-- inactive-ok: SOTA-124 — Proposed, and this note bears on why -->
+The counterweight to a practice the record holds. [SOTA-124](../practices.d/SOTA-124.md) and the recipes in
+[LIT-119](LIT-119.md) and [LIT-131](LIT-131.md) lean on **rephrasing** — Kimi K3 rephrases its knowledge
+and mathematics corpora with diverse prompting and verifies fidelity against
+the source. That is generation conditioned on human text, which is nearer to
+this paper's semi-synthetic prescription than to the pure synthesis it warns
+about; but the difference is one of degree, and this note is what makes the
+degree visible.
+
+DeepSeek-V4 ([LIT-139](LIT-139.md)) cites it for the other end of the pipeline: filtering
+batched auto-generated and templated content out of web data, explicitly "to
+mitigate the risk of model collapse". So the record now has both uses — a
+reason to filter the crawl, and a constraint on how to generate.
+
+Filed via the reference pass in [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40).

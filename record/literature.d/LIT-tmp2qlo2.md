@@ -1,0 +1,62 @@
+---
+status: Active
+title: 'Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance'
+version: 1
+tags:
+- data-pipeline
+date: '2026-09-07'
+published: '2024-03-01'
+arxiv: '2403.16952'
+first_author: 'Ye'
+keywords:
+- 'data-mixture'
+- 'scaling-laws'
+- 'domain-proportions'
+- 'continual-pretraining'
+summary: >-
+  Ye et al. (2024), [ARXIV-2403.16952](https://arxiv.org/abs/2403.16952). Mixture proportions are tuned by
+  heuristic because nobody had shown they were predictable. They are: loss is
+  a fittable function of the proportions, so training a handful of small
+  mixtures predicts performance on mixtures never run. Nested with the
+  scaling laws for steps and model size, a 1B model over 100B RedPajama
+  tokens matched the default mixture trained 48% longer.
+---
+
+# LIT-tmp2qlo2: Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance
+
+Ye et al. (2024) — [ARXIV-2403.16952](https://arxiv.org/abs/2403.16952)
+
+## Key takeaways
+
+- **The gap it names.** Pretraining corpora are mixtures of domains, the
+  proportions matter a great deal, and they are set by heuristics and
+  qualitative argument. Not because anyone prefers that, but because the
+  alternative appeared to require training a model per candidate mixture.
+- **The finding.** Model performance is *quantitatively predictable* as a
+  function of the mixture proportions — a fittable functional form the
+  authors call a **data mixing law**. Fit it on a sample of mixtures and you
+  can read off performance on mixtures you never trained.
+- **The nesting is what makes it affordable.** Combine the mixing law with
+  the existing scaling laws over training steps and model size, and
+  small-scale runs predict a large model on a large token budget under
+  arbitrary mixtures. The search stops needing runs at the target scale.
+- **The result.** Optimising the mixture for a 1B model over 100B RedPajama
+  tokens reached performance comparable to the default mixture trained for
+  **48% more steps**. Extended to continual training, the law predicts the
+  critical proportion at which catastrophic forgetting is avoided.
+
+## Standing in the anthology
+
+The missing quantitative half of the record's data material. The corpus
+carries what to include and what to filter; this is about *proportions*, and
+it converts a judgement call into a fitted prediction — the same move
+[SOTA-142](../practices.d/SOTA-142.md) makes for the peak learning rate and [LIT-145](LIT-145.md) for the schedule.
+
+Not filed as a practice yet, and the reason is worth stating: none of the
+frontier reports in this record says it used a mixing law. They report
+"domain-specific sampling rates determined by ablation studies on smaller
+models" (Kimi K3) or say nothing. That is the *shape* of this method without
+the functional form, so the honest reading is that the field is doing the
+expensive version of this and has not adopted the cheap one.
+
+Filed via the reference pass in [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40), from Olmo 3.

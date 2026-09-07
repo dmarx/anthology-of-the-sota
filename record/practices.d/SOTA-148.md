@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmpussf5
 promote_when: >-
   A group outside DeepSeek training a mixture-of-experts with the bias update
   and reporting both balance and quality against an auxiliary-loss control.
@@ -31,7 +33,7 @@ summary: >-
   and what DeepSeek-V3 runs at 671B.
 ---
 
-# SOTA-tmpussf5: Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss
+# SOTA-148: Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss
 
 A mixture-of-experts needs its experts used evenly: an unbalanced load either
 collapses routing onto a few experts or wastes the capacity of the rest. The

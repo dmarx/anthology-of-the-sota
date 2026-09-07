@@ -29,7 +29,7 @@
 ## From Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens
 
 - [SOTA-140](../record/practices.d/SOTA-140.md) — Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens *(Active, contested)*
-  - [SOTA-141](../record/practices.d/SOTA-141.md) — Decay the learning rate linearly all the way to zero *(Proposed, emerging)*
+  - [SOTA-141](../record/practices.d/SOTA-141.md) — Decay the learning rate linearly all the way to zero *(Proposed, unreplicated)*
   - [SOTA-142](../record/practices.d/SOTA-142.md) — Set the peak learning rate by a power law in tokens so it transfers across batch size and training length *(Active, unassessed)*
 
 ## From Parameterize the model with µP and tune hyperparameters on a narrow proxy, transferring them across width

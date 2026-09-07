@@ -11,17 +11,29 @@ consensus_note: >-
   marginal because the people still training dense at this scale are doing it
   for reasons other than believing it wins on compute.
 title: 'Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    LIT-160 removed from the source list. DeepSeek-V3 demonstrates the
+    recipe at 671B and does not compare it against a matched dense model, so
+    it is evidence about the field — where the consensus_note already
+    counted it. `converged` is unaffected: it rests on four labs and every
+    frontier model since 2024, all of which are adoption by design.
 tags:
 - model-architecture
 date: '2026-09-07'
 published: '2024-01-01'
 source:
+# The four works that established the claim. LIT-160 came out: DeepSeek-V3
+# demonstrates the recipe at 671B without comparing it against a dense model
+# of matched cost, which is adoption (ADR-017), and the consensus_note
+# already counts it among the four labs.
 - LIT-188
 - LIT-187
 - LIT-189
 - LIT-170
-- LIT-160
 implementations:
 - DeepSeek-V3
 - DeepSeek-V4

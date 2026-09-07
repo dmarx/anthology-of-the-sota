@@ -4,7 +4,7 @@
 
 **Not judged** — nobody has assessed where the field stands on this; the default, and true of most of the corpus.
 
-133 of 151 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
+132 of 151 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -40,7 +40,6 @@
 | [SOTA-031](../../../record/practices.d/SOTA-031.md) | Keep micro-batch size per GPU as large as memory allows | Rajbhandari et al. (2020), [LIT-027](../../../record/literature.d/LIT-027.md) — [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054). | Active |
 | [SOTA-032](../../../record/practices.d/SOTA-032.md) | Use pre-norm (RMSNorm) for transformer layers | Xiong et al. (2020), [LIT-029](../../../record/literature.d/LIT-029.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). | Active |
 | [SOTA-033](../../../record/practices.d/SOTA-033.md) | continued pre-training for fine tuning | Gururangan et al. (2020), [LIT-034](../../../record/literature.d/LIT-034.md) — [ARXIV-2004.10964](https://arxiv.org/abs/2004.10964). | Active |
-| [SOTA-034](../../../record/practices.d/SOTA-034.md) | Use SwiGLU activation for transformers | Noam et al. (2020), [LIT-030](../../../record/literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). | Active |
 | [SOTA-035](../../../record/practices.d/SOTA-035.md) | use gradient clipping | Pascanu et al. (2012), [LIT-037](../../../record/literature.d/LIT-037.md) — [ARXIV-1211.5063](https://arxiv.org/abs/1211.5063). | Active |
 | [SOTA-036](../../../record/practices.d/SOTA-036.md) | gpt training recipe | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
 | [SOTA-037](../../../record/practices.d/SOTA-037.md) | LM in-context learning emerges at scale | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |

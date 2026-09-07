@@ -1,0 +1,61 @@
+---
+status: Active
+title: 'Language Modeling with Gated Convolutional Networks'
+version: 1
+tags:
+- model-architecture
+date: '2026-09-07'
+published: '2016-12-01'
+arxiv: '1612.08083'
+first_author: 'Dauphin'
+keywords:
+- 'gated-linear-unit'
+- 'gating'
+- 'vanishing-gradient'
+- 'convolutional-language-models'
+summary: >-
+  Dauphin et al. (2016), [ARXIV-1612.08083](https://arxiv.org/abs/1612.08083). Where the gated linear unit comes
+  from. Its argument is about gradients, not expressivity: an LSTM-style
+  tanh gate multiplies two downscaling factors into the gradient, which
+  vanishes as layers stack, while gating a *linear* unit leaves a path with no
+  downscaling — a multiplicative skip connection. State of the art on
+  WikiText-103, and the first non-recurrent model competitive with strong
+  recurrent ones at that scale.
+---
+
+# LIT-tmp83k94: Language Modeling with Gated Convolutional Networks
+
+Dauphin et al., Facebook AI Research (2016) — [ARXIV-1612.08083](https://arxiv.org/abs/1612.08083)
+
+## Key takeaways
+
+- **The GLU, and why it is shaped that way.** The paper's own framing is a
+  gradient argument. The LSTM-style gate it compares against — which it names
+  the *gated tanh unit* — puts a downscaling factor on both branches, so the
+  gradient shrinks multiplicatively as layers stack. Gating a **linear** unit
+  instead leaves a path through which the gradient flows without downscaling,
+  which the authors describe as a multiplicative skip connection. The gate is
+  not there to add non-linearity; it is there to let depth work.
+- **The comparison is run, not assumed.** GLU is measured against GTU and
+  against the LSTM-style gating of the earlier work, and reaches higher
+  accuracy and faster convergence.
+- The surrounding architecture — stacked gated convolutions instead of
+  recurrence — is what the paper was for at the time: parallelisable over
+  sequence positions, an order of magnitude lower latency to score a
+  sentence, state of the art on WikiText-103, competitive on Google Billion
+  Words. That framing has been overtaken; the gate has not.
+
+## Standing in the anthology
+
+The origin of the unit [SOTA-034](../practices.d/SOTA-034.md) recommends a variant of. The record
+recommended SwiGLU without holding the GLU that "GLU" in its name refers to,
+so the *shape* of the recommendation had no source: why a gate at all, and
+why on a linear branch rather than a tanh one.
+
+Worth reading now for a reason it did not have in 2016. The gradient argument
+says the linear branch is the point — and unboundedness is exactly what
+[LIT-131](LIT-131.md) and [LIT-tmpvp6d7](LIT-tmpvp6d7.md) now object to in SwiGLU at scale in low precision.
+The property being engineered around is the one the design was chosen for,
+which is why the replacements soft-cap the branch rather than remove it.
+
+Filed via the reference pass in [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40), from Kimi K3 §2.3.2.

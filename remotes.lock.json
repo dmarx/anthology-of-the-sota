@@ -23,6 +23,9 @@
     "ARXIV/1608.03983": {
       "title": "SGDR: Stochastic Gradient Descent with Warm Restarts"
     },
+    "ARXIV/1612.08083": {
+      "title": "Language Modeling with Gated Convolutional Networks"
+    },
     "ARXIV/1701.06538": {
       "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer"
     },
@@ -544,6 +547,9 @@
     },
     "ARXIV/2603.20896": {
       "title": "Beyond the Birkhoff Polytope: Spectral-Sphere-Constrained Hyper-Connections"
+    },
+    "ARXIV/2605.25704": {
+      "title": "PowLU: An Activation Function for Stable Pre-Training of LLMs"
     },
     "ARXIV/2606.16246": {
       "title": "Demystifying Training-Time Augmentation for Data-Constrained Language Model Pretraining"

@@ -1,0 +1,67 @@
+---
+status: Active
+title: 'PowLU: An Activation Function for Stable Pre-Training of LLMs'
+version: 1
+tags:
+- model-stability
+date: '2026-09-07'
+published: '2026-05-01'
+arxiv: '2605.25704'
+first_author: 'Jiang'
+keywords:
+- 'activation-functions'
+- 'swiglu'
+- 'training-stability'
+- 'low-precision'
+- 'scaling-laws'
+summary: >-
+  Jiang et al. (2026), [ARXIV-2605.25704](https://arxiv.org/abs/2605.25704). For large positive inputs SwiGLU
+  approximates x², and that quadratic amplification is what enlarges the
+  output range and produces outliers, particularly in low-precision training.
+  PowLU replaces it with a rational power function giving adaptive
+  nonlinearity and bounded growth. Scaling-law experiments plus 7.9B and 124B
+  Ling models against both SwiGLU and SwiGLU-Clip.
+---
+
+# LIT-tmpvp6d7: PowLU: An Activation Function for Stable Pre-Training of LLMs
+
+Jiang et al. (2026) — [ARXIV-2605.25704](https://arxiv.org/abs/2605.25704)
+
+## Key takeaways
+
+- **The diagnosis, stated precisely.** SwiGLU's strength and its hazard are
+  the same property: for large positive inputs it approximates x², which is
+  where its expressive capacity comes from and also what enlarges the output
+  range and exacerbates outliers. The paper names low-precision LLM training
+  as where that stops being tolerable.
+- **The remedy** is a rational power function, giving adaptive nonlinearity
+  with bounded growth, plus theoretical justification for its properties
+  rather than only curves.
+- **The evidence is unusually complete for an activation-function paper.**
+  Scaling-law experiments confirming consistency across model sizes, then the
+  Ling architecture at 7.9B and 124B total parameters, and — this is the part
+  that matters — against **SwiGLU-Clip** as well as SwiGLU. Hard clipping is
+  the obvious cheap fix, so a bounded-activation paper that does not compare
+  against it has not isolated its contribution.
+
+## Standing in the anthology
+
+The second independent objection to [SOTA-034](../practices.d/SOTA-034.md) on the same grounds, and the
+better-evidenced of the two.
+
+Kimi K3 ([LIT-131](LIT-131.md)) replaces SwiGLU with SiTU-GLU because "both multiplicative
+factors in SwiGLU are unbounded, so coincident large coordinates can produce
+activation outliers and increase overflow risk in low-precision arithmetic",
+and soft-caps both branches with a scaled tanh. This paper reaches the same
+diagnosis by a different route — the quadratic regime specifically — and
+answers it with a different function. Neither cites a problem with SwiGLU's
+quality; both object to its **range** in low precision.
+
+Two groups, months apart, independently deciding that the field's default
+activation is a numerical liability at frontier scale is what moves [SOTA-034](../practices.d/SOTA-034.md)
+from "settled" to `contested`. What neither supplies is a comparison between
+the two remedies, or against SwiGLU at a scale where the instability does not
+bite — so the practice's recommendation is qualified rather than replaced.
+
+Filed via the reference pass in [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40), from Kimi K3 §2.3.2, where it is cited
+alongside SiTU-GLU as the other recent attempt at this trade.

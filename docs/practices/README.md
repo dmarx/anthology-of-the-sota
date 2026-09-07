@@ -46,7 +46,7 @@ code and run `luria link --fix`.
 **[Tiny-Models](tags/tiny-models.md)** (8):
 [121](../../record/practices.d/SOTA-121.md) · [122](../../record/practices.d/SOTA-122.md) · [123](../../record/practices.d/SOTA-123.md) · [124](../../record/practices.d/SOTA-124.md) · [125](../../record/practices.d/SOTA-125.md) · [126](../../record/practices.d/SOTA-126.md) · [127](../../record/practices.d/SOTA-127.md) · [128](../../record/practices.d/SOTA-128.md)
 
-**By consensus:** [Not judged](consensus/unassessed.md) (133, the default) · [One source](consensus/unreplicated.md) (4) · [In dispute](consensus/contested.md) (3) · [Spreading](consensus/emerging.md) (6) · [Agreed](consensus/converged.md) (4) · [Assumed](consensus/universal.md) (1)
+**By consensus:** [Not judged](consensus/unassessed.md) (132, the default) · [One source](consensus/unreplicated.md) (4) · [In dispute](consensus/contested.md) (4) · [Spreading](consensus/emerging.md) (6) · [Agreed](consensus/converged.md) (4) · [Assumed](consensus/universal.md) (1)
 
 **By status:** [Current practice](statuses/Active.md) (137) · [Promising](statuses/Proposed.md) (9) · [Not yet judged](statuses/Deferred.md) (1) · [Replaced](statuses/Superseded.md) (4) · [Retired](statuses/Rejected.md) (0)
 
@@ -97,7 +97,7 @@ What the status column means in this scheme — the words are luria's, the meani
 | [SOTA-031](../../record/practices.d/SOTA-031.md) | Keep micro-batch size per GPU as large as memory allows | Rajbhandari et al. (2020), [LIT-027](../../record/literature.d/LIT-027.md) — [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054). | Active |
 | [SOTA-032](../../record/practices.d/SOTA-032.md) | Use pre-norm (RMSNorm) for transformer layers | Xiong et al. (2020), [LIT-029](../../record/literature.d/LIT-029.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). | Active |
 | [SOTA-033](../../record/practices.d/SOTA-033.md) | continued pre-training for fine tuning | Gururangan et al. (2020), [LIT-034](../../record/literature.d/LIT-034.md) — [ARXIV-2004.10964](https://arxiv.org/abs/2004.10964). | Active |
-| [SOTA-034](../../record/practices.d/SOTA-034.md) | Use SwiGLU activation for transformers | Noam et al. (2020), [LIT-030](../../record/literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). | Active |
+| [SOTA-034](../../record/practices.d/SOTA-034.md) v2 | Use SwiGLU activation for transformers | Noam et al. (2020), [LIT-030](../../record/literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). Contested at frontier scale in low precision: two groups now ship bounded replacements, on the grounds that SwiGLU's unbounded factors produce activation outliers. | Active |
 | [SOTA-035](../../record/practices.d/SOTA-035.md) | use gradient clipping | Pascanu et al. (2012), [LIT-037](../../record/literature.d/LIT-037.md) — [ARXIV-1211.5063](https://arxiv.org/abs/1211.5063). | Active |
 | [SOTA-036](../../record/practices.d/SOTA-036.md) | gpt training recipe | Brown et al. (2020), [LIT-035](../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
 | [SOTA-037](../../record/practices.d/SOTA-037.md) | LM in-context learning emerges at scale | Brown et al. (2020), [LIT-035](../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |

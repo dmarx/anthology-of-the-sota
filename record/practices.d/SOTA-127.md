@@ -1,14 +1,26 @@
 ---
 status: Active
 title: 'Filter chain-of-thought traces out of the training data of tiny specialized models'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Sourced to LIT-123 as well as LIT-119. The mechanism the practice argues
+    from — a model trained on reasoning beyond its capacity learns the cheaper
+    pattern, which is repetition — is LIT-123's, and the source follows it
+    explicitly. The recommendation is unchanged.
 tags:
 - data-pipeline
 - tiny-models
 date: '2026-09-05'
 published: '2026-01-15'
 source:
+# The mechanism the practice's argument rests on is LIT-123's, followed
+# explicitly by the source: a model trained on reasoning beyond its capacity
+# learns the cheaper pattern, which is repetition.
 - LIT-119
+- LIT-123
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Reasoning traces interleaved with tool-calling data sent a 90M model into repetition loops; removing them fixed it at once.
 ---

@@ -1,13 +1,32 @@
 ---
 status: Active
 title: 'Build a reasoning model in three stages: pretrain on general data, SFT on reasoning traces, then RL with verifiable rewards'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Re-sourced. The practice named only Olmo 3, which had the effect of
+    attributing a two-lab result to the lab that wrote it down last: LIT-172
+    is where RLVR was named and published in full, and it is this practice's
+    third stage. LIT-128 is an independent instance of the whole recipe on a
+    different base. LIT-127, LIT-129 and LIT-119 stay in the body — the RL
+    algorithm, half the recipe at 135M, and an arithmetic aside in the
+    conditions are not what the recommendation rests on. The recommendation
+    is unchanged.
 tags:
 - training-optimization
 date: '2026-09-05'
 published: '2025-12-01'
 source:
+# Olmo 3 is the open statement of the recipe, LIT-172 is where the RLVR stage
+# was named and demonstrated, and LIT-128 is an independent instance of the
+# whole recipe on a different base. LIT-127 (the RL algorithm), LIT-129 (half
+# the recipe at 135M) and LIT-119 (an arithmetic aside in the conditions) are
+# cited in the body and are not what the recommendation rests on.
 - LIT-130
+- LIT-172
+- LIT-128
 # inactive-ok: SOTA-130 — a Proposed variation, named in the summary on purpose
 summary: >-
   Olmo Team (2025), [LIT-130](../literature.d/LIT-130.md) — the recipe behind every open reasoning model
@@ -20,7 +39,9 @@ summary: >-
 
 ## Source
 
-Olmo Team (2025), [LIT-130](../literature.d/LIT-130.md) — the Olmo 3 model flow.
+Olmo Team (2025), [LIT-130](../literature.d/LIT-130.md) — the Olmo 3 model flow. Lambert et al. (2024),
+[LIT-172](../literature.d/LIT-172.md) — Tulu 3, where the final stage was named. Falcon-LLM Team (2025),
+[LIT-128](../literature.d/LIT-128.md) — the same recipe on a different base.
 
 The standard reasoning curriculum, stated as Olmo 3 runs it in the open: a
 base model pretrained on a general mixture; supervised fine-tuning on
@@ -31,6 +52,14 @@ push accuracy past what imitation reaches. GRPO ([LIT-127](../literature.d/LIT-1
 algorithm. Falcon-H1R ([LIT-128](../literature.d/LIT-128.md)) is the same recipe on a hybrid 7B base, and
 the 135M write-up in [LIT-129](../literature.d/LIT-129.md) is a small instance of the SFT-then-preference
 half.
+
+**Where the last stage comes from.** Olmo 3 is the open, end-to-end statement
+of the curriculum, but it is not where reinforcement learning from verifiable
+rewards was introduced. Tulu 3 ([LIT-172](../literature.d/LIT-172.md)) named RLVR as a stage and published
+the recipe in full — data, code, decontamination and the negative results —
+and this practice's third step is that stage. The note was sourced only to
+Olmo 3 until [#58](https://github.com/dmarx/anthology-of-the-sota/issues/58), which had the effect of attributing a two-lab result to the
+lab that wrote it down last.
 
 Conditions: this is the recipe at 7B and above, where the reasoning corpus
 is small next to the model's memorization window and a from-scratch mix

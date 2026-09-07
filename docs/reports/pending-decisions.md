@@ -20,10 +20,10 @@
 | 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 4 | 0 | Decay the learning rate linearly all the way to zero |
 | 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 3 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 0 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
-| 2026-09-07 | Proposed | [ADR-tmpsdjtd](../../record/decisions.d/ADR-tmpsdjtd.md) | 0 | 0 | Contested is a claim about specific other work, so it must name it |
+| 2026-09-07 | Proposed | [ADR-016](../../record/decisions.d/ADR-016.md) | 0 | 0 | Contested is a claim about specific other work, so it must name it |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (4): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [ADR-012](../../record/decisions.d/ADR-012.md), [ADR-tmpsdjtd](../../record/decisions.d/ADR-tmpsdjtd.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (4): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [ADR-012](../../record/decisions.d/ADR-012.md), [ADR-016](../../record/decisions.d/ADR-016.md) — these are the cheapest to close, since nothing depends on the answer.

@@ -4,7 +4,7 @@
 
 Parallelism, sharding, communication, memory, checkpointing.
 
-15 of 200 LIT documents. Back to the [full index](../README.md).
+16 of 203 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -23,3 +23,4 @@ Parallelism, sharding, communication, memory, checkpointing.
 | [LIT-102](../../../record/literature.d/LIT-102.md) | ZeRO++: Extremely Efficient Collective Communication for Giant Model Training | Rajbhandari et al. (2023), [ARXIV-2306.10209](https://arxiv.org/abs/2306.10209). Communication optimization. | Active |
 | [LIT-158](../../../record/literature.d/LIT-158.md) | A Distributed Data-Parallel PyTorch Implementation of the Distributed Shampoo Optimizer for Training Neural Networks At-Scale | Shi et al. (2023), [ARXIV-2309.06497](https://arxiv.org/abs/2309.06497). The engineering that made a second-order optimizer usable at scale: block-diagonal Kronecker preconditioners sharded across GPUs, at most 10% per-step wall-clock over diagonal adaptive methods. | Active |
 | [LIT-187](../../../record/literature.d/LIT-187.md) | GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding | Lepikhin et al. (2020), [ARXIV-2006.16668](https://arxiv.org/abs/2006.16668). Puts the mixture-of-experts layer into a transformer and shards it across 2048 TPUs with annotations rather than a rewrite: a 600B multilingual translation model trained in four days, and the top-2 routing that later work names as the thing to fix. | Active |
+| [LIT-tmpu1846](../../../record/literature.d/LIT-tmpu1846.md) | Ring Attention with Blockwise Transformers for Near-Infinite Context | Liu et al. (2023), [ARXIV-2310.01889](https://arxiv.org/abs/2310.01889). Compute attention and the feedforward blockwise, distribute the blocks across devices in a ring, and overlap the communication of key/value blocks with the computation of the next block. Sequence length scales with device count — no approximation, no extra communication or computation cost — which is what makes million-token contexts a sharding question rather than a memory ceiling. | Active |

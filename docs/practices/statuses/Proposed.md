@@ -4,7 +4,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-9 of 151 SOTA documents. Back to the [full index](../README.md).
+10 of 152 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,3 +17,4 @@
 | [SOTA-144](../../../record/practices.d/SOTA-144.md) | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too | Dey et al. (2025), [LIT-150](../../../record/literature.d/LIT-150.md) — the depth exponent α = 1 transfers the optimal learning rate across depth and keeps deep layers learning; 11.8% fewer FLOPs than µP at optimal shapes, 34.4% at 179 layers. One group so far. | Proposed |
 | [SOTA-146](../../../record/practices.d/SOTA-146.md) | Correct the GRPO objective before running it — the published form has three independently identified defects | Liu et al. (2025), [LIT-167](../../../record/literature.d/LIT-167.md); Yu et al. (2025), [LIT-168](../../../record/literature.d/LIT-168.md); Zheng et al. (2025), [LIT-180](../../../record/literature.d/LIT-180.md) — three groups, three defects in GRPO's objective, three published fixes, none of them the same fix. "We ran GRPO" does not say which of these you ran. | Proposed |
 | [SOTA-148](../../../record/practices.d/SOTA-148.md) v2 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss | Wang et al. (2024), [LIT-171](../../../record/literature.d/LIT-171.md) — add a per-expert bias to the routing scores before the top-K decision and update it from that expert's recent load, so balancing changes which experts are chosen without adding a gradient to the loss. Better balance *and* better quality than an auxiliary-loss control, and what DeepSeek-V3 runs at 671B. | Proposed |
+| [SOTA-tmpcsora](../../../record/practices.d/SOTA-tmpcsora.md) | Pack training documents by best fit instead of concatenating and splitting | Ding et al. (2024), [LIT-tmp66u4l](../../../record/literature.d/LIT-tmp66u4l.md) — concatenate-then-split truncates documents that would have fit, and the model then learns to continue text whose beginning it never saw. Treating the grouping as bin packing removes those truncations at the same efficiency, no padding added: +4.7% reading comprehension, +16.8% context following, +9.2% program synthesis, and up to 58.3% less closed-domain hallucination. | Proposed |

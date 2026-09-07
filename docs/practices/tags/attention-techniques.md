@@ -4,7 +4,7 @@
 
 Attention variants, implementation optimizations, alternative mechanisms.
 
-17 of 151 SOTA documents. Back to the [full index](../README.md).
+17 of 152 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

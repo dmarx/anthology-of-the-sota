@@ -1,0 +1,68 @@
+---
+status: Active
+title: 'Griffin: Mixing Gated Linear Recurrences with Local Attention for Efficient Language Models'
+version: 1
+tags:
+- attention-techniques
+date: '2026-09-07'
+published: '2024-02-01'
+arxiv: '2402.19427'
+first_author: 'De'
+keywords:
+- 'linear-recurrence'
+- 'hybrid-architecture'
+- 'local-attention'
+- 'length-extrapolation'
+- 'inference-throughput'
+summary: >-
+  De et al., Google DeepMind (2024), [ARXIV-2402.19427](https://arxiv.org/abs/2402.19427). Two models: Hawk, a
+  pure RNN with gated linear recurrences that exceeds Mamba's reported
+  downstream numbers; and Griffin, which mixes those recurrences with *local*
+  attention and matches Llama-2 on over 6× fewer tokens. Scaled to 14B, with
+  the sharding recipe published, matching Transformer hardware efficiency in
+  training and beating it on inference latency and throughput.
+---
+
+# LIT-tmpgty3a: Griffin: Mixing Gated Linear Recurrences with Local Attention for Efficient Language Models
+
+De et al., Google DeepMind (2024) — [ARXIV-2402.19427](https://arxiv.org/abs/2402.19427)
+
+## Key takeaways
+
+- **Two models, and separating them is the point.** Hawk is the pure
+  recurrent model — gated linear recurrences, no attention — and it already
+  exceeds Mamba's reported downstream performance. Griffin adds local
+  attention to the same recurrences. So the paper reports what the recurrence
+  buys on its own *and* what mixing buys on top, rather than presenting one
+  hybrid and leaving the attribution open.
+- **Griffin matches Llama-2 on over 6× fewer tokens**, which is the headline
+  and is a token-efficiency claim rather than a compute-efficiency one.
+- **The attention is local, not global.** This is the variant of the hybrid
+  where the softmax layers see a window rather than the whole sequence — a
+  different bargain from the one [SOTA-132](../practices.d/SOTA-132.md) records, where a minority of layers
+  keep *global* attention. Both restore what linear attention lacks; only one
+  keeps exact long-range retrieval.
+- Griffin extrapolates to sequences significantly longer than it was trained
+  on. Training matches Transformer hardware efficiency; inference has lower
+  latency and significantly higher throughput. Scaled to 14B parameters with
+  the sharding strategy described.
+
+## Standing in the anthology
+
+The earliest member of the hybrid family in this record, and one of the
+multiply-cited absences from [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40) — Falcon-H1 ([LIT-120](LIT-120.md)) and Kimi K3 ([LIT-131](LIT-131.md))
+both cite it.
+
+It is where the *interleaving* pattern [SOTA-132](../practices.d/SOTA-132.md) recommends actually starts.
+The delta-rule paper says so explicitly: its sliding-window hybrid "follows
+Griffin and Samba". So the line runs Griffin (2024, local attention) →
+DeltaNet's two hybrids (2024, local and global variants) → Kimi Linear's 3:1
+global layout (2025) → the 2026 production models — and the record previously
+held only the last two steps.
+
+The distinction the note keeps is between *local* and *global* attention in
+the minority layers. Griffin and Samba take the local branch; the layouts
+this record recommends take the global one. That is a real fork, not a
+detail: only global attention preserves exact retrieval at arbitrary
+distance, which is the property [SOTA-132](../practices.d/SOTA-132.md) says the minority layers are there
+to protect.

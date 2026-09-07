@@ -1,0 +1,66 @@
+---
+status: Active
+title: 'Fewer Truncations Improve Language Modeling'
+version: 1
+tags:
+- data-pipeline
+date: '2026-09-07'
+published: '2024-04-01'
+arxiv: '2404.10830'
+first_author: 'Ding'
+keywords:
+- 'document-packing'
+- 'truncation'
+- 'hallucination'
+- 'data-integrity'
+- 'bin-packing'
+summary: >-
+  Ding et al. (2024), [ARXIV-2404.10830](https://arxiv.org/abs/2404.10830). Everyone concatenates documents and
+  splits at a fixed length to avoid padding, which shreds documents into
+  incomplete pieces. Best-fit Packing treats the grouping as bin packing
+  instead and eliminates unnecessary truncation at the same training
+  efficiency — no padding added. Across 22 tasks at 7B–13B: +4.7% reading
+  comprehension, +16.8% context following, +9.2% program synthesis, and up to
+  58.3% less closed-domain hallucination.
+---
+
+# LIT-tmp66u4l: Fewer Truncations Improve Language Modeling
+
+Ding et al. (2024) — [ARXIV-2404.10830](https://arxiv.org/abs/2404.10830)
+
+## Key takeaways
+
+- **The default nobody questions.** Concatenate documents, split into equal
+  lengths, insert a boundary token. It is universal because it wastes no
+  tokens on padding. The cost is that documents which would have fit are
+  fragmented anyway, and the fragments are trained on as if they were whole —
+  the model learns to continue text whose beginning it never saw.
+- **The claim is not just "packing is untidy".** The paper argues
+  analytically, through a simplified model, that truncation harms learning,
+  and then measures it. Truncation removes the grounding a fact depends on,
+  which is why the effect shows up most strongly as **hallucination**.
+- **The method is bin packing, honestly named.** Segment documents longer
+  than the sequence length into chunks, then partition the chunks into the
+  fewest sequences possible. That is the NP-hard bin-packing problem, so the
+  paper uses a Best-Fit-Decreasing approximation — hence Best-fit Packing.
+  Because it minimises the number of sequences, it adds no padding: the same
+  training efficiency as concatenation, with the truncations removed.
+- **The evidence is broad.** Models from 7B to 13B, sequence lengths 2k to
+  8k, on both natural-language and programming-language corpora, evaluated on
+  22 tasks across reading comprehension, NLI, context following,
+  summarization, world knowledge and program synthesis. Relative gains of
+  +4.7%, +16.8% and +9.2% on the three headline categories, and closed-domain
+  hallucination down by up to **58.3%**.
+
+## Standing in the anthology
+
+<!-- inactive-ok: SOTA-tmpcsora — Proposed, and this note is its source -->
+The source of [SOTA-tmpcsora](../practices.d/SOTA-tmpcsora.md), and one of the multiply-cited absences the
+reference pass in [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40) found — cited independently by Olmo 3 ([LIT-130](LIT-130.md)) and
+DeepSeek-V4 ([LIT-139](LIT-139.md)).
+
+Worth having because of the shape of the finding rather than its size. This
+is a data-*plumbing* decision, made once in a dataloader, that nobody
+revisits because it looks like an implementation detail with an obviously
+optimal answer. The record's other data practices are about what to put in
+the corpus; this is about what the corpus becomes on the way to the model.

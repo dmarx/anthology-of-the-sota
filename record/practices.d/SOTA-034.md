@@ -1,7 +1,24 @@
 ---
 status: 'Active'
+consensus: contested
+consensus_note: >-
+  Two independent groups, months apart, object to SwiGLU's unboundedness as a
+  numerical liability in low-precision training and ship bounded replacements
+  — LIT-131 at 2.8T, LIT-tmpvp6d7 at 124B. Neither disputes its quality, and
+  neither compares the two remedies, so the recommendation is qualified
+  rather than replaced.
+contested_by:
+- LIT-131
+- LIT-tmpvp6d7
 title: 'Use SwiGLU activation for transformers'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Gained the GLU origin it never had (LIT-tmp83k94), the sibling to K3's
+    SiTU-GLU (LIT-tmpvp6d7), and `contested` on the strength of the two.
+    The recommendation is unchanged at ordinary precision.
 tags:
 - model-architecture
 date: '2026-08-24'
@@ -9,7 +26,9 @@ published: '2020-02-01'
 source:
 - LIT-030
 summary: >-
-  Noam et al. (2020), [LIT-030](../literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202).
+  Noam et al. (2020), [LIT-030](../literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). Contested at frontier
+  scale in low precision: two groups now ship bounded replacements, on the
+  grounds that SwiGLU's unbounded factors produce activation outliers.
 implementations:
 - llama2
 ---
@@ -19,6 +38,25 @@ implementations:
 ## Source
 
 Noam et al. (2020), [LIT-030](../literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202).
+
+## Where the gate came from
+
+The record recommended SwiGLU without holding the GLU its name refers to.
+[LIT-tmp83k94](../literature.d/LIT-tmp83k94.md) is that paper, and its argument is about **gradients rather than
+expressivity**: an LSTM-style tanh gate puts a downscaling factor on both
+branches, so the gradient shrinks multiplicatively with depth, while gating a
+*linear* unit leaves a path with no downscaling — a multiplicative skip
+connection. The gate is there to let depth work.
+
+That matters for what follows. The linear, unbounded branch is the thing the
+design was chosen for, and unboundedness is precisely what the two objections
+below are about. Which is why both remedies **soft-cap** the branch rather
+than removing it.
+
+## Contested: the range, not the quality
+
+Two independent groups, months apart, decided SwiGLU's unboundedness is a
+numerical liability at frontier scale in low precision.
 
 ## Variations
 
@@ -33,10 +71,29 @@ near-linear at the origin, bounded far from it — with a different cap
 constant per branch. Kimi K3 ships it at 2.8T.
 
 One group, one model, no ablation: the report gives the motivation and the
-functional form and does not measure SiTU-GLU against SwiGLU anywhere. So
-this is recorded as a variation rather than a competing practice, and what
-it establishes is that a frontier lab found SwiGLU's unboundedness worth
-engineering around at trillion scale.
+functional form and does not measure SiTU-GLU against SwiGLU anywhere.
+
+**PowLU** ([LIT-tmpvp6d7](../literature.d/LIT-tmpvp6d7.md)) is the other one, and it is the better-evidenced of
+the pair. Same objection reached from a different angle: for large positive
+inputs SwiGLU approximates x², and that quadratic amplification is what
+enlarges the output range and produces the outliers. The remedy is a rational
+power function — adaptive nonlinearity, bounded growth — with scaling-law
+experiments across sizes and results on the Ling architecture at 7.9B and
+124B against **SwiGLU-Clip as well as SwiGLU**. That control matters: hard
+clipping is the obvious cheap fix, and a bounded-activation paper that skips
+it has not isolated its own contribution.
+
+## What this does and does not settle
+
+The recommendation stands at ordinary precision. Neither paper claims SwiGLU
+is worse; both object to its *range* when the arithmetic is narrow, which is
+a condition rather than a refutation.
+
+What is missing is the comparison nobody has run: the two remedies against
+each other, and either against SwiGLU at a scale where the instability does
+not appear. Until then this is `contested` rather than superseded — the
+field's default is being replaced in two places for one stated reason, and
+neither replacement has been checked against the other.
 
 ## Known implementations
 

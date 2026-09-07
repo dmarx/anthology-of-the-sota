@@ -12,15 +12,30 @@ consensus_note: >-
   to exactly the 10% this practice's source argues against. Nobody argues it
   is wrong; the field has not moved.
 title: 'Decay the learning rate linearly all the way to zero'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Sourced to LIT-145 as well as LIT-147. The consensus_note already read
+    "with LIT-145's cooldown pointing the same way", so the consensus value
+    rested on a paper the source list did not name — the disconnect ADR-010
+    describes. LIT-145 corroborates the endpoint, not the per-schedule
+    comparison promote_when asks for, so the status is unchanged.
 tags:
 - training-optimization
 date: '2026-09-05'
 published: '2025-02-01'
 source:
-- LIT-147
 # The decay-to-zero claim is about where WSD's decay ends, not
 # whether to use WSD — this practice's own Source section says so.
+# LIT-145 recommends a cooldown decaying to zero with a 1-sqrt shape, and the
+# consensus_note already rests on it; a consensus reading resting on a paper
+# the source list does not name is the disconnect ADR-010 describes. It
+# corroborates the endpoint, not the schedule comparison promote_when asks
+# for, which is why this stays Proposed.
+- LIT-147
+- LIT-145
 extends:
 - SOTA-140
 summary: >-

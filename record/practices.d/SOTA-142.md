@@ -1,15 +1,27 @@
 ---
 status: Active
 title: 'Set the peak learning rate by a power law in tokens so it transfers across batch size and training length'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Sourced to LIT-119 as well as LIT-146. The body says Falcon-H1-Tiny's
+    independent adoption "is what moves this from one group's result to a
+    practice" — a sentence that makes it support, not an aside. The
+    recommendation is unchanged.
 tags:
 - training-optimization
 date: '2026-09-05'
 published: '2024-08-01'
 source:
-- LIT-146
 # The power law is fitted under WSD and sets its peak; SOTA-140's
 # Sequence names this practice as the step that does it.
+# LIT-119 is the independent adoption the body calls "what moves this from
+# one group's result to a practice" — the sentence that makes it a source
+# rather than an aside.
+- LIT-146
+- LIT-119
 extends:
 - SOTA-140
 summary: >-

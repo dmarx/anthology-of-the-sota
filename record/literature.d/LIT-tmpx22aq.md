@@ -1,0 +1,77 @@
+---
+status: Active
+title: 'Parallelizing Linear Transformers with the Delta Rule over Sequence Length'
+version: 1
+tags:
+- attention-techniques
+date: '2026-09-07'
+published: '2024-06-01'
+arxiv: '2406.06484'
+first_author: 'Yang'
+keywords:
+- 'linear-attention'
+- 'delta-rule'
+- 'associative-recall'
+- 'hybrid-architecture'
+- 'householder'
+summary: >-
+  Yang et al. (2024), [ARXIV-2406.06484](https://arxiv.org/abs/2406.06484). The delta rule fixes what linear
+  attention is worst at — associative recall — but its original algorithm did
+  not parallelize over sequence length, so it never left small scale. A
+  reparameterization as products of Householder matrices makes it chunkwise,
+  and a 1.3B DeltaNet on 100B tokens beats Mamba and GLA. It also reports the
+  hybrid result: interleaving with sliding-window or two global attention
+  layers beats a strong Transformer baseline.
+---
+
+# LIT-tmpx22aq: Parallelizing Linear Transformers with the Delta Rule over Sequence Length
+
+Yang et al., MIT, Soochow University and MIT-IBM Watson AI Lab (2024) — [ARXIV-2406.06484](https://arxiv.org/abs/2406.06484)
+
+## Key takeaways
+
+- **The weakness it targets.** Linear-time models are competitive on
+  perplexity and consistently worse on recall-intensive tasks, which matters
+  because retrieval-style behaviour is what many real applications need. The
+  delta rule — retrieve the value currently associated with a key, then write
+  a correction rather than adding a new term — is the known remedy, and it
+  had been demonstrated only on synthetic tasks and small models.
+- **Why it had not scaled: an algorithm, not an idea.** The original DeltaNet
+  update is sequential over the sequence. The contribution here is a
+  memory-efficient reparameterization built on products of Householder
+  matrices (a WY representation), which yields a chunkwise parallel form and
+  lets the model be trained at standard language-modelling scale.
+- **What it buys, and what it costs.** On the MAD synthetic suite DeltaNet
+  averages 71.8 against GLA's 60.0, with a Transformer at 74.5 — and the
+  profile is the interesting part: in-context recall 100, noisy recall 100,
+  selective copy 100, fuzzy recall 35.7 against the Transformer's 29.8, but
+  **memorization 52.8**, the worst in the table. It buys recall and pays in
+  memorisation. On MQAR it is perfect in the hardest setting without
+  convolutions, where Mamba needs them.
+- **A scale caveat the paper states plainly.** At 340M with matched state
+  size DeltaNet beats GLA on recall-intensive tasks; at 1.3B it *loses* to
+  GLA, because its state size scales worse and state size is what those tasks
+  reward. A result that reverses with scale, reported rather than buried.
+- **The hybrid result, which is the part this record most needed.** Linear
+  attention is content-addressed and carries little positional information,
+  and struggles with precise local shifts and comparisons. So the authors
+  interleave: DeltaNet with sliding-window attention every other layer,
+  following Griffin and Samba; and DeltaNet with just **two** global attention
+  layers, the second and the (n/2)-th. Both hybrids beat a strong
+  Transformer++ baseline. Scaled to 3B on 1T tokens, DeltaNet alone slightly
+  underperforms a matched Transformer while beating the other RNN baselines.
+
+## Standing in the anthology
+
+The other parent of Gated DeltaNet ([LIT-137](LIT-137.md)) — the delta rule that its title
+names, where [LIT-tmprkx70](LIT-tmprkx70.md) supplies the gate.
+
+More usefully, it is **earlier evidence for the practice the record already
+holds**. [SOTA-132](../practices.d/SOTA-132.md) recommends interleaving linear-attention layers with a
+minority of full-attention ones, sourced to the 2025-2026 model reports. This
+2024 paper reports the same finding at 1.3B, with two variants, against a
+Transformer baseline, and gives the mechanism: linear attention lacks precise
+local shift-and-compare, so a few softmax layers restore it. The practice was
+being converged on well before the reports that made it visible here.
+
+Filed via the reference pass in [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40), from Kimi K3 §2.1.1.

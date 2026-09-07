@@ -380,6 +380,9 @@
     "ARXIV/2312.04461": {
       "title": "PhotoMaker: Customizing Realistic Human Photos via Stacked ID Embedding"
     },
+    "ARXIV/2312.06635": {
+      "title": "Gated Linear Attention Transformers with Hardware-Efficient Training"
+    },
     "ARXIV/2401.06066": {
       "title": "DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models"
     },
@@ -403,6 +406,9 @@
     },
     "ARXIV/2405.21060": {
       "title": "Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality"
+    },
+    "ARXIV/2406.06484": {
+      "title": "Parallelizing Linear Transformers with the Delta Rule over Sequence Length"
     },
     "ARXIV/2406.17557": {
       "title": "The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale"

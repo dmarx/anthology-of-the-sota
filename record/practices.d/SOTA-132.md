@@ -47,14 +47,29 @@ parameter to retune. So the hybrid is not only cheaper per token — it makes
 [SOTA-139](SOTA-139.md)'s staged context extension a smaller operation. Whether that
 survives without a recurrence that is itself position-sensitive is untested.
 
-Conditions: the controlled comparison is one group's at one mid scale. The
-layout has two independent adopters in the record with different linear
-modules — Kimi's KDA at 2.8T ([LIT-131](../literature.d/LIT-131.md)) and Alibaba's Gated DeltaNet
-([SOTA-135](SOTA-135.md)) from Qwen3-Next's 80B-A3B ([LIT-136](../literature.d/LIT-136.md)) to the dense Qwen3.8-27B
-([LIT-135](../literature.d/LIT-135.md)) — which is adoption evidence, not a second controlled comparison. The ratio
-is a knob — the paper's ablations settled on 3:1 — and the global layers
-are what keep exact retrieval intact, so they should not be removed to
-chase the throughput number.
+Conditions: the layout has two independent adopters in the record with
+different linear modules — Kimi's KDA at 2.8T ([LIT-131](../literature.d/LIT-131.md)) and Alibaba's Gated
+DeltaNet ([SOTA-135](SOTA-135.md)) from Qwen3-Next's 80B-A3B ([LIT-136](../literature.d/LIT-136.md)) to the dense
+Qwen3.8-27B ([LIT-135](../literature.d/LIT-135.md)) — which is adoption evidence rather than a repeat of
+the experiment. The ratio is a knob — the paper's ablations settled on 3:1 —
+and the global layers are what keep exact retrieval intact, so they should
+not be removed to chase the throughput number.
+
+**This practice used to say the controlled comparison was one group's. It is
+not.** [LIT-tmpx22aq](../literature.d/LIT-tmpx22aq.md), filed via [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40), ran the experiment in 2024, two years
+before the reports that made the layout visible here: DeltaNet interleaved
+with sliding-window attention every other layer, and DeltaNet with just two
+global attention layers (the second and the n/2-th), both beating a strong
+Transformer++ baseline at 1.3B. Different group, different linear module,
+different ratios, same conclusion.
+
+It also supplies a mechanism the source report does not. Linear attention is
+content-addressed and carries little positional information, and it is
+specifically bad at precise local shift-and-compare; a minority of softmax
+layers restores exactly that. Which is a better reason to keep the global
+layers than "retrieval gets worse without them", and it predicts that the
+right *ratio* depends on how much local comparison the task needs rather
+than on a universal constant.
 
 ## Sequence
 

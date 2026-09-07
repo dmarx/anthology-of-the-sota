@@ -2,10 +2,15 @@
 
 # Lines of practice
 
-1 line, walked from `extends:` on SOTA documents. Each step explains itself; this page is the order they came in.
+2 lines, walked from `extends:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 ## From Widen the residual stream into several streams with freely learned mixing (hyper-connections)
 
 - [SOTA-137](../record/practices.d/SOTA-137.md) — Widen the residual stream into several streams with freely learned mixing (hyper-connections) *(Superseded, unassessed)*
   - [SOTA-136](../record/practices.d/SOTA-136.md) — Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) *(Proposed, contested)*
 - alongside: [SOTA-133](../record/practices.d/SOTA-133.md) — Replace fixed residual accumulation with learned attention over preceding layers *(Active, emerging)*
+
+## From Estimate the RL baseline from a group of samples for the same prompt instead of training a critic
+
+- [SOTA-tmp8u4ld](../record/practices.d/SOTA-tmp8u4ld.md) — Estimate the RL baseline from a group of samples for the same prompt instead of training a critic *(Active, converged)*
+  - [SOTA-tmpauaby](../record/practices.d/SOTA-tmpauaby.md) — Correct the GRPO objective before running it — the published form has three independently identified defects *(Proposed, emerging)*

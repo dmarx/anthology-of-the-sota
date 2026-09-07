@@ -4,7 +4,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-7 of 144 SOTA documents. Back to the [full index](../README.md).
+8 of 146 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -15,3 +15,4 @@
 | [SOTA-136](../../../record/practices.d/SOTA-136.md) | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) | Xie et al. (2025), [LIT-140](../../../record/literature.d/LIT-140.md) — hyper-connections with the residual-mixing matrix constrained to be doubly stochastic, so identity mapping survives; 6–7% overhead at 3B–27B, shipped in DeepSeek-V4. | Proposed |
 | [SOTA-141](../../../record/practices.d/SOTA-141.md) | Decay the learning rate linearly all the way to zero | Bergsma et al. (2025), [LIT-147](../../../record/literature.d/LIT-147.md) — with the peak tuned, linear decay to zero beats the customary decay to 10% and other shapes at compute-optimal budgets, more so past them; Proposed because contemporary production runs in the record still decay to a floor. | Proposed |
 | [SOTA-144](../../../record/practices.d/SOTA-144.md) | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too | Dey et al. (2025), [LIT-150](../../../record/literature.d/LIT-150.md) — the depth exponent α = 1 transfers the optimal learning rate across depth and keeps deep layers learning; 11.8% fewer FLOPs than µP at optimal shapes, 34.4% at 179 layers. One group so far. | Proposed |
+| [SOTA-tmpauaby](../../../record/practices.d/SOTA-tmpauaby.md) | Correct the GRPO objective before running it — the published form has three independently identified defects | Liu et al. (2025), [LIT-167](../../../record/literature.d/LIT-167.md); Yu et al. (2025), [LIT-168](../../../record/literature.d/LIT-168.md); Zheng et al. (2025), [LIT-180](../../../record/literature.d/LIT-180.md) — three groups, three defects in GRPO's objective, three published fixes, none of them the same fix. "We ran GRPO" does not say which of these you ran. | Proposed |

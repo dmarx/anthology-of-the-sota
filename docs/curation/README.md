@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [7 Sep 03:34 — GRPO enters the practice registry, in two pieces](2026-09.md#20260907033446)
 - [6 Sep 17:16 — Ten consensus readings, and the 134 the record admits it has not made](2026-09.md#20260906171657)
 - [6 Sep 00:31 — Nine promotion conditions, written honestly, and what writing them exposed](2026-09.md#20260906003150)
 - [5 Sep 23:15 — Two promotion conditions were met on the same day; only one of them should have been applied](2026-09.md#20260905231501)
@@ -19,9 +20,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-12 entries across 2 books, newest first.
+13 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 10 | 2026-09-05 | 2026-09-06 |
+| [2026-09](2026-09.md) | 11 | 2026-09-05 | 2026-09-07 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

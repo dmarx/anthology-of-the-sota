@@ -1,0 +1,80 @@
+---
+status: Active
+title: 'YaRN: Efficient Context Window Extension of Large Language Models'
+version: 1
+tags:
+- attention-techniques
+date: '2026-09-07'
+published: '2023-08-01'
+arxiv: '2309.00071'
+first_author: 'Peng'
+keywords:
+- 'long-context'
+- 'rope'
+- 'context-extension'
+- 'ntk-aware'
+- 'attention-temperature'
+summary: >-
+  Peng et al. (2023), [ARXIV-2309.00071](https://arxiv.org/abs/2309.00071). Position interpolation stretches every
+  RoPE dimension equally, which destroys the high-frequency components and
+  stalls around a scale factor of 8. YaRN scales by wavelength instead —
+  leaving dimensions that never complete a rotation alone, interpolating the
+  ones that do — and adds a temperature on the attention logits implemented
+  for free inside the rotary embedding. Llama 2 to 128k with 10× fewer tokens
+  and 2.5× fewer steps than PI.
+---
+
+# LIT-tmpsei2t: YaRN: Efficient Context Window Extension of Large Language Models
+
+Peng et al., Nous Research, EleutherAI and University of Geneva (2023) — [ARXIV-2309.00071](https://arxiv.org/abs/2309.00071)
+
+## Key takeaways
+
+- **What is wrong with uniform interpolation.** Read as information encoding,
+  RoPE is close to a Fourier feature, and NTK theory says networks struggle to
+  learn high-frequency components when the input dimension is low. Stretching
+  every dimension by the same factor removes exactly those components, and it
+  gets worse as the factor grows. Empirically PI stalls around a scale factor
+  of **8** even after fine-tuning. The fix, "NTK-aware" interpolation, spreads
+  the pressure unevenly: scale high frequencies less and low frequencies more.
+- **The sharper observation.** RoPE is not purely relative in practice. For
+  some dimensions the wavelength exceeds the pretraining context, so those
+  dimensions never complete a rotation, every token has a unique distance to
+  the first one, and **absolute** position survives in them. Where the
+  wavelength is short, only relative position is available. Interpolating the
+  two kinds identically is the error. "NTK-by-parts" therefore leaves the
+  never-rotating dimensions untouched, interpolates the fully-rotating ones,
+  and blends in between.
+- **The attention temperature, which is the part with no cost.** Dividing the
+  pre-softmax logits by a constant improves perplexity uniformly across
+  samples and positions. Because RoPE is a set of 2D rotations, the same
+  effect is obtained by scaling the complex rotary embeddings themselves — so
+  it is a change to precomputed tables, **zero overhead at training and
+  inference, and no change to attention code**. YaRN is NTK-by-parts plus
+  this scaling; the temperature is fitted once against scale factor and
+  transfers across LLaMA and Llama 2 sizes.
+- **Cost.** Llama 2 7B and 13B to a 64k window in 400 steps, then 128k in a
+  further 200 from that checkpoint — 10× fewer tokens and 2.5× fewer steps
+  than previous methods, with no architectural change. The 128k model is
+  trained only on 64k data and extrapolates past it: "train short, test long".
+- **Dynamic Scaling** is the inference-time companion: recompute the scale
+  factor per forward pass from the current sequence length rather than fixing
+  it at the target. A fixed factor costs quality below the target and breaks
+  abruptly above it; the dynamic version degrades gracefully, and works
+  notably well with no fine-tuning at all.
+
+## Standing in the anthology
+
+The current answer to "extend a trained model's context without retraining
+it", and the second half of [SOTA-tmp55o8w](../practices.d/SOTA-tmp55o8w.md). Cited independently by Olmo 3
+([LIT-130](LIT-130.md)) and Kimi K3 ([LIT-131](LIT-131.md)), which is how the reference pass in [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40) found
+it.
+
+K3's citation is the interesting one, because K3 names YaRN as the thing it
+does not need. Having dropped positional encoding from its global-attention
+layers entirely, it reports extrapolating to 1M "without any
+positional-encoding modification, such as RoPE rescaling or interpolation".
+So this line of work and the NoPE-plus-linear-attention line are alternative
+answers to the same problem, and the record now holds both ends: this note
+is what a RoPE model has to do, and [LIT-131](LIT-131.md) is what a model designed not to
+need it does instead.

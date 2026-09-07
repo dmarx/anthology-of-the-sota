@@ -332,6 +332,9 @@
     "ARXIV/2306.10209": {
       "title": "ZeRO++: Extremely Efficient Collective Communication for Giant Model Training"
     },
+    "ARXIV/2306.15595": {
+      "title": "Extending Context Window of Large Language Models via Positional Interpolation"
+    },
     "ARXIV/2307.05695": {
       "title": "ReLoRA: High-Rank Training Through Low-Rank Updates"
     },
@@ -346,6 +349,9 @@
     },
     "ARXIV/2308.16369": {
       "title": "SARATHI: Efficient LLM Inference by Piggybacking Decodes with Chunked Prefills"
+    },
+    "ARXIV/2309.00071": {
+      "title": "YaRN: Efficient Context Window Extension of Large Language Models"
     },
     "ARXIV/2309.06180": {
       "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention"

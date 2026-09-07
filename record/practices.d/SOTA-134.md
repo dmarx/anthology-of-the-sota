@@ -31,8 +31,12 @@ value and output projections and the sparsity it induces in the output.
 Conditions: the ablation is one group's, but a large one, and the practice
 has since shipped in production at several scales — Qwen3-Next's 80B-A3B
 ([LIT-136](../literature.d/LIT-136.md)), the Qwen3.5, 3.6 and 3.8 generations ([LIT-135](../literature.d/LIT-135.md)), and, on a
-latent-attention base, apparently Kimi K3's gated MLA layers ([LIT-131](../literature.d/LIT-131.md)). The
-cost is one sigmoid per head per token. Not to be confused with gating the
+latent-attention base, Kimi K3's gated MLA layers ([LIT-131](../literature.d/LIT-131.md)) — at a different
+granularity, which the K3 report is explicit about: "an input-dependent,
+channel-wise full-rank output gate", where this paper's sweep settles on a
+head-specific sigmoid. Same position in the block, same justification,
+different width, and neither group has swept its choice against the other's.
+The cost is one sigmoid per head per token. Not to be confused with gating the
 attention *scores*, which is among the variants that did not help.
 
 ## Known implementations

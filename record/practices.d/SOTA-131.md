@@ -36,18 +36,24 @@ threshold is a hyperparameter; the report's value is tuned for its model.
 
 ## Variations
 
-DeepSeek-V4 ([LIT-139](../literature.d/LIT-139.md)) pretrains 1.6T and 284B MoE models with Muon and,
-per secondary coverage of its report, without QK-Clip — the RMSNorm it
-already applies to queries and to the compressed KV entries is said to
-bound the logits on its own. If that reading holds, the clip is one of two
-ways to the same invariant, and QK-normalisation is the other.
+DeepSeek-V4 ([LIT-139](../literature.d/LIT-139.md)) pretrains 1.6T and 284B MoE models with Muon and
+without QK-Clip, and the report says so in as many words: "The attention
+architecture of DeepSeek-V4 series allows us to directly apply RMSNorm on
+the attention queries and KV entries, which effectively prevents attention
+logits from exploding. Consequently, we do not employ the QK-Clip technique
+in our Muon optimizer." So the clip is one of two ways to the same
+invariant, and QK-normalisation is the other — not a reading of secondary
+coverage but the primary source's own account, under the heading "Avoiding
+Exploding Attention Logits".
 
 ## Sequence
 
 Muon ([LIT-159](../literature.d/LIT-159.md)) → weight decay and RMS matching
 so AdamW's hyperparameters transfer ([LIT-122](../literature.d/LIT-122.md), [SOTA-121](SOTA-121.md)) → QK-Clip so the
-attention logits stay bounded at scale (this practice) → [LIT-131](../literature.d/LIT-131.md) reports a
-per-head variant of Muon on top. Each step keeps the one before.
+attention logits stay bounded at scale (this practice) → [LIT-131](../literature.d/LIT-131.md) adds Per-Head
+Muon on top, orthogonalizing each attention head's momentum block separately
+so that heads with larger gradients stop dominating the shared update.
+Each step keeps the one before.
 
 ## Mechanism
 
@@ -61,4 +67,4 @@ normalizing the input to the logit and clipping the weights after the fact.
 
 ## Known implementations
 
-- Kimi K2, Kimi K3 (QK-Clip); DeepSeek-V4 (Muon with QK-norm, no clip, reported)
+- Kimi K2, Kimi K3 (QK-Clip); DeepSeek-V4 (Muon with QK-norm, no clip)

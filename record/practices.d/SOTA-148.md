@@ -16,7 +16,7 @@ consensus_note: >-
   extension by an outside group, still with no head-to-head against an
   auxiliary-loss control from anyone but the originating lab.
 title: 'Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -26,13 +26,29 @@ history:
     (LIT-139) runs a slight sequence-wise balance loss alongside the bias.
     Consensus moves from unreplicated to emerging. The recommendation is
     unchanged and the promotion condition is still unmet.
+- version: 3
+  date: '2026-09-07'
+  note: >-
+    Sourced to LIT-131 as well. K3 keeps the recommendation and replaces the
+    update rule, reporting that at 896 routed experts per layer balancing
+    "exceeds the regime in which existing auxiliary-loss-free bias updates
+    remain effective" — a measurement of where the claim stops holding
+    rather than an adoption of it, and the qualification the Variations
+    section is built on. The recommendation is unchanged.
 tags:
 - model-architecture
 date: '2026-09-07'
 published: '2024-08-01'
 source:
+# LIT-171 introduces the bias; LIT-160 is where it ships. LIT-131 is not an
+# adopter here — it reports the size at which the fixed-step update stops
+# being effective, which is a measurement of this claim's limit and the
+# qualification the Variations section is built on (ADR-017). LIT-139's
+# auxiliary loss alongside the bias is a deployment variation without a
+# comparison, so it stays in the body.
 - LIT-171
 - LIT-160
+- LIT-131
 extends:
 - SOTA-150
 implementations:

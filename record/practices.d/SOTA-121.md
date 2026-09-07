@@ -1,7 +1,17 @@
 ---
 status: Active
 title: 'Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Sourced to LIT-153 as well. It argues Muon's shrinking advantage is not
+    intrinsic but an artefact of constant decoupled weight decay fixing the
+    equilibrium norm, and recovers 20-30% by pinning the norms — a result
+    about the magnitude of this practice's own claim, from a group outside
+    the one making it. The body already turned on it when saying what should
+    not be quoted any more. The recommendation is unchanged.
 tags:
 - training-optimization
 - tiny-models
@@ -10,12 +20,16 @@ published: '2026-01-15'
 source:
 # The blogpost is where the practice is stated as a recipe; LIT-122 is the
 # production form and the scaling evidence; LIT-159 is the origin;
-# LIT-156 is the outside comparison that puts a smaller number on it
-# (ADR-010).
+# LIT-156 is the outside comparison that puts a smaller number on it, and
+# LIT-153 is the argument that the smaller number is an artefact of how
+# LIT-156 held weight decay — evidence about the size of the claim, from
+# outside the group making it (ADR-017). The frontier adopters LIT-131,
+# LIT-132 and LIT-139 stay in the body.
 - LIT-119
 - LIT-122
 - LIT-159
 - LIT-156
+- LIT-153
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Stable at nearly the same optimal LR as AdamW, better evaluations; used for every Falcon-H1-Tiny model.
 corrected_by:

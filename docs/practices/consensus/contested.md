@@ -4,9 +4,10 @@
 
 **In dispute** — credible groups publicly disagree, now — the fork in a line of work, whose trunk is agreed and whose branches are not.
 
-2 of 150 SOTA documents. Back to the [full index](../README.md).
+3 of 150 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [SOTA-130](../../../record/practices.d/SOTA-130.md) | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model | Olmo Team (2025), [LIT-130](../../../record/literature.d/LIT-130.md) — the RL-Zero track: RLVR on the base model with no reasoning SFT in between, released as an open benchmark for studying RL rather than as the recommended recipe; a variation on [SOTA-129](../../../record/practices.d/SOTA-129.md) that the record keeps so the family of reasoning recipes can be traced. | Proposed |
 | [SOTA-136](../../../record/practices.d/SOTA-136.md) | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) | Xie et al. (2025), [LIT-140](../../../record/literature.d/LIT-140.md) — hyper-connections with the residual-mixing matrix constrained to be doubly stochastic, so identity mapping survives; 6–7% overhead at 3B–27B, shipped in DeepSeek-V4. | Proposed |
+| [SOTA-140](../../../record/practices.d/SOTA-140.md) v2 | Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens | Hu et al. (2024), [LIT-144](../../../record/literature.d/LIT-144.md), with the controlled comparison in [LIT-145](../../../record/literature.d/LIT-145.md) — matches cosine at equal tuning, leaves the token budget open, makes every stable-stage checkpoint a usable branch point; contested at frontier scale by [LIT-131](../../../record/literature.d/LIT-131.md), which retuned per schedule and chose cosine. | Active |

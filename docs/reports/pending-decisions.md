@@ -17,7 +17,7 @@
 | 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 10 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 7 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 6 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
-| 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 4 | 0 | Decay the learning rate linearly all the way to zero |
+| 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 5 | 0 | Decay the learning rate linearly all the way to zero |
 | 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 4 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 0 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 4 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |

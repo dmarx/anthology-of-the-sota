@@ -11,13 +11,28 @@
 # can turn it on, and until it is on the `deploy` job fails with "Pages is
 # not enabled" while `build` stays green.
 #
+# The site is built from the committed views, so it builds AFTER the job that
+# commits them. `workflow_run` fires when Docs completes on `main`, by which
+# time its generation job has pushed the regenerated views and concretized any
+# merge-allocated codes, and the checkout is the head of `main`.
+#
+# It used to trigger on `push: [main]` alongside Docs, which meant the two
+# raced and Pages always won: it built the merge commit's tree, and Docs then
+# rewrote it. Harmless for a view whose content did not change, and not
+# harmless at all for a concretization, which RENAMES record files — five
+# documents merged in #33 were absent from the published site until an
+# unrelated later push happened to trigger Pages again. If you rename the Docs
+# workflow, rename it here too.
+#
 # Delete this file if you would rather not publish. Nothing else depends on
 # it — `luria site` is a build step, and the record it reads is the record
 # every other command reads.
 name: Pages
 
 on:
-  push:
+  workflow_run:
+    workflows: [Docs]
+    types: [completed]
     branches: [main]
   pull_request:
   workflow_dispatch:
@@ -31,6 +46,8 @@ concurrency:
 
 jobs:
   build:
+    # A Docs run that failed has no regenerated views worth publishing.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

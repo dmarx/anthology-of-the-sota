@@ -89,7 +89,7 @@ degrades gracefully and, notably, works on unmodified pretrained models.
 ## Why the frequencies fail in the first place
 
 The practice was filed on the observation that RoPE does not extrapolate and
-on two remedies for it. [LIT-tmpt9t71](../literature.d/LIT-tmpt9t71.md) supplies the mechanism underneath, by
+on two remedies for it. [LIT-210](../literature.d/LIT-210.md) supplies the mechanism underneath, by
 opening a trained model rather than reasoning from the encoding's definition.
 
 RoPE's frequency band is used for two jobs. The highest frequencies build

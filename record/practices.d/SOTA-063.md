@@ -10,7 +10,7 @@ history:
     (SOTA-151 rescales what this recommends) and what it does not cover. The
     recommendation is unchanged for a dense transformer; the addition is that
     a linear-attention hybrid may be better off with no positional encoding
-    at all (LIT-tmprvzbv, LIT-133, LIT-131).
+    at all (LIT-207, LIT-133, LIT-131).
 tags:
 - model-architecture
 date: '2026-08-24'
@@ -39,7 +39,7 @@ longer length — the succession runs [LIT-045](../literature.d/LIT-045.md) → 
 ## The alternative
 
 The recommendation is not uncontested, and the objection is not that rotation
-is the wrong function. [LIT-tmprvzbv](../literature.d/LIT-tmprvzbv.md) trained five positional schemes from
+is the wrong function. [LIT-207](../literature.d/LIT-207.md) trained five positional schemes from
 scratch under identical hyperparameters and found rotary among the schemes
 that do *not* generalize to unseen lengths, with the best result coming from
 using no positional encoding at all — a decoder-only transformer can

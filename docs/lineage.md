@@ -16,7 +16,7 @@
   - [LIT-192](../record/literature.d/LIT-192.md) — Extending Context Window of Large Language Models via Positional Interpolation *(Active)*
     - [LIT-193](../record/literature.d/LIT-193.md) — YaRN: Efficient Context Window Extension of Large Language Models *(Active)*
 - alongside: [LIT-048](../record/literature.d/LIT-048.md) — Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation *(Active)*
-- alongside: [LIT-tmprvzbv](../record/literature.d/LIT-tmprvzbv.md) — The Impact of Positional Encoding on Length Generalization in Transformers *(Active)*
+- alongside: [LIT-207](../record/literature.d/LIT-207.md) — The Impact of Positional Encoding on Length Generalization in Transformers *(Active)*
 
 ## From Mamba: Linear-Time Sequence Modeling with Selective State Spaces
 

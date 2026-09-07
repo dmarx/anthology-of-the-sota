@@ -84,7 +84,7 @@ extrapolates "without any positional-encoding modification, such as RoPE
 rescaling or interpolation". Position sensitivity comes from the recurrence
 and decay of the interleaved linear-attention layers instead.
 
-The alternative has a source of its own now. [LIT-tmprvzbv](../literature.d/LIT-tmprvzbv.md) trained five
+The alternative has a source of its own now. [LIT-207](../literature.d/LIT-207.md) trained five
 positional schemes from scratch under identical hyperparameters and found the
 one that generalizes to unseen lengths is the absent one — and showed why a
 decoder-only transformer can represent absolute and relative position without

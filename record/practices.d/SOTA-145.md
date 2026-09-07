@@ -10,14 +10,27 @@ consensus_note: >-
   baseline while changing something else. The dissent is about the objective's
   details, not about dropping the critic.
 title: 'Estimate the RL baseline from a group of samples for the same prompt instead of training a critic'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Sourced to LIT-167 as well. The body enumerates four works that run or
+    rework GRPO and observes that all four keep the group baseline; three
+    were in the field and the fourth was not, so the count the practice
+    argues from could not be checked against it. The recommendation is
+    unchanged.
 tags:
 - training-optimization
 date: '2026-09-07'
 published: '2024-02-01'
 source:
+# The practice's case is that four works which run or rework GRPO all keep
+# the group baseline. Three were named here; LIT-167 — Dr. GRPO, which
+# removes a length bias and keeps the baseline — was the fourth (ADR-017).
 - LIT-127
 - LIT-119
+- LIT-167
 - LIT-168
 - LIT-180
 implementations: []

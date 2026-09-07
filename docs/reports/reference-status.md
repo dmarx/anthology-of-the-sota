@@ -17,7 +17,7 @@ To vouch for one, put the reason where the citation is — `inactive-ok:` covers
 <!-- inactive-ok: ADR-012 — why this citation is right -->
 ```
 
-### [ADR-tmpudmra](../../record/decisions.d/ADR-tmpudmra.md) — Proposed
+### [ADR-017](../../record/decisions.d/ADR-017.md) — Proposed
 
 What `source:` holds, and where the work it excludes goes
 
@@ -33,8 +33,8 @@ Hyper-Connections
 
 2 citations in 1 file await a look; 6 other citations of it are acknowledged.
 
-- [`record/decisions.d/ADR-tmpudmra.md:124`](../../record/decisions.d/ADR-tmpudmra.md)
-- [`record/decisions.d/ADR-tmpudmra.md:172`](../../record/decisions.d/ADR-tmpudmra.md)
+- [`record/decisions.d/ADR-017.md:126`](../../record/decisions.d/ADR-017.md)
+- [`record/decisions.d/ADR-017.md:174`](../../record/decisions.d/ADR-017.md)
 
 ### [SOTA-124](../../record/practices.d/SOTA-124.md) — Proposed
 
@@ -42,8 +42,8 @@ Repeat high-quality data freely when its epoch size exceeds the model's memoriza
 
 2 citations in 1 file await a look; 13 other citations of it are acknowledged.
 
-- [`record/decisions.d/ADR-tmpudmra.md:65`](../../record/decisions.d/ADR-tmpudmra.md)
-- [`record/decisions.d/ADR-tmpudmra.md:103`](../../record/decisions.d/ADR-tmpudmra.md)
+- [`record/decisions.d/ADR-017.md:67`](../../record/decisions.d/ADR-017.md)
+- [`record/decisions.d/ADR-017.md:105`](../../record/decisions.d/ADR-017.md)
 
 ### [ADR-016](../../record/decisions.d/ADR-016.md) — Proposed
 
@@ -51,7 +51,7 @@ Contested is a claim about specific other work, so it must name it
 
 1 citation in 1 file awaits a look; 1 other citation of it is acknowledged.
 
-- [`record/decisions.d/ADR-tmpudmra.md:248`](../../record/decisions.d/ADR-tmpudmra.md)
+- [`record/decisions.d/ADR-017.md:250`](../../record/decisions.d/ADR-017.md)
 
 ### [LIT-042](../../record/literature.d/LIT-042.md) — Superseded
 
@@ -83,7 +83,7 @@ Attach learnable per-row and per-column multipliers to weight matrices so their 
 
 1 citation in 1 file awaits a look; 7 other citations of it are acknowledged.
 
-- [`record/decisions.d/ADR-tmpudmra.md:64`](../../record/decisions.d/ADR-tmpudmra.md)
+- [`record/decisions.d/ADR-017.md:66`](../../record/decisions.d/ADR-017.md)
 
 ## Codes that resolve to no document
 
@@ -94,7 +94,7 @@ A reference the reader cannot follow: the code names no document in this record.
 
 ### ADR-076 — resolves to nothing (1 unmarked site)
 
-- [`record/decisions.d/ADR-tmpudmra.md:153`](../../record/decisions.d/ADR-tmpudmra.md)
+- [`record/decisions.d/ADR-017.md:155`](../../record/decisions.d/ADR-017.md)
 
 ## Files that opt out of reference checking
 

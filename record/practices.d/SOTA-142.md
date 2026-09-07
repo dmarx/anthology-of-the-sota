@@ -14,7 +14,7 @@ history:
   date: '2026-09-07'
   note: >-
     LIT-119 removed from source again. Version 2 added it on the strength
-    of the body's own sentence; ADR-tmpudmra draws the line at whether the
+    of the body's own sentence; ADR-017 draws the line at whether the
     adopter tested the claim, and Falcon-H1-Tiny used the power law without
     reporting a comparison. The adoption still counts — for consensus, not
     for support. The recommendation is unchanged.
@@ -25,7 +25,7 @@ published: '2024-08-01'
 source:
 # The power law is fitted under WSD and sets its peak; SOTA-140's
 # Sequence names this practice as the step that does it.
-# LIT-119 was added here in #62 and removed again by ADR-tmpudmra:
+# LIT-119 was added here in #62 and removed again by ADR-017:
 # Falcon-H1-Tiny used the power law rather than testing it, so its adoption
 # is consensus evidence and belongs in consensus_note, not in source.
 - LIT-146
@@ -54,7 +54,7 @@ measured on its own model family, so a new family should re-fit them from
 a few short runs. Falcon-H1-Tiny ([LIT-119](../literature.d/LIT-119.md)) is the record's independent
 adoption — a square-root decay of the learning rate from 100 GT onward,
 inside its WSD schedule. It used the law rather than testing it, so under
-[ADR-tmpudmra](../decisions.d/ADR-tmpudmra.md) that adoption is evidence about the field and not about the
+[ADR-017](../decisions.d/ADR-017.md) that adoption is evidence about the field and not about the
 claim: it moves the consensus reading, not the evidence base.
 
 ## Known implementations

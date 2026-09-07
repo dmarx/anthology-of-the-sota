@@ -21,7 +21,7 @@
 | 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 4 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 0 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 4 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
-| 2026-09-07 | Proposed | [ADR-tmpudmra](../../record/decisions.d/ADR-tmpudmra.md) | 3 | 3 | What `source:` holds, and where the work it excludes goes |
+| 2026-09-07 | Proposed | [ADR-017](../../record/decisions.d/ADR-017.md) | 3 | 3 | What `source:` holds, and where the work it excludes goes |
 | 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 3 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
 | 2026-09-07 | Proposed | [ADR-016](../../record/decisions.d/ADR-016.md) | 2 | 1 | Contested is a claim about specific other work, so it must name it |
 | 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 1 | 0 | Pack training documents by best fit instead of concatenating and splitting |

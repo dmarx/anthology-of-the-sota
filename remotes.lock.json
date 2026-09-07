@@ -23,6 +23,9 @@
     "ARXIV/1608.03983": {
       "title": "SGDR: Stochastic Gradient Descent with Warm Restarts"
     },
+    "ARXIV/1701.06538": {
+      "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer"
+    },
     "ARXIV/1706.02677": {
       "title": "Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour"
     },
@@ -137,6 +140,9 @@
     "ARXIV/2006.11239": {
       "title": "Denoising Diffusion Probabilistic Models"
     },
+    "ARXIV/2006.16668": {
+      "title": "GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding"
+    },
     "ARXIV/2007.00072": {
       "title": "Data Movement Is All You Need: A Case Study on Optimizing Transformers"
     },
@@ -157,6 +163,9 @@
     },
     "ARXIV/2011.10379": {
       "title": "Neural Scene Graphs for Dynamic Scenes"
+    },
+    "ARXIV/2101.03961": {
+      "title": "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity"
     },
     "ARXIV/2103.03386": {
       "title": "Clusterability in Neural Networks"

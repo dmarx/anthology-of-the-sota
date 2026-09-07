@@ -21,8 +21,8 @@
 | 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 4 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 0 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 3 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
+| 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 2 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
 | 2026-09-07 | Proposed | [ADR-016](../../record/decisions.d/ADR-016.md) | 1 | 0 | Contested is a claim about specific other work, so it must name it |
-| 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 1 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 

@@ -2,7 +2,7 @@
 
 # Lines of work
 
-1 line, walked from `extends:` on LIT documents. Each step explains itself; this page is the order they came in.
+2 lines, walked from `extends:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 ## From Hyper-Connections
 
@@ -12,3 +12,10 @@
     - [LIT-181](../record/literature.d/LIT-181.md) — Beyond the Birkhoff Polytope: Spectral-Sphere-Constrained Hyper-Connections *(Active)*
 - alongside: [LIT-134](../record/literature.d/LIT-134.md) — Attention Residuals *(Active)*
 - alongside: [LIT-152](../record/literature.d/LIT-152.md) — On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability *(Active)*
+
+## From Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer
+
+- [LIT-tmp70cvq](../record/literature.d/LIT-tmp70cvq.md) — Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer *(Active)*
+  - [LIT-tmp2mas2](../record/literature.d/LIT-tmp2mas2.md) — GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding *(Active)*
+    - [LIT-170](../record/literature.d/LIT-170.md) — DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models *(Active)*
+    - [LIT-tmpb4jjp](../record/literature.d/LIT-tmpb4jjp.md) — Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity *(Active)*

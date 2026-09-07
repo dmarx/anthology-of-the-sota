@@ -4,7 +4,7 @@
 
 Architectures, components, model families, multi-modal designs.
 
-40 of 186 LIT documents. Back to the [full index](../README.md).
+42 of 189 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -48,3 +48,5 @@ Architectures, components, model families, multi-modal designs.
 | [LIT-181](../../../record/literature.d/LIT-181.md) | Beyond the Birkhoff Polytope: Spectral-Sphere-Constrained Hyper-Connections | Liu et al. (2026), [ARXIV-2603.20896](https://arxiv.org/abs/2603.20896). Three named defects in mHC's doubly-stochastic constraint — identity degeneration, an expressivity bottleneck from non-negativity, and parameterization cost — answered by moving the feasible set to a spectral-norm sphere. | Active |
 | [LIT-182](../../../record/literature.d/LIT-182.md) | Qwen3 Technical Report | Yang et al. (2025), [ARXIV-2505.09388](https://arxiv.org/abs/2505.09388). Thinking and non-thinking modes unified in one model with a thinking budget the caller sets, plus flagship-to-small distillation; 0.6B to 235B, dense and MoE, 119 languages. | Active |
 | [LIT-183](../../../record/literature.d/LIT-183.md) | Nemotron 3 Nano: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning | NVIDIA (2025), [ARXIV-2512.20848](https://arxiv.org/abs/2512.20848). A 30B-A3B MoE hybrid Mamba-Transformer on 25T tokens: more accurate than its predecessor at under half the activated parameters, and up to 3.3× the inference throughput of comparable open models. | Active |
+| [LIT-tmp70cvq](../../../record/literature.d/LIT-tmp70cvq.md) | Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer | Shazeer et al. (2017), [ARXIV-1701.06538](https://arxiv.org/abs/1701.06538). The sparsely-gated mixture-of-experts layer: thousands of feed-forward experts with a trainable gate selecting a few per example, so model capacity can grow by 1000× at small increases in compute. The paper conditional computation had been promising in theory and not delivering in practice until. | Active |
+| [LIT-tmpb4jjp](../../../record/literature.d/LIT-tmpb4jjp.md) | Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity | Fedus et al. (2021), [ARXIV-2101.03961](https://arxiv.org/abs/2101.03961). Route each token to exactly one expert instead of two: simpler, cheaper per token, and stable in bfloat16 with selective casting — a 1.6T-parameter model and a 7× pretraining speedup over T5-Base at matched compute. | Active |

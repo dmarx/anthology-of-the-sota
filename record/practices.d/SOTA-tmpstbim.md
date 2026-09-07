@@ -15,6 +15,9 @@ tags:
 date: '2026-09-07'
 published: '2024-01-01'
 source:
+- LIT-tmp70cvq
+- LIT-tmp2mas2
+- LIT-tmpb4jjp
 - LIT-170
 - LIT-160
 implementations:
@@ -25,10 +28,11 @@ implementations:
 - Qwen3
 - Nemotron 3 Nano
 summary: >-
-  Dai et al. (2024), [LIT-170](../literature.d/LIT-170.md) — route each token to a few of many
-  feed-forward experts instead of running one dense feed-forward for every
-  token, so total parameters and per-token compute stop being the same number.
-  DeepSeekMoE 16B matches LLaMA2 7B at roughly 40% of the compute; 145B
+  Shazeer et al. (2017), [LIT-tmp70cvq](../literature.d/LIT-tmp70cvq.md) — route each token to a few of
+  many feed-forward experts instead of running one dense feed-forward for
+  every token, so total parameters and per-token compute stop being the same
+  number. Measured against dense by [LIT-170](../literature.d/LIT-170.md) seven years later:
+  DeepSeekMoE 16B matches LLaMA2 7B at roughly 40% of the compute, 145B
   approaches the same team's dense 67B at 28.5%.
 extended_by:
 - SOTA-148
@@ -82,18 +86,29 @@ had become.
 mixture-of-experts specifically, and until now that caveat qualified an
 architecture the record had never recommended.
 
-## The source is the weak part, and it is worth naming
+## The line this came from
 
-[LIT-170](../literature.d/LIT-170.md) did not introduce mixture-of-experts routing. It diagnoses
-"conventional top-K-of-N routing, as in GShard" and improves on it, and the
-corpus holds no GShard, no Switch Transformer, and no Shazeer 2017 — the
-papers that actually introduced this. So this practice is sourced against
-[#17](https://github.com/dmarx/anthology-of-the-sota/issues/17)'s own rule
-that a practice names the paper that introduced the change.
+The record now holds it end to end, which it did not when this practice was
+first drafted:
 
-It is filed anyway because [LIT-170](../literature.d/LIT-170.md) is where the record's evidence for the
-claim actually lives — the dense comparisons above are its measurements — and
-because leaving the premise unstated was the worse error. Filing the
-originating papers is now a concrete backlog item rather than a vague one, and
-when they land this practice's `source:` should gain them and its summary
-should change hands.
+| | | |
+|---|---|---|
+| [LIT-tmp70cvq](../literature.d/LIT-tmp70cvq.md) | 2017 | the sparsely-gated layer itself, between LSTM layers, and the auxiliary balancing loss that came with it |
+| [LIT-tmp2mas2](../literature.d/LIT-tmp2mas2.md) | 2020 | into the transformer, sharded across 2048 TPUs; top-2 routing with a capacity factor |
+| [LIT-tmpb4jjp](../literature.d/LIT-tmpb4jjp.md) | 2021 | top-1 routing, a float32 router for stability, a trillion parameters |
+| [LIT-170](../literature.d/LIT-170.md) | 2024 | many small experts plus a shared one, and the dense comparisons above |
+
+Reading the granularity argument across them is the reason the whole line is
+worth holding: GShard says route to two experts, Switch says one, DeepSeekMoE
+says many small ones and take more of them. Three answers to how finely the
+router should choose, and the record recommends the third
+([SOTA-tmpa982c](SOTA-tmpa982c.md)).
+
+<!-- inactive-ok-block: SOTA-148 — Proposed, named as the far end of the
+     load-balancing argument this line opens -->
+
+The same span covers load balancing.
+[LIT-tmp70cvq](../literature.d/LIT-tmp70cvq.md) introduces an auxiliary loss
+to keep experts evenly used, because the gate self-reinforces; seven years
+later [SOTA-148](SOTA-148.md) recommends taking that loss back out and using
+a bias instead. The record holds both ends of that argument.

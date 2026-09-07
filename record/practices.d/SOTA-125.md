@@ -9,14 +9,26 @@ consensus_note: >-
   One architecture family at one scale, on loss curves and noisy 90M
   benchmarks.
 title: 'At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Sourced to LIT-120 as well as LIT-119. The depth half of the finding is
+    corroborated at a larger scale by the authors' own Falcon-H1-1.5B-Deep
+    result, which is exactly the kind of second source ADR-010 made the field
+    able to count. The recommendation is unchanged.
 tags:
 - model-architecture
 - tiny-models
 date: '2026-09-05'
 published: '2026-01-15'
 source:
+# LIT-120 corroborates the depth half at a larger scale — the authors' own
+# Falcon-H1-1.5B-Deep result — which is what ADR-010 made the list able to
+# count.
 - LIT-119
+- LIT-120
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. 24–27 layers × 512 hidden and a large SSM state dimension won every ablation at 90M; 50 layers gained MMLU but halved throughput.
 ---

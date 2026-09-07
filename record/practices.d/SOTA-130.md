@@ -11,13 +11,28 @@ consensus_note: >-
   attributes to RLVR, and the source itself ships the SFT path for the
   models it releases.
 title: 'Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Sourced to LIT-164 as well as LIT-130. The body already said Olmo 3
+    "remains the source because it is the open, reproducible statement of the
+    pathway" — correct, and written when a practice could name only one
+    source. Under ADR-010 the origin of the pathway belongs in the list
+    beside it. LIT-167 stays in contested_by. The recommendation is
+    unchanged.
 tags:
 - training-optimization
 date: '2026-09-05'
 published: '2025-12-01'
 source:
+# The body says Olmo 3 "remains the source because it is the open,
+# reproducible statement of the pathway" — true, and written when a practice
+# could only name one. LIT-164 is where the pathway comes from, so under
+# ADR-010 both belong. LIT-167 is the contest and stays in contested_by.
 - LIT-130
+- LIT-164
 contested_by:
 - LIT-167
 summary: >-

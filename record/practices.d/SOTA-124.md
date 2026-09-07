@@ -9,14 +9,27 @@ consensus_note: >-
   The source calls it a hypothesis with one measurement behind it and the
   systematic study future work. Nobody has contradicted it either.
 title: 'Repeat high-quality data freely when its epoch size exceeds the model''s memorization window'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Sourced to LIT-120 as well as LIT-119. The memorization-window measurement
+    the practice turns on is Figure 9 of the Falcon-H1 report, not the tiny
+    blogpost. LIT-166 and LIT-175 remain in the body: they are the positions
+    this argues with, and ADR-010's rule is that contrast is not support. The
+    recommendation is unchanged.
 tags:
 - data-pipeline
 - tiny-models
 date: '2026-09-05'
 published: '2026-01-15'
 source:
+# The memorization-window measurement the whole practice turns on is Figure 9
+# of LIT-120, not the blogpost. LIT-166 and LIT-175 are the positions this
+# argues with, so they stay in the body (ADR-010).
 - LIT-119
+- LIT-120
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Roughly 100–500 GT for a 7B model, scaling linearly; the authors call the understanding early.
 ---

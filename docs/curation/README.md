@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [7 Sep 18:37 — A retraction test for whether a citation belongs in `source:`](2026-09.md#20260907183753)
 - [7 Sep 18:15 — The bibliography of a paper already in the record held two papers the record needed](2026-09.md#20260907181553)
 - [7 Sep 17:56 — The positional line was two lines and a missing paper](2026-09.md#20260907175621)
 - [7 Sep 17:02 — Mining the lineages out of the prose](2026-09.md#20260907170207)
@@ -28,9 +29,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-21 entries across 2 books, newest first.
+22 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 19 | 2026-09-05 | 2026-09-07 |
+| [2026-09](2026-09.md) | 20 | 2026-09-05 | 2026-09-07 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

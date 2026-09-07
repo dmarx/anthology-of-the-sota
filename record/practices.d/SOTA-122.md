@@ -10,13 +10,29 @@ consensus_note: >-
   independent group and adopted a different remedy, which is not agreement
   or disagreement about this one.
 title: 'Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Sourced to the paper the claim comes from, not only to the blogpost that
+    validated it at 90M. LIT-121 is where the weight-decay-equilibrium result
+    and the multiplier remedy are stated; naming only LIT-119 credited the
+    validation with the claim. The recommendation is unchanged. LIT-153 stays
+    out on purpose — it confirms the diagnosis with a different remedy, which
+    the promotion condition already says is not the result this needs.
 tags:
 - training-optimization
 - tiny-models
 date: '2026-09-05'
 published: '2026-01-15'
 source:
+# LIT-121 is the claim; LIT-119 is the 90M validation of it. The blogpost
+# alone was named here until #58, which is the singular-source habit ADR-010
+# replaced — and this practice is the example ADR-010 itself argues from.
+# LIT-153 confirms the diagnosis with a different remedy and is deliberately
+# absent: see the promotion condition.
+- LIT-121
 - LIT-119
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Up to 20% relative gain on MMLU, BBH and GSM8K over a Muon baseline at 200 GT.

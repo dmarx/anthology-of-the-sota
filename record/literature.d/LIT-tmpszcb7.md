@@ -1,0 +1,86 @@
+---
+status: Active
+title: 'The Road Less Scheduled'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-07'
+published: '2024-05-01'
+arxiv: '2405.15682'
+first_author: 'Defazio'
+keywords:
+- 'learning-rate-schedule'
+- 'iterate-averaging'
+- 'optimization'
+- 'schedule-free'
+- 'algoperf'
+implementations:
+- 'facebookresearch/schedule_free'
+summary: >-
+  Defazio et al. (2024), [ARXIV-2405.15682](https://arxiv.org/abs/2405.15682). A third answer to the question
+  the schedule chain is about: do not schedule. Iterate averaging and
+  scheduling turn out to be the same mechanism, and the averaged form needs no
+  stopping time T, no schedule shape and no hyperparameter beyond what AdamW
+  already has — while matching schedules that do know T. Won the MLCommons
+  2024 AlgoPerf Self-Tuning track.
+---
+
+# LIT-tmpszcb7: The Road Less Scheduled
+
+Defazio et al. (2024) — [ARXIV-2405.15682](https://arxiv.org/abs/2405.15682)
+
+## Key takeaways
+
+**The problem it removes is the one every schedule in this record works
+around.** A learning-rate schedule that knows the stopping step T
+outperforms one that does not — that is the starting observation, and it is
+why cosine fixes the token budget in advance and why WSD was proposed to
+escape doing so. Schedule-Free removes the dependency instead of routing
+around it: no T, no shape, and no additional hyperparameter over standard
+momentum.
+
+**Scheduling and iterate averaging are the same thing.** The method is a
+consequence of a theory unifying the two, which is the part worth reading
+rather than the benchmark table. A schedule's decay and an average over the
+trajectory are two spellings of one operation, and once that is seen, the
+averaged form is the one that does not need to know when it will stop.
+
+**The evidence is unusually independent for a single paper.** Schedule-Free
+AdamW was the core of the winning entry to the **MLCommons 2024 AlgoPerf
+Algorithmic Efficiency Challenge, Self-Tuning track** — a third-party
+competitive benchmark with fixed rules, which is not the same kind of claim
+as a self-reported sweep. Results span convex problems to large-scale deep
+learning.
+
+## Standing in the anthology
+
+**The schedule chain has three answers now, and this is the one the record
+does not hold as a practice.**
+<!-- inactive-ok-block: LIT-042 — the retired warm-restarts paper, named as the start of the schedule chain -->
+<!-- inactive-ok-block: SOTA-039 — the retired cosine practice, named as the step this chain replaced -->
+Warm restarts ([LIT-042](LIT-042.md), retired) → a single
+cosine cycle ([LIT-035](LIT-035.md), [SOTA-039](../practices.d/SOTA-039.md), retired) → warmup-stable-decay
+([SOTA-140](../practices.d/SOTA-140.md)) → and this, which says the branch point was wrong: the choice is
+not which shape to decay through but whether to specify a stopping time at
+all.
+
+Read against [SOTA-140](../practices.d/SOTA-140.md) specifically, the overlap is exact and the mechanism is
+not. WSD's central practical claim is that the total token count need not be
+fixed when training starts, because the decay can be launched from any
+stable-stage checkpoint. Schedule-Free delivers the same property with no
+decay phase to launch — and, unlike WSD, does not need its peak learning rate
+re-tuned for a constant stage, because there is no constant stage.
+
+**Not filed as a practice, and the reason is a gap rather than a doubt.** No
+frontier report in this record trains under it. The record's schedule
+material is `contested` between WSD and cosine at the scale where the
+disagreement matters ([LIT-131](LIT-131.md) against [LIT-145](LIT-145.md)), and a third answer with no
+adoption at that scale does not settle it — it widens it. What would change
+that: a frontier training report using Schedule-Free, or a schedule
+comparison that includes it as an arm with hyperparameters tuned per method.
+
+The AlgoPerf result deserves its own sentence, because it is the strongest
+outside evidence in the schedule material and it does not transfer cleanly.
+AlgoPerf's workloads top out far below the scale at which [LIT-131](LIT-131.md) and [LIT-145](LIT-145.md)
+disagree, so a win there is evidence about the method's robustness under fixed
+rules rather than about its behaviour at 2.8T.

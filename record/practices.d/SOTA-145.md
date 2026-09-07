@@ -10,7 +10,7 @@ consensus_note: >-
   baseline while changing something else. The dissent is about the objective's
   details, not about dropping the critic.
 title: 'Estimate the RL baseline from a group of samples for the same prompt instead of training a critic'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -20,6 +20,13 @@ history:
     were in the field and the fourth was not, so the count the practice
     argues from could not be checked against it. The recommendation is
     unchanged.
+- version: 3
+  date: '2026-09-07'
+  note: >-
+    "What this does not say" gained a third limit: the practice does not say
+    policy-gradient RL is the right family. Evolution strategies at scale
+    (LIT-tmp776w0) is a rival paradigm, filed as literature. The
+    recommendation is unchanged.
 tags:
 - training-optimization
 date: '2026-09-07'
@@ -92,3 +99,12 @@ three-stage recipe and [SOTA-130](SOTA-130.md) the variation that skips the SFT
 stage; both name RLVR as a stage and neither names an algorithm. This is the
 algorithm, and it is orthogonal to that argument — the group baseline is what
 you run either way.
+
+And it does not say policy-gradient RL is the right *family*. Evolution
+strategies ([LIT-tmp776w0](../literature.d/LIT-tmp776w0.md)) reach the same goal without backpropagation and
+report a larger average improvement than either PPO or GRPO on the one task
+they share — on a single fixed hyperparameter set, against RL tuned per
+experiment. That is not a counterexample to the argument above, which is
+about what works that *run or rework GRPO* keep; it is evidence about whether
+to be in that family at all, at 8B and below and on two tasks. The practice
+stands, and the assumption underneath it is now visible as an assumption.

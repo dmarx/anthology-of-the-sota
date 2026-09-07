@@ -24,7 +24,7 @@ source:
 - LIT-171
 - LIT-160
 extends:
-- SOTA-tmpstbim
+- SOTA-150
 implementations:
 - DeepSeek-V3
 summary: >-

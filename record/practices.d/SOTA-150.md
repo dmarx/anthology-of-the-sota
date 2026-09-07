@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmpstbim
 consensus: converged
 consensus_note: >-
   Four labs and every frontier model the record holds from 2024 on: DeepSeek
@@ -15,9 +17,9 @@ tags:
 date: '2026-09-07'
 published: '2024-01-01'
 source:
-- LIT-tmp70cvq
-- LIT-tmp2mas2
-- LIT-tmpb4jjp
+- LIT-188
+- LIT-187
+- LIT-189
 - LIT-170
 - LIT-160
 implementations:
@@ -28,7 +30,7 @@ implementations:
 - Qwen3
 - Nemotron 3 Nano
 summary: >-
-  Shazeer et al. (2017), [LIT-tmp70cvq](../literature.d/LIT-tmp70cvq.md) — route each token to a few of
+  Shazeer et al. (2017), [LIT-188](../literature.d/LIT-188.md) — route each token to a few of
   many feed-forward experts instead of running one dense feed-forward for
   every token, so total parameters and per-token compute stop being the same
   number. Measured against dense by [LIT-170](../literature.d/LIT-170.md) seven years later:
@@ -36,10 +38,10 @@ summary: >-
   approaches the same team's dense 67B at 28.5%.
 extended_by:
 - SOTA-148
-- SOTA-tmpa982c
+- SOTA-149
 ---
 
-# SOTA-tmpstbim: Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound
+# SOTA-150: Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound
 
 A dense transformer runs every parameter for every token, so capacity and cost
 rise together. A mixture of experts breaks that coupling: hold many
@@ -93,22 +95,22 @@ first drafted:
 
 | | | |
 |---|---|---|
-| [LIT-tmp70cvq](../literature.d/LIT-tmp70cvq.md) | 2017 | the sparsely-gated layer itself, between LSTM layers, and the auxiliary balancing loss that came with it |
-| [LIT-tmp2mas2](../literature.d/LIT-tmp2mas2.md) | 2020 | into the transformer, sharded across 2048 TPUs; top-2 routing with a capacity factor |
-| [LIT-tmpb4jjp](../literature.d/LIT-tmpb4jjp.md) | 2021 | top-1 routing, a float32 router for stability, a trillion parameters |
+| [LIT-188](../literature.d/LIT-188.md) | 2017 | the sparsely-gated layer itself, between LSTM layers, and the auxiliary balancing loss that came with it |
+| [LIT-187](../literature.d/LIT-187.md) | 2020 | into the transformer, sharded across 2048 TPUs; top-2 routing with a capacity factor |
+| [LIT-189](../literature.d/LIT-189.md) | 2021 | top-1 routing, a float32 router for stability, a trillion parameters |
 | [LIT-170](../literature.d/LIT-170.md) | 2024 | many small experts plus a shared one, and the dense comparisons above |
 
 Reading the granularity argument across them is the reason the whole line is
 worth holding: GShard says route to two experts, Switch says one, DeepSeekMoE
 says many small ones and take more of them. Three answers to how finely the
 router should choose, and the record recommends the third
-([SOTA-tmpa982c](SOTA-tmpa982c.md)).
+([SOTA-149](SOTA-149.md)).
 
 <!-- inactive-ok-block: SOTA-148 — Proposed, named as the far end of the
      load-balancing argument this line opens -->
 
 The same span covers load balancing.
-[LIT-tmp70cvq](../literature.d/LIT-tmp70cvq.md) introduces an auxiliary loss
+[LIT-188](../literature.d/LIT-188.md) introduces an auxiliary loss
 to keep experts evenly used, because the gate self-reinforces; seven years
 later [SOTA-148](SOTA-148.md) recommends taking that loss back out and using
 a bias instead. The record holds both ends of that argument.

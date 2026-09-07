@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmpa982c
 consensus: emerging
 consensus_note: >-
   Two labs taking the same shape further. DeepSeek has run fine-grained plus
@@ -17,7 +19,7 @@ published: '2024-01-01'
 source:
 - LIT-170
 extends:
-- SOTA-tmpstbim
+- SOTA-150
 implementations:
 - DeepSeekMoE
 - DeepSeek-V3
@@ -33,9 +35,9 @@ summary: >-
 <!-- inactive-ok-file: SOTA-148 — Proposed, named as the third member of the
      family this document is about -->
 
-# SOTA-tmpa982c: Build the sparse layers from many small experts plus an always-on shared one, not a few large ones
+# SOTA-149: Build the sparse layers from many small experts plus an always-on shared one, not a few large ones
 
-[SOTA-tmpstbim](SOTA-tmpstbim.md) says make the layer sparse. This says how to
+[SOTA-150](SOTA-150.md) says make the layer sparse. This says how to
 cut it up, and the diagnosis behind it is the interesting part.
 
 Conventional top-K-of-N routing does not actually deliver **expert
@@ -64,7 +66,7 @@ and approaching it is the specialisation claim being cashed out.
 Three practices' worth of MoE material, which is what
 [LIT-171](../literature.d/LIT-171.md) predicted:
 
-- [SOTA-tmpstbim](SOTA-tmpstbim.md) — make the layer sparse at all.
+- [SOTA-150](SOTA-150.md) — make the layer sparse at all.
 - This one — how to cut it up.
 - [SOTA-148](SOTA-148.md) — how to keep the experts evenly loaded, with a
   bias rather than an auxiliary loss.

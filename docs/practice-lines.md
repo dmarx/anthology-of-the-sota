@@ -22,6 +22,6 @@
 
 ## From Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound
 
-- [SOTA-tmpstbim](../record/practices.d/SOTA-tmpstbim.md) — Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound *(Active, converged)*
+- [SOTA-150](../record/practices.d/SOTA-150.md) — Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound *(Active, converged)*
   - [SOTA-148](../record/practices.d/SOTA-148.md) — Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss *(Proposed, unreplicated)*
-  - [SOTA-tmpa982c](../record/practices.d/SOTA-tmpa982c.md) — Build the sparse layers from many small experts plus an always-on shared one, not a few large ones *(Active, emerging)*
+  - [SOTA-149](../record/practices.d/SOTA-149.md) — Build the sparse layers from many small experts plus an always-on shared one, not a few large ones *(Active, emerging)*

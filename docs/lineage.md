@@ -15,7 +15,7 @@
 
 ## From Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer
 
-- [LIT-tmp70cvq](../record/literature.d/LIT-tmp70cvq.md) — Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer *(Active)*
-  - [LIT-tmp2mas2](../record/literature.d/LIT-tmp2mas2.md) — GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding *(Active)*
+- [LIT-188](../record/literature.d/LIT-188.md) — Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer *(Active)*
+  - [LIT-187](../record/literature.d/LIT-187.md) — GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding *(Active)*
     - [LIT-170](../record/literature.d/LIT-170.md) — DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models *(Active)*
-    - [LIT-tmpb4jjp](../record/literature.d/LIT-tmpb4jjp.md) — Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity *(Active)*
+    - [LIT-189](../record/literature.d/LIT-189.md) — Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity *(Active)*

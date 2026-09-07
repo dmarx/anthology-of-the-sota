@@ -4,7 +4,7 @@
 
 Attention variants and alternatives, context length, position.
 
-15 of 189 LIT documents. Back to the [full index](../README.md).
+16 of 191 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -23,3 +23,4 @@ Attention variants and alternatives, context length, position.
 | [LIT-174](../../../record/literature.d/LIT-174.md) | DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model | DeepSeek-AI (2024), [ARXIV-2405.04434](https://arxiv.org/abs/2405.04434). Where Multi-head Latent Attention comes from: compress the KV cache into a latent vector, cutting it 93.3% and raising maximum generation throughput 5.76×. | Active |
 | [LIT-176](../../../record/literature.d/LIT-176.md) | Native Hybrid Attention for Efficient Sequence Modeling | Du et al. (2025), [ARXIV-2510.07019](https://arxiv.org/abs/2510.07019). Hybridise *within* the layer instead of between layers: a linear RNN maintains long-term KV slots, a sliding window supplies short-term tokens, and one softmax attends over both. | Active |
 | [LIT-177](../../../record/literature.d/LIT-177.md) | Erase-then-Delta Attention: Decoupling Erase and Write Addresses in Delta-Rule Linear Attention | Li et al. (2026), [ARXIV-2606.26560](https://arxiv.org/abs/2606.26560). The delta rule corrects only at the address it is writing to, so stale content elsewhere can never be removed; EDA adds an erase step at an independently chosen address. | Active |
+| [LIT-tmpx7q5l](../../../record/literature.d/LIT-tmpx7q5l.md) | Efficient Streaming Language Models with Attention Sinks | Xiao et al. (2023), [ARXIV-2309.17453](https://arxiv.org/abs/2309.17453). Window attention collapses when the first few tokens leave the cache — Llama-2-13B goes from 5.4 to 5158 perplexity — because a softmax must put its mass somewhere and models learn to dump the surplus on whatever is globally visible, which is the initial tokens. Keeping four of their KV entries alongside a rolling window restores it at no finetuning cost, and a single learnable sink token trained in from the start replaces all four. | Active |

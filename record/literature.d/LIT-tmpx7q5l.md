@@ -1,0 +1,81 @@
+---
+status: Active
+title: 'Efficient Streaming Language Models with Attention Sinks'
+version: 1
+tags:
+- attention-techniques
+date: '2026-09-07'
+published: '2023-09-01'
+arxiv: '2309.17453'
+first_author: 'Xiao'
+keywords:
+- 'attention-sinks'
+- 'streaming'
+- 'kv-cache'
+- 'window-attention'
+- 'long-context'
+summary: >-
+  Xiao et al. (2023), [ARXIV-2309.17453](https://arxiv.org/abs/2309.17453). Window attention collapses when the
+  first few tokens leave the cache — Llama-2-13B goes from 5.4 to 5158
+  perplexity — because a softmax must put its mass somewhere and models learn
+  to dump the surplus on whatever is globally visible, which is the initial
+  tokens. Keeping four of their KV entries alongside a rolling window
+  restores it at no finetuning cost, and a single learnable sink token
+  trained in from the start replaces all four.
+---
+
+# LIT-tmpx7q5l: Efficient Streaming Language Models with Attention Sinks
+
+Xiao et al., MIT, Meta AI, CMU and NVIDIA (2023) — [ARXIV-2309.17453](https://arxiv.org/abs/2309.17453)
+
+## Key takeaways
+
+- **The phenomenon.** Beyond the bottom two layers, every layer and head of
+  Llama-2-7B attends heavily to the first few tokens regardless of what they
+  say. Substituting the first four tokens with linebreaks changes almost
+  nothing: 5.40 perplexity with the real tokens, 5.60 with `\n`. So it is the
+  *absolute position* that matters, not the content.
+- **Why it happens, and this is the part the record needs.** Softmax cannot
+  assign zero to everything: the scores are normalised to sum to one, so a
+  head with nothing it needs to attend to must still put its mass somewhere.
+  Models learn to dump that surplus on whatever every query can see, which
+  under causal masking is the initial tokens. The authors name that role the
+  **attention sink**. The same argument had been made for quantization
+  outliers, with SoftMax-off-by-One proposed as the fix.
+- **What it costs when the sink is evicted.** Window attention drops the
+  initial tokens' KV once the window slides past them, which removes a large
+  part of the softmax denominator and shifts the whole attention
+  distribution. Llama-2-13B: 5.40 perplexity at 4+1020 cache, **5158.07** at
+  0+1024. The failure is not gradual.
+- **The remedy, for a model already trained.** Keep the KV of four initial
+  tokens permanently and roll the rest. One or two is not enough; four is,
+  and more adds little. Positions are assigned *within the cache* rather than
+  from the original text, which is what makes it work — for RoPE the keys are
+  cached before the rotation and rotated at use. Up to 22.2× faster per token
+  than sliding-window-with-recomputation, at comparable memory.
+- **The remedy, for a model you are training.** Prepend one learnable *sink
+  token*. Trained that way, streaming perplexity is stable with the sink
+  alone (18.01 at 1+1023) where the vanilla model still needs four initial
+  tokens. A zero-valued sink is not enough — it has to be learnable.
+- **A caveat the paper volunteers.** Larger caches do not monotonically lower
+  perplexity: Llama-2-7B is best at 4+2044 and worse at 4+4092. The models do
+  not fully use the context they are given.
+
+## Standing in the anthology
+
+The description of a phenomenon this record was already recommending people
+remove. [SOTA-134](../practices.d/SOTA-134.md) is filed on the finding that a head-specific output gate
+improves quality *and* eliminates the attention-sink pattern, and until this
+note the phrase appeared nowhere else in the corpus — the record advised
+removing something it had never defined.
+
+Read against [SOTA-134](../practices.d/SOTA-134.md), the two are answers to the same pressure from
+opposite ends. This paper accepts that the softmax must shed mass and gives
+it a designated place to go; the gate lets a head scale its whole output
+down instead, so there is nothing to shed. That is why the gate removes
+sinks rather than relocating them, and it is also why sinks are not simply a
+defect: in an ungated model the sink is load-bearing, and evicting it costs
+three orders of magnitude of perplexity.
+
+Filed from [LIT-139](LIT-139.md)'s citation of it at DeepSeek-V4 §2.3.3, via the reference
+pass in [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40).

@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-8 lines, walked from `extends:` on SOTA documents. Each step explains itself; this page is the order they came in.
+8 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 ## From use RoPE for LLM (1D sequence) positional embeddings
 

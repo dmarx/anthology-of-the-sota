@@ -8,9 +8,12 @@ date: '2026-09-05'
 published: '2025-07-01'
 source:
 - LIT-132
-# QK-Clip is added on top of Muon with decoupled weight decay and
-# RMS-matched updates; the Sequence section below spells the same order out.
-extends:
+# Corrective succession (ADR-017). QK-Clip is added on top of Muon with
+# decoupled weight decay and RMS-matched updates, on the defect it names: at
+# trillion scale Muon drives the maximum attention logit past 1000, which
+# brings loss spikes and occasional divergence. The Sequence section below
+# still spells the same order out in prose; that duplication predates this.
+corrects:
 - SOTA-121
 summary: >-
   Kimi Team (2025), [LIT-132](../literature.d/LIT-132.md) — MuonClip carried a 1T/32B MoE through 15.5T tokens with zero loss spikes where plain Muon let attention logits pass 1000; confirmed at 2.8T in [LIT-131](../literature.d/LIT-131.md).

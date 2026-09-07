@@ -27,7 +27,7 @@ summary: >-
   outputs sampled for the same prompt, which removes a model-sized chunk of
   the RL memory footprint and is what every later reasoning recipe in this
   record actually runs.
-extended_by:
+corrected_by:
 - SOTA-146
 ---
 

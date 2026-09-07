@@ -181,13 +181,13 @@ also the one that has to argue with [ADR-011](ADR-011.md) — though the prohibi
 is against a *condition* beside a checked reference, which nothing evaluates,
 and a closed two-value vocabulary is not that.
 
-**Decision: the second relation, once the spine can walk more than one.**
-Filed as [luria#211](https://github.com/dmarx/luria/issues/211), which is the
-only thing it needs — `Chain.relation` accepting a sequence the way `facet_by`
-already does. Until that lands the sign stays in prose, which is where it is
-now: an unsatisfying answer that is honest about the cost, and better than
-adopting the document facet and inheriting a shape that is wrong the first
-time a paper corrects one parent and extends another.
+**Decision: the second relation.** It needed one thing upstream —
+`Chain.relation` accepting a sequence the way `facet_by` already does — filed
+as [luria#211](https://github.com/dmarx/luria/issues/211) and shipped in
+0.11.0, so `relation = ["extends", "corrects"]` walks both as one spine. The
+document facet was available the whole time and is still refused: it types the
+document, and a shape that is wrong the first time a paper corrects one parent
+while extending another is not worth the week it would have saved.
 
 ## The check that follows
 

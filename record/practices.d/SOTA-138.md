@@ -1,13 +1,27 @@
 ---
 status: Active
 title: 'Train sparse attention natively with a learned top-k indexer, warmed up under dense attention'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Sourced to LIT-143 as well as LIT-142. The Conditions section already
+    counted NSA's from-scratch result as evidence — "two production
+    generations from one laboratory, plus the from-scratch evidence of
+    NSA" — while the field named only the retrofit. The recommendation is
+    unchanged.
 tags:
 - attention-techniques
 date: '2026-09-05'
 published: '2025-12-01'
 source:
+# LIT-142 introduces the indexer and the warm-up. LIT-143's from-scratch
+# result — a natively trained sparse attention matching full attention — is
+# the independent evidence the Conditions section already leans on. V4
+# (LIT-139) keeps the shape at 1M and is adoption (ADR-017).
 - LIT-142
+- LIT-143
 summary: >-
   DeepSeek-AI (2025), [LIT-142](../literature.d/LIT-142.md) — a small FP8 indexer scores past tokens and only the top-k enter attention; initialised for 2.1B tokens with dense attention on and the rest frozen; V4 repeats the pattern with a 1T-token dense warm-up.
 ---

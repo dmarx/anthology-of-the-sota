@@ -4,10 +4,11 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-7 of 153 SOTA documents. Back to the [full index](../README.md).
+8 of 153 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
+| [SOTA-132](../../../record/practices.d/SOTA-132.md) v2 | Interleave linear-attention layers with global attention at about 3:1 instead of using full attention throughout | Kimi Team (2025), [LIT-133](../../../record/literature.d/LIT-133.md) — three Kimi Delta Attention layers per gated-MLA layer beat full MLA at 48B/1.4T while cutting KV cache 75%; the layout [LIT-131](../../../record/literature.d/LIT-131.md) ships at 2.8T with 69 KDA and 24 MLA layers. | Active |
 | [SOTA-133](../../../record/practices.d/SOTA-133.md) | Replace fixed residual accumulation with learned attention over preceding layers | Kimi Team (2026), [LIT-134](../../../record/literature.d/LIT-134.md) — Attention Residuals: a per-layer pseudo-query chooses which earlier layers to read, at O(d) parameters per layer; 1.25× compute advantage on scaling laws at 48B/1.4T, adopted in Kimi K3. | Active |
 | [SOTA-141](../../../record/practices.d/SOTA-141.md) v2 | Decay the learning rate linearly all the way to zero | Bergsma et al. (2025), [LIT-147](../../../record/literature.d/LIT-147.md) — with the peak tuned, linear decay to zero beats the customary decay to 10% and other shapes at compute-optimal budgets, more so past them; Proposed because contemporary production runs in the record still decay to a floor. | Proposed |
 | [SOTA-146](../../../record/practices.d/SOTA-146.md) | Correct the GRPO objective before running it — the published form has three independently identified defects | Liu et al. (2025), [LIT-167](../../../record/literature.d/LIT-167.md); Yu et al. (2025), [LIT-168](../../../record/literature.d/LIT-168.md); Zheng et al. (2025), [LIT-180](../../../record/literature.d/LIT-180.md) — three groups, three defects in GRPO's objective, three published fixes, none of them the same fix. "We ran GRPO" does not say which of these you ran. | Proposed |

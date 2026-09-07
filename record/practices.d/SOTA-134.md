@@ -1,13 +1,30 @@
 ---
 status: Active
 title: 'Gate each attention head''s output with a sigmoid after the scaled dot-product'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Sourced to LIT-191 and LIT-190 as well as LIT-138. The practice was
+    filed claiming the gate removes the attention-sink pattern and the
+    massive activations with it, while the record described neither; the
+    notes arrived under #42 and the body says reading them changed what the
+    claim means. Production shipments stay adoption. The recommendation is
+    unchanged.
 tags:
 - attention-techniques
 date: '2026-09-05'
 published: '2025-05-01'
 source:
+# LIT-138 ran the ablation. LIT-191 and LIT-190 are what the gate is claimed
+# to remove — this practice was filed asserting it without the record holding
+# either, and reading them changed what the claim means, which makes them
+# evidence about it rather than background (ADR-017). The Qwen and Kimi
+# shipments are adoption and stay in the conditions.
 - LIT-138
+- LIT-191
+- LIT-190
 summary: >-
   Qiu et al. (2025), [LIT-138](../literature.d/LIT-138.md) — the best of 30 gating variants at 15B MoE and 1.7B dense over 3.5T tokens: better quality, more stable training, larger tolerable learning rates, no attention sinks; shipped in every Qwen full-attention layer since Qwen3-Next.
 ---

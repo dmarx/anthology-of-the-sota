@@ -1,22 +1,47 @@
 ---
 status: Active
+consensus: emerging
+consensus_note: >-
+  Three laboratories ran the comparison — Kimi (LIT-133), the Gated DeltaNet
+  authors (LIT-137) and the delta-rule work two years earlier (LIT-195) — and
+  four production lines ship the ratio: Kimi K3 at 2.8T (LIT-131), Qwen3-Next
+  and the Qwen3.5-3.8 generations (LIT-136, LIT-135), and NVIDIA's Nemotron 3
+  Nano with Mamba as the cheap layer (LIT-183). Not `converged`: dense
+  full-attention frontier models are still being trained, and the adopters do
+  not report the alternative.
 title: 'Interleave linear-attention layers with global attention at about 3:1 instead of using full attention throughout'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Sourced to the three works that ran the experiment, and no longer to the
+    four that shipped the ratio. Under ADR-017 adoption without a test is
+    evidence about the field, so LIT-131, LIT-135, LIT-136 and LIT-183 move
+    to a consensus_note this practice did not have — it read as unassessed
+    while its source list carried four adopters, which is exactly the
+    countability ADR-010 wanted and ADR-017 made possible. LIT-195 joins as
+    the second independent comparison the body already said existed. The
+    recommendation is unchanged.
 tags:
 - attention-techniques
 date: '2026-09-05'
 published: '2025-10-01'
 source:
-# Primary: the controlled comparison against full attention. The rest is
-# what corroborates it — the shipped 3:1 layouts and the module they use
-# (ADR-010). Falcon-H1's parallel-head layout (LIT-120, LIT-119) is the
-# contrast, not support, so it stays in Variations rather than here.
+# Three works that ran the experiment (ADR-017): LIT-133's controlled
+# comparison against full MLA at 48B/1.4T, LIT-195's interleave of DeltaNet
+# with sliding-window attention against a Transformer++ baseline at 1.3B two
+# years earlier, and LIT-137's own H1/H2 hybrids.
+#
+# The shipped layouts came out. LIT-131, LIT-135, LIT-136 and LIT-183 adopt
+# the ratio without reporting the alternative, so they are evidence about the
+# field and not about the claim — they moved to consensus_note, which is what
+# ADR-017 settled and what the comment here used to get wrong. Falcon-H1's
+# parallel-head layout (LIT-120, LIT-119) was already correctly excluded as
+# contrast.
 - LIT-133
-- LIT-136
-- LIT-135
-- LIT-131
+- LIT-195
 - LIT-137
-- LIT-183
 summary: >-
   Kimi Team (2025), [LIT-133](../literature.d/LIT-133.md) — three Kimi Delta Attention layers per gated-MLA layer beat full MLA at 48B/1.4T while cutting KV cache 75%; the layout [LIT-131](../literature.d/LIT-131.md) ships at 2.8T with 69 KDA and 24 MLA layers.
 ---

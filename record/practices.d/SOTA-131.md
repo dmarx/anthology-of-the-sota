@@ -1,13 +1,30 @@
 ---
 status: Active
 title: 'When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip)'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Sourced to LIT-155 and LIT-119 as well as LIT-132. The mechanism the
+    practice argues from is LIT-155's, and the scope qualifier in its own
+    title rests on LIT-119's small-scale runs without clipping. K3 keeping
+    the optimizer at 2.8T is adoption, so it stays consensus evidence under
+    ADR-017. The recommendation is unchanged.
 tags:
 - training-optimization
 date: '2026-09-05'
 published: '2025-07-01'
 source:
+# LIT-132 is where QK-Clip is introduced. LIT-155 established attention-logit
+# growth as a distinct instability and is the mechanism the practice argues
+# from; LIT-119 trained 90M and 0.6B with Muon and no clipping and reports
+# stable runs, which is the evidence for the "at scale" in the title. LIT-159,
+# LIT-122 and LIT-131 are the line and its adopter, and LIT-139 is the
+# variation that does without — all body (ADR-017).
 - LIT-132
+- LIT-155
+- LIT-119
 # Corrective succession (ADR-017). QK-Clip is added on top of Muon with
 # decoupled weight decay and RMS-matched updates, on the defect it names: at
 # trillion scale Muon drives the maximum attention logit past 1000, which

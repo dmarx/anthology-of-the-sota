@@ -13,7 +13,7 @@
 | 2026-08-24 | Proposed | [LIT-101](../../record/literature.d/LIT-101.md) | 0 | 0 | AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs |
 | 2026-08-24 | Proposed | [LIT-104](../../record/literature.d/LIT-104.md) | 0 | 0 | ReLoRA: High-Rank Training Through Low-Rank Updates |
 | 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 15 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
-| 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 11 | 0 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
+| 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 13 | 0 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
 | 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 10 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 7 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 6 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |

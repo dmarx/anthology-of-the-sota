@@ -16,8 +16,8 @@
   - [LIT-192](../record/literature.d/LIT-192.md) — Extending Context Window of Large Language Models via Positional Interpolation *(Active)*
     - [LIT-193](../record/literature.d/LIT-193.md) — YaRN: Efficient Context Window Extension of Large Language Models *(Active)*
 - [LIT-207](../record/literature.d/LIT-207.md) — The Impact of Positional Encoding on Length Generalization in Transformers *(Active)*
-  - [LIT-tmpfwc1j](../record/literature.d/LIT-tmpfwc1j.md) — Rope to Nope and Back Again: A New Hybrid Attention Strategy *(Active)*
-  - [LIT-tmpi3yxw](../record/literature.d/LIT-tmpi3yxw.md) — SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling *(Active)*
+  - [LIT-208](../record/literature.d/LIT-208.md) — Rope to Nope and Back Again: A New Hybrid Attention Strategy *(Active)*
+  - [LIT-209](../record/literature.d/LIT-209.md) — SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling *(Active)*
 - alongside: [LIT-048](../record/literature.d/LIT-048.md) — Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation *(Active)*
 
 ## From Mamba: Linear-Time Sequence Modeling with Selective State Spaces

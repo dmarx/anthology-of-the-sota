@@ -20,7 +20,7 @@ history:
   note: >-
     Corrected. The practice claimed that a model which already exists cannot
     take the NoPE alternative, so the two could not be contested.
-    LIT-tmpi3yxw converts an 8B RoPE model pretrained on 15T tokens by
+    LIT-209 converts an 8B RoPE model pretrained on 15T tokens by
     continued pretraining, at parity on short benchmarks. The
     recommendation is unchanged; the reason for not filing it as contested
     is now cost rather than impossibility.
@@ -103,11 +103,11 @@ at 48B, against a RoPE version of itself.
 
 So the record holds two answers to the same problem and they are not
 competing versions of one technique. This practice is what a RoPE model has
-to do; [SOTA-tmpslb73](SOTA-tmpslb73.md) is a design that removes the need.
+to do; [SOTA-153](SOTA-153.md) is a design that removes the need.
 
 **This entry used to say the choice was settled at pretraining, so that a
 model which already exists cannot take the other option. That is wrong.**
-[LIT-tmpi3yxw](../literature.d/LIT-tmpi3yxw.md) converted an 8B RoPE model pretrained on 15T tokens to a
+[LIT-209](../literature.d/LIT-209.md) converted an 8B RoPE model pretrained on 15T tokens to a
 NoPE-global architecture by continued pretraining, and it came back at parity
 on short benchmarks with long-context capability gained. Conversion is not
 free and most readers of this practice will not do it, which is why the two

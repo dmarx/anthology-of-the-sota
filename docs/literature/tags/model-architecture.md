@@ -4,7 +4,7 @@
 
 Architectures, components, model families, multi-modal designs.
 
-42 of 195 LIT documents. Back to the [full index](../README.md).
+43 of 196 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -50,3 +50,4 @@ Architectures, components, model families, multi-modal designs.
 | [LIT-183](../../../record/literature.d/LIT-183.md) | Nemotron 3 Nano: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning | NVIDIA (2025), [ARXIV-2512.20848](https://arxiv.org/abs/2512.20848). A 30B-A3B MoE hybrid Mamba-Transformer on 25T tokens: more accurate than its predecessor at under half the activated parameters, and up to 3.3× the inference throughput of comparable open models. | Active |
 | [LIT-188](../../../record/literature.d/LIT-188.md) | Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer | Shazeer et al. (2017), [ARXIV-1701.06538](https://arxiv.org/abs/1701.06538). The sparsely-gated mixture-of-experts layer: thousands of feed-forward experts with a trainable gate selecting a few per example, so model capacity can grow by 1000× at small increases in compute. The paper conditional computation had been promising in theory and not delivering in practice until. | Active |
 | [LIT-189](../../../record/literature.d/LIT-189.md) | Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity | Fedus et al. (2021), [ARXIV-2101.03961](https://arxiv.org/abs/2101.03961). Route each token to exactly one expert instead of two: simpler, cheaper per token, and stable in bfloat16 with selective casting — a 1.6T-parameter model and a 7× pretraining speedup over T5-Base at matched compute. | Active |
+| [LIT-tmpswz1t](../../../record/literature.d/LIT-tmpswz1t.md) | LatentMoE: Toward Optimal Accuracy per FLOP and Parameter in Mixture of Experts | Elango et al., NVIDIA (2026), [ARXIV-2601.18089](https://arxiv.org/abs/2601.18089). Existing MoE designs are argued from sparsity and tuned for offline throughput, which is the wrong objective for interactive serving where expert computation is bandwidth- bound, not compute-bound. LatentMoE down-projects tokens into a narrow latent space before routing and keeps the routed experts' weights there, so both the dispatch traffic and the weight-loading bandwidth fall by the width ratio. Explored to 95B parameters over 1T tokens; adopted by Nemotron-3 Super and Ultra, and by Kimi K3. | Active |

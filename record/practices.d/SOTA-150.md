@@ -88,6 +88,30 @@ had become.
 mixture-of-experts specifically, and until now that caveat qualified an
 architecture the record had never recommended.
 
+## Where the width goes, once you have said yes
+
+This practice answers *whether* to make the feed-forward layers sparse. It
+does not answer where the parameters should sit, and [LIT-tmpswz1t](../literature.d/LIT-tmpswz1t.md) argues that
+the second question has a different answer than the field's defaults assume.
+
+Its premise is a roofline result: at latency-critical batch sizes the
+per-expert token count is small, arithmetic intensity is low, and expert
+computation is **bandwidth-bound rather than compute-bound**. Optimising
+accuracy per FLOP is then optimising against the wrong constraint, and
+accuracy *per parameter* — memory footprint, weight-loading bandwidth,
+routing traffic, sharding — is what binds. LatentMoE follows that by
+down-projecting tokens into a narrow latent space before the routed experts
+and keeping those experts' weights there, while routing and the shared
+experts stay at full width; dispatch volume and weight-loading bandwidth both
+fall by the width ratio, and the saving is spent on more experts rather than
+on a smaller model.
+
+Worth carrying here because it is the base Kimi K3's expert layer is built on
+([LIT-131](../literature.d/LIT-131.md)), and because the premise is the sort of claim that silently decides
+an architecture. Not filed as its own practice: one originating lab with one
+outside adopter, and no independent comparison against a conventional MoE at
+matched serving conditions.
+
 ## The line this came from
 
 The record now holds it end to end, which it did not when this practice was

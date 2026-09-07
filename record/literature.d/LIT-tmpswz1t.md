@@ -1,0 +1,82 @@
+---
+status: Active
+title: 'LatentMoE: Toward Optimal Accuracy per FLOP and Parameter in Mixture of Experts'
+version: 1
+tags:
+- model-architecture
+date: '2026-09-07'
+published: '2026-01-01'
+arxiv: '2601.18089'
+first_author: 'Elango'
+keywords:
+- 'mixture-of-experts'
+- 'inference-efficiency'
+- 'memory-bandwidth'
+- 'expert-parallelism'
+- 'hardware-software-co-design'
+summary: >-
+  Elango et al., NVIDIA (2026), [ARXIV-2601.18089](https://arxiv.org/abs/2601.18089). Existing MoE designs are
+  argued from sparsity and tuned for offline throughput, which is the wrong
+  objective for interactive serving where expert computation is bandwidth-
+  bound, not compute-bound. LatentMoE down-projects tokens into a narrow
+  latent space before routing and keeps the routed experts' weights there, so
+  both the dispatch traffic and the weight-loading bandwidth fall by the
+  width ratio. Explored to 95B parameters over 1T tokens; adopted by
+  Nemotron-3 Super and Ultra, and by Kimi K3.
+---
+
+# LIT-tmpswz1t: LatentMoE: Toward Optimal Accuracy per FLOP and Parameter in Mixture of Experts
+
+Elango et al., NVIDIA (2026) — [ARXIV-2601.18089](https://arxiv.org/abs/2601.18089)
+
+## Key takeaways
+
+- **The objection to how MoEs are designed.** Existing architectures are
+  motivated by high-level sparsity arguments and optimised for offline,
+  throughput-oriented settings. The paper argues that leaves out the regime
+  people actually serve in, and proposes judging a design on **two** axes:
+  accuracy per FLOP *and* accuracy per parameter — the second standing in for
+  memory footprint, bandwidth, routing communication and sharding overhead.
+- **Why the second axis is the binding one.** A roofline analysis of serving
+  Qwen3-235B-A22B shows that at latency-critical batch sizes the per-expert
+  token count is small, so arithmetic intensity is low and expert computation
+  sits in the **bandwidth-bound** regime. Adding FLOPs is free there; moving
+  weights is not. Optimising accuracy per FLOP alone optimises for the case
+  that is not the constraint.
+- **The architecture.** Down-project the token into a latent space of width
+  d_l before the routed experts, and keep the routed experts' weights in that
+  space; dispatch and aggregation happen there too. Everything else — routing
+  and the **shared** experts — stays at the full hidden width d, because those
+  are not where the bottlenecks are. Communication volume and weight-loading
+  bandwidth both fall by d/d_l.
+- **Why that is not simply making the experts smaller.** The saved budget buys
+  *more* experts and more active per token. The paper's design principle is
+  that scaling the pool and the active count together raises expert diversity
+  faster than it raises cost in the latent space, so quality per parameter
+  goes up rather than down.
+- Design-space exploration to 95B parameters over a 1T-token horizon, with
+  ablations, scaling studies and a projected trillion-parameter serving
+  analysis.
+
+## Standing in the anthology
+
+The floor under an architecture the record already describes twice without
+naming. Kimi K3 ([LIT-131](LIT-131.md)) calls its expert layer "Stable LatentMoE" and
+credits this paper; that is what makes 896 routed experts with 16 active
+affordable at 2.8T, and K3's own three additions — an RMSNorm before the
+up-projection, SiTU-GLU, Quantile Balancing — are all repairs to failure
+modes that the resulting 56× sparsity brings on. Read the K3 note without
+this one and the base it is stabilising is missing.
+
+Two independent adopters, which is worth stating precisely because they are
+not independent *designs*: NVIDIA's own Nemotron-3 Super and Ultra, and
+Moonshot's Kimi K3. One originating lab, one outside adopter at frontier
+scale.
+
+It also gives [SOTA-150](../practices.d/SOTA-150.md) a dimension it does not carry. That practice answers
+*whether* to make the feed-forward layers sparse; this is an argument about
+*where the width should be*, and its premise — that interactive serving is
+bandwidth-bound rather than compute-bound — is the kind of claim that decides
+architecture and is easy to leave implicit.
+
+Filed via the reference pass in [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40), from Kimi K3 §2.3.

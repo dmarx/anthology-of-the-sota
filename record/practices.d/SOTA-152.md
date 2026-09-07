@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmpcsora
 promote_when: >-
   A second group reporting a controlled comparison of best-fit packing against
   concatenation, or a frontier pretraining report that names the packing
@@ -18,9 +20,9 @@ tags:
 date: '2026-09-07'
 published: '2024-04-01'
 source:
-- LIT-tmp66u4l
+- LIT-203
 summary: >-
-  Ding et al. (2024), [LIT-tmp66u4l](../literature.d/LIT-tmp66u4l.md) — concatenate-then-split truncates
+  Ding et al. (2024), [LIT-203](../literature.d/LIT-203.md) — concatenate-then-split truncates
   documents that would have fit, and the model then learns to continue text
   whose beginning it never saw. Treating the grouping as bin packing removes
   those truncations at the same efficiency, no padding added: +4.7% reading
@@ -28,11 +30,11 @@ summary: >-
   58.3% less closed-domain hallucination.
 ---
 
-# SOTA-tmpcsora: Pack training documents by best fit instead of concatenating and splitting
+# SOTA-152: Pack training documents by best fit instead of concatenating and splitting
 
 ## Source
 
-Ding et al. (2024), [LIT-tmp66u4l](../literature.d/LIT-tmp66u4l.md) — Fewer Truncations Improve Language Modeling.
+Ding et al. (2024), [LIT-203](../literature.d/LIT-203.md) — Fewer Truncations Improve Language Modeling.
 
 The universal default is to concatenate documents and split the stream at the
 sequence length. It wastes no tokens on padding, which is why everyone does

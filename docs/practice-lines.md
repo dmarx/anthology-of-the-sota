@@ -8,6 +8,7 @@
 
 - [SOTA-063](../record/practices.d/SOTA-063.md) — use RoPE for LLM (1D sequence) positional embeddings *(Active, unassessed)*
   - [SOTA-151](../record/practices.d/SOTA-151.md) — Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length *(Active, converged)*
+- alongside: [SOTA-tmpslb73](../record/practices.d/SOTA-tmpslb73.md) — Drop positional encoding from the global-attention layers of a hybrid and let the cheap local layers carry position *(Active, emerging)*
 
 ## From Prefer GQA to MQA or MHA
 

@@ -1,0 +1,96 @@
+---
+status: Active
+title: 'Rope to Nope and Back Again: A New Hybrid Attention Strategy'
+version: 1
+tags:
+- attention-techniques
+date: '2026-09-07'
+published: '2025-01-01'
+arxiv: '2501.18795'
+first_author: 'Yang'
+keywords:
+- 'long-context'
+- 'nope'
+- 'rope'
+- 'sliding-window-attention'
+- 'attention-patterns'
+- 'qk-norm'
+# The 8B RoPE baseline is the comparison the paper is built around, and the
+# three RNoPE variants are ablated against it at matched configuration.
+compared_against:
+- LIT-045
+extends:
+- LIT-207
+implementations:
+- 'RNoPE-SWA (Cohere)'
+summary: >-
+  Yang et al. (2025), [ARXIV-2501.18795](https://arxiv.org/abs/2501.18795). The paper that says what NoPE and
+  RoPE layers are each *for*, by measuring where their attention mass goes:
+  NoPE layers retrieve, RoPE layers attend locally, and the two roles are
+  cleaner when the RoPE layers are confined to a sliding window. The resulting
+  architecture — one full-attention NoPE layer per three windowed RoPE layers,
+  8B parameters, 5T tokens — beats a full-attention RoPE model on long *and*
+  short context, at about a quarter of the KV cache.
+---
+
+# LIT-tmpfwc1j: Rope to Nope and Back Again: A New Hybrid Attention Strategy
+
+Yang et al. (2025) — [ARXIV-2501.18795](https://arxiv.org/abs/2501.18795)
+
+## Key takeaways
+
+**The two layer types specialise, and the paper measures it rather than
+asserting it.** Attention mass was compared across variants at 8B, trained to
+750B tokens. NoPE layers show a pronounced spike on the needle tokens — strong
+retrieval — together with an attention sink on the first tokens, and markedly
+weaker recency bias than either a pure RoPE or a pure NoPE model. The RoPE
+layers in the same hybrid show almost no sink and very weak retrieval, and
+carry the local, recency-biased work instead. So the hybrid is not two copies
+of the same thing at different frequencies; it is a division of labour, and
+each half is bad at the other's job.
+
+**Widening the RoPE layers hurts the NoPE layers.** The most useful negative
+result here, because it runs against the standard long-context move. Raising
+the RoPE base θ enlarges the receptive field, and the extra span injects noise
+that disrupts the NoPE layers' ability to compute similarity and retrieve: as
+θ went from 10,000 to 4 million, needle attention mass in the NoPE layers fell
+from 0.0765 to 0.0369 and the needles score fell from 8.036 to 6.203. The
+remedy is the opposite of the reflex — *restrict* the RoPE layers with a
+sliding window so each type stays in role. RNoPE-10k-swa scores 9.562 at
+needles-128k, beating both the baseline and the unwindowed variant.
+
+**The architecture.** Built on Command R+: QK-Norm removed for poorly shaped
+attention patterns, NoPE layers keep a full attention span, RoPE layers get a
+4096 sliding window. The interleave ratio was ablated at 1:1, 1:3 and 1:7, and
+1:3 won; the ordering within a group did not matter, so the full-attention
+layer sits at the end of each group of four. Final model: 8B, 5T tokens of
+pretraining plus long-context SFT.
+
+**Efficiency follows from the layout rather than being traded against it.**
+75% of layers run at O(SL) instead of O(L²), the KV cache shrinks about 4×,
+and inference latency falls by nearly 70% at 990k input tokens, approaching
+the 75% ceiling the layout implies. And, in the authors' words, NoPE layers
+with full attention span eliminate the need for RoPE scaling.
+
+## Standing in the anthology
+
+The first of the record's three independent arrivals at the same design, and
+the one that explains *why* it works. [LIT-207](LIT-207.md) established that a decoder-only
+transformer needs no positional encoding; this establishes what happens when
+you keep some encoding anyway and give the two kinds of layer different jobs.
+
+It also lands squarely on [SOTA-151](../practices.d/SOTA-151.md). That practice rescales RoPE to extend
+context, and the standard cheap version of it is raising the base frequency.
+Here that specific move is measured doing damage — not to the RoPE layers, but
+to the retrieval capability of the NoPE layers downstream of them. The
+practice is about a pure-RoPE model, where the finding does not apply
+directly; the point is that the two lines of work are not additive, and a
+hybrid should not reach for base-frequency tuning by reflex.
+
+The sink observation is the one that closes a loop. [LIT-207](LIT-207.md)'s theorem builds
+absolute position from the `<bos>` anchor, and [LIT-191](LIT-191.md) established the
+first-token sink independently a few months later. Here both appear together
+and are named as such: the NoPE layers, the ones doing position-free
+retrieval, are exactly the layers that develop a sink. Nobody has tested
+whether the sink *implements* the construction — but the co-occurrence is on
+the record now rather than being the record's own speculation.

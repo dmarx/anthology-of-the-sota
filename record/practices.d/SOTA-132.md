@@ -46,7 +46,10 @@ frequency base or YaRN, because the global layers hold no positional
 parameter to retune. The idea is not the report's — [LIT-207](../literature.d/LIT-207.md) established
 it in 2023, and Kimi Linear ([LIT-133](../literature.d/LIT-133.md)) cites it and runs the ablation:
 against a RoPE version of the same 48B configuration, the NoPE variant wins
-on long context and the two are level on short. So the hybrid is not only cheaper per token — it makes
+on long context and the two are level on short. The design is filed on its
+own as [SOTA-tmpslb73](SOTA-tmpslb73.md), because two of its three sources have no linear
+attention in them at all — this practice and that one travel together in
+Kimi's models and are separable everywhere else. So the hybrid is not only cheaper per token — it makes
 [SOTA-139](SOTA-139.md)'s staged context extension a smaller operation. Whether that
 survives without a recurrence that is itself position-sensitive is untested.
 

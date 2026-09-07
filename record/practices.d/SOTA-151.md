@@ -13,7 +13,17 @@ consensus_note: >-
 extends:
 - SOTA-063
 title: "Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length"
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-07'
+  note: >-
+    Corrected. The practice claimed that a model which already exists cannot
+    take the NoPE alternative, so the two could not be contested.
+    LIT-tmpi3yxw converts an 8B RoPE model pretrained on 15T tokens by
+    continued pretraining, at parity on short benchmarks. The
+    recommendation is unchanged; the reason for not filing it as contested
+    is now cost rather than impossibility.
 tags:
 - attention-techniques
 date: '2026-09-07'
@@ -93,9 +103,16 @@ at 48B, against a RoPE version of itself.
 
 So the record holds two answers to the same problem and they are not
 competing versions of one technique. This practice is what a RoPE model has
-to do; NoPE-plus-linear-attention is a design that removes the need. Which is
-available to you is decided at pretraining, which is why this is not filed as
-`contested` — a model that already exists cannot take the other option.
+to do; [SOTA-tmpslb73](SOTA-tmpslb73.md) is a design that removes the need.
+
+**This entry used to say the choice was settled at pretraining, so that a
+model which already exists cannot take the other option. That is wrong.**
+[LIT-tmpi3yxw](../literature.d/LIT-tmpi3yxw.md) converted an 8B RoPE model pretrained on 15T tokens to a
+NoPE-global architecture by continued pretraining, and it came back at parity
+on short benchmarks with long-context capability gained. Conversion is not
+free and most readers of this practice will not do it, which is why the two
+are still not filed as `contested` — but the reason is cost, not
+impossibility, and the record should not have claimed the stronger one.
 
 ## Known implementations
 

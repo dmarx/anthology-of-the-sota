@@ -1,0 +1,82 @@
+---
+status: Active
+title: 'SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling'
+version: 1
+tags:
+- attention-techniques
+date: '2026-09-07'
+published: '2025-04-01'
+arxiv: '2504.08719'
+first_author: 'Puvvada'
+keywords:
+- 'long-context'
+- 'nope'
+- 'sliding-window-attention'
+- 'length-extrapolation'
+- 'attention-scaling'
+- 'architecture-conversion'
+# Trained head to head against a RoPE GPT of the same size on the same data,
+# at 1B from scratch and again at 8B by conversion.
+compared_against:
+- LIT-045
+extends:
+- LIT-207
+implementations:
+- 'SWAN-GPT-1B'
+- 'SWAN-GPT-8B'
+summary: >-
+  Puvvada et al. (2025), [ARXIV-2504.08719](https://arxiv.org/abs/2504.08719). The same layout as LIT-tmpfwc1j,
+  reached independently and three months later — NoPE global layers
+  interleaved 1:3 with sliding-window RoPE layers — plus the two things that
+  paper does not have: a dynamic scaling of attention scores at inference,
+  which is what keeps the NoPE layers working far past the training length,
+  and a demonstration that an existing 8B RoPE model pretrained on 15T tokens
+  can be converted to this architecture by continued training without losing
+  its short-context scores.
+---
+
+# LIT-tmpi3yxw: SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling
+
+Puvvada et al. (2025) — [ARXIV-2504.08719](https://arxiv.org/abs/2504.08719)
+
+## Key takeaways
+
+**Independent arrival at the same layout, including the ratio.** Global layers
+carry no positional encoding; local layers are sliding-window attention with
+RoPE, window 512, base 1,000,000; the global:local ratio is 1:3. SWAN-1B (24
+layers, d 1536) was trained from scratch on 1T tokens at 8K sequence length
+against a RoPE GPT baseline matched in size and data, and performs comparably
+or better on standard benchmarks. The paper names [LIT-tmpfwc1j](LIT-tmpfwc1j.md) as concurrent
+work with the same structure.
+
+**Dynamic attention scaling is the part that is theirs.** Length extrapolation
+here does not come from the layout alone: a scaling applied to attention
+scores at inference is what keeps the global NoPE layers usable well past the
+training length. The paper is explicit that the concurrent work lacks it, and
+treats it as the crucial element rather than a refinement — which is the
+distinguishing claim to check if the two designs are ever compared properly.
+
+**An existing model can be converted.** The strongest practical result. Take
+an 8B RoPE GPT pretrained on 15T tokens at 8K context, initialise SWAN from
+its weights, remove the positional encoding from the global layers, set the
+512-token window on the local ones, and continue pretraining. Against the
+original model across GSM8k, MATH500, MBPP, HumanEval, MT-Bench and RULER, the
+converted model averages 71.55 against 70.95 — parity on short tasks, with
+long-context capability gained. No full retrain.
+
+## Standing in the anthology
+
+**This is what corrects a claim the record was making.** [SOTA-151](../practices.d/SOTA-151.md) and [SOTA-063](../practices.d/SOTA-063.md)
+both said that RoPE-or-not is settled at pretraining and therefore is not a
+choice an existing model can revisit — which was the reason for not filing the
+two as contested. That reasoning does not survive this paper. Conversion costs
+continued pretraining, which is not free and not something most readers will
+do, but it is a very long way from impossible, and both practices now say so
+with this as the source.
+
+Together with [LIT-tmpfwc1j](LIT-tmpfwc1j.md) and [LIT-133](LIT-133.md) it makes three laboratories, three
+different local mechanisms — windowed RoPE attention here and at Cohere, a
+gated delta rule at Kimi — and the same 1:3 ratio and the same treatment of
+the global layers. That convergence is what [SOTA-tmpslb73](../practices.d/SOTA-tmpslb73.md) is filed on, and it
+is stronger evidence than any one of the three, because none of them is
+replicating another's setup.

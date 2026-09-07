@@ -8,6 +8,10 @@ consensus_note: >-
   production: Qwen3.8-27B's own serving configuration extends 262144 to 1M
   through YaRN at factor 4.0. Nobody in the record argues the mechanism is
   wrong; the live question is whether to need it at all.
+# Entirely conditional on the model having used RoPE: this is the step a
+# SOTA-063 model takes when it needs a longer window than it was trained on.
+extends:
+- SOTA-063
 title: "Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length"
 version: 1
 tags:
@@ -79,6 +83,13 @@ global-attention layers, and says in as many words that it therefore
 extrapolates "without any positional-encoding modification, such as RoPE
 rescaling or interpolation". Position sensitivity comes from the recurrence
 and decay of the interleaved linear-attention layers instead.
+
+The alternative has a source of its own now. [LIT-tmprvzbv](../literature.d/LIT-tmprvzbv.md) trained five
+positional schemes from scratch under identical hyperparameters and found the
+one that generalizes to unseen lengths is the absent one — and showed why a
+decoder-only transformer can represent absolute and relative position without
+being given either. Kimi Linear ([LIT-133](../literature.d/LIT-133.md)) cites it and repeats the comparison
+at 48B, against a RoPE version of itself.
 
 So the record holds two answers to the same problem and they are not
 competing versions of one technique. This practice is what a RoPE model has

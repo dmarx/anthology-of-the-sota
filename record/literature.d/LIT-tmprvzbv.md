@@ -1,0 +1,116 @@
+---
+status: Active
+title: 'The Impact of Positional Encoding on Length Generalization in Transformers'
+version: 1
+tags:
+- attention-techniques
+date: '2026-09-07'
+published: '2023-05-01'
+arxiv: '2305.19466'
+first_author: 'Kazemnejad'
+keywords:
+- 'positional-encoding'
+- 'length-generalization'
+- 'nope'
+- 'rope'
+- 'alibi'
+- 'decoder-only'
+# Rotary and ALiBi are papers whose whole contribution is a positional
+# scheme, so the head-to-head is a comparison against the paper. The study
+# also runs APE and T5's relative bias; neither is declared, because the
+# transformer paper's contribution is not its sinusoid and T5 is not in the
+# record.
+compared_against:
+- LIT-045
+- LIT-048
+implementations:
+- 'Kimi Linear'
+- 'Kimi K3'
+summary: >-
+  Kazemnejad et al. (2023), [ARXIV-2305.19466](https://arxiv.org/abs/2305.19466). Five positional schemes trained
+  from scratch under identical hyperparameters — absolute, T5's relative bias,
+  ALiBi, rotary, and none at all — and the one that generalizes to unseen
+  lengths is none at all. A decoder-only transformer without positional
+  encoding is shown to represent both absolute and relative position anyway,
+  which is why removing the encoding removes a constraint rather than
+  information.
+---
+
+# LIT-tmprvzbv: The Impact of Positional Encoding on Length Generalization in Transformers
+
+Kazemnejad et al. (2023) — [ARXIV-2305.19466](https://arxiv.org/abs/2305.19466)
+
+## Key takeaways
+
+**A decoder-only transformer does not need a positional encoding to know
+where it is.** This is the paper's theoretical core and the reason the
+empirical result is not a surprise. Theorem 1 constructs weights under which
+the first layer computes absolute positions and writes them into the hidden
+state — the construction anchors on the `<bos>` token, whose presence is what
+makes position recoverable at all. Given that, a second theorem shows the
+remaining layers can implement a relative encoding on top. So NoPE is not a
+model with less positional information; it is a model that is not told *which*
+positional function to use. Trained with SGD it converges on attention
+patterns resembling T5's relative bias — the field's own answer, arrived at
+rather than imposed.
+
+**Explicit schemes lose at length generalization, and the ranking is not the
+one practice assumes.** Across reasoning and mathematical tasks — addition,
+polynomial evaluation, sorting, summation, parity, LEGO, copy, reverse —
+models are trained on short instances and evaluated on longer ones. NoPE
+beats APE, T5's relative bias, ALiBi and rotary, and the paper's summary of
+its own result is blunt: the most commonly used methods, ALiBi and rotary and
+APE included, are *not well suited* to length generalization in downstream
+tasks. It also costs no computation, which none of the alternatives can say.
+
+**Scratchpad does not rescue the others, and its format dominates its
+presence.** A finding worth carrying separately, because "just let it use a
+scratchpad" is the standard reply to a length-generalization failure. Here it
+is sometimes harmful, and the format matters more than whether it is there.
+
+## What the evidence actually covers
+
+The main study is **~107M parameters** on synthetic tasks — the HuggingFace
+"base" configuration, one set of hyperparameters shared across all five
+schemes, single-GPU. That design is the right one for the question, because
+holding everything but the positional scheme fixed is what makes the
+comparison mean anything, and it is why this is a controlled study rather
+than five separately tuned results. It is also the limit on what it can
+claim. Nothing here is evidence about a frontier model.
+
+The appendix carries one check at larger scale, described by the authors as
+preliminary: 1.3B parameters, 24 layers, 30B tokens of code, context 1024,
+identical data and hyperparameters across schemes, compared as perplexity by
+sequence-length bucket. Code was chosen deliberately, since position carries
+semantics there.
+
+## Standing in the anthology
+
+**This is the source under a design the record already held and could not
+cite.** [SOTA-132](../practices.d/SOTA-132.md) records that Kimi K3 applies no positional encoding to
+its global-attention layers, and [SOTA-151](../practices.d/SOTA-151.md) records that this is why K3
+needs neither RoPE rescaling nor YaRN. Both described NoPE as a thing certain
+models do. Neither could say where it came from, because the record held no
+paper for it.
+
+Kimi Linear ([LIT-133](LIT-133.md)) cites this work directly, and its ablation is the
+scale evidence this paper lacks: Kimi Linear against a Kimi Linear (RoPE)
+baseline at matched configuration, 48B total and 1.4T tokens, where the NoPE
+variant wins on long context and the two are level on short. That is the same
+comparison this paper ran at 107M, repeated three orders of magnitude up with
+a recurrent layer supplying what the encoding used to.
+
+**Where it sits relative to the rescaling line.** [LIT-045](LIT-045.md) → [LIT-192](LIT-192.md) →
+[LIT-193](LIT-193.md) is a succession: each step keeps rotary embeddings and changes how
+their frequencies are stretched. This paper is not a step in it. It is the
+argument that the premise is optional, and the record now renders it
+alongside rather than under — which is what `compared_against` is for, and
+what the two notes had been saying in prose.
+
+One connection the paper does not make, and the record should not claim it
+does: the absolute-position construction depends on `<bos>` being present and
+attended, and the attention-sink literature ([LIT-191](LIT-191.md), [LIT-190](LIT-190.md)) later
+established that the first token receives enormous attention mass in trained
+models. Whether the sink is the mechanism this theorem describes is untested
+by anyone, and the record should not assert it — but the two are not
+unconnected observations either, and a later note takes that up.

@@ -91,7 +91,7 @@ architecture the record had never recommended.
 ## Where the width goes, once you have said yes
 
 This practice answers *whether* to make the feed-forward layers sparse. It
-does not answer where the parameters should sit, and [LIT-tmpswz1t](../literature.d/LIT-tmpswz1t.md) argues that
+does not answer where the parameters should sit, and [LIT-196](../literature.d/LIT-196.md) argues that
 the second question has a different answer than the field's defaults assume.
 
 Its premise is a roofline result: at latency-critical batch sizes the

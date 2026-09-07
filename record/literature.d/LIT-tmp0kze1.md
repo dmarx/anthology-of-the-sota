@@ -1,0 +1,81 @@
+---
+status: Active
+title: 'V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning'
+version: 1
+tags:
+- vision-and-graphics
+date: '2026-09-07'
+published: '2025-06-01'
+arxiv: '2506.09985'
+first_author: 'Assran'
+keywords:
+- 'joint-embedding-predictive-architecture'
+- 'video-pretraining'
+- 'world-model'
+- 'robotic-planning'
+- 'action-conditioning'
+# The line: I-JEPA established predicting representations rather than
+# pixels; this carries the same objective to video at internet scale and
+# then conditions it on actions. `extends:` and not `corrects:` — it names
+# no defect in its parent, it changes the modality and the scale (ADR-017).
+extends:
+- LIT-tmpifi5m
+summary: >-
+  Assran et al. (2025), [ARXIV-2506.09985](https://arxiv.org/abs/2506.09985). The JEPA objective at
+  internet scale: over 1M hours of video, action-free, then post-trained into
+  an action-conditioned world model on under 62 hours of unlabelled robot
+  video. 77.3 on Something-Something v2, 39.7 recall-at-5 on Epic-Kitchens-100,
+  84.0 on PerceptionTest once aligned to an 8B LLM — and zero-shot pick-and-place
+  on Franka arms in labs that contributed no training data.
+---
+
+# LIT-tmp0kze1: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning
+
+Assran et al. (2025) — [ARXIV-2506.09985](https://arxiv.org/abs/2506.09985)
+
+## Key takeaways
+
+**Two stages, and the second is small on purpose.** Pre-training is
+action-free on more than a million hours of internet video and images.
+Post-training adds actions — V-JEPA 2-AC — from under 62 hours of unlabelled
+robot video from Droid. The ratio is the argument: the physics comes from
+passive observation, the control comes from a thin layer on top.
+
+**It is evaluated as three different things and holds up as all three.**
+Motion understanding (77.3 top-1 on Something-Something v2), human action
+anticipation (39.7 recall-at-5 on Epic-Kitchens-100, above previous
+task-specific models), and — after alignment to an 8B language model —
+video question answering (84.0 PerceptionTest, 76.9 TempCompass). One
+pre-trained representation, three evaluation families.
+
+**The robotics result is the one that is hard to explain away.** V-JEPA 2-AC
+is deployed zero-shot on Franka arms in two labs, planning to image goals,
+with no data collected in those environments, no task-specific training and
+no reward. Planning in a learned latent space is what "world model" is
+being asked to mean here, and this is the operational form of the claim.
+
+## Standing in the anthology
+
+**The current state of a line the record otherwise does not hold.** [LIT-tmpifi5m](LIT-tmpifi5m.md)
+established the objective — predict representations, not observations — on
+still images. This scales it to video, at a data volume comparable to a
+language pretraining corpus, and shows the resulting representation supports
+prediction and control rather than only recognition.
+
+**Filed as `extends:` and not `corrects:`.** It names no defect in I-JEPA;
+it changes modality and scale, which is what the unsigned relation is for
+([ADR-017](../decisions.d/ADR-017.md)).
+
+**Read against [LIT-tmpzfhyh](LIT-tmpzfhyh.md), the two are the same question with opposite
+answers about method.** Both ask whether a model trained on video learns
+enough of the world to act on it. Veo 3 gets there by generating pixels and
+the capability is read off the output; V-JEPA 2 gets there by refusing to
+generate pixels and the capability is read off a plan in latent space. The
+record holds both and endorses neither — that is what makes them worth
+holding as a pair.
+
+**Not a practice, and the gap is the usual one.** No language-model training
+in this record uses a JEPA objective, and this paper recommends none. What
+would change it: a pretraining report that trains a language or multimodal
+model with a latent-prediction objective and reports against an
+autoregressive baseline at matched compute.

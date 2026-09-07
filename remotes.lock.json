@@ -290,6 +290,9 @@
     "ARXIV/2301.05217": {
       "title": "Progress measures for grokking via mechanistic interpretability"
     },
+    "ARXIV/2301.08243": {
+      "title": "Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture"
+    },
     "ARXIV/2301.10241": {
       "title": "K-Planes: Explicit Radiance Fields in Space, Time, and Appearance"
     },
@@ -488,6 +491,9 @@
     "ARXIV/2501.18795": {
       "title": "Rope to Nope and Back Again: A New Hybrid Attention Strategy"
     },
+    "ARXIV/2502.09992": {
+      "title": "Large Language Diffusion Models"
+    },
     "ARXIV/2502.11089": {
       "title": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention"
     },
@@ -524,6 +530,9 @@
     "ARXIV/2506.00204": {
       "title": "Structure-Aware Fill-in-the-Middle Pretraining for Code"
     },
+    "ARXIV/2506.09985": {
+      "title": "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning"
+    },
     "ARXIV/2507.18071": {
       "title": "Group Sequence Policy Optimization"
     },
@@ -535,6 +544,9 @@
     },
     "ARXIV/2509.02046": {
       "title": "Fantastic Pretraining Optimizers and Where to Find Them"
+    },
+    "ARXIV/2509.20328": {
+      "title": "Video models are zero-shot learners and reasoners"
     },
     "ARXIV/2510.04212": {
       "title": "Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention"

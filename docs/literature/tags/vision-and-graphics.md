@@ -4,7 +4,7 @@
 
 Neural rendering, reconstruction, perception, visual foundation models.
 
-10 of 210 LIT documents. Back to the [full index](../README.md).
+13 of 214 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -18,3 +18,6 @@ Neural rendering, reconstruction, perception, visual foundation models.
 | [LIT-109](../../../record/literature.d/LIT-109.md) | NeuS2: Fast Learning of Neural Implicit Surfaces for Multi-view Reconstruction | Wang et al. (2022), [ARXIV-2212.05231](https://arxiv.org/abs/2212.05231). Accelerated surface reconstruction. | Active |
 | [LIT-111](../../../record/literature.d/LIT-111.md) | OnePose: One-Shot Object Pose Estimation without CAD Models | Sun et al. (2022), [ARXIV-2205.12257](https://arxiv.org/abs/2205.12257). Category-level pose estimation. | Active |
 | [LIT-113](../../../record/literature.d/LIT-113.md) | Gaussian Shell Maps for Efficient 3D Human Generation | Abdal et al. (2023), [ARXIV-2311.17857](https://arxiv.org/abs/2311.17857). Shell-based surface representation. | Active |
+| [LIT-tmp0kze1](../../../record/literature.d/LIT-tmp0kze1.md) | V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning | Assran et al. (2025), [ARXIV-2506.09985](https://arxiv.org/abs/2506.09985). The JEPA objective at internet scale: over 1M hours of video, action-free, then post-trained into an action-conditioned world model on under 62 hours of unlabelled robot video. 77.3 on Something-Something v2, 39.7 recall-at-5 on Epic-Kitchens-100, 84.0 on PerceptionTest once aligned to an 8B LLM — and zero-shot pick-and-place on Franka arms in labs that contributed no training data. | Active |
+| [LIT-tmpifi5m](../../../record/literature.d/LIT-tmpifi5m.md) | Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture | Assran et al. (2023), [ARXIV-2301.08243](https://arxiv.org/abs/2301.08243). I-JEPA: predict the *representations* of target blocks from a context block in the same image, rather than the pixels or an augmentation-invariant embedding. No hand-crafted augmentations, and the masking strategy is the design choice that does the work — large semantic targets, a spatially distributed context. A ViT-Huge/14 trains on ImageNet in under 72 hours on 16 A100s. | Active |
+| [LIT-tmpzfhyh](../../../record/literature.d/LIT-tmpzfhyh.md) | Video models are zero-shot learners and reasoners | Wiedemer et al. (2025), [ARXIV-2509.20328](https://arxiv.org/abs/2509.20328). The argument is an analogy and it is stated as one: large generative models on web-scale data made language models generalist, the same primitives now describe video models, so vision may be about to follow. Veo 3 is shown solving segmentation, edge detection, image editing, affordance recognition, tool-use simulation and early visual reasoning (mazes, symmetry) that it was never trained on. | Active |

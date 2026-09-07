@@ -2,7 +2,7 @@
 
 # Lines of work
 
-6 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+7 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 ## From Language Modeling with Gated Convolutional Networks
 
@@ -51,3 +51,8 @@
   - [LIT-187](../record/literature.d/LIT-187.md) — GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding *(Active)*
     - [LIT-170](../record/literature.d/LIT-170.md) — DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models *(Active)*
     - [LIT-189](../record/literature.d/LIT-189.md) — Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity *(Active)*
+
+## From Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture
+
+- [LIT-tmpifi5m](../record/literature.d/LIT-tmpifi5m.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
+  - [LIT-tmp0kze1](../record/literature.d/LIT-tmp0kze1.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*

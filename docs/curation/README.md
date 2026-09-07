@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [7 Sep 13:08 — The reference pass, and what it found the record leaning on](2026-09.md#20260907130811)
 - [7 Sep 06:05 — The transcribed Falcon numbers hold, and no Proposed practice moves](2026-09.md#20260907060502)
 - [7 Sep 05:54 — Reading the primary sources for the five claims #18 flagged](2026-09.md#20260907055403)
 - [7 Sep 04:05 — The premise a dozen recommendations rested on](2026-09.md#20260907040501)
@@ -24,9 +25,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-17 entries across 2 books, newest first.
+18 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 15 | 2026-09-05 | 2026-09-07 |
+| [2026-09](2026-09.md) | 16 | 2026-09-05 | 2026-09-07 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

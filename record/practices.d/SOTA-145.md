@@ -65,6 +65,9 @@ people looked hard and changed something else.
 
 ## What this does not say
 
+<!-- inactive-ok-block: SOTA-146 — Proposed, and naming it as Proposed is
+     the whole point of the sentence -->
+
 It does not say run GRPO as published. That is
 [SOTA-146](SOTA-146.md), and it is `Proposed` for a reason: the
 same three papers that kept the group baseline each found a different defect

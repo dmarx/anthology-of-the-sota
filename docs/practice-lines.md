@@ -2,7 +2,12 @@
 
 # Lines of practice
 
-2 lines, walked from `extends:` on SOTA documents. Each step explains itself; this page is the order they came in.
+3 lines, walked from `extends:` on SOTA documents. Each step explains itself; this page is the order they came in.
+
+## From Prefer GQA to MQA or MHA
+
+- alongside: [SOTA-109](../record/practices.d/SOTA-109.md) — Prefer GQA to MQA or MHA *(Active, unassessed)*
+- alongside: [SOTA-tmpjolsp](../record/practices.d/SOTA-tmpjolsp.md) — Compress the KV cache into one shared latent vector instead of sharing key and value heads *(Active, emerging)*
 
 ## From Widen the residual stream into several streams with freely learned mixing (hyper-connections)
 

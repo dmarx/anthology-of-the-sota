@@ -37,12 +37,13 @@ makes long-context serving expensive. Multi-query attention
 ([LIT-024](../literature.d/LIT-024.md)) collapses it to one key/value head
 shared by every query head — cheap, and it costs quality.
 
-Grouped-query attention interpolates: partition the query heads into groups
-and give each group its own key/value head. The cache shrinks by the group
-factor rather than by the head count, and the quality loss largely goes away.
-It can also be *uptrained* from an existing multi-head checkpoint, which is
-why it spread as fast as it did — adopting it did not require pretraining
-from scratch.
+Grouped-query attention (Ainslie et al., 2023, [LIT-100](../literature.d/LIT-100.md)) interpolates:
+partition the query heads into groups and give each group its own key/value
+head. The cache shrinks by the group factor rather than by the head count, and
+the quality loss largely goes away. It can also be *uptrained* from an existing
+multi-head checkpoint — the paper's own subtitle, and the reason the design
+spread as fast as it did, since adopting it did not require pretraining from
+scratch.
 
 ## What this replaced
 

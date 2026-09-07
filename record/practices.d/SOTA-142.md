@@ -1,7 +1,7 @@
 ---
 status: Active
 title: 'Set the peak learning rate by a power law in tokens so it transfers across batch size and training length'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -10,6 +10,14 @@ history:
     independent adoption "is what moves this from one group's result to a
     practice" — a sentence that makes it support, not an aside. The
     recommendation is unchanged.
+- version: 3
+  date: '2026-09-07'
+  note: >-
+    LIT-119 removed from source again. Version 2 added it on the strength
+    of the body's own sentence; ADR-tmpudmra draws the line at whether the
+    adopter tested the claim, and Falcon-H1-Tiny used the power law without
+    reporting a comparison. The adoption still counts — for consensus, not
+    for support. The recommendation is unchanged.
 tags:
 - training-optimization
 date: '2026-09-05'
@@ -17,11 +25,10 @@ published: '2024-08-01'
 source:
 # The power law is fitted under WSD and sets its peak; SOTA-140's
 # Sequence names this practice as the step that does it.
-# LIT-119 is the independent adoption the body calls "what moves this from
-# one group's result to a practice" — the sentence that makes it a source
-# rather than an aside.
+# LIT-119 was added here in #62 and removed again by ADR-tmpudmra:
+# Falcon-H1-Tiny used the power law rather than testing it, so its adoption
+# is consensus evidence and belongs in consensus_note, not in source.
 - LIT-146
-- LIT-119
 extends:
 - SOTA-140
 summary: >-
@@ -46,8 +53,9 @@ Conditions: fitted under WSD; the exponents are the paper's and were
 measured on its own model family, so a new family should re-fit them from
 a few short runs. Falcon-H1-Tiny ([LIT-119](../literature.d/LIT-119.md)) is the record's independent
 adoption — a square-root decay of the learning rate from 100 GT onward,
-inside its WSD schedule — which is what moves this from one group's result
-to a practice.
+inside its WSD schedule. It used the law rather than testing it, so under
+[ADR-tmpudmra](../decisions.d/ADR-tmpudmra.md) that adoption is evidence about the field and not about the
+claim: it moves the consensus reading, not the evidence base.
 
 ## Known implementations
 

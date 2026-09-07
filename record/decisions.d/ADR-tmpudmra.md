@@ -1,0 +1,275 @@
+---
+status: Proposed
+title: 'What `source:` holds, and where the work it excludes goes'
+version: 1
+tags:
+- record
+date: '2026-09-07'
+issue: '#63'
+summary: >-
+  [ADR-010](ADR-010.md) made `source:` a list without saying what fills it, so the corpus
+  grew two conventions: [SOTA-132](../practices.d/SOTA-132.md) counts adopters as support, [SOTA-150](../practices.d/SOTA-150.md) counts
+  them as consensus data. This settles it — `source:` holds work that produced
+  evidence about the claim, and adoption without a test is consensus data,
+  which `consensus.yaml` already implies by admitting adopters who did not
+  choose deliberately. The Source *section* is argument and may name
+  non-sources, so prose is not a subset of the field; the field is a subset of
+  the prose, which is checkable and found three defects. The exclusion leaves
+  the problem-setting literature homeless, so the second half says where it
+  goes: succession gains a sign, because a third of the record's `extends:`
+  edges already mean "exists because the parent is broken" and say so only in
+  prose. Rejected: adopters as support, a subset lint in the other direction,
+  `inspired_by` as a new relation, and leaving it undecided.
+---
+
+# ADR-tmpudmra: What `source:` holds, and where the work it excludes goes
+
+## Context
+
+[ADR-010](ADR-010.md) made `source:` a list, and its argument was countability: a reader
+should be able to tell "rests on one unreplicated claim" from "rests on four
+independent groups". It did not say what fills the list.
+
+Two conventions grew in the gap, and both are defensible readings.
+
+**[SOTA-132](../practices.d/SOTA-132.md) counts adopters as support.** Its `source:` comment says so:
+
+> Primary: the controlled comparison against full attention. The rest is what
+> corroborates it — the shipped 3:1 layouts and the module they use
+> ([ADR-010](ADR-010.md)).
+
+**[SOTA-150](../practices.d/SOTA-150.md) counts adopters as consensus data.** Its `source:` holds five
+origin papers; the adopters are in its `consensus_note`:
+
+> Four labs and every frontier model the record holds from 2024 on: DeepSeek
+> ([LIT-160](../literature.d/LIT-160.md), [LIT-139](../literature.d/LIT-139.md)), Moonshot ([LIT-132](../literature.d/LIT-132.md), [LIT-131](../literature.d/LIT-131.md)), Alibaba ([LIT-182](../literature.d/LIT-182.md), [LIT-136](../literature.d/LIT-136.md))
+> and NVIDIA ([LIT-183](../literature.d/LIT-183.md)).
+
+Under two conventions the list is not countable, which is the property [ADR-010](ADR-010.md)
+was filed to get. `SOTA-150` reading `converged` on five sources and
+`SOTA-132` reading its value on six mean different things, and only a reader
+who opens both can tell.
+
+The cost came due in [#58](https://github.com/dmarx/anthology-of-the-sota/issues/58). That pass needed a rule and there was none, so
+one was invented mid-pass — *if this paper were retracted tomorrow, would the
+practice need rewriting?* It works. It was also nowhere a contributor would
+look, and thirteen practices were corrected under a rule that existed in a
+commit message.
+
+**Two attempts to mechanise it failed, and the failures are the useful part.**
+Measured against the corpus:
+
+| candidate check | fires | why it is wrong |
+|---|---|---|
+| codes in `consensus_note` / `promote_when` ⊆ structured fields | 22 | `SOTA-122`'s `promote_when` names `LIT-153` *precisely to say it does not count* |
+| codes in the `## Source` section ⊆ `source:` | 17 | `SOTA-124`'s Source section names `LIT-166` and `LIT-175` as the positions it argues with |
+
+Neither violation is always wrong. A check written before this decision would
+have enforced whichever convention its author held and generated false
+findings against the other half of the corpus.
+
+## Decision
+
+**`source:` holds the work that produced evidence about the claim.** The test,
+promoted from [#58](https://github.com/dmarx/anthology-of-the-sota/issues/58)'s practice to the record's rule: *if this document were
+retracted, would the practice need rewriting?* That admits the origin of the
+claim and independent corroboration of it. It excludes contrast, alternatives,
+components that have practices of their own, and asides.
+
+**Adoption without a test is consensus data, not support.** This is the
+disagreement above, and `consensus.yaml` already contains the answer. Its
+blurb for `converged` reads:
+
+> the field agrees and dissent is marginal, **whether or not each adopter made
+> the choice deliberately**
+
+A non-deliberate adopter is evidence about the field, not evidence about the
+claim. Ten laboratories shipping a design is not ten results; it is one
+belief, held ten times. So the line is not *who* published but *what they
+did*: a report that ran the comparison is a source, and a report that shipped
+the design is consensus data. Kimi Linear ablating NoPE against RoPE at
+matched configuration is a source. Qwen shipping a 3:1 interleave without
+reporting the alternative is not.
+
+**`consensus_note` may name work absent from `source:`, and that is the
+division of labour rather than a defect.** It follows that [ADR-010](ADR-010.md)'s
+countability claim needs restating: consensus is countable against sources
+*and* adopters, not against `source:` alone. What makes it countable at all is
+a group count, which this record does not store — filed upstream as
+[luria#209](https://github.com/dmarx/luria/issues/209).
+
+**The `## Source` section is argument, not enumeration.** It says what each
+source contributes and how they fit, and it may name non-sources provided it
+names them as such — `SOTA-124` naming the position it argues with is correct
+prose and correct filing at once. So the prose is *not* a subset of the field.
+
+**The field is a subset of the prose.** Every declared source must be
+discussed somewhere in the body. A source the document never explains is a
+source no reader can evaluate and no later contributor can re-triage, and it
+is the one direction that is always wrong.
+
+## Where the excluded work goes
+
+Defining `source:` narrowly evicts something, and the eviction is the half of
+this decision that was nearly left undecided. The literature that *set up the
+problem* is not evidence for the recommendation, so it leaves the field — and
+lands in prose, which is the failure this record has spent a week correcting.
+
+The record already holds the answer and cannot say it. **Seven of the
+nineteen `extends:` edges in the literature mean "this exists because the
+parent is broken", and every one of them states the defect in its summary:**
+
+| edge | the defect, in the child's own summary |
+|---|---|
+| [LIT-140](../literature.d/LIT-140.md) → [LIT-141](../literature.d/LIT-141.md) | hyper-connections "break the identity mapping a residual guarantees, which destabilises deep stacks" |
+| [LIT-151](../literature.d/LIT-151.md) → [LIT-140](../literature.d/LIT-140.md) | mHC's constraint "bounds it from above but not below, so the mixing can only shrink" |
+| [LIT-181](../literature.d/LIT-181.md) → [LIT-140](../literature.d/LIT-140.md) | "three named defects in mHC's doubly-stochastic constraint" |
+| [LIT-192](../literature.d/LIT-192.md) → [LIT-045](../literature.d/LIT-045.md) | RoPE does not extrapolate, so interpolate "instead of extrapolating past it" |
+| [LIT-193](../literature.d/LIT-193.md) → [LIT-192](../literature.d/LIT-192.md) | interpolation "destroys the high-frequency components and stalls" |
+| [LIT-200](../literature.d/LIT-200.md) → [LIT-030](../literature.d/LIT-030.md) | SwiGLU's x² "is what enlarges the output range and produces outliers" |
+| [LIT-210](../literature.d/LIT-210.md) → [LIT-045](../literature.d/LIT-045.md) | "the answer is not the one RoPE's own paper gave" |
+
+The other twelve are cumulative — Mamba-2 from Mamba, GShard from the
+sparsely-gated layer, Switch from GShard. One relation carries both, so the
+lineage page renders "builds on its success" and "exists because of its
+failure" identically, and the difference survives only as a sentence in each
+child. That is [ADR-011](ADR-011.md)'s own observation, unnamed: it records that pointing oHC
+and sHC at mHC rather than at Hyper-Connections was a real decision, because
+"both take mHC's design and **replace its constraint**".
+
+**Succession gains a sign.** A work that names a defect in its parent as its
+motivation is *correcting* it; a work that does not is *building on* it. The
+test is the child's own text, not an inference about what its authors were
+thinking — which is why this is not called inspiration.
+
+**The problem-setting work that succeeds nothing is a different relation, and
+it is not this one.** NoPE exists because explicit encodings fail at length
+generalization, and it builds on none of them; that is "rival answers to the
+same question", filed upstream as [luria#208](https://github.com/dmarx/luria/issues/208) and deliberately not
+reinvented here.
+
+## How the sign is carried, and why not faceting
+
+Faceting ([luria ADR-076](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-076.md)) classifies a **document** — a
+frontmatter field backed by a scheme-local vocabulary, which `facet_by`
+renders beside each chain step, and which is how this record's lines already
+show `(Active, emerging)`. A sign on succession classifies an **edge**. Three
+ways to close that gap, and the choice matters more than it looks:
+
+**A document facet — `succession: corrective | cumulative`.** Available today
+with no change to luria at all: a `succession.yaml`, one `luria.toml` clause,
+and the chain page renders it through `facet_by` unmodified. It is also
+structurally wrong, and the record says exactly when it breaks: it types the
+document, so a work that corrects one parent while building on another cannot
+say so. Today [LIT-137](../literature.d/LIT-137.md) is the only document with two parents and it is
+cumulative to both, so the approximation holds — on one document's worth of
+luck.
+
+**A second relation — `corrects:`, converse `corrected_by:`.** Edge-level by
+construction, because the sign is *which field the code sits in*. It never
+engages [ADR-011](ADR-011.md)'s prohibition on qualifying a relation, since no reference
+entry gains an attribute. It gives the trunk the converse for free, and
+`LIT-141` reading `corrected_by: [LIT-140]` is the branched-conflict shape
+this record already says it wants to read from the trunk. Its cost is one
+small change upstream: a chain's spine is a single relation today
+(`relation: str`), so two succession relations would render as two broken
+lines rather than one signed one.
+
+**A per-entry attribute on `extends:`.** The correct general shape and the
+largest change, since reference fields hold codes and nothing else. It is
+also the one that has to argue with [ADR-011](ADR-011.md) — though the prohibition there
+is against a *condition* beside a checked reference, which nothing evaluates,
+and a closed two-value vocabulary is not that.
+
+**Decision: the second relation.** It needed one thing upstream —
+`Chain.relation` accepting a sequence the way `facet_by` already does — filed
+as [luria#211](https://github.com/dmarx/luria/issues/211) and shipped in
+0.11.0, so `relation = ["extends", "corrects"]` walks both as one spine. The
+document facet was available the whole time and is still refused: it types the
+document, and a shape that is wrong the first time a paper corrects one parent
+while extending another is not worth the week it would have saved.
+
+## The check that follows
+
+`source:` ⊆ codes cited in the body. Measured before adopting it: **150 of 153
+practices already satisfy it**, and all three exceptions are real defects.
+
+- `SOTA-109` sources `LIT-100` and its body cites only `LIT-024`, the design
+  it replaced. The paper the recommendation comes from is named in the field
+  and nowhere in the prose.
+- `SOTA-121` — "use Muon" — sources `LIT-159`, the work that introduced Muon,
+  and never mentions it.
+- `SOTA-150` sources `LIT-160` and never mentions it.
+
+Three for three, on a corpus of 153, against a rule that holds 98% of the time
+without anyone having stated it. That is the profile a lint wants and the two
+rejected candidates did not have.
+
+## Alternatives considered
+
+**Adopters count as support.** `SOTA-132`'s convention, and the one that
+looks right: a design running in four frontier models plainly *is* evidence of
+something. It loses because of what it is evidence *of*. A converged practice
+would accumulate every model report that ships it, `source:` would become a
+roster, and the question a reader actually brings — which paper should I read
+— would drown in it. `consensus.yaml`'s own admission that adopters may not
+have chosen deliberately is the record already conceding the point.
+
+**A subset lint in the prose→field direction.** The obvious mechanisation,
+tried twice, rejected on measurement rather than taste: 22 and 17 false
+findings respectively. Recorded here because it will look like a good idea
+again — the intuition that prose naming a paper implies the field should too
+is exactly wrong in a record whose documents argue with the literature.
+
+**Annotated references, so the section can be generated.** The reason the
+Source section is hand-written is that the field cannot carry the qualifier;
+*"Hägele et al., for the comparison against cosine"* is the load-bearing half.
+Structuring the qualifier would make drift impossible rather than detectable.
+Not taken here, because luria's [ADR-011](ADR-011.md) says **do not add a qualifier to the
+relation** — a condition beside a checked reference is prose in a data field,
+so nothing evaluates it and nothing notices when it stops holding. A
+descriptive note is not a condition, and the distinction may hold, but
+re-opening that line deserves its own argument.
+
+**`inspired_by` as a new relation.** The shape this arrived as, and it loses
+twice. It duplicates edges that already exist — in all seven corrective cases
+`extends:` is declared and the gap is that it carries no sign, so a second
+relation beside it would give the record two ways to say one thing and a
+choice to make every time. And "inspired" is a claim about causation inside
+someone's head, which the record cannot check: `extends`, `compared_against`
+and `source` are all verifiable against the paper, and the discipline is worth
+more than the expressiveness. What the record can check is whether the child
+*names* the parent's defect as its motivation, which is what the decision above
+uses instead.
+
+**Splitting affirmative and detractive on a wider set of relations.** Tempting
+once the distinction is named, because it applies to `source:` too — a source
+can be evidence for or against. It is already there and better placed:
+`contested_by` ([ADR-016](ADR-016.md)) is the negative half of `source:`, required exactly
+where `consensus: contested` asserts it. Generalising the sign further would
+re-derive a field the record has.
+
+**Leave it undecided.** The status quo, and it has a running cost: [#58](https://github.com/dmarx/anthology-of-the-sota/issues/58) is
+correcting a quarter of the registry under a rule invented for the occasion,
+and the next pass would invent a different one.
+
+## Consequences
+
+The rule reverses one change made the same day it was written, which is the
+clearest evidence it decides something. `SOTA-142` gained `LIT-119` under
+[#62](https://github.com/dmarx/anthology-of-the-sota/pull/62) on the strength of its own sentence — Falcon-H1-Tiny "is the record's
+independent adoption ... which is what moves this from one group's result to a
+practice". Under this decision that adoption moves the *consensus* and not the
+evidence, because Falcon-H1-Tiny used the power law rather than testing it.
+Corrected in the same contribution.
+
+`SOTA-132`'s shipped-layout entries are the remaining case and are left to
+[#58](https://github.com/dmarx/anthology-of-the-sota/issues/58), which is still working through the architecture cluster.
+
+Three practices gain a sentence about a source they had been declaring in
+silence.
+
+What this obliges: a practice that adds an adopter must ask whether the
+adopter ran the comparison, and the answer belongs in the prose either way.
+That is a judgement per source, which is the cost of having the list mean one
+thing.

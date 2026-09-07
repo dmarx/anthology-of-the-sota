@@ -26,6 +26,9 @@ source:
 - LIT-144
 summary: >-
   Hu et al. (2024), [LIT-144](../literature.d/LIT-144.md), with the controlled comparison in [LIT-145](../literature.d/LIT-145.md) — matches cosine at equal tuning, leaves the token budget open, makes every stable-stage checkpoint a usable branch point; contested at frontier scale by [LIT-131](../literature.d/LIT-131.md), which retuned per schedule and chose cosine.
+extended_by:
+- SOTA-141
+- SOTA-142
 ---
 
 # SOTA-140: Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens

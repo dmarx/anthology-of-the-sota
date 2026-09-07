@@ -10,6 +10,8 @@ source:
 - LIT-148
 summary: >-
   Yang and Hu (2022), [LIT-148](../literature.d/LIT-148.md) — under the Maximal Update Parametrization the optimal learning rate and friends are stable across width, so tune small and transfer zero-shot; GPT-3 6.7B beaten at 7% of its pretraining cost in tuning. Used by Falcon-H1, MiniCPM and the Power scheduler.
+extended_by:
+- SOTA-144
 ---
 
 # SOTA-143: Parameterize the model with µP and tune hyperparameters on a narrow proxy, transferring them across width

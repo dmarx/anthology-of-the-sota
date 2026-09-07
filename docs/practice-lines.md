@@ -2,18 +2,34 @@
 
 # Lines of practice
 
-4 lines, walked from `extends:` on SOTA documents. Each step explains itself; this page is the order they came in.
+7 lines, walked from `extends:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 ## From Prefer GQA to MQA or MHA
 
 - alongside: [SOTA-109](../record/practices.d/SOTA-109.md) — Prefer GQA to MQA or MHA *(Active, unassessed)*
 - alongside: [SOTA-147](../record/practices.d/SOTA-147.md) — Compress the KV cache into one shared latent vector instead of sharing key and value heads *(Active, emerging)*
 
+## From Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW
+
+- [SOTA-121](../record/practices.d/SOTA-121.md) — Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW *(Active, unassessed)*
+  - [SOTA-131](../record/practices.d/SOTA-131.md) — When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip) *(Active, unassessed)*
+
 ## From Widen the residual stream into several streams with freely learned mixing (hyper-connections)
 
 - [SOTA-137](../record/practices.d/SOTA-137.md) — Widen the residual stream into several streams with freely learned mixing (hyper-connections) *(Superseded, unassessed)*
   - [SOTA-136](../record/practices.d/SOTA-136.md) — Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) *(Proposed, contested)*
 - alongside: [SOTA-133](../record/practices.d/SOTA-133.md) — Replace fixed residual accumulation with learned attention over preceding layers *(Active, emerging)*
+
+## From Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens
+
+- [SOTA-140](../record/practices.d/SOTA-140.md) — Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens *(Active, contested)*
+  - [SOTA-141](../record/practices.d/SOTA-141.md) — Decay the learning rate linearly all the way to zero *(Proposed, emerging)*
+  - [SOTA-142](../record/practices.d/SOTA-142.md) — Set the peak learning rate by a power law in tokens so it transfers across batch size and training length *(Active, unassessed)*
+
+## From Parameterize the model with µP and tune hyperparameters on a narrow proxy, transferring them across width
+
+- [SOTA-143](../record/practices.d/SOTA-143.md) — Parameterize the model with µP and tune hyperparameters on a narrow proxy, transferring them across width *(Active, unassessed)*
+  - [SOTA-144](../record/practices.d/SOTA-144.md) — Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too *(Proposed, unreplicated)*
 
 ## From Estimate the RL baseline from a group of samples for the same prompt instead of training a critic
 

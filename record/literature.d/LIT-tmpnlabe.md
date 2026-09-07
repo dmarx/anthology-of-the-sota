@@ -73,9 +73,13 @@ prediction, speculative decoding and KV-cache compression all exist because
 generation is left-to-right and cached. Which practices sit on which side is
 a real question the record has never had to answer.
 
-**Not a practice, and it is not close.** No frontier report in this record
-trains a diffusion language model, and LLaDA at 8B against 8B baselines does
-not establish that one should. What would change it: a frontier-scale
-diffusion language model with a disclosed recipe, or a controlled comparison
-at matched compute with both arms tuned — the same standard the schedule
-material is held to.
+<!-- inactive-ok-block: SOTA-tmp704hb — the practice drawn from this paper,
+     Proposed, and saying why is what this paragraph does -->
+**The practice is [SOTA-tmp704hb](../practices.d/SOTA-tmp704hb.md), filed `Proposed`.** No frontier report in
+this record trains a diffusion language model, and LLaDA at 8B against its
+own ARM baselines does not establish that one should — which is what
+`Proposed` is for rather than a reason to file nothing. Its `promote_when:`
+asks for what would settle it: a released model above 8B trained this way, or
+a matched-compute comparison with both arms swept, from a second group. The
+split above is recorded in that practice too, as the adoption cost nobody has
+costed.

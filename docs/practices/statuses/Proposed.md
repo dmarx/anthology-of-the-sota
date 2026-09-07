@@ -4,7 +4,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-10 of 153 SOTA documents. Back to the [full index](../README.md).
+11 of 154 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -18,3 +18,4 @@
 | [SOTA-146](../../../record/practices.d/SOTA-146.md) | Correct the GRPO objective before running it — the published form has three independently identified defects | Liu et al. (2025), [LIT-167](../../../record/literature.d/LIT-167.md); Yu et al. (2025), [LIT-168](../../../record/literature.d/LIT-168.md); Zheng et al. (2025), [LIT-180](../../../record/literature.d/LIT-180.md) — three groups, three defects in GRPO's objective, three published fixes, none of them the same fix. "We ran GRPO" does not say which of these you ran. | Proposed |
 | [SOTA-148](../../../record/practices.d/SOTA-148.md) v3 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss | Wang et al. (2024), [LIT-171](../../../record/literature.d/LIT-171.md) — add a per-expert bias to the routing scores before the top-K decision and update it from that expert's recent load, so balancing changes which experts are chosen without adding a gradient to the loss. Better balance *and* better quality than an auxiliary-loss control, and what DeepSeek-V3 runs at 671B. | Proposed |
 | [SOTA-152](../../../record/practices.d/SOTA-152.md) | Pack training documents by best fit instead of concatenating and splitting | Ding et al. (2024), [LIT-203](../../../record/literature.d/LIT-203.md) — concatenate-then-split truncates documents that would have fit, and the model then learns to continue text whose beginning it never saw. Treating the grouping as bin packing removes those truncations at the same efficiency, no padding added: +4.7% reading comprehension, +16.8% context following, +9.2% program synthesis, and up to 58.3% less closed-domain hallucination. | Proposed |
+| [SOTA-tmp704hb](../../../record/practices.d/SOTA-tmp704hb.md) | Train the language model as a masked diffusion model rather than autoregressively | Nie et al. (2025), [LIT-tmpnlabe](../../../record/literature.d/LIT-tmpnlabe.md) — hold the paradigm fixed (pretrain, then SFT) and swap only the factorization: a forward masking process and a reverse process predicting masked tokens, optimizing a likelihood lower bound. Competitive with LLaMA3 8B on in-context learning; past GPT-4o on reversal poem completion. Filed `Proposed` — one group, one model, 8B. | Proposed |

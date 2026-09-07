@@ -4,7 +4,7 @@
 
 **One source** — one group, one result — nobody has agreed or disagreed yet, which is not the same as contested, where people looked and differed.
 
-6 of 153 SOTA documents. Back to the [full index](../README.md).
+7 of 154 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -14,3 +14,4 @@
 | [SOTA-141](../../../record/practices.d/SOTA-141.md) v3 | Decay the learning rate linearly all the way to zero | Bergsma et al. (2025), [LIT-147](../../../record/literature.d/LIT-147.md) — with the peak tuned, linear decay to zero beats the customary decay to 10% and other shapes at compute-optimal budgets, more so past them; Proposed because contemporary production runs in the record still decay to a floor. | Proposed |
 | [SOTA-144](../../../record/practices.d/SOTA-144.md) | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too | Dey et al. (2025), [LIT-150](../../../record/literature.d/LIT-150.md) — the depth exponent α = 1 transfers the optimal learning rate across depth and keeps deep layers learning; 11.8% fewer FLOPs than µP at optimal shapes, 34.4% at 179 layers. One group so far. | Proposed |
 | [SOTA-152](../../../record/practices.d/SOTA-152.md) | Pack training documents by best fit instead of concatenating and splitting | Ding et al. (2024), [LIT-203](../../../record/literature.d/LIT-203.md) — concatenate-then-split truncates documents that would have fit, and the model then learns to continue text whose beginning it never saw. Treating the grouping as bin packing removes those truncations at the same efficiency, no padding added: +4.7% reading comprehension, +16.8% context following, +9.2% program synthesis, and up to 58.3% less closed-domain hallucination. | Proposed |
+| [SOTA-tmp704hb](../../../record/practices.d/SOTA-tmp704hb.md) | Train the language model as a masked diffusion model rather than autoregressively | Nie et al. (2025), [LIT-tmpnlabe](../../../record/literature.d/LIT-tmpnlabe.md) — hold the paradigm fixed (pretrain, then SFT) and swap only the factorization: a forward masking process and a reverse process predicting masked tokens, optimizing a likelihood lower bound. Competitive with LLaMA3 8B on in-context learning; past GPT-4o on reversal poem completion. Filed `Proposed` — one group, one model, 8B. | Proposed |

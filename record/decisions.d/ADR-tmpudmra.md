@@ -1,6 +1,6 @@
 ---
 status: Proposed
-title: 'What `source:` holds, and what the Source section is for'
+title: 'What `source:` holds, and where the work it excludes goes'
 version: 1
 tags:
 - record
@@ -14,11 +14,15 @@ summary: >-
   which `consensus.yaml` already implies by admitting adopters who did not
   choose deliberately. The Source *section* is argument and may name
   non-sources, so prose is not a subset of the field; the field is a subset of
-  the prose, which is checkable and found three defects. Rejected: adopters as
-  support, a subset lint in the other direction, and leaving it undecided.
+  the prose, which is checkable and found three defects. The exclusion leaves
+  the problem-setting literature homeless, so the second half says where it
+  goes: succession gains a sign, because a third of the record's `extends:`
+  edges already mean "exists because the parent is broken" and say so only in
+  prose. Rejected: adopters as support, a subset lint in the other direction,
+  `inspired_by` as a new relation, and leaving it undecided.
 ---
 
-# ADR-tmpudmra: What `source:` holds, and what the Source section is for
+# ADR-tmpudmra: What `source:` holds, and where the work it excludes goes
 
 ## Context
 
@@ -104,6 +108,87 @@ discussed somewhere in the body. A source the document never explains is a
 source no reader can evaluate and no later contributor can re-triage, and it
 is the one direction that is always wrong.
 
+## Where the excluded work goes
+
+Defining `source:` narrowly evicts something, and the eviction is the half of
+this decision that was nearly left undecided. The literature that *set up the
+problem* is not evidence for the recommendation, so it leaves the field — and
+lands in prose, which is the failure this record has spent a week correcting.
+
+The record already holds the answer and cannot say it. **Seven of the
+nineteen `extends:` edges in the literature mean "this exists because the
+parent is broken", and every one of them states the defect in its summary:**
+
+| edge | the defect, in the child's own summary |
+|---|---|
+| [LIT-140](../literature.d/LIT-140.md) → [LIT-141](../literature.d/LIT-141.md) | hyper-connections "break the identity mapping a residual guarantees, which destabilises deep stacks" |
+| [LIT-151](../literature.d/LIT-151.md) → [LIT-140](../literature.d/LIT-140.md) | mHC's constraint "bounds it from above but not below, so the mixing can only shrink" |
+| [LIT-181](../literature.d/LIT-181.md) → [LIT-140](../literature.d/LIT-140.md) | "three named defects in mHC's doubly-stochastic constraint" |
+| [LIT-192](../literature.d/LIT-192.md) → [LIT-045](../literature.d/LIT-045.md) | RoPE does not extrapolate, so interpolate "instead of extrapolating past it" |
+| [LIT-193](../literature.d/LIT-193.md) → [LIT-192](../literature.d/LIT-192.md) | interpolation "destroys the high-frequency components and stalls" |
+| [LIT-200](../literature.d/LIT-200.md) → [LIT-030](../literature.d/LIT-030.md) | SwiGLU's x² "is what enlarges the output range and produces outliers" |
+| [LIT-210](../literature.d/LIT-210.md) → [LIT-045](../literature.d/LIT-045.md) | "the answer is not the one RoPE's own paper gave" |
+
+The other twelve are cumulative — Mamba-2 from Mamba, GShard from the
+sparsely-gated layer, Switch from GShard. One relation carries both, so the
+lineage page renders "builds on its success" and "exists because of its
+failure" identically, and the difference survives only as a sentence in each
+child. That is [ADR-011](ADR-011.md)'s own observation, unnamed: it records that pointing oHC
+and sHC at mHC rather than at Hyper-Connections was a real decision, because
+"both take mHC's design and **replace its constraint**".
+
+**Succession gains a sign.** A work that names a defect in its parent as its
+motivation is *correcting* it; a work that does not is *building on* it. The
+test is the child's own text, not an inference about what its authors were
+thinking — which is why this is not called inspiration.
+
+**The problem-setting work that succeeds nothing is a different relation, and
+it is not this one.** NoPE exists because explicit encodings fail at length
+generalization, and it builds on none of them; that is "rival answers to the
+same question", filed upstream as [luria#208](https://github.com/dmarx/luria/issues/208) and deliberately not
+reinvented here.
+
+## How the sign is carried, and why not faceting
+
+Faceting ([luria ADR-076](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-076.md)) classifies a **document** — a
+frontmatter field backed by a scheme-local vocabulary, which `facet_by`
+renders beside each chain step, and which is how this record's lines already
+show `(Active, emerging)`. A sign on succession classifies an **edge**. Three
+ways to close that gap, and the choice matters more than it looks:
+
+**A document facet — `succession: corrective | cumulative`.** Available today
+with no change to luria at all: a `succession.yaml`, one `luria.toml` clause,
+and the chain page renders it through `facet_by` unmodified. It is also
+structurally wrong, and the record says exactly when it breaks: it types the
+document, so a work that corrects one parent while building on another cannot
+say so. Today [LIT-137](../literature.d/LIT-137.md) is the only document with two parents and it is
+cumulative to both, so the approximation holds — on one document's worth of
+luck.
+
+**A second relation — `corrects:`, converse `corrected_by:`.** Edge-level by
+construction, because the sign is *which field the code sits in*. It never
+engages [ADR-011](ADR-011.md)'s prohibition on qualifying a relation, since no reference
+entry gains an attribute. It gives the trunk the converse for free, and
+`LIT-141` reading `corrected_by: [LIT-140]` is the branched-conflict shape
+this record already says it wants to read from the trunk. Its cost is one
+small change upstream: a chain's spine is a single relation today
+(`relation: str`), so two succession relations would render as two broken
+lines rather than one signed one.
+
+**A per-entry attribute on `extends:`.** The correct general shape and the
+largest change, since reference fields hold codes and nothing else. It is
+also the one that has to argue with [ADR-011](ADR-011.md) — though the prohibition there
+is against a *condition* beside a checked reference, which nothing evaluates,
+and a closed two-value vocabulary is not that.
+
+**Decision: the second relation, once the spine can walk more than one.**
+Filed as [luria#211](https://github.com/dmarx/luria/issues/211), which is the
+only thing it needs — `Chain.relation` accepting a sequence the way `facet_by`
+already does. Until that lands the sign stays in prose, which is where it is
+now: an unsatisfying answer that is honest about the cost, and better than
+adopting the document facet and inheriting a shape that is wrong the first
+time a paper corrects one parent and extends another.
+
 ## The check that follows
 
 `source:` ⊆ codes cited in the body. Measured before adopting it: **150 of 153
@@ -145,6 +230,24 @@ relation** — a condition beside a checked reference is prose in a data field,
 so nothing evaluates it and nothing notices when it stops holding. A
 descriptive note is not a condition, and the distinction may hold, but
 re-opening that line deserves its own argument.
+
+**`inspired_by` as a new relation.** The shape this arrived as, and it loses
+twice. It duplicates edges that already exist — in all seven corrective cases
+`extends:` is declared and the gap is that it carries no sign, so a second
+relation beside it would give the record two ways to say one thing and a
+choice to make every time. And "inspired" is a claim about causation inside
+someone's head, which the record cannot check: `extends`, `compared_against`
+and `source` are all verifiable against the paper, and the discipline is worth
+more than the expressiveness. What the record can check is whether the child
+*names* the parent's defect as its motivation, which is what the decision above
+uses instead.
+
+**Splitting affirmative and detractive on a wider set of relations.** Tempting
+once the distinction is named, because it applies to `source:` too — a source
+can be evidence for or against. It is already there and better placed:
+`contested_by` ([ADR-016](ADR-016.md)) is the negative half of `source:`, required exactly
+where `consensus: contested` asserts it. Generalising the sign further would
+re-derive a field the record has.
 
 **Leave it undecided.** The status quo, and it has a running cost: [#58](https://github.com/dmarx/anthology-of-the-sota/issues/58) is
 correcting a quarter of the registry under a rule invented for the occasion,

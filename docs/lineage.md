@@ -2,7 +2,22 @@
 
 # Lines of work
 
-2 lines, walked from `extends:` on LIT documents. Each step explains itself; this page is the order they came in.
+6 lines, walked from `extends:` on LIT documents. Each step explains itself; this page is the order they came in.
+
+## From Language Modeling with Gated Convolutional Networks
+
+- [LIT-199](../record/literature.d/LIT-199.md) — Language Modeling with Gated Convolutional Networks *(Active)*
+  - [LIT-030](../record/literature.d/LIT-030.md) — GLU Variants Improve Transformer *(Active)*
+    - [LIT-200](../record/literature.d/LIT-200.md) — PowLU: An Activation Function for Stable Pre-Training of LLMs *(Active)*
+
+## From Mamba: Linear-Time Sequence Modeling with Selective State Spaces
+
+- [LIT-161](../record/literature.d/LIT-161.md) — Mamba: Linear-Time Sequence Modeling with Selective State Spaces *(Active)*
+  - [LIT-162](../record/literature.d/LIT-162.md) — Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality *(Active)*
+    - [LIT-137](../record/literature.d/LIT-137.md) — Gated Delta Networks: Improving Mamba2 with Delta Rule *(Active)* — also extends LIT-195
+      - [LIT-133](../record/literature.d/LIT-133.md) — Kimi Linear: An Expressive, Efficient Attention Architecture *(Active)*
+    - [LIT-165](../record/literature.d/LIT-165.md) — Mamba-3: Improved Sequence Modeling using State Space Principles *(Active)*
+- [LIT-195](../record/literature.d/LIT-195.md) — Parallelizing Linear Transformers with the Delta Rule over Sequence Length *(Active)*
 
 ## From Hyper-Connections
 
@@ -13,9 +28,20 @@
 - alongside: [LIT-134](../record/literature.d/LIT-134.md) — Attention Residuals *(Active)*
 - alongside: [LIT-152](../record/literature.d/LIT-152.md) — On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability *(Active)*
 
+## From Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer
+
+- [LIT-148](../record/literature.d/LIT-148.md) — Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer *(Active)*
+  - [LIT-149](../record/literature.d/LIT-149.md) — u-µP: The Unit-Scaled Maximal Update Parametrization *(Active)*
+  - [LIT-150](../record/literature.d/LIT-150.md) — Don't be lazy: CompleteP enables compute-efficient deep transformers *(Active)*
+
 ## From Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer
 
 - [LIT-188](../record/literature.d/LIT-188.md) — Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer *(Active)*
   - [LIT-187](../record/literature.d/LIT-187.md) — GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding *(Active)*
     - [LIT-170](../record/literature.d/LIT-170.md) — DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models *(Active)*
     - [LIT-189](../record/literature.d/LIT-189.md) — Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity *(Active)*
+
+## From Extending Context Window of Large Language Models via Positional Interpolation
+
+- [LIT-192](../record/literature.d/LIT-192.md) — Extending Context Window of Large Language Models via Positional Interpolation *(Active)*
+  - [LIT-193](../record/literature.d/LIT-193.md) — YaRN: Efficient Context Window Extension of Large Language Models *(Active)*

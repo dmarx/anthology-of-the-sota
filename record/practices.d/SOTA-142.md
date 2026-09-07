@@ -8,6 +8,10 @@ date: '2026-09-05'
 published: '2024-08-01'
 source:
 - LIT-146
+# The power law is fitted under WSD and sets its peak; SOTA-140's
+# Sequence names this practice as the step that does it.
+extends:
+- SOTA-140
 summary: >-
   Shen et al. (2024), [LIT-146](../literature.d/LIT-146.md) — under WSD the optimal learning rate is a power law in tokens and batch size; the Power scheduler applies it, and with µP the same setting carries across model sizes; adopted independently by Falcon-H1-Tiny.
 ---

@@ -65,8 +65,13 @@ several existing practices are advice *about*. The allreduce and buffer-size
 recommendations are tuning within a synchronous regime; DiLoCo is a different
 regime, and their advice neither applies nor conflicts.
 
-**Not filed as a practice here.** The record has no frontier report training
-this way, and the result is at 8 workers on C4 rather than at the scale its
-own motivation describes. Its successor ([LIT-tmpwmo68](LIT-tmpwmo68.md)) takes the bandwidth
-argument further and is where the practical case is made; a practice, if one
-is filed, should rest on both.
+<!-- inactive-ok-block: SOTA-tmpgyaw3 — the practice drawn from this paper,
+     Proposed, and saying why is what this paragraph does -->
+**The practice is [SOTA-tmpgyaw3](../practices.d/SOTA-tmpgyaw3.md), and this note is half of what it rests on.**
+The record has no frontier report training this way and the result is at 8
+workers on C4, which is why that practice is `Proposed` rather than `Active` —
+`Proposed` being where a recommendation waits while the evidence it needs
+arrives, not a verdict against it. It rests on this paper and its successor
+[LIT-tmpwmo68](LIT-tmpwmo68.md) together: this one establishes that infrequent synchronisation
+need not cost quality, and without the other the arrangement's peak bandwidth
+is unchanged and its economic case is unmade.

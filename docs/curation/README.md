@@ -6,7 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
-- [7 Sep 21:50 — Three notes filed, no practice filed: what stops a good paper from becoming a recommendation](2026-09.md#20260907215040)
+- [7 Sep 21:50 — Proposed is where a recommendation waits, and declining to file is not the same as filing a doubt](2026-09.md#20260907215040)
 - [7 Sep 21:14 — A pass can only find the defect its method is shaped like](2026-09.md#20260907211428)
 - [7 Sep 21:01 — What the source pass found, and what it cost](2026-09.md#20260907210155)
 - [7 Sep 20:32 — Eleven edges gain a sign, and `tail` hid two findings for a day](2026-09.md#20260907203215)

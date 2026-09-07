@@ -32,8 +32,8 @@ history:
   note: >-
     The Sequence gained a third answer: Schedule-Free AdamW, which removes the
     stopping time rather than choosing a shape to decay through. Literature
-    only — nothing in the record trains under it. The recommendation is
-    unchanged.
+    only at filing; now a Proposed practice of its own, named in the
+    Sequence. The recommendation is unchanged.
 date: '2026-09-05'
 published: '2024-04-01'
 source:
@@ -139,14 +139,17 @@ Warm restarts ([LIT-042](../literature.d/LIT-042.md), retired) → a single cosi
 <!-- inactive-ok: SOTA-141 — a Proposed refinement of the decay, named as part of the schedule chain -->
 being settled ([SOTA-141](SOTA-141.md)) and its peak set by scaling law ([SOTA-142](SOTA-142.md)).
 
-There is a third answer, and the record holds it as literature only.
-Schedule-Free AdamW ([LIT-tmpszcb7](../literature.d/LIT-tmpszcb7.md)) says the branch point above was the wrong
-one: the question is not which shape to decay through but whether to name a
-stopping time at all. It reaches this practice's headline property — the
-token budget need not be fixed when training starts — with no decay phase to
-launch and no peak re-tuned for a constant stage, since there is no constant
-stage. It is not filed as a practice because nothing in the record trains
-under it; see that note for what would change that.
+<!-- inactive-ok-block: SOTA-tmpvlopd — Proposed, and it is named here as the
+     rival that is not yet asserted, which is what Proposed is for -->
+
+There is a third answer, filed as [SOTA-tmpvlopd](SOTA-tmpvlopd.md) and `Proposed`.
+Schedule-Free AdamW says the branch point above was the wrong one: the
+question is not which shape to decay through but whether to name a stopping
+time at all. It reaches this practice's headline property — the token budget
+need not be fixed when training starts — with no decay phase to launch and no
+peak re-tuned for a constant stage, since there is no constant stage. Nobody
+has run the two against each other; that practice's `promote_when:` is what
+this record is waiting for before it would displace this one.
 
 ## Known implementations
 

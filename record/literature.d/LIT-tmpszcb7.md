@@ -71,13 +71,17 @@ stable-stage checkpoint. Schedule-Free delivers the same property with no
 decay phase to launch — and, unlike WSD, does not need its peak learning rate
 re-tuned for a constant stage, because there is no constant stage.
 
-**Not filed as a practice, and the reason is a gap rather than a doubt.** No
-frontier report in this record trains under it. The record's schedule
-material is `contested` between WSD and cosine at the scale where the
-disagreement matters ([LIT-131](LIT-131.md) against [LIT-145](LIT-145.md)), and a third answer with no
-adoption at that scale does not settle it — it widens it. What would change
-that: a frontier training report using Schedule-Free, or a schedule
-comparison that includes it as an arm with hyperparameters tuned per method.
+<!-- inactive-ok-block: SOTA-tmpvlopd — the practice drawn from this paper,
+     Proposed, and saying why is what this paragraph does -->
+**The practice is [SOTA-tmpvlopd](../practices.d/SOTA-tmpvlopd.md), filed `Proposed`, and the reason is a gap
+rather than a doubt.** No frontier report in this record trains under it. The
+record's schedule material is `contested` between WSD and cosine at the scale
+where the disagreement matters ([LIT-131](LIT-131.md) against [LIT-145](LIT-145.md)), and a third answer
+with no adoption at that scale does not settle it — it widens it. The
+condition that would promote it is in that practice's `promote_when:`, which
+is where a standing query belongs: a frontier report training under
+Schedule-Free, or a schedule comparison including it as an arm with each
+method's hyperparameters swept.
 
 The AlgoPerf result deserves its own sentence, because it is the strongest
 outside evidence in the schedule material and it does not transfer cleanly.

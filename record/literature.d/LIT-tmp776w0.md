@@ -69,13 +69,15 @@ should not be read in.
 
 <!-- inactive-ok-block: SOTA-146 — Proposed, and named as one of the three
      practices that assume the paradigm this paper steps outside of -->
-
+<!-- inactive-ok-block: SOTA-tmpex7d9 — the practice drawn from this paper,
+     Proposed for the reasons the paragraph gives -->
 **A rival to the record's whole post-training spine, and the first one.**
 [SOTA-129](../practices.d/SOTA-129.md) makes reinforcement learning with verifiable rewards the third stage
 of the reasoning recipe; [SOTA-145](../practices.d/SOTA-145.md) recommends the group baseline inside it;
 [SOTA-146](../practices.d/SOTA-146.md) corrects the objective. All three assume the paradigm. This is a
-different paradigm reaching the same goal, and it is filed so the assumption
-is visible as an assumption.
+different paradigm reaching the same goal, filed as [SOTA-tmpex7d9](../practices.d/SOTA-tmpex7d9.md) and
+`Proposed`, and recorded as `compared_against:` [SOTA-145](../practices.d/SOTA-145.md) — the relation for a
+rival somebody measured rather than one asserted.
 
 It does not disturb [SOTA-145](../practices.d/SOTA-145.md)'s argument, which is worth being precise about.
 That practice observes that every work which *runs or reworks GRPO* keeps the

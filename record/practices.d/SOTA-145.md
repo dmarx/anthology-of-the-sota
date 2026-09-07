@@ -24,9 +24,9 @@ history:
   date: '2026-09-07'
   note: >-
     "What this does not say" gained a third limit: the practice does not say
-    policy-gradient RL is the right family. Evolution strategies at scale
-    (LIT-tmp776w0) is a rival paradigm, filed as literature. The
-    recommendation is unchanged.
+    policy-gradient RL is the right family. Evolution strategies at scale is
+    a rival paradigm, now a Proposed practice of its own and recorded in
+    `compared_against:`. The recommendation is unchanged.
 tags:
 - training-optimization
 date: '2026-09-07'
@@ -49,6 +49,8 @@ summary: >-
   record actually runs.
 corrected_by:
 - SOTA-146
+compared_against:
+- SOTA-tmpex7d9
 ---
 
 # SOTA-145: Estimate the RL baseline from a group of samples for the same prompt instead of training a critic
@@ -100,11 +102,15 @@ stage; both name RLVR as a stage and neither names an algorithm. This is the
 algorithm, and it is orthogonal to that argument — the group baseline is what
 you run either way.
 
+<!-- inactive-ok-block: SOTA-tmpex7d9 — Proposed, and named as the rival
+     paradigm this practice is measured against -->
+
 And it does not say policy-gradient RL is the right *family*. Evolution
-strategies ([LIT-tmp776w0](../literature.d/LIT-tmp776w0.md)) reach the same goal without backpropagation and
-report a larger average improvement than either PPO or GRPO on the one task
-they share — on a single fixed hyperparameter set, against RL tuned per
-experiment. That is not a counterexample to the argument above, which is
-about what works that *run or rework GRPO* keep; it is evidence about whether
-to be in that family at all, at 8B and below and on two tasks. The practice
-stands, and the assumption underneath it is now visible as an assumption.
+strategies ([SOTA-tmpex7d9](SOTA-tmpex7d9.md), `Proposed`) reach the same goal without
+backpropagation and report a larger average improvement than either PPO or
+GRPO on the one task they share — on a single fixed hyperparameter set,
+against RL tuned per experiment. That is not a counterexample to the argument
+above, which is about what works that *run or rework GRPO* keep; it is
+evidence about whether to be in that family at all, at 8B and below and on
+two tasks. The practice stands, and the assumption underneath it is now a
+named rival with a promotion condition rather than an assumption.

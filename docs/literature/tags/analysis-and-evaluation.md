@@ -4,7 +4,7 @@
 
 Theory, interpretability, benchmarks, measurement, debugging.
 
-9 of 189 LIT documents. Back to the [full index](../README.md).
+10 of 191 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,3 +17,4 @@ Theory, interpretability, benchmarks, measurement, debugging.
 | [LIT-095](../../../record/literature.d/LIT-095.md) v2 | The Unreasonable Effectiveness of Deep Features as a Perceptual Metric | Zhang et al. (2018), [ARXIV-1801.03924](https://arxiv.org/abs/1801.03924). Deep features from almost any pretrained network, compared layer-wise, match human perceptual judgements far better than L2, SSIM or any hand-designed metric — and the effect is robust to which network and which supervision produced the features. | Active |
 | [LIT-123](../../../record/literature.d/LIT-123.md) | Wait, Wait, Wait... Why Do Reasoning Models Loop? | Pipis et al. (2025), [ARXIV-2512.12895](https://arxiv.org/abs/2512.12895). Reasoning models loop — repeat the same text — at low temperature; larger models loop less and distilled students loop far more than their teachers, which the paper traces to errors in learning and, on a synthetic task, to risk aversion: when the progress-making action is hard to learn and a cyclic one is easy, probability shifts to the cycle. | Active |
 | [LIT-167](../../../record/literature.d/LIT-167.md) | Understanding R1-Zero-Like Training: A Critical Perspective | Liu et al. (2025), [ARXIV-2503.20783](https://arxiv.org/abs/2503.20783). Two corrections to the R1-Zero story: the base model may already carry what looks like emergent reasoning, and GRPO has a length bias that inflates wrong answers. Dr. GRPO removes the bias. | Active |
+| [LIT-tmpmix9m](../../../record/literature.d/LIT-tmpmix9m.md) | Massive Activations in Large Language Models | Sun et al. (2024), [ARXIV-2402.17762](https://arxiv.org/abs/2402.17762). A handful of activations in an LLM run up to 100,000× larger than the rest, at fixed feature dimensions and a few token positions, and they act as fixed biases rather than input-dependent features: setting them to their own mean leaves the model intact, setting them to zero destroys it. They are how the model smuggles an attention bias into a mechanism that has none, and giving attention an explicit learnable bias makes them disappear at no cost in quality. | Active |

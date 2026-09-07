@@ -356,6 +356,9 @@
     "ARXIV/2309.14322": {
       "title": "Small-scale proxies for large-scale Transformer training instabilities"
     },
+    "ARXIV/2309.17453": {
+      "title": "Efficient Streaming Language Models with Attention Sinks"
+    },
     "ARXIV/2310.12109": {
       "title": "Monarch Mixer: A Simple Sub-Quadratic GEMM-Based Architecture"
     },
@@ -376,6 +379,9 @@
     },
     "ARXIV/2402.03300": {
       "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models"
+    },
+    "ARXIV/2402.17762": {
+      "title": "Massive Activations in Large Language Models"
     },
     "ARXIV/2404.06395": {
       "title": "MiniCPM: Unveiling the Potential of Small Language Models with Scalable Training Strategies"

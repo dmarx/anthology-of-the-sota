@@ -1,0 +1,78 @@
+---
+status: Active
+title: 'Massive Activations in Large Language Models'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-07'
+published: '2024-02-01'
+arxiv: '2402.17762'
+first_author: 'Sun'
+keywords:
+- 'massive-activations'
+- 'attention-sinks'
+- 'attention-bias'
+- 'interpretability'
+- 'quantization-outliers'
+summary: >-
+  Sun et al. (2024), [ARXIV-2402.17762](https://arxiv.org/abs/2402.17762). A handful of activations in an LLM run
+  up to 100,000× larger than the rest, at fixed feature dimensions and a few
+  token positions, and they act as fixed biases rather than
+  input-dependent features: setting them to their own mean leaves the model
+  intact, setting them to zero destroys it. They are how the model smuggles
+  an attention bias into a mechanism that has none, and giving attention an
+  explicit learnable bias makes them disappear at no cost in quality.
+---
+
+# LIT-tmpmix9m: Massive Activations in Large Language Models
+
+Sun et al., CMU, Meta AI Research and Bosch Center for AI (2024) — [ARXIV-2402.17762](https://arxiv.org/abs/2402.17762)
+
+## Key takeaways
+
+- **The observation.** A very small number of activations — often fewer than
+  ten in a model — take values around 100,000× the median, at specific
+  feature dimensions and a handful of token positions, and they appear across
+  model families.
+- **They are constants, not features.** Their variance across input sequences
+  is tiny relative to their magnitude. Intervening at one layer to pin them
+  at their empirical mean leaves the model's behaviour essentially unchanged;
+  setting them to zero degrades it sharply. That is the signature of a bias
+  term, not of a representation.
+- **Distinct from outlier features**, which is worth keeping straight because
+  the two get conflated. An outlier feature is a *vector* — one dimension
+  large at most tokens. A massive activation is a *scalar*, at one dimension
+  and one token. In Llama-2-7B and 13B the authors identify 10 and 25 outlier
+  features respectively, and **none of them** coincides with a massive
+  activation's dimension.
+- **What they are for.** They ride through the attention LayerNorm and the
+  QKV projections into keys and values that every query attends to, which
+  imposes an implicit bias on self-attention. Attention concentrates on
+  exactly the tokens carrying them. The model has no bias term in attention,
+  so it builds one out of the tokens it has.
+- **The clean test.** Give attention explicit learnable per-head bias keys
+  and values — one extra k and v concatenated onto K and V, a drop-in change.
+  Trained that way, GPT-2 shows **no massive activations at all**, and
+  matches both the standard model and a sink-token model in final quality.
+  Three models, same performance, different internals.
+- Vision transformers show the same thing in CLIP and DINOv2 ViT-L, and not
+  in MAE — so it is not a quirk of autoregressive masking.
+
+## Standing in the anthology
+
+The other half of what [SOTA-134](../practices.d/SOTA-134.md) claims to remove. That practice's evidence
+reports that the head-specific output gate eliminates "the attention-sink
+pattern and the massive activations that come with it", and this is the paper
+that says what the second one is and why the two travel together: the sink is
+where the attention mass goes, the massive activation is the mechanism that
+puts it there.
+
+It also sharpens what the gate is doing. Three independent routes reach the
+same place — an explicit attention bias here, a learnable sink token in
+[LIT-tmpx7q5l](LIT-tmpx7q5l.md), an output gate in [LIT-138](LIT-138.md) — and all three work by giving the
+model a way to *not* attend that softmax alone does not provide. Read
+together they make the case that this is one problem with several remedies
+rather than three separate findings, which is the reading [SOTA-134](../practices.d/SOTA-134.md) now
+carries.
+
+Filed via the reference pass in [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40).

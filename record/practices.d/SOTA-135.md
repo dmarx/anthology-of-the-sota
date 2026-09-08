@@ -10,6 +10,8 @@ source:
 - LIT-137
 summary: >-
   Yang et al. (2024), [LIT-137](../literature.d/LIT-137.md) — beats Mamba2 and DeltaNet across language modelling, retrieval and long context at 1.3B/100B; the recurrence the Qwen hybrids use for three layers in four, and the one Kimi Delta Attention extends.
+extended_by:
+- SOTA-tmpk6q3n
 ---
 
 # SOTA-135: Give linear-attention layers a gated delta rule: a decay gate for erasure plus a delta update for targeted writes
@@ -40,6 +42,16 @@ DeltaNet and Mamba2 → the gated delta rule (this practice) → Kimi Delta
 Attention ([LIT-133](../literature.d/LIT-133.md)), which replaces the scalar decay with a channel-wise
 one and is what Kimi K3 uses. Each keeps the delta update; the variation is
 in how the state forgets.
+
+Two things now hang off it, and only one is a descendant. The decoupled erase
+is filed as a `Proposed` practice extending this one — same recurrence, a
+cleanup path added beside the corrective write. RWKV-7 ([LIT-173](../literature.d/LIT-173.md)) is not: it
+reaches vector-valued gating from the recurrent-network tradition rather than
+from linear attention, independently and a year earlier than the
+channel-wise gate here, and it carries an expressivity argument this line
+does not make. Two traditions converging on per-channel gating is two data
+points; treating the other line as a step in this one would make it look like
+one.
 
 ## Where it is incomplete
 

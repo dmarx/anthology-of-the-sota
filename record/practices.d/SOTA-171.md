@@ -62,8 +62,6 @@ the mixture, and removing commonly used filters.
 
 ## Contested, and the disagreement is about the quantity
 
-<!-- inactive-ok-block: SOTA-124 — Proposed, and named as the position this
-     disagrees with -->
 [SOTA-124](SOTA-124.md) says the quantity governing safe repetition is not epoch *count*
 but epoch *size* relative to the model's memorization window, and on that
 basis Falcon-H1-Tiny repeated SFT sources a hundred times or more. This

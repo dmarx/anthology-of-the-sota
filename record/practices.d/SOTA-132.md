@@ -104,6 +104,20 @@ than on a universal constant.
 
 ## Sequence
 
+The interleave starts earlier than this practice's sources do. Griffin
+([LIT-204](../literature.d/LIT-204.md), 2024) mixes gated linear recurrences with attention layer by
+layer, and the delta-rule work says so outright — its sliding-window hybrid
+"follows Griffin and Samba". So the line runs Griffin → the Gated DeltaNet
+paper's own H1 and H2 hybrids → Kimi Linear's 3:1 global layout → the 2026
+production models, and the record held only the last two steps.
+
+**The fork at the first step is the one to keep.** Griffin and Samba put
+*local* attention in the minority layers; the layouts this practice
+recommends put *global* attention there. That is not a detail: only global
+attention preserves exact retrieval at arbitrary distance, which is the
+property the minority layers are here to protect. A reader taking "interleave
+at 3:1" from the earlier work would get the ratio and lose the reason.
+
 The Gated DeltaNet paper's own H1 and H2 hybrids ([LIT-137](../literature.d/LIT-137.md), 2024) → Qwen3-Next
 ships 3:1 Gated DeltaNet to gated attention in production ([LIT-136](../literature.d/LIT-136.md),
 September 2025) → Kimi Linear's fair comparison against full attention
@@ -126,8 +140,10 @@ attends over both — so the ratio becomes a continuous hyperparameter instead
 of a layer schedule. The practical argument for it is that an interleave
 makes every fourth layer different, which every cache manager and pipeline
 schedule then has to know about; the infrastructure sections of [LIT-131](../literature.d/LIT-131.md) and
-[LIT-152](../literature.d/LIT-152.md) are largely about managing that. It has no frontier deployment, so
-the practice does not move.
+[LIT-152](../literature.d/LIT-152.md) are largely about managing that. It is now filed as a `Proposed`
+practice of its own; it has no frontier deployment where this has two, so
+this practice does not move, and the comparison that would settle it has not
+been run.
 
 The other hybrid layout in the record is Falcon-H1's ([LIT-120](../literature.d/LIT-120.md)): SSM heads
 and attention heads in parallel within every block, with the split a

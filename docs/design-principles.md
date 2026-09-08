@@ -109,3 +109,225 @@ indexes has been deleted in every sense that matters to a reader; it just
 still occupies a file.
 
 *v1 · shaped by [ADR-004](../record/decisions.d/ADR-004.md) · origin: Nine papers had been retired with reasons good enough to be worth reading — "too domain-specific", "needs per-case tuning, no consistent benefit" — and every one of those reasons was invisible in generated output*
+
+<a name="dp-4"></a>
+
+## 4. A pass finds only the defects its query is shaped like — a clean run is evidence about the query, not about the record
+
+An audit begins by choosing a candidate list, and the choice is usually made
+in a sentence, early, while thinking about something else. That sentence
+decides everything the pass can find. Run it to completion, fix every finding,
+and what you have earned is the absence of one shape of defect — which feels
+identical, from the inside, to the absence of defects.
+
+The gap is not carelessness and cannot be closed by care. A query is a filter
+and a filter has a complement; running the filter harder does not sample the
+complement. The only thing that finds the complement is a *different query*,
+chosen deliberately, usually by asking what the first one could not have
+returned.
+
+Three ways it goes wrong, all of them observed here in one week:
+
+**Direction.** A relation has two ends, and a query over it picks one. A pass
+whose candidate list is "codes cited in the body that the evidence field does
+not name" can only *add* evidence and can never remove any, because a code
+wrongly present produces no body-only citation to flag. Every batch of that
+pass was correct. The pass could not have found the three practices citing
+adoption as support, and asking the opposite question — which entries in this
+field are model reports? — returned them immediately.
+
+**Recency.** A pass keyed to what changed cannot see a document whose
+*surroundings* changed. A re-derivation of consensus values, whose candidate
+list was "practices whose support lists moved", missed a practice whose note
+said "nobody has contradicted it either" while its own body argued with two
+papers that do. Its support list had not moved. Everything around it had.
+
+**Evidence of absence.** A refusal leaves a sentence you can search for. An
+omission leaves nothing. Grepping the record for "not filed as a practice" is
+a complete method for one half of a problem and returns literally nothing of
+the other half — the techniques so settled that nobody ever argued about
+them, and so were never written down at all.
+
+Applied here: every pass in this record's history is recorded in the journal
+with the query it ran, which is the only form in which a future reader can
+tell what it did not cover. The check that shipped with the evidence-field
+decision has this property and says so in its own text — it verifies one
+containment and is blind to the reverse, and that is written down beside it
+rather than discovered later by someone trusting a green run.
+
+The corollary, and it is cheap: **after a pass over a relation, run it once in
+the other direction.** It takes minutes, it is mechanical, and here it found
+three defects in a field that had just been declared clean. The expensive
+version of this lesson is the one where a clean report is quoted as a
+guarantee six months later by someone who was not there when the query was
+chosen.
+
+*v1 · shaped by [ADR-015](../record/decisions.d/ADR-015.md), [ADR-017](../record/decisions.d/ADR-017.md)*
+
+<a name="dp-5"></a>
+
+## 5. Adoption is not evidence — who does a thing and whether it works are different questions
+
+Two facts about a recommendation feel like the same fact and are not. One:
+somebody tested it and reports what happened. Two: somebody shipped it. The
+second is easier to collect, arrives in greater volume, and is what a
+practitioner most wants to hear — which is precisely why it ends up doing a
+job it cannot do.
+
+A report that ships a design without measuring it is evidence that the design
+was *chosen*. It is not evidence that the choice was right, and it is
+frequently not even independent: the group shipping it read the same paper
+you did, or wrote it. Stack four such reports in the column meant for
+evidence and the recommendation looks four times better supported while
+nothing has been tested twice.
+
+The confusion is not sloppiness. It is that both facts genuinely bear on the
+recommendation, so the instinct to record both is correct. What is wrong is
+recording them in one place, because they answer different questions and a
+reader cannot recover which is which once they are merged.
+
+Applied here: `source:` holds the work that produced evidence *about the
+claim* — the ablation, the controlled comparison, the paper that isolated a
+change — while adoption goes to `consensus:` and its note, where counting is
+the right operation. One practice had written the distinction in its own
+prose, calling four model reports "four generations of adoption rather than
+one result", and then listed all four as support anyway. It now names the one
+work that ran the comparison.
+
+The corollary that makes this pay: once separated, both columns start
+answering questions they could not before. A recommendation with one source
+and eight adopters is a different object from one with eight sources and no
+adopters, and telling a reader which they are looking at is most of what a
+collection like this is for.
+
+*v1 · shaped by [ADR-010](../record/decisions.d/ADR-010.md), [ADR-015](../record/decisions.d/ADR-015.md), [ADR-017](../record/decisions.d/ADR-017.md)*
+
+<a name="dp-6"></a>
+
+## 6. Filing is not endorsement — the bar for having a document is lower than the bar for believing it
+
+A collection of recommendations has two thresholds and it is easy to run
+them together. One decides whether a claim gets a document. The other decides
+whether the project is willing to say the claim is right. They are not the
+same threshold, and using the second for the first is a mistake that looks
+like rigour.
+
+The failure is specific: a paper arrives with a real recommendation and
+weak-but-honest evidence, and the reflex is *not yet*. Nothing bad appears to
+happen. But three things are lost at once, and none of them is the
+endorsement that was correctly withheld.
+
+**A refusal has nowhere to put what would reverse it.** The condition —
+"promote this when a second group reports X" — is the most perishable fact in
+the whole encounter, and with no document to carry it, it goes in prose, in a
+note about a different subject, where nothing will point at it when the
+evidence arrives.
+
+**A judgement about the field needs something to be a judgement about.** How
+far the field has converged is a property of a recommendation. Withhold the
+recommendation and the second lab to publish has nowhere to be recorded; the
+counter that would eventually earn the endorsement was removed by the
+refusal.
+
+**And the unused status decays into no status at all.** If only claims that
+clear the top bar are filed, the provisional statuses fill with nothing but
+the cases somebody filed optimistically and forgot — which is exactly the
+distribution [DP-002](design-principles.md#dp-2) is about, reached from the other direction.
+
+Applied here: `status:` carries the belief, `consensus:` carries the field's,
+and `promote_when:` carries the condition — so the entry question is only
+whether the work contains an instruction. Twelve practices were filed in one
+day that the evidence had supported for months, three of them refused *in
+writing* on the grounds that nobody at frontier scale had adopted them yet.
+That is a correct reason not to mark something `Active` and not a reason for
+it to be absent.
+
+The corollary people skip: this cuts the other way too. A document filed at a
+provisional status is a promise to revisit, and a provisional status with no
+condition attached is the same refusal wearing a document's clothes.
+
+*v1 · shaped by [ADR-014](../record/decisions.d/ADR-014.md), [ADR-015](../record/decisions.d/ADR-015.md)*
+
+<a name="dp-7"></a>
+
+## 7. What everyone agrees on has no author, so nothing prompts anyone to write it down
+
+A collection assembled from published work inherits the publication record's
+shape, including its blind spot. Papers are written about what is *new*. So
+the filing habit runs on arrivals: something appears, it has a name and a
+claim, and the claim becomes an entry.
+
+Agreement has no arrival. Nobody publishes the thing four papers assume,
+because assuming it is not a contribution — and a step everybody takes
+generates no argument, so there is nothing to notice. The result is a
+collection that is systematically strongest on what is disputed and weakest
+on what is settled, which is close to the opposite of what a reader wants.
+
+It shows up in two shapes, and the second is the one that looks absurd
+afterwards.
+
+**The trunk with no document.** Four papers propose four ways to constrain
+the same mechanism. Each disagreement gets an entry, because each is
+somebody's contribution. The thing all four take for granted — the reason any
+of them is worth doing — gets none. The disputed part is documented and the
+agreed part is not.
+
+**The refinement filed before the thing it refines.** Somebody measures a
+knob on a technique, and the measurement is recent and local and feels like
+news, so it is filed. The technique it is a knob on was established years
+earlier and simply assumed, so it is not. A reader then finds a footnote with
+no text above it.
+
+Applied here: the record carried a practice about whether to mask the loss on
+part of a training sample for four months before it carried the practice of
+constructing that sample at all; and it carried two rival constraints on a
+widened residual stream while the widening itself — the thing both rivals
+exist to make usable — had no entry until somebody went looking. Neither gap
+was a judgement. Nothing had ever prompted the filing.
+
+The corollary, which is the only reliable defence: **you cannot find these by
+reading what is here.** A refusal leaves a sentence you can search for; an
+agreement leaves silence. The queries that work run backwards from the
+evidence — which sources support no recommendation, which notes explain a
+decision made in some other document — and they have to be run deliberately,
+because nothing will ever remind you to.
+
+*v1 · shaped by [ADR-011](../record/decisions.d/ADR-011.md), [ADR-017](../record/decisions.d/ADR-017.md)*
+
+<a name="dp-8"></a>
+
+## 8. A vocabulary is a scope decision — a subject with no category is one you declined to hold
+
+A closed list of categories reads like a filing convenience. It is not. Every
+entry has to take exactly one, so the list is the answer to "what is this
+project about" — written down in a config file, usually by someone solving a
+smaller problem, and thereafter binding on everything.
+
+That is fine, and it is better than the alternative of an unbounded list that
+decides nothing. The hazard is that the decision becomes invisible. Nobody
+re-reads a vocabulary; they read the entries that use it. So a subject the
+list cannot express does not produce an error or an argument — it produces
+*nothing*, and the absence is indistinguishable from nobody having got round
+to it.
+
+The practical test is worth stating, because it converts a vague sense of
+scope into a checkable question: **if a claim arrived tomorrow with excellent
+evidence and no category to take, would you add a category or decline the
+claim?** An honest answer to that is the scope, and it is usually more
+specific than anyone would have said out loud.
+
+Applied here: the two schemes carry different vocabularies on purpose. The
+reading list holds vision, generative and theory work; the recommendations
+hold seven topics, none of them about vision. So a vision self-supervision
+paper can be a note and cannot be a recommendation — not on judgement, not on
+evidence, but because there is no category for it to take. **The
+recommendations are scoped to language-model training by construction**,
+which nobody had ever written down, and which is a far better reason for
+declining such a paper than the reason first given.
+
+The corollary: because it is a decision, it can be revisited — but only
+deliberately, by changing the vocabulary, and never by one entry quietly
+taking a tag that does not fit. A category added to admit a single document
+is how a scope stops being one.
+
+*v1 · shaped by [ADR-002](../record/decisions.d/ADR-002.md), [ADR-003](../record/decisions.d/ADR-003.md)*

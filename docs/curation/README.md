@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [8 Sep 04:44 — The inherited corpus, counted — and the duplicates it was hiding](2026-09.md#20260908044455)
 - [8 Sep 04:14 — The legacy flush: what came out, and what stayed](2026-09.md#20260908041409)
 - [8 Sep 02:50 — What the sweep cost, what it found, and the number that says it worked](2026-09.md#20260908025054)
 - [8 Sep 02:35 — The lowest-yield cluster was the one where the earlier work had already been done](2026-09.md#20260908023553)
@@ -45,9 +46,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-38 entries across 2 books, newest first.
+39 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 36 | 2026-09-05 | 2026-09-08 |
+| [2026-09](2026-09.md) | 37 | 2026-09-05 | 2026-09-08 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

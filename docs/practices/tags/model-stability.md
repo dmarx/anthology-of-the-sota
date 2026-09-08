@@ -4,7 +4,7 @@
 
 Initialization, normalization, gradient handling, loss-landscape behaviour.
 
-19 of 181 SOTA documents. Back to the [full index](../README.md).
+20 of 182 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,7 +17,7 @@ Initialization, normalization, gradient handling, loss-landscape behaviour.
 | [SOTA-025](../../../record/practices.d/SOTA-025.md) | Initialize LayerNorm weight close to 1 (0.97-1.0) | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Active |
 | [SOTA-026](../../../record/practices.d/SOTA-026.md) | Initialize LayerNorm bias to 0 | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Active |
 | [SOTA-027](../../../record/practices.d/SOTA-027.md) | Use a smaller learning rate for LayerNorm parameters | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Active |
-| [SOTA-032](../../../record/practices.d/SOTA-032.md) | Use pre-norm (RMSNorm) for transformer layers | Xiong et al. (2020), [LIT-029](../../../record/literature.d/LIT-029.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). | Active |
+| [SOTA-032](../../../record/practices.d/SOTA-032.md) v2 | Put the layer normalization inside the residual block, before the sublayer | Xiong et al. (2020), [LIT-114](../../../record/literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). Pre-LN: normalize the input to each sublayer rather than the sum after it, so the gradients near the output are well behaved at initialization. | Active |
 | [SOTA-050](../../../record/practices.d/SOTA-050.md) | Scale attention weights by 1/sqrt(head_dim) | Vaswani et al. (2017), [LIT-008](../../../record/literature.d/LIT-008.md) — [ARXIV-1706.03762](https://arxiv.org/abs/1706.03762). | Active |
 | [SOTA-051](../../../record/practices.d/SOTA-051.md) | Initialize final layer weights near zero | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
 | [SOTA-052](../../../record/practices.d/SOTA-052.md) | Use smaller variance for deep networks | Wang et al. (2022), [LIT-084](../../../record/literature.d/LIT-084.md) — [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555). | Active |
@@ -27,3 +27,4 @@ Initialization, normalization, gradient handling, loss-landscape behaviour.
 | [SOTA-071](../../../record/practices.d/SOTA-071.md) | Use gradient clipping with dynamic threshold | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
 | [SOTA-072](../../../record/practices.d/SOTA-072.md) | Implement early warning system for NaNs | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
 | [SOTA-161](../../../record/practices.d/SOTA-161.md) | Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling | Qiu et al. (2025), [LIT-198](../../../record/literature.d/LIT-198.md) — putting flash attention in BF16 while the FFN goes to FP8 sometimes explodes, and the cause is two things at once: attention produces low-rank updates repeated across steps and tokens, and low-precision addition rounds with a *bias*. The biased error rides the repeated update and compounds into a systematic gradient bias instead of averaging out. | Active |
+| [SOTA-182](../../../record/practices.d/SOTA-182.md) | Compute the normalization statistic without centering (RMSNorm) | Zhang and Sennrich (2019), [LIT-023](../../../record/literature.d/LIT-023.md) — [ARXIV-1910.07467](https://arxiv.org/abs/1910.07467). Drop the mean subtraction from layer normalization and rescale by the root mean square alone. | Active |

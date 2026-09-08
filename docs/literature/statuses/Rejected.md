@@ -4,10 +4,12 @@
 
 **Attic** — retired with a reason — too narrow, too theoretical, or simply not interesting enough to carry.
 
-9 of 218 LIT documents. Back to the [full index](../README.md).
+11 of 218 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
+| [LIT-006](../../../record/literature.d/LIT-006.md) v2 | SGDR: Stochastic Gradient Descent with Warm Restarts | Loshchilov and Hutter (2016), [ARXIV-1608.03983](https://arxiv.org/abs/1608.03983). A duplicate: the migration filed this paper twice, and the other copy carries the reading and the supersession. [LIT-042](../../../record/literature.d/LIT-042.md) is the surviving note. | Rejected — by [LIT-042](../../../record/literature.d/LIT-042.md); a duplicate of [LIT-042](../../../record/literature.d/LIT-042.md), which holds the same paper and the record's judgement on it |
+| [LIT-029](../../../record/literature.d/LIT-029.md) v2 | On Layer Normalization in the Transformer Architecture | Xiong et al. (2020), [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). A duplicate: the migration filed this paper twice, and this copy's one-line reading attributed RMSNorm to it. [LIT-114](../../../record/literature.d/LIT-114.md) is the surviving note. | Rejected — by [LIT-114](../../../record/literature.d/LIT-114.md); a duplicate of [LIT-114](../../../record/literature.d/LIT-114.md), which holds the same paper and reads it correctly |
 | [LIT-041](../../../record/literature.d/LIT-041.md) | Clusterability in Neural Networks | Filan et al. (2021), [ARXIV-2103.03386](https://arxiv.org/abs/2103.03386). Larger models develop more modular features. | Rejected — the result does not look interesting enough to carry |
 | [LIT-044](../../../record/literature.d/LIT-044.md) | Contrastive Learning with Hard Negative Samples | Robinson et al. (2020), [ARXIV-2010.04592](https://arxiv.org/abs/2010.04592). Importance of negative sample selection. | Rejected — needs per-case tuning, no consistent cross-domain benefit |
 | [LIT-057](../../../record/literature.d/LIT-057.md) | What Makes for Good Views for Contrastive Learning? | Tian et al. (2020), [ARXIV-2005.10243](https://arxiv.org/abs/2005.10243). Analysis of view generation. | Rejected — theoretical, with no concrete training recommendation |

@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmp5bfj6
 title: 'Compute the normalization statistic without centering (RMSNorm)'
 version: 1
 tags:
@@ -16,7 +18,7 @@ summary: >-
   alone.
 ---
 
-# SOTA-tmp5bfj6: Compute the normalization statistic without centering (RMSNorm)
+# SOTA-182: Compute the normalization statistic without centering (RMSNorm)
 
 ## Source
 

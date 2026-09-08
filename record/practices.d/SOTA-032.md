@@ -17,7 +17,7 @@ history:
   date: '2026-09-08'
   note: >-
     Split. This practice is now the placement claim alone, sourced to the
-    paper that argues it; the statistic is SOTA-tmp5bfj6, sourced to
+    paper that argues it; the statistic is SOTA-182, sourced to
     Zhang and Sennrich. LIT-029 retired as a duplicate of LIT-114.
 tags:
 - model-stability
@@ -59,7 +59,7 @@ magnitude grows with depth. That is the cost people cite when they revisit
 Post-LN or hybrid placements, and it is why this is a placement recommendation
 rather than a law.
 
-Independent of the *statistic* — see [SOTA-tmp5bfj6](SOTA-tmp5bfj6.md). Pre-LN with centered
+Independent of the *statistic* — see [SOTA-182](SOTA-182.md). Pre-LN with centered
 LayerNorm is what GPT-2 does.
 
 ## Known implementations

@@ -4,7 +4,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-204 of 218 LIT documents. Back to the [full index](../README.md).
+202 of 218 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -13,7 +13,6 @@
 | [LIT-003](../../../record/literature.d/LIT-003.md) | Neural Machine Translation of Rare Words with Subword Units | Sennrich et al. (2015), [ARXIV-1508.07909](https://arxiv.org/abs/1508.07909). Introduces byte-pair encoding for tokenization. | Active |
 | [LIT-004](../../../record/literature.d/LIT-004.md) | Training Deep Nets with Sublinear Memory Cost | Chen et al. (2016), [ARXIV-1604.06174](https://arxiv.org/abs/1604.06174). Introduces gradient checkpointing. | Active |
 | [LIT-005](../../../record/literature.d/LIT-005.md) | Layer Normalization | Ba et al. (2016), [ARXIV-1607.06450](https://arxiv.org/abs/1607.06450). Introduces normalization across features instead of batch. | Active |
-| [LIT-006](../../../record/literature.d/LIT-006.md) | SGDR: Stochastic Gradient Descent with Warm Restarts | Loshchilov et al. (2016), [ARXIV-1608.03983](https://arxiv.org/abs/1608.03983). Introduces cosine annealing with periodic restarts. | Active |
 | [LIT-007](../../../record/literature.d/LIT-007.md) | Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour | Goyal et al. (2017), [ARXIV-1706.02677](https://arxiv.org/abs/1706.02677). Linear scaling rule for learning rates with batch size. | Active |
 | [LIT-008](../../../record/literature.d/LIT-008.md) | Attention Is All You Need | Vaswani et al. (2017), [ARXIV-1706.03762](https://arxiv.org/abs/1706.03762). Introduces transformer architecture. | Active |
 | [LIT-009](../../../record/literature.d/LIT-009.md) | Large Batch Training of Convolutional Networks | You et al. (2017), [ARXIV-1708.03888](https://arxiv.org/abs/1708.03888). Layer-wise adaptive rate scaling (LARS). | Active |
@@ -36,7 +35,6 @@
 | [LIT-026](../../../record/literature.d/LIT-026.md) | Advances and Open Problems in Federated Learning | Kairouz et al. (2019), [ARXIV-1912.04977](https://arxiv.org/abs/1912.04977). Comprehensive survey of federated learning. | Active |
 | [LIT-027](../../../record/literature.d/LIT-027.md) | ZeRO: Memory Optimizations Toward Training Trillion Parameter Models | Rajbhandari et al. (2020), [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054). Micro-batch size determined by GPU memory. | Active |
 | [LIT-028](../../../record/literature.d/LIT-028.md) | Scaling Laws for Neural Language Models | Kaplan et al. (2020), [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361). Power-law scaling relationships. | Active |
-| [LIT-029](../../../record/literature.d/LIT-029.md) | On Layer Normalization in the Transformer Architecture | Xiong et al. (2020), [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). RMSNorm pre-norm permits stable training at scale w/reduced overhead relative to full LayerNorm. | Active |
 | [LIT-030](../../../record/literature.d/LIT-030.md) | GLU Variants Improve Transformer | Noam et al. (2020), [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). Study of gating mechanisms. | Active |
 | [LIT-032](../../../record/literature.d/LIT-032.md) | PowerNorm: Rethinking Batch Normalization in Transformers | Shen et al. (2020), [ARXIV-2003.07845](https://arxiv.org/abs/2003.07845). Alternative to LayerNorm. | Active |
 | [LIT-033](../../../record/literature.d/LIT-033.md) | Longformer: The Long-Document Transformer | Beltagy et al. (2020), [ARXIV-2004.05150](https://arxiv.org/abs/2004.05150). Efficient attention for long sequences. | Active |

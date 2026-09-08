@@ -4,8 +4,13 @@
 in full.** They are short, they are specific to this project, and the rest of
 this file assumes you hold them.
 
-This is an anthology of current ML training practice: what to do, and the
-published work that says why. Its memory is a Luria record — scaffolded,
+This is an anthology of current ML practice: what to do, and the published
+work that says why. Scoped by the **kind of claim**, not by the domain a
+technique was discovered in — vision, generative and inference work all
+qualify if the recommendation is one the seven topics can express
+<!-- inactive-ok: ADR-tmpqq6xc — Proposed, and named as the decision that sets the scope this file describes -->
+([ADR-tmpqq6xc](record/decisions.d/ADR-tmpqq6xc.md)). The bias toward language-model training is a bias, not a
+boundary. Its memory is a Luria record — scaffolded,
 generated and linted by the `luria` CLI. This file is a map, not a copy: when
 it disagrees with `luria --help` or with the record, this file is wrong.
 
@@ -42,6 +47,10 @@ still does. Collapsing them is what the old schema did, and
 - **Exactly one primary topic**, from the seven in
   `record/practices.d/tags.yaml`. Secondary tags are free, but add one only
   when it is true — the import deliberately adds none.
+- **`domain:` is a separate axis, and a list.** What the practice is known to
+  apply to, from `record/practices.d/domain.yaml`; it never competes with the
+  primary topic for the one slot. `domain-general` and `unassessed` each
+  stand alone — no lint checks that, so it is on you.
 <!-- inactive-ok-block: LIT-041 — an example of the citation syntax -->
 - **Never hand-write a link target.** Write the bare code — `LIT-041`,
   `ADR-002`, `ARXIV-1412.6980` — and run `luria link --fix`. Prose renders

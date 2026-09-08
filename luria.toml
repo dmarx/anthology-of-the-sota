@@ -98,6 +98,26 @@ required_when = { status = ["Proposed", "Deferred"] }
 vocabulary = "consensus"
 default    = "unassessed"
 
+# What the practice is known to APPLY to, orthogonal to what kind of claim it
+# makes (ADR-tmpqq6xc). The seven topics are kinds of claim; a topic spent
+# naming a domain is a topic not spent naming the claim, and `primary_topic`
+# is `exactly-one`.
+#
+# `many`, where `consensus:` is single-valued, and the difference is the
+# shape of the fact. Consensus is a scalar — one position on one axis. A
+# domain reading is a SET: where the practice has been shown to hold, which
+# accumulates as evidence arrives, the way `source:` does (ADR-010). Forcing
+# one value would make the interesting cases unstatable — LoRA is established
+# in language modelling and in diffusion, and picking either underclaims while
+# `domain-general` overclaims.
+#
+# Defaulted for the reason `consensus:` is: a domain reading is a judgement,
+# and most of the corpus has not had one.
+[luria.schemes.SOTA.fields.domain]
+vocabulary = "domain"
+many       = true
+default    = ["unassessed"]
+
 # The topic consolidation, enforced. Seven categories, exactly one primary
 # per practice; secondary tags are unconstrained. The vocabulary and the
 # one-primary rule both come from ADR-003, which promoted them out of the

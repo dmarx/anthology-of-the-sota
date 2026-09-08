@@ -8,6 +8,8 @@ title: 'Default choice for neural network training'
 version: 1
 tags:
 - training-optimization
+domain:
+- domain-general
 date: '2026-08-24'
 published: '2014-12-01'
 source:

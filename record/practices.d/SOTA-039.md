@@ -6,6 +6,8 @@ title: 'single cycle of cosine decay is sufficient lr schedule'
 version: 1
 tags:
 - model-architecture
+domain:
+- domain-general
 date: '2026-08-24'
 published: '2020-05-01'
 source:

@@ -22,6 +22,8 @@ history:
 tags:
 - model-stability
 consensus: universal
+domain:
+- domain-general
 date: '2026-08-24'
 source:
 - LIT-114

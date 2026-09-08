@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmps4txf
 promote_when: >-
   A released model built on Mamba-3 blocks, or an independent group running
   the three changes against Gated DeltaNet in its own harness at 1.5B or
@@ -30,7 +32,7 @@ summary: >-
   perplexity at half the state size.
 ---
 
-# SOTA-tmps4txf: Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout
+# SOTA-167: Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout
 
 ## Source
 

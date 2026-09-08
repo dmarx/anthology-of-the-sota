@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmpncfhm
 consensus: emerging
 consensus_note: >-
   The controlled comparison (LIT-156) tunes ten optimizers per-optimizer
@@ -34,7 +36,7 @@ summary: >-
   of. The advantage is 1.4× at 0.1B and 1.1× at 1.2B.
 ---
 
-# SOTA-tmpncfhm: Precondition the gradient with matrices rather than entrywise scaling
+# SOTA-165: Precondition the gradient with matrices rather than entrywise scaling
 
 ## Source
 

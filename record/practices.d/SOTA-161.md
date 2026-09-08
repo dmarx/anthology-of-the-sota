@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmpbp6p9
 consensus: unreplicated
 consensus_note: >-
   One paper for the mechanism and one production run for the remedy — Kimi
@@ -30,7 +32,7 @@ summary: >-
   averaging out.
 ---
 
-# SOTA-tmpbp6p9: Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling
+# SOTA-161: Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling
 
 ## Source
 

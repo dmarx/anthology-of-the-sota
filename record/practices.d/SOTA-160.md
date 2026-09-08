@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmpa81q9
 promote_when: >-
   A frontier report that says its token budget was chosen with the
   quantization plan in view, or an independent group refitting the
@@ -31,7 +33,7 @@ summary: >-
   law covering both pre- and post-training quantization.
 ---
 
-# SOTA-tmpa81q9: Treat the pretraining token budget and the post-training quantization plan as one decision, not two
+# SOTA-160: Treat the pretraining token budget and the post-training quantization plan as one decision, not two
 
 ## Source
 
@@ -74,7 +76,7 @@ ships FP4 today. That gap is the whole reason for the status: the effect is
 well measured where it was measured, and the regime it matters most in is not
 that regime.
 
-Read with [SOTA-tmphbtjn](SOTA-tmphbtjn.md), which says what each quantization width can bear.
+Read with [SOTA-163](SOTA-163.md), which says what each quantization width can bear.
 That practice answers "what will this format survive"; this one answers "does
 my pretraining choice make the answer worse". Two frontier reports in the
 record quantize — DeepSeek-V4 and Kimi K3 — and neither says whether it

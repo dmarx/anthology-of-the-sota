@@ -18,7 +18,7 @@ summary: >-
 corrected_by:
 - SOTA-136
 extends:
-- SOTA-tmpzajmo
+- SOTA-169
 ---
 
 # SOTA-137: Widen the residual stream into several streams with freely learned mixing (hyper-connections)

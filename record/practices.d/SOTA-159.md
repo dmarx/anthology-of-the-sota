@@ -3,6 +3,8 @@
 # is the sibling extension of the same parent, and the fact that it was filed
 # while this one was not is the reason this document exists.
 status: Proposed
+formerly:
+- SOTA-tmp24dx3
 promote_when: >-
   An independent group training under u-µP and reporting either the
   hyperparameter decoupling or the FP8 result — that the sweep collapsed to
@@ -35,7 +37,7 @@ summary: >-
   loss-scaling tricks.
 ---
 
-# SOTA-tmp24dx3: Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling
+# SOTA-159: Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling
 
 ## Source
 

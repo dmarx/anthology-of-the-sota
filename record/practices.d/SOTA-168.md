@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmpvsqdg
 promote_when: >-
   A pretraining report above 1B trained on SOAP, or an independent group
   running it against a per-optimizer-tuned Muon baseline at the scale the
@@ -34,7 +36,7 @@ summary: >-
   large-batch regime.
 ---
 
-# SOTA-tmpvsqdg: Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself
+# SOTA-168: Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself
 
 ## Source
 

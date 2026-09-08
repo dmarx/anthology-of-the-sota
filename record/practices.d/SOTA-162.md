@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmpekps6
 consensus: emerging
 consensus_note: >-
   Three labs ship it — DeepSeek-V3 and V4, Kimi K3, Qwen3-Next and Qwen3.8 —
@@ -27,7 +29,7 @@ summary: >-
   you already trained.
 ---
 
-# SOTA-tmpekps6: Train with auxiliary multi-token-prediction heads alongside next-token prediction
+# SOTA-162: Train with auxiliary multi-token-prediction heads alongside next-token prediction
 
 ## Source
 

@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmpkwpaw
 consensus: universal
 consensus_note: >-
   Every pipeline this record describes deduplicates, and none argues for it —
@@ -26,7 +28,7 @@ summary: >-
   repeated boilerplate paragraph is not a duplicated document.
 ---
 
-# SOTA-tmpkwpaw: Deduplicate the pretraining corpus at both substring and document granularity before training on it
+# SOTA-164: Deduplicate the pretraining corpus at both substring and document granularity before training on it
 
 ## Source
 

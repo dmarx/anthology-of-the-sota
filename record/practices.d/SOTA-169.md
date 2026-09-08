@@ -5,6 +5,8 @@
 # trunk of, and the paper that established the width the three constraints
 # argue over.
 status: Proposed
+formerly:
+- SOTA-tmpzajmo
 promote_when: >-
   A second laboratory shipping a widened, constrained residual stream in a
   released model, or a study that isolates width-with-constrained-mixing
@@ -47,7 +49,7 @@ summary: >-
   two practices extending this rather than this itself.
 ---
 
-# SOTA-tmpzajmo: Widen the residual stream into several streams and constrain the mixing between them
+# SOTA-169: Widen the residual stream into several streams and constrain the mixing between them
 
 ## Source
 

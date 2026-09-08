@@ -28,16 +28,16 @@
 | 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 1 | 0 | Pack training documents by best fit instead of concatenating and splitting |
 | 2026-09-07 | Proposed | [SOTA-155](../../record/practices.d/SOTA-155.md) | 1 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
 | 2026-09-07 | Proposed | [SOTA-157](../../record/practices.d/SOTA-157.md) | 1 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
-| 2026-09-08 | Proposed | [SOTA-tmpa81q9](../../record/practices.d/SOTA-tmpa81q9.md) | 3 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
-| 2026-09-08 | Proposed | [SOTA-tmp0cmo2](../../record/practices.d/SOTA-tmp0cmo2.md) | 1 | 0 | Bound the activation's output range when training in low precision |
-| 2026-09-08 | Proposed | [SOTA-tmp24dx3](../../record/practices.d/SOTA-tmp24dx3.md) | 1 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
-| 2026-09-08 | Proposed | [SOTA-tmpvsqdg](../../record/practices.d/SOTA-tmpvsqdg.md) | 1 | 0 | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself |
-| 2026-09-08 | Proposed | [SOTA-tmpoacn9](../../record/practices.d/SOTA-tmpoacn9.md) | 0 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
-| 2026-09-08 | Proposed | [SOTA-tmps4txf](../../record/practices.d/SOTA-tmps4txf.md) | 0 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
-| 2026-09-08 | Proposed | [SOTA-tmpzajmo](../../record/practices.d/SOTA-tmpzajmo.md) | 0 | 0 | Widen the residual stream into several streams and constrain the mixing between them |
+| 2026-09-08 | Proposed | [SOTA-160](../../record/practices.d/SOTA-160.md) | 3 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
+| 2026-09-08 | Proposed | [SOTA-158](../../record/practices.d/SOTA-158.md) | 1 | 0 | Bound the activation's output range when training in low precision |
+| 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 1 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
+| 2026-09-08 | Proposed | [SOTA-168](../../record/practices.d/SOTA-168.md) | 1 | 0 | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself |
+| 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 0 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
+| 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 0 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
+| 2026-09-08 | Proposed | [SOTA-169](../../record/practices.d/SOTA-169.md) | 0 | 0 | Widen the residual stream into several streams and constrain the mixing between them |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (5): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [SOTA-tmpoacn9](../../record/practices.d/SOTA-tmpoacn9.md), [SOTA-tmps4txf](../../record/practices.d/SOTA-tmps4txf.md), [SOTA-tmpzajmo](../../record/practices.d/SOTA-tmpzajmo.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (5): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [SOTA-166](../../record/practices.d/SOTA-166.md), [SOTA-167](../../record/practices.d/SOTA-167.md), [SOTA-169](../../record/practices.d/SOTA-169.md) — these are the cheapest to close, since nothing depends on the answer.

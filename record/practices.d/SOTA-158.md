@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmp0cmo2
 promote_when: >-
   A comparison between the two remedies — a bounded-growth activation against
   a soft-capped GLU — at a scale where the instability actually bites; or a
@@ -37,7 +39,7 @@ summary: >-
   constraint; the functions they chose differ.
 ---
 
-# SOTA-tmp0cmo2: Bound the activation's output range when training in low precision
+# SOTA-158: Bound the activation's output range when training in low precision
 
 ## Source
 
@@ -73,7 +75,7 @@ liability once the arithmetic narrows. Filing the constraint separately is
 what lets a reader act on the agreement without picking a side of the
 disagreement.
 
-It also puts the objection in the same family as [SOTA-tmpbp6p9](SOTA-tmpbp6p9.md)'s rounding
+It also puts the objection in the same family as [SOTA-161](SOTA-161.md)'s rounding
 bias: both are cases where an operation that is fine in FP32 stops being fine
 when the format narrows, and where the fix is to bound or correct the
 numerics rather than to retune the model.

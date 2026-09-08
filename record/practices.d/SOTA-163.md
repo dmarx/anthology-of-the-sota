@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmphbtjn
 consensus: emerging
 consensus_note: >-
   Two frontier labs cite it and ship it — DeepSeek-V4's FP4 quantization-aware
@@ -29,7 +31,7 @@ summary: >-
   6-bit MX trains large transformers to FP32 accuracy with no recipe change.
 ---
 
-# SOTA-tmphbtjn: Quantize with block-scaled microscaling formats rather than one scale per tensor
+# SOTA-163: Quantize with block-scaled microscaling formats rather than one scale per tensor
 
 ## Source
 
@@ -74,10 +76,10 @@ precision decisions look like implementation details rather than choices.
 
 ## The decision this does not make for you
 
-<!-- inactive-ok-block: SOTA-tmpa81q9 — Proposed, and named as the other half
+<!-- inactive-ok-block: SOTA-160 — Proposed, and named as the other half
      of the same decision -->
 Which width goes *where in the pipeline* is a separate question, and
-[SOTA-tmpa81q9](SOTA-tmpa81q9.md) is the practice about it: quantization damage grows with how
+[SOTA-160](SOTA-160.md) is the practice about it: quantization damage grows with how
 much data the model was trained on, so the pretraining budget and the
 quantization plan are coupled. This practice says what the format can bear in
 each position; that one says the position is not free to choose late.

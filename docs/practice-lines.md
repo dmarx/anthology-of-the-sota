@@ -7,7 +7,7 @@
 ## From Use SwiGLU activation for transformers
 
 - alongside: [SOTA-034](../record/practices.d/SOTA-034.md) — Use SwiGLU activation for transformers *(Active, contested)*
-- alongside: [SOTA-tmp0cmo2](../record/practices.d/SOTA-tmp0cmo2.md) — Bound the activation's output range when training in low precision *(Proposed, emerging)*
+- alongside: [SOTA-158](../record/practices.d/SOTA-158.md) — Bound the activation's output range when training in low precision *(Proposed, emerging)*
 
 ## From use RoPE for LLM (1D sequence) positional embeddings
 
@@ -18,7 +18,7 @@
 ## From Use flash attention for all attention computations when hardware supports it
 
 - [SOTA-085](../record/practices.d/SOTA-085.md) — Use flash attention for all attention computations when hardware supports it *(Active, unassessed)*
-  - [SOTA-tmpbp6p9](../record/practices.d/SOTA-tmpbp6p9.md) — Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling *(Active, unreplicated)*
+  - [SOTA-161](../record/practices.d/SOTA-161.md) — Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling *(Active, unreplicated)*
 
 ## From Prefer GQA to MQA or MHA
 
@@ -27,16 +27,16 @@
 
 ## From Precondition the gradient with matrices rather than entrywise scaling
 
-- [SOTA-tmpncfhm](../record/practices.d/SOTA-tmpncfhm.md) — Precondition the gradient with matrices rather than entrywise scaling *(Active, emerging)*
+- [SOTA-165](../record/practices.d/SOTA-165.md) — Precondition the gradient with matrices rather than entrywise scaling *(Active, emerging)*
   - [SOTA-121](../record/practices.d/SOTA-121.md) — Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW *(Active, unassessed)*
     - [SOTA-131](../record/practices.d/SOTA-131.md) — When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip) *(Active, unassessed)*
-- alongside: [SOTA-tmpvsqdg](../record/practices.d/SOTA-tmpvsqdg.md) — Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself *(Proposed, unreplicated)*
+- alongside: [SOTA-168](../record/practices.d/SOTA-168.md) — Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself *(Proposed, unreplicated)*
 
 ## From Widen the residual stream into several streams and constrain the mixing between them
 
-- [SOTA-tmpzajmo](../record/practices.d/SOTA-tmpzajmo.md) — Widen the residual stream into several streams and constrain the mixing between them *(Proposed, emerging)*
+- [SOTA-169](../record/practices.d/SOTA-169.md) — Widen the residual stream into several streams and constrain the mixing between them *(Proposed, emerging)*
   - [SOTA-137](../record/practices.d/SOTA-137.md) — Widen the residual stream into several streams with freely learned mixing (hyper-connections) *(Superseded, unassessed)*
-    - [SOTA-136](../record/practices.d/SOTA-136.md) — Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) *(Proposed, contested)* — also extends SOTA-tmpzajmo
+    - [SOTA-136](../record/practices.d/SOTA-136.md) — Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) *(Proposed, contested)* — also extends SOTA-169
 - alongside: [SOTA-133](../record/practices.d/SOTA-133.md) — Replace fixed residual accumulation with learned attention over preceding layers *(Active, emerging)*
 
 ## From Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens
@@ -49,7 +49,7 @@
 
 - [SOTA-143](../record/practices.d/SOTA-143.md) — Parameterize the model with µP and tune hyperparameters on a narrow proxy, transferring them across width *(Active, unassessed)*
   - [SOTA-144](../record/practices.d/SOTA-144.md) — Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too *(Proposed, unreplicated)*
-  - [SOTA-tmp24dx3](../record/practices.d/SOTA-tmp24dx3.md) — Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling *(Proposed, unreplicated)*
+  - [SOTA-159](../record/practices.d/SOTA-159.md) — Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling *(Proposed, unreplicated)*
 
 ## From Estimate the RL baseline from a group of samples for the same prompt instead of training a critic
 

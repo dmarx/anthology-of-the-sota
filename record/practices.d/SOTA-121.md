@@ -35,9 +35,9 @@ summary: >-
 corrected_by:
 - SOTA-131
 compared_against:
-- SOTA-tmpvsqdg
+- SOTA-168
 extends:
-- SOTA-tmpncfhm
+- SOTA-165
 ---
 
 # SOTA-121: Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW

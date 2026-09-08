@@ -32,7 +32,7 @@ summary: >-
 implementations:
 - llama2
 compared_against:
-- SOTA-tmp0cmo2
+- SOTA-158
 ---
 
 # SOTA-034: Use SwiGLU activation for transformers

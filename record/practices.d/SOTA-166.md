@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmpoacn9
 promote_when: >-
   A pretraining report that says it set its domain proportions by fitting a
   functional form rather than by ablation or judgement, or an independent
@@ -29,7 +31,7 @@ summary: >-
   mixture trained for 48% more steps.
 ---
 
-# SOTA-tmpoacn9: Set the pretraining data proportions by fitting a mixing law on small runs, not by argument
+# SOTA-166: Set the pretraining data proportions by fitting a mixing law on small runs, not by argument
 
 ## Source
 

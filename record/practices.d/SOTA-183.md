@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmpp9gpf
 title: 'Generate the harmlessness preference labels with the model itself, against a written set of principles'
 version: 1
 tags:
@@ -15,7 +17,7 @@ summary: >-
   preference model trains on that.
 ---
 
-# SOTA-tmpp9gpf: Generate the harmlessness preference labels with the model itself, against a written set of principles
+# SOTA-183: Generate the harmlessness preference labels with the model itself, against a written set of principles
 
 ## Source
 

@@ -4,7 +4,7 @@
 
 Learning-rate schedules, batch size, optimizers, training dynamics, scaling strategies.
 
-47 of 182 SOTA documents. Back to the [full index](../README.md).
+48 of 184 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -55,3 +55,4 @@ Learning-rate schedules, batch size, optimizers, training dynamics, scaling stra
 | [SOTA-162](../../../record/practices.d/SOTA-162.md) | Train with auxiliary multi-token-prediction heads alongside next-token prediction | Gloeckle et al. (2024), [LIT-163](../../../record/literature.d/LIT-163.md) — predict the next n tokens through n independent heads on a shared trunk, as an auxiliary task rather than a replacement. No training-time overhead, the benefit grows with model size and survives multi-epoch training, and the extra heads are a draft model you already trained. | Active |
 | [SOTA-165](../../../record/practices.d/SOTA-165.md) | Precondition the gradient with matrices rather than entrywise scaling | Wen et al. (2025), [LIT-156](../../../record/literature.d/LIT-156.md) — under per-optimizer tuning across ten optimizers and four scales, every fastest one multiplies gradients by matrices rather than scaling entrywise. A structural finding that survives a fair comparison, and the class the record's Muon practice is one member of. The advantage is 1.4× at 0.1B and 1.1× at 1.2B. | Active |
 | [SOTA-168](../../../record/practices.d/SOTA-168.md) | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself | Vyas et al. (2024), [LIT-157](../../../record/literature.d/LIT-157.md) — Shampoo at the 1/2 power is Adafactor in the eigenbasis of Shampoo's preconditioner, so run the better optimizer in that basis. SOAP is Adam there, adding exactly one hyperparameter over Adam. Over 40% fewer iterations and 35% less wall-clock than AdamW at 360M–660M in the large-batch regime. | Proposed |
+| [SOTA-184](../../../record/practices.d/SOTA-184.md) | Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself | Hu et al. (2021), [LIT-046](../../../record/literature.d/LIT-046.md) — [ARXIV-2106.09685](https://arxiv.org/abs/2106.09685). Freeze the pretrained weights and learn a rank-r product BA beside each one, so the trainable parameter count and the optimizer state fall by orders of magnitude and the adapter folds back into the weight at inference. | Active |

@@ -4,7 +4,7 @@
 
 **Not yet judged** — probably right, not yet worth asserting; usually a question of adoption rather than correctness.
 
-1 of 182 SOTA documents. Back to the [full index](../README.md).
+1 of 184 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

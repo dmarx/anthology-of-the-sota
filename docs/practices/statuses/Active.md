@@ -4,7 +4,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-149 of 182 SOTA documents. Back to the [full index](../README.md).
+151 of 184 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -157,3 +157,5 @@
 | [SOTA-180](../../../record/practices.d/SOTA-180.md) | Keep the routed experts' weights in a down-projected latent space and spend the saved bandwidth on more of them | Elango et al. (2026), [LIT-196](../../../record/literature.d/LIT-196.md) — down-project the token before the routed experts and keep their weights in that latent space, dispatching and aggregating there too, while routing and the shared experts stay at full width. Communication volume and weight-loading bandwidth both fall by d/d_l, and the saved budget buys more experts and more active per token. | Active |
 | [SOTA-181](../../../record/practices.d/SOTA-181.md) | Shard the sequence across devices in a ring and overlap the key-value exchange with the attention it feeds | Liu et al. (2023), [LIT-206](../../../record/literature.d/LIT-206.md) — compute attention and the feedforward blockwise, distribute the blocks across devices in a ring, and pass each key/value block to the neighbour while computing on the one you hold. The communication is fully overlapped with the computation, so sequences scale with device count — exactly, with no approximation and no added overhead. | Active |
 | [SOTA-182](../../../record/practices.d/SOTA-182.md) | Compute the normalization statistic without centering (RMSNorm) | Zhang and Sennrich (2019), [LIT-023](../../../record/literature.d/LIT-023.md) — [ARXIV-1910.07467](https://arxiv.org/abs/1910.07467). Drop the mean subtraction from layer normalization and rescale by the root mean square alone. | Active |
+| [SOTA-183](../../../record/practices.d/SOTA-183.md) | Generate the harmlessness preference labels with the model itself, against a written set of principles | Bai et al. (2022), [LIT-082](../../../record/literature.d/LIT-082.md) — [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). Replace the human harmlessness comparisons with model-generated ones: the model critiques and revises its own responses against an explicit list of principles, and the preference model trains on that. | Active |
+| [SOTA-184](../../../record/practices.d/SOTA-184.md) | Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself | Hu et al. (2021), [LIT-046](../../../record/literature.d/LIT-046.md) — [ARXIV-2106.09685](https://arxiv.org/abs/2106.09685). Freeze the pretrained weights and learn a rank-r product BA beside each one, so the trainable parameter count and the optimizer state fall by orders of magnitude and the adapter folds back into the weight at inference. | Active |

@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [8 Sep 04:59 — The tag is not the scope boundary — and I applied that error twice in one hour](2026-09.md#20260908045940)
 - [8 Sep 04:44 — The inherited corpus, counted — and the duplicates it was hiding](2026-09.md#20260908044455)
 - [8 Sep 04:14 — The legacy flush: what came out, and what stayed](2026-09.md#20260908041409)
 - [8 Sep 02:50 — What the sweep cost, what it found, and the number that says it worked](2026-09.md#20260908025054)
@@ -46,9 +47,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-39 entries across 2 books, newest first.
+40 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 37 | 2026-09-05 | 2026-09-08 |
+| [2026-09](2026-09.md) | 38 | 2026-09-05 | 2026-09-08 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmpsb4lw
 title: 'Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself'
 version: 1
 tags:
@@ -15,7 +17,7 @@ summary: >-
   folds back into the weight at inference.
 ---
 
-# SOTA-tmpsb4lw: Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself
+# SOTA-184: Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself
 
 ## Source
 

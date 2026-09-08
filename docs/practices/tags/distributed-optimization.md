@@ -4,7 +4,7 @@
 
 Distribution strategies, memory management, checkpointing, communication.
 
-28 of 182 SOTA documents. Back to the [full index](../README.md).
+28 of 184 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

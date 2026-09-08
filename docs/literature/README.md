@@ -17,6 +17,23 @@ rather than leaving it to be noticed.
 Roughly a third of these notes produced no practice at all. They are here
 because they are worth reading.
 
+For about two dozen of them the reason is a decision, written down: the
+recommendations are scoped to language-model training by construction, so the
+diffusion and radiance-field corpus — tagged `generative-modeling` and
+`vision-and-graphics` — can be read here and cannot be recommended here. Not
+on judgement and not on evidence, but because there is no category for such a
+claim to take. [ADR-003](../../record/decisions.d/ADR-003.md) made that split and [DP-008](../design-principles.md#dp-8) says what it means.
+
+For the rest there is no such decision, and the tag will mislead you if you
+let it. `adaptation-and-tuning` and `inference-optimization` are also absent
+from the practice vocabulary, but they are **not** ground the recommendations
+decline: the record files fine-tuning, preference-training and quantization
+practices under `training-optimization` and `systems-optimization`, and has
+several of each. [ADR-003](../../record/decisions.d/ADR-003.md) justified all five extra topics with one sentence,
+and that sentence is only true of three of them. A note tagged with one of the
+other two needs reading, not classifying — which is how LoRA sat here for a
+year sourcing nothing.
+
 <!-- GENERATED below this line by `luria index` — edit README.stub instead. -->
 
 ## By topic
@@ -121,7 +138,7 @@ What the status column means in this scheme — the words are luria's, the meani
 | [LIT-043](../../record/literature.d/LIT-043.md) | Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM | Narayanan et al. (2021), [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). 3D parallel training strategy. | Active |
 | [LIT-044](../../record/literature.d/LIT-044.md) | Contrastive Learning with Hard Negative Samples | Robinson et al. (2020), [ARXIV-2010.04592](https://arxiv.org/abs/2010.04592). Importance of negative sample selection. | Rejected — needs per-case tuning, no consistent cross-domain benefit |
 | [LIT-045](../../record/literature.d/LIT-045.md) v2 | RoFormer: Enhanced Transformer with Rotary Position Embedding | Su et al. (2021), [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864). Rotation-based positional encoding. | Active |
-| [LIT-046](../../record/literature.d/LIT-046.md) | LoRA: Low-Rank Adaptation of Large Language Models | Hu et al. (2021), [ARXIV-2106.09685](https://arxiv.org/abs/2106.09685). Parameter-efficient fine-tuning. | Active |
+| [LIT-046](../../record/literature.d/LIT-046.md) v2 | LoRA: Low-Rank Adaptation of Large Language Models | Hu et al. (2021), [ARXIV-2106.09685](https://arxiv.org/abs/2106.09685). Freeze the pretrained weights and learn a rank-r product beside each one: the update a fine-tune applies has low intrinsic rank, so representing it in full is wasted memory. | Active |
 | [LIT-047](../../record/literature.d/LIT-047.md) v2 | ReZero is All You Need: Fast Convergence at Large Depth | Bachlechner et al. (2020), [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). Gate every residual branch with a single zero-initialized scalar: the network starts as the identity, satisfies dynamical isometry at initialization, and trains at depths where more elaborate schemes are needed otherwise. | Active |
 | [LIT-048](../../record/literature.d/LIT-048.md) | Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation | Press et al. (2021), [ARXIV-2108.12409](https://arxiv.org/abs/2108.12409). Linear attention bias. | Active |
 | [LIT-049](../../record/literature.d/LIT-049.md) | Learning to Prompt for Vision-Language Models | Zhou et al. (2021), [ARXIV-2109.01134](https://arxiv.org/abs/2109.01134). Learnable prompt optimization. | Active |
@@ -157,7 +174,7 @@ What the status column means in this scheme — the words are luria's, the meani
 | [LIT-079](../../record/literature.d/LIT-079.md) | DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation | Ruiz et al. (2022), [ARXIV-2208.12242](https://arxiv.org/abs/2208.12242). Subject-driven image generation. | Active |
 | [LIT-080](../../record/literature.d/LIT-080.md) | PaLI: A Jointly-Scaled Multilingual Language-Image Model | Chen et al. (2022), [ARXIV-2209.06794](https://arxiv.org/abs/2209.06794). Joint vision-language scaling. | Active |
 | [LIT-081](../../record/literature.d/LIT-081.md) | GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers | Frantar et al. (2022), [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323). Model quantization strategy. | Active |
-| [LIT-082](../../record/literature.d/LIT-082.md) | Constitutional AI: Harmlessness from AI Feedback | Askell et al. (2022), [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). AI feedback for alignment. | Active |
+| [LIT-082](../../record/literature.d/LIT-082.md) v2 | Constitutional AI: Harmlessness from AI Feedback | Bai et al. (2022), [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). Train harmlessness without human harm labels: the model critiques and revises its own responses against a written list of principles, and the preference model learns from those comparisons. | Active |
 | [LIT-083](../../record/literature.d/LIT-083.md) | PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel | Zhao et al. (2022), [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). Improved memory efficiency over ZeRO. | Active |
 | [LIT-084](../../record/literature.d/LIT-084.md) | DeepNet: Scaling Transformers to 1,000 Layers | Wang et al. (2022), [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555). Scale-aware normalization. | Active |
 | [LIT-085](../../record/literature.d/LIT-085.md) | Progress measures for grokking via mechanistic interpretability | Nanda et al. (2023), [ARXIV-2301.05217](https://arxiv.org/abs/2301.05217). Grokking measurement. | Rejected — measurement rather than actionable practice |

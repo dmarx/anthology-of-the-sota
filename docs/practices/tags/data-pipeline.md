@@ -4,7 +4,7 @@
 
 Loading, quality assessment, preprocessing, batch preparation.
 
-25 of 182 SOTA documents. Back to the [full index](../README.md).
+26 of 184 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -33,3 +33,4 @@ Loading, quality assessment, preprocessing, batch preparation.
 | [SOTA-173](../../../record/practices.d/SOTA-173.md) | Augment the objective to make multi-epoch pretraining productive on a fixed corpus | Chen et al. (2026), [LIT-175](../../../record/literature.d/LIT-175.md) — standard autoregressive pretraining overfits severely on a fixed corpus, reaching its optimum early and deteriorating continuously. Three orthogonal augmentation families each delay that and lower validation loss; combining them lowers the minimum further. The claim is hundreds of productive epochs on the same data. | Proposed |
 | [SOTA-174](../../../record/practices.d/SOTA-174.md) | Train autoregressive models with fill-in-the-middle by default: it is a data transformation, and it is free | Bavarian et al. (2022), [LIT-124](../../../record/literature.d/LIT-124.md) — cut a document into prefix, middle and suffix, move the middle to the end with sentinel tokens, and the model learns to infill. Transforming a large fraction of the training data does not harm left-to-right perplexity or sampling quality across a wide range of scales, so infilling is an added capability rather than a trade. | Active |
 | [SOTA-175](../../../record/practices.d/SOTA-175.md) | Mask whole syntactic units for code fill-in-the-middle, not random character spans | Gong et al. (2025), [LIT-126](../../../record/literature.d/LIT-126.md) — standard FIM masks random character spans, which produces training examples that rarely correspond to an edit anyone makes. AST-FIM masks whole syntactic units at scale, so the middle span is a coherent structure. Up to 5 points over random-character FIM at 1B and 8B, and most useful on real editing. | Proposed |
+| [SOTA-183](../../../record/practices.d/SOTA-183.md) | Generate the harmlessness preference labels with the model itself, against a written set of principles | Bai et al. (2022), [LIT-082](../../../record/literature.d/LIT-082.md) — [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). Replace the human harmlessness comparisons with model-generated ones: the model critiques and revises its own responses against an explicit list of principles, and the preference model trains on that. | Active |

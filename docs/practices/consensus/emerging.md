@@ -4,7 +4,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-14 of 182 SOTA documents. Back to the [full index](../README.md).
+15 of 184 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -22,3 +22,4 @@
 | [SOTA-169](../../../record/practices.d/SOTA-169.md) | Widen the residual stream into several streams and constrain the mixing between them | Zhu et al. (2024) and three successors, [LIT-141](../../../record/literature.d/LIT-141.md) / [LIT-140](../../../record/literature.d/LIT-140.md) / [LIT-151](../../../record/literature.d/LIT-151.md) / [LIT-181](../../../record/literature.d/LIT-181.md) — replace the single residual stream with n parallel streams and learn the mixing. All four agree the width helps and that the mixing needs a constraint; they disagree about which one, and that disagreement is the two practices extending this rather than this itself. | Proposed |
 | [SOTA-180](../../../record/practices.d/SOTA-180.md) | Keep the routed experts' weights in a down-projected latent space and spend the saved bandwidth on more of them | Elango et al. (2026), [LIT-196](../../../record/literature.d/LIT-196.md) — down-project the token before the routed experts and keep their weights in that latent space, dispatching and aggregating there too, while routing and the shared experts stay at full width. Communication volume and weight-loading bandwidth both fall by d/d_l, and the saved budget buys more experts and more active per token. | Active |
 | [SOTA-181](../../../record/practices.d/SOTA-181.md) | Shard the sequence across devices in a ring and overlap the key-value exchange with the attention it feeds | Liu et al. (2023), [LIT-206](../../../record/literature.d/LIT-206.md) — compute attention and the feedforward blockwise, distribute the blocks across devices in a ring, and pass each key/value block to the neighbour while computing on the one you hold. The communication is fully overlapped with the computation, so sequences scale with device count — exactly, with no approximation and no added overhead. | Active |
+| [SOTA-183](../../../record/practices.d/SOTA-183.md) | Generate the harmlessness preference labels with the model itself, against a written set of principles | Bai et al. (2022), [LIT-082](../../../record/literature.d/LIT-082.md) — [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). Replace the human harmlessness comparisons with model-generated ones: the model critiques and revises its own responses against an explicit list of principles, and the preference model trains on that. | Active |

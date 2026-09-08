@@ -1,0 +1,133 @@
+---
+status: Proposed
+title: 'An automation that writes to shared state names its serialization, and a pacing failure is swept as a class'
+version: 1
+tags:
+- record
+- mechanism
+date: '2026-09-08'
+summary: >-
+  Two CI failures in one evening, both from writes to shared state that
+  raced, and both invisible until the work went faster than a person reading.
+  Requires every job that writes where others write to declare a concurrency
+  discipline or say why it needs none, and requires the first such failure to
+  be answered by an audit of every writer rather than a patch to the one that
+  broke.
+---
+
+# ADR-tmpepag3: An automation that writes to shared state names its serialization, and a pacing failure is swept as a class
+
+## Context
+
+Two failures in one evening, neither of them about the content being written.
+
+**Views regenerated on branches.** Every branch ran the generator and
+committed the result, so two branches with disjoint sources conflicted on
+nineteen shared pages. Resolving it was a ritual — `checkout --theirs`,
+regenerate, re-stage — that produced no information four times running.
+[ADR-018](ADR-018.md) moved views to the default branch only.
+
+**Four merges in forty seconds.** Each merge started a push run; each run
+regenerated the views and pushed them to the same branch; three lost the race
+and rebased their own regeneration commit onto the winner's, conflicting on
+the files both had just rewritten. One of them had already concretized five
+temporary codes correctly and lost the renames with the failed rebase,
+leaving `main` in the state the trunk guard exists to forbid.
+
+Neither is a bug in luria, and neither is a bug in the record. Both are the
+same thing:
+
+> **An assumption about pacing, never written down, true only because a
+> person was doing the work.**
+
+At human tempo you merge one pull request, read the result, and merge the
+next; branches are worked one at a time because attention is serial. Every
+one of those is a *serialization* — supplied by the operator, invisible in
+the configuration, and removed the moment the operator is not a person.
+
+Three details make this worth a decision rather than two fixes.
+
+**The class was not swept, so it bit twice.** [ADR-018](ADR-018.md) fixed the branch-level
+conflict and left the run-level one untouched, in *the same workflow file*.
+Making a file single-writer by location does nothing about concurrent writers
+at that location.
+
+**And the argument already existed, filed against a sibling.** [ADR-002](ADR-002.md) says
+a per-merge bot commit races in-flight rebases, which is why the changelog
+collector runs on a cadence and never per merge. The same file, a different
+job, the same hazard, reasoned about correctly two months earlier and never
+generalised. Three jobs in one workflow, one hazard, three separate
+discoveries.
+
+**A third instance exists and has not fired.** Auditing every job in
+`.github/workflows/` for `contents: write` finds `generate_summaries.yaml`
+with write permission, a tool whose default is to commit and push, and no
+concurrency group. It is `workflow_dispatch`-only, so nothing has raced it
+yet. It is the same shape.
+
+## Decision
+
+**1. A job that writes where other runs or branches also write declares its
+serialization.** A `concurrency:` group, or a comment saying why it needs
+none. "It has never raced" is not a reason; it is the observation this
+decision exists to distrust.
+
+**2. The first pacing failure in a repository is answered by an audit of
+every writer to shared state, not by a patch to the one that broke.** The
+audit is small and mechanical — parse the workflows, list the jobs with
+`contents: write`, check each for a group. It found a third instance here in
+one command, before anybody was hurt by it.
+
+**3. Shared state is inventoried explicitly**, because the audit is only as
+good as the list of places two writers can meet. For this repository:
+
+| shared location | writers | serialization |
+|---|---|---|
+| `main` (ref) | `docs-generate` on every merge | workflow `concurrency:` per ref ([ADR-018](ADR-018.md) + this) |
+| `docs/` views | `docs-generate` only, on `main` | not written on branches at all ([ADR-018](ADR-018.md)) |
+| temporary-code numbering | `luria concretize`, on `main` | inherits the ref's group |
+| changelog fragments | `collect` | a cadence, never per merge ([ADR-002](ADR-002.md)) |
+| a pull request's own branch | `docs-check` | one branch, one run at a time |
+| `summaries` | `generate_summaries.yaml` | a group, added by this decision's own audit |
+
+## What this does not decide
+
+**It does not say to merge more slowly.** Spacing merges by twenty seconds
+would have prevented the second failure and is worth doing, and it is not the
+decision, because it is a property of one operator's habits rather than of
+the repository. It fails the moment there are two operators, or a scheduled
+job, or a queue that drains faster than usual. A mitigation that lives in
+somebody's discipline is one the next person does not inherit.
+
+## Alternatives considered
+
+**Add the concurrency groups and stop.** What was done for the two failures,
+and it is insufficient for the reason the context gives: the same hazard was
+correctly reasoned about for one job and left in place for two others in the
+same file. Fixing instances is how a class survives.
+
+**A lint that fails CI on an undeclared writer.** The right end state, and
+this decision is `Proposed` partly because the check does not exist yet. The
+project's bar for adding one is that the violation is always wrong and
+mechanically fixable; "a writing job with no concurrency group" is
+mechanically detectable, and whether it is always wrong is exactly what a
+first pass over the six existing jobs would establish. Worth building after
+the audit, not before it.
+
+**Push protection or a merge queue.** Serializes merges properly and is the
+industrial answer. Rejected as disproportionate for a repository with one
+maintainer, and because it would not have prevented the *first* failure,
+which was two branches conflicting before either merged.
+
+## Consequences
+
+- Six jobs checked, and the one the audit turned up is fixed in the same
+  contribution — leaving a live hazard in place to preserve a worked example
+  would be the wrong trade. The audit is a command, not a project.
+- `ADR-002`'s reasoning becomes a general rule rather than a fact about the
+  changelog collector, which is the outcome it should have had.
+- The honest cost is stated where it belongs: three of the nine contributions
+  in this stretch of work were repairs to damage the tempo caused. Working
+  faster finds the same defects sooner **and** finds defects a slower operator
+  would never have reached. Both halves are real, and only the first is
+  usually counted.

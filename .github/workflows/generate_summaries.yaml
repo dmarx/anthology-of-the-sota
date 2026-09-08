@@ -1,5 +1,13 @@
 name: Generate Directory Summaries
 
+# This job commits and pushes (llamero's default), so two dispatches racing
+# would each rebase a summary commit onto the other's and conflict on the
+# files both wrote. Dispatch-only makes that unlikely and not impossible,
+# which is the reasoning ADR-tmpepag3 exists to distrust.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 on:
   #push:
   workflow_dispatch:

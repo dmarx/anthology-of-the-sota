@@ -4,9 +4,10 @@
 
 **Proposed** — not in force yet — an open question, so citing it as settled is what the reference report catches.
 
-2 of 18 decisions. Back to the [full index](../README.md).
+3 of 19 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [ADR-012](../../../record/decisions.d/ADR-012.md) | A practice declares its altitude, and one with no body cannot claim to be a design decision | "Pin memory for CPU-GPU transfers" and "Use Muon in place of AdamW" are both `SOTA` documents with equal standing, and 103 of 144 practices have no body at all — the registry's apparent weight is mostly one synthetic note's bullet lists. Proposes a `kind:` field and a lint tying substance to altitude. | Proposed |
 | [ADR-016](../../../record/decisions.d/ADR-016.md) | Contested is a claim about specific other work, so it must name it | [ADR-015](../../../record/decisions.d/ADR-015.md) gave the record a way to say the field is arguing about a practice and no way to say who is arguing. The reason lived in `consensus_note:`, which is rendered nowhere and so — by Luria's own rule for what counts as prose — carries bare, unlinkable codes. Adds `contested_by:`, a checked LIT reference required exactly when `consensus: contested`, on the ground that contested is the only value on the axis that asserts a specific other document exists. | Proposed |
+| [ADR-019](../../../record/decisions.d/ADR-019.md) | An automation that writes to shared state names its serialization, and a pacing failure is swept as a class | Two CI failures in one evening, both from writes to shared state that raced, and both invisible until the work went faster than a person reading. Requires every job that writes where others write to declare a concurrency discipline or say why it needs none, and requires the first such failure to be answered by an audit of every writer rather than a patch to the one that broke. | Proposed |

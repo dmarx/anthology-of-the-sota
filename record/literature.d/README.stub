@@ -17,21 +17,23 @@ rather than leaving it to be noticed.
 Roughly a third of these notes produced no practice at all. They are here
 because they are worth reading.
 
-A note's own topic will not tell you which of those it is. **The two schemes'
-topic vocabularies overlap; they do not nest.** A note can be tagged
-`adaptation-and-tuning` or `inference-optimization` — words absent from the
-practice vocabulary — and still carry a recommendation the record files
-happily under `training-optimization`, which is where its fine-tuning,
-preference-training and quantization practices already live.
+For about two dozen of them the reason is a decision, written down: the
+recommendations are scoped to language-model training by construction, so the
+diffusion and radiance-field corpus — tagged `generative-modeling` and
+`vision-and-graphics` — can be read here and cannot be recommended here. Not
+on judgement and not on evidence, but because there is no category for such a
+claim to take. [ADR-003](../decisions/ADR-003.md) made that split and
+[DP-008](../design-principles.md) says what it means.
 
-The seven practice topics range over **how you train**, not over what you are
-training. So the question a note has to answer is whether the work contains an
-instruction expressible in those seven — never what field it came from. A
-diffusion paper whose contribution is a noise-level sampling distribution and
-a loss weighting is a `training-optimization` paper; a segmentation paper
-whose contribution is a model-in-the-loop annotation bootstrap is a
-`data-pipeline` paper. Reading a note's tag, or its domain, as a scope
-boundary is how a paper stays unfiled for a year.
+For the rest there is no such decision, and the tag will mislead you if you
+let it. `adaptation-and-tuning` and `inference-optimization` are also absent
+from the practice vocabulary, but they are **not** ground the recommendations
+decline: the record files fine-tuning, preference-training and quantization
+practices under `training-optimization` and `systems-optimization`, and has
+several of each. [ADR-003](../../record/decisions.d/ADR-003.md) justified all five extra topics with one sentence,
+and that sentence is only true of three of them. A note tagged with one of the
+other two needs reading, not classifying — which is how LoRA sat here for a
+year sourcing nothing.
 
 <!-- GENERATED below this line by `luria index` — edit README.stub instead. -->
 

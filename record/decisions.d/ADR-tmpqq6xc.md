@@ -155,13 +155,15 @@ and the ones with a transferable claim — EDM, Segment Anything, Latent
 Diffusion, the distillation pair — are the most interesting reading left in
 the corpus rather than the least.
 
-<!-- inactive-ok-block: LIT-090 — Rejected, and its retirement is precisely what this paragraph asks to be re-examined -->
-The first thing this decision asks for is a re-reading of [LIT-090](../literature.d/LIT-090.md), which is
-the one cross-domain transfer result the corpus already holds — Lion, reported
-across vision, vision-language, diffusion and language modelling — and which
-sits `Rejected` on an inherited retirement its own note flags as unreviewed.
-It is simultaneously the evidence a `transfers:` axis would need and a
-question the widened scope makes live.
+The first thing this decision asked for was a re-reading of [LIT-090](../literature.d/LIT-090.md), the one
+cross-domain transfer result the corpus already holds — Lion, reported across
+vision, vision-language, diffusion and language modelling — which sat
+`Rejected` on an inherited retirement its own note flagged as unreviewed. That
+reading is in this contribution: the retirement is reversed and the note
+sources a practice. It is worth recording that the retirement was partly a
+scope artefact, since three quarters of the paper's evidence is material the
+old scope discounted — which is this decision earning itself on the first
+document it touched.
 
 The risk this accepts: the record can become a directionless list of
 everything. The guard is that nothing was loosened except the domain test. A

@@ -4,7 +4,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-140 of 162 SOTA documents. Back to the [full index](../README.md).
+141 of 165 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -148,3 +148,4 @@
 | [SOTA-153](../../../record/practices.d/SOTA-153.md) v2 | Drop positional encoding from the global-attention layers of a hybrid and let the cheap local layers carry position | Yang et al. (2025), Puvvada et al. (2025) and the Kimi Team (2025) — in a model that already interleaves full attention with a cheap local mixer, the full-attention layers do not need a positional encoding: the local layers carry position and recency, and the global layers do retrieval better without one. Three groups, three different local mechanisms, the same one-global-per-three-local layout. The payoff is that extending the context needs no RoPE rescaling, because there is no positional parameter left to rescale. | Active |
 | [SOTA-tmpekps6](../../../record/practices.d/SOTA-tmpekps6.md) | Train with auxiliary multi-token-prediction heads alongside next-token prediction | Gloeckle et al. (2024), [LIT-163](../../../record/literature.d/LIT-163.md) — predict the next n tokens through n independent heads on a shared trunk, as an auxiliary task rather than a replacement. No training-time overhead, the benefit grows with model size and survives multi-epoch training, and the extra heads are a draft model you already trained. | Active |
 | [SOTA-tmpkwpaw](../../../record/practices.d/SOTA-tmpkwpaw.md) | Deduplicate the pretraining corpus at both substring and document granularity before training on it | Lee et al. (2021), [LIT-202](../../../record/literature.d/LIT-202.md) — a single 61-word sentence appears thousands of times in C4. Deduplicating cuts verbatim emission about tenfold, reaches equal or better accuracy in fewer steps, and removes train-test contamination from standard validation sets. Two granularities, because a repeated boilerplate paragraph is not a duplicated document. | Active |
+| [SOTA-tmpncfhm](../../../record/practices.d/SOTA-tmpncfhm.md) | Precondition the gradient with matrices rather than entrywise scaling | Wen et al. (2025), [LIT-156](../../../record/literature.d/LIT-156.md) — under per-optimizer tuning across ten optimizers and four scales, every fastest one multiplies gradients by matrices rather than scaling entrywise. A structural finding that survives a fair comparison, and the class the record's Muon practice is one member of. The advantage is 1.4× at 0.1B and 1.1× at 1.2B. | Active |

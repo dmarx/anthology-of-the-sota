@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmphxjle
 title: 'Train the generative model in a learned compressed latent, not at full resolution'
 version: 1
 tags:
@@ -12,7 +14,7 @@ implementations:
 - Stable Diffusion
 ---
 
-# SOTA-tmphxjle: Train the generative model in a learned compressed latent, not at full resolution
+# SOTA-187: Train the generative model in a learned compressed latent, not at full resolution
 
 ## Source
 

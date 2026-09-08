@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmpm1xnl
 title: 'Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal'
 version: 1
 tags:
@@ -13,7 +15,7 @@ implementations:
 - Stable Diffusion 3
 ---
 
-# SOTA-tmpm1xnl: Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal
+# SOTA-188: Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal
 
 ## Source
 

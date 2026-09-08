@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmp3vux6
 title: 'Bootstrap a large annotation set with the model you are training, staging the automation as it improves'
 version: 1
 tags:
@@ -12,7 +14,7 @@ implementations:
 - SA-1B
 ---
 
-# SOTA-tmp3vux6: Bootstrap a large annotation set with the model you are training, staging the automation as it improves
+# SOTA-186: Bootstrap a large annotation set with the model you are training, staging the automation as it improves
 
 ## Source
 

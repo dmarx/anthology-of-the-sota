@@ -4,7 +4,7 @@
 
 **Retired** — no longer believed, with no successor — the attic.
 
-0 of 185 SOTA documents. Back to the [full index](../README.md).
+0 of 188 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

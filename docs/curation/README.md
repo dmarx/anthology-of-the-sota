@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [8 Sep 07:12 — The cluster the old scope hid, read](2026-09.md#20260908071238)
 - [8 Sep 05:36 — Widening the scope, and the axis I built and took back out](2026-09.md#20260908053627)
 - [8 Sep 05:11 — Four notes read, and the difference between a gap and a decision](2026-09.md#20260908051115)
 - [8 Sep 04:59 — The tag is not the scope boundary — and I applied that error twice in one hour](2026-09.md#20260908045940)
@@ -49,9 +50,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-42 entries across 2 books, newest first.
+43 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 40 | 2026-09-05 | 2026-09-08 |
+| [2026-09](2026-09.md) | 41 | 2026-09-05 | 2026-09-08 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

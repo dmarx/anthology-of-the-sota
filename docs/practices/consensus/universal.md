@@ -4,7 +4,7 @@
 
 **Assumed** — not doing it is what needs justifying.
 
-5 of 185 SOTA documents. Back to the [full index](../README.md).
+6 of 188 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -13,3 +13,4 @@
 | [SOTA-164](../../../record/practices.d/SOTA-164.md) | Deduplicate the pretraining corpus at both substring and document granularity before training on it | Lee et al. (2021), [LIT-202](../../../record/literature.d/LIT-202.md) — a single 61-word sentence appears thousands of times in C4. Deduplicating cuts verbatim emission about tenfold, reaches equal or better accuracy in fewer steps, and removes train-test contamination from standard validation sets. Two granularities, because a repeated boilerplate paragraph is not a duplicated document. | Active |
 | [SOTA-182](../../../record/practices.d/SOTA-182.md) | Compute the normalization statistic without centering (RMSNorm) | Zhang and Sennrich (2019), [LIT-023](../../../record/literature.d/LIT-023.md) — [ARXIV-1910.07467](https://arxiv.org/abs/1910.07467). Drop the mean subtraction from layer normalization and rescale by the root mean square alone. | Active |
 | [SOTA-184](../../../record/practices.d/SOTA-184.md) | Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself | Hu et al. (2021), [LIT-046](../../../record/literature.d/LIT-046.md) — [ARXIV-2106.09685](https://arxiv.org/abs/2106.09685). Freeze the pretrained weights and learn a rank-r product BA beside each one, so the trainable parameter count and the optimizer state fall by orders of magnitude and the adapter folds back into the weight at inference. | Active |
+| [SOTA-187](../../../record/practices.d/SOTA-187.md) | Train the generative model in a learned compressed latent, not at full resolution |  | Active |

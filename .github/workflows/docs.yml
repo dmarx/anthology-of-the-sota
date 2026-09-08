@@ -40,12 +40,36 @@
 # push. On a pull request the lint runs in the same job as the repair and
 # reads sources, so a branch carrying no view is not stale — it is correct.
 #
-# One caution for maintainers: GitHub skips a workflow run when the head
-# commit message carries its skip marker, in the first or last line, in any
-# of its five spellings — so a commit message *describing* the bot's commit
-# format can suppress its own CI run. Name the marker in prose; file contents
-# like this one are unaffected.
+# One caution for maintainers, and it is stricter than this file used to say:
+# GitHub skips a workflow run when the head commit message carries its skip
+# marker ANYWHERE, in any of its five spellings — not merely in the first or
+# last line, which is what the documentation says and what this comment
+# claimed until a commit carrying it on line 18 of 56 silently started no run
+# at all. So a commit message *describing* the bot's commit format suppresses
+# its own CI, with no error and no skipped-run entry to notice. Name the
+# marker in prose, never quote it verbatim, and be aware that a pasted CI log
+# is the likeliest way to quote it by accident. File contents like this one
+# are unaffected.
 name: Docs
+
+# Runs for one ref serialize. Merging several pull requests in quick
+# succession starts one push run per merge, and every one of them regenerates
+# the same views and pushes them to the same branch — so the ones that lose
+# the race pull, rebase their own regeneration commit onto the winner's, and
+# conflict on the files both just rewrote. Four merges in forty seconds took
+# down four runs that way, and the concretization one of them had already
+# performed was lost with it, leaving temporary codes on `main` that the
+# trunk guard is there to forbid.
+#
+# `cancel-in-progress: false` queues rather than cancels: a run that is
+# already committing gets to finish. GitHub keeps at most one *pending* run
+# per group, so a burst of merges collapses to "the run in flight, then one
+# more" — and that last run regenerates from the final source state and
+# concretizes everything still outstanding, which is the only outcome that
+# has to be correct.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 on:
   push:

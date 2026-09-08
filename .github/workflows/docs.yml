@@ -1,31 +1,44 @@
-# The record's own CI, in the recommended shape (LU-ADR-029). Three jobs:
+# The record's own CI, in the recommended shape (LU-ADR-029, LU-ADR-068).
+# Four jobs, split by event because views and repairs belong in different
+# places:
 #
-#   docs-generate  regenerates the derived views (index, tag pages, books,
-#                  README badges, reference links) and commits them back as
-#                  the bot — derived documentation is built, not maintained,
-#                  and a view a human has to rebuild by hand will drift.
-#                  This project's README is rendered from templates too, so
-#                  that render happens HERE, in the same job, before the
-#                  commit (ADR-007). It used to be a separate workflow that
-#                  committed on its own, and two workflows committing to one
-#                  branch is what broke the handoff described below.
-#   docs-lint      gates what a generator cannot decide: unresolved
-#                  references, wikilinks that resolve to nothing, a title
-#                  disagreeing with its heading, stray files in a view
-#                  directory. It `needs:` docs-generate and reads the SHA it
-#                  output — a push made with GITHUB_TOKEN does not retrigger
-#                  workflows, so a lint anywhere else would keep a red earned
-#                  from the pre-regeneration commit and never clear it.
+#   docs-generate  PUSH ONLY. Regenerates the derived views (index, tag
+#                  pages, books, README badges, reference links) and commits
+#                  them back as the bot — derived documentation is built, not
+#                  maintained, and a view a human has to rebuild by hand will
+#                  drift. This project's README is rendered from templates
+#                  too, so that render happens HERE, in the same job, before
+#                  the commit (ADR-007).
+#   docs-lint      PUSH ONLY. Gates what a generator cannot decide:
+#                  unresolved references, wikilinks that resolve to nothing,
+#                  a title disagreeing with its heading, stray files in a
+#                  view directory. It `needs:` docs-generate and reads the
+#                  SHA it output — a push made with GITHUB_TOKEN does not
+#                  retrigger workflows, so a lint anywhere else would keep a
+#                  red earned from the pre-regeneration commit and never
+#                  clear it.
+#   docs-check     PULL REQUEST ONLY. Repairs the sources, pushes the repair
+#                  onto the branch, and lints the sources in the same job —
+#                  `views: "false"`, so no view is written here.
 #   collect        assembles changelog fragments on a cadence, never
 #                  per-merge (LU-ADR-002 — a per-merge bot commit races
 #                  in-flight rebases, reintroducing the conflict fragments
 #                  exist to remove).
 #
+# Why the split, which is the whole point of this file's shape: a view is a
+# file EVERY branch rewrites. Generating them on pull requests meant every
+# concurrent branch regenerated the same index, tag page and book, so any two
+# branches conflicted on files neither had edited — and a stacked branch hit
+# the conflict again after each merge, because the bot's regeneration commit
+# on main is another rewrite of the same shared files. A source repair is the
+# opposite: it touches only what the branch itself authored, so it belongs on
+# the branch where the review reads it. Views on the default branch only,
+# repairs on the branch that authored them (LU-ADR-068).
+#
 # The staleness check inside `luria lint` stays meaningful with generation
-# automated: it now catches a generator that didn't run or couldn't push — on
-# a fork PR (read-only token) the generate action pushes nothing and outputs
-# the un-regenerated SHA, so the lint fails with the remedy instead of the
-# generate job dying on a 403.
+# automated: on a push it catches a generator that didn't run or couldn't
+# push. On a pull request the lint runs in the same job as the repair and
+# reads sources, so a branch carrying no view is not stale — it is correct.
 #
 # One caution for maintainers: GitHub skips a workflow run when the head
 # commit message carries its skip marker, in the first or last line, in any
@@ -45,7 +58,7 @@ on:
 
 jobs:
   docs-generate:
-    if: github.event_name != 'schedule'
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -54,12 +67,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          # Same-repo PR: the head branch, so there is something to commit
-          # onto. Fork PR: that branch only exists in the fork — naming it
-          # fails the checkout before any push guard runs — so fall back to
-          # the default merge-commit checkout (empty ref). Push events: the
-          # pushed branch.
-          ref: ${{ github.event_name != 'pull_request' && github.ref_name || (github.event.pull_request.head.repo.full_name == github.repository && github.head_ref || '') }}
+          ref: ${{ github.ref_name }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -77,12 +85,14 @@ jobs:
         with:
           pip-spec: luria==0.11.0
           # Assign real numbers to merge-allocated temporary codes
-          # (LU-ADR-049) — only where merges serialize, never on a pull
-          # request. Harmless if no scheme sets `allocate = "merge"`.
-          concretize: ${{ github.event_name != 'pull_request' }}
+          # (LU-ADR-049) — only where merges serialize, which is this job.
+          # Concretizing on a branch is the premature number claim the
+          # temporary codes exist to avoid.
+          concretize: "true"
+          views: "true"
 
   docs-lint:
-    if: github.event_name != 'schedule'
+    if: github.event_name == 'push'
     needs: docs-generate
     runs-on: ubuntu-latest
     steps:
@@ -95,6 +105,35 @@ jobs:
       - uses: dmarx/luria/actions/lint@0.11.0
         with:
           pip-spec: luria==0.11.0
+
+  # The pull-request shape: repair the sources, push the repair onto the
+  # branch, and lint the sources in the same job. No view is written, so two
+  # branches cannot conflict on one — and the lint needs none, because it
+  # reads sources rather than checking a view it just declined to build.
+  docs-check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Same-repo PR: the head branch, so a repair has somewhere to land.
+          # Fork PR: that branch only exists in the fork — naming it fails the
+          # checkout before any push guard runs — so fall back to the default
+          # merge-commit checkout (empty ref); the action warns instead of
+          # pushing.
+          ref: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.head_ref || '' }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: dmarx/luria/actions/generate@0.11.0
+        with:
+          pip-spec: luria==0.11.0
+          views: "false"
+      - uses: dmarx/luria/actions/lint@0.11.0
+        with:
+          pip-spec: ""
 
   collect:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'

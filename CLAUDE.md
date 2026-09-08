@@ -57,11 +57,20 @@ still does. Collapsing them is what the old schema did, and
     luria index                   # regenerate every view
     luria lint                    # the only command that can fail
 
-Run all four before pushing. `luria lint` is warn-first: warnings are real
-findings, not noise, and the ones about retired citations are the check this
-project adopted the record to get. Acknowledge a deliberate one with an
-`inactive-ok:` comment at the citing site rather than leaving it on the
-report.
+Run all four before pushing — then **do not commit what `luria index`
+regenerated.** Views land on `main` only: CI regenerates and commits them on
+the push, and a pull request writes none ([ADR-tmphu321](record/decisions.d/ADR-tmphu321.md)). Run `index` locally
+anyway, because `docs/reports/reference-status.md` is what tells you which
+citations the lint is about to flag; then `git checkout -- docs/` before you
+commit. A branch carrying views is not more up to date, it is a conflict with
+every other branch.
+
+`luria lint` is warn-first: warnings are real findings, not noise, and the
+ones about retired citations are the check this project adopted the record to
+get. Acknowledge a deliberate one with an `inactive-ok:` comment at the
+citing site — and write it **from the lint's own report, after running it**,
+never from memory of a document's status. A directive naming no code vouches
+for nothing, and one vouching for an `Active` document is itself a finding.
 
 Work goes to a branch and a pull request. File the fragment in the same
 contribution as the work — a fact written while the context is loaded costs a

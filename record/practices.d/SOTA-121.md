@@ -34,6 +34,10 @@ summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Stable at nearly the same optimal LR as AdamW, better evaluations; used for every Falcon-H1-Tiny model.
 corrected_by:
 - SOTA-131
+compared_against:
+- SOTA-tmpvsqdg
+extends:
+- SOTA-tmpncfhm
 ---
 
 # SOTA-121: Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW

@@ -4,7 +4,7 @@
 
 Loading, quality assessment, preprocessing, batch preparation.
 
-17 of 157 SOTA documents. Back to the [full index](../README.md).
+19 of 169 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -25,3 +25,5 @@ Loading, quality assessment, preprocessing, batch preparation.
 | [SOTA-127](../../../record/practices.d/SOTA-127.md) v2 | Filter chain-of-thought traces out of the training data of tiny specialized models | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Reasoning traces interleaved with tool-calling data sent a 90M model into repetition loops; removing them fixed it at once. | Active |
 | [SOTA-128](../../../record/practices.d/SOTA-128.md) | Train fill-in-the-middle data without masking the loss on non-FIM tokens | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. At 80 GT and 90M, computing the loss on every token beat masking the prefix and suffix; matches what the reference FIM recipes appear to do. | Active |
 | [SOTA-152](../../../record/practices.d/SOTA-152.md) | Pack training documents by best fit instead of concatenating and splitting | Ding et al. (2024), [LIT-203](../../../record/literature.d/LIT-203.md) — concatenate-then-split truncates documents that would have fit, and the model then learns to continue text whose beginning it never saw. Treating the grouping as bin packing removes those truncations at the same efficiency, no padding added: +4.7% reading comprehension, +16.8% context following, +9.2% program synthesis, and up to 58.3% less closed-domain hallucination. | Proposed |
+| [SOTA-tmpkwpaw](../../../record/practices.d/SOTA-tmpkwpaw.md) | Deduplicate the pretraining corpus at both substring and document granularity before training on it | Lee et al. (2021), [LIT-202](../../../record/literature.d/LIT-202.md) — a single 61-word sentence appears thousands of times in C4. Deduplicating cuts verbatim emission about tenfold, reaches equal or better accuracy in fewer steps, and removes train-test contamination from standard validation sets. Two granularities, because a repeated boilerplate paragraph is not a duplicated document. | Active |
+| [SOTA-tmpoacn9](../../../record/practices.d/SOTA-tmpoacn9.md) | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument | Ye et al. (2024), [LIT-201](../../../record/literature.d/LIT-201.md) — model performance is quantitatively predictable as a function of the mixture proportions, so fitting the law on a sample of mixtures reads off performance on mixtures never trained. Nested with the existing scaling laws, small runs predict a large model. Matched the default mixture trained for 48% more steps. | Proposed |

@@ -48,9 +48,13 @@ The `LIT` scheme has had the right words for both since [ADR-003](ADR-003.md):
 
 ## Decision
 
-**Add `inference-optimization` and `adaptation-and-tuning` to
-`record/practices.d/tags.yaml`**, taking the practice vocabulary from seven
-topics to nine, and retag the thirteen practices above onto them.
+**Add `inference-optimization`, `adaptation-and-tuning` and
+`representation-and-encoding` to `record/practices.d/tags.yaml`**, taking the
+practice vocabulary from seven topics to ten, and retag the practices above
+onto them.
+
+The third arrived differently from the first two and the difference is the
+interesting part — see *How the third topic was found*, below.
 
 Both words are already the `LIT` scheme's, which is the point: where the two
 vocabularies name the same *kind of claim*, they should use the same word.
@@ -87,6 +91,52 @@ run backwards. It goes in the moment a document needs it.
   `attention-techniques`). The difference is that no practice has been *filed*
   on those yet, so the retagging evidence this decision rests on does not
   exist. The honest move is to file one and see where it wants to live.
+
+## How the third topic was found
+
+The first two topics came out of a search over practice *titles* for words
+like `inference`, `serving`, `fine-tune`. That query works and it has an
+obvious defect, which is [DP-004](../../docs/design-principles.md#dp-4)'s: it finds the categories you already
+suspect, because you have to name them to search for them.
+
+The third came out of a query that names nothing. Take the declared relation
+graph — `extends`, `corrects`, `compared_against` and their converses — find
+its connected components, and ask whether each component sits inside one
+topic. A lineage is a set of practices the record has *asserted* belong
+together; a topic is a set it has *declared* belong together. Where those
+disagree, one of them is wrong.
+
+Twelve components span more than one practice. Three crossed a topic
+boundary:
+
+<!-- inactive-ok-block: SOTA-154, SOTA-146, SOTA-179 — Proposed, and named as members of the lineages this section is about; a provisional status is not what is being relied on -->
+- **[SOTA-063](../practices.d/SOTA-063.md), [SOTA-151](../practices.d/SOTA-151.md), [SOTA-153](../practices.d/SOTA-153.md)** — RoPE, extending context by rescaling it,
+  and dropping it from the global-attention layers. One argument about
+  positional encoding, filed under `model-architecture`,
+  `adaptation-and-tuning` and `attention-techniques`. Adding [SOTA-179](../practices.d/SOTA-179.md), which
+  truncates the rotary low frequencies, makes four practices across three
+  topics, and [SOTA-007](../practices.d/SOTA-007.md) on tokenization is the same shape. That is the
+  evidence this decision's other two topics rest on, and nobody had to think
+  of the word "encoding" to find it.
+- **[SOTA-145](../practices.d/SOTA-145.md), [SOTA-146](../practices.d/SOTA-146.md), [SOTA-154](../practices.d/SOTA-154.md)** — the GRPO baseline, its correction, and
+  the evolution-strategies alternative it is compared against. This crossing
+  was *created by the first draft of this decision*, which moved [SOTA-154](../practices.d/SOTA-154.md) to
+  `adaptation-and-tuning` and left the other two behind. Repaired here: all
+  three are post-training.
+- **[SOTA-085](../practices.d/SOTA-085.md), [SOTA-161](../practices.d/SOTA-161.md)** — use flash attention, and keep the attention output
+  in FP32 *because* flash attention. Genuinely both an attention technique
+  and a stability claim, and left crossing. Not every disagreement is an
+  error; some are the vocabulary being lossy, and a check that cannot say so
+  is a check that will be ignored.
+
+After the retagging, one of twelve components crosses, and it is the third.
+
+**The check is worth having as a check.** It needs no new machinery —
+`luria.edges.graph()` already builds the cross-scheme relation graph, and
+`Graph.inbound()` already exists — and unlike [DP-tmpx90vz](../../docs/design-principles.md#dp-tmpx90vz)'s second test it
+does not depend on somebody guessing the right search term. Proposed to
+`luria` rather than built here, because every record with relations and
+tags has this question.
 
 ## Consequences
 

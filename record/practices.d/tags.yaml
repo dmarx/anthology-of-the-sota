@@ -55,3 +55,8 @@ adaptation-and-tuning:
   label: Adaptation and tuning
   blurb: taking a trained model somewhere new — fine-tuning, preference
     training, parameter-efficient adaptation, context extension
+
+representation-and-encoding:
+  label: Representation and encoding
+  blurb: how the signal is encoded before the network sees it — tokenization,
+    positional encoding, and the frequency or basis choices that go with them

@@ -20,7 +20,7 @@ history:
     answers it — conversion by continued pretraining, at parity on short
     benchmarks.
 tags:
-- model-architecture
+- representation-and-encoding
 date: '2026-08-24'
 published: '2021-04-01'
 source:

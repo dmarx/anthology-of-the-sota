@@ -19,7 +19,7 @@ consensus_note: >-
 title: 'Correct the GRPO objective before running it — the published form has three independently identified defects'
 version: 1
 tags:
-- training-optimization
+- adaptation-and-tuning
 date: '2026-09-07'
 published: '2025-03-01'
 source:

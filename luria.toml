@@ -106,7 +106,8 @@ default    = "unassessed"
 require = "exactly-one"
 tags = ["training-optimization", "systems-optimization", "model-stability",
         "distributed-optimization", "data-pipeline", "attention-techniques",
-        "model-architecture", "inference-optimization", "adaptation-and-tuning"]
+        "model-architecture", "inference-optimization", "adaptation-and-tuning",
+        "representation-and-encoding"]
 
 # ── The evidence: one note per paper ─────────────────────────────────────
 [luria.schemes.LIT]

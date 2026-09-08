@@ -40,11 +40,16 @@
 # push. On a pull request the lint runs in the same job as the repair and
 # reads sources, so a branch carrying no view is not stale — it is correct.
 #
-# One caution for maintainers: GitHub skips a workflow run when the head
-# commit message carries its skip marker, in the first or last line, in any
-# of its five spellings — so a commit message *describing* the bot's commit
-# format can suppress its own CI run. Name the marker in prose; file contents
-# like this one are unaffected.
+# One caution for maintainers, and it is stricter than this file used to say:
+# GitHub skips a workflow run when the head commit message carries its skip
+# marker ANYWHERE, in any of its five spellings — not merely in the first or
+# last line, which is what the documentation says and what this comment
+# claimed until a commit carrying it on line 18 of 56 silently started no run
+# at all. So a commit message *describing* the bot's commit format suppresses
+# its own CI, with no error and no skipped-run entry to notice. Name the
+# marker in prose, never quote it verbatim, and be aware that a pasted CI log
+# is the likeliest way to quote it by accident. File contents like this one
+# are unaffected.
 name: Docs
 
 # Runs for one ref serialize. Merging several pull requests in quick

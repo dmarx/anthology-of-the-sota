@@ -47,6 +47,25 @@
 # like this one are unaffected.
 name: Docs
 
+# Runs for one ref serialize. Merging several pull requests in quick
+# succession starts one push run per merge, and every one of them regenerates
+# the same views and pushes them to the same branch — so the ones that lose
+# the race pull, rebase their own regeneration commit onto the winner's, and
+# conflict on the files both just rewrote. Four merges in forty seconds took
+# down four runs that way, and the concretization one of them had already
+# performed was lost with it, leaving temporary codes on `main` that the
+# trunk guard is there to forbid.
+#
+# `cancel-in-progress: false` queues rather than cancels: a run that is
+# already committing gets to finish. GitHub keeps at most one *pending* run
+# per group, so a burst of merges collapses to "the run in flight, then one
+# more" — and that last run regenerates from the final source state and
+# concretizes everything still outstanding, which is the only outcome that
+# has to be correct.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 on:
   push:
     branches: [main]

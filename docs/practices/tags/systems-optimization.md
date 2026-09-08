@@ -4,7 +4,7 @@
 
 Hardware utilization, kernels, compilation, memory access patterns.
 
-13 of 188 SOTA documents. Back to the [full index](../README.md).
+9 of 188 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -16,8 +16,4 @@ Hardware utilization, kernels, compilation, memory access patterns.
 | [SOTA-089](../../../record/practices.d/SOTA-089.md) | Align tensor dimensions to hardware boundaries | Ivanov et al. (2020), [LIT-066](../../../record/literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). | Active |
 | [SOTA-090](../../../record/practices.d/SOTA-090.md) | Use hardware-specific memory layouts | Ivanov et al. (2020), [LIT-066](../../../record/literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). | Active |
 | [SOTA-091](../../../record/practices.d/SOTA-091.md) | Profile and optimize memory access patterns | Ivanov et al. (2020), [LIT-066](../../../record/literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). | Active |
-| [SOTA-113](../../../record/practices.d/SOTA-113.md) | Use continuous batching for inference | Kwon et al. (2023), [LIT-112](../../../record/literature.d/LIT-112.md) — [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180). | Active |
 | [SOTA-114](../../../record/practices.d/SOTA-114.md) | Fuse attention operations where possible | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
-| [SOTA-115](../../../record/practices.d/SOTA-115.md) | Overlap prefill and decode compute | Agrawal et al. (2023), [LIT-103](../../../record/literature.d/LIT-103.md) — [ARXIV-2308.16369](https://arxiv.org/abs/2308.16369). | Active |
-| [SOTA-163](../../../record/practices.d/SOTA-163.md) | Quantize with block-scaled microscaling formats rather than one scale per tensor | Rouhani et al. (2023), [LIT-197](../../../record/literature.d/LIT-197.md) — an MX block is 32 elements sharing one E8M0 scale, so applying the scale is an exponent adjustment rather than a multiply. Shrinking the scope of the scale contains outliers locally instead of letting a few large values cost every small one its precision. 6-bit MX trains large transformers to FP32 accuracy with no recipe change. | Active |
-| [SOTA-185](../../../record/practices.d/SOTA-185.md) | Quantize weights after training by compensating each rounding error into the columns not yet quantized | Frantar et al. (2022), [LIT-081](../../../record/literature.d/LIT-081.md) — [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323). Round one column at a time and push the resulting error into the remaining columns using approximate second-order information, instead of rounding every weight independently to the nearest level. | Active |

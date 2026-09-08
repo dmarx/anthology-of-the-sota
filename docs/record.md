@@ -37,7 +37,7 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `consensus` — one of `unassessed`, `unreplicated`, `contested`, `emerging`, `converged`, `universal`; absent means `unassessed` (luria.toml: schemes.SOTA.fields.consensus; record/practices.d/consensus.yaml: values)
 - `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.toml: schemes.SOTA.fields.status; record/practices.d/statuses.yaml: values)
 - `promote_when` — required when `status` is `Proposed`, `Deferred` (luria.toml: schemes.SOTA.fields.promote_when)
-- `primary_topic` — exactly one of `attention-techniques`, `data-pipeline`, `distributed-optimization`, `model-architecture`, `model-stability`, `systems-optimization`, `training-optimization` (luria.toml: schemes.SOTA.tag_groups.primary_topic)
+- `primary_topic` — exactly one of `adaptation-and-tuning`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization` (luria.toml: schemes.SOTA.tag_groups.primary_topic)
 
 **`LIT`**
 

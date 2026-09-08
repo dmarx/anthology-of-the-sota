@@ -4,7 +4,7 @@
 
 Loading, quality assessment, preprocessing, batch preparation.
 
-27 of 188 SOTA documents. Back to the [full index](../README.md).
+26 of 188 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,7 +20,6 @@ Loading, quality assessment, preprocessing, batch preparation.
 | [SOTA-102](../../../record/practices.d/SOTA-102.md) | Implement dynamic temperature scaling for mixing | Albalak et al. (2023), [LIT-117](../../../record/literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406). | Active |
 | [SOTA-103](../../../record/practices.d/SOTA-103.md) | Adjust mixing ratios based on validation performance | Albalak et al. (2023), [LIT-117](../../../record/literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406). | Active |
 | [SOTA-104](../../../record/practices.d/SOTA-104.md) | Monitor domain coverage during training | Albalak et al. (2023), [LIT-117](../../../record/literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406). | Active |
-| [SOTA-123](../../../record/practices.d/SOTA-123.md) | For tiny specialized models, pretrain from scratch on the target SFT or reasoning data instead of pretrain-then-finetune | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. At 90M, 25% SFT data in the pretraining mix beat a separate SFT stage by 10 IFEval points and yields one checkpoint that is both base and instruct. | Active |
 | [SOTA-124](../../../record/practices.d/SOTA-124.md) v3 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Roughly 100–500 GT for a 7B model, scaling linearly; the authors call the understanding early. | Proposed |
 | [SOTA-127](../../../record/practices.d/SOTA-127.md) v2 | Filter chain-of-thought traces out of the training data of tiny specialized models | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Reasoning traces interleaved with tool-calling data sent a 90M model into repetition loops; removing them fixed it at once. | Active |
 | [SOTA-128](../../../record/practices.d/SOTA-128.md) | Train fill-in-the-middle data without masking the loss on non-FIM tokens | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. At 80 GT and 90M, computing the loss on every token beat masking the prefix and suffix; matches what the reference FIM recipes appear to do. | Active |

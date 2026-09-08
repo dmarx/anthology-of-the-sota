@@ -4,12 +4,11 @@
 
 Initialization, normalization, gradient handling, loss-landscape behaviour.
 
-20 of 188 SOTA documents. Back to the [full index](../README.md).
+19 of 188 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [SOTA-004](../../../record/practices.d/SOTA-004.md) | Place BatchNorm after linear/conv layers but before activation functions | Ioffe et al. (2015), [LIT-002](../../../record/literature.d/LIT-002.md) — [ARXIV-1502.03167](https://arxiv.org/abs/1502.03167). | Active |
-| [SOTA-005](../../../record/practices.d/SOTA-005.md) | Use running statistics for inference | Ioffe et al. (2015), [LIT-002](../../../record/literature.d/LIT-002.md) — [ARXIV-1502.03167](https://arxiv.org/abs/1502.03167). | Active |
 | [SOTA-006](../../../record/practices.d/SOTA-006.md) | Consider alternatives like LayerNorm for transformers | Ioffe et al. (2015), [LIT-002](../../../record/literature.d/LIT-002.md) — [ARXIV-1502.03167](https://arxiv.org/abs/1502.03167). | Active |
 | [SOTA-020](../../../record/practices.d/SOTA-020.md) | Use larger learning rates with batch normalization | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Active |
 | [SOTA-021](../../../record/practices.d/SOTA-021.md) | Monitor loss landscape smoothness during training | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Active |

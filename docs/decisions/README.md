@@ -31,13 +31,13 @@ File one with `luria new adr`.
 **[Migration](tags/migration.md)** (3) — moving off the YAML registry, and what happens to it:
 [001](../../record/decisions.d/ADR-001.md) · [006](../../record/decisions.d/ADR-006.md) · [008](../../record/decisions.d/ADR-008.md)
 
-**[Ontology](tags/ontology.md)** (1):
-[020](../../record/decisions.d/ADR-020.md)
+**[Ontology](tags/ontology.md)** (2):
+[020](../../record/decisions.d/ADR-020.md) · [021](../../record/decisions.d/ADR-021.md)
 
 **[Workflow](tags/workflow.md)** (1):
 [013](../../record/decisions.d/ADR-013.md)
 
-**By status:** [Active](statuses/Active.md) (15) · [Proposed](statuses/Proposed.md) (4) · [Deferred](statuses/Deferred.md) (0) · [Superseded](statuses/Superseded.md) (1) · [Rejected](statuses/Rejected.md) (0)
+**By status:** [Active](statuses/Active.md) (15) · [Proposed](statuses/Proposed.md) (5) · [Deferred](statuses/Deferred.md) (0) · [Superseded](statuses/Superseded.md) (1) · [Rejected](statuses/Rejected.md) (0)
 
 ## Chronological
 
@@ -73,4 +73,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [ADR-018](../../record/decisions.d/ADR-018.md) | Generated views are committed on main only, and a pull request writes none | Regenerating views on every pull request made two branches conflict on files neither had edited, and made a stacked branch re-conflict after each merge. Adopts luria's split shape ([LU-ADR-068](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-068.md)): views on the default branch only, source repairs on the branch that authored them. | Active |
 | [ADR-019](../../record/decisions.d/ADR-019.md) | An automation that writes to shared state names its serialization, and a pacing failure is swept as a class | Two CI failures in one evening, both from writes to shared state that raced, and both invisible until the work went faster than a person reading. Requires every job that writes where others write to declare a concurrency discipline or say why it needs none, and requires the first such failure to be answered by an audit of every writer rather than a patch to the one that broke. | Proposed |
 | [ADR-020](../../record/decisions.d/ADR-020.md) | The recommendations are scoped by kind of claim, not by domain |  | Proposed |
+| [ADR-021](../../record/decisions.d/ADR-021.md) | The practice vocabulary takes the kind-of-claim topics the reading list already has |  | Proposed |
 

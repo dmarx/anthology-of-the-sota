@@ -2,8 +2,9 @@
 
 # ADRs tagged `ontology`
 
-1 of 20 decisions. Back to the [full index](../README.md).
+2 of 21 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [ADR-020](../../../record/decisions.d/ADR-020.md) | The recommendations are scoped by kind of claim, not by domain |  | Proposed |
+| [ADR-021](../../../record/decisions.d/ADR-021.md) | The practice vocabulary takes the kind-of-claim topics the reading list already has |  | Proposed |

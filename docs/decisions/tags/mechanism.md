@@ -4,7 +4,7 @@
 
 Identifiers, generation, the lint.
 
-11 of 20 decisions. Back to the [full index](../README.md).
+11 of 21 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

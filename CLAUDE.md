@@ -4,8 +4,13 @@
 in full.** They are short, they are specific to this project, and the rest of
 this file assumes you hold them.
 
-This is an anthology of current ML training practice: what to do, and the
-published work that says why. Its memory is a Luria record — scaffolded,
+This is an anthology of current ML practice: what to do, and the published
+work that says why. Scoped by the **kind of claim**, not by the domain a
+technique was discovered in — vision, generative and inference work all
+qualify if the recommendation is one the seven topics can express
+<!-- inactive-ok: ADR-tmpqq6xc — Proposed, and named as the decision that sets the scope this file describes -->
+([ADR-tmpqq6xc](record/decisions.d/ADR-tmpqq6xc.md)). The bias toward language-model training is a bias, not a
+boundary. Its memory is a Luria record — scaffolded,
 generated and linted by the `luria` CLI. This file is a map, not a copy: when
 it disagrees with `luria --help` or with the record, this file is wrong.
 

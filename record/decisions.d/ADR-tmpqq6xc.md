@@ -1,0 +1,170 @@
+---
+status: Proposed
+title: 'The recommendations are scoped by kind of claim, not by domain'
+version: 1
+tags:
+- ontology
+date: '2026-09-08'
+---
+
+# ADR-tmpqq6xc: The recommendations are scoped by kind of claim, not by domain
+
+## Context
+
+[ADR-003](ADR-003.md) gave the `SOTA` scheme seven topics and the `LIT` scheme those seven
+plus five more, on the ground that "the reading list covers ground the
+practice registry does not." [DP-008](../../docs/design-principles.md#dp-8) then read that arrangement back as a scope
+statement: **the recommendations are scoped to language-model training by
+construction**, so a vision paper can be a note and cannot be a
+recommendation — "not on judgement, not on evidence, but because there is no
+category for it to take."
+
+Three things have since gone wrong with that.
+
+**The record already contradicts it.** [SOTA-113](../practices.d/SOTA-113.md) (continuous batching) and
+[SOTA-115](../practices.d/SOTA-115.md) (prefill/decode overlap) are `Active` recommendations about
+*serving*, filed under `systems-optimization`. So are the record's
+quantization practices. "Scoped to language-model training" was never true of
+the practices the record actually holds; it was true of the sentence in
+[DP-008](../../docs/design-principles.md#dp-8).
+
+**The bundling was wrong in the other direction too.** [ADR-003](ADR-003.md) justified all
+five extra `LIT` topics with one sentence, and it holds for
+`generative-modeling` and `vision-and-graphics` but not for
+`adaptation-and-tuning` or `inference-optimization` — the record files
+fine-tuning, preference-training and quantization practices under the seven,
+several of each. LoRA sat in this corpus for a year sourcing nothing because
+its tag looked like a scope boundary and was not one.
+
+**And the cost is the thing the anthology exists to avoid.** A scope drawn by
+domain makes the record blind to work whose *transferable* content is exactly
+the kind of claim it collects. EDM's contribution is a preconditioning scheme,
+a noise-level sampling distribution and a loss weighting. Segment Anything's
+is a model-in-the-loop annotation bootstrap. Those are a
+`training-optimization` claim and a `data-pipeline` claim that happen to have
+been discovered in image models. Declining them keeps the record ignorant of
+its own subject.
+
+## Decision
+
+**Scope the recommendations by the kind of claim, not by the domain the work
+was discovered in.** A practice belongs here if it is an instruction about how
+to build, train, adapt or serve a model that one of the seven topics can
+express. Where the work came from is not the test.
+
+Nothing else changes. The seven topics stay exactly as [ADR-003](ADR-003.md) set them —
+they are kinds of claim, and they were never the problem. The `LIT` scheme
+keeps its twelve. No field is added.
+
+[DP-008](../../docs/design-principles.md#dp-8)'s principle stands unchanged; its worked example is amended, because
+the example described a scope this decision replaces.
+
+## Alternatives considered
+
+- **Widen `primary_topic` — add `generative-modeling` and
+  `vision-and-graphics` to the practice seven.** The obvious move, and it
+  defeats the purpose. `primary_topic` is `exactly-one` and it is the
+  browsing axis: a diffusion preconditioning practice tagged
+  `generative-modeling` renders on the generative page and *not* beside the
+  LLM normalization practices it is a sibling of. Widening the topic list
+  gives cross-domain work its own page, which is the opposite of
+  cross-pollination — a topic spent naming the domain is a topic not spent
+  naming the claim.
+- **Merge the two vocabularies.** [ADR-003](ADR-003.md) rejected this and was right: it
+  "puts a diffusion sampler paper under `training-optimization` or
+  `model-architecture` and makes both pages worse." Nothing here disturbs
+  that. What changes is only that a *note's* topic no longer implies anything
+  about whether a practice can be drawn from it.
+- **Add a `domain:` axis in this decision.** Drafted, built, and withdrawn —
+  see below. It is the right shape eventually and the wrong thing to build
+  now.
+- **Add a `phase:` axis — pretraining, post-training, inference.** Same
+  answer, same reason. Inference practices already have somewhere to go:
+  [SOTA-113](../practices.d/SOTA-113.md) and [SOTA-115](../practices.d/SOTA-115.md) have been sitting comfortably under
+  `systems-optimization`.
+
+## The axis this decision does not add
+
+A first draft of this decision added a `domain:` field to the `SOTA` scheme —
+a many-valued vocabulary saying what a practice is known to apply to, with
+`domain-general` as the value that marks what transfers. It is recorded here
+rather than in a rejected branch, because the reasoning is what stops the next
+person rebuilding it.
+
+**Why it was withdrawn.** It lets a practice assert where it applies while
+naming no evidence for that assertion, in a record whose first principle
+([DP-001](../../docs/design-principles.md#dp-1)) is that a recommendation without a citation is an opinion, and which
+holds under [ADR-017](ADR-017.md) that `source:` carries the work that produced evidence
+*about the claim*. The draft demonstrated its own failure: eight practices
+were backfilled, and three claimed `domain-general` — transfers across every
+modality — on the strength of one language-model paper each. That is [DP-005](../../docs/design-principles.md#dp-5)'s
+shape, a field that feels like evidence and is not.
+
+Three further objections, any one of which would be enough on its own:
+
+- **It would be almost entirely default.** One note in 218 is a cross-domain
+  transfer result. Across 181 practices the axis would be ~99% `unassessed`,
+  and a field that is overwhelmingly default is not neutral — a reader takes
+  absence for a value. `consensus:` survives that trade because assessing
+  consensus is a by-product of touching a practice; assessing domain is not,
+  since it means reading papers in another field.
+- **It aims at the weakest link.** Being blind to relevant work has a
+  pipeline: never encountering a paper, refusing it on scope, filing it as a
+  note and drawing no practice, or filing a practice nobody browsing finds.
+  This decision fixes the second. Issue [#85](https://github.com/dmarx/anthology-of-the-sota/issues/85) is direct evidence that the third
+  is the binding constraint — 53 inherited notes with no practice, no reason
+  and no retirement. A `domain:` field addresses only the fourth.
+- **A category added to admit a single document is how a scope stops being
+  one** — [DP-008](../../docs/design-principles.md#dp-8)'s own corollary, applied to the decision that amends
+  [DP-008](../../docs/design-principles.md#dp-8)'s example.
+
+**The decomposition, for whoever builds it.** Three different facts were
+bundled into the word "domain", and they belong in different places:
+
+| the fact | its nature | where it belongs |
+|---|---|---|
+| what a *paper* is about | descriptive, cheap, uncontentious | the `LIT` scheme |
+| where a *practice* has evidence | derivable, once notes carry the above | generated on `SOTA`, not typed |
+| whether a practice *transfers* | a judgement that must name a paper | its own axis |
+
+The third has a ready-made shape:
+<!-- inactive-ok: ADR-016 — Proposed, and named as the pattern this axis would copy; its status is not what is being borrowed -->
+[ADR-016](ADR-016.md) established that a value asserting
+specific other work exists must name it, which is why `contested_by` is
+required exactly when `consensus` is `contested`. A `transfers:` axis would
+work the same way — `shown-to-transfer` requiring a `transfers_shown_by:`
+reference — and needs no new machinery, because `required_when` on a reference
+already exists.
+
+Note also that derivation is **not** available today, which is the trap in the
+middle row: only two of the `LIT` scheme's twelve topics
+(`generative-modeling`, `vision-and-graphics`) carry domain information at
+all. The other ten are kind-of-claim words. So "derive the practice's domain
+from its sources" means first adding a domain axis to `LIT` — the top row —
+and the order in that table is the order to build in.
+
+## Consequences
+
+The bar for a new practice is now a question about the claim — *is this an
+instruction one of the seven can express?* — rather than a question about the
+paper's field. That is a wider gate, deliberately.
+
+Issue [#85](https://github.com/dmarx/anthology-of-the-sota/issues/85)'s remaining surface changes shape. Twenty-three inherited notes were
+set aside as out of scope by construction; they are ordinary unread notes now,
+and the ones with a transferable claim — EDM, Segment Anything, Latent
+Diffusion, the distillation pair — are the most interesting reading left in
+the corpus rather than the least.
+
+<!-- inactive-ok-block: LIT-090 — Rejected, and its retirement is precisely what this paragraph asks to be re-examined -->
+The first thing this decision asks for is a re-reading of [LIT-090](../literature.d/LIT-090.md), which is
+the one cross-domain transfer result the corpus already holds — Lion, reported
+across vision, vision-language, diffusion and language modelling — and which
+sits `Rejected` on an inherited retirement its own note flags as unreviewed.
+It is simultaneously the evidence a `transfers:` axis would need and a
+question the widened scope makes live.
+
+The risk this accepts: the record can become a directionless list of
+everything. The guard is that nothing was loosened except the domain test. A
+claim still has to be an instruction about building, training, adapting or
+serving a model, still has to take exactly one of seven categories, and still
+has to name a paper that produced evidence about it.

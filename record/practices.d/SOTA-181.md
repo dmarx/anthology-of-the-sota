@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmpq6ehk
 consensus: emerging
 consensus_note: >-
   Cited by two frontier reports in this record — Falcon-H1 and Kimi K3, whose
@@ -24,7 +26,7 @@ summary: >-
   with device count — exactly, with no approximation and no added overhead.
 ---
 
-# SOTA-tmpq6ehk: Shard the sequence across devices in a ring and overlap the key-value exchange with the attention it feeds
+# SOTA-181: Shard the sequence across devices in a ring and overlap the key-value exchange with the attention it feeds
 
 ## Source
 

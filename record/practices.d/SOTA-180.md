@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmpjwfcn
 consensus: emerging
 consensus_note: >-
   One originating laboratory and one outside adopter at frontier scale — Kimi
@@ -30,7 +32,7 @@ summary: >-
   d/d_l, and the saved budget buys more experts and more active per token.
 ---
 
-# SOTA-tmpjwfcn: Keep the routed experts' weights in a down-projected latent space and spend the saved bandwidth on more of them
+# SOTA-180: Keep the routed experts' weights in a down-projected latent space and spend the saved bandwidth on more of them
 
 ## Source
 

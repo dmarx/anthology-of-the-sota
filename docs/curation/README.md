@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [8 Sep 02:50 — What the sweep cost, what it found, and the number that says it worked](2026-09.md#20260908025054)
 - [8 Sep 02:35 — The lowest-yield cluster was the one where the earlier work had already been done](2026-09.md#20260908023553)
 - [8 Sep 02:22 — Four merges in forty seconds, four failed runs, and a lost concretization](2026-09.md#20260908022205)
 - [8 Sep 02:01 — The principles were already written, scattered across a week of journal entries](2026-09.md#20260908020135)
@@ -43,9 +44,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-36 entries across 2 books, newest first.
+37 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 34 | 2026-09-05 | 2026-09-08 |
+| [2026-09](2026-09.md) | 35 | 2026-09-05 | 2026-09-08 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

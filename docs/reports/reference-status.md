@@ -83,4 +83,5 @@ None. Every scanned file is checked. ✅
 
 ## Directives that no longer apply
 
-None. Every annotation still governs something. ✅
+- record/practices.d/SOTA-179.md:87: annotation no longer applies — SOTA-153 is Active now
+- record/practices.d/SOTA-181.md:58: annotation no longer applies — SOTA-153 is Active now

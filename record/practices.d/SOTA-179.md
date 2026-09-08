@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmp4ok5y
 promote_when: >-
   A pretraining report above 2B that truncates the rotary frequencies and
   says so, or an independent group running p-RoPE against a base-rescaled
@@ -30,7 +32,7 @@ summary: >-
   holds.
 ---
 
-# SOTA-tmp4ok5y: Truncate the rotary encoding's low frequencies rather than rescaling its base
+# SOTA-179: Truncate the rotary encoding's low frequencies rather than rescaling its base
 
 ## Source
 

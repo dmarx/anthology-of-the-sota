@@ -23,11 +23,11 @@
 | 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 5 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
 | 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 4 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
 | 2026-09-07 | Proposed | [ADR-016](../../record/decisions.d/ADR-016.md) | 2 | 1 | Contested is a claim about specific other work, so it must name it |
-| 2026-09-07 | Proposed | [SOTA-tmpex7d9](../../record/practices.d/SOTA-tmpex7d9.md) | 2 | 0 | Fine-tune with evolution strategies instead of policy-gradient reinforcement learning |
-| 2026-09-07 | Proposed | [SOTA-tmpvlopd](../../record/practices.d/SOTA-tmpvlopd.md) | 2 | 0 | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed |
+| 2026-09-07 | Proposed | [SOTA-154](../../record/practices.d/SOTA-154.md) | 2 | 0 | Fine-tune with evolution strategies instead of policy-gradient reinforcement learning |
+| 2026-09-07 | Proposed | [SOTA-156](../../record/practices.d/SOTA-156.md) | 2 | 0 | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed |
 | 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 1 | 0 | Pack training documents by best fit instead of concatenating and splitting |
+| 2026-09-07 | Proposed | [SOTA-155](../../record/practices.d/SOTA-155.md) | 1 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
 | 2026-09-07 | Proposed | [SOTA-tmp704hb](../../record/practices.d/SOTA-tmp704hb.md) | 1 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
-| 2026-09-07 | Proposed | [SOTA-tmpgyaw3](../../record/practices.d/SOTA-tmpgyaw3.md) | 1 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 

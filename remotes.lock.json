@@ -386,6 +386,9 @@
     "ARXIV/2310.12109": {
       "title": "Monarch Mixer: A Simple Sub-Quadratic GEMM-Based Architecture"
     },
+    "ARXIV/2311.08105": {
+      "title": "DiLoCo: Distributed Low-Communication Training of Language Models"
+    },
     "ARXIV/2311.17857": {
       "title": "Gaussian Shell Maps for Efficient 3D Human Generation"
     },
@@ -427,6 +430,9 @@
     },
     "ARXIV/2405.04434": {
       "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model"
+    },
+    "ARXIV/2405.15682": {
+      "title": "The Road Less Scheduled"
     },
     "ARXIV/2405.18392": {
       "title": "Scaling Laws and Compute-Optimal Training Beyond Fixed Training Durations"
@@ -488,6 +494,9 @@
     "ARXIV/2501.12948": {
       "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
     },
+    "ARXIV/2501.18512": {
+      "title": "Streaming DiLoCo with overlapping communication: Towards a Distributed Free Lunch"
+    },
     "ARXIV/2501.18795": {
       "title": "Rope to Nope and Back Again: A New Hybrid Attention Strategy"
     },
@@ -547,6 +556,9 @@
     },
     "ARXIV/2509.20328": {
       "title": "Video models are zero-shot learners and reasoners"
+    },
+    "ARXIV/2509.24372": {
+      "title": "Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning"
     },
     "ARXIV/2510.04212": {
       "title": "Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention"

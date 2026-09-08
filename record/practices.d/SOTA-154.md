@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmpex7d9
 promote_when: >-
   An independent group running evolution strategies against a policy-gradient
   baseline that got the same tuning budget, on a task outside Countdown and
@@ -21,7 +23,7 @@ source:
 # The paper ran the comparison itself, against both PPO and GRPO, which is
 # what makes this evidenced rather than asserted (ADR-017). No adopters to
 # add — that absence is what promote_when is about.
-- LIT-tmp776w0
+- LIT-211
 # The comparison the paper actually ran: ES against GRPO, which is SOTA-145.
 # Stated once here, on the practice that ran it; the fixer writes the other
 # side.
@@ -29,18 +31,18 @@ compared_against:
 - SOTA-145
 implementations: []
 summary: >-
-  Qiu et al. (2025), [LIT-tmp776w0](../literature.d/LIT-tmp776w0.md) — evolution strategies over the full
+  Qiu et al. (2025), [LIT-211](../literature.d/LIT-211.md) — evolution strategies over the full
   parameter space of a billion-scale LLM, which the field had assumed
   impossible. +36.4% over base on average against GRPO's +21.3% and PPO's
   +17.9%, with ES on one fixed hyperparameter set while RL got a sweep per
   experiment. Filed `Proposed`: two tasks, 8B and below, no deployment.
 ---
 
-# SOTA-tmpex7d9: Fine-tune with evolution strategies instead of policy-gradient reinforcement learning
+# SOTA-154: Fine-tune with evolution strategies instead of policy-gradient reinforcement learning
 
 ## Source
 
-Qiu et al. (2025), [LIT-tmp776w0](../literature.d/LIT-tmp776w0.md) — [ARXIV-2509.24372](https://arxiv.org/abs/2509.24372).
+Qiu et al. (2025), [LIT-211](../literature.d/LIT-211.md) — [ARXIV-2509.24372](https://arxiv.org/abs/2509.24372).
 
 The assumption this overturns is that searching a billion-dimensional
 parameter space directly is hopeless, which is why prior ES work on LLMs

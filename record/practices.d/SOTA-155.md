@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmpgyaw3
 promote_when: >-
   A pretraining report that trains a released model across separated clusters
   and describes the algorithm, or an independent group running the method at
@@ -22,11 +24,11 @@ source:
 # be expensive. The recommendation rests on both — a practice built on the
 # first alone would recommend an arrangement whose peak bandwidth is
 # unchanged, which is the thing that decides whether it is cheaper at all.
-- LIT-tmp84crn
-- LIT-tmpwmo68
+- LIT-212
+- LIT-214
 implementations: []
 summary: >-
-  Douillard et al. (2023, 2025), [LIT-tmp84crn](../literature.d/LIT-tmp84crn.md) and [LIT-tmpwmo68](../literature.d/LIT-tmpwmo68.md) — federated
+  Douillard et al. (2023, 2025), [LIT-212](../literature.d/LIT-212.md) and [LIT-214](../literature.d/LIT-214.md) — federated
   averaging with the constants pushed hard: many inner AdamW steps per
   worker, Nesterov momentum as the outer optimizer over the accumulated
   deltas, synchronised rarely and in streamed subsets. 500× less
@@ -34,12 +36,12 @@ summary: >-
   `Proposed`: one group, and no frontier report trains this way.
 ---
 
-# SOTA-tmpgyaw3: Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation
+# SOTA-155: Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation
 
 ## Source
 
-Douillard et al. (2023), [LIT-tmp84crn](../literature.d/LIT-tmp84crn.md) — DiLoCo; Douillard et al. (2025),
-[LIT-tmpwmo68](../literature.d/LIT-tmpwmo68.md) — Streaming DiLoCo, for the bandwidth half.
+Douillard et al. (2023), [LIT-212](../literature.d/LIT-212.md) — DiLoCo; Douillard et al. (2025),
+[LIT-214](../literature.d/LIT-214.md) — Streaming DiLoCo, for the bandwidth half.
 
 The constraint being attacked is co-location, not bandwidth. Standard
 distributed training exchanges gradients every step, so every accelerator has

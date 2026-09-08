@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmpwavay
 promote_when: >-
   A second group building syntax-aware FIM data and reporting against
   random-span FIM on real edits, or a released code model whose report says
@@ -28,7 +30,7 @@ summary: >-
   8B, and most useful on real editing.
 ---
 
-# SOTA-tmpwavay: Mask whole syntactic units for code fill-in-the-middle, not random character spans
+# SOTA-175: Mask whole syntactic units for code fill-in-the-middle, not random character spans
 
 ## Source
 

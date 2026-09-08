@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-10 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+11 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 ## From Use SwiGLU activation for transformers
 
@@ -31,6 +31,11 @@
   - [SOTA-121](../record/practices.d/SOTA-121.md) — Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW *(Active, unassessed)*
     - [SOTA-131](../record/practices.d/SOTA-131.md) — When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip) *(Active, unassessed)*
 - alongside: [SOTA-168](../record/practices.d/SOTA-168.md) — Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself *(Proposed, unreplicated)*
+
+## From Train autoregressive models with fill-in-the-middle by default: it is a data transformation, and it is free
+
+- [SOTA-174](../record/practices.d/SOTA-174.md) — Train autoregressive models with fill-in-the-middle by default: it is a data transformation, and it is free *(Active, converged)*
+  - [SOTA-128](../record/practices.d/SOTA-128.md) — Train fill-in-the-middle data without masking the loss on non-FIM tokens *(Active, unassessed)*
 
 ## From Widen the residual stream into several streams and constrain the mixing between them
 

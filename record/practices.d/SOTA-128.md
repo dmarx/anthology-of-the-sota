@@ -12,7 +12,7 @@ source:
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. At 80 GT and 90M, computing the loss on every token beat masking the prefix and suffix; matches what the reference FIM recipes appear to do.
 extends:
-- SOTA-tmpvbrwt
+- SOTA-174
 ---
 
 # SOTA-128: Train fill-in-the-middle data without masking the loss on non-FIM tokens

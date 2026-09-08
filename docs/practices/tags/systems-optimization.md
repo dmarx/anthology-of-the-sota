@@ -4,7 +4,7 @@
 
 Hardware utilization, kernels, compilation, memory access patterns.
 
-12 of 169 SOTA documents. Back to the [full index](../README.md).
+12 of 175 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

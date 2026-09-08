@@ -4,7 +4,7 @@
 
 **Agreed** — the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately.
 
-4 of 169 SOTA documents. Back to the [full index](../README.md).
+5 of 175 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -12,3 +12,4 @@
 | [SOTA-145](../../../record/practices.d/SOTA-145.md) v3 | Estimate the RL baseline from a group of samples for the same prompt instead of training a critic | Shao et al. (2024), [LIT-127](../../../record/literature.d/LIT-127.md) — Group Relative Policy Optimization: PPO with the value model dropped and the baseline taken from the scores of several outputs sampled for the same prompt, which removes a model-sized chunk of the RL memory footprint and is what every later reasoning recipe in this record actually runs. | Active |
 | [SOTA-150](../../../record/practices.d/SOTA-150.md) v2 | Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound | Shazeer et al. (2017), [LIT-188](../../../record/literature.d/LIT-188.md) — route each token to a few of many feed-forward experts instead of running one dense feed-forward for every token, so total parameters and per-token compute stop being the same number. Measured against dense by [LIT-170](../../../record/literature.d/LIT-170.md) seven years later: DeepSeekMoE 16B matches LLaMA2 7B at roughly 40% of the compute, 145B approaches the same team's dense 67B at 28.5%. | Active |
 | [SOTA-151](../../../record/practices.d/SOTA-151.md) v2 | Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length | Chen et al. (2023) and Peng et al. (2023) — RoPE does not extrapolate, and fine-tuning at the longer length barely helps: more than 10000 batches moved LLaMA's effective window from 2048 to 2560. Rescaling the position indices so they land back in the trained range reaches 32× that in under 1000 steps. YaRN rescales per wavelength rather than uniformly and gets to 128k with 10× fewer tokens. | Active |
+| [SOTA-174](../../../record/practices.d/SOTA-174.md) | Train autoregressive models with fill-in-the-middle by default: it is a data transformation, and it is free | Bavarian et al. (2022), [LIT-124](../../../record/literature.d/LIT-124.md) — cut a document into prefix, middle and suffix, move the middle to the end with sentinel tokens, and the model learns to infill. Transforming a large fraction of the training data does not harm left-to-right perplexity or sampling quality across a wide range of scales, so infilling is an added capability rather than a trade. | Active |

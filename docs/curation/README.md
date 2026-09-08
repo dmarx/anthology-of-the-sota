@@ -6,6 +6,8 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [8 Sep 01:53 — A temporary code is branch-local, and two parallel branches cannot cite each other](2026-09.md#20260908015313)
+- [8 Sep 01:48 — The record was arguing with two papers it had not marked itself as contested by](2026-09.md#20260908014807)
 - [8 Sep 01:40 — Four conflict resolutions taught nothing, which is what a misplaced file feels like](2026-09.md#20260908014038)
 - [8 Sep 01:19 — Three of the four papers were already load-bearing, and none of them carried a practice](2026-09.md#20260908011915)
 - [8 Sep 00:23 — Two trunk practices in one day, found by different routes and missing for the same reason](2026-09.md#20260908002300)
@@ -38,9 +40,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-31 entries across 2 books, newest first.
+33 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 29 | 2026-09-05 | 2026-09-08 |
+| [2026-09](2026-09.md) | 31 | 2026-09-05 | 2026-09-08 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

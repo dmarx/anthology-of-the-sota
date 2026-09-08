@@ -5,14 +5,14 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**26 document(s) awaiting a decision.**
+**29 document(s) awaiting a decision.**
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-08-24 | Deferred | [SOTA-120](../../record/practices.d/SOTA-120.md) | 3 | 0 | Prefer AdamW's decoupled weight decay to L2 regularization added to the loss |
 | 2026-08-24 | Proposed | [LIT-101](../../record/literature.d/LIT-101.md) | 0 | 0 | AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs |
 | 2026-08-24 | Proposed | [LIT-104](../../record/literature.d/LIT-104.md) | 0 | 0 | ReLoRA: High-Rank Training Through Low-Rank Updates |
-| 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 16 | 2 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
+| 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 21 | 2 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
 | 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 16 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
 | 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 10 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 8 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
@@ -35,9 +35,12 @@
 | 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 0 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
 | 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 0 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
 | 2026-09-08 | Proposed | [SOTA-169](../../record/practices.d/SOTA-169.md) | 0 | 0 | Widen the residual stream into several streams and constrain the mixing between them |
+| 2026-09-08 | Proposed | [SOTA-172](../../record/practices.d/SOTA-172.md) | 0 | 0 | Build synthetic pretraining data by editing human text at the token level, not by generating from scratch |
+| 2026-09-08 | Proposed | [SOTA-173](../../record/practices.d/SOTA-173.md) | 0 | 0 | Augment the objective to make multi-epoch pretraining productive on a fixed corpus |
+| 2026-09-08 | Proposed | [SOTA-175](../../record/practices.d/SOTA-175.md) | 0 | 0 | Mask whole syntactic units for code fill-in-the-middle, not random character spans |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (5): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [SOTA-166](../../record/practices.d/SOTA-166.md), [SOTA-167](../../record/practices.d/SOTA-167.md), [SOTA-169](../../record/practices.d/SOTA-169.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (8): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [SOTA-166](../../record/practices.d/SOTA-166.md), [SOTA-167](../../record/practices.d/SOTA-167.md), [SOTA-169](../../record/practices.d/SOTA-169.md), [SOTA-172](../../record/practices.d/SOTA-172.md), [SOTA-173](../../record/practices.d/SOTA-173.md), [SOTA-175](../../record/practices.d/SOTA-175.md) — these are the cheapest to close, since nothing depends on the answer.

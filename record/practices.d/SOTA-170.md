@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmp2n6i4
 consensus: unreplicated
 consensus_note: >-
   One group, one dataset, and the strongest single piece of evidence in the
@@ -27,7 +29,7 @@ summary: >-
   it, and lean less on heuristics.
 ---
 
-# SOTA-tmp2n6i4: Choose filtering aggressiveness by the token horizon: at long horizons rephrase what a filter would discard
+# SOTA-170: Choose filtering aggressiveness by the token horizon: at long horizons rephrase what a filter would discard
 
 ## Source
 

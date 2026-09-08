@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmpqgx8l
 promote_when: >-
   A pretraining report that says its synthetic data was produced by editing
   human text rather than generating from a prompt, and reports what that
@@ -32,7 +34,7 @@ summary: >-
   provably bounded.
 ---
 
-# SOTA-tmpqgx8l: Build synthetic pretraining data by editing human text at the token level, not by generating from scratch
+# SOTA-172: Build synthetic pretraining data by editing human text at the token level, not by generating from scratch
 
 ## Source
 

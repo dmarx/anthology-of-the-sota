@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmprblvs
 promote_when: >-
   An independent group running one of the three augmentation families against
   an un-augmented baseline in a data-constrained multi-epoch setting and
@@ -29,7 +31,7 @@ summary: >-
   is hundreds of productive epochs on the same data.
 ---
 
-# SOTA-tmprblvs: Augment the objective to make multi-epoch pretraining productive on a fixed corpus
+# SOTA-173: Augment the objective to make multi-epoch pretraining productive on a fixed corpus
 
 ## Source
 
@@ -61,7 +63,7 @@ The record now holds three positions on repetition and this is the third.
 <!-- inactive-ok-block: SOTA-124 — Proposed, and named as one of the three
      positions this reframes -->
 [SOTA-124](SOTA-124.md) says heavy repetition is safe when epoch size exceeds the
-memorization window; [SOTA-tmp54nas](SOTA-tmp54nas.md) says four epochs and then diminishing
+memorization window; [SOTA-171](SOTA-171.md) says four epochs and then diminishing
 returns; this says repetition overfits severely **and the overfitting is a
 property of the objective rather than of repetition**, removable with
 augmentation.
@@ -74,7 +76,7 @@ implicitly or paying a cost nobody measured.
 ## Same transformation, three purposes
 
 Fill-in-the-middle appears here as a *sequence-permutation augmentation*
-valued for regularisation. [SOTA-tmpvbrwt](SOTA-tmpvbrwt.md) records it as a capability to be
+valued for regularisation. [SOTA-174](SOTA-174.md) records it as a capability to be
 trained for. And [LIT-119](../literature.d/LIT-119.md) reached for dropout when heavy repetition of a small
 FIM corpus hurt HumanEval-FIM — the same corpus, the same transformation, and
 a regularisation problem solved by a third mechanism. Three purposes for one

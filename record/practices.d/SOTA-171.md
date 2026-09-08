@@ -3,6 +3,8 @@
 # is the position this practice disagrees with, and the disagreement is what
 # both documents are for.
 status: Active
+formerly:
+- SOTA-tmp54nas
 consensus: contested
 consensus_note: >-
   Three positions, and they disagree about the quantity. This says four
@@ -33,7 +35,7 @@ summary: >-
   parameters.
 ---
 
-# SOTA-tmp54nas: Repeat a data-constrained corpus for up to about four epochs; past that, added compute stops paying
+# SOTA-171: Repeat a data-constrained corpus for up to about four epochs; past that, added compute stops paying
 
 ## Source
 

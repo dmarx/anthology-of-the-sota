@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmpvbrwt
 consensus: converged
 consensus_note: >-
   Every code model in the record ships an infilling capability and none
@@ -28,7 +30,7 @@ summary: >-
   of scales, so infilling is an added capability rather than a trade.
 ---
 
-# SOTA-tmpvbrwt: Train autoregressive models with fill-in-the-middle by default: it is a data transformation, and it is free
+# SOTA-174: Train autoregressive models with fill-in-the-middle by default: it is a data transformation, and it is free
 
 ## Source
 

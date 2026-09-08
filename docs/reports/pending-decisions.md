@@ -5,7 +5,7 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**34 document(s) awaiting a decision.**
+**35 document(s) awaiting a decision.**
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -22,13 +22,14 @@
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 2 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 5 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
 | 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 4 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
-| 2026-09-07 | Proposed | [ADR-016](../../record/decisions.d/ADR-016.md) | 2 | 1 | Contested is a claim about specific other work, so it must name it |
+| 2026-09-07 | Proposed | [ADR-016](../../record/decisions.d/ADR-016.md) | 3 | 1 | Contested is a claim about specific other work, so it must name it |
 | 2026-09-07 | Proposed | [SOTA-154](../../record/practices.d/SOTA-154.md) | 2 | 0 | Fine-tune with evolution strategies instead of policy-gradient reinforcement learning |
 | 2026-09-07 | Proposed | [SOTA-156](../../record/practices.d/SOTA-156.md) | 2 | 0 | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed |
 | 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 1 | 0 | Pack training documents by best fit instead of concatenating and splitting |
 | 2026-09-07 | Proposed | [SOTA-155](../../record/practices.d/SOTA-155.md) | 1 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
 | 2026-09-07 | Proposed | [SOTA-157](../../record/practices.d/SOTA-157.md) | 1 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
-| 2026-09-08 | Proposed | [SOTA-160](../../record/practices.d/SOTA-160.md) | 3 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
+| 2026-09-08 | Proposed | [SOTA-160](../../record/practices.d/SOTA-160.md) | 4 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
+| 2026-09-08 | Proposed | [ADR-020](../../record/decisions.d/ADR-020.md) | 2 | 0 | The recommendations are scoped by kind of claim, not by domain |
 | 2026-09-08 | Proposed | [SOTA-158](../../record/practices.d/SOTA-158.md) | 1 | 0 | Bound the activation's output range when training in low precision |
 | 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 1 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
 | 2026-09-08 | Proposed | [SOTA-168](../../record/practices.d/SOTA-168.md) | 1 | 0 | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself |

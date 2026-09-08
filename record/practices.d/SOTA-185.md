@@ -1,5 +1,7 @@
 ---
 status: Active
+formerly:
+- SOTA-tmp0ttm7
 title: 'Quantize weights after training by compensating each rounding error into the columns not yet quantized'
 version: 1
 tags:
@@ -15,7 +17,7 @@ summary: >-
   independently to the nearest level.
 ---
 
-# SOTA-tmp0ttm7: Quantize weights after training by compensating each rounding error into the columns not yet quantized
+# SOTA-185: Quantize weights after training by compensating each rounding error into the columns not yet quantized
 
 ## Source
 

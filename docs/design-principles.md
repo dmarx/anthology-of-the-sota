@@ -316,14 +316,30 @@ evidence and no category to take, would you add a category or decline the
 claim?** An honest answer to that is the scope, and it is usually more
 specific than anyone would have said out loud.
 
-Applied here: the two schemes carry different vocabularies on purpose. The
-reading list holds vision, generative and theory work; the recommendations
-hold seven topics, none of them about vision. So a vision self-supervision
+Applied here, and this project is its own worked example twice over.
+
+The two schemes carry different vocabularies. Read one way, that arrangement
+said: the reading list holds vision, generative and theory work, the
+recommendations hold seven topics none of which is about vision, so a vision
 paper can be a note and cannot be a recommendation — not on judgement, not on
 evidence, but because there is no category for it to take. **The
 recommendations are scoped to language-model training by construction**,
-which nobody had ever written down, and which is a far better reason for
-declining such a paper than the reason first given.
+which nobody had written down.
+
+That reading was load-bearing for about a year and it was wrong, in both
+directions at once. It was too narrow: two `Active` serving practices were
+already sitting outside it and nobody noticed, which is this principle's own
+warning about vocabularies working in the dark. And it was too broad: it
+declined work whose transferable content — a preconditioning scheme, an
+annotation bootstrap — is exactly the kind of claim the seven topics exist to
+hold, so the scope was making the record ignorant of its own subject.
+
+The repair is the corollary below, taken seriously.
+<!-- inactive-ok: ADR-020 — Proposed, and named as the decision that replaces this example; the pointer is the point -->
+[ADR-020](../record/decisions.d/ADR-020.md) scopes the recommendations by the **kind of claim** and moves
+domain onto its own axis, so that where a technique was discovered stops
+deciding whether it can be recommended. Read that decision, not this
+paragraph, for what the scope now is.
 
 The corollary: because it is a decision, it can be revisited — but only
 deliberately, by changing the vocabulary, and never by one entry quietly

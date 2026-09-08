@@ -4,7 +4,7 @@
 
 **Agreed** — the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately.
 
-5 of 184 SOTA documents. Back to the [full index](../README.md).
+6 of 185 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -13,3 +13,4 @@
 | [SOTA-150](../../../record/practices.d/SOTA-150.md) v2 | Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound | Shazeer et al. (2017), [LIT-188](../../../record/literature.d/LIT-188.md) — route each token to a few of many feed-forward experts instead of running one dense feed-forward for every token, so total parameters and per-token compute stop being the same number. Measured against dense by [LIT-170](../../../record/literature.d/LIT-170.md) seven years later: DeepSeekMoE 16B matches LLaMA2 7B at roughly 40% of the compute, 145B approaches the same team's dense 67B at 28.5%. | Active |
 | [SOTA-151](../../../record/practices.d/SOTA-151.md) v2 | Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length | Chen et al. (2023) and Peng et al. (2023) — RoPE does not extrapolate, and fine-tuning at the longer length barely helps: more than 10000 batches moved LLaMA's effective window from 2048 to 2560. Rescaling the position indices so they land back in the trained range reaches 32× that in under 1000 steps. YaRN rescales per wavelength rather than uniformly and gets to 128k with 10× fewer tokens. | Active |
 | [SOTA-174](../../../record/practices.d/SOTA-174.md) | Train autoregressive models with fill-in-the-middle by default: it is a data transformation, and it is free | Bavarian et al. (2022), [LIT-124](../../../record/literature.d/LIT-124.md) — cut a document into prefix, middle and suffix, move the middle to the end with sentinel tokens, and the model learns to infill. Transforming a large fraction of the training data does not harm left-to-right perplexity or sampling quality across a wide range of scales, so infilling is an added capability rather than a trade. | Active |
+| [SOTA-185](../../../record/practices.d/SOTA-185.md) | Quantize weights after training by compensating each rounding error into the columns not yet quantized | Frantar et al. (2022), [LIT-081](../../../record/literature.d/LIT-081.md) — [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323). Round one column at a time and push the resulting error into the remaining columns using approximate second-order information, instead of rounding every weight independently to the nearest level. | Active |

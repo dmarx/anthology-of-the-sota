@@ -31,10 +31,13 @@ File one with `luria new adr`.
 **[Migration](tags/migration.md)** (3) — moving off the YAML registry, and what happens to it:
 [001](../../record/decisions.d/ADR-001.md) · [006](../../record/decisions.d/ADR-006.md) · [008](../../record/decisions.d/ADR-008.md)
 
+**[Ontology](tags/ontology.md)** (1):
+[020](../../record/decisions.d/ADR-020.md)
+
 **[Workflow](tags/workflow.md)** (1):
 [013](../../record/decisions.d/ADR-013.md)
 
-**By status:** [Active](statuses/Active.md) (15) · [Proposed](statuses/Proposed.md) (3) · [Deferred](statuses/Deferred.md) (0) · [Superseded](statuses/Superseded.md) (1) · [Rejected](statuses/Rejected.md) (0)
+**By status:** [Active](statuses/Active.md) (15) · [Proposed](statuses/Proposed.md) (4) · [Deferred](statuses/Deferred.md) (0) · [Superseded](statuses/Superseded.md) (1) · [Rejected](statuses/Rejected.md) (0)
 
 ## Chronological
 
@@ -69,4 +72,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [ADR-017](../../record/decisions.d/ADR-017.md) v2 | What `source:` holds, and where the work it excludes goes | [ADR-010](../../record/decisions.d/ADR-010.md) made `source:` a list without saying what fills it, so the corpus grew two conventions: [SOTA-132](../../record/practices.d/SOTA-132.md) counts adopters as support, [SOTA-150](../../record/practices.d/SOTA-150.md) counts them as consensus data. This settles it — `source:` holds work that produced evidence about the claim, and adoption without a test is consensus data, which `consensus.yaml` already implies by admitting adopters who did not choose deliberately. The Source *section* is argument and may name non-sources, so prose is not a subset of the field; the field is a subset of the prose, which is checkable and found three defects. The exclusion leaves the problem-setting literature homeless, so the second half says where it goes: succession gains a sign, because a third of the record's `extends:` edges already mean "exists because the parent is broken" and say so only in prose. Rejected: adopters as support, a subset lint in the other direction, `inspired_by` as a new relation, and leaving it undecided. | Active |
 | [ADR-018](../../record/decisions.d/ADR-018.md) | Generated views are committed on main only, and a pull request writes none | Regenerating views on every pull request made two branches conflict on files neither had edited, and made a stacked branch re-conflict after each merge. Adopts luria's split shape ([LU-ADR-068](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-068.md)): views on the default branch only, source repairs on the branch that authored them. | Active |
 | [ADR-019](../../record/decisions.d/ADR-019.md) | An automation that writes to shared state names its serialization, and a pacing failure is swept as a class | Two CI failures in one evening, both from writes to shared state that raced, and both invisible until the work went faster than a person reading. Requires every job that writes where others write to declare a concurrency discipline or say why it needs none, and requires the first such failure to be answered by an audit of every writer rather than a patch to the one that broke. | Proposed |
+| [ADR-020](../../record/decisions.d/ADR-020.md) | The recommendations are scoped by kind of claim, not by domain |  | Proposed |
 

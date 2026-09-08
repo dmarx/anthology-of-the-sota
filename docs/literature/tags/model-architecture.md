@@ -4,7 +4,7 @@
 
 Architectures, components, model families, multi-modal designs.
 
-44 of 214 LIT documents. Back to the [full index](../README.md).
+44 of 218 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

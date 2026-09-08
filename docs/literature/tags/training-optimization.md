@@ -4,7 +4,7 @@
 
 Optimizers, schedules, batch size, scaling laws, training dynamics.
 
-37 of 214 LIT documents. Back to the [full index](../README.md).
+39 of 218 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -45,3 +45,5 @@ Optimizers, schedules, batch size, scaling laws, training dynamics.
 | [LIT-159](../../../record/literature.d/LIT-159.md) | Muon: An optimizer for hidden layers in neural networks | Jordan et al. (2024), blog post. Where Muon comes from: take the momentum matrix for a hidden weight, orthogonalise it with a few Newton–Schulz iterations, and step in that direction — leaving embeddings, the classifier head and the gains and biases to AdamW. | Active |
 | [LIT-163](../../../record/literature.d/LIT-163.md) | Better & Faster Large Language Models via Multi-token Prediction | Gloeckle et al. (2024), [ARXIV-2404.19737](https://arxiv.org/abs/2404.19737). Predict the next n tokens from n heads on a shared trunk: better sample efficiency at no training cost, growing with model size, and up to 3× faster inference as a side-effect. | Active |
 | [LIT-186](../../../record/literature.d/LIT-186.md) | Scaling Laws for Precision | Kumar et al. (2024), [ARXIV-2411.04330](https://arxiv.org/abs/2411.04330). Training in low precision reduces a model's effective parameter count, and post-training quantization degrades *more* the longer a model was trained — so past some point extra pretraining data is actively harmful. | Active |
+| [LIT-tmp776w0](../../../record/literature.d/LIT-tmp776w0.md) | Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning | Qiu et al. (2025), [ARXIV-2509.24372](https://arxiv.org/abs/2509.24372). Evolution strategies applied to the full parameter space of an LLM, at billion scale, without dimensionality reduction — which the field had assumed impossible. Against PPO and GRPO on Countdown across Qwen2.5 (0.5B–7B) and LLaMA3 (1B–8B), ES improves over the base model by 36.4% on average against 21.3% for GRPO and 17.9% for PPO, and does it with one fixed hyperparameter set while RL got a sweep per experiment. | Active |
+| [LIT-tmpszcb7](../../../record/literature.d/LIT-tmpszcb7.md) | The Road Less Scheduled | Defazio et al. (2024), [ARXIV-2405.15682](https://arxiv.org/abs/2405.15682). A third answer to the question the schedule chain is about: do not schedule. Iterate averaging and scheduling turn out to be the same mechanism, and the averaged form needs no stopping time T, no schedule shape and no hyperparameter beyond what AdamW already has — while matching schedules that do know T. Won the MLCommons 2024 AlgoPerf Self-Tuning track. | Active |

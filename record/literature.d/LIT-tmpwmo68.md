@@ -1,0 +1,68 @@
+---
+status: Active
+title: 'Streaming DiLoCo with overlapping communication: Towards a Distributed Free Lunch'
+version: 1
+tags:
+- distributed-optimization
+date: '2026-09-07'
+published: '2025-01-01'
+arxiv: '2501.18512'
+first_author: 'Douillard'
+keywords:
+- 'distributed-training'
+- 'communication-efficiency'
+- 'peak-bandwidth'
+- 'quantization'
+- 'overlapping-communication'
+# Corrective succession (ADR-017). DiLoCo relaxed synchronisation frequency
+# and left peak bandwidth untouched — every parameter still crosses every
+# link at each sync — which is the defect this names as its motivation.
+corrects:
+- LIT-tmp84crn
+summary: >-
+  Douillard et al. (2025), [ARXIV-2501.18512](https://arxiv.org/abs/2501.18512). DiLoCo made synchronisation
+  rare and left its size alone, so peak bandwidth was unchanged. Three
+  changes fix that: synchronise subsets of parameters in sequence rather than
+  all at once, let workers keep training while they synchronise, and quantise
+  what crosses the link. Billion-scale training at matched quality with two
+  orders of magnitude less bandwidth.
+---
+
+# LIT-tmpwmo68: Streaming DiLoCo with overlapping communication: Towards a Distributed Free Lunch
+
+Douillard et al. (2025) — [ARXIV-2501.18512](https://arxiv.org/abs/2501.18512)
+
+## Key takeaways
+
+**The defect it names is precise, and it is easy to miss in the parent.**
+DiLoCo synchronises rarely, which reduces *how often* the link is used and not
+*how much* it must carry when it is: every synchronisation still exchanges all
+parameters across all workers, so the peak bandwidth requirement is the same
+as fully synchronous training. A link provisioned for the peak is a link that
+was never cheap.
+
+**Three changes, and they are independent.**
+
+- **Streaming** — synchronise subsets of parameters in sequence rather than
+  the whole model at once, which spreads the same total across time and drops
+  the peak.
+- **Overlapping** — workers keep training while a synchronisation is in
+  flight, so the cost stops being wall-clock dead time.
+- **Quantisation** — of the exchanged data, reducing the total as well as the
+  peak.
+
+**Two orders of magnitude less bandwidth at billion scale**, at quality
+comparable to the baseline. The title's "free lunch" is the claim that the
+three compose without a quality price.
+
+## Standing in the anthology
+
+The half of the DiLoCo argument that makes it an engineering proposition
+rather than a demonstration. [LIT-tmp84crn](LIT-tmp84crn.md) establishes that infrequent
+synchronisation need not cost quality; this establishes that the
+synchronisation itself need not be expensive, which is what decides whether
+the arrangement is cheaper than renting one cluster.
+
+Filed as `corrects:` rather than `extends:`, on [ADR-017](../decisions.d/ADR-017.md)'s test: it names a
+defect in its parent — unchanged peak bandwidth — as its motivation, in its
+own abstract.

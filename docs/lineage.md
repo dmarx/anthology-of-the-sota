@@ -2,7 +2,7 @@
 
 # Lines of work
 
-7 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+9 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 ## From Language Modeling with Gated Convolutional Networks
 
@@ -20,6 +20,11 @@
   - [LIT-208](../record/literature.d/LIT-208.md) — Rope to Nope and Back Again: A New Hybrid Attention Strategy *(Active)*
   - [LIT-209](../record/literature.d/LIT-209.md) — SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling *(Active)*
 - alongside: [LIT-048](../record/literature.d/LIT-048.md) — Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation *(Active)*
+
+## From DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models
+
+- alongside: [LIT-127](../record/literature.d/LIT-127.md) — DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models *(Active)*
+- alongside: [LIT-tmp776w0](../record/literature.d/LIT-tmp776w0.md) — Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning *(Active)*
 
 ## From Mamba: Linear-Time Sequence Modeling with Selective State Spaces
 
@@ -56,3 +61,8 @@
 
 - [LIT-tmpifi5m](../record/literature.d/LIT-tmpifi5m.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
   - [LIT-tmp0kze1](../record/literature.d/LIT-tmp0kze1.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*
+
+## From DiLoCo: Distributed Low-Communication Training of Language Models
+
+- [LIT-tmp84crn](../record/literature.d/LIT-tmp84crn.md) — DiLoCo: Distributed Low-Communication Training of Language Models *(Active)*
+  - [LIT-tmpwmo68](../record/literature.d/LIT-tmpwmo68.md) — Streaming DiLoCo with overlapping communication: Towards a Distributed Free Lunch *(Active)*

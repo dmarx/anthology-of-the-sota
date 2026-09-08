@@ -51,6 +51,7 @@ summary: >-
 extended_by:
 - SOTA-148
 - SOTA-149
+- SOTA-tmpjwfcn
 ---
 
 # SOTA-150: Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound

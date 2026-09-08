@@ -55,8 +55,6 @@ reinforcement learning at million-token context.
 The record holds four answers to long context and they operate at different
 layers. Keeping them apart is most of the value of filing this one:
 
-<!-- inactive-ok-block: SOTA-153 — Proposed, named as one of the four layers
-     the long-context answers operate at -->
 - [SOTA-139](SOTA-139.md) stages the *training length*.
 - [SOTA-151](SOTA-151.md) rescales positions so a finished model accepts a longer one, and
   [SOTA-153](SOTA-153.md) removes the positional encoding from the layers that carry

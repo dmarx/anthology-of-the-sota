@@ -84,8 +84,6 @@ a rival: it is the same idea, done with less control.
 
 ## The dial the record already has both ends of
 
-<!-- inactive-ok-block: SOTA-153 — Proposed, named as the p=0 end of the dial
-     this practice interpolates -->
 **p=1 is RoPE and p=0 is NoPE.** The record holds [SOTA-151](SOTA-151.md), which rescales
 RoPE for a longer context, and [SOTA-153](SOTA-153.md), which drops positional encoding from
 a hybrid's global layers. This is the interpolant between them, and the

@@ -17,6 +17,8 @@ summary: >-
   Zhu et al. (2024), [LIT-141](../literature.d/LIT-141.md) — n parallel residual streams with learnable mixing; gains on dense and MoE pretraining, and an identity-mapping property lost that its successor restores.
 corrected_by:
 - SOTA-136
+extends:
+- SOTA-tmpzajmo
 ---
 
 # SOTA-137: Widen the residual stream into several streams with freely learned mixing (hyper-connections)

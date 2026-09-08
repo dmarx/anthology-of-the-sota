@@ -48,6 +48,8 @@ compared_against:
 - SOTA-133
 summary: >-
   Xie et al. (2025), [LIT-140](../literature.d/LIT-140.md) — hyper-connections with the residual-mixing matrix constrained to be doubly stochastic, so identity mapping survives; 6–7% overhead at 3B–27B, shipped in DeepSeek-V4.
+extends:
+- SOTA-tmpzajmo
 ---
 
 # SOTA-136: Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections)

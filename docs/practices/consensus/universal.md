@@ -4,8 +4,9 @@
 
 **Assumed** — not doing it is what needs justifying.
 
-1 of 157 SOTA documents. Back to the [full index](../README.md).
+2 of 162 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [SOTA-001](../../../record/practices.d/SOTA-001.md) | Default choice for neural network training | Kingma et al. (2014), [LIT-001](../../../record/literature.d/LIT-001.md) — [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980). | Active |
+| [SOTA-tmpkwpaw](../../../record/practices.d/SOTA-tmpkwpaw.md) | Deduplicate the pretraining corpus at both substring and document granularity before training on it | Lee et al. (2021), [LIT-202](../../../record/literature.d/LIT-202.md) — a single 61-word sentence appears thousands of times in C4. Deduplicating cuts verbatim emission about tenfold, reaches equal or better accuracy in fewer steps, and removes train-test contamination from standard validation sets. Two granularities, because a repeated boilerplate paragraph is not a duplicated document. | Active |

@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [8 Sep 00:16 — The registry was missing nodes at both ends, and only one end had a story](2026-09.md#20260908001616)
 - [7 Sep 21:56 — Every practice in the registry says "autoregressive transformer" and none of them writes it down](2026-09.md#20260907215631)
 - [7 Sep 21:50 — Proposed is where a recommendation waits, and declining to file is not the same as filing a doubt](2026-09.md#20260907215040)
 - [7 Sep 21:14 — A pass can only find the defect its method is shaped like](2026-09.md#20260907211428)
@@ -34,9 +35,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-27 entries across 2 books, newest first.
+28 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 25 | 2026-09-05 | 2026-09-07 |
+| [2026-09](2026-09.md) | 26 | 2026-09-05 | 2026-09-08 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

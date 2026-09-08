@@ -4,7 +4,7 @@
 
 Learning-rate schedules, batch size, optimizers, training dynamics, scaling strategies.
 
-42 of 157 SOTA documents. Back to the [full index](../README.md).
+43 of 162 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -50,3 +50,4 @@ Learning-rate schedules, batch size, optimizers, training dynamics, scaling stra
 | [SOTA-146](../../../record/practices.d/SOTA-146.md) | Correct the GRPO objective before running it — the published form has three independently identified defects | Liu et al. (2025), [LIT-167](../../../record/literature.d/LIT-167.md); Yu et al. (2025), [LIT-168](../../../record/literature.d/LIT-168.md); Zheng et al. (2025), [LIT-180](../../../record/literature.d/LIT-180.md) — three groups, three defects in GRPO's objective, three published fixes, none of them the same fix. "We ran GRPO" does not say which of these you ran. | Proposed |
 | [SOTA-154](../../../record/practices.d/SOTA-154.md) | Fine-tune with evolution strategies instead of policy-gradient reinforcement learning | Qiu et al. (2025), [LIT-211](../../../record/literature.d/LIT-211.md) — evolution strategies over the full parameter space of a billion-scale LLM, which the field had assumed impossible. +36.4% over base on average against GRPO's +21.3% and PPO's +17.9%, with ES on one fixed hyperparameter set while RL got a sweep per experiment. Filed `Proposed`: two tasks, 8B and below, no deployment. | Proposed |
 | [SOTA-156](../../../record/practices.d/SOTA-156.md) | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed | Defazio et al. (2024), [LIT-213](../../../record/literature.d/LIT-213.md) — scheduling and iterate averaging are one mechanism, and the averaged form needs no stopping time T, no schedule shape and no hyperparameter beyond what AdamW already has. Filed `Proposed`: the evidence is a third-party competitive benchmark at workloads far below the scale where this record's schedule question is open. | Proposed |
+| [SOTA-tmpekps6](../../../record/practices.d/SOTA-tmpekps6.md) | Train with auxiliary multi-token-prediction heads alongside next-token prediction | Gloeckle et al. (2024), [LIT-163](../../../record/literature.d/LIT-163.md) — predict the next n tokens through n independent heads on a shared trunk, as an auxiliary task rather than a replacement. No training-time overhead, the benefit grows with model size and survives multi-epoch training, and the extra heads are a draft model you already trained. | Active |

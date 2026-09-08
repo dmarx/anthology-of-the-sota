@@ -20,10 +20,11 @@
 - [SOTA-121](../record/practices.d/SOTA-121.md) — Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW *(Active, unassessed)*
   - [SOTA-131](../record/practices.d/SOTA-131.md) — When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip) *(Active, unassessed)*
 
-## From Widen the residual stream into several streams with freely learned mixing (hyper-connections)
+## From Widen the residual stream into several streams and constrain the mixing between them
 
-- [SOTA-137](../record/practices.d/SOTA-137.md) — Widen the residual stream into several streams with freely learned mixing (hyper-connections) *(Superseded, unassessed)*
-  - [SOTA-136](../record/practices.d/SOTA-136.md) — Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) *(Proposed, contested)*
+- [SOTA-tmpzajmo](../record/practices.d/SOTA-tmpzajmo.md) — Widen the residual stream into several streams and constrain the mixing between them *(Proposed, emerging)*
+  - [SOTA-137](../record/practices.d/SOTA-137.md) — Widen the residual stream into several streams with freely learned mixing (hyper-connections) *(Superseded, unassessed)*
+    - [SOTA-136](../record/practices.d/SOTA-136.md) — Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) *(Proposed, contested)* — also extends SOTA-tmpzajmo
 - alongside: [SOTA-133](../record/practices.d/SOTA-133.md) — Replace fixed residual accumulation with learned attention over preceding layers *(Active, emerging)*
 
 ## From Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens

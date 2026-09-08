@@ -83,4 +83,4 @@ None. Every scanned file is checked. ✅
 
 ## Directives that no longer apply
 
-- record/practices.d/SOTA-171.md:65: annotation no longer applies — nothing in scope cites SOTA-124
+None. Every annotation still governs something. ✅

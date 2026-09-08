@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmpr2k8m
 promote_when: >-
   A released model above 3B built on this recurrence, or a demonstration that
   the state-tracking advantage shows up on a language task at a scale where
@@ -30,7 +32,7 @@ summary: >-
   conjectures exceeds what a softmax stack in TC⁰ can do.
 ---
 
-# SOTA-tmpr2k8m: Give the recurrence vector-valued gating and in-context learning rates so it can track state a softmax layer provably cannot
+# SOTA-178: Give the recurrence vector-valued gating and in-context learning rates so it can track state a softmax layer provably cannot
 
 ## Source
 

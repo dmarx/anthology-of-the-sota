@@ -2,7 +2,7 @@
 
 # SOTAs tagged `tiny-models`
 
-8 of 175 SOTA documents. Back to the [full index](../README.md).
+8 of 178 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

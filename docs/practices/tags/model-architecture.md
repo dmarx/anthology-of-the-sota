@@ -4,7 +4,7 @@
 
 Architecture patterns, component design, structural choices.
 
-27 of 175 SOTA documents. Back to the [full index](../README.md).
+28 of 178 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -35,3 +35,4 @@ Architecture patterns, component design, structural choices.
 | [SOTA-158](../../../record/practices.d/SOTA-158.md) | Bound the activation's output range when training in low precision | Jiang et al. (2026), [LIT-200](../../../record/literature.d/LIT-200.md) — SwiGLU approximates x² for large positive inputs, which is where its expressive capacity comes from *and* what enlarges the output range and exacerbates outliers. Two groups independently concluded that is intolerable in low precision. What they agree on is the constraint; the functions they chose differ. | Proposed |
 | [SOTA-167](../../../record/practices.d/SOTA-167.md) | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout | Lahoti et al. (2026), [LIT-165](../../../record/literature.d/LIT-165.md) — three changes derived from the SSM view: a more expressive recurrence from the discretisation, a complex-valued state update for state tracking, and a MIMO formulation that adds quality without decode latency. +1.8 downstream at 1.5B over Gated DeltaNet, and Mamba-2's perplexity at half the state size. | Proposed |
 | [SOTA-169](../../../record/practices.d/SOTA-169.md) | Widen the residual stream into several streams and constrain the mixing between them | Zhu et al. (2024) and three successors, [LIT-141](../../../record/literature.d/LIT-141.md) / [LIT-140](../../../record/literature.d/LIT-140.md) / [LIT-151](../../../record/literature.d/LIT-151.md) / [LIT-181](../../../record/literature.d/LIT-181.md) — replace the single residual stream with n parallel streams and learn the mixing. All four agree the width helps and that the mixing needs a constraint; they disagree about which one, and that disagreement is the two practices extending this rather than this itself. | Proposed |
+| [SOTA-178](../../../record/practices.d/SOTA-178.md) | Give the recurrence vector-valued gating and in-context learning rates so it can track state a softmax layer provably cannot | Peng et al. (2025), [LIT-173](../../../record/literature.d/LIT-173.md) — a generalised delta rule with vector-valued gating and in-context learning rates, at constant memory and constant time per token. A 2.9B model sets the 3B state of the art on multilingual tasks on dramatically fewer training tokens. The expressivity claim is the sharp one: it can recognise all regular languages, which under standard conjectures exceeds what a softmax stack in TC⁰ can do. | Proposed |

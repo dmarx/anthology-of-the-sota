@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-11 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+12 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 ## From Use SwiGLU activation for transformers
 
@@ -43,6 +43,11 @@
   - [SOTA-137](../record/practices.d/SOTA-137.md) — Widen the residual stream into several streams with freely learned mixing (hyper-connections) *(Superseded, unassessed)*
     - [SOTA-136](../record/practices.d/SOTA-136.md) — Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) *(Proposed, contested)* — also extends SOTA-169
 - alongside: [SOTA-133](../record/practices.d/SOTA-133.md) — Replace fixed residual accumulation with learned attention over preceding layers *(Active, emerging)*
+
+## From Give linear-attention layers a gated delta rule: a decay gate for erasure plus a delta update for targeted writes
+
+- [SOTA-135](../record/practices.d/SOTA-135.md) — Give linear-attention layers a gated delta rule: a decay gate for erasure plus a delta update for targeted writes *(Active, unassessed)*
+  - [SOTA-177](../record/practices.d/SOTA-177.md) — Decouple the erase address from the write address in a delta-rule recurrence *(Proposed, unreplicated)*
 
 ## From Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens
 

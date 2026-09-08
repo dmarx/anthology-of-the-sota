@@ -11,7 +11,7 @@ source:
 summary: >-
   Yang et al. (2024), [LIT-137](../literature.d/LIT-137.md) — beats Mamba2 and DeltaNet across language modelling, retrieval and long context at 1.3B/100B; the recurrence the Qwen hybrids use for three layers in four, and the one Kimi Delta Attention extends.
 extended_by:
-- SOTA-tmpk6q3n
+- SOTA-177
 ---
 
 # SOTA-135: Give linear-attention layers a gated delta rule: a decay gate for erasure plus a delta update for targeted writes

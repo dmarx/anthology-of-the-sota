@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmpeb0hr
 promote_when: >-
   A released model built this way, or an independent group running a
   single-layer hybrid against a 3:1 layer interleave at matched parameters
@@ -29,7 +31,7 @@ summary: >-
   purely linear to full attention.
 ---
 
-# SOTA-tmpeb0hr: Hybridise inside the layer: long-term slots, a sliding window, and one softmax over both, with the window size as the only dial
+# SOTA-176: Hybridise inside the layer: long-term slots, a sliding window, and one softmax over both, with the window size as the only dial
 
 ## Source
 

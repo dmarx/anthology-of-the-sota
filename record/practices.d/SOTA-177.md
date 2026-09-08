@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmpk6q3n
 promote_when: >-
   A released model whose linear layers carry a decoupled erase, or an
   independent group running an addressed erase against a channel-wise decay
@@ -31,7 +33,7 @@ summary: >-
   long-context midtraining.
 ---
 
-# SOTA-tmpk6q3n: Decouple the erase address from the write address in a delta-rule recurrence
+# SOTA-177: Decouple the erase address from the write address in a delta-rule recurrence
 
 ## Source
 

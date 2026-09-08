@@ -3,7 +3,7 @@ status: 'Active'
 title: 'BPE tokenization for open vocabulary tasks'
 version: 1
 tags:
-- model-architecture
+- representation-and-encoding
 date: '2026-08-24'
 published: '2015-08-01'
 source:

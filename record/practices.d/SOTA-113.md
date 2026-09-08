@@ -3,7 +3,7 @@ status: 'Active'
 title: 'Use continuous batching for inference'
 version: 1
 tags:
-- systems-optimization
+- inference-optimization
 date: '2026-08-24'
 published: '2023-09-01'
 source:

@@ -15,7 +15,7 @@ history:
     conditions are not what the recommendation rests on. The recommendation
     is unchanged.
 tags:
-- training-optimization
+- adaptation-and-tuning
 date: '2026-09-05'
 published: '2025-12-01'
 source:

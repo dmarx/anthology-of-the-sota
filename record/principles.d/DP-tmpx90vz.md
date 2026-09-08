@@ -1,0 +1,54 @@
+---
+status: Active
+title: 'A claim with no category is a finding about the vocabulary, not about the claim'
+version: 1
+tags:
+- ontology
+date: '2026-09-08'
+---
+
+# DP-tmpx90vz: A claim with no category is a finding about the vocabulary, not about the claim
+
+[DP-008](design-principles.md#dp-8) establishes that a controlled vocabulary is a scope decision: the list
+of categories answers "what is this project about", and a subject the list
+cannot express produces nothing rather than an argument. This is the
+operational half of that, and it points the other way.
+
+When a document arrives with a real claim and no category to take, there are
+two available readings and they are not symmetric:
+
+1. **The claim is out of scope.** The vocabulary is right and the document is
+   declined.
+2. **The vocabulary is short a category.** The document is in scope and the
+   list has not caught up.
+
+The first is the cheaper reading, it requires no work, and it is *self-
+confirming*: declining the document leaves the vocabulary looking complete,
+because the evidence that would have shown otherwise has just been turned
+away. Reading (2) costs a decision and some retagging, and it is the one that
+can be wrong in a way anybody notices.
+
+So the default has to be (2). **A claim the categories cannot express is
+evidence about the categories until someone shows otherwise**, and showing
+otherwise means an argument about the *kind of claim* — not a shrug at the
+absence of a slot.
+
+The failure this prevents is specific and it has a shape: the project reads
+its own filing convenience back as a statement about the world. It is
+especially quiet when the vocabulary is nearly right, because then only a few
+documents fall outside and each looks individually marginal. Counting is the
+antidote — if several documents are being declined for the same missing
+category, the category is missing.
+
+Two tests worth applying before accepting reading (1):
+
+- **Would you decline this claim if it arrived with excellent evidence and a
+  familiar author?** If not, the objection was never about scope.
+- **Are the claims already in the record on this subject filed coherently?**
+  A subject scattered across four ill-fitting categories is a category that
+  exists in the corpus and not in the list.
+
+The corollary from [DP-008](design-principles.md#dp-8) still binds: the vocabulary changes deliberately,
+by decision, and never by one entry quietly taking a tag that does not fit.
+This principle says which way to lean when writing that decision, not that
+the decision can be skipped.

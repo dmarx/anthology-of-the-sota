@@ -3,7 +3,7 @@ status: 'Active'
 title: 'PagedAttention to accelerate batch inference for LLM sampling'
 version: 1
 tags:
-- attention-techniques
+- inference-optimization
 date: '2026-08-24'
 published: '2023-09-01'
 source:

@@ -17,7 +17,7 @@ consensus_note: >-
 title: "Truncate the rotary encoding's low frequencies rather than rescaling its base"
 version: 1
 tags:
-- attention-techniques
+- representation-and-encoding
 date: '2026-09-08'
 published: '2024-10-01'
 source:

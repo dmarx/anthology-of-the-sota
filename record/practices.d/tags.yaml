@@ -1,6 +1,14 @@
-# The seven categories a practice can carry as its primary topic, in the
-# order the index shows them. The scopes are transcribed from the 2024
-# naming-conventions document; ADR-003 is where they became binding.
+# The categories a practice can carry as its primary topic, in the order the
+# index shows them. The first seven are transcribed from the 2024
+# naming-conventions document; ADR-003 is where they became binding. The last
+# two were added by ADR-tmplvh9j, which found thirteen practices about serving
+# and adaptation scattered across the original seven because neither subject
+# had a word.
+#
+# The two words come from the LIT scheme, which has had them since ADR-003:
+# where both vocabularies name the same KIND of claim they use the same word.
+# What stays LIT-only is generative-modeling and vision-and-graphics, which
+# name a domain rather than a kind of claim (ADR-020).
 #
 # `luria.toml` holds the *rule* (exactly one of these per practice); this file
 # holds what each one means. A tag used here but not listed still renders,
@@ -37,3 +45,18 @@ attention-techniques:
 model-architecture:
   label: Model architecture
   blurb: architecture patterns, component design, structural choices
+
+inference-optimization:
+  label: Inference optimization
+  blurb: serving-time decisions — batching, cache layout, quantization
+    procedure, sampling algorithms
+
+adaptation-and-tuning:
+  label: Adaptation and tuning
+  blurb: taking a trained model somewhere new — fine-tuning, preference
+    training, parameter-efficient adaptation, context extension
+
+representation-and-encoding:
+  label: Representation and encoding
+  blurb: how the signal is encoded before the network sees it — tokenization,
+    positional encoding, and the frequency or basis choices that go with them

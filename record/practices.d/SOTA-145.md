@@ -28,7 +28,7 @@ history:
     a rival paradigm, now a Proposed practice of its own and recorded in
     `compared_against:`. The recommendation is unchanged.
 tags:
-- training-optimization
+- adaptation-and-tuning
 date: '2026-09-07'
 published: '2024-02-01'
 source:

@@ -24,7 +24,7 @@ history:
     no ablation; Kimi Linear ran it. The consensus_note already named K3, so
     `emerging` still rests on the same three laboratories.
 tags:
-- attention-techniques
+- representation-and-encoding
 date: '2026-09-07'
 published: '2025-01-01'
 source:

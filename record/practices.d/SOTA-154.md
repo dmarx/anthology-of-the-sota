@@ -16,7 +16,7 @@ consensus_note: >-
 title: 'Fine-tune with evolution strategies instead of policy-gradient reinforcement learning'
 version: 1
 tags:
-- training-optimization
+- adaptation-and-tuning
 date: '2026-09-07'
 published: '2025-09-01'
 source:

@@ -4,7 +4,7 @@
 
 Initialization, normalization, gradient handling, loss-landscape behaviour.
 
-18 of 165 SOTA documents. Back to the [full index](../README.md).
+19 of 169 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -26,3 +26,4 @@ Initialization, normalization, gradient handling, loss-landscape behaviour.
 | [SOTA-070](../../../record/practices.d/SOTA-070.md) | Track gradient norm ratios between layers | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
 | [SOTA-071](../../../record/practices.d/SOTA-071.md) | Use gradient clipping with dynamic threshold | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
 | [SOTA-072](../../../record/practices.d/SOTA-072.md) | Implement early warning system for NaNs | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
+| [SOTA-tmpbp6p9](../../../record/practices.d/SOTA-tmpbp6p9.md) | Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling | Qiu et al. (2025), [LIT-198](../../../record/literature.d/LIT-198.md) — putting flash attention in BF16 while the FFN goes to FP8 sometimes explodes, and the cause is two things at once: attention produces low-rank updates repeated across steps and tokens, and low-precision addition rounds with a *bias*. The biased error rides the repeated update and compounds into a systematic gradient bias instead of averaging out. | Active |

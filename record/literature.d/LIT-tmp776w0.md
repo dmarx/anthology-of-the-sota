@@ -1,0 +1,89 @@
+---
+status: Active
+title: 'Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-07'
+published: '2025-09-01'
+arxiv: '2509.24372'
+first_author: 'Qiu'
+keywords:
+- 'evolution-strategies'
+- 'post-training'
+- 'reinforcement-learning'
+- 'reward-hacking'
+- 'backpropagation-free'
+# The paper evaluates itself against PPO and GRPO on every model it tests,
+# and GRPO is LIT-127. A comparison that was run, not an alternative
+# asserted (ADR-011).
+compared_against:
+- LIT-127
+summary: >-
+  Qiu et al. (2025), [ARXIV-2509.24372](https://arxiv.org/abs/2509.24372). Evolution strategies applied to the
+  full parameter space of an LLM, at billion scale, without dimensionality
+  reduction — which the field had assumed impossible. Against PPO and GRPO on
+  Countdown across Qwen2.5 (0.5B–7B) and LLaMA3 (1B–8B), ES improves over the
+  base model by 36.4% on average against 21.3% for GRPO and 17.9% for PPO, and
+  does it with one fixed hyperparameter set while RL got a sweep per
+  experiment.
+---
+
+# LIT-tmp776w0: Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning
+
+Qiu et al. (2025) — [ARXIV-2509.24372](https://arxiv.org/abs/2509.24372)
+
+## Key takeaways
+
+**It overturns an assumption rather than beating a number.** The belief was
+that searching a billion-dimensional parameter space directly is hopeless, so
+prior ES work on LLMs reduced the dimension — last layer only, or a
+low-rank subspace. This searches the full parameter space and reports the
+first successful application at that scale.
+
+**The comparison is deliberately tilted against itself, and that is the
+result worth carrying.** ES ran with **one fixed hyperparameter set across
+every experiment**. RL got a per-experiment grid over the KL penalty β and the
+learning rate α, because the authors found RL "did not make much progress if
+they were not set precisely" and chose the best configuration each time.
+Averaged across models, ES improves over the base by **36.4%**, PPO by
+**17.9%**, GRPO by **21.3%** at group size 8 and **21.4%** at group size 30 —
+a conservative comparison that ES wins anyway.
+
+**Where the advantage is claimed to come from.** Tolerance to long-horizon
+and delayed rewards; robustness across different base models, which is the
+failure the paper's own citation of Gandhi et al. establishes for RL on this
+task; reduced susceptibility to reward hacking; and steadier training. Being
+backpropagation-free is the structural difference underneath all four.
+
+## What the evidence does not cover
+
+Two tasks — Countdown, a reasoning puzzle, and a conciseness objective — at
+8B and below, with no frontier deployment. That is a long way from the
+post-training this record describes, which runs multi-stage on models an
+order of magnitude larger. The claim to have scaled ES is well supported; the
+claim that it should replace RL in a production recipe is not made here and
+should not be read in.
+
+## Standing in the anthology
+
+<!-- inactive-ok-block: SOTA-146 — Proposed, and named as one of the three
+     practices that assume the paradigm this paper steps outside of -->
+<!-- inactive-ok-block: SOTA-tmpex7d9 — the practice drawn from this paper,
+     Proposed for the reasons the paragraph gives -->
+**A rival to the record's whole post-training spine, and the first one.**
+[SOTA-129](../practices.d/SOTA-129.md) makes reinforcement learning with verifiable rewards the third stage
+of the reasoning recipe; [SOTA-145](../practices.d/SOTA-145.md) recommends the group baseline inside it;
+[SOTA-146](../practices.d/SOTA-146.md) corrects the objective. All three assume the paradigm. This is a
+different paradigm reaching the same goal, filed as [SOTA-tmpex7d9](../practices.d/SOTA-tmpex7d9.md) and
+`Proposed`, and recorded as `compared_against:` [SOTA-145](../practices.d/SOTA-145.md) — the relation for a
+rival somebody measured rather than one asserted.
+
+It does not disturb [SOTA-145](../practices.d/SOTA-145.md)'s argument, which is worth being precise about.
+That practice observes that every work which *runs or reworks GRPO* keeps the
+group baseline. ES does not run GRPO, so it is not a counterexample — it is
+evidence about whether to be in that family at all.
+
+One detail bears on [SOTA-145](../practices.d/SOTA-145.md) directly and mildly: raising GRPO's group size
+from 8 to 30 moved the average by 0.1 points here. That is one task, but it
+is a data point on what the group baseline's width buys.

@@ -9,7 +9,7 @@ consensus_note: >-
 contested_by:
 - LIT-131
 title: 'Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens'
-version: 3
+version: 4
 tags:
 - training-optimization
 history:
@@ -27,6 +27,13 @@ history:
     Hägele et al. "for the comparison against cosine", and that comparison is
     what makes this practice evidenced rather than reported; the frontmatter
     named only MiniCPM. The recommendation is unchanged.
+- version: 4
+  date: '2026-09-07'
+  note: >-
+    The Sequence gained a third answer: Schedule-Free AdamW, which removes the
+    stopping time rather than choosing a shape to decay through. Literature
+    only at filing; now a Proposed practice of its own, named in the
+    Sequence. The recommendation is unchanged.
 date: '2026-09-05'
 published: '2024-04-01'
 source:
@@ -131,6 +138,18 @@ Warm restarts ([LIT-042](../literature.d/LIT-042.md), retired) → a single cosi
 [SOTA-039](SOTA-039.md), retired by this) → WSD, with its decay shape and depth still
 <!-- inactive-ok: SOTA-141 — a Proposed refinement of the decay, named as part of the schedule chain -->
 being settled ([SOTA-141](SOTA-141.md)) and its peak set by scaling law ([SOTA-142](SOTA-142.md)).
+
+<!-- inactive-ok-block: SOTA-tmpvlopd — Proposed, and it is named here as the
+     rival that is not yet asserted, which is what Proposed is for -->
+
+There is a third answer, filed as [SOTA-tmpvlopd](SOTA-tmpvlopd.md) and `Proposed`.
+Schedule-Free AdamW says the branch point above was the wrong one: the
+question is not which shape to decay through but whether to name a stopping
+time at all. It reaches this practice's headline property — the token budget
+need not be fixed when training starts — with no decay phase to launch and no
+peak re-tuned for a constant stage, since there is no constant stage. Nobody
+has run the two against each other; that practice's `promote_when:` is what
+this record is waiting for before it would displace this one.
 
 ## Known implementations
 

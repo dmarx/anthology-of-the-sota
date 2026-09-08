@@ -4,7 +4,7 @@
 
 Distribution strategies, memory management, checkpointing, communication.
 
-26 of 153 SOTA documents. Back to the [full index](../README.md).
+27 of 156 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -34,3 +34,4 @@ Distribution strategies, memory management, checkpointing, communication.
 | [SOTA-117](../../../record/practices.d/SOTA-117.md) | Overlap communication with computation using backward prefetch | Zhao et al. (2022), [LIT-083](../../../record/literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). | Active |
 | [SOTA-118](../../../record/practices.d/SOTA-118.md) | Employ mixed precision to reduce memory usage | Zhao et al. (2022), [LIT-083](../../../record/literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). | Active |
 | [SOTA-119](../../../record/practices.d/SOTA-119.md) | Choose sharding factor based on model and GPU memory size | Zhao et al. (2022), [LIT-083](../../../record/literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). | Active |
+| [SOTA-tmpgyaw3](../../../record/practices.d/SOTA-tmpgyaw3.md) | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation | Douillard et al. (2023, 2025), [LIT-tmp84crn](../../../record/literature.d/LIT-tmp84crn.md) and [LIT-tmpwmo68](../../../record/literature.d/LIT-tmpwmo68.md) — federated averaging with the constants pushed hard: many inner AdamW steps per worker, Nesterov momentum as the outer optimizer over the accumulated deltas, synchronised rarely and in streamed subsets. 500× less communication at matched quality, then two more orders off the peak. Filed `Proposed`: one group, and no frontier report trains this way. | Proposed |

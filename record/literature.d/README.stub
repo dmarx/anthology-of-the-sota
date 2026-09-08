@@ -17,6 +17,22 @@ rather than leaving it to be noticed.
 Roughly a third of these notes produced no practice at all. They are here
 because they are worth reading.
 
+A note's own topic will not tell you which of those it is. **The two schemes'
+topic vocabularies overlap; they do not nest.** A note can be tagged
+`adaptation-and-tuning` or `inference-optimization` — words absent from the
+practice vocabulary — and still carry a recommendation the record files
+happily under `training-optimization`, which is where its fine-tuning,
+preference-training and quantization practices already live.
+
+The seven practice topics range over **how you train**, not over what you are
+training. So the question a note has to answer is whether the work contains an
+instruction expressible in those seven — never what field it came from. A
+diffusion paper whose contribution is a noise-level sampling distribution and
+a loss weighting is a `training-optimization` paper; a segmentation paper
+whose contribution is a model-in-the-loop annotation bootstrap is a
+`data-pipeline` paper. Reading a note's tag, or its domain, as a scope
+boundary is how a paper stays unfiled for a year.
+
 <!-- GENERATED below this line by `luria index` — edit README.stub instead. -->
 
 ## By topic

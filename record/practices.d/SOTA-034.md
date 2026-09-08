@@ -31,6 +31,8 @@ summary: >-
   grounds that SwiGLU's unbounded factors produce activation outliers.
 implementations:
 - llama2
+compared_against:
+- SOTA-tmp0cmo2
 ---
 
 # SOTA-034: Use SwiGLU activation for transformers

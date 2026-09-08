@@ -5,7 +5,7 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**22 document(s) awaiting a decision.**
+**26 document(s) awaiting a decision.**
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -16,10 +16,10 @@
 | 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 16 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
 | 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 10 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 8 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
+| 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 7 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 6 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
 | 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 5 | 0 | Decay the learning rate linearly all the way to zero |
-| 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 4 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
-| 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 0 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
+| 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 2 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 5 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
 | 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 4 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
 | 2026-09-07 | Proposed | [ADR-016](../../record/decisions.d/ADR-016.md) | 2 | 1 | Contested is a claim about specific other work, so it must name it |
@@ -28,6 +28,10 @@
 | 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 1 | 0 | Pack training documents by best fit instead of concatenating and splitting |
 | 2026-09-07 | Proposed | [SOTA-155](../../record/practices.d/SOTA-155.md) | 1 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
 | 2026-09-07 | Proposed | [SOTA-157](../../record/practices.d/SOTA-157.md) | 1 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
+| 2026-09-08 | Proposed | [SOTA-tmpa81q9](../../record/practices.d/SOTA-tmpa81q9.md) | 3 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
+| 2026-09-08 | Proposed | [SOTA-tmp0cmo2](../../record/practices.d/SOTA-tmp0cmo2.md) | 1 | 0 | Bound the activation's output range when training in low precision |
+| 2026-09-08 | Proposed | [SOTA-tmp24dx3](../../record/practices.d/SOTA-tmp24dx3.md) | 1 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
+| 2026-09-08 | Proposed | [SOTA-tmpvsqdg](../../record/practices.d/SOTA-tmpvsqdg.md) | 1 | 0 | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself |
 | 2026-09-08 | Proposed | [SOTA-tmpoacn9](../../record/practices.d/SOTA-tmpoacn9.md) | 0 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
 | 2026-09-08 | Proposed | [SOTA-tmps4txf](../../record/practices.d/SOTA-tmps4txf.md) | 0 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
 | 2026-09-08 | Proposed | [SOTA-tmpzajmo](../../record/practices.d/SOTA-tmpzajmo.md) | 0 | 0 | Widen the residual stream into several streams and constrain the mixing between them |
@@ -36,4 +40,4 @@ The citation count is the second axis, and it flips the priority: an old proposa
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (6): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-tmpoacn9](../../record/practices.d/SOTA-tmpoacn9.md), [SOTA-tmps4txf](../../record/practices.d/SOTA-tmps4txf.md), [SOTA-tmpzajmo](../../record/practices.d/SOTA-tmpzajmo.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (5): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [SOTA-tmpoacn9](../../record/practices.d/SOTA-tmpoacn9.md), [SOTA-tmps4txf](../../record/practices.d/SOTA-tmps4txf.md), [SOTA-tmpzajmo](../../record/practices.d/SOTA-tmpzajmo.md) — these are the cheapest to close, since nothing depends on the answer.

@@ -5,7 +5,7 @@ formerly:
 title: 'Train the generative model in a learned compressed latent, not at full resolution'
 version: 1
 tags:
-- model-architecture
+- representation-and-encoding
 consensus: universal
 date: '2026-09-08'
 source:
@@ -54,6 +54,18 @@ first stage are invisible to the second stage's loss.
 Marked `universal` for the domain it was shown in: latent-space training is
 what essentially every deployed image and video generator does, and doing it
 at full resolution is what would need justifying.
+
+## Why this is an encoding claim rather than an architecture one
+
+Filed under `representation-and-encoding` alongside BPE tokenization, and the
+pairing is the argument: both fit a cheap encoder that compresses the signal,
+then train the expensive model on what comes out. One discrete, one
+continuous. A latent autoencoder is a tokenizer that did not round.
+
+That is also the line that keeps the topic from becoming a bag of anything
+with "latent" in it. [SOTA-147](SOTA-147.md) compresses internal state at serving time and
+[SOTA-180](SOTA-180.md) compresses weights; neither touches how the input signal is encoded,
+and both stay where they are.
 
 ## Known implementations
 

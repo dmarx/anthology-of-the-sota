@@ -243,10 +243,12 @@ title       = "Curation log"
 blurb       = "Why things entered the anthology, and why they left."
 
 [luria.code]
-globs      = ["src/**/*.py", "docs/**/*.j2"]
-# README.md is assembled from the templates under docs/readme/, which are
-# themselves scanned — so a claim in one is still checked, and listing the
-# generated result only keeps the same reference from being reported twice.
+globs      = ["src/**/*.py"]
+# README.md used to be assembled from templates under docs/readme/, which
+# were scanned instead of the rendered result so one reference was not
+# reported twice. The templates are gone and README.md is an ordinary file
+# now, but it stays `historical`: it is prose about the project rather than a
+# claim the record has to keep current.
 historical = ["CHANGELOG.md", "README.md"]
 
 [luria.site]

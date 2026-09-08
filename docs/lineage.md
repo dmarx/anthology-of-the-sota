@@ -24,7 +24,7 @@
 ## From DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models
 
 - alongside: [LIT-127](../record/literature.d/LIT-127.md) — DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models *(Active)*
-- alongside: [LIT-tmp776w0](../record/literature.d/LIT-tmp776w0.md) — Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning *(Active)*
+- alongside: [LIT-211](../record/literature.d/LIT-211.md) — Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning *(Active)*
 
 ## From Mamba: Linear-Time Sequence Modeling with Selective State Spaces
 
@@ -59,5 +59,5 @@
 
 ## From DiLoCo: Distributed Low-Communication Training of Language Models
 
-- [LIT-tmp84crn](../record/literature.d/LIT-tmp84crn.md) — DiLoCo: Distributed Low-Communication Training of Language Models *(Active)*
-  - [LIT-tmpwmo68](../record/literature.d/LIT-tmpwmo68.md) — Streaming DiLoCo with overlapping communication: Towards a Distributed Free Lunch *(Active)*
+- [LIT-212](../record/literature.d/LIT-212.md) — DiLoCo: Distributed Low-Communication Training of Language Models *(Active)*
+  - [LIT-214](../record/literature.d/LIT-214.md) — Streaming DiLoCo with overlapping communication: Towards a Distributed Free Lunch *(Active)*

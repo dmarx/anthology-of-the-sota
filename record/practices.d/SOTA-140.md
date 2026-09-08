@@ -139,10 +139,10 @@ Warm restarts ([LIT-042](../literature.d/LIT-042.md), retired) → a single cosi
 <!-- inactive-ok: SOTA-141 — a Proposed refinement of the decay, named as part of the schedule chain -->
 being settled ([SOTA-141](SOTA-141.md)) and its peak set by scaling law ([SOTA-142](SOTA-142.md)).
 
-<!-- inactive-ok-block: SOTA-tmpvlopd — Proposed, and it is named here as the
+<!-- inactive-ok-block: SOTA-156 — Proposed, and it is named here as the
      rival that is not yet asserted, which is what Proposed is for -->
 
-There is a third answer, filed as [SOTA-tmpvlopd](SOTA-tmpvlopd.md) and `Proposed`.
+There is a third answer, filed as [SOTA-156](SOTA-156.md) and `Proposed`.
 Schedule-Free AdamW says the branch point above was the wrong one: the
 question is not which shape to decay through but whether to name a stopping
 time at all. It reaches this practice's headline property — the token budget

@@ -50,7 +50,7 @@ summary: >-
 corrected_by:
 - SOTA-146
 compared_against:
-- SOTA-tmpex7d9
+- SOTA-154
 ---
 
 # SOTA-145: Estimate the RL baseline from a group of samples for the same prompt instead of training a critic
@@ -102,11 +102,11 @@ stage; both name RLVR as a stage and neither names an algorithm. This is the
 algorithm, and it is orthogonal to that argument — the group baseline is what
 you run either way.
 
-<!-- inactive-ok-block: SOTA-tmpex7d9 — Proposed, and named as the rival
+<!-- inactive-ok-block: SOTA-154 — Proposed, and named as the rival
      paradigm this practice is measured against -->
 
 And it does not say policy-gradient RL is the right *family*. Evolution
-strategies ([SOTA-tmpex7d9](SOTA-tmpex7d9.md), `Proposed`) reach the same goal without
+strategies ([SOTA-154](SOTA-154.md), `Proposed`) reach the same goal without
 backpropagation and report a larger average improvement than either PPO or
 GRPO on the one task they share — on a single fixed hyperparameter set,
 against RL tuned per experiment. That is not a counterexample to the argument

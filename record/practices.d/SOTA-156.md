@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmpvlopd
 promote_when: >-
   A pretraining report at the scale where the schedule question is actually
   open — LIT-131 and LIT-145 disagree above 1B parameters and 1T tokens —
@@ -22,22 +24,22 @@ source:
 # The paper is the only evidence there is. Filed as a list because the
 # practice that later gains a replication needs somewhere to put it
 # (ADR-010) — and gaining one is exactly what promote_when is waiting for.
-- LIT-tmpszcb7
+- LIT-213
 implementations:
 - 'facebookresearch/schedule_free'
 summary: >-
-  Defazio et al. (2024), [LIT-tmpszcb7](../literature.d/LIT-tmpszcb7.md) — scheduling and iterate averaging
+  Defazio et al. (2024), [LIT-213](../literature.d/LIT-213.md) — scheduling and iterate averaging
   are one mechanism, and the averaged form needs no stopping time T, no
   schedule shape and no hyperparameter beyond what AdamW already has. Filed
   `Proposed`: the evidence is a third-party competitive benchmark at
   workloads far below the scale where this record's schedule question is open.
 ---
 
-# SOTA-tmpvlopd: Train without a learning-rate schedule: average the iterates so no stopping time need be fixed
+# SOTA-156: Train without a learning-rate schedule: average the iterates so no stopping time need be fixed
 
 ## Source
 
-Defazio et al. (2024), [LIT-tmpszcb7](../literature.d/LIT-tmpszcb7.md) — [ARXIV-2405.15682](https://arxiv.org/abs/2405.15682).
+Defazio et al. (2024), [LIT-213](../literature.d/LIT-213.md) — [ARXIV-2405.15682](https://arxiv.org/abs/2405.15682).
 
 Every schedule in this record works around the same fact: a schedule that
 knows the stopping step T outperforms one that does not. Cosine handles it by

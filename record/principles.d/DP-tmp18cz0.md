@@ -1,0 +1,61 @@
+---
+status: Active
+title: A pass finds only the defects its query is shaped like — a clean run is evidence about the query, not about the record
+version: 1
+tags:
+- craft
+date: '2026-09-08'
+influenced_by:
+- ADR-015
+- ADR-017
+---
+
+# DP-tmp18cz0: A pass finds only the defects its query is shaped like — a clean run is evidence about the query, not about the record
+
+An audit begins by choosing a candidate list, and the choice is usually made
+in a sentence, early, while thinking about something else. That sentence
+decides everything the pass can find. Run it to completion, fix every finding,
+and what you have earned is the absence of one shape of defect — which feels
+identical, from the inside, to the absence of defects.
+
+The gap is not carelessness and cannot be closed by care. A query is a filter
+and a filter has a complement; running the filter harder does not sample the
+complement. The only thing that finds the complement is a *different query*,
+chosen deliberately, usually by asking what the first one could not have
+returned.
+
+Three ways it goes wrong, all of them observed here in one week:
+
+**Direction.** A relation has two ends, and a query over it picks one. A pass
+whose candidate list is "codes cited in the body that the evidence field does
+not name" can only *add* evidence and can never remove any, because a code
+wrongly present produces no body-only citation to flag. Every batch of that
+pass was correct. The pass could not have found the three practices citing
+adoption as support, and asking the opposite question — which entries in this
+field are model reports? — returned them immediately.
+
+**Recency.** A pass keyed to what changed cannot see a document whose
+*surroundings* changed. A re-derivation of consensus values, whose candidate
+list was "practices whose support lists moved", missed a practice whose note
+said "nobody has contradicted it either" while its own body argued with two
+papers that do. Its support list had not moved. Everything around it had.
+
+**Evidence of absence.** A refusal leaves a sentence you can search for. An
+omission leaves nothing. Grepping the record for "not filed as a practice" is
+a complete method for one half of a problem and returns literally nothing of
+the other half — the techniques so settled that nobody ever argued about
+them, and so were never written down at all.
+
+Applied here: every pass in this record's history is recorded in the journal
+with the query it ran, which is the only form in which a future reader can
+tell what it did not cover. The check that shipped with the evidence-field
+decision has this property and says so in its own text — it verifies one
+containment and is blind to the reverse, and that is written down beside it
+rather than discovered later by someone trusting a green run.
+
+The corollary, and it is cheap: **after a pass over a relation, run it once in
+the other direction.** It takes minutes, it is mechanical, and here it found
+three defects in a field that had just been declared clean. The expensive
+version of this lesson is the one where a clean report is quoted as a
+guarantee six months later by someone who was not there when the query was
+chosen.

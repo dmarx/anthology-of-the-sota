@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [7 Sep 21:56 — Every practice in the registry says "autoregressive transformer" and none of them writes it down](2026-09.md#20260907215631)
 - [7 Sep 21:50 — Proposed is where a recommendation waits, and declining to file is not the same as filing a doubt](2026-09.md#20260907215040)
 - [7 Sep 21:14 — A pass can only find the defect its method is shaped like](2026-09.md#20260907211428)
 - [7 Sep 21:01 — What the source pass found, and what it cost](2026-09.md#20260907210155)
@@ -33,9 +34,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-26 entries across 2 books, newest first.
+27 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 24 | 2026-09-05 | 2026-09-07 |
+| [2026-09](2026-09.md) | 25 | 2026-09-05 | 2026-09-07 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

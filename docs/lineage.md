@@ -2,7 +2,7 @@
 
 # Lines of work
 
-8 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+9 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 ## From Language Modeling with Gated Convolutional Networks
 
@@ -61,3 +61,8 @@
 
 - [LIT-212](../record/literature.d/LIT-212.md) — DiLoCo: Distributed Low-Communication Training of Language Models *(Active)*
   - [LIT-214](../record/literature.d/LIT-214.md) — Streaming DiLoCo with overlapping communication: Towards a Distributed Free Lunch *(Active)*
+
+## From Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture
+
+- [LIT-tmpifi5m](../record/literature.d/LIT-tmpifi5m.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
+  - [LIT-tmp0kze1](../record/literature.d/LIT-tmp0kze1.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*

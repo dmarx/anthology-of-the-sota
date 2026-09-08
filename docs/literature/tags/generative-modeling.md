@@ -4,7 +4,7 @@
 
 Diffusion, samplers, text-to-image, conditioning and control.
 
-14 of 214 LIT documents. Back to the [full index](../README.md).
+15 of 218 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -22,3 +22,4 @@ Diffusion, samplers, text-to-image, conditioning and control.
 | [LIT-091](../../../record/literature.d/LIT-091.md) | T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models | Mou et al. (2023), [ARXIV-2302.08453](https://arxiv.org/abs/2302.08453). Controllable generation. | Active |
 | [LIT-093](../../../record/literature.d/LIT-093.md) | Consistency Models | Song et al. (2023), [ARXIV-2303.01469](https://arxiv.org/abs/2303.01469). Single-step generation. | Active |
 | [LIT-118](../../../record/literature.d/LIT-118.md) | PhotoMaker: Customizing Realistic Human Photos via Stacked ID Embedding | Li et al. (2023), [ARXIV-2312.04461](https://arxiv.org/abs/2312.04461). ID-preserving generation. | Active |
+| [LIT-tmpnlabe](../../../record/literature.d/LIT-tmpnlabe.md) | Large Language Diffusion Models | Nie et al. (2025), [ARXIV-2502.09992](https://arxiv.org/abs/2502.09992). LLaDA: an 8B language model trained from scratch under the ordinary pretrain-then-SFT paradigm, with the autoregressive factorization replaced by masked diffusion — a forward masking process and a reverse process that predicts masked tokens, optimizing a likelihood lower bound. Competitive with LLaMA3 8B on in-context learning, and beats GPT-4o on reversal poem completion. | Active |

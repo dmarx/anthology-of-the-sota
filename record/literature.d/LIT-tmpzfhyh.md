@@ -1,0 +1,72 @@
+---
+status: Active
+title: 'Video models are zero-shot learners and reasoners'
+version: 1
+tags:
+- vision-and-graphics
+date: '2026-09-07'
+published: '2025-09-01'
+arxiv: '2509.20328'
+first_author: 'Wiedemer'
+keywords:
+- 'video-generation'
+- 'zero-shot'
+- 'foundation-models'
+- 'visual-reasoning'
+- 'emergent-capabilities'
+implementations:
+- 'Veo 3'
+summary: >-
+  Wiedemer et al. (2025), [ARXIV-2509.20328](https://arxiv.org/abs/2509.20328). The argument is an analogy
+  and it is stated as one: large generative models on web-scale data made
+  language models generalist, the same primitives now describe video models,
+  so vision may be about to follow. Veo 3 is shown solving segmentation, edge
+  detection, image editing, affordance recognition, tool-use simulation and
+  early visual reasoning (mazes, symmetry) that it was never trained on.
+---
+
+# LIT-tmpzfhyh: Video models are zero-shot learners and reasoners
+
+Wiedemer et al. (2025) — [ARXIV-2509.20328](https://arxiv.org/abs/2509.20328)
+
+## Key takeaways
+
+**The claim is about a trajectory, not a benchmark.** NLP moved from
+task-specific models to generalist foundation models on three primitives —
+large models, generative objective, web-scale data — and the paper's premise
+is that today's video models have all three. What it demonstrates is that
+Veo 3 already does things nobody trained it to do; what it argues is that
+this is the same curve.
+
+**The breadth is the evidence.** Segmenting objects, detecting edges, editing
+images, understanding physical properties, recognising affordances,
+simulating tool use — and then early visual reasoning built on those: maze
+solving, symmetry. A model that could do one of these zero-shot would be a
+trick; the range is what makes the generalist reading plausible.
+
+**It is a capability report on a closed model.** Veo 3 is not open, its
+training data and recipe are not disclosed, and nothing here is a training
+recommendation. Read it as a claim about where the frontier is going, made
+by observing one system from the outside.
+
+## Standing in the anthology
+
+**Adjacent, and filed to mark the boundary.** This record is about training
+recipes for language models: what to do and which published work says why.
+Nothing in it trains a video model, and this paper proposes no training
+change — it reports emergent behaviour and draws an analogy. Both halves are
+outside the registry's scope.
+
+It earns a note anyway because the analogy is a live question about the
+record's own subject. If the video trajectory really does recapitulate the
+language one, the practices here — schedules, optimizers, sparsity, context
+extension — are the ones that would transfer, and the interesting question
+becomes which of them are about *language* and which are about *large
+generative models trained on web-scale data*. The record has no material on
+that question. Filing this is the first entry in a folder that is currently
+empty.
+
+**What would move it inside.** A frontier video training report with a
+disclosed recipe — the video equivalent of what [LIT-139](LIT-139.md) or [LIT-131](LIT-131.md) are for
+language — is what would let a practice be filed rather than an observation
+noted.

@@ -59,7 +59,7 @@ still does. Collapsing them is what the old schema did, and
 
 Run all four before pushing — then **do not commit what `luria index`
 regenerated.** Views land on `main` only: CI regenerates and commits them on
-the push, and a pull request writes none ([ADR-tmphu321](record/decisions.d/ADR-tmphu321.md)). Run `index` locally
+the push, and a pull request writes none ([ADR-018](record/decisions.d/ADR-018.md)). Run `index` locally
 anyway, because `docs/reports/reference-status.md` is what tells you which
 citations the lint is about to flag; then `git checkout -- docs/` before you
 commit. A branch carrying views is not more up to date, it is a conflict with

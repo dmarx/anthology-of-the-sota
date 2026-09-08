@@ -4,7 +4,7 @@
 
 Moving off the YAML registry, and what happens to it.
 
-3 of 17 decisions. Back to the [full index](../README.md).
+3 of 18 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

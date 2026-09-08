@@ -19,14 +19,14 @@ File one with `luria new adr`.
 
 ## By tag
 
-**[The record](tags/record.md)** (12) — what the schemes hold, and the rules between them:
-[001](../../record/decisions.d/ADR-001.md) · [002](../../record/decisions.d/ADR-002.md) · [004](../../record/decisions.d/ADR-004.md) · [009](../../record/decisions.d/ADR-009.md) · [010](../../record/decisions.d/ADR-010.md) · [011](../../record/decisions.d/ADR-011.md) · [012](../../record/decisions.d/ADR-012.md) · [013](../../record/decisions.d/ADR-013.md) · [014](../../record/decisions.d/ADR-014.md) · [015](../../record/decisions.d/ADR-015.md) · [016](../../record/decisions.d/ADR-016.md) · [017](../../record/decisions.d/ADR-017.md)
+**[The record](tags/record.md)** (13) — what the schemes hold, and the rules between them:
+[001](../../record/decisions.d/ADR-001.md) · [002](../../record/decisions.d/ADR-002.md) · [004](../../record/decisions.d/ADR-004.md) · [009](../../record/decisions.d/ADR-009.md) · [010](../../record/decisions.d/ADR-010.md) · [011](../../record/decisions.d/ADR-011.md) · [012](../../record/decisions.d/ADR-012.md) · [013](../../record/decisions.d/ADR-013.md) · [014](../../record/decisions.d/ADR-014.md) · [015](../../record/decisions.d/ADR-015.md) · [016](../../record/decisions.d/ADR-016.md) · [017](../../record/decisions.d/ADR-017.md) · [018](../../record/decisions.d/ADR-018.md)
 
 **[Taxonomy](tags/taxonomy.md)** (1) — the topic vocabulary and what enforces it:
 [003](../../record/decisions.d/ADR-003.md)
 
-**[Mechanism](tags/mechanism.md)** (9) — identifiers, generation, the lint:
-[005](../../record/decisions.d/ADR-005.md) · [007](../../record/decisions.d/ADR-007.md) · [009](../../record/decisions.d/ADR-009.md) · [010](../../record/decisions.d/ADR-010.md) · [011](../../record/decisions.d/ADR-011.md) · [012](../../record/decisions.d/ADR-012.md) · [014](../../record/decisions.d/ADR-014.md) · [015](../../record/decisions.d/ADR-015.md) · [016](../../record/decisions.d/ADR-016.md)
+**[Mechanism](tags/mechanism.md)** (10) — identifiers, generation, the lint:
+[005](../../record/decisions.d/ADR-005.md) · [007](../../record/decisions.d/ADR-007.md) · [009](../../record/decisions.d/ADR-009.md) · [010](../../record/decisions.d/ADR-010.md) · [011](../../record/decisions.d/ADR-011.md) · [012](../../record/decisions.d/ADR-012.md) · [014](../../record/decisions.d/ADR-014.md) · [015](../../record/decisions.d/ADR-015.md) · [016](../../record/decisions.d/ADR-016.md) · [018](../../record/decisions.d/ADR-018.md)
 
 **[Migration](tags/migration.md)** (3) — moving off the YAML registry, and what happens to it:
 [001](../../record/decisions.d/ADR-001.md) · [006](../../record/decisions.d/ADR-006.md) · [008](../../record/decisions.d/ADR-008.md)
@@ -34,7 +34,7 @@ File one with `luria new adr`.
 **[Workflow](tags/workflow.md)** (1):
 [013](../../record/decisions.d/ADR-013.md)
 
-**By status:** [Active](statuses/Active.md) (14) · [Proposed](statuses/Proposed.md) (2) · [Deferred](statuses/Deferred.md) (0) · [Superseded](statuses/Superseded.md) (1) · [Rejected](statuses/Rejected.md) (0)
+**By status:** [Active](statuses/Active.md) (15) · [Proposed](statuses/Proposed.md) (2) · [Deferred](statuses/Deferred.md) (0) · [Superseded](statuses/Superseded.md) (1) · [Rejected](statuses/Rejected.md) (0)
 
 ## Chronological
 
@@ -67,4 +67,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [ADR-015](../../record/decisions.d/ADR-015.md) | What the field thinks is a second axis, and this record's endorsement is not it | mHC is shipped at 1.6T in a production model, attacked by two independent groups within a month, and `Proposed` here — three facts crushed into one field, because `status:` is this record's editorial position and has no room for the field's. Adds a defaulted `consensus:` vocabulary, orthogonal to status, and declares practice-level lineage so an agreed trunk and its disputed forks stop rendering identically. | Active |
 | [ADR-016](../../record/decisions.d/ADR-016.md) | Contested is a claim about specific other work, so it must name it | [ADR-015](../../record/decisions.d/ADR-015.md) gave the record a way to say the field is arguing about a practice and no way to say who is arguing. The reason lived in `consensus_note:`, which is rendered nowhere and so — by Luria's own rule for what counts as prose — carries bare, unlinkable codes. Adds `contested_by:`, a checked LIT reference required exactly when `consensus: contested`, on the ground that contested is the only value on the axis that asserts a specific other document exists. | Proposed |
 | [ADR-017](../../record/decisions.d/ADR-017.md) v2 | What `source:` holds, and where the work it excludes goes | [ADR-010](../../record/decisions.d/ADR-010.md) made `source:` a list without saying what fills it, so the corpus grew two conventions: [SOTA-132](../../record/practices.d/SOTA-132.md) counts adopters as support, [SOTA-150](../../record/practices.d/SOTA-150.md) counts them as consensus data. This settles it — `source:` holds work that produced evidence about the claim, and adoption without a test is consensus data, which `consensus.yaml` already implies by admitting adopters who did not choose deliberately. The Source *section* is argument and may name non-sources, so prose is not a subset of the field; the field is a subset of the prose, which is checkable and found three defects. The exclusion leaves the problem-setting literature homeless, so the second half says where it goes: succession gains a sign, because a third of the record's `extends:` edges already mean "exists because the parent is broken" and say so only in prose. Rejected: adopters as support, a subset lint in the other direction, `inspired_by` as a new relation, and leaving it undecided. | Active |
+| [ADR-018](../../record/decisions.d/ADR-018.md) | Generated views are committed on main only, and a pull request writes none | Regenerating views on every pull request made two branches conflict on files neither had edited, and made a stacked branch re-conflict after each merge. Adopts luria's split shape ([LU-ADR-068](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-068.md)): views on the default branch only, source repairs on the branch that authored them. | Active |
 

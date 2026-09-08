@@ -106,7 +106,7 @@ Everything not listed here is at Luria's default.
 | key | this project | Luria's default |
 |---|---|---|
 | `issue_url` | `https://github.com/dmarx/anthology-of-the-sota/issues/{n}` | *empty* |
-| `code.globs` | `src/**/*.py`, `docs/**/*.j2` | *empty* |
+| `code.globs` | `src/**/*.py` | *empty* |
 | `code.historical` | `CHANGELOG.md`, `README.md` | `CHANGELOG.md` |
 | `chains.practice` | *6 keys set* | *unset* |
 | `chains.lineage` | *5 keys set* | *unset* |

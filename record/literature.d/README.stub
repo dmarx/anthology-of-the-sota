@@ -22,8 +22,7 @@ recommendations are scoped to language-model training by construction, so the
 diffusion and radiance-field corpus — tagged `generative-modeling` and
 `vision-and-graphics` — can be read here and cannot be recommended here. Not
 on judgement and not on evidence, but because there is no category for such a
-claim to take. [ADR-003](../decisions/ADR-003.md) made that split and
-[DP-008](../design-principles.md) says what it means.
+claim to take. [ADR-003](../../record/decisions.d/ADR-003.md) made that split and [DP-008](../design-principles.md#dp-8) says what it means.
 
 For the rest there is no such decision, and the tag will mislead you if you
 let it. `adaptation-and-tuning` and `inference-optimization` are also absent

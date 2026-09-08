@@ -4,6 +4,7 @@ title: 'Use flash attention for all attention computations when hardware support
 version: 1
 tags:
 - attention-techniques
+- flash-attention
 date: '2026-08-24'
 published: '2022-05-01'
 source:

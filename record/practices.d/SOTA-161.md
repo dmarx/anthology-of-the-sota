@@ -12,6 +12,7 @@ title: "Keep the attention output in FP32 during training, because flash attenti
 version: 1
 tags:
 - model-stability
+- flash-attention
 date: '2026-09-08'
 published: '2025-10-01'
 source:

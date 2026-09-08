@@ -275,22 +275,36 @@ narrow_terms = ["adam", "adamw", "batchnorm", "layernorm", "transformer",
 # The practice line, walked from the fields above. Separate from the paper
 # line because they answer different questions: what did this *paper* build
 # on, versus what does this *recommendation* replace.
+# `invariant = "tags"` asks what every relation here already asserts: two
+# practices joined by succession or rivalry are about the same thing, and a
+# topic in common is what says so. Where none survives the relation, the
+# usual reading is that the vocabulary is short a word rather than that the
+# relation is wrong (luria#214) — which is how ADR-021 found its third topic,
+# by hand, before the check existed.
 [luria.chains.practice]
-scheme   = "SOTA"
-relation = ["extends", "corrects"]
-sibling  = "compared_against"
-output   = "docs/practice-lines.md"
-title    = "Lines of practice"
+scheme    = "SOTA"
+relation  = ["extends", "corrects"]
+sibling   = "compared_against"
+invariant = "tags"
+output    = "docs/practice-lines.md"
+title     = "Lines of practice"
 # Show consensus beside status, which is the whole reason both axes exist:
 # without it the page renders an agreed trunk and a disputed fork the same.
-facet_by = ["status", "consensus"]
+facet_by  = ["status", "consensus"]
 
+# Declared on the reading list too, where it reports more: every note carries
+# exactly one topic and none carries a secondary, so an unbound line is the
+# ordinary state of a lineage that crosses a fault line in the vocabulary —
+# the RoPE papers filed under two topics, Mamba under two, GShard apart from
+# the MoE papers it shards. Those are the findings, and they are #85's to
+# read, not this declaration's to pre-empt.
 [luria.chains.lineage]
-scheme   = "LIT"
-relation = ["extends", "corrects"]
-sibling  = "compared_against"
-output   = "docs/lineage.md"
-title    = "Lines of work"
+scheme    = "LIT"
+relation  = ["extends", "corrects"]
+sibling   = "compared_against"
+invariant = "tags"
+output    = "docs/lineage.md"
+title     = "Lines of work"
 
 # `status:` declared as the controlled vocabulary it is (#181),
 # written by `luria upgrade statuses`.

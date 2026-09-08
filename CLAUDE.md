@@ -47,10 +47,6 @@ still does. Collapsing them is what the old schema did, and
 - **Exactly one primary topic**, from the seven in
   `record/practices.d/tags.yaml`. Secondary tags are free, but add one only
   when it is true — the import deliberately adds none.
-- **`domain:` is a separate axis, and a list.** What the practice is known to
-  apply to, from `record/practices.d/domain.yaml`; it never competes with the
-  primary topic for the one slot. `domain-general` and `unassessed` each
-  stand alone — no lint checks that, so it is on you.
 <!-- inactive-ok-block: LIT-041 — an example of the citation syntax -->
 - **Never hand-write a link target.** Write the bare code — `LIT-041`,
   `ADR-002`, `ARXIV-1412.6980` — and run `luria link --fix`. Prose renders

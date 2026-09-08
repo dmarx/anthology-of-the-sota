@@ -4,8 +4,6 @@ title: 'Overlap prefill and decode compute'
 version: 1
 tags:
 - systems-optimization
-domain:
-- language-modeling
 date: '2026-08-24'
 published: '2023-08-01'
 source:

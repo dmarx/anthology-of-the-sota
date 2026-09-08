@@ -4,8 +4,6 @@ title: 'use gradient clipping'
 version: 1
 tags:
 - training-optimization
-domain:
-- domain-general
 date: '2026-08-24'
 published: '2012-11-01'
 source:

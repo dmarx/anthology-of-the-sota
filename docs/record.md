@@ -108,7 +108,7 @@ Everything not listed here is at Luria's default.
 | `issue_url` | `https://github.com/dmarx/anthology-of-the-sota/issues/{n}` | *empty* |
 | `code.globs` | `src/**/*.py` | *empty* |
 | `code.historical` | `CHANGELOG.md`, `README.md` | `CHANGELOG.md` |
-| `chains.practice` | *6 keys set* | *unset* |
-| `chains.lineage` | *5 keys set* | *unset* |
+| `chains.practice` | *7 keys set* | *unset* |
+| `chains.lineage` | *6 keys set* | *unset* |
 | `lint.narrow_terms` | `adam`, `adamw`, `batchnorm`, `layernorm`, `transformer`, `llama2`, `flash-attention`, `arxiv`, `registry` | *empty* |
 | `site.icon` | `assets/logo.svg` | *empty* |

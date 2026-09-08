@@ -52,6 +52,9 @@ code and run `luria link --fix`.
 **[Representation and encoding](tags/representation-and-encoding.md)** (6) — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them:
 [007](../../record/practices.d/SOTA-007.md) · [063](../../record/practices.d/SOTA-063.md) · [151](../../record/practices.d/SOTA-151.md) · [153](../../record/practices.d/SOTA-153.md) · [179](../../record/practices.d/SOTA-179.md) · [187](../../record/practices.d/SOTA-187.md)
 
+**[Flash-Attention](tags/flash-attention.md)** (2):
+[085](../../record/practices.d/SOTA-085.md) · [161](../../record/practices.d/SOTA-161.md)
+
 **[Tiny-Models](tags/tiny-models.md)** (8):
 [121](../../record/practices.d/SOTA-121.md) · [122](../../record/practices.d/SOTA-122.md) · [123](../../record/practices.d/SOTA-123.md) · [124](../../record/practices.d/SOTA-124.md) · [125](../../record/practices.d/SOTA-125.md) · [126](../../record/practices.d/SOTA-126.md) · [127](../../record/practices.d/SOTA-127.md) · [128](../../record/practices.d/SOTA-128.md)
 

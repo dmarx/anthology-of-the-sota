@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [8 Sep 16:16 — The invariant check, declared and read once](2026-09.md#20260908161610)
 - [8 Sep 07:25 — Ten topics, and a query that names nothing](2026-09.md#20260908072519)
 - [8 Sep 07:12 — The cluster the old scope hid, read](2026-09.md#20260908071238)
 - [8 Sep 05:36 — Widening the scope, and the axis I built and took back out](2026-09.md#20260908053627)
@@ -51,9 +52,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-44 entries across 2 books, newest first.
+45 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 42 | 2026-09-05 | 2026-09-08 |
+| [2026-09](2026-09.md) | 43 | 2026-09-05 | 2026-09-08 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

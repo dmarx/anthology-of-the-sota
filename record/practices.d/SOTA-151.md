@@ -28,7 +28,7 @@ history:
     recommendation is unchanged; the reason for not filing it as contested
     is now cost rather than impossibility.
 tags:
-- attention-techniques
+- adaptation-and-tuning
 date: '2026-09-07'
 published: '2023-06-01'
 source:

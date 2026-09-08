@@ -14,7 +14,7 @@ history:
 superseded_by:
 - SOTA-109
 tags:
-- model-architecture
+- inference-optimization
 date: '2026-08-24'
 published: '2019-11-01'
 source:

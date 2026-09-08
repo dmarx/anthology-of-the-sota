@@ -3,7 +3,7 @@ status: 'Active'
 title: 'ICL permits few-shot task adaptability'
 version: 1
 tags:
-- model-architecture
+- adaptation-and-tuning
 date: '2026-08-24'
 published: '2020-05-01'
 source:

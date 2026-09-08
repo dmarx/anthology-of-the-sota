@@ -5,7 +5,7 @@ formerly:
 title: 'Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself'
 version: 1
 tags:
-- training-optimization
+- adaptation-and-tuning
 consensus: universal
 date: '2026-09-08'
 source:

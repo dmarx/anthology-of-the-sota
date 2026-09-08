@@ -3,7 +3,7 @@ status: Active
 title: 'For tiny specialized models, pretrain from scratch on the target SFT or reasoning data instead of pretrain-then-finetune'
 version: 1
 tags:
-- data-pipeline
+- adaptation-and-tuning
 - tiny-models
 date: '2026-09-05'
 published: '2026-01-15'

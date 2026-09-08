@@ -17,15 +17,19 @@ rather than leaving it to be noticed.
 Roughly a third of these notes produced no practice at all. They are here
 because they are worth reading.
 
-For about two dozen of them the reason is a decision, written down: the
-recommendations are scoped to language-model training by construction, so the
-diffusion and radiance-field corpus — tagged `generative-modeling` and
-`vision-and-graphics` — can be read here and cannot be recommended here. Not
-on judgement and not on evidence, but because there is no category for such a
-claim to take. [ADR-003](../../record/decisions.d/ADR-003.md) made that split and [DP-008](../design-principles.md#dp-8) says what it means.
+<!-- inactive-ok-block: ADR-020 — Proposed, named as the decision that ends the old scope this paragraph describes -->
+For about two dozen of them — the diffusion and radiance-field corpus, tagged
+`generative-modeling` and `vision-and-graphics` — the reason used to be a
+scope decision: the recommendations were scoped to language-model training by
+construction, so such a paper could be read here and not recommended here.
+[ADR-020](../../record/decisions.d/ADR-020.md) ends that. The recommendations are scoped by the **kind of claim**
+now, and where the work was discovered is not the test, so those notes are
+unread rather than ineligible. Several of them carry an instruction one of the
+seven topics holds perfectly well — a preconditioning scheme, a noise-level
+sampling distribution, a model-in-the-loop annotation bootstrap.
 
-For the rest there is no such decision, and the tag will mislead you if you
-let it. `adaptation-and-tuning` and `inference-optimization` are also absent
+The rest never had even that excuse, and the tag will mislead you if you let
+it. `adaptation-and-tuning` and `inference-optimization` are also absent
 from the practice vocabulary, but they are **not** ground the recommendations
 decline: the record files fine-tuning, preference-training and quantization
 practices under `training-optimization` and `systems-optimization`, and has

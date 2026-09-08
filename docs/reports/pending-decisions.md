@@ -29,7 +29,7 @@
 | 2026-09-07 | Proposed | [SOTA-155](../../record/practices.d/SOTA-155.md) | 1 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
 | 2026-09-07 | Proposed | [SOTA-157](../../record/practices.d/SOTA-157.md) | 1 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
 | 2026-09-08 | Proposed | [SOTA-160](../../record/practices.d/SOTA-160.md) | 4 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
-| 2026-09-08 | Proposed | [ADR-020](../../record/decisions.d/ADR-020.md) | 2 | 0 | The recommendations are scoped by kind of claim, not by domain |
+| 2026-09-08 | Proposed | [ADR-020](../../record/decisions.d/ADR-020.md) | 3 | 0 | The recommendations are scoped by kind of claim, not by domain |
 | 2026-09-08 | Proposed | [SOTA-158](../../record/practices.d/SOTA-158.md) | 1 | 0 | Bound the activation's output range when training in low precision |
 | 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 1 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
 | 2026-09-08 | Proposed | [SOTA-168](../../record/practices.d/SOTA-168.md) | 1 | 0 | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself |

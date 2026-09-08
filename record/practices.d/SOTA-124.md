@@ -4,12 +4,19 @@ promote_when: >-
   A measurement of the memorization window at a second model scale, by
   anyone, so the linear-in-parameters assumption can be checked instead of
   assumed. The source offers one point and calls the scaling a conjecture.
-consensus: unreplicated
+consensus: contested
 consensus_note: >-
   The source calls it a hypothesis with one measurement behind it and the
-  systematic study future work. Nobody has contradicted it either.
+  systematic study future work — and two published positions now disagree.
+  LIT-166 puts the bound at four epochs from 400 runs; LIT-175 says
+  repetition overfits severely and the overfitting is a property of the
+  objective. The three are not measuring the same quantity, which is why the
+  disagreement is live rather than settled.
+contested_by:
+- LIT-166
+- LIT-175
 title: 'Repeat high-quality data freely when its epoch size exceeds the model''s memorization window'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -19,6 +26,13 @@ history:
     blogpost. LIT-166 and LIT-175 remain in the body: they are the positions
     this argues with, and ADR-010's rule is that contrast is not support. The
     recommendation is unchanged.
+- version: 3
+  date: '2026-09-08'
+  note: >-
+    Moved from `unreplicated` to `contested`, with `contested_by` naming
+    LIT-166 and LIT-175. The note said "nobody has contradicted it either"
+    while the body had argued with both papers for a month — the field moved
+    and the axis did not. The recommendation is unchanged.
 tags:
 - data-pipeline
 - tiny-models

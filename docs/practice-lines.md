@@ -2,13 +2,23 @@
 
 # Lines of practice
 
-8 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+10 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+
+## From Use SwiGLU activation for transformers
+
+- alongside: [SOTA-034](../record/practices.d/SOTA-034.md) — Use SwiGLU activation for transformers *(Active, contested)*
+- alongside: [SOTA-tmp0cmo2](../record/practices.d/SOTA-tmp0cmo2.md) — Bound the activation's output range when training in low precision *(Proposed, emerging)*
 
 ## From use RoPE for LLM (1D sequence) positional embeddings
 
 - [SOTA-063](../record/practices.d/SOTA-063.md) — use RoPE for LLM (1D sequence) positional embeddings *(Active, unassessed)*
   - [SOTA-151](../record/practices.d/SOTA-151.md) — Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length *(Active, converged)*
 - alongside: [SOTA-153](../record/practices.d/SOTA-153.md) — Drop positional encoding from the global-attention layers of a hybrid and let the cheap local layers carry position *(Active, emerging)*
+
+## From Use flash attention for all attention computations when hardware supports it
+
+- [SOTA-085](../record/practices.d/SOTA-085.md) — Use flash attention for all attention computations when hardware supports it *(Active, unassessed)*
+  - [SOTA-tmpbp6p9](../record/practices.d/SOTA-tmpbp6p9.md) — Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling *(Active, unreplicated)*
 
 ## From Prefer GQA to MQA or MHA
 

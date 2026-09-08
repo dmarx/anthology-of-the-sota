@@ -1,0 +1,53 @@
+---
+status: Active
+title: What everyone agrees on has no author, so nothing prompts anyone to write it down
+version: 1
+tags:
+- craft
+date: '2026-09-08'
+influenced_by:
+- ADR-011
+- ADR-017
+---
+
+# DP-tmpa5b6w: What everyone agrees on has no author, so nothing prompts anyone to write it down
+
+A collection assembled from published work inherits the publication record's
+shape, including its blind spot. Papers are written about what is *new*. So
+the filing habit runs on arrivals: something appears, it has a name and a
+claim, and the claim becomes an entry.
+
+Agreement has no arrival. Nobody publishes the thing four papers assume,
+because assuming it is not a contribution — and a step everybody takes
+generates no argument, so there is nothing to notice. The result is a
+collection that is systematically strongest on what is disputed and weakest
+on what is settled, which is close to the opposite of what a reader wants.
+
+It shows up in two shapes, and the second is the one that looks absurd
+afterwards.
+
+**The trunk with no document.** Four papers propose four ways to constrain
+the same mechanism. Each disagreement gets an entry, because each is
+somebody's contribution. The thing all four take for granted — the reason any
+of them is worth doing — gets none. The disputed part is documented and the
+agreed part is not.
+
+**The refinement filed before the thing it refines.** Somebody measures a
+knob on a technique, and the measurement is recent and local and feels like
+news, so it is filed. The technique it is a knob on was established years
+earlier and simply assumed, so it is not. A reader then finds a footnote with
+no text above it.
+
+Applied here: the record carried a practice about whether to mask the loss on
+part of a training sample for four months before it carried the practice of
+constructing that sample at all; and it carried two rival constraints on a
+widened residual stream while the widening itself — the thing both rivals
+exist to make usable — had no entry until somebody went looking. Neither gap
+was a judgement. Nothing had ever prompted the filing.
+
+The corollary, which is the only reliable defence: **you cannot find these by
+reading what is here.** A refusal leaves a sentence you can search for; an
+agreement leaves silence. The queries that work run backwards from the
+evidence — which sources support no recommendation, which notes explain a
+decision made in some other document — and they have to be run deliberately,
+because nothing will ever remind you to.

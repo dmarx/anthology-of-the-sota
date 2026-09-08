@@ -1,0 +1,45 @@
+---
+status: Active
+title: A vocabulary is a scope decision — a subject with no category is one you declined to hold
+version: 1
+tags:
+- craft
+date: '2026-09-08'
+influenced_by:
+- ADR-002
+- ADR-003
+---
+
+# DP-tmpqq8o7: A vocabulary is a scope decision — a subject with no category is one you declined to hold
+
+A closed list of categories reads like a filing convenience. It is not. Every
+entry has to take exactly one, so the list is the answer to "what is this
+project about" — written down in a config file, usually by someone solving a
+smaller problem, and thereafter binding on everything.
+
+That is fine, and it is better than the alternative of an unbounded list that
+decides nothing. The hazard is that the decision becomes invisible. Nobody
+re-reads a vocabulary; they read the entries that use it. So a subject the
+list cannot express does not produce an error or an argument — it produces
+*nothing*, and the absence is indistinguishable from nobody having got round
+to it.
+
+The practical test is worth stating, because it converts a vague sense of
+scope into a checkable question: **if a claim arrived tomorrow with excellent
+evidence and no category to take, would you add a category or decline the
+claim?** An honest answer to that is the scope, and it is usually more
+specific than anyone would have said out loud.
+
+Applied here: the two schemes carry different vocabularies on purpose. The
+reading list holds vision, generative and theory work; the recommendations
+hold seven topics, none of them about vision. So a vision self-supervision
+paper can be a note and cannot be a recommendation — not on judgement, not on
+evidence, but because there is no category for it to take. **The
+recommendations are scoped to language-model training by construction**,
+which nobody had ever written down, and which is a far better reason for
+declining such a paper than the reason first given.
+
+The corollary: because it is a decision, it can be revisited — but only
+deliberately, by changing the vocabulary, and never by one entry quietly
+taking a tag that does not fit. A category added to admit a single document
+is how a scope stops being one.

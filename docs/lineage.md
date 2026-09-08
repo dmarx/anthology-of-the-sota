@@ -64,5 +64,5 @@
 
 ## From Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture
 
-- [LIT-tmpifi5m](../record/literature.d/LIT-tmpifi5m.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
-  - [LIT-tmp0kze1](../record/literature.d/LIT-tmp0kze1.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*
+- [LIT-216](../record/literature.d/LIT-216.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
+  - [LIT-215](../record/literature.d/LIT-215.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*

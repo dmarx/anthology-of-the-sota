@@ -1,5 +1,7 @@
 ---
 status: Proposed
+formerly:
+- SOTA-tmp704hb
 promote_when: >-
   A pretraining report on a released model above 8B trained this way, or a
   controlled comparison at matched compute against an autoregressive baseline
@@ -22,22 +24,22 @@ source:
 # One paper, and it is the only evidence there is. The comparison it reports
 # is against its own ARM baselines plus published LLaMA3 8B numbers — which
 # is what promote_when is asking somebody else to redo.
-- LIT-tmpnlabe
+- LIT-217
 implementations:
 - 'LLaDA 8B'
 summary: >-
-  Nie et al. (2025), [LIT-tmpnlabe](../literature.d/LIT-tmpnlabe.md) — hold the paradigm fixed (pretrain, then
+  Nie et al. (2025), [LIT-217](../literature.d/LIT-217.md) — hold the paradigm fixed (pretrain, then
   SFT) and swap only the factorization: a forward masking process and a
   reverse process predicting masked tokens, optimizing a likelihood lower
   bound. Competitive with LLaMA3 8B on in-context learning; past GPT-4o on
   reversal poem completion. Filed `Proposed` — one group, one model, 8B.
 ---
 
-# SOTA-tmp704hb: Train the language model as a masked diffusion model rather than autoregressively
+# SOTA-157: Train the language model as a masked diffusion model rather than autoregressively
 
 ## Source
 
-Nie et al. (2025), [LIT-tmpnlabe](../literature.d/LIT-tmpnlabe.md) — [ARXIV-2502.09992](https://arxiv.org/abs/2502.09992).
+Nie et al. (2025), [LIT-217](../literature.d/LIT-217.md) — [ARXIV-2502.09992](https://arxiv.org/abs/2502.09992).
 
 What is being challenged is an identification rather than a benchmark. The
 capabilities everyone attributes to LLMs — in-context learning, instruction

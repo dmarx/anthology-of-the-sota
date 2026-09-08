@@ -1,36 +1,18 @@
+# The anthology is a Luria record, not a Python project. What remains here is
+# one script — the migration that produced `record/` from the frozen YAML in
+# `data/`, kept re-runnable by ADR-008 — and the packaging metadata it needs
+# to be importable.
+#
+# Everything else that used to live here was removed with issue #41: a local
+# README generator superseded by templates and then by nothing, a directory
+# summariser, a package-lock helper, and the test suite that covered them.
 [project]
 name = "scripts"
 version = "0.1.0"
-description = ""
+description = "The frozen migration that produced this record from its pre-luria YAML."
 requires-python = ">=3.11"
 dependencies = [
-    "Jinja2>=3.1.2",
-    "tomli>=2.0.1",
-    "loguru>=0.7.0",
-    "fire>=0.5.0",
-    "pyyaml", # todo: deprecate in favor of omegaconf
-    "omegaconf",
-    "llamero",
-    "luria>=0.8.1",
-]
-
-[project.optional-dependencies]
-test = [
-    "pytest>=7.0",
-    "pytest-cov>=4.0",
-]
-site = [
-    "markdown2>=2.4.0",
-]
-summary = [
-    "loguru>=0.7.0",
-    "fire>=0.5.0",
-]
-# Meta-dependency that includes everything
-all = [
-    "pytest>=7.0",
-    "pytest-cov>=4.0",
-    "markdown2>=2.4.0",
+    "pyyaml",
 ]
 
 [build-system]
@@ -39,76 +21,3 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/scripts"]
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-python_files = ["test_*.py"]
-addopts = "-v"
-
-[tool.readme.sections.order]
-"introduction.md.j2" = 0
-"record.md.j2" = 0.5
-"features.md.j2" = 1
-"prerequisites.md.j2" = 2
-"setup.md.j2" = 2.1
-"installation.md.j2" = 2.2
-"usage.md.j2" = 3
-"development.md.j2" = 4
-"summaries.md.j2" = 5
-"site.md.j2" = 6
-"todo.md.j2" = 999
-
-[tool.summary]
-max_file_size_kb = 500  # Skip files larger than 1MB
-
-# File patterns to exclude
-exclude_patterns = [
-    '.git',
-    '.gitignore',
-    '.pytest_cache',
-    '__pycache__',
-    'SUMMARY',
-    '.coverage',
-    '.env',
-    '.venv',
-    '.idea',
-    '.vscode',
-    'README.md',
-    'README_LLM.md',
-    'package-lock.json',
-    'REGISTRY.md',
-    'research.yaml',
-    'registry.yaml',
-    'bibliography',
-    '.bibtex'
-]
-
-# File extensions to include
-include_extensions = [
-    '.py',
-    '.md',
-    '.txt',
-    '.yml',
-    '.yaml',
-    '.toml',
-    '.json',
-    '.html',
-    '.css',
-    '.js',
-    '.ts',
-    '.tsx',
-    '.j2'
-]
-
-# Directories to exclude
-exclude_directories = [
-    '.git',
-    '__pycache__',
-    '.pytest_cache',
-    '.venv',
-    '.idea',
-    '.vscode',
-    'data',
-    'record',
-    'docs'
-]

@@ -1,68 +1,51 @@
 ## Development Guidelines
 
-### Code Organization for LLM Interaction
+### What this repository is
 
-When developing this project (or using it as a template), keep in mind these guidelines for effective collaboration with Large Language Models:
+An anthology of ML training practice, kept as a [Luria](https://github.com/dmarx/luria)
+record. It is **not** a Python project. There is no application, no test
+suite, and no build — the deliverable is the record in `record/` and the
+generated views in `docs/`.
 
-1. **File Length and Modularity**
-   - Keep files short and focused on a single responsibility
-   - If you find yourself using comments like "... rest remains the same" or "... etc", the file is too long
-   - Files should be completely replaceable in a single LLM interaction
-   - Long files should be split into logical components
+One script survives, `src/scripts/migration/to_record.py`, which produced
+`record/` from the frozen YAML in `data/` and is kept re-runnable by
+`record/decisions.d/ADR-008.md`. It needs `pyyaml` and nothing else.
 
-2. **Dependencies**
-   - All dependencies managed in `pyproject.toml`
-   - Optional dependencies grouped by feature:
-     ```toml
-     [project.optional-dependencies]
-     test = ["pytest", ...]
-     site = ["markdown2", ...]
-     all = ["pytest", "markdown2", ...]  # Everything
-     ```
-   - Use appropriate groups during development:
-     ```bash
-     pip install -e ".[test]"  # Just testing
-     pip install -e ".[all]"   # Everything
-     ```
+If you are looking for how to work here, read `CLAUDE.md` first — it is the
+map, and it links the design principles that the rest assumes.
 
-3. **Testing Standards**
-   - Every new feature needs tests
-   - Write tests before starting on new features to formalize expected behavior (i.e. TDD)
-   - Tests should be clear and focused
-   - Use pytest fixtures for common setups
-   - All workflows depend on tests passing
-   - Test files should follow same modularity principles
-   - Use `pytest` fixtures for common setups
-   - Keep tests focused and well-documented
+### Working on the record
 
-4. **Why This Matters**
-   - LLMs work best with clear, focused contexts
-   - Complete file contents are better than partial updates with ellipsis
-   - Tests provide clear examples of intended behavior
-   - Shorter files make it easier for LLMs to:
-     - Understand the complete context
-     - Suggest accurate modifications
-     - Maintain consistency
-     - Avoid potential errors from incomplete information
+    luria new sota --title "..."   # or: lit, adr, dp, changelog
+    luria link --fix               # spell the targets
+    luria index                    # regenerate every view
+    luria lint                     # the only command that can fail
 
-5. **Best Practices**
-   - Aim for files under 200 lines
-   - Each file should have a single, clear purpose
-   - Use directory structure to organize related components
-   - Prefer many small files over few large files
-   - Consider splitting when files require partial updates
+Run all four before pushing, and do not commit what `luria index` wrote:
+views land on `main` only (`record/decisions.d/ADR-018.md`). CI regenerates
+and commits them on the push; a pull request writes none.
 
-6. **Project Conventions**
-   - Use `loguru` for all logging
-   - Use `fire` for CLI interfaces
-   - use `omegaconf` for yaml
-   - Prefer `pathlib` for file system operations
-   - Type hints should use:
-     - Built-in generics over typing module (PEP 585)
-     - Union operator (`|`) over Optional (PEP 604)
-   - Github Actions is the only available runtime for script execution
-   - All workflows depend on tests passing
-   - Syntax permitting, all files should begin with a comment detailing the current file's name and relative path within the project
+### Conventions
+
+- Aim for files under 200 lines. Each file should have a single, clear
+  purpose, and directory structure should carry the organisation. If you find
+  yourself writing "... rest remains the same", the file is too long.
+- Prefer many small files over few large ones. A file that cannot be replaced
+  whole in one edit is a file that will be edited badly.
+- Syntax permitting, a file begins with a comment naming itself and its path.
+- Where Python is written at all: `loguru` for logging, `fire` for CLIs,
+  `omegaconf` for YAML config, `pathlib` for paths, and type hints using
+  built-in generics (PEP 585) and the union operator (PEP 604).
+- GitHub Actions is the only runtime for script execution here.
+
+### Why the shape matters
+
+Large language models work best with clear, focused contexts. Complete file
+contents beat partial updates with ellipsis; short files make it possible to
+understand the whole context, suggest accurate modifications, and avoid the
+errors that come from working with a fragment. The record's own documents are
+written the same way and for the same reason.
+
 ## The record
 
 The anthology's data is a Luria record, not a YAML registry. Sources live in

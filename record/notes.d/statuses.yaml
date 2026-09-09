@@ -1,0 +1,34 @@
+# What a status means for a reading — which is not what it means for a paper
+# or for a practice, and is the field this record most needed and did not
+# have (ADR-tmp2q9cv).
+#
+# A NOTE's status is a claim about HOW DEEPLY THE PAPER WAS READ, not about
+# whether the paper is any good. That is the LIT scheme's business, and the
+# two are allowed to disagree in every direction: a foundational paper can
+# have a `Skimmed` note, and a paper in the attic can have a `Read` one —
+# reading it carefully is often how it got there.
+#
+# The reason this vocabulary exists at all: LIT-052 and LIT-025 each carried
+# a plausible-looking set of takeaways that turned out not to be about their
+# paper, and eight practices were built on them. Both would have been marked
+# `Unread` under this vocabulary, and nobody would have sourced anything to
+# them.
+
+Read:
+  label: Read
+  blurb: the full text, closely enough to state its assumptions and results
+    exactly — the only status that licenses a claims table
+
+Skimmed:
+  label: Skimmed
+  blurb: abstract, figures and selected sections; honest, useful, and
+    explicitly not enough to source a practice from
+
+Unread:
+  label: Unread
+  blurb: the note exists to record that nobody has read this yet, which is a
+    fact the record could not previously state
+
+Superseded:
+  label: Re-read
+  blurb: a later reading replaced this one, and names it

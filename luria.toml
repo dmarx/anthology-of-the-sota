@@ -207,6 +207,54 @@ tags = ["training-optimization", "systems-optimization", "model-stability",
         "adaptation-and-tuning", "inference-optimization",
         "analysis-and-evaluation"]
 
+# ── The reading: one document per paper someone actually opened ──────────
+# A LIT note says what a paper's STANDING is here. It never said what the
+# paper CONTAINS, and the corpus holds two demonstrations of the cost:
+# LIT-052's six takeaways were about a different paper entirely, and
+# LIT-025's four were in the right neighbourhood and backwards about the
+# finding. Eight practices rested on them. Both notes passed every
+# mechanical check there is (#113) — only reading catches this, and the
+# record had nowhere to put a reading. See ADR-tmp2q9cv.
+[luria.schemes.NOTE]
+dir      = "record/notes.d"
+output   = "docs/notes"
+# `active = "Read"` and not "Active": this scheme's statuses say how deeply
+# the paper was read, so the in-force value is the one that means someone
+# finished it. A `Skimmed` note is a real document and deliberately not in
+# force — a practice sourced to a paper whose only reading is a skim is a
+# finding, and this is what makes the lint able to say so.
+active   = "Read"
+render   = "index"
+allocate = "merge"
+
+# The bibliography lives on the LIT and is not repeated here. This record
+# has already paid for a fact stored twice — LIT-115's wrong author reached
+# six sites because four practices had rendered it into prose (#113) — so a
+# NOTE carries the code and nothing else of the sort.
+#
+# `required = true` is the whole point of the scheme: a reading is a reading
+# OF something. There is no converse on the LIT side, because Luria's
+# converse must be same-scheme and this crosses.
+[luria.schemes.NOTE.references]
+paper = { scheme = "LIT", required = true, many = false }
+
+[luria.schemes.NOTE.fields.status]
+vocabulary = "statuses"
+
+# The same derivation the other two schemes use, over LIT's wider
+# vocabulary — a reading is filed under the paper's topic, not the practice
+# registry's narrower one.
+[luria.schemes.NOTE.fields.primary_topic]
+derive = "{tags[0]}"
+
+[luria.schemes.NOTE.tag_groups.primary_topic]
+require = "exactly-one"
+tags = ["training-optimization", "systems-optimization", "model-stability",
+        "distributed-optimization", "data-pipeline", "attention-techniques",
+        "model-architecture", "generative-modeling", "vision-and-graphics",
+        "adaptation-and-tuning", "inference-optimization",
+        "analysis-and-evaluation"]
+
 # ── This project reasoning about itself ──────────────────────────────────
 [luria.schemes.ADR]
 dir      = "record/decisions.d"

@@ -32,3 +32,15 @@ Unread:
 Superseded:
   label: Re-read
   blurb: a later reading replaced this one, and names it
+
+# On the distribution: luria's inert-status check will report that every NOTE
+# is `Read`, and it is right to. The reason is that the workflow only produces
+# a note when someone finishes a paper, so `Skimmed` and `Unread` are declared
+# and unused — which makes the field predictable, and a predictable field is
+# one the citation checks cannot fire on.
+#
+# That is a finding about the backlog, not about the vocabulary. The fix is to
+# file `Unread` notes for the papers nobody has read, so that "which papers has
+# anyone actually read?" is answerable at a glance rather than by absence. Two
+# hundred stub notes is a migration and a decision, not a side effect of
+# reading the next paper, so it is proposed rather than done. See #114.

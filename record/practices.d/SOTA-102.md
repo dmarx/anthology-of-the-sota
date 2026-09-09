@@ -1,8 +1,22 @@
 ---
 number: 102
-status: 'Active'
+status: Superseded
+superseded_by: SOTA-103
+status_note: >-
+  Names a real component of ODM's policy imprecisely rather than something
+  the paper does not do — the two were one practice split in the import,
+  and SOTA-103 now describes the whole method
 title: 'Implement dynamic temperature scaling for mixing'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-09'
+  note: >-
+    Superseded by SOTA-103 after reading the source (#114), and the body's
+    central argument is corrected. It claimed a temperature and a bandit
+    are different kinds of thing; Exp3's policy is a tempered softmax whose
+    exploration rate is the inverse temperature, so this named a real part
+    of ODM imprecisely rather than naming something absent from the paper.
 tags:
 - data-pipeline
 date: '2026-08-24'
@@ -21,27 +35,40 @@ compared_against:
 
 Albalak et al. (2023), [LIT-117](../literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406).
 
-## The source uses a bandit, not a temperature
+## The temperature is real, and it is inside the bandit
 
-Temperature-based mixing — raising domain proportions to a power to sharpen or
-flatten them — is a real and widely used technique, and it is not [LIT-117](../literature.d/LIT-117.md)'s.
-ODM's mechanism is a **multi-armed bandit**: each domain is an arm, the reward
-is derived from perplexity on the batches training is already taking, and the
-sampling distribution follows from the bandit's exploration policy rather than
-from a temperature applied to fixed weights.
+This practice's body used to argue that a temperature and a bandit are
+different kinds of thing — "a temperature reshapes a distribution somebody
+already chose; a bandit *discovers* the distribution". Reading [LIT-117](../literature.d/LIT-117.md) for
+[#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) shows that is wrong about this bandit.
 
-The two are not interchangeable. A temperature reshapes a distribution somebody
-already chose; a bandit *discovers* the distribution and keeps revising it. The
-practice as written asks for a knob on the first while citing the paper that
-argues you should not have to choose the weights at all.
+Exp3's policy is a **Gibbs distribution** — a softmax over importance-weighted
+rewards — mixed with a uniform distribution for exploration:
 
-## What this needs
+    πₜ(Dᵢ) = (1 − K·ℰₜ) · exp(ℰₜ₋₁·R̂ᵢ) / Σⱼ exp(ℰₜ₋₁·R̂ⱼ)  +  ℰₜ
 
-Either a source that actually recommends dynamic temperature scaling, or
-restatement as what [LIT-117](../literature.d/LIT-117.md) does — allocate sampling across domains online
-from a measured reward. The second is already [SOTA-103](SOTA-103.md)'s territory, which
-suggests these two are one practice split in the import rather than two.
+The exploration rate `ℰₜ` multiplies the reward inside the exponent, which is
+exactly the role an inverse temperature plays, and it varies over training.
+So "dynamic temperature scaling for mixing" is an imprecise name for something
+ODM genuinely has.
 
-Flagged rather than retired: unlike the four retired from the [LIT-051](../literature.d/LIT-051.md) cluster,
-this names a technique that exists and works. What it lacks is this paper as
-evidence for it.
+## Why superseded rather than rejected
+
+Because it names a component, not a practice. The temperature is one term in
+a policy whose other parts — the domain arms, the training-loss reward, the
+importance weighting — are what make the method work, and a recommendation to
+tune the temperature alone would be advice about a knob detached from the
+machine it belongs to.
+
+[SOTA-103](SOTA-103.md) now describes the whole method, which is what the two of these were
+between them. The record's older body already suspected this, saying the two
+"are one practice split in the import rather than two". That was right; the
+reason given for it was not.
+
+## The correction is the point
+
+Two of the three retirements in this cluster stand on the paper containing a
+string zero times. This one does not, and it would have been retired on the
+same evidence if the reading had stopped at a keyword search. The word
+`temperature` appears nowhere in [LIT-117](../literature.d/LIT-117.md); the mechanism it names is in
+equation form on the page.

@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [9 Sep 08:32 — Verifying every arXiv id's author against the API found five wrong names](2026-09.md#20260909083223)
 - [8 Sep 16:16 — The invariant check, declared and read once](2026-09.md#20260908161610)
 - [8 Sep 07:25 — Ten topics, and a query that names nothing](2026-09.md#20260908072519)
 - [8 Sep 07:12 — The cluster the old scope hid, read](2026-09.md#20260908071238)
@@ -52,9 +53,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-45 entries across 2 books, newest first.
+46 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 43 | 2026-09-05 | 2026-09-08 |
+| [2026-09](2026-09.md) | 44 | 2026-09-05 | 2026-09-09 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

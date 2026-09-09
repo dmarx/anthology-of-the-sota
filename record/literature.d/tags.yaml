@@ -51,3 +51,15 @@ inference-optimization:
 analysis-and-evaluation:
   label: Analysis and evaluation
   blurb: theory, interpretability, benchmarks, measurement, debugging
+
+# Added in #114, closing a gap ADR-021 left. That decision added this topic to
+# the PRACTICE vocabulary and not to this one, having noted that the third
+# topic "arrived differently from the first two" — the first two were already
+# LIT's words and this one was not. So the stated invariant broke: where the
+# two vocabularies name the same kind of claim they should use the same word,
+# and a paper about tokenization had nowhere to go here.
+representation-and-encoding:
+  label: Representation and encoding
+  blurb: how the signal is encoded before the expensive network sees it —
+    tokenizers and learned latents, positional encoding, and the frequency or
+    basis choices that go with them

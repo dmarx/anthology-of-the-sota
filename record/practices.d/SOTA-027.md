@@ -1,8 +1,22 @@
 ---
 number: 27
-status: 'Active'
+status: Rejected
+status_note: >-
+  The cited paper contains no discussion of learning rates and argues the
+  parameters in question should be removed rather than tuned. The durable
+  claim — treat norm parameters as their own group — is elsewhere in the
+  record, and is about weight decay rather than rate
 title: 'Use a smaller learning rate for LayerNorm parameters'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-09'
+  note: >-
+    Rejected on reading the source (#114). The body already said "the
+    record cannot support the rate half"; the paper turns out not to
+    mention learning rates at all, and to argue that the parameters be
+    removed. Flagged-for-restatement became a retirement once the source
+    was actually checked.
 tags:
 - model-stability
 date: '2026-08-24'

@@ -227,6 +227,14 @@ active   = "Read"
 render   = "index"
 allocate = "merge"
 
+# Every NOTE is `Read`, and that is the decision rather than an oversight
+# (ADR-025). A note is written when someone finishes a paper, so the ABSENCE
+# of a note is how this record says "unread" — which costs nothing and means
+# the 200-odd papers nobody has read are legible by not having one. `Unread`
+# stays in the vocabulary for what absence cannot express: a deliberate
+# judgement that a paper was looked at and set aside.
+uniform_ok = "absence of a NOTE means unread (ADR-025), so every filed note is a finished reading; `Unread` is reserved for a paper deliberately set aside"
+
 # The bibliography lives on the LIT and is not repeated here. This record
 # has already paid for a fact stored twice — LIT-115's wrong author reached
 # six sites because four practices had rendered it into prose (#113) — so a
@@ -345,6 +353,12 @@ icon    = "assets/logo.svg"
 # phase 4, once the backlog they surface has been worked through.
 [luria.lint]
 fail_on = []
+# `inert-status` is a judgement this project has heard and does not want
+# repeated: the NOTE scheme is uniform by design (ADR-025) and `uniform_ok`
+# below already carries the reason. Muting is the global form of the same
+# answer — the finding is not useful here, and a line nobody acts on costs
+# the report its credibility.
+mute = ["inert-status", "acknowledged-uniformity"]
 narrow_terms = ["adam", "adamw", "batchnorm", "layernorm", "transformer",
                 "llama2", "flash-attention", "arxiv", "registry"]
 

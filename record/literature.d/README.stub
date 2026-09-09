@@ -17,7 +17,6 @@ rather than leaving it to be noticed.
 Roughly a third of these notes produced no practice at all. They are here
 because they are worth reading.
 
-<!-- inactive-ok-block: ADR-020 — Proposed, named as the decision that ends the old scope this paragraph describes -->
 For about two dozen of them — the diffusion and radiance-field corpus, tagged
 `generative-modeling` and `vision-and-graphics` — the reason used to be a
 scope decision: the recommendations were scoped to language-model training by

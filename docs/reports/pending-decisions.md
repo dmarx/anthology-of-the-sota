@@ -5,7 +5,7 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**35 document(s) awaiting a decision.**
+**33 document(s) awaiting a decision.**
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -42,11 +42,9 @@
 | 2026-09-08 | Proposed | [SOTA-176](../../record/practices.d/SOTA-176.md) | 0 | 0 | Hybridise inside the layer: long-term slots, a sliding window, and one softmax over both, with the window size as the only dial |
 | 2026-09-08 | Proposed | [SOTA-177](../../record/practices.d/SOTA-177.md) | 0 | 0 | Decouple the erase address from the write address in a delta-rule recurrence |
 | 2026-09-08 | Proposed | [SOTA-178](../../record/practices.d/SOTA-178.md) | 0 | 0 | Give the recurrence vector-valued gating and in-context learning rates so it can track state a softmax layer provably cannot |
-| 2026-09-09 | Proposed | [ADR-022](../../record/decisions.d/ADR-022.md) | 0 | 0 | The primary topic is derived from the first tag, and the lines assert it |
-| 2026-09-09 | Proposed | [ADR-023](../../record/decisions.d/ADR-023.md) | 0 | 0 | A note carries its number, and answers to a readable second name |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (14): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [ADR-019](../../record/decisions.d/ADR-019.md), [SOTA-166](../../record/practices.d/SOTA-166.md), [SOTA-167](../../record/practices.d/SOTA-167.md), [SOTA-169](../../record/practices.d/SOTA-169.md), [SOTA-172](../../record/practices.d/SOTA-172.md), [SOTA-173](../../record/practices.d/SOTA-173.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-176](../../record/practices.d/SOTA-176.md), [SOTA-177](../../record/practices.d/SOTA-177.md), [SOTA-178](../../record/practices.d/SOTA-178.md), [ADR-022](../../record/decisions.d/ADR-022.md), [ADR-023](../../record/decisions.d/ADR-023.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (12): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [ADR-019](../../record/decisions.d/ADR-019.md), [SOTA-166](../../record/practices.d/SOTA-166.md), [SOTA-167](../../record/practices.d/SOTA-167.md), [SOTA-169](../../record/practices.d/SOTA-169.md), [SOTA-172](../../record/practices.d/SOTA-172.md), [SOTA-173](../../record/practices.d/SOTA-173.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-176](../../record/practices.d/SOTA-176.md), [SOTA-177](../../record/practices.d/SOTA-177.md), [SOTA-178](../../record/practices.d/SOTA-178.md) — these are the cheapest to close, since nothing depends on the answer.

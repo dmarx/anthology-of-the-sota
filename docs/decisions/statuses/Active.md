@@ -4,7 +4,7 @@
 
 **Active** — in force — the current answer, and what a citation should normally point at.
 
-18 of 23 decisions. Back to the [full index](../README.md).
+20 of 23 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -26,3 +26,5 @@
 | [ADR-018](../../../record/decisions.d/ADR-018.md) | Generated views are committed on main only, and a pull request writes none | Regenerating views on every pull request made two branches conflict on files neither had edited, and made a stacked branch re-conflict after each merge. Adopts luria's split shape ([LU-ADR-068](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-068.md)): views on the default branch only, source repairs on the branch that authored them. | Active |
 | [ADR-020](../../../record/decisions.d/ADR-020.md) | The recommendations are scoped by kind of claim, not by domain |  | Active |
 | [ADR-021](../../../record/decisions.d/ADR-021.md) | The practice vocabulary takes the kind-of-claim topics the reading list already has |  | Active |
+| [ADR-022](../../../record/decisions.d/ADR-022.md) | The primary topic is derived from the first tag, and the lines assert it | The topic vocabulary was a constraint on a list — exactly one tag from the seven — with no way to say which tag that was. Deriving `primary_topic` from `{tags[0]}` names it, which lets the chains assert the invariant they actually mean: a line of work stays within one topic. Costs a convention nothing checks, that the primary tag is written first. | Active |
+| [ADR-023](../../../record/decisions.d/ADR-023.md) | A note carries its number, and answers to a readable second name | The pre-migration ids said who and when; `LIT-001` says neither. luria 0.13 can render an alias from a document's own frontmatter, so `LIT-Kingma-2014-001` now resolves wherever `LIT-001` does. An alias rather than a code, because a code that encodes a fact rots when the fact is corrected, and an alias is recomputed on every read. | Active |

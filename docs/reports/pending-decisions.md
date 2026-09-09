@@ -5,7 +5,7 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**38 document(s) awaiting a decision.**
+**35 document(s) awaiting a decision.**
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -23,19 +23,16 @@
 | 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 6 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
 | 2026-09-07 | Proposed | [SOTA-154](../../record/practices.d/SOTA-154.md) | 5 | 0 | Fine-tune with evolution strategies instead of policy-gradient reinforcement learning |
 | 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 4 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
-| 2026-09-07 | Proposed | [ADR-016](../../record/decisions.d/ADR-016.md) | 3 | 1 | Contested is a claim about specific other work, so it must name it |
 | 2026-09-07 | Proposed | [SOTA-156](../../record/practices.d/SOTA-156.md) | 2 | 0 | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed |
 | 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 1 | 0 | Pack training documents by best fit instead of concatenating and splitting |
 | 2026-09-07 | Proposed | [SOTA-155](../../record/practices.d/SOTA-155.md) | 1 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
 | 2026-09-07 | Proposed | [SOTA-157](../../record/practices.d/SOTA-157.md) | 1 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
-| 2026-09-08 | Proposed | [ADR-020](../../record/decisions.d/ADR-020.md) | 8 | 0 | The recommendations are scoped by kind of claim, not by domain |
 | 2026-09-08 | Proposed | [SOTA-160](../../record/practices.d/SOTA-160.md) | 4 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
 | 2026-09-08 | Proposed | [SOTA-158](../../record/practices.d/SOTA-158.md) | 1 | 0 | Bound the activation's output range when training in low precision |
 | 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 1 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
 | 2026-09-08 | Proposed | [SOTA-168](../../record/practices.d/SOTA-168.md) | 1 | 0 | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself |
 | 2026-09-08 | Proposed | [SOTA-179](../../record/practices.d/SOTA-179.md) | 1 | 0 | Truncate the rotary encoding's low frequencies rather than rescaling its base |
 | 2026-09-08 | Proposed | [ADR-019](../../record/decisions.d/ADR-019.md) | 0 | 0 | An automation that writes to shared state names its serialization, and a pacing failure is swept as a class |
-| 2026-09-08 | Proposed | [ADR-021](../../record/decisions.d/ADR-021.md) | 0 | 0 | The practice vocabulary takes the kind-of-claim topics the reading list already has |
 | 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 0 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
 | 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 0 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
 | 2026-09-08 | Proposed | [SOTA-169](../../record/practices.d/SOTA-169.md) | 0 | 0 | Widen the residual stream into several streams and constrain the mixing between them |
@@ -52,4 +49,4 @@ The citation count is the second axis, and it flips the priority: an old proposa
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (15): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [ADR-019](../../record/decisions.d/ADR-019.md), [ADR-021](../../record/decisions.d/ADR-021.md), [SOTA-166](../../record/practices.d/SOTA-166.md), [SOTA-167](../../record/practices.d/SOTA-167.md), [SOTA-169](../../record/practices.d/SOTA-169.md), [SOTA-172](../../record/practices.d/SOTA-172.md), [SOTA-173](../../record/practices.d/SOTA-173.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-176](../../record/practices.d/SOTA-176.md), [SOTA-177](../../record/practices.d/SOTA-177.md), [SOTA-178](../../record/practices.d/SOTA-178.md), [ADR-022](../../record/decisions.d/ADR-022.md), [ADR-023](../../record/decisions.d/ADR-023.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (14): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [ADR-019](../../record/decisions.d/ADR-019.md), [SOTA-166](../../record/practices.d/SOTA-166.md), [SOTA-167](../../record/practices.d/SOTA-167.md), [SOTA-169](../../record/practices.d/SOTA-169.md), [SOTA-172](../../record/practices.d/SOTA-172.md), [SOTA-173](../../record/practices.d/SOTA-173.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-176](../../record/practices.d/SOTA-176.md), [SOTA-177](../../record/practices.d/SOTA-177.md), [SOTA-178](../../record/practices.d/SOTA-178.md), [ADR-022](../../record/decisions.d/ADR-022.md), [ADR-023](../../record/decisions.d/ADR-023.md) — these are the cheapest to close, since nothing depends on the answer.

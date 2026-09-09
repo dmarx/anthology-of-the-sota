@@ -1,8 +1,18 @@
 ---
 number: 11
 status: 'Active'
-title: 'visualizing eigenvalues of hessian (ratio of largest to smallest) over training can be useful diagnostics'
-version: 1
+title: 'Map the Hessian ratio |lambda_min / lambda_max| to find where the loss surface is non-convex'
+version: 2
+history:
+- version: 2
+  date: '2026-09-09'
+  note: >-
+    Two corrections from reading the source (#114). The paper's quantity is
+    |lambda_min / lambda_max| — smallest over largest — and the title had it
+    the other way up, which reads as a condition number rather than a
+    non-convexity measure. And the method that makes it affordable, an
+    implicitly restarted Lanczos over Hessian-vector products, is now in the
+    body. The recommendation is unchanged.
 tags:
 - training-optimization
 date: '2026-08-24'
@@ -16,25 +26,45 @@ summary: >-
   Li et al. (2017), [LIT-014](../literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913).
 ---
 
-# SOTA-011: visualizing eigenvalues of hessian (ratio of largest to smallest) over training can be useful diagnostics
+# SOTA-011: Map the Hessian ratio |lambda_min / lambda_max| to find where the loss surface is non-convex
 
 ## Source
 
 Li et al. (2017), [LIT-014](../literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913).
 
-## What the ratio says
+## What the source actually computes
 
-The Hessian's largest eigenvalue is the curvature along the sharpest
-direction, and the ratio to the smallest is the condition number of the local
-quadratic approximation. A large ratio means the surface is a narrow valley:
-gradient descent oscillates across the steep direction while creeping along
-the shallow one, and the largest stable learning rate is set by the sharpest
-direction rather than by the one that needs progress.
+Figure 7 of [LIT-014](../literature.d/LIT-014.md) maps **`|λ_min/λ_max|`** — smallest over largest — at
+each point of a filter-normalized loss surface. The quantity is interesting
+because `λ_min` is *negative*: the ratio measures how much **negative
+curvature** there is relative to positive, so it is a non-convexity measure,
+not a conditioning one. Blue means near-convex; yellow means significant
+negative curvature. For ResNet-56 the negative eigenvalues stay under **1% of
+the positive curvatures** across a large region — which is the quantitative
+form of "skip connections keep the landscape nearly convex" ([SOTA-010](SOTA-010.md)).
 
-That connects two things the record holds separately. It is the geometry
-behind why adaptive methods help ([SOTA-001](SOTA-001.md) — per-parameter scaling is an
-approximation to preconditioning) and behind why the largest usable learning
-rate moves when normalisation is added ([SOTA-020](SOTA-020.md)).
+The plot only means anything under filter normalization, because a network can
+be rescaled without changing its function and unnormalised curvature moves
+with the rescaling. That condition travels with this practice.
+
+## The condition number is a different diagnostic, and is not from here
+
+This practice's body used to describe the ratio the other way up — `λ_max`
+over `λ_min`, the condition number of the local quadratic approximation — and
+reason from it: a large ratio means a narrow valley, gradient descent
+oscillates across the steep direction, the largest stable learning rate is set
+by the sharpest direction. That is all true, and it connects to why adaptive
+methods help ([SOTA-001](SOTA-001.md)) and why the usable learning rate moves when
+normalisation is added ([SOTA-020](SOTA-020.md)).
+
+It is also not what [LIT-014](../literature.d/LIT-014.md) computes, and the two answer different
+questions: the condition number asks *how hard is this to optimise*, while
+`|λ_min/λ_max|` asks *is this even locally convex*. Stated the wrong way up
+the practice reads as the first while citing the paper that did the second.
+
+The conditioning material is kept because it is worth knowing and is signposted
+as unsourced, which is the honest treatment. If the record wants it as a
+recommendation it needs a paper that makes it.
 
 ## The cost is why this is a diagnostic and not a monitor
 

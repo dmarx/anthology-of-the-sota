@@ -19,6 +19,8 @@ summary: >-
 
 DeepSeek-AI (2026), [LIT-139](../literature.d/LIT-139.md) — DeepSeek-V4.
 
+## The schedule
+
 Start pretraining at a short sequence length and lengthen it in stages:
 V4 trains at 4K, then 16K, 64K and finally 1M tokens, and schedules its
 architectural switch — sparse attention on — at the 64K stage. Kimi K3
@@ -27,7 +29,9 @@ synthetic tasks that can only be solved by attending across the whole
 window. The short stages are where most tokens are cheapest to process; the
 long stages teach the position-dependent behaviour the target length needs.
 
-Conditions: both sources are frontier-scale reports rather than controlled
+## Conditions
+
+Both sources are frontier-scale reports rather than controlled
 comparisons against training at the target length throughout, and neither
 publishes the token split per stage in the material read here. The
 practice is stated because two independent laboratories converged on it

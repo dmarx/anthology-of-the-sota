@@ -22,6 +22,8 @@ extends:
 
 Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
 
+## The comparison
+
 Whether to mask the loss on the prefix and suffix of a FIM sample, as one
 would mask a prompt in SFT, is left unstated in [ARXIV-2207.14255](https://arxiv.org/abs/2207.14255) ([LIT-124](../literature.d/LIT-124.md)) and only
 implicit in [ARXIV-2409.12186](https://arxiv.org/abs/2409.12186) ([LIT-125](../literature.d/LIT-125.md)). Two 90M runs on the same mix (80% FIM, 10%
@@ -32,7 +34,9 @@ more tokens for the same budget, and conclude that for a fixed token and
 compute budget the unmasked data is the more efficient use of it — FIM
 samples serve both the infilling objective and next-token prediction.
 
-Two further details from the same work, worth carrying with the practice:
+## Two details that travel with it
+
+From the same work:
 use PSM format with dedicated `<|prefix|>`, `<|suffix|>`, `<|middle|>`
 tokens; and construct samples in which the model must produce the
 indentation after the prefix itself, since HumanEval-FIM prompts do not

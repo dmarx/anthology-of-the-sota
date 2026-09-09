@@ -16,6 +16,7 @@ implementations:
 compared_against:
 - SOTA-093
 - SOTA-094
+- SOTA-031
 ---
 
 # SOTA-092: smaller batch sizes are more sample efficient (i.e., better loss as a function of tokens seen) earlier in training

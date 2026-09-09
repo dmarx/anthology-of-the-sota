@@ -11,6 +11,9 @@ source:
 - LIT-014
 summary: >-
   Li et al. (2017), [LIT-014](../literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913).
+compared_against:
+- SOTA-011
+- SOTA-012
 ---
 
 # SOTA-010: skip connections promote training stability by smoothing out the loss landscape

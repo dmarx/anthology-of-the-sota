@@ -12,6 +12,8 @@ source:
 summary: >-
   Xiong et al. (2020), [LIT-114](../literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745).
 compared_against:
+- SOTA-008
+- SOTA-009
 - SOTA-032
 ---
 

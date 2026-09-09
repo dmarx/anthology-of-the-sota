@@ -13,6 +13,7 @@ summary: >-
   Dao et al. (2022), [LIT-074](../literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135).
 extended_by:
 - SOTA-087
+- SOTA-107
 ---
 
 # SOTA-086: Tiling size should match hardware SRAM size

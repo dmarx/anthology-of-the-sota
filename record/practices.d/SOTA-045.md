@@ -11,6 +11,8 @@ source:
 - LIT-050
 summary: >-
   Mohan et al. (2020), [LIT-050](../literature.d/LIT-050.md) — [ARXIV-2007.06775](https://arxiv.org/abs/2007.06775).
+compared_against:
+- SOTA-091
 ---
 
 # SOTA-045: Profile data loading separate from training

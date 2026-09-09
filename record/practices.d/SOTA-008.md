@@ -11,6 +11,8 @@ source:
 - LIT-009
 summary: >-
   You et al. (2017), [LIT-009](../literature.d/LIT-009.md) — [ARXIV-1708.03888](https://arxiv.org/abs/1708.03888).
+compared_against:
+- SOTA-100
 ---
 
 # SOTA-008: linear warmup of LR stabilizes early training with large batch size.

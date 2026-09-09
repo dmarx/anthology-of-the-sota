@@ -15,6 +15,8 @@ summary: >-
 extended_by:
 - SOTA-161
 - SOTA-106
+compared_against:
+- SOTA-083
 ---
 
 # SOTA-085: Use flash attention for all attention computations when hardware supports it

@@ -9,6 +9,9 @@ date: '2026-08-24'
 published: '2017-12-01'
 source:
 - LIT-014
+compared_against:
+- SOTA-010
+- SOTA-012
 summary: >-
   Li et al. (2017), [LIT-014](../literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913).
 ---

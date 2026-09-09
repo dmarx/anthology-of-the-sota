@@ -11,6 +11,8 @@ source:
 - LIT-010
 summary: >-
   Smith et al. (2017), [LIT-010](../literature.d/LIT-010.md) — [ARXIV-1708.07120](https://arxiv.org/abs/1708.07120).
+compared_against:
+- SOTA-100
 ---
 
 # SOTA-009: warmup to a large early lr, anneal throughout training to small final lr

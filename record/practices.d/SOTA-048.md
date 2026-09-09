@@ -12,6 +12,8 @@ source:
 # same technique as bucketing. LIT-051 assumed both.
 - LIT-220
 - LIT-219
+compared_against:
+- SOTA-047
 summary: >-
   Jiang et al. (2020), [LIT-051](../literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang.
 ---

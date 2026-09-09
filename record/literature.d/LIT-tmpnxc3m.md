@@ -1,0 +1,58 @@
+---
+status: Active
+title: 'How Does Batch Normalization Help Optimization?'
+version: 1
+tags:
+- model-stability
+date: '2026-09-09'
+published: '2018-05-29'
+arxiv: '1805.11604'
+first_author: 'Santurkar'
+keywords:
+- 'normalization'
+- 'optimization'
+- 'theory'
+summary: >-
+  Santurkar et al. (2018), [ARXIV-1805.11604](https://arxiv.org/abs/1805.11604). "Distributional stability of layer
+  inputs has little to do with the success of BatchNorm" — what it does instead
+  is make the optimization landscape significantly smoother.
+---
+
+# LIT-tmpnxc3m: How Does Batch Normalization Help Optimization?
+
+Santurkar, Tsipras, Ilyas and Madry (2018) — [ARXIV-1805.11604](https://arxiv.org/abs/1805.11604)
+
+## Key takeaways
+
+- Directly contradicts the explanation batch normalization was introduced
+  with: **"distributional stability of layer inputs has little to do with the
+  success of BatchNorm."** The paper injects distributional noise after BN
+  layers — restoring the covariate shift BN was supposed to remove — and the
+  network trains just as well.
+- The mechanism it offers instead: BN "makes the optimization landscape
+  significantly smoother. This smoothness induces a more predictive and stable
+  behavior of the gradients", which is what allows larger steps.
+- The smoothing is not unique to BN. Other normalisations, including ones that
+  do nothing for covariate shift, produce comparable effects — which is the
+  strongest form of the argument, since it separates the property from the
+  technique.
+
+## Why this note exists
+
+[LIT-015](LIT-015.md) carried this paper's author and its takeaways under a different
+paper's title and identifier. The record has held one paper's claims
+attributed to another since the migration, and it was found by trying to write
+down why a practice holds.
+
+It is worth reading alongside [LIT-002](LIT-002.md), whose explanation this replaces. The
+anthology's own design principle is that keeping what you stopped believing is
+most of the content ([DP-003](../../docs/design-principles.md#dp-3)); a technique that works for a reason other than
+the one it was proposed for is exactly that case, and the record can now show
+both halves.
+
+## Standing in the anthology
+
+Filed to correct a conflation rather than to add a topic. The practices that
+turn on the *mechanism* — why BN permits what it permits — belong here;
+[SOTA-020](../practices.d/SOTA-020.md), which is about larger learning rates, stays with [LIT-015](LIT-015.md), whose
+claim that is.

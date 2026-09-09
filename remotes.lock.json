@@ -68,6 +68,9 @@
     "ARXIV/1803.03635": {
       "title": "The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks"
     },
+    "ARXIV/1805.11604": {
+      "title": "How Does Batch Normalization Help Optimization?"
+    },
     "ARXIV/1806.02375": {
       "title": "Understanding Batch Normalization"
     },

@@ -22,6 +22,7 @@ Albalak et al. (2023), [LIT-117](../literature.d/LIT-117.md) — [ARXIV-2312.024
 ## Not a recommendation, and not this paper's
 
 "Monitor domain coverage during training" states no threshold and no
+<!-- inactive-ok-block: SOTA-073, SOTA-074 — Rejected, named as the same no-signal-no-action gap -->
 response, which is the same gap as the retired [SOTA-073](SOTA-073.md) and [SOTA-074](SOTA-074.md): nothing
 a reader can do differently on reading it.
 

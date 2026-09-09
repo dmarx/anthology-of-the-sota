@@ -43,6 +43,7 @@ measure, and hand-write the few operations where the generated code is
 materially short of what the hardware can do. Stated as a general
 recommendation with TVM as its source, it inverts both halves.
 
+<!-- inactive-ok: SOTA-055 — Rejected, named as the contrasting case: that one was wrong, this one is mis-framed -->
 Flagged rather than retired: unlike [SOTA-055](SOTA-055.md), the recommendation is not
 *wrong*, it is mis-framed and mis-cited. Retiring it would lose the real
 narrow claim, and rewriting the title changes what it asserts — which is a

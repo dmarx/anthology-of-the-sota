@@ -66,3 +66,33 @@ LayerNorm is what GPT-2 does.
 ## Known implementations
 
 - llama2
+
+## Pre-norm, and why it changed what training needs
+
+Placing the normalisation inside the residual branch — normalise, then
+sublayer, then add — leaves the residual stream itself unnormalised, so
+there is a clean additive path from the embedding to the output that nothing
+rescales. The original arrangement normalised *after* the addition, which
+puts a normalisation on every step of that path.
+
+The consequence is about gradients at initialisation. Post-norm gives
+expected gradients at the output layer that grow with depth, which is what
+makes a large learning rate diverge early and what a warmup schedule exists
+to survive. Pre-norm bounds them, and [LIT-114](../literature.d/LIT-114.md)'s result is that with it the
+warmup stage can be removed entirely.
+
+That is why this is one of the few architecture practices whose consequence is
+a *training* practice: [SOTA-100](SOTA-100.md)'s warmup-proportional-to-model-size is the
+compensation the post-norm arrangement needed, and pre-norm is what made it
+optional.
+
+## The cost, which is real and shows up at scale
+
+Pre-norm trades trainability for some final quality: the unnormalised
+residual stream grows in magnitude with depth, and deep pre-norm models can
+see later blocks contributing proportionally less — the representation
+collapse argument. Sandwich and peri-layernorm variants exist because of it.
+
+Every large model in this record is pre-norm nonetheless, which is the honest
+summary: the stability is worth more than the margin, and the alternatives
+are refinements of pre-norm rather than returns to post-norm.

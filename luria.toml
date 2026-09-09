@@ -98,6 +98,21 @@ required_when = { status = ["Proposed", "Deferred"] }
 vocabulary = "consensus"
 default    = "unassessed"
 
+# The primary topic, named rather than merely constrained. The tag group
+# below guarantees that exactly one tag comes from the vocabulary; this says
+# WHICH tag that is, by reading the first one. Two things follow that the
+# group alone could not give: the topic can be compared across documents (the
+# chains' `invariant` below), and it can be read as a value rather than
+# inferred by intersecting a list against a vocabulary.
+#
+# Derived, so it is stored nowhere and cannot drift: retagging a practice
+# retags its primary topic in the same edit. The cost is a convention nothing
+# checks — the primary tag must be listed FIRST — which holds in all 188
+# practices and all 218 notes today and is a silent error the day it does
+# not. LU-#229 asks luria for the guard.
+[luria.schemes.SOTA.fields.primary_topic]
+derive = "{tags[0]}"
+
 # The topic consolidation, enforced. Seven categories, exactly one primary
 # per practice; secondary tags are unconstrained. The vocabulary and the
 # one-primary rule both come from ADR-003, which promoted them out of the
@@ -175,6 +190,10 @@ compared_against = { scheme = "LIT", required = false, many = true, converse = "
 # keeps it an edge property without qualifying a reference (ADR-011).
 corrects = { scheme = "LIT", required = false, many = true, converse = "corrected_by" }
 corrected_by = { scheme = "LIT", required = false, many = true, converse = "corrects" }
+
+# The same derivation on the reading list, over the wider vocabulary below.
+[luria.schemes.LIT.fields.primary_topic]
+derive = "{tags[0]}"
 
 # The literature is broader than the practice registry — the corpus carries
 # substantial generative-vision, theory and inference work that never
@@ -300,7 +319,19 @@ narrow_terms = ["adam", "adamw", "batchnorm", "layernorm", "transformer",
 scheme    = "SOTA"
 relation  = ["extends", "corrects"]
 sibling   = "compared_against"
-invariant = "tags"
+# `primary_topic`, not `tags`: the assertion a line makes is that its members
+# are the same KIND of recommendation, and any shared tag is too weak to
+# carry it — two practices bound by an incidental label read as bound when
+# nothing about their subject matter is. This was `tags` only because the
+# primary topic was not a readable field until it was derived above.
+#
+# The change re-opens exactly one edge, SOTA-085 / SOTA-161: flash attention
+# as an attention technique, and keeping its output in FP32 as a stability
+# fix. #101 bound that pair by giving both a `flash-attention` secondary tag,
+# which was the only move available under `exactly-one` — it satisfied the
+# check rather than answering it. The edge is real and crosses a fault line
+# in the vocabulary, which is what these findings are for.
+invariant = "primary_topic"
 output    = "docs/practice-lines.md"
 title     = "Lines of practice"
 # Show consensus beside status, which is the whole reason both axes exist:
@@ -317,7 +348,12 @@ facet_by  = ["status", "consensus"]
 scheme    = "LIT"
 relation  = ["extends", "corrects"]
 sibling   = "compared_against"
-invariant = "tags"
+# The same assertion here, and here it reports the same twelve edges either
+# way: no note carries a secondary tag, so its tags and its primary topic are
+# the same one value. Declared as `primary_topic` regardless, because the two
+# chains should assert the same thing for the same reason, and a note WILL
+# carry a secondary tag one day.
+invariant = "primary_topic"
 output    = "docs/lineage.md"
 title     = "Lines of work"
 

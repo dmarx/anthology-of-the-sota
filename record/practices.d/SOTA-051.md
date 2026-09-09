@@ -1,4 +1,5 @@
 ---
+number: 51
 status: 'Active'
 title: 'Initialize final layer weights near zero'
 version: 1

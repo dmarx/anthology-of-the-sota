@@ -1,4 +1,5 @@
 ---
+number: 113
 status: 'Active'
 title: 'Use continuous batching for inference'
 version: 1

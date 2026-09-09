@@ -1,4 +1,5 @@
 ---
+number: 5
 status: 'Active'
 title: 'Use running statistics for inference'
 version: 1

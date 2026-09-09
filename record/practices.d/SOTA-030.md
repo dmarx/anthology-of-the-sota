@@ -1,4 +1,5 @@
 ---
+number: 30
 status: 'Active'
 title: 'Use ZeRO-3 only when other strategies insufficient'
 version: 1

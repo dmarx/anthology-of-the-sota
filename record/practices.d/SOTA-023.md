@@ -1,4 +1,5 @@
 ---
+number: 23
 status: 'Superseded'
 title: 'Use multi-query attention for decoder-only models to reduce memory bandwidth'
 version: 2

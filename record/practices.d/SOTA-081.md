@@ -1,4 +1,5 @@
 ---
+number: 81
 status: 'Active'
 title: 'Use operator fusion for small operations'
 version: 1

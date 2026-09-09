@@ -1,4 +1,5 @@
 ---
+number: 131
 status: Active
 title: 'When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip)'
 version: 2

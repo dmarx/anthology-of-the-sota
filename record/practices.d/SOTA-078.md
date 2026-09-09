@@ -1,4 +1,5 @@
 ---
+number: 78
 status: 'Active'
 title: 'Buffer size should be 2-3x batch size'
 version: 1

@@ -1,4 +1,5 @@
 ---
+number: 125
 status: Proposed
 promote_when: >-
   The same parameter-budget trade run on a hybrid from another group, or at

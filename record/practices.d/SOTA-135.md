@@ -1,4 +1,5 @@
 ---
+number: 135
 status: Active
 title: 'Give linear-attention layers a gated delta rule: a decay gate for erasure plus a delta update for targeted writes'
 version: 1

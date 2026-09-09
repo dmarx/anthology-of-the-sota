@@ -1,4 +1,5 @@
 ---
+number: 65
 status: 'Active'
 title: 'Initialize layer norm weights closer to 1 for larger models'
 version: 1

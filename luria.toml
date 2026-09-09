@@ -117,6 +117,21 @@ active   = "Active"
 render   = "index"
 allocate = "merge"
 
+# The identifier this anthology gave up, given back as a second spelling.
+# Before the migration a note's id was `MLR-2014-Kingma001-0001` — prefix,
+# year, first author, sequence — and readable without a lookup; it became
+# `LIT-001`. Numeric codes were the right trade (a code that encodes a fact
+# rots when the fact is corrected), but the readability did not have to go
+# with it. An alias is RECOMPUTED from the frontmatter on every read, so it
+# is always true, and `LIT-Kingma-2014-001` resolves wherever `LIT-001` does
+# (LU-ADR-088).
+#
+# `{published:.4}` truncates the date string to its year — no filter, just
+# the format spec `str.format` already has. `{number:03d}` pads to match the
+# code's own spelling, so the two ids read as the same document rather than
+# two conventions. Every one of the 218 notes renders one and no two collide.
+alias    = "LIT-{first_author}-{published:.4}-{number:03d}"
+
 # Every note names a SOURCE, and a source is any of several things: an arXiv
 # identifier, a DOI, or failing both a URL. `requires = ["arxiv"]` demanded
 # the wrong thing of a report that was never posted there, and the first

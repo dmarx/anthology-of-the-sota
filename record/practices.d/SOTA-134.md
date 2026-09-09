@@ -1,4 +1,5 @@
 ---
+number: 134
 status: Active
 title: 'Gate each attention head''s output with a sigmoid after the scaled dot-product'
 version: 2

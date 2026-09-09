@@ -1,0 +1,106 @@
+---
+status: Proposed
+title: 'A note carries its number, and answers to a readable second name'
+version: 1
+tags:
+- mechanism
+date: '2026-09-09'
+summary: >-
+  The pre-migration ids said who and when; `LIT-001` says neither. luria 0.13
+  can render an alias from a document's own frontmatter, so
+  `LIT-Kingma-2014-001` now resolves wherever `LIT-001` does. An alias rather
+  than a code, because a code that encodes a fact rots when the fact is
+  corrected, and an alias is recomputed on every read.
+---
+
+# ADR-tmpoa2hq: A note carries its number, and answers to a readable second name
+
+## Context
+
+Adopting luria cost this anthology something real, and it is still visible in
+`data/research.yaml`, the frozen pre-migration registry:
+
+```yaml
+- id: MLR-2014-Kingma001-0001
+```
+
+Prefix, year, first author, sequence. A reader could tell what that was
+without opening it. It became `LIT-001`, which is stable, checkable, and says
+nothing. That trade was correct — the record's whole argument for numeric
+codes is that identity must not move — but the readability did not have to go
+with it, and nothing was offered in its place.
+
+luria 0.13 ([LU-ADR-088](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-088.md)) separates the two: a scheme can declare a
+template that renders a **second spelling** for each document, and the
+resolver accepts either. The spelling is recomputed from the frontmatter
+every time it is read, so it cannot fall out of step with the note; the code
+stays assigned, and stays the identity.
+
+## Decision
+
+The `LIT` scheme declares:
+
+```toml
+alias = "LIT-{first_author}-{published:.4}-{number:03d}"
+```
+
+`LIT-Kingma-2014-001` and `LIT-001` now name the same note, in prose, in a
+reference field, anywhere a code is written. All 218 notes render one and no
+two collide.
+
+Three details that are choices rather than syntax:
+
+**An alias, not a code.** A derived code would put a mutable fact inside an
+identifier. Correcting a misattributed `first_author:` would then either
+change the document's identity or leave a code reading `Askell` forever,
+correct-by-design and wrong to every reader. The alias is recomputed, so
+correcting the field corrects the name, and `luria repair` moves the old
+spelling to `formerly:` where citations of it still resolve.
+
+**`{number:03d}`, padded.** The unpadded form renders `LIT-Dao-2022-74` beside
+a code that reads `LIT-074`, which invites the reader to wonder whether they
+are the same document. They are, and the padding says so.
+
+**`{published:.4}`, not a `year:` field.** The notes already carry
+`published: '2022-05-01'`; the format spec truncates the string to its year.
+Adding a `year:` field would be storing the same fact twice.
+
+Every document in the record also now carries `number:` in its frontmatter
+([LU-ADR-087](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-087.md)) — 436 of them, written by `luria repair` from the paths they
+already had. The filename remains what it was; it is now a projection of the
+field rather than the only place the number lives, which is what lets a
+template read it.
+
+## Alternatives considered
+
+- **Leave it.** The status quo, and it had lasted this long. What it costs is
+  paid on every read: a citation of `LIT-001` in a practice tells a reader
+  nothing about what evidence is being leaned on, so they open it, every
+  time. The pre-migration ids did not have that cost, and losing a property
+  the old system had is worth noticing rather than absorbing.
+- **A derived code.** Rejected above, and rejected upstream for the same
+  reason. It looks like the tidier answer because there is then one
+  identifier rather than two.
+- **Rename the files to the readable form.** The filename really would then
+  say who and when. It also makes every correction a rename plus a rewrite of
+  every link to it, which is the specific problem [ADR-013](ADR-013.md) settled by putting
+  the title in a field.
+- **An alias on `SOTA` too.** Deliberately not done, and not because it
+  cannot be: a practice has no author and no year, and the only readable
+  thing it carries is its topic — `SOTA-attention-techniques-085` is longer
+  than the code without being much more informative. If a good template
+  exists it can be added later; declaring a bad one now would put a second
+  spelling into circulation that has to be kept forever.
+
+## Consequences
+
+Citations may now be written either way, which means the record can drift
+into using both for the same note. That is tolerable — they resolve
+identically and `luria link --fix` leaves a rendered alias alone — but it is
+a style question the record has not answered, and a later decision may want
+to say which form belongs in prose and which in reference fields.
+
+Adding or correcting `first_author:` or `published:` on an existing note now
+changes its alias. `luria repair` files the superseded spelling under
+`formerly:` so older citations keep resolving; that is a repair to run, not
+one that runs itself.

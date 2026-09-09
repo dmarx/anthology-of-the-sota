@@ -6,9 +6,23 @@ on:
     paths:
       - 'assets/logo.svg'  # Only run when logo changes
 
+# This job pushes to the ref it ran on, so it is a writer to shared state and
+# ADR-019 asks it to say how it serializes. Per ref, and never cancelled: a
+# cancelled run leaves the PNG unregenerated while the SVG that triggered it
+# is already on the branch, which is the state this exists to prevent.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   convert:
     runs-on: ubuntu-latest
+    # Stated rather than inherited from the default token. The audit ADR-019
+    # describes lists the jobs holding `contents: write` — which is exactly
+    # why that audit missed this file: it pushed on an implicit grant, so
+    # there was no line to find.
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
       

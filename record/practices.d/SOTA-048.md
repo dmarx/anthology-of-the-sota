@@ -10,8 +10,8 @@ published: '2020-11-01'
 source:
 # Re-sourced: Tensor Fusion is Horovod's, and PyTorch DDP arrived at the
 # same technique as bucketing. LIT-051 assumed both.
-- LIT-tmpoxpda
-- LIT-tmpfh75h
+- LIT-220
+- LIT-219
 summary: >-
   Jiang et al. (2020), [LIT-051](../literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang.
 ---
@@ -30,8 +30,8 @@ of small parameters (norms, biases) alongside a few large ones, so reducing
 each as it arrives spends most of the step on overhead. Coalescing them into
 a buffer and reducing once is the fix.
 
-It is **Horovod's Tensor Fusion**, [LIT-tmpoxpda](../literature.d/LIT-tmpoxpda.md), and PyTorch DDP reached the
-same technique independently as gradient bucketing, [LIT-tmpfh75h](../literature.d/LIT-tmpfh75h.md). Horovod
+It is **Horovod's Tensor Fusion**, [LIT-220](../literature.d/LIT-220.md), and PyTorch DDP reached the
+same technique independently as gradient bucketing, [LIT-219](../literature.d/LIT-219.md). Horovod
 states the problem exactly: ring-allreduce "utilizes the network in an optimal
 way if the tensors are large enough, but does not work as efficiently or
 quickly if they are very small." Fusing first gave **up to 65% improvement**

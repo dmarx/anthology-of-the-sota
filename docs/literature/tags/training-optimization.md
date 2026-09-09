@@ -4,7 +4,7 @@
 
 Optimizers, schedules, batch size, scaling laws, training dynamics.
 
-39 of 218 LIT documents. Back to the [full index](../README.md).
+40 of 221 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -47,3 +47,4 @@ Optimizers, schedules, batch size, scaling laws, training dynamics.
 | [LIT-186](../../../record/literature.d/LIT-186.md) | Scaling Laws for Precision | Kumar et al. (2024), [ARXIV-2411.04330](https://arxiv.org/abs/2411.04330). Training in low precision reduces a model's effective parameter count, and post-training quantization degrades *more* the longer a model was trained — so past some point extra pretraining data is actively harmful. | Active |
 | [LIT-211](../../../record/literature.d/LIT-211.md) | Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning | Qiu et al. (2025), [ARXIV-2509.24372](https://arxiv.org/abs/2509.24372). Evolution strategies applied to the full parameter space of an LLM, at billion scale, without dimensionality reduction — which the field had assumed impossible. Against PPO and GRPO on Countdown across Qwen2.5 (0.5B–7B) and LLaMA3 (1B–8B), ES improves over the base model by 36.4% on average against 21.3% for GRPO and 17.9% for PPO, and does it with one fixed hyperparameter set while RL got a sweep per experiment. | Active |
 | [LIT-213](../../../record/literature.d/LIT-213.md) | The Road Less Scheduled | Defazio et al. (2024), [ARXIV-2405.15682](https://arxiv.org/abs/2405.15682). A third answer to the question the schedule chain is about: do not schedule. Iterate averaging and scheduling turn out to be the same mechanism, and the averaged form needs no stopping time T, no schedule shape and no hyperparameter beyond what AdamW already has — while matching schedules that do know T. Won the MLCommons 2024 AlgoPerf Self-Tuning track. | Active |
+| [LIT-221](../../../record/literature.d/LIT-221.md) | Train With Mixed Precision — NVIDIA deep learning performance guide | NVIDIA, the *Train With Mixed Precision* user guide. Where the dynamic loss scaling constants everyone runs actually come from: "we successfully trained networks with N = 2000, increasing scaling factor by 2, decreasing scaling factor by 0.5" — reported as one tested configuration, with "many other settings are valid as well." | Active |

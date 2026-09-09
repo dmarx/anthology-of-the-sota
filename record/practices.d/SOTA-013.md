@@ -12,7 +12,7 @@ source:
 # come from NVIDIA's mixed-precision guide, which reports them as one tested
 # setting rather than a recommendation.
 - LIT-011
-- LIT-tmpsalf8
+- LIT-221
 summary: >-
   Micikevicius et al. (2017), [LIT-011](../literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740).
 ---
@@ -40,7 +40,7 @@ run of successful ones.
 
 **The constants in the title are not the paper's, and they are not
 anonymous either.** They come from NVIDIA's *Train With Mixed Precision*
-guide, [LIT-tmpsalf8](../literature.d/LIT-tmpsalf8.md), whose dynamic-scaling section reports:
+guide, [LIT-221](../literature.d/LIT-221.md), whose dynamic-scaling section reports:
 
 > We successfully trained networks with N = 2000, increasing scaling factor
 > by 2, decreasing scaling factor by 0.5

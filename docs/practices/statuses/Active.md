@@ -4,7 +4,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-155 of 188 SOTA documents. Back to the [full index](../README.md).
+149 of 188 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -50,16 +50,13 @@
 | [SOTA-043](../../../record/practices.d/SOTA-043.md) | Use mixed precision during data loading | Mohan et al. (2020), [LIT-050](../../../record/literature.d/LIT-050.md) — [ARXIV-2007.06775](https://arxiv.org/abs/2007.06775). | Active |
 | [SOTA-044](../../../record/practices.d/SOTA-044.md) | Pin memory for CPU-GPU transfers | Mohan et al. (2020), [LIT-050](../../../record/literature.d/LIT-050.md) — [ARXIV-2007.06775](https://arxiv.org/abs/2007.06775). | Active |
 | [SOTA-045](../../../record/practices.d/SOTA-045.md) | Profile data loading separate from training | Mohan et al. (2020), [LIT-050](../../../record/literature.d/LIT-050.md) — [ARXIV-2007.06775](https://arxiv.org/abs/2007.06775). | Active |
-| [SOTA-046](../../../record/practices.d/SOTA-046.md) | Use hierarchical allreduce for tensors > 1MB | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Active |
 | [SOTA-047](../../../record/practices.d/SOTA-047.md) | Overlap communication with backward pass | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Active |
 | [SOTA-048](../../../record/practices.d/SOTA-048.md) | Group small tensors before communication | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Active |
-| [SOTA-049](../../../record/practices.d/SOTA-049.md) | Set buffer size to network bandwidth-delay product | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Active |
 | [SOTA-050](../../../record/practices.d/SOTA-050.md) | Scale attention weights by 1/sqrt(head_dim) | Vaswani et al. (2017), [LIT-008](../../../record/literature.d/LIT-008.md) — [ARXIV-1706.03762](https://arxiv.org/abs/1706.03762). | Active |
 | [SOTA-051](../../../record/practices.d/SOTA-051.md) | Initialize final layer weights near zero | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
 | [SOTA-052](../../../record/practices.d/SOTA-052.md) | Use smaller variance for deep networks | Wang et al. (2022), [LIT-084](../../../record/literature.d/LIT-084.md) — [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555). | Active |
 | [SOTA-053](../../../record/practices.d/SOTA-053.md) | Special handling for gated architectures | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
-| [SOTA-054](../../../record/practices.d/SOTA-054.md) | Checkpoint frequency should increase with training time | Mohan et al. (2021), [LIT-059](../../../record/literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan. | Active |
-| [SOTA-055](../../../record/practices.d/SOTA-055.md) | Save optimizer state every N epochs (N ~ sqrt(total_epochs)) | Mohan et al. (2021), [LIT-059](../../../record/literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan. | Active |
+| [SOTA-054](../../../record/practices.d/SOTA-054.md) | Derive the checkpoint interval from online profiling and adapt it at runtime against an overhead bound | Mohan et al. (2021), [LIT-059](../../../record/literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan. | Active |
 | [SOTA-056](../../../record/practices.d/SOTA-056.md) | Use async I/O for checkpoint writing | Mohan et al. (2021), [LIT-059](../../../record/literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan. | Active |
 | [SOTA-057](../../../record/practices.d/SOTA-057.md) | Implement multi-level checkpoint strategy | Mohan et al. (2021), [LIT-059](../../../record/literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan. | Active |
 | [SOTA-058](../../../record/practices.d/SOTA-058.md) | Use sequence parallelism for attention layers | Narayanan et al. (2021), [LIT-043](../../../record/literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). | Active |
@@ -77,10 +74,7 @@
 | [SOTA-070](../../../record/practices.d/SOTA-070.md) | Track gradient norm ratios between layers | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
 | [SOTA-071](../../../record/practices.d/SOTA-071.md) | Use gradient clipping with dynamic threshold | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
 | [SOTA-072](../../../record/practices.d/SOTA-072.md) | Implement early warning system for NaNs | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
-| [SOTA-073](../../../record/practices.d/SOTA-073.md) | Monitor network utilization during training | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Active |
-| [SOTA-074](../../../record/practices.d/SOTA-074.md) | Adapt buffer sizes to network conditions | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Active |
 | [SOTA-075](../../../record/practices.d/SOTA-075.md) | Use gradient compression for slow networks | Lin et al. (2017), [LIT-056](../../../record/literature.d/LIT-056.md) — [ARXIV-1712.01887](https://arxiv.org/abs/1712.01887). | Active |
-| [SOTA-076](../../../record/practices.d/SOTA-076.md) | Place replicas to minimize cross-rack traffic | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Active |
 | [SOTA-077](../../../record/practices.d/SOTA-077.md) | Use tar archives for dataset storage | Aizman et al. (2020), [LIT-053](../../../record/literature.d/LIT-053.md) — [ARXIV-2001.01858](https://arxiv.org/abs/2001.01858). | Active |
 | [SOTA-078](../../../record/practices.d/SOTA-078.md) | Buffer size should be 2-3x batch size | Aizman et al. (2020), [LIT-053](../../../record/literature.d/LIT-053.md) — [ARXIV-2001.01858](https://arxiv.org/abs/2001.01858). | Active |
 | [SOTA-079](../../../record/practices.d/SOTA-079.md) | Pre-fetch next batch during compute | Aizman et al. (2020), [LIT-053](../../../record/literature.d/LIT-053.md) — [ARXIV-2001.01858](https://arxiv.org/abs/2001.01858). | Active |

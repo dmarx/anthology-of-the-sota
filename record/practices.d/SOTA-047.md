@@ -10,7 +10,7 @@ published: '2020-11-01'
 source:
 # Re-sourced: LIT-051 assumes overlap rather than introducing it. The
 # PyTorch DDP paper names it as one of its three techniques.
-- LIT-tmpfh75h
+- LIT-219
 summary: >-
   Jiang et al. (2020), [LIT-051](../literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang.
 ---
@@ -43,7 +43,7 @@ parameter-server/all-reduce framework and a CPU-side Summation Service. That
 paper assumes overlap; it does not introduce it, and citing it here credited
 the wrong work.
 
-The source is now [LIT-tmpfh75h](../literature.d/LIT-tmpfh75h.md), the PyTorch `DistributedDataParallel` paper,
+The source is now [LIT-219](../literature.d/LIT-219.md), the PyTorch `DistributedDataParallel` paper,
 which names the technique in its abstract — "bucketing gradients, overlapping
 computation with communication, and skipping gradient synchronization" — and
 reports near-linear scalability on 256 GPUs with them.

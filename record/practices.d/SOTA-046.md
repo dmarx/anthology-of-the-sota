@@ -1,6 +1,11 @@
 ---
 number: 46
-status: 'Active'
+status: Rejected
+status_note: >-
+  the '> 1MB' crossover has no owner: NCCL measures the algorithm choice
+  per topology rather than publishing a constant, and LIT-051 does not
+  discuss it. What survives is that a modern collectives library already
+  chooses by size and topology, which is not a practice a reader acts on
 title: 'Use hierarchical allreduce for tensors > 1MB'
 version: 1
 tags:

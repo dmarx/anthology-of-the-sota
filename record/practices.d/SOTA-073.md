@@ -1,6 +1,12 @@
 ---
 number: 73
-status: 'Active'
+status: Rejected
+status_note: >-
+  states no signal, threshold or action, so there is nothing to do
+  differently on reading it, and LIT-051 does not argue for it. The
+  specific version worth having is in SOTA-048's body: the gap between
+  achieved and peak bandwidth during the overlap window tells you the
+  fusion buffer is sized wrong
 title: 'Monitor network utilization during training'
 version: 1
 tags:

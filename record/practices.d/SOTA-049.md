@@ -1,6 +1,12 @@
 ---
 number: 49
-status: 'Active'
+status: Rejected
+status_note: >-
+  collapses two different quantities into one unfollowable sentence — a
+  TCP socket buffer sized by bandwidth-delay product, and a gradient
+  fusion buffer sized by the overlap trade. The fusion-buffer half is
+  SOTA-048, which now carries Horovod's attributable 64 MB default; the
+  transport half is a claim about networks with no source here
 title: 'Set buffer size to network bandwidth-delay product'
 version: 1
 tags:

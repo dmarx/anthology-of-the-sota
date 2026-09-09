@@ -1,7 +1,7 @@
 ---
 number: 54
 status: 'Active'
-title: 'Checkpoint frequency should increase with training time'
+title: 'Derive the checkpoint interval from online profiling and adapt it at runtime against an overhead bound'
 version: 1
 tags:
 - distributed-optimization
@@ -13,36 +13,43 @@ summary: >-
   Mohan et al. (2021), [LIT-059](../literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan.
 ---
 
-# SOTA-054: Checkpoint frequency should increase with training time
+# SOTA-054: Derive the checkpoint interval from online profiling and adapt it at runtime against an overhead bound
 
 ## Source
 
 Mohan et al. (2021), [LIT-059](../literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan.
 
-## What the source says instead
+## What this is instead of
 
-[LIT-059](../literature.d/LIT-059.md)'s argument is that the interval should not be *chosen* at all. It
-had been epoch-granular and hand-tuned, which makes it a guess in both
-directions — too rare and a failure costs hours of recomputation, too
-frequent and the write dominates — so CheckFreq derives the frequency from
-systematic online profiling, at iteration granularity, and then tunes it at
-runtime so that overhead stays inside a stated bound as conditions change.
+Checkpointing had been epoch-granular and hand-tuned, which makes the interval
+a guess in both directions: too rare and a failure costs hours of
+recomputation, too frequent and the write dominates. [LIT-059](../literature.d/LIT-059.md)'s contribution is
+to stop choosing it. CheckFreq profiles the run online, works at *iteration*
+granularity rather than epoch, and tunes the interval at runtime so that
+checkpointing overhead stays inside a stated bound as conditions change —
+**within 3.5%**, while recovery falls from hours to seconds.
 
-Increasing frequency with training time is a reasonable-sounding rule, and it
-is a rule of the kind the paper is arguing against. There is a defensible
-version of it: the value at risk does grow as a run proceeds, since a failure
-late costs more recomputation than one early. But that is an argument about
-the *objective*, and CheckFreq's answer is to let the profiler and the
-overhead bound settle the interval rather than any schedule.
+The title this practice carried until now — "checkpoint frequency should
+increase with training time" — was a heuristic standing in for that mechanism,
+and it was not what the cited paper says. There is a defensible intuition
+behind it, since the value at risk grows as a run proceeds, but the paper's
+answer is to let the profiler and the overhead bound settle the interval
+<!-- inactive-ok: SOTA-055 — Rejected, named as the practice retired for the same reason this one was restated -->
+rather than any schedule. Restated to match its source; [SOTA-055](SOTA-055.md), which
+proposed a closed-form epoch interval, is retired for the same reason.
 
-## What to do with this practice
+## Conditions and cost
 
-Read the title as a heuristic standing in for a mechanism the source
-supplies. Where the mechanism is available — a loader that profiles and
-adapts — it should be preferred, and this practice is at best its rough
-approximation. Where it is not, an interval that tightens as the run
-lengthens is better than a fixed one chosen once.
+The mechanism needs a loader that can measure its own write cost and change
+the interval, which is a property of the training framework rather than of
+the model. Without one, the fallback is a fixed interval chosen from a
+measured write time and an accepted overhead — the same calculation, done once
+by hand.
 
-Flagged rather than retired: the recommendation is not wrong so much as
-superseded by its own source, and deciding which of those it is affects
-[SOTA-055](SOTA-055.md) in the same cluster.
+It also depends on [SOTA-056](SOTA-056.md): the overhead bound is only reachable because the
+persist is pipelined against compute, so a system checkpointing synchronously
+cannot hit it at any interval worth having.
+
+What the paper adds that this record still has no practice for: **resuming
+must restore the data loader's state**, or an epoch stops seeing each item
+exactly once. [LIT-059](../literature.d/LIT-059.md) says most implementations get that wrong.

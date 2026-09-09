@@ -8,7 +8,10 @@ tags:
 date: '2026-08-24'
 published: '2020-11-01'
 source:
-- LIT-051
+# Re-sourced: Tensor Fusion is Horovod's, and PyTorch DDP arrived at the
+# same technique as bucketing. LIT-051 assumed both.
+- LIT-tmpoxpda
+- LIT-tmpfh75h
 summary: >-
   Jiang et al. (2020), [LIT-051](../literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang.
 ---
@@ -27,10 +30,18 @@ of small parameters (norms, biases) alongside a few large ones, so reducing
 each as it arrives spends most of the step on overhead. Coalescing them into
 a buffer and reducing once is the fix.
 
-It is a real practice and a well-understood one. It is **Horovod's tensor
-fusion**, and the equivalent bucketing in PyTorch DDP; [LIT-051](../literature.d/LIT-051.md) assumes it.
-BytePS's contribution is the unified PS/all-reduce framework and the
-Summation Service split (see [SOTA-047](SOTA-047.md)), not this.
+It is **Horovod's Tensor Fusion**, [LIT-tmpoxpda](../literature.d/LIT-tmpoxpda.md), and PyTorch DDP reached the
+same technique independently as gradient bucketing, [LIT-tmpfh75h](../literature.d/LIT-tmpfh75h.md). Horovod
+states the problem exactly: ring-allreduce "utilizes the network in an optimal
+way if the tensors are large enough, but does not work as efficiently or
+quickly if they are very small." Fusing first gave **up to 65% improvement**
+on models with many layers over an unoptimized TCP network.
+
+It also supplies the number the record was missing: Horovod's **default fusion
+buffer is 64 MB**. That is a real, attributable default — and, like the loss
+scaling constants in [SOTA-013](SOTA-013.md), a tested default rather than a measured
+optimum. The citation this practice carried before, [LIT-051](../literature.d/LIT-051.md), assumes fusion
+rather than introducing it.
 
 ## The trade the title hides
 
@@ -40,5 +51,6 @@ therefore a dial between two failures — too small and the collectives are
 latency-bound, too large and the overlap collapses — and there is no setting
 that is right for every fabric and model.
 
+<!-- inactive-ok: SOTA-049 — Rejected, named as the practice whose fusion-buffer half landed here -->
 That is a better statement of what [SOTA-049](SOTA-049.md) is reaching for than the
 bandwidth-delay product it currently names.

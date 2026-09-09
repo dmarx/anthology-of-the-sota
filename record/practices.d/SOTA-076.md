@@ -1,6 +1,11 @@
 ---
 number: 76
-status: 'Active'
+status: Rejected
+status_note: >-
+  a cluster-scheduling claim rather than a training one: it is the
+  scheduler's decision, expressed as a placement-group request, not
+  something in a training run. ADR-020 scopes this record by the kind of
+  claim, and this is a different kind
 title: 'Place replicas to minimize cross-rack traffic'
 version: 1
 tags:

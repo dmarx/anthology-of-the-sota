@@ -8,7 +8,9 @@ tags:
 date: '2026-08-24'
 published: '2020-11-01'
 source:
-- LIT-051
+# Re-sourced: LIT-051 assumes overlap rather than introducing it. The
+# PyTorch DDP paper names it as one of its three techniques.
+- LIT-tmpfh75h
 summary: >-
   Jiang et al. (2020), [LIT-051](../literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang.
 ---
@@ -36,20 +38,20 @@ technique predates both.
 
 ## What [LIT-051](../literature.d/LIT-051.md) actually contributes
 
-BytePS's argument is that all-reduce and parameter-server are two special
-cases of one optimal communication framework for a cluster with spare CPU and
-network capacity, and that reaching that optimum means splitting the
-optimizer: a *Summation Service* on CPUs for the part every optimizer shares,
-with the model-dependent step left on the GPUs. Its headline results are up
-to 84% over the best open-source all-reduce and 245% over the best PS.
+This practice used to cite [LIT-051](../literature.d/LIT-051.md), whose contribution is a unified
+parameter-server/all-reduce framework and a CPU-side Summation Service. That
+paper assumes overlap; it does not introduce it, and citing it here credited
+the wrong work.
 
-Overlapping communication with the backward pass is assumed by that work, not
-introduced by it. The citation is not wrong so much as not load-bearing, and
-the record should say which it is.
+The source is now [LIT-tmpfh75h](../literature.d/LIT-tmpfh75h.md), the PyTorch `DistributedDataParallel` paper,
+which names the technique in its abstract — "bucketing gradients, overlapping
+computation with communication, and skipping gradient synchronization" — and
+reports near-linear scalability on 256 GPUs with them.
 
 ## The cost, since the title does not
 
 The overlap is what makes the *bucket size* a tuning parameter: reduce too
 eagerly and each collective is too small to reach peak bandwidth; too lazily
 and there is nothing left to hide the last one behind. That trade is the real
+<!-- inactive-ok: SOTA-049 — Rejected, named as the practice whose content this one absorbs -->
 content of [SOTA-048](SOTA-048.md) and [SOTA-049](SOTA-049.md).

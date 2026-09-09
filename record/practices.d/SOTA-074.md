@@ -1,6 +1,10 @@
 ---
 number: 74
-status: 'Active'
+status: Rejected
+status_note: >-
+  names a controller — signal, target, update rule — of which none is
+  stated, and no source here describes one. A measured version would
+  resemble what CheckFreq does for checkpoint intervals (SOTA-054)
 title: 'Adapt buffer sizes to network conditions'
 version: 1
 tags:
@@ -19,6 +23,7 @@ summary: >-
 
 Jiang et al. (2020), [LIT-051](../literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang.
 
+<!-- inactive-ok: SOTA-073 — Rejected for the same reason as this one, and named as the pair -->
 ## The same gap as [SOTA-073](SOTA-073.md), one step further
 
 "Adapt buffer sizes to network conditions" names a mechanism nobody in the
@@ -37,6 +42,7 @@ and testable. That is closer to what CheckFreq does for checkpoint intervals
 
 ## Standing
 
+<!-- inactive-ok-block: SOTA-049, SOTA-073, SOTA-076 — Rejected alongside this one; the point is that four of the seven went together -->
 Flagged for restatement or retirement, together with [SOTA-073](SOTA-073.md), [SOTA-049](SOTA-049.md) and
 [SOTA-076](SOTA-076.md) — four of the seven practices in this cluster are in the same
 position, which is what makes it a cluster-level problem rather than four

@@ -2,7 +2,7 @@
 number: 111
 status: 'Active'
 title: "Use Monarch Mixer where attention's quadratic cost is what bottlenecks training"
-version: 3
+version: 4
 history:
 - version: 1
   note: >-
@@ -19,6 +19,14 @@ history:
   note: >-
     Bhardwaj → Fu in the citation line, with LIT-115's correction. The
     recommendation is unchanged.
+- version: 4
+  date: '2026-09-09'
+  note: >-
+    Gained the half of the source it was leaving out (#114). M2 is
+    sub-quadratic along the model dimension as well as the sequence
+    length, using one primitive for both, and that is what separates it
+    from the efficient-attention literature. The recommendation is
+    unchanged.
 tags:
 - attention-techniques
 date: '2026-08-24'
@@ -34,6 +42,23 @@ summary: >-
 ## Source
 
 Fu et al. (2023), [LIT-115](../literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109).
+
+
+## The other axis, which this practice was leaving out
+
+Transformers scale quadratically along **two** axes — sequence length and
+model dimension — and almost all efficient-attention work addresses only the
+first, because it replaces the sequence mixer and leaves the MLP alone.
+
+[LIT-115](../literature.d/LIT-115.md)'s contribution is one primitive that is sub-quadratic along **both**,
+serving as sequence mixer and dimension mixer alike. That is what separates it
+from the long-convolution line it builds on, and it is the reason to reach for
+it: if the model dimension is as much of a constraint as the context, nothing
+in the efficient-attention literature helps and this does.
+
+The measured form: BERT-base and BERT-large quality on GLUE with up to **27%
+fewer parameters** and up to **9.1× throughput at 4K**; ViT-b beaten by 1% at
+**half the parameters**.
 
 ## The condition the whole cluster turns on
 
@@ -56,10 +81,15 @@ bottleneck — the MLPs are, and a fused exact-attention kernel ([SOTA-085](SOTA
 than it is. Substituting a sub-quadratic mixer there gives up exactness for
 nothing.
 
-So the practice is genuinely conditional, and the title now says on what. Its
-two siblings state the other faces of the same condition: [SOTA-110](SOTA-110.md) is the
-regime where the condition is met by default, and [SOTA-112](SOTA-112.md) is what to do when
-it is met only in part.
+So the practice is genuinely conditional, and the title now says on what.
+[SOTA-110](SOTA-110.md) states the other face of the same condition: the regime where it is
+met by default.
+
+<!-- inactive-ok-block: SOTA-112 — Rejected in #114; named here because this paragraph used to point at it as live guidance -->
+The third sibling, [SOTA-112](SOTA-112.md), used to be named here as "what to do when the
+condition is met only in part" — interleave M2 with attention. It is retired:
+[LIT-115](../literature.d/LIT-115.md) is an attention-free architecture and argues for replacement, so
+there is no partial case it describes. If one exists it needs a source.
 
 The record has no measurement of where the crossover sits, which is the honest
 limit — [LIT-115](../literature.d/LIT-115.md) reports the architecture and its scaling, and nobody here has

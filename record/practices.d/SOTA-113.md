@@ -2,12 +2,26 @@
 number: 113
 status: 'Active'
 title: 'Use continuous batching for inference'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-09'
+  note: >-
+    Source corrected (#114). Iteration-level scheduling — what the field
+    calls continuous batching — is Orca's, and LIT-112 (vLLM) describes
+    it in its background section while citing Orca for it. LIT-112 stays
+    in the list as the production system that carried the technique. The
+    recommendation is unchanged.
 tags:
 - inference-optimization
 date: '2026-08-24'
 published: '2023-09-01'
 source:
+# Orca is where iteration-level scheduling — what the field calls continuous
+# batching — was introduced. LIT-112 (vLLM) describes it in its background
+# section and cites Orca for it; vLLM's own contribution is PagedAttention.
+# It stays in the list as the production system that carried the technique.
+- LIT-tmpe5an0
 - LIT-112
 extends:
 - SOTA-105
@@ -22,6 +36,29 @@ extended_by:
 ## Source
 
 Kwon et al. (2023), [LIT-112](../literature.d/LIT-112.md) — [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180).
+
+
+## Where the technique comes from
+
+Two papers, and this practice used to name only the second.
+
+**Orca** ([LIT-tmpe5an0](../literature.d/LIT-tmpe5an0.md)) introduced **iteration-level scheduling**: invoke the
+engine for a *single iteration* of the model rather than for a whole request,
+then re-decide the batch. Requests that finish leave immediately instead of
+waiting for the slowest in their batch; requests that arrive join at the next
+step instead of waiting for the batch to drain. With **selective batching** —
+applying batching only to the operations where requests at different positions
+can share it — that gave **36.9× throughput over FasterTransformer at equal
+latency** on GPT-3 175B.
+
+**vLLM** ([LIT-112](../literature.d/LIT-112.md)) describes iteration-level scheduling in its *background*
+section and cites Orca for it. Its own contribution is PagedAttention
+([SOTA-105](SOTA-105.md)), and Orca is one of the two baselines it beats.
+
+The name is why the citation drifted. "Continuous batching" is what the field
+settled on and appears in **neither** paper — Orca says iteration-level
+scheduling, vLLM inherits the term — so a practice filed under the popular
+name had nothing to anchor it to the paper that introduced the thing.
 
 ## Why static batching wastes most of a serving GPU
 

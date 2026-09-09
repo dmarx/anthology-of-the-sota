@@ -205,7 +205,7 @@ tags = ["training-optimization", "systems-optimization", "model-stability",
         "distributed-optimization", "data-pipeline", "attention-techniques",
         "model-architecture", "generative-modeling", "vision-and-graphics",
         "adaptation-and-tuning", "inference-optimization",
-        "analysis-and-evaluation"]
+        "analysis-and-evaluation", "representation-and-encoding"]
 
 # ── The reading: one document per paper someone actually opened ──────────
 # A LIT note says what a paper's STANDING is here. It never said what the
@@ -261,7 +261,7 @@ tags = ["training-optimization", "systems-optimization", "model-stability",
         "distributed-optimization", "data-pipeline", "attention-techniques",
         "model-architecture", "generative-modeling", "vision-and-graphics",
         "adaptation-and-tuning", "inference-optimization",
-        "analysis-and-evaluation"]
+        "analysis-and-evaluation", "representation-and-encoding"]
 
 # ── This project reasoning about itself ──────────────────────────────────
 [luria.schemes.ADR]

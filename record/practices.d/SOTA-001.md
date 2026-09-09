@@ -8,7 +8,6 @@ consensus_note: >-
 title: 'Use Adam as the default optimizer absent a reason to choose otherwise'
 version: 2
 history:
-# inactive-ok-block: SOTA-120 — Deferred, named in the history entry as what the old title could not express
 - version: 1
   note: >-
     Titled "Default choice for neural network training", which never named its
@@ -55,7 +54,6 @@ Until version 2 this practice was called "Default choice for neural network
 training", which never says *of what*. A title that does not name its subject
 cannot be cited, searched for, or contested — and this practice is contested:
 [SOTA-121](SOTA-121.md) argues Muon beats the default at scale, and the weight-decay half is
-<!-- inactive-ok-block: SOTA-120 — Deferred, and named as the disagreement the old title could not carry; that is the paragraph's point -->
 [SOTA-120](SOTA-120.md). Neither disagreement could attach to the old title.
 
 It read as a fragment of the note it was promoted from, and it is one of

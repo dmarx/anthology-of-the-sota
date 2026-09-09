@@ -1,8 +1,21 @@
 ---
 number: 101
-status: 'Active'
+status: Rejected
+status_note: >-
+  The cited paper performs no filtering — it reweights sampling over
+  domains — and filtering has the opposite failure mode to what it
+  recommends. The string "filter" does not appear in it
 title: 'Use perplexity-based filtering for quality assessment'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-09'
+  note: >-
+    Rejected on reading the source (#114). The body already said the
+    defensible version is weighting rather than filtering and that the
+    title names the weaker one; the paper turns out not to filter at all,
+    and to contain the string "filter" zero times. What it does is now
+    SOTA-103.
 tags:
 - data-pipeline
 date: '2026-08-24'

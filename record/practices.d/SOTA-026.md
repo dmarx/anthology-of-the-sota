@@ -2,22 +2,33 @@
 number: 26
 status: 'Active'
 title: 'Initialize LayerNorm bias to 0'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-09'
+  note: >-
+    Source moved from LIT-025 to LIT-005 (#114). LIT-025 does not
+    recommend setting the bias; it argues the bias should be removed, and
+    that argument is now its own practice. LIT-005 is where the bias is
+    defined. The recommendation is unchanged.
 tags:
 - model-stability
 date: '2026-08-24'
 published: '2019-11-01'
 source:
-- LIT-025
+# LIT-005 defines the bias. LIT-025 was the source until #114 and argues
+# the opposite — see the body.
+- LIT-005
 summary: >-
-  Xu et al. (2019), [LIT-025](../literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013).
+  Ba et al. (2016), [LIT-005](../literature.d/LIT-005.md) — [ARXIV-1607.06450](https://arxiv.org/abs/1607.06450). Zero is the identity; a convention rather than a published result, and moot in any model using RMSNorm.
 ---
 
 # SOTA-026: Initialize LayerNorm bias to 0
 
 ## Source
 
-Xu et al. (2019), [LIT-025](../literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013).
+Ba et al. (2016), [LIT-005](../literature.d/LIT-005.md) — [ARXIV-1607.06450](https://arxiv.org/abs/1607.06450), where the bias is
+introduced.
 
 ## Zero is the identity here too
 
@@ -30,6 +41,19 @@ schemes generally try to avoid.
 There is no interesting trade here, which is worth stating plainly: this is a
 convention with no live alternative, and the practice's value is as a
 statement of what the default is rather than as advice between options.
+
+## What the former source actually argues
+
+This cited [LIT-025](../literature.d/LIT-025.md) until [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114). That paper's finding is that the bias and gain
+*increase the risk of over-fitting and do not work in most cases*, and that
+LayerNorm with both removed beats LayerNorm on four datasets. It is a case for
+deleting the parameter this practice initialises, not for setting it, and it
+<!-- inactive-ok: SOTA-tmpqpw9i — Proposed; named as where the former source's real argument now lives -->
+is now filed as [SOTA-tmpqpw9i](SOTA-tmpqpw9i.md).
+
+[LIT-005](../literature.d/LIT-005.md) introduces the bias and states no initialisation for it, so the
+zero is a convention rather than a result — the same standing as [SOTA-025](SOTA-025.md)'s
+gain, and said plainly for the same reason.
 
 ## Where it stops applying
 

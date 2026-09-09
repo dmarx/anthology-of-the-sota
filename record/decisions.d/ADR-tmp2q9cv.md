@@ -1,0 +1,143 @@
+---
+status: Active
+title: 'A third scheme: NOTE, the structured reading of a paper'
+version: 1
+tags:
+- ontology
+- record
+date: '2026-09-09'
+issue: '#114'
+summary: >-
+  A LIT note says what a paper's standing in the anthology is. It has never
+  said what the paper contains, and the corpus now holds two demonstrations
+  of what that costs. NOTE is a third scheme: one document per paper actually
+  read, carrying the contribution, the assumptions, the theorem-level
+  results, the claims with their strength, and the recommendations derived —
+  with the status recording how deeply it was read.
+---
+
+# ADR-tmp2q9cv: A third scheme: NOTE, the structured reading of a paper
+
+## Context
+
+[ADR-002](ADR-002.md) split the old YAML into two schemes because `attic` and
+`experimental` were fields on a *paper* that actually qualified a
+*recommendation*. That split was right and this decision does not disturb it.
+
+What it left unaddressed is that a `LIT` note has two jobs and only ever did
+one well. Its `## Standing in the anthology` section says what the paper is
+*for* in this record — which practices rest on it, whether it is foundational
+or atticked. Its `## Key takeaways` bullets are supposed to say what the
+paper *contains*, and they have no structure, no depth, and — as of [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) —
+no guarantee of being about the paper at all.
+
+Two demonstrations, both from this month:
+
+- **[LIT-052](../literature.d/LIT-052.md)**. Six takeaways describing warmup schedules, layer-norm
+  initialisation and gradient clipping, attached to a paper about model
+  shape that contains none of those strings. Five practices were built on
+  them. Title, arXiv id, author and year were all correct.
+- **[LIT-025](../literature.d/LIT-025.md)**. Four takeaways in the right neighbourhood and wrong about
+  the direction of the finding. Three practices recommended how to *set* the
+  two parameters the paper argues should be removed.
+
+[#113](https://github.com/dmarx/anthology-of-the-sota/issues/113) established that no API check reaches this class. Both notes pass every
+mechanical test. The only thing that catches it is reading the paper, and the
+record has no place to put a reading — so a paper that has been read and a
+paper that has not look identical from the outside, which is precisely how
+both survived.
+
+## Decision
+
+Add a third scheme, `NOTE`, in `record/notes.d`. One document per paper that
+someone has actually read, linked to its `LIT` by a required `paper:`
+reference.
+
+Its shape follows a schema dmarx supplied, adapted in three places (below).
+The sections, in order:
+
+| section | what goes in it |
+|---|---|
+| **Contribution** | 2–4 sentences: what this added that did not exist before |
+| **Key insight** | one paragraph: the mental model to keep if everything else is forgotten |
+| **Assumptions** | the formal conditions the main results require, stated as conditions |
+| **Key results** | theorem-level, with the **exact rate expressions**, not paraphrase |
+| **Claims** | a table: id, claim in plain English, strength, and what supports it |
+| **Method** *(optional)* | the algorithm, its steps, its components — omitted for empirical or survey papers |
+| **Concepts** | terms as *this paper* defines them |
+| **Connections** | how it builds on prior work, in prose |
+| **Recommendations** | practitioner-facing advice derived from it, each with a topic, a standard/experimental status, a strength and its conditions |
+| **Bearing on the record** | which `SOTA` practices this reading confirms, contradicts or should produce |
+| **Limitations** | what the paper does not establish |
+| **Open questions** | what it leaves open |
+
+### The status is the depth of the reading
+
+`NOTE`'s status vocabulary is not the practice vocabulary. It is:
+
+- **`Read`** — the full text. The only status that licenses a `Claims` table.
+- **`Skimmed`** — abstract, figures and selected sections. Honest and useful,
+  and explicitly not enough to source a practice from.
+- **`Superseded`** — a re-reading replaced it.
+
+This is the field the record most needed and did not have. `LIT-052` and
+`LIT-025` were, in the new vocabulary, never read at all; the corpus could
+not say so because it had no way to.
+
+### Three adaptations from the supplied schema
+
+**`research_implications` is dropped.** The schema's `Q1`–`Q5` name the five
+analytical questions in a `synthesis/research_agenda.md` belonging to a
+different project. This anthology has no single research agenda — its
+"agenda" is the practice registry — so the field becomes **Bearing on the
+record**, naming `SOTA` codes instead of question numbers.
+
+**`connections.related_in_library` is not duplicated.** `LIT` already carries
+`extends:`, `corrects:` and `compared_against:` as declared references with
+converses that `luria link --fix` maintains ([ADR-011](ADR-011.md)), and those feed the
+lineage chain. Re-declaring them in the NOTE would give the record two
+places to update and one of them would rot. The NOTE's Connections section
+narrates the relationship; the machine-readable edge stays on the `LIT`.
+
+**Bibliographic fields are not repeated.** `arxiv_id`, `title`, `authors` and
+`year` all live on the `LIT`. The NOTE carries `paper:` and nothing else of
+the sort. This record has already paid for a fact stored twice — `LIT-115`'s
+wrong author reached six sites because it was rendered into prose in four
+practices ([#113](https://github.com/dmarx/anthology-of-the-sota/issues/113)).
+
+## Alternatives considered
+
+**Put the structure in `LIT` and add no scheme.** Cheapest, and it was the
+first instinct. Rejected because the two jobs have different lifetimes: a
+paper's *content* is fixed the day it is published, while its *standing*
+changes every time a practice is filed against it or retired. Merging them
+means every standing edit touches a document whose bulk is immutable, and it
+leaves no field that can say "nobody has read this."
+
+**Replace `LIT` entirely.** Rejected for the same reason [ADR-002](ADR-002.md) gives for
+keeping two schemes: the standing is a fact about *this record*, and the
+reading is a fact about the *paper*. Collapsing them is the mistake that
+decision already corrected once.
+
+**Make it a journal rather than a scheme.** Readings are dated events, and
+`curation.d` exists. Rejected because a reading is addressed — practices need
+to cite it — and journal entries have no codes.
+
+## Consequences
+
+`LIT`'s `## Key takeaways` section is now redundant with the NOTE's
+Contribution and Claims for any paper that has a NOTE. **This decision does
+not resolve what happens to it**, deliberately: shrinking `LIT` bodies is a
+223-document migration and should be its own decision once a dozen NOTEs
+exist and the duplication is visible rather than predicted. Until then the
+takeaways stay, and a NOTE is the authority where the two disagree.
+
+The immediate cost is that 223 notes now have a visible gap where a NOTE
+should be, and 45 of them ([#114](https://github.com/dmarx/anthology-of-the-sota/issues/114)) carry practices. That is the point: the
+gap was always there and the record could not display it.
+
+The `Claims` table is what makes this more than a summary. A practice cites a
+`LIT`; with NOTEs it can cite a *claim*, and "this practice rests on `C3`,
+which the note marks `weak`" is a sentence the record cannot currently form.
+Whether to make that a declared reference is left to a later decision — the
+table is prose first, and a field only once it has earned one.

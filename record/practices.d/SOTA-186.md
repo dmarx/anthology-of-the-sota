@@ -41,8 +41,11 @@ annotation is the binding constraint, the right structure is a staged loop
 rather than a one-shot labelling contract, and the thing that decides where
 humans are pointed is the current model's own uncertainty. That is a
 `data-pipeline` decision, and the record's other entries in that topic — the
-perplexity filter in [SOTA-101](SOTA-101.md), the mixing-ratio practices — are the same kind
-of claim at a different altitude.
+<!-- inactive-ok-block: SOTA-101 — Rejected in #114; kept as the contrast, with its status now the point -->
+online mixing practice in [SOTA-103](SOTA-103.md) — are the same kind of claim at a different
+altitude. [SOTA-101](SOTA-101.md) used to be named here as a perplexity *filter*; it is
+retired, because filtering on model uncertainty discards rare valuable text
+for the same reason this practice's annotation loop finds it.
 
 ## Conditions
 

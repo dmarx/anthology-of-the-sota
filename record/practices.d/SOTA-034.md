@@ -14,18 +14,18 @@ contested_by:
 title: 'Use SwiGLU activation for transformers'
 version: 3
 history:
-- version: 3
-  date: '2026-09-09'
-  note: >-
-    Noam → Shazeer in the citation line. LIT-030's first_author held the
-    author's given name rather than his surname, so every rendering read
-    "Noam et al." The recommendation is unchanged.
 - version: 2
   date: '2026-09-07'
   note: >-
     Gained the GLU origin it never had (LIT-199), the sibling to K3's
     SiTU-GLU (LIT-200), and `contested` on the strength of the two.
     The recommendation is unchanged at ordinary precision.
+- version: 3
+  date: '2026-09-09'
+  note: >-
+    Noam → Shazeer in the citation line. LIT-030's first_author held the
+    author's given name rather than his surname, so every rendering read
+    "Noam et al." The recommendation is unchanged.
 tags:
 - model-architecture
 date: '2026-08-24'

@@ -4,13 +4,6 @@ status: 'Active'
 title: 'Consider Monarch Mixer in place of attention for very long sequence tasks'
 version: 3
 history:
-- version: 3
-  date: '2026-09-09'
-  note: >-
-    Bhardwaj → Fu in the citation line. LIT-115's first_author held a
-    name belonging to no author of Monarch Mixer; corrected at that
-    note's version 2 and here, where it was rendered into prose. The
-    recommendation is unchanged.
 - version: 1
   note: >-
     Titled "Consider for very long sequence tasks" — which never names its
@@ -21,6 +14,13 @@ history:
   note: >-
     Subject restored to the title. The claim is unchanged; the source is
     LIT-115 and has always been Monarch Mixer.
+- version: 3
+  date: '2026-09-09'
+  note: >-
+    Bhardwaj → Fu in the citation line. LIT-115's first_author held a
+    name belonging to no author of Monarch Mixer; corrected at that
+    note's version 2 and here, where it was rendered into prose. The
+    recommendation is unchanged.
 tags:
 - attention-techniques
 date: '2026-08-24'

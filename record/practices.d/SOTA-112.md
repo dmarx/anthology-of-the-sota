@@ -4,11 +4,6 @@ status: 'Active'
 title: 'Combine Monarch Mixer layers with standard attention rather than replacing it wholesale'
 version: 3
 history:
-- version: 3
-  date: '2026-09-09'
-  note: >-
-    Bhardwaj → Fu in the citation line, with LIT-115's correction. The
-    recommendation is unchanged.
 - version: 1
   note: >-
     Titled "Combine with standard attention for hybrid approaches" — which never names its
@@ -19,6 +14,11 @@ history:
   note: >-
     Subject restored to the title. The claim is unchanged; the source is
     LIT-115 and has always been Monarch Mixer.
+- version: 3
+  date: '2026-09-09'
+  note: >-
+    Bhardwaj → Fu in the citation line, with LIT-115's correction. The
+    recommendation is unchanged.
 tags:
 - attention-techniques
 date: '2026-08-24'

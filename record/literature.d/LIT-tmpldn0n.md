@@ -1,0 +1,76 @@
+---
+status: Active
+title: 'CoreWeave Training Benchmarks Whitepaper'
+version: 1
+tags:
+- distributed-optimization
+date: '2026-09-09'
+published: '2025-08-01'
+url: 'https://cdn.prod.website-files.com/62bc66d283fd9c34ffec780a/689fa33a0e99f19c11c8ecbe_CoreWeave%20Training%20Benchmarks%20Whitepaper%20August%202025.pdf'
+first_author: 'CoreWeave'
+keywords:
+- 'reliability'
+- 'checkpointing'
+- 'goodput'
+- 'survival-analysis'
+summary: >-
+  CoreWeave (2025). Fits a right-censored exponential survival model to real
+  job durations and interruptions, giving a per-GPU failure rate of 3,748.25
+  days/failure and an MTTF of 3.66 days at 1,024 GPUs — the quantity a
+  checkpoint interval should be chosen against, and one the record had no
+  source for.
+---
+
+# LIT-tmpldn0n: CoreWeave Training Benchmarks Whitepaper
+
+CoreWeave (August 2025) — <https://cdn.prod.website-files.com/62bc66d283fd9c34ffec780a/689fa33a0e99f19c11c8ecbe_CoreWeave%20Training%20Benchmarks%20Whitepaper%20August%202025.pdf>
+
+A vendor benchmark report rather than a paper, filed under a `url:` per
+[ADR-009](../decisions.d/ADR-009.md), and its interest is one specific thing done properly.
+
+## Key takeaways
+
+- **A failure model fitted to censored data.** Synchronous data-parallel
+  training is all-or-nothing — "if one hardware component fails, it brings
+  down the whole job" — so interruption likelihood scales with component
+  count. To estimate the per-GPU rate they "fit a right-censored univariate
+  exponential survival model", which uses information from *both* failed jobs
+  and jobs that finished normally. Treating completed runs as censored
+  observations rather than discarding them is the methodological point, and
+  it is why a six-week window yields a usable rate at all.
+- **The numbers.** Per-GPU failure rate nλ = **3,748.25 days/failure**, from
+  which MTTF for a job is nλ divided by its GPU count: **3.66 days at 1,024
+  GPUs**, against a cited industry baseline of roughly 0.33 days at the same
+  scale. MTTF falling linearly in job size is the part that generalises;
+  the constant is this operator's fleet.
+- **The badput identity.** "Assuming a failure can occur randomly anywhere in
+  the inter-checkpoint interval, the expected badput for any job is **half the
+  inter-checkpoint interval**." That is the risk side of the checkpointing
+  trade stated in one line, and it is what the record was missing.
+- **Checkpoint cost, measured.** 17s asynchronous save at 1,024 GPUs against
+  a 129s synchronous baseline; 8.8–34.5s load against 25.9–68.3s. Effective
+  Training Time Ratio 97.5% at 1,024 GPUs, MFU 51–52% on H100.
+
+## What it does not claim, stated because it is unusually candid about it
+
+The report **does not optimise the checkpoint cadence.** It says so: they
+targeted 1–2 hours because "risk appetite calibration considered only the
+wall time lost rather than optimizing checkpointing cadence specifically to
+maximize GPU clock time."
+
+So this supplies the two inputs — a failure rate and a checkpoint cost — and
+declines to combine them. Combining them is the classical result (an interval
+of roughly √(2 · checkpoint cost · MTTF)), which this record does not yet
+hold a source for.
+
+## How to read a vendor benchmark
+
+Every headline number here is a comparison the publisher chose against a
+baseline the publisher selected, on the publisher's own hardware. [DP-005](../../docs/design-principles.md#dp-5) is
+the relevant principle: adoption is not evidence, and neither is a
+self-published uplift.
+
+What survives that discount is the *method* and the *shape* — a censored
+survival fit is the right way to estimate a failure rate, and MTTF scaling
+inversely with job size is a structural claim rather than a marketing one.
+The constants should be read as one fleet's, and re-measured on yours.

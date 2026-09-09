@@ -2,7 +2,20 @@
 number: 54
 status: 'Active'
 title: 'Derive the checkpoint interval from online profiling and adapt it at runtime against an overhead bound'
-version: 1
+version: 2
+history:
+- version: 1
+  note: >-
+    Titled "Checkpoint frequency should increase with training time" — a
+    heuristic standing in for a mechanism, and not what LIT-059 recommends.
+    That paper's contribution is to stop choosing the interval by hand at all.
+- version: 2
+# inactive-ok-block: SOTA-055 — Rejected, named in the history entry as the practice retired instead of restated
+  note: >-
+    Restated as what the source actually says. The subject is unchanged; the
+    rule it states is now the source's rather than a paraphrase of it.
+    SOTA-055, which proposed a closed-form epoch interval, is retired rather
+    than restated, because it had no defensible reading left.
 tags:
 - distributed-optimization
 date: '2026-08-24'
@@ -11,6 +24,8 @@ source:
 - LIT-059
 summary: >-
   Mohan et al. (2021), [LIT-059](../literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan.
+compared_against:
+- SOTA-tmp3q7to
 ---
 
 # SOTA-054: Derive the checkpoint interval from online profiling and adapt it at runtime against an overhead bound

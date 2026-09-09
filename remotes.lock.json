@@ -62,6 +62,9 @@
     "ARXIV/1802.04799": {
       "title": "TVM: An Automated End-to-End Optimizing Compiler for Deep Learning"
     },
+    "ARXIV/1802.05799": {
+      "title": "Horovod: fast and easy distributed deep learning in TensorFlow"
+    },
     "ARXIV/1803.03635": {
       "title": "The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks"
     },
@@ -142,6 +145,9 @@
     },
     "ARXIV/2006.11239": {
       "title": "Denoising Diffusion Probabilistic Models"
+    },
+    "ARXIV/2006.15704": {
+      "title": "PyTorch Distributed: Experiences on Accelerating Data Parallel Training"
     },
     "ARXIV/2006.16668": {
       "title": "GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding"

@@ -1,6 +1,12 @@
 ---
 number: 49
-status: 'Active'
+status: Rejected
+status_note: >-
+  collapses two different quantities into one unfollowable sentence — a
+  TCP socket buffer sized by bandwidth-delay product, and a gradient
+  fusion buffer sized by the overlap trade. The fusion-buffer half is
+  SOTA-048, which now carries Horovod's attributable 64 MB default; the
+  transport half is a claim about networks with no source here
 title: 'Set buffer size to network bandwidth-delay product'
 version: 1
 tags:
@@ -18,3 +24,26 @@ summary: >-
 ## Source
 
 Jiang et al. (2020), [LIT-051](../literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang.
+
+## What is wrong with this one
+
+The bandwidth-delay product is the amount of data in flight on a link at
+full rate, and it is the right sizing rule for a *TCP socket buffer* or a
+congestion window. It is not the rule for a gradient fusion buffer, which is
+what "buffer" means everywhere else in this cluster ([SOTA-048](SOTA-048.md)): that size is
+a trade between amortising per-collective overhead and preserving the overlap
+with the backward pass, and it has nothing to do with round-trip time.
+
+Two different quantities have been collapsed into one sentence. Either
+reading is defensible on its own; together they are a recommendation that
+cannot be followed, because it does not say which buffer.
+
+[LIT-051](../literature.d/LIT-051.md) supports neither. Its contribution is the unified communication
+framework and the Summation Service split ([SOTA-047](SOTA-047.md)).
+
+## What it needs
+
+Splitting or retiring. If it means the fusion buffer, [SOTA-048](SOTA-048.md)'s body already
+states the real trade and this adds nothing. If it means transport tuning,
+that is a claim about the network stack rather than about training, and needs
+a source that is about networks.

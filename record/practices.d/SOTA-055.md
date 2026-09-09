@@ -1,6 +1,10 @@
 ---
 number: 55
-status: 'Active'
+status: Rejected
+status_note: >-
+  the practice its own cited source exists to replace. LIT-059 names
+  epoch-granular, hand-tuned checkpointing as the problem it solves, on
+  both counts; SOTA-054 now states what that paper actually recommends
 title: 'Save optimizer state every N epochs (N ~ sqrt(total_epochs))'
 version: 1
 tags:

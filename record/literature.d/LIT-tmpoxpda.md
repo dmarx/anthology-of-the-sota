@@ -1,0 +1,58 @@
+---
+status: Active
+title: 'Horovod: fast and easy distributed deep learning in TensorFlow'
+version: 1
+tags:
+- distributed-optimization
+date: '2026-09-09'
+published: '2018-02-15'
+arxiv: '1802.05799'
+first_author: 'Sergeev'
+keywords:
+- 'distributed-training'
+- 'allreduce'
+- 'tensor-fusion'
+summary: >-
+  Sergeev and Del Balso (2018), [ARXIV-1802.05799](https://arxiv.org/abs/1802.05799). Ring-allreduce for
+  TensorFlow, and the origin of Tensor Fusion — batching small tensors before
+  the collective, because ring-allreduce "utilizes the network in an optimal
+  way if the tensors are large enough, but does not work as efficiently or
+  quickly if they are very small."
+---
+
+# LIT-tmpoxpda: Horovod: fast and easy distributed deep learning in TensorFlow
+
+Sergeev and Del Balso (2018) — [ARXIV-1802.05799](https://arxiv.org/abs/1802.05799)
+
+## Key takeaways
+
+- Ring-allreduce as the communication primitive for data-parallel TensorFlow,
+  in place of the parameter-server design, reaching **88% scaling efficiency**
+  on Inception V3 and ResNet-101 over TCP — about twice standard distributed
+  TensorFlow — and above 90% with RDMA.
+- **Tensor Fusion**, which is why this note exists. Profiling showed models
+  with many tensors issuing many tiny allreduces, and the paper's own
+  statement of the problem is the argument the record needed:
+  ring-allreduce "utilizes the network in an optimal way if the tensors are
+  large enough, but does not work as efficiently or quickly if they are very
+  small." Fusing them first gave **up to 65% improvement** on models with many
+  layers over an unoptimized TCP network.
+- The fusion mechanism is stated concretely — select ready tensors of the same
+  dtype that fit the buffer, copy in, reduce once, copy out — with a **default
+  fusion buffer size of 64 MB**. That is the buffer-size constant the record
+  had been guessing at.
+- Horovod Timeline: the profiling view that made the tiny-allreduce problem
+  visible in the first place. Worth noting as method — the optimisation
+  followed the measurement, which is the same order [SOTA-045](../practices.d/SOTA-045.md) argues for.
+
+## Standing in the anthology
+
+Filed to correct a mis-citation rather than to add a topic. [SOTA-048](../practices.d/SOTA-048.md) (group
+small tensors before communication) was credited to [LIT-051](LIT-051.md), whose
+contribution is a unified parameter-server/all-reduce framework and does not
+introduce fusion. This is where the practice actually comes from.
+
+Not the source for choosing an all-reduce *algorithm* by tensor size — the
+paper uses ring-allreduce throughout and fuses to suit it, which is a
+<!-- inactive-ok: SOTA-046 — Rejected, and named as the practice this note's absence of a claim is evidence against; the retirement is the point -->
+different claim from the one [SOTA-046](../practices.d/SOTA-046.md) was making.

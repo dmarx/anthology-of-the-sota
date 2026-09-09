@@ -42,6 +42,8 @@ source:
 - LIT-120
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. 24–27 layers × 512 hidden and a large SSM state dimension won every ablation at 90M; 50 layers gained MMLU but halved throughput.
+compared_against:
+- SOTA-tmp7pn5v
 ---
 
 # SOTA-125: At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width

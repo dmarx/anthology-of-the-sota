@@ -1,4 +1,5 @@
 ---
+number: 76
 status: 'Active'
 title: 'Place replicas to minimize cross-rack traffic'
 version: 1

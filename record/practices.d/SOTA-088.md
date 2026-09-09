@@ -1,4 +1,5 @@
 ---
+number: 88
 status: 'Active'
 title: 'Fuse small operations into larger kernels'
 version: 1

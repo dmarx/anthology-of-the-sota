@@ -1,4 +1,5 @@
 ---
+number: 52
 status: 'Active'
 title: 'Use smaller variance for deep networks'
 version: 1

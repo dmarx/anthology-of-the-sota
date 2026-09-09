@@ -1,4 +1,5 @@
 ---
+number: 53
 status: 'Active'
 title: 'Special handling for gated architectures'
 version: 1

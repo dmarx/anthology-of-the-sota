@@ -1,4 +1,5 @@
 ---
+number: 39
 status: Superseded
 superseded_by: SOTA-140
 status_note: warmup-stable-decay matches it and leaves the token budget open; every report since 2024 in the record uses a stable-then-decay schedule

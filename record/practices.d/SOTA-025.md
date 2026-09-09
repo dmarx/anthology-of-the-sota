@@ -1,4 +1,5 @@
 ---
+number: 25
 status: 'Active'
 title: 'Initialize LayerNorm weight close to 1 (0.97-1.0)'
 version: 1

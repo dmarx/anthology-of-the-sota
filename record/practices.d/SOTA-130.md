@@ -1,4 +1,5 @@
 ---
+number: 130
 status: Proposed
 promote_when: >-
   A head-to-head of RLVR-on-base against SFT-then-RLVR from the same base

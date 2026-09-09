@@ -1,4 +1,5 @@
 ---
+number: 17
 status: 'Active'
 title: 'Use micro-batch splitting for pipeline parallelism'
 version: 1

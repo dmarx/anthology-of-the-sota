@@ -1,4 +1,5 @@
 ---
+number: 97
 status: 'Active'
 title: 'Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`'
 version: 1

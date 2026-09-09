@@ -1,4 +1,5 @@
 ---
+number: 69
 status: 'Active'
 title: 'Monitor exp(loss) for stability'
 version: 1

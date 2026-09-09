@@ -1,4 +1,5 @@
 ---
+number: 24
 status: 'Superseded'
 title: 'Keep key/value projections shared across heads while query projections remain separate'
 version: 2

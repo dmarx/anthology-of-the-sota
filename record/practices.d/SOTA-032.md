@@ -1,4 +1,5 @@
 ---
+number: 32
 status: Active
 title: 'Put the layer normalization inside the residual block, before the sublayer'
 version: 2

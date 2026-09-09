@@ -1,4 +1,5 @@
 ---
+number: 141
 status: Proposed
 promote_when: >-
   A frontier training report that decays to zero and says so, or a second

@@ -1,4 +1,5 @@
 ---
+number: 36
 status: 'Active'
 title: 'gpt training recipe'
 version: 1

@@ -1,4 +1,5 @@
 ---
+number: 60
 status: 'Active'
 title: 'Initialize layer norms with smaller variance (0.02) for stability'
 version: 1

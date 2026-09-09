@@ -1,4 +1,5 @@
 ---
+number: 72
 status: 'Active'
 title: 'Implement early warning system for NaNs'
 version: 1

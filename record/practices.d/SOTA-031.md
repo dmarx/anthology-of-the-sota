@@ -1,4 +1,5 @@
 ---
+number: 31
 status: 'Active'
 title: 'Keep micro-batch size per GPU as large as memory allows'
 version: 1

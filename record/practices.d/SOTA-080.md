@@ -1,4 +1,5 @@
 ---
+number: 80
 status: 'Active'
 title: 'Use multiple worker processes (num_workers = 4 * num_gpus)'
 version: 1

@@ -1,4 +1,5 @@
 ---
+number: 123
 status: Active
 title: 'For tiny specialized models, pretrain from scratch on the target SFT or reasoning data instead of pretrain-then-finetune'
 version: 1

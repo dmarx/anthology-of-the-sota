@@ -1,0 +1,114 @@
+---
+status: Proposed
+title: 'The primary topic is derived from the first tag, and the lines assert it'
+version: 1
+tags:
+- taxonomy
+date: '2026-09-09'
+summary: >-
+  The topic vocabulary was a constraint on a list — exactly one tag from the
+  seven — with no way to say which tag that was. Deriving `primary_topic` from
+  `{tags[0]}` names it, which lets the chains assert the invariant they
+  actually mean: a line of work stays within one topic. Costs a convention
+  nothing checks, that the primary tag is written first.
+---
+
+# ADR-tmpii298: The primary topic is derived from the first tag, and the lines assert it
+
+## Context
+
+[ADR-003](ADR-003.md) gave each scheme a topic vocabulary and required exactly one member
+per document. That is a constraint on the `tags:` list, and it was all luria
+could express: the record could guarantee a primary topic existed, but could
+not *name* it. Anything wanting to compare topics across documents had to
+recover it by intersecting a list against a vocabulary.
+
+The cost came due when the chains declared an invariant ([#101](https://github.com/dmarx/anthology-of-the-sota/issues/101)). What a chain
+asserts is that the documents in a line are the same kind of thing, and the
+only field available to say that with was `tags` — which is satisfied by
+**any** shared tag. Two practices are then "bound" by an incidental label,
+which is a weaker claim than the one intended and, at one edge, the wrong
+one.
+
+luria 0.13 can derive a field from a template over the frontmatter
+([LU-ADR-089](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-089.md)), so `primary_topic` can be a readable value rather than an
+inference.
+
+## Decision
+
+Both schemes derive it from the first tag:
+
+```toml
+[luria.schemes.SOTA.fields.primary_topic]
+derive = "{tags[0]}"
+```
+
+and both chains assert that instead of `tags`:
+
+```toml
+invariant = "primary_topic"
+```
+
+The tag group stays exactly as it was. The group guarantees that exactly one
+tag comes from the vocabulary; the derivation says which tag that is. They
+answer different questions and neither replaces the other.
+
+Derived rather than stored, so the value cannot drift: retagging a practice
+retags its primary topic in the same edit, and there is no second place for
+the fact to live and go stale. Nothing is written to any document — 406 files
+gain a field and none of them changes.
+
+**What the stronger invariant re-opens.** Exactly one edge, `SOTA-085` /
+`SOTA-161`: using flash attention, filed under `attention-techniques`, and
+keeping its output in FP32 because the rounding bias compounds, filed under
+`model-stability`. [#101](https://github.com/dmarx/anthology-of-the-sota/issues/101) bound that pair by giving both a `flash-attention`
+secondary tag — the only move available, since `exactly-one` forbids a second
+primary — and doing so satisfied the check rather than answering it. Their
+primary topics genuinely differ, the edge genuinely crosses a fault line in
+the vocabulary, and that is what these findings are for. It joins the twelve
+in the reading list on [#85](https://github.com/dmarx/anthology-of-the-sota/issues/85)'s worklist. The `flash-attention` tags stay: they
+are true, and they are useful for browsing whatever the chain asserts.
+
+On the reading list the change reports the same twelve edges either way,
+because no note carries a secondary tag today. It is declared there anyway,
+so both chains assert the same thing for the same reason, and because a note
+will carry a secondary tag eventually.
+
+## Alternatives considered
+
+- **Keep `invariant = "tags"`.** The status quo. It is not a weaker version
+  of the same check, it is a different claim — "these share a label" rather
+  than "these are the same kind of work" — and a record that adds a tag to
+  bind an edge is answering the check rather than the question. [#101](https://github.com/dmarx/anthology-of-the-sota/issues/101) said as
+  much at the time; it had no other option.
+- **Store `primary_topic:` as an ordinary field on every document.** Explicit,
+  greppable, and immediately a second copy of a fact the `tags:` list already
+  carries. Retagging a practice would then have to remember to update it, and
+  the two would disagree the first time someone forgot — the failure this
+  record has already had once, with the topics that sat unapplied in a Jinja
+  template until [ADR-003](ADR-003.md).
+- **A separate `primary_topic` vocabulary, with the tag list moved out of the
+  group.** Would let the derived value be checked against a controlled
+  vocabulary, closing the hole below. It also splits one vocabulary into two
+  that must agree, which is the same duplication in a different place.
+- **Wait for the guard.** Defensible: the convention below is unenforced, so
+  this ships a silent failure mode. Rejected because the convention already
+  holds everywhere, the alternative is a *known* wrong invariant rather than
+  a possible wrong tag order, and the guard is filed rather than assumed.
+
+## Consequences
+
+**A convention nothing checks: the primary tag must be written first.** The
+tag group guarantees exactly one tag from the vocabulary; it says nothing
+about position. Write the tags in the other order and `primary_topic` derives
+to a secondary tag — the group is still satisfied, the derivation still
+renders, and the field is quietly wrong, along with the chain invariant that
+reads it. It holds in all 188 practices and all 218 notes today; it is a
+silent error the day it does not. Filed upstream as
+[LU-#229](https://github.com/dmarx/luria/issues/229), which is where the check belongs — the violation is always
+wrong and the fix is mechanical.
+
+`primary_topic` is now a field, so it can be faceted on, reported, and read
+in a template. That is the payoff beyond the invariant, and it is worth
+saying out loud: the topic consolidation stopped being only a rule the lint
+enforces and became a value the record can use.

@@ -1,4 +1,5 @@
 ---
+number: 127
 status: Active
 title: 'Filter chain-of-thought traces out of the training data of tiny specialized models'
 version: 2

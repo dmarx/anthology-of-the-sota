@@ -1,4 +1,5 @@
 ---
+number: 129
 status: Active
 title: 'Build a reasoning model in three stages: pretrain on general data, SFT on reasoning traces, then RL with verifiable rewards'
 version: 2

@@ -1,4 +1,5 @@
 ---
+number: 4
 status: 'Active'
 title: 'Place BatchNorm after linear/conv layers but before activation functions'
 version: 1

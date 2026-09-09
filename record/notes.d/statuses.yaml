@@ -26,21 +26,27 @@ Skimmed:
 
 Unread:
   label: Unread
-  blurb: the note exists to record that nobody has read this yet, which is a
-    fact the record could not previously state
+  blurb: looked at and deliberately set aside — a human judgement, not a
+    backlog entry. A paper nobody has reached simply has no note (ADR-025)
 
 Superseded:
   label: Re-read
   blurb: a later reading replaced this one, and names it
 
-# On the distribution: luria's inert-status check will report that every NOTE
-# is `Read`, and it is right to. The reason is that the workflow only produces
-# a note when someone finishes a paper, so `Skimmed` and `Unread` are declared
-# and unused — which makes the field predictable, and a predictable field is
-# one the citation checks cannot fire on.
+# On the distribution: luria's inert-status check reports that every NOTE is
+# `Read`, and it is right to. It is also expected, and by decision rather than
+# by accident (ADR-025).
 #
-# That is a finding about the backlog, not about the vocabulary. The fix is to
-# file `Unread` notes for the papers nobody has read, so that "which papers has
-# anyone actually read?" is answerable at a glance rather than by absence. Two
-# hundred stub notes is a migration and a decision, not a side effect of
-# reading the next paper, so it is proposed rather than done. See #114.
+# **The absence of a NOTE means the paper is unread.** A note is written when
+# someone finishes a paper, so a LIT with no NOTE is exactly the state the
+# record could not previously express — and it costs nothing to express it
+# that way. The alternative was filing two hundred `Unread` stubs, which is a
+# migration that buys a row in a table.
+#
+# `Unread` stays in the vocabulary for the case absence cannot cover: a
+# deliberate human judgement that a paper was looked at and set aside. "Nobody
+# has got to this yet" is silence; "I opened this and decided not to read it"
+# is a fact worth recording, and it needs somewhere to live.
+#
+# So the check will keep firing while every filed note is a finished reading.
+# That is the honest state of the field and not a defect to engineer around.

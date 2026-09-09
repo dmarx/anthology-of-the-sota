@@ -12,8 +12,14 @@ contested_by:
 - LIT-131
 - LIT-200
 title: 'Use SwiGLU activation for transformers'
-version: 2
+version: 3
 history:
+- version: 3
+  date: '2026-09-09'
+  note: >-
+    Noam → Shazeer in the citation line. LIT-030's first_author held the
+    author's given name rather than his surname, so every rendering read
+    "Noam et al." The recommendation is unchanged.
 - version: 2
   date: '2026-09-07'
   note: >-
@@ -27,7 +33,7 @@ published: '2020-02-01'
 source:
 - LIT-030
 summary: >-
-  Noam et al. (2020), [LIT-030](../literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). Contested at frontier
+  Shazeer et al. (2020), [LIT-030](../literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). Contested at frontier
   scale in low precision: two groups now ship bounded replacements, on the
   grounds that SwiGLU's unbounded factors produce activation outliers.
 implementations:
@@ -40,7 +46,7 @@ compared_against:
 
 ## Source
 
-Noam et al. (2020), [LIT-030](../literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202).
+Shazeer et al. (2020), [LIT-030](../literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202).
 
 ## Where the gate came from
 

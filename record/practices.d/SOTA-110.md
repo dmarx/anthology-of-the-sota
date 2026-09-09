@@ -2,8 +2,15 @@
 number: 110
 status: 'Active'
 title: 'Consider Monarch Mixer in place of attention for very long sequence tasks'
-version: 2
+version: 3
 history:
+- version: 3
+  date: '2026-09-09'
+  note: >-
+    Bhardwaj → Fu in the citation line. LIT-115's first_author held a
+    name belonging to no author of Monarch Mixer; corrected at that
+    note's version 2 and here, where it was rendered into prose. The
+    recommendation is unchanged.
 - version: 1
   note: >-
     Titled "Consider for very long sequence tasks" — which never names its
@@ -21,14 +28,14 @@ published: '2023-10-01'
 source:
 - LIT-115
 summary: >-
-  Bhardwaj et al. (2023), [LIT-115](../literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109).
+  Fu et al. (2023), [LIT-115](../literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109).
 ---
 
 # SOTA-110: Consider Monarch Mixer in place of attention for very long sequence tasks
 
 ## Source
 
-Bhardwaj et al. (2023), [LIT-115](../literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109).
+Fu et al. (2023), [LIT-115](../literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109).
 
 ## The regime where the substitution is worth considering
 

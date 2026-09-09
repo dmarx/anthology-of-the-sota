@@ -2,8 +2,13 @@
 number: 111
 status: 'Active'
 title: "Use Monarch Mixer where attention's quadratic cost is what bottlenecks training"
-version: 2
+version: 3
 history:
+- version: 3
+  date: '2026-09-09'
+  note: >-
+    Bhardwaj → Fu in the citation line, with LIT-115's correction. The
+    recommendation is unchanged.
 - version: 1
   note: >-
     Titled "Use for tasks where attention bottlenecks training" — which never names its
@@ -21,14 +26,14 @@ published: '2023-10-01'
 source:
 - LIT-115
 summary: >-
-  Bhardwaj et al. (2023), [LIT-115](../literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109).
+  Fu et al. (2023), [LIT-115](../literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109).
 ---
 
 # SOTA-111: Use Monarch Mixer where attention's quadratic cost is what bottlenecks training
 
 ## Source
 
-Bhardwaj et al. (2023), [LIT-115](../literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109).
+Fu et al. (2023), [LIT-115](../literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109).
 
 ## The condition the whole cluster turns on
 

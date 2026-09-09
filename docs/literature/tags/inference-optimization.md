@@ -4,7 +4,7 @@
 
 Serving, quantization, compression, sparsity, distillation.
 
-5 of 221 LIT documents. Back to the [full index](../README.md).
+5 of 223 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

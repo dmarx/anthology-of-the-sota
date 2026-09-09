@@ -4,11 +4,11 @@
 
 **Assumed** — not doing it is what needs justifying.
 
-6 of 188 SOTA documents. Back to the [full index](../README.md).
+6 of 189 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [SOTA-001](../../../record/practices.d/SOTA-001.md) | Default choice for neural network training | Kingma et al. (2014), [LIT-001](../../../record/literature.d/LIT-001.md) — [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980). | Active |
+| [SOTA-001](../../../record/practices.d/SOTA-001.md) v2 | Use Adam as the default optimizer absent a reason to choose otherwise | Kingma et al. (2014), [LIT-001](../../../record/literature.d/LIT-001.md) — [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980). | Active |
 | [SOTA-032](../../../record/practices.d/SOTA-032.md) v2 | Put the layer normalization inside the residual block, before the sublayer | Xiong et al. (2020), [LIT-114](../../../record/literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). Pre-LN: normalize the input to each sublayer rather than the sum after it, so the gradients near the output are well behaved at initialization. | Active |
 | [SOTA-164](../../../record/practices.d/SOTA-164.md) | Deduplicate the pretraining corpus at both substring and document granularity before training on it | Lee et al. (2021), [LIT-202](../../../record/literature.d/LIT-202.md) — a single 61-word sentence appears thousands of times in C4. Deduplicating cuts verbatim emission about tenfold, reaches equal or better accuracy in fewer steps, and removes train-test contamination from standard validation sets. Two granularities, because a repeated boilerplate paragraph is not a duplicated document. | Active |
 | [SOTA-182](../../../record/practices.d/SOTA-182.md) | Compute the normalization statistic without centering (RMSNorm) | Zhang and Sennrich (2019), [LIT-023](../../../record/literature.d/LIT-023.md) — [ARXIV-1910.07467](https://arxiv.org/abs/1910.07467). Drop the mean subtraction from layer normalization and rescale by the root mean square alone. | Active |

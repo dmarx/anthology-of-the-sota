@@ -25,7 +25,7 @@ source:
 summary: >-
   Mohan et al. (2021), [LIT-059](../literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan.
 compared_against:
-- SOTA-tmp3q7to
+- SOTA-189
 ---
 
 # SOTA-054: Derive the checkpoint interval from online profiling and adapt it at runtime against an overhead bound

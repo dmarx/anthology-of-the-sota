@@ -1,5 +1,8 @@
 ---
+number: 189
 status: Proposed
+formerly:
+- SOTA-tmp3q7to
 consensus: unassessed
 title: "Set the checkpoint interval from the job's measured time-to-failure, which shrinks as the job grows"
 version: 1
@@ -8,7 +11,7 @@ tags:
 date: '2026-09-09'
 published: '2025-08-01'
 source:
-- LIT-tmpldn0n
+- LIT-222
 compared_against:
 - SOTA-054
 promote_when: >-
@@ -17,17 +20,17 @@ promote_when: >-
   inputs imply. One fleet's constant is not yet an industry figure, and the
   recommendation currently rests on a self-published benchmark.
 summary: >-
-  CoreWeave (2025), [LIT-tmpldn0n](../literature.d/LIT-tmpldn0n.md). Expected work lost to a failure is half the
+  CoreWeave (2025), [LIT-222](../literature.d/LIT-222.md). Expected work lost to a failure is half the
   inter-checkpoint interval, and mean time to failure falls linearly with GPU
   count — so the interval belongs to the job's size and the cluster's failure
   rate, not to the write cost alone.
 ---
 
-# SOTA-tmp3q7to: Set the checkpoint interval from the job's measured time-to-failure, which shrinks as the job grows
+# SOTA-189: Set the checkpoint interval from the job's measured time-to-failure, which shrinks as the job grows
 
 ## Source
 
-CoreWeave (2025), [LIT-tmpldn0n](../literature.d/LIT-tmpldn0n.md) — a benchmark report that fits a
+CoreWeave (2025), [LIT-222](../literature.d/LIT-222.md) — a benchmark report that fits a
 right-censored exponential survival model to real job durations and
 interruptions.
 

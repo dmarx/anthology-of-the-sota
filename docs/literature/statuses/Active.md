@@ -4,7 +4,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-205 of 221 LIT documents. Back to the [full index](../README.md).
+207 of 223 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,7 +21,7 @@
 | [LIT-012](../../../record/literature.d/LIT-012.md) | Decoupled Weight Decay Regularization | Loshchilov et al. (2017), [ARXIV-1711.05101](https://arxiv.org/abs/1711.05101). Fixes weight decay implementation in Adam. | Active |
 | [LIT-013](../../../record/literature.d/LIT-013.md) | Population Based Training of Neural Networks | Jaderberg et al. (2017), [ARXIV-1711.09846](https://arxiv.org/abs/1711.09846). Automated hyperparameter optimization. | Active |
 | [LIT-014](../../../record/literature.d/LIT-014.md) | Visualizing the Loss Landscape of Neural Nets | Li et al. (2017), [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). Visualizes loss landscape geometry. | Active |
-| [LIT-015](../../../record/literature.d/LIT-015.md) | Understanding Batch Normalization | Santurkar et al. (2018), [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). Challenges internal covariate shift explanation. | Active |
+| [LIT-015](../../../record/literature.d/LIT-015.md) v2 | Understanding Batch Normalization | Bjorck et al. (2018), [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). Argues that batch normalization's main benefit is that it permits substantially larger learning rates, and studies what goes wrong without it at initialisation. | Active |
 | [LIT-016](../../../record/literature.d/LIT-016.md) | GPipe: Efficient Training of Giant Neural Networks using Pipeline Parallelism | Huang et al. (2018), [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965). Introduces pipeline parallelism for training. | Active |
 | [LIT-017](../../../record/literature.d/LIT-017.md) | An Empirical Model of Large-Batch Training | McCandlish et al. (2018), [ARXIV-1812.06162](https://arxiv.org/abs/1812.06162). Introduces gradient noise scale. | Active |
 | [LIT-018](../../../record/literature.d/LIT-018.md) | On the Convergence of Adam and Beyond | Reddi et al. (2018), [ARXIV-1904.09237](https://arxiv.org/abs/1904.09237). Identifies convergence issues in Adam. | Active |
@@ -213,3 +213,5 @@
 | [LIT-219](../../../record/literature.d/LIT-219.md) | PyTorch Distributed: Experiences on Accelerating Data Parallel Training | Li et al. (2020), [ARXIV-2006.15704](https://arxiv.org/abs/2006.15704). The design and evaluation of PyTorch's DistributedDataParallel, whose three acceleration techniques are "bucketing gradients, overlapping computation with communication, and skipping gradient synchronization" — near-linear scalability on 256 GPUs. | Active |
 | [LIT-220](../../../record/literature.d/LIT-220.md) | Horovod: fast and easy distributed deep learning in TensorFlow | Sergeev and Del Balso (2018), [ARXIV-1802.05799](https://arxiv.org/abs/1802.05799). Ring-allreduce for TensorFlow, and the origin of Tensor Fusion — batching small tensors before the collective, because ring-allreduce "utilizes the network in an optimal way if the tensors are large enough, but does not work as efficiently or quickly if they are very small." | Active |
 | [LIT-221](../../../record/literature.d/LIT-221.md) | Train With Mixed Precision — NVIDIA deep learning performance guide | NVIDIA, the *Train With Mixed Precision* user guide. Where the dynamic loss scaling constants everyone runs actually come from: "we successfully trained networks with N = 2000, increasing scaling factor by 2, decreasing scaling factor by 0.5" — reported as one tested configuration, with "many other settings are valid as well." | Active |
+| [LIT-222](../../../record/literature.d/LIT-222.md) | CoreWeave Training Benchmarks Whitepaper | CoreWeave (2025). Fits a right-censored exponential survival model to real job durations and interruptions, giving a per-GPU failure rate of 3,748.25 days/failure and an MTTF of 3.66 days at 1,024 GPUs — the quantity a checkpoint interval should be chosen against, and one the record had no source for. | Active |
+| [LIT-223](../../../record/literature.d/LIT-223.md) | How Does Batch Normalization Help Optimization? | Santurkar et al. (2018), [ARXIV-1805.11604](https://arxiv.org/abs/1805.11604). "Distributional stability of layer inputs has little to do with the success of BatchNorm" — what it does instead is make the optimization landscape significantly smoother. | Active |

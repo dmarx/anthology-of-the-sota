@@ -4,11 +4,11 @@
 
 Learning-rate schedules, batch size, optimizers, training dynamics, scaling strategies.
 
-43 of 188 SOTA documents. Back to the [full index](../README.md).
+43 of 189 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [SOTA-001](../../../record/practices.d/SOTA-001.md) | Default choice for neural network training | Kingma et al. (2014), [LIT-001](../../../record/literature.d/LIT-001.md) — [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980). | Active |
+| [SOTA-001](../../../record/practices.d/SOTA-001.md) v2 | Use Adam as the default optimizer absent a reason to choose otherwise | Kingma et al. (2014), [LIT-001](../../../record/literature.d/LIT-001.md) — [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980). | Active |
 | [SOTA-002](../../../record/practices.d/SOTA-002.md) | Common hyperparameters: β₁=0.9, β₂=0.999, ε=1e-8 | Kingma et al. (2014), [LIT-001](../../../record/literature.d/LIT-001.md) — [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980). | Active |
 | [SOTA-003](../../../record/practices.d/SOTA-003.md) | Learning rate typically 1e-4 to 1e-3 for most tasks | Kingma et al. (2014), [LIT-001](../../../record/literature.d/LIT-001.md) — [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980). | Active |
 | [SOTA-008](../../../record/practices.d/SOTA-008.md) | linear warmup of LR stabilizes early training with large batch size. | You et al. (2017), [LIT-009](../../../record/literature.d/LIT-009.md) — [ARXIV-1708.03888](https://arxiv.org/abs/1708.03888). | Active |

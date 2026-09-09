@@ -2,7 +2,7 @@
 
 # LITs tagged `tiny-models`
 
-2 of 221 LIT documents. Back to the [full index](../README.md).
+2 of 223 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

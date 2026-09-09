@@ -4,15 +4,15 @@
 
 Initialization, normalization, gradient handling, loss-landscape behaviour.
 
-19 of 188 SOTA documents. Back to the [full index](../README.md).
+19 of 189 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [SOTA-004](../../../record/practices.d/SOTA-004.md) | Place BatchNorm after linear/conv layers but before activation functions | Ioffe et al. (2015), [LIT-002](../../../record/literature.d/LIT-002.md) — [ARXIV-1502.03167](https://arxiv.org/abs/1502.03167). | Active |
 | [SOTA-006](../../../record/practices.d/SOTA-006.md) | Consider alternatives like LayerNorm for transformers | Ioffe et al. (2015), [LIT-002](../../../record/literature.d/LIT-002.md) — [ARXIV-1502.03167](https://arxiv.org/abs/1502.03167). | Active |
 | [SOTA-020](../../../record/practices.d/SOTA-020.md) | Use larger learning rates with batch normalization | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Active |
-| [SOTA-021](../../../record/practices.d/SOTA-021.md) | Monitor loss landscape smoothness during training | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Active |
-| [SOTA-022](../../../record/practices.d/SOTA-022.md) | Place BN after linear/conv layers but before activation functions | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Active |
+| [SOTA-021](../../../record/practices.d/SOTA-021.md) | Monitor loss landscape smoothness during training | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Rejected — states no threshold and no response, and the smoothing it refers to is a mechanism from a paper the record had conflated with this one. Measuring landscape smoothness during training is not something the practice's source does or recommends; the finding it rests on is Santurkar et al.'s explanation of why batch normalization works, which is a fact about the technique rather than an instruction |
+| [SOTA-022](../../../record/practices.d/SOTA-022.md) | Place BN after linear/conv layers but before activation functions | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Superseded — by [SOTA-004](../../../record/practices.d/SOTA-004.md); a duplicate of SOTA-004, which states the same placement rule from batch normalization's own paper. The two arrived in the same import from different notes and have coexisted since; SOTA-004 is the one with the originating source |
 | [SOTA-025](../../../record/practices.d/SOTA-025.md) | Initialize LayerNorm weight close to 1 (0.97-1.0) | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Active |
 | [SOTA-026](../../../record/practices.d/SOTA-026.md) | Initialize LayerNorm bias to 0 | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Active |
 | [SOTA-027](../../../record/practices.d/SOTA-027.md) | Use a smaller learning rate for LayerNorm parameters | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Active |

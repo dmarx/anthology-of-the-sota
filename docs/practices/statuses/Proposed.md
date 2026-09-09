@@ -4,7 +4,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-28 of 188 SOTA documents. Back to the [full index](../README.md).
+29 of 189 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -36,3 +36,4 @@
 | [SOTA-177](../../../record/practices.d/SOTA-177.md) | Decouple the erase address from the write address in a delta-rule recurrence | Li et al. (2026), [LIT-177](../../../record/literature.d/LIT-177.md) — the delta rule corrects what is stored at the *current write address* before writing there, so stale information at a different address can only decay passively. EDA runs a targeted erase along a learned erase direction first, then the ordinary corrective write. Best at both 2.5B dense and 25B-A2.8B MoE, and the gain persists after 80B tokens of long-context midtraining. | Proposed |
 | [SOTA-178](../../../record/practices.d/SOTA-178.md) | Give the recurrence vector-valued gating and in-context learning rates so it can track state a softmax layer provably cannot | Peng et al. (2025), [LIT-173](../../../record/literature.d/LIT-173.md) — a generalised delta rule with vector-valued gating and in-context learning rates, at constant memory and constant time per token. A 2.9B model sets the 3B state of the art on multilingual tasks on dramatically fewer training tokens. The expressivity claim is the sharp one: it can recognise all regular languages, which under standard conjectures exceeds what a softmax stack in TC⁰ can do. | Proposed |
 | [SOTA-179](../../../record/practices.d/SOTA-179.md) | Truncate the rotary encoding's low frequencies rather than rescaling its base | Barbero et al. (2024), [LIT-210](../../../record/literature.d/LIT-210.md) — RoPE's high frequencies build positional attention heads and its low frequencies carry semantics that provably cannot stay robust over long context. Keeping a fraction p of the frequencies holds performance and at 2B improves it; p=1 is RoPE and p=0 is NoPE, so the practice is a dial between two things the record already holds. | Proposed |
+| [SOTA-189](../../../record/practices.d/SOTA-189.md) | Set the checkpoint interval from the job's measured time-to-failure, which shrinks as the job grows | CoreWeave (2025), [LIT-222](../../../record/literature.d/LIT-222.md). Expected work lost to a failure is half the inter-checkpoint interval, and mean time to failure falls linearly with GPU count — so the interval belongs to the job's size and the cluster's failure rate, not to the write cost alone. | Proposed |

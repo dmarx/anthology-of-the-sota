@@ -4,10 +4,11 @@
 
 **Retired** — no longer believed, with no successor — the attic.
 
-6 of 188 SOTA documents. Back to the [full index](../README.md).
+7 of 189 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
+| [SOTA-021](../../../record/practices.d/SOTA-021.md) | Monitor loss landscape smoothness during training | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Rejected — states no threshold and no response, and the smoothing it refers to is a mechanism from a paper the record had conflated with this one. Measuring landscape smoothness during training is not something the practice's source does or recommends; the finding it rests on is Santurkar et al.'s explanation of why batch normalization works, which is a fact about the technique rather than an instruction |
 | [SOTA-046](../../../record/practices.d/SOTA-046.md) | Use hierarchical allreduce for tensors > 1MB | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Rejected — the '> 1MB' crossover has no owner: NCCL measures the algorithm choice per topology rather than publishing a constant, and LIT-051 does not discuss it. What survives is that a modern collectives library already chooses by size and topology, which is not a practice a reader acts on |
 | [SOTA-049](../../../record/practices.d/SOTA-049.md) | Set buffer size to network bandwidth-delay product | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Rejected — collapses two different quantities into one unfollowable sentence — a TCP socket buffer sized by bandwidth-delay product, and a gradient fusion buffer sized by the overlap trade. The fusion-buffer half is SOTA-048, which now carries Horovod's attributable 64 MB default; the transport half is a claim about networks with no source here |
 | [SOTA-055](../../../record/practices.d/SOTA-055.md) | Save optimizer state every N epochs (N ~ sqrt(total_epochs)) | Mohan et al. (2021), [LIT-059](../../../record/literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan. | Rejected — the practice its own cited source exists to replace. LIT-059 names epoch-granular, hand-tuned checkpointing as the problem it solves, on both counts; SOTA-054 now states what that paper actually recommends |

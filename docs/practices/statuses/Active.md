@@ -4,11 +4,11 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-149 of 188 SOTA documents. Back to the [full index](../README.md).
+147 of 189 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [SOTA-001](../../../record/practices.d/SOTA-001.md) | Default choice for neural network training | Kingma et al. (2014), [LIT-001](../../../record/literature.d/LIT-001.md) — [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980). | Active |
+| [SOTA-001](../../../record/practices.d/SOTA-001.md) v2 | Use Adam as the default optimizer absent a reason to choose otherwise | Kingma et al. (2014), [LIT-001](../../../record/literature.d/LIT-001.md) — [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980). | Active |
 | [SOTA-002](../../../record/practices.d/SOTA-002.md) | Common hyperparameters: β₁=0.9, β₂=0.999, ε=1e-8 | Kingma et al. (2014), [LIT-001](../../../record/literature.d/LIT-001.md) — [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980). | Active |
 | [SOTA-003](../../../record/practices.d/SOTA-003.md) | Learning rate typically 1e-4 to 1e-3 for most tasks | Kingma et al. (2014), [LIT-001](../../../record/literature.d/LIT-001.md) — [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980). | Active |
 | [SOTA-004](../../../record/practices.d/SOTA-004.md) | Place BatchNorm after linear/conv layers but before activation functions | Ioffe et al. (2015), [LIT-002](../../../record/literature.d/LIT-002.md) — [ARXIV-1502.03167](https://arxiv.org/abs/1502.03167). | Active |
@@ -28,8 +28,6 @@
 | [SOTA-018](../../../record/practices.d/SOTA-018.md) | Balance pipeline stages to minimize bubble overhead | Huang et al. (2018), [LIT-016](../../../record/literature.d/LIT-016.md) — [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965). | Active |
 | [SOTA-019](../../../record/practices.d/SOTA-019.md) | Choose pipeline chunks based on memory vs. compute trade-off | Huang et al. (2018), [LIT-016](../../../record/literature.d/LIT-016.md) — [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965). | Active |
 | [SOTA-020](../../../record/practices.d/SOTA-020.md) | Use larger learning rates with batch normalization | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Active |
-| [SOTA-021](../../../record/practices.d/SOTA-021.md) | Monitor loss landscape smoothness during training | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Active |
-| [SOTA-022](../../../record/practices.d/SOTA-022.md) | Place BN after linear/conv layers but before activation functions | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Active |
 | [SOTA-025](../../../record/practices.d/SOTA-025.md) | Initialize LayerNorm weight close to 1 (0.97-1.0) | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Active |
 | [SOTA-026](../../../record/practices.d/SOTA-026.md) | Initialize LayerNorm bias to 0 | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Active |
 | [SOTA-027](../../../record/practices.d/SOTA-027.md) | Use a smaller learning rate for LayerNorm parameters | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Active |
@@ -56,7 +54,7 @@
 | [SOTA-051](../../../record/practices.d/SOTA-051.md) | Initialize final layer weights near zero | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
 | [SOTA-052](../../../record/practices.d/SOTA-052.md) | Use smaller variance for deep networks | Wang et al. (2022), [LIT-084](../../../record/literature.d/LIT-084.md) — [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555). | Active |
 | [SOTA-053](../../../record/practices.d/SOTA-053.md) | Special handling for gated architectures | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
-| [SOTA-054](../../../record/practices.d/SOTA-054.md) | Derive the checkpoint interval from online profiling and adapt it at runtime against an overhead bound | Mohan et al. (2021), [LIT-059](../../../record/literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan. | Active |
+| [SOTA-054](../../../record/practices.d/SOTA-054.md) v2 | Derive the checkpoint interval from online profiling and adapt it at runtime against an overhead bound | Mohan et al. (2021), [LIT-059](../../../record/literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan. | Active |
 | [SOTA-056](../../../record/practices.d/SOTA-056.md) | Use async I/O for checkpoint writing | Mohan et al. (2021), [LIT-059](../../../record/literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan. | Active |
 | [SOTA-057](../../../record/practices.d/SOTA-057.md) | Implement multi-level checkpoint strategy | Mohan et al. (2021), [LIT-059](../../../record/literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan. | Active |
 | [SOTA-058](../../../record/practices.d/SOTA-058.md) | Use sequence parallelism for attention layers | Narayanan et al. (2021), [LIT-043](../../../record/literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). | Active |

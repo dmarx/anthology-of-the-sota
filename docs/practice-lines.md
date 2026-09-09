@@ -2,12 +2,17 @@
 
 # Lines of practice
 
-12 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+13 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 ## From Use SwiGLU activation for transformers
 
 - alongside: [SOTA-034](../record/practices.d/SOTA-034.md) — Use SwiGLU activation for transformers *(Active, contested)*
 - alongside: [SOTA-158](../record/practices.d/SOTA-158.md) — Bound the activation's output range when training in low precision *(Proposed, emerging)*
+
+## From Derive the checkpoint interval from online profiling and adapt it at runtime against an overhead bound
+
+- alongside: [SOTA-054](../record/practices.d/SOTA-054.md) — Derive the checkpoint interval from online profiling and adapt it at runtime against an overhead bound *(Active, unassessed)*
+- alongside: [SOTA-189](../record/practices.d/SOTA-189.md) — Set the checkpoint interval from the job's measured time-to-failure, which shrinks as the job grows *(Proposed, unassessed)*
 
 ## From use RoPE for LLM (1D sequence) positional embeddings
 

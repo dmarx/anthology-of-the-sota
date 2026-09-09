@@ -4,10 +4,11 @@
 
 **Replaced** — something newer does this better, and the record says what.
 
-4 of 188 SOTA documents. Back to the [full index](../README.md).
+5 of 189 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
+| [SOTA-022](../../../record/practices.d/SOTA-022.md) | Place BN after linear/conv layers but before activation functions | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Superseded — by [SOTA-004](../../../record/practices.d/SOTA-004.md); a duplicate of SOTA-004, which states the same placement rule from batch normalization's own paper. The two arrived in the same import from different notes and have coexisted since; SOTA-004 is the one with the originating source |
 | [SOTA-023](../../../record/practices.d/SOTA-023.md) v2 | Use multi-query attention for decoder-only models to reduce memory bandwidth | Shazeer (2019), [LIT-024](../../../record/literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). | Superseded — by [SOTA-109](../../../record/practices.d/SOTA-109.md) |
 | [SOTA-024](../../../record/practices.d/SOTA-024.md) v2 | Keep key/value projections shared across heads while query projections remain separate | Shazeer (2019), [LIT-024](../../../record/literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). | Superseded — by [SOTA-109](../../../record/practices.d/SOTA-109.md) |
 | [SOTA-039](../../../record/practices.d/SOTA-039.md) | single cycle of cosine decay is sufficient lr schedule | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Superseded — by [SOTA-140](../../../record/practices.d/SOTA-140.md); warmup-stable-decay matches it and leaves the token budget open; every report since 2024 in the record uses a stable-then-decay schedule |

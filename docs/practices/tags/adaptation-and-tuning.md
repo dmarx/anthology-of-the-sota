@@ -4,7 +4,7 @@
 
 Taking a trained model somewhere new — fine-tuning, preference training, parameter-efficient adaptation, context extension.
 
-8 of 188 SOTA documents. Back to the [full index](../README.md).
+8 of 189 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

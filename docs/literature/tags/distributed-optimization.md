@@ -4,7 +4,7 @@
 
 Parallelism, sharding, communication, memory, checkpointing.
 
-20 of 221 LIT documents. Back to the [full index](../README.md).
+21 of 223 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -28,3 +28,4 @@ Parallelism, sharding, communication, memory, checkpointing.
 | [LIT-214](../../../record/literature.d/LIT-214.md) | Streaming DiLoCo with overlapping communication: Towards a Distributed Free Lunch | Douillard et al. (2025), [ARXIV-2501.18512](https://arxiv.org/abs/2501.18512). DiLoCo made synchronisation rare and left its size alone, so peak bandwidth was unchanged. Three changes fix that: synchronise subsets of parameters in sequence rather than all at once, let workers keep training while they synchronise, and quantise what crosses the link. Billion-scale training at matched quality with two orders of magnitude less bandwidth. | Active |
 | [LIT-219](../../../record/literature.d/LIT-219.md) | PyTorch Distributed: Experiences on Accelerating Data Parallel Training | Li et al. (2020), [ARXIV-2006.15704](https://arxiv.org/abs/2006.15704). The design and evaluation of PyTorch's DistributedDataParallel, whose three acceleration techniques are "bucketing gradients, overlapping computation with communication, and skipping gradient synchronization" — near-linear scalability on 256 GPUs. | Active |
 | [LIT-220](../../../record/literature.d/LIT-220.md) | Horovod: fast and easy distributed deep learning in TensorFlow | Sergeev and Del Balso (2018), [ARXIV-1802.05799](https://arxiv.org/abs/1802.05799). Ring-allreduce for TensorFlow, and the origin of Tensor Fusion — batching small tensors before the collective, because ring-allreduce "utilizes the network in an optimal way if the tensors are large enough, but does not work as efficiently or quickly if they are very small." | Active |
+| [LIT-222](../../../record/literature.d/LIT-222.md) | CoreWeave Training Benchmarks Whitepaper | CoreWeave (2025). Fits a right-censored exponential survival model to real job durations and interruptions, giving a per-GPU failure rate of 3,748.25 days/failure and an MTTF of 3.66 days at 1,024 GPUs — the quantity a checkpoint interval should be chosen against, and one the record had no source for. | Active |

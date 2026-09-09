@@ -2,12 +2,25 @@
 number: 8
 status: 'Active'
 title: 'linear warmup of LR stabilizes early training with large batch size.'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-09'
+  note: >-
+    Source corrected (#114). Warmup is Goyal et al. (LIT-007); LIT-009
+    (LARS) cites it as prior work and argues that recipe is not general
+    enough and may diverge. LIT-009 stays in the list as the paper that
+    found its limit. The recommendation is unchanged.
 tags:
 - training-optimization
 date: '2026-08-24'
 published: '2017-08-01'
 source:
+# Warmup is Goyal et al. (LIT-007), which introduced it as the fix for
+# divergence under linear LR scaling. LIT-009 (LARS) cites it as prior work
+# and argues the recipe is "not general enough"; it stays in the list as the
+# paper that found the limit.
+- LIT-007
 - LIT-009
 summary: >-
   You et al. (2017), [LIT-009](../literature.d/LIT-009.md) — [ARXIV-1708.03888](https://arxiv.org/abs/1708.03888).
@@ -20,6 +33,32 @@ compared_against:
 ## Source
 
 You et al. (2017), [LIT-009](../literature.d/LIT-009.md) — [ARXIV-1708.03888](https://arxiv.org/abs/1708.03888).
+
+
+## Whose recipe this is
+
+Warmup is **Goyal et al.** ([LIT-007](../literature.d/LIT-007.md)). Linear scaling of the learning rate
+with batch size makes early optimization harder and networks "may diverge
+especially during the initial phase"; their fix is to start at a small safe
+rate and raise it to the target over the first steps. With that, they trained
+ResNet-50 at batch 8K.
+
+This practice cited **LARS** ([LIT-009](../literature.d/LIT-009.md)) until [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114). LARS describes warmup as
+prior work — "Linear scaling of LR with a warm-up is the *state-of-the-art*
+recipe for large batch training" — and then argues against its sufficiency:
+
+> We argue that the current recipe for large batch training (linear learning
+> rate scaling with warm-up) **is not general enough and training may
+> diverge.**
+
+Its own contribution is **Layer-wise Adaptive Rate Scaling**, which got
+AlexNet to batch 8K and ResNet-50 to **batch 32K** without accuracy loss —
+past where warmup alone held.
+
+So the record had the practice sourced to the paper that found its limit. Both
+notes are now named: `LIT-007` first, as where warmup comes from, and
+`LIT-009` beside it, because a reader should know the recipe has a ceiling and
+who established it.
 
 ## What warmup is for at large batch
 

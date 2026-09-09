@@ -2,7 +2,7 @@
 number: 86
 status: 'Active'
 title: 'Tiling size should match hardware SRAM size'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-09'
@@ -11,6 +11,13 @@ history:
     LIT-074's Algorithm 1 sets B_c = ceil(M/4d) and
     B_r = min(ceil(M/4d), d), so the tile is derived from SRAM size
     rather than tuned. Read for #114; the recommendation is unchanged.
+- version: 3
+  date: '2026-09-09'
+  note: >-
+    Qualified. Version 2 said the tile is "derived, not tuned" from
+    LIT-074's formula, which overstated it: the successor kernel LIT-106
+    tunes block sizes by hand over four choices. Both are in the body now.
+    The recommendation is unchanged.
 tags:
 - attention-techniques
 date: '2026-08-24'
@@ -56,6 +63,21 @@ running softmax statistics need.
 This is why "match the SRAM size" is a real constraint rather than a slogan:
 the relationship is stated, and Theorem 2's `Θ(N²d²M⁻¹)` bound is what you
 get by respecting it.
+
+## The successor tunes rather than derives
+
+Worth carrying, because it qualifies the formula above. FlashAttention-2
+([LIT-106](../literature.d/LIT-106.md)) does not compute the block size — it says: *"we manually tune for
+each head dimension since there are essentially only 4 choices"*, over
+`{64,128} × {64,128}`, bounded by device shared memory beyond which the
+kernel will not run at all.
+
+Both papers agree on the constraint and disagree on how to satisfy it.
+[LIT-074](../literature.d/LIT-074.md)'s `⌈M/4d⌉` is the analytically right tile for its schedule; once
+[LIT-106](../literature.d/LIT-106.md) changed the work partitioning, the best tile stopped following from
+SRAM capacity alone and became something to measure over a small discrete
+set. The record should not say the size is derived without saying that the
+current kernel picks it by hand.
 
 ## What that means in practice
 

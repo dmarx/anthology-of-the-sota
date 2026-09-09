@@ -7,8 +7,7 @@ this file assumes you hold them.
 This is an anthology of current ML practice: what to do, and the published
 work that says why. Scoped by the **kind of claim**, not by the domain a
 technique was discovered in — vision, generative and inference work all
-qualify if the recommendation is one the seven topics can express
-<!-- inactive-ok: ADR-020 — Proposed, and named as the decision that sets the scope this file describes -->
+qualify if the recommendation is one the ten topics can express
 ([ADR-020](record/decisions.d/ADR-020.md)). The bias toward language-model training is a bias, not a
 boundary. Its memory is a Luria record — scaffolded,
 generated and linted by the `luria` CLI. This file is a map, not a copy: when
@@ -44,7 +43,7 @@ still does. Collapsing them is what the old schema did, and
   in that order of preference — the first two resolve through a remote, a
   URL is a string nothing can check ([ADR-009](record/decisions.d/ADR-009.md)). Two papers reached the old
   corpus with no identifier at all; that is now impossible.
-- **Exactly one primary topic**, from the seven in
+- **Exactly one primary topic**, from the ten in
   `record/practices.d/tags.yaml`. Secondary tags are free, but add one only
   when it is true — the import deliberately adds none.
 <!-- inactive-ok-block: LIT-041 — an example of the citation syntax -->

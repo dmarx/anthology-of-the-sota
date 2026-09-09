@@ -72,7 +72,6 @@ published a real fix, and left the others alone — which is a field converging
 on *"this objective needs work"* while nothing yet converges on which work.
 
 `contested` would be the wrong word and the record now enforces the
-<!-- inactive-ok: ADR-016 — Proposed, cited for the rule it introduced -->
 difference: [ADR-016](../decisions.d/ADR-016.md) requires a `contested` practice to name what
 contests it, and there is nothing honest to put there. Three sources agreeing
 that a thing is broken are not evidence against the practice that says so.

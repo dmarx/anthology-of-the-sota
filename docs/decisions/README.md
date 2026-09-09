@@ -19,8 +19,8 @@ File one with `luria new adr`.
 
 ## By tag
 
-**[The record](tags/record.md)** (14) — what the schemes hold, and the rules between them:
-[001](../../record/decisions.d/ADR-001.md) · [002](../../record/decisions.d/ADR-002.md) · [004](../../record/decisions.d/ADR-004.md) · [009](../../record/decisions.d/ADR-009.md) · [010](../../record/decisions.d/ADR-010.md) · [011](../../record/decisions.d/ADR-011.md) · [012](../../record/decisions.d/ADR-012.md) · [013](../../record/decisions.d/ADR-013.md) · [014](../../record/decisions.d/ADR-014.md) · [015](../../record/decisions.d/ADR-015.md) · [016](../../record/decisions.d/ADR-016.md) · [017](../../record/decisions.d/ADR-017.md) · [018](../../record/decisions.d/ADR-018.md) · [019](../../record/decisions.d/ADR-019.md)
+**[The record](tags/record.md)** (15) — what the schemes hold, and the rules between them:
+[001](../../record/decisions.d/ADR-001.md) · [002](../../record/decisions.d/ADR-002.md) · [004](../../record/decisions.d/ADR-004.md) · [009](../../record/decisions.d/ADR-009.md) · [010](../../record/decisions.d/ADR-010.md) · [011](../../record/decisions.d/ADR-011.md) · [012](../../record/decisions.d/ADR-012.md) · [013](../../record/decisions.d/ADR-013.md) · [014](../../record/decisions.d/ADR-014.md) · [015](../../record/decisions.d/ADR-015.md) · [016](../../record/decisions.d/ADR-016.md) · [017](../../record/decisions.d/ADR-017.md) · [018](../../record/decisions.d/ADR-018.md) · [019](../../record/decisions.d/ADR-019.md) · [025](../../record/decisions.d/ADR-025.md)
 
 **[Taxonomy](tags/taxonomy.md)** (3) — the topic vocabulary and what enforces it:
 [003](../../record/decisions.d/ADR-003.md) · [022](../../record/decisions.d/ADR-022.md) · [024](../../record/decisions.d/ADR-024.md)
@@ -31,13 +31,13 @@ File one with `luria new adr`.
 **[Migration](tags/migration.md)** (3) — moving off the YAML registry, and what happens to it:
 [001](../../record/decisions.d/ADR-001.md) · [006](../../record/decisions.d/ADR-006.md) · [008](../../record/decisions.d/ADR-008.md)
 
-**[Ontology](tags/ontology.md)** (2):
-[020](../../record/decisions.d/ADR-020.md) · [021](../../record/decisions.d/ADR-021.md)
+**[Ontology](tags/ontology.md)** (3):
+[020](../../record/decisions.d/ADR-020.md) · [021](../../record/decisions.d/ADR-021.md) · [025](../../record/decisions.d/ADR-025.md)
 
 **[Workflow](tags/workflow.md)** (1):
 [013](../../record/decisions.d/ADR-013.md)
 
-**By status:** [Active](statuses/Active.md) (21) · [Proposed](statuses/Proposed.md) (2) · [Deferred](statuses/Deferred.md) (0) · [Superseded](statuses/Superseded.md) (1) · [Rejected](statuses/Rejected.md) (0)
+**By status:** [Active](statuses/Active.md) (22) · [Proposed](statuses/Proposed.md) (2) · [Deferred](statuses/Deferred.md) (0) · [Superseded](statuses/Superseded.md) (1) · [Rejected](statuses/Rejected.md) (0)
 
 ## Chronological
 
@@ -77,4 +77,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [ADR-022](../../record/decisions.d/ADR-022.md) | The primary topic is derived from the first tag, and the lines assert it | The topic vocabulary was a constraint on a list — exactly one tag from the seven — with no way to say which tag that was. Deriving `primary_topic` from `{tags[0]}` names it, which lets the chains assert the invariant they actually mean: a line of work stays within one topic. Costs a convention nothing checks, that the primary tag is written first. | Active |
 | [ADR-023](../../record/decisions.d/ADR-023.md) | A note carries its number, and answers to a readable second name | The pre-migration ids said who and when; `LIT-001` says neither. luria 0.13 can render an alias from a document's own frontmatter, so `LIT-Kingma-2014-001` now resolves wherever `LIT-001` does. An alias rather than a code, because a code that encodes a fact rots when the fact is corrected, and an alias is recomputed on every read. | Active |
 | [ADR-024](../../record/decisions.d/ADR-024.md) | The topic vocabulary has four recurring seams — options, not a decision | [ADR-021](../../record/decisions.d/ADR-021.md) said to expect a fourth vocabulary decision. Declaring the relations the practice bodies argue produced 25 unbound edges, and they are not scattered: four topic pairs account for eighteen of them. This states the evidence and four options, and decides nothing — the choice is which kind of claim the vocabulary is failing to name, and that is a judgement about the subject rather than about the record. | Proposed |
+| [ADR-025](../../record/decisions.d/ADR-025.md) | A third scheme: NOTE, the structured reading of a paper | A LIT note says what a paper's standing in the anthology is. It has never said what the paper contains, and the corpus now holds two demonstrations of what that costs. NOTE is a third scheme: one document per paper actually read, carrying the contribution, the assumptions, the theorem-level results, the claims with their strength, and the recommendations derived — with the status recording how deeply it was read. | Active |
 

@@ -63,8 +63,8 @@ This practice cited [LIT-025](../literature.d/LIT-025.md) until [#114](https://g
 times**. What it argues is that the gain and bias *increase the risk of
 over-fitting and do not work in most cases*, and that removing them
 outperforms keeping them on four datasets. It is a case for deleting the
-<!-- inactive-ok: SOTA-tmpqpw9i — Proposed; named as where the former source's real argument now lives -->
-parameter this practice initialises, and it is now filed as [SOTA-tmpqpw9i](SOTA-tmpqpw9i.md).
+<!-- inactive-ok: SOTA-191 — Proposed; named as where the former source's real argument now lives -->
+parameter this practice initialises, and it is now filed as [SOTA-191](SOTA-191.md).
 
 So the record briefly held a recommendation about how to set a parameter,
 sourced to the paper arguing that parameter should not exist. The range was

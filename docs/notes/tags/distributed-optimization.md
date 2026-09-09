@@ -6,4 +6,4 @@
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [NOTE-tmpjd3j6](../../../record/notes.d/NOTE-tmpjd3j6.md) | PyTorch FSDP | Fully Sharded Data Parallel as an industry-grade PyTorch component: a sharding factor F generalising replication through full sharding, communication overlapped by backward prefetching, and a rate limiter over the CUDA caching allocator. The first cluster in [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) whose practices its paper actually supports. | Read |
+| [NOTE-003](../../../record/notes.d/NOTE-003.md) | PyTorch FSDP | Fully Sharded Data Parallel as an industry-grade PyTorch component: a sharding factor F generalising replication through full sharding, communication overlapped by backward prefetching, and a rate limiter over the CUDA caching allocator. The first cluster in [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) whose practices its paper actually supports. | Read |

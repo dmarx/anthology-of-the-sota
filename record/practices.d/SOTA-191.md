@@ -1,5 +1,8 @@
 ---
+number: 191
 status: Proposed
+formerly:
+- SOTA-tmpqpw9i
 promote_when: >-
   A decoder-only language model at contemporary scale trained with the
   normalization gain removed, reporting quality against the same model with
@@ -30,7 +33,7 @@ summary: >-
   Xu et al. (2019), [LIT-025](../literature.d/LIT-025.md) — the bias and gain increase overfitting risk and "do not work in most cases"; LayerNorm-simple, with both removed, beats LayerNorm on four datasets and reaches state of the art on En-Vi.
 ---
 
-# SOTA-tmpqpw9i: Consider removing LayerNorm's learnable gain and bias rather than tuning them
+# SOTA-191: Consider removing LayerNorm's learnable gain and bias rather than tuning them
 
 ## Source
 

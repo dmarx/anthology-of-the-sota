@@ -1,5 +1,8 @@
 ---
+number: 1
 status: Read
+formerly:
+- NOTE-tmp6zoh6
 paper: LIT-025
 title: 'Understanding and Improving Layer Normalization'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   LayerNorm's benefit is in the backward pass — the derivatives of the mean and variance re-center and re-scale the gradients — not in forward normalization. Its bias and gain increase overfitting risk and "do not work in most cases".
 ---
 
-# NOTE-tmp6zoh6: Understanding and Improving Layer Normalization
+# NOTE-001: Understanding and Improving Layer Normalization
 
 ## Contribution
 
@@ -143,8 +146,8 @@ string `0.97` **zero times** and `smaller learning rate` **zero times**.
 `SOTA-025` and `SOTA-026` moved to [LIT-005](../literature.d/LIT-005.md), where the parameters are defined,
 and `SOTA-027` is `Rejected`.
 
-<!-- inactive-ok-block: SOTA-tmpqpw9i — Proposed; the practice this reading produced, and its status is the point -->
-**Produces [SOTA-tmpqpw9i](../practices.d/SOTA-tmpqpw9i.md)** from R2 — `Proposed`, `contested_by: LIT-023`.
+<!-- inactive-ok-block: SOTA-191 — Proposed; the practice this reading produced, and its status is the point -->
+**Produces [SOTA-191](../practices.d/SOTA-191.md)** from R2 — `Proposed`, `contested_by: LIT-023`.
 The contest is C4 against RMSNorm's opposite simplification.
 
 **R1 bears on [SOTA-182](../practices.d/SOTA-182.md)** without contradicting it. That practice says the
@@ -169,10 +172,10 @@ is worth its cost.
 
 ## Open questions
 
-<!-- inactive-ok-block: SOTA-tmpqpw9i — Proposed; named as the practice this open question would promote -->
+<!-- inactive-ok-block: SOTA-191 — Proposed; named as the practice this open question would promote -->
 - Does C3 hold at scale, where overfitting is not the constraint? A gain-free
   decoder-only model at contemporary size would settle it, and is
-  [SOTA-tmpqpw9i](../practices.d/SOTA-tmpqpw9i.md)'s promotion condition.
+  [SOTA-191](../practices.d/SOTA-191.md)'s promotion condition.
 - Bias or gain — which one carries the effect? Nobody has separated them.
 - This paper and RMSNorm each drop a different half of LayerNorm and each
   report an improvement. Is there a model that drops **both** the centering

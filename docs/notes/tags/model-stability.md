@@ -2,8 +2,8 @@
 
 # NOTEs tagged `model-stability`
 
-1 of 2 NOTE documents. Back to the [full index](../README.md).
+1 of 4 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [NOTE-tmp6zoh6](../../../record/notes.d/NOTE-tmp6zoh6.md) | Understanding and Improving Layer Normalization | LayerNorm's benefit is in the backward pass — the derivatives of the mean and variance re-center and re-scale the gradients — not in forward normalization. Its bias and gain increase overfitting risk and "do not work in most cases". | Read |
+| [NOTE-001](../../../record/notes.d/NOTE-001.md) | Understanding and Improving Layer Normalization | LayerNorm's benefit is in the backward pass — the derivatives of the mean and variance re-center and re-scale the gradients — not in forward normalization. Its bias and gain increase overfitting risk and "do not work in most cases". | Read |

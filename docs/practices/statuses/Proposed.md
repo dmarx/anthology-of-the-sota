@@ -4,7 +4,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-30 of 190 SOTA documents. Back to the [full index](../README.md).
+31 of 191 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -38,3 +38,4 @@
 | [SOTA-179](../../../record/practices.d/SOTA-179.md) | Truncate the rotary encoding's low frequencies rather than rescaling its base | Barbero et al. (2024), [LIT-210](../../../record/literature.d/LIT-210.md) — RoPE's high frequencies build positional attention heads and its low frequencies carry semantics that provably cannot stay robust over long context. Keeping a fraction p of the frequencies holds performance and at 2B improves it; p=1 is RoPE and p=0 is NoPE, so the practice is a dial between two things the record already holds. | Proposed |
 | [SOTA-189](../../../record/practices.d/SOTA-189.md) | Set the checkpoint interval from the job's measured time-to-failure, which shrinks as the job grows | CoreWeave (2025), [LIT-222](../../../record/literature.d/LIT-222.md). Expected work lost to a failure is half the inter-checkpoint interval, and mean time to failure falls linearly with GPU count — so the interval belongs to the job's size and the cluster's failure rate, not to the write cost alone. | Proposed |
 | [SOTA-190](../../../record/practices.d/SOTA-190.md) | Increase depth before any other dimension when scaling a transformer | Tay et al. (2021), [LIT-052](../../../record/literature.d/LIT-052.md) — the DeepNarrow strategy. Small 16L matches T5-Base downstream at 60% of the parameters, 63% of the FLOPs and 40% faster; the limit is parallelism rather than quality. | Proposed |
+| [SOTA-191](../../../record/practices.d/SOTA-191.md) | Consider removing LayerNorm's learnable gain and bias rather than tuning them | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — the bias and gain increase overfitting risk and "do not work in most cases"; LayerNorm-simple, with both removed, beats LayerNorm on four datasets and reaches state of the art on En-Vi. | Proposed |

@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-35 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+36 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 ## From Place BatchNorm after linear/conv layers but before activation functions
 
@@ -29,9 +29,9 @@
   - [SOTA-014](../record/practices.d/SOTA-014.md) — Maintain master weights in FP32 *(Active, unassessed)*
     - [SOTA-015](../record/practices.d/SOTA-015.md) — Store optimizer states in FP32 *(Active, unassessed)*
 
-## From Initialize LayerNorm weight close to 1 (0.97-1.0)
+## From Initialize the LayerNorm gain to 1
 
-- alongside: [SOTA-025](../record/practices.d/SOTA-025.md) — Initialize LayerNorm weight close to 1 (0.97-1.0) *(Active, unassessed)*
+- alongside: [SOTA-025](../record/practices.d/SOTA-025.md) — Initialize the LayerNorm gain to 1 *(Active, unassessed)*
 - alongside: [SOTA-051](../record/practices.d/SOTA-051.md) — Initialize final layer weights near zero *(Active, unassessed)*
 - alongside: [SOTA-060](../record/practices.d/SOTA-060.md) — Initialize layer norms with smaller variance (0.02) for stability *(Active, unassessed)*
 
@@ -141,8 +141,8 @@
 
 ## From Implement dynamic temperature scaling for mixing
 
-- alongside: [SOTA-102](../record/practices.d/SOTA-102.md) — Implement dynamic temperature scaling for mixing *(Active, unassessed)*
-- alongside: [SOTA-103](../record/practices.d/SOTA-103.md) — Adjust mixing ratios based on validation performance *(Active, unassessed)*
+- alongside: [SOTA-102](../record/practices.d/SOTA-102.md) — Implement dynamic temperature scaling for mixing *(Superseded, unassessed)*
+- alongside: [SOTA-103](../record/practices.d/SOTA-103.md) — Adjust data mixing proportions online from per-domain training loss *(Active, unassessed)*
 
 ## From PagedAttention to accelerate batch inference for LLM sampling
 
@@ -213,3 +213,8 @@
   - [SOTA-148](../record/practices.d/SOTA-148.md) — Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss *(Proposed, emerging)*
   - [SOTA-149](../record/practices.d/SOTA-149.md) — Build the sparse layers from many small experts plus an always-on shared one, not a few large ones *(Active, emerging)*
   - [SOTA-180](../record/practices.d/SOTA-180.md) — Keep the routed experts' weights in a down-projected latent space and spend the saved bandwidth on more of them *(Active, emerging)*
+
+## From Compute the normalization statistic without centering (RMSNorm)
+
+- alongside: [SOTA-182](../record/practices.d/SOTA-182.md) — Compute the normalization statistic without centering (RMSNorm) *(Active, universal)*
+- alongside: [SOTA-191](../record/practices.d/SOTA-191.md) — Consider removing LayerNorm's learnable gain and bias rather than tuning them *(Proposed, contested)*

@@ -2,8 +2,8 @@
 
 # NOTEs tagged `model-architecture`
 
-1 of 1 NOTE documents. Back to the [full index](../README.md).
+1 of 4 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [NOTE-tmpmvx4t](../../../record/notes.d/NOTE-tmpmvx4t.md) | Scale Efficiently | Model shape, not only model size, determines downstream fine-tuning quality — and the widely adopted T5-Base and T5-Large configurations are Pareto-inefficient. Read in full for [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) after its LIT note was found to describe a different paper. | Read |
+| [NOTE-004](../../../record/notes.d/NOTE-004.md) | Scale Efficiently | Model shape, not only model size, determines downstream fine-tuning quality — and the widely adopted T5-Base and T5-Large configurations are Pareto-inefficient. Read in full for [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) after its LIT note was found to describe a different paper. | Read |

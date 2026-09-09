@@ -2,9 +2,10 @@
 
 # ADRs tagged `ontology`
 
-2 of 24 decisions. Back to the [full index](../README.md).
+3 of 25 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [ADR-020](../../../record/decisions.d/ADR-020.md) | The recommendations are scoped by kind of claim, not by domain |  | Active |
 | [ADR-021](../../../record/decisions.d/ADR-021.md) | The practice vocabulary takes the kind-of-claim topics the reading list already has |  | Active |
+| [ADR-025](../../../record/decisions.d/ADR-025.md) | A third scheme: NOTE, the structured reading of a paper | A LIT note says what a paper's standing in the anthology is. It has never said what the paper contains, and the corpus now holds two demonstrations of what that costs. NOTE is a third scheme: one document per paper actually read, carrying the contribution, the assumptions, the theorem-level results, the claims with their strength, and the recommendations derived — with the status recording how deeply it was read. | Active |

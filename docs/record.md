@@ -18,6 +18,7 @@ A code — `ADR-012` — resolves to a document, and every reference to it in th
 |---|---|---|---|
 | `SOTA-001` | `record/practices.d/` | `docs/practices/README.md` + tag pages | `Active` |
 | `LIT-001` | `record/literature.d/` | `docs/literature/README.md` + tag pages | `Active` |
+| `NOTE-001` | `record/notes.d/` | `docs/notes/README.md` + tag pages | `Read` |
 | `ADR-001` | `record/decisions.d/` | `docs/decisions/README.md` + tag pages | `Active` |
 | `DP-001` | `record/principles.d/` | `docs/design-principles.md` (one page, read as a whole) | `Active` |
 
@@ -51,6 +52,13 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `primary_topic` — derived — `{tags[0]}`, never written (luria.toml: schemes.LIT.fields.primary_topic)
 - `source` — at least one of `arxiv`, `doi`, `url` (luria.toml: schemes.LIT.field_groups.source)
 - `primary_topic` — exactly one of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.toml: schemes.LIT.tag_groups.primary_topic)
+
+**`NOTE`**
+
+- `paper` — required, a `LIT` code (luria.toml: schemes.NOTE.references.paper)
+- `status` — optional, one of `Read`, `Skimmed`, `Unread`, `Superseded` (luria.toml: schemes.NOTE.fields.status; record/notes.d/statuses.yaml: values)
+- `primary_topic` — derived — `{tags[0]}`, never written (luria.toml: schemes.NOTE.fields.primary_topic)
+- `primary_topic` — exactly one of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.toml: schemes.NOTE.tag_groups.primary_topic)
 
 **`ADR`**
 
@@ -99,6 +107,7 @@ Every kind this project scaffolds, straight from the dispatch table `luria new` 
 | `luria new --kind dp --title "…"` | a document in the `DP` scheme, numbered for you |
 | `luria new --kind lit --title "…"` | a document in the `LIT` scheme, numbered for you |
 | `luria new --kind migration --title "…"` | a migration spec |
+| `luria new --kind note --title "…"` | a document in the `NOTE` scheme, numbered for you |
 | `luria new --kind sota --title "…"` | a document in the `SOTA` scheme, numbered for you |
 
 ## Settings this project changed

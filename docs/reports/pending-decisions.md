@@ -5,7 +5,7 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**35 document(s) awaiting a decision.**
+**36 document(s) awaiting a decision.**
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -16,8 +16,8 @@
 | 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 17 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
 | 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 13 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
 | 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 10 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
+| 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 9 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 8 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
-| 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 8 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
 | 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 6 | 0 | Decay the learning rate linearly all the way to zero |
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 2 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 6 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
@@ -41,7 +41,8 @@
 | 2026-09-08 | Proposed | [SOTA-179](../../record/practices.d/SOTA-179.md) | 1 | 0 | Truncate the rotary encoding's low frequencies rather than rescaling its base |
 | 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 0 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
 | 2026-09-08 | Proposed | [SOTA-175](../../record/practices.d/SOTA-175.md) | 0 | 0 | Mask whole syntactic units for code fill-in-the-middle, not random character spans |
-| 2026-09-09 | Proposed | [SOTA-190](../../record/practices.d/SOTA-190.md) | 1 | 0 | Increase depth before any other dimension when scaling a transformer |
+| 2026-09-09 | Proposed | [SOTA-191](../../record/practices.d/SOTA-191.md) | 5 | 0 | Consider removing LayerNorm's learnable gain and bias rather than tuning them |
+| 2026-09-09 | Proposed | [SOTA-190](../../record/practices.d/SOTA-190.md) | 4 | 0 | Increase depth before any other dimension when scaling a transformer |
 | 2026-09-09 | Proposed | [ADR-024](../../record/decisions.d/ADR-024.md) | 0 | 0 | The topic vocabulary has four recurring seams — options, not a decision |
 | 2026-09-09 | Proposed | [SOTA-189](../../record/practices.d/SOTA-189.md) | 0 | 0 | Set the checkpoint interval from the job's measured time-to-failure, which shrinks as the job grows |
 

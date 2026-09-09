@@ -4,7 +4,7 @@
 
 **Unread** — the note exists to record that nobody has read this yet, which is a fact the record could not previously state.
 
-0 of 1 NOTE documents. Back to the [full index](../README.md).
+0 of 4 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

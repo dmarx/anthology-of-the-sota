@@ -1,5 +1,8 @@
 ---
+number: 2
 status: Read
+formerly:
+- NOTE-tmp9vhnf
 paper: LIT-117
 title: 'Efficient Online Data Mixing'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   An Exp3 bandit over data domains, rewarded by per-domain training loss on the batches the run is already taking, revising the mixture during training. 19% fewer iterations to the next best method's final perplexity, at negligible wall-clock cost.
 ---
 
-# NOTE-tmp9vhnf: Efficient Online Data Mixing
+# NOTE-002: Efficient Online Data Mixing
 
 ## Contribution
 

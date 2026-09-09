@@ -4,7 +4,7 @@
 
 **In dispute** — credible groups publicly disagree, now — the fork in a line of work, whose trunk is agreed and whose branches are not.
 
-6 of 190 SOTA documents. Back to the [full index](../README.md).
+7 of 191 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -14,3 +14,4 @@
 | [SOTA-136](../../../record/practices.d/SOTA-136.md) v2 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) | Xie et al. (2025), [LIT-140](../../../record/literature.d/LIT-140.md) — hyper-connections with the residual-mixing matrix constrained to be doubly stochastic, so identity mapping survives; 6–7% overhead at 3B–27B, shipped in DeepSeek-V4. | Proposed |
 | [SOTA-140](../../../record/practices.d/SOTA-140.md) v4 | Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens | Hu et al. (2024), [LIT-144](../../../record/literature.d/LIT-144.md), with the controlled comparison in [LIT-145](../../../record/literature.d/LIT-145.md) — matches cosine at equal tuning, leaves the token budget open, makes every stable-stage checkpoint a usable branch point; contested at frontier scale by [LIT-131](../../../record/literature.d/LIT-131.md), which retuned per schedule and chose cosine. | Active |
 | [SOTA-171](../../../record/practices.d/SOTA-171.md) | Repeat a data-constrained corpus for up to about four epochs; past that, added compute stops paying | Muennighoff et al. (2023), [LIT-166](../../../record/literature.d/LIT-166.md) — with constrained data at fixed compute, up to four epochs of repeated data changes the loss negligibly against having that much unique data. Past that point the value of adding compute decays toward zero. 400 training runs, up to 900B tokens and 9B parameters, with a scaling law that prices repeated tokens and excess parameters. | Active |
+| [SOTA-191](../../../record/practices.d/SOTA-191.md) | Consider removing LayerNorm's learnable gain and bias rather than tuning them | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — the bias and gain increase overfitting risk and "do not work in most cases"; LayerNorm-simple, with both removed, beats LayerNorm on four datasets and reaches state of the art on En-Vi. | Proposed |

@@ -4,7 +4,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-142 of 190 SOTA documents. Back to the [full index](../README.md).
+138 of 191 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -28,9 +28,8 @@
 | [SOTA-018](../../../record/practices.d/SOTA-018.md) | Balance pipeline stages to minimize bubble overhead | Huang et al. (2018), [LIT-016](../../../record/literature.d/LIT-016.md) — [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965). | Active |
 | [SOTA-019](../../../record/practices.d/SOTA-019.md) | Choose pipeline chunks based on memory vs. compute trade-off | Huang et al. (2018), [LIT-016](../../../record/literature.d/LIT-016.md) — [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965). | Active |
 | [SOTA-020](../../../record/practices.d/SOTA-020.md) | Use larger learning rates with batch normalization | Santurkar et al. (2018), [LIT-015](../../../record/literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). | Active |
-| [SOTA-025](../../../record/practices.d/SOTA-025.md) | Initialize LayerNorm weight close to 1 (0.97-1.0) | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Active |
-| [SOTA-026](../../../record/practices.d/SOTA-026.md) | Initialize LayerNorm bias to 0 | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Active |
-| [SOTA-027](../../../record/practices.d/SOTA-027.md) | Use a smaller learning rate for LayerNorm parameters | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Active |
+| [SOTA-025](../../../record/practices.d/SOTA-025.md) v2 | Initialize the LayerNorm gain to 1 | Ba et al. (2016), [LIT-005](../../../record/literature.d/LIT-005.md) — [ARXIV-1607.06450](https://arxiv.org/abs/1607.06450). Identity at initialisation: the normalised signal passes through unchanged. A convention rather than a published result, and the record says so. | Active |
+| [SOTA-026](../../../record/practices.d/SOTA-026.md) v2 | Initialize LayerNorm bias to 0 | Ba et al. (2016), [LIT-005](../../../record/literature.d/LIT-005.md) — [ARXIV-1607.06450](https://arxiv.org/abs/1607.06450). Zero is the identity; a convention rather than a published result, and moot in any model using RMSNorm. | Active |
 | [SOTA-028](../../../record/practices.d/SOTA-028.md) | Stage optimizer states across data parallel ranks (ZeRO-1) | Rajbhandari et al. (2020), [LIT-027](../../../record/literature.d/LIT-027.md) — [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054). | Active |
 | [SOTA-029](../../../record/practices.d/SOTA-029.md) | Partition gradients and optimizer states (ZeRO-2) for larger models | Rajbhandari et al. (2020), [LIT-027](../../../record/literature.d/LIT-027.md) — [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054). | Active |
 | [SOTA-030](../../../record/practices.d/SOTA-030.md) | Use ZeRO-3 only when other strategies insufficient | Rajbhandari et al. (2020), [LIT-027](../../../record/literature.d/LIT-027.md) — [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054). | Active |
@@ -92,10 +91,7 @@
 | [SOTA-098](../../../record/practices.d/SOTA-098.md) | Monitor validation loss for unexpected spikes during training | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
 | [SOTA-099](../../../record/practices.d/SOTA-099.md) | Track gradient norm statistics to detect training instabilities | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
 | [SOTA-100](../../../record/practices.d/SOTA-100.md) | Use learning rate warmup proportional to model size | Xiong et al. (2020), [LIT-114](../../../record/literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). | Active |
-| [SOTA-101](../../../record/practices.d/SOTA-101.md) | Use perplexity-based filtering for quality assessment | Albalak et al. (2023), [LIT-117](../../../record/literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406). | Active |
-| [SOTA-102](../../../record/practices.d/SOTA-102.md) | Implement dynamic temperature scaling for mixing | Albalak et al. (2023), [LIT-117](../../../record/literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406). | Active |
-| [SOTA-103](../../../record/practices.d/SOTA-103.md) | Adjust mixing ratios based on validation performance | Albalak et al. (2023), [LIT-117](../../../record/literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406). | Active |
-| [SOTA-104](../../../record/practices.d/SOTA-104.md) | Monitor domain coverage during training | Albalak et al. (2023), [LIT-117](../../../record/literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406). | Active |
+| [SOTA-103](../../../record/practices.d/SOTA-103.md) v2 | Adjust data mixing proportions online from per-domain training loss | Albalak et al. (2023), [LIT-117](../../../record/literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406). | Active |
 | [SOTA-105](../../../record/practices.d/SOTA-105.md) | PagedAttention to accelerate batch inference for LLM sampling | Kwon et al. (2023), [LIT-112](../../../record/literature.d/LIT-112.md) — [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180). | Active |
 | [SOTA-106](../../../record/practices.d/SOTA-106.md) | Use flash-attention-2 over original flash-attention when available | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Active |
 | [SOTA-107](../../../record/practices.d/SOTA-107.md) | Keep sequence lengths multiple of 128 for best performance | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Active |

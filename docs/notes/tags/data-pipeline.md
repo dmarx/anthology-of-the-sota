@@ -2,8 +2,8 @@
 
 # NOTEs tagged `data-pipeline`
 
-1 of 3 NOTE documents. Back to the [full index](../README.md).
+1 of 4 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [NOTE-tmp9vhnf](../../../record/notes.d/NOTE-tmp9vhnf.md) | Efficient Online Data Mixing | An Exp3 bandit over data domains, rewarded by per-domain training loss on the batches the run is already taking, revising the mixture during training. 19% fewer iterations to the next best method's final perplexity, at negligible wall-clock cost. | Read |
+| [NOTE-002](../../../record/notes.d/NOTE-002.md) | Efficient Online Data Mixing | An Exp3 bandit over data domains, rewarded by per-domain training loss on the batches the run is already taking, revising the mixture during training. 19% fewer iterations to the next best method's final perplexity, at negligible wall-clock cost. | Read |

@@ -1,5 +1,8 @@
 ---
+number: 4
 status: Read
+formerly:
+- NOTE-tmpmvx4t
 paper: LIT-052
 title: 'Scale Efficiently'
 version: 1

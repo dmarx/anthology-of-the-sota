@@ -4,7 +4,7 @@
 
 **Active** — in force — the current answer, and what a citation should normally point at.
 
-21 of 24 decisions. Back to the [full index](../README.md).
+22 of 25 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -29,3 +29,4 @@
 | [ADR-021](../../../record/decisions.d/ADR-021.md) | The practice vocabulary takes the kind-of-claim topics the reading list already has |  | Active |
 | [ADR-022](../../../record/decisions.d/ADR-022.md) | The primary topic is derived from the first tag, and the lines assert it | The topic vocabulary was a constraint on a list — exactly one tag from the seven — with no way to say which tag that was. Deriving `primary_topic` from `{tags[0]}` names it, which lets the chains assert the invariant they actually mean: a line of work stays within one topic. Costs a convention nothing checks, that the primary tag is written first. | Active |
 | [ADR-023](../../../record/decisions.d/ADR-023.md) | A note carries its number, and answers to a readable second name | The pre-migration ids said who and when; `LIT-001` says neither. luria 0.13 can render an alias from a document's own frontmatter, so `LIT-Kingma-2014-001` now resolves wherever `LIT-001` does. An alias rather than a code, because a code that encodes a fact rots when the fact is corrected, and an alias is recomputed on every read. | Active |
+| [ADR-025](../../../record/decisions.d/ADR-025.md) | A third scheme: NOTE, the structured reading of a paper | A LIT note says what a paper's standing in the anthology is. It has never said what the paper contains, and the corpus now holds two demonstrations of what that costs. NOTE is a third scheme: one document per paper actually read, carrying the contribution, the assumptions, the theorem-level results, the claims with their strength, and the recommendations derived — with the status recording how deeply it was read. | Active |

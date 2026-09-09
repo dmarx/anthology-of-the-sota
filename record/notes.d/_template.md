@@ -5,7 +5,7 @@
 # A NOTE is a READING of a paper: what it contains, what it assumes, what it
 # proves, and how strongly. It is not the paper's standing in the anthology
 # — that is the LIT note's job, and the two are allowed to disagree
-# (ADR-tmp2q9cv).
+# (ADR-025).
 
 # Read | Skimmed | Unread | Superseded, from statuses.yaml beside this file.
 # This says HOW DEEPLY THE PAPER WAS READ, not whether it is any good.

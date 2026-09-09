@@ -18,7 +18,7 @@ summary: >-
   subtraction from layer normalization and rescale by the root mean square
   alone.
 compared_against:
-- SOTA-tmpqpw9i
+- SOTA-191
 ---
 
 # SOTA-182: Compute the normalization statistic without centering (RMSNorm)

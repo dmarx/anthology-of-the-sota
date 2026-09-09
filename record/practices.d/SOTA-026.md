@@ -48,8 +48,8 @@ This cited [LIT-025](../literature.d/LIT-025.md) until [#114](https://github.com
 *increase the risk of over-fitting and do not work in most cases*, and that
 LayerNorm with both removed beats LayerNorm on four datasets. It is a case for
 deleting the parameter this practice initialises, not for setting it, and it
-<!-- inactive-ok: SOTA-tmpqpw9i — Proposed; named as where the former source's real argument now lives -->
-is now filed as [SOTA-tmpqpw9i](SOTA-tmpqpw9i.md).
+<!-- inactive-ok: SOTA-191 — Proposed; named as where the former source's real argument now lives -->
+is now filed as [SOTA-191](SOTA-191.md).
 
 [LIT-005](../literature.d/LIT-005.md) introduces the bias and states no initialisation for it, so the
 zero is a convention rather than a result — the same standing as [SOTA-025](SOTA-025.md)'s

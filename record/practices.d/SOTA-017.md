@@ -2,7 +2,14 @@
 number: 17
 status: 'Active'
 title: 'Use micro-batch splitting for pipeline parallelism'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-09'
+  note: >-
+    Gained the source's threshold on reading it for #114: bubble
+    overhead is O((K-1)/(M+K-1)) and the paper reports it negligible
+    once M >= 4*K. The recommendation is unchanged.
 tags:
 - distributed-optimization
 date: '2026-08-24'
@@ -31,6 +38,23 @@ while stage 2 works on micro-batch 1.
 The result is arithmetically simple and is the whole design: with *m*
 micro-batches and *k* stages the idle fraction — the bubble — is
 (*k*−1)/(*m*+*k*−1). More micro-batches, smaller bubble.
+
+## How many micro-batches
+
+[LIT-016](../literature.d/LIT-016.md) gives the idle time introduced by partitioning — the **bubble
+overhead** — in closed form, for `K` partitions and `M` micro-batches:
+
+    O( (K − 1) / (M + K − 1) )
+
+and reports it **negligible once `M ≥ 4 × K`**. That is the number this
+practice was missing. Part of why so few suffice is that backward
+re-computation can be scheduled early, without waiting for gradients from
+earlier layers.
+
+The competing constraint is that `M` micro-batches of a fixed mini-batch means
+each is `1/M` the size, and past some point the per-device work is too small
+to keep the accelerator busy. So `4K` is a floor to clear, not a target to
+maximise.
 
 ## Cost
 

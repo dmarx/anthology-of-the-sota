@@ -2,7 +2,15 @@
 number: 19
 status: 'Active'
 title: 'Choose pipeline chunks based on memory vs. compute trade-off'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-09'
+  note: >-
+    Gained the memory expression on reading the source for #114: peak
+    activation memory is O(N + (L/K)(N/M)) with re-materialization and
+    partitioning, against O(N x L) with neither. The recommendation is
+    unchanged.
 tags:
 - distributed-optimization
 date: '2026-08-24'
@@ -33,6 +41,23 @@ Matrix multiplies at small batch are latency-bound rather than
 bandwidth-bound, so cutting the batch into more chunks eventually makes each
 stage slower, and the bubble you removed comes back as arithmetic
 inefficiency.
+
+## The trade in closed form
+
+[LIT-016](../literature.d/LIT-016.md) gives peak activation memory under re-materialization and
+partitioning as
+
+    O( N + (L/K) × (N/M) )
+
+where `N` is the mini-batch size, `L` the layers, `K` the partitions, `M` the
+micro-batches — so `N/M` is the micro-batch size and `L/K` the layers per
+partition. Without re-materialization or partitioning it is `O(N × L)`.
+
+Both `K` and `M` reduce memory and both cost something: more partitions means
+more pipeline stages to fill, more micro-batches means less work per step.
+Having the expression is what turns "choose based on the memory vs. compute
+trade-off" from a description of the problem into something a reader can
+solve.
 
 ## So the practical rule
 

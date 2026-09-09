@@ -12,7 +12,7 @@ consensus_note: >-
   attributes to RLVR, and the source itself ships the SFT path for the
   models it releases.
 title: 'Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -23,8 +23,18 @@ history:
     source. Under ADR-010 the origin of the pathway belongs in the list
     beside it. LIT-167 stays in contested_by. The recommendation is
     unchanged.
+- version: 3
+  date: '2026-09-09'
+  note: >-
+    Primary topic moved from `training-optimization` to
+    `adaptation-and-tuning`, and `compared_against: SOTA-129` declared. This
+    is a post-training pathway, and the two practices it is a variation of
+    and rival to — SOTA-129 and SOTA-126 — both carry that topic. The
+    mis-tag is why the relation could not be declared before: the chains
+    hold `invariant = "primary_topic"`, so the wrong topic silently kept
+    the edge out of the lineage. The recommendation is unchanged.
 tags:
-- training-optimization
+- adaptation-and-tuning
 date: '2026-09-05'
 published: '2025-12-01'
 source:
@@ -34,6 +44,11 @@ source:
 # ADR-010 both belong. LIT-167 is the contest and stays in contested_by.
 - LIT-130
 - LIT-164
+# The two pathways out of a pretrained base: SOTA-129 keeps the reasoning SFT
+# stage, this one removes it. Rivals judged against each other, which is what
+# the promotion condition asks someone to run.
+compared_against:
+- SOTA-129
 contested_by:
 - LIT-167
 summary: >-
@@ -49,6 +64,8 @@ summary: >-
 
 Olmo Team (2025), [LIT-130](../literature.d/LIT-130.md) — the Olmo 3 RL-Zero track.
 
+## What the track is
+
 Take the pretrained base, skip the supervised stage on reasoning traces, and
 run reinforcement learning with verifiable rewards straight away: a
 rule-based verifier with reference answers for math, test cases for code, an
@@ -56,7 +73,9 @@ LLM judge for general chat. Olmo 3 releases four such 7B series with their
 data and checkpoints so that RL algorithms, and the effect of pretraining
 data on RL, can be studied from a clean start.
 
-Why *Proposed*: the source itself calls the track experimental and positions
+## Why this is Proposed
+
+The source itself calls the track experimental and positions
 it as a benchmark, and the Think models Olmo 3 actually ships go through the
 SFT stage ([SOTA-129](SOTA-129.md)). The idea predates Olmo 3: the "R1-Zero" style of training
 is where the name comes from, and that work is now filed ([LIT-164](../literature.d/LIT-164.md)).

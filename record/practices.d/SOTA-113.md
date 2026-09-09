@@ -13,6 +13,8 @@ extends:
 - SOTA-105
 summary: >-
   Kwon et al. (2023), [LIT-112](../literature.d/LIT-112.md) — [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180).
+extended_by:
+- SOTA-115
 ---
 
 # SOTA-113: Use continuous batching for inference

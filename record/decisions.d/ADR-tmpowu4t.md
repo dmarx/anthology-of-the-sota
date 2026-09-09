@@ -28,7 +28,7 @@ The evidence for a fourth arrived from a direction that decision did not
 anticipate. Working the [#107](https://github.com/dmarx/anthology-of-the-sota/issues/107) backlog put a body on 90-odd practices, and the
 bodies kept arguing lineage — this builds on that, this is the same principle
 from another source, this contradicts its own citation. Declaring those
-relations in frontmatter took `docs/practice-lines.md` from 13 lines to 32 and
+relations in frontmatter took `docs/practice-lines.md` from 13 lines to 34 and
 produced **25 unbound relations**: joins where the two documents share no
 primary topic.
 
@@ -103,6 +103,20 @@ are already flagged for restatement on other grounds — `SOTA-060`'s title
 merges two initialisation conventions, `SOTA-083` inverts its own source — and
 retagging a practice whose claim is unsettled would tidy the symptom.
 
+One retag did happen while this was being written, and it is the case that
+shows why the rest are held.
+<!-- inactive-ok: SOTA-130 — Proposed; named as the mis-tagged document this paragraph is about, not cited as advice -->
+`SOTA-130` (skip the reasoning SFT stage) carried
+`training-optimization` while the two practices it is a variation of and a
+rival to — `SOTA-129` and `SOTA-126` — both carry `adaptation-and-tuning`. That
+is not a seam in the vocabulary; it is one document filed wrong, and the
+evidence is that the correct topic already existed and its siblings already
+used it. The tell is worth naming: the mis-tag is *why the relation had never
+been declared*. An edge that would have bound had the tag been right does not
+appear in this report at all, so the twenty-five here are a floor. Where the
+right topic exists and the neighbours agree, fix it; where the argument is
+about which topic should exist, that is this decision.
+
 It is also not a claim that ten topics is the wrong number. Three of the four
 seams involve `model-architecture`, which may mean that topic is doing too
 much rather than that a topic is missing.
@@ -115,5 +129,5 @@ found this and should keep running: the count is not the signal, the
 one-off crossing is ordinary work.
 
 If nothing is decided, the record still has the relations, which is the larger
-gain — 98 of 189 practices now declare one, against 36 before this pass, and
+gain — 103 of 189 practices now declare one, against 36 before this pass, and
 the lines are readable whether or not their edges bind.

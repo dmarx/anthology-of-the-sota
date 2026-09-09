@@ -11,6 +11,8 @@ source:
 - LIT-114
 summary: >-
   Xiong et al. (2020), [LIT-114](../literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745).
+compared_against:
+- SOTA-032
 ---
 
 # SOTA-100: Use learning rate warmup proportional to model size

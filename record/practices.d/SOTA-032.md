@@ -28,6 +28,8 @@ source:
 - LIT-114
 implementations:
 - llama2
+compared_against:
+- SOTA-100
 summary: >-
   Xiong et al. (2020), [LIT-114](../literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). Pre-LN: normalize the
   input to each sublayer rather than the sum after it, so the gradients near

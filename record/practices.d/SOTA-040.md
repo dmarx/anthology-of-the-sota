@@ -11,6 +11,8 @@ source:
 - LIT-028
 summary: >-
   Kaplan et al. (2020), [LIT-028](../literature.d/LIT-028.md) — [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361).
+compared_against:
+- SOTA-041
 ---
 
 # SOTA-040: larger models are more sample efficient

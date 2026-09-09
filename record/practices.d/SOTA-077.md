@@ -11,6 +11,9 @@ source:
 - LIT-053
 summary: >-
   Aizman et al. (2020), [LIT-053](../literature.d/LIT-053.md) — [ARXIV-2001.01858](https://arxiv.org/abs/2001.01858).
+extended_by:
+- SOTA-078
+- SOTA-079
 ---
 
 # SOTA-077: Use tar archives for dataset storage

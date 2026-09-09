@@ -11,6 +11,8 @@ source:
 - LIT-074
 summary: >-
   Dao et al. (2022), [LIT-074](../literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135).
+compared_against:
+- SOTA-088
 ---
 
 # SOTA-114: Fuse attention operations where possible

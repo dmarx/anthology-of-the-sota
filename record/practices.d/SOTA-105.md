@@ -11,6 +11,8 @@ source:
 - LIT-112
 summary: >-
   Kwon et al. (2023), [LIT-112](../literature.d/LIT-112.md) — [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180).
+extended_by:
+- SOTA-113
 ---
 
 # SOTA-105: PagedAttention to accelerate batch inference for LLM sampling

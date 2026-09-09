@@ -11,6 +11,8 @@ source:
 - LIT-061
 summary: >-
   Fedus et al. (2021), [LIT-061](../literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684).
+compared_against:
+- SOTA-062
 ---
 
 # SOTA-061: Use largest batch that maintains >80% sample efficiency

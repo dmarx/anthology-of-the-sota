@@ -44,6 +44,13 @@ registry describes does not use a rate picked from this range by inspection:
 
 So this practice is a reasonable starting point for a small model with no
 tuning budget, and the record should not read it as advice for the runs it
-otherwise documents. Kept because it is true in its scope, and worth reading
-alongside [SOTA-041](SOTA-041.md) — larger models are *less* sensitive to this choice, which
-is the reason the range survives being so old.
+otherwise documents. Kept because it is true in its scope.
+
+<!-- inactive-ok-block: SOTA-041 — Rejected in #114; named here because this paragraph used to assert its claim as fact -->
+This paragraph used to add that larger models are *less* sensitive to the
+choice, citing [SOTA-041](SOTA-041.md). That practice is retired: Kaplan reports the
+opposite — larger models need a **smaller** rate to avoid divergence, and
+carry an explicit `LR(N)` rule for it. So the reason a 2020-era range survives
+is not that the choice stopped mattering; it is that nobody re-fit it, and
+the modern answer is a parameterisation that transfers the rate rather than a
+range that holds.

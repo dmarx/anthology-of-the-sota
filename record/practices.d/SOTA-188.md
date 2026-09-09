@@ -4,7 +4,18 @@ status: Active
 formerly:
 - SOTA-tmpm1xnl
 title: 'Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-09'
+  note: >-
+    Corrected against a full reading of the source (NOTE-tmpvjumo, now
+    Read). The body implied all four preconditioning scalings follow
+    from the unit-variance requirement; only c_in and c_out do — c_skip
+    minimises error amplification and c_noise is an empirical fit. Names
+    the denoiser parameterisation and the loss weight, and records that
+    the log-normal's parameters are tuned rather than derived. The
+    recommendation is unchanged.
 tags:
 - training-optimization
 consensus: converged
@@ -31,12 +42,20 @@ scaled inconsistently across the conditioning variable.
 
 The paper's answer has two parts, and both are training-time:
 
-- **Preconditioning.** Wrap the network in noise-level-dependent scalings of
-  its input, output, skip connection and loss weight, chosen so the effective
-  training target has unit variance at every level. The network is then
-  solving the same-sized problem everywhere, rather than a problem whose
-  difficulty and scale vary by orders of magnitude along the conditioning
-  axis.
+- **Preconditioning.** Write the denoiser as
+  `D(x;σ) = c_skip(σ)·x + c_out(σ)·F(c_in(σ)·x; c_noise(σ))`, so that the raw
+  network `F` is a different function from the denoiser, and then *solve for*
+  the scalings instead of tuning them. Two of the four follow from the
+  unit-variance requirement this practice is named for — `c_in` makes the
+  network's input unit-variance, `c_out` makes its training target
+  unit-variance — and the network is then solving the same-sized problem at
+  every noise level rather than one whose scale varies by orders of
+  magnitude. The other two do not: `c_skip` is chosen to amplify `F`'s own
+  error as little as possible, and `c_noise` is, in the paper's words,
+  "chosen empirically". A fifth term, the loss weight `λ(σ)`, cancels
+  `c_out`'s scaling so that every noise level contributes equally to the
+  loss — which is what leaves the sampling distribution below as the only
+  thing deciding where training compute goes.
 - **The training-noise distribution.** Sample the noise level from a
   log-normal concentrated on the middle of the range, rather than uniformly.
   The extremes teach little — the near-clean end is trivial and the near-pure-
@@ -54,9 +73,15 @@ tuned without disturbing the others.
 ## Conditions
 
 The specific scalings and the log-normal's parameters are derived for the
-variance-exploding formulation the paper adopts. Carrying the *numbers* to a
-different noise parametrization is a mistake; carrying the *principle* — make
-the target unit-variance, then sample where the learning is — is the point.
+schedule the paper adopts (`σ(t) = t`, `s(t) = 1`), and every coefficient is
+a function of `σ` and a single data scale `σ_data` — 0.5 for the datasets
+used. Carrying the *numbers* to a different noise parametrization is a
+mistake; carrying the *principle* — make the target unit-variance, then
+sample where the learning is — is the point.
+
+The log-normal's parameters are tuned, not derived: `ln σ ~ N(−1.2, 1.2²)`
+for these datasets. The shape has an argument behind it and the numbers do
+not.
 
 Reported at image scale, on ImageNet-64 and CIFAR-10. It is not an
 autoregressive-language result and nothing in the record replicates it there,

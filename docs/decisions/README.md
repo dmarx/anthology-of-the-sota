@@ -22,11 +22,11 @@ File one with `luria new adr`.
 **[The record](tags/record.md)** (14) — what the schemes hold, and the rules between them:
 [001](../../record/decisions.d/ADR-001.md) · [002](../../record/decisions.d/ADR-002.md) · [004](../../record/decisions.d/ADR-004.md) · [009](../../record/decisions.d/ADR-009.md) · [010](../../record/decisions.d/ADR-010.md) · [011](../../record/decisions.d/ADR-011.md) · [012](../../record/decisions.d/ADR-012.md) · [013](../../record/decisions.d/ADR-013.md) · [014](../../record/decisions.d/ADR-014.md) · [015](../../record/decisions.d/ADR-015.md) · [016](../../record/decisions.d/ADR-016.md) · [017](../../record/decisions.d/ADR-017.md) · [018](../../record/decisions.d/ADR-018.md) · [019](../../record/decisions.d/ADR-019.md)
 
-**[Taxonomy](tags/taxonomy.md)** (1) — the topic vocabulary and what enforces it:
-[003](../../record/decisions.d/ADR-003.md)
+**[Taxonomy](tags/taxonomy.md)** (2) — the topic vocabulary and what enforces it:
+[003](../../record/decisions.d/ADR-003.md) · [022](../../record/decisions.d/ADR-022.md)
 
-**[Mechanism](tags/mechanism.md)** (11) — identifiers, generation, the lint:
-[005](../../record/decisions.d/ADR-005.md) · [007](../../record/decisions.d/ADR-007.md) · [009](../../record/decisions.d/ADR-009.md) · [010](../../record/decisions.d/ADR-010.md) · [011](../../record/decisions.d/ADR-011.md) · [012](../../record/decisions.d/ADR-012.md) · [014](../../record/decisions.d/ADR-014.md) · [015](../../record/decisions.d/ADR-015.md) · [016](../../record/decisions.d/ADR-016.md) · [018](../../record/decisions.d/ADR-018.md) · [019](../../record/decisions.d/ADR-019.md)
+**[Mechanism](tags/mechanism.md)** (12) — identifiers, generation, the lint:
+[005](../../record/decisions.d/ADR-005.md) · [007](../../record/decisions.d/ADR-007.md) · [009](../../record/decisions.d/ADR-009.md) · [010](../../record/decisions.d/ADR-010.md) · [011](../../record/decisions.d/ADR-011.md) · [012](../../record/decisions.d/ADR-012.md) · [014](../../record/decisions.d/ADR-014.md) · [015](../../record/decisions.d/ADR-015.md) · [016](../../record/decisions.d/ADR-016.md) · [018](../../record/decisions.d/ADR-018.md) · [019](../../record/decisions.d/ADR-019.md) · [023](../../record/decisions.d/ADR-023.md)
 
 **[Migration](tags/migration.md)** (3) — moving off the YAML registry, and what happens to it:
 [001](../../record/decisions.d/ADR-001.md) · [006](../../record/decisions.d/ADR-006.md) · [008](../../record/decisions.d/ADR-008.md)
@@ -37,7 +37,7 @@ File one with `luria new adr`.
 **[Workflow](tags/workflow.md)** (1):
 [013](../../record/decisions.d/ADR-013.md)
 
-**By status:** [Active](statuses/Active.md) (15) · [Proposed](statuses/Proposed.md) (5) · [Deferred](statuses/Deferred.md) (0) · [Superseded](statuses/Superseded.md) (1) · [Rejected](statuses/Rejected.md) (0)
+**By status:** [Active](statuses/Active.md) (15) · [Proposed](statuses/Proposed.md) (7) · [Deferred](statuses/Deferred.md) (0) · [Superseded](statuses/Superseded.md) (1) · [Rejected](statuses/Rejected.md) (0)
 
 ## Chronological
 
@@ -74,4 +74,6 @@ What the status column means in this scheme — the words are luria's, the meani
 | [ADR-019](../../record/decisions.d/ADR-019.md) | An automation that writes to shared state names its serialization, and a pacing failure is swept as a class | Two CI failures in one evening, both from writes to shared state that raced, and both invisible until the work went faster than a person reading. Requires every job that writes where others write to declare a concurrency discipline or say why it needs none, and requires the first such failure to be answered by an audit of every writer rather than a patch to the one that broke. | Proposed |
 | [ADR-020](../../record/decisions.d/ADR-020.md) | The recommendations are scoped by kind of claim, not by domain |  | Proposed |
 | [ADR-021](../../record/decisions.d/ADR-021.md) | The practice vocabulary takes the kind-of-claim topics the reading list already has |  | Proposed |
+| [ADR-022](../../record/decisions.d/ADR-022.md) | The primary topic is derived from the first tag, and the lines assert it | The topic vocabulary was a constraint on a list — exactly one tag from the seven — with no way to say which tag that was. Deriving `primary_topic` from `{tags[0]}` names it, which lets the chains assert the invariant they actually mean: a line of work stays within one topic. Costs a convention nothing checks, that the primary tag is written first. | Proposed |
+| [ADR-023](../../record/decisions.d/ADR-023.md) | A note carries its number, and answers to a readable second name | The pre-migration ids said who and when; `LIT-001` says neither. luria 0.13 can render an alias from a document's own frontmatter, so `LIT-Kingma-2014-001` now resolves wherever `LIT-001` does. An alias rather than a code, because a code that encodes a fact rots when the fact is corrected, and an alias is recomputed on every read. | Proposed |
 

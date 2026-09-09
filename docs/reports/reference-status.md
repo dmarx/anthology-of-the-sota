@@ -23,8 +23,8 @@ Hyper-Connections
 
 2 citations in 1 file await a look; 9 other citations of it are acknowledged.
 
-- [`record/decisions.d/ADR-017.md:136`](../../record/decisions.d/ADR-017.md)
-- [`record/decisions.d/ADR-017.md:184`](../../record/decisions.d/ADR-017.md)
+- [`record/decisions.d/ADR-017.md:137`](../../record/decisions.d/ADR-017.md)
+- [`record/decisions.d/ADR-017.md:185`](../../record/decisions.d/ADR-017.md)
 
 ### [SOTA-124](../../record/practices.d/SOTA-124.md) — Proposed
 
@@ -32,8 +32,8 @@ Repeat high-quality data freely when its epoch size exceeds the model's memoriza
 
 2 citations in 1 file await a look; 19 other citations of it are acknowledged.
 
-- [`record/decisions.d/ADR-017.md:77`](../../record/decisions.d/ADR-017.md)
-- [`record/decisions.d/ADR-017.md:115`](../../record/decisions.d/ADR-017.md)
+- [`record/decisions.d/ADR-017.md:78`](../../record/decisions.d/ADR-017.md)
+- [`record/decisions.d/ADR-017.md:116`](../../record/decisions.d/ADR-017.md)
 
 ### [ADR-016](../../record/decisions.d/ADR-016.md) — Proposed
 
@@ -41,7 +41,7 @@ Contested is a claim about specific other work, so it must name it
 
 1 citation in 1 file awaits a look; 2 other citations of it are acknowledged.
 
-- [`record/decisions.d/ADR-017.md:260`](../../record/decisions.d/ADR-017.md)
+- [`record/decisions.d/ADR-017.md:261`](../../record/decisions.d/ADR-017.md)
 
 ### [LIT-042](../../record/literature.d/LIT-042.md) — Superseded
 
@@ -49,7 +49,7 @@ SGDR: Stochastic Gradient Descent with Warm Restarts
 
 1 citation in 1 file awaits a look; 10 other citations of it are acknowledged.
 
-- [`record/practices.d/SOTA-140.md:44`](../../record/practices.d/SOTA-140.md)
+- [`record/practices.d/SOTA-140.md:45`](../../record/practices.d/SOTA-140.md)
 
 ### [SOTA-023](../../record/practices.d/SOTA-023.md) — Superseded
 
@@ -57,7 +57,7 @@ Use multi-query attention for decoder-only models to reduce memory bandwidth
 
 1 citation in 1 file awaits a look; 2 other citations of it are acknowledged.
 
-- [`record/practices.d/SOTA-109.md:12`](../../record/practices.d/SOTA-109.md)
+- [`record/practices.d/SOTA-109.md:13`](../../record/practices.d/SOTA-109.md)
 
 ### [SOTA-024](../../record/practices.d/SOTA-024.md) — Superseded
 
@@ -65,7 +65,7 @@ Keep key/value projections shared across heads while query projections remain se
 
 1 citation in 1 file awaits a look; 1 other citation of it is acknowledged.
 
-- [`record/practices.d/SOTA-109.md:12`](../../record/practices.d/SOTA-109.md)
+- [`record/practices.d/SOTA-109.md:13`](../../record/practices.d/SOTA-109.md)
 
 ## Codes that resolve to no document
 

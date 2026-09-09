@@ -4,8 +4,9 @@
 
 The topic vocabulary and what enforces it.
 
-1 of 21 decisions. Back to the [full index](../README.md).
+2 of 23 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [ADR-003](../../../record/decisions.d/ADR-003.md) | Apply the topic consolidation and let the config enforce one primary topic | A 2024 document specified a 22-to-7 topic consolidation with real rules, was never applied, and could not be cited. It becomes this decision; the seven categories become `tags.yaml`; the one-primary-topic rule becomes a `tag_groups` constraint the lint checks. The reading list gets five extra categories the practice registry never needed. | Active |
+| [ADR-022](../../../record/decisions.d/ADR-022.md) | The primary topic is derived from the first tag, and the lines assert it | The topic vocabulary was a constraint on a list — exactly one tag from the seven — with no way to say which tag that was. Deriving `primary_topic` from `{tags[0]}` names it, which lets the chains assert the invariant they actually mean: a line of work stays within one topic. Costs a convention nothing checks, that the primary tag is written first. | Proposed |

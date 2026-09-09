@@ -4,7 +4,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-136 of 191 SOTA documents. Back to the [full index](../README.md).
+134 of 191 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -15,7 +15,7 @@
 | [SOTA-005](../../../record/practices.d/SOTA-005.md) | Use running statistics for inference | Ioffe et al. (2015), [LIT-002](../../../record/literature.d/LIT-002.md) — [ARXIV-1502.03167](https://arxiv.org/abs/1502.03167). | Active |
 | [SOTA-006](../../../record/practices.d/SOTA-006.md) | Consider alternatives like LayerNorm for transformers | Ioffe et al. (2015), [LIT-002](../../../record/literature.d/LIT-002.md) — [ARXIV-1502.03167](https://arxiv.org/abs/1502.03167). | Active |
 | [SOTA-007](../../../record/practices.d/SOTA-007.md) | BPE tokenization for open vocabulary tasks | Sennrich et al. (2015), [LIT-003](../../../record/literature.d/LIT-003.md) — [ARXIV-1508.07909](https://arxiv.org/abs/1508.07909). | Active |
-| [SOTA-008](../../../record/practices.d/SOTA-008.md) | linear warmup of LR stabilizes early training with large batch size. | You et al. (2017), [LIT-009](../../../record/literature.d/LIT-009.md) — [ARXIV-1708.03888](https://arxiv.org/abs/1708.03888). | Active |
+| [SOTA-008](../../../record/practices.d/SOTA-008.md) v2 | linear warmup of LR stabilizes early training with large batch size. | You et al. (2017), [LIT-009](../../../record/literature.d/LIT-009.md) — [ARXIV-1708.03888](https://arxiv.org/abs/1708.03888). | Active |
 | [SOTA-009](../../../record/practices.d/SOTA-009.md) | warmup to a large early lr, anneal throughout training to small final lr | Smith et al. (2017), [LIT-010](../../../record/literature.d/LIT-010.md) — [ARXIV-1708.07120](https://arxiv.org/abs/1708.07120). | Active |
 | [SOTA-010](../../../record/practices.d/SOTA-010.md) | skip connections promote training stability by smoothing out the loss landscape | Li et al. (2017), [LIT-014](../../../record/literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). | Active |
 | [SOTA-011](../../../record/practices.d/SOTA-011.md) v2 | Map the Hessian ratio \|lambda_min / lambda_max\| to find where the loss surface is non-convex | Li et al. (2017), [LIT-014](../../../record/literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). | Active |
@@ -42,7 +42,6 @@
 | [SOTA-037](../../../record/practices.d/SOTA-037.md) | LM in-context learning emerges at scale | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
 | [SOTA-038](../../../record/practices.d/SOTA-038.md) | ICL permits few-shot task adaptability | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
 | [SOTA-040](../../../record/practices.d/SOTA-040.md) | larger models are more sample efficient | Kaplan et al. (2020), [LIT-028](../../../record/literature.d/LIT-028.md) — [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361). | Active |
-| [SOTA-041](../../../record/practices.d/SOTA-041.md) | lr tuning less important for larger models | Kaplan et al. (2020), [LIT-028](../../../record/literature.d/LIT-028.md) — [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361). | Active |
 | [SOTA-042](../../../record/practices.d/SOTA-042.md) | Memory-map large datasets | Mohan et al. (2020), [LIT-050](../../../record/literature.d/LIT-050.md) — [ARXIV-2007.06775](https://arxiv.org/abs/2007.06775). | Active |
 | [SOTA-043](../../../record/practices.d/SOTA-043.md) | Use mixed precision during data loading | Mohan et al. (2020), [LIT-050](../../../record/literature.d/LIT-050.md) — [ARXIV-2007.06775](https://arxiv.org/abs/2007.06775). | Active |
 | [SOTA-044](../../../record/practices.d/SOTA-044.md) | Pin memory for CPU-GPU transfers | Mohan et al. (2020), [LIT-050](../../../record/literature.d/LIT-050.md) — [ARXIV-2007.06775](https://arxiv.org/abs/2007.06775). | Active |
@@ -96,9 +95,8 @@
 | [SOTA-106](../../../record/practices.d/SOTA-106.md) | Use flash-attention-2 over original flash-attention when available | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Active |
 | [SOTA-109](../../../record/practices.d/SOTA-109.md) v2 | Prefer GQA to MQA or MHA | Ainslie et al. (2023), [LIT-100](../../../record/literature.d/LIT-100.md) — group the query heads and give each group one key/value head: multi-query's cache saving without multi-query's quality loss, and uptrainable from an existing multi-head checkpoint. Still the default for a model not paying MLA's implementation cost. | Active |
 | [SOTA-110](../../../record/practices.d/SOTA-110.md) v3 | Consider Monarch Mixer in place of attention for very long sequence tasks | Fu et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |
-| [SOTA-111](../../../record/practices.d/SOTA-111.md) v3 | Use Monarch Mixer where attention's quadratic cost is what bottlenecks training | Fu et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |
-| [SOTA-112](../../../record/practices.d/SOTA-112.md) v3 | Combine Monarch Mixer layers with standard attention rather than replacing it wholesale | Fu et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |
-| [SOTA-113](../../../record/practices.d/SOTA-113.md) | Use continuous batching for inference | Kwon et al. (2023), [LIT-112](../../../record/literature.d/LIT-112.md) — [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180). | Active |
+| [SOTA-111](../../../record/practices.d/SOTA-111.md) v4 | Use Monarch Mixer where attention's quadratic cost is what bottlenecks training | Fu et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |
+| [SOTA-113](../../../record/practices.d/SOTA-113.md) v2 | Use continuous batching for inference | Kwon et al. (2023), [LIT-112](../../../record/literature.d/LIT-112.md) — [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180). | Active |
 | [SOTA-114](../../../record/practices.d/SOTA-114.md) | Fuse attention operations where possible | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
 | [SOTA-115](../../../record/practices.d/SOTA-115.md) | Overlap prefill and decode compute | Agrawal et al. (2023), [LIT-103](../../../record/literature.d/LIT-103.md) — [ARXIV-2308.16369](https://arxiv.org/abs/2308.16369). | Active |
 | [SOTA-116](../../../record/practices.d/SOTA-116.md) | Use FSDP over DDP when model size exceeds single GPU memory | Zhao et al. (2022), [LIT-083](../../../record/literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). | Active |
@@ -143,4 +141,4 @@
 | [SOTA-185](../../../record/practices.d/SOTA-185.md) | Quantize weights after training by compensating each rounding error into the columns not yet quantized | Frantar et al. (2022), [LIT-081](../../../record/literature.d/LIT-081.md) — [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323). Round one column at a time and push the resulting error into the remaining columns using approximate second-order information, instead of rounding every weight independently to the nearest level. | Active |
 | [SOTA-186](../../../record/practices.d/SOTA-186.md) | Bootstrap a large annotation set with the model you are training, staging the automation as it improves |  | Active |
 | [SOTA-187](../../../record/practices.d/SOTA-187.md) | Train the generative model in a learned compressed latent, not at full resolution |  | Active |
-| [SOTA-188](../../../record/practices.d/SOTA-188.md) | Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal |  | Active |
+| [SOTA-188](../../../record/practices.d/SOTA-188.md) v2 | Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal |  | Active |

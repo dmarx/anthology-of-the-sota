@@ -2,8 +2,9 @@
 
 # NOTEs tagged `model-architecture`
 
-1 of 8 NOTE documents. Back to the [full index](../README.md).
+2 of 23 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-004](../../../record/notes.d/NOTE-004.md) | Scale Efficiently | Model shape, not only model size, determines downstream fine-tuning quality — and the widely adopted T5-Base and T5-Large configurations are Pareto-inefficient. Read in full for [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) after its LIT note was found to describe a different paper. | Read |
+| [NOTE-011](../../../record/notes.d/NOTE-011.md) | Attention Is All You Need | Dispenses with recurrence and convolution entirely. The 1/√d_k scaling has a stated reason: with unit-variance components, q·k has variance d_k, and unscaled dot products push the softmax into regions of extremely small gradients. | Read |

@@ -1,5 +1,8 @@
 ---
+number: 20
 status: Read
+formerly:
+- NOTE-tmpwwwom
 paper: LIT-034
 title: "Don't Stop Pretraining"
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   Two adaptive-pretraining stages, and the second is the surprise. Domain-adaptive pretraining (DAPT) on a large in-domain corpus helps; task-adaptive pretraining (TAPT) on the task's own small unlabelled set also helps, and the two are complementary rather than alternatives.
 ---
 
-# NOTE-tmpwwwom: Don't Stop Pretraining
+# NOTE-020: Don't Stop Pretraining
 
 ## Contribution
 

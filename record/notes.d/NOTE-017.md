@@ -1,5 +1,8 @@
 ---
+number: 17
 status: Read
+formerly:
+- NOTE-tmpkuz31
 paper: LIT-028
 title: 'Scaling Laws for Neural Language Models'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   Loss is a power law in model size, dataset size and compute over seven orders of magnitude, and shape barely matters. Its learning-rate finding is the opposite of what the record recorded: larger models require a *smaller* rate to avoid divergence, and the paper carries an explicit LR(N) rule.
 ---
 
-# NOTE-tmpkuz31: Scaling Laws for Neural Language Models
+# NOTE-017: Scaling Laws for Neural Language Models
 
 ## Contribution
 

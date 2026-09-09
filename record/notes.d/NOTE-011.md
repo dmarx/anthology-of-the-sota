@@ -1,5 +1,8 @@
 ---
+number: 11
 status: Read
+formerly:
+- NOTE-tmpct2nt
 paper: LIT-008
 title: 'Attention Is All You Need'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   Dispenses with recurrence and convolution entirely. The 1/√d_k scaling has a stated reason: with unit-variance components, q·k has variance d_k, and unscaled dot products push the softmax into regions of extremely small gradients.
 ---
 
-# NOTE-tmpct2nt: Attention Is All You Need
+# NOTE-011: Attention Is All You Need
 
 ## Contribution
 

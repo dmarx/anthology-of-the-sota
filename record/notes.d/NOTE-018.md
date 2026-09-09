@@ -1,5 +1,8 @@
 ---
+number: 18
 status: Read
+formerly:
+- NOTE-tmpn4y0b
 paper: LIT-096
 title: 'Segment Anything'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   The data engine is the transferable part. Three stages — assisted-manual, semi-automatic, fully automatic — each stage's labels training the model that produces the next stage's, ending in 1.1B masks. The model and the dataset are built together.
 ---
 
-# NOTE-tmpn4y0b: Segment Anything
+# NOTE-018: Segment Anything
 
 ## Contribution
 

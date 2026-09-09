@@ -21,7 +21,7 @@ source:
 # batching — was introduced. LIT-112 (vLLM) describes it in its background
 # section and cites Orca for it; vLLM's own contribution is PagedAttention.
 # It stays in the list as the production system that carried the technique.
-- LIT-tmpe5an0
+- LIT-224
 - LIT-112
 extends:
 - SOTA-105
@@ -42,7 +42,7 @@ Kwon et al. (2023), [LIT-112](../literature.d/LIT-112.md) — [ARXIV-2309.06180]
 
 Two papers, and this practice used to name only the second.
 
-**Orca** ([LIT-tmpe5an0](../literature.d/LIT-tmpe5an0.md)) introduced **iteration-level scheduling**: invoke the
+**Orca** ([LIT-224](../literature.d/LIT-224.md)) introduced **iteration-level scheduling**: invoke the
 engine for a *single iteration* of the model rather than for a whole request,
 then re-decide the batch. Requests that finish leave immediately instead of
 waiting for the slowest in their batch; requests that arrive join at the next

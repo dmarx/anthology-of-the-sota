@@ -4,20 +4,20 @@
 
 Optimizers, schedules, batch size, scaling laws, training dynamics.
 
-39 of 223 LIT documents. Back to the [full index](../README.md).
+39 of 224 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [LIT-001](../../../record/literature.d/LIT-001.md) | Adam: A Method for Stochastic Optimization | Kingma et al. (2014), [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980). Introduces adaptive moment estimation for gradient-based optimization. | Active |
 | [LIT-006](../../../record/literature.d/LIT-006.md) v2 | SGDR: Stochastic Gradient Descent with Warm Restarts | Loshchilov and Hutter (2016), [ARXIV-1608.03983](https://arxiv.org/abs/1608.03983). A duplicate: the migration filed this paper twice, and the other copy carries the reading and the supersession. [LIT-042](../../../record/literature.d/LIT-042.md) is the surviving note. | Rejected — by [LIT-042](../../../record/literature.d/LIT-042.md); a duplicate of [LIT-042](../../../record/literature.d/LIT-042.md), which holds the same paper and the record's judgement on it |
-| [LIT-009](../../../record/literature.d/LIT-009.md) | Large Batch Training of Convolutional Networks | You et al. (2017), [ARXIV-1708.03888](https://arxiv.org/abs/1708.03888). Layer-wise adaptive rate scaling (LARS). | Active |
+| [LIT-009](../../../record/literature.d/LIT-009.md) v2 | Large Batch Training of Convolutional Networks | You et al. (2017), [ARXIV-1708.03888](https://arxiv.org/abs/1708.03888). Layer-wise adaptive rate scaling (LARS). | Active |
 | [LIT-010](../../../record/literature.d/LIT-010.md) | Super-Convergence: Very Fast Training of Neural Networks Using Large Learning Rates | Smith et al. (2017), [ARXIV-1708.07120](https://arxiv.org/abs/1708.07120). One-cycle learning rate policy (1cp). | Active |
 | [LIT-011](../../../record/literature.d/LIT-011.md) | Mixed Precision Training | Micikevicius et al. (2017), [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). Enables FP16 training with FP32 master weights. | Active |
-| [LIT-012](../../../record/literature.d/LIT-012.md) | Decoupled Weight Decay Regularization | Loshchilov et al. (2017), [ARXIV-1711.05101](https://arxiv.org/abs/1711.05101). Fixes weight decay implementation in Adam. | Active |
+| [LIT-012](../../../record/literature.d/LIT-012.md) v2 | Decoupled Weight Decay Regularization | Loshchilov et al. (2017), [ARXIV-1711.05101](https://arxiv.org/abs/1711.05101). Fixes weight decay implementation in Adam. | Active |
 | [LIT-013](../../../record/literature.d/LIT-013.md) | Population Based Training of Neural Networks | Jaderberg et al. (2017), [ARXIV-1711.09846](https://arxiv.org/abs/1711.09846). Automated hyperparameter optimization. | Active |
 | [LIT-017](../../../record/literature.d/LIT-017.md) | An Empirical Model of Large-Batch Training | McCandlish et al. (2018), [ARXIV-1812.06162](https://arxiv.org/abs/1812.06162). Introduces gradient noise scale. | Active |
 | [LIT-018](../../../record/literature.d/LIT-018.md) | On the Convergence of Adam and Beyond | Reddi et al. (2018), [ARXIV-1904.09237](https://arxiv.org/abs/1904.09237). Identifies convergence issues in Adam. | Active |
-| [LIT-028](../../../record/literature.d/LIT-028.md) | Scaling Laws for Neural Language Models | Kaplan et al. (2020), [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361). Power-law scaling relationships. | Active |
+| [LIT-028](../../../record/literature.d/LIT-028.md) v2 | Scaling Laws for Neural Language Models | Kaplan et al. (2020), [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361). Power-law scaling relationships. | Active |
 | [LIT-040](../../../record/literature.d/LIT-040.md) | Scaling Laws for Autoregressive Generative Modeling | Henighan et al. (2020), [ARXIV-2010.14701](https://arxiv.org/abs/2010.14701). Universal scaling behaviors. | Active |
 | [LIT-042](../../../record/literature.d/LIT-042.md) v2 | SGDR: Stochastic Gradient Descent with Warm Restarts | Loshchilov and Hutter (2016), [ARXIV-1608.03983](https://arxiv.org/abs/1608.03983). Warm restarts: anneal the learning rate on a cosine to a floor, then jump it back up and repeat, with each cycle longer than the last. | Superseded — by [LIT-035](../../../record/literature.d/LIT-035.md); single-cycle cosine decay proved better at scale |
 | [LIT-044](../../../record/literature.d/LIT-044.md) | Contrastive Learning with Hard Negative Samples | Robinson et al. (2020), [ARXIV-2010.04592](https://arxiv.org/abs/2010.04592). Importance of negative sample selection. | Rejected — needs per-case tuning, no consistent cross-domain benefit |

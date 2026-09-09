@@ -4,7 +4,7 @@
 
 Serving, quantization, compression, sparsity, distillation.
 
-5 of 223 LIT documents. Back to the [full index](../README.md).
+6 of 224 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -13,3 +13,4 @@ Serving, quantization, compression, sparsity, distillation.
 | [LIT-103](../../../record/literature.d/LIT-103.md) v2 | SARATHI: Efficient LLM Inference by Piggybacking Decodes with Chunked Prefills | Agrawal et al. (2023), [ARXIV-2308.16369](https://arxiv.org/abs/2308.16369). Prefill saturates the GPU and decode starves it, so split prefills into chunks and fill the rest of each batch with decodes that ride along nearly free. | Active |
 | [LIT-110](../../../record/literature.d/LIT-110.md) v2 | Efficiently Scaling Transformer Inference | Pope et al. (2022), [ARXIV-2211.05102](https://arxiv.org/abs/2211.05102). Inference partitioning derived rather than guessed: an analytical model of communication and memory cost picks the best parallel layout for a given model size, batch and latency target, and the answer changes with the target. | Active |
 | [LIT-185](../../../record/literature.d/LIT-185.md) | EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test | Li et al. (2025), [ARXIV-2503.01840](https://arxiv.org/abs/2503.01840). Drop feature prediction for direct token prediction and fuse multi-layer features, so the draft model finally benefits from more training data: up to 6.5× speedup. | Active |
+| [LIT-224](../../../record/literature.d/LIT-224.md) | Orca: A Distributed Serving System for Transformer-Based Generative Models | Yu et al. (2022), OSDI '22. Introduces **iteration-level scheduling** — schedule at the granularity of one model iteration rather than one request — and **selective batching**. 36.9× throughput over FasterTransformer at equal latency on GPT-3 175B. The origin of what the field calls continuous batching. | Active |

@@ -51,14 +51,14 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.toml: schemes.LIT.fields.status; record/literature.d/statuses.yaml: values)
 - `primary_topic` — derived — `{tags[0]}`, never written (luria.toml: schemes.LIT.fields.primary_topic)
 - `source` — at least one of `arxiv`, `doi`, `url` (luria.toml: schemes.LIT.field_groups.source)
-- `primary_topic` — exactly one of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.toml: schemes.LIT.tag_groups.primary_topic)
+- `primary_topic` — exactly one of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.toml: schemes.LIT.tag_groups.primary_topic)
 
 **`NOTE`**
 
 - `paper` — required, a `LIT` code (luria.toml: schemes.NOTE.references.paper)
 - `status` — optional, one of `Read`, `Skimmed`, `Unread`, `Superseded` (luria.toml: schemes.NOTE.fields.status; record/notes.d/statuses.yaml: values)
 - `primary_topic` — derived — `{tags[0]}`, never written (luria.toml: schemes.NOTE.fields.primary_topic)
-- `primary_topic` — exactly one of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.toml: schemes.NOTE.tag_groups.primary_topic)
+- `primary_topic` — exactly one of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.toml: schemes.NOTE.tag_groups.primary_topic)
 
 **`ADR`**
 
@@ -121,5 +121,6 @@ Everything not listed here is at Luria's default.
 | `code.historical` | `CHANGELOG.md`, `README.md` | `CHANGELOG.md` |
 | `chains.practice` | *7 keys set* | *unset* |
 | `chains.lineage` | *6 keys set* | *unset* |
+| `lint.mute` | `inert-status`, `acknowledged-uniformity` | *empty* |
 | `lint.narrow_terms` | `adam`, `adamw`, `batchnorm`, `layernorm`, `transformer`, `llama2`, `flash-attention`, `arxiv`, `registry` | *empty* |
 | `site.icon` | `assets/logo.svg` | *empty* |

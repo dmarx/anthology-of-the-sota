@@ -4,15 +4,15 @@
 
 Attention variants and alternatives, context length, position.
 
-25 of 223 LIT documents. Back to the [full index](../README.md).
+25 of 224 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [LIT-020](../../../record/literature.d/LIT-020.md) | Pay Less Attention with Lightweight and Dynamic Convolutions | Wu et al. (2019), [ARXIV-1901.10430](https://arxiv.org/abs/1901.10430). Alternative to self-attention. | Active |
 | [LIT-074](../../../record/literature.d/LIT-074.md) v2 | FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness | Dao et al. (2022), [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). IO-aware attention implementation. | Active |
-| [LIT-100](../../../record/literature.d/LIT-100.md) | GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints | Ainslie et al. (2023), [ARXIV-2305.13245](https://arxiv.org/abs/2305.13245). Efficient attention variant. | Active |
+| [LIT-100](../../../record/literature.d/LIT-100.md) v2 | GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints | Ainslie et al. (2023), [ARXIV-2305.13245](https://arxiv.org/abs/2305.13245). Efficient attention variant. | Active |
 | [LIT-106](../../../record/literature.d/LIT-106.md) v2 | FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning | Dao et al. (2023), [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). Improved attention parallelism. | Active |
-| [LIT-112](../../../record/literature.d/LIT-112.md) | Efficient Memory Management for Large Language Model Serving with PagedAttention | Kwon et al. (2023), [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180). Introduces vLLM. | Active |
+| [LIT-112](../../../record/literature.d/LIT-112.md) v2 | Efficient Memory Management for Large Language Model Serving with PagedAttention | Kwon et al. (2023), [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180). Introduces vLLM. | Active |
 | [LIT-115](../../../record/literature.d/LIT-115.md) v2 | Monarch Mixer: A Simple Sub-Quadratic GEMM-Based Architecture | Fu et al. (2023), [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). Efficient alternative to attention. | Active |
 | [LIT-133](../../../record/literature.d/LIT-133.md) v2 | Kimi Linear: An Expressive, Efficient Attention Architecture | Kimi Team (2025), [ARXIV-2510.26692](https://arxiv.org/abs/2510.26692). Kimi Delta Attention extends Gated DeltaNet with a channel-wise forgetting gate; interleaved with MLA at 3:1 in a 48B-total, 3B-active model trained on 1.4T tokens, the hybrid beats full attention on short-context, long-context and RL evaluations while cutting KV cache by up to 75% and reaching up to 6.3× the decoding throughput at 1M tokens. | Active |
 | [LIT-137](../../../record/literature.d/LIT-137.md) | Gated Delta Networks: Improving Mamba2 with Delta Rule | Yang et al. (2024), [ARXIV-2412.06464](https://arxiv.org/abs/2412.06464). Gating erases memory fast and the delta rule writes to it precisely; combining them in one recurrence, with a chunkwise parallel algorithm for the hardware, beats both Mamba2 and DeltaNet on language modelling, retrieval, length extrapolation and long context at 1.3B/100B tokens, and the paper's own hybrids with sliding-window attention or Mamba2 layers do better still. | Active |

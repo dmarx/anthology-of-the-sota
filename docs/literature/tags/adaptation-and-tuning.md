@@ -4,11 +4,11 @@
 
 Fine-tuning, transfer, parameter-efficient methods, alignment.
 
-13 of 223 LIT documents. Back to the [full index](../README.md).
+13 of 224 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [LIT-034](../../../record/literature.d/LIT-034.md) | Don't Stop Pretraining: Adapt Language Models to Domains and Tasks | Gururangan et al. (2020), [ARXIV-2004.10964](https://arxiv.org/abs/2004.10964). Benefits of domain-adaptive pretraining. | Active |
+| [LIT-034](../../../record/literature.d/LIT-034.md) v2 | Don't Stop Pretraining: Adapt Language Models to Domains and Tasks | Gururangan et al. (2020), [ARXIV-2004.10964](https://arxiv.org/abs/2004.10964). Benefits of domain-adaptive pretraining. | Active |
 | [LIT-046](../../../record/literature.d/LIT-046.md) v2 | LoRA: Low-Rank Adaptation of Large Language Models | Hu et al. (2021), [ARXIV-2106.09685](https://arxiv.org/abs/2106.09685). Freeze the pretrained weights and learn a rank-r product beside each one: the update a fine-tune applies has low intrinsic rank, so representing it in full is wasted memory. | Active |
 | [LIT-055](../../../record/literature.d/LIT-055.md) v2 | P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks | Liu et al. (2021), [ARXIV-2110.07602](https://arxiv.org/abs/2110.07602). Prefix tuning applied at every layer rather than only at the input, which is what makes prompt tuning match full fine-tuning at ordinary model sizes instead of only at 10B+. | Active |
 | [LIT-082](../../../record/literature.d/LIT-082.md) v2 | Constitutional AI: Harmlessness from AI Feedback | Bai et al. (2022), [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). Train harmlessness without human harm labels: the model critiques and revises its own responses against a written list of principles, and the preference model learns from those comparisons. | Active |

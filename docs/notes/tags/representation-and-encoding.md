@@ -2,8 +2,8 @@
 
 # NOTEs tagged `representation-and-encoding`
 
-1 of 19 NOTE documents. Back to the [full index](../README.md).
+1 of 23 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [NOTE-tmp74997](../../../record/notes.d/NOTE-tmp74997.md) | Neural Machine Translation of Rare Words with Subword Units | Translation was open-vocabulary and NMT models were not, backing off to a dictionary for unknown words. Encoding rare and unknown words as subword units — byte pair encoding adapted to segmentation — makes the model open-vocabulary itself. | Read |
+| [NOTE-010](../../../record/notes.d/NOTE-010.md) | Neural Machine Translation of Rare Words with Subword Units | Translation was open-vocabulary and NMT models were not, backing off to a dictionary for unknown words. Encoding rare and unknown words as subword units — byte pair encoding adapted to segmentation — makes the model open-vocabulary itself. | Read |

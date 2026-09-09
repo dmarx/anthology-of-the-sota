@@ -2,8 +2,9 @@
 
 # NOTEs tagged `generative-modeling`
 
-1 of 19 NOTE documents. Back to the [full index](../README.md).
+2 of 23 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [NOTE-tmpvjumo](../../../record/notes.d/NOTE-tmpvjumo.md) | Elucidating the Design Space of Diffusion-Based Generative Models | Separates diffusion's tangled design choices into independent axes — sampling, training, and preconditioning of the score network. FID 1.79 on class-conditional CIFAR-10 at 35 network evaluations. Read from the abstract only. | Skimmed |
+| [NOTE-009](../../../record/notes.d/NOTE-009.md) | Latent Diffusion Models | Train the diffusion model in the latent space of a pretrained autoencoder rather than in pixels. The autoencoder removes imperceptible detail; the diffusion model then spends its capacity on semantics instead of on high-frequency content nobody sees. | Read |
+| [NOTE-019](../../../record/notes.d/NOTE-019.md) v2 | Elucidating the Design Space of Diffusion-Based Generative Models | Pulls diffusion's tangled formulations apart into independent axes — sampler, training noise distribution, and preconditioning — and derives the preconditioning coefficients from a unit-variance requirement rather than choosing them. FID 1.79 on class-conditional CIFAR-10 at 35 network evaluations; a pretrained ImageNet-64 model improves 2.07 to 1.55 from the sampler alone. | Read |

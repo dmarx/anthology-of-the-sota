@@ -2,7 +2,7 @@
 
 # NOTEs tagged `distributed-optimization`
 
-2 of 8 NOTE documents. Back to the [full index](../README.md).
+2 of 23 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

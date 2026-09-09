@@ -1,5 +1,8 @@
 ---
+number: 15
 status: Read
+formerly:
+- NOTE-tmpg746b
 paper: LIT-012
 title: 'Decoupled Weight Decay Regularization'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   L2 regularization and weight decay are equivalent for SGD and **not** for adaptive methods. Common Adam implementations do L2 while calling it weight decay; decoupling it recovers the real thing, separates the weight-decay and learning-rate choices, and closes Adam's generalization gap to SGD with momentum.
 ---
 
-# NOTE-tmpg746b: Decoupled Weight Decay Regularization
+# NOTE-015: Decoupled Weight Decay Regularization
 
 ## Contribution
 

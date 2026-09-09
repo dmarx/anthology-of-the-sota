@@ -1,5 +1,8 @@
 ---
+number: 13
 status: Read
+formerly:
+- NOTE-tmpe03a9
 paper: LIT-084
 title: 'DeepNet'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   Scale the residual by α and initialise the residual branch with gain β, both constants determined only by depth. Bounds the model update theoretically, combines Post-LN's quality with Pre-LN's stability, and reaches 1,000 layers.
 ---
 
-# NOTE-tmpe03a9: DeepNet
+# NOTE-013: DeepNet
 
 ## Contribution
 

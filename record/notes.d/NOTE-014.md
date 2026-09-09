@@ -1,5 +1,8 @@
 ---
+number: 14
 status: Read
+formerly:
+- NOTE-tmpe24hp
 paper: LIT-115
 title: 'Monarch Mixer'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   One sub-quadratic primitive — Monarch matrices — along both sequence length and model dimension. Matches BERT-base/large on GLUE with up to 27% fewer parameters and 9.1× throughput at 4K, and beats ViT-b by 1% at half the parameters. Attention-free, not hybrid.
 ---
 
-# NOTE-tmpe24hp: Monarch Mixer
+# NOTE-014: Monarch Mixer
 
 ## Contribution
 

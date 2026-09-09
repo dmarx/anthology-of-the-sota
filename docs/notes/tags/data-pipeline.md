@@ -2,8 +2,9 @@
 
 # NOTEs tagged `data-pipeline`
 
-1 of 8 NOTE documents. Back to the [full index](../README.md).
+2 of 23 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-002](../../../record/notes.d/NOTE-002.md) | Efficient Online Data Mixing | An Exp3 bandit over data domains, rewarded by per-domain training loss on the batches the run is already taking, revising the mixture during training. 19% fewer iterations to the next best method's final perplexity, at negligible wall-clock cost. | Read |
+| [NOTE-018](../../../record/notes.d/NOTE-018.md) | Segment Anything | The data engine is the transferable part. Three stages — assisted-manual, semi-automatic, fully automatic — each stage's labels training the model that produces the next stage's, ending in 1.1B masks. The model and the dataset are built together. | Read |

@@ -2,8 +2,8 @@
 
 # NOTEs tagged `inference-optimization`
 
-1 of 11 NOTE documents. Back to the [full index](../README.md).
+1 of 23 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [NOTE-tmpxplbk](../../../record/notes.d/NOTE-tmpxplbk.md) | PagedAttention and vLLM | KV cache memory is huge, grows and shrinks dynamically, and was managed as one contiguous block — so fragmentation and duplication capped the batch size. PagedAttention borrows OS paging: near-zero waste, sharing within and across requests, 2–4× throughput at equal latency. | Read |
+| [NOTE-023](../../../record/notes.d/NOTE-023.md) | PagedAttention and vLLM | KV cache memory is huge, grows and shrinks dynamically, and was managed as one contiguous block — so fragmentation and duplication capped the batch size. PagedAttention borrows OS paging: near-zero waste, sharing within and across requests, 2–4× throughput at equal latency. | Read |

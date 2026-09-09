@@ -9,7 +9,7 @@ history:
 - version: 2
   date: '2026-09-09'
   note: >-
-    Corrected against a full reading of the source (NOTE-tmpvjumo, now
+    Corrected against a full reading of the source (NOTE-019, now
     Read). The body implied all four preconditioning scalings follow
     from the unit-variance requirement; only c_in and c_out do — c_skip
     minimises error amplification and c_noise is an empirical fit. Names

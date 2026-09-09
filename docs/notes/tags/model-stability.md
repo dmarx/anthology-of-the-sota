@@ -2,9 +2,11 @@
 
 # NOTEs tagged `model-stability`
 
-2 of 8 NOTE documents. Back to the [full index](../README.md).
+4 of 23 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-001](../../../record/notes.d/NOTE-001.md) | Understanding and Improving Layer Normalization | LayerNorm's benefit is in the backward pass — the derivatives of the mean and variance re-center and re-scale the gradients — not in forward normalization. Its bias and gain increase overfitting risk and "do not work in most cases". | Read |
 | [NOTE-008](../../../record/notes.d/NOTE-008.md) | Visualizing the Loss Landscape of Neural Nets | Filter normalization makes loss-surface plots comparable across architectures, and under it sharpness correlates with generalization error. Deep networks transition from nearly convex to chaotic; skip connections prevent that transition, which is why they are needed at depth. | Read |
+| [NOTE-013](../../../record/notes.d/NOTE-013.md) | DeepNet | Scale the residual by α and initialise the residual branch with gain β, both constants determined only by depth. Bounds the model update theoretically, combines Post-LN's quality with Pre-LN's stability, and reaches 1,000 layers. | Read |
+| [NOTE-022](../../../record/notes.d/NOTE-022.md) | RMSNorm | LayerNorm gives re-centering and re-scaling invariance; the hypothesis is that re-centering is dispensable. Normalize by root mean square alone — re-scaling invariance and implicit learning-rate adaptation kept, 7–64% less time per step. | Read |

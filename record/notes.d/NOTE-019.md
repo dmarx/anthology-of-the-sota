@@ -1,5 +1,8 @@
 ---
+number: 19
 status: Read
+formerly:
+- NOTE-tmpvjumo
 paper: LIT-075
 title: 'Elucidating the Design Space of Diffusion-Based Generative Models'
 version: 2
@@ -19,7 +22,7 @@ summary: >-
   Pulls diffusion's tangled formulations apart into independent axes — sampler, training noise distribution, and preconditioning — and derives the preconditioning coefficients from a unit-variance requirement rather than choosing them. FID 1.79 on class-conditional CIFAR-10 at 35 network evaluations; a pretrained ImageNet-64 model improves 2.07 to 1.55 from the sampler alone.
 ---
 
-# NOTE-tmpvjumo: Elucidating the Design Space of Diffusion-Based Generative Models
+# NOTE-019: Elucidating the Design Space of Diffusion-Based Generative Models
 
 ## Contribution
 

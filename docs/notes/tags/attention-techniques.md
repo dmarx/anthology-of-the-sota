@@ -2,9 +2,12 @@
 
 # NOTEs tagged `attention-techniques`
 
-2 of 8 NOTE documents. Back to the [full index](../README.md).
+5 of 23 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-005](../../../record/notes.d/NOTE-005.md) | FlashAttention | Attention is bounded by HBM traffic rather than FLOPs. Tiling to on-chip SRAM and recomputing the attention matrix in the backward pass gives exact attention in Θ(N²d²M⁻¹) HBM accesses against standard attention's Θ(Nd + N²) — and Proposition 3 proves no exact algorithm beats that across all SRAM sizes. | Read |
 | [NOTE-007](../../../record/notes.d/NOTE-007.md) | FlashAttention-2 | FlashAttention reached only 25–40% of peak FLOPs/s; the loss was work partitioning between thread blocks and warps, not the algorithm. Three changes — fewer non-matmul FLOPs, parallelism over sequence length, better warp partitioning — give ~2× and 50–73% of peak. | Read |
+| [NOTE-014](../../../record/notes.d/NOTE-014.md) | Monarch Mixer | One sub-quadratic primitive — Monarch matrices — along both sequence length and model dimension. Matches BERT-base/large on GLUE with up to 27% fewer parameters and 9.1× throughput at 4K, and beats ViT-b by 1% at half the parameters. Attention-free, not hybrid. | Read |
+| [NOTE-016](../../../record/notes.d/NOTE-016.md) | Fast Transformer Decoding: multi-query attention | Incremental decoding is bounded by the memory bandwidth of reloading the keys and values, not by arithmetic. Share one key/value head across all query heads: much faster decoding, "only minor quality degradation". | Read |
+| [NOTE-021](../../../record/notes.d/NOTE-021.md) | Grouped-Query Attention | MQA is fast and costs quality, and training a separate model for inference is undesirable. Two results: uptrain an existing multi-head checkpoint with 5% of pretraining compute, and use an intermediate number of key-value heads — quality near multi-head at speed near MQA. | Read |

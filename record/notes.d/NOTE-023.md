@@ -1,5 +1,8 @@
 ---
+number: 23
 status: Read
+formerly:
+- NOTE-tmpxplbk
 paper: LIT-112
 title: 'PagedAttention and vLLM'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   KV cache memory is huge, grows and shrinks dynamically, and was managed as one contiguous block — so fragmentation and duplication capped the batch size. PagedAttention borrows OS paging: near-zero waste, sharing within and across requests, 2–4× throughput at equal latency.
 ---
 
-# NOTE-tmpxplbk: PagedAttention and vLLM
+# NOTE-023: PagedAttention and vLLM
 
 ## Contribution
 
@@ -131,7 +134,7 @@ outright.
 **`SOTA-113` was sourced to the wrong paper.** vLLM describes iteration-level
 scheduling in §2, its *background* section, and cites Orca (Yu et al., OSDI
 '22) for it. vLLM's contribution is PagedAttention. Orca was not in the record
-at all and is now filed as [LIT-tmpe5an0](../literature.d/LIT-tmpe5an0.md); `SOTA-113` names it first, with
+at all and is now filed as [LIT-224](../literature.d/LIT-224.md); `SOTA-113` names it first, with
 `LIT-112` retained as the production system that carried the technique.
 
 The name is why the citation drifted. **"Continuous batching" appears in

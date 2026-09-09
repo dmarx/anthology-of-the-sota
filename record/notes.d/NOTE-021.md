@@ -1,5 +1,8 @@
 ---
+number: 21
 status: Read
+formerly:
+- NOTE-tmpx1otw
 paper: LIT-100
 title: 'Grouped-Query Attention'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   MQA is fast and costs quality, and training a separate model for inference is undesirable. Two results: uptrain an existing multi-head checkpoint with 5% of pretraining compute, and use an intermediate number of key-value heads — quality near multi-head at speed near MQA.
 ---
 
-# NOTE-tmpx1otw: Grouped-Query Attention
+# NOTE-021: Grouped-Query Attention
 
 ## Contribution
 
@@ -117,7 +120,7 @@ to before pretraining. Nothing in the record states that, and the record holds
 several practices that are pretraining-time commitments where the same
 question could be asked.
 
-Read alongside [NOTE-tmpkkuh5](NOTE-tmpkkuh5.md), this closes the MQA line cleanly: MQA
+Read alongside [NOTE-016](NOTE-016.md), this closes the MQA line cleanly: MQA
 diagnosed the bandwidth bound and took the extreme, this found the interior
 and a cheap route to it.
 

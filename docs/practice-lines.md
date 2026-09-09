@@ -66,7 +66,7 @@
 ## From larger models are more sample efficient
 
 - alongside: [SOTA-040](../record/practices.d/SOTA-040.md) — larger models are more sample efficient *(Active, unassessed)*
-- alongside: [SOTA-041](../record/practices.d/SOTA-041.md) — lr tuning less important for larger models *(Active, unassessed)*
+- alongside: [SOTA-041](../record/practices.d/SOTA-041.md) — lr tuning less important for larger models *(Rejected, unassessed)*
 
 ## From Profile data loading separate from training
 

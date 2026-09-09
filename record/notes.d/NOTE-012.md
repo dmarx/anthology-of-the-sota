@@ -1,5 +1,8 @@
 ---
+number: 12
 status: Read
+formerly:
+- NOTE-tmpd2c6t
 paper: LIT-009
 title: 'LARS: Large Batch Training of Convolutional Networks'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   Linear LR scaling with warm-up is "not general enough and training may diverge". Layer-wise Adaptive Rate Scaling sets a per-layer rate from the ratio of weight norm to gradient norm, reaching AlexNet at batch 8K and ResNet-50 at batch 32K without accuracy loss.
 ---
 
-# NOTE-tmpd2c6t: LARS: Large Batch Training of Convolutional Networks
+# NOTE-012: LARS: Large Batch Training of Convolutional Networks
 
 ## Contribution
 

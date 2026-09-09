@@ -9,13 +9,13 @@
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
-| 2026-08-24 | Deferred | [SOTA-120](../../record/practices.d/SOTA-120.md) | 5 | 0 | Prefer AdamW's decoupled weight decay to L2 regularization added to the loss |
+| 2026-08-24 | Deferred | [SOTA-120](../../record/practices.d/SOTA-120.md) | 10 | 0 | Prefer AdamW's decoupled weight decay to L2 regularization added to the loss |
 | 2026-08-24 | Proposed | [LIT-101](../../record/literature.d/LIT-101.md) | 0 | 0 | AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs |
 | 2026-08-24 | Proposed | [LIT-104](../../record/literature.d/LIT-104.md) | 0 | 0 | ReLoRA: High-Rank Training Through Low-Rank Updates |
 | 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 22 | 2 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
 | 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 17 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
 | 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 13 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
-| 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 10 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
+| 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 11 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 9 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 8 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
 | 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 6 | 0 | Decay the learning rate linearly all the way to zero |
@@ -27,7 +27,7 @@
 | 2026-09-07 | Proposed | [SOTA-156](../../record/practices.d/SOTA-156.md) | 3 | 0 | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed |
 | 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 2 | 0 | Pack training documents by best fit instead of concatenating and splitting |
 | 2026-09-07 | Proposed | [SOTA-157](../../record/practices.d/SOTA-157.md) | 2 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
-| 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 4 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
+| 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 5 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
 | 2026-09-08 | Proposed | [SOTA-160](../../record/practices.d/SOTA-160.md) | 4 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
 | 2026-09-08 | Proposed | [SOTA-158](../../record/practices.d/SOTA-158.md) | 1 | 0 | Bound the activation's output range when training in low precision |
 | 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 1 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |

@@ -1,5 +1,8 @@
 ---
+number: 9
 status: Read
+formerly:
+- NOTE-tmp17ke7
 paper: LIT-062
 title: 'Latent Diffusion Models'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   Train the diffusion model in the latent space of a pretrained autoencoder rather than in pixels. The autoencoder removes imperceptible detail; the diffusion model then spends its capacity on semantics instead of on high-frequency content nobody sees.
 ---
 
-# NOTE-tmp17ke7: Latent Diffusion Models
+# NOTE-009: Latent Diffusion Models
 
 ## Contribution
 

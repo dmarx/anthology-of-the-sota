@@ -2,9 +2,9 @@
 
 # NOTEs with `status` `Unread`
 
-**Unread** — the note exists to record that nobody has read this yet, which is a fact the record could not previously state.
+**Unread** — looked at and deliberately set aside — a human judgement, not a backlog entry. A paper nobody has reached simply has no note (ADR-025).
 
-0 of 8 NOTE documents. Back to the [full index](../README.md).
+0 of 23 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

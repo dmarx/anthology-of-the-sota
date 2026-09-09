@@ -4,14 +4,13 @@
 
 Architectures, components, model families, multi-modal designs.
 
-45 of 223 LIT documents. Back to the [full index](../README.md).
+44 of 224 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [LIT-003](../../../record/literature.d/LIT-003.md) | Neural Machine Translation of Rare Words with Subword Units | Sennrich et al. (2015), [ARXIV-1508.07909](https://arxiv.org/abs/1508.07909). Introduces byte-pair encoding for tokenization. | Active |
-| [LIT-008](../../../record/literature.d/LIT-008.md) | Attention Is All You Need | Vaswani et al. (2017), [ARXIV-1706.03762](https://arxiv.org/abs/1706.03762). Introduces transformer architecture. | Active |
+| [LIT-008](../../../record/literature.d/LIT-008.md) v2 | Attention Is All You Need | Vaswani et al. (2017), [ARXIV-1706.03762](https://arxiv.org/abs/1706.03762). Introduces transformer architecture. | Active |
 | [LIT-021](../../../record/literature.d/LIT-021.md) | Mish: A Self Regularized Non-Monotonic Activation Function | Misra et al. (2019), [ARXIV-1908.08681](https://arxiv.org/abs/1908.08681). New activation function. | Active |
-| [LIT-024](../../../record/literature.d/LIT-024.md) | Fast Transformer Decoding: One Write-Head is All You Need | Shazeer (2019), [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). Introduces multi-query attention. | Active |
+| [LIT-024](../../../record/literature.d/LIT-024.md) v2 | Fast Transformer Decoding: One Write-Head is All You Need | Shazeer (2019), [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). Introduces multi-query attention. | Active |
 | [LIT-030](../../../record/literature.d/LIT-030.md) v2 | GLU Variants Improve Transformer | Shazeer et al. (2020), [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). Study of gating mechanisms. | Active |
 | [LIT-033](../../../record/literature.d/LIT-033.md) | Longformer: The Long-Document Transformer | Beltagy et al. (2020), [ARXIV-2004.05150](https://arxiv.org/abs/2004.05150). Efficient attention for long sequences. | Active |
 | [LIT-035](../../../record/literature.d/LIT-035.md) | Language Models are Few-Shot Learners | Brown et al. (2020), [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). Introduces GPT-3. | Active |

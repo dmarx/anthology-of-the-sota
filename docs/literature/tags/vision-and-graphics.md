@@ -4,7 +4,7 @@
 
 Neural rendering, reconstruction, perception, visual foundation models.
 
-13 of 223 LIT documents. Back to the [full index](../README.md).
+13 of 224 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -12,7 +12,7 @@ Neural rendering, reconstruction, perception, visual foundation models.
 | [LIT-072](../../../record/literature.d/LIT-072.md) | Simple Open-Vocabulary Object Detection with Vision Transformers | Minderer et al. (2022), [ARXIV-2205.06230](https://arxiv.org/abs/2205.06230). Open vocabulary detection. | Active |
 | [LIT-086](../../../record/literature.d/LIT-086.md) v2 | K-Planes: Explicit Radiance Fields in Space, Time, and Appearance | Fridovich-Keil et al. (2023), [ARXIV-2301.10241](https://arxiv.org/abs/2301.10241). Hybrid representation scheme. | Active |
 | [LIT-094](../../../record/literature.d/LIT-094.md) | Neural Scene Graphs for Dynamic Scenes | Ost et al. (2020), [ARXIV-2011.10379](https://arxiv.org/abs/2011.10379). Dynamic scene representation. | Rejected — too domain-specific for a general training list |
-| [LIT-096](../../../record/literature.d/LIT-096.md) | Segment Anything | Kirillov et al. (2023), [ARXIV-2304.02643](https://arxiv.org/abs/2304.02643). Universal segmentation model. | Active |
+| [LIT-096](../../../record/literature.d/LIT-096.md) v2 | Segment Anything | Kirillov et al. (2023), [ARXIV-2304.02643](https://arxiv.org/abs/2304.02643). Universal segmentation model. | Active |
 | [LIT-107](../../../record/literature.d/LIT-107.md) v2 | MiDaS v3.1 -- A Model Zoo for Robust Monocular Relative Depth Estimation | Birkl et al. (2023), [ARXIV-2307.14460](https://arxiv.org/abs/2307.14460). Improved depth estimation. | Active |
 | [LIT-108](../../../record/literature.d/LIT-108.md) | 3D Gaussian Splatting for Real-Time Radiance Field Rendering | Kerbl et al. (2023), [ARXIV-2308.04079](https://arxiv.org/abs/2308.04079). Real-time neural rendering. | Active |
 | [LIT-109](../../../record/literature.d/LIT-109.md) | NeuS2: Fast Learning of Neural Implicit Surfaces for Multi-view Reconstruction | Wang et al. (2022), [ARXIV-2212.05231](https://arxiv.org/abs/2212.05231). Accelerated surface reconstruction. | Active |

@@ -1,5 +1,8 @@
 ---
+number: 16
 status: Read
+formerly:
+- NOTE-tmpkkuh5
 paper: LIT-024
 title: 'Fast Transformer Decoding: multi-query attention'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   Incremental decoding is bounded by the memory bandwidth of reloading the keys and values, not by arithmetic. Share one key/value head across all query heads: much faster decoding, "only minor quality degradation".
 ---
 
-# NOTE-tmpkkuh5: Fast Transformer Decoding: multi-query attention
+# NOTE-016: Fast Transformer Decoding: multi-query attention
 
 ## Contribution
 

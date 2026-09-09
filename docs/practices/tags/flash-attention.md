@@ -2,7 +2,7 @@
 
 # SOTAs tagged `flash-attention`
 
-2 of 189 SOTA documents. Back to the [full index](../README.md).
+2 of 190 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

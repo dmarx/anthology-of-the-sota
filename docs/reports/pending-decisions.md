@@ -5,46 +5,48 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**33 document(s) awaiting a decision.**
+**35 document(s) awaiting a decision.**
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-08-24 | Deferred | [SOTA-120](../../record/practices.d/SOTA-120.md) | 5 | 0 | Prefer AdamW's decoupled weight decay to L2 regularization added to the loss |
 | 2026-08-24 | Proposed | [LIT-101](../../record/literature.d/LIT-101.md) | 0 | 0 | AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs |
 | 2026-08-24 | Proposed | [LIT-104](../../record/literature.d/LIT-104.md) | 0 | 0 | ReLoRA: High-Rank Training Through Low-Rank Updates |
-| 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 21 | 2 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
-| 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 16 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
-| 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 10 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
-| 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 9 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
+| 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 22 | 2 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
+| 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 17 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
+| 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 13 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
+| 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 10 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 8 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
-| 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 6 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
-| 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 5 | 0 | Decay the learning rate linearly all the way to zero |
+| 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 8 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
+| 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 6 | 0 | Decay the learning rate linearly all the way to zero |
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 2 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 6 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
+| 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 5 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
 | 2026-09-07 | Proposed | [SOTA-154](../../record/practices.d/SOTA-154.md) | 5 | 0 | Fine-tune with evolution strategies instead of policy-gradient reinforcement learning |
-| 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 4 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
-| 2026-09-07 | Proposed | [SOTA-156](../../record/practices.d/SOTA-156.md) | 2 | 0 | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed |
-| 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 1 | 0 | Pack training documents by best fit instead of concatenating and splitting |
-| 2026-09-07 | Proposed | [SOTA-155](../../record/practices.d/SOTA-155.md) | 1 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
-| 2026-09-07 | Proposed | [SOTA-157](../../record/practices.d/SOTA-157.md) | 1 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
+| 2026-09-07 | Proposed | [SOTA-155](../../record/practices.d/SOTA-155.md) | 3 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
+| 2026-09-07 | Proposed | [SOTA-156](../../record/practices.d/SOTA-156.md) | 3 | 0 | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed |
+| 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 2 | 0 | Pack training documents by best fit instead of concatenating and splitting |
+| 2026-09-07 | Proposed | [SOTA-157](../../record/practices.d/SOTA-157.md) | 2 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
+| 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 4 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
 | 2026-09-08 | Proposed | [SOTA-160](../../record/practices.d/SOTA-160.md) | 4 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
-| 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 3 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
 | 2026-09-08 | Proposed | [SOTA-158](../../record/practices.d/SOTA-158.md) | 1 | 0 | Bound the activation's output range when training in low precision |
+| 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 1 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
 | 2026-09-08 | Proposed | [SOTA-168](../../record/practices.d/SOTA-168.md) | 1 | 0 | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself |
+| 2026-09-08 | Proposed | [SOTA-169](../../record/practices.d/SOTA-169.md) | 1 | 0 | Widen the residual stream into several streams and constrain the mixing between them |
+| 2026-09-08 | Proposed | [SOTA-172](../../record/practices.d/SOTA-172.md) | 1 | 0 | Build synthetic pretraining data by editing human text at the token level, not by generating from scratch |
+| 2026-09-08 | Proposed | [SOTA-173](../../record/practices.d/SOTA-173.md) | 1 | 0 | Augment the objective to make multi-epoch pretraining productive on a fixed corpus |
+| 2026-09-08 | Proposed | [SOTA-176](../../record/practices.d/SOTA-176.md) | 1 | 0 | Hybridise inside the layer: long-term slots, a sliding window, and one softmax over both, with the window size as the only dial |
+| 2026-09-08 | Proposed | [SOTA-177](../../record/practices.d/SOTA-177.md) | 1 | 0 | Decouple the erase address from the write address in a delta-rule recurrence |
+| 2026-09-08 | Proposed | [SOTA-178](../../record/practices.d/SOTA-178.md) | 1 | 0 | Give the recurrence vector-valued gating and in-context learning rates so it can track state a softmax layer provably cannot |
 | 2026-09-08 | Proposed | [SOTA-179](../../record/practices.d/SOTA-179.md) | 1 | 0 | Truncate the rotary encoding's low frequencies rather than rescaling its base |
-| 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 0 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
 | 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 0 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
-| 2026-09-08 | Proposed | [SOTA-169](../../record/practices.d/SOTA-169.md) | 0 | 0 | Widen the residual stream into several streams and constrain the mixing between them |
-| 2026-09-08 | Proposed | [SOTA-172](../../record/practices.d/SOTA-172.md) | 0 | 0 | Build synthetic pretraining data by editing human text at the token level, not by generating from scratch |
-| 2026-09-08 | Proposed | [SOTA-173](../../record/practices.d/SOTA-173.md) | 0 | 0 | Augment the objective to make multi-epoch pretraining productive on a fixed corpus |
 | 2026-09-08 | Proposed | [SOTA-175](../../record/practices.d/SOTA-175.md) | 0 | 0 | Mask whole syntactic units for code fill-in-the-middle, not random character spans |
-| 2026-09-08 | Proposed | [SOTA-176](../../record/practices.d/SOTA-176.md) | 0 | 0 | Hybridise inside the layer: long-term slots, a sliding window, and one softmax over both, with the window size as the only dial |
-| 2026-09-08 | Proposed | [SOTA-177](../../record/practices.d/SOTA-177.md) | 0 | 0 | Decouple the erase address from the write address in a delta-rule recurrence |
-| 2026-09-08 | Proposed | [SOTA-178](../../record/practices.d/SOTA-178.md) | 0 | 0 | Give the recurrence vector-valued gating and in-context learning rates so it can track state a softmax layer provably cannot |
+| 2026-09-09 | Proposed | [SOTA-190](../../record/practices.d/SOTA-190.md) | 1 | 0 | Increase depth before any other dimension when scaling a transformer |
+| 2026-09-09 | Proposed | [ADR-024](../../record/decisions.d/ADR-024.md) | 0 | 0 | The topic vocabulary has four recurring seams — options, not a decision |
 | 2026-09-09 | Proposed | [SOTA-189](../../record/practices.d/SOTA-189.md) | 0 | 0 | Set the checkpoint interval from the job's measured time-to-failure, which shrinks as the job grows |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (12): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [SOTA-166](../../record/practices.d/SOTA-166.md), [SOTA-167](../../record/practices.d/SOTA-167.md), [SOTA-169](../../record/practices.d/SOTA-169.md), [SOTA-172](../../record/practices.d/SOTA-172.md), [SOTA-173](../../record/practices.d/SOTA-173.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-176](../../record/practices.d/SOTA-176.md), [SOTA-177](../../record/practices.d/SOTA-177.md), [SOTA-178](../../record/practices.d/SOTA-178.md), [SOTA-189](../../record/practices.d/SOTA-189.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (6): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [SOTA-167](../../record/practices.d/SOTA-167.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [ADR-024](../../record/decisions.d/ADR-024.md), [SOTA-189](../../record/practices.d/SOTA-189.md) — these are the cheapest to close, since nothing depends on the answer.

@@ -4,7 +4,7 @@
 
 Attention variants, implementation optimizations, alternative mechanisms.
 
-17 of 189 SOTA documents. Back to the [full index](../README.md).
+17 of 190 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -15,9 +15,9 @@ Attention variants, implementation optimizations, alternative mechanisms.
 | [SOTA-107](../../../record/practices.d/SOTA-107.md) | Keep sequence lengths multiple of 128 for best performance | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Active |
 | [SOTA-108](../../../record/practices.d/SOTA-108.md) | Pad attention masks to block boundaries for better hardware utilization | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Active |
 | [SOTA-109](../../../record/practices.d/SOTA-109.md) v2 | Prefer GQA to MQA or MHA | Ainslie et al. (2023), [LIT-100](../../../record/literature.d/LIT-100.md) — group the query heads and give each group one key/value head: multi-query's cache saving without multi-query's quality loss, and uptrainable from an existing multi-head checkpoint. Still the default for a model not paying MLA's implementation cost. | Active |
-| [SOTA-110](../../../record/practices.d/SOTA-110.md) | Consider for very long sequence tasks | Bhardwaj et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |
-| [SOTA-111](../../../record/practices.d/SOTA-111.md) | Use for tasks where attention bottlenecks training | Bhardwaj et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |
-| [SOTA-112](../../../record/practices.d/SOTA-112.md) | Combine with standard attention for hybrid approaches | Bhardwaj et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |
+| [SOTA-110](../../../record/practices.d/SOTA-110.md) v2 | Consider Monarch Mixer in place of attention for very long sequence tasks | Bhardwaj et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |
+| [SOTA-111](../../../record/practices.d/SOTA-111.md) v2 | Use Monarch Mixer where attention's quadratic cost is what bottlenecks training | Bhardwaj et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |
+| [SOTA-112](../../../record/practices.d/SOTA-112.md) v2 | Combine Monarch Mixer layers with standard attention rather than replacing it wholesale | Bhardwaj et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Active |
 | [SOTA-132](../../../record/practices.d/SOTA-132.md) v2 | Interleave linear-attention layers with global attention at about 3:1 instead of using full attention throughout | Kimi Team (2025), [LIT-133](../../../record/literature.d/LIT-133.md) — three Kimi Delta Attention layers per gated-MLA layer beat full MLA at 48B/1.4T while cutting KV cache 75%; the layout [LIT-131](../../../record/literature.d/LIT-131.md) ships at 2.8T with 69 KDA and 24 MLA layers. | Active |
 | [SOTA-134](../../../record/practices.d/SOTA-134.md) v2 | Gate each attention head's output with a sigmoid after the scaled dot-product | Qiu et al. (2025), [LIT-138](../../../record/literature.d/LIT-138.md) — the best of 30 gating variants at 15B MoE and 1.7B dense over 3.5T tokens: better quality, more stable training, larger tolerable learning rates, no attention sinks; shipped in every Qwen full-attention layer since Qwen3-Next. | Active |
 | [SOTA-135](../../../record/practices.d/SOTA-135.md) | Give linear-attention layers a gated delta rule: a decay gate for erasure plus a delta update for targeted writes | Yang et al. (2024), [LIT-137](../../../record/literature.d/LIT-137.md) — beats Mamba2 and DeltaNet across language modelling, retrieval and long context at 1.3B/100B; the recurrence the Qwen hybrids use for three layers in four, and the one Kimi Delta Attention extends. | Active |

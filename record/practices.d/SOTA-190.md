@@ -1,5 +1,8 @@
 ---
+number: 190
 status: Proposed
+formerly:
+- SOTA-tmp7pn5v
 promote_when: >-
   A depth-preferential shape comparison from another group at a scale where
   model parallelism binds, reporting wall-clock as well as quality. The
@@ -30,7 +33,7 @@ summary: >-
   Tay et al. (2021), [LIT-052](../literature.d/LIT-052.md) — the DeepNarrow strategy. Small 16L matches T5-Base downstream at 60% of the parameters, 63% of the FLOPs and 40% faster; the limit is parallelism rather than quality.
 ---
 
-# SOTA-tmp7pn5v: Increase depth before any other dimension when scaling a transformer
+# SOTA-190: Increase depth before any other dimension when scaling a transformer
 
 ## Source
 

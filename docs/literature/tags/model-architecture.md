@@ -4,7 +4,7 @@
 
 Architectures, components, model families, multi-modal designs.
 
-44 of 223 LIT documents. Back to the [full index](../README.md).
+45 of 223 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -18,8 +18,9 @@ Architectures, components, model families, multi-modal designs.
 | [LIT-045](../../../record/literature.d/LIT-045.md) v2 | RoFormer: Enhanced Transformer with Rotary Position Embedding | Su et al. (2021), [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864). Rotation-based positional encoding. | Active |
 | [LIT-048](../../../record/literature.d/LIT-048.md) | Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation | Press et al. (2021), [ARXIV-2108.12409](https://arxiv.org/abs/2108.12409). Linear attention bias. | Active |
 | [LIT-049](../../../record/literature.d/LIT-049.md) | Learning to Prompt for Vision-Language Models | Zhou et al. (2021), [ARXIV-2109.01134](https://arxiv.org/abs/2109.01134). Learnable prompt optimization. | Active |
+| [LIT-052](../../../record/literature.d/LIT-052.md) v2 | Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers | Tay et al. (2021), [ARXIV-2109.10686](https://arxiv.org/abs/2109.10686). Model shape, not just model size, determines downstream fine-tuning quality; the DeepNarrow strategy reaches T5-Base quality with 50% fewer parameters and 40% faster training. | Active |
 | [LIT-060](../../../record/literature.d/LIT-060.md) | Improving Language Models by Retrieving from Trillions of Tokens | Borgeaud et al. (2021), [ARXIV-2112.04426](https://arxiv.org/abs/2112.04426). Retrieval-augmented language models. | Active |
-| [LIT-061](../../../record/literature.d/LIT-061.md) | Efficient Large Scale Language Modeling with Mixtures of Experts | Fedus et al. (2021), [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684). {'Analysis of compute/memory trade-offs': None}. | Active |
+| [LIT-061](../../../record/literature.d/LIT-061.md) v2 | Efficient Large Scale Language Modeling with Mixtures of Experts | Artetxe et al. (2021), [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684). "A detailed empirical study of how autoregressive MoE language models scale in comparison with dense models" — across in- and out-of-domain language modelling, zero- and few-shot priming, and full fine-tuning. | Active |
 | [LIT-069](../../../record/literature.d/LIT-069.md) | PaLM: Scaling Language Modeling with Pathways | Chowdhery et al. (2022), [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). Pathways system architecture. | Active |
 | [LIT-071](../../../record/literature.d/LIT-071.md) | CoCa: Contrastive Captioners are Image-Text Foundation Models | Yu et al. (2022), [ARXIV-2205.01917](https://arxiv.org/abs/2205.01917). Unified vision-language architecture. | Active |
 | [LIT-077](../../../record/literature.d/LIT-077.md) | Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models | Srivastava et al. (2022), [ARXIV-2206.04615](https://arxiv.org/abs/2206.04615). Comprehensive evaluation framework. | Active |

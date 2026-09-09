@@ -4,7 +4,7 @@
 
 Optimizers, schedules, batch size, scaling laws, training dynamics.
 
-40 of 223 LIT documents. Back to the [full index](../README.md).
+39 of 223 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,7 +21,6 @@ Optimizers, schedules, batch size, scaling laws, training dynamics.
 | [LIT-040](../../../record/literature.d/LIT-040.md) | Scaling Laws for Autoregressive Generative Modeling | Henighan et al. (2020), [ARXIV-2010.14701](https://arxiv.org/abs/2010.14701). Universal scaling behaviors. | Active |
 | [LIT-042](../../../record/literature.d/LIT-042.md) v2 | SGDR: Stochastic Gradient Descent with Warm Restarts | Loshchilov and Hutter (2016), [ARXIV-1608.03983](https://arxiv.org/abs/1608.03983). Warm restarts: anneal the learning rate on a cosine to a floor, then jump it back up and repeat, with each cycle longer than the last. | Superseded — by [LIT-035](../../../record/literature.d/LIT-035.md); single-cycle cosine decay proved better at scale |
 | [LIT-044](../../../record/literature.d/LIT-044.md) | Contrastive Learning with Hard Negative Samples | Robinson et al. (2020), [ARXIV-2010.04592](https://arxiv.org/abs/2010.04592). Importance of negative sample selection. | Rejected — needs per-case tuning, no consistent cross-domain benefit |
-| [LIT-052](../../../record/literature.d/LIT-052.md) | Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers | Tay et al. (2021), [ARXIV-2109.10686](https://arxiv.org/abs/2109.10686). As model size increases, required warmup period becomes shorter relative to total training time. | Active |
 | [LIT-058](../../../record/literature.d/LIT-058.md) v2 | Measuring the Effects of Data Parallelism on Neural Network Training | Shallue et al. (2018), [ARXIV-1811.03600](https://arxiv.org/abs/1811.03600). An exhaustive empirical study of batch size: across models, datasets and optimizers, increasing the batch shortens training in a regime of perfect scaling, then hits diminishing returns and finally a wall, and where those transitions fall is workload-dependent. | Active |
 | [LIT-068](../../../record/literature.d/LIT-068.md) | Training Compute-Optimal Large Language Models | Hoffmann et al. (2022), [ARXIV-2203.15556](https://arxiv.org/abs/2203.15556). Compute-optimal scaling laws. | Active |
 | [LIT-090](../../../record/literature.d/LIT-090.md) v2 | Symbolic Discovery of Optimization Algorithms | Chen et al. (2023), [ARXIV-2302.06675](https://arxiv.org/abs/2302.06675). Program search over an infinite, sparse space of optimizer programs, which turns up Lion — sign of an interpolated momentum, one state tensor instead of Adam's two. | Rejected — retired at migration on a description that was not this paper; the reason has not been re-examined |

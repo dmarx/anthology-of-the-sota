@@ -4,8 +4,9 @@
 
 **Proposed** — not in force yet — an open question, so citing it as settled is what the reference report catches.
 
-1 of 23 decisions. Back to the [full index](../README.md).
+2 of 24 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [ADR-012](../../../record/decisions.d/ADR-012.md) | A practice declares its altitude, and one with no body cannot claim to be a design decision | "Pin memory for CPU-GPU transfers" and "Use Muon in place of AdamW" are both `SOTA` documents with equal standing, and 103 of 144 practices have no body at all — the registry's apparent weight is mostly one synthetic note's bullet lists. Proposes a `kind:` field and a lint tying substance to altitude. | Proposed |
+| [ADR-024](../../../record/decisions.d/ADR-024.md) | The topic vocabulary has four recurring seams — options, not a decision | [ADR-021](../../../record/decisions.d/ADR-021.md) said to expect a fourth vocabulary decision. Declaring the relations the practice bodies argue produced 25 unbound edges, and they are not scattered: four topic pairs account for eighteen of them. This states the evidence and four options, and decides nothing — the choice is which kind of claim the vocabulary is failing to name, and that is a judgement about the subject rather than about the record. | Proposed |

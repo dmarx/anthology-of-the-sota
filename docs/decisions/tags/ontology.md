@@ -2,7 +2,7 @@
 
 # ADRs tagged `ontology`
 
-2 of 23 decisions. Back to the [full index](../README.md).
+2 of 24 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

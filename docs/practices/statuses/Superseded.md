@@ -4,7 +4,7 @@
 
 **Replaced** — something newer does this better, and the record says what.
 
-5 of 189 SOTA documents. Back to the [full index](../README.md).
+6 of 190 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -12,4 +12,5 @@
 | [SOTA-023](../../../record/practices.d/SOTA-023.md) v2 | Use multi-query attention for decoder-only models to reduce memory bandwidth | Shazeer (2019), [LIT-024](../../../record/literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). | Superseded — by [SOTA-109](../../../record/practices.d/SOTA-109.md) |
 | [SOTA-024](../../../record/practices.d/SOTA-024.md) v2 | Keep key/value projections shared across heads while query projections remain separate | Shazeer (2019), [LIT-024](../../../record/literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). | Superseded — by [SOTA-109](../../../record/practices.d/SOTA-109.md) |
 | [SOTA-039](../../../record/practices.d/SOTA-039.md) | single cycle of cosine decay is sufficient lr schedule | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Superseded — by [SOTA-140](../../../record/practices.d/SOTA-140.md); warmup-stable-decay matches it and leaves the token budget open; every report since 2024 in the record uses a stable-then-decay schedule |
+| [SOTA-068](../../../record/practices.d/SOTA-068.md) v2 | Use gradient clipping during early training phase | Tay et al. (2021), [LIT-052](../../../record/literature.d/LIT-052.md) — [ARXIV-2109.10686](https://arxiv.org/abs/2109.10686). Superseded by [SOTA-035](../../../record/practices.d/SOTA-035.md), which cites Pascanu et al. and drops the "early training" qualifier. | Superseded — by [SOTA-035](../../../record/practices.d/SOTA-035.md); SOTA-035 is the same recommendation with a real source and without the false qualifier — clipping is applied throughout training, not only early |
 | [SOTA-137](../../../record/practices.d/SOTA-137.md) | Widen the residual stream into several streams with freely learned mixing (hyper-connections) | Zhu et al. (2024), [LIT-141](../../../record/literature.d/LIT-141.md) — n parallel residual streams with learnable mixing; gains on dense and MoE pretraining, and an identity-mapping property lost that its successor restores. | Superseded — by [SOTA-136](../../../record/practices.d/SOTA-136.md); constraining the mixing to a doubly-stochastic manifold keeps the width and restores the identity mapping this gave up |

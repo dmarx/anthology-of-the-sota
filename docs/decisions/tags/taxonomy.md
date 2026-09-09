@@ -4,9 +4,10 @@
 
 The topic vocabulary and what enforces it.
 
-2 of 23 decisions. Back to the [full index](../README.md).
+3 of 24 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [ADR-003](../../../record/decisions.d/ADR-003.md) | Apply the topic consolidation and let the config enforce one primary topic | A 2024 document specified a 22-to-7 topic consolidation with real rules, was never applied, and could not be cited. It becomes this decision; the seven categories become `tags.yaml`; the one-primary-topic rule becomes a `tag_groups` constraint the lint checks. The reading list gets five extra categories the practice registry never needed. | Active |
 | [ADR-022](../../../record/decisions.d/ADR-022.md) | The primary topic is derived from the first tag, and the lines assert it | The topic vocabulary was a constraint on a list — exactly one tag from the seven — with no way to say which tag that was. Deriving `primary_topic` from `{tags[0]}` names it, which lets the chains assert the invariant they actually mean: a line of work stays within one topic. Costs a convention nothing checks, that the primary tag is written first. | Active |
+| [ADR-024](../../../record/decisions.d/ADR-024.md) | The topic vocabulary has four recurring seams — options, not a decision | [ADR-021](../../../record/decisions.d/ADR-021.md) said to expect a fourth vocabulary decision. Declaring the relations the practice bodies argue produced 25 unbound edges, and they are not scattered: four topic pairs account for eighteen of them. This states the evidence and four options, and decides nothing — the choice is which kind of claim the vocabulary is failing to name, and that is a judgement about the subject rather than about the record. | Proposed |

@@ -4,7 +4,7 @@
 
 Initialization, normalization, gradient handling, loss-landscape behaviour.
 
-19 of 189 SOTA documents. Back to the [full index](../README.md).
+20 of 190 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,6 +21,7 @@ Initialization, normalization, gradient handling, loss-landscape behaviour.
 | [SOTA-051](../../../record/practices.d/SOTA-051.md) | Initialize final layer weights near zero | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
 | [SOTA-052](../../../record/practices.d/SOTA-052.md) | Use smaller variance for deep networks | Wang et al. (2022), [LIT-084](../../../record/literature.d/LIT-084.md) — [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555). | Active |
 | [SOTA-053](../../../record/practices.d/SOTA-053.md) | Special handling for gated architectures | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
+| [SOTA-067](../../../record/practices.d/SOTA-067.md) v2 | Monitor loss specifically during first ~5000 steps for instabilities | Tay et al. (2021), [LIT-052](../../../record/literature.d/LIT-052.md) — [ARXIV-2109.10686](https://arxiv.org/abs/2109.10686). Rejected: the source contains no discussion of instability, and the 5000 belongs to nobody. | Rejected — The cited paper contains no discussion of training instability. The record's sourced monitoring practices are SOTA-069 and SOTA-099, which do not depend on a step count |
 | [SOTA-069](../../../record/practices.d/SOTA-069.md) | Monitor exp(loss) for stability | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
 | [SOTA-070](../../../record/practices.d/SOTA-070.md) | Track gradient norm ratios between layers | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
 | [SOTA-071](../../../record/practices.d/SOTA-071.md) | Use gradient clipping with dynamic threshold | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |

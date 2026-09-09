@@ -2,22 +2,22 @@
 
 <!-- GENERATED below this line by `luria index` — edit README.stub instead. -->
 
-**[Attention-Techniques](tags/attention-techniques.md)** (1):
-[005](../../record/notes.d/NOTE-005.md)
+**[Attention-Techniques](tags/attention-techniques.md)** (2):
+[005](../../record/notes.d/NOTE-005.md) · [007](../../record/notes.d/NOTE-007.md)
 
 **[Data-Pipeline](tags/data-pipeline.md)** (1):
 [002](../../record/notes.d/NOTE-002.md)
 
-**[Distributed-Optimization](tags/distributed-optimization.md)** (1):
-[003](../../record/notes.d/NOTE-003.md)
+**[Distributed-Optimization](tags/distributed-optimization.md)** (2):
+[003](../../record/notes.d/NOTE-003.md) · [006](../../record/notes.d/NOTE-006.md)
 
 **[Model-Architecture](tags/model-architecture.md)** (1):
 [004](../../record/notes.d/NOTE-004.md)
 
-**[Model-Stability](tags/model-stability.md)** (1):
-[001](../../record/notes.d/NOTE-001.md)
+**[Model-Stability](tags/model-stability.md)** (2):
+[001](../../record/notes.d/NOTE-001.md) · [008](../../record/notes.d/NOTE-008.md)
 
-**By status:** [Read](statuses/Read.md) (5) · [Skimmed](statuses/Skimmed.md) (0) · [Unread](statuses/Unread.md) (0) · [Re-read](statuses/Superseded.md) (0)
+**By status:** [Read](statuses/Read.md) (8) · [Skimmed](statuses/Skimmed.md) (0) · [Unread](statuses/Unread.md) (0) · [Re-read](statuses/Superseded.md) (0)
 
 What the status column means in this scheme — the words are luria's, the meanings are this project's.
 
@@ -35,4 +35,7 @@ What the status column means in this scheme — the words are luria's, the meani
 | [NOTE-003](../../record/notes.d/NOTE-003.md) | PyTorch FSDP | Fully Sharded Data Parallel as an industry-grade PyTorch component: a sharding factor F generalising replication through full sharding, communication overlapped by backward prefetching, and a rate limiter over the CUDA caching allocator. The first cluster in [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) whose practices its paper actually supports. | Read |
 | [NOTE-004](../../record/notes.d/NOTE-004.md) | Scale Efficiently | Model shape, not only model size, determines downstream fine-tuning quality — and the widely adopted T5-Base and T5-Large configurations are Pareto-inefficient. Read in full for [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) after its LIT note was found to describe a different paper. | Read |
 | [NOTE-005](../../record/notes.d/NOTE-005.md) | FlashAttention | Attention is bounded by HBM traffic rather than FLOPs. Tiling to on-chip SRAM and recomputing the attention matrix in the backward pass gives exact attention in Θ(N²d²M⁻¹) HBM accesses against standard attention's Θ(Nd + N²) — and Proposition 3 proves no exact algorithm beats that across all SRAM sizes. | Read |
+| [NOTE-006](../../record/notes.d/NOTE-006.md) | GPipe | Pipeline parallelism by splitting a mini-batch into micro-batches. Bubble overhead is O((K−1)/(M+K−1)) and negligible once M ≥ 4K; re-materialization plus partitioning cuts peak activation memory from O(N×L) to O(N + (L/K)(N/M)). | Read |
+| [NOTE-007](../../record/notes.d/NOTE-007.md) | FlashAttention-2 | FlashAttention reached only 25–40% of peak FLOPs/s; the loss was work partitioning between thread blocks and warps, not the algorithm. Three changes — fewer non-matmul FLOPs, parallelism over sequence length, better warp partitioning — give ~2× and 50–73% of peak. | Read |
+| [NOTE-008](../../record/notes.d/NOTE-008.md) | Visualizing the Loss Landscape of Neural Nets | Filter normalization makes loss-surface plots comparable across architectures, and under it sharpness correlates with generalization error. Deep networks transition from nearly convex to chaotic; skip connections prevent that transition, which is why they are needed at depth. | Read |
 

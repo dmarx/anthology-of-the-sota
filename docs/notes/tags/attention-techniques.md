@@ -2,8 +2,9 @@
 
 # NOTEs tagged `attention-techniques`
 
-1 of 5 NOTE documents. Back to the [full index](../README.md).
+2 of 8 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-005](../../../record/notes.d/NOTE-005.md) | FlashAttention | Attention is bounded by HBM traffic rather than FLOPs. Tiling to on-chip SRAM and recomputing the attention matrix in the backward pass gives exact attention in Θ(N²d²M⁻¹) HBM accesses against standard attention's Θ(Nd + N²) — and Proposition 3 proves no exact algorithm beats that across all SRAM sizes. | Read |
+| [NOTE-007](../../../record/notes.d/NOTE-007.md) | FlashAttention-2 | FlashAttention reached only 25–40% of peak FLOPs/s; the loss was work partitioning between thread blocks and warps, not the algorithm. Three changes — fewer non-matmul FLOPs, parallelism over sequence length, better warp partitioning — give ~2× and 50–73% of peak. | Read |

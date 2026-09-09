@@ -2,8 +2,9 @@
 
 # NOTEs tagged `model-stability`
 
-1 of 5 NOTE documents. Back to the [full index](../README.md).
+2 of 8 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-001](../../../record/notes.d/NOTE-001.md) | Understanding and Improving Layer Normalization | LayerNorm's benefit is in the backward pass — the derivatives of the mean and variance re-center and re-scale the gradients — not in forward normalization. Its bias and gain increase overfitting risk and "do not work in most cases". | Read |
+| [NOTE-008](../../../record/notes.d/NOTE-008.md) | Visualizing the Loss Landscape of Neural Nets | Filter normalization makes loss-surface plots comparable across architectures, and under it sharpness correlates with generalization error. Deep networks transition from nearly convex to chaotic; skip connections prevent that transition, which is why they are needed at depth. | Read |

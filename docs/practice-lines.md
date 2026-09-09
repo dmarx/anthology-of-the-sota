@@ -19,7 +19,7 @@
 ## From skip connections promote training stability by smoothing out the loss landscape
 
 - alongside: [SOTA-010](../record/practices.d/SOTA-010.md) — skip connections promote training stability by smoothing out the loss landscape *(Active, unassessed)*
-- alongside: [SOTA-011](../record/practices.d/SOTA-011.md) — visualizing eigenvalues of hessian (ratio of largest to smallest) over training can be useful diagnostics *(Active, unassessed)*
+- alongside: [SOTA-011](../record/practices.d/SOTA-011.md) — Map the Hessian ratio |lambda_min / lambda_max| to find where the loss surface is non-convex *(Active, unassessed)*
 - alongside: [SOTA-012](../record/practices.d/SOTA-012.md) — sharpness in the loss landscape correlates with test error *(Active, unassessed)*
 
 ## From Perform forward/backward passes in FP16
@@ -135,9 +135,9 @@
 
 - [SOTA-086](../record/practices.d/SOTA-086.md) — Tiling size should match hardware SRAM size *(Active, unassessed)*
   - [SOTA-087](../record/practices.d/SOTA-087.md) — Recompute attention during backward pass instead of storing it *(Active, unassessed)*
-  - [SOTA-107](../record/practices.d/SOTA-107.md) — Keep sequence lengths multiple of 128 for best performance *(Active, unassessed)*
+  - [SOTA-107](../record/practices.d/SOTA-107.md) — Keep sequence lengths multiple of 128 for best performance *(Rejected, unassessed)*
 - alongside: [SOTA-089](../record/practices.d/SOTA-089.md) — Align tensor dimensions to hardware boundaries *(Active, unassessed)*
-- alongside: [SOTA-108](../record/practices.d/SOTA-108.md) — Pad attention masks to block boundaries for better hardware utilization *(Active, unassessed)*
+- alongside: [SOTA-108](../record/practices.d/SOTA-108.md) — Pad attention masks to block boundaries for better hardware utilization *(Rejected, unassessed)*
 
 ## From Implement dynamic temperature scaling for mixing
 

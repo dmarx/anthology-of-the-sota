@@ -4,7 +4,7 @@
 
 **Retired** — no longer believed, with no successor — the attic.
 
-14 of 191 SOTA documents. Back to the [full index](../README.md).
+16 of 191 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -22,3 +22,5 @@
 | [SOTA-076](../../../record/practices.d/SOTA-076.md) | Place replicas to minimize cross-rack traffic | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Rejected — a cluster-scheduling claim rather than a training one: it is the scheduler's decision, expressed as a placement-group request, not something in a training run. ADR-020 scopes this record by the kind of claim, and this is a different kind |
 | [SOTA-101](../../../record/practices.d/SOTA-101.md) v2 | Use perplexity-based filtering for quality assessment | Albalak et al. (2023), [LIT-117](../../../record/literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406). | Rejected — The cited paper performs no filtering — it reweights sampling over domains — and filtering has the opposite failure mode to what it recommends. The string "filter" does not appear in it |
 | [SOTA-104](../../../record/practices.d/SOTA-104.md) v2 | Monitor domain coverage during training | Albalak et al. (2023), [LIT-117](../../../record/literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406). | Rejected — Names no signal and no response, and is in tension with its own source: under ODM the sampling distribution is supposed to move away from uniform coverage. The string "domain coverage" does not appear in the paper |
+| [SOTA-107](../../../record/practices.d/SOTA-107.md) v2 | Keep sequence lengths multiple of 128 for best performance | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Rejected — The 128 is traced and belongs to a different quantity. Every occurrence in the source is a head dimension or a block size; none is a sequence length, and "multiple of" and "divisible" appear zero times |
+| [SOTA-108](../../../record/practices.d/SOTA-108.md) v2 | Pad attention masks to block boundaries for better hardware utilization | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Rejected — Not in the cited paper. "padding", "padded", "pad", "block boundar" and "divisible" appear zero times each; the body's reasoning about skipping fully-masked blocks is correct and is not the source's |

@@ -1,5 +1,8 @@
 ---
+number: 6
 status: Read
+formerly:
+- NOTE-tmp6dka8
 paper: LIT-016
 title: 'GPipe'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   Pipeline parallelism by splitting a mini-batch into micro-batches. Bubble overhead is O((K−1)/(M+K−1)) and negligible once M ≥ 4K; re-materialization plus partitioning cuts peak activation memory from O(N×L) to O(N + (L/K)(N/M)).
 ---
 
-# NOTE-tmp6dka8: GPipe
+# NOTE-006: GPipe
 
 ## Contribution
 

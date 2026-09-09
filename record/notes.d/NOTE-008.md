@@ -1,5 +1,8 @@
 ---
+number: 8
 status: Read
+formerly:
+- NOTE-tmpvfccf
 paper: LIT-014
 title: 'Visualizing the Loss Landscape of Neural Nets'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   Filter normalization makes loss-surface plots comparable across architectures, and under it sharpness correlates with generalization error. Deep networks transition from nearly convex to chaotic; skip connections prevent that transition, which is why they are needed at depth.
 ---
 
-# NOTE-tmpvfccf: Visualizing the Loss Landscape of Neural Nets
+# NOTE-008: Visualizing the Loss Landscape of Neural Nets
 
 ## Contribution
 

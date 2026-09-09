@@ -2,8 +2,9 @@
 
 # NOTEs tagged `distributed-optimization`
 
-1 of 5 NOTE documents. Back to the [full index](../README.md).
+2 of 8 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-003](../../../record/notes.d/NOTE-003.md) | PyTorch FSDP | Fully Sharded Data Parallel as an industry-grade PyTorch component: a sharding factor F generalising replication through full sharding, communication overlapped by backward prefetching, and a rate limiter over the CUDA caching allocator. The first cluster in [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) whose practices its paper actually supports. | Read |
+| [NOTE-006](../../../record/notes.d/NOTE-006.md) | GPipe | Pipeline parallelism by splitting a mini-batch into micro-batches. Bubble overhead is O((K−1)/(M+K−1)) and negligible once M ≥ 4K; re-materialization plus partitioning cuts peak activation memory from O(N×L) to O(N + (L/K)(N/M)). | Read |

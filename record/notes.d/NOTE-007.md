@@ -1,5 +1,8 @@
 ---
+number: 7
 status: Read
+formerly:
+- NOTE-tmpuanf4
 paper: LIT-106
 title: 'FlashAttention-2'
 version: 1
@@ -10,7 +13,7 @@ summary: >-
   FlashAttention reached only 25–40% of peak FLOPs/s; the loss was work partitioning between thread blocks and warps, not the algorithm. Three changes — fewer non-matmul FLOPs, parallelism over sequence length, better warp partitioning — give ~2× and 50–73% of peak.
 ---
 
-# NOTE-tmpuanf4: FlashAttention-2
+# NOTE-007: FlashAttention-2
 
 ## Contribution
 

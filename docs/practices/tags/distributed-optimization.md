@@ -8,9 +8,9 @@ Distribution strategies, memory management, checkpointing, communication.
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [SOTA-017](../../../record/practices.d/SOTA-017.md) | Use micro-batch splitting for pipeline parallelism | Huang et al. (2018), [LIT-016](../../../record/literature.d/LIT-016.md) — [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965). | Active |
-| [SOTA-018](../../../record/practices.d/SOTA-018.md) | Balance pipeline stages to minimize bubble overhead | Huang et al. (2018), [LIT-016](../../../record/literature.d/LIT-016.md) — [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965). | Active |
-| [SOTA-019](../../../record/practices.d/SOTA-019.md) | Choose pipeline chunks based on memory vs. compute trade-off | Huang et al. (2018), [LIT-016](../../../record/literature.d/LIT-016.md) — [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965). | Active |
+| [SOTA-017](../../../record/practices.d/SOTA-017.md) v2 | Use micro-batch splitting for pipeline parallelism | Huang et al. (2018), [LIT-016](../../../record/literature.d/LIT-016.md) — [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965). | Active |
+| [SOTA-018](../../../record/practices.d/SOTA-018.md) v2 | Balance pipeline stages to minimize bubble overhead | Huang et al. (2018), [LIT-016](../../../record/literature.d/LIT-016.md) — [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965). | Active |
+| [SOTA-019](../../../record/practices.d/SOTA-019.md) v2 | Choose pipeline chunks based on memory vs. compute trade-off | Huang et al. (2018), [LIT-016](../../../record/literature.d/LIT-016.md) — [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965). | Active |
 | [SOTA-028](../../../record/practices.d/SOTA-028.md) | Stage optimizer states across data parallel ranks (ZeRO-1) | Rajbhandari et al. (2020), [LIT-027](../../../record/literature.d/LIT-027.md) — [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054). | Active |
 | [SOTA-029](../../../record/practices.d/SOTA-029.md) | Partition gradients and optimizer states (ZeRO-2) for larger models | Rajbhandari et al. (2020), [LIT-027](../../../record/literature.d/LIT-027.md) — [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054). | Active |
 | [SOTA-030](../../../record/practices.d/SOTA-030.md) | Use ZeRO-3 only when other strategies insufficient | Rajbhandari et al. (2020), [LIT-027](../../../record/literature.d/LIT-027.md) — [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054). | Active |

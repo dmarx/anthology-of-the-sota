@@ -4,7 +4,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-5 of 5 NOTE documents. Back to the [full index](../README.md).
+8 of 8 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -13,3 +13,6 @@
 | [NOTE-003](../../../record/notes.d/NOTE-003.md) | PyTorch FSDP | Fully Sharded Data Parallel as an industry-grade PyTorch component: a sharding factor F generalising replication through full sharding, communication overlapped by backward prefetching, and a rate limiter over the CUDA caching allocator. The first cluster in [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) whose practices its paper actually supports. | Read |
 | [NOTE-004](../../../record/notes.d/NOTE-004.md) | Scale Efficiently | Model shape, not only model size, determines downstream fine-tuning quality — and the widely adopted T5-Base and T5-Large configurations are Pareto-inefficient. Read in full for [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) after its LIT note was found to describe a different paper. | Read |
 | [NOTE-005](../../../record/notes.d/NOTE-005.md) | FlashAttention | Attention is bounded by HBM traffic rather than FLOPs. Tiling to on-chip SRAM and recomputing the attention matrix in the backward pass gives exact attention in Θ(N²d²M⁻¹) HBM accesses against standard attention's Θ(Nd + N²) — and Proposition 3 proves no exact algorithm beats that across all SRAM sizes. | Read |
+| [NOTE-006](../../../record/notes.d/NOTE-006.md) | GPipe | Pipeline parallelism by splitting a mini-batch into micro-batches. Bubble overhead is O((K−1)/(M+K−1)) and negligible once M ≥ 4K; re-materialization plus partitioning cuts peak activation memory from O(N×L) to O(N + (L/K)(N/M)). | Read |
+| [NOTE-007](../../../record/notes.d/NOTE-007.md) | FlashAttention-2 | FlashAttention reached only 25–40% of peak FLOPs/s; the loss was work partitioning between thread blocks and warps, not the algorithm. Three changes — fewer non-matmul FLOPs, parallelism over sequence length, better warp partitioning — give ~2× and 50–73% of peak. | Read |
+| [NOTE-008](../../../record/notes.d/NOTE-008.md) | Visualizing the Loss Landscape of Neural Nets | Filter normalization makes loss-surface plots comparable across architectures, and under it sharpness correlates with generalization error. Deep networks transition from nearly convex to chaotic; skip connections prevent that transition, which is why they are needed at depth. | Read |

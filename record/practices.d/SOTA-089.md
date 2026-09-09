@@ -39,9 +39,12 @@ shape maps onto the hardware's tiles and the original does not.
 Which boundary. It differs by operation and device — the tensor-core tile,
 the vector width, the cache line — and the numbers that circulate (8, 64,
 128) come from specific hardware generations rather than from a principle.
-This is the same gap as [SOTA-107](SOTA-107.md)'s "multiple of 128": a real effect, a
-constant that belongs to an implementation, and a record stating it as
-though it were general.
+<!-- inactive-ok-block: SOTA-107 — Rejected in #114 for exactly this, which sharpens rather than weakens the comparison -->
+This is the same gap as [SOTA-107](SOTA-107.md)'s "multiple of 128", which was retired in
+[#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) once its source was read: a real effect, a constant that belongs to an
+implementation, and a record stating it as though it were general. That one
+turned out to be a *head dimension* restated as a sequence length, which is
+the failure this practice should be checked for next.
 
 The other half is that alignment is a *design-time* choice. Hidden sizes and
 vocabulary are fixed before training starts, so unlike layout ([SOTA-090](SOTA-090.md)) or

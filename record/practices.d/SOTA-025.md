@@ -11,6 +11,8 @@ source:
 - LIT-025
 summary: >-
   Xu et al. (2019), [LIT-025](../literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013).
+compared_against:
+- SOTA-051
 ---
 
 # SOTA-025: Initialize LayerNorm weight close to 1 (0.97-1.0)

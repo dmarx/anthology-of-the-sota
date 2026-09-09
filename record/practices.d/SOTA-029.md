@@ -9,8 +9,12 @@ date: '2026-08-24'
 published: '2019-10-01'
 source:
 - LIT-027
+extends:
+- SOTA-028
 summary: >-
   Rajbhandari et al. (2020), [LIT-027](../literature.d/LIT-027.md) — [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054).
+extended_by:
+- SOTA-030
 ---
 
 # SOTA-029: Partition gradients and optimizer states (ZeRO-2) for larger models

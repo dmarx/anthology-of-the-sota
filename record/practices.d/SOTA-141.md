@@ -61,6 +61,8 @@ summary: >-
 
 Bergsma et al. (2025), [LIT-147](../literature.d/LIT-147.md) — Straight to Zero.
 
+## The finding
+
 The customary schedule decays the learning rate to 10% of its peak. In a
 large empirical study across model sizes, batch sizes, datasets and
 vocabularies, with the peak tuned for each schedule, linear decay to zero
@@ -71,11 +73,15 @@ early training must move away from the initialisation while late training
 must average over enough updates to cancel gradient noise, and a floor at
 10% leaves noise in the final weights that a decay to zero averages out.
 
-Why *Proposed*: one group's study, and the frontier recipes filed in the
+## Why this is Proposed
+
+This is one group's study, and the frontier recipes filed in the
 record still decay to a floor (Falcon-H1-Tiny's ×64 exponential decay,
 [LIT-119](../literature.d/LIT-119.md)). The claim is compatible with WSD ([SOTA-140](SOTA-140.md)) — it is about the
 end of the decay, not its start — and [LIT-145](../literature.d/LIT-145.md)'s cooldown to zero points the
 same way.
+
+## Two reports that look decisive and are not
 
 The sharpest version of "the field has not moved" is DeepSeek-V4
 ([LIT-139](../literature.d/LIT-139.md)), read for [#18](https://github.com/dmarx/anthology-of-the-sota/issues/18). It decays to **exactly 10% of peak** — 2.7e-4 to

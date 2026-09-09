@@ -42,6 +42,8 @@ summary: >-
 
 Shen et al. (2024), [LIT-146](../literature.d/LIT-146.md) — the Power scheduler.
 
+## The law
+
 Under a warmup-stable-decay schedule ([SOTA-140](SOTA-140.md)), the optimal learning rate
 follows a power law in the number of training tokens and the batch size.
 The Power scheduler applies the law directly: the learning rate is a power
@@ -50,7 +52,9 @@ value found on a short run at one batch size then holds when the run is
 lengthened or the batch changed, and with µP ([SOTA-143](SOTA-143.md)) when the model is
 widened, so one sweep serves the whole family.
 
-Conditions: fitted under WSD; the exponents are the paper's and were
+## Conditions, and what the one adoption counts for
+
+Fitted under WSD; the exponents are the paper's and were
 measured on its own model family, so a new family should re-fit them from
 a few short runs. Falcon-H1-Tiny ([LIT-119](../literature.d/LIT-119.md)) is the record's independent
 adoption — a square-root decay of the learning rate from 100 GT onward,

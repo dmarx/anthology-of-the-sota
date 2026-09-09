@@ -20,6 +20,8 @@ summary: >-
 
 Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
 
+## The argument
+
 The authors' *anti-curriculum*, a departure from the three-stage recipe
 ([SOTA-129](SOTA-129.md)) that Olmo 3 states in the open and that its Zero-RL track varies
 <!-- inactive-ok: SOTA-130 — a Proposed variation, named as the sibling -->
@@ -29,7 +31,9 @@ from the other end ([SOTA-130](SOTA-130.md)). The argument: a model's memorizati
 than an SFT mix — so the constraint that forces SFT into a short final stage
 disappears, and the high-quality data can be present from the first token.
 
-Evidence at 90M, 800 GT:
+## The evidence
+
+At 90M over 800 GT:
 
 - Instruction following: a mix with 25% SFT data, trained from scratch,
   against the same base recipe followed by a tuned 10 GT SFT stage. IFEval
@@ -43,7 +47,9 @@ Evidence at 90M, 800 GT:
   reasoning-SFT. AIME24 pass@16 6/30 vs 3/30, AIME25 9/30 vs 2/30, MATH500
   0.4 vs 0.2; the from-scratch run scaled better with budget throughout.
 
-Conditions and the cases where it did not hold: the 100M multilingual model
+## Conditions, and where it did not hold
+
+The 100M multilingual model
 tied between the two strategies, which the authors attribute to SFT data
 quality and to capacity; tool calling tied as well, and looked bounded by
 what a 90M model can represent rather than by when it saw the data. The

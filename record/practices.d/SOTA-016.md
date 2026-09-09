@@ -11,6 +11,9 @@ source:
 - LIT-011
 summary: >-
   Micikevicius et al. (2017), [LIT-011](../literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740).
+extended_by:
+- SOTA-013
+- SOTA-014
 ---
 
 # SOTA-016: Perform forward/backward passes in FP16

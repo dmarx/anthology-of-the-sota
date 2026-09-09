@@ -42,6 +42,8 @@ source:
 - LIT-120
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. 24–27 layers × 512 hidden and a large SSM state dimension won every ablation at 90M; 50 layers gained MMLU but halved throughput.
+compared_against:
+- SOTA-tmp7pn5v
 ---
 
 # SOTA-125: At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width
@@ -49,6 +51,8 @@ summary: >-
 ## Source
 
 Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
+
+## The ablations
 
 Holding a hybrid Mamba/attention model at 90M parameters and moving
 parameters between axes, on a STEM-heavy mix:
@@ -66,8 +70,10 @@ parameters between axes, on a STEM-heavy mix:
 - KV heads: more KV heads, paid for out of the MLP, helped up to a point;
   the baseline remained best.
 
-Conditions: one architecture family, one scale, loss curves and noisy 90M
-benchmarks as the evidence; hence *Proposed*. The depth finding echoes the
+## Why this is Proposed
+
+The evidence is one architecture family, one scale, loss curves and noisy
+90M benchmarks. The depth finding echoes the
 authors' Falcon-H1-1.5B-Deep result at a larger scale ([LIT-120](../literature.d/LIT-120.md)). The trade the deep
 option loses on is throughput, which is the reason to state this as a
 parameter-budget rule rather than a compute-budget one.

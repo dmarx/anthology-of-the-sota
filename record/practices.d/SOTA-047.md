@@ -13,6 +13,9 @@ source:
 - LIT-219
 summary: >-
   Jiang et al. (2020), [LIT-051](../literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang.
+compared_against:
+- SOTA-048
+- SOTA-079
 ---
 
 # SOTA-047: Overlap communication with backward pass

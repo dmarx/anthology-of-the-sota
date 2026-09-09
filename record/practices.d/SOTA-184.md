@@ -24,6 +24,8 @@ summary: >-
 
 Hu et al. (2021), [LIT-046](../literature.d/LIT-046.md) — [ARXIV-2106.09685](https://arxiv.org/abs/2106.09685).
 
+## The method
+
 Freeze W. Learn a low-rank product BA of the same shape, initialized so it
 starts at zero, and train that instead. The argument is that the *update* a
 fine-tune applies has low intrinsic rank even when the weight does not — so
@@ -36,14 +38,18 @@ state scales with the trainable count rather than the model. Quality is
 on-par with or better than full fine-tuning across RoBERTa, DeBERTa, GPT-2
 and GPT-3.
 
-The property that made it win rather than merely work: `BA` is the same shape
+## Why it won rather than merely worked
+
+`BA` is the same shape
 as `W`, so it can be added into the weight after training and the served
 model has no adapter, no extra layer, and no extra latency. Adapter methods
 that insert modules pay at every forward pass; this one does not. That is
 also what makes many adapters over one base model cheap to hold — the
 alternative to swapping in a full fine-tune per task.
 
-The conditions worth carrying: the saving is in optimizer state and gradient
+## Conditions
+
+The saving is in optimizer state and gradient
 memory, not in the forward activations, so it shrinks the fine-tuning bill
 rather than the serving bill. And rank is a real hyperparameter — the paper's
 tasks do well at small `r`, but a task that genuinely needs a high-rank

@@ -9,6 +9,9 @@ date: '2026-08-24'
 published: '2018-02-01'
 source:
 - LIT-063
+compared_against:
+- SOTA-085
+- SOTA-106
 summary: >-
   Chen et al. (2018), [LIT-063](../literature.d/LIT-063.md) — [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799).
 ---

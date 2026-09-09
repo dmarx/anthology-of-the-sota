@@ -9,8 +9,12 @@ date: '2026-08-24'
 published: '2023-07-01'
 source:
 - LIT-106
+extends:
+- SOTA-085
 summary: >-
   Dao et al. (2023), [LIT-106](../literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691).
+compared_against:
+- SOTA-083
 ---
 
 # SOTA-106: Use flash-attention-2 over original flash-attention when available

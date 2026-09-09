@@ -45,7 +45,9 @@ summary: >-
 
 Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
 
-The claim, from [ARXIV-2601.04890](https://arxiv.org/abs/2601.04890) ([LIT-121](../literature.d/LIT-121.md)) and validated in the blogpost at the 90M
+## The claim
+
+From [ARXIV-2601.04890](https://arxiv.org/abs/2601.04890) ([LIT-121](../literature.d/LIT-121.md)) and validated in the blogpost at the 90M
 scale: under a decoupled weight decay, a matrix layer settles into an
 equilibrium norm determined by the learning rate and the weight decay
 coefficient rather than by the data. Attaching a learnable scalar multiplier
@@ -62,7 +64,9 @@ a much smaller claim than a fifth of the score, and it is the claim the
 blogpost makes. The authors then used LRMs for
 every model in the series.
 
-Why *Proposed* and not *Active*: one team, one architecture family, and the
+## Why this is Proposed, and how the condition changed
+
+One team, one architecture family, and the
 larger-scale results live in the preprint rather than in this source.
 
 The condition as first written — "an independent reproduction **or** a result

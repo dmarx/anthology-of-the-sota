@@ -24,6 +24,8 @@ summary: >-
 
 Frantar et al. (2022), [LIT-081](../literature.d/LIT-081.md) — [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323).
 
+## The mechanism
+
 Round-to-nearest treats each weight as independent, which it is not: the
 layer's output error depends on the interaction between weights, and a small
 rounding error in one column can be absorbed by adjusting the columns that
@@ -36,15 +38,18 @@ accuracy close to the uncompressed baseline, in around four GPU-hours — a
 one-shot procedure with no retraining and no gradient steps. Before this,
 getting to 4 bits at that scale meant quantization-aware training.
 
-The scope worth holding onto. This is **weight-only**, and the win is memory
+## The scope worth holding onto
+
+This is **weight-only**, and the win is memory
 and bandwidth rather than arithmetic: it makes a model fit and makes decode
 faster because decode is bandwidth-bound, and it does not make a
 compute-bound prefill faster. It also needs a calibration set, so it is a
 procedure with an input rather than a pure transformation, and a calibration
 distribution unlike the serving distribution is a real failure mode.
 
-Filed as the *approach* rather than as GPTQ the artifact. Error-compensating
-one-shot PTQ with a calibration set is what converged; the specific search
+## Filed as the approach, not the artifact
+
+Error-compensating one-shot PTQ with a calibration set is what converged; the specific search
 and ordering have been improved on repeatedly since. The record's other
 quantization entries sit at different altitudes —
 <!-- inactive-ok: SOTA-160 — Proposed, named as the other altitude this practice is distinguished from -->

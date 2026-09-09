@@ -55,6 +55,8 @@ summary: >-
 
 Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
 
+## What the memorization window is
+
 A late checkpoint of FalconMamba-7B (Figure 9 of [LIT-120](../literature.d/LIT-120.md)), shown training tokens it saw earlier,
 has a loss gap against fresh tokens from the same distribution that decays
 with how long ago the tokens were seen. The authors define the
@@ -73,7 +75,9 @@ offered as an implicit confirmation: SFT sources such as Tulu3 were repeated
 memorisation sweep (0 to 100% SFT, 2 GT epoch size at the extreme) showed
 no degradation during training.
 
-Why *Proposed*: the source is explicit that this is a hypothesis with one
+## Why this is Proposed, and what it argues with
+
+The source is explicit that this is a hypothesis with one
 measurement behind it and that the systematic study is future work. It is
 filed because the recipes built on it are in the record and this is the
 reason they give. The standing guidance it argues with is now in the record:

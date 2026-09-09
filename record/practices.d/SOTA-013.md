@@ -13,6 +13,8 @@ source:
 # setting rather than a recommendation.
 - LIT-011
 - LIT-221
+extends:
+- SOTA-016
 summary: >-
   Micikevicius et al. (2017), [LIT-011](../literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740).
 ---

@@ -11,6 +11,8 @@ source:
 - LIT-117
 summary: >-
   Albalak et al. (2023), [LIT-117](../literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406).
+compared_against:
+- SOTA-103
 ---
 
 # SOTA-102: Implement dynamic temperature scaling for mixing

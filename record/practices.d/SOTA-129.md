@@ -34,6 +34,8 @@ summary: >-
   at 7B and above, released in Olmo 3 with every stage and checkpoint in
   the open. Filed so its variations ([SOTA-130](SOTA-130.md)) and its tiny-scale successor
   ([SOTA-123](SOTA-123.md)) have something to be traced back to.
+compared_against:
+- SOTA-130
 ---
 
 # SOTA-129: Build a reasoning model in three stages: pretrain on general data, SFT on reasoning traces, then RL with verifiable rewards

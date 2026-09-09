@@ -9,6 +9,8 @@ date: '2026-08-24'
 published: '2022-04-01'
 source:
 - LIT-069
+compared_against:
+- SOTA-069
 summary: >-
   Chowdhery et al. (2022), [LIT-069](../literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311).
 ---

@@ -15,6 +15,8 @@ source:
 - LIT-059
 summary: >-
   Mohan et al. (2021), [LIT-059](../literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan.
+corrected_by:
+- SOTA-054
 ---
 
 # SOTA-055: Save optimizer state every N epochs (N ~ sqrt(total_epochs))

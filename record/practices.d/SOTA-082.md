@@ -11,6 +11,8 @@ source:
 - LIT-063
 summary: >-
   Chen et al. (2018), [LIT-063](../literature.d/LIT-063.md) — [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799).
+compared_against:
+- SOTA-090
 ---
 
 # SOTA-082: Optimize memory layout for hardware

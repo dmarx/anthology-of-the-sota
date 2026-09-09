@@ -32,6 +32,8 @@ summary: >-
 
 Dey et al. (2025), [LIT-150](../literature.d/LIT-150.md) — CompleteP.
 
+## What CompleteP changes
+
 µP ([SOTA-143](SOTA-143.md)) transfers hyperparameters across width; across depth, as
 commonly used, it does not — the optimal base learning rate moves, and deep
 layers can learn lazily, barely leaving their initialisation. CompleteP, the
@@ -41,8 +43,12 @@ optimally shaped models and 34.4% for a 179-layer one, and it keeps a wider
 range of width-to-depth ratios compute-efficient, so shape can follow the
 hardware.
 
-Why *Proposed*: one group and one paper, with no production report in the
-record trained under it.
+## Why this is Proposed
+
+One group and one paper, and no production report in the
+record is trained under it.
+
+## A result that does not count
 
 One result has already arrived that does not count, and is worth naming so
 the next reader does not count it either. [LIT-153](../literature.d/LIT-153.md) reports improved learning-rate transfer across widths

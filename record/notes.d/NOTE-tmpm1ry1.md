@@ -95,7 +95,6 @@ Categorise per-task scaling curves by linearity and breakthroughness.
 
 ## Connections
 
-<!-- inactive-ok-block: LIT-085 — Rejected, and named as a parallel finding whose own note explains why it is in the attic -->
 `LIT-085` (grokking), read in the same batch, is the other half of this: it
 takes one apparently discontinuous capability, reverse-engineers the network,
 and finds continuous progress underneath — and separately that the discontinuity
@@ -127,7 +126,6 @@ problem".**
 Retagged from `model-architecture` — a benchmark paper is not an architecture
 paper — to `analysis-and-evaluation`.
 
-<!-- inactive-ok-block: LIT-085 — Rejected, and named as a parallel finding whose own note explains why it is in the attic -->
 R1 is the finding the record could use and does not have. The corpus contains
 several claims of the form "capability X appears at scale Y", and this paper's
 categorisation says a large share of such observations are metric artefacts.

@@ -119,10 +119,15 @@ derive = "{tags[0]}"
 # Jinja template they had been sitting in, unapplied, since 2024.
 [luria.schemes.SOTA.tag_groups.primary_topic]
 require = "exactly-one"
+# Eleven since ADR-tmpmz3o4: `analysis-and-evaluation` was the one topic the
+# LIT vocabulary had and this one lacked that is a KIND OF CLAIM rather than a
+# domain. `generative-modeling` and `vision-and-graphics` are still absent on
+# purpose, per ADR-020 — a vision paper's recommendation files under whichever
+# topic expresses the action.
 tags = ["training-optimization", "systems-optimization", "model-stability",
         "distributed-optimization", "data-pipeline", "attention-techniques",
         "model-architecture", "inference-optimization", "adaptation-and-tuning",
-        "representation-and-encoding"]
+        "representation-and-encoding", "analysis-and-evaluation"]
 
 # ── The evidence: one note per paper ─────────────────────────────────────
 [luria.schemes.LIT]

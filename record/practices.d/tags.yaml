@@ -61,3 +61,12 @@ representation-and-encoding:
   blurb: how the signal is encoded before the expensive network sees it —
     tokenizers and learned latents, positional encoding, and the frequency or
     basis choices that go with them
+
+# Added by ADR-tmpmz3o4. Narrower than the literature side's topic of the same
+# name: there it covers a paper's subject and includes theory and
+# interpretability; here it covers an ACTION, so it is about the practitioner's
+# measurement rather than about a research programme.
+analysis-and-evaluation:
+  label: Analysis and evaluation
+  blurb: how to find out whether something worked — what to measure, what a
+    measurement cannot tell you, and which comparisons are unsound

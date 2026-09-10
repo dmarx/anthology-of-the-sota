@@ -2,7 +2,7 @@
 number: 131
 status: Active
 title: 'When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip)'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -12,6 +12,11 @@ history:
     title rests on LIT-119's small-scale runs without clipping. K3 keeping
     the optimizer at 2.8T is adoption, so it stays consensus evidence under
     ADR-017. The recommendation is unchanged.
+- version: 3
+  date: '2026-09-10'
+  note: >-
+    Enriched from the #123 readings. The recommendation is unchanged;
+    the source list, the numbers or the neighbourhood are.
 tags:
 - training-optimization
 date: '2026-09-05'
@@ -35,6 +40,8 @@ corrects:
 - SOTA-121
 summary: >-
   Kimi Team (2025), [LIT-132](../literature.d/LIT-132.md) — MuonClip carried a 1T/32B MoE through 15.5T tokens with zero loss spikes where plain Muon let attention logits pass 1000; confirmed at 2.8T in [LIT-131](../literature.d/LIT-131.md).
+compared_against:
+- SOTA-tmp52hr5
 ---
 
 # SOTA-131: When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip)
@@ -70,6 +77,18 @@ in our Muon optimizer." So the clip is one of two ways to the same
 invariant, and QK-normalisation is the other — not a reading of secondary
 coverage but the primary source's own account, under the heading "Avoiding
 Exploding Attention Logits".
+
+**The other way now has its own practice and its own source.**
+[SOTA-tmp52hr5](SOTA-tmp52hr5.md) files QK-normalisation against [LIT-088](../literature.d/LIT-088.md), which diagnoses the
+mechanism this practice's threshold is defending against: logits grow with the
+weights until the softmax is almost one-hot with near-zero entropy, at which
+point the gradient vanishes and the run diverges. ViT-22B observed it at ~8B
+parameters and shows a before/after.
+
+The two are `compared_against` and **nobody has actually compared them.** The
+open question is whether the clip is only necessary when the normalisation is
+absent — DeepSeek-V4's report is consistent with that and does not establish
+it.
 
 ## Sequence
 

@@ -17,15 +17,23 @@ rather than leaving it to be noticed.
 Roughly a third of these notes produced no practice at all. They are here
 because they are worth reading.
 
+<!-- inactive-ok-file: ADR-020 — Superseded by ADR-tmpdrbma, which carries its decision forward; every mention here names it as the superseded document, deliberately -->
+
 For about two dozen of them — the diffusion and radiance-field corpus, tagged
 `generative-modeling` and `vision-and-graphics` — the reason used to be a
 scope decision: the recommendations were scoped to language-model training by
 construction, so such a paper could be read here and not recommended here.
-[ADR-020](../../record/decisions.d/ADR-020.md) ends that. The recommendations are scoped by the **kind of claim**
-now, and where the work was discovered is not the test, so those notes are
-unread rather than ineligible. Several of them carry an instruction one of the
-seven topics holds perfectly well — a preconditioning scheme, a noise-level
-sampling distribution, a model-in-the-loop annotation bootstrap.
+[ADR-020](../../record/decisions.d/ADR-020.md) ended that, and [ADR-tmpdrbma](../../record/decisions.d/ADR-tmpdrbma.md) — which supersedes it — went further.
+The recommendations are scoped by the **kind of claim**, where the work was
+discovered is not the test, and the practice registry now uses the *same
+thirteen topics this reading list does*. So those notes are unread rather than
+ineligible, and `generative-modeling` and `vision-and-graphics` are no longer
+words that exist on only one side of the record.
+
+Several of them carry an instruction one of the thirteen topics holds
+perfectly well — a preconditioning scheme, a noise-level sampling
+distribution, a model-in-the-loop annotation bootstrap. Some carry a claim
+about generative modelling as such, and those now have a word too.
 
 The rest never had even that excuse, and the tag will mislead you if you let
 it. `adaptation-and-tuning` and `inference-optimization` are also absent

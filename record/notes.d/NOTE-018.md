@@ -115,6 +115,7 @@ decide what to train on from data that already exists — this one is about
 |---|---|
 | [SOTA-186](../practices.d/SOTA-186.md) bootstrap a large annotation set with the model you are training | confirmed — C1, C2 |
 
+<!-- inactive-ok-block: ADR-020 — Superseded by ADR-tmpdrbma, and this is a verbatim quotation of LIT-096's prose as it stood, not a live citation -->
 `LIT-096`'s Standing section already made the case that the practice drawn
 from this paper "is not about segmentation ... which is a `data-pipeline`
 claim and the reason this note is in the record at all under [ADR-020](../decisions.d/ADR-020.md)". The

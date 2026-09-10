@@ -1,0 +1,185 @@
+---
+status: Active
+title: 'One topic vocabulary: the practice registry takes the same thirteen the reading list has'
+version: 1
+tags:
+- ontology
+- taxonomy
+date: '2026-09-10'
+issue: '#124'
+supersedes:
+- ADR-020
+summary: >-
+  [ADR-020](ADR-020.md) scoped the recommendations by kind of claim rather than by domain,
+  and that decision stands. Its rejected alternative does not: it declined to
+  add `generative-modeling` and `vision-and-graphics` to the practice
+  vocabulary on a browsing argument that the evidence since has not borne out,
+  and that reads to a later reader as a scope boundary — the exact thing
+  [ADR-020](ADR-020.md) was written to remove. Adds both, making the two vocabularies
+  identical.
+---
+
+<!-- inactive-ok-file: ADR-020 — Superseded by this document, which is why it is cited throughout: this is the decision that retired it -->
+
+<!-- inactive-ok-file: SOTA-157 — Proposed, named as a retagging candidate this decision deliberately does not act on -->
+
+<!-- inactive-ok-file: ADR-024 — Proposed, and named as the open decision this one does not touch -->
+
+# ADR-tmpdrbma: One topic vocabulary: the practice registry takes the same thirteen the reading list has
+
+## Context
+
+[ADR-020](ADR-020.md) decided the right thing and left a trap next to it.
+
+**The decision was to remove a limitation.** Before it, [DP-008](../../docs/design-principles.md#dp-8) read the
+vocabulary split as a scope statement — a vision paper could be a note and not
+a recommendation, "not on judgement, not on evidence, but because there is no
+category for it to take." `ADR-020` said no: **scope by the kind of claim, not
+by the domain the work was discovered in.** That gate is wider, deliberately,
+and it is correct.
+
+**The trap is the alternative it rejected.** Under *Alternatives considered*:
+
+> **Widen `primary_topic` — add `generative-modeling` and `vision-and-graphics`
+> to the practice seven.** The obvious move, and it defeats the purpose.
+> `primary_topic` is `exactly-one` and it is the browsing axis: a diffusion
+> preconditioning practice tagged `generative-modeling` renders on the
+> generative page and *not* beside the LLM normalization practices it is a
+> sibling of.
+
+That paragraph is why, in [#124](https://github.com/dmarx/anthology-of-the-sota/issues/124), this record's own maintainer-facing prose said
+those two topics "stay out on purpose per `ADR-020`" — turning a decision that
+removed a limitation into a citation for one. **If the ADR that widened the
+gate is the document people cite when narrowing it, the ADR needs replacing,
+not explaining.**
+
+## The browsing argument, against the evidence
+
+`ADR-020`'s objection was that a domain topic would pull cross-domain work onto
+its own page, away from the siblings it belongs beside. Two things now bear on
+that, neither available when it was written.
+
+**Nothing is displaced.** Eight in-force practices are sourced to
+generative-modeling or vision-and-graphics papers. **None of them uses either
+word as a secondary tag**, so widening the primary group takes nothing away
+from any document that exists.
+
+**And they filed themselves correctly.** Every one of the eight took a
+kind-of-claim topic:
+
+| practice | topic | sourced to |
+|---|---|---|
+| `SOTA-186` | `data-pipeline` | Segment Anything |
+| `SOTA-187` | `representation-and-encoding` | Latent Diffusion, DDPM |
+| `SOTA-188` | `training-optimization` | EDM, Progressive Distillation |
+| `SOTA-157` | `model-architecture` | LLaDA |
+| `SOTA-tmphwawd`, `SOTA-tmpyfvex` | `training-optimization` | Progressive Distillation, Imagen |
+| `SOTA-tmpwf9e5` | `adaptation-and-tuning` | OWL-ViT |
+| `SOTA-tmpkh4j4` | `analysis-and-evaluation` | OWL-ViT |
+
+That is the population `ADR-020` was worried about, and it is filed on the
+merits. The objection was really an argument against **mis-tagging**, and
+[ADR-003](ADR-003.md)'s one-primary rule already answers that: the topic is a *choice about
+the kind of claim*, and making a word available does not make it the right
+answer. A preconditioning scheme is a training claim whether or not the word
+"generative" is in the list.
+
+**Absence is not neutral.** `ADR-020` makes this argument itself, about the
+`domain:` field it withdrew — "a field that is overwhelmingly default is not
+neutral; a reader takes absence for a value." The mirror holds. A practice
+vocabulary with no word for generative modelling tells a browsing reader that
+this record has no generative-modelling practices, when the truth is that it
+has several, filed under other words, for good reasons that the vocabulary
+cannot show.
+
+## Decision
+
+**The `SOTA` scheme takes the same thirteen topics as the `LIT` scheme.** Add
+`generative-modeling` and `vision-and-graphics` to `primary_topic` in
+`record/practices.d/tags.yaml` and in `luria.toml`.
+
+`ADR-020`'s actual decision is **carried forward unchanged**: recommendations
+are scoped by the kind of claim, not by the domain the work came from. This
+supersedes it only to reverse the rejected alternative and to stop the document
+being read as a boundary.
+
+### Filing rule, so the browsing objection does not materialise
+
+**Take a domain topic when the claim is about the domain as such. Take a
+kind-of-claim topic when the claim was merely discovered there.**
+
+- A sampler design, a guidance scheme, the diffusion-versus-autoregressive
+  choice — those are claims about generative modelling. `generative-modeling`.
+- A preconditioning scheme, an annotation bootstrap, a learning-rate
+  asymmetry — those are training, data and adaptation claims that happen to
+  have been found in image models. Their kind, as before.
+
+If in doubt, ask what the practice would still be true of if the domain
+changed. If the answer is "most things", it is a kind-of-claim practice.
+
+## Consequences
+
+**The two vocabularies become identical**, which is a simplification worth
+naming: `LIT` and `SOTA` now differ in what a document *is* rather than in what
+it may be *about*.
+
+This is not the merge [ADR-003](ADR-003.md) rejected, and the direction is the whole
+difference. That rejection was about merging **downward** — forcing `LIT`
+documents into the narrow practice vocabulary, which "puts a diffusion sampler
+paper under `training-optimization` or `model-architecture` and makes both
+pages worse." This merges **upward**. Nothing is forced anywhere; both schemes
+gain range.
+
+**The real cost, stated:** a topic in an `exactly-one` group cannot also be a
+free secondary tag. Before this, a practice could carry `generative-modeling`
+as a secondary marker alongside any primary; now it must choose. No document
+does that today, so the cost is prospective — and it is the same cost every
+other primary topic already carries.
+
+**Nothing is retagged here.** The eight practices above stay where they are.
+Two looked like candidates and neither survived a look, which is itself the
+evidence that the filing rule above is what does the work rather than the
+vocabulary:
+
+- **`SOTA-187`** (train the generative model in a learned compressed latent)
+  argues for its own filing in its own body — "the transferable claim is a
+  compute-allocation one, and it is why this is filed by the kind of claim
+  rather than as a diffusion technique". It stays `representation-and-encoding`.
+- **`SOTA-157`** (train the language model as a masked diffusion model) is a
+  claim about how to build **a language model**; the diffusion part is the
+  means. It stays `model-architecture`.
+
+So the two topics added here are available and, on today's registry, nothing
+takes them. That is the expected outcome and not an argument against the
+addition — the vocabulary exists so the record can *say* what a practice is
+about, and a word that is available and correctly unused is doing its job.
+Retagging a practice to demonstrate a vocabulary change is how a vocabulary
+change stops being about the practices.
+
+**`ADR-021`'s "expect a fourth" is now spent, and then some.** The practice
+vocabulary has gone seven → ten (`ADR-021`) → eleven with
+`representation-and-encoding` (`#114`, closing a gap `ADR-021` left in the same
+paragraph that stated the invariant it broke) → twelve with
+`analysis-and-evaluation` (`ADR-tmpmz3o4`) → thirteen here. Five decisions, and
+the endpoint is "the same list the other scheme always had". That is worth
+noticing: **the vocabulary was not short of words, it was short of the words
+the other half of the record already used**, and each decision discovered that
+one topic at a time.
+
+`ADR-024` is untouched. Its seams are between topics that exist and both of
+these are additions; if it settles in a direction that reorganises the
+vocabulary, this list reorganises with it.
+
+## Alternatives considered
+
+**Amend `ADR-020` in place rather than supersede it.** Rejected. The
+misreading came from a paragraph inside a document whose decision says the
+opposite, and editing that paragraph leaves the same shape — a widening
+decision containing a narrowing argument. Retirement is a status change
+([DP-003](../../docs/design-principles.md#dp-3)) and the body stays, so `ADR-020`'s reasoning remains readable; what
+changes is that a reader arrives at the current answer first.
+
+**Add the two topics and keep them out of the `exactly-one` group**, so they
+stay available as free secondary markers. Rejected: it makes them a different
+kind of word from the other eleven, and a two-tier topic vocabulary is a worse
+thing to explain than either a wide one or a narrow one.

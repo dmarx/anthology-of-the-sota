@@ -14,9 +14,18 @@ consensus_note: >-
   One group, and the field went the other way: every model in this record
   keeps a learnable gain, and RMSNorm — the near-universal choice (SOTA-182)
   — keeps the gain while dropping the centering, which is the opposite
-  half from the one this paper says is expendable.
+  half from the one this paper says is expendable. LIT-088 adds a second
+  data point at 22B on the same side, and a qualification: ViT-22B drops
+  the QKV and LayerNorm biases for 3% accelerator utilisation with no
+  quality loss, and deliberately KEEPS the MLP dense-layer biases.
 title: "Consider removing LayerNorm's learnable gain and bias rather than tuning them"
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-10'
+  note: >-
+    Enriched from the #123 readings. The recommendation is unchanged;
+    the source list, the numbers or the neighbourhood are.
 tags:
 - model-stability
 date: '2026-09-09'
@@ -75,6 +84,25 @@ record's life while recommending how to *set* the two parameters it argues
 should be deleted. Leaving the note with no practice would leave the record
 with no statement of what it actually says, which is how that inversion
 survived being read.
+
+## A second data point at scale, on the other side
+
+[LIT-088](../literature.d/LIT-088.md) (ViT-22B) applies its LayerNorms "without bias and centering",
+citing RMSNorm — so it **keeps the gain and drops the centering**, the opposite
+half from the one this practice calls expendable. That is one more model at 22B
+taking [SOTA-182](SOTA-182.md)'s side rather than this one, and it does not meet the
+`promote_when` above, which asks for a decoder-only language model with the
+*gain* removed.
+
+It does carry a qualification worth having. ViT-22B drops the biases from the
+QKV projections and the LayerNorms for a measured **3% accelerator utilisation**
+gain with no quality loss — and **keeps the biases on the MLP dense layers**,
+explicitly departing from PaLM, having "observed improved quality and no speed
+reduction".
+
+So bias removal is not uniform even inside one model, and two groups disagree
+about the MLP biases with neither showing the experiment. Whatever settles this
+practice will need to be more specific than "remove the learnable parameters".
 
 ## Known implementations
 

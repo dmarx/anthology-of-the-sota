@@ -3,10 +3,18 @@ number: 52
 status: Read
 formerly:
 - NOTE-tmpmgnf7
-# inactive-ok: LIT-085 — Rejected — this document is the reading that says why the paper is in the attic and what survives it
 paper: LIT-085
 title: 'Progress measures for grokking via mechanistic interpretability'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-10'
+  note: >-
+    Corrected. The reading recorded the data-fraction result as
+    something any claim about delayed generalization needs to know, and
+    in the same breath declined to argue with the paper's Rejected
+    status. Filing SOTA-tmpwccgh, which needs this paper, made that
+    untenable; LIT-085 is now Active and this note says so.
 tags:
 - analysis-and-evaluation
 date: '2026-09-09'
@@ -125,17 +133,30 @@ quantity during training" kind.
 
 ## Bearing on the record
 
-**Nothing is sourced to this paper and this reading files no practice**, and the
-document is `Rejected` — in the attic. This reading does not argue with that:
-one 113-element modular-addition task on a one-layer transformer is not a source
-for practice at the record's usual scale, and the authors call the
-generalisation claim a proof of concept.
+**This reading was filed against a `Rejected` document and did not argue with
+the status. It should have, and the paper is now `Active`.**
 
-But `Rejected` and *worth reading* are different, which is exactly what
-`ADR-002`'s two-scheme split exists for. R2 is the reason to keep it: **grokking
-is the most-cited "mysterious training phenomenon" of its period and it goes
-away above 60% data.** Any practice reasoning about delayed generalization
-should know that.
+What was written here first: that one 113-element modular-addition task on a
+one-layer transformer is not a source for practice at the record's usual scale,
+that the authors call the generalisation claim a proof of concept, and that R2
+is nonetheless the reason to keep the paper — **grokking is the most-cited
+"mysterious training phenomenon" of its period and it goes away above 60%
+data.**
+
+The last of those contradicts the first two. A finding that any claim about
+delayed generalization needs to know is not "not interesting enough to carry",
+which is what `Rejected` means for a paper in this vocabulary. The setting is
+small, and a small setting is a limitation to state — this note states it under
+Limitations — rather than a reason for the attic.
+
+The contradiction became unavoidable when the same session filed
+`SOTA-tmpwccgh` (check whether an emergent capability is a metric artefact),
+which needs this paper for half of its claim. `ADR-002` does permit an attic
+paper to source a live practice, and that permission is for a paper whose
+*standing* moved while its *result* held. Nothing about this result moved.
+
+**R2 is now a practice**, jointly with `LIT-077`.
+
 
 The document's takeaways — "grokking measurement", "interpretability metrics",
 "learning dynamics analysis", "phase transition detection" — name four

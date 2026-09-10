@@ -85,14 +85,12 @@ distribution.
 
 ## Connections
 
-<!-- inactive-ok-block: LIT-085 — Rejected, and named as a parallel finding whose own note explains why it is in the attic -->
 `LIT-085` (grokking), read in the same batch, is the other paper here that
 inspects weights rather than behaviour — and it goes further, recovering the
 *algorithm* rather than a structural statistic. Read together they mark the two
 levels mechanistic work operates at: **structure you can measure without knowing
 what the network computes, and structure you can only see once you do.**
 
-<!-- inactive-ok-block: LIT-085 — Rejected, and named as a parallel finding whose own note explains why it is in the attic -->
 C4 is the gap between them: this paper measures connectivity and hopes it means
 function; `LIT-085` establishes function directly, for a much smaller problem.
 
@@ -110,7 +108,6 @@ function; `LIT-085` establishes function directly, for a much smaller problem.
 
 **Nothing is sourced to this paper and this reading files no practice**, and the
 document is `Superseded` — correctly. Interpretability moved to
-<!-- inactive-ok-block: LIT-085 — Rejected, and named as a parallel finding whose own note explains why it is in the attic -->
 mechanistic circuit-level work on transformers, of which `LIT-085` is a small
 example, and a connectivity statistic on pruned MLPs is not where that went.
 

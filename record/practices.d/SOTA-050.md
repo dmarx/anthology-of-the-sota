@@ -11,6 +11,8 @@ source:
 - LIT-008
 summary: >-
   Vaswani et al. (2017), [LIT-008](../literature.d/LIT-008.md) — [ARXIV-1706.03762](https://arxiv.org/abs/1706.03762).
+extended_by:
+- SOTA-tmp52hr5
 ---
 
 # SOTA-050: Scale attention weights by 1/sqrt(head_dim)

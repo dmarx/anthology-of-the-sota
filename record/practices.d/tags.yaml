@@ -61,3 +61,25 @@ representation-and-encoding:
   blurb: how the signal is encoded before the expensive network sees it —
     tokenizers and learned latents, positional encoding, and the frequency or
     basis choices that go with them
+
+# Added by ADR-tmpmz3o4. Narrower than the literature side's topic of the same
+# name: there it covers a paper's subject and includes theory and
+# interpretability; here it covers an ACTION, so it is about the practitioner's
+# measurement rather than about a research programme.
+analysis-and-evaluation:
+  label: Analysis and evaluation
+  blurb: how to find out whether something worked — what to measure, what a
+    measurement cannot tell you, and which comparisons are unsound
+
+# Added by ADR-tmpdrbma, which supersedes ADR-020. Both were rejected there on
+# a browsing argument the evidence did not bear out, and the rejection was
+# being cited as a scope boundary — the exact thing ADR-020 removed. Take a
+# domain topic when the claim is ABOUT the domain; a claim merely discovered
+# in one still takes its kind.
+generative-modeling:
+  label: Generative modeling
+  blurb: diffusion, samplers, text-to-image, conditioning and control
+vision-and-graphics:
+  label: Vision and graphics
+  blurb: neural rendering, reconstruction, perception, visual foundation
+    models

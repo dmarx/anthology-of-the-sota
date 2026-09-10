@@ -28,9 +28,15 @@ title: The thing you should do, in the imperative
 
 version: 1
 
-# Exactly one of the seven in tags.yaml, enforced by luria.toml. Secondary
-# tags beyond that are unconstrained — add one when the practice genuinely
-# belongs on a second page, not to be thorough.
+# Exactly one of the thirteen in tags.yaml, enforced by luria.toml — the same
+# thirteen the reading list uses (ADR-tmpdrbma). Secondary tags beyond that are
+# unconstrained: add one when the practice genuinely belongs on a second page,
+# not to be thorough.
+#
+# Take a DOMAIN topic (`generative-modeling`, `vision-and-graphics`) only when
+# the claim is about that domain as such. A claim merely discovered there still
+# takes its kind — a preconditioning scheme found in diffusion is a
+# `training-optimization` practice.
 tags:
 - training-optimization
 

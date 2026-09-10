@@ -9,7 +9,6 @@ version: 1
 tags:
 - model-architecture
 date: '2026-09-05'
-published: '2024-09-01'
 # inactive-ok: LIT-141 — this practice's own source, retired with it
 source:
 - LIT-141

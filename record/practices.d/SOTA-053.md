@@ -6,7 +6,6 @@ version: 1
 tags:
 - model-stability
 date: '2026-08-24'
-published: '2020-03-01'
 source:
 - LIT-047
 summary: >-

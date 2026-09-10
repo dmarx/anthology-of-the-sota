@@ -22,7 +22,6 @@ history:
 tags:
 - training-optimization
 date: '2026-09-05'
-published: '2024-08-01'
 source:
 # The power law is fitted under WSD and sets its peak; SOTA-140's
 # Sequence names this practice as the step that does it.

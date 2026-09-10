@@ -20,7 +20,6 @@ version: 1
 tags:
 - model-architecture
 date: '2026-09-07'
-published: '2025-02-01'
 source:
 # One paper, and it is the only evidence there is. The comparison it reports
 # is against its own ARM baselines plus published LLaMA3 8B numbers — which

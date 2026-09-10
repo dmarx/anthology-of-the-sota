@@ -36,7 +36,6 @@ history:
     only at filing; now a Proposed practice of its own, named in the
     Sequence. The recommendation is unchanged.
 date: '2026-09-05'
-published: '2024-04-01'
 source:
 # The practice's own Source section names both — "Hu et al. (2024), LIT-144 —
 # MiniCPM; Hägele et al. (2024), LIT-145, for the comparison against cosine"

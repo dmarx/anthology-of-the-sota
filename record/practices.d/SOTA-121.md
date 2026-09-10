@@ -17,7 +17,6 @@ tags:
 - training-optimization
 - tiny-models
 date: '2026-09-05'
-published: '2026-01-15'
 source:
 # The blogpost is where the practice is stated as a recipe; LIT-122 is the
 # production form and the scaling evidence; LIT-159 is the origin;

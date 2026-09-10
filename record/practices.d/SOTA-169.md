@@ -27,7 +27,6 @@ version: 1
 tags:
 - model-architecture
 date: '2026-09-08'
-published: '2024-09-01'
 source:
 # The four papers in the line plus the independent evaluation. Each reports
 # gains from widening; they differ on the constraint, which is what the two

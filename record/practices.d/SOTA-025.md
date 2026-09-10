@@ -17,7 +17,6 @@ history:
 tags:
 - model-stability
 date: '2026-08-24'
-published: '2019-11-01'
 source:
 # LIT-005 defines the gain; identity is the initialisation its formulation
 # implies. LIT-025 was the source until #114 and argues the opposite —

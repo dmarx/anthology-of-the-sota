@@ -20,7 +20,6 @@ version: 1
 tags:
 - representation-and-encoding
 date: '2026-09-08'
-published: '2024-10-01'
 source:
 - LIT-210
 implementations: []

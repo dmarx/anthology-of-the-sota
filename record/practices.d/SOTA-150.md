@@ -25,7 +25,6 @@ history:
 tags:
 - model-architecture
 date: '2026-09-07'
-published: '2024-01-01'
 source:
 # The four works that established the claim. LIT-160 came out: DeepSeek-V3
 # demonstrates the recipe at 671B without comparing it against a dense model

@@ -18,7 +18,6 @@ version: 1
 tags:
 - distributed-optimization
 date: '2026-09-07'
-published: '2023-11-01'
 source:
 # Two papers, one line: the first establishes that infrequent synchronisation
 # need not cost quality, the second that the synchronisation itself need not

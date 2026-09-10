@@ -16,7 +16,6 @@ history:
 tags:
 - attention-techniques
 date: '2026-09-05'
-published: '2025-05-01'
 source:
 # LIT-138 ran the ablation. LIT-191 and LIT-190 are what the gate is claimed
 # to remove — this practice was filed asserting it without the record holding

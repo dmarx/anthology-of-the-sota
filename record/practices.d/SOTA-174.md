@@ -14,7 +14,6 @@ version: 1
 tags:
 - data-pipeline
 date: '2026-09-08'
-published: '2022-07-01'
 source:
 # The paper that ran the ablations and established the "for free" claim.
 # The models that ship FIM cite it without re-measuring, so they are

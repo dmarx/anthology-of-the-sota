@@ -16,12 +16,22 @@ title: 'The paper title, exactly as published'
 
 version: 1
 
-# Exactly one of the twelve in tags.yaml, enforced by luria.toml.
+# Exactly one of the thirteen in tags.yaml, enforced by luria.toml — the same
+# thirteen the practice registry uses (ADR-026).
 tags:
 - training-optimization
 
-# The arXiv posting month, from the id: 2205.11487 → 2022-05.
+# When this note was filed. The record's own clock, not the paper's.
 date: '2026-01-01'
+
+# REQUIRED. When the PAPER appeared — the arXiv posting month, from the id:
+# 2205.11487 → 2022-05. Distinct from `date:` above, which is when the record
+# got round to it.
+#
+# This is the one place the date lives. A practice reads it from its primary
+# source and a reading note from its paper, both by `derive`/`from` in
+# luria.toml, so neither carries a copy that could drift (#119).
+published: '2022-05-01'
 
 # A SOURCE is required — at least one of these three, enforced (ADR-009).
 # Prefer them in this order: an arXiv id or a DOI resolves through a remote

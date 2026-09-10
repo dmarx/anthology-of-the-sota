@@ -23,7 +23,6 @@ version: 1
 tags:
 - data-pipeline
 date: '2026-09-08'
-published: '2023-05-01'
 source:
 - LIT-166
 implementations: []

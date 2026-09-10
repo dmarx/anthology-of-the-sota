@@ -6,7 +6,6 @@ version: 1
 tags:
 - model-architecture
 date: '2026-08-24'
-published: '2020-04-01'
 source:
 - LIT-034
 summary: >-

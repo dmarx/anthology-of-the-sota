@@ -15,7 +15,6 @@ history:
 tags:
 - inference-optimization
 date: '2026-08-24'
-published: '2023-09-01'
 source:
 # Orca is where iteration-level scheduling — what the field calls continuous
 # batching — was introduced. LIT-112 (vLLM) describes it in its background

@@ -6,7 +6,6 @@ version: 1
 tags:
 - adaptation-and-tuning
 date: '2026-08-24'
-published: '2020-05-01'
 source:
 - LIT-035
 extends:

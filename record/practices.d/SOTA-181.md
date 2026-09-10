@@ -15,7 +15,6 @@ version: 1
 tags:
 - distributed-optimization
 date: '2026-09-08'
-published: '2023-10-01'
 source:
 - LIT-206
 implementations: []

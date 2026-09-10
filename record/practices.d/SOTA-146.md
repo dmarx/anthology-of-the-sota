@@ -22,7 +22,6 @@ version: 1
 tags:
 - adaptation-and-tuning
 date: '2026-09-07'
-published: '2025-03-01'
 source:
 - LIT-167
 - LIT-168

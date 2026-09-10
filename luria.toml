@@ -51,7 +51,7 @@ extended_by      = { scheme = "SOTA", required = false, many = true, converse = 
 # A comparison is one fact, and its converse is itself — which is what makes
 # it symmetric. Declaring that is what lets `luria link --fix` write the
 # other side, so a comparison is stated once on whichever practice ran it
-# rather than on every member of the family (LU-ADR-084).
+# rather than on every member of the family (LU-ADR-tmphedn4).
 compared_against = { scheme = "SOTA", required = false, many = true, converse = "compared_against" }
 # The same sign at the practice layer (ADR-017). A recommendation that exists
 # because its predecessor breaks — QK-Clip under Muon, mHC under
@@ -119,8 +119,8 @@ derive = "{tags[0]}"
 # Jinja template they had been sitting in, unapplied, since 2024.
 [luria.schemes.SOTA.tag_groups.primary_topic]
 require = "exactly-one"
-# Thirteen, and the same thirteen the LIT scheme has. ADR-027 added
-# `analysis-and-evaluation`; ADR-026 then added `generative-modeling` and
+# Thirteen, and the same thirteen the LIT scheme has. ADR-tmpmz3o4 added
+# `analysis-and-evaluation`; ADR-tmpdrbma then added `generative-modeling` and
 # `vision-and-graphics`, superseding ADR-020, whose rejection of exactly that
 # had started being cited as a scope boundary — the thing ADR-020 existed to
 # remove. The filing rule is unchanged and is the point: take a domain topic
@@ -130,7 +130,7 @@ tags = ["training-optimization", "systems-optimization", "model-stability",
         "distributed-optimization", "data-pipeline", "attention-techniques",
         "model-architecture", "inference-optimization", "adaptation-and-tuning",
         "representation-and-encoding", "analysis-and-evaluation",
-        # ADR-026: the practice vocabulary is now the same thirteen the
+        # ADR-tmpdrbma: the practice vocabulary is now the same thirteen the
         # reading list has. The two schemes differ in what a document IS, not
         # in what it may be ABOUT.
         "generative-modeling", "vision-and-graphics"]
@@ -175,7 +175,7 @@ require = "at-least-one"
 # set of rivals into a comparison, and it names ITSELF as its converse,
 # which is what symmetry is: the fact is one fact, so a one-sided
 # declaration is a finding and `luria link --fix` writes the other side
-# (LU-ADR-084). A later paper cannot have been made to declare a
+# (LU-ADR-tmphedn4). A later paper cannot have been made to declare a
 # comparison against work that did not exist yet, so the author states it
 # once, on the note that ran the comparison.
 #
@@ -202,11 +202,35 @@ compared_against = { scheme = "LIT", required = false, many = true, converse = "
 corrects = { scheme = "LIT", required = false, many = true, converse = "corrected_by" }
 corrected_by = { scheme = "LIT", required = false, many = true, converse = "corrects" }
 
+# The publication date of the work this rests on, read from the paper rather
+# than copied onto the practice (#119, LU-ADR-088).
+#
+# `source[0]` is the PRIMARY source: ADR-010 makes the list ordered and
+# ADR-017 makes the first entry the one that would force a rewrite if it were
+# retracted. That was already the convention -- 175 of the 183 practices that
+# carried the field by hand used exactly this -- but it was never written
+# down, so eight practices drifted to the date of a source they no longer
+# cited. Nothing could see it: concretize rewrites references, not values.
+[luria.schemes.SOTA.fields.published]
+derive = "{published}"
+from   = "source[0]"
+
+# The publication date, and the one place it lives. A LIT note is about a
+# paper, so the paper's date is this scheme's fact; SOTA and NOTE read it
+# from here rather than carrying a copy (LU-ADR-088, #119).
+#
+# Declared rather than left to convention because a followed template checks
+# its names against the target scheme: undeclared, `{published}` would
+# resolve to nothing on every practice and read like a record with no
+# findings. It also feeds this scheme's `alias` template above.
+[luria.schemes.LIT.fields.published]
+required = true
+
 # The same derivation on the reading list, over the wider vocabulary below.
 [luria.schemes.LIT.fields.primary_topic]
 derive = "{tags[0]}"
 
-# The same thirteen as the practice registry above, since ADR-026. ADR-003
+# The same thirteen as the practice registry above, since ADR-tmpdrbma. ADR-003
 # gave LIT five topics the SOTA scheme lacked, on the ground that the corpus
 # carries generative-vision, theory and inference work that produced no training
 # recommendation; four decisions have since closed that gap one topic at a time,
@@ -228,7 +252,7 @@ tags = ["training-optimization", "systems-optimization", "model-stability",
 # LIT-025's four were in the right neighbourhood and backwards about the
 # finding. Eight practices rested on them. Both notes passed every
 # mechanical check there is (#113) — only reading catches this, and the
-# record had nowhere to put a reading. See ADR-025.
+# record had nowhere to put a reading. See ADR-tmp2q9cv.
 [luria.schemes.NOTE]
 dir      = "record/notes.d"
 output   = "docs/notes"
@@ -262,6 +286,11 @@ paper = { scheme = "LIT", required = true, many = false }
 
 [luria.schemes.NOTE.fields.status]
 vocabulary = "statuses"
+
+# A reading is about one paper, so its date is that paper's (#119).
+[luria.schemes.NOTE.fields.published]
+derive = "{published}"
+from   = "paper"
 
 # The same derivation the other two schemes use, over LIT's wider
 # vocabulary — a reading is filed under the paper's topic, not the practice

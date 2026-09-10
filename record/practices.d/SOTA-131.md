@@ -20,7 +20,6 @@ history:
 tags:
 - training-optimization
 date: '2026-09-05'
-published: '2025-07-01'
 source:
 # LIT-132 is where QK-Clip is introduced. LIT-155 established attention-logit
 # growth as a distinct instability and is the mechanism the practice argues

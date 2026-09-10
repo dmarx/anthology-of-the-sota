@@ -6,7 +6,6 @@ version: 1
 tags:
 - data-pipeline
 date: '2026-08-24'
-published: '2020-07-01'
 source:
 - LIT-050
 summary: >-

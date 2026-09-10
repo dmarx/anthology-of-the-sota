@@ -6,7 +6,6 @@ version: 1
 tags:
 - attention-techniques
 date: '2026-08-24'
-published: '2023-07-01'
 source:
 - LIT-106
 extends:

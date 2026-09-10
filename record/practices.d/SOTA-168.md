@@ -19,7 +19,6 @@ version: 1
 tags:
 - training-optimization
 date: '2026-09-08'
-published: '2024-09-01'
 source:
 # The algorithm and its derivation, plus the independent comparison that
 # tuned it fairly against nine others. LIT-158 is the Shampoo implementation

@@ -20,7 +20,6 @@ version: 1
 tags:
 - training-optimization
 date: '2026-09-07'
-published: '2024-05-01'
 source:
 # The paper is the only evidence there is. Filed as a list because the
 # practice that later gains a replication needs somewhere to put it

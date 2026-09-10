@@ -15,7 +15,6 @@ version: 1
 tags:
 - training-optimization
 date: '2026-09-05'
-published: '2025-05-01'
 source:
 - LIT-150
 # CompleteP is the depth exponent that makes µP's transfer hold

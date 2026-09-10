@@ -18,7 +18,6 @@ history:
 tags:
 - training-optimization
 date: '2026-08-24'
-published: '2021-09-01'
 source:
 - LIT-052
 implementations:

@@ -23,7 +23,6 @@ version: 1
 tags:
 - training-optimization
 date: '2026-09-08'
-published: '2024-07-01'
 source:
 - LIT-149
 extends:

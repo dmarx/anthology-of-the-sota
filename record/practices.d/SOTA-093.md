@@ -6,7 +6,6 @@ version: 1
 tags:
 - model-architecture
 date: '2026-08-24'
-published: '2022-04-01'
 source:
 - LIT-069
 compared_against:

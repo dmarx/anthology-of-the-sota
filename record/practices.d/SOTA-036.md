@@ -17,7 +17,6 @@ history:
 tags:
 - model-architecture
 date: '2026-08-24'
-published: '2020-05-01'
 source:
 - LIT-035
 summary: >-

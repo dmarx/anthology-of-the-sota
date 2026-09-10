@@ -31,7 +31,6 @@ history:
 tags:
 - representation-and-encoding
 date: '2026-09-07'
-published: '2023-06-01'
 source:
 - LIT-192
 - LIT-193

@@ -22,7 +22,6 @@ version: 1
 tags:
 - data-pipeline
 date: '2026-09-08'
-published: '2024-12-01'
 source:
 - LIT-205
 implementations: []

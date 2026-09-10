@@ -39,7 +39,6 @@ history:
 tags:
 - model-architecture
 date: '2026-09-07'
-published: '2024-08-01'
 source:
 # LIT-171 introduces the bias; LIT-160 is where it ships. LIT-131 is not an
 # adopter here — it reports the size at which the fixed-step update stops

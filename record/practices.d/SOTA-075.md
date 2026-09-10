@@ -6,7 +6,6 @@ version: 1
 tags:
 - distributed-optimization
 date: '2026-08-24'
-published: '2017-12-01'
 source:
 - LIT-056
 # inactive-ok-block: SOTA-155 — Proposed, and declared as a rival rather than

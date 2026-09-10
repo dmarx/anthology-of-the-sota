@@ -6,7 +6,6 @@ version: 1
 tags:
 - inference-optimization
 date: '2026-08-24'
-published: '2023-08-01'
 source:
 - LIT-103
 # Chunked prefill is a decision inside the iteration-level scheduler that

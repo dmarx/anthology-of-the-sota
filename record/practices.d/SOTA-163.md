@@ -15,7 +15,6 @@ version: 1
 tags:
 - inference-optimization
 date: '2026-09-08'
-published: '2023-10-01'
 source:
 # The specification and the ablations across regimes. The two frontier
 # reports that ship it cite it without re-measuring, so they are adoption

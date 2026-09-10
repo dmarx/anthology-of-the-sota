@@ -20,7 +20,6 @@ history:
 tags:
 - model-stability
 date: '2026-08-24'
-published: '2019-11-01'
 source:
 - LIT-025
 summary: >-

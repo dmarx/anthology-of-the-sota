@@ -22,7 +22,6 @@ version: 1
 tags:
 - model-architecture
 date: '2026-09-08'
-published: '2026-05-01'
 source:
 # LIT-200 is the one with the evidence: scaling-law experiments, 7.9B and
 # 124B, and a comparison against SwiGLU-Clip. Kimi K3's SiTU-GLU is the

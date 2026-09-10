@@ -38,7 +38,6 @@ tags:
 - data-pipeline
 - tiny-models
 date: '2026-09-05'
-published: '2026-01-15'
 source:
 # The memorization-window measurement the whole practice turns on is Figure 9
 # of LIT-120, not the blogpost. LIT-166 and LIT-175 are the positions this

@@ -20,7 +20,6 @@ version: 1
 tags:
 - data-pipeline
 date: '2026-09-08'
-published: '2026-06-01'
 source:
 - LIT-175
 implementations: []

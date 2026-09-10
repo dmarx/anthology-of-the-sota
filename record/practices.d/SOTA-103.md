@@ -18,7 +18,6 @@ history:
 tags:
 - data-pipeline
 date: '2026-08-24'
-published: '2023-12-01'
 source:
 - LIT-117
 compared_against:

@@ -16,7 +16,6 @@ version: 1
 tags:
 - training-optimization
 date: '2026-09-08'
-published: '2025-09-01'
 source:
 # LIT-156 is the fair comparison that isolates the class. LIT-157 is the
 # equivalence result that says why the class is the right unit — Shampoo at

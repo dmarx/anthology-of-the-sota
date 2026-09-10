@@ -9,7 +9,6 @@ version: 1
 tags:
 - distributed-optimization
 date: '2026-09-09'
-published: '2025-08-01'
 source:
 - LIT-222
 compared_against:

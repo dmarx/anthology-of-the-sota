@@ -14,7 +14,6 @@ history:
 tags:
 - training-optimization
 date: '2026-08-24'
-published: '2017-08-01'
 source:
 # Warmup is Goyal et al. (LIT-007), which introduced it as the fix for
 # divergence under linear LR scaling. LIT-009 (LARS) cites it as prior work

@@ -15,7 +15,6 @@ tags:
 - data-pipeline
 - tiny-models
 date: '2026-09-05'
-published: '2026-01-15'
 source:
 # The mechanism the practice's argument rests on is LIT-123's, followed
 # explicitly by the source: a model trained on reasoning beyond its capacity

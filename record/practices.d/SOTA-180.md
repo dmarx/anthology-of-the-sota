@@ -16,7 +16,6 @@ version: 1
 tags:
 - model-architecture
 date: '2026-09-08'
-published: '2026-01-01'
 source:
 - LIT-196
 extends:

@@ -11,6 +11,8 @@ source:
 - LIT-001
 summary: >-
   Kingma et al. (2014), [LIT-001](../literature.d/LIT-001.md) — [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980).
+compared_against:
+- SOTA-tmpbqbcf
 ---
 
 # SOTA-002: Common hyperparameters: β₁=0.9, β₂=0.999, ε=1e-8

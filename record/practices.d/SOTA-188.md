@@ -25,6 +25,8 @@ source:
 implementations:
 - EDM
 - Stable Diffusion 3
+extended_by:
+- SOTA-tmphwawd
 ---
 
 # SOTA-188: Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal

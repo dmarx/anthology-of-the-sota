@@ -35,6 +35,8 @@ corrects:
 - SOTA-121
 summary: >-
   Kimi Team (2025), [LIT-132](../literature.d/LIT-132.md) — MuonClip carried a 1T/32B MoE through 15.5T tokens with zero loss spikes where plain Muon let attention logits pass 1000; confirmed at 2.8T in [LIT-131](../literature.d/LIT-131.md).
+compared_against:
+- SOTA-tmp52hr5
 ---
 
 # SOTA-131: When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip)

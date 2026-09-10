@@ -2,19 +2,28 @@
 number: 51
 status: 'Active'
 title: 'Initialize final layer weights near zero'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-10'
   note: >-
     Enriched from the #123 readings. The recommendation is unchanged;
     the source list, the numbers or the neighbourhood are.
+- version: 3
+  date: '2026-09-10'
+  note: >-
+    The
 tags:
 - model-stability
 date: '2026-08-24'
 published: '2020-03-01'
 source:
+# LIT-047 is the origin: near-zero final-layer init for depth.
+# LIT-089 is what sharpens it. The body's 'zero is not near zero'
+# distinction is ControlNet's zero convolutions, and under ADR-017's
+# retraction test that section does not survive without it (#121).
 - LIT-047
+- LIT-089
 compared_against:
 - SOTA-060
 - SOTA-025

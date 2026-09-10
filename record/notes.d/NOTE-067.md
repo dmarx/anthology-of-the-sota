@@ -5,7 +5,12 @@ formerly:
 - NOTE-tmptmi2d
 paper: LIT-038
 title: 'Denoising Diffusion Implicit Models'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-10'
+  note: >-
+    The
 tags:
 - generative-modeling
 date: '2026-09-09'
@@ -118,6 +123,11 @@ carried the consequence without the cause.
 ## Bearing on the record
 
 **Nothing is sourced to this paper and this reading files no practice.**
+
+> **Overtaken by the [#121](https://github.com/dmarx/anthology-of-the-sota/issues/121) audit.** That sentence was this pass's policy, not a
+> judgement about the paper. R2 is now [SOTA-tmpt7rzg](../practices.d/SOTA-tmpt7rzg.md) and the
+> sampler/objective separation is corroborating source on
+> [SOTA-tmp2a5h0](../practices.d/SOTA-tmp2a5h0.md). The rest of this reading stands as written.
 
 The reading fixes the document, which was substantially about a **different
 paper**. Two of its four takeaways — *"continuous-time formulation of diffusion

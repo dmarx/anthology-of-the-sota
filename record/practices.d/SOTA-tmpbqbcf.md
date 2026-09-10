@@ -17,8 +17,6 @@ tags:
 date: '2026-09-10'
 source:
 - LIT-065
-compared_against:
-- SOTA-002
 implementations:
 - MT-NLG
 ---

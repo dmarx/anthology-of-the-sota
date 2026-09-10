@@ -4,7 +4,7 @@ status: Active
 formerly:
 - SOTA-tmpm1xnl
 title: 'Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-09'
@@ -16,12 +16,22 @@ history:
     the denoiser parameterisation and the loss weight, and records that
     the log-normal's parameters are tuned rather than derived. The
     recommendation is unchanged.
+- version: 3
+  date: '2026-09-10'
+  note: >-
+    Enriched from the #123 readings. The recommendation is unchanged;
+    the source list, the numbers or the neighbourhood are.
 tags:
 - training-optimization
 consensus: converged
 date: '2026-09-08'
 source:
 - LIT-075
+# LIT-067 states the same requirement four months earlier and empirically:
+# the implied x-prediction must stay stable as log-SNR varies. EDM derives
+# coefficients that satisfy it; Progressive Distillation finds the criterion
+# by watching epsilon-prediction fail at low SNR, and supplies v-prediction.
+- LIT-067
 implementations:
 - EDM
 - Stable Diffusion 3
@@ -71,6 +81,24 @@ loss means the same thing at every value, and sample that variable where the
 signal is.** The paper is also the cleanest demonstration in the corpus that
 separating sampler from training objective from architecture lets each be
 tuned without disturbing the others.
+
+## The requirement has an empirical statement four months earlier
+
+[LIT-067](../literature.d/LIT-067.md) (Progressive Distillation, February 2022) reaches the same
+requirement from the other direction, by watching `ε`-prediction break. As the
+signal-to-noise ratio goes to zero, "the effect of small changes in the neural
+network output on the implied prediction in x-space is increasingly amplified" —
+so the criterion it states is that **the implied `x̂` must remain stable as
+`λ_t = log(α²/σ²)` varies.**
+
+That is `SOTA-188`'s subject in different words: EDM derives coefficients that
+satisfy a unit-variance condition, and Progressive Distillation finds a
+stability condition empirically and gives three parameterizations meeting it.
+Whether the two conditions are the same or merely close is not written down
+anywhere.
+
+The practical consequence is [SOTA-tmphwawd](SOTA-tmphwawd.md) — predict `v` — which is what people
+type, and which this practice's derivation explains.
 
 ## Conditions
 

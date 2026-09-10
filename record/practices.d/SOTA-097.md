@@ -2,7 +2,7 @@
 number: 97
 status: 'Active'
 title: 'Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-09'
@@ -12,6 +12,11 @@ history:
     the exponent is Kaplan's equation 1.7. The recommendation is unchanged,
     and the exponent now has its derivation in the body rather than a
     rounded 1/4 on its own.
+- version: 3
+  date: '2026-09-10'
+  note: >-
+    Enriched from the #123 readings. The recommendation is unchanged;
+    the source list, the numbers or the neighbourhood are.
 tags:
 - training-optimization
 date: '2026-08-24'
@@ -21,6 +26,10 @@ source:
 # papers about the same era and the citation had drifted to the more famous
 # one; only Kaplan derives a batch-size exponent.
 - LIT-028
+# LIT-017 is where critical batch size is defined and given a measurement
+# procedure; Kaplan inherits the quantity and fits an exponent for it. The
+# record carried the exponent without its origin.
+- LIT-017
 implementations:
 - chinchilla
 - llama2

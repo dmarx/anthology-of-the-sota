@@ -4,13 +4,23 @@ status: Active
 formerly:
 - SOTA-tmphxjle
 title: 'Train the generative model in a learned compressed latent, not at full resolution'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-10'
+  note: >-
+    Enriched from the #123 readings. The recommendation is unchanged;
+    the source list, the numbers or the neighbourhood are.
 tags:
 - representation-and-encoding
 consensus: universal
 date: '2026-09-08'
 source:
 - LIT-062
+# LIT-036 section 4.3 MEASURES this practice's premise -- that most of a
+# pixel-space model's capacity describes imperceptible detail -- two years
+# before LIT-062 acts on it as an assumption.
+- LIT-036
 implementations:
 - Stable Diffusion
 ---

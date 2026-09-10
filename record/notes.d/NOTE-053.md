@@ -5,7 +5,12 @@ formerly:
 - NOTE-tmpmizcq
 paper: LIT-093
 title: 'Consistency Models'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-10'
+  note: >-
+    The
 tags:
 - generative-modeling
 date: '2026-09-09'
@@ -129,6 +134,12 @@ not depend on a diffusion model existing.
 ## Bearing on the record
 
 **Nothing is sourced to this paper and this reading files no practice.**
+
+<!-- inactive-ok: SOTA-tmpbgyvj — Proposed, and named here as Proposed: this is the practice filed from R2, and its status is the point being made -->
+> **Overtaken by the [#121](https://github.com/dmarx/anthology-of-the-sota/issues/121) audit.** R2 is now [SOTA-tmpbgyvj](../practices.d/SOTA-tmpbgyvj.md)
+> (`Proposed`, on the grounds this reading gives — one instance of a general
+> mechanism) and R3 is [SOTA-tmpo7on7](../practices.d/SOTA-tmpo7on7.md). The rest of this reading stands as
+> written.
 
 R2 is the reading's transferable finding and the record has nothing like it.
 <!-- inactive-ok-block: SOTA-141, SOTA-156 — both Proposed, named as the record's schedule neighbourhood rather than relied on -->

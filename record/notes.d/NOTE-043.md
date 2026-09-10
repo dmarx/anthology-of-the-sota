@@ -5,7 +5,12 @@ formerly:
 - NOTE-tmpgnw5j
 paper: LIT-076
 title: 'DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-10'
+  note: >-
+    The
 tags:
 - generative-modeling
 date: '2026-09-09'
@@ -122,6 +127,10 @@ different route, with the schedule chosen rather than shown irrelevant.
 ## Bearing on the record
 
 **Nothing is sourced to this paper and this reading files no practice.**
+
+> **Overtaken by the [#121](https://github.com/dmarx/anthology-of-the-sota/issues/121) audit.** R1, R2 and R4 are now
+> [SOTA-tmp2a5h0](../practices.d/SOTA-tmp2a5h0.md), for which this paper is the primary source. The rest of
+> this reading stands as written.
 
 The reading places `SOTA-188`'s source in context. `LIT-075`'s reading records
 EDM's sampler as Heun's second-order method on a `ρ = 7` grid between

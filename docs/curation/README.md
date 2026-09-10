@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [10 Sep 07:54 — A derived field stored by hand: eight practices dated by a source they no longer cite](2026-09.md#20260910075442)
 - [10 Sep 06:51 — Auditing the notes that source nothing: the silence was the finding, not the count](2026-09.md#20260910065132)
 - [9 Sep 23:16 — I measured that reading the 50 was low value, and I was wrong about what would come out of it](2026-09.md#20260909231629)
 - [9 Sep 21:28 — The #114 worklist was the whole at-risk set, and the census that proves it](2026-09.md#20260909212842)
@@ -57,9 +58,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-50 entries across 2 books, newest first.
+51 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 48 | 2026-09-05 | 2026-09-10 |
+| [2026-09](2026-09.md) | 49 | 2026-09-05 | 2026-09-10 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

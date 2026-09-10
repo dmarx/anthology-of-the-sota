@@ -41,7 +41,7 @@ SGDR: Stochastic Gradient Descent with Warm Restarts
 
 1 citation in 1 file awaits a look; 10 other citations of it are acknowledged.
 
-- [`record/practices.d/SOTA-140.md:45`](../../record/practices.d/SOTA-140.md)
+- [`record/practices.d/SOTA-140.md:44`](../../record/practices.d/SOTA-140.md)
 
 ### [SOTA-023](../../record/practices.d/SOTA-023.md) — Superseded
 

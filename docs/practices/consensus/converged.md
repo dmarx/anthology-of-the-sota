@@ -4,7 +4,7 @@
 
 **Agreed** — the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately.
 
-7 of 191 SOTA documents. Back to the [full index](../README.md).
+13 of 202 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -14,4 +14,10 @@
 | [SOTA-151](../../../record/practices.d/SOTA-151.md) v2 | Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length | Chen et al. (2023) and Peng et al. (2023) — RoPE does not extrapolate, and fine-tuning at the longer length barely helps: more than 10000 batches moved LLaMA's effective window from 2048 to 2560. Rescaling the position indices so they land back in the trained range reaches 32× that in under 1000 steps. YaRN rescales per wavelength rather than uniformly and gets to 128k with 10× fewer tokens. | Active |
 | [SOTA-174](../../../record/practices.d/SOTA-174.md) | Train autoregressive models with fill-in-the-middle by default: it is a data transformation, and it is free | Bavarian et al. (2022), [LIT-124](../../../record/literature.d/LIT-124.md) — cut a document into prefix, middle and suffix, move the middle to the end with sentinel tokens, and the model learns to infill. Transforming a large fraction of the training data does not harm left-to-right perplexity or sampling quality across a wide range of scales, so infilling is an added capability rather than a trade. | Active |
 | [SOTA-185](../../../record/practices.d/SOTA-185.md) | Quantize weights after training by compensating each rounding error into the columns not yet quantized | Frantar et al. (2022), [LIT-081](../../../record/literature.d/LIT-081.md) — [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323). Round one column at a time and push the resulting error into the remaining columns using approximate second-order information, instead of rounding every weight independently to the nearest level. | Active |
-| [SOTA-188](../../../record/practices.d/SOTA-188.md) v2 | Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal |  | Active |
+| [SOTA-188](../../../record/practices.d/SOTA-188.md) v3 | Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal |  | Active |
+| [SOTA-192](../../../record/practices.d/SOTA-192.md) | Normalize the queries and keys before the attention dot product |  | Active |
+| [SOTA-193](../../../record/practices.d/SOTA-193.md) | Lower Adam's second-moment decay when the loss spikes, before reaching for the learning rate |  | Proposed |
+| [SOTA-195](../../../record/practices.d/SOTA-195.md) | Predict v rather than the noise when the model will be evaluated at low signal-to-noise |  | Active |
+| [SOTA-197](../../../record/practices.d/SOTA-197.md) | Account for test-set proximity to the training data when evaluating, and state your contamination exposure |  | Active |
+| [SOTA-199](../../../record/practices.d/SOTA-199.md) | Regularize a narrow fine-tune against the pre-fine-tuning model's own samples |  | Active |
+| [SOTA-202](../../../record/practices.d/SOTA-202.md) | Clamp the prediction to the training range at every step when sampling from a model's own output |  | Active |

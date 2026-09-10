@@ -4,14 +4,14 @@
 in full.** They are short, they are specific to this project, and the rest of
 this file assumes you hold them.
 
-<!-- inactive-ok-file: ADR-020 — Superseded by ADR-tmpdrbma, which carries its decision forward; every mention here names it as the superseded document, deliberately -->
+<!-- inactive-ok-file: ADR-020 — Superseded by ADR-026, which carries its decision forward; every mention here names it as the superseded document, deliberately -->
 
 This is an anthology of current ML practice: what to do, and the published
 work that says why. Scoped by the **kind of claim**, not by the domain a
 technique was discovered in — vision, generative and inference work all
 qualify if the recommendation is one the thirteen topics can express
-([ADR-tmpdrbma](record/decisions.d/ADR-tmpdrbma.md), superseding [ADR-020](record/decisions.d/ADR-020.md)). The bias toward language-model training is
-a bias, not a boundary, and since [ADR-tmpdrbma](record/decisions.d/ADR-tmpdrbma.md) the practice registry and the
+([ADR-026](record/decisions.d/ADR-026.md), superseding [ADR-020](record/decisions.d/ADR-020.md)). The bias toward language-model training is
+a bias, not a boundary, and since [ADR-026](record/decisions.d/ADR-026.md) the practice registry and the
 reading list share one topic vocabulary — the two schemes differ in what a
 document *is*, not in what it may be *about*. Its memory is a Luria record — scaffolded,
 generated and linted by the `luria` CLI. This file is a map, not a copy: when

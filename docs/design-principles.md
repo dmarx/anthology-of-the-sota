@@ -296,7 +296,9 @@ because nothing will ever remind you to.
 
 <a name="dp-8"></a>
 
-## 8. A vocabulary is a scope decision — a subject with no category is one you declined to hold
+<!-- inactive-ok-file: ADR-020 — Superseded by ADR-026, which carries its decision forward; every mention here names it as the superseded document, deliberately -->
+
+# DP-008: A vocabulary is a scope decision — a subject with no category is one you declined to hold
 
 A closed list of categories reads like a filing convenience. It is not. Every
 entry has to take exactly one, so the list is the answer to "what is this
@@ -335,17 +337,39 @@ annotation bootstrap — is exactly the kind of claim the seven topics exist to
 hold, so the scope was making the record ignorant of its own subject.
 
 The repair is the corollary below, taken seriously.
-[ADR-020](../record/decisions.d/ADR-020.md) scopes the recommendations by the **kind of claim** and moves
-domain onto its own axis, so that where a technique was discovered stops
-deciding whether it can be recommended. Read that decision, not this
-paragraph, for what the scope now is.
+[ADR-026](../record/decisions.d/ADR-026.md) — superseding [ADR-020](../record/decisions.d/ADR-020.md), whose decision it carries forward —
+scopes the recommendations by the **kind of claim**, so that where a technique
+was discovered stops deciding whether it can be recommended. Read that
+decision, not this paragraph, for what the scope now is.
 
 The corollary: because it is a decision, it can be revisited — but only
 deliberately, by changing the vocabulary, and never by one entry quietly
 taking a tag that does not fit. A category added to admit a single document
 is how a scope stops being one.
 
-*v1 · shaped by [ADR-002](../record/decisions.d/ADR-002.md), [ADR-003](../record/decisions.d/ADR-003.md)*
+## The mechanism this principle warns about is now gone for this pair
+
+`ADR-026` went further than the repair above and gave the practice
+registry **the same thirteen topics the reading list has**. So the arrangement
+that made this a worked example — two vocabularies, one narrower, the gap
+between them silently encoding a scope — **no longer exists here**. No `LIT`
+tag can read as a scope boundary, because every one of them is a word a
+practice can carry.
+
+That decision adds two categories admitting **no documents at all**, which is
+worth holding against the corollary directly. It passes, and the reason is the
+distinction the corollary is drawing. What it forbids is widening a scope *by
+the back door*, one entry at a time, to avoid making the decision — a category
+bent to fit a document somebody wanted in. `ADR-026` makes the decision in
+the open and admits nothing: everything now admissible was already admissible
+under `ADR-020`, by kind of claim. The vocabulary caught up with a scope that
+had already changed, rather than a scope changing because a vocabulary did.
+
+The principle survives its own application intact, and gains a sharper test
+from it: **ask whether the category was added because a decision was made, or
+so that one would not have to be.**
+
+*v2 · shaped by [ADR-002](../record/decisions.d/ADR-002.md), [ADR-003](../record/decisions.d/ADR-003.md)*
 
 <a name="dp-9"></a>
 

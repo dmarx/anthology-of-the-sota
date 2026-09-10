@@ -4,7 +4,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-208 of 224 LIT documents. Back to the [full index](../README.md).
+209 of 224 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -81,10 +81,11 @@
 | [LIT-078](../../../record/literature.d/LIT-078.md) v2 | An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion | Gal et al. (2022), [ARXIV-2208.01618](https://arxiv.org/abs/2208.01618). Efficient personalization method. | Active |
 | [LIT-079](../../../record/literature.d/LIT-079.md) v2 | DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation | Ruiz et al. (2022), [ARXIV-2208.12242](https://arxiv.org/abs/2208.12242). Subject-driven image generation. | Active |
 | [LIT-080](../../../record/literature.d/LIT-080.md) v2 | PaLI: A Jointly-Scaled Multilingual Language-Image Model | Chen et al. (2022), [ARXIV-2209.06794](https://arxiv.org/abs/2209.06794). Joint vision-language scaling. | Active |
-| [LIT-081](../../../record/literature.d/LIT-081.md) v2 | GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers | Frantar et al. (2022), [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323). One-shot weight quantization to 3-4 bits: round column by column and push each rounding error into the columns not yet done, using approximate second-order information from a small calibration set. | Active |
-| [LIT-082](../../../record/literature.d/LIT-082.md) v2 | Constitutional AI: Harmlessness from AI Feedback | Bai et al. (2022), [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). Train harmlessness without human harm labels: the model critiques and revises its own responses against a written list of principles, and the preference model learns from those comparisons. | Active |
+| [LIT-081](../../../record/literature.d/LIT-081.md) v3 | GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers | Frantar et al. (2022), [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323). One-shot weight quantization to 3-4 bits: round column by column and push each rounding error into the columns not yet done, using approximate second-order information from a small calibration set. | Active |
+| [LIT-082](../../../record/literature.d/LIT-082.md) v3 | Constitutional AI: Harmlessness from AI Feedback | Bai et al. (2022), [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). Train harmlessness without human harm labels: the model critiques and revises its own responses against a written list of principles, and the preference model learns from those comparisons. | Active |
 | [LIT-083](../../../record/literature.d/LIT-083.md) v2 | PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel | Zhao et al. (2022), [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). Improved memory efficiency over ZeRO. | Active |
 | [LIT-084](../../../record/literature.d/LIT-084.md) | DeepNet: Scaling Transformers to 1,000 Layers | Wang et al. (2022), [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555). Scale-aware normalization. | Active |
+| [LIT-085](../../../record/literature.d/LIT-085.md) v3 | Progress measures for grokking via mechanistic interpretability | Nanda et al. (2023), [ARXIV-2301.05217](https://arxiv.org/abs/2301.05217). Grokking measurement. | Active — measurement rather than actionable practice |
 | [LIT-086](../../../record/literature.d/LIT-086.md) v3 | K-Planes: Explicit Radiance Fields in Space, Time, and Appearance | Fridovich-Keil et al. (2023), [ARXIV-2301.10241](https://arxiv.org/abs/2301.10241). Hybrid representation scheme. | Active |
 | [LIT-087](../../../record/literature.d/LIT-087.md) v3 | Data Selection for Language Models via Importance Resampling | Xie et al. (2023), [ARXIV-2302.03169](https://arxiv.org/abs/2302.03169). Data quality assessment. | Active |
 | [LIT-088](../../../record/literature.d/LIT-088.md) v2 | Scaling Vision Transformers to 22 Billion Parameters | Zhai et al. (2023), [ARXIV-2302.05442](https://arxiv.org/abs/2302.05442). Vision model scaling. | Active |

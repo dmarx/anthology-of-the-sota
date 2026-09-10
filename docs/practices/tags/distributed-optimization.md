@@ -4,7 +4,7 @@
 
 Distribution strategies, memory management, checkpointing, communication.
 
-29 of 191 SOTA documents. Back to the [full index](../README.md).
+29 of 202 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -29,7 +29,7 @@ Distribution strategies, memory management, checkpointing, communication.
 | [SOTA-073](../../../record/practices.d/SOTA-073.md) | Monitor network utilization during training | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Rejected — states no signal, threshold or action, so there is nothing to do differently on reading it, and LIT-051 does not argue for it. The specific version worth having is in SOTA-048's body: the gap between achieved and peak bandwidth during the overlap window tells you the fusion buffer is sized wrong |
 | [SOTA-074](../../../record/practices.d/SOTA-074.md) | Adapt buffer sizes to network conditions | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Rejected — names a controller — signal, target, update rule — of which none is stated, and no source here describes one. A measured version would resemble what CheckFreq does for checkpoint intervals (SOTA-054) |
 | [SOTA-075](../../../record/practices.d/SOTA-075.md) | Use gradient compression for slow networks | Lin et al. (2017), [LIT-056](../../../record/literature.d/LIT-056.md) — [ARXIV-1712.01887](https://arxiv.org/abs/1712.01887). | Active |
-| [SOTA-076](../../../record/practices.d/SOTA-076.md) | Place replicas to minimize cross-rack traffic | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Rejected — a cluster-scheduling claim rather than a training one: it is the scheduler's decision, expressed as a placement-group request, not something in a training run. ADR-020 scopes this record by the kind of claim, and this is a different kind |
+| [SOTA-076](../../../record/practices.d/SOTA-076.md) | Place replicas to minimize cross-rack traffic | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Rejected — a cluster-scheduling claim rather than a training one: it is the scheduler's decision, expressed as a placement-group request, not something in a training run. ADR-026 (superseding ADR-020) scopes this record by the kind of claim, and this is a different kind |
 | [SOTA-116](../../../record/practices.d/SOTA-116.md) | Use FSDP over DDP when model size exceeds single GPU memory | Zhao et al. (2022), [LIT-083](../../../record/literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). | Active |
 | [SOTA-117](../../../record/practices.d/SOTA-117.md) | Overlap communication with computation using backward prefetch | Zhao et al. (2022), [LIT-083](../../../record/literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). | Active |
 | [SOTA-118](../../../record/practices.d/SOTA-118.md) | Employ mixed precision to reduce memory usage | Zhao et al. (2022), [LIT-083](../../../record/literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). | Active |

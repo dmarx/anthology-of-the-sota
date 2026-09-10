@@ -4,7 +4,7 @@
 
 **Attic** — retired with a reason — too narrow, too theoretical, or simply not interesting enough to carry.
 
-11 of 224 LIT documents. Back to the [full index](../README.md).
+10 of 224 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -13,7 +13,6 @@
 | [LIT-041](../../../record/literature.d/LIT-041.md) | Clusterability in Neural Networks | Filan et al. (2021), [ARXIV-2103.03386](https://arxiv.org/abs/2103.03386). Larger models develop more modular features. | Rejected — the result does not look interesting enough to carry |
 | [LIT-044](../../../record/literature.d/LIT-044.md) v2 | Contrastive Learning with Hard Negative Samples | Robinson et al. (2020), [ARXIV-2010.04592](https://arxiv.org/abs/2010.04592). Importance of negative sample selection. | Rejected — needs per-case tuning, no consistent cross-domain benefit |
 | [LIT-057](../../../record/literature.d/LIT-057.md) v2 | What Makes for Good Views for Contrastive Learning? | Tian et al. (2020), [ARXIV-2005.10243](https://arxiv.org/abs/2005.10243). Analysis of view generation. | Rejected — theoretical, with no concrete training recommendation |
-| [LIT-085](../../../record/literature.d/LIT-085.md) v2 | Progress measures for grokking via mechanistic interpretability | Nanda et al. (2023), [ARXIV-2301.05217](https://arxiv.org/abs/2301.05217). Grokking measurement. | Rejected — measurement rather than actionable practice |
 | [LIT-090](../../../record/literature.d/LIT-090.md) v2 | Symbolic Discovery of Optimization Algorithms | Chen et al. (2023), [ARXIV-2302.06675](https://arxiv.org/abs/2302.06675). Program search over an infinite, sparse space of optimizer programs, which turns up Lion — sign of an interpolated momentum, one state tensor instead of Adam's two. | Rejected — retired at migration on a description that was not this paper; the reason has not been re-examined |
 | [LIT-092](../../../record/literature.d/LIT-092.md) v2 | Understanding Contrastive Learning Requires Incorporating Inductive Biases | Saunshi et al. (2022), [ARXIV-2202.14037](https://arxiv.org/abs/2202.14037). Role of inductive biases. | Rejected — theoretical analysis without concrete recommendations |
 | [LIT-094](../../../record/literature.d/LIT-094.md) v2 | Neural Scene Graphs for Dynamic Scenes | Ost et al. (2020), [ARXIV-2011.10379](https://arxiv.org/abs/2011.10379). Dynamic scene representation. | Rejected — too domain-specific for a general training list |

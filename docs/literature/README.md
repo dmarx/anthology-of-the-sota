@@ -17,15 +17,23 @@ rather than leaving it to be noticed.
 Roughly a third of these notes produced no practice at all. They are here
 because they are worth reading.
 
+<!-- inactive-ok-file: ADR-020 — Superseded by ADR-026, which carries its decision forward; every mention here names it as the superseded document, deliberately -->
+
 For about two dozen of them — the diffusion and radiance-field corpus, tagged
 `generative-modeling` and `vision-and-graphics` — the reason used to be a
 scope decision: the recommendations were scoped to language-model training by
 construction, so such a paper could be read here and not recommended here.
-[ADR-020](../../record/decisions.d/ADR-020.md) ends that. The recommendations are scoped by the **kind of claim**
-now, and where the work was discovered is not the test, so those notes are
-unread rather than ineligible. Several of them carry an instruction one of the
-seven topics holds perfectly well — a preconditioning scheme, a noise-level
-sampling distribution, a model-in-the-loop annotation bootstrap.
+[ADR-020](../../record/decisions.d/ADR-020.md) ended that, and [ADR-026](../../record/decisions.d/ADR-026.md) — which supersedes it — went further.
+The recommendations are scoped by the **kind of claim**, where the work was
+discovered is not the test, and the practice registry now uses the *same
+thirteen topics this reading list does*. So those notes are unread rather than
+ineligible, and `generative-modeling` and `vision-and-graphics` are no longer
+words that exist on only one side of the record.
+
+Several of them carry an instruction one of the thirteen topics holds
+perfectly well — a preconditioning scheme, a noise-level sampling
+distribution, a model-in-the-loop annotation bootstrap. Some carry a claim
+about generative modelling as such, and those now have a word too.
 
 The rest never had even that excuse, and the tag will mislead you if you let
 it. `adaptation-and-tuning` and `inference-optimization` are also absent
@@ -83,7 +91,7 @@ year sourcing nothing.
 **[Tiny-Models](tags/tiny-models.md)** (2):
 [119](../../record/literature.d/LIT-119.md) · [129](../../record/literature.d/LIT-129.md)
 
-**By status:** [In the anthology](statuses/Active.md) (208) · [Watching](statuses/Proposed.md) (2) · [Unreviewed](statuses/Deferred.md) (0) · [Superseded](statuses/Superseded.md) (3) · [Attic](statuses/Rejected.md) (11)
+**By status:** [In the anthology](statuses/Active.md) (209) · [Watching](statuses/Proposed.md) (2) · [Unreviewed](statuses/Deferred.md) (0) · [Superseded](statuses/Superseded.md) (3) · [Attic](statuses/Rejected.md) (10)
 
 ## Chronological
 
@@ -179,11 +187,11 @@ What the status column means in this scheme — the words are luria's, the meani
 | [LIT-078](../../record/literature.d/LIT-078.md) v2 | An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion | Gal et al. (2022), [ARXIV-2208.01618](https://arxiv.org/abs/2208.01618). Efficient personalization method. | Active |
 | [LIT-079](../../record/literature.d/LIT-079.md) v2 | DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation | Ruiz et al. (2022), [ARXIV-2208.12242](https://arxiv.org/abs/2208.12242). Subject-driven image generation. | Active |
 | [LIT-080](../../record/literature.d/LIT-080.md) v2 | PaLI: A Jointly-Scaled Multilingual Language-Image Model | Chen et al. (2022), [ARXIV-2209.06794](https://arxiv.org/abs/2209.06794). Joint vision-language scaling. | Active |
-| [LIT-081](../../record/literature.d/LIT-081.md) v2 | GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers | Frantar et al. (2022), [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323). One-shot weight quantization to 3-4 bits: round column by column and push each rounding error into the columns not yet done, using approximate second-order information from a small calibration set. | Active |
-| [LIT-082](../../record/literature.d/LIT-082.md) v2 | Constitutional AI: Harmlessness from AI Feedback | Bai et al. (2022), [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). Train harmlessness without human harm labels: the model critiques and revises its own responses against a written list of principles, and the preference model learns from those comparisons. | Active |
+| [LIT-081](../../record/literature.d/LIT-081.md) v3 | GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers | Frantar et al. (2022), [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323). One-shot weight quantization to 3-4 bits: round column by column and push each rounding error into the columns not yet done, using approximate second-order information from a small calibration set. | Active |
+| [LIT-082](../../record/literature.d/LIT-082.md) v3 | Constitutional AI: Harmlessness from AI Feedback | Bai et al. (2022), [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). Train harmlessness without human harm labels: the model critiques and revises its own responses against a written list of principles, and the preference model learns from those comparisons. | Active |
 | [LIT-083](../../record/literature.d/LIT-083.md) v2 | PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel | Zhao et al. (2022), [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). Improved memory efficiency over ZeRO. | Active |
 | [LIT-084](../../record/literature.d/LIT-084.md) | DeepNet: Scaling Transformers to 1,000 Layers | Wang et al. (2022), [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555). Scale-aware normalization. | Active |
-| [LIT-085](../../record/literature.d/LIT-085.md) v2 | Progress measures for grokking via mechanistic interpretability | Nanda et al. (2023), [ARXIV-2301.05217](https://arxiv.org/abs/2301.05217). Grokking measurement. | Rejected — measurement rather than actionable practice |
+| [LIT-085](../../record/literature.d/LIT-085.md) v3 | Progress measures for grokking via mechanistic interpretability | Nanda et al. (2023), [ARXIV-2301.05217](https://arxiv.org/abs/2301.05217). Grokking measurement. | Active — measurement rather than actionable practice |
 | [LIT-086](../../record/literature.d/LIT-086.md) v3 | K-Planes: Explicit Radiance Fields in Space, Time, and Appearance | Fridovich-Keil et al. (2023), [ARXIV-2301.10241](https://arxiv.org/abs/2301.10241). Hybrid representation scheme. | Active |
 | [LIT-087](../../record/literature.d/LIT-087.md) v3 | Data Selection for Language Models via Importance Resampling | Xie et al. (2023), [ARXIV-2302.03169](https://arxiv.org/abs/2302.03169). Data quality assessment. | Active |
 | [LIT-088](../../record/literature.d/LIT-088.md) v2 | Scaling Vision Transformers to 22 Billion Parameters | Zhai et al. (2023), [ARXIV-2302.05442](https://arxiv.org/abs/2302.05442). Vision model scaling. | Active |

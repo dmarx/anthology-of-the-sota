@@ -59,8 +59,8 @@ MT-NLG 530B trained with **β₂ = 0.95**, and [LIT-065](../literature.d/LIT-065
 That is not the batch-size argument above. It is a **stability** argument, about
 a parameter whose long-quiet second moment makes the next large gradient's step
 enormous. Both may be true and they are different claims;
-<!-- inactive-ok-block: SOTA-tmpbqbcf — Proposed, and named as the stability practice this section distinguishes itself from -->
-[SOTA-tmpbqbcf](SOTA-tmpbqbcf.md) is the stability one.
+<!-- inactive-ok-block: SOTA-193 — Proposed, and named as the stability practice this section distinguishes itself from -->
+[SOTA-193](SOTA-193.md) is the stability one.
 
 The consequence for this practice: **0.999 is Adam's default and not what large
 runs use.** The title records the defaults, which is what it is for, and a

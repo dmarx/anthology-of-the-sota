@@ -1,5 +1,8 @@
 ---
+number: 192
 status: Active
+formerly:
+- SOTA-tmp52hr5
 consensus: converged
 consensus_note: >-
   Standard in frontier training. DeepSeek-V4 runs Muon with QK-norm and no
@@ -21,7 +24,7 @@ implementations:
 - DeepSeek-V4
 ---
 
-# SOTA-tmp52hr5: Normalize the queries and keys before the attention dot product
+# SOTA-192: Normalize the queries and keys before the attention dot product
 
 ## Source
 

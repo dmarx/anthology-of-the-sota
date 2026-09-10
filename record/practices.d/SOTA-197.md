@@ -1,5 +1,8 @@
 ---
+number: 197
 status: Active
+formerly:
+- SOTA-tmpmx5mv
 consensus: converged
 consensus_note: >-
   That contamination invalidates benchmark results is universally agreed; what
@@ -15,7 +18,7 @@ source:
 implementations: []
 ---
 
-# SOTA-tmpmx5mv: Account for test-set proximity to the training data when evaluating, and state your contamination exposure
+# SOTA-197: Account for test-set proximity to the training data when evaluating, and state your contamination exposure
 
 ## Source
 

@@ -7,7 +7,7 @@ Chains asserting an invariant: `practice` on `primary_topic`, `lineage` on `prim
 
 A relation is an assertion that the documents it joins have something in common. Where no value in the named field is held by both, the record has made the assertion and not said what it means — usually a sign the vocabulary is short a word rather than that the relation is wrong.
 
-**25 unbound relations.** Two documents joined directly, sharing nothing.
+**26 unbound relations.** Two documents joined directly, sharing nothing.
 
 | Chain | Field | Documents | Held |
 |---|---|---|---|
@@ -24,6 +24,7 @@ A relation is an assertion that the documents it joins have something in common.
 | practice | `primary_topic` | [SOTA-083](../../record/practices.d/SOTA-083.md) ↔ [SOTA-106](../../record/practices.d/SOTA-106.md) | systems-optimization / attention-techniques |
 | practice | `primary_topic` | [SOTA-085](../../record/practices.d/SOTA-085.md) ↔ [SOTA-161](../../record/practices.d/SOTA-161.md) | attention-techniques / model-stability |
 | practice | `primary_topic` | [SOTA-089](../../record/practices.d/SOTA-089.md) ↔ [SOTA-107](../../record/practices.d/SOTA-107.md) | systems-optimization / attention-techniques |
+| practice | `primary_topic` | [SOTA-131](../../record/practices.d/SOTA-131.md) ↔ [SOTA-192](../../record/practices.d/SOTA-192.md) | training-optimization / model-stability |
 | lineage | `primary_topic` | [LIT-030](../../record/literature.d/LIT-030.md) ↔ [LIT-200](../../record/literature.d/LIT-200.md) | model-architecture / model-stability |
 | lineage | `primary_topic` | [LIT-045](../../record/literature.d/LIT-045.md) ↔ [LIT-192](../../record/literature.d/LIT-192.md) | model-architecture / attention-techniques |
 | lineage | `primary_topic` | [LIT-045](../../record/literature.d/LIT-045.md) ↔ [LIT-207](../../record/literature.d/LIT-207.md) | model-architecture / attention-techniques |
@@ -37,7 +38,7 @@ A relation is an assertion that the documents it joins have something in common.
 | lineage | `primary_topic` | [LIT-187](../../record/literature.d/LIT-187.md) ↔ [LIT-188](../../record/literature.d/LIT-188.md) | distributed-optimization / model-architecture |
 | lineage | `primary_topic` | [LIT-187](../../record/literature.d/LIT-187.md) ↔ [LIT-189](../../record/literature.d/LIT-189.md) | distributed-optimization / model-architecture |
 
-**15 unbound lines.** A whole sequence with no value common to every member — which can happen while every single step is expressed, because a component's intersection only shrinks as the component grows. The weaker signal of the two, and the one to read whole before acting on.
+**16 unbound lines.** A whole sequence with no value common to every member — which can happen while every single step is expressed, because a component's intersection only shrinks as the component grows. The weaker signal of the two, and the one to read whole before acting on.
 
 | Chain | Field | Members |
 |---|---|---|
@@ -47,6 +48,7 @@ A relation is an assertion that the documents it joins have something in common.
 | practice | `primary_topic` | [SOTA-036](../../record/practices.d/SOTA-036.md), [SOTA-037](../../record/practices.d/SOTA-037.md), [SOTA-038](../../record/practices.d/SOTA-038.md) |
 | practice | `primary_topic` | [SOTA-045](../../record/practices.d/SOTA-045.md), [SOTA-091](../../record/practices.d/SOTA-091.md) |
 | practice | `primary_topic` | [SOTA-047](../../record/practices.d/SOTA-047.md), [SOTA-048](../../record/practices.d/SOTA-048.md), [SOTA-077](../../record/practices.d/SOTA-077.md), [SOTA-078](../../record/practices.d/SOTA-078.md), [SOTA-079](../../record/practices.d/SOTA-079.md) |
+| practice | `primary_topic` | [SOTA-050](../../record/practices.d/SOTA-050.md), [SOTA-121](../../record/practices.d/SOTA-121.md), [SOTA-131](../../record/practices.d/SOTA-131.md), [SOTA-165](../../record/practices.d/SOTA-165.md), [SOTA-168](../../record/practices.d/SOTA-168.md), [SOTA-192](../../record/practices.d/SOTA-192.md) |
 | practice | `primary_topic` | [SOTA-069](../../record/practices.d/SOTA-069.md), [SOTA-098](../../record/practices.d/SOTA-098.md) |
 | practice | `primary_topic` | [SOTA-070](../../record/practices.d/SOTA-070.md), [SOTA-099](../../record/practices.d/SOTA-099.md) |
 | practice | `primary_topic` | [SOTA-083](../../record/practices.d/SOTA-083.md), [SOTA-085](../../record/practices.d/SOTA-085.md), [SOTA-106](../../record/practices.d/SOTA-106.md), [SOTA-161](../../record/practices.d/SOTA-161.md) |

@@ -1,5 +1,8 @@
 ---
+number: 202
 status: Active
+formerly:
+- SOTA-tmpyfvex
 consensus: converged
 consensus_note: >-
   Dynamic thresholding is standard in guided diffusion samplers. The general
@@ -18,7 +21,7 @@ implementations:
 - Imagen
 ---
 
-# SOTA-tmpyfvex: Clamp the prediction to the training range at every step when sampling from a model's own output
+# SOTA-202: Clamp the prediction to the training range at every step when sampling from a model's own output
 
 ## Source
 

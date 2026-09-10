@@ -4,7 +4,7 @@
 
 Taking a trained model somewhere new — fine-tuning, preference training, parameter-efficient adaptation, context extension.
 
-9 of 191 SOTA documents. Back to the [full index](../README.md).
+11 of 202 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,3 +17,5 @@ Taking a trained model somewhere new — fine-tuning, preference training, param
 | [SOTA-146](../../../record/practices.d/SOTA-146.md) | Correct the GRPO objective before running it — the published form has three independently identified defects | Liu et al. (2025), [LIT-167](../../../record/literature.d/LIT-167.md); Yu et al. (2025), [LIT-168](../../../record/literature.d/LIT-168.md); Zheng et al. (2025), [LIT-180](../../../record/literature.d/LIT-180.md) — three groups, three defects in GRPO's objective, three published fixes, none of them the same fix. "We ran GRPO" does not say which of these you ran. | Proposed |
 | [SOTA-154](../../../record/practices.d/SOTA-154.md) | Fine-tune with evolution strategies instead of policy-gradient reinforcement learning | Qiu et al. (2025), [LIT-211](../../../record/literature.d/LIT-211.md) — evolution strategies over the full parameter space of a billion-scale LLM, which the field had assumed impossible. +36.4% over base on average against GRPO's +21.3% and PPO's +17.9%, with ES on one fixed hyperparameter set while RL got a sweep per experiment. Filed `Proposed`: two tasks, 8B and below, no deployment. | Proposed |
 | [SOTA-184](../../../record/practices.d/SOTA-184.md) | Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself | Hu et al. (2021), [LIT-046](../../../record/literature.d/LIT-046.md) — [ARXIV-2106.09685](https://arxiv.org/abs/2106.09685). Freeze the pretrained weights and learn a rank-r product BA beside each one, so the trainable parameter count and the optimizer state fall by orders of magnitude and the adapter folds back into the weight at inference. | Active |
+| [SOTA-199](../../../record/practices.d/SOTA-199.md) | Regularize a narrow fine-tune against the pre-fine-tuning model's own samples |  | Active |
+| [SOTA-201](../../../record/practices.d/SOTA-201.md) | Give each pretrained component its own learning rate when fine-tuning a composite model |  | Active |

@@ -13,7 +13,7 @@ history:
     Corrected. The reading recorded the data-fraction result as
     something any claim about delayed generalization needs to know, and
     in the same breath declined to argue with the paper's Rejected
-    status. Filing SOTA-tmpwccgh, which needs this paper, made that
+    status. Filing SOTA-200, which needs this paper, made that
     untenable; LIT-085 is now Active and this note says so.
 tags:
 - analysis-and-evaluation
@@ -150,7 +150,7 @@ small, and a small setting is a limitation to state — this note states it unde
 Limitations — rather than a reason for the attic.
 
 The contradiction became unavoidable when the same session filed
-`SOTA-tmpwccgh` (check whether an emergent capability is a metric artefact),
+`SOTA-200` (check whether an emergent capability is a metric artefact),
 which needs this paper for half of its claim. `ADR-002` does permit an attic
 paper to source a live practice, and that permission is for a paper whose
 *standing* moved while its *result* held. Nothing about this result moved.

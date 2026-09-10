@@ -4,7 +4,7 @@
 
 What the schemes hold, and the rules between them.
 
-15 of 25 decisions. Back to the [full index](../README.md).
+15 of 27 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

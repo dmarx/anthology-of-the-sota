@@ -1,5 +1,8 @@
 ---
+number: 196
 status: Active
+formerly:
+- SOTA-tmpkh4j4
 consensus: emerging
 consensus_note: >-
   One clean measurement of the conflict, in a setting where both metrics
@@ -14,7 +17,7 @@ source:
 implementations: []
 ---
 
-# SOTA-tmpkh4j4: Report zero-shot and in-distribution performance separately; one hyperparameter can move them in opposite directions
+# SOTA-196: Report zero-shot and in-distribution performance separately; one hyperparameter can move them in opposite directions
 
 ## Source
 

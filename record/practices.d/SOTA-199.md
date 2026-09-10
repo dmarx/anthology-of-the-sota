@@ -1,5 +1,8 @@
 ---
+number: 199
 status: Active
+formerly:
+- SOTA-tmptrepp
 consensus: converged
 consensus_note: >-
   The same instrument as the KL-to-reference term every RLHF pipeline runs,
@@ -16,7 +19,7 @@ implementations:
 - DreamBooth
 ---
 
-# SOTA-tmptrepp: Regularize a narrow fine-tune against the pre-fine-tuning model's own samples
+# SOTA-199: Regularize a narrow fine-tune against the pre-fine-tuning model's own samples
 
 ## Source
 

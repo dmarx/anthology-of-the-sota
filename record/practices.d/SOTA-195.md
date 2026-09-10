@@ -1,5 +1,8 @@
 ---
+number: 195
 status: Active
+formerly:
+- SOTA-tmphwawd
 consensus: converged
 consensus_note: >-
   v-prediction is standard in few-step diffusion and in the rectified-flow line
@@ -19,7 +22,7 @@ implementations:
 - Stable Diffusion 2
 ---
 
-# SOTA-tmphwawd: Predict v rather than the noise when the model will be evaluated at low signal-to-noise
+# SOTA-195: Predict v rather than the noise when the model will be evaluated at low signal-to-noise
 
 ## Source
 

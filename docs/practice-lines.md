@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-36 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+39 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 ## From Place BatchNorm after linear/conv layers but before activation functions
 
@@ -57,6 +57,11 @@
 - alongside: [SOTA-034](../record/practices.d/SOTA-034.md) — Use SwiGLU activation for transformers *(Active, contested)*
 - alongside: [SOTA-158](../record/practices.d/SOTA-158.md) — Bound the activation's output range when training in low precision *(Proposed, emerging)*
 
+## From use gradient clipping
+
+- alongside: [SOTA-035](../record/practices.d/SOTA-035.md) — use gradient clipping *(Active, unassessed)*
+- alongside: [SOTA-202](../record/practices.d/SOTA-202.md) — Clamp the prediction to the training range at every step when sampling from a model's own output *(Active, converged)*
+
 ## From Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective
 
 - [SOTA-036](../record/practices.d/SOTA-036.md) — Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective *(Active, unassessed)*
@@ -80,6 +85,15 @@
   - [SOTA-079](../record/practices.d/SOTA-079.md) — Pre-fetch next batch during compute *(Active, unassessed)*
 - alongside: [SOTA-047](../record/practices.d/SOTA-047.md) — Overlap communication with backward pass *(Active, unassessed)*
 - alongside: [SOTA-048](../record/practices.d/SOTA-048.md) — Group small tensors before communication *(Active, unassessed)*
+
+## From Scale attention weights by 1/sqrt(head_dim)
+
+- [SOTA-050](../record/practices.d/SOTA-050.md) — Scale attention weights by 1/sqrt(head_dim) *(Active, unassessed)*
+  - [SOTA-192](../record/practices.d/SOTA-192.md) — Normalize the queries and keys before the attention dot product *(Active, converged)*
+- [SOTA-165](../record/practices.d/SOTA-165.md) — Precondition the gradient with matrices rather than entrywise scaling *(Active, emerging)*
+  - [SOTA-121](../record/practices.d/SOTA-121.md) — Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW *(Active, unassessed)*
+    - [SOTA-131](../record/practices.d/SOTA-131.md) — When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip) *(Active, unassessed)*
+- alongside: [SOTA-168](../record/practices.d/SOTA-168.md) — Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself *(Proposed, unreplicated)*
 
 ## From Save optimizer state every N epochs (N ~ sqrt(total_epochs))
 
@@ -139,6 +153,11 @@
 - alongside: [SOTA-089](../record/practices.d/SOTA-089.md) — Align tensor dimensions to hardware boundaries *(Active, unassessed)*
 - alongside: [SOTA-108](../record/practices.d/SOTA-108.md) — Pad attention masks to block boundaries for better hardware utilization *(Rejected, unassessed)*
 
+## From Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`
+
+- [SOTA-097](../record/practices.d/SOTA-097.md) — Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)` *(Active, unassessed)*
+  - [SOTA-198](../record/practices.d/SOTA-198.md) — Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run *(Active, emerging)*
+
 ## From Implement dynamic temperature scaling for mixing
 
 - alongside: [SOTA-102](../record/practices.d/SOTA-102.md) — Implement dynamic temperature scaling for mixing *(Superseded, unassessed)*
@@ -154,13 +173,6 @@
 
 - alongside: [SOTA-109](../record/practices.d/SOTA-109.md) — Prefer GQA to MQA or MHA *(Active, unassessed)*
 - alongside: [SOTA-147](../record/practices.d/SOTA-147.md) — Compress the KV cache into one shared latent vector instead of sharing key and value heads *(Active, emerging)*
-
-## From Precondition the gradient with matrices rather than entrywise scaling
-
-- [SOTA-165](../record/practices.d/SOTA-165.md) — Precondition the gradient with matrices rather than entrywise scaling *(Active, emerging)*
-  - [SOTA-121](../record/practices.d/SOTA-121.md) — Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW *(Active, unassessed)*
-    - [SOTA-131](../record/practices.d/SOTA-131.md) — When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip) *(Active, unassessed)*
-- alongside: [SOTA-168](../record/practices.d/SOTA-168.md) — Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself *(Proposed, unreplicated)*
 
 ## From At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width
 
@@ -218,3 +230,8 @@
 
 - alongside: [SOTA-182](../record/practices.d/SOTA-182.md) — Compute the normalization statistic without centering (RMSNorm) *(Active, universal)*
 - alongside: [SOTA-191](../record/practices.d/SOTA-191.md) — Consider removing LayerNorm's learnable gain and bias rather than tuning them *(Proposed, contested)*
+
+## From Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal
+
+- [SOTA-188](../record/practices.d/SOTA-188.md) — Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal *(Active, converged)*
+  - [SOTA-195](../record/practices.d/SOTA-195.md) — Predict v rather than the noise when the model will be evaluated at low signal-to-noise *(Active, converged)*

@@ -36,7 +36,7 @@ implementations:
 summary: >-
   Kaplan et al. (2020), [LIT-028](../literature.d/LIT-028.md) — [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361). Equation 1.7 gives B ∝ C^(α_C/α_B) = C^0.24, from α_C ≈ 0.050 and α_B ≈ 0.21.
 extended_by:
-- SOTA-tmptd4ui
+- SOTA-198
 ---
 
 # SOTA-097: Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`

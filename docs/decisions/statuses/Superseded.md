@@ -4,8 +4,9 @@
 
 **Superseded** — no longer in force because something replaced it; the successor is named in the field, not in the prose.
 
-1 of 25 decisions. Back to the [full index](../README.md).
+2 of 27 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [ADR-006](../../../record/decisions.d/ADR-006.md) | Generate the registry from the record instead of checking it in | `registry.yaml` and `REGISTRY.md` are already derived from `research.yaml` and committed as though they were sources. Once the record is ground truth they should be built from it as artifacts for the frontend. Proposed, not Active: the inversion is phase 4 and the frontend contract has not been checked yet. | Superseded — by [ADR-008](../../../record/decisions.d/ADR-008.md); by [ADR-008](../../../record/decisions.d/ADR-008.md), which retires the pipeline rather than inverting it |
+| [ADR-020](../../../record/decisions.d/ADR-020.md) | The recommendations are scoped by kind of claim, not by domain |  | Superseded — by [ADR-026](../../../record/decisions.d/ADR-026.md); The decision below — scope by kind of claim, not by domain — is carried forward unchanged. What is superseded is the alternative it rejected: it declined to add `generative-modeling` and `vision-and-graphics` to the practice vocabulary, and that paragraph was being cited as a scope boundary, which is the exact thing this ADR was written to remove. |

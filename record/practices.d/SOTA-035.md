@@ -12,7 +12,7 @@ source:
 summary: >-
   Pascanu et al. (2012), [LIT-037](../literature.d/LIT-037.md) — [ARXIV-1211.5063](https://arxiv.org/abs/1211.5063).
 compared_against:
-- SOTA-tmpyfvex
+- SOTA-202
 ---
 
 # SOTA-035: use gradient clipping

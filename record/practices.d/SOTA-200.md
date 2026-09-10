@@ -1,5 +1,8 @@
 ---
+number: 200
 status: Active
+formerly:
+- SOTA-tmpwccgh
 consensus: emerging
 consensus_note: >-
   That some emergence is a metric artefact is well evidenced and widely cited.
@@ -16,7 +19,7 @@ source:
 implementations: []
 ---
 
-# SOTA-tmpwccgh: Check whether an emergent capability is a metric artefact before believing it
+# SOTA-200: Check whether an emergent capability is a metric artefact before believing it
 
 ## Source
 

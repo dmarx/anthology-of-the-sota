@@ -2,10 +2,11 @@
 
 # ADRs tagged `ontology`
 
-3 of 25 decisions. Back to the [full index](../README.md).
+4 of 27 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [ADR-020](../../../record/decisions.d/ADR-020.md) | The recommendations are scoped by kind of claim, not by domain |  | Active |
+| [ADR-020](../../../record/decisions.d/ADR-020.md) | The recommendations are scoped by kind of claim, not by domain |  | Superseded — by [ADR-026](../../../record/decisions.d/ADR-026.md); The decision below — scope by kind of claim, not by domain — is carried forward unchanged. What is superseded is the alternative it rejected: it declined to add `generative-modeling` and `vision-and-graphics` to the practice vocabulary, and that paragraph was being cited as a scope boundary, which is the exact thing this ADR was written to remove. |
 | [ADR-021](../../../record/decisions.d/ADR-021.md) v2 | The practice vocabulary takes the kind-of-claim topics the reading list already has |  | Active |
 | [ADR-025](../../../record/decisions.d/ADR-025.md) v2 | A third scheme: NOTE, the structured reading of a paper | A LIT note says what a paper's standing in the anthology is. It has never said what the paper contains, and the corpus now holds two demonstrations of what that costs. NOTE is a third scheme: one document per paper actually read, carrying the contribution, the assumptions, the theorem-level results, the claims with their strength, and the recommendations derived — with the status recording how deeply it was read. | Active |
+| [ADR-026](../../../record/decisions.d/ADR-026.md) | One topic vocabulary: the practice registry takes the same thirteen the reading list has | [ADR-020](../../../record/decisions.d/ADR-020.md) scoped the recommendations by kind of claim rather than by domain, and that decision stands. Its rejected alternative does not: it declined to add `generative-modeling` and `vision-and-graphics` to the practice vocabulary on a browsing argument that the evidence since has not borne out, and that reads to a later reader as a scope boundary — the exact thing [ADR-020](../../../record/decisions.d/ADR-020.md) was written to remove. Adds both, making the two vocabularies identical. | Active |

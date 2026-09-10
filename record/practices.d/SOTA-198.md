@@ -1,5 +1,8 @@
 ---
+number: 198
 status: Active
+formerly:
+- SOTA-tmptd4ui
 consensus: emerging
 consensus_note: >-
   The quantity is universally cited and the measurement is rarely performed —
@@ -19,7 +22,7 @@ implementations:
 - MT-NLG
 ---
 
-# SOTA-tmptd4ui: Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run
+# SOTA-198: Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run
 
 ## Source
 

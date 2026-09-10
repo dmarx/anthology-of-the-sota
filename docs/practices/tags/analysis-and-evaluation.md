@@ -4,11 +4,11 @@
 
 How to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound.
 
-4 of 195 SOTA documents. Back to the [full index](../README.md).
+4 of 202 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [SOTA-tmpdl6gb](../../../record/practices.d/SOTA-tmpdl6gb.md) | When an objective arrives with its own dataset, state the composition before crediting the objective |  | Active |
-| [SOTA-tmpkh4j4](../../../record/practices.d/SOTA-tmpkh4j4.md) | Report zero-shot and in-distribution performance separately; one hyperparameter can move them in opposite directions |  | Active |
-| [SOTA-tmpmx5mv](../../../record/practices.d/SOTA-tmpmx5mv.md) | Account for test-set proximity to the training data when evaluating, and state your contamination exposure |  | Active |
-| [SOTA-tmpwccgh](../../../record/practices.d/SOTA-tmpwccgh.md) | Check whether an emergent capability is a metric artefact before believing it |  | Active |
+| [SOTA-194](../../../record/practices.d/SOTA-194.md) | When an objective arrives with its own dataset, state the composition before crediting the objective |  | Active |
+| [SOTA-196](../../../record/practices.d/SOTA-196.md) | Report zero-shot and in-distribution performance separately; one hyperparameter can move them in opposite directions |  | Active |
+| [SOTA-197](../../../record/practices.d/SOTA-197.md) | Account for test-set proximity to the training data when evaluating, and state your contamination exposure |  | Active |
+| [SOTA-200](../../../record/practices.d/SOTA-200.md) | Check whether an emergent capability is a metric artefact before believing it |  | Active |

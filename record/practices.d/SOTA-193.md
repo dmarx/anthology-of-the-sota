@@ -1,5 +1,8 @@
 ---
+number: 193
 status: Proposed
+formerly:
+- SOTA-tmpbqbcf
 promote_when: >-
   An ablation. One training run at scale, with and without the lowered β₂,
   reporting spike frequency and final loss — from anybody. The value is widely
@@ -21,7 +24,7 @@ implementations:
 - MT-NLG
 ---
 
-# SOTA-tmpbqbcf: Lower Adam's second-moment decay when the loss spikes, before reaching for the learning rate
+# SOTA-193: Lower Adam's second-moment decay when the loss spikes, before reaching for the learning rate
 
 ## Source
 

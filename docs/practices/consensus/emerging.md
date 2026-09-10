@@ -4,7 +4,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-16 of 191 SOTA documents. Back to the [full index](../README.md).
+21 of 202 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -24,3 +24,8 @@
 | [SOTA-181](../../../record/practices.d/SOTA-181.md) | Shard the sequence across devices in a ring and overlap the key-value exchange with the attention it feeds | Liu et al. (2023), [LIT-206](../../../record/literature.d/LIT-206.md) — compute attention and the feedforward blockwise, distribute the blocks across devices in a ring, and pass each key/value block to the neighbour while computing on the one you hold. The communication is fully overlapped with the computation, so sequences scale with device count — exactly, with no approximation and no added overhead. | Active |
 | [SOTA-183](../../../record/practices.d/SOTA-183.md) | Generate the harmlessness preference labels with the model itself, against a written set of principles | Bai et al. (2022), [LIT-082](../../../record/literature.d/LIT-082.md) — [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). Replace the human harmlessness comparisons with model-generated ones: the model critiques and revises its own responses against an explicit list of principles, and the preference model trains on that. | Active |
 | [SOTA-186](../../../record/practices.d/SOTA-186.md) | Bootstrap a large annotation set with the model you are training, staging the automation as it improves |  | Active |
+| [SOTA-194](../../../record/practices.d/SOTA-194.md) | When an objective arrives with its own dataset, state the composition before crediting the objective |  | Active |
+| [SOTA-196](../../../record/practices.d/SOTA-196.md) | Report zero-shot and in-distribution performance separately; one hyperparameter can move them in opposite directions |  | Active |
+| [SOTA-198](../../../record/practices.d/SOTA-198.md) | Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run |  | Active |
+| [SOTA-200](../../../record/practices.d/SOTA-200.md) | Check whether an emergent capability is a metric artefact before believing it |  | Active |
+| [SOTA-201](../../../record/practices.d/SOTA-201.md) | Give each pretrained component its own learning rate when fine-tuning a composite model |  | Active |

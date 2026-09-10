@@ -1,5 +1,8 @@
 ---
+number: 194
 status: Active
+formerly:
+- SOTA-tmpdl6gb
 consensus: emerging
 consensus_note: >-
   Stated as a discipline by papers careful enough to notice the confound in
@@ -15,7 +18,7 @@ source:
 implementations: []
 ---
 
-# SOTA-tmpdl6gb: When an objective arrives with its own dataset, state the composition before crediting the objective
+# SOTA-194: When an objective arrives with its own dataset, state the composition before crediting the objective
 
 ## Source
 

@@ -4,7 +4,7 @@
 
 How the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-6 of 191 SOTA documents. Back to the [full index](../README.md).
+6 of 202 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -13,4 +13,4 @@ How the signal is encoded before the expensive network sees it — tokenizers an
 | [SOTA-151](../../../record/practices.d/SOTA-151.md) v2 | Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length | Chen et al. (2023) and Peng et al. (2023) — RoPE does not extrapolate, and fine-tuning at the longer length barely helps: more than 10000 batches moved LLaMA's effective window from 2048 to 2560. Rescaling the position indices so they land back in the trained range reaches 32× that in under 1000 steps. YaRN rescales per wavelength rather than uniformly and gets to 128k with 10× fewer tokens. | Active |
 | [SOTA-153](../../../record/practices.d/SOTA-153.md) v2 | Drop positional encoding from the global-attention layers of a hybrid and let the cheap local layers carry position | Yang et al. (2025), Puvvada et al. (2025) and the Kimi Team (2025) — in a model that already interleaves full attention with a cheap local mixer, the full-attention layers do not need a positional encoding: the local layers carry position and recency, and the global layers do retrieval better without one. Three groups, three different local mechanisms, the same one-global-per-three-local layout. The payoff is that extending the context needs no RoPE rescaling, because there is no positional parameter left to rescale. | Active |
 | [SOTA-179](../../../record/practices.d/SOTA-179.md) | Truncate the rotary encoding's low frequencies rather than rescaling its base | Barbero et al. (2024), [LIT-210](../../../record/literature.d/LIT-210.md) — RoPE's high frequencies build positional attention heads and its low frequencies carry semantics that provably cannot stay robust over long context. Keeping a fraction p of the frequencies holds performance and at 2B improves it; p=1 is RoPE and p=0 is NoPE, so the practice is a dial between two things the record already holds. | Proposed |
-| [SOTA-187](../../../record/practices.d/SOTA-187.md) | Train the generative model in a learned compressed latent, not at full resolution |  | Active |
+| [SOTA-187](../../../record/practices.d/SOTA-187.md) v3 | Train the generative model in a learned compressed latent, not at full resolution |  | Active |

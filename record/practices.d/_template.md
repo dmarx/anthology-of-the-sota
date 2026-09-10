@@ -29,7 +29,7 @@ title: The thing you should do, in the imperative
 version: 1
 
 # Exactly one of the thirteen in tags.yaml, enforced by luria.toml — the same
-# thirteen the reading list uses (ADR-tmpdrbma). Secondary tags beyond that are
+# thirteen the reading list uses (ADR-026). Secondary tags beyond that are
 # unconstrained: add one when the practice genuinely belongs on a second page,
 # not to be thorough.
 #

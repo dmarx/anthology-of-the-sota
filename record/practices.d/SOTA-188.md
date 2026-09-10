@@ -36,7 +36,7 @@ implementations:
 - EDM
 - Stable Diffusion 3
 extended_by:
-- SOTA-tmphwawd
+- SOTA-195
 ---
 
 # SOTA-188: Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal
@@ -97,7 +97,7 @@ stability condition empirically and gives three parameterizations meeting it.
 Whether the two conditions are the same or merely close is not written down
 anywhere.
 
-The practical consequence is [SOTA-tmphwawd](SOTA-tmphwawd.md) — predict `v` — which is what people
+The practical consequence is [SOTA-195](SOTA-195.md) — predict `v` — which is what people
 type, and which this practice's derivation explains.
 
 ## Conditions

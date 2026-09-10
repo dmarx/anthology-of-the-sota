@@ -1,5 +1,8 @@
 ---
+number: 201
 status: Active
+formerly:
+- SOTA-tmpwf9e5
 consensus: emerging
 consensus_note: >-
   Widely done in practice as a heuristic — discriminative fine-tuning, layer-wise
@@ -16,7 +19,7 @@ implementations:
 - OWL-ViT
 ---
 
-# SOTA-tmpwf9e5: Give each pretrained component its own learning rate when fine-tuning a composite model
+# SOTA-201: Give each pretrained component its own learning rate when fine-tuning a composite model
 
 ## Source
 
@@ -51,7 +54,7 @@ one corner, freezing is the other, and the answer is neither.
 The same sweep moves `AP^OI` — in-distribution performance — in the **opposite**
 direction: the shared-rate setting that collapses zero-shot transfer improves
 it. So the component learning rate is a dial between preservation and fitting,
-and picking it requires knowing which you want. See [SOTA-tmpkh4j4](SOTA-tmpkh4j4.md), which is
+and picking it requires knowing which you want. See [SOTA-196](SOTA-196.md), which is
 that finding on its own.
 
 ## Relation to the other ways of protecting a pretrained part
@@ -61,7 +64,7 @@ points:
 
 - **This** — turn the learning rate down on what you do not want to move.
   Costs one hyperparameter per component.
-- **[SOTA-tmptrepp](SOTA-tmptrepp.md)** — regularize against the pre-fine-tuning model's own
+- **[SOTA-199](SOTA-199.md)** — regularize against the pre-fine-tuning model's own
   samples. Costs a loss term and a sampling pass.
 - **[SOTA-184](SOTA-184.md)** — do not touch the weights at all; train a low-rank update.
 

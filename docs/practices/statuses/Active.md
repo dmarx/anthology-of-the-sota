@@ -4,7 +4,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-145 of 202 SOTA documents. Back to the [full index](../README.md).
+149 of 207 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -49,7 +49,7 @@
 | [SOTA-047](../../../record/practices.d/SOTA-047.md) | Overlap communication with backward pass | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Active |
 | [SOTA-048](../../../record/practices.d/SOTA-048.md) | Group small tensors before communication | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Active |
 | [SOTA-050](../../../record/practices.d/SOTA-050.md) | Scale attention weights by 1/sqrt(head_dim) | Vaswani et al. (2017), [LIT-008](../../../record/literature.d/LIT-008.md) — [ARXIV-1706.03762](https://arxiv.org/abs/1706.03762). | Active |
-| [SOTA-051](../../../record/practices.d/SOTA-051.md) v2 | Initialize final layer weights near zero | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
+| [SOTA-051](../../../record/practices.d/SOTA-051.md) v3 | Initialize final layer weights near zero | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
 | [SOTA-052](../../../record/practices.d/SOTA-052.md) | Use smaller variance for deep networks | Wang et al. (2022), [LIT-084](../../../record/literature.d/LIT-084.md) — [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555). | Active |
 | [SOTA-053](../../../record/practices.d/SOTA-053.md) | Special handling for gated architectures | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
 | [SOTA-054](../../../record/practices.d/SOTA-054.md) v2 | Derive the checkpoint interval from online profiling and adapt it at runtime against an overhead bound | Mohan et al. (2021), [LIT-059](../../../record/literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan. | Active |
@@ -153,3 +153,7 @@
 | [SOTA-200](../../../record/practices.d/SOTA-200.md) | Check whether an emergent capability is a metric artefact before believing it |  | Active |
 | [SOTA-201](../../../record/practices.d/SOTA-201.md) | Give each pretrained component its own learning rate when fine-tuning a composite model |  | Active |
 | [SOTA-202](../../../record/practices.d/SOTA-202.md) | Clamp the prediction to the training range at every step when sampling from a model's own output |  | Active |
+| [SOTA-203](../../../record/practices.d/SOTA-203.md) | Sample a diffusion model with a higher-order ODE solver on the weights you already trained | Lu et al. (2022), [LIT-076](../../../record/literature.d/LIT-076.md) — the diffusion ODE is semi-linear, so solve the linear part exactly and approximate only the neural integral. 10-20 function evaluations, no retraining. Rests on [LIT-038](../../../record/literature.d/LIT-038.md), which established that the sampler is not fixed by the training objective. | Active |
+| [SOTA-205](../../../record/practices.d/SOTA-205.md) | Replace a large coordinate network with a compact explicit structure and a small decoder | Four independent groups, three structures. Where a field is queried pointwise and the signal is spatially sparse, the capacity belongs in an addressable structure that training optimises directly, not in a network evaluated per point. | Active |
+| [SOTA-206](../../../record/practices.d/SOTA-206.md) | Keep a multi-step sampling option in a few-step generative model | Song et al. (2023), [LIT-093](../../../record/literature.d/LIT-093.md). A one-step model that cannot spend more compute has no quality dial: whatever it produces is what you get. Consistency models trade compute for quality at inference without retraining, and that property is worth preserving by design. | Active |
+| [SOTA-207](../../../record/practices.d/SOTA-207.md) | Use the deterministic sampler when the noise input has to mean something | Song et al. (2020), [LIT-038](../../../record/literature.d/LIT-038.md). A stochastic sampler injects fresh noise at every step, so nothing about the starting point survives to the output. Setting the family's stochasticity to zero makes the initial noise a latent code you can interpolate in and invert to. | Active |

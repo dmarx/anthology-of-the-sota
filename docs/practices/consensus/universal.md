@@ -4,7 +4,7 @@
 
 **Assumed** — not doing it is what needs justifying.
 
-6 of 202 SOTA documents. Back to the [full index](../README.md).
+7 of 207 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -14,3 +14,4 @@
 | [SOTA-182](../../../record/practices.d/SOTA-182.md) | Compute the normalization statistic without centering (RMSNorm) | Zhang and Sennrich (2019), [LIT-023](../../../record/literature.d/LIT-023.md) — [ARXIV-1910.07467](https://arxiv.org/abs/1910.07467). Drop the mean subtraction from layer normalization and rescale by the root mean square alone. | Active |
 | [SOTA-184](../../../record/practices.d/SOTA-184.md) | Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself | Hu et al. (2021), [LIT-046](../../../record/literature.d/LIT-046.md) — [ARXIV-2106.09685](https://arxiv.org/abs/2106.09685). Freeze the pretrained weights and learn a rank-r product BA beside each one, so the trainable parameter count and the optimizer state fall by orders of magnitude and the adapter folds back into the weight at inference. | Active |
 | [SOTA-187](../../../record/practices.d/SOTA-187.md) v3 | Train the generative model in a learned compressed latent, not at full resolution |  | Active |
+| [SOTA-203](../../../record/practices.d/SOTA-203.md) | Sample a diffusion model with a higher-order ODE solver on the weights you already trained | Lu et al. (2022), [LIT-076](../../../record/literature.d/LIT-076.md) — the diffusion ODE is semi-linear, so solve the linear part exactly and approximate only the neural integral. 10-20 function evaluations, no retraining. Rests on [LIT-038](../../../record/literature.d/LIT-038.md), which established that the sampler is not fixed by the training objective. | Active |

@@ -1,5 +1,8 @@
 ---
+number: 205
 status: Active
+formerly:
+- SOTA-tmpjpcc8
 consensus: converged
 consensus_note: >-
   Four papers in the record, three different explicit structures — a hash
@@ -30,7 +33,7 @@ summary: >-
   evaluated per point.
 ---
 
-# SOTA-tmpjpcc8: Replace a large coordinate network with a compact explicit structure and a small decoder
+# SOTA-205: Replace a large coordinate network with a compact explicit structure and a small decoder
 
 ## Source
 

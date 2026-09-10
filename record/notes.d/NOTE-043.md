@@ -129,7 +129,7 @@ different route, with the schedule chosen rather than shown irrelevant.
 **Nothing is sourced to this paper and this reading files no practice.**
 
 > **Overtaken by the [#121](https://github.com/dmarx/anthology-of-the-sota/issues/121) audit.** R1, R2 and R4 are now
-> [SOTA-tmp2a5h0](../practices.d/SOTA-tmp2a5h0.md), for which this paper is the primary source. The rest of
+> [SOTA-203](../practices.d/SOTA-203.md), for which this paper is the primary source. The rest of
 > this reading stands as written.
 
 The reading places `SOTA-188`'s source in context. `LIT-075`'s reading records

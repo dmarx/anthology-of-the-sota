@@ -4,7 +4,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-21 of 202 SOTA documents. Back to the [full index](../README.md).
+22 of 207 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -29,3 +29,4 @@
 | [SOTA-198](../../../record/practices.d/SOTA-198.md) | Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run |  | Active |
 | [SOTA-200](../../../record/practices.d/SOTA-200.md) | Check whether an emergent capability is a metric artefact before believing it |  | Active |
 | [SOTA-201](../../../record/practices.d/SOTA-201.md) | Give each pretrained component its own learning rate when fine-tuning a composite model |  | Active |
+| [SOTA-206](../../../record/practices.d/SOTA-206.md) | Keep a multi-step sampling option in a few-step generative model | Song et al. (2023), [LIT-093](../../../record/literature.d/LIT-093.md). A one-step model that cannot spend more compute has no quality dial: whatever it produces is what you get. Consistency models trade compute for quality at inference without retraining, and that property is worth preserving by design. | Active |

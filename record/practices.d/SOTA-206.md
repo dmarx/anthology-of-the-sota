@@ -1,5 +1,8 @@
 ---
+number: 206
 status: Active
+formerly:
+- SOTA-tmpo7on7
 consensus: emerging
 consensus_note: >-
   The few-step generative line has settled on models that expose a step count
@@ -20,7 +23,7 @@ summary: >-
   property is worth preserving by design.
 ---
 
-# SOTA-tmpo7on7: Keep a multi-step sampling option in a few-step generative model
+# SOTA-206: Keep a multi-step sampling option in a few-step generative model
 
 ## Source
 
@@ -57,7 +60,7 @@ model" loses the part that makes it a model family.
 
 ## The other route
 
-[SOTA-tmp2a5h0](SOTA-tmp2a5h0.md) gets a low step count from a better solver and costs no
+[SOTA-203](SOTA-203.md) gets a low step count from a better solver and costs no
 training at all. This one costs a training run and reaches step counts a solver
 cannot. Nothing in the record compares them, and the choice is currently made
 by which asset you have rather than by evidence.

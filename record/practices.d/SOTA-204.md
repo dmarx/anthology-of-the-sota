@@ -1,5 +1,8 @@
 ---
+number: 204
 status: Proposed
+formerly:
+- SOTA-tmpbgyvj
 promote_when: >-
   An independent group reporting an ablation in which a coarse-to-fine
   discretisation schedule is compared against a fixed discretisation on the
@@ -19,7 +22,7 @@ summary: >-
   but noisy one later.
 ---
 
-# SOTA-tmpbgyvj: Anneal a discretisation from coarse to fine over training rather than fixing it
+# SOTA-204: Anneal a discretisation from coarse to fine over training rather than fixing it
 
 ## Source
 

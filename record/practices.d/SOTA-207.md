@@ -1,5 +1,8 @@
 ---
+number: 207
 status: Active
+formerly:
+- SOTA-tmpt7rzg
 consensus: converged
 consensus_note: >-
   DDIM inversion is the standard entry point for diffusion image editing and
@@ -20,7 +23,7 @@ summary: >-
   code you can interpolate in and invert to.
 ---
 
-# SOTA-tmpt7rzg: Use the deterministic sampler when the noise input has to mean something
+# SOTA-207: Use the deterministic sampler when the noise input has to mean something
 
 ## Source
 

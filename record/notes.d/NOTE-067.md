@@ -125,9 +125,9 @@ carried the consequence without the cause.
 **Nothing is sourced to this paper and this reading files no practice.**
 
 > **Overtaken by the [#121](https://github.com/dmarx/anthology-of-the-sota/issues/121) audit.** That sentence was this pass's policy, not a
-> judgement about the paper. R2 is now [SOTA-tmpt7rzg](../practices.d/SOTA-tmpt7rzg.md) and the
+> judgement about the paper. R2 is now [SOTA-207](../practices.d/SOTA-207.md) and the
 > sampler/objective separation is corroborating source on
-> [SOTA-tmp2a5h0](../practices.d/SOTA-tmp2a5h0.md). The rest of this reading stands as written.
+> [SOTA-203](../practices.d/SOTA-203.md). The rest of this reading stands as written.
 
 The reading fixes the document, which was substantially about a **different
 paper**. Two of its four takeaways — *"continuous-time formulation of diffusion

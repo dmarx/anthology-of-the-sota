@@ -4,7 +4,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-32 of 202 SOTA documents. Back to the [full index](../README.md).
+33 of 207 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -40,3 +40,4 @@
 | [SOTA-190](../../../record/practices.d/SOTA-190.md) | Increase depth before any other dimension when scaling a transformer | Tay et al. (2021), [LIT-052](../../../record/literature.d/LIT-052.md) — the DeepNarrow strategy. Small 16L matches T5-Base downstream at 60% of the parameters, 63% of the FLOPs and 40% faster; the limit is parallelism rather than quality. | Proposed |
 | [SOTA-191](../../../record/practices.d/SOTA-191.md) v2 | Consider removing LayerNorm's learnable gain and bias rather than tuning them | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — the bias and gain increase overfitting risk and "do not work in most cases"; LayerNorm-simple, with both removed, beats LayerNorm on four datasets and reaches state of the art on En-Vi. | Proposed |
 | [SOTA-193](../../../record/practices.d/SOTA-193.md) | Lower Adam's second-moment decay when the loss spikes, before reaching for the learning rate |  | Proposed |
+| [SOTA-204](../../../record/practices.d/SOTA-204.md) | Anneal a discretisation from coarse to fine over training rather than fixing it | Song et al. (2023), [LIT-093](../../../record/literature.d/LIT-093.md). Where a training loss approximates a continuous target through a step count, that count is a bias/variance dial: few steps give a biased but low-variance target early, many steps a faithful but noisy one later. | Proposed |

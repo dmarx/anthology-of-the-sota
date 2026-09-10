@@ -135,10 +135,10 @@ not depend on a diffusion model existing.
 
 **Nothing is sourced to this paper and this reading files no practice.**
 
-<!-- inactive-ok: SOTA-tmpbgyvj — Proposed, and named here as Proposed: this is the practice filed from R2, and its status is the point being made -->
-> **Overtaken by the [#121](https://github.com/dmarx/anthology-of-the-sota/issues/121) audit.** R2 is now [SOTA-tmpbgyvj](../practices.d/SOTA-tmpbgyvj.md)
+<!-- inactive-ok: SOTA-204 — Proposed, and named here as Proposed: this is the practice filed from R2, and its status is the point being made -->
+> **Overtaken by the [#121](https://github.com/dmarx/anthology-of-the-sota/issues/121) audit.** R2 is now [SOTA-204](../practices.d/SOTA-204.md)
 > (`Proposed`, on the grounds this reading gives — one instance of a general
-> mechanism) and R3 is [SOTA-tmpo7on7](../practices.d/SOTA-tmpo7on7.md). The rest of this reading stands as
+> mechanism) and R3 is [SOTA-206](../practices.d/SOTA-206.md). The rest of this reading stands as
 > written.
 
 R2 is the reading's transferable finding and the record has nothing like it.

@@ -4,7 +4,7 @@
 
 **Agreed** — the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately.
 
-13 of 202 SOTA documents. Back to the [full index](../README.md).
+15 of 207 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,3 +21,5 @@
 | [SOTA-197](../../../record/practices.d/SOTA-197.md) | Account for test-set proximity to the training data when evaluating, and state your contamination exposure |  | Active |
 | [SOTA-199](../../../record/practices.d/SOTA-199.md) | Regularize a narrow fine-tune against the pre-fine-tuning model's own samples |  | Active |
 | [SOTA-202](../../../record/practices.d/SOTA-202.md) | Clamp the prediction to the training range at every step when sampling from a model's own output |  | Active |
+| [SOTA-205](../../../record/practices.d/SOTA-205.md) | Replace a large coordinate network with a compact explicit structure and a small decoder | Four independent groups, three structures. Where a field is queried pointwise and the signal is spatially sparse, the capacity belongs in an addressable structure that training optimises directly, not in a network evaluated per point. | Active |
+| [SOTA-207](../../../record/practices.d/SOTA-207.md) | Use the deterministic sampler when the noise input has to mean something | Song et al. (2020), [LIT-038](../../../record/literature.d/LIT-038.md). A stochastic sampler injects fresh noise at every step, so nothing about the starting point survives to the output. Setting the family's stochasticity to zero makes the initial noise a latent code you can interpolate in and invert to. | Active |

@@ -4,7 +4,7 @@
 
 Learning-rate schedules, batch size, optimizers, training dynamics, scaling strategies.
 
-44 of 202 SOTA documents. Back to the [full index](../README.md).
+45 of 207 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -52,3 +52,4 @@ Learning-rate schedules, batch size, optimizers, training dynamics, scaling stra
 | [SOTA-195](../../../record/practices.d/SOTA-195.md) | Predict v rather than the noise when the model will be evaluated at low signal-to-noise |  | Active |
 | [SOTA-198](../../../record/practices.d/SOTA-198.md) | Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run |  | Active |
 | [SOTA-202](../../../record/practices.d/SOTA-202.md) | Clamp the prediction to the training range at every step when sampling from a model's own output |  | Active |
+| [SOTA-204](../../../record/practices.d/SOTA-204.md) | Anneal a discretisation from coarse to fine over training rather than fixing it | Song et al. (2023), [LIT-093](../../../record/literature.d/LIT-093.md). Where a training loss approximates a continuous target through a step count, that count is a bias/variance dial: few steps give a biased but low-variance target early, many steps a faithful but noisy one later. | Proposed |

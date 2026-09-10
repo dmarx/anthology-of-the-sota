@@ -1,5 +1,8 @@
 ---
+number: 203
 status: Active
+formerly:
+- SOTA-tmp2a5h0
 consensus: universal
 consensus_note: >-
   Every production diffusion pipeline ships a solver of this family as its
@@ -24,7 +27,7 @@ summary: >-
   established that the sampler is not fixed by the training objective.
 ---
 
-# SOTA-tmp2a5h0: Sample a diffusion model with a higher-order ODE solver on the weights you already trained
+# SOTA-203: Sample a diffusion model with a higher-order ODE solver on the weights you already trained
 
 ## Source
 

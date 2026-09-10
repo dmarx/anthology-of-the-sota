@@ -2,7 +2,7 @@
 number: 25
 status: 'Active'
 title: 'Initialize the LayerNorm gain to 1'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-09'
@@ -14,10 +14,17 @@ history:
     LIT-005, because LIT-025 does not recommend setting the gain — it
     argues the gain should be removed, and that argument is now filed as
     its own practice. LIT-005 is where the gain is defined.
+- version: 3
+  date: '2026-09-10'
+  note: >-
+    Corrected `published:`, which is derived from the primary source and
+    had gone stale: LIT-025's date survived the #114 re-source to
+    LIT-005. Found by the #119 backfill. The recommendation and the
+    source list are unchanged.
 tags:
 - model-stability
 date: '2026-08-24'
-published: '2019-11-01'
+published: '2016-07-01'
 source:
 # LIT-005 defines the gain; identity is the initialisation its formulation
 # implies. LIT-025 was the source until #114 and argues the opposite —

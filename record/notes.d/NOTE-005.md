@@ -9,6 +9,7 @@ version: 1
 tags:
 - attention-techniques
 date: '2026-09-09'
+published: '2022-05-01'
 summary: >-
   Attention is bounded by HBM traffic rather than FLOPs. Tiling to on-chip SRAM and recomputing the attention matrix in the backward pass gives exact attention in Θ(N²d²M⁻¹) HBM accesses against standard attention's Θ(Nd + N²) — and Proposition 3 proves no exact algorithm beats that across all SRAM sizes.
 ---

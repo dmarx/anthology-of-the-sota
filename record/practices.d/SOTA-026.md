@@ -2,7 +2,7 @@
 number: 26
 status: 'Active'
 title: 'Initialize LayerNorm bias to 0'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-09'
@@ -11,10 +11,17 @@ history:
     recommend setting the bias; it argues the bias should be removed, and
     that argument is now its own practice. LIT-005 is where the bias is
     defined. The recommendation is unchanged.
+- version: 3
+  date: '2026-09-10'
+  note: >-
+    Corrected `published:`, which is derived from the primary source and
+    had gone stale: LIT-025's date survived the #114 re-source to
+    LIT-005. Found by the #119 backfill. The recommendation and the
+    source list are unchanged.
 tags:
 - model-stability
 date: '2026-08-24'
-published: '2019-11-01'
+published: '2016-07-01'
 source:
 # LIT-005 defines the bias. LIT-025 was the source until #114 and argues
 # the opposite — see the body.

@@ -9,6 +9,7 @@ version: 1
 tags:
 - vision-and-graphics
 date: '2026-09-09'
+published: '2022-12-01'
 summary: >-
   Cuts NeuS surface reconstruction from about 8 hours to minutes for a static object, and to as little as 20 seconds per frame for a moving sequence. The point of the speedup is what it unlocks: at 8 hours per object, dynamic scenes with thousands of frames are simply not attemptable.
 ---

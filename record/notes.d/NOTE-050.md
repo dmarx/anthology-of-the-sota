@@ -9,6 +9,7 @@ version: 1
 tags:
 - distributed-optimization
 date: '2026-09-09'
+published: '2019-10-01'
 summary: >-
   Drops the synchronous bubble in pipeline parallelism by letting stages run on stale weights, and makes that converge with two corrections — rescale the learning rate by the stage's delay, and approximate the weights the backward pass should have seen. Up to 4.6× the pipeline utilization of GPipe, at up to 2× less weight and optimizer memory than PipeDream.
 ---

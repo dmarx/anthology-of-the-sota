@@ -9,6 +9,7 @@ version: 1
 tags:
 - attention-techniques
 date: '2026-09-09'
+published: '2023-10-01'
 summary: >-
   One sub-quadratic primitive — Monarch matrices — along both sequence length and model dimension. Matches BERT-base/large on GLUE with up to 27% fewer parameters and 9.1× throughput at 4K, and beats ViT-b by 1% at half the parameters. Attention-free, not hybrid.
 ---

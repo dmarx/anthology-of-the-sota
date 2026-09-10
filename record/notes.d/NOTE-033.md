@@ -9,6 +9,7 @@ version: 1
 tags:
 - distributed-optimization
 date: '2026-09-09'
+published: '2022-01-01'
 summary: >-
   The 3D-parallelism report — 8-way tensor, 35-way pipeline, data parallel over 560 DGX A100 nodes — and an unusually complete training recipe, including a batch-size ramp from 32 to 1920 and β₂ lowered to 0.95 to suppress loss spikes. Also the corpus's cleanest artefact of pre-Chinchilla misallocation: 530B parameters trained on 270B tokens.
 ---

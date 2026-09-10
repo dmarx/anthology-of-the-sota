@@ -9,6 +9,7 @@ version: 1
 tags:
 - data-pipeline
 date: '2026-09-09'
+published: '2023-04-01'
 summary: >-
   The data engine is the transferable part. Three stages — assisted-manual, semi-automatic, fully automatic — each stage's labels training the model that produces the next stage's, ending in 1.1B masks. The model and the dataset are built together.
 ---

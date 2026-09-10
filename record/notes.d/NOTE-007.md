@@ -9,6 +9,7 @@ version: 1
 tags:
 - attention-techniques
 date: '2026-09-09'
+published: '2023-07-01'
 summary: >-
   FlashAttention reached only 25–40% of peak FLOPs/s; the loss was work partitioning between thread blocks and warps, not the algorithm. Three changes — fewer non-matmul FLOPs, parallelism over sequence length, better warp partitioning — give ~2× and 50–73% of peak.
 ---

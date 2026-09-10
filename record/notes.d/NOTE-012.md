@@ -9,6 +9,7 @@ version: 1
 tags:
 - training-optimization
 date: '2026-09-09'
+published: '2017-08-01'
 summary: >-
   Linear LR scaling with warm-up is "not general enough and training may diverge". Layer-wise Adaptive Rate Scaling sets a per-layer rate from the ratio of weight norm to gradient norm, reaching AlexNet at batch 8K and ResNet-50 at batch 32K without accuracy loss.
 ---

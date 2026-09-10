@@ -9,6 +9,7 @@ version: 1
 tags:
 - model-stability
 date: '2026-09-09'
+published: '2019-11-01'
 summary: >-
   LayerNorm's benefit is in the backward pass — the derivatives of the mean and variance re-center and re-scale the gradients — not in forward normalization. Its bias and gain increase overfitting risk and "do not work in most cases".
 ---

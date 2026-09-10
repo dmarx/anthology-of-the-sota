@@ -9,6 +9,7 @@ tags:
 - model-stability
 consensus: universal
 date: '2026-09-08'
+published: '2019-10-01'
 source:
 - LIT-023
 implementations:

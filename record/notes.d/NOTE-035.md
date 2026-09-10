@@ -10,6 +10,7 @@ version: 1
 tags:
 - vision-and-graphics
 date: '2026-09-09'
+published: '2020-11-01'
 summary: >-
   The first neural rendering method to decompose a dynamic scene into a scene graph — objects with learned transformations and radiance, described by a single implicit function plus a per-object latent — so novel arrangements can be rendered, not just novel views. Learned from a video alone.
 ---

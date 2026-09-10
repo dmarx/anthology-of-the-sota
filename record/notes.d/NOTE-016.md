@@ -9,6 +9,7 @@ version: 1
 tags:
 - attention-techniques
 date: '2026-09-09'
+published: '2019-11-01'
 summary: >-
   Incremental decoding is bounded by the memory bandwidth of reloading the keys and values, not by arithmetic. Share one key/value head across all query heads: much faster decoding, "only minor quality degradation".
 ---

@@ -9,6 +9,7 @@ version: 1
 tags:
 - model-architecture
 date: '2026-09-09'
+published: '2021-09-01'
 summary: >-
   Model shape, not only model size, determines downstream fine-tuning quality — and the widely adopted T5-Base and T5-Large configurations are Pareto-inefficient. Read in full for [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) after its LIT note was found to describe a different paper.
 ---

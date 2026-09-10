@@ -9,6 +9,7 @@ version: 1
 tags:
 - model-stability
 date: '2026-09-09'
+published: '2017-12-01'
 summary: >-
   Filter normalization makes loss-surface plots comparable across architectures, and under it sharpness correlates with generalization error. Deep networks transition from nearly convex to chaotic; skip connections prevent that transition, which is why they are needed at depth.
 ---

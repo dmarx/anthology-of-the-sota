@@ -2,11 +2,19 @@
 number: 47
 status: 'Active'
 title: 'Overlap communication with backward pass'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-10'
+  note: >-
+    Corrected `published:`, which is derived from the primary source and
+    had gone stale: LIT-051's date survived the re-source to LIT-219.
+    Found by the #119 backfill. The recommendation and the source list
+    are unchanged.
 tags:
 - distributed-optimization
 date: '2026-08-24'
-published: '2020-11-01'
+published: '2020-06-28'
 source:
 # Re-sourced: LIT-051 assumes overlap rather than introducing it. The
 # PyTorch DDP paper names it as one of its three techniques.

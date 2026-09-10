@@ -25,6 +25,7 @@ tags:
 - training-optimization
 consensus: converged
 date: '2026-09-08'
+published: '2022-06-01'
 source:
 - LIT-075
 # LIT-067 states the same requirement four months earlier and empirically:

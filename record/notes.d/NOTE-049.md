@@ -9,6 +9,7 @@ version: 1
 tags:
 - adaptation-and-tuning
 date: '2026-09-09'
+published: '2021-09-01'
 summary: >-
   Replaces hand-written CLIP prompts with continuous context vectors learned end-to-end while every pretrained parameter stays frozen. One or two shots beat prompt engineering; sixteen shots average about 15% gain, over 45% at the best. The paper also reports where it overfits and names the cause as noisy labels.
 ---

@@ -9,6 +9,7 @@ version: 1
 tags:
 - adaptation-and-tuning
 date: '2026-09-09'
+published: '2023-02-01'
 summary: >-
   Adds spatial control to a frozen diffusion model by cloning its encoder into a trainable branch joined to the original by zero-initialized convolutions, so the adapter starts as an exact no-op and grows away from it. Trains robustly on datasets from under 50k to over a million.
 ---

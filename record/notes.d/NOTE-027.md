@@ -9,6 +9,7 @@ version: 1
 tags:
 - vision-and-graphics
 date: '2026-09-09'
+published: '2022-05-01'
 summary: >-
   Transfers a contrastively pretrained image-text model to open-vocabulary detection with minimal architectural change. Its transferable finding is about fine-tuning: the text encoder needs a learning rate about 100× lower than the image encoder, freezing it entirely is also wrong, and the recipe that maximises zero-shot transfer is *not* the one that maximises in-distribution performance.
 ---

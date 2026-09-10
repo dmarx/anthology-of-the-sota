@@ -14,6 +14,7 @@ version: 1
 tags:
 - generative-modeling
 date: '2026-09-10'
+published: '2020-10-01'
 source:
 - LIT-038
 summary: >-

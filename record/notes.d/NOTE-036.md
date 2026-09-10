@@ -9,6 +9,7 @@ version: 1
 tags:
 - adaptation-and-tuning
 date: '2026-09-09'
+published: '2022-08-01'
 summary: >-
   Fine-tunes the whole model to bind a rare token to a subject from 3–5 images, and counters the resulting language drift with a prior-preservation loss that supervises the model with its own pre-fine-tuning samples. Beats textual inversion on both subject and prompt fidelity, and needs the super-resolution stages fine-tuned too.
 ---

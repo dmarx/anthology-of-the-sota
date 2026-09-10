@@ -120,6 +120,15 @@ jobs:
       - uses: dmarx/luria/actions/lint@0.12.0
         with:
           pip-spec: luria==0.14.0
+      # `published:` is stored on SOTA and NOTE but owned by LIT, so it goes
+      # stale whenever a `source:` list is corrected — silently, because
+      # nothing relates two documents' field values. Eight practices had
+      # drifted before this ran (#119); one named a paper that was no longer
+      # a source at all.
+      - name: Check derived publication dates
+        run: |
+          pip install --quiet fire loguru pyyaml
+          python -m src.scripts.audit.check_published
 
   # The pull-request shape: repair the sources, push the repair onto the
   # branch, and lint the sources in the same job. No view is written, so two
@@ -149,6 +158,15 @@ jobs:
       - uses: dmarx/luria/actions/lint@0.12.0
         with:
           pip-spec: ""
+      # `published:` is stored on SOTA and NOTE but owned by LIT, so it goes
+      # stale whenever a `source:` list is corrected — silently, because
+      # nothing relates two documents' field values. Eight practices had
+      # drifted before this ran (#119); one named a paper that was no longer
+      # a source at all.
+      - name: Check derived publication dates
+        run: |
+          pip install --quiet fire loguru pyyaml
+          python -m src.scripts.audit.check_published
 
   collect:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'

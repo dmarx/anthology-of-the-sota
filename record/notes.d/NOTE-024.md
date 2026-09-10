@@ -10,6 +10,7 @@ version: 1
 tags:
 - training-optimization
 date: '2026-09-09'
+published: '2023-07-01'
 summary: >-
   Restart LoRA repeatedly during pretraining — merge the adapter, reinitialise it, prune the optimizer state, re-warm the learning rate — so a sequence of low-rank updates sums to a high-rank one. The ablation is the finding: the full-rank warm start it also requires accounts for most of the measured gain, and the restart machinery adds 0.42 perplexity on top of it.
 ---

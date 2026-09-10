@@ -2,7 +2,7 @@
 number: 8
 status: 'Active'
 title: 'linear warmup of LR stabilizes early training with large batch size.'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-09'
@@ -11,10 +11,17 @@ history:
     (LARS) cites it as prior work and argues that recipe is not general
     enough and may diverge. LIT-009 stays in the list as the paper that
     found its limit. The recommendation is unchanged.
+- version: 3
+  date: '2026-09-10'
+  note: >-
+    Corrected `published:`, which is derived from the primary source and
+    had gone stale: LIT-009's date survived the re-source to LIT-007.
+    Found by the #119 backfill. The recommendation and the source list
+    are unchanged.
 tags:
 - training-optimization
 date: '2026-08-24'
-published: '2017-08-01'
+published: '2017-06-01'
 source:
 # Warmup is Goyal et al. (LIT-007), which introduced it as the fix for
 # divergence under linear LR scaling. LIT-009 (LARS) cites it as prior work

@@ -22,6 +22,7 @@ tags:
 - representation-and-encoding
 consensus: universal
 date: '2026-09-08'
+published: '2021-12-01'
 source:
 - LIT-062
 # LIT-036 section 4.3 MEASURES this practice's premise -- that most of a

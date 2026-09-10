@@ -2,7 +2,7 @@
 number: 113
 status: 'Active'
 title: 'Use continuous batching for inference'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-09'
@@ -12,10 +12,18 @@ history:
     it in its background section while citing Orca for it. LIT-112 stays
     in the list as the production system that carried the technique. The
     recommendation is unchanged.
+- version: 3
+  date: '2026-09-10'
+  note: >-
+    Corrected `published:`, which is derived from the primary source and
+    had gone stale: LIT-112's date survived the re-source to LIT-224
+    (Orca), which the source comment already named as the origin. Found
+    by the #119 backfill. The recommendation and the source list are
+    unchanged.
 tags:
 - inference-optimization
 date: '2026-08-24'
-published: '2023-09-01'
+published: '2022-07-01'
 source:
 # Orca is where iteration-level scheduling — what the field calls continuous
 # batching — was introduced. LIT-112 (vLLM) describes it in its background

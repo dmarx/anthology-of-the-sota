@@ -9,6 +9,7 @@ version: 1
 tags:
 - attention-techniques
 date: '2026-09-09'
+published: '2019-01-01'
 summary: >-
   Shows a depthwise convolution with softmax-normalized weights, shared across channel groups and with a kernel fixed at 31 or less, matches self-attention on translation — 29.7 BLEU on WMT En-De. Dynamic convolution predicts the kernel from the current token alone, so the mixing weights depend on position rather than on the pair of positions being mixed.
 ---

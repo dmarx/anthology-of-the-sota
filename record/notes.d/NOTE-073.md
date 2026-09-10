@@ -9,6 +9,7 @@ version: 1
 tags:
 - training-optimization
 date: '2026-09-09'
+published: '2019-04-01'
 summary: >-
   Constructs a one-dimensional convex problem on which Adam provably converges to the worst point in the feasible set, locating the error in the original convergence proof and in the exponential moving average itself. Proposes AMSGrad, which keeps the running maximum of the second moment so the effective learning rate is non-increasing. ICLR 2018 best paper; almost nobody runs AMSGrad.
 ---

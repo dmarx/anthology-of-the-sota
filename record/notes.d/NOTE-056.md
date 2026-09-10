@@ -9,6 +9,7 @@ version: 1
 tags:
 - model-stability
 date: '2026-09-09'
+published: '2020-03-01'
 summary: >-
   Diagnoses why batch normalization underperforms layer normalization in NLP — the batch mean and variance fluctuate far more than in vision — and fixes it by dropping the zero-mean step and normalizing by a running quadratic mean instead of a batch variance. Beats LN by 0.4/0.6 BLEU and 5.6/3.0 perplexity with no hyperparameter changes.
 ---

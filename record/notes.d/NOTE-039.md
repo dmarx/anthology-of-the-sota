@@ -9,6 +9,7 @@ version: 1
 tags:
 - training-optimization
 date: '2026-09-09'
+published: '2023-05-01'
 summary: >-
   Independently re-derives compute-optimal scaling at larger compute than Chinchilla and lands on the same answer — grow data and parameters roughly 1:1, against the earlier 3:1 model-first trend. States the inference-economics corollary plainly: for a fixed training and inference budget, train a smaller model on more tokens rather than making the architecture inference-efficient.
 ---

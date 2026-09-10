@@ -9,6 +9,7 @@ version: 1
 tags:
 - generative-modeling
 date: '2026-09-09'
+published: '2022-02-01'
 summary: >-
   Repeatedly halves a diffusion sampler's step count by distilling two teacher steps into one student step, from 8192 down to 4 at FID 3.0 on CIFAR-10, for no more total compute than training the original model. Also where v-prediction comes from — and the reason for it is that ε-prediction's implied x̂ blows up as signal-to-noise goes to zero.
 ---

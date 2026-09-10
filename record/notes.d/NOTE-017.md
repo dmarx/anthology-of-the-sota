@@ -9,6 +9,7 @@ version: 1
 tags:
 - training-optimization
 date: '2026-09-09'
+published: '2020-01-01'
 summary: >-
   Loss is a power law in model size, dataset size and compute over seven orders of magnitude, and shape barely matters. Its learning-rate finding is the opposite of what the record recorded: larger models require a *smaller* rate to avoid divergence, and the paper carries an explicit LR(N) rule.
 ---

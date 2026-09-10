@@ -13,6 +13,7 @@ version: 1
 tags:
 - training-optimization
 date: '2026-09-10'
+published: '2018-12-01'
 source:
 - LIT-017
 - LIT-065

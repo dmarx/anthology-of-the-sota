@@ -9,6 +9,7 @@ version: 1
 tags:
 - model-architecture
 date: '2026-09-09'
+published: '2017-06-01'
 summary: >-
   Dispenses with recurrence and convolution entirely. The 1/√d_k scaling has a stated reason: with unit-variance components, q·k has variance d_k, and unscaled dot products push the softmax into regions of extremely small gradients.
 ---

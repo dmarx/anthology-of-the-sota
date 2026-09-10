@@ -9,6 +9,7 @@ version: 1
 tags:
 - distributed-optimization
 date: '2026-09-09'
+published: '2023-04-01'
 summary: >-
   Fully Sharded Data Parallel as an industry-grade PyTorch component: a sharding factor F generalising replication through full sharding, communication overlapped by backward prefetching, and a rate limiter over the CUDA caching allocator. The first cluster in [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) whose practices its paper actually supports.
 ---

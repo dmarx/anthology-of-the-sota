@@ -9,6 +9,7 @@ version: 1
 tags:
 - model-stability
 date: '2026-09-09'
+published: '2022-03-01'
 summary: >-
   Scale the residual by α and initialise the residual branch with gain β, both constants determined only by depth. Bounds the model update theoretically, combines Post-LN's quality with Pre-LN's stability, and reaches 1,000 layers.
 ---

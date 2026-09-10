@@ -9,6 +9,7 @@ version: 1
 tags:
 - data-pipeline
 date: '2026-09-09'
+published: '2023-02-01'
 summary: >-
   Selects pretraining data by importance resampling in a hashed n-gram feature space — 10,000 buckets of unigram and bigram counts — to match a target distribution. The more useful result is the metric: KL reduction in that feature space predicts downstream performance across selection methods, including manual curation, which uses no n-grams at all.
 ---

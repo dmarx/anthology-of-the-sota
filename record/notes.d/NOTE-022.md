@@ -9,6 +9,7 @@ version: 1
 tags:
 - model-stability
 date: '2026-09-09'
+published: '2019-10-01'
 summary: >-
   LayerNorm gives re-centering and re-scaling invariance; the hypothesis is that re-centering is dispensable. Normalize by root mean square alone — re-scaling invariance and implicit learning-rate adaptation kept, 7–64% less time per step.
 ---

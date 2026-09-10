@@ -9,6 +9,7 @@ version: 1
 tags:
 - distributed-optimization
 date: '2026-09-09'
+published: '2018-11-01'
 summary: >-
   Pipeline parallelism by splitting a mini-batch into micro-batches. Bubble overhead is O((K−1)/(M+K−1)) and negligible once M ≥ 4K; re-materialization plus partitioning cuts peak activation memory from O(N×L) to O(N + (L/K)(N/M)).
 ---

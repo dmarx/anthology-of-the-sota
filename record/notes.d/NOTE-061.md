@@ -10,6 +10,7 @@ version: 1
 tags:
 - analysis-and-evaluation
 date: '2026-09-09'
+published: '2020-03-01'
 summary: >-
   Imports modularity from graph clustering — a module is neurons with strong internal and weak external connectivity — and measures it by spectral clustering on MLP weights. Trained and pruned networks are more modular than random ones, and than random networks with the same sparse weight distribution, which is the control that makes the result mean something.
 ---

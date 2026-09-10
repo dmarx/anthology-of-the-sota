@@ -9,6 +9,7 @@ version: 1
 tags:
 - training-optimization
 date: '2026-09-09'
+published: '2017-11-01'
 summary: >-
   Train a population of models in parallel; periodically let a poor performer copy a good one's weights (exploit) and perturb its hyperparameters (explore). The output is a hyperparameter *schedule* rather than a fixed setting, discovered inside a single training run at roughly the cost of the population.
 ---

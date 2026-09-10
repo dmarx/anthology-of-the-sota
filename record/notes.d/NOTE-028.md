@@ -9,6 +9,7 @@ version: 1
 tags:
 - model-architecture
 date: '2026-09-09'
+published: '2021-08-01'
 summary: >-
   Replaces position embeddings with a fixed linear penalty on attention scores proportional to query–key distance, one slope per head from a geometric sequence. Trains on short sequences and evaluates on longer ones. The paper's own Appendix B says the gain is "largely explained by" avoiding the early token curse rather than by better use of long history.
 ---

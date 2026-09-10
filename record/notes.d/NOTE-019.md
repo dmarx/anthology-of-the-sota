@@ -18,6 +18,7 @@ history:
 tags:
 - generative-modeling
 date: '2026-09-09'
+published: '2022-06-01'
 summary: >-
   Pulls diffusion's tangled formulations apart into independent axes — sampler, training noise distribution, and preconditioning — and derives the preconditioning coefficients from a unit-variance requirement rather than choosing them. FID 1.79 on class-conditional CIFAR-10 at 35 network evaluations; a pretrained ImageNet-64 model improves 2.07 to 1.55 from the sampler alone.
 ---

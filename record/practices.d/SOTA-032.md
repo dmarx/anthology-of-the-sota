@@ -24,6 +24,7 @@ tags:
 - model-stability
 consensus: universal
 date: '2026-08-24'
+published: '2020-02-01'
 source:
 - LIT-114
 implementations:

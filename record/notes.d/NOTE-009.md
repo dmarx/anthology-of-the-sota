@@ -9,6 +9,7 @@ version: 1
 tags:
 - generative-modeling
 date: '2026-09-09'
+published: '2021-12-01'
 summary: >-
   Train the diffusion model in the latent space of a pretrained autoencoder rather than in pixels. The autoencoder removes imperceptible detail; the diffusion model then spends its capacity on semantics instead of on high-frequency content nobody sees.
 ---

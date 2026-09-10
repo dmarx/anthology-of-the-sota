@@ -9,6 +9,7 @@ version: 1
 tags:
 - distributed-optimization
 date: '2026-09-09'
+published: '2019-09-01'
 summary: >-
   Splits a transformer layer across GPUs by choosing the partition that needs no communication in the middle — column-parallel then row-parallel — so a whole layer costs two all-reduces forward and two backward. No compiler, no library changes, a few lines of PyTorch. 8.3B parameters on 512 GPUs at 76% scaling efficiency.
 ---

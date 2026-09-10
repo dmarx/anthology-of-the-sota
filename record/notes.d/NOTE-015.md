@@ -9,6 +9,7 @@ version: 1
 tags:
 - training-optimization
 date: '2026-09-09'
+published: '2017-11-01'
 summary: >-
   L2 regularization and weight decay are equivalent for SGD and **not** for adaptive methods. Common Adam implementations do L2 while calling it weight decay; decoupling it recovers the real thing, separates the weight-decay and learning-rate choices, and closes Adam's generalization gap to SGD with momentum.
 ---

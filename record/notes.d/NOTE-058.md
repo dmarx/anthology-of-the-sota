@@ -9,6 +9,7 @@ version: 1
 tags:
 - model-stability
 date: '2026-09-09'
+published: '2023-02-01'
 summary: >-
   Three architectural changes carry ViT from 4B to 22B — parallel attention/MLP blocks, QK normalization, and removed biases. QK-norm is the load-bearing one: training diverged around 8B from attention logits growing until the softmax was almost one-hot with near-zero entropy, and LayerNorm on the queries and keys before the dot product fixed it.
 ---

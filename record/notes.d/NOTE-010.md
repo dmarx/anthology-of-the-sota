@@ -9,6 +9,7 @@ version: 1
 tags:
 - representation-and-encoding
 date: '2026-09-09'
+published: '2015-08-01'
 summary: >-
   Translation was open-vocabulary and NMT models were not, backing off to a dictionary for unknown words. Encoding rare and unknown words as subword units — byte pair encoding adapted to segmentation — makes the model open-vocabulary itself.
 ---

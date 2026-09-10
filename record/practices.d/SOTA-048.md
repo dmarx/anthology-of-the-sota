@@ -2,11 +2,19 @@
 number: 48
 status: 'Active'
 title: 'Group small tensors before communication'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-10'
+  note: >-
+    Corrected `published:`, which is derived from the primary source and
+    had gone stale: LIT-051's date survived the re-source to LIT-220,
+    and LIT-051 is no longer a source at all. Found by the #119
+    backfill. The recommendation and the source list are unchanged.
 tags:
 - distributed-optimization
 date: '2026-08-24'
-published: '2020-11-01'
+published: '2018-02-15'
 source:
 # Re-sourced: Tensor Fusion is Horovod's, and PyTorch DDP arrived at the
 # same technique as bucketing. LIT-051 assumed both.

@@ -9,6 +9,7 @@ version: 1
 tags:
 - vision-and-graphics
 date: '2026-09-09'
+published: '2023-01-01'
 summary: >-
   Represents a d-dimensional scene with "d choose 2" planes, so static (d=3) and dynamic (d=4) scenes are the same model at different d. The factorisation makes dimension-specific priors easy to attach and separates static from dynamic components naturally; a linear decoder with a learned colour basis matches a nonlinear MLP.
 ---

@@ -11,7 +11,7 @@ consensus_note: >-
   independent group and adopted a different remedy, which is not agreement
   or disagreement about this one.
 title: 'Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -22,11 +22,18 @@ history:
     validation with the claim. The recommendation is unchanged. LIT-153 stays
     out on purpose — it confirms the diagnosis with a different remedy, which
     the promotion condition already says is not the result this needs.
+- version: 3
+  date: '2026-09-10'
+  note: >-
+    Corrected `published:`, which is derived from the primary source and
+    had gone stale: the blogpost's date survived the #58 re-source to
+    LIT-121. Found by the #119 backfill. The recommendation and the
+    source list are unchanged.
 tags:
 - training-optimization
 - tiny-models
 date: '2026-09-05'
-published: '2026-01-15'
+published: '2026-01-01'
 source:
 # LIT-121 is the claim; LIT-119 is the 90M validation of it. The blogpost
 # alone was named here until #58, which is the singular-source habit ADR-010

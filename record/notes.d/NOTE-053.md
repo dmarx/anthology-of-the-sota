@@ -14,6 +14,7 @@ history:
 tags:
 - generative-modeling
 date: '2026-09-09'
+published: '2023-03-01'
 summary: >-
   Trains a model to map any point on a diffusion trajectory directly to its origin, so one network evaluation generates a sample — FID 3.55 on CIFAR-10 and 6.20 on ImageNet-64 in one step. Trainable either by distilling a diffusion model or from scratch, and the from-scratch mode is what makes it a model family rather than a distillation trick.
 ---

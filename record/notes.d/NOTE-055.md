@@ -9,6 +9,7 @@ version: 1
 tags:
 - model-architecture
 date: '2026-09-09'
+published: '2022-05-01'
 summary: >-
   Trains one encoder-decoder with both a contrastive and a captioning loss by omitting cross-attention in the first half of the decoder — so those layers produce unimodal text embeddings for the contrastive loss, and the cascaded remainder cross-attends for captioning. Both objectives share one computational graph, at minimal extra cost.
 ---

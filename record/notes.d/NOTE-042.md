@@ -9,6 +9,7 @@ version: 1
 tags:
 - vision-and-graphics
 date: '2026-09-09'
+published: '2022-01-01'
 summary: >-
   Replaces a large coordinate MLP with a small one fed by trainable feature vectors stored in a multiresolution hash table. Hash collisions are not resolved — the multiresolution structure lets the network disambiguate them, and gradient descent averages the colliding entries by importance. Seconds to train, milliseconds to render.
 ---

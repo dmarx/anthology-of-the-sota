@@ -10,6 +10,7 @@ version: 1
 tags:
 - analysis-and-evaluation
 date: '2026-09-09'
+published: '2022-02-01'
 summary: >-
   Shows that theoretical guarantees for contrastive learning that depend only on the augmentations and the loss value cannot explain why it works, and are provably vacuous in some settings. Different function classes and algorithms behave very differently downstream given identical augmentations and identical contrastive loss.
 ---

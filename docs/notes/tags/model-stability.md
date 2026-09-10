@@ -2,7 +2,7 @@
 
 # NOTEs tagged `model-stability`
 
-4 of 25 NOTE documents. Back to the [full index](../README.md).
+6 of 74 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -10,3 +10,5 @@
 | [NOTE-008](../../../record/notes.d/NOTE-008.md) | Visualizing the Loss Landscape of Neural Nets | Filter normalization makes loss-surface plots comparable across architectures, and under it sharpness correlates with generalization error. Deep networks transition from nearly convex to chaotic; skip connections prevent that transition, which is why they are needed at depth. | Read |
 | [NOTE-013](../../../record/notes.d/NOTE-013.md) | DeepNet | Scale the residual by α and initialise the residual branch with gain β, both constants determined only by depth. Bounds the model update theoretically, combines Post-LN's quality with Pre-LN's stability, and reaches 1,000 layers. | Read |
 | [NOTE-022](../../../record/notes.d/NOTE-022.md) | RMSNorm | LayerNorm gives re-centering and re-scaling invariance; the hypothesis is that re-centering is dispensable. Normalize by root mean square alone — re-scaling invariance and implicit learning-rate adaptation kept, 7–64% less time per step. | Read |
+| [NOTE-056](../../../record/notes.d/NOTE-056.md) | PowerNorm: Rethinking Batch Normalization in Transformers | Diagnoses why batch normalization underperforms layer normalization in NLP — the batch mean and variance fluctuate far more than in vision — and fixes it by dropping the zero-mean step and normalizing by a running quadratic mean instead of a batch variance. Beats LN by 0.4/0.6 BLEU and 5.6/3.0 perplexity with no hyperparameter changes. | Read |
+| [NOTE-058](../../../record/notes.d/NOTE-058.md) | Scaling Vision Transformers to 22 Billion Parameters | Three architectural changes carry ViT from 4B to 22B — parallel attention/MLP blocks, QK normalization, and removed biases. QK-norm is the load-bearing one: training diverged around 8B from attention logits growing until the softmax was almost one-hot with near-zero entropy, and LayerNorm on the queries and keys before the dot product fixed it. | Read |

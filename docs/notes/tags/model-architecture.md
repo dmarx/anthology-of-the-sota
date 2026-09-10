@@ -2,9 +2,14 @@
 
 # NOTEs tagged `model-architecture`
 
-2 of 25 NOTE documents. Back to the [full index](../README.md).
+7 of 74 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-004](../../../record/notes.d/NOTE-004.md) | Scale Efficiently | Model shape, not only model size, determines downstream fine-tuning quality — and the widely adopted T5-Base and T5-Large configurations are Pareto-inefficient. Read in full for [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) after its LIT note was found to describe a different paper. | Read |
 | [NOTE-011](../../../record/notes.d/NOTE-011.md) | Attention Is All You Need | Dispenses with recurrence and convolution entirely. The 1/√d_k scaling has a stated reason: with unit-variance components, q·k has variance d_k, and unscaled dot products push the softmax into regions of extremely small gradients. | Read |
+| [NOTE-028](../../../record/notes.d/NOTE-028.md) | Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation | Replaces position embeddings with a fixed linear penalty on attention scores proportional to query–key distance, one slope per head from a geometric sequence. Trains on short sequences and evaluates on longer ones. The paper's own Appendix B says the gain is "largely explained by" avoiding the early token curse rather than by better use of long history. | Read |
+| [NOTE-054](../../../record/notes.d/NOTE-054.md) | Mish: A Self Regularized Non-Monotonic Activation Function | Proposes f(x) = x·tanh(softplus(x)), a smooth non-monotonic activation in the Swish family. Reported +2.1 AP50 over Leaky ReLU on YOLOv4/MS-COCO and ~1% top-1 over ReLU on ResNet-50/ImageNet. Read from the abstract only — ar5iv has no rendering for this identifier. | Skimmed |
+| [NOTE-055](../../../record/notes.d/NOTE-055.md) | CoCa: Contrastive Captioners are Image-Text Foundation Models | Trains one encoder-decoder with both a contrastive and a captioning loss by omitting cross-attention in the first half of the decoder — so those layers produce unimodal text embeddings for the contrastive loss, and the cascaded remainder cross-attends for captioning. Both objectives share one computational graph, at minimal extra cost. | Read |
+| [NOTE-060](../../../record/notes.d/NOTE-060.md) | Improving Language Models by Retrieving from Trillions of Tokens | Matches GPT-3 on the Pile with 25× fewer parameters by cross-attending to chunks retrieved from a 2-trillion-token database, using a frozen BERT retriever that never needs training. The gain is constant from 150M to 7B, and the model improves at *evaluation* time by enlarging the database — capability added after training ends. | Read |
+| [NOTE-069](../../../record/notes.d/NOTE-069.md) | PaLI: A Jointly-Scaled Multilingual Language-Image Model | Scales language and vision components jointly across 100+ languages and shows a properly scaled model handles many languages while keeping English-only state of the art. Its most useful passage is an ablation honest enough to explain a regression by the language ratio of the data that caused it. | Read |

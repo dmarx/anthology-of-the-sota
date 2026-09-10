@@ -4,22 +4,18 @@
 
 Diffusion, samplers, text-to-image, conditioning and control.
 
-15 of 224 LIT documents. Back to the [full index](../README.md).
+11 of 224 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [LIT-036](../../../record/literature.d/LIT-036.md) | Denoising Diffusion Probabilistic Models | Ho et al. (2020), [ARXIV-2006.11239](https://arxiv.org/abs/2006.11239). Introduces DDPM framework. | Active |
-| [LIT-038](../../../record/literature.d/LIT-038.md) | Denoising Diffusion Implicit Models | Song et al. (2020), [ARXIV-2010.02502](https://arxiv.org/abs/2010.02502). Continuous-time formulation of diffusion models. | Active |
+| [LIT-036](../../../record/literature.d/LIT-036.md) v2 | Denoising Diffusion Probabilistic Models | Ho et al. (2020), [ARXIV-2006.11239](https://arxiv.org/abs/2006.11239). Introduces DDPM framework. | Active |
+| [LIT-038](../../../record/literature.d/LIT-038.md) v2 | Denoising Diffusion Implicit Models | Song et al. (2020), [ARXIV-2010.02502](https://arxiv.org/abs/2010.02502). Continuous-time formulation of diffusion models. | Active |
 | [LIT-062](../../../record/literature.d/LIT-062.md) v2 | High-Resolution Image Synthesis with Latent Diffusion Models | Rombach et al. (2022), [ARXIV-2112.10752](https://arxiv.org/abs/2112.10752). Latent space diffusion. | Active |
-| [LIT-067](../../../record/literature.d/LIT-067.md) | Progressive Distillation for Fast Sampling of Diffusion Models | Salimans et al. (2022), [ARXIV-2202.00512](https://arxiv.org/abs/2202.00512). Faster sampling through distillation. | Active |
-| [LIT-070](../../../record/literature.d/LIT-070.md) | Hierarchical Text-Conditional Image Generation with CLIP Latents | Ramesh et al. (2022), [ARXIV-2204.06125](https://arxiv.org/abs/2204.06125). Prior-guided image generation. | Active |
-| [LIT-073](../../../record/literature.d/LIT-073.md) | Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding | Saharia et al. (2022), [ARXIV-2205.11487](https://arxiv.org/abs/2205.11487). Cascaded diffusion approach. | Active |
+| [LIT-067](../../../record/literature.d/LIT-067.md) v2 | Progressive Distillation for Fast Sampling of Diffusion Models | Salimans et al. (2022), [ARXIV-2202.00512](https://arxiv.org/abs/2202.00512). Faster sampling through distillation. | Active |
+| [LIT-070](../../../record/literature.d/LIT-070.md) v2 | Hierarchical Text-Conditional Image Generation with CLIP Latents | Ramesh et al. (2022), [ARXIV-2204.06125](https://arxiv.org/abs/2204.06125). Prior-guided image generation. | Active |
+| [LIT-073](../../../record/literature.d/LIT-073.md) v2 | Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding | Saharia et al. (2022), [ARXIV-2205.11487](https://arxiv.org/abs/2205.11487). Cascaded diffusion approach. | Active |
 | [LIT-075](../../../record/literature.d/LIT-075.md) v2 | Elucidating the Design Space of Diffusion-Based Generative Models | Karras et al. (2022), [ARXIV-2206.00364](https://arxiv.org/abs/2206.00364). Comprehensive design space analysis. | Active |
-| [LIT-076](../../../record/literature.d/LIT-076.md) | DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps | Lu et al. (2022), [ARXIV-2206.00927](https://arxiv.org/abs/2206.00927). Fast sampling for diffusion models. | Active |
-| [LIT-078](../../../record/literature.d/LIT-078.md) | An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion | Gal et al. (2022), [ARXIV-2208.01618](https://arxiv.org/abs/2208.01618). Efficient personalization method. | Active |
-| [LIT-079](../../../record/literature.d/LIT-079.md) | DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation | Ruiz et al. (2022), [ARXIV-2208.12242](https://arxiv.org/abs/2208.12242). Subject-driven image generation. | Active |
-| [LIT-089](../../../record/literature.d/LIT-089.md) | Adding Conditional Control to Text-to-Image Diffusion Models | Zhang et al. (2023), [ARXIV-2302.05543](https://arxiv.org/abs/2302.05543). Modular conditioning framework. | Active |
-| [LIT-091](../../../record/literature.d/LIT-091.md) | T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models | Mou et al. (2023), [ARXIV-2302.08453](https://arxiv.org/abs/2302.08453). Controllable generation. | Active |
-| [LIT-093](../../../record/literature.d/LIT-093.md) | Consistency Models | Song et al. (2023), [ARXIV-2303.01469](https://arxiv.org/abs/2303.01469). Single-step generation. | Active |
-| [LIT-118](../../../record/literature.d/LIT-118.md) | PhotoMaker: Customizing Realistic Human Photos via Stacked ID Embedding | Li et al. (2023), [ARXIV-2312.04461](https://arxiv.org/abs/2312.04461). ID-preserving generation. | Active |
+| [LIT-076](../../../record/literature.d/LIT-076.md) v2 | DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps | Lu et al. (2022), [ARXIV-2206.00927](https://arxiv.org/abs/2206.00927). Fast sampling for diffusion models. | Active |
+| [LIT-093](../../../record/literature.d/LIT-093.md) v2 | Consistency Models | Song et al. (2023), [ARXIV-2303.01469](https://arxiv.org/abs/2303.01469). Single-step generation. | Active |
+| [LIT-097](../../../record/literature.d/LIT-097.md) v2 | One Transformer Fits All Distributions in Multi-Modal Diffusion at Scale | Bao et al. (2023), [ARXIV-2303.06555](https://arxiv.org/abs/2303.06555). Universal sequence modeling. | Active |
 | [LIT-217](../../../record/literature.d/LIT-217.md) | Large Language Diffusion Models | Nie et al. (2025), [ARXIV-2502.09992](https://arxiv.org/abs/2502.09992). LLaDA: an 8B language model trained from scratch under the ordinary pretrain-then-SFT paradigm, with the autoregressive factorization replaced by masked diffusion — a forward masking process and a reverse process that predicts masked tokens, optimizing a likelihood lower bound. Competitive with LLaMA3 8B on in-context learning, and beats GPT-4o on reversal poem completion. | Active |

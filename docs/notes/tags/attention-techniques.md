@@ -2,7 +2,7 @@
 
 # NOTEs tagged `attention-techniques`
 
-5 of 25 NOTE documents. Back to the [full index](../README.md).
+7 of 74 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -11,3 +11,5 @@
 | [NOTE-014](../../../record/notes.d/NOTE-014.md) | Monarch Mixer | One sub-quadratic primitive — Monarch matrices — along both sequence length and model dimension. Matches BERT-base/large on GLUE with up to 27% fewer parameters and 9.1× throughput at 4K, and beats ViT-b by 1% at half the parameters. Attention-free, not hybrid. | Read |
 | [NOTE-016](../../../record/notes.d/NOTE-016.md) | Fast Transformer Decoding: multi-query attention | Incremental decoding is bounded by the memory bandwidth of reloading the keys and values, not by arithmetic. Share one key/value head across all query heads: much faster decoding, "only minor quality degradation". | Read |
 | [NOTE-021](../../../record/notes.d/NOTE-021.md) | Grouped-Query Attention | MQA is fast and costs quality, and training a separate model for inference is undesirable. Two results: uptrain an existing multi-head checkpoint with 5% of pretraining compute, and use an intermediate number of key-value heads — quality near multi-head at speed near MQA. | Read |
+| [NOTE-059](../../../record/notes.d/NOTE-059.md) | Longformer: The Long-Document Transformer | Replaces full self-attention with a sliding window plus a small set of task-chosen global positions, giving linear cost in sequence length. The global tokens are the design decision that matters — they are where the task's inductive bias is stated, and they are why the pattern can be adapted per task rather than fixed. | Read |
+| [NOTE-065](../../../record/notes.d/NOTE-065.md) | Pay Less Attention with Lightweight and Dynamic Convolutions | Shows a depthwise convolution with softmax-normalized weights, shared across channel groups and with a kernel fixed at 31 or less, matches self-attention on translation — 29.7 BLEU on WMT En-De. Dynamic convolution predicts the kernel from the current token alone, so the mixing weights depend on position rather than on the pair of positions being mixed. | Read |

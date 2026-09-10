@@ -32,6 +32,10 @@ tags:
 
 date: ''
 
+# There is deliberately no `published:` line here. A reading's publication date
+# is DERIVED from the paper named in `paper:` above, and writing it down is a
+# lint violation — the value has one home and this is not it.
+
 # What the index table shows. One or two sentences: the finding, not the
 # subject area. Prose, so bare codes get linked by `luria link --fix`.
 summary: >-

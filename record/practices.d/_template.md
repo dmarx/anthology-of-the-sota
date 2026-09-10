@@ -42,6 +42,11 @@ tags:
 
 date: '2026-01-01'
 
+# There is deliberately no `published:` line here. The practice's publication
+# date is DERIVED from the first entry in `source:` below — the primary source
+# — and writing it down is a lint violation, because the value has one home
+# and this is not it. To change it, change the source order.
+
 # REQUIRED, and a LIST. The reading notes this recommendation rests on. The
 # first is the primary source; the rest corroborate — a replication, the
 # production report that shipped it, the paper that argues the mechanism. A

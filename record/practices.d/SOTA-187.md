@@ -4,13 +4,20 @@ status: Active
 formerly:
 - SOTA-tmphxjle
 title: 'Train the generative model in a learned compressed latent, not at full resolution'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-10'
   note: >-
     Enriched from the #123 readings. The recommendation is unchanged;
     the source list, the numbers or the neighbourhood are.
+- version: 3
+  date: '2026-09-10'
+  note: >-
+    The body named model-architecture as this practice's topic, from
+    before it was retagged representation-and-encoding. The argument for
+    filing by kind of claim rather than as a diffusion technique is
+    unchanged; only the stale topic name is fixed.
 tags:
 - representation-and-encoding
 consensus: universal
@@ -44,9 +51,15 @@ spend before the expensive model ever sees the data, so the generative model
 works in a space whose dimensions it actually needs.
 
 **The transferable claim is a compute-allocation one**, and it is why this is
-filed under `model-architecture` rather than as a diffusion technique: when
-the expensive model's input carries structure a cheap model can strip, strip
-it first and let the expensive model work on what is left. The two-stage
+filed by the kind of claim rather than as a diffusion technique: when the
+expensive model's input carries structure a cheap model can strip, strip it
+first and let the expensive model work on what is left.
+
+*(This sentence named `model-architecture` until v3, from before the practice
+was retagged `representation-and-encoding` — "how the signal is encoded before
+the expensive network sees it … tokenizers and learned latents", which is this
+exactly. The argument is unchanged and the topic is now the better fit; the
+prose had simply not followed the tag.)* The two-stage
 shape — learn a compact representation, then model *that* — recurs well
 beyond images.
 

@@ -70,3 +70,16 @@ analysis-and-evaluation:
   label: Analysis and evaluation
   blurb: how to find out whether something worked — what to measure, what a
     measurement cannot tell you, and which comparisons are unsound
+
+# Added by ADR-tmpdrbma, which supersedes ADR-020. Both were rejected there on
+# a browsing argument the evidence did not bear out, and the rejection was
+# being cited as a scope boundary — the exact thing ADR-020 removed. Take a
+# domain topic when the claim is ABOUT the domain; a claim merely discovered
+# in one still takes its kind.
+generative-modeling:
+  label: Generative modeling
+  blurb: diffusion, samplers, text-to-image, conditioning and control
+vision-and-graphics:
+  label: Vision and graphics
+  blurb: neural rendering, reconstruction, perception, visual foundation
+    models

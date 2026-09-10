@@ -14,18 +14,21 @@ summary: >-
   domain. Adds it, making eleven.
 ---
 
+<!-- inactive-ok-file: ADR-020 — Superseded by ADR-tmpdrbma, which carries its decision forward; every mention here names it as the superseded document, deliberately -->
+
 # ADR-tmpmz3o4: The practice vocabulary cannot express a claim about how to evaluate
 
 ## Context
 
 The practice vocabulary has ten topics. The literature vocabulary has thirteen.
 The three the practice side lacks are `generative-modeling`,
-`vision-and-graphics` and `analysis-and-evaluation`, and the first two are
-absent **on purpose**: [ADR-020](ADR-020.md) scopes this anthology by the *kind of claim*
-rather than the domain a technique came from, so a vision paper's
-recommendation files under whichever of the ten topics expresses it. A `LIT`
-document is about a paper and takes the paper's subject; a `SOTA` document is
-about an action and takes the action's kind. The asymmetry is correct.
+`vision-and-graphics` and `analysis-and-evaluation`.
+
+*(Amended by `ADR-tmpdrbma`, filed the same day. This ADR originally read the
+first two as deliberately excluded, citing [ADR-020](ADR-020.md)'s rejected alternative —
+which is exactly the misreading that superseded it. All three are now in the
+practice vocabulary. The argument below stands on its own: this topic is a
+kind of claim, and the ten could not express it.)*
 
 `analysis-and-evaluation` is not like the other two. Its blurb on the
 literature side is "theory, interpretability, benchmarks, measurement,
@@ -106,7 +109,7 @@ backwards. `ADR-021` added three topics on the same reasoning — the corpus gre
 past what the vocabulary was written for — and this is the fifth seam, from a
 direction that ADR's own "expect a fourth" did not anticipate.
 
-**Widen the practice vocabulary to match the literature one.** Rejected: it
-would import `generative-modeling` and `vision-and-graphics`, which
-[ADR-020](ADR-020.md) deliberately excludes. The asymmetry between the two vocabularies is
-load-bearing and this ADR narrows the gap by one topic rather than closing it.
+**Widen the practice vocabulary to match the literature one.** Rejected here
+as out of scope for a decision about one missing topic — and **adopted the same
+day by `ADR-tmpdrbma`**, which supersedes `ADR-020` and closes the gap
+entirely. This ADR narrowed it by one; that one closed it.

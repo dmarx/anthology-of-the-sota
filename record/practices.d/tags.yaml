@@ -1,14 +1,21 @@
 # The categories a practice can carry as its primary topic, in the order the
 # index shows them. The first seven are transcribed from the 2024
-# naming-conventions document; ADR-003 is where they became binding. The last
-# two were added by ADR-tmplvh9j, which found thirteen practices about serving
-# and adaptation scattered across the original seven because neither subject
-# had a word.
+# naming-conventions document; ADR-003 is where they became binding.
 #
-# The two words come from the LIT scheme, which has had them since ADR-003:
-# where both vocabularies name the same KIND of claim they use the same word.
-# What stays LIT-only is generative-modeling and vision-and-graphics, which
-# name a domain rather than a kind of claim (ADR-020).
+# The other six arrived one decision at a time, each because something needed
+# filing and the list had no word for it:
+#
+#   ADR-021  inference-optimization, adaptation-and-tuning -- it found
+#            thirteen practices about serving and adaptation scattered
+#            across the original seven because neither subject had a word
+#   #114     representation-and-encoding
+#   ADR-027  analysis-and-evaluation
+#   ADR-026  generative-modeling, vision-and-graphics
+#
+# Every one of those words was already in the LIT scheme, which has carried
+# them since ADR-003. Since ADR-026 the two lists are THE SAME THIRTEEN:
+# neither vocabulary has a word the other lacks, and nothing here is LIT-only.
+# The schemes differ in what a document IS, not in what it may be ABOUT.
 #
 # `luria.toml` holds the *rule* (exactly one of these per practice); this file
 # holds what each one means. A tag used here but not listed still renders,
@@ -62,7 +69,7 @@ representation-and-encoding:
     tokenizers and learned latents, positional encoding, and the frequency or
     basis choices that go with them
 
-# Added by ADR-tmpmz3o4. Narrower than the literature side's topic of the same
+# Added by ADR-027. Narrower than the literature side's topic of the same
 # name: there it covers a paper's subject and includes theory and
 # interpretability; here it covers an ACTION, so it is about the practitioner's
 # measurement rather than about a research programme.
@@ -71,7 +78,7 @@ analysis-and-evaluation:
   blurb: how to find out whether something worked — what to measure, what a
     measurement cannot tell you, and which comparisons are unsound
 
-# Added by ADR-tmpdrbma, which supersedes ADR-020. Both were rejected there on
+# Added by ADR-026, which supersedes ADR-020. Both were rejected there on
 # a browsing argument the evidence did not bear out, and the rejection was
 # being cited as a scope boundary — the exact thing ADR-020 removed. Take a
 # domain topic when the claim is ABOUT the domain; a claim merely discovered

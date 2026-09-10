@@ -31,7 +31,6 @@ history:
 tags:
 - adaptation-and-tuning
 date: '2026-09-07'
-published: '2024-02-01'
 source:
 # The practice's case is that four works which run or rework GRPO all keep
 # the group baseline. Three were named here; LIT-167 — Dr. GRPO, which

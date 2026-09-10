@@ -27,7 +27,6 @@ history:
 tags:
 - representation-and-encoding
 date: '2026-09-07'
-published: '2025-01-01'
 source:
 # The origin, then the two designs that arrived at the layout independently.
 # LIT-207 is not a hybrid paper — it is the result the

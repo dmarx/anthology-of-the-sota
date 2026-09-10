@@ -36,7 +36,6 @@ history:
 tags:
 - adaptation-and-tuning
 date: '2026-09-05'
-published: '2025-12-01'
 source:
 # The body says Olmo 3 "remains the source because it is the open,
 # reproducible statement of the pathway" — true, and written when a practice

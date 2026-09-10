@@ -27,7 +27,6 @@ history:
 tags:
 - attention-techniques
 date: '2026-09-05'
-published: '2025-10-01'
 source:
 # Three works that ran the experiment (ADR-017): LIT-133's controlled
 # comparison against full MLA at 48B/1.4T, LIT-195's interleave of DeltaNet

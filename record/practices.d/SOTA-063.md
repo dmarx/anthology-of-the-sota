@@ -23,7 +23,6 @@ history:
 tags:
 - representation-and-encoding
 date: '2026-08-24'
-published: '2021-04-01'
 source:
 - LIT-045
 summary: >-

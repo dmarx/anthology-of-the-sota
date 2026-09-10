@@ -14,7 +14,6 @@ version: 1
 tags:
 - data-pipeline
 date: '2026-09-08'
-published: '2021-07-01'
 source:
 # The paper that measured it. Everything else in the record deduplicates
 # without reporting what it bought, which is adoption and belongs in

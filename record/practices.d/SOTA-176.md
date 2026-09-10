@@ -19,7 +19,6 @@ version: 1
 tags:
 - attention-techniques
 date: '2026-09-08'
-published: '2025-10-01'
 source:
 - LIT-176
 implementations: []

@@ -7,7 +7,6 @@ tags:
 - adaptation-and-tuning
 - tiny-models
 date: '2026-09-05'
-published: '2026-01-15'
 source:
 # The tiny-scale evidence (one epoch, not two) and the algorithm itself,
 # which the practice recommended without citing until now (ADR-010).

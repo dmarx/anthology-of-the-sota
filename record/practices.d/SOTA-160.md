@@ -22,7 +22,6 @@ version: 1
 tags:
 - training-optimization
 date: '2026-09-08'
-published: '2024-11-01'
 source:
 - LIT-186
 implementations: []

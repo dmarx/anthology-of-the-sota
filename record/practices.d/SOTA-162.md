@@ -15,7 +15,6 @@ version: 1
 tags:
 - training-optimization
 date: '2026-09-08'
-published: '2024-04-01'
 source:
 # The paper that measured it. The five model reports that ship an MTP head
 # name it as settled and none of them ablates it, so they are adoption and

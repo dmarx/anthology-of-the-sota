@@ -6,7 +6,6 @@ version: 1
 tags:
 - training-optimization
 date: '2026-08-24'
-published: '2017-08-01'
 source:
 - LIT-010
 summary: >-

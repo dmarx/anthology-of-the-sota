@@ -21,7 +21,6 @@ version: 1
 tags:
 - model-architecture
 date: '2026-09-09'
-published: '2021-09-01'
 source:
 - LIT-052
 implementations:

@@ -15,7 +15,6 @@ version: 1
 tags:
 - data-pipeline
 date: '2026-09-08'
-published: '2024-12-01'
 source:
 # The paper that ran both horizons and reported the crossover. LIT-184 is
 # the position it argues against and stays in the body — contrast is not

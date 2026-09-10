@@ -6,7 +6,6 @@ version: 1
 tags:
 - inference-optimization
 date: '2026-08-24'
-published: '2023-09-01'
 source:
 - LIT-112
 summary: >-

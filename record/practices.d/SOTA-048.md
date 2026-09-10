@@ -6,7 +6,6 @@ version: 1
 tags:
 - distributed-optimization
 date: '2026-08-24'
-published: '2020-11-01'
 source:
 # Re-sourced: Tensor Fusion is Horovod's, and PyTorch DDP arrived at the
 # same technique as bucketing. LIT-051 assumed both.

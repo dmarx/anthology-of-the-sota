@@ -19,7 +19,6 @@ history:
 tags:
 - distributed-optimization
 date: '2026-08-24'
-published: '2021-02-01'
 source:
 - LIT-059
 corrects:

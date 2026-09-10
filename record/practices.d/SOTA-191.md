@@ -29,7 +29,6 @@ history:
 tags:
 - model-stability
 date: '2026-09-09'
-published: '2019-11-01'
 source:
 - LIT-025
 # RMSNorm keeps the gain and drops the centering — the opposite half from

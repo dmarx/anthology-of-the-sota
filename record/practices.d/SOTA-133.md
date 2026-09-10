@@ -10,7 +10,6 @@ version: 1
 tags:
 - model-architecture
 date: '2026-09-05'
-published: '2026-03-01'
 source:
 # The paper, and the independent evaluation that promoted this to Active
 # (ADR-010).

@@ -38,7 +38,6 @@ history:
 tags:
 - training-optimization
 date: '2026-09-05'
-published: '2025-02-01'
 source:
 # The decay-to-zero claim is about where WSD's decay ends, not
 # whether to use WSD — this practice's own Source section says so.

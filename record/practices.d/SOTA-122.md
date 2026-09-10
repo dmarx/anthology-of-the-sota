@@ -26,7 +26,6 @@ tags:
 - training-optimization
 - tiny-models
 date: '2026-09-05'
-published: '2026-01-15'
 source:
 # LIT-121 is the claim; LIT-119 is the 90M validation of it. The blogpost
 # alone was named here until #58, which is the singular-source habit ADR-010

@@ -21,7 +21,6 @@ history:
 tags:
 - training-optimization
 date: '2026-08-24'
-published: '2020-01-01'
 source:
 - LIT-028
 compared_against:

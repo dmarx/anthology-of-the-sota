@@ -17,7 +17,6 @@ history:
 tags:
 - attention-techniques
 date: '2026-08-24'
-published: '2023-05-01'
 source:
 - LIT-100
 implementations:

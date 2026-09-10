@@ -13,7 +13,6 @@ version: 1
 tags:
 - model-stability
 date: '2026-08-24'
-published: '2018-06-01'
 source:
 - LIT-015
 summary: >-

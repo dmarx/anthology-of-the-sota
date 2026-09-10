@@ -15,7 +15,6 @@ tags:
 - model-stability
 - flash-attention
 date: '2026-09-08'
-published: '2025-10-01'
 source:
 # The paper that isolated the mechanism and tested a targeted fix. Kimi K3
 # shipping the FP32 output at 2.8T is adoption and lives in consensus_note

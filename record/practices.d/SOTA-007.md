@@ -6,7 +6,6 @@ version: 1
 tags:
 - representation-and-encoding
 date: '2026-08-24'
-published: '2015-08-01'
 source:
 - LIT-003
 summary: >-

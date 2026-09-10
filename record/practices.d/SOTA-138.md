@@ -15,7 +15,6 @@ history:
 tags:
 - attention-techniques
 date: '2026-09-05'
-published: '2025-12-01'
 source:
 # LIT-142 introduces the indexer and the warm-up. LIT-143's from-scratch
 # result — a natively trained sparse attention matching full attention — is

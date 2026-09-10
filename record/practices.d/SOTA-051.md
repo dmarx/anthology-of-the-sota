@@ -16,7 +16,6 @@ history:
 tags:
 - model-stability
 date: '2026-08-24'
-published: '2020-03-01'
 source:
 # LIT-047 is the origin: near-zero final-layer init for depth.
 # LIT-089 is what sharpens it. The body's 'zero is not near zero'

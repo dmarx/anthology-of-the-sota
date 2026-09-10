@@ -33,7 +33,6 @@ tags:
 - model-architecture
 - tiny-models
 date: '2026-09-05'
-published: '2026-01-15'
 source:
 # LIT-120 corroborates the depth half at a larger scale — the authors' own
 # Falcon-H1-1.5B-Deep result — which is what ADR-010 made the list able to

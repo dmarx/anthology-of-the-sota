@@ -19,7 +19,6 @@ version: 1
 tags:
 - model-architecture
 date: '2026-09-08'
-published: '2025-03-01'
 source:
 - LIT-173
 implementations:

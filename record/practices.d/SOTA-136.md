@@ -29,7 +29,6 @@ history:
 tags:
 - model-architecture
 date: '2026-09-05'
-published: '2025-12-01'
 source:
 # LIT-140 is mHC. LIT-152 is a different laboratory running mHC in its own
 # harness and finding it comparable to its own design — an independent test,

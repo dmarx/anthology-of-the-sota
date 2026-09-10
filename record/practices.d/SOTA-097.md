@@ -20,7 +20,6 @@ history:
 tags:
 - training-optimization
 date: '2026-08-24'
-published: '2020-01-01'
 source:
 # Kaplan et al. equation 1.7, not Chinchilla. Both are compute-allocation
 # papers about the same era and the citation had drifted to the more famous

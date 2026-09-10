@@ -27,7 +27,6 @@ history:
 tags:
 - attention-techniques
 date: '2026-09-07'
-published: '2024-05-01'
 source:
 # One comparison: LIT-174 ran MLA against the same team's dense 67B and
 # reports a 93.3% smaller KV cache at 5.76x generation throughput. The four

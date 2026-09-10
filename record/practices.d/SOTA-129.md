@@ -18,7 +18,6 @@ history:
 tags:
 - adaptation-and-tuning
 date: '2026-09-05'
-published: '2025-12-01'
 source:
 # Olmo 3 is the open statement of the recipe, LIT-172 is where the RLVR stage
 # was named and demonstrated, and LIT-128 is an independent instance of the

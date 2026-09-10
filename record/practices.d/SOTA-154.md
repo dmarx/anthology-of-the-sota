@@ -19,7 +19,6 @@ version: 1
 tags:
 - adaptation-and-tuning
 date: '2026-09-07'
-published: '2025-09-01'
 source:
 # The paper ran the comparison itself, against both PPO and GRPO, which is
 # what makes this evidenced rather than asserted (ADR-017). No adopters to

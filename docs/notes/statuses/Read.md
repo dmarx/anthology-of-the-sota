@@ -4,7 +4,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-23 of 23 NOTE documents. Back to the [full index](../README.md).
+25 of 25 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -31,3 +31,5 @@
 | [NOTE-021](../../../record/notes.d/NOTE-021.md) | Grouped-Query Attention | MQA is fast and costs quality, and training a separate model for inference is undesirable. Two results: uptrain an existing multi-head checkpoint with 5% of pretraining compute, and use an intermediate number of key-value heads — quality near multi-head at speed near MQA. | Read |
 | [NOTE-022](../../../record/notes.d/NOTE-022.md) | RMSNorm | LayerNorm gives re-centering and re-scaling invariance; the hypothesis is that re-centering is dispensable. Normalize by root mean square alone — re-scaling invariance and implicit learning-rate adaptation kept, 7–64% less time per step. | Read |
 | [NOTE-023](../../../record/notes.d/NOTE-023.md) | PagedAttention and vLLM | KV cache memory is huge, grows and shrinks dynamically, and was managed as one contiguous block — so fragmentation and duplication capped the batch size. PagedAttention borrows OS paging: near-zero waste, sharing within and across requests, 2–4× throughput at equal latency. | Read |
+| [NOTE-024](../../../record/notes.d/NOTE-024.md) | ReLoRA: High-Rank Training Through Low-Rank Updates | Restart LoRA repeatedly during pretraining — merge the adapter, reinitialise it, prune the optimizer state, re-warm the learning rate — so a sequence of low-rank updates sums to a high-rank one. The ablation is the finding: the full-rank warm start it also requires accounts for most of the measured gain, and the restart machinery adds 0.42 perplexity on top of it. | Read |
+| [NOTE-025](../../../record/notes.d/NOTE-025.md) | AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs | Keeps an EMA of the gradient's scalar L2 norm and, when the current gradient is smaller than that history, scales it up to match — a floor under the gradient norm, applied to Adam's first moment only. The exact mirror image of gradient clipping. Evidence is VGG/ResNet on CIFAR-10, CIFAR-100 and TinyImageNet; there is no transformer and no language result. | Read |

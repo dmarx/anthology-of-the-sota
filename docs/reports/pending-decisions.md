@@ -5,13 +5,12 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**36 document(s) awaiting a decision.**
+**35 document(s) awaiting a decision.**
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
-| 2026-08-24 | Deferred | [SOTA-120](../../record/practices.d/SOTA-120.md) | 10 | 0 | Prefer AdamW's decoupled weight decay to L2 regularization added to the loss |
-| 2026-08-24 | Proposed | [LIT-101](../../record/literature.d/LIT-101.md) | 0 | 0 | AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs |
-| 2026-08-24 | Proposed | [LIT-104](../../record/literature.d/LIT-104.md) | 0 | 0 | ReLoRA: High-Rank Training Through Low-Rank Updates |
+| 2026-08-24 | Proposed | [LIT-101](../../record/literature.d/LIT-101.md) | 2 | 0 | AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs |
+| 2026-08-24 | Proposed | [LIT-104](../../record/literature.d/LIT-104.md) | 2 | 0 | ReLoRA: High-Rank Training Through Low-Rank Updates |
 | 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 22 | 2 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
 | 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 17 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
 | 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 13 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
@@ -50,4 +49,4 @@ The citation count is the second axis, and it flips the priority: an old proposa
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (6): [LIT-101](../../record/literature.d/LIT-101.md), [LIT-104](../../record/literature.d/LIT-104.md), [SOTA-167](../../record/practices.d/SOTA-167.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [ADR-024](../../record/decisions.d/ADR-024.md), [SOTA-189](../../record/practices.d/SOTA-189.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (4): [SOTA-167](../../record/practices.d/SOTA-167.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [ADR-024](../../record/decisions.d/ADR-024.md), [SOTA-189](../../record/practices.d/SOTA-189.md) — these are the cheapest to close, since nothing depends on the answer.

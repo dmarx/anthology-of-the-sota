@@ -1,5 +1,8 @@
 ---
+number: 24
 status: Read
+formerly:
+- NOTE-tmpqa1ya
 # inactive-ok: LIT-104 — Proposed — a watch-list paper, and this document is the reading that says what would take it off the list
 paper: LIT-104
 title: 'ReLoRA: High-Rank Training Through Low-Rank Updates'
@@ -11,7 +14,7 @@ summary: >-
   Restart LoRA repeatedly during pretraining — merge the adapter, reinitialise it, prune the optimizer state, re-warm the learning rate — so a sequence of low-rank updates sums to a high-rank one. The ablation is the finding: the full-rank warm start it also requires accounts for most of the measured gain, and the restart machinery adds 0.42 perplexity on top of it.
 ---
 
-# NOTE-tmpqa1ya: ReLoRA: High-Rank Training Through Low-Rank Updates
+# NOTE-024: ReLoRA: High-Rank Training Through Low-Rank Updates
 
 ## Contribution
 

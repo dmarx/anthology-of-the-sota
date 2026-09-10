@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [9 Sep 21:28 — The #114 worklist was the whole at-risk set, and the census that proves it](2026-09.md#20260909212842)
 - [9 Sep 16:46 — A version bump is two edits and I got the order wrong three times](2026-09.md#20260909164644)
 - [9 Sep 08:32 — Verifying every arXiv id's author against the API found five wrong names](2026-09.md#20260909083223)
 - [8 Sep 16:16 — The invariant check, declared and read once](2026-09.md#20260908161610)
@@ -54,9 +55,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-47 entries across 2 books, newest first.
+48 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 45 | 2026-09-05 | 2026-09-09 |
+| [2026-09](2026-09.md) | 46 | 2026-09-05 | 2026-09-09 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

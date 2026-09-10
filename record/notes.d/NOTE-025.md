@@ -1,5 +1,8 @@
 ---
+number: 25
 status: Read
+formerly:
+- NOTE-tmpx9gty
 # inactive-ok: LIT-101 — Proposed — a watch-list paper, and this document is the reading that says what would take it off the list
 paper: LIT-101
 title: 'AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs'
@@ -11,7 +14,7 @@ summary: >-
   Keeps an EMA of the gradient's scalar L2 norm and, when the current gradient is smaller than that history, scales it up to match — a floor under the gradient norm, applied to Adam's first moment only. The exact mirror image of gradient clipping. Evidence is VGG/ResNet on CIFAR-10, CIFAR-100 and TinyImageNet; there is no transformer and no language result.
 ---
 
-# NOTE-tmpx9gty: AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs
+# NOTE-025: AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs
 
 ## Contribution
 

@@ -2,10 +2,12 @@
 
 # NOTEs tagged `training-optimization`
 
-3 of 23 NOTE documents. Back to the [full index](../README.md).
+5 of 25 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-012](../../../record/notes.d/NOTE-012.md) | LARS: Large Batch Training of Convolutional Networks | Linear LR scaling with warm-up is "not general enough and training may diverge". Layer-wise Adaptive Rate Scaling sets a per-layer rate from the ratio of weight norm to gradient norm, reaching AlexNet at batch 8K and ResNet-50 at batch 32K without accuracy loss. | Read |
 | [NOTE-015](../../../record/notes.d/NOTE-015.md) | Decoupled Weight Decay Regularization | L2 regularization and weight decay are equivalent for SGD and **not** for adaptive methods. Common Adam implementations do L2 while calling it weight decay; decoupling it recovers the real thing, separates the weight-decay and learning-rate choices, and closes Adam's generalization gap to SGD with momentum. | Read |
 | [NOTE-017](../../../record/notes.d/NOTE-017.md) | Scaling Laws for Neural Language Models | Loss is a power law in model size, dataset size and compute over seven orders of magnitude, and shape barely matters. Its learning-rate finding is the opposite of what the record recorded: larger models require a *smaller* rate to avoid divergence, and the paper carries an explicit LR(N) rule. | Read |
+| [NOTE-024](../../../record/notes.d/NOTE-024.md) | ReLoRA: High-Rank Training Through Low-Rank Updates | Restart LoRA repeatedly during pretraining — merge the adapter, reinitialise it, prune the optimizer state, re-warm the learning rate — so a sequence of low-rank updates sums to a high-rank one. The ablation is the finding: the full-rank warm start it also requires accounts for most of the measured gain, and the restart machinery adds 0.42 perplexity on top of it. | Read |
+| [NOTE-025](../../../record/notes.d/NOTE-025.md) | AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs | Keeps an EMA of the gradient's scalar L2 norm and, when the current gradient is smaller than that history, scales it up to match — a floor under the gradient norm, applied to Adam's first moment only. The exact mirror image of gradient clipping. Evidence is VGG/ResNet on CIFAR-10, CIFAR-100 and TinyImageNet; there is no transformer and no language result. | Read |

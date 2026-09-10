@@ -60,7 +60,7 @@ code and run `luria link --fix`.
 
 **By consensus:** [Not judged](consensus/unassessed.md) (131, the default) · [One source](consensus/unreplicated.md) (24) · [In dispute](consensus/contested.md) (7) · [Spreading](consensus/emerging.md) (16) · [Agreed](consensus/converged.md) (7) · [Assumed](consensus/universal.md) (6)
 
-**By status:** [Current practice](statuses/Active.md) (134) · [Promising](statuses/Proposed.md) (31) · [Not yet judged](statuses/Deferred.md) (1) · [Replaced](statuses/Superseded.md) (7) · [Retired](statuses/Rejected.md) (18)
+**By status:** [Current practice](statuses/Active.md) (135) · [Promising](statuses/Proposed.md) (31) · [Not yet judged](statuses/Deferred.md) (0) · [Replaced](statuses/Superseded.md) (7) · [Retired](statuses/Rejected.md) (18)
 
 ## Chronological
 
@@ -195,7 +195,7 @@ What the status column means in this scheme — the words are luria's, the meani
 | [SOTA-117](../../record/practices.d/SOTA-117.md) | Overlap communication with computation using backward prefetch | Zhao et al. (2022), [LIT-083](../../record/literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). | Active |
 | [SOTA-118](../../record/practices.d/SOTA-118.md) | Employ mixed precision to reduce memory usage | Zhao et al. (2022), [LIT-083](../../record/literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). | Active |
 | [SOTA-119](../../record/practices.d/SOTA-119.md) | Choose sharding factor based on model and GPU memory size | Zhao et al. (2022), [LIT-083](../../record/literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). | Active |
-| [SOTA-120](../../record/practices.d/SOTA-120.md) | Prefer AdamW's decoupled weight decay to L2 regularization added to the loss | Loshchilov et al. (2017), [LIT-012](../../record/literature.d/LIT-012.md) — [ARXIV-1711.05101](https://arxiv.org/abs/1711.05101). | Deferred — the paper is settled; how widely it is actually adopted is not |
+| [SOTA-120](../../record/practices.d/SOTA-120.md) v2 | Prefer AdamW's decoupled weight decay to L2 regularization added to the loss | Loshchilov et al. (2017), [LIT-012](../../record/literature.d/LIT-012.md) — [ARXIV-1711.05101](https://arxiv.org/abs/1711.05101). | Active |
 | [SOTA-121](../../record/practices.d/SOTA-121.md) v2 | Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW | Falcon-LLM Team (2026), [LIT-119](../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Stable at nearly the same optimal LR as AdamW, better evaluations; used for every Falcon-H1-Tiny model. | Active |
 | [SOTA-122](../../record/practices.d/SOTA-122.md) v2 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD | Falcon-LLM Team (2026), [LIT-119](../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Up to 20% relative gain on MMLU, BBH and GSM8K over a Muon baseline at 200 GT. | Proposed |
 | [SOTA-123](../../record/practices.d/SOTA-123.md) | For tiny specialized models, pretrain from scratch on the target SFT or reasoning data instead of pretrain-then-finetune | Falcon-LLM Team (2026), [LIT-119](../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. At 90M, 25% SFT data in the pretraining mix beat a separate SFT stage by 10 IFEval points and yields one checkpoint that is both base and instruct. | Active |

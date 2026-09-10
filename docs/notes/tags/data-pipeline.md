@@ -2,9 +2,10 @@
 
 # NOTEs tagged `data-pipeline`
 
-2 of 23 NOTE documents. Back to the [full index](../README.md).
+3 of 74 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-002](../../../record/notes.d/NOTE-002.md) | Efficient Online Data Mixing | An Exp3 bandit over data domains, rewarded by per-domain training loss on the batches the run is already taking, revising the mixture during training. 19% fewer iterations to the next best method's final perplexity, at negligible wall-clock cost. | Read |
 | [NOTE-018](../../../record/notes.d/NOTE-018.md) | Segment Anything | The data engine is the transferable part. Three stages — assisted-manual, semi-automatic, fully automatic — each stage's labels training the model that produces the next stage's, ending in 1.1B masks. The model and the dataset are built together. | Read |
+| [NOTE-031](../../../record/notes.d/NOTE-031.md) | Data Selection for Language Models via Importance Resampling | Selects pretraining data by importance resampling in a hashed n-gram feature space — 10,000 buckets of unigram and bigram counts — to match a target distribution. The more useful result is the metric: KL reduction in that feature space predicts downstream performance across selection methods, including manual curation, which uses no n-grams at all. | Read |

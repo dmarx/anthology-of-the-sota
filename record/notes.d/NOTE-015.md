@@ -111,17 +111,17 @@ arguments µP makes structurally.
 
 **The one practice sourced to this note is confirmed.**
 
-<!-- inactive-ok-block: SOTA-120 — Deferred; the table and the paragraph below are about that status specifically -->
 | practice | disposition |
 |---|---|
 | [SOTA-120](../practices.d/SOTA-120.md) prefer AdamW's decoupled weight decay to L2 added to the loss | confirmed — C1 through C4 |
 
-<!-- inactive-ok-block: SOTA-120 — Deferred, and this paragraph is about that status -->
-`SOTA-120` is `Deferred`, which the reading does not change on its own —
-but it is worth noting that this is among the better-evidenced claims in the
-corpus, with an analytic argument, two measured consequences, and universal
-adoption since. Whatever the deferral is waiting for should be stated, because
-the source is not the weak link.
+`SOTA-120` was `Deferred` when this reading was filed, and the reading did
+not change that on its own — correctly, because the deferral was never about
+the source. This is among the better-evidenced claims in the corpus: an
+analytic argument, two measured consequences, and universal adoption since.
+What the deferral waited on was evidence that anyone *states* the choice, and
+`LIT-156` and `LIT-122` have since supplied it. The practice is now `Active`,
+and this note is why nobody had to re-read the source to get there.
 
 The record has a live tension worth recording here. `SOTA-121`'s line — Muon
 with decoupled weight decay — turns on `LIT-153`'s argument that constant

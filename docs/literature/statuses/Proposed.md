@@ -8,5 +8,5 @@
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [LIT-101](../../../record/literature.d/LIT-101.md) | AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs | Dubey et al. (2022), [ARXIV-2210.06364](https://arxiv.org/abs/2210.06364). Adaptive gradient normalization. | Proposed |
-| [LIT-104](../../../record/literature.d/LIT-104.md) | ReLoRA: High-Rank Training Through Low-Rank Updates | Lialin et al. (2023), [ARXIV-2307.05695](https://arxiv.org/abs/2307.05695). Rank-based layer stacking. | Proposed |
+| [LIT-101](../../../record/literature.d/LIT-101.md) v2 | AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs | Dubey et al. (2022), [ARXIV-2210.06364](https://arxiv.org/abs/2210.06364). Adaptive gradient normalization. | Proposed |
+| [LIT-104](../../../record/literature.d/LIT-104.md) v2 | ReLoRA: High-Rank Training Through Low-Rank Updates | Lialin et al. (2023), [ARXIV-2307.05695](https://arxiv.org/abs/2307.05695). Rank-based layer stacking. | Proposed |

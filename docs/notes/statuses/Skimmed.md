@@ -4,8 +4,9 @@
 
 **Skimmed** — abstract, figures and selected sections; honest, useful, and explicitly not enough to source a practice from.
 
-0 of 23 NOTE documents. Back to the [full index](../README.md).
+2 of 74 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [NOTE-054](../../../record/notes.d/NOTE-054.md) | Mish: A Self Regularized Non-Monotonic Activation Function | Proposes f(x) = x·tanh(softplus(x)), a smooth non-monotonic activation in the Swish family. Reported +2.1 AP50 over Leaky ReLU on YOLOv4/MS-COCO and ~1% top-1 over ReLU on ResNet-50/ImageNet. Read from the abstract only — ar5iv has no rendering for this identifier. | Skimmed |
+| [NOTE-074](../../../record/notes.d/NOTE-074.md) | Advances and Open Problems in Federated Learning | A 66,000-word multi-institution survey defining federated learning and cataloguing its open problems. Its durable contribution to this record is the cross-device / cross-silo distinction, which separates two settings with almost nothing in common operationally. | Skimmed |

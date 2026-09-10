@@ -4,7 +4,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-134 of 191 SOTA documents. Back to the [full index](../README.md).
+135 of 191 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -103,6 +103,7 @@
 | [SOTA-117](../../../record/practices.d/SOTA-117.md) | Overlap communication with computation using backward prefetch | Zhao et al. (2022), [LIT-083](../../../record/literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). | Active |
 | [SOTA-118](../../../record/practices.d/SOTA-118.md) | Employ mixed precision to reduce memory usage | Zhao et al. (2022), [LIT-083](../../../record/literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). | Active |
 | [SOTA-119](../../../record/practices.d/SOTA-119.md) | Choose sharding factor based on model and GPU memory size | Zhao et al. (2022), [LIT-083](../../../record/literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). | Active |
+| [SOTA-120](../../../record/practices.d/SOTA-120.md) v2 | Prefer AdamW's decoupled weight decay to L2 regularization added to the loss | Loshchilov et al. (2017), [LIT-012](../../../record/literature.d/LIT-012.md) — [ARXIV-1711.05101](https://arxiv.org/abs/1711.05101). | Active |
 | [SOTA-121](../../../record/practices.d/SOTA-121.md) v2 | Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Stable at nearly the same optimal LR as AdamW, better evaluations; used for every Falcon-H1-Tiny model. | Active |
 | [SOTA-123](../../../record/practices.d/SOTA-123.md) | For tiny specialized models, pretrain from scratch on the target SFT or reasoning data instead of pretrain-then-finetune | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. At 90M, 25% SFT data in the pretraining mix beat a separate SFT stage by 10 IFEval points and yields one checkpoint that is both base and instruct. | Active |
 | [SOTA-126](../../../record/practices.d/SOTA-126.md) | Run DPO on tiny models for one epoch only | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. One epoch at LR 1e-6 to 3e-6 took a 90M model's IFEval from about 50 to over 65; a second epoch degraded it while the reward kept rising. | Active |

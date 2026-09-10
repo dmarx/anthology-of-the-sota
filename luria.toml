@@ -206,10 +206,13 @@ corrected_by = { scheme = "LIT", required = false, many = true, converse = "corr
 [luria.schemes.LIT.fields.primary_topic]
 derive = "{tags[0]}"
 
-# The literature is broader than the practice registry — the corpus carries
-# substantial generative-vision, theory and inference work that never
-# produced a training recommendation — so LIT's vocabulary is the seven
-# above plus five that only the reading list needs (ADR-003).
+# The same thirteen as the practice registry above, since ADR-tmpdrbma. ADR-003
+# gave LIT five topics the SOTA scheme lacked, on the ground that the corpus
+# carries generative-vision, theory and inference work that produced no training
+# recommendation; four decisions have since closed that gap one topic at a time,
+# and the schemes now differ in what a document IS rather than in what it may be
+# ABOUT. Kept as a separate declaration because they are separate schemes and a
+# future decision may separate them again.
 [luria.schemes.LIT.tag_groups.primary_topic]
 require = "exactly-one"
 tags = ["training-optimization", "systems-optimization", "model-stability",

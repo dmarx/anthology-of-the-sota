@@ -31,6 +31,9 @@ compared_against:
 - LIT-033
 ---
 
+<!-- inactive-ok-file: ADR-tmpqczy4 — Proposed. Every mention here names it as the decision that added `introduced_by:`, which is the field this document uses; the citation is to the reasoning, not a claim the decision is settled -->
+<!-- inactive-ok-file: SOTA-tmpu69f8 — Superseded, and this note is the reading of the paper that recommends it; naming a retired practice from its own source is the point -->
+
 # LIT-tmpt0oos: Generating Long Sequences with Sparse Transformers
 
 Child et al. (2019) — [ARXIV-1904.10509](https://arxiv.org/abs/1904.10509)
@@ -90,11 +93,22 @@ windowed local ones), and [LIT-143](LIT-143.md) (natively trainable sparse atten
 seven notes downstream of a window whose origin nobody had filed. It arrived
 here as an assumption seven times and never once as a claim.
 
-Nothing is sourced to it and this note files no practice. The record's
-position on approximate sparse attention is settled the other way
-([SOTA-086](../practices.d/SOTA-086.md): exact attention made fast), and where sparsity did come
-back it came back *learned* ([SOTA-138](../practices.d/SOTA-138.md)) rather than fixed. Filing the
-paper is about provenance, not about reopening that.
+One practice is filed from it and two are repointed at it.
+
+[SOTA-tmpu69f8](../practices.d/SOTA-tmpu69f8.md) is its own recommendation — the window-plus-escape
+factorization, with the stride near `sqrt(n)` — filed `Superseded` rather than
+omitted. The record's answer went to exact attention made fast ([SOTA-086](../practices.d/SOTA-086.md),
+[SOTA-087](../practices.d/SOTA-087.md)) and then to sparsity that is learned rather than fixed ([SOTA-138](../practices.d/SOTA-138.md)),
+and a superseded claim is still a claim: its enwik8 failure is the cleanest
+evidence the corpus has for what a hand-chosen pattern risks, which is the
+argument for its own successor.
+
+Two practices were dated to papers that did not introduce them, and now carry
+`introduced_by:` pointing here ([ADR-tmpqczy4](../decisions.d/ADR-tmpqczy4.md)). [SOTA-087](../practices.d/SOTA-087.md) — recompute attention
+in the backward pass — is this paper's §5.4, three years before the
+FlashAttention note it is sourced to. [SOTA-060](../practices.d/SOTA-060.md)'s `1/sqrt(2N)` factor on the
+residual-output projections is this paper's §5.2; that practice named the
+factor in prose and cited nothing for it.
 
 Two things in it are live arguments the record can use, and neither is the
 complexity result:

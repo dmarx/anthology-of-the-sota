@@ -1,0 +1,118 @@
+---
+status: Active
+title: 'Generating Long Sequences with Sparse Transformers'
+version: 1
+tags:
+- attention-techniques
+date: '2026-09-13'
+published: '2019-04-01'
+arxiv: '1904.10509'
+first_author: 'Child'
+keywords:
+- 'sparse-attention'
+- 'factorized-attention'
+- 'sliding-window-attention'
+- 'long-context'
+- 'gradient-checkpointing'
+- 'block-sparse-kernels'
+# GPT-3 states it uses "alternating dense and locally banded sparse attention
+# patterns in the layers of the transformer, similar to the Sparse
+# Transformer" - adoption, not evidence (DP-005), so it is recorded here and
+# not as a source of anything.
+implementations:
+- 'GPT-3'
+summary: >-
+  Child et al. (2019), [ARXIV-1904.10509](https://arxiv.org/abs/1904.10509). The paper the record's
+  sliding window comes from. Factorizes causal attention into two steps - a
+  local window of the previous l positions and a second head that reaches
+  across windows - giving O(n*sqrt(n)) and, on two of three datasets, a LOWER
+  loss than the dense attention it replaces.
+compared_against:
+- LIT-033
+---
+
+# LIT-tmpt0oos: Generating Long Sequences with Sparse Transformers
+
+Child et al. (2019) — [ARXIV-1904.10509](https://arxiv.org/abs/1904.10509)
+
+## Key takeaways
+
+- **The sliding window is one half of a factorization, and the paper is
+  explicit that the other half is what makes it work.** Causal attention is
+  split across `p = 2` heads whose union connects every pair of positions in
+  at most `p + 1` steps. The first head is the window — `A_i^(1) = {t, ..., i}`
+  for `t = max(0, i - l)`, with the stride `l` chosen close to `sqrt(n)` — and
+  the second is what carries information out of it. A stack of purely local
+  layers is named in the text as a *softening* of the connectivity criterion,
+  a possibly useful inductive bias rather than the design.
+
+- **Two second halves, and which one you need is a property of the data.**
+  *Strided* — the second head attends to every `l`-th position — suits data
+  with periodic structure, images and some music. *Fixed* — specific cells at
+  the end of each block summarize it and are visible to every later block —
+  is for data without that structure. On enwik8 strided attention **failed**
+  (1.13 bpb against dense attention's 1.00) and fixed recovered and passed it
+  (0.99). On CIFAR-10 strided won. The window was never the part in dispute.
+
+- **Sparse was cheaper *and* better on two of three comparisons**, which is the
+  finding that does not follow from the complexity argument. Enwik8 at 12,288
+  context: dense 1.00 bpb at 1.31 s/iter, fixed 0.99 at 0.55. CIFAR-10: dense
+  2.82 at 0.54, strided 2.80 at 0.38. The authors offer two readings — a
+  useful inductive bias, or an optimization problem in full attention — and
+  decline to choose.
+
+- **State of the art on three density-modeling benchmarks** at the time, from
+  raw bytes with one architecture: enwik8 0.99 bpb at 95M parameters, matching
+  a Transformer-XL with more than double the parameters; CIFAR-10 2.80 bits/dim;
+  ImageNet 64×64 3.44. Sequences of over one million timesteps are shown to be
+  trainable, at 3M parameters — the capacity/length trade is measured, not
+  waved at: 4× the length costs roughly 8× the capacity.
+
+- **Three of the paper's four contributions are not about attention at all**,
+  and two of them the field kept wholesale: the pre-activation residual block
+  with **residual-output weights initialized at `1/sqrt(2N)`** so the ratio of
+  embedding scale to block scale is invariant in depth, and **recomputing
+  attention and feed-forward activations in the backward pass**, which is what
+  buys hundreds of layers at 16,384 context. The fourth is the block-sparse
+  GPU kernel — a window computed as-is, a stride computed by transposing and
+  then computing a window — and the note that the upper triangle is never
+  materialized at all.
+
+## Standing in the anthology
+
+**This is the missing trunk under a branch the record already carries**, in
+exactly [DP-007](../../docs/design-principles.md#dp-7)'s shape. The reading list holds [LIT-033](LIT-033.md) (Longformer, which
+names this paper as *"the model with the most similar attention pattern to
+ours"* and reports matching its enwik8 result), [LIT-191](LIT-191.md) (attention sinks,
+whose streaming setting is a window), [LIT-204](LIT-204.md) (Griffin), [LIT-176](LIT-176.md) (native
+hybrid attention), [LIT-208](LIT-208.md) and [LIT-209](LIT-209.md) (NoPE global layers interleaved with
+windowed local ones), and [LIT-143](LIT-143.md) (natively trainable sparse attention) —
+seven notes downstream of a window whose origin nobody had filed. It arrived
+here as an assumption seven times and never once as a claim.
+
+Nothing is sourced to it and this note files no practice. The record's
+position on approximate sparse attention is settled the other way
+([SOTA-086](../practices.d/SOTA-086.md): exact attention made fast), and where sparsity did come
+back it came back *learned* ([SOTA-138](../practices.d/SOTA-138.md)) rather than fixed. Filing the
+paper is about provenance, not about reopening that.
+
+Two things in it are live arguments the record can use, and neither is the
+complexity result:
+
+<!-- inactive-ok-block: SOTA-176 — Proposed, named as an instance of the
+     pattern this paper states rather than relied on for anything -->
+
+- **The local window is not the design; the escape from it is.** Every hybrid
+  the record holds pairs a window with something global — designated tokens,
+  emergent sinks, NoPE layers, linear-attention state, long-term slots. This
+  paper states that pairing as a *requirement* rather than a convenience —
+  the connectivity criterion is what makes it one — and its enwik8 result is
+  the cleanest demonstration in the corpus of what happens when the escape is
+  the wrong shape for the data. [SOTA-153](../practices.d/SOTA-153.md) and [SOTA-176](../practices.d/SOTA-176.md) are both instances of
+  the pattern it names.
+
+- **Sparse beat dense on loss, in 2019, and the paper says it does not know
+  why.** The record's later sparse-attention practices assert efficiency and
+  treat parity on quality as the good case. An unexplained result in the
+  opposite direction, unclaimed by its own authors, is worth having on file
+  before anyone re-derives it.

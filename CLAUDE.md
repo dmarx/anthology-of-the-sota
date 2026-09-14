@@ -47,10 +47,10 @@ still does. Collapsing them is what the old schema did, and
   in that order of preference — the first two resolve through a remote, a
   URL is a string nothing can check ([ADR-009](record/decisions.d/ADR-009.md)). Two papers reached the old
   corpus with no identifier at all; that is now impossible.
-- **Exactly one primary topic**, from the thirteen in
-  `record/practices.d/tags.yaml` — the same thirteen `record/literature.d/`
-  uses. Secondary tags are free, but add one only when it is true — the import
-  deliberately adds none.
+- **Exactly one primary topic**, from the thirteen in the `topics`
+  vocabulary in `luria.yaml` — one table, named by the practice registry and
+  the reading list alike, glosses included. Secondary tags are free, but add
+  one only when it is true — the import deliberately adds none.
 <!-- inactive-ok-block: LIT-041 — an example of the citation syntax -->
 - **Never hand-write a link target.** Write the bare code — `LIT-041`,
   `ADR-002`, `ARXIV-1412.6980` — and run `luria link --fix`. Prose renders

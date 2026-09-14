@@ -23,7 +23,7 @@ The generated views. This directory is for *reading*; filing happens in
 - [Curation log](curation/README.md) — dated entries on what entered the
   anthology and what left.
 - [Record](record.md) — the shape this project gave Luria: its schemes,
-  journals and remotes, generated from `luria.toml`.
+  journals and remotes, generated from `luria.yaml`.
 - [Reports](reports/reference-status.md) — citations of retired documents,
   codes that resolve to nothing, and the acknowledgements that keep either
   quiet on purpose.

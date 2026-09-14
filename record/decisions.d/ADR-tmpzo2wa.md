@@ -1,0 +1,194 @@
+---
+# Don't copy this file by hand — run `luria new adr`, which assigns the
+# identity and fills in the fields a machine can compute. WHICH identity
+# depends on the scheme's `allocate` mode: `filing` (the default) takes the
+# next free number on the spot, `merge` mints a temporary code that
+# `luria concretize` numbers where merges serialize (FX-ADR-049). The kinds are the
+# config: every scheme, fragment directory and journal in luria.toml is one, so
+# `luria new <kind>` works for a scheme the moment it is declared.
+#
+# Numbering is sequential and carries information (it's the order decisions were
+# made). The filename is the code and nothing else; the title goes in `title:`
+# below, where correcting it costs an edit rather than a rename plus every link.
+#   Why: LU-ADR-013.
+#
+# This frontmatter is the ONLY place these facts live. The index and the per-tag
+# pages are generated from it — never edit them by hand; run `luria index`.
+# Why: LU-ADR-004.
+
+# Active | Proposed | Deferred | Superseded | Rejected, optionally " — <note>".
+# Supersede when the CHOICE changes: set the old one to
+# `Superseded — by [ADR-tmpzo2wa](ADR-tmpzo2wa.md)` and leave its body intact. When the
+# choice stands and only a REASON was wrong, correct this body in place and
+# bump `version:` below — the rule objects to silent revision, not to editing.
+status: Proposed
+
+# What the index shows in place of the code. Repeat it as the body's `# ADR-tmpzo2wa:`
+# heading — someone reading the file alone needs one — and `luria lint` checks
+# that the two agree, because two copies of a string is a projection that drifts.
+title: 'One topic vocabulary, one set of glosses: the blurbs are shared too'
+
+# Which revision of this decision's claim you are reading. Standard frontmatter
+# for every scheme, and it moves rarely here: a decision that CHANGES is
+# superseded by a new one, not edited. Bump it when the same choice is restated
+# more broadly — scope widened, wording generalized — and say what changed in a
+# `history:` entry. Shown in the index only when it is not 1.
+version: 1
+
+# Browsing categories, pushed down onto the decision itself. One is normal; more
+# than one is fine. A tag not listed in tags.yaml still works.
+tags:
+- ontology
+- taxonomy
+
+date: '2026-09-14'
+
+# Optional. The issue(s) this decision came from: '#123'.
+
+# Optional but wanted: the one-blob description the index table shows. Without
+# it the table falls back to the title, which is usually too terse to browse by.
+# Say what was decided AND what was rejected — the index is read far more often
+# than the decision, and "why not the obvious thing" is what people come for.
+# This field is prose, so it carries links like any other prose; the rest of the
+# frontmatter is data and stays plain.
+summary: >-
+  [ADR-026](ADR-026.md) made the two topic lists identical and recorded that "the two
+  vocabularies become identical". The keys did; the glosses did not — each
+  scheme kept its own copy, ten of thirteen diverged, and the reading list's
+  header still described a vocabulary of twelve words that had held thirteen
+  since [ADR-026](ADR-026.md). One `topics` table now holds both, blurbs included.
+  [ADR-027](ADR-027.md)'s deliberate narrowing of `analysis-and-evaluation` does not
+  survive: a blurb answers "what is this about?", which [ADR-026](ADR-026.md) already
+  settled is scheme-independent. That decision's substantive holding — the
+  topic exists, it is a kind of claim, the four practices stay — is carried
+  forward. Rejected: keeping two vocabularies with identical keys, which is
+  the structure that produced the drift.
+---
+
+# ADR-tmpzo2wa: One topic vocabulary, one set of glosses: the blurbs are shared too
+
+<!-- inactive-ok-file: ADR-027 — Superseded by this decision, which names it
+     throughout as the decision whose narrowing it reverses and whose
+     substantive holding it carries forward. -->
+
+## Context
+
+[ADR-026](ADR-026.md) made the two topic lists identical and said why: `LIT` and `SOTA`
+"differ in what a document *is* rather than in what it may be *about*." It
+added `generative-modeling` and `vision-and-graphics` to the practice
+registry and recorded, in its own Consequences, that **"the two vocabularies
+become identical."**
+
+They did not become identical. The *keys* did. Each scheme kept its own copy
+of the glosses in its own file, and ten of the thirteen blurbs differ — not
+by a word, but substantively:
+
+| topic | practice registry | reading list |
+|---|---|---|
+| `inference-optimization` | batching, cache layout, quantization procedure, sampling algorithms | serving, quantization, compression, sparsity, distillation |
+| `analysis-and-evaluation` | what to measure, what a measurement cannot tell you, which comparisons are unsound | theory, interpretability, benchmarks, measurement, debugging |
+
+Some of that is drift nobody chose. The reading list's own header still
+described a vocabulary of "the seven a practice can carry, plus five the
+corpus needs and the practice registry never did" — twelve words, when both
+lists have held the same thirteen since [ADR-026](ADR-026.md). That sentence was false and
+had been for as long as nobody compared the two files, which is what two
+files makes easy.
+
+Some of it was deliberate. [ADR-027](ADR-027.md) added `analysis-and-evaluation` to the
+practice registry and narrowed its blurb on purpose: "There, it covers a
+paper's subject and reasonably includes theory and interpretability. Here it
+should cover an action."
+
+The move to a single `luria.yaml` ([LU-ADR-098](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-098.md)) made the
+question unavoidable. A vocabulary is now one table, named by both schemes,
+holding one label and one blurb per word. It cannot hold two glosses.
+
+## Decision
+
+**One `topics` vocabulary, glosses included.** Both schemes name it. The
+blurbs are the union of what the two files held, and they describe the
+**topic** rather than the kind of document filed under it.
+
+**[ADR-027](ADR-027.md)'s narrowing does not survive, and that is the part of this worth
+arguing.** Three reasons:
+
+A blurb is a filing aid. It answers "which of these thirteen words is this
+about?", and [ADR-026](ADR-026.md) already settled that the answer does not depend on
+which scheme is asking — that is exactly what "differ in what a document IS,
+not in what it may be ABOUT" means. A gloss that varies by scheme makes the
+shared axis two axes wearing one name.
+
+What a document *is* is already stated once, by the scheme. `SOTA` documents
+are recommendations; `LIT` documents are papers. Restating that inside
+thirteen blurbs copies the scheme's own definition into thirteen places, and
+copies drift — which is not a prediction here but a measurement: ten of
+thirteen, plus one header that had gone false.
+
+The narrowing was not what did the work [ADR-027](ADR-027.md) wanted. Its purpose was to
+make four measurement practices fileable, and the topic's *existence* did
+that. Its narrower gloss was meant to stop practices being filed there for
+theory or interpretability reasons; [ADR-026](ADR-026.md)'s filing rule already does that
+work generally, for all thirteen words — take a domain topic when the claim
+is about the domain as such — and a document that is only about
+interpretability is not a recommendation, so it is not a practice at all.
+
+`analysis-and-evaluation` therefore reads:
+
+> how to find out whether something worked — what to measure, what a
+> measurement cannot tell you, and which comparisons are unsound; theory,
+> interpretability and debugging belong here too
+
+[ADR-027](ADR-027.md) is `Superseded` by this decision. **Its substantive holding is
+carried forward unchanged:** `analysis-and-evaluation` is a practice topic,
+it is a kind of claim rather than a domain, and the four practices it was
+written for stay filed under it. Only the scheme-specific gloss goes.
+
+## Alternatives considered
+
+- **Keep two vocabularies with identical keys.** Honours both ADRs exactly
+  and needs no decision at all. It also keeps the structure that produced
+  the drift, and re-adopts it deliberately at the moment the config finally
+  offered a way out. The false header is the argument: nothing caught it for
+  as long as it was true that two files held the same words.
+- **Share the keys, write scheme-neutral blurbs, and move the practice-side
+  narrowing into the `SOTA` scheme's own configuration comment.** This was
+  the alternative most nearly taken. It preserves [ADR-027](ADR-027.md)'s intent and puts
+  it where a filer of practices reads it — and the comment now survives the
+  migration, so there is somewhere for it to live. Rejected because it keeps
+  the claim that the same word means two things while removing the only
+  place a reader would compare the two meanings: worse than either honest
+  option. If the distinction turns out to matter, the filing rule is where
+  it belongs, stated once for all thirteen words.
+- **Take the practice gloss for both.** The narrower one is the better
+  writing, and three of the practice blurbs lead with a definition rather
+  than a keyword list. But the reading list genuinely holds papers about
+  theory and interpretability — roughly a third of the corpus produced no
+  recommendation at all — and a gloss that excluded them would misfile real
+  documents. Range is the direction [ADR-026](ADR-026.md) chose, twice.
+
+## Consequences
+
+**The drift cannot recur.** There is one table, so a divergence would be an
+edit to a single line rather than two files agreeing to disagree quietly.
+
+**One false sentence is deleted and three stale ones corrected.** The reading
+list's "seven plus five" header goes. The practice group's comment said
+"Seven categories" when there have been thirteen since [ADR-026](ADR-026.md). Two
+configuration comments still named the temporary codes [ADR-027](ADR-027.md) and [ADR-026](ADR-026.md)
+carried before they were numbered, which `luria link --fix` does not reach
+inside a configuration file.
+
+**Published view paths move**, as a consequence of the migration rather than
+of this decision: per-status pages render under `docs/<scheme>/status/`
+instead of `docs/<scheme>/statuses/`, because the directory is named for the
+field and the field is `status`. Four directories. No link inside this record
+points at the old paths — every one of them is generated — so nothing here
+breaks; inbound links from outside will. The stale directories are removed in
+the same contribution.
+
+**What is now harder:** a scheme that genuinely needs its own gloss for a
+shared word has nowhere to put it, and would have to either take a different
+word or argue this decision back. That is the intended cost. The cheap
+version of that argument — quietly editing one of two files — is the thing
+being removed.

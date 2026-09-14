@@ -9,7 +9,7 @@ Every reference in the record is a claim — "this is why things are the way the
 
 Only an `Active` document is in force. `Proposed` and `Deferred` mean *not in force yet* — an open question, being cited as if it were settled — while `Superseded` and `Rejected` mean *no longer in force*, which is often a perfectly good thing to cite: history, or a rejection worth pointing at. Either way the citation should be deliberate, and this section lists the ones nobody has vouched for yet.
 
-**5 documents cited without acknowledgement.** Not listed: 394 citations someone has already vouched for with an `inactive-ok:` comment at the citing site.
+**6 documents cited without acknowledgement.** Not listed: 403 citations someone has already vouched for with an `inactive-ok:` comment at the citing site.
 
 To vouch for one, put the reason where the citation is — `inactive-ok:` covers its own line and the line below it, `inactive-ok-block:` its paragraph, `inactive-ok-file:` the whole page:
 
@@ -34,6 +34,14 @@ Repeat high-quality data freely when its epoch size exceeds the model's memoriza
 
 - [`record/decisions.d/ADR-017.md:78`](../../record/decisions.d/ADR-017.md)
 - [`record/decisions.d/ADR-017.md:116`](../../record/decisions.d/ADR-017.md)
+
+### [ADR-028](../../record/decisions.d/ADR-028.md) — Proposed
+
+One topic vocabulary, one set of glosses: the blurbs are shared too
+
+1 citation in 1 file awaits a look.
+
+- [`record/decisions.d/ADR-027.md:4`](../../record/decisions.d/ADR-027.md)
 
 ### [LIT-042](../../record/literature.d/LIT-042.md) — Superseded
 

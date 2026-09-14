@@ -22,8 +22,8 @@ File one with `luria new adr`.
 **[The record](tags/record.md)** (15) — what the schemes hold, and the rules between them:
 [001](../../record/decisions.d/ADR-001.md) · [002](../../record/decisions.d/ADR-002.md) · [004](../../record/decisions.d/ADR-004.md) · [009](../../record/decisions.d/ADR-009.md) · [010](../../record/decisions.d/ADR-010.md) · [011](../../record/decisions.d/ADR-011.md) · [012](../../record/decisions.d/ADR-012.md) · [013](../../record/decisions.d/ADR-013.md) · [014](../../record/decisions.d/ADR-014.md) · [015](../../record/decisions.d/ADR-015.md) · [016](../../record/decisions.d/ADR-016.md) · [017](../../record/decisions.d/ADR-017.md) · [018](../../record/decisions.d/ADR-018.md) · [019](../../record/decisions.d/ADR-019.md) · [025](../../record/decisions.d/ADR-025.md)
 
-**[Taxonomy](tags/taxonomy.md)** (5) — the topic vocabulary and what enforces it:
-[003](../../record/decisions.d/ADR-003.md) · [022](../../record/decisions.d/ADR-022.md) · [024](../../record/decisions.d/ADR-024.md) · [026](../../record/decisions.d/ADR-026.md) · [027](../../record/decisions.d/ADR-027.md)
+**[Taxonomy](tags/taxonomy.md)** (6) — the topic vocabulary and what enforces it:
+[003](../../record/decisions.d/ADR-003.md) · [022](../../record/decisions.d/ADR-022.md) · [024](../../record/decisions.d/ADR-024.md) · [026](../../record/decisions.d/ADR-026.md) · [027](../../record/decisions.d/ADR-027.md) · [028](../../record/decisions.d/ADR-028.md)
 
 **[Mechanism](tags/mechanism.md)** (12) — identifiers, generation, the lint:
 [005](../../record/decisions.d/ADR-005.md) · [007](../../record/decisions.d/ADR-007.md) · [009](../../record/decisions.d/ADR-009.md) · [010](../../record/decisions.d/ADR-010.md) · [011](../../record/decisions.d/ADR-011.md) · [012](../../record/decisions.d/ADR-012.md) · [014](../../record/decisions.d/ADR-014.md) · [015](../../record/decisions.d/ADR-015.md) · [016](../../record/decisions.d/ADR-016.md) · [018](../../record/decisions.d/ADR-018.md) · [019](../../record/decisions.d/ADR-019.md) · [023](../../record/decisions.d/ADR-023.md)
@@ -31,13 +31,13 @@ File one with `luria new adr`.
 **[Migration](tags/migration.md)** (3) — moving off the YAML registry, and what happens to it:
 [001](../../record/decisions.d/ADR-001.md) · [006](../../record/decisions.d/ADR-006.md) · [008](../../record/decisions.d/ADR-008.md)
 
-**[Ontology](tags/ontology.md)** (4):
-[020](../../record/decisions.d/ADR-020.md) · [021](../../record/decisions.d/ADR-021.md) · [025](../../record/decisions.d/ADR-025.md) · [026](../../record/decisions.d/ADR-026.md)
+**[ontology](tags/ontology.md)** (5):
+[020](../../record/decisions.d/ADR-020.md) · [021](../../record/decisions.d/ADR-021.md) · [025](../../record/decisions.d/ADR-025.md) · [026](../../record/decisions.d/ADR-026.md) · [028](../../record/decisions.d/ADR-028.md)
 
-**[Workflow](tags/workflow.md)** (1):
+**[workflow](tags/workflow.md)** (1):
 [013](../../record/decisions.d/ADR-013.md)
 
-**By status:** [Active](statuses/Active.md) (23) · [Proposed](statuses/Proposed.md) (2) · [Deferred](statuses/Deferred.md) (0) · [Superseded](statuses/Superseded.md) (2) · [Rejected](statuses/Rejected.md) (0)
+**By status:** [Active](status/Active.md) (22) · [Proposed](status/Proposed.md) (3) · [Deferred](status/Deferred.md) (0) · [Superseded](status/Superseded.md) (3) · [Rejected](status/Rejected.md) (0)
 
 ## Chronological
 
@@ -45,11 +45,11 @@ What the status column means in this scheme — the words are luria's, the meani
 
 | Status | | Means |
 |---|---|---|
-| `Active` |  | In force — the current answer, and what a citation should normally point at |
-| `Proposed` |  | Not in force yet — an open question, so citing it as settled is what the reference report catches |
-| `Deferred` |  | Not in force and not being worked on; the question is real and the answer waits on something |
-| `Superseded` |  | No longer in force because something replaced it; the successor is named in the field, not in the prose |
-| `Rejected` |  | No longer in force and nothing replaced it — kept because a rejection is worth being able to point at |
+| `Active` | Active | In force — the current answer, and what a citation should normally point at |
+| `Proposed` | Proposed | Not in force yet — an open question, so citing it as settled is what the reference report catches |
+| `Deferred` | Deferred | Not in force and not being worked on; the question is real and the answer waits on something |
+| `Superseded` | Superseded | No longer in force because something replaced it; the successor is named in the field, not in the prose |
+| `Rejected` | Rejected | No longer in force and nothing replaced it — kept because a rejection is worth being able to point at |
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -79,5 +79,6 @@ What the status column means in this scheme — the words are luria's, the meani
 | [ADR-024](../../record/decisions.d/ADR-024.md) | The topic vocabulary has four recurring seams — options, not a decision | [ADR-021](../../record/decisions.d/ADR-021.md) said to expect a fourth vocabulary decision. Declaring the relations the practice bodies argue produced 25 unbound edges, and they are not scattered: four topic pairs account for eighteen of them. This states the evidence and four options, and decides nothing — the choice is which kind of claim the vocabulary is failing to name, and that is a judgement about the subject rather than about the record. | Proposed |
 | [ADR-025](../../record/decisions.d/ADR-025.md) v2 | A third scheme: NOTE, the structured reading of a paper | A LIT note says what a paper's standing in the anthology is. It has never said what the paper contains, and the corpus now holds two demonstrations of what that costs. NOTE is a third scheme: one document per paper actually read, carrying the contribution, the assumptions, the theorem-level results, the claims with their strength, and the recommendations derived — with the status recording how deeply it was read. | Active |
 | [ADR-026](../../record/decisions.d/ADR-026.md) | One topic vocabulary: the practice registry takes the same thirteen the reading list has | [ADR-020](../../record/decisions.d/ADR-020.md) scoped the recommendations by kind of claim rather than by domain, and that decision stands. Its rejected alternative does not: it declined to add `generative-modeling` and `vision-and-graphics` to the practice vocabulary on a browsing argument that the evidence since has not borne out, and that reads to a later reader as a scope boundary — the exact thing [ADR-020](../../record/decisions.d/ADR-020.md) was written to remove. Adds both, making the two vocabularies identical. | Active |
-| [ADR-027](../../record/decisions.d/ADR-027.md) | The practice vocabulary cannot express a claim about how to evaluate | Reading the generic-bullet corpus produced four recommendations about measurement, and the practice vocabulary has nowhere to file them. The LIT side has `analysis-and-evaluation`; the practice side does not, and unlike the other two topics missing from it, this one is a kind of claim rather than a domain. Adds it, making eleven. | Active |
+| [ADR-027](../../record/decisions.d/ADR-027.md) | The practice vocabulary cannot express a claim about how to evaluate | Reading the generic-bullet corpus produced four recommendations about measurement, and the practice vocabulary has nowhere to file them. The LIT side has `analysis-and-evaluation`; the practice side does not, and unlike the other two topics missing from it, this one is a kind of claim rather than a domain. Adds it, making eleven. | Superseded — by [ADR-028](../../record/decisions.d/ADR-028.md) |
+| [ADR-028](../../record/decisions.d/ADR-028.md) | One topic vocabulary, one set of glosses: the blurbs are shared too | [ADR-026](../../record/decisions.d/ADR-026.md) made the two topic lists identical and recorded that "the two vocabularies become identical". The keys did; the glosses did not — each scheme kept its own copy, ten of thirteen diverged, and the reading list's header still described a vocabulary of twelve words that had held thirteen since [ADR-026](../../record/decisions.d/ADR-026.md). One `topics` table now holds both, blurbs included. [ADR-027](../../record/decisions.d/ADR-027.md)'s deliberate narrowing of `analysis-and-evaluation` does not survive: a blurb answers "what is this about?", which [ADR-026](../../record/decisions.d/ADR-026.md) already settled is scheme-independent. That decision's substantive holding — the topic exists, it is a kind of claim, the four practices stay — is carried forward. Rejected: keeping two vocabularies with identical keys, which is the structure that produced the drift. | Proposed |
 

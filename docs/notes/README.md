@@ -2,43 +2,43 @@
 
 <!-- GENERATED below this line by `luria index` — edit README.stub instead. -->
 
-**[Adaptation-And-Tuning](tags/adaptation-and-tuning.md)** (7):
+**[adaptation-and-tuning](tags/adaptation-and-tuning.md)** (7):
 [020](../../record/notes.d/NOTE-020.md) · [026](../../record/notes.d/NOTE-026.md) · [034](../../record/notes.d/NOTE-034.md) · [036](../../record/notes.d/NOTE-036.md) · [038](../../record/notes.d/NOTE-038.md) · [049](../../record/notes.d/NOTE-049.md) · [071](../../record/notes.d/NOTE-071.md)
 
-**[Analysis-And-Evaluation](tags/analysis-and-evaluation.md)** (5):
+**[analysis-and-evaluation](tags/analysis-and-evaluation.md)** (5):
 [051](../../record/notes.d/NOTE-051.md) · [052](../../record/notes.d/NOTE-052.md) · [057](../../record/notes.d/NOTE-057.md) · [061](../../record/notes.d/NOTE-061.md) · [070](../../record/notes.d/NOTE-070.md)
 
-**[Attention-Techniques](tags/attention-techniques.md)** (7):
+**[attention-techniques](tags/attention-techniques.md)** (7):
 [005](../../record/notes.d/NOTE-005.md) · [007](../../record/notes.d/NOTE-007.md) · [014](../../record/notes.d/NOTE-014.md) · [016](../../record/notes.d/NOTE-016.md) · [021](../../record/notes.d/NOTE-021.md) · [059](../../record/notes.d/NOTE-059.md) · [065](../../record/notes.d/NOTE-065.md)
 
-**[Data-Pipeline](tags/data-pipeline.md)** (3):
+**[data-pipeline](tags/data-pipeline.md)** (3):
 [002](../../record/notes.d/NOTE-002.md) · [018](../../record/notes.d/NOTE-018.md) · [031](../../record/notes.d/NOTE-031.md)
 
-**[Distributed-Optimization](tags/distributed-optimization.md)** (7):
+**[distributed-optimization](tags/distributed-optimization.md)** (7):
 [003](../../record/notes.d/NOTE-003.md) · [006](../../record/notes.d/NOTE-006.md) · [029](../../record/notes.d/NOTE-029.md) · [030](../../record/notes.d/NOTE-030.md) · [033](../../record/notes.d/NOTE-033.md) · [050](../../record/notes.d/NOTE-050.md) · [074](../../record/notes.d/NOTE-074.md)
 
-**[Generative-Modeling](tags/generative-modeling.md)** (10):
+**[generative-modeling](tags/generative-modeling.md)** (10):
 [009](../../record/notes.d/NOTE-009.md) · [019](../../record/notes.d/NOTE-019.md) · [040](../../record/notes.d/NOTE-040.md) · [043](../../record/notes.d/NOTE-043.md) · [048](../../record/notes.d/NOTE-048.md) · [053](../../record/notes.d/NOTE-053.md) · [063](../../record/notes.d/NOTE-063.md) · [064](../../record/notes.d/NOTE-064.md) · [067](../../record/notes.d/NOTE-067.md) · [068](../../record/notes.d/NOTE-068.md)
 
-**[Inference-Optimization](tags/inference-optimization.md)** (1):
+**[inference-optimization](tags/inference-optimization.md)** (1):
 [023](../../record/notes.d/NOTE-023.md)
 
-**[Model-Architecture](tags/model-architecture.md)** (7):
+**[model-architecture](tags/model-architecture.md)** (7):
 [004](../../record/notes.d/NOTE-004.md) · [011](../../record/notes.d/NOTE-011.md) · [028](../../record/notes.d/NOTE-028.md) · [054](../../record/notes.d/NOTE-054.md) · [055](../../record/notes.d/NOTE-055.md) · [060](../../record/notes.d/NOTE-060.md) · [069](../../record/notes.d/NOTE-069.md)
 
-**[Model-Stability](tags/model-stability.md)** (6):
+**[model-stability](tags/model-stability.md)** (6):
 [001](../../record/notes.d/NOTE-001.md) · [008](../../record/notes.d/NOTE-008.md) · [013](../../record/notes.d/NOTE-013.md) · [022](../../record/notes.d/NOTE-022.md) · [056](../../record/notes.d/NOTE-056.md) · [058](../../record/notes.d/NOTE-058.md)
 
-**[Representation-And-Encoding](tags/representation-and-encoding.md)** (1):
+**[representation-and-encoding](tags/representation-and-encoding.md)** (1):
 [010](../../record/notes.d/NOTE-010.md)
 
-**[Training-Optimization](tags/training-optimization.md)** (11):
+**[training-optimization](tags/training-optimization.md)** (11):
 [012](../../record/notes.d/NOTE-012.md) · [015](../../record/notes.d/NOTE-015.md) · [017](../../record/notes.d/NOTE-017.md) · [024](../../record/notes.d/NOTE-024.md) · [025](../../record/notes.d/NOTE-025.md) · [039](../../record/notes.d/NOTE-039.md) · [041](../../record/notes.d/NOTE-041.md) · [062](../../record/notes.d/NOTE-062.md) · [066](../../record/notes.d/NOTE-066.md) · [072](../../record/notes.d/NOTE-072.md) · [073](../../record/notes.d/NOTE-073.md)
 
-**[Vision-And-Graphics](tags/vision-and-graphics.md)** (9):
+**[vision-and-graphics](tags/vision-and-graphics.md)** (9):
 [027](../../record/notes.d/NOTE-027.md) · [032](../../record/notes.d/NOTE-032.md) · [035](../../record/notes.d/NOTE-035.md) · [037](../../record/notes.d/NOTE-037.md) · [042](../../record/notes.d/NOTE-042.md) · [044](../../record/notes.d/NOTE-044.md) · [045](../../record/notes.d/NOTE-045.md) · [046](../../record/notes.d/NOTE-046.md) · [047](../../record/notes.d/NOTE-047.md)
 
-**By status:** [Read](statuses/Read.md) (72) · [Skimmed](statuses/Skimmed.md) (2) · [Unread](statuses/Unread.md) (0) · [Re-read](statuses/Superseded.md) (0)
+**By status:** [Read](status/Read.md) (72) · [Skimmed](status/Skimmed.md) (2) · [Unread](status/Unread.md) (0) · [Re-read](status/Superseded.md) (0)
 
 What the status column means in this scheme — the words are luria's, the meanings are this project's.
 

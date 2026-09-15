@@ -1,5 +1,8 @@
 ---
+number: 3
 status: Active
+formerly:
+- THEORY-tmpn1kz1
 title: 'Batch normalization helps by smoothing the optimization landscape, not by reducing internal covariate shift'
 version: 1
 tags:
@@ -12,7 +15,7 @@ explains:
 - SOTA-020
 - SOTA-006
 corrects:
-- THEORY-tmp69thf
+- THEORY-001
 summary: >-
   Santurkar et al. (2018), [LIT-223](../literature.d/LIT-223.md) — the distributional stability batch
   normalization was named after turns out not to be what it does. Injecting
@@ -21,14 +24,14 @@ summary: >-
   nothing for covariate shift change it comparably.
 ---
 
-# THEORY-tmpn1kz1: Batch normalization helps by smoothing the optimization landscape, not by reducing internal covariate shift
+# THEORY-003: Batch normalization helps by smoothing the optimization landscape, not by reducing internal covariate shift
 
 ## Source
 
-<!-- inactive-ok-block: THEORY-tmp69thf — Rejected, and named here as the
+<!-- inactive-ok-block: THEORY-001 — Rejected, and named here as the
      account this one replaces; that is what the citation is for. -->
 Santurkar, Tsipras, Ilyas and Madry (2018), [LIT-223](../literature.d/LIT-223.md). The account it replaces
-is [THEORY-tmp69thf](THEORY-tmp69thf.md), published with the technique itself in [LIT-002](../literature.d/LIT-002.md).
+is [THEORY-001](THEORY-001.md), published with the technique itself in [LIT-002](../literature.d/LIT-002.md).
 
 ## What was actually shown
 

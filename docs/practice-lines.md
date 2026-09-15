@@ -225,6 +225,7 @@
   - [SOTA-148](../record/practices.d/SOTA-148.md) — Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss *(Proposed, emerging)*
   - [SOTA-149](../record/practices.d/SOTA-149.md) — Build the sparse layers from many small experts plus an always-on shared one, not a few large ones *(Active, emerging)*
   - [SOTA-180](../record/practices.d/SOTA-180.md) — Keep the routed experts' weights in a down-projected latent space and spend the saved bandwidth on more of them *(Active, emerging)*
+  - [SOTA-209](../record/practices.d/SOTA-209.md) — Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch *(Proposed, unassessed)*
 
 ## From Compute the normalization statistic without centering (RMSNorm)
 

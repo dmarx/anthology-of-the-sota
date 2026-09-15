@@ -1,5 +1,8 @@
 ---
+number: 2
 status: Proposed
+formerly:
+- THEORY-tmp6auqn
 promote_when: >-
   A demonstration at language-model scale in which the winning subnetwork is
   rewound to its ORIGINAL initialization rather than to an early-training
@@ -20,10 +23,10 @@ summary: >-
   the same number of steps. The reset is the claim; the same structure
   re-initialized randomly does not do it.
 corrected_by:
-- THEORY-tmpqvo94
+- THEORY-004
 ---
 
-# THEORY-tmp6auqn: A dense network contains a sparse subnetwork that matches its accuracy when trained from the same initialization
+# THEORY-002: A dense network contains a sparse subnetwork that matches its accuracy when trained from the same initialization
 
 ## Source
 
@@ -52,7 +55,7 @@ and later work rewound to an early-training checkpoint instead. That is a
 weaker claim wearing the same name — if the information has to be collected
 over the first k steps, it was not in the initialization.
 
-[THEORY-tmpqvo94](THEORY-tmpqvo94.md) is a second reason for the caution, and it is about what the
+[THEORY-004](THEORY-004.md) is a second reason for the caution, and it is about what the
 result means rather than where it holds.
 
 ## What this does not say
@@ -64,5 +67,5 @@ then train a smaller one."
 
 It does not say sparse structures are independently good architectures. That
 is the reading the phrase "winning ticket" invites, it is the one
-[THEORY-tmpqvo94](THEORY-tmpqvo94.md) takes apart, and the random-reinitialization control in this
+[THEORY-004](THEORY-004.md) takes apart, and the random-reinitialization control in this
 very paper already argues against it.

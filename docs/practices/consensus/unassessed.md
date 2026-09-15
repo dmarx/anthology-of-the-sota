@@ -4,7 +4,7 @@
 
 **Not judged** — nobody has assessed where the field stands on this; the default, and true of most of the corpus.
 
-133 of 208 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
+134 of 209 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -141,3 +141,4 @@
 | [SOTA-189](../../../record/practices.d/SOTA-189.md) | Set the checkpoint interval from the job's measured time-to-failure, which shrinks as the job grows | CoreWeave (2025), [LIT-222](../../../record/literature.d/LIT-222.md). Expected work lost to a failure is half the inter-checkpoint interval, and mean time to failure falls linearly with GPU count — so the interval belongs to the job's size and the cluster's failure rate, not to the write cost alone. | Proposed |
 | [SOTA-204](../../../record/practices.d/SOTA-204.md) | Anneal a discretisation from coarse to fine over training rather than fixing it | Song et al. (2023), [LIT-093](../../../record/literature.d/LIT-093.md). Where a training loss approximates a continuous target through a step count, that count is a bias/variance dial: few steps give a biased but low-variance target early, many steps a faithful but noisy one later. | Proposed |
 | [SOTA-208](../../../record/practices.d/SOTA-208.md) | Factorize long-sequence attention into a local window and a second head that escapes it | Child et al. (2019), [LIT-225](../../../record/literature.d/LIT-225.md) — [ARXIV-1904.10509](https://arxiv.org/abs/1904.10509). Superseded: the field went to exact attention made fast ([SOTA-086](../../../record/practices.d/SOTA-086.md), [SOTA-087](../../../record/practices.d/SOTA-087.md)) and then to sparsity that is LEARNED rather than fixed ([SOTA-138](../../../record/practices.d/SOTA-138.md)). What survives is the connectivity requirement — a window alone is not the design — which every hybrid the record recommends is an instance of. | Superseded — by [SOTA-138](../../../record/practices.d/SOTA-138.md) |
+| [SOTA-209](../../../record/practices.d/SOTA-209.md) | Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch | Komatsuzaki et al. (2022), [LIT-227](../../../record/literature.d/LIT-227.md) — seed the experts from a dense checkpoint you already paid for. Upcycled T5 and ViT models beat their dense counterparts at ~50% of the dense pretraining sunk cost, and beat sparse models trained from scratch on 100% of it: same architecture, same compute, different initialization. | Proposed |

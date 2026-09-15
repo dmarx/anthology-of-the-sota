@@ -1,5 +1,8 @@
 ---
+number: 4
 status: Active
+formerly:
+- THEORY-tmpqvo94
 title: 'A lottery ticket wins by re-learning the solution its dense run already found'
 version: 1
 tags:
@@ -8,7 +11,7 @@ date: '2026-09-15'
 source:
 - LIT-039
 corrects:
-- THEORY-tmp6auqn
+- THEORY-002
 summary: >-
   Evci et al. (2020), [LIT-039](../literature.d/LIT-039.md) — sparse networks trained from scratch do worse
   because gradient flow at initialization is poor, and a rewound ticket does
@@ -17,7 +20,7 @@ summary: >-
   claim about initialization, not about architecture.
 ---
 
-# THEORY-tmpqvo94: A lottery ticket wins by re-learning the solution its dense run already found
+# THEORY-004: A lottery ticket wins by re-learning the solution its dense run already found
 
 ## Source
 
@@ -25,8 +28,8 @@ Evci, Ioannou, Keskin and Dauphin (2020), [LIT-039](../literature.d/LIT-039.md).
 
 ## What was actually shown
 
-<!-- inactive-ok: THEORY-tmp6auqn — Proposed, and this document is part of why: cited as the claim being qualified, not as a settled one. -->
-The question is the one [THEORY-tmp6auqn](THEORY-tmp6auqn.md) leaves open: why does a sparse
+<!-- inactive-ok: THEORY-002 — Proposed, and this document is part of why: cited as the claim being qualified, not as a settled one. -->
+The question is the one [THEORY-002](THEORY-002.md) leaves open: why does a sparse
 structure trained from a random initialization do worse than the same
 structure obtained by pruning a dense network? The answer offered is gradient
 flow — sparse networks at initialization have poor flow, and training from
@@ -39,8 +42,8 @@ that this sparse structure was a good one.
 
 ## What it corrects
 
-<!-- inactive-ok: THEORY-tmp6auqn — Proposed; the sentence says exactly which part of it survives, which is what citing an unsettled claim owes. -->
-Not the existence result. The measurement in [THEORY-tmp6auqn](THEORY-tmp6auqn.md) stands, and
+<!-- inactive-ok: THEORY-002 — Proposed; the sentence says exactly which part of it survives, which is what citing an unsettled claim owes. -->
+Not the existence result. The measurement in [THEORY-002](THEORY-002.md) stands, and
 nothing here says the ticket fails to match the dense network.
 
 What breaks is the reading — that a search has located a sparse architecture

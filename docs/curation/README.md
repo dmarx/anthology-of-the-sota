@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [15 Sep 07:09 — Two notes that said, in their own words, that they had nowhere to go](2026-09.md#two-notes-that-said-in-their-own-words-that-they-had-nowhere-to-go)
 - [13 Sep 20:20 — source: is holding at least three relations, and fourteen practices rest on adoption alone](2026-09.md#source-is-holding-at-least-three-relations-and-fourteen-practices-rest-on-adoption-alone)
 - [13 Sep 18:02 — The sliding window had seven downstream notes and no origin](2026-09.md#the-sliding-window-had-seven-downstream-notes-and-no-origin)
 - [10 Sep 07:54 — A derived field stored by hand: eight practices dated by a source they no longer cite](2026-09.md#a-derived-field-stored-by-hand-eight-practices-dated-by-a-source-they-no-longer-cite)
@@ -60,9 +61,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-53 entries across 2 books, newest first.
+54 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 51 | 2026-09-05 | 2026-09-13 |
+| [2026-09](2026-09.md) | 52 | 2026-09-05 | 2026-09-15 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

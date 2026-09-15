@@ -1,5 +1,8 @@
 ---
+number: 1
 status: Rejected
+formerly:
+- THEORY-tmp69thf
 status_note: the experiment that would have confirmed it was eventually run, and the benefit survived the shift being put back
 title: 'Batch normalization works by reducing internal covariate shift'
 version: 1
@@ -15,10 +18,10 @@ summary: >-
   those distributions steady is what buys the speed. Refuted in 2018;
   the technique was not.
 corrected_by:
-- THEORY-tmpn1kz1
+- THEORY-003
 ---
 
-# THEORY-tmp69thf: Batch normalization works by reducing internal covariate shift
+# THEORY-001: Batch normalization works by reducing internal covariate shift
 
 ## Source
 
@@ -43,7 +46,7 @@ for three years.
 
 ## Why this is rejected
 
-Santurkar et al. ([THEORY-tmpn1kz1](THEORY-tmpn1kz1.md)) tested the mechanism rather than the
+Santurkar et al. ([THEORY-003](THEORY-003.md)) tested the mechanism rather than the
 predictions, by putting the covariate shift back: noise injected after each
 BN layer, non-zero-mean and time-varying, restoring exactly the instability
 BN was supposed to be removing. The network trained anyway. Their conclusion

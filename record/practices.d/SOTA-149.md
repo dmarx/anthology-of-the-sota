@@ -33,7 +33,7 @@ summary: >-
   same compute, and isolate a few always-on shared experts to hold the common
   knowledge every routed expert would otherwise learn separately.
 explained_by:
-- THEORY-tmptabiw
+- THEORY-005
 ---
 
 <!-- inactive-ok-file: SOTA-148 — Proposed, named as the third member of the

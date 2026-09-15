@@ -13,7 +13,7 @@ introduced_by:
 summary: >-
   Santurkar et al. (2018), [LIT-015](../literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375).
 explained_by:
-- THEORY-tmpn1kz1
+- THEORY-003
 ---
 
 # SOTA-020: Use larger learning rates with batch normalization

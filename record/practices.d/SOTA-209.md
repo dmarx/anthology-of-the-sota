@@ -1,5 +1,8 @@
 ---
+number: 209
 status: Proposed
+formerly:
+- SOTA-tmpmc10q
 promote_when: >-
   A frontier-scale report comparing an upcycled model against one trained
   sparse from scratch at MATCHED TOTAL compute, dense pretraining included,
@@ -13,11 +16,11 @@ tags:
 - model-architecture
 date: '2026-09-15'
 source:
-- LIT-tmpolljg
+- LIT-227
 introduced_by:
-- LIT-tmpolljg
+- LIT-227
 summary: >-
-  Komatsuzaki et al. (2022), [LIT-tmpolljg](../literature.d/LIT-tmpolljg.md) — seed the experts from a dense
+  Komatsuzaki et al. (2022), [LIT-227](../literature.d/LIT-227.md) — seed the experts from a dense
   checkpoint you already paid for. Upcycled T5 and ViT models beat their
   dense counterparts at ~50% of the dense pretraining sunk cost, and beat
   sparse models trained from scratch on 100% of it: same architecture, same
@@ -26,11 +29,11 @@ extends:
 - SOTA-150
 ---
 
-# SOTA-tmpmc10q: Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch
+# SOTA-209: Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch
 
 ## Source
 
-Komatsuzaki et al. (2022), [LIT-tmpolljg](../literature.d/LIT-tmpolljg.md) — Sparse Upcycling.
+Komatsuzaki et al. (2022), [LIT-227](../literature.d/LIT-227.md) — Sparse Upcycling.
 
 [SOTA-150](SOTA-150.md) says make the feed-forward layers sparse. This says where the sparse
 model should start, and the answer is: from a dense one you have already
@@ -48,10 +51,10 @@ Same architecture, same total compute, different initialization — which is
 what makes it a recommendation about how to start rather than about what to
 build.
 
-<!-- inactive-ok-block: THEORY-tmptabiw — Proposed, and cited as the reason
+<!-- inactive-ok-block: THEORY-005 — Proposed, and cited as the reason
      to EXPECT this rather than as evidence for it; the evidence is the
      comparison above, and this practice would stand without the account. -->
-The reason to expect it is [THEORY-tmptabiw](../theory.d/THEORY-tmptabiw.md): the dense checkpoint already
+The reason to expect it is [THEORY-005](../theory.d/THEORY-005.md): the dense checkpoint already
 contains a functional partition, so seeding experts from it is not an
 arbitrary warm start but a handover of structure the dense run had already
 found.

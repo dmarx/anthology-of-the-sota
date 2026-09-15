@@ -4,7 +4,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-12 of 225 LIT documents. Back to the [full index](../README.md).
+13 of 228 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,4 @@
 | [LIT-123](../../../record/literature.d/LIT-123.md) | Wait, Wait, Wait... Why Do Reasoning Models Loop? | Pipis et al. (2025), [ARXIV-2512.12895](https://arxiv.org/abs/2512.12895). Reasoning models loop — repeat the same text — at low temperature; larger models loop less and distilled students loop far more than their teachers, which the paper traces to errors in learning and, on a synthetic task, to risk aversion: when the progress-making action is hard to learn and a cyclic one is easy, probability shifts to the cycle. | Active |
 | [LIT-167](../../../record/literature.d/LIT-167.md) | Understanding R1-Zero-Like Training: A Critical Perspective | Liu et al. (2025), [ARXIV-2503.20783](https://arxiv.org/abs/2503.20783). Two corrections to the R1-Zero story: the base model may already carry what looks like emergent reasoning, and GRPO has a length bias that inflates wrong answers. Dr. GRPO removes the bias. | Active |
 | [LIT-190](../../../record/literature.d/LIT-190.md) | Massive Activations in Large Language Models | Sun et al. (2024), [ARXIV-2402.17762](https://arxiv.org/abs/2402.17762). A handful of activations in an LLM run up to 100,000× larger than the rest, at fixed feature dimensions and a few token positions, and they act as fixed biases rather than input-dependent features: setting them to their own mean leaves the model intact, setting them to zero destroys it. They are how the model smuggles an attention bias into a mechanism that has none, and giving attention an explicit learnable bias makes them disappear at no cost in quality. | Active |
+| [LIT-228](../../../record/literature.d/LIT-228.md) | Emergent Modularity in Pre-trained Transformers | Zhang et al. (2023), [ARXIV-2305.18390](https://arxiv.org/abs/2305.18390). Neurons in a pre-trained transformer are functionally specialized, the specialization clusters into mixture-of-experts-shaped groups, and perturbing a functional expert damages the corresponding function. The modular structure stabilizes early in pre-training — earlier than the neurons themselves do. | Active |

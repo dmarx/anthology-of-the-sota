@@ -17,6 +17,7 @@ A code — `ADR-012` — resolves to a document, and every reference to it in th
 | a code looks like | filed in | rendered to | in force when status is |
 |---|---|---|---|
 | `SOTA-001` | `record/practices.d/` | `docs/practices/README.md` + tag pages | `Active` |
+| `THEORY-001` | `record/theory.d/` | `docs/theory/README.md` + tag pages | `Active` |
 | `LIT-001` | `record/literature.d/` | `docs/literature/README.md` + tag pages | `Active` |
 | `NOTE-001` | `record/notes.d/` | `docs/notes/README.md` + tag pages | `Read` |
 | `ADR-001` | `record/decisions.d/` | `docs/decisions/README.md` + tag pages | `Active` |
@@ -30,6 +31,7 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 
 - `source` — required, one or more `LIT` codes (luria.yaml: schemes.SOTA.references.source)
 - `introduced_by` — required, one or more `LIT` codes (luria.yaml: schemes.SOTA.references.introduced_by)
+- `explained_by` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.SOTA.references.explained_by)
 - `extends` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.extends)
 - `extended_by` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.extended_by)
 - `compared_against` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.compared_against)
@@ -43,6 +45,21 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `primary_topic` — derived — `{tags[0]}`, never written (luria.yaml: schemes.SOTA.fields.primary_topic)
 - `published` — derived — `{published}` from `source[0]`, never written (luria.yaml: schemes.SOTA.fields.published)
 - `primary_topic` — exactly one of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.yaml: schemes.SOTA.fields.tags.groups.primary_topic)
+
+**`THEORY`**
+
+- `source` — required, one or more `LIT` codes (luria.yaml: schemes.THEORY.references.source)
+- `explains` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.THEORY.references.explains)
+- `extends` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.extends)
+- `extended_by` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.extended_by)
+- `corrects` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.corrects)
+- `corrected_by` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.corrected_by)
+- `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Rejected`, `Superseded` (luria.yaml: schemes.THEORY.fields.status; vocabulary 'theory-statuses': values)
+- `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics` (luria.yaml: schemes.THEORY.fields.tags; vocabulary 'topics': values)
+- `promote_when` — required when `status` is `Proposed`, `Deferred` (luria.yaml: schemes.THEORY.fields.promote_when)
+- `primary_topic` — derived — `{tags[0]}`, never written (luria.yaml: schemes.THEORY.fields.primary_topic)
+- `published` — derived — `{published}` from `source[0]`, never written (luria.yaml: schemes.THEORY.fields.published)
+- `primary_topic` — exactly one of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.yaml: schemes.THEORY.fields.tags.groups.primary_topic)
 
 **`LIT`**
 
@@ -118,6 +135,7 @@ Every kind this project scaffolds, straight from the dispatch table `luria new` 
 | `luria new --kind migration --title "…"` | a migration spec |
 | `luria new --kind note --title "…"` | a document in the `NOTE` scheme, numbered for you |
 | `luria new --kind sota --title "…"` | a document in the `SOTA` scheme, numbered for you |
+| `luria new --kind theory --title "…"` | a document in the `THEORY` scheme, numbered for you |
 
 ## Settings this project changed
 
@@ -137,6 +155,7 @@ Everything not listed here is at Luria's default.
 | `vocabularies.sota-statuses` | *5 keys set* | *unset* |
 | `vocabularies.lit-statuses` | *5 keys set* | *unset* |
 | `vocabularies.note-statuses` | *4 keys set* | *unset* |
+| `vocabularies.theory-statuses` | *5 keys set* | *unset* |
 | `vocabularies.adr-tags` | *4 keys set* | *unset* |
 | `vocabularies.adr-statuses` | *5 keys set* | *unset* |
 | `vocabularies.dp-tags` | *3 keys set* | *unset* |

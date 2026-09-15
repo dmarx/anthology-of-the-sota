@@ -4,7 +4,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-210 of 225 LIT documents. Back to the [full index](../README.md).
+213 of 228 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -218,3 +218,6 @@
 | [LIT-223](../../../record/literature.d/LIT-223.md) v2 | How Does Batch Normalization Help Optimization? | Santurkar et al. (2018), [ARXIV-1805.11604](https://arxiv.org/abs/1805.11604). "Distributional stability of layer inputs has little to do with the success of BatchNorm" — what it does instead is make the optimization landscape significantly smoother. | Active |
 | [LIT-224](../../../record/literature.d/LIT-224.md) | Orca: A Distributed Serving System for Transformer-Based Generative Models | Yu et al. (2022), OSDI '22. Introduces **iteration-level scheduling** — schedule at the granularity of one model iteration rather than one request — and **selective batching**. 36.9× throughput over FasterTransformer at equal latency on GPT-3 175B. The origin of what the field calls continuous batching. | Active |
 | [LIT-225](../../../record/literature.d/LIT-225.md) | Generating Long Sequences with Sparse Transformers | Child et al. (2019), [ARXIV-1904.10509](https://arxiv.org/abs/1904.10509). The paper the record's sliding window comes from. Factorizes causal attention into two steps - a local window of the previous l positions and a second head that reaches across windows - giving O(n*sqrt(n)) and, on two of three datasets, a LOWER loss than the dense attention it replaces. | Active |
+| [LIT-226](../../../record/literature.d/LIT-226.md) | MoEfication: Transformer Feed-forward Layers are Mixtures of Experts | Zhang et al. (2021), [ARXIV-2110.01786](https://arxiv.org/abs/2110.01786). Most inputs activate only a tiny fraction of an FFN's neurons, and the neurons that fire together can be partitioned into experts with a router bolted on afterwards — the same parameters, conditionally used. 10–30% of FFN parameters per input retains over 95% of performance. | Active |
+| [LIT-227](../../../record/literature.d/LIT-227.md) | Sparse Upcycling: Training Mixture-of-Experts from Dense Checkpoints | Komatsuzaki et al. (2022), [ARXIV-2212.05055](https://arxiv.org/abs/2212.05055). Initialize a mixture-of-experts model from a dense checkpoint instead of from scratch. Upcycled T5 and ViT models beat their dense counterparts using ~50% of the dense pretraining sunk cost, and beat MoE models trained from scratch on 100% of it. | Active |
+| [LIT-228](../../../record/literature.d/LIT-228.md) | Emergent Modularity in Pre-trained Transformers | Zhang et al. (2023), [ARXIV-2305.18390](https://arxiv.org/abs/2305.18390). Neurons in a pre-trained transformer are functionally specialized, the specialization clusters into mixture-of-experts-shaped groups, and perturbing a functional expert damages the corresponding function. The modular structure stabilizes early in pre-training — earlier than the neurons themselves do. | Active |

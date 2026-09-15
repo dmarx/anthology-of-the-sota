@@ -4,7 +4,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-26 of 208 SOTA documents. Back to the [full index](../README.md).
+27 of 209 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -34,3 +34,4 @@
 | [SOTA-178](../../../record/practices.d/SOTA-178.md) | Give the recurrence vector-valued gating and in-context learning rates so it can track state a softmax layer provably cannot | Peng et al. (2025), [LIT-173](../../../record/literature.d/LIT-173.md) — a generalised delta rule with vector-valued gating and in-context learning rates, at constant memory and constant time per token. A 2.9B model sets the 3B state of the art on multilingual tasks on dramatically fewer training tokens. The expressivity claim is the sharp one: it can recognise all regular languages, which under standard conjectures exceeds what a softmax stack in TC⁰ can do. | Proposed |
 | [SOTA-180](../../../record/practices.d/SOTA-180.md) | Keep the routed experts' weights in a down-projected latent space and spend the saved bandwidth on more of them | Elango et al. (2026), [LIT-196](../../../record/literature.d/LIT-196.md) — down-project the token before the routed experts and keep their weights in that latent space, dispatching and aggregating there too, while routing and the shared experts stay at full width. Communication volume and weight-loading bandwidth both fall by d/d_l, and the saved budget buys more experts and more active per token. | Active |
 | [SOTA-190](../../../record/practices.d/SOTA-190.md) | Increase depth before any other dimension when scaling a transformer | Tay et al. (2021), [LIT-052](../../../record/literature.d/LIT-052.md) — the DeepNarrow strategy. Small 16L matches T5-Base downstream at 60% of the parameters, 63% of the FLOPs and 40% faster; the limit is parallelism rather than quality. | Proposed |
+| [SOTA-209](../../../record/practices.d/SOTA-209.md) | Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch | Komatsuzaki et al. (2022), [LIT-227](../../../record/literature.d/LIT-227.md) — seed the experts from a dense checkpoint you already paid for. Upcycled T5 and ViT models beat their dense counterparts at ~50% of the dense pretraining sunk cost, and beat sparse models trained from scratch on 100% of it: same architecture, same compute, different initialization. | Proposed |

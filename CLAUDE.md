@@ -33,7 +33,7 @@ it disagrees with `luria --help` or with the record, this file is wrong.
 
 ## The three schemes, and why there are three
 
-<!-- inactive-ok-block: ADR-tmpvv7zp — Proposed, and named from a map rather
+<!-- inactive-ok-block: ADR-031 — Proposed, and named from a map rather
      than cited as a settled rule: the scheme exists and this section describes
      it; whether it earns its keep is what its promotion condition asks. -->
 
@@ -45,7 +45,7 @@ the attic can be the source of something everybody still does, and a
 technique everybody uses can have been published with an explanation that was
 later refuted. Collapsing the first and the third is what the old schema did,
 and [ADR-002](record/decisions.d/ADR-002.md) is why it stopped; splitting the
-second out of the first is [ADR-tmpvv7zp](record/decisions.d/ADR-tmpvv7zp.md).
+second out of the first is [ADR-031](record/decisions.d/ADR-031.md).
 
 The test when filing: **if it tells the reader what to do it is a practice,
 and if it says what is true it is a theory.** `Rejected` does not mean the

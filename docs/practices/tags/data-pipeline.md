@@ -4,7 +4,7 @@
 
 **Data pipeline** — loading, quality assessment and selection, preprocessing, batch preparation.
 
-26 of 208 SOTA documents. Back to the [full index](../README.md).
+26 of 209 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

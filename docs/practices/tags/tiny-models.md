@@ -4,7 +4,7 @@
 
 **tiny-models**.
 
-8 of 208 SOTA documents. Back to the [full index](../README.md).
+8 of 209 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

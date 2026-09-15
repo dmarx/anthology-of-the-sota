@@ -6,7 +6,7 @@
 # these systems. State it as a finding, not as an instruction: "Batch
 # normalization helps by smoothing the optimization landscape" rather than
 # "Use batch normalization". If what you are about to write tells the reader
-# what to do, it is a practice — `luria new sota` (ADR-tmpvv7zp).
+# what to do, it is a practice — `luria new sota` (ADR-031).
 
 # Active | Proposed | Deferred | Superseded | Rejected, optionally " — note".
 # What each one means here is in luria.yaml, and it is NOT what the same word

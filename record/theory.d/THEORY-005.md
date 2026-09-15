@@ -1,5 +1,8 @@
 ---
+number: 5
 status: Proposed
+formerly:
+- THEORY-tmptabiw
 promote_when: >-
   The co-activation partition measured by a group unconnected to Zhang et al.,
   or measured inside a trained mixture of experts rather than inside a dense
@@ -11,13 +14,13 @@ tags:
 - model-architecture
 date: '2026-09-15'
 source:
-- LIT-tmpf6e0b
-- LIT-tmpwlmjv
+- LIT-226
+- LIT-228
 explains:
 - SOTA-150
 - SOTA-149
 summary: >-
-  Zhang et al. (2021, 2023), [LIT-tmpf6e0b](../literature.d/LIT-tmpf6e0b.md) and [LIT-tmpwlmjv](../literature.d/LIT-tmpwlmjv.md) — a trained dense
+  Zhang et al. (2021, 2023), [LIT-226](../literature.d/LIT-226.md) and [LIT-228](../literature.d/LIT-228.md) — a trained dense
   FFN uses a tiny fraction of its neurons per input, the co-activating
   neurons partition into functional experts that can be recovered post hoc
   with the same parameters, and through pre-training the partition stabilizes
@@ -25,11 +28,11 @@ summary: >-
   structure dense training arrives at anyway.
 ---
 
-# THEORY-tmptabiw: Dense feed-forward layers are already mixtures of experts, and pre-training settles the partition before the neurons
+# THEORY-005: Dense feed-forward layers are already mixtures of experts, and pre-training settles the partition before the neurons
 
 ## Source
 
-Zhang et al. (2021), [LIT-tmpf6e0b](../literature.d/LIT-tmpf6e0b.md), and Zhang et al. (2023), [LIT-tmpwlmjv](../literature.d/LIT-tmpwlmjv.md).
+Zhang et al. (2021), [LIT-226](../literature.d/LIT-226.md), and Zhang et al. (2023), [LIT-228](../literature.d/LIT-228.md).
 
 ## What was actually shown
 
@@ -40,15 +43,15 @@ of an FFN's neurons. Density is a property of how the parameters are stored
 and run, not of how many of them any given token needs.
 
 **The sparsity has structure, and the structure is recoverable.**
-[LIT-tmpf6e0b](../literature.d/LIT-tmpf6e0b.md) partitions a *trained* FFN's parameters into experts by which
+[LIT-226](../literature.d/LIT-226.md) partitions a *trained* FFN's parameters into experts by which
 neurons co-activate, bolts a router on, and changes nothing else — same
 parameters, conditionally used. 10–30% of FFN parameters per input retains
-over 95% of performance. [LIT-tmpwlmjv](../literature.d/LIT-tmpwlmjv.md) then supplies the causal half:
+over 95% of performance. [LIT-228](../literature.d/LIT-228.md) then supplies the causal half:
 the clusters are functionally specialized, and perturbing one damages the
 corresponding function rather than degrading the model generally.
 
 **The partition comes first.** Tracking modularity across pre-training,
-[LIT-tmpwlmjv](../literature.d/LIT-tmpwlmjv.md) finds the modular structure stabilizes at an early stage —
+[LIT-228](../literature.d/LIT-228.md) finds the modular structure stabilizes at an early stage —
 *faster than the neurons themselves stabilize*. The reading offered is that
 transformers "first construct the modular structure and then learn
 fine-grained neuron functions."
@@ -73,9 +76,9 @@ match to it.
 
 ## What this has to do with the lottery ticket
 
-<!-- inactive-ok-block: THEORY-tmp6auqn — Proposed, and cited here for the
+<!-- inactive-ok-block: THEORY-002 — Proposed, and cited here for the
      shape it shares with this account rather than as a settled claim. -->
-It rhymes with [THEORY-tmp6auqn](THEORY-tmp6auqn.md) and [THEORY-tmpqvo94](THEORY-tmpqvo94.md), and the ways it does not
+It rhymes with [THEORY-002](THEORY-002.md) and [THEORY-004](THEORY-004.md), and the ways it does not
 are worth stating, because the analogy is easy to take too far.
 
 What they share is the direction of the arrow: **the dense run is what
@@ -94,7 +97,7 @@ subnetwork is different for every input, and no rewind is involved.
      mechanism that keeps every expert loaded is evidence that no expert is
      meant to go unused. -->
 The difference resolves something the two lines would otherwise leave
-contradictory. [THEORY-tmpqvo94](THEORY-tmpqvo94.md)'s account of why sparse-from-scratch
+contradictory. [THEORY-004](THEORY-004.md)'s account of why sparse-from-scratch
 underperforms is poor gradient flow at initialization — yet mixtures of
 experts train from scratch and work. The reason is that a mixture of experts
 is not sparse in the sense that argument is about: no parameter is removed,
@@ -111,7 +114,7 @@ impose. Both papers measure *dense* models; neither measures the experts of a
 trained MoE, and "the structure is MoE-shaped" is a weaker statement than "the
 shape we chose is the structure."
 
-It does not say a converted model equals a natively sparse one. [LIT-tmpf6e0b](../literature.d/LIT-tmpf6e0b.md)
+It does not say a converted model equals a natively sparse one. [LIT-226](../literature.d/LIT-226.md)
 is a post-hoc conversion evaluated on inference cost, with no comparison
 against a model trained sparse from the start.
 

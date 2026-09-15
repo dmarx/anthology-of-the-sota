@@ -1,0 +1,84 @@
+# Theory
+
+Why the things in the [practice registry](../practices/README.md) work — one
+document per claim, each citing the paper it came from.
+
+A theory is a **finding**, where a practice is an instruction. "Use batch
+normalization" is a practice; "batch normalization helps by smoothing the
+optimization landscape" is a theory, and the two are held apart because they
+can be true and false independently. That is not a hypothetical: batch
+normalization's practices are `Active`, the paper that introduced it is worth
+reading, and the explanation in that paper's own title is `Rejected` here.
+Three facts, three statuses, three documents.
+
+`Active` means this is the best account the record holds. `Rejected` means
+the account is disbelieved — **and the thing it explained may still work
+perfectly well**, which is the word's whole reason for meaning something
+different here than it does on a practice. Nothing is deleted: an explanation
+that stops being believed keeps its body, because how a plausible mechanism
+survived a decade of correct predictions is the interesting part.
+
+Every theory names a `source:`, on the same rule as a practice — an
+explanation with no paper behind it is a hunch. Where one underwrites a
+recommendation it says so with `explains:`, and the practice reads it back as
+`explained_by:`. That field is optional, because a finding that underwrites
+nothing yet is still a finding.
+
+File one with `luria new theory`. Never hand-write a link target: write the
+bare code and run `luria link --fix`.
+
+<!-- GENERATED below this line by `luria index` — edit README.stub instead. -->
+
+## By topic
+
+**[Training optimization](tags/training-optimization.md)** (0) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
+
+**[Systems optimization](tags/systems-optimization.md)** (0) — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
+
+**[Model stability](tags/model-stability.md)** (2) — initialization, normalization, gradient handling, regularization, loss-landscape behaviour:
+[001](../../record/theory.d/THEORY-001.md) · [003](../../record/theory.d/THEORY-003.md)
+
+**[Distributed optimization](tags/distributed-optimization.md)** (0) — parallelism and sharding, communication, memory management, checkpointing.
+
+**[Data pipeline](tags/data-pipeline.md)** (0) — loading, quality assessment and selection, preprocessing, batch preparation.
+
+**[Attention techniques](tags/attention-techniques.md)** (0) — attention variants and alternative mechanisms, implementation optimizations, context length.
+
+**[Model architecture](tags/model-architecture.md)** (1) — architecture patterns, component design, structural choices, model families, multi-modal designs:
+[005](../../record/theory.d/THEORY-005.md)
+
+**[Inference optimization](tags/inference-optimization.md)** (0) — serving-time decisions — batching, cache layout, quantization, compression, sparsity, distillation, sampling algorithms.
+
+**[Adaptation and tuning](tags/adaptation-and-tuning.md)** (0) — taking a trained model somewhere new — fine-tuning and transfer, preference training and alignment, parameter-efficient adaptation, context extension.
+
+**[Representation and encoding](tags/representation-and-encoding.md)** (0) — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
+
+**[Analysis and evaluation](tags/analysis-and-evaluation.md)** (2) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
+[002](../../record/theory.d/THEORY-002.md) · [004](../../record/theory.d/THEORY-004.md)
+
+**[Generative modeling](tags/generative-modeling.md)** (0) — diffusion, samplers, text-to-image, conditioning and control.
+
+**[Vision and graphics](tags/vision-and-graphics.md)** (0) — neural rendering, reconstruction, perception, visual foundation models.
+
+**By status:** [The current account](status/Active.md) (2) · [Offered](status/Proposed.md) (2) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (1) · [Replaced](status/Superseded.md) (0)
+
+## Chronological
+
+What the status column means in this scheme — the words are luria's, the meanings are this project's.
+
+| Status | | Means |
+|---|---|---|
+| `Active` | The current account | The best explanation the record holds for why this happens |
+| `Proposed` | Offered | Stated and plausible, on evidence that is suggestive rather than settling — the document says what would settle it |
+| `Deferred` | Not yet judged | Filed because the question is real; no position taken on the answer |
+| `Rejected` | Disbelieved | Tested and failed, or contradicted by later work — and the thing it explained may still work perfectly well |
+| `Superseded` | Replaced | A later account covers the same ground better, and this one names it |
+
+| # | Title | Summary | Status |
+|---|---|---|---|
+| [THEORY-001](../../record/theory.d/THEORY-001.md) | Batch normalization works by reducing internal covariate shift | Ioffe and Szegedy (2015), [LIT-002](../../record/literature.d/LIT-002.md) — the explanation batch normalization was named after and introduced with: that training is slowed by each layer's input distribution shifting as the layers below it update, and that holding those distributions steady is what buys the speed. Refuted in 2018; the technique was not. | Rejected — the experiment that would have confirmed it was eventually run, and the benefit survived the shift being put back |
+| [THEORY-002](../../record/theory.d/THEORY-002.md) | A dense network contains a sparse subnetwork that matches its accuracy when trained from the same initialization | Frankle and Carbin (2018), [LIT-019](../../record/literature.d/LIT-019.md) — the lottery ticket hypothesis. A randomly-initialized dense network contains a subnetwork that, trained alone from the same initial values, matches the full network in at most the same number of steps. The reset is the claim; the same structure re-initialized randomly does not do it. | Proposed |
+| [THEORY-003](../../record/theory.d/THEORY-003.md) | Batch normalization helps by smoothing the optimization landscape, not by reducing internal covariate shift | Santurkar et al. (2018), [LIT-223](../../record/literature.d/LIT-223.md) — the distributional stability batch normalization was named after turns out not to be what it does. Injecting covariate shift back in after the BN layer costs nothing; what BN changes is the smoothness of the loss surface, and other normalisations that do nothing for covariate shift change it comparably. | Active |
+| [THEORY-004](../../record/theory.d/THEORY-004.md) | A lottery ticket wins by re-learning the solution its dense run already found | Evci et al. (2020), [LIT-039](../../record/literature.d/LIT-039.md) — sparse networks trained from scratch do worse because gradient flow at initialization is poor, and a rewound ticket does not escape that by having found a good sparse architecture: it lands back in the basin the dense pruning run reached. The hypothesis survives as a claim about initialization, not about architecture. | Active |
+| [THEORY-005](../../record/theory.d/THEORY-005.md) | Dense feed-forward layers are already mixtures of experts, and pre-training settles the partition before the neurons | Zhang et al. (2021, 2023), [LIT-226](../../record/literature.d/LIT-226.md) and [LIT-228](../../record/literature.d/LIT-228.md) — a trained dense FFN uses a tiny fraction of its neurons per input, the co-activating neurons partition into functional experts that can be recovered post hoc with the same parameters, and through pre-training the partition stabilizes earlier than the neurons in it. A mixture of experts makes explicit a structure dense training arrives at anyway. | Proposed |
+

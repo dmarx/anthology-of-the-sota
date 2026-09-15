@@ -4,7 +4,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-33 of 208 SOTA documents. Back to the [full index](../README.md).
+34 of 209 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -41,3 +41,4 @@
 | [SOTA-191](../../../record/practices.d/SOTA-191.md) v2 | Consider removing LayerNorm's learnable gain and bias rather than tuning them | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — the bias and gain increase overfitting risk and "do not work in most cases"; LayerNorm-simple, with both removed, beats LayerNorm on four datasets and reaches state of the art on En-Vi. | Proposed |
 | [SOTA-193](../../../record/practices.d/SOTA-193.md) | Lower Adam's second-moment decay when the loss spikes, before reaching for the learning rate |  | Proposed |
 | [SOTA-204](../../../record/practices.d/SOTA-204.md) | Anneal a discretisation from coarse to fine over training rather than fixing it | Song et al. (2023), [LIT-093](../../../record/literature.d/LIT-093.md). Where a training loss approximates a continuous target through a step count, that count is a bias/variance dial: few steps give a biased but low-variance target early, many steps a faithful but noisy one later. | Proposed |
+| [SOTA-209](../../../record/practices.d/SOTA-209.md) | Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch | Komatsuzaki et al. (2022), [LIT-227](../../../record/literature.d/LIT-227.md) — seed the experts from a dense checkpoint you already paid for. Upcycled T5 and ViT models beat their dense counterparts at ~50% of the dense pretraining sunk cost, and beat sparse models trained from scratch on 100% of it: same architecture, same compute, different initialization. | Proposed |

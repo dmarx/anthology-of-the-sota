@@ -1,6 +1,9 @@
 ---
+number: 81
 status: Read
-paper: LIT-tmpphacm
+formerly:
+- NOTE-tmp0qq47
+paper: LIT-238
 title: 'Overcoming Forgetting in LLM Fine-Tuning with Evolution Strategies'
 version: 1
 tags:
@@ -14,7 +17,7 @@ summary: >-
   for 1-2% runtime.
 ---
 
-# NOTE-tmp0qq47: Overcoming Forgetting in LLM Fine-Tuning with Evolution Strategies
+# NOTE-081: Overcoming Forgetting in LLM Fine-Tuning with Evolution Strategies
 
 ## Contribution
 
@@ -50,7 +53,7 @@ of damage the word "forgetting" implies.
 - **Qwen2.5-3B-Instruct as the standard model**, chosen to line up with the
   paper being answered, with Llama-3.2 and other Qwen sizes used for the
   family and scale sweeps.
-- **The `α²Td/N` scaling is taken from [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md)**, not re-derived. This
+- **The `α²Td/N` scaling is taken from [LIT-235](../literature.d/LIT-235.md)**, not re-derived. This
   paper tests it.
 - **The penalty weights all parameters equally**, unlike Elastic Weight
   Consolidation's Fisher weighting — a deliberate choice, justified by there
@@ -133,12 +136,12 @@ Lineage is on the LIT.
 
 ## Recommendations
 
-<!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, filed from this reading in
+<!-- inactive-ok-block: SOTA-213 — Proposed, filed from this reading in
      this same change; naming it is the point -->
 - **R1** — Control ES drift with population size or an anchor penalty; do not
   stop training early. *Topic:* post-training. *Status:* experimental.
   *Strength:* strong for the mechanism, moderate for AWD. Filed as
-  [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md).
+  [SOTA-213](../practices.d/SOTA-213.md).
 - **R2** — Report prior-task curves per task, not averaged. The average is
   what made a recovery look like permanent damage. *Topic:* evaluation.
   *Strength:* strong, and the cheapest thing in the paper.
@@ -150,23 +153,23 @@ Lineage is on the LIT.
 
 ## Bearing on the record
 
-<!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, filed in this same change
+<!-- inactive-ok-block: SOTA-213 — Proposed, filed in this same change
      and rewritten because of this reading; naming it is the point -->
-**It rewrote [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md) before that practice was merged.** The practice was
-drafted from [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) as a stopping rule — stop when the target task
+**It rewrote [SOTA-213](../practices.d/SOTA-213.md) before that practice was merged.** The practice was
+drafted from [LIT-237](../literature.d/LIT-237.md) as a stopping rule — stop when the target task
 converges, because drift keeps accumulating. If the prior-task dip recovers,
 that rule stops at the worst point on the curve. The durable half of the
 original claim, that drift is bought down with population rather than spent on
 steps, is what this paper confirms; AWD is the cheaper form of it.
 
-**And it promoted [THEORY-tmpt76ks](../theory.d/THEORY-tmpt76ks.md) to `Active`.** That account's condition
+**And it promoted [THEORY-008](../theory.d/THEORY-008.md) to `Active`.** That account's condition
 asked for the scaling measured by an independent group, on a transformer at a
 different scale, with the population dependence tested directly rather than
 inferred. Table 1 and Figure 6 are that, on Qwen2.5-3B rather than Qwen3-4B,
-by a group sharing no authors with [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md).
+by a group sharing no authors with [LIT-235](../literature.d/LIT-235.md).
 
 **On [SOTA-154](../practices.d/SOTA-154.md)** it weakens one of the two objections behind that practice's
-`contested` reading — but only one. [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md)'s failed replication on
+`contested` reading — but only one. [LIT-237](../literature.d/LIT-237.md)'s failed replication on
 *accuracy* stands untouched; what is qualified is its forgetting claim.
 
 ## Limitations

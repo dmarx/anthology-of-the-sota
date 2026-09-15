@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**45 document(s) awaiting a decision.**
+**47 document(s) awaiting a decision.**
 
 ## SOTAs
 
-35 of the 45.
+36 of the 47.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -45,23 +45,25 @@
 | 2026-09-09 | Proposed | [SOTA-189](../../record/practices.d/SOTA-189.md) | 0 | 0 | Set the checkpoint interval from the job's measured time-to-failure, which shrinks as the job grows |
 | 2026-09-10 | Proposed | [SOTA-204](../../record/practices.d/SOTA-204.md) | 2 | 0 | Anneal a discretisation from coarse to fine over training rather than fixing it |
 | 2026-09-10 | Proposed | [SOTA-193](../../record/practices.d/SOTA-193.md) | 1 | 0 | Lower Adam's second-moment decay when the loss spikes, before reaching for the learning rate |
-| 2026-09-15 | Proposed | [SOTA-211](../../record/practices.d/SOTA-211.md) | 7 | 0 | Spend one fitness evaluation per evolution-strategies direction, not an antithetic pair |
-| 2026-09-15 | Proposed | [SOTA-212](../../record/practices.d/SOTA-212.md) | 3 | 0 | Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them |
+| 2026-09-15 | Proposed | [SOTA-213](../../record/practices.d/SOTA-213.md) | 13 | 0 | Control evolution-strategies drift with a larger population or an anchor penalty, not by stopping training early |
+| 2026-09-15 | Proposed | [SOTA-211](../../record/practices.d/SOTA-211.md) | 11 | 0 | Spend one fitness evaluation per evolution-strategies direction, not an antithetic pair |
+| 2026-09-15 | Proposed | [SOTA-212](../../record/practices.d/SOTA-212.md) | 5 | 0 | Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them |
 | 2026-09-15 | Proposed | [SOTA-209](../../record/practices.d/SOTA-209.md) | 0 | 0 | Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch |
 
 ## THEORYs
 
-3 of the 45.
+4 of the 47.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
-| 2026-09-15 | Proposed | [THEORY-006](../../record/theory.d/THEORY-006.md) | 11 | 0 | Task-improving weight perturbations are dense around pretrained weights, and denser the larger the model |
+| 2026-09-15 | Proposed | [THEORY-006](../../record/theory.d/THEORY-006.md) | 22 | 0 | Task-improving weight perturbations are dense around pretrained weights, and denser the larger the model |
 | 2026-09-15 | Proposed | [THEORY-002](../../record/theory.d/THEORY-002.md) | 7 | 0 | A dense network contains a sparse subnetwork that matches its accuracy when trained from the same initialization |
 | 2026-09-15 | Proposed | [THEORY-005](../../record/theory.d/THEORY-005.md) | 3 | 0 | Dense feed-forward layers are already mixtures of experts, and pre-training settles the partition before the neurons |
+| 2026-09-15 | Proposed | [THEORY-007](../../record/theory.d/THEORY-007.md) | 3 | 0 | Fine-tuning landscapes are low-dimensional in curvature, and improving directions are degenerate rather than unique |
 
 ## LITs
 
-2 of the 45.
+2 of the 47.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -70,7 +72,7 @@
 
 ## ADRs
 
-5 of the 45.
+5 of the 47.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

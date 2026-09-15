@@ -4,7 +4,7 @@
 
 **adaptation-and-tuning**.
 
-9 of 80 NOTE documents. Back to the [full index](../README.md).
+13 of 86 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,3 +17,7 @@
 | [NOTE-071](../../../record/notes.d/NOTE-071.md) | Adding Conditional Control to Text-to-Image Diffusion Models | Adds spatial control to a frozen diffusion model by cloning its encoder into a trainable branch joined to the original by zero-initialized convolutions, so the adapter starts as an exact no-op and grows away from it. Trains robustly on datasets from under 50k to over a million. | Read |
 | [NOTE-075](../../../record/notes.d/NOTE-075.md) | Hyper-ES | Argues from two lemmas that full-parameter ES cannot work at LLM scale — random perturbations concentrate near orthogonality to any useful descent direction, and the leftover orthogonal components accumulate as a random walk away from the pretrained weights — and replaces the search space with the span of a few cheap GRPO-derived LoRA directions, searched by CMA-ES. | Read |
 | [NOTE-077](../../../record/notes.d/NOTE-077.md) | Beyond the Best Guess | Reinforcement learning raises pass@1 and lowers pass@k, eventually below the base model, because it increases the number of prompts solved in none of k samples; evolution strategies raise both and never fall below base at any k or scale tested, up to 32B against published RL checkpoints. | Read |
+| [NOTE-081](../../../record/notes.d/NOTE-081.md) | Overcoming Forgetting in LLM Fine-Tuning with Evolution Strategies | Prior-task degradation under ES is transient drift rather than irreversible forgetting, is not specific to ES, and is driven by the random walk Hoy et al. predicted — whose size falls with population exactly as their equation says. Anchored Weight Decay buys a population-128 reduction at population 30 for 1-2% runtime. | Read |
+| [NOTE-082](../../../record/notes.d/NOTE-082.md) | Evolutionary Strategies lead to Catastrophic Forgetting in LLMs | The first independent replication attempt of ES-beats-GRPO, which fails — ES lands close but GRPO stays ahead on three of four settings at 1B and 1.5B — and the first measurement of what ES costs on a held-out capability: HellaSwag declines steadily as Countdown training continues past the point Countdown itself converged. | Read |
+| [NOTE-085](../../../record/notes.d/NOTE-085.md) | ESSA | The earliest ES-for-LLM paper in this record, and the one that accepted the dimensionality objection instead of overturning it: SFT-train LoRA adapters, take their SVD, and run CMA-ES over the top singular values only — reaching 0.80 on GSM8K in under 25 minutes against GRPO's 50+, from 100 examples against 5,978, and aligning a 32B model at INT4. | Read |
+| [NOTE-086](../../../record/notes.d/NOTE-086.md) | ESSAM | Transposes sharpness-aware minimization into zeroth order — step against the reward-weighted direction, recompute the update at that neighbouring point, apply it at the original — and closes most of standard ES's gap to GRPO on GSM8K while keeping inference-level GPU memory. | Read |

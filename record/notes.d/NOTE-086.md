@@ -1,6 +1,9 @@
 ---
+number: 86
 status: Read
-paper: LIT-tmprde8b
+formerly:
+- NOTE-tmpwuo1b
+paper: LIT-240
 title: 'ESSAM'
 version: 1
 tags:
@@ -13,7 +16,7 @@ summary: >-
   GSM8K while keeping inference-level GPU memory.
 ---
 
-# NOTE-tmpwuo1b: ESSAM
+# NOTE-086: ESSAM
 
 ## Contribution
 
@@ -109,7 +112,7 @@ its efficiency framing from the ES-at-scale line. Lineage is on the LIT.
 
 ## Bearing on the record
 
-Filed as [LIT-tmprde8b](../literature.d/LIT-tmprde8b.md), `extends:` [LIT-211](../literature.d/LIT-211.md).
+Filed as [LIT-240](../literature.d/LIT-240.md), `extends:` [LIT-211](../literature.d/LIT-211.md).
 
 <!-- inactive-ok-block: SOTA-211 is Active... (see note) — Proposed, and named
      as the practice this paper's design points away from -->

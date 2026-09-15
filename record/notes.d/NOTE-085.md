@@ -1,6 +1,9 @@
 ---
+number: 85
 status: Read
-paper: LIT-tmpqknia
+formerly:
+- NOTE-tmpuefjy
+paper: LIT-239
 title: 'ESSA'
 version: 1
 tags:
@@ -14,7 +17,7 @@ summary: >-
   against 5,978, and aligning a 32B model at INT4.
 ---
 
-# NOTE-tmpuefjy: ESSA
+# NOTE-085: ESSA
 
 ## Contribution
 
@@ -118,7 +121,7 @@ full-parameter work did not build on it. Lineage is on the LIT.
 
 ## Bearing on the record
 
-Filed as [LIT-tmpqknia](../literature.d/LIT-tmpqknia.md). It carries no relation to the rest of the line
+Filed as [LIT-239](../literature.d/LIT-239.md). It carries no relation to the rest of the line
 because the later work did not build on it — which is itself the finding: the
 record acquired this paper last and it is the earliest, an artifact of
 following citations backward from 2026.
@@ -146,7 +149,7 @@ feedback, and efficiency may still degrade at extreme dimensionality without
 further reduction. From this reading: the GRPO comparison varies runtime and
 data volume alongside the optimizer; no drift or forgetting measurement, though
 searching a few hundred coefficients bounds drift by construction — which is
-worth noticing given what [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) says drift scales with.
+worth noticing given what [LIT-235](../literature.d/LIT-235.md) says drift scales with.
 
 ## Open questions
 

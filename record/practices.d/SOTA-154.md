@@ -9,17 +9,17 @@ consensus: contested
 consensus_note: >-
   Four groups sharing no author with LIT-211 report evolution strategies at or
   ahead of policy-gradient RL: LIT-229 (on a recurrent architecture), LIT-230,
-  LIT-tmp4w505 and LIT-tmprde8b. Four more results come from inside that line
+  LIT-235 and LIT-240. Four more results come from inside that line
   — LIT-211 itself, LIT-233 (whose first author is LIT-211's second),
-  LIT-234 and LIT-tmpphacm from the same lab, LIT-tmpfjaya sharing three
+  LIT-234 and LIT-238 from the same lab, LIT-236 sharing three
   authors. Two independent groups disagree: LIT-231 argues direct ES at LLM
-  scale is ineffective, and LIT-tmppbfp5 ran the comparison and did not
+  scale is ineffective, and LIT-237 ran the comparison and did not
   reproduce the ordering. The trunk — gradient-free search of the full
   parameter space is viable at billion scale — is agreed. The branch in
   dispute is the word "instead": whether it replaces policy-gradient RL or is
   seeded by it. **Every negative result in this line is at 1.5B or below and
   every positive is at 1.5B or above**, the shape THEORY-006 predicts — though
-  LIT-tmpfjaya offers a competing reading of that low end, where the failures
+  LIT-236 offers a competing reading of that low end, where the failures
   are a perturbation scale tuned for larger models rather than a density that
   is absent.
 title: 'Fine-tune with evolution strategies instead of policy-gradient reinforcement learning'
@@ -46,11 +46,11 @@ history:
     LIT-233, described there and here as an independent group with no stake in
     the result. It is not: Yulu Gan, its first author, is the second author of
     LIT-211. The promotion stands on evidence identified after the fact —
-    LIT-tmp4w505 at 4B with both arms swept and ES highest on all four tasks,
-    LIT-230, LIT-229 and LIT-tmprde8b, none of which shares an author with
+    LIT-235 at 4B with both arms swept and ES highest on all four tasks,
+    LIT-230, LIT-229 and LIT-240, none of which shares an author with
     LIT-211. The consensus note is re-tallied by authorship rather than by
     institution, and the scale-boundary table gains the competing reading
-    LIT-tmpfjaya offers for its low end.
+    LIT-236 offers for its low end.
 tags:
 - adaptation-and-tuning
 date: '2026-09-07'
@@ -59,7 +59,7 @@ source:
 # made this evidenced rather than asserted (ADR-017). LIT-233 adds six further
 # tasks with the RL arm tuned harder than the ES arm — a real strengthening,
 # and NOT the independent replication it was first filed as: its first author
-# is LIT-211's second. LIT-tmp4w505 is the clean independent one.
+# is LIT-211's second. LIT-235 is the clean independent one.
 #
 # LIT-229 is deliberately NOT here. Its LLM comparison is real and
 # favourable, but it is on a recurrent architecture and on its own low-rank
@@ -74,7 +74,7 @@ source:
 - LIT-234
 # Hoy et al.: a fourth independent group, at 4B, both arms swept, and the
 # paper the drift account in this record's theory scheme is drawn from.
-- LIT-tmp4w505
+- LIT-235
 introduced_by:
 - LIT-211
 # The evidence AGAINST, required where the record claims there is some
@@ -84,7 +84,7 @@ contested_by:
 - LIT-231
 # The failed replication: an independent group ran the comparison, extended it
 # to three further tasks, and found GRPO ahead on all but one. At 1B and 1.5B.
-- LIT-tmppbfp5
+- LIT-237
 # The comparison the paper actually ran: ES against GRPO, which is SOTA-145.
 # Stated once here, on the practice that ran it; the fixer writes the other
 # side.
@@ -101,11 +101,11 @@ summary: >-
   argue direct ES at LLM scale does not work — on models at 1.5B and below.
 explained_by:
 - THEORY-006
-- THEORY-tmpt76ks
-- THEORY-tmp4rcxw
+- THEORY-008
+- THEORY-007
 extended_by:
 - SOTA-212
-- SOTA-tmpdcmgg
+- SOTA-213
 ---
 
 # SOTA-154: Fine-tune with evolution strategies instead of policy-gradient reinforcement learning
@@ -162,10 +162,10 @@ asymmetry are real and the measurement is not in doubt — the classification
 was.
 
 **What carries the promotion instead**, identified after the fact: Hoy et al.
-([LIT-tmp4w505](../literature.d/LIT-tmp4w505.md)), at 4B, four tasks, both arms hyperparameter-swept, ES
+([LIT-235](../literature.d/LIT-235.md)), at 4B, four tasks, both arms hyperparameter-swept, ES
 highest on all four — no author in common with [LIT-211](../literature.d/LIT-211.md). Then Ba et al.
 ([LIT-230](../literature.d/LIT-230.md)) on coverage, Sarkar et al. ([LIT-229](../literature.d/LIT-229.md)) on a recurrent
-architecture, and Sun et al. ([LIT-tmprde8b](../literature.d/LIT-tmprde8b.md)) at matched memory. The practice
+architecture, and Sun et al. ([LIT-240](../literature.d/LIT-240.md)) at matched memory. The practice
 stays `Active` on those; it would not have been promoted on [LIT-233](../literature.d/LIT-233.md) alone
 had the authorship been checked.
 
@@ -238,10 +238,10 @@ set out to find:
 
 | Finding | Models | Source |
 |---|---|---|
-| GRPO ahead on 3 of 4 tasks | 1B, 1.5B | [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) |
+| GRPO ahead on 3 of 4 tasks | 1B, 1.5B | [LIT-237](../literature.d/LIT-237.md) |
 | Direct ES "highly ineffective" | 0.5B, 1.5B | [LIT-231](../literature.d/LIT-231.md) |
 | ES ahead in most cells | 1.5B–8B | [LIT-233](../literature.d/LIT-233.md) |
-| ES highest peak accuracy, 4 of 4 tasks | 4B | [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) |
+| ES highest peak accuracy, 4 of 4 tasks | 4B | [LIT-235](../literature.d/LIT-235.md) |
 | ES ahead on pass@k | ≤7B | [LIT-230](../literature.d/LIT-230.md) |
 | ES ahead on pass@k | 7B–32B | [LIT-234](../literature.d/LIT-234.md) |
 
@@ -255,7 +255,7 @@ Three cautions now, and the third is the sharpest. The pattern is read across
 papers that differ in task, baseline tuning and ES implementation, so it is
 suggestive rather than controlled. It is exactly the kind of post-hoc
 regularity that looks inevitable once noticed. And **there is a competing
-reading of its low end**: [LIT-tmpfjaya](../literature.d/LIT-tmpfjaya.md) reports improvement accessible at
+reading of its low end**: [LIT-236](../literature.d/LIT-236.md) reports improvement accessible at
 0.5B with a population of thirty, provided the perturbation scale is small
 enough — so the failures below 1.5B may be a `σ` that was tuned for larger
 models rather than a density that is not there. That paper chooses a viable
@@ -285,17 +285,17 @@ papers are the evidence that it does.
 **And it has a cost the earlier evidence did not show — a smaller one than it
 first looked.** ES post-training drifts orders of magnitude further from the
 base model than GRPO: roughly 1000× after 500 iterations in
-[LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md), 87–107× across four sequential tasks in [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md), and a
-held-out capability degrades along with it. But [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md) tracks the
+[LIT-237](../literature.d/LIT-237.md), 87–107× across four sequential tasks in [LIT-235](../literature.d/LIT-235.md), and a
+held-out capability degrades along with it. But [LIT-238](../literature.d/LIT-238.md) tracks the
 prior tasks individually rather than averaged and finds the degradation is
 largely **transient** — HellaSwag falls 8% over 300 iterations and returns to
 baseline by the end — that GRPO forgets too on the right target task, and that
 the whole effect is controllable.
-<!-- inactive-ok-block: THEORY-tmpt76ks, SOTA-tmpdcmgg — both Proposed, filed
+<!-- inactive-ok-block: THEORY-008, SOTA-213 — both Proposed, filed
      in this same change and named as the account of this drift and the
      condition it puts on running this practice -->
-[THEORY-tmpt76ks](../theory.d/THEORY-tmpt76ks.md) says why the drift is mostly invisible to the training
-objective, and [SOTA-tmpdcmgg](SOTA-tmpdcmgg.md) is what to do about it. Neither retires this
+[THEORY-008](../theory.d/THEORY-008.md) says why the drift is mostly invisible to the training
+objective, and [SOTA-213](SOTA-213.md) is what to do about it. Neither retires this
 practice; both are conditions on running it.
 
 `Active` here means the record is willing to assert the recommendation. It

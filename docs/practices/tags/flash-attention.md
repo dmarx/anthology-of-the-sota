@@ -4,7 +4,7 @@
 
 **flash-attention**.
 
-2 of 212 SOTA documents. Back to the [full index](../README.md).
+2 of 213 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

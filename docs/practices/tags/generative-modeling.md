@@ -4,7 +4,7 @@
 
 **Generative modeling** — diffusion, samplers, text-to-image, conditioning and control.
 
-3 of 212 SOTA documents. Back to the [full index](../README.md).
+3 of 213 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

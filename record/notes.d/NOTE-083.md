@@ -1,6 +1,9 @@
 ---
+number: 83
 status: Read
-paper: LIT-tmp4w505
+formerly:
+- NOTE-tmpmfvn0
+paper: LIT-235
 title: 'Matching Accuracy, Different Geometry'
 version: 1
 tags:
@@ -14,7 +17,7 @@ summary: >-
   sigma^2 d T / N.
 ---
 
-# NOTE-tmpmfvn0: Matching Accuracy, Different Geometry
+# NOTE-083: Matching Accuracy, Different Geometry
 
 ## Contribution
 
@@ -92,7 +95,7 @@ offset between them is, by construction, loss-invariant.
 | C5 | The ES direction resembles a random direction on held-out tasks | strong | direct probe, and the most load-bearing measurement for C1 |
 | C6 | ES matches or exceeds GRPO in single-task accuracy at 4B | moderate | four tasks, one model, both arms swept |
 | C7 | ES stays competitive in continual learning with a controlled iteration budget | moderate | the sequential experiment, one ordering of four tasks |
-| C8 | The off-manifold walk is harmless | not claimed | loss-invariant is not capability-invariant — see [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) |
+| C8 | The off-manifold walk is harmless | not claimed | loss-invariant is not capability-invariant — see [LIT-237](../literature.d/LIT-237.md) |
 
 ## Method
 
@@ -125,10 +128,10 @@ Lineage is on the LIT.
 
 ## Recommendations
 
-<!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, filed from this reading in this same change -->
+<!-- inactive-ok-block: SOTA-213 — Proposed, filed from this reading in this same change -->
 - **R1** — Control the iteration budget; drift is linear in steps and the
   paper's own continual result is conditioned on it. *Topic:* post-training.
-  *Strength:* strong. Filed as [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md).
+  *Strength:* strong. Filed as [SOTA-213](../practices.d/SOTA-213.md).
 - **R2** — Prefer a larger population to more steps at fixed accuracy: `N`
   divides drift, `T` multiplies it. *Strength:* moderate — derived from the
   scaling, not separately demonstrated.
@@ -141,13 +144,13 @@ Lineage is on the LIT.
 
 ## Bearing on the record
 
-<!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, filed from this reading
+<!-- inactive-ok-block: SOTA-213 — Proposed, filed from this reading
      in this same change; naming it is the point -->
-Filed as [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md), and it is the source of [THEORY-tmpt76ks](../theory.d/THEORY-tmpt76ks.md) and the
-primary source of [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md).
+Filed as [LIT-235](../literature.d/LIT-235.md), and it is the source of [THEORY-008](../theory.d/THEORY-008.md) and the
+primary source of [SOTA-213](../practices.d/SOTA-213.md).
 
 **It settles a three-way argument the record was holding without a
-referee.** [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) read the drift as the cause of forgetting,
+referee.** [LIT-237](../literature.d/LIT-237.md) read the drift as the cause of forgetting,
 [LIT-230](../literature.d/LIT-230.md) read it as functionally sparse and harmless, [LIT-231](../literature.d/LIT-231.md) read it as
 proof the search finds nothing. All three are describing a loss-invariant
 random walk. Whether it hurts depends on what else you measure and for how
@@ -163,7 +166,7 @@ every negative in this line sits.
 
 Stated: the decomposition is local. From this reading: one model and four
 tasks for a theory offered as general; the `N` dependence is the part of the
-scaling least directly varied, which is why [THEORY-tmpt76ks](../theory.d/THEORY-tmpt76ks.md)'s promotion
+scaling least directly varied, which is why [THEORY-008](../theory.d/THEORY-008.md)'s promotion
 condition asks for it specifically; and "no loss barrier" is a property of the
 particular solution pairs tested.
 

@@ -219,6 +219,7 @@
   - [SOTA-146](../record/practices.d/SOTA-146.md) — Correct the GRPO objective before running it — the published form has three independently identified defects *(Proposed, emerging)*
 - [SOTA-154](../record/practices.d/SOTA-154.md) — Fine-tune with evolution strategies instead of policy-gradient reinforcement learning *(Active, contested)*
   - [SOTA-212](../record/practices.d/SOTA-212.md) — Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them *(Proposed, unreplicated)*
+  - [SOTA-213](../record/practices.d/SOTA-213.md) — Control evolution-strategies drift with a larger population or an anchor penalty, not by stopping training early *(Proposed, emerging)*
 
 ## From Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound
 

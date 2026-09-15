@@ -2,11 +2,11 @@
 
 <!-- GENERATED below this line by `luria index` — edit README.stub instead. -->
 
-**[adaptation-and-tuning](tags/adaptation-and-tuning.md)** (9):
-[020](../../record/notes.d/NOTE-020.md) · [026](../../record/notes.d/NOTE-026.md) · [034](../../record/notes.d/NOTE-034.md) · [036](../../record/notes.d/NOTE-036.md) · [038](../../record/notes.d/NOTE-038.md) · [049](../../record/notes.d/NOTE-049.md) · [071](../../record/notes.d/NOTE-071.md) · [075](../../record/notes.d/NOTE-075.md) · [077](../../record/notes.d/NOTE-077.md)
+**[adaptation-and-tuning](tags/adaptation-and-tuning.md)** (13):
+[020](../../record/notes.d/NOTE-020.md) · [026](../../record/notes.d/NOTE-026.md) · [034](../../record/notes.d/NOTE-034.md) · [036](../../record/notes.d/NOTE-036.md) · [038](../../record/notes.d/NOTE-038.md) · [049](../../record/notes.d/NOTE-049.md) · [071](../../record/notes.d/NOTE-071.md) · [075](../../record/notes.d/NOTE-075.md) · [077](../../record/notes.d/NOTE-077.md) · [081](../../record/notes.d/NOTE-081.md) · [082](../../record/notes.d/NOTE-082.md) · [085](../../record/notes.d/NOTE-085.md) · [086](../../record/notes.d/NOTE-086.md)
 
-**[analysis-and-evaluation](tags/analysis-and-evaluation.md)** (7):
-[051](../../record/notes.d/NOTE-051.md) · [052](../../record/notes.d/NOTE-052.md) · [057](../../record/notes.d/NOTE-057.md) · [061](../../record/notes.d/NOTE-061.md) · [070](../../record/notes.d/NOTE-070.md) · [076](../../record/notes.d/NOTE-076.md) · [078](../../record/notes.d/NOTE-078.md)
+**[analysis-and-evaluation](tags/analysis-and-evaluation.md)** (9):
+[051](../../record/notes.d/NOTE-051.md) · [052](../../record/notes.d/NOTE-052.md) · [057](../../record/notes.d/NOTE-057.md) · [061](../../record/notes.d/NOTE-061.md) · [070](../../record/notes.d/NOTE-070.md) · [076](../../record/notes.d/NOTE-076.md) · [078](../../record/notes.d/NOTE-078.md) · [083](../../record/notes.d/NOTE-083.md) · [084](../../record/notes.d/NOTE-084.md)
 
 **[attention-techniques](tags/attention-techniques.md)** (7):
 [005](../../record/notes.d/NOTE-005.md) · [007](../../record/notes.d/NOTE-007.md) · [014](../../record/notes.d/NOTE-014.md) · [016](../../record/notes.d/NOTE-016.md) · [021](../../record/notes.d/NOTE-021.md) · [059](../../record/notes.d/NOTE-059.md) · [065](../../record/notes.d/NOTE-065.md)
@@ -38,7 +38,7 @@
 **[vision-and-graphics](tags/vision-and-graphics.md)** (9):
 [027](../../record/notes.d/NOTE-027.md) · [032](../../record/notes.d/NOTE-032.md) · [035](../../record/notes.d/NOTE-035.md) · [037](../../record/notes.d/NOTE-037.md) · [042](../../record/notes.d/NOTE-042.md) · [044](../../record/notes.d/NOTE-044.md) · [045](../../record/notes.d/NOTE-045.md) · [046](../../record/notes.d/NOTE-046.md) · [047](../../record/notes.d/NOTE-047.md)
 
-**By status:** [Read](status/Read.md) (78) · [Skimmed](status/Skimmed.md) (2) · [Unread](status/Unread.md) (0) · [Re-read](status/Superseded.md) (0)
+**By status:** [Read](status/Read.md) (84) · [Skimmed](status/Skimmed.md) (2) · [Unread](status/Unread.md) (0) · [Re-read](status/Superseded.md) (0)
 
 What the status column means in this scheme — the words are luria's, the meanings are this project's.
 
@@ -131,4 +131,10 @@ What the status column means in this scheme — the words are luria's, the meani
 | [NOTE-078](../../record/notes.d/NOTE-078.md) | Neural Thickets | The neighbourhood of a pretrained weight vector is dense with task-improving Gaussian perturbations, the density rises monotonically with model scale, and the perturbations that help are specialists rather than uniform improvements — which together are why a single parallel round of random guessing plus majority voting can match PPO, GRPO and ES at equal training FLOPs. | Read |
 | [NOTE-079](../../record/notes.d/NOTE-079.md) | EGGROLL, Unrolled | Works out what EGGROLL's low-rank update converges to — a resolvent-filtered gradient, which can be nonconservative and can turn an attracting optimum into a repelling one, while being exact on every quadratic objective — and turns the finite-population half of the analysis into LOO-ROLL, which replaces two antithetic evaluations per direction with one leave-one-out evaluation at unchanged expected field. | Read |
 | [NOTE-080](../../record/notes.d/NOTE-080.md) | Evolution Strategies at the Hyperscale | Structuring each ES worker's perturbation as a rank-r Gaussian product instead of a dense matrix raises arithmetic intensity by enough for a hundredfold throughput gain at billion scale, while the population average stays high-rank and the low-rank update provably approaches the full-rank one at a rate faster than the usual parametric O(1/sqrt(r)). | Read |
+| [NOTE-081](../../record/notes.d/NOTE-081.md) | Overcoming Forgetting in LLM Fine-Tuning with Evolution Strategies | Prior-task degradation under ES is transient drift rather than irreversible forgetting, is not specific to ES, and is driven by the random walk Hoy et al. predicted — whose size falls with population exactly as their equation says. Anchored Weight Decay buys a population-128 reduction at population 30 for 1-2% runtime. | Read |
+| [NOTE-082](../../record/notes.d/NOTE-082.md) | Evolutionary Strategies lead to Catastrophic Forgetting in LLMs | The first independent replication attempt of ES-beats-GRPO, which fails — ES lands close but GRPO stays ahead on three of four settings at 1B and 1.5B — and the first measurement of what ES costs on a held-out capability: HellaSwag declines steadily as Countdown training continues past the point Countdown itself converged. | Read |
+| [NOTE-083](../../record/notes.d/NOTE-083.md) | Matching Accuracy, Different Geometry | ES and GRPO reach the same accuracy by travelling in nearly orthogonal directions two orders of magnitude apart in length, and land in the same basin with no loss barrier between them — because most of the ES displacement is a loss-invariant random walk whose squared norm grows as sigma^2 d T / N. | Read |
+| [NOTE-084](../../record/notes.d/NOTE-084.md) | The Blessing of Dimensionality in LLM Fine-tuning | One geometric property — a fine-tuning landscape whose curvature lives in a few stiff directions amid a near-zero bulk — accounts for both why a population of thirty keeps working as models grow and why the training reward rises, peaks and decays under fixed hyperparameters, in GRPO as well as ES. | Read |
+| [NOTE-085](../../record/notes.d/NOTE-085.md) | ESSA | The earliest ES-for-LLM paper in this record, and the one that accepted the dimensionality objection instead of overturning it: SFT-train LoRA adapters, take their SVD, and run CMA-ES over the top singular values only — reaching 0.80 on GSM8K in under 25 minutes against GRPO's 50+, from 100 examples against 5,978, and aligning a 32B model at INT4. | Read |
+| [NOTE-086](../../record/notes.d/NOTE-086.md) | ESSAM | Transposes sharpness-aware minimization into zeroth order — step against the reward-weighted direction, recompute the update at that neighbouring point, apply it at the original — and closes most of standard ES's gap to GRPO on GSM8K while keeping inference-level GPU memory. | Read |
 

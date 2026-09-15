@@ -1,6 +1,9 @@
 ---
+number: 84
 status: Read
-paper: LIT-tmpfjaya
+formerly:
+- NOTE-tmpp5iw8
+paper: LIT-236
 title: 'The Blessing of Dimensionality in LLM Fine-tuning'
 version: 1
 tags:
@@ -14,7 +17,7 @@ summary: >-
   as ES.
 ---
 
-# NOTE-tmpp5iw8: The Blessing of Dimensionality in LLM Fine-tuning
+# NOTE-084: The Blessing of Dimensionality in LLM Fine-tuning
 
 ## Contribution
 
@@ -144,13 +147,13 @@ and builds a reconciliation on it. Lineage is on the LIT.
 
 ## Recommendations
 
-<!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, and named as where this recommendation landed -->
+<!-- inactive-ok-block: SOTA-213 — Proposed, and named as where this recommendation landed -->
 - **R1** — Treat non-monotonic training reward as a diagnostic of
   heterogeneous curvature, not as a bug or as overfitting. *Topic:*
   post-training. *Strength:* moderate, and the most transferable idea here.
 - **R2** — Stop near the peak of the target reward under fixed hyperparameters;
   the decay afterwards is variance, not learning. *Topic:* post-training.
-  *Strength:* moderate. Filed into [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md).
+  *Strength:* moderate. Filed into [SOTA-213](../practices.d/SOTA-213.md).
 - **R3** — Schedule the noise down rather than leaving it fixed: raise `N`,
   cut `σ`, cut temperature over time. *Strength:* moderate, and untested end
   to end here.
@@ -162,8 +165,8 @@ and builds a reconciliation on it. Lineage is on the LIT.
 
 ## Bearing on the record
 
-<!-- inactive-ok-block: THEORY-tmp4rcxw — Proposed, filed from this reading in this same change -->
-Filed as [LIT-tmpfjaya](../literature.d/LIT-tmpfjaya.md) and [THEORY-tmp4rcxw](../theory.d/THEORY-tmp4rcxw.md).
+<!-- inactive-ok-block: THEORY-007 — Proposed, filed from this reading in this same change -->
+Filed as [LIT-236](../literature.d/LIT-236.md) and [THEORY-007](../theory.d/THEORY-007.md).
 
 <!-- inactive-ok-block: THEORY-006 — Proposed, and this paragraph is about the
      relation between the two accounts, which is what the citation is for -->

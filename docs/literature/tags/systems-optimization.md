@@ -4,7 +4,7 @@
 
 **Systems optimization** — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
-5 of 234 LIT documents. Back to the [full index](../README.md).
+5 of 240 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

@@ -6,6 +6,9 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [15 Sep 19:43 — An independence claim that was never checked, and the paper that exposed it](2026-09.md#an-independence-claim-that-was-never-checked-and-the-paper-that-exposed-it)
+- [15 Sep 19:27 — A practice corrected before it shipped, and a condition finally met](2026-09.md#a-practice-corrected-before-it-shipped-and-a-condition-finally-met)
+- [15 Sep 19:10 — Following the citations backward, and the boundary that fell out of it](2026-09.md#following-the-citations-backward-and-the-boundary-that-fell-out-of-it)
 - [15 Sep 18:40 — Reading the ES line properly, and what the full readings moved](2026-09.md#reading-the-es-line-properly-and-what-the-full-readings-moved)
 - [15 Sep 18:06 — A replication that arrived as a baseline, and a dissent measured below the threshold](2026-09.md#a-replication-that-arrived-as-a-baseline-and-a-dissent-measured-below-the-threshold)
 - [15 Sep 17:40 — The second gradient-free post-training paper, and the first account of why the paradigm works](2026-09.md#the-second-gradient-free-post-training-paper-and-the-first-account-of-why-the-paradigm-works)
@@ -64,9 +67,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-57 entries across 2 books, newest first.
+60 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 55 | 2026-09-05 | 2026-09-15 |
+| [2026-09](2026-09.md) | 58 | 2026-09-05 | 2026-09-15 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

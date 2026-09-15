@@ -1,5 +1,8 @@
 ---
+number: 7
 status: Proposed
+formerly:
+- THEORY-tmp4rcxw
 promote_when: >-
   The curvature-active dimension measured rather than inferred — a Hessian or
   Gauss-Newton spectrum of an actual fine-tuning landscape, showing the stiff
@@ -13,12 +16,12 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-15'
 source:
-- LIT-tmpfjaya
+- LIT-236
 explains:
 - SOTA-154
-- SOTA-tmpdcmgg
+- SOTA-213
 summary: >-
-  Liang et al. (2026), [LIT-tmpfjaya](../literature.d/LIT-tmpfjaya.md) — a small set of stiff directions carries
+  Liang et al. (2026), [LIT-236](../literature.d/LIT-236.md) — a small set of stiff directions carries
   the improvement in a fine-tuning landscape and their number does not grow
   with the model. Because improvement depends only on a perturbation's
   projection onto that subspace, many ambient perturbations share a useful
@@ -27,11 +30,11 @@ summary: >-
   while variance keeps accumulating in the flat bulk.
 ---
 
-# THEORY-tmp4rcxw: Fine-tuning landscapes are low-dimensional in curvature, and improving directions are degenerate rather than unique
+# THEORY-007: Fine-tuning landscapes are low-dimensional in curvature, and improving directions are degenerate rather than unique
 
 ## Source
 
-Liang et al. (2026), [LIT-tmpfjaya](../literature.d/LIT-tmpfjaya.md).
+Liang et al. (2026), [LIT-236](../literature.d/LIT-236.md).
 
 ## What was actually shown
 
@@ -88,9 +91,9 @@ with task-improving perturbations, and the density grows with scale. This says
 the set of directions that matter is small and does not grow, so a fixed
 population keeps hitting it however large the model gets.
 
-<!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, filed in this same change,
+<!-- inactive-ok-block: SOTA-213 — Proposed, filed in this same change,
      and named as the practice this account's interventions section informs -->
-**And it separates two stopping questions [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md) had run
+**And it separates two stopping questions [SOTA-213](../practices.d/SOTA-213.md) had run
 together.** Rise-then-decay is degradation of the *target* reward under fixed
 hyperparameters, with a real peak worth stopping at. That is not the same as
 the prior-task drift the forgetting literature measures, which recovers. One

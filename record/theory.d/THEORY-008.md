@@ -1,20 +1,23 @@
 ---
+number: 8
 status: Active
+formerly:
+- THEORY-tmpt76ks
 title: 'An evolution-strategies update is mostly a loss-invariant random walk whose size grows with steps and shrinks with population'
 version: 1
 tags:
 - analysis-and-evaluation
 date: '2026-09-15'
 source:
-# LIT-tmp4w505 derives it; LIT-tmpphacm is the independent confirmation that
+# LIT-235 derives it; LIT-238 is the independent confirmation that
 # promoted it — a different group, a different model, and the population-size
 # dependence tested directly rather than inferred.
-- LIT-tmp4w505
-- LIT-tmpphacm
+- LIT-235
+- LIT-238
 explains:
 - SOTA-154
 summary: >-
-  Hoy et al. (2026), [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md), confirmed by [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md) — an ES weight
+  Hoy et al. (2026), [LIT-235](../literature.d/LIT-235.md), confirmed by [LIT-238](../literature.d/LIT-238.md) — an ES weight
   update splits into an
   on-manifold part that changes the loss and an off-manifold part that does
   not, and in a landscape with many flat directions the second dominates. Its
@@ -23,11 +26,11 @@ summary: >-
   a failing search is mostly a random walk that the loss cannot see.
 ---
 
-# THEORY-tmpt76ks: An evolution-strategies update is mostly a loss-invariant random walk whose size grows with steps and shrinks with population
+# THEORY-008: An evolution-strategies update is mostly a loss-invariant random walk whose size grows with steps and shrinks with population
 
 ## Source
 
-Hoy et al. (2026), [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md).
+Hoy et al. (2026), [LIT-235](../literature.d/LIT-235.md).
 
 ## What was actually shown
 
@@ -64,7 +67,7 @@ a strange fact on any account except this one.
 ## What this explains, and how much
 
 **It dissolves an argument three papers in this record were having without
-realising it.** [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) measured ES drift at roughly 1000× GRPO's and
+realising it.** [LIT-237](../literature.d/LIT-237.md) measured ES drift at roughly 1000× GRPO's and
 concluded it causes catastrophic forgetting. [LIT-230](../literature.d/LIT-230.md) measured it at
 roughly 40×, found the performance gains survive zeroing most of it, and
 concluded it is harmless. [LIT-231](../literature.d/LIT-231.md) measured the same geometry and concluded
@@ -73,13 +76,13 @@ looking at the off-manifold walk: it is genuinely enormous, it genuinely
 carries almost no task information, and whether it is harmful is a question
 about *what else* you were measuring, not about the drift.
 
-<!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, filed from this account in
+<!-- inactive-ok-block: SOTA-213 — Proposed, filed from this account in
      this same change; naming it is the point -->
 **And it makes the drift controllable**, which no previous document in this
 line could. `T` and `N` are knobs a practitioner sets. Drift accumulates with
 steps and falls with population size, so the same task accuracy bought with a
-larger population and fewer steps costs less displacement. [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md) is
-that instruction, and [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md)'s own continual-learning result — ES
+larger population and fewer steps costs less displacement. [SOTA-213](../practices.d/SOTA-213.md) is
+that instruction, and [LIT-235](../literature.d/LIT-235.md)'s own continual-learning result — ES
 "remains competitive sequentially when its iteration budget is controlled" —
 is the first evidence it works.
 
@@ -91,7 +94,7 @@ the rest of the space while it looks.
 
 ## The confirmation that promoted this
 
-Schweighofer et al. ([LIT-tmpphacm](../literature.d/LIT-tmpphacm.md)) took the scaling as a prediction and
+Schweighofer et al. ([LIT-238](../literature.d/LIT-238.md)) took the scaling as a prediction and
 tested the handle this account is most useful for. Raising the ES population
 from 30 to 128 **cuts the update norm by about half** — which is what an
 inverse dependence of the *squared* norm on `N` predicts for a 4.3× increase —
@@ -100,7 +103,7 @@ and 256 (their Table 1). Their own summary: "the update norm is indeed
 inversely proportional to the population size."
 
 That is the promotion condition, met in the terms it was written in: an
-independent group — no shared authors with [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) — on a different
+independent group — no shared authors with [LIT-235](../literature.d/LIT-235.md) — on a different
 model, Qwen2.5-3B rather than Qwen3-4B, with `N` varied directly at fixed `T`
 rather than the dependence inferred from the algebra.
 
@@ -118,7 +121,7 @@ displacement costs depends on whether anything constrained its direction.
 **It does not say the off-manifold walk is harmless.** Loss-invariant means
 invariant for *the objective being optimized*. Everything the training reward
 does not measure — every prior capability, every held-out benchmark — is free
-to degrade along exactly those directions, and [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) reports that it
+to degrade along exactly those directions, and [LIT-237](../literature.d/LIT-237.md) reports that it
 does, on a long enough horizon. The account explains why the damage is
 invisible to the training signal; it does not make it not damage.
 
@@ -132,7 +135,7 @@ varied against the prediction at all.
 flat; real directions have small nonzero curvature, and how the accounting
 degrades as curvature grows is not characterized here.
 
-**It does not adjudicate the failed replication.** [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) reports
+**It does not adjudicate the failed replication.** [LIT-237](../literature.d/LIT-237.md) reports
 GRPO ahead of ES on three of four tasks at 1B–1.5B. Nothing in this account
 says who wins on accuracy; it says why the two winners look so different in
 parameter space when they tie.

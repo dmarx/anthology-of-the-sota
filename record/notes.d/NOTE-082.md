@@ -1,6 +1,9 @@
 ---
+number: 82
 status: Read
-paper: LIT-tmppbfp5
+formerly:
+- NOTE-tmpl3gt3
+paper: LIT-237
 title: 'Evolutionary Strategies lead to Catastrophic Forgetting in LLMs'
 version: 1
 tags:
@@ -14,7 +17,7 @@ summary: >-
   Countdown itself converged.
 ---
 
-# NOTE-tmpl3gt3: Evolutionary Strategies lead to Catastrophic Forgetting in LLMs
+# NOTE-082: Evolutionary Strategies lead to Catastrophic Forgetting in LLMs
 
 ## Contribution
 
@@ -110,13 +113,13 @@ disqualifying rather than merely unfortunate. Lineage is on the LIT.
 
 ## Recommendations
 
-<!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, filed from this reading in this same change -->
+<!-- inactive-ok-block: SOTA-213 — Proposed, filed from this reading in this same change -->
 - **R1** — Control the drift that accumulates after the target task
   converges. *Topic:* post-training. *Strength:* strong on this paper's own
   data. **This reading first drew the recommendation as "stop when the target
-  task converges", which [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md) then showed is the wrong remedy** —
+  task converges", which [LIT-238](../literature.d/LIT-238.md) then showed is the wrong remedy** —
   the prior-task dip is largely transient and an early stop lands at the
-  bottom of it. [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md) is what the pair supports.
+  bottom of it. [SOTA-213](../practices.d/SOTA-213.md) is what the pair supports.
 - **R2** — Report a held-out capability alongside the target metric for any
   gradient-free post-training run. *Topic:* evaluation. *Strength:* strong.
 - **R3** — Do not treat ES as drop-in for continual or online learning without
@@ -150,7 +153,7 @@ finds no broad forgetting, while this trains 2.5× past convergence.
 line whose negative results sit at or under [THEORY-006](../theory.d/THEORY-006.md)'s boundary, with no
 negative reported above it.
 
-**Its forgetting claim is qualified in three directions by [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md)** —
+**Its forgetting claim is qualified in three directions by [LIT-238](../literature.d/LIT-238.md)** —
 transient rather than permanent, not specific to ES, and avoidable at 1–2%
 runtime — from the lab whose method it criticised. The failed replication on
 *accuracy* is untouched by that paper and is what still stands here.
@@ -167,7 +170,7 @@ at 200 is a choice that shapes the headline.
 ## Open questions
 
 - **~~Does the forgetting appear at all if training stops at convergence?~~**
-  Answered, and not the way this reading guessed: [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md) tracks the
+  Answered, and not the way this reading guessed: [LIT-238](../literature.d/LIT-238.md) tracks the
   prior tasks individually rather than averaged and finds the dip recovers, so
   stopping at convergence would stop at its lowest point. Kept rather than
   deleted because the guess and its correction are the useful pair.
@@ -175,5 +178,5 @@ at 200 is a choice that shapes the headline.
   this line is above 1.5B and every negative is at or below it, and no paper
   has tested both sides of that line in one protocol.
 - **Is the drift or the density the operative variable?** Both move together
-  here. [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) later argues neither is, and that the relevant quantity
+  here. [LIT-235](../literature.d/LIT-235.md) later argues neither is, and that the relevant quantity
   is how much of the drift lies off the loss manifold.

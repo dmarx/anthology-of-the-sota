@@ -136,8 +136,8 @@ condition.
 Eight papers have now compared evolution strategies against policy-gradient RL
 on LLMs, and [SOTA-154](../practices.d/SOTA-154.md) tabulates them by model size. The result is that
 **every negative finding sits at 1.5B or below and every positive at 1.5B or
-above** — [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) at 1B and 1.5B and [LIT-231](../literature.d/LIT-231.md) at 0.5B and 1.5B on one
-side; [LIT-233](../literature.d/LIT-233.md), [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md), [LIT-230](../literature.d/LIT-230.md) and [LIT-234](../literature.d/LIT-234.md) from 1.5B to 32B on the
+above** — [LIT-237](../literature.d/LIT-237.md) at 1B and 1.5B and [LIT-231](../literature.d/LIT-231.md) at 0.5B and 1.5B on one
+side; [LIT-233](../literature.d/LIT-233.md), [LIT-235](../literature.d/LIT-235.md), [LIT-230](../literature.d/LIT-230.md) and [LIT-234](../literature.d/LIT-234.md) from 1.5B to 32B on the
 other. None of those groups was testing this account, and most do not cite it.
 
 That is the threshold this account names, recovered from the behaviour of a

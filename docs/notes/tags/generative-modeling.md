@@ -4,7 +4,7 @@
 
 **generative-modeling**.
 
-10 of 86 NOTE documents. Back to the [full index](../README.md).
+10 of 88 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

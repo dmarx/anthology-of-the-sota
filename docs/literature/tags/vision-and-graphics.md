@@ -4,7 +4,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-13 of 240 LIT documents. Back to the [full index](../README.md).
+13 of 242 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

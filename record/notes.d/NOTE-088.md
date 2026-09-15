@@ -1,6 +1,9 @@
 ---
+number: 88
 status: Read
-paper: LIT-tmpf0otz
+formerly:
+- NOTE-tmpv3wri
+paper: LIT-241
 title: 'Proximal Policy Optimization Algorithms'
 version: 1
 tags:
@@ -14,7 +17,7 @@ summary: >-
   fits in a few lines of change to vanilla policy gradient.
 ---
 
-# NOTE-tmpv3wri: Proximal Policy Optimization Algorithms
+# NOTE-088: Proximal Policy Optimization Algorithms
 
 ## Contribution
 
@@ -127,7 +130,7 @@ taken from a group of sampled outputs. Lineage is on the LIT.
 
 ## Bearing on the record
 
-Filed as [LIT-tmpf0otz](../literature.d/LIT-tmpf0otz.md), `extended_by:` [LIT-127](../literature.d/LIT-127.md).
+Filed as [LIT-241](../literature.d/LIT-241.md), `extended_by:` [LIT-127](../literature.d/LIT-127.md).
 
 <!-- inactive-ok-block: SOTA-146 — Proposed, and named as the practice that
      corrects an objective descended from this paper -->

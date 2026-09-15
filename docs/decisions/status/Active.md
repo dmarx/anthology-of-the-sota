@@ -4,7 +4,7 @@
 
 **Active** — in force — the current answer, and what a citation should normally point at.
 
-22 of 31 decisions. Back to the [full index](../README.md).
+23 of 32 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -30,3 +30,4 @@
 | [ADR-023](../../../record/decisions.d/ADR-023.md) | A note carries its number, and answers to a readable second name | The pre-migration ids said who and when; `LIT-001` says neither. luria 0.13 can render an alias from a document's own frontmatter, so `LIT-Kingma-2014-001` now resolves wherever `LIT-001` does. An alias rather than a code, because a code that encodes a fact rots when the fact is corrected, and an alias is recomputed on every read. | Active |
 | [ADR-025](../../../record/decisions.d/ADR-025.md) v2 | A third scheme: NOTE, the structured reading of a paper | A LIT note says what a paper's standing in the anthology is. It has never said what the paper contains, and the corpus now holds two demonstrations of what that costs. NOTE is a third scheme: one document per paper actually read, carrying the contribution, the assumptions, the theorem-level results, the claims with their strength, and the recommendations derived — with the status recording how deeply it was read. | Active |
 | [ADR-026](../../../record/decisions.d/ADR-026.md) | One topic vocabulary: the practice registry takes the same thirteen the reading list has | [ADR-020](../../../record/decisions.d/ADR-020.md) scoped the recommendations by kind of claim rather than by domain, and that decision stands. Its rejected alternative does not: it declined to add `generative-modeling` and `vision-and-graphics` to the practice vocabulary on a browsing argument that the evidence since has not borne out, and that reads to a later reader as a scope boundary — the exact thing [ADR-020](../../../record/decisions.d/ADR-020.md) was written to remove. Adds both, making the two vocabularies identical. | Active |
+| [ADR-032](../../../record/decisions.d/ADR-032.md) | Benchmarks, model reports and infrastructure are literature, and the record files them | The bibliography sweep found that benchmark papers, model and technical reports, and training or serving infrastructure are 9 of the 27 most-cited references the record lacks — GSM8K alone cited by 9 of 12 papers. Every pass had declined them silently and none had said why. They are admissible `LIT` documents: a note records a paper's standing in the anthology, and a benchmark the record's practices are argued on has standing. | Active |

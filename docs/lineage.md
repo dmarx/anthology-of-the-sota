@@ -26,20 +26,22 @@
   - [LIT-209](../record/literature.d/LIT-209.md) — SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling *(Active)*
 - alongside: [LIT-048](../record/literature.d/LIT-048.md) — Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation *(Active)*
 
-## From Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning
+## From Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training
 
-- [LIT-211](../record/literature.d/LIT-211.md) — Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning *(Active)*
-  - [LIT-229](../record/literature.d/LIT-229.md) — Evolution Strategies at the Hyperscale *(Active)*
-    - [LIT-232](../record/literature.d/LIT-232.md) — EGGROLL, Unrolled: Understanding and Improving Low-Rank Evolution Strategies at Scale *(Active)*
-  - [LIT-231](../record/literature.d/LIT-231.md) — Hyper-ES: Effective Evolution Strategies for LLM Reasoning via Descent Direction Merging *(Active)*
-  - [LIT-234](../record/literature.d/LIT-234.md) — Beyond the Best Guess: Improving LLM Solution Coverage with Evolution Strategies *(Active)*
-  - [LIT-237](../record/literature.d/LIT-237.md) — Evolutionary Strategies lead to Catastrophic Forgetting in LLMs *(Active)*
-    - [LIT-238](../record/literature.d/LIT-238.md) — Overcoming Forgetting in LLM Fine-Tuning with Evolution Strategies *(Active)* — also extends LIT-235
-  - [LIT-240](../record/literature.d/LIT-240.md) — ESSAM: A Novel Competitive Evolution Strategies Approach to Reinforcement Learning for Memory Efficient LLMs Fine-Tuning *(Active)*
 - [LIT-235](../record/literature.d/LIT-235.md) — Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training *(Active)*
 - [LIT-236](../record/literature.d/LIT-236.md) — The Blessing of Dimensionality in LLM Fine-tuning: A Variance-Curvature Perspective *(Active)*
   - [LIT-233](../record/literature.d/LIT-233.md) — Neural Thickets: Diverse Task Experts Are Dense Around Pretrained Weights *(Active)*
-- alongside: [LIT-127](../record/literature.d/LIT-127.md) — DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models *(Active)*
+- [LIT-241](../record/literature.d/LIT-241.md) — Proximal Policy Optimization Algorithms *(Active)*
+  - [LIT-127](../record/literature.d/LIT-127.md) — DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models *(Active)*
+- [LIT-242](../record/literature.d/LIT-242.md) — Evolution Strategies as a Scalable Alternative to Reinforcement Learning *(Active)*
+  - [LIT-211](../record/literature.d/LIT-211.md) — Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning *(Active)*
+    - [LIT-229](../record/literature.d/LIT-229.md) — Evolution Strategies at the Hyperscale *(Active)*
+      - [LIT-232](../record/literature.d/LIT-232.md) — EGGROLL, Unrolled: Understanding and Improving Low-Rank Evolution Strategies at Scale *(Active)*
+    - [LIT-231](../record/literature.d/LIT-231.md) — Hyper-ES: Effective Evolution Strategies for LLM Reasoning via Descent Direction Merging *(Active)*
+    - [LIT-234](../record/literature.d/LIT-234.md) — Beyond the Best Guess: Improving LLM Solution Coverage with Evolution Strategies *(Active)*
+    - [LIT-237](../record/literature.d/LIT-237.md) — Evolutionary Strategies lead to Catastrophic Forgetting in LLMs *(Active)*
+      - [LIT-238](../record/literature.d/LIT-238.md) — Overcoming Forgetting in LLM Fine-Tuning with Evolution Strategies *(Active)* — also extends LIT-235
+    - [LIT-240](../record/literature.d/LIT-240.md) — ESSAM: A Novel Competitive Evolution Strategies Approach to Reinforcement Learning for Memory Efficient LLMs Fine-Tuning *(Active)*
 - alongside: [LIT-230](../record/literature.d/LIT-230.md) — Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO *(Active)*
 - alongside: [LIT-239](../record/literature.d/LIT-239.md) — ESSA: Evolutionary Strategies for Scalable Alignment *(Active)*
 

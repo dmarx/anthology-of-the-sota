@@ -4,7 +4,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-84 of 86 NOTE documents. Back to the [full index](../README.md).
+86 of 88 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -92,3 +92,5 @@
 | [NOTE-084](../../../record/notes.d/NOTE-084.md) | The Blessing of Dimensionality in LLM Fine-tuning | One geometric property — a fine-tuning landscape whose curvature lives in a few stiff directions amid a near-zero bulk — accounts for both why a population of thirty keeps working as models grow and why the training reward rises, peaks and decays under fixed hyperparameters, in GRPO as well as ES. | Read |
 | [NOTE-085](../../../record/notes.d/NOTE-085.md) | ESSA | The earliest ES-for-LLM paper in this record, and the one that accepted the dimensionality objection instead of overturning it: SFT-train LoRA adapters, take their SVD, and run CMA-ES over the top singular values only — reaching 0.80 on GSM8K in under 25 minutes against GRPO's 50+, from 100 examples against 5,978, and aligning a 32B model at INT4. | Read |
 | [NOTE-086](../../../record/notes.d/NOTE-086.md) | ESSAM | Transposes sharpness-aware minimization into zeroth order — step against the reward-weighted direction, recompute the update at that neighbouring point, apply it at the original — and closes most of standard ES's gap to GRPO on GSM8K while keeping inference-level GPU memory. | Read |
+| [NOTE-087](../../../record/notes.d/NOTE-087.md) | Evolution Strategies as a Scalable Alternative to Reinforcement Learning | Shared random seeds let every worker reconstruct every other worker's perturbation, so an ES update costs one scalar per worker instead of a gradient — which turns 11 hours on 18 cores into 10 minutes on 1,440. The paper also argues that the policy-gradient estimator's variance grows with episode length while ES's does not, and that ambient parameter count is not the dimension that matters. | Read |
+| [NOTE-088](../../../record/notes.d/NOTE-088.md) | Proximal Policy Optimization Algorithms | Clip the probability ratio to [1-eps, 1+eps] and take the minimum of the clipped and unclipped surrogate, so the objective is a pessimistic lower bound — which gives trust-region behaviour from first-order optimization, permits several epochs of minibatch SGD on one batch of collected data, and fits in a few lines of change to vanilla policy gradient. | Read |

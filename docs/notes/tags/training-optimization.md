@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-13 of 86 NOTE documents. Back to the [full index](../README.md).
+15 of 88 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,3 +21,5 @@
 | [NOTE-073](../../../record/notes.d/NOTE-073.md) | On the Convergence of Adam and Beyond | Constructs a one-dimensional convex problem on which Adam provably converges to the worst point in the feasible set, locating the error in the original convergence proof and in the exponential moving average itself. Proposes AMSGrad, which keeps the running maximum of the second moment so the effective learning rate is non-increasing. ICLR 2018 best paper; almost nobody runs AMSGrad. | Read |
 | [NOTE-079](../../../record/notes.d/NOTE-079.md) | EGGROLL, Unrolled | Works out what EGGROLL's low-rank update converges to — a resolvent-filtered gradient, which can be nonconservative and can turn an attracting optimum into a repelling one, while being exact on every quadratic objective — and turns the finite-population half of the analysis into LOO-ROLL, which replaces two antithetic evaluations per direction with one leave-one-out evaluation at unchanged expected field. | Read |
 | [NOTE-080](../../../record/notes.d/NOTE-080.md) | Evolution Strategies at the Hyperscale | Structuring each ES worker's perturbation as a rank-r Gaussian product instead of a dense matrix raises arithmetic intensity by enough for a hundredfold throughput gain at billion scale, while the population average stays high-rank and the low-rank update provably approaches the full-rank one at a rate faster than the usual parametric O(1/sqrt(r)). | Read |
+| [NOTE-087](../../../record/notes.d/NOTE-087.md) | Evolution Strategies as a Scalable Alternative to Reinforcement Learning | Shared random seeds let every worker reconstruct every other worker's perturbation, so an ES update costs one scalar per worker instead of a gradient — which turns 11 hours on 18 cores into 10 minutes on 1,440. The paper also argues that the policy-gradient estimator's variance grows with episode length while ES's does not, and that ambient parameter count is not the dimension that matters. | Read |
+| [NOTE-088](../../../record/notes.d/NOTE-088.md) | Proximal Policy Optimization Algorithms | Clip the probability ratio to [1-eps, 1+eps] and take the minimum of the clipped and unclipped surrogate, so the objective is a pessimistic lower bound — which gives trust-region behaviour from first-order optimization, permits several epochs of minibatch SGD on one batch of collected data, and fits in a few lines of change to vanilla policy gradient. | Read |

@@ -1,6 +1,9 @@
 ---
+number: 87
 status: Read
-paper: LIT-tmpiby93
+formerly:
+- NOTE-tmpbtwav
+paper: LIT-242
 title: 'Evolution Strategies as a Scalable Alternative to Reinforcement Learning'
 version: 1
 tags:
@@ -15,7 +18,7 @@ summary: >-
   the dimension that matters.
 ---
 
-# NOTE-tmpbtwav: Evolution Strategies as a Scalable Alternative to Reinforcement Learning
+# NOTE-087: Evolution Strategies as a Scalable Alternative to Reinforcement Learning
 
 ## Contribution
 
@@ -149,7 +152,7 @@ LIT.
 
 ## Bearing on the record
 
-Filed as [LIT-tmpiby93](../literature.d/LIT-tmpiby93.md), `extended_by:` [LIT-211](../literature.d/LIT-211.md).
+Filed as [LIT-242](../literature.d/LIT-242.md), `extended_by:` [LIT-211](../literature.d/LIT-211.md).
 
 **It is the trunk the bibliography sweep found**, cited by ten of the twelve
 papers in this line and absent until now. The record held nine descendants, a

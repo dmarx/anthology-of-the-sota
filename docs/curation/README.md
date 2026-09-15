@@ -6,6 +6,8 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [15 Sep 20:03 — Filing the trunk, and what it turned out to have already said](2026-09.md#filing-the-trunk-and-what-it-turned-out-to-have-already-said)
+- [15 Sep 19:49 — The bibliography sweep, run at last: what twelve papers cite that the record does not hold](2026-09.md#the-bibliography-sweep-run-at-last-what-twelve-papers-cite-that-the-record-does-not-hold)
 - [15 Sep 19:43 — An independence claim that was never checked, and the paper that exposed it](2026-09.md#an-independence-claim-that-was-never-checked-and-the-paper-that-exposed-it)
 - [15 Sep 19:27 — A practice corrected before it shipped, and a condition finally met](2026-09.md#a-practice-corrected-before-it-shipped-and-a-condition-finally-met)
 - [15 Sep 19:10 — Following the citations backward, and the boundary that fell out of it](2026-09.md#following-the-citations-backward-and-the-boundary-that-fell-out-of-it)
@@ -67,9 +69,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-60 entries across 2 books, newest first.
+62 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 58 | 2026-09-05 | 2026-09-15 |
+| [2026-09](2026-09.md) | 60 | 2026-09-05 | 2026-09-15 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

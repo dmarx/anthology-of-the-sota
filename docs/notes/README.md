@@ -32,13 +32,13 @@
 **[representation-and-encoding](tags/representation-and-encoding.md)** (1):
 [010](../../record/notes.d/NOTE-010.md)
 
-**[training-optimization](tags/training-optimization.md)** (13):
-[012](../../record/notes.d/NOTE-012.md) · [015](../../record/notes.d/NOTE-015.md) · [017](../../record/notes.d/NOTE-017.md) · [024](../../record/notes.d/NOTE-024.md) · [025](../../record/notes.d/NOTE-025.md) · [039](../../record/notes.d/NOTE-039.md) · [041](../../record/notes.d/NOTE-041.md) · [062](../../record/notes.d/NOTE-062.md) · [066](../../record/notes.d/NOTE-066.md) · [072](../../record/notes.d/NOTE-072.md) · [073](../../record/notes.d/NOTE-073.md) · [079](../../record/notes.d/NOTE-079.md) · [080](../../record/notes.d/NOTE-080.md)
+**[training-optimization](tags/training-optimization.md)** (15):
+[012](../../record/notes.d/NOTE-012.md) · [015](../../record/notes.d/NOTE-015.md) · [017](../../record/notes.d/NOTE-017.md) · [024](../../record/notes.d/NOTE-024.md) · [025](../../record/notes.d/NOTE-025.md) · [039](../../record/notes.d/NOTE-039.md) · [041](../../record/notes.d/NOTE-041.md) · [062](../../record/notes.d/NOTE-062.md) · [066](../../record/notes.d/NOTE-066.md) · [072](../../record/notes.d/NOTE-072.md) · [073](../../record/notes.d/NOTE-073.md) · [079](../../record/notes.d/NOTE-079.md) · [080](../../record/notes.d/NOTE-080.md) · [087](../../record/notes.d/NOTE-087.md) · [088](../../record/notes.d/NOTE-088.md)
 
 **[vision-and-graphics](tags/vision-and-graphics.md)** (9):
 [027](../../record/notes.d/NOTE-027.md) · [032](../../record/notes.d/NOTE-032.md) · [035](../../record/notes.d/NOTE-035.md) · [037](../../record/notes.d/NOTE-037.md) · [042](../../record/notes.d/NOTE-042.md) · [044](../../record/notes.d/NOTE-044.md) · [045](../../record/notes.d/NOTE-045.md) · [046](../../record/notes.d/NOTE-046.md) · [047](../../record/notes.d/NOTE-047.md)
 
-**By status:** [Read](status/Read.md) (84) · [Skimmed](status/Skimmed.md) (2) · [Unread](status/Unread.md) (0) · [Re-read](status/Superseded.md) (0)
+**By status:** [Read](status/Read.md) (86) · [Skimmed](status/Skimmed.md) (2) · [Unread](status/Unread.md) (0) · [Re-read](status/Superseded.md) (0)
 
 What the status column means in this scheme — the words are luria's, the meanings are this project's.
 
@@ -137,4 +137,6 @@ What the status column means in this scheme — the words are luria's, the meani
 | [NOTE-084](../../record/notes.d/NOTE-084.md) | The Blessing of Dimensionality in LLM Fine-tuning | One geometric property — a fine-tuning landscape whose curvature lives in a few stiff directions amid a near-zero bulk — accounts for both why a population of thirty keeps working as models grow and why the training reward rises, peaks and decays under fixed hyperparameters, in GRPO as well as ES. | Read |
 | [NOTE-085](../../record/notes.d/NOTE-085.md) | ESSA | The earliest ES-for-LLM paper in this record, and the one that accepted the dimensionality objection instead of overturning it: SFT-train LoRA adapters, take their SVD, and run CMA-ES over the top singular values only — reaching 0.80 on GSM8K in under 25 minutes against GRPO's 50+, from 100 examples against 5,978, and aligning a 32B model at INT4. | Read |
 | [NOTE-086](../../record/notes.d/NOTE-086.md) | ESSAM | Transposes sharpness-aware minimization into zeroth order — step against the reward-weighted direction, recompute the update at that neighbouring point, apply it at the original — and closes most of standard ES's gap to GRPO on GSM8K while keeping inference-level GPU memory. | Read |
+| [NOTE-087](../../record/notes.d/NOTE-087.md) | Evolution Strategies as a Scalable Alternative to Reinforcement Learning | Shared random seeds let every worker reconstruct every other worker's perturbation, so an ES update costs one scalar per worker instead of a gradient — which turns 11 hours on 18 cores into 10 minutes on 1,440. The paper also argues that the policy-gradient estimator's variance grows with episode length while ES's does not, and that ambient parameter count is not the dimension that matters. | Read |
+| [NOTE-088](../../record/notes.d/NOTE-088.md) | Proximal Policy Optimization Algorithms | Clip the probability ratio to [1-eps, 1+eps] and take the minimum of the clipped and unclipped surrogate, so the objective is a pessimistic lower bound — which gives trust-region behaviour from first-order optimization, permits several epochs of minibatch SGD on one batch of collected data, and fits in a few lines of change to vanilla policy gradient. | Read |
 

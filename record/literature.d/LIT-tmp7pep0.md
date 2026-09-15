@@ -1,0 +1,68 @@
+---
+status: 'Active'
+title: 'Mean Field Analysis of Neural Networks: A Law of Large Numbers'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-15'
+published: '2018-05-01'
+arxiv: '1805.01053'
+first_author: 'Sirignano'
+keywords:
+- 'mean-field'
+- 'law-of-large-numbers'
+- 'width-scaling'
+implementations: []
+summary: >-
+  Sirignano and Spiliopoulos (2018), [ARXIV-1805.01053](https://arxiv.org/abs/1805.01053). The law-of-large-
+  numbers half of the mean-field limit for single-hidden-layer networks: the
+  empirical measure of parameters converges to a deterministic limit.
+---
+# LIT-tmp7pep0: Mean Field Analysis of Neural Networks: A Law of Large Numbers
+
+Sirignano and Spiliopoulos (2018) — [ARXIV-1805.01053](https://arxiv.org/abs/1805.01053)
+
+## Key takeaways
+
+Proves a law of large numbers for one-hidden-layer neural networks trained
+by SGD: as width N and SGD iterations grow jointly (with time scaled as t =
+k/N), the empirical distribution of parameters converges to the
+deterministic solution of a nonlinear PDE (a Wasserstein gradient flow of
+the population loss). Unlike concurrent work (Mei-Montanari-Nguyen), the
+proof does not assume the neural network gradient is globally Lipschitz or
+bounded, only moment conditions on data and initialization. Also establishes
+propagation of chaos: parameters become asymptotically independent.
+
+- **Theorem 1.2 (Law of Large Numbers).** μ^N converges in distribution in
+  D_E([0,T]) to the unique deterministic μ̄ satisfying the measure evolution
+  equation (1.7), a nonlinear first-order PDE which is a Wasserstein
+  gradient flow of L̄(p) = (1/2)E[(Y - <cσ(w·X), p>)²]
+  *Holds when:* Requires time rescaling t = ⌊Nt⌋/N (N SGD steps per unit
+  time); holds for any finite T under Assumption 1.1
+- **Theorem 1.6 (Propagation of Chaos).** The joint law ρ^N of N trained
+  parameters is μ̄-chaotic: for any fixed k, the first k marginals converge
+  to μ̄⊗k. Parameters become asymptotically independent.
+  *Holds when:* Follows from LLN + Tanaka-Sznitman theorem given
+  exchangeability
+- **Corollary 1.4.** If μ̄_t has density p(t,c,w), then p solves ∂_t p = -α
+  div_θ(p ∇_θ v(θ,p)) where v is the functional derivative of L̄
+  *Holds when:* Requires p vanishes at infinity
+
+## What the evidence does not cover
+
+- Single hidden layer only; multilayer extension appears in follow-up
+  (1903.04440).
+- Requires bounded C² activation — excludes ReLU, the practically dominant
+  choice.
+- Constant learning rate and squared loss; other loss functions not treated.
+- No rate of convergence in N (qualitative LLN only); rates require CLT
+  (Sirignano-Spiliopoulos 2019).
+- Mean-field 1/N parameterization differs from the standard 1/√N (NTK)
+  parameterization used in practice.
+- IID data assumption; heterogeneous/non-IID data not addressed.
+
+## Standing in the anthology
+
+Read — the reading is [NOTE-tmpqn66f](../notes.d/NOTE-tmpqn66f.md). Arrived in the imported batch, which
+brought in the mean-field account of wide networks, where the object that
+moves is the distribution of neurons.

@@ -1,0 +1,69 @@
+---
+status: 'Active'
+title: 'An effective theory of collective deep learning'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-15'
+published: '2023-10-01'
+arxiv: '2310.12802'
+first_author: 'Arola-Fernández'
+keywords:
+- 'collective-learning'
+- 'coupled-networks'
+- 'phase-transition'
+- 'ensembles'
+implementations: []
+summary: >-
+  Arola-Fernández and Lacasa (2023), [ARXIV-2310.12802](https://arxiv.org/abs/2310.12802). An ensemble of networks
+  coupled through their weights undergoes a phase transition into a
+  collective-learning regime, in which each learns classes it never saw.
+---
+# LIT-tmpknf6z: An effective theory of collective deep learning
+
+Arola-Fernández and Lacasa (2023) — [ARXIV-2310.12802](https://arxiv.org/abs/2310.12802)
+
+## Key takeaways
+
+Derives an effective statistical-physics theory for ensembles of coupled
+neural networks by mapping the system's coarse-grained dynamics onto a
+deformed Ginzburg-Landau model with quenched disorder, predicting depth-
+dependent disorder-order-disorder phase transitions in parameter space.
+Validates the theory on MNIST showing that individual networks trained on
+private data can generalize to unseen classes only within the collective
+learning phase.
+
+- **Phase transition prediction (Ginzburg-Landau theory).** Coupled networks
+  undergo disorder-order-disorder transitions at critical coupling strengths
+  sigma_c1(D) and sigma_c2(D); sigma_c1 increases with depth D due to the
+  phi^{2D+2} free-energy structure
+  *Holds when:* D is network depth; transitions are first-order for D >= 1
+  (exhibiting bistability); mean accuracy jumps from ~0.1 (private class
+  only) to ~1.0 (all classes) at sigma_c1
+- **Low-rank learning path (empirical).** The cross-accuracy matrix during
+  the coupling-driven transition is approximately rank-one; its leading
+  singular vector captures the microscopic learning trajectory with high R^2
+  *Holds when:* Validated for D=0,1,2 on MNIST; R^2 values high across all
+  depths (Figure 3d)
+
+## What the evidence does not cover
+
+- Effective theory is derived for linearized (deep linear) networks;
+  applicability to nonlinear activations is validated empirically but not
+  proved.
+- The mean-field analysis assumes fully connected (all-to-all) coupling
+  topology; sparse or network-graph topologies are not theoretically
+  characterized.
+- Experiments are limited to MNIST with N=10 networks; scalability to larger
+  ensembles, datasets, and architectures is unverified.
+- The theory does not address optimization dynamics or convergence rates,
+  only the structure of fixed points and phase boundaries.
+- Excessive coupling destroys the collective learning phase via collective
+  regularization or gradient explosion; the upper boundary of the useful
+  regime is not systematically characterized.
+
+## Standing in the anthology
+
+Read — the reading is [NOTE-tmp6snay](../notes.d/NOTE-tmp6snay.md). Arrived in the imported batch, which
+brought in the consensus, synchronization and flocking literature that the
+decentralized-training results rest on.

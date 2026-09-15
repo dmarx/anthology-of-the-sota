@@ -1,0 +1,97 @@
+---
+status: 'Active'
+title: 'Emergence of stochastic flocking for the discrete Cucker-Smale model with randomly switching topologies'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-15'
+published: '2019-12-01'
+arxiv: '1912.11949'
+first_author: 'Dong'
+keywords:
+- 'cucker-smale'
+- 'flocking'
+- 'random-topology'
+- 'consensus'
+implementations: []
+summary: >-
+  Dong et al. (2019), [ARXIV-1912.11949](https://arxiv.org/abs/1912.11949). Cucker-Smale flocking under randomly
+  switching topologies: almost-sure velocity consensus given a union-spanning-
+  tree condition on the switching sequence.
+---
+# LIT-tmpv8s1r: Emergence of stochastic flocking for the discrete Cucker-Smale model with randomly switching topologies
+
+Dong et al. (2019) — [ARXIV-1912.11949](https://arxiv.org/abs/1912.11949)
+
+## Key takeaways
+
+Proves almost-sure asymptotic flocking (velocity consensus) for the discrete
+Cucker-Smale model under IID randomly switching directed network topologies,
+with Poisson and geometric dwelling-time processes explicitly verified. The
+sufficient framework requires only: (A1) the union of all admissible
+topologies has a directed spanning tree, and (A2) dwelling times are bounded
+in probability. Extends the continuous CS result of [15] (arXiv:1911.07390)
+to the discrete case and removes the compact-support assumption on the
+switching-time distribution. This is the most directly applicable stochastic
+flocking result for our gossip training setting: it proves velocity
+consensus under exactly the kind of IID random topology switching that
+gossip algorithms use.
+
+- **Theorem 3.1 — Stochastic flocking with probability one.** Under
+  framework (A1)-(A2), if parameters N, h, κ, p_k, φ satisfy: (i) 0 < hκ < 1
+  (ii) (M+N-1)·log(1/(1-hκ)) / min_k log(1/(1-p_k)) < 1 (iii) 1/φ(r) =
+  O(r^ε) for ε < 1/(N-1) - (M+N-1)·log(1/(1-hκ))/[(N-1)·min_k
+  log(1/(1-p_k))] then the discrete CS system exhibits asymptotic global
+  flocking with probability one: P(ω: ∃ x^∞ > 0 s.t. sup_{0≤t<∞} D(X[t,ω]) ≤
+  x^∞ AND lim_{t→∞} D(V[t,ω]) = 0) = 1.
+  *Holds when:* N = number of agents, h = time step, κ = φ(0) = max
+  coupling, M = dwelling-time bound constant, p_k = selection probability
+  for topology G_k. The condition (ii) requires min topology probability p_k
+  to be large enough relative to coupling strength hκ.
+- **Proposition 4.1 — Velocity alignment rate.** For t ∈ [t*_{r(N-1)},
+  t*_{(r+1)(N-1)}), the velocity diameter satisfies: D(V[t]) ≤ D(V[0]) ·
+  exp[-(1-hκ)^{(M+N-1)(n+c log(N-1))} · (hφ(x^∞)/(N(1-hκ)))^{N-1} ·
+  ((r+1)^{1+c(M+N-1)log(1-hκ)} - 1) / (1 + c(M+N-1)log(1-hκ))]. Convergence
+  is super-exponential in r (faster than geometric).
+  *Holds when:* c, n are framework parameters; x^∞ is the bounded position
+  diameter; r is the block index.
+- **Lemma 2.2 — Spanning tree implies scrambling product (from Wu 2006).**
+  If A_1,...,A_{N-1} are N×N nonneg matrices with positive diagonals and
+  each G(A_i) has a spanning tree, then the product A_1·A_2···A_{N-1} is
+  scrambling (µ > 0).
+  *Holds when:* N-1 matrices suffice regardless of N. This is the core
+  algebraic lemma.
+- **Proposition 5.1 — Poisson dwelling times satisfy (A2).** If T_ℓ ~
+  Poisson(λ_ℓ) independently with λ_max = sup_ℓ λ_ℓ < ∞, then for any c > 0
+  there exists M such that (A2) holds with p̃(n) → 0 as n → ∞.
+  *Holds when:* λ_max < ∞ is the key condition — rates need not be equal.
+- **Proposition 5.2 — Geometric dwelling times satisfy (A2).** If T_ℓ ~
+  Geometric(p_ℓ) independently with p_min = inf_ℓ p_ℓ > 1/2, then for any c
+  > 0 there exists M such that (A2) holds with p̃(n) → 0 as n → ∞.
+  *Holds when:* p_min > 1/2 means each switch happens within 2 steps in
+  expectation.
+
+## What the evidence does not cover
+
+- Sufficient condition only — union spanning tree is not proven necessary
+  for CS flocking (unlike Tahbaz-Salehi which has necessity for linear
+  consensus).
+- The coupling condition (ii) is joint in hκ and min p_k — it may be
+  restrictive for large N or rare topologies.
+- No gradient/optimization layer — pure velocity consensus without a loss
+  function. Extension to SGD requires additional analysis of gradient noise
+  interacting with the flocking dynamics.
+- Position dependence of mixing weights φ(||x_i - x_j||) makes analysis
+  harder than linear consensus; the slow-decay condition 1/φ(r) = O(r^ε) is
+  a workaround for bounded position diameter.
+- All-to-all interaction structure (Σ over all j=1..N) — in gossip SGD, each
+  node only communicates with a few neighbors, giving a sparser mixing
+  matrix than full CS.
+- Only the discrete Euler discretization is analyzed; higher-order or
+  adaptive integrators are not covered.
+
+## Standing in the anthology
+
+Read — the reading is [NOTE-tmpvfuyt](../notes.d/NOTE-tmpvfuyt.md). Arrived in the imported batch, which
+brought in the consensus, synchronization and flocking literature that the
+decentralized-training results rest on.

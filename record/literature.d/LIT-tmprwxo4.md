@@ -1,0 +1,66 @@
+---
+status: 'Active'
+title: 'Async-HFL: Efficient and Robust Asynchronous Federated Learning in Hierarchical IoT Networks'
+version: 1
+tags:
+- distributed-optimization
+date: '2026-09-15'
+published: '2023-01-01'
+arxiv: '2301.06646'
+first_author: 'Yu'
+keywords:
+- 'federated-learning'
+- 'asynchronous-aggregation'
+- 'device-selection'
+- 'hierarchical'
+implementations: []
+summary: >-
+  Yu et al. (2023), [ARXIV-2301.06646](https://arxiv.org/abs/2301.06646). Async-HFL: hierarchical federated
+  learning over long-tailed wireless delays, selecting devices by gradient
+  diversity rather than by latency alone.
+---
+# LIT-tmprwxo4: Async-HFL: Efficient and Robust Asynchronous Federated Learning in Hierarchical IoT Networks
+
+Yu et al. (2023) — [ARXIV-2301.06646](https://arxiv.org/abs/2301.06646)
+
+## Key takeaways
+
+Async-HFL is the first end-to-end framework for federated learning in three-
+tier hierarchical IoT networks that jointly addresses data heterogeneity,
+system heterogeneity, unexpected stragglers, and scalability through fully
+asynchronous aggregations at both gateway and cloud tiers combined with ILP-
+based device selection and device-gateway association.
+
+- **Theorem 1 (Three-tier convergence).** Async-HFL converges at the same
+  asymptotic rate as two-tier asynchronous FL (FedAsync), given bounded
+  staleness at both tiers (K_c, K_g < ∞) and appropriate staleness
+  weighting.
+  *Holds when:* Requires bounded delays K_c and K_g at cloud and gateway
+  tiers; staleness weight s(·) must be a decreasing function of delay.
+- **Empirical convergence speedup.** Async-HFL converges 1.08–1.31x faster
+  in wall-clock time than asynchronous FL baselines across six IoT datasets
+  in ns-3 simulation.
+  *Holds when:* NYCMesh topology, 184 devices, 6 gateways; ns-3 network
+  simulation plus Raspberry Pi physical deployment.
+- **Communication cost reduction.** Async-HFL reduces total communicated
+  data by up to 21.6% compared to async FL baselines with client selection.
+  *Holds when:* Measured as ratio of total bytes transmitted before reaching
+  target accuracy across six datasets.
+
+## What the evidence does not cover
+
+- Async-HFL converges slower than synchronous baselines on the Shakespeare
+  dataset, suggesting fully asynchronous two-tier algorithms may inherently
+  struggle with certain task structures.
+- The ILP solvers (Gurobi) are evaluated on a 200-node network;
+  computational overhead may become significant for much larger deployments.
+- Fixed device and gateway epochs E and Z are used; adaptive epoch
+  adjustment could provide additional efficiency gains under resource
+  heterogeneity.
+- The convergence proof assumes bounded staleness (K_c, K_g) at both tiers,
+  which may not hold in severely unreliable networks.
+
+## Standing in the anthology
+
+Read — the reading is [NOTE-tmphwfv6](../notes.d/NOTE-tmphwfv6.md). Arrived in the imported batch, which
+brought in the federated branch, where the workers hold different data.

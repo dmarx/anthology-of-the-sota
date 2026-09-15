@@ -1,0 +1,90 @@
+---
+status: 'Active'
+title: 'Distributed asynchronous deterministic and stochastic gradient optimization algorithms'
+version: 1
+tags:
+- distributed-optimization
+date: '2026-09-15'
+published: '1986-09-01'
+doi: '10.1109/TAC.1986.1104412'
+first_author: 'Tsitsiklis'
+keywords:
+- 'asynchronous-optimization'
+- 'bounded-delay'
+- 'distributed-gradient'
+- 'stochastic-approximation'
+implementations: []
+summary: >-
+  Tsitsiklis et al. (1986), [DOI:10.1109/TAC.1986.1104412.](https://doi.org/10.1109/TAC.1986.1104412.) The founding
+  analysis of distributed asynchronous gradient methods: convergence holds for
+  any finite delay bound B, and the step size must shrink with B.
+---
+# LIT-tmpouknq: Distributed asynchronous deterministic and stochastic gradient optimization algorithms
+
+Tsitsiklis et al. (1986) — [DOI:10.1109/TAC.1986.1104412](https://doi.org/10.1109/TAC.1986.1104412)
+
+## Key takeaways
+
+First convergence proofs for fully asynchronous distributed gradient
+algorithms, covering both deterministic and stochastic gradient cases. The
+paper establishes that gradient descent remains convergent even when
+processors update at arbitrary times, use stale information from other
+processors (bounded delay model), and communicate asynchronously with no
+global clock. Two regimes are analyzed: totally asynchronous (unbounded
+delays, each processor updates infinitely often) and partially asynchronous
+(delays bounded by B). This is the theoretical anchor for all subsequent
+work on async distributed optimization, including async SGD in deep
+learning.
+
+- **Theorem 1 — Deterministic partially asynchronous convergence.** Under
+  the partially asynchronous model with bounded delays B, Lipschitz-
+  continuous gradient, and diminishing step sizes (Σα_t = ∞, Σα_t^2 < ∞):
+  the asynchronous gradient algorithm x_i(t+1) = x_i(t) - α_t *
+  ∂f/∂x_i(x_1(t-τ_{i1}(t)), ..., x_n(t-τ_{in}(t))) converges: dist(x(t), X*)
+  → 0 as t→∞.
+  *Holds when:* Bounded delays B < ∞; Lipschitz L; step sizes satisfy
+  Robbins-Monro conditions.
+- **Theorem 2 — Stochastic partially asynchronous convergence.** Under the
+  same setup with stochastic gradient estimates (unbiased, bounded variance
+  σ^2): x(t) → x* almost surely (a.s.) for a unique minimum x*, or
+  dist(x(t), X*) → 0 a.s. for a connected minimum set X*.
+  *Holds when:* Unbiased gradients; bounded variance; bounded delays B; Σα_t
+  = ∞, Σα_t^2 < ∞.
+- **Totally asynchronous model (Tsitsiklis 1984 thesis).** Under the totally
+  asynchronous model (unbounded delays but each processor updates infinitely
+  often), gradient descent converges for Lipschitz gradients under a
+  "B-connectivity" condition: there exists T such that every processor
+  communicates to every other processor at least once in every T-step
+  window.
+  *Holds when:* B-connectivity / uniformly bounded intervals; Lipschitz L;
+  constant or diminishing step. Unbounded delays require stronger
+  connectivity conditions than bounded-delay model.
+- **Convergence rate (Lipschitz + strongly convex).** For strongly convex f
+  (μ-strongly convex, L-smooth), partially asynchronous gradient descent
+  with constant step size α ≤ 1/(L·B) converges at rate: E[f(x(t)) - f*] ≤
+  (1 - μα)^t * (f(x(0)) - f*) + O(α·σ^2).
+  *Holds when:* Constant step size α; strongly convex; B-bounded delays.
+  Noise floor O(ασ^2) vanishes as α→0.
+
+## What the evidence does not cover
+
+- Bounded delay model (B < ∞) is required for the main theorems. For
+  practical systems, B must be estimated from the worst-case stragglers.
+- Totally asynchronous convergence requires B-connectivity, which may fail
+  during extended network partitions.
+- No convergence rate for non-convex objectives — only asymptotic
+  convergence to a stationary point.
+- The analysis assumes parameter-server-style update (each processor owns a
+  coordinate block). Extension to fully decentralized (no master) gossip
+  requires Lian et al. 2018 or similar.
+- Byzantine failures (adversarial nodes) are outside the model; only crash-
+  stop and slow-update failures are implicitly covered.
+- Step size conditions (Σα^2 < ∞) prevent constant step size in the
+  stochastic case, limiting practical convergence speed. This tension is not
+  resolved until variance-reduction methods (SVRG, etc.).
+
+## Standing in the anthology
+
+Read — the reading is [NOTE-tmpbzva0](../notes.d/NOTE-tmpbzva0.md). Arrived in the imported batch, which
+brought in the asynchronous and bounded-delay branch of distributed
+training.

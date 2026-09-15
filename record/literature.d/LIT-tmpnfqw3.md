@@ -1,0 +1,69 @@
+---
+status: 'Active'
+title: 'Overlap Local-SGD: An Algorithmic Approach to Hide Communication Delays in Distributed SGD'
+version: 1
+tags:
+- distributed-optimization
+date: '2026-09-15'
+published: '2020-02-01'
+arxiv: '2002.09539'
+first_author: 'Wang'
+keywords:
+- 'local-sgd'
+- 'communication-overlap'
+- 'anchor-momentum'
+implementations: []
+summary: >-
+  Wang et al. (2020), [ARXIV-2002.09539](https://arxiv.org/abs/2002.09539). Overlap Local-SGD hides the averaging
+  latency behind local computation using an anchor model, so small H becomes
+  affordable.
+---
+# LIT-tmpnfqw3: Overlap Local-SGD: An Algorithmic Approach to Hide Communication Delays in Distributed SGD
+
+Wang et al. (2020) — [ARXIV-2002.09539](https://arxiv.org/abs/2002.09539)
+
+## Key takeaways
+
+Proposes Overlap-Local-SGD, which introduces a per-node anchor model updated
+asynchronously in a dedicated communication thread, allowing local SGD
+computation and inter-node communication to run in parallel. This nearly
+eliminates communication latency from the critical training path while
+achieving better accuracy than competing Local SGD variants.
+
+- **Theorem 1 (Overlap-Local-SGD convergence).** For non-convex smooth
+  objectives, Overlap-Local-SGD converges at rate O(1/sqrt(mK)) where m is
+  the number of workers and K is the number of communication rounds,
+  matching fully synchronous SGD.
+  *Holds when:* Requires L-smooth objective, bounded gradient variance σ^2,
+  bounded heterogeneity kappa^2, and appropriately chosen learning rate;
+  convergence bound includes an additional O(tau^2 * kappa^2 / K)
+  heterogeneity term.
+- **Empirical communication overhead reduction.** With tau=2 local steps,
+  communication overhead is reduced from 34.6% to 1.5% of total training
+  time while maintaining identical loss-versus-iterations convergence to
+  synchronous SGD.
+  *Holds when:* 16-node cluster, 40 Gbps Ethernet, ResNet-18 on CIFAR-10.
+- **Accuracy vs. baselines.** Overlap-Local-SGD achieves higher test
+  accuracy than CoCoD-SGD and EAMSGD for all tau in {1, 2, 8, 24} under both
+  IID and non-IID data partitions; CoCoD-SGD diverges at tau=8 under non-
+  IID.
+  *Holds when:* CIFAR-10, ResNet-18, 16 workers; non-IID setting uses
+  strongly skewed class distribution.
+
+## What the evidence does not cover
+
+- Convergence bound includes a term O(tau^2 * kappa^2 / K) reflecting
+  gradient heterogeneity across nodes; performance degrades significantly
+  under highly non-IID data with large tau.
+- The anchor model lags behind local models by one synchronization period,
+  introducing staleness that grows with tau and communication latency.
+- Experiments are limited to CIFAR-10 with ResNet-18; scalability to very
+  large models (LLMs) or very large numbers of nodes is not evaluated.
+- The non-blocking communication requires infrastructure support for
+  concurrent compute and communicate threads; may not be directly available
+  in all distributed training frameworks.
+
+## Standing in the anthology
+
+Read — the reading is [NOTE-tmpwu96a](../notes.d/NOTE-tmpwu96a.md). Arrived in the imported batch, which
+brought in the local-update branch — train apart for H steps, then average.

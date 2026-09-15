@@ -1,0 +1,135 @@
+---
+status: Active
+title: 'Evolution Strategies as a Scalable Alternative to Reinforcement Learning'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-15'
+published: '2017-03-01'
+arxiv: '1703.03864'
+first_author: 'Salimans'
+keywords:
+- 'evolution-strategies'
+- 'black-box-optimization'
+- 'parallelization'
+- 'reinforcement-learning'
+- 'intrinsic-dimension'
+# The trunk of the line. LIT-211 carries it to LLM fine-tuning; everything
+# else in the record's ES line descends through that.
+extended_by:
+- LIT-211
+implementations: []
+summary: >-
+  Salimans, Ho, Chen, Sidor and Sutskever (2017), [ARXIV-1703.03864](https://arxiv.org/abs/1703.03864). The paper
+  ten of the twelve papers in this record's evolution-strategies line cite,
+  and the source of the mechanism they all inherit: synchronize random seeds
+  across workers and each one can reconstruct every other's perturbation, so
+  a parameter update costs one scalar per worker instead of a gradient. 3D
+  humanoid walking in 10 minutes on 1,440 cores, linear speedup, and
+  competitive Atari results in an hour.
+---
+
+# LIT-tmpiby93: Evolution Strategies as a Scalable Alternative to Reinforcement Learning
+
+Salimans et al. (2017) — [ARXIV-1703.03864](https://arxiv.org/abs/1703.03864)
+
+## Key takeaways
+
+**The contribution is a communication scheme, and it is why this line
+exists.** ES had been around since Rechenberg and Schwefel in the 1970s. What
+this paper adds is the observation that if workers share random seeds, each
+can *reconstruct* every other worker's perturbation locally — so the only
+thing that crosses the network is one scalar return per worker. Policy
+gradients must ship whole gradients. That single asymmetry is what makes ES
+scale to a thousand workers, and every paper in this record's line inherits
+it, EGGROLL's seed-based perturbation reconstruction most directly.
+
+**The headline number is wall clock bought with parallelism, not sample
+efficiency.** 3D humanoid walking takes about 11 hours on one 18-core machine
+— on par with RL — and **10 minutes on 1,440 cores**, with linear speedup.
+Atari results competitive with A3C's published one-day figures after one hour,
+better on 23 games and worse on 28. Data efficiency is *worse*: 3–10× more
+data than A3C, partly offset by about 3× less computation from doing no
+backpropagation and keeping no value function.
+
+**Four structural advantages, argued rather than asserted.** §3.1 is the one
+the later literature leans on: the variance of a policy-gradient estimator
+grows nearly linearly with the episode length `T`, because the score term is a
+sum of `T` uncorrelated pieces, while the ES estimator's corresponding term is
+**independent of `T`**. That is the formal content of "ES tolerates long
+horizons and delayed rewards" — a claim this record has been carrying as an
+assertion since it filed [LIT-211](LIT-211.md). The others: no temporal discounting or
+value function needed, invariance to action frequency (demonstrated by varying
+Atari frame-skip over {1,2,3,4} to near-identical learning curves), and
+tolerance of maximally sparse rewards.
+
+<!-- inactive-ok-block: THEORY-007 — Proposed, and this paragraph is about
+     that account's precedence, which is what the citation is for -->
+**Section 3.2 states, in 2017, what [THEORY-007](../theory.d/THEORY-007.md) says.** The finite-difference
+resemblance suggests ES should scale poorly with parameter count, and
+Nesterov and Spokoiny's analysis says steps grow linearly with dimension —
+"However, it is important to note that this does not mean that larger neural
+networks will perform worse than smaller networks when optimized using ES:
+what matters is the difficulty, or **intrinsic dimension**, of the
+optimization problem." The worked example is a linear regression whose
+features are concatenated with themselves: parameter count doubles, difficulty
+does not, and ES behaves identically given a halved `σ` and learning rate.
+And empirically: "we observe slightly better results when using larger
+networks with ES."
+
+**Not calculating gradients buys more than speed.** No exploding gradients,
+since smoothing in parameter space removes the pathological curvature that
+causes them; non-differentiable components such as hard attention become
+usable; and **low-precision and inference-only hardware becomes trainable
+hardware** — the paper names TPUs, whose memory makes backpropagation
+impossible. [LIT-239](LIT-239.md)'s INT4 and INT8 alignment nine years later is this
+paragraph cashed out.
+
+<!-- inactive-ok-block: SOTA-211 — Proposed, and named as the practice that
+     argues against a convention this paper introduced -->
+**Two implementation details that became conventions.** Antithetic (mirrored)
+sampling for variance reduction — which [SOTA-211](../practices.d/SOTA-211.md) now argues against for
+reasoning tasks, on grounds that did not exist here. And virtual batch
+normalization, without which "ES proved brittle in our experiments": a
+reparameterization finding the LLM line has quietly dropped.
+
+## What the evidence does not cover
+
+**No language models, and no fine-tuning.** MuJoCo continuous control and
+Atari from pixels, training policies from scratch. Everything this record uses
+the paper for is an extrapolation that [LIT-211](LIT-211.md) had to make and test.
+
+**Small networks by current standards**, which is what makes §3.2's
+dimensionality argument a hypothesis rather than a result. The paper says
+"we hypothesize" about larger networks having fewer local minima and leaves
+it there.
+
+**The data-efficiency cost is real and stated.** 3–10× more data than A3C.
+The paper's case is that parallelism converts that into less wall clock, which
+is an argument about what you have rather than about what is better.
+
+## Standing in the anthology
+
+**The trunk the record had nine branches of and no document for.** It was
+found by the bibliography sweep, cited by ten of the twelve papers in this
+line, and its absence is the cleanest instance of [DP-007](../../docs/design-principles.md#dp-7) this record has
+produced: every fork in the line had an entry because every fork was somebody's
+contribution, and the thing all ten take for granted had none.
+
+**It is not [SOTA-154](../practices.d/SOTA-154.md)'s `introduced_by:`, and the distinction is worth
+keeping.** This paper recommends ES instead of policy-gradient RL *for control
+tasks trained from scratch*. That practice recommends it for *LLM
+fine-tuning*, which this paper does not attempt and whose feasibility was
+widely doubted until [LIT-211](LIT-211.md). Same sentence, different claim. What this is
+instead is the origin of the machinery and of four of the five arguments the
+practice makes for itself.
+
+<!-- inactive-ok-block: THEORY-007 — Proposed, and named as the account this
+     paper's §3.2 states in outline; that precedence is the point -->
+**And it anticipates [THEORY-007](../theory.d/THEORY-007.md) by nine years.** That account holds that what
+governs ES's scalability is not the ambient parameter count but a
+low-dimensional effective structure. §3.2 states the same distinction, gives
+the concatenated-features argument for it, and reports larger networks working
+better. What [LIT-236](LIT-236.md) adds is a mechanism, a measurement across scales, and
+the connection to rise-then-decay — which is a real contribution and a smaller
+one than filing the two side by side would suggest.

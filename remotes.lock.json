@@ -29,11 +29,17 @@
     "ARXIV/1701.06538": {
       "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer"
     },
+    "ARXIV/1703.03864": {
+      "title": "Evolution Strategies as a Scalable Alternative to Reinforcement Learning"
+    },
     "ARXIV/1706.02677": {
       "title": "Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour"
     },
     "ARXIV/1706.03762": {
       "title": "Attention Is All You Need"
+    },
+    "ARXIV/1707.06347": {
+      "title": "Proximal Policy Optimization Algorithms"
     },
     "ARXIV/1708.03888": {
       "title": "Large Batch Training of Convolutional Networks"

@@ -1,0 +1,112 @@
+---
+status: Active
+title: 'Proximal Policy Optimization Algorithms'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-15'
+published: '2017-07-01'
+arxiv: '1707.06347'
+first_author: 'Schulman'
+keywords:
+- 'policy-gradient'
+- 'trust-region'
+- 'clipped-objective'
+- 'reinforcement-learning'
+- 'kl-penalty'
+# GRPO is PPO with the critic removed and the baseline taken from a group of
+# sampled outputs; LIT-127 introduces it as exactly that, and the clipped
+# ratio the record's GRPO-correction practice is about is this paper's.
+extended_by:
+- LIT-127
+implementations: []
+summary: >-
+  Schulman, Wolski, Dhariwal, Radford and Klimov (2017), [ARXIV-1707.06347](https://arxiv.org/abs/1707.06347).
+  The baseline every paper in this record's evolution-strategies line measures
+  against, and the algorithm GRPO is a modification of. Its contribution is
+  one objective: clip the probability ratio to [1-eps, 1+eps], take the
+  minimum of clipped and unclipped so the result is a pessimistic lower
+  bound, and you get trust-region behaviour from first-order optimization and
+  a few lines of change.
+---
+
+# LIT-tmpf0otz: Proximal Policy Optimization Algorithms
+
+Schulman et al. (2017) — [ARXIV-1707.06347](https://arxiv.org/abs/1707.06347)
+
+## Key takeaways
+
+**One objective, and the trick is the minimum rather than the clip.** With
+`r_t(θ)` the probability ratio between new and old policy,
+`L_CLIP = Ê[ min( r_t Â_t , clip(r_t, 1−ε, 1+ε) Â_t ) ]`, with `ε = 0.2` the
+suggested value. Clipping alone would only remove the incentive to move `r`
+outside the interval; taking the **minimum** of the clipped and unclipped
+terms makes the objective a pessimistic lower bound — the change in
+probability ratio is ignored when it would improve the objective and counted
+when it would worsen it. The result agrees with the unclipped surrogate to
+first order around `θ_old` and diverges as the policy moves.
+
+**What it replaces is a constrained optimization with a first-order one.**
+TRPO gets reliable updates from a hard KL constraint, at the cost of being
+complicated and incompatible with architectures that include noise (dropout)
+or share parameters between policy and value function. PPO keeps the
+behaviour and needs "only few lines of code change to a vanilla policy
+gradient implementation".
+
+**The reason multiple epochs are possible at all.** Vanilla policy gradient
+performs one update per data sample, because the estimator is only valid at
+the sampling policy. The clipped surrogate bounds how far the policy can
+usefully move, so several epochs of minibatch SGD can be run on one batch of
+collected data — which is where the sample-efficiency gain comes from.
+
+**The KL-penalty variant is included as a baseline and reported as worse.**
+`L_KLPEN` with an adaptive `β` — halve it when the measured KL falls below
+`d_targ/1.5`, double it when it exceeds `d_targ × 1.5` — is presented
+explicitly because "the KL penalty performed worse than the clipped surrogate
+objective". Worth knowing, given how much later work tunes a KL coefficient.
+
+**The full objective is three terms, not one.** `L_CLIP` minus a squared-error
+value-function loss (`c₁`) plus an entropy bonus (`c₂`), needed when policy
+and value function share parameters and for exploration respectively.
+
+**Results.** Better than the compared online policy-gradient methods on
+continuous control; on Atari, significantly better sample complexity than A2C
+and comparable to ACER while being much simpler.
+
+## What the evidence does not cover
+
+**No language models.** MuJoCo locomotion and Atari, in 2017. Every use this
+record makes of PPO is through work that carried it to LLM post-training.
+
+**`ε = 0.2` is a suggestion, not a result.** The paper says "say, `ε = 0.2`"
+and compares objective variants, not a sweep over `ε` at scale.
+
+**The comparison set is of its moment** — A2C, ACER, TRPO, vanilla PG. It says
+nothing about the later question this record cares about, which is whether a
+gradient-free method matches it.
+
+## Standing in the anthology
+
+<!-- inactive-ok-block: SOTA-146 — Proposed, and named as the practice that
+     corrects an objective this paper introduced -->
+**The record has been recommending modifications of this algorithm without
+holding it.** [SOTA-145](../practices.d/SOTA-145.md) recommends estimating the RL baseline from a group of
+samples "instead of training a critic" — the critic is this paper's `L_VF`
+term, and [LIT-127](LIT-127.md) introduces GRPO as exactly PPO with that term dropped.
+[SOTA-146](../practices.d/SOTA-146.md) corrects three defects in the GRPO objective, which is this
+paper's clipped ratio with a different advantage estimator. [SOTA-129](../practices.d/SOTA-129.md) makes
+the family the third stage of the reasoning recipe. Three practices, one
+absent ancestor, which the bibliography sweep found cited by six of twelve.
+
+**It is the baseline the whole evolution-strategies line is measured against**
+— in [LIT-211](LIT-211.md), [LIT-233](LIT-233.md), [LIT-240](LIT-240.md) and others — and the `β` those papers
+grid-search is the adaptive KL coefficient from §4 here, which this paper
+itself reports as the worse of its two variants.
+
+**One thing it settles that the record had left open.** [LIT-211](LIT-211.md) tunes PPO
+per experiment over `β` and the learning rate, noting RL "did not make much
+progress if they were not set precisely". Read against §4, that is a sweep
+over a variant the algorithm's own authors found inferior to the one that
+needs no such coefficient — which neither weakens nor strengthens that paper's
+comparison, and is the kind of thing a reader can only notice if the record
+holds the parent.

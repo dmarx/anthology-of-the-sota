@@ -7,21 +7,23 @@ consensus: contested
 # inactive-ok-block: THEORY-006 — Proposed, and the account that
 # predicts where the dissent's evidence sits; the note is the reconciliation
 consensus_note: >-
-  Five independent groups now report evolution strategies at or ahead of
-  policy-gradient RL (LIT-211, LIT-233, LIT-229 on a recurrent architecture,
-  LIT-230, LIT-tmp4w505), with LIT-234 carrying the same lab's evidence to 32B
-  against published RL checkpoints. Two groups disagree: LIT-231 argues direct
-  ES at LLM scale is ineffective, and LIT-tmppbfp5 ran the comparison and did
-  not reproduce the ordering. **Every negative result in this line is at 1.5B
-  or below and every positive is at 1.5B or above**, which is the shape
-  THEORY-006 predicts and is now the most useful thing the disagreement has
-  produced. The trunk — gradient-free search of the full
+  Four groups sharing no author with LIT-211 report evolution strategies at or
+  ahead of policy-gradient RL: LIT-229 (on a recurrent architecture), LIT-230,
+  LIT-tmp4w505 and LIT-tmprde8b. Four more results come from inside that line
+  — LIT-211 itself, LIT-233 (whose first author is LIT-211's second),
+  LIT-234 and LIT-tmpphacm from the same lab, LIT-tmpfjaya sharing three
+  authors. Two independent groups disagree: LIT-231 argues direct ES at LLM
+  scale is ineffective, and LIT-tmppbfp5 ran the comparison and did not
+  reproduce the ordering. The trunk — gradient-free search of the full
   parameter space is viable at billion scale — is agreed. The branch in
   dispute is the word "instead": whether it replaces policy-gradient RL or is
-  seeded by it. The dissent's models are all at 1.5B or below, which
-  THEORY-006 says is where it should be.
+  seeded by it. **Every negative result in this line is at 1.5B or below and
+  every positive is at 1.5B or above**, the shape THEORY-006 predicts — though
+  LIT-tmpfjaya offers a competing reading of that low end, where the failures
+  are a perturbation scale tuned for larger models rather than a density that
+  is absent.
 title: 'Fine-tune with evolution strategies instead of policy-gradient reinforcement learning'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-15'
@@ -30,20 +32,34 @@ history:
     Gan and Isola (LIT-233) ran ES against PPO and GRPO on six tasks
     outside Countdown and the conciseness objective, at matched training
     FLOPs, with the RL arm grid-searched over learning rate and batch or
-    group size while ES ran one fixed configuration — an independent group,
-    a harder-tuned baseline, and ES ahead in most cells. Consensus moved
+    group size while ES ran one fixed configuration — described at the time as
+    an independent group, which version 3 corrects — a harder-tuned baseline,
+    and ES ahead in most cells. Consensus moved
     from `unreplicated` to `contested` in the same edit, which is not a
     hedge: what makes it contested is a fourth group arriving with a
     counter-argument, and that could not have been recorded while the axis
     still said nobody had replied.
+- version: 3
+  date: '2026-09-15'
+  note: >-
+    Correction, not a change of position. Version 2 promoted this practice on
+    LIT-233, described there and here as an independent group with no stake in
+    the result. It is not: Yulu Gan, its first author, is the second author of
+    LIT-211. The promotion stands on evidence identified after the fact —
+    LIT-tmp4w505 at 4B with both arms swept and ES highest on all four tasks,
+    LIT-230, LIT-229 and LIT-tmprde8b, none of which shares an author with
+    LIT-211. The consensus note is re-tallied by authorship rather than by
+    institution, and the scale-boundary table gains the competing reading
+    LIT-tmpfjaya offers for its low end.
 tags:
 - adaptation-and-tuning
 date: '2026-09-07'
 source:
 # LIT-211 ran the comparison itself against both PPO and GRPO, which is what
-# made this evidenced rather than asserted (ADR-017). LIT-233 is the
-# independent evaluation that promoted it: a different group, six further
-# tasks, and the RL arm tuned harder than the ES arm.
+# made this evidenced rather than asserted (ADR-017). LIT-233 adds six further
+# tasks with the RL arm tuned harder than the ES arm — a real strengthening,
+# and NOT the independent replication it was first filed as: its first author
+# is LIT-211's second. LIT-tmp4w505 is the clean independent one.
 #
 # LIT-229 is deliberately NOT here. Its LLM comparison is real and
 # favourable, but it is on a recurrent architecture and on its own low-rank
@@ -86,6 +102,7 @@ summary: >-
 explained_by:
 - THEORY-006
 - THEORY-tmpt76ks
+- THEORY-tmp4rcxw
 extended_by:
 - SOTA-212
 - SOTA-tmpdcmgg
@@ -136,11 +153,21 @@ learning rate and batch or group size while ES ran a single fixed
 configuration. ES came out ahead of GRPO in most cells, and ES with test-time
 majority voting took the best or runner-up cell in roughly half the table.
 
-That is the practice's own promotion condition, met: an independent group, a
-policy-gradient baseline that got at least the same tuning budget, on tasks
-outside the original two. It is not weakened by having arrived as a baseline
-— a group with no stake in the result, tuning the rival harder than the
-method, is the *stronger* form of the evidence the condition was asking for.
+**That was filed as the promotion condition met, and it was not.** Yulu Gan,
+this paper's first author, is the second author of [LIT-211](../literature.d/LIT-211.md), and the paper
+cites it as prior work. The condition excluded "further results from the same
+group"; an overlapping group on a much wider task set is nearer to that than
+to the independent replication it was called. The added tasks and the tuning
+asymmetry are real and the measurement is not in doubt — the classification
+was.
+
+**What carries the promotion instead**, identified after the fact: Hoy et al.
+([LIT-tmp4w505](../literature.d/LIT-tmp4w505.md)), at 4B, four tasks, both arms hyperparameter-swept, ES
+highest on all four — no author in common with [LIT-211](../literature.d/LIT-211.md). Then Ba et al.
+([LIT-230](../literature.d/LIT-230.md)) on coverage, Sarkar et al. ([LIT-229](../literature.d/LIT-229.md)) on a recurrent
+architecture, and Sun et al. ([LIT-tmprde8b](../literature.d/LIT-tmprde8b.md)) at matched memory. The practice
+stays `Active` on those; it would not have been promoted on [LIT-233](../literature.d/LIT-233.md) alone
+had the authorship been checked.
 
 <!-- inactive-ok-block: THEORY-006 — Proposed, and named as the account
      this practice acquired rather than as evidence for the recommendation -->
@@ -222,15 +249,20 @@ set out to find:
 **Every negative result is at 1.5B or below. Every positive is at 1.5B or
 above.** No paper reports a negative above that line and none reports a clear
 positive below it. That is the boundary [THEORY-006](../theory.d/THEORY-006.md) predicts from the density
-of task-improving perturbations, arrived at independently by six groups none
-of whom were testing it — and it is a stronger corroboration of that account
-than anything in its own `source:`.
+of task-improving perturbations.
 
-Two cautions. The pattern is read across papers that differ in task, baseline
-tuning and ES implementation, so it is suggestive rather than controlled; and
-it is exactly the kind of post-hoc regularity that looks inevitable once
-noticed. What would settle it is one protocol run on both sides of the line,
-which nobody has done.
+Three cautions now, and the third is the sharpest. The pattern is read across
+papers that differ in task, baseline tuning and ES implementation, so it is
+suggestive rather than controlled. It is exactly the kind of post-hoc
+regularity that looks inevitable once noticed. And **there is a competing
+reading of its low end**: [LIT-tmpfjaya](../literature.d/LIT-tmpfjaya.md) reports improvement accessible at
+0.5B with a population of thirty, provided the perturbation scale is small
+enough — so the failures below 1.5B may be a `σ` that was tuned for larger
+models rather than a density that is not there. That paper chooses a viable
+`σ` per model; [LIT-233](../literature.d/LIT-233.md) holds `σ` fixed at 1e-3 across every scale.
+
+What would settle it is one protocol run on both sides of the line, sweeping
+`σ` per model, which nobody has done.
 
 **The practical form of this is the condition below, and it is now sharp
 rather than hedged: do not expect this practice to hold under about 1.5B.**

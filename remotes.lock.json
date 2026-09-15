@@ -623,6 +623,9 @@
     "ARXIV/2601.20861": {
       "title": "Evolutionary Strategies lead to Catastrophic Forgetting in LLMs"
     },
+    "ARXIV/2602.00170": {
+      "title": "The Blessing of Dimensionality in LLM Fine-tuning: A Variance-Curvature Perspective"
+    },
     "ARXIV/2602.01003": {
       "title": "ESSAM: A Novel Competitive Evolution Strategies Approach to Reinforcement Learning for Memory Efficient LLMs Fine-Tuning"
     },

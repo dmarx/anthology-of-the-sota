@@ -23,18 +23,26 @@ source:
 - LIT-tmpphacm
 - LIT-tmp4w505
 - LIT-tmppbfp5
+# The third arrival at the population knob, from the curvature side: larger N
+# raises the terminal plateau and suppresses late-time degradation. It is also
+# the source of the target-reward stopping rule below, which is a different
+# claim from the prior-task one this practice rejects.
+- LIT-tmpfjaya
 introduced_by:
 - LIT-tmpphacm
 extends:
 - SOTA-154
 implementations: []
 summary: >-
-  Schweighofer et al. (2026), [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md), on the scaling Hoy et al. derived
+  Schweighofer et al. and Liang et al. (2026), [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md) and
+  [LIT-tmpfjaya](../literature.d/LIT-tmpfjaya.md), on the scaling Hoy et al. derived
   in [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) — ES drift is a random walk whose size falls with population
   size, so raising the population from 30 to 128 halves the update norm and
   monotonically reduces prior-task degradation. Anchored Weight Decay buys the
   same reduction at population 30 for 1-2% runtime. Do not stop early instead:
   the prior-task dip is often transient and recovers by the end of training.
+explained_by:
+- THEORY-tmp4rcxw
 ---
 
 # SOTA-tmpdcmgg: Control evolution-strategies drift with a larger population or an anchor penalty, not by stopping training early
@@ -99,6 +107,45 @@ high `λ` and decrease it until the target-task drop disappears** relative to
 ES without AWD. `L2` is slightly more robust and degrades more gracefully when
 set too high. `L1` below the critical magnitude *systematically improved*
 target-task performance, which is worth a try and is one paper's observation.
+
+## There is a reason to stop early, and it is a different curve
+
+This practice says drift is not controlled by stopping early. That is not the
+same as saying never stop early, and the record should not be read as
+conflating the two.
+
+[LIT-tmpfjaya](../literature.d/LIT-tmpfjaya.md) reports **rise-then-decay**: under fixed hyperparameters the
+*target* reward improves, peaks, and then degrades — in GRPO as well as ES. Its
+account is the same geometry from the other side. Stiff, curvature-active
+directions relax fast and pay out early; the near-zero bulk relaxes slowly and
+keeps accumulating variance. Once the stiff modes are exhausted the
+accumulation dominates and performance falls. *Rushing downhill before the
+valley floods.*
+
+So there are two curves and two different answers:
+
+| Curve | Shape | What to do |
+|---|---|---|
+| Prior-task accuracy | dips, then **recovers** ([LIT-tmpphacm](../literature.d/LIT-tmpphacm.md)) | do not stop early — you would stop at the dip |
+| Target-task reward | rises, **peaks, decays** ([LIT-tmpfjaya](../literature.d/LIT-tmpfjaya.md)) | stop near the peak |
+
+The practical rule that satisfies both: **stop on the target reward's own
+peak, not on a prior-task decline.** Watch the curve you are optimizing.
+
+<!-- inactive-ok-block: THEORY-tmp4rcxw — Proposed, filed in this same change
+     and named as the account behind this section -->
+[LIT-tmpfjaya](../literature.d/LIT-tmpfjaya.md) also confirms the population knob a third time and from a
+third direction — larger `N` raises the terminal plateau and suppresses the
+late decay — and proposes two interventions this practice does not yet carry
+because nobody has run them end to end: **noise scheduling** (reduce `σ`,
+temperature, or effective update noise over training) and **adaptive step
+sizes** that shrink once curvature-active progress saturates. Both follow from
+[THEORY-tmp4rcxw](../theory.d/THEORY-tmp4rcxw.md) and are, for now, derivations rather than results.
+
+Its last suggestion is free and worth taking: treat non-monotonic training
+reward as a **diagnostic**. Its presence says the curvature is heterogeneous
+and the late regime is variance-dominated — which is exactly when this
+practice applies.
 
 ## Conditions, and what is not established
 

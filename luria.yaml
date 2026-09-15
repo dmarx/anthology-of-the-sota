@@ -312,6 +312,18 @@ schemes:
         scheme: LIT
         required: true
         many: true
+      # The other half of the cut DP-005 made (ADR-tmpqczy4). That principle
+      # separated ADOPTION from evidence and sent adoption to `consensus:`.
+      # This separates ORIGIN from evidence: `source:` is the work that
+      # produced evidence ABOUT the claim, and `introduced_by:` is the work
+      # that first stated the recommendation. They are frequently not the same
+      # paper, and ADR-017's retraction test picks the former by construction
+      # — so with one field the record reads as though every practice began
+      # with the paper it cites.
+      introduced_by:
+        scheme: LIT
+        required: false
+        many: true
       extends:
         scheme: SOTA
         required: false

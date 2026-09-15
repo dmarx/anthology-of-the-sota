@@ -1,0 +1,163 @@
+---
+status: Proposed
+title: "A practice's origin and its evidence are different relations"
+version: 1
+tags:
+- record
+- mechanism
+date: '2026-09-13'
+promote_when: >-
+  A pass over the practices that populates the field finds cases the
+  single-list arrangement could not express — practices whose origin is not
+  their primary source — in numbers that make the second field carry
+  information rather than duplicate the first. Three known at filing time is
+  a reason to propose it and not a reason to assert it.
+summary: >-
+  `source:` is one ordered list doing two jobs: naming the work that produced
+  evidence about a claim, and naming the work the claim came from. [ADR-017](ADR-017.md)'s
+  retraction test picks the first by construction, so the record reads as
+  though every practice began with the paper it cites — [SOTA-087](../practices.d/SOTA-087.md)'s
+  recomputation is dated to FlashAttention (2022) and [SOTA-060](../practices.d/SOTA-060.md)'s depth-scaled
+  init to Megatron-LM (2021), and both recommendations are Child et al.
+  (2019). Adds `introduced_by:` rather than reordering `source:`, because
+  `published:` and the retraction test both depend on what the first entry
+  currently means.
+---
+
+# ADR-tmpqczy4: A practice's origin and its evidence are different relations
+
+## Context
+
+[DP-005](../../docs/design-principles.md#dp-5) cut adoption away from evidence: who ships a thing and whether it works
+are different questions, so `source:` holds the work that produced evidence
+about the claim and `consensus:` holds who does it. That cut was correct and it
+was only one of the two that `source:` needs.
+
+**What is left inside `source:` is origin and evidence, still merged.** The
+practice template says so in as many words — *"the first is the primary source;
+the rest corroborate — a replication, the production report that shipped it,
+the paper that argues the mechanism"* — and every item in that list is a kind of
+*evidence*. There is no slot for the paper that first said to do this.
+
+[ADR-017](ADR-017.md) then defined the primary source as the one that would force a rewrite if
+it were retracted. That test is right for what it was written for and it selects
+*the paper whose argument the body uses*. The paper that introduced a
+recommendation is frequently not that paper, because a practice's body is
+usually written from the clearest or most recent treatment.
+
+Three cases, all found while filing one 2019 paper:
+
+- **[SOTA-087](../practices.d/SOTA-087.md)** — *recompute attention during the backward pass instead of
+  storing it* — is sourced to FlashAttention (Dao et al., 2022). Child et al.
+  (2019) §5.4 recommends exactly this, and for long-sequence attention
+  specifically: *"memory usage is high for these layers relative to the cost of
+  computing them"*. Dao's contribution is that the recomputation becomes nearly
+  free once the kernel is memory-bound — which is why the practice's body is
+  correctly Dao's argument, and why reordering `source:` would break it.
+
+- **[SOTA-060](../practices.d/SOTA-060.md)** — depth-scaled residual-output initialisation — is sourced to
+  Megatron-LM (Narayanan et al., 2021). Its body names the actual origin and
+  does not cite it: *"the same reasoning that puts a 1/√(2·n_layers) factor on
+  the output projections in GPT-2-style initialisations"*. That factor is Child
+  et al. (2019) §5.2, with its reason — keeping the ratio of embedding scale to
+  residual-block scale invariant in depth. **An uncited claim inside a
+  practice, in a record whose first design principle is that the citation is
+  structural.**
+
+- **[SOTA-138](../practices.d/SOTA-138.md)**'s `Sequence` section begins at NSA (February 2025). Fixed sparse
+  attention is where that line starts.
+
+This is the defect [DP-007](../../docs/design-principles.md#dp-7) describes and the record has now hit twice: [SOTA-132](../practices.d/SOTA-132.md)
+was *"describing a line from its middle"* (`2026-09-08`), found by hand, by
+someone following a citation backwards. Nothing mechanical can find it, because
+a practice citing only its most recent treatment is indistinguishable from a
+practice whose origin is its most recent treatment — **the two look identical
+from inside the record**, and the field that would tell them apart does not
+exist.
+
+## Decision
+
+Add `introduced_by:` to the `SOTA` scheme — `LIT`, optional, many, no converse
+(it crosses schemes, and luria's converses are same-scheme).
+
+    introduced_by:
+      scheme: LIT
+      required: false
+      many: true
+
+`source:` keeps its meaning exactly: **the work that produced evidence about the
+claim**, ordered, first entry primary, `published:` derived from it, [ADR-017](ADR-017.md)'s
+retraction test unchanged. `introduced_by:` names **the work that first stated
+the recommendation**.
+
+Three things that look like details and are load-bearing:
+
+1. **A code may appear in both, and usually will.** A paper that introduces a
+   recommendation normally also ran the experiment for it. The fields are not a
+   partition; they answer different questions about the same citation.
+
+2. **`many: true`, for parallel invention.** The record already holds
+   independent arrivals at one design — [LIT-208](../literature.d/LIT-208.md) and [LIT-209](../literature.d/LIT-209.md) reach the same
+   layout three months apart, and the curation journal treats that convergence
+   as stronger evidence than either alone. An origin field that could hold only
+   one of them would be forcing a false priority claim.
+
+3. **Not required, and deliberately.** Most practices will never populate it,
+   because for most the origin *is* the primary source. A field required
+   everywhere would be filled with copies of `source[0]`, which is [DP-002](../../docs/design-principles.md#dp-2)'s
+   failure — a field every record shares is a comment with a schema.
+
+## Alternatives considered
+
+- **Reorder `source:` so the origin comes first.** The obvious one, and it was
+  what this session started doing before the second field was proposed. It
+  breaks two things at once: `published:` derives from `source[0]`, so
+  [SOTA-087](../practices.d/SOTA-087.md)'s date would become 2019 while its body argues Dao's 2022 mechanism;
+  and [ADR-017](ADR-017.md)'s retraction test would no longer describe the field it defines.
+  Worse, it is lossy in the direction that matters — it can record *that* one
+  paper matters most, never *why*, so the next reader cannot tell an origin
+  from a strongest-evidence.
+
+- **Say it in prose.** The status quo, and the reason [SOTA-060](../practices.d/SOTA-060.md)'s body names the
+  1/√(2N) factor and cites nothing: prose citations are exactly what the record
+  moved away from, because a paragraph cannot be counted, cannot be found to
+  cite a retired document, and cannot answer "what rests on this paper". This is
+  [ADR-011](ADR-011.md)'s argument for lineage fields, applied one relation over.
+
+- **A qualified reference — `source: [{code: LIT-x, role: origin}]`.** Rejected
+  for the reason [ADR-011](ADR-011.md) gives for keeping the sign in the field name rather
+  than on the reference: an edge property that requires opening a mapping to
+  read is not legible in a listing, and luria's reference machinery is declared
+  per-field.
+
+- **`extends:` from the practice.** Wrong shape. `extends:` relates a practice
+  to a practice; a 2019 paper's recommendation is not a `SOTA` document in this
+  record and filing one just to be extended would invent a document to hold a
+  citation.
+
+- **Do nothing until a pass counts the cases.** Rejected on the grounds that the
+  three known cases were found incidentally, by one person filing one paper, in
+  one afternoon. That is not a sample that argues the number is three.
+
+## Consequences
+
+**Filed `Proposed`, with a condition**, because three cases found by accident is
+evidence that the field is needed and not yet evidence of how much it carries.
+The promotion test is a deliberate pass — the query [DP-004](../../docs/design-principles.md#dp-4) asks for, run
+backwards from papers to the practices that cite them — not an accumulation of
+incidental finds.
+
+What this obliges: the pass. `introduced_by:` is worth having only if somebody
+runs the backwards query over the practices whose primary source postdates the
+technique they describe, and the record currently has no view that surfaces
+those. Until then the field is populated where the defect happened to be found,
+which is honest and is not coverage.
+
+What it costs: one more field to reason about when filing, and a real risk that
+it gets filled in reflexively with `source[0]`. The `required: false` is the
+defence, and the field is worth nothing if a future template starts scaffolding
+it with a placeholder.
+
+Populated on three practices in the contribution that proposes it — [SOTA-087](../practices.d/SOTA-087.md),
+[SOTA-060](../practices.d/SOTA-060.md) and [SOTA-138](../practices.d/SOTA-138.md) — so that the decision ships with the evidence for it
+rather than an intention to find some.

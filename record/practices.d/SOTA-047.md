@@ -14,9 +14,13 @@ introduced_by:
 - LIT-219
 summary: >-
   Jiang et al. (2020), [LIT-051](../literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang.
+# `compared_against: SOTA-079` removed. Overlapping communication with the
+# backward pass and pre-fetching the next batch are the same idea applied to
+# two different stalls, which is an analogy rather than a comparison anyone
+# ran (ADR-011). The link to SOTA-048 stays: both are communication practices
+# from the same line.
 compared_against:
 - SOTA-048
-- SOTA-079
 ---
 
 # SOTA-047: Overlap communication with backward pass

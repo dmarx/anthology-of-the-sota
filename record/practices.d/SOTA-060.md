@@ -12,7 +12,11 @@ history:
     claim is unchanged and so is the confusion flagged below, which fixing
     would change what the practice asserts.
 tags:
-- distributed-optimization
+# Retagged from the report of unbound lineage. This is an initialization rule
+# for stability, and `model-stability` names initialization in its blurb. It
+# carried `distributed-optimization` because its source is a Megatron paper,
+# which is where it was found rather than what it is about (ADR-026).
+- model-stability
 date: '2026-08-24'
 source:
 - LIT-043

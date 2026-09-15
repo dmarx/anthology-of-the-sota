@@ -4,7 +4,10 @@ status: 'Active'
 title: 'Monitor validation loss for unexpected spikes during training'
 version: 1
 tags:
-- training-optimization
+# Retagged from the report of unbound lineage. Watching for loss spikes is a
+# stability check; SOTA-069, the practice it is compared against, says the
+# same thing about a different statistic and already carries this topic.
+- model-stability
 date: '2026-08-24'
 source:
 - LIT-069

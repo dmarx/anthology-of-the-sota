@@ -12,8 +12,10 @@ introduced_by:
 - LIT-050
 summary: >-
   Mohan et al. (2020), [LIT-050](../literature.d/LIT-050.md) — [ARXIV-2007.06775](https://arxiv.org/abs/2007.06775).
-compared_against:
-- SOTA-091
+# `compared_against: SOTA-091` removed. ADR-011 makes this relation mean the
+# work evaluated itself against the other; nobody compared profiling the
+# input pipeline with profiling memory access. Different papers, different
+# subsystems, and the only thing shared is the word `profile`.
 ---
 
 # SOTA-045: Profile data loading separate from training

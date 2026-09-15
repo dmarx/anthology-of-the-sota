@@ -10,8 +10,8 @@ source:
 - LIT-066
 introduced_by:
 - LIT-066
-compared_against:
-- SOTA-045
+# `compared_against: SOTA-045` removed -- see the note on SOTA-045. An
+# analogy filed as a comparison.
 summary: >-
   Ivanov et al. (2020), [LIT-066](../literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072).
 ---

@@ -4,7 +4,11 @@ status: 'Active'
 title: 'Track gradient norm statistics to detect training instabilities'
 version: 1
 tags:
-- training-optimization
+# Retagged from the report of unbound lineage. Its own title says `to detect
+# training instabilities`, and `model-stability` names gradient handling in
+# its blurb. SOTA-070, from the same paper and compared against it, is
+# already filed there.
+- model-stability
 date: '2026-08-24'
 source:
 - LIT-054

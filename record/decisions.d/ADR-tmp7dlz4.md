@@ -1,0 +1,141 @@
+---
+status: Proposed
+title: 'A document that changes scheme is Superseded where it leaves, and names its successor across the boundary'
+version: 1
+tags:
+- record
+date: '2026-09-15'
+summary: >-
+  [ADR-031](ADR-031.md) listed eight practices whose titles state a behaviour rather than an
+  instruction, declined to move any of them, and said why: a practice re-filed
+  as a theory leaves a SOTA code that is neither `Rejected` nor `Superseded`
+  but simply somewhere else. This is that decision. The vacated code takes
+  `Superseded` — the one status that means replaced without meaning "do not do
+  this" — keeps its body reduced to a redirect, and names the successor even
+  though the successor is in another scheme. [SOTA-010](../practices.d/SOTA-010.md) is moved under the rule.
+---
+
+<!-- inactive-ok-file: SOTA-010, ADR-031, SOTA-136, SOTA-169 — this decision
+     is ABOUT SOTA-010 leaving the practice registry, it applies a scheme
+     ADR-031 filed as Proposed, and the two Proposed residual-stream
+     practices are named as what the moved account underwrites. -->
+
+# ADR-tmp7dlz4: A document that changes scheme is Superseded where it leaves, and names its successor across the boundary
+
+## Context
+
+[ADR-031](ADR-031.md) created the `THEORY` scheme and, in the same breath, declined to use
+it on the documents that motivated it:
+
+> **The eight finding-shaped practices stay where they are, for now.** Moving
+> one is not a status change, and "retire by changing status, never by
+> deleting" does not cover it: a practice re-filed as a theory leaves a SOTA
+> code that is neither `Rejected` nor `Superseded` but simply somewhere else.
+> That needs its own decision about what the old code says and what happens to
+> links into it, and it should be taken with a curation pass rather than
+> bundled into the scheme that makes it possible. [SOTA-010](../practices.d/SOTA-010.md) and [SOTA-012](../practices.d/SOTA-012.md) are
+> the clearest candidates; both are sourced to [LIT-014](../literature.d/LIT-014.md) and both are readings
+> of a figure.
+
+This is that decision, taken on the first of the two.
+
+The constraint that makes it non-obvious is that **`Rejected` means something
+different in each scheme, and the difference is dangerous here.** On a
+practice it means *do not do this*. [SOTA-010](../practices.d/SOTA-010.md)'s claim is that skip connections
+smooth the loss surface, and it is true, believed, and underneath five other
+practices. A reader landing on `SOTA-010: Rejected` would read "do not use
+skip connections", which is the worst sentence this record could accidentally
+publish.
+
+The `sota-statuses` vocabulary lists *"too theoretical"* as a reason for the
+attic, which reads like an invitation to use `Rejected` here. It is not: that
+phrasing is about a **paper** being too theoretical to carry, and the attic
+blurb it sits in belongs to `lit-statuses`. A practice whose problem is that
+it was never a practice is a different thing from a practice nobody should
+follow.
+
+## Decision
+
+**A document that moves to another scheme is `Superseded` in the scheme it
+leaves.** Three parts:
+
+**1. `Superseded`, not `Rejected`.** Its blurb is *"something newer does this
+better, and the record says what"* — which is exactly true, and which carries
+no instruction to the reader about the subject matter. Nobody reading
+`Superseded` concludes that the underlying claim is false.
+
+**2. The successor is named with `superseded_by:`, which already crosses
+schemes.** This decision was drafted asserting that no typed field could carry
+a cross-scheme successor, and that the successor would have to be named in
+prose. The lint said otherwise on the first run: `superseded_by` names a
+document in **any** scheme ([LU-ADR-071](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-071.md)), which is exactly the shape a move wants
+— typed, walked, and checked. So `SOTA-010` carries
+`superseded_by: THEORY-tmp3jmjc` and nothing here relies on prose.
+
+That is worth leaving in the record rather than quietly correcting, because it
+is the second time in this contribution that a check knew something about the
+record that the person reading the record did not.
+
+**3. The vacated document keeps its code and loses its body.** The code is
+what links resolve against, and links into it exist. What it keeps is a
+citation line and a redirect; what it loses is the argument, which now has one
+home rather than two. A document that says the same thing in two places drifts
+— this record has paid for that twice, at [#113](https://github.com/dmarx/anthology-of-the-sota/issues/113) and at the eight themselves.
+
+## Applied to [SOTA-010](../practices.d/SOTA-010.md)
+
+`SOTA-010: skip connections promote training stability by smoothing out the
+loss landscape` is `Superseded`, pointing at the new `THEORY` document, which
+carries the claim, the figure's limits, and `explains:` the five practices
+that rest on it — [SOTA-032](../practices.d/SOTA-032.md), [SOTA-051](../practices.d/SOTA-051.md), [SOTA-060](../practices.d/SOTA-060.md), [SOTA-136](../practices.d/SOTA-136.md) and [SOTA-169](../practices.d/SOTA-169.md).
+
+**No practice is filed alongside it.** The obvious candidate — *use skip
+connections* — is trunk: every model in this record has them, there is nobody
+to tell and no live alternative to compare against, and [DP-007](../../docs/design-principles.md#dp-7) says the agreed
+trunk goes unfiled. This is worth stating because "split it into a practice
+and a theory" is the natural first move, and the practice half would have been
+an instruction with no reader.
+
+The two `compared_against:` links to [SOTA-011](../practices.d/SOTA-011.md) and [SOTA-012](../practices.d/SOTA-012.md) stay on the vacated
+code rather than moving. `THEORY` has no sibling relation, and those links are
+a fact about how three readings of one figure were filed together — which is
+history, and history belongs with the document that has the history.
+
+## Consequences
+
+**Seven of the eight are still where they were.** [SOTA-012](../practices.d/SOTA-012.md) — *sharpness in the
+loss landscape correlates with test error* — is the other one [ADR-031](ADR-031.md) called
+clearest, is from the same paper and the same figure, and is not moved here.
+Deliberately: this decision has been applied once, and a rule that has moved
+one document is a rule with one data point. The next pass over the eight
+should take [SOTA-012](../practices.d/SOTA-012.md) first and will have a rule to test rather than to invent.
+
+**It does not satisfy [ADR-031](ADR-031.md)'s promotion condition, and does not claim to.**
+That condition asks for a practice and the explanation under it moving in
+*opposite* directions, filed without either being rewritten to fit the other.
+This is a document moving sideways, which is a different event. [ADR-031](ADR-031.md) stays
+`Proposed`.
+
+**A `Superseded` practice in the registry now has two meanings**, distinguished
+only by its status note: replaced by a better recommendation, or moved to
+another scheme. That is a real cost and the alternative was worse. If the
+count grows past a handful, the honest fix is a status word of its own rather
+than a convention.
+
+## Alternatives considered
+
+**`Rejected`.** Reads as *do not do this* on a practice. See above; it is the
+whole reason this decision is not a one-liner.
+
+**Delete [SOTA-010](../practices.d/SOTA-010.md) and let the links break.** The record's rule against it
+exists for links, and there are links.
+
+**Leave it a practice and rewrite the title as an instruction.** Tempting for
+several of the eight and wrong for this one: the instruction would be *use
+skip connections*, which is trunk, so the rewrite would produce a practice
+that exists only to hold an explanation. That is the arrangement [ADR-031](ADR-031.md)
+created the `THEORY` scheme to end.
+
+**Add a typed `moved_to:` reference crossing schemes.** The right answer if
+this happens often. It is a scheme change to justify on one instance, and
+prose plus a resolvable code costs nothing until then.

@@ -1,0 +1,104 @@
+---
+status: Active
+title: 'Hyper-ES: Effective Evolution Strategies for LLM Reasoning via Descent Direction Merging'
+version: 1
+tags:
+- adaptation-and-tuning
+date: '2026-09-15'
+published: '2026-08-01'
+arxiv: '2608.05541'
+first_author: 'Gu'
+keywords:
+- 'evolution-strategies'
+- 'cma-es'
+- 'model-merging'
+- 'lora'
+- 'mathematical-reasoning'
+# `corrects:`, not `extends:`, and the test is ADR-017's: this paper's own
+# motivating sentence names a defect in the parent — "directly applying ES to
+# billion-parameter LLMs is highly ineffective" — rather than a refinement of
+# something that works.
+corrects:
+- LIT-211
+implementations: []
+summary: >-
+  Gu et al. (2026), [ARXIV-2608.05541](https://arxiv.org/abs/2608.05541). Argues that full-parameter ES on
+  billion-parameter LLMs is ineffective because almost all random
+  perturbations are near-orthogonal to a useful descent direction, and
+  replaces the search space rather than the optimizer: a handful of cheap
+  GRPO runs supply LoRA descent directions, and CMA-ES then searches
+  layer-wise DARE-TIES merging coefficients over their span. Beats GRPO-LoRA
+  by about 1% with 10% fewer gradient updates — on models at 1.5B and below.
+---
+
+# LIT-tmp9pcfv: Hyper-ES: Effective Evolution Strategies for LLM Reasoning via Descent Direction Merging
+
+Gu et al. (2026) — [ARXIV-2608.05541](https://arxiv.org/abs/2608.05541)
+
+## Key takeaways
+
+**It contradicts the premise of the ES-at-scale line, in its own second
+sentence.** "Directly applying ES to billion-parameter LLMs is highly
+ineffective. In such high-dimensional parameter spaces, most random
+perturbations are nearly orthogonal to useful update directions, leading to
+unstable optimization." Two lemmas formalise it: the population is likely to
+consist of perturbations nearly orthogonal to the optimal descent direction,
+and repeated updates along unrelated directions can still carry the model far
+from the pretrained weights.
+
+**The fix is to change the search space, not the search.** Rather than ask ES
+to *discover* useful directions, Hyper-ES runs fewer than ten GRPO steps on
+each of several data subsets to produce `M` cheap LoRA deltas, treats those
+as basis directions, and applies CMA-ES to layer-wise DARE-TIES merging
+coefficients over their span. Full-parameter adaptation becomes a structured
+coefficient search in a few hundred dimensions. **The method is therefore not
+gradient-free** — it is gradient-seeded and then gradient-free, and the
+saving it claims is 10% fewer backpropagation steps rather than none.
+
+**The margin is small and the authors say so.** 57.13% against GRPO-LoRA's
+56.23% on Qwen2.5-0.5B-Instruct; 74.26% against 73.51% on
+Qwen2.5-1.5B-Instruct. "Slightly but consistently outperforms" is the paper's
+own description, and the larger gap is against the merging baselines
+(CMA-ES+LoRA at 52.76%, Average Merge at 72.36%) rather than against GRPO.
+
+## What the evidence does not cover
+
+**Every model it tests is at 1.5B or below.** Qwen2.5-0.5B-Instruct,
+Qwen2.5-1.5B-Instruct, DeepSeek-R1-Distill-1.5B. The claim in the abstract is
+about "billion-parameter LLMs"; the measurements are at the bottom edge of
+that range, and this matters more here than it usually would — see below.
+
+**It never runs the method it says is ineffective.** The ES baseline in the
+table is `CMA-ES+LoRA`, not full-parameter ES at the scale [LIT-211](LIT-211.md) reports.
+The case against direct ES is the two lemmas plus a figure, plus a citation
+to other work, rather than a failed reproduction. That is a legitimate
+argument and it is not the same kind of evidence as running the thing.
+
+**The comparison is against GRPO-LoRA**, a parameter-efficient baseline, at
+matched memory footprint. Whether the ranking survives against full
+fine-tuning GRPO is not asked.
+
+## Standing in the anthology
+
+**The dissent in the ES post-training line, and the reason [SOTA-154](../practices.d/SOTA-154.md) is
+`contested`.** It is a credible group, publishing now, saying in plain terms
+that the thing that practice recommends does not work — which is what the
+`contested` value on the consensus axis asserts, and this note is the
+document that claim points at.
+
+<!-- inactive-ok-block: THEORY-tmp38myz — Proposed, and named as the account
+     that predicts this paper's negative result; naming it is the point of
+     the paragraph -->
+**But the disagreement may be about scale rather than about the method, and
+the record can now say so.** [THEORY-tmp38myz](../theory.d/THEORY-tmp38myz.md) holds that task-improving
+perturbations are dense around pretrained weights *and that the density rises
+with model size* — with gains appearing sharply from around 1.5B and absent
+below it. Every model in this paper is at 1.5B or below. So this paper's
+negative result is measured exactly where that account predicts a negative
+result, and its lemma — that random perturbations are near-orthogonal to
+anything useful — is the needle-in-a-haystack regime under a different name.
+
+That reading is this record's and not either paper's: neither cites the
+other, they were posted five months apart, and reconciling them costs nothing
+if it is wrong. What it would take to settle it is the one experiment neither
+ran — full-parameter ES against GRPO on the same benchmarks at 7B and above.

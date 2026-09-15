@@ -7,8 +7,6 @@ promote_when: >-
   this: a further result from these authors, or a comparison in which the
   baseline answers with one sample while this answers with fifty.
 consensus: unreplicated
-# inactive-ok-block: SOTA-154 — Proposed, and named here as the practice this
-# one is the second entry beside; the note is about how thin the line is
 consensus_note: >-
   One group, one paper, models at 8B and below. It is the second entry in the
   record's gradient-free post-training line and the first independent
@@ -24,17 +22,33 @@ date: '2026-09-15'
 # promote_when is about.
 source:
 - LIT-tmphm6g2
+# inactive-ok-block: ADR-030 — Proposed, and cited for what it says the field
+# is FOR, not as a settled decision; `introduced_by:` is required in
+# luria.yaml today whatever becomes of the decision that asked for it
+# NOT the same code as `source:`, and this is the case the field exists for
+# (ADR-030). LIT-tmphm6g2 produced the evidence and explicitly declines to
+# make the recommendation — "our goal is not to promote RandOpt as superior
+# to alternative methods. Rather, we use it as a probe." The work that first
+# stated the instruction "post-train by perturbing the weights and selecting,
+# rather than by gradient" is LIT-211, and RandOpt is that instruction with
+# the iteration count set to one and an ensemble on the end.
 introduced_by:
-- LIT-tmphm6g2
-# Both comparisons the paper actually ran, at the practice layer: evolution
-# strategies, and the group baseline inside GRPO. Stated here, on the
-# practice that ran them; the fixer writes the other side.
-compared_against:
+- LIT-211
+# The lineage, not a rivalry: this is the one-shot ensembled form of SOTA-154
+# and sits on the same line. The paper did also measure the two against each
+# other and the result was a tie; that fact is in the body rather than in a
+# second relation over the same pair.
+extends:
 - SOTA-154
+# The comparison the paper ran against the other paradigm: the group baseline
+# inside GRPO. Stated here, on the practice that ran it; the fixer writes the
+# other side.
+compared_against:
 - SOTA-145
 implementations: []
 summary: >-
-  Gan and Isola (2026), [LIT-tmphm6g2](../literature.d/LIT-tmphm6g2.md) — [ARXIV-2603.12228](https://arxiv.org/abs/2603.12228). Sample N Gaussian
+  Qiu et al. introduced it ([LIT-211](../literature.d/LIT-211.md)); Gan and Isola (2026),
+  [LIT-tmphm6g2](../literature.d/LIT-tmphm6g2.md) — [ARXIV-2603.12228](https://arxiv.org/abs/2603.12228) — measured this form of it. Sample N Gaussian
   weight perturbations, score them on a few hundred held-out examples, keep
   the top K and majority-vote at inference. At equal training FLOPs it
   matches or beats PPO, GRPO and ES across seven tasks at 0.5B–8B, in one
@@ -47,9 +61,20 @@ explained_by:
 
 # SOTA-tmpm80i3: Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them
 
-## Source
+## Source, and who is recommending this
 
-Gan and Isola (2026), [LIT-tmphm6g2](../literature.d/LIT-tmphm6g2.md) — [ARXIV-2603.12228](https://arxiv.org/abs/2603.12228).
+The evidence is Gan and Isola (2026), [LIT-tmphm6g2](../literature.d/LIT-tmphm6g2.md) —
+[ARXIV-2603.12228](https://arxiv.org/abs/2603.12228). **The recommendation is not theirs.** That paper
+measures the method and declines to promote it, in as many words: "our goal
+is not to promote RandOpt as superior to alternative methods. Rather, we use
+it as a probe." The instruction — post-train by perturbing the weights and
+selecting among the results, rather than by following a gradient — was
+<!-- inactive-ok-block: ADR-030 — Proposed, and cited for the distinction it
+     draws rather than as a settled decision; the field is required in
+     luria.yaml today either way -->
+stated by Qiu et al. ([LIT-211](../literature.d/LIT-211.md)), and this is that instruction with the
+iteration count set to one and an ensemble on the end. `introduced_by:` says
+so, which is the distinction [ADR-030](../decisions.d/ADR-030.md) requires every practice to make.
 
 The procedure, called RandOpt, is four lines:
 
@@ -110,18 +135,14 @@ moved before believing a number.
 
 <!-- inactive-ok-block: SOTA-146 — Proposed, and named as one of the three
      practices that assume the paradigm this steps outside of -->
-<!-- inactive-ok-block: SOTA-154 — Proposed, and the practice this one was
-     measured against; that comparison is what the citation is for -->
 [SOTA-129](SOTA-129.md) makes reinforcement learning with verifiable rewards the third stage
 of the reasoning recipe, [SOTA-145](SOTA-145.md) recommends the group baseline inside it and
 [SOTA-146](SOTA-146.md) corrects the objective. All three assume the paradigm. This is the
 second practice in the record to reach the same goal from outside it, after
-[SOTA-154](SOTA-154.md), and the two are close relatives: both are gradient-free, both
-perturb the full parameter space with Gaussian noise, and this one is ES with
-the iteration count set to one and an ensemble on the end.
+[SOTA-154](SOTA-154.md) — which it `extends:` rather than rivals. Both are gradient-free,
+both perturb the full parameter space with Gaussian noise, and this one is ES
+with the iteration count set to one and an ensemble on the end.
 
-<!-- inactive-ok-block: SOTA-154 — Proposed, and this paragraph is the
-     comparison against it; refusing to claim a win over it is the content -->
 **The honest comparison against [SOTA-154](SOTA-154.md) is a tie, not a win.** The paper's
 headline gives this method a 50-way ensemble and the RL baselines a single
 sample, which it says plainly "disadvantages the baseline but reflects

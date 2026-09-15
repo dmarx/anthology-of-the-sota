@@ -590,6 +590,9 @@
     "ARXIV/2510.26692": {
       "title": "Kimi Linear: An Expressive, Efficient Attention Architecture"
     },
+    "ARXIV/2511.16652": {
+      "title": "Evolution Strategies at the Hyperscale"
+    },
     "ARXIV/2512.02556": {
       "title": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models"
     },
@@ -643,6 +646,9 @@
     },
     "ARXIV/2607.24653": {
       "title": "Kimi K3: Open Frontier Intelligence"
+    },
+    "ARXIV/2608.05541": {
+      "title": "Hyper-ES: Effective Evolution Strategies for LLM Reasoning via Descent Direction Merging"
     },
     "ARXIV/2608.30320": {
       "title": "On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability"

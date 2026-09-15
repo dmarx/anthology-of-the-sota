@@ -76,8 +76,6 @@ is about pretraining rather than about LLMs.
 ## What this explains, and how much
 
 It is an account of why the gradient-free post-training line works at all.
-<!-- inactive-ok-block: SOTA-154 — Proposed, and the practice this account
-     was written to explain; the theory's own status says as much -->
 [SOTA-154](../practices.d/SOTA-154.md) recommends evolution strategies over policy-gradient RL on the
 evidence that it wins a tilted comparison; nothing in the record said *why* a
 method with no gradient should be able to find anything in a billion

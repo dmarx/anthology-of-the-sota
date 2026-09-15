@@ -202,15 +202,18 @@ the LIT.
 density-and-diversity claim, `Proposed`, and [SOTA-tmpm80i3](../practices.d/SOTA-tmpm80i3.md) carries the
 method, `Proposed` and `unreplicated`.
 
-<!-- inactive-ok-block: SOTA-154 — Proposed, and named as the practice this
-     paper evaluates as a baseline; that is what the citation is for -->
-**It is the first independent evaluation of [SOTA-154](../practices.d/SOTA-154.md) in the record.** That
-practice rests entirely on [LIT-211](../literature.d/LIT-211.md), whose authors ran it; this paper runs ES
-as a baseline and finds it strong — strong enough that ES plus test-time
-voting beats the paper's own method in about half the table. That is
-corroboration of [SOTA-154](../practices.d/SOTA-154.md)'s direction from a group with no stake in it, and
-it is worth noting that it arrives as a *baseline result* rather than as a
-replication, which is the weaker of the two.
+**It replicates [SOTA-154](../practices.d/SOTA-154.md), and that is what promoted it.** That practice
+rested entirely on [LIT-211](../literature.d/LIT-211.md), whose authors ran it. This paper runs ES as a
+baseline across six further tasks and three model families, at matched
+training FLOPs, with PPO and GRPO grid-searched over learning rate and batch
+or group size while ES ran a single fixed configuration — and finds ES strong
+enough that ES plus test-time voting beats the paper's own method in about
+half the table.
+
+Arriving as a *baseline* is not a discount on that. A group tuning the rival
+harder than the method, in a paper arguing for something else, is the
+cleanest form of the evidence `promote_when` was asking for; the first draft
+of this note called it "the weaker of the two" and was wrong.
 
 <!-- inactive-ok-block: SOTA-154, THEORY-tmp38myz — both Proposed; the
      paragraph says the explanation this reading files is the one that

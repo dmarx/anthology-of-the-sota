@@ -128,17 +128,18 @@ training the method exists to avoid.
 
 ## Standing in the anthology
 
-<!-- inactive-ok-block: SOTA-154, THEORY-tmp38myz — both Proposed. SOTA-154
-     is the practice this paper's ES baseline is a comparison against, named
-     rather than relied on; THEORY-tmp38myz is the explanation filed from
-     this paper in this same change -->
-**The second paper to reach the record's post-training spine from outside
-it, and the first to offer an account of why the outside works.** [LIT-211](LIT-211.md)
-showed that evolution strategies beat PPO and GRPO at billion scale;
-[SOTA-154](../practices.d/SOTA-154.md) is the practice drawn from it. This paper runs ES as one of its own
-baselines, which makes it the first independent evaluation of that line in
-the record — and it goes further by asking what property of a pretrained
-model makes gradient-free search viable at all. The answer, filed as
+<!-- inactive-ok-block: THEORY-tmp38myz — Proposed, and the explanation
+     filed from this paper in this same change -->
+**This is what promoted [SOTA-154](../practices.d/SOTA-154.md), and it did it as a bystander.** [LIT-211](LIT-211.md)
+showed that evolution strategies beat PPO and GRPO at billion scale, on two
+tasks, from the group proposing them. This paper runs ES as one of its own
+baselines across six further tasks and three model families, at matched
+training FLOPs, with PPO and GRPO grid-searched while ES ran one fixed
+configuration — and ES came out ahead in most cells. That is the independent
+replication that practice's `promote_when` asked for, and arriving as a
+baseline makes it stronger evidence, not weaker: nobody here wanted ES to
+win. It goes further by asking what property of a pretrained model makes
+gradient-free search viable at all. The answer, filed as
 [THEORY-tmp38myz](../theory.d/THEORY-tmp38myz.md), is the density and diversity of task experts near the pretrained
 weights.
 

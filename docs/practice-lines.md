@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-39 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+40 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 ## From Place BatchNorm after linear/conv layers but before activation functions
 
@@ -122,10 +122,11 @@
 - alongside: [SOTA-070](../record/practices.d/SOTA-070.md) — Track gradient norm ratios between layers *(Active, unassessed)*
 - alongside: [SOTA-099](../record/practices.d/SOTA-099.md) — Track gradient norm statistics to detect training instabilities *(Active, unassessed)*
 
-## From Use gradient compression for slow networks
+## From Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation
 
+- [SOTA-155](../record/practices.d/SOTA-155.md) — Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation *(Proposed, unreplicated)*
+  - [SOTA-219](../record/practices.d/SOTA-219.md) — Leave the inner optimizer state unsynchronised in local-update training *(Active, emerging)*
 - alongside: [SOTA-075](../record/practices.d/SOTA-075.md) — Use gradient compression for slow networks *(Active, unassessed)*
-- alongside: [SOTA-155](../record/practices.d/SOTA-155.md) — Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation *(Proposed, unreplicated)*
 
 ## From Use operator fusion for small operations
 
@@ -238,3 +239,8 @@
 
 - [SOTA-188](../record/practices.d/SOTA-188.md) — Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal *(Active, converged)*
   - [SOTA-195](../record/practices.d/SOTA-195.md) — Predict v rather than the noise when the model will be evaluated at low signal-to-noise *(Active, converged)*
+
+## From Pair any gradient compressor with error feedback, and correct the momentum it is applied under
+
+- [SOTA-214](../record/practices.d/SOTA-214.md) — Pair any gradient compressor with error feedback, and correct the momentum it is applied under *(Active, emerging)*
+  - [SOTA-215](../record/practices.d/SOTA-215.md) — Freeze Adam's variance term after a warmup before compressing its update, and never compress the update directly *(Proposed, unreplicated)*

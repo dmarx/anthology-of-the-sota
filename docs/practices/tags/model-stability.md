@@ -4,7 +4,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-23 of 213 SOTA documents. Back to the [full index](../README.md).
+24 of 220 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -31,3 +31,4 @@
 | [SOTA-191](../../../record/practices.d/SOTA-191.md) v2 | Consider removing LayerNorm's learnable gain and bias rather than tuning them | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — the bias and gain increase overfitting risk and "do not work in most cases"; LayerNorm-simple, with both removed, beats LayerNorm on four datasets and reaches state of the art on En-Vi. | Proposed |
 | [SOTA-192](../../../record/practices.d/SOTA-192.md) | Normalize the queries and keys before the attention dot product |  | Active |
 | [SOTA-193](../../../record/practices.d/SOTA-193.md) | Lower Adam's second-moment decay when the loss spikes, before reaching for the learning rate |  | Proposed |
+| [SOTA-217](../../../record/practices.d/SOTA-217.md) | Align the hidden-unit permutation before averaging weights from separately trained networks | A neural network's hidden units can be permuted without changing the function, so two networks trained from different seeds sit in different corners of the same symmetry orbit. Averaging their weights directly averages across that mismatch and traverses a loss barrier that is mostly an artefact of labelling. Match the units first — by weight matching, or by activation matching on a handful of samples — and most of the barrier is not there. | Proposed |

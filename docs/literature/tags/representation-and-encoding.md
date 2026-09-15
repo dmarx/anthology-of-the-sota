@@ -4,8 +4,12 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-1 of 242 LIT documents. Back to the [full index](../README.md).
+5 of 376 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [LIT-003](../../../record/literature.d/LIT-003.md) v2 | Neural Machine Translation of Rare Words with Subword Units | Sennrich et al. (2015), [ARXIV-1508.07909](https://arxiv.org/abs/1508.07909). Introduces byte-pair encoding for tokenization. | Active |
+| [LIT-266](../../../record/literature.d/LIT-266.md) | 'Neural-gas' network for vector quantization and its application to time-series prediction | Martinetz et al. (1993), [DOI:10.1109/72.238311.](https://doi.org/10.1109/72.238311.) Neural gas: adapt units by the rank of their distance to the input rather than by a fixed lattice neighbourhood, so no topology need be assumed. | Deferred |
+| [LIT-327](../../../record/literature.d/LIT-327.md) | A Growing Neural Gas Network Learns Topologies | Fritzke (1994), [A Growing Neural Gas Network Learns Topologies](https://pro ceedings.neurips.cc/paper_files/paper/1994/hash/d56b9fc4b0f1be8871f5e1c40c00 67e7-Abstract.html). Growing neural gas: insert units where the accumulated error is largest, so the network finds its own size and topology without an annealing schedule. | Deferred |
+| [LIT-341](../../../record/literature.d/LIT-341.md) | A Growing Neural Gas Network Learns Topologies | Fritzke (1994), [A Growing Neural Gas Network Learns Topologies](https://pro ceedings.neurips.cc/paper_files/paper/1994/hash/d56b9fc4b0f1be8871f5e1c40c00 67e7-Abstract.html). Growing neural gas: insert units where the accumulated error is largest, so the network finds its own size and topology without an annealing schedule. | Active |
+| [LIT-363](../../../record/literature.d/LIT-363.md) | 'Neural-gas' network for vector quantization and its application to time-series prediction | Martinetz et al. (1993), [DOI:10.1109/72.238311.](https://doi.org/10.1109/72.238311.) Neural gas: adapt units by the rank of their distance to the input rather than by a fixed lattice neighbourhood, so no topology need be assumed. | Active |

@@ -4,9 +4,10 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-2 of 8 THEORY documents. Back to the [full index](../README.md).
+3 of 10 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [THEORY-001](../../../record/theory.d/THEORY-001.md) | Batch normalization works by reducing internal covariate shift | Ioffe and Szegedy (2015), [LIT-002](../../../record/literature.d/LIT-002.md) — the explanation batch normalization was named after and introduced with: that training is slowed by each layer's input distribution shifting as the layers below it update, and that holding those distributions steady is what buys the speed. Refuted in 2018; the technique was not. | Rejected — the experiment that would have confirmed it was eventually run, and the benefit survived the shift being put back |
 | [THEORY-003](../../../record/theory.d/THEORY-003.md) | Batch normalization helps by smoothing the optimization landscape, not by reducing internal covariate shift | Santurkar et al. (2018), [LIT-223](../../../record/literature.d/LIT-223.md) — the distributional stability batch normalization was named after turns out not to be what it does. Injecting covariate shift back in after the BN layer costs nothing; what BN changes is the smoothness of the loss surface, and other normalisations that do nothing for covariate shift change it comparably. | Active |
+| [THEORY-010](../../../record/theory.d/THEORY-010.md) | Most of the loss barrier between two independently trained networks is permutation, not disagreement | Two networks trained from different seeds land far apart in weight space and close together in function space, and the linear path between them crosses a loss barrier. The account is that the barrier is mostly an artefact of unit labelling: permute the hidden units of one to match the other and the barrier largely disappears. What looked like two different solutions was one solution written in two orders. | Proposed |

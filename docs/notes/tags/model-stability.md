@@ -4,7 +4,7 @@
 
 **model-stability**.
 
-6 of 88 NOTE documents. Back to the [full index](../README.md).
+8 of 158 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -14,3 +14,5 @@
 | [NOTE-022](../../../record/notes.d/NOTE-022.md) | RMSNorm | LayerNorm gives re-centering and re-scaling invariance; the hypothesis is that re-centering is dispensable. Normalize by root mean square alone — re-scaling invariance and implicit learning-rate adaptation kept, 7–64% less time per step. | Read |
 | [NOTE-056](../../../record/notes.d/NOTE-056.md) | PowerNorm: Rethinking Batch Normalization in Transformers | Diagnoses why batch normalization underperforms layer normalization in NLP — the batch mean and variance fluctuate far more than in vision — and fixes it by dropping the zero-mean step and normalizing by a running quadratic mean instead of a batch variance. Beats LN by 0.4/0.6 BLEU and 5.6/3.0 perplexity with no hyperparameter changes. | Read |
 | [NOTE-058](../../../record/notes.d/NOTE-058.md) | Scaling Vision Transformers to 22 Billion Parameters | Three architectural changes carry ViT from 4B to 22B — parallel attention/MLP blocks, QK normalization, and removed biases. QK-norm is the load-bearing one: training diverged around 8B from attention logits growing until the softmax was almost one-hot with near-zero entropy, and LayerNorm on the queries and keys before the dot product fixed it. | Read |
+| [NOTE-116](../../../record/notes.d/NOTE-116.md) | Git Re-Basin: Merging Models modulo Permutation Symmetries | The LMC conjecture (Entezari et al.) says permutation-aligned networks can be linearly interpolated without loss penalty. Git Re-Basin makes this actionable: given two trained networks θ_A and θ_B, find permutation matrices P* that minimize \|\|θ_A - P(θ_B)\|\|_F, then average P*(θ_B) with θ_A. | Read |
+| [NOTE-131](../../../record/notes.d/NOTE-131.md) | The Role of Permutation Invariance in Linear Mode Connectivity of Neural Networks | For overparameterized networks, the loss landscape has essentially one basin modulo permutation symmetry. Two independently trained networks represent the same function with permuted neurons. Averaging their weights directly interpolates between permuted copies and crosses a loss barrier. If you first align the permutations, the interpolation stays in the flat basin. | Read |

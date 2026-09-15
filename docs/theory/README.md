@@ -35,8 +35,8 @@ bare code and run `luria link --fix`.
 
 **[Systems optimization](tags/systems-optimization.md)** (0) — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
-**[Model stability](tags/model-stability.md)** (2) — initialization, normalization, gradient handling, regularization, loss-landscape behaviour:
-[001](../../record/theory.d/THEORY-001.md) · [003](../../record/theory.d/THEORY-003.md)
+**[Model stability](tags/model-stability.md)** (3) — initialization, normalization, gradient handling, regularization, loss-landscape behaviour:
+[001](../../record/theory.d/THEORY-001.md) · [003](../../record/theory.d/THEORY-003.md) · [010](../../record/theory.d/THEORY-010.md)
 
 **[Distributed optimization](tags/distributed-optimization.md)** (0) — parallelism and sharding, communication, memory management, checkpointing.
 
@@ -53,14 +53,14 @@ bare code and run `luria link --fix`.
 
 **[Representation and encoding](tags/representation-and-encoding.md)** (0) — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-**[Analysis and evaluation](tags/analysis-and-evaluation.md)** (5) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
-[002](../../record/theory.d/THEORY-002.md) · [004](../../record/theory.d/THEORY-004.md) · [006](../../record/theory.d/THEORY-006.md) · [007](../../record/theory.d/THEORY-007.md) · [008](../../record/theory.d/THEORY-008.md)
+**[Analysis and evaluation](tags/analysis-and-evaluation.md)** (6) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
+[002](../../record/theory.d/THEORY-002.md) · [004](../../record/theory.d/THEORY-004.md) · [006](../../record/theory.d/THEORY-006.md) · [007](../../record/theory.d/THEORY-007.md) · [008](../../record/theory.d/THEORY-008.md) · [009](../../record/theory.d/THEORY-009.md)
 
 **[Generative modeling](tags/generative-modeling.md)** (0) — diffusion, samplers, text-to-image, conditioning and control.
 
 **[Vision and graphics](tags/vision-and-graphics.md)** (0) — neural rendering, reconstruction, perception, visual foundation models.
 
-**By status:** [The current account](status/Active.md) (3) · [Offered](status/Proposed.md) (4) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (1) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (4) · [Offered](status/Proposed.md) (5) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (1) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -84,4 +84,6 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-006](../../record/theory.d/THEORY-006.md) | Task-improving weight perturbations are dense around pretrained weights, and denser the larger the model | Gan and Isola (2026), [LIT-233](../../record/literature.d/LIT-233.md), with a prediction of it independently confirmed by [LIT-230](../../record/literature.d/LIT-230.md) — the fraction of random Gaussian weight perturbations that improve a downstream task rises monotonically with model scale, from 0% at 0.5B to 64% at 32B on GSM8K, and the perturbations that help are task specialists rather than uniform improvements. It is the record's account of why gradient-free post-training works at all, measured on one model family by one group. | Proposed |
 | [THEORY-007](../../record/theory.d/THEORY-007.md) | Fine-tuning landscapes are low-dimensional in curvature, and improving directions are degenerate rather than unique | Liang et al. (2026), [LIT-236](../../record/literature.d/LIT-236.md) — a small set of stiff directions carries the improvement in a fine-tuning landscape and their number does not grow with the model. Because improvement depends only on a perturbation's projection onto that subspace, many ambient perturbations share a useful component, so a fixed population of about thirty keeps working as dimension grows. The same heterogeneity gives rise-then-decay: stiff modes saturate while variance keeps accumulating in the flat bulk. | Proposed |
 | [THEORY-008](../../record/theory.d/THEORY-008.md) | An evolution-strategies update is mostly a loss-invariant random walk whose size grows with steps and shrinks with population | Hoy et al. (2026), [LIT-235](../../record/literature.d/LIT-235.md), confirmed by [LIT-238](../../record/literature.d/LIT-238.md) — an ES weight update splits into an on-manifold part that changes the loss and an off-manifold part that does not, and in a landscape with many flat directions the second dominates. Its squared norm grows as sigma^2 d T / N, so the drift that three papers in this record read as evidence of forgetting, of functional sparsity, and of a failing search is mostly a random walk that the loss cannot see. | Active |
+| [THEORY-009](../../record/theory.d/THEORY-009.md) | A wide two-layer network's training dynamics are a gradient flow on the distribution of its neurons, and that flow is convex | Scale a two-layer network's output by 1/N and the object that moves under SGD stops being the weights and becomes their empirical distribution, which follows a Wasserstein gradient flow of the population risk. The risk is convex as a functional of that distribution — so the non-convexity of the finite-width landscape, and the permutation symmetry that produces most of its apparent local minima, are both artefacts of the coordinates. Four groups reached this within about a year by four routes. | Active |
+| [THEORY-010](../../record/theory.d/THEORY-010.md) | Most of the loss barrier between two independently trained networks is permutation, not disagreement | Two networks trained from different seeds land far apart in weight space and close together in function space, and the linear path between them crosses a loss barrier. The account is that the barrier is mostly an artefact of unit labelling: permute the hidden units of one to match the other and the barrier largely disappears. What looked like two different solutions was one solution written in two orders. | Proposed |
 

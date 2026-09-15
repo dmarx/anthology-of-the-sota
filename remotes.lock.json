@@ -644,6 +644,9 @@
     "ARXIV/2605.25704": {
       "title": "PowLU: An Activation Function for Stable Pre-Training of LLMs"
     },
+    "ARXIV/2605.30148": {
+      "title": "Overcoming Forgetting in LLM Fine-Tuning with Evolution Strategies"
+    },
     "ARXIV/2606.16246": {
       "title": "Demystifying Training-Time Augmentation for Data-Constrained Language Model Pretraining"
     },

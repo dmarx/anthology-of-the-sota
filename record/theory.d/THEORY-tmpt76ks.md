@@ -1,23 +1,21 @@
 ---
-status: Proposed
-promote_when: >-
-  The `sigma^2 d T / N` scaling measured by an independent group on a
-  transformer at a different scale, with the population-size dependence tested
-  directly — raising N and observing drift fall at fixed T. What would not
-  satisfy this: another observation that ES drifts more than GRPO, which is
-  the fact this account exists to explain rather than evidence for it.
+status: Active
 title: 'An evolution-strategies update is mostly a loss-invariant random walk whose size grows with steps and shrinks with population'
 version: 1
 tags:
 - analysis-and-evaluation
 date: '2026-09-15'
 source:
+# LIT-tmp4w505 derives it; LIT-tmpphacm is the independent confirmation that
+# promoted it — a different group, a different model, and the population-size
+# dependence tested directly rather than inferred.
 - LIT-tmp4w505
+- LIT-tmpphacm
 explains:
 - SOTA-154
-- SOTA-tmpdcmgg
 summary: >-
-  Hoy et al. (2026), [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) — an ES weight update splits into an
+  Hoy et al. (2026), [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md), confirmed by [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md) — an ES weight
+  update splits into an
   on-manifold part that changes the loss and an off-manifold part that does
   not, and in a landscape with many flat directions the second dominates. Its
   squared norm grows as sigma^2 d T / N, so the drift that three papers in
@@ -91,6 +89,30 @@ different place from [THEORY-006](THEORY-006.md). That account says why there is
 worth finding near the pretrained weights; this says what the search does with
 the rest of the space while it looks.
 
+## The confirmation that promoted this
+
+Schweighofer et al. ([LIT-tmpphacm](../literature.d/LIT-tmpphacm.md)) took the scaling as a prediction and
+tested the handle this account is most useful for. Raising the ES population
+from 30 to 128 **cuts the update norm by about half** — which is what an
+inverse dependence of the *squared* norm on `N` predicts for a 4.3× increase —
+and prior-task degradation falls monotonically across population sizes 30, 128
+and 256 (their Table 1). Their own summary: "the update norm is indeed
+inversely proportional to the population size."
+
+That is the promotion condition, met in the terms it was written in: an
+independent group — no shared authors with [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) — on a different
+model, Qwen2.5-3B rather than Qwen3-4B, with `N` varied directly at fixed `T`
+rather than the dependence inferred from the algebra.
+
+**One refinement arrived with it, and it sharpens the account rather than
+qualifying it.** Even at population 256 or with an anchor penalty, ES update
+norms stay an order of magnitude above GRPO's — yet the *distributional* shift
+on prior tasks becomes comparable to GRPO's. So the harm is not carried by the
+size of the walk: "it is the randomness of the drift unconstrained by the
+target task that leads to prior task forgetting for ES, rather than the
+magnitude of updates alone." Displacement is the thing that scales; what a
+displacement costs depends on whether anything constrained its direction.
+
 ## What this does not say
 
 **It does not say the off-manifold walk is harmless.** Loss-invariant means
@@ -100,11 +122,10 @@ to degrade along exactly those directions, and [LIT-tmppbfp5](../literature.d/LI
 does, on a long enough horizon. The account explains why the damage is
 invisible to the training signal; it does not make it not damage.
 
-**It is one group, one model, four tasks.** Qwen3-4B-Instruct-2507, 200
-training samples per task. The theory is general and its validation is not.
-The promotion condition asks specifically for the population-size dependence
-to be tested directly, because `N` is the handle the practice turns and it is
-the one the paper varies least.
+**The validation is still narrow even after the confirmation.** Two models,
+Qwen3-4B and Qwen2.5-3B, both below 5B, and the second paper varies `N` across
+three values on one task. `d` and `σ` — the other two terms — have never been
+varied against the prediction at all.
 
 **The decomposition is cleaner than any measurement of it can be.**
 "On-manifold" and "off-manifold" are exact only where the loss is exactly

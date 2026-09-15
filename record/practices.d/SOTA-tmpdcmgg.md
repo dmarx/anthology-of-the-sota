@@ -1,133 +1,136 @@
 ---
 status: Proposed
 promote_when: >-
-  A group reporting the drift-versus-population trade directly — same task
-  accuracy reached at higher N and lower T, with prior-task retention
-  measured — or an ES post-training run that reports its stopping rule and
-  the held-out capability it preserved. What would not satisfy this: another
-  demonstration that ES forgets, which is the problem rather than evidence
-  the remedy works.
+  Anchored Weight Decay reproduced by a group unconnected to the authors, or
+  adopted in a released ES post-training recipe. What would not satisfy this:
+  a further demonstration that ES drifts, or that a larger population reduces
+  it — both are already established and neither says the cheap remedy works.
 consensus: emerging
 consensus_note: >-
-  Two groups supply the two halves. LIT-tmppbfp5 shows the forgetting
-  accumulating in the stretch after the target task has converged, and
-  LIT-tmp4w505 gives the scaling that says why and reports ES staying
-  competitive in continual learning "when its iteration budget is
-  controlled". Neither states the rule as an instruction; the record is
-  joining them, and says so.
-title: 'Stop evolution-strategies post-training when the target task converges, and buy accuracy with population size rather than more steps'
+  The mechanism has two groups behind it (LIT-tmp4w505 derives the scaling,
+  LIT-tmpphacm measures the population dependence and confirms it), and the
+  population knob follows from it directly. The anchor penalty has one group
+  and one paper, from the lab whose method the criticism was aimed at.
+title: 'Control evolution-strategies drift with a larger population or an anchor penalty, not by stopping training early'
 version: 1
 tags:
 - adaptation-and-tuning
 date: '2026-09-15'
 source:
-# LIT-tmp4w505 is primary: it supplies the mechanism and the knob. LIT-tmppbfp5
-# is the measurement of what happens when nobody turns it.
+# LIT-tmpphacm is primary: it is the paper that measures the population
+# dependence, introduces the cheap remedy, and shows why the obvious
+# alternative — stopping early — is the wrong move.
+- LIT-tmpphacm
 - LIT-tmp4w505
 - LIT-tmppbfp5
-# Neither paper states this as a recommendation — LIT-tmp4w505 states the
-# scaling and the qualifier "when its iteration budget is controlled", which
-# is the nearest thing to it and is where the instruction comes from.
 introduced_by:
-- LIT-tmp4w505
+- LIT-tmpphacm
 extends:
 - SOTA-154
 implementations: []
 summary: >-
-  Hoy et al. and Abdi et al. (2026), [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) and [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) — an ES
-  run's off-manifold displacement grows as sigma^2 d T / N, so every step past
-  convergence buys drift and nothing else. Countdown peaks at about 200
-  iterations and held-out HellaSwag keeps falling to 500; across four
-  sequential tasks the ES update norm grows 87 to 173 where GRPO's grows 1.0
-  to 1.8. Raise the population, cap the steps, and stop when the target task
-  stops moving.
-explained_by:
-- THEORY-tmpt76ks
+  Schweighofer et al. (2026), [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md), on the scaling Hoy et al. derived
+  in [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) — ES drift is a random walk whose size falls with population
+  size, so raising the population from 30 to 128 halves the update norm and
+  monotonically reduces prior-task degradation. Anchored Weight Decay buys the
+  same reduction at population 30 for 1-2% runtime. Do not stop early instead:
+  the prior-task dip is often transient and recovers by the end of training.
 ---
 
-# SOTA-tmpdcmgg: Stop evolution-strategies post-training when the target task converges, and buy accuracy with population size rather than more steps
+# SOTA-tmpdcmgg: Control evolution-strategies drift with a larger population or an anchor penalty, not by stopping training early
 
 ## Source
 
-Hoy et al. (2026), [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) — [ARXIV-2604.01499](https://arxiv.org/abs/2604.01499); Abdi et al.
-(2026), [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) — [ARXIV-2601.20861](https://arxiv.org/abs/2601.20861).
+Schweighofer et al. (2026), [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md) — [ARXIV-2605.30148](https://arxiv.org/abs/2605.30148); Hoy et al.
+(2026), [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) — [ARXIV-2604.01499](https://arxiv.org/abs/2604.01499); Abdi et al. (2026),
+[LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) — [ARXIV-2601.20861](https://arxiv.org/abs/2601.20861).
 
-## Why a stopping rule matters more here than for gradient methods
+## What is being controlled, and why it has a knob
 
-<!-- inactive-ok-block: THEORY-tmpt76ks — Proposed, filed in this same change
-     and named as the account this instruction is derived from -->
-[THEORY-tmpt76ks](../theory.d/THEORY-tmpt76ks.md) is the reason. An ES update splits into a component that
-changes the loss and one that cannot; the second is a random walk whose
-squared norm grows as `σ²dT/N`. Two consequences follow directly, and they
-are the whole practice:
+[THEORY-tmpt76ks](../theory.d/THEORY-tmpt76ks.md) is the account. An ES update splits into a component that
+changes the loss and one that cannot, and the second is a random walk whose
+squared norm grows as `σ²dT/N`. Two of those four terms are budget decisions,
+which is what makes this a practice rather than an observation:
 
-- **Drift is linear in steps.** Every additional iteration adds displacement
-  whether or not it adds accuracy. Once the target task has converged, further
-  steps buy drift and nothing else.
-- **Drift is inversely proportional to population size.** The same amount of
-  on-manifold progress reached with a larger population and fewer steps costs
-  less off-manifold displacement.
+- **Population size divides it.** Raising `N` from 30 to 128 cuts the update
+  norm by about half, and prior-task degradation falls monotonically across
+  30, 128 and 256 ([LIT-tmpphacm](../literature.d/LIT-tmpphacm.md), Table 1).
+- **Steps multiply it.** Which is why the temptation is to stop early, and
+  why that turns out to be wrong.
 
-A gradient method has neither problem in this form — gradient descent freezes
-on flat directions where ES diffuses — which is why this practice has no
-analogue in the RL recipe and why an ES run needs a stopping rule that a GRPO
-run does not.
+## Do not stop early — the dip usually recovers
 
-## What it costs to ignore
+This is the correction, and it is the reason to read the sources rather than
+the mechanism. [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) ran Countdown for 500 iterations and watched
+average prior-task accuracy fall throughout, which reads as a clear argument
+for stopping once the target task converges at around 200.
 
-[LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) ran Countdown to 500 iterations on Qwen2.5-1.5B-Instruct.
-Countdown accuracy reaches near-maximum by about **200**. Held-out HellaSwag
-declines steadily across the whole run, tracing a convex Pareto front — and
-the decline continues through the 300 iterations that bought no task
-performance at all. The Frobenius drift after 500 iterations is roughly
-**1000×** GRPO's on the same task.
+Tracking the prior tasks *individually* rather than averaged tells a different
+story. HellaSwag falls about **8% over the first 300 iterations and returns to
+its original level by the final iteration**; MMLU-Pro and ARC-Challenge do the
+same; ProofWriter does the mirror image, improving and then settling back
+([LIT-tmpphacm](../literature.d/LIT-tmpphacm.md)). The degradation is transient drift, not irreversible
+forgetting — and **a stopping rule fitted to the average would stop at the
+bottom of the dip**, which is the worst point available.
 
-In the sequential setting, [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) reports the ES update norm growing
-from 87.28 to 173.00 across four tasks where GRPO's grows from 1.00 to 1.84 —
-a ratio of 87–107× — and states that ES "remains competitive sequentially
-**when its iteration budget is controlled**". That qualifier is the closest
-either paper comes to stating this practice, and it is where the instruction
-comes from.
+Two further findings from the same paper narrow the problem rather than the
+method. Forgetting is **not specific to ES**: with ProofWriter as the target,
+GRPO forgets considerably, mostly on GSM8K. And varying target task, model
+family and model size produces **no significant dependence** on any of them.
 
-## How to act on it
+## Anchored Weight Decay
 
-1. **Track the target metric and a held-out capability on the same axis.** The
-   Pareto front is the artifact worth producing; the convex shape is the
-   warning.
-2. **Stop when the target task stops improving**, not when the budget runs
-   out. The gap between those two points is pure capability loss.
-3. **Spend a larger budget on population, not iterations**, where the cluster
-   allows it. `N` divides the drift; `T` multiplies it. This also aligns with
-   [LIT-230](../literature.d/LIT-230.md)'s finding that the population needed for stable ES *falls* as
-   models grow — so at larger scale the same `N` is buying more.
-4. **Expect the perturbation scale to be two-sided.** `σ²` is in the numerator
-   of the drift, and [LIT-230](../literature.d/LIT-230.md) reports too-small `σ` overfitting the sampled
-   rewards. Reducing it is not a free way to cut drift.
+The remedy that does work, and it is four lines of change. Add a penalty on
+`w − w₀` to the objective; since there is no loss to backpropagate, apply it
+as a decay directly in the update rule — take the standard ES step, then pull
+the weights back toward the initial parameters.
+
+At population 30, this brings the update norm down to roughly what population
+128 achieves, and closes the prior-task KL gap to GRPO. Cost: the reference
+weights must be available each iteration, streamed layer-wise from pinned RAM
+rather than held in VRAM, for a measured **1–2% runtime** overhead — against
+the 4× evaluation cost of getting the same effect by quadrupling the
+population.
+
+**Tuning, as a procedure rather than a range.** Small `λ` barely helps; there
+is a stable band that preserves target performance while substantially
+reducing drift; past it target performance drops sharply. So **start with a
+high `λ` and decrease it until the target-task drop disappears** relative to
+ES without AWD. `L2` is slightly more robust and degrades more gracefully when
+set too high. `L1` below the critical magnitude *systematically improved*
+target-task performance, which is worth a try and is one paper's observation.
 
 ## Conditions, and what is not established
 
-**Both sources are at 4B and below**, on four and three tasks respectively.
-The scaling is theoretical and general; the demonstrations are not.
+**The remedy is one paper, from an interested lab.** [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md) is
+Cognizant AI Lab answering a criticism of [LIT-211](../literature.d/LIT-211.md)'s method, with Qiu on
+both. The measurements are ones anyone could repeat and the paper reproduces
+the negative result before qualifying it — but AWD has not been independently
+tested, which is what the promotion condition asks for.
 
-**Nobody has run the remedy.** This is the record joining a mechanism to a
-measurement, and both papers are named so a reader can see the join rather
-than take it on trust. The promotion condition asks for the trade to be
-reported directly — same accuracy at higher `N` and lower `T`, with retention
-measured — because that is the experiment neither paper ran.
+**Verifiable domains only.** Whether an anchor penalty preserves alignment and
+safety properties rather than benchmark accuracy is untested, and the authors
+flag it.
+
+**Norm is not the thing to minimize.** Even with AWD or a large population, ES
+update norms stay an order of magnitude above GRPO's while the prior-task
+distributional shift becomes comparable. What matters is how much of the
+displacement is unconstrained by the target task, not how far the weights
+moved — so do not treat a small update norm as the goal or a large one as the
+problem.
 
 <!-- inactive-ok-block: SOTA-212 — Proposed, and named as the practice this
      failure mode cannot reach; that is what the citation is for -->
 **It does not apply to [SOTA-212](SOTA-212.md).** That practice's whole form is a single
-parallel round, so `T = 1` and there is no stretch past convergence for drift
-to accumulate over. Whether one round at large `N` is a *general* answer to
-this problem is an interesting question and not one anybody has asked.
+parallel round, so `T = 1` and there is no trajectory for a random walk to
+accumulate along.
 
-**It does not resolve whether the drift is otherwise harmful.**
-[LIT-230](../literature.d/LIT-230.md) finds no broad forgetting at a single-task horizon and
-[LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) finds plenty past convergence. This practice is what both
-results are consistent with; it is not a finding that either paper made.
+**The blessing side is unmeasured.** The same random walk that costs
+prior-task accuracy may be what lets ES escape local optima a gradient method
+stays in — [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md) raises this and does not test it. Constraining
+drift may cost something nobody has priced.
 
 ## Known implementations
 
-- None. Neither source paper adopts a stopping rule; both report what happens
-  without one.
+- None released. AWD is implemented on top of [LIT-211](../literature.d/LIT-211.md)'s ES codebase, with
+  the reference weights streamed from pinned RAM during the weight update.

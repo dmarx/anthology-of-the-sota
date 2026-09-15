@@ -141,8 +141,8 @@ Lineage is on the LIT.
 
 ## Bearing on the record
 
-<!-- inactive-ok-block: THEORY-tmpt76ks, SOTA-tmpdcmgg — both Proposed, both
-     filed from this reading in this same change; naming them is the point -->
+<!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, filed from this reading
+     in this same change; naming it is the point -->
 Filed as [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md), and it is the source of [THEORY-tmpt76ks](../theory.d/THEORY-tmpt76ks.md) and the
 primary source of [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md).
 
@@ -161,7 +161,6 @@ every negative in this line sits.
 
 ## Limitations
 
-<!-- inactive-ok-block: THEORY-tmpt76ks — Proposed, filed from this reading in this same change -->
 Stated: the decomposition is local. From this reading: one model and four
 tasks for a theory offered as general; the `N` dependence is the part of the
 scaling least directly varied, which is why [THEORY-tmpt76ks](../theory.d/THEORY-tmpt76ks.md)'s promotion

@@ -29,6 +29,8 @@ summary: >-
   orders of magnitude further than GRPO, why the two update directions are
   nearly orthogonal, and why the two solutions are nevertheless linearly
   connected with no loss barrier.
+extended_by:
+- LIT-tmpphacm
 ---
 
 # LIT-tmp4w505: Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training
@@ -96,8 +98,6 @@ not, over a long enough horizon.
 
 ## Standing in the anthology
 
-<!-- inactive-ok-block: THEORY-tmpt76ks — Proposed, filed from this paper in
-     this same change; naming it is the point of the paragraph -->
 **The paper that makes the ES drift dispute tractable, and the source of
 [THEORY-tmpt76ks](../theory.d/THEORY-tmpt76ks.md).** Three papers in this record had measured the same
 drift and disagreed about it: [LIT-tmppbfp5](LIT-tmppbfp5.md) read it as the cause of

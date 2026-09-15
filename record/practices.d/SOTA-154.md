@@ -250,11 +250,15 @@ half of the original promotion condition that remains unmet.
 Below about 1.5B the practice should be expected to fail, and both dissenting
 papers are the evidence that it does.
 
-**And it has a cost the earlier evidence did not show.** ES post-training
-drifts orders of magnitude further from the base model than GRPO — roughly
-1000× after 500 iterations in [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md), 87–107× across four sequential
-tasks in [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) — and a held-out capability degrades along with it,
-especially in the stretch after the target task has converged.
+**And it has a cost the earlier evidence did not show — a smaller one than it
+first looked.** ES post-training drifts orders of magnitude further from the
+base model than GRPO: roughly 1000× after 500 iterations in
+[LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md), 87–107× across four sequential tasks in [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md), and a
+held-out capability degrades along with it. But [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md) tracks the
+prior tasks individually rather than averaged and finds the degradation is
+largely **transient** — HellaSwag falls 8% over 300 iterations and returns to
+baseline by the end — that GRPO forgets too on the right target task, and that
+the whole effect is controllable.
 <!-- inactive-ok-block: THEORY-tmpt76ks, SOTA-tmpdcmgg — both Proposed, filed
      in this same change and named as the account of this drift and the
      condition it puts on running this practice -->

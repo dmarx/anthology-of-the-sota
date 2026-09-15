@@ -30,6 +30,8 @@ summary: >-
   continues past the point where Countdown itself has converged, tracing a
   convex Pareto front, with ES parameter drift roughly 1000x GRPO's and ES
   updates dense where GRPO's are about 95% sparse.
+corrected_by:
+- LIT-tmpphacm
 ---
 
 # LIT-tmppbfp5: Evolutionary Strategies lead to Catastrophic Forgetting in LLMs
@@ -117,9 +119,16 @@ Both can hold — most coordinates move a little, the few that matter move a
 lot — and [LIT-230](LIT-230.md) notes that ES's largest-magnitude updates land in
 LayerNorm, which is also where this paper finds ES's *most sparse* updates.
 
-<!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, filed in this same change and named as the practice that acts on this reconciliation -->
-**The horizons differ, and that may be the whole disagreement.**
+**The horizons differ, and that is part of the disagreement.**
 [LIT-230](LIT-230.md) evaluates held-out performance at a single-task horizon and finds no
-broad forgetting. This paper trains to 500 iterations on a task that
-converges by 200, and the forgetting appears in the stretch after
-convergence. That reconciliation is what [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md) acts on.
+broad forgetting. This paper trains to 500 iterations on a task that converges
+by 200, and the degradation appears in the stretch after convergence.
+
+<!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, filed in this same change
+     and named as the practice this reconciliation supports -->
+**The rest of the disagreement is the averaging**, and [LIT-tmpphacm](LIT-tmpphacm.md) is where
+that comes out: tracking the prior tasks individually rather than as a mean
+shows the dip recovering by the end of training. The degradation here is real
+and this note does not doubt it; what the later paper takes away is the word
+*irreversible*, and with it the conclusion that ES is unsuited to continual
+learning. [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md) is what the pair supports.

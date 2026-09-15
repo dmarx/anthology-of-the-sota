@@ -111,9 +111,12 @@ disqualifying rather than merely unfortunate. Lineage is on the LIT.
 ## Recommendations
 
 <!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, filed from this reading in this same change -->
-- **R1** — Stop ES training when the target task converges; the drift keeps
-  accumulating and the gains do not. *Topic:* post-training. *Strength:*
-  strong on this paper's own data. Filed as [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md).
+- **R1** — Control the drift that accumulates after the target task
+  converges. *Topic:* post-training. *Strength:* strong on this paper's own
+  data. **This reading first drew the recommendation as "stop when the target
+  task converges", which [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md) then showed is the wrong remedy** —
+  the prior-task dip is largely transient and an early stop lands at the
+  bottom of it. [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md) is what the pair supports.
 - **R2** — Report a held-out capability alongside the target metric for any
   gradient-free post-training run. *Topic:* evaluation. *Strength:* strong.
 - **R3** — Do not treat ES as drop-in for continual or online learning without
@@ -147,6 +150,11 @@ finds no broad forgetting, while this trains 2.5× past convergence.
 line whose negative results sit at or under [THEORY-006](../theory.d/THEORY-006.md)'s boundary, with no
 negative reported above it.
 
+**Its forgetting claim is qualified in three directions by [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md)** —
+transient rather than permanent, not specific to ES, and avoidable at 1–2%
+runtime — from the lab whose method it criticised. The failed replication on
+*accuracy* is untouched by that paper and is what still stands here.
+
 ## Limitations
 
 Stated: the single held-out benchmark, and that the relative-performance
@@ -158,8 +166,11 @@ at 200 is a choice that shapes the headline.
 
 ## Open questions
 
-- **Does the forgetting appear at all if training stops at convergence?** The
-  paper's own data suggests much of it would not. Nobody has run it.
+- **~~Does the forgetting appear at all if training stops at convergence?~~**
+  Answered, and not the way this reading guessed: [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md) tracks the
+  prior tasks individually rather than averaged and finds the dip recovers, so
+  stopping at convergence would stop at its lowest point. Kept rather than
+  deleted because the guess and its correction are the useful pair.
 - **Does the failed replication survive at 4B and above?** Every positive in
   this line is above 1.5B and every negative is at or below it, and no paper
   has tested both sides of that line in one protocol.

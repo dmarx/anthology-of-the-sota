@@ -1,0 +1,163 @@
+---
+status: Active
+title: 'Neural Thickets: Diverse Task Experts Are Dense Around Pretrained Weights'
+version: 1
+# One of the thirteen, and it is the measurement rather than the method: the
+# paper's own framing is that RandOpt "is a probe" for a claim about the
+# multi-task loss landscape. The post-training recommendation drawn from it
+# is a separate document and takes `adaptation-and-tuning` there.
+tags:
+- analysis-and-evaluation
+date: '2026-09-15'
+published: '2026-03-01'
+arxiv: '2603.12228'
+first_author: 'Gan'
+keywords:
+- 'loss-landscape'
+- 'post-training'
+- 'random-search'
+- 'ensembling'
+- 'scaling'
+# The paper runs both as baselines against its own method, under matched
+# training FLOPs: ES is LIT-211 and GRPO is LIT-127. A comparison that was
+# run, not an alternative asserted (ADR-011). PPO is the third baseline and
+# has no note in this record.
+compared_against:
+- LIT-211
+- LIT-127
+implementations: []
+summary: >-
+  Gan and Isola (2026), [ARXIV-2603.12228](https://arxiv.org/abs/2603.12228). Measures the neighbourhood of
+  pretrained weights and finds it dense with task-improving Gaussian
+  perturbations, with the density rising monotonically with model scale — 0%
+  of perturbations match base accuracy on GSM8K at 0.5B against 64% at 32B —
+  and finds those perturbations to be specialists rather than generalists.
+  The method built on it, RandOpt, post-trains in one parallel step and is
+  competitive with PPO, GRPO and ES at equal training FLOPs, at the cost of K
+  forward passes at inference.
+---
+
+# LIT-tmphm6g2: Neural Thickets: Diverse Task Experts Are Dense Around Pretrained Weights
+
+Gan and Isola (2026) — [ARXIV-2603.12228](https://arxiv.org/abs/2603.12228)
+
+## Key takeaways
+
+**The measurement is the contribution, and the method is the probe.** The
+paper says so itself: "our goal is not to promote RandOpt as superior to
+alternative methods. Rather, we use it as a probe." What is measured is the
+*multi-task* landscape around a pretrained weight vector, which is a
+different object from the single-objective landscape most of this literature
+studies — the pretrained weights can sit in a trough of any individual task's
+accuracy while being a minimum of the aggregate pretraining loss.
+
+**Solution density rises monotonically with model scale.** Define solution
+density as `δ(m) = P[s(θ+ε) ≥ s(θ)+m]` for `ε ~ N(0, σ²I)` — the hit rate of
+random guessing at margin `m`. Perturbing Qwen2.5 across 0.5B–32B with σ =
+1e-3, the fraction of perturbations matching or exceeding base accuracy on
+GSM8K goes from 0% at 0.5B to 64% at 32B, and the trend holds at several
+margins. The paper's name for the high-density regime is the **thicket**, in
+contrast to the **needle in a haystack** regime small and untrained models
+are in.
+
+**The perturbations are specialists, not generalists.** Over 500
+perturbations and seven tasks in four domains, a "spectral discordance"
+statistic over the task-ranking correlation matrix increases with model size:
+the perturbation that most improves one task tends to hurt others, and a PCA
+of the per-seed performance vectors separates into clusters with
+complementary strengths. This is the finding that makes *ensembling* the
+right thing to do with the sampled population rather than picking one.
+
+**The effect reproduces in a setting with no language in it.** An MLP
+next-value predictor pretrained on a mixture of 1D signal families
+(sinusoidal, linear, harmonic, sigmoidal, sawtooth, square) shows all three
+regimes: no pretraining gives needle-in-a-haystack, pretraining on the
+mixture gives a thicket, and pretraining on linear signals alone gives a
+*plateau* where the base model is already at ceiling and guessing buys
+nothing. **Variety in pretraining, not merely quantity, is what the minimal
+setting says produces the thicket.**
+
+**RandOpt: one parallel step instead of hundreds of sequential ones.** Sample
+N seeds, assign each a noise scale from `Σ = {1,2,3}e-3`, score all N
+perturbed models on a small held-out set (~200 samples), keep the top K, and
+majority-vote their answers at test time. N=5000, K=50 throughout. Matched on
+total training FLOPs against GRPO (200 iterations), PPO (600) and ES (30
+population × 167 steps), it wins or ties most cells of the seven-task table
+across Qwen2.5 0.5B–3B, OLMo3-7B base and instruct, and Llama-3.1-8B-Instruct
+— 85.0% on Countdown with OLMo3-7B-Instruct against 71.0% for ES and 68.5%
+for GRPO; 87.1% on GSM8K with Qwen2.5-3B-Instruct against 83.2% for GRPO. On
+200 GH200s, OLMo3-7B reaches 70% on Countdown in **3.2 minutes**.
+
+**It stops working below about 1.5B, and from scratch it never works.**
+RandOpt on GPT-2 at 0.1B does not improve the model; gains appear sharply
+around 1.5B and then shrink again as base accuracy catches up. Applied to
+un-pretrained weights it stays near zero at every scale tested. The method's
+own scaling curve is the density claim's most direct corroboration.
+
+## What the evidence does not cover
+
+**The headline comparison gives RandOpt an ensemble and the RL baselines one
+pass.** The paper is explicit that this "disadvantages the baseline but
+reflects current standard usage", and it runs the fair version too: ES +
+50-way test-time majority vote takes the best or runner-up cell in roughly
+half of Table 4, beating RandOpt on GSM8K, MATH-500 and OlyBench at several
+scales. The paper's own answer to "can ensembling also benefit the
+baselines?" is *yes*, and that the gap between selection methods shrinks as
+training proceeds. **The supported claim is that random guessing is
+competitive, not that it is better** — which is also what the authors claim.
+
+**A large share of the gain is formatting, not reasoning.** Decomposing the
+GSM8K improvement on Qwen2.5-3B-Instruct, a substantial part of what
+RandOpt fixes is answers the base model got right and emitted in a form the
+strict checker rejected. The paper measures this rather than leaving it as an
+objection, and reports that the same is true of GRPO — but "task expert"
+here means *does well on the benchmark*, and the benchmark scores format.
+
+**Scale of the method is not the scale of the measurement.** The density and
+diversity study runs to 32B; every RandOpt post-training result is at 8B or
+below, one model family per data point, on one seven-task suite. Nobody
+outside the authors has run it.
+
+**Majority voting is the whole inference story, and it does not generalise.**
+The paper is direct about it: for writing, molecules or images there is no
+obvious vote, and the one alternative shown — mean-ensembling the denoising
+steps of a diffusion model — is offered as a proof of concept. The
+distillation escape (top-50 → 25k responses → SFT, ~2% of training cost,
+84.3% against the ensemble's 87.1% on GSM8K) reintroduces the sequential
+training the method exists to avoid.
+
+## Standing in the anthology
+
+<!-- inactive-ok-block: SOTA-154, THEORY-tmp38myz — both Proposed. SOTA-154
+     is the practice this paper's ES baseline is a comparison against, named
+     rather than relied on; THEORY-tmp38myz is the explanation filed from
+     this paper in this same change -->
+**The second paper to reach the record's post-training spine from outside
+it, and the first to offer an account of why the outside works.** [LIT-211](LIT-211.md)
+showed that evolution strategies beat PPO and GRPO at billion scale;
+[SOTA-154](../practices.d/SOTA-154.md) is the practice drawn from it. This paper runs ES as one of its own
+baselines, which makes it the first independent evaluation of that line in
+the record — and it goes further by asking what property of a pretrained
+model makes gradient-free search viable at all. The answer, filed as
+[THEORY-tmp38myz](../theory.d/THEORY-tmp38myz.md), is the density and diversity of task experts near the pretrained
+weights.
+
+<!-- inactive-ok-block: THEORY-002 — Proposed, and this paragraph exists to
+     say the two accounts do NOT bear on each other; naming it is the point -->
+The relationship to the lottery-ticket line is worth stating precisely
+because it is easy to overstate. [THEORY-002](../theory.d/THEORY-002.md) is about random *initialization*,
+where good subnetworks are rare, and the paper says its findings are
+"compatible with this view, but suggest a qualitatively different regime
+after pretraining". Neither document corrects the other; they are claims
+about two different starting points, and the thicket claim is what the
+lottery claim becomes once a pretrained representation exists.
+
+<!-- inactive-ok-block: THEORY-005 — Proposed, and named as an adjacent
+     claim nothing in this note rests on; the paragraph's point is that the
+     two have never cited each other -->
+It also sits close to [THEORY-005](../theory.d/THEORY-005.md), from the other side. That says a dense
+feed-forward layer has already partitioned itself into experts by the end of
+pretraining; this says the *weight neighbourhood* of a pretrained model is
+already populated with task experts. Both are claims that pretraining leaves
+structure behind that nobody put there, measured by different instruments,
+and neither cites the other.

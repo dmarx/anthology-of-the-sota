@@ -31,6 +31,7 @@ introduced_by:
 # side.
 compared_against:
 - SOTA-145
+- SOTA-tmpm80i3
 implementations: []
 summary: >-
   Qiu et al. (2025), [LIT-211](../literature.d/LIT-211.md) — evolution strategies over the full
@@ -38,6 +39,8 @@ summary: >-
   impossible. +36.4% over base on average against GRPO's +21.3% and PPO's
   +17.9%, with ES on one fixed hyperparameter set while RL got a sweep per
   experiment. Filed `Proposed`: two tasks, 8B and below, no deployment.
+explained_by:
+- THEORY-tmp38myz
 ---
 
 # SOTA-154: Fine-tune with evolution strategies instead of policy-gradient reinforcement learning

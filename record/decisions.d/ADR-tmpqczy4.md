@@ -80,7 +80,10 @@ exist.
 Add `introduced_by:` to the `SOTA` scheme — `LIT`, optional, many, no converse
 (it crosses schemes, and luria's converses are same-scheme).
 
-    introduced_by = { scheme = "LIT", required = false, many = true }
+    introduced_by:
+      scheme: LIT
+      required: false
+      many: true
 
 `source:` keeps its meaning exactly: **the work that produced evidence about the
 claim**, ordered, first entry primary, `published:` derived from it, [ADR-017](ADR-017.md)'s
@@ -93,7 +96,7 @@ Three things that look like details and are load-bearing:
    recommendation normally also ran the experiment for it. The fields are not a
    partition; they answer different questions about the same citation.
 
-2. **`many = true`, for parallel invention.** The record already holds
+2. **`many: true`, for parallel invention.** The record already holds
    independent arrivals at one design — [LIT-208](../literature.d/LIT-208.md) and [LIT-209](../literature.d/LIT-209.md) reach the same
    layout three months apart, and the curation journal treats that convergence
    as stronger evidence than either alone. An origin field that could hold only
@@ -151,7 +154,7 @@ those. Until then the field is populated where the defect happened to be found,
 which is honest and is not coverage.
 
 What it costs: one more field to reason about when filing, and a real risk that
-it gets filled in reflexively with `source[0]`. The `required = false` is the
+it gets filled in reflexively with `source[0]`. The `required: false` is the
 defence, and the field is worth nothing if a future template starts scaffolding
 it with a placeholder.
 

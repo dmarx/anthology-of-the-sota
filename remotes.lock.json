@@ -563,6 +563,9 @@
     "ARXIV/2506.09985": {
       "title": "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning"
     },
+    "ARXIV/2507.04453": {
+      "title": "ESSA: Evolutionary Strategies for Scalable Alignment"
+    },
     "ARXIV/2507.18071": {
       "title": "Group Sequence Policy Optimization"
     },
@@ -617,6 +620,12 @@
     "ARXIV/2601.18089": {
       "title": "LatentMoE: Toward Optimal Accuracy per FLOP and Parameter in Mixture of Experts"
     },
+    "ARXIV/2601.20861": {
+      "title": "Evolutionary Strategies lead to Catastrophic Forgetting in LLMs"
+    },
+    "ARXIV/2602.01003": {
+      "title": "ESSAM: A Novel Competitive Evolution Strategies Approach to Reinforcement Learning for Memory Efficient LLMs Fine-Tuning"
+    },
     "ARXIV/2603.12228": {
       "title": "Neural Thickets: Diverse Task Experts Are Dense Around Pretrained Weights"
     },
@@ -628,6 +637,9 @@
     },
     "ARXIV/2603.20896": {
       "title": "Beyond the Birkhoff Polytope: Spectral-Sphere-Constrained Hyper-Connections"
+    },
+    "ARXIV/2604.01499": {
+      "title": "Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training"
     },
     "ARXIV/2605.25704": {
       "title": "PowLU: An Activation Function for Stable Pre-Training of LLMs"

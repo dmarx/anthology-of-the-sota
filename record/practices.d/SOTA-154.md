@@ -7,12 +7,15 @@ consensus: contested
 # inactive-ok-block: THEORY-006 — Proposed, and the account that
 # predicts where the dissent's evidence sits; the note is the reconciliation
 consensus_note: >-
-  Four independent groups now report evolution strategies at or ahead of
-  policy-gradient RL (LIT-211, LIT-233, LIT-229 on a recurrent
-  architecture, LIT-230), with LIT-234 carrying the same lab's
-  evidence to 32B against published RL checkpoints; a fifth group
-  (LIT-231) says in its own second sentence that direct ES at LLM scale
-  is ineffective. The trunk — gradient-free search of the full
+  Five independent groups now report evolution strategies at or ahead of
+  policy-gradient RL (LIT-211, LIT-233, LIT-229 on a recurrent architecture,
+  LIT-230, LIT-tmp4w505), with LIT-234 carrying the same lab's evidence to 32B
+  against published RL checkpoints. Two groups disagree: LIT-231 argues direct
+  ES at LLM scale is ineffective, and LIT-tmppbfp5 ran the comparison and did
+  not reproduce the ordering. **Every negative result in this line is at 1.5B
+  or below and every positive is at 1.5B or above**, which is the shape
+  THEORY-006 predicts and is now the most useful thing the disagreement has
+  produced. The trunk — gradient-free search of the full
   parameter space is viable at billion scale — is agreed. The branch in
   dispute is the word "instead": whether it replaces policy-gradient RL or is
   seeded by it. The dissent's models are all at 1.5B or below, which
@@ -53,6 +56,9 @@ source:
 # LIT-211's own lab but carrying the comparison to 32B.
 - LIT-230
 - LIT-234
+# Hoy et al.: a fourth independent group, at 4B, both arms swept, and the
+# paper the drift account in this record's theory scheme is drawn from.
+- LIT-tmp4w505
 introduced_by:
 - LIT-211
 # The evidence AGAINST, required where the record claims there is some
@@ -60,6 +66,9 @@ introduced_by:
 # replace the search space with a gradient-seeded subspace.
 contested_by:
 - LIT-231
+# The failed replication: an independent group ran the comparison, extended it
+# to three further tasks, and found GRPO ahead on all but one. At 1B and 1.5B.
+- LIT-tmppbfp5
 # The comparison the paper actually ran: ES against GRPO, which is SOTA-145.
 # Stated once here, on the practice that ran it; the fixer writes the other
 # side.
@@ -76,8 +85,10 @@ summary: >-
   argue direct ES at LLM scale does not work — on models at 1.5B and below.
 explained_by:
 - THEORY-006
+- THEORY-tmpt76ks
 extended_by:
 - SOTA-212
+- SOTA-tmpdcmgg
 ---
 
 # SOTA-154: Fine-tune with evolution strategies instead of policy-gradient reinforcement learning
@@ -192,6 +203,38 @@ further, and that drift turns out to be functionally sparse — zeroing every
 update below a single-step magnitude threshold preserves the gains — and does
 not produce broad forgetting on held-out tasks ([LIT-230](../literature.d/LIT-230.md)).
 
+## The scale boundary, which is now the clearest thing in the line
+
+Eight papers have compared evolution strategies against policy-gradient RL on
+LLMs. Sorting them by the size of the model tested produces a pattern nobody
+set out to find:
+
+| Finding | Models | Source |
+|---|---|---|
+| GRPO ahead on 3 of 4 tasks | 1B, 1.5B | [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) |
+| Direct ES "highly ineffective" | 0.5B, 1.5B | [LIT-231](../literature.d/LIT-231.md) |
+| ES ahead in most cells | 1.5B–8B | [LIT-233](../literature.d/LIT-233.md) |
+| ES highest peak accuracy, 4 of 4 tasks | 4B | [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) |
+| ES ahead on pass@k | ≤7B | [LIT-230](../literature.d/LIT-230.md) |
+| ES ahead on pass@k | 7B–32B | [LIT-234](../literature.d/LIT-234.md) |
+
+<!-- inactive-ok-block: THEORY-006 — Proposed, and this section is the record’s own cross-paper reading of that account -->
+**Every negative result is at 1.5B or below. Every positive is at 1.5B or
+above.** No paper reports a negative above that line and none reports a clear
+positive below it. That is the boundary [THEORY-006](../theory.d/THEORY-006.md) predicts from the density
+of task-improving perturbations, arrived at independently by six groups none
+of whom were testing it — and it is a stronger corroboration of that account
+than anything in its own `source:`.
+
+Two cautions. The pattern is read across papers that differ in task, baseline
+tuning and ES implementation, so it is suggestive rather than controlled; and
+it is exactly the kind of post-hoc regularity that looks inevitable once
+noticed. What would settle it is one protocol run on both sides of the line,
+which nobody has done.
+
+**The practical form of this is the condition below, and it is now sharp
+rather than hedged: do not expect this practice to hold under about 1.5B.**
+
 ## Conditions, and what is not established
 
 The evidence now spans four model families and, at the top end, **32B** —
@@ -204,8 +247,20 @@ rather than RL runs matched to the ES budget, and they come from
 Still **no released model whose post-training recipe uses it**, which is the
 half of the original promotion condition that remains unmet.
 
-Below about 1.5B the practice should be expected to fail, and the dissent
-above is the evidence that it does.
+Below about 1.5B the practice should be expected to fail, and both dissenting
+papers are the evidence that it does.
+
+**And it has a cost the earlier evidence did not show.** ES post-training
+drifts orders of magnitude further from the base model than GRPO — roughly
+1000× after 500 iterations in [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md), 87–107× across four sequential
+tasks in [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) — and a held-out capability degrades along with it,
+especially in the stretch after the target task has converged.
+<!-- inactive-ok-block: THEORY-tmpt76ks, SOTA-tmpdcmgg — both Proposed, filed
+     in this same change and named as the account of this drift and the
+     condition it puts on running this practice -->
+[THEORY-tmpt76ks](../theory.d/THEORY-tmpt76ks.md) says why the drift is mostly invisible to the training
+objective, and [SOTA-tmpdcmgg](SOTA-tmpdcmgg.md) is what to do about it. Neither retires this
+practice; both are conditions on running it.
 
 `Active` here means the record is willing to assert the recommendation. It
 does not mean the field has settled — `consensus: contested` is carrying that,

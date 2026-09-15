@@ -7,7 +7,7 @@ history:
 - version: 2
   date: '2026-09-13'
   note: >-
-    Attribution split under ADR-tmpqczy4. The recommendation is Child et al.
+    Attribution split under ADR-029. The recommendation is Child et al.
     (2019); Dao et al. is the evidence and the argument this body makes, and
     stays the primary source. Nothing about the claim changed.
 tags:
@@ -17,16 +17,16 @@ source:
 - LIT-074
 # Dao et al. is the evidence and the argument this practice makes; Child et
 # al. is where the recommendation came from, three years earlier and for a
-# different reason (ADR-tmpqczy4).
+# different reason (ADR-029).
 introduced_by:
-- LIT-tmpt0oos
+- LIT-225
 extends:
 - SOTA-086
 summary: >-
   Dao et al. (2022), [LIT-074](../literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135).
 ---
 
-<!-- inactive-ok-file: ADR-tmpqczy4 — Proposed. Every mention here names it as the decision that added `introduced_by:`, which is the field this document uses; the citation is to the reasoning, not a claim the decision is settled -->
+<!-- inactive-ok-file: ADR-029 — Proposed. Every mention here names it as the decision that added `introduced_by:`, which is the field this document uses; the citation is to the reasoning, not a claim the decision is settled -->
 
 # SOTA-087: Recompute attention during backward pass instead of storing it
 
@@ -54,7 +54,7 @@ expensive one.
 
 ## Where the recommendation came from
 
-Child et al. (2019) recommends it three years earlier, in [LIT-tmpt0oos](../literature.d/LIT-tmpt0oos.md) §5.4 —
+Child et al. (2019) recommends it three years earlier, in [LIT-225](../literature.d/LIT-225.md) §5.4 —
 *"we recompute the attention and feed-forward blocks during the backwards
 pass"* — and for a different reason: ordinary activation checkpointing pays
 compute for memory, and attention at long sequence length is where that trade
@@ -63,7 +63,7 @@ of computing them"*. Recomputation alone is what let that paper train networks
 of hundreds of layers at 16,384 context.
 
 So the practice is older than its source, and what FlashAttention changed is
-**the price**, not the instruction. That is the distinction [ADR-tmpqczy4](../decisions.d/ADR-tmpqczy4.md) adds
+**the price**, not the instruction. That is the distinction [ADR-029](../decisions.d/ADR-029.md) adds
 `introduced_by:` to hold: dropping Child et al. would not force a line of this
 body to be rewritten, and would still leave the record dating a 2019
 recommendation to 2022.

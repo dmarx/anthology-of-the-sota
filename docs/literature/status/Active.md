@@ -4,7 +4,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-209 of 224 LIT documents. Back to the [full index](../README.md).
+210 of 225 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -37,7 +37,7 @@
 | [LIT-028](../../../record/literature.d/LIT-028.md) v2 | Scaling Laws for Neural Language Models | Kaplan et al. (2020), [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361). Power-law scaling relationships. | Active |
 | [LIT-030](../../../record/literature.d/LIT-030.md) v2 | GLU Variants Improve Transformer | Shazeer et al. (2020), [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). Study of gating mechanisms. | Active |
 | [LIT-032](../../../record/literature.d/LIT-032.md) v2 | PowerNorm: Rethinking Batch Normalization in Transformers | Shen et al. (2020), [ARXIV-2003.07845](https://arxiv.org/abs/2003.07845). Alternative to LayerNorm. | Active |
-| [LIT-033](../../../record/literature.d/LIT-033.md) v3 | Longformer: The Long-Document Transformer | Beltagy et al. (2020), [ARXIV-2004.05150](https://arxiv.org/abs/2004.05150). Efficient attention for long sequences. | Active |
+| [LIT-033](../../../record/literature.d/LIT-033.md) v4 | Longformer: The Long-Document Transformer | Beltagy et al. (2020), [ARXIV-2004.05150](https://arxiv.org/abs/2004.05150). Efficient attention for long sequences. | Active |
 | [LIT-034](../../../record/literature.d/LIT-034.md) v2 | Don't Stop Pretraining: Adapt Language Models to Domains and Tasks | Gururangan et al. (2020), [ARXIV-2004.10964](https://arxiv.org/abs/2004.10964). Benefits of domain-adaptive pretraining. | Active |
 | [LIT-035](../../../record/literature.d/LIT-035.md) | Language Models are Few-Shot Learners | Brown et al. (2020), [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). Introduces GPT-3. | Active |
 | [LIT-036](../../../record/literature.d/LIT-036.md) v2 | Denoising Diffusion Probabilistic Models | Ho et al. (2020), [ARXIV-2006.11239](https://arxiv.org/abs/2006.11239). Introduces DDPM framework. | Active |
@@ -217,3 +217,4 @@
 | [LIT-222](../../../record/literature.d/LIT-222.md) | CoreWeave Training Benchmarks Whitepaper | CoreWeave (2025). Fits a right-censored exponential survival model to real job durations and interruptions, giving a per-GPU failure rate of 3,748.25 days/failure and an MTTF of 3.66 days at 1,024 GPUs — the quantity a checkpoint interval should be chosen against, and one the record had no source for. | Active |
 | [LIT-223](../../../record/literature.d/LIT-223.md) v2 | How Does Batch Normalization Help Optimization? | Santurkar et al. (2018), [ARXIV-1805.11604](https://arxiv.org/abs/1805.11604). "Distributional stability of layer inputs has little to do with the success of BatchNorm" — what it does instead is make the optimization landscape significantly smoother. | Active |
 | [LIT-224](../../../record/literature.d/LIT-224.md) | Orca: A Distributed Serving System for Transformer-Based Generative Models | Yu et al. (2022), OSDI '22. Introduces **iteration-level scheduling** — schedule at the granularity of one model iteration rather than one request — and **selective batching**. 36.9× throughput over FasterTransformer at equal latency on GPT-3 175B. The origin of what the field calls continuous batching. | Active |
+| [LIT-225](../../../record/literature.d/LIT-225.md) | Generating Long Sequences with Sparse Transformers | Child et al. (2019), [ARXIV-1904.10509](https://arxiv.org/abs/1904.10509). The paper the record's sliding window comes from. Factorizes causal attention into two steps - a local window of the previous l positions and a second head that reaches across windows - giving O(n*sqrt(n)) and, on two of three datasets, a LOWER loss than the dense attention it replaces. | Active |

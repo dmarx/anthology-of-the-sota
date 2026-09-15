@@ -1,5 +1,8 @@
 ---
+number: 208
 status: 'Superseded'
+formerly:
+- SOTA-tmpu69f8
 title: 'Factorize long-sequence attention into a local window and a second head that escapes it'
 version: 1
 superseded_by:
@@ -8,30 +11,30 @@ tags:
 - attention-techniques
 date: '2026-09-13'
 source:
-- LIT-tmpt0oos
+- LIT-225
 # The same paper, in both fields: Child et al. stated the recommendation and
-# ran the experiments for it (ADR-tmpqczy4). Populated here because the
+# ran the experiments for it (ADR-029). Populated here because the
 # distinction is cheap to state at filing time and impossible to recover
 # later.
 introduced_by:
-- LIT-tmpt0oos
+- LIT-225
 implementations:
 - 'GPT-3'
 summary: >-
-  Child et al. (2019), [LIT-tmpt0oos](../literature.d/LIT-tmpt0oos.md) — [ARXIV-1904.10509](https://arxiv.org/abs/1904.10509). Superseded: the field
+  Child et al. (2019), [LIT-225](../literature.d/LIT-225.md) — [ARXIV-1904.10509](https://arxiv.org/abs/1904.10509). Superseded: the field
   went to exact attention made fast ([SOTA-086](SOTA-086.md), [SOTA-087](SOTA-087.md)) and then to sparsity
   that is LEARNED rather than fixed ([SOTA-138](SOTA-138.md)). What survives is the
   connectivity requirement — a window alone is not the design — which every
   hybrid the record recommends is an instance of.
 ---
 
-<!-- inactive-ok-file: ADR-tmpqczy4 — Proposed. Every mention here names it as the decision that added `introduced_by:`, which is the field this document uses; the citation is to the reasoning, not a claim the decision is settled -->
+<!-- inactive-ok-file: ADR-029 — Proposed. Every mention here names it as the decision that added `introduced_by:`, which is the field this document uses; the citation is to the reasoning, not a claim the decision is settled -->
 
-# SOTA-tmpu69f8: Factorize long-sequence attention into a local window and a second head that escapes it
+# SOTA-208: Factorize long-sequence attention into a local window and a second head that escapes it
 
 ## Source
 
-Child et al. (2019), [LIT-tmpt0oos](../literature.d/LIT-tmpt0oos.md) — [ARXIV-1904.10509](https://arxiv.org/abs/1904.10509).
+Child et al. (2019), [LIT-225](../literature.d/LIT-225.md) — [ARXIV-1904.10509](https://arxiv.org/abs/1904.10509).
 
 Split causal attention across `p = 2` heads whose patterns, composed, connect
 every pair of positions within `p + 1` steps. The first head is a **local

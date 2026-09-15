@@ -2,13 +2,18 @@
 
 # Lines of work
 
-9 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+10 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 ## From Language Modeling with Gated Convolutional Networks
 
 - [LIT-199](../record/literature.d/LIT-199.md) — Language Modeling with Gated Convolutional Networks *(Active)*
   - [LIT-030](../record/literature.d/LIT-030.md) — GLU Variants Improve Transformer *(Active)*
     - [LIT-200](../record/literature.d/LIT-200.md) — PowLU: An Activation Function for Stable Pre-Training of LLMs *(Active)*
+
+## From Longformer: The Long-Document Transformer
+
+- alongside: [LIT-033](../record/literature.d/LIT-033.md) — Longformer: The Long-Document Transformer *(Active)*
+- alongside: [LIT-225](../record/literature.d/LIT-225.md) — Generating Long Sequences with Sparse Transformers *(Active)*
 
 ## From RoFormer: Enhanced Transformer with Rotary Position Embedding
 

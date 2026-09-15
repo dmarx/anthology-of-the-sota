@@ -4,7 +4,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-149 of 207 SOTA documents. Back to the [full index](../README.md).
+149 of 208 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -57,7 +57,7 @@
 | [SOTA-057](../../../record/practices.d/SOTA-057.md) | Implement multi-level checkpoint strategy | Mohan et al. (2021), [LIT-059](../../../record/literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan. | Active |
 | [SOTA-058](../../../record/practices.d/SOTA-058.md) | Use sequence parallelism for attention layers | Narayanan et al. (2021), [LIT-043](../../../record/literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). | Active |
 | [SOTA-059](../../../record/practices.d/SOTA-059.md) | Overlap communication with computation when possible | Narayanan et al. (2021), [LIT-043](../../../record/literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). | Active |
-| [SOTA-060](../../../record/practices.d/SOTA-060.md) | Initialize layer norms with smaller variance (0.02) for stability | Narayanan et al. (2021), [LIT-043](../../../record/literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). | Active |
+| [SOTA-060](../../../record/practices.d/SOTA-060.md) v2 | Initialize layer norms with smaller variance (0.02) for stability | Narayanan et al. (2021), [LIT-043](../../../record/literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). | Active |
 | [SOTA-061](../../../record/practices.d/SOTA-061.md) | Use largest batch that maintains >80% sample efficiency | Fedus et al. (2021), [LIT-061](../../../record/literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684). | Active |
 | [SOTA-062](../../../record/practices.d/SOTA-062.md) | Scale batch size with model size but sub-linearly | Fedus et al. (2021), [LIT-061](../../../record/literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684). | Active |
 | [SOTA-063](../../../record/practices.d/SOTA-063.md) v3 | use RoPE for LLM (1D sequence) positional embeddings | Su et al. (2021), [LIT-045](../../../record/literature.d/LIT-045.md) — [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864). | Active |
@@ -76,7 +76,7 @@
 | [SOTA-084](../../../record/practices.d/SOTA-084.md) | Profile-guided optimization for hot paths | Chen et al. (2018), [LIT-063](../../../record/literature.d/LIT-063.md) — [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799). | Active |
 | [SOTA-085](../../../record/practices.d/SOTA-085.md) | Use flash attention for all attention computations when hardware supports it | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
 | [SOTA-086](../../../record/practices.d/SOTA-086.md) v3 | Tiling size should match hardware SRAM size | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
-| [SOTA-087](../../../record/practices.d/SOTA-087.md) | Recompute attention during backward pass instead of storing it | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
+| [SOTA-087](../../../record/practices.d/SOTA-087.md) v2 | Recompute attention during backward pass instead of storing it | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
 | [SOTA-088](../../../record/practices.d/SOTA-088.md) | Fuse small operations into larger kernels | Ivanov et al. (2020), [LIT-066](../../../record/literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). | Active |
 | [SOTA-089](../../../record/practices.d/SOTA-089.md) | Align tensor dimensions to hardware boundaries | Ivanov et al. (2020), [LIT-066](../../../record/literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). | Active |
 | [SOTA-090](../../../record/practices.d/SOTA-090.md) | Use hardware-specific memory layouts | Ivanov et al. (2020), [LIT-066](../../../record/literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). | Active |

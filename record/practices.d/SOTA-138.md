@@ -53,11 +53,11 @@ overhead.
 
 ## Sequence
 
-<!-- inactive-ok-block: SOTA-tmpu69f8 — Superseded by this practice, and named here as the first step of the line it supersedes -->
+<!-- inactive-ok-block: SOTA-208 — Superseded by this practice, and named here as the first step of the line it supersedes -->
 
-Child et al. ([LIT-tmpt0oos](../literature.d/LIT-tmpt0oos.md), April 2019): the pattern FIXED in the architecture
+Child et al. ([LIT-225](../literature.d/LIT-225.md), April 2019): the pattern FIXED in the architecture
 and chosen by inspecting the data — a local window plus a strided or block-
-summary escape, [SOTA-tmpu69f8](SOTA-tmpu69f8.md), which this supersedes. Its enwik8 result, where
+summary escape, [SOTA-208](SOTA-208.md), which this supersedes. Its enwik8 result, where
 the wrong hand-chosen escape lost to dense attention outright, is the argument
 for learning the pattern instead → NSA ([LIT-143](../literature.d/LIT-143.md), February 2025): compression, selection and a sliding window,
 trained from scratch → DSA (this practice, December 2025): one learned

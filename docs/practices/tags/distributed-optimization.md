@@ -4,7 +4,7 @@
 
 **Distributed optimization** — parallelism and sharding, communication, memory management, checkpointing.
 
-29 of 207 SOTA documents. Back to the [full index](../README.md).
+29 of 208 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -25,7 +25,7 @@
 | [SOTA-057](../../../record/practices.d/SOTA-057.md) | Implement multi-level checkpoint strategy | Mohan et al. (2021), [LIT-059](../../../record/literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan. | Active |
 | [SOTA-058](../../../record/practices.d/SOTA-058.md) | Use sequence parallelism for attention layers | Narayanan et al. (2021), [LIT-043](../../../record/literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). | Active |
 | [SOTA-059](../../../record/practices.d/SOTA-059.md) | Overlap communication with computation when possible | Narayanan et al. (2021), [LIT-043](../../../record/literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). | Active |
-| [SOTA-060](../../../record/practices.d/SOTA-060.md) | Initialize layer norms with smaller variance (0.02) for stability | Narayanan et al. (2021), [LIT-043](../../../record/literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). | Active |
+| [SOTA-060](../../../record/practices.d/SOTA-060.md) v2 | Initialize layer norms with smaller variance (0.02) for stability | Narayanan et al. (2021), [LIT-043](../../../record/literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). | Active |
 | [SOTA-073](../../../record/practices.d/SOTA-073.md) | Monitor network utilization during training | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Rejected — states no signal, threshold or action, so there is nothing to do differently on reading it, and LIT-051 does not argue for it. The specific version worth having is in SOTA-048's body: the gap between achieved and peak bandwidth during the overlap window tells you the fusion buffer is sized wrong |
 | [SOTA-074](../../../record/practices.d/SOTA-074.md) | Adapt buffer sizes to network conditions | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Rejected — names a controller — signal, target, update rule — of which none is stated, and no source here describes one. A measured version would resemble what CheckFreq does for checkpoint intervals (SOTA-054) |
 | [SOTA-075](../../../record/practices.d/SOTA-075.md) | Use gradient compression for slow networks | Lin et al. (2017), [LIT-056](../../../record/literature.d/LIT-056.md) — [ARXIV-1712.01887](https://arxiv.org/abs/1712.01887). | Active |

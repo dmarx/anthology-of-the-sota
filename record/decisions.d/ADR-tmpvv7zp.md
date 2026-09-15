@@ -165,11 +165,22 @@ bundled into the scheme that makes it possible. [SOTA-010](../practices.d/SOTA-0
 clearest candidates; both are sourced to [LIT-014](../literature.d/LIT-014.md) and both are readings of a
 figure.
 
-**The scheme starts with four documents and five statuses, which is a bet.**
+**The scheme starts with five documents and five statuses, which is a bet.**
 The honest version of [DP-002](../../docs/design-principles.md#dp-2)'s warning applies to schemes as well as fields:
 if a year from now `THEORY` holds a handful of documents filed in this
 contribution and nothing since, then explanations did not in fact need a home
 of their own and this was a folder.
+
+<!-- inactive-ok-block: THEORY-tmptabiw — Proposed, and named for HOW it came
+     to be filed rather than for what it claims; whether the account holds is
+     its own promotion condition's business, not this decision's. -->
+The fifth is the first one that was not reconstructed. [THEORY-tmptabiw](../theory.d/THEORY-tmptabiw.md) —
+dense feed-forward layers already being mixtures of experts — was filed
+because someone asked whether the lottery-ticket documents had anything to do
+with the record's mixture-of-experts practices. They did, and the answer was
+a claim about why those practices work: a `THEORY`, and not a document this
+record could previously hold. That is weak evidence and it is the right kind,
+because the scheme was reached for by a question rather than by its author.
 
 This decision is therefore filed `Proposed`, with a condition for promotion:
 
@@ -186,10 +197,12 @@ than a count, because a count of documents is satisfiable by filing
 documents.
 
 **`docs/theory/` joins the generated views**, and the practice pages gain an
-`explained_by:` line where one exists — which is two practices today, [SOTA-006](../practices.d/SOTA-006.md)
-and [SOTA-020](../practices.d/SOTA-020.md). Both are batch-normalization practices, and in both cases what
-the link adds is the correction: the reason in the practice's own source is
-not the reason the record believes.
+`explained_by:` line where one exists — four practices today. On [SOTA-006](../practices.d/SOTA-006.md)
+and [SOTA-020](../practices.d/SOTA-020.md), both batch-normalization practices, what the link adds is a
+correction: the reason in the practice's own source is not the reason the
+record believes. On [SOTA-149](../practices.d/SOTA-149.md) and [SOTA-150](../practices.d/SOTA-150.md) it adds the thing a practice
+registry is usually missing — an argument for why the recommendation works,
+as distinct from the argument for why you would want it to.
 
 **A fourth answer to "what does this status mean" now exists**, after
 practices, papers and readings. That is not obviously a good thing, and it is

@@ -4,7 +4,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-45 of 209 SOTA documents. Back to the [full index](../README.md).
+46 of 212 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -53,3 +53,4 @@
 | [SOTA-198](../../../record/practices.d/SOTA-198.md) | Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run |  | Active |
 | [SOTA-202](../../../record/practices.d/SOTA-202.md) | Clamp the prediction to the training range at every step when sampling from a model's own output |  | Active |
 | [SOTA-204](../../../record/practices.d/SOTA-204.md) | Anneal a discretisation from coarse to fine over training rather than fixing it | Song et al. (2023), [LIT-093](../../../record/literature.d/LIT-093.md). Where a training loss approximates a continuous target through a step count, that count is a bias/variance dial: few steps give a biased but low-variance target early, many steps a faithful but noisy one later. | Proposed |
+| [SOTA-211](../../../record/practices.d/SOTA-211.md) | Spend one fitness evaluation per evolution-strategies direction, not an antithetic pair | Kaya and Hashemi (2026), [LIT-232](../../../record/literature.d/LIT-232.md), and Ba et al. (2026), [LIT-230](../../../record/literature.d/LIT-230.md) — the antithetic pair's variance reduction depends on both evaluations sharing randomness, which autoregressive regeneration breaks. Replace the pair with a leave-one-out baseline computed from the population mean the score centering already needs: same expected update, one evaluation per direction, twice as many directions per budget, and half the estimator MSE in transformer blocks. | Proposed |

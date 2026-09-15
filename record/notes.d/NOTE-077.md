@@ -1,6 +1,9 @@
 ---
+number: 77
 status: Read
-paper: LIT-tmpiq6kc
+formerly:
+- NOTE-tmpbyaoe
+paper: LIT-234
 title: 'Beyond the Best Guess'
 version: 1
 tags:
@@ -13,7 +16,7 @@ summary: >-
   or scale tested, up to 32B against published RL checkpoints.
 ---
 
-# NOTE-tmpbyaoe: Beyond the Best Guess
+# NOTE-077: Beyond the Best Guess
 
 ## Contribution
 
@@ -118,7 +121,7 @@ et al.'s. Lineage is on the LIT.
 
 - **R1** — Report pass@k, not only pass@1, and use the unbiased estimator.
   *Topic:* evaluation. *Status:* standard. *Strength:* strong. Filed as
-  [SOTA-tmpazu80](../practices.d/SOTA-tmpazu80.md).
+  [SOTA-210](../practices.d/SOTA-210.md).
 - **R2** — Count progressions and regressions separately rather than netting
   them into an accuracy delta. *Topic:* evaluation. *Strength:* strong, and
   cheap to adopt.
@@ -131,8 +134,8 @@ et al.'s. Lineage is on the LIT.
 
 ## Bearing on the record
 
-Filed as [LIT-tmpiq6kc](../literature.d/LIT-tmpiq6kc.md), `extends:` [LIT-211](../literature.d/LIT-211.md). It is `introduced_by:` on
-[SOTA-tmpazu80](../practices.d/SOTA-tmpazu80.md) — it states the recommendation, where [LIT-tmp81or2](../literature.d/LIT-tmp81or2.md) supplies
+Filed as [LIT-234](../literature.d/LIT-234.md), `extends:` [LIT-211](../literature.d/LIT-211.md). It is `introduced_by:` on
+[SOTA-210](../practices.d/SOTA-210.md) — it states the recommendation, where [LIT-230](../literature.d/LIT-230.md) supplies
 the controlled comparison and the entropy mechanism.
 
 <!-- inactive-ok-block: SOTA-129 is Active and named as the recipe stage this
@@ -140,7 +143,7 @@ the controlled comparison and the entropy mechanism.
 **What it does to [SOTA-129](../practices.d/SOTA-129.md).** That practice makes RLVR the third stage of
 the reasoning recipe. Nothing here says the stage should go; what it says is
 that the stage has a cost nobody was reporting, and that the cost is paid in
-solution coverage. [SOTA-tmpazu80](../practices.d/SOTA-tmpazu80.md) is where that lands.
+solution coverage. [SOTA-210](../practices.d/SOTA-210.md) is where that lands.
 
 <!-- inactive-ok-block: SOTA-154 is Active; this paragraph is about what does
      NOT count toward its promotion condition -->
@@ -150,7 +153,7 @@ paper's method. The promotion condition excluded "further results from the
 same group" and this is exactly that. It extends the *scale* of the evidence
 to 32B, which the practice's conditions section now reflects, and it is not a
 second group. The independent corroboration of the coverage claim is
-[LIT-tmp81or2](../literature.d/LIT-tmp81or2.md).
+[LIT-230](../literature.d/LIT-230.md).
 
 ## Limitations
 
@@ -162,7 +165,7 @@ from one lab running one implementation.
 
 ## Open questions
 
-- **Does an independent group see the same curves at 32B?** [LIT-tmp81or2](../literature.d/LIT-tmp81or2.md)
+- **Does an independent group see the same curves at 32B?** [LIT-230](../literature.d/LIT-230.md)
   replicates the shape but stops at 7B.
 - **Is coverage preservation a property of ES, or of any method that does not
   optimize pass@1 directly?** What would close it: the same histogram analysis

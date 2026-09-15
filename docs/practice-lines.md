@@ -217,7 +217,8 @@
 
 - [SOTA-145](../record/practices.d/SOTA-145.md) — Estimate the RL baseline from a group of samples for the same prompt instead of training a critic *(Active, converged)*
   - [SOTA-146](../record/practices.d/SOTA-146.md) — Correct the GRPO objective before running it — the published form has three independently identified defects *(Proposed, emerging)*
-- alongside: [SOTA-154](../record/practices.d/SOTA-154.md) — Fine-tune with evolution strategies instead of policy-gradient reinforcement learning *(Proposed, unreplicated)*
+- [SOTA-154](../record/practices.d/SOTA-154.md) — Fine-tune with evolution strategies instead of policy-gradient reinforcement learning *(Active, contested)*
+  - [SOTA-212](../record/practices.d/SOTA-212.md) — Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them *(Proposed, unreplicated)*
 
 ## From Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound
 

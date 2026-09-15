@@ -4,9 +4,10 @@
 
 **Offered** — stated and plausible, on evidence that is suggestive rather than settling — the document says what would settle it.
 
-2 of 5 THEORY documents. Back to the [full index](../README.md).
+3 of 6 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [THEORY-002](../../../record/theory.d/THEORY-002.md) | A dense network contains a sparse subnetwork that matches its accuracy when trained from the same initialization | Frankle and Carbin (2018), [LIT-019](../../../record/literature.d/LIT-019.md) — the lottery ticket hypothesis. A randomly-initialized dense network contains a subnetwork that, trained alone from the same initial values, matches the full network in at most the same number of steps. The reset is the claim; the same structure re-initialized randomly does not do it. | Proposed |
 | [THEORY-005](../../../record/theory.d/THEORY-005.md) | Dense feed-forward layers are already mixtures of experts, and pre-training settles the partition before the neurons | Zhang et al. (2021, 2023), [LIT-226](../../../record/literature.d/LIT-226.md) and [LIT-228](../../../record/literature.d/LIT-228.md) — a trained dense FFN uses a tiny fraction of its neurons per input, the co-activating neurons partition into functional experts that can be recovered post hoc with the same parameters, and through pre-training the partition stabilizes earlier than the neurons in it. A mixture of experts makes explicit a structure dense training arrives at anyway. | Proposed |
+| [THEORY-006](../../../record/theory.d/THEORY-006.md) | Task-improving weight perturbations are dense around pretrained weights, and denser the larger the model | Gan and Isola (2026), [LIT-233](../../../record/literature.d/LIT-233.md), with a prediction of it independently confirmed by [LIT-230](../../../record/literature.d/LIT-230.md) — the fraction of random Gaussian weight perturbations that improve a downstream task rises monotonically with model scale, from 0% at 0.5B to 64% at 32B on GSM8K, and the perturbations that help are task specialists rather than uniform improvements. It is the record's account of why gradient-free post-training works at all, measured on one model family by one group. | Proposed |

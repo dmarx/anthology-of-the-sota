@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-5 of 74 NOTE documents. Back to the [full index](../README.md).
+7 of 80 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -13,3 +13,5 @@
 | [NOTE-057](../../../record/notes.d/NOTE-057.md) | What Makes for Good Views for Contrastive Learning? | Argues for an InfoMin principle: views should share as little mutual information as possible while keeping task-relevant information intact. Too much shared information makes the contrastive task trivial, too little destroys the signal, so there is a sweet spot — and augmentation design is the search for it. | Read |
 | [NOTE-061](../../../record/notes.d/NOTE-061.md) | Pruned Neural Networks are Surprisingly Modular | Imports modularity from graph clustering — a module is neurons with strong internal and weak external connectivity — and measures it by spectral clustering on MLP weights. Trained and pruned networks are more modular than random ones, and than random networks with the same sparse weight distribution, which is the control that makes the result mean something. | Read |
 | [NOTE-070](../../../record/notes.d/NOTE-070.md) | Understanding Contrastive Learning Requires Incorporating Inductive Biases | Shows that theoretical guarantees for contrastive learning that depend only on the augmentations and the loss value cannot explain why it works, and are provably vacuous in some settings. Different function classes and algorithms behave very differently downstream given identical augmentations and identical contrastive loss. | Read |
+| [NOTE-076](../../../record/notes.d/NOTE-076.md) | Understanding Evolution Strategies for LLM Reasoning | Three questions about what ES post-training does rather than whether it wins: it raises pass@1 and pass@k together where GRPO trades one for the other, its 40x larger parameter drift is functionally sparse and does not produce broad forgetting, and the population size needed for stable training falls as the model grows. | Read |
+| [NOTE-078](../../../record/notes.d/NOTE-078.md) | Neural Thickets | The neighbourhood of a pretrained weight vector is dense with task-improving Gaussian perturbations, the density rises monotonically with model scale, and the perturbations that help are specialists rather than uniform improvements — which together are why a single parallel round of random guessing plus majority voting can match PPO, GRPO and ES at equal training FLOPs. | Read |

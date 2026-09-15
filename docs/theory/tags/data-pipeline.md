@@ -4,7 +4,7 @@
 
 **Data pipeline** — loading, quality assessment and selection, preprocessing, batch preparation.
 
-0 of 5 THEORY documents. Back to the [full index](../README.md).
+0 of 6 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

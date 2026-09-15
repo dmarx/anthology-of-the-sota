@@ -1,6 +1,9 @@
 ---
+number: 78
 status: Read
-paper: LIT-tmphm6g2
+formerly:
+- NOTE-tmpjskyc
+paper: LIT-233
 title: 'Neural Thickets'
 version: 1
 tags:
@@ -15,7 +18,7 @@ summary: >-
   FLOPs.
 ---
 
-# NOTE-tmpjskyc: Neural Thickets
+# NOTE-078: Neural Thickets
 
 ## Contribution
 
@@ -195,11 +198,11 @@ the LIT.
 
 ## Bearing on the record
 
-<!-- inactive-ok-block: THEORY-tmp38myz, SOTA-tmpm80i3 — both Proposed, both
+<!-- inactive-ok-block: THEORY-006, SOTA-212 — both Proposed, both
      filed from this reading in this same change; this paragraph is the
      record of that filing, not a reliance on either -->
-**Two documents filed from this reading.** [THEORY-tmp38myz](../theory.d/THEORY-tmp38myz.md) carries the
-density-and-diversity claim, `Proposed`, and [SOTA-tmpm80i3](../practices.d/SOTA-tmpm80i3.md) carries the
+**Two documents filed from this reading.** [THEORY-006](../theory.d/THEORY-006.md) carries the
+density-and-diversity claim, `Proposed`, and [SOTA-212](../practices.d/SOTA-212.md) carries the
 method, `Proposed` and `unreplicated`.
 
 **It replicates [SOTA-154](../practices.d/SOTA-154.md), and that is what promoted it.** That practice
@@ -215,12 +218,12 @@ harder than the method, in a paper arguing for something else, is the
 cleanest form of the evidence `promote_when` was asking for; the first draft
 of this note called it "the weaker of the two" and was wrong.
 
-<!-- inactive-ok-block: SOTA-154, THEORY-tmp38myz — both Proposed; the
+<!-- inactive-ok-block: SOTA-154, THEORY-006 — both Proposed; the
      paragraph says the explanation this reading files is the one that
      practice lacked, which is a claim about both documents' standing -->
 **It supplies the explanation [SOTA-154](../practices.d/SOTA-154.md) never had.** Nothing in the record
 said why a gradient-free method should find anything in a billion dimensions.
-[THEORY-tmp38myz](../theory.d/THEORY-tmp38myz.md) now does, and predicts where it stops.
+[THEORY-006](../theory.d/THEORY-006.md) now does, and predicts where it stops.
 
 **R2 above is the one thing here the record has no home for.** The anthology
 carries evaluation practices — reporting zero-shot and in-distribution

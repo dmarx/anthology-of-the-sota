@@ -4,7 +4,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-22 of 209 SOTA documents. Back to the [full index](../README.md).
+24 of 212 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -30,3 +30,5 @@
 | [SOTA-200](../../../record/practices.d/SOTA-200.md) | Check whether an emergent capability is a metric artefact before believing it |  | Active |
 | [SOTA-201](../../../record/practices.d/SOTA-201.md) | Give each pretrained component its own learning rate when fine-tuning a composite model |  | Active |
 | [SOTA-206](../../../record/practices.d/SOTA-206.md) | Keep a multi-step sampling option in a few-step generative model | Song et al. (2023), [LIT-093](../../../record/literature.d/LIT-093.md). A one-step model that cannot spend more compute has no quality dial: whatever it produces is what you get. Consistency models trade compute for quality at inference without retraining, and that property is worth preserving by design. | Active |
+| [SOTA-210](../../../record/practices.d/SOTA-210.md) | Report pass@k as well as pass@1 after post-training: reinforcement learning raises one and lowers the other | Ba et al. and Hayes et al. (2026), [LIT-230](../../../record/literature.d/LIT-230.md) and [LIT-234](../../../record/literature.d/LIT-234.md). GRPO finishes below its own base model on pass@16 and pass@32 in 15 of 18 comparisons while improving pass@1; across Qwen2.5, Qwen3 and published RL checkpoints up to 32B the base model overtakes the RL checkpoint at large k. A post-training result reported at pass@1 alone cannot distinguish a model that learned something from one that stopped trying anything else. | Active |
+| [SOTA-211](../../../record/practices.d/SOTA-211.md) | Spend one fitness evaluation per evolution-strategies direction, not an antithetic pair | Kaya and Hashemi (2026), [LIT-232](../../../record/literature.d/LIT-232.md), and Ba et al. (2026), [LIT-230](../../../record/literature.d/LIT-230.md) — the antithetic pair's variance reduction depends on both evaluations sharing randomness, which autoregressive regeneration breaks. Replace the pair with a leave-one-out baseline computed from the population mean the score centering already needs: same expected update, one evaluation per direction, twice as many directions per budget, and half the estimator MSE in transformer blocks. | Proposed |

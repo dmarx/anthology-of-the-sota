@@ -6,6 +6,9 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [15 Sep 18:40 — Reading the ES line properly, and what the full readings moved](2026-09.md#reading-the-es-line-properly-and-what-the-full-readings-moved)
+- [15 Sep 18:06 — A replication that arrived as a baseline, and a dissent measured below the threshold](2026-09.md#a-replication-that-arrived-as-a-baseline-and-a-dissent-measured-below-the-threshold)
+- [15 Sep 17:40 — The second gradient-free post-training paper, and the first account of why the paradigm works](2026-09.md#the-second-gradient-free-post-training-paper-and-the-first-account-of-why-the-paradigm-works)
 - [15 Sep 07:09 — Two notes that said, in their own words, that they had nowhere to go](2026-09.md#two-notes-that-said-in-their-own-words-that-they-had-nowhere-to-go)
 - [13 Sep 20:20 — source: is holding at least three relations, and fourteen practices rest on adoption alone](2026-09.md#source-is-holding-at-least-three-relations-and-fourteen-practices-rest-on-adoption-alone)
 - [13 Sep 18:02 — The sliding window had seven downstream notes and no origin](2026-09.md#the-sliding-window-had-seven-downstream-notes-and-no-origin)
@@ -61,9 +64,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-54 entries across 2 books, newest first.
+57 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 52 | 2026-09-05 | 2026-09-15 |
+| [2026-09](2026-09.md) | 55 | 2026-09-05 | 2026-09-15 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

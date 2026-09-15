@@ -7,7 +7,7 @@ Chains asserting an invariant: `practice` on `primary_topic`, `lineage` on `prim
 
 A relation is an assertion that the documents it joins have something in common. Where no value in the named field is held by both, the record has made the assertion and not said what it means — usually a sign the vocabulary is short a word rather than that the relation is wrong.
 
-**26 unbound relations.** Two documents joined directly, sharing nothing.
+**32 unbound relations.** Two documents joined directly, sharing nothing.
 
 | Chain | Field | Documents | Held |
 |---|---|---|---|
@@ -33,10 +33,16 @@ A relation is an assertion that the documents it joins have something in common.
 | lineage | `primary_topic` | [LIT-045](../../record/literature.d/LIT-045.md) ↔ [LIT-210](../../record/literature.d/LIT-210.md) | model-architecture / attention-techniques |
 | lineage | `primary_topic` | [LIT-048](../../record/literature.d/LIT-048.md) ↔ [LIT-207](../../record/literature.d/LIT-207.md) | model-architecture / attention-techniques |
 | lineage | `primary_topic` | [LIT-127](../../record/literature.d/LIT-127.md) ↔ [LIT-211](../../record/literature.d/LIT-211.md) | adaptation-and-tuning / training-optimization |
+| lineage | `primary_topic` | [LIT-127](../../record/literature.d/LIT-127.md) ↔ [LIT-230](../../record/literature.d/LIT-230.md) | adaptation-and-tuning / analysis-and-evaluation |
+| lineage | `primary_topic` | [LIT-127](../../record/literature.d/LIT-127.md) ↔ [LIT-233](../../record/literature.d/LIT-233.md) | adaptation-and-tuning / analysis-and-evaluation |
 | lineage | `primary_topic` | [LIT-137](../../record/literature.d/LIT-137.md) ↔ [LIT-162](../../record/literature.d/LIT-162.md) | attention-techniques / model-architecture |
 | lineage | `primary_topic` | [LIT-170](../../record/literature.d/LIT-170.md) ↔ [LIT-187](../../record/literature.d/LIT-187.md) | model-architecture / distributed-optimization |
 | lineage | `primary_topic` | [LIT-187](../../record/literature.d/LIT-187.md) ↔ [LIT-188](../../record/literature.d/LIT-188.md) | distributed-optimization / model-architecture |
 | lineage | `primary_topic` | [LIT-187](../../record/literature.d/LIT-187.md) ↔ [LIT-189](../../record/literature.d/LIT-189.md) | distributed-optimization / model-architecture |
+| lineage | `primary_topic` | [LIT-211](../../record/literature.d/LIT-211.md) ↔ [LIT-230](../../record/literature.d/LIT-230.md) | training-optimization / analysis-and-evaluation |
+| lineage | `primary_topic` | [LIT-211](../../record/literature.d/LIT-211.md) ↔ [LIT-231](../../record/literature.d/LIT-231.md) | training-optimization / adaptation-and-tuning |
+| lineage | `primary_topic` | [LIT-211](../../record/literature.d/LIT-211.md) ↔ [LIT-233](../../record/literature.d/LIT-233.md) | training-optimization / analysis-and-evaluation |
+| lineage | `primary_topic` | [LIT-211](../../record/literature.d/LIT-211.md) ↔ [LIT-234](../../record/literature.d/LIT-234.md) | training-optimization / adaptation-and-tuning |
 
 **16 unbound lines.** A whole sequence with no value common to every member — which can happen while every single step is expressed, because a component's intersection only shrinks as the component grows. The weaker signal of the two, and the one to read whole before acting on.
 
@@ -55,6 +61,6 @@ A relation is an assertion that the documents it joins have something in common.
 | practice | `primary_topic` | [SOTA-086](../../record/practices.d/SOTA-086.md), [SOTA-087](../../record/practices.d/SOTA-087.md), [SOTA-089](../../record/practices.d/SOTA-089.md), [SOTA-107](../../record/practices.d/SOTA-107.md), [SOTA-108](../../record/practices.d/SOTA-108.md) |
 | lineage | `primary_topic` | [LIT-030](../../record/literature.d/LIT-030.md), [LIT-199](../../record/literature.d/LIT-199.md), [LIT-200](../../record/literature.d/LIT-200.md) |
 | lineage | `primary_topic` | [LIT-045](../../record/literature.d/LIT-045.md), [LIT-048](../../record/literature.d/LIT-048.md), [LIT-192](../../record/literature.d/LIT-192.md), [LIT-193](../../record/literature.d/LIT-193.md), [LIT-207](../../record/literature.d/LIT-207.md), [LIT-208](../../record/literature.d/LIT-208.md), [LIT-209](../../record/literature.d/LIT-209.md), [LIT-210](../../record/literature.d/LIT-210.md) |
-| lineage | `primary_topic` | [LIT-127](../../record/literature.d/LIT-127.md), [LIT-211](../../record/literature.d/LIT-211.md) |
+| lineage | `primary_topic` | [LIT-127](../../record/literature.d/LIT-127.md), [LIT-211](../../record/literature.d/LIT-211.md), [LIT-229](../../record/literature.d/LIT-229.md), [LIT-230](../../record/literature.d/LIT-230.md), [LIT-231](../../record/literature.d/LIT-231.md), [LIT-232](../../record/literature.d/LIT-232.md), [LIT-233](../../record/literature.d/LIT-233.md), [LIT-234](../../record/literature.d/LIT-234.md) |
 | lineage | `primary_topic` | [LIT-133](../../record/literature.d/LIT-133.md), [LIT-137](../../record/literature.d/LIT-137.md), [LIT-161](../../record/literature.d/LIT-161.md), [LIT-162](../../record/literature.d/LIT-162.md), [LIT-165](../../record/literature.d/LIT-165.md), [LIT-195](../../record/literature.d/LIT-195.md) |
 | lineage | `primary_topic` | [LIT-170](../../record/literature.d/LIT-170.md), [LIT-187](../../record/literature.d/LIT-187.md), [LIT-188](../../record/literature.d/LIT-188.md), [LIT-189](../../record/literature.d/LIT-189.md) |

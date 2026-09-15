@@ -26,10 +26,16 @@
   - [LIT-209](../record/literature.d/LIT-209.md) — SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling *(Active)*
 - alongside: [LIT-048](../record/literature.d/LIT-048.md) — Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation *(Active)*
 
-## From DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models
+## From Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning
 
+- [LIT-211](../record/literature.d/LIT-211.md) — Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning *(Active)*
+  - [LIT-229](../record/literature.d/LIT-229.md) — Evolution Strategies at the Hyperscale *(Active)*
+    - [LIT-232](../record/literature.d/LIT-232.md) — EGGROLL, Unrolled: Understanding and Improving Low-Rank Evolution Strategies at Scale *(Active)*
+  - [LIT-231](../record/literature.d/LIT-231.md) — Hyper-ES: Effective Evolution Strategies for LLM Reasoning via Descent Direction Merging *(Active)*
+  - [LIT-234](../record/literature.d/LIT-234.md) — Beyond the Best Guess: Improving LLM Solution Coverage with Evolution Strategies *(Active)*
 - alongside: [LIT-127](../record/literature.d/LIT-127.md) — DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models *(Active)*
-- alongside: [LIT-211](../record/literature.d/LIT-211.md) — Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning *(Active)*
+- alongside: [LIT-230](../record/literature.d/LIT-230.md) — Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO *(Active)*
+- alongside: [LIT-233](../record/literature.d/LIT-233.md) — Neural Thickets: Diverse Task Experts Are Dense Around Pretrained Weights *(Active)*
 
 ## From Mamba: Linear-Time Sequence Modeling with Selective State Spaces
 

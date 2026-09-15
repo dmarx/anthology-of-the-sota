@@ -1,5 +1,8 @@
 ---
+number: 212
 status: Proposed
+formerly:
+- SOTA-tmpm80i3
 promote_when: >-
   An independent group running it against a policy-gradient or ES baseline
   that gets the same test-time ensemble budget, on a model above 8B — or a
@@ -21,12 +24,12 @@ date: '2026-09-15'
 # training FLOPs. One source: no replication exists, which is what
 # promote_when is about.
 source:
-- LIT-tmphm6g2
+- LIT-233
 # inactive-ok-block: ADR-030 — Proposed, and cited for what it says the field
 # is FOR, not as a settled decision; `introduced_by:` is required in
 # luria.yaml today whatever becomes of the decision that asked for it
 # NOT the same code as `source:`, and this is the case the field exists for
-# (ADR-030). LIT-tmphm6g2 produced the evidence and explicitly declines to
+# (ADR-030). LIT-233 produced the evidence and explicitly declines to
 # make the recommendation — "our goal is not to promote RandOpt as superior
 # to alternative methods. Rather, we use it as a probe." The work that first
 # stated the instruction "post-train by perturbing the weights and selecting,
@@ -48,7 +51,7 @@ compared_against:
 implementations: []
 summary: >-
   Qiu et al. introduced it ([LIT-211](../literature.d/LIT-211.md)); Gan and Isola (2026),
-  [LIT-tmphm6g2](../literature.d/LIT-tmphm6g2.md) — [ARXIV-2603.12228](https://arxiv.org/abs/2603.12228) — measured this form of it. Sample N Gaussian
+  [LIT-233](../literature.d/LIT-233.md) — [ARXIV-2603.12228](https://arxiv.org/abs/2603.12228) — measured this form of it. Sample N Gaussian
   weight perturbations, score them on a few hundred held-out examples, keep
   the top K and majority-vote at inference. At equal training FLOPs it
   matches or beats PPO, GRPO and ES across seven tasks at 0.5B–8B, in one
@@ -56,14 +59,14 @@ summary: >-
   OLMo3-7B on Countdown across 200 GH200s. Filed Proposed: one group, K
   forward passes per answer, and discrete answers only.
 explained_by:
-- THEORY-tmp38myz
+- THEORY-006
 ---
 
-# SOTA-tmpm80i3: Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them
+# SOTA-212: Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them
 
 ## Source, and who is recommending this
 
-The evidence is Gan and Isola (2026), [LIT-tmphm6g2](../literature.d/LIT-tmphm6g2.md) —
+The evidence is Gan and Isola (2026), [LIT-233](../literature.d/LIT-233.md) —
 [ARXIV-2603.12228](https://arxiv.org/abs/2603.12228). **The recommendation is not theirs.** That paper
 measures the method and declines to promote it, in as many words: "our goal
 is not to promote RandOpt as superior to alternative methods. Rather, we use
@@ -105,12 +108,12 @@ a benchmark.
 
 ## Conditions, and they are severe
 
-<!-- inactive-ok-block: THEORY-tmp38myz — Proposed, filed from the same paper
+<!-- inactive-ok-block: THEORY-006 — Proposed, filed from the same paper
      in this same change, and held no more firmly than this practice is -->
 **The base model has to be big enough.** Below roughly 1.5B parameters the
 gains are small; at GPT-2 scale there are none; applied to un-pretrained
 weights the method returns near zero at every scale tested. This is not a
-tuning failure — [THEORY-tmp38myz](../theory.d/THEORY-tmp38myz.md) is the account of it, and the practice
+tuning failure — [THEORY-006](../theory.d/THEORY-006.md) is the account of it, and the practice
 inherits its boundary. As base accuracy rises the relative gain also shrinks,
 so the window is real on both sides.
 

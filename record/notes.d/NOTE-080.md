@@ -1,6 +1,9 @@
 ---
+number: 80
 status: Read
-paper: LIT-tmp4zb0l
+formerly:
+- NOTE-tmpw04b5
+paper: LIT-229
 title: 'Evolution Strategies at the Hyperscale'
 version: 1
 tags:
@@ -14,7 +17,7 @@ summary: >-
   one at a rate faster than the usual parametric O(1/sqrt(r)).
 ---
 
-# NOTE-tmpw04b5: Evolution Strategies at the Hyperscale
+# NOTE-080: Evolution Strategies at the Hyperscale
 
 ## Contribution
 
@@ -102,7 +105,7 @@ restriction on the optimizer is the mistake the paper exists to prevent.
 | C4 | EGGROLL is competitive with GRPO for LLM reasoning post-training | moderate | two tasks, RWKV-7 only, both arms swept — the architecture is unusually favourable |
 | C5 | EGGROLL matches full-rank ES in tabula rasa RL | moderate | reported without loss; the comparison is the paper's own |
 | C6 | Zeroth-order methods are unsuitable for pretraining | weak | an inference from needing large populations, not a measurement of the boundary |
-| C7 | The low-rank population field is the gradient of something | not claimed | and false in general — see [LIT-tmpcjyw1](../literature.d/LIT-tmpcjyw1.md), which is the correction |
+| C7 | The low-rank population field is the gradient of something | not claimed | and false in general — see [LIT-232](../literature.d/LIT-232.md), which is the correction |
 
 ## Method
 
@@ -152,17 +155,17 @@ readable lineage is on the LIT.
 
 ## Bearing on the record
 
-Filed as [LIT-tmp4zb0l](../literature.d/LIT-tmp4zb0l.md), `extends:` [LIT-211](../literature.d/LIT-211.md). It is the engineering half of the
+Filed as [LIT-229](../literature.d/LIT-229.md), `extends:` [LIT-211](../literature.d/LIT-211.md). It is the engineering half of the
 line [SOTA-154](../practices.d/SOTA-154.md) heads, and it is deliberately **not** in that practice's
 `source:` — its LLM comparison is on a recurrent architecture and on its own
 variant, so it is evidence about the line rather than about the
 recommendation.
 
-<!-- inactive-ok-block: SOTA-tmph4wug — Proposed, filed in this same change
+<!-- inactive-ok-block: SOTA-211 — Proposed, filed in this same change
      and named as the practice that contradicts this paper's implementation
      choice; that contradiction is the citation's point -->
-Its antithetic implementation is what [SOTA-tmph4wug](../practices.d/SOTA-tmph4wug.md) argues against, and
-[LIT-tmpcjyw1](../literature.d/LIT-tmpcjyw1.md) is the paper that both corrects its theory and supplies the
+Its antithetic implementation is what [SOTA-211](../practices.d/SOTA-211.md) argues against, and
+[LIT-232](../literature.d/LIT-232.md) is the paper that both corrects its theory and supplies the
 cheaper estimator. This note takes Theorem 2 at its stated result; the later
 paper's analysis of what the finite-rank field actually is does not contradict
 it — Theorem 2 is asymptotic in dimension, and the correction is about finite
@@ -174,7 +177,7 @@ The authors state the LLM evidence is on RWKV-7 and frame the architecture's
 suitability as an advantage rather than a caveat; this reading treats it as
 both. Two further limits from this reading: the analysis is asymptotic in
 parameter dimension and says nothing about the finite-rank field at a fixed
-radius, which is the gap [LIT-tmpcjyw1](../literature.d/LIT-tmpcjyw1.md) walks into; and the technical device
+radius, which is the gap [LIT-232](../literature.d/LIT-232.md) walks into; and the technical device
 of adding `δG` to obtain a density is clean but means the object analysed is
 not literally the object implemented.
 
@@ -187,5 +190,5 @@ not literally the object implemented.
   unsuitability from needing large populations. What would close it: a
   measured curve of pretraining loss against population size.
 - **Is rank a useful knob at all?** Unaddressed here and answered elsewhere —
-  [LIT-tmpcjyw1](../literature.d/LIT-tmpcjyw1.md) finds no reproducible reward advantage for rank eight over
+  [LIT-232](../literature.d/LIT-232.md) finds no reproducible reward advantage for rank eight over
   rank one.

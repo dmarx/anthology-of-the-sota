@@ -53,14 +53,14 @@ bare code and run `luria link --fix`.
 
 **[Representation and encoding](tags/representation-and-encoding.md)** (0) — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-**[Analysis and evaluation](tags/analysis-and-evaluation.md)** (2) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
-[002](../../record/theory.d/THEORY-002.md) · [004](../../record/theory.d/THEORY-004.md)
+**[Analysis and evaluation](tags/analysis-and-evaluation.md)** (3) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
+[002](../../record/theory.d/THEORY-002.md) · [004](../../record/theory.d/THEORY-004.md) · [006](../../record/theory.d/THEORY-006.md)
 
 **[Generative modeling](tags/generative-modeling.md)** (0) — diffusion, samplers, text-to-image, conditioning and control.
 
 **[Vision and graphics](tags/vision-and-graphics.md)** (0) — neural rendering, reconstruction, perception, visual foundation models.
 
-**By status:** [The current account](status/Active.md) (2) · [Offered](status/Proposed.md) (2) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (1) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (2) · [Offered](status/Proposed.md) (3) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (1) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -81,4 +81,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-003](../../record/theory.d/THEORY-003.md) | Batch normalization helps by smoothing the optimization landscape, not by reducing internal covariate shift | Santurkar et al. (2018), [LIT-223](../../record/literature.d/LIT-223.md) — the distributional stability batch normalization was named after turns out not to be what it does. Injecting covariate shift back in after the BN layer costs nothing; what BN changes is the smoothness of the loss surface, and other normalisations that do nothing for covariate shift change it comparably. | Active |
 | [THEORY-004](../../record/theory.d/THEORY-004.md) | A lottery ticket wins by re-learning the solution its dense run already found | Evci et al. (2020), [LIT-039](../../record/literature.d/LIT-039.md) — sparse networks trained from scratch do worse because gradient flow at initialization is poor, and a rewound ticket does not escape that by having found a good sparse architecture: it lands back in the basin the dense pruning run reached. The hypothesis survives as a claim about initialization, not about architecture. | Active |
 | [THEORY-005](../../record/theory.d/THEORY-005.md) | Dense feed-forward layers are already mixtures of experts, and pre-training settles the partition before the neurons | Zhang et al. (2021, 2023), [LIT-226](../../record/literature.d/LIT-226.md) and [LIT-228](../../record/literature.d/LIT-228.md) — a trained dense FFN uses a tiny fraction of its neurons per input, the co-activating neurons partition into functional experts that can be recovered post hoc with the same parameters, and through pre-training the partition stabilizes earlier than the neurons in it. A mixture of experts makes explicit a structure dense training arrives at anyway. | Proposed |
+| [THEORY-006](../../record/theory.d/THEORY-006.md) | Task-improving weight perturbations are dense around pretrained weights, and denser the larger the model | Gan and Isola (2026), [LIT-233](../../record/literature.d/LIT-233.md), with a prediction of it independently confirmed by [LIT-230](../../record/literature.d/LIT-230.md) — the fraction of random Gaussian weight perturbations that improve a downstream task rises monotonically with model scale, from 0% at 0.5B to 64% at 32B on GSM8K, and the perturbations that help are task specialists rather than uniform improvements. It is the record's account of why gradient-free post-training works at all, measured on one model family by one group. | Proposed |
 

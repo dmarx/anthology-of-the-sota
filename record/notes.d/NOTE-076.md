@@ -1,6 +1,9 @@
 ---
+number: 76
 status: Read
-paper: LIT-tmp81or2
+formerly:
+- NOTE-tmpaf2ab
+paper: LIT-230
 title: 'Understanding Evolution Strategies for LLM Reasoning'
 version: 1
 tags:
@@ -14,7 +17,7 @@ summary: >-
   falls as the model grows.
 ---
 
-# NOTE-tmpaf2ab: Understanding Evolution Strategies for LLM Reasoning
+# NOTE-076: Understanding Evolution Strategies for LLM Reasoning
 
 ## Contribution
 
@@ -147,11 +150,11 @@ Gan and Isola together. Lineage is on the LIT.
 
 ## Recommendations
 
-<!-- inactive-ok-block: SOTA-tmph4wug — Proposed, filed in this same change from this reading and named as where its recommendation landed -->
+<!-- inactive-ok-block: SOTA-211 — Proposed, filed in this same change from this reading and named as where its recommendation landed -->
 - **R1** — Report pass@k as well as pass@1. *Topic:* evaluation. *Status:*
-  standard. *Strength:* strong. Filed as [SOTA-tmpazu80](../practices.d/SOTA-tmpazu80.md).
+  standard. *Strength:* strong. Filed as [SOTA-210](../practices.d/SOTA-210.md).
 - **R2** — Use one fitness evaluation per ES direction on reasoning tasks.
-  *Topic:* post-training. *Strength:* moderate. Filed as [SOTA-tmph4wug](../practices.d/SOTA-tmph4wug.md).
+  *Topic:* post-training. *Strength:* moderate. Filed as [SOTA-211](../practices.d/SOTA-211.md).
 - **R3** — Z-score population rewards before weighting perturbations.
   *Topic:* post-training. *Strength:* moderate. Not filed — one ablation.
 - **R4** — Expect a smaller ES population to suffice as the model grows, and
@@ -162,13 +165,13 @@ Gan and Isola together. Lineage is on the LIT.
 
 ## Bearing on the record
 
-<!-- inactive-ok-block: SOTA-tmph4wug — Proposed, filed in this same change from this reading and named as where its recommendation landed -->
-Filed as [LIT-tmp81or2](../literature.d/LIT-tmp81or2.md). It is the primary source for [SOTA-tmpazu80](../practices.d/SOTA-tmpazu80.md) and a
-corroborating source for [SOTA-tmph4wug](../practices.d/SOTA-tmph4wug.md).
+<!-- inactive-ok-block: SOTA-211 — Proposed, filed in this same change from this reading and named as where its recommendation landed -->
+Filed as [LIT-230](../literature.d/LIT-230.md). It is the primary source for [SOTA-210](../practices.d/SOTA-210.md) and a
+corroborating source for [SOTA-211](../practices.d/SOTA-211.md).
 
-<!-- inactive-ok-block: THEORY-tmp38myz — Proposed, and this paragraph is
+<!-- inactive-ok-block: THEORY-006 — Proposed, and this paragraph is
      precisely about what does and does not satisfy its promotion condition -->
-**It bears on [THEORY-tmp38myz](../theory.d/THEORY-tmp38myz.md) and does not promote it, which is worth being
+**It bears on [THEORY-006](../theory.d/THEORY-006.md) and does not promote it, which is worth being
 exact about.** Its population-scaling section reasons that larger models hold
 more performance-preserving subsets, "making task-improving perturbations
 denser around pretrained weights, consistent with Frankle and Carbin (2018);
@@ -181,7 +184,7 @@ condition stays as written.
 
 <!-- inactive-ok-block: SOTA-154 is Active; named as the practice whose
      dissent this paper measures from the other side -->
-It also cuts against [LIT-tmp9pcfv](../literature.d/LIT-tmp9pcfv.md)'s case against [SOTA-154](../practices.d/SOTA-154.md) in a specific
+It also cuts against [LIT-231](../literature.d/LIT-231.md)'s case against [SOTA-154](../practices.d/SOTA-154.md) in a specific
 way. That paper's Lemma 1 concerns the angle between a random perturbation and
 a single useful *direction*. This paper's C5 and C6 say the gains live in a
 sparse, identifiable *subspace* — LayerNorm and attention projections — and the
@@ -201,7 +204,7 @@ localization, which is the most interesting finding here, rests on two models.
 
 - **Does the coverage gap close with scale?** Everything here is ≤7B. What
   would close it: the same pass@k comparison at 30B+, where
-  [LIT-tmpiq6kc](../literature.d/LIT-tmpiq6kc.md) has RL data but no entropy trajectories.
+  [LIT-234](../literature.d/LIT-234.md) has RL data but no entropy trajectories.
 - **Is the LayerNorm/attention concentration causal?** What would close it:
   restricting ES to those parameters and recovering the gains, which the
   thresholding ablation approaches but does not run prospectively.

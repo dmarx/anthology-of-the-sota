@@ -1,6 +1,9 @@
 ---
+number: 79
 status: Read
-paper: LIT-tmpcjyw1
+formerly:
+- NOTE-tmpn2q7k
+paper: LIT-232
 title: 'EGGROLL, Unrolled'
 version: 1
 tags:
@@ -15,7 +18,7 @@ summary: >-
   evaluation at unchanged expected field.
 ---
 
-# NOTE-tmpn2q7k: EGGROLL, Unrolled
+# NOTE-079: EGGROLL, Unrolled
 
 ## Contribution
 
@@ -155,10 +158,10 @@ default. Lineage is on the LIT.
 
 ## Recommendations
 
-<!-- inactive-ok-block: SOTA-tmph4wug — Proposed, filed in this same change; named as the practice this paper's estimator argument supports -->
+<!-- inactive-ok-block: SOTA-211 — Proposed, filed in this same change; named as the practice this paper's estimator argument supports -->
 - **R1** — Use one evaluation per direction with a leave-one-out baseline
   rather than antithetic pairs. *Topic:* post-training. *Status:*
-  experimental. *Strength:* strong. Filed as [SOTA-tmph4wug](../practices.d/SOTA-tmph4wug.md).
+  experimental. *Strength:* strong. Filed as [SOTA-211](../practices.d/SOTA-211.md).
 - **R2** — Use rank one. Higher rank buys down a variance surcharge that was
   not the binding constraint. *Topic:* post-training. *Strength:* moderate.
   Not filed — one group, one paper.
@@ -169,9 +172,9 @@ default. Lineage is on the LIT.
 
 ## Bearing on the record
 
-<!-- inactive-ok-block: SOTA-tmph4wug — Proposed, filed in this same change; named as the practice this paper's estimator argument supports -->
-Filed as [LIT-tmpcjyw1](../literature.d/LIT-tmpcjyw1.md), `corrects:` [LIT-tmp4zb0l](../literature.d/LIT-tmp4zb0l.md). It is the primary source
-for [SOTA-tmph4wug](../practices.d/SOTA-tmph4wug.md), where [LIT-tmp81or2](../literature.d/LIT-tmp81or2.md) corroborates from an entirely
+<!-- inactive-ok-block: SOTA-211 — Proposed, filed in this same change; named as the practice this paper's estimator argument supports -->
+Filed as [LIT-232](../literature.d/LIT-232.md), `corrects:` [LIT-229](../literature.d/LIT-229.md). It is the primary source
+for [SOTA-211](../practices.d/SOTA-211.md), where [LIT-230](../literature.d/LIT-230.md) corroborates from an entirely
 different argument: that paper found empirically that the antithetic second
 evaluation buys nothing on reasoning because autoregressive regeneration
 breaks the pair's shared randomness, while this one proves a leave-one-out
@@ -179,7 +182,7 @@ baseline preserves the expected field at half the cost. **Two groups, two
 arguments, one instruction** — which is the strongest shape of evidence this
 record's consensus axis can record short of adoption.
 
-It does not disturb [LIT-tmp4zb0l](../literature.d/LIT-tmp4zb0l.md)'s throughput result, which is measured and
+It does not disturb [LIT-229](../literature.d/LIT-229.md)'s throughput result, which is measured and
 untouched, nor its Theorem 2, which is asymptotic in parameter dimension while
 this correction is about finite rank at finite radius.
 
@@ -198,7 +201,7 @@ counterexamples rather than a description of a language-model objective.
   antisymmetric part of the population-field Jacobian during a real run.
 - **What radius keeps you in the near-quadratic regime?** The theory says this
   is the governing parameter and offers no procedure for choosing it.
-  [LIT-tmp81or2](../literature.d/LIT-tmp81or2.md) reports the same parameter has a two-sided empirical failure
+  [LIT-230](../literature.d/LIT-230.md) reports the same parameter has a two-sided empirical failure
   mode, from the other direction, and neither paper connects the two.
 - **Does LOO-ROLL's advantage grow with population size?** The variance
   argument suggests it should, and the experiments are at matched wall time

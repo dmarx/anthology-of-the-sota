@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-11 of 74 NOTE documents. Back to the [full index](../README.md).
+13 of 80 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -19,3 +19,5 @@
 | [NOTE-066](../../../record/notes.d/NOTE-066.md) | Contrastive Learning with Hard Negative Samples | Samples hard negatives without labels by reweighting the contrastive objective rather than changing the sampling procedure — two extra lines of code, no computational overhead — with a tunable hardness knob. The knob exists because harder negatives are more likely to be false negatives, so hardness trades learning signal against contamination. | Read |
 | [NOTE-072](../../../record/notes.d/NOTE-072.md) | Scaling Laws for Autoregressive Generative Modeling | Extends the language scaling laws to image, video, multimodal and mathematics, finding the same power-law-plus-constant form and a nearly domain-independent exponent for optimal model size, N_opt(C) ∝ C^0.7. That exponent implies D ∝ N^0.4 — sub-linear data scaling, which Chinchilla later overturned. The paper also flags the inconsistency that overturned it. | Read |
 | [NOTE-073](../../../record/notes.d/NOTE-073.md) | On the Convergence of Adam and Beyond | Constructs a one-dimensional convex problem on which Adam provably converges to the worst point in the feasible set, locating the error in the original convergence proof and in the exponential moving average itself. Proposes AMSGrad, which keeps the running maximum of the second moment so the effective learning rate is non-increasing. ICLR 2018 best paper; almost nobody runs AMSGrad. | Read |
+| [NOTE-079](../../../record/notes.d/NOTE-079.md) | EGGROLL, Unrolled | Works out what EGGROLL's low-rank update converges to — a resolvent-filtered gradient, which can be nonconservative and can turn an attracting optimum into a repelling one, while being exact on every quadratic objective — and turns the finite-population half of the analysis into LOO-ROLL, which replaces two antithetic evaluations per direction with one leave-one-out evaluation at unchanged expected field. | Read |
+| [NOTE-080](../../../record/notes.d/NOTE-080.md) | Evolution Strategies at the Hyperscale | Structuring each ES worker's perturbation as a rank-r Gaussian product instead of a dense matrix raises arithmetic intensity by enough for a hundredfold throughput gain at billion scale, while the population average stays high-rank and the low-rank update provably approaches the full-rank one at a rate faster than the usual parametric O(1/sqrt(r)). | Read |

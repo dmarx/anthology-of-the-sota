@@ -53,7 +53,7 @@ corrected_by:
 - SOTA-146
 compared_against:
 - SOTA-154
-- SOTA-tmpm80i3
+- SOTA-212
 ---
 
 # SOTA-145: Estimate the RL baseline from a group of samples for the same prompt instead of training a critic

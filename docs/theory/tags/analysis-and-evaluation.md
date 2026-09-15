@@ -4,9 +4,10 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-2 of 5 THEORY documents. Back to the [full index](../README.md).
+3 of 6 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [THEORY-002](../../../record/theory.d/THEORY-002.md) | A dense network contains a sparse subnetwork that matches its accuracy when trained from the same initialization | Frankle and Carbin (2018), [LIT-019](../../../record/literature.d/LIT-019.md) — the lottery ticket hypothesis. A randomly-initialized dense network contains a subnetwork that, trained alone from the same initial values, matches the full network in at most the same number of steps. The reset is the claim; the same structure re-initialized randomly does not do it. | Proposed |
 | [THEORY-004](../../../record/theory.d/THEORY-004.md) | A lottery ticket wins by re-learning the solution its dense run already found | Evci et al. (2020), [LIT-039](../../../record/literature.d/LIT-039.md) — sparse networks trained from scratch do worse because gradient flow at initialization is poor, and a rewound ticket does not escape that by having found a good sparse architecture: it lands back in the basin the dense pruning run reached. The hypothesis survives as a claim about initialization, not about architecture. | Active |
+| [THEORY-006](../../../record/theory.d/THEORY-006.md) | Task-improving weight perturbations are dense around pretrained weights, and denser the larger the model | Gan and Isola (2026), [LIT-233](../../../record/literature.d/LIT-233.md), with a prediction of it independently confirmed by [LIT-230](../../../record/literature.d/LIT-230.md) — the fraction of random Gaussian weight perturbations that improve a downstream task rises monotonically with model scale, from 0% at 0.5B to 64% at 32B on GSM8K, and the perturbations that help are task specialists rather than uniform improvements. It is the record's account of why gradient-free post-training works at all, measured on one model family by one group. | Proposed |

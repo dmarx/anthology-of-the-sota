@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**43 document(s) awaiting a decision.**
+**45 document(s) awaiting a decision.**
 
 ## SOTAs
 
-34 of the 43.
+35 of the 45.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -20,10 +20,9 @@
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 9 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 8 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
 | 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 8 | 0 | Decay the learning rate linearly all the way to zero |
-| 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 6 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
+| 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 7 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
 | 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 6 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
 | 2026-09-07 | Proposed | [SOTA-155](../../record/practices.d/SOTA-155.md) | 6 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
-| 2026-09-07 | Proposed | [SOTA-154](../../record/practices.d/SOTA-154.md) | 5 | 0 | Fine-tune with evolution strategies instead of policy-gradient reinforcement learning |
 | 2026-09-07 | Proposed | [SOTA-156](../../record/practices.d/SOTA-156.md) | 5 | 0 | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed |
 | 2026-09-07 | Proposed | [SOTA-157](../../record/practices.d/SOTA-157.md) | 4 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
 | 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 2 | 0 | Pack training documents by best fit instead of concatenating and splitting |
@@ -46,20 +45,23 @@
 | 2026-09-09 | Proposed | [SOTA-189](../../record/practices.d/SOTA-189.md) | 0 | 0 | Set the checkpoint interval from the job's measured time-to-failure, which shrinks as the job grows |
 | 2026-09-10 | Proposed | [SOTA-204](../../record/practices.d/SOTA-204.md) | 2 | 0 | Anneal a discretisation from coarse to fine over training rather than fixing it |
 | 2026-09-10 | Proposed | [SOTA-193](../../record/practices.d/SOTA-193.md) | 1 | 0 | Lower Adam's second-moment decay when the loss spikes, before reaching for the learning rate |
+| 2026-09-15 | Proposed | [SOTA-211](../../record/practices.d/SOTA-211.md) | 7 | 0 | Spend one fitness evaluation per evolution-strategies direction, not an antithetic pair |
+| 2026-09-15 | Proposed | [SOTA-212](../../record/practices.d/SOTA-212.md) | 3 | 0 | Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them |
 | 2026-09-15 | Proposed | [SOTA-209](../../record/practices.d/SOTA-209.md) | 0 | 0 | Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch |
 
 ## THEORYs
 
-2 of the 43.
+3 of the 45.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
-| 2026-09-15 | Proposed | [THEORY-002](../../record/theory.d/THEORY-002.md) | 4 | 0 | A dense network contains a sparse subnetwork that matches its accuracy when trained from the same initialization |
-| 2026-09-15 | Proposed | [THEORY-005](../../record/theory.d/THEORY-005.md) | 2 | 0 | Dense feed-forward layers are already mixtures of experts, and pre-training settles the partition before the neurons |
+| 2026-09-15 | Proposed | [THEORY-006](../../record/theory.d/THEORY-006.md) | 11 | 0 | Task-improving weight perturbations are dense around pretrained weights, and denser the larger the model |
+| 2026-09-15 | Proposed | [THEORY-002](../../record/theory.d/THEORY-002.md) | 7 | 0 | A dense network contains a sparse subnetwork that matches its accuracy when trained from the same initialization |
+| 2026-09-15 | Proposed | [THEORY-005](../../record/theory.d/THEORY-005.md) | 3 | 0 | Dense feed-forward layers are already mixtures of experts, and pre-training settles the partition before the neurons |
 
 ## LITs
 
-2 of the 43.
+2 of the 45.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -68,14 +70,14 @@
 
 ## ADRs
 
-5 of the 43.
+5 of the 45.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 2 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-09 | Proposed | [ADR-024](../../record/decisions.d/ADR-024.md) | 6 | 0 | The topic vocabulary has four recurring seams — options, not a decision |
 | 2026-09-14 | Proposed | [ADR-028](../../record/decisions.d/ADR-028.md) | 1 | 1 | One topic vocabulary, one set of glosses: the blurbs are shared too |
-| 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 2 | 1 | Every practice states its origin, even when it is the primary source |
+| 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 4 | 1 | Every practice states its origin, even when it is the primary source |
 | 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 1 | 0 | A scheme for explanations, complementing the practice registry |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.

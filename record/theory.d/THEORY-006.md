@@ -1,5 +1,8 @@
 ---
+number: 6
 status: Proposed
+formerly:
+- THEORY-tmp38myz
 promote_when: >-
   The density measurement repeated by a group unconnected to the authors, on
   a model family other than Qwen2.5, with the scaling trend holding — or a
@@ -13,18 +16,18 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-15'
 source:
-# LIT-tmp81or2 corroborates a PREDICTION of this account — that fewer search
+# LIT-230 corroborates a PREDICTION of this account — that fewer search
 # directions should suffice as scale grows — and cites it by name. It does not
 # repeat the density measurement, so it does not satisfy `promote_when:`; see
 # "What an independent group has and has not confirmed" below.
-- LIT-tmphm6g2
-- LIT-tmp81or2
+- LIT-233
+- LIT-230
 explains:
 - SOTA-154
-- SOTA-tmpm80i3
+- SOTA-212
 summary: >-
-  Gan and Isola (2026), [LIT-tmphm6g2](../literature.d/LIT-tmphm6g2.md), with a prediction of it independently
-  confirmed by [LIT-tmp81or2](../literature.d/LIT-tmp81or2.md) — the fraction of random Gaussian weight
+  Gan and Isola (2026), [LIT-233](../literature.d/LIT-233.md), with a prediction of it independently
+  confirmed by [LIT-230](../literature.d/LIT-230.md) — the fraction of random Gaussian weight
   perturbations that improve a downstream task rises monotonically with model
   scale, from 0% at 0.5B to 64% at 32B on GSM8K, and the perturbations that
   help are task specialists rather than uniform improvements. It is the
@@ -32,11 +35,11 @@ summary: >-
   on one model family by one group.
 ---
 
-# THEORY-tmp38myz: Task-improving weight perturbations are dense around pretrained weights, and denser the larger the model
+# THEORY-006: Task-improving weight perturbations are dense around pretrained weights, and denser the larger the model
 
 ## Source
 
-Gan and Isola (2026), [LIT-tmphm6g2](../literature.d/LIT-tmphm6g2.md).
+Gan and Isola (2026), [LIT-233](../literature.d/LIT-233.md).
 
 ## What was actually shown
 
@@ -91,10 +94,10 @@ untrained initialization, the property is absent and the methods that depend
 on it should fail. That prediction is testable and the paper tests one side
 of it.
 
-<!-- inactive-ok-block: SOTA-tmpm80i3 — Proposed, filed from the same paper
+<!-- inactive-ok-block: SOTA-212 — Proposed, filed from the same paper
      in this same change; this paragraph is about how far the two should be
      held together, which is what the citation is for -->
-For [SOTA-tmpm80i3](../practices.d/SOTA-tmpm80i3.md) the relation is tighter, because the practice is the
+For [SOTA-212](../practices.d/SOTA-212.md) the relation is tighter, because the practice is the
 account's own probe. Density is what makes guessing land on anything;
 diversity is what makes majority-voting the survivors better than taking the
 best one. The practice's two halves are the theory's two measurements, which
@@ -102,7 +105,7 @@ is a reason to hold the practice no more firmly than the account.
 
 ## What an independent group has and has not confirmed
 
-Ba et al. ([LIT-tmp81or2](../literature.d/LIT-tmp81or2.md)) cite this account by name and test a consequence of
+Ba et al. ([LIT-230](../literature.d/LIT-230.md)) cite this account by name and test a consequence of
 it. Their reasoning: if larger models hold more performance-preserving
 coordinate subsets, task-improving perturbations are denser around the
 pretrained weights, so **fewer search directions should suffice at larger
@@ -153,7 +156,7 @@ Only the direct measurement of `δ` is evidence for the account, and that has
 been made once, by one group, on one model family.
 
 **The lottery-ticket connection is now other people's too, and it is still not
-a claim about initialization.** [LIT-tmp81or2](../literature.d/LIT-tmp81or2.md) reaches for Frankle and Carbin
+a claim about initialization.** [LIT-230](../literature.d/LIT-230.md) reaches for Frankle and Carbin
 in the same sentence it reaches for this account, on the ground that larger
 models contain more effective sparse structures. That is a real convergence
 and it does not change the paragraph below.

@@ -4,7 +4,7 @@
 
 **Attention techniques** — attention variants and alternative mechanisms, implementation optimizations, context length.
 
-27 of 228 LIT documents. Back to the [full index](../README.md).
+27 of 234 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

@@ -4,7 +4,7 @@
 
 **Adaptation and tuning** — taking a trained model somewhere new — fine-tuning and transfer, preference training and alignment, parameter-efficient adaptation, context extension.
 
-19 of 228 LIT documents. Back to the [full index](../README.md).
+21 of 234 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -27,3 +27,5 @@
 | [LIT-169](../../../record/literature.d/LIT-169.md) | Direct Preference Optimization: Your Language Model is Secretly a Reward Model | Rafailov et al. (2023), [ARXIV-2305.18290](https://arxiv.org/abs/2305.18290). Reparameterise the reward so the optimal policy has a closed form, and RLHF collapses into a single classification loss — no reward model, no sampling during fine-tuning, no RL loop. | Active |
 | [LIT-172](../../../record/literature.d/LIT-172.md) | Tulu 3: Pushing Frontiers in Open Language Model Post-Training | Lambert et al. (2024), [ARXIV-2411.15124](https://arxiv.org/abs/2411.15124). The post-training recipe published in full — data, code, decontamination and the negative results — and the origin of Reinforcement Learning with Verifiable Rewards as a named stage. | Active |
 | [LIT-180](../../../record/literature.d/LIT-180.md) | Group Sequence Policy Optimization | Zheng et al. (2025), [ARXIV-2507.18071](https://arxiv.org/abs/2507.18071). Define the importance ratio on sequence likelihood rather than per token, and clip, reward and optimise at sequence level — which stabilises MoE reinforcement learning in particular. | Active |
+| [LIT-231](../../../record/literature.d/LIT-231.md) | Hyper-ES: Effective Evolution Strategies for LLM Reasoning via Descent Direction Merging | Gu et al. (2026), [ARXIV-2608.05541](https://arxiv.org/abs/2608.05541). Argues that full-parameter ES on billion-parameter LLMs is ineffective because almost all random perturbations are near-orthogonal to a useful descent direction, and replaces the search space rather than the optimizer: a handful of cheap GRPO runs supply LoRA descent directions, and CMA-ES then searches layer-wise DARE-TIES merging coefficients over their span. Beats GRPO-LoRA by about 1% with 10% fewer gradient updates — on models at 1.5B and below. | Active |
+| [LIT-234](../../../record/literature.d/LIT-234.md) | Beyond the Best Guess: Improving LLM Solution Coverage with Evolution Strategies | Hayes et al. (2026), [ARXIV-2608.12679](https://arxiv.org/abs/2608.12679). Takes evolution strategies up to 32B and asks one question: what does post-training do to the breadth of the output distribution? RL raises pass@1 and lowers pass@k, eventually below the base model; ES raises both, and never falls below base at any k or scale tested. The mechanism is visible in the accuracy histogram — RL increases the number of prompts solved in none of k samples, putting a hard ceiling on pass@k that no extra sampling can lift. | Active |

@@ -2,11 +2,11 @@
 
 <!-- GENERATED below this line by `luria index` — edit README.stub instead. -->
 
-**[adaptation-and-tuning](tags/adaptation-and-tuning.md)** (7):
-[020](../../record/notes.d/NOTE-020.md) · [026](../../record/notes.d/NOTE-026.md) · [034](../../record/notes.d/NOTE-034.md) · [036](../../record/notes.d/NOTE-036.md) · [038](../../record/notes.d/NOTE-038.md) · [049](../../record/notes.d/NOTE-049.md) · [071](../../record/notes.d/NOTE-071.md)
+**[adaptation-and-tuning](tags/adaptation-and-tuning.md)** (9):
+[020](../../record/notes.d/NOTE-020.md) · [026](../../record/notes.d/NOTE-026.md) · [034](../../record/notes.d/NOTE-034.md) · [036](../../record/notes.d/NOTE-036.md) · [038](../../record/notes.d/NOTE-038.md) · [049](../../record/notes.d/NOTE-049.md) · [071](../../record/notes.d/NOTE-071.md) · [075](../../record/notes.d/NOTE-075.md) · [077](../../record/notes.d/NOTE-077.md)
 
-**[analysis-and-evaluation](tags/analysis-and-evaluation.md)** (5):
-[051](../../record/notes.d/NOTE-051.md) · [052](../../record/notes.d/NOTE-052.md) · [057](../../record/notes.d/NOTE-057.md) · [061](../../record/notes.d/NOTE-061.md) · [070](../../record/notes.d/NOTE-070.md)
+**[analysis-and-evaluation](tags/analysis-and-evaluation.md)** (7):
+[051](../../record/notes.d/NOTE-051.md) · [052](../../record/notes.d/NOTE-052.md) · [057](../../record/notes.d/NOTE-057.md) · [061](../../record/notes.d/NOTE-061.md) · [070](../../record/notes.d/NOTE-070.md) · [076](../../record/notes.d/NOTE-076.md) · [078](../../record/notes.d/NOTE-078.md)
 
 **[attention-techniques](tags/attention-techniques.md)** (7):
 [005](../../record/notes.d/NOTE-005.md) · [007](../../record/notes.d/NOTE-007.md) · [014](../../record/notes.d/NOTE-014.md) · [016](../../record/notes.d/NOTE-016.md) · [021](../../record/notes.d/NOTE-021.md) · [059](../../record/notes.d/NOTE-059.md) · [065](../../record/notes.d/NOTE-065.md)
@@ -32,13 +32,13 @@
 **[representation-and-encoding](tags/representation-and-encoding.md)** (1):
 [010](../../record/notes.d/NOTE-010.md)
 
-**[training-optimization](tags/training-optimization.md)** (11):
-[012](../../record/notes.d/NOTE-012.md) · [015](../../record/notes.d/NOTE-015.md) · [017](../../record/notes.d/NOTE-017.md) · [024](../../record/notes.d/NOTE-024.md) · [025](../../record/notes.d/NOTE-025.md) · [039](../../record/notes.d/NOTE-039.md) · [041](../../record/notes.d/NOTE-041.md) · [062](../../record/notes.d/NOTE-062.md) · [066](../../record/notes.d/NOTE-066.md) · [072](../../record/notes.d/NOTE-072.md) · [073](../../record/notes.d/NOTE-073.md)
+**[training-optimization](tags/training-optimization.md)** (13):
+[012](../../record/notes.d/NOTE-012.md) · [015](../../record/notes.d/NOTE-015.md) · [017](../../record/notes.d/NOTE-017.md) · [024](../../record/notes.d/NOTE-024.md) · [025](../../record/notes.d/NOTE-025.md) · [039](../../record/notes.d/NOTE-039.md) · [041](../../record/notes.d/NOTE-041.md) · [062](../../record/notes.d/NOTE-062.md) · [066](../../record/notes.d/NOTE-066.md) · [072](../../record/notes.d/NOTE-072.md) · [073](../../record/notes.d/NOTE-073.md) · [079](../../record/notes.d/NOTE-079.md) · [080](../../record/notes.d/NOTE-080.md)
 
 **[vision-and-graphics](tags/vision-and-graphics.md)** (9):
 [027](../../record/notes.d/NOTE-027.md) · [032](../../record/notes.d/NOTE-032.md) · [035](../../record/notes.d/NOTE-035.md) · [037](../../record/notes.d/NOTE-037.md) · [042](../../record/notes.d/NOTE-042.md) · [044](../../record/notes.d/NOTE-044.md) · [045](../../record/notes.d/NOTE-045.md) · [046](../../record/notes.d/NOTE-046.md) · [047](../../record/notes.d/NOTE-047.md)
 
-**By status:** [Read](status/Read.md) (72) · [Skimmed](status/Skimmed.md) (2) · [Unread](status/Unread.md) (0) · [Re-read](status/Superseded.md) (0)
+**By status:** [Read](status/Read.md) (78) · [Skimmed](status/Skimmed.md) (2) · [Unread](status/Unread.md) (0) · [Re-read](status/Superseded.md) (0)
 
 What the status column means in this scheme — the words are luria's, the meanings are this project's.
 
@@ -125,4 +125,10 @@ What the status column means in this scheme — the words are luria's, the meani
 | [NOTE-072](../../record/notes.d/NOTE-072.md) | Scaling Laws for Autoregressive Generative Modeling | Extends the language scaling laws to image, video, multimodal and mathematics, finding the same power-law-plus-constant form and a nearly domain-independent exponent for optimal model size, N_opt(C) ∝ C^0.7. That exponent implies D ∝ N^0.4 — sub-linear data scaling, which Chinchilla later overturned. The paper also flags the inconsistency that overturned it. | Read |
 | [NOTE-073](../../record/notes.d/NOTE-073.md) | On the Convergence of Adam and Beyond | Constructs a one-dimensional convex problem on which Adam provably converges to the worst point in the feasible set, locating the error in the original convergence proof and in the exponential moving average itself. Proposes AMSGrad, which keeps the running maximum of the second moment so the effective learning rate is non-increasing. ICLR 2018 best paper; almost nobody runs AMSGrad. | Read |
 | [NOTE-074](../../record/notes.d/NOTE-074.md) | Advances and Open Problems in Federated Learning | A 66,000-word multi-institution survey defining federated learning and cataloguing its open problems. Its durable contribution to this record is the cross-device / cross-silo distinction, which separates two settings with almost nothing in common operationally. | Skimmed |
+| [NOTE-075](../../record/notes.d/NOTE-075.md) | Hyper-ES | Argues from two lemmas that full-parameter ES cannot work at LLM scale — random perturbations concentrate near orthogonality to any useful descent direction, and the leftover orthogonal components accumulate as a random walk away from the pretrained weights — and replaces the search space with the span of a few cheap GRPO-derived LoRA directions, searched by CMA-ES. | Read |
+| [NOTE-076](../../record/notes.d/NOTE-076.md) | Understanding Evolution Strategies for LLM Reasoning | Three questions about what ES post-training does rather than whether it wins: it raises pass@1 and pass@k together where GRPO trades one for the other, its 40x larger parameter drift is functionally sparse and does not produce broad forgetting, and the population size needed for stable training falls as the model grows. | Read |
+| [NOTE-077](../../record/notes.d/NOTE-077.md) | Beyond the Best Guess | Reinforcement learning raises pass@1 and lowers pass@k, eventually below the base model, because it increases the number of prompts solved in none of k samples; evolution strategies raise both and never fall below base at any k or scale tested, up to 32B against published RL checkpoints. | Read |
+| [NOTE-078](../../record/notes.d/NOTE-078.md) | Neural Thickets | The neighbourhood of a pretrained weight vector is dense with task-improving Gaussian perturbations, the density rises monotonically with model scale, and the perturbations that help are specialists rather than uniform improvements — which together are why a single parallel round of random guessing plus majority voting can match PPO, GRPO and ES at equal training FLOPs. | Read |
+| [NOTE-079](../../record/notes.d/NOTE-079.md) | EGGROLL, Unrolled | Works out what EGGROLL's low-rank update converges to — a resolvent-filtered gradient, which can be nonconservative and can turn an attracting optimum into a repelling one, while being exact on every quadratic objective — and turns the finite-population half of the analysis into LOO-ROLL, which replaces two antithetic evaluations per direction with one leave-one-out evaluation at unchanged expected field. | Read |
+| [NOTE-080](../../record/notes.d/NOTE-080.md) | Evolution Strategies at the Hyperscale | Structuring each ES worker's perturbation as a rank-r Gaussian product instead of a dense matrix raises arithmetic intensity by enough for a hundredfold throughput gain at billion scale, while the population average stays high-rank and the low-rank update provably approaches the full-rank one at a rate faster than the usual parametric O(1/sqrt(r)). | Read |
 

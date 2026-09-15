@@ -4,7 +4,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-23 of 209 SOTA documents. Back to the [full index](../README.md).
+23 of 212 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

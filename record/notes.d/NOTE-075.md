@@ -1,6 +1,9 @@
 ---
+number: 75
 status: Read
-paper: LIT-tmp9pcfv
+formerly:
+- NOTE-tmp12jd3
+paper: LIT-231
 title: 'Hyper-ES'
 version: 1
 tags:
@@ -14,7 +17,7 @@ summary: >-
   the span of a few cheap GRPO-derived LoRA directions, searched by CMA-ES.
 ---
 
-# NOTE-tmp12jd3: Hyper-ES
+# NOTE-075: Hyper-ES
 
 ## Contribution
 
@@ -114,7 +117,7 @@ coefficients, a few hundred parameters, to find the best combination.
 It cites Qiu et al., Sarkar et al. and Sun et al. as the ES-for-LLM line it is
 responding to, and takes the catastrophic-forgetting reports of Hoy et al. and
 Abdi et al. as corroboration of its drift argument. It is worth noting that
-[LIT-tmp81or2](../literature.d/LIT-tmp81or2.md) measures that same drift, agrees it is 40× GRPO's, and
+[LIT-230](../literature.d/LIT-230.md) measures that same drift, agrees it is 40× GRPO's, and
 reaches the opposite conclusion about what it implies. Lineage is on the LIT.
 
 ## Recommendations
@@ -133,23 +136,23 @@ reaches the opposite conclusion about what it implies. Lineage is on the LIT.
 
 ## Bearing on the record
 
-Filed as [LIT-tmp9pcfv](../literature.d/LIT-tmp9pcfv.md), `corrects:` [LIT-211](../literature.d/LIT-211.md), and it is the
+Filed as [LIT-231](../literature.d/LIT-231.md), `corrects:` [LIT-211](../literature.d/LIT-211.md), and it is the
 `contested_by:` on [SOTA-154](../practices.d/SOTA-154.md) — the document that makes that practice's
 consensus `contested` rather than merely unreplicated.
 
 The full reading sharpens rather than softens what the LIT note already said.
 **C3 is the weak link and it is weak for a specific reason:** Lemma 1 is about
-the angle to *a* fixed direction, and [LIT-tmp81or2](../literature.d/LIT-tmp81or2.md) reports that ES's gains
+the angle to *a* fixed direction, and [LIT-230](../literature.d/LIT-230.md) reports that ES's gains
 concentrate in a sparse subset of coordinates — LayerNorm weights and
 attention projections — which is a useful *subspace*, and a random direction's
 projection onto a subspace of dimension `k` behaves very differently from its
 projection onto a line. Two papers, four months apart, measuring the same
 geometry and drawing opposite conclusions from it.
 
-<!-- inactive-ok-block: THEORY-tmp38myz — Proposed, and this section is the
+<!-- inactive-ok-block: THEORY-006 — Proposed, and this section is the
      record's own reconciliation; naming the account is the point -->
 And the scale reading stands: every model here is at 1.5B or below, which is
-where [THEORY-tmp38myz](../theory.d/THEORY-tmp38myz.md) says the density of task-improving perturbations has
+where [THEORY-006](../theory.d/THEORY-006.md) says the density of task-improving perturbations has
 not yet arrived. Lemma 1 is a formal statement of the needle-in-a-haystack
 regime, and the dispute may be about which regime each group was measuring in.
 
@@ -167,7 +170,7 @@ against RL.
 - **Does Lemma 1 survive a subspace formulation?** What would close it: the
   same concentration argument stated against a `k`-dimensional useful
   subspace, with `k` estimated from the sparse coordinate set
-  [LIT-tmp81or2](../literature.d/LIT-tmp81or2.md) identifies.
+  [LIT-230](../literature.d/LIT-230.md) identifies.
 - **Does the argument have a scale at which it stops applying?** Both lemmas
   are dimension-asymptotic and would, read naively, get *worse* with scale —
   while the empirical line reports ES getting *better*. Something in the

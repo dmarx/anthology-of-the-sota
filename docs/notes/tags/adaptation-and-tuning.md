@@ -4,7 +4,7 @@
 
 **adaptation-and-tuning**.
 
-7 of 74 NOTE documents. Back to the [full index](../README.md).
+9 of 80 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -15,3 +15,5 @@
 | [NOTE-038](../../../record/notes.d/NOTE-038.md) | PhotoMaker: Customizing Realistic Human Photos via Stacked ID Embedding | Fuses an arbitrary number of reference images into one "stacked ID embedding" attached to a class word, so personalization needs no per-subject tuning at inference. Because the stack is just a set, feeding it images of *different* people at inference merges identities — a capability that falls out of the representation rather than being designed. | Read |
 | [NOTE-049](../../../record/notes.d/NOTE-049.md) | Learning to Prompt for Vision-Language Models | Replaces hand-written CLIP prompts with continuous context vectors learned end-to-end while every pretrained parameter stays frozen. One or two shots beat prompt engineering; sixteen shots average about 15% gain, over 45% at the best. The paper also reports where it overfits and names the cause as noisy labels. | Read |
 | [NOTE-071](../../../record/notes.d/NOTE-071.md) | Adding Conditional Control to Text-to-Image Diffusion Models | Adds spatial control to a frozen diffusion model by cloning its encoder into a trainable branch joined to the original by zero-initialized convolutions, so the adapter starts as an exact no-op and grows away from it. Trains robustly on datasets from under 50k to over a million. | Read |
+| [NOTE-075](../../../record/notes.d/NOTE-075.md) | Hyper-ES | Argues from two lemmas that full-parameter ES cannot work at LLM scale — random perturbations concentrate near orthogonality to any useful descent direction, and the leftover orthogonal components accumulate as a random walk away from the pretrained weights — and replaces the search space with the span of a few cheap GRPO-derived LoRA directions, searched by CMA-ES. | Read |
+| [NOTE-077](../../../record/notes.d/NOTE-077.md) | Beyond the Best Guess | Reinforcement learning raises pass@1 and lowers pass@k, eventually below the base model, because it increases the number of prompts solved in none of k samples; evolution strategies raise both and never fall below base at any k or scale tested, up to 32B against published RL checkpoints. | Read |

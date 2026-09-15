@@ -16,6 +16,8 @@ date: '2026-09-10'
 source:
 - LIT-017
 - LIT-065
+introduced_by:
+- LIT-017
 extends:
 - SOTA-097
 implementations:

@@ -16,6 +16,8 @@ tags:
 date: '2026-09-10'
 source:
 - LIT-038
+introduced_by:
+- LIT-038
 summary: >-
   Song et al. (2020), [LIT-038](../literature.d/LIT-038.md). A stochastic sampler injects fresh noise at
   every step, so nothing about the starting point survives to the output.

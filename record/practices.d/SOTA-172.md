@@ -24,6 +24,8 @@ tags:
 date: '2026-09-08'
 source:
 - LIT-205
+introduced_by:
+- LIT-205
 implementations: []
 summary: >-
   Zhu et al. (2024), [LIT-205](../literature.d/LIT-205.md) — pretraining across proportions of synthetic

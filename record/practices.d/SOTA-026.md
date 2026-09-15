@@ -18,6 +18,8 @@ source:
 # LIT-005 defines the bias. LIT-025 was the source until #114 and argues
 # the opposite — see the body.
 - LIT-005
+introduced_by:
+- LIT-005
 summary: >-
   Ba et al. (2016), [LIT-005](../literature.d/LIT-005.md) — [ARXIV-1607.06450](https://arxiv.org/abs/1607.06450). Zero is the identity; a convention rather than a published result, and moot in any model using RMSNorm.
 ---

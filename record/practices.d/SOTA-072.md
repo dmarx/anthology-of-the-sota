@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-054
+introduced_by:
+- LIT-054
 summary: >-
   Zeng et al. (2022), [LIT-054](../literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414).
 ---

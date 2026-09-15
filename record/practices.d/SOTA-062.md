@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-061
+introduced_by:
+- LIT-061
 compared_against:
 - SOTA-061
 summary: >-

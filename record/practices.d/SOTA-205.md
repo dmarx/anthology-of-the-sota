@@ -21,6 +21,8 @@ source:
 - LIT-108
 - LIT-086
 - LIT-109
+introduced_by:
+- LIT-064
 implementations:
 - Instant-NGP
 - 3D Gaussian Splatting

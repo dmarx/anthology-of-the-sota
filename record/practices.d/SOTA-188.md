@@ -32,6 +32,8 @@ source:
 # coefficients that satisfy it; Progressive Distillation finds the criterion
 # by watching epsilon-prediction fail at low SNR, and supplies v-prediction.
 - LIT-067
+introduced_by:
+- LIT-075
 implementations:
 - EDM
 - Stable Diffusion 3

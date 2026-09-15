@@ -31,6 +31,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-030
+introduced_by:
+- LIT-030
 summary: >-
   Shazeer et al. (2020), [LIT-030](../literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). Contested at frontier
   scale in low precision: two groups now ship bounded replacements, on the

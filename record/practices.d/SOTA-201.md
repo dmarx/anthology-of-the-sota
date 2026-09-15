@@ -15,6 +15,8 @@ tags:
 date: '2026-09-10'
 source:
 - LIT-072
+introduced_by:
+- LIT-072
 implementations:
 - OWL-ViT
 ---

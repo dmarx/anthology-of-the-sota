@@ -1,0 +1,183 @@
+---
+# Don't copy this file by hand — run `luria new adr`, which assigns the
+# identity and fills in the fields a machine can compute. WHICH identity
+# depends on the scheme's `allocate` mode: `filing` (the default) takes the
+# next free number on the spot, `merge` mints a temporary code that
+# `luria concretize` numbers where merges serialize (FX-ADR-049). The kinds are the
+# config: every scheme, fragment directory and journal in luria.toml is one, so
+# `luria new <kind>` works for a scheme the moment it is declared.
+#
+# Numbering is sequential and carries information (it's the order decisions were
+# made). The filename is the code and nothing else; the title goes in `title:`
+# below, where correcting it costs an edit rather than a rename plus every link.
+#   Why: LU-ADR-013.
+#
+# This frontmatter is the ONLY place these facts live. The index and the per-tag
+# pages are generated from it — never edit them by hand; run `luria index`.
+# Why: LU-ADR-004.
+
+# Active | Proposed | Deferred | Superseded | Rejected, optionally " — <note>".
+# Supersede when the CHOICE changes: set the old one to
+# `Superseded — by [ADR-tmpjrwkq](ADR-tmpjrwkq.md)` and leave its body intact. When the
+# choice stands and only a REASON was wrong, correct this body in place and
+# bump `version:` below — the rule objects to silent revision, not to editing.
+status: Proposed
+
+# What the index shows in place of the code. Repeat it as the body's `# ADR-tmpjrwkq:`
+# heading — someone reading the file alone needs one — and `luria lint` checks
+# that the two agree, because two copies of a string is a projection that drifts.
+title: 'Every practice states its origin, even when it is the primary source'
+
+# Which revision of this decision's claim you are reading. Standard frontmatter
+# for every scheme, and it moves rarely here: a decision that CHANGES is
+# superseded by a new one, not edited. Bump it when the same choice is restated
+# more broadly — scope widened, wording generalized — and say what changed in a
+# `history:` entry. Shown in the index only when it is not 1.
+version: 1
+
+# Browsing categories, pushed down onto the decision itself. One is normal; more
+# than one is fine. A tag not listed in tags.yaml still works.
+tags:
+- record
+- process
+
+date: '2026-09-15'
+
+# Optional. The issue(s) this decision came from: '#123'.
+
+# Optional but wanted: the one-blob description the index table shows. Without
+# it the table falls back to the title, which is usually too terse to browse by.
+# Say what was decided AND what was rejected — the index is read far more often
+# than the decision, and "why not the obvious thing" is what people come for.
+# This field is prose, so it carries links like any other prose; the rest of the
+# frontmatter is data and stays plain.
+summary: >-
+  [ADR-029](ADR-029.md) made `introduced_by:` optional and set a condition for promotion:
+  a pass over the practices should find origins that differ from the primary
+  source often enough for the field to carry information. The pass has run
+  over all 208, and it did not: three differ, 205 do not. The field is
+  required anyway, for a reason that condition did not test — an absent
+  field was ambiguous between "the origin is the primary source" and "nobody
+  checked", and those are different claims. Every practice now asserts an
+  origin, which is a thing a reader can find wrong. Rejected: requiring it
+  only where a practice cites several sources, which leaves the ambiguity
+  exactly where an unexamined `source[0]` is most likely wrong.
+---
+
+# ADR-tmpjrwkq: Every practice states its origin, even when it is the primary source
+
+<!-- inactive-ok-file: ADR-029 — Superseded by this decision, which names it
+     throughout as the decision whose optionality it reverses and whose
+     substantive holding it carries forward. -->
+
+## Context
+
+[ADR-029](ADR-029.md) added `introduced_by:` and made it optional, for a reason it stated
+plainly: for most practices the origin *is* the primary source, and a field
+every record shares is [DP-002](../../docs/design-principles.md#dp-2)'s failure. It also named the risk that the
+field would be filled in reflexively with `source[0]`. It filed itself
+`Proposed` with a condition for promotion:
+
+> A pass over the practices that populates the field finds cases the
+> single-list arrangement could not express — practices whose origin is not
+> their primary source — in numbers that make the second field carry
+> information rather than duplicate the first.
+
+That pass has now run over all 208 practices, and the honest result is
+mixed:
+
+| | practices |
+|---|---|
+| cite exactly one source | 168 |
+| cite several; the primary is already the earliest | 22 |
+| cite several; an older paper sits in their own list | 18 |
+
+And of all 208, exactly **one** carries a comment naming an origin that is
+not its primary source — [SOTA-121](../practices.d/SOTA-121.md), whose source block already said "[LIT-159](../literature.d/LIT-159.md)
+is the origin" in prose that no field could hold. Three practices in total
+now differ from `source[0]`: that one, plus two of the three [ADR-029](ADR-029.md) filed
+with it — the third names the same paper in both fields, and says so in its
+own comment.
+
+So the pass did not find the numbers the condition asked for. Three in 208 is
+not "carries information rather than duplicates"; it is the duplication
+[ADR-029](ADR-029.md) warned about, arriving exactly as predicted.
+
+## Decision
+
+**`introduced_by:` is required on every practice.** All 208 carry it; 205
+name the same code as `source[0]`, and three do not.
+
+This overrides [ADR-029](ADR-029.md)'s optionality against the evidence its own promotion
+condition asked for, and the reason is a different one than that condition
+tested. The condition asked whether the field's *values* would differ often
+enough to be worth a column. The answer is no. What makes the field worth
+requiring is what its **absence** meant:
+
+Under `required: false`, a practice with no `introduced_by:` was ambiguous
+between two very different states — *the origin is the primary source* and
+*nobody has checked*. Those are not the same claim, and a record whose whole
+purpose is that a recommendation can be traced to work that justifies it
+should not have a silent third state. Requiring the field collapses the
+ambiguity: every practice now asserts an origin, and an assertion is a thing
+a future reader can find wrong. [SOTA-087](../practices.d/SOTA-087.md) was dating a 2019 recommendation to
+2022 for years, and what let it sit there was that nothing had ever been
+asserted for anyone to check.
+
+The scaffold carries the field, with a comment saying the usual case is the
+same code as `source:` and that a difference is worth a comment. That is
+where the reflexive-copy risk is actually managed — at filing time, by
+someone with the paper in front of them — rather than by leaving the field
+off.
+
+[ADR-029](ADR-029.md) is `Superseded` by this decision. **Its substantive holding is
+carried forward unchanged:** the field exists, it means the work that first
+stated the recommendation, `source:` is not reordered, `many: true` for
+parallel invention, and `published:` still derives from `source[0]`.
+
+## Alternatives considered
+
+- **Leave it optional, as [ADR-029](ADR-029.md) decided.** The evidence supports this, and
+  it is the alternative that the measurement actually argues for. Rejected
+  because it preserves the ambiguity above: the 205 practices where the
+  origin is the primary source would keep saying nothing, and "says nothing"
+  is indistinguishable from "was never looked at". The cost is real and is
+  stated in the consequences.
+- **Require it only where a practice cites more than one source.** This
+  targets the 40 practices where the question can even arise, and leaves the
+  168 single-source ones alone. It is the most defensible middle, and luria
+  can express it (`required_when`). Rejected because the ambiguity it leaves
+  is the worse half: a single-source practice is exactly the one where an
+  unexamined `source[0]` is most likely to be wrong, as [SOTA-087](../practices.d/SOTA-087.md) was.
+- **Populate by research rather than by default.** Determining each
+  practice's true origin paper, as was done for the sliding window, would
+  make all 208 values earned rather than assumed. This is the right thing and
+  it is not a backfill: it took a curation pass and a new LIT note to do it
+  once. The field being required is what makes that work findable — a wrong
+  origin is now a correction to a stated field rather than a gap nobody sees.
+
+## Consequences
+
+**205 of 208 practices now assert an origin identical to their primary
+source**, which is close to the shape [DP-002](../../docs/design-principles.md#dp-2) warns about, and the warning
+should be read rather than waved past: if a year from now the count of
+practices where the two differ has not moved, the field is a comment with a
+schema and this decision was wrong.
+
+**The lint now catches an omission at filing time.** A practice scaffolded
+from the form starts with the field; one that drops it fails. The scaffold
+violation this change first produced — `introduced_by:` required but not
+scaffolded — is the mechanism working, and is fixed here.
+
+**Three practices differ, and each is a correction the record could not
+previously state**: [SOTA-060](../practices.d/SOTA-060.md) and [SOTA-087](../practices.d/SOTA-087.md) (the sliding window and the
+recomputation trick, both Child et al. 2019 rather than their 2021-22
+evidence), and [SOTA-121](../practices.d/SOTA-121.md) (Muon, whose origin the source comment had
+been carrying in prose).
+
+**What this obliges:** the population was mechanical, and mechanical work
+asserts nothing. The 205 defaults are claims now, and a wrong one is a
+finding rather than a silence — which is the point, but it means the record
+carries 205 assertions no one has individually checked. That is a debt this
+decision creates deliberately and should be worked down by curation, not by
+another pass over the frontmatter.

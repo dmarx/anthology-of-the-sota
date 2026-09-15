@@ -37,6 +37,8 @@ source:
 - LIT-151
 - LIT-181
 - LIT-152
+introduced_by:
+- LIT-141
 extended_by:
 - SOTA-136
 - SOTA-137

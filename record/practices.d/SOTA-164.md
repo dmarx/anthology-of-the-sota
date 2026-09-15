@@ -19,6 +19,8 @@ source:
 # without reporting what it bought, which is adoption and belongs in
 # consensus_note rather than here (ADR-017).
 - LIT-202
+introduced_by:
+- LIT-202
 implementations: []
 summary: >-
   Lee et al. (2021), [LIT-202](../literature.d/LIT-202.md) — a single 61-word sentence appears thousands of

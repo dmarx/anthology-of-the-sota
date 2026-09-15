@@ -21,6 +21,8 @@ source:
 # paper that found the limit.
 - LIT-007
 - LIT-009
+introduced_by:
+- LIT-007
 summary: >-
   You et al. (2017), [LIT-009](../literature.d/LIT-009.md) — [ARXIV-1708.03888](https://arxiv.org/abs/1708.03888).
 compared_against:

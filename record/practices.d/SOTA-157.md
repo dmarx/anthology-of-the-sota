@@ -25,6 +25,8 @@ source:
 # is against its own ARM baselines plus published LLaMA3 8B numbers — which
 # is what promote_when is asking somebody else to redo.
 - LIT-217
+introduced_by:
+- LIT-217
 implementations:
 - 'LLaDA 8B'
 summary: >-

@@ -21,6 +21,8 @@ tags:
 date: '2026-09-08'
 source:
 - LIT-173
+introduced_by:
+- LIT-173
 implementations:
 - 'RWKV-7 Goose (0.19B–2.9B)'
 summary: >-

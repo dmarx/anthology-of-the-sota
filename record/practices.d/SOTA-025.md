@@ -22,6 +22,8 @@ source:
 # implies. LIT-025 was the source until #114 and argues the opposite —
 # see the body.
 - LIT-005
+introduced_by:
+- LIT-005
 summary: >-
   Ba et al. (2016), [LIT-005](../literature.d/LIT-005.md) — [ARXIV-1607.06450](https://arxiv.org/abs/1607.06450). Identity at initialisation: the normalised signal passes through unchanged. A convention rather than a published result, and the record says so.
 compared_against:

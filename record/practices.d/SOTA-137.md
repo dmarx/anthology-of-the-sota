@@ -12,6 +12,9 @@ date: '2026-09-05'
 # inactive-ok: LIT-141 — this practice's own source, retired with it
 source:
 - LIT-141
+# inactive-ok: LIT-141 — the origin, retired with the practice it originated
+introduced_by:
+- LIT-141
 # inactive-ok: LIT-141 — the summary names the retired source on purpose
 summary: >-
   Zhu et al. (2024), [LIT-141](../literature.d/LIT-141.md) — n parallel residual streams with learnable mixing; gains on dense and MoE pretraining, and an identity-mapping property lost that its successor restores.

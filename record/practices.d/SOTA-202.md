@@ -15,6 +15,8 @@ tags:
 date: '2026-09-10'
 source:
 - LIT-073
+introduced_by:
+- LIT-073
 compared_against:
 - SOTA-035
 implementations:

@@ -58,6 +58,14 @@ date: '2026-01-01'
 source:
 - LIT-000
 
+# The work that FIRST STATED the recommendation, which is frequently not the
+# work that produced the evidence for it (ADR-029). Usually this is the same
+# code as `source:` above, and writing it anyway is the point: the origin is
+# asserted rather than assumed. When they differ, say so in a comment here —
+# that difference is the whole reason the field exists.
+introduced_by:
+- LIT-000
+
 # Optional. Models or codebases known to do this.
 implementations: []
 

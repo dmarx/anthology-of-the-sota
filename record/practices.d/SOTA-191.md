@@ -31,6 +31,8 @@ tags:
 date: '2026-09-09'
 source:
 - LIT-025
+introduced_by:
+- LIT-025
 # RMSNorm keeps the gain and drops the centering — the opposite half from
 # the one this paper calls expendable, and the reason `contested`.
 contested_by:

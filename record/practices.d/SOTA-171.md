@@ -25,6 +25,8 @@ tags:
 date: '2026-09-08'
 source:
 - LIT-166
+introduced_by:
+- LIT-166
 implementations: []
 summary: >-
   Muennighoff et al. (2023), [LIT-166](../literature.d/LIT-166.md) — with constrained data at fixed

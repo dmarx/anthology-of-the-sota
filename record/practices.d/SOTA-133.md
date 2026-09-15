@@ -15,6 +15,8 @@ source:
 # (ADR-010).
 - LIT-134
 - LIT-152
+introduced_by:
+- LIT-134
 compared_against:
 - SOTA-136
 summary: >-

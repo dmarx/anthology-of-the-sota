@@ -17,6 +17,8 @@ tags:
 date: '2026-09-08'
 source:
 - LIT-206
+introduced_by:
+- LIT-206
 implementations: []
 summary: >-
   Liu et al. (2023), [LIT-206](../literature.d/LIT-206.md) — compute attention and the feedforward

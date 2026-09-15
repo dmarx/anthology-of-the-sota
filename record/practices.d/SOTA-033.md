@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-034
+introduced_by:
+- LIT-034
 summary: >-
   Gururangan et al. (2020), [LIT-034](../literature.d/LIT-034.md) — [ARXIV-2004.10964](https://arxiv.org/abs/2004.10964).
 ---

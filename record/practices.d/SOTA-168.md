@@ -25,6 +25,8 @@ source:
 # this improves on and is cited in the body.
 - LIT-157
 - LIT-156
+introduced_by:
+- LIT-157
 compared_against:
 - SOTA-121
 implementations: []

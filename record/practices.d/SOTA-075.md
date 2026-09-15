@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-056
+introduced_by:
+- LIT-056
 # inactive-ok-block: SOTA-155 — Proposed, and declared as a rival rather than
 # a replacement precisely because it is not yet in force
 # SOTA-155 attacks the same problem — a slow interconnect — by reducing the

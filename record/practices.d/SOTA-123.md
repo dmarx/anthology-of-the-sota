@@ -9,6 +9,8 @@ tags:
 date: '2026-09-05'
 source:
 - LIT-119
+introduced_by:
+- LIT-119
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. At 90M, 25% SFT data in the pretraining mix beat a separate SFT stage by 10 IFEval points and yields one checkpoint that is both base and instruct.
 ---

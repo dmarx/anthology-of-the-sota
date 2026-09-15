@@ -19,6 +19,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-100
+introduced_by:
+- LIT-100
 implementations:
 - llama2
 summary: >-

@@ -11,6 +11,8 @@ consensus: converged
 date: '2026-09-08'
 source:
 - LIT-081
+introduced_by:
+- LIT-081
 summary: >-
   Frantar et al. (2022), [LIT-081](../literature.d/LIT-081.md) — [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323). Round one column at a
   time and push the resulting error into the remaining columns using

@@ -18,6 +18,8 @@ tags:
 date: '2026-09-07'
 source:
 - LIT-170
+introduced_by:
+- LIT-170
 extends:
 - SOTA-150
 implementations:

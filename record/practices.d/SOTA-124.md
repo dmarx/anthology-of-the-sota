@@ -44,6 +44,8 @@ source:
 # argues with, so they stay in the body (ADR-010).
 - LIT-119
 - LIT-120
+introduced_by:
+- LIT-119
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Roughly 100–500 GT for a 7B model, scaling linearly; the authors call the understanding early.
 ---

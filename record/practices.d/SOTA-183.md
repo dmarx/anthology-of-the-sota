@@ -11,6 +11,8 @@ consensus: emerging
 date: '2026-09-08'
 source:
 - LIT-082
+introduced_by:
+- LIT-082
 summary: >-
   Bai et al. (2022), [LIT-082](../literature.d/LIT-082.md) — [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). Replace the human
   harmlessness comparisons with model-generated ones: the model critiques and

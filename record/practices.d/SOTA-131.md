@@ -30,6 +30,8 @@ source:
 - LIT-132
 - LIT-155
 - LIT-119
+introduced_by:
+- LIT-132
 # Corrective succession (ADR-017). QK-Clip is added on top of Muon with
 # decoupled weight decay and RMS-matched updates, on the defect it names: at
 # trillion scale Muon drives the maximum attention logit past 1000, which

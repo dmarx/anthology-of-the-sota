@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-028
+introduced_by:
+- LIT-028
 summary: >-
   Kaplan et al. (2020), [LIT-028](../literature.d/LIT-028.md) — [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361).
 compared_against:

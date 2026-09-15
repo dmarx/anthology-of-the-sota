@@ -44,6 +44,8 @@ source:
 # Sequence names LIT-035 and LIT-042 as predecessors; all stay in the body.
 - LIT-144
 - LIT-145
+introduced_by:
+- LIT-144
 summary: >-
   Hu et al. (2024), [LIT-144](../literature.d/LIT-144.md), with the controlled comparison in [LIT-145](../literature.d/LIT-145.md) — matches cosine at equal tuning, leaves the token budget open, makes every stable-stage checkpoint a usable branch point; contested at frontier scale by [LIT-131](../literature.d/LIT-131.md), which retuned per schedule and chose cosine.
 extended_by:

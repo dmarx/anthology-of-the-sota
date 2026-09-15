@@ -22,6 +22,8 @@ tags:
 date: '2026-09-08'
 source:
 - LIT-210
+introduced_by:
+- LIT-210
 implementations: []
 summary: >-
   Barbero et al. (2024), [LIT-210](../literature.d/LIT-210.md) — RoPE's high frequencies build positional

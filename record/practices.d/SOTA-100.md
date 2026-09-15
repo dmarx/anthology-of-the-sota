@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-114
+introduced_by:
+- LIT-114
 summary: >-
   Xiong et al. (2020), [LIT-114](../literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745).
 compared_against:

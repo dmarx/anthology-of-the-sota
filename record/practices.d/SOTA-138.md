@@ -22,6 +22,8 @@ source:
 # (LIT-139) keeps the shape at 1M and is adoption (ADR-017).
 - LIT-142
 - LIT-143
+introduced_by:
+- LIT-142
 summary: >-
   DeepSeek-AI (2025), [LIT-142](../literature.d/LIT-142.md) — a small FP8 indexer scores past tokens and only the top-k enter attention; initialised for 2.1B tokens with dense attention on and the rest frozen; V4 repeats the pattern with a 1T-token dense warm-up.
 ---

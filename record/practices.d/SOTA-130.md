@@ -43,6 +43,8 @@ source:
 # ADR-010 both belong. LIT-167 is the contest and stays in contested_by.
 - LIT-130
 - LIT-164
+introduced_by:
+- LIT-130
 # The two pathways out of a pretrained base: SOTA-129 keeps the reasoning SFT
 # stage, this one removes it. Rivals judged against each other, which is what
 # the promotion condition asks someone to run.

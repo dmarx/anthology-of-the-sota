@@ -21,6 +21,8 @@ tags:
 date: '2026-09-07'
 source:
 - LIT-203
+introduced_by:
+- LIT-203
 summary: >-
   Ding et al. (2024), [LIT-203](../literature.d/LIT-203.md) — concatenate-then-split truncates
   documents that would have fit, and the model then learns to continue text

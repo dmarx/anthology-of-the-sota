@@ -23,6 +23,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-117
+introduced_by:
+- LIT-117
 summary: >-
   Albalak et al. (2023), [LIT-117](../literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406).
 ---

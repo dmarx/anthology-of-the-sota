@@ -17,6 +17,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-052
+introduced_by:
+- LIT-052
 implementations:
 - vision_transformer
 - bert

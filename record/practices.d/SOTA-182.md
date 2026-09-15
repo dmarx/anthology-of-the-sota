@@ -11,6 +11,8 @@ consensus: universal
 date: '2026-09-08'
 source:
 - LIT-023
+introduced_by:
+- LIT-023
 implementations:
 - llama2
 summary: >-

@@ -25,6 +25,8 @@ source:
 - LIT-138
 - LIT-191
 - LIT-190
+introduced_by:
+- LIT-138
 summary: >-
   Qiu et al. (2025), [LIT-138](../literature.d/LIT-138.md) — the best of 30 gating variants at 15B MoE and 1.7B dense over 3.5T tokens: better quality, more stable training, larger tolerable learning rates, no attention sinks; shipped in every Qwen full-attention layer since Qwen3-Next.
 ---

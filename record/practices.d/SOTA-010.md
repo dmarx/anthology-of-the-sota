@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-014
+introduced_by:
+- LIT-014
 summary: >-
   Li et al. (2017), [LIT-014](../literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913).
 compared_against:

@@ -17,6 +17,8 @@ date: '2026-09-10'
 source:
 - LIT-076
 - LIT-038
+introduced_by:
+- LIT-076
 implementations:
 - Stable Diffusion
 - diffusers

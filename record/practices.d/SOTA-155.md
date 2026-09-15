@@ -26,6 +26,8 @@ source:
 # unchanged, which is the thing that decides whether it is cheaper at all.
 - LIT-212
 - LIT-214
+introduced_by:
+- LIT-212
 implementations: []
 summary: >-
   Douillard et al. (2023, 2025), [LIT-212](../literature.d/LIT-212.md) and [LIT-214](../literature.d/LIT-214.md) — federated

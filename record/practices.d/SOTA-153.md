@@ -40,6 +40,8 @@ source:
 - LIT-209
 - LIT-133
 - LIT-207
+introduced_by:
+- LIT-208
 implementations:
 - 'RNoPE-SWA (Cohere, 8B)'
 - 'SWAN-GPT (NVIDIA, 1B and 8B)'

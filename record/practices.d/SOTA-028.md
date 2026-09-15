@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-027
+introduced_by:
+- LIT-027
 summary: >-
   Rajbhandari et al. (2020), [LIT-027](../literature.d/LIT-027.md) — [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054).
 extended_by:

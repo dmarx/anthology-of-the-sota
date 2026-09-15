@@ -11,6 +11,8 @@ consensus: universal
 date: '2026-09-08'
 source:
 - LIT-046
+introduced_by:
+- LIT-046
 summary: >-
   Hu et al. (2021), [LIT-046](../literature.d/LIT-046.md) — [ARXIV-2106.09685](https://arxiv.org/abs/2106.09685). Freeze the pretrained weights
   and learn a rank-r product BA beside each one, so the trainable parameter

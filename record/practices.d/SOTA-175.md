@@ -21,6 +21,8 @@ tags:
 date: '2026-09-08'
 source:
 - LIT-126
+introduced_by:
+- LIT-126
 implementations: []
 summary: >-
   Gong et al. (2025), [LIT-126](../literature.d/LIT-126.md) — standard FIM masks random character spans,

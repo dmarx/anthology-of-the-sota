@@ -21,6 +21,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-059
+introduced_by:
+- LIT-059
 corrects:
 - SOTA-055
 summary: >-

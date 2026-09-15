@@ -32,6 +32,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-115
+introduced_by:
+- LIT-115
 summary: >-
   Fu et al. (2023), [LIT-115](../literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109).
 ---

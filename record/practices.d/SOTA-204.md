@@ -15,6 +15,8 @@ tags:
 date: '2026-09-10'
 source:
 - LIT-093
+introduced_by:
+- LIT-093
 summary: >-
   Song et al. (2023), [LIT-093](../literature.d/LIT-093.md). Where a training loss approximates a
   continuous target through a step count, that count is a bias/variance dial:

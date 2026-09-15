@@ -21,6 +21,8 @@ tags:
 date: '2026-09-08'
 source:
 - LIT-176
+introduced_by:
+- LIT-176
 implementations: []
 summary: >-
   Du et al. (2025), [LIT-176](../literature.d/LIT-176.md) — long-term context in key-value slots updated by

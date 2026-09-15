@@ -1,0 +1,38 @@
+# Theory
+
+Why the things in the [practice registry](../practices/README.md) work — one
+document per claim, each citing the paper it came from.
+
+A theory is a **finding**, where a practice is an instruction. "Use batch
+normalization" is a practice; "batch normalization helps by smoothing the
+optimization landscape" is a theory, and the two are held apart because they
+can be true and false independently. That is not a hypothetical: batch
+normalization's practices are `Active`, the paper that introduced it is worth
+reading, and the explanation in that paper's own title is `Rejected` here.
+Three facts, three statuses, three documents.
+
+`Active` means this is the best account the record holds. `Rejected` means
+the account is disbelieved — **and the thing it explained may still work
+perfectly well**, which is the word's whole reason for meaning something
+different here than it does on a practice. Nothing is deleted: an explanation
+that stops being believed keeps its body, because how a plausible mechanism
+survived a decade of correct predictions is the interesting part.
+
+Every theory names a `source:`, on the same rule as a practice — an
+explanation with no paper behind it is a hunch. Where one underwrites a
+recommendation it says so with `explains:`, and the practice reads it back as
+`explained_by:`. That field is optional, because a finding that underwrites
+nothing yet is still a finding.
+
+File one with `luria new theory`. Never hand-write a link target: write the
+bare code and run `luria link --fix`.
+
+<!-- GENERATED below this line by `luria index` — edit README.stub instead. -->
+
+## By topic
+
+{categories}
+
+## Chronological
+
+{table}

@@ -20,7 +20,8 @@ it disagrees with `luria --help` or with the record, this file is wrong.
 ## Where things are
 
 - `record/` is where you **file**. `practices.d/` holds one document per
-  recommendation, `literature.d/` one note per paper, plus the decisions,
+  recommendation, `theory.d/` one per explanation, `literature.d/` one note
+  per paper, plus the decisions,
   principles, changelog fragments and curation journal.
 - `docs/` is where a reader **browses**. Everything in it is generated — see
   [docs/README.md](docs/README.md). Never edit an assembled page; edit the
@@ -30,19 +31,33 @@ it disagrees with `luria --help` or with the record, this file is wrong.
   `src/scripts/migration/to_record.py` re-runnable. See
   [ADR-008](record/decisions.d/ADR-008.md) and `data/README.md`.
 
-## The two schemes, and why there are two
+## The three schemes, and why there are three
 
-A **practice** (`SOTA`) is a claim about what you should do. A **note**
-(`LIT`) is a paper's standing in the anthology. They have separate statuses
-and are allowed to disagree: a foundational paper can carry advice that has
-moved on, and a paper in the attic can be the source of something everybody
-still does. Collapsing them is what the old schema did, and
-[ADR-002](record/decisions.d/ADR-002.md) is why it stopped.
+<!-- inactive-ok-block: ADR-tmpvv7zp — Proposed, and named from a map rather
+     than cited as a settled rule: the scheme exists and this section describes
+     it; whether it earns its keep is what its promotion condition asks. -->
+
+A **practice** (`SOTA`) is a claim about what you should do. A **theory**
+(`THEORY`) is a claim about why it works. A **note** (`LIT`) is a paper's
+standing in the anthology. They have separate statuses and are allowed to
+disagree: a foundational paper can carry advice that has moved on, a paper in
+the attic can be the source of something everybody still does, and a
+technique everybody uses can have been published with an explanation that was
+later refuted. Collapsing the first and the third is what the old schema did,
+and [ADR-002](record/decisions.d/ADR-002.md) is why it stopped; splitting the
+second out of the first is [ADR-tmpvv7zp](record/decisions.d/ADR-tmpvv7zp.md).
+
+The test when filing: **if it tells the reader what to do it is a practice,
+and if it says what is true it is a theory.** `Rejected` does not mean the
+same thing in the two schemes — on a practice it means do not do this, on a
+theory it means the reason is wrong, and the thing it explained may still
+work perfectly well.
 
 ## Rules that are actually enforced
 
-- **Every practice names a `source:`.** A recommendation with no paper behind
-  it fails the lint. If the paper is not in the record, `luria new lit` first.
+- **Every practice and every theory names a `source:`.** A recommendation with
+  no paper behind it fails the lint, and so does an explanation. If the paper
+  is not in the record, `luria new lit` first.
 - **Every note names a source.** At least one of `arxiv:`, `doi:`, `url:`,
   in that order of preference — the first two resolve through a remote, a
   URL is a string nothing can check ([ADR-009](record/decisions.d/ADR-009.md)). Two papers reached the old
@@ -61,7 +76,7 @@ still does. Collapsing them is what the old schema did, and
 
 ## Working
 
-    luria new sota --title "..."   # or: lit, adr, dp, changelog
+    luria new sota --title "..."   # or: theory, lit, adr, dp, changelog
     luria link --fix              # spell the targets
     luria index                   # regenerate every view
     luria lint                    # the only command that can fail

@@ -1,0 +1,199 @@
+---
+status: Proposed
+title: 'A scheme for explanations, complementing the practice registry'
+version: 1
+tags:
+- record
+- taxonomy
+date: '2026-09-15'
+summary: >-
+  A third scheme, THEORY, for claims about WHY something works. Two schemes
+  could say what a paper's standing is and what you should do, and had
+  nowhere to put the reason — which showed up as eight practices whose titles
+  state a behaviour rather than an instruction, and 48 of 225 notes that no
+  practice cites, two of them saying in their own bodies that they carry no
+  practice deliberately. A THEORY names its `source:` like a practice does,
+  and `explains:` the practices it underwrites, which the practices read back
+  as `explained_by:`. Rejected: a status or a tag on SOTA, which would make
+  `Rejected` mean two things at once — batch normalization needs a rejected
+  explanation and an active practice on the same day.
+---
+
+# ADR-tmpvv7zp: A scheme for explanations, complementing the practice registry
+
+## Context
+
+This record has two schemes because a paper's standing and a recommendation's
+standing are different facts that were being stored in one field, and [ADR-002](ADR-002.md)
+is the decision that separated them. A third fact has been leaking in the
+same way, and it is the one a reader of a practice registry most often wants:
+*why does this work?*
+
+The leak is visible from both ends.
+
+**From the practice registry.** Eight of 208 practices state a behaviour
+rather than an instruction, which is what the scaffold asks for and what the
+template's first line says a practice is:
+
+<!-- inactive-ok-block: SOTA-064 — Rejected, and listed here precisely as
+     one of the eight: a retired finding is still a finding filed as a
+     practice, which is the shape this table is counting. -->
+| | |
+|---|---|
+| [SOTA-010](../practices.d/SOTA-010.md) | skip connections promote training stability by smoothing out the loss landscape |
+| [SOTA-012](../practices.d/SOTA-012.md) | sharpness in the loss landscape correlates with test error |
+| [SOTA-037](../practices.d/SOTA-037.md) | LM in-context learning emerges at scale |
+| [SOTA-038](../practices.d/SOTA-038.md) | ICL permits few-shot task adaptability |
+| [SOTA-040](../practices.d/SOTA-040.md) | larger models are more sample efficient |
+| [SOTA-064](../practices.d/SOTA-064.md) | Warmup needed scales sub-linearly with model size |
+| [SOTA-092](../practices.d/SOTA-092.md) | smaller batch sizes are more sample efficient |
+| [SOTA-097](../practices.d/SOTA-097.md) | Optimal batch size scales approximately with compute budget |
+
+None of these is a mistake and none should be deleted. What they have in
+common is that their bodies end up arguing for their own presence: [SOTA-037](../practices.d/SOTA-037.md)'s
+last paragraph reaches a negative consequence and then says outright that it
+"is the reason this belongs in a registry of practice." A document that has
+to justify its filing is usually filed wrong.
+
+**From the reading list.** 48 of 225 notes are cited by no practice — and in
+`analysis-and-evaluation`, the topic whose own blurb says "theory,
+interpretability and debugging belong here too", it is half of them, 6 of 12.
+Two say so in their own words. [LIT-019](../literature.d/LIT-019.md) and [LIT-039](../literature.d/LIT-039.md) each carry a section
+headed **"Carries no practice, deliberately"**, and [LIT-019](../literature.d/LIT-019.md)'s explains why:
+"the procedure it describes costs a full dense training run before it
+produces anything, so as an instruction it reads *train the model, then train
+a smaller one* — which is a finding about neural networks rather than advice
+about how to train one."
+
+The sharpest case is [LIT-223](../literature.d/LIT-223.md). It was filed weeks ago to correct a conflation,
+its own body says "the practices that turn on the *mechanism* — why BN
+permits what it permits — belong here", and nothing in the record cites it.
+Nothing can. What it says is that batch normalization does not work for the
+reason it was published with, and that is not an instruction; it does not
+change what anyone should do.
+
+That last case is also the one this scheme is shaped around, because it needs
+three statuses at once and there were only two places to put them. The
+technique is standard. The paper that introduced it is `Active`. The
+explanation in that paper's *title* is wrong. Under two schemes, the third
+fact had to be either dropped or written into a practice body, where it reads
+as a practice arguing against itself.
+
+## Decision
+
+**A third scheme, `THEORY`, holding one document per claim about why
+something happens.** A practice is an instruction; a theory is a finding.
+
+Its relationship to `LIT` is exactly the one `SOTA` has, for exactly the
+reason [ADR-002](ADR-002.md) gives: a note is a paper's standing, a claim is a claim, and a
+claim outlives the paper that made it. Internal covariate shift was believed
+by far more papers than the one that proposed it, and was refuted by one that
+proposed nothing.
+
+- **`source:` is required and is a list**, primary first, on the same rule
+  and for the same reason as a practice's: an explanation with no paper
+  behind it is a hunch. `published:` derives from `source[0]`.
+- **`explains:` names the practices the account underwrites**, and `luria
+  link --fix` writes `explained_by:` back onto each of them — a crossing
+  converse, which luria has permitted since [LU-ADR-097](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-097.md). It is **optional**,
+  and the seed set is why: the two lottery-ticket documents explain nothing,
+  because the record holds no pruning practice for them to explain, and
+  requiring the field would have left them exactly where they are now.
+- **`extends:` and `corrects:` run between theories**, with the distinction
+  [ADR-017](ADR-017.md) draws elsewhere: a refinement of an account that holds, versus a
+  document that exists because an account breaks. Both edges in the seed set
+  are corrections.
+- **Its own status vocabulary**, `theory-statuses`, in which `Rejected` means
+  *disbelieved* — "and the thing it explained may still work perfectly well."
+- **The same thirteen topics**, by [ADR-026](ADR-026.md)'s rule and with [ADR-026](ADR-026.md)'s
+  mechanism: the words are one table in `vocabularies.topics` and only the
+  filing rule is repeated per scheme. Copying the glosses a third time is how
+  ten of thirteen drifted the last time.
+<!-- inactive-ok: ADR-030 — Proposed; cited for its reasoning, which this paragraph declines to follow here, rather than as a settled rule. -->
+- **No `introduced_by:`.** [ADR-030](ADR-030.md) required it on practices because a
+  recommendation and the evidence for it are separate acts, so the origin can
+  differ from `source[0]` and an absent field was ambiguous. A theory
+  document's primary source *is* the work that states the account; there is
+  no second act for the field to name. If a case turns up — an account
+  proposed in one paper and evidenced in another — that is when to add it.
+
+<!-- inactive-ok-block: THEORY-tmp69thf, THEORY-tmp6auqn — one Rejected and
+     one Proposed, which is the point of naming them: a scheme whose seed set
+     is four Active documents would not demonstrate that its statuses do
+     anything. -->
+Four documents are filed with this decision: the batch-normalization pair
+([THEORY-tmpn1kz1](../theory.d/THEORY-tmpn1kz1.md) correcting [THEORY-tmp69thf](../theory.d/THEORY-tmp69thf.md)), and the lottery-ticket pair
+([THEORY-tmpqvo94](../theory.d/THEORY-tmpqvo94.md) correcting [THEORY-tmp6auqn](../theory.d/THEORY-tmp6auqn.md)). They are not a migration. They
+are the four claims the record was already carrying in prose with nowhere to
+put them.
+
+## Alternatives considered
+
+- **A status or a tag on `SOTA`.** The cheapest move, and the one that breaks
+  first. `Rejected` on a practice means *do not do this*; on an explanation it
+  means *this reason is wrong*, and batch normalization needs both words on
+  the same day pointing at different documents. A vocabulary whose words mean
+  two things depending on a tag is the failure [ADR-002](ADR-002.md) already fixed once.
+- **Leave explanations in the LIT note's takeaways.** This is where they are
+  today, and it is why nothing cites them: a note is a paper's standing, so an
+  explanation stored there can only be referenced by referencing the paper,
+  and a claim held by thirty papers has thirty homes and no address. It also
+  cannot be given a status of its own without giving the paper one it does not
+  deserve — [LIT-002](../literature.d/LIT-002.md) is worth reading, and its title is wrong.
+- **Leave explanations in the practice body.** Works until the explanation is
+  wrong, at which point the choice is to rewrite the body — losing what the
+  record stopped believing, against [DP-003](../../docs/design-principles.md#dp-3) — or to leave a practice whose
+  prose argues with its own recommendation. And it offers nothing at all when
+  no practice exists, which is the lottery-ticket case and 48 notes' worth of
+  the general one.
+- **Require `explains:`.** It would make the scheme's purpose enforceable, and
+  it would have made both lottery-ticket documents unfilable. A finding that
+  underwrites nothing yet is still a finding; requiring the link recreates, at
+  one remove, the gap this decision is closing.
+- **Re-file the eight practices above as part of this decision.** Tempting,
+  and deliberately not done — see below.
+
+## Consequences
+
+**The eight finding-shaped practices stay where they are, for now.** Moving
+one is not a status change, and "retire by changing status, never by
+deleting" does not cover it: a practice re-filed as a theory leaves a SOTA
+code that is neither `Rejected` nor `Superseded` but simply somewhere else.
+That needs its own decision about what the old code says and what happens to
+links into it, and it should be taken with a curation pass rather than
+bundled into the scheme that makes it possible. [SOTA-010](../practices.d/SOTA-010.md) and [SOTA-012](../practices.d/SOTA-012.md) are the
+clearest candidates; both are sourced to [LIT-014](../literature.d/LIT-014.md) and both are readings of a
+figure.
+
+**The scheme starts with four documents and five statuses, which is a bet.**
+The honest version of [DP-002](../../docs/design-principles.md#dp-2)'s warning applies to schemes as well as fields:
+if a year from now `THEORY` holds a handful of documents filed in this
+contribution and nothing since, then explanations did not in fact need a home
+of their own and this was a folder.
+
+This decision is therefore filed `Proposed`, with a condition for promotion:
+
+> A case arrives in which a practice and the explanation under it move in
+> OPPOSITE directions — an account rejected while the practice it justified
+> stays `Active`, or a practice retired while the finding beneath it stands —
+> and is filed without either document being rewritten to accommodate the
+> other.
+
+The batch-normalization pair is that case reconstructed, which is why it does
+not satisfy the condition: the four seed documents were written by someone who
+already knew what the scheme was for. The condition asks for an event rather
+than a count, because a count of documents is satisfiable by filing
+documents.
+
+**`docs/theory/` joins the generated views**, and the practice pages gain an
+`explained_by:` line where one exists — which is two practices today, [SOTA-006](../practices.d/SOTA-006.md)
+and [SOTA-020](../practices.d/SOTA-020.md). Both are batch-normalization practices, and in both cases what
+the link adds is the correction: the reason in the practice's own source is
+not the reason the record believes.
+
+**A fourth answer to "what does this status mean" now exists**, after
+practices, papers and readings. That is not obviously a good thing, and it is
+the strongest argument the rejected alternatives had. The defence is that the
+four questions really are four — is this worth reading, should you do it, how
+carefully was it read, is the reason right — and that the record has been
+answering the fourth one badly rather than not at all.

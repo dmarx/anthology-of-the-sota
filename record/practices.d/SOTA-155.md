@@ -38,6 +38,8 @@ summary: >-
   `Proposed`: one group, and no frontier report trains this way.
 compared_against:
 - SOTA-075
+extended_by:
+- SOTA-tmpth2yj
 ---
 
 # SOTA-155: Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation

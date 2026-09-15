@@ -1,0 +1,68 @@
+---
+status: 'Active'
+title: 'Subspace Networks: Scaling Decentralized Training with Communication-Efficient Model Parallelism'
+version: 1
+tags:
+- distributed-optimization
+date: '2026-09-15'
+published: '2025-06-01'
+arxiv: '2506.01260'
+first_author: 'Ramasinghe'
+keywords:
+- 'subspace-compression'
+- 'pipeline-parallelism'
+- 'grassmann'
+- 'decentralized-training'
+implementations: []
+summary: >-
+  Ramasinghe et al. (2025), [ARXIV-2506.01260](https://arxiv.org/abs/2506.01260). Project the model-parallel
+  communication onto a low-rank subspace updated every few hundred steps,
+  reaching about 100x compression for pipeline-parallel decentralized
+  training.
+---
+# LIT-tmpuc58z: Subspace Networks: Scaling Decentralized Training with Communication-Efficient Model Parallelism
+
+Ramasinghe et al. (2025) — [ARXIV-2506.01260](https://arxiv.org/abs/2506.01260)
+
+## Key takeaways
+
+A novel lossless activation compression algorithm for pipeline-parallel
+(model-parallel) training that exploits natural rank collapse in transformer
+projection matrices to achieve up to 100x communication reduction, enabling
+decentralized training of billion-scale models over consumer-grade internet
+connections without convergence degradation.
+
+- **Theorem B.1 (exponential error accumulation under lossy compression).**
+  Under naive lossy activation compression, compression error at layer L
+  grows exponentially with depth: ||e_L|| grows as O(rho^L) where rho > 1
+  depends on Lipschitz constants.
+  *Holds when:* General lossy compression applied sequentially across L
+  pipeline stages; assumes bounded per-layer compression error.
+- **100x lossless compression (empirical).** Subspace rank k=40 achieves
+  100x compression of inter-stage activations with no measurable convergence
+  degradation on 2B-parameter transformers.
+  *Holds when:* k=40, d=4096 (100x ratio); 8-layer model;
+  WikiText/BookCorpus/OpenWebText benchmarks.
+- **Real-world geographic scaling.** 8B LLaMA trained across 4 global
+  regions at 60–350Mbps matches centralized convergence; uncompressed
+  decentralized baseline is 13x slower.
+  *Holds when:* 64 L4 GPUs across 4 regions; TorchTitan + GPipe pipeline;
+  Protocol Models compression.
+
+## What the evidence does not cover
+
+- Method requires modifying AdamW and constraining specific weight matrices,
+  adding implementation complexity.
+- Evaluated primarily on decoder-only transformer architectures;
+  generalization to other architectures is unverified.
+- Constant ~400MB memory overhead per worker, which may matter on very
+  memory-constrained devices.
+- Subspace constraint applies only to pipeline (inter-node) boundaries;
+  intra-node computation is unchanged.
+- Real-world experiment limited to 8B parameters; behavior at larger scales
+  not demonstrated.
+
+## Standing in the anthology
+
+Read — the reading is [NOTE-tmp7r374](../notes.d/NOTE-tmp7r374.md). Arrived in the imported batch, which
+brought in the communication-compression branch.

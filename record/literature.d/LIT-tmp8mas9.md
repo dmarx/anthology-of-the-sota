@@ -1,0 +1,47 @@
+---
+status: 'Deferred'
+title: 'ZeRO-Infinity: Breaking the GPU Memory Wall for Extreme Scale Deep Learning'
+version: 1
+tags:
+- systems-optimization
+date: '2026-09-15'
+published: '2021-04-01'
+arxiv: '2104.07857'
+first_author: 'Rajbhandari'
+keywords:
+- 'memory-offload'
+- 'nvme'
+- 'zero'
+- 'extreme-scale'
+implementations: []
+summary: >-
+  Rajbhandari et al. (2021), [ARXIV-2104.07857](https://arxiv.org/abs/2104.07857). ZeRO-Infinity offloads
+  parameters, gradients and optimizer state to CPU and NVMe with bandwidth-
+  centric partitioning, so model size stops being bounded by aggregate GPU
+  memory.
+---
+# LIT-tmp8mas9: ZeRO-Infinity: Breaking the GPU Memory Wall for Extreme Scale Deep Learning
+
+Rajbhandari et al. (2021) — [ARXIV-2104.07857](https://arxiv.org/abs/2104.07857)
+
+## What it is
+
+ZeRO-Infinity offloads parameters, gradients and optimizer state to CPU and
+NVMe with bandwidth-centric partitioning, so model size stops being bounded
+by aggregate GPU memory.
+
+From the paper's own abstract:
+
+> In the last three years, the largest dense deep learning models have
+> grown over 1000x to reach hundreds of billions of parameters, while the
+> GPU memory has only grown by 5x (16 GB to 80 GB). Therefore, the growth
+> in model scale has been supported primarily though system innovations
+> that allow large models to fit in the aggregate GPU memory of multiple
+> GPUs. However, we are getting close to the GPU memory wall.
+
+## Standing in the anthology
+
+`Deferred`, which here means what the vocabulary says: in the corpus, not
+read closely enough to place. It arrived in the imported batch, which
+brought in the memory-partitioning branch.
+

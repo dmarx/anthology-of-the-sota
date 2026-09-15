@@ -1,0 +1,65 @@
+---
+status: 'Active'
+title: 'A Mean Field View of the Landscape of Two-Layers Neural Networks'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-15'
+published: '2018-04-01'
+arxiv: '1804.06561'
+first_author: 'Mei'
+keywords:
+- 'mean-field'
+- 'two-layer-networks'
+- 'distributional-dynamics'
+- 'pde'
+implementations: []
+summary: >-
+  Mei et al. (2018), [ARXIV-1804.06561](https://arxiv.org/abs/1804.06561). The distribution of neurons in a wide
+  two-layer network evolves by a Wasserstein gradient flow, so SGD on the
+  finite network is a noisy discretization of a deterministic PDE.
+---
+# LIT-tmp8li9l: A Mean Field View of the Landscape of Two-Layers Neural Networks
+
+Mei et al. (2018) — [ARXIV-1804.06561](https://arxiv.org/abs/1804.06561)
+
+## Key takeaways
+
+Proves that SGD training of two-layer neural networks, in a mean-field
+scaling limit where the empirical distribution of hidden units converges, is
+captured by a non-linear PDE (distributional dynamics) that is a Wasserstein
+gradient flow on an asymptotic population risk functional R(ρ). Uses this to
+prove convergence to near-global optima on concrete examples
+(isotropic/anisotropic Gaussians) with sample complexity independent of the
+number of hidden units N, and to establish generic global convergence of
+noisy (entropy-regularized) SGD.
+
+- **Theorem 3 (Propagation of chaos / PDE limit).** sup_{k≤T/ε} |R_N(θ^k) -
+  R(ρ_{kε})| ≤ C e^{CT} · sqrt(1/N ∨ ε) · [sqrt(D + log(N/ε)) + z] w.p. ≥ 1
+  - e^{-z^2}
+  *Holds when:* Requires N ≫ D and ε small; error grows exponentially in
+  time horizon T
+- **Proposition 1 (Static approximation).** |inf_θ R_N(θ) - inf_ρ R(ρ)| ≤
+  K/N
+  *Holds when:* Under boundedness of U(θ,θ)
+- **Theorem 1 (Isotropic Gaussians global convergence).** R_N(θ^k) ≤ inf R_N
+  + η for k ∈ [Td, 10Td] samples
+  *Holds when:* d ≥ d_0(η,Δ), N ≥ C_0 d, ε ∈ [1/N^10, 1/(C_0 d)], good
+  initialization
+- **Theorem 5 (Noisy SGD global convergence).** R_N(θ^k) ≤ inf_ρ R_λ(ρ) + η
+  in time T independent of N
+  *Holds when:* β ≥ CD/η, λ > 0; T can depend exponentially on D in general
+- **Theorem 6 (Local stability of point-mass fixed points).** Exponential
+  convergence ∫||θ-θ_*||^2 ρ_t(dθ) ≤ e^{-λ(t-t_0)} if H_0(δ_θ*) ≻ 0 and
+  support starts near θ_*
+  *Holds when:* Requires positive-definite local Hessian H_0
+
+## Standing in the anthology
+
+Read — the reading is [NOTE-tmp5owfc](../notes.d/NOTE-tmp5owfc.md). Arrived in the imported batch, which
+brought in the mean-field account of wide networks, where the object that
+moves is the distribution of neurons.
+
+Two readings of this paper arrived, one of them filed under [ARXIV-1805.01361](https://arxiv.org/abs/1805.01361)
+— an identifier belonging to a paper on hyperspectral water regression. The
+note merges them.

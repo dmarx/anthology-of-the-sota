@@ -1,0 +1,69 @@
+---
+status: 'Active'
+title: 'HOGWILD!: A Lock-Free Approach to Parallelizing Stochastic Gradient Descent'
+version: 1
+tags:
+- distributed-optimization
+date: '2026-09-15'
+published: '2011-06-01'
+arxiv: '1106.5730'
+first_author: 'Niu'
+keywords:
+- 'asynchronous-sgd'
+- 'lock-free'
+- 'shared-memory'
+- 'sparsity'
+implementations: []
+summary: >-
+  Niu et al. (2011), [ARXIV-1106.5730](https://arxiv.org/abs/1106.5730). Lock-free parallel SGD on shared memory:
+  let cores overwrite each other without locks, and when the problem is sparse
+  enough the collisions are rare and the convergence rate is nearly the same.
+---
+# LIT-tmpatkfs: HOGWILD!: A Lock-Free Approach to Parallelizing Stochastic Gradient Descent
+
+Niu et al. (2011) — [ARXIV-1106.5730](https://arxiv.org/abs/1106.5730)
+
+## Key takeaways
+
+Introduces Hogwild!, a lock-free parallel SGD scheme where processors read
+and write shared memory without any synchronization. Proves that for sparse
+problems the algorithm achieves near-linear speedup in the number of
+processors while converging at essentially the same rate as serial SGD.
+
+- **Theorem 1 (Near-linear speedup).** With P processors and sparsity
+  parameters (Omega, Delta, rho), Hogwild! converges to an epsilon-
+  neighborhood of the optimum in O((1 + P * rho * Delta * Omega) / (c_r *
+  epsilon)) iterations, achieving near-linear speedup in P when P =
+  O(n^{1/4}).
+  *Holds when:* Requires sparse cost function (rho * Delta * Omega =
+  O(1/P)); holds for strongly convex objectives with Lipschitz gradients.
+- **Proposition 4.1 (Convergence rate).** The expected suboptimality
+  E[f(x_k) - f(x*)] decreases geometrically at rate (1 - c_r * epsilon_k)
+  per step, where c_r = c(1 - delta) is the effective curvature degraded by
+  staleness.
+  *Holds when:* Applies under the sparsity assumption; c_r > 0 requires the
+  collision probability to be sufficiently small relative to strong
+  convexity.
+- **Piecewise constant stepsize schedule (Section 5).** Using a stepsize
+  that decays by factor beta after every K steps achieves O(1/k) convergence
+  rate without requiring knowledge of the strong convexity constant,
+  avoiding the exponential slowdown risk of constant stepsizes.
+  *Holds when:* Requires initial stepsize epsilon_0 < 1/c; robust to
+  moderate mis-specification of c.
+
+## What the evidence does not cover
+
+- Speedup guarantees require the number of processors to be O(n^{1/4});
+  performance degrades for denser problems with large rho and Delta.
+- Analysis assumes shared-memory multicore setting; does not directly apply
+  to distributed-memory clusters where network latency dominates.
+- Theoretical analysis covers with-replacement sampling; the without-
+  replacement variant used in practice lacks matching convergence theory.
+- Lock-free writes can corrupt multi-word parameter updates on some hardware
+  if atomic word-level writes are not guaranteed.
+
+## Standing in the anthology
+
+Read — the reading is [NOTE-tmpradb2](../notes.d/NOTE-tmpradb2.md). Arrived in the imported batch, which
+brought in the asynchronous and bounded-delay branch of distributed
+training.

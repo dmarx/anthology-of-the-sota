@@ -1,0 +1,69 @@
+---
+status: 'Active'
+title: '1-bit Adam: Communication Efficient Large-Scale Training with Adam''s Convergence Speed'
+version: 1
+tags:
+- distributed-optimization
+date: '2026-09-15'
+published: '2021-02-01'
+arxiv: '2102.02888'
+first_author: 'Tang'
+keywords:
+- 'gradient-compression'
+- 'adam'
+- 'error-compensation'
+- 'warmup'
+implementations: []
+summary: >-
+  Tang et al. (2021), [ARXIV-2102.02888](https://arxiv.org/abs/2102.02888). Adam's variance term stabilizes early
+  in training; freeze it after a warmup and the update becomes linear enough
+  for error-compensated 1-bit compression to work.
+---
+# LIT-tmpaqpkd: 1-bit Adam: Communication Efficient Large-Scale Training with Adam's Convergence Speed
+
+Tang et al. (2021) — [ARXIV-2102.02888](https://arxiv.org/abs/2102.02888)
+
+## Key takeaways
+
+1-bit Adam is the first communication-compressed optimizer that matches
+Adam's convergence speed on large transformer models (BERT, GPT-3 style),
+achieving up to 5x communication reduction and 3.3x end-to-end throughput
+improvement. The key insight is that Adam's variance term stabilizes early
+in training, enabling its use as a fixed preconditioner for 1-bit compressed
+momentum SGD in the compression phase.
+
+- **Theorem 1 (1-bit Adam convergence).** In the compression phase, 1-bit
+  Adam achieves O(1/sqrt(nT)) convergence rate, matching uncompressed
+  distributed SGD with linear speedup in n workers.
+  *Holds when:* L-smooth objective, bounded gradient variance, error-
+  compensated 1-bit compression with per-chunk scaling; applies only after
+  warm-up phase.
+- **Corollary 1 (linear speedup).** With n workers, 1-bit Adam achieves the
+  same convergence rate as single-worker Adam up to a constant factor,
+  providing linear speedup.
+  *Holds when:* Same conditions as Theorem 1; linear speedup holds in the
+  compression phase only.
+- **Empirical throughput result.** 1-bit Adam achieves up to 3.3x end-to-end
+  throughput improvement and 5x communication reduction for BERT-Large on
+  64-GPU Ethernet clusters.
+  *Holds when:* 64 GPUs, Ethernet interconnect, BERT-Large pre-training;
+  warm-up phase is 15–20% of total steps.
+
+## What the evidence does not cover
+
+- The warm-up phase runs full-precision Adam and its duration (sometimes
+  15–20% of total steps) partially offsets communication savings.
+- The compressed allreduce requires a custom MPI implementation; it is not
+  directly available in standard PyTorch/NCCL all-reduce.
+- Freezing the variance may be suboptimal if the loss landscape changes
+  significantly after the warm-up, e.g., during learning-rate annealing.
+- Convergence theory covers only the compression phase; the warm-up phase
+  has no formal guarantees beyond standard Adam analysis.
+- The method is specific to Adam; it does not generalize to other adaptive
+  optimizers (AdaFactor, Adagrad) without re-deriving the variance
+  stabilization argument.
+
+## Standing in the anthology
+
+Read — the reading is [NOTE-tmpdqlji](../notes.d/NOTE-tmpdqlji.md). Arrived in the imported batch, which
+brought in the communication-compression branch.

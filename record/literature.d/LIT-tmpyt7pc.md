@@ -1,0 +1,62 @@
+---
+status: 'Active'
+title: 'Deep learning with Elastic Averaging SGD'
+version: 1
+tags:
+- distributed-optimization
+date: '2026-09-15'
+published: '2014-12-01'
+arxiv: '1412.6651'
+first_author: 'Zhang'
+keywords:
+- 'elastic-averaging'
+- 'parameter-server'
+- 'communication-period'
+implementations: []
+summary: >-
+  Zhang et al. (2014), [ARXIV-1412.6651](https://arxiv.org/abs/1412.6651). Let each worker keep its own
+  parameters and pull it toward a centre variable with an elastic force, so
+  workers may explore apart and communication can be infrequent.
+---
+# LIT-tmpyt7pc: Deep learning with Elastic Averaging SGD
+
+Zhang et al. (2014) — [ARXIV-1412.6651](https://arxiv.org/abs/1412.6651)
+
+## Key takeaways
+
+This paper introduces Elastic Averaging SGD (EASGD) and its momentum and
+asynchronous variants, which allow local workers to diverge from a center
+variable via an elastic coupling force, enabling more exploration of the
+loss landscape while reducing communication frequency compared to DOWNPOUR.
+
+- **Quadratic stability theorem (Section 3).** For the 1D quadratic
+  objective, EASGD in round-robin asynchronous mode is stable (parameters
+  remain bounded) if and only if the eigenvalues of the update matrix lie
+  within the unit circle, which yields an explicit stability condition on
+  alpha and beta.
+  *Holds when:* 1D strongly-convex quadratic; round-robin worker ordering;
+  requires beta = p*alpha.
+- **ADMM instability (Section 3).** ADMM applied to the same 1D quadratic
+  round-robin scheme exhibits chaotic behavior (eigenvalue modulus > 1) for
+  a wide range of hyperparameters, while EASGD's stability region is easily
+  satisfied.
+  *Holds when:* 1D quadratic; round-robin ordering; demonstrated numerically
+  via eigenvalue plots.
+
+## What the evidence does not cover
+
+- Formal convergence analysis is provided only for quadratic and strongly-
+  convex objectives; convergence for general nonconvex deep learning
+  objectives was not established in this paper.
+- Requires a centralized parameter server to store and update the center
+  variable, introducing a potential bottleneck and single point of failure.
+- EAMSGD can get trapped at worse energy levels for very large communication
+  periods (tau=100+) without learning rate decay, requiring careful
+  scheduling.
+- Optimal hyperparameters (rho, tau, eta) interact in complex ways and
+  require tuning.
+
+## Standing in the anthology
+
+Read — the reading is [NOTE-tmpcb05n](../notes.d/NOTE-tmpcb05n.md). Arrived in the imported batch, which
+brought in the local-update branch — train apart for H steps, then average.

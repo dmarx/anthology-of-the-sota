@@ -1,0 +1,65 @@
+---
+status: 'Active'
+title: 'Distributed Optimization with Gradient Tracking over Heterogeneous Delay-Prone Directed Networks'
+version: 1
+tags:
+- distributed-optimization
+date: '2026-09-15'
+published: '2025-04-01'
+arxiv: '2504.10964'
+first_author: 'Makridis'
+keywords:
+- 'gradient-tracking'
+- 'directed-networks'
+- 'delays'
+- 'step-size-bound'
+implementations: []
+summary: >-
+  Makridis et al. (2025), [ARXIV-2504.10964](https://arxiv.org/abs/2504.10964). Gradient tracking over directed
+  networks with heterogeneous delays, with an a-priori step-size bound
+  computed from the delay bound.
+---
+# LIT-tmp8pz5b: Distributed Optimization with Gradient Tracking over Heterogeneous Delay-Prone Directed Networks
+
+Makridis et al. (2025) — [ARXIV-2504.10964](https://arxiv.org/abs/2504.10964)
+
+## Key takeaways
+
+This paper proposes R-ADD-OPT (Robustified ADD-OPT), the first distributed
+optimization algorithm with gradient tracking that provably converges on
+directed graphs in the presence of heterogeneous, time-invariant bounded
+transmission delays, providing an explicit step-size range computable a
+priori from the maximum delay.
+
+- **Theorem 1 (Linear convergence of R-ADD-OPT).** Under strongly-convex,
+  L-smooth local objectives and bounded time-invariant delays tau_bar,
+  R-ADD-OPT converges exponentially to the global optimum: ||z^k - x*||^2 <=
+  C * rho(G)^k, where rho(G) < 1 for step-size alpha in (0, alpha_bar) and
+  alpha_bar is computable from tau_bar, the spectral gap of the augmented
+  mixing matrix, and the Lipschitz and strong-convexity constants.
+  *Holds when:* Strongly convex, L-smooth objectives; strongly connected
+  directed graph; time-invariant bounded delays; column-stochastic weights.
+- **Step-size shrinkage with delay (Table II / Figure 3).** The maximum
+  allowable step-size alpha_bar decreases as delay bound tau_bar increases;
+  the second-largest eigenvalue sigma of the augmented mixing matrix
+  approaches 1 as tau_bar grows, tightening the spectral gap and slowing
+  convergence.
+  *Holds when:* Example network with sigma = 0.599 (no delay), 0.877
+  (tau=2), 0.963 (tau=5), 0.987 (tau=10).
+
+## What the evidence does not cover
+
+- Convergence is proven only for strongly-convex local objectives; extension
+  to nonconvex objectives (as in deep learning) is not addressed.
+- Proof covers only time-invariant delays; the time-varying case is
+  empirically validated but analytically open.
+- The augmented-graph approach scales the problem size by a factor of (1 +
+  tau_bar), increasing memory and computational overhead for large delays.
+- The computable step-size bound may be conservative; the optimal step-size
+  that minimizes spectral radius must be found numerically.
+
+## Standing in the anthology
+
+Read — the reading is [NOTE-tmpx5j6w](../notes.d/NOTE-tmpx5j6w.md). Arrived in the imported batch, which
+brought in the decentralized branch, where there is no parameter server and
+the topology is the hyperparameter.

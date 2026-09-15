@@ -1,0 +1,48 @@
+---
+status: 'Deferred'
+title: 'Distributed Deep Learning in Open Collaborations'
+version: 1
+tags:
+- distributed-optimization
+date: '2026-09-15'
+published: '2021-06-01'
+arxiv: '2106.10207'
+first_author: 'Diskin'
+keywords:
+- 'collaborative-training'
+- 'volunteer-computing'
+- 'adaptive-averaging'
+- 'dht'
+implementations: []
+summary: >-
+  Diskin et al. (2021), [ARXIV-2106.10207](https://arxiv.org/abs/2106.10207). DeDLOC: collaborative training
+  across volunteered hardware with adaptive averaging, keeping the run
+  equivalent to standard large-batch SGD at a fixed global batch size.
+---
+# LIT-tmp2k3vx: Distributed Deep Learning in Open Collaborations
+
+Diskin et al. (2021) — [ARXIV-2106.10207](https://arxiv.org/abs/2106.10207)
+
+## What it is
+
+DeDLOC: collaborative training across volunteered hardware with adaptive
+averaging, keeping the run equivalent to standard large-batch SGD at a fixed
+global batch size.
+
+From the paper's own abstract:
+
+> Modern deep learning applications require increasingly more compute to
+> train state-of-the-art models. To address this demand, large
+> corporations and institutions use dedicated High-Performance Computing
+> clusters, whose construction and maintenance are both environmentally
+> costly and well beyond the budget of most organizations. As a result,
+> some research directions become the exclusive domain of a few large
+> industrial and even fewer academic actors.
+
+## Standing in the anthology
+
+`Deferred`, which here means what the vocabulary says: in the corpus, not
+read closely enough to place. It arrived in the imported batch, which
+brought in the volunteer- and internet-scale branch, where workers join and
+leave.
+

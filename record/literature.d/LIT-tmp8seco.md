@@ -1,0 +1,70 @@
+---
+status: 'Active'
+title: 'The mean field analysis for the Kuramoto model on graphs I. The mean field equation and transition point formulas'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-15'
+published: '2016-12-01'
+arxiv: '1612.06493'
+first_author: 'Chiba'
+keywords:
+- 'kuramoto'
+- 'graphon'
+- 'mean-field'
+- 'synchronization'
+implementations: []
+summary: >-
+  Chiba and Medvedev (2016), [ARXIV-1612.06493](https://arxiv.org/abs/1612.06493). The mean-field limit of the
+  Kuramoto model on a graph is an equation in the graphon, and the
+  synchronization threshold is set by the extreme eigenvalues of that operator
+  rather than by average degree.
+---
+# LIT-tmp8seco: The mean field analysis for the Kuramoto model on graphs I. The mean field equation and transition point formulas
+
+Chiba and Medvedev (2016) — [ARXIV-1612.06493](https://arxiv.org/abs/1612.06493)
+
+## Key takeaways
+
+Extends Kuramoto's classical transition-to-synchrony analysis to the
+Kuramoto model on convergent families of deterministic and random graphs
+(including Erdős-Rényi, small-world, and k-nearest-neighbor). Rigorously
+derives and justifies a mean field (Vlasov-type) PDE limit for the coupled
+system, and obtains transition point formulas K_c^± expressed in terms of
+the extreme eigenvalues of the graphon's kernel operator W.
+
+- **Theorem 2 (mean field limit).** lim_{n→∞} sup_{t∈[0,T]} d(μ_t^n, μ_t) =
+  0 a.s., where d is the bounded-Lipschitz metric and μ_t solves the Vlasov
+  equation (2.10)
+  *Holds when:* Holds for Lipschitz graphon W, finite T, and either
+  deterministic or W-random graph sampling
+- **Theorem 3.4 (stability of incoherent state).** Spectrum of linearization
+  T lies on imaginary axis (continuous) with possibly negative eigenvalues
+  for K ∈ [K_c^-, K_c^+]; at least one positive eigenvalue otherwise
+  *Holds when:* K_c^+ = 2/(π g(0) ζ_max(W)), K_c^- = 2/(π g(0) ζ_min(W))
+- **Examples (Sec 5).** Erdős-Rényi(p): K_c^+ = 2/(π g(0) p), K_c^- = -∞.
+  Small-world(p,r): K_c^+ = 2/(π g(0)(2r+p-4pr)). k-NN ring with radius r:
+  K_c^+ = 1/(π g(0) r)
+  *Holds when:* Derived from largest eigenvalue of the kernel operator for
+  each graphon
+- **Lemmas 4.1, 4.3 (approximation).** sup_{t∈[0,T]} d(μ_t^n, μ̃_t^n) ≤ C
+  ||W_n - W̃_n||_{2,n}; similar a.s. bound for random-graph sampling
+  *Holds when:* Allows transferring mean field limit from base model to a
+  wider class of weighted/random network models
+
+## What the evidence does not cover
+
+- Results require Lipschitz graphons; sparse/power-law networks are
+  explicitly out of scope
+- Convergence of empirical measure is only on finite time intervals [0,T],
+  not uniform in T
+- Only linear (neutral) stability is established; nonlinear stability and
+  bifurcations deferred to companion paper
+- Assumes continuous, even, unimodal frequency density g; multimodal or
+  discrete g not covered
+
+## Standing in the anthology
+
+Read — the reading is [NOTE-tmp71gkr](../notes.d/NOTE-tmp71gkr.md). Arrived in the imported batch, which
+brought in the consensus, synchronization and flocking literature that the
+decentralized-training results rest on.

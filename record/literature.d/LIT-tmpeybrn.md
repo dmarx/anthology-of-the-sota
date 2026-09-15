@@ -1,0 +1,48 @@
+---
+status: 'Deferred'
+title: 'A Bayesian Perspective on Generalization and Stochastic Gradient Descent'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-15'
+published: '2017-10-01'
+arxiv: '1710.06451'
+first_author: 'Smith'
+keywords:
+- 'batch-size'
+- 'learning-rate-scaling'
+- 'noise-scale'
+- 'bayesian-evidence'
+implementations: []
+summary: >-
+  Smith and Le (2017), [ARXIV-1710.06451](https://arxiv.org/abs/1710.06451). Generalization is set by a noise
+  scale g = eps*N/B rather than by batch size alone, which is why the learning
+  rate must rise with the batch, and the same quantity predicts an optimal
+  batch size.
+---
+# LIT-tmpeybrn: A Bayesian Perspective on Generalization and Stochastic Gradient Descent
+
+Smith and Le (2017) — [ARXIV-1710.06451](https://arxiv.org/abs/1710.06451)
+
+## What it is
+
+Generalization is set by a noise scale g = eps*N/B rather than by batch size
+alone, which is why the learning rate must rise with the batch, and the same
+quantity predicts an optimal batch size.
+
+From the paper's own abstract:
+
+> We consider two questions at the heart of machine learning; how can we
+> predict if a minimum will generalize to the test set, and why does
+> stochastic gradient descent find minima that generalize well? Our work
+> responds to Zhang et al. (2016), who showed deep neural networks can
+> easily memorize randomly labeled training data, despite generalizing
+> well on real labels of the same inputs.
+
+## Standing in the anthology
+
+`Deferred`, which here means what the vocabulary says: in the corpus, not
+read closely enough to place. It arrived in the imported batch, which
+brought in the batch-size line — how large a batch buys speed, and what it
+costs.
+

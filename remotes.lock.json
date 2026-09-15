@@ -206,6 +206,9 @@
     "ARXIV/2109.10686": {
       "title": "Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers"
     },
+    "ARXIV/2110.01786": {
+      "title": "MoEfication: Transformer Feed-forward Layers are Mixtures of Experts"
+    },
     "ARXIV/2110.07602": {
       "title": "P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks"
     },
@@ -293,6 +296,9 @@
     "ARXIV/2211.05102": {
       "title": "Efficiently Scaling Transformer Inference"
     },
+    "ARXIV/2212.05055": {
+      "title": "Sparse Upcycling: Training Mixture-of-Experts from Dense Checkpoints"
+    },
     "ARXIV/2212.05231": {
       "title": "NeuS2: Fast Learning of Neural Implicit Surfaces for Multi-view Reconstruction"
     },
@@ -349,6 +355,9 @@
     },
     "ARXIV/2305.18290": {
       "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model"
+    },
+    "ARXIV/2305.18390": {
+      "title": "Emergent Modularity in Pre-trained Transformers"
     },
     "ARXIV/2305.19466": {
       "title": "The Impact of Positional Encoding on Length Generalization in Transformers"
@@ -581,6 +590,9 @@
     "ARXIV/2510.26692": {
       "title": "Kimi Linear: An Expressive, Efficient Attention Architecture"
     },
+    "ARXIV/2511.16652": {
+      "title": "Evolution Strategies at the Hyperscale"
+    },
     "ARXIV/2512.02556": {
       "title": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models"
     },
@@ -604,6 +616,9 @@
     },
     "ARXIV/2601.18089": {
       "title": "LatentMoE: Toward Optimal Accuracy per FLOP and Parameter in Mixture of Experts"
+    },
+    "ARXIV/2603.12228": {
+      "title": "Neural Thickets: Diverse Task Experts Are Dense Around Pretrained Weights"
     },
     "ARXIV/2603.15031": {
       "title": "Attention Residuals"
@@ -632,11 +647,23 @@
     "ARXIV/2607.24653": {
       "title": "Kimi K3: Open Frontier Intelligence"
     },
+    "ARXIV/2608.05541": {
+      "title": "Hyper-ES: Effective Evolution Strategies for LLM Reasoning via Descent Direction Merging"
+    },
+    "ARXIV/2608.12679": {
+      "title": "Beyond the Best Guess: Improving LLM Solution Coverage with Evolution Strategies"
+    },
+    "ARXIV/2608.27351": {
+      "title": "Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO"
+    },
     "ARXIV/2608.30320": {
       "title": "On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability"
     },
     "ARXIV/2609.02672": {
       "title": "oHC: Orthogonal Hyper-Connections on SO(4) via Quaternions"
+    },
+    "ARXIV/2609.10980": {
+      "title": "EGGROLL, Unrolled: Understanding and Improving Low-Rank Evolution Strategies at Scale"
     }
   }
 }

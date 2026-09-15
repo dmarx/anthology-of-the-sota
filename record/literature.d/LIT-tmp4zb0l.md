@@ -1,0 +1,116 @@
+---
+status: Active
+title: 'Evolution Strategies at the Hyperscale'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-15'
+published: '2025-11-01'
+arxiv: '2511.16652'
+first_author: 'Sarkar'
+keywords:
+- 'evolution-strategies'
+- 'low-rank'
+- 'arithmetic-intensity'
+- 'post-training'
+- 'recurrent-models'
+# The line, not a rivalry. LIT-211 established that full-parameter ES works
+# at billion scale; this makes it affordable, and names the population-size
+# limit of the prior approach as its motivation rather than an error in it
+# (ADR-017's test picks `extends`, not `corrects`).
+extends:
+- LIT-211
+implementations: []
+summary: >-
+  Sarkar et al. (2025), [ARXIV-2511.16652](https://arxiv.org/abs/2511.16652). EGGROLL — Evolution Guided GeneRal
+  Optimisation via Low-rank Learning. Replaces the full-rank Gaussian
+  perturbation each ES worker draws with a rank-r outer product, cutting
+  auxiliary memory per layer from O(mn) to O(r(m+n)) and raising arithmetic
+  intensity enough for a hundredfold throughput gain at billion scale, at up
+  to 91% of pure batch-inference throughput. The population average is still
+  high-rank, and the low-rank update converges to the full-rank one at O(1/r).
+corrected_by:
+- LIT-tmpcjyw1
+---
+
+# LIT-tmp4zb0l: Evolution Strategies at the Hyperscale
+
+Sarkar et al. (2025) — [ARXIV-2511.16652](https://arxiv.org/abs/2511.16652)
+
+## Key takeaways
+
+**The bottleneck it removes is arithmetic intensity, not memory alone.** Naïve
+ES at scale is slow on GPUs because batched matrix multiplications against
+*unstructured* random perturbations have nothing for the hardware to exploit.
+EGGROLL structures each worker's perturbation as a rank-`r` product of two
+small Gaussian matrices in place of the full-rank `E`. Auxiliary storage per
+layer falls from `O(mn)` to `O(r(m+n))` and the forward pass gets cheaper by
+the same argument — but the *update* is an average over `N` workers, so it
+stays high-rank. The saving is per-worker; the expressiveness is in the
+population.
+
+**The headline number is throughput, and it is large.** A hundredfold
+increase in training speed for billion-parameter models at large population
+sizes, reaching up to 91% of the throughput of pure batch inference — which is
+the right ceiling to quote, because it says the optimizer has stopped being
+the bottleneck at all.
+
+**There is a convergence result, not just an engineering claim.** The paper
+analyses Gaussian ES for high-dimensional objectives, reports a linearising
+effect in high dimensions, and proves consistency between the low-rank and
+full-rank updates as parameter dimension grows, at an `O(1/r)` rate. That is
+what licenses reading `r = 1` as an approximation rather than a different
+algorithm.
+
+**Three experimental claims, and they are about different things.** It
+pre-trains nonlinear recurrent language models operating purely in integer
+datatypes — a thing backpropagation cannot do, and the strongest argument in
+the paper for gradient-free optimization existing at all. It is competitive
+with GRPO for post-training LLMs on reasoning. And it does not cost
+performance against full-rank ES in tabula rasa RL despite being much faster.
+
+**Its criticism of the prior ES-at-scale work is about population size.** It
+names Qiu et al.'s approach, and Korotyshova et al.'s, as using "relatively
+small population sizes, on the order of a hundred unique perturbations per
+update", collecting hundreds of rollouts per perturbation to keep GPUs busy.
+EGGROLL instead lets every generation use a different perturbation, so the
+population per update is orders of magnitude larger — bounded by the
+inference batch size rather than by the cost of drawing noise.
+
+## What the evidence does not cover
+
+**The LLM reasoning results are on RWKV-7, not on transformers.** Countdown
+with an RWKV-7 1.5B (35% against GRPO's 23% at equal hardware and wall clock)
+and GSM8K with an RWKV-7 7B. The paper is upfront that the recurrent
+architecture is *especially* suited to this, because memory not spent on a KV
+cache can be spent on population members. That is a real advantage of the
+pairing and it is also a reason the transformer case is not established here.
+Both arms were hyperparameter-swept, which is the part of the comparison that
+is done right.
+
+**"Competitive with GRPO" is the paper's own phrasing** for the LLM results,
+and it is the honest one. The Countdown figure where it reports 72.9% against
+52.8% for GRPO and 66.8% for OpenES starts from a *weaker* base model
+(RWKV-7g7B against Qwen2.5-7B), which makes it a striking result and not a
+like-for-like one.
+
+**Zeroth-order pretraining is argued to be unsuitable, by this paper.** It
+finds large population sizes necessary for pretraining performance and reads
+that as evidence that zeroth-order methods would not do for pretraining —
+worth recording because it is a negative result from the group with the most
+reason to want the opposite.
+
+## Standing in the anthology
+
+**The engineering half of the ES post-training line, where [LIT-211](LIT-211.md) is the
+existence half.** [LIT-211](LIT-211.md) showed that searching the full parameter space of a
+billion-parameter LLM works at all; this shows it can be made to run at
+inference-grade throughput, which is what turns [SOTA-154](../practices.d/SOTA-154.md) from a result into
+something a practitioner could schedule. The two are one line and not rivals,
+which is why `extends:` and not `compared_against:`.
+
+It also sharpens what the line's remaining question is. Once perturbations
+are structured and populations are enormous, the difference between this and
+the other members of the family is a choice about *where the search budget
+goes* — many cheap directions or few expensive ones — rather than about
+whether gradient-free post-training is viable.

@@ -53,6 +53,7 @@ corrected_by:
 - SOTA-146
 compared_against:
 - SOTA-154
+- SOTA-tmpm80i3
 ---
 
 # SOTA-145: Estimate the RL baseline from a group of samples for the same prompt instead of training a critic
@@ -104,8 +105,6 @@ stage; both name RLVR as a stage and neither names an algorithm. This is the
 algorithm, and it is orthogonal to that argument — the group baseline is what
 you run either way.
 
-<!-- inactive-ok-block: SOTA-154 — Proposed, and named as the rival
-     paradigm this practice is measured against -->
 
 And it does not say policy-gradient RL is the right *family*. Evolution
 strategies ([SOTA-154](SOTA-154.md), `Proposed`) reach the same goal without

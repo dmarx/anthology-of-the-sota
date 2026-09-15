@@ -22,6 +22,8 @@ tags:
 date: '2026-09-08'
 source:
 - LIT-201
+introduced_by:
+- LIT-201
 implementations: []
 summary: >-
   Ye et al. (2024), [LIT-201](../literature.d/LIT-201.md) — model performance is quantitatively predictable

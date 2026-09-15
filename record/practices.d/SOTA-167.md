@@ -23,6 +23,8 @@ tags:
 date: '2026-09-08'
 source:
 - LIT-165
+introduced_by:
+- LIT-165
 implementations: []
 summary: >-
   Lahoti et al. (2026), [LIT-165](../literature.d/LIT-165.md) — three changes derived from the SSM view: a

@@ -29,6 +29,8 @@ source:
 # procedure; Kaplan inherits the quantity and fits an exponent for it. The
 # record carried the exponent without its origin.
 - LIT-017
+introduced_by:
+- LIT-028
 implementations:
 - chinchilla
 - llama2

@@ -11,6 +11,8 @@ tags:
 date: '2026-09-09'
 source:
 - LIT-222
+introduced_by:
+- LIT-222
 compared_against:
 - SOTA-054
 promote_when: >-

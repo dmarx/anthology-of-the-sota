@@ -12,6 +12,8 @@ source:
 # setting rather than a recommendation.
 - LIT-011
 - LIT-221
+introduced_by:
+- LIT-011
 extends:
 - SOTA-016
 summary: >-

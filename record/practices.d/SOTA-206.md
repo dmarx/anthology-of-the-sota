@@ -16,6 +16,8 @@ tags:
 date: '2026-09-10'
 source:
 - LIT-093
+introduced_by:
+- LIT-093
 summary: >-
   Song et al. (2023), [LIT-093](../literature.d/LIT-093.md). A one-step model that cannot spend more
   compute has no quality dial: whatever it produces is what you get. Consistency

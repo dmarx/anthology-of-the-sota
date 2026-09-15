@@ -19,6 +19,8 @@ source:
 # The models that ship FIM cite it without re-measuring, so they are
 # adoption and live in consensus_note (ADR-017).
 - LIT-124
+introduced_by:
+- LIT-124
 extended_by:
 - SOTA-128
 implementations: []

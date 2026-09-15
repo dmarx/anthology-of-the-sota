@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-003
+introduced_by:
+- LIT-003
 summary: >-
   Sennrich et al. (2015), [LIT-003](../literature.d/LIT-003.md) — [ARXIV-1508.07909](https://arxiv.org/abs/1508.07909).
 implementations:

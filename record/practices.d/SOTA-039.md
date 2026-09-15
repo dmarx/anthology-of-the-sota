@@ -10,6 +10,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-035
+introduced_by:
+- LIT-035
 summary: >-
   Brown et al. (2020), [LIT-035](../literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165).
 ---

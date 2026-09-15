@@ -322,7 +322,7 @@ schemes:
       # with the paper it cites.
       introduced_by:
         scheme: LIT
-        required: false
+        required: true
         many: true
       extends:
         scheme: SOTA

@@ -22,6 +22,8 @@ source:
 # It stays in the list as the production system that carried the technique.
 - LIT-224
 - LIT-112
+introduced_by:
+- LIT-224
 extends:
 - SOTA-105
 summary: >-

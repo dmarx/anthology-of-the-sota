@@ -24,6 +24,8 @@ tags:
 date: '2026-09-08'
 source:
 - LIT-186
+introduced_by:
+- LIT-186
 implementations: []
 summary: >-
   Kumar et al. (2024), [LIT-186](../literature.d/LIT-186.md) — degradation from post-training quantization

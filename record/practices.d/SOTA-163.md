@@ -20,6 +20,8 @@ source:
 # reports that ship it cite it without re-measuring, so they are adoption
 # and live in consensus_note (ADR-017).
 - LIT-197
+introduced_by:
+- LIT-197
 implementations:
 - 'DeepSeek-V4'
 - 'Kimi K3'

@@ -25,6 +25,8 @@ source:
 # practice that later gains a replication needs somewhere to put it
 # (ADR-010) — and gaining one is exactly what promote_when is waiting for.
 - LIT-213
+introduced_by:
+- LIT-213
 implementations:
 - 'facebookresearch/schedule_free'
 summary: >-

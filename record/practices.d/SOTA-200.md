@@ -16,6 +16,8 @@ date: '2026-09-10'
 source:
 - LIT-077
 - LIT-085
+introduced_by:
+- LIT-077
 implementations: []
 ---
 

@@ -25,6 +25,8 @@ tags:
 date: '2026-09-08'
 source:
 - LIT-149
+introduced_by:
+- LIT-149
 extends:
 - SOTA-143
 implementations: []

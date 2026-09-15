@@ -15,6 +15,8 @@ tags:
 date: '2026-09-10'
 source:
 - LIT-088
+introduced_by:
+- LIT-088
 extends:
 - SOTA-050
 compared_against:

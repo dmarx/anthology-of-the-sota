@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-059
+introduced_by:
+- LIT-059
 summary: >-
   Mohan et al. (2021), [LIT-059](../literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan.
 ---

@@ -49,6 +49,8 @@ source:
 - LIT-171
 - LIT-160
 - LIT-131
+introduced_by:
+- LIT-171
 extends:
 - SOTA-150
 implementations:

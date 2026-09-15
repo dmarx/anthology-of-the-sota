@@ -20,6 +20,8 @@ source:
 # the position it argues against and stays in the body — contrast is not
 # support (ADR-010).
 - LIT-178
+introduced_by:
+- LIT-178
 implementations: []
 summary: >-
   Su et al. (2024), [LIT-178](../literature.d/LIT-178.md) — aggressive model-based filtering wins at 1T

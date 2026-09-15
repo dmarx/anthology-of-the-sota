@@ -20,6 +20,8 @@ source:
 # shipping the FP32 output at 2.8T is adoption and lives in consensus_note
 # (ADR-017).
 - LIT-198
+introduced_by:
+- LIT-198
 extends:
 - SOTA-085
 implementations:

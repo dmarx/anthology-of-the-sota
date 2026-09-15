@@ -25,6 +25,8 @@ source:
 - LIT-156
 - LIT-157
 - LIT-158
+introduced_by:
+- LIT-156
 extended_by:
 - SOTA-121
 implementations: []

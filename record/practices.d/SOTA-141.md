@@ -48,6 +48,8 @@ source:
 # for, which is why this stays Proposed.
 - LIT-147
 - LIT-145
+introduced_by:
+- LIT-147
 extends:
 - SOTA-140
 summary: >-

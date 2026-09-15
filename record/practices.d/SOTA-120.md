@@ -25,6 +25,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-012
+introduced_by:
+- LIT-012
 summary: >-
   Loshchilov et al. (2017), [LIT-012](../literature.d/LIT-012.md) — [ARXIV-1711.05101](https://arxiv.org/abs/1711.05101).
 ---

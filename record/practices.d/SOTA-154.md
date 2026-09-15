@@ -24,6 +24,8 @@ source:
 # what makes this evidenced rather than asserted (ADR-017). No adopters to
 # add — that absence is what promote_when is about.
 - LIT-211
+introduced_by:
+- LIT-211
 # The comparison the paper actually ran: ES against GRPO, which is SOTA-145.
 # Stated once here, on the practice that ran it; the fixer writes the other
 # side.

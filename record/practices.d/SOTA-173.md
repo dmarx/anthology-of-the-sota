@@ -22,6 +22,8 @@ tags:
 date: '2026-09-08'
 source:
 - LIT-175
+introduced_by:
+- LIT-175
 implementations: []
 summary: >-
   Chen et al. (2026), [LIT-175](../literature.d/LIT-175.md) — standard autoregressive pretraining overfits

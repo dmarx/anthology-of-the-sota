@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-103
+introduced_by:
+- LIT-103
 # Chunked prefill is a decision inside the iteration-level scheduler that
 # SOTA-113 introduced: it presumes that scheduler and adds what goes in each
 # step.

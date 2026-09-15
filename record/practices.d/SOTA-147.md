@@ -35,6 +35,8 @@ source:
 # than one result" — so they are consensus data (ADR-017), and the
 # consensus_note already names every one of them.
 - LIT-174
+introduced_by:
+- LIT-174
 compared_against:
 - SOTA-109
 implementations:

@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-068
+introduced_by:
+- LIT-068
 summary: >-
   Hoffmann et al. (2022), [LIT-068](../literature.d/LIT-068.md) — [ARXIV-2203.15556](https://arxiv.org/abs/2203.15556).
 implementations:

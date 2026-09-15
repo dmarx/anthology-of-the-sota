@@ -19,6 +19,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-024
+introduced_by:
+- LIT-024
 summary: >-
   Shazeer (2019), [LIT-024](../literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150).
 ---

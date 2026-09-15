@@ -20,6 +20,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-106
+introduced_by:
+- LIT-106
 compared_against:
 - SOTA-107
 summary: >-

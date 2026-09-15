@@ -23,6 +23,8 @@ tags:
 date: '2026-09-09'
 source:
 - LIT-052
+introduced_by:
+- LIT-052
 implementations:
 - t5
 - vision_transformer

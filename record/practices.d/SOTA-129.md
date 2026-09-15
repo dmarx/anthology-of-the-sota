@@ -27,6 +27,8 @@ source:
 - LIT-130
 - LIT-172
 - LIT-128
+introduced_by:
+- LIT-130
 # inactive-ok: SOTA-130 — a Proposed variation, named in the summary on purpose
 summary: >-
   Olmo Team (2025), [LIT-130](../literature.d/LIT-130.md) — the recipe behind every open reasoning model

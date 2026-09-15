@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-112
+introduced_by:
+- LIT-112
 summary: >-
   Kwon et al. (2023), [LIT-112](../literature.d/LIT-112.md) — [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180).
 extended_by:

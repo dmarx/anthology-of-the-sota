@@ -23,6 +23,8 @@ source:
 # retraction test that section does not survive without it (#121).
 - LIT-047
 - LIT-089
+introduced_by:
+- LIT-047
 compared_against:
 - SOTA-060
 - SOTA-025

@@ -17,6 +17,8 @@ tags:
 date: '2026-09-05'
 source:
 - LIT-150
+introduced_by:
+- LIT-150
 # CompleteP is the depth exponent that makes µP's transfer hold
 # across depth as well; the title says extend and the Source says how.
 extends:

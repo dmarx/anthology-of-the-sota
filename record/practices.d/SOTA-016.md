@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-011
+introduced_by:
+- LIT-011
 summary: >-
   Micikevicius et al. (2017), [LIT-011](../literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740).
 extended_by:

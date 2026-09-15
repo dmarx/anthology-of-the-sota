@@ -25,6 +25,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-045
+introduced_by:
+- LIT-045
 summary: >-
   Su et al. (2021), [LIT-045](../literature.d/LIT-045.md) — [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864).
 compared_against:

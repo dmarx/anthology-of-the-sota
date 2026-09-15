@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-084
+introduced_by:
+- LIT-084
 summary: >-
   Wang et al. (2022), [LIT-084](../literature.d/LIT-084.md) — [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555).
 ---

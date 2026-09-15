@@ -28,6 +28,8 @@ source:
 # second group reaching the same conclusion, but its report ships the design
 # rather than testing the trade, so it is consensus data (ADR-017).
 - LIT-200
+introduced_by:
+- LIT-200
 compared_against:
 - SOTA-034
 implementations: []

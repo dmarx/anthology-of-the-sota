@@ -21,6 +21,8 @@ tags:
 date: '2026-09-08'
 source:
 - LIT-177
+introduced_by:
+- LIT-177
 extends:
 - SOTA-135
 implementations: []

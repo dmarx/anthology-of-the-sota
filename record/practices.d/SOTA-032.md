@@ -26,6 +26,8 @@ consensus: universal
 date: '2026-08-24'
 source:
 - LIT-114
+introduced_by:
+- LIT-114
 implementations:
 - llama2
 compared_against:

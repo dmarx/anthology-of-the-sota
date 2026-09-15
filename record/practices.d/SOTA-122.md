@@ -34,6 +34,8 @@ source:
 # absent: see the promotion condition.
 - LIT-121
 - LIT-119
+introduced_by:
+- LIT-121
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Up to 20% relative gain on MMLU, BBH and GSM8K over a Muon baseline at 200 GT.
 ---

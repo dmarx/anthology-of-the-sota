@@ -12,6 +12,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-051
+introduced_by:
+- LIT-051
 summary: >-
   Jiang et al. (2020), [LIT-051](../literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang.
 ---

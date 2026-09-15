@@ -10,6 +10,8 @@ source:
 # Re-sourced: LIT-051 assumes overlap rather than introducing it. The
 # PyTorch DDP paper names it as one of its three techniques.
 - LIT-219
+introduced_by:
+- LIT-219
 summary: >-
   Jiang et al. (2020), [LIT-051](../literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang.
 compared_against:

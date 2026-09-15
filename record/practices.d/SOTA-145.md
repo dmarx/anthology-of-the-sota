@@ -40,6 +40,8 @@ source:
 - LIT-167
 - LIT-168
 - LIT-180
+introduced_by:
+- LIT-127
 implementations: []
 summary: >-
   Shao et al. (2024), [LIT-127](../literature.d/LIT-127.md) — Group Relative Policy Optimization: PPO with

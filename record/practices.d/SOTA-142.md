@@ -29,6 +29,8 @@ source:
 # Falcon-H1-Tiny used the power law rather than testing it, so its adoption
 # is consensus evidence and belongs in consensus_note, not in source.
 - LIT-146
+introduced_by:
+- LIT-146
 extends:
 - SOTA-140
 summary: >-

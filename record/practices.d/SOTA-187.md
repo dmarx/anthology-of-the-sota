@@ -28,6 +28,8 @@ source:
 # pixel-space model's capacity describes imperceptible detail -- two years
 # before LIT-062 acts on it as an assumption.
 - LIT-036
+introduced_by:
+- LIT-062
 implementations:
 - Stable Diffusion
 ---

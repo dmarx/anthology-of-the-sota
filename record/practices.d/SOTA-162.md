@@ -20,6 +20,8 @@ source:
 # name it as settled and none of them ablates it, so they are adoption and
 # live in consensus_note (ADR-017).
 - LIT-163
+introduced_by:
+- LIT-163
 implementations: []
 summary: >-
   Gloeckle et al. (2024), [LIT-163](../literature.d/LIT-163.md) — predict the next n tokens through n

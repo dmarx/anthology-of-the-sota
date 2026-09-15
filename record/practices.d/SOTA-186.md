@@ -11,6 +11,8 @@ consensus: emerging
 date: '2026-09-08'
 source:
 - LIT-096
+introduced_by:
+- LIT-096
 implementations:
 - SA-1B
 ---

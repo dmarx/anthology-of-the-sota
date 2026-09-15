@@ -34,6 +34,8 @@ date: '2026-09-07'
 source:
 - LIT-192
 - LIT-193
+introduced_by:
+- LIT-192
 summary: >-
   Chen et al. (2023) and Peng et al. (2023) — RoPE does not extrapolate, and
   fine-tuning at the longer length barely helps: more than 10000 batches moved

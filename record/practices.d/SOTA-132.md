@@ -42,6 +42,8 @@ source:
 - LIT-133
 - LIT-195
 - LIT-137
+introduced_by:
+- LIT-133
 summary: >-
   Kimi Team (2025), [LIT-133](../literature.d/LIT-133.md) — three Kimi Delta Attention layers per gated-MLA layer beat full MLA at 48B/1.4T while cutting KV cache 75%; the layout [LIT-131](../literature.d/LIT-131.md) ships at 2.8T with 69 KDA and 24 MLA layers.
 ---

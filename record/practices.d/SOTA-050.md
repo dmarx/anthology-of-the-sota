@@ -8,6 +8,8 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-008
+introduced_by:
+- LIT-008
 summary: >-
   Vaswani et al. (2017), [LIT-008](../literature.d/LIT-008.md) — [ARXIV-1706.03762](https://arxiv.org/abs/1706.03762).
 extended_by:

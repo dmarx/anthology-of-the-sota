@@ -20,6 +20,8 @@ tags:
 date: '2026-09-10'
 source:
 - LIT-065
+introduced_by:
+- LIT-065
 implementations:
 - MT-NLG
 ---

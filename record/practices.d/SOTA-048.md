@@ -11,6 +11,8 @@ source:
 # same technique as bucketing. LIT-051 assumed both.
 - LIT-220
 - LIT-219
+introduced_by:
+- LIT-220
 compared_against:
 - SOTA-047
 summary: >-

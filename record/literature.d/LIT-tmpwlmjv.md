@@ -1,0 +1,52 @@
+---
+status: Active
+title: 'Emergent Modularity in Pre-trained Transformers'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-15'
+published: '2023-05-28'
+arxiv: '2305.18390'
+first_author: 'Zhang'
+keywords:
+- 'modularity'
+- 'mixture-of-experts'
+- 'interpretability'
+- 'training-dynamics'
+summary: >-
+  Zhang et al. (2023), [ARXIV-2305.18390](https://arxiv.org/abs/2305.18390). Neurons in a pre-trained transformer
+  are functionally specialized, the specialization clusters into
+  mixture-of-experts-shaped groups, and perturbing a functional expert damages
+  the corresponding function. The modular structure stabilizes early in
+  pre-training — earlier than the neurons themselves do.
+---
+
+# LIT-tmpwlmjv: Emergent Modularity in Pre-trained Transformers
+
+Zhang, Zeng, Lin, Xiao et al. (2023) — [ARXIV-2305.18390](https://arxiv.org/abs/2305.18390)
+
+## Key takeaways
+
+- **Functional specialization is real at the neuron level.** The paper asks
+  whether each neuron is mainly specialized in a certain function and reports
+  that it is.
+- **The specialization groups.** Searching for a structure that partitions
+  neurons by function, the paper takes mixture-of-experts as the candidate
+  shape and finds functional experts: clusters of neurons specialized in a
+  given function. Perturbing a functional expert's activations significantly
+  damages that function, which is the causal half of the claim rather than a
+  correlation between clusters and labels.
+- **The structure stabilizes before the weights do.** Tracking modularity
+  through pre-training, the modular structure settles at an early stage —
+  *faster than neuron stabilization*. The paper's reading is that transformers
+  "first construct the modular structure and then learn fine-grained neuron
+  functions."
+
+## Key takeaways — what this does not say
+
+- It does not claim the emergent partition is the one an architect should
+  impose. That the structure is MoE-shaped is evidence about dense models; it
+  is not a measurement of any trained MoE's experts.
+- "Modularity" here is operationalized as functional clustering under the
+  paper's own probes. It is a strong finding within that operationalization and
+  not a general claim about compositional structure.

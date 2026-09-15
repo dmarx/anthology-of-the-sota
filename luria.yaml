@@ -190,6 +190,37 @@ vocabularies:
       label: Re-read
       blurb: a later reading replaced this one, and names it
 
+  # What a status means for an EXPLANATION — a third answer to a question the
+  # record has now asked three times, and a different answer again.
+  #
+  # A THEORY's status says whether this record believes the ACCOUNT. That is
+  # independent of whether the thing being explained works, and batch
+  # normalization is the case the scheme was built around: the practice is
+  # `Active`, the paper is `Active`, and the explanation the paper was
+  # published with is `Rejected` — because the experiment that would have
+  # confirmed it was eventually run, and came out the other way (LIT-223).
+  # Under one scheme there was nowhere to put that third fact.
+  theory-statuses:
+    Active:
+      label: The current account
+      blurb: the best explanation the record holds for why this happens
+
+    Proposed:
+      label: Offered
+      blurb: stated and plausible, on evidence that is suggestive rather than settling — the document says what would settle it
+
+    Deferred:
+      label: Not yet judged
+      blurb: filed because the question is real; no position taken on the answer
+
+    Rejected:
+      label: Disbelieved
+      blurb: tested and failed, or contradicted by later work — and the thing it explained may still work perfectly well
+
+    Superseded:
+      label: Replaced
+      blurb: a later account covers the same ground better, and this one names it
+
   # Decision tags — display name, blurb, and the order they appear in the index.
   adr-tags:
     record:
@@ -324,6 +355,16 @@ schemes:
         scheme: LIT
         required: true
         many: true
+      # The converse of `THEORY.explains` (ADR-tmpvv7zp). A practice does not
+      # have to have an explanation and most do not; what this buys is that
+      # where the record HAS one, the practice says so from its own page
+      # instead of the connection being legible only from the theory side.
+      # Written by `luria link --fix`, like every other converse.
+      explained_by:
+        scheme: THEORY
+        required: false
+        many: true
+        converse: explains
       extends:
         scheme: SOTA
         required: false
@@ -365,9 +406,11 @@ schemes:
       # evidence for (ADR-016).
       #
       # `scheme = "LIT"`, not SOTA: what contests a recommendation is a paper, and
-      # both cases in the record are papers. No `converse`, because Luria's
-      # converse must be same-scheme and this crosses — a note does not carry the
-      # list of practices it undercuts.
+      # both cases in the record are papers. No `converse`, and that is now a
+      # choice rather than a limit — luria has allowed a crossing converse since
+      # LU-ADR-097, and `explained_by:` above is one. It is left undeclared
+      # because the far side would be a list of practices on a NOTE, and a
+      # note is a paper's standing rather than a docket of what it undercuts.
       contested_by:
         scheme: LIT
         required: false
@@ -455,6 +498,118 @@ schemes:
             # ADR-026: the practice vocabulary is now the same thirteen the
             # reading list has. The two schemes differ in what a document IS, not
             # in what it may be ABOUT.
+            tags:
+            - training-optimization
+            - systems-optimization
+            - model-stability
+            - distributed-optimization
+            - data-pipeline
+            - attention-techniques
+            - model-architecture
+            - inference-optimization
+            - adaptation-and-tuning
+            - representation-and-encoding
+            - analysis-and-evaluation
+            - generative-modeling
+            - vision-and-graphics
+    axis: tags
+  # ── The explanation: one document per claim about why something works ────
+  # A practice is an instruction; a theory is a finding. They were one scheme
+  # until ADR-tmpvv7zp, and the seam showed from both sides: six practices
+  # whose titles state a behaviour rather than an instruction ("larger models
+  # are more sample efficient"), and forty-eight papers that no practice
+  # cites — two of which say in their own bodies that they carry no practice
+  # DELIBERATELY, because what they found is not advice.
+  #
+  # The relationship to LIT is exactly the one SOTA has, for exactly the
+  # reason ADR-002 gives: a note is a PAPER'S STANDING, a claim is a CLAIM,
+  # and a claim outlives the paper that made it and can be contested by
+  # papers that had nothing to do with it.
+  THEORY:
+    dir: record/theory.d
+    output: docs/theory
+    active: Active
+    render: index
+    allocate: merge
+    references:
+      # The same rule as a practice, for the same reason: an explanation with
+      # no paper behind it is a hunch.
+      source:
+        scheme: LIT
+        required: true
+        many: true
+      # The point of the scheme — the link the record could not previously
+      # draw, and the one the practice registry reads back as `explained_by:`.
+      #
+      # OPTIONAL, and the seed set is why: the two lottery-ticket documents
+      # explain no practice, because the record holds no pruning recommendation
+      # for them to explain. A finding that underwrites nothing YET is still a
+      # finding, and requiring this would mean filing it nowhere — which is
+      # the state this scheme exists to end.
+      explains:
+        scheme: SOTA
+        required: false
+        many: true
+        converse: explained_by
+      # Lineage between explanations, and the distinction is the one the other
+      # two schemes draw (ADR-017): `extends` refines an account that holds,
+      # `corrects` exists because an account BREAKS. Both edges in the seed set
+      # are corrections, which is what an explanation's life mostly consists of.
+      #
+      # No `compared_against:` yet. It is declared on SOTA and LIT because
+      # documents there state comparisons; nothing here does, and a relation
+      # nobody writes is a converse the fixer can never complete.
+      extends:
+        scheme: THEORY
+        required: false
+        many: true
+        converse: extended_by
+      extended_by:
+        scheme: THEORY
+        required: false
+        many: true
+        converse: extends
+      corrects:
+        scheme: THEORY
+        required: false
+        many: true
+        converse: corrected_by
+      corrected_by:
+        scheme: THEORY
+        required: false
+        many: true
+        converse: corrects
+    fields:
+      # The same rule as the practice registry's (ADR-014), and if anything a
+      # sharper one here: what distinguishes an explanation from a story is
+      # being able to say what would show it wrong.
+      promote_when:
+        required_when:
+          status:
+          - Proposed
+          - Deferred
+      status:
+        vocabulary: theory-statuses
+      primary_topic:
+        derive: '{tags[0]}'
+      # Read from the paper, like everywhere else (#119, LU-ADR-088). An
+      # explanation is dated by the work that first published it, which is
+      # `source[0]` by the same ordering rule ADR-010 gives the practices.
+      published:
+        derive: '{published}'
+        from: source[0]
+      # The same thirteen, for the reason ADR-026 gives: the schemes differ in
+      # what a document IS, not in what it may be ABOUT. A third scheme with a
+      # fourth copy of the list is how the glosses drifted the last time; the
+      # WORDS are one table in `vocabularies.topics` and only the rule is here.
+      tags:
+        vocabulary: topics
+        many: true
+        required: true
+        closed: false
+        groups:
+          primary_topic:
+            require: exactly-one
             tags:
             - training-optimization
             - systems-optimization

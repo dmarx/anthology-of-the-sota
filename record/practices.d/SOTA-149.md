@@ -32,6 +32,8 @@ summary: >-
   of them so the router chooses from a far larger combination space at the
   same compute, and isolate a few always-on shared experts to hold the common
   knowledge every routed expert would otherwise learn separately.
+explained_by:
+- THEORY-tmptabiw
 ---
 
 <!-- inactive-ok-file: SOTA-148 — Proposed, named as the third member of the

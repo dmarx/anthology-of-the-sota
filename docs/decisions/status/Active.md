@@ -4,7 +4,7 @@
 
 **Active** — in force — the current answer, and what a citation should normally point at.
 
-23 of 27 decisions. Back to the [full index](../README.md).
+22 of 28 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -30,4 +30,3 @@
 | [ADR-023](../../../record/decisions.d/ADR-023.md) | A note carries its number, and answers to a readable second name | The pre-migration ids said who and when; `LIT-001` says neither. luria 0.13 can render an alias from a document's own frontmatter, so `LIT-Kingma-2014-001` now resolves wherever `LIT-001` does. An alias rather than a code, because a code that encodes a fact rots when the fact is corrected, and an alias is recomputed on every read. | Active |
 | [ADR-025](../../../record/decisions.d/ADR-025.md) v2 | A third scheme: NOTE, the structured reading of a paper | A LIT note says what a paper's standing in the anthology is. It has never said what the paper contains, and the corpus now holds two demonstrations of what that costs. NOTE is a third scheme: one document per paper actually read, carrying the contribution, the assumptions, the theorem-level results, the claims with their strength, and the recommendations derived — with the status recording how deeply it was read. | Active |
 | [ADR-026](../../../record/decisions.d/ADR-026.md) | One topic vocabulary: the practice registry takes the same thirteen the reading list has | [ADR-020](../../../record/decisions.d/ADR-020.md) scoped the recommendations by kind of claim rather than by domain, and that decision stands. Its rejected alternative does not: it declined to add `generative-modeling` and `vision-and-graphics` to the practice vocabulary on a browsing argument that the evidence since has not borne out, and that reads to a later reader as a scope boundary — the exact thing [ADR-020](../../../record/decisions.d/ADR-020.md) was written to remove. Adds both, making the two vocabularies identical. | Active |
-| [ADR-027](../../../record/decisions.d/ADR-027.md) | The practice vocabulary cannot express a claim about how to evaluate | Reading the generic-bullet corpus produced four recommendations about measurement, and the practice vocabulary has nowhere to file them. The LIT side has `analysis-and-evaluation`; the practice side does not, and unlike the other two topics missing from it, this one is a kind of claim rather than a domain. Adds it, making eleven. | Active |

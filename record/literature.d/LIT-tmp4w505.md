@@ -1,0 +1,120 @@
+---
+status: Active
+title: 'Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-15'
+published: '2026-04-01'
+arxiv: '2604.01499'
+first_author: 'Hoy'
+keywords:
+- 'evolution-strategies'
+- 'loss-landscape'
+- 'linear-mode-connectivity'
+- 'continual-learning'
+- 'parameter-drift'
+# It runs the comparison across four tasks in single-task and sequential
+# settings, with both arms swept — a comparison that was run (ADR-011).
+compared_against:
+- LIT-127
+- LIT-211
+implementations: []
+summary: >-
+  Hoy et al. (2026), [ARXIV-2604.01499](https://arxiv.org/abs/2604.01499). Resolves the drift dispute by
+  decomposing the ES update: an on-manifold component that changes the loss,
+  and an off-manifold component that is loss-invariant and therefore performs
+  a random walk whose squared norm grows as sigma^2 d T / N. In a landscape
+  with many flat directions the second dominates — which is why ES moves two
+  orders of magnitude further than GRPO, why the two update directions are
+  nearly orthogonal, and why the two solutions are nevertheless linearly
+  connected with no loss barrier.
+extended_by:
+- LIT-tmpphacm
+---
+
+# LIT-tmp4w505: Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training
+
+Hoy et al. (2026) — [ARXIV-2604.01499](https://arxiv.org/abs/2604.01499)
+
+## Key takeaways
+
+**One decomposition explains every geometric oddity in this line.** An ES
+weight update splits into an **on-manifold** component, where the loss
+actually changes, and an **off-manifold** component that is loss-invariant and
+therefore a pure random walk. The off-manifold part carries a scaling the
+paper states and then measures: its squared norm grows as **`σ²dT/N`** —
+proportional to parameter dimension `d` and step count `T`, inversely
+proportional to population size `N`. In a high-dimensional landscape where
+most directions carry negligible curvature, that term dominates the weight
+change.
+
+From that single mechanism follow all four observations the line had been
+collecting separately: the enormous update norm, the near-orthogonality
+between ES and GRPO update directions, the flat loss curvature along the ES
+displacement, and the linear mode connectivity between two solutions that look
+nothing alike. The paper reports the predicted scaling matching observation in
+LLM weight matrices.
+
+**Linearly connected with no loss barrier, despite near-orthogonal
+trajectories.** Interpolating between the ES and GRPO solutions produces no
+significant degradation at intermediate points, on any of the four tasks. Two
+methods travelling in almost perpendicular directions, two orders of magnitude
+apart in distance, end up in the same basin.
+
+**The ES direction behaves like a random direction on held-out tasks.**
+Probing the landscape along each method's learned update, GRPO's direction is
+sharply task-aligned while ES's resembles noise off-task — which is the
+measurement that turns "ES drifts a lot" into "most of ES's displacement is
+task-irrelevant".
+
+**ES wins the accuracy comparison here, at 4B.** On Qwen3-4B-Instruct-2507
+across Countdown, Math, SciKnowEval-Chemistry and BoolQ, ES at 300 iterations
+gives the highest peak accuracy on all four tasks — Chemistry 76.5% against
+GRPO's 74.9% and ES-at-100's 68.1%. Both methods were hyperparameter-swept.
+
+**And it is competitive in continual learning *when the iteration budget is
+controlled*** — the paper's own qualifier, and the practical heart of it.
+Across four sequential tasks the ES update norm grows 87.28 → 173.00 while
+GRPO's stays 1.00 → 1.84, a ratio of 87–107×.
+
+## What the evidence does not cover
+
+**One model, Qwen3-4B-Instruct-2507**, four tasks, 200 training samples each.
+A clean, well-controlled study and a narrow one.
+
+**The theory is developed for ES in general** and validated on this setup; the
+`σ²dT/N` scaling is checked against LLM weight matrices rather than derived
+for the transformer specifically.
+
+**"No loss barrier" is measured on these four tasks at these checkpoints.**
+Linear mode connectivity is a property of a pair of solutions, and two
+methods reaching one basin here does not establish they always will.
+
+**Forgetting is characterized, not solved.** The paper shows the off-manifold
+walk is loss-invariant *on the training task*; whether it is harmless for
+capabilities nobody is measuring is exactly what [LIT-tmppbfp5](LIT-tmppbfp5.md) finds it is
+not, over a long enough horizon.
+
+## Standing in the anthology
+
+**The paper that makes the ES drift dispute tractable, and the source of
+[THEORY-tmpt76ks](../theory.d/THEORY-tmpt76ks.md).** Three papers in this record had measured the same
+drift and disagreed about it: [LIT-tmppbfp5](LIT-tmppbfp5.md) read it as the cause of
+catastrophic forgetting, [LIT-230](LIT-230.md) read it as functionally sparse and
+therefore harmless, and [LIT-231](LIT-231.md) read it as evidence the search is not
+finding anything. This says all three are looking at a loss-invariant random
+walk, and says how big it should be. Whether that walk is harmless depends on
+what you measure and for how long — which is the question the other three were
+really disagreeing about without knowing it.
+
+<!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, filed from this paper and
+     LIT-tmppbfp5 in this same change -->
+**It also hands the line its first tunable knob.** `σ²dT/N` says drift grows
+with steps and falls with population size, and the paper's own continual
+result holds "when its iteration budget is controlled". [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md) is
+that, made into an instruction.
+
+**On [SOTA-154](../practices.d/SOTA-154.md):** this is a fourth independent group finding ES at or
+ahead of GRPO, and it is at 4B — above the scale where every negative result
+in this line sits.

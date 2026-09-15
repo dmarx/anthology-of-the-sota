@@ -1,0 +1,134 @@
+---
+status: Active
+title: 'Evolutionary Strategies lead to Catastrophic Forgetting in LLMs'
+version: 1
+tags:
+- adaptation-and-tuning
+date: '2026-09-15'
+published: '2026-01-01'
+arxiv: '2601.20861'
+first_author: 'Abdi'
+keywords:
+- 'evolution-strategies'
+- 'catastrophic-forgetting'
+- 'continual-learning'
+- 'parameter-drift'
+- 'update-sparsity'
+# `corrects:` by ADR-017's test: it exists because it could not reproduce the
+# parent's headline relative ordering, and says so in those words. The
+# comparison it ran against GRPO is the same one LIT-211 ran.
+corrects:
+- LIT-211
+compared_against:
+- LIT-127
+implementations: []
+summary: >-
+  Abdi et al. (2026), [ARXIV-2601.20861](https://arxiv.org/abs/2601.20861). The first independent attempt to
+  reproduce ES-beats-GRPO, and it does not: ES lands close but GRPO stays
+  ahead on every task but one, at 1B and 1.5B. Its larger contribution is the
+  forgetting curve — held-out HellaSwag falls steadily as Countdown training
+  continues past the point where Countdown itself has converged, tracing a
+  convex Pareto front, with ES parameter drift roughly 1000x GRPO's and ES
+  updates dense where GRPO's are about 95% sparse.
+corrected_by:
+- LIT-tmpphacm
+---
+
+# LIT-tmppbfp5: Evolutionary Strategies lead to Catastrophic Forgetting in LLMs
+
+Abdi et al. (2026) — [ARXIV-2601.20861](https://arxiv.org/abs/2601.20861)
+
+## Key takeaways
+
+**It is the failed replication, and that is the first thing to say about it.**
+"Although ES performance numbers are close to GRPO, GRPO still outperforms ES
+for all but the GSM8K dataset with Llama-3.2-1B model. Therefore, we find
+different relative performance trends than those reported in prior work, which
+may stem from differences in GRPO implementations, hyperparameter choices, or
+evaluation protocols." An independent group, extending the comparison from
+Countdown to GSM8K, MATH and OlympiadBench, on Qwen2.5-1.5B-Instruct and
+Llama-3.2-1B-Instruct — and the ordering reverses. The authors are careful
+and say the difference may be theirs; they release code and checkpoints.
+
+**The forgetting result is the paper's own contribution and it is cleanly
+framed.** Train Qwen2.5-1.5B-Instruct on Countdown, watch held-out HellaSwag.
+Prior-task accuracy declines systematically as fine-tuning proceeds, tracing a
+**convex Pareto front** — and, critically, the decline continues *after
+new-task accuracy has converged*. ES reaches near-maximum Countdown
+performance by roughly 200 iterations; further training buys nothing on
+Countdown and keeps costing HellaSwag.
+
+**Two mechanisms offered, both measured.** The Frobenius norm of the update
+grows monotonically with iterations for both methods, but after 500 iterations
+ES's is orders of magnitude larger — the paper puts the drift ratio at about
+**1000×**. And the updates differ in shape: GRPO's are near 95% sparse by a
+magnitude threshold across every parameter type and layer, while ES's are
+dense almost everywhere. The reading offered is that dense, large-norm updates
+carry the model far from the base and take prior capability with them.
+
+**ES is still endorsed as promising.** The framing is continual learning and
+the conclusion is that ES has closed the performance gap but that "its intense
+model degradation still remains a challenge before its widespread adoption" —
+a caution about a method the authors plainly want to work.
+
+## What the evidence does not cover
+
+<!-- inactive-ok-block: THEORY-006 — Proposed, named as the account whose scale boundary this paper’s models sit under -->
+**Both models are at 1.5B or below.** Qwen2.5-1.5B-Instruct and
+Llama-3.2-1B-Instruct. That matters here more than usual: it is the third
+paper in this line whose negative result sits at or under the scale
+[THEORY-006](../theory.d/THEORY-006.md) identifies as the boundary, and no paper in the line reports a
+negative above it.
+
+**Forgetting is measured on one held-out benchmark.** The authors say so:
+tracking HellaSwag "does not fully capture multi-facetted loss of performance
+that may be happening in the model; however, is enough to give strong evidence
+of the occurrence of the phenomenon." Agreed on both halves.
+
+**The drift-causes-forgetting link is an association, not an intervention.**
+Large norms and low sparsity co-occur with declining prior-task accuracy. No
+experiment holds one fixed and moves the other, which is what
+[LIT-tmp4w505](LIT-tmp4w505.md) later supplies the theory for and what
+[LIT-230](LIT-230.md) disputes the interpretation of.
+
+**The sparsity measurement is a magnitude threshold on the raw update**, which
+is a different question from which coordinates carry the function — and
+[LIT-230](LIT-230.md) asks the second question of the same drift and gets an answer that
+reads as opposite.
+
+## Standing in the anthology
+
+<!-- inactive-ok-block: SOTA-212 — Proposed, named as the practice whose
+     one-shot form has no iteration count for this failure to accumulate over -->
+**The evidence against [SOTA-154](../practices.d/SOTA-154.md) that the record was missing, and the reason
+that practice's `contested` reading is now about two things rather than one.**
+Until this note the dispute was [LIT-231](LIT-231.md)'s, which argues from lemmas and
+never runs full-parameter ES at scale. This one runs it, on four tasks, and
+reports a different ordering. The record held [LIT-230](LIT-230.md)'s reply to this paper
+before it held the paper — which is [DP-004](../../docs/design-principles.md#dp-4) exactly, a citation graph followed
+forward and never backward. Note that [SOTA-212](../practices.d/SOTA-212.md), whose form is a single
+parallel round, has no iteration count for this failure mode to accumulate
+over.
+
+**On the contradiction with [LIT-230](LIT-230.md), which is smaller than it looks.** That
+paper agrees the drift is real and roughly 40× GRPO's; this one says roughly
+1000×, on a different task and horizon. They differ on what it means: this
+paper measures raw update sparsity and finds ES dense; [LIT-230](LIT-230.md) measures
+which coordinates carry the *performance* and finds a sparse subset suffices.
+Both can hold — most coordinates move a little, the few that matter move a
+lot — and [LIT-230](LIT-230.md) notes that ES's largest-magnitude updates land in
+LayerNorm, which is also where this paper finds ES's *most sparse* updates.
+
+**The horizons differ, and that is part of the disagreement.**
+[LIT-230](LIT-230.md) evaluates held-out performance at a single-task horizon and finds no
+broad forgetting. This paper trains to 500 iterations on a task that converges
+by 200, and the degradation appears in the stretch after convergence.
+
+<!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, filed in this same change
+     and named as the practice this reconciliation supports -->
+**The rest of the disagreement is the averaging**, and [LIT-tmpphacm](LIT-tmpphacm.md) is where
+that comes out: tracking the prior tasks individually rather than as a mean
+shows the dip recovering by the end of training. The degradation here is real
+and this note does not doubt it; what the later paper takes away is the word
+*irreversible*, and with it the conclusion that ES is unsuited to continual
+learning. [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md) is what the pair supports.

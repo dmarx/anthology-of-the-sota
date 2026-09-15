@@ -7,18 +7,23 @@ consensus: contested
 # inactive-ok-block: THEORY-006 — Proposed, and the account that
 # predicts where the dissent's evidence sits; the note is the reconciliation
 consensus_note: >-
-  Four independent groups now report evolution strategies at or ahead of
-  policy-gradient RL (LIT-211, LIT-233, LIT-229 on a recurrent
-  architecture, LIT-230), with LIT-234 carrying the same lab's
-  evidence to 32B against published RL checkpoints; a fifth group
-  (LIT-231) says in its own second sentence that direct ES at LLM scale
-  is ineffective. The trunk — gradient-free search of the full
+  Four groups sharing no author with LIT-211 report evolution strategies at or
+  ahead of policy-gradient RL: LIT-229 (on a recurrent architecture), LIT-230,
+  LIT-tmp4w505 and LIT-tmprde8b. Four more results come from inside that line
+  — LIT-211 itself, LIT-233 (whose first author is LIT-211's second),
+  LIT-234 and LIT-tmpphacm from the same lab, LIT-tmpfjaya sharing three
+  authors. Two independent groups disagree: LIT-231 argues direct ES at LLM
+  scale is ineffective, and LIT-tmppbfp5 ran the comparison and did not
+  reproduce the ordering. The trunk — gradient-free search of the full
   parameter space is viable at billion scale — is agreed. The branch in
   dispute is the word "instead": whether it replaces policy-gradient RL or is
-  seeded by it. The dissent's models are all at 1.5B or below, which
-  THEORY-006 says is where it should be.
+  seeded by it. **Every negative result in this line is at 1.5B or below and
+  every positive is at 1.5B or above**, the shape THEORY-006 predicts — though
+  LIT-tmpfjaya offers a competing reading of that low end, where the failures
+  are a perturbation scale tuned for larger models rather than a density that
+  is absent.
 title: 'Fine-tune with evolution strategies instead of policy-gradient reinforcement learning'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-15'
@@ -27,20 +32,34 @@ history:
     Gan and Isola (LIT-233) ran ES against PPO and GRPO on six tasks
     outside Countdown and the conciseness objective, at matched training
     FLOPs, with the RL arm grid-searched over learning rate and batch or
-    group size while ES ran one fixed configuration — an independent group,
-    a harder-tuned baseline, and ES ahead in most cells. Consensus moved
+    group size while ES ran one fixed configuration — described at the time as
+    an independent group, which version 3 corrects — a harder-tuned baseline,
+    and ES ahead in most cells. Consensus moved
     from `unreplicated` to `contested` in the same edit, which is not a
     hedge: what makes it contested is a fourth group arriving with a
     counter-argument, and that could not have been recorded while the axis
     still said nobody had replied.
+- version: 3
+  date: '2026-09-15'
+  note: >-
+    Correction, not a change of position. Version 2 promoted this practice on
+    LIT-233, described there and here as an independent group with no stake in
+    the result. It is not: Yulu Gan, its first author, is the second author of
+    LIT-211. The promotion stands on evidence identified after the fact —
+    LIT-tmp4w505 at 4B with both arms swept and ES highest on all four tasks,
+    LIT-230, LIT-229 and LIT-tmprde8b, none of which shares an author with
+    LIT-211. The consensus note is re-tallied by authorship rather than by
+    institution, and the scale-boundary table gains the competing reading
+    LIT-tmpfjaya offers for its low end.
 tags:
 - adaptation-and-tuning
 date: '2026-09-07'
 source:
 # LIT-211 ran the comparison itself against both PPO and GRPO, which is what
-# made this evidenced rather than asserted (ADR-017). LIT-233 is the
-# independent evaluation that promoted it: a different group, six further
-# tasks, and the RL arm tuned harder than the ES arm.
+# made this evidenced rather than asserted (ADR-017). LIT-233 adds six further
+# tasks with the RL arm tuned harder than the ES arm — a real strengthening,
+# and NOT the independent replication it was first filed as: its first author
+# is LIT-211's second. LIT-tmp4w505 is the clean independent one.
 #
 # LIT-229 is deliberately NOT here. Its LLM comparison is real and
 # favourable, but it is on a recurrent architecture and on its own low-rank
@@ -53,6 +72,9 @@ source:
 # LIT-211's own lab but carrying the comparison to 32B.
 - LIT-230
 - LIT-234
+# Hoy et al.: a fourth independent group, at 4B, both arms swept, and the
+# paper the drift account in this record's theory scheme is drawn from.
+- LIT-tmp4w505
 introduced_by:
 - LIT-211
 # The evidence AGAINST, required where the record claims there is some
@@ -60,6 +82,9 @@ introduced_by:
 # replace the search space with a gradient-seeded subspace.
 contested_by:
 - LIT-231
+# The failed replication: an independent group ran the comparison, extended it
+# to three further tasks, and found GRPO ahead on all but one. At 1B and 1.5B.
+- LIT-tmppbfp5
 # The comparison the paper actually ran: ES against GRPO, which is SOTA-145.
 # Stated once here, on the practice that ran it; the fixer writes the other
 # side.
@@ -76,8 +101,11 @@ summary: >-
   argue direct ES at LLM scale does not work — on models at 1.5B and below.
 explained_by:
 - THEORY-006
+- THEORY-tmpt76ks
+- THEORY-tmp4rcxw
 extended_by:
 - SOTA-212
+- SOTA-tmpdcmgg
 ---
 
 # SOTA-154: Fine-tune with evolution strategies instead of policy-gradient reinforcement learning
@@ -125,11 +153,21 @@ learning rate and batch or group size while ES ran a single fixed
 configuration. ES came out ahead of GRPO in most cells, and ES with test-time
 majority voting took the best or runner-up cell in roughly half the table.
 
-That is the practice's own promotion condition, met: an independent group, a
-policy-gradient baseline that got at least the same tuning budget, on tasks
-outside the original two. It is not weakened by having arrived as a baseline
-— a group with no stake in the result, tuning the rival harder than the
-method, is the *stronger* form of the evidence the condition was asking for.
+**That was filed as the promotion condition met, and it was not.** Yulu Gan,
+this paper's first author, is the second author of [LIT-211](../literature.d/LIT-211.md), and the paper
+cites it as prior work. The condition excluded "further results from the same
+group"; an overlapping group on a much wider task set is nearer to that than
+to the independent replication it was called. The added tasks and the tuning
+asymmetry are real and the measurement is not in doubt — the classification
+was.
+
+**What carries the promotion instead**, identified after the fact: Hoy et al.
+([LIT-tmp4w505](../literature.d/LIT-tmp4w505.md)), at 4B, four tasks, both arms hyperparameter-swept, ES
+highest on all four — no author in common with [LIT-211](../literature.d/LIT-211.md). Then Ba et al.
+([LIT-230](../literature.d/LIT-230.md)) on coverage, Sarkar et al. ([LIT-229](../literature.d/LIT-229.md)) on a recurrent
+architecture, and Sun et al. ([LIT-tmprde8b](../literature.d/LIT-tmprde8b.md)) at matched memory. The practice
+stays `Active` on those; it would not have been promoted on [LIT-233](../literature.d/LIT-233.md) alone
+had the authorship been checked.
 
 <!-- inactive-ok-block: THEORY-006 — Proposed, and named as the account
      this practice acquired rather than as evidence for the recommendation -->
@@ -192,6 +230,43 @@ further, and that drift turns out to be functionally sparse — zeroing every
 update below a single-step magnitude threshold preserves the gains — and does
 not produce broad forgetting on held-out tasks ([LIT-230](../literature.d/LIT-230.md)).
 
+## The scale boundary, which is now the clearest thing in the line
+
+Eight papers have compared evolution strategies against policy-gradient RL on
+LLMs. Sorting them by the size of the model tested produces a pattern nobody
+set out to find:
+
+| Finding | Models | Source |
+|---|---|---|
+| GRPO ahead on 3 of 4 tasks | 1B, 1.5B | [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) |
+| Direct ES "highly ineffective" | 0.5B, 1.5B | [LIT-231](../literature.d/LIT-231.md) |
+| ES ahead in most cells | 1.5B–8B | [LIT-233](../literature.d/LIT-233.md) |
+| ES highest peak accuracy, 4 of 4 tasks | 4B | [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md) |
+| ES ahead on pass@k | ≤7B | [LIT-230](../literature.d/LIT-230.md) |
+| ES ahead on pass@k | 7B–32B | [LIT-234](../literature.d/LIT-234.md) |
+
+<!-- inactive-ok-block: THEORY-006 — Proposed, and this section is the record’s own cross-paper reading of that account -->
+**Every negative result is at 1.5B or below. Every positive is at 1.5B or
+above.** No paper reports a negative above that line and none reports a clear
+positive below it. That is the boundary [THEORY-006](../theory.d/THEORY-006.md) predicts from the density
+of task-improving perturbations.
+
+Three cautions now, and the third is the sharpest. The pattern is read across
+papers that differ in task, baseline tuning and ES implementation, so it is
+suggestive rather than controlled. It is exactly the kind of post-hoc
+regularity that looks inevitable once noticed. And **there is a competing
+reading of its low end**: [LIT-tmpfjaya](../literature.d/LIT-tmpfjaya.md) reports improvement accessible at
+0.5B with a population of thirty, provided the perturbation scale is small
+enough — so the failures below 1.5B may be a `σ` that was tuned for larger
+models rather than a density that is not there. That paper chooses a viable
+`σ` per model; [LIT-233](../literature.d/LIT-233.md) holds `σ` fixed at 1e-3 across every scale.
+
+What would settle it is one protocol run on both sides of the line, sweeping
+`σ` per model, which nobody has done.
+
+**The practical form of this is the condition below, and it is now sharp
+rather than hedged: do not expect this practice to hold under about 1.5B.**
+
 ## Conditions, and what is not established
 
 The evidence now spans four model families and, at the top end, **32B** —
@@ -204,8 +279,24 @@ rather than RL runs matched to the ES budget, and they come from
 Still **no released model whose post-training recipe uses it**, which is the
 half of the original promotion condition that remains unmet.
 
-Below about 1.5B the practice should be expected to fail, and the dissent
-above is the evidence that it does.
+Below about 1.5B the practice should be expected to fail, and both dissenting
+papers are the evidence that it does.
+
+**And it has a cost the earlier evidence did not show — a smaller one than it
+first looked.** ES post-training drifts orders of magnitude further from the
+base model than GRPO: roughly 1000× after 500 iterations in
+[LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md), 87–107× across four sequential tasks in [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md), and a
+held-out capability degrades along with it. But [LIT-tmpphacm](../literature.d/LIT-tmpphacm.md) tracks the
+prior tasks individually rather than averaged and finds the degradation is
+largely **transient** — HellaSwag falls 8% over 300 iterations and returns to
+baseline by the end — that GRPO forgets too on the right target task, and that
+the whole effect is controllable.
+<!-- inactive-ok-block: THEORY-tmpt76ks, SOTA-tmpdcmgg — both Proposed, filed
+     in this same change and named as the account of this drift and the
+     condition it puts on running this practice -->
+[THEORY-tmpt76ks](../theory.d/THEORY-tmpt76ks.md) says why the drift is mostly invisible to the training
+objective, and [SOTA-tmpdcmgg](SOTA-tmpdcmgg.md) is what to do about it. Neither retires this
+practice; both are conditions on running it.
 
 `Active` here means the record is willing to assert the recommendation. It
 does not mean the field has settled — `consensus: contested` is carrying that,

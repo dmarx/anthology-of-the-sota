@@ -129,6 +129,42 @@ saying at what scale it arrives. Recording that plainly is the point — a
 condition that gets reinterpreted to fit whatever evidence turns up is not a
 condition.
 
+## The scale boundary six groups found without looking for it
+
+<!-- inactive-ok-block: SOTA-154 is Active; this section is the record's own
+     cross-paper reading, and the practice is where it is acted on -->
+Eight papers have now compared evolution strategies against policy-gradient RL
+on LLMs, and [SOTA-154](../practices.d/SOTA-154.md) tabulates them by model size. The result is that
+**every negative finding sits at 1.5B or below and every positive at 1.5B or
+above** — [LIT-tmppbfp5](../literature.d/LIT-tmppbfp5.md) at 1B and 1.5B and [LIT-231](../literature.d/LIT-231.md) at 0.5B and 1.5B on one
+side; [LIT-233](../literature.d/LIT-233.md), [LIT-tmp4w505](../literature.d/LIT-tmp4w505.md), [LIT-230](../literature.d/LIT-230.md) and [LIT-234](../literature.d/LIT-234.md) from 1.5B to 32B on the
+other. None of those groups was testing this account, and most do not cite it.
+
+That is the threshold this account names, recovered from the behaviour of a
+method that depends on it. It is worth more than a citation and less than a
+replication: the papers differ in task, baseline tuning and ES implementation,
+so the boundary is read across a heterogeneous set rather than measured, and a
+post-hoc regularity is exactly the kind of thing that looks inevitable once
+someone has drawn the table.
+
+**It does not satisfy the promotion condition either**, and this is the third
+time something has come close from an unexpected direction. The condition asks
+for the density measurement repeated by an unconnected group on a family other
+than Qwen2.5, or a mechanism that predicts where the transition sits. This is
+neither — it is the *consequence* of the transition being observed repeatedly,
+which is evidence the transition is real and not evidence about where it is or
+why.
+
+**A note for whoever revisits this.** The condition has now been approached
+three times — by a confirmed prediction ([LIT-230](../literature.d/LIT-230.md)'s population-size scaling),
+by a mechanism for the sparse structure ([LIT-230](../literature.d/LIT-230.md) again), and by this
+boundary — and met by none. Two readings are available: the account is still
+genuinely unconfirmed, or the condition is asking for a measurement nobody has
+reason to repeat while its consequences keep turning up. **This document takes
+the first reading and flags the second rather than acting on it**, because a
+condition rewritten by the person who wants it met is not a condition. Someone
+else should decide.
+
 ## What this does not say
 
 **It does not say what a "task expert" is.** Expertise here is defined as

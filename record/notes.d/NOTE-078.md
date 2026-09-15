@@ -213,10 +213,18 @@ or group size while ES ran a single fixed configuration — and finds ES strong
 enough that ES plus test-time voting beats the paper's own method in about
 half the table.
 
-Arriving as a *baseline* is not a discount on that. A group tuning the rival
-harder than the method, in a paper arguing for something else, is the
-cleanest form of the evidence `promote_when` was asking for; the first draft
-of this note called it "the weaker of the two" and was wrong.
+Arriving as a *baseline* is not a discount on that: a group tuning the rival
+harder than the method, in a paper arguing for something else, is a strong
+form of evidence.
+
+**What is a discount on it is authorship, and this note missed it twice.** The
+first draft called the result "the weaker of the two" for being a baseline and
+was corrected; the correction then called it an independent replication, which
+is also wrong. **Yulu Gan is the second author of [LIT-211](../literature.d/LIT-211.md)**, the paper this
+practice rests on, and this paper cites it as prior work. The tuning asymmetry
+still favours the baseline and the six added tasks are still six added tasks —
+but `promote_when` excluded "further results from the same group", and an
+overlapping group is nearer to that than to what it asked for.
 
 <!-- inactive-ok-block: SOTA-154, THEORY-006 — both Proposed; the
      paragraph says the explanation this reading files is the one that

@@ -1,0 +1,145 @@
+---
+status: Active
+title: 'Overcoming Forgetting in LLM Fine-Tuning with Evolution Strategies'
+version: 1
+tags:
+- adaptation-and-tuning
+date: '2026-09-15'
+published: '2026-05-01'
+arxiv: '2605.30148'
+first_author: 'Schweighofer'
+keywords:
+- 'evolution-strategies'
+- 'catastrophic-forgetting'
+- 'continual-learning'
+- 'regularization'
+- 'random-walk'
+# `corrects:` by ADR-017's test: its motivation is a defect it names in the
+# parent's reading of its own data — that the degradation is irreversible
+# forgetting, and that it is specific to ES. Both are contradicted here.
+corrects:
+- LIT-tmppbfp5
+# It validates Hoy et al.'s scaling equation empirically, which is what the
+# `extends:` edge records: the theory is the parent, the confirmation and the
+# remedy are the child.
+extends:
+- LIT-tmp4w505
+implementations: []
+summary: >-
+  Schweighofer et al. (2026), [ARXIV-2605.30148](https://arxiv.org/abs/2605.30148). Answers the forgetting result
+  with three findings: the degradation is transient drift rather than
+  irreversible forgetting — HellaSwag falls 8% over 300 iterations and returns
+  to baseline by the end — it is not specific to ES, since GRPO forgets too on
+  ProofWriter, and it is driven by the random walk Hoy et al. predicted, whose
+  size falls with population as their equation says. Anchored Weight Decay, an
+  L1 or L2 pull toward the initial weights applied in the update rule, buys a
+  population-128 reduction in drift at population 30 for 1-2% runtime.
+---
+
+# LIT-tmpphacm: Overcoming Forgetting in LLM Fine-Tuning with Evolution Strategies
+
+Schweighofer et al. (2026) — [ARXIV-2605.30148](https://arxiv.org/abs/2605.30148)
+
+## Key takeaways
+
+**The degradation is transient, and that is the finding that reframes
+everything else.** Replicating the Countdown setup on Qwen2.5-3B-Instruct
+reproduces [LIT-tmppbfp5](LIT-tmppbfp5.md)'s result at first — ES loses prior-task accuracy
+where GRPO does not. But tracking individual prior tasks rather than an
+average shows **HellaSwag dropping about 8% over the first 300 iterations and
+recovering to its original level by the final iteration**, with the same
+pattern on MMLU-Pro and ARC-Challenge, and the mirror image on ProofWriter: an
+improvement that returns to baseline. "ES does not induce irreversible
+forgetting, but rather a performance drift that is transient."
+
+**Forgetting is not an ES failure mode.** On ProofWriter as the target task,
+**GRPO** exhibits considerable forgetting — mostly a large drop on GSM8K,
+with MMLU-Pro and Countdown degrading too — while ES shows little on average.
+Varying target task, model family and model size, the paper reports no
+significant dependence of forgetting on any of them.
+
+**It confirms Hoy et al.'s equation as an empirical law, not just a model.**
+Taking `E‖Δw_rw‖² ∝ α²Td/N` from [LIT-tmp4w505](LIT-tmp4w505.md), it predicts and then measures
+that larger populations mean less drift: population 30 → 128 cuts the update
+norm by about half, which is what an inverse-square-root dependence on `N`
+predicts for a 4.3× increase. Table 1 shows prior-task degradation falling
+monotonically with population size. **"The update norm is indeed inversely
+proportional to the population size."**
+
+**Anchored Weight Decay is the cheap version of a large population.** Add a
+penalty on `w − w₀` to the ES objective, implemented — since there is no loss
+to backpropagate — as a decay term applied directly in the weight update:
+after the standard ES step, pull the weights back toward `w₀`. At population
+30, AWD brings the update norm down to roughly what population 128 achieves,
+and closes the prior-task KL gap to GRPO. The reference weights are streamed
+layer-wise from pinned RAM once per iteration; measured overhead **1–2%
+runtime**.
+
+**And the sharpest mechanistic claim in the line comes from the KL analysis.**
+Even with AWD or a large population, ES update norms stay an order of
+magnitude above GRPO's — yet the *distributional* shift on prior tasks becomes
+comparable. So "it is the randomness of the drift unconstrained by the target
+task that leads to prior task forgetting for ES, rather than the magnitude of
+updates alone." That retires the norm-and-sparsity account
+[LIT-tmppbfp5](LIT-tmppbfp5.md) offered.
+
+**A reversal worth noting on the target task.** GRPO shows *much higher* KL
+divergence on Countdown than any ES variant, at the same accuracy. ES changes
+the output distribution less where it is trying to change behaviour, and more
+where it is not.
+
+**Tuning guidance, stated as a procedure.** Small `λ` barely reduces
+forgetting; there is a stable range that preserves target performance while
+substantially reducing drift; beyond it target performance drops sharply. The
+recommendation is therefore **start with a high `λ` and decrease it until no
+target-task drop is observed** against ES without AWD. `L2` is slightly more
+robust and degrades more smoothly when set too high; `L1` below the critical
+magnitude *systematically improved* target-task performance.
+
+## What the evidence does not cover
+
+**Same lab as [LIT-211](LIT-211.md).** Cognizant AI Lab, with Qiu among the authors of
+both, answering a criticism of that paper's method. The transient-recovery
+observation and the KL analysis are measurements anyone could check, and the
+paper is careful — it reproduces the negative result before qualifying it —
+but this is not an independent adjudication of [LIT-tmppbfp5](LIT-tmppbfp5.md).
+
+**Verifiable domains only**, which the authors name: whether AWD preserves
+alignment and safety properties rather than benchmark accuracy is untested and
+flagged as future work.
+
+**AWD is one paper.** The population-size mechanism now has two groups behind
+it; the remedy has one.
+
+**Uniform weighting is a choice made from necessity.** The penalty weights all
+parameters equally, unlike Elastic Weight Consolidation's Fisher weighting,
+because there is no task-specific importance information when the prior tasks
+are "everything the model could do". The paper cites prior evidence that
+uniform weighting performs comparably; it does not test the alternative here.
+
+## Standing in the anthology
+
+<!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, filed in this same change
+     and substantially rewritten because of this paper; naming it is the point -->
+**It is why [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md) recommends what it does rather than what it was
+first drafted to recommend.** That practice began as a stopping rule, inferred
+from [LIT-tmppbfp5](LIT-tmppbfp5.md)'s single run in which prior-task accuracy fell throughout
+training. If the drop is transient, stopping early lands at the bottom of the
+dip — the worst available point. The durable half of the original claim, that
+drift is bought down with population rather than spent on steps, is what this
+paper confirms directly, and AWD is the cheaper form of it.
+
+<!-- inactive-ok-block: THEORY-tmpt76ks is Active as of this change; named as
+     the account this paper's measurement promoted -->
+**It is also what promotes [THEORY-tmpt76ks](../theory.d/THEORY-tmpt76ks.md).** That account's condition asked
+for the `σ²dT/N` scaling measured by an independent group on a transformer at
+a different scale, with the population-size dependence tested directly by
+raising `N` and observing drift fall at fixed `T`. That is Table 1 and Figure
+6 of this paper, on Qwen2.5-3B rather than Qwen3-4B, by a group with no
+authors in common with [LIT-tmp4w505](LIT-tmp4w505.md).
+
+**On [SOTA-154](../practices.d/SOTA-154.md)** it weakens one of the two objections that make the
+practice `contested`. [LIT-tmppbfp5](LIT-tmppbfp5.md) remains the failed replication on
+accuracy, which this paper does not address. But its forgetting claim — the
+part with the most rhetorical force — is qualified in three directions at
+once: transient rather than permanent, not specific to ES, and avoidable.

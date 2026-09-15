@@ -1,0 +1,148 @@
+---
+status: Active
+title: 'The Blessing of Dimensionality in LLM Fine-tuning: A Variance-Curvature Perspective'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-15'
+published: '2026-01-01'
+arxiv: '2602.00170'
+first_author: 'Liang'
+keywords:
+- 'evolution-strategies'
+- 'hessian-spectrum'
+- 'intrinsic-dimension'
+- 'loss-landscape'
+- 'training-dynamics'
+# LIT-233 cites this and builds its own reconciliation on it — the thicket
+# read as a broad pretrained basin intersected with a low-dimensional
+# degenerate set of task directions. The later work extends this one.
+extended_by:
+- LIT-233
+implementations: []
+summary: >-
+  Liang et al. (2026), [ARXIV-2602.00170](https://arxiv.org/abs/2602.00170). One geometric property accounts for
+  two puzzles at once: fine-tuning landscapes are low-dimensional in
+  curvature, so a handful of stiff directions carry the improvement while a
+  near-zero bulk absorbs variance. That gives rise-then-decay dynamics under
+  fixed hyperparameters — in GRPO as well as ES — and it gives degeneracy,
+  where many ambient perturbations share the same projection onto the stiff
+  subspace, so a population of about 30 keeps finding improvements from 0.5B
+  to 7B with no rightward shift.
+---
+
+# LIT-tmpfjaya: The Blessing of Dimensionality in LLM Fine-tuning: A Variance-Curvature Perspective
+
+Liang et al. (2026) — [ARXIV-2602.00170](https://arxiv.org/abs/2602.00170)
+
+## Key takeaways
+
+**Two puzzles, one geometry.** Why does a population of thirty perturbations
+improve a billion-parameter model when zeroth-order theory says the population
+must grow with dimension? And why does the training reward, under fixed
+hyperparameters, rise to a peak and then *degrade*? The paper's answer is that
+fine-tuning landscapes are **low-dimensional in curvature** — a small set of
+stiff directions dominates improvement, amid a near-zero bulk — and that this
+single property produces both effects.
+
+**Rise-then-decay is a variance phenomenon, not overfitting.** In a local
+quadratic model, diagonalizing the curvature decouples the dynamics into modes
+whose contraction rates differ: stiff directions relax fast, flat directions
+relax slowly and accumulate noise. The picture the paper offers is
+**water-filling** — rush downhill before the valley floods. Early, fast
+relaxation along stiff directions drives gains; meanwhile variance accumulates
+along weakly constrained directions like a rising water level; once the stiff
+directions saturate, the accumulation dominates and performance falls. A
+two-block toy spectrum reproduces the whole trajectory analytically, and
+**larger populations raise the terminal plateau and suppress the late decay**.
+
+**It happens to GRPO too.** The paper's motivating figure shows rise-then-decay
+in both ES and GRPO on GSM8K with Qwen2.5-1.5B-Instruct, trained on the same
+100 samples — noisier for GRPO, but present. "The phenomenon is not specific
+to a particular learning method."
+
+**Degeneracy is what defeats the curse of dimensionality.** If improvement is
+governed by a `k`-dimensional curvature-active subspace, then for any useful
+projection onto it the preimage in the full space is an affine subspace of
+dimension `d − k`. Many distinct ambient perturbations therefore share the
+same useful component. What decides whether random search works is not `d` but
+the probability mass of the improvement-supporting set under the sampling
+distribution — which depends only on the geometry in `k` dimensions. The
+paper's image for the contrast is **needle-in-a-haystack versus a degenerate
+"wheel of fortune"**.
+
+**The empirical test is a non-result, and it is the right one.** Best-of-`N`
+improvement rises fast and flattens beyond `N ≈ 30–40` on GSM8K, ARC-C and
+WinoGrande, across Qwen2.5-Instruct from 0.5B to 7B, **with no systematic
+rightward shift as model size increases**. That is the direct empirical
+signature a curse of dimensionality would produce, and it is absent. The paper
+also rules out the obvious artifact: with the candidate pool far larger than
+`N`, the flattening is intrinsic diminishing returns of expected extrema, not
+pool exhaustion.
+
+**A viable perturbation scale persists across scales.** At fixed `N = 30`,
+there is a range of sufficiently small `σ` for which headroom-normalized
+best-of-`N` improvement stays positive from 0.5B to 7B. The requirement is not
+precise tuning but locality — perturbations small enough to probe regions where
+improvement is common.
+
+**And it names the practical interventions.** Early stopping near the peak;
+noise scheduling (raise the population, cut `σ`, cut temperature, or otherwise
+reduce effective update noise over time); adaptive step sizes that shrink once
+curvature-active progress saturates. It also proposes treating non-monotonicity
+as a **diagnostic** — its presence indicates heterogeneous curvature and a
+variance-dominated late regime.
+
+## What the evidence does not cover
+
+**Not independent of [LIT-211](LIT-211.md).** Qiyao Liang, Risto Miikkulainen and
+Xin Qiu are all authors on that paper; the remaining five are MIT. This is the
+ES-at-scale line explaining its own result, which is a legitimate thing to do
+and is not an outside check.
+
+**One model family.** Qwen2.5-Instruct, 0.5B to 7B, three tasks. The scaling
+claim is a claim about a range of about one order of magnitude within one
+family.
+
+**The curvature structure is argued and illustrated, not measured.** The
+"bulk plus outliers" Hessian spectrum is imported from the overparameterized-
+network literature and shown schematically; no spectrum of an actual
+fine-tuning landscape is computed here. What is measured is the *consequence* —
+best-of-`N` accessibility — which is consistent with the picture and does not
+establish it.
+
+**The toy model isolates, it does not model.** A two-block spectrum suffices to
+produce rise-then-decay; that shows spectral heterogeneity is *sufficient*, not
+that it is what is happening in a transformer.
+
+## Standing in the anthology
+
+<!-- inactive-ok-block: THEORY-tmp4rcxw — Proposed, filed from this paper in
+     this same change; naming it is the point -->
+<!-- inactive-ok-block: THEORY-006 — Proposed, and this paragraph is about
+     how the two accounts relate, which is what the citation is for -->
+**The account [LIT-233](LIT-233.md) builds its own on, and the record filed them the wrong
+way round.** Neural Thickets cites this paper and offers the reconciliation
+itself: the thicket is "the intersection of (a) a broad loss basin induced by
+pretraining and overparameterization, and (b) a set of task-relevant
+directions that are effectively low-dimensional (or low-rank) but embedded
+within the full parameter space." So [THEORY-006](../theory.d/THEORY-006.md) and [THEORY-tmp4rcxw](../theory.d/THEORY-tmp4rcxw.md) are
+complementary by the later paper's own construction, not rivals — one is about
+the basin, the other about the directions inside it.
+
+<!-- inactive-ok-block: THEORY-006 — Proposed, and this paragraph states the disagreement between the two accounts -->
+**They do disagree about scale, and the disagreement is methodological.**
+[THEORY-006](../theory.d/THEORY-006.md) reports the fraction of improving perturbations rising
+monotonically with model size — 0% at 0.5B to 64% at 32B on GSM8K — at a
+*fixed* `σ = 1e-3`. This paper reports accessibility *flat* from 0.5B to 7B,
+choosing a viable `σ` per model and normalizing by headroom. Fixed-`σ` density
+and best-`σ` accessibility are different quantities, and a perturbation scale
+that suits a 32B model need not suit a 0.5B one. Both documents now say so;
+neither claims to have resolved it.
+
+<!-- inactive-ok-block: SOTA-tmpdcmgg — Proposed, and named as the practice
+     this paper's interventions section revised -->
+**It is the third source to arrive at the population knob**, from a third
+direction: larger `N` raises the terminal plateau and suppresses late-time
+degradation. And it is why [SOTA-tmpdcmgg](../practices.d/SOTA-tmpdcmgg.md) now separates two stopping
+questions that the record had run together.

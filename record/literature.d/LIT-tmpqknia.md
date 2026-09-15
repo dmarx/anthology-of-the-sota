@@ -1,0 +1,112 @@
+---
+status: Active
+title: 'ESSA: Evolutionary Strategies for Scalable Alignment'
+version: 1
+tags:
+- adaptation-and-tuning
+date: '2026-09-15'
+published: '2025-07-01'
+arxiv: '2507.04453'
+first_author: 'Korotyshova'
+keywords:
+- 'evolution-strategies'
+- 'cma-es'
+- 'lora'
+- 'alignment'
+- 'quantization'
+compared_against:
+- LIT-127
+implementations: []
+summary: >-
+  Korotyshova et al. (2025), [ARXIV-2507.04453](https://arxiv.org/abs/2507.04453). The earliest paper in this
+  record's ES line, and it takes the opposite route to [LIT-211](LIT-211.md): shrink the
+  search space rather than search the full one. SFT-train LoRA adapters, take
+  their SVD, and let CMA-ES optimize only the top singular values. On GSM8K
+  with Qwen2.5-Math-7B it passes 0.80 accuracy in under 25 minutes against
+  GRPO's 50+, on 100 training examples against GRPO's 5,978 — and it aligns a
+  32B model at INT4 and INT8, where backpropagation cannot run at all.
+---
+
+# LIT-tmpqknia: ESSA: Evolutionary Strategies for Scalable Alignment
+
+Korotyshova et al. (2025) — [ARXIV-2507.04453](https://arxiv.org/abs/2507.04453)
+
+## Key takeaways
+
+**It predates the full-parameter line and answers the same question
+differently.** Posted two months before [LIT-211](LIT-211.md), it accepts the premise
+that premise rejects — that ES cannot search a billion dimensions — and
+reduces the dimension instead. Three nested reductions: LoRA rather than full
+parameters; SVD of each LoRA adapter; and CMA-ES over only the top fraction of
+singular values. In the headline comparison only the top 40% of singular
+values are trained.
+
+**SFT initialization is load-bearing and stated as such.** "The ES search does
+not begin with random LoRA adapters." Adapters are supervised-fine-tuned on a
+small labelled set first, so the evolutionary search starts inside a region
+already adapted to the task format. This is the same structural move
+[LIT-231](LIT-231.md) makes a year later with GRPO steps in place of SFT — seed the
+subspace with gradients, then search it without them.
+
+**The efficiency results are the strongest part.** Against GRPO on GSM8K with
+Qwen2.5-Math-7B on 8 GPUs and identical initialization, ESSA passes 0.80
+accuracy in **under 25 minutes** where GRPO needs more than 50 — and it does
+so from **100 training examples** against GRPO's full 5,978-example fold.
+Sample efficiency, not just wall clock.
+
+**It runs where backpropagation cannot.** Qwen-32B aligned at BF16, INT8 and
+INT4 with a fixed population of 192, and the quantized runs are **slightly
+better** than BF16 on both convergence speed and final accuracy. Since ES
+needs only forward passes, the training precision can be the inference
+precision — which is the same argument [LIT-229](LIT-229.md) later makes for integer-only
+recurrent pretraining, reached from the opposite end of the method space.
+
+**Rank has an interior optimum.** LoRA ranks 4–32 converge fastest and reach
+the highest accuracy; rank 64 is slower and worse. The paper's reading is the
+straightforward one — a larger search space is harder for ES to explore — and
+it is a useful counterweight to reading "reduce the dimension" as "reduce it
+as far as possible".
+
+## What the evidence does not cover
+
+**One benchmark family.** Mathematical reasoning with verifiable
+accuracy-based rewards, which the authors name as the limit: ESSA's reliance
+on a scalar fitness "may limit its applicability to subjective or sparse
+feedback scenarios, such as aligning human preference in open dialogue" —
+which is what the title's word *alignment* would normally mean.
+
+**The GRPO comparison differs in more than the optimizer.** Different
+runtimes (vLLM against VERL), different training-set sizes by design, and a
+wall-clock x-axis. It is a convincing efficiency demonstration and not a
+controlled comparison of optimizers.
+
+**No forgetting or drift measurement**, which is the axis the later papers in
+this line turn out to care about — though searching a few hundred singular
+values bounds the drift by construction, which is worth noticing given what
+[LIT-tmp4w505](LIT-tmp4w505.md) says drift scales with.
+
+## Standing in the anthology
+
+**The line's head, chronologically, and the record filed it last.** Everything
+else here descends from or argues with [LIT-211](LIT-211.md)'s full-parameter claim; this
+came first and took the dimensionality objection seriously rather than
+overturning it. Filing it last is an artifact of having followed citations
+backward from a 2026 paper, and the corrective is in the curation entry rather
+than in a relation — it is not `extends:` or `corrects:` anything here,
+because the later work did not build on it.
+
+**It makes the subspace approach a line rather than a one-off.**
+[LIT-231](LIT-231.md) (Hyper-ES) argues from lemmas that full-parameter ES cannot work and
+searches a gradient-seeded subspace instead. This did the same thing eighteen
+months earlier without the argument, and reported it working at 7B and 32B.
+So the record now holds two independent instances of *seed a low-dimensional
+subspace with gradients, then search it gradient-free* — and the fact that
+they were developed independently is a better argument for the approach than
+either paper's own results.
+
+<!-- inactive-ok-block: SOTA-154 is Active; named as the practice whose
+     scope this paper sits outside of rather than supporting -->
+It does **not** support [SOTA-154](../practices.d/SOTA-154.md), and the distinction matters: that practice
+recommends evolution strategies over the full parameter space in place of
+policy-gradient RL. This is ES over a few hundred coefficients, initialized by
+supervised fine-tuning. Same family, different recommendation.

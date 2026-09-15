@@ -1,0 +1,131 @@
+---
+status: Active
+title: 'EGGROLL, Unrolled: Understanding and Improving Low-Rank Evolution Strategies at Scale'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-15'
+published: '2026-09-01'
+arxiv: '2609.10980'
+first_author: 'Kaya'
+keywords:
+- 'evolution-strategies'
+- 'low-rank'
+- 'zeroth-order'
+- 'variance-reduction'
+- 'leave-one-out'
+# `corrects:` by ADR-017's test: its motivation is a defect it names in the
+# parent — the low-rank population field is not in general the gradient of
+# anything, and the antithetic implementation spends an evaluation it need
+# not. The parent's throughput claim is untouched.
+corrects:
+- LIT-tmp4zb0l
+implementations: []
+summary: >-
+  Kaya and Hashemi (2026), [ARXIV-2609.10980](https://arxiv.org/abs/2609.10980). Works out what EGGROLL's low-rank
+  update actually converges to and finds it is a resolvent-filtered gradient,
+  which can be nonconservative and can turn a local optimum into a repelling
+  one — while being exact on every quadratic objective at every rank. The
+  practical yield is LOO-ROLL, which replaces the two antithetic evaluations
+  per direction with one leave-one-out evaluation, halving estimator MSE in
+  transformer blocks at equal cost.
+---
+
+# LIT-tmpcjyw1: EGGROLL, Unrolled: Understanding and Improving Low-Rank Evolution Strategies at Scale
+
+Kaya and Hashemi (2026) — [ARXIV-2609.10980](https://arxiv.org/abs/2609.10980)
+
+## Key takeaways
+
+**The geometric objection it starts from is real and easy to miss.** A
+rank-one perturbation has identity covariance, which makes it look like a
+drop-in for a dense Gaussian — but it lives in a measure-zero subset of the
+matrix space. Covariance is not the whole of a distribution, and the paper's
+contribution is to work out what the difference costs.
+
+**The mean update is not the gradient of anything, in general.** The
+population field is an explicit *resolvent* applied to the gradient of the
+perturbation-smoothed objective. The resolvent acts as an anisotropic low-pass
+filter whose attenuation differs across singular components, so it can tilt a
+mode rather than merely scale it. Superposing tilted modes gives a field with
+a nonsymmetric Jacobian — **nonconservative**, not the gradient of any
+function — and the paper constructs a bounded smooth objective where finite
+rank **reverses the local stability of an optimum**: the largest real part of
+the field Jacobian's eigenvalues is positive at rank one and negative at rank
+two, so a point that rank-two dynamics converge to, rank-one dynamics run
+away from.
+
+**And then it draws the boundary that makes this safe.** EGGROLL is **exact on
+every quadratic objective, at every rank and every radius**. For smooth
+objectives the first local finite-rank correction is controlled, with
+nonasymptotic field-error bounds under Lipschitz-gradient and Lipschitz-
+Hessian assumptions. So the failure mode requires the objective to be
+non-quadratic over the perturbation scale — which is why nobody hit it in
+practice, and why the radius is the parameter that decides whether you are in
+the safe regime.
+
+**Low rank costs much less than the geometry suggests.** Under a local affine
+model, rank-one perturbations raise the gradient-estimator variance by a small
+factor over dense Gaussian ES — negligible at full transformer width, visible
+only in small blocks. Auditing a sub-block of Qwen3-0.6B against the
+backpropagated gradient, the rank-one MSE sits modestly above the dense
+baseline and falls toward it by rank eight, while the estimated population
+mean keeps a cosine near one with the true block gradient at every rank. **The
+mean direction is fine; only the variance pays.**
+
+**LOO-ROLL is the practical result.** EGGROLL evaluates both `+E` and `-E` for
+every direction, spending two forward passes to cancel the reward component
+they share. LOO-ROLL instead removes the population-level offset with a
+leave-one-out baseline computed from the population mean that score centering
+already needs — so one evaluation per direction, no extra fitness
+evaluations, no extra model-sized state, no extra communication, and the same
+expected field. At equal evaluation cost it halves estimator MSE in
+transformer blocks, because the same budget now funds `N` independent
+directions instead of `N/2` antithetic ones.
+
+**The empirical claim is modest and carefully stated.** Across ten
+matched-wall-time post-training settings on models up to 8B: seven
+improvements in individual paired tests, three unresolved, **no significant
+loss**, and five gains surviving Holm correction. On GSM8K, accuracy rises at
+both 0.6B and 8B.
+
+**Higher rank does not pay.** Comparing rank eight against rank one on reward
+at matched wall time across several settings, the paper finds no reproducible
+advantage for rank eight — the variance surcharge rank buys down is not what
+was limiting performance.
+
+## What the evidence does not cover
+
+**Two of the paper's headline theoretical findings are counterexamples, not
+frequencies.** That a nonconservative field and a stability reversal *can*
+occur says nothing about how often they do at LLM scale, and the paper does
+not claim otherwise. The quadratic exactness result is the load-bearing one
+for practice.
+
+**Models up to 8B**, and the finite-rank audit is inside a single Qwen3-0.6B
+block against a backpropagated reference — a clean instrument, and a small
+one.
+
+**Rank extrapolation and a control-variate correction are derived and then set
+aside**, because the experiments found no practical gain for their cost. Worth
+recording as a negative result from the people best placed to want the
+opposite.
+
+## Standing in the anthology
+
+**The line's first paper about whether the method is correct rather than
+whether it is fast.** [LIT-tmp4zb0l](LIT-tmp4zb0l.md) is an engineering result — structure the
+perturbations, gain a hundredfold. This asks what the structured perturbations
+changed about the thing being optimized, and answers precisely: nothing on
+quadratics, something bounded on smooth objectives, and something unbounded in
+constructible cases. `corrects:` rather than `extends:`, because its
+motivation is a defect it names in the parent.
+
+<!-- inactive-ok-block: SOTA-tmph4wug — Proposed, filed from this paper and
+     LIT-tmp81or2 in this same change; named as what the two support -->
+Its recommendation converges with [LIT-tmp81or2](LIT-tmp81or2.md)'s from an unrelated
+direction. That paper found empirically that the antithetic second evaluation
+buys nothing on reasoning tasks, because regenerated autoregressive responses
+break the pairing's shared randomness; this one proves a leave-one-out
+baseline preserves the expected field at half the evaluation cost. Two
+groups, two arguments, one instruction — which is [SOTA-tmph4wug](../practices.d/SOTA-tmph4wug.md).

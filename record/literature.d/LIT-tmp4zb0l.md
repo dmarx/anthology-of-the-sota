@@ -29,6 +29,8 @@ summary: >-
   intensity enough for a hundredfold throughput gain at billion scale, at up
   to 91% of pure batch-inference throughput. The population average is still
   high-rank, and the low-rank update converges to the full-rank one at O(1/r).
+corrected_by:
+- LIT-tmpcjyw1
 ---
 
 # LIT-tmp4zb0l: Evolution Strategies at the Hyperscale

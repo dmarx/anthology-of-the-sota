@@ -7,10 +7,12 @@ consensus: contested
 # inactive-ok-block: THEORY-tmp38myz — Proposed, and the account that
 # predicts where the dissent's evidence sits; the note is the reconciliation
 consensus_note: >-
-  Three independent groups now report evolution strategies at or ahead of
-  policy-gradient RL on models up to 8B (LIT-211, LIT-tmphm6g2, LIT-tmp4zb0l
-  — the last on a recurrent architecture), and a fourth (LIT-tmp9pcfv) says
-  in its own second sentence that direct ES at LLM scale is ineffective. The trunk — gradient-free search of the full
+  Four independent groups now report evolution strategies at or ahead of
+  policy-gradient RL (LIT-211, LIT-tmphm6g2, LIT-tmp4zb0l on a recurrent
+  architecture, LIT-tmp81or2), with LIT-tmpiq6kc carrying the same lab's
+  evidence to 32B against published RL checkpoints; a fifth group
+  (LIT-tmp9pcfv) says in its own second sentence that direct ES at LLM scale
+  is ineffective. The trunk — gradient-free search of the full
   parameter space is viable at billion scale — is agreed. The branch in
   dispute is the word "instead": whether it replaces policy-gradient RL or is
   seeded by it. The dissent's models are all at 1.5B or below, which
@@ -46,6 +48,11 @@ source:
 # recommendation; the lineage on the notes is where it belongs.
 - LIT-211
 - LIT-tmphm6g2
+# The coverage evidence, which is an argument for this recommendation and not
+# only about how to measure it: LIT-tmp81or2 independently, LIT-tmpiq6kc from
+# LIT-211's own lab but carrying the comparison to 32B.
+- LIT-tmp81or2
+- LIT-tmpiq6kc
 introduced_by:
 - LIT-211
 # The evidence AGAINST, required where the record claims there is some
@@ -162,19 +169,47 @@ test, not as a dismissal.
 The experiment that would settle it is the one nobody has run: full-parameter
 ES against a well-tuned GRPO on the same benchmarks at 7B and above.
 
+## What ES buys that the headline numbers do not show
+
+The two coverage papers change what this practice is *for*. Reinforcement
+learning with verifiable rewards raises pass@1 and **lowers** pass@k, often
+below the base model's — GRPO finishes under its own base on both pass@16 and
+pass@32 in 15 of 18 comparisons ([LIT-tmp81or2](../literature.d/LIT-tmp81or2.md)), and across Qwen2.5, Qwen3
+and published RL checkpoints up to 32B the base model eventually overtakes the
+RL checkpoint ([LIT-tmpiq6kc](../literature.d/LIT-tmpiq6kc.md)). Evolution strategies raise both, and never
+fall below base at any `k` or scale tested.
+
+So the case for this practice is strongest exactly where test-time sampling is
+the deployment — verifiable domains, agentic retries, best-of-n, search over
+candidates — and weakest where the model answers once. [SOTA-tmpazu80](SOTA-tmpazu80.md) is the
+evaluation practice that falls out of it.
+
+There is a mechanism attached, and it is the most interesting thing the line
+has produced. ES's largest updates land in **LayerNorm weights and attention
+projections**; GRPO's are an order of magnitude smaller and land in **token
+embeddings and the language-model head**. ES moves the whole model roughly 40×
+further, and that drift turns out to be functionally sparse — zeroing every
+update below a single-step magnitude threshold preserves the gains — and does
+not produce broad forgetting on held-out tasks ([LIT-tmp81or2](../literature.d/LIT-tmp81or2.md)).
+
 ## Conditions, and what is not established
 
-The evidence now spans eight tasks and three model families at 0.5B–8B, with
-**no frontier deployment and no released model whose post-training recipe
-uses it**. That is still a long way from the post-training this record
-describes, which runs multi-stage on models an order of magnitude larger.
-Below about 1.5B, the practice should be expected to fail and the dissent
+The evidence now spans four model families and, at the top end, **32B** —
+Qwen2.5-14B and -32B against OatZero and SimpleRL-Zoo on MATH500,
+OlympiadBench and Minerva ([LIT-tmpiq6kc](../literature.d/LIT-tmpiq6kc.md)). Two caveats travel with that
+number and both matter: those comparisons are against *published checkpoints*
+rather than RL runs matched to the ES budget, and they come from
+[LIT-211](../literature.d/LIT-211.md)'s own lab. The independent evidence stops at 8B.
+
+Still **no released model whose post-training recipe uses it**, which is the
+half of the original promotion condition that remains unmet.
+
+Below about 1.5B the practice should be expected to fail, and the dissent
 above is the evidence that it does.
 
-`Active` here means the record is willing to assert the recommendation on
-eight tasks at 8B and below. It does not mean the field has settled —
-`consensus: contested` is carrying that, and the two axes disagreeing is the
-arrangement they exist for.
+`Active` here means the record is willing to assert the recommendation. It
+does not mean the field has settled — `consensus: contested` is carrying that,
+and the two axes disagreeing is the arrangement they exist for.
 
 ## Against the post-training spine
 
@@ -196,14 +231,28 @@ on what the group baseline's width buys.
 
 ## The line this heads
 
+This is the first entry in what is now a line of six papers rather than a
+single result.
+
+- [LIT-tmp4zb0l](../literature.d/LIT-tmp4zb0l.md) (EGGROLL) makes the search affordable — rank-`r`
+  perturbations per worker, a high-rank population average, a hundredfold
+  throughput gain at billion scale.
+<!-- inactive-ok-block: SOTA-tmph4wug — Proposed, filed in this same change
+     and named as an implementation decision inside this practice -->
+- [LIT-tmpcjyw1](../literature.d/LIT-tmpcjyw1.md) (EGGROLL, Unrolled) says what that low-rank update
+  converges to, finds it need not be the gradient of anything away from the
+  quadratic regime, and halves the estimator's cost — which is
+  [SOTA-tmph4wug](SOTA-tmph4wug.md).
+- [LIT-tmp81or2](../literature.d/LIT-tmp81or2.md) characterizes what ES does to a model instead of asking
+  whether it wins, and is the independent corroboration this practice was
+  short of.
+- [LIT-tmpiq6kc](../literature.d/LIT-tmpiq6kc.md) carries the comparison to 32B and to solution coverage.
+- [LIT-tmp9pcfv](../literature.d/LIT-tmp9pcfv.md) (Hyper-ES) is the dissent above.
+
 <!-- inactive-ok-block: SOTA-tmpm80i3 — Proposed, and named as the practice
      that extends this one; the lineage is what the citation is for -->
-This is the first entry in what is now a line rather than a single result.
-[LIT-tmp4zb0l](../literature.d/LIT-tmp4zb0l.md) (EGGROLL) makes the search affordable — rank-`r`
-perturbations per worker, a high-rank population average, and a hundredfold
-throughput gain at billion scale. [LIT-tmp9pcfv](../literature.d/LIT-tmp9pcfv.md) (Hyper-ES) is the dissent
-above. [SOTA-tmpm80i3](SOTA-tmpm80i3.md) is the degenerate case — one round instead of many,
-with an ensemble on the end — and `extends:` this practice for that reason.
+[SOTA-tmpm80i3](SOTA-tmpm80i3.md) is the degenerate case — one round instead of many, with an
+ensemble on the end — and `extends:` this practice for that reason.
 
 ## Known implementations
 

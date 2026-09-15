@@ -1,0 +1,135 @@
+---
+status: Active
+title: 'Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-15'
+published: '2026-08-01'
+arxiv: '2608.27351'
+first_author: 'Ba'
+keywords:
+- 'evolution-strategies'
+- 'pass-at-k'
+- 'entropy-collapse'
+- 'catastrophic-forgetting'
+- 'population-size'
+# It runs ES against GRPO on four models and six benchmarks and reports where
+# each wins — a comparison that was run, not asserted (ADR-011).
+compared_against:
+- LIT-127
+- LIT-211
+implementations: []
+summary: >-
+  Ba et al. (2026), [ARXIV-2608.27351](https://arxiv.org/abs/2608.27351). The first study of what ES post-training
+  DOES rather than whether it wins. Three findings: ES raises pass@1 and
+  pass@k together while GRPO raises pass@1 and falls below the base model on
+  pass@16 and pass@32 in 15 of 18 comparisons; ES's 40x larger parameter drift
+  is functionally sparse, concentrated in LayerNorm and attention projections,
+  and does not produce broad forgetting; and the population size needed for
+  stable ES falls as the model grows.
+---
+
+# LIT-tmp81or2: Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO
+
+Ba et al. (2026) — [ARXIV-2608.27351](https://arxiv.org/abs/2608.27351)
+
+## Key takeaways
+
+**GRPO buys pass@1 by spending pass@k, and the trade is measurable.** Training
+Qwen2.5-1.5B-Instruct on GSM8K and watching held-out GPQA, token-level entropy
+falls sharply under GRPO and barely moves under ES; GRPO ends *below the base
+model* on pass@16 and pass@32 while ES ends above it on both. Across the full
+grid, **GRPO falls below its base model on both pass@16 and pass@32 in 15 of
+18 comparisons.** GRPO wins the average pass@1; ES wins the average pass@16
+and pass@32. The paper's framing is the useful one: these are different
+operating points, not a ranking.
+
+**There is a theory attached, not just a measurement.** Three lemmas: parameter
+perturbations induce policy diversity at a rate set by the prompt-conditioned
+Fisher information; sampling one response per population member beats matched
+sampling from a single policy, with the gap proportional to a
+verifier-projected Jensen–Shannon divergence; and reward weighting improves
+population success when fitness correlates with per-member success. A
+proposition then gives conditions under which the population's coverage
+advantage survives into the updated center.
+
+**Large drift is not forgetting, and the reason is functional sparsity.** ES
+moves the whole model roughly 40× further than GRPO in relative parameter
+distance. But zeroing every update below a magnitude threshold leaves target
+pass@1 broadly intact — 77.6–93.0% of nonzero updates sit below a threshold
+within the range of a single ES step — so the gains live in a sparse
+larger-magnitude subset, an "approximately performance-preserving coordinate
+subspace identified after training". Held-out evaluations do not show the
+catastrophic forgetting two other groups had reported.
+
+**ES and GRPO change different parts of the model.** The largest ES updates
+land in **LayerNorm weights and attention projections** — 117 of 144 maximum
+coordinates are LayerNorm weights in DeepSeek-R1-Distill-Qwen-1.5B, and
+normalization parameters are 72 and 80 of the 100 largest updates in the two
+models examined. GRPO's largest updates are an order of magnitude smaller and
+land entirely in **token embeddings and the language-model head**. The
+reading offered is that ES adapts by rescaling hidden states and rerouting
+information, while token-level gradient optimization concentrates at the input
+and output faces.
+
+**Three tuning results, of which one is a scaling claim.** Z-scoring
+population rewards beats no normalization. The perturbation scale has a
+two-sided failure — too small overfits the observed rewards into a local
+optimum, too large destabilizes. And **the population size needed for stable
+ES falls as the model grows**: at update 300 on GSM8K, only N=30 stays within
+0.5% of the N=30 reference at 0.5B, while both N=10 and N=20 clear that bar at
+1.5B and 3B.
+
+**Two-point antithetic estimation does not pay on reasoning tasks.** Antithetic
+ES is algebraically identical to two-point zeroth-order optimization, whose
+variance reduction relies on paired evaluations sharing randomness. Reasoning
+tasks regenerate autoregressive responses, so early-token divergence weakens
+that coupling. The paper finds raw variance reduction for SST-2 but not
+reliably for regenerated GSM8K rewards, and no training-reward or held-out
+advantage from the second evaluation.
+
+## What the evidence does not cover
+
+**Four models, all at 7B or below** — Qwen2.5-1.5B-Instruct, Llama-3.2-3B-
+Instruct, Qwen2.5-7B-Instruct, DeepSeek-R1-Distill-Qwen-1.5B — and the
+population-scaling result runs only to 3B, on one model family.
+
+**The forgetting result is a negative on held-out benchmarks**, not a
+demonstration that drift is harmless. The paper's own future work asks how
+drift behaves "over longer training horizons spanning multiple tasks", which
+is where the groups it disagrees with were looking.
+
+**Sequential GRPO→ES is proposed, not established.** The paper calls it "an
+intuitive method", splits one budget across two stages, and reports Pareto
+trade-offs between pass@1 and pass@k. That is a promising shape and one
+experiment.
+
+## Standing in the anthology
+
+**The paper that makes the ES line about something other than winning.** Every
+other note in this line asks whether ES beats policy-gradient RL. This one
+asks what each method does to the model, and answers in three currencies —
+coverage, drift, and where in the network the change lands. That is why it is
+filed under `analysis-and-evaluation` despite being about post-training.
+
+<!-- inactive-ok-block: THEORY-tmp38myz — Proposed, and this paragraph is the
+     record of an independent group reaching a prediction of that account;
+     naming it is the point -->
+**It corroborates [THEORY-tmp38myz](../theory.d/THEORY-tmp38myz.md) from a direction that account did not
+anticipate, and cites it.** Its population-scaling section reasons that larger
+models contain more performance-preserving subsets, "making task-improving
+perturbations denser around pretrained weights, consistent with Frankle and
+Carbin (2018); Gan and Isola (2026)" — and then tests a *consequence*: if
+density rises with scale, fewer directions should suffice at larger scale. It
+does. That is an independent group confirming a prediction of the account
+rather than repeating its measurement, which the theory document now records
+as exactly that and no more.
+
+<!-- inactive-ok-block: THEORY-002 — Proposed, and named as the account this
+     paper reaches for; the connection is the paper's own citation -->
+The functional-sparsity finding also reaches [THEORY-002](../theory.d/THEORY-002.md) directly, and the
+paper makes the reach itself by citing Frankle and Carbin: a sparse subset of
+coordinates carries the gains, and larger models contain more such subsets.
+This is the second document in the record to connect the lottery-ticket line
+to something after pretraining rather than at initialization.

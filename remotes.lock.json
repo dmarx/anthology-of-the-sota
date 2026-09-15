@@ -650,11 +650,20 @@
     "ARXIV/2608.05541": {
       "title": "Hyper-ES: Effective Evolution Strategies for LLM Reasoning via Descent Direction Merging"
     },
+    "ARXIV/2608.12679": {
+      "title": "Beyond the Best Guess: Improving LLM Solution Coverage with Evolution Strategies"
+    },
+    "ARXIV/2608.27351": {
+      "title": "Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO"
+    },
     "ARXIV/2608.30320": {
       "title": "On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability"
     },
     "ARXIV/2609.02672": {
       "title": "oHC: Orthogonal Hyper-Connections on SO(4) via Quaternions"
+    },
+    "ARXIV/2609.10980": {
+      "title": "EGGROLL, Unrolled: Understanding and Improving Low-Rank Evolution Strategies at Scale"
     }
   }
 }

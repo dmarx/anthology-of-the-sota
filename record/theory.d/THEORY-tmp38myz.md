@@ -13,12 +13,18 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-15'
 source:
+# LIT-tmp81or2 corroborates a PREDICTION of this account — that fewer search
+# directions should suffice as scale grows — and cites it by name. It does not
+# repeat the density measurement, so it does not satisfy `promote_when:`; see
+# "What an independent group has and has not confirmed" below.
 - LIT-tmphm6g2
+- LIT-tmp81or2
 explains:
 - SOTA-154
 - SOTA-tmpm80i3
 summary: >-
-  Gan and Isola (2026), [LIT-tmphm6g2](../literature.d/LIT-tmphm6g2.md) — the fraction of random Gaussian weight
+  Gan and Isola (2026), [LIT-tmphm6g2](../literature.d/LIT-tmphm6g2.md), with a prediction of it independently
+  confirmed by [LIT-tmp81or2](../literature.d/LIT-tmp81or2.md) — the fraction of random Gaussian weight
   perturbations that improve a downstream task rises monotonically with model
   scale, from 0% at 0.5B to 64% at 32B on GSM8K, and the perturbations that
   help are task specialists rather than uniform improvements. It is the
@@ -94,6 +100,32 @@ diversity is what makes majority-voting the survivors better than taking the
 best one. The practice's two halves are the theory's two measurements, which
 is a reason to hold the practice no more firmly than the account.
 
+## What an independent group has and has not confirmed
+
+Ba et al. ([LIT-tmp81or2](../literature.d/LIT-tmp81or2.md)) cite this account by name and test a consequence of
+it. Their reasoning: if larger models hold more performance-preserving
+coordinate subsets, task-improving perturbations are denser around the
+pretrained weights, so **fewer search directions should suffice at larger
+scale**. On GSM8K at update 300, only `N = 30` stays within 0.5% of the `N = 30`
+reference at 0.5B, while both `N = 10` and `N = 20` clear that bar at 1.5B and
+3B. The population an ES run needs falls as the model grows.
+
+That is a genuine independent confirmation, and of a *prediction* rather than
+of the original measurement — which is the better kind. They also supply
+something this account lacked: a candidate mechanism. ES's gains survive
+zeroing every update below a single-step magnitude threshold, so they live in
+a sparse coordinate subset, and larger models plausibly contain more such
+subsets.
+
+**It does not satisfy the promotion condition, and the condition stands as
+written.** That asked for the density measurement repeated by an unconnected
+group on a model family other than Qwen2.5, or for a mechanism that *predicts
+where the transition sits*. This is neither: it is a different measurement, on
+Qwen2.5, and the mechanism it offers explains why density might rise without
+saying at what scale it arrives. Recording that plainly is the point — a
+condition that gets reinterpreted to fit whatever evidence turns up is not a
+condition.
+
 ## What this does not say
 
 **It does not say what a "task expert" is.** Expertise here is defined as
@@ -119,6 +151,12 @@ solutions are dense; a method working is consistent with that and with
 several other explanations, including that the benchmark is easy to move.
 Only the direct measurement of `δ` is evidence for the account, and that has
 been made once, by one group, on one model family.
+
+**The lottery-ticket connection is now other people's too, and it is still not
+a claim about initialization.** [LIT-tmp81or2](../literature.d/LIT-tmp81or2.md) reaches for Frankle and Carbin
+in the same sentence it reaches for this account, on the ground that larger
+models contain more effective sparse structures. That is a real convergence
+and it does not change the paragraph below.
 
 <!-- inactive-ok-block: THEORY-002 — Proposed, and this paragraph exists to
      refuse a link between the two accounts; naming it is the point -->

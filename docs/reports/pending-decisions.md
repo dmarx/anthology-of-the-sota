@@ -64,8 +64,8 @@
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 2 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-09 | Proposed | [ADR-024](../../record/decisions.d/ADR-024.md) | 6 | 0 | The topic vocabulary has four recurring seams — options, not a decision |
-| 2026-09-13 | Proposed | [ADR-029](../../record/decisions.d/ADR-029.md) | 8 | 0 | A practice's origin and its evidence are different relations |
 | 2026-09-14 | Proposed | [ADR-028](../../record/decisions.d/ADR-028.md) | 1 | 1 | One topic vocabulary, one set of glosses: the blurbs are shared too |
+| 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 1 | 1 | Every practice states its origin, even when it is the primary source |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 

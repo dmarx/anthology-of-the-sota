@@ -4,7 +4,7 @@
 
 **ontology**.
 
-5 of 29 decisions. Back to the [full index](../README.md).
+5 of 30 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

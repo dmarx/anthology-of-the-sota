@@ -29,7 +29,7 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 **`SOTA`**
 
 - `source` — required, one or more `LIT` codes (luria.yaml: schemes.SOTA.references.source)
-- `introduced_by` — optional, one or more `LIT` codes when present (luria.yaml: schemes.SOTA.references.introduced_by)
+- `introduced_by` — required, one or more `LIT` codes (luria.yaml: schemes.SOTA.references.introduced_by)
 - `extends` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.extends)
 - `extended_by` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.extended_by)
 - `compared_against` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.compared_against)

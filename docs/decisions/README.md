@@ -19,8 +19,8 @@ File one with `luria new adr`.
 
 ## By tag
 
-**[The record](tags/record.md)** (24) — what the schemes hold, and the rules between them:
-[001](../../record/decisions.d/ADR-001.md) · [002](../../record/decisions.d/ADR-002.md) · [004](../../record/decisions.d/ADR-004.md) · [009](../../record/decisions.d/ADR-009.md) · [010](../../record/decisions.d/ADR-010.md) · [011](../../record/decisions.d/ADR-011.md) · [012](../../record/decisions.d/ADR-012.md) · [013](../../record/decisions.d/ADR-013.md) · [014](../../record/decisions.d/ADR-014.md) · [015](../../record/decisions.d/ADR-015.md) · [016](../../record/decisions.d/ADR-016.md) · [017](../../record/decisions.d/ADR-017.md) · [018](../../record/decisions.d/ADR-018.md) · [019](../../record/decisions.d/ADR-019.md) · [025](../../record/decisions.d/ADR-025.md) · [029](../../record/decisions.d/ADR-029.md) · [030](../../record/decisions.d/ADR-030.md) · [031](../../record/decisions.d/ADR-031.md) · [032](../../record/decisions.d/ADR-032.md) · [033](../../record/decisions.d/ADR-033.md) · [034](../../record/decisions.d/ADR-034.md) · [035](../../record/decisions.d/ADR-035.md) · [036](../../record/decisions.d/ADR-036.md) · [038](../../record/decisions.d/ADR-038.md)
+**[The record](tags/record.md)** (25) — what the schemes hold, and the rules between them:
+[001](../../record/decisions.d/ADR-001.md) · [002](../../record/decisions.d/ADR-002.md) · [004](../../record/decisions.d/ADR-004.md) · [009](../../record/decisions.d/ADR-009.md) · [010](../../record/decisions.d/ADR-010.md) · [011](../../record/decisions.d/ADR-011.md) · [012](../../record/decisions.d/ADR-012.md) · [013](../../record/decisions.d/ADR-013.md) · [014](../../record/decisions.d/ADR-014.md) · [015](../../record/decisions.d/ADR-015.md) · [016](../../record/decisions.d/ADR-016.md) · [017](../../record/decisions.d/ADR-017.md) · [018](../../record/decisions.d/ADR-018.md) · [019](../../record/decisions.d/ADR-019.md) · [025](../../record/decisions.d/ADR-025.md) · [029](../../record/decisions.d/ADR-029.md) · [030](../../record/decisions.d/ADR-030.md) · [031](../../record/decisions.d/ADR-031.md) · [032](../../record/decisions.d/ADR-032.md) · [033](../../record/decisions.d/ADR-033.md) · [034](../../record/decisions.d/ADR-034.md) · [035](../../record/decisions.d/ADR-035.md) · [036](../../record/decisions.d/ADR-036.md) · [038](../../record/decisions.d/ADR-038.md) · [039](../../record/decisions.d/ADR-039.md)
 
 **[Taxonomy](tags/taxonomy.md)** (10) — the topic vocabulary and what enforces it:
 [003](../../record/decisions.d/ADR-003.md) · [022](../../record/decisions.d/ADR-022.md) · [024](../../record/decisions.d/ADR-024.md) · [026](../../record/decisions.d/ADR-026.md) · [027](../../record/decisions.d/ADR-027.md) · [028](../../record/decisions.d/ADR-028.md) · [031](../../record/decisions.d/ADR-031.md) · [035](../../record/decisions.d/ADR-035.md) · [036](../../record/decisions.d/ADR-036.md) · [038](../../record/decisions.d/ADR-038.md)
@@ -31,6 +31,9 @@ File one with `luria new adr`.
 **[Migration](tags/migration.md)** (4) — moving off the YAML registry, and what happens to it:
 [001](../../record/decisions.d/ADR-001.md) · [006](../../record/decisions.d/ADR-006.md) · [008](../../record/decisions.d/ADR-008.md) · [033](../../record/decisions.d/ADR-033.md)
 
+**[ci](tags/ci.md)** (1):
+[039](../../record/decisions.d/ADR-039.md)
+
 **[ontology](tags/ontology.md)** (5):
 [020](../../record/decisions.d/ADR-020.md) · [021](../../record/decisions.d/ADR-021.md) · [025](../../record/decisions.d/ADR-025.md) · [026](../../record/decisions.d/ADR-026.md) · [028](../../record/decisions.d/ADR-028.md)
 
@@ -40,7 +43,7 @@ File one with `luria new adr`.
 **[workflow](tags/workflow.md)** (1):
 [013](../../record/decisions.d/ADR-013.md)
 
-**By status:** [Active](status/Active.md) (23) · [Proposed](status/Proposed.md) (11) · [Deferred](status/Deferred.md) (0) · [Superseded](status/Superseded.md) (4) · [Rejected](status/Rejected.md) (0)
+**By status:** [Active](status/Active.md) (23) · [Proposed](status/Proposed.md) (12) · [Deferred](status/Deferred.md) (0) · [Superseded](status/Superseded.md) (4) · [Rejected](status/Rejected.md) (0)
 
 ## Chronological
 
@@ -94,4 +97,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [ADR-036](../../record/decisions.d/ADR-036.md) | An unbound relation is one of four things, and only one of them is a retag | The unbound-lineage report had 38 relations and 16 lines. Reading all of them: 15 documents were plainly mis-filed and are retagged, two sibling links were analogies rather than comparisons and are removed, and the remaining 24 are two structural facts about the vocabulary — that `analysis-and-evaluation` is a kind rather than a subject and will unbind every lineage it touches, and that the record has no relation for "this is the domain-specific instance of that". Neither is fixed by retagging, and retagging to clear them is the move luria.yaml already warns against. | Proposed |
 | [ADR-037](../../record/decisions.d/ADR-037.md) | Fail the build on `source-mismatch`, and take the source invariant upstream | Two things about the check that binds a document to its paper. `fail_on` gains `source-mismatch` — at zero today, offline from the lockfile, and the check that would have failed the import in [#138](https://github.com/dmarx/anthology-of-the-sota/issues/138). And the invariant on `source:` that this decision first argued against is now argued FOR: a relation asserts a commonality and the invariant is how the record says what it is, which holds for a practice and its evidence as much as for two practices. It cannot be declared here yet — a chain over a cross-scheme relation raises `KeyError` in `luria index` — so it goes upstream as `LU-#272` with the measurement rather than being dropped. | Proposed |
 | [ADR-038](../../record/decisions.d/ADR-038.md) | A note has no topics of its own: it derives them from its paper | `NOTE.tags` and `NOTE.primary_topic` are derived from the paper the note reads. A note and its paper are the same object, so a second copy of the subject was a second copy free to disagree — and four of the 158 were. Rejected: asserting the agreement with `invariant: tags` on `NOTE.paper`, which reports the disagreement instead of making it impossible; and declaring an invariant on the other five cross-scheme relations, which join a claim to a paper or an explanation and which [ADR-026](../../record/decisions.d/ADR-026.md)'s filing rule expects to differ. | Proposed |
+| [ADR-039](../../record/decisions.d/ADR-039.md) | The configuration is part of the record, and the lint reads it | `luria.yaml` joins `code.globs`. It carries 87 code citations across 38 documents — more decision references than any other file here — and nothing scanned it, so they went stale invisibly: 15 citations of codes that had been concretized months earlier, and two to a luria decision whose temporary code had since been numbered. Rejected: leaving it unscanned on the grounds that a config is not prose, and per-site directives over one file-level one. | Proposed |
 

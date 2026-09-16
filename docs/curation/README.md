@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [16 Sep 15:13 — The file with the most reasons in it was the one nothing checked](2026-09.md#the-file-with-the-most-reasons-in-it-was-the-one-nothing-checked)
 - [16 Sep 05:15 — I argued they were the same object and then built a check for whether they agreed](2026-09.md#i-argued-they-were-the-same-object-and-then-built-a-check-for-whether-they-agreed)
 - [16 Sep 02:03 — Replace where I should have added, and the constraint that made it look like a choice](2026-09.md#replace-where-i-should-have-added-and-the-constraint-that-made-it-look-like-a-choice)
 - [16 Sep 00:32 — A rule I stated, measured, and withdrew](2026-09.md#a-rule-i-stated-measured-and-withdrew)
@@ -75,9 +76,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-68 entries across 2 books, newest first.
+69 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 66 | 2026-09-05 | 2026-09-16 |
+| [2026-09](2026-09.md) | 67 | 2026-09-05 | 2026-09-16 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

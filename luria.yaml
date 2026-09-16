@@ -81,7 +81,7 @@ vocabularies:
       exactly as `representation-and-encoding` and `analysis-and-evaluation`
       were added. Reaching for the nearest wrong tag is the failure this
       guard exists to prevent, not the behaviour it asks for.
-    values:
+    terms:
       training-optimization:
         label: Training optimization
         blurb: optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies

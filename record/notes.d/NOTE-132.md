@@ -5,7 +5,19 @@ formerly:
 - NOTE-tmpm5eod
 paper: LIT-265
 title: 'Large Batch Optimization for Deep Learning: Training BERT in 76 minutes'
-version: 1
+version: 2
+history:
+- version: 1
+  date: '2026-09-15'
+  note: >-
+    Filed with a "Bearing on the record" that set this paper against LIT-058 as
+    an unresolvable contradiction and refused a practice on those grounds.
+- version: 2
+  date: '2026-09-16'
+  note: >-
+    Tension closed against both papers. LIT-265 cites LIT-058 as motivation and
+    reports its own large-batch results as untuned; the disagreement was in this
+    note, not between the papers.
 date: '2026-09-15'
 summary: >-
   Scaling the learning rate layerwise by the ratio of the parameter norm to
@@ -14,6 +26,10 @@ summary: >-
   with layerwise scaling and generalize across both vision and language models
   where LARS alone fails.
 ---
+
+<!-- inactive-ok-file: THEORY-tmpih985 — Proposed, and cited in the bearing
+     section as the account that replaced this note's claim of an
+     unresolvable contradiction. -->
 # NOTE-132: Large Batch Optimization for Deep Learning: Training BERT in 76 minutes
 
 ## Contribution
@@ -150,11 +166,25 @@ are applied without further hyperparameter tuning.
 
 ## Bearing on the record
 
-LAMB is the large-batch optimizer the record does not hold, and its claim —
-scale batch without per-batch-size retuning — is in direct tension with the
-Shallue reading filed in the same batch, which says never to transfer
-metaparameters across batch sizes. The tension is the interesting part and
-neither should be filed as a practice until it is resolved.
+**Resolved, and the tension was this note's, not the papers'.** The reading
+above set LAMB's no-retuning claim against [SOTA-218](../practices.d/SOTA-218.md) as though the two could not
+both hold. Going back to the paper closes it three ways. LAMB *cites* [LIT-058](../literature.d/LIT-058.md)
+approvingly in its related work, as motivation — "learning rate scaling
+heuristics with the batch size do not hold across all problems or across all
+batch sizes". It labels its own large-batch tables *untuned* and says in three
+places that manual tuning does better. And [LIT-058](../literature.d/LIT-058.md) never swept a
+layerwise-normalized optimizer, so LAMB is not a counterexample to it.
+
+What the paper claims is that a square-root rule plus warmup is *sufficient to
+reach a fixed target without a sweep* under a two-level normalized optimizer.
+What [SOTA-218](../practices.d/SOTA-218.md) forbids is drawing a steps-to-target curve that way and reasoning
+from its shape. Different claims about different activities.
+
+[SOTA-tmp28q6x](../practices.d/SOTA-tmp28q6x.md) is the practice this note now supports, and [THEORY-tmpih985](../theory.d/THEORY-tmpih985.md) is the
+account that lets it stand beside [SOTA-218](../practices.d/SOTA-218.md) — that where a scaling heuristic
+stops working is a property of the optimizer applying it. The reading's own R1,
+R2 and R3 transcribe the paper correctly; it was the paragraph here that
+overstated.
 
 ## Limitations
 

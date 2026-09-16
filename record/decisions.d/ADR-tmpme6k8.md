@@ -7,13 +7,14 @@ tags:
 date: '2026-09-16'
 summary: >-
   `lint.fail_on` has been empty since the record was built, so every check is
-  advice. `source-mismatch` and `source-unchecked` go into it — the only two
-  that verify a document is about the paper it names, both at zero today, and
-  between them the check that would have failed the import in [#138](https://github.com/dmarx/anthology-of-the-sota/issues/138) instead of
-  printing a clean run. Recorded alongside a check that was proposed and
-  rejected on measurement: an invariant on `source:` asserting that a practice
-  shares its paper's topic, which reports 73 edges across 64 practices and is
-  mostly the record doing what it decided to do.
+  advice. `source-mismatch` goes into it — the one check that verifies a
+  document is about the paper it names, at zero today, and the check that
+  would have failed the import in [#138](https://github.com/dmarx/anthology-of-the-sota/issues/138) instead of printing a clean run.
+  `source-unchecked` is deliberately left out: its only failure mode is an
+  upstream outage, which a contributor cannot act on. Recorded alongside a
+  check proposed and rejected on measurement: an invariant on `source:`
+  asserting a practice shares its paper's topic, which reports 73 edges
+  across 64 practices and is mostly the record doing what it decided to do.
 ---
 
 # ADR-tmpme6k8: Turn the enforcement dial on the two checks that bind a document to its paper
@@ -66,25 +67,28 @@ be** — but the question pointed at a dial that is genuinely off.
 
 ## Decision
 
-**`lint.fail_on` gains `source-mismatch` and `source-unchecked`.**
+**`lint.fail_on` gains `source-mismatch`, and only that.**
 
 The dial has been `[]` since the record was built, which means every finding
-the lint produces is advice. These two are the only checks that answer *is
-this document about the paper it names*, which is the question the record's
-first design principle rests on — a citation nothing can follow is a string.
+the lint produces is advice. `source-mismatch` is the check that answers *is
+this document about the paper it names* — the question the record's first
+design principle rests on, because a citation nothing can follow is a string.
+It compares the recorded title against what the identifier actually serves,
+reading the committed lockfile so it costs no network.
 
-- **`source-mismatch`** compares the recorded title against what the
-  identifier actually serves, reading the committed lockfile so it costs no
-  network. Verified on this branch: retitle `LIT-045` to a different paper's
-  title and the lint reports *"`arxiv: 2104.09864` resolves to 'RoFormer…',
-  not 'A Mean Field View…'"* and exits 1.
-- **`source-unchecked`** is the other half and the one that matters for new
-  work: it fires when nothing has ever verified an identifier and upstream
-  could not be reached. Under `network: auto` the lint resolves an unknown
-  identifier live, so the normal path for a newly filed paper is that it gets
-  checked and pinned during the contribution that files it. Also verified:
-  a freshly minted note carrying `arxiv: 1901.09321` under a title that is not
-  Fixup Initialization's fails the run.
+Verified on this branch rather than assumed: retitle `LIT-045` to a different
+paper's title and the lint reports *"`arxiv: 2104.09864` resolves to
+'RoFormer…', not 'A Mean Field View…'"* and exits 1. A freshly minted note
+whose identifier does not match its title fails the same way, with the
+identifier resolved live and pinned in the same run.
+
+**`source-unchecked` is deliberately not promoted.** It is the natural
+companion — it fires when nothing has ever verified an identifier and
+upstream could not be reached — and promoting it would convert an arXiv
+outage into a red build for a contribution that did nothing wrong. A failure
+a contributor cannot act on is one they learn to route around, and a dial
+people route around is worse than a dial that is off. It stays a warning,
+which is the right volume for "nobody could check this".
 
 **Both are at zero today**, which is the precondition. A dial turned on over
 existing findings fails the next contributor for somebody else's backlog, and
@@ -106,19 +110,26 @@ does it, because `network: auto` asks about what it does not know and writes
 the answer into `remotes.lock.json`. The contributor's obligation is to commit
 the lockfile, which the record already does.
 
-**A network outage can now fail a contribution that adds a new paper.** This
-is the real cost and it is narrow: every identifier already in the record is
-pinned, so an outage only affects a contribution introducing one, and the
-remedy — resolve locally, commit the lockfile — is in the author's hands. The
-alternative is a green run that means "nobody could check" and is
-indistinguishable from one that means "checked".
+**No new way for CI to fail on something outside the contributor's control.**
+That was the cost of the version of this decision that also promoted
+`source-unchecked`, and it is why that half was cut. `source-mismatch` reads
+the committed lockfile, so it fails only on a disagreement that is in the
+diff — which is a thing the author can fix.
 
 **It does not cover the defect [#138](https://github.com/dmarx/anthology-of-the-sota/issues/138) actually shipped.** Sixty-seven duplicate
 notes, each a second document for a paper the record already held, with
-correct titles and correct identifiers. Nothing in luria's finding vocabulary
-is about two documents claiming one identifier, and no config setting produces
-it. That one is upstream, and it is filed as such rather than papered over
-here.
+correct titles and correct identifiers and a green lint. Nothing in luria's
+finding vocabulary asks whether two documents resolve to the same place, and
+no config setting produces it.
+
+That is **[LU-#165](https://github.com/dmarx/luria/issues/165)** upstream — *"Two documents can name the same source and
+nothing notices: add a `duplicate-source` finding and a `luria merge`"* —
+which reaches the same conclusion from a two-document collision and goes
+further, asking for a command that resolves one by rewriting references,
+appending the old code to `formerly:`, and retiring rather than deleting the
+loser. This record's contribution to it is scale and a second root cause: 67
+instances at once, from a regeneration that used `git clean -fd` between two
+generations of the same corpus while the first was already tracked.
 
 ## Alternatives considered
 
@@ -126,15 +137,18 @@ here.
 above: 73 edges, 64 practices, mostly correct. Rejected on the same grounds
 luria rejected it, for a different reason than luria had.
 
-**`network: require`.** Makes not being able to ask a finding on every run,
-so a green CI run means every reference was verified rather than remembered.
-Stronger and tempting, and it converts any arXiv outage into a red build for
-contributions that touch nothing. `auto` plus the two failable classes buys
-most of it and fails only where a new citation is actually unverified.
+**`network: require`, or promoting `source-unchecked`.** Both make "nobody
+could check" a failure, so a green run would mean every reference was
+verified rather than remembered. Both were in the first draft of this
+decision and both are rejected for the same reason: the failure they add is
+an upstream outage, and a contributor who did nothing wrong cannot act on it.
+The escape hatch would be to ignore the dial, which costs the dial more than
+the case is worth. `source-unchecked` stays a warning, which is the right
+volume for it.
 
 **Promote more classes while the dial is being opened.** `retired-citations`
 and `legacy-spellings` have open findings; promoting them would fail the next
 contribution for a pre-existing backlog. `pending-documents` counts undecided
 ADRs, which is a fact about deliberation rather than a defect. The dial is
-opened on the two that are clean and load-bearing, and the rest stays advice
-until someone clears it deliberately.
+opened on the one class that is clean and load-bearing, and the rest stays
+advice until someone clears it deliberately.

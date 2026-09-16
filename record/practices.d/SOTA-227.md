@@ -10,9 +10,8 @@ consensus_note: >-
   speculative decoding in their notes, LIT-163 sells multi-token prediction
   partly on it, and LIT-185 is a paper about making the draft cheaper. Not
   `universal` because
-  it is a latency technique — at batch sizes where the arithmetic units are
-  already saturated it costs throughput, and declining it there needs no
-  justification.
+  it is chiefly a latency technique, and where it stops paying on throughput
+  is less settled than this document first said — see the conditions.
 title: 'Decode with a draft model and an accept-reject rule, which is exactly lossless'
 version: 1
 tags:
@@ -32,6 +31,8 @@ summary: >-
   built so the output distribution is the target's exactly. 2x-3x at 11B and
   2-2.5x at 70B, with no retraining, no architecture change and nothing traded
   away.
+extended_by:
+- SOTA-tmpe5h20
 ---
 
 # SOTA-227: Decode with a draft model and an accept-reject rule, which is exactly lossless
@@ -89,12 +90,21 @@ For a near-free draft the improvement approaches `1/(1 - alpha)`.
 
 ## Conditions
 
-**It is a latency technique, and the batch size decides whether it pays.**
-The whole argument rests on idle arithmetic. Serving one stream against a
-large model, that is the regime. At a batch size large enough to saturate the
-arithmetic units, speculative work competes with real work and the trade
-reverses. Neither paper measures where the crossover is, and this record does
-not hold a measurement of it.
+**It is chiefly a latency technique, and the batch size decides how much it
+pays.** The whole argument rests on idle arithmetic. Serving one stream
+against a large model, that is the regime, and as batch size grows the
+speculative work increasingly competes with real work rather than filling a
+gap. Neither source measures the crossover.
+
+**But "the trade reverses" was too strong, and this record held the
+counter-example while writing it.** [LIT-185](../literature.d/LIT-185.md) reports EAGLE-3 improving
+throughput by **40% at batch size 64** in SGLang, noting explicitly that
+speculative sampling "is often thought to reduce throughput at large batch
+sizes". That is one framework at one batch size with a very good draft, so it
+does not establish a new rule — but the first version of this practice said
+the record held no measurement of the crossover, and the measurement was in
+[LIT-185](../literature.d/LIT-185.md), unread, at the time. Treat the crossover as workload- and
+draft-specific, and measure it rather than assuming its sign.
 
 **Draft and target must share a tokenizer and vocabulary.** The rule compares
 per-token probabilities from both models at the same positions.

@@ -936,7 +936,26 @@ site:
 # not in the corpus — are reported on every run and promoted to failures in
 # phase 4, once the backlog they surface has been worked through.
 lint:
-  fail_on: []
+  # The enforcement dial (LU-ADR-035). Empty since the record was built, which
+  # meant every check was advice. These two are not advice: they are the only
+  # checks that verify a document is about the paper it names, and the import
+  # in #138 filed three readings against identifiers belonging to other papers
+  # while the lint printed a clean run.
+  #
+  # Both are at zero today, which is the precondition for promoting either —
+  # a dial turned on over existing findings fails the next contributor for
+  # somebody else's backlog.
+  #
+  # `source-mismatch` reads the committed lockfile, so it costs no network and
+  # fires the moment a recorded title stops matching what the identifier
+  # serves. `source-unchecked` is the other half and the one that would have
+  # caught #138: it fires when nothing has EVER verified an identifier, which
+  # is the state every newly filed paper starts in. The remedy is
+  # `luria remotes --resolve` and committing the lockfile, which is a step in
+  # filing rather than a hurdle at merge.
+  fail_on:
+  - source-mismatch
+  - source-unchecked
   # `inert-status` is a judgement this project has heard and does not want
   # repeated: the NOTE scheme is uniform by design (ADR-025) and `uniform_ok`
   # below already carries the reason. Muting is the global form of the same

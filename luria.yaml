@@ -861,11 +861,23 @@ schemes:
     # `required = true` is the whole point of the scheme: a reading is a reading
     # OF something. There is no converse on the LIT side, because Luria's
     # converse must be same-scheme and this crosses.
+    #
+    # `invariant = "tags"` is the only place this record asserts one across a
+    # scheme boundary (ADR-tmpvv2d8), and it is the only heterogeneous relation
+    # where the two ends are the SAME OBJECT: a note and its paper are one
+    # subject by construction, so a topic they do not share is a disagreement
+    # about that subject rather than two documents filed on different axes.
+    # The other five cross-scheme relations join a claim to a paper or to an
+    # explanation, which ADR-026's filing rule expects to differ, and they
+    # report 20-47% of their edges against this one's 3% (4 of 158). Luria
+    # takes the check off `chains` and onto the relation for exactly this
+    # case: a note and its paper sit in no sequence together (LU-#272).
     references:
       paper:
         scheme: LIT
         required: true
         many: false
+        invariant: tags
     fields:
       status:
         vocabulary: note-statuses

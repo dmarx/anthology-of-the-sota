@@ -24,6 +24,10 @@ implementations:
 - MT-NLG
 ---
 
+<!-- inactive-ok-file: THEORY-tmp0a1gz — Rejected, and cited as what this
+     practice does NOT rest on: the other thing called a noise scale, and
+     why the record does not hold it. -->
+
 # SOTA-198: Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run
 
 ## Source
@@ -66,6 +70,21 @@ the start of a run is too small later, and MT-NLG acts on this: batch size
 
 Neither paper cites the other. `LIT-065` describes the ramp as an operational
 choice; `LIT-017` is the reason it works.
+
+## The other thing called a noise scale
+
+[LIT-305](../literature.d/LIT-305.md) identifies an "SGD noise scale" `g = eps*N/B` two months before
+[LIT-017](../literature.d/LIT-017.md), and this record briefly held the two as the same statistic reached by
+two routes. They are not, and [LIT-017](../literature.d/LIT-017.md) says so: it cites [LIT-305](../literature.d/LIT-305.md) as predicting
+"a dependence on dataset size", and adds *"which we do not observe"*.
+
+[LIT-305](../literature.d/LIT-305.md)'s `g` is a property of the **configuration**
+— learning rate, training set size, batch size — and you *set* it. `B_simple`
+is a property of the **gradient distribution**, and you *measure* it. Holding
+`g` fixed while `B` doubles means doubling the learning rate, so that quantity
+is linear scaling with a derivation attached; this one tells you where the
+batch stops buying speed. [THEORY-tmp0a1gz](../theory.d/THEORY-tmp0a1gz.md) is why the record does not hold the
+first.
 
 ## Relation to the scaling-law exponent
 

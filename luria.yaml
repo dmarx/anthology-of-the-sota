@@ -136,229 +136,249 @@ vocabularies:
       tiny-models:
         label: Tiny models
         blurb: claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts
-  # What a status means for a practice. The five words are luria's and closed;
-  # the meanings are this anthology's.
-  #
-  # The old schema had three (`experimental`, `standard`, `deprecated`) and used
-  # one: all 119 recommendations were `standard`, because the two branches that
-  # could set the others read a field that no qualifying paper had. A status
-  # every record shares is indistinguishable from no status at all — which is
-  # what `luria lint` reports as `inert-status`, and why these five are written
-  # down rather than assumed.
+  # The old schema had three of these (`experimental`, `standard`,
+  # `deprecated`) and used one: all 119 recommendations were `standard`,
+  # because the two branches that could set the others read a field no
+  # qualifying paper had. A status every record shares is indistinguishable
+  # from no status at all, which is what `luria lint` reports as
+  # `inert-status`, and why these five are written down rather than assumed.
   sota-statuses:
-    Active:
-      label: Current practice
-      blurb: what you should do today, and the reason is one click away
+    label: Practice statuses
+    blurb: >-
+      What a status means for a PRACTICE: whether this record says to do the
+      thing today. It is not the standing of the paper underneath — that is
+      `lit-statuses`, and the two are allowed to disagree — and it is not what
+      the field does, which is `consensus` (ADR-002).
+    alert: >-
+      Closed, and the five words are luria's while the meanings are this
+      anthology's. Before reaching for a sixth, check that `consensus` is not
+      the field you actually want: "everybody does this" and "we recommend
+      this" are different claims, and giving them one field is what ADR-015
+      undid.
+    terms:
+      Active:
+        label: Current practice
+        blurb: what you should do today, and the reason is one click away
 
-    Proposed:
-      label: Promising
-      blurb: early results are good, validation at scale is missing — the old `experimental` flag
+      Proposed:
+        label: Promising
+        blurb: early results are good, validation at scale is missing — the old `experimental` flag
 
-    Deferred:
-      label: Not yet judged
-      blurb: probably right, not yet worth asserting; usually a question of adoption rather than correctness
+      Deferred:
+        label: Not yet judged
+        blurb: probably right, not yet worth asserting; usually a question of adoption rather than correctness
 
-    Superseded:
-      label: Replaced
-      blurb: something newer does this better, and the record says what
+      Superseded:
+        label: Replaced
+        blurb: something newer does this better, and the record says what
 
-    Rejected:
-      label: Retired
-      blurb: no longer believed, with no successor — the attic
-  # What a status means for a paper — which is a different question from what
-  # it means for a practice, and the reason the two are separate schemes.
-  #
-  # A paper's status is about its standing in the anthology, not about whether
-  # its findings are true. Adam is `Active` here because it is worth reading;
-  # whether any particular thing it recommends is still what you should do is
-  # the SOTA scheme's business, and the two can disagree.
+      Rejected:
+        label: Retired
+        blurb: no longer believed, with no successor — the attic
   lit-statuses:
-    Active:
-      label: In the anthology
-      blurb: worth reading, whether or not a practice was drawn from it
+    label: Paper statuses
+    blurb: >-
+      A paper's standing in the anthology: whether it is worth reading. NOT
+      whether its findings are true. Adam is `Active` here because it is worth
+      reading; whether any particular thing it recommends is still what you
+      should do is the SOTA scheme's business, and the two can disagree in
+      either direction (ADR-002).
+    alert: >-
+      Closed. If the word you want means "the advice in this paper has moved
+      on", that is a status on the practice, not on the paper — the schemes
+      are separate precisely so they can say different things about the same
+      work.
+    terms:
+      Active:
+        label: In the anthology
+        blurb: worth reading, whether or not a practice was drawn from it
 
-    Proposed:
-      label: Watching
-      blurb: promising and unproven; the note says what would settle it
+      Proposed:
+        label: Watching
+        blurb: promising and unproven; the note says what would settle it
 
-    Deferred:
-      label: Unreviewed
-      blurb: in the corpus, not yet read closely enough to place
+      Deferred:
+        label: Unreviewed
+        blurb: in the corpus, not yet read closely enough to place
 
-    Superseded:
-      label: Superseded
-      blurb: later work covers this better, and the note names it
+      Superseded:
+        label: Superseded
+        blurb: later work covers this better, and the note names it
 
-    Rejected:
-      label: Attic
-      blurb: retired with a reason — too narrow, too theoretical, or simply not interesting enough to carry
-  # What a status means for a reading — which is not what it means for a paper
-  # or for a practice, and is the field this record most needed and did not
-  # have (ADR-025).
+      Rejected:
+        label: Attic
+        blurb: retired with a reason — too narrow, too theoretical, or simply not interesting enough to carry
+  # Why this vocabulary exists: LIT-052 and LIT-025 each carried a plausible-
+  # looking set of takeaways that turned out not to be about their paper, and
+  # eight practices were built on them. Both would have been `Unread` here,
+  # and nobody would have sourced anything to them.
   #
-  # A NOTE's status is a claim about HOW DEEPLY THE PAPER WAS READ, not about
-  # whether the paper is any good. That is the LIT scheme's business, and the
-  # two are allowed to disagree in every direction: a foundational paper can
-  # have a `Skimmed` note, and a paper in the attic can have a `Read` one —
-  # reading it carefully is often how it got there.
-  #
-  # The reason this vocabulary exists at all: LIT-052 and LIT-025 each carried
-  # a plausible-looking set of takeaways that turned out not to be about their
-  # paper, and eight practices were built on them. Both would have been marked
-  # `Unread` under this vocabulary, and nobody would have sourced anything to
-  # them.
-  #
-  # On the distribution: luria's inert-status check reports that every NOTE is
-  # `Read`, and it is right to. It is also expected, and by decision rather than
-  # by accident (ADR-025).
-  #
-  # **The absence of a NOTE means the paper is unread.** A note is written when
-  # someone finishes a paper, so a LIT with no NOTE is exactly the state the
-  # record could not previously express — and it costs nothing to express it
-  # that way. The alternative was filing two hundred `Unread` stubs, which is a
-  # migration that buys a row in a table.
-  #
-  # `Unread` stays in the vocabulary for the case absence cannot cover: a
-  # deliberate human judgement that a paper was looked at and set aside. "Nobody
-  # has got to this yet" is silence; "I opened this and decided not to read it"
-  # is a fact worth recording, and it needs somewhere to live.
-  #
-  # So the check will keep firing while every filed note is a finished reading.
-  # That is the honest state of the field and not a defect to engineer around.
+  # luria's inert-status check reports that every NOTE is `Read`, and it is
+  # right to. It is also expected, by decision rather than by accident
+  # (ADR-025): the check keeps firing while every filed note is a finished
+  # reading, which is the honest state of the field and not a defect to
+  # engineer around.
   note-statuses:
-    Read:
-      label: Read
-      blurb: the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table
+    label: Reading statuses
+    blurb: >-
+      How deeply the paper was READ — not whether it is any good, which is
+      `lit-statuses`. The two disagree in every direction: a foundational
+      paper can carry a `Skimmed` note, and a paper in the attic can carry a
+      `Read` one, since reading it carefully is often how it got there
+      (ADR-025).
+    alert: >-
+      Closed, and the value you want may be no note at all. **The absence of a
+      NOTE means the paper is unread** — a note is written when somebody
+      finishes a paper, so a LIT with no NOTE already says "nobody has reached
+      this", and filing two hundred `Unread` stubs would buy a row in a table.
+      `Unread` is for the case absence cannot cover: a deliberate judgement
+      that a paper was looked at and set aside.
+    terms:
+      Read:
+        label: Read
+        blurb: the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table
 
-    Skimmed:
-      label: Skimmed
-      blurb: abstract, figures and selected sections; honest, useful, and explicitly not enough to source a practice from
+      Skimmed:
+        label: Skimmed
+        blurb: abstract, figures and selected sections; honest, useful, and explicitly not enough to source a practice from
 
-    Unread:
-      label: Unread
-      blurb: looked at and deliberately set aside — a human judgement, not a backlog entry. A paper nobody has reached simply has no note (ADR-025)
+      Unread:
+        label: Unread
+        blurb: looked at and deliberately set aside — a human judgement, not a backlog entry. A paper nobody has reached simply has no note (ADR-025)
 
-    Superseded:
-      label: Re-read
-      blurb: a later reading replaced this one, and names it
+      Superseded:
+        label: Re-read
+        blurb: a later reading replaced this one, and names it
 
-  # What a status means for an EXPLANATION — a third answer to a question the
-  # record has now asked three times, and a different answer again.
-  #
-  # A THEORY's status says whether this record believes the ACCOUNT. That is
-  # independent of whether the thing being explained works, and batch
-  # normalization is the case the scheme was built around: the practice is
-  # `Active`, the paper is `Active`, and the explanation the paper was
-  # published with is `Rejected` — because the experiment that would have
-  # confirmed it was eventually run, and came out the other way (LIT-223).
-  # Under one scheme there was nowhere to put that third fact.
   theory-statuses:
-    Active:
-      label: The current account
-      blurb: the best explanation the record holds for why this happens
+    label: Explanation statuses
+    blurb: >-
+      Whether the record believes the ACCOUNT, which is not what the same word
+      means on a practice. An explanation can be `Rejected` while the thing it
+      explained goes on working exactly as well as it ever did (ADR-031).
+    alert: >-
+      Closed. `Rejected` here means the reason is wrong, not the technique; if
+      what you want to retire is the technique, that is a status on the
+      practice.
+    terms:
+      Active:
+        label: The current account
+        blurb: the best explanation the record holds for why this happens
 
-    Proposed:
-      label: Offered
-      blurb: stated and plausible, on evidence that is suggestive rather than settling — the document says what would settle it
+      Proposed:
+        label: Offered
+        blurb: stated and plausible, on evidence that is suggestive rather than settling — the document says what would settle it
 
-    Deferred:
-      label: Not yet judged
-      blurb: filed because the question is real; no position taken on the answer
+      Deferred:
+        label: Not yet judged
+        blurb: filed because the question is real; no position taken on the answer
 
-    Rejected:
-      label: Disbelieved
-      blurb: tested and failed, or contradicted by later work — and the thing it explained may still work perfectly well
+      Rejected:
+        label: Disbelieved
+        blurb: tested and failed, or contradicted by later work — and the thing it explained may still work perfectly well
 
-    Superseded:
-      label: Replaced
-      blurb: a later account covers the same ground better, and this one names it
+      Superseded:
+        label: Replaced
+        blurb: a later account covers the same ground better, and this one names it
 
-  # Decision tags — display name, blurb, and the order they appear in the index.
   adr-tags:
-    record:
-      label: The record
-      blurb: what the schemes hold, and the rules between them
-    taxonomy:
-      label: Taxonomy
-      blurb: the topic vocabulary and what enforces it
-    mechanism:
-      label: Mechanism
-      blurb: identifiers, generation, the lint
-    migration:
-      label: Migration
-      blurb: moving off the YAML registry, and what happens to it
-  # The words this scheme's documents may use, and what each means.
-  #
-  # `status:` is a controlled vocabulary like any other, and this is
-  # the vocabulary: `[luria.schemes.X.fields.status]` in luria.toml is
-  # the wiring. Rename these, drop what you do not want, add your own.
-  # The one rule is that the scheme's `active` word has to appear here
-  # — it is how everything decides what is in force.
+    label: Decision tags
+    blurb: >-
+      What a decision is about, in the order the index shows them. Open,
+      unlike the topics: a decision that needs a word it does not have simply
+      gets one.
+    terms:
+      record:
+        label: The record
+        blurb: what the schemes hold, and the rules between them
+      taxonomy:
+        label: Taxonomy
+        blurb: the topic vocabulary and what enforces it
+      mechanism:
+        label: Mechanism
+        blurb: identifiers, generation, the lint
+      migration:
+        label: Migration
+        blurb: moving off the YAML registry, and what happens to it
   adr-statuses:
-    Active:
-      blurb: in force — the current answer, and what a citation should normally point at
-    Proposed:
-      blurb: not in force yet — an open question, so citing it as settled is what the reference report catches
-    Deferred:
-      blurb: not in force and not being worked on; the question is real and the answer waits on something
-    Superseded:
-      blurb: no longer in force because something replaced it; the successor is named in the field, not in the prose
-    Rejected:
-      blurb: no longer in force and nothing replaced it — kept because a rejection is worth being able to point at
-  # Principle tags. Shared vocabulary with the decisions where it overlaps.
+    label: Decision statuses
+    blurb: >-
+      Whether a decision is in force. Shared by ADR and DP, because as far as
+      being in force goes a principle and a decision are the same kind of
+      object.
+    alert: >-
+      Closed, and the scheme's `active` word has to appear in it — that is how
+      everything else decides what is in force. Rename these, drop what you do
+      not want, add your own; that one rule is the whole constraint.
+    terms:
+      Active:
+        blurb: in force — the current answer, and what a citation should normally point at
+      Proposed:
+        blurb: not in force yet — an open question, so citing it as settled is what the reference report catches
+      Deferred:
+        blurb: not in force and not being worked on; the question is real and the answer waits on something
+      Superseded:
+        blurb: no longer in force because something replaced it; the successor is named in the field, not in the prose
+      Rejected:
+        blurb: no longer in force and nothing replaced it — kept because a rejection is worth being able to point at
   dp-tags:
-    record:
-      label: The record
-      blurb: what it holds, and what it refuses to lose
-    evidence:
-      label: Evidence
-      blurb: citations, provenance, and what makes a claim checkable
-    craft:
-      label: Craft
-      blurb: how the machinery is built and kept honest
-  # How far the FIELD has converged on a practice — which is not the same
-  # question as whether this record endorses it.
-  #
-  # `status:` is our editorial position. It cannot say "shipped in production at
-  # one lab and disputed by two others", and mHC is exactly that: a design in a
-  # 1.6T-parameter model, attacked by two independent groups within a month, and
-  # `Proposed` here. Three facts, one field, until this file existed (ADR-015).
-  #
-  # The two axes are genuinely orthogonal, and the useful cases are the corners.
-  # `Deferred` + `converged` is a practice everybody follows that we have not
-  # satisfied ourselves is deliberate. `Active` + `contested` is this record
-  # being ahead of the field and saying so — which is a thing an anthology
-  # should be able to do, not a contradiction.
-  #
-  # `unassessed` is the default and most of the corpus carries it. That is
-  # honest rather than lazy: a consensus reading is a judgement about a
-  # community, it needs grounds, and a value invented to fill a column is worse
-  # than an admission. What the record knows, it says; what it has not looked
-  # at, it counts.
+    label: Principle tags
+    blurb: >-
+      What a principle is about. Shares its words with the decision tags where
+      they overlap, deliberately — the same subject should not have two names
+      depending on which scheme is talking about it.
+    terms:
+      record:
+        label: The record
+        blurb: what it holds, and what it refuses to lose
+      evidence:
+        label: Evidence
+        blurb: citations, provenance, and what makes a claim checkable
+      craft:
+        label: Craft
+        blurb: how the machinery is built and kept honest
+  # `status:` alone cannot say "shipped in production at one lab and disputed
+  # by two others", and mHC is exactly that: a design in a 1.6T-parameter
+  # model, attacked by two independent groups within a month, and `Proposed`
+  # here. Three facts, one field, until this one existed.
   consensus:
-    unassessed:
-      label: Not judged
-      blurb: nobody has assessed where the field stands on this; the default, and true of most of the corpus
+    label: Field consensus
+    blurb: >-
+      How far THE FIELD has converged on a practice, which is orthogonal to
+      `status` — this record's own editorial position. The useful cases are
+      the corners: `Deferred` + `converged` is a practice everybody follows
+      that we have not satisfied ourselves is deliberate, and `Active` +
+      `contested` is this record being ahead of the field and saying so, which
+      an anthology should be able to do (ADR-015).
+    alert: >-
+      Closed, and `unassessed` is a real answer rather than a gap. A consensus
+      reading is a judgement about a community, it needs grounds, and a value
+      invented to fill the column is worse than an admission. What the record
+      knows it says; what it has not looked at, it counts.
+    terms:
+      unassessed:
+        label: Not judged
+        blurb: nobody has assessed where the field stands on this; the default, and true of most of the corpus
 
-    unreplicated:
-      label: One source
-      blurb: one group, one result — nobody has agreed or disagreed yet, which is not the same as contested, where people looked and differed
+      unreplicated:
+        label: One source
+        blurb: one group, one result — nobody has agreed or disagreed yet, which is not the same as contested, where people looked and differed
 
-    contested:
-      label: In dispute
-      blurb: credible groups publicly disagree, now — the fork in a line of work, whose trunk is agreed and whose branches are not
+      contested:
+        label: In dispute
+        blurb: credible groups publicly disagree, now — the fork in a line of work, whose trunk is agreed and whose branches are not
 
-    emerging:
-      label: Spreading
-      blurb: several independent groups, moving toward default without being there
+      emerging:
+        label: Spreading
+        blurb: several independent groups, moving toward default without being there
 
-    converged:
-      label: Agreed
-      blurb: the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately
+      converged:
+        label: Agreed
+        blurb: the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately
 
-    universal:
-      label: Assumed
-      blurb: not doing it is what needs justifying
+      universal:
+        label: Assumed
+        blurb: not doing it is what needs justifying
 issue_url: https://github.com/dmarx/anthology-of-the-sota/issues/{n}
 paths:
   docs: docs

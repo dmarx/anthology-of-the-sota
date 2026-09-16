@@ -61,7 +61,7 @@ jobs:
           # site alone floated to whatever release was newest while every other
           # job was pinned. Pinned here so the published site is built by the
           # version the rest of CI verified.
-          pip-spec: luria==0.25.0
+          pip-spec: luria==0.26.0
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ steps.site.outputs.path }}

@@ -6,8 +6,6 @@ formerly:
 paper: LIT-297
 title: 'Reconciling modern machine learning practice and the bias-variance trade-off'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   Classical statistics predicts a U-shaped bias-variance tradeoff: more

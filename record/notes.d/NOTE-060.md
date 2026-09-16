@@ -6,8 +6,6 @@ formerly:
 - NOTE-tmpqqz7s
 title: 'Improving Language Models by Retrieving from Trillions of Tokens'
 version: 1
-tags:
-- model-architecture
 date: '2026-09-09'
 summary: >-
   Matches GPT-3 on the Pile with 25× fewer parameters by cross-attending to chunks retrieved from a 2-trillion-token database, using a frozen BERT retriever that never needs training. The gain is constant from 150M to 7B, and the model improves at *evaluation* time by enlarging the database — capability added after training ends.

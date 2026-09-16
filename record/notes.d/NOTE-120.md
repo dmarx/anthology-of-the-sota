@@ -6,8 +6,6 @@ formerly:
 paper: LIT-366
 title: 'Asynchronous Local Computations in Distributed Bayesian Learning'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Replacing synchronous all-agent communication with pairwise gossip and

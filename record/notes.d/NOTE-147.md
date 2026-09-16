@@ -6,8 +6,6 @@ formerly:
 paper: LIT-293
 title: 'Emergent Behavior in Flocks'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   The CS model places the "consensus" dynamics on VELOCITIES rather than

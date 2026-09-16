@@ -6,8 +6,6 @@ formerly:
 paper: LIT-324
 title: 'Broken Neural Scaling Laws'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   A single power law ε(t) = C_∞ + b·t^{-c} fails when the curve has two

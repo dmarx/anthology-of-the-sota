@@ -6,12 +6,6 @@ formerly:
 paper: LIT-048
 title: 'Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation'
 version: 1
-tags:
-# Follows LIT-048's retag: a reading is filed under its paper's topic.
-- representation-and-encoding
-# inactive-ok: ADR-035 — Proposed, and what permits this tag
-# Secondary, restored: follows LIT-048 (ADR-035).
-- model-architecture
 date: '2026-09-09'
 summary: >-
   Replaces position embeddings with a fixed linear penalty on attention scores proportional to query–key distance, one slope per head from a geometric sequence. Trains on short sequences and evaluates on longer ones. The paper's own Appendix B says the gain is "largely explained by" avoiding the early token curse rather than by better use of long history.

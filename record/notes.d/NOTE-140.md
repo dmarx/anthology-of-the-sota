@@ -6,8 +6,6 @@ formerly:
 paper: LIT-267
 title: 'Mean Field Analysis of Neural Networks: A Law of Large Numbers'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   With 1/N scaling of the output layer and a time rescaling t = k/N (so that

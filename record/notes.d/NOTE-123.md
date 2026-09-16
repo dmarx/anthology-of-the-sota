@@ -6,8 +6,6 @@ formerly:
 paper: LIT-245
 title: 'Bayesian Learning via Stochastic Gradient Langevin Dynamics'
 version: 1
-tags:
-- training-optimization
 date: '2026-09-15'
 summary: >-
   SGD with a specific noise injection schedule performs approximate Langevin

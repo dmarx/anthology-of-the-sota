@@ -6,8 +6,6 @@ formerly:
 paper: LIT-017
 title: 'An Empirical Model of Large-Batch Training'
 version: 1
-tags:
-- training-optimization
 date: '2026-09-09'
 summary: >-
   Defines the gradient noise scale — the ratio of the gradient's variance to its squared norm — and shows it predicts, to an order of magnitude, the batch size past which data parallelism stops buying speed. Also the source of "critical batch size" as a measurable quantity, and of the hyperbola relating steps taken to examples processed.

@@ -6,8 +6,6 @@ formerly:
 - NOTE-tmpi1vmg
 title: 'MiDaS v3.1 - A Model Zoo for Robust Monocular Relative Depth Estimation'
 version: 1
-tags:
-- vision-and-graphics
 date: '2026-09-09'
 summary: >-
   Swaps the image encoder in a fixed depth-estimation architecture across BEiT, Swin, SwinV2, Next-ViT, LeViT and recent convolutional backbones, and reports the resulting performance-runtime frontier. The best backbone improves depth quality by 28%; the paper's other deliverable is the procedure for integrating a new one.

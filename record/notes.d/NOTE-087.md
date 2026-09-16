@@ -6,8 +6,6 @@ formerly:
 paper: LIT-242
 title: 'Evolution Strategies as a Scalable Alternative to Reinforcement Learning'
 version: 1
-tags:
-- training-optimization
 date: '2026-09-15'
 summary: >-
   Shared random seeds let every worker reconstruct every other worker's

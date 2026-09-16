@@ -6,8 +6,6 @@ formerly:
 paper: LIT-340
 title: 'Dynamics of stochastic gradient descent for two-layer neural networks in the teacher-student setup'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   In the teacher-student two-layer ReLU setup, the high-dimensional weight

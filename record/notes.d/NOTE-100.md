@@ -6,8 +6,6 @@ formerly:
 paper: LIT-302
 title: 'Can Decentralized Algorithms Outperform Centralized Algorithms? A Case Study for Decentralized Parallel Stochastic Gradient Descent'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   The parameter server is a communication bottleneck because every node talks

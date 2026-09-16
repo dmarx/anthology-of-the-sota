@@ -6,8 +6,6 @@ formerly:
 paper: LIT-303
 title: 'SWARM Parallelism: Training Large Models Can Be Surprisingly Communication-Efficient'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   In pipeline parallelism, computation scales as O(n^3) while communication

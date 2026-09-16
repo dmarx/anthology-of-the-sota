@@ -6,8 +6,6 @@ formerly:
 paper: LIT-112
 title: 'PagedAttention and vLLM'
 version: 1
-tags:
-- inference-optimization
 date: '2026-09-09'
 summary: >-
   KV cache memory is huge, grows and shrinks dynamically, and was managed as one contiguous block — so fragmentation and duplication capped the batch size. PagedAttention borrows OS paging: near-zero waste, sharing within and across requests, 2–4× throughput at equal latency.

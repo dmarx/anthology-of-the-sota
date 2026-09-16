@@ -6,8 +6,6 @@ formerly:
 paper: LIT-091
 title: 'T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models'
 version: 1
-tags:
-- adaptation-and-tuning
 date: '2026-09-09'
 summary: >-
   Argues the control is already in the frozen model and only needs aligning to an external signal, so the adapter can be small — it learns an alignment, not a generation ability. Adapters compose, and transfer unchanged to any model fine-tuned from the same base. The composition weights are manual, which the authors state as the limitation.

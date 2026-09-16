@@ -6,8 +6,6 @@ formerly:
 paper: LIT-363
 title: '''Neural-gas'' network for vector quantization and its application to time-series prediction'
 version: 1
-tags:
-- representation-and-encoding
 date: '2026-09-15'
 summary: >-
   The key departure from SOM: instead of a fixed spatial grid defining

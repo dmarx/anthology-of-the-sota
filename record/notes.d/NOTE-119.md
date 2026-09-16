@@ -6,8 +6,6 @@ formerly:
 paper: LIT-257
 title: 'Byzantine-Robust Distributed Learning: Towards Optimal Statistical Rates'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   The fundamental statistical cost of Byzantine robustness is captured exactly

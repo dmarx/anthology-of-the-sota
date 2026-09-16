@@ -6,8 +6,6 @@ formerly:
 paper: LIT-312
 title: 'Exact Solution for On-Line Learning in Multilayer Neural Networks'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   The closed-form solution is: R(t) = R_∞ - (R_∞ - R_0) exp(-t / τ_sp) with

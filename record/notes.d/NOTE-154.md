@@ -6,8 +6,6 @@ formerly:
 paper: LIT-273
 title: 'Distributed Optimization with Gradient Tracking over Heterogeneous Delay-Prone Directed Networks'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Embedding the robustified Ratio Consensus protocol into ADD-OPT and

@@ -6,8 +6,6 @@ formerly:
 paper: LIT-360
 title: 'Neural Tangent Kernel: Convergence and Generalization in Neural Networks'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   At infinite width, gradient descent on neural networks behaves identically

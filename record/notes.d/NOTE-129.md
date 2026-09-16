@@ -6,8 +6,6 @@ formerly:
 paper: LIT-341
 title: 'A Growing Neural Gas Network Learns Topologies'
 version: 1
-tags:
-- representation-and-encoding
 date: '2026-09-15'
 summary: >-
   Topology learning can be done incrementally and locally: connect the two

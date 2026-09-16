@@ -6,8 +6,6 @@ formerly:
 paper: LIT-237
 title: 'Evolutionary Strategies lead to Catastrophic Forgetting in LLMs'
 version: 1
-tags:
-- adaptation-and-tuning
 date: '2026-09-15'
 summary: >-
   The first independent replication attempt of ES-beats-GRPO, which fails —

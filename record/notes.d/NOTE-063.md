@@ -6,8 +6,6 @@ formerly:
 paper: LIT-097
 title: 'One Transformer Fits All Distributions in Multi-Modal Diffusion at Scale'
 version: 1
-tags:
-- generative-modeling
 date: '2026-09-09'
 summary: >-
   Observes that marginal, conditional and joint distributions are all "predict the noise in perturbed data" if you allow each modality its own timestep. One network trained with per-modality timesteps then serves text-to-image, image-to-text, joint generation and unconditional generation — and classifier-free guidance falls out for free.

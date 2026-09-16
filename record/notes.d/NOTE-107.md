@@ -6,8 +6,6 @@ formerly:
 paper: LIT-314
 title: 'Proving the Limited Scalability of Centralized Distributed Optimization via a New Lower Bound Construction'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   When server-to-worker communication is non-negligible (tau_s > 0), there is

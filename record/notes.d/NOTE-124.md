@@ -6,8 +6,6 @@ formerly:
 paper: LIT-336
 title: 'Async-HFL: Efficient and Robust Asynchronous Federated Learning in Hierarchical IoT Networks'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Adding an intermediate asynchronous gateway aggregation layer in a three-

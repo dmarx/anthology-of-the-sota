@@ -6,8 +6,6 @@ formerly:
 paper: LIT-118
 title: 'PhotoMaker: Customizing Realistic Human Photos via Stacked ID Embedding'
 version: 1
-tags:
-- adaptation-and-tuning
 date: '2026-09-09'
 summary: >-
   Fuses an arbitrary number of reference images into one "stacked ID embedding" attached to a class word, so personalization needs no per-subject tuning at inference. Because the stack is just a set, feeding it images of *different* people at inference merges identities — a capability that falls out of the representation rather than being designed.

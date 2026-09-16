@@ -6,8 +6,6 @@ formerly:
 paper: LIT-248
 title: 'Topics in propagation of chaos'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   When N particles interact only through their empirical distribution (mean-

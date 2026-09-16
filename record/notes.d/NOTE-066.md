@@ -7,8 +7,6 @@ formerly:
 - NOTE-tmpspi68
 title: 'Contrastive Learning with Hard Negative Samples'
 version: 1
-tags:
-- training-optimization
 date: '2026-09-09'
 summary: >-
   Samples hard negatives without labels by reweighting the contrastive objective rather than changing the sampling procedure — two extra lines of code, no computational overhead — with a tunable hardness knob. The knob exists because harder negatives are more likely to be false negatives, so hardness trades learning signal against contamination.

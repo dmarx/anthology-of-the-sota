@@ -6,8 +6,6 @@ formerly:
 paper: LIT-254
 title: 'Stochastic Gradient Push for Distributed Deep Learning'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Using the PushSum protocol's ratio-based de-biasing trick removes the

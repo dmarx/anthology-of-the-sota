@@ -6,8 +6,6 @@ formerly:
 paper: LIT-117
 title: 'Efficient Online Data Mixing'
 version: 1
-tags:
-- data-pipeline
 date: '2026-09-09'
 summary: >-
   An Exp3 bandit over data domains, rewarded by per-domain training loss on the batches the run is already taking, revising the mixture during training. 19% fewer iterations to the next best method's final perplexity, at negligible wall-clock cost.

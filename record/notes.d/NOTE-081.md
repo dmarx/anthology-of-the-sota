@@ -6,8 +6,6 @@ formerly:
 paper: LIT-238
 title: 'Overcoming Forgetting in LLM Fine-Tuning with Evolution Strategies'
 version: 1
-tags:
-- adaptation-and-tuning
 date: '2026-09-15'
 summary: >-
   Prior-task degradation under ES is transient drift rather than irreversible

@@ -6,8 +6,6 @@ formerly:
 paper: LIT-212
 title: 'DiLoCo: Distributed Low-Communication Training of Language Models'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Replacing the plain-averaging outer step of FedAvg with Nesterov momentum,

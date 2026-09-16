@@ -6,8 +6,6 @@ formerly:
 paper: LIT-232
 title: 'EGGROLL, Unrolled'
 version: 1
-tags:
-- training-optimization
 date: '2026-09-15'
 summary: >-
   Works out what EGGROLL's low-rank update converges to — a resolvent-filtered

@@ -6,8 +6,6 @@ formerly:
 paper: LIT-374
 title: 'LAYUP: Asynchronous decentralized gradient descent with LAYer-wise UPdates'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Because the backward pass takes roughly twice as long as the forward pass,

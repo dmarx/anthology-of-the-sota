@@ -6,8 +6,6 @@ formerly:
 paper: LIT-251
 title: 'The Role of Permutation Invariance in Linear Mode Connectivity of Neural Networks'
 version: 1
-tags:
-- model-stability
 date: '2026-09-15'
 summary: >-
   For overparameterized networks, the loss landscape has essentially one basin

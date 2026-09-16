@@ -6,8 +6,6 @@ formerly:
 paper: LIT-315
 title: 'Epidemic Learning: Boosting Decentralized Learning with Randomized Communication'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Fully randomizing the communication topology at every round, rather than

@@ -6,8 +6,6 @@ formerly:
 paper: LIT-328
 title: 'Spectrum Dependent Learning Curves in Kernel Regression and Wide Neural Networks'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   For kernel/NTK regression with eigenvalue decay λ_k ∝ k^{-β}: ε(n) ∝ n^{-α},

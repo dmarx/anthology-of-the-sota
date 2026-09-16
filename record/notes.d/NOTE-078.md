@@ -6,8 +6,6 @@ formerly:
 paper: LIT-233
 title: 'Neural Thickets'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   The neighbourhood of a pretrained weight vector is dense with task-improving

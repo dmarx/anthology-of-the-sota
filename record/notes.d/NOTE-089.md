@@ -6,8 +6,6 @@ formerly:
 paper: LIT-372
 title: 'Moshpit SGD: Communication-Efficient Decentralized Training on Heterogeneous Unreliable Devices'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   By arranging workers into a virtual d-dimensional grid and using chunk

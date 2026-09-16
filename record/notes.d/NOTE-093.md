@@ -6,8 +6,6 @@ formerly:
 paper: LIT-365
 title: 'Trainability and Accuracy of Neural Networks: An Interacting Particle System Approach'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   When the width n is large, the n hidden units behave as exchangeable

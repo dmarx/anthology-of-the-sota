@@ -6,8 +6,6 @@ formerly:
 paper: LIT-333
 title: 'Git Re-Basin: Merging Models modulo Permutation Symmetries'
 version: 1
-tags:
-- model-stability
 date: '2026-09-15'
 summary: >-
   The LMC conjecture (Entezari et al.) says permutation-aligned networks can

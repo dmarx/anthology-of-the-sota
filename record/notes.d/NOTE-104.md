@@ -6,8 +6,6 @@ formerly:
 paper: LIT-275
 title: 'The mean field analysis for the Kuramoto model on graphs I. The mean field equation and transition point formulas'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   Network topology enters the synchronization threshold only through the

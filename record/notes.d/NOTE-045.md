@@ -6,8 +6,6 @@ formerly:
 - NOTE-tmphj2no
 title: '3D Gaussian Splatting for Real-Time Radiance Field Rendering'
 version: 1
-tags:
-- vision-and-graphics
 date: '2026-09-09'
 summary: >-
   Represents a scene as anisotropic 3D Gaussians initialised from structure-from-motion points, optimised with interleaved density control, and rendered by projecting to 2D and α-blending. Differentiable like a volumetric field, rasterizable like geometry — the first real-time (≥30 fps) radiance-field rendering at 1080p. Static scenes.

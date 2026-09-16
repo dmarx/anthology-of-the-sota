@@ -6,8 +6,6 @@ formerly:
 paper: LIT-362
 title: 'Don''t Use Large Mini-Batches, Use Local SGD'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Large-batch SGD converges to sharp minima that generalize poorly; switching

@@ -6,8 +6,6 @@ formerly:
 paper: LIT-278
 title: '1-bit Adam: Communication Efficient Large-Scale Training with Adam''s Convergence Speed'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Error-compensated compression is incompatible with Adam because Adam's non-

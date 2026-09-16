@@ -6,8 +6,6 @@ formerly:
 paper: LIT-058
 title: 'Measuring the Effects of Data Parallelism on Neural Network Training'
 version: 1
-tags:
-- training-optimization
 date: '2026-09-15'
 summary: >-
   The relationship between batch size and training steps to a goal error

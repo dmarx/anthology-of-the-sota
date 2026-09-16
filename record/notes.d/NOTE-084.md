@@ -6,8 +6,6 @@ formerly:
 paper: LIT-236
 title: 'The Blessing of Dimensionality in LLM Fine-tuning'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   One geometric property — a fine-tuning landscape whose curvature lives in a

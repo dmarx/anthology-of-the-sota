@@ -6,8 +6,6 @@ formerly:
 paper: LIT-240
 title: 'ESSAM'
 version: 1
-tags:
-- adaptation-and-tuning
 date: '2026-09-15'
 summary: >-
   Transposes sharpness-aware minimization into zeroth order — step against the

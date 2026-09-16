@@ -6,8 +6,6 @@ formerly:
 paper: LIT-346
 title: 'On-line learning in soft committee machines'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   The full weight dynamics compress onto two scalar order parameters per

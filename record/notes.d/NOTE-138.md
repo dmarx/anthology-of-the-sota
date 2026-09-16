@@ -6,8 +6,6 @@ formerly:
 paper: LIT-282
 title: 'Convex Analysis of the Mean Field Langevin Dynamics'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   The proximal Gibbs distribution p_q(θ) ∝ exp(-(1/λ) δF/δq (q)(θ)) plays the

@@ -6,8 +6,6 @@ formerly:
 paper: LIT-367
 title: 'ZeRO-Infinity: Breaking the GPU Memory Wall for Extreme Scale Deep Learning'
 version: 1
-tags:
-- systems-optimization
 date: '2026-09-15'
 summary: >-
   By partitioning model states across all parallel devices and using a

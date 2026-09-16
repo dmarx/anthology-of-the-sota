@@ -6,8 +6,6 @@ formerly:
 paper: LIT-265
 title: 'Large Batch Optimization for Deep Learning: Training BERT in 76 minutes'
 version: 1
-tags:
-- training-optimization
 date: '2026-09-15'
 summary: >-
   Scaling the learning rate layerwise by the ratio of the parameter norm to

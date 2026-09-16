@@ -6,8 +6,6 @@ formerly:
 paper: LIT-021
 title: 'Mish: A Self Regularized Non-Monotonic Activation Function'
 version: 1
-tags:
-- model-architecture
 date: '2026-09-09'
 summary: >-
   Proposes f(x) = x·tanh(softplus(x)), a smooth non-monotonic activation in the Swish family. Reported +2.1 AP50 over Leaky ReLU on YOLOv4/MS-COCO and ~1% top-1 over ReLU on ResNet-50/ImageNet. Read from the abstract only — ar5iv has no rendering for this identifier.

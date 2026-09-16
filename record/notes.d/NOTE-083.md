@@ -6,8 +6,6 @@ formerly:
 paper: LIT-235
 title: 'Matching Accuracy, Different Geometry'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   ES and GRPO reach the same accuracy by travelling in nearly orthogonal

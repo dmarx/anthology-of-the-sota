@@ -9,6 +9,9 @@ tags:
 # its blurb. SOTA-070, from the same paper and compared against it, is
 # already filed there.
 - model-stability
+# inactive-ok: ADR-tmpoxkk7 — Proposed, and what permits this tag
+# Secondary, restored: `training-optimization` names training dynamics, which is what is being watched (ADR-tmpoxkk7).
+- training-optimization
 date: '2026-08-24'
 source:
 - LIT-054

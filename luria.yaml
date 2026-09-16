@@ -486,7 +486,20 @@ schemes:
           # one-primary rule both come from ADR-003, which promoted them out of the
           # Jinja template they had been sitting in, unapplied, since 2024.
           primary_topic:
-            require: exactly-one
+            # `any`, not `exactly-one` (ADR-tmpoxkk7). A document is often about
+            # two of the thirteen -- a positional-encoding scheme is also an
+            # attention technique, a context-extension paper is both -- and under
+            # `exactly-one` recording the second meant deleting the first. The
+            # primary topic is still exactly one thing: `primary_topic` derives
+            # `{tags[0]}`, so the FIRST topic listed is the primary and every
+            # chain invariant still compares one value against one value.
+            #
+            # The cost is that `tags[0]` becomes load-bearing where it was only
+            # conventional. It already was -- a free-form tag listed first would
+            # always have made `primary_topic` wrong -- and holds in all 596
+            # documents today, but a reordering is now a silent retag. LU-#229
+            # asks luria for the guard.
+            require: any
             # Thirteen, and the same thirteen the LIT scheme has. ADR-027 added
             # `analysis-and-evaluation`; ADR-026 then added `generative-modeling` and
             # `vision-and-graphics`, superseding ADR-020, whose rejection of exactly that
@@ -609,7 +622,20 @@ schemes:
         closed: false
         groups:
           primary_topic:
-            require: exactly-one
+            # `any`, not `exactly-one` (ADR-tmpoxkk7). A document is often about
+            # two of the thirteen -- a positional-encoding scheme is also an
+            # attention technique, a context-extension paper is both -- and under
+            # `exactly-one` recording the second meant deleting the first. The
+            # primary topic is still exactly one thing: `primary_topic` derives
+            # `{tags[0]}`, so the FIRST topic listed is the primary and every
+            # chain invariant still compares one value against one value.
+            #
+            # The cost is that `tags[0]` becomes load-bearing where it was only
+            # conventional. It already was -- a free-form tag listed first would
+            # always have made `primary_topic` wrong -- and holds in all 596
+            # documents today, but a reordering is now a silent retag. LU-#229
+            # asks luria for the guard.
+            require: any
             tags:
             - training-optimization
             - systems-optimization
@@ -742,7 +768,20 @@ schemes:
           # ABOUT. Kept as a separate declaration because they are separate schemes and a
           # future decision may separate them again.
           primary_topic:
-            require: exactly-one
+            # `any`, not `exactly-one` (ADR-tmpoxkk7). A document is often about
+            # two of the thirteen -- a positional-encoding scheme is also an
+            # attention technique, a context-extension paper is both -- and under
+            # `exactly-one` recording the second meant deleting the first. The
+            # primary topic is still exactly one thing: `primary_topic` derives
+            # `{tags[0]}`, so the FIRST topic listed is the primary and every
+            # chain invariant still compares one value against one value.
+            #
+            # The cost is that `tags[0]` becomes load-bearing where it was only
+            # conventional. It already was -- a free-form tag listed first would
+            # always have made `primary_topic` wrong -- and holds in all 596
+            # documents today, but a reordering is now a silent retag. LU-#229
+            # asks luria for the guard.
+            require: any
             tags:
             - training-optimization
             - systems-optimization
@@ -815,7 +854,20 @@ schemes:
         closed: false
         groups:
           primary_topic:
-            require: exactly-one
+            # `any`, not `exactly-one` (ADR-tmpoxkk7). A document is often about
+            # two of the thirteen -- a positional-encoding scheme is also an
+            # attention technique, a context-extension paper is both -- and under
+            # `exactly-one` recording the second meant deleting the first. The
+            # primary topic is still exactly one thing: `primary_topic` derives
+            # `{tags[0]}`, so the FIRST topic listed is the primary and every
+            # chain invariant still compares one value against one value.
+            #
+            # The cost is that `tags[0]` becomes load-bearing where it was only
+            # conventional. It already was -- a free-form tag listed first would
+            # always have made `primary_topic` wrong -- and holds in all 596
+            # documents today, but a reordering is now a silent retag. LU-#229
+            # asks luria for the guard.
+            require: any
             tags:
             - training-optimization
             - systems-optimization

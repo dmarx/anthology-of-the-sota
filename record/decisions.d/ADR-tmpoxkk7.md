@@ -7,14 +7,16 @@ tags:
 - record
 date: '2026-09-16'
 summary: >-
-  The topic group moves from `exactly-one` to `any` on all four schemes. A
-  document is often about two of the thirteen — a positional-encoding scheme
-  is also an attention technique — and under `exactly-one` recording the
-  second meant deleting the first, which is what the retagging pass in [#140](https://github.com/dmarx/anthology-of-the-sota/issues/140)
-  did to eleven documents. `primary_topic` still derives `{tags[0]}`, so the
-  primary is still exactly one value and every chain invariant compares one
-  against one: the unbound-lineage report is byte-identical before and after.
-  The cost is that tag ORDER becomes load-bearing where it was conventional.
+  The topic group moves from `exactly-one` to `any` on all four schemes, and
+  the chain invariant moves from `primary_topic` to `tags`. A document is
+  often about two of the thirteen — a positional-encoding scheme is also an
+  attention technique — and under `exactly-one` recording the second meant
+  deleting the first, which is what the retagging pass in [#140](https://github.com/dmarx/anthology-of-the-sota/issues/140) did to eleven
+  documents. With several topics allowed, the invariant should ask what a
+  relation actually asserts: that its members share a subject, not that they
+  share their FIRST subject. Measured, the switch binds three edges — two
+  rightly, one on a `flash-attention` label added in [#101](https://github.com/dmarx/anthology-of-the-sota/issues/101) to bind it, which
+  is removed. 24 unbound relations become 22.
 ---
 
 # ADR-tmpoxkk7: A document may carry more than one topic; the first is the primary
@@ -50,29 +52,80 @@ in, here it forced a true topic out.
 
 ## Decision
 
-**`require: exactly-one` becomes `require: any` on the topic group, in all
+**1. `require: exactly-one` becomes `require: any` on the topic group, in all
 four schemes that declare it** — `LIT`, `SOTA`, `NOTE`, `THEORY`.
 
-**The primary topic is unchanged in meaning: it is the first topic listed.**
-`primary_topic` already derives `{tags[0]}`, so nothing downstream moves. The
-indexes still file a document under one topic, and the chain invariants still
-compare one scalar against one scalar — `invariants.held()` reads
-`primary_topic`, not `tags`. Verified: with the group relaxed and a second
-topic added, `docs/reports/unbound-lineage.md` is byte-identical at **24
-unbound relations and 10 unbound lines**.
+**2. The primary topic is unchanged in meaning: it is the first topic
+listed.** `primary_topic` already derives `{tags[0]}`, so the indexes still
+file a document under one topic and nothing downstream moves. Relaxing the
+group on its own changes no finding: with a second topic added and the
+invariant left where it was, `docs/reports/unbound-lineage.md` was
+byte-identical at 24 unbound relations and 10 unbound lines.
 
-That last point is the one that makes this safe. The alternative anybody would
-reach for — put the invariant on `tags` and let a shared secondary bind a
-relation — is the thing `luria.yaml` rejects by name: *"any shared tag is too
-weak to carry it — two practices bound by an incidental label read as bound
-when nothing about their subject matter is."* This decision does not touch
-that. It widens what a document may *say*, not what a relation may *assert*.
+
+**3. The chain invariant moves from `primary_topic` to `tags`.** Asked in
+review: *"the primary topic doesn't need to be invariant, just the presence of
+a common tag across the edge."* That is what a relation asserts — its members
+have something in common, not that the something is the first thing each is
+about.
+
+It read `primary_topic` on the argument that *"any shared tag is too weak to
+carry it — two practices bound by an incidental label read as bound when
+nothing about their subject matter is"*. That was right **while `exactly-one`
+was in force**, because a secondary was then necessarily a free-form label
+rather than one of the thirteen. Under `any` a secondary can be a real topic,
+and the objection survives only for the free-form ones.
+
+Measured on the switch: **24 unbound relations become 21**, and the three that
+bind are the argument in miniature.
+
+| edge | binds on | right? |
+|---|---|---|
+| `LIT-211` ↔ `LIT-229` | `training-optimization` | yes — both are about ES as an optimizer |
+| `LIT-211` ↔ `LIT-242` | `training-optimization` | yes — same |
+| `SOTA-085` ↔ `SOTA-161` | `flash-attention` | **no** — an incidental label, and the case the old argument was about |
+
+**4. So the two `flash-attention` tags go.** [#101](https://github.com/dmarx/anthology-of-the-sota/issues/101) added them to both ends of
+that pair to bind it under an invariant that then read `tags`, and
+`luria.yaml` already records the verdict — *"it satisfied the check rather than
+answering it. The edge is real and crosses a fault line in the vocabulary,
+which is what these findings are for."* With the invariant back on `tags` they
+would do it again. Removed, the edge is open again and the count settles at
+**22 relations, 10 lines**.
+
+**5. The vocabulary gains `tiny-models`, and `tags` is closed on `SOTA`, `LIT`
+and `THEORY`.** Ten documents carried `tiny-models` as an undeclared string;
+it now has a label and a blurb. Closing follows from the invariant move: if
+any tag can bind a relation, a word typed once can quietly assert that two
+documents share a subject, and a closed vocabulary makes that a decision
+rather than a typo. Verified — an undeclared tag is now a violation naming the
+file.
+
+`NOTE`'s `tags:` declares no vocabulary at all, so closing does not reach it
+and a free-form tag there is still accepted. That is a gap, not a decision.
+
+**The guard is a turnstile, not a wall, and the lint does not say so.** Raised
+in review: closing a vocabulary mainly discourages people from *adding to* it.
+The message a contributor hits is *"is not in the `topics` vocabulary — the
+values are …"*, which sets up "pick the nearest of these fourteen" as the path
+of least resistance. That is the failure this whole pass has been repairing:
+eight positional-encoding papers filed under the nearest available word
+because `representation-and-encoding` did not exist yet.
+
+Mitigated here in prose — `CLAUDE.md` now says the closure is an invitation
+and that adding a word, with a label and a blurb and a decision, is the
+intended move. Prose helps the contributor who is reading `CLAUDE.md`, not the
+one looking at a lint message. `LU-#273` asks luria to let a rule carry its own
+note so the remedy can be printed where the failure is. **If that is refused,
+the honest response is to re-open the vocabulary rather than keep a guard that
+teaches the wrong lesson** — the invariant change is what made closing worth
+doing, and it survives either way.
 
 **Eleven of [#140](https://github.com/dmarx/anthology-of-the-sota/issues/140)'s fifteen get their old topic back as a secondary**, plus
 `NOTE-028` following its paper: the eight positional-encoding papers,
 `LIT-211`, `SOTA-098` and `SOTA-099`.
 
-**Four stay replacements, because the old topic was not applicable:**
+**7. Four stay replacements, because the old topic was not applicable:**
 
 - `SOTA-060` — an initialization rule for stability, filed
   `distributed-optimization` because its source is a Megatron paper. The claim
@@ -107,13 +160,17 @@ not about a document having only one subject. Nothing in either turns on the
 cardinality. This decision is filed `Proposed` because that reading should be
 checked by someone who was there.
 
-**It does not settle the cases where a second topic would be a dodge.** The
-flash-attention pair (`SOTA-085` / `SOTA-161`) is unbound because a technique
-and its numerical-stability fix are genuinely different kinds of claim, and
-giving both an `attention-techniques` secondary would now be *possible* and
-still wrong — it would bind the edge without answering it. The invariant
-comparing `primary_topic` is what keeps that honest, which is why this
-decision leaves it alone.
+**A shared tag can now bind a relation, which is the point and the risk.**
+Binding on a real topic is the record saying what two documents have in
+common. Binding on a free-form label is the [#101](https://github.com/dmarx/anthology-of-the-sota/issues/101) move. The two
+`flash-attention` tags are gone and `tiny-models` is the only free-form word
+left — on ten documents, binding nothing today — and the vocabulary is closed
+on three of the four schemes so a new one has to be declared first.
+
+**`NOTE` is the hole in that.** Its `tags:` names no vocabulary, so closing
+does not reach it: a free-form tag on a reading is still accepted and would
+still bind. Nothing exploits it today. It wants either a vocabulary on the
+field or a reason in writing why notes are different.
 
 ## Alternatives considered
 
@@ -124,10 +181,16 @@ eleven documents, and the review objected to exactly that.
 the paper's own subject words, not the record's filing, and nothing indexes
 them as topics. It would hide the fact rather than carry it.
 
-**Move the chain invariant to `tags`.** The obvious follow-on and explicitly
-not taken: a shared incidental tag would bind relations that share nothing
-about their subject, which is the failure `luria.yaml` documents and the
-reason the invariant moved to `primary_topic` in the first place.
+**Keep the invariant on `primary_topic`.** The position this decision held
+until review. It makes the check ask whether two documents are *primarily*
+about the same thing, which is stronger than what a relation asserts, and it
+leaves `LIT-211` unbound from the two ES papers either side of it while all
+three carry `training-optimization`.
+
+**Move the invariant to `tags` and keep the `flash-attention` labels.** Then
+three edges bind and one is bound by a word added to bind it — the check
+satisfied rather than answered, which the record already decided against.
+
 
 **`at-most-one`.** The other available rule, and it permits zero topics, which
 is worse than what we have — every document should be about something.

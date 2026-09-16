@@ -1,0 +1,153 @@
+---
+status: Proposed
+title: 'A practice may be filed in order to say do not do this'
+version: 1
+tags:
+- record
+date: '2026-09-16'
+issue: '#88'
+summary: >-
+  Yes, a technique that was recommended and did not hold may be filed as a
+  `Rejected` practice — the entry test is the one every practice already
+  passes, plus one addition: the failure needs a citation exactly as a
+  recommendation does. `Superseded` still wins wherever a successor exists,
+  because the chain carries more than a rejection. Rejected: a new status
+  word, filing these as THEORY, and the status quo, which currently has
+  ReLoRA blocked.
+---
+
+# ADR-tmpvdpb9: A practice may be filed in order to say do not do this
+
+<!-- inactive-ok-file: SOTA-041, SOTA-064, SOTA-101, SOTA-107 — the four worked examples of what `Rejected` means on a practice TODAY; this decision is about their category, so citing the live alternatives would cite the wrong documents -->
+<!-- inactive-ok-file: LIT-041, LIT-044 — cited as the reading list's merit-based retirements, which is the contrast the Context is drawing -->
+<!-- inactive-ok-file: LIT-042 — the warm-restarts note, named as the case where `Superseded` and its chain beat a rejection -->
+<!-- inactive-ok-file: LIT-104 — ReLoRA, `Proposed`, and the whole point: the reading this decision unblocks -->
+
+## Context
+
+[#88](https://github.com/dmarx/anthology-of-the-sota/issues/88) asked whether the record should accept failed ideas — *"worst case
+scenario we end up documenting why a particular practice shouldn't be
+adopted. that's still valuable information"* — and proposed two admission
+criteria: historical importance, and ideas that drew attention and went
+nowhere, with ReLoRA named as the case.
+
+It looks like the record already does this. It does not, and the difference
+is the whole decision.
+
+**Eighteen practices carry `Rejected` today, and all eighteen mean one
+thing: the source does not support the claim.** They are migration
+provenance failures, not techniques anyone tried and abandoned:
+
+| | why it was rejected |
+|---|---|
+| [SOTA-041](../practices.d/SOTA-041.md) | states the opposite of its source — Kaplan reports larger models need a *smaller* rate |
+| [SOTA-064](../practices.d/SOTA-064.md) | the cited paper does not contain the word "warmup" |
+| [SOTA-101](../practices.d/SOTA-101.md) | the source performs no filtering; the string "filter" does not appear in it |
+| [SOTA-107](../practices.d/SOTA-107.md) | every occurrence of 128 in the source is a head dimension or block size, never a sequence length |
+
+Not one of them is *"this was recommended, people did it, and it did not
+hold."* That category is empty.
+
+The reading list does not have this gap. A `LIT` note is retired on the merits
+routinely — [LIT-044](../literature.d/LIT-044.md) for *"needs per-case tuning, no consistent cross-domain
+benefit"*, [LIT-041](../literature.d/LIT-041.md) for *"the result does not look interesting enough to
+carry"*. So the record already judges **papers** by whether they hold up, and
+has never judged a **practice** that way.
+
+### The case that is actually stuck
+
+[LIT-104](../literature.d/LIT-104.md) is ReLoRA, [#88](https://github.com/dmarx/anthology-of-the-sota/issues/88)'s own example, and its note says in as many words
+that this decision is what blocks it:
+
+> **Audited by [#121](https://github.com/dmarx/anthology-of-the-sota/issues/121); deliberately still unsourced.** […] It is unfiled because
+> the paper's own status is `Proposed`: the record has not settled whether
+> ReLoRA-style restarts belong in it at all, and filing the restart discipline
+> would answer that question sideways.
+
+So this is not a hypothetical about scope. A reading was done, a strong and
+specific finding came out of it — restarting an adapter mid-training requires
+resetting the optimizer state **and** re-warming the rate, and the pair
+without the re-warm diverges — and it is sitting unfiled waiting for [#88](https://github.com/dmarx/anthology-of-the-sota/issues/88).
+
+## Decision
+
+**A practice may be filed whose recommendation is negative.** `Rejected` on a
+practice already means *do not do this*, so no new machinery is needed; what
+was missing was permission to file one that was never `Active` here first.
+
+Three conditions, and only the third is new.
+
+**1. Somebody recommended it, in a paper this record holds.** Already the
+rule — every practice names a `source:`, and [DP-001](../principles.d/DP-001.md) makes the citation
+structural. It does the bounding work [#88](https://github.com/dmarx/anthology-of-the-sota/issues/88) worried about on its own: a
+technique nobody published a recommendation for needs no counter-practice,
+because there is no claim to contradict. "Hyped" is not an entry criterion
+and does not need to be one.
+
+**2. `Superseded` wins wherever there is a successor.** Warm restarts did not
+fail; they lost to single-cycle cosine, and [LIT-042](../literature.d/LIT-042.md) → [LIT-035](../literature.d/LIT-035.md) → WSD is a
+chain a reader can follow. `Rejected` is for a claim with **no** successor —
+the thing does not work, and nothing replaced it because there was nothing
+there to replace. Reaching for `Rejected` where a chain exists throws away
+the contrast [DP-003](../principles.d/DP-003.md) says is most of the content.
+
+**3. The failure needs a citation exactly as a recommendation does.** This is
+the new requirement and it is the one that keeps the category honest. [DP-001](../principles.d/DP-001.md)
+says a recommendation without a citation is an opinion; a *refutation*
+without one is the same opinion wearing a status field. In practice this
+means a negative practice usually names **two** sources — the paper that
+recommended it and the paper that found it does not hold — and where the same
+paper does both, as ReLoRA's own Table 6 does, that is the strongest case
+rather than a special one.
+
+Where only the recommendation has a citation and the failure is folklore, the
+record says nothing. "Everyone knows this didn't work" is precisely the claim
+[DP-007](../principles.d/DP-007.md) says has no author, and the answer there is to find the paper, not
+to file the rumour.
+
+## Alternatives considered
+
+- **Keep the status quo.** Costs the case that is already stuck: ReLoRA has
+  been read, has a specific finding, and its note names this question as the
+  blocker. Doing nothing leaves a completed reading unfiled indefinitely, and
+  leaves a reader who asks "should I restart adapters mid-training" with no
+  answer in a record that has one.
+- **A new status — `Refuted`, `Failed`, or similar.** Rejected twice over.
+  The status vocabulary is closed and read by the whole toolchain (`active`,
+  `retires_on`, the status pages, the chain walk), so a new word is a schema
+  change; and what it would express — *"never supported"* versus *"supported
+  and later overturned"* — is already written in `status_note:` on all
+  eighteen, in prose, specific to each. A field carrying the same distinction
+  uniformly would be [DP-002](../principles.d/DP-002.md)'s comment with a schema.
+- **File these as `THEORY` instead**, on the reading that "X does not work" is
+  a claim about what is true. It is, but it is not what the document is *for*:
+  the test is whether it tells the reader what to do, and a warning does —
+  it says don't. A reader deciding whether to use ReLoRA looks in the practice
+  registry, and putting the answer in the explanation scheme hides it from the
+  person who needs it.
+- **Admit anything that drew attention and went nowhere**, which is [#88](https://github.com/dmarx/anthology-of-the-sota/issues/88)'s
+  second suggested criterion. Unbounded in a way the source rule is not, and
+  it measures the wrong thing — attention is a fact about the field, and
+  [DP-005](../principles.d/DP-005.md) already separates who does a thing from whether it works. Condition
+  1 admits every case this criterion would want and stops at the ones it
+  should.
+
+## Consequences
+
+The empty category is now fillable, and ReLoRA is the first candidate: its
+reading is done and the finding is specific. Whether it clears condition 3 is
+a judgement for whoever files it — the paper measures its own headline
+contribution as a small fraction of the gain, which is a refutation with a
+citation, and the citation is the authors'.
+
+**`Rejected` on a practice now covers two situations**, and the record should
+expect to be asked which one a given document means. Today the answer is
+always "the source never supported it"; after this it may be "the source
+supported it and the claim did not hold". `status_note:` is where that lives,
+as it already does on all eighteen — this decision adds a reason to keep
+writing those notes specifically rather than to add a field.
+
+What this does **not** license: retiring a practice because it feels dated,
+or because adoption moved. [DP-005](../principles.d/DP-005.md) covers the second and `consensus:` is where
+it belongs. A negative practice is a cited claim that something does not
+work, and without the citation it is not a practice at all.

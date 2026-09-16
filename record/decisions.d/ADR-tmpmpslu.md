@@ -1,0 +1,110 @@
+---
+status: Proposed
+title: 'The configuration is part of the record, and the lint reads it'
+version: 1
+tags:
+- record
+- ci
+date: '2026-09-16'
+issue: '#144'
+summary: >-
+  `luria.yaml` joins `code.globs`. It carries 87 code citations across 38
+  documents — more decision references than any other file here — and nothing
+  scanned it, so they went stale invisibly: 15 citations of codes that had
+  been concretized months earlier, and two to a luria decision whose temporary
+  code had since been numbered. Rejected: leaving it unscanned on the grounds
+  that a config is not prose, and per-site directives over one file-level one.
+---
+
+# ADR-tmpmpslu: The configuration is part of the record, and the lint reads it
+
+<!-- inactive-ok-file: ADR-020, ADR-027, ADR-029, ADR-030, ADR-031, ADR-035, ADR-038 — every code on one line, per LU-#278. Named here as the decisions whose citations this change repaired and as the history the config narrates, not as rules this decision rests on being in force. -->
+
+## Context
+
+`code.globs` was `src/**/*.py` and nothing else. The stated purpose of code
+scanning is that *"a decision number in a code comment is the strongest form
+of the claim being checked — it is the stated reason the code is shaped that
+way"*. By that argument `luria.yaml` should have been the first file in the
+list and was not in it at all.
+
+It is the most decision-dense file in the repository: **87 code citations
+across 38 distinct documents**, and essentially every one of them is a "this
+is why the schema is shaped this way" claim — why `tags` is closed, why
+`primary_topic` derives from position, why a note holds no topics of its own.
+
+Unscanned, they rotted. Adding the glob surfaced, in that one file:
+
+- **15 citations in a concretized code's old spelling.** The temporary code
+  that became [ADR-035](ADR-035.md) appeared **ten times** — it was numbered when [#140](https://github.com/dmarx/anthology-of-the-sota/issues/140)
+  merged, and all ten had been dead since. Four more decisions were cited by
+  their old spellings too — [ADR-025](ADR-025.md), [ADR-029](ADR-029.md), [ADR-031](ADR-031.md), and [ADR-038](ADR-038.md) twice,
+  written earlier today and stale within the hour.
+- **Two citations of a luria decision by its temporary code**, numbered
+  upstream as [LU-ADR-084](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-084.md). A remote's temporary code goes stale the same way
+  and there is no local merge to fix it.
+- **Seven documents cited while Superseded or Proposed**, which on reading are
+  all deliberate.
+
+Concretization does fire here — [LU-ADR-049](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-049.md)'s rename runs on push to main, and
+numbered [ADR-038](ADR-038.md) an hour before this was written. It rewrites
+the *record*. Nothing was rewriting the config, and nothing was reporting that
+it had not been.
+
+## Decision
+
+**`luria.yaml` and `.github/workflows/*.yml` are in `code.globs`**, which is
+the pair luria scans for itself.
+
+The workflows carry six citations against the config's 87, and all six are
+remote `LU-` codes naming the upstream decisions that shape the pipeline, so
+adding them surfaced nothing. That is the point of adding them anyway: the
+cost of covering a file *before* it rots is one line, and the sixteen dead
+citations below are what covering one afterwards costs.
+
+Every stale citation is corrected in the same contribution: fifteen temp codes
+to their concretized numbers, and the luria one to [LU-ADR-084](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-084.md). A sixteenth, in `record/decisions.d/ADR-038.md`, cited luria's decision on derived fields without
+the `LU-` prefix, so this record read it as a local decision that does not
+exist; it is now `LU-ADR-089`, which is how [ADR-022](ADR-022.md) already spells the same
+citation.
+
+**The surviving citations are acknowledged once, at the file level**, naming
+each code. Three are Superseded and the config names them *as* history — the
+vocabulary's growth is narrated in prose that says "[ADR-027](ADR-027.md) added
+`analysis-and-evaluation`; [ADR-026](ADR-026.md) then added … superseding [ADR-020](ADR-020.md)". The rest
+are Proposed, which in this record is the resting state of a decision nobody
+has moved rather than a sign the schema rests on something unsettled: sixty
+documents are undecided.
+
+## Alternatives considered
+
+- **Leave it unscanned: a config is data, not prose.** This is the reason it
+  was never added, and it does not survive the measurement. 87 citations is
+  not data — it is the densest commentary in the repository, and the check's
+  own justification is about *comments that state a reason*, which is exactly
+  what these are.
+- **A directive per citing site.** Nineteen directives each saying the same
+  sentence. The file-level one names every code explicitly, so it still
+  vouches for something specific rather than blanket-silencing the file.
+- **Add the glob without fixing the findings.** Turns on a check and leaves it
+  red, which trains the next reader to ignore it.
+- **Status quo.** The config keeps accumulating dead references at roughly the
+  rate the record makes decisions, and nothing says so.
+
+## Consequences
+
+`luria lint` returns to the same seven pre-existing warnings it had before
+this change — all in other files, none introduced here. The workflows add no
+findings at all, now or, with luck, later.
+
+**Directives must keep every code on one line.** A wrapped
+`inactive-ok-file:` suppresses the codes on its first line and silently
+ignores the rest; the first version of the directive in this contribution
+named nine codes across two lines, suppressed four, and left five warning with
+no indication why. Filed upstream as [LU-#278](https://github.com/dmarx/luria/issues/278), and noted in the directive
+itself so the next person does not rediscover it.
+
+Left open: a remote's temporary code has no mechanism at all. Concretization fixes local temp codes where merges serialize, and a
+citation to *another* project's unconcretized code simply dies when that
+project numbers it. The lint now at least reports it as unresolved, which is
+how this one was found.

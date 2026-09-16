@@ -1,5 +1,23 @@
 # Luria configuration for the Anthology of the SOTA.
 #
+# inactive-ok-file: ADR-020, ADR-027, ADR-029, ADR-030, ADR-031, ADR-035, ADR-038, ADR-tmpmpslu — the decisions this file IMPLEMENTS, and
+#   citing them is what makes a schema choice readable as something somebody
+#   decided rather than something somebody typed. Three are Superseded and are
+#   named as history, in prose that says so: "ADR-027 added
+#   `analysis-and-evaluation`; ADR-026 then added ... superseding ADR-020",
+#   and the cut DP-005 made in ADR-029 that ADR-030 refined. The rest are
+#   Proposed, which in this record is the resting state of a decision nobody
+#   has moved -- 60 documents are undecided -- rather than a signal that the
+#   schema is built on something unsettled.
+#
+#   Scoped to this file rather than left per-site because every citation here
+#   is the same kind of claim, and because the alternative is nineteen
+#   directives that each say the same sentence (ADR-tmpmpslu).
+#
+#   Every code on ONE line, deliberately: a continuation line's codes are not
+#   read, and the directive then suppresses some of what it names and silently
+#   not the rest. Found here, filed as LU-#278.
+#
 # The record has four families. Two of them are the anthology itself — `SOTA`
 # is the product (one document per recommendation) and `LIT` is the evidence
 # (one note per paper) — and two are this project reasoning about itself.
@@ -93,7 +111,7 @@ vocabularies:
     # alongside its topic, never instead of it.
     #
     # This matters more since the chain invariant moved to `tags`
-    # (ADR-tmpoxkk7): any tag can now bind a relation, so an ad-hoc word typed
+    # (ADR-035): any tag can now bind a relation, so an ad-hoc word typed
     # once can quietly assert that two documents share a subject. A closed
     # vocabulary makes that a decision instead of a typo.
     tiny-models:
@@ -358,7 +376,8 @@ schemes:
         scheme: LIT
         required: true
         many: true
-      # The other half of the cut DP-005 made (ADR-tmpqczy4). That principle
+      # The other half of the cut DP-005 made (ADR-029, refined by ADR-030).
+      # That principle
       # separated ADOPTION from evidence and sent adoption to `consensus:`.
       # This separates ORIGIN from evidence: `source:` is the work that
       # produced evidence ABOUT the claim, and `introduced_by:` is the work
@@ -370,7 +389,7 @@ schemes:
         scheme: LIT
         required: true
         many: true
-      # The converse of `THEORY.explains` (ADR-tmpvv7zp). A practice does not
+      # The converse of `THEORY.explains` (ADR-031). A practice does not
       # have to have an explanation and most do not; what this buys is that
       # where the record HAS one, the practice says so from its own page
       # instead of the connection being legible only from the theory side.
@@ -393,7 +412,7 @@ schemes:
       # A comparison is one fact, and its converse is itself — which is what makes
       # it symmetric. Declaring that is what lets `luria link --fix` write the
       # other side, so a comparison is stated once on whichever practice ran it
-      # rather than on every member of the family (LU-ADR-tmphedn4).
+      # rather than on every member of the family (LU-ADR-084).
       compared_against:
         scheme: SOTA
         required: false
@@ -494,7 +513,7 @@ schemes:
         vocabulary: topics
         many: true
         required: true
-        # Closed (ADR-tmpoxkk7): since the chain invariant reads `tags`, an
+        # Closed (ADR-035): since the chain invariant reads `tags`, an
         # undeclared word can bind a relation, so a tag typed once would
         # quietly assert that two documents share a subject. Closing it makes
         # every tag one the vocabulary above names. NOTE's `tags:` declares no
@@ -506,7 +525,7 @@ schemes:
           # one-primary rule both come from ADR-003, which promoted them out of the
           # Jinja template they had been sitting in, unapplied, since 2024.
           primary_topic:
-            # `any`, not `exactly-one` (ADR-tmpoxkk7). A document is often about
+            # `any`, not `exactly-one` (ADR-035). A document is often about
             # two of the thirteen -- a positional-encoding scheme is also an
             # attention technique, a context-extension paper is both -- and under
             # `exactly-one` recording the second meant deleting the first. The
@@ -548,7 +567,7 @@ schemes:
     axis: tags
   # ── The explanation: one document per claim about why something works ────
   # A practice is an instruction; a theory is a finding. They were one scheme
-  # until ADR-tmpvv7zp, and the seam showed from both sides: six practices
+  # until ADR-031, and the seam showed from both sides: six practices
   # whose titles state a behaviour rather than an instruction ("larger models
   # are more sample efficient"), and forty-eight papers that no practice
   # cites — two of which say in their own bodies that they carry no practice
@@ -639,7 +658,7 @@ schemes:
         vocabulary: topics
         many: true
         required: true
-        # Closed (ADR-tmpoxkk7): since the chain invariant reads `tags`, an
+        # Closed (ADR-035): since the chain invariant reads `tags`, an
         # undeclared word can bind a relation, so a tag typed once would
         # quietly assert that two documents share a subject. Closing it makes
         # every tag one the vocabulary above names. NOTE's `tags:` declares no
@@ -647,7 +666,7 @@ schemes:
         closed: true
         groups:
           primary_topic:
-            # `any`, not `exactly-one` (ADR-tmpoxkk7). A document is often about
+            # `any`, not `exactly-one` (ADR-035). A document is often about
             # two of the thirteen -- a positional-encoding scheme is also an
             # attention technique, a context-extension paper is both -- and under
             # `exactly-one` recording the second meant deleting the first. The
@@ -717,7 +736,7 @@ schemes:
     # set of rivals into a comparison, and it names ITSELF as its converse,
     # which is what symmetry is: the fact is one fact, so a one-sided
     # declaration is a finding and `luria link --fix` writes the other side
-    # (LU-ADR-tmphedn4). A later paper cannot have been made to declare a
+    # (LU-ADR-084). A later paper cannot have been made to declare a
     # comparison against work that did not exist yet, so the author states it
     # once, on the note that ran the comparison.
     #
@@ -783,7 +802,7 @@ schemes:
         vocabulary: topics
         many: true
         required: true
-        # Closed (ADR-tmpoxkk7): since the chain invariant reads `tags`, an
+        # Closed (ADR-035): since the chain invariant reads `tags`, an
         # undeclared word can bind a relation, so a tag typed once would
         # quietly assert that two documents share a subject. Closing it makes
         # every tag one the vocabulary above names. NOTE's `tags:` declares no
@@ -798,7 +817,7 @@ schemes:
           # ABOUT. Kept as a separate declaration because they are separate schemes and a
           # future decision may separate them again.
           primary_topic:
-            # `any`, not `exactly-one` (ADR-tmpoxkk7). A document is often about
+            # `any`, not `exactly-one` (ADR-035). A document is often about
             # two of the thirteen -- a positional-encoding scheme is also an
             # attention technique, a context-extension paper is both -- and under
             # `exactly-one` recording the second meant deleting the first. The
@@ -834,7 +853,7 @@ schemes:
   # LIT-025's four were in the right neighbourhood and backwards about the
   # finding. Eight practices rested on them. Both notes passed every
   # mechanical check there is (#113) — only reading catches this, and the
-  # record had nowhere to put a reading. See ADR-tmp2q9cv.
+  # record had nowhere to put a reading. See ADR-025.
   NOTE:
     dir: record/notes.d
     output: docs/notes
@@ -863,7 +882,7 @@ schemes:
     # converse must be same-scheme and this crosses.
     #
     # It carries the TOPICS too, below: a note and its paper are the same
-    # object, so the note holds no subject of its own (ADR-tmpvv2d8).
+    # object, so the note holds no subject of its own (ADR-038).
     references:
       paper:
         scheme: LIT
@@ -879,7 +898,7 @@ schemes:
       # A reading is filed under nothing of its own. Both of these read the
       # paper's frontmatter, because a note and its paper ARE the same paper
       # and a second copy of its subject is a second copy free to disagree --
-      # which is what four of them were doing (ADR-tmpvv2d8). Deriving is the
+      # which is what four of them were doing (ADR-038). Deriving is the
       # answer the invariant was a weaker version of: it cannot disagree
       # rather than reporting when it does.
       #
@@ -989,6 +1008,19 @@ journals:
 code:
   globs:
   - src/**/*.py
+  # The config itself, which is the most decision-dense file in the repository
+  # -- 87 code citations across 38 documents, every one of them a "this is why
+  # the schema is shaped this way" claim. It was scanned by nothing, so those
+  # claims went stale silently: `ADR-035` was cited 8x here after it had
+  # become ADR-035, and four more temp codes besides. A reference the lint
+  # cannot see is a reference nobody maintains (ADR-tmpmpslu).
+  - luria.yaml
+  # The workflows, which luria scans for itself. Fewer citations than the
+  # config -- six, all of them remote LU- codes naming the upstream decisions
+  # that shape the pipeline -- but the same argument: a comment saying "this
+  # step exists because of that decision" is a claim, and an unscanned claim
+  # is one nobody maintains.
+  - .github/workflows/*.yml
   # README.md used to be assembled from templates under docs/readme/, which
   # were scanned instead of the rendered result so one reference was not
   # reported twice. The templates are gone and README.md is an ordinary file
@@ -1069,7 +1101,7 @@ chains:
     - extends
     - corrects
     sibling: compared_against
-    # `tags`, not `primary_topic` (ADR-tmpoxkk7). What a relation asserts is
+    # `tags`, not `primary_topic` (ADR-035). What a relation asserts is
     # that its members have something in common; it does not assert that the
     # something is the FIRST thing each of them is about. A practice whose
     # primary topic is stability and whose secondary is the attention technique

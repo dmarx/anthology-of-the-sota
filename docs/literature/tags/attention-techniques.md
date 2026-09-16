@@ -4,11 +4,12 @@
 
 **Attention techniques** — attention variants and alternative mechanisms, implementation optimizations, context length.
 
-27 of 309 LIT documents. Back to the [full index](../README.md).
+28 of 309 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [LIT-020](../../../record/literature.d/LIT-020.md) v3 | Pay Less Attention with Lightweight and Dynamic Convolutions | Wu et al. (2019), [ARXIV-1901.10430](https://arxiv.org/abs/1901.10430). Alternative to self-attention. | Active |
+| [LIT-024](../../../record/literature.d/LIT-024.md) v2 | Fast Transformer Decoding: One Write-Head is All You Need | Shazeer (2019), [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). Introduces multi-query attention. | Active |
 | [LIT-033](../../../record/literature.d/LIT-033.md) v4 | Longformer: The Long-Document Transformer | Beltagy et al. (2020), [ARXIV-2004.05150](https://arxiv.org/abs/2004.05150). Efficient attention for long sequences. | Active |
 | [LIT-074](../../../record/literature.d/LIT-074.md) v2 | FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness | Dao et al. (2022), [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). IO-aware attention implementation. | Active |
 | [LIT-100](../../../record/literature.d/LIT-100.md) v2 | GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints | Ainslie et al. (2023), [ARXIV-2305.13245](https://arxiv.org/abs/2305.13245). Efficient attention variant. | Active |

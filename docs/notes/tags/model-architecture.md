@@ -4,12 +4,13 @@
 
 **model-architecture**.
 
-7 of 158 NOTE documents. Back to the [full index](../README.md).
+8 of 158 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-004](../../../record/notes.d/NOTE-004.md) | Scale Efficiently | Model shape, not only model size, determines downstream fine-tuning quality — and the widely adopted T5-Base and T5-Large configurations are Pareto-inefficient. Read in full for [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114) after its LIT note was found to describe a different paper. | Read |
 | [NOTE-011](../../../record/notes.d/NOTE-011.md) | Attention Is All You Need | Dispenses with recurrence and convolution entirely. The 1/√d_k scaling has a stated reason: with unit-variance components, q·k has variance d_k, and unscaled dot products push the softmax into regions of extremely small gradients. | Read |
+| [NOTE-016](../../../record/notes.d/NOTE-016.md) | Fast Transformer Decoding: multi-query attention | Incremental decoding is bounded by the memory bandwidth of reloading the keys and values, not by arithmetic. Share one key/value head across all query heads: much faster decoding, "only minor quality degradation". | Read |
 | [NOTE-028](../../../record/notes.d/NOTE-028.md) | Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation | Replaces position embeddings with a fixed linear penalty on attention scores proportional to query–key distance, one slope per head from a geometric sequence. Trains on short sequences and evaluates on longer ones. The paper's own Appendix B says the gain is "largely explained by" avoiding the early token curse rather than by better use of long history. | Read |
 | [NOTE-054](../../../record/notes.d/NOTE-054.md) | Mish: A Self Regularized Non-Monotonic Activation Function | Proposes f(x) = x·tanh(softplus(x)), a smooth non-monotonic activation in the Swish family. Reported +2.1 AP50 over Leaky ReLU on YOLOv4/MS-COCO and ~1% top-1 over ReLU on ResNet-50/ImageNet. Read from the abstract only — ar5iv has no rendering for this identifier. | Skimmed |
 | [NOTE-055](../../../record/notes.d/NOTE-055.md) | CoCa: Contrastive Captioners are Image-Text Foundation Models | Trains one encoder-decoder with both a contrastive and a captioning loss by omitting cross-attention in the first half of the decoder — so those layers produce unimodal text embeddings for the contrastive loss, and the cascaded remainder cross-attends for captioning. Both objectives share one computational graph, at minimal extra cost. | Read |

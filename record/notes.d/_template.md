@@ -29,7 +29,7 @@ version: 1
 # stronger one. A reading's topics are DERIVED from the paper named in `paper:`
 # above — a note and its paper are the same paper, so a second copy of its
 # subject is a second copy free to disagree, and four of them were
-# (ADR-tmpvv2d8). Retag the LIT note; the reading follows.
+# (ADR-038). Retag the LIT note; the reading follows.
 
 date: ''
 

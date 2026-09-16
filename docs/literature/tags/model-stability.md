@@ -4,12 +4,13 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-20 of 309 LIT documents. Back to the [full index](../README.md).
+21 of 309 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [LIT-002](../../../record/literature.d/LIT-002.md) | Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift | Ioffe et al. (2015), [ARXIV-1502.03167](https://arxiv.org/abs/1502.03167). Introduces normalization of layer inputs during training. | Active |
 | [LIT-005](../../../record/literature.d/LIT-005.md) | Layer Normalization | Ba et al. (2016), [ARXIV-1607.06450](https://arxiv.org/abs/1607.06450). Introduces normalization across features instead of batch. | Active |
+| [LIT-014](../../../record/literature.d/LIT-014.md) v2 | Visualizing the Loss Landscape of Neural Nets | Li et al. (2017), [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). Visualizes loss landscape geometry. | Active |
 | [LIT-015](../../../record/literature.d/LIT-015.md) v2 | Understanding Batch Normalization | Bjorck et al. (2018), [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375). Argues that batch normalization's main benefit is that it permits substantially larger learning rates, and studies what goes wrong without it at initialisation. | Active |
 | [LIT-023](../../../record/literature.d/LIT-023.md) v2 | Root Mean Square Layer Normalization | Zhang et al. (2019), [ARXIV-1910.07467](https://arxiv.org/abs/1910.07467). Simplified layer normalization. | Active |
 | [LIT-025](../../../record/literature.d/LIT-025.md) v2 | Understanding and Improving Layer Normalization | Xu et al. (2019), [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). LayerNorm's benefit comes from the derivatives of the mean and variance, not from forward normalization — and its bias and gain increase overfitting risk and do not work in most cases. | Active |

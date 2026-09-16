@@ -4,10 +4,11 @@
 
 **vision-and-graphics**.
 
-9 of 158 NOTE documents. Back to the [full index](../README.md).
+10 of 158 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
+| [NOTE-018](../../../record/notes.d/NOTE-018.md) | Segment Anything | The data engine is the transferable part. Three stages — assisted-manual, semi-automatic, fully automatic — each stage's labels training the model that produces the next stage's, ending in 1.1B masks. The model and the dataset are built together. | Read |
 | [NOTE-027](../../../record/notes.d/NOTE-027.md) | Simple Open-Vocabulary Object Detection with Vision Transformers | Transfers a contrastively pretrained image-text model to open-vocabulary detection with minimal architectural change. Its transferable finding is about fine-tuning: the text encoder needs a learning rate about 100× lower than the image encoder, freezing it entirely is also wrong, and the recipe that maximises zero-shot transfer is *not* the one that maximises in-distribution performance. | Read |
 | [NOTE-032](../../../record/notes.d/NOTE-032.md) | Gaussian Shell Maps for Efficient 3D Human Generation | Puts 3D Gaussians on inflated and deflated shells around a template human body, with a CNN generating the texture stack whose features become the Gaussians' attributes. Rendering fast enough removes the need for the 2D upsamplers that made prior 3D GANs multi-view inconsistent — a quality problem solved by a speed fix. | Read |
 | [NOTE-035](../../../record/notes.d/NOTE-035.md) | Neural Scene Graphs for Dynamic Scenes | The first neural rendering method to decompose a dynamic scene into a scene graph — objects with learned transformations and radiance, described by a single implicit function plus a per-object latent — so novel arrangements can be rendered, not just novel views. Learned from a video alone. | Read |

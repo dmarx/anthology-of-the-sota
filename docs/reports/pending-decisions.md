@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**58 document(s) awaiting a decision.**
+**59 document(s) awaiting a decision.**
 
 ## SOTAs
 
-40 of the 58.
+40 of the 59.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -56,7 +56,7 @@
 
 ## THEORYs
 
-5 of the 58.
+5 of the 59.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -68,7 +68,7 @@
 
 ## LITs
 
-3 of the 58.
+3 of the 59.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -78,7 +78,7 @@
 
 ## ADRs
 
-10 of the 58.
+11 of the 59.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -88,13 +88,14 @@
 | 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 11 | 0 | A scheme for explanations, complementing the practice registry |
 | 2026-09-15 | Proposed | [ADR-034](../../record/decisions.d/ADR-034.md) | 7 | 0 | A document that changes scheme is Superseded where it leaves, and names its successor across the boundary |
 | 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 4 | 1 | Every practice states its origin, even when it is the primary source |
+| 2026-09-15 | Proposed | [ADR-036](../../record/decisions.d/ADR-036.md) | 3 | 0 | An unbound relation is one of four things, and only one of them is a retag |
 | 2026-09-15 | Proposed | [ADR-033](../../record/decisions.d/ADR-033.md) | 0 | 0 | Readings made in another context port into the record; their agenda does not |
-| 2026-09-15 | Proposed | [ADR-036](../../record/decisions.d/ADR-036.md) | 0 | 0 | An unbound relation is one of four things, and only one of them is a retag |
-| 2026-09-16 | Proposed | [ADR-035](../../record/decisions.d/ADR-035.md) | 15 | 0 | A document may carry more than one topic; the first is the primary |
+| 2026-09-16 | Proposed | [ADR-035](../../record/decisions.d/ADR-035.md) | 21 | 0 | A document may carry more than one topic; the first is the primary |
+| 2026-09-16 | Proposed | [ADR-038](../../record/decisions.d/ADR-038.md) | 8 | 0 | A note has no topics of its own: it derives them from its paper |
 | 2026-09-16 | Proposed | [ADR-037](../../record/decisions.d/ADR-037.md) | 0 | 0 | Fail the build on `source-mismatch`, and take the source invariant upstream |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (8): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [ADR-036](../../record/decisions.d/ADR-036.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-216](../../record/practices.d/SOTA-216.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (7): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-216](../../record/practices.d/SOTA-216.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md) — these are the cheapest to close, since nothing depends on the answer.

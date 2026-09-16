@@ -4,10 +4,11 @@
 
 **analysis-and-evaluation**.
 
-35 of 158 NOTE documents. Back to the [full index](../README.md).
+36 of 158 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
+| [NOTE-008](../../../record/notes.d/NOTE-008.md) | Visualizing the Loss Landscape of Neural Nets | Filter normalization makes loss-surface plots comparable across architectures, and under it sharpness correlates with generalization error. Deep networks transition from nearly convex to chaotic; skip connections prevent that transition, which is why they are needed at depth. | Read |
 | [NOTE-051](../../../record/notes.d/NOTE-051.md) | Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models | 204 tasks from 450 authors, evaluated across dense and sparse models from millions to hundreds of billions of parameters, with expert human raters as the baseline. Its most useful finding is about measurement: tasks showing "breakthrough" behaviour at a critical scale tend to involve multiple steps or brittle metrics, while smooth ones are knowledge-heavy. | Read |
 | [NOTE-052](../../../record/notes.d/NOTE-052.md) v2 | Progress measures for grokking via mechanistic interpretability | Reverse-engineers a one-layer transformer trained on modular addition and finds it computes a Fourier multiplication algorithm — embed inputs as rotations, combine with trigonometric identities. Uses that to define continuous progress measures showing grokking is three phases, and finds grokking vanishes entirely above about 60% data. | Read |
 | [NOTE-057](../../../record/notes.d/NOTE-057.md) | What Makes for Good Views for Contrastive Learning? | Argues for an InfoMin principle: views should share as little mutual information as possible while keeping task-relevant information intact. Too much shared information makes the contrastive task trivial, too little destroys the signal, so there is a sweet spot — and augmentation design is the search for it. | Read |

@@ -80,9 +80,8 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `paper` — required, a `LIT` code (luria.yaml: schemes.NOTE.references.paper)
 - `status` — optional, one of `Read`, `Skimmed`, `Unread`, `Superseded` (luria.yaml: schemes.NOTE.fields.status; vocabulary 'note-statuses': values)
 - `published` — derived — `{published}` from `paper`, never written (luria.yaml: schemes.NOTE.fields.published)
-- `primary_topic` — derived — `{tags[0]}`, never written (luria.yaml: schemes.NOTE.fields.primary_topic)
-- `tags` — required (luria.yaml: schemes.NOTE.fields.tags)
-- `primary_topic` — any of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.yaml: schemes.NOTE.fields.tags.groups.primary_topic)
+- `primary_topic` — derived — `{tags[0]}` from `paper`, never written (luria.yaml: schemes.NOTE.fields.primary_topic)
+- `tags` — derived — `{tags}` from `paper`, never written (luria.yaml: schemes.NOTE.fields.tags)
 
 **`ADR`**
 

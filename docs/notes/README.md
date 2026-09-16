@@ -20,8 +20,8 @@
 **[generative-modeling](tags/generative-modeling.md)** (10):
 [009](../../record/notes.d/NOTE-009.md) · [019](../../record/notes.d/NOTE-019.md) · [040](../../record/notes.d/NOTE-040.md) · [043](../../record/notes.d/NOTE-043.md) · [048](../../record/notes.d/NOTE-048.md) · [053](../../record/notes.d/NOTE-053.md) · [063](../../record/notes.d/NOTE-063.md) · [064](../../record/notes.d/NOTE-064.md) · [067](../../record/notes.d/NOTE-067.md) · [068](../../record/notes.d/NOTE-068.md)
 
-**[inference-optimization](tags/inference-optimization.md)** (1):
-[023](../../record/notes.d/NOTE-023.md)
+**[inference-optimization](tags/inference-optimization.md)** (3):
+[023](../../record/notes.d/NOTE-023.md) · [159](../../record/notes.d/NOTE-159.md) · [160](../../record/notes.d/NOTE-160.md)
 
 **[model-architecture](tags/model-architecture.md)** (8):
 [004](../../record/notes.d/NOTE-004.md) · [011](../../record/notes.d/NOTE-011.md) · [016](../../record/notes.d/NOTE-016.md) · [028](../../record/notes.d/NOTE-028.md) · [054](../../record/notes.d/NOTE-054.md) · [055](../../record/notes.d/NOTE-055.md) · [060](../../record/notes.d/NOTE-060.md) · [069](../../record/notes.d/NOTE-069.md)
@@ -41,7 +41,7 @@
 **[vision-and-graphics](tags/vision-and-graphics.md)** (10):
 [018](../../record/notes.d/NOTE-018.md) · [027](../../record/notes.d/NOTE-027.md) · [032](../../record/notes.d/NOTE-032.md) · [035](../../record/notes.d/NOTE-035.md) · [037](../../record/notes.d/NOTE-037.md) · [042](../../record/notes.d/NOTE-042.md) · [044](../../record/notes.d/NOTE-044.md) · [045](../../record/notes.d/NOTE-045.md) · [046](../../record/notes.d/NOTE-046.md) · [047](../../record/notes.d/NOTE-047.md)
 
-**By status:** [Read](status/Read.md) (156) · [Skimmed](status/Skimmed.md) (2) · [Unread](status/Unread.md) (0) · [Re-read](status/Superseded.md) (0)
+**By status:** [Read](status/Read.md) (158) · [Skimmed](status/Skimmed.md) (2) · [Unread](status/Unread.md) (0) · [Re-read](status/Superseded.md) (0)
 
 What the status column means in this scheme — the words are luria's, the meanings are this project's.
 
@@ -212,4 +212,6 @@ What the status column means in this scheme — the words are luria's, the meani
 | [NOTE-156](../../record/notes.d/NOTE-156.md) | Byzantine-Tolerant Machine Learning | Averaging is catastrophically fragile: a single Byzantine worker can steer the aggregate to any arbitrary vector. The fix is to replace aggregation with selection — choose the gradient vector that is most "centrally located" among its nearest correct neighbors, using the n-f-2 nearest neighbors to ensure the majority of those neighbors are correct workers. | Read |
 | [NOTE-157](../../record/notes.d/NOTE-157.md) | SlowMo: Improving Communication-Efficient Distributed SGD with Slow Momentum | Adding a slow outer momentum step after every tau inner steps of local SGD or a decentralized optimizer consistently improves both optimization and generalization at negligible extra communication cost, because slow momentum corrects accumulated drift between workers at the outer level. | Read |
 | [NOTE-158](../../record/notes.d/NOTE-158.md) | Broken Neural Scaling Laws | A single power law ε(t) = C_∞ + b·t^{-c} fails when the curve has two regimes (steep early, shallow late — or vice versa). | Read |
+| [NOTE-159](../../record/notes.d/NOTE-159.md) | Accelerating Large Language Model Decoding with Speculative Sampling | The same construction as [NOTE-160](../../record/notes.d/NOTE-160.md), reached independently two months later and demonstrated at 70B in a distributed setup. Its contribution to the record is corroboration plus two sharper statements: the guarantee holds "within hardware numerics" rather than absolutely, and the achieved tokens per second exceed the memory-bandwidth ceiling that bounds autoregressive decoding — which is the family's premise, measured rather than assumed. | Read |
+| [NOTE-160](../../record/notes.d/NOTE-160.md) | Fast Inference from Transformers via Speculative Decoding | Autoregressive decoding is serial and memory-bandwidth-bound, so the arithmetic units sit idle while weights stream. Speculative decoding spends that idle compute: a cheap draft proposes `gamma` tokens, the target scores all `gamma + 1` positions in one parallel pass, and an accept-reject rule keeps a prefix. The rule is constructed so the output distribution is exactly the target's, which is what makes this a free speedup rather than a quality trade. | Read |
 

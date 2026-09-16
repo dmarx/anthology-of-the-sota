@@ -6,7 +6,7 @@
 
 **Adaptation and tuning** — taking a trained model somewhere new — fine-tuning and transfer, preference training and alignment, parameter-efficient adaptation, context extension.
 
-26 of 309 LIT documents. Back to the [full index](../README.md).
+26 of 311 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

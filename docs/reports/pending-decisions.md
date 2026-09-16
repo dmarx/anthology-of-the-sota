@@ -96,8 +96,8 @@
 | 2026-09-15 | Proposed | [ADR-033](../../record/decisions.d/ADR-033.md) | 0 | 0 | Readings made in another context port into the record; their agenda does not |
 | 2026-09-16 | Proposed | [ADR-035](../../record/decisions.d/ADR-035.md) | 32 | 0 | A document may carry more than one topic; the first is the primary |
 | 2026-09-16 | Proposed | [ADR-038](../../record/decisions.d/ADR-038.md) | 13 | 0 | A note has no topics of its own: it derives them from its paper |
+| 2026-09-16 | Proposed | [ADR-041](../../record/decisions.d/ADR-041.md) | 3 | 0 | An algorithm-local tuning constant belongs in the reading of the paper that measured it, not in the practice registry |
 | 2026-09-16 | Proposed | [ADR-039](../../record/decisions.d/ADR-039.md) | 2 | 0 | The configuration is part of the record, and the lint reads it |
-| 2026-09-16 | Proposed | [ADR-041](../../record/decisions.d/ADR-041.md) | 2 | 0 | An algorithm-local tuning constant belongs in the reading of the paper that measured it, not in the practice registry |
 | 2026-09-16 | Proposed | [ADR-037](../../record/decisions.d/ADR-037.md) | 0 | 0 | Fail the build on `source-mismatch`, and take the source invariant upstream |
 | 2026-09-16 | Proposed | [ADR-040](../../record/decisions.d/ADR-040.md) | 0 | 0 | Advice on how to prove a theorem is out of scope; advice on how to find out whether a technique worked is not |
 

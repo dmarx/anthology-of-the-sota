@@ -1,5 +1,8 @@
 ---
+number: 227
 status: Active
+formerly:
+- SOTA-tmp6mgiw
 consensus: converged
 consensus_note: >-
   Two independent groups derived it two months apart, and the record's own
@@ -16,10 +19,10 @@ tags:
 - inference-optimization
 date: '2026-09-16'
 source:
-- LIT-tmptlzmx
-- LIT-tmphbbt7
+- LIT-376
+- LIT-375
 introduced_by:
-- LIT-tmptlzmx
+- LIT-376
 implementations: []
 summary: >-
   Autoregressive decoding runs one serial model pass per token and each pass
@@ -31,7 +34,7 @@ summary: >-
   away.
 ---
 
-# SOTA-tmp6mgiw: Decode with a draft model and an accept-reject rule, which is exactly lossless
+# SOTA-227: Decode with a draft model and an accept-reject rule, which is exactly lossless
 
 ## What to do
 
@@ -57,8 +60,8 @@ guarantee.
 matters and the one most summaries drop. You are not approximating the big
 model with the small one; you are using the small one to *propose* and the big
 one to *decide*, under a rule constructed so the composite sampler is unbiased.
-[LIT-tmphbbt7](../literature.d/LIT-tmphbbt7.md) states the qualifier worth keeping — the guarantee holds "within
-hardware numerics" — and [LIT-tmptlzmx](../literature.d/LIT-tmptlzmx.md) measures its results against **identical
+[LIT-375](../literature.d/LIT-375.md) states the qualifier worth keeping — the guarantee holds "within
+hardware numerics" — and [LIT-376](../literature.d/LIT-376.md) measures its results against **identical
 outputs**.
 
 **It cannot be slower in target evaluations.** Every parallel target pass
@@ -66,10 +69,10 @@ emits at least one token, so the count of serial target runs is bounded above
 by what plain decoding would have taken. The only way to lose is the drafting
 overhead.
 
-**The compute it spends was already idle.** [LIT-tmptlzmx](../literature.d/LIT-tmptlzmx.md)'s premise, stated
+**The compute it spends was already idle.** [LIT-376](../literature.d/LIT-376.md)'s premise, stated
 outright: decoding "is often not bottlenecked on arithmetic operations, but
 rather on memory bandwidth and communication, so additional computation
-resources might be available". [LIT-tmphbbt7](../literature.d/LIT-tmphbbt7.md) measures the consequence — tokens
+resources might be available". [LIT-375](../literature.d/LIT-375.md) measures the consequence — tokens
 per second that "often exceeds the idealised ceiling on auto-regressive
 sampling speed imposed by the memory bandwidth". The ceiling being beaten is
 the one that made decoding slow in the first place.
@@ -107,7 +110,7 @@ batching ([SOTA-113](SOTA-113.md)), which attack the same bottleneck from differ
 directions and which this record holds separately without anything relating
 the three.
 
-**`gamma` fixed per loop leaves something on the table.** [LIT-tmptlzmx](../literature.d/LIT-tmptlzmx.md)
+**`gamma` fixed per loop leaves something on the table.** [LIT-376](../literature.d/LIT-376.md)
 estimates up to ~60% further improvement from adapting it within a generation
 and does not pursue it.
 

@@ -6,7 +6,7 @@
 
 **Agreed** — the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately.
 
-15 of 226 SOTA documents. Back to the [full index](../README.md).
+16 of 227 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -25,3 +25,4 @@
 | [SOTA-202](../../../record/practices.d/SOTA-202.md) | Clamp the prediction to the training range at every step when sampling from a model's own output |  | Active |
 | [SOTA-205](../../../record/practices.d/SOTA-205.md) | Replace a large coordinate network with a compact explicit structure and a small decoder | Four independent groups, three structures. Where a field is queried pointwise and the signal is spatially sparse, the capacity belongs in an addressable structure that training optimises directly, not in a network evaluated per point. | Active |
 | [SOTA-207](../../../record/practices.d/SOTA-207.md) | Use the deterministic sampler when the noise input has to mean something | Song et al. (2020), [LIT-038](../../../record/literature.d/LIT-038.md). A stochastic sampler injects fresh noise at every step, so nothing about the starting point survives to the output. Setting the family's stochasticity to zero makes the initial noise a latent code you can interpolate in and invert to. | Active |
+| [SOTA-227](../../../record/practices.d/SOTA-227.md) | Decode with a draft model and an accept-reject rule, which is exactly lossless | Autoregressive decoding runs one serial model pass per token and each pass is bounded by streaming the weights, so the arithmetic units idle. Have a cheap draft model guess the next `gamma` tokens, score all `gamma + 1` positions in one target pass, and keep a prefix under an accept-reject rule built so the output distribution is the target's exactly. 2x-3x at 11B and 2-2.5x at 70B, with no retraining, no architecture change and nothing traded away. | Active |

@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-156 of 158 NOTE documents. Back to the [full index](../README.md).
+158 of 160 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -166,3 +166,5 @@
 | [NOTE-156](../../../record/notes.d/NOTE-156.md) | Byzantine-Tolerant Machine Learning | Averaging is catastrophically fragile: a single Byzantine worker can steer the aggregate to any arbitrary vector. The fix is to replace aggregation with selection — choose the gradient vector that is most "centrally located" among its nearest correct neighbors, using the n-f-2 nearest neighbors to ensure the majority of those neighbors are correct workers. | Read |
 | [NOTE-157](../../../record/notes.d/NOTE-157.md) | SlowMo: Improving Communication-Efficient Distributed SGD with Slow Momentum | Adding a slow outer momentum step after every tau inner steps of local SGD or a decentralized optimizer consistently improves both optimization and generalization at negligible extra communication cost, because slow momentum corrects accumulated drift between workers at the outer level. | Read |
 | [NOTE-158](../../../record/notes.d/NOTE-158.md) | Broken Neural Scaling Laws | A single power law ε(t) = C_∞ + b·t^{-c} fails when the curve has two regimes (steep early, shallow late — or vice versa). | Read |
+| [NOTE-159](../../../record/notes.d/NOTE-159.md) | Accelerating Large Language Model Decoding with Speculative Sampling | The same construction as [NOTE-160](../../../record/notes.d/NOTE-160.md), reached independently two months later and demonstrated at 70B in a distributed setup. Its contribution to the record is corroboration plus two sharper statements: the guarantee holds "within hardware numerics" rather than absolutely, and the achieved tokens per second exceed the memory-bandwidth ceiling that bounds autoregressive decoding — which is the family's premise, measured rather than assumed. | Read |
+| [NOTE-160](../../../record/notes.d/NOTE-160.md) | Fast Inference from Transformers via Speculative Decoding | Autoregressive decoding is serial and memory-bandwidth-bound, so the arithmetic units sit idle while weights stream. Speculative decoding spends that idle compute: a cheap draft proposes `gamma` tokens, the target scores all `gamma + 1` positions in one parallel pass, and an accept-reject rule keeps a prefix. The rule is constructed so the output distribution is exactly the target's, which is what makes this a free speedup rather than a quality trade. | Read |

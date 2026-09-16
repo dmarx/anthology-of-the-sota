@@ -1,6 +1,9 @@
 ---
+number: 160
 status: Read
-paper: LIT-tmptlzmx
+formerly:
+- NOTE-tmpkm3sk
+paper: LIT-376
 title: 'Fast Inference from Transformers via Speculative Decoding'
 version: 1
 date: '2026-09-16'
@@ -18,7 +21,7 @@ summary: >-
      most of this record's decisions, and cited here as the rule under
      which R2 and R3 stay in the reading rather than becoming practices. -->
 
-# NOTE-tmpkm3sk: Fast Inference from Transformers via Speculative Decoding
+# NOTE-160: Fast Inference from Transformers via Speculative Decoding
 
 ## Contribution
 
@@ -138,7 +141,7 @@ distribution at position `gamma + 1`.
 ## Bearing on the record
 
 The practice the record was missing while holding two of its refinements.
-[SOTA-tmp6mgiw](../practices.d/SOTA-tmp6mgiw.md) is filed from this and [LIT-tmphbbt7](../literature.d/LIT-tmphbbt7.md); R2 and R3 stay here as
+[SOTA-227](../practices.d/SOTA-227.md) is filed from this and [LIT-375](../literature.d/LIT-375.md); R2 and R3 stay here as
 algorithm-local settings under [ADR-041](../decisions.d/ADR-041.md).
 
 ## Limitations

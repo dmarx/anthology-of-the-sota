@@ -1,11 +1,14 @@
 ---
+number: 159
 status: Read
-paper: LIT-tmphbbt7
+formerly:
+- NOTE-tmpbfbli
+paper: LIT-375
 title: 'Accelerating Large Language Model Decoding with Speculative Sampling'
 version: 1
 date: '2026-09-16'
 summary: >-
-  The same construction as [NOTE-tmpkm3sk](NOTE-tmpkm3sk.md), reached independently two months
+  The same construction as [NOTE-160](NOTE-160.md), reached independently two months
   later and demonstrated at 70B in a distributed setup. Its contribution to
   the record is corroboration plus two sharper statements: the guarantee holds
   "within hardware numerics" rather than absolutely, and the achieved tokens
@@ -13,7 +16,7 @@ summary: >-
   decoding — which is the family's premise, measured rather than assumed.
 ---
 
-# NOTE-tmpbfbli: Accelerating Large Language Model Decoding with Speculative Sampling
+# NOTE-159: Accelerating Large Language Model Decoding with Speculative Sampling
 
 ## Contribution
 
@@ -77,7 +80,7 @@ distribution and cheap enough to beat the drafting overhead.
 **Speculative Sampling (SpS).**
 
 Given target `q` and draft `p` — note the paper's naming is the reverse of
-[NOTE-tmpkm3sk](NOTE-tmpkm3sk.md)'s — draft `K` tokens, score all positions with the target in one
+[NOTE-160](NOTE-160.md)'s — draft `K` tokens, score all positions with the target in one
 call, then accept left to right under the modified rejection rule, resampling
 the first rejected position from the normalised positive part of the
 difference.
@@ -102,7 +105,7 @@ difference.
 
 **Related.**
 
-- [LIT-tmptlzmx](../literature.d/LIT-tmptlzmx.md) — the same algorithm, two months earlier, independently. The
+- [LIT-376](../literature.d/LIT-376.md) — the same algorithm, two months earlier, independently. The
   pair is why the record can file this as more than one group's result.
 - [LIT-185](../literature.d/LIT-185.md) (EAGLE-3) — a later draft architecture aimed at the low-cost end.
 
@@ -125,7 +128,7 @@ difference.
 
 ## Bearing on the record
 
-Corroborating source for [SOTA-tmp6mgiw](../practices.d/SOTA-tmp6mgiw.md). Two independent groups at two scales
+Corroborating source for [SOTA-227](../practices.d/SOTA-227.md). Two independent groups at two scales
 is what moves that practice past `unreplicated`, and this paper supplies the
 frontier-scale half.
 

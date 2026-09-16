@@ -6,7 +6,7 @@
 
 **Inference optimization** — serving-time decisions — batching, cache layout, quantization, compression, sparsity, distillation, sampling algorithms.
 
-7 of 226 SOTA documents. Back to the [full index](../README.md).
+8 of 227 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,3 +17,4 @@
 | [SOTA-115](../../../record/practices.d/SOTA-115.md) | Overlap prefill and decode compute | Agrawal et al. (2023), [LIT-103](../../../record/literature.d/LIT-103.md) — [ARXIV-2308.16369](https://arxiv.org/abs/2308.16369). | Active |
 | [SOTA-163](../../../record/practices.d/SOTA-163.md) | Quantize with block-scaled microscaling formats rather than one scale per tensor | Rouhani et al. (2023), [LIT-197](../../../record/literature.d/LIT-197.md) — an MX block is 32 elements sharing one E8M0 scale, so applying the scale is an exponent adjustment rather than a multiply. Shrinking the scope of the scale contains outliers locally instead of letting a few large values cost every small one its precision. 6-bit MX trains large transformers to FP32 accuracy with no recipe change. | Active |
 | [SOTA-185](../../../record/practices.d/SOTA-185.md) | Quantize weights after training by compensating each rounding error into the columns not yet quantized | Frantar et al. (2022), [LIT-081](../../../record/literature.d/LIT-081.md) — [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323). Round one column at a time and push the resulting error into the remaining columns using approximate second-order information, instead of rounding every weight independently to the nearest level. | Active |
+| [SOTA-227](../../../record/practices.d/SOTA-227.md) | Decode with a draft model and an accept-reject rule, which is exactly lossless | Autoregressive decoding runs one serial model pass per token and each pass is bounded by streaming the weights, so the arithmetic units idle. Have a cheap draft model guess the next `gamma` tokens, score all `gamma + 1` positions in one target pass, and keep a prefix under an accept-reject rule built so the output distribution is the target's exactly. 2x-3x at 11B and 2-2.5x at 70B, with no retraining, no architecture change and nothing traded away. | Active |

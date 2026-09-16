@@ -6,7 +6,7 @@
 
 **Inference optimization** — serving-time decisions — batching, cache layout, quantization, compression, sparsity, distillation, sampling algorithms.
 
-7 of 309 LIT documents. Back to the [full index](../README.md).
+9 of 311 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,3 +17,5 @@
 | [LIT-112](../../../record/literature.d/LIT-112.md) v2 | Efficient Memory Management for Large Language Model Serving with PagedAttention | Kwon et al. (2023), [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180). Introduces vLLM. | Active |
 | [LIT-185](../../../record/literature.d/LIT-185.md) v2 | EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test | Li et al. (2025), [ARXIV-2503.01840](https://arxiv.org/abs/2503.01840). Drop feature prediction for direct token prediction and fuse multi-layer features, so the draft model finally benefits from more training data: up to 6.5× speedup. | Active |
 | [LIT-224](../../../record/literature.d/LIT-224.md) | Orca: A Distributed Serving System for Transformer-Based Generative Models | Yu et al. (2022), OSDI '22. Introduces **iteration-level scheduling** — schedule at the granularity of one model iteration rather than one request — and **selective batching**. 36.9× throughput over FasterTransformer at equal latency on GPT-3 175B. The origin of what the field calls continuous batching. | Active |
+| [LIT-375](../../../record/literature.d/LIT-375.md) | Accelerating Large Language Model Decoding with Speculative Sampling | Chen et al. (2023), [ARXIV-2302.01318](https://arxiv.org/abs/2302.01318). The same algorithm as [LIT-376](../../../record/literature.d/LIT-376.md), arrived at independently two months later and demonstrated at a scale the first paper did not reach: Chinchilla, 70B, in a distributed setup, 2-2.5x decoding speedup with the target distribution preserved "within hardware numerics". Its sharpest observation is that the resulting tokens per second "often exceeds the idealised ceiling on auto-regressive sampling speed imposed by the memory bandwidth" — which is the premise of the whole family, measured. | Active |
+| [LIT-376](../../../record/literature.d/LIT-376.md) | Fast Inference from Transformers via Speculative Decoding | Leviathan et al. (2022), [ARXIV-2211.17192](https://arxiv.org/abs/2211.17192). Decoding is serial and memory-bandwidth-bound, so the arithmetic units are idle. Speculative decoding spends them: a cheap draft model guesses `gamma` tokens, the target model scores all `gamma + 1` positions in one parallel pass, and an accept-reject rule keeps a prefix of the guesses. The output distribution is exactly the target's — not approximately — and the serial count can never exceed plain autoregressive decoding. 2x-3x on T5-XXL with identical outputs. | Active |

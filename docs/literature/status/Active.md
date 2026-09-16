@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-293 of 309 LIT documents. Back to the [full index](../README.md).
+295 of 311 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -303,3 +303,5 @@
 | [LIT-372](../../../record/literature.d/LIT-372.md) | Moshpit SGD: Communication-Efficient Decentralized Training on Heterogeneous Unreliable Devices | Ryabinin et al. (2021), [ARXIV-2103.03239](https://arxiv.org/abs/2103.03239). Moshpit SGD: average over a random grid of small groups rather than by gossip, reaching exponentially fast averaging on unreliable heterogeneous workers. | Active |
 | [LIT-373](../../../record/literature.d/LIT-373.md) | SlowMo: Improving Communication-Efficient Distributed SGD with Slow Momentum | Wang et al. (2019), [ARXIV-1910.00643](https://arxiv.org/abs/1910.00643). SlowMo: wrap any local-update or decentralized base optimizer in an outer momentum step over the averaged iterates. | Active |
 | [LIT-374](../../../record/literature.d/LIT-374.md) | LAYUP: Asynchronous decentralized gradient descent with LAYer-wise UPdates | Fokam et al. (2024), [ARXIV-2410.05985](https://arxiv.org/abs/2410.05985). LAYUP: decouple the forward and backward passes into separate threads with layer-wise updates, so straggler devices stop setting the step time. | Active |
+| [LIT-375](../../../record/literature.d/LIT-375.md) | Accelerating Large Language Model Decoding with Speculative Sampling | Chen et al. (2023), [ARXIV-2302.01318](https://arxiv.org/abs/2302.01318). The same algorithm as [LIT-376](../../../record/literature.d/LIT-376.md), arrived at independently two months later and demonstrated at a scale the first paper did not reach: Chinchilla, 70B, in a distributed setup, 2-2.5x decoding speedup with the target distribution preserved "within hardware numerics". Its sharpest observation is that the resulting tokens per second "often exceeds the idealised ceiling on auto-regressive sampling speed imposed by the memory bandwidth" — which is the premise of the whole family, measured. | Active |
+| [LIT-376](../../../record/literature.d/LIT-376.md) | Fast Inference from Transformers via Speculative Decoding | Leviathan et al. (2022), [ARXIV-2211.17192](https://arxiv.org/abs/2211.17192). Decoding is serial and memory-bandwidth-bound, so the arithmetic units are idle. Speculative decoding spends them: a cheap draft model guesses `gamma` tokens, the target model scores all `gamma + 1` positions in one parallel pass, and an accept-reject rule keeps a prefix of the guesses. The output distribution is exactly the target's — not approximately — and the serial count can never exceed plain autoregressive decoding. 2x-3x on T5-XXL with identical outputs. | Active |

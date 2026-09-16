@@ -15,8 +15,8 @@ tags:
 # `flash-attention` removed. #101 added it to both this practice and its
 # counterpart to bind them under an invariant that then read `tags`, which
 # luria.yaml records as satisfying the check rather than answering it. With
-# inactive-ok: ADR-tmpoxkk7 — Proposed, and the decision that removes this tag
-# the invariant back on `tags` (ADR-tmpoxkk7) it would do that again, so it
+# inactive-ok: ADR-035 — Proposed, and the decision that removes this tag
+# the invariant back on `tags` (ADR-035) it would do that again, so it
 # goes: the edge is real, it crosses a fault line in the vocabulary, and it
 # should keep showing up until someone answers it.
 - model-stability

@@ -53,7 +53,7 @@ summary: >-
 extends:
 - SOTA-169
 explained_by:
-- THEORY-tmp3jmjc
+- THEORY-011
 ---
 
 # SOTA-136: Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections)

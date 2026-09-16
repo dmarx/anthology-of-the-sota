@@ -29,8 +29,8 @@
 **[model-stability](tags/model-stability.md)** (8):
 [001](../../record/notes.d/NOTE-001.md) · [008](../../record/notes.d/NOTE-008.md) · [013](../../record/notes.d/NOTE-013.md) · [022](../../record/notes.d/NOTE-022.md) · [056](../../record/notes.d/NOTE-056.md) · [058](../../record/notes.d/NOTE-058.md) · [116](../../record/notes.d/NOTE-116.md) · [131](../../record/notes.d/NOTE-131.md)
 
-**[representation-and-encoding](tags/representation-and-encoding.md)** (3):
-[010](../../record/notes.d/NOTE-010.md) · [125](../../record/notes.d/NOTE-125.md) · [129](../../record/notes.d/NOTE-129.md)
+**[representation-and-encoding](tags/representation-and-encoding.md)** (4):
+[010](../../record/notes.d/NOTE-010.md) · [028](../../record/notes.d/NOTE-028.md) · [125](../../record/notes.d/NOTE-125.md) · [129](../../record/notes.d/NOTE-129.md)
 
 **[systems-optimization](tags/systems-optimization.md)** (1):
 [122](../../record/notes.d/NOTE-122.md)

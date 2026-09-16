@@ -40,11 +40,11 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `contested_by` — required when `consensus` is `contested`, one or more `LIT` codes when present (luria.yaml: schemes.SOTA.references.contested_by)
 - `consensus` — one of `unassessed`, `unreplicated`, `contested`, `emerging`, `converged`, `universal`; absent means `unassessed` (luria.yaml: schemes.SOTA.fields.consensus; vocabulary 'consensus': values)
 - `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.yaml: schemes.SOTA.fields.status; vocabulary 'sota-statuses': values)
-- `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics` (luria.yaml: schemes.SOTA.fields.tags; vocabulary 'topics': values)
+- `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics`, `tiny-models` (luria.yaml: schemes.SOTA.fields.tags; vocabulary 'topics': values)
 - `promote_when` — required when `status` is `Proposed`, `Deferred` (luria.yaml: schemes.SOTA.fields.promote_when)
 - `primary_topic` — derived — `{tags[0]}`, never written (luria.yaml: schemes.SOTA.fields.primary_topic)
 - `published` — derived — `{published}` from `source[0]`, never written (luria.yaml: schemes.SOTA.fields.published)
-- `primary_topic` — exactly one of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.yaml: schemes.SOTA.fields.tags.groups.primary_topic)
+- `primary_topic` — any of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.yaml: schemes.SOTA.fields.tags.groups.primary_topic)
 
 **`THEORY`**
 
@@ -55,11 +55,11 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `corrects` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.corrects)
 - `corrected_by` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.corrected_by)
 - `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Rejected`, `Superseded` (luria.yaml: schemes.THEORY.fields.status; vocabulary 'theory-statuses': values)
-- `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics` (luria.yaml: schemes.THEORY.fields.tags; vocabulary 'topics': values)
+- `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics`, `tiny-models` (luria.yaml: schemes.THEORY.fields.tags; vocabulary 'topics': values)
 - `promote_when` — required when `status` is `Proposed`, `Deferred` (luria.yaml: schemes.THEORY.fields.promote_when)
 - `primary_topic` — derived — `{tags[0]}`, never written (luria.yaml: schemes.THEORY.fields.primary_topic)
 - `published` — derived — `{published}` from `source[0]`, never written (luria.yaml: schemes.THEORY.fields.published)
-- `primary_topic` — exactly one of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.yaml: schemes.THEORY.fields.tags.groups.primary_topic)
+- `primary_topic` — any of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.yaml: schemes.THEORY.fields.tags.groups.primary_topic)
 
 **`LIT`**
 
@@ -69,11 +69,11 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `corrects` — optional, one or more `LIT` codes when present (luria.yaml: schemes.LIT.references.corrects)
 - `corrected_by` — optional, one or more `LIT` codes when present (luria.yaml: schemes.LIT.references.corrected_by)
 - `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.yaml: schemes.LIT.fields.status; vocabulary 'lit-statuses': values)
-- `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics` (luria.yaml: schemes.LIT.fields.tags; vocabulary 'topics': values)
+- `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics`, `tiny-models` (luria.yaml: schemes.LIT.fields.tags; vocabulary 'topics': values)
 - `published` — required (luria.yaml: schemes.LIT.fields.published)
 - `primary_topic` — derived — `{tags[0]}`, never written (luria.yaml: schemes.LIT.fields.primary_topic)
 - `source` — at least one of `arxiv`, `doi`, `url` (luria.yaml: schemes.LIT.field_groups.source)
-- `primary_topic` — exactly one of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.yaml: schemes.LIT.fields.tags.groups.primary_topic)
+- `primary_topic` — any of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.yaml: schemes.LIT.fields.tags.groups.primary_topic)
 
 **`NOTE`**
 
@@ -82,7 +82,7 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `published` — derived — `{published}` from `paper`, never written (luria.yaml: schemes.NOTE.fields.published)
 - `primary_topic` — derived — `{tags[0]}`, never written (luria.yaml: schemes.NOTE.fields.primary_topic)
 - `tags` — required (luria.yaml: schemes.NOTE.fields.tags)
-- `primary_topic` — exactly one of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.yaml: schemes.NOTE.fields.tags.groups.primary_topic)
+- `primary_topic` — any of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.yaml: schemes.NOTE.fields.tags.groups.primary_topic)
 
 **`ADR`**
 
@@ -151,7 +151,7 @@ Everything not listed here is at Luria's default.
 | `lint.mute` | `inert-status`, `acknowledged-uniformity` | *empty* |
 | `lint.narrow_terms` | `adam`, `adamw`, `batchnorm`, `layernorm`, `transformer`, `llama2`, `flash-attention`, `arxiv`, `registry` | *empty* |
 | `site.icon` | `assets/logo.svg` | *empty* |
-| `vocabularies.topics` | *13 keys set* | *unset* |
+| `vocabularies.topics` | *14 keys set* | *unset* |
 | `vocabularies.sota-statuses` | *5 keys set* | *unset* |
 | `vocabularies.lit-statuses` | *5 keys set* | *unset* |
 | `vocabularies.note-statuses` | *4 keys set* | *unset* |

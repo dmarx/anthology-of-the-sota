@@ -4,7 +4,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-27 of 220 SOTA documents. Back to the [full index](../README.md).
+24 of 220 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -16,9 +16,6 @@
 | [SOTA-039](../../../record/practices.d/SOTA-039.md) | single cycle of cosine decay is sufficient lr schedule | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Superseded — by [SOTA-140](../../../record/practices.d/SOTA-140.md); warmup-stable-decay matches it and leaves the token budget open; every report since 2024 in the record uses a stable-then-decay schedule |
 | [SOTA-061](../../../record/practices.d/SOTA-061.md) | Use largest batch that maintains >80% sample efficiency | Fedus et al. (2021), [LIT-061](../../../record/literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684). | Active |
 | [SOTA-062](../../../record/practices.d/SOTA-062.md) | Scale batch size with model size but sub-linearly | Fedus et al. (2021), [LIT-061](../../../record/literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684). | Active |
-| [SOTA-092](../../../record/practices.d/SOTA-092.md) | smaller batch sizes are more sample efficient (i.e., better loss as a function of tokens seen) earlier in training | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
-| [SOTA-093](../../../record/practices.d/SOTA-093.md) | larger batch sizes are beneficial later in training due to better gradient estimates | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
-| [SOTA-094](../../../record/practices.d/SOTA-094.md) | throughput (energy efficiency) wins out over theoretically optimal sample efficiency | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
 | [SOTA-095](../../../record/practices.d/SOTA-095.md) | consider rewinding to earlier checkpoint and skipping a few batches to mitigate unusual loss spikes | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
 | [SOTA-125](../../../record/practices.d/SOTA-125.md) v3 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. 24–27 layers × 512 hidden and a large SSM state dimension won every ablation at 90M; 50 layers gained MMLU but halved throughput. | Proposed |
 | [SOTA-133](../../../record/practices.d/SOTA-133.md) | Replace fixed residual accumulation with learned attention over preceding layers | Kimi Team (2026), [LIT-134](../../../record/literature.d/LIT-134.md) — Attention Residuals: a per-layer pseudo-query chooses which earlier layers to read, at O(d) parameters per layer; 1.25× compute advantage on scaling laws at 48B/1.4T, adopted in Kimi K3. | Active |

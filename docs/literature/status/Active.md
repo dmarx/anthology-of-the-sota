@@ -4,7 +4,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-293 of 376 LIT documents. Back to the [full index](../README.md).
+293 of 309 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

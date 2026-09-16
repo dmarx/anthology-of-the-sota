@@ -69,8 +69,8 @@ work perfectly well.
   derives `{tags[0]}`, so tag order is what the indexes read. Add a second
   topic when it is genuinely true, and never to bind a relation — the chain
   invariant reads the whole tag list now, so an incidental tag will bind an
-<!-- inactive-ok: ADR-tmpoxkk7 — Proposed, and the decision this rule states -->
-  edge that should have stayed open (`ADR-tmpoxkk7`).
+<!-- inactive-ok: ADR-035 — Proposed, and the decision this rule states -->
+  edge that should have stayed open (`ADR-035`).
 - **The tag vocabulary is closed, and that is an invitation.** A tag not in
   `topics` fails the lint on `SOTA`, `LIT` and `THEORY`. That is there so
   every tag is one somebody chose and blurbed — **not** because the list is

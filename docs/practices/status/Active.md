@@ -4,7 +4,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-154 of 220 SOTA documents. Back to the [full index](../README.md).
+153 of 220 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,7 +17,6 @@
 | [SOTA-007](../../../record/practices.d/SOTA-007.md) | BPE tokenization for open vocabulary tasks | Sennrich et al. (2015), [LIT-003](../../../record/literature.d/LIT-003.md) — [ARXIV-1508.07909](https://arxiv.org/abs/1508.07909). | Active |
 | [SOTA-008](../../../record/practices.d/SOTA-008.md) v2 | linear warmup of LR stabilizes early training with large batch size. | You et al. (2017), [LIT-009](../../../record/literature.d/LIT-009.md) — [ARXIV-1708.03888](https://arxiv.org/abs/1708.03888). | Active |
 | [SOTA-009](../../../record/practices.d/SOTA-009.md) | warmup to a large early lr, anneal throughout training to small final lr | Smith et al. (2017), [LIT-010](../../../record/literature.d/LIT-010.md) — [ARXIV-1708.07120](https://arxiv.org/abs/1708.07120). | Active |
-| [SOTA-010](../../../record/practices.d/SOTA-010.md) | skip connections promote training stability by smoothing out the loss landscape | Li et al. (2017), [LIT-014](../../../record/literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). | Active |
 | [SOTA-011](../../../record/practices.d/SOTA-011.md) v2 | Map the Hessian ratio \|lambda_min / lambda_max\| to find where the loss surface is non-convex | Li et al. (2017), [LIT-014](../../../record/literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). | Active |
 | [SOTA-012](../../../record/practices.d/SOTA-012.md) v2 | sharpness in the loss landscape correlates with test error | Li et al. (2017), [LIT-014](../../../record/literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). | Active |
 | [SOTA-013](../../../record/practices.d/SOTA-013.md) | Use dynamic loss scaling that doubles every 2000 successful steps | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |

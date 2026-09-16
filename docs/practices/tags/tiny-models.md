@@ -2,7 +2,7 @@
 
 # SOTAs with `tags` `tiny-models`
 
-**tiny-models**.
+**Tiny models** — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
 8 of 220 SOTA documents. Back to the [full index](../README.md).
 

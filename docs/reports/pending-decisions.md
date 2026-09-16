@@ -5,16 +5,16 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**121 document(s) awaiting a decision.**
+**57 document(s) awaiting a decision.**
 
 ## SOTAs
 
-40 of the 121.
+40 of the 57.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 23 | 2 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
-| 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 17 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
+| 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 19 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
 | 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 14 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
 | 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 13 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 9 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
@@ -34,9 +34,9 @@
 | 2026-09-08 | Proposed | [SOTA-178](../../record/practices.d/SOTA-178.md) | 5 | 0 | Give the recurrence vector-valued gating and in-context learning rates so it can track state a softmax layer provably cannot |
 | 2026-09-08 | Proposed | [SOTA-177](../../record/practices.d/SOTA-177.md) | 4 | 0 | Decouple the erase address from the write address in a delta-rule recurrence |
 | 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 3 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
+| 2026-09-08 | Proposed | [SOTA-169](../../record/practices.d/SOTA-169.md) | 3 | 0 | Widen the residual stream into several streams and constrain the mixing between them |
 | 2026-09-08 | Proposed | [SOTA-168](../../record/practices.d/SOTA-168.md) | 2 | 0 | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself |
 | 2026-09-08 | Proposed | [SOTA-179](../../record/practices.d/SOTA-179.md) | 2 | 0 | Truncate the rotary encoding's low frequencies rather than rescaling its base |
-| 2026-09-08 | Proposed | [SOTA-169](../../record/practices.d/SOTA-169.md) | 1 | 0 | Widen the residual stream into several streams and constrain the mixing between them |
 | 2026-09-08 | Proposed | [SOTA-172](../../record/practices.d/SOTA-172.md) | 1 | 0 | Build synthetic pretraining data by editing human text at the token level, not by generating from scratch |
 | 2026-09-08 | Proposed | [SOTA-173](../../record/practices.d/SOTA-173.md) | 1 | 0 | Augment the objective to make multi-epoch pretraining productive on a fixed corpus |
 | 2026-09-08 | Proposed | [SOTA-175](../../record/practices.d/SOTA-175.md) | 0 | 0 | Mask whole syntactic units for code fill-in-the-middle, not random character spans |
@@ -56,7 +56,7 @@
 
 ## THEORYs
 
-5 of the 121.
+5 of the 57.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -68,96 +68,32 @@
 
 ## LITs
 
-70 of the 121.
+3 of the 57.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-08-24 | Proposed | [LIT-101](../../record/literature.d/LIT-101.md) | 3 | 0 | AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs |
 | 2026-08-24 | Proposed | [LIT-104](../../record/literature.d/LIT-104.md) | 2 | 0 | ReLoRA: High-Rank Training Through Low-Rank Updates |
 | 2026-09-15 | Deferred | [LIT-364](../../record/literature.d/LIT-364.md) | 2 | 0 | Classifying high-dimensional Gaussian mixtures: Where kernel methods fail and neural networks succeed |
-| 2026-09-15 | Deferred | [LIT-243](../../record/literature.d/LIT-243.md) | 0 | 0 | Towards Crowdsourced Training of Large Neural Networks using Decentralized Mixture-of-Experts |
-| 2026-09-15 | Deferred | [LIT-244](../../record/literature.d/LIT-244.md) | 0 | 0 | Deep learning with Elastic Averaging SGD |
-| 2026-09-15 | Deferred | [LIT-247](../../record/literature.d/LIT-247.md) | 0 | 0 | Proving the Limited Scalability of Centralized Distributed Optimization via a New Lower Bound Construction |
-| 2026-09-15 | Deferred | [LIT-249](../../record/literature.d/LIT-249.md) | 0 | 0 | Can Decentralized Algorithms Outperform Centralized Algorithms? A Case Study for Decentralized Parallel Stochastic Gradient Descent |
-| 2026-09-15 | Deferred | [LIT-250](../../record/literature.d/LIT-250.md) | 0 | 0 | Distributed Deep Learning in Open Collaborations |
-| 2026-09-15 | Deferred | [LIT-253](../../record/literature.d/LIT-253.md) | 0 | 0 | Topics in propagation of chaos |
-| 2026-09-15 | Deferred | [LIT-255](../../record/literature.d/LIT-255.md) | 0 | 0 | Neural Tangent Kernel: Convergence and Generalization in Neural Networks |
-| 2026-09-15 | Deferred | [LIT-256](../../record/literature.d/LIT-256.md) | 0 | 0 | Async-HFL: Efficient and Robust Asynchronous Federated Learning in Hierarchical IoT Networks |
-| 2026-09-15 | Deferred | [LIT-258](../../record/literature.d/LIT-258.md) | 0 | 0 | Dynamics of stochastic gradient descent for two-layer neural networks in the teacher-student setup |
-| 2026-09-15 | Deferred | [LIT-259](../../record/literature.d/LIT-259.md) | 0 | 0 | Distributed asynchronous deterministic and stochastic gradient optimization algorithms |
-| 2026-09-15 | Deferred | [LIT-260](../../record/literature.d/LIT-260.md) | 0 | 0 | Don't Use Large Mini-Batches, Use Local SGD |
-| 2026-09-15 | Deferred | [LIT-263](../../record/literature.d/LIT-263.md) | 0 | 0 | HOGWILD!: A Lock-Free Approach to Parallelizing Stochastic Gradient Descent |
-| 2026-09-15 | Deferred | [LIT-264](../../record/literature.d/LIT-264.md) | 0 | 0 | Smoothing DiLoCo with Primal Averaging for Faster Training of LLMs |
-| 2026-09-15 | Deferred | [LIT-266](../../record/literature.d/LIT-266.md) | 0 | 0 | 'Neural-gas' network for vector quantization and its application to time-series prediction |
-| 2026-09-15 | Deferred | [LIT-268](../../record/literature.d/LIT-268.md) | 0 | 0 | Local SGD Converges Fast and Communicates Little |
-| 2026-09-15 | Deferred | [LIT-269](../../record/literature.d/LIT-269.md) | 0 | 0 | Exact Solution for On-Line Learning in Multilayer Neural Networks |
-| 2026-09-15 | Deferred | [LIT-270](../../record/literature.d/LIT-270.md) | 0 | 0 | Coordination of groups of mobile autonomous agents using nearest neighbor rules |
-| 2026-09-15 | Deferred | [LIT-272](../../record/literature.d/LIT-272.md) | 0 | 0 | ZeRO-Infinity: Breaking the GPU Memory Wall for Extreme Scale Deep Learning |
-| 2026-09-15 | Deferred | [LIT-274](../../record/literature.d/LIT-274.md) | 0 | 0 | Reconciling modern machine learning practice and the bias-variance trade-off |
-| 2026-09-15 | Deferred | [LIT-277](../../record/literature.d/LIT-277.md) | 0 | 0 | Consensus Based Sampling |
-| 2026-09-15 | Deferred | [LIT-281](../../record/literature.d/LIT-281.md) | 0 | 0 | Epidemic Learning: Boosting Decentralized Learning with Randomized Communication |
-| 2026-09-15 | Deferred | [LIT-283](../../record/literature.d/LIT-283.md) | 0 | 0 | Emergent Behavior in Flocks |
-| 2026-09-15 | Deferred | [LIT-284](../../record/literature.d/LIT-284.md) | 0 | 0 | Stochastic Gradient Push for Distributed Deep Learning |
-| 2026-09-15 | Deferred | [LIT-287](../../record/literature.d/LIT-287.md) | 0 | 0 | OpenDiLoCo: An Open-Source Framework for Globally Distributed Low-Communication Training |
-| 2026-09-15 | Deferred | [LIT-289](../../record/literature.d/LIT-289.md) | 0 | 0 | A Bayesian Perspective on Generalization and Stochastic Gradient Descent |
-| 2026-09-15 | Deferred | [LIT-290](../../record/literature.d/LIT-290.md) | 0 | 0 | Consensus Problems in Networks of Agents With Switching Topology and Time-Delays |
-| 2026-09-15 | Deferred | [LIT-291](../../record/literature.d/LIT-291.md) | 0 | 0 | Trainability and Accuracy of Neural Networks: An Interacting Particle System Approach |
-| 2026-09-15 | Deferred | [LIT-294](../../record/literature.d/LIT-294.md) | 0 | 0 | On-line learning in soft committee machines |
-| 2026-09-15 | Deferred | [LIT-295](../../record/literature.d/LIT-295.md) | 0 | 0 | Asynchronous Stochastic Gradient Descent with Delay Compensation |
-| 2026-09-15 | Deferred | [LIT-299](../../record/literature.d/LIT-299.md) | 0 | 0 | Convex Analysis of the Mean Field Langevin Dynamics |
-| 2026-09-15 | Deferred | [LIT-300](../../record/literature.d/LIT-300.md) | 0 | 0 | Byzantine-Tolerant Machine Learning |
-| 2026-09-15 | Deferred | [LIT-306](../../record/literature.d/LIT-306.md) | 0 | 0 | Phase transitions, logarithmic Sobolev inequalities, and uniform-in-time propagation of chaos for weakly interacting diffusions |
-| 2026-09-15 | Deferred | [LIT-308](../../record/literature.d/LIT-308.md) | 0 | 0 | The Role of Permutation Invariance in Linear Mode Connectivity of Neural Networks |
-| 2026-09-15 | Deferred | [LIT-309](../../record/literature.d/LIT-309.md) | 0 | 0 | Large Batch Optimization for Deep Learning: Training BERT in 76 minutes |
-| 2026-09-15 | Deferred | [LIT-313](../../record/literature.d/LIT-313.md) | 0 | 0 | The Variational Formulation of the Fokker-Planck Equation |
-| 2026-09-15 | Deferred | [LIT-317](../../record/literature.d/LIT-317.md) | 0 | 0 | PowerSGD: Practical Low-Rank Gradient Compression for Distributed Optimization |
-| 2026-09-15 | Deferred | [LIT-318](../../record/literature.d/LIT-318.md) | 0 | 0 | Achieving Tighter Finite-Time Rates for Heterogeneous Federated Stochastic Approximation under Markovian Sampling |
-| 2026-09-15 | Deferred | [LIT-319](../../record/literature.d/LIT-319.md) | 0 | 0 | Generalized EXTRA stochastic gradient Langevin dynamics |
-| 2026-09-15 | Deferred | [LIT-320](../../record/literature.d/LIT-320.md) | 0 | 0 | On the Global Convergence of Gradient Descent for Over-parameterized Models using Optimal Transport |
-| 2026-09-15 | Deferred | [LIT-321](../../record/literature.d/LIT-321.md) | 0 | 0 | Overlap Local-SGD: An Algorithmic Approach to Hide Communication Delays in Distributed SGD |
-| 2026-09-15 | Deferred | [LIT-322](../../record/literature.d/LIT-322.md) | 0 | 0 | A Mean Field View of the Landscape of Two-Layers Neural Networks |
-| 2026-09-15 | Deferred | [LIT-327](../../record/literature.d/LIT-327.md) | 0 | 0 | A Growing Neural Gas Network Learns Topologies |
-| 2026-09-15 | Deferred | [LIT-329](../../record/literature.d/LIT-329.md) | 0 | 0 | Products of indecomposable, aperiodic, stochastic matrices |
-| 2026-09-15 | Deferred | [LIT-330](../../record/literature.d/LIT-330.md) | 0 | 0 | Cooperative SGD: A unified Framework for the Design and Analysis of Communication-Efficient SGD Algorithms |
-| 2026-09-15 | Deferred | [LIT-331](../../record/literature.d/LIT-331.md) | 0 | 0 | Spectrum Dependent Learning Curves in Kernel Regression and Wide Neural Networks |
-| 2026-09-15 | Deferred | [LIT-332](../../record/literature.d/LIT-332.md) | 0 | 0 | Asynchronous Local Computations in Distributed Bayesian Learning |
-| 2026-09-15 | Deferred | [LIT-334](../../record/literature.d/LIT-334.md) | 0 | 0 | Broken Neural Scaling Laws |
-| 2026-09-15 | Deferred | [LIT-335](../../record/literature.d/LIT-335.md) | 0 | 0 | Distributed Optimization with Gradient Tracking over Heterogeneous Delay-Prone Directed Networks |
-| 2026-09-15 | Deferred | [LIT-338](../../record/literature.d/LIT-338.md) | 0 | 0 | The mean field analysis of the Kuramoto model on graphs II. Asymptotic stability of the incoherent state, center manifold reduction, and bifurcations |
-| 2026-09-15 | Deferred | [LIT-339](../../record/literature.d/LIT-339.md) | 0 | 0 | signSGD: Compressed Optimisation for Non-Convex Problems |
-| 2026-09-15 | Deferred | [LIT-342](../../record/literature.d/LIT-342.md) | 0 | 0 | Git Re-Basin: Merging Models modulo Permutation Symmetries |
-| 2026-09-15 | Deferred | [LIT-343](../../record/literature.d/LIT-343.md) | 0 | 0 | An effective theory of collective deep learning |
-| 2026-09-15 | Deferred | [LIT-347](../../record/literature.d/LIT-347.md) | 0 | 0 | LAYUP: Asynchronous decentralized gradient descent with LAYer-wise UPdates |
-| 2026-09-15 | Deferred | [LIT-348](../../record/literature.d/LIT-348.md) | 0 | 0 | Communication-Efficient Learning of Deep Networks from Decentralized Data |
-| 2026-09-15 | Deferred | [LIT-349](../../record/literature.d/LIT-349.md) | 0 | 0 | SlowMo: Improving Communication-Efficient Distributed SGD with Slow Momentum |
-| 2026-09-15 | Deferred | [LIT-351](../../record/literature.d/LIT-351.md) | 0 | 0 | SWARM Parallelism: Training Large Models Can Be Surprisingly Communication-Efficient |
-| 2026-09-15 | Deferred | [LIT-352](../../record/literature.d/LIT-352.md) | 0 | 0 | The Kuramoto model: A simple paradigm for synchronization phenomena |
-| 2026-09-15 | Deferred | [LIT-355](../../record/literature.d/LIT-355.md) | 0 | 0 | Moshpit SGD: Communication-Efficient Decentralized Training on Heterogeneous Unreliable Devices |
-| 2026-09-15 | Deferred | [LIT-356](../../record/literature.d/LIT-356.md) | 0 | 0 | 1-bit Adam: Communication Efficient Large-Scale Training with Adam's Convergence Speed |
-| 2026-09-15 | Deferred | [LIT-357](../../record/literature.d/LIT-357.md) | 0 | 0 | Emergence of stochastic flocking for the discrete Cucker-Smale model with randomly switching topologies |
-| 2026-09-15 | Deferred | [LIT-358](../../record/literature.d/LIT-358.md) | 0 | 0 | Subspace Networks: Scaling Decentralized Training with Communication-Efficient Model Parallelism |
-| 2026-09-15 | Deferred | [LIT-359](../../record/literature.d/LIT-359.md) | 0 | 0 | A Necessary and Sufficient Condition for Consensus Over Random Networks |
-| 2026-09-15 | Deferred | [LIT-368](../../record/literature.d/LIT-368.md) | 0 | 0 | Bayesian Learning via Stochastic Gradient Langevin Dynamics |
-| 2026-09-15 | Deferred | [LIT-369](../../record/literature.d/LIT-369.md) | 0 | 0 | Classifying high-dimensional Gaussian mixtures: Where kernel methods fail and neural networks succeed |
-| 2026-09-15 | Deferred | [LIT-371](../../record/literature.d/LIT-371.md) | 0 | 0 | The mean field analysis for the Kuramoto model on graphs I. The mean field equation and transition point formulas |
-| 2026-09-15 | Deferred | [LIT-375](../../record/literature.d/LIT-375.md) | 0 | 0 | Byzantine-Robust Distributed Learning: Towards Optimal Statistical Rates |
-| 2026-09-15 | Deferred | [LIT-376](../../record/literature.d/LIT-376.md) | 0 | 0 | Mean Field Analysis of Neural Networks: A Law of Large Numbers |
 
 ## ADRs
 
-6 of the 121.
+9 of the 57.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 2 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-09 | Proposed | [ADR-024](../../record/decisions.d/ADR-024.md) | 6 | 0 | The topic vocabulary has four recurring seams — options, not a decision |
 | 2026-09-14 | Proposed | [ADR-028](../../record/decisions.d/ADR-028.md) | 1 | 1 | One topic vocabulary, one set of glosses: the blurbs are shared too |
+| 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 11 | 0 | A scheme for explanations, complementing the practice registry |
+| 2026-09-15 | Proposed | [ADR-034](../../record/decisions.d/ADR-034.md) | 7 | 0 | A document that changes scheme is Superseded where it leaves, and names its successor across the boundary |
 | 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 4 | 1 | Every practice states its origin, even when it is the primary source |
-| 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 1 | 0 | A scheme for explanations, complementing the practice registry |
 | 2026-09-15 | Proposed | [ADR-033](../../record/decisions.d/ADR-033.md) | 0 | 0 | Readings made in another context port into the record; their agenda does not |
+| 2026-09-15 | Proposed | [ADR-036](../../record/decisions.d/ADR-036.md) | 0 | 0 | An unbound relation is one of four things, and only one of them is a retag |
+| 2026-09-16 | Proposed | [ADR-035](../../record/decisions.d/ADR-035.md) | 15 | 0 | A document may carry more than one topic; the first is the primary |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (73): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [LIT-243](../../record/literature.d/LIT-243.md), [LIT-244](../../record/literature.d/LIT-244.md), [LIT-247](../../record/literature.d/LIT-247.md), [LIT-249](../../record/literature.d/LIT-249.md), [LIT-250](../../record/literature.d/LIT-250.md), [LIT-253](../../record/literature.d/LIT-253.md), [LIT-255](../../record/literature.d/LIT-255.md), [LIT-256](../../record/literature.d/LIT-256.md), [LIT-258](../../record/literature.d/LIT-258.md), [LIT-259](../../record/literature.d/LIT-259.md), [LIT-260](../../record/literature.d/LIT-260.md), [LIT-263](../../record/literature.d/LIT-263.md), [LIT-264](../../record/literature.d/LIT-264.md), [LIT-266](../../record/literature.d/LIT-266.md), [LIT-268](../../record/literature.d/LIT-268.md), [LIT-269](../../record/literature.d/LIT-269.md), [LIT-270](../../record/literature.d/LIT-270.md), [LIT-272](../../record/literature.d/LIT-272.md), [LIT-274](../../record/literature.d/LIT-274.md), [LIT-277](../../record/literature.d/LIT-277.md), [LIT-281](../../record/literature.d/LIT-281.md), [LIT-283](../../record/literature.d/LIT-283.md), [LIT-284](../../record/literature.d/LIT-284.md), [LIT-287](../../record/literature.d/LIT-287.md), [LIT-289](../../record/literature.d/LIT-289.md), [LIT-290](../../record/literature.d/LIT-290.md), [LIT-291](../../record/literature.d/LIT-291.md), [LIT-294](../../record/literature.d/LIT-294.md), [LIT-295](../../record/literature.d/LIT-295.md), [LIT-299](../../record/literature.d/LIT-299.md), [LIT-300](../../record/literature.d/LIT-300.md), [LIT-306](../../record/literature.d/LIT-306.md), [LIT-308](../../record/literature.d/LIT-308.md), [LIT-309](../../record/literature.d/LIT-309.md), [LIT-313](../../record/literature.d/LIT-313.md), [LIT-317](../../record/literature.d/LIT-317.md), [LIT-318](../../record/literature.d/LIT-318.md), [LIT-319](../../record/literature.d/LIT-319.md), [LIT-320](../../record/literature.d/LIT-320.md), [LIT-321](../../record/literature.d/LIT-321.md), [LIT-322](../../record/literature.d/LIT-322.md), [LIT-327](../../record/literature.d/LIT-327.md), [LIT-329](../../record/literature.d/LIT-329.md), [LIT-330](../../record/literature.d/LIT-330.md), [LIT-331](../../record/literature.d/LIT-331.md), [LIT-332](../../record/literature.d/LIT-332.md), [LIT-334](../../record/literature.d/LIT-334.md), [LIT-335](../../record/literature.d/LIT-335.md), [LIT-338](../../record/literature.d/LIT-338.md), [LIT-339](../../record/literature.d/LIT-339.md), [LIT-342](../../record/literature.d/LIT-342.md), [LIT-343](../../record/literature.d/LIT-343.md), [LIT-347](../../record/literature.d/LIT-347.md), [LIT-348](../../record/literature.d/LIT-348.md), [LIT-349](../../record/literature.d/LIT-349.md), [LIT-351](../../record/literature.d/LIT-351.md), [LIT-352](../../record/literature.d/LIT-352.md), [LIT-355](../../record/literature.d/LIT-355.md), [LIT-356](../../record/literature.d/LIT-356.md), [LIT-357](../../record/literature.d/LIT-357.md), [LIT-358](../../record/literature.d/LIT-358.md), [LIT-359](../../record/literature.d/LIT-359.md), [LIT-368](../../record/literature.d/LIT-368.md), [LIT-369](../../record/literature.d/LIT-369.md), [LIT-371](../../record/literature.d/LIT-371.md), [LIT-375](../../record/literature.d/LIT-375.md), [LIT-376](../../record/literature.d/LIT-376.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-216](../../record/practices.d/SOTA-216.md), [SOTA-220](../../record/practices.d/SOTA-220.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (7): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [ADR-036](../../record/decisions.d/ADR-036.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-216](../../record/practices.d/SOTA-216.md), [SOTA-220](../../record/practices.d/SOTA-220.md) — these are the cheapest to close, since nothing depends on the answer.

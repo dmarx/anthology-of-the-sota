@@ -37,7 +37,7 @@ summary: >-
   input to each sublayer rather than the sum after it, so the gradients near
   the output are well behaved at initialization.
 explained_by:
-- THEORY-tmp3jmjc
+- THEORY-011
 ---
 
 # SOTA-032: Put the layer normalization inside the residual block, before the sublayer

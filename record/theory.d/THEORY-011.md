@@ -1,5 +1,8 @@
 ---
+number: 11
 status: Active
+formerly:
+- THEORY-tmp3jmjc
 title: 'Skip connections make a deep network trainable by smoothing the loss surface, not by making it more expressive'
 version: 1
 tags:
@@ -24,7 +27,7 @@ summary: >-
   them.
 ---
 
-# THEORY-tmp3jmjc: Skip connections make a deep network trainable by smoothing the loss surface, not by making it more expressive
+# THEORY-011: Skip connections make a deep network trainable by smoothing the loss surface, not by making it more expressive
 
 ## The claim
 

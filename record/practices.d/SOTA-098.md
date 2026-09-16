@@ -8,8 +8,8 @@ tags:
 # stability check; SOTA-069, the practice it is compared against, says the
 # same thing about a different statistic and already carries this topic.
 - model-stability
-# inactive-ok: ADR-tmpoxkk7 — Proposed, and what permits this tag
-# Secondary, restored: `training-optimization` names training dynamics, which is what is being watched (ADR-tmpoxkk7).
+# inactive-ok: ADR-035 — Proposed, and what permits this tag
+# Secondary, restored: `training-optimization` names training dynamics, which is what is being watched (ADR-035).
 - training-optimization
 date: '2026-08-24'
 source:

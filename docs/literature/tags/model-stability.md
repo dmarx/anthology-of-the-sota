@@ -4,7 +4,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-22 of 376 LIT documents. Back to the [full index](../README.md).
+20 of 309 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -27,6 +27,4 @@
 | [LIT-200](../../../record/literature.d/LIT-200.md) | PowLU: An Activation Function for Stable Pre-Training of LLMs | Jiang et al. (2026), [ARXIV-2605.25704](https://arxiv.org/abs/2605.25704). For large positive inputs SwiGLU approximates x², and that quadratic amplification is what enlarges the output range and produces outliers, particularly in low-precision training. PowLU replaces it with a rational power function giving adaptive nonlinearity and bounded growth. Scaling-law experiments plus 7.9B and 124B Ling models against both SwiGLU and SwiGLU-Clip. | Active |
 | [LIT-223](../../../record/literature.d/LIT-223.md) v2 | How Does Batch Normalization Help Optimization? | Santurkar et al. (2018), [ARXIV-1805.11604](https://arxiv.org/abs/1805.11604). "Distributional stability of layer inputs has little to do with the success of BatchNorm" — what it does instead is make the optimization landscape significantly smoother. | Active |
 | [LIT-251](../../../record/literature.d/LIT-251.md) | The Role of Permutation Invariance in Linear Mode Connectivity of Neural Networks | Entezari et al. (2021), [ARXIV-2110.06296](https://arxiv.org/abs/2110.06296). Most of the loss barrier between two independently trained networks is permutation, not genuine disagreement: account for the hidden-unit symmetry and the barrier largely disappears. | Active |
-| [LIT-308](../../../record/literature.d/LIT-308.md) | The Role of Permutation Invariance in Linear Mode Connectivity of Neural Networks | Entezari et al. (2021), [ARXIV-2110.06296](https://arxiv.org/abs/2110.06296). Most of the loss barrier between two independently trained networks is permutation, not genuine disagreement: account for the hidden-unit symmetry and the barrier largely disappears. | Deferred |
 | [LIT-333](../../../record/literature.d/LIT-333.md) | Git Re-Basin: Merging Models modulo Permutation Symmetries | Ainsworth et al. (2022), [ARXIV-2209.04836](https://arxiv.org/abs/2209.04836). Git Re-Basin: three algorithms for finding the permutation that aligns one trained network to another, after which their linear interpolation has no loss barrier. | Active |
-| [LIT-342](../../../record/literature.d/LIT-342.md) | Git Re-Basin: Merging Models modulo Permutation Symmetries | Ainsworth et al. (2022), [ARXIV-2209.04836](https://arxiv.org/abs/2209.04836). Git Re-Basin: three algorithms for finding the permutation that aligns one trained network to another, after which their linear interpolation has no loss barrier. | Deferred |

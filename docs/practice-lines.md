@@ -18,7 +18,7 @@
 
 ## From skip connections promote training stability by smoothing out the loss landscape
 
-- alongside: [SOTA-010](../record/practices.d/SOTA-010.md) — skip connections promote training stability by smoothing out the loss landscape *(Active, unassessed)*
+- alongside: [SOTA-010](../record/practices.d/SOTA-010.md) — skip connections promote training stability by smoothing out the loss landscape *(Superseded, unassessed)*
 - alongside: [SOTA-011](../record/practices.d/SOTA-011.md) — Map the Hessian ratio |lambda_min / lambda_max| to find where the loss surface is non-convex *(Active, unassessed)*
 - alongside: [SOTA-012](../record/practices.d/SOTA-012.md) — sharpness in the loss landscape correlates with test error *(Active, unassessed)*
 
@@ -73,16 +73,8 @@
 - alongside: [SOTA-040](../record/practices.d/SOTA-040.md) — larger models are more sample efficient *(Active, unassessed)*
 - alongside: [SOTA-041](../record/practices.d/SOTA-041.md) — lr tuning less important for larger models *(Rejected, unassessed)*
 
-## From Profile data loading separate from training
+## From Overlap communication with backward pass
 
-- alongside: [SOTA-045](../record/practices.d/SOTA-045.md) — Profile data loading separate from training *(Active, unassessed)*
-- alongside: [SOTA-091](../record/practices.d/SOTA-091.md) — Profile and optimize memory access patterns *(Active, unassessed)*
-
-## From Use tar archives for dataset storage
-
-- [SOTA-077](../record/practices.d/SOTA-077.md) — Use tar archives for dataset storage *(Active, unassessed)*
-  - [SOTA-078](../record/practices.d/SOTA-078.md) — Buffer size should be 2-3x batch size *(Active, unassessed)*
-  - [SOTA-079](../record/practices.d/SOTA-079.md) — Pre-fetch next batch during compute *(Active, unassessed)*
 - alongside: [SOTA-047](../record/practices.d/SOTA-047.md) — Overlap communication with backward pass *(Active, unassessed)*
 - alongside: [SOTA-048](../record/practices.d/SOTA-048.md) — Group small tensors before communication *(Active, unassessed)*
 
@@ -127,6 +119,12 @@
 - [SOTA-155](../record/practices.d/SOTA-155.md) — Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation *(Proposed, unreplicated)*
   - [SOTA-219](../record/practices.d/SOTA-219.md) — Leave the inner optimizer state unsynchronised in local-update training *(Active, emerging)*
 - alongside: [SOTA-075](../record/practices.d/SOTA-075.md) — Use gradient compression for slow networks *(Active, unassessed)*
+
+## From Use tar archives for dataset storage
+
+- [SOTA-077](../record/practices.d/SOTA-077.md) — Use tar archives for dataset storage *(Active, unassessed)*
+  - [SOTA-078](../record/practices.d/SOTA-078.md) — Buffer size should be 2-3x batch size *(Active, unassessed)*
+  - [SOTA-079](../record/practices.d/SOTA-079.md) — Pre-fetch next batch during compute *(Active, unassessed)*
 
 ## From Use operator fusion for small operations
 

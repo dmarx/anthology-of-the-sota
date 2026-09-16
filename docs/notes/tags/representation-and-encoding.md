@@ -4,10 +4,11 @@
 
 **representation-and-encoding**.
 
-3 of 158 NOTE documents. Back to the [full index](../README.md).
+4 of 158 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-010](../../../record/notes.d/NOTE-010.md) | Neural Machine Translation of Rare Words with Subword Units | Translation was open-vocabulary and NMT models were not, backing off to a dictionary for unknown words. Encoding rare and unknown words as subword units — byte pair encoding adapted to segmentation — makes the model open-vocabulary itself. | Read |
+| [NOTE-028](../../../record/notes.d/NOTE-028.md) | Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation | Replaces position embeddings with a fixed linear penalty on attention scores proportional to query–key distance, one slope per head from a geometric sequence. Trains on short sequences and evaluates on longer ones. The paper's own Appendix B says the gain is "largely explained by" avoiding the early token curse rather than by better use of long history. | Read |
 | [NOTE-125](../../../record/notes.d/NOTE-125.md) | 'Neural-gas' network for vector quantization and its application to time-series prediction | The key departure from SOM: instead of a fixed spatial grid defining neighborhood, neural gas uses the instantaneous rank of each neuron by distance to the current input. Neuron i gets update weight exp(-rank_i / lambda), where lambda decays over training. | Read |
 | [NOTE-129](../../../record/notes.d/NOTE-129.md) | A Growing Neural Gas Network Learns Topologies | Topology learning can be done incrementally and locally: connect the two nearest units to each input (Hebbian edge), age and prune stale edges, and periodically insert a new unit between the unit with maximum accumulated squared error and its worst-error neighbor. | Read |

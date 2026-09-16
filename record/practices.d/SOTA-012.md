@@ -20,7 +20,7 @@ source:
 introduced_by:
 - LIT-014
 # `SOTA-010` is Superseded because it moved to the THEORY scheme, not
-# because the claim failed (ADR-tmp7dlz4). The link stays: it records that
+# because the claim failed (ADR-034). The link stays: it records that
 # three readings of one figure were filed together.
 compared_against:
 - SOTA-010
@@ -29,7 +29,7 @@ summary: >-
   Li et al. (2017), [LIT-014](../literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913).
 ---
 
-<!-- inactive-ok-file: SOTA-010, ADR-tmp7dlz4 — the sibling link is kept
+<!-- inactive-ok-file: SOTA-010, ADR-034 — the sibling link is kept
      deliberately and the frontmatter says why; see the decision. -->
 
 # SOTA-012: sharpness in the loss landscape correlates with test error
@@ -62,7 +62,7 @@ their own evidence, which this record does not currently hold.
 Reading this practice as "make the minimum flatter and the model generalises"
 is the failure it invites. What it supports is narrower and still useful: a
 model whose basin is visibly sharp is worth suspecting, and a change that
-sharpens the landscape (removing skip connections, per [THEORY-tmp3jmjc](../theory.d/THEORY-tmp3jmjc.md),
+sharpens the landscape (removing skip connections, per [THEORY-011](../theory.d/THEORY-011.md),
 or raising
 depth without them) has a known cost that shows up in the surface before it
 shows up in the metric.

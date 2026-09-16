@@ -29,7 +29,7 @@ summary: >-
 compared_against:
 - SOTA-051
 explained_by:
-- THEORY-tmp3jmjc
+- THEORY-011
 ---
 
 <!-- inactive-ok-file: ADR-029 — Proposed. Every mention here names it as the decision that added `introduced_by:`, which is the field this document uses; the citation is to the reasoning, not a claim the decision is settled -->

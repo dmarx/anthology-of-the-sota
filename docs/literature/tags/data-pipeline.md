@@ -4,7 +4,7 @@
 
 **Data pipeline** — loading, quality assessment and selection, preprocessing, batch preparation.
 
-15 of 376 LIT documents. Back to the [full index](../README.md).
+15 of 309 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

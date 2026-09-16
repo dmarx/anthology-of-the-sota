@@ -31,7 +31,7 @@ compared_against:
 summary: >-
   Bachlechner et al. (2020), [LIT-047](../literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887).
 explained_by:
-- THEORY-tmp3jmjc
+- THEORY-011
 ---
 
 # SOTA-051: Initialize final layer weights near zero

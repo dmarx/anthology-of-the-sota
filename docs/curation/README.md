@@ -6,6 +6,9 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [16 Sep 02:03 — Replace where I should have added, and the constraint that made it look like a choice](2026-09.md#replace-where-i-should-have-added-and-the-constraint-that-made-it-look-like-a-choice)
+- [15 Sep 23:04 — The move ADR-031 asked for, and the field I said did not exist](2026-09.md#the-move-adr-031-asked-for-and-the-field-i-said-did-not-exist)
+- [15 Sep 22:47 — Sixty-seven documents I filed twice, and the report that was never read](2026-09.md#sixty-seven-documents-i-filed-twice-and-the-report-that-was-never-read)
 - [15 Sep 21:45 — The schema was the tell, and I read it as evidence of a stranger](2026-09.md#the-schema-was-the-tell-and-i-read-it-as-evidence-of-a-stranger)
 - [15 Sep 20:03 — Filing the trunk, and what it turned out to have already said](2026-09.md#filing-the-trunk-and-what-it-turned-out-to-have-already-said)
 - [15 Sep 19:49 — The bibliography sweep, run at last: what twelve papers cite that the record does not hold](2026-09.md#the-bibliography-sweep-run-at-last-what-twelve-papers-cite-that-the-record-does-not-hold)
@@ -70,9 +73,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-63 entries across 2 books, newest first.
+66 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 61 | 2026-09-05 | 2026-09-15 |
+| [2026-09](2026-09.md) | 64 | 2026-09-05 | 2026-09-16 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

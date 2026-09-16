@@ -4,7 +4,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-24 of 220 SOTA documents. Back to the [full index](../README.md).
+27 of 220 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,11 +21,14 @@
 | [SOTA-051](../../../record/practices.d/SOTA-051.md) v3 | Initialize final layer weights near zero | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
 | [SOTA-052](../../../record/practices.d/SOTA-052.md) | Use smaller variance for deep networks | Wang et al. (2022), [LIT-084](../../../record/literature.d/LIT-084.md) — [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555). | Active |
 | [SOTA-053](../../../record/practices.d/SOTA-053.md) | Special handling for gated architectures | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
+| [SOTA-060](../../../record/practices.d/SOTA-060.md) v2 | Initialize layer norms with smaller variance (0.02) for stability | Narayanan et al. (2021), [LIT-043](../../../record/literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). | Active |
 | [SOTA-067](../../../record/practices.d/SOTA-067.md) v2 | Monitor loss specifically during first ~5000 steps for instabilities | Tay et al. (2021), [LIT-052](../../../record/literature.d/LIT-052.md) — [ARXIV-2109.10686](https://arxiv.org/abs/2109.10686). Rejected: the source contains no discussion of instability, and the 5000 belongs to nobody. | Rejected — The cited paper contains no discussion of training instability. The record's sourced monitoring practices are SOTA-069 and SOTA-099, which do not depend on a step count |
 | [SOTA-069](../../../record/practices.d/SOTA-069.md) | Monitor exp(loss) for stability | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
 | [SOTA-070](../../../record/practices.d/SOTA-070.md) | Track gradient norm ratios between layers | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
 | [SOTA-071](../../../record/practices.d/SOTA-071.md) | Use gradient clipping with dynamic threshold | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
 | [SOTA-072](../../../record/practices.d/SOTA-072.md) | Implement early warning system for NaNs | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
+| [SOTA-098](../../../record/practices.d/SOTA-098.md) | Monitor validation loss for unexpected spikes during training | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
+| [SOTA-099](../../../record/practices.d/SOTA-099.md) | Track gradient norm statistics to detect training instabilities | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |
 | [SOTA-161](../../../record/practices.d/SOTA-161.md) | Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling | Qiu et al. (2025), [LIT-198](../../../record/literature.d/LIT-198.md) — putting flash attention in BF16 while the FFN goes to FP8 sometimes explodes, and the cause is two things at once: attention produces low-rank updates repeated across steps and tokens, and low-precision addition rounds with a *bias*. The biased error rides the repeated update and compounds into a systematic gradient bias instead of averaging out. | Active |
 | [SOTA-182](../../../record/practices.d/SOTA-182.md) | Compute the normalization statistic without centering (RMSNorm) | Zhang and Sennrich (2019), [LIT-023](../../../record/literature.d/LIT-023.md) — [ARXIV-1910.07467](https://arxiv.org/abs/1910.07467). Drop the mean subtraction from layer normalization and rescale by the root mean square alone. | Active |
 | [SOTA-191](../../../record/practices.d/SOTA-191.md) v2 | Consider removing LayerNorm's learnable gain and bias rather than tuning them | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — the bias and gain increase overfitting risk and "do not work in most cases"; LayerNorm-simple, with both removed, beats LayerNorm on four datasets and reaches state of the art on En-Vi. | Proposed |

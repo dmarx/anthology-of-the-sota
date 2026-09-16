@@ -2,9 +2,9 @@
 
 # LITs with `tags` `tiny-models`
 
-**tiny-models**.
+**Tiny models** — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-2 of 376 LIT documents. Back to the [full index](../README.md).
+2 of 309 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

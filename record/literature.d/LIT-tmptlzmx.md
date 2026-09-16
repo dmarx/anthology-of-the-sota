@@ -1,0 +1,75 @@
+---
+status: 'Active'
+title: 'Fast Inference from Transformers via Speculative Decoding'
+version: 1
+tags:
+- inference-optimization
+date: '2026-09-16'
+published: '2022-11-30'
+arxiv: '2211.17192'
+first_author: 'Leviathan'
+keywords:
+- 'speculative-decoding'
+- 'draft-model'
+- 'rejection-sampling'
+- 'decoding-latency'
+- 'memory-bandwidth'
+implementations: []
+summary: >-
+  Leviathan et al. (2022), [ARXIV-2211.17192](https://arxiv.org/abs/2211.17192). Decoding is serial and
+  memory-bandwidth-bound, so the arithmetic units are idle. Speculative
+  decoding spends them: a cheap draft model guesses `gamma` tokens, the target
+  model scores all `gamma + 1` positions in one parallel pass, and an
+  accept-reject rule keeps a prefix of the guesses. The output distribution is
+  exactly the target's — not approximately — and the serial count can never
+  exceed plain autoregressive decoding. 2x-3x on T5-XXL with identical
+  outputs.
+---
+
+# LIT-tmptlzmx: Fast Inference from Transformers via Speculative Decoding
+
+Leviathan et al. (2022) — [ARXIV-2211.17192](https://arxiv.org/abs/2211.17192)
+
+## Key takeaways
+
+- **The algorithm.** Run the draft `M_q` autoregressively for `gamma` tokens.
+  Run the target `M_p` once on all `gamma + 1` prefixes *in parallel*. Walk
+  the guesses left to right, accepting token `i` when `r_i <= p_i(x)/q_i(x)`
+  for `r_i ~ U(0,1)`; at the first rejection, resample that position from an
+  adjusted distribution and stop. Accept everything and you get a free
+  `gamma + 1`-th token.
+- **It is exactly lossless, and that is the whole point.** The accept-reject
+  rule is constructed so the sampled sequence has the target model's
+  distribution. Not approximately — the paper's phrase is "without any change to the
+  outputs", and its headline result is measured against identical outputs.
+- **It can never be slower in target evaluations.** Each parallel run produces
+  at least one token, so the number of serial target runs is bounded by what
+  plain decoding would have taken.
+- **The acceptance rate has a closed form**: `alpha = E(min(p, q))`, one minus
+  the expected value of a natural divergence between draft and target. That
+  makes "how good must the draft be" a measurable question rather than a
+  guess.
+- **And so does the payoff.** With cost coefficient `c` — the draft's time per
+  run over the target's — the expected walltime improvement is
+  `(1 - alpha^(gamma+1)) / ((1 - alpha)(gamma*c + 1))`. The optimal `gamma`
+  maximises that, found numerically from `alpha` and `c`. For a
+  negligible-cost draft the bound is `1/(1 - alpha)`.
+- **The premise is a systems fact**, stated plainly: inference from large
+  models "is often not bottlenecked on arithmetic operations, but rather on
+  memory bandwidth and communication, so additional computation resources
+  might be available". The method spends compute that was going to waste,
+  which is also why its advantage narrows as the batch grows.
+- Evaluated on a 97M GPT-like model on lm1b, an 11B T5-XXL on translation and
+  summarization, and a 137B LaMDA dialog task. Against the T5X implementation:
+  **2x-3x latency, out of the box, no retraining and no architecture change.**
+
+## Standing in the anthology
+
+The trunk this record was missing. [SOTA-tmp6mgiw](../practices.d/SOTA-tmp6mgiw.md) is filed from it and from
+[LIT-tmphbbt7](LIT-tmphbbt7.md); the reading is [NOTE-tmpkm3sk](../notes.d/NOTE-tmpkm3sk.md).
+
+Filed under [#87](https://github.com/dmarx/anthology-of-the-sota/issues/87) after an audit found the record holding a *refinement* of this
+— [LIT-185](LIT-185.md), EAGLE-3 — and four model reports that ship a draft head, with no
+document for the thing they refine and ship. [DP-007](../../docs/design-principles.md#dp-7) calls that shape "the
+refinement filed before the thing it refines", and this is a worked example of
+it.

@@ -1018,7 +1018,29 @@ site:
 # not in the corpus — are reported on every run and promoted to failures in
 # phase 4, once the backlog they surface has been worked through.
 lint:
-  fail_on: []
+  # The enforcement dial (LU-ADR-035). Empty since the record was built, which
+  # meant every check was advice. `source-mismatch` is not advice: it is the
+  # only check that verifies a document is about the paper it names, it reads
+  # the committed lockfile so it costs no network, and it is the check that
+  # would have failed the import in #138 -- which filed three readings against
+  # identifiers belonging to other papers while the lint printed a clean run.
+  #
+  # It is at zero today, which is the precondition for promoting anything: a
+  # dial turned on over existing findings fails the next contributor for
+  # somebody else's backlog.
+  #
+  # `source-unchecked` is deliberately NOT here. It fires when nothing has
+  # verified an identifier AND upstream could not be reached, so promoting it
+  # would convert an arXiv outage into a red build for a contribution that did
+  # nothing wrong. A check whose failure a contributor cannot act on teaches
+  # people to ignore the dial, which costs more than the case it catches.
+  #
+  # What neither check reaches: two documents claiming ONE identifier, which is
+  # the defect #138 actually shipped -- 67 duplicate notes, correct titles,
+  # correct identifiers, green lint. LU-#165 is that finding upstream, and asks
+  # for a `luria merge` to resolve one once found.
+  fail_on:
+  - source-mismatch
   # `inert-status` is a judgement this project has heard and does not want
   # repeated: the NOTE scheme is uniform by design (ADR-025) and `uniform_ok`
   # below already carries the reason. Muting is the global form of the same

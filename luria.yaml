@@ -1,22 +1,18 @@
 # Luria configuration for the Anthology of the SOTA.
 #
-# inactive-ok-file: ADR-020, ADR-027, ADR-029, ADR-030, ADR-031, ADR-035, ADR-038, ADR-039 — the decisions this file IMPLEMENTS, and
-#   citing them is what makes a schema choice readable as something somebody
-#   decided rather than something somebody typed. Three are Superseded and are
-#   named as history, in prose that says so: "ADR-027 added
-#   `analysis-and-evaluation`; ADR-026 then added ... superseding ADR-020",
-#   and the cut DP-005 made in ADR-029 that ADR-030 refined. The rest are
-#   Proposed, which in this record is the resting state of a decision nobody
-#   has moved -- 60 documents are undecided -- rather than a signal that the
-#   schema is built on something unsettled.
+# Two acknowledgements rather than one, split by the reason (LU-#278). Every
+# citation in this file is a decision the file IMPLEMENTS, and citing them is
+# what makes a schema choice readable as something somebody decided rather
+# than something somebody typed.
 #
-#   Scoped to this file rather than left per-site because every citation here
-#   is the same kind of claim, and because the alternative is nineteen
-#   directives that each say the same sentence (ADR-039).
+# inactive-ok-file: ADR-020, ADR-027, ADR-029 — Superseded, and named here AS history, in prose that says so: "ADR-027 added `analysis-and-evaluation`; ADR-026 then added ... superseding ADR-020", and the cut DP-005 made in ADR-029 that ADR-030 refined.
+# inactive-ok-file: ADR-030, ADR-031, ADR-035, ADR-038, ADR-039 — Proposed, which in this record is the resting state of a decision nobody has moved (60 documents are undecided) rather than a signal that the schema rests on something unsettled.
 #
-#   Every code on ONE line, deliberately: a continuation line's codes are not
-#   read, and the directive then suppresses some of what it names and silently
-#   not the rest. Found here, filed as LU-#278.
+# Scoped to the file rather than left per-site because every citation here is
+# the same kind of claim, and because the alternative is nineteen directives
+# that each say the same sentence (ADR-039). Split in two because a directive
+# is read from its own line and a file-wide one is not position-sensitive, so
+# there is no cost to grouping them by why rather than crowding one line.
 #
 # The record has four families. Two of them are the anthology itself — `SOTA`
 # is the product (one document per recommendation) and `LIT` is the evidence

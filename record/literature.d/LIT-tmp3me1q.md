@@ -1,0 +1,83 @@
+---
+status: 'Active'
+title: 'Training language models to follow instructions with human feedback'
+version: 1
+tags:
+- adaptation-and-tuning
+date: '2026-09-16'
+published: '2022-03-04'
+arxiv: '2203.02155'
+first_author: 'Ouyang'
+keywords:
+- 'rlhf'
+- 'instruction-following'
+- 'reward-model'
+- 'alignment-tax'
+- 'post-training'
+implementations: []
+summary: >-
+  Ouyang et al. (2022), [ARXIV-2203.02155](https://arxiv.org/abs/2203.02155). InstructGPT: the paper that turned
+  reinforcement learning from human feedback from a summarization technique
+  into the default shape of post-training. Three steps — supervised
+  fine-tuning on labeler demonstrations, a reward model trained on ranked
+  outputs, then PPO against that reward with a per-token KL penalty. A 1.3B
+  model tuned this way is preferred to 175B GPT-3, which is the result the
+  field acted on.
+---
+
+# LIT-tmp3me1q: Training language models to follow instructions with human feedback
+
+Ouyang et al. (2022) — [ARXIV-2203.02155](https://arxiv.org/abs/2203.02155)
+
+## Key takeaways
+
+- **The three steps, which became the template.** (1) Collect labeler
+  demonstrations on a prompt distribution and fine-tune supervised. (2) Collect
+  rankings of model outputs and train a reward model to predict them. (3)
+  Fine-tune the supervised model against that reward with PPO.
+- **Scale is not the axis.** Outputs from the **1.3B** InstructGPT are
+  preferred to those from **175B** GPT-3 — a hundredfold parameter difference
+  losing to post-training. At matched size the 175B model wins **85 ± 3%** of
+  comparisons against 175B GPT-3, and **71 ± 4%** against few-shot 175B GPT-3.
+- **It beats instruction-tuning-on-public-tasks on real prompts**, which is
+  the comparison that decided the field's direction: **73.4 ± 2%** win rate
+  against the SFT baseline, versus **26.8 ± 2%** for T0 and **29.8 ± 2%** for
+  FLAN.
+- **The alignment tax is named here.** RLHF fine-tuning regresses performance
+  on SQuAD, DROP, HellaSwag and WMT'15 French-English. The paper's own fix is
+  **PPO-ptx**: mix the PPO updates with updates that raise log likelihood on
+  the pretraining distribution, which "greatly reduce[s]" the regressions
+  "without compromising labeler preference scores".
+- **A per-token KL penalty from the SFT model** is what keeps the policy from
+  over-optimising the reward model. The KL coefficient and the pretraining-mix
+  coefficient are the two knobs the objective exposes.
+- **One 6B reward model drives every policy size.** Larger 175B reward models
+  could reach lower validation loss and were not used, which makes the size
+  comparisons across policies clean and leaves the reward-model scaling
+  question open.
+- **40 screened contractors** produced the data, and the paper is explicit
+  about what that means: the procedure aligns the model "to the stated
+  preferences of a specific group of people (mostly our labelers and
+  researchers), rather than any broader notion of 'human values'".
+
+## Standing in the anthology
+
+The origin of the post-training shape this record documents downstream and had
+never filed. [LIT-169](LIT-169.md) (DPO) is defined against this pipeline — its title is a
+claim about the reward model this paper introduced. [LIT-082](LIT-082.md) (Constitutional
+AI) replaces this paper's human labels with model-written ones, and [SOTA-183](../practices.d/SOTA-183.md)
+is that practice. [SOTA-126](../practices.d/SOTA-126.md) tunes DPO's schedule. Every one of them assumes the
+thing described here.
+
+The reading is [NOTE-tmp4lt07](../notes.d/NOTE-tmp4lt07.md). Filed under [#87](https://github.com/dmarx/anthology-of-the-sota/issues/87), and it is the third document in
+two sessions to be filed because its descendants were already here — after
+[SOTA-227](../practices.d/SOTA-227.md) for speculative decoding. [DP-007](../../docs/design-principles.md#dp-7)'s "refinement filed before the
+thing it refines", three times over, is a pattern about how this record
+acquires documents rather than about any of the three subjects.
+
+**It is not the origin of RLHF, and the record should not read it as one.**
+The paper says its methodology follows Christiano et al. (2017), who
+introduced learning from human preferences, and Stiennon et al. (2020), who
+applied it to summarization. Neither is in this record, and neither is FLAN,
+which this paper benchmarks against. This note closes the load-bearing gap in
+that lineage and leaves three others open.

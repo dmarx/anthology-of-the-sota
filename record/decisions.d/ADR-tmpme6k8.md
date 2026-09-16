@@ -1,154 +1,157 @@
 ---
 status: Proposed
-title: 'Turn the enforcement dial on the two checks that bind a document to its paper'
+title: 'Fail the build on `source-mismatch`, and take the source invariant upstream'
 version: 1
 tags:
 - mechanism
 date: '2026-09-16'
 summary: >-
-  `lint.fail_on` has been empty since the record was built, so every check is
-  advice. `source-mismatch` goes into it — the one check that verifies a
-  document is about the paper it names, at zero today, and the check that
-  would have failed the import in [#138](https://github.com/dmarx/anthology-of-the-sota/issues/138) instead of printing a clean run.
-  `source-unchecked` is deliberately left out: its only failure mode is an
-  upstream outage, which a contributor cannot act on. Recorded alongside a
-  check proposed and rejected on measurement: an invariant on `source:`
-  asserting a practice shares its paper's topic, which reports 73 edges
-  across 64 practices and is mostly the record doing what it decided to do.
+  Two things about the check that binds a document to its paper. `fail_on`
+  gains `source-mismatch` — at zero today, offline from the lockfile, and the
+  check that would have failed the import in [#138](https://github.com/dmarx/anthology-of-the-sota/issues/138). And the invariant on
+  `source:` that this decision first argued against is now argued FOR: a
+  relation asserts a commonality and the invariant is how the record says
+  what it is, which holds for a practice and its evidence as much as for two
+  practices. It cannot be declared here yet — a chain over a cross-scheme
+  relation raises `KeyError` in `luria index` — so it goes upstream with the
+  measurement rather than being dropped.
 ---
 
-# ADR-tmpme6k8: Turn the enforcement dial on the two checks that bind a document to its paper
+# ADR-tmpme6k8: Fail the build on `source-mismatch`, and take the source invariant upstream
 
 ## Context
 
 The unbound-lineage pass found fifteen mis-filed documents and summarised
-eleven of them as *a claim inherits the topic of the document it was extracted
-from*. That reads like a rule a machine could enforce, and the obvious
-mechanism was already in the config surface: `chains` take an `invariant`, and
-`source:` is a declared reference, so a chain over it would report every
-practice whose topic differs from its paper's — no upstream change needed.
+eleven as *a claim inherits the topic of the document it was extracted from*.
+That reads like a rule to enforce, and the mechanism looked available in
+config: `chains` take an `invariant`, `source:` is a declared reference.
 
-Three measurements, in the order they were taken.
+**The summary does not survive measurement.** Of 220 practices naming a
+source, **167 — 76% — already share their source's topic**, which is the
+ordinary correct case. Of the six practices that pass retagged, four had
+inherited their source's topic and two — `SOTA-098`, `SOTA-099` — were wrong
+in the opposite direction. The sentence described four documents and should
+not be repeated as a rule.
 
-**The summary does not survive measurement.** Of 220 practices that name a
-source, **167 — 76% — already share their source's topic.** That is the
-ordinary case: an Adam practice sourced to the Adam paper is both
-`training-optimization`, and correctly. Of the six practices retagged in the
-lineage pass, four had inherited their source's topic and **two had not** —
-`SOTA-098` and `SOTA-099` were wrong in the other direction. "Inherits its
-source's topic" describes four documents, not a defect.
+**That is not an argument against the invariant, and the first draft of this
+decision treated it as one.** It said the invariant on `source:` was rejected
+by measurement, citing 73 unbound edges over 64 practices and calling them
+"mostly the record doing what it decided to do". That was a topic-pair
+histogram, not a reading. Read individually the 73 are four kinds:
 
-**The invariant was already measured and rejected upstream, on this record.**
-`luria/invariants.py` says so in its own docstring:
+| kind | n | what it is |
+|---|--:|---|
+| Multi-topic source | 16 | a model report or framework sourcing practices across three or more topics, which [ADR-032](ADR-032.md) admitted deliberately |
+| Analysis paper as evidence | 14 | a practice resting on a paper filed `analysis-and-evaluation`, the kind-not-subject fact [#140](https://github.com/dmarx/anthology-of-the-sota/issues/140) documents |
+| [ADR-026](ADR-026.md)'s filing rule working | ~10 | a practice takes its *kind*, its source takes the *domain* it was discovered in — the diffusion and vision papers |
+| Everything else | ~33 | cross-layer fault lines, and some plain mis-filings |
 
-> Measured on the record this was built for, running the check over `source:`
-> — which joins a practice to its paper across two vocabularies that a
-> decision had deliberately separated — makes findings of 48 of 235 edges, and
-> every one of them is a cross-domain citation the record was changed to
-> permit. A check that fires on a project for doing the thing it decided to do
-> is worse than no check.
+The fourth row is the one that settles it. `LIT-112`, *Efficient Memory
+Management for Large Language Model **Serving***, is filed
+`attention-techniques` while all four practices drawn from it are
+`inference-optimization`, whose blurb names cache layout and serving-time
+decisions. `LIT-059` (CheckFreq) is `systems-optimization` while the four
+checkpointing practices under it are `distributed-optimization`, whose blurb
+names checkpointing. Neither is confirmed here — that needs a reading — but
+they are exactly the shape of finding the pass in [#140](https://github.com/dmarx/anthology-of-the-sota/issues/140) acted on, reaching the
+record through a second channel.
 
-**Its premise has since changed, and the conclusion survives anyway.** That
-measurement was taken when the practice registry had seven topics and the
-reading list thirteen; [ADR-026](ADR-026.md) made them one vocabulary of thirteen, so the
-mechanical cause of those 48 is gone. Re-measured today the check reports **73
-unbound edges across 64 practices** — worse, not better. The largest single
-crossing is eight practices in `adaptation-and-tuning` sourced to papers in
-`analysis-and-evaluation`, which is the evolution-strategies line drawing
-recommendations from papers that measure rather than recommend. That is the
-record working correctly, and it is the same structural fact the
-unbound-lineage pass in [#140](https://github.com/dmarx/anthology-of-the-sota/issues/140) names: `analysis-and-evaluation` is a kind,
-not a subject, so it unbinds any line that grows an analysis paper. (That
-pass's own ADR is unmerged as this is written, which is why it is cited by
-pull request rather than by code.)
-
-So the answer to *can this be enforced in config* is **no, and it should not
-be** — but the question pointed at a dial that is genuinely off.
+So the principle holds: **a relation asserts that its documents have something
+in common, and the invariant is the record saying what.** That is as true of a
+practice and its evidence as of two practices, and it does not stop being true
+because some of the findings are known.
 
 ## Decision
 
-**`lint.fail_on` gains `source-mismatch`, and only that.**
+**1. `lint.fail_on` gains `source-mismatch`, and only that.**
 
-The dial has been `[]` since the record was built, which means every finding
-the lint produces is advice. `source-mismatch` is the check that answers *is
-this document about the paper it names* — the question the record's first
-design principle rests on, because a citation nothing can follow is a string.
-It compares the recorded title against what the identifier actually serves,
-reading the committed lockfile so it costs no network.
+The dial has been `[]` since the record was built, so every finding is advice.
+`source-mismatch` compares a recorded title against what the identifier
+actually serves, reading the committed lockfile so it costs no network, and it
+is at zero today — the precondition, because a dial turned on over existing
+findings fails the next contributor for somebody else's backlog.
 
-Verified on this branch rather than assumed: retitle `LIT-045` to a different
-paper's title and the lint reports *"`arxiv: 2104.09864` resolves to
-'RoFormer…', not 'A Mean Field View…'"* and exits 1. A freshly minted note
-whose identifier does not match its title fails the same way, with the
-identifier resolved live and pinned in the same run.
+The reason is specific, not general: **it is the check that would have failed
+the import in [#138](https://github.com/dmarx/anthology-of-the-sota/issues/138)**, whose three misbound identifiers were all
+title-versus-identifier disagreements, caught by a hand-written script while
+the lint printed a clean run.
 
-**`source-unchecked` is deliberately not promoted.** It is the natural
-companion — it fires when nothing has ever verified an identifier and
-upstream could not be reached — and promoting it would convert an arXiv
-outage into a red build for a contribution that did nothing wrong. A failure
-a contributor cannot act on is one they learn to route around, and a dial
-people route around is worse than a dial that is off. It stays a warning,
-which is the right volume for "nobody could check this".
+Verified rather than assumed: retitling `LIT-045` to another paper's title
+reports *"`arxiv: 2104.09864` resolves to 'RoFormer…', not 'A Mean Field
+View…'"* and exits 1.
 
-**Both are at zero today**, which is the precondition. A dial turned on over
-existing findings fails the next contributor for somebody else's backlog, and
-the seven `retired-citations` and four `legacy-spellings` currently open are
-exactly that — they stay advice until someone clears them.
+**`source-unchecked` is deliberately not promoted.** It fires when nothing has
+verified an identifier and upstream could not be reached, so promoting it
+converts an arXiv outage into a red build for a contribution that did nothing
+wrong. A check earns enforcement by failing only on things that are in the
+diff — `source-mismatch` fails on a disagreement the author introduced;
+`source-unchecked` fails on something the author can only wait out.
+
+**2. The `source:` invariant is right and cannot be declared here yet.**
+
+Declaring it is three lines of config. It raises:
+
+    File "luria/chains.py", line 214, in lines_of
+        neighbours[other].add(code)
+    KeyError: '[LIT-001](../literature.d/LIT-001.md)'
+
+`chains.lines_of` indexes only documents in the chain's declared scheme, and
+`source:` crosses from `SOTA` to `LIT`, so the first paper it walks is absent
+from the index. The invariant machinery is not the problem; the chain walker
+underneath it is. **`luria index` does not complete**, which makes this
+unavailable to this record until the walker handles a cross-scheme relation —
+or until the invariant can be declared without an `output:` view, which a
+practice-to-paper chain does not really want anyway.
+
+So it goes upstream with the measurement attached, rather than being recorded
+here as a decision against it.
+
+## Upstream
+
+Two items, neither of which this record can fix:
+
+**The cross-scheme chain crash**, above.
+
+**Two docstrings state a reason for luria's default that is specific to this
+record and now false.** `invariants.py` and `config.py`'s `Chain.invariant`
+both explain why `invariant` is unset by default with: *"`source:` joins a
+practice to its paper across two vocabularies that were separated on
+purpose"*. [ADR-026](ADR-026.md) merged those two vocabularies into one. The default may
+still be right — the 16 multi-topic sources and 14 analysis papers are real —
+but the stated reason is a consumer's old state, and a general-purpose
+library reasoning about one consumer's schema is worth flagging on its own.
 
 ## Consequences
 
-**[#138](https://github.com/dmarx/anthology-of-the-sota/issues/138) would have failed instead of merging.** That import filed three
-readings against identifiers belonging to other papers — `1805.01361` recorded
-as Mei, Montanari and Nguyen when it is a hyperspectral-regression paper,
-`1906.08632` under a different Goldt paper's title, `2102.11742` under a title
-belonging to nothing. All three are title-versus-identifier disagreements,
-which is precisely `source-mismatch`. They were caught by a script written by
-hand for that contribution; the lint printed a clean run beside it.
+**No new way for CI to fail on something outside a contributor's control.**
+`source-mismatch` reads the committed lockfile, so it fails only on a
+disagreement in the diff.
 
-**Filing a paper now includes resolving its identifier.** In practice the lint
-does it, because `network: auto` asks about what it does not know and writes
-the answer into `remotes.lock.json`. The contributor's obligation is to commit
-the lockfile, which the record already does.
-
-**No new way for CI to fail on something outside the contributor's control.**
-That was the cost of the version of this decision that also promoted
-`source-unchecked`, and it is why that half was cut. `source-mismatch` reads
-the committed lockfile, so it fails only on a disagreement that is in the
-diff — which is a thing the author can fix.
+**The 73 crossings are a worklist, not a verdict.** They are recorded here
+because nothing generates them today. Two named candidates — `LIT-112` and
+`LIT-059` — and the [ADR-026](ADR-026.md) class, which is the one kind that should be
+expected to stay.
 
 **It does not cover the defect [#138](https://github.com/dmarx/anthology-of-the-sota/issues/138) actually shipped.** Sixty-seven duplicate
-notes, each a second document for a paper the record already held, with
-correct titles and correct identifiers and a green lint. Nothing in luria's
-finding vocabulary asks whether two documents resolve to the same place, and
-no config setting produces it.
-
-That is **[LU-#165](https://github.com/dmarx/luria/issues/165)** upstream — *"Two documents can name the same source and
-nothing notices: add a `duplicate-source` finding and a `luria merge`"* —
-which reaches the same conclusion from a two-document collision and goes
-further, asking for a command that resolves one by rewriting references,
-appending the old code to `formerly:`, and retiring rather than deleting the
-loser. This record's contribution to it is scale and a second root cause: 67
-instances at once, from a regeneration that used `git clean -fd` between two
-generations of the same corpus while the first was already tracked.
+notes, correct titles, correct identifiers, green lint. That is `LU-#165`
+upstream — *"Two documents can name the same source and nothing notices"* —
+which asks for a `duplicate-source` finding and a `luria merge`, the latter
+being the work done by hand in [#140](https://github.com/dmarx/anthology-of-the-sota/issues/140).
 
 ## Alternatives considered
 
-**A chain over `source:` with `invariant: primary_topic`.** The measurement
-above: 73 edges, 64 practices, mostly correct. Rejected on the same grounds
-luria rejected it, for a different reason than luria had.
+**Declare the invariant on `source:` anyway.** `luria index` does not
+complete. Not a judgement call.
+
+**Record the invariant as rejected on measurement.** This decision's own first
+draft. It was wrong about the findings and would have closed a question that
+should stay open, on the authority of a histogram.
 
 **`network: require`, or promoting `source-unchecked`.** Both make "nobody
-could check" a failure, so a green run would mean every reference was
-verified rather than remembered. Both were in the first draft of this
-decision and both are rejected for the same reason: the failure they add is
-an upstream outage, and a contributor who did nothing wrong cannot act on it.
-The escape hatch would be to ignore the dial, which costs the dial more than
-the case is worth. `source-unchecked` stays a warning, which is the right
-volume for it.
+could check" a failure, so a green run would mean verified rather than
+remembered. Both were in the first draft and both fail the in-the-diff test.
 
-**Promote more classes while the dial is being opened.** `retired-citations`
-and `legacy-spellings` have open findings; promoting them would fail the next
+**Promote more classes while the dial is open.** `retired-citations` and
+`legacy-spellings` have open findings, so promoting them fails the next
 contribution for a pre-existing backlog. `pending-documents` counts undecided
-ADRs, which is a fact about deliberation rather than a defect. The dial is
-opened on the one class that is clean and load-bearing, and the rest stays
-advice until someone clears it deliberately.
+ADRs, which is a fact about deliberation rather than a defect.

@@ -20,12 +20,18 @@ source:
 - LIT-014
 introduced_by:
 - LIT-014
+# `SOTA-010` is Superseded because it moved to the THEORY scheme, not
+# because the claim failed (ADR-tmp7dlz4). The link stays: it records that
+# three readings of one figure were filed together.
 compared_against:
 - SOTA-010
 - SOTA-012
 summary: >-
   Li et al. (2017), [LIT-014](../literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913).
 ---
+
+<!-- inactive-ok-file: SOTA-010, ADR-tmp7dlz4 — the sibling link is kept
+     deliberately and the frontmatter says why; see the decision. -->
 
 # SOTA-011: Map the Hessian ratio |lambda_min / lambda_max| to find where the loss surface is non-convex
 
@@ -42,7 +48,8 @@ curvature** there is relative to positive, so it is a non-convexity measure,
 not a conditioning one. Blue means near-convex; yellow means significant
 negative curvature. For ResNet-56 the negative eigenvalues stay under **1% of
 the positive curvatures** across a large region — which is the quantitative
-form of "skip connections keep the landscape nearly convex" ([SOTA-010](SOTA-010.md)).
+form of "skip connections keep the landscape nearly convex"
+([THEORY-tmp3jmjc](../theory.d/THEORY-tmp3jmjc.md)).
 
 The plot only means anything under filter normalization, because a network can
 be rescaled without changing its function and unnormalised curvature moves

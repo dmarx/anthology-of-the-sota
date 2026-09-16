@@ -36,6 +36,8 @@ summary: >-
   Xiong et al. (2020), [LIT-114](../literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). Pre-LN: normalize the
   input to each sublayer rather than the sum after it, so the gradients near
   the output are well behaved at initialization.
+explained_by:
+- THEORY-tmp3jmjc
 ---
 
 # SOTA-032: Put the layer normalization inside the residual block, before the sublayer

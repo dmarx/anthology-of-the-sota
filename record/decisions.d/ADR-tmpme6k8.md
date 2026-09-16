@@ -13,8 +13,8 @@ summary: >-
   relation asserts a commonality and the invariant is how the record says
   what it is, which holds for a practice and its evidence as much as for two
   practices. It cannot be declared here yet — a chain over a cross-scheme
-  relation raises `KeyError` in `luria index` — so it goes upstream with the
-  measurement rather than being dropped.
+  relation raises `KeyError` in `luria index` — so it goes upstream as
+  `LU-#272` with the measurement rather than being dropped.
 ---
 
 # ADR-tmpme6k8: Fail the build on `source-mismatch`, and take the source invariant upstream
@@ -103,12 +103,12 @@ unavailable to this record until the walker handles a cross-scheme relation —
 or until the invariant can be declared without an `output:` view, which a
 practice-to-paper chain does not really want anyway.
 
-So it goes upstream with the measurement attached, rather than being recorded
-here as a decision against it.
+So it goes upstream as [LU-#272](https://github.com/dmarx/luria/issues/272) with the measurement attached, rather than being
+recorded here as a decision against it.
 
 ## Upstream
 
-Two items, neither of which this record can fix:
+Both filed as `LU-#272`. Neither is fixable from this record:
 
 **The cross-scheme chain crash**, above.
 

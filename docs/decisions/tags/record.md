@@ -2,6 +2,8 @@
 
 # ADRs with `tags` `record`
 
+*Decision tags — What a decision is about, in the order the index shows them. Open, unlike the topics: a decision that needs a word it does not have simply gets one.*
+
 **The record** — what the schemes hold, and the rules between them.
 
 25 of 39 decisions. Back to the [full index](../README.md).

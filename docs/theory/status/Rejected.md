@@ -2,6 +2,8 @@
 
 # THEORYs with `status` `Rejected`
 
+*Explanation statuses — Whether the record believes the ACCOUNT, which is not what the same word means on a practice. An explanation can be `Rejected` while the thing it explained goes on working exactly as well as it ever did (ADR-031).*
+
 **Disbelieved** — tested and failed, or contradicted by later work — and the thing it explained may still work perfectly well.
 
 1 of 12 THEORY documents. Back to the [full index](../README.md).

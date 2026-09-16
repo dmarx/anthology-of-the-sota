@@ -2,6 +2,8 @@
 
 # THEORYs with `status` `Deferred`
 
+*Explanation statuses — Whether the record believes the ACCOUNT, which is not what the same word means on a practice. An explanation can be `Rejected` while the thing it explained goes on working exactly as well as it ever did (ADR-031).*
+
 **Not yet judged** — filed because the question is real; no position taken on the answer.
 
 0 of 12 THEORY documents. Back to the [full index](../README.md).

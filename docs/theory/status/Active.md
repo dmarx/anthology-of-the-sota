@@ -2,6 +2,8 @@
 
 # THEORYs with `status` `Active`
 
+*Explanation statuses — Whether the record believes the ACCOUNT, which is not what the same word means on a practice. An explanation can be `Rejected` while the thing it explained goes on working exactly as well as it ever did (ADR-031).*
+
 **The current account** — the best explanation the record holds for why this happens.
 
 5 of 12 THEORY documents. Back to the [full index](../README.md).

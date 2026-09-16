@@ -2,6 +2,8 @@
 
 # ADRs with `status` `Proposed`
 
+*Decision statuses — Whether a decision is in force. Shared by ADR and DP, because as far as being in force goes a principle and a decision are the same kind of object.*
+
 **Proposed** — not in force yet — an open question, so citing it as settled is what the reference report catches.
 
 12 of 39 decisions. Back to the [full index](../README.md).

@@ -2,6 +2,8 @@
 
 # SOTAs with `tags` `systems-optimization`
 
+*Topics — The thirteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same thirteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+
 **Systems optimization** — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
 9 of 221 SOTA documents. Back to the [full index](../README.md).

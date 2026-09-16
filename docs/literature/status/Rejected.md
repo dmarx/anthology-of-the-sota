@@ -2,6 +2,8 @@
 
 # LITs with `status` `Rejected`
 
+*Paper statuses — A paper's standing in the anthology: whether it is worth reading. NOT whether its findings are true. Adam is `Active` here because it is worth reading; whether any particular thing it recommends is still what you should do is the SOTA scheme's business, and the two can disagree in either direction (ADR-002).*
+
 **Attic** — retired with a reason — too narrow, too theoretical, or simply not interesting enough to carry.
 
 10 of 309 LIT documents. Back to the [full index](../README.md).

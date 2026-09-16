@@ -2,6 +2,8 @@
 
 # SOTAs with `status` `Superseded`
 
+*Practice statuses — What a status means for a PRACTICE: whether this record says to do the thing today. It is not the standing of the paper underneath — that is `lit-statuses`, and the two are allowed to disagree — and it is not what the field does, which is `consensus` (ADR-002).*
+
 **Replaced** — something newer does this better, and the record says what.
 
 9 of 221 SOTA documents. Back to the [full index](../README.md).

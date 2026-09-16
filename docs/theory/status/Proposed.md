@@ -2,6 +2,8 @@
 
 # THEORYs with `status` `Proposed`
 
+*Explanation statuses — Whether the record believes the ACCOUNT, which is not what the same word means on a practice. An explanation can be `Rejected` while the thing it explained goes on working exactly as well as it ever did (ADR-031).*
+
 **Offered** — stated and plausible, on evidence that is suggestive rather than settling — the document says what would settle it.
 
 6 of 12 THEORY documents. Back to the [full index](../README.md).

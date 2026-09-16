@@ -23,6 +23,11 @@ A code — `ADR-012` — resolves to a document, and every reference to it in th
 | `ADR-001` | `record/decisions.d/` | `docs/decisions/README.md` + tag pages | `Active` |
 | `DP-001` | `record/principles.d/` | `docs/design-principles.md` (one page, read as a whole) | `Active` |
 
+## What each family is
+
+A scheme's own account of itself, where it gives one — `title` and `blurb` on `schemes.X`. The table above says where a family's files live and how its codes are spelled; this says what the family is for, which is the part a reader needs first and the part a config could not previously state (#279).
+
+
 ## What an entry must carry
 
 Every entry carries `title`, `tags` and `date`, and one standard field is conditional: a retiring document names its successor — `superseded_by:` when `status` is `Superseded`, unless the scheme renames the pair (ADR-071). `status` itself is listed below rather than assumed: the words are the scheme's own, declared like any other controlled vocabulary. Beyond those, what each scheme's entries must carry — compiled from `luria.yaml` into the contract `luria lint` checks, with where each obligation was declared. A finding cites the same line.
@@ -38,9 +43,9 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `corrects` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.corrects)
 - `corrected_by` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.corrected_by)
 - `contested_by` — required when `consensus` is `contested`, one or more `LIT` codes when present (luria.yaml: schemes.SOTA.references.contested_by)
-- `consensus` — one of `unassessed`, `unreplicated`, `contested`, `emerging`, `converged`, `universal`; absent means `unassessed` (luria.yaml: schemes.SOTA.fields.consensus; vocabulary 'consensus': values)
-- `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.yaml: schemes.SOTA.fields.status; vocabulary 'sota-statuses': values)
-- `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics`, `tiny-models` (luria.yaml: schemes.SOTA.fields.tags; vocabulary 'topics': values)
+- `consensus` — one of `unassessed`, `unreplicated`, `contested`, `emerging`, `converged`, `universal`; absent means `unassessed` (luria.yaml: schemes.SOTA.fields.consensus; vocabulary 'consensus': values) — *How far THE FIELD has converged on a practice, which is orthogonal to `status` — this record's own editorial position. The useful cases are the corners: `Deferred` + `converged` is a practice everybody follows that we have not satisfied ourselves is deliberate, and `Active` + `contested` is this record being ahead of the field and saying so, which an anthology should be able to do (ADR-015).*
+- `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.yaml: schemes.SOTA.fields.status; vocabulary 'sota-statuses': values) — *What a status means for a PRACTICE: whether this record says to do the thing today. It is not the standing of the paper underneath — that is `lit-statuses`, and the two are allowed to disagree — and it is not what the field does, which is `consensus` (ADR-002).*
+- `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics`, `tiny-models` (luria.yaml: schemes.SOTA.fields.tags; vocabulary 'topics': values) — *The thirteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same thirteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
 - `promote_when` — required when `status` is `Proposed`, `Deferred` (luria.yaml: schemes.SOTA.fields.promote_when)
 - `primary_topic` — derived — `{tags[0]}`, never written (luria.yaml: schemes.SOTA.fields.primary_topic)
 - `published` — derived — `{published}` from `source[0]`, never written (luria.yaml: schemes.SOTA.fields.published)
@@ -54,8 +59,8 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `extended_by` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.extended_by)
 - `corrects` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.corrects)
 - `corrected_by` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.corrected_by)
-- `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Rejected`, `Superseded` (luria.yaml: schemes.THEORY.fields.status; vocabulary 'theory-statuses': values)
-- `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics`, `tiny-models` (luria.yaml: schemes.THEORY.fields.tags; vocabulary 'topics': values)
+- `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Rejected`, `Superseded` (luria.yaml: schemes.THEORY.fields.status; vocabulary 'theory-statuses': values) — *Whether the record believes the ACCOUNT, which is not what the same word means on a practice. An explanation can be `Rejected` while the thing it explained goes on working exactly as well as it ever did (ADR-031).*
+- `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics`, `tiny-models` (luria.yaml: schemes.THEORY.fields.tags; vocabulary 'topics': values) — *The thirteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same thirteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
 - `promote_when` — required when `status` is `Proposed`, `Deferred` (luria.yaml: schemes.THEORY.fields.promote_when)
 - `primary_topic` — derived — `{tags[0]}`, never written (luria.yaml: schemes.THEORY.fields.primary_topic)
 - `published` — derived — `{published}` from `source[0]`, never written (luria.yaml: schemes.THEORY.fields.published)
@@ -68,8 +73,8 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `compared_against` — optional, one or more `LIT` codes when present (luria.yaml: schemes.LIT.references.compared_against)
 - `corrects` — optional, one or more `LIT` codes when present (luria.yaml: schemes.LIT.references.corrects)
 - `corrected_by` — optional, one or more `LIT` codes when present (luria.yaml: schemes.LIT.references.corrected_by)
-- `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.yaml: schemes.LIT.fields.status; vocabulary 'lit-statuses': values)
-- `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics`, `tiny-models` (luria.yaml: schemes.LIT.fields.tags; vocabulary 'topics': values)
+- `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.yaml: schemes.LIT.fields.status; vocabulary 'lit-statuses': values) — *A paper's standing in the anthology: whether it is worth reading. NOT whether its findings are true. Adam is `Active` here because it is worth reading; whether any particular thing it recommends is still what you should do is the SOTA scheme's business, and the two can disagree in either direction (ADR-002).*
+- `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics`, `tiny-models` (luria.yaml: schemes.LIT.fields.tags; vocabulary 'topics': values) — *The thirteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same thirteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
 - `published` — required (luria.yaml: schemes.LIT.fields.published)
 - `primary_topic` — derived — `{tags[0]}`, never written (luria.yaml: schemes.LIT.fields.primary_topic)
 - `source` — at least one of `arxiv`, `doi`, `url` (luria.yaml: schemes.LIT.field_groups.source)
@@ -78,20 +83,20 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 **`NOTE`**
 
 - `paper` — required, a `LIT` code (luria.yaml: schemes.NOTE.references.paper)
-- `status` — optional, one of `Read`, `Skimmed`, `Unread`, `Superseded` (luria.yaml: schemes.NOTE.fields.status; vocabulary 'note-statuses': values)
+- `status` — optional, one of `Read`, `Skimmed`, `Unread`, `Superseded` (luria.yaml: schemes.NOTE.fields.status; vocabulary 'note-statuses': values) — *How deeply the paper was READ — not whether it is any good, which is `lit-statuses`. The two disagree in every direction: a foundational paper can carry a `Skimmed` note, and a paper in the attic can carry a `Read` one, since reading it carefully is often how it got there (ADR-025).*
 - `published` — derived — `{published}` from `paper`, never written (luria.yaml: schemes.NOTE.fields.published)
 - `primary_topic` — derived — `{tags[0]}` from `paper`, never written (luria.yaml: schemes.NOTE.fields.primary_topic)
 - `tags` — derived — `{tags}` from `paper`, never written (luria.yaml: schemes.NOTE.fields.tags)
 
 **`ADR`**
 
-- `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.yaml: schemes.ADR.fields.status; vocabulary 'adr-statuses': values)
-- `tags` — required, one or more of `record`, `taxonomy`, `mechanism`, `migration` (luria.yaml: schemes.ADR.fields.tags; vocabulary 'adr-tags': values)
+- `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.yaml: schemes.ADR.fields.status; vocabulary 'adr-statuses': values) — *Whether a decision is in force. Shared by ADR and DP, because as far as being in force goes a principle and a decision are the same kind of object.*
+- `tags` — required, one or more of `record`, `taxonomy`, `mechanism`, `migration` (luria.yaml: schemes.ADR.fields.tags; vocabulary 'adr-tags': values) — *What a decision is about, in the order the index shows them. Open, unlike the topics: a decision that needs a word it does not have simply gets one.*
 
 **`DP`**
 
-- `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.yaml: schemes.DP.fields.status; vocabulary 'adr-statuses': values)
-- `tags` — required, one or more of `record`, `evidence`, `craft` (luria.yaml: schemes.DP.fields.tags; vocabulary 'dp-tags': values)
+- `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.yaml: schemes.DP.fields.status; vocabulary 'adr-statuses': values) — *Whether a decision is in force. Shared by ADR and DP, because as far as being in force goes a principle and a decision are the same kind of object.*
+- `tags` — required, one or more of `record`, `evidence`, `craft` (luria.yaml: schemes.DP.fields.tags; vocabulary 'dp-tags': values) — *What a principle is about. Shares its words with the decision tags where they overlap, deliberately — the same subject should not have two names depending on which scheme is talking about it.*
 
 ## Journals
 
@@ -151,12 +156,12 @@ Everything not listed here is at Luria's default.
 | `lint.mute` | `inert-status`, `acknowledged-uniformity` | *empty* |
 | `lint.narrow_terms` | `adam`, `adamw`, `batchnorm`, `layernorm`, `transformer`, `llama2`, `flash-attention`, `arxiv`, `registry` | *empty* |
 | `site.icon` | `assets/logo.svg` | *empty* |
-| `vocabularies.topics` | *14 keys set* | *unset* |
-| `vocabularies.sota-statuses` | *5 keys set* | *unset* |
-| `vocabularies.lit-statuses` | *5 keys set* | *unset* |
+| `vocabularies.topics` | *4 keys set* | *unset* |
+| `vocabularies.sota-statuses` | *4 keys set* | *unset* |
+| `vocabularies.lit-statuses` | *4 keys set* | *unset* |
 | `vocabularies.note-statuses` | *4 keys set* | *unset* |
-| `vocabularies.theory-statuses` | *5 keys set* | *unset* |
-| `vocabularies.adr-tags` | *4 keys set* | *unset* |
-| `vocabularies.adr-statuses` | *5 keys set* | *unset* |
+| `vocabularies.theory-statuses` | *4 keys set* | *unset* |
+| `vocabularies.adr-tags` | *3 keys set* | *unset* |
+| `vocabularies.adr-statuses` | *4 keys set* | *unset* |
 | `vocabularies.dp-tags` | *3 keys set* | *unset* |
-| `vocabularies.consensus` | *6 keys set* | *unset* |
+| `vocabularies.consensus` | *4 keys set* | *unset* |

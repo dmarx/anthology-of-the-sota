@@ -2,6 +2,8 @@
 
 # THEORYs with `tags` `inference-optimization`
 
+*Topics — The thirteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same thirteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+
 **Inference optimization** — serving-time decisions — batching, cache layout, quantization, compression, sparsity, distillation, sampling algorithms.
 
 0 of 12 THEORY documents. Back to the [full index](../README.md).

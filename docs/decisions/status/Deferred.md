@@ -2,6 +2,8 @@
 
 # ADRs with `status` `Deferred`
 
+*Decision statuses — Whether a decision is in force. Shared by ADR and DP, because as far as being in force goes a principle and a decision are the same kind of object.*
+
 **Deferred** — not in force and not being worked on; the question is real and the answer waits on something.
 
 0 of 39 decisions. Back to the [full index](../README.md).

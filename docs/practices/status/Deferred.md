@@ -2,6 +2,8 @@
 
 # SOTAs with `status` `Deferred`
 
+*Practice statuses — What a status means for a PRACTICE: whether this record says to do the thing today. It is not the standing of the paper underneath — that is `lit-statuses`, and the two are allowed to disagree — and it is not what the field does, which is `consensus` (ADR-002).*
+
 **Not yet judged** — probably right, not yet worth asserting; usually a question of adoption rather than correctness.
 
 0 of 221 SOTA documents. Back to the [full index](../README.md).

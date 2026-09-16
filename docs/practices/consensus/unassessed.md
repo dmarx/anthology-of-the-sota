@@ -2,6 +2,8 @@
 
 # SOTAs with `consensus` `unassessed`
 
+*Field consensus — How far THE FIELD has converged on a practice, which is orthogonal to `status` — this record's own editorial position. The useful cases are the corners: `Deferred` + `converged` is a practice everybody follows that we have not satisfied ourselves is deliberate, and `Active` + `contested` is this record being ahead of the field and saying so, which an anthology should be able to do (ADR-015).*
+
 **Not judged** — nobody has assessed where the field stands on this; the default, and true of most of the corpus.
 
 134 of 221 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).

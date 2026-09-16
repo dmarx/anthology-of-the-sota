@@ -2,6 +2,8 @@
 
 # SOTAs with `consensus` `converged`
 
+*Field consensus — How far THE FIELD has converged on a practice, which is orthogonal to `status` — this record's own editorial position. The useful cases are the corners: `Deferred` + `converged` is a practice everybody follows that we have not satisfied ourselves is deliberate, and `Active` + `contested` is this record being ahead of the field and saying so, which an anthology should be able to do (ADR-015).*
+
 **Agreed** — the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately.
 
 15 of 221 SOTA documents. Back to the [full index](../README.md).

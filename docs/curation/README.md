@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [16 Sep 19:20 — The comment above the table was the blurb all along](2026-09.md#the-comment-above-the-table-was-the-blurb-all-along)
 - [16 Sep 18:08 — The contradiction was in the reading, not between the papers](2026-09.md#the-contradiction-was-in-the-reading-not-between-the-papers)
 - [16 Sep 17:31 — The fix for a directive with too many codes is not a longer line](2026-09.md#the-fix-for-a-directive-with-too-many-codes-is-not-a-longer-line)
 - [16 Sep 15:13 — The file with the most reasons in it was the one nothing checked](2026-09.md#the-file-with-the-most-reasons-in-it-was-the-one-nothing-checked)
@@ -78,9 +79,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-71 entries across 2 books, newest first.
+72 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 69 | 2026-09-05 | 2026-09-16 |
+| [2026-09](2026-09.md) | 70 | 2026-09-05 | 2026-09-16 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

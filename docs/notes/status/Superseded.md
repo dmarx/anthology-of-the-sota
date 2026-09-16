@@ -2,6 +2,8 @@
 
 # NOTEs with `status` `Superseded`
 
+*Reading statuses — How deeply the paper was READ — not whether it is any good, which is `lit-statuses`. The two disagree in every direction: a foundational paper can carry a `Skimmed` note, and a paper in the attic can carry a `Read` one, since reading it carefully is often how it got there (ADR-025).*
+
 **Re-read** — a later reading replaced this one, and names it.
 
 0 of 158 NOTE documents. Back to the [full index](../README.md).

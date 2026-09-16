@@ -2,6 +2,8 @@
 
 # LITs with `tags` `analysis-and-evaluation`
 
+*Topics — The thirteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same thirteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
 44 of 309 LIT documents. Back to the [full index](../README.md).

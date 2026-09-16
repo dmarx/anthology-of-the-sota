@@ -2,6 +2,8 @@
 
 # ADRs with `tags` `ontology`
 
+*Decision tags — What a decision is about, in the order the index shows them. Open, unlike the topics: a decision that needs a word it does not have simply gets one.*
+
 **ontology**.
 
 5 of 39 decisions. Back to the [full index](../README.md).

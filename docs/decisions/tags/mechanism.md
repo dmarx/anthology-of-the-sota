@@ -2,6 +2,8 @@
 
 # ADRs with `tags` `mechanism`
 
+*Decision tags — What a decision is about, in the order the index shows them. Open, unlike the topics: a decision that needs a word it does not have simply gets one.*
+
 **Mechanism** — identifiers, generation, the lint.
 
 14 of 39 decisions. Back to the [full index](../README.md).

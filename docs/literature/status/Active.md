@@ -2,6 +2,8 @@
 
 # LITs with `status` `Active`
 
+*Paper statuses — A paper's standing in the anthology: whether it is worth reading. NOT whether its findings are true. Adam is `Active` here because it is worth reading; whether any particular thing it recommends is still what you should do is the SOTA scheme's business, and the two can disagree in either direction (ADR-002).*
+
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
 293 of 309 LIT documents. Back to the [full index](../README.md).

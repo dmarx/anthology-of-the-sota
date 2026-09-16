@@ -2,6 +2,8 @@
 
 # NOTEs with `status` `Unread`
 
+*Reading statuses — How deeply the paper was READ — not whether it is any good, which is `lit-statuses`. The two disagree in every direction: a foundational paper can carry a `Skimmed` note, and a paper in the attic can carry a `Read` one, since reading it carefully is often how it got there (ADR-025).*
+
 **Unread** — looked at and deliberately set aside — a human judgement, not a backlog entry. A paper nobody has reached simply has no note (ADR-025).
 
 0 of 158 NOTE documents. Back to the [full index](../README.md).

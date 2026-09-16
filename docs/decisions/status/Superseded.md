@@ -2,6 +2,8 @@
 
 # ADRs with `status` `Superseded`
 
+*Decision statuses — Whether a decision is in force. Shared by ADR and DP, because as far as being in force goes a principle and a decision are the same kind of object.*
+
 **Superseded** — no longer in force because something replaced it; the successor is named in the field, not in the prose.
 
 4 of 39 decisions. Back to the [full index](../README.md).

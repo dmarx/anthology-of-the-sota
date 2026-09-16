@@ -63,6 +63,9 @@ It is sold as a *training* objective that improves the model and pays for
 itself, and adopted as an *inference* mechanism — models trained with 4-token
 prediction run up to **3× faster** at decode, because the extra heads are a
 draft model for speculative decoding you did not have to train separately.
+That mechanism is [SOTA-tmp6mgiw](SOTA-tmp6mgiw.md), filed under [#87](https://github.com/dmarx/anthology-of-the-sota/issues/87); when this practice was
+written the record held no document for it, so the sentence above rested on
+nothing a reader could follow.
 
 Which of the two is doing the work at frontier scale is not something any
 adopting report isolates. That matters for reading this practice: if you want

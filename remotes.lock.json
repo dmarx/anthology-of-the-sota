@@ -422,6 +422,9 @@
     "ARXIV/2211.05102": {
       "title": "Efficiently Scaling Transformer Inference"
     },
+    "ARXIV/2211.17192": {
+      "title": "Fast Inference from Transformers via Speculative Decoding"
+    },
     "ARXIV/2212.05055": {
       "title": "Sparse Upcycling: Training Mixture-of-Experts from Dense Checkpoints"
     },
@@ -445,6 +448,9 @@
     },
     "ARXIV/2301.11913": {
       "title": "SWARM Parallelism: Training Large Models Can Be Surprisingly Communication-Efficient"
+    },
+    "ARXIV/2302.01318": {
+      "title": "Accelerating Large Language Model Decoding with Speculative Sampling"
     },
     "ARXIV/2302.03169": {
       "title": "Data Selection for Language Models via Importance Resampling"

@@ -1,0 +1,67 @@
+---
+status: 'Active'
+title: 'Accelerating Large Language Model Decoding with Speculative Sampling'
+version: 1
+tags:
+- inference-optimization
+date: '2026-09-16'
+published: '2023-02-02'
+arxiv: '2302.01318'
+first_author: 'Chen'
+keywords:
+- 'speculative-sampling'
+- 'draft-model'
+- 'rejection-sampling'
+- 'chinchilla'
+- 'decoding-latency'
+implementations: []
+summary: >-
+  Chen et al. (2023), [ARXIV-2302.01318](https://arxiv.org/abs/2302.01318). The same algorithm as
+  [LIT-tmptlzmx](LIT-tmptlzmx.md), arrived at independently two months later and demonstrated at
+  a scale the first paper did not reach: Chinchilla, 70B, in a distributed
+  setup, 2-2.5x decoding speedup with the target distribution preserved
+  "within hardware numerics". Its sharpest observation is that the resulting
+  tokens per second "often exceeds the idealised ceiling on auto-regressive
+  sampling speed imposed by the memory bandwidth" — which is the premise of
+  the whole family, measured.
+---
+
+# LIT-tmphbbt7: Accelerating Large Language Model Decoding with Speculative Sampling
+
+Chen et al. (2023) — [ARXIV-2302.01318](https://arxiv.org/abs/2302.01318)
+
+## Key takeaways
+
+- **Independently the same algorithm.** Draft `K` tokens with a faster
+  autoregressive model, score them in one target call, accept a prefix via a
+  modified rejection sampling scheme, resample the first rejected position.
+  Two groups, two months apart, same construction and the same guarantee.
+- **The guarantee is stated with the caveat that matters**: the scheme
+  "preserves the distribution of the target model **within hardware
+  numerics**". Exact in the mathematics, floating-point in practice — a
+  sharper statement than "lossless" and the one to quote.
+- **It exceeds the memory-bandwidth ceiling.** Mean tokens per second under
+  speculative sampling "often exceeds the idealised ceiling on auto-regressive
+  sampling speed imposed by the memory bandwidth". That is the strongest form
+  of the family's premise: the limit being beaten is the one that made plain
+  decoding slow.
+- **Scale.** Chinchilla at 70B parameters, distributed, **2-2.5x** depending
+  on domain, with no modification to the target model and no change in sample
+  quality.
+- **At least one token per loop**, as in [LIT-tmptlzmx](LIT-tmptlzmx.md): reject the first draft
+  token and a valid one is resampled in its place.
+- **It composes with the sampling knobs.** Nucleus, top-k and temperature are
+  applied to the probabilities before the rejection step, and the paper
+  reports the acceptance rate "robust to the exact parameters used".
+- **The draft is free to be anything that exposes logits.** Because the
+  acceptance rule alone carries the distributional guarantee, the draft model
+  is chosen purely on acceptance rate and latency — which is the door every
+  later method in this line walks through.
+
+## Standing in the anthology
+
+Corroborating source for [SOTA-tmp6mgiw](../practices.d/SOTA-tmp6mgiw.md); the reading is [NOTE-tmpbfbli](../notes.d/NOTE-tmpbfbli.md).
+
+Filed with [LIT-tmptlzmx](LIT-tmptlzmx.md) under [#87](https://github.com/dmarx/anthology-of-the-sota/issues/87). The pair matters more than either alone:
+two independent groups, two scales, one guarantee, which is what moves the
+practice off a single result.

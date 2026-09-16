@@ -1,5 +1,8 @@
 ---
+number: 225
 status: Active
+formerly:
+- SOTA-tmpjynpv
 consensus: unreplicated
 consensus_note: >-
   One paper for the crossover. The claim underneath it — that decentralized
@@ -24,16 +27,16 @@ summary: >-
   link is the constraint, and the paper establishes that by sweeping bandwidth
   and latency rather than by naming a threshold.
 extended_by:
-- SOTA-tmpf0z9t
-- SOTA-tmpwgbmj
+- SOTA-223
+- SOTA-226
 ---
 
-<!-- inactive-ok-file: SOTA-tmpf0z9t, SOTA-tmpboy96 — both Proposed, and
+<!-- inactive-ok-file: SOTA-223, SOTA-222 — both Proposed, and
      both named as open questions this practice leaves to other documents:
      which topology to use, and whether the overlap it assumes is filed
      elsewhere. Neither is support. -->
 
-# SOTA-tmpjynpv: Drop the parameter server for gossip once the network is the bottleneck, and measure where that is rather than inheriting a threshold
+# SOTA-225: Drop the parameter server for gossip once the network is the bottleneck, and measure where that is rather than inheriting a threshold
 
 ## What to do
 
@@ -82,12 +85,12 @@ regime and is not what this measures.
 **The topology is not a free choice, and this practice does not make it.**
 [LIT-302](../literature.d/LIT-302.md)'s own secondary finding is that a ring is easy and bad — its consensus
 rate is poor enough that the paper puts the linear-speedup requirement at
-`K = Omega(n^13)`. What graph to use instead is [SOTA-tmpwgbmj](SOTA-tmpwgbmj.md) and
-[SOTA-tmpf0z9t](SOTA-tmpf0z9t.md), which disagree with each other.
+`K = Omega(n^13)`. What graph to use instead is [SOTA-226](SOTA-226.md) and
+[SOTA-223](SOTA-223.md), which disagree with each other.
 
 **Overlapping is assumed.** The measured advantage assumes the gossip exchange
 runs concurrently with local gradient computation. Serialise them and the
-comparison changes; [SOTA-tmpboy96](SOTA-tmpboy96.md) is the same assumption in a different
+comparison changes; [SOTA-222](SOTA-222.md) is the same assumption in a different
 family.
 
 **2017 hardware.** The shape of the argument is the durable part. A crossover

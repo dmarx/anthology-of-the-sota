@@ -1,5 +1,8 @@
 ---
+number: 222
 status: Proposed
+formerly:
+- SOTA-tmpboy96
 promote_when: >-
   The same measurement on a workload whose per-step compute is long enough to
   matter — a transformer pretraining step rather than a ResNet-20 step on
@@ -33,11 +36,11 @@ summary: >-
 <!-- inactive-ok-file: SOTA-155, SOTA-216 — both Proposed, and named as the
      two practices in the same family that trade accuracy for bandwidth,
      which this one is claimed not to do. A contrast, not support. -->
-<!-- inactive-ok-file: ADR-tmpl8z39 — Proposed, and the decision under which
+<!-- inactive-ok-file: ADR-041 — Proposed, and the decision under which
      this document declines to file two constants. A Proposed decision is
      the resting state of most of this record's decisions. -->
 
-# SOTA-tmpboy96: Overlap the synchronisation with one or two local steps instead of communicating every step
+# SOTA-222: Overlap the synchronisation with one or two local steps instead of communicating every step
 
 ## What to do
 
@@ -86,7 +89,7 @@ and ImageNet; the paper's experiments are CIFAR-10.
 **`alpha = 0.6` and `beta = 0.7` are not filed here.** The pullback strength
 and the anchor's momentum are algorithm-local constants tuned on this task —
 the paper reports `alpha = 0.6` best for `tau >= 2` and `alpha = 0.5` at
-`tau = 1` — and [ADR-tmpl8z39](../decisions.d/ADR-tmpl8z39.md) is why they stay in the reading. They are the
+`tau = 1` — and [ADR-041](../decisions.d/ADR-041.md) is why they stay in the reading. They are the
 standard settings for the method, not, as an earlier draft here said, a
 variant for skewed data.
 

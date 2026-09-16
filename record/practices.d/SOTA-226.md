@@ -1,5 +1,8 @@
 ---
+number: 226
 status: Active
+formerly:
+- SOTA-tmpwgbmj
 consensus: unreplicated
 consensus_note: >-
   One paper in this record, but the load-bearing part is a property of the
@@ -15,9 +18,9 @@ source:
 introduced_by:
 - LIT-254
 extends:
-- SOTA-tmpjynpv
+- SOTA-225
 compared_against:
-- SOTA-tmpf0z9t
+- SOTA-223
 implementations: []
 summary: >-
   Assran et al. (2018), [LIT-254](../literature.d/LIT-254.md). Having chosen gossip over a parameter server,
@@ -29,14 +32,14 @@ summary: >-
   evenly.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpf0z9t — Proposed, and cited as the practice
+<!-- inactive-ok-file: SOTA-223 — Proposed, and cited as the practice
      that argues against this one. Filing a disagreement is what the pair
      is for; neither supports the other. -->
-<!-- inactive-ok-file: SOTA-tmpboy96, ADR-tmpl8z39 — Proposed: a
+<!-- inactive-ok-file: SOTA-222, ADR-041 — Proposed: a
      neighbouring practice from a different paper, and the decision under
      which this document declines LIT-254's densification schedule. -->
 
-# SOTA-tmpwgbmj: If the gossip topology is static, make it a directed exponential graph, not a ring
+# SOTA-226: If the gossip topology is static, make it a directed exponential graph, not a ring
 
 ## What to do
 
@@ -76,7 +79,7 @@ same number of messages, so the load stops being balanced.
 
 ## Conditions
 
-**[SOTA-tmpf0z9t](SOTA-tmpf0z9t.md) argues against static answers, and the two papers are not
+**[SOTA-223](SOTA-223.md) argues against static answers, and the two papers are not
 quite arguing about the same thing.** [LIT-315](../literature.d/LIT-315.md) claims a fresh random
 neighbourhood each round beats every static topology, improving the
 transient-iteration bound by `s^2`. [LIT-254](../literature.d/LIT-254.md)'s rejection of randomization,
@@ -95,9 +98,9 @@ unspecified 7-regular one. Nobody has run that.
 approximate consensus and the argument becomes the ordinary spectral one.
 
 **The rest of [LIT-254](../literature.d/LIT-254.md)'s recommendations are not filed here.** Overlapping the
-gossip with computation is [SOTA-tmpboy96](SOTA-tmpboy96.md)'s subject from a different paper, and
+gossip with computation is [SOTA-222](SOTA-222.md)'s subject from a different paper, and
 its suggestion to run a denser topology for the first 30 epochs and then
-sparsify is an algorithm-local schedule of the kind [ADR-tmpl8z39](../decisions.d/ADR-tmpl8z39.md) declines.
+sparsify is an algorithm-local schedule of the kind [ADR-041](../decisions.d/ADR-041.md) declines.
 
 ## Known implementations
 

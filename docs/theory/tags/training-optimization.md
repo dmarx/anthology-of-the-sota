@@ -6,8 +6,9 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-1 of 12 THEORY documents. Back to the [full index](../README.md).
+2 of 14 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [THEORY-012](../../../record/theory.d/THEORY-012.md) | How far a batch-size scaling heuristic transfers is a property of the optimizer, not of the heuristic | Shallue et al. (2018), [LIT-058](../../../record/literature.d/LIT-058.md), found no learning-rate scaling rule that held across 35 workloads and concluded that practitioners must retune at every batch size. You et al. (2019), [LIT-265](../../../record/literature.d/LIT-265.md), then scaled BERT to 32K on a square- root rule with no retuning at all. The two results are usually read as a disagreement about heuristics. They are better read as one result about optimizers: a scaling rule is a guess about how the usable step size grows with the batch, that step is bounded by the worst-conditioned direction the optimizer does not normalize away, and an optimizer that normalizes more directions carries the same rule further. | Proposed |
+| [THEORY-013](../../../record/theory.d/THEORY-013.md) | The SGD noise scale g = eps*N/B sets generalization, so the optimal batch size grows with the training set | Smith and Le (2017), [LIT-305](../../../record/literature.d/LIT-305.md), read SGD as a stochastic differential equation with noise scale g = eps*N/B, argued that minibatch noise is what drives the optimizer toward minima that generalize, and derived that the optimal batch size is proportional to the learning rate and to the training set size. Filed `Rejected` and kept: [LIT-058](../../../record/literature.d/LIT-058.md) swept 35 workloads thirteen months later, found no evidence that larger batches degrade out-of-sample performance once the metaparameters are retuned, and reviewed this paper by name as one that did not retune. The phenomenon the account explains is, on the larger measurement, mostly an artefact of holding the learning rate fixed. | Rejected |

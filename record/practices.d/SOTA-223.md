@@ -1,5 +1,8 @@
 ---
+number: 223
 status: Proposed
+formerly:
+- SOTA-tmpf0z9t
 promote_when: >-
   The comparison redrawn at a second scale or on a second workload, by anyone,
   against a directed exponential graph specifically rather than an unspecified
@@ -22,9 +25,9 @@ source:
 introduced_by:
 - LIT-315
 extends:
-- SOTA-tmpjynpv
+- SOTA-225
 compared_against:
-- SOTA-tmpwgbmj
+- SOTA-226
 implementations: []
 summary: >-
   de Vos et al. (2023), [LIT-315](../literature.d/LIT-315.md). Decentralized training has spent years
@@ -35,7 +38,7 @@ summary: >-
   accurately than a static 7-regular graph at equal communication volume.
 ---
 
-# SOTA-tmpf0z9t: Do not keep the gossip topology static: sample a fresh random neighbourhood every round
+# SOTA-223: Do not keep the gossip topology static: sample a fresh random neighbourhood every round
 
 ## What to do
 
@@ -71,7 +74,7 @@ seeds with confidence intervals.
 language model, and nothing here is at a node count where the `n^3` in either
 bound is doing visible work.
 
-**The baseline is a 7-regular graph, not the graph [SOTA-tmpwgbmj](SOTA-tmpwgbmj.md)
+**The baseline is a 7-regular graph, not the graph [SOTA-226](SOTA-226.md)
 recommends.** The theoretical claim covers directed exponential graphs by
 covering the static class; the measured 1.7× does not, because that comparison
 was not run. This is why the two practices are filed as a pair with neither

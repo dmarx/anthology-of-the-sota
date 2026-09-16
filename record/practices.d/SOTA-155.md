@@ -48,10 +48,10 @@ compared_against:
 extended_by:
 - SOTA-219
 explained_by:
-- THEORY-tmpclzj7
+- THEORY-014
 ---
 
-<!-- inactive-ok-file: THEORY-tmpclzj7 — Proposed, and cited as the Proposed
+<!-- inactive-ok-file: THEORY-014 — Proposed, and cited as the Proposed
      account that orders this practice's two components. The practice rests
      on LIT-212, LIT-214 and LIT-373 without it. -->
 
@@ -83,7 +83,7 @@ What you run:
   applied slow outer momentum to local SGD and to gossip optimizers in 2019,
   and [LIT-212](../literature.d/LIT-212.md)'s related work names it as having "extended [federated
   averaging] to more powerful outer optimizers", work that "inspired our use
-  of Nesterov momentum". Reading the two together is what [THEORY-tmpclzj7](../theory.d/THEORY-tmpclzj7.md)
+  of Nesterov momentum". Reading the two together is what [THEORY-014](../theory.d/THEORY-014.md)
   does, and it is why this practice's order matters: the inner step count is
   what the outer optimizer buys, not the other way round.
 - **Streamed, overlapped, quantised synchronisation**: exchange subsets of

@@ -24,7 +24,7 @@ implementations:
 - MT-NLG
 ---
 
-<!-- inactive-ok-file: THEORY-tmp0a1gz — Rejected, and cited as what this
+<!-- inactive-ok-file: THEORY-013 — Rejected, and cited as what this
      practice does NOT rest on: the other thing called a noise scale, and
      why the record does not hold it. -->
 
@@ -83,7 +83,7 @@ two routes. They are not, and [LIT-017](../literature.d/LIT-017.md) says so: it 
 is a property of the **gradient distribution**, and you *measure* it. Holding
 `g` fixed while `B` doubles means doubling the learning rate, so that quantity
 is linear scaling with a derivation attached; this one tells you where the
-batch stops buying speed. [THEORY-tmp0a1gz](../theory.d/THEORY-tmp0a1gz.md) is why the record does not hold the
+batch stops buying speed. [THEORY-013](../theory.d/THEORY-013.md) is why the record does not hold the
 first.
 
 ## Relation to the scaling-law exponent

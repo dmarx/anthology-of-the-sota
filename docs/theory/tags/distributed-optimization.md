@@ -6,8 +6,8 @@
 
 **Distributed optimization** — parallelism and sharding, communication, memory management, checkpointing.
 
-0 of 12 THEORY documents. Back to the [full index](../README.md).
+1 of 14 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [THEORY-014](../../../record/theory.d/THEORY-014.md) | The outer optimizer is what buys the inner step count | Three papers in this record prescribe how many steps a worker takes between synchronisations, and they differ by a factor of thirty: [LIT-362](../../../record/literature.d/LIT-362.md) says 16 to 32, [LIT-373](../../../record/literature.d/LIT-373.md) says 12 to 48, [LIT-212](../../../record/literature.d/LIT-212.md) says 500. They are not disagreeing about the same quantity. The two with small intervals average parameters and stop there; the one with a large interval runs Nesterov momentum over the accumulated deltas, and its own ablation reports that plain averaging at that interval performs poorly. The interval is not a constant to transfer. It is bought, and the outer optimizer is what pays for it. | Proposed |

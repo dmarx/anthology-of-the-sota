@@ -31,15 +31,16 @@ bare code and run `luria link --fix`.
 
 ## By topic
 
-**[Training optimization](tags/training-optimization.md)** (1) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
-[012](../../record/theory.d/THEORY-012.md)
+**[Training optimization](tags/training-optimization.md)** (2) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
+[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md)
 
 **[Systems optimization](tags/systems-optimization.md)** (0) — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
 **[Model stability](tags/model-stability.md)** (4) — initialization, normalization, gradient handling, regularization, loss-landscape behaviour:
 [001](../../record/theory.d/THEORY-001.md) · [003](../../record/theory.d/THEORY-003.md) · [010](../../record/theory.d/THEORY-010.md) · [011](../../record/theory.d/THEORY-011.md)
 
-**[Distributed optimization](tags/distributed-optimization.md)** (0) — parallelism and sharding, communication, memory management, checkpointing.
+**[Distributed optimization](tags/distributed-optimization.md)** (1) — parallelism and sharding, communication, memory management, checkpointing:
+[014](../../record/theory.d/THEORY-014.md)
 
 **[Data pipeline](tags/data-pipeline.md)** (0) — loading, quality assessment and selection, preprocessing, batch preparation.
 
@@ -63,7 +64,7 @@ bare code and run `luria link --fix`.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (5) · [Offered](status/Proposed.md) (6) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (1) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (5) · [Offered](status/Proposed.md) (7) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (2) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -91,4 +92,6 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-010](../../record/theory.d/THEORY-010.md) | Most of the loss barrier between two independently trained networks is permutation, not disagreement | Two networks trained from different seeds land far apart in weight space and close together in function space, and the linear path between them crosses a loss barrier. The account is that the barrier is mostly an artefact of unit labelling: permute the hidden units of one to match the other and the barrier largely disappears. What looked like two different solutions was one solution written in two orders. | Proposed |
 | [THEORY-011](../../record/theory.d/THEORY-011.md) | Skip connections make a deep network trainable by smoothing the loss surface, not by making it more expressive | Li et al. (2017), [LIT-014](../../record/literature.d/LIT-014.md) — the same deep network plotted with and without skip connections gives a chaotic surface with visible barriers between nearby points, and a smooth near-convex one. The claim is about *trainability* rather than capacity: the residual network is not a larger function class, it is a reachable one. It is the reason depth stopped being the barrier it had been, and the reason every practice in this record about residual streams is about what to do with them rather than whether to have them. | Active |
 | [THEORY-012](../../record/theory.d/THEORY-012.md) | How far a batch-size scaling heuristic transfers is a property of the optimizer, not of the heuristic | Shallue et al. (2018), [LIT-058](../../record/literature.d/LIT-058.md), found no learning-rate scaling rule that held across 35 workloads and concluded that practitioners must retune at every batch size. You et al. (2019), [LIT-265](../../record/literature.d/LIT-265.md), then scaled BERT to 32K on a square- root rule with no retuning at all. The two results are usually read as a disagreement about heuristics. They are better read as one result about optimizers: a scaling rule is a guess about how the usable step size grows with the batch, that step is bounded by the worst-conditioned direction the optimizer does not normalize away, and an optimizer that normalizes more directions carries the same rule further. | Proposed |
+| [THEORY-013](../../record/theory.d/THEORY-013.md) | The SGD noise scale g = eps*N/B sets generalization, so the optimal batch size grows with the training set | Smith and Le (2017), [LIT-305](../../record/literature.d/LIT-305.md), read SGD as a stochastic differential equation with noise scale g = eps*N/B, argued that minibatch noise is what drives the optimizer toward minima that generalize, and derived that the optimal batch size is proportional to the learning rate and to the training set size. Filed `Rejected` and kept: [LIT-058](../../record/literature.d/LIT-058.md) swept 35 workloads thirteen months later, found no evidence that larger batches degrade out-of-sample performance once the metaparameters are retuned, and reviewed this paper by name as one that did not retune. The phenomenon the account explains is, on the larger measurement, mostly an artefact of holding the learning rate fixed. | Rejected |
+| [THEORY-014](../../record/theory.d/THEORY-014.md) | The outer optimizer is what buys the inner step count | Three papers in this record prescribe how many steps a worker takes between synchronisations, and they differ by a factor of thirty: [LIT-362](../../record/literature.d/LIT-362.md) says 16 to 32, [LIT-373](../../record/literature.d/LIT-373.md) says 12 to 48, [LIT-212](../../record/literature.d/LIT-212.md) says 500. They are not disagreeing about the same quantity. The two with small intervals average parameters and stop there; the one with a large interval runs Nesterov momentum over the accumulated deltas, and its own ablation reports that plain averaging at that interval performs poorly. The interval is not a constant to transfer. It is bought, and the outer optimizer is what pays for it. | Proposed |
 

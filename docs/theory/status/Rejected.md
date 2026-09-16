@@ -6,8 +6,9 @@
 
 **Disbelieved** — tested and failed, or contradicted by later work — and the thing it explained may still work perfectly well.
 
-1 of 12 THEORY documents. Back to the [full index](../README.md).
+2 of 14 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [THEORY-001](../../../record/theory.d/THEORY-001.md) | Batch normalization works by reducing internal covariate shift | Ioffe and Szegedy (2015), [LIT-002](../../../record/literature.d/LIT-002.md) — the explanation batch normalization was named after and introduced with: that training is slowed by each layer's input distribution shifting as the layers below it update, and that holding those distributions steady is what buys the speed. Refuted in 2018; the technique was not. | Rejected — the experiment that would have confirmed it was eventually run, and the benefit survived the shift being put back |
+| [THEORY-013](../../../record/theory.d/THEORY-013.md) | The SGD noise scale g = eps*N/B sets generalization, so the optimal batch size grows with the training set | Smith and Le (2017), [LIT-305](../../../record/literature.d/LIT-305.md), read SGD as a stochastic differential equation with noise scale g = eps*N/B, argued that minibatch noise is what drives the optimizer toward minima that generalize, and derived that the optimal batch size is proportional to the learning rate and to the training set size. Filed `Rejected` and kept: [LIT-058](../../../record/literature.d/LIT-058.md) swept 35 workloads thirteen months later, found no evidence that larger batches degrade out-of-sample performance once the metaparameters are retuned, and reviewed this paper by name as one that did not retune. The phenomenon the account explains is, on the larger measurement, mostly an artefact of holding the learning rate fixed. | Rejected |

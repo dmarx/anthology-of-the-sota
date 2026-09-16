@@ -1,5 +1,8 @@
 ---
+number: 224
 status: Active
+formerly:
+- SOTA-tmpi7tm2
 consensus: unreplicated
 consensus_note: >-
   One paper, and a warmup schedule is the kind of detail that gets reproduced
@@ -26,7 +29,7 @@ summary: >-
   first few epochs — and reach the target once the run has settled.
 ---
 
-# SOTA-tmpi7tm2: Ramp the sparsity ratio up over the first few epochs rather than starting at the target
+# SOTA-224: Ramp the sparsity ratio up over the first few epochs rather than starting at the target
 
 ## What to do
 

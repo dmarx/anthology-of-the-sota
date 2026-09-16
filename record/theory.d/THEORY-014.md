@@ -1,5 +1,8 @@
 ---
+number: 14
 status: Proposed
+formerly:
+- THEORY-tmpclzj7
 promote_when: >-
   Post-local SGD's own schedule run with an outer momentum optimizer over the
   deltas, showing its usable H rising above the 16 to 32 it reports without
@@ -37,7 +40,7 @@ summary: >-
      the documents whose apparent disagreement it resolves, which is the
      whole reason a THEORY names an `explains` list. -->
 
-# THEORY-tmpclzj7: The outer optimizer is what buys the inner step count
+# THEORY-014: The outer optimizer is what buys the inner step count
 
 ## The claim
 

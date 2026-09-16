@@ -1,5 +1,8 @@
 ---
+number: 13
 status: Rejected
+formerly:
+- THEORY-tmp0a1gz
 title: 'The SGD noise scale g = eps*N/B sets generalization, so the optimal batch size grows with the training set'
 version: 1
 tags:
@@ -21,7 +24,7 @@ summary: >-
   measurement, mostly an artefact of holding the learning rate fixed.
 ---
 
-# THEORY-tmp0a1gz: The SGD noise scale g = eps*N/B sets generalization, so the optimal batch size grows with the training set
+# THEORY-013: The SGD noise scale g = eps*N/B sets generalization, so the optimal batch size grows with the training set
 
 ## The claim, as it was made
 

@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**61 document(s) awaiting a decision.**
+**66 document(s) awaiting a decision.**
 
 ## SOTAs
 
-40 of the 61.
+42 of the 66.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -20,9 +20,9 @@
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 9 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 8 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
 | 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 8 | 0 | Decay the learning rate linearly all the way to zero |
+| 2026-09-07 | Proposed | [SOTA-155](../../record/practices.d/SOTA-155.md) | 11 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
 | 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 9 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
 | 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 6 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
-| 2026-09-07 | Proposed | [SOTA-155](../../record/practices.d/SOTA-155.md) | 6 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
 | 2026-09-07 | Proposed | [SOTA-156](../../record/practices.d/SOTA-156.md) | 5 | 0 | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed |
 | 2026-09-07 | Proposed | [SOTA-157](../../record/practices.d/SOTA-157.md) | 4 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
 | 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 2 | 0 | Pack training documents by best fit instead of concatenating and splitting |
@@ -48,15 +48,17 @@
 | 2026-09-15 | Proposed | [SOTA-211](../../record/practices.d/SOTA-211.md) | 13 | 0 | Spend one fitness evaluation per evolution-strategies direction, not an antithetic pair |
 | 2026-09-15 | Proposed | [SOTA-213](../../record/practices.d/SOTA-213.md) | 13 | 0 | Control evolution-strategies drift with a larger population or an anchor penalty, not by stopping training early |
 | 2026-09-15 | Proposed | [SOTA-212](../../record/practices.d/SOTA-212.md) | 5 | 0 | Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them |
+| 2026-09-15 | Proposed | [SOTA-216](../../record/practices.d/SOTA-216.md) | 3 | 0 | Switch from minibatch SGD to local SGD at the first learning-rate decay, rather than choosing between them |
 | 2026-09-15 | Proposed | [SOTA-215](../../record/practices.d/SOTA-215.md) | 2 | 0 | Freeze Adam's variance term after a warmup before compressing its update, and never compress the update directly |
 | 2026-09-15 | Proposed | [SOTA-217](../../record/practices.d/SOTA-217.md) | 1 | 0 | Align the hidden-unit permutation before averaging weights from separately trained networks |
 | 2026-09-15 | Proposed | [SOTA-209](../../record/practices.d/SOTA-209.md) | 0 | 0 | Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch |
-| 2026-09-15 | Proposed | [SOTA-216](../../record/practices.d/SOTA-216.md) | 0 | 0 | Switch from minibatch SGD to local SGD at the first learning-rate decay, rather than choosing between them |
 | 2026-09-15 | Proposed | [SOTA-220](../../record/practices.d/SOTA-220.md) | 0 | 0 | Aggregate worker gradients coordinate-wise by median when any worker may be faulty |
+| 2026-09-16 | Proposed | [SOTA-222](../../record/practices.d/SOTA-222.md) | 3 | 0 | Overlap the synchronisation with one or two local steps instead of communicating every step |
+| 2026-09-16 | Proposed | [SOTA-223](../../record/practices.d/SOTA-223.md) | 2 | 0 | Do not keep the gossip topology static: sample a fresh random neighbourhood every round |
 
 ## THEORYs
 
-6 of the 61.
+7 of the 66.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -66,10 +68,11 @@
 | 2026-09-15 | Proposed | [THEORY-005](../../record/theory.d/THEORY-005.md) | 3 | 0 | Dense feed-forward layers are already mixtures of experts, and pre-training settles the partition before the neurons |
 | 2026-09-15 | Proposed | [THEORY-010](../../record/theory.d/THEORY-010.md) | 2 | 0 | Most of the loss barrier between two independently trained networks is permutation, not disagreement |
 | 2026-09-16 | Proposed | [THEORY-012](../../record/theory.d/THEORY-012.md) | 7 | 0 | How far a batch-size scaling heuristic transfers is a property of the optimizer, not of the heuristic |
+| 2026-09-16 | Proposed | [THEORY-014](../../record/theory.d/THEORY-014.md) | 2 | 0 | The outer optimizer is what buys the inner step count |
 
 ## LITs
 
-3 of the 61.
+3 of the 66.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -79,7 +82,7 @@
 
 ## ADRs
 
-12 of the 61.
+14 of the 66.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -94,10 +97,12 @@
 | 2026-09-16 | Proposed | [ADR-035](../../record/decisions.d/ADR-035.md) | 32 | 0 | A document may carry more than one topic; the first is the primary |
 | 2026-09-16 | Proposed | [ADR-038](../../record/decisions.d/ADR-038.md) | 13 | 0 | A note has no topics of its own: it derives them from its paper |
 | 2026-09-16 | Proposed | [ADR-039](../../record/decisions.d/ADR-039.md) | 2 | 0 | The configuration is part of the record, and the lint reads it |
+| 2026-09-16 | Proposed | [ADR-041](../../record/decisions.d/ADR-041.md) | 2 | 0 | An algorithm-local tuning constant belongs in the reading of the paper that measured it, not in the practice registry |
 | 2026-09-16 | Proposed | [ADR-037](../../record/decisions.d/ADR-037.md) | 0 | 0 | Fail the build on `source-mismatch`, and take the source invariant upstream |
+| 2026-09-16 | Proposed | [ADR-040](../../record/decisions.d/ADR-040.md) | 0 | 0 | Advice on how to prove a theorem is out of scope; advice on how to find out whether a technique worked is not |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (7): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-216](../../record/practices.d/SOTA-216.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (7): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md), [ADR-040](../../record/decisions.d/ADR-040.md) — these are the cheapest to close, since nothing depends on the answer.

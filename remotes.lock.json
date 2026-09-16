@@ -356,6 +356,9 @@
     "ARXIV/2203.00555": {
       "title": "DeepNet: Scaling Transformers to 1,000 Layers"
     },
+    "ARXIV/2203.02155": {
+      "title": "Training language models to follow instructions with human feedback"
+    },
     "ARXIV/2203.03466": {
       "title": "Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer"
     },

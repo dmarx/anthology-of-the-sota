@@ -62,10 +62,24 @@ work perfectly well.
   in that order of preference — the first two resolve through a remote, a
   URL is a string nothing can check ([ADR-009](record/decisions.d/ADR-009.md)). Two papers reached the old
   corpus with no identifier at all; that is now impossible.
-- **Exactly one primary topic**, from the thirteen in the `topics`
-  vocabulary in `luria.yaml` — one table, named by the practice registry and
-  the reading list alike, glosses included. Secondary tags are free, but add
-  one only when it is true — the import deliberately adds none.
+- **The first tag is the primary topic, and a document may carry more than
+  one.** The thirteen live in the `topics` vocabulary in `luria.yaml` — one
+  table, named by the practice registry and the reading list alike, glosses
+  included. List the topic the document is *most* about first: `primary_topic`
+  derives `{tags[0]}`, so tag order is what the indexes read. Add a second
+  topic when it is genuinely true, and never to bind a relation — the chain
+  invariant reads the whole tag list now, so an incidental tag will bind an
+<!-- inactive-ok: ADR-tmpoxkk7 — Proposed, and the decision this rule states -->
+  edge that should have stayed open (`ADR-tmpoxkk7`).
+- **The tag vocabulary is closed, and that is an invitation.** A tag not in
+  `topics` fails the lint on `SOTA`, `LIT` and `THEORY`. That is there so
+  every tag is one somebody chose and blurbed — **not** because the list is
+  finished. If a document wants a word the vocabulary cannot say, the intended
+  move is to add it, with a label and a blurb and a decision saying why,
+  exactly as `representation-and-encoding` and `analysis-and-evaluation` were
+  added. Reaching for the nearest wrong tag because the right one is absent is
+  the failure this is meant to prevent, and the lint's message does not yet
+  say so (`LU-#273`).
 <!-- inactive-ok-block: LIT-041 — an example of the citation syntax -->
 - **Never hand-write a link target.** Write the bare code — `LIT-041`,
   `ADR-002`, `ARXIV-1412.6980` — and run `luria link --fix`. Prose renders

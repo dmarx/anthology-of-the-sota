@@ -7,6 +7,10 @@ paper: LIT-048
 title: 'Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation'
 version: 1
 tags:
+# Follows LIT-048's retag: a reading is filed under its paper's topic.
+- representation-and-encoding
+# inactive-ok: ADR-tmpoxkk7 — Proposed, and what permits this tag
+# Secondary, restored: follows LIT-048 (ADR-tmpoxkk7).
 - model-architecture
 date: '2026-09-09'
 summary: >-

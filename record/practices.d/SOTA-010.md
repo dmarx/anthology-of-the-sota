@@ -1,8 +1,31 @@
 ---
 number: 10
-status: 'Active'
+status: 'Superseded'
+status_note: >-
+  Not a recommendation, and never was: it states what is true rather than what
+  to do, which is a THEORY under [ADR-031](../decisions.d/ADR-031.md) and was one of the eight that
+  decision named and declined to move. The claim is unchanged and is believed
+  — it now lives at [THEORY-tmp3jmjc](../theory.d/THEORY-tmp3jmjc.md), with the figure's limits and the five
+  practices it underwrites. `Superseded` rather than `Rejected` because
+  `Rejected` on a practice means *do not do this*, and nobody should read this
+  code as advice against skip connections. [ADR-tmp7dlz4](../decisions.d/ADR-tmp7dlz4.md) is the rule.
+# `superseded_by` crosses schemes by design (LU-ADR-071), which is the right
+# shape for a move: the successor is typed and walked, not named in prose.
+superseded_by:
+- THEORY-tmp3jmjc
 title: 'skip connections promote training stability by smoothing out the loss landscape'
-version: 1
+version: 2
+history:
+- version: 1
+  note: >-
+    Filed as a practice at the migration, with a body arguing the loss-surface
+    result and what does and does not follow from it.
+- version: 2
+  date: '2026-09-15'
+  note: >-
+    Moved to the THEORY scheme. The body moves with the claim rather than
+    being kept in two places; what stays here is the redirect, the lineage
+    this code carries, and the record that the move happened.
 tags:
 - training-optimization
 date: '2026-08-24'
@@ -11,41 +34,39 @@ source:
 introduced_by:
 - LIT-014
 summary: >-
-  Li et al. (2017), [LIT-014](../literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913).
+  Li et al. (2017), [LIT-014](../literature.d/LIT-014.md). Moved to [THEORY-tmp3jmjc](../theory.d/THEORY-tmp3jmjc.md) — the claim is a
+  statement about why deep networks became trainable, not an instruction, and
+  belongs in the scheme [ADR-031](../decisions.d/ADR-031.md) created for exactly that. This code stays so
+  links into it resolve.
+# Kept rather than moved: THEORY has no sibling relation, and these record
+# that three readings of one figure were filed together as practices, which is
+# history this code is the right place for ([ADR-tmp7dlz4](../decisions.d/ADR-tmp7dlz4.md)).
 compared_against:
 - SOTA-011
 - SOTA-012
 ---
 
-# SOTA-010: skip connections promote training stability by smoothing out the loss landscape
+<!-- inactive-ok-file: ADR-tmp7dlz4, ADR-031 — both Proposed: the decision
+     under which this document moved, and the scheme it moved into. Between
+     them they are the whole content of this page. -->
 
-## Source
+# SOTA-010: skip connections promote training stability by smoothing out the loss landscape
 
 Li et al. (2017), [LIT-014](../literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913).
 
-## The strongest visual result in the paper
+## Moved
 
-[LIT-014](../literature.d/LIT-014.md)'s most cited figure is a pair: the same deep network with and without
-skip connections, plotted the same way. Without them the surface is chaotic —
-non-convex, with visible barriers between nearby points. With them it is
-smooth and close to convex over the region plotted.
+**The claim is at [THEORY-tmp3jmjc](../theory.d/THEORY-tmp3jmjc.md).** It is true, it is believed, and it is not
+a recommendation: it says why deep networks became trainable, which is what
+the `THEORY` scheme holds. [ADR-031](../decisions.d/ADR-031.md) listed this document as one of eight
+practices whose titles state a behaviour rather than an instruction and left
+them in place pending a decision about what a vacated code should say;
+[ADR-tmp7dlz4](../decisions.d/ADR-tmp7dlz4.md) is that decision and this is its first application.
 
-That is a claim about *trainability* rather than about capacity: the residual
-network is not more expressive, it is reachable. It explains why depth stopped
-being the barrier it had been, and why the residual connection is the one
-architectural element every model in this record shares.
+**There is no practice under it.** The instruction the claim would imply — use
+skip connections — is trunk, and [DP-007](../../docs/design-principles.md#dp-7) keeps the agreed trunk unfiled. That
+is why this is a move rather than a split.
 
-## What follows, and what does not
-
-It is why the practices around residual streams are about *what to do with*
-them rather than whether to have them — where to normalise ([SOTA-032](SOTA-032.md)), how
-strongly to initialise the branch ([SOTA-051](SOTA-051.md), [SOTA-060](SOTA-060.md)), how many streams to
-<!-- inactive-ok-block: SOTA-136, SOTA-169 — Proposed, cited as the open questions about residual streams that this result underwrites -->
-run ([SOTA-136](SOTA-136.md), [SOTA-169](SOTA-169.md)).
-
-The visualisation is a two-dimensional slice through a very high-dimensional
-surface, chosen by random filter-normalised directions. It is evidence about
-the geometry, not a proof of it, and the paper is careful about this in a way
-summaries of it usually are not. What survives is the qualitative contrast,
-which is large and reproduces; the record should not read a slice as a
-measurement.
+**Do not read `Superseded` as a judgement on skip connections.** On a practice
+that status means a better recommendation exists; here it means the document
+is in the wrong scheme and the record says where the right one is.

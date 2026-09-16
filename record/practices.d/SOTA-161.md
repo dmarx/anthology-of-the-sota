@@ -12,8 +12,14 @@ consensus_note: >-
 title: "Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling"
 version: 1
 tags:
+# `flash-attention` removed. #101 added it to both this practice and its
+# counterpart to bind them under an invariant that then read `tags`, which
+# luria.yaml records as satisfying the check rather than answering it. With
+# inactive-ok: ADR-tmpoxkk7 — Proposed, and the decision that removes this tag
+# the invariant back on `tags` (ADR-tmpoxkk7) it would do that again, so it
+# goes: the edge is real, it crosses a fault line in the vocabulary, and it
+# should keep showing up until someone answers it.
 - model-stability
-- flash-attention
 date: '2026-09-08'
 source:
 # The paper that isolated the mechanism and tested a targeted fix. Kimi K3

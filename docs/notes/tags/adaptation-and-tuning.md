@@ -4,7 +4,7 @@
 
 **adaptation-and-tuning**.
 
-13 of 160 NOTE documents. Back to the [full index](../README.md).
+14 of 161 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,3 +21,4 @@
 | [NOTE-082](../../../record/notes.d/NOTE-082.md) | Evolutionary Strategies lead to Catastrophic Forgetting in LLMs | The first independent replication attempt of ES-beats-GRPO, which fails — ES lands close but GRPO stays ahead on three of four settings at 1B and 1.5B — and the first measurement of what ES costs on a held-out capability: HellaSwag declines steadily as Countdown training continues past the point Countdown itself converged. | Read |
 | [NOTE-085](../../../record/notes.d/NOTE-085.md) | ESSA | The earliest ES-for-LLM paper in this record, and the one that accepted the dimensionality objection instead of overturning it: SFT-train LoRA adapters, take their SVD, and run CMA-ES over the top singular values only — reaching 0.80 on GSM8K in under 25 minutes against GRPO's 50+, from 100 examples against 5,978, and aligning a 32B model at INT4. | Read |
 | [NOTE-086](../../../record/notes.d/NOTE-086.md) | ESSAM | Transposes sharpness-aware minimization into zeroth order — step against the reward-weighted direction, recompute the update at that neighbouring point, apply it at the original — and closes most of standard ES's gap to GRPO on GSM8K while keeping inference-level GPU memory. | Read |
+| [NOTE-161](../../../record/notes.d/NOTE-161.md) | Training language models to follow instructions with human feedback | Making a language model bigger does not make it better at following instructions, so stop buying parameters and buy human feedback instead: demonstrations to fine-tune on, rankings to fit a reward model to, then policy optimization against that reward with a KL leash back to the supervised model. A 1.3B model tuned this way is preferred to 175B GPT-3. The cost is a measurable regression on held-out NLP tasks, and the paper supplies both the name for it and a fix. | Read |

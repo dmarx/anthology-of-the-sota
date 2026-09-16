@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [16 Sep 20:31 — Three trunks in two sessions, and the query that finds them](2026-09.md#three-trunks-in-two-sessions-and-the-query-that-finds-them)
 - [16 Sep 20:23 — The record held two refinements of a practice it did not hold](2026-09.md#the-record-held-two-refinements-of-a-practice-it-did-not-hold)
 - [16 Sep 20:01 — Five readings checked against their papers; two of five were wrong](2026-09.md#five-readings-checked-against-their-papers-two-of-five-were-wrong)
 - [16 Sep 19:20 — The comment above the table was the blurb all along](2026-09.md#the-comment-above-the-table-was-the-blurb-all-along)
@@ -81,9 +82,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-74 entries across 2 books, newest first.
+75 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 72 | 2026-09-05 | 2026-09-16 |
+| [2026-09](2026-09.md) | 73 | 2026-09-05 | 2026-09-16 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

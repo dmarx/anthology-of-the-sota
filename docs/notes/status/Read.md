@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-158 of 160 NOTE documents. Back to the [full index](../README.md).
+159 of 161 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -168,3 +168,4 @@
 | [NOTE-158](../../../record/notes.d/NOTE-158.md) | Broken Neural Scaling Laws | A single power law ε(t) = C_∞ + b·t^{-c} fails when the curve has two regimes (steep early, shallow late — or vice versa). | Read |
 | [NOTE-159](../../../record/notes.d/NOTE-159.md) | Accelerating Large Language Model Decoding with Speculative Sampling | The same construction as [NOTE-160](../../../record/notes.d/NOTE-160.md), reached independently two months later and demonstrated at 70B in a distributed setup. Its contribution to the record is corroboration plus two sharper statements: the guarantee holds "within hardware numerics" rather than absolutely, and the achieved tokens per second exceed the memory-bandwidth ceiling that bounds autoregressive decoding — which is the family's premise, measured rather than assumed. | Read |
 | [NOTE-160](../../../record/notes.d/NOTE-160.md) | Fast Inference from Transformers via Speculative Decoding | Autoregressive decoding is serial and memory-bandwidth-bound, so the arithmetic units sit idle while weights stream. Speculative decoding spends that idle compute: a cheap draft proposes `gamma` tokens, the target scores all `gamma + 1` positions in one parallel pass, and an accept-reject rule keeps a prefix. The rule is constructed so the output distribution is exactly the target's, which is what makes this a free speedup rather than a quality trade. | Read |
+| [NOTE-161](../../../record/notes.d/NOTE-161.md) | Training language models to follow instructions with human feedback | Making a language model bigger does not make it better at following instructions, so stop buying parameters and buy human feedback instead: demonstrations to fine-tune on, rankings to fit a reward model to, then policy optimization against that reward with a KL leash back to the supervised model. A 1.3B model tuned this way is preferred to 175B GPT-3. The cost is a measurable regression on held-out NLP tasks, and the paper supplies both the name for it and a fix. | Read |

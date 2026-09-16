@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-295 of 311 LIT documents. Back to the [full index](../README.md).
+296 of 312 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -305,3 +305,4 @@
 | [LIT-374](../../../record/literature.d/LIT-374.md) | LAYUP: Asynchronous decentralized gradient descent with LAYer-wise UPdates | Fokam et al. (2024), [ARXIV-2410.05985](https://arxiv.org/abs/2410.05985). LAYUP: decouple the forward and backward passes into separate threads with layer-wise updates, so straggler devices stop setting the step time. | Active |
 | [LIT-375](../../../record/literature.d/LIT-375.md) | Accelerating Large Language Model Decoding with Speculative Sampling | Chen et al. (2023), [ARXIV-2302.01318](https://arxiv.org/abs/2302.01318). The same algorithm as [LIT-376](../../../record/literature.d/LIT-376.md), arrived at independently two months later and demonstrated at a scale the first paper did not reach: Chinchilla, 70B, in a distributed setup, 2-2.5x decoding speedup with the target distribution preserved "within hardware numerics". Its sharpest observation is that the resulting tokens per second "often exceeds the idealised ceiling on auto-regressive sampling speed imposed by the memory bandwidth" — which is the premise of the whole family, measured. | Active |
 | [LIT-376](../../../record/literature.d/LIT-376.md) | Fast Inference from Transformers via Speculative Decoding | Leviathan et al. (2022), [ARXIV-2211.17192](https://arxiv.org/abs/2211.17192). Decoding is serial and memory-bandwidth-bound, so the arithmetic units are idle. Speculative decoding spends them: a cheap draft model guesses `gamma` tokens, the target model scores all `gamma + 1` positions in one parallel pass, and an accept-reject rule keeps a prefix of the guesses. The output distribution is exactly the target's — not approximately — and the serial count can never exceed plain autoregressive decoding. 2x-3x on T5-XXL with identical outputs. | Active |
+| [LIT-377](../../../record/literature.d/LIT-377.md) | Training language models to follow instructions with human feedback | Ouyang et al. (2022), [ARXIV-2203.02155](https://arxiv.org/abs/2203.02155). InstructGPT: the paper that turned reinforcement learning from human feedback from a summarization technique into the default shape of post-training. Three steps — supervised fine-tuning on labeler demonstrations, a reward model trained on ranked outputs, then PPO against that reward with a per-token KL penalty. A 1.3B model tuned this way is preferred to 175B GPT-3, which is the result the field acted on. | Active |

@@ -1,6 +1,9 @@
 ---
+number: 161
 status: Read
-paper: LIT-tmp3me1q
+formerly:
+- NOTE-tmp4lt07
+paper: LIT-377
 title: 'Training language models to follow instructions with human feedback'
 version: 1
 date: '2026-09-16'
@@ -14,7 +17,7 @@ summary: >-
   supplies both the name for it and a fix.
 ---
 
-# NOTE-tmp4lt07: Training language models to follow instructions with human feedback
+# NOTE-161: Training language models to follow instructions with human feedback
 
 ## Contribution
 

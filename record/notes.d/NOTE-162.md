@@ -1,5 +1,8 @@
 ---
+number: 162
 status: Read
+formerly:
+- NOTE-tmp9mp08
 paper: LIT-110
 title: 'Efficiently Scaling Transformer Inference'
 version: 1
@@ -15,7 +18,7 @@ summary: >-
   partitioning is right.
 ---
 
-# NOTE-tmp9mp08: Efficiently Scaling Transformer Inference
+# NOTE-162: Efficiently Scaling Transformer Inference
 
 ## Contribution
 
@@ -145,7 +148,7 @@ cares about: latency, or cost per token, or context supported.
 This is the analytical backing the serving practices here have been standing
 on without citing. [SOTA-113](../practices.d/SOTA-113.md) (continuous batching) and [SOTA-115](../practices.d/SOTA-115.md) (prefill/decode
 overlap) are both answers to imbalances this paper models, and both source
-other work. [SOTA-tmp52mks](../practices.d/SOTA-tmp52mks.md) is what this note supports directly. R3 and R4 are
+other work. [SOTA-228](../practices.d/SOTA-228.md) is what this note supports directly. R3 and R4 are
 the quantitative case for practices the record already holds about attention
 variants and cache layout.
 

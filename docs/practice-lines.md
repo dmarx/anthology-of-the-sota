@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-42 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+43 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 ## From Place BatchNorm after linear/conv layers but before activation functions
 
@@ -254,3 +254,8 @@
 - [SOTA-225](../record/practices.d/SOTA-225.md) — Drop the parameter server for gossip once the network is the bottleneck, and measure where that is rather than inheriting a threshold *(Active, unreplicated)*
   - [SOTA-223](../record/practices.d/SOTA-223.md) — Do not keep the gossip topology static: sample a fresh random neighbourhood every round *(Proposed, unreplicated)*
   - [SOTA-226](../record/practices.d/SOTA-226.md) — If the gossip topology is static, make it a directed exponential graph, not a ring *(Active, unreplicated)*
+
+## From Decode with a draft model and an accept-reject rule, which is exactly lossless
+
+- [SOTA-227](../record/practices.d/SOTA-227.md) — Decode with a draft model and an accept-reject rule, which is exactly lossless *(Active, converged)*
+  - [SOTA-229](../record/practices.d/SOTA-229.md) — Scale the draft model's training data, once nothing constrains it to predict the target's features *(Proposed, unreplicated)*

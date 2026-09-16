@@ -1,5 +1,8 @@
 ---
+number: 229
 status: Proposed
+formerly:
+- SOTA-tmpe5h20
 promote_when: >-
   The curve extended — a second target model, or a second benchmark, or a data
   range wider than the one reported — showing speedup still rising. What would
@@ -37,7 +40,7 @@ summary: >-
      which this practice declines to file the draft's layer and data
      settings. The practice does not rest on it. -->
 
-# SOTA-tmpe5h20: Scale the draft model's training data, once nothing constrains it to predict the target's features
+# SOTA-229: Scale the draft model's training data, once nothing constrains it to predict the target's features
 
 ## What to do
 
@@ -108,7 +111,7 @@ prediction and multi-layer fusion are motivated together and measured
 together, so their separate contributions are not recoverable from this paper.
 
 **The settings are algorithm-local and stay in the reading.** Layer choices,
-fusion details and data volumes belong to [NOTE-tmpoib77](../notes.d/NOTE-tmpoib77.md) under [ADR-041](../decisions.d/ADR-041.md).
+fusion details and data volumes belong to [NOTE-163](../notes.d/NOTE-163.md) under [ADR-041](../decisions.d/ADR-041.md).
 
 ## Known implementations
 

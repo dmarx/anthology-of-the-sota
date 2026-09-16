@@ -6,7 +6,7 @@
 
 **Agreed** — the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately.
 
-16 of 227 SOTA documents. Back to the [full index](../README.md).
+17 of 229 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -26,3 +26,4 @@
 | [SOTA-205](../../../record/practices.d/SOTA-205.md) | Replace a large coordinate network with a compact explicit structure and a small decoder | Four independent groups, three structures. Where a field is queried pointwise and the signal is spatially sparse, the capacity belongs in an addressable structure that training optimises directly, not in a network evaluated per point. | Active |
 | [SOTA-207](../../../record/practices.d/SOTA-207.md) | Use the deterministic sampler when the noise input has to mean something | Song et al. (2020), [LIT-038](../../../record/literature.d/LIT-038.md). A stochastic sampler injects fresh noise at every step, so nothing about the starting point survives to the output. Setting the family's stochasticity to zero makes the initial noise a latent code you can interpolate in and invert to. | Active |
 | [SOTA-227](../../../record/practices.d/SOTA-227.md) | Decode with a draft model and an accept-reject rule, which is exactly lossless | Autoregressive decoding runs one serial model pass per token and each pass is bounded by streaming the weights, so the arithmetic units idle. Have a cheap draft model guess the next `gamma` tokens, score all `gamma + 1` positions in one target pass, and keep a prefix under an accept-reject rule built so the output distribution is the target's exactly. 2x-3x at 11B and 2-2.5x at 70B, with no retraining, no architecture change and nothing traded away. | Active |
+| [SOTA-228](../../../record/practices.d/SOTA-228.md) | Pick the inference partitioning from where the bottleneck is, and expect it to move between prefill and decode | Pope et al. (2022), [LIT-110](../../../record/literature.d/LIT-110.md). Serving is not one workload: prefill parallelises over the prompt, decode is serial over the output, and the two are bounded by different things. Worse, the binding constraint moves — at small batch and short context it is loading the weights, and at large batch and long context it is loading the KV cache, which on a 500B model at batch 512 and 2048 tokens reaches 3 TB, three times the parameters. Choose the layout from a cost model of the regime you are in, and re-choose it when the regime changes. | Active |

@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**66 document(s) awaiting a decision.**
+**67 document(s) awaiting a decision.**
 
 ## SOTAs
 
-42 of the 66.
+43 of the 67.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -55,10 +55,11 @@
 | 2026-09-15 | Proposed | [SOTA-220](../../record/practices.d/SOTA-220.md) | 0 | 0 | Aggregate worker gradients coordinate-wise by median when any worker may be faulty |
 | 2026-09-16 | Proposed | [SOTA-222](../../record/practices.d/SOTA-222.md) | 3 | 0 | Overlap the synchronisation with one or two local steps instead of communicating every step |
 | 2026-09-16 | Proposed | [SOTA-223](../../record/practices.d/SOTA-223.md) | 2 | 0 | Do not keep the gossip topology static: sample a fresh random neighbourhood every round |
+| 2026-09-16 | Proposed | [SOTA-229](../../record/practices.d/SOTA-229.md) | 2 | 0 | Scale the draft model's training data, once nothing constrains it to predict the target's features |
 
 ## THEORYs
 
-7 of the 66.
+7 of the 67.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -72,7 +73,7 @@
 
 ## LITs
 
-3 of the 66.
+3 of the 67.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -82,7 +83,7 @@
 
 ## ADRs
 
-14 of the 66.
+14 of the 67.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -96,7 +97,7 @@
 | 2026-09-15 | Proposed | [ADR-033](../../record/decisions.d/ADR-033.md) | 0 | 0 | Readings made in another context port into the record; their agenda does not |
 | 2026-09-16 | Proposed | [ADR-035](../../record/decisions.d/ADR-035.md) | 32 | 0 | A document may carry more than one topic; the first is the primary |
 | 2026-09-16 | Proposed | [ADR-038](../../record/decisions.d/ADR-038.md) | 13 | 0 | A note has no topics of its own: it derives them from its paper |
-| 2026-09-16 | Proposed | [ADR-041](../../record/decisions.d/ADR-041.md) | 3 | 0 | An algorithm-local tuning constant belongs in the reading of the paper that measured it, not in the practice registry |
+| 2026-09-16 | Proposed | [ADR-041](../../record/decisions.d/ADR-041.md) | 5 | 0 | An algorithm-local tuning constant belongs in the reading of the paper that measured it, not in the practice registry |
 | 2026-09-16 | Proposed | [ADR-039](../../record/decisions.d/ADR-039.md) | 2 | 0 | The configuration is part of the record, and the lint reads it |
 | 2026-09-16 | Proposed | [ADR-037](../../record/decisions.d/ADR-037.md) | 0 | 0 | Fail the build on `source-mismatch`, and take the source invariant upstream |
 | 2026-09-16 | Proposed | [ADR-040](../../record/decisions.d/ADR-040.md) | 0 | 0 | Advice on how to prove a theorem is out of scope; advice on how to find out whether a technique worked is not |

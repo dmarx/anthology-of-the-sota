@@ -1,5 +1,8 @@
 ---
+number: 163
 status: Read
+formerly:
+- NOTE-tmpoib77
 paper: LIT-185
 title: 'EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test'
 version: 1
@@ -15,7 +18,7 @@ summary: >-
   supposed to stop paying.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpe5h20 — Proposed, and the practice this
+<!-- inactive-ok-file: SOTA-229 — Proposed, and the practice this
      reading supports. Proposed because one target and one benchmark is
      what the paper has, which is stated in the practice's own
      promote_when. -->
@@ -23,7 +26,7 @@ summary: >-
      this record's decisions, and cited as the rule under which this
      paper's architectural settings stay in the reading. -->
 
-# NOTE-tmpoib77: EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test
+# NOTE-163: EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test
 
 ## Contribution
 
@@ -146,7 +149,7 @@ will encounter rather than on ground-truth features.
 
 Two things, and the second is a correction.
 
-[SOTA-tmpe5h20](../practices.d/SOTA-tmpe5h20.md) is R1 filed: the scaling law is the paper's discovery and the
+[SOTA-229](../practices.d/SOTA-229.md) is R1 filed: the scaling law is the paper's discovery and the
 only one of its recommendations that is about *what to do* rather than about
 how to build this particular draft. R2 and R3 are the architecture's internals
 and stay here under [ADR-041](../decisions.d/ADR-041.md).

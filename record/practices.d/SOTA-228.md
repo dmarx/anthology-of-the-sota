@@ -1,5 +1,8 @@
 ---
+number: 228
 status: Active
+formerly:
+- SOTA-tmp52mks
 consensus: converged
 consensus_note: >-
   One paper for the model, and the field's behaviour is the corroboration:
@@ -29,7 +32,7 @@ summary: >-
   regime changes.
 ---
 
-# SOTA-tmp52mks: Pick the inference partitioning from where the bottleneck is, and expect it to move between prefill and decode
+# SOTA-228: Pick the inference partitioning from where the bottleneck is, and expect it to move between prefill and decode
 
 ## What to do
 

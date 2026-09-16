@@ -6,13 +6,14 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-44 of 312 LIT documents. Back to the [full index](../README.md).
+45 of 312 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [LIT-014](../../../record/literature.d/LIT-014.md) v2 | Visualizing the Loss Landscape of Neural Nets | Li et al. (2017), [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). Visualizes loss landscape geometry. | Active |
 | [LIT-019](../../../record/literature.d/LIT-019.md) v2 | The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks | Frankle and Carbin (2018), [ARXIV-1803.03635](https://arxiv.org/abs/1803.03635). A dense network contains a sparse subnetwork that trains to the same accuracy in the same number of steps — but only from its original initialization, which is the part that makes it a claim about initialization rather than about architecture. | Active |
 | [LIT-031](../../../record/literature.d/LIT-031.md) v2 | Pruned Neural Networks are Surprisingly Modular | Filan et al. (2020), [ARXIV-2003.04881](https://arxiv.org/abs/2003.04881). Analysis of neural network modularity. | Superseded — by [LIT-041](../../../record/literature.d/LIT-041.md), ARXIV-2110.08058; by later work on clusterability and mechanistic interpretability |
+| [LIT-039](../../../record/literature.d/LIT-039.md) v3 | Gradient Flow in Sparse Neural Networks and How Lottery Tickets Win | Evci et al. (2020), [ARXIV-2010.03533](https://arxiv.org/abs/2010.03533). Sparse networks trained from scratch underperform because they have poor gradient flow, and a lottery ticket wins by re-learning the pruned solution it came from rather than by having found a better sparse architecture. | Active |
 | [LIT-041](../../../record/literature.d/LIT-041.md) | Clusterability in Neural Networks | Filan et al. (2021), [ARXIV-2103.03386](https://arxiv.org/abs/2103.03386). Larger models develop more modular features. | Rejected — the result does not look interesting enough to carry |
 | [LIT-057](../../../record/literature.d/LIT-057.md) v2 | What Makes for Good Views for Contrastive Learning? | Tian et al. (2020), [ARXIV-2005.10243](https://arxiv.org/abs/2005.10243). Analysis of view generation. | Rejected — theoretical, with no concrete training recommendation |
 | [LIT-077](../../../record/literature.d/LIT-077.md) v2 | Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models | Srivastava et al. (2022), [ARXIV-2206.04615](https://arxiv.org/abs/2206.04615). Comprehensive evaluation framework. | Active |

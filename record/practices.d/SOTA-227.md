@@ -32,7 +32,7 @@ summary: >-
   2-2.5x at 70B, with no retraining, no architecture change and nothing traded
   away.
 extended_by:
-- SOTA-tmpe5h20
+- SOTA-229
 ---
 
 # SOTA-227: Decode with a draft model and an accept-reject rule, which is exactly lossless

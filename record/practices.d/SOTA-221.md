@@ -1,5 +1,8 @@
 ---
+number: 221
 status: Active
+formerly:
+- SOTA-tmp28q6x
 consensus: unreplicated
 consensus_note: >-
   Widely implemented and rarely re-measured, and those are different facts.
@@ -30,19 +33,19 @@ summary: >-
   per-coordinate adaptivity, carried BERT from 16K to 32K where a grid-searched
   AdamW could not follow. This does not license skipping the retuning in
   [SOTA-218](SOTA-218.md) — the two say different things about different activities, and
-  [THEORY-tmpih985](../theory.d/THEORY-tmpih985.md) is why.
+  [THEORY-012](../theory.d/THEORY-012.md) is why.
 explained_by:
-- THEORY-tmpih985
+- THEORY-012
 ---
 
-<!-- inactive-ok-file: THEORY-tmpih985 — Proposed, and cited here AS the
+<!-- inactive-ok-file: THEORY-012 — Proposed, and cited here AS the
      Proposed account that reconciles this practice with SOTA-218. The
      instruction stands on LIT-265's measurements without it. -->
 <!-- inactive-ok-file: SOTA-215 — Proposed, and named as the neighbouring
      answer for a different constraint (communication cost, not batch size),
      which is a pointer rather than support. -->
 
-# SOTA-tmp28q6x: To train past the batch size where your optimizer stalls, change the optimizer's conditioning rather than the scaling rule
+# SOTA-221: To train past the batch size where your optimizer stalls, change the optimizer's conditioning rather than the scaling rule
 
 ## What to do
 
@@ -90,7 +93,7 @@ tuning does better — at 16K, changing the fine-tuning learning rate alone move
 F1 from the reported 91.345 to 91.688. The claim is that a square-root rule plus
 linear-epoch warmup is *good enough to hit a fixed target without a sweep*, not
 that the rule is right. [SOTA-218](SOTA-218.md) is about drawing a curve you intend to
-reason from, and a curve drawn this way is still not one. [THEORY-tmpih985](../theory.d/THEORY-tmpih985.md) is the
+reason from, and a curve drawn this way is still not one. [THEORY-012](../theory.d/THEORY-012.md) is the
 account under both.
 
 **[LIT-265](../literature.d/LIT-265.md) agrees with [LIT-058](../literature.d/LIT-058.md) and cites it saying so** — "learning rate

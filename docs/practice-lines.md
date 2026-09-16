@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-40 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+41 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 ## From Place BatchNorm after linear/conv layers but before activation functions
 
@@ -242,3 +242,8 @@
 
 - [SOTA-214](../record/practices.d/SOTA-214.md) — Pair any gradient compressor with error feedback, and correct the momentum it is applied under *(Active, emerging)*
   - [SOTA-215](../record/practices.d/SOTA-215.md) — Freeze Adam's variance term after a warmup before compressing its update, and never compress the update directly *(Proposed, unreplicated)*
+
+## From Retune the learning rate, momentum and schedule at every batch size you compare, never by a scaling heuristic
+
+- alongside: [SOTA-218](../record/practices.d/SOTA-218.md) — Retune the learning rate, momentum and schedule at every batch size you compare, never by a scaling heuristic *(Active, unreplicated)*
+- alongside: [SOTA-221](../record/practices.d/SOTA-221.md) — To train past the batch size where your optimizer stalls, change the optimizer's conditioning rather than the scaling rule *(Active, unreplicated)*

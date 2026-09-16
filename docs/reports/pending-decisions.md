@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**60 document(s) awaiting a decision.**
+**61 document(s) awaiting a decision.**
 
 ## SOTAs
 
-40 of the 60.
+40 of the 61.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -48,7 +48,7 @@
 | 2026-09-15 | Proposed | [SOTA-211](../../record/practices.d/SOTA-211.md) | 13 | 0 | Spend one fitness evaluation per evolution-strategies direction, not an antithetic pair |
 | 2026-09-15 | Proposed | [SOTA-213](../../record/practices.d/SOTA-213.md) | 13 | 0 | Control evolution-strategies drift with a larger population or an anchor penalty, not by stopping training early |
 | 2026-09-15 | Proposed | [SOTA-212](../../record/practices.d/SOTA-212.md) | 5 | 0 | Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them |
-| 2026-09-15 | Proposed | [SOTA-215](../../record/practices.d/SOTA-215.md) | 1 | 0 | Freeze Adam's variance term after a warmup before compressing its update, and never compress the update directly |
+| 2026-09-15 | Proposed | [SOTA-215](../../record/practices.d/SOTA-215.md) | 2 | 0 | Freeze Adam's variance term after a warmup before compressing its update, and never compress the update directly |
 | 2026-09-15 | Proposed | [SOTA-217](../../record/practices.d/SOTA-217.md) | 1 | 0 | Align the hidden-unit permutation before averaging weights from separately trained networks |
 | 2026-09-15 | Proposed | [SOTA-209](../../record/practices.d/SOTA-209.md) | 0 | 0 | Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch |
 | 2026-09-15 | Proposed | [SOTA-216](../../record/practices.d/SOTA-216.md) | 0 | 0 | Switch from minibatch SGD to local SGD at the first learning-rate decay, rather than choosing between them |
@@ -56,7 +56,7 @@
 
 ## THEORYs
 
-5 of the 60.
+6 of the 61.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -65,10 +65,11 @@
 | 2026-09-15 | Proposed | [THEORY-007](../../record/theory.d/THEORY-007.md) | 7 | 0 | Fine-tuning landscapes are low-dimensional in curvature, and improving directions are degenerate rather than unique |
 | 2026-09-15 | Proposed | [THEORY-005](../../record/theory.d/THEORY-005.md) | 3 | 0 | Dense feed-forward layers are already mixtures of experts, and pre-training settles the partition before the neurons |
 | 2026-09-15 | Proposed | [THEORY-010](../../record/theory.d/THEORY-010.md) | 2 | 0 | Most of the loss barrier between two independently trained networks is permutation, not disagreement |
+| 2026-09-16 | Proposed | [THEORY-012](../../record/theory.d/THEORY-012.md) | 7 | 0 | How far a batch-size scaling heuristic transfers is a property of the optimizer, not of the heuristic |
 
 ## LITs
 
-3 of the 60.
+3 of the 61.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -78,7 +79,7 @@
 
 ## ADRs
 
-12 of the 60.
+12 of the 61.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

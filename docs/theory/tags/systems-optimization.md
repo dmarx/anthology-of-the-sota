@@ -4,7 +4,7 @@
 
 **Systems optimization** — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
-0 of 11 THEORY documents. Back to the [full index](../README.md).
+0 of 12 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

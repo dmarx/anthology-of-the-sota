@@ -24,7 +24,7 @@ history:
   note: >-
     Figures corrected against ARXIV-1811.03600, and the open tension with LAMB
     closed. The two papers were never in dispute — LIT-265 cites LIT-058
-    approvingly — and THEORY-tmpih985 is the account that lets both stand.
+    approvingly — and THEORY-012 is the account that lets both stand.
 tags:
 - training-optimization
 date: '2026-09-15'
@@ -42,16 +42,16 @@ summary: >-
   several untuned ones, and the point where it bends is the point where the
   heuristic failed.
 compared_against:
-- SOTA-tmp28q6x
+- SOTA-221
 explained_by:
-- THEORY-tmpih985
+- THEORY-012
 ---
 
-<!-- inactive-ok-file: THEORY-tmpih985 — Proposed, and cited here AS the
+<!-- inactive-ok-file: THEORY-012 — Proposed, and cited here AS the
      Proposed account: a synthesis neither of its two papers states, whose
      `promote_when` names the experiment that would settle it. This practice
      does not rest on it — the retuning rule stands on LIT-058 alone — it
-     rests on it only for why SOTA-tmp28q6x is not a contradiction. -->
+     rests on it only for why SOTA-221 is not a contradiction. -->
 
 # SOTA-218: Retune the learning rate, momentum and schedule at every batch size you compare, never by a scaling heuristic
 
@@ -130,12 +130,12 @@ inside it — and neither replaces the other.
 unchanged to a compressed variant, is the kind of thing this practice says to
 check rather than assume.
 
-**It is narrower than it sounds, and [SOTA-tmp28q6x](SOTA-tmp28q6x.md) is the other half.** This is
+**It is narrower than it sounds, and [SOTA-221](SOTA-221.md) is the other half.** This is
 a rule about *measurement*, not a prohibition on ever training without a sweep.
 LAMB reaches a fixed BERT target at a batch of 32K on a square-root rule with no
 per-batch-size tuning, and that is not a counterexample: [LIT-265](../literature.d/LIT-265.md) cites [LIT-058](../literature.d/LIT-058.md)
 approvingly as its own motivation, reports those numbers under the heading
 *untuned*, and says three times that tuning does better. A no-retuning result is
 a claim about sufficiency for one target; this practice is about what a curve
-means. [THEORY-tmpih985](../theory.d/THEORY-tmpih985.md) is the account under both, and it is where the reason
+means. [THEORY-012](../theory.d/THEORY-012.md) is the account under both, and it is where the reason
 they do not collide is written down.

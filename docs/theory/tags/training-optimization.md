@@ -4,8 +4,8 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-0 of 11 THEORY documents. Back to the [full index](../README.md).
+1 of 12 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [THEORY-012](../../../record/theory.d/THEORY-012.md) | How far a batch-size scaling heuristic transfers is a property of the optimizer, not of the heuristic | Shallue et al. (2018), [LIT-058](../../../record/literature.d/LIT-058.md), found no learning-rate scaling rule that held across 35 workloads and concluded that practitioners must retune at every batch size. You et al. (2019), [LIT-265](../../../record/literature.d/LIT-265.md), then scaled BERT to 32K on a square- root rule with no retuning at all. The two results are usually read as a disagreement about heuristics. They are better read as one result about optimizers: a scaling rule is a guess about how the usable step size grows with the batch, that step is bounded by the worst-conditioned direction the optimizer does not normalize away, and an optimizer that normalizes more directions carries the same rule further. | Proposed |

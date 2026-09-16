@@ -1,5 +1,8 @@
 ---
+number: 12
 status: Proposed
+formerly:
+- THEORY-tmpih985
 promote_when: >-
   A steps-to-target curve for a layerwise-normalized optimizer drawn the way
   LIT-058 draws its curves — metaparameters tuned independently at every batch
@@ -20,7 +23,7 @@ source:
 - LIT-265
 explains:
 - SOTA-218
-- SOTA-tmp28q6x
+- SOTA-221
 summary: >-
   Shallue et al. (2018), [LIT-058](../literature.d/LIT-058.md), found no learning-rate scaling rule that held
   across 35 workloads and concluded that practitioners must retune at every
@@ -33,7 +36,7 @@ summary: >-
   directions carries the same rule further.
 ---
 
-# THEORY-tmpih985: How far a batch-size scaling heuristic transfers is a property of the optimizer, not of the heuristic
+# THEORY-012: How far a batch-size scaling heuristic transfers is a property of the optimizer, not of the heuristic
 
 ## The claim
 
@@ -107,7 +110,7 @@ stand.
 
 [SOTA-218](../practices.d/SOTA-218.md) — retune at every batch size you compare — is a rule about
 *measurement*: a steps-to-target curve drawn with transferred metaparameters
-measures the heuristic, not the batch size. [SOTA-tmp28q6x](../practices.d/SOTA-tmp28q6x.md) — change the
+measures the heuristic, not the batch size. [SOTA-221](../practices.d/SOTA-221.md) — change the
 optimizer's conditioning rather than the scaling rule — is a rule about
 *reaching a target*, and the no-retuning result it rests on is a claim about
 sufficiency for one target rather than about the rule being correct. [LIT-265](../literature.d/LIT-265.md)'s
@@ -116,7 +119,7 @@ reaches the target, tuned LAMB beats it.
 
 Without this account the record has to choose, and either choice is wrong.
 Drop [SOTA-218](../practices.d/SOTA-218.md) and every large-batch optimizer paper reporting a good number
-without a sweep counts as a refutation of it. Drop [SOTA-tmp28q6x](../practices.d/SOTA-tmp28q6x.md) and the
+without a sweep counts as a refutation of it. Drop [SOTA-221](../practices.d/SOTA-221.md) and the
 record holds a methodological rule with nothing to say to the person who
 actually needs a bigger batch.
 

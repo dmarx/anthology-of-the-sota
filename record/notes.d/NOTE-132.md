@@ -27,7 +27,7 @@ summary: >-
   where LARS alone fails.
 ---
 
-<!-- inactive-ok-file: THEORY-tmpih985 — Proposed, and cited in the bearing
+<!-- inactive-ok-file: THEORY-012 — Proposed, and cited in the bearing
      section as the account that replaced this note's claim of an
      unresolvable contradiction. -->
 # NOTE-132: Large Batch Optimization for Deep Learning: Training BERT in 76 minutes
@@ -180,7 +180,7 @@ reach a fixed target without a sweep* under a two-level normalized optimizer.
 What [SOTA-218](../practices.d/SOTA-218.md) forbids is drawing a steps-to-target curve that way and reasoning
 from its shape. Different claims about different activities.
 
-[SOTA-tmp28q6x](../practices.d/SOTA-tmp28q6x.md) is the practice this note now supports, and [THEORY-tmpih985](../theory.d/THEORY-tmpih985.md) is the
+[SOTA-221](../practices.d/SOTA-221.md) is the practice this note now supports, and [THEORY-012](../theory.d/THEORY-012.md) is the
 account that lets it stand beside [SOTA-218](../practices.d/SOTA-218.md) — that where a scaling heuristic
 stops working is a property of the optimizer applying it. The reading's own R1,
 R2 and R3 transcribe the paper correctly; it was the paragraph here that

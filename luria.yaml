@@ -1015,6 +1015,12 @@ code:
   # become ADR-035, and four more temp codes besides. A reference the lint
   # cannot see is a reference nobody maintains (ADR-tmpmpslu).
   - luria.yaml
+  # The workflows, which luria scans for itself. Fewer citations than the
+  # config -- six, all of them remote LU- codes naming the upstream decisions
+  # that shape the pipeline -- but the same argument: a comment saying "this
+  # step exists because of that decision" is a claim, and an unscanned claim
+  # is one nobody maintains.
+  - .github/workflows/*.yml
   # README.md used to be assembled from templates under docs/readme/, which
   # were scanned instead of the rendered result so one reference was not
   # reported twice. The templates are gone and README.md is an ordinary file

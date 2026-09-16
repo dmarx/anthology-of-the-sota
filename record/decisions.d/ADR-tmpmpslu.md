@@ -53,7 +53,14 @@ it had not been.
 
 ## Decision
 
-**`luria.yaml` is in `code.globs`.**
+**`luria.yaml` and `.github/workflows/*.yml` are in `code.globs`**, which is
+the pair luria scans for itself.
+
+The workflows carry six citations against the config's 87, and all six are
+remote `LU-` codes naming the upstream decisions that shape the pipeline, so
+adding them surfaced nothing. That is the point of adding them anyway: the
+cost of covering a file *before* it rots is one line, and the sixteen dead
+citations below are what covering one afterwards costs.
 
 Every stale citation is corrected in the same contribution: fifteen temp codes
 to their concretized numbers, and the luria one to [LU-ADR-084](https://github.com/dmarx/luria/blob/main/record/decisions.d/ADR-084.md). A sixteenth, in `record/decisions.d/ADR-038.md`, cited luria's decision on derived fields without
@@ -81,16 +88,14 @@ documents are undecided.
   vouches for something specific rather than blanket-silencing the file.
 - **Add the glob without fixing the findings.** Turns on a check and leaves it
   red, which trains the next reader to ignore it.
-- **Also add `.github/workflows/*.yml`**, as luria does for itself. Deferred:
-  the workflows here carry a handful of citations, not dozens, and this
-  contribution is already the size of the file it repairs. Worth a follow-up.
 - **Status quo.** The config keeps accumulating dead references at roughly the
   rate the record makes decisions, and nothing says so.
 
 ## Consequences
 
 `luria lint` returns to the same seven pre-existing warnings it had before
-this change — all in other files, none introduced here.
+this change — all in other files, none introduced here. The workflows add no
+findings at all, now or, with luck, later.
 
 **Directives must keep every code on one line.** A wrapped
 `inactive-ok-file:` suppresses the codes on its first line and silently

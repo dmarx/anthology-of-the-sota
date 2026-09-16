@@ -6,8 +6,6 @@ formerly:
 paper: LIT-285
 title: 'Coordination of groups of mobile autonomous agents using nearest neighbor rules'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   Even if a network is disconnected at every individual time step — no single

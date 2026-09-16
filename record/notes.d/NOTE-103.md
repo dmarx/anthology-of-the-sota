@@ -6,8 +6,6 @@ formerly:
 paper: LIT-027
 title: 'ZeRO: Memory Optimizations Toward Training Trillion Parameter Models'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Data parallelism wastes memory by replicating all model states on every

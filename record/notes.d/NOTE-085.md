@@ -6,8 +6,6 @@ formerly:
 paper: LIT-239
 title: 'ESSA'
 version: 1
-tags:
-- adaptation-and-tuning
 date: '2026-09-15'
 summary: >-
   The earliest ES-for-LLM paper in this record, and the one that accepted the

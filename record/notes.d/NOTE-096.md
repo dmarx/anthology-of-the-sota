@@ -6,8 +6,6 @@ formerly:
 paper: LIT-056
 title: 'Deep Gradient Compression: Reducing the Communication Bandwidth for Distributed Training'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   99.9% of gradient exchanges in distributed SGD are redundant; by sparsifying

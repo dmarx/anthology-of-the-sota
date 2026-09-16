@@ -6,8 +6,6 @@ formerly:
 paper: LIT-073
 title: 'Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding'
 version: 1
-tags:
-- generative-modeling
 date: '2026-09-09'
 summary: >-
   Finds that scaling a frozen text-only language model improves text-to-image sample quality significantly more than scaling the image diffusion model — an allocation result, not an architecture one. Also diagnoses why high guidance weights destroy images (predictions leave the training range and compound through iterative sampling) and fixes it with dynamic thresholding.

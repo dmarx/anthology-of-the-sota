@@ -15,8 +15,6 @@ history:
     in the same breath declined to argue with the paper's Rejected
     status. Filing SOTA-200, which needs this paper, made that
     untenable; LIT-085 is now Active and this note says so.
-tags:
-- analysis-and-evaluation
 date: '2026-09-09'
 summary: >-
   Reverse-engineers a one-layer transformer trained on modular addition and finds it computes a Fourier multiplication algorithm — embed inputs as rotations, combine with trigonometric identities. Uses that to define continuous progress measures showing grokking is three phases, and finds grokking vanishes entirely above about 60% data.

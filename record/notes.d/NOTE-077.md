@@ -6,8 +6,6 @@ formerly:
 paper: LIT-234
 title: 'Beyond the Best Guess'
 version: 1
-tags:
-- adaptation-and-tuning
 date: '2026-09-15'
 summary: >-
   Reinforcement learning raises pass@1 and lowers pass@k, eventually below the

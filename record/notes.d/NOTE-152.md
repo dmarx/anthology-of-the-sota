@@ -6,8 +6,6 @@ formerly:
 paper: LIT-337
 title: 'PowerSGD: Practical Low-Rank Gradient Compression for Distributed Optimization'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Making the compressor linear (i.e., equivariant under averaging) unlocks

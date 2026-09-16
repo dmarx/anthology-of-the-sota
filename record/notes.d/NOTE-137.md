@@ -6,8 +6,6 @@ formerly:
 paper: LIT-246
 title: 'Towards Crowdsourced Training of Large Neural Networks using Decentralized Mixture-of-Experts'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Mixture-of-Experts architectures are uniquely suited to volunteer computing

@@ -7,8 +7,6 @@ formerly:
 - NOTE-tmpohmfg
 title: 'What Makes for Good Views for Contrastive Learning?'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-09'
 summary: >-
   Argues for an InfoMin principle: views should share as little mutual information as possible while keeping task-relevant information intact. Too much shared information makes the contrastive task trivial, too little destroys the signal, so there is a sweet spot — and augmentation design is the search for it.

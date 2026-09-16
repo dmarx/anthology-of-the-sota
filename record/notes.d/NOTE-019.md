@@ -15,8 +15,6 @@ history:
     derivation of the preconditioning coefficients and the method are
     new, and SOTA-188 is confirmed against Section 5 and Appendix B.6
     rather than left unverified.
-tags:
-- generative-modeling
 date: '2026-09-09'
 summary: >-
   Pulls diffusion's tangled formulations apart into independent axes — sampler, training noise distribution, and preconditioning — and derives the preconditioning coefficients from a unit-variance requirement rather than choosing them. FID 1.79 on class-conditional CIFAR-10 at 35 network evaluations; a pretrained ImageNet-64 model improves 2.07 to 1.55 from the sampler alone.

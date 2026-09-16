@@ -11,8 +11,6 @@ history:
   date: '2026-09-10'
   note: >-
     The
-tags:
-- generative-modeling
 date: '2026-09-09'
 summary: >-
   Notices that the diffusion ODE is semi-linear, solves its linear part analytically, and applies a numerical method only to the intractable neural-network integral. Training-free, 10–20 function evaluations, 4.70 FID at 10 NFE on CIFAR-10, and DDIM turns out to be exactly the first-order case.

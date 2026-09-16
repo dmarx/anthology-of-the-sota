@@ -6,8 +6,6 @@ formerly:
 paper: LIT-241
 title: 'Proximal Policy Optimization Algorithms'
 version: 1
-tags:
-- training-optimization
 date: '2026-09-15'
 summary: >-
   Clip the probability ratio to [1-eps, 1+eps] and take the minimum of the

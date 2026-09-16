@@ -6,8 +6,6 @@ formerly:
 paper: LIT-230
 title: 'Understanding Evolution Strategies for LLM Reasoning'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   Three questions about what ES post-training does rather than whether it

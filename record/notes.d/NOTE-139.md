@@ -6,8 +6,6 @@ formerly:
 paper: LIT-298
 title: 'On the Global Convergence of Gradient Descent for Over-parameterized Models using Optimal Transport'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   Over-parameterized particle gradient descent on F_m(u_1,...,u_m) can be

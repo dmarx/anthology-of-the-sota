@@ -6,8 +6,6 @@ formerly:
 paper: LIT-345
 title: 'Generalized EXTRA stochastic gradient Langevin dynamics'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Standard decentralized SGLD (DE-SGLD) suffers from a bias due to network

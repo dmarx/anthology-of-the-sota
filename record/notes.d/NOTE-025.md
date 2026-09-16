@@ -7,8 +7,6 @@ formerly:
 paper: LIT-101
 title: 'AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs'
 version: 1
-tags:
-- training-optimization
 date: '2026-09-09'
 summary: >-
   Keeps an EMA of the gradient's scalar L2 norm and, when the current gradient is smaller than that history, scales it up to match — a floor under the gradient norm, applied to Adam's first moment only. The exact mirror image of gradient clipping. Evidence is VGG/ResNet on CIFAR-10, CIFAR-100 and TinyImageNet; there is no transformer and no language result.

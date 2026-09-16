@@ -6,8 +6,6 @@ formerly:
 paper: LIT-310
 title: 'Phase transitions, logarithmic Sobolev inequalities, and uniform-in-time propagation of chaos for weakly interacting diffusions'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   Both the N-particle Fokker-Planck equation and its McKean-Vlasov mean-field

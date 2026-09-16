@@ -6,8 +6,6 @@ formerly:
 paper: LIT-326
 title: 'A Necessary and Sufficient Condition for Consensus Over Random Networks'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   For gossip-style algorithms with IID random mixing matrices, almost sure

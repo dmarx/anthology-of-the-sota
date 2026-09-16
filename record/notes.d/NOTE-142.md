@@ -6,8 +6,6 @@ formerly:
 paper: LIT-279
 title: 'HOGWILD!: A Lock-Free Approach to Parallelizing Stochastic Gradient Descent'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   When the optimization problem is sparse (each gradient update touches only a

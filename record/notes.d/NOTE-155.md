@@ -6,8 +6,6 @@ formerly:
 paper: LIT-280
 title: 'signSGD: Compressed Optimisation for Non-Convex Problems'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   When gradients and noise are dense (a condition empirically verified in deep

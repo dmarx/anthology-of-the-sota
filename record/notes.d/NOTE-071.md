@@ -6,8 +6,6 @@ formerly:
 paper: LIT-089
 title: 'Adding Conditional Control to Text-to-Image Diffusion Models'
 version: 1
-tags:
-- adaptation-and-tuning
 date: '2026-09-09'
 summary: >-
   Adds spatial control to a frozen diffusion model by cloning its encoder into a trainable branch joined to the original by zero-initialized convolutions, so the adapter starts as an exact no-op and grows away from it. Trains robustly on datasets from under 50k to over a million.

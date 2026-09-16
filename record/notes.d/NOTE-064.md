@@ -6,8 +6,6 @@ formerly:
 paper: LIT-070
 title: 'Hierarchical Text-Conditional Image Generation with CLIP Latents'
 version: 1
-tags:
-- generative-modeling
 date: '2026-09-09'
 summary: >-
   Splits text-to-image into a prior that predicts a CLIP image embedding from a caption and a decoder that renders from that embedding. The split buys diversity rather than fidelity — humans slightly prefer GLIDE's photorealism, and strongly prefer unCLIP's diversity. Its own reconstruction figures show the CLIP embedding loses attribute binding.

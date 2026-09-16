@@ -6,8 +6,6 @@ formerly:
 paper: LIT-078
 title: 'An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion'
 version: 1
-tags:
-- adaptation-and-tuning
 date: '2026-09-09'
 summary: >-
   Personalizes a frozen text-to-image model by optimizing a single new token embedding — nothing else changes. Frames the result as a point on a distortion/editability tradeoff borrowed from GAN inversion, and adds per-image tokens so the shared concept and the incidental details separate into different embeddings.

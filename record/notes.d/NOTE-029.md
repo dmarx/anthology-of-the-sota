@@ -6,8 +6,6 @@ formerly:
 paper: LIT-102
 title: 'ZeRO++: Extremely Efficient Collective Communication for Giant Model Training'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-09'
 summary: >-
   Attacks each of ZeRO's three communication collectives separately — block-quantized weight all-gather, a secondary weight shard held redundantly to trade memory for communication, and an all-to-all quantized gradient reduction replacing reduce-scatter. 4× less communication, up to 2.16× throughput at 384 GPUs.

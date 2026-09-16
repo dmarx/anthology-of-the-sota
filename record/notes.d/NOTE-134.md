@@ -6,8 +6,6 @@ formerly:
 paper: LIT-262
 title: 'Consensus Based Sampling'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   By replacing the empirical covariance in a CBO-like consensus update with a

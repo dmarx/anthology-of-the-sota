@@ -6,8 +6,6 @@ formerly:
 paper: LIT-062
 title: 'Latent Diffusion Models'
 version: 1
-tags:
-- generative-modeling
 date: '2026-09-09'
 summary: >-
   Train the diffusion model in the latent space of a pretrained autoencoder rather than in pixels. The autoencoder removes imperceptible detail; the diffusion model then spends its capacity on semantics instead of on high-frequency content nobody sees.

@@ -6,8 +6,6 @@ formerly:
 - NOTE-tmpwjlpa
 title: 'PaLI: A Jointly-Scaled Multilingual Language-Image Model'
 version: 1
-tags:
-- model-architecture
 date: '2026-09-09'
 summary: >-
   Scales language and vision components jointly across 100+ languages and shows a properly scaled model handles many languages while keeping English-only state of the art. Its most useful passage is an ablation honest enough to explain a regression by the language ratio of the data that caused it.

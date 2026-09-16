@@ -6,8 +6,6 @@ formerly:
 - NOTE-tmph6rxh
 title: 'OnePose: One-Shot Object Pose Estimation without CAD Models'
 version: 1
-tags:
-- vision-and-graphics
 date: '2026-09-09'
 summary: >-
   Estimates object pose from a single scanned video, with no CAD model and — the part the record's own summary got backwards — no instance- or category-specific training. Builds an SfM point cloud of the object once, then matches 2D query points to it with a generic graph attention network that was never trained on that object or its category.

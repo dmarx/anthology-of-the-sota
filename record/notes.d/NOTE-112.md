@@ -6,8 +6,6 @@ formerly:
 paper: LIT-370
 title: 'Deep learning with Elastic Averaging SGD'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Coupling local workers to a center variable through a soft elastic force

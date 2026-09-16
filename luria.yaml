@@ -862,22 +862,13 @@ schemes:
     # OF something. There is no converse on the LIT side, because Luria's
     # converse must be same-scheme and this crosses.
     #
-    # `invariant = "tags"` is the only place this record asserts one across a
-    # scheme boundary (ADR-tmpvv2d8), and it is the only heterogeneous relation
-    # where the two ends are the SAME OBJECT: a note and its paper are one
-    # subject by construction, so a topic they do not share is a disagreement
-    # about that subject rather than two documents filed on different axes.
-    # The other five cross-scheme relations join a claim to a paper or to an
-    # explanation, which ADR-026's filing rule expects to differ, and they
-    # report 20-47% of their edges against this one's 3% (4 of 158). Luria
-    # takes the check off `chains` and onto the relation for exactly this
-    # case: a note and its paper sit in no sequence together (LU-#272).
+    # It carries the TOPICS too, below: a note and its paper are the same
+    # object, so the note holds no subject of its own (ADR-tmpvv2d8).
     references:
       paper:
         scheme: LIT
         required: true
         many: false
-        invariant: tags
     fields:
       status:
         vocabulary: note-statuses
@@ -885,45 +876,30 @@ schemes:
       published:
         derive: '{published}'
         from: paper
-      # The same derivation the other two schemes use, over LIT's wider
-      # vocabulary — a reading is filed under the paper's topic, not the practice
-      # registry's narrower one.
+      # A reading is filed under nothing of its own. Both of these read the
+      # paper's frontmatter, because a note and its paper ARE the same paper
+      # and a second copy of its subject is a second copy free to disagree --
+      # which is what four of them were doing (ADR-tmpvv2d8). Deriving is the
+      # answer the invariant was a weaker version of: it cannot disagree
+      # rather than reporting when it does.
+      #
+      # `many` says this holds the paper's whole list rather than one value of
+      # it. Both halves are checked against LIT, and the check exists because
+      # omitting `many` used to be silent -- the value resolved as a list
+      # against a contract saying one, which reads as NO values, and every
+      # `docs/notes/tags/*.md` page stopped being written (LU-#276).
+      #
+      # `from: paper` on BOTH, not `{tags[0]}` off this document's own derived
+      # `tags`: derivations do not chain -- one hop, reading written
+      # frontmatter -- so a primary derived from a derived list would resolve
+      # to nothing on every note.
       primary_topic:
         derive: '{tags[0]}'
+        from: paper
       tags:
+        derive: '{tags}'
+        from: paper
         many: true
-        required: true
-        closed: false
-        groups:
-          primary_topic:
-            # `any`, not `exactly-one` (ADR-tmpoxkk7). A document is often about
-            # two of the thirteen -- a positional-encoding scheme is also an
-            # attention technique, a context-extension paper is both -- and under
-            # `exactly-one` recording the second meant deleting the first. The
-            # primary topic is still exactly one thing: `primary_topic` derives
-            # `{tags[0]}`, so the FIRST topic listed is the primary and every
-            # chain invariant still compares one value against one value.
-            #
-            # The cost is that `tags[0]` becomes load-bearing where it was only
-            # conventional. It already was -- a free-form tag listed first would
-            # always have made `primary_topic` wrong -- and holds in all 596
-            # documents today, but a reordering is now a silent retag. LU-#229
-            # asks luria for the guard.
-            require: any
-            tags:
-            - training-optimization
-            - systems-optimization
-            - model-stability
-            - distributed-optimization
-            - data-pipeline
-            - attention-techniques
-            - model-architecture
-            - generative-modeling
-            - vision-and-graphics
-            - adaptation-and-tuning
-            - inference-optimization
-            - analysis-and-evaluation
-            - representation-and-encoding
     axis: tags
   # ── This project reasoning about itself ──────────────────────────────────
   ADR:

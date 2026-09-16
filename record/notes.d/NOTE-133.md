@@ -6,8 +6,6 @@ formerly:
 paper: LIT-361
 title: 'Local SGD Converges Fast and Communicates Little'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Workers can run SGD independently for H steps before averaging, and as long

@@ -6,8 +6,6 @@ formerly:
 paper: LIT-307
 title: 'Communication-Efficient Learning of Deep Networks from Decentralized Data'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Performing multiple local SGD steps on each client's private data before

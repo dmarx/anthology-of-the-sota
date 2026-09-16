@@ -6,8 +6,6 @@ formerly:
 paper: LIT-252
 title: 'OpenDiLoCo: An Open-Source Framework for Globally Distributed Low-Communication Training'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   DiLoCo's dual-optimizer local-SGD approach reduces inter-node communication

@@ -11,8 +11,6 @@ history:
   date: '2026-09-10'
   note: >-
     The
-tags:
-- generative-modeling
 date: '2026-09-09'
 summary: >-
   Generalises DDPM to a family of *non-Markovian* forward processes that share DDPM's exact training objective, so the sampler can be replaced without retraining. Picking the deterministic member gives 10–50× fewer steps, plus latent interpolation and encoding that a stochastic sampler cannot do. Not a continuous-time or SDE paper — that is a different one.

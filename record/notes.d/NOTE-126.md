@@ -6,8 +6,6 @@ formerly:
 paper: LIT-304
 title: 'Consensus Problems in Networks of Agents With Switching Topology and Time-Delays'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   The consensus problem is exactly a question about the null space of the

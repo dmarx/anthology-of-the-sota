@@ -6,8 +6,6 @@ formerly:
 paper: LIT-026
 title: 'Advances and Open Problems in Federated Learning'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-09'
 summary: >-
   A 66,000-word multi-institution survey defining federated learning and cataloguing its open problems. Its durable contribution to this record is the cross-device / cross-silo distinction, which separates two settings with almost nothing in common operationally.

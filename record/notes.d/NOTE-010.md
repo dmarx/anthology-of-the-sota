@@ -6,8 +6,6 @@ formerly:
 paper: LIT-003
 title: 'Neural Machine Translation of Rare Words with Subword Units'
 version: 1
-tags:
-- representation-and-encoding
 date: '2026-09-09'
 summary: >-
   Translation was open-vocabulary and NMT models were not, backing off to a dictionary for unknown words. Encoding rare and unknown words as subword units — byte pair encoding adapted to segmentation — makes the model open-vocabulary itself.

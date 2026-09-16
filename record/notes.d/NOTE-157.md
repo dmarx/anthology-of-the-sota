@@ -6,8 +6,6 @@ formerly:
 paper: LIT-373
 title: 'SlowMo: Improving Communication-Efficient Distributed SGD with Slow Momentum'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Adding a slow outer momentum step after every tau inner steps of local SGD

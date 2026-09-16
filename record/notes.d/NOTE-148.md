@@ -6,8 +6,6 @@ formerly:
 paper: LIT-276
 title: 'Smoothing DiLoCo with Primal Averaging for Faster Training of LLMs'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   DiLoCo's performance improves with more inner steps because the two-loop

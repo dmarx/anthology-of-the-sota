@@ -6,8 +6,6 @@ formerly:
 paper: LIT-354
 title: 'Asynchronous Stochastic Gradient Descent with Delay Compensation'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   The stale gradient g(w_t) used in ASGD is merely the zero-order

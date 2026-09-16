@@ -6,8 +6,6 @@ formerly:
 paper: LIT-316
 title: 'Distributed Deep Learning in Open Collaborations'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   By accumulating gradients until a fixed global batch size is reached

@@ -6,8 +6,6 @@ formerly:
 paper: LIT-229
 title: 'Evolution Strategies at the Hyperscale'
 version: 1
-tags:
-- training-optimization
 date: '2026-09-15'
 summary: >-
   Structuring each ES worker's perturbation as a rank-r Gaussian product

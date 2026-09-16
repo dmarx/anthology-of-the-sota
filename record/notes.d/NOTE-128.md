@@ -6,8 +6,6 @@ formerly:
 paper: LIT-288
 title: 'Achieving Tighter Finite-Time Rates for Heterogeneous Federated Stochastic Approximation under Markovian Sampling'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Standard local-update federated SA algorithms converge to the wrong point

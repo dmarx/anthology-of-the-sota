@@ -6,8 +6,6 @@ formerly:
 - NOTE-tmp7hkoz
 title: 'Gaussian Shell Maps for Efficient 3D Human Generation'
 version: 1
-tags:
-- vision-and-graphics
 date: '2026-09-09'
 summary: >-
   Puts 3D Gaussians on inflated and deflated shells around a template human body, with a CNN generating the texture stack whose features become the Gaussians' attributes. Rendering fast enough removes the need for the 2D upsamplers that made prior 3D GANs multi-view inconsistent — a quality problem solved by a speed fix.

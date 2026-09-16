@@ -6,8 +6,6 @@ formerly:
 paper: LIT-353
 title: 'Emergence of stochastic flocking for the discrete Cucker-Smale model with randomly switching topologies'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   The Cucker-Smale velocity update is a stochastic matrix multiplication on

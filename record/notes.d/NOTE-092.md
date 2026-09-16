@@ -6,8 +6,6 @@ formerly:
 paper: LIT-301
 title: 'Products of indecomposable, aperiodic, stochastic matrices'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   A finite collection of stochastic matrices all being primitive

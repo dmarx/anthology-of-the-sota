@@ -6,8 +6,6 @@ formerly:
 paper: LIT-325
 title: 'Distributed asynchronous deterministic and stochastic gradient optimization algorithms'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Gradient descent does not require synchronized updates across processors —

@@ -6,8 +6,6 @@ formerly:
 paper: LIT-231
 title: 'Hyper-ES'
 version: 1
-tags:
-- adaptation-and-tuning
 date: '2026-09-15'
 summary: >-
   Argues from two lemmas that full-parameter ES cannot work at LLM scale —

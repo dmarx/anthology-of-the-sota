@@ -6,8 +6,6 @@ formerly:
 paper: LIT-261
 title: 'The mean field analysis of the Kuramoto model on graphs II. Asymptotic stability of the incoherent state, center manifold reduction, and bifurcations'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   The network's structural imprint on synchronization onset is fully captured

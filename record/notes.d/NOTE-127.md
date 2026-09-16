@@ -6,8 +6,6 @@ formerly:
 paper: LIT-292
 title: 'Cooperative SGD: A unified Framework for the Design and Analysis of Communication-Efficient SGD Algorithms'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   All major communication-efficient SGD algorithms differ only in how they

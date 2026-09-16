@@ -6,8 +6,6 @@ formerly:
 paper: LIT-040
 title: 'Scaling Laws for Autoregressive Generative Modeling'
 version: 1
-tags:
-- training-optimization
 date: '2026-09-09'
 summary: >-
   Extends the language scaling laws to image, video, multimodal and mathematics, finding the same power-law-plus-constant form and a nearly domain-independent exponent for optimal model size, N_opt(C) ∝ C^0.7. That exponent implies D ∝ N^0.4 — sub-linear data scaling, which Chinchilla later overturned. The paper also flags the inconsistency that overturned it.

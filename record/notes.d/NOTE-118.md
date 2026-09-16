@@ -6,8 +6,6 @@ formerly:
 paper: LIT-296
 title: 'The Variational Formulation of the Fokker-Planck Equation'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   Langevin dynamics — and hence SGLD — is not merely a diffusion process but

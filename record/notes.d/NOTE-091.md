@@ -6,8 +6,6 @@ formerly:
 paper: LIT-286
 title: 'The Kuramoto model: A simple paradigm for synchronization phenomena'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   The Kuramoto model — N oscillators coupled through sin(θ_j − θ_i)

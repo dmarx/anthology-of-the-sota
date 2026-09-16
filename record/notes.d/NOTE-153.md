@@ -6,8 +6,6 @@ formerly:
 paper: LIT-323
 title: 'Overlap Local-SGD: An Algorithmic Approach to Hide Communication Delays in Distributed SGD'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   By decoupling synchronization into a background thread that maintains an

@@ -6,8 +6,6 @@ formerly:
 paper: LIT-305
 title: 'A Bayesian Perspective on Generalization and Stochastic Gradient Descent'
 version: 1
-tags:
-- training-optimization
 date: '2026-09-15'
 summary: >-
   SGD implicitly samples from a Bayesian posterior over parameters, and the

@@ -6,8 +6,6 @@ formerly:
 paper: LIT-271
 title: 'A Mean Field View of the Landscape of Two-Layers Neural Networks'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-15'
 summary: >-
   When the number of hidden units N is large (N ≫ D), the population risk of a

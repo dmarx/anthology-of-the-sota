@@ -6,8 +6,6 @@ formerly:
 paper: LIT-077
 title: 'Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models'
 version: 1
-tags:
-- analysis-and-evaluation
 date: '2026-09-09'
 summary: >-
   204 tasks from 450 authors, evaluated across dense and sparse models from millions to hundreds of billions of parameters, with expert human raters as the baseline. Its most useful finding is about measurement: tasks showing "breakthrough" behaviour at a critical scale tend to involve multiple steps or brittle metrics, while smooth ones are knowledge-heavy.

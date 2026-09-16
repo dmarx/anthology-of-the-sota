@@ -6,8 +6,6 @@ formerly:
 paper: LIT-036
 title: 'Denoising Diffusion Probabilistic Models'
 version: 1
-tags:
-- generative-modeling
 date: '2026-09-09'
 summary: >-
   The paper that made diffusion work. Its Table 2 is the underquoted part: predicting ε rather than the posterior mean matters *only* under the simplified objective, learned reverse-process variances destabilise training, and the principled variational bound gives better codelengths while the unprincipled simplified loss gives better samples.

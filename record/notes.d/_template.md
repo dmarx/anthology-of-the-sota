@@ -25,10 +25,11 @@ title: ''
 
 version: 1
 
-# Exactly one primary topic from tags.yaml — the paper's topic, over LIT's
-# wider vocabulary, not the practice registry's narrower one.
-tags:
-- training-optimization
+# There is deliberately no `tags:` line here either, for the same reason and a
+# stronger one. A reading's topics are DERIVED from the paper named in `paper:`
+# above — a note and its paper are the same paper, so a second copy of its
+# subject is a second copy free to disagree, and four of them were
+# (ADR-tmpvv2d8). Retag the LIT note; the reading follows.
 
 date: ''
 

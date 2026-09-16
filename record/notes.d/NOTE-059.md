@@ -6,8 +6,6 @@ formerly:
 paper: LIT-033
 title: 'Longformer: The Long-Document Transformer'
 version: 1
-tags:
-- attention-techniques
 date: '2026-09-09'
 summary: >-
   Replaces full self-attention with a sliding window plus a small set of task-chosen global positions, giving linear cost in sequence length. The global tokens are the design decision that matters — they are where the task's inductive bias is stated, and they are why the pattern can be adapted per task rather than fixed.

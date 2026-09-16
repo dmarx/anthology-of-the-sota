@@ -6,8 +6,6 @@ formerly:
 paper: LIT-350
 title: 'Subspace Networks: Scaling Decentralized Training with Communication-Efficient Model Parallelism'
 version: 1
-tags:
-- distributed-optimization
 date: '2026-09-15'
 summary: >-
   Because transformer projection matrices naturally converge to low-rank

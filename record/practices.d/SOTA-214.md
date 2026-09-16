@@ -37,6 +37,7 @@ summary: >-
   degrades badly without the momentum-buffer version of it.
 extended_by:
 - SOTA-215
+- SOTA-tmpi7tm2
 ---
 
 # SOTA-214: Pair any gradient compressor with error feedback, and correct the momentum it is applied under

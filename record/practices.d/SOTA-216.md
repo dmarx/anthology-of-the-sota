@@ -33,7 +33,15 @@ summary: >-
   to local SGD with H around 16 to 32 for the rest. The early phase is where
   the gradient noise is doing work; the late phase is where communication is
   pure overhead.
+explained_by:
+- THEORY-tmpclzj7
 ---
+
+<!-- inactive-ok-file: SOTA-155, THEORY-tmpclzj7 — both Proposed, and both
+     cited here as the other side of a reconciliation rather than as support.
+     This practice rests on LIT-362 and LIT-361; what SOTA-155 and the
+     account over it supply is why its `H` is small, which is a fact about
+     the neighbouring document. -->
 
 # SOTA-216: Switch from minibatch SGD to local SGD at the first learning-rate decay, rather than choosing between them
 
@@ -65,11 +73,25 @@ early phase.
 
 ## What this does not settle
 
-**Image classification, 2018.** ResNets on CIFAR and ImageNet. Nothing here
-tests it on a transformer, and DiLoCo — the local-update scheme this record
-does carry a practice for — uses `H = 500`, an order of magnitude beyond this
-paper's range, and does not do the early minibatch phase at all. Those two
-facts are unreconciled.
+**Image classification, 2018.** ResNets on CIFAR and ImageNet, `K = 16`
+workers, switching at epoch 150. Nothing here tests it on a transformer.
+
+**The `H = 500` in [SOTA-155](SOTA-155.md) is not a contradiction of the 16 to 32 here.**
+That was this document's reading and it was wrong. The two numbers are chosen
+against different objectives — this one is a swept accuracy peak, [LIT-212](../literature.d/LIT-212.md)'s is
+a point on a curve flat enough that `H = 1000` costs 2.9% perplexity while
+communicating 20× less — and, more to the point, the two schemes do different
+things at the synchronisation. This one averages parameters. [LIT-212](../literature.d/LIT-212.md) runs
+Nesterov momentum over the accumulated deltas, and its own ablation reports
+that plain averaging at `H = 500` performs poorly. [THEORY-tmpclzj7](../theory.d/THEORY-tmpclzj7.md) is the
+account: the outer optimizer is what buys the interval, so a practice with no
+outer optimizer should be expected to have a lower ceiling.
+
+What that does *not* touch is this practice's actual claim. The switch at the
+first learning-rate decay is about **when to start communicating rarely**, not
+about how rarely, and [LIT-212](../literature.d/LIT-212.md) neither tests it nor contradicts it — it starts
+from a model pretrained for 24,000 steps, which is a phase boundary of a
+different kind and is not compared against not having one.
 
 **The generalization premise is not settled inside this record.** The claim
 that large batches cost generalization, rather than costing tuning effort, is

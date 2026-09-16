@@ -49,6 +49,8 @@ summary: >-
   learn the mixing. All four agree the width helps and that the mixing needs
   a constraint; they disagree about which one, and that disagreement is the
   two practices extending this rather than this itself.
+explained_by:
+- THEORY-tmp3jmjc
 ---
 
 # SOTA-169: Widen the residual stream into several streams and constrain the mixing between them

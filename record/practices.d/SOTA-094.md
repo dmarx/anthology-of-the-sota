@@ -4,7 +4,11 @@ status: 'Active'
 title: 'throughput (energy efficiency) wins out over theoretically optimal sample efficiency'
 version: 1
 tags:
-- model-architecture
+# Retagged from the report of unbound lineage, with SOTA-092 and SOTA-093.
+# It is the fourth of one paper's four claims about batch size, and
+# `training-optimization` names batch size in its blurb. All four carried
+# `model-architecture` because their source is a model report.
+- training-optimization
 date: '2026-08-24'
 source:
 - LIT-069

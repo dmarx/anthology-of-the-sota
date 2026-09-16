@@ -4,7 +4,10 @@ status: 'Active'
 title: 'smaller batch sizes are more sample efficient (i.e., better loss as a function of tokens seen) earlier in training'
 version: 1
 tags:
-- model-architecture
+# Retagged from the report of unbound lineage. `training-optimization` names
+# batch size in its blurb. It carried `model-architecture` because its source
+# is a model report, which is where it was found rather than what it is about.
+- training-optimization
 date: '2026-08-24'
 source:
 - LIT-069

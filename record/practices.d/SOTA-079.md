@@ -12,8 +12,7 @@ introduced_by:
 - LIT-053
 extends:
 - SOTA-077
-compared_against:
-- SOTA-047
+# `compared_against: SOTA-047` removed -- see the note on SOTA-047.
 summary: >-
   Aizman et al. (2020), [LIT-053](../literature.d/LIT-053.md) — [ARXIV-2001.01858](https://arxiv.org/abs/2001.01858).
 ---

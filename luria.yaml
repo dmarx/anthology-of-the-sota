@@ -84,6 +84,21 @@ vocabularies:
     vision-and-graphics:
       label: Vision and graphics
       blurb: neural rendering, reconstruction, perception, visual foundation models
+    # ── Secondary-only words ─────────────────────────────────────────────
+    # Declared so they have a label and a blurb rather than rendering as bare
+    # strings, and so `closed: true` on SOTA, LIT and THEORY can require that
+    # every tag those three carry is one somebody chose. NOTE's `tags:` names no
+    # vocabulary, so it is not covered. They are NOT in the `primary_topic` group,
+    # which is still the thirteen above: a document may carry one of these
+    # alongside its topic, never instead of it.
+    #
+    # This matters more since the chain invariant moved to `tags`
+    # (ADR-tmpoxkk7): any tag can now bind a relation, so an ad-hoc word typed
+    # once can quietly assert that two documents share a subject. A closed
+    # vocabulary makes that a decision instead of a typo.
+    tiny-models:
+      label: Tiny models
+      blurb: claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts
   # What a status means for a practice. The five words are luria's and closed;
   # the meanings are this anthology's.
   #
@@ -479,14 +494,32 @@ schemes:
         vocabulary: topics
         many: true
         required: true
-        closed: false
+        # Closed (ADR-tmpoxkk7): since the chain invariant reads `tags`, an
+        # undeclared word can bind a relation, so a tag typed once would
+        # quietly assert that two documents share a subject. Closing it makes
+        # every tag one the vocabulary above names. NOTE's `tags:` declares no
+        # vocabulary at all and is not covered — see the decision.
+        closed: true
         groups:
           # The topic consolidation, enforced. Thirteen topics, exactly one primary
           # per practice; secondary tags are unconstrained. The vocabulary and the
           # one-primary rule both come from ADR-003, which promoted them out of the
           # Jinja template they had been sitting in, unapplied, since 2024.
           primary_topic:
-            require: exactly-one
+            # `any`, not `exactly-one` (ADR-tmpoxkk7). A document is often about
+            # two of the thirteen -- a positional-encoding scheme is also an
+            # attention technique, a context-extension paper is both -- and under
+            # `exactly-one` recording the second meant deleting the first. The
+            # primary topic is still exactly one thing: `primary_topic` derives
+            # `{tags[0]}`, so the FIRST topic listed is the primary and every
+            # chain invariant still compares one value against one value.
+            #
+            # The cost is that `tags[0]` becomes load-bearing where it was only
+            # conventional. It already was -- a free-form tag listed first would
+            # always have made `primary_topic` wrong -- and holds in all 596
+            # documents today, but a reordering is now a silent retag. LU-#229
+            # asks luria for the guard.
+            require: any
             # Thirteen, and the same thirteen the LIT scheme has. ADR-027 added
             # `analysis-and-evaluation`; ADR-026 then added `generative-modeling` and
             # `vision-and-graphics`, superseding ADR-020, whose rejection of exactly that
@@ -606,10 +639,28 @@ schemes:
         vocabulary: topics
         many: true
         required: true
-        closed: false
+        # Closed (ADR-tmpoxkk7): since the chain invariant reads `tags`, an
+        # undeclared word can bind a relation, so a tag typed once would
+        # quietly assert that two documents share a subject. Closing it makes
+        # every tag one the vocabulary above names. NOTE's `tags:` declares no
+        # vocabulary at all and is not covered — see the decision.
+        closed: true
         groups:
           primary_topic:
-            require: exactly-one
+            # `any`, not `exactly-one` (ADR-tmpoxkk7). A document is often about
+            # two of the thirteen -- a positional-encoding scheme is also an
+            # attention technique, a context-extension paper is both -- and under
+            # `exactly-one` recording the second meant deleting the first. The
+            # primary topic is still exactly one thing: `primary_topic` derives
+            # `{tags[0]}`, so the FIRST topic listed is the primary and every
+            # chain invariant still compares one value against one value.
+            #
+            # The cost is that `tags[0]` becomes load-bearing where it was only
+            # conventional. It already was -- a free-form tag listed first would
+            # always have made `primary_topic` wrong -- and holds in all 596
+            # documents today, but a reordering is now a silent retag. LU-#229
+            # asks luria for the guard.
+            require: any
             tags:
             - training-optimization
             - systems-optimization
@@ -732,7 +783,12 @@ schemes:
         vocabulary: topics
         many: true
         required: true
-        closed: false
+        # Closed (ADR-tmpoxkk7): since the chain invariant reads `tags`, an
+        # undeclared word can bind a relation, so a tag typed once would
+        # quietly assert that two documents share a subject. Closing it makes
+        # every tag one the vocabulary above names. NOTE's `tags:` declares no
+        # vocabulary at all and is not covered — see the decision.
+        closed: true
         groups:
           # The same thirteen as the practice registry above, since ADR-026. ADR-003
           # gave LIT five topics the SOTA scheme lacked, on the ground that the corpus
@@ -742,7 +798,20 @@ schemes:
           # ABOUT. Kept as a separate declaration because they are separate schemes and a
           # future decision may separate them again.
           primary_topic:
-            require: exactly-one
+            # `any`, not `exactly-one` (ADR-tmpoxkk7). A document is often about
+            # two of the thirteen -- a positional-encoding scheme is also an
+            # attention technique, a context-extension paper is both -- and under
+            # `exactly-one` recording the second meant deleting the first. The
+            # primary topic is still exactly one thing: `primary_topic` derives
+            # `{tags[0]}`, so the FIRST topic listed is the primary and every
+            # chain invariant still compares one value against one value.
+            #
+            # The cost is that `tags[0]` becomes load-bearing where it was only
+            # conventional. It already was -- a free-form tag listed first would
+            # always have made `primary_topic` wrong -- and holds in all 596
+            # documents today, but a reordering is now a silent retag. LU-#229
+            # asks luria for the guard.
+            require: any
             tags:
             - training-optimization
             - systems-optimization
@@ -815,7 +884,20 @@ schemes:
         closed: false
         groups:
           primary_topic:
-            require: exactly-one
+            # `any`, not `exactly-one` (ADR-tmpoxkk7). A document is often about
+            # two of the thirteen -- a positional-encoding scheme is also an
+            # attention technique, a context-extension paper is both -- and under
+            # `exactly-one` recording the second meant deleting the first. The
+            # primary topic is still exactly one thing: `primary_topic` derives
+            # `{tags[0]}`, so the FIRST topic listed is the primary and every
+            # chain invariant still compares one value against one value.
+            #
+            # The cost is that `tags[0]` becomes load-bearing where it was only
+            # conventional. It already was -- a free-form tag listed first would
+            # always have made `primary_topic` wrong -- and holds in all 596
+            # documents today, but a reordering is now a silent retag. LU-#229
+            # asks luria for the guard.
+            require: any
             tags:
             - training-optimization
             - systems-optimization
@@ -977,19 +1059,29 @@ chains:
     - extends
     - corrects
     sibling: compared_against
-    # `primary_topic`, not `tags`: the assertion a line makes is that its members
-    # are the same KIND of recommendation, and any shared tag is too weak to
-    # carry it — two practices bound by an incidental label read as bound when
-    # nothing about their subject matter is. This was `tags` only because the
-    # primary topic was not a readable field until it was derived above.
+    # `tags`, not `primary_topic` (ADR-tmpoxkk7). What a relation asserts is
+    # that its members have something in common; it does not assert that the
+    # something is the FIRST thing each of them is about. A practice whose
+    # primary topic is stability and whose secondary is the attention technique
+    # it fixes shares a subject with its counterpart, and the record should be
+    # able to say so.
     #
-    # The change re-opens exactly one edge, SOTA-085 / SOTA-161: flash attention
-    # as an attention technique, and keeping its output in FP32 as a stability
-    # fix. #101 bound that pair by giving both a `flash-attention` secondary tag,
-    # which was the only move available under `exactly-one` — it satisfied the
-    # check rather than answering it. The edge is real and crosses a fault line
-    # in the vocabulary, which is what these findings are for.
-    invariant: primary_topic
+    # It read `primary_topic` for a while on the argument that "any shared tag
+    # is too weak to carry it -- two practices bound by an incidental label read
+    # as bound when nothing about their subject matter is". That was correct
+    # while `exactly-one` was in force, because a secondary was then necessarily
+    # a free-form label rather than one of the thirteen. Under `require: any` a
+    # secondary can be a real topic, and the objection survives only for the
+    # free-form ones.
+    #
+    # Measured on the switch: three edges bind. LIT-211/LIT-229 and
+    # LIT-211/LIT-242 bind on `training-optimization` and should -- all three
+    # are about evolution strategies as an optimizer. SOTA-085/SOTA-161 bound on
+    # a `flash-attention` label that #101 added for exactly this purpose, which
+    # is the case the old argument was about; both tags are removed and the edge
+    # is open again. `tiny-models` is the only free-form tag left, on ten
+    # documents, and it binds nothing today.
+    invariant: tags
     output: docs/practice-lines.md
     title: Lines of practice
     # Show consensus beside status, which is the whole reason both axes exist:
@@ -1009,11 +1101,11 @@ chains:
     - extends
     - corrects
     sibling: compared_against
-    # The same assertion here, and here it reports the same twelve edges either
-    # way: no note carries a secondary tag, so its tags and its primary topic are
-    # the same one value. Declared as `primary_topic` regardless, because the two
-    # chains should assert the same thing for the same reason, and a note WILL
-    # carry a secondary tag one day.
-    invariant: primary_topic
+    # The same assertion here and for the same reason, which is why both chains
+    # name the same field. Notes carry a secondary topic now -- the eight
+    # positional-encoding papers do -- so this reports strictly less than it did
+    # under `primary_topic`, and what it stops reporting is lines whose members
+    # really do share a subject.
+    invariant: tags
     output: docs/lineage.md
     title: Lines of work

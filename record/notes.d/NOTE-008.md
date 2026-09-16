@@ -149,12 +149,16 @@ method it argues is insufficient.
 
 ## Bearing on the record
 
-**All three practices sourced to this note are confirmed** — the third such
+<!-- inactive-ok-block: ADR-tmp7dlz4, SOTA-010 — Proposed and Superseded, and
+     this paragraph records that one of the three moved scheme -->
+**All three claims sourced to this note are confirmed.** One of them was a
+practice until [ADR-tmp7dlz4](../decisions.d/ADR-tmp7dlz4.md) moved it to the theory scheme, which is why the
+table names a `THEORY` where it once named `SOTA-010`. The third such
 cluster in [#114](https://github.com/dmarx/anthology-of-the-sota/issues/114).
 
 | practice | disposition |
 |---|---|
-| [SOTA-010](../practices.d/SOTA-010.md) skip connections smooth the loss landscape | confirmed — C4, nearly verbatim |
+| [THEORY-tmp3jmjc](../theory.d/THEORY-tmp3jmjc.md) skip connections smooth the loss landscape | confirmed — C4, nearly verbatim |
 | [SOTA-011](../practices.d/SOTA-011.md) Hessian eigenvalue ratio as a diagnostic | confirmed — C5, Figure 7 |
 | [SOTA-012](../practices.d/SOTA-012.md) sharpness correlates with test error | confirmed — C2, with the filter-normalization condition its body already carries |
 

@@ -769,6 +769,24 @@ schemes:
         - doi
         - url
         require: at-least-one
+        # And no two notes may name the SAME source (LU-ADR-111, LU-#165).
+        # inactive-ok-block: LIT-006, LIT-029, LIT-090, LIT-105 — all four are Rejected, and that is exactly why they are named: this comment is the account of the duplicates the check exists for, so citing the live half instead would name the wrong documents.
+        # The record found this out three times the expensive way. LIT-006,
+        # LIT-029 and LIT-105 each stop, in their own bodies, to say that two
+        # documents could name one paper with the lint clean throughout —
+        # written weeks apart, each one naming the missing check. Every one of
+        # those pairs was created by a citation REPAIR, which is the operation
+        # that collides two notes onto one identifier: the wrong identifier
+        # was what had been keeping them apart, so correcting it is what
+        # brings them together.
+        #
+        # All three surviving pairs pass this without a directive, and that is
+        # the design rather than luck: a duplicate retired NAMING its survivor
+        # is the resolution and not the finding, so the check clears on the
+        # `superseded_by:` pointer rather than on a status. LIT-090/LIT-105 is
+        # why it reads the pointer and not the status — there both notes are
+        # Rejected, the survivor for its own unrelated reasons.
+        unique: true
     # Lineage, as fields rather than a paragraph repeated in every note
     # (ADR-011). `extends:` is the spine of a line — this work builds on that
     # one — and is directed. `compared_against:` is the cross-link that turns a

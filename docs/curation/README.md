@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [16 Sep 22:14 — The record named the missing check three times before anything asserted it](2026-09.md#the-record-named-the-missing-check-three-times-before-anything-asserted-it)
 - [16 Sep 21:11 — A third of the literature supports nothing, and the record had already diagnosed one of them](2026-09.md#a-third-of-the-literature-supports-nothing-and-the-record-had-already-diagnosed-one-of-them)
 - [16 Sep 20:31 — Three trunks in two sessions, and the query that finds them](2026-09.md#three-trunks-in-two-sessions-and-the-query-that-finds-them)
 - [16 Sep 20:23 — The record held two refinements of a practice it did not hold](2026-09.md#the-record-held-two-refinements-of-a-practice-it-did-not-hold)
@@ -83,9 +84,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-76 entries across 2 books, newest first.
+77 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 74 | 2026-09-05 | 2026-09-16 |
+| [2026-09](2026-09.md) | 75 | 2026-09-05 | 2026-09-16 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

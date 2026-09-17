@@ -1,0 +1,142 @@
+---
+status: Proposed
+title: 'Doubt about whether an item is worth carrying is not a reason to leave it out, and not a third kind of provisional'
+version: 1
+tags:
+- record
+date: '2026-09-17'
+issue: '#121'
+summary: >-
+  When the doubt is about whether the record wants an item at all, file it
+  anyway. But that doubt does not get its own status: writing the
+  `promote_when` forces it into one of the two [ADR-014](ADR-014.md) already handles — is
+  the claim true, or would anyone act on it — and if neither condition can be
+  written, what you have is an observation for a note rather than a
+  recommendation for the registry. Rejected: a status below `Proposed`, and
+  parking the doubt in `consensus`.
+---
+
+# ADR-tmpi1wo9: Doubt about whether an item is worth carrying is not a reason to leave it out, and not a third kind of provisional
+
+## Context
+
+`DP-006` settles the case where a recommendation's *evidence* is weak: file
+it, put the belief in `status:` and the condition in `promote_when:`, because
+the bar for having a document is lower than the bar for believing it. That
+principle is about a claim you doubt.
+
+A different doubt has been turning up, and `DP-006` does not obviously reach
+it: **not "is this true" but "does this belong here at all".** The paper is
+fine, the recommendation is legible, and the hesitation is about whether the
+record is the right home for it — too old, too small, too far from what the
+registry is about, or simply not obviously worth the reader's attention.
+
+The worked case is `LIT-087`. Its reading is thorough and its determination,
+written by the [#121](https://github.com/dmarx/anthology-of-the-sota/issues/121) audit, is explicit:
+
+> Whether the record should carry it is a registry decision: the evidence is
+> correlational, from 2023, at a scale below where mixing laws are now fitted.
+
+and
+
+> Unfiled because the record's existing selection practices are quality-filter
+> shaped and reconciling the two frames is a larger job than this audit.
+
+**Two reasons are bundled there and only one of them is good.** The second is
+scope, and scope is a legitimate thing for an audit to invoke — a review that
+files everything it finds is not a review. The first is a registry decision
+deferred, and `DP-006` already answers it. The scope reason laundered the
+other one: the note reads as though the work was *sized* rather than
+*declined*, and nothing in it will ever come due.
+
+Which is `DP-006`'s own failure mode arriving on schedule. Ten days later the
+item was still unfiled, and the fact most worth keeping — the condition under
+which it would be worth filing — was a sentence in a note about something
+else. `ADR-014` has the general form: paragraphs are found by luck.
+
+The tempting fix makes it worse. Since the record already has provisional
+statuses, file the doubtful item `Proposed` and let the status mean *we are
+not sure how valuable this is*. That reading breaks `ADR-014`: a
+`promote_when` must name a kind of result, and **there is no result that
+settles whether a document is worth having.** The status would carry a fact
+about the curator, and a reader cannot act on it or age it.
+
+## Decision
+
+**The entry question is what the work contains, not whether the record will
+want it.** A practice needs an instruction and a citation; a theory needs an
+explanation and a citation; a note needs an identifier. Nothing in any of the
+three schemes asks whether the item is *important*, and nothing should. When
+in doubt, carry it.
+
+**Doubt about worth is not a status, because writing the condition dissolves
+it.** Try to write the `promote_when` and the doubt resolves into one of the
+two `ADR-014` already handles:
+
+- *I am not sure the claim holds* — condition names evidence. This is
+  `DP-006`, unchanged.
+- *I am not sure anyone would act on it* — condition names adoption. Already
+  well-formed: `ADR-014` v2 admits a threshold of adoption as a kind of
+  result, because whether a field has taken something up is a fact about the
+  world.
+
+`LIT-087` is the first: at 0.9% over a heuristic baseline, in 2023, below the
+scale its neighbours argue at, what is in doubt is whether the finding
+survives, and that is an evidence condition.
+
+<!-- inactive-ok-block: ADR-041 — Proposed, and cited for the placement rule it states
+     (a fact whose home is the reading, not the registry), which this decision extends
+     rather than depends on. If ADR-041 is wrong about tuning constants it is still
+     right that the registry is not a scratchpad. -->
+**If neither condition can be written, that is the finding, and it is not
+about the status.** A claim with no result that would move it is not a
+recommendation — it is an observation, and `ADR-041` already says where an
+observation lives: the reading of the paper that made it. The registry is not
+the place to store the fact that somebody once felt unsure.
+
+**A review may decline for scope; the decline is itself a filing.** [#121](https://github.com/dmarx/anthology-of-the-sota/issues/121) did
+this part well and should be the pattern: the determination named the
+specific recommendations (R1, R2) and what was missing, so this decision
+could be made from the note without re-reading the paper. What it should also
+have carried is the *condition* — what would make it worth filing — rather
+than only the doubt. A deferral that names the condition is a promise; one
+that names only the hesitation is a refusal in a note's clothing.
+
+## Alternatives considered
+
+- **A status below `Proposed`** — `Speculative`, meaning "carried, but we do
+  not vouch for it being worth carrying". The obvious move, and it fails on
+  `ADR-014`'s requirement: it is the one status whose condition cannot be
+  written, so it would be the one status that never ages. It would fill with
+  exactly the forgotten-optimism distribution `DP-002` and `DP-006` describe,
+  and it would give every future curator a place to put an unmade decision.
+- **Park the doubt in `consensus:`** — file `Active` and let `unassessed`
+  carry it. Rejected on `ADR-015`: that axis is a claim about what the *field*
+  thinks, deliberately separated from what this record endorses. Overloading
+  it with the curator's own uncertainty destroys the one reading it has.
+- **Keep declining, and file when the record is ready.** The status quo, and
+  its cost is measurable rather than hypothetical: the audit best placed to
+  find `LIT-087` is the one that already looked at it and passed. A second
+  pass over a note whose determination says "unfiled, and here is why" has no
+  reason to reach a different answer, so the item does not come back on its
+  own.
+- **Carry everything and drop the provisional statuses entirely.** Filing
+  would get cheaper and the registry would stop meaning anything. `DP-006`'s
+  two thresholds are the point; this decision lowers the first one and leaves
+  the second exactly where it was.
+
+## Consequences
+
+More documents, and a larger fraction of them provisional. That is the
+intended shape and not a side effect — but it moves weight onto
+`promote_when:`, which now decides whether an item is a live candidate or
+shelf-filler. A lazily written condition used to leave a status vague; it now
+leaves a whole document unaccountable.
+
+It also puts a question in front of every decline: *what would make this worth
+filing?* Where that cannot be answered, the item was never a practice, and
+finding that out is cheaper before the document exists than after.
+
+The immediate consequence is `LIT-087`, filed as two `Proposed` practices in
+the contribution that carries this decision — the frame and the proxy the
+[#121](https://github.com/dmarx/anthology-of-the-sota/issues/121) determination named.

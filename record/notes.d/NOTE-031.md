@@ -5,13 +5,25 @@ formerly:
 - NOTE-tmp4r97h
 paper: LIT-087
 title: 'Data Selection for Language Models via Importance Resampling'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-17'
+  note: >-
+    R2 and R1 filed as practices. The reading is unchanged; the Bearing
+    section records the ruling and says where R3 and R4 went.
 date: '2026-09-09'
 summary: >-
   Selects pretraining data by importance resampling in a hashed n-gram feature space — 10,000 buckets of unigram and bigram counts — to match a target distribution. The more useful result is the metric: KL reduction in that feature space predicts downstream performance across selection methods, including manual curation, which uses no n-grams at all.
 ---
 
 # NOTE-031: Data Selection for Language Models via Importance Resampling
+
+<!-- inactive-ok-file: SOTA-tmp4fwxw, SOTA-tmp2nprq, ADR-tmpi1wo9 — the practices this
+     reading's R2 and R1 became and the decision that ruled on them. Cited from the
+     Bearing section to say where each recommendation went; Proposed is the ruling, not
+     an oversight. -->
+
 
 ## Contribution
 
@@ -113,7 +125,9 @@ cheapest instrument for acting on it.
 
 ## Bearing on the record
 
-**Nothing is sourced to this paper and this reading files no practice.**
+**R2 and R1 are filed as [SOTA-tmp4fwxw](../practices.d/SOTA-tmp4fwxw.md) and [SOTA-tmp2nprq](../practices.d/SOTA-tmp2nprq.md), both `Proposed`.**
+The paragraphs below are this reading's original assessment, kept as written;
+what changed is the ruling, not the reading.
 
 The reading puts a cheaper instrument next to one the record already carries.
 <!-- inactive-ok-block: SOTA-166 — Proposed, named as the record's adjacent data practice rather than relied on -->
@@ -126,6 +140,15 @@ pre-training-run filter that makes the mixing law cheaper to search.
 Whether the record should carry it is a registry decision. The correlational
 evidence is 2023 and at a scale below where mixing laws are now fitted, and that
 is exactly the caveat a practice would need.
+
+**Ruled on 2026-09-17 ([ADR-tmpi1wo9](../decisions.d/ADR-tmpi1wo9.md)):** carry it. The caveat this paragraph
+identifies is not a reason to withhold the document — it is the content of the
+`promote_when:` on it, and both practices state it. R3 (use crude features when
+only the ordering matters) is not filed separately; it is the justification
+inside [SOTA-tmp2nprq](../practices.d/SOTA-tmp2nprq.md), which is where it does its work. R4 (the best selection
+method depends on target breadth) is a condition on [SOTA-tmp4fwxw](../practices.d/SOTA-tmp4fwxw.md) rather than
+its own practice, because it qualifies when the frame pays rather than
+recommending a third thing.
 
 The document's takeaways get the subject wrong in a small way that matters.
 **"Data quality assessment" and "quality-aware data mixing"** describe scoring

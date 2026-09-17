@@ -1,5 +1,8 @@
 ---
+number: 243
 status: Proposed
+formerly:
+- SOTA-tmp70sgi
 promote_when: >-
   The inversion demonstrated on a language-model pretraining corpus: a run
   that ranks examples or documents by a difficulty score, prunes from
@@ -23,25 +26,25 @@ tags:
 - training-optimization
 date: '2026-09-17'
 source:
-- LIT-tmpy1abi
-- LIT-tmpd1gpw
+- LIT-399
+- LIT-397
 introduced_by:
-- LIT-tmpy1abi
+- LIT-399
 implementations: []
 summary: >-
-  Sorscher et al. (2022), [LIT-tmpy1abi](../literature.d/LIT-tmpy1abi.md) — power-law scaling in dataset size is
+  Sorscher et al. (2022), [LIT-399](../literature.d/LIT-399.md) — power-law scaling in dataset size is
   evidence of redundancy, and given a difficulty ranking it can be beaten
   toward exponential. But which end of the ranking to discard flips with how
   much data you started with, and the fraction to discard has to grow with the
   corpus.
 ---
 
-# SOTA-tmp70sgi: Discard the easy examples when data is abundant and the hard ones when it is scarce
+# SOTA-243: Discard the easy examples when data is abundant and the hard ones when it is scarce
 
 ## Source
 
-Sorscher et al. (2022), [LIT-tmpy1abi](../literature.d/LIT-tmpy1abi.md) — [ARXIV-2206.14486](https://arxiv.org/abs/2206.14486), for the
-inversion and the scaling result. Paul et al. (2021), [LIT-tmpd1gpw](../literature.d/LIT-tmpd1gpw.md) —
+Sorscher et al. (2022), [LIT-399](../literature.d/LIT-399.md) — [ARXIV-2206.14486](https://arxiv.org/abs/2206.14486), for the
+inversion and the scaling result. Paul et al. (2021), [LIT-397](../literature.d/LIT-397.md) —
 [ARXIV-2107.07075](https://arxiv.org/abs/2107.07075), for the upper cutoff in the Conditions below, which
 is a correction to this instruction rather than a separate one.
 
@@ -102,7 +105,7 @@ the best performer needs a label for every example and substantial compute. A
 difficulty ranking validated at one scale is not evidence at another — which
 is the same caution this practice's own status is an instance of.
 
-**The hard end has its own cutoff.** [LIT-tmpd1gpw](../literature.d/LIT-tmpd1gpw.md) finds that keeping *only*
+**The hard end has its own cutoff.** [LIT-397](../literature.d/LIT-397.md) finds that keeping *only*
 the top-scoring examples is not optimal even on clean data, and that the
 excluded window widens as label corruption rises, because the hardest examples
 and the mislabelled ones are the same examples. So "keep the hard ones when

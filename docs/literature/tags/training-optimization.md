@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-47 of 331 LIT documents. Back to the [full index](../README.md).
+48 of 334 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -57,3 +57,4 @@
 | [LIT-245](../../../record/literature.d/LIT-245.md) | Bayesian Learning via Stochastic Gradient Langevin Dynamics | Welling and Teh (2011), [Bayesian Learning via Stochastic Gradient Langevin Dynamics](https://icml.cc/2011/papers/398_icmlpaper.pdf). Adding correctly scaled Gaussian noise to a decaying-step-size SGD update turns the optimizer into a posterior sampler, with no accept-reject step. | Active |
 | [LIT-265](../../../record/literature.d/LIT-265.md) | Large Batch Optimization for Deep Learning: Training BERT in 76 minutes | You et al. (2019), [ARXIV-1904.00962](https://arxiv.org/abs/1904.00962). LAMB: normalize each layer's update by the ratio of weight norm to update norm, which lets BERT train at batch size 32k without per-batch-size retuning. | Active |
 | [LIT-305](../../../record/literature.d/LIT-305.md) | A Bayesian Perspective on Generalization and Stochastic Gradient Descent | Smith and Le (2017), [ARXIV-1710.06451](https://arxiv.org/abs/1710.06451). Generalization is set by a noise scale g = eps*N/B rather than by batch size alone, which is why the learning rate must rise with the batch, and the same quantity predicts an optimal batch size. | Active |
+| [LIT-399](../../../record/literature.d/LIT-399.md) | Beyond neural scaling laws: beating power law scaling via data pruning | Sorscher et al. (2022), [ARXIV-2206.14486](https://arxiv.org/abs/2206.14486). Power-law scaling in dataset size can be beaten — reduced toward exponential — if you have a good ranking of which examples to discard and you prune harder as the corpus grows. Which end of the ranking to discard inverts with data abundance. | Active |

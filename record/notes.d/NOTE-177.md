@@ -1,6 +1,9 @@
 ---
+number: 177
 status: Read
-paper: LIT-tmpd1gpw
+formerly:
+- NOTE-tmpsdgml
+paper: LIT-397
 title: 'Deep Learning on a Data Diet: Finding Important Examples Early in Training'
 version: 1
 date: '2026-09-17'
@@ -12,9 +15,9 @@ summary: >-
   the very highest-scoring examples should be excluded, more so under label noise.
 ---
 
-# NOTE-tmpsdgml: Deep Learning on a Data Diet: Finding Important Examples Early in Training
+# NOTE-177: Deep Learning on a Data Diet: Finding Important Examples Early in Training
 
-<!-- inactive-ok-file: SOTA-tmp8yskz, SOTA-tmp70sgi — the practice this reading files and the
+<!-- inactive-ok-file: SOTA-244, SOTA-243 — the practice this reading files and the
      one its R3 corrects, both Proposed and both filed here. Cited to say where each
      recommendation landed. -->
 
@@ -108,7 +111,7 @@ Discard the lowest-scoring fraction, and optionally the highest-scoring tail.
 
 ## Connections
 
-The natural pair is [LIT-tmpy1abi](../literature.d/LIT-tmpy1abi.md), which uses EL2N as the metric for its
+The natural pair is [LIT-399](../literature.d/LIT-399.md), which uses EL2N as the metric for its
 CIFAR-10 confirmation of the abundance inversion and benchmarks it among ten
 at ImageNet scale. Read together they say: *which* end to prune from depends
 on abundance, and *where* the score comes from can be a cheap early
@@ -128,8 +131,8 @@ abundance story on its own would not tell you.
 
 ## Bearing on the record
 
-Sources [SOTA-tmp8yskz](../practices.d/SOTA-tmp8yskz.md) (R1, with R2 in the body) and corroborates
-[SOTA-tmp70sgi](../practices.d/SOTA-tmp70sgi.md), whose conditions carry R3 — the upper cutoff is a correction to
+Sources [SOTA-244](../practices.d/SOTA-244.md) (R1, with R2 in the body) and corroborates
+[SOTA-243](../practices.d/SOTA-243.md), whose conditions carry R3 — the upper cutoff is a correction to
 "keep the hard examples", so it belongs where that instruction is read rather
 than in a document of its own.
 

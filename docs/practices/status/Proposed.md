@@ -6,7 +6,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-48 of 242 SOTA documents. Back to the [full index](../README.md).
+50 of 244 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -58,3 +58,5 @@
 | [SOTA-239](../../../record/practices.d/SOTA-239.md) | Order training data by skill prerequisite: teach the prerequisite and the dependent skill costs less data | Chen et al. (2023), [LIT-392](../../../record/literature.d/LIT-392.md) — [ARXIV-2307.14430](https://arxiv.org/abs/2307.14430). Training data has a prerequisite structure, and it is exploitable: train on a prerequisite skill and the dependent skill is reachable with less data. Sample over skill mixtures online rather than fixing proportions in advance. | Proposed |
 | [SOTA-241](../../../record/practices.d/SOTA-241.md) | Rank candidate data selections with a model-free distributional proxy before spending a training run | Xie et al. (2023), [LIT-087](../../../record/literature.d/LIT-087.md) — KL reduction in a hashed n-gram space correlates with downstream performance across selection methods, including manual curation, which uses no n-grams at all. A selection can therefore be ranked against its alternatives before anything is trained on it. | Proposed |
 | [SOTA-242](../../../record/practices.d/SOTA-242.md) | Select pretraining data by matching a target distribution you can sample from, not by scoring it for quality | Xie et al. (2023), [LIT-087](../../../record/literature.d/LIT-087.md) — data selection needs a description of what you want, not a criterion for what is good. Supply a small sample of the target text and resample the raw corpus to match it. The target is an artifact you can produce; a quality rubric is an argument you have to win. | Proposed |
+| [SOTA-243](../../../record/practices.d/SOTA-243.md) | Discard the easy examples when data is abundant and the hard ones when it is scarce | Sorscher et al. (2022), [LIT-399](../../../record/literature.d/LIT-399.md) — power-law scaling in dataset size is evidence of redundancy, and given a difficulty ranking it can be beaten toward exponential. But which end of the ranking to discard flips with how much data you started with, and the fraction to discard has to grow with the corpus. | Proposed |
+| [SOTA-244](../../../record/practices.d/SOTA-244.md) | Score example importance a few epochs into training, averaged over several initializations | Paul et al. (2021), [LIT-397](../../../record/literature.d/LIT-397.md) — the importance ranking is available from a single early checkpoint, not only from a finished run. EL2N at epoch 20, averaged over ten initializations, prunes half of CIFAR-10 with accuracy slightly up, and the ranking transfers to other architectures. | Proposed |

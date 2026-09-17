@@ -9,7 +9,7 @@ consensus_note: >-
   record's data material — an 8B model at 15T tokens beating Llama 3.1 8B.
   Nobody has replicated it and nobody has argued against it; the practice it
   argues against (aggressive model-based filtering, LIT-184 and
-  LIT-tmpwhgmr) is what the field was doing when this was published.
+  LIT-398) is what the field was doing when this was published.
 title: 'Choose filtering aggressiveness by the token horizon: at long horizons rephrase what a filter would discard'
 version: 2
 history:
@@ -17,7 +17,7 @@ history:
   date: '2026-09-17'
   note: >-
     DCLM named by code rather than in prose. The record now holds it as
-    LIT-tmpwhgmr; it stays out of `source:` under ADR-010, because it is
+    LIT-398; it stays out of `source:` under ADR-010, because it is
     the position this argues against.
 tags:
 - data-pipeline
@@ -44,7 +44,7 @@ summary: >-
 
 Su et al. (2024), [LIT-178](../literature.d/LIT-178.md) — [ARXIV-2412.02595](https://arxiv.org/abs/2412.02595).
 
-FineWeb-Edu ([LIT-184](../literature.d/LIT-184.md)) and DCLM ([LIT-tmpwhgmr](../literature.d/LIT-tmpwhgmr.md)) won benchmark gains through
+FineWeb-Edu ([LIT-184](../literature.d/LIT-184.md)) and DCLM ([LIT-398](../literature.d/LIT-398.md)) won benchmark gains through
 aggressive model-based filtering, **at the cost of removing 90% of the
 data**. The critique is not
 that this is wrong; it is that it is a trade whose sign depends on how many

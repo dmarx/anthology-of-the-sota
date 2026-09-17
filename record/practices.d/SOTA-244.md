@@ -1,5 +1,8 @@
 ---
+number: 244
 status: Proposed
+formerly:
+- SOTA-tmp8yskz
 promote_when: >-
   An early-checkpoint importance score defined and validated for next-token
   prediction — per-token loss, or whatever replaces the error vector — with
@@ -13,29 +16,29 @@ version: 1
 consensus: unassessed
 consensus_note: >-
   Widely cited and, in this record, followed up on by exactly one paper
-  (LIT-tmpy1abi, which uses EL2N as one of ten benchmarked metrics). No
+  (LIT-399, which uses EL2N as one of ten benchmarked metrics). No
   training report here says how it scored its data, or whether it scored it,
   so there is no adoption to read either way.
 tags:
 - data-pipeline
 date: '2026-09-17'
 source:
-- LIT-tmpd1gpw
+- LIT-397
 introduced_by:
-- LIT-tmpd1gpw
+- LIT-397
 implementations: []
 summary: >-
-  Paul et al. (2021), [LIT-tmpd1gpw](../literature.d/LIT-tmpd1gpw.md) — the importance ranking is available from a
+  Paul et al. (2021), [LIT-397](../literature.d/LIT-397.md) — the importance ranking is available from a
   single early checkpoint, not only from a finished run. EL2N at epoch 20,
   averaged over ten initializations, prunes half of CIFAR-10 with accuracy
   slightly up, and the ranking transfers to other architectures.
 ---
 
-# SOTA-tmp8yskz: Score example importance a few epochs into training, averaged over several initializations
+# SOTA-244: Score example importance a few epochs into training, averaged over several initializations
 
 ## Source
 
-Paul et al. (2021), [LIT-tmpd1gpw](../literature.d/LIT-tmpd1gpw.md) — [ARXIV-2107.07075](https://arxiv.org/abs/2107.07075).
+Paul et al. (2021), [LIT-397](../literature.d/LIT-397.md) — [ARXIV-2107.07075](https://arxiv.org/abs/2107.07075).
 
 ## What this replaces
 
@@ -94,12 +97,12 @@ obvious candidate and nothing here tests it.
 Cheap at CIFAR scale; not obviously cheap anywhere this record's practices
 operate.
 
-<!-- inactive-ok-block: SOTA-tmp70sgi — Proposed, and cited only to say where the upper-cutoff
+<!-- inactive-ok-block: SOTA-243 — Proposed, and cited only to say where the upper-cutoff
      correction was filed. The pointer is right whatever that practice's status becomes. -->
 **The highest scorers are the mislabelled ones.** Keeping only the top of the
 ranking is not optimal even on clean data, and the exclusion widens with label
 corruption. That correction is filed with the practice it corrects,
-[SOTA-tmp70sgi](SOTA-tmp70sgi.md).
+[SOTA-243](SOTA-243.md).
 
 **Do not extend this to scoring at initialization.** An earlier version of
 this paper reported striking results for pruning before any training, and

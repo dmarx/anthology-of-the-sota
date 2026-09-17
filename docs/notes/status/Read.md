@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-173 of 175 NOTE documents. Back to the [full index](../README.md).
+175 of 177 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -183,3 +183,5 @@
 | [NOTE-173](../../../record/notes.d/NOTE-173.md) | LoFTR: Detector-Free Local Feature Matching with Transformers | Remove the keypoint detector and match densely, coarse-to-fine, with descriptors conditioned on both images by cross attention. The argument is a failure mode rather than an efficiency: detectors cannot emit repeatable points in low-texture regions, so no downstream matcher can recover what was never proposed. | Read |
 | [NOTE-174](../../../record/notes.d/NOTE-174.md) | Evaluating Large Language Models Trained on Code | Read for the metric rather than the benchmark. The paper defines `pass@k` and the unbiased estimator 1 - C(n-c,k)/C(n,k), and argues explicitly why the naive repeated-trials measurement is biased downward — which is the convention [SOTA-210](../../../record/practices.d/SOTA-210.md) already recommends while calling it "the standard one" and citing nobody. | Read |
 | [NOTE-175](../../../record/notes.d/NOTE-175.md) | DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining | A 280M proxy under group DRO sets the domain weights for an 8B run: +6.5 points few-shot and the baseline in 2.6x fewer steps, with no downstream task in the loop. The transferable part is the objective — worst-case EXCESS loss against a reference model, because worst-case raw loss would upweight whichever domain is noisiest. | Read |
+| [NOTE-176](../../../record/notes.d/NOTE-176.md) | Beyond neural scaling laws: beating power law scaling via data pruning | Power-law scaling of error in dataset size is a symptom of redundancy, not a ceiling. With a ranking of example difficulty and a pruning fraction that grows with the corpus, error can fall exponentially instead. Which end of the ranking to discard inverts with data abundance: keep hard examples when data is plentiful, easy ones when it is scarce. | Read |
+| [NOTE-177](../../../record/notes.d/NOTE-177.md) | Deep Learning on a Data Diet: Finding Important Examples Early in Training | Two scores that rank training examples by importance from a single early checkpoint — GraNd (expected loss-gradient norm) and EL2N (norm of the error vector) — averaged over several initializations. They prune half of CIFAR-10 without loss, transfer across architectures, and come with the finding that the very highest-scoring examples should be excluded, more so under label noise. | Read |

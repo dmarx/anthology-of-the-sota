@@ -4,7 +4,7 @@
 
 **data-pipeline**.
 
-4 of 175 NOTE documents. Back to the [full index](../README.md).
+6 of 177 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -12,3 +12,5 @@
 | [NOTE-018](../../../record/notes.d/NOTE-018.md) | Segment Anything | The data engine is the transferable part. Three stages — assisted-manual, semi-automatic, fully automatic — each stage's labels training the model that produces the next stage's, ending in 1.1B masks. The model and the dataset are built together. | Read |
 | [NOTE-031](../../../record/notes.d/NOTE-031.md) v2 | Data Selection for Language Models via Importance Resampling | Selects pretraining data by importance resampling in a hashed n-gram feature space — 10,000 buckets of unigram and bigram counts — to match a target distribution. The more useful result is the metric: KL reduction in that feature space predicts downstream performance across selection methods, including manual curation, which uses no n-grams at all. | Read |
 | [NOTE-175](../../../record/notes.d/NOTE-175.md) | DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining | A 280M proxy under group DRO sets the domain weights for an 8B run: +6.5 points few-shot and the baseline in 2.6x fewer steps, with no downstream task in the loop. The transferable part is the objective — worst-case EXCESS loss against a reference model, because worst-case raw loss would upweight whichever domain is noisiest. | Read |
+| [NOTE-176](../../../record/notes.d/NOTE-176.md) | Beyond neural scaling laws: beating power law scaling via data pruning | Power-law scaling of error in dataset size is a symptom of redundancy, not a ceiling. With a ranking of example difficulty and a pruning fraction that grows with the corpus, error can fall exponentially instead. Which end of the ranking to discard inverts with data abundance: keep hard examples when data is plentiful, easy ones when it is scarce. | Read |
+| [NOTE-177](../../../record/notes.d/NOTE-177.md) | Deep Learning on a Data Diet: Finding Important Examples Early in Training | Two scores that rank training examples by importance from a single early checkpoint — GraNd (expected loss-gradient norm) and EL2N (norm of the error vector) — averaged over several initializations. They prune half of CIFAR-10 without loss, transfer across architectures, and come with the finding that the very highest-scoring examples should be excluded, more so under label noise. | Read |

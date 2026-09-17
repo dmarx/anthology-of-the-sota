@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-19 of 175 NOTE documents. Back to the [full index](../README.md).
+20 of 177 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -27,3 +27,4 @@
 | [NOTE-123](../../../record/notes.d/NOTE-123.md) | Bayesian Learning via Stochastic Gradient Langevin Dynamics | SGD with a specific noise injection schedule performs approximate Langevin Monte Carlo. The noise term eps_t ~ N(0, eps_t) counteracts the bias from using stochastic (minibatch) gradients, so the iterates explore the posterior rather than collapsing to a mode. At large step sizes the algorithm behaves like standard SGD (optimization); as step size → 0 the Markov chain mixes and samples from the posterior. | Read |
 | [NOTE-132](../../../record/notes.d/NOTE-132.md) v2 | Large Batch Optimization for Deep Learning: Training BERT in 76 minutes | Scaling the learning rate layerwise by the ratio of the parameter norm to the update norm (inspired by LARS) stabilizes large-batch training across heterogeneous layer curvatures, allowing Adam-like adaptivity to compose with layerwise scaling and generalize across both vision and language models where LARS alone fails. | Read |
 | [NOTE-144](../../../record/notes.d/NOTE-144.md) | Measuring the Effects of Data Parallelism on Neural Network Training | The relationship between batch size and training steps to a goal error always follows the same three-regime shape — perfect scaling (b-fold benefit), diminishing returns, and a maximum useful batch size beyond which adding more parallelism helps nothing — but where these transitions occur is workload-specific and cannot be reliably predicted from simple properties of the model, data, or optimizer. | Read |
+| [NOTE-176](../../../record/notes.d/NOTE-176.md) | Beyond neural scaling laws: beating power law scaling via data pruning | Power-law scaling of error in dataset size is a symptom of redundancy, not a ceiling. With a ranking of example difficulty and a pruning fraction that grows with the corpus, error can fall exponentially instead. Which end of the ranking to discard inverts with data abundance: keep hard examples when data is plentiful, easy ones when it is scarce. | Read |

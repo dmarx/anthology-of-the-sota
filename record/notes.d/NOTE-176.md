@@ -1,6 +1,9 @@
 ---
+number: 176
 status: Read
-paper: LIT-tmpy1abi
+formerly:
+- NOTE-tmpkz9pz
+paper: LIT-399
 title: 'Beyond neural scaling laws: beating power law scaling via data pruning'
 version: 1
 date: '2026-09-17'
@@ -12,9 +15,9 @@ summary: >-
   data is plentiful, easy ones when it is scarce.
 ---
 
-# NOTE-tmpkz9pz: Beyond neural scaling laws: beating power law scaling via data pruning
+# NOTE-176: Beyond neural scaling laws: beating power law scaling via data pruning
 
-<!-- inactive-ok-file: SOTA-tmp70sgi, SOTA-241, ADR-043 — the practice this reading files,
+<!-- inactive-ok-file: SOTA-243, SOTA-241, ADR-043 — the practice this reading files,
      the adjacent proxy practice named in the Bearing section for where R4 would have gone,
      and the decision that governs naming a deferral's condition instead of filing it. All
      Proposed; the reading is about what to file, so a Proposed target is the subject. -->
@@ -147,13 +150,13 @@ expect crossovers of this kind rather than to be surprised by each one.
 
 ## Bearing on the record
 
-Sources [SOTA-tmp70sgi](../practices.d/SOTA-tmp70sgi.md), which carries R1 with R2 in its body. `Proposed`: the
+Sources [SOTA-243](../practices.d/SOTA-243.md), which carries R1 with R2 in its body. `Proposed`: the
 evidence is vision classification at CIFAR and ImageNet scale, and every data
 practice this record holds is about language-model pretraining corpora.
 
 R3 is not filed as its own practice. It is a caution about the previous
 paragraph rather than an independent instruction, and it lives in the
-conditions of [SOTA-tmp70sgi](../practices.d/SOTA-tmp70sgi.md) where a reader will meet it at the moment it
+conditions of [SOTA-243](../practices.d/SOTA-243.md) where a reader will meet it at the moment it
 matters.
 
 R4 is not filed either, and that is a closer call. It is a real

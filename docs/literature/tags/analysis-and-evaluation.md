@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-50 of 331 LIT documents. Back to the [full index](../README.md).
+51 of 334 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -60,3 +60,4 @@
 | [LIT-388](../../../record/literature.d/LIT-388.md) | Evaluating Large Language Models Trained on Code | Chen et al. (2021), [ARXIV-2107.03374](https://arxiv.org/abs/2107.03374). Introduces HumanEval, which measures FUNCTIONAL correctness of generated programs against unit tests rather than textual similarity — and defines `pass@k` along with the unbiased estimator the record already recommends without citing. The benchmark is the better-known half; the metric is the half this anthology was leaning on. | Active |
 | [LIT-389](../../../record/literature.d/LIT-389.md) | Training Verifiers to Solve Math Word Problems | Cobbe et al. (2021), [ARXIV-2110.14168](https://arxiv.org/abs/2110.14168). Introduces GSM8K — 8.5K grade-school math word problems, chosen because they are conceptually simple and models still failed them, which isolates multi-step reasoning from mathematical difficulty. Also introduces verifier-ranked best-of-n sampling, the ancestor of the reranking the record recommends elsewhere. | Active |
 | [LIT-390](../../../record/literature.d/LIT-390.md) | Measuring Massive Multitask Language Understanding | Hendrycks et al. (2020), [ARXIV-2009.03300](https://arxiv.org/abs/2009.03300). MMLU: 57 subjects from elementary mathematics to law, measuring breadth of acquired knowledge rather than reasoning. Its own abstract names the insensitivity that matters most — models "frequently do not know when they are wrong", so a high MMLU score is not evidence of calibration. | Active |
+| [LIT-398](../../../record/literature.d/LIT-398.md) | DataComp-LM: In search of the next generation of training sets for language models | Li et al. (2024), [ARXIV-2406.11794](https://arxiv.org/abs/2406.11794). A controlled testbed for data curation — a fixed 240T-token corpus, fixed training recipes at 412M–7B, and 53 evaluations — whose baseline finding is that model-based filtering is what makes a high-quality training set. The position two documents in this record already argue with. | Active |

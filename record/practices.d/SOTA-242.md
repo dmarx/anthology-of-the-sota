@@ -1,5 +1,8 @@
 ---
+number: 242
 status: Proposed
+formerly:
+- SOTA-tmp4fwxw
 promote_when: >-
   A pretraining report that states its selection target as a sample of the
   text it wants rather than as a quality rubric or a classifier's label, or
@@ -33,7 +36,7 @@ summary: >-
   can produce; a quality rubric is an argument you have to win.
 ---
 
-# SOTA-tmp4fwxw: Select pretraining data by matching a target distribution you can sample from, not by scoring it for quality
+# SOTA-242: Select pretraining data by matching a target distribution you can sample from, not by scoring it for quality
 
 ## Source
 

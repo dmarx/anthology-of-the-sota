@@ -6,7 +6,7 @@
 
 **Not judged** — nobody has assessed where the field stands on this; the default, and true of most of the corpus.
 
-134 of 240 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
+135 of 242 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -144,3 +144,4 @@
 | [SOTA-204](../../../record/practices.d/SOTA-204.md) | Anneal a discretisation from coarse to fine over training rather than fixing it | Song et al. (2023), [LIT-093](../../../record/literature.d/LIT-093.md). Where a training loss approximates a continuous target through a step count, that count is a bias/variance dial: few steps give a biased but low-variance target early, many steps a faithful but noisy one later. | Proposed |
 | [SOTA-208](../../../record/practices.d/SOTA-208.md) | Factorize long-sequence attention into a local window and a second head that escapes it | Child et al. (2019), [LIT-225](../../../record/literature.d/LIT-225.md) — [ARXIV-1904.10509](https://arxiv.org/abs/1904.10509). Superseded: the field went to exact attention made fast ([SOTA-086](../../../record/practices.d/SOTA-086.md), [SOTA-087](../../../record/practices.d/SOTA-087.md)) and then to sparsity that is LEARNED rather than fixed ([SOTA-138](../../../record/practices.d/SOTA-138.md)). What survives is the connectivity requirement — a window alone is not the design — which every hybrid the record recommends is an instance of. | Superseded — by [SOTA-138](../../../record/practices.d/SOTA-138.md) |
 | [SOTA-209](../../../record/practices.d/SOTA-209.md) | Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch | Komatsuzaki et al. (2022), [LIT-227](../../../record/literature.d/LIT-227.md) — seed the experts from a dense checkpoint you already paid for. Upcycled T5 and ViT models beat their dense counterparts at ~50% of the dense pretraining sunk cost, and beat sparse models trained from scratch on 100% of it: same architecture, same compute, different initialization. | Proposed |
+| [SOTA-241](../../../record/practices.d/SOTA-241.md) | Rank candidate data selections with a model-free distributional proxy before spending a training run | Xie et al. (2023), [LIT-087](../../../record/literature.d/LIT-087.md) — KL reduction in a hashed n-gram space correlates with downstream performance across selection methods, including manual curation, which uses no n-grams at all. A selection can therefore be ranked against its alternatives before anything is trained on it. | Proposed |

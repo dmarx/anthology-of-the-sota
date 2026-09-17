@@ -6,7 +6,7 @@
 
 **Migration** — moving off the YAML registry, and what happens to it.
 
-4 of 42 decisions. Back to the [full index](../README.md).
+4 of 43 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

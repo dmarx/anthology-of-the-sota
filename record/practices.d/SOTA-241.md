@@ -1,5 +1,8 @@
 ---
+number: 241
 status: Proposed
+formerly:
+- SOTA-tmp2nprq
 promote_when: >-
   A model-free selection proxy used as a screen and then validated by
   training, at a scale where the record's data practices operate — a
@@ -36,7 +39,7 @@ summary: >-
   ranked against its alternatives before anything is trained on it.
 ---
 
-# SOTA-tmp2nprq: Rank candidate data selections with a model-free distributional proxy before spending a training run
+# SOTA-241: Rank candidate data selections with a model-free distributional proxy before spending a training run
 
 ## Source
 

@@ -6,7 +6,7 @@
 
 **One source** — one group, one result — nobody has agreed or disagreed yet, which is not the same as contested, where people looked and differed.
 
-41 of 240 SOTA documents. Back to the [full index](../README.md).
+42 of 242 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -51,3 +51,4 @@
 | [SOTA-234](../../../record/practices.d/SOTA-234.md) | Train in the target low-bit format from scratch rather than quantizing a finished model | Ma et al. (2024), [LIT-380](../../../record/literature.d/LIT-380.md) — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764). Decide the serving format before training and train in it, rather than training in FP16 and compressing afterwards. Ternary weights trained from scratch match an FP16 model of equal size and token budget from 3B upward — but the compute argument assumes hardware built for the format, and only the memory saving is measured on machines that exist. | Proposed |
 | [SOTA-235](../../../record/practices.d/SOTA-235.md) | Update the weights at inference on the test instance when the task is structurally novel | Akyürek et al. (2024), [LIT-379](../../../record/literature.d/LIT-379.md) — [ARXIV-2411.07279](https://arxiv.org/abs/2411.07279). Build a loss from the test instance's own in-context examples, take gradient steps at inference, then discard the update. Up to 6x a fine-tuned baseline on ARC (53.0% at 8B) and +7.3 points on BIG-Bench Hard at 10-shot. The examples are worth several times more as gradient than as context. | Active |
 | [SOTA-239](../../../record/practices.d/SOTA-239.md) | Order training data by skill prerequisite: teach the prerequisite and the dependent skill costs less data | Chen et al. (2023), [LIT-392](../../../record/literature.d/LIT-392.md) — [ARXIV-2307.14430](https://arxiv.org/abs/2307.14430). Training data has a prerequisite structure, and it is exploitable: train on a prerequisite skill and the dependent skill is reachable with less data. Sample over skill mixtures online rather than fixing proportions in advance. | Proposed |
+| [SOTA-242](../../../record/practices.d/SOTA-242.md) | Select pretraining data by matching a target distribution you can sample from, not by scoring it for quality | Xie et al. (2023), [LIT-087](../../../record/literature.d/LIT-087.md) — data selection needs a description of what you want, not a criterion for what is good. Supply a small sample of the target text and resample the raw corpus to match it. The target is an artifact you can produce; a quality rubric is an argument you have to win. | Proposed |

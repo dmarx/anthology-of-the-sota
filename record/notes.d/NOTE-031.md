@@ -19,7 +19,7 @@ summary: >-
 
 # NOTE-031: Data Selection for Language Models via Importance Resampling
 
-<!-- inactive-ok-file: SOTA-tmp4fwxw, SOTA-tmp2nprq, ADR-tmpi1wo9 — the practices this
+<!-- inactive-ok-file: SOTA-242, SOTA-241, ADR-043 — the practices this
      reading's R2 and R1 became and the decision that ruled on them. Cited from the
      Bearing section to say where each recommendation went; Proposed is the ruling, not
      an oversight. -->
@@ -125,7 +125,7 @@ cheapest instrument for acting on it.
 
 ## Bearing on the record
 
-**R2 and R1 are filed as [SOTA-tmp4fwxw](../practices.d/SOTA-tmp4fwxw.md) and [SOTA-tmp2nprq](../practices.d/SOTA-tmp2nprq.md), both `Proposed`.**
+**R2 and R1 are filed as [SOTA-242](../practices.d/SOTA-242.md) and [SOTA-241](../practices.d/SOTA-241.md), both `Proposed`.**
 The paragraphs below are this reading's original assessment, kept as written;
 what changed is the ruling, not the reading.
 
@@ -141,12 +141,12 @@ Whether the record should carry it is a registry decision. The correlational
 evidence is 2023 and at a scale below where mixing laws are now fitted, and that
 is exactly the caveat a practice would need.
 
-**Ruled on 2026-09-17 ([ADR-tmpi1wo9](../decisions.d/ADR-tmpi1wo9.md)):** carry it. The caveat this paragraph
+**Ruled on 2026-09-17 ([ADR-043](../decisions.d/ADR-043.md)):** carry it. The caveat this paragraph
 identifies is not a reason to withhold the document — it is the content of the
 `promote_when:` on it, and both practices state it. R3 (use crude features when
 only the ordering matters) is not filed separately; it is the justification
-inside [SOTA-tmp2nprq](../practices.d/SOTA-tmp2nprq.md), which is where it does its work. R4 (the best selection
-method depends on target breadth) is a condition on [SOTA-tmp4fwxw](../practices.d/SOTA-tmp4fwxw.md) rather than
+inside [SOTA-241](../practices.d/SOTA-241.md), which is where it does its work. R4 (the best selection
+method depends on target breadth) is a condition on [SOTA-242](../practices.d/SOTA-242.md) rather than
 its own practice, because it qualifies when the frame pays rather than
 recommending a third thing.
 

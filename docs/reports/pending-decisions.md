@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**71 document(s) awaiting a decision.**
+**74 document(s) awaiting a decision.**
 
 ## SOTAs
 
-46 of the 71.
+48 of the 74.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -27,7 +27,7 @@
 | 2026-09-07 | Proposed | [SOTA-156](../../record/practices.d/SOTA-156.md) | 5 | 0 | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed |
 | 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 2 | 0 | Pack training documents by best fit instead of concatenating and splitting |
 | 2026-09-08 | Proposed | [SOTA-160](../../record/practices.d/SOTA-160.md) | 13 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
-| 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 11 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
+| 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 12 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
 | 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 9 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
 | 2026-09-08 | Proposed | [SOTA-158](../../record/practices.d/SOTA-158.md) | 8 | 0 | Bound the activation's output range when training in low precision |
 | 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 6 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
@@ -56,13 +56,15 @@
 | 2026-09-16 | Proposed | [SOTA-222](../../record/practices.d/SOTA-222.md) | 3 | 0 | Overlap the synchronisation with one or two local steps instead of communicating every step |
 | 2026-09-16 | Proposed | [SOTA-223](../../record/practices.d/SOTA-223.md) | 2 | 0 | Do not keep the gossip topology static: sample a fresh random neighbourhood every round |
 | 2026-09-16 | Proposed | [SOTA-229](../../record/practices.d/SOTA-229.md) | 2 | 0 | Scale the draft model's training data, once nothing constrains it to predict the target's features |
+| 2026-09-17 | Proposed | [SOTA-241](../../record/practices.d/SOTA-241.md) | 4 | 0 | Rank candidate data selections with a model-free distributional proxy before spending a training run |
+| 2026-09-17 | Proposed | [SOTA-242](../../record/practices.d/SOTA-242.md) | 4 | 0 | Select pretraining data by matching a target distribution you can sample from, not by scoring it for quality |
 | 2026-09-17 | Proposed | [SOTA-232](../../record/practices.d/SOTA-232.md) | 1 | 0 | Convert an autoregressive model into a diffusion model by continual pretraining rather than training one from scratch |
 | 2026-09-17 | Proposed | [SOTA-239](../../record/practices.d/SOTA-239.md) | 1 | 0 | Order training data by skill prerequisite: teach the prerequisite and the dependent skill costs less data |
 | 2026-09-17 | Proposed | [SOTA-234](../../record/practices.d/SOTA-234.md) | 0 | 0 | Train in the target low-bit format from scratch rather than quantizing a finished model |
 
 ## THEORYs
 
-7 of the 71.
+7 of the 74.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -76,7 +78,7 @@
 
 ## LITs
 
-3 of the 71.
+3 of the 74.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -86,7 +88,7 @@
 
 ## ADRs
 
-15 of the 71.
+16 of the 74.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -100,11 +102,12 @@
 | 2026-09-15 | Proposed | [ADR-033](../../record/decisions.d/ADR-033.md) | 0 | 0 | Readings made in another context port into the record; their agenda does not |
 | 2026-09-16 | Proposed | [ADR-035](../../record/decisions.d/ADR-035.md) | 32 | 0 | A document may carry more than one topic; the first is the primary |
 | 2026-09-16 | Proposed | [ADR-038](../../record/decisions.d/ADR-038.md) | 13 | 0 | A note has no topics of its own: it derives them from its paper |
-| 2026-09-16 | Proposed | [ADR-041](../../record/decisions.d/ADR-041.md) | 5 | 0 | An algorithm-local tuning constant belongs in the reading of the paper that measured it, not in the practice registry |
+| 2026-09-16 | Proposed | [ADR-041](../../record/decisions.d/ADR-041.md) | 7 | 0 | An algorithm-local tuning constant belongs in the reading of the paper that measured it, not in the practice registry |
 | 2026-09-16 | Proposed | [ADR-039](../../record/decisions.d/ADR-039.md) | 2 | 0 | The configuration is part of the record, and the lint reads it |
 | 2026-09-16 | Proposed | [ADR-037](../../record/decisions.d/ADR-037.md) | 0 | 0 | Fail the build on `source-mismatch`, and take the source invariant upstream |
 | 2026-09-16 | Proposed | [ADR-040](../../record/decisions.d/ADR-040.md) | 0 | 0 | Advice on how to prove a theorem is out of scope; advice on how to find out whether a technique worked is not |
 | 2026-09-16 | Proposed | [ADR-042](../../record/decisions.d/ADR-042.md) | 0 | 0 | A practice may be filed in order to say do not do this |
+| 2026-09-17 | Proposed | [ADR-043](../../record/decisions.d/ADR-043.md) | 3 | 0 | Doubt about whether an item is worth carrying is not a reason to leave it out, and not a third kind of provisional |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 

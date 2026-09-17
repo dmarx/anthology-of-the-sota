@@ -6,7 +6,7 @@
 
 **Data pipeline** — loading, quality assessment and selection, preprocessing, batch preparation.
 
-28 of 240 SOTA documents. Back to the [full index](../README.md).
+30 of 242 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -38,3 +38,5 @@
 | [SOTA-186](../../../record/practices.d/SOTA-186.md) | Bootstrap a large annotation set with the model you are training, staging the automation as it improves |  | Active |
 | [SOTA-238](../../../record/practices.d/SOTA-238.md) | Set domain weights with a small proxy model under group DRO on excess loss, then transfer them | Xie et al. (2023), [LIT-391](../../../record/literature.d/LIT-391.md) — [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429). Train a small proxy under group DRO to produce domain weights, then resample and train the real model with them. Optimise worst-case EXCESS loss against a reference model, not worst-case loss — the naive form upweights whichever domain is noisiest, because every domain has a different irreducible entropy. | Active |
 | [SOTA-239](../../../record/practices.d/SOTA-239.md) | Order training data by skill prerequisite: teach the prerequisite and the dependent skill costs less data | Chen et al. (2023), [LIT-392](../../../record/literature.d/LIT-392.md) — [ARXIV-2307.14430](https://arxiv.org/abs/2307.14430). Training data has a prerequisite structure, and it is exploitable: train on a prerequisite skill and the dependent skill is reachable with less data. Sample over skill mixtures online rather than fixing proportions in advance. | Proposed |
+| [SOTA-241](../../../record/practices.d/SOTA-241.md) | Rank candidate data selections with a model-free distributional proxy before spending a training run | Xie et al. (2023), [LIT-087](../../../record/literature.d/LIT-087.md) — KL reduction in a hashed n-gram space correlates with downstream performance across selection methods, including manual curation, which uses no n-grams at all. A selection can therefore be ranked against its alternatives before anything is trained on it. | Proposed |
+| [SOTA-242](../../../record/practices.d/SOTA-242.md) | Select pretraining data by matching a target distribution you can sample from, not by scoring it for quality | Xie et al. (2023), [LIT-087](../../../record/literature.d/LIT-087.md) — data selection needs a description of what you want, not a criterion for what is good. Supply a small sample of the target text and resample the raw corpus to match it. The target is an artifact you can produce; a quality rubric is an argument you have to win. | Proposed |

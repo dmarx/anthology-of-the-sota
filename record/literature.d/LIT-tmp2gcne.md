@@ -1,0 +1,80 @@
+---
+status: Active
+title: 'Token Erasure as a Footprint of Implicit Vocabulary Items in LLMs'
+version: 1
+tags:
+- representation-and-encoding
+date: '2026-09-17'
+published: '2024-06-01'
+arxiv: '2406.20086'
+first_author: 'Feucht'
+keywords:
+- 'implicit-vocabulary'
+- 'lexical-items'
+- 'token-erasure'
+- 'named-entities'
+- 'multi-word-expressions'
+implementations: []
+summary: >-
+  Feucht et al. (2024), [ARXIV-2406.20086](https://arxiv.org/abs/2406.20086), EMNLP 2024. The last token of a
+  multi-token word or named entity shows a pronounced "erasure": probes that
+  recover neighbouring and current token identity elsewhere fail there, in
+  early layers specifically. The paper reads that as the footprint of a
+  mechanism forming lexical items, scores sequences for "lexicality" and reads
+  out an LLM's implicit vocabulary — the first attempt to do so. Its framing
+  is the sharp part for this record: lexical items are units of meaning that
+  are **non-compositional**, and the example given is a multi-word expression.
+---
+
+# LIT-tmp2gcne: Token Erasure as a Footprint of Implicit Vocabulary Items in LLMs
+
+Feucht et al. (2024) — [ARXIV-2406.20086](https://arxiv.org/abs/2406.20086), EMNLP 2024
+
+## Key takeaways
+
+- **The problem, stated in the paper's own terms.** A tokenizer splits
+  `northeastern` into `_n`, `ort`, `he`, `astern`, none of which corresponds to
+  a meaningful unit. The same holds for named entities (`Neil Young`) and
+  idiomatic multi-word expressions (`break a leg`). These are **lexical
+  items** — "items that function as single units of meaning" — and the paper
+  is explicit that they are *non-compositional*: the meaning of `break a leg`
+  is not predictable from `break` and `leg`, exactly as `patrolling` is not
+  predictable from `pat` and `rolling`. Arbitrariness of that kind, the paper
+  argues, requires a storage system.
+
+- **The finding.** Probes trained to recover token identity at neighbouring
+  and current positions work on most tokens and **fail on the last token of a
+  multi-token word or named entity**, in early layers. Those hidden states
+  "forget about" preceding and current tokens. Subject tokens that are *not*
+  in final position do not show the pattern.
+
+- **The evidence.** COUNTERFACT prompts filtered to ones the model answers
+  correctly — 5,063 for Llama-2-7b, 5,495 for Llama-3-8b — augmented with
+  Wikidata creator pairs to 12,135 and 13,995 respectively. Both model
+  families show it.
+
+- **The instrument built from it.** An erasure score for the "lexicality" of a
+  token sequence, used to read out a list of an LLM's lexical items from a
+  large text corpus. The paper claims this as the first attempt to probe an
+  LLM's implicit vocabulary.
+
+- **Stated limitations, and they are honest ones.** There is **no
+  ground truth** for an implicit vocabulary, so a high score cannot be
+  distinguished from a methodological error; the comparison set is
+  multi-token words and spaCy named entities, which "likely does not cover all
+  cases". Analysis is restricted to known entities, leaving intermediate cases
+  — fictional towns, non-famous people — open. Measurements are Llama-only,
+  and English-only.
+
+## Standing in the anthology
+
+The second half of the inner-lexicon line, and the more useful one for this
+record's purposes, because of what it counts as a lexical item. It is the only
+document here whose subject is **non-compositional multi-word units**, which
+is the property [THEORY-tmprceog](../theory.d/THEORY-tmprceog.md) measures from
+the language side.
+
+That makes the convergence narrower and more interesting than "both are about
+tokenization". Still not the same claim: this reads out units a model treats
+as single, while that one measures which units English delimits by
+construction, and **nobody has run the experiment that would connect them.**

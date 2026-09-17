@@ -89,21 +89,21 @@ framework whose boundaries are approximate and whose stages overlap is
 difficult to falsify, which is why `promote_when` above asks for a boundary
 predicted *before* it is tested.
 
-**It does not establish that detokenization is a stage rather than an
-artifact of where the tokenizer split things.** The strong version — that a
-network must spend early depth reassembling units its vocabulary broke — is
-the interesting claim and is not what was shown. The direct evidence for it
-is the detokenization and inner-lexicon line (`ARXIV-2410.05864`,
-`ARXIV-2406.20086`), which this paper cites and **the record does not hold**.
+**It does not itself establish that detokenization is a stage** rather than
+an artifact of where the tokenizer split things. The strong version — that a
+network spends early depth reassembling units its vocabulary broke — is not
+what this paper showed; it imports the claim. The direct evidence is now filed
+separately as [THEORY-tmpkh59b](THEORY-tmpkh59b.md), on the two papers this
+one cites for it, and it is considerably stronger than what is here. Stage 1
+is the one stage of the four that does not rest on this paper's own
+measurements.
 
-**It does not connect to the signal-side claim, yet.**
-[THEORY-tmprceog](THEORY-tmprceog.md) says the lexical unit in English is
-delimited by construction rather than frequency, which is what a
-frequency-merge vocabulary cannot represent. This says early layers integrate
-local context into coherent units. Those two fit together suggestively and
-neither was measured against the other; treating the pair as a single account
-of "the network repairs what the tokenizer broke" would be the record
-asserting a result nobody has produced.
+**It does not connect to the signal-side claim, and neither does the stronger
+account.** [THEORY-tmprceog](THEORY-tmprceog.md) says the lexical unit in
+English is delimited by construction rather than frequency;
+[THEORY-tmpkh59b](THEORY-tmpkh59b.md) says models rebuild units their
+tokenizer split. Neither was measured against the other, and the experiment
+that would connect them has not been run.
 
 **And it is not a claim about where to cut a model.** No practice follows —
 see the same section in [THEORY-tmp7jm1a](THEORY-tmp7jm1a.md).

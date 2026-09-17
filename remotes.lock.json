@@ -428,6 +428,9 @@
     "ARXIV/2209.04836": {
       "title": "Git Re-Basin: Merging Models modulo Permutation Symmetries"
     },
+    "ARXIV/2209.05364": {
+      "title": "If Influence Functions are the Answer, Then What is the Question?"
+    },
     "ARXIV/2209.06794": {
       "title": "PaLI: A Jointly-Scaled Multilingual Language-Image Model"
     },
@@ -547,6 +550,9 @@
     },
     "ARXIV/2307.14460": {
       "title": "MiDaS v3.1 -- A Model Zoo for Robust Monocular Relative Depth Estimation"
+    },
+    "ARXIV/2308.03296": {
+      "title": "Studying Large Language Model Generalization with Influence Functions"
     },
     "ARXIV/2308.04079": {
       "title": "3D Gaussian Splatting for Real-Time Radiance Field Rendering"

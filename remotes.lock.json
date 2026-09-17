@@ -500,6 +500,9 @@
     "ARXIV/2305.10403": {
       "title": "PaLM 2 Technical Report"
     },
+    "ARXIV/2305.10429": {
+      "title": "DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining"
+    },
     "ARXIV/2305.10755": {
       "title": "Measurement-Device-Independent Quantum Secret Sharing"
     },
@@ -532,6 +535,9 @@
     },
     "ARXIV/2307.08691": {
       "title": "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning"
+    },
+    "ARXIV/2307.14430": {
+      "title": "Skill-it! A Data-Driven Skills Framework for Understanding and Training Language Models"
     },
     "ARXIV/2307.14460": {
       "title": "MiDaS v3.1 -- A Model Zoo for Robust Monocular Relative Depth Estimation"

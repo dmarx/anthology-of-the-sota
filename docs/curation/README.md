@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [17 Sep 17:34 — A caveat I did not write, an incumbent nobody filed, and the axis the data practices were missing](2026-09.md#a-caveat-i-did-not-write-an-incumbent-nobody-filed-and-the-axis-the-data-practices-were-missing)
 - [17 Sep 11:10 — A worklist that described its sampling frame, and a convention whose origin the record did not hold](2026-09.md#a-worklist-that-described-its-sampling-frame-and-a-convention-whose-origin-the-record-did-not-hold)
 - [17 Sep 04:38 — Three removals, each justified by a failure the previous framing could not express](2026-09.md#three-removals-each-justified-by-a-failure-the-previous-framing-could-not-express)
 - [17 Sep 01:46 — A gap in the shape of the advice, and an issue whose first step I had written without reading the documents](2026-09.md#a-gap-in-the-shape-of-the-advice-and-an-issue-whose-first-step-i-had-written-without-reading-the-documents)
@@ -92,9 +93,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-85 entries across 2 books, newest first.
+86 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 83 | 2026-09-05 | 2026-09-17 |
+| [2026-09](2026-09.md) | 84 | 2026-09-05 | 2026-09-17 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-309 of 325 LIT documents. Back to the [full index](../README.md).
+311 of 327 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -319,3 +319,5 @@
 | [LIT-388](../../../record/literature.d/LIT-388.md) | Evaluating Large Language Models Trained on Code | Chen et al. (2021), [ARXIV-2107.03374](https://arxiv.org/abs/2107.03374). Introduces HumanEval, which measures FUNCTIONAL correctness of generated programs against unit tests rather than textual similarity — and defines `pass@k` along with the unbiased estimator the record already recommends without citing. The benchmark is the better-known half; the metric is the half this anthology was leaning on. | Active |
 | [LIT-389](../../../record/literature.d/LIT-389.md) | Training Verifiers to Solve Math Word Problems | Cobbe et al. (2021), [ARXIV-2110.14168](https://arxiv.org/abs/2110.14168). Introduces GSM8K — 8.5K grade-school math word problems, chosen because they are conceptually simple and models still failed them, which isolates multi-step reasoning from mathematical difficulty. Also introduces verifier-ranked best-of-n sampling, the ancestor of the reranking the record recommends elsewhere. | Active |
 | [LIT-390](../../../record/literature.d/LIT-390.md) | Measuring Massive Multitask Language Understanding | Hendrycks et al. (2020), [ARXIV-2009.03300](https://arxiv.org/abs/2009.03300). MMLU: 57 subjects from elementary mathematics to law, measuring breadth of acquired knowledge rather than reasoning. Its own abstract names the insensitivity that matters most — models "frequently do not know when they are wrong", so a high MMLU score is not evidence of calibration. | Active |
+| [LIT-391](../../../record/literature.d/LIT-391.md) | DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining | Xie et al. (2023), [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429). Train a 280M proxy under group DRO to produce domain weights with no knowledge of downstream tasks, then resample and train an 8B model with them: +6.5 points average few-shot accuracy and the baseline reached in 2.6x fewer steps. The design point is the objective — worst-case EXCESS loss against a reference model, because worst-case raw loss would chase the noisiest domain. | Active |
+| [LIT-392](../../../record/literature.d/LIT-392.md) | Skill-it! A Data-Driven Skills Framework for Understanding and Training Language Models | Chen et al. (2023), [ARXIV-2307.14430](https://arxiv.org/abs/2307.14430). Training data has a prerequisite structure: skills are learned in an order, and training on a prerequisite makes the dependent skill reachable with less data. Formalises a skill and an ordered skill set in terms of the data that induces them, and samples over skill mixtures online. | Active |

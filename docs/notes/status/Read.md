@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-172 of 174 NOTE documents. Back to the [full index](../README.md).
+173 of 175 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -182,3 +182,4 @@
 | [NOTE-172](../../../record/notes.d/NOTE-172.md) | SuperGlue: Learning Feature Matching with Graph Neural Networks | Learn the matcher instead of hand-designing it: a GNN predicts assignment costs, differentiable optimal transport solves them, and correspondence and rejection happen jointly. Filed for the line rather than for a practice — its surviving assumption, that a detector ran first, is what the next paper identifies as the binding constraint. | Read |
 | [NOTE-173](../../../record/notes.d/NOTE-173.md) | LoFTR: Detector-Free Local Feature Matching with Transformers | Remove the keypoint detector and match densely, coarse-to-fine, with descriptors conditioned on both images by cross attention. The argument is a failure mode rather than an efficiency: detectors cannot emit repeatable points in low-texture regions, so no downstream matcher can recover what was never proposed. | Read |
 | [NOTE-174](../../../record/notes.d/NOTE-174.md) | Evaluating Large Language Models Trained on Code | Read for the metric rather than the benchmark. The paper defines `pass@k` and the unbiased estimator 1 - C(n-c,k)/C(n,k), and argues explicitly why the naive repeated-trials measurement is biased downward — which is the convention [SOTA-210](../../../record/practices.d/SOTA-210.md) already recommends while calling it "the standard one" and citing nobody. | Read |
+| [NOTE-175](../../../record/notes.d/NOTE-175.md) | DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining | A 280M proxy under group DRO sets the domain weights for an 8B run: +6.5 points few-shot and the baseline in 2.6x fewer steps, with no downstream task in the loop. The transferable part is the objective — worst-case EXCESS loss against a reference model, because worst-case raw loss would upweight whichever domain is noisiest. | Read |

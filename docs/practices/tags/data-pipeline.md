@@ -6,7 +6,7 @@
 
 **Data pipeline** — loading, quality assessment and selection, preprocessing, batch preparation.
 
-26 of 237 SOTA documents. Back to the [full index](../README.md).
+28 of 239 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -36,3 +36,5 @@
 | [SOTA-175](../../../record/practices.d/SOTA-175.md) | Mask whole syntactic units for code fill-in-the-middle, not random character spans | Gong et al. (2025), [LIT-126](../../../record/literature.d/LIT-126.md) — standard FIM masks random character spans, which produces training examples that rarely correspond to an edit anyone makes. AST-FIM masks whole syntactic units at scale, so the middle span is a coherent structure. Up to 5 points over random-character FIM at 1B and 8B, and most useful on real editing. | Proposed |
 | [SOTA-183](../../../record/practices.d/SOTA-183.md) | Generate the harmlessness preference labels with the model itself, against a written set of principles | Bai et al. (2022), [LIT-082](../../../record/literature.d/LIT-082.md) — [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). Replace the human harmlessness comparisons with model-generated ones: the model critiques and revises its own responses against an explicit list of principles, and the preference model trains on that. | Active |
 | [SOTA-186](../../../record/practices.d/SOTA-186.md) | Bootstrap a large annotation set with the model you are training, staging the automation as it improves |  | Active |
+| [SOTA-238](../../../record/practices.d/SOTA-238.md) | Set domain weights with a small proxy model under group DRO on excess loss, then transfer them | Xie et al. (2023), [LIT-391](../../../record/literature.d/LIT-391.md) — [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429). Train a small proxy under group DRO to produce domain weights, then resample and train the real model with them. Optimise worst-case EXCESS loss against a reference model, not worst-case loss — the naive form upweights whichever domain is noisiest, because every domain has a different irreducible entropy. | Active |
+| [SOTA-239](../../../record/practices.d/SOTA-239.md) | Order training data by skill prerequisite: teach the prerequisite and the dependent skill costs less data | Chen et al. (2023), [LIT-392](../../../record/literature.d/LIT-392.md) — [ARXIV-2307.14430](https://arxiv.org/abs/2307.14430). Training data has a prerequisite structure, and it is exploitable: train on a prerequisite skill and the dependent skill is reachable with less data. Sample over skill mixtures online rather than fixing proportions in advance. | Proposed |

@@ -9,19 +9,19 @@ tags:
 - model-stability
 date: '2026-09-17'
 source:
-- LIT-392
+- LIT-396
 - LIT-393
-- LIT-391
+- LIT-395
 explains:
-- SOTA-238
+- SOTA-240
 summary: >-
-  Wager et al. (2013), [LIT-392](../literature.d/LIT-392.md) — for generalized linear models dropout is
+  Wager et al. (2013), [LIT-396](../literature.d/LIT-396.md) — for generalized linear models dropout is
   first-order equivalent to L2 applied after scaling the features by an
   estimate of the inverse diagonal Fisher information, so the penalty depends
   on the data and not only on the weights. Three derivations from three
   directions agree on that shape — inverse-curvature scaling here,
   variance-scaled weight decay in [LIT-393](../literature.d/LIT-393.md), ridge with a
-  standard-deviation-scaled Gamma in [LIT-391](../literature.d/LIT-391.md) — and none of them covers a
+  standard-deviation-scaled Gamma in [LIT-395](../literature.d/LIT-395.md) — and none of them covers a
   deep network.
 ---
 
@@ -29,10 +29,10 @@ summary: >-
 
 ## Source
 
-Wager et al. (2013), [LIT-392](../literature.d/LIT-392.md), with
+Wager et al. (2013), [LIT-396](../literature.d/LIT-396.md), with
 the same conclusion reached independently in Baldi and Sadowski (2013),
 [LIT-393](../literature.d/LIT-393.md) §5, and in Srivastava et al.
-(2014), [LIT-391](../literature.d/LIT-391.md) §9.1.
+(2014), [LIT-395](../literature.d/LIT-395.md) §9.1.
 
 ## What was actually shown
 
@@ -46,7 +46,7 @@ like weight decay" is the reading this result contradicts.
 
 **Three derivations, three model classes, one shape.**
 
-- *Inverse curvature* — [LIT-392](../literature.d/LIT-392.md), GLMs:
+- *Inverse curvature* — [LIT-396](../literature.d/LIT-396.md), GLMs:
   L2 under an inverse-Fisher scaling.
 - *Input magnitude and noise variance* —
   [LIT-393](../literature.d/LIT-393.md) §5.1, a single linear unit
@@ -55,7 +55,7 @@ like weight decay" is the reading this result contradicts.
   input magnitudes and the dropout variance, maximal at `p = 0.5`. §5.2
   extends it approximately to a sigmoidal unit under relative entropy.
 - *Input standard deviation* —
-  [LIT-391](../literature.d/LIT-391.md) §9.1, linear regression:
+  [LIT-395](../literature.d/LIT-395.md) §9.1, linear regression:
   marginalizing the noise gives ridge with a `Γ` that scales each weight's
   cost by the standard deviation of its input dimension — "if a particular
   data dimension varies a lot, the regularizer tries to squeeze its weight
@@ -69,7 +69,7 @@ constant in it.
 **The account makes a prediction and it comes out.** Because the regularizer
 depends on the feature distribution and not on the labels, *unlabeled* data
 can be used to estimate a better one.
-[LIT-392](../literature.d/LIT-392.md) builds exactly that
+[LIT-396](../literature.d/LIT-396.md) builds exactly that
 semi-supervised variant and it consistently improves on dropout training in
 document classification, including on IMDB. An interpretation that only
 renames a procedure cannot be tested; this one was, in the direction it
@@ -79,7 +79,7 @@ predicted.
 
 **None of it covers a deep network.** The results are for generalized linear
 models, a single linear unit, a single sigmoidal unit, and linear regression.
-[LIT-391](../literature.d/LIT-391.md) §9.2 is explicit that no
+[LIT-395](../literature.d/LIT-395.md) §9.2 is explicit that no
 closed-form marginalized model is available for logistic regression or deep
 nets, and that the Gaussian assumptions such approximations rest on "become
 successively weaker as more layers are added". Dropout is used almost
@@ -88,7 +88,7 @@ entirely in the setting none of these derivations reaches.
 **It does not license replacing dropout with its marginalized regularizer.**
 That is what the equivalence would suggest and what the papers decline to
 claim past the model classes above.
-[LIT-391](../literature.d/LIT-391.md) raises it as the way to get
+[LIT-395](../literature.d/LIT-395.md) raises it as the way to get
 dropout's benefit without its 2-3x training cost and reports that for anything
 more complicated than linear regression "it is not obvious how to" obtain the
 regularizer.
@@ -101,5 +101,5 @@ they are is one formalism answering two different questions.
 
 **It is not why dropout is used.** This says what dropout does to the
 objective. Whether doing that is worth 2-3x the training time, and in which
-data regime, is a practice question — [SOTA-238](../practices.d/SOTA-238.md) — and the
+data regime, is a practice question — [SOTA-240](../practices.d/SOTA-240.md) — and the
 answer there is conditional in a way this document has nothing to say about.

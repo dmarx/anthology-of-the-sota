@@ -581,6 +581,9 @@
     "ARXIV/2312.06635": {
       "title": "Gated Linear Attention Transformers with Hardware-Efficient Training"
     },
+    "ARXIV/2312.14132": {
+      "title": "DUSt3R: Geometric 3D Vision Made Easy"
+    },
     "ARXIV/2401.06066": {
       "title": "DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models"
     },
@@ -712,6 +715,9 @@
     },
     "ARXIV/2503.01840": {
       "title": "EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test"
+    },
+    "ARXIV/2503.11651": {
+      "title": "VGGT: Visual Geometry Grounded Transformer"
     },
     "ARXIV/2503.14456": {
       "title": "RWKV-7 \"Goose\" with Expressive Dynamic State Evolution"

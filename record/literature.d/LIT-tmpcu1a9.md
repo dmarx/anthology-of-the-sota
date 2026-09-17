@@ -1,0 +1,70 @@
+---
+status: 'Active'
+title: 'DUSt3R: Geometric 3D Vision Made Easy'
+version: 1
+tags:
+- vision-and-graphics
+date: '2026-09-17'
+published: '2023-12-21'
+arxiv: '2312.14132'
+first_author: 'Wang'
+keywords:
+- 'multi-view-stereo'
+- 'camera-pose'
+- 'pointmap-regression'
+- 'structure-from-motion'
+- 'uncalibrated'
+implementations:
+- 'DUSt3R'
+summary: >-
+  Wang et al. (2023), [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132). Reconstruct from uncalibrated,
+  unposed images by regressing pointmaps, with no camera intrinsics or
+  extrinsics supplied. The inversion is the content: pixel matches and
+  relative and absolute camera come back OUT of the 3D output, where the
+  classical pipeline demands them as inputs before it can triangulate
+  anything.
+---
+
+# LIT-tmpcu1a9: DUSt3R: Geometric 3D Vision Made Easy
+
+Wang et al. (2023) — [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132)
+
+## Key takeaways
+
+- **The problem it refuses.** Multi-view stereo in the wild first needs camera
+  intrinsics and extrinsics — "tedious and cumbersome to obtain, yet they are
+  mandatory to triangulate corresponding pixels in 3D space, which is the core
+  of all best performing MVS algorithms." DUSt3R operates "without prior
+  information about camera calibration nor viewpoint poses."
+- **Pointmap regression instead of triangulation.** Pairwise reconstruction is
+  cast as regressing pointmaps, "relaxing the hard constraints of usual
+  projective camera models". The projective model stops being a constraint the
+  method must satisfy and becomes something the output happens to be
+  consistent with.
+- **Monocular and binocular unify.** One formulation covers both, which the
+  classical framing cannot — a single view has no baseline to triangulate
+  across.
+- **More than two images** are handled by a global alignment step expressing
+  all pairwise pointmaps in a common reference frame.
+- **The inversion, which is the reason to file it.** From the 3D output one can
+  "seamlessly recover pixel matches, relative and absolute camera". Every
+  quantity the classical pipeline requires *before* it can start is a
+  by-product of this one *after* it finishes.
+- Standard Transformer encoders and decoders, so pretrained models carry over.
+
+## Standing in the anthology
+
+The first paper in this record on the geometry-estimation half of 3D vision.
+The anthology has held the *rendering and reconstruction* half for some time —
+[LIT-064](LIT-064.md), [LIT-086](LIT-086.md), [LIT-108](LIT-108.md), [LIT-109](LIT-109.md), feeding [SOTA-205](../practices.d/SOTA-205.md) — and all of it
+assumes camera poses somebody else supplied. [#154](https://github.com/dmarx/anthology-of-the-sota/issues/154) is the audit that found
+the gap: a reader arriving with a set of images and no poses found four papers
+that assume the thing they came to ask about.
+
+Sources [SOTA-tmpjhh4p](../practices.d/SOTA-tmpjhh4p.md) together with [LIT-tmp29qg5](LIT-tmp29qg5.md), which is the same claim
+made feed-forward and general two years later.
+
+Also gives [LIT-111](LIT-111.md) (OnePose) the lineage it lacked. That note's recipe builds
+an SfM point cloud and matches against it with a generic network — machinery
+this record held only as a step inside somebody else's method, never as a
+subject with papers of its own.

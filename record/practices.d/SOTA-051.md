@@ -1,8 +1,8 @@
 ---
 number: 51
 status: 'Active'
-title: 'Initialize final layer weights near zero'
-version: 3
+title: 'Initialize a residual or adapter branch to exactly zero, not merely near zero'
+version: 4
 history:
 - version: 2
   date: '2026-09-10'
@@ -12,7 +12,18 @@ history:
 - version: 3
   date: '2026-09-10'
   note: >-
-    The
+    Gained ControlNet (LIT-089) as a second source and the section on
+    branches attached to an already-trained model. This entry was left
+    truncated at the word "The" and is completed here from the source
+    comments and the diff it describes.
+- version: 4
+  date: '2026-09-17'
+  note: >-
+    Retitled. The title said "near zero" while the body's whole argument is
+    that zero is not near zero — it stated the weaker claim its own content
+    refutes, and a reader who searched the registry for the exact-identity
+    rule would not have found it. The recommendation is unchanged; what
+    changes is that the title now says it.
 tags:
 - model-stability
 date: '2026-08-24'
@@ -29,12 +40,18 @@ compared_against:
 - SOTA-060
 - SOTA-025
 summary: >-
-  Bachlechner et al. (2020), [LIT-047](../literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887).
+  Bachlechner et al. (2020), [LIT-047](../literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). Start an added branch at
+  exactly zero so it is the identity at initialisation, and let training
+  raise it. Exact zero rather than small-random is the claim: a small random
+  branch is PROBABLY harmless, a zero one is PROVABLY the identity — which is
+  what matters when the thing being protected is a residual stack deep enough
+  to attenuate, or a pretrained model expensive enough that adapter noise
+  is not worth risking.
 explained_by:
 - THEORY-011
 ---
 
-# SOTA-051: Initialize final layer weights near zero
+# SOTA-051: Initialize a residual or adapter branch to exactly zero, not merely near zero
 
 ## Source
 
@@ -74,8 +91,8 @@ grow from zero", ensuring "no harmful noise could affect the finetuning".
 [SOTA-184](SOTA-184.md)'s LoRA does the same thing for the same reason: its `B` matrix starts
 at zero, so the update is exactly nothing until training makes it something.
 
-The distinction worth holding is the one this practice's own title blurs:
-**zero is not "near zero".** A small random initialisation makes the branch
+The distinction worth holding, and the one this practice's own title stated
+backwards until version 4: **zero is not "near zero".** A small random initialisation makes the branch
 *probably* harmless; an exact zero makes it *provably* the identity. When the
 thing you are protecting is expensive and already trained, the difference
 between those two is the whole point.

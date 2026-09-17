@@ -19,7 +19,7 @@ history:
   note: >-
     Names the source of the estimator it recommends. The practice called it
     "the standard one" and cited the paper that USES it rather than the one
-    that defines it; LIT-tmpd7q1v is where pass@k and the unbiased estimator
+    that defines it; LIT-388 is where pass@k and the unbiased estimator
     are introduced. The recommendation is unchanged.
 tags:
 - analysis-and-evaluation
@@ -105,7 +105,7 @@ repeated trials — [LIT-234](../literature.d/LIT-234.md) uses it over `n` sampl
 and the naive approach needs many trials per `k` to control variance.
 
 The estimator is `1 − C(n−c, k) / C(n, k)` over `n ≥ k` samples of which `c`
-pass, and it is [LIT-tmpd7q1v](../literature.d/LIT-tmpd7q1v.md)'s, which is also where `pass@k` is defined. That
+pass, and it is [LIT-388](../literature.d/LIT-388.md)'s, which is also where `pass@k` is defined. That
 paper makes the argument this practice was compressing: the naive form "may
 look correct" but "underestimates the true value by a considerable margin",
 and the unbiased one trades a little early variance for comparability across

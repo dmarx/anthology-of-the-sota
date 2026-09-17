@@ -1,6 +1,9 @@
 ---
+number: 174
 status: Read
-paper: LIT-tmpd7q1v
+formerly:
+- NOTE-tmp33m0o
+paper: LIT-388
 title: 'Evaluating Large Language Models Trained on Code'
 version: 1
 date: '2026-09-17'
@@ -12,9 +15,9 @@ summary: >-
   and citing nobody.
 ---
 
-# NOTE-tmp33m0o: Evaluating Large Language Models Trained on Code
+# NOTE-174: Evaluating Large Language Models Trained on Code
 
-Read from [LIT-tmpd7q1v](../literature.d/LIT-tmpd7q1v.md) — [ARXIV-2107.03374](https://arxiv.org/abs/2107.03374).
+Read from [LIT-388](../literature.d/LIT-388.md) — [ARXIV-2107.03374](https://arxiv.org/abs/2107.03374).
 
 ## Why this one was read and the other two benchmarks were not
 

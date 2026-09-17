@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-38 of 173 NOTE documents. Back to the [full index](../README.md).
+39 of 174 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -46,3 +46,4 @@
 | [NOTE-158](../../../record/notes.d/NOTE-158.md) | Broken Neural Scaling Laws | A single power law ε(t) = C_∞ + b·t^{-c} fails when the curve has two regimes (steep early, shallow late — or vice versa). | Read |
 | [NOTE-165](../../../record/notes.d/NOTE-165.md) | Large Language Models Cannot Self-Correct Reasoning Yet | Asked to revise its own reasoning with no external feedback, a model does not reliably improve and sometimes degrades. The durable part is the definition rather than the number: INTRINSIC self-correction, meaning no oracle, no verifier, no second model — a line that a lot of contemporary self-correction claims were quietly on the other side of. | Read |
 | [NOTE-167](../../../record/notes.d/NOTE-167.md) | The Surprising Effectiveness of Test-Time Training for Few-Shot Learning | Turn the in-context examples into a loss and take gradient steps on them at inference, then discard the update. Up to 6x a fine-tuned baseline on ARC and +7.3 points on BIG-Bench Hard at 10-shot. The finding underneath is about in-context learning: the same examples are worth several times more as gradient than as context. | Read |
+| [NOTE-174](../../../record/notes.d/NOTE-174.md) | Evaluating Large Language Models Trained on Code | Read for the metric rather than the benchmark. The paper defines `pass@k` and the unbiased estimator 1 - C(n-c,k)/C(n,k), and argues explicitly why the naive repeated-trials measurement is biased downward — which is the convention [SOTA-210](../../../record/practices.d/SOTA-210.md) already recommends while calling it "the standard one" and citing nobody. | Read |

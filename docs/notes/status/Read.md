@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-169 of 171 NOTE documents. Back to the [full index](../README.md).
+171 of 173 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -179,3 +179,5 @@
 | [NOTE-169](../../../record/notes.d/NOTE-169.md) | Training Language Models to Self-Correct via Reinforcement Learning | SCoRe teaches self-correction with multi-turn online RL on the model's own traces, no teacher and no extra supervision, for +15.6% on MATH and +9.1% on HumanEval. The transferable half is the diagnosis: SFT on correction traces fails by distribution mismatch or by behaviour collapse, and the method's two stages are each aimed at one of those. | Read |
 | [NOTE-170](../../../record/notes.d/NOTE-170.md) | VGGT: Visual Geometry Grounded Transformer | One feed-forward pass produces camera parameters, point maps, depth maps and 3D point tracks together, in under a second, beating methods that post-process with geometry optimisation. Removes the global alignment step DUSt3R still needed, and works as a pretrained backbone — which is when a subject stops being a field and becomes a component. | Read |
 | [NOTE-171](../../../record/notes.d/NOTE-171.md) | DUSt3R: Geometric 3D Vision Made Easy | Regress pointmaps from uncalibrated, unposed images instead of solving for cameras and triangulating. The result worth carrying is not the accuracy but the direction of dependency: matches and camera parameters fall out of the 3D output, where the classical pipeline needs them before it can begin. | Read |
+| [NOTE-172](../../../record/notes.d/NOTE-172.md) | SuperGlue: Learning Feature Matching with Graph Neural Networks | Learn the matcher instead of hand-designing it: a GNN predicts assignment costs, differentiable optimal transport solves them, and correspondence and rejection happen jointly. Filed for the line rather than for a practice — its surviving assumption, that a detector ran first, is what the next paper identifies as the binding constraint. | Read |
+| [NOTE-173](../../../record/notes.d/NOTE-173.md) | LoFTR: Detector-Free Local Feature Matching with Transformers | Remove the keypoint detector and match densely, coarse-to-fine, with descriptors conditioned on both images by cross attention. The argument is a failure mode rather than an efficiency: detectors cannot emit repeatable points in low-texture regions, so no downstream matcher can recover what was never proposed. | Read |

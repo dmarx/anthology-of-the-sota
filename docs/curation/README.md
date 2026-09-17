@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [17 Sep 04:38 — Three removals, each justified by a failure the previous framing could not express](2026-09.md#three-removals-each-justified-by-a-failure-the-previous-framing-could-not-express)
 - [17 Sep 01:46 — A gap in the shape of the advice, and an issue whose first step I had written without reading the documents](2026-09.md#a-gap-in-the-shape-of-the-advice-and-an-issue-whose-first-step-i-had-written-without-reading-the-documents)
 - [17 Sep 01:24 — The last two boxes were the same question, and one of them was a name collision](2026-09.md#the-last-two-boxes-were-the-same-question-and-one-of-them-was-a-name-collision)
 - [17 Sep 01:11 — A negative result worth filing for its definition, and a rhyme the record could not have noticed from one side](2026-09.md#a-negative-result-worth-filing-for-its-definition-and-a-rhyme-the-record-could-not-have-noticed-from-one-side)
@@ -90,9 +91,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-83 entries across 2 books, newest first.
+84 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 81 | 2026-09-05 | 2026-09-17 |
+| [2026-09](2026-09.md) | 82 | 2026-09-05 | 2026-09-17 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

@@ -4,7 +4,7 @@
 
 **attention-techniques**.
 
-8 of 171 NOTE documents. Back to the [full index](../README.md).
+9 of 173 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -16,3 +16,4 @@
 | [NOTE-023](../../../record/notes.d/NOTE-023.md) | PagedAttention and vLLM | KV cache memory is huge, grows and shrinks dynamically, and was managed as one contiguous block — so fragmentation and duplication capped the batch size. PagedAttention borrows OS paging: near-zero waste, sharing within and across requests, 2–4× throughput at equal latency. | Read |
 | [NOTE-059](../../../record/notes.d/NOTE-059.md) | Longformer: The Long-Document Transformer | Replaces full self-attention with a sliding window plus a small set of task-chosen global positions, giving linear cost in sequence length. The global tokens are the design decision that matters — they are where the task's inductive bias is stated, and they are why the pattern can be adapted per task rather than fixed. | Read |
 | [NOTE-065](../../../record/notes.d/NOTE-065.md) | Pay Less Attention with Lightweight and Dynamic Convolutions | Shows a depthwise convolution with softmax-normalized weights, shared across channel groups and with a kernel fixed at 31 or less, matches self-attention on translation — 29.7 BLEU on WMT En-De. Dynamic convolution predicts the kernel from the current token alone, so the mixing weights depend on position rather than on the pair of positions being mixed. | Read |
+| [NOTE-173](../../../record/notes.d/NOTE-173.md) | LoFTR: Detector-Free Local Feature Matching with Transformers | Remove the keypoint detector and match densely, coarse-to-fine, with descriptors conditioned on both images by cross attention. The argument is a failure mode rather than an efficiency: detectors cannot emit repeatable points in low-texture regions, so no downstream matcher can recover what was never proposed. | Read |

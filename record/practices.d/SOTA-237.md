@@ -1,5 +1,8 @@
 ---
+number: 237
 status: 'Active'
+formerly:
+- SOTA-tmp8nruj
 title: 'Match densely without a keypoint detector, because the detector fails where matching is hardest'
 version: 1
 tags:
@@ -14,13 +17,13 @@ consensus_note: >-
   makes sense if the detector was already gone.
 date: '2026-09-17'
 source:
-- LIT-tmpupth8
+- LIT-387
 introduced_by:
-- LIT-tmpupth8
+- LIT-387
 implementations:
 - 'LoFTR'
 summary: >-
-  Sun et al. (2021), [LIT-tmpupth8](../literature.d/LIT-tmpupth8.md) — [ARXIV-2104.00680](https://arxiv.org/abs/2104.00680). Establish dense matches
+  Sun et al. (2021), [LIT-387](../literature.d/LIT-387.md) — [ARXIV-2104.00680](https://arxiv.org/abs/2104.00680). Establish dense matches
   coarse-to-fine instead of detecting keypoints, describing them and matching
   the descriptors. The detector sets the pipeline's ceiling, and it fails in
   low-texture regions — walls, floors, road — where it cannot emit repeatable
@@ -28,11 +31,11 @@ summary: >-
   proposed.
 ---
 
-# SOTA-tmp8nruj: Match densely without a keypoint detector, because the detector fails where matching is hardest
+# SOTA-237: Match densely without a keypoint detector, because the detector fails where matching is hardest
 
 ## Source
 
-Sun et al. (2021), [LIT-tmpupth8](../literature.d/LIT-tmpupth8.md) — [ARXIV-2104.00680](https://arxiv.org/abs/2104.00680).
+Sun et al. (2021), [LIT-387](../literature.d/LIT-387.md) — [ARXIV-2104.00680](https://arxiv.org/abs/2104.00680).
 
 ## The claim
 
@@ -84,7 +87,7 @@ if the detector was already gone. The later line presupposes this one.
 
 Three steps, each removing the stage the previous step exposed as the limit:
 
-1. [LIT-tmp2pjm4](../literature.d/LIT-tmp2pjm4.md) (SuperGlue) — learn the matcher instead of hand-designing
+1. [LIT-386](../literature.d/LIT-386.md) (SuperGlue) — learn the matcher instead of hand-designing
    the heuristics, and keep the detector.
 2. **This** — remove the detector; the ceiling it imposed was the real limit.
 3. [LIT-385](../literature.d/LIT-385.md) and [LIT-384](../literature.d/LIT-384.md) ([SOTA-236](SOTA-236.md)) — remove matching as a stage; predict

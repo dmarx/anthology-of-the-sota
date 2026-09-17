@@ -1,6 +1,9 @@
 ---
+number: 173
 status: Read
-paper: LIT-tmpupth8
+formerly:
+- NOTE-tmpvmncl
+paper: LIT-387
 title: 'LoFTR: Detector-Free Local Feature Matching with Transformers'
 version: 1
 date: '2026-09-17'
@@ -12,9 +15,9 @@ summary: >-
   never proposed.
 ---
 
-# NOTE-tmpvmncl: LoFTR: Detector-Free Local Feature Matching with Transformers
+# NOTE-173: LoFTR: Detector-Free Local Feature Matching with Transformers
 
-Read from [LIT-tmpupth8](../literature.d/LIT-tmpupth8.md) — [ARXIV-2104.00680](https://arxiv.org/abs/2104.00680).
+Read from [LIT-387](../literature.d/LIT-387.md) — [ARXIV-2104.00680](https://arxiv.org/abs/2104.00680).
 
 ## The argument, which is about where information is lost
 
@@ -52,10 +55,10 @@ conservatism is invisible until somebody removes the stage.
 
 ## Where it sits in the record
 
-Sources [SOTA-tmp8nruj](../practices.d/SOTA-tmp8nruj.md), and completes the middle of a three-step line the
+Sources [SOTA-237](../practices.d/SOTA-237.md), and completes the middle of a three-step line the
 record now holds end to end:
 
-1. [LIT-tmp2pjm4](../literature.d/LIT-tmp2pjm4.md) — learn the matcher, keep the detector.
+1. [LIT-386](../literature.d/LIT-386.md) — learn the matcher, keep the detector.
 2. This — remove the detector, keep matching as a stage.
 3. [LIT-385](../literature.d/LIT-385.md) and [LIT-384](../literature.d/LIT-384.md) — remove matching as a stage; it becomes an output
    of predicting geometry directly ([SOTA-236](../practices.d/SOTA-236.md)).

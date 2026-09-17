@@ -6,9 +6,10 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-2 of 236 SOTA documents. Back to the [full index](../README.md).
+3 of 237 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [SOTA-205](../../../record/practices.d/SOTA-205.md) | Replace a large coordinate network with a compact explicit structure and a small decoder | Four independent groups, three structures. Where a field is queried pointwise and the signal is spatially sparse, the capacity belongs in an addressable structure that training optimises directly, not in a network evaluated per point. | Active |
 | [SOTA-236](../../../record/practices.d/SOTA-236.md) | Predict scene geometry directly instead of solving for cameras first and triangulating | Wang et al. (2023), [LIT-385](../../../record/literature.d/LIT-385.md) — [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132); Wang et al. (2025), [LIT-384](../../../record/literature.d/LIT-384.md) — [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651). Given uncalibrated, unposed images, regress the 3D structure and let camera parameters and pixel matches fall out of it, rather than estimating calibration and pose first so that triangulation becomes possible. The quantities the classical pipeline needs as inputs are by-products of this one. | Active |
+| [SOTA-237](../../../record/practices.d/SOTA-237.md) | Match densely without a keypoint detector, because the detector fails where matching is hardest | Sun et al. (2021), [LIT-387](../../../record/literature.d/LIT-387.md) — [ARXIV-2104.00680](https://arxiv.org/abs/2104.00680). Establish dense matches coarse-to-fine instead of detecting keypoints, describing them and matching the descriptors. The detector sets the pipeline's ceiling, and it fails in low-texture regions — walls, floors, road — where it cannot emit repeatable points, so no downstream matcher can recover a correspondence that was never proposed. | Active |

@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-304 of 320 LIT documents. Back to the [full index](../README.md).
+306 of 322 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -314,3 +314,5 @@
 | [LIT-383](../../../record/literature.d/LIT-383.md) | Training Language Models to Self-Correct via Reinforcement Learning | Kumar et al. (2024), [ARXIV-2409.12917](https://arxiv.org/abs/2409.12917). SCoRe: multi-turn online RL on entirely self-generated correction traces, which teaches the self-correction that prompting could not produce. +15.6% on MATH and +9.1% on HumanEval for Gemini 1.0 Pro and 1.5 Flash. Its more transferable half is the diagnosis of why supervised fine-tuning on correction traces fails. | Active |
 | [LIT-384](../../../record/literature.d/LIT-384.md) | VGGT: Visual Geometry Grounded Transformer | Wang et al. (2025), [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651). One feed-forward pass infers camera parameters, point maps, depth maps and 3D point tracks together, from one view or hundreds, in under a second — beating methods that post-process with geometry optimisation. The claim that matters is that the specialisation into separate tasks was never necessary. | Active |
 | [LIT-385](../../../record/literature.d/LIT-385.md) | DUSt3R: Geometric 3D Vision Made Easy | Wang et al. (2023), [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132). Reconstruct from uncalibrated, unposed images by regressing pointmaps, with no camera intrinsics or extrinsics supplied. The inversion is the content: pixel matches and relative and absolute camera come back OUT of the 3D output, where the classical pipeline demands them as inputs before it can triangulate anything. | Active |
+| [LIT-386](../../../record/literature.d/LIT-386.md) | SuperGlue: Learning Feature Matching with Graph Neural Networks | Sarlin et al. (2019), [ARXIV-1911.11763](https://arxiv.org/abs/1911.11763). Match two sets of local features by learning the matcher rather than hand-designing it: a graph neural network predicts assignment costs and a differentiable optimal transport step solves them, finding correspondences and rejecting unmatchable points in one operation. Replaces "hand-designed heuristics" with priors over geometry learned end to end — and still consumes keypoints somebody else detected. | Active |
+| [LIT-387](../../../record/literature.d/LIT-387.md) | LoFTR: Detector-Free Local Feature Matching with Transformers | Sun et al. (2021), [ARXIV-2104.00680](https://arxiv.org/abs/2104.00680). Drop the keypoint detector: establish dense matches coarsely and refine them, with self and cross attention producing descriptors conditioned on BOTH images. The argument is that the detector is the binding constraint — it cannot produce repeatable interest points in low-texture regions, which is exactly where matching is hard. | Active |

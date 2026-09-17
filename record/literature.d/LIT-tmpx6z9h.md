@@ -1,0 +1,72 @@
+---
+status: 'Active'
+title: 'Measuring Massive Multitask Language Understanding'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-17'
+published: '2020-09-07'
+arxiv: '2009.03300'
+first_author: 'Hendrycks'
+keywords:
+- 'benchmark'
+- 'multitask'
+- 'world-knowledge'
+- 'calibration'
+implementations:
+- 'MMLU'
+summary: >-
+  Hendrycks et al. (2020), [ARXIV-2009.03300](https://arxiv.org/abs/2009.03300). MMLU: 57 subjects from
+  elementary mathematics to law, measuring breadth of acquired knowledge
+  rather than reasoning. Its own abstract names the insensitivity that
+  matters most — models "frequently do not know when they are wrong", so a
+  high MMLU score is not evidence of calibration.
+---
+
+# LIT-tmpx6z9h: Measuring Massive Multitask Language Understanding
+
+Hendrycks et al. (2020) — [ARXIV-2009.03300](https://arxiv.org/abs/2009.03300)
+
+## What it measures
+
+Multitask accuracy across **57 subjects** — elementary mathematics, US
+history, computer science, law and more — requiring "extensive world
+knowledge and problem solving ability". Multiple choice throughout.
+
+It is a breadth instrument. The unit of measurement is how much of an
+academic and professional curriculum a model has absorbed, aggregated into
+one number.
+
+## What it is insensitive to, in the paper's own words
+
+Unusually, the abstract states the limitations rather than leaving them to a
+later critique, and two are worth carrying:
+
+- **Calibration.** Models "have lopsided performance and **frequently do not
+  know when they are wrong**". A high average conceals both which subjects
+  failed and whether the model could tell.
+- **Socially important subjects.** Near-random accuracy "on some socially
+  important subjects such as morality and law" at the time of writing — so
+  the aggregate was, from the start, an average over a very uneven surface.
+
+Two more that follow from the format rather than from the paper:
+
+- **Multiple choice measures recognition, not production.** Nothing about
+  whether the model could have generated the answer unprompted.
+- **Saturation.** Frontier models now score in a band where the remaining
+  headroom is substantially disputed items and label noise, which makes small
+  deltas uninformative.
+
+## Standing in the anthology
+
+The second most-cited benchmark here — 15 documents, **6 practices**, level
+with GSM8K on practice count.
+
+Worth recording why it was missing. [#137](https://github.com/dmarx/anthology-of-the-sota/issues/137)'s worklist was built from a
+bibliography sweep of twelve evolution-strategies papers, and MMLU is not an
+evolution-strategies benchmark, so it never appeared — even though the record
+leans on it as heavily as on anything. The list was a faithful description of
+its sampling frame and a misleading description of the corpus, which is
+[DP-004](../principles.d/DP-004.md) applied to a worklist rather than to a defect hunt.
+
+Carries no practice, per [ADR-032](../decisions.d/ADR-032.md).

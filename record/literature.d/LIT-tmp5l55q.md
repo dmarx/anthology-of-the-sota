@@ -23,10 +23,12 @@ summary: >-
   surveys (N = 685 plus 70) find such sentences judged to presuppose more
   shared common knowledge, and to be wittier and more sarcastic, than normed
   near-paraphrases. The effect survives restricting to high-frequency phrases
-  and shows no frequency dependence. **No model was run and the paper makes
-  no recommendation** — it is filed as evidence about where a lexical unit
-  ends, which is the question tokenization answers and which the record holds
-  nothing else on. See [ADR-tmps5go3](../decisions.d/ADR-tmps5go3.md) for the scope call it forced.
+  and shows no frequency dependence. No model was run, and the finding is about
+  the signal rather than anything trained on it: it sources
+  [THEORY-tmprceog](../theory.d/THEORY-tmprceog.md), the claim that a lexical
+  unit is delimited by construction rather than by frequency — which is what
+  [SOTA-007](../practices.d/SOTA-007.md)'s vocabulary is fit to. See
+  [ADR-tmps5go3](../decisions.d/ADR-tmps5go3.md) for the scope call it forced.
 ---
 
 <!-- inactive-ok-file: ADR-tmps5go3 — Proposed, filed in this same change,
@@ -93,26 +95,36 @@ Goldberg and Shirtz (2025) — Language 101(2):291-320, <https://doi.org/10.1353
 
 ## Standing in the anthology
 
-**This note sources no practice and no theory, deliberately, and the reason is
-not the paper's quality.** It is a preregistered study with normed stimuli, a
-replication under the one condition that would have explained the effect away,
-and a null result the authors went looking for. What it does not contain is
-anything about a machine: no model was run, no representation was learned,
-nothing here was measured on a system this anthology gives advice about. Under
-[DP-006](../../docs/design-principles.md#dp-6) the entry question is whether the work contains an instruction, and for
-this record it does not.
+**It sources [THEORY-tmprceog](../theory.d/THEORY-tmprceog.md) and no
+practice**, and both halves of that are deliberate.
 
-It is here because of what it is evidence *about*. The record's
-`representation-and-encoding` topic covers "how the signal is encoded before
-the expensive network sees it — tokenizers and learned latents", and every
-practice filed under it takes for granted that there is a defensible answer to
-*where a unit of meaning ends*. This paper is a measurement of a case where
-English says the answer is "a whole sentence, used as one word", and where
-speakers demonstrably act on that. That is the empirical situation
-multi-word-expression and phrase-level tokenization work is built on, and the
-record holds nothing else on it.
+The theory is the claim the surveys measure: a phrase in a word slot is read
+as a lemma, and the reading comes from the construction rather than the
+phrase's frequency. That is a finding about what is true, which is what the
+`THEORY` scheme holds — and it is a finding about **the signal**, not about
+the people who were asked. A claim discovered in psycholinguistics still takes
+its kind, the same way [ADR-026](../decisions.d/ADR-026.md) has a preconditioning
+scheme found in diffusion take its kind rather than its domain.
 
-**The tag is the closest available and it does not fit cleanly**, which is a
-finding about the vocabulary rather than about the paper — [DP-009](../../docs/design-principles.md#dp-9) — and
-saying so here rather than absorbing it quietly is what [DP-008](../../docs/design-principles.md#dp-8)'s corollary
-requires. [ADR-tmps5go3](../decisions.d/ADR-tmps5go3.md) is where that question is put.
+The practice is absent because no recommendation follows yet. Knowing that the
+data contains construction-delimited units of arbitrary length says nothing
+about whether a vocabulary should try to hold them; that is a cost question,
+and nobody in this record has measured it. Filing a practice here would be the
+anthology's inference wearing this paper's citation, which
+[ADR-017](../decisions.d/ADR-017.md) is the rule against.
+
+**What the record is missing to connect it.** The bridge from this finding to
+model internals is the detokenization and inner-lexicon line —
+[ARXIV-2410.05864](https://arxiv.org/abs/2410.05864),
+[ARXIV-2406.20086](https://arxiv.org/abs/2406.20086) — which reports models
+fusing multi-token words into single representations in early layers. The
+record holds none of it, and until it does the connection between this
+measurement and anything a network does is a conjecture rather than a claim.
+
+**The tag is the closest available and still does not fit cleanly.**
+`representation-and-encoding` is about encoding for a network, and this is
+about the structure being encoded. That is a finding about the vocabulary
+rather than about the paper — [DP-009](../../docs/design-principles.md#dp-9) —
+and saying so rather than absorbing it quietly is what
+[DP-008](../../docs/design-principles.md#dp-8)'s corollary requires.
+[ADR-tmps5go3](../decisions.d/ADR-tmps5go3.md) puts the question.

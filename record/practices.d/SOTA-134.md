@@ -25,8 +25,20 @@ source:
 - LIT-138
 - LIT-191
 - LIT-190
+# Added with the origin correction below: this paper did not only propose the
+# gate, it measured it — BERT-base, OPT-125M and ViT-S/16, with the outlier
+# metrics and the INT8 result. Small models, so it corroborates rather than
+# leads, but it is evidence about the claim and belongs here (ADR-017).
+- LIT-tmpfe659
+# CORRECTED. This practice was filed with `introduced_by: LIT-138`, which is
+# where the evidence at scale is and NOT where the recommendation was first
+# stated. Bondarenko et al. (2023) equation 5 is this gate, per-head, two
+# years earlier — and Qiu et al. say so themselves: "The work most closely
+# related to ours is Quantizable Transformers (Bondarenko et al., 2023) ...
+# Building on these insights, we scale up gated attention models." ADR-017's
+# split, applied: origin here, evidence in `source:`.
 introduced_by:
-- LIT-138
+- LIT-tmpfe659
 summary: >-
   Qiu et al. (2025), [LIT-138](../literature.d/LIT-138.md) — the best of 30 gating variants at 15B MoE and 1.7B dense over 3.5T tokens: better quality, more stable training, larger tolerable learning rates, no attention sinks; shipped in every Qwen full-attention layer since Qwen3-Next.
 explained_by:
@@ -59,6 +71,36 @@ head-specific sigmoid. Same position in the block, same justification,
 different width, and neither group has swept its choice against the other's.
 The cost is one sigmoid per head per token. Not to be confused with gating the
 attention *scores*, which is among the variants that did not help.
+
+## Where this came from, corrected
+
+This practice was filed crediting Qiu et al. (2025) with the recommendation.
+That is where the evidence at scale is and it is not where the recommendation
+was first stated. **Bondarenko et al. (2023), [LIT-tmpfe659](../literature.d/LIT-tmpfe659.md), equation 5, is this
+gate** — `sigmoid(G(x)) ⊙ softmax(QKᵀ/√d)V`, with `G` defined per head and
+parameterized by a single linear layer — proposed two years earlier, for the
+same reason, and measured on BERT, OPT and ViT.
+
+Qiu et al. are explicit about it:
+
+> The work most closely related to ours is Quantizable Transformers
+> (Bondarenko et al., 2023), which also finds that applying gating in softmax
+> attention alleviates extreme attention concentration and outliers in hidden
+> states ... Building on these insights, we scale up gated attention models.
+
+So the correction is not a dispute with either paper; it is the record
+catching up to what both of them say. `introduced_by:` now names the 2023
+paper and `source:` keeps Qiu et al. first, because the 30-variant ablation at
+15B over 3.5T tokens is what makes this an `Active` practice rather than a
+`Proposed` one. That is precisely the split [ADR-017](../decisions.d/ADR-017.md) exists to record, and the
+error it existed to prevent: with one field, every practice reads as though it
+began with the paper it cites.
+
+It also relocates the claim. The gate was not invented to improve quality; it
+was invented to let a head do nothing so it would stop producing activation
+outliers that break INT8 quantization. The quality gain Qiu et al. measured is
+a *later* discovery about a mechanism introduced for quantizability, which is
+a more interesting history than the one this practice previously told.
 
 ## What the sinks are, and why removing them is a benefit
 

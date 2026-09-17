@@ -1,0 +1,65 @@
+---
+status: 'Active'
+title: 'SuperGlue: Learning Feature Matching with Graph Neural Networks'
+version: 1
+tags:
+- vision-and-graphics
+date: '2026-09-17'
+published: '2019-11-26'
+arxiv: '1911.11763'
+first_author: 'Sarlin'
+keywords:
+- 'feature-matching'
+- 'graph-neural-network'
+- 'optimal-transport'
+- 'camera-pose'
+- 'structure-from-motion'
+implementations:
+- 'SuperGlue'
+summary: >-
+  Sarlin et al. (2019), [ARXIV-1911.11763](https://arxiv.org/abs/1911.11763). Match two sets of local features
+  by learning the matcher rather than hand-designing it: a graph neural
+  network predicts assignment costs and a differentiable optimal transport
+  step solves them, finding correspondences and rejecting unmatchable points
+  in one operation. Replaces "hand-designed heuristics" with priors over
+  geometry learned end to end — and still consumes keypoints somebody else
+  detected.
+---
+
+# LIT-tmp2pjm4: SuperGlue: Learning Feature Matching with Graph Neural Networks
+
+Sarlin et al. (2019) — [ARXIV-1911.11763](https://arxiv.org/abs/1911.11763)
+
+## Key takeaways
+
+- **Matching becomes a learned assignment problem.** A graph neural network
+  predicts the costs; a differentiable optimal transport step solves for the
+  assignment. Correspondence and rejection of non-matchable points are found
+  *jointly*, not as a match step followed by a filter.
+- **What it displaces is named explicitly**: "compared to traditional,
+  hand-designed heuristics, our technique learns priors over geometric
+  transformations and regularities of the 3D world through end-to-end
+  training from image pairs." The ratio test and its relatives are the
+  heuristics in question.
+- **Attention lets it reason about the scene, not just the descriptors.** A
+  flexible context aggregation mechanism means an assignment is made in view
+  of the other assignments and the implied 3D structure.
+- State of the art on pose estimation indoors and outdoors, real time on a
+  GPU, and "readily integrated into modern SfM or SLAM systems" — a drop-in
+  for a pipeline stage rather than a new pipeline.
+- **The constraint it keeps**: it matches *two sets of local features*. The
+  detector is upstream and unchanged.
+
+## Standing in the anthology
+
+The first step of the line [SOTA-236](../practices.d/SOTA-236.md) ends. It carries no practice of its
+own here: its claim — learn the matcher instead of hand-designing it — was
+superseded twice over in short order, first by dropping the detector
+([LIT-tmpupth8](LIT-tmpupth8.md)) and then by dropping matching as a separate stage at all
+([LIT-385](LIT-385.md), [LIT-384](LIT-384.md)).
+
+Filed because the line does not read without it. It is the paper that
+establishes that this stage *could* be learned, and its surviving constraint —
+that a detector runs first — is precisely what the next paper identifies as
+the limit. A record holding only the endpoint would show a conclusion with no
+argument.

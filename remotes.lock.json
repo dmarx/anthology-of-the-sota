@@ -194,6 +194,9 @@
     "ARXIV/1911.07013": {
       "title": "Understanding and Improving Layer Normalization"
     },
+    "ARXIV/1911.11763": {
+      "title": "SuperGlue: Learning Feature Matching with Graph Neural Networks"
+    },
     "ARXIV/1912.04977": {
       "title": "Advances and Open Problems in Federated Learning"
     },
@@ -286,6 +289,9 @@
     },
     "ARXIV/2103.03386": {
       "title": "Clusterability in Neural Networks"
+    },
+    "ARXIV/2104.00680": {
+      "title": "LoFTR: Detector-Free Local Feature Matching with Transformers"
     },
     "ARXIV/2104.04473": {
       "title": "Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM"

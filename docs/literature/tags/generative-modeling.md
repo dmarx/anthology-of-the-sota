@@ -6,7 +6,7 @@
 
 **Generative modeling** — diffusion, samplers, text-to-image, conditioning and control.
 
-12 of 318 LIT documents. Back to the [full index](../README.md).
+12 of 320 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

@@ -4,7 +4,7 @@
 
 **vision-and-graphics**.
 
-10 of 169 NOTE documents. Back to the [full index](../README.md).
+12 of 171 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -18,3 +18,5 @@
 | [NOTE-045](../../../record/notes.d/NOTE-045.md) | 3D Gaussian Splatting for Real-Time Radiance Field Rendering | Represents a scene as anisotropic 3D Gaussians initialised from structure-from-motion points, optimised with interleaved density control, and rendered by projecting to 2D and α-blending. Differentiable like a volumetric field, rasterizable like geometry — the first real-time (≥30 fps) radiance-field rendering at 1080p. Static scenes. | Read |
 | [NOTE-046](../../../record/notes.d/NOTE-046.md) | NeuS2: Fast Learning of Neural Implicit Surfaces for Multi-view Reconstruction | Cuts NeuS surface reconstruction from about 8 hours to minutes for a static object, and to as little as 20 seconds per frame for a moving sequence. The point of the speedup is what it unlocks: at 8 hours per object, dynamic scenes with thousands of frames are simply not attemptable. | Read |
 | [NOTE-047](../../../record/notes.d/NOTE-047.md) | MiDaS v3.1 - A Model Zoo for Robust Monocular Relative Depth Estimation | Swaps the image encoder in a fixed depth-estimation architecture across BEiT, Swin, SwinV2, Next-ViT, LeViT and recent convolutional backbones, and reports the resulting performance-runtime frontier. The best backbone improves depth quality by 28%; the paper's other deliverable is the procedure for integrating a new one. | Read |
+| [NOTE-170](../../../record/notes.d/NOTE-170.md) | VGGT: Visual Geometry Grounded Transformer | One feed-forward pass produces camera parameters, point maps, depth maps and 3D point tracks together, in under a second, beating methods that post-process with geometry optimisation. Removes the global alignment step DUSt3R still needed, and works as a pretrained backbone — which is when a subject stops being a field and becomes a component. | Read |
+| [NOTE-171](../../../record/notes.d/NOTE-171.md) | DUSt3R: Geometric 3D Vision Made Easy | Regress pointmaps from uncalibrated, unposed images instead of solving for cameras and triangulating. The result worth carrying is not the accuracy but the direction of dependency: matches and camera parameters fall out of the 3D output, where the classical pipeline needs them before it can begin. | Read |

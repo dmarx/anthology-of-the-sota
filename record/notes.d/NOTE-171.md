@@ -1,6 +1,9 @@
 ---
+number: 171
 status: Read
-paper: LIT-tmpcu1a9
+formerly:
+- NOTE-tmpwa9tt
+paper: LIT-385
 title: 'DUSt3R: Geometric 3D Vision Made Easy'
 version: 1
 date: '2026-09-17'
@@ -11,9 +14,9 @@ summary: >-
   3D output, where the classical pipeline needs them before it can begin.
 ---
 
-# NOTE-tmpwa9tt: DUSt3R: Geometric 3D Vision Made Easy
+# NOTE-171: DUSt3R: Geometric 3D Vision Made Easy
 
-Read from [LIT-tmpcu1a9](../literature.d/LIT-tmpcu1a9.md) — [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132).
+Read from [LIT-385](../literature.d/LIT-385.md) — [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132).
 
 ## The constraint it declines
 
@@ -46,7 +49,7 @@ signals a reframing rather than a better solver:
 
 More than two images need a global alignment step to put all pairwise
 pointmaps in one frame — the one place an explicit optimisation survives, and
-the thing [LIT-tmp29qg5](../literature.d/LIT-tmp29qg5.md) later removes.
+the thing [LIT-384](../literature.d/LIT-384.md) later removes.
 
 ## What I am not filing from this
 

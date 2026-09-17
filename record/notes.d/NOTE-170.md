@@ -1,6 +1,9 @@
 ---
+number: 170
 status: Read
-paper: LIT-tmp29qg5
+formerly:
+- NOTE-tmp8ls9m
+paper: LIT-384
 title: 'VGGT: Visual Geometry Grounded Transformer'
 version: 1
 date: '2026-09-17'
@@ -12,13 +15,13 @@ summary: >-
   subject stops being a field and becomes a component.
 ---
 
-# NOTE-tmp8ls9m: VGGT: Visual Geometry Grounded Transformer
+# NOTE-170: VGGT: Visual Geometry Grounded Transformer
 
-Read from [LIT-tmp29qg5](../literature.d/LIT-tmp29qg5.md) — [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651).
+Read from [LIT-384](../literature.d/LIT-384.md) — [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651).
 
 ## What it adds over the paper before it
 
-[LIT-tmpcu1a9](../literature.d/LIT-tmpcu1a9.md) established that reconstruction without calibration or pose
+[LIT-385](../literature.d/LIT-385.md) established that reconstruction without calibration or pose
 is possible, and left two things: an explicit global alignment step whenever
 more than two images are involved, and a pairwise formulation that scales
 awkwardly in the number of views.
@@ -54,7 +57,7 @@ pretrained encoder for granted; this is the same move one level out.
 
 ## What this does to the record
 
-Sources [SOTA-tmpjhh4p](../practices.d/SOTA-tmpjhh4p.md) jointly with [LIT-tmpcu1a9](../literature.d/LIT-tmpcu1a9.md). Two groups, two years
+Sources [SOTA-236](../practices.d/SOTA-236.md) jointly with [LIT-385](../literature.d/LIT-385.md). Two groups, two years
 apart, and the practice rests on the pair rather than on either — DUSt3R
 showed the dependency could be inverted, this showed the inversion scales and
 needs no optimisation to finish the job.

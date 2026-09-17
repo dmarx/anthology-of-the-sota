@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-167 of 169 NOTE documents. Back to the [full index](../README.md).
+169 of 171 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -177,3 +177,5 @@
 | [NOTE-167](../../../record/notes.d/NOTE-167.md) | The Surprising Effectiveness of Test-Time Training for Few-Shot Learning | Turn the in-context examples into a loss and take gradient steps on them at inference, then discard the update. Up to 6x a fine-tuned baseline on ARC and +7.3 points on BIG-Bench Hard at 10-shot. The finding underneath is about in-context learning: the same examples are worth several times more as gradient than as context. | Read |
 | [NOTE-168](../../../record/notes.d/NOTE-168.md) | The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits | Ternary weights trained from scratch, matching FP16 from 3B upward at equal size and tokens. The interesting claim is not the compression ratio but that the matrix multiply becomes integer addition — which is a bet on hardware, and the one place the paper's argument outruns its measurements. | Read |
 | [NOTE-169](../../../record/notes.d/NOTE-169.md) | Training Language Models to Self-Correct via Reinforcement Learning | SCoRe teaches self-correction with multi-turn online RL on the model's own traces, no teacher and no extra supervision, for +15.6% on MATH and +9.1% on HumanEval. The transferable half is the diagnosis: SFT on correction traces fails by distribution mismatch or by behaviour collapse, and the method's two stages are each aimed at one of those. | Read |
+| [NOTE-170](../../../record/notes.d/NOTE-170.md) | VGGT: Visual Geometry Grounded Transformer | One feed-forward pass produces camera parameters, point maps, depth maps and 3D point tracks together, in under a second, beating methods that post-process with geometry optimisation. Removes the global alignment step DUSt3R still needed, and works as a pretrained backbone — which is when a subject stops being a field and becomes a component. | Read |
+| [NOTE-171](../../../record/notes.d/NOTE-171.md) | DUSt3R: Geometric 3D Vision Made Easy | Regress pointmaps from uncalibrated, unposed images instead of solving for cameras and triangulating. The result worth carrying is not the accuracy but the direction of dependency: matches and camera parameters fall out of the 3D output, where the classical pipeline needs them before it can begin. | Read |

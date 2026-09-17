@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-302 of 318 LIT documents. Back to the [full index](../README.md).
+304 of 320 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -312,3 +312,5 @@
 | [LIT-381](../../../record/literature.d/LIT-381.md) | Scaling Diffusion Language Models via Adaptation from Autoregressive Models | Gong et al. (2024), [ARXIV-2410.17891](https://arxiv.org/abs/2410.17891). Diffusion language models are hard to train from scratch at scale and there are a great many trained autoregressive ones, so convert instead: continual pretraining on under 200B tokens turns GPT2 and LLaMA at 127M–7B into DiffuGPT and DiffuLLaMA. The conversion rests on a stated connection between the AR and diffusion objectives rather than on the two being retrained independently. | Active |
 | [LIT-382](../../../record/literature.d/LIT-382.md) | Large Language Models Cannot Self-Correct Reasoning Yet | Huang et al. (2023), [ARXIV-2310.01798](https://arxiv.org/abs/2310.01798). The negative result the self-correction literature is answering: asked to revise its own reasoning with no external feedback, a model does not reliably improve, and often gets worse. Names the thing being tested — INTRINSIC self-correction — and that distinction is most of the paper's lasting value. | Active |
 | [LIT-383](../../../record/literature.d/LIT-383.md) | Training Language Models to Self-Correct via Reinforcement Learning | Kumar et al. (2024), [ARXIV-2409.12917](https://arxiv.org/abs/2409.12917). SCoRe: multi-turn online RL on entirely self-generated correction traces, which teaches the self-correction that prompting could not produce. +15.6% on MATH and +9.1% on HumanEval for Gemini 1.0 Pro and 1.5 Flash. Its more transferable half is the diagnosis of why supervised fine-tuning on correction traces fails. | Active |
+| [LIT-384](../../../record/literature.d/LIT-384.md) | VGGT: Visual Geometry Grounded Transformer | Wang et al. (2025), [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651). One feed-forward pass infers camera parameters, point maps, depth maps and 3D point tracks together, from one view or hundreds, in under a second — beating methods that post-process with geometry optimisation. The claim that matters is that the specialisation into separate tasks was never necessary. | Active |
+| [LIT-385](../../../record/literature.d/LIT-385.md) | DUSt3R: Geometric 3D Vision Made Easy | Wang et al. (2023), [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132). Reconstruct from uncalibrated, unposed images by regressing pointmaps, with no camera intrinsics or extrinsics supplied. The inversion is the content: pixel matches and relative and absolute camera come back OUT of the 3D output, where the classical pipeline demands them as inputs before it can triangulate anything. | Active |

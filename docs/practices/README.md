@@ -58,15 +58,15 @@ code and run `luria link --fix`.
 **[Generative modeling](tags/generative-modeling.md)** (4) — diffusion, samplers, text-to-image, conditioning and control:
 [203](../../record/practices.d/SOTA-203.md) · [206](../../record/practices.d/SOTA-206.md) · [207](../../record/practices.d/SOTA-207.md) · [232](../../record/practices.d/SOTA-232.md)
 
-**[Vision and graphics](tags/vision-and-graphics.md)** (1) — neural rendering, reconstruction, perception, visual foundation models:
-[205](../../record/practices.d/SOTA-205.md)
+**[Vision and graphics](tags/vision-and-graphics.md)** (2) — neural rendering, reconstruction, perception, visual foundation models:
+[205](../../record/practices.d/SOTA-205.md) · [236](../../record/practices.d/SOTA-236.md)
 
 **[Tiny models](tags/tiny-models.md)** (8) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts:
 [121](../../record/practices.d/SOTA-121.md) · [122](../../record/practices.d/SOTA-122.md) · [123](../../record/practices.d/SOTA-123.md) · [124](../../record/practices.d/SOTA-124.md) · [125](../../record/practices.d/SOTA-125.md) · [126](../../record/practices.d/SOTA-126.md) · [127](../../record/practices.d/SOTA-127.md) · [128](../../record/practices.d/SOTA-128.md)
 
-**By consensus:** [Not judged](consensus/unassessed.md) (134, the default) · [One source](consensus/unreplicated.md) (40) · [In dispute](consensus/contested.md) (8) · [Spreading](consensus/emerging.md) (28) · [Agreed](consensus/converged.md) (18) · [Assumed](consensus/universal.md) (7)
+**By consensus:** [Not judged](consensus/unassessed.md) (134, the default) · [One source](consensus/unreplicated.md) (40) · [In dispute](consensus/contested.md) (8) · [Spreading](consensus/emerging.md) (29) · [Agreed](consensus/converged.md) (18) · [Assumed](consensus/universal.md) (7)
 
-**By status:** [Current practice](status/Active.md) (163) · [Promising](status/Proposed.md) (45) · [Not yet judged](status/Deferred.md) (0) · [Replaced](status/Superseded.md) (9) · [Retired](status/Rejected.md) (18)
+**By status:** [Current practice](status/Active.md) (164) · [Promising](status/Proposed.md) (45) · [Not yet judged](status/Deferred.md) (0) · [Replaced](status/Superseded.md) (9) · [Retired](status/Rejected.md) (18)
 
 ## Chronological
 
@@ -317,4 +317,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [SOTA-233](../../record/practices.d/SOTA-233.md) | Train self-correction with multi-turn online RL on the model's own traces, rather than prompting for it | Kumar et al. (2024), [LIT-383](../../record/literature.d/LIT-383.md) — [ARXIV-2409.12917](https://arxiv.org/abs/2409.12917). Self-correction is a capability to be trained, not a behaviour to be requested. Prompting a model to revise its own reasoning does not reliably help and can hurt; supervised fine-tuning on correction traces fails by distribution mismatch or behaviour collapse; multi-turn online RL on self-generated traces reaches +15.6% on MATH and +9.1% on HumanEval. | Active |
 | [SOTA-234](../../record/practices.d/SOTA-234.md) | Train in the target low-bit format from scratch rather than quantizing a finished model | Ma et al. (2024), [LIT-380](../../record/literature.d/LIT-380.md) — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764). Decide the serving format before training and train in it, rather than training in FP16 and compressing afterwards. Ternary weights trained from scratch match an FP16 model of equal size and token budget from 3B upward — but the compute argument assumes hardware built for the format, and only the memory saving is measured on machines that exist. | Proposed |
 | [SOTA-235](../../record/practices.d/SOTA-235.md) | Update the weights at inference on the test instance when the task is structurally novel | Akyürek et al. (2024), [LIT-379](../../record/literature.d/LIT-379.md) — [ARXIV-2411.07279](https://arxiv.org/abs/2411.07279). Build a loss from the test instance's own in-context examples, take gradient steps at inference, then discard the update. Up to 6x a fine-tuned baseline on ARC (53.0% at 8B) and +7.3 points on BIG-Bench Hard at 10-shot. The examples are worth several times more as gradient than as context. | Active |
+| [SOTA-236](../../record/practices.d/SOTA-236.md) | Predict scene geometry directly instead of solving for cameras first and triangulating | Wang et al. (2023), [LIT-385](../../record/literature.d/LIT-385.md) — [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132); Wang et al. (2025), [LIT-384](../../record/literature.d/LIT-384.md) — [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651). Given uncalibrated, unposed images, regress the 3D structure and let camera parameters and pixel matches fall out of it, rather than estimating calibration and pose first so that triangulation becomes possible. The quantities the classical pipeline needs as inputs are by-products of this one. | Active |
 

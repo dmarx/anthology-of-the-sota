@@ -23,8 +23,8 @@
 **[inference-optimization](tags/inference-optimization.md)** (5):
 [023](../../record/notes.d/NOTE-023.md) · [159](../../record/notes.d/NOTE-159.md) · [160](../../record/notes.d/NOTE-160.md) · [162](../../record/notes.d/NOTE-162.md) · [163](../../record/notes.d/NOTE-163.md)
 
-**[model-architecture](tags/model-architecture.md)** (9):
-[004](../../record/notes.d/NOTE-004.md) · [011](../../record/notes.d/NOTE-011.md) · [016](../../record/notes.d/NOTE-016.md) · [028](../../record/notes.d/NOTE-028.md) · [054](../../record/notes.d/NOTE-054.md) · [055](../../record/notes.d/NOTE-055.md) · [060](../../record/notes.d/NOTE-060.md) · [069](../../record/notes.d/NOTE-069.md) · [168](../../record/notes.d/NOTE-168.md)
+**[model-architecture](tags/model-architecture.md)** (10):
+[004](../../record/notes.d/NOTE-004.md) · [011](../../record/notes.d/NOTE-011.md) · [016](../../record/notes.d/NOTE-016.md) · [028](../../record/notes.d/NOTE-028.md) · [054](../../record/notes.d/NOTE-054.md) · [055](../../record/notes.d/NOTE-055.md) · [060](../../record/notes.d/NOTE-060.md) · [069](../../record/notes.d/NOTE-069.md) · [168](../../record/notes.d/NOTE-168.md) · [170](../../record/notes.d/NOTE-170.md)
 
 **[model-stability](tags/model-stability.md)** (8):
 [001](../../record/notes.d/NOTE-001.md) · [008](../../record/notes.d/NOTE-008.md) · [013](../../record/notes.d/NOTE-013.md) · [022](../../record/notes.d/NOTE-022.md) · [056](../../record/notes.d/NOTE-056.md) · [058](../../record/notes.d/NOTE-058.md) · [116](../../record/notes.d/NOTE-116.md) · [131](../../record/notes.d/NOTE-131.md)
@@ -38,10 +38,10 @@
 **[training-optimization](tags/training-optimization.md)** (19):
 [012](../../record/notes.d/NOTE-012.md) · [015](../../record/notes.d/NOTE-015.md) · [017](../../record/notes.d/NOTE-017.md) · [024](../../record/notes.d/NOTE-024.md) · [025](../../record/notes.d/NOTE-025.md) · [039](../../record/notes.d/NOTE-039.md) · [041](../../record/notes.d/NOTE-041.md) · [062](../../record/notes.d/NOTE-062.md) · [066](../../record/notes.d/NOTE-066.md) · [072](../../record/notes.d/NOTE-072.md) · [073](../../record/notes.d/NOTE-073.md) · [079](../../record/notes.d/NOTE-079.md) · [080](../../record/notes.d/NOTE-080.md) · [087](../../record/notes.d/NOTE-087.md) · [088](../../record/notes.d/NOTE-088.md) · [106](../../record/notes.d/NOTE-106.md) · [123](../../record/notes.d/NOTE-123.md) · [132](../../record/notes.d/NOTE-132.md) · [144](../../record/notes.d/NOTE-144.md)
 
-**[vision-and-graphics](tags/vision-and-graphics.md)** (10):
-[018](../../record/notes.d/NOTE-018.md) · [027](../../record/notes.d/NOTE-027.md) · [032](../../record/notes.d/NOTE-032.md) · [035](../../record/notes.d/NOTE-035.md) · [037](../../record/notes.d/NOTE-037.md) · [042](../../record/notes.d/NOTE-042.md) · [044](../../record/notes.d/NOTE-044.md) · [045](../../record/notes.d/NOTE-045.md) · [046](../../record/notes.d/NOTE-046.md) · [047](../../record/notes.d/NOTE-047.md)
+**[vision-and-graphics](tags/vision-and-graphics.md)** (12):
+[018](../../record/notes.d/NOTE-018.md) · [027](../../record/notes.d/NOTE-027.md) · [032](../../record/notes.d/NOTE-032.md) · [035](../../record/notes.d/NOTE-035.md) · [037](../../record/notes.d/NOTE-037.md) · [042](../../record/notes.d/NOTE-042.md) · [044](../../record/notes.d/NOTE-044.md) · [045](../../record/notes.d/NOTE-045.md) · [046](../../record/notes.d/NOTE-046.md) · [047](../../record/notes.d/NOTE-047.md) · [170](../../record/notes.d/NOTE-170.md) · [171](../../record/notes.d/NOTE-171.md)
 
-**By status:** [Read](status/Read.md) (167) · [Skimmed](status/Skimmed.md) (2) · [Unread](status/Unread.md) (0) · [Re-read](status/Superseded.md) (0)
+**By status:** [Read](status/Read.md) (169) · [Skimmed](status/Skimmed.md) (2) · [Unread](status/Unread.md) (0) · [Re-read](status/Superseded.md) (0)
 
 What the status column means in this scheme — the words are luria's, the meanings are this project's.
 
@@ -223,4 +223,6 @@ What the status column means in this scheme — the words are luria's, the meani
 | [NOTE-167](../../record/notes.d/NOTE-167.md) | The Surprising Effectiveness of Test-Time Training for Few-Shot Learning | Turn the in-context examples into a loss and take gradient steps on them at inference, then discard the update. Up to 6x a fine-tuned baseline on ARC and +7.3 points on BIG-Bench Hard at 10-shot. The finding underneath is about in-context learning: the same examples are worth several times more as gradient than as context. | Read |
 | [NOTE-168](../../record/notes.d/NOTE-168.md) | The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits | Ternary weights trained from scratch, matching FP16 from 3B upward at equal size and tokens. The interesting claim is not the compression ratio but that the matrix multiply becomes integer addition — which is a bet on hardware, and the one place the paper's argument outruns its measurements. | Read |
 | [NOTE-169](../../record/notes.d/NOTE-169.md) | Training Language Models to Self-Correct via Reinforcement Learning | SCoRe teaches self-correction with multi-turn online RL on the model's own traces, no teacher and no extra supervision, for +15.6% on MATH and +9.1% on HumanEval. The transferable half is the diagnosis: SFT on correction traces fails by distribution mismatch or by behaviour collapse, and the method's two stages are each aimed at one of those. | Read |
+| [NOTE-170](../../record/notes.d/NOTE-170.md) | VGGT: Visual Geometry Grounded Transformer | One feed-forward pass produces camera parameters, point maps, depth maps and 3D point tracks together, in under a second, beating methods that post-process with geometry optimisation. Removes the global alignment step DUSt3R still needed, and works as a pretrained backbone — which is when a subject stops being a field and becomes a component. | Read |
+| [NOTE-171](../../record/notes.d/NOTE-171.md) | DUSt3R: Geometric 3D Vision Made Easy | Regress pointmaps from uncalibrated, unposed images instead of solving for cameras and triangulating. The result worth carrying is not the accuracy but the direction of dependency: matches and camera parameters fall out of the 3D output, where the classical pipeline needs them before it can begin. | Read |
 

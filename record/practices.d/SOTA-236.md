@@ -1,5 +1,8 @@
 ---
+number: 236
 status: 'Active'
+formerly:
+- SOTA-tmpjhh4p
 title: 'Predict scene geometry directly instead of solving for cameras first and triangulating'
 version: 1
 tags:
@@ -13,28 +16,28 @@ consensus_note: >-
   and nothing in this record measures the crossover.
 date: '2026-09-17'
 source:
-- LIT-tmpcu1a9
-- LIT-tmp29qg5
+- LIT-385
+- LIT-384
 introduced_by:
-- LIT-tmpcu1a9
+- LIT-385
 implementations:
 - 'DUSt3R'
 - 'VGGT'
 summary: >-
-  Wang et al. (2023), [LIT-tmpcu1a9](../literature.d/LIT-tmpcu1a9.md) — [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132); Wang et al. (2025),
-  [LIT-tmp29qg5](../literature.d/LIT-tmp29qg5.md) — [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651). Given uncalibrated, unposed images, regress
+  Wang et al. (2023), [LIT-385](../literature.d/LIT-385.md) — [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132); Wang et al. (2025),
+  [LIT-384](../literature.d/LIT-384.md) — [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651). Given uncalibrated, unposed images, regress
   the 3D structure and let camera parameters and pixel matches fall out of it,
   rather than estimating calibration and pose first so that triangulation
   becomes possible. The quantities the classical pipeline needs as inputs are
   by-products of this one.
 ---
 
-# SOTA-tmpjhh4p: Predict scene geometry directly instead of solving for cameras first and triangulating
+# SOTA-236: Predict scene geometry directly instead of solving for cameras first and triangulating
 
 ## Source
 
-Wang et al. (2023), [LIT-tmpcu1a9](../literature.d/LIT-tmpcu1a9.md) — [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132) (DUSt3R).
-Wang et al. (2025), [LIT-tmp29qg5](../literature.d/LIT-tmp29qg5.md) — [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651) (VGGT).
+Wang et al. (2023), [LIT-385](../literature.d/LIT-385.md) — [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132) (DUSt3R).
+Wang et al. (2025), [LIT-384](../literature.d/LIT-384.md) — [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651) (VGGT).
 
 ## The dependency being inverted
 

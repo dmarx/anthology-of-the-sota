@@ -6,7 +6,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-28 of 235 SOTA documents. Back to the [full index](../README.md).
+29 of 236 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -38,3 +38,4 @@
 | [SOTA-214](../../../record/practices.d/SOTA-214.md) | Pair any gradient compressor with error feedback, and correct the momentum it is applied under | Compression is lossy and the loss accumulates. Every scheme in this record that survives high compression ratios keeps the residual locally and adds it back to the next step, and every report of a compressor "not converging" that the record holds is a report of that step being skipped: rank-4 PowerSGD fails on Cifar10 without it, and gradient sparsification at 99.9% degrades badly without the momentum-buffer version of it. | Active |
 | [SOTA-217](../../../record/practices.d/SOTA-217.md) | Align the hidden-unit permutation before averaging weights from separately trained networks | A neural network's hidden units can be permuted without changing the function, so two networks trained from different seeds sit in different corners of the same symmetry orbit. Averaging their weights directly averages across that mismatch and traverses a loss barrier that is mostly an artefact of labelling. Match the units first — by weight matching, or by activation matching on a handful of samples — and most of the barrier is not there. | Proposed |
 | [SOTA-219](../../../record/practices.d/SOTA-219.md) | Leave the inner optimizer state unsynchronised in local-update training | When workers train independently for hundreds of steps and synchronise by exchanging deltas, the Adam moments each worker accumulated are local state and should stay local. Synchronising them triples the communication for negligible quality gain — which means most of what the scheme saves is not saved by communicating rarely, but by communicating less each time. | Active |
+| [SOTA-236](../../../record/practices.d/SOTA-236.md) | Predict scene geometry directly instead of solving for cameras first and triangulating | Wang et al. (2023), [LIT-385](../../../record/literature.d/LIT-385.md) — [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132); Wang et al. (2025), [LIT-384](../../../record/literature.d/LIT-384.md) — [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651). Given uncalibrated, unposed images, regress the 3D structure and let camera parameters and pixel matches fall out of it, rather than estimating calibration and pose first so that triangulation becomes possible. The quantities the classical pipeline needs as inputs are by-products of this one. | Active |

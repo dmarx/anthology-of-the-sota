@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-40 of 318 LIT documents. Back to the [full index](../README.md).
+41 of 320 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -50,3 +50,4 @@
 | [LIT-226](../../../record/literature.d/LIT-226.md) | MoEfication: Transformer Feed-forward Layers are Mixtures of Experts | Zhang et al. (2021), [ARXIV-2110.01786](https://arxiv.org/abs/2110.01786). Most inputs activate only a tiny fraction of an FFN's neurons, and the neurons that fire together can be partitioned into experts with a router bolted on afterwards — the same parameters, conditionally used. 10–30% of FFN parameters per input retains over 95% of performance. | Active |
 | [LIT-227](../../../record/literature.d/LIT-227.md) | Sparse Upcycling: Training Mixture-of-Experts from Dense Checkpoints | Komatsuzaki et al. (2022), [ARXIV-2212.05055](https://arxiv.org/abs/2212.05055). Initialize a mixture-of-experts model from a dense checkpoint instead of from scratch. Upcycled T5 and ViT models beat their dense counterparts using ~50% of the dense pretraining sunk cost, and beat MoE models trained from scratch on 100% of it. | Active |
 | [LIT-380](../../../record/literature.d/LIT-380.md) | The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits | Ma et al. (2024), [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764). Every weight is ternary, {-1, 0, +1}, and the model is trained that way from scratch rather than quantized afterwards. From 3B upward it matches an FP16 LLaMA of the same size and token budget on perplexity and end-task accuracy, while the matrix multiply reduces to integer addition — a compute paradigm rather than a compression ratio. | Active |
+| [LIT-384](../../../record/literature.d/LIT-384.md) | VGGT: Visual Geometry Grounded Transformer | Wang et al. (2025), [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651). One feed-forward pass infers camera parameters, point maps, depth maps and 3D point tracks together, from one view or hundreds, in under a second — beating methods that post-process with geometry optimisation. The claim that matters is that the specialisation into separate tasks was never necessary. | Active |

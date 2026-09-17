@@ -6,7 +6,7 @@
 
 **Systems optimization** — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
-6 of 312 LIT documents. Back to the [full index](../README.md).
+7 of 313 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -16,3 +16,4 @@
 | [LIT-116](../../../record/literature.d/LIT-116.md) v2 | TensorRT-LLM: A Compiler and Runtime for LLMs | A synthetic entry the migration produced: no paper of this title exists, and the identifier it carried belongs to an unrelated physics preprint. Retired rather than deleted. The source field points at the software project itself. | Rejected — software with no published paper behind it, and no reading in the record |
 | [LIT-197](../../../record/literature.d/LIT-197.md) | Microscaling Data Formats for Deep Learning | Rouhani et al. (2023), [ARXIV-2310.10537](https://arxiv.org/abs/2310.10537). The MX formats: a block of 32 elements sharing one 8-bit power-of-two scale, with the elements themselves in FP8, FP6, FP4 or INT8. Over two dozen benchmarks — 8-bit MX runs inference on FP32 checkpoints with no calibration, 6-bit matches FP32 for training weights, activations *and* gradients with no recipe change, and 4-bit weights cost only a minor drop. The first sub-8-bit training result of that kind. | Active |
 | [LIT-367](../../../record/literature.d/LIT-367.md) | ZeRO-Infinity: Breaking the GPU Memory Wall for Extreme Scale Deep Learning | Rajbhandari et al. (2021), [ARXIV-2104.07857](https://arxiv.org/abs/2104.07857). ZeRO-Infinity offloads parameters, gradients and optimizer state to CPU and NVMe with bandwidth- centric partitioning, so model size stops being bounded by aggregate GPU memory. | Active |
+| [LIT-378](../../../record/literature.d/LIT-378.md) | QLoRA: Efficient Finetuning of Quantized LLMs | Dettmers et al. (2023), [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314). Back-propagate through a frozen 4-bit base model into 16-bit LoRA adapters: 65B fine-tuning drops from >780GB to <48GB with no loss against a 16-bit fully fine-tuned baseline. Carries a second finding the quantization headline tends to bury — LoRA on the query and value projections alone does not reach full fine-tuning at scale, and the adapter COUNT, not the rank, is what closes the gap. | Active |

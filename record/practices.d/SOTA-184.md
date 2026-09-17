@@ -72,7 +72,7 @@ attention query and value projections. Those are not the same instruction,
 and the gap between them became the default: query/value is what the tooling
 ships and what most published fine-tunes use.
 
-[SOTA-tmpdf5n5](SOTA-tmpdf5n5.md) is the measurement of that gap. On large base models,
+[SOTA-231](SOTA-231.md) is the measurement of that gap. On large base models,
 query/value alone does not replicate full fine-tuning; the number of adapted
 matrices is what closes it, and the rank — the hyperparameter people actually
 search — is flat across the sweep. Read the two together: this practice is

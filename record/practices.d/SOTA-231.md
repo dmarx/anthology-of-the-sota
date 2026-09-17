@@ -1,5 +1,8 @@
 ---
+number: 231
 status: 'Active'
+formerly:
+- SOTA-tmpdf5n5
 title: 'Put an adapter on every linear layer, not just the attention query and value projections'
 version: 1
 tags:
@@ -12,11 +15,11 @@ consensus_note: >-
   discount it.
 date: '2026-09-17'
 source:
-- LIT-tmpu3hfw
+- LIT-378
 introduced_by:
-- LIT-tmpu3hfw
+- LIT-378
 summary: >-
-  Dettmers et al. (2023), [LIT-tmpu3hfw](../literature.d/LIT-tmpu3hfw.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314). Adapters on the query
+  Dettmers et al. (2023), [LIT-378](../literature.d/LIT-378.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314). Adapters on the query
   and value projections alone — the default inherited from the LoRA paper —
   do not reach full fine-tuning on large base models. The number of adapted
   matrices is the hyperparameter that decides it; the projection rank `r`,
@@ -24,11 +27,11 @@ summary: >-
   paper's sweep.
 ---
 
-# SOTA-tmpdf5n5: Put an adapter on every linear layer, not just the attention query and value projections
+# SOTA-231: Put an adapter on every linear layer, not just the attention query and value projections
 
 ## Source
 
-Dettmers et al. (2023), [LIT-tmpu3hfw](../literature.d/LIT-tmpu3hfw.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314).
+Dettmers et al. (2023), [LIT-378](../literature.d/LIT-378.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314).
 
 ## The claim
 

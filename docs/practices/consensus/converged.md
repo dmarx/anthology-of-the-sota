@@ -6,7 +6,7 @@
 
 **Agreed** — the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately.
 
-17 of 229 SOTA documents. Back to the [full index](../README.md).
+18 of 231 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -27,3 +27,4 @@
 | [SOTA-207](../../../record/practices.d/SOTA-207.md) | Use the deterministic sampler when the noise input has to mean something | Song et al. (2020), [LIT-038](../../../record/literature.d/LIT-038.md). A stochastic sampler injects fresh noise at every step, so nothing about the starting point survives to the output. Setting the family's stochasticity to zero makes the initial noise a latent code you can interpolate in and invert to. | Active |
 | [SOTA-227](../../../record/practices.d/SOTA-227.md) | Decode with a draft model and an accept-reject rule, which is exactly lossless | Autoregressive decoding runs one serial model pass per token and each pass is bounded by streaming the weights, so the arithmetic units idle. Have a cheap draft model guess the next `gamma` tokens, score all `gamma + 1` positions in one target pass, and keep a prefix under an accept-reject rule built so the output distribution is the target's exactly. 2x-3x at 11B and 2-2.5x at 70B, with no retraining, no architecture change and nothing traded away. | Active |
 | [SOTA-228](../../../record/practices.d/SOTA-228.md) | Pick the inference partitioning from where the bottleneck is, and expect it to move between prefill and decode | Pope et al. (2022), [LIT-110](../../../record/literature.d/LIT-110.md). Serving is not one workload: prefill parallelises over the prompt, decode is serial over the output, and the two are bounded by different things. Worse, the binding constraint moves — at small batch and short context it is loading the weights, and at large batch and long context it is loading the KV cache, which on a 500B model at batch 512 and 2048 tokens reaches 3 TB, three times the parameters. Choose the layout from a cost model of the regime you are in, and re-choose it when the regime changes. | Active |
+| [SOTA-230](../../../record/practices.d/SOTA-230.md) | Quantize the frozen base to 4-bit and keep the adapters in 16-bit | Dettmers et al. (2023), [LIT-378](../../../record/literature.d/LIT-378.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314). Store the frozen base weights in 4-bit NormalFloat and dequantize to BFloat16 for every matrix multiply, training only 16-bit LoRA adapters. Fine-tuning a 65B model falls from >780GB to <48GB with no measured loss against a 16-bit fully fine-tuned baseline, because the arithmetic never happens in 4 bits. | Active |

@@ -4,8 +4,9 @@
 
 **systems-optimization**.
 
-1 of 163 NOTE documents. Back to the [full index](../README.md).
+2 of 164 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-122](../../../record/notes.d/NOTE-122.md) | ZeRO-Infinity: Breaking the GPU Memory Wall for Extreme Scale Deep Learning | By partitioning model states across all parallel devices and using a bandwidth-centric allgather strategy (rather than per-device broadcast), ZeRO-Infinity aggregates PCIe bandwidth linearly with device count, making NVMe and CPU offloading fast enough to sustain efficient training despite their individually slow bandwidths. | Read |
+| [NOTE-164](../../../record/notes.d/NOTE-164.md) | QLoRA: Efficient Finetuning of Quantized LLMs | Store the frozen base in 4 bits, compute in 16, and train only LoRA adapters: 65B fine-tuning goes from >780GB to <48GB with no measured loss against a 16-bit fully fine-tuned baseline. The quantization is the headline; the more useful result for anyone already using LoRA is that the standard query/value placement does not reach full fine-tuning at scale, and that the adapter count rather than the rank is what closes the gap. | Read |

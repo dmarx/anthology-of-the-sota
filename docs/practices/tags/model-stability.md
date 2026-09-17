@@ -6,7 +6,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-27 of 229 SOTA documents. Back to the [full index](../README.md).
+27 of 231 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,7 +20,7 @@
 | [SOTA-027](../../../record/practices.d/SOTA-027.md) v2 | Use a smaller learning rate for LayerNorm parameters | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013). | Rejected — The cited paper contains no discussion of learning rates and argues the parameters in question should be removed rather than tuned. The durable claim — treat norm parameters as their own group — is elsewhere in the record, and is about weight decay rather than rate |
 | [SOTA-032](../../../record/practices.d/SOTA-032.md) v2 | Put the layer normalization inside the residual block, before the sublayer | Xiong et al. (2020), [LIT-114](../../../record/literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). Pre-LN: normalize the input to each sublayer rather than the sum after it, so the gradients near the output are well behaved at initialization. | Active |
 | [SOTA-050](../../../record/practices.d/SOTA-050.md) | Scale attention weights by 1/sqrt(head_dim) | Vaswani et al. (2017), [LIT-008](../../../record/literature.d/LIT-008.md) — [ARXIV-1706.03762](https://arxiv.org/abs/1706.03762). | Active |
-| [SOTA-051](../../../record/practices.d/SOTA-051.md) v3 | Initialize final layer weights near zero | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
+| [SOTA-051](../../../record/practices.d/SOTA-051.md) v4 | Initialize a residual or adapter branch to exactly zero, not merely near zero | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). Start an added branch at exactly zero so it is the identity at initialisation, and let training raise it. Exact zero rather than small-random is the claim: a small random branch is PROBABLY harmless, a zero one is PROVABLY the identity — which is what matters when the thing being protected is a residual stack deep enough to attenuate, or a pretrained model expensive enough that adapter noise is not worth risking. | Active |
 | [SOTA-052](../../../record/practices.d/SOTA-052.md) | Use smaller variance for deep networks | Wang et al. (2022), [LIT-084](../../../record/literature.d/LIT-084.md) — [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555). | Active |
 | [SOTA-053](../../../record/practices.d/SOTA-053.md) | Special handling for gated architectures | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
 | [SOTA-060](../../../record/practices.d/SOTA-060.md) v2 | Initialize layer norms with smaller variance (0.02) for stability | Narayanan et al. (2021), [LIT-043](../../../record/literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). | Active |

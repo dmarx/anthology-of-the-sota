@@ -1,6 +1,9 @@
 ---
+number: 164
 status: Read
-paper: LIT-tmpu3hfw
+formerly:
+- NOTE-tmpdlk6r
+paper: LIT-378
 title: 'QLoRA: Efficient Finetuning of Quantized LLMs'
 version: 1
 date: '2026-09-17'
@@ -13,9 +16,9 @@ summary: >-
   and that the adapter count rather than the rank is what closes the gap.
 ---
 
-# NOTE-tmpdlk6r: QLoRA: Efficient Finetuning of Quantized LLMs
+# NOTE-164: QLoRA: Efficient Finetuning of Quantized LLMs
 
-Read from [LIT-tmpu3hfw](../literature.d/LIT-tmpu3hfw.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314).
+Read from [LIT-378](../literature.d/LIT-378.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314).
 
 ## What the method actually is
 

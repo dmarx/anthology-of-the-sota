@@ -1,5 +1,8 @@
 ---
+number: 230
 status: 'Active'
+formerly:
+- SOTA-tmpasvp1
 title: 'Quantize the frozen base to 4-bit and keep the adapters in 16-bit'
 version: 1
 tags:
@@ -14,26 +17,26 @@ consensus_note: >-
   measurement (DP-005).
 date: '2026-09-17'
 source:
-- LIT-tmpu3hfw
+- LIT-378
 introduced_by:
-- LIT-tmpu3hfw
+- LIT-378
 implementations:
 - 'bitsandbytes'
 - 'the 4-bit path in the major PEFT libraries'
 - 'Guanaco'
 summary: >-
-  Dettmers et al. (2023), [LIT-tmpu3hfw](../literature.d/LIT-tmpu3hfw.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314). Store the frozen base
+  Dettmers et al. (2023), [LIT-378](../literature.d/LIT-378.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314). Store the frozen base
   weights in 4-bit NormalFloat and dequantize to BFloat16 for every matrix
   multiply, training only 16-bit LoRA adapters. Fine-tuning a 65B model falls
   from >780GB to <48GB with no measured loss against a 16-bit fully
   fine-tuned baseline, because the arithmetic never happens in 4 bits.
 ---
 
-# SOTA-tmpasvp1: Quantize the frozen base to 4-bit and keep the adapters in 16-bit
+# SOTA-230: Quantize the frozen base to 4-bit and keep the adapters in 16-bit
 
 ## Source
 
-Dettmers et al. (2023), [LIT-tmpu3hfw](../literature.d/LIT-tmpu3hfw.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314).
+Dettmers et al. (2023), [LIT-378](../literature.d/LIT-378.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314).
 
 ## The method
 
@@ -80,7 +83,7 @@ general guarantee.
 
 It also inherits every condition of the adapter method underneath it: this
 practice is a way of *holding the base*, not a way of adapting. In particular
-it inherits [SOTA-tmpdf5n5](SOTA-tmpdf5n5.md) — quantizing the base does not excuse leaving the
+it inherits [SOTA-231](SOTA-231.md) — quantizing the base does not excuse leaving the
 adapters on the query and value projections alone, and the same paper is the
 source of both.
 

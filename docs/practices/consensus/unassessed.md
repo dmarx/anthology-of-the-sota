@@ -6,7 +6,7 @@
 
 **Not judged** — nobody has assessed where the field stands on this; the default, and true of most of the corpus.
 
-134 of 229 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
+134 of 231 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -57,7 +57,7 @@
 | [SOTA-048](../../../record/practices.d/SOTA-048.md) | Group small tensors before communication | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Active |
 | [SOTA-049](../../../record/practices.d/SOTA-049.md) | Set buffer size to network bandwidth-delay product | Jiang et al. (2020), [LIT-051](../../../record/literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang. | Rejected — collapses two different quantities into one unfollowable sentence — a TCP socket buffer sized by bandwidth-delay product, and a gradient fusion buffer sized by the overlap trade. The fusion-buffer half is SOTA-048, which now carries Horovod's attributable 64 MB default; the transport half is a claim about networks with no source here |
 | [SOTA-050](../../../record/practices.d/SOTA-050.md) | Scale attention weights by 1/sqrt(head_dim) | Vaswani et al. (2017), [LIT-008](../../../record/literature.d/LIT-008.md) — [ARXIV-1706.03762](https://arxiv.org/abs/1706.03762). | Active |
-| [SOTA-051](../../../record/practices.d/SOTA-051.md) v3 | Initialize final layer weights near zero | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
+| [SOTA-051](../../../record/practices.d/SOTA-051.md) v4 | Initialize a residual or adapter branch to exactly zero, not merely near zero | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). Start an added branch at exactly zero so it is the identity at initialisation, and let training raise it. Exact zero rather than small-random is the claim: a small random branch is PROBABLY harmless, a zero one is PROVABLY the identity — which is what matters when the thing being protected is a residual stack deep enough to attenuate, or a pretrained model expensive enough that adapter noise is not worth risking. | Active |
 | [SOTA-052](../../../record/practices.d/SOTA-052.md) | Use smaller variance for deep networks | Wang et al. (2022), [LIT-084](../../../record/literature.d/LIT-084.md) — [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555). | Active |
 | [SOTA-053](../../../record/practices.d/SOTA-053.md) | Special handling for gated architectures | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). | Active |
 | [SOTA-054](../../../record/practices.d/SOTA-054.md) v2 | Derive the checkpoint interval from online profiling and adapt it at runtime against an overhead bound | Mohan et al. (2021), [LIT-059](../../../record/literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan. | Active |

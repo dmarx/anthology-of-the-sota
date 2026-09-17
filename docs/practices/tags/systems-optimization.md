@@ -6,7 +6,7 @@
 
 **Systems optimization** — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
-9 of 229 SOTA documents. Back to the [full index](../README.md).
+10 of 231 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -19,3 +19,4 @@
 | [SOTA-090](../../../record/practices.d/SOTA-090.md) | Use hardware-specific memory layouts | Ivanov et al. (2020), [LIT-066](../../../record/literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). | Active |
 | [SOTA-091](../../../record/practices.d/SOTA-091.md) | Profile and optimize memory access patterns | Ivanov et al. (2020), [LIT-066](../../../record/literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). | Active |
 | [SOTA-114](../../../record/practices.d/SOTA-114.md) | Fuse attention operations where possible | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
+| [SOTA-230](../../../record/practices.d/SOTA-230.md) | Quantize the frozen base to 4-bit and keep the adapters in 16-bit | Dettmers et al. (2023), [LIT-378](../../../record/literature.d/LIT-378.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314). Store the frozen base weights in 4-bit NormalFloat and dequantize to BFloat16 for every matrix multiply, training only 16-bit LoRA adapters. Fine-tuning a 65B model falls from >780GB to <48GB with no measured loss against a 16-bit fully fine-tuned baseline, because the arithmetic never happens in 4 bits. | Active |

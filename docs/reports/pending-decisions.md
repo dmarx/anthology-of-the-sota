@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**67 document(s) awaiting a decision.**
+**68 document(s) awaiting a decision.**
 
 ## SOTAs
 
-43 of the 67.
+43 of the 68.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -59,7 +59,7 @@
 
 ## THEORYs
 
-7 of the 67.
+7 of the 68.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -73,17 +73,17 @@
 
 ## LITs
 
-3 of the 67.
+3 of the 68.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-08-24 | Proposed | [LIT-101](../../record/literature.d/LIT-101.md) | 3 | 0 | AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs |
-| 2026-08-24 | Proposed | [LIT-104](../../record/literature.d/LIT-104.md) | 2 | 0 | ReLoRA: High-Rank Training Through Low-Rank Updates |
+| 2026-08-24 | Proposed | [LIT-104](../../record/literature.d/LIT-104.md) | 3 | 0 | ReLoRA: High-Rank Training Through Low-Rank Updates |
 | 2026-09-15 | Deferred | [LIT-364](../../record/literature.d/LIT-364.md) | 2 | 0 | Classifying high-dimensional Gaussian mixtures: Where kernel methods fail and neural networks succeed |
 
 ## ADRs
 
-14 of the 67.
+15 of the 68.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -101,9 +101,10 @@
 | 2026-09-16 | Proposed | [ADR-039](../../record/decisions.d/ADR-039.md) | 2 | 0 | The configuration is part of the record, and the lint reads it |
 | 2026-09-16 | Proposed | [ADR-037](../../record/decisions.d/ADR-037.md) | 0 | 0 | Fail the build on `source-mismatch`, and take the source invariant upstream |
 | 2026-09-16 | Proposed | [ADR-040](../../record/decisions.d/ADR-040.md) | 0 | 0 | Advice on how to prove a theorem is out of scope; advice on how to find out whether a technique worked is not |
+| 2026-09-16 | Proposed | [ADR-042](../../record/decisions.d/ADR-042.md) | 0 | 0 | A practice may be filed in order to say do not do this |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (7): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md), [ADR-040](../../record/decisions.d/ADR-040.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (8): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md), [ADR-040](../../record/decisions.d/ADR-040.md), [ADR-042](../../record/decisions.d/ADR-042.md) — these are the cheapest to close, since nothing depends on the answer.

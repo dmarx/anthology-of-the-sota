@@ -32,7 +32,7 @@
 ## From Initialize the LayerNorm gain to 1
 
 - alongside: [SOTA-025](../record/practices.d/SOTA-025.md) — Initialize the LayerNorm gain to 1 *(Active, unassessed)*
-- alongside: [SOTA-051](../record/practices.d/SOTA-051.md) — Initialize final layer weights near zero *(Active, unassessed)*
+- alongside: [SOTA-051](../record/practices.d/SOTA-051.md) — Initialize a residual or adapter branch to exactly zero, not merely near zero *(Active, unassessed)*
 - alongside: [SOTA-060](../record/practices.d/SOTA-060.md) — Initialize layer norms with smaller variance (0.02) for stability *(Active, unassessed)*
 
 ## From Stage optimizer states across data parallel ranks (ZeRO-1)

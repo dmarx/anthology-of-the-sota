@@ -647,8 +647,14 @@
     "ARXIV/2410.06205": {
       "title": "Round and Round We Go! What makes Rotary Positional Encodings useful?"
     },
+    "ARXIV/2410.17891": {
+      "title": "Scaling Diffusion Language Models via Adaptation from Autoregressive Models"
+    },
     "ARXIV/2411.04330": {
       "title": "Scaling Laws for Precision"
+    },
+    "ARXIV/2411.07279": {
+      "title": "The Surprising Effectiveness of Test-Time Training for Few-Shot Learning"
     },
     "ARXIV/2411.15124": {
       "title": "Tulu 3: Pushing Frontiers in Open Language Model Post-Training"

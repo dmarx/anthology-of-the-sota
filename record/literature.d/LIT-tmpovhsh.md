@@ -1,0 +1,66 @@
+---
+status: 'Active'
+title: 'DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining'
+version: 1
+tags:
+- data-pipeline
+date: '2026-09-17'
+published: '2023-05-17'
+arxiv: '2305.10429'
+first_author: 'Xie'
+keywords:
+- 'data-mixing'
+- 'domain-weights'
+- 'group-dro'
+- 'proxy-model'
+- 'excess-loss'
+implementations:
+- 'DoReMi'
+summary: >-
+  Xie et al. (2023), [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429). Train a 280M proxy under group DRO to
+  produce domain weights with no knowledge of downstream tasks, then resample
+  and train an 8B model with them: +6.5 points average few-shot accuracy and
+  the baseline reached in 2.6x fewer steps. The design point is the objective
+  — worst-case EXCESS loss against a reference model, because worst-case raw
+  loss would chase the noisiest domain.
+---
+
+# LIT-tmpovhsh: DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining
+
+<!-- inactive-ok-file: SOTA-166 — Proposed, named as the record's other instrument for this decision; the comparison is the content -->
+
+Xie et al. (2023) — [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429)
+
+## Key takeaways
+
+- **Three steps, and the middle one is the method.** Train a small reference
+  model; train a proxy model under Group DRO over domains to get weights;
+  resample and train the large model. 280M proxy setting weights for an 8B
+  run — 30x larger.
+- **Excess loss, not loss.** The paper is explicit that the obvious objective
+  fails: "a naive worst-case approach would upweight the domains with the most
+  noisy data, as every domain has a different optimal loss (aka, the
+  entropy)." So it optimises the **loss gap against a pretrained reference
+  model** instead. Minimax on raw loss measures difficulty; minimax on excess
+  loss measures headroom, and only the second is what a mixture should chase.
+  The reference model exists solely to supply that subtraction.
+- **No downstream knowledge.** Weights are produced without reference to any
+  evaluation task — and on GLaM they "even match the performance of using
+  domain weights tuned on downstream tasks".
+- **Improves perplexity across all domains, including downweighted ones.**
+  The paper carries an appendix on when reweighting has no trade-off, which is
+  the part of the result most likely to be assumed general and is not.
+- **What it bought:** +6.5 points average few-shot downstream accuracy over
+  The Pile's default weights, and baseline accuracy in **2.6x fewer steps**.
+
+## Standing in the anthology
+
+Sources [SOTA-tmp4n8k9](../practices.d/SOTA-tmp4n8k9.md), and fills a gap that is odd in hindsight: the record
+held [SOTA-166](../practices.d/SOTA-166.md), a 2024 method for setting domain proportions, and not the
+2023 method it is measured against everywhere in the literature. The
+successor was filed and the incumbent was not.
+
+The two are genuinely different instruments for one decision, and the record
+now holds both — a mixing law *predicts* performance across mixtures, so it
+can be optimised for any target; this *produces* one robust weighting without
+naming a target at all. See [SOTA-tmp4n8k9](../practices.d/SOTA-tmp4n8k9.md) for which to reach for.

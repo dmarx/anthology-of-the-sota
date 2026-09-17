@@ -1,0 +1,64 @@
+---
+status: 'Active'
+title: 'LoFTR: Detector-Free Local Feature Matching with Transformers'
+version: 1
+tags:
+- vision-and-graphics
+- attention-techniques
+date: '2026-09-17'
+published: '2021-04-01'
+arxiv: '2104.00680'
+first_author: 'Sun'
+keywords:
+- 'feature-matching'
+- 'detector-free'
+- 'transformer'
+- 'cross-attention'
+- 'visual-localization'
+implementations:
+- 'LoFTR'
+summary: >-
+  Sun et al. (2021), [ARXIV-2104.00680](https://arxiv.org/abs/2104.00680). Drop the keypoint detector: establish
+  dense matches coarsely and refine them, with self and cross attention
+  producing descriptors conditioned on BOTH images. The argument is that the
+  detector is the binding constraint — it cannot produce repeatable interest
+  points in low-texture regions, which is exactly where matching is hard.
+---
+
+# LIT-tmpupth8: LoFTR: Detector-Free Local Feature Matching with Transformers
+
+Sun et al. (2021) — [ARXIV-2104.00680](https://arxiv.org/abs/2104.00680)
+
+## Key takeaways
+
+- **The stage that is removed is named**: "instead of performing image feature
+  detection, description, and matching sequentially", establish pixel-wise
+  dense matches at a coarse level and refine the good ones at a fine level.
+- **The reason is a failure mode, not an efficiency argument.** The global
+  receptive field of a Transformer "enables our method to produce dense
+  matches in low-texture areas, where feature detectors usually struggle to
+  produce repeatable interest points". A detector cannot be fixed by a better
+  matcher downstream; where it emits nothing, there is nothing to match.
+- **Descriptors conditioned on both images.** Self and cross attention mean a
+  location's representation depends on the image it is being matched *to* —
+  which a detect-then-describe pipeline cannot express, since description
+  happens per image before any pairing exists.
+- Distinguished from earlier dense methods too: those search a cost volume,
+  this uses attention.
+- Outperforms the state of the art "by a large margin", and ranks first on two
+  public visual localization benchmarks among published methods.
+
+## Standing in the anthology
+
+Sources [SOTA-tmp8nruj](../practices.d/SOTA-tmp8nruj.md). The middle term of the line ending at [SOTA-236](../practices.d/SOTA-236.md):
+[LIT-tmp2pjm4](LIT-tmp2pjm4.md) learns the matcher and keeps the detector, this removes the
+detector, and [LIT-385](LIT-385.md)/[LIT-384](LIT-384.md) remove matching as a separate stage
+altogether.
+
+Read as a pattern rather than as graphics, it is the clearest instance in this
+record of a recurring move: **a stage survives because it was separately
+solvable, and removing it is what the evidence eventually supports.** Each
+step here removes the stage the previous step revealed as the limit. That is
+the same shape as [SOTA-227](../practices.d/SOTA-227.md)'s draft-and-verify replacing hand-tuned decoding,
+and the reason the geometry line is worth a language-model reader's attention
+at all.

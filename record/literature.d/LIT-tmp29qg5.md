@@ -1,0 +1,66 @@
+---
+status: 'Active'
+title: 'VGGT: Visual Geometry Grounded Transformer'
+version: 1
+tags:
+- vision-and-graphics
+- model-architecture
+date: '2026-09-17'
+published: '2025-03-14'
+arxiv: '2503.11651'
+first_author: 'Wang'
+keywords:
+- 'multi-view-geometry'
+- 'camera-pose'
+- 'feed-forward'
+- 'point-tracking'
+- 'foundation-model'
+implementations:
+- 'VGGT'
+summary: >-
+  Wang et al. (2025), [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651). One feed-forward pass infers camera
+  parameters, point maps, depth maps and 3D point tracks together, from one
+  view or hundreds, in under a second — beating methods that post-process with
+  geometry optimisation. The claim that matters is that the specialisation
+  into separate tasks was never necessary.
+---
+
+# LIT-tmp29qg5: VGGT: Visual Geometry Grounded Transformer
+
+Wang et al. (2025) — [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651)
+
+## Key takeaways
+
+- **One network, all the attributes.** Camera parameters, point maps, depth
+  maps and 3D point tracks, inferred directly and together, "from one, a few,
+  or hundreds of its views".
+- **The framing claim**: 3D vision models "have typically been constrained to
+  and specialized for single tasks", and that specialisation is what this
+  removes. The tasks were separate because the pipeline was, not because the
+  problems are.
+- **Under one second**, and still "outperforming alternatives that require
+  post-processing with visual geometry optimization techniques". Beating
+  optimisation with a forward pass is the strong form: the iterative refinement
+  that justified the classical pipeline is not buying what it was thought to.
+- State of the art across camera parameter estimation, multi-view depth, dense
+  point cloud reconstruction and 3D point tracking — one model, four tasks that
+  used to be four literatures.
+- **Useful as a backbone**, improving non-rigid point tracking and feed-forward
+  novel view synthesis, which is the tell that it learned geometry rather than
+  four separate output heads.
+
+## Standing in the anthology
+
+Sources [SOTA-tmpjhh4p](../practices.d/SOTA-tmpjhh4p.md) with [LIT-tmpcu1a9](LIT-tmpcu1a9.md). The two are a line rather than a
+duplicate: DUSt3R establishes that reconstruction without calibration or pose
+is possible and still needs a global alignment step for more than two images;
+this one removes the remaining optimisation and scales the view count, which
+is what turns a paradigm claim into a default.
+
+Two independent groups is also what raises the practice above one result — the
+author lists share a surname and nothing else.
+
+For this record the interesting consequence is the backbone finding. It puts
+geometry estimation in the same category as the pretrained encoders the rest
+of the corpus takes for granted, which is the point at which a subject stops
+being a separate field and becomes a component.

@@ -1,0 +1,76 @@
+---
+status: 'Active'
+title: 'The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits'
+version: 1
+tags:
+- systems-optimization
+- model-architecture
+date: '2026-09-17'
+published: '2024-02-27'
+arxiv: '2402.17764'
+first_author: 'Ma'
+keywords:
+- 'quantization'
+- 'ternary-weights'
+- 'quantization-aware-training'
+- 'inference-efficiency'
+- 'energy'
+implementations:
+- 'BitNet b1.58'
+summary: >-
+  Ma et al. (2024), [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764). Every weight is ternary, {-1, 0, +1},
+  and the model is trained that way from scratch rather than quantized
+  afterwards. From 3B upward it matches an FP16 LLaMA of the same size and
+  token budget on perplexity and end-task accuracy, while the matrix
+  multiply reduces to integer addition — a compute paradigm rather than a
+  compression ratio.
+---
+
+# LIT-tmpivx41: The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits
+
+Ma et al. (2024) — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764)
+
+## Key takeaways
+
+- **Ternary weights, trained from scratch.** `nn.Linear` is replaced by
+  `BitLinear`; weights are constrained to {-1, 0, +1} by an absmean
+  quantization function, activations are 8-bit. This is quantization-aware
+  training in its limiting form, not a post-training conversion — there is no
+  FP16 checkpoint being compressed.
+- **The 0 is the point, and it is what "1.58" buys over "1-bit".** Three
+  states rather than two give "explicit support for feature filtering", which
+  the paper credits for the gap between this and binary BitNet.
+- **It matches FP16 from 3B, not below.** Perplexity against LLaMA at equal
+  size and tokens: 700M **12.87 vs 12.33**, 1.3B **11.29 vs 11.25**, 3B
+  **9.91 vs 10.04** — behind, level, then ahead. The crossover is a result,
+  not a rounding error, and a reader taking this to a 700M model is taking it
+  outside its evidence.
+- **The saving is not mainly memory.** Matrix multiplication becomes integer
+  addition, with no multiplication at all, which is where the energy claim
+  comes from. Memory and latency at 3B: 2.22GB (3.55×) and 1.87ms (2.71×).
+- **Throughput at 70B is the headline number**: on two 80GB A100s, max batch
+  16 → 176 (11×) and 333 → 2977 tokens/s (**8.9×**) against LLaMA 70B.
+- Scales in tokens as well as parameters: a 3B model trained on **2T tokens**
+  on the StableLM-3B data recipe, evaluated zero-shot on Winogrande, PIQA,
+  SciQ, LAMBADA and ARC-easy.
+
+## Standing in the anthology
+
+Sources the record's first practice about choosing the *training* format
+rather than the compression of a trained model. The anthology already holds
+both halves of the post-training story — [SOTA-185](../practices.d/SOTA-185.md) quantizes a finished
+model by error compensation, [SOTA-163](../practices.d/SOTA-163.md) picks the block-scaled format to do it
+in — and had nothing on the other branch.
+
+Read against [LIT-186](LIT-186.md), which is what makes this more than a curiosity. That
+paper reports post-training quantization damage **growing with the number of
+training tokens**, to the point where more pretraining data is actively
+harmful if the model will be quantized later. The two together say something
+neither says alone: the post-training route has a cost that rises exactly
+where the field is heading, and the from-scratch route does not pay it.
+
+The hardware caveat is the paper's own and is load-bearing. Its compute
+argument assumes kernels and eventually silicon built for ternary
+arithmetic; on stock GPU matmul the memory saving survives and the
+arithmetic saving does not. It is the rare paper in this corpus whose
+headline result is a claim about hardware that does not exist yet.

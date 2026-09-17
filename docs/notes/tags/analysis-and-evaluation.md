@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-36 of 164 NOTE documents. Back to the [full index](../README.md).
+38 of 169 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -44,3 +44,5 @@
 | [NOTE-147](../../../record/notes.d/NOTE-147.md) | Emergent Behavior in Flocks | The CS model places the "consensus" dynamics on VELOCITIES rather than positions. All particles converge to the same velocity (heading), but their positions may continue to diverge — they flock together, traveling as a group. | Read |
 | [NOTE-149](../../../record/notes.d/NOTE-149.md) | Emergence of stochastic flocking for the discrete Cucker-Smale model with randomly switching topologies | The Cucker-Smale velocity update is a stochastic matrix multiplication on velocities: V[t+1] = (Id - (h/N)·L_{σ[t]}[t]) · V[t], where each factor is a row-stochastic matrix with ergodicity coefficient determined by the communication weight φ and position diameter. Flocking = the velocity diameter D(V[t]) → 0 a.s. | Read |
 | [NOTE-158](../../../record/notes.d/NOTE-158.md) | Broken Neural Scaling Laws | A single power law ε(t) = C_∞ + b·t^{-c} fails when the curve has two regimes (steep early, shallow late — or vice versa). | Read |
+| [NOTE-165](../../../record/notes.d/NOTE-165.md) | Large Language Models Cannot Self-Correct Reasoning Yet | Asked to revise its own reasoning with no external feedback, a model does not reliably improve and sometimes degrades. The durable part is the definition rather than the number: INTRINSIC self-correction, meaning no oracle, no verifier, no second model — a line that a lot of contemporary self-correction claims were quietly on the other side of. | Read |
+| [NOTE-167](../../../record/notes.d/NOTE-167.md) | The Surprising Effectiveness of Test-Time Training for Few-Shot Learning | Turn the in-context examples into a loss and take gradient steps on them at inference, then discard the update. Up to 6x a fine-tuned baseline on ARC and +7.3 points on BIG-Bench Hard at 10-shot. The finding underneath is about in-context learning: the same examples are worth several times more as gradient than as context. | Read |

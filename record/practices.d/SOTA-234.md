@@ -1,5 +1,8 @@
 ---
+number: 234
 status: 'Proposed'
+formerly:
+- SOTA-tmpr318t
 title: 'Train in the target low-bit format from scratch rather than quantizing a finished model'
 version: 1
 tags:
@@ -24,13 +27,13 @@ consensus_note: >-
   this route does not face.
 date: '2026-09-17'
 source:
-- LIT-tmpivx41
+- LIT-380
 introduced_by:
-- LIT-tmpivx41
+- LIT-380
 implementations:
 - 'BitNet b1.58'
 summary: >-
-  Ma et al. (2024), [LIT-tmpivx41](../literature.d/LIT-tmpivx41.md) — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764). Decide the serving format
+  Ma et al. (2024), [LIT-380](../literature.d/LIT-380.md) — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764). Decide the serving format
   before training and train in it, rather than training in FP16 and
   compressing afterwards. Ternary weights trained from scratch match an FP16
   model of equal size and token budget from 3B upward — but the compute
@@ -38,11 +41,11 @@ summary: >-
   is measured on machines that exist.
 ---
 
-# SOTA-tmpr318t: Train in the target low-bit format from scratch rather than quantizing a finished model
+# SOTA-234: Train in the target low-bit format from scratch rather than quantizing a finished model
 
 ## Source
 
-Ma et al. (2024), [LIT-tmpivx41](../literature.d/LIT-tmpivx41.md) — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764).
+Ma et al. (2024), [LIT-380](../literature.d/LIT-380.md) — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764).
 
 ## The claim
 

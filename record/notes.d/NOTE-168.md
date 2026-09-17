@@ -1,6 +1,9 @@
 ---
+number: 168
 status: Read
-paper: LIT-tmpivx41
+formerly:
+- NOTE-tmpkr4sc
+paper: LIT-380
 title: 'The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits'
 version: 1
 date: '2026-09-17'
@@ -11,9 +14,9 @@ summary: >-
   hardware, and the one place the paper's argument outruns its measurements.
 ---
 
-# NOTE-tmpkr4sc: The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits
+# NOTE-168: The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits
 
-Read from [LIT-tmpivx41](../literature.d/LIT-tmpivx41.md) — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764).
+Read from [LIT-380](../literature.d/LIT-380.md) — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764).
 
 ## What it does
 

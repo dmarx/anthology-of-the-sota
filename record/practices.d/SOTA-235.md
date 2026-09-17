@@ -1,5 +1,8 @@
 ---
+number: 235
 status: 'Active'
+formerly:
+- SOTA-tmpv9jzu
 title: 'Update the weights at inference on the test instance when the task is structurally novel'
 version: 1
 tags:
@@ -12,24 +15,24 @@ consensus_note: >-
   contests or replicates it.
 date: '2026-09-17'
 source:
-- LIT-tmpg78ag
+- LIT-379
 introduced_by:
-- LIT-tmpg78ag
+- LIT-379
 summary: >-
-  Akyürek et al. (2024), [LIT-tmpg78ag](../literature.d/LIT-tmpg78ag.md) — [ARXIV-2411.07279](https://arxiv.org/abs/2411.07279). Build a loss from the
+  Akyürek et al. (2024), [LIT-379](../literature.d/LIT-379.md) — [ARXIV-2411.07279](https://arxiv.org/abs/2411.07279). Build a loss from the
   test instance's own in-context examples, take gradient steps at inference,
   then discard the update. Up to 6x a fine-tuned baseline on ARC (53.0% at
   8B) and +7.3 points on BIG-Bench Hard at 10-shot. The examples are worth
   several times more as gradient than as context.
 ---
 
-# SOTA-tmpv9jzu: Update the weights at inference on the test instance when the task is structurally novel
+# SOTA-235: Update the weights at inference on the test instance when the task is structurally novel
 
 <!-- inactive-ok-file: SOTA-167 — Proposed, named in the not-to-be-confused-with condition -->
 
 ## Source
 
-Akyürek et al. (2024), [LIT-tmpg78ag](../literature.d/LIT-tmpg78ag.md) — [ARXIV-2411.07279](https://arxiv.org/abs/2411.07279).
+Akyürek et al. (2024), [LIT-379](../literature.d/LIT-379.md) — [ARXIV-2411.07279](https://arxiv.org/abs/2411.07279).
 
 ## The method
 

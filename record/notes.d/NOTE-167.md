@@ -1,6 +1,9 @@
 ---
+number: 167
 status: Read
-paper: LIT-tmpg78ag
+formerly:
+- NOTE-tmpkho3x
+paper: LIT-379
 title: 'The Surprising Effectiveness of Test-Time Training for Few-Shot Learning'
 version: 1
 date: '2026-09-17'
@@ -12,11 +15,11 @@ summary: >-
   as gradient than as context.
 ---
 
-# NOTE-tmpkho3x: The Surprising Effectiveness of Test-Time Training for Few-Shot Learning
+# NOTE-167: The Surprising Effectiveness of Test-Time Training for Few-Shot Learning
 
 <!-- inactive-ok-file: SOTA-167 — Proposed, named for the same name-collision disambiguation -->
 
-Read from [LIT-tmpg78ag](../literature.d/LIT-tmpg78ag.md) — [ARXIV-2411.07279](https://arxiv.org/abs/2411.07279).
+Read from [LIT-379](../literature.d/LIT-379.md) — [ARXIV-2411.07279](https://arxiv.org/abs/2411.07279).
 
 ## What the method is, stated precisely
 

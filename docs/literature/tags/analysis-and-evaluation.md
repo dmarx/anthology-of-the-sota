@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-45 of 313 LIT documents. Back to the [full index](../README.md).
+47 of 318 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -55,3 +55,5 @@
 | [LIT-360](../../../record/literature.d/LIT-360.md) | Neural Tangent Kernel: Convergence and Generalization in Neural Networks | Jacot et al. (2018), [ARXIV-1806.07572](https://arxiv.org/abs/1806.07572). In the infinite-width limit under standard parametrization, training follows a fixed kernel — the network is linear in its parameters around initialization, and no features are learned. | Active |
 | [LIT-364](../../../record/literature.d/LIT-364.md) | Classifying high-dimensional Gaussian mixtures: Where kernel methods fail and neural networks succeed | Refinetti et al. (2021), [ARXIV-2102.11742](https://arxiv.org/abs/2102.11742). A two-layer network with a few hidden units beats kernel methods on a Gaussian-mixture classification task in the high-dimensional limit, which separates feature learning from lazy training. | Deferred |
 | [LIT-365](../../../record/literature.d/LIT-365.md) | Trainability and Accuracy of Neural Networks: An Interacting Particle System Approach | Rotskoff and Vanden-Eijnden (2018), [ARXIV-1805.00915](https://arxiv.org/abs/1805.00915). The same mean-field limit reached as an interacting particle system, with approximation error scaling as 1/n in width rather than 1/sqrt(n). | Active |
+| [LIT-379](../../../record/literature.d/LIT-379.md) | The Surprising Effectiveness of Test-Time Training for Few-Shot Learning | Akyürek et al. (2024), [ARXIV-2411.07279](https://arxiv.org/abs/2411.07279). Temporarily update the model's parameters at inference, using a loss built from the test instance's own in-context examples. On ARC this is up to 6x a fine-tuned baseline — 53.0% with an 8B model, 61.9% ensembled with program synthesis, which the paper puts at average human performance. Read as evidence about in-context learning's limits as much as about the technique. | Active |
+| [LIT-382](../../../record/literature.d/LIT-382.md) | Large Language Models Cannot Self-Correct Reasoning Yet | Huang et al. (2023), [ARXIV-2310.01798](https://arxiv.org/abs/2310.01798). The negative result the self-correction literature is answering: asked to revise its own reasoning with no external feedback, a model does not reliably improve, and often gets worse. Names the thing being tested — INTRINSIC self-correction — and that distinction is most of the paper's lasting value. | Active |

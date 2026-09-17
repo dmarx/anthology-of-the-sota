@@ -1,5 +1,8 @@
 ---
+number: 232
 status: 'Proposed'
+formerly:
+- SOTA-tmp5nzpk
 title: 'Convert an autoregressive model into a diffusion model by continual pretraining rather than training one from scratch'
 version: 1
 tags:
@@ -19,27 +22,27 @@ consensus_note: >-
   currently records the choice without recommending either side of it.
 date: '2026-09-17'
 source:
-- LIT-tmpj6g3h
+- LIT-381
 introduced_by:
-- LIT-tmpj6g3h
+- LIT-381
 implementations:
 - 'DiffuGPT'
 - 'DiffuLLaMA'
 summary: >-
-  Gong et al. (2024), [LIT-tmpj6g3h](../literature.d/LIT-tmpj6g3h.md) — [ARXIV-2410.17891](https://arxiv.org/abs/2410.17891). Continual pretraining on
+  Gong et al. (2024), [LIT-381](../literature.d/LIT-381.md) — [ARXIV-2410.17891](https://arxiv.org/abs/2410.17891). Continual pretraining on
   under 200B tokens turns an existing autoregressive model into a diffusion
   language model — GPT2 and LLaMA across 127M-7B — competitive with the AR
   original. The reason to want one is infilling without prompt re-ordering,
   not perplexity.
 ---
 
-# SOTA-tmp5nzpk: Convert an autoregressive model into a diffusion model by continual pretraining rather than training one from scratch
+# SOTA-232: Convert an autoregressive model into a diffusion model by continual pretraining rather than training one from scratch
 
 <!-- inactive-ok-file: SOTA-157 — Proposed, and this practice's counterpart; naming it is how the record holds the choice -->
 
 ## Source
 
-Gong et al. (2024), [LIT-tmpj6g3h](../literature.d/LIT-tmpj6g3h.md) — [ARXIV-2410.17891](https://arxiv.org/abs/2410.17891).
+Gong et al. (2024), [LIT-381](../literature.d/LIT-381.md) — [ARXIV-2410.17891](https://arxiv.org/abs/2410.17891).
 
 ## The claim
 

@@ -1,6 +1,9 @@
 ---
+number: 165
 status: Read
-paper: LIT-tmpk5uxn
+formerly:
+- NOTE-tmp27xgr
+paper: LIT-382
 title: 'Large Language Models Cannot Self-Correct Reasoning Yet'
 version: 1
 date: '2026-09-17'
@@ -12,9 +15,9 @@ summary: >-
   self-correction claims were quietly on the other side of.
 ---
 
-# NOTE-tmp27xgr: Large Language Models Cannot Self-Correct Reasoning Yet
+# NOTE-165: Large Language Models Cannot Self-Correct Reasoning Yet
 
-Read from [LIT-tmpk5uxn](../literature.d/LIT-tmpk5uxn.md) — [ARXIV-2310.01798](https://arxiv.org/abs/2310.01798).
+Read from [LIT-382](../literature.d/LIT-382.md) — [ARXIV-2310.01798](https://arxiv.org/abs/2310.01798).
 
 ## What it establishes
 
@@ -46,7 +49,7 @@ specific protocol.
 
 No practice is sourced here, deliberately — the finding is that an
 intervention does not work, and the useful instruction it supports belongs to
-the paper that supplies the alternative ([LIT-tmpxvpzp](../literature.d/LIT-tmpxvpzp.md)).
+the paper that supplies the alternative ([LIT-383](../literature.d/LIT-383.md)).
 
 Two things it is worth holding for. First, as the baseline that makes SCoRe's
 numbers mean something: a gain measured against prompted self-correction is

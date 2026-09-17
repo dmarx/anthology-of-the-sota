@@ -1,5 +1,8 @@
 ---
+number: 233
 status: 'Active'
+formerly:
+- SOTA-tmpdrrh9
 title: "Train self-correction with multi-turn online RL on the model's own traces, rather than prompting for it"
 version: 1
 tags:
@@ -8,17 +11,17 @@ consensus: unreplicated
 consensus_note: >-
   One group, two models, one family. What raises it above a single positive
   result is that the negative baseline is independently established —
-  [LIT-tmpk5uxn](../literature.d/LIT-tmpk5uxn.md) is a different group reporting that the alternative
+  [LIT-382](../literature.d/LIT-382.md) is a different group reporting that the alternative
   intervention does not work, which is the comparison this practice rests on.
 date: '2026-09-17'
 source:
-- LIT-tmpxvpzp
+- LIT-383
 introduced_by:
-- LIT-tmpxvpzp
+- LIT-383
 implementations:
 - 'SCoRe'
 summary: >-
-  Kumar et al. (2024), [LIT-tmpxvpzp](../literature.d/LIT-tmpxvpzp.md) — [ARXIV-2409.12917](https://arxiv.org/abs/2409.12917). Self-correction is a
+  Kumar et al. (2024), [LIT-383](../literature.d/LIT-383.md) — [ARXIV-2409.12917](https://arxiv.org/abs/2409.12917). Self-correction is a
   capability to be trained, not a behaviour to be requested. Prompting a model
   to revise its own reasoning does not reliably help and can hurt; supervised
   fine-tuning on correction traces fails by distribution mismatch or behaviour
@@ -26,16 +29,16 @@ summary: >-
   MATH and +9.1% on HumanEval.
 ---
 
-# SOTA-tmpdrrh9: Train self-correction with multi-turn online RL on the model's own traces, rather than prompting for it
+# SOTA-233: Train self-correction with multi-turn online RL on the model's own traces, rather than prompting for it
 
 <!-- inactive-ok-file: SOTA-130 — Proposed, and named throughout as the practice this one rhymes with; the comparison IS the content, so every mention here is deliberate -->
 ## Source
 
-Kumar et al. (2024), [LIT-tmpxvpzp](../literature.d/LIT-tmpxvpzp.md) — [ARXIV-2409.12917](https://arxiv.org/abs/2409.12917).
+Kumar et al. (2024), [LIT-383](../literature.d/LIT-383.md) — [ARXIV-2409.12917](https://arxiv.org/abs/2409.12917).
 
 ## Why not just ask
 
-Because that was tried and measured. [LIT-tmpk5uxn](../literature.d/LIT-tmpk5uxn.md) defines *intrinsic*
+Because that was tried and measured. [LIT-382](../literature.d/LIT-382.md) defines *intrinsic*
 self-correction — revision on the model's own capabilities, with no oracle,
 verifier or second model — and finds that on reasoning it does not reliably
 improve and sometimes degrades.

@@ -6,7 +6,7 @@
 
 **Systems optimization** — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
-10 of 231 SOTA documents. Back to the [full index](../README.md).
+11 of 235 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,4 @@
 | [SOTA-091](../../../record/practices.d/SOTA-091.md) | Profile and optimize memory access patterns | Ivanov et al. (2020), [LIT-066](../../../record/literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). | Active |
 | [SOTA-114](../../../record/practices.d/SOTA-114.md) | Fuse attention operations where possible | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
 | [SOTA-230](../../../record/practices.d/SOTA-230.md) | Quantize the frozen base to 4-bit and keep the adapters in 16-bit | Dettmers et al. (2023), [LIT-378](../../../record/literature.d/LIT-378.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314). Store the frozen base weights in 4-bit NormalFloat and dequantize to BFloat16 for every matrix multiply, training only 16-bit LoRA adapters. Fine-tuning a 65B model falls from >780GB to <48GB with no measured loss against a 16-bit fully fine-tuned baseline, because the arithmetic never happens in 4 bits. | Active |
+| [SOTA-234](../../../record/practices.d/SOTA-234.md) | Train in the target low-bit format from scratch rather than quantizing a finished model | Ma et al. (2024), [LIT-380](../../../record/literature.d/LIT-380.md) — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764). Decide the serving format before training and train in it, rather than training in FP16 and compressing afterwards. Ternary weights trained from scratch match an FP16 model of equal size and token budget from 3B upward — but the compute argument assumes hardware built for the format, and only the memory saving is measured on machines that exist. | Proposed |

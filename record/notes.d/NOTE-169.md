@@ -1,6 +1,9 @@
 ---
+number: 169
 status: Read
-paper: LIT-tmpxvpzp
+formerly:
+- NOTE-tmpszc5q
+paper: LIT-383
 title: 'Training Language Models to Self-Correct via Reinforcement Learning'
 version: 1
 date: '2026-09-17'
@@ -12,15 +15,15 @@ summary: >-
   method's two stages are each aimed at one of those.
 ---
 
-# NOTE-tmpszc5q: Training Language Models to Self-Correct via Reinforcement Learning
+# NOTE-169: Training Language Models to Self-Correct via Reinforcement Learning
 
 <!-- inactive-ok-file: SOTA-130 — Proposed, and named throughout as the practice this one rhymes with; the comparison IS the content, so every mention here is deliberate -->
-Read from [LIT-tmpxvpzp](../literature.d/LIT-tmpxvpzp.md) — [ARXIV-2409.12917](https://arxiv.org/abs/2409.12917).
+Read from [LIT-383](../literature.d/LIT-383.md) — [ARXIV-2409.12917](https://arxiv.org/abs/2409.12917).
 
 ## The setup it inherits
 
 It opens by conceding the negative result: self-correction "has consistently
-been found to be largely ineffective in modern LLMs" — [LIT-tmpk5uxn](../literature.d/LIT-tmpk5uxn.md)'s
+been found to be largely ineffective in modern LLMs" — [LIT-382](../literature.d/LIT-382.md)'s
 finding. The response is a change of intervention. If asking does not work,
 train for it; and train without a stronger model, an oracle or additional
 supervision, because any of those would make the result a distillation result

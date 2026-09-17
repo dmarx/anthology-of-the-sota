@@ -1,6 +1,9 @@
 ---
+number: 166
 status: Read
-paper: LIT-tmpj6g3h
+formerly:
+- NOTE-tmpk5fba
+paper: LIT-381
 title: 'Scaling Diffusion Language Models via Adaptation from Autoregressive Models'
 version: 1
 date: '2026-09-17'
@@ -12,11 +15,11 @@ summary: >-
   capability that pays for it is infilling without prompt re-ordering.
 ---
 
-# NOTE-tmpk5fba: Scaling Diffusion Language Models via Adaptation from Autoregressive Models
+# NOTE-166: Scaling Diffusion Language Models via Adaptation from Autoregressive Models
 
 <!-- inactive-ok-file: SOTA-157 — Proposed, the other branch of this decision; deliberate throughout -->
 
-Read from [LIT-tmpj6g3h](../literature.d/LIT-tmpj6g3h.md) — [ARXIV-2410.17891](https://arxiv.org/abs/2410.17891).
+Read from [LIT-381](../literature.d/LIT-381.md) — [ARXIV-2410.17891](https://arxiv.org/abs/2410.17891).
 
 ## The argument, which is about supply
 

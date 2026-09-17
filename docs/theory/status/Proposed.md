@@ -6,7 +6,7 @@
 
 **Offered** — stated and plausible, on evidence that is suggestive rather than settling — the document says what would settle it.
 
-7 of 14 THEORY documents. Back to the [full index](../README.md).
+7 of 16 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

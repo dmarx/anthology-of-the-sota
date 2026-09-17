@@ -6,7 +6,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-27 of 239 SOTA documents. Back to the [full index](../README.md).
+28 of 240 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -37,3 +37,4 @@
 | [SOTA-192](../../../record/practices.d/SOTA-192.md) | Normalize the queries and keys before the attention dot product |  | Active |
 | [SOTA-193](../../../record/practices.d/SOTA-193.md) | Lower Adam's second-moment decay when the loss spikes, before reaching for the learning rate |  | Proposed |
 | [SOTA-217](../../../record/practices.d/SOTA-217.md) | Align the hidden-unit permutation before averaging weights from separately trained networks | A neural network's hidden units can be permuted without changing the function, so two networks trained from different seeds sit in different corners of the same symmetry orbit. Averaging their weights directly averages across that mismatch and traverses a loss barrier that is mostly an artefact of labelling. Match the units first — by weight matching, or by activation matching on a handful of samples — and most of the barrier is not there. | Proposed |
+| [SOTA-240](../../../record/practices.d/SOTA-240.md) | Apply dropout where the model can memorize what it is shown, and not where it cannot | Srivastava et al. (2014), [LIT-395](../../../record/literature.d/LIT-395.md) — dropout has a "sweet spot" in dataset size and reports both of its edges: no gain at all on data small enough to memorize through the noise, and a declining gain once the data is large enough that overfitting is not the problem. It costs 2-3x training time and it is not a drop-in — the paper's own recipe pairs it with n/p units, 10-100x the learning rate, momentum 0.95-0.99 and a max-norm constraint. Introduced by Hinton et al. (2012), [LIT-394](../../../record/literature.d/LIT-394.md). | Active |

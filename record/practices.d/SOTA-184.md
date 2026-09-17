@@ -4,7 +4,15 @@ status: Active
 formerly:
 - SOTA-tmpsb4lw
 title: 'Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-17'
+  note: >-
+    Gained the placement condition it was silent about. The recommendation is
+    unchanged; what is new is that WHICH matrices carry an adapter is a
+    decision this practice never named, and a later paper measures it as the
+    one that decides whether the method reaches full fine-tuning at scale.
 tags:
 - adaptation-and-tuning
 consensus: universal
@@ -56,6 +64,19 @@ memory, not in the forward activations, so it shrinks the fine-tuning bill
 rather than the serving bill. And rank is a real hyperparameter — the paper's
 tasks do well at small `r`, but a task that genuinely needs a high-rank
 update will report the ceiling rather than announce it.
+
+## Which matrices, which this practice did not say
+
+"Each weight matrix" is the title, and the paper's experiments adapt the
+attention query and value projections. Those are not the same instruction,
+and the gap between them became the default: query/value is what the tooling
+ships and what most published fine-tunes use.
+
+[SOTA-tmpdf5n5](SOTA-tmpdf5n5.md) is the measurement of that gap. On large base models,
+query/value alone does not replicate full fine-tuning; the number of adapted
+matrices is what closes it, and the rank — the hyperparameter people actually
+search — is flat across the sweep. Read the two together: this practice is
+why to use a low-rank update, that one is where to put it.
 
 ## Known implementations
 

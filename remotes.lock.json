@@ -491,6 +491,9 @@
     "ARXIV/2305.13245": {
       "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints"
     },
+    "ARXIV/2305.14314": {
+      "title": "QLoRA: Efficient Finetuning of Quantized LLMs"
+    },
     "ARXIV/2305.16264": {
       "title": "Scaling Data-Constrained Language Models"
     },

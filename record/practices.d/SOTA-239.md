@@ -1,5 +1,8 @@
 ---
+number: 239
 status: 'Proposed'
+formerly:
+- SOTA-tmp7wadj
 title: 'Order training data by skill prerequisite: teach the prerequisite and the dependent skill costs less data'
 version: 1
 tags:
@@ -19,25 +22,25 @@ consensus_note: >-
   proportion.
 date: '2026-09-17'
 source:
-- LIT-tmpqofqz
+- LIT-392
 introduced_by:
-- LIT-tmpqofqz
+- LIT-392
 implementations:
 - 'Skill-It'
 summary: >-
-  Chen et al. (2023), [LIT-tmpqofqz](../literature.d/LIT-tmpqofqz.md) — [ARXIV-2307.14430](https://arxiv.org/abs/2307.14430). Training data has a
+  Chen et al. (2023), [LIT-392](../literature.d/LIT-392.md) — [ARXIV-2307.14430](https://arxiv.org/abs/2307.14430). Training data has a
   prerequisite structure, and it is exploitable: train on a prerequisite skill
   and the dependent skill is reachable with less data. Sample over skill
   mixtures online rather than fixing proportions in advance.
 ---
 
-# SOTA-tmp7wadj: Order training data by skill prerequisite: teach the prerequisite and the dependent skill costs less data
+# SOTA-239: Order training data by skill prerequisite: teach the prerequisite and the dependent skill costs less data
 
 <!-- inactive-ok-file: SOTA-166, SOTA-103, SOTA-129, SOTA-130 — Proposed or otherwise not in force, named in the axis distinction this practice turns on -->
 
 ## Source
 
-Chen et al. (2023), [LIT-tmpqofqz](../literature.d/LIT-tmpqofqz.md) — [ARXIV-2307.14430](https://arxiv.org/abs/2307.14430).
+Chen et al. (2023), [LIT-392](../literature.d/LIT-392.md) — [ARXIV-2307.14430](https://arxiv.org/abs/2307.14430).
 
 ## The claim
 
@@ -58,14 +61,14 @@ goal is many skills, and in fine-tuning where it is one.
 
 The record's `data-pipeline` practices answer **what to include** and **in
 what proportion**: filtering ([SOTA-170](SOTA-170.md)), deduplication ([SOTA-164](SOTA-164.md)),
-proportions ([SOTA-166](SOTA-166.md), [SOTA-103](SOTA-103.md), [SOTA-tmp4n8k9](SOTA-tmp4n8k9.md)), repetition ([SOTA-171](SOTA-171.md)).
+proportions ([SOTA-166](SOTA-166.md), [SOTA-103](SOTA-103.md), [SOTA-238](SOTA-238.md)), repetition ([SOTA-171](SOTA-171.md)).
 None answers **in what order**.
 
 The distinction to hold, because the record's vocabulary invites collapsing
 them:
 
 - **Reweighting** changes how much of each domain, possibly over time. That is
-  [SOTA-103](SOTA-103.md) and [SOTA-tmp4n8k9](SOTA-tmp4n8k9.md).
+  [SOTA-103](SOTA-103.md) and [SOTA-238](SOTA-238.md).
 - **Ordering** changes what must come *before* what, because of a dependency
   between capabilities. That is this.
 - **Staging** orders the objectives — pretrain, SFT, RL ([SOTA-129](SOTA-129.md), [SOTA-130](SOTA-130.md)).

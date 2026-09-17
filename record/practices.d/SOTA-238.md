@@ -1,5 +1,8 @@
 ---
+number: 238
 status: 'Active'
+formerly:
+- SOTA-tmp4n8k9
 title: 'Set domain weights with a small proxy model under group DRO on excess loss, then transfer them'
 version: 1
 tags:
@@ -13,26 +16,26 @@ consensus_note: >-
   rather than an endorsement of this one.
 date: '2026-09-17'
 source:
-- LIT-tmpovhsh
+- LIT-391
 introduced_by:
-- LIT-tmpovhsh
+- LIT-391
 implementations:
 - 'DoReMi'
 summary: >-
-  Xie et al. (2023), [LIT-tmpovhsh](../literature.d/LIT-tmpovhsh.md) — [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429). Train a small proxy under
+  Xie et al. (2023), [LIT-391](../literature.d/LIT-391.md) — [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429). Train a small proxy under
   group DRO to produce domain weights, then resample and train the real model
   with them. Optimise worst-case EXCESS loss against a reference model, not
   worst-case loss — the naive form upweights whichever domain is noisiest,
   because every domain has a different irreducible entropy.
 ---
 
-# SOTA-tmp4n8k9: Set domain weights with a small proxy model under group DRO on excess loss, then transfer them
+# SOTA-238: Set domain weights with a small proxy model under group DRO on excess loss, then transfer them
 
 <!-- inactive-ok-file: SOTA-166 — Proposed, and this practice's counterpart; naming it is how the record holds the choice -->
 
 ## Source
 
-Xie et al. (2023), [LIT-tmpovhsh](../literature.d/LIT-tmpovhsh.md) — [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429).
+Xie et al. (2023), [LIT-391](../literature.d/LIT-391.md) — [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429).
 
 ## The method
 

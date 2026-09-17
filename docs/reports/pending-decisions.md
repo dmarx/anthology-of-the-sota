@@ -5,16 +5,16 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**70 document(s) awaiting a decision.**
+**71 document(s) awaiting a decision.**
 
 ## SOTAs
 
-45 of the 70.
+46 of the 71.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 23 | 2 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
-| 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 20 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
+| 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 22 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
 | 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 19 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
 | 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 13 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 9 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
@@ -27,10 +27,10 @@
 | 2026-09-07 | Proposed | [SOTA-156](../../record/practices.d/SOTA-156.md) | 5 | 0 | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed |
 | 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 2 | 0 | Pack training documents by best fit instead of concatenating and splitting |
 | 2026-09-08 | Proposed | [SOTA-160](../../record/practices.d/SOTA-160.md) | 13 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
+| 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 11 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
 | 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 9 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
 | 2026-09-08 | Proposed | [SOTA-158](../../record/practices.d/SOTA-158.md) | 8 | 0 | Bound the activation's output range when training in low precision |
 | 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 6 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
-| 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 5 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
 | 2026-09-08 | Proposed | [SOTA-176](../../record/practices.d/SOTA-176.md) | 5 | 0 | Hybridise inside the layer: long-term slots, a sliding window, and one softmax over both, with the window size as the only dial |
 | 2026-09-08 | Proposed | [SOTA-178](../../record/practices.d/SOTA-178.md) | 5 | 0 | Give the recurrence vector-valued gating and in-context learning rates so it can track state a softmax layer provably cannot |
 | 2026-09-08 | Proposed | [SOTA-177](../../record/practices.d/SOTA-177.md) | 4 | 0 | Decouple the erase address from the write address in a delta-rule recurrence |
@@ -57,11 +57,12 @@
 | 2026-09-16 | Proposed | [SOTA-223](../../record/practices.d/SOTA-223.md) | 2 | 0 | Do not keep the gossip topology static: sample a fresh random neighbourhood every round |
 | 2026-09-16 | Proposed | [SOTA-229](../../record/practices.d/SOTA-229.md) | 2 | 0 | Scale the draft model's training data, once nothing constrains it to predict the target's features |
 | 2026-09-17 | Proposed | [SOTA-232](../../record/practices.d/SOTA-232.md) | 1 | 0 | Convert an autoregressive model into a diffusion model by continual pretraining rather than training one from scratch |
+| 2026-09-17 | Proposed | [SOTA-239](../../record/practices.d/SOTA-239.md) | 1 | 0 | Order training data by skill prerequisite: teach the prerequisite and the dependent skill costs less data |
 | 2026-09-17 | Proposed | [SOTA-234](../../record/practices.d/SOTA-234.md) | 0 | 0 | Train in the target low-bit format from scratch rather than quantizing a finished model |
 
 ## THEORYs
 
-7 of the 70.
+7 of the 71.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -75,7 +76,7 @@
 
 ## LITs
 
-3 of the 70.
+3 of the 71.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -85,7 +86,7 @@
 
 ## ADRs
 
-15 of the 70.
+15 of the 71.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

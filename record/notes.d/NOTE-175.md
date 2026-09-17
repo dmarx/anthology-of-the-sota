@@ -1,6 +1,9 @@
 ---
+number: 175
 status: Read
-paper: LIT-tmpovhsh
+formerly:
+- NOTE-tmpu2o31
+paper: LIT-391
 title: 'DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining'
 version: 1
 date: '2026-09-17'
@@ -12,11 +15,11 @@ summary: >-
   upweight whichever domain is noisiest.
 ---
 
-# NOTE-tmpu2o31: DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining
+# NOTE-175: DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining
 
 <!-- inactive-ok-file: SOTA-166 — Proposed, the practice this one is measured against here -->
 
-Read from [LIT-tmpovhsh](../literature.d/LIT-tmpovhsh.md) — [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429).
+Read from [LIT-391](../literature.d/LIT-391.md) — [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429).
 
 ## The objective is the paper
 
@@ -71,7 +74,7 @@ arbitrary corpus.
 
 ## What this does to the record
 
-Sources [SOTA-tmp4n8k9](../practices.d/SOTA-tmp4n8k9.md).
+Sources [SOTA-238](../practices.d/SOTA-238.md).
 
 The record already held [SOTA-166](../practices.d/SOTA-166.md) — set proportions by fitting a mixing law on
 small runs, from a 2024 paper — and not this one, from 2023, which that

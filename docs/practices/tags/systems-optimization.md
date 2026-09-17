@@ -6,7 +6,7 @@
 
 **Systems optimization** — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
-11 of 237 SOTA documents. Back to the [full index](../README.md).
+11 of 239 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

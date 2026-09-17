@@ -6,7 +6,7 @@
 
 **Inference optimization** — serving-time decisions — batching, cache layout, quantization, compression, sparsity, distillation, sampling algorithms.
 
-8 of 325 LIT documents. Back to the [full index](../README.md).
+8 of 327 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

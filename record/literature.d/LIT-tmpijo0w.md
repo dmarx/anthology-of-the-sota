@@ -1,0 +1,77 @@
+---
+status: 'Active'
+title: 'Training Verifiers to Solve Math Word Problems'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-17'
+published: '2021-10-27'
+arxiv: '2110.14168'
+first_author: 'Cobbe'
+keywords:
+- 'benchmark'
+- 'mathematical-reasoning'
+- 'verifier'
+- 'best-of-n'
+implementations:
+- 'GSM8K'
+summary: >-
+  Cobbe et al. (2021), [ARXIV-2110.14168](https://arxiv.org/abs/2110.14168). Introduces GSM8K — 8.5K grade-school
+  math word problems, chosen because they are conceptually simple and models
+  still failed them, which isolates multi-step reasoning from mathematical
+  difficulty. Also introduces verifier-ranked best-of-n sampling, the
+  ancestor of the reranking the record recommends elsewhere.
+---
+
+# LIT-tmpijo0w: Training Verifiers to Solve Math Word Problems
+
+Cobbe et al. (2021) — [ARXIV-2110.14168](https://arxiv.org/abs/2110.14168)
+
+## What it measures, and why grade school
+
+8.5K "high quality linguistically diverse grade school math word problems".
+The design choice that makes it useful is the *low* mathematical difficulty:
+
+> even the largest transformer models fail to achieve high test performance,
+> **despite the conceptual simplicity of this problem distribution**
+
+Holding the mathematics easy isolates the thing under test — chaining several
+steps without losing the thread. A benchmark of hard mathematics would confound
+reasoning depth with mathematical knowledge, and GSM8K deliberately does not.
+
+"Linguistically diverse" is the other half: the problems are worded variously,
+so a model cannot pattern-match a template.
+
+## The second contribution, which is not a benchmark
+
+Train a **verifier** to judge candidate completions, sample many at test time,
+and return the one the verifier ranks highest. The paper reports that
+verification scales better with added data than a fine-tuning baseline.
+
+That is the ancestor of best-of-n reranking and of process supervision, and it
+is worth knowing that the benchmark everybody cites arrived in the same paper
+as the technique.
+
+## What it is insensitive to
+
+- **Mathematical depth**, by construction. High GSM8K says nothing about
+  competition mathematics, and the record should not let a GSM8K number stand
+  in for one.
+- **Saturation.** It was hard for 2021 models and is largely solved by
+  frontier models now. A GSM8K delta among strong models is measuring the
+  remainder, which is mostly arithmetic slips and formatting.
+- **Contamination.** Published in 2021 and quoted constantly since, so it is
+  in the training data of anything trained later — the exposure the record's
+  own practices ([SOTA-129](../practices.d/SOTA-129.md), [SOTA-164](../practices.d/SOTA-164.md), [SOTA-197](../practices.d/SOTA-197.md)) warn about.
+
+## Standing in the anthology
+
+The most-cited benchmark in this record — 30 documents and 6 practices name
+it — and until now it was named by all of them and held by none.
+
+Filed under [ADR-032](../decisions.d/ADR-032.md) and carrying no practice, which is that decision's normal
+case. What it adds is somewhere to write down what a GSM8K result does and
+does not bound, which was previously unsayable: a practice could rest on GSM8K
+evidence and the record had no document in which to record that the
+benchmark's difficulty is deliberately low and its contamination now near
+total.

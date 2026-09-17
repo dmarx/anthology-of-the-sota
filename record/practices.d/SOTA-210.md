@@ -12,7 +12,15 @@ consensus_note: >-
   pass@1-only reporting; what keeps this short of `converged` is that the
   practice it corrects is still what almost every post-training result does.
 title: 'Report pass@k as well as pass@1 after post-training: reinforcement learning raises one and lowers the other'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-17'
+  note: >-
+    Names the source of the estimator it recommends. The practice called it
+    "the standard one" and cited the paper that USES it rather than the one
+    that defines it; LIT-tmpd7q1v is where pass@k and the unbiased estimator
+    are introduced. The recommendation is unchanged.
 tags:
 - analysis-and-evaluation
 date: '2026-09-15'
@@ -93,9 +101,15 @@ metric and this practice costs you an extra evaluation for information you
 will not use.
 
 **Use an unbiased low-variance estimator** rather than measuring pass@k by
-repeated trials — [LIT-234](../literature.d/LIT-234.md) uses the standard one over `n` sampled
-responses per problem, and the naive approach needs many trials per `k` to
-control variance.
+repeated trials — [LIT-234](../literature.d/LIT-234.md) uses it over `n` sampled responses per problem,
+and the naive approach needs many trials per `k` to control variance.
+
+The estimator is `1 − C(n−c, k) / C(n, k)` over `n ≥ k` samples of which `c`
+pass, and it is [LIT-tmpd7q1v](../literature.d/LIT-tmpd7q1v.md)'s, which is also where `pass@k` is defined. That
+paper makes the argument this practice was compressing: the naive form "may
+look correct" but "underestimates the true value by a considerable margin",
+and the unbiased one trades a little early variance for comparability across
+different sample counts.
 
 ## What this does not say
 

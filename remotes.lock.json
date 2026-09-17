@@ -260,6 +260,9 @@
     "ARXIV/2007.06775": {
       "title": "Analyzing and Mitigating Data Stalls in DNN Training"
     },
+    "ARXIV/2009.03300": {
+      "title": "Measuring Massive Multitask Language Understanding"
+    },
     "ARXIV/2010.02502": {
       "title": "Denoising Diffusion Implicit Models"
     },
@@ -311,6 +314,9 @@
     "ARXIV/2106.10207": {
       "title": "Distributed Deep Learning in Open Collaborations"
     },
+    "ARXIV/2107.03374": {
+      "title": "Evaluating Large Language Models Trained on Code"
+    },
     "ARXIV/2107.06499": {
       "title": "Deduplicating Training Data Makes Language Models Better"
     },
@@ -331,6 +337,9 @@
     },
     "ARXIV/2110.07602": {
       "title": "P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks"
+    },
+    "ARXIV/2110.14168": {
+      "title": "Training Verifiers to Solve Math Word Problems"
     },
     "ARXIV/2112.04426": {
       "title": "Improving language models by retrieving from trillions of tokens"

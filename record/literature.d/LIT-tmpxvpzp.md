@@ -1,0 +1,67 @@
+---
+status: 'Active'
+title: 'Training Language Models to Self-Correct via Reinforcement Learning'
+version: 1
+tags:
+- adaptation-and-tuning
+date: '2026-09-17'
+published: '2024-09-19'
+arxiv: '2409.12917'
+first_author: 'Kumar'
+keywords:
+- 'self-correction'
+- 'reinforcement-learning'
+- 'multi-turn-rl'
+- 'on-policy'
+- 'behavior-collapse'
+implementations:
+- 'SCoRe'
+summary: >-
+  Kumar et al. (2024), [ARXIV-2409.12917](https://arxiv.org/abs/2409.12917). SCoRe: multi-turn online RL on
+  entirely self-generated correction traces, which teaches the self-correction
+  that prompting could not produce. +15.6% on MATH and +9.1% on HumanEval for
+  Gemini 1.0 Pro and 1.5 Flash. Its more transferable half is the diagnosis of
+  why supervised fine-tuning on correction traces fails.
+---
+
+# LIT-tmpxvpzp: Training Language Models to Self-Correct via Reinforcement Learning
+
+<!-- inactive-ok-file: SOTA-130 — Proposed, and named throughout as the practice this one rhymes with; the comparison IS the content, so every mention here is deliberate -->
+Kumar et al. (2024) — [ARXIV-2409.12917](https://arxiv.org/abs/2409.12917)
+
+## Key takeaways
+
+- **The premise is somebody else's negative result.** Self-correction "has
+  consistently been found to be largely ineffective in modern LLMs"
+  ([LIT-tmpk5uxn](LIT-tmpk5uxn.md)). The move is not to dispute it but to stop prompting and
+  start training.
+- **Entirely self-generated data.** No second model, no stronger teacher, no
+  extra supervision — which is what makes it a method rather than a
+  distillation result.
+- **Two named reasons SFT on correction traces fails**, and these are the
+  part worth carrying past this paper:
+  - **distribution mismatch** — the mistakes in the collected traces are the
+    *data-collection policy's* mistakes, not the model's own;
+  - **behaviour collapse** — training drifts into one mode of correction that
+    scores well on the training prompts and does not correct at test time.
+- **The fix is shaped by those two.** Train under the model's *own*
+  distribution of correction traces, and regularize: first a phase of
+  multi-turn RL on the base model to reach an initialization less prone to
+  collapse, then a reward bonus that amplifies correction specifically.
+- **Results:** state-of-the-art self-correction, +15.6% on MATH and +9.1% on
+  HumanEval, for Gemini 1.0 Pro and 1.5 Flash respectively.
+
+## Standing in the anthology
+
+Sources [SOTA-tmpdrrh9](../practices.d/SOTA-tmpdrrh9.md). Read against [LIT-tmpk5uxn](LIT-tmpk5uxn.md), which is the baseline it
+measures itself from; the pair is a trunk and its resolution rather than a
+disagreement, and filing either alone would misrepresent both.
+
+It also rhymes with something the record already holds and does not
+duplicate. [SOTA-130](../practices.d/SOTA-130.md) records the R1-Zero line — skip the supervised reasoning
+stage and run RL with verifiable rewards on the base model. Both say a
+supervised stage is insufficient for a reasoning-adjacent capability and
+reach for online RL instead. What this paper adds is the **mechanism**:
+`SOTA-130`'s line reports that skipping SFT works, and this one says *why*
+fitting offline traces fails, with two failure modes named and separated.
+That is the more portable finding, and it is not about self-correction.

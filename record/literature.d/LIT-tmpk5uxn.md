@@ -1,0 +1,53 @@
+---
+status: 'Active'
+title: 'Large Language Models Cannot Self-Correct Reasoning Yet'
+version: 1
+tags:
+- analysis-and-evaluation
+- adaptation-and-tuning
+date: '2026-09-17'
+published: '2023-10-03'
+arxiv: '2310.01798'
+first_author: 'Huang'
+keywords:
+- 'self-correction'
+- 'reasoning'
+- 'negative-result'
+- 'evaluation'
+summary: >-
+  Huang et al. (2023), [ARXIV-2310.01798](https://arxiv.org/abs/2310.01798). The negative result the
+  self-correction literature is answering: asked to revise its own reasoning
+  with no external feedback, a model does not reliably improve, and often
+  gets worse. Names the thing being tested — INTRINSIC self-correction — and
+  that distinction is most of the paper's lasting value.
+---
+
+# LIT-tmpk5uxn: Large Language Models Cannot Self-Correct Reasoning Yet
+
+Huang et al. (2023) — [ARXIV-2310.01798](https://arxiv.org/abs/2310.01798)
+
+## Key takeaways
+
+- **The distinction is the contribution.** *Intrinsic* self-correction is a
+  model revising its answer on its own inherent capabilities alone, with no
+  external feedback, no oracle, no verifier, no second model. Results claimed
+  for "self-correction" often quietly include one of those, and the two
+  situations do not behave alike.
+- Under that definition, on reasoning tasks, models **struggle to improve and
+  at times degrade** after being asked to revise.
+- The failure is not a prompting detail. A model with no external signal has
+  no way to tell a wrong answer from a right one, so a revision step is as
+  likely to move a correct answer as an incorrect one.
+
+## Standing in the anthology
+
+Filed as the negative result a later practice is built on top of, which is
+the honest way to hold it. [LIT-tmpxvpzp](LIT-tmpxvpzp.md) (SCoRe) exists because this one is
+true: it does not dispute the finding, it changes the intervention from
+*prompting* to *training*, and reports its gains against exactly the baseline
+this paper establishes.
+
+Carries no practice of its own. What it licenses is a condition on somebody
+else's — the reason [SOTA-tmpdrrh9](../practices.d/SOTA-tmpdrrh9.md) says to train the capability rather
+than ask for it — and a warning about reading any self-correction claim
+without first checking whether external feedback was in the loop.

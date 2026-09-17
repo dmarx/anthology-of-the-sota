@@ -20,7 +20,11 @@ summary: >-
   has been seen**, which is the assumption a frequency-merge tokenizer makes.
 ---
 
-# THEORY-NNN: A phrase placed in a word slot is read as a lemma, and the reading comes from the construction rather than the phrase's frequency
+<!-- inactive-ok-file: THEORY-tmpvyj77 — Proposed, and cited here AS the
+     unsettled half of a bridge that has not been built. The hedge is the
+     point of the sentence that names it, not something it overlooks. -->
+
+# THEORY-tmprceog: A phrase placed in a word slot is read as a lemma, and the reading comes from the construction rather than the phrase's frequency
 
 ## Source
 
@@ -92,12 +96,16 @@ about anything trained on it.
 
 **It does not show that a model fails to recover these units.** The natural
 next claim is that a tokenizer splitting a construction forces the network to
-reassemble it, and that this is early-layer work. That is a real and
-researched question — the detokenization and inner-lexicon line, `ARXIV-2410.05864`
-and `ARXIV-2406.20086`, which report models fusing multi-token words into
-single representations in early layers — and **the record holds none of it**.
-Until it does, the bridge from this finding to model internals is a
-conjecture the anthology is asserting nothing about.
+reassemble it, and that this is early-layer work. The record now holds one
+half of that: [THEORY-tmpvyj77](THEORY-tmpvyj77.md) reports early layers integrating local context
+into coherent units, and calls the stage *detokenization*. **The two were not
+measured against each other** — different literatures, different methods — and
+the paper behind that account imports its reassembly claim from work the
+record still does not hold, the inner-lexicon line `ARXIV-2410.05864` and
+`ARXIV-2406.20086`. So the pair is suggestive and the bridge is still a
+conjecture; reading them as one account of "the network repairs what the
+tokenizer broke" would be the anthology asserting a result nobody has
+produced.
 
 **It does not license a tokenization practice.** No recommendation follows
 without the missing half above: knowing that the data contains

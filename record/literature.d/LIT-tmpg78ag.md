@@ -1,0 +1,70 @@
+---
+status: 'Active'
+title: 'The Surprising Effectiveness of Test-Time Training for Few-Shot Learning'
+version: 1
+tags:
+- adaptation-and-tuning
+- analysis-and-evaluation
+date: '2026-09-17'
+published: '2024-11-11'
+arxiv: '2411.07279'
+first_author: 'Akyürek'
+keywords:
+- 'test-time-training'
+- 'few-shot-learning'
+- 'in-context-learning'
+- 'arc'
+- 'reasoning'
+summary: >-
+  Akyürek et al. (2024), [ARXIV-2411.07279](https://arxiv.org/abs/2411.07279). Temporarily update the model's
+  parameters at inference, using a loss built from the test instance's own
+  in-context examples. On ARC this is up to 6x a fine-tuned baseline — 53.0%
+  with an 8B model, 61.9% ensembled with program synthesis, which the paper
+  puts at average human performance. Read as evidence about in-context
+  learning's limits as much as about the technique.
+---
+
+# LIT-tmpg78ag: The Surprising Effectiveness of Test-Time Training for Few-Shot Learning
+
+<!-- inactive-ok-file: SOTA-167 — Proposed, named to place the TTT-layers name collision in the architecture lineage where it belongs -->
+
+Akyürek et al. (2024) — [ARXIV-2411.07279](https://arxiv.org/abs/2411.07279)
+
+## Key takeaways
+
+- **The definition is narrow and worth quoting**: test-time training is
+  "temporarily updating model parameters during inference using a loss
+  derived from input data". Temporarily — the update is discarded; this is
+  not fine-tuning with extra steps.
+- **The loss comes from the test instance's own in-context examples.** No
+  labels arrive from outside; the demonstrations already in the prompt are
+  turned from context into gradient.
+- **ARC**: up to **6×** the accuracy of fine-tuned baselines, **53.0%** on the
+  public validation set with an 8B model, **61.9%** ensembled with
+  program-synthesis methods — which the paper describes as matching average
+  human performance.
+- **BIG-Bench Hard**, 10-shot: **50.5% → 57.8%**, +7.3 points over standard
+  few-shot prompting. The second result matters more than the first for
+  generality, because BBH is not a puzzle benchmark built to reward search.
+- The framing the authors draw: this "highlights the limitations of
+  in-context learning for novel tasks". The same examples, used as gradient
+  rather than as context, are worth several times as much.
+
+## Standing in the anthology
+
+Sources [SOTA-tmpv9jzu](../practices.d/SOTA-tmpv9jzu.md).
+
+**A name collision the record should hold explicitly.** "TTT" also names
+`ARXIV-2407.04620`, *Learning to (Learn at Test Time): RNNs with Expressive
+Hidden States*, where the hidden state of a sequence layer is itself a model
+updated by self-supervised learning as the sequence is consumed. That is an
+**architecture**, and it belongs beside the linear-attention and SSM lineage
+this record already holds ([SOTA-132](../practices.d/SOTA-132.md), [SOTA-167](../practices.d/SOTA-167.md)) rather than beside this
+paper. Not filed here: it is a different claim that happens to share an
+abbreviation, and filing it under a box labelled "test-time training" would
+put it in the wrong lineage.
+
+This paper also stands against [SOTA-038](../practices.d/SOTA-038.md) — in-context learning permits few-shot
+task adaptability — without contradicting it. The claim there is that ICL
+works; the claim here is that on *structurally novel* tasks it leaves most of
+the value in the examples unextracted.

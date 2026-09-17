@@ -1,0 +1,70 @@
+---
+status: Active
+title: 'Beyond neural scaling laws: beating power law scaling via data pruning'
+version: 1
+tags:
+- data-pipeline
+- training-optimization
+date: '2026-09-17'
+published: '2022-06-29'
+arxiv: '2206.14486'
+first_author: 'Sorscher'
+keywords:
+- 'data-pruning'
+- 'scaling-laws'
+- 'coresets'
+- 'example-difficulty'
+implementations: []
+summary: >-
+  Sorscher et al. (2022), [ARXIV-2206.14486](https://arxiv.org/abs/2206.14486). Power-law scaling in dataset size can be
+  beaten — reduced toward exponential — if you have a good ranking of which
+  examples to discard and you prune harder as the corpus grows. Which end of
+  the ranking to discard inverts with data abundance.
+---
+
+# LIT-tmpy1abi: Beyond neural scaling laws: beating power law scaling via data pruning
+
+Sorscher et al. (2022) — [ARXIV-2206.14486](https://arxiv.org/abs/2206.14486)
+
+## Key takeaways
+
+- **The scaling exponent is not a law of nature; it is a property of a corpus
+  with redundancy in it.** Power-law scaling of error in dataset size is
+  itself evidence that most examples are near-duplicates of each other. Given
+  a ranking of examples by how much each one teaches, error can fall
+  *exponentially* in the pruned dataset size — shown analytically for
+  perceptron learning and empirically for ResNets on SVHN, CIFAR-10 and
+  ImageNet, and for a ViT fine-tuned on CIFAR-10
+- **The exponential regime requires pruning *harder* as the corpus grows.**
+  It is reached only by increasing the pruned fraction as a function of the
+  initial dataset size; at a fixed fraction the improvement collapses back to
+  a power law. The Pareto-optimal policy is a schedule, not a setting
+- **Which end to discard inverts with abundance.** With abundant data, keep
+  the hard examples; with scarce data, keep the easy ones. Predicted by the
+  theory and confirmed on a ResNet18 trained on CIFAR-10 under the EL2N
+  metric. The reason is informational: easy examples carry coarse-grained
+  information about the target function, hard examples carry fine-grained
+  information about its decision boundary, and fine-grained information is
+  useless until the coarse structure is already learned
+- **Ten pruning metrics benchmarked at ImageNet scale, and most of them fail
+  there.** The metrics that work best on small datasets scale poorly; the
+  best performer (memorization) is computationally intensive and needs a
+  label for every image
+- **A self-supervised metric that needs no labels.** `k`-means in the
+  embedding space of a self-supervised model (SwAV), with difficulty defined
+  as Euclidean distance to the nearest centroid — easy means prototypical.
+  Matches or exceeds memorization down to 70–80% of ImageNet kept, and is
+  robust to `k` over an order of magnitude in either direction
+- **20% of ImageNet is discardable at no cost.** Pruning to 60% with this
+  metric also leaves out-of-distribution accuracy intact against an
+  accuracy-matched baseline
+- Qualitatively, easy examples are redundant near-duplicates and hard ones are
+  idiosyncratic outliers — which is why the same ranking serves both pruning
+  and noise detection, and why the top of it is not safe to keep blindly
+
+<!-- inactive-ok-block: SOTA-tmp70sgi — Proposed, and the practice this note sources.
+     A vision-classification result is exactly what should source a Proposed practice
+     in a registry whose data material is language-model pretraining. -->
+## Standing in the anthology
+
+Read — [NOTE-tmpkz9pz](../notes.d/NOTE-tmpkz9pz.md). Sources [SOTA-tmp70sgi](../practices.d/SOTA-tmp70sgi.md).

@@ -539,6 +539,9 @@
     "ARXIV/2309.17453": {
       "title": "Efficient Streaming Language Models with Attention Sinks"
     },
+    "ARXIV/2310.01798": {
+      "title": "Large Language Models Cannot Self-Correct Reasoning Yet"
+    },
     "ARXIV/2310.01889": {
       "title": "Ring Attention with Blockwise Transformers for Near-Infinite Context"
     },
@@ -640,6 +643,9 @@
     },
     "ARXIV/2409.12186": {
       "title": "Qwen2.5-Coder Technical Report"
+    },
+    "ARXIV/2409.12917": {
+      "title": "Training Language Models to Self-Correct via Reinforcement Learning"
     },
     "ARXIV/2409.19606": {
       "title": "Hyper-Connections"

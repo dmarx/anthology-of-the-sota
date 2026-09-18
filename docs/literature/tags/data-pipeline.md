@@ -6,7 +6,7 @@
 
 **Data pipeline** — loading, quality assessment and selection, preprocessing, batch preparation.
 
-26 of 361 LIT documents. Back to the [full index](../README.md).
+27 of 362 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -36,3 +36,4 @@
 | [LIT-403](../../../record/literature.d/LIT-403.md) | Understanding Black-box Predictions via Influence Functions | Koh and Liang (2017), [ARXIV-1703.04730](https://arxiv.org/abs/1703.04730). Traces a prediction back through the learning algorithm to the training points responsible for it, using a classical technique from robust statistics made tractable by needing only gradients and Hessian-vector products. The origin of training-data attribution in deep learning. | Active |
 | [LIT-425](../../../record/literature.d/LIT-425.md) v2 | Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer | Raffel et al. (2019), [ARXIV-1910.10683](https://arxiv.org/abs/1910.10683). T5's paper, and the origin of **C4** — the heuristically filtered Common Crawl slice that forty-six documents here train on. Filed for the corpus: the record cites C4 constantly and had no document behind it. | Active |
 | [LIT-426](../../../record/literature.d/LIT-426.md) v2 | The Pile: An 800GB Dataset of Diverse Text for Language Modeling | Gao et al. (2020), [ARXIV-2101.00027](https://arxiv.org/abs/2101.00027). 800GB assembled from 22 named sub-corpora with declared weights. The named domains and the default mixture are why the data-mixing line in this record is measured on it — and every "over The Pile's default weights" number is relative to a choice its authors made, not to an optimum. | Active |
+| [LIT-427](../../../record/literature.d/LIT-427.md) | SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model | Ben Allal et al. (2025), [ARXIV-2502.02737](https://arxiv.org/abs/2502.02737). The model report behind SmolLM2-135M-Instruct, which is the base [LIT-129](../../../record/literature.d/LIT-129.md)'s whole experiment runs on — and the source of the overtraining ratio that makes a 135M model worth fine-tuning at all. | Active |

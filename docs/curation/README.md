@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [18 Sep 18:12 — The last entry on the list, and the nine that were never candidates](2026-09.md#the-last-entry-on-the-list-and-the-nine-that-were-never-candidates)
 - [18 Sep 17:27 — A guard against one thing, read as a brake on everything](2026-09.md#a-guard-against-one-thing-read-as-a-brake-on-everything)
 - [18 Sep 05:31 — Five citations was enough, and the reason is the denominator](2026-09.md#five-citations-was-enough-and-the-reason-is-the-denominator)
 - [18 Sep 05:17 — The record measured seventy-four things on ImageNet and did not hold it](2026-09.md#the-record-measured-seventy-four-things-on-imagenet-and-did-not-hold-it)
@@ -104,9 +105,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-97 entries across 2 books, newest first.
+98 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 95 | 2026-09-05 | 2026-09-18 |
+| [2026-09](2026-09.md) | 96 | 2026-09-05 | 2026-09-18 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-69 of 361 LIT documents. Back to the [full index](../README.md).
+70 of 362 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -79,3 +79,4 @@
 | [LIT-423](../../../record/literature.d/LIT-423.md) | ImageNet Large Scale Visual Recognition Challenge | Russakovsky et al. (2014), [ARXIV-1409.0575](https://arxiv.org/abs/1409.0575). The thousand-class challenge built on a slice of [LIT-422](../../../record/literature.d/LIT-422.md)'s database, and the instrument almost every "ImageNet top-1" number in this record is actually measured on — including the human-error figure those numbers are read against. | Active |
 | [LIT-424](../../../record/literature.d/LIT-424.md) | Learning Multiple Layers of Features from Tiny Images | Krizhevsky (2009), University of Toronto technical report. The source of CIFAR-10 and CIFAR-100 — 32×32 labelled images drawn from the Tiny Images collection. Sixty-nine documents here measure something on it, which makes it the record's most-used instrument after ILSVRC. | Active |
 | [LIT-426](../../../record/literature.d/LIT-426.md) v2 | The Pile: An 800GB Dataset of Diverse Text for Language Modeling | Gao et al. (2020), [ARXIV-2101.00027](https://arxiv.org/abs/2101.00027). 800GB assembled from 22 named sub-corpora with declared weights. The named domains and the default mixture are why the data-mixing line in this record is measured on it — and every "over The Pile's default weights" number is relative to a choice its authors made, not to an optimum. | Active |
+| [LIT-427](../../../record/literature.d/LIT-427.md) | SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model | Ben Allal et al. (2025), [ARXIV-2502.02737](https://arxiv.org/abs/2502.02737). The model report behind SmolLM2-135M-Instruct, which is the base [LIT-129](../../../record/literature.d/LIT-129.md)'s whole experiment runs on — and the source of the overtraining ratio that makes a 135M model worth fine-tuning at all. | Active |

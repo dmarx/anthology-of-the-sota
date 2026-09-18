@@ -1,0 +1,119 @@
+---
+status: Active
+title: 'Citations are verified where merges serialize, and the lint keeps asking on the branch'
+version: 1
+tags:
+- record
+- mechanism
+date: '2026-09-18'
+issue: '#172'
+summary: >-
+  `remotes.lock.json` was written by `luria lint`, which runs on every branch,
+  so every contribution that filed a paper carried a diff on it and two such
+  branches conflicted over nothing. luria 0.28.0 moves the write to
+  `luria remotes --resolve`; this record passes `resolve: "true"` on the
+  push-to-main job, beside `concretize` and the views. The lint still asks on
+  a pull request, so `source-mismatch` still fails before the merge.
+  Rejected: promoting `source-unchecked` to a failure, which this record had
+  already declined for a reason this session then demonstrated.
+---
+
+# ADR-tmp4aiyt: Citations are verified where merges serialize, and the lint keeps asking on the branch
+
+## Context
+
+[ADR-018](ADR-018.md) moved the generated views to the push-to-main job, because a file
+every branch rewrites is a file every pair of branches conflicts on. It did
+not notice that this record had a second artifact of exactly that kind.
+
+`remotes.lock.json` records what upstream says each cited identifier is, so
+`source-mismatch` can report an `arxiv:` that names a different paper than the
+document does. In this record it is 921 lines: an empty `remotes` section and
+**305 `titles` entries**. The last fifteen commits touching it are fifteen
+different contributions, and one — `eb3c204` — is an entire pull request whose
+only content is recording one paper's resolved title.
+
+**The writer was the lint.** Under `lint.network = "auto"`, `luria lint` asks
+upstream about identifiers the lockfile cannot answer and, until luria 0.28.0,
+kept what it learned. Caching the answer is right; doing it from a check that
+runs on every branch is what made the file a lock. That is
+`LU-DP-002`'s failure in its least visible form — the remedy had
+already been followed here, since the sources are fragments (one file per
+paper) and the lockfile is derived, and the lock survived both because the
+derivation ran everywhere.
+
+The second cost is the one that surfaced it. Filing four attribution papers in
+one session, arXiv began returning 429 partway through; two identifiers,
+verified by hand against the same API, could not be written. The branch
+carried a finding whose cause was a rate limit on one machine.
+
+## Decision
+
+**Pass `resolve: "true"` on `docs-generate`** — the push-to-main job, beside
+`concretize: "true"` and `views: "true"`, for the same reason all three belong
+there. The lockfile is written by `luria remotes --resolve` at the
+serialization point and committed with the views.
+
+**The pull-request job passes nothing new.** `docs-check` keeps `views:
+"false"` and no `resolve`, so a branch writes neither a view nor the lockfile.
+
+**The lint still asks.** This is the part that makes the move safe rather than
+a deferral. luria 0.28.0 removed the lint's *write* and kept its *fetch*, so a
+pull request still resolves the identifier it just added, still compares it
+against the document's title, and still fails on a mismatch — `source-mismatch`
+remains in `fail_on`. What arrives one merge later is the durable note of the
+answer, not the check.
+
+**Pins move to 0.28.0 together.** Both `pip-spec` and the three action refs.
+`actions/lint` and `actions/site` are byte-identical between 0.25.0 and
+0.28.0 — the only change in `actions/` across those tags is the `resolve:`
+input on `generate` — so bumping them is cosmetic and buys one version to
+reason about instead of two.
+
+## Alternatives considered
+
+**Promote `source-unchecked` to a failure now that `require` is reachable.**
+luria's `lint.network = "require"` makes an unreachable remote a finding, and
+it was unusable here until now: nothing in CI ran the resolve, so "unreachable
+is a finding" meant "every new citation is a finding". It is reachable today
+and this record still declines it — and the reason was already written in
+`luria.yaml`, before any of this:
+
+> `source-unchecked` is deliberately NOT here. It fires when nothing has
+> verified an identifier AND upstream could not be reached, so promoting it
+> would convert an arXiv outage into a red build for a contribution that did
+> nothing wrong.
+
+That argument is unchanged by this decision, and the session that produced
+this decision is its worked example: arXiv refused for over an hour, across
+five attempts, on a branch whose citations were correct. Nothing about moving
+the writer makes that contributor's build actionable.
+
+**Shard the lockfile** into one file per identifier, the way every scheme in
+`record/` is sharded. It fixes conflicts and not the network dependency, and
+once branches stop writing the file there is nothing left to shard.
+
+**Keep resolving by hand before pushing.** The status quo, and its failure
+mode is quiet: the contributor who forgets pushes a branch whose entries land
+in whichever pull request runs the command next. `eb3c204` is what remembering
+looks like — a whole contribution to record one title.
+
+## Consequences
+
+`remotes.lock.json` leaves the branch diff. Two branches filing papers no
+longer conflict on it, and no contribution is blocked by one machine's rate
+limit — which, with two and sometimes three sessions working this record
+concurrently, is the constraint that was actually binding.
+
+What a green pull request means is **unchanged**: the identifier was fetched
+and compared. What a green `main` now additionally means is that the answer is
+recorded, rather than recorded whenever somebody last ran the command.
+
+The trunk job gains a network step. A throttled resolve leaves the entries
+unwritten and reports them rather than failing, the command asks unsettled
+identifiers first and checkpoints as it goes, and a typical merge adds a
+handful of lookups — so the cost of a bad day is the answers, not the build.
+
+Two identifiers are unrecorded as this lands — `1703.04730` and `2002.08484`,
+both verified by hand — and the first push to `main` under this decision is
+what records them. That is the mechanism's first job and a fair test of it.

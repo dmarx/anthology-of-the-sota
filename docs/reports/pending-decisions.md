@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**78 document(s) awaiting a decision.**
+**82 document(s) awaiting a decision.**
 
 ## SOTAs
 
-52 of the 78.
+54 of the 82.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -45,9 +45,9 @@
 | 2026-09-09 | Proposed | [SOTA-189](../../record/practices.d/SOTA-189.md) | 0 | 0 | Set the checkpoint interval from the job's measured time-to-failure, which shrinks as the job grows |
 | 2026-09-10 | Proposed | [SOTA-204](../../record/practices.d/SOTA-204.md) | 2 | 0 | Anneal a discretisation from coarse to fine over training rather than fixing it |
 | 2026-09-10 | Proposed | [SOTA-193](../../record/practices.d/SOTA-193.md) | 1 | 0 | Lower Adam's second-moment decay when the loss spikes, before reaching for the learning rate |
+| 2026-09-15 | Proposed | [SOTA-213](../../record/practices.d/SOTA-213.md) | 14 | 0 | Control evolution-strategies drift with a larger population or an anchor penalty, not by stopping training early |
 | 2026-09-15 | Proposed | [SOTA-211](../../record/practices.d/SOTA-211.md) | 13 | 0 | Spend one fitness evaluation per evolution-strategies direction, not an antithetic pair |
-| 2026-09-15 | Proposed | [SOTA-213](../../record/practices.d/SOTA-213.md) | 13 | 0 | Control evolution-strategies drift with a larger population or an anchor penalty, not by stopping training early |
-| 2026-09-15 | Proposed | [SOTA-212](../../record/practices.d/SOTA-212.md) | 5 | 0 | Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them |
+| 2026-09-15 | Proposed | [SOTA-212](../../record/practices.d/SOTA-212.md) | 6 | 0 | Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them |
 | 2026-09-15 | Proposed | [SOTA-216](../../record/practices.d/SOTA-216.md) | 3 | 0 | Switch from minibatch SGD to local SGD at the first learning-rate decay, rather than choosing between them |
 | 2026-09-15 | Proposed | [SOTA-215](../../record/practices.d/SOTA-215.md) | 2 | 0 | Freeze Adam's variance term after a warmup before compressing its update, and never compress the update directly |
 | 2026-09-15 | Proposed | [SOTA-217](../../record/practices.d/SOTA-217.md) | 1 | 0 | Align the hidden-unit permutation before averaging weights from separately trained networks |
@@ -64,11 +64,13 @@
 | 2026-09-17 | Proposed | [SOTA-244](../../record/practices.d/SOTA-244.md) | 2 | 0 | Score example importance a few epochs into training, averaged over several initializations |
 | 2026-09-17 | Proposed | [SOTA-245](../../record/practices.d/SOTA-245.md) | 2 | 0 | State a relation in both orders in the training corpus if you want it usable in both directions |
 | 2026-09-17 | Proposed | [SOTA-232](../../record/practices.d/SOTA-232.md) | 1 | 0 | Convert an autoregressive model into a diffusion model by continual pretraining rather than training one from scratch |
+| 2026-09-17 | Proposed | [SOTA-247](../../record/practices.d/SOTA-247.md) | 1 | 0 | Add a multi-token word to a frozen model's vocabulary from the model's own detokenized representation of it |
+| 2026-09-17 | Proposed | [SOTA-248](../../record/practices.d/SOTA-248.md) | 1 | 0 | Stretch and clip the softmax so an attention head can output exact zeros |
 | 2026-09-17 | Proposed | [SOTA-234](../../record/practices.d/SOTA-234.md) | 0 | 0 | Train in the target low-bit format from scratch rather than quantizing a finished model |
 
 ## THEORYs
 
-7 of the 78.
+8 of the 82.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -79,10 +81,11 @@
 | 2026-09-15 | Proposed | [THEORY-010](../../record/theory.d/THEORY-010.md) | 2 | 0 | Most of the loss barrier between two independently trained networks is permutation, not disagreement |
 | 2026-09-16 | Proposed | [THEORY-012](../../record/theory.d/THEORY-012.md) | 7 | 0 | How far a batch-size scaling heuristic transfers is a property of the optimizer, not of the heuristic |
 | 2026-09-16 | Proposed | [THEORY-014](../../record/theory.d/THEORY-014.md) | 2 | 0 | The outer optimizer is what buys the inner step count |
+| 2026-09-17 | Proposed | [THEORY-023](../../record/theory.d/THEORY-023.md) | 2 | 0 | Depth-dependent computation in a transformer falls into four stages, of which detokenization is the first |
 
 ## LITs
 
-3 of the 78.
+3 of the 82.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -92,7 +95,7 @@
 
 ## ADRs
 
-16 of the 78.
+17 of the 82.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -112,6 +115,7 @@
 | 2026-09-16 | Proposed | [ADR-040](../../record/decisions.d/ADR-040.md) | 0 | 0 | Advice on how to prove a theorem is out of scope; advice on how to find out whether a technique worked is not |
 | 2026-09-16 | Proposed | [ADR-042](../../record/decisions.d/ADR-042.md) | 0 | 0 | A practice may be filed in order to say do not do this |
 | 2026-09-17 | Proposed | [ADR-043](../../record/decisions.d/ADR-043.md) | 6 | 0 | Doubt about whether an item is worth carrying is not a reason to leave it out, and not a third kind of provisional |
+| 2026-09-17 | Proposed | [ADR-045](../../record/decisions.d/ADR-045.md) | 2 | 0 | A claim about the signal is admissible however it was measured, including on people |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 

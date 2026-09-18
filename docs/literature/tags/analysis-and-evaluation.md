@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-59 of 343 LIT documents. Back to the [full index](../README.md).
+62 of 352 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -69,3 +69,6 @@
 | [LIT-405](../../../record/literature.d/LIT-405.md) | On the Measure of Intelligence | Chollet (2019), [ARXIV-1911.01547](https://arxiv.org/abs/1911.01547). Argues that measuring skill measures the wrong thing, and introduces ARC — a puzzle benchmark built so that every task is structurally novel, which is what makes it resistant to the memorization that saturates ordinary benchmarks. | Active |
 | [LIT-407](../../../record/literature.d/LIT-407.md) | Think you have Solved Question Answering? Try ARC, the AI2 Reasoning Challenge | Clark et al. (2018), [ARXIV-1803.05457](https://arxiv.org/abs/1803.05457). Grade-school science questions split into an Easy set and a Challenge set, the latter selected because retrieval and word-co-occurrence baselines both fail on it. The "ARC" that appears in this record's evaluation suites — and not the one SOTA-235 reports on. | Active |
 | [LIT-408](../../../record/literature.d/LIT-408.md) | Program Synthesis with Large Language Models | Austin et al. (2021), [ARXIV-2108.07732](https://arxiv.org/abs/2108.07732). Introduces MBPP — Mostly Basic Python Problems — short crowd-sourced tasks each with three test cases, the entry-level counterpart to HumanEval and the other half of the pair this record's code-generation results are reported on. | Active |
+| [LIT-411](../../../record/literature.d/LIT-411.md) | Measuring Mathematical Problem Solving With the MATH Dataset | Hendrycks et al. (2021), [ARXIV-2103.03874](https://arxiv.org/abs/2103.03874). 12,500 competition mathematics problems, each with a full step-by-step solution — which is why the dataset became a training signal as well as a benchmark, and why a result on it needs to say which it was used as. | Active |
+| [LIT-415](../../../record/literature.d/LIT-415.md) | Stream of Search (SoS): Learning to Search in Language | Gandhi et al. (2024), [ARXIV-2404.03683](https://arxiv.org/abs/2404.03683). Filed for its task, not its method. Countdown — combine input numbers with arithmetic operations to reach a target — is the verifiable puzzle twenty-three documents here report results on, and this is the paper that put it in front of this literature. | Active |
+| [LIT-416](../../../record/literature.d/LIT-416.md) | GPQA: A Graduate-Level Google-Proof Q&A Benchmark | Rein et al. (2023), [ARXIV-2311.12022](https://arxiv.org/abs/2311.12022). 448 multiple-choice questions written by domain PhDs, validated so that skilled non-experts with unrestricted web access reach 34% against experts' 65%. The gap is the instrument — and it is small enough that the benchmark's own noise floor is worth knowing. | Active |

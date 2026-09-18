@@ -1,15 +1,18 @@
 ---
+number: 20
 status: Active
+formerly:
+- THEORY-tmp7jm1a
 title: 'Layer importance is not uniform with depth: middle layers tolerate deletion and reordering, the first and last do not'
 version: 1
 tags:
 - model-architecture
 date: '2026-09-17'
 source:
-- LIT-tmpyn738
+- LIT-417
 explains: []
 summary: >-
-  Lad et al. (2024), [LIT-tmpyn738](../literature.d/LIT-tmpyn738.md) — deleting a layer outright, or swapping two
+  Lad et al. (2024), [LIT-417](../literature.d/LIT-417.md) — deleting a layer outright, or swapping two
   adjacent ones, at inference and without fine-tuning, leaves 72-95% of top-1
   predictions unchanged. The degradation is localized rather than uniform: the
   first and last layers are fragile, the middle is not, and swapping hurts
@@ -18,15 +21,15 @@ summary: >-
   grows with depth, so it is not a small-model artifact.
 ---
 
-<!-- inactive-ok-file: THEORY-tmpvyj77 — Proposed, and named here precisely
+<!-- inactive-ok-file: THEORY-023 — Proposed, and named here precisely
      to say the framework is weaker than this measurement. That is the
      reason the two are separate documents. -->
 
-# THEORY-tmp7jm1a: Layer importance is not uniform with depth: middle layers tolerate deletion and reordering, the first and last do not
+# THEORY-020: Layer importance is not uniform with depth: middle layers tolerate deletion and reordering, the first and last do not
 
 ## Source
 
-Lad et al. (2024), [LIT-tmpyn738](../literature.d/LIT-tmpyn738.md) —
+Lad et al. (2024), [LIT-417](../literature.d/LIT-417.md) —
 [ARXIV-2406.19384](https://arxiv.org/abs/2406.19384).
 
 ## What was actually shown
@@ -74,7 +77,7 @@ every layer after it.
 
 That is an argument, not a measurement, and it is the entry point to the
 four-stage framework — which the record files separately and at a weaker
-status, as [THEORY-tmpvyj77](THEORY-tmpvyj77.md).
+status, as [THEORY-023](THEORY-023.md).
 
 ## What this does not say
 

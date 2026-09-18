@@ -1,18 +1,21 @@
 ---
+number: 21
 status: Active
+formerly:
+- THEORY-tmpkh59b
 title: "A model builds a latent vocabulary in its early layers whose units are not the tokenizer's"
 version: 1
 tags:
 - representation-and-encoding
 date: '2026-09-17'
 source:
-- LIT-tmp8gq9j
-- LIT-tmp2gcne
-- LIT-tmpyn738
+- LIT-412
+- LIT-409
+- LIT-417
 explains:
-- SOTA-tmp5b7vv
+- SOTA-247
 summary: >-
-  Kaplan et al. (2024), [LIT-tmp8gq9j](../literature.d/LIT-tmp8gq9j.md), with [LIT-tmp2gcne](../literature.d/LIT-tmp2gcne.md) and [LIT-tmpyn738](../literature.d/LIT-tmpyn738.md) —
+  Kaplan et al. (2024), [LIT-412](../literature.d/LIT-412.md), with [LIT-409](../literature.d/LIT-409.md) and [LIT-417](../literature.d/LIT-417.md) —
   sub-word sequences are recombined into whole-unit representations at a
   unit's last token, in early and middle layers, and the units include things
   the tokenizer has no entry for: arbitrary splits, typos, out-of-vocabulary
@@ -23,19 +26,19 @@ summary: >-
 ---
 
 
-<!-- inactive-ok-file: SOTA-tmp5b7vv, THEORY-tmpvyj77 — both Proposed and
+<!-- inactive-ok-file: SOTA-247, THEORY-023 — both Proposed and
      both filed in this same change. The practice is named as what this
      account makes possible, with its own status saying why it is not
      asserted; the four-stage framework is named as the WEAKER framing
      that this evidence supports one stage of and does not promote. -->
 
-# THEORY-tmpkh59b: A model builds a latent vocabulary in its early layers whose units are not the tokenizer's
+# THEORY-021: A model builds a latent vocabulary in its early layers whose units are not the tokenizer's
 
 ## Source
 
-Kaplan et al. (2024), [LIT-tmp8gq9j](../literature.d/LIT-tmp8gq9j.md), primary;
-with Feucht et al. (2024), [LIT-tmp2gcne](../literature.d/LIT-tmp2gcne.md), and
-Lad et al. (2024), [LIT-tmpyn738](../literature.d/LIT-tmpyn738.md).
+Kaplan et al. (2024), [LIT-412](../literature.d/LIT-412.md), primary;
+with Feucht et al. (2024), [LIT-409](../literature.d/LIT-409.md), and
+Lad et al. (2024), [LIT-417](../literature.d/LIT-417.md).
 
 ## What was actually shown
 
@@ -47,22 +50,22 @@ holds the claim rather than the papers' individual confidence.
   **89%** by layer 13, rising from chance across layers 2-6. Run on the
   **penultimate** token — which co-occurs with the same prefixes just as often
   — it reaches only **61%**. So the signal tracks a completed unit, not a
-  frequent token sequence ([LIT-tmp8gq9j](../literature.d/LIT-tmp8gq9j.md)).
+  frequent token sequence ([LIT-412](../literature.d/LIT-412.md)).
 - **An erasure signature.** Probes that recover neighbouring and current token
   identity everywhere else **fail at the last token of a multi-token word or
   named entity**, in early layers, on Llama-2-7b and Llama-3-8b across ~12,000
   correctly-answered COUNTERFACT and Wikidata prompts. Non-final subject
-  tokens do not show it ([LIT-tmp2gcne](../literature.d/LIT-tmp2gcne.md)).
+  tokens do not show it ([LIT-409](../literature.d/LIT-409.md)).
 - **An ablation.** The layers whose removal a model cannot absorb are the
   first ones, and the stage immediately after the first layer is the one Lad
-  et al. name detokenization ([LIT-tmpyn738](../literature.d/LIT-tmpyn738.md)).
+  et al. name detokenization ([LIT-417](../literature.d/LIT-417.md)).
 
 **The units exceed the vocabulary, which is the substantive half.** The
 reassembly survives **arbitrary splits** (`cats` → `ca` + `ts`), typos, and
 **out-of-vocabulary words**; feeding a last-token representation back in as
 input, the model reads it as the whole word although no such representation
 ever appeared as input during training. And the units are not only words:
-[LIT-tmp2gcne](../literature.d/LIT-tmp2gcne.md) counts named entities and
+[LIT-409](../literature.d/LIT-409.md) counts named entities and
 **non-compositional multi-word expressions** — `break a leg`, whose meaning is
 no more predictable from `break` and `leg` than `patrolling`'s is from `pat`
 and `rolling`.
@@ -74,7 +77,7 @@ broken it. Both checks were run and both went the other way.
 
 **And it is constructive.** The representations support a vocabulary-expansion
 method that preserves the model's accuracy —
-[SOTA-tmp5b7vv](../practices.d/SOTA-tmp5b7vv.md) — which is a stronger test of
+[SOTA-247](../practices.d/SOTA-247.md) — which is a stronger test of
 the account than any probe: a representation you can put back into the
 embedding matrix and have the frozen model use is one that was really there.
 
@@ -92,20 +95,20 @@ lexicality score cannot be told apart from an error in the method, and the
 comparison set of multi-token words and spaCy entities "likely does not cover
 all cases".
 
-**Llama, and English.** [LIT-tmp2gcne](../literature.d/LIT-tmp2gcne.md) is
+**Llama, and English.** [LIT-409](../literature.d/LIT-409.md) is
 Llama-2-7b and Llama-3-8b only, and English only, by its own limitations
-section; [LIT-tmp8gq9j](../literature.d/LIT-tmp8gq9j.md)'s probes are Llama2-7B,
+section; [LIT-412](../literature.d/LIT-412.md)'s probes are Llama2-7B,
 with the vocabulary-expansion result reaching Arabic. The layer-ablation
 evidence is GPT-2 and Pythia. No result here is at the scale the practice
 registry mostly advises on.
 
 **It does not confirm the four-stage framework**, though it supports one
-stage of it. [THEORY-tmpvyj77](THEORY-tmpvyj77.md) remains `Proposed` for
+stage of it. [THEORY-023](THEORY-023.md) remains `Proposed` for
 reasons this evidence does not touch: its boundaries are approximate and its
 middle stages are interpolations.
 
 **And it does not close the bridge to the signal side.**
-[THEORY-tmprceog](THEORY-tmprceog.md) says English delimits lexical units by
+[THEORY-022](THEORY-022.md) says English delimits lexical units by
 construction rather than by frequency; this says models rebuild units their
 tokenizer split. The two now overlap on **non-compositional multi-word
 units**, which is a much narrower coincidence than "both concern

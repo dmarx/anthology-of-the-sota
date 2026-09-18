@@ -302,6 +302,9 @@
     "ARXIV/2103.03386": {
       "title": "Clusterability in Neural Networks"
     },
+    "ARXIV/2103.03874": {
+      "title": "Measuring Mathematical Problem Solving With the MATH Dataset"
+    },
     "ARXIV/2104.00680": {
       "title": "LoFTR: Detector-Free Local Feature Matching with Transformers"
     },
@@ -614,6 +617,9 @@
     "ARXIV/2311.08105": {
       "title": "DiLoCo: Distributed Low-Communication Training of Language Models"
     },
+    "ARXIV/2311.12022": {
+      "title": "GPQA: A Graduate-Level Google-Proof Q&A Benchmark"
+    },
     "ARXIV/2311.17857": {
       "title": "Gaussian Shell Maps for Efficient 3D Human Generation"
     },
@@ -649,6 +655,9 @@
     },
     "ARXIV/2403.16952": {
       "title": "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance"
+    },
+    "ARXIV/2404.03683": {
+      "title": "Stream of Search (SoS): Learning to Search in Language"
     },
     "ARXIV/2404.06395": {
       "title": "MiniCPM: Unveiling the Potential of Small Language Models with Scalable Training Strategies"

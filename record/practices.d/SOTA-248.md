@@ -1,5 +1,8 @@
 ---
+number: 248
 status: Proposed
+formerly:
+- SOTA-tmp8ldmf
 promote_when: >-
   The method pre-trained into a decoder-only model at a scale the practice
   registry advises on — billions of parameters, a modern corpus — with the
@@ -22,12 +25,12 @@ tags:
 - attention-techniques
 date: '2026-09-17'
 source:
-- LIT-tmpfe659
+- LIT-414
 introduced_by:
-- LIT-tmpfe659
+- LIT-414
 implementations: []
 summary: >-
-  Bondarenko et al. (2023), [LIT-tmpfe659](../literature.d/LIT-tmpfe659.md) — a head that wants to do nothing has
+  Bondarenko et al. (2023), [LIT-414](../literature.d/LIT-414.md) — a head that wants to do nothing has
   to drive its softmax input to infinity to approximate exact zeros, and that
   is what creates the activation outliers that break INT8. Stretch the softmax
   to (γ, ζ) and clip back to (0,1) and zeros become reachable from a finite
@@ -36,14 +39,14 @@ summary: >-
   BERT-base, OPT-125M and ViT-S/16 — small and encoder-heavy.
 ---
 
-# SOTA-tmp8ldmf: Stretch and clip the softmax so an attention head can output exact zeros
+# SOTA-248: Stretch and clip the softmax so an attention head can output exact zeros
 
 ## Source
 
-Bondarenko et al. (2023), [LIT-tmpfe659](../literature.d/LIT-tmpfe659.md) —
+Bondarenko et al. (2023), [LIT-414](../literature.d/LIT-414.md) —
 [ARXIV-2306.12929](https://arxiv.org/abs/2306.12929), NeurIPS 2023.
 
-The reason it works is [THEORY-tmp1rmwn](../theory.d/THEORY-tmp1rmwn.md): the
+The reason it works is [THEORY-019](../theory.d/THEORY-019.md): the
 softmax denominator forces a head to place its mass somewhere, so a head with
 nothing to attend to can only approach a no-op by making its scores extreme.
 This gives it a way to reach zero in finite range instead.
@@ -94,7 +97,7 @@ confirmed at 15B by an independent group and is [SOTA-134](SOTA-134.md),
 the two are different interventions and only one of them has been scaled.
 
 **Untested against the third option.** `softmax₁` — one added to the
-denominator ([LIT-tmpeajzz](../literature.d/LIT-tmpeajzz.md)) — reaches for the
+denominator ([LIT-413](../literature.d/LIT-413.md)) — reaches for the
 same property by a simpler route and has never been evaluated against this.
 
 ## Known implementations

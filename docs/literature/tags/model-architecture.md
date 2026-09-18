@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-42 of 343 LIT documents. Back to the [full index](../README.md).
+43 of 352 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -52,3 +52,4 @@
 | [LIT-380](../../../record/literature.d/LIT-380.md) | The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits | Ma et al. (2024), [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764). Every weight is ternary, {-1, 0, +1}, and the model is trained that way from scratch rather than quantized afterwards. From 3B upward it matches an FP16 LLaMA of the same size and token budget on perplexity and end-task accuracy, while the matrix multiply reduces to integer addition — a compute paradigm rather than a compression ratio. | Active |
 | [LIT-384](../../../record/literature.d/LIT-384.md) | VGGT: Visual Geometry Grounded Transformer | Wang et al. (2025), [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651). One feed-forward pass infers camera parameters, point maps, depth maps and 3D point tracks together, from one view or hundreds, in under a second — beating methods that post-process with geometry optimisation. The claim that matters is that the specialisation into separate tasks was never necessary. | Active |
 | [LIT-406](../../../record/literature.d/LIT-406.md) | Qwen2.5 Technical Report | Qwen Team (2024), [ARXIV-2412.15115](https://arxiv.org/abs/2412.15115). The open-weight family this record measures against more than any other — forty-five documents here name it, and until now none of them could point at it. | Active |
+| [LIT-417](../../../record/literature.d/LIT-417.md) | The Remarkable Robustness of LLMs: Stages of Inference? | Lad et al. (2024), [ARXIV-2406.19384](https://arxiv.org/abs/2406.19384). Deleting a layer outright, or swapping two adjacent ones, leaves 72-95% of top-1 predictions unchanged with no fine-tuning — but only in the middle. Interventions on the first and last layers degrade badly, and swapping hurts less than dropping. The paper reads that localized sensitivity as four stages of inference, with the question mark in its own title: detokenization, feature engineering, prediction ensembling, residual sharpening. The record files the measurement and the framework as separate claims because their evidence is not the same strength. | Active |

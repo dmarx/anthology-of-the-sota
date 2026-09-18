@@ -6,9 +6,11 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [18 Sep 02:27 — Twenty-three uses of a task, none of the method that brought it](2026-09.md#twenty-three-uses-of-a-task-none-of-the-method-that-brought-it)
 - [18 Sep 01:17 — The worklist was ranked by a twelve-paper sample, and the corpus disagrees](2026-09.md#the-worklist-was-ranked-by-a-twelve-paper-sample-and-the-corpus-disagrees)
 - [17 Sep 21:36 — The explanation was replaced and the practice was not](2026-09.md#the-explanation-was-replaced-and-the-practice-was-not)
 - [17 Sep 20:51 — Redundancy is not quality, and a crossover the record has now seen twice](2026-09.md#redundancy-is-not-quality-and-a-crossover-the-record-has-now-seen-twice)
+- [17 Sep 20:47 — A paper with no machine in it, and the boundary that turned out never to have been drawn](2026-09.md#a-paper-with-no-machine-in-it-and-the-boundary-that-turned-out-never-to-have-been-drawn)
 - [17 Sep 18:17 — The registry decision the audit left open, and the rule that was already there](2026-09.md#the-registry-decision-the-audit-left-open-and-the-rule-that-was-already-there)
 - [17 Sep 17:40 — Dropout was missing, and the reason it was missing is the reason it was missing everywhere else](2026-09.md#dropout-was-missing-and-the-reason-it-was-missing-is-the-reason-it-was-missing-everywhere-else)
 - [17 Sep 17:34 — A caveat I did not write, an incumbent nobody filed, and the axis the data practices were missing](2026-09.md#a-caveat-i-did-not-write-an-incumbent-nobody-filed-and-the-axis-the-data-practices-were-missing)
@@ -98,9 +100,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-91 entries across 2 books, newest first.
+93 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 89 | 2026-09-05 | 2026-09-18 |
+| [2026-09](2026-09.md) | 91 | 2026-09-05 | 2026-09-18 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

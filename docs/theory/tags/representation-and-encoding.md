@@ -6,8 +6,9 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-0 of 18 THEORY documents. Back to the [full index](../README.md).
+2 of 23 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [THEORY-021](../../../record/theory.d/THEORY-021.md) | A model builds a latent vocabulary in its early layers whose units are not the tokenizer's | Kaplan et al. (2024), [LIT-412](../../../record/literature.d/LIT-412.md), with [LIT-409](../../../record/literature.d/LIT-409.md) and [LIT-417](../../../record/literature.d/LIT-417.md) — sub-word sequences are recombined into whole-unit representations at a unit's last token, in early and middle layers, and the units include things the tokenizer has no entry for: arbitrary splits, typos, out-of-vocabulary words, named entities and non-compositional multi-word expressions. Three groups, three methods — a probe with a co-occurrence control, an erasure signature, and layer ablation — reaching the same place. The tokenizer's vocabulary is the model's input format, not its inventory of units. | Active |
+| [THEORY-022](../../../record/theory.d/THEORY-022.md) | A phrase placed in a word slot is read as a lemma, and the reading comes from the construction rather than the phrase's frequency | Goldberg and Shirtz (2025), [LIT-410](../../../record/literature.d/LIT-410.md) — English has a productive construction in which a unit with the internal syntax of a phrase, up to a whole sentence, occupies a slot reserved for a word, and comprehenders give it the kind of meaning a word has: it evokes a semantic frame presumed to be shared. Four preregistered surveys measure the reading, and the fourth removes the obvious deflation — the effect is the same size on high-frequency phrases, and estimated corpus frequency predicts nothing. So **the lexical unit is delimited by construction, not by how often the string has been seen**, which is the assumption a frequency-merge tokenizer makes. | Active |

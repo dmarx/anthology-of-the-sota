@@ -1,5 +1,8 @@
 ---
+number: 23
 status: Proposed
+formerly:
+- THEORY-tmpvyj77
 promote_when: >-
   A stage boundary predicted in advance and then confirmed by an independent
   intervention — for instance, a model family where the framework says
@@ -15,10 +18,10 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-17'
 source:
-- LIT-tmpyn738
+- LIT-417
 explains: []
 summary: >-
-  Lad et al. (2024), [LIT-tmpyn738](../literature.d/LIT-tmpyn738.md) — the reading the authors put on their own
+  Lad et al. (2024), [LIT-417](../literature.d/LIT-417.md) — the reading the authors put on their own
   localized-sensitivity result, and they put a question mark in the title.
   Four stages: detokenization lifts raw token embeddings into contextual ones
   by integrating local context; feature engineering refines task and entity
@@ -28,17 +31,17 @@ summary: >-
   authors' own account, and stages may co-occur in one layer.
 ---
 
-# THEORY-tmpvyj77: Depth-dependent computation in a transformer falls into four stages, of which detokenization is the first
+# THEORY-023: Depth-dependent computation in a transformer falls into four stages, of which detokenization is the first
 
 ## Source
 
-Lad et al. (2024), [LIT-tmpyn738](../literature.d/LIT-tmpyn738.md) —
+Lad et al. (2024), [LIT-417](../literature.d/LIT-417.md) —
 [ARXIV-2406.19384](https://arxiv.org/abs/2406.19384).
 
 ## What the account says
 
 Four stages, hypothesized across five model families from the
-localized-sensitivity result in [THEORY-tmp7jm1a](THEORY-tmp7jm1a.md):
+localized-sensitivity result in [THEORY-020](THEORY-020.md):
 
 1. **Detokenization** — local context is integrated to lift raw token
    embeddings into higher-level representations.
@@ -93,17 +96,17 @@ predicted *before* it is tested.
 an artifact of where the tokenizer split things. The strong version — that a
 network spends early depth reassembling units its vocabulary broke — is not
 what this paper showed; it imports the claim. The direct evidence is now filed
-separately as [THEORY-tmpkh59b](THEORY-tmpkh59b.md), on the two papers this
+separately as [THEORY-021](THEORY-021.md), on the two papers this
 one cites for it, and it is considerably stronger than what is here. Stage 1
 is the one stage of the four that does not rest on this paper's own
 measurements.
 
 **It does not connect to the signal-side claim, and neither does the stronger
-account.** [THEORY-tmprceog](THEORY-tmprceog.md) says the lexical unit in
+account.** [THEORY-022](THEORY-022.md) says the lexical unit in
 English is delimited by construction rather than frequency;
-[THEORY-tmpkh59b](THEORY-tmpkh59b.md) says models rebuild units their
+[THEORY-021](THEORY-021.md) says models rebuild units their
 tokenizer split. Neither was measured against the other, and the experiment
 that would connect them has not been run.
 
 **And it is not a claim about where to cut a model.** No practice follows —
-see the same section in [THEORY-tmp7jm1a](THEORY-tmp7jm1a.md).
+see the same section in [THEORY-020](THEORY-020.md).

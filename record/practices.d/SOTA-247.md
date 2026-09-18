@@ -1,5 +1,8 @@
 ---
+number: 247
 status: Proposed
+formerly:
+- SOTA-tmp5b7vv
 promote_when: >-
   An independent group adding multi-token vocabulary this way on a model
   family other than Llama and reporting both halves — that the frozen model
@@ -22,12 +25,12 @@ tags:
 - representation-and-encoding
 date: '2026-09-17'
 source:
-- LIT-tmp8gq9j
+- LIT-412
 introduced_by:
-- LIT-tmp8gq9j
+- LIT-412
 implementations: []
 summary: >-
-  Kaplan et al. (2024), [LIT-tmp8gq9j](../literature.d/LIT-tmp8gq9j.md) — a model already computes a whole-word
+  Kaplan et al. (2024), [LIT-412](../literature.d/LIT-412.md) — a model already computes a whole-word
   representation for a word its tokenizer splits, so initialize the new
   embedding and unembedding from *that* rather than from an average of the
   word's token embeddings. On Llama2-7B the frozen model then uses the new
@@ -36,17 +39,17 @@ summary: >-
   and degrades the model. The gain is largest where the tokenizer is worst:
   Arabic Wiki40B, 0.402 new-token accuracy against 0.117.
 explained_by:
-- THEORY-tmpkh59b
+- THEORY-021
 ---
 
-# SOTA-tmp5b7vv: Add a multi-token word to a frozen model's vocabulary from the model's own detokenized representation of it
+# SOTA-247: Add a multi-token word to a frozen model's vocabulary from the model's own detokenized representation of it
 
 ## Source
 
-Kaplan et al. (2024), [LIT-tmp8gq9j](../literature.d/LIT-tmp8gq9j.md) —
+Kaplan et al. (2024), [LIT-412](../literature.d/LIT-412.md) —
 [ARXIV-2410.05864](https://arxiv.org/abs/2410.05864), ICLR 2025.
 
-The reason it works is [THEORY-tmpkh59b](../theory.d/THEORY-tmpkh59b.md): the
+The reason it works is [THEORY-021](../theory.d/THEORY-021.md): the
 model has already built a single representation for the word, so the thing you
 need to put in the embedding matrix exists inside the network and can be read
 out rather than guessed at.
@@ -107,7 +110,7 @@ are not like-for-like.
 
 **One model.** Llama2-7B. The `Proposed` status is about that and about the
 missing serving measurement, not about doubt over the mechanism, which
-[THEORY-tmpkh59b](../theory.d/THEORY-tmpkh59b.md) holds `Active` on three
+[THEORY-021](../theory.d/THEORY-021.md) holds `Active` on three
 independent lines of evidence.
 
 ## Known implementations

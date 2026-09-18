@@ -6,8 +6,8 @@
 
 **Attention techniques** — attention variants and alternative mechanisms, implementation optimizations, context length.
 
-0 of 18 THEORY documents. Back to the [full index](../README.md).
+1 of 23 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [THEORY-019](../../../record/theory.d/THEORY-019.md) | A softmax head with nothing to attend to must place its mass somewhere, so models learn a positional sink | Xiao et al. (2023), [LIT-191](../../../record/literature.d/LIT-191.md) — attention scores are normalized to sum to one, so a head with nothing it needs to attend to still has mass to shed, and it learns to dump it on the positions every query can see, which under causal masking are the first few tokens. The evidence that it is positional rather than semantic: replacing the first four tokens with linebreaks moves Llama-2-13B from 5.40 to 5.60 perplexity, while evicting them from the cache moves it to 5158. [LIT-190](../../../record/literature.d/LIT-190.md) finds the same concentration in the residual stream, and [SOTA-134](../../../record/practices.d/SOTA-134.md)'s gate removes sinks rather than relocating them, which is what the account predicts. | Active |

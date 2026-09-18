@@ -1,5 +1,8 @@
 ---
+number: 19
 status: Active
+formerly:
+- THEORY-tmp1rmwn
 title: 'A softmax head with nothing to attend to must place its mass somewhere, so models learn a positional sink'
 version: 1
 tags:
@@ -23,12 +26,12 @@ summary: >-
 ---
 
 
-<!-- inactive-ok-file: SOTA-tmp8ldmf — Proposed, filed in this same change,
+<!-- inactive-ok-file: SOTA-248 — Proposed, filed in this same change,
      and named here as one of the two remedies the source paper tested. Its
      own status says why it is not asserted: the evidence is at 109M and the
      phenomenon intensifies with scale. -->
 
-# THEORY-tmp1rmwn: A softmax head with nothing to attend to must place its mass somewhere, so models learn a positional sink
+# THEORY-019: A softmax head with nothing to attend to must place its mass somewhere, so models learn a positional sink
 
 ## Source
 
@@ -104,17 +107,17 @@ monotonically lower perplexity — Llama-2-7B is better at 4+2044 than at
 4+4092 — which is a separate phenomenon this account says nothing about.
 
 **The account did not originate here, and the tested version of the fix is
-older than the popular one.** [LIT-tmpfe659](../literature.d/LIT-tmpfe659.md)
+older than the popular one.** [LIT-414](../literature.d/LIT-414.md)
 (June 2023) reached the same mechanism from the quantization side — a head
 approximating a no-op must drive its softmax input to extremes, producing the
 activation outliers that break INT8 — and shipped **two** remedies with
-experiments: clipped softmax ([SOTA-tmp8ldmf](../practices.d/SOTA-tmp8ldmf.md))
+experiments: clipped softmax ([SOTA-248](../practices.d/SOTA-248.md))
 and gated attention, which is [SOTA-134](../practices.d/SOTA-134.md). That the
 same account was reached independently from quantizability and from streaming
 is the strongest support this document has.
 
 **What remains untested is `softmax₁` specifically** — one added to the
-denominator, [LIT-tmpeajzz](../literature.d/LIT-tmpeajzz.md), the version most
+denominator, [LIT-413](../literature.d/LIT-413.md), the version most
 people have read. Its author reports no experiments and says so. The record
 holds tested siblings and nothing on that exact formulation, which is worth
 keeping visible: the popular version of an idea and the evidenced version are

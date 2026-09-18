@@ -1,15 +1,18 @@
 ---
+number: 22
 status: Active
+formerly:
+- THEORY-tmprceog
 title: 'A phrase placed in a word slot is read as a lemma, and the reading comes from the construction rather than the phrase''s frequency'
 version: 1
 tags:
 - representation-and-encoding
 date: '2026-09-17'
 source:
-- LIT-tmp5l55q
+- LIT-410
 explains: []
 summary: >-
-  Goldberg and Shirtz (2025), [LIT-tmp5l55q](../literature.d/LIT-tmp5l55q.md) — English has a productive
+  Goldberg and Shirtz (2025), [LIT-410](../literature.d/LIT-410.md) — English has a productive
   construction in which a unit with the internal syntax of a phrase, up to a
   whole sentence, occupies a slot reserved for a word, and comprehenders give
   it the kind of meaning a word has: it evokes a semantic frame presumed to be
@@ -21,11 +24,11 @@ summary: >-
 ---
 
 
-# THEORY-tmprceog: A phrase placed in a word slot is read as a lemma, and the reading comes from the construction rather than the phrase's frequency
+# THEORY-022: A phrase placed in a word slot is read as a lemma, and the reading comes from the construction rather than the phrase's frequency
 
 ## Source
 
-Goldberg and Shirtz (2025), [LIT-tmp5l55q](../literature.d/LIT-tmp5l55q.md) —
+Goldberg and Shirtz (2025), [LIT-410](../literature.d/LIT-410.md) —
 *Language* 101(2):291-320.
 
 ## What was actually shown
@@ -94,7 +97,7 @@ about anything trained on it.
 **It does not show that a model fails to recover these units.** The natural
 next claim is that a tokenizer splitting a construction forces the network to
 reassemble it. The record now holds the mechanism side of that:
-[THEORY-tmpkh59b](THEORY-tmpkh59b.md) — models rebuild multi-token units into
+[THEORY-021](THEORY-021.md) — models rebuild multi-token units into
 single representations in early layers, and the units include
 **non-compositional multi-word expressions**, which is this document's subject
 approached from inside a model.

@@ -1,0 +1,61 @@
+---
+status: Active
+title: 'An Attention Free Transformer'
+version: 1
+tags:
+- attention-techniques
+- model-architecture
+date: '2026-09-18'
+published: '2021-05-28'
+arxiv: '2105.14103'
+first_author: 'Zhai'
+keywords:
+- 'attention-free'
+- 'position-bias'
+- 'element-wise'
+- 'linear-attention'
+extends:
+- LIT-tmphkp4g
+extended_by:
+- LIT-tmpwlt08
+implementations:
+- 'AFT'
+summary: >-
+  Zhai et al. (2021), [ARXIV-2105.14103](https://arxiv.org/abs/2105.14103). Drops the query-key product
+  entirely: keys and values are combined with a learned position bias and
+  the query enters element-wise. The record holds it because it is where
+  RWKV's letters come from — `R`, `W`, `K`, `V` is this construction renamed.
+---
+
+# LIT-tmpwt9mk: An Attention Free Transformer
+
+Zhai et al. (2021) — [ARXIV-2105.14103](https://arxiv.org/abs/2105.14103)
+
+## Key takeaways
+
+- **No `QKᵀ` at all.** Where `LIT-tmphkp4g` keeps a similarity and makes it
+  cheap, this removes the token-token interaction: values are weighted by a
+  **learned pairwise position bias** plus the key, and the query multiplies
+  the result element-wise
+- **The interaction becomes positional rather than content-based**, which is
+  the strong assumption and the source of the trade — a content-dependent
+  lookup is exactly what is given up
+- **Memory is constant in both context size and model size** for the
+  local variants, which is what the architecture was argued for
+
+## Standing in the anthology
+
+**Carries no practice, deliberately** — `ADR-032`.
+
+It is a bridge document. On its own the record would have little use for it:
+AFT is not a live recommendation and nothing here is measured on it. It is
+filed because **the RWKV line is unreadable without it** — the `W` in RWKV is
+this paper's learned position bias, and RWKV's own framing is AFT with the
+bias made a decaying function of relative position so the whole thing can run
+as a recurrence.
+
+Without this note, `LIT-tmpwlt08` arrives with four letters and no
+explanation of where three of them came from, and a reader tracing the line
+from `LIT-tmphkp4g` to `LIT-173` has to leave the record to follow it.
+
+Unread — no `NOTE`.

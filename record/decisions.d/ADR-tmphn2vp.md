@@ -6,7 +6,7 @@ supersedes:
 - ADR-048
 tags:
 - record
-- analysis-and-evaluation
+- taxonomy
 date: '2026-09-18'
 summary: >-
   An unbound relation is a defect with exactly two readings — the invariant

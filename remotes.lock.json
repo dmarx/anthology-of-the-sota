@@ -50,6 +50,9 @@
     "ARXIV/1703.03864": {
       "title": "Evolution Strategies as a Scalable Alternative to Reinforcement Learning"
     },
+    "ARXIV/1703.04730": {
+      "title": "Understanding Black-box Predictions via Influence Functions"
+    },
     "ARXIV/1705.09056": {
       "title": "Can Decentralized Algorithms Outperform Centralized Algorithms? A Case Study for Decentralized Parallel Stochastic Gradient Descent"
     },
@@ -454,6 +457,9 @@
     },
     "ARXIV/2210.06364": {
       "title": "AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs"
+    },
+    "ARXIV/2210.09261": {
+      "title": "Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can Solve Them"
     },
     "ARXIV/2210.14891": {
       "title": "Broken Neural Scaling Laws"

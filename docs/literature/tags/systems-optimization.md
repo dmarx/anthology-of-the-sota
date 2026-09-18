@@ -6,7 +6,7 @@
 
 **Systems optimization** — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
-8 of 352 LIT documents. Back to the [full index](../README.md).
+9 of 355 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -18,3 +18,4 @@
 | [LIT-367](../../../record/literature.d/LIT-367.md) | ZeRO-Infinity: Breaking the GPU Memory Wall for Extreme Scale Deep Learning | Rajbhandari et al. (2021), [ARXIV-2104.07857](https://arxiv.org/abs/2104.07857). ZeRO-Infinity offloads parameters, gradients and optimizer state to CPU and NVMe with bandwidth- centric partitioning, so model size stops being bounded by aggregate GPU memory. | Active |
 | [LIT-378](../../../record/literature.d/LIT-378.md) | QLoRA: Efficient Finetuning of Quantized LLMs | Dettmers et al. (2023), [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314). Back-propagate through a frozen 4-bit base model into 16-bit LoRA adapters: 65B fine-tuning drops from >780GB to <48GB with no loss against a 16-bit fully fine-tuned baseline. Carries a second finding the quantization headline tends to bury — LoRA on the query and value projections alone does not reach full fine-tuning at scale, and the adapter COUNT, not the rank, is what closes the gap. | Active |
 | [LIT-380](../../../record/literature.d/LIT-380.md) | The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits | Ma et al. (2024), [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764). Every weight is ternary, {-1, 0, +1}, and the model is trained that way from scratch rather than quantized afterwards. From 3B upward it matches an FP16 LLaMA of the same size and token budget on perplexity and end-task accuracy, while the matrix multiply reduces to integer addition — a compute paradigm rather than a compression ratio. | Active |
+| [LIT-418](../../../record/literature.d/LIT-418.md) | HybridFlow: A Flexible and Efficient RLHF Framework | Sheng et al. (2024), [ARXIV-2409.19256](https://arxiv.org/abs/2409.19256). The paper behind verl — a hybrid single/multi-controller execution model for the RLHF dataflow, with a 3D resharding engine between the training and generation phases. Named in [ADR-032](../../../record/decisions.d/ADR-032.md) as one of the four references at the top of the backlog it opened. | Active |

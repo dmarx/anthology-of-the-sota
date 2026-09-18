@@ -70,10 +70,10 @@ from input data." Each word is load-bearing:
 
 The BBH number is the one to weigh. ARC-AGI ([LIT-405](../literature.d/LIT-405.md)) is built to reward
 search over structurally novel tasks, which is the regime this method is *defined* by, so
-a large gain there is close to tautological. BBH ([LIT-tmpqyi38](../literature.d/LIT-tmpqyi38.md)) is ordinary hard
+a large gain there is close to tautological. BBH ([LIT-420](../literature.d/LIT-420.md)) is ordinary hard
 reasoning — a 23-task subset of BIG-bench selected for multi-step difficulty,
 not built around any method — and the effect surviving there is what says
-this is not a benchmark artifact. The qualifier [LIT-tmpqyi38](../literature.d/LIT-tmpqyi38.md) adds is that a BBH
+this is not a benchmark artifact. The qualifier [LIT-420](../literature.d/LIT-420.md) adds is that a BBH
 number is unusually prompt-sensitive; both conditions here are 10-shot, so
 the comparison is a like-for-like one.
 

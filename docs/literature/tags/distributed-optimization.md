@@ -6,7 +6,7 @@
 
 **Distributed optimization** — parallelism and sharding, communication, memory management, checkpointing.
 
-53 of 352 LIT documents. Back to the [full index](../README.md).
+54 of 355 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -63,3 +63,4 @@
 | [LIT-372](../../../record/literature.d/LIT-372.md) | Moshpit SGD: Communication-Efficient Decentralized Training on Heterogeneous Unreliable Devices | Ryabinin et al. (2021), [ARXIV-2103.03239](https://arxiv.org/abs/2103.03239). Moshpit SGD: average over a random grid of small groups rather than by gossip, reaching exponentially fast averaging on unreliable heterogeneous workers. | Active |
 | [LIT-373](../../../record/literature.d/LIT-373.md) | SlowMo: Improving Communication-Efficient Distributed SGD with Slow Momentum | Wang et al. (2019), [ARXIV-1910.00643](https://arxiv.org/abs/1910.00643). SlowMo: wrap any local-update or decentralized base optimizer in an outer momentum step over the averaged iterates. | Active |
 | [LIT-374](../../../record/literature.d/LIT-374.md) | LAYUP: Asynchronous decentralized gradient descent with LAYer-wise UPdates | Fokam et al. (2024), [ARXIV-2410.05985](https://arxiv.org/abs/2410.05985). LAYUP: decouple the forward and backward passes into separate threads with layer-wise updates, so straggler devices stop setting the step time. | Active |
+| [LIT-418](../../../record/literature.d/LIT-418.md) | HybridFlow: A Flexible and Efficient RLHF Framework | Sheng et al. (2024), [ARXIV-2409.19256](https://arxiv.org/abs/2409.19256). The paper behind verl — a hybrid single/multi-controller execution model for the RLHF dataflow, with a 3D resharding engine between the training and generation phases. Named in [ADR-032](../../../record/decisions.d/ADR-032.md) as one of the four references at the top of the backlog it opened. | Active |

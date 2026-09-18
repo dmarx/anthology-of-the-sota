@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-62 of 352 LIT documents. Back to the [full index](../README.md).
+64 of 355 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -72,3 +72,5 @@
 | [LIT-411](../../../record/literature.d/LIT-411.md) | Measuring Mathematical Problem Solving With the MATH Dataset | Hendrycks et al. (2021), [ARXIV-2103.03874](https://arxiv.org/abs/2103.03874). 12,500 competition mathematics problems, each with a full step-by-step solution — which is why the dataset became a training signal as well as a benchmark, and why a result on it needs to say which it was used as. | Active |
 | [LIT-415](../../../record/literature.d/LIT-415.md) | Stream of Search (SoS): Learning to Search in Language | Gandhi et al. (2024), [ARXIV-2404.03683](https://arxiv.org/abs/2404.03683). Filed for its task, not its method. Countdown — combine input numbers with arithmetic operations to reach a target — is the verifiable puzzle twenty-three documents here report results on, and this is the paper that put it in front of this literature. | Active |
 | [LIT-416](../../../record/literature.d/LIT-416.md) | GPQA: A Graduate-Level Google-Proof Q&A Benchmark | Rein et al. (2023), [ARXIV-2311.12022](https://arxiv.org/abs/2311.12022). 448 multiple-choice questions written by domain PhDs, validated so that skilled non-experts with unrestricted web access reach 34% against experts' 65%. The gap is the instrument — and it is small enough that the benchmark's own noise floor is worth knowing. | Active |
+| [LIT-419](../../../record/literature.d/LIT-419.md) | OlympiadBench: A Challenging Benchmark for Promoting AGI with Olympiad-Level Bilingual Multimodal Scientific Problems | He et al. (2024), [ARXIV-2402.14008](https://arxiv.org/abs/2402.14008). 8,476 olympiad-level maths and physics problems, bilingual and partly multimodal, on which the best model at publication scored 17.97% — a floor-effect instrument that the record uses to separate sub-8B models, which is the caveat to carry. | Active |
+| [LIT-420](../../../record/literature.d/LIT-420.md) | Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can Solve Them | Suzgun et al. (2022), [ARXIV-2210.09261](https://arxiv.org/abs/2210.09261). The 23 BIG-bench tasks where models had not yet beaten the average human rater, split out as BBH — a suite selected by a model generation's shortfall, and one whose headline finding is that the shortfall was partly a prompting artifact. | Active |

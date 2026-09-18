@@ -55,7 +55,7 @@ history:
   date: '2026-09-18'
   note: >-
     Names what OlympiadBench is. The 32B evidence carried two caveats; the
-    third is the benchmark's own dynamic range, now recorded in LIT-tmpatf1l.
+    third is the benchmark's own dynamic range, now recorded in LIT-419.
     The recommendation and the consensus axis are unchanged.
 tags:
 - adaptation-and-tuning
@@ -280,7 +280,7 @@ Qwen2.5-14B and -32B against OatZero and SimpleRL-Zoo on MATH500,
 OlympiadBench and Minerva ([LIT-234](../literature.d/LIT-234.md)). Three caveats travel with that
 number and all matter: those comparisons are against *published checkpoints*
 rather than RL runs matched to the ES budget, they come from
-[LIT-211](../literature.d/LIT-211.md)'s own lab, and OlympiadBench ([LIT-tmpatf1l](../literature.d/LIT-tmpatf1l.md)) is a floor-effect
+[LIT-211](../literature.d/LIT-211.md)'s own lab, and OlympiadBench ([LIT-419](../literature.d/LIT-419.md)) is a floor-effect
 instrument at these scales — the best model at its publication scored 17.97%
 — so a separation measured there is measured near the bottom of the range.
 The independent evidence stops at 8B.

@@ -34,15 +34,15 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 
 **`SOTA`**
 
-- `source` — required, one or more `LIT` codes (luria.yaml: schemes.SOTA.references.source)
-- `introduced_by` — required, one or more `LIT` codes (luria.yaml: schemes.SOTA.references.introduced_by)
-- `explained_by` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.SOTA.references.explained_by)
-- `extends` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.extends)
-- `extended_by` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.extended_by)
-- `compared_against` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.compared_against)
-- `corrects` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.corrects)
-- `corrected_by` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.corrected_by)
-- `contested_by` — required when `consensus` is `contested`, one or more `LIT` codes when present (luria.yaml: schemes.SOTA.references.contested_by)
+- `source` — required, one or more `LIT` codes (luria.yaml: schemes.SOTA.references.source) — *the work that produced evidence about this claim. ADR-017's test picks it: what the recommendation could not survive losing. Contrast is not support — a position argued against stays out (ADR-010).*
+- `introduced_by` — required, one or more `LIT` codes (luria.yaml: schemes.SOTA.references.introduced_by) — *the work that first made this recommendation, which is frequently not the work that evidenced it. Separating origin from evidence is ADR-029, refined by ADR-030; with one field the record would read as though every practice began with the paper it cites.*
+- `explained_by` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.SOTA.references.explained_by) — *the account of WHY this works, if the record holds one. Most practices have none, and a `Rejected` explanation does not retire the practice it explained (ADR-031).*
+- `extends` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.extends) — *the earlier practice this one builds on and could not stand without — a later version of the same recommendation, a narrower case of it, or a rule that only exists because the earlier one is followed. Direction is the point: the line reads oldest first. NOT for two practices that merely resemble each other (ADR-047).*
+- `extended_by` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.extended_by) — *the converse of `extends`, written by `luria link --fix`.*
+- `compared_against` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.compared_against) — *this work evaluated itself against that one — somebody ran the comparison (ADR-011). Not an analogy, not a family resemblance, and not a general rule beside its instance: those are `extends` or nothing.*
+- `corrects` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.corrects) — *this practice fixes something the earlier one got wrong, rather than building on it. The earlier one is normally `Superseded` and keeps its body (ADR-002).*
+- `corrected_by` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.SOTA.references.corrected_by) — *the converse of `corrects`, written by `luria link --fix`.*
+- `contested_by` — required when `consensus` is `contested`, one or more `LIT` codes when present (luria.yaml: schemes.SOTA.references.contested_by) — *the published work that disputes this practice. Required once `consensus` says `contested`, so the claim that the field disagrees has to name who.*
 - `consensus` — one of `unassessed`, `unreplicated`, `contested`, `emerging`, `converged`, `universal`; absent means `unassessed` (luria.yaml: schemes.SOTA.fields.consensus; vocabulary 'consensus': values) — *How far THE FIELD has converged on a practice, which is orthogonal to `status` — this record's own editorial position. The useful cases are the corners: `Deferred` + `converged` is a practice everybody follows that we have not satisfied ourselves is deliberate, and `Active` + `contested` is this record being ahead of the field and saying so, which an anthology should be able to do (ADR-015).*
 - `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.yaml: schemes.SOTA.fields.status; vocabulary 'sota-statuses': values) — *What a status means for a PRACTICE: whether this record says to do the thing today. It is not the standing of the paper underneath — that is `lit-statuses`, and the two are allowed to disagree — and it is not what the field does, which is `consensus` (ADR-002).*
 - `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics`, `tiny-models` (luria.yaml: schemes.SOTA.fields.tags; vocabulary 'topics': values) — *The thirteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same thirteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
@@ -53,12 +53,12 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 
 **`THEORY`**
 
-- `source` — required, one or more `LIT` codes (luria.yaml: schemes.THEORY.references.source)
-- `explains` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.THEORY.references.explains)
-- `extends` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.extends)
-- `extended_by` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.extended_by)
-- `corrects` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.corrects)
-- `corrected_by` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.corrected_by)
+- `source` — required, one or more `LIT` codes (luria.yaml: schemes.THEORY.references.source) — *the work this account comes from. Same test as a practice's: what the explanation could not survive losing.*
+- `explains` — optional, one or more `SOTA` codes when present (luria.yaml: schemes.THEORY.references.explains) — *the practice this account is about. An explanation may be `Rejected` while the practice it explained goes on working (ADR-031).*
+- `extends` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.extends) — *the earlier account this one builds on — a refinement or a widening of the same mechanism, not a rival one.*
+- `extended_by` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.extended_by) — *the converse of `extends`, written by `luria link --fix`.*
+- `corrects` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.corrects) — *this account replaces the earlier one's reasoning. What the old account explained may still happen; only the reason was wrong.*
+- `corrected_by` — optional, one or more `THEORY` codes when present (luria.yaml: schemes.THEORY.references.corrected_by) — *the converse of `corrects`, written by `luria link --fix`.*
 - `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Rejected`, `Superseded` (luria.yaml: schemes.THEORY.fields.status; vocabulary 'theory-statuses': values) — *Whether the record believes the ACCOUNT, which is not what the same word means on a practice. An explanation can be `Rejected` while the thing it explained goes on working exactly as well as it ever did (ADR-031).*
 - `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics`, `tiny-models` (luria.yaml: schemes.THEORY.fields.tags; vocabulary 'topics': values) — *The thirteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same thirteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
 - `promote_when` — required when `status` is `Proposed`, `Deferred` (luria.yaml: schemes.THEORY.fields.promote_when)
@@ -68,11 +68,11 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 
 **`LIT`**
 
-- `extends` — optional, one or more `LIT` codes when present (luria.yaml: schemes.LIT.references.extends)
-- `extended_by` — optional, one or more `LIT` codes when present (luria.yaml: schemes.LIT.references.extended_by)
-- `compared_against` — optional, one or more `LIT` codes when present (luria.yaml: schemes.LIT.references.compared_against)
-- `corrects` — optional, one or more `LIT` codes when present (luria.yaml: schemes.LIT.references.corrects)
-- `corrected_by` — optional, one or more `LIT` codes when present (luria.yaml: schemes.LIT.references.corrected_by)
+- `extends` — optional, one or more `LIT` codes when present (luria.yaml: schemes.LIT.references.extends) — *the earlier paper this one builds on and could not stand without. Papers fork where the DESIGNS differ, practices where the RECOMMENDATIONS do, so a fork can exist at one layer and not the other (ADR-011).*
+- `extended_by` — optional, one or more `LIT` codes when present (luria.yaml: schemes.LIT.references.extended_by) — *the converse of `extends`, written by `luria link --fix`.*
+- `compared_against` — optional, one or more `LIT` codes when present (luria.yaml: schemes.LIT.references.compared_against) — *this paper evaluated itself against that one. Somebody ran the comparison; a shared topic is not one (ADR-011).*
+- `corrects` — optional, one or more `LIT` codes when present (luria.yaml: schemes.LIT.references.corrects) — *this paper shows the earlier one wrong on something it claimed. Retire by status, never by deletion — the body stays.*
+- `corrected_by` — optional, one or more `LIT` codes when present (luria.yaml: schemes.LIT.references.corrected_by) — *the converse of `corrects`, written by `luria link --fix`.*
 - `status` — optional, one of `Active`, `Proposed`, `Deferred`, `Superseded`, `Rejected` (luria.yaml: schemes.LIT.fields.status; vocabulary 'lit-statuses': values) — *A paper's standing in the anthology: whether it is worth reading. NOT whether its findings are true. Adam is `Active` here because it is worth reading; whether any particular thing it recommends is still what you should do is the SOTA scheme's business, and the two can disagree in either direction (ADR-002).*
 - `tags` — required, one or more of `training-optimization`, `systems-optimization`, `model-stability`, `distributed-optimization`, `data-pipeline`, `attention-techniques`, `model-architecture`, `inference-optimization`, `adaptation-and-tuning`, `representation-and-encoding`, `analysis-and-evaluation`, `generative-modeling`, `vision-and-graphics`, `tiny-models` (luria.yaml: schemes.LIT.fields.tags; vocabulary 'topics': values) — *The thirteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same thirteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
 - `published` — required (luria.yaml: schemes.LIT.fields.published)
@@ -82,7 +82,7 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 
 **`NOTE`**
 
-- `paper` — required, a `LIT` code (luria.yaml: schemes.NOTE.references.paper)
+- `paper` — required, a `LIT` code (luria.yaml: schemes.NOTE.references.paper) — *the paper this note is a close reading of. Absence of a note means the paper is unread (ADR-025).*
 - `status` — optional, one of `Read`, `Skimmed`, `Unread`, `Superseded` (luria.yaml: schemes.NOTE.fields.status; vocabulary 'note-statuses': values) — *How deeply the paper was READ — not whether it is any good, which is `lit-statuses`. The two disagree in every direction: a foundational paper can carry a `Skimmed` note, and a paper in the attic can carry a `Read` one, since reading it carefully is often how it got there (ADR-025).*
 - `published` — derived — `{published}` from `paper`, never written (luria.yaml: schemes.NOTE.fields.published)
 - `primary_topic` — derived — `{tags[0]}` from `paper`, never written (luria.yaml: schemes.NOTE.fields.primary_topic)

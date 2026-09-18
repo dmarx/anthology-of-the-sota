@@ -461,7 +461,7 @@ schemes:
           — a later version of the same recommendation, a narrower case of it,
           or a rule that only exists because the earlier one is followed.
           Direction is the point: the line reads oldest first. NOT for two
-          practices that merely resemble each other (ADR-tmp7iqhp).
+          practices that merely resemble each other (ADR-047).
         scheme: SOTA
         required: false
         many: true

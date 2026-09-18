@@ -12,7 +12,7 @@
 |---|---|---|---|
 | [SOTA-081](../../../record/practices.d/SOTA-081.md) | Use operator fusion for small operations | Chen et al. (2018), [LIT-063](../../../record/literature.d/LIT-063.md) — [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799). | Active |
 | [SOTA-082](../../../record/practices.d/SOTA-082.md) | Optimize memory layout for hardware | Chen et al. (2018), [LIT-063](../../../record/literature.d/LIT-063.md) — [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799). | Active |
-| [SOTA-083](../../../record/practices.d/SOTA-083.md) | Implement custom kernels for critical ops | Chen et al. (2018), [LIT-063](../../../record/literature.d/LIT-063.md) — [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799). | Active |
+| [SOTA-083](../../../record/practices.d/SOTA-083.md) v2 | Implement custom kernels for critical ops | Chen et al. (2018), [LIT-063](../../../record/literature.d/LIT-063.md) — [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799). | Active |
 | [SOTA-084](../../../record/practices.d/SOTA-084.md) | Profile-guided optimization for hot paths | Chen et al. (2018), [LIT-063](../../../record/literature.d/LIT-063.md) — [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799). | Active |
 | [SOTA-088](../../../record/practices.d/SOTA-088.md) | Fuse small operations into larger kernels | Ivanov et al. (2020), [LIT-066](../../../record/literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). | Active |
 | [SOTA-089](../../../record/practices.d/SOTA-089.md) | Align tensor dimensions to hardware boundaries | Ivanov et al. (2020), [LIT-066](../../../record/literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). | Active |

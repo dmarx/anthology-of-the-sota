@@ -269,12 +269,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [SOTA-131](../record/practices.d/SOTA-131.md) — When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip) *(Active, unassessed)*
 - alongside: [SOTA-168](../record/practices.d/SOTA-168.md) — Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself *(Proposed, unreplicated)*
 
-### From Use flash attention for all attention computations when hardware supports it
+### From Implement custom kernels for critical ops
 
-- [SOTA-085](../record/practices.d/SOTA-085.md) — Use flash attention for all attention computations when hardware supports it *(Active, unassessed)*
-  - [SOTA-106](../record/practices.d/SOTA-106.md) — Use flash-attention-2 over original flash-attention when available *(Active, unassessed)*
-  - [SOTA-161](../record/practices.d/SOTA-161.md) — Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling *(Active, unreplicated)*
-- alongside: [SOTA-083](../record/practices.d/SOTA-083.md) — Implement custom kernels for critical ops *(Active, unassessed)*
+- [SOTA-083](../record/practices.d/SOTA-083.md) — Implement custom kernels for critical ops *(Active, unassessed)*
+  - [SOTA-085](../record/practices.d/SOTA-085.md) — Use flash attention for all attention computations when hardware supports it *(Active, unassessed)*
+    - [SOTA-106](../record/practices.d/SOTA-106.md) — Use flash-attention-2 over original flash-attention when available *(Active, unassessed)*
+    - [SOTA-161](../record/practices.d/SOTA-161.md) — Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling *(Active, unreplicated)*
 
 ### From Tiling size should match hardware SRAM size
 

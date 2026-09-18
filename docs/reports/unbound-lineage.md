@@ -7,34 +7,27 @@ Asserting an invariant: `practice` on `tags`, `lineage` on `tags`.
 
 A relation is an assertion that the documents it joins have something in common. Where no value in the named field is held by both, the record has made the assertion and not said what it means — usually a sign the vocabulary is short a word rather than that the relation is wrong.
 
-**22 unbound relations.** Two documents joined directly, sharing nothing.
+**15 unbound relations.** Two documents joined directly, sharing nothing.
 
 | Declared by | Field | Documents | Held |
 |---|---|---|---|
 | practice | `tags` | [SOTA-031](../../record/practices.d/SOTA-031.md) ↔ [SOTA-092](../../record/practices.d/SOTA-092.md) | distributed-optimization / training-optimization |
 | practice | `tags` | [SOTA-031](../../record/practices.d/SOTA-031.md) ↔ [SOTA-093](../../record/practices.d/SOTA-093.md) | distributed-optimization / training-optimization |
-| practice | `tags` | [SOTA-032](../../record/practices.d/SOTA-032.md) ↔ [SOTA-100](../../record/practices.d/SOTA-100.md) | model-stability / training-optimization |
+| practice | `tags` | [SOTA-032](../../record/practices.d/SOTA-032.md) ↔ [SOTA-100](../../record/practices.d/SOTA-100.md) | model-architecture, model-stability / training-optimization |
 | practice | `tags` | [SOTA-036](../../record/practices.d/SOTA-036.md) ↔ [SOTA-038](../../record/practices.d/SOTA-038.md) | model-architecture / adaptation-and-tuning |
 | practice | `tags` | [SOTA-083](../../record/practices.d/SOTA-083.md) ↔ [SOTA-085](../../record/practices.d/SOTA-085.md) | systems-optimization / attention-techniques |
-| practice | `tags` | [SOTA-083](../../record/practices.d/SOTA-083.md) ↔ [SOTA-106](../../record/practices.d/SOTA-106.md) | systems-optimization / attention-techniques |
 | practice | `tags` | [SOTA-085](../../record/practices.d/SOTA-085.md) ↔ [SOTA-161](../../record/practices.d/SOTA-161.md) | attention-techniques / model-stability |
 | practice | `tags` | [SOTA-089](../../record/practices.d/SOTA-089.md) ↔ [SOTA-107](../../record/practices.d/SOTA-107.md) | systems-optimization / attention-techniques |
 | practice | `tags` | [SOTA-131](../../record/practices.d/SOTA-131.md) ↔ [SOTA-192](../../record/practices.d/SOTA-192.md) | training-optimization / model-stability |
-| lineage | `tags` | [LIT-030](../../record/literature.d/LIT-030.md) ↔ [LIT-200](../../record/literature.d/LIT-200.md) | model-architecture / model-stability |
-| lineage | `tags` | [LIT-127](../../record/literature.d/LIT-127.md) ↔ [LIT-230](../../record/literature.d/LIT-230.md) | adaptation-and-tuning / analysis-and-evaluation |
-| lineage | `tags` | [LIT-127](../../record/literature.d/LIT-127.md) ↔ [LIT-233](../../record/literature.d/LIT-233.md) | adaptation-and-tuning / analysis-and-evaluation |
-| lineage | `tags` | [LIT-127](../../record/literature.d/LIT-127.md) ↔ [LIT-235](../../record/literature.d/LIT-235.md) | adaptation-and-tuning / analysis-and-evaluation |
-| lineage | `tags` | [LIT-127](../../record/literature.d/LIT-127.md) ↔ [LIT-241](../../record/literature.d/LIT-241.md) | adaptation-and-tuning / training-optimization |
-| lineage | `tags` | [LIT-137](../../record/literature.d/LIT-137.md) ↔ [LIT-162](../../record/literature.d/LIT-162.md) | attention-techniques / model-architecture |
-| lineage | `tags` | [LIT-170](../../record/literature.d/LIT-170.md) ↔ [LIT-187](../../record/literature.d/LIT-187.md) | model-architecture / distributed-optimization |
-| lineage | `tags` | [LIT-187](../../record/literature.d/LIT-187.md) ↔ [LIT-188](../../record/literature.d/LIT-188.md) | distributed-optimization / model-architecture |
-| lineage | `tags` | [LIT-187](../../record/literature.d/LIT-187.md) ↔ [LIT-189](../../record/literature.d/LIT-189.md) | distributed-optimization / model-architecture |
+| lineage | `tags` | [LIT-127](../../record/literature.d/LIT-127.md) ↔ [LIT-230](../../record/literature.d/LIT-230.md) | adaptation-and-tuning, data-pipeline, training-optimization / analysis-and-evaluation |
+| lineage | `tags` | [LIT-127](../../record/literature.d/LIT-127.md) ↔ [LIT-233](../../record/literature.d/LIT-233.md) | adaptation-and-tuning, data-pipeline, training-optimization / analysis-and-evaluation |
+| lineage | `tags` | [LIT-127](../../record/literature.d/LIT-127.md) ↔ [LIT-235](../../record/literature.d/LIT-235.md) | adaptation-and-tuning, data-pipeline, training-optimization / analysis-and-evaluation |
 | lineage | `tags` | [LIT-211](../../record/literature.d/LIT-211.md) ↔ [LIT-230](../../record/literature.d/LIT-230.md) | adaptation-and-tuning, training-optimization / analysis-and-evaluation |
 | lineage | `tags` | [LIT-211](../../record/literature.d/LIT-211.md) ↔ [LIT-233](../../record/literature.d/LIT-233.md) | adaptation-and-tuning, training-optimization / analysis-and-evaluation |
 | lineage | `tags` | [LIT-211](../../record/literature.d/LIT-211.md) ↔ [LIT-235](../../record/literature.d/LIT-235.md) | adaptation-and-tuning, training-optimization / analysis-and-evaluation |
 | lineage | `tags` | [LIT-235](../../record/literature.d/LIT-235.md) ↔ [LIT-238](../../record/literature.d/LIT-238.md) | analysis-and-evaluation / adaptation-and-tuning |
 
-**10 unbound lines.** A whole sequence with no value common to every member — which can happen while every single step is expressed, because a component's intersection only shrinks as the component grows. The weaker signal of the two, and the one to read whole before acting on.
+**8 unbound lines.** A whole sequence with no value common to every member — which can happen while every single step is expressed, because a component's intersection only shrinks as the component grows. The weaker signal of the two, and the one to read whole before acting on.
 
 | Declared by | Field | Members |
 |---|---|---|
@@ -44,7 +37,5 @@ A relation is an assertion that the documents it joins have something in common.
 | practice | `tags` | [SOTA-050](../../record/practices.d/SOTA-050.md), [SOTA-121](../../record/practices.d/SOTA-121.md), [SOTA-131](../../record/practices.d/SOTA-131.md), [SOTA-165](../../record/practices.d/SOTA-165.md), [SOTA-168](../../record/practices.d/SOTA-168.md), [SOTA-192](../../record/practices.d/SOTA-192.md) |
 | practice | `tags` | [SOTA-083](../../record/practices.d/SOTA-083.md), [SOTA-085](../../record/practices.d/SOTA-085.md), [SOTA-106](../../record/practices.d/SOTA-106.md), [SOTA-161](../../record/practices.d/SOTA-161.md) |
 | practice | `tags` | [SOTA-086](../../record/practices.d/SOTA-086.md), [SOTA-087](../../record/practices.d/SOTA-087.md), [SOTA-089](../../record/practices.d/SOTA-089.md), [SOTA-107](../../record/practices.d/SOTA-107.md), [SOTA-108](../../record/practices.d/SOTA-108.md) |
-| lineage | `tags` | [LIT-030](../../record/literature.d/LIT-030.md), [LIT-199](../../record/literature.d/LIT-199.md), [LIT-200](../../record/literature.d/LIT-200.md) |
 | lineage | `tags` | [LIT-127](../../record/literature.d/LIT-127.md), [LIT-211](../../record/literature.d/LIT-211.md), [LIT-229](../../record/literature.d/LIT-229.md), [LIT-230](../../record/literature.d/LIT-230.md), [LIT-231](../../record/literature.d/LIT-231.md), [LIT-232](../../record/literature.d/LIT-232.md), [LIT-233](../../record/literature.d/LIT-233.md), [LIT-234](../../record/literature.d/LIT-234.md), [LIT-235](../../record/literature.d/LIT-235.md), [LIT-236](../../record/literature.d/LIT-236.md), [LIT-237](../../record/literature.d/LIT-237.md), [LIT-238](../../record/literature.d/LIT-238.md), [LIT-239](../../record/literature.d/LIT-239.md), [LIT-240](../../record/literature.d/LIT-240.md), [LIT-241](../../record/literature.d/LIT-241.md), [LIT-242](../../record/literature.d/LIT-242.md) |
 | lineage | `tags` | [LIT-133](../../record/literature.d/LIT-133.md), [LIT-137](../../record/literature.d/LIT-137.md), [LIT-161](../../record/literature.d/LIT-161.md), [LIT-162](../../record/literature.d/LIT-162.md), [LIT-165](../../record/literature.d/LIT-165.md), [LIT-195](../../record/literature.d/LIT-195.md) |
-| lineage | `tags` | [LIT-170](../../record/literature.d/LIT-170.md), [LIT-187](../../record/literature.d/LIT-187.md), [LIT-188](../../record/literature.d/LIT-188.md), [LIT-189](../../record/literature.d/LIT-189.md) |

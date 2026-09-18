@@ -7,7 +7,7 @@ history:
 - version: 2
   date: '2026-09-18'
   note: >-
-    The edge to SOTA-083 moves from `compared_against` to `extends`. Flash attention is a custom kernel for a critical op — an instance of that rule rather than a comparison anyone ran (ADR-011, ADR-tmp7iqhp). The tag crossing this edge makes visible is untouched and still wants an answer.
+    The edge to SOTA-083 moves from `compared_against` to `extends`. Flash attention is a custom kernel for a critical op — an instance of that rule rather than a comparison anyone ran (ADR-011, ADR-047). The tag crossing this edge makes visible is untouched and still wants an answer.
 tags:
 # `flash-attention` removed. #101 added it to both this practice and its
 # counterpart to bind them under an invariant that then read `tags`, which

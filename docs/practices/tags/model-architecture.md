@@ -6,11 +6,12 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-24 of 248 SOTA documents. Back to the [full index](../README.md).
+25 of 248 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [SOTA-024](../../../record/practices.d/SOTA-024.md) v2 | Keep key/value projections shared across heads while query projections remain separate | Shazeer (2019), [LIT-024](../../../record/literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). | Superseded — by [SOTA-109](../../../record/practices.d/SOTA-109.md) |
+| [SOTA-032](../../../record/practices.d/SOTA-032.md) v3 | Put the layer normalization inside the residual block, before the sublayer | Xiong et al. (2020), [LIT-114](../../../record/literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745). Pre-LN: normalize the input to each sublayer rather than the sum after it, so the gradients near the output are well behaved at initialization. | Active |
 | [SOTA-033](../../../record/practices.d/SOTA-033.md) | continued pre-training for fine tuning | Gururangan et al. (2020), [LIT-034](../../../record/literature.d/LIT-034.md) — [ARXIV-2004.10964](https://arxiv.org/abs/2004.10964). | Active |
 | [SOTA-034](../../../record/practices.d/SOTA-034.md) v3 | Use SwiGLU activation for transformers | Shazeer et al. (2020), [LIT-030](../../../record/literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). Contested at frontier scale in low precision: two groups now ship bounded replacements, on the grounds that SwiGLU's unbounded factors produce activation outliers. | Active |
 | [SOTA-036](../../../record/practices.d/SOTA-036.md) v2 | Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |

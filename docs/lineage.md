@@ -22,6 +22,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ## model-architecture
 
+### From Language Modeling with Gated Convolutional Networks
+
+- [LIT-199](../record/literature.d/LIT-199.md) — Language Modeling with Gated Convolutional Networks *(Active)*
+  - [LIT-030](../record/literature.d/LIT-030.md) — GLU Variants Improve Transformer *(Active)*
+    - [LIT-200](../record/literature.d/LIT-200.md) — PowLU: An Activation Function for Stable Pre-Training of LLMs *(Active)*
+
 ### From Hyper-Connections
 
 - [LIT-141](../record/literature.d/LIT-141.md) — Hyper-Connections *(Superseded)*
@@ -30,6 +36,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-181](../record/literature.d/LIT-181.md) — Beyond the Birkhoff Polytope: Spectral-Sphere-Constrained Hyper-Connections *(Active)*
 - alongside: [LIT-134](../record/literature.d/LIT-134.md) — Attention Residuals *(Active)*
 - alongside: [LIT-152](../record/literature.d/LIT-152.md) — On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability *(Active)*
+
+### From Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer
+
+- [LIT-188](../record/literature.d/LIT-188.md) — Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer *(Active)*
+  - [LIT-187](../record/literature.d/LIT-187.md) — GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding *(Active)*
+    - [LIT-170](../record/literature.d/LIT-170.md) — DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models *(Active)*
+    - [LIT-189](../record/literature.d/LIT-189.md) — Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity *(Active)*
 
 ## representation-and-encoding
 
@@ -61,12 +74,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ## Sharing no `tags`
 
-### From Language Modeling with Gated Convolutional Networks
-
-- [LIT-199](../record/literature.d/LIT-199.md) — Language Modeling with Gated Convolutional Networks *(Active)*
-  - [LIT-030](../record/literature.d/LIT-030.md) — GLU Variants Improve Transformer *(Active)*
-    - [LIT-200](../record/literature.d/LIT-200.md) — PowLU: An Activation Function for Stable Pre-Training of LLMs *(Active)*
-
 ### From Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training
 
 - [LIT-235](../record/literature.d/LIT-235.md) — Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training *(Active)*
@@ -94,10 +101,3 @@ Grouped by `tags`, which every line holds in common — a line about two things 
       - [LIT-133](../record/literature.d/LIT-133.md) — Kimi Linear: An Expressive, Efficient Attention Architecture *(Active)*
     - [LIT-165](../record/literature.d/LIT-165.md) — Mamba-3: Improved Sequence Modeling using State Space Principles *(Active)*
 - [LIT-195](../record/literature.d/LIT-195.md) — Parallelizing Linear Transformers with the Delta Rule over Sequence Length *(Active)*
-
-### From Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer
-
-- [LIT-188](../record/literature.d/LIT-188.md) — Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer *(Active)*
-  - [LIT-187](../record/literature.d/LIT-187.md) — GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding *(Active)*
-    - [LIT-170](../record/literature.d/LIT-170.md) — DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models *(Active)*
-    - [LIT-189](../record/literature.d/LIT-189.md) — Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity *(Active)*

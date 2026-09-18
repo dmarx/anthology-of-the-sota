@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**82 document(s) awaiting a decision.**
+**81 document(s) awaiting a decision.**
 
 ## SOTAs
 
-54 of the 82.
+54 of the 81.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -70,7 +70,7 @@
 
 ## THEORYs
 
-8 of the 82.
+8 of the 81.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -85,7 +85,7 @@
 
 ## LITs
 
-3 of the 82.
+3 of the 81.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -95,19 +95,18 @@
 
 ## ADRs
 
-17 of the 82.
+16 of the 81.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 2 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-09 | Proposed | [ADR-024](../../record/decisions.d/ADR-024.md) | 6 | 0 | The topic vocabulary has four recurring seams — options, not a decision |
 | 2026-09-14 | Proposed | [ADR-028](../../record/decisions.d/ADR-028.md) | 1 | 1 | One topic vocabulary, one set of glosses: the blurbs are shared too |
-| 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 16 | 0 | A scheme for explanations, complementing the practice registry |
+| 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 18 | 0 | A scheme for explanations, complementing the practice registry |
+| 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 7 | 1 | Every practice states its origin, even when it is the primary source |
 | 2026-09-15 | Proposed | [ADR-034](../../record/decisions.d/ADR-034.md) | 7 | 0 | A document that changes scheme is Superseded where it leaves, and names its successor across the boundary |
-| 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 6 | 1 | Every practice states its origin, even when it is the primary source |
-| 2026-09-15 | Proposed | [ADR-036](../../record/decisions.d/ADR-036.md) | 3 | 0 | An unbound relation is one of four things, and only one of them is a retag |
 | 2026-09-15 | Proposed | [ADR-033](../../record/decisions.d/ADR-033.md) | 0 | 0 | Readings made in another context port into the record; their agenda does not |
-| 2026-09-16 | Proposed | [ADR-035](../../record/decisions.d/ADR-035.md) | 36 | 0 | A document may carry more than one topic; the first is the primary |
+| 2026-09-16 | Proposed | [ADR-035](../../record/decisions.d/ADR-035.md) | 37 | 0 | A document may carry more than one topic; the first is the primary |
 | 2026-09-16 | Proposed | [ADR-038](../../record/decisions.d/ADR-038.md) | 13 | 0 | A note has no topics of its own: it derives them from its paper |
 | 2026-09-16 | Proposed | [ADR-041](../../record/decisions.d/ADR-041.md) | 8 | 0 | An algorithm-local tuning constant belongs in the reading of the paper that measured it, not in the practice registry |
 | 2026-09-16 | Proposed | [ADR-039](../../record/decisions.d/ADR-039.md) | 2 | 0 | The configuration is part of the record, and the lint reads it |

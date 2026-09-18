@@ -7,7 +7,7 @@ history:
 - version: 2
   date: '2026-09-18'
   note: >-
-    Drops `compared_against: SOTA-083`. Nobody ran that comparison; the relation to the general rule is now carried transitively through SOTA-085, which extends it (ADR-tmp7iqhp).
+    Drops `compared_against: SOTA-083`. Nobody ran that comparison; the relation to the general rule is now carried transitively through SOTA-085, which extends it (ADR-047).
 tags:
 - attention-techniques
 date: '2026-08-24'

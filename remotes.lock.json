@@ -5,6 +5,9 @@
     "ARXIV/1106.5730": {
       "title": "HOGWILD!: A Lock-Free Approach to Parallelizing Stochastic Gradient Descent"
     },
+    "ARXIV/1207.0580": {
+      "title": "Improving neural networks by preventing co-adaptation of feature detectors"
+    },
     "ARXIV/1211.5063": {
       "title": "On the difficulty of training Recurrent Neural Networks"
     },

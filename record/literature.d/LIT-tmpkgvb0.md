@@ -1,0 +1,74 @@
+---
+status: Active
+title: 'SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model'
+version: 1
+tags:
+- tiny-models
+- data-pipeline
+- analysis-and-evaluation
+date: '2026-09-18'
+published: '2025-02-04'
+arxiv: '2502.02737'
+first_author: 'Ben Allal'
+keywords:
+- 'small-language-models'
+- 'overtraining'
+- 'data-curation'
+- 'multi-stage-training'
+implementations:
+- 'SmolLM2'
+- 'FineMath'
+- 'Stack-Edu'
+- 'SmolTalk'
+summary: >-
+  Ben Allal et al. (2025), [ARXIV-2502.02737](https://arxiv.org/abs/2502.02737). The model report behind
+  SmolLM2-135M-Instruct, which is the base [LIT-129](../literature.d/LIT-129.md)'s whole experiment runs
+  on — and the source of the overtraining ratio that makes a 135M model
+  worth fine-tuning at all.
+---
+
+# LIT-tmpkgvb0: SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model
+
+Ben Allal et al. (2025) — [ARXIV-2502.02737](https://arxiv.org/abs/2502.02737)
+
+## Key takeaways
+
+- **A 1.7B model overtrained on ~11 trillion tokens**, which is far past any
+  compute-optimal point. The thesis is that for a model meant to be
+  *deployed* rather than to sit on a scaling curve, the right trade is to
+  spend training compute buying inference cheapness
+- **Multi-stage mixing rather than one corpus**: web text early, with
+  specialised math, code and instruction-following data introduced at stages
+  the authors chose by measurement. Three datasets were built because
+  existing ones were found wanting at those points — FineMath, Stack-Edu and
+  SmolTalk
+- **The report is the artifact.** What it documents is a sequence of data
+  decisions and what each was worth, which is a different genre from a paper
+  arguing one technique
+
+## Standing in the anthology
+
+**Carries no practice, deliberately** — `ADR-032`.
+
+It is the last entry on `#137`'s list that meets that issue's own filing
+criterion — *something in the record has to cite it* — and it meets it
+through a single document. `LIT-129` takes **SmolLM2-135M-Instruct** through
+SFT, reasoning-trace SFT and DPO on one GPU, and its finding that DPO
+converges at 135M is what `LIT-119` cites when asking whether DPO would work
+at 90M, which is what `SOTA-126` turns on. That chain rests on a base model
+the record could not name.
+
+The bound worth carrying is the overtraining ratio. A 135M model that has
+seen a trillion-token-scale diet is not a small model in the sense of *little
+training* — it is a small model in the sense of *little inference cost*, and
+those behave differently. When `LIT-129` reports that DPO converges at 135M,
+the honest reading is that it converges on **this** 135M model, whose data
+budget per parameter is extraordinary. A 135M model trained compute-optimally
+is a different object, and nothing in this record establishes that the result
+transfers to it.
+
+`ADR-032` is also the reason this is admissible at all: a model report is the
+adoption evidence `consensus:` counts from, and `DP-005` keeps that separate
+from evidence for the technique.
+
+Unread — no `NOTE`.

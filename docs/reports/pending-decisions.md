@@ -73,8 +73,8 @@
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-09-15 | Proposed | [THEORY-006](../../record/theory.d/THEORY-006.md) | 22 | 0 | Task-improving weight perturbations are dense around pretrained weights, and denser the larger the model |
+| 2026-09-15 | Proposed | [THEORY-007](../../record/theory.d/THEORY-007.md) | 9 | 0 | Fine-tuning landscapes are low-dimensional in curvature, and improving directions are degenerate rather than unique |
 | 2026-09-15 | Proposed | [THEORY-002](../../record/theory.d/THEORY-002.md) | 7 | 0 | A dense network contains a sparse subnetwork that matches its accuracy when trained from the same initialization |
-| 2026-09-15 | Proposed | [THEORY-007](../../record/theory.d/THEORY-007.md) | 7 | 0 | Fine-tuning landscapes are low-dimensional in curvature, and improving directions are degenerate rather than unique |
 | 2026-09-15 | Proposed | [THEORY-005](../../record/theory.d/THEORY-005.md) | 3 | 0 | Dense feed-forward layers are already mixtures of experts, and pre-training settles the partition before the neurons |
 | 2026-09-15 | Proposed | [THEORY-010](../../record/theory.d/THEORY-010.md) | 2 | 0 | Most of the loss barrier between two independently trained networks is permutation, not disagreement |
 | 2026-09-16 | Proposed | [THEORY-012](../../record/theory.d/THEORY-012.md) | 7 | 0 | How far a batch-size scaling heuristic transfers is a property of the optimizer, not of the heuristic |

@@ -107,6 +107,9 @@
     "ARXIV/1803.03635": {
       "title": "The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks"
     },
+    "ARXIV/1803.05457": {
+      "title": "Think you have Solved Question Answering? Try ARC, the AI2 Reasoning Challenge"
+    },
     "ARXIV/1804.06561": {
       "title": "A Mean Field View of the Landscape of Two-Layers Neural Networks"
     },
@@ -164,6 +167,9 @@
     "ARXIV/1904.10509": {
       "title": "Generating Long Sequences with Sparse Transformers"
     },
+    "ARXIV/1905.07830": {
+      "title": "HellaSwag: Can a Machine Really Finish Your Sentence?"
+    },
     "ARXIV/1905.13727": {
       "title": "PowerSGD: Practical Low-Rank Gradient Compression for Distributed Optimization"
     },
@@ -187,6 +193,9 @@
     },
     "ARXIV/1910.07467": {
       "title": "Root Mean Square Layer Normalization"
+    },
+    "ARXIV/1911.01547": {
+      "title": "On the Measure of Intelligence"
     },
     "ARXIV/1911.02150": {
       "title": "Fast Transformer Decoding: One Write-Head is All You Need"
@@ -322,6 +331,9 @@
     },
     "ARXIV/2107.07075": {
       "title": "Deep Learning on a Data Diet: Finding Important Examples Early in Training"
+    },
+    "ARXIV/2108.07732": {
+      "title": "Program Synthesis with Large Language Models"
     },
     "ARXIV/2108.12409": {
       "title": "Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation"
@@ -721,6 +733,9 @@
     },
     "ARXIV/2412.14689": {
       "title": "How to Synthesize Text Data without Model Collapse?"
+    },
+    "ARXIV/2412.15115": {
+      "title": "Qwen2.5 Technical Report"
     },
     "ARXIV/2412.19437": {
       "title": "DeepSeek-V3 Technical Report"

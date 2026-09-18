@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [18 Sep 01:17 — The worklist was ranked by a twelve-paper sample, and the corpus disagrees](2026-09.md#the-worklist-was-ranked-by-a-twelve-paper-sample-and-the-corpus-disagrees)
 - [17 Sep 21:36 — The explanation was replaced and the practice was not](2026-09.md#the-explanation-was-replaced-and-the-practice-was-not)
 - [17 Sep 20:51 — Redundancy is not quality, and a crossover the record has now seen twice](2026-09.md#redundancy-is-not-quality-and-a-crossover-the-record-has-now-seen-twice)
 - [17 Sep 18:17 — The registry decision the audit left open, and the rule that was already there](2026-09.md#the-registry-decision-the-audit-left-open-and-the-rule-that-was-already-there)
@@ -97,9 +98,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-90 entries across 2 books, newest first.
+91 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 88 | 2026-09-05 | 2026-09-17 |
+| [2026-09](2026-09.md) | 89 | 2026-09-05 | 2026-09-18 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

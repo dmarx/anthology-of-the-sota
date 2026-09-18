@@ -62,7 +62,7 @@ from input data." Each word is load-bearing:
 | ARC-AGI, ensembled with program synthesis | **61.9%** — the paper's "average human performance" |
 | BIG-Bench Hard, 10-shot | **50.5% → 57.8%** (+7.3) |
 
-The BBH number is the one to weigh. ARC-AGI ([LIT-tmpnraor](../literature.d/LIT-tmpnraor.md)) is built to reward
+The BBH number is the one to weigh. ARC-AGI ([LIT-405](../literature.d/LIT-405.md)) is built to reward
 search over structurally novel tasks, which is the regime this method is *defined* by, so
 a large gain there is close to tautological. BBH is ordinary hard reasoning,
 and the effect surviving there is what says this is not a benchmark artifact.

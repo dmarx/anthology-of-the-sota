@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-41 of 338 LIT documents. Back to the [full index](../README.md).
+42 of 343 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -51,3 +51,4 @@
 | [LIT-227](../../../record/literature.d/LIT-227.md) | Sparse Upcycling: Training Mixture-of-Experts from Dense Checkpoints | Komatsuzaki et al. (2022), [ARXIV-2212.05055](https://arxiv.org/abs/2212.05055). Initialize a mixture-of-experts model from a dense checkpoint instead of from scratch. Upcycled T5 and ViT models beat their dense counterparts using ~50% of the dense pretraining sunk cost, and beat MoE models trained from scratch on 100% of it. | Active |
 | [LIT-380](../../../record/literature.d/LIT-380.md) | The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits | Ma et al. (2024), [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764). Every weight is ternary, {-1, 0, +1}, and the model is trained that way from scratch rather than quantized afterwards. From 3B upward it matches an FP16 LLaMA of the same size and token budget on perplexity and end-task accuracy, while the matrix multiply reduces to integer addition — a compute paradigm rather than a compression ratio. | Active |
 | [LIT-384](../../../record/literature.d/LIT-384.md) | VGGT: Visual Geometry Grounded Transformer | Wang et al. (2025), [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651). One feed-forward pass infers camera parameters, point maps, depth maps and 3D point tracks together, from one view or hundreds, in under a second — beating methods that post-process with geometry optimisation. The claim that matters is that the specialisation into separate tasks was never necessary. | Active |
+| [LIT-406](../../../record/literature.d/LIT-406.md) | Qwen2.5 Technical Report | Qwen Team (2024), [ARXIV-2412.15115](https://arxiv.org/abs/2412.15115). The open-weight family this record measures against more than any other — forty-five documents here name it, and until now none of them could point at it. | Active |

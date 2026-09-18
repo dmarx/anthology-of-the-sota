@@ -47,7 +47,7 @@ Run two passes, because they catch different things:
 
 - **Exact substring matching**, which finds long repeated spans wherever they
   sit — the paper's example is one 61-word English sentence appearing
-  thousands of times in C4. C4 ([LIT-tmplbblp](../literature.d/LIT-tmplbblp.md)) had already been
+  thousands of times in C4. C4 ([LIT-425](../literature.d/LIT-425.md)) had already been
   deduplicated by its own authors when Lee et al. found that, which is what
   makes the second pass below a requirement rather than a refinement.
 - **Approximate near-duplicate detection at document granularity**, which

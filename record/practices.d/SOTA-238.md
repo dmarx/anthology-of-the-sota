@@ -54,7 +54,7 @@ In the paper, a 280M proxy sets the weights for an 8B run — a 30x transfer —
 for **+6.5 points** average few-shot downstream accuracy over The Pile's
 default weights, and baseline accuracy in **2.6x fewer steps**.
 
-Read the denominator. The Pile ([LIT-tmpzwmum](../literature.d/LIT-tmpzwmum.md)) ships 22 named domains and a
+Read the denominator. The Pile ([LIT-426](../literature.d/LIT-426.md)) ships 22 named domains and a
 default sampling mixture its authors chose by judgement and never claimed
 was optimal. So +6.5 points answers *can a learned mixture beat a hand-picked
 one*, and the size of the gain is partly a property of the baseline: a corpus

@@ -20,7 +20,7 @@
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 9 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 9 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
 | 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 8 | 0 | Decay the learning rate linearly all the way to zero |
-| 2026-09-07 | Proposed | [SOTA-155](../../record/practices.d/SOTA-155.md) | 11 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
+| 2026-09-07 | Proposed | [SOTA-155](../../record/practices.d/SOTA-155.md) | 13 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
 | 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 9 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
 | 2026-09-07 | Proposed | [SOTA-157](../../record/practices.d/SOTA-157.md) | 9 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
 | 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 6 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
@@ -80,7 +80,7 @@
 | 2026-09-15 | Proposed | [THEORY-005](../../record/theory.d/THEORY-005.md) | 3 | 0 | Dense feed-forward layers are already mixtures of experts, and pre-training settles the partition before the neurons |
 | 2026-09-15 | Proposed | [THEORY-010](../../record/theory.d/THEORY-010.md) | 2 | 0 | Most of the loss barrier between two independently trained networks is permutation, not disagreement |
 | 2026-09-16 | Proposed | [THEORY-012](../../record/theory.d/THEORY-012.md) | 7 | 0 | How far a batch-size scaling heuristic transfers is a property of the optimizer, not of the heuristic |
-| 2026-09-16 | Proposed | [THEORY-014](../../record/theory.d/THEORY-014.md) | 2 | 0 | The outer optimizer is what buys the inner step count |
+| 2026-09-16 | Proposed | [THEORY-014](../../record/theory.d/THEORY-014.md) | 3 | 0 | The outer optimizer is what buys the inner step count |
 | 2026-09-17 | Proposed | [THEORY-023](../../record/theory.d/THEORY-023.md) | 2 | 0 | Depth-dependent computation in a transformer falls into four stages, of which detokenization is the first |
 
 ## LITs

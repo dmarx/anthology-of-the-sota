@@ -1,0 +1,74 @@
+---
+status: Active
+title: 'Attention Is Off By One'
+version: 1
+tags:
+- attention-techniques
+date: '2026-09-17'
+published: '2023-07-01'
+url: 'https://www.evanmiller.org/attention-is-off-by-one.html'
+first_author: 'Miller'
+keywords:
+- 'softmax1'
+- 'quietattention'
+- 'activation-outliers'
+- 'quantization'
+- 'attention'
+implementations: []
+summary: >-
+  Miller (2023), a blog post. Proposes `softmax₁(x)ᵢ = exp(xᵢ)/(1 + Σⱼ
+  exp(xⱼ))` — one added to the denominator — so a head can decline to attend
+  at all, and calls the result QuietAttention. **It reports no experiments and
+  says so**: "I'm 99.44% sure that it will resolve the outlier feedback loop"
+  is the entirety of the evidence. Filed because it is the clearest statement
+  of the mechanism the record holds in [THEORY-tmp1rmwn](../theory.d/THEORY-tmp1rmwn.md) and because it is what
+  most people have actually read, not because it established anything.
+---
+
+# LIT-tmpeajzz: Attention Is Off By One
+
+Miller (2023) — <https://www.evanmiller.org/attention-is-off-by-one.html>
+
+## Key takeaways
+
+- **The complaint.** "The problem with using softmax is that it forces each
+  attention head to make an annotation, even if it has no information to
+  add." Softmax outputs are non-zero even when every input is strongly
+  negative, so a head cannot abstain.
+
+- **The proposal.** Add one to the denominator:
+
+      softmax₁(x)ᵢ = exp(xᵢ) / (1 + Σⱼ exp(xⱼ))
+
+  which lets the whole output vector go to zero when every score is very
+  negative. The author names the resulting mechanism **QuietAttention**.
+
+- **The connection drawn.** Citing Qualcomm research — which is
+  [LIT-tmpfe659](LIT-tmpfe659.md), whose authors are at Qualcomm AI Research —
+  that 97%+ of outlier activations occur at whitespace and punctuation
+  positions, i.e. exactly where a head would want to contribute nothing.
+
+- **No experiments, and the post is honest about it.** "I'm 99.44% sure that
+  it will resolve the outlier feedback loop." The author proposes ways it
+  might be tested and did not test it, and notes that using it requires
+  retraining.
+
+## Standing in the anthology
+
+Filed for provenance and for reach, not for evidence, and the note should not
+be read as the record endorsing softmax1.
+
+**The chronology is the useful content.** This post is July 2023 and is
+downstream of [LIT-tmpfe659](LIT-tmpfe659.md), June 2023, which had already
+diagnosed the no-op mechanism *and* tested two remedies. What this added was a
+third proposed remedy, no evidence, and an audience — it is the version of the
+argument most practitioners have encountered, and it is why the phrase
+"softmax off by one" appears in
+[LIT-191](LIT-191.md)'s discussion rather than the paper's name.
+
+**And softmax1 specifically is still untested at the scale that would
+matter.** The record holds tested siblings — clipped softmax and gated
+attention in [LIT-tmpfe659](LIT-tmpfe659.md), the head gate at 15B in
+[LIT-138](LIT-138.md) — and nothing on this exact formulation. That is worth
+keeping visible, because the popular version of an idea and the evidenced
+version are not always the same version.

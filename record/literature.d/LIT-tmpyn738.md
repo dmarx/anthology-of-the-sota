@@ -1,0 +1,97 @@
+---
+status: Active
+title: 'The Remarkable Robustness of LLMs: Stages of Inference?'
+version: 1
+tags:
+- model-architecture
+date: '2026-09-17'
+published: '2024-06-01'
+arxiv: '2406.19384'
+first_author: 'Lad'
+keywords:
+- 'mechanistic-interpretability'
+- 'layer-ablation'
+- 'iterative-inference'
+- 'detokenization'
+- 'residual-stream'
+implementations: []
+summary: >-
+  Lad et al. (2024), [ARXIV-2406.19384](https://arxiv.org/abs/2406.19384). Deleting a layer outright, or swapping
+  two adjacent ones, leaves 72-95% of top-1 predictions unchanged with no
+  fine-tuning — but only in the middle. Interventions on the first and last
+  layers degrade badly, and swapping hurts less than dropping. The paper reads
+  that localized sensitivity as four stages of inference, with the question
+  mark in its own title: detokenization, feature engineering, prediction
+  ensembling, residual sharpening. The record files the measurement and the
+  framework as separate claims because their evidence is not the same
+  strength.
+---
+
+# LIT-tmpyn738: The Remarkable Robustness of LLMs: Stages of Inference?
+
+Lad et al. (2024) — [ARXIV-2406.19384](https://arxiv.org/abs/2406.19384)
+
+## Key takeaways
+
+- **The intervention is blunt and the result is the surprise.** Delete a layer
+  entirely, or swap two adjacent ones, at inference, with no fine-tuning and
+  no retraining. Models retain **72-95% of their original top-1 predictions**.
+  A transformer's layer sequence is far less load-bearing than its
+  construction implies.
+
+- **The damage is localized, not uniform, and that is the actual finding.**
+  Drop and swap applied to *every* layer of four GPT-2 and four Pythia models,
+  scored by KL divergence from the unmodified model and by fraction of
+  predictions preserved. **The first and last layers degrade badly; the middle
+  is remarkably robust to both.** HellaSwag, ARC-Easy and LAMBADA show the
+  same shape. Swapping adjacent layers hurts less than deleting one — order
+  matters less than presence, in the middle.
+
+- **More layers means more robustness**, so this is a property that grows with
+  depth rather than an artifact of small models.
+
+- **The first layer is argued not to be a layer at all.** It is the only one
+  that maps from the embedding basis into the residual stream, and it is a
+  function of the current token alone — so ablating it leaves the rest of the
+  network "blind to the instant context and thrown off distribution". The
+  paper's reading is that the first layer is an extension of the embedding.
+
+- **What immediately follows it is reassembly.** Citing prior work, the paper
+  holds that the model concatenates nearby tokens belonging to the same
+  underlying word or entity — a first and last name — integrating local
+  context to turn raw token representations into coherent ones. This is the
+  operation it calls **detokenization**, and it requires attention heads that
+  copy nearby previous tokens into the current residual stream.
+
+- **Four stages, offered as a hypothesis.** Detokenization, feature
+  engineering, prediction ensembling, residual sharpening. The sharpening
+  claim carries its own experiment: duplicating blocks of layers in the latter
+  half of the model consistently *lowers* output entropy against baseline, and
+  repeats at 80-90% depth improve benchmark scores.
+
+- **Scope of the evidence.** Five families — Pythia, GPT-2, Qwen 2.5,
+  LLaMA 3.2, Phi — from 124M to 6.9B, on one million tokens of the Pile.
+  Pythia runs attention and MLP in parallel where the others are sequential,
+  and most phenomena hold across that difference.
+
+- **Stated limitations.** Stage boundaries are approximate and stages may
+  co-occur within one layer; the framework describes aggregate trends while
+  individual tokens may take different paths; model-specific differences are
+  not isolated.
+
+## Standing in the anthology
+
+It sources two theory documents rather than one, and the split is the paper's
+own. The intervention result is a measurement — blunt, replicated across five
+families, and reported with the benchmark curves. The four stages are a
+reading of it, offered with a question mark in the title and with the boundary
+caveats above. Giving both one status would force the record to say the same
+thing about a deletion experiment and a framework the authors explicitly
+hedge.
+
+The detokenization stage is also the bridge the record needed elsewhere.
+[THEORY-tmprceog](../theory.d/THEORY-tmprceog.md) says the lexical unit in the
+data is delimited by construction rather than by frequency, and left open
+whether a network does anything about units its tokenizer split. This paper
+says early layers reassemble them — from a different literature, with
+different methods, and citing work the record still does not hold.

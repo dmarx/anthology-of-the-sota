@@ -112,6 +112,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [SOTA-034](../record/practices.d/SOTA-034.md) — Use SwiGLU activation for transformers *(Active, contested)*
 - alongside: [SOTA-158](../record/practices.d/SOTA-158.md) — Bound the activation's output range when training in low precision *(Proposed, emerging)*
 
+### From Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective
+
+- [SOTA-036](../record/practices.d/SOTA-036.md) — Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective *(Active, unassessed)*
+  - [SOTA-037](../record/practices.d/SOTA-037.md) — LM in-context learning emerges at scale *(Active, unassessed)*
+  - [SOTA-038](../record/practices.d/SOTA-038.md) — ICL permits few-shot task adaptability *(Active, unassessed)*
+
 ### From Use largest batch that maintains >80% sample efficiency
 
 - alongside: [SOTA-061](../record/practices.d/SOTA-061.md) — Use largest batch that maintains >80% sample efficiency *(Active, unassessed)*
@@ -143,6 +149,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [SOTA-004](../record/practices.d/SOTA-004.md) — Place BatchNorm after linear/conv layers but before activation functions *(Active, unassessed)*
 - alongside: [SOTA-006](../record/practices.d/SOTA-006.md) — Consider alternatives like LayerNorm for transformers *(Active, unassessed)*
+
+### From linear warmup of LR stabilizes early training with large batch size.
+
+- alongside: [SOTA-008](../record/practices.d/SOTA-008.md) — linear warmup of LR stabilizes early training with large batch size. *(Active, unassessed)*
+- alongside: [SOTA-009](../record/practices.d/SOTA-009.md) — warmup to a large early lr, anneal throughout training to small final lr *(Active, unassessed)*
+- alongside: [SOTA-032](../record/practices.d/SOTA-032.md) — Put the layer normalization inside the residual block, before the sublayer *(Active, universal)*
+- alongside: [SOTA-100](../record/practices.d/SOTA-100.md) — Use learning rate warmup proportional to model size *(Active, unassessed)*
 
 ### From Initialize the LayerNorm gain to 1
 
@@ -186,6 +199,21 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [SOTA-082](../record/practices.d/SOTA-082.md) — Optimize memory layout for hardware *(Active, unassessed)*
 - alongside: [SOTA-090](../record/practices.d/SOTA-090.md) — Use hardware-specific memory layouts *(Active, unassessed)*
 
+### From Implement custom kernels for critical ops
+
+- [SOTA-083](../record/practices.d/SOTA-083.md) — Implement custom kernels for critical ops *(Active, unassessed)*
+  - [SOTA-085](../record/practices.d/SOTA-085.md) — Use flash attention for all attention computations when hardware supports it *(Active, unassessed)*
+    - [SOTA-106](../record/practices.d/SOTA-106.md) — Use flash-attention-2 over original flash-attention when available *(Active, unassessed)*
+    - [SOTA-161](../record/practices.d/SOTA-161.md) — Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling *(Active, unreplicated)*
+
+### From Tiling size should match hardware SRAM size
+
+- [SOTA-086](../record/practices.d/SOTA-086.md) — Tiling size should match hardware SRAM size *(Active, unassessed)*
+  - [SOTA-087](../record/practices.d/SOTA-087.md) — Recompute attention during backward pass instead of storing it *(Active, unassessed)*
+  - [SOTA-107](../record/practices.d/SOTA-107.md) — Keep sequence lengths multiple of 128 for best performance *(Rejected, unassessed)*
+- alongside: [SOTA-089](../record/practices.d/SOTA-089.md) — Align tensor dimensions to hardware boundaries *(Active, unassessed)*
+- alongside: [SOTA-108](../record/practices.d/SOTA-108.md) — Pad attention masks to block boundaries for better hardware utilization *(Rejected, unassessed)*
+
 ## training-optimization
 
 ### From skip connections promote training stability by smoothing out the loss landscape
@@ -201,6 +229,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [SOTA-014](../record/practices.d/SOTA-014.md) — Maintain master weights in FP32 *(Active, unassessed)*
     - [SOTA-015](../record/practices.d/SOTA-015.md) — Store optimizer states in FP32 *(Active, unassessed)*
 
+### From Keep micro-batch size per GPU as large as memory allows
+
+- alongside: [SOTA-031](../record/practices.d/SOTA-031.md) — Keep micro-batch size per GPU as large as memory allows *(Active, unassessed)*
+- alongside: [SOTA-092](../record/practices.d/SOTA-092.md) — smaller batch sizes are more sample efficient (i.e., better loss as a function of tokens seen) earlier in training *(Active, unassessed)*
+- alongside: [SOTA-093](../record/practices.d/SOTA-093.md) — larger batch sizes are beneficial later in training due to better gradient estimates *(Active, unassessed)*
+- alongside: [SOTA-094](../record/practices.d/SOTA-094.md) — throughput (energy efficiency) wins out over theoretically optimal sample efficiency *(Active, unassessed)*
+
 ### From use gradient clipping
 
 - alongside: [SOTA-035](../record/practices.d/SOTA-035.md) — use gradient clipping *(Active, unassessed)*
@@ -210,6 +245,15 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [SOTA-040](../record/practices.d/SOTA-040.md) — larger models are more sample efficient *(Active, unassessed)*
 - alongside: [SOTA-041](../record/practices.d/SOTA-041.md) — lr tuning less important for larger models *(Rejected, unassessed)*
+
+### From Scale attention weights by 1/sqrt(head_dim)
+
+- [SOTA-050](../record/practices.d/SOTA-050.md) — Scale attention weights by 1/sqrt(head_dim) *(Active, unassessed)*
+  - [SOTA-192](../record/practices.d/SOTA-192.md) — Normalize the queries and keys before the attention dot product *(Active, converged)*
+- [SOTA-165](../record/practices.d/SOTA-165.md) — Precondition the gradient with matrices rather than entrywise scaling *(Active, emerging)*
+  - [SOTA-121](../record/practices.d/SOTA-121.md) — Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW *(Active, unassessed)*
+    - [SOTA-131](../record/practices.d/SOTA-131.md) — When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip) *(Active, unassessed)*
+- alongside: [SOTA-168](../record/practices.d/SOTA-168.md) — Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself *(Proposed, unreplicated)*
 
 ### From Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`
 
@@ -237,49 +281,3 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [SOTA-218](../record/practices.d/SOTA-218.md) — Retune the learning rate, momentum and schedule at every batch size you compare, never by a scaling heuristic *(Active, unreplicated)*
 - alongside: [SOTA-221](../record/practices.d/SOTA-221.md) — To train past the batch size where your optimizer stalls, change the optimizer's conditioning rather than the scaling rule *(Active, unreplicated)*
-
-## Sharing no `tags`
-
-### From linear warmup of LR stabilizes early training with large batch size.
-
-- alongside: [SOTA-008](../record/practices.d/SOTA-008.md) — linear warmup of LR stabilizes early training with large batch size. *(Active, unassessed)*
-- alongside: [SOTA-009](../record/practices.d/SOTA-009.md) — warmup to a large early lr, anneal throughout training to small final lr *(Active, unassessed)*
-- alongside: [SOTA-032](../record/practices.d/SOTA-032.md) — Put the layer normalization inside the residual block, before the sublayer *(Active, universal)*
-- alongside: [SOTA-100](../record/practices.d/SOTA-100.md) — Use learning rate warmup proportional to model size *(Active, unassessed)*
-
-### From Keep micro-batch size per GPU as large as memory allows
-
-- alongside: [SOTA-031](../record/practices.d/SOTA-031.md) — Keep micro-batch size per GPU as large as memory allows *(Active, unassessed)*
-- alongside: [SOTA-092](../record/practices.d/SOTA-092.md) — smaller batch sizes are more sample efficient (i.e., better loss as a function of tokens seen) earlier in training *(Active, unassessed)*
-- alongside: [SOTA-093](../record/practices.d/SOTA-093.md) — larger batch sizes are beneficial later in training due to better gradient estimates *(Active, unassessed)*
-- alongside: [SOTA-094](../record/practices.d/SOTA-094.md) — throughput (energy efficiency) wins out over theoretically optimal sample efficiency *(Active, unassessed)*
-
-### From Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective
-
-- [SOTA-036](../record/practices.d/SOTA-036.md) — Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective *(Active, unassessed)*
-  - [SOTA-037](../record/practices.d/SOTA-037.md) — LM in-context learning emerges at scale *(Active, unassessed)*
-  - [SOTA-038](../record/practices.d/SOTA-038.md) — ICL permits few-shot task adaptability *(Active, unassessed)*
-
-### From Scale attention weights by 1/sqrt(head_dim)
-
-- [SOTA-050](../record/practices.d/SOTA-050.md) — Scale attention weights by 1/sqrt(head_dim) *(Active, unassessed)*
-  - [SOTA-192](../record/practices.d/SOTA-192.md) — Normalize the queries and keys before the attention dot product *(Active, converged)*
-- [SOTA-165](../record/practices.d/SOTA-165.md) — Precondition the gradient with matrices rather than entrywise scaling *(Active, emerging)*
-  - [SOTA-121](../record/practices.d/SOTA-121.md) — Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW *(Active, unassessed)*
-    - [SOTA-131](../record/practices.d/SOTA-131.md) — When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip) *(Active, unassessed)*
-- alongside: [SOTA-168](../record/practices.d/SOTA-168.md) — Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself *(Proposed, unreplicated)*
-
-### From Implement custom kernels for critical ops
-
-- [SOTA-083](../record/practices.d/SOTA-083.md) — Implement custom kernels for critical ops *(Active, unassessed)*
-  - [SOTA-085](../record/practices.d/SOTA-085.md) — Use flash attention for all attention computations when hardware supports it *(Active, unassessed)*
-    - [SOTA-106](../record/practices.d/SOTA-106.md) — Use flash-attention-2 over original flash-attention when available *(Active, unassessed)*
-    - [SOTA-161](../record/practices.d/SOTA-161.md) — Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling *(Active, unreplicated)*
-
-### From Tiling size should match hardware SRAM size
-
-- [SOTA-086](../record/practices.d/SOTA-086.md) — Tiling size should match hardware SRAM size *(Active, unassessed)*
-  - [SOTA-087](../record/practices.d/SOTA-087.md) — Recompute attention during backward pass instead of storing it *(Active, unassessed)*
-  - [SOTA-107](../record/practices.d/SOTA-107.md) — Keep sequence lengths multiple of 128 for best performance *(Rejected, unassessed)*
-- alongside: [SOTA-089](../record/practices.d/SOTA-089.md) — Align tensor dimensions to hardware boundaries *(Active, unassessed)*
-- alongside: [SOTA-108](../record/practices.d/SOTA-108.md) — Pad attention masks to block boundaries for better hardware utilization *(Rejected, unassessed)*

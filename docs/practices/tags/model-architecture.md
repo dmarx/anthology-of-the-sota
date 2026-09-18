@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-25 of 248 SOTA documents. Back to the [full index](../README.md).
+26 of 248 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -16,6 +16,7 @@
 | [SOTA-034](../../../record/practices.d/SOTA-034.md) v3 | Use SwiGLU activation for transformers | Shazeer et al. (2020), [LIT-030](../../../record/literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). Contested at frontier scale in low precision: two groups now ship bounded replacements, on the grounds that SwiGLU's unbounded factors produce activation outliers. | Active |
 | [SOTA-036](../../../record/practices.d/SOTA-036.md) v2 | Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
 | [SOTA-037](../../../record/practices.d/SOTA-037.md) | LM in-context learning emerges at scale | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
+| [SOTA-038](../../../record/practices.d/SOTA-038.md) v2 | ICL permits few-shot task adaptability | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
 | [SOTA-039](../../../record/practices.d/SOTA-039.md) | single cycle of cosine decay is sufficient lr schedule | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Superseded — by [SOTA-140](../../../record/practices.d/SOTA-140.md); warmup-stable-decay matches it and leaves the token budget open; every report since 2024 in the record uses a stable-then-decay schedule |
 | [SOTA-061](../../../record/practices.d/SOTA-061.md) | Use largest batch that maintains >80% sample efficiency | Fedus et al. (2021), [LIT-061](../../../record/literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684). | Active |
 | [SOTA-062](../../../record/practices.d/SOTA-062.md) | Scale batch size with model size but sub-linearly | Fedus et al. (2021), [LIT-061](../../../record/literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684). | Active |

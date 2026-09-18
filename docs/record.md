@@ -49,7 +49,6 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `promote_when` — required when `status` is `Proposed`, `Deferred` (luria.yaml: schemes.SOTA.fields.promote_when)
 - `primary_topic` — derived — `{tags[0]}`, never written (luria.yaml: schemes.SOTA.fields.primary_topic)
 - `published` — derived — `{published}` from `source[0]`, never written (luria.yaml: schemes.SOTA.fields.published)
-- `primary_topic` — any of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.yaml: schemes.SOTA.fields.tags.groups.primary_topic)
 
 **`THEORY`**
 
@@ -64,7 +63,6 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `promote_when` — required when `status` is `Proposed`, `Deferred` (luria.yaml: schemes.THEORY.fields.promote_when)
 - `primary_topic` — derived — `{tags[0]}`, never written (luria.yaml: schemes.THEORY.fields.primary_topic)
 - `published` — derived — `{published}` from `source[0]`, never written (luria.yaml: schemes.THEORY.fields.published)
-- `primary_topic` — any of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.yaml: schemes.THEORY.fields.tags.groups.primary_topic)
 
 **`LIT`**
 
@@ -78,7 +76,6 @@ Every entry carries `title`, `tags` and `date`, and one standard field is condit
 - `published` — required (luria.yaml: schemes.LIT.fields.published)
 - `primary_topic` — derived — `{tags[0]}`, never written (luria.yaml: schemes.LIT.fields.primary_topic)
 - `source` — at least one of `arxiv`, `doi`, `url` (luria.yaml: schemes.LIT.field_groups.source)
-- `primary_topic` — any of `adaptation-and-tuning`, `analysis-and-evaluation`, `attention-techniques`, `data-pipeline`, `distributed-optimization`, `generative-modeling`, `inference-optimization`, `model-architecture`, `model-stability`, `representation-and-encoding`, `systems-optimization`, `training-optimization`, `vision-and-graphics` (luria.yaml: schemes.LIT.fields.tags.groups.primary_topic)
 
 **`NOTE`**
 

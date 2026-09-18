@@ -20,7 +20,7 @@ history:
 - version: 4
   date: '2026-09-18'
   note: >-
-    Adds `attention-techniques`. The practice rescales query and key weights; its relation to SOTA-192 joins two interventions on the same matrices (ADR-tmphn2vp).
+    Adds `attention-techniques`. The practice rescales query and key weights; its relation to SOTA-192 joins two interventions on the same matrices (ADR-049).
 tags:
 - training-optimization
 - attention-techniques

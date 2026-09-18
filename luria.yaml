@@ -610,7 +610,7 @@ schemes:
         # of the fourteen topics. ADR-035 relaxed it from `exactly-one` to `any`,
         # which constrains nothing, and its list then drifted from the vocabulary
         # unnoticed because nothing read it — `tiny-models` was never added
-        # (ADR-tmphn2vp).
+        # (ADR-049).
     axis: tags
   # ── The explanation: one document per claim about why something works ────
   # A practice is an instruction; a theory is a finding. They were one scheme
@@ -892,7 +892,7 @@ schemes:
         # of the fourteen topics. ADR-035 relaxed it from `exactly-one` to `any`,
         # which constrains nothing, and its list then drifted from the vocabulary
         # unnoticed because nothing read it — `tiny-models` was never added
-        # (ADR-tmphn2vp).
+        # (ADR-049).
     axis: tags
   # ── The reading: one document per paper someone actually opened ──────────
   # A LIT note says what a paper's STANDING is here. It never said what the

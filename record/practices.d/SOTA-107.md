@@ -18,7 +18,7 @@ history:
 - version: 3
   date: '2026-09-18'
   note: >-
-    Adds `systems-optimization`. A sequence-length multiple is a hardware-alignment claim, which is what its relation to SOTA-089 asserts. The practice stays `Rejected`; a retired claim still has a subject (ADR-tmphn2vp).
+    Adds `systems-optimization`. A sequence-length multiple is a hardware-alignment claim, which is what its relation to SOTA-089 asserts. The practice stays `Rejected`; a retired claim still has a subject (ADR-049).
 tags:
 - attention-techniques
 - systems-optimization

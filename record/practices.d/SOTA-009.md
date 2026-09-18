@@ -7,7 +7,7 @@ history:
 - version: 2
   date: '2026-09-18'
   note: >-
-    Adds `model-stability`. The schedule exists to get through early training without divergence, which is what the line it sits in is about (ADR-tmphn2vp).
+    Adds `model-stability`. The schedule exists to get through early training without divergence, which is what the line it sits in is about (ADR-049).
 tags:
 - training-optimization
 - model-stability

@@ -11,7 +11,7 @@ history:
 - version: 3
   date: '2026-09-18'
   note: >-
-    Adds `systems-optimization`. This document's body is about kernels, on-chip memory per SM and tile sizes, which is that blurb almost word for word — and flash attention being an instance of SOTA-083's custom-kernel rule is what the `extends` edge asserts. The frontmatter comment below asked that this crossing keep showing up until someone answered it; ADR-tmphn2vp is the answer, and an unbound relation is never the resting state.
+    Adds `systems-optimization`. This document's body is about kernels, on-chip memory per SM and tile sizes, which is that blurb almost word for word — and flash attention being an instance of SOTA-083's custom-kernel rule is what the `extends` edge asserts. The frontmatter comment below asked that this crossing keep showing up until someone answered it; ADR-049 is the answer, and an unbound relation is never the resting state.
 tags:
 # `flash-attention` removed. #101 added it to both this practice and its
 # counterpart to bind them under an invariant that then read `tags`, which

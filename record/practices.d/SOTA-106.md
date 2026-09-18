@@ -11,7 +11,7 @@ history:
 - version: 3
   date: '2026-09-18'
   note: >-
-    Adds `systems-optimization`. FlashAttention-2's contribution is work partitioning and GPU occupancy for an identical result, and it is the value its line holds in common (ADR-tmphn2vp).
+    Adds `systems-optimization`. FlashAttention-2's contribution is work partitioning and GPU occupancy for an identical result, and it is the value its line holds in common (ADR-049).
 tags:
 - attention-techniques
 - systems-optimization

@@ -7,7 +7,7 @@ history:
 - version: 2
   date: '2026-09-18'
   note: >-
-    Adds `training-optimization`, whose blurb names batch size outright. The relation to SOTA-092 and SOTA-093 asserts these are batch-size claims together, and nothing said so (ADR-tmphn2vp).
+    Adds `training-optimization`, whose blurb names batch size outright. The relation to SOTA-092 and SOTA-093 asserts these are batch-size claims together, and nothing said so (ADR-049).
 tags:
 - distributed-optimization
 - training-optimization

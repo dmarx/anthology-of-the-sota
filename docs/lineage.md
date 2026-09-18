@@ -13,6 +13,15 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-033](../record/literature.d/LIT-033.md) — Longformer: The Long-Document Transformer *(Active)*
 - alongside: [LIT-225](../record/literature.d/LIT-225.md) — Generating Long Sequences with Sparse Transformers *(Active)*
 
+### From Mamba: Linear-Time Sequence Modeling with Selective State Spaces
+
+- [LIT-161](../record/literature.d/LIT-161.md) — Mamba: Linear-Time Sequence Modeling with Selective State Spaces *(Active)*
+  - [LIT-162](../record/literature.d/LIT-162.md) — Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality *(Active)*
+    - [LIT-137](../record/literature.d/LIT-137.md) — Gated Delta Networks: Improving Mamba2 with Delta Rule *(Active)* — also extends LIT-195
+      - [LIT-133](../record/literature.d/LIT-133.md) — Kimi Linear: An Expressive, Efficient Attention Architecture *(Active)*
+    - [LIT-165](../record/literature.d/LIT-165.md) — Mamba-3: Improved Sequence Modeling using State Space Principles *(Active)*
+- [LIT-195](../record/literature.d/LIT-195.md) — Parallelizing Linear Transformers with the Delta Rule over Sequence Length *(Active)*
+
 ## distributed-optimization
 
 ### From DiLoCo: Distributed Low-Communication Training of Language Models
@@ -59,21 +68,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ## training-optimization
 
-### From Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer
-
-- [LIT-148](../record/literature.d/LIT-148.md) — Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer *(Active)*
-  - [LIT-149](../record/literature.d/LIT-149.md) — u-µP: The Unit-Scaled Maximal Update Parametrization *(Active)*
-  - [LIT-150](../record/literature.d/LIT-150.md) — Don't be lazy: CompleteP enables compute-efficient deep transformers *(Active)*
-
-## vision-and-graphics
-
-### From Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture
-
-- [LIT-216](../record/literature.d/LIT-216.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
-  - [LIT-215](../record/literature.d/LIT-215.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*
-
-## Sharing no `tags`
-
 ### From Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training
 
 - [LIT-235](../record/literature.d/LIT-235.md) — Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training *(Active)*
@@ -93,11 +87,15 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-230](../record/literature.d/LIT-230.md) — Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO *(Active)*
 - alongside: [LIT-239](../record/literature.d/LIT-239.md) — ESSA: Evolutionary Strategies for Scalable Alignment *(Active)*
 
-### From Mamba: Linear-Time Sequence Modeling with Selective State Spaces
+### From Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer
 
-- [LIT-161](../record/literature.d/LIT-161.md) — Mamba: Linear-Time Sequence Modeling with Selective State Spaces *(Active)*
-  - [LIT-162](../record/literature.d/LIT-162.md) — Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality *(Active)*
-    - [LIT-137](../record/literature.d/LIT-137.md) — Gated Delta Networks: Improving Mamba2 with Delta Rule *(Active)* — also extends LIT-195
-      - [LIT-133](../record/literature.d/LIT-133.md) — Kimi Linear: An Expressive, Efficient Attention Architecture *(Active)*
-    - [LIT-165](../record/literature.d/LIT-165.md) — Mamba-3: Improved Sequence Modeling using State Space Principles *(Active)*
-- [LIT-195](../record/literature.d/LIT-195.md) — Parallelizing Linear Transformers with the Delta Rule over Sequence Length *(Active)*
+- [LIT-148](../record/literature.d/LIT-148.md) — Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer *(Active)*
+  - [LIT-149](../record/literature.d/LIT-149.md) — u-µP: The Unit-Scaled Maximal Update Parametrization *(Active)*
+  - [LIT-150](../record/literature.d/LIT-150.md) — Don't be lazy: CompleteP enables compute-efficient deep transformers *(Active)*
+
+## vision-and-graphics
+
+### From Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture
+
+- [LIT-216](../record/literature.d/LIT-216.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
+  - [LIT-215](../record/literature.d/LIT-215.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*

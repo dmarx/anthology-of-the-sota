@@ -14,13 +14,13 @@ history:
 - version: 2
   date: '2026-09-18'
   note: >-
-    Adds `attention-techniques`. The practice normalizes queries and keys before the dot product; its relation to SOTA-131 joins two interventions on the same matrices (ADR-tmphn2vp).
+    Adds `attention-techniques`. The practice normalizes queries and keys before the dot product; its relation to SOTA-131 joins two interventions on the same matrices (ADR-049).
 - version: 3
   date: '2026-09-18'
   # inactive-ok-block: SOTA-168 — Proposed, and named only as a member of
   # the line this tag binds; nothing here rests on its standing
   note: >-
-    Adds `training-optimization`. Normalizing queries and keys is a training-dynamics intervention, and it is the value shared by the line running through SOTA-121, SOTA-165 and SOTA-168 (ADR-tmphn2vp).
+    Adds `training-optimization`. Normalizing queries and keys is a training-dynamics intervention, and it is the value shared by the line running through SOTA-121, SOTA-165 and SOTA-168 (ADR-049).
 tags:
 - model-stability
 - attention-techniques

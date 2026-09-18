@@ -14,7 +14,7 @@ history:
 - version: 3
   date: '2026-09-18'
   note: >-
-    Adds `model-stability`. The title says warmup stabilizes early training, and the line it sits in — SOTA-009, SOTA-032, SOTA-100 — is four fixes for that one instability. Nothing named it (ADR-tmphn2vp).
+    Adds `model-stability`. The title says warmup stabilizes early training, and the line it sits in — SOTA-009, SOTA-032, SOTA-100 — is four fixes for that one instability. Nothing named it (ADR-049).
 tags:
 - training-optimization
 - model-stability

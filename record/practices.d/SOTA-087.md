@@ -13,7 +13,7 @@ history:
 - version: 3
   date: '2026-09-18'
   note: >-
-    Adds `systems-optimization`. Trading recomputation for stored activations is a memory-access decision, and it is what its line holds in common (ADR-tmphn2vp).
+    Adds `systems-optimization`. Trading recomputation for stored activations is a memory-access decision, and it is what its line holds in common (ADR-049).
 tags:
 - attention-techniques
 - systems-optimization

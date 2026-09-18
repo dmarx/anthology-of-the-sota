@@ -18,7 +18,7 @@ history:
 - version: 3
   date: '2026-09-18'
   note: >-
-    Adds `systems-optimization`. Padding to block boundaries is hardware alignment, which is what its line shares (ADR-tmphn2vp).
+    Adds `systems-optimization`. Padding to block boundaries is hardware alignment, which is what its line shares (ADR-049).
 tags:
 - attention-techniques
 - systems-optimization

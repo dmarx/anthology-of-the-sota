@@ -21,7 +21,7 @@ history:
 - version: 4
   date: '2026-09-18'
   note: >-
-    Adds `systems-optimization`, whose blurb names hardware utilization and memory access patterns — which is what matching tile size to SRAM is, and what its line shares (ADR-tmphn2vp).
+    Adds `systems-optimization`, whose blurb names hardware utilization and memory access patterns — which is what matching tile size to SRAM is, and what its line shares (ADR-049).
 tags:
 - attention-techniques
 - systems-optimization

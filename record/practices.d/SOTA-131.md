@@ -2,7 +2,7 @@
 number: 131
 status: Active
 title: 'When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip)'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-07'
@@ -17,8 +17,13 @@ history:
   note: >-
     Enriched from the #123 readings. The recommendation is unchanged;
     the source list, the numbers or the neighbourhood are.
+- version: 4
+  date: '2026-09-18'
+  note: >-
+    Adds `attention-techniques`. The practice rescales query and key weights; its relation to SOTA-192 joins two interventions on the same matrices (ADR-tmphn2vp).
 tags:
 - training-optimization
+- attention-techniques
 date: '2026-09-05'
 source:
 # LIT-132 is where QK-Clip is introduced. LIT-155 established attention-logit

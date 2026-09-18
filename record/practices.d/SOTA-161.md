@@ -10,7 +10,16 @@ consensus_note: >-
   absorb the doubled on-chip footprint, citing this. Nobody has disputed it
   and nobody has independently reproduced the analysis.
 title: "Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling"
-version: 1
+version: 3
+history:
+- version: 2
+  date: '2026-09-18'
+  note: >-
+    Adds `attention-techniques`. The practice is about the attention output, and its relation to SOTA-085 asserts as much. SOTA-085's body argues it is filed under stability RATHER THAN attention; that settles which topic leads, not whether the second is true (ADR-tmphn2vp).
+- version: 3
+  date: '2026-09-18'
+  note: >-
+    Adds `systems-optimization`, whose blurb names numerical precision — which is exactly what keeping the attention output in FP32 is about, and the value its line holds in common (ADR-tmphn2vp).
 tags:
 # `flash-attention` removed. #101 added it to both this practice and its
 # counterpart to bind them under an invariant that then read `tags`, which
@@ -20,6 +29,8 @@ tags:
 # goes: the edge is real, it crosses a fault line in the vocabulary, and it
 # should keep showing up until someone answers it.
 - model-stability
+- attention-techniques
+- systems-optimization
 date: '2026-09-08'
 source:
 # The paper that isolated the mechanism and tested a targeted fix. Kimi K3

@@ -603,51 +603,14 @@ schemes:
         # every tag one the vocabulary above names. NOTE's `tags:` declares no
         # vocabulary at all and is not covered — see the decision.
         closed: true
-        groups:
-          # The topic consolidation, enforced. Thirteen topics, exactly one primary
-          # per practice; secondary tags are unconstrained. The vocabulary and the
-          # one-primary rule both come from ADR-003, which promoted them out of the
-          # Jinja template they had been sitting in, unapplied, since 2024.
-          primary_topic:
-            # `any`, not `exactly-one` (ADR-035). A document is often about
-            # two of the thirteen -- a positional-encoding scheme is also an
-            # attention technique, a context-extension paper is both -- and under
-            # `exactly-one` recording the second meant deleting the first. The
-            # primary topic is still exactly one thing: `primary_topic` derives
-            # `{tags[0]}`, so the FIRST topic listed is the primary and every
-            # chain invariant still compares one value against one value.
-            #
-            # The cost is that `tags[0]` becomes load-bearing where it was only
-            # conventional. It already was -- a free-form tag listed first would
-            # always have made `primary_topic` wrong -- and holds in all 596
-            # documents today, but a reordering is now a silent retag. LU-#229
-            # asks luria for the guard.
-            require: any
-            # Thirteen, and the same thirteen the LIT scheme has. ADR-027 added
-            # `analysis-and-evaluation`; ADR-026 then added `generative-modeling` and
-            # `vision-and-graphics`, superseding ADR-020, whose rejection of exactly that
-            # had started being cited as a scope boundary — the thing ADR-020 existed to
-            # remove. The filing rule is unchanged and is the point: take a domain topic
-            # when the claim is ABOUT the domain; a claim merely discovered in one still
-            # takes its kind.
-            #
-            # ADR-026: the practice vocabulary is now the same thirteen the
-            # reading list has. The two schemes differ in what a document IS, not
-            # in what it may be ABOUT.
-            tags:
-            - training-optimization
-            - systems-optimization
-            - model-stability
-            - distributed-optimization
-            - data-pipeline
-            - attention-techniques
-            - model-architecture
-            - inference-optimization
-            - adaptation-and-tuning
-            - representation-and-encoding
-            - analysis-and-evaluation
-            - generative-modeling
-            - vision-and-graphics
+        # Tag ORDER is load-bearing: `primary_topic` derives `{tags[0]}`, so the
+        # first topic listed is the primary one and every chain invariant compares
+        # against it. A reordering is a silent retag; LU-#229 asks luria for the
+        # guard. A `groups.primary_topic` block used to sit here listing thirteen
+        # of the fourteen topics. ADR-035 relaxed it from `exactly-one` to `any`,
+        # which constrains nothing, and its list then drifted from the vocabulary
+        # unnoticed because nothing read it — `tiny-models` was never added
+        # (ADR-tmphn2vp).
     axis: tags
   # ── The explanation: one document per claim about why something works ────
   # A practice is an instruction; a theory is a finding. They were one scheme
@@ -770,36 +733,6 @@ schemes:
         # every tag one the vocabulary above names. NOTE's `tags:` declares no
         # vocabulary at all and is not covered — see the decision.
         closed: true
-        groups:
-          primary_topic:
-            # `any`, not `exactly-one` (ADR-035). A document is often about
-            # two of the thirteen -- a positional-encoding scheme is also an
-            # attention technique, a context-extension paper is both -- and under
-            # `exactly-one` recording the second meant deleting the first. The
-            # primary topic is still exactly one thing: `primary_topic` derives
-            # `{tags[0]}`, so the FIRST topic listed is the primary and every
-            # chain invariant still compares one value against one value.
-            #
-            # The cost is that `tags[0]` becomes load-bearing where it was only
-            # conventional. It already was -- a free-form tag listed first would
-            # always have made `primary_topic` wrong -- and holds in all 596
-            # documents today, but a reordering is now a silent retag. LU-#229
-            # asks luria for the guard.
-            require: any
-            tags:
-            - training-optimization
-            - systems-optimization
-            - model-stability
-            - distributed-optimization
-            - data-pipeline
-            - attention-techniques
-            - model-architecture
-            - inference-optimization
-            - adaptation-and-tuning
-            - representation-and-encoding
-            - analysis-and-evaluation
-            - generative-modeling
-            - vision-and-graphics
     axis: tags
   # ── The evidence: one note per paper ─────────────────────────────────────
   LIT:
@@ -952,43 +885,14 @@ schemes:
         # every tag one the vocabulary above names. NOTE's `tags:` declares no
         # vocabulary at all and is not covered — see the decision.
         closed: true
-        groups:
-          # The same thirteen as the practice registry above, since ADR-026. ADR-003
-          # gave LIT five topics the SOTA scheme lacked, on the ground that the corpus
-          # carries generative-vision, theory and inference work that produced no training
-          # recommendation; four decisions have since closed that gap one topic at a time,
-          # and the schemes now differ in what a document IS rather than in what it may be
-          # ABOUT. Kept as a separate declaration because they are separate schemes and a
-          # future decision may separate them again.
-          primary_topic:
-            # `any`, not `exactly-one` (ADR-035). A document is often about
-            # two of the thirteen -- a positional-encoding scheme is also an
-            # attention technique, a context-extension paper is both -- and under
-            # `exactly-one` recording the second meant deleting the first. The
-            # primary topic is still exactly one thing: `primary_topic` derives
-            # `{tags[0]}`, so the FIRST topic listed is the primary and every
-            # chain invariant still compares one value against one value.
-            #
-            # The cost is that `tags[0]` becomes load-bearing where it was only
-            # conventional. It already was -- a free-form tag listed first would
-            # always have made `primary_topic` wrong -- and holds in all 596
-            # documents today, but a reordering is now a silent retag. LU-#229
-            # asks luria for the guard.
-            require: any
-            tags:
-            - training-optimization
-            - systems-optimization
-            - model-stability
-            - distributed-optimization
-            - data-pipeline
-            - attention-techniques
-            - model-architecture
-            - generative-modeling
-            - vision-and-graphics
-            - adaptation-and-tuning
-            - inference-optimization
-            - analysis-and-evaluation
-            - representation-and-encoding
+        # Tag ORDER is load-bearing: `primary_topic` derives `{tags[0]}`, so the
+        # first topic listed is the primary one and every chain invariant compares
+        # against it. A reordering is a silent retag; LU-#229 asks luria for the
+        # guard. A `groups.primary_topic` block used to sit here listing thirteen
+        # of the fourteen topics. ADR-035 relaxed it from `exactly-one` to `any`,
+        # which constrains nothing, and its list then drifted from the vocabulary
+        # unnoticed because nothing read it — `tiny-models` was never added
+        # (ADR-tmphn2vp).
     axis: tags
   # ── The reading: one document per paper someone actually opened ──────────
   # A LIT note says what a paper's STANDING is here. It never said what the

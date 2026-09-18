@@ -2,9 +2,15 @@
 number: 9
 status: 'Active'
 title: 'warmup to a large early lr, anneal throughout training to small final lr'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-18'
+  note: >-
+    Adds `model-stability`. The schedule exists to get through early training without divergence, which is what the line it sits in is about (ADR-tmphn2vp).
 tags:
 - training-optimization
+- model-stability
 date: '2026-08-24'
 source:
 - LIT-010

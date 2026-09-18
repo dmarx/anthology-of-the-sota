@@ -2,9 +2,15 @@
 number: 50
 status: 'Active'
 title: 'Scale attention weights by 1/sqrt(head_dim)'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-18'
+  note: >-
+    Adds `training-optimization`, whose blurb names training dynamics. The 1/sqrt(head_dim) scaling keeps the softmax in a regime where gradients behave, which is what the optimizer line it sits in has in common (ADR-tmphn2vp).
 tags:
 - model-stability
+- training-optimization
 date: '2026-08-24'
 source:
 - LIT-008

@@ -2,9 +2,15 @@
 number: 38
 status: 'Active'
 title: 'ICL permits few-shot task adaptability'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-18'
+  note: >-
+    Adds `model-architecture`, whose blurb names model families. In-context learning is a capability of the decoder-only-at-scale family SOTA-036 describes, which is what the relation between them asserts (ADR-tmphn2vp).
 tags:
 - adaptation-and-tuning
+- model-architecture
 date: '2026-08-24'
 source:
 - LIT-035

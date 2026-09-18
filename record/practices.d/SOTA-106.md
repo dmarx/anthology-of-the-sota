@@ -2,14 +2,19 @@
 number: 106
 status: 'Active'
 title: 'Use flash-attention-2 over original flash-attention when available'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-18'
   note: >-
     Drops `compared_against: SOTA-083`. Nobody ran that comparison; the relation to the general rule is now carried transitively through SOTA-085, which extends it (ADR-047).
+- version: 3
+  date: '2026-09-18'
+  note: >-
+    Adds `systems-optimization`. FlashAttention-2's contribution is work partitioning and GPU occupancy for an identical result, and it is the value its line holds in common (ADR-tmphn2vp).
 tags:
 - attention-techniques
+- systems-optimization
 date: '2026-08-24'
 source:
 - LIT-106

@@ -2,9 +2,15 @@
 number: 100
 status: 'Active'
 title: 'Use learning rate warmup proportional to model size'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-18'
+  note: >-
+    Adds `model-stability`. Warmup proportional to model size exists because large models diverge early; the relation to SOTA-032 joins two fixes for one instability, and only one end named it (ADR-tmphn2vp).
 tags:
 - training-optimization
+- model-stability
 date: '2026-08-24'
 source:
 - LIT-114

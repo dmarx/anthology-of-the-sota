@@ -2,7 +2,7 @@
 number: 87
 status: 'Active'
 title: 'Recompute attention during backward pass instead of storing it'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-13'
@@ -10,8 +10,13 @@ history:
     Attribution split under ADR-029. The recommendation is Child et al.
     (2019); Dao et al. is the evidence and the argument this body makes, and
     stays the primary source. Nothing about the claim changed.
+- version: 3
+  date: '2026-09-18'
+  note: >-
+    Adds `systems-optimization`. Trading recomputation for stored activations is a memory-access decision, and it is what its line holds in common (ADR-tmphn2vp).
 tags:
 - attention-techniques
+- systems-optimization
 date: '2026-08-24'
 source:
 - LIT-074

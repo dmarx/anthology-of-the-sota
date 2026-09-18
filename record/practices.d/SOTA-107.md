@@ -6,7 +6,7 @@ status_note: >-
   in the source is a head dimension or a block size; none is a sequence
   length, and "multiple of" and "divisible" appear zero times
 title: 'Keep sequence lengths multiple of 128 for best performance'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-09'
@@ -15,8 +15,13 @@ history:
     ownerless-constant list; it is now traced, and it names a head
     dimension and a block size rather than a sequence length. The body's
     kernel reasoning is sound and is not the paper's.
+- version: 3
+  date: '2026-09-18'
+  note: >-
+    Adds `systems-optimization`. A sequence-length multiple is a hardware-alignment claim, which is what its relation to SOTA-089 asserts. The practice stays `Rejected`; a retired claim still has a subject (ADR-tmphn2vp).
 tags:
 - attention-techniques
+- systems-optimization
 date: '2026-08-24'
 source:
 - LIT-106

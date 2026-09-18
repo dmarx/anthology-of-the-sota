@@ -6,7 +6,7 @@ status_note: >-
   "divisible" appear zero times each; the body's reasoning about skipping
   fully-masked blocks is correct and is not the source's
 title: 'Pad attention masks to block boundaries for better hardware utilization'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-09'
@@ -15,8 +15,13 @@ history:
   note: >-
     Rejected on reading the source (#114), with SOTA-107. Neither the
     recommendation nor its vocabulary is in the paper.
+- version: 3
+  date: '2026-09-18'
+  note: >-
+    Adds `systems-optimization`. Padding to block boundaries is hardware alignment, which is what its line shares (ADR-tmphn2vp).
 tags:
 - attention-techniques
+- systems-optimization
 date: '2026-08-24'
 source:
 - LIT-106

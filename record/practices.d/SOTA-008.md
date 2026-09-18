@@ -2,7 +2,7 @@
 number: 8
 status: 'Active'
 title: 'linear warmup of LR stabilizes early training with large batch size.'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-09'
@@ -11,8 +11,13 @@ history:
     (LARS) cites it as prior work and argues that recipe is not general
     enough and may diverge. LIT-009 stays in the list as the paper that
     found its limit. The recommendation is unchanged.
+- version: 3
+  date: '2026-09-18'
+  note: >-
+    Adds `model-stability`. The title says warmup stabilizes early training, and the line it sits in — SOTA-009, SOTA-032, SOTA-100 — is four fixes for that one instability. Nothing named it (ADR-tmphn2vp).
 tags:
 - training-optimization
+- model-stability
 date: '2026-08-24'
 source:
 # Warmup is Goyal et al. (LIT-007), which introduced it as the fix for

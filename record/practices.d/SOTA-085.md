@@ -2,12 +2,16 @@
 number: 85
 status: 'Active'
 title: 'Use flash attention for all attention computations when hardware supports it'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-18'
   note: >-
     The edge to SOTA-083 moves from `compared_against` to `extends`. Flash attention is a custom kernel for a critical op — an instance of that rule rather than a comparison anyone ran (ADR-011, ADR-047). The tag crossing this edge makes visible is untouched and still wants an answer.
+- version: 3
+  date: '2026-09-18'
+  note: >-
+    Adds `systems-optimization`. This document's body is about kernels, on-chip memory per SM and tile sizes, which is that blurb almost word for word — and flash attention being an instance of SOTA-083's custom-kernel rule is what the `extends` edge asserts. The frontmatter comment below asked that this crossing keep showing up until someone answered it; ADR-tmphn2vp is the answer, and an unbound relation is never the resting state.
 tags:
 # `flash-attention` removed. #101 added it to both this practice and its
 # counterpart to bind them under an invariant that then read `tags`, which
@@ -17,6 +21,7 @@ tags:
 # goes: the edge is real, it crosses a fault line in the vocabulary, and it
 # should keep showing up until someone answers it.
 - attention-techniques
+- systems-optimization
 date: '2026-08-24'
 source:
 - LIT-074

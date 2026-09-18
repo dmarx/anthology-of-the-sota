@@ -9,9 +9,22 @@ consensus_note: >-
   clip; the Kimi line takes the other route. The invariant is agreed, the
   instrument is not.
 title: 'Normalize the queries and keys before the attention dot product'
-version: 1
+version: 3
+history:
+- version: 2
+  date: '2026-09-18'
+  note: >-
+    Adds `attention-techniques`. The practice normalizes queries and keys before the dot product; its relation to SOTA-131 joins two interventions on the same matrices (ADR-tmphn2vp).
+- version: 3
+  date: '2026-09-18'
+  # inactive-ok-block: SOTA-168 — Proposed, and named only as a member of
+  # the line this tag binds; nothing here rests on its standing
+  note: >-
+    Adds `training-optimization`. Normalizing queries and keys is a training-dynamics intervention, and it is the value shared by the line running through SOTA-121, SOTA-165 and SOTA-168 (ADR-tmphn2vp).
 tags:
 - model-stability
+- attention-techniques
+- training-optimization
 date: '2026-09-10'
 source:
 - LIT-088

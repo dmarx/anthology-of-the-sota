@@ -2,7 +2,7 @@
 number: 86
 status: 'Active'
 title: 'Tiling size should match hardware SRAM size'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-09'
@@ -18,8 +18,13 @@ history:
     LIT-074's formula, which overstated it: the successor kernel LIT-106
     tunes block sizes by hand over four choices. Both are in the body now.
     The recommendation is unchanged.
+- version: 4
+  date: '2026-09-18'
+  note: >-
+    Adds `systems-optimization`, whose blurb names hardware utilization and memory access patterns — which is what matching tile size to SRAM is, and what its line shares (ADR-tmphn2vp).
 tags:
 - attention-techniques
+- systems-optimization
 date: '2026-08-24'
 source:
 - LIT-074

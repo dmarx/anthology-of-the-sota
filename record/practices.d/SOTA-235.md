@@ -4,7 +4,14 @@ status: 'Active'
 formerly:
 - SOTA-tmpv9jzu
 title: 'Update the weights at inference on the test instance when the task is structurally novel'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-18'
+  note: >-
+    ARC disambiguated to ARC-AGI. The record uses that acronym for two
+    unrelated benchmarks; this practice's headline number is on
+    Chollet's puzzle set, not the AI2 Reasoning Challenge.
 tags:
 - adaptation-and-tuning
 consensus: unreplicated
@@ -21,7 +28,7 @@ introduced_by:
 summary: >-
   Akyürek et al. (2024), [LIT-379](../literature.d/LIT-379.md) — [ARXIV-2411.07279](https://arxiv.org/abs/2411.07279). Build a loss from the
   test instance's own in-context examples, take gradient steps at inference,
-  then discard the update. Up to 6x a fine-tuned baseline on ARC (53.0% at
+  then discard the update. Up to 6x a fine-tuned baseline on ARC-AGI (53.0% at
   8B) and +7.3 points on BIG-Bench Hard at 10-shot. The examples are worth
   several times more as gradient than as context.
 ---
@@ -51,12 +58,12 @@ from input data." Each word is load-bearing:
 
 | benchmark | result |
 |---|---|
-| ARC (public validation, 8B) | **53.0%**, up to **6×** fine-tuned baselines |
-| ARC, ensembled with program synthesis | **61.9%** — the paper's "average human performance" |
+| ARC-AGI (public validation, 8B) | **53.0%**, up to **6×** fine-tuned baselines |
+| ARC-AGI, ensembled with program synthesis | **61.9%** — the paper's "average human performance" |
 | BIG-Bench Hard, 10-shot | **50.5% → 57.8%** (+7.3) |
 
-The BBH number is the one to weigh. ARC is built to reward search over
-structurally novel tasks, which is the regime this method is *defined* by, so
+The BBH number is the one to weigh. ARC-AGI ([LIT-tmpnraor](../literature.d/LIT-tmpnraor.md)) is built to reward
+search over structurally novel tasks, which is the regime this method is *defined* by, so
 a large gain there is close to tautological. BBH is ordinary hard reasoning,
 and the effect surviving there is what says this is not a benchmark artifact.
 

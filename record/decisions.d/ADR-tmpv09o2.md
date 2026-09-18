@@ -1,0 +1,128 @@
+---
+status: Active
+title: 'An unbound relation is one of four things, and liberal tagging answers one of them'
+version: 1
+supersedes:
+- ADR-036
+tags:
+- record
+date: '2026-09-18'
+summary: >-
+  Carries [ADR-036](ADR-036.md)'s four-way classification forward unchanged and revises one
+  verdict. Its fourth category included **trunk papers whose contribution
+  spans two topics**, left standing because "splitting a trunk paper's topic
+  would be filing it under half its contribution" — true under minimal
+  tagging, and moot under [ADR-046](ADR-046.md), which says carry both. Six documents
+  retagged, twenty-two unbound relations down to sixteen. Rejected: retagging
+  the `analysis-and-evaluation` crossings, and binding the flash-attention
+  edges.
+---
+
+<!-- inactive-ok-file: ADR-036 — Superseded by this decision, which carries
+     its reasoning forward; every mention here names it as the superseded
+     document, deliberately -->
+
+<!-- inactive-ok-file: ADR-035 — Proposed, and cited as the rule this pass
+     had to stay inside rather than as settled doctrine; ADR-046 states its
+     scope and neither is overturned here -->
+
+<!-- inactive-ok-file: SOTA-107 — Rejected, and named only as the far end of
+     an edge whose point is that its far end is in the attic -->
+
+# ADR-tmpv09o2: An unbound relation is one of four things, and liberal tagging answers one of them
+
+## Context
+
+`ADR-036` sorted twenty-four unbound relations into four kinds, retagged
+fifteen documents that were mis-filed on their own terms, removed two
+spurious sibling links, and left twenty-two standing with reasons. That
+classification was right and is not in question here.
+
+One of its verdicts was reached under a filing policy that has since changed.
+Its fourth category ends with **trunk papers whose contribution spans two
+topics** — GShard's conditional computation *and* automatic sharding,
+Mamba-2 as model family against the delta-rule papers as attention variants,
+DeepSeekMath against PPO — and the reason it left them alone was:
+
+> Splitting a trunk paper's topic would be filing it under half its
+> contribution.
+
+That is correct, and it is an argument against *splitting*. It was written
+when a document carried one topic unless a second was unavoidable, so
+splitting was the only move available. `ADR-046` changed that: tag the
+subject, liberally, and a paper that genuinely does two things carries two
+topics. The trunk-paper subcategory does not need a verdict any more — it
+needs the second tag it always deserved.
+
+The report before this pass: **22 unbound relations, 10 unbound lines**.
+
+## Decision
+
+**`ADR-036`'s four categories stand. Its trunk-paper subcategory is
+dissolved, and six documents carry the tags they always warranted.**
+
+| Document | gains | because |
+|---|---|---|
+| `LIT-187` GShard | `model-architecture` | the title names conditional computation |
+| `LIT-162` Mamba-2 | `attention-techniques` | its claim is that SSMs and attention are one object |
+| `LIT-137` Gated Delta Networks | `model-architecture` | the gated delta rule is a new recurrence |
+| `LIT-127` DeepSeekMath | `training-optimization`, `data-pipeline` | introduced GRPO; built a 120B-token corpus by engineered selection |
+| `LIT-200` PowLU | `model-architecture` | an activation function is an architectural component |
+| `SOTA-032` pre-LN | `model-architecture` | layer-norm placement is an architectural choice |
+
+Result: **16 unbound relations, 8 unbound lines.**
+
+The test applied to each was `ADR-046`'s: *would this tag go on if the
+relation did not exist?* Three candidates failed it and are recorded below,
+because a retag pass that reports only its additions is not auditable.
+
+## Alternatives considered
+
+- **Retag the seven `analysis-and-evaluation` crossings.** The largest
+  remaining block, and the most tempting: a paper that measures ES
+  fine-tuning is arguably *about* fine-tuning. Rejected, because `ADR-036`
+  already decided it — the invariant is over-strong where one end names a
+  kind of work rather than a subject, `LIT-230`'s body argues its own filing
+  and the argument is right, and the fix belongs to the chain declaration.
+  Retagging exactly the documents whose edges would bind is the pattern
+  `ADR-035` forbids, and it would be indistinguishable from this pass's
+  legitimate half.
+- **Add `systems-optimization` to `SOTA-085` and `SOTA-106`**, binding the
+  flash-attention edges to `SOTA-083`. The tag is defensible — that
+  document's own body is about kernels, on-chip memory per SM and tile sizes.
+  Rejected on what the record already says: `SOTA-085`'s frontmatter records
+  that a `flash-attention` tag was **removed** for binding this very edge,
+  with the note that *"the edge is real, it crosses a fault line in the
+  vocabulary, and it should keep showing up until someone answers it."* The
+  answer it is waiting for is a `specializes:` relation — `SOTA-085` *is an
+  instance of* `SOTA-083` — and that is a scheme change. Liberal tagging does
+  not dissolve this category and must not be used to silence it.
+- **Add `training-optimization` to `SOTA-031`** (micro-batch size per GPU),
+  binding it to `SOTA-092` and `SOTA-093`. Rejected: that practice's claim is
+  about memory and throughput per device, not about training dynamics, and
+  the pair it crosses is about sample efficiency. The crossing is real — the
+  tag would not be.
+- **Amend `ADR-036` in place** rather than supersede it. Rejected: the
+  fifteen retags and two link removals it records are a completed pass with
+  its own reasoning, and editing the verdict out of it would lose the fact
+  that the verdict was right when made. `DP-003` — keep what you stopped
+  believing.
+
+## Consequences
+
+**Six documents gained a tag and appear on more topic pages**, which is the
+point. None lost one, and no primary topic moved — every addition is second
+or later, so `primary_topic` is unchanged throughout and the indexes that
+read `tags[0]` are unaffected.
+
+**Sixteen unbound relations remain and all are wanted.** Seven are the
+`analysis-and-evaluation` crossings waiting on the chain declaration, one has
+its far end in the attic, and the rest are the general-and-instance and
+rival-fixes-at-different-layers shapes `ADR-036` named. The report is doing
+its job by continuing to show them.
+
+**The `specializes:` relation is now the single highest-value scheme change
+this report is asking for**, and it is asking twice — the flash-attention
+pairs above, and `SOTA-089` against `SOTA-107`. `ADR-036` named it first;
+this decision has nothing to add except that liberal tagging did not make it
+go away.

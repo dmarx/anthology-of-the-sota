@@ -1,0 +1,74 @@
+---
+status: Active
+title: 'Learning Multiple Layers of Features from Tiny Images'
+version: 1
+tags:
+- analysis-and-evaluation
+- vision-and-graphics
+date: '2026-09-18'
+published: '2009-04-01'
+url: 'https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf'
+first_author: 'Krizhevsky'
+keywords:
+- 'dataset'
+- 'image-classification'
+- 'tiny-images'
+implementations:
+- 'CIFAR-10'
+- 'CIFAR-100'
+summary: >-
+  Krizhevsky (2009), University of Toronto technical report. The source of
+  CIFAR-10 and CIFAR-100 — 32×32 labelled images drawn from the Tiny Images
+  collection. Sixty-nine documents here measure something on it, which makes
+  it the record's most-used instrument after ILSVRC.
+---
+
+# LIT-tmps5307: Learning Multiple Layers of Features from Tiny Images
+
+Krizhevsky (2009) — [technical report](https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf)
+
+## Key takeaways
+
+- **CIFAR-10 and CIFAR-100** are introduced here as labelled subsets of the
+  Tiny Images collection: 60,000 colour images at 32×32, ten classes with
+  6,000 each, or a hundred classes with 600 each
+- **The size is the point, in both directions.** It is small enough that a
+  full training run is cheap, which is why it is where methods get tried
+  first; and it is small enough that a result on it is weak evidence about
+  anything at scale, which is why it is where methods get over-claimed
+- The report itself is about learning features with restricted Boltzmann
+  machines. The datasets are infrastructure it built along the way, and they
+  outlived the method entirely
+
+## Standing in the anthology
+
+**Carries no practice, deliberately** — `ADR-032`.
+
+`CIFAR-10` appears 144 times across the record and `CIFAR-100` eleven, in
+sixty-nine documents: twenty-seven literature notes, twenty-eight readings,
+twelve practices and two explanations. Only ILSVRC (`LIT-tmpa2myh`) is
+cited more.
+
+<!-- inactive-ok-block: SOTA-222 — Proposed, and cited here only as an
+     example of a practice that already marks its own dataset gap; nothing
+     in this note rests on that practice being settled -->
+**What it bounds is the thing the record most often needs to say about a
+practice, and the practices already know it.** `SOTA-222` states that its
+claim is pitched at ImageNet scale while its experiments are CIFAR-10.
+`NOTE-025` records a whole line of gradient-norm work whose evidence is
+"VGG16, ResNet18 or ResNet50 on CIFAR-10, CIFAR-100 or TinyImageNet" with
+"no transformer and no language result". `SOTA-188` marks its results as
+image-scale only. That pattern — the method was developed here, the claim is
+made for somewhere else — is common enough that the CIFAR-only
+result is close to a recognised evidential category in this record, and it
+now has a document to point at.
+
+**A source that nothing can check.** This is a university technical report:
+no arXiv id, no DOI, only a URL, which `ADR-009` permits as the last
+preference and describes as "a string nothing can check". That is the honest
+state of this citation and the reason it is worth naming — the `url` here
+already redirects once, and the lint cannot tell anyone if it stops
+resolving. Among the most-cited instruments in this record, it is the one
+with the weakest identifier.
+
+Unread — no `NOTE`.

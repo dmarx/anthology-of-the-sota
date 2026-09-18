@@ -1,0 +1,74 @@
+---
+status: Active
+title: 'ImageNet Large Scale Visual Recognition Challenge'
+version: 1
+tags:
+- analysis-and-evaluation
+- vision-and-graphics
+date: '2026-09-18'
+published: '2014-09-01'
+arxiv: '1409.0575'
+first_author: 'Russakovsky'
+keywords:
+- 'benchmark'
+- 'image-classification'
+- 'object-detection'
+- 'ilsvrc'
+implementations:
+- 'ILSVRC'
+- 'ImageNet-1K'
+summary: >-
+  Russakovsky et al. (2014), [ARXIV-1409.0575](https://arxiv.org/abs/1409.0575). The thousand-class challenge
+  built on a slice of [LIT-tmp5z2wm](../literature.d/LIT-tmp5z2wm.md)'s database, and the instrument almost every
+  "ImageNet top-1" number in this record is actually measured on — including
+  the human-error figure those numbers are read against.
+---
+
+# LIT-tmpa2myh: ImageNet Large Scale Visual Recognition Challenge
+
+Russakovsky et al. (2014) — [ARXIV-1409.0575](https://arxiv.org/abs/1409.0575)
+
+## Key takeaways
+
+- **The task, the splits and the metric** that "ImageNet accuracy" refers to:
+  1,000 object classes, roughly 1.2M training images, 50K validation, 100K
+  test, scored as top-1 and top-5 classification. This is `ImageNet-1K`
+- **The challenge is a slice of the database**, not the database. `LIT-tmp5z2wm`
+  has millions of images over tens of thousands of synsets; the 1,000 classes
+  here were selected, and the selection is what makes the numbers comparable
+  across years
+- **It measures and publishes its own human baseline**, which is the part most
+  worth carrying: the widely repeated "human error on ImageNet" figure comes
+  from a small trained-annotator study reported here, not from a population
+  measurement. Comparisons of the form "model X now exceeds human performance"
+  inherit that study's scope
+
+## Standing in the anthology
+
+**Carries no practice, deliberately** — `ADR-032`.
+
+This is the instrument. `LIT-tmp5z2wm` is the source material, and the split
+between them is why both are filed — see that note for the three-way
+"ImageNet" ambiguity in this record and the two earlier cases of the same
+shape.
+
+What this record uses it for is not vision. It is the **standard heavy
+workload** against which optimizer, compression and distributed-training
+claims are made. Seventy-four documents say "ImageNet"; most of them mean
+this, though the count cannot be split cleanly without reading each one. A
+sample of what rests on it: `NOTE-157`'s SlowMo top-1 gains (69.94% → 73.24%),
+`NOTE-096`'s 270–600× gradient compression "without loss of accuracy",
+`NOTE-148`'s 25.5% large-batch speedup on ViT-S/16, `SOTA-221`'s tuned
+Adagrad/Adam/SGD comparison at 16K batch, and `SOTA-165`'s validation of
+Distributed Shampoo.
+
+<!-- inactive-ok-block: SOTA-222 — Proposed, and cited here only as an
+     example of a practice that already marks its own dataset gap; nothing
+     in this note rests on that practice being settled -->
+The bound to carry into all of those is that ILSVRC is a **classification**
+workload of a particular size and shape, and a result established on it is
+established there. Some of the citing documents mark this themselves —
+`SOTA-222` notes its own experiments are CIFAR-10 while the claim is pitched
+at ImageNet scale. The ones that do not are relying on the reader knowing it.
+
+Unread — no `NOTE`.

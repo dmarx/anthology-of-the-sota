@@ -12,7 +12,14 @@ consensus_note: >-
   AdamW at batch sizes AdamW cannot reach, rests on one group's experiments on
   two workloads, and no second group has redrawn the comparison.
 title: "To train past the batch size where your optimizer stalls, change the optimizer's conditioning rather than the scaling rule"
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-18'
+  note: >-
+    Names the instrument behind the ImageNet number. "ImageNet" covers three
+    different things in this record; the 16K ResNet-50 comparison is on
+    ILSVRC, now filed. No change to the recommendation or the evidence.
 tags:
 - training-optimization
 date: '2026-09-16'
@@ -77,7 +84,9 @@ On BERT-Large pre-training, with SQuAD v1.1 F1 as the target and a baseline of
   finishes in 76 minutes on a TPUv3 Pod against three days for the baseline.
 - **On ImageNet/ResNet-50 at 16K**, comprehensively tuned Adagrad, Adam and
   AdamW reach 55.4%, 66.0% and 67.3% top-1 against a 76.3% target. LAMB reaches
-  it.
+  it. The instrument is ILSVRC ([LIT-tmpa2myh](../literature.d/LIT-tmpa2myh.md)), the thousand-class
+  classification challenge — not the database it is drawn from, and not the
+  downsampled ImageNet-64 that generative work reports FID on.
 
 The baselines being tuned is what makes these numbers mean anything, and it is
 worth saying plainly because the opposite is the usual failure: an optimizer

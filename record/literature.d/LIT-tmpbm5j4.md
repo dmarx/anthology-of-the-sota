@@ -1,0 +1,63 @@
+---
+status: Active
+title: 'Estimating Training Data Influence by Tracing Gradient Descent'
+version: 1
+tags:
+- analysis-and-evaluation
+- data-pipeline
+date: '2026-09-17'
+published: '2020-02-19'
+arxiv: '2002.08484'
+first_author: 'Pruthi'
+keywords:
+- 'influence-functions'
+- 'data-attribution'
+- 'checkpoints'
+- 'mislabelled-data'
+implementations:
+- 'TracIn'
+summary: >-
+  Pruthi et al. (2020), [ARXIV-2002.08484](https://arxiv.org/abs/2002.08484). Attributes a prediction to training
+  data by tracing the actual optimization: how much did the loss on the test
+  point move on the steps where this training example was used? Needs only
+  gradients, saved checkpoints and a loss — no Hessian, no convexity.
+---
+
+# LIT-tmpbm5j4: Estimating Training Data Influence by Tracing Gradient Descent
+
+Pruthi et al. (2020) — [ARXIV-2002.08484](https://arxiv.org/abs/2002.08484)
+
+## Key takeaways
+
+- **Defines influence by what training actually did, not by an optimality
+  condition.** The idealized quantity is the total change in the test point's
+  loss across the iterations where the training example was used. The
+  first-order approximation is a sum of step-size-weighted gradient dot
+  products, valid while step sizes are small
+- **Three approximations make it affordable**, and they are independent of
+  each other: evaluate at **saved checkpoints** rather than every iteration
+  (TracInCP), restrict to a subset of layers, and use random projections.
+  Nothing else is required — no inverse Hessian, no convexity, no retraining
+- **Architecture-, domain- and task-agnostic**, applying to anything trained
+  with SGD or a variant. The formula changes with the optimizer and the
+  first-order argument does not
+- **Proponents and opponents**, deliberately renaming Koh and Liang's
+  "helpful" and "harmful" to something that does not prejudge whether a
+  negative contribution is a defect
+- **Self-influence finds mislabelled examples, and the argument for why is
+  short.** A mislabelled point is a strong proponent of *itself*: strong
+  because it is an outlier, and a proponent because it reduces loss with
+  respect to its own wrong label. Sort by decreasing self-influence and the
+  errors come to the top
+- On CIFAR-10 with 10% of labels changed to the highest-scoring incorrect
+  label — which cost test accuracy 93.4% → 87.0% — TracInCP recovered a
+  larger fraction of the mislabelled data than influence functions or
+  representer-point selection at the same inspection budget
+
+<!-- inactive-ok-block: SOTA-tmp8ornu — Proposed, and the practice this paper corroborates
+     from a second method. Filed in this same contribution; there is no Active practice on
+     the claim to name instead. -->
+## Standing in the anthology
+
+Read — [NOTE-tmppmv7l](../notes.d/NOTE-tmppmv7l.md). Corroborates [SOTA-tmp8ornu](../practices.d/SOTA-tmp8ornu.md), whose primary source is
+[LIT-tmpz6v6v](LIT-tmpz6v6v.md).

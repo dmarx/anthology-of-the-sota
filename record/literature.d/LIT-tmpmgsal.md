@@ -1,0 +1,72 @@
+---
+status: Active
+title: 'Studying Large Language Model Generalization with Influence Functions'
+version: 1
+tags:
+- analysis-and-evaluation
+- data-pipeline
+date: '2026-09-17'
+published: '2023-08-07'
+arxiv: '2308.03296'
+first_author: 'Grosse'
+keywords:
+- 'influence-functions'
+- 'data-attribution'
+- 'generalization'
+- 'ek-fac'
+implementations: []
+summary: >-
+  Grosse et al. (2023), [ARXIV-2308.03296](https://arxiv.org/abs/2308.03296). Scales influence functions to
+  language models up to 52B parameters with an EK-FAC approximation to the
+  inverse-Hessian-vector product, then uses them to ask what training data a
+  behaviour came from. Generalization gets more abstract with scale — and
+  stays startlingly sensitive to word order.
+---
+
+# LIT-tmpmgsal: Studying Large Language Model Generalization with Influence Functions
+
+Grosse et al. (2023) — [ARXIV-2308.03296](https://arxiv.org/abs/2308.03296)
+
+## Key takeaways
+
+- **Two bottlenecks, two answers.** The inverse-Hessian-vector product is
+  approximated with **EK-FAC**, a parametric fit that inverts cheaply and is
+  competitive with the iterative LiSSA estimator while being far faster. The
+  cost of gradients over candidate training sequences is cut by TF-IDF
+  filtering and by **query batching**, which shares that cost across dozens of
+  queries at once
+- **Influence is heavy-tailed but not concentrated.** The tail roughly follows
+  a power law, and the total is nevertheless spread over many sequences —
+  evidence that typical model behaviours are *not* direct memorization of a
+  handful of examples
+- **Abstraction increases with scale, visibly.** For a query in which an
+  assistant resists being shut down, all top-20 influential sequences for an
+  810M model merely share short token sequences with the query; for 52B the
+  top sequences share little token overlap and are related thematically — an
+  AI pleading not to be left alone, a person surviving in a desert, the daily
+  grind of chronic illness
+- **Influence is roughly even across layers, but not alike.** Upper and lower
+  layers sit closer to the tokens; middle layers carry the abstract patterns
+- **The word-ordering result is the concrete one.** With synthetic training
+  sequences built for fictional entities, and for an English→Mandarin
+  translation query, a sequence has high influence **only when the phrase
+  related to the prompt precedes the phrase related to the completion**.
+  Reversing the order with *identical content* collapses the score: 0.030 for
+  Mandarin-then-English against a Mandarin-only baseline of 0.020. Consistent
+  across model sizes
+- **Role-playing looks like imitation.** The behaviour is influenced chiefly
+  by examples and descriptions of similar behaviour in the corpus, rather than
+  by anything that would suggest planning
+- **The limitations are stated first, not last**, and the first one matters
+  most: influence functions on neural networks are a poor match for the
+  counterfactual that motivated them and are better understood as
+  approximating the proximal Bregman response function — [LIT-tmpyirk2](LIT-tmpyirk2.md). Also:
+  pretrained models only; MLP parameters only; up to 52B, below the frontier;
+  and only a fraction of the corpus searched, so more influential sequences
+  may exist unseen
+
+<!-- inactive-ok-block: SOTA-tmp0erx0 — Proposed, and the practice this paper sources. An
+     attribution result standing in for a behavioural one is exactly what Proposed is for. -->
+## Standing in the anthology
+
+Read — [NOTE-tmpei9gn](../notes.d/NOTE-tmpei9gn.md). Sources [SOTA-tmp0erx0](../practices.d/SOTA-tmp0erx0.md).

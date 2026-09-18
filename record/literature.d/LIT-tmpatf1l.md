@@ -1,0 +1,79 @@
+---
+status: Active
+title: 'OlympiadBench: A Challenging Benchmark for Promoting AGI with Olympiad-Level Bilingual Multimodal Scientific Problems'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-18'
+published: '2024-02-21'
+arxiv: '2402.14008'
+first_author: 'He'
+keywords:
+- 'benchmark'
+- 'olympiad'
+- 'mathematics'
+- 'physics'
+- 'multimodal'
+- 'bilingual'
+implementations:
+- 'OlympiadBench'
+summary: >-
+  He et al. (2024), [ARXIV-2402.14008](https://arxiv.org/abs/2402.14008). 8,476 olympiad-level maths and physics
+  problems, bilingual and partly multimodal, on which the best model at
+  publication scored 17.97% — a floor-effect instrument that the record uses
+  to separate sub-8B models, which is the caveat to carry.
+---
+
+# LIT-tmpatf1l: OlympiadBench: A Challenging Benchmark for Promoting AGI with Olympiad-Level Bilingual Multimodal Scientific Problems
+
+He et al. (2024) — [ARXIV-2402.14008](https://arxiv.org/abs/2402.14008)
+
+## Key takeaways
+
+- **8,476 problems** from olympiad-level mathematics and physics competitions
+  and the Chinese college entrance exam, in Chinese and English, many carrying
+  diagrams, each annotated with expert step-by-step reasoning
+- **It was built at the ceiling and lands on the floor.** GPT-4V, the best
+  model the authors evaluated, averaged **17.97%**, and **10.74%** on physics
+  alone. A benchmark that hard is a wide-dynamic-range instrument for frontier
+  systems and a near-floor one for everything smaller
+- **The aggregate mixes two difficulties.** Physics at 10.74% against an
+  overall 17.97% means the maths half carries the score; a single
+  "OlympiadBench" number is a weighted average over subsets whose composition
+  the citing document almost never states
+- The authors' error analysis of GPT-4V names hallucination, knowledge
+  omission and logical fallacy — that is, the failures are not arithmetic
+
+## Standing in the anthology
+
+**Carries no practice, deliberately** — `ADR-032`.
+
+That decision named this benchmark as its worked example of the gap it was
+opening: *"[SOTA-210](../practices.d/SOTA-210.md) says report pass@k as well as pass@1 and rests on
+results measured on GSM8K, MATH-500 and OlympiadBench. What those benchmarks
+measure, and what they are known to be insensitive to, is part of what that
+practice claims — and there is nowhere to write it down."* This note is that
+somewhere, and the thing to write down is the floor effect.
+
+Six documents report OlympiadBench numbers and every one of them is about
+small models: `NOTE-082` at 1.5B and 1B, `NOTE-077` and `LIT-234` across
+1.5B–32B, `SOTA-154` at 0.5B–3B and 7–8B, `LIT-237` at 1.5B, `LIT-411` as
+one member of a suite. On an
+instrument where a 2024 frontier model scores under 18%, a 1.5B model is
+being separated near the bottom of the scale — which is not a reason to
+discount those results, but is the reason the `pass@k` framing they are
+reported under matters more here than elsewhere: at large `k` a floor-effect
+benchmark has room to move that its `pass@1` does not show. `SOTA-154`'s
+strongest OlympiadBench cell is exactly that, ES ahead of SimpleRL-Zoo at
+14B where the base model also becomes competitive at large `k`.
+
+Two further bounds the citing documents do not state. The record's uses are
+all text-only English evaluations of language models, so what they call
+OlympiadBench has to be one of its text-only subsets rather than the
+8,476-problem whole — an inference from what was evaluated, since none of
+them names the split. And olympiad problems and their worked solutions are
+widely published and long predate any of these models, so contamination is a
+live question here in exactly the way `SOTA-197` describes; no document in
+the record reports a probe against it.
+
+Unread — no `NOTE`.

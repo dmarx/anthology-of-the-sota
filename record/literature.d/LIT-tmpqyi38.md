@@ -1,0 +1,76 @@
+---
+status: Active
+title: 'Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can Solve Them'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-18'
+published: '2022-10-17'
+arxiv: '2210.09261'
+first_author: 'Suzgun'
+keywords:
+- 'benchmark'
+- 'chain-of-thought'
+- 'big-bench'
+- 'multi-step-reasoning'
+implementations:
+- 'BBH'
+summary: >-
+  Suzgun et al. (2022), [ARXIV-2210.09261](https://arxiv.org/abs/2210.09261). The 23 BIG-bench tasks where models
+  had not yet beaten the average human rater, split out as BBH — a suite
+  selected by a model generation's shortfall, and one whose headline finding
+  is that the shortfall was partly a prompting artifact.
+---
+
+# LIT-tmpqyi38: Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can Solve Them
+
+Suzgun et al. (2022) — [ARXIV-2210.09261](https://arxiv.org/abs/2210.09261)
+
+## Key takeaways
+
+- **BBH is a filtered subset of BIG-bench**, not a separate construction: the
+  23 tasks out of 204 on which the best model in `LIT-077` failed to beat the
+  average human rater. The selection criterion is a *result*, which is what
+  makes the suite small, hard and dated in the same stroke
+- **Chain-of-thought prompting moves ten of the twenty-three** above the
+  average human rater for PaLM, and **seventeen** for Codex. The paper's own
+  conclusion is that few-shot prompting without CoT "substantially
+  underestimates" capability on multi-step tasks — so part of what BIG-bench
+  measured as a capability ceiling was a prompting choice
+- **A BBH number is therefore prompt-conditioned in a way most suite members
+  are not.** Two BBH figures are comparable only at matched shot count and
+  matched CoT setting — and of the seven documents here that report one, only
+  `NOTE-167`, `SOTA-235` and `LIT-379` say which protocol they used
+
+## Standing in the anthology
+
+**Carries no practice, deliberately** — `ADR-032`.
+
+It is in the record because `SOTA-235` rests its central argument on what BBH
+is. That practice weighs a +7.3 BBH gain more heavily than a much larger
+ARC-AGI gain, on the grounds that ARC-AGI (`LIT-405`) is built to reward
+exactly the search the method performs while "BBH is ordinary hard
+reasoning". That reading is right and now has somewhere to live: BBH's tasks
+were not designed around any method, and its difficulty comes from
+multi-step composition rather than from structural novelty. The qualifier the
+practice does not carry is the one above — BBH is selected relative to a 2022
+model generation and is unusually sensitive to how it is prompted, so the
+gain is evidence of generality at a fixed prompting protocol, which is what
+`SOTA-235`'s two conditions in fact hold.
+
+<!-- inactive-ok-block: SOTA-122 — Proposed, and named here only as one of
+     the documents that reports a BBH number; its own standing is not at
+     issue and nothing here rests on it -->
+
+The same subset-versus-suite distinction that `LIT-405` and `LIT-407` draw
+for ARC applies here: **BBH is not BIG-bench.** `LIT-077` is the 204-task
+suite and the source for `SOTA-200` and `SOTA-197`; this note is the 23-task
+hard split, and a document reporting "BBH" is reporting on the latter. Seven
+documents here report BBH numbers, among them `SOTA-122`'s 20% relative gain
+and `LIT-121`'s +3.39, and none of them could name the instrument until now.
+
+`LIT-119` records the other bound worth holding: its authors call BBH noisy
+at 90M parameters. A 23-task suite has few items per task, and small-model
+BBH deltas should be read with that in mind.
+
+Unread — no `NOTE`.

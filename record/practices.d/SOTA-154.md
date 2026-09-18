@@ -23,7 +23,7 @@ consensus_note: >-
   are a perturbation scale tuned for larger models rather than a density that
   is absent.
 title: 'Fine-tune with evolution strategies instead of policy-gradient reinforcement learning'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-15'
@@ -51,6 +51,12 @@ history:
     LIT-211. The consensus note is re-tallied by authorship rather than by
     institution, and the scale-boundary table gains the competing reading
     LIT-236 offers for its low end.
+- version: 4
+  date: '2026-09-18'
+  note: >-
+    Names what OlympiadBench is. The 32B evidence carried two caveats; the
+    third is the benchmark's own dynamic range, now recorded in LIT-tmpatf1l.
+    The recommendation and the consensus axis are unchanged.
 tags:
 - adaptation-and-tuning
 date: '2026-09-07'
@@ -271,10 +277,13 @@ rather than hedged: do not expect this practice to hold under about 1.5B.**
 
 The evidence now spans four model families and, at the top end, **32B** —
 Qwen2.5-14B and -32B against OatZero and SimpleRL-Zoo on MATH500,
-OlympiadBench and Minerva ([LIT-234](../literature.d/LIT-234.md)). Two caveats travel with that
-number and both matter: those comparisons are against *published checkpoints*
-rather than RL runs matched to the ES budget, and they come from
-[LIT-211](../literature.d/LIT-211.md)'s own lab. The independent evidence stops at 8B.
+OlympiadBench and Minerva ([LIT-234](../literature.d/LIT-234.md)). Three caveats travel with that
+number and all matter: those comparisons are against *published checkpoints*
+rather than RL runs matched to the ES budget, they come from
+[LIT-211](../literature.d/LIT-211.md)'s own lab, and OlympiadBench ([LIT-tmpatf1l](../literature.d/LIT-tmpatf1l.md)) is a floor-effect
+instrument at these scales — the best model at its publication scored 17.97%
+— so a separation measured there is measured near the bottom of the range.
+The independent evidence stops at 8B.
 
 Still **no released model whose post-training recipe uses it**, which is the
 half of the original promotion condition that remains unmet.

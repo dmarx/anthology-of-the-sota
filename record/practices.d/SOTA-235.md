@@ -4,7 +4,7 @@ status: 'Active'
 formerly:
 - SOTA-tmpv9jzu
 title: 'Update the weights at inference on the test instance when the task is structurally novel'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-18'
@@ -12,6 +12,12 @@ history:
     ARC disambiguated to ARC-AGI. The record uses that acronym for two
     unrelated benchmarks; this practice's headline number is on
     Chollet's puzzle set, not the AI2 Reasoning Challenge.
+- version: 3
+  date: '2026-09-18'
+  note: >-
+    Names the BBH instrument. The argument that the BIG-Bench Hard gain is
+    the more informative of the two now cites the paper that defines that
+    suite, and carries its prompt-sensitivity qualifier.
 tags:
 - adaptation-and-tuning
 consensus: unreplicated
@@ -64,8 +70,12 @@ from input data." Each word is load-bearing:
 
 The BBH number is the one to weigh. ARC-AGI ([LIT-405](../literature.d/LIT-405.md)) is built to reward
 search over structurally novel tasks, which is the regime this method is *defined* by, so
-a large gain there is close to tautological. BBH is ordinary hard reasoning,
-and the effect surviving there is what says this is not a benchmark artifact.
+a large gain there is close to tautological. BBH ([LIT-tmpqyi38](../literature.d/LIT-tmpqyi38.md)) is ordinary hard
+reasoning — a 23-task subset of BIG-bench selected for multi-step difficulty,
+not built around any method — and the effect surviving there is what says
+this is not a benchmark artifact. The qualifier [LIT-tmpqyi38](../literature.d/LIT-tmpqyi38.md) adds is that a BBH
+number is unusually prompt-sensitive; both conditions here are 10-shot, so
+the comparison is a like-for-like one.
 
 ## The finding underneath, which is about in-context learning
 

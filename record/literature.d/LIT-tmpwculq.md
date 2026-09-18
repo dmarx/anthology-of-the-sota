@@ -1,0 +1,62 @@
+---
+status: Active
+title: 'GPQA: A Graduate-Level Google-Proof Q&A Benchmark'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-18'
+published: '2023-11-20'
+arxiv: '2311.12022'
+first_author: 'Rein'
+keywords:
+- 'benchmark'
+- 'expert-written'
+- 'contamination-resistance'
+implementations:
+- 'GPQA'
+- 'GPQA-Diamond'
+summary: >-
+  Rein et al. (2023), [ARXIV-2311.12022](https://arxiv.org/abs/2311.12022). 448 multiple-choice questions written
+  by domain PhDs, validated so that skilled non-experts with unrestricted web
+  access reach 34% against experts' 65%. The gap is the instrument — and it
+  is small enough that the benchmark's own noise floor is worth knowing.
+---
+
+# LIT-tmpwculq: GPQA: A Graduate-Level Google-Proof Q&A Benchmark
+
+Rein et al. (2023) — [ARXIV-2311.12022](https://arxiv.org/abs/2311.12022)
+
+## Key takeaways
+
+- **448 questions** in biology, physics and chemistry, written by people with
+  or pursuing PhDs in the subject — small, and deliberately so, because every
+  item is expensive to produce and validate
+- **"Google-proof" is a measured property, not a claim.** Highly skilled
+  non-expert validators reach **34%** with unrestricted web access and over
+  thirty minutes per question; domain experts reach **65%**, or 74% discounting
+  mistakes they identified in retrospect. The benchmark is the gap between
+  those two numbers
+- **Experts get a third of it wrong**, which is the figure to carry: the
+  ceiling is not 100%, so a model score has to be read against 65%, not
+  against perfection
+- **448 items is a coarse ruler.** A single question is worth about 0.22
+  points, so differences of a point or two between systems are within the
+  granularity of the instrument before any sampling variance is considered
+
+## Standing in the anthology
+
+**Carries no practice, deliberately** — `ADR-032`.
+
+Seven documents here report on it, as a member of the hard-reasoning suite
+rather than on its own.
+
+Filed for the two bounds above, which are the sort a citing document assumes
+and cannot look up: an expert ceiling well below 100%, and a question count
+small enough that small differences are not differences. The record's
+benchmark notes have now recorded three distinct ways a number can mislead —
+saturation (MMLU), difficulty defined relative to a specific model generation
+(`LIT-404`, HellaSwag), and a coarse ruler with a low ceiling (this one) —
+which is starting to look like the beginning of an answer to `#137`'s open
+question about retiring saturated benchmarks.
+
+Unread — no `NOTE`.

@@ -2,7 +2,7 @@
 
 # Lines of work
 
-10 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+11 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -52,6 +52,14 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-187](../record/literature.d/LIT-187.md) — GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding *(Active)*
     - [LIT-170](../record/literature.d/LIT-170.md) — DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models *(Active)*
     - [LIT-189](../record/literature.d/LIT-189.md) — Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity *(Active)*
+
+### From Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention
+
+- [LIT-428](../record/literature.d/LIT-428.md) — Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention *(Active)*
+  - [LIT-431](../record/literature.d/LIT-431.md) — An Attention Free Transformer *(Active)*
+    - [LIT-430](../record/literature.d/LIT-430.md) — RWKV: Reinventing RNNs for the Transformer Era *(Active)*
+      - [LIT-429](../record/literature.d/LIT-429.md) — Eagle and Finch: RWKV with Matrix-Valued States and Dynamic Recurrence *(Active)*
+        - [LIT-173](../record/literature.d/LIT-173.md) — RWKV-7 "Goose" with Expressive Dynamic State Evolution *(Active)*
 
 ## representation-and-encoding
 

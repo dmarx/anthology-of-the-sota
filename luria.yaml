@@ -412,6 +412,11 @@ schemes:
     # widened residual stream, mixed how? — is structure rather than paragraphs.
     references:
       source:
+        label: Evidence
+        blurb: >-
+          the work that produced evidence about this claim. ADR-017's test
+          picks it: what the recommendation could not survive losing. Contrast
+          is not support — a position argued against stays out (ADR-010).
         scheme: LIT
         required: true
         many: true
@@ -425,6 +430,12 @@ schemes:
       # — so with one field the record reads as though every practice began
       # with the paper it cites.
       introduced_by:
+        label: First stated by
+        blurb: >-
+          the work that first made this recommendation, which is frequently
+          not the work that evidenced it. Separating origin from evidence is
+          ADR-029, refined by ADR-030; with one field the record would read as
+          though every practice began with the paper it cites.
         scheme: LIT
         required: true
         many: true
@@ -434,16 +445,31 @@ schemes:
       # instead of the connection being legible only from the theory side.
       # Written by `luria link --fix`, like every other converse.
       explained_by:
+        label: Explained by
+        blurb: >-
+          the account of WHY this works, if the record holds one. Most
+          practices have none, and a `Rejected` explanation does not retire
+          the practice it explained (ADR-031).
         scheme: THEORY
         required: false
         many: true
         converse: explains
       extends:
+        label: Carries further
+        blurb: >-
+          the earlier practice this one builds on and could not stand without
+          — a later version of the same recommendation, a narrower case of it,
+          or a rule that only exists because the earlier one is followed.
+          Direction is the point: the line reads oldest first. NOT for two
+          practices that merely resemble each other (ADR-tmp7iqhp).
         scheme: SOTA
         required: false
         many: true
         converse: extended_by
       extended_by:
+        label: Carried further by
+        blurb: >-
+          the converse of `extends`, written by `luria link --fix`.
         scheme: SOTA
         required: false
         many: true
@@ -453,6 +479,12 @@ schemes:
       # other side, so a comparison is stated once on whichever practice ran it
       # rather than on every member of the family (LU-ADR-084).
       compared_against:
+        label: Measured against
+        blurb: >-
+          this work evaluated itself against that one — somebody ran the
+          comparison (ADR-011). Not an analogy, not a family resemblance, and
+          not a general rule beside its instance: those are `extends` or
+          nothing.
         scheme: SOTA
         required: false
         many: true
@@ -462,11 +494,19 @@ schemes:
       # hyper-connections — is a different step from one that refines a predecessor
       # that works.
       corrects:
+        label: Corrects
+        blurb: >-
+          this practice fixes something the earlier one got wrong, rather than
+          building on it. The earlier one is normally `Superseded` and keeps
+          its body (ADR-002).
         scheme: SOTA
         required: false
         many: true
         converse: corrected_by
       corrected_by:
+        label: Corrected by
+        blurb: >-
+          the converse of `corrects`, written by `luria link --fix`.
         scheme: SOTA
         required: false
         many: true
@@ -485,6 +525,11 @@ schemes:
       # because the far side would be a list of practices on a NOTE, and a
       # note is a paper's standing rather than a docket of what it undercuts.
       contested_by:
+        label: Contested by
+        blurb: >-
+          the published work that disputes this practice. Required once
+          `consensus` says `contested`, so the claim that the field disagrees
+          has to name who.
         scheme: LIT
         required: false
         many: true
@@ -626,6 +671,10 @@ schemes:
       # The same rule as a practice, for the same reason: an explanation with
       # no paper behind it is a hunch.
       source:
+        label: Evidence
+        blurb: >-
+          the work this account comes from. Same test as a practice's: what
+          the explanation could not survive losing.
         scheme: LIT
         required: true
         many: true
@@ -638,6 +687,10 @@ schemes:
       # finding, and requiring this would mean filing it nowhere — which is
       # the state this scheme exists to end.
       explains:
+        label: Explains
+        blurb: >-
+          the practice this account is about. An explanation may be `Rejected`
+          while the practice it explained goes on working (ADR-031).
         scheme: SOTA
         required: false
         many: true
@@ -651,21 +704,35 @@ schemes:
       # documents there state comparisons; nothing here does, and a relation
       # nobody writes is a converse the fixer can never complete.
       extends:
+        label: Carries further
+        blurb: >-
+          the earlier account this one builds on — a refinement or a widening
+          of the same mechanism, not a rival one.
         scheme: THEORY
         required: false
         many: true
         converse: extended_by
       extended_by:
+        label: Carried further by
+        blurb: >-
+          the converse of `extends`, written by `luria link --fix`.
         scheme: THEORY
         required: false
         many: true
         converse: extends
       corrects:
+        label: Corrects
+        blurb: >-
+          this account replaces the earlier one's reasoning. What the old
+          account explained may still happen; only the reason was wrong.
         scheme: THEORY
         required: false
         many: true
         converse: corrected_by
       corrected_by:
+        label: Corrected by
+        blurb: >-
+          the converse of `corrects`, written by `luria link --fix`.
         scheme: THEORY
         required: false
         many: true
@@ -809,16 +876,29 @@ schemes:
     # production models are not a retirement.
     references:
       extends:
+        label: Carries further
+        blurb: >-
+          the earlier paper this one builds on and could not stand without.
+          Papers fork where the DESIGNS differ, practices where the
+          RECOMMENDATIONS do, so a fork can exist at one layer and not the
+          other (ADR-011).
         scheme: LIT
         required: false
         many: true
         converse: extended_by
       extended_by:
+        label: Carried further by
+        blurb: >-
+          the converse of `extends`, written by `luria link --fix`.
         scheme: LIT
         required: false
         many: true
         converse: extends
       compared_against:
+        label: Measured against
+        blurb: >-
+          this paper evaluated itself against that one. Somebody ran the
+          comparison; a shared topic is not one (ADR-011).
         scheme: LIT
         required: false
         many: true
@@ -830,11 +910,18 @@ schemes:
       # together (LU-#211); the sign is which field the code sits in, which is what
       # keeps it an edge property without qualifying a reference (ADR-011).
       corrects:
+        label: Corrects
+        blurb: >-
+          this paper shows the earlier one wrong on something it claimed.
+          Retire by status, never by deletion — the body stays.
         scheme: LIT
         required: false
         many: true
         converse: corrected_by
       corrected_by:
+        label: Corrected by
+        blurb: >-
+          the converse of `corrects`, written by `luria link --fix`.
         scheme: LIT
         required: false
         many: true
@@ -942,6 +1029,10 @@ schemes:
     # object, so the note holds no subject of its own (ADR-038).
     references:
       paper:
+        label: Reading of
+        blurb: >-
+          the paper this note is a close reading of. Absence of a note means
+          the paper is unread (ADR-025).
         scheme: LIT
         required: true
         many: false

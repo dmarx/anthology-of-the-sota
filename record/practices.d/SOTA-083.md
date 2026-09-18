@@ -2,7 +2,12 @@
 number: 83
 status: 'Active'
 title: 'Implement custom kernels for critical ops'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-18'
+  note: >-
+    The edges to SOTA-085 and SOTA-106 move from `compared_against` to `extended_by`, and SOTA-106's is then dropped as transitive — it extends SOTA-085, which extends this. Nobody evaluated custom kernels against flash attention; flash attention is an instance of this rule. ADR-011 defines `compared_against` as a comparison somebody ran, and ADR-tmp7iqhp records that `extends` already covers a narrower case. The claim is unchanged.
 tags:
 - systems-optimization
 date: '2026-08-24'
@@ -10,9 +15,8 @@ source:
 - LIT-063
 introduced_by:
 - LIT-063
-compared_against:
+extended_by:
 - SOTA-085
-- SOTA-106
 summary: >-
   Chen et al. (2018), [LIT-063](../literature.d/LIT-063.md) — [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799).
 ---

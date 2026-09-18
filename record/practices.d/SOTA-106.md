@@ -2,7 +2,12 @@
 number: 106
 status: 'Active'
 title: 'Use flash-attention-2 over original flash-attention when available'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-18'
+  note: >-
+    Drops `compared_against: SOTA-083`. Nobody ran that comparison; the relation to the general rule is now carried transitively through SOTA-085, which extends it (ADR-tmp7iqhp).
 tags:
 - attention-techniques
 date: '2026-08-24'
@@ -14,8 +19,6 @@ extends:
 - SOTA-085
 summary: >-
   Dao et al. (2023), [LIT-106](../literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691).
-compared_against:
-- SOTA-083
 ---
 
 # SOTA-106: Use flash-attention-2 over original flash-attention when available

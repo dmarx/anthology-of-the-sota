@@ -6,7 +6,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-3 of 244 SOTA documents. Back to the [full index](../README.md).
+3 of 246 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

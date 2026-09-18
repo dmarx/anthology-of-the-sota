@@ -1,6 +1,9 @@
 ---
+number: 179
 status: Read
-paper: LIT-tmpyirk2
+formerly:
+- NOTE-tmpiq1um
+paper: LIT-402
 title: 'If Influence Functions are the Answer, Then What is the Question?'
 version: 1
 date: '2026-09-17'
@@ -12,9 +15,9 @@ summary: >-
   is not fragile, it was mislabelled.
 ---
 
-# NOTE-tmpiq1um: If Influence Functions are the Answer, Then What is the Question?
+# NOTE-179: If Influence Functions are the Answer, Then What is the Question?
 
-<!-- inactive-ok-file: THEORY-tmp7738v, SOTA-tmp8ornu — the account this paper corrects
+<!-- inactive-ok-file: THEORY-017, SOTA-246 — the account this paper corrects
      (Rejected, and correctly so) and the practice that survives the correction. -->
 
 ## Contribution
@@ -104,12 +107,12 @@ and against the PBRF on the same models.
 
 ## Connections
 
-This corrects [LIT-tmpz6v6v](../literature.d/LIT-tmpz6v6v.md)'s account of what an influence estimate measures,
-and it is the reason [LIT-tmpmgsal](../literature.d/LIT-tmpmgsal.md) validates against the PBRF rather than
+This corrects [LIT-403](../literature.d/LIT-403.md)'s account of what an influence estimate measures,
+and it is the reason [LIT-401](../literature.d/LIT-401.md) validates against the PBRF rather than
 against retraining — a rare case of a correction being absorbed into practice
 within a year.
 
-It leaves [LIT-tmpbm5j4](../literature.d/LIT-tmpbm5j4.md) largely untouched, since TracIn never claimed to
+It leaves [LIT-400](../literature.d/LIT-400.md) largely untouched, since TracIn never claimed to
 estimate the leave-one-out counterfactual.
 
 ## Recommendations
@@ -124,10 +127,10 @@ estimate the leave-one-out counterfactual.
 
 ## Bearing on the record
 
-Sources [THEORY-tmpz2g03](../theory.d/THEORY-tmpz2g03.md), which corrects [THEORY-tmp7738v](../theory.d/THEORY-tmp7738v.md) — the account
-[LIT-tmpz6v6v](../literature.d/LIT-tmpz6v6v.md) published with the method.
+Sources [THEORY-018](../theory.d/THEORY-018.md), which corrects [THEORY-017](../theory.d/THEORY-017.md) — the account
+[LIT-403](../literature.d/LIT-403.md) published with the method.
 
-R3 is what keeps [SOTA-tmp8ornu](../practices.d/SOTA-tmp8ornu.md) standing. Without this paper the practice would
+R3 is what keeps [SOTA-246](../practices.d/SOTA-246.md) standing. Without this paper the practice would
 rest on an explanation the field had abandoned, which is the arrangement
 CLAUDE.md warns about in as many words: a technique everybody uses can have
 been published with an explanation that was later refuted. Here the refutation
@@ -143,15 +146,15 @@ them as practices would duplicate the pair of THEORY documents across schemes.
   characterised exactly.
 - C4 is argued from the nature of the PBRF rather than re-benchmarked on both
   use cases.
-- The experiments are moderate-scale; nothing is at the size [LIT-tmpmgsal](../literature.d/LIT-tmpmgsal.md)
+- The experiments are moderate-scale; nothing is at the size [LIT-401](../literature.d/LIT-401.md)
   works at, and it is that paper that extends the PBRF validation upward.
 - The paper says what influence functions *do* estimate. Whether the PBRF is
   the quantity anyone wanted is a separate question it does not take up, and
-  [LIT-tmpmgsal](../literature.d/LIT-tmpmgsal.md) explicitly declines to take it up either.
+  [LIT-401](../literature.d/LIT-401.md) explicitly declines to take it up either.
 
 ## Open questions
 
-- Is the PBRF the right target? Both this paper and [LIT-tmpmgsal](../literature.d/LIT-tmpmgsal.md) leave it
+- Is the PBRF the right target? Both this paper and [LIT-401](../literature.d/LIT-401.md) leave it
   open, which means the whole attribution literature is now validated against
   an object nobody has argued is the one of interest.
 - Does the warm-start gap have practical consequences for continual training,

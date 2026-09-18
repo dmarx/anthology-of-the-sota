@@ -6,7 +6,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-50 of 244 SOTA documents. Back to the [full index](../README.md).
+52 of 246 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -60,3 +60,5 @@
 | [SOTA-242](../../../record/practices.d/SOTA-242.md) | Select pretraining data by matching a target distribution you can sample from, not by scoring it for quality | Xie et al. (2023), [LIT-087](../../../record/literature.d/LIT-087.md) — data selection needs a description of what you want, not a criterion for what is good. Supply a small sample of the target text and resample the raw corpus to match it. The target is an artifact you can produce; a quality rubric is an argument you have to win. | Proposed |
 | [SOTA-243](../../../record/practices.d/SOTA-243.md) | Discard the easy examples when data is abundant and the hard ones when it is scarce | Sorscher et al. (2022), [LIT-399](../../../record/literature.d/LIT-399.md) — power-law scaling in dataset size is evidence of redundancy, and given a difficulty ranking it can be beaten toward exponential. But which end of the ranking to discard flips with how much data you started with, and the fraction to discard has to grow with the corpus. | Proposed |
 | [SOTA-244](../../../record/practices.d/SOTA-244.md) | Score example importance a few epochs into training, averaged over several initializations | Paul et al. (2021), [LIT-397](../../../record/literature.d/LIT-397.md) — the importance ranking is available from a single early checkpoint, not only from a finished run. EL2N at epoch 20, averaged over ten initializations, prunes half of CIFAR-10 with accuracy slightly up, and the ranking transfers to other architectures. | Proposed |
+| [SOTA-245](../../../record/practices.d/SOTA-245.md) | State a relation in both orders in the training corpus if you want it usable in both directions | Grosse et al. (2023), [LIT-401](../../../record/literature.d/LIT-401.md) — a training sequence influences a completion only when the phrase related to the prompt comes before the phrase related to the completion. Identical content in the reverse order scores barely above an unrelated baseline. | Proposed |
+| [SOTA-246](../../../record/practices.d/SOTA-246.md) | Find mislabelled training data by self-influence, not by training loss | Koh and Liang (2017), [LIT-403](../../../record/literature.d/LIT-403.md), with [LIT-400](../../../record/literature.d/LIT-400.md) — rank training points by their influence on their own loss and inspect from the top. Mislabelled examples are strong proponents of themselves, so they sort to the front; high training loss does not separate them nearly as well. | Proposed |

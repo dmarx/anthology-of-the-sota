@@ -6,7 +6,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-29 of 244 SOTA documents. Back to the [full index](../README.md).
+30 of 246 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -39,3 +39,4 @@
 | [SOTA-217](../../../record/practices.d/SOTA-217.md) | Align the hidden-unit permutation before averaging weights from separately trained networks | A neural network's hidden units can be permuted without changing the function, so two networks trained from different seeds sit in different corners of the same symmetry orbit. Averaging their weights directly averages across that mismatch and traverses a loss barrier that is mostly an artefact of labelling. Match the units first — by weight matching, or by activation matching on a handful of samples — and most of the barrier is not there. | Proposed |
 | [SOTA-219](../../../record/practices.d/SOTA-219.md) | Leave the inner optimizer state unsynchronised in local-update training | When workers train independently for hundreds of steps and synchronise by exchanging deltas, the Adam moments each worker accumulated are local state and should stay local. Synchronising them triples the communication for negligible quality gain — which means most of what the scheme saves is not saved by communicating rarely, but by communicating less each time. | Active |
 | [SOTA-236](../../../record/practices.d/SOTA-236.md) | Predict scene geometry directly instead of solving for cameras first and triangulating | Wang et al. (2023), [LIT-385](../../../record/literature.d/LIT-385.md) — [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132); Wang et al. (2025), [LIT-384](../../../record/literature.d/LIT-384.md) — [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651). Given uncalibrated, unposed images, regress the 3D structure and let camera parameters and pixel matches fall out of it, rather than estimating calibration and pose first so that triangulation becomes possible. The quantities the classical pipeline needs as inputs are by-products of this one. | Active |
+| [SOTA-246](../../../record/practices.d/SOTA-246.md) | Find mislabelled training data by self-influence, not by training loss | Koh and Liang (2017), [LIT-403](../../../record/literature.d/LIT-403.md), with [LIT-400](../../../record/literature.d/LIT-400.md) — rank training points by their influence on their own loss and inspect from the top. Mislabelled examples are strong proponents of themselves, so they sort to the front; high training loss does not separate them nearly as well. | Proposed |

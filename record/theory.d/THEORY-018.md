@@ -1,19 +1,22 @@
 ---
+number: 18
 status: Active
+formerly:
+- THEORY-tmpz2g03
 title: 'Influence functions on neural networks estimate the proximal Bregman response function, not leave-one-out retraining'
 version: 1
 tags:
 - analysis-and-evaluation
 date: '2026-09-17'
 source:
-- LIT-tmpyirk2
-- LIT-tmpz6v6v
+- LIT-402
+- LIT-403
 explains:
-- SOTA-tmp8ornu
+- SOTA-246
 corrects:
-- THEORY-tmp7738v
+- THEORY-017
 summary: >-
-  Bae et al. (2022), [LIT-tmpyirk2](../literature.d/LIT-tmpyirk2.md) — the influence/retraining discrepancy
+  Bae et al. (2022), [LIT-402](../literature.d/LIT-402.md) — the influence/retraining discrepancy
   decomposes into five terms, and the two that are genuinely approximation
   error are an order of magnitude smaller than the three that are not. What
   the estimate tracks closely is the effect of removing a point while holding
@@ -21,14 +24,14 @@ summary: >-
   answering a different question.
 ---
 
-# THEORY-tmpz2g03: Influence functions on neural networks estimate the proximal Bregman response function, not leave-one-out retraining
+# THEORY-018: Influence functions on neural networks estimate the proximal Bregman response function, not leave-one-out retraining
 
 ## Source
 
-<!-- inactive-ok-block: THEORY-tmp7738v — Rejected, and named here as the
+<!-- inactive-ok-block: THEORY-017 — Rejected, and named here as the
      account this one replaces; that is what the citation is for. -->
-Bae, Ng, Lo, Ghassemi and Grosse (2022), [LIT-tmpyirk2](../literature.d/LIT-tmpyirk2.md). The account it replaces
-is [THEORY-tmp7738v](THEORY-tmp7738v.md), published with the method in [LIT-tmpz6v6v](../literature.d/LIT-tmpz6v6v.md).
+Bae, Ng, Lo, Ghassemi and Grosse (2022), [LIT-402](../literature.d/LIT-402.md). The account it replaces
+is [THEORY-017](THEORY-017.md), published with the method in [LIT-403](../literature.d/LIT-403.md).
 
 ## What was actually shown
 
@@ -67,14 +70,14 @@ noise.
 The prevailing reading — influence functions are fragile on neural networks —
 is wrong. They are accurate estimates of something other than what their name
 and derivation suggest, and the PBRF is therefore a better standard to
-evaluate them against than retraining is. [LIT-tmpmgsal](../literature.d/LIT-tmpmgsal.md) validates against the
+evaluate them against than retraining is. [LIT-401](../literature.d/LIT-401.md) validates against the
 PBRF for exactly this reason.
 
-<!-- inactive-ok-block: SOTA-tmp8ornu — Proposed, and named here because this paragraph is
+<!-- inactive-ok-block: SOTA-246 — Proposed, and named here because this paragraph is
      about which practice the reinterpretation spares. -->
 **And the use cases survive**, which the paper says in as many words: the PBRF
 supports finding influential or mislabelled examples, and carrying out
-data-poisoning analysis. That is why [SOTA-tmp8ornu](../practices.d/SOTA-tmp8ornu.md) is still a practice this
+data-poisoning analysis. That is why [SOTA-246](../practices.d/SOTA-246.md) is still a practice this
 record makes. It needs an ordering over training points; it never needed the
 counterfactual.
 
@@ -82,7 +85,7 @@ counterfactual.
 
 That the question has been settled. It has not — it has been *identified*.
 Whether the PBRF is the quantity anyone actually wants to know about is
-untouched here, and [LIT-tmpmgsal](../literature.d/LIT-tmpmgsal.md) explicitly declines to take it up as well,
+untouched here, and [LIT-401](../literature.d/LIT-401.md) explicitly declines to take it up as well,
 while noting that a PBRF-targeted estimate should be expected to miss
 genuinely nonlinear training phenomena such as circuit formation or
 representational reorganisation.

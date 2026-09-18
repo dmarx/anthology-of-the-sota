@@ -1,6 +1,9 @@
 ---
+number: 178
 status: Read
-paper: LIT-tmpmgsal
+formerly:
+- NOTE-tmpei9gn
+paper: LIT-401
 title: 'Studying Large Language Model Generalization with Influence Functions'
 version: 1
 date: '2026-09-17'
@@ -12,9 +15,9 @@ summary: >-
   sequence only counts when the prompt-related phrase comes first.
 ---
 
-# NOTE-tmpei9gn: Studying Large Language Model Generalization with Influence Functions
+# NOTE-178: Studying Large Language Model Generalization with Influence Functions
 
-<!-- inactive-ok-file: SOTA-tmp0erx0, ADR-043 — the practice this reading files and the
+<!-- inactive-ok-file: SOTA-245, ADR-043 — the practice this reading files and the
      decision under which its R3 is named rather than filed. Both Proposed; ADR-043 is a
      day old and being exercised, which is what a Proposed decision is for. -->
 
@@ -54,7 +57,7 @@ across queries in a way LiSSA's per-query iteration cannot.
 - **Only a fraction of the pretraining corpus is searched**, so "the most
   influential sequence" means the most influential one looked at.
 - The estimate targets the PBRF, not leave-one-out retraining — the paper's
-  own first limitation, from [LIT-tmpyirk2](../literature.d/LIT-tmpyirk2.md).
+  own first limitation, from [LIT-402](../literature.d/LIT-402.md).
 
 ## Key results
 
@@ -120,12 +123,12 @@ dozens of queries.
 
 ## Connections
 
-[LIT-tmpz6v6v](../literature.d/LIT-tmpz6v6v.md) is the origin; this is that method with the two bottlenecks
-solved. [LIT-tmpbm5j4](../literature.d/LIT-tmpbm5j4.md) is the alternative that avoids the Hessian entirely by
+[LIT-403](../literature.d/LIT-403.md) is the origin; this is that method with the two bottlenecks
+solved. [LIT-400](../literature.d/LIT-400.md) is the alternative that avoids the Hessian entirely by
 requiring checkpoints; this paper's success is the reason that trade is still
 live rather than settled.
 
-[LIT-tmpyirk2](../literature.d/LIT-tmpyirk2.md) is what licenses any of this being informative: the estimate is a
+[LIT-402](../literature.d/LIT-402.md) is what licenses any of this being informative: the estimate is a
 good approximation to the PBRF and a poor one to retraining, and this paper
 validates against the PBRF accordingly. It is unusually clean practice — the
 method is evaluated against the thing it actually estimates.
@@ -148,7 +151,7 @@ currently touches.
 
 ## Bearing on the record
 
-Sources [SOTA-tmp0erx0](../practices.d/SOTA-tmp0erx0.md) (R1), `Proposed`. The gap between what C4 measures and
+Sources [SOTA-245](../practices.d/SOTA-245.md) (R1), `Proposed`. The gap between what C4 measures and
 what the practice recommends is real and stated there: influence is not
 accuracy, and nobody here trained a model on a reordered corpus and tested it.
 

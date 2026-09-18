@@ -1,5 +1,8 @@
 ---
+number: 246
 status: Proposed
+formerly:
+- SOTA-tmp8ornu
 promote_when: >-
   Self-influence used to clean a language-model pretraining or instruction
   corpus at a scale where the corpus cannot be inspected by hand, with what it
@@ -22,29 +25,29 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-17'
 source:
-- LIT-tmpz6v6v
-- LIT-tmpbm5j4
-- LIT-tmpyirk2
+- LIT-403
+- LIT-400
+- LIT-402
 introduced_by:
-- LIT-tmpz6v6v
+- LIT-403
 implementations:
 - 'TracIn'
 summary: >-
-  Koh and Liang (2017), [LIT-tmpz6v6v](../literature.d/LIT-tmpz6v6v.md), with [LIT-tmpbm5j4](../literature.d/LIT-tmpbm5j4.md) — rank training
+  Koh and Liang (2017), [LIT-403](../literature.d/LIT-403.md), with [LIT-400](../literature.d/LIT-400.md) — rank training
   points by their influence on their own loss and inspect from the top.
   Mislabelled examples are strong proponents of themselves, so they sort to
   the front; high training loss does not separate them nearly as well.
 explained_by:
-- THEORY-tmpz2g03
+- THEORY-018
 ---
 
-# SOTA-tmp8ornu: Find mislabelled training data by self-influence, not by training loss
+# SOTA-246: Find mislabelled training data by self-influence, not by training loss
 
 ## Source
 
-Koh and Liang (2017), [LIT-tmpz6v6v](../literature.d/LIT-tmpz6v6v.md) — the method and the dataset-repair
-experiment. Pruthi et al. (2020), [LIT-tmpbm5j4](../literature.d/LIT-tmpbm5j4.md) — the same recommendation from
-a different estimator, with the mechanism. Bae et al. (2022), [LIT-tmpyirk2](../literature.d/LIT-tmpyirk2.md) —
+Koh and Liang (2017), [LIT-403](../literature.d/LIT-403.md) — the method and the dataset-repair
+experiment. Pruthi et al. (2020), [LIT-400](../literature.d/LIT-400.md) — the same recommendation from
+a different estimator, with the mechanism. Bae et al. (2022), [LIT-402](../literature.d/LIT-402.md) —
 the correction to what an influence estimate measures, in `source:` because
 without it this practice rests on an explanation the field abandoned.
 
@@ -77,16 +80,16 @@ budget than influence functions or representer points.
 
 ## The explanation under it was replaced and the practice was not
 
-<!-- inactive-ok-block: THEORY-tmp7738v — Rejected on purpose, and this paragraph is about
+<!-- inactive-ok-block: THEORY-017 — Rejected on purpose, and this paragraph is about
      the rejection. Citing the successor alone would lose the fact that something moved. -->
-`THEORY-tmp7738v` — the account this method was derived from, that an
+`THEORY-017` — the account this method was derived from, that an
 influence estimate approximates what would happen if you removed the point and
-retrained — is `Rejected` for neural networks. `THEORY-tmpz2g03` replaces it:
+retrained — is `Rejected` for neural networks. `THEORY-018` replaces it:
 what the estimate tracks is the proximal Bregman response function.
 
 That would be a reason to withdraw this practice if it needed the
 counterfactual. It does not. **It needs an ordering over training points**, and
-[LIT-tmpyirk2](../literature.d/LIT-tmpyirk2.md) says explicitly that the PBRF supports the use cases that
+[LIT-402](../literature.d/LIT-402.md) says explicitly that the PBRF supports the use cases that
 motivated influence functions, naming mislabelled-example detection as one.
 The practice is filed knowing which of its foundations moved.
 
@@ -99,7 +102,7 @@ separates *natural* annotation noise, ambiguity or systematic annotator bias
 is untested here, and those are the errors real corpora have.
 
 **Nothing here is at language-model scale.** Enron1 is 4,147 documents;
-CIFAR-10 is 50,000 images. [LIT-tmpmgsal](../literature.d/LIT-tmpmgsal.md) shows the machinery reaches 52B
+CIFAR-10 is 50,000 images. [LIT-401](../literature.d/LIT-401.md) shows the machinery reaches 52B
 parameters, and nobody has pointed it at corpus cleaning.
 
 **Pick the estimator by what you have, not by which paper you prefer.** TracIn

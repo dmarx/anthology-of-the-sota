@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-52 of 244 SOTA documents. Back to the [full index](../README.md).
+52 of 246 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

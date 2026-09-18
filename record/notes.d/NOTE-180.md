@@ -1,6 +1,9 @@
 ---
+number: 180
 status: Read
-paper: LIT-tmpbm5j4
+formerly:
+- NOTE-tmppmv7l
+paper: LIT-400
 title: 'Estimating Training Data Influence by Tracing Gradient Descent'
 version: 1
 date: '2026-09-17'
@@ -11,9 +14,9 @@ summary: >-
   Hessian, no convexity. Self-influence ranks mislabelled examples to the top.
 ---
 
-# NOTE-tmppmv7l: Estimating Training Data Influence by Tracing Gradient Descent
+# NOTE-180: Estimating Training Data Influence by Tracing Gradient Descent
 
-<!-- inactive-ok-file: SOTA-tmp8ornu — Proposed, the practice this reading corroborates,
+<!-- inactive-ok-file: SOTA-246 — Proposed, the practice this reading corroborates,
      filed in the same contribution. -->
 
 ## Contribution
@@ -106,14 +109,14 @@ projections. For self-influence set `z' = z`.
 
 ## Connections
 
-The straight comparison is with [LIT-tmpz6v6v](../literature.d/LIT-tmpz6v6v.md), whose method this is explicitly
-positioned against, and with [LIT-tmpmgsal](../literature.d/LIT-tmpmgsal.md), which does not concede the point:
+The straight comparison is with [LIT-403](../literature.d/LIT-403.md), whose method this is explicitly
+positioned against, and with [LIT-401](../literature.d/LIT-401.md), which does not concede the point:
 it keeps the Hessian formulation and gets to 52B parameters with a parametric
 approximation instead. The record should hold both, because they need
 different things — a trajectory versus a final model — and which you have is
 usually not a choice.
 
-Worth noting against [LIT-tmpyirk2](../literature.d/LIT-tmpyirk2.md): because TracIn never claims to estimate the
+Worth noting against [LIT-402](../literature.d/LIT-402.md): because TracIn never claims to estimate the
 leave-one-out counterfactual, the correction that reframes influence functions
 does not land on it in the same way. What TracIn estimates is what it defines,
 and the open question is whether that definition is the useful one.
@@ -132,7 +135,7 @@ and the open question is whether that definition is the useful one.
 
 ## Bearing on the record
 
-Corroborates [SOTA-tmp8ornu](../practices.d/SOTA-tmp8ornu.md), whose primary source is [LIT-tmpz6v6v](../literature.d/LIT-tmpz6v6v.md). R1 is the
+Corroborates [SOTA-246](../practices.d/SOTA-246.md), whose primary source is [LIT-403](../literature.d/LIT-403.md). R1 is the
 same recommendation from a different method, with a mechanism that says *why*
 self-influence should work at all — which is the part the earlier paper's
 version lacked.
@@ -157,7 +160,7 @@ retained checkpoints were what made it possible, or the reverse.
   a fairly adversarial one.
 - The influence-function baseline is handicapped by being last-layer only,
   which is an honest reflection of what was affordable in 2020 and is no
-  longer the state of the art ([LIT-tmpmgsal](../literature.d/LIT-tmpmgsal.md)).
+  longer the state of the art ([LIT-401](../literature.d/LIT-401.md)).
 - Storage and compute scale with the number of checkpoints retained, and the
   paper does not characterise how few is too few beyond its ablation.
 

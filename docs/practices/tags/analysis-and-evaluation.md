@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-6 of 244 SOTA documents. Back to the [full index](../README.md).
+8 of 246 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -16,3 +16,5 @@
 | [SOTA-200](../../../record/practices.d/SOTA-200.md) | Check whether an emergent capability is a metric artefact before believing it |  | Active |
 | [SOTA-210](../../../record/practices.d/SOTA-210.md) v2 | Report pass@k as well as pass@1 after post-training: reinforcement learning raises one and lowers the other | Ba et al. and Hayes et al. (2026), [LIT-230](../../../record/literature.d/LIT-230.md) and [LIT-234](../../../record/literature.d/LIT-234.md). GRPO finishes below its own base model on pass@16 and pass@32 in 15 of 18 comparisons while improving pass@1; across Qwen2.5, Qwen3 and published RL checkpoints up to 32B the base model overtakes the RL checkpoint at large k. A post-training result reported at pass@1 alone cannot distinguish a model that learned something from one that stopped trying anything else. | Active |
 | [SOTA-241](../../../record/practices.d/SOTA-241.md) | Rank candidate data selections with a model-free distributional proxy before spending a training run | Xie et al. (2023), [LIT-087](../../../record/literature.d/LIT-087.md) — KL reduction in a hashed n-gram space correlates with downstream performance across selection methods, including manual curation, which uses no n-grams at all. A selection can therefore be ranked against its alternatives before anything is trained on it. | Proposed |
+| [SOTA-245](../../../record/practices.d/SOTA-245.md) | State a relation in both orders in the training corpus if you want it usable in both directions | Grosse et al. (2023), [LIT-401](../../../record/literature.d/LIT-401.md) — a training sequence influences a completion only when the phrase related to the prompt comes before the phrase related to the completion. Identical content in the reverse order scores barely above an unrelated baseline. | Proposed |
+| [SOTA-246](../../../record/practices.d/SOTA-246.md) | Find mislabelled training data by self-influence, not by training loss | Koh and Liang (2017), [LIT-403](../../../record/literature.d/LIT-403.md), with [LIT-400](../../../record/literature.d/LIT-400.md) — rank training points by their influence on their own loss and inspect from the top. Mislabelled examples are strong proponents of themselves, so they sort to the front; high training loss does not separate them nearly as well. | Proposed |

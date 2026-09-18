@@ -1,6 +1,9 @@
 ---
+number: 181
 status: Read
-paper: LIT-tmpz6v6v
+formerly:
+- NOTE-tmptzfh5
+paper: LIT-403
 title: 'Understanding Black-box Predictions via Influence Functions'
 version: 1
 date: '2026-09-17'
@@ -12,9 +15,9 @@ summary: >-
   domain-mismatch debugging, and finding mislabelled data.
 ---
 
-# NOTE-tmptzfh5: Understanding Black-box Predictions via Influence Functions
+# NOTE-181: Understanding Black-box Predictions via Influence Functions
 
-<!-- inactive-ok-file: SOTA-tmp8ornu, THEORY-tmp7738v, ADR-031, ADR-041 — the practice and
+<!-- inactive-ok-file: SOTA-246, THEORY-017, ADR-031, ADR-041 — the practice and
      the (Rejected) explanation this reading files, plus the two Proposed decisions that
      govern where its unfiled recommendations went. The Rejected theory is this paper's own
      account, so it is the correct target. -->
@@ -111,20 +114,20 @@ training point. For self-influence set `z_test = z`.
 - **Hessian-vector products as the unit of cost** — why an `O(p²)` object
   never has to be built.
 - **Helpful and harmful** — the paper's terms for positive and negative
-  influence, later renamed to proponents and opponents by [LIT-tmpbm5j4](../literature.d/LIT-tmpbm5j4.md) on the
+  influence, later renamed to proponents and opponents by [LIT-400](../literature.d/LIT-400.md) on the
   grounds that the originals prejudge the finding.
 - **Explanation and attack as one computation** — an uncomfortable identity
   that recurs whenever a method can say what would change a model.
 
 ## Connections
 
-The direct descendants are [LIT-tmpbm5j4](../literature.d/LIT-tmpbm5j4.md), which replaces the Hessian with a
-trace over checkpoints, and [LIT-tmpmgsal](../literature.d/LIT-tmpmgsal.md), which keeps the Hessian and
+The direct descendants are [LIT-400](../literature.d/LIT-400.md), which replaces the Hessian with a
+trace over checkpoints, and [LIT-401](../literature.d/LIT-401.md), which keeps the Hessian and
 approximates it well enough to reach 52B parameters. They are genuine
 alternatives rather than a succession: one needs the training run's
 checkpoints, the other needs only the final model.
 
-[LIT-tmpyirk2](../literature.d/LIT-tmpyirk2.md) is the correction, and it is a correction to C1 specifically
+[LIT-402](../literature.d/LIT-402.md) is the correction, and it is a correction to C1 specifically
 rather than to the method.
 
 ## Recommendations
@@ -140,9 +143,9 @@ rather than to the method.
 
 ## Bearing on the record
 
-Sources [SOTA-tmp8ornu](../practices.d/SOTA-tmp8ornu.md) (R1), corroborated by [LIT-tmpbm5j4](../literature.d/LIT-tmpbm5j4.md).
+Sources [SOTA-246](../practices.d/SOTA-246.md) (R1), corroborated by [LIT-400](../literature.d/LIT-400.md).
 
-It also states [THEORY-tmp7738v](../theory.d/THEORY-tmp7738v.md), which is the account of what the estimate
+It also states [THEORY-017](../theory.d/THEORY-017.md), which is the account of what the estimate
 *measures* — filed separately because the record keeps explanations apart from
 recommendations ([ADR-031](../decisions.d/ADR-031.md)), and because this particular explanation was
 corrected while the practice built on it was not.
@@ -161,11 +164,11 @@ is one comparison on one task.
   4,147-document spam corpus, one clinical dataset.
 - The Inception experiment freezes all but the top layer, so it is attribution
   for a linear model on fixed features.
-- C1 is the claim that did not survive — see [THEORY-tmpz2g03](../theory.d/THEORY-tmpz2g03.md).
+- C1 is the claim that did not survive — see [THEORY-018](../theory.d/THEORY-018.md).
 
 ## Open questions
 
 - The paper's own framing — "how would the model change if this point were
   removed" — turns out not to be what the estimate answers for neural
-  networks. Which of the four use cases survive that? [LIT-tmpyirk2](../literature.d/LIT-tmpyirk2.md) answers
+  networks. Which of the four use cases survive that? [LIT-402](../literature.d/LIT-402.md) answers
   this directly and in the affirmative for two of them.

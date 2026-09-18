@@ -6,7 +6,7 @@
 
 **Inference optimization** — serving-time decisions — batching, cache layout, quantization, compression, sparsity, distillation, sampling algorithms.
 
-10 of 244 SOTA documents. Back to the [full index](../README.md).
+10 of 246 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

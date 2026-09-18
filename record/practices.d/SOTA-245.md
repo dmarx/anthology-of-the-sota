@@ -1,5 +1,8 @@
 ---
+number: 245
 status: Proposed
+formerly:
+- SOTA-tmp0erx0
 promote_when: >-
   A behavioural result rather than an attribution one: a model trained on a
   corpus containing a relation in one order only, evaluated in both
@@ -21,22 +24,22 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-17'
 source:
-- LIT-tmpmgsal
+- LIT-401
 introduced_by:
-- LIT-tmpmgsal
+- LIT-401
 implementations: []
 summary: >-
-  Grosse et al. (2023), [LIT-tmpmgsal](../literature.d/LIT-tmpmgsal.md) — a training sequence influences a
+  Grosse et al. (2023), [LIT-401](../literature.d/LIT-401.md) — a training sequence influences a
   completion only when the phrase related to the prompt comes before the
   phrase related to the completion. Identical content in the reverse order
   scores barely above an unrelated baseline.
 ---
 
-# SOTA-tmp0erx0: State a relation in both orders in the training corpus if you want it usable in both directions
+# SOTA-245: State a relation in both orders in the training corpus if you want it usable in both directions
 
 ## Source
 
-Grosse et al. (2023), [LIT-tmpmgsal](../literature.d/LIT-tmpmgsal.md) — [ARXIV-2308.03296](https://arxiv.org/abs/2308.03296).
+Grosse et al. (2023), [LIT-401](../literature.d/LIT-401.md) — [ARXIV-2308.03296](https://arxiv.org/abs/2308.03296).
 
 ## What was measured
 
@@ -75,7 +78,7 @@ one-directional corpus fails to answer the reverse question. The inference
 from the first to the second is natural and is an inference, and the
 `promote_when` above is what would close it.
 
-**And the attribution estimate has its own caveat.** Per [THEORY-tmpz2g03](../theory.d/THEORY-tmpz2g03.md),
+**And the attribution estimate has its own caveat.** Per [THEORY-018](../theory.d/THEORY-018.md),
 influence functions on neural networks estimate the proximal Bregman response
 function rather than the effect of removing the sequence and retraining. The
 asymmetry is a real property of that estimate. Whether it is a property of

@@ -6,7 +6,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-0 of 16 THEORY documents. Back to the [full index](../README.md).
+0 of 18 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

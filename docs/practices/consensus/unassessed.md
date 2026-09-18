@@ -6,7 +6,7 @@
 
 **Not judged** — nobody has assessed where the field stands on this; the default, and true of most of the corpus.
 
-136 of 244 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
+137 of 246 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -146,3 +146,4 @@
 | [SOTA-209](../../../record/practices.d/SOTA-209.md) | Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch | Komatsuzaki et al. (2022), [LIT-227](../../../record/literature.d/LIT-227.md) — seed the experts from a dense checkpoint you already paid for. Upcycled T5 and ViT models beat their dense counterparts at ~50% of the dense pretraining sunk cost, and beat sparse models trained from scratch on 100% of it: same architecture, same compute, different initialization. | Proposed |
 | [SOTA-241](../../../record/practices.d/SOTA-241.md) | Rank candidate data selections with a model-free distributional proxy before spending a training run | Xie et al. (2023), [LIT-087](../../../record/literature.d/LIT-087.md) — KL reduction in a hashed n-gram space correlates with downstream performance across selection methods, including manual curation, which uses no n-grams at all. A selection can therefore be ranked against its alternatives before anything is trained on it. | Proposed |
 | [SOTA-244](../../../record/practices.d/SOTA-244.md) | Score example importance a few epochs into training, averaged over several initializations | Paul et al. (2021), [LIT-397](../../../record/literature.d/LIT-397.md) — the importance ranking is available from a single early checkpoint, not only from a finished run. EL2N at epoch 20, averaged over ten initializations, prunes half of CIFAR-10 with accuracy slightly up, and the ranking transfers to other architectures. | Proposed |
+| [SOTA-245](../../../record/practices.d/SOTA-245.md) | State a relation in both orders in the training corpus if you want it usable in both directions | Grosse et al. (2023), [LIT-401](../../../record/literature.d/LIT-401.md) — a training sequence influences a completion only when the phrase related to the prompt comes before the phrase related to the completion. Identical content in the reverse order scores barely above an unrelated baseline. | Proposed |

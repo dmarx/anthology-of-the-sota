@@ -6,7 +6,7 @@
 
 **One source** — one group, one result — nobody has agreed or disagreed yet, which is not the same as contested, where people looked and differed.
 
-43 of 244 SOTA documents. Back to the [full index](../README.md).
+43 of 246 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

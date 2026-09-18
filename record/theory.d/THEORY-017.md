@@ -1,5 +1,8 @@
 ---
+number: 17
 status: Rejected
+formerly:
+- THEORY-tmp7738v
 status_note: >-
   correct where it was validated, which was the convex case; for neural
   networks the three largest terms of the discrepancy turn out not to be
@@ -10,23 +13,23 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-17'
 source:
-- LIT-tmpz6v6v
+- LIT-403
 explains: []
 corrected_by:
-- THEORY-tmpz2g03
+- THEORY-018
 summary: >-
-  Koh and Liang (2017), [LIT-tmpz6v6v](../literature.d/LIT-tmpz6v6v.md) — the account the method was derived
+  Koh and Liang (2017), [LIT-403](../literature.d/LIT-403.md) — the account the method was derived
   from and named for: the estimate approximates leave-one-out retraining, so
   a large influence means the model would have been meaningfully different
   without that point. True for convex models, where it was checked. Corrected
   for neural networks in 2022; the method was not.
 ---
 
-# THEORY-tmp7738v: An influence-function estimate predicts the effect of removing a training point and retraining
+# THEORY-017: An influence-function estimate predicts the effect of removing a training point and retraining
 
 ## Source
 
-Koh and Liang (2017), [LIT-tmpz6v6v](../literature.d/LIT-tmpz6v6v.md). This is not an aside in that paper — the
+Koh and Liang (2017), [LIT-403](../literature.d/LIT-403.md). This is not an aside in that paper — the
 counterfactual is how the quantity is *defined*, and matching it against
 retraining is the experiment that validates the method.
 
@@ -59,9 +62,9 @@ particular trajectory rather than at the global optimum of anything.
 The paper knew the assumptions were violated and argued, reasonably, that a
 damped quadratic approximation around the obtained parameters would still be
 informative. The part that was not anticipated is that the residual would not
-behave like error. [LIT-tmpyirk2](../literature.d/LIT-tmpyirk2.md) decomposes the discrepancy into five terms and
+behave like error. [LIT-402](../literature.d/LIT-402.md) decomposes the discrepancy into five terms and
 finds the three largest are **structural differences in what is being asked**,
-not failures to ask it accurately — see [THEORY-tmpz2g03](THEORY-tmpz2g03.md).
+not failures to ask it accurately — see [THEORY-018](THEORY-018.md).
 
 ## The reading it invites and does not support
 
@@ -70,11 +73,11 @@ and without it the model would be different.* On a neural network that reading
 is unsupported, and it is the one every intuitive presentation of the method
 produces, including this one's.
 
-<!-- inactive-ok-block: SOTA-tmp8ornu — Proposed, named as the practice that outlives this
+<!-- inactive-ok-block: SOTA-246 — Proposed, named as the practice that outlives this
      explanation. The pointer is the section's whole argument and holds at any status. -->
 There is a second reading that is safe and is easy to lose along with the
 first: **the ranking is still informative.** The practice built on this
-account — finding mislabelled data by self-influence, [SOTA-tmp8ornu](../practices.d/SOTA-tmp8ornu.md) —
+account — finding mislabelled data by self-influence, [SOTA-246](../practices.d/SOTA-246.md) —
 survives, because what it needs is an ordering over training points and not a
 counterfactual about any of them. Rejecting an explanation is not rejecting
 what it explained, which is the whole reason this record keeps the two apart.

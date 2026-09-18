@@ -2,7 +2,7 @@
 number: 32
 status: Active
 title: 'Put the layer normalization inside the residual block, before the sublayer'
-version: 2
+version: 3
 history:
 # inactive-ok: LIT-029 — the retired duplicate, named as what this practice used to cite
 - version: 1
@@ -20,8 +20,17 @@ history:
     Split. This practice is now the placement claim alone, sourced to the
     paper that argues it; the statistic is SOTA-182, sourced to
     Zhang and Sennrich. LIT-029 retired as a duplicate of LIT-114.
+- version: 3
+  date: '2026-09-18'
+  note: >-
+    Adds `model-architecture`. Where the layer normalization sits
+    relative to the residual block is an architectural choice; that it
+    was made for stability is why `model-stability` stays first. It
+    does not bind the unbound edge to SOTA-100, which is a real
+    crossing between an architectural fix and a schedule one.
 tags:
 - model-stability
+- model-architecture
 consensus: universal
 date: '2026-08-24'
 source:

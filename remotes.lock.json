@@ -11,6 +11,9 @@
     "ARXIV/1211.5063": {
       "title": "On the difficulty of training Recurrent Neural Networks"
     },
+    "ARXIV/1307.1493": {
+      "title": "Dropout Training as Adaptive Regularization"
+    },
     "ARXIV/1409.0575": {
       "title": "ImageNet Large Scale Visual Recognition Challenge"
     },
@@ -203,6 +206,9 @@
     "ARXIV/1910.07467": {
       "title": "Root Mean Square Layer Normalization"
     },
+    "ARXIV/1910.10683": {
+      "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer"
+    },
     "ARXIV/1911.01547": {
       "title": "On the Measure of Intelligence"
     },
@@ -239,6 +245,9 @@
     "ARXIV/2002.05202": {
       "title": "GLU Variants Improve Transformer"
     },
+    "ARXIV/2002.08484": {
+      "title": "Estimating Training Data Influence by Tracing Gradient Descent"
+    },
     "ARXIV/2002.09539": {
       "title": "Overlap Local-SGD: An Algorithmic Approach to Hide Communication Delays in Distributed SGD"
     },
@@ -268,6 +277,9 @@
     },
     "ARXIV/2006.15704": {
       "title": "PyTorch Distributed: Experiences on Accelerating Data Parallel Training"
+    },
+    "ARXIV/2006.16236": {
+      "title": "Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention"
     },
     "ARXIV/2006.16668": {
       "title": "GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding"
@@ -406,6 +418,9 @@
     },
     "ARXIV/2203.03466": {
       "title": "Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer"
+    },
+    "ARXIV/2203.11171": {
+      "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models"
     },
     "ARXIV/2203.15556": {
       "title": "Training Compute-Optimal Large Language Models"
@@ -817,6 +832,9 @@
     },
     "ARXIV/2504.11645": {
       "title": "Achieving Tighter Finite-Time Rates for Heterogeneous Federated Stochastic Approximation under Markovian Sampling"
+    },
+    "ARXIV/2504.13837": {
+      "title": "Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?"
     },
     "ARXIV/2505.01618": {
       "title": "Don't be lazy: CompleteP enables compute-efficient deep transformers"

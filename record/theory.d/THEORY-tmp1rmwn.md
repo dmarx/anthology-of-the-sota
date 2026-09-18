@@ -8,6 +8,9 @@ date: '2026-09-17'
 source:
 - LIT-191
 - LIT-190
+# The most direct test of this account available: drop the sum-to-one
+# constraint outright and the sink goes to exactly 0.00% at two scales.
+- LIT-tmp0qipg
 explains:
 - SOTA-134
 summary: >-
@@ -57,7 +60,16 @@ denominator and shifts the entire attention distribution: Llama-2-13B goes
 from **5.40 to 5158.07** perplexity. The failure is a cliff, not a slope. A
 mechanism whose removal costs three orders of magnitude is not an artifact.
 
-**Two independent confirmations.** [LIT-190](../literature.d/LIT-190.md) finds
+**The sharpest confirmation is a paper that removed the constraint.**
+[LIT-tmp0qipg](../literature.d/LIT-tmp0qipg.md) replaces softmax with a
+rectified, explicitly **not sum-to-one** function, so a head can output all
+zeros. Sink rate goes to **0.00%** at both 340M and 1.8B, hidden-state
+kurtosis from 33511 to 341 and from 74457 to 2193, and the attention matrices
+become 95-99% exact zeros. If the sink came from anything other than the
+normalization, removing the normalization would not have removed it, and it
+removes it completely.
+
+**Two further confirmations.** [LIT-190](../literature.d/LIT-190.md) finds
 the corresponding concentration on the activation side — massive activations
 at particular positions in the residual stream — from a different group and a
 different measurement. And [SOTA-134](../practices.d/SOTA-134.md)'s
@@ -88,8 +100,14 @@ designated place to go, the other arranges for there not to be any.
 
 ## What this does not say
 
-**It does not make sinks a defect.** In an ungated model the sink is
-load-bearing, and the 5158 figure is what removing it costs. "Attention sinks
+**It does not make sinks a defect, and the strongest evidence for that is
+also the strongest evidence for the mechanism.**
+[LIT-tmp0qipg](../literature.d/LIT-tmp0qipg.md)'s sink-free model matches
+softmax at 340M and is **worse at 1.8B on every benchmark** — ARC-Easy −5.17,
+LAMBADA −5.92, SciQ −6.00, with the training-loss gap widening from 0.004 to
+0.12. A model built so the pressure never arises pays for it somewhere else,
+under that recipe. In an ungated model the sink is load-bearing, and the 5158
+figure is what removing it costs. "Attention sinks
 are an artifact to be eliminated" is the reading this document exists to
 block: they are eliminable only by changing the architecture so the pressure
 that creates them is gone.

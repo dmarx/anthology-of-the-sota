@@ -9,11 +9,13 @@ consensus_note: >-
   implementing it is what would need justifying. What this record has assessed
   is narrower than that — the *conditional*, that the decision turns on
   whether the model can memorize what it is shown. The grounds are
-  LIT-395 §7.4, which reports both edges of the sweet spot, and LIT-119,
-  which reaches for dropout in 2026 under exactly the condition the 2014 paper
-  predicts. No survey of current pretraining recipes supports the stronger
-  reading, and this note is here so that the `converged` above is not read as
-  covering it.
+  LIT-395 §7.4, which reports both edges of the sweet spot; LIT-119, which
+  reaches for dropout in 2026 under exactly the condition the 2014 paper
+  predicts; and LIT-tmpn2vpg, which measured the single-epoch end directly and
+  found dropout actively harmful there. What is still not surveyed is *why*
+  individual production recipes set the value they do — the reasoning is
+  rarely written down — so `converged` covers the behaviour and the evidence,
+  not each adopter's stated reason.
 title: 'Apply dropout where the model can memorize what it is shown, and not where it cannot'
 version: 1
 tags:
@@ -27,6 +29,10 @@ date: '2026-09-17'
 source:
 - LIT-395
 - LIT-119
+# Added when the open question in the body was closed: Liu et al. ran the
+# single-epoch experiment this practice said nobody had, and the answer came
+# back stronger than the inference it replaced.
+- LIT-tmpn2vpg
 introduced_by:
 - LIT-394
 implementations:
@@ -76,13 +82,21 @@ would say *more data, more dropout*; a practice derived only from the right
 one would say the opposite. What the curve actually supports is a ratio
 claim, which is why this practice is stated as one.
 
-**Where that leaves large-scale pretraining is an inference, not a reported
-result.** If a corpus is large enough that a model sees most of it once and
-cannot memorize it, the right edge of §7.4 predicts little to gain — against
-a cost the same paper measures at 2-3x training time. The record has not
-surveyed current pretraining recipes to confirm that this is why they set
-dropout to zero, and until it has, that sentence is the anthology reading a
-2014 curve forward rather than a claim anybody has checked at scale.
+**And the single-epoch end is now measured, not inferred.** This practice was
+filed saying that reading §7.4's right edge forward to large-scale pretraining
+was the anthology reading a 2014 curve forward rather than a claim anybody had
+checked. [LIT-tmpn2vpg](../literature.d/LIT-tmpn2vpg.md) checked it, and the
+answer is **stronger than the inference it replaces**. Pretraining BERT and
+Pythia 160M/1.4B for a single epoch at varying rates, every capability measure
+is worse with dropout than without — LM loss, BLiMP, SQuAD F1, MNLI — and the
+rate correlates with how much worse. "Early dropout", applied then disabled,
+degrades too. Models trained without it are additionally more editable under
+gradient-based editing (MEND).
+
+So in this regime dropout is not merely unnecessary against a 2-3x training
+cost; it is a cost on both axes, and omitting it is evidenced rather than
+derived. The ceiling on that evidence is 1.4B parameters, which the paper
+names.
 
 **The converse case is live and recent.**
 [LIT-119](../literature.d/LIT-119.md) reports dropout 0.1 after the linear
@@ -93,6 +107,14 @@ condition the 2014 paper predicts it works in.
 multi-epoch training on a fixed corpus overfits severely, and the objective
 augmentations it proposes — token-level noise among them — are dropout's
 question asked again about the data rather than the units.
+
+**One place dropout left for a reason that has nothing to do with this
+practice.** In convolutional architectures it was displaced by an
+*interaction*, not by a data regime: dropout shifts a unit's variance between
+train and test and batch normalization's stored statistics do not follow. That
+is [SOTA-tmpjjsir](SOTA-tmpjjsir.md), and the two answers should not be
+merged — this practice is about the model-to-data ratio, that one is about
+layer ordering, and each is evidenced on its own terms.
 
 ## It is not a drop-in, and the paper says so
 

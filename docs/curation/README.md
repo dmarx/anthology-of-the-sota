@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [18 Sep 05:17 — The record measured seventy-four things on ImageNet and did not hold it](2026-09.md#the-record-measured-seventy-four-things-on-imagenet-and-did-not-hold-it)
 - [18 Sep 02:44 — The worklist named a benchmark in its rationale that its own tables left out](2026-09.md#the-worklist-named-a-benchmark-in-its-rationale-that-its-own-tables-left-out)
 - [18 Sep 02:27 — Twenty-three uses of a task, none of the method that brought it](2026-09.md#twenty-three-uses-of-a-task-none-of-the-method-that-brought-it)
 - [18 Sep 01:17 — The worklist was ranked by a twelve-paper sample, and the corpus disagrees](2026-09.md#the-worklist-was-ranked-by-a-twelve-paper-sample-and-the-corpus-disagrees)
@@ -101,9 +102,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-94 entries across 2 books, newest first.
+95 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 92 | 2026-09-05 | 2026-09-18 |
+| [2026-09](2026-09.md) | 93 | 2026-09-05 | 2026-09-18 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

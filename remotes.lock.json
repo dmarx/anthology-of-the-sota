@@ -8,6 +8,9 @@
     "ARXIV/1211.5063": {
       "title": "On the difficulty of training Recurrent Neural Networks"
     },
+    "ARXIV/1409.0575": {
+      "title": "ImageNet Large Scale Visual Recognition Challenge"
+    },
     "ARXIV/1412.6651": {
       "title": "Deep learning with Elastic Averaging SGD"
     },
@@ -718,6 +721,9 @@
     },
     "ARXIV/2409.12917": {
       "title": "Training Language Models to Self-Correct via Reinforcement Learning"
+    },
+    "ARXIV/2409.19256": {
+      "title": "HybridFlow: A Flexible and Efficient RLHF Framework"
     },
     "ARXIV/2409.19606": {
       "title": "Hyper-Connections"

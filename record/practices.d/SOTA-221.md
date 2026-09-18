@@ -84,7 +84,7 @@ On BERT-Large pre-training, with SQuAD v1.1 F1 as the target and a baseline of
   finishes in 76 minutes on a TPUv3 Pod against three days for the baseline.
 - **On ImageNet/ResNet-50 at 16K**, comprehensively tuned Adagrad, Adam and
   AdamW reach 55.4%, 66.0% and 67.3% top-1 against a 76.3% target. LAMB reaches
-  it. The instrument is ILSVRC ([LIT-tmpa2myh](../literature.d/LIT-tmpa2myh.md)), the thousand-class
+  it. The instrument is ILSVRC ([LIT-423](../literature.d/LIT-423.md)), the thousand-class
   classification challenge — not the database it is drawn from, and not the
   downsampled ImageNet-64 that generative work reports FID on.
 

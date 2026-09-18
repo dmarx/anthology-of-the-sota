@@ -92,7 +92,7 @@ network such as a transformer, and tests neither.
 
 **CIFAR-10, 2020.** One dataset. Earlier drafts of this document said CIFAR-10
 and ImageNet; the paper's experiments are CIFAR-10. CIFAR-10 is
-[LIT-tmps5307](../literature.d/LIT-tmps5307.md) — 32×32 images, cheap enough to run a method on
+[LIT-424](../literature.d/LIT-424.md) — 32×32 images, cheap enough to run a method on
 first and small enough that a result there is weak evidence about scale,
 which is the whole distance between what this paper measured and what the
 claim above is pitched at.

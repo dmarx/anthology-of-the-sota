@@ -53,7 +53,7 @@
 | 2026-09-15 | Proposed | [SOTA-217](../../record/practices.d/SOTA-217.md) | 1 | 0 | Align the hidden-unit permutation before averaging weights from separately trained networks |
 | 2026-09-15 | Proposed | [SOTA-209](../../record/practices.d/SOTA-209.md) | 0 | 0 | Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch |
 | 2026-09-15 | Proposed | [SOTA-220](../../record/practices.d/SOTA-220.md) | 0 | 0 | Aggregate worker gradients coordinate-wise by median when any worker may be faulty |
-| 2026-09-16 | Proposed | [SOTA-222](../../record/practices.d/SOTA-222.md) | 3 | 0 | Overlap the synchronisation with one or two local steps instead of communicating every step |
+| 2026-09-16 | Proposed | [SOTA-222](../../record/practices.d/SOTA-222.md) | 5 | 0 | Overlap the synchronisation with one or two local steps instead of communicating every step |
 | 2026-09-16 | Proposed | [SOTA-223](../../record/practices.d/SOTA-223.md) | 2 | 0 | Do not keep the gossip topology static: sample a fresh random neighbourhood every round |
 | 2026-09-16 | Proposed | [SOTA-229](../../record/practices.d/SOTA-229.md) | 2 | 0 | Scale the draft model's training data, once nothing constrains it to predict the target's features |
 | 2026-09-17 | Proposed | [SOTA-246](../../record/practices.d/SOTA-246.md) | 7 | 0 | Find mislabelled training data by self-influence, not by training loss |

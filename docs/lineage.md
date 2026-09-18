@@ -4,18 +4,36 @@
 
 10 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
-## From Language Modeling with Gated Convolutional Networks
+Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
-- [LIT-199](../record/literature.d/LIT-199.md) — Language Modeling with Gated Convolutional Networks *(Active)*
-  - [LIT-030](../record/literature.d/LIT-030.md) — GLU Variants Improve Transformer *(Active)*
-    - [LIT-200](../record/literature.d/LIT-200.md) — PowLU: An Activation Function for Stable Pre-Training of LLMs *(Active)*
+## attention-techniques
 
-## From Longformer: The Long-Document Transformer
+### From Longformer: The Long-Document Transformer
 
 - alongside: [LIT-033](../record/literature.d/LIT-033.md) — Longformer: The Long-Document Transformer *(Active)*
 - alongside: [LIT-225](../record/literature.d/LIT-225.md) — Generating Long Sequences with Sparse Transformers *(Active)*
 
-## From RoFormer: Enhanced Transformer with Rotary Position Embedding
+## distributed-optimization
+
+### From DiLoCo: Distributed Low-Communication Training of Language Models
+
+- [LIT-212](../record/literature.d/LIT-212.md) — DiLoCo: Distributed Low-Communication Training of Language Models *(Active)*
+  - [LIT-214](../record/literature.d/LIT-214.md) — Streaming DiLoCo with overlapping communication: Towards a Distributed Free Lunch *(Active)*
+
+## model-architecture
+
+### From Hyper-Connections
+
+- [LIT-141](../record/literature.d/LIT-141.md) — Hyper-Connections *(Superseded)*
+  - [LIT-140](../record/literature.d/LIT-140.md) — mHC: Manifold-Constrained Hyper-Connections *(Active)*
+    - [LIT-151](../record/literature.d/LIT-151.md) — oHC: Orthogonal Hyper-Connections on SO(4) via Quaternions *(Active)*
+    - [LIT-181](../record/literature.d/LIT-181.md) — Beyond the Birkhoff Polytope: Spectral-Sphere-Constrained Hyper-Connections *(Active)*
+- alongside: [LIT-134](../record/literature.d/LIT-134.md) — Attention Residuals *(Active)*
+- alongside: [LIT-152](../record/literature.d/LIT-152.md) — On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability *(Active)*
+
+## representation-and-encoding
+
+### From RoFormer: Enhanced Transformer with Rotary Position Embedding
 
 - [LIT-045](../record/literature.d/LIT-045.md) — RoFormer: Enhanced Transformer with Rotary Position Embedding *(Active)*
   - [LIT-192](../record/literature.d/LIT-192.md) — Extending Context Window of Large Language Models via Positional Interpolation *(Active)*
@@ -26,7 +44,30 @@
   - [LIT-209](../record/literature.d/LIT-209.md) — SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling *(Active)*
 - alongside: [LIT-048](../record/literature.d/LIT-048.md) — Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation *(Active)*
 
-## From Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training
+## training-optimization
+
+### From Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer
+
+- [LIT-148](../record/literature.d/LIT-148.md) — Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer *(Active)*
+  - [LIT-149](../record/literature.d/LIT-149.md) — u-µP: The Unit-Scaled Maximal Update Parametrization *(Active)*
+  - [LIT-150](../record/literature.d/LIT-150.md) — Don't be lazy: CompleteP enables compute-efficient deep transformers *(Active)*
+
+## vision-and-graphics
+
+### From Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture
+
+- [LIT-216](../record/literature.d/LIT-216.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
+  - [LIT-215](../record/literature.d/LIT-215.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*
+
+## Sharing no `tags`
+
+### From Language Modeling with Gated Convolutional Networks
+
+- [LIT-199](../record/literature.d/LIT-199.md) — Language Modeling with Gated Convolutional Networks *(Active)*
+  - [LIT-030](../record/literature.d/LIT-030.md) — GLU Variants Improve Transformer *(Active)*
+    - [LIT-200](../record/literature.d/LIT-200.md) — PowLU: An Activation Function for Stable Pre-Training of LLMs *(Active)*
+
+### From Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training
 
 - [LIT-235](../record/literature.d/LIT-235.md) — Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training *(Active)*
 - [LIT-236](../record/literature.d/LIT-236.md) — The Blessing of Dimensionality in LLM Fine-tuning: A Variance-Curvature Perspective *(Active)*
@@ -45,7 +86,7 @@
 - alongside: [LIT-230](../record/literature.d/LIT-230.md) — Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO *(Active)*
 - alongside: [LIT-239](../record/literature.d/LIT-239.md) — ESSA: Evolutionary Strategies for Scalable Alignment *(Active)*
 
-## From Mamba: Linear-Time Sequence Modeling with Selective State Spaces
+### From Mamba: Linear-Time Sequence Modeling with Selective State Spaces
 
 - [LIT-161](../record/literature.d/LIT-161.md) — Mamba: Linear-Time Sequence Modeling with Selective State Spaces *(Active)*
   - [LIT-162](../record/literature.d/LIT-162.md) — Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality *(Active)*
@@ -54,34 +95,9 @@
     - [LIT-165](../record/literature.d/LIT-165.md) — Mamba-3: Improved Sequence Modeling using State Space Principles *(Active)*
 - [LIT-195](../record/literature.d/LIT-195.md) — Parallelizing Linear Transformers with the Delta Rule over Sequence Length *(Active)*
 
-## From Hyper-Connections
-
-- [LIT-141](../record/literature.d/LIT-141.md) — Hyper-Connections *(Superseded)*
-  - [LIT-140](../record/literature.d/LIT-140.md) — mHC: Manifold-Constrained Hyper-Connections *(Active)*
-    - [LIT-151](../record/literature.d/LIT-151.md) — oHC: Orthogonal Hyper-Connections on SO(4) via Quaternions *(Active)*
-    - [LIT-181](../record/literature.d/LIT-181.md) — Beyond the Birkhoff Polytope: Spectral-Sphere-Constrained Hyper-Connections *(Active)*
-- alongside: [LIT-134](../record/literature.d/LIT-134.md) — Attention Residuals *(Active)*
-- alongside: [LIT-152](../record/literature.d/LIT-152.md) — On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability *(Active)*
-
-## From Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer
-
-- [LIT-148](../record/literature.d/LIT-148.md) — Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer *(Active)*
-  - [LIT-149](../record/literature.d/LIT-149.md) — u-µP: The Unit-Scaled Maximal Update Parametrization *(Active)*
-  - [LIT-150](../record/literature.d/LIT-150.md) — Don't be lazy: CompleteP enables compute-efficient deep transformers *(Active)*
-
-## From Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer
+### From Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer
 
 - [LIT-188](../record/literature.d/LIT-188.md) — Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer *(Active)*
   - [LIT-187](../record/literature.d/LIT-187.md) — GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding *(Active)*
     - [LIT-170](../record/literature.d/LIT-170.md) — DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models *(Active)*
     - [LIT-189](../record/literature.d/LIT-189.md) — Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity *(Active)*
-
-## From DiLoCo: Distributed Low-Communication Training of Language Models
-
-- [LIT-212](../record/literature.d/LIT-212.md) — DiLoCo: Distributed Low-Communication Training of Language Models *(Active)*
-  - [LIT-214](../record/literature.d/LIT-214.md) — Streaming DiLoCo with overlapping communication: Towards a Distributed Free Lunch *(Active)*
-
-## From Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture
-
-- [LIT-216](../record/literature.d/LIT-216.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
-  - [LIT-215](../record/literature.d/LIT-215.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*

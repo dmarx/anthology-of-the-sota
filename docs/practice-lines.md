@@ -4,38 +4,56 @@
 
 43 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
-## From Place BatchNorm after linear/conv layers but before activation functions
+Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
-- alongside: [SOTA-004](../record/practices.d/SOTA-004.md) — Place BatchNorm after linear/conv layers but before activation functions *(Active, unassessed)*
-- alongside: [SOTA-006](../record/practices.d/SOTA-006.md) — Consider alternatives like LayerNorm for transformers *(Active, unassessed)*
+## adaptation-and-tuning
 
-## From linear warmup of LR stabilizes early training with large batch size.
+### From Build a reasoning model in three stages: pretrain on general data, SFT on reasoning traces, then RL with verifiable rewards
 
-- alongside: [SOTA-008](../record/practices.d/SOTA-008.md) — linear warmup of LR stabilizes early training with large batch size. *(Active, unassessed)*
-- alongside: [SOTA-009](../record/practices.d/SOTA-009.md) — warmup to a large early lr, anneal throughout training to small final lr *(Active, unassessed)*
-- alongside: [SOTA-032](../record/practices.d/SOTA-032.md) — Put the layer normalization inside the residual block, before the sublayer *(Active, universal)*
-- alongside: [SOTA-100](../record/practices.d/SOTA-100.md) — Use learning rate warmup proportional to model size *(Active, unassessed)*
+- alongside: [SOTA-129](../record/practices.d/SOTA-129.md) — Build a reasoning model in three stages: pretrain on general data, SFT on reasoning traces, then RL with verifiable rewards *(Active, unassessed)*
+- alongside: [SOTA-130](../record/practices.d/SOTA-130.md) — Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model *(Proposed, contested)*
 
-## From skip connections promote training stability by smoothing out the loss landscape
+### From Estimate the RL baseline from a group of samples for the same prompt instead of training a critic
 
-- alongside: [SOTA-010](../record/practices.d/SOTA-010.md) — skip connections promote training stability by smoothing out the loss landscape *(Superseded, unassessed)*
-- alongside: [SOTA-011](../record/practices.d/SOTA-011.md) — Map the Hessian ratio |lambda_min / lambda_max| to find where the loss surface is non-convex *(Active, unassessed)*
-- alongside: [SOTA-012](../record/practices.d/SOTA-012.md) — sharpness in the loss landscape correlates with test error *(Active, unassessed)*
+- [SOTA-145](../record/practices.d/SOTA-145.md) — Estimate the RL baseline from a group of samples for the same prompt instead of training a critic *(Active, converged)*
+  - [SOTA-146](../record/practices.d/SOTA-146.md) — Correct the GRPO objective before running it — the published form has three independently identified defects *(Proposed, emerging)*
+- [SOTA-154](../record/practices.d/SOTA-154.md) — Fine-tune with evolution strategies instead of policy-gradient reinforcement learning *(Active, contested)*
+  - [SOTA-212](../record/practices.d/SOTA-212.md) — Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them *(Proposed, unreplicated)*
+  - [SOTA-213](../record/practices.d/SOTA-213.md) — Control evolution-strategies drift with a larger population or an anchor penalty, not by stopping training early *(Proposed, emerging)*
 
-## From Perform forward/backward passes in FP16
+## attention-techniques
 
-- [SOTA-016](../record/practices.d/SOTA-016.md) — Perform forward/backward passes in FP16 *(Active, unassessed)*
-  - [SOTA-013](../record/practices.d/SOTA-013.md) — Use dynamic loss scaling that doubles every 2000 successful steps *(Active, unassessed)*
-  - [SOTA-014](../record/practices.d/SOTA-014.md) — Maintain master weights in FP32 *(Active, unassessed)*
-    - [SOTA-015](../record/practices.d/SOTA-015.md) — Store optimizer states in FP32 *(Active, unassessed)*
+### From Prefer GQA to MQA or MHA
 
-## From Initialize the LayerNorm gain to 1
+- alongside: [SOTA-109](../record/practices.d/SOTA-109.md) — Prefer GQA to MQA or MHA *(Active, unassessed)*
+- alongside: [SOTA-147](../record/practices.d/SOTA-147.md) — Compress the KV cache into one shared latent vector instead of sharing key and value heads *(Active, emerging)*
 
-- alongside: [SOTA-025](../record/practices.d/SOTA-025.md) — Initialize the LayerNorm gain to 1 *(Active, unassessed)*
-- alongside: [SOTA-051](../record/practices.d/SOTA-051.md) — Initialize a residual or adapter branch to exactly zero, not merely near zero *(Active, unassessed)*
-- alongside: [SOTA-060](../record/practices.d/SOTA-060.md) — Initialize layer norms with smaller variance (0.02) for stability *(Active, unassessed)*
+### From Give linear-attention layers a gated delta rule: a decay gate for erasure plus a delta update for targeted writes
 
-## From Stage optimizer states across data parallel ranks (ZeRO-1)
+- [SOTA-135](../record/practices.d/SOTA-135.md) — Give linear-attention layers a gated delta rule: a decay gate for erasure plus a delta update for targeted writes *(Active, unassessed)*
+  - [SOTA-177](../record/practices.d/SOTA-177.md) — Decouple the erase address from the write address in a delta-rule recurrence *(Proposed, unreplicated)*
+
+## data-pipeline
+
+### From Use tar archives for dataset storage
+
+- [SOTA-077](../record/practices.d/SOTA-077.md) — Use tar archives for dataset storage *(Active, unassessed)*
+  - [SOTA-078](../record/practices.d/SOTA-078.md) — Buffer size should be 2-3x batch size *(Active, unassessed)*
+  - [SOTA-079](../record/practices.d/SOTA-079.md) — Pre-fetch next batch during compute *(Active, unassessed)*
+
+### From Implement dynamic temperature scaling for mixing
+
+- alongside: [SOTA-102](../record/practices.d/SOTA-102.md) — Implement dynamic temperature scaling for mixing *(Superseded, unassessed)*
+- alongside: [SOTA-103](../record/practices.d/SOTA-103.md) — Adjust data mixing proportions online from per-domain training loss *(Active, unassessed)*
+
+### From Train autoregressive models with fill-in-the-middle by default: it is a data transformation, and it is free
+
+- [SOTA-174](../record/practices.d/SOTA-174.md) — Train autoregressive models with fill-in-the-middle by default: it is a data transformation, and it is free *(Active, converged)*
+  - [SOTA-128](../record/practices.d/SOTA-128.md) — Train fill-in-the-middle data without masking the loss on non-FIM tokens *(Active, unassessed)*
+
+## distributed-optimization
+
+### From Stage optimizer states across data parallel ranks (ZeRO-1)
 
 - [SOTA-028](../record/practices.d/SOTA-028.md) — Stage optimizer states across data parallel ranks (ZeRO-1) *(Active, unassessed)*
   - [SOTA-029](../record/practices.d/SOTA-029.md) — Partition gradients and optimizer states (ZeRO-2) for larger models *(Active, unassessed)*
@@ -45,40 +63,204 @@
         - [SOTA-118](../record/practices.d/SOTA-118.md) — Employ mixed precision to reduce memory usage *(Active, unassessed)*
         - [SOTA-119](../record/practices.d/SOTA-119.md) — Choose sharding factor based on model and GPU memory size *(Active, unassessed)*
 
-## From Keep micro-batch size per GPU as large as memory allows
+### From Overlap communication with backward pass
+
+- alongside: [SOTA-047](../record/practices.d/SOTA-047.md) — Overlap communication with backward pass *(Active, unassessed)*
+- alongside: [SOTA-048](../record/practices.d/SOTA-048.md) — Group small tensors before communication *(Active, unassessed)*
+
+### From Save optimizer state every N epochs (N ~ sqrt(total_epochs))
+
+- [SOTA-055](../record/practices.d/SOTA-055.md) — Save optimizer state every N epochs (N ~ sqrt(total_epochs)) *(Rejected, unassessed)*
+  - [SOTA-054](../record/practices.d/SOTA-054.md) — Derive the checkpoint interval from online profiling and adapt it at runtime against an overhead bound *(Active, unassessed)*
+- alongside: [SOTA-189](../record/practices.d/SOTA-189.md) — Set the checkpoint interval from the job's measured time-to-failure, which shrinks as the job grows *(Proposed, unassessed)*
+
+### From Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation
+
+- [SOTA-155](../record/practices.d/SOTA-155.md) — Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation *(Proposed, unreplicated)*
+  - [SOTA-219](../record/practices.d/SOTA-219.md) — Leave the inner optimizer state unsynchronised in local-update training *(Active, emerging)*
+- alongside: [SOTA-075](../record/practices.d/SOTA-075.md) — Use gradient compression for slow networks *(Active, unassessed)*
+
+### From Pair any gradient compressor with error feedback, and correct the momentum it is applied under
+
+- [SOTA-214](../record/practices.d/SOTA-214.md) — Pair any gradient compressor with error feedback, and correct the momentum it is applied under *(Active, emerging)*
+  - [SOTA-215](../record/practices.d/SOTA-215.md) — Freeze Adam's variance term after a warmup before compressing its update, and never compress the update directly *(Proposed, unreplicated)*
+  - [SOTA-224](../record/practices.d/SOTA-224.md) — Ramp the sparsity ratio up over the first few epochs rather than starting at the target *(Active, unreplicated)*
+
+### From Drop the parameter server for gossip once the network is the bottleneck, and measure where that is rather than inheriting a threshold
+
+- [SOTA-225](../record/practices.d/SOTA-225.md) — Drop the parameter server for gossip once the network is the bottleneck, and measure where that is rather than inheriting a threshold *(Active, unreplicated)*
+  - [SOTA-223](../record/practices.d/SOTA-223.md) — Do not keep the gossip topology static: sample a fresh random neighbourhood every round *(Proposed, unreplicated)*
+  - [SOTA-226](../record/practices.d/SOTA-226.md) — If the gossip topology is static, make it a directed exponential graph, not a ring *(Active, unreplicated)*
+
+## inference-optimization
+
+### From PagedAttention to accelerate batch inference for LLM sampling
+
+- [SOTA-105](../record/practices.d/SOTA-105.md) — PagedAttention to accelerate batch inference for LLM sampling *(Active, unassessed)*
+  - [SOTA-113](../record/practices.d/SOTA-113.md) — Use continuous batching for inference *(Active, unassessed)*
+    - [SOTA-115](../record/practices.d/SOTA-115.md) — Overlap prefill and decode compute *(Active, unassessed)*
+
+### From Decode with a draft model and an accept-reject rule, which is exactly lossless
+
+- [SOTA-227](../record/practices.d/SOTA-227.md) — Decode with a draft model and an accept-reject rule, which is exactly lossless *(Active, converged)*
+  - [SOTA-229](../record/practices.d/SOTA-229.md) — Scale the draft model's training data, once nothing constrains it to predict the target's features *(Proposed, unreplicated)*
+
+## model-architecture
+
+### From Use SwiGLU activation for transformers
+
+- alongside: [SOTA-034](../record/practices.d/SOTA-034.md) — Use SwiGLU activation for transformers *(Active, contested)*
+- alongside: [SOTA-158](../record/practices.d/SOTA-158.md) — Bound the activation's output range when training in low precision *(Proposed, emerging)*
+
+### From Use largest batch that maintains >80% sample efficiency
+
+- alongside: [SOTA-061](../record/practices.d/SOTA-061.md) — Use largest batch that maintains >80% sample efficiency *(Active, unassessed)*
+- alongside: [SOTA-062](../record/practices.d/SOTA-062.md) — Scale batch size with model size but sub-linearly *(Active, unassessed)*
+
+### From At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width
+
+- alongside: [SOTA-125](../record/practices.d/SOTA-125.md) — At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width *(Proposed, unreplicated)*
+- alongside: [SOTA-190](../record/practices.d/SOTA-190.md) — Increase depth before any other dimension when scaling a transformer *(Proposed, unreplicated)*
+
+### From Widen the residual stream into several streams and constrain the mixing between them
+
+- [SOTA-169](../record/practices.d/SOTA-169.md) — Widen the residual stream into several streams and constrain the mixing between them *(Proposed, emerging)*
+  - [SOTA-137](../record/practices.d/SOTA-137.md) — Widen the residual stream into several streams with freely learned mixing (hyper-connections) *(Superseded, unassessed)*
+    - [SOTA-136](../record/practices.d/SOTA-136.md) — Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) *(Proposed, contested)* — also extends SOTA-169
+- alongside: [SOTA-133](../record/practices.d/SOTA-133.md) — Replace fixed residual accumulation with learned attention over preceding layers *(Active, emerging)*
+
+### From Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound
+
+- [SOTA-150](../record/practices.d/SOTA-150.md) — Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound *(Active, converged)*
+  - [SOTA-148](../record/practices.d/SOTA-148.md) — Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss *(Proposed, emerging)*
+  - [SOTA-149](../record/practices.d/SOTA-149.md) — Build the sparse layers from many small experts plus an always-on shared one, not a few large ones *(Active, emerging)*
+  - [SOTA-180](../record/practices.d/SOTA-180.md) — Keep the routed experts' weights in a down-projected latent space and spend the saved bandwidth on more of them *(Active, emerging)*
+  - [SOTA-209](../record/practices.d/SOTA-209.md) — Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch *(Proposed, unassessed)*
+
+## model-stability
+
+### From Place BatchNorm after linear/conv layers but before activation functions
+
+- alongside: [SOTA-004](../record/practices.d/SOTA-004.md) — Place BatchNorm after linear/conv layers but before activation functions *(Active, unassessed)*
+- alongside: [SOTA-006](../record/practices.d/SOTA-006.md) — Consider alternatives like LayerNorm for transformers *(Active, unassessed)*
+
+### From Initialize the LayerNorm gain to 1
+
+- alongside: [SOTA-025](../record/practices.d/SOTA-025.md) — Initialize the LayerNorm gain to 1 *(Active, unassessed)*
+- alongside: [SOTA-051](../record/practices.d/SOTA-051.md) — Initialize a residual or adapter branch to exactly zero, not merely near zero *(Active, unassessed)*
+- alongside: [SOTA-060](../record/practices.d/SOTA-060.md) — Initialize layer norms with smaller variance (0.02) for stability *(Active, unassessed)*
+
+### From Monitor exp(loss) for stability
+
+- alongside: [SOTA-069](../record/practices.d/SOTA-069.md) — Monitor exp(loss) for stability *(Active, unassessed)*
+- alongside: [SOTA-098](../record/practices.d/SOTA-098.md) — Monitor validation loss for unexpected spikes during training *(Active, unassessed)*
+
+### From Track gradient norm ratios between layers
+
+- alongside: [SOTA-070](../record/practices.d/SOTA-070.md) — Track gradient norm ratios between layers *(Active, unassessed)*
+- alongside: [SOTA-099](../record/practices.d/SOTA-099.md) — Track gradient norm statistics to detect training instabilities *(Active, unassessed)*
+
+### From Compute the normalization statistic without centering (RMSNorm)
+
+- alongside: [SOTA-182](../record/practices.d/SOTA-182.md) — Compute the normalization statistic without centering (RMSNorm) *(Active, universal)*
+- alongside: [SOTA-191](../record/practices.d/SOTA-191.md) — Consider removing LayerNorm's learnable gain and bias rather than tuning them *(Proposed, contested)*
+
+## representation-and-encoding
+
+### From use RoPE for LLM (1D sequence) positional embeddings
+
+- [SOTA-063](../record/practices.d/SOTA-063.md) — use RoPE for LLM (1D sequence) positional embeddings *(Active, unassessed)*
+  - [SOTA-151](../record/practices.d/SOTA-151.md) — Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length *(Active, converged)*
+- alongside: [SOTA-153](../record/practices.d/SOTA-153.md) — Drop positional encoding from the global-attention layers of a hybrid and let the cheap local layers carry position *(Active, emerging)*
+
+## systems-optimization
+
+### From Use operator fusion for small operations
+
+- alongside: [SOTA-081](../record/practices.d/SOTA-081.md) — Use operator fusion for small operations *(Active, unassessed)*
+- alongside: [SOTA-088](../record/practices.d/SOTA-088.md) — Fuse small operations into larger kernels *(Active, unassessed)*
+- alongside: [SOTA-114](../record/practices.d/SOTA-114.md) — Fuse attention operations where possible *(Active, unassessed)*
+
+### From Optimize memory layout for hardware
+
+- alongside: [SOTA-082](../record/practices.d/SOTA-082.md) — Optimize memory layout for hardware *(Active, unassessed)*
+- alongside: [SOTA-090](../record/practices.d/SOTA-090.md) — Use hardware-specific memory layouts *(Active, unassessed)*
+
+## training-optimization
+
+### From skip connections promote training stability by smoothing out the loss landscape
+
+- alongside: [SOTA-010](../record/practices.d/SOTA-010.md) — skip connections promote training stability by smoothing out the loss landscape *(Superseded, unassessed)*
+- alongside: [SOTA-011](../record/practices.d/SOTA-011.md) — Map the Hessian ratio |lambda_min / lambda_max| to find where the loss surface is non-convex *(Active, unassessed)*
+- alongside: [SOTA-012](../record/practices.d/SOTA-012.md) — sharpness in the loss landscape correlates with test error *(Active, unassessed)*
+
+### From Perform forward/backward passes in FP16
+
+- [SOTA-016](../record/practices.d/SOTA-016.md) — Perform forward/backward passes in FP16 *(Active, unassessed)*
+  - [SOTA-013](../record/practices.d/SOTA-013.md) — Use dynamic loss scaling that doubles every 2000 successful steps *(Active, unassessed)*
+  - [SOTA-014](../record/practices.d/SOTA-014.md) — Maintain master weights in FP32 *(Active, unassessed)*
+    - [SOTA-015](../record/practices.d/SOTA-015.md) — Store optimizer states in FP32 *(Active, unassessed)*
+
+### From use gradient clipping
+
+- alongside: [SOTA-035](../record/practices.d/SOTA-035.md) — use gradient clipping *(Active, unassessed)*
+- alongside: [SOTA-202](../record/practices.d/SOTA-202.md) — Clamp the prediction to the training range at every step when sampling from a model's own output *(Active, converged)*
+
+### From larger models are more sample efficient
+
+- alongside: [SOTA-040](../record/practices.d/SOTA-040.md) — larger models are more sample efficient *(Active, unassessed)*
+- alongside: [SOTA-041](../record/practices.d/SOTA-041.md) — lr tuning less important for larger models *(Rejected, unassessed)*
+
+### From Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`
+
+- [SOTA-097](../record/practices.d/SOTA-097.md) — Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)` *(Active, unassessed)*
+  - [SOTA-198](../record/practices.d/SOTA-198.md) — Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run *(Active, emerging)*
+
+### From Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens
+
+- [SOTA-140](../record/practices.d/SOTA-140.md) — Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens *(Active, contested)*
+  - [SOTA-141](../record/practices.d/SOTA-141.md) — Decay the learning rate linearly all the way to zero *(Proposed, unreplicated)*
+  - [SOTA-142](../record/practices.d/SOTA-142.md) — Set the peak learning rate by a power law in tokens so it transfers across batch size and training length *(Active, unassessed)*
+
+### From Parameterize the model with µP and tune hyperparameters on a narrow proxy, transferring them across width
+
+- [SOTA-143](../record/practices.d/SOTA-143.md) — Parameterize the model with µP and tune hyperparameters on a narrow proxy, transferring them across width *(Active, unassessed)*
+  - [SOTA-144](../record/practices.d/SOTA-144.md) — Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too *(Proposed, unreplicated)*
+  - [SOTA-159](../record/practices.d/SOTA-159.md) — Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling *(Proposed, unreplicated)*
+
+### From Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal
+
+- [SOTA-188](../record/practices.d/SOTA-188.md) — Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal *(Active, converged)*
+  - [SOTA-195](../record/practices.d/SOTA-195.md) — Predict v rather than the noise when the model will be evaluated at low signal-to-noise *(Active, converged)*
+
+### From Retune the learning rate, momentum and schedule at every batch size you compare, never by a scaling heuristic
+
+- alongside: [SOTA-218](../record/practices.d/SOTA-218.md) — Retune the learning rate, momentum and schedule at every batch size you compare, never by a scaling heuristic *(Active, unreplicated)*
+- alongside: [SOTA-221](../record/practices.d/SOTA-221.md) — To train past the batch size where your optimizer stalls, change the optimizer's conditioning rather than the scaling rule *(Active, unreplicated)*
+
+## Sharing no `tags`
+
+### From linear warmup of LR stabilizes early training with large batch size.
+
+- alongside: [SOTA-008](../record/practices.d/SOTA-008.md) — linear warmup of LR stabilizes early training with large batch size. *(Active, unassessed)*
+- alongside: [SOTA-009](../record/practices.d/SOTA-009.md) — warmup to a large early lr, anneal throughout training to small final lr *(Active, unassessed)*
+- alongside: [SOTA-032](../record/practices.d/SOTA-032.md) — Put the layer normalization inside the residual block, before the sublayer *(Active, universal)*
+- alongside: [SOTA-100](../record/practices.d/SOTA-100.md) — Use learning rate warmup proportional to model size *(Active, unassessed)*
+
+### From Keep micro-batch size per GPU as large as memory allows
 
 - alongside: [SOTA-031](../record/practices.d/SOTA-031.md) — Keep micro-batch size per GPU as large as memory allows *(Active, unassessed)*
 - alongside: [SOTA-092](../record/practices.d/SOTA-092.md) — smaller batch sizes are more sample efficient (i.e., better loss as a function of tokens seen) earlier in training *(Active, unassessed)*
 - alongside: [SOTA-093](../record/practices.d/SOTA-093.md) — larger batch sizes are beneficial later in training due to better gradient estimates *(Active, unassessed)*
 - alongside: [SOTA-094](../record/practices.d/SOTA-094.md) — throughput (energy efficiency) wins out over theoretically optimal sample efficiency *(Active, unassessed)*
 
-## From Use SwiGLU activation for transformers
-
-- alongside: [SOTA-034](../record/practices.d/SOTA-034.md) — Use SwiGLU activation for transformers *(Active, contested)*
-- alongside: [SOTA-158](../record/practices.d/SOTA-158.md) — Bound the activation's output range when training in low precision *(Proposed, emerging)*
-
-## From use gradient clipping
-
-- alongside: [SOTA-035](../record/practices.d/SOTA-035.md) — use gradient clipping *(Active, unassessed)*
-- alongside: [SOTA-202](../record/practices.d/SOTA-202.md) — Clamp the prediction to the training range at every step when sampling from a model's own output *(Active, converged)*
-
-## From Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective
+### From Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective
 
 - [SOTA-036](../record/practices.d/SOTA-036.md) — Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective *(Active, unassessed)*
   - [SOTA-037](../record/practices.d/SOTA-037.md) — LM in-context learning emerges at scale *(Active, unassessed)*
   - [SOTA-038](../record/practices.d/SOTA-038.md) — ICL permits few-shot task adaptability *(Active, unassessed)*
 
-## From larger models are more sample efficient
-
-- alongside: [SOTA-040](../record/practices.d/SOTA-040.md) — larger models are more sample efficient *(Active, unassessed)*
-- alongside: [SOTA-041](../record/practices.d/SOTA-041.md) — lr tuning less important for larger models *(Rejected, unassessed)*
-
-## From Overlap communication with backward pass
-
-- alongside: [SOTA-047](../record/practices.d/SOTA-047.md) — Overlap communication with backward pass *(Active, unassessed)*
-- alongside: [SOTA-048](../record/practices.d/SOTA-048.md) — Group small tensors before communication *(Active, unassessed)*
-
-## From Scale attention weights by 1/sqrt(head_dim)
+### From Scale attention weights by 1/sqrt(head_dim)
 
 - [SOTA-050](../record/practices.d/SOTA-050.md) — Scale attention weights by 1/sqrt(head_dim) *(Active, unassessed)*
   - [SOTA-192](../record/practices.d/SOTA-192.md) — Normalize the queries and keys before the attention dot product *(Active, converged)*
@@ -87,175 +269,17 @@
     - [SOTA-131](../record/practices.d/SOTA-131.md) — When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip) *(Active, unassessed)*
 - alongside: [SOTA-168](../record/practices.d/SOTA-168.md) — Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself *(Proposed, unreplicated)*
 
-## From Save optimizer state every N epochs (N ~ sqrt(total_epochs))
-
-- [SOTA-055](../record/practices.d/SOTA-055.md) — Save optimizer state every N epochs (N ~ sqrt(total_epochs)) *(Rejected, unassessed)*
-  - [SOTA-054](../record/practices.d/SOTA-054.md) — Derive the checkpoint interval from online profiling and adapt it at runtime against an overhead bound *(Active, unassessed)*
-- alongside: [SOTA-189](../record/practices.d/SOTA-189.md) — Set the checkpoint interval from the job's measured time-to-failure, which shrinks as the job grows *(Proposed, unassessed)*
-
-## From Use largest batch that maintains >80% sample efficiency
-
-- alongside: [SOTA-061](../record/practices.d/SOTA-061.md) — Use largest batch that maintains >80% sample efficiency *(Active, unassessed)*
-- alongside: [SOTA-062](../record/practices.d/SOTA-062.md) — Scale batch size with model size but sub-linearly *(Active, unassessed)*
-
-## From use RoPE for LLM (1D sequence) positional embeddings
-
-- [SOTA-063](../record/practices.d/SOTA-063.md) — use RoPE for LLM (1D sequence) positional embeddings *(Active, unassessed)*
-  - [SOTA-151](../record/practices.d/SOTA-151.md) — Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length *(Active, converged)*
-- alongside: [SOTA-153](../record/practices.d/SOTA-153.md) — Drop positional encoding from the global-attention layers of a hybrid and let the cheap local layers carry position *(Active, emerging)*
-
-## From Monitor exp(loss) for stability
-
-- alongside: [SOTA-069](../record/practices.d/SOTA-069.md) — Monitor exp(loss) for stability *(Active, unassessed)*
-- alongside: [SOTA-098](../record/practices.d/SOTA-098.md) — Monitor validation loss for unexpected spikes during training *(Active, unassessed)*
-
-## From Track gradient norm ratios between layers
-
-- alongside: [SOTA-070](../record/practices.d/SOTA-070.md) — Track gradient norm ratios between layers *(Active, unassessed)*
-- alongside: [SOTA-099](../record/practices.d/SOTA-099.md) — Track gradient norm statistics to detect training instabilities *(Active, unassessed)*
-
-## From Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation
-
-- [SOTA-155](../record/practices.d/SOTA-155.md) — Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation *(Proposed, unreplicated)*
-  - [SOTA-219](../record/practices.d/SOTA-219.md) — Leave the inner optimizer state unsynchronised in local-update training *(Active, emerging)*
-- alongside: [SOTA-075](../record/practices.d/SOTA-075.md) — Use gradient compression for slow networks *(Active, unassessed)*
-
-## From Use tar archives for dataset storage
-
-- [SOTA-077](../record/practices.d/SOTA-077.md) — Use tar archives for dataset storage *(Active, unassessed)*
-  - [SOTA-078](../record/practices.d/SOTA-078.md) — Buffer size should be 2-3x batch size *(Active, unassessed)*
-  - [SOTA-079](../record/practices.d/SOTA-079.md) — Pre-fetch next batch during compute *(Active, unassessed)*
-
-## From Use operator fusion for small operations
-
-- alongside: [SOTA-081](../record/practices.d/SOTA-081.md) — Use operator fusion for small operations *(Active, unassessed)*
-- alongside: [SOTA-088](../record/practices.d/SOTA-088.md) — Fuse small operations into larger kernels *(Active, unassessed)*
-- alongside: [SOTA-114](../record/practices.d/SOTA-114.md) — Fuse attention operations where possible *(Active, unassessed)*
-
-## From Optimize memory layout for hardware
-
-- alongside: [SOTA-082](../record/practices.d/SOTA-082.md) — Optimize memory layout for hardware *(Active, unassessed)*
-- alongside: [SOTA-090](../record/practices.d/SOTA-090.md) — Use hardware-specific memory layouts *(Active, unassessed)*
-
-## From Use flash attention for all attention computations when hardware supports it
+### From Use flash attention for all attention computations when hardware supports it
 
 - [SOTA-085](../record/practices.d/SOTA-085.md) — Use flash attention for all attention computations when hardware supports it *(Active, unassessed)*
   - [SOTA-106](../record/practices.d/SOTA-106.md) — Use flash-attention-2 over original flash-attention when available *(Active, unassessed)*
   - [SOTA-161](../record/practices.d/SOTA-161.md) — Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling *(Active, unreplicated)*
 - alongside: [SOTA-083](../record/practices.d/SOTA-083.md) — Implement custom kernels for critical ops *(Active, unassessed)*
 
-## From Tiling size should match hardware SRAM size
+### From Tiling size should match hardware SRAM size
 
 - [SOTA-086](../record/practices.d/SOTA-086.md) — Tiling size should match hardware SRAM size *(Active, unassessed)*
   - [SOTA-087](../record/practices.d/SOTA-087.md) — Recompute attention during backward pass instead of storing it *(Active, unassessed)*
   - [SOTA-107](../record/practices.d/SOTA-107.md) — Keep sequence lengths multiple of 128 for best performance *(Rejected, unassessed)*
 - alongside: [SOTA-089](../record/practices.d/SOTA-089.md) — Align tensor dimensions to hardware boundaries *(Active, unassessed)*
 - alongside: [SOTA-108](../record/practices.d/SOTA-108.md) — Pad attention masks to block boundaries for better hardware utilization *(Rejected, unassessed)*
-
-## From Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`
-
-- [SOTA-097](../record/practices.d/SOTA-097.md) — Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)` *(Active, unassessed)*
-  - [SOTA-198](../record/practices.d/SOTA-198.md) — Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run *(Active, emerging)*
-
-## From Implement dynamic temperature scaling for mixing
-
-- alongside: [SOTA-102](../record/practices.d/SOTA-102.md) — Implement dynamic temperature scaling for mixing *(Superseded, unassessed)*
-- alongside: [SOTA-103](../record/practices.d/SOTA-103.md) — Adjust data mixing proportions online from per-domain training loss *(Active, unassessed)*
-
-## From PagedAttention to accelerate batch inference for LLM sampling
-
-- [SOTA-105](../record/practices.d/SOTA-105.md) — PagedAttention to accelerate batch inference for LLM sampling *(Active, unassessed)*
-  - [SOTA-113](../record/practices.d/SOTA-113.md) — Use continuous batching for inference *(Active, unassessed)*
-    - [SOTA-115](../record/practices.d/SOTA-115.md) — Overlap prefill and decode compute *(Active, unassessed)*
-
-## From Prefer GQA to MQA or MHA
-
-- alongside: [SOTA-109](../record/practices.d/SOTA-109.md) — Prefer GQA to MQA or MHA *(Active, unassessed)*
-- alongside: [SOTA-147](../record/practices.d/SOTA-147.md) — Compress the KV cache into one shared latent vector instead of sharing key and value heads *(Active, emerging)*
-
-## From At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width
-
-- alongside: [SOTA-125](../record/practices.d/SOTA-125.md) — At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width *(Proposed, unreplicated)*
-- alongside: [SOTA-190](../record/practices.d/SOTA-190.md) — Increase depth before any other dimension when scaling a transformer *(Proposed, unreplicated)*
-
-## From Train autoregressive models with fill-in-the-middle by default: it is a data transformation, and it is free
-
-- [SOTA-174](../record/practices.d/SOTA-174.md) — Train autoregressive models with fill-in-the-middle by default: it is a data transformation, and it is free *(Active, converged)*
-  - [SOTA-128](../record/practices.d/SOTA-128.md) — Train fill-in-the-middle data without masking the loss on non-FIM tokens *(Active, unassessed)*
-
-## From Build a reasoning model in three stages: pretrain on general data, SFT on reasoning traces, then RL with verifiable rewards
-
-- alongside: [SOTA-129](../record/practices.d/SOTA-129.md) — Build a reasoning model in three stages: pretrain on general data, SFT on reasoning traces, then RL with verifiable rewards *(Active, unassessed)*
-- alongside: [SOTA-130](../record/practices.d/SOTA-130.md) — Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model *(Proposed, contested)*
-
-## From Widen the residual stream into several streams and constrain the mixing between them
-
-- [SOTA-169](../record/practices.d/SOTA-169.md) — Widen the residual stream into several streams and constrain the mixing between them *(Proposed, emerging)*
-  - [SOTA-137](../record/practices.d/SOTA-137.md) — Widen the residual stream into several streams with freely learned mixing (hyper-connections) *(Superseded, unassessed)*
-    - [SOTA-136](../record/practices.d/SOTA-136.md) — Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) *(Proposed, contested)* — also extends SOTA-169
-- alongside: [SOTA-133](../record/practices.d/SOTA-133.md) — Replace fixed residual accumulation with learned attention over preceding layers *(Active, emerging)*
-
-## From Give linear-attention layers a gated delta rule: a decay gate for erasure plus a delta update for targeted writes
-
-- [SOTA-135](../record/practices.d/SOTA-135.md) — Give linear-attention layers a gated delta rule: a decay gate for erasure plus a delta update for targeted writes *(Active, unassessed)*
-  - [SOTA-177](../record/practices.d/SOTA-177.md) — Decouple the erase address from the write address in a delta-rule recurrence *(Proposed, unreplicated)*
-
-## From Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens
-
-- [SOTA-140](../record/practices.d/SOTA-140.md) — Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens *(Active, contested)*
-  - [SOTA-141](../record/practices.d/SOTA-141.md) — Decay the learning rate linearly all the way to zero *(Proposed, unreplicated)*
-  - [SOTA-142](../record/practices.d/SOTA-142.md) — Set the peak learning rate by a power law in tokens so it transfers across batch size and training length *(Active, unassessed)*
-
-## From Parameterize the model with µP and tune hyperparameters on a narrow proxy, transferring them across width
-
-- [SOTA-143](../record/practices.d/SOTA-143.md) — Parameterize the model with µP and tune hyperparameters on a narrow proxy, transferring them across width *(Active, unassessed)*
-  - [SOTA-144](../record/practices.d/SOTA-144.md) — Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too *(Proposed, unreplicated)*
-  - [SOTA-159](../record/practices.d/SOTA-159.md) — Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling *(Proposed, unreplicated)*
-
-## From Estimate the RL baseline from a group of samples for the same prompt instead of training a critic
-
-- [SOTA-145](../record/practices.d/SOTA-145.md) — Estimate the RL baseline from a group of samples for the same prompt instead of training a critic *(Active, converged)*
-  - [SOTA-146](../record/practices.d/SOTA-146.md) — Correct the GRPO objective before running it — the published form has three independently identified defects *(Proposed, emerging)*
-- [SOTA-154](../record/practices.d/SOTA-154.md) — Fine-tune with evolution strategies instead of policy-gradient reinforcement learning *(Active, contested)*
-  - [SOTA-212](../record/practices.d/SOTA-212.md) — Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them *(Proposed, unreplicated)*
-  - [SOTA-213](../record/practices.d/SOTA-213.md) — Control evolution-strategies drift with a larger population or an anchor penalty, not by stopping training early *(Proposed, emerging)*
-
-## From Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound
-
-- [SOTA-150](../record/practices.d/SOTA-150.md) — Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound *(Active, converged)*
-  - [SOTA-148](../record/practices.d/SOTA-148.md) — Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss *(Proposed, emerging)*
-  - [SOTA-149](../record/practices.d/SOTA-149.md) — Build the sparse layers from many small experts plus an always-on shared one, not a few large ones *(Active, emerging)*
-  - [SOTA-180](../record/practices.d/SOTA-180.md) — Keep the routed experts' weights in a down-projected latent space and spend the saved bandwidth on more of them *(Active, emerging)*
-  - [SOTA-209](../record/practices.d/SOTA-209.md) — Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch *(Proposed, unassessed)*
-
-## From Compute the normalization statistic without centering (RMSNorm)
-
-- alongside: [SOTA-182](../record/practices.d/SOTA-182.md) — Compute the normalization statistic without centering (RMSNorm) *(Active, universal)*
-- alongside: [SOTA-191](../record/practices.d/SOTA-191.md) — Consider removing LayerNorm's learnable gain and bias rather than tuning them *(Proposed, contested)*
-
-## From Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal
-
-- [SOTA-188](../record/practices.d/SOTA-188.md) — Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal *(Active, converged)*
-  - [SOTA-195](../record/practices.d/SOTA-195.md) — Predict v rather than the noise when the model will be evaluated at low signal-to-noise *(Active, converged)*
-
-## From Pair any gradient compressor with error feedback, and correct the momentum it is applied under
-
-- [SOTA-214](../record/practices.d/SOTA-214.md) — Pair any gradient compressor with error feedback, and correct the momentum it is applied under *(Active, emerging)*
-  - [SOTA-215](../record/practices.d/SOTA-215.md) — Freeze Adam's variance term after a warmup before compressing its update, and never compress the update directly *(Proposed, unreplicated)*
-  - [SOTA-224](../record/practices.d/SOTA-224.md) — Ramp the sparsity ratio up over the first few epochs rather than starting at the target *(Active, unreplicated)*
-
-## From Retune the learning rate, momentum and schedule at every batch size you compare, never by a scaling heuristic
-
-- alongside: [SOTA-218](../record/practices.d/SOTA-218.md) — Retune the learning rate, momentum and schedule at every batch size you compare, never by a scaling heuristic *(Active, unreplicated)*
-- alongside: [SOTA-221](../record/practices.d/SOTA-221.md) — To train past the batch size where your optimizer stalls, change the optimizer's conditioning rather than the scaling rule *(Active, unreplicated)*
-
-## From Drop the parameter server for gossip once the network is the bottleneck, and measure where that is rather than inheriting a threshold
-
-- [SOTA-225](../record/practices.d/SOTA-225.md) — Drop the parameter server for gossip once the network is the bottleneck, and measure where that is rather than inheriting a threshold *(Active, unreplicated)*
-  - [SOTA-223](../record/practices.d/SOTA-223.md) — Do not keep the gossip topology static: sample a fresh random neighbourhood every round *(Proposed, unreplicated)*
-  - [SOTA-226](../record/practices.d/SOTA-226.md) — If the gossip topology is static, make it a directed exponential graph, not a ring *(Active, unreplicated)*
-
-## From Decode with a draft model and an accept-reject rule, which is exactly lossless
-
-- [SOTA-227](../record/practices.d/SOTA-227.md) — Decode with a draft model and an accept-reject rule, which is exactly lossless *(Active, converged)*
-  - [SOTA-229](../record/practices.d/SOTA-229.md) — Scale the draft model's training data, once nothing constrains it to predict the target's features *(Proposed, unreplicated)*

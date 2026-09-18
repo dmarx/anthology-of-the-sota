@@ -1,0 +1,69 @@
+---
+status: Active
+title: 'ImageNet: A large-scale hierarchical image database'
+version: 1
+tags:
+- analysis-and-evaluation
+- vision-and-graphics
+date: '2026-09-18'
+published: '2009-06-01'
+doi: '10.1109/CVPR.2009.5206848'
+first_author: 'Deng'
+keywords:
+- 'dataset'
+- 'image-classification'
+- 'wordnet'
+- 'crowdsourcing'
+implementations:
+- 'ImageNet'
+summary: >-
+  Deng et al. (2009), CVPR. The database itself — millions of images organised
+  on the WordNet noun hierarchy. Almost nothing in this record is measured on
+  it: an "ImageNet" number here is nearly always ILSVRC
+  ([LIT-tmpa2myh](../literature.d/LIT-tmpa2myh.md)), the thousand-class challenge built from a slice of it.
+---
+
+# LIT-tmp5z2wm: ImageNet: A large-scale hierarchical image database
+
+Deng et al. (2009) — [DOI-10.1109/CVPR.2009.5206848](https://doi.org/10.1109/CVPR.2009.5206848)
+
+## Key takeaways
+
+- **A database organised by an ontology**, not a benchmark: images collected
+  per WordNet noun synset, with the hierarchy as the organising principle and
+  crowdsourced verification as the quality control
+- **It defines no task, no split and no metric.** Those come from the
+  challenge built on top of it, which is a separate paper and a separate
+  artifact
+- The construction method — scrape broadly, then pay humans to verify against
+  a fixed ontology — is the ancestor of a great deal of later dataset work,
+  and its known consequence is that the label set inherits the ontology's
+  assumptions rather than the task's
+
+## Standing in the anthology
+
+**Carries no practice, deliberately** — `ADR-032`.
+
+It is here for a disambiguation, and the disambiguation is the whole reason
+this note and `LIT-tmpa2myh` are two documents rather than one.
+
+**"ImageNet" names three different things in this record.** Seventy-four
+documents use the word. The overwhelming majority report a classification
+number — `NOTE-157`'s top-1 of 69.94% → 73.24%, `NOTE-096`'s ResNet-50 and
+AlexNet results, `NOTE-148`'s ViT-S/16 — and every one of those is **ILSVRC**,
+the 1,000-class challenge, not the database this paper describes. Nine
+documents say **ImageNet-64**, a downsampled generative-modelling set where
+the metric is FID rather than accuracy and the numbers are not comparable to
+either. A handful say **TinyImageNet**, which is a third thing again.
+
+None of that is wrong in the citing documents — it is how the field speaks.
+It is a problem for a record whose whole purpose is that a reader can follow
+a claim to its evidence, because "validated on ImageNet" resolves to three
+incompatible instruments and the record had no way to say which.
+
+The third time this pattern has been filed: ARC-AGI against AI2 ARC
+(`LIT-405`, `LIT-407`), BBH against BIG-bench (`LIT-420`, `LIT-077`), and now
+this. All three are one name over two or more instruments, and in all three
+the record was reporting numbers across the split without a place to mark it.
+
+Unread — no `NOTE`.

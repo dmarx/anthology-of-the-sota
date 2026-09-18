@@ -1,0 +1,78 @@
+---
+status: Active
+title: 'Gradient-based learning applied to document recognition'
+version: 1
+tags:
+- analysis-and-evaluation
+- vision-and-graphics
+date: '2026-09-18'
+published: '1998-11-01'
+doi: '10.1109/5.726791'
+first_author: 'LeCun'
+keywords:
+- 'dataset'
+- 'convolutional-networks'
+- 'handwritten-digits'
+- 'document-recognition'
+implementations:
+- 'MNIST'
+- 'LeNet-5'
+summary: >-
+  LeCun et al. (1998), Proceedings of the IEEE. The paper MNIST comes from.
+  In this record it is cited for the dataset alone, and almost always in one
+  role: the small convex-ish problem where a claim about influence,
+  attribution or retraining can be checked against ground truth.
+---
+
+# LIT-tmp06jsp: Gradient-based learning applied to document recognition
+
+LeCun et al. (1998) — [DOI-10.1109/5.726791](https://doi.org/10.1109/5.726791)
+
+## Key takeaways
+
+- **MNIST** — 70,000 labelled 28×28 handwritten digits — is introduced here,
+  alongside LeNet-5 and the argument for learning features with gradient
+  descent rather than engineering them
+- **The dataset outlived the paper's thesis and then the paper's difficulty.**
+  MNIST has been saturated for a long time; nothing in this record cites an
+  MNIST accuracy number as evidence that a method is good
+- It is instead used as a **scale at which the expensive thing is affordable**:
+  small enough that leave-one-out retraining, exhaustive subsampling and
+  per-example influence can actually be computed
+
+## Standing in the anthology
+
+**Carries no practice, deliberately** — `ADR-032`.
+
+<!-- inactive-ok-block: THEORY-013 — Rejected, and named here precisely
+     because it is: the MNIST subsampling experiment is what refuted it.
+     The citation is to the retirement, not to the account -->
+Twenty-six documents cite it, and the interesting fact is how uniform the
+role is. `NOTE-181` matches influence functions against **actual
+leave-one-out retraining** on 10-class MNIST — a comparison that exists
+because retraining 60,000 times is possible here and nowhere else.
+`LIT-058` **subsampled MNIST and ImageNet and re-ran** to test whether the
+optimal batch size tracks dataset size — and that experiment is what put
+`THEORY-013` in the attic, because the dependence it predicted "does not
+depend on data set size in any consistent way". The same experiment is what
+`SOTA-218` rests on. A dataset you can shrink and retrain is how a scaling
+claim gets falsified rather than argued about. `NOTE-180` ranks mislabelled
+examples by self-influence on CIFAR-10 and MNIST. `NOTE-144` uses MNIST and
+Fashion MNIST as the near-saturation regime where batch-size differences fall
+inside noise.
+
+So the bound this note supplies is not "MNIST is easy", which every citing
+document already knows. It is the more useful one: **MNIST results in this
+record are almost all existence proofs or ground-truth checks, not
+performance claims**, and that is a different kind of evidence with a
+different failure mode. An influence method validated against retraining on
+MNIST has been validated on a small, low-dimensional, nearly-convex problem;
+`NOTE-181` marks its own claim "strong **for convex models**" for exactly
+this reason, and it is the one that says so most clearly rather than the only
+one it applies to.
+
+`LIT-058`'s 35-workload sweep is the counter-case worth knowing about: there
+MNIST and Fashion MNIST are two of seven datasets used as genuine workloads
+rather than as a proving ground.
+
+Unread — no `NOTE`.

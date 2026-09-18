@@ -15,7 +15,14 @@ consensus_note: >-
   next step's compute — is old and widely implemented; what is this paper's is
   the anchor construction that makes one step of slack enough.
 title: 'Overlap the synchronisation with one or two local steps instead of communicating every step'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-18'
+  note: >-
+    Names the instrument. The note already recorded that the experiments are
+    CIFAR-10 and the claim is pitched at ImageNet scale; CIFAR-10 is now
+    filed, so the gap has a document behind it. Recommendation unchanged.
 tags:
 - distributed-optimization
 date: '2026-09-16'
@@ -84,7 +91,11 @@ interconnect — it names 10 Gbps as an example of slower — or on a larger
 network such as a transformer, and tests neither.
 
 **CIFAR-10, 2020.** One dataset. Earlier drafts of this document said CIFAR-10
-and ImageNet; the paper's experiments are CIFAR-10.
+and ImageNet; the paper's experiments are CIFAR-10. CIFAR-10 is
+[LIT-tmps5307](../literature.d/LIT-tmps5307.md) — 32×32 images, cheap enough to run a method on
+first and small enough that a result there is weak evidence about scale,
+which is the whole distance between what this paper measured and what the
+claim above is pitched at.
 
 **`alpha = 0.6` and `beta = 0.7` are not filed here.** The pullback strength
 and the anchor's momentum are algorithm-local constants tuned on this task —

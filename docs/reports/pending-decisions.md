@@ -107,7 +107,7 @@
 | 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 6 | 1 | Every practice states its origin, even when it is the primary source |
 | 2026-09-15 | Proposed | [ADR-036](../../record/decisions.d/ADR-036.md) | 3 | 0 | An unbound relation is one of four things, and only one of them is a retag |
 | 2026-09-15 | Proposed | [ADR-033](../../record/decisions.d/ADR-033.md) | 0 | 0 | Readings made in another context port into the record; their agenda does not |
-| 2026-09-16 | Proposed | [ADR-035](../../record/decisions.d/ADR-035.md) | 32 | 0 | A document may carry more than one topic; the first is the primary |
+| 2026-09-16 | Proposed | [ADR-035](../../record/decisions.d/ADR-035.md) | 36 | 0 | A document may carry more than one topic; the first is the primary |
 | 2026-09-16 | Proposed | [ADR-038](../../record/decisions.d/ADR-038.md) | 13 | 0 | A note has no topics of its own: it derives them from its paper |
 | 2026-09-16 | Proposed | [ADR-041](../../record/decisions.d/ADR-041.md) | 8 | 0 | An algorithm-local tuning constant belongs in the reading of the paper that measured it, not in the practice registry |
 | 2026-09-16 | Proposed | [ADR-039](../../record/decisions.d/ADR-039.md) | 2 | 0 | The configuration is part of the record, and the lint reads it |

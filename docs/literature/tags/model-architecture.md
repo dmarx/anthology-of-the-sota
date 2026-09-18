@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-43 of 361 LIT documents. Back to the [full index](../README.md).
+44 of 361 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -53,3 +53,4 @@
 | [LIT-384](../../../record/literature.d/LIT-384.md) | VGGT: Visual Geometry Grounded Transformer | Wang et al. (2025), [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651). One feed-forward pass infers camera parameters, point maps, depth maps and 3D point tracks together, from one view or hundreds, in under a second — beating methods that post-process with geometry optimisation. The claim that matters is that the specialisation into separate tasks was never necessary. | Active |
 | [LIT-406](../../../record/literature.d/LIT-406.md) | Qwen2.5 Technical Report | Qwen Team (2024), [ARXIV-2412.15115](https://arxiv.org/abs/2412.15115). The open-weight family this record measures against more than any other — forty-five documents here name it, and until now none of them could point at it. | Active |
 | [LIT-417](../../../record/literature.d/LIT-417.md) | The Remarkable Robustness of LLMs: Stages of Inference? | Lad et al. (2024), [ARXIV-2406.19384](https://arxiv.org/abs/2406.19384). Deleting a layer outright, or swapping two adjacent ones, leaves 72-95% of top-1 predictions unchanged with no fine-tuning — but only in the middle. Interventions on the first and last layers degrade badly, and swapping hurts less than dropping. The paper reads that localized sensitivity as four stages of inference, with the question mark in its own title: detokenization, feature engineering, prediction ensembling, residual sharpening. The record files the measurement and the framework as separate claims because their evidence is not the same strength. | Active |
+| [LIT-425](../../../record/literature.d/LIT-425.md) v2 | Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer | Raffel et al. (2019), [ARXIV-1910.10683](https://arxiv.org/abs/1910.10683). T5's paper, and the origin of **C4** — the heuristically filtered Common Crawl slice that forty-six documents here train on. Filed for the corpus: the record cites C4 constantly and had no document behind it. | Active |

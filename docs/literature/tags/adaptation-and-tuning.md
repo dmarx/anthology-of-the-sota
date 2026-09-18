@@ -6,7 +6,7 @@
 
 **Adaptation and tuning** — taking a trained model somewhere new — fine-tuning and transfer, preference training and alignment, parameter-efficient adaptation, context extension.
 
-32 of 361 LIT documents. Back to the [full index](../README.md).
+33 of 361 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -42,3 +42,4 @@
 | [LIT-381](../../../record/literature.d/LIT-381.md) | Scaling Diffusion Language Models via Adaptation from Autoregressive Models | Gong et al. (2024), [ARXIV-2410.17891](https://arxiv.org/abs/2410.17891). Diffusion language models are hard to train from scratch at scale and there are a great many trained autoregressive ones, so convert instead: continual pretraining on under 200B tokens turns GPT2 and LLaMA at 127M–7B into DiffuGPT and DiffuLLaMA. The conversion rests on a stated connection between the AR and diffusion objectives rather than on the two being retrained independently. | Active |
 | [LIT-382](../../../record/literature.d/LIT-382.md) | Large Language Models Cannot Self-Correct Reasoning Yet | Huang et al. (2023), [ARXIV-2310.01798](https://arxiv.org/abs/2310.01798). The negative result the self-correction literature is answering: asked to revise its own reasoning with no external feedback, a model does not reliably improve, and often gets worse. Names the thing being tested — INTRINSIC self-correction — and that distinction is most of the paper's lasting value. | Active |
 | [LIT-383](../../../record/literature.d/LIT-383.md) | Training Language Models to Self-Correct via Reinforcement Learning | Kumar et al. (2024), [ARXIV-2409.12917](https://arxiv.org/abs/2409.12917). SCoRe: multi-turn online RL on entirely self-generated correction traces, which teaches the self-correction that prompting could not produce. +15.6% on MATH and +9.1% on HumanEval for Gemini 1.0 Pro and 1.5 Flash. Its more transferable half is the diagnosis of why supervised fine-tuning on correction traces fails. | Active |
+| [LIT-425](../../../record/literature.d/LIT-425.md) v2 | Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer | Raffel et al. (2019), [ARXIV-1910.10683](https://arxiv.org/abs/1910.10683). T5's paper, and the origin of **C4** — the heuristically filtered Common Crawl slice that forty-six documents here train on. Filed for the corpus: the record cites C4 constantly and had no document behind it. | Active |

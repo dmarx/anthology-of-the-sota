@@ -1,0 +1,100 @@
+---
+status: Active
+title: 'Tag for what the document is about, not for what the record wanted it for'
+version: 1
+tags:
+- record
+date: '2026-09-18'
+summary: >-
+  A second or third topic costs nothing when it is true, and a missing one
+  costs a reader who browses by topic and never finds the document. Tag the
+  subject, liberally. [ADR-035](ADR-035.md)'s warning about incidental tags binding chain
+  edges is narrower than it reads — an invariant binds nothing where no
+  relation is declared — and was being applied as a general brake.
+  Rejected: minimal tagging, and tagging by filing motive.
+---
+
+<!-- inactive-ok-file: ADR-035 — Proposed, and cited throughout on purpose:
+     this decision reads its scope rather than overturning it, and its being
+     Proposed is part of the point — an unsettled decision was being applied
+     as a settled general rule -->
+
+# ADR-tmpbgwiw: Tag for what the document is about, not for what the record wanted it for
+
+## Context
+
+`LIT-425` is the T5 paper. It entered this record because forty-six documents
+train on C4 and the corpus had no document behind it, so it was filed with
+one tag: `data-pipeline`. The reasoning written down at the time was that the
+record holds the paper *for its corpus*, and that a second tag would be
+incidental and might bind a chain edge under `ADR-035`.
+
+Both halves of that were wrong, and they were wrong in ways worth separating.
+
+**The subject was mistaken for the motive.** T5's text-to-text framework and
+its systematic ablation of transfer-learning choices are not incidental to
+the paper — they are most of it. Why the record went and got a document is a
+fact about the record; what the document is about is a fact about the
+document. Only the second belongs in `tags:`, because `tags:` is what a
+reader browses by, and a reader looking for architecture work has no way to
+know that this project's interest was the dataset.
+
+**The chain warning was applied far outside its case.** `ADR-035` says not to
+add a tag in order to bind a relation, and the guard exists because
+`chains.lineage` declares `invariant: tags`. But an invariant binds an edge
+only where an edge exists — where a document declares `extends`, `corrects`
+or `compared_against`. `LIT-425` declares none. There was no edge for the tag
+to bind and never could have been.
+
+The cost of the error is asymmetric and that is what settles it. An extra
+true tag puts a document on one more index page. A missing one makes the
+document unfindable to everyone who browses that topic, silently, with
+nothing in any report to say so — `DP-004`'s shape again, where the absence
+leaves no trace.
+
+## Decision
+
+**Tag the document's subject, and be liberal about it.** More than one topic
+is normal; three is fine. The test is whether the tag is *justifiably
+appropriate* — whether someone browsing that topic would be right to expect
+this document — not whether it is the single best word, and not whether it is
+why the record acquired the thing.
+
+`ADR-035` stands unchanged: the first tag is still the primary topic, and
+adding a tag **in order to bind a relation** is still forbidden. What this
+decision says is that the forbidden case is narrow. A tag that is true of the
+document is not made suspect by a chain that might one day read it, and a
+document with no relations declared is not in the chain's reach at all.
+
+## Alternatives considered
+
+- **Minimal tagging — one topic unless a second is unavoidable.** What was
+  being practised. It optimises for a tidy index at the cost of the thing an
+  index is for, and it makes every additional tag an argument to be won
+  rather than a fact to be recorded.
+- **Tag by filing motive**, so the tags record why the record holds a
+  document. Coherent, and wrong for the reader: it encodes the curator's
+  history where the browser expects the subject. The motive already has a
+  home — the `Standing in the anthology` section says it in prose, which is
+  where a reason with nuance belongs.
+- **Drop `invariant: tags` from `chains.lineage`** so the tension cannot
+  recur. Too big a change for the problem: the invariant does useful work on
+  documents that *do* declare relations, and the fix here is to read its
+  scope correctly rather than remove it.
+
+## Consequences
+
+**`LIT-425` v2** gains `model-architecture` and `adaptation-and-tuning`;
+**`LIT-426` v2** gains `analysis-and-evaluation`. Both were filed under the
+old reading in the contribution immediately before this one.
+
+**Documents already in the record are likely under-tagged**, since the
+cautious reading has been in force for a while. This decision does not
+mandate a sweep — a retag pass is its own contribution, and the topic pages
+are generated, so the cost of being late is a document that shows up on one
+fewer page until someone touches it.
+
+**The chain invariant now has a stated scope**, which it lacked: it binds
+where a relation is declared and nowhere else. A future change that makes
+tags bind edges more broadly would need to say so, because this decision
+reads them as not doing that.

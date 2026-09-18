@@ -1,0 +1,66 @@
+---
+status: Active
+title: 'On the Measure of Intelligence'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-18'
+published: '2019-11-05'
+arxiv: '1911.01547'
+first_author: 'Chollet'
+keywords:
+- 'benchmark'
+- 'generalization'
+- 'arc-agi'
+- 'skill-acquisition-efficiency'
+implementations:
+- 'ARC-AGI'
+summary: >-
+  Chollet (2019), [ARXIV-1911.01547](https://arxiv.org/abs/1911.01547). Argues that measuring skill measures the
+  wrong thing, and introduces ARC — a puzzle benchmark built so that every
+  task is structurally novel, which is what makes it resistant to the
+  memorization that saturates ordinary benchmarks.
+---
+
+# LIT-tmpnraor: On the Measure of Intelligence
+
+Chollet (2019) — [ARXIV-1911.01547](https://arxiv.org/abs/1911.01547)
+
+## Key takeaways
+
+- **The complaint:** benchmarks measure *skill at a task*, and skill is
+  purchasable with data and priors. A system that has seen enough of a task
+  distribution scores well without having acquired anything, so skill-based
+  measurement cannot distinguish breadth of ability from breadth of exposure
+- **The proposal:** measure **skill-acquisition efficiency** — how much a
+  system learns from how little — against explicitly stated priors and
+  experience
+- **The instrument: ARC** (later widely called **ARC-AGI**), a set of visual
+  grid puzzles where each task is intended to be structurally novel, solvable
+  from a handful of demonstrations, and resistant to being learned in advance
+- What that buys is the property the record cares about here: a benchmark
+  built to defeat memorization behaves differently under methods that search
+  or adapt at test time than one built to sample a task distribution
+
+## Standing in the anthology
+
+**Carries no practice, deliberately** — `ADR-032`. Filed for what it
+establishes about measurement, and for a disambiguation the record needs.
+
+**This is the "ARC" that `SOTA-235` reports on, and it is not the only ARC in
+this record.** `SOTA-235` (adapt at test time on the evaluation instance
+itself) carries a headline of **53.0%, up to 6× fine-tuned baselines**, and
+61.9% ensembled — figures on *this* benchmark, where the whole point is that
+the tasks are novel, which is why a test-time-adaptation result there is
+close to definitional rather than incidental.
+
+<!-- inactive-ok-block: THEORY-007 — Proposed, and cited only as a place the record
+     uses `ARC-C` in the AI2 sense. The disambiguation holds whatever that
+     explanation's status settles at. -->
+Elsewhere in the record, "ARC" means `LIT-tmpwqnta` — the AI2 Reasoning
+Challenge, a multiple-choice science-question benchmark with no relation to
+this one beyond the acronym. `THEORY-007` and `LIT-184` use it in that sense.
+The two are now separable; `SOTA-235` and `LIT-379` say **ARC-AGI** rather
+than `ARC` as of this contribution.
+
+Unread — no `NOTE`.

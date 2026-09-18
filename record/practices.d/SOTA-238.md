@@ -4,7 +4,14 @@ status: 'Active'
 formerly:
 - SOTA-tmp4n8k9
 title: 'Set domain weights with a small proxy model under group DRO on excess loss, then transfer them'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-18'
+  note: >-
+    Names what the +6.5 points is measured against. The Pile is now filed;
+    its default weights are a judgement call, which is what the gain is
+    relative to. Recommendation and consensus unchanged.
 tags:
 - data-pipeline
 consensus: converged
@@ -46,6 +53,13 @@ resulting weights and train the model you actually wanted.
 In the paper, a 280M proxy sets the weights for an 8B run — a 30x transfer —
 for **+6.5 points** average few-shot downstream accuracy over The Pile's
 default weights, and baseline accuracy in **2.6x fewer steps**.
+
+Read the denominator. The Pile ([LIT-tmpzwmum](../literature.d/LIT-tmpzwmum.md)) ships 22 named domains and a
+default sampling mixture its authors chose by judgement and never claimed
+was optimal. So +6.5 points answers *can a learned mixture beat a hand-picked
+one*, and the size of the gain is partly a property of the baseline: a corpus
+shipped with better-tuned defaults would make this method look worse without
+the method changing.
 
 ## Optimise excess loss, not loss
 

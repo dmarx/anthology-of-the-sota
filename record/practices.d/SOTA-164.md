@@ -10,7 +10,14 @@ consensus_note: >-
   and Olmo 3 cites this paper for it. Not doing it is what would need
   justifying, which is the definition of the value.
 title: 'Deduplicate the pretraining corpus at both substring and document granularity before training on it'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-18'
+  note: >-
+    Names the corpus. The headline example is a fact about C4, now filed, and
+    the point that C4 shipped deduplicated is what makes two granularities
+    necessary. Recommendation unchanged.
 tags:
 - data-pipeline
 date: '2026-09-08'
@@ -40,7 +47,9 @@ Run two passes, because they catch different things:
 
 - **Exact substring matching**, which finds long repeated spans wherever they
   sit — the paper's example is one 61-word English sentence appearing
-  thousands of times in C4.
+  thousands of times in C4. C4 ([LIT-tmplbblp](../literature.d/LIT-tmplbblp.md)) had already been
+  deduplicated by its own authors when Lee et al. found that, which is what
+  makes the second pass below a requirement rather than a refinement.
 - **Approximate near-duplicate detection at document granularity**, which
   finds documents that are the same page with different boilerplate.
 

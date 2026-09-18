@@ -1,0 +1,73 @@
+---
+status: Active
+title: 'The Pile: An 800GB Dataset of Diverse Text for Language Modeling'
+version: 1
+tags:
+- data-pipeline
+date: '2026-09-18'
+published: '2020-12-31'
+arxiv: '2101.00027'
+first_author: 'Gao'
+keywords:
+- 'pretraining-corpus'
+- 'data-mixture'
+- 'domain-weights'
+- 'diversity'
+implementations:
+- 'The Pile'
+summary: >-
+  Gao et al. (2020), [ARXIV-2101.00027](https://arxiv.org/abs/2101.00027). 800GB assembled from 22 named
+  sub-corpora with declared weights. The named domains and the default
+  mixture are why the data-mixing line in this record is measured on it —
+  and every "over The Pile's default weights" number is relative to a choice
+  its authors made, not to an optimum.
+---
+
+# LIT-tmpzwmum: The Pile: An 800GB Dataset of Diverse Text for Language Modeling
+
+Gao et al. (2020) — [ARXIV-2101.00027](https://arxiv.org/abs/2101.00027)
+
+## Key takeaways
+
+- **22 sub-corpora, assembled deliberately rather than crawled**: academic
+  writing, books, code, web, dialogue and reference material, each a distinct
+  source with a declared sampling weight
+- **Diversity is the thesis**, argued against training on filtered web text
+  alone, and evaluated by showing that models trained on it do better on
+  components they were not specialised for
+- **The weights are a judgement call, stated as one.** The authors chose how
+  much of each source to sample, partly by up-weighting what they considered
+  higher quality. They are a defensible default, not a derived optimum
+
+## Standing in the anthology
+
+**Carries no practice, deliberately** — `ADR-032`.
+
+Five documents cite it, which is far below where this record has generally
+drawn the line — and it is filed anyway, because of *what* those five do with
+it. The Pile is the substrate the entire data-mixing line is measured on, and
+it is the substrate **because it ships named domains**. A corpus that is one
+undifferentiated pile of web text cannot host a question about domain
+proportions at all.
+
+`SOTA-238` sets domain weights with a small proxy under group DRO and reports
+**+6.5 points** average few-shot accuracy and baseline accuracy in 2.6×
+fewer steps. `LIT-391` (DoReMi) is where that comes from. `LIT-117` and
+`NOTE-002` run online mixing over **22 domains of The Pile** at 1B parameters
+and 50B tokens.
+
+**The bound is in the denominator, and no citing document states it.** Every
+one of those improvements is measured *over The Pile's default weights*. Those
+weights are the judgement above — a reasonable starting point chosen by the
+corpus's authors, never claimed by them to be optimal. So "+6.5 points over
+the default mixture" answers "can a learned mixture beat a hand-picked one",
+which is a weaker and more interesting question than "how good is this
+mixture". It also means the size of the gain is partly a property of the
+baseline: a corpus shipped with better-tuned default weights would make the
+same method look worse without the method changing.
+
+`NOTE-002` marks the neighbouring limit itself — "one scale, one corpus" — so
+the reading already knows the evidence is narrow. What it does not say, and
+what this note is for, is that the corpus is also the yardstick.
+
+Unread — no `NOTE`.

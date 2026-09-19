@@ -4,10 +4,11 @@
 
 **systems-optimization**.
 
-3 of 181 NOTE documents. Back to the [full index](../README.md).
+4 of 184 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-122](../../../record/notes.d/NOTE-122.md) | ZeRO-Infinity: Breaking the GPU Memory Wall for Extreme Scale Deep Learning | By partitioning model states across all parallel devices and using a bandwidth-centric allgather strategy (rather than per-device broadcast), ZeRO-Infinity aggregates PCIe bandwidth linearly with device count, making NVMe and CPU offloading fast enough to sustain efficient training despite their individually slow bandwidths. | Read |
 | [NOTE-164](../../../record/notes.d/NOTE-164.md) | QLoRA: Efficient Finetuning of Quantized LLMs | Store the frozen base in 4 bits, compute in 16, and train only LoRA adapters: 65B fine-tuning goes from >780GB to <48GB with no measured loss against a 16-bit fully fine-tuned baseline. The quantization is the headline; the more useful result for anyone already using LoRA is that the standard query/value placement does not reach full fine-tuning at scale, and that the adapter count rather than the rank is what closes the gap. | Read |
 | [NOTE-168](../../../record/notes.d/NOTE-168.md) | The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits | Ternary weights trained from scratch, matching FP16 from 3B upward at equal size and tokens. The interesting claim is not the compression ratio but that the matrix multiply becomes integer addition — which is a bet on hardware, and the one place the paper's argument outruns its measurements. | Read |
+| [NOTE-184](../../../record/notes.d/NOTE-184.md) | Training Deep Nets with Sublinear Memory Cost | Two contributions, and the famous one is the second. First, treat memory allocation over the computation graph as a compiler problem — liveness analysis, in-place operations, memory sharing. Then, on top of that, drop most intermediate feature maps and recompute them segment by segment during the backward pass. Dividing an n-layer chain into sqrt(n) segments costs sqrt(n) memory for one extra forward pass; the extreme of the same analysis is log n memory for n log n extra forward computation. | Read |

@@ -1,5 +1,8 @@
 ---
+number: 184
 status: Read
+formerly:
+- NOTE-tmpt5k3s
 paper: LIT-004
 title: 'Training Deep Nets with Sublinear Memory Cost'
 version: 1
@@ -14,7 +17,7 @@ summary: >-
   is log n memory for n log n extra forward computation.
 ---
 
-# NOTE-tmpt5k3s: Training Deep Nets with Sublinear Memory Cost
+# NOTE-184: Training Deep Nets with Sublinear Memory Cost
 
 ## Contribution
 

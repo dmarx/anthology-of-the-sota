@@ -1,5 +1,8 @@
 ---
+number: 183
 status: Read
+formerly:
+- NOTE-tmp73kw1
 paper: LIT-095
 title: 'The Unreasonable Effectiveness of Deep Features as a Perceptual Metric'
 version: 1
@@ -14,7 +17,7 @@ summary: >-
   representations rather than of any particular training signal.
 ---
 
-# NOTE-tmp73kw1: The Unreasonable Effectiveness of Deep Features as a Perceptual Metric
+# NOTE-183: The Unreasonable Effectiveness of Deep Features as a Perceptual Metric
 
 ## Contribution
 

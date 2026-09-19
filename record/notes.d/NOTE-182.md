@@ -1,5 +1,8 @@
 ---
+number: 182
 status: Read
+formerly:
+- NOTE-tmp2t6lw
 paper: LIT-055
 title: 'P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks'
 version: 1
@@ -14,7 +17,7 @@ summary: >-
   already published for generation, adapted to NLU and optimized properly.
 ---
 
-# NOTE-tmp2t6lw: P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks
+# NOTE-182: P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks
 
 ## Contribution
 

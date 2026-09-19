@@ -4,7 +4,7 @@
 
 **adaptation-and-tuning**.
 
-23 of 181 NOTE documents. Back to the [full index](../README.md).
+24 of 184 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -31,3 +31,4 @@
 | [NOTE-166](../../../record/notes.d/NOTE-166.md) | Scaling Diffusion Language Models via Adaptation from Autoregressive Models | Continual pretraining on under 200B tokens converts GPT2 and LLaMA at 127M-7B into diffusion language models competitive with their AR counterparts. The argument is economic before it is technical — diffusion LMs are hard to train at scale and AR checkpoints are abundant — and the capability that pays for it is infilling without prompt re-ordering. | Read |
 | [NOTE-167](../../../record/notes.d/NOTE-167.md) | The Surprising Effectiveness of Test-Time Training for Few-Shot Learning | Turn the in-context examples into a loss and take gradient steps on them at inference, then discard the update. Up to 6x a fine-tuned baseline on ARC and +7.3 points on BIG-Bench Hard at 10-shot. The finding underneath is about in-context learning: the same examples are worth several times more as gradient than as context. | Read |
 | [NOTE-169](../../../record/notes.d/NOTE-169.md) | Training Language Models to Self-Correct via Reinforcement Learning | SCoRe teaches self-correction with multi-turn online RL on the model's own traces, no teacher and no extra supervision, for +15.6% on MATH and +9.1% on HumanEval. The transferable half is the diagnosis: SFT on correction traces fails by distribution mismatch or by behaviour collapse, and the method's two stages are each aimed at one of those. | Read |
+| [NOTE-182](../../../record/notes.d/NOTE-182.md) | P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks | Prompt tuning did not fail because tuning a prompt is a weak idea; it failed because the prompt was only at the input layer, where it has too few parameters and too indirect a route to the prediction. Put prefix tokens at every layer and the same family matches full fine-tuning from 330M to 10B and on hard sequence labelling, at 0.1-3% of the parameters. The paper is explicit that it is not conceptually novel — it is deep prompt tuning, already published for generation, adapted to NLU and optimized properly. | Read |

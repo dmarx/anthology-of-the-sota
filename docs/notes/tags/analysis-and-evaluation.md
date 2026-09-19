@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-43 of 181 NOTE documents. Back to the [full index](../README.md).
+44 of 184 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -51,3 +51,4 @@
 | [NOTE-179](../../../record/notes.d/NOTE-179.md) | If Influence Functions are the Answer, Then What is the Question? | Decomposes the influence-function / leave-one-out gap into five terms and finds that the three largest are not approximation errors but a change of question. Influence estimates on neural networks closely track the proximal Bregman response function, which supports the same use cases — so the method is not fragile, it was mislabelled. | Read |
 | [NOTE-180](../../../record/notes.d/NOTE-180.md) | Estimating Training Data Influence by Tracing Gradient Descent | Defines a training example's influence as the total change it caused in a test point's loss over the iterations where it was used, and approximates that by step-size-weighted gradient dot products at saved checkpoints. No Hessian, no convexity. Self-influence ranks mislabelled examples to the top. | Read |
 | [NOTE-181](../../../record/notes.d/NOTE-181.md) | Understanding Black-box Predictions via Influence Functions | Traces a prediction back to the training points responsible for it by upweighting each point infinitesimally and differentiating, which needs only gradients and Hessian-vector products rather than retraining. Establishes the four uses of training-data attribution — explanation, poisoning, domain-mismatch debugging, and finding mislabelled data. | Read |
+| [NOTE-183](../../../record/notes.d/NOTE-183.md) | The Unreasonable Effectiveness of Deep Features as a Perceptual Metric | Collect human similarity judgements first, then ask which metric agrees with them. Deep features beat every hand-designed metric by a wide margin, and the surprise is the insensitivity — architecture barely matters and supervision barely matters, but training on *something* matters a great deal, because a randomly initialized network does not work. Perceptual similarity looks like an emergent property of learned visual representations rather than of any particular training signal. | Read |

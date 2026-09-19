@@ -68,6 +68,9 @@
     "ARXIV/1706.02677": {
       "title": "Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour"
     },
+    "ARXIV/1706.03741": {
+      "title": "Deep reinforcement learning from human preferences"
+    },
     "ARXIV/1706.03762": {
       "title": "Attention Is All You Need"
     },
@@ -290,6 +293,9 @@
     "ARXIV/2007.06775": {
       "title": "Analyzing and Mitigating Data Stalls in DNN Training"
     },
+    "ARXIV/2009.01325": {
+      "title": "Learning to summarize from human feedback"
+    },
     "ARXIV/2009.03300": {
       "title": "Measuring Massive Multitask Language Understanding"
     },
@@ -367,6 +373,9 @@
     },
     "ARXIV/2109.01134": {
       "title": "Learning to Prompt for Vision-Language Models"
+    },
+    "ARXIV/2109.01652": {
+      "title": "Finetuned Language Models Are Zero-Shot Learners"
     },
     "ARXIV/2109.10686": {
       "title": "Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers"

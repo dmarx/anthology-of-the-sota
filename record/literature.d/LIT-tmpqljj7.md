@@ -1,0 +1,69 @@
+---
+status: Active
+title: 'Deep reinforcement learning from human preferences'
+version: 1
+tags:
+- adaptation-and-tuning
+date: '2026-09-19'
+published: '2017-06-12'
+arxiv: '1706.03741'
+first_author: 'Christiano'
+keywords:
+- 'human-preferences'
+- 'reward-model'
+- 'reward-learning'
+- 'trajectory-comparison'
+- 'human-in-the-loop'
+implementations: []
+summary: >-
+  Christiano et al. (2017), [ARXIV-1706.03741](https://arxiv.org/abs/1706.03741). The construction the record's whole
+  post-training spine assumes and could not cite: when the reward function is
+  the thing you cannot write down, fit one to human comparisons instead and
+  optimize against the fit. Atari and simulated locomotion, on feedback
+  covering under 1% of the agent's interactions.
+extended_by:
+- LIT-tmp7x0k6
+---
+
+# LIT-tmpqljj7: Deep reinforcement learning from human preferences
+
+Christiano et al. (2017) — [ARXIV-1706.03741](https://arxiv.org/abs/1706.03741)
+
+## Key takeaways
+
+- **Ask which of two trajectory segments is better, not what the reward is.**
+  A non-expert compares pairs; a reward model is fit to those comparisons;
+  the policy is optimized against the fitted reward. The three-part loop is
+  the contribution, and it is what every later preference method rearranges
+- **Complex RL tasks solved with no access to the reward function at all** —
+  Atari games and simulated robot locomotion, which is the evidence that the
+  substitution is not merely expressible but sufficient
+- **Under 1% of the agent's interactions need feedback.** That ratio is the
+  paper's real argument: human oversight stops being the thing that bounds
+  how large a system you can supervise
+- **Novel behaviours from about an hour of human time**, which is a claim
+  about specifying goals rather than about sample efficiency — the behaviours
+  are ones no reward function had been written for
+
+## Standing in the anthology
+
+**The origin of the reward-model loop, filed because five documents here
+already depend on it.** `LIT-377` says so directly: InstructGPT's methodology
+"follows Christiano et al. (2017), who introduced learning from human
+preferences". `LIT-169` (DPO) is a claim about what that reward model
+secretly is, `LIT-082` replaces its human labels with model-written ones,
+`SOTA-183` is that replacement as a practice, and `SOTA-126` tunes the
+schedule of the method that removed the explicit reward model. None of them
+could name where the construction came from.
+
+`DP-007` names the reason and `LIT-377` supplied the trace: the note that
+filed InstructGPT wrote down that this paper was missing, and the record kept
+working without it. Agreement has no author.
+
+**It is not a language paper, and the record should not read it as one.**
+Atari and MuJoCo, an RL method with no language model in it. What crossed
+into language was the loop, not the setting — `LIT-tmp7x0k6` is the step that
+carried it, and reading this one as "early RLHF for LLMs" would collapse a
+transfer into a continuation.
+
+Unread — no `NOTE`.

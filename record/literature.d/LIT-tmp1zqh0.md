@@ -1,0 +1,74 @@
+---
+status: Active
+title: 'Finetuned Language Models Are Zero-Shot Learners'
+version: 1
+tags:
+- adaptation-and-tuning
+- data-pipeline
+date: '2026-09-19'
+published: '2021-09-03'
+arxiv: '2109.01652'
+first_author: 'Wei'
+keywords:
+- 'instruction-tuning'
+- 'zero-shot'
+- 'task-generalization'
+- 'flan'
+- 'prompt-templates'
+implementations:
+- FLAN
+summary: >-
+  Wei et al. (2021), [ARXIV-2109.01652](https://arxiv.org/abs/2109.01652). FLAN, and the name "instruction tuning":
+  fine-tune on 60+ existing NLP tasks rewritten as natural-language
+  instructions and zero-shot performance on *unseen task types* improves. The
+  rival post-training answer to `LIT-377`'s, and the one InstructGPT measured
+  itself against.
+compared_against:
+- LIT-377
+---
+
+# LIT-tmp1zqh0: Finetuned Language Models Are Zero-Shot Learners
+
+Wei et al. (2021) — [ARXIV-2109.01652](https://arxiv.org/abs/2109.01652)
+
+## Key takeaways
+
+- **Instruction tuning, defined here.** Fine-tune a pretrained model on a
+  collection of tasks each verbalized through natural-language instruction
+  templates — over 60 NLP tasks, on a 137B model — and evaluate on task
+  *types* held out of that collection
+- **It beats a larger model that was not tuned this way.** FLAN surpasses
+  zero-shot 175B GPT-3 on 20 of 25 evaluated tasks, and beats *few-shot* GPT-3
+  by a large margin on ANLI, RTE, BoolQ, AI2-ARC, OpenbookQA and StoryCloze
+- **Three things are load-bearing, by ablation**: the number of fine-tuning
+  datasets, the model scale, and the natural-language instructions themselves.
+  The third is the one that makes it a method rather than a mixture — the
+  same tasks without the instruction phrasing do not do this
+- **The supervision is existing labelled data, not new human effort.** That
+  is the whole economic difference from the preference line, and it is why the
+  two answers were live at the same time
+
+## Standing in the anthology
+
+**The road not taken, filed because the record holds the comparison's result
+and not its subject.** `LIT-377` reports FLAN at a **29.8 ± 2%** win rate
+against its SFT baseline on the API prompt distribution, where InstructGPT
+reaches **73.4 ± 2%** — and calls that "the comparison that decided the
+field's direction". A decisive comparison with one arm unfiled is a result the
+record can state and not interrogate.
+
+`compared_against` rather than `extends`, under `ADR-011`: somebody ran this
+comparison, and InstructGPT is not built on FLAN. It is the alternative that
+lost on a particular distribution, which is a different relation and a more
+interesting one.
+
+**What the comparison does not say is the part worth keeping.** The prompts
+were the OpenAI API's, which is a distribution of what users actually asked
+for; FLAN optimizes zero-shot generalization to unseen *academic task types*.
+`NOTE-161` already records the assumption that makes InstructGPT's number
+mean what it means — "the prompt distribution used for training resembles the
+one the model will face ... which is why the comparison against public-task
+instruction tuning goes the way it does". So the record holds, in one place,
+a decisive result and the reason it is narrower than it reads.
+
+Unread — no `NOTE`.

@@ -2,7 +2,7 @@
 number: 87
 status: 'Active'
 title: 'Recompute attention during backward pass instead of storing it'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-13'
@@ -14,6 +14,15 @@ history:
   date: '2026-09-18'
   note: >-
     Adds `systems-optimization`. Trading recomputation for stored activations is a memory-access decision, and it is what its line holds in common (ADR-049).
+- version: 4
+  date: '2026-09-19'
+  note: >-
+    Gains a second parent. SOTA-tmpz59lh states the general activation
+    memory/compute trade this is the attention case of, and the line v3
+    tagged `systems-optimization` to bind now has its earliest member. The
+    recommendation, the source and the ADR-029 attribution split are all
+    unchanged — LIT-074 remains the evidence and LIT-225 the origin of this
+    narrower rule.
 tags:
 - attention-techniques
 - systems-optimization
@@ -27,6 +36,7 @@ introduced_by:
 - LIT-225
 extends:
 - SOTA-086
+- SOTA-tmpz59lh
 summary: >-
   Dao et al. (2022), [LIT-074](../literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135).
 ---

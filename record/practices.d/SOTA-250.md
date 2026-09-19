@@ -1,5 +1,8 @@
 ---
+number: 250
 status: Active
+formerly:
+- SOTA-tmpkip7h
 consensus: unreplicated
 consensus_note: >-
   One lab. LIT-216 introduces it for images and LIT-215 carries the same
@@ -28,7 +31,7 @@ summary: >-
   1200 GPU-hours — faster than a ViT-S/16 trained with iBOT.
 ---
 
-# SOTA-tmpkip7h: Pretrain by predicting representations of masked regions, not their pixels
+# SOTA-250: Pretrain by predicting representations of masked regions, not their pixels
 
 ## Source
 

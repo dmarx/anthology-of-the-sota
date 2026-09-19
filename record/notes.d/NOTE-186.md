@@ -1,5 +1,8 @@
 ---
+number: 186
 status: Read
+formerly:
+- NOTE-tmp9kngh
 paper: LIT-215
 title: 'V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning'
 version: 1
@@ -13,9 +16,9 @@ summary: >-
   phase and pretraining costs up to 8x less.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpzrzg8 — Proposed, and this note is the reading that sources it; the citation is to the practice filed from this paper, not a claim it is settled -->
+<!-- inactive-ok-file: SOTA-251 — Proposed, and this note is the reading that sources it; the citation is to the practice filed from this paper, not a claim it is settled -->
 
-# NOTE-tmp9kngh: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning
+# NOTE-186: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning
 
 ## Contribution
 
@@ -89,16 +92,16 @@ zero-shot in labs whose data was never collected.
 
 `LIT-216` is the parent and the `extends:` edge already records it.
 `SOTA-140` is the schedule the progressive-resolution result sits inside, and
-`SOTA-tmpzrzg8` is that result as a practice. `LIT-218` is the opposing bet:
+`SOTA-251` is that result as a practice. `LIT-218` is the opposing bet:
 generative video models acquiring the same capabilities by a different route.
 
 ## Bearing on the record
 
-The scaling evidence for `SOTA-tmpkip7h` — which is why that practice's
+The scaling evidence for `SOTA-250` — which is why that practice's
 `consensus_note` names this paper and its `source:` does not. Per `ADR-017`,
 the recommendation survives losing this paper; what it loses is the knowledge
 that the construction holds at 1B parameters and a million hours.
 
-Sources `SOTA-tmpzrzg8` in its own right, which is the more surprising
+Sources `SOTA-251` in its own right, which is the more surprising
 outcome: the transferable rule in a video paper is about **schedules**, and
 it belongs to `training-optimization` rather than to vision.

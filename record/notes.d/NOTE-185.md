@@ -1,5 +1,8 @@
 ---
+number: 185
 status: Read
+formerly:
+- NOTE-tmp91b9u
 paper: LIT-216
 title: 'Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture'
 version: 1
@@ -13,7 +16,7 @@ summary: >-
   rather than its input. A ViT-H/14 on ImageNet in under 1200 GPU-hours.
 ---
 
-# NOTE-tmp91b9u: Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture
+# NOTE-185: Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture
 
 ## Contribution
 
@@ -91,6 +94,6 @@ encoder itself gets trained.
 
 ## Bearing on the record
 
-Sources `SOTA-tmpkip7h`. `#86`'s trunk detector found this note by its own
+Sources `SOTA-250`. `#86`'s trunk detector found this note by its own
 Standing section saying the record held no vision self-supervision material
 at all — an absence written down and, until now, not acted on.

@@ -1,5 +1,8 @@
 ---
+number: 187
 status: Read
+formerly:
+- NOTE-tmpygxgb
 paper: LIT-218
 title: 'Video models are zero-shot learners and reasoners'
 version: 1
@@ -13,7 +16,7 @@ summary: >-
   demonstrations, and the demonstrations are of one proprietary model.
 ---
 
-# NOTE-tmpygxgb: Video models are zero-shot learners and reasoners
+# NOTE-187: Video models are zero-shot learners and reasoners
 
 ## Contribution
 

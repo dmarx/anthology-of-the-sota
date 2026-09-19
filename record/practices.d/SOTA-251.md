@@ -1,5 +1,8 @@
 ---
+number: 251
 status: Proposed
+formerly:
+- SOTA-tmpzrzg8
 consensus: unreplicated
 consensus_note: >-
   One paper, one measurement, one domain. It is filed Proposed rather than
@@ -33,7 +36,7 @@ summary: >-
   training at full resolution throughout, for the same end state.
 ---
 
-# SOTA-tmpzrzg8: Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule
+# SOTA-251: Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule
 
 ## Source
 

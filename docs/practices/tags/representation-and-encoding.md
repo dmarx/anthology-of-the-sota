@@ -6,7 +6,7 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-7 of 249 SOTA documents. Back to the [full index](../README.md).
+8 of 251 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,3 +17,4 @@
 | [SOTA-179](../../../record/practices.d/SOTA-179.md) | Truncate the rotary encoding's low frequencies rather than rescaling its base | Barbero et al. (2024), [LIT-210](../../../record/literature.d/LIT-210.md) — RoPE's high frequencies build positional attention heads and its low frequencies carry semantics that provably cannot stay robust over long context. Keeping a fraction p of the frequencies holds performance and at 2B improves it; p=1 is RoPE and p=0 is NoPE, so the practice is a dial between two things the record already holds. | Proposed |
 | [SOTA-187](../../../record/practices.d/SOTA-187.md) v3 | Train the generative model in a learned compressed latent, not at full resolution |  | Active |
 | [SOTA-247](../../../record/practices.d/SOTA-247.md) | Add a multi-token word to a frozen model's vocabulary from the model's own detokenized representation of it | Kaplan et al. (2024), [LIT-412](../../../record/literature.d/LIT-412.md) — a model already computes a whole-word representation for a word its tokenizer splits, so initialize the new embedding and unembedding from *that* rather than from an average of the word's token embeddings. On Llama2-7B the frozen model then uses the new tokens while keeping its accuracy on existing ones (0.519 against 0.522 on WikiText-103), where mean-embedding initialization both fails to use them and degrades the model. The gain is largest where the tokenizer is worst: Arabic Wiki40B, 0.402 new-token accuracy against 0.117. | Proposed |
+| [SOTA-250](../../../record/practices.d/SOTA-250.md) | Pretrain by predicting representations of masked regions, not their pixels | Assran et al. (2023), [LIT-216](../../../record/literature.d/LIT-216.md) — [ARXIV-2301.08243](https://arxiv.org/abs/2301.08243). Predict the *representations* of masked target blocks from a context block, with a learned target-encoder, instead of reconstructing pixels. No hand-crafted augmentations, and a ViT-H/14 reaches strong downstream performance in under 1200 GPU-hours — faster than a ViT-S/16 trained with iBOT. | Active |

@@ -266,6 +266,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [SOTA-140](../record/practices.d/SOTA-140.md) — Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens *(Active, contested)*
   - [SOTA-141](../record/practices.d/SOTA-141.md) — Decay the learning rate linearly all the way to zero *(Proposed, unreplicated)*
   - [SOTA-142](../record/practices.d/SOTA-142.md) — Set the peak learning rate by a power law in tokens so it transfers across batch size and training length *(Active, unassessed)*
+  - [SOTA-251](../record/practices.d/SOTA-251.md) — Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule *(Proposed, unreplicated)*
 
 ### From Parameterize the model with µP and tune hyperparameters on a narrow proxy, transferring them across width
 

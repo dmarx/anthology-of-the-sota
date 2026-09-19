@@ -6,7 +6,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-168 of 249 SOTA documents. Back to the [full index](../README.md).
+169 of 251 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -178,3 +178,4 @@
 | [SOTA-238](../../../record/practices.d/SOTA-238.md) v2 | Set domain weights with a small proxy model under group DRO on excess loss, then transfer them | Xie et al. (2023), [LIT-391](../../../record/literature.d/LIT-391.md) — [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429). Train a small proxy under group DRO to produce domain weights, then resample and train the real model with them. Optimise worst-case EXCESS loss against a reference model, not worst-case loss — the naive form upweights whichever domain is noisiest, because every domain has a different irreducible entropy. | Active |
 | [SOTA-240](../../../record/practices.d/SOTA-240.md) | Apply dropout where the model can memorize what it is shown, and not where it cannot | Srivastava et al. (2014), [LIT-395](../../../record/literature.d/LIT-395.md) — dropout has a "sweet spot" in dataset size and reports both of its edges: no gain at all on data small enough to memorize through the noise, and a declining gain once the data is large enough that overfitting is not the problem. It costs 2-3x training time and it is not a drop-in — the paper's own recipe pairs it with n/p units, 10-100x the learning rate, momentum 0.95-0.99 and a max-norm constraint. Introduced by Hinton et al. (2012), [LIT-394](../../../record/literature.d/LIT-394.md). | Active |
 | [SOTA-249](../../../record/practices.d/SOTA-249.md) | Recompute activations from a sqrt(n) subset of checkpoints when activation memory is the binding constraint | Chen et al. (2016), [LIT-004](../../../record/literature.d/LIT-004.md) — [ARXIV-1604.06174](https://arxiv.org/abs/1604.06174). Store activations at O(sqrt(n)) checkpoints and recompute the rest during the backward pass. The price is one extra forward pass per minibatch; the measured case is a 1000-layer ResNet at 48G to 7G for 30% more wall clock. | Active |
+| [SOTA-250](../../../record/practices.d/SOTA-250.md) | Pretrain by predicting representations of masked regions, not their pixels | Assran et al. (2023), [LIT-216](../../../record/literature.d/LIT-216.md) — [ARXIV-2301.08243](https://arxiv.org/abs/2301.08243). Predict the *representations* of masked target blocks from a context block, with a learned target-encoder, instead of reconstructing pixels. No hand-crafted augmentations, and a ViT-H/14 reaches strong downstream performance in under 1200 GPU-hours — faster than a ViT-S/16 trained with iBOT. | Active |

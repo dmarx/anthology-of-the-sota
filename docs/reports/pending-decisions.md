@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**81 document(s) awaiting a decision.**
+**82 document(s) awaiting a decision.**
 
 ## SOTAs
 
-54 of the 81.
+55 of the 82.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -67,10 +67,11 @@
 | 2026-09-17 | Proposed | [SOTA-247](../../record/practices.d/SOTA-247.md) | 1 | 0 | Add a multi-token word to a frozen model's vocabulary from the model's own detokenized representation of it |
 | 2026-09-17 | Proposed | [SOTA-248](../../record/practices.d/SOTA-248.md) | 1 | 0 | Stretch and clip the softmax so an attention head can output exact zeros |
 | 2026-09-17 | Proposed | [SOTA-234](../../record/practices.d/SOTA-234.md) | 0 | 0 | Train in the target low-bit format from scratch rather than quantizing a finished model |
+| 2026-09-19 | Proposed | [SOTA-251](../../record/practices.d/SOTA-251.md) | 2 | 0 | Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule |
 
 ## THEORYs
 
-8 of the 81.
+8 of the 82.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -85,7 +86,7 @@
 
 ## LITs
 
-3 of the 81.
+3 of the 82.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -95,7 +96,7 @@
 
 ## ADRs
 
-16 of the 81.
+16 of the 82.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

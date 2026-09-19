@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-186 of 188 NOTE documents. Back to the [full index](../README.md).
+187 of 189 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -196,3 +196,4 @@
 | [NOTE-186](../../../record/notes.d/NOTE-186.md) | V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning | I-JEPA's construction at video scale — 1M+ hours, up to 1B parameters — plus a second act: post-train a latent action-conditioned world model on under 62 hours of unlabelled robot video and plan with it zero-shot on real arms. The scaling section attributes its gains one ingredient at a time, and the one worth stealing is unrelated to video: raise resolution only in the decay phase and pretraining costs up to 8x less. | Read |
 | [NOTE-187](../../../record/notes.d/NOTE-187.md) | Video models are zero-shot learners and reasoners | The argument by analogy: LLMs became generalist from three primitives — large, generative, web-scale — and video models now have all three. The evidence is a catalogue of tasks Veo 3 was never trained for and can do anyway, from segmentation and edge detection through affordances and tool use to maze and symmetry solving. It is a position paper with demonstrations, and the demonstrations are of one proprietary model. | Read |
 | [NOTE-188](../../../record/notes.d/NOTE-188.md) | NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis | Store the scene in the weights of an MLP that maps a 5D coordinate to density and view-dependent colour, and render it with classical volume rendering, which is differentiable — so posed images are the only supervision. Two additions do the work everybody remembers: positional encoding, without which the result is oversmoothed, and hierarchical sampling, without which it is unaffordable. | Read |
+| [NOTE-189](../../../record/notes.d/NOTE-189.md) | Modular Duality in Deep Learning | Gradients live in the dual space and weights live in the primal one, so subtracting one from the other is a type error that ordinary gradient descent commits every step. Fix it with a duality map built recursively from per-layer operator norms. Two consequences the record cares about: muP and Shampoo turn out to be partial approximations of one such map, and the map for Linear layers is a Newton-Schulz iteration — which is Muon. | Read |

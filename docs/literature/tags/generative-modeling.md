@@ -6,7 +6,7 @@
 
 **Generative modeling** — diffusion, samplers, text-to-image, conditioning and control.
 
-12 of 370 LIT documents. Back to the [full index](../README.md).
+13 of 374 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -22,3 +22,4 @@
 | [LIT-097](../../../record/literature.d/LIT-097.md) v2 | One Transformer Fits All Distributions in Multi-Modal Diffusion at Scale | Bao et al. (2023), [ARXIV-2303.06555](https://arxiv.org/abs/2303.06555). Universal sequence modeling. | Active |
 | [LIT-217](../../../record/literature.d/LIT-217.md) | Large Language Diffusion Models | Nie et al. (2025), [ARXIV-2502.09992](https://arxiv.org/abs/2502.09992). LLaDA: an 8B language model trained from scratch under the ordinary pretrain-then-SFT paradigm, with the autoregressive factorization replaced by masked diffusion — a forward masking process and a reverse process that predicts masked tokens, optimizing a likelihood lower bound. Competitive with LLaMA3 8B on in-context learning, and beats GPT-4o on reversal poem completion. | Active |
 | [LIT-381](../../../record/literature.d/LIT-381.md) | Scaling Diffusion Language Models via Adaptation from Autoregressive Models | Gong et al. (2024), [ARXIV-2410.17891](https://arxiv.org/abs/2410.17891). Diffusion language models are hard to train from scratch at scale and there are a great many trained autoregressive ones, so convert instead: continual pretraining on under 200B tokens turns GPT2 and LLaMA at 127M–7B into DiffuGPT and DiffuLLaMA. The conversion rests on a stated connection between the AR and diffusion objectives rather than on the two being retrained independently. | Active |
+| [LIT-439](../../../record/literature.d/LIT-439.md) | Deep Unsupervised Learning using Nonequilibrium Thermodynamics | Sohl-Dickstein et al. (2015), [ARXIV-1503.03585](https://arxiv.org/abs/1503.03585). Where diffusion models come from: destroy structure with a slow forward process, learn the reverse, and get a generative model that is flexible *and* tractable — a trade the paper frames as the central problem it is solving. | Active |

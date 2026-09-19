@@ -37,7 +37,7 @@ summary: >-
   40% fewer iterations and 35% less wall-clock than AdamW at 360M–660M in the
   large-batch regime.
 explained_by:
-- THEORY-tmpm3lav
+- THEORY-024
 ---
 
 # SOTA-168: Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself

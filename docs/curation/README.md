@@ -6,6 +6,8 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [19 Sep 23:29 — The arrival event came from outside the record](2026-09.md#the-arrival-event-came-from-outside-the-record)
+- [19 Sep 23:09 — A criterion is not a house rule just because it worked twice](2026-09.md#a-criterion-is-not-a-house-rule-just-because-it-worked-twice)
 - [19 Sep 22:16 — The practice said "a large coordinate network" and the record could not point at one](2026-09.md#the-practice-said-a-large-coordinate-network-and-the-record-could-not-point-at-one)
 - [19 Sep 22:04 — The rule worth stealing from a video paper was about schedules](2026-09.md#the-rule-worth-stealing-from-a-video-paper-was-about-schedules)
 - [19 Sep 19:49 — An audit is not finished when it has a list](2026-09.md#an-audit-is-not-finished-when-it-has-a-list)
@@ -117,9 +119,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-110 entries across 2 books, newest first.
+112 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 108 | 2026-09-05 | 2026-09-19 |
+| [2026-09](2026-09.md) | 110 | 2026-09-05 | 2026-09-19 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

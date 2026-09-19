@@ -6,7 +6,7 @@
 
 **Systems optimization** — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
-19 of 251 SOTA documents. Back to the [full index](../README.md).
+20 of 253 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -29,3 +29,4 @@
 | [SOTA-230](../../../record/practices.d/SOTA-230.md) | Quantize the frozen base to 4-bit and keep the adapters in 16-bit | Dettmers et al. (2023), [LIT-378](../../../record/literature.d/LIT-378.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314). Store the frozen base weights in 4-bit NormalFloat and dequantize to BFloat16 for every matrix multiply, training only 16-bit LoRA adapters. Fine-tuning a 65B model falls from >780GB to <48GB with no measured loss against a 16-bit fully fine-tuned baseline, because the arithmetic never happens in 4 bits. | Active |
 | [SOTA-234](../../../record/practices.d/SOTA-234.md) | Train in the target low-bit format from scratch rather than quantizing a finished model | Ma et al. (2024), [LIT-380](../../../record/literature.d/LIT-380.md) — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764). Decide the serving format before training and train in it, rather than training in FP16 and compressing afterwards. Ternary weights trained from scratch match an FP16 model of equal size and token budget from 3B upward — but the compute argument assumes hardware built for the format, and only the memory saving is measured on machines that exist. | Proposed |
 | [SOTA-249](../../../record/practices.d/SOTA-249.md) | Recompute activations from a sqrt(n) subset of checkpoints when activation memory is the binding constraint | Chen et al. (2016), [LIT-004](../../../record/literature.d/LIT-004.md) — [ARXIV-1604.06174](https://arxiv.org/abs/1604.06174). Store activations at O(sqrt(n)) checkpoints and recompute the rest during the backward pass. The price is one extra forward pass per minibatch; the measured case is a 1000-layer ResNet at 48G to 7G for 30% more wall clock. | Active |
+| [SOTA-252](../../../record/practices.d/SOTA-252.md) | Make the full-resolution path affordable instead of upsampling, when the shortcut is what breaks correctness | Abdal et al. (2023), [LIT-113](../../../record/literature.d/LIT-113.md) — [ARXIV-2311.17857](https://arxiv.org/abs/2311.17857). Prior 3D GANs render small and upsample in 2D because volume rendering is too slow at training resolution — but a 2D upsampler is multi-view inconsistent by construction. Efficient Gaussian rendering makes native 512x512 affordable, and the inconsistency leaves with the upsampler rather than being mitigated. | Active |

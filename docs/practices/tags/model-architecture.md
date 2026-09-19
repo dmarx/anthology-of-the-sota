@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-26 of 251 SOTA documents. Back to the [full index](../README.md).
+27 of 253 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -36,3 +36,4 @@
 | [SOTA-180](../../../record/practices.d/SOTA-180.md) | Keep the routed experts' weights in a down-projected latent space and spend the saved bandwidth on more of them | Elango et al. (2026), [LIT-196](../../../record/literature.d/LIT-196.md) — down-project the token before the routed experts and keep their weights in that latent space, dispatching and aggregating there too, while routing and the shared experts stay at full width. Communication volume and weight-loading bandwidth both fall by d/d_l, and the saved budget buys more experts and more active per token. | Active |
 | [SOTA-190](../../../record/practices.d/SOTA-190.md) | Increase depth before any other dimension when scaling a transformer | Tay et al. (2021), [LIT-052](../../../record/literature.d/LIT-052.md) — the DeepNarrow strategy. Small 16L matches T5-Base downstream at 60% of the parameters, 63% of the FLOPs and 40% faster; the limit is parallelism rather than quality. | Proposed |
 | [SOTA-209](../../../record/practices.d/SOTA-209.md) | Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch | Komatsuzaki et al. (2022), [LIT-227](../../../record/literature.d/LIT-227.md) — seed the experts from a dense checkpoint you already paid for. Upcycled T5 and ViT models beat their dense counterparts at ~50% of the dense pretraining sunk cost, and beat sparse models trained from scratch on 100% of it: same architecture, same compute, different initialization. | Proposed |
+| [SOTA-253](../../../record/practices.d/SOTA-253.md) | Add a new instance by reconstructing it, not by training on it | Sun et al. (2022), [LIT-111](../../../record/literature.d/LIT-111.md) — [ARXIV-2205.12257](https://arxiv.org/abs/2205.12257). Split what the system knows about a specific object from what it has learned in general. Build the object's structure once by reconstruction; match against it with a network that never saw the object or its category. Adding an object is then a scan, not a training run. | Active |

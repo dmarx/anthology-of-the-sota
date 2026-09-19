@@ -1,5 +1,8 @@
 ---
+number: 252
 status: Active
+formerly:
+- SOTA-tmprcin9
 consensus: unreplicated
 consensus_note: >-
   One paper, one setting. Nobody in this record has agreed or disagreed, and
@@ -26,7 +29,7 @@ summary: >-
   inconsistency leaves with the upsampler rather than being mitigated.
 ---
 
-# SOTA-tmprcin9: Make the full-resolution path affordable instead of upsampling, when the shortcut is what breaks correctness
+# SOTA-252: Make the full-resolution path affordable instead of upsampling, when the shortcut is what breaks correctness
 
 ## Source
 

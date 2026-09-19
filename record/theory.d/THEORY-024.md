@@ -1,20 +1,23 @@
 ---
+number: 24
 status: Active
+formerly:
+- THEORY-tmpm3lav
 title: 'Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map'
 version: 1
 tags:
 - training-optimization
 date: '2026-09-19'
 source:
-- LIT-tmphmfch
-- LIT-tmp1tday
-- LIT-tmpee0q4
+- LIT-438
+- LIT-436
+- LIT-437
 explains:
 - SOTA-121
 - SOTA-143
 - SOTA-168
 summary: >-
-  Bernstein and Newhouse (2024), [LIT-tmphmfch](../literature.d/LIT-tmphmfch.md) — gradients are dual vectors
+  Bernstein and Newhouse (2024), [LIT-438](../literature.d/LIT-438.md) — gradients are dual vectors
   and weights are primal, so the subtraction in gradient descent needs a
   duality map. Build it recursively from per-layer operator norms and the
   Linear case is a Newton-Schulz iteration, which is what Muon does. The same
@@ -23,7 +26,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-168 SOTA-121 SOTA-143 — the three practices this account explains; SOTA-168 is Proposed and is cited as one of the two approximations, not as a settled recommendation -->
 
-# THEORY-tmpm3lav: Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map
+# THEORY-024: Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map
 
 ## What it explains
 
@@ -57,7 +60,7 @@ duality map for a particular norm, and the blog post that introduced it
 
 ## Why the unification is the load-bearing part
 
-[LIT-tmphmfch](../literature.d/LIT-tmphmfch.md) §4.1 shows that **maximal update parametrization and Shampoo
+[LIT-438](../literature.d/LIT-438.md) §4.1 shows that **maximal update parametrization and Shampoo
 both emerge as partial approximations to a single duality map** — the one
 induced by the RMS–RMS operator norm. The paper's own framing is that these
 are "important and seemingly disparate" methods, one aimed at scalable
@@ -71,11 +74,11 @@ understands when they meet the second one.
 
 ## The supporting line
 
-- [LIT-tmpee0q4](../literature.d/LIT-tmpee0q4.md) — feature learning follows from scaling the **spectral**
+- [LIT-437](../literature.d/LIT-437.md) — feature learning follows from scaling the **spectral**
   norm of weights and updates like `sqrt(fan-out/fan-in)`, not from Frobenius
   or entry-size heuristics, and muP falls out of it elementarily. This is why
   the spectral norm is the quantity in play at all
-- [LIT-tmp1tday](../literature.d/LIT-tmp1tday.md) — the **modular norm**, defined recursively alongside the
+- [LIT-436](../literature.d/LIT-436.md) — the **modular norm**, defined recursively alongside the
   architecture, against which the dualization is performed. Normalising any
   base optimizer's updates in it makes the learning rate transferable across
   width *and* depth

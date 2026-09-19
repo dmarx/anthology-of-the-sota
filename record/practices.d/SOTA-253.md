@@ -1,5 +1,8 @@
 ---
+number: 253
 status: Active
+formerly:
+- SOTA-tmpwnew0
 consensus: unreplicated
 consensus_note: >-
   One paper. The record holds no second instance of the pattern, and the
@@ -26,7 +29,7 @@ summary: >-
   a scan, not a training run.
 ---
 
-# SOTA-tmpwnew0: Add a new instance by reconstructing it, not by training on it
+# SOTA-253: Add a new instance by reconstructing it, not by training on it
 
 ## Source
 

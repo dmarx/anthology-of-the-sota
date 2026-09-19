@@ -31,8 +31,8 @@ bare code and run `luria link --fix`.
 
 ## By topic
 
-**[Training optimization](tags/training-optimization.md)** (2) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
-[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md)
+**[Training optimization](tags/training-optimization.md)** (3) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
+[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md)
 
 **[Systems optimization](tags/systems-optimization.md)** (0) — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
@@ -66,7 +66,7 @@ bare code and run `luria link --fix`.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (12) · [Offered](status/Proposed.md) (8) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (13) · [Offered](status/Proposed.md) (8) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -105,4 +105,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-021](../../record/theory.d/THEORY-021.md) | A model builds a latent vocabulary in its early layers whose units are not the tokenizer's | Kaplan et al. (2024), [LIT-412](../../record/literature.d/LIT-412.md), with [LIT-409](../../record/literature.d/LIT-409.md) and [LIT-417](../../record/literature.d/LIT-417.md) — sub-word sequences are recombined into whole-unit representations at a unit's last token, in early and middle layers, and the units include things the tokenizer has no entry for: arbitrary splits, typos, out-of-vocabulary words, named entities and non-compositional multi-word expressions. Three groups, three methods — a probe with a co-occurrence control, an erasure signature, and layer ablation — reaching the same place. The tokenizer's vocabulary is the model's input format, not its inventory of units. | Active |
 | [THEORY-022](../../record/theory.d/THEORY-022.md) | A phrase placed in a word slot is read as a lemma, and the reading comes from the construction rather than the phrase's frequency | Goldberg and Shirtz (2025), [LIT-410](../../record/literature.d/LIT-410.md) — English has a productive construction in which a unit with the internal syntax of a phrase, up to a whole sentence, occupies a slot reserved for a word, and comprehenders give it the kind of meaning a word has: it evokes a semantic frame presumed to be shared. Four preregistered surveys measure the reading, and the fourth removes the obvious deflation — the effect is the same size on high-frequency phrases, and estimated corpus frequency predicts nothing. So **the lexical unit is delimited by construction, not by how often the string has been seen**, which is the assumption a frequency-merge tokenizer makes. | Active |
 | [THEORY-023](../../record/theory.d/THEORY-023.md) | Depth-dependent computation in a transformer falls into four stages, of which detokenization is the first | Lad et al. (2024), [LIT-417](../../record/literature.d/LIT-417.md) — the reading the authors put on their own localized-sensitivity result, and they put a question mark in the title. Four stages: detokenization lifts raw token embeddings into contextual ones by integrating local context; feature engineering refines task and entity features; prediction ensembling aggregates hidden states toward next-token predictions; residual sharpening suppresses irrelevant features at the end. The fourth carries a real experiment. The boundaries are approximate by the authors' own account, and stages may co-occur in one layer. | Proposed |
+| [THEORY-024](../../record/theory.d/THEORY-024.md) | Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map | Bernstein and Newhouse (2024), [LIT-438](../../record/literature.d/LIT-438.md) — gradients are dual vectors and weights are primal, so the subtraction in gradient descent needs a duality map. Build it recursively from per-layer operator norms and the Linear case is a Newton-Schulz iteration, which is what Muon does. The same construction shows muP and Shampoo are partial approximations of one map. | Active |
 

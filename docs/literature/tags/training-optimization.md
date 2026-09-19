@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-59 of 370 LIT documents. Back to the [full index](../README.md).
+62 of 374 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -69,3 +69,6 @@
 | [LIT-265](../../../record/literature.d/LIT-265.md) | Large Batch Optimization for Deep Learning: Training BERT in 76 minutes | You et al. (2019), [ARXIV-1904.00962](https://arxiv.org/abs/1904.00962). LAMB: normalize each layer's update by the ratio of weight norm to update norm, which lets BERT train at batch size 32k without per-batch-size retuning. | Active |
 | [LIT-305](../../../record/literature.d/LIT-305.md) | A Bayesian Perspective on Generalization and Stochastic Gradient Descent | Smith and Le (2017), [ARXIV-1710.06451](https://arxiv.org/abs/1710.06451). Generalization is set by a noise scale g = eps*N/B rather than by batch size alone, which is why the learning rate must rise with the batch, and the same quantity predicts an optimal batch size. | Active |
 | [LIT-399](../../../record/literature.d/LIT-399.md) | Beyond neural scaling laws: beating power law scaling via data pruning | Sorscher et al. (2022), [ARXIV-2206.14486](https://arxiv.org/abs/2206.14486). Power-law scaling in dataset size can be beaten — reduced toward exponential — if you have a good ranking of which examples to discard and you prune harder as the corpus grows. Which end of the ranking to discard inverts with data abundance. | Active |
+| [LIT-436](../../../record/literature.d/LIT-436.md) | Scalable Optimization in the Modular Norm | Large et al. (2024), [ARXIV-2405.14813](https://arxiv.org/abs/2405.14813). Generalises the per-layer natural norm to the whole weight space: the modular norm is defined recursively alongside the architecture. Normalising any base optimizer's updates in it makes the learning rate transferable across **width and depth**, with no optimizer-specific scale factors. | Active |
+| [LIT-437](../../../record/literature.d/LIT-437.md) | A Spectral Condition for Feature Learning | Yang et al. (2023), [ARXIV-2310.17813](https://arxiv.org/abs/2310.17813). Feature learning at large width follows from scaling the *spectral* norm of weights and their updates like sqrt(fan-out/fan-in) — not from the Frobenius-norm and entry-size heuristics in common use. It also yields an elementary derivation of muP. | Active |
+| [LIT-438](../../../record/literature.d/LIT-438.md) | Modular Duality in Deep Learning | Bernstein and Newhouse (2024), [ARXIV-2410.21265](https://arxiv.org/abs/2410.21265). The gradient is a dual vector and should not be subtracted from the weights without a duality map. Modular dualization builds that map recursively from per-layer operator norms; the Linear case is a rectangular Newton-Schulz iteration, and a variant of it set NanoGPT speed records — which is where Muon comes from. | Active |

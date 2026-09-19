@@ -1,6 +1,9 @@
 ---
+number: 189
 status: Read
-paper: LIT-tmphmfch
+formerly:
+- NOTE-tmpq1cy8
+paper: LIT-438
 title: 'Modular Duality in Deep Learning'
 version: 1
 date: '2026-09-19'
@@ -13,7 +16,7 @@ summary: >-
   for Linear layers is a Newton-Schulz iteration — which is Muon.
 ---
 
-# NOTE-tmpq1cy8: Modular Duality in Deep Learning
+# NOTE-189: Modular Duality in Deep Learning
 
 ## Contribution
 
@@ -89,15 +92,15 @@ composes them.
 
 ## Connections
 
-`LIT-tmp1tday` is the parent: the modular norm is the object this dualizes
-against. `LIT-tmpee0q4` is the grandparent and the reason the spectral norm is
+`LIT-436` is the parent: the modular norm is the object this dualizes
+against. `LIT-437` is the grandparent and the reason the spectral norm is
 the quantity in play. `LIT-159` is the blog post that introduced Muon and is
 the record's only source for ten practices; `LIT-122`, `LIT-132` and `LIT-131`
 are the production and scaling evidence.
 
 ## Bearing on the record
 
-Sources `THEORY-tmpm3lav`, which is the account those ten practices have
+Sources `THEORY-024`, which is the account those ten practices have
 lacked. The record could say *use Muon* and *use SOAP* and *use muP* and had
 no way to say that the first is a duality map, and the other two are
 approximations of the same one.

@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-30 of 188 NOTE documents. Back to the [full index](../README.md).
+31 of 189 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -38,3 +38,4 @@
 | [NOTE-132](../../../record/notes.d/NOTE-132.md) v2 | Large Batch Optimization for Deep Learning: Training BERT in 76 minutes | Scaling the learning rate layerwise by the ratio of the parameter norm to the update norm (inspired by LARS) stabilizes large-batch training across heterogeneous layer curvatures, allowing Adam-like adaptivity to compose with layerwise scaling and generalize across both vision and language models where LARS alone fails. | Read |
 | [NOTE-144](../../../record/notes.d/NOTE-144.md) | Measuring the Effects of Data Parallelism on Neural Network Training | The relationship between batch size and training steps to a goal error always follows the same three-regime shape — perfect scaling (b-fold benefit), diminishing returns, and a maximum useful batch size beyond which adding more parallelism helps nothing — but where these transitions occur is workload-specific and cannot be reliably predicted from simple properties of the model, data, or optimizer. | Read |
 | [NOTE-176](../../../record/notes.d/NOTE-176.md) | Beyond neural scaling laws: beating power law scaling via data pruning | Power-law scaling of error in dataset size is a symptom of redundancy, not a ceiling. With a ranking of example difficulty and a pruning fraction that grows with the corpus, error can fall exponentially instead. Which end of the ranking to discard inverts with data abundance: keep hard examples when data is plentiful, easy ones when it is scarce. | Read |
+| [NOTE-189](../../../record/notes.d/NOTE-189.md) | Modular Duality in Deep Learning | Gradients live in the dual space and weights live in the primal one, so subtracting one from the other is a type error that ordinary gradient descent commits every step. Fix it with a duality map built recursively from per-layer operator norms. Two consequences the record cares about: muP and Shampoo turn out to be partial approximations of one such map, and the map for Linear layers is a Newton-Schulz iteration — which is Muon. | Read |

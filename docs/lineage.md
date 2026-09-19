@@ -2,7 +2,7 @@
 
 # Lines of work
 
-13 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+15 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -37,6 +37,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-212](../record/literature.d/LIT-212.md) — DiLoCo: Distributed Low-Communication Training of Language Models *(Active)*
   - [LIT-214](../record/literature.d/LIT-214.md) — Streaming DiLoCo with overlapping communication: Towards a Distributed Free Lunch *(Active)*
+
+## generative-modeling
+
+### From Deep Unsupervised Learning using Nonequilibrium Thermodynamics
+
+- [LIT-439](../record/literature.d/LIT-439.md) — Deep Unsupervised Learning using Nonequilibrium Thermodynamics *(Active)*
+  - [LIT-036](../record/literature.d/LIT-036.md) — Denoising Diffusion Probabilistic Models *(Active)*
 
 ## model-architecture
 
@@ -109,6 +116,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-148](../record/literature.d/LIT-148.md) — Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer *(Active)*
   - [LIT-149](../record/literature.d/LIT-149.md) — u-µP: The Unit-Scaled Maximal Update Parametrization *(Active)*
   - [LIT-150](../record/literature.d/LIT-150.md) — Don't be lazy: CompleteP enables compute-efficient deep transformers *(Active)*
+
+### From A Spectral Condition for Feature Learning
+
+- [LIT-437](../record/literature.d/LIT-437.md) — A Spectral Condition for Feature Learning *(Active)*
+  - [LIT-436](../record/literature.d/LIT-436.md) — Scalable Optimization in the Modular Norm *(Active)*
+    - [LIT-438](../record/literature.d/LIT-438.md) — Modular Duality in Deep Learning *(Active)*
 
 ## vision-and-graphics
 

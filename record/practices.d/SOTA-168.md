@@ -36,6 +36,8 @@ summary: >-
   basis. SOAP is Adam there, adding exactly one hyperparameter over Adam. Over
   40% fewer iterations and 35% less wall-clock than AdamW at 360M–660M in the
   large-batch regime.
+explained_by:
+- THEORY-tmpm3lav
 ---
 
 # SOTA-168: Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself

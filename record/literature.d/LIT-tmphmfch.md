@@ -1,0 +1,76 @@
+---
+status: Active
+title: 'Modular Duality in Deep Learning'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-19'
+published: '2024-10-28'
+arxiv: '2410.21265'
+first_author: 'Bernstein'
+keywords:
+- 'duality-map'
+- 'modular-dualization'
+- 'newton-schulz'
+- 'operator-norm'
+- 'steepest-descent'
+extends:
+- LIT-tmp1tday
+implementations:
+- Muon
+summary: >-
+  Bernstein and Newhouse (2024), [ARXIV-2410.21265](https://arxiv.org/abs/2410.21265). The gradient is a dual
+  vector and should not be subtracted from the weights without a duality map.
+  Modular dualization builds that map recursively from per-layer operator
+  norms; the Linear case is a rectangular Newton-Schulz iteration, and a
+  variant of it set NanoGPT speed records — which is where Muon comes from.
+---
+
+<!-- inactive-ok-file: SOTA-168 SOTA-122 — Proposed, and both named in the enumeration of practices that mention Muon rather than relied on -->
+
+# LIT-tmphmfch: Modular Duality in Deep Learning
+
+Bernstein and Newhouse (2024) — [ARXIV-2410.21265](https://arxiv.org/abs/2410.21265)
+
+## Key takeaways
+
+- **The framing is a type error.** "Since the gradient is a dual vector it may
+  not be subtracted from the weights without first being mapped to the primal
+  space where the weights reside." Ordinary gradient descent does exactly
+  that subtraction, and the paper takes the objection seriously rather than
+  rhetorically
+- **Modular dualization, in three steps**: assign an operator norm to each
+  layer *from its input-output semantics*, build the layerwise duality map
+  from that norm, then recursively induce a map on the whole architecture
+- **muP and Shampoo are the same thing, approximated twice.** Section 4.1
+  shows both "emerge as partial approximations to a single duality map induced
+  by the RMS–RMS operator norm" — one aimed at scalable training, the other at
+  fast training, and the paper's own words are "important and seemingly
+  disparate"
+- **The Linear and Conv2D maps are a rectangular Newton-Schulz iteration**,
+  GPU-friendly, citing Kovarik (1970) and Björck & Bowie (1971)
+- **"A variant of our methods was used to set speed records for training
+  NanoGPT"** — which is the sentence that connects this paper to the record's
+  entire Muon cluster
+
+## Standing in the anthology
+
+**The account under ten practices that had none.** `SOTA-121`, `SOTA-131`,
+`SOTA-120`, `SOTA-122`, `SOTA-165`, `SOTA-168`, `SOTA-192`, `SOTA-221`,
+`SOTA-001` and `SOTA-003` all mention Muon; [LIT-159](LIT-159.md) is the origin and is a
+**blog post**, filed with a `url:` and described in its own standing as "the
+clearest case yet for `ADR-009` — three laboratories pretrain frontier models
+with this and there is no paper to cite."
+
+This is the paper. Orthogonalising the update via Newton-Schulz is not a trick
+that happened to work; it is the duality map for the spectral norm, and
+[THEORY-tmpm3lav](../theory.d/THEORY-tmpm3lav.md) is that account.
+
+**How it was found is worth recording.** Not by the record complaining about
+an absence — nothing here mentions modular duality, the modular norm, or the
+spectral condition. It came from [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180), the reading feed, where this paper
+and its two predecessors sit at 8 distinct days and 14 sessions each, near the
+top of 4,076 papers. `DP-007` says agreement has no author and therefore no
+arrival event; here the arrival event came from outside the record entirely.
+
+Read — [NOTE-tmpq1cy8](../notes.d/NOTE-tmpq1cy8.md).

@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-59 of 369 LIT documents. Back to the [full index](../README.md).
+59 of 370 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

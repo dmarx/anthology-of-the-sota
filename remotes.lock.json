@@ -683,6 +683,9 @@
     "ARXIV/2402.03300": {
       "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models"
     },
+    "ARXIV/2402.14008": {
+      "title": "OlympiadBench: A Challenging Benchmark for Promoting AGI with Olympiad-Level Bilingual Multimodal Scientific Problems"
+    },
     "ARXIV/2402.17762": {
       "title": "Massive Activations in Large Language Models"
     },
@@ -805,6 +808,9 @@
     },
     "ARXIV/2501.18795": {
       "title": "Rope to Nope and Back Again: A New Hybrid Attention Strategy"
+    },
+    "ARXIV/2502.02737": {
+      "title": "SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model"
     },
     "ARXIV/2502.09992": {
       "title": "Large Language Diffusion Models"

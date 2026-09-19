@@ -1,6 +1,9 @@
 ---
+number: 188
 status: Read
-paper: LIT-tmpkbyen
+formerly:
+- NOTE-tmpfjniz
+paper: LIT-435
 title: 'NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis'
 version: 1
 date: '2026-09-19'
@@ -13,7 +16,7 @@ summary: >-
   sampling, without which it is unaffordable.
 ---
 
-# NOTE-tmpfjniz: NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis
+# NOTE-188: NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis
 
 ## Contribution
 
@@ -89,7 +92,7 @@ lives.
 
 ## Bearing on the record
 
-No practice, deliberately — see `LIT-tmpkbyen`'s standing. The reading's
+No practice, deliberately — see `LIT-435`'s standing. The reading's
 value is that `SOTA-205`'s recommendation now has a legible object: "a large
 coordinate network" was a description of something the record did not hold,
 and four of its sources were arguing with a paper that was not there.

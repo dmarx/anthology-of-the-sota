@@ -30,8 +30,8 @@
 | 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 12 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
 | 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 9 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
 | 2026-09-08 | Proposed | [SOTA-158](../../record/practices.d/SOTA-158.md) | 8 | 0 | Bound the activation's output range when training in low precision |
+| 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 8 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
 | 2026-09-08 | Proposed | [SOTA-178](../../record/practices.d/SOTA-178.md) | 8 | 0 | Give the recurrence vector-valued gating and in-context learning rates so it can track state a softmax layer provably cannot |
-| 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 7 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
 | 2026-09-08 | Proposed | [SOTA-169](../../record/practices.d/SOTA-169.md) | 5 | 0 | Widen the residual stream into several streams and constrain the mixing between them |
 | 2026-09-08 | Proposed | [SOTA-176](../../record/practices.d/SOTA-176.md) | 5 | 0 | Hybridise inside the layer: long-term slots, a sliding window, and one softmax over both, with the window size as the only dial |
 | 2026-09-08 | Proposed | [SOTA-177](../../record/practices.d/SOTA-177.md) | 4 | 0 | Decouple the erase address from the write address in a delta-rule recurrence |

@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-185 of 187 NOTE documents. Back to the [full index](../README.md).
+186 of 188 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -195,3 +195,4 @@
 | [NOTE-185](../../../record/notes.d/NOTE-185.md) | Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture | Predict representations, not pixels, and drop hand-crafted augmentations entirely. From one context block, predict what a learned target-encoder outputs for several masked target blocks in the same image. The masking strategy is the whole design: targets large enough to be semantic, context spatially distributed, and the mask applied to the target-encoder's OUTPUT rather than its input. A ViT-H/14 on ImageNet in under 1200 GPU-hours. | Read |
 | [NOTE-186](../../../record/notes.d/NOTE-186.md) | V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning | I-JEPA's construction at video scale — 1M+ hours, up to 1B parameters — plus a second act: post-train a latent action-conditioned world model on under 62 hours of unlabelled robot video and plan with it zero-shot on real arms. The scaling section attributes its gains one ingredient at a time, and the one worth stealing is unrelated to video: raise resolution only in the decay phase and pretraining costs up to 8x less. | Read |
 | [NOTE-187](../../../record/notes.d/NOTE-187.md) | Video models are zero-shot learners and reasoners | The argument by analogy: LLMs became generalist from three primitives — large, generative, web-scale — and video models now have all three. The evidence is a catalogue of tasks Veo 3 was never trained for and can do anyway, from segmentation and edge detection through affordances and tool use to maze and symmetry solving. It is a position paper with demonstrations, and the demonstrations are of one proprietary model. | Read |
+| [NOTE-188](../../../record/notes.d/NOTE-188.md) | NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis | Store the scene in the weights of an MLP that maps a 5D coordinate to density and view-dependent colour, and render it with classical volume rendering, which is differentiable — so posed images are the only supervision. Two additions do the work everybody remembers: positional encoding, without which the result is oversmoothed, and hierarchical sampling, without which it is unaffordable. | Read |

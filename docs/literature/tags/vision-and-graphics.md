@@ -6,7 +6,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-21 of 369 LIT documents. Back to the [full index](../README.md).
+22 of 370 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -31,3 +31,4 @@
 | [LIT-422](../../../record/literature.d/LIT-422.md) | ImageNet: A large-scale hierarchical image database | Deng et al. (2009), CVPR. The database itself — millions of images organised on the WordNet noun hierarchy. Almost nothing in this record is measured on it: an "ImageNet" number here is nearly always ILSVRC ([LIT-423](../../../record/literature.d/LIT-423.md)), the thousand-class challenge built from a slice of it. | Active |
 | [LIT-423](../../../record/literature.d/LIT-423.md) | ImageNet Large Scale Visual Recognition Challenge | Russakovsky et al. (2014), [ARXIV-1409.0575](https://arxiv.org/abs/1409.0575). The thousand-class challenge built on a slice of [LIT-422](../../../record/literature.d/LIT-422.md)'s database, and the instrument almost every "ImageNet top-1" number in this record is actually measured on — including the human-error figure those numbers are read against. | Active |
 | [LIT-424](../../../record/literature.d/LIT-424.md) | Learning Multiple Layers of Features from Tiny Images | Krizhevsky (2009), University of Toronto technical report. The source of CIFAR-10 and CIFAR-100 — 32×32 labelled images drawn from the Tiny Images collection. Sixty-nine documents here measure something on it, which makes it the record's most-used instrument after ILSVRC. | Active |
+| [LIT-435](../../../record/literature.d/LIT-435.md) | NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis | Mildenhall et al. (2020), [ARXIV-2003.08934](https://arxiv.org/abs/2003.08934). The coordinate network the record's one scene-representation practice exists to replace. An MLP maps a 5D coordinate — position and viewing direction — to density and view-dependent colour; differentiable volume rendering means posed images are the only supervision needed. | Active |

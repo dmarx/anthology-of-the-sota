@@ -1,0 +1,67 @@
+---
+status: Active
+title: 'Scalable Optimization in the Modular Norm'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-19'
+published: '2024-05-23'
+arxiv: '2405.14813'
+first_author: 'Large'
+keywords:
+- 'modular-norm'
+- 'learning-rate-transfer'
+- 'lipschitz-continuity'
+- 'width-and-depth-scaling'
+extends:
+- LIT-tmpee0q4
+implementations:
+- Modula
+summary: >-
+  Large et al. (2024), [ARXIV-2405.14813](https://arxiv.org/abs/2405.14813). Generalises the per-layer natural
+  norm to the whole weight space: the modular norm is defined recursively
+  alongside the architecture. Normalising any base optimizer's updates in it
+  makes the learning rate transferable across **width and depth**, with no
+  optimizer-specific scale factors.
+extended_by:
+- LIT-tmphmfch
+---
+
+# LIT-tmp1tday: Scalable Optimization in the Modular Norm
+
+Large et al. (2024) — [ARXIV-2405.14813](https://arxiv.org/abs/2405.14813)
+
+## Key takeaways
+
+- **The norm is defined recursively in tandem with the architecture.** That is
+  what makes it "modular" and what lets it cover any network built from atomic
+  modules, rather than the multilayer perceptron the prior distance functions
+  were constructed for
+- **Learning-rate transfer across width *and* depth**, which is the practical
+  claim. Normalising the updates of any base optimizer in this norm makes the
+  optimal learning rate roughly invariant to both, so the user computes no
+  optimizer-specific scale factors
+- **It sometimes lets a simpler optimizer do the job** — the paper reports
+  training GPT with SGD rather than Adam under the wrapper, at a smaller
+  memory footprint
+- **The gradient is Lipschitz-continuous in this norm**, with a recursive
+  formula for the constant, for any network of well-behaved modules. That is
+  the theoretical half, and the paper's stated point is that it makes textbook
+  optimization analyses portable to deep networks
+- **It deliberately avoids limits.** The paper contrasts its metrization
+  approach with infinite-width and infinite-depth analyses, arguing those are
+  hard to act on — "from a practitioner's perspective, these results can be
+  difficult to make sense of"
+
+## Standing in the anthology
+
+The middle step: it takes [LIT-tmpee0q4](LIT-tmpee0q4.md)'s per-layer spectral condition and makes
+it an architecture-wide object, then shows what that buys. The record has
+`SOTA-140` and a cluster of schedule practices but nothing that says the
+learning rate can be made scale-invariant by construction rather than by
+sweeping.
+
+Filed from [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) — eight distinct days in the reading feed, joint
+second across the whole corpus. `extended_by` the duality paper.
+
+Unread — no `NOTE`.

@@ -1,0 +1,57 @@
+---
+status: Active
+title: 'A Spectral Condition for Feature Learning'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-19'
+published: '2023-10-26'
+arxiv: '2310.17813'
+first_author: 'Yang'
+keywords:
+- 'feature-learning'
+- 'spectral-norm'
+- 'width-scaling'
+- 'maximal-update-parametrization'
+implementations: []
+summary: >-
+  Yang et al. (2023), [ARXIV-2310.17813](https://arxiv.org/abs/2310.17813). Feature learning at large width
+  follows from scaling the *spectral* norm of weights and their updates like
+  sqrt(fan-out/fan-in) — not from the Frobenius-norm and entry-size heuristics
+  in common use. It also yields an elementary derivation of muP.
+extended_by:
+- LIT-tmp1tday
+---
+
+# LIT-tmpee0q4: A Spectral Condition for Feature Learning
+
+Yang et al. (2023) — [ARXIV-2310.17813](https://arxiv.org/abs/2310.17813)
+
+## Key takeaways
+
+- **The condition is on the spectral norm**, of the weight matrices *and* of
+  their updates, scaled like `sqrt(fan-out/fan-in)`. That is the whole claim,
+  and the paper states it against the alternatives explicitly: the widely used
+  scalings based on Frobenius norm and entry size are heuristic
+- **Feature learning is the thing being preserved** — internal representations
+  evolving nontrivially at all widths, rather than the network degenerating
+  into a kernel regime as width grows
+- **muP falls out of it.** The paper offers an "elementary derivation of
+  maximal update parametrization" from the spectral condition, which reframes
+  a result the record already recommends as a corollary of something simpler
+- **Written to be understood**, by its own statement of intent — the text is
+  structured to give a conceptual account of scaling behaviour rather than
+  only a result
+
+## Standing in the anthology
+
+**The first step of the line under the record's optimizer cluster.** The
+record recommends muP in [SOTA-143](../practices.d/SOTA-143.md), sourced to [LIT-148](LIT-148.md) (Tensor Programs V),
+and holds no account of *why* the parametrization is the right one. This
+paper derives it from a condition on the spectral norm, which is the same
+quantity the Muon line acts on.
+
+Filed from [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180), where it sits in the top fourteen of the reading
+feed by distinct days revisited. `extended_by` the modular-norm paper.
+
+Unread — no `NOTE`.

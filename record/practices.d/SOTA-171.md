@@ -19,7 +19,17 @@ contested_by:
 - LIT-119
 - LIT-175
 title: 'Repeat a data-constrained corpus for up to about four epochs; past that, added compute stops paying'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-19'
+  note: >-
+    The four-epoch bound was reproduced independently and relocated.
+    Prabhudesai et al. (LIT-tmp5xe2h) re-ran this sweep with the objective
+    swapped and recovered R* = 31.93 for autoregressive training against
+    512.85 for masked diffusion — so the number holds, and it is a fact about
+    the autoregressive objective rather than about repetition. The
+    recommendation is unchanged; the body now says what it is a bound on.
 tags:
 - data-pipeline
 date: '2026-09-08'
@@ -38,6 +48,7 @@ summary: >-
 ---
 
 # SOTA-171: Repeat a data-constrained corpus for up to about four epochs; past that, added compute stops paying
+<!-- inactive-ok-file: SOTA-tmp9rfqy — Proposed, and filed in this same contribution as the third lever this section names -->
 
 ## Source
 
@@ -92,6 +103,26 @@ axis. Four epochs from 400 released runs is the best-evidenced number
 anybody has published for this question, and a reader who needs a number
 today should use it. That it is disputed by two positions with different
 methodologies is what `contested` says.
+
+## Reproduced independently, and relocated
+
+Prabhudesai et al., [LIT-tmp5xe2h](../literature.d/LIT-tmp5xe2h.md), re-ran this study — same corpus, same
+recipe, same parametric form — with the training objective swapped from
+autoregressive to masked diffusion. The autoregressive arm recovers
+`R* = 31.93`, which is this practice's four-epoch bound in its source's own
+units.
+
+That is a replication, and it changes what the number is a statement about.
+The same fit for masked diffusion gives `R* = 512.85`. So the bound is a
+property of the autoregressive objective rather than of repetition, and a
+reader whose corpus is fixed has a second lever — change the objective —
+that this practice's framing does not offer.
+
+Kim et al., [LIT-tmp2udh1](../literature.d/LIT-tmp2udh1.md), point at a third lever from a different
+direction: with weight decay tuned rather than inherited, the overfitting
+that bounds multi-epoch training largely goes away ([SOTA-tmp9rfqy](SOTA-tmp9rfqy.md)). Neither
+result disputes the four epochs. Both say it was measured under conditions
+nobody was varying.
 
 ## Known implementations
 

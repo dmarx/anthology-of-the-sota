@@ -6,7 +6,7 @@
 
 **Data pipeline** — loading, quality assessment and selection, preprocessing, batch preparation.
 
-28 of 366 LIT documents. Back to the [full index](../README.md).
+29 of 369 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -38,3 +38,4 @@
 | [LIT-425](../../../record/literature.d/LIT-425.md) v2 | Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer | Raffel et al. (2019), [ARXIV-1910.10683](https://arxiv.org/abs/1910.10683). T5's paper, and the origin of **C4** — the heuristically filtered Common Crawl slice that forty-six documents here train on. Filed for the corpus: the record cites C4 constantly and had no document behind it. | Active |
 | [LIT-426](../../../record/literature.d/LIT-426.md) v2 | The Pile: An 800GB Dataset of Diverse Text for Language Modeling | Gao et al. (2020), [ARXIV-2101.00027](https://arxiv.org/abs/2101.00027). 800GB assembled from 22 named sub-corpora with declared weights. The named domains and the default mixture are why the data-mixing line in this record is measured on it — and every "over The Pile's default weights" number is relative to a choice its authors made, not to an optimum. | Active |
 | [LIT-427](../../../record/literature.d/LIT-427.md) | SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model | Ben Allal et al. (2025), [ARXIV-2502.02737](https://arxiv.org/abs/2502.02737). The model report behind SmolLM2-135M-Instruct, which is the base [LIT-129](../../../record/literature.d/LIT-129.md)'s whole experiment runs on — and the source of the overtraining ratio that makes a 135M model worth fine-tuning at all. | Active |
+| [LIT-432](../../../record/literature.d/LIT-432.md) | Finetuned Language Models Are Zero-Shot Learners | Wei et al. (2021), [ARXIV-2109.01652](https://arxiv.org/abs/2109.01652). FLAN, and the name "instruction tuning": fine-tune on 60+ existing NLP tasks rewritten as natural-language instructions and zero-shot performance on *unseen task types* improves. The rival post-training answer to `LIT-377`'s, and the one InstructGPT measured itself against. | Active |

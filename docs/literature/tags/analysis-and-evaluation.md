@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-70 of 366 LIT documents. Back to the [full index](../README.md).
+71 of 369 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -80,3 +80,4 @@
 | [LIT-424](../../../record/literature.d/LIT-424.md) | Learning Multiple Layers of Features from Tiny Images | Krizhevsky (2009), University of Toronto technical report. The source of CIFAR-10 and CIFAR-100 — 32×32 labelled images drawn from the Tiny Images collection. Sixty-nine documents here measure something on it, which makes it the record's most-used instrument after ILSVRC. | Active |
 | [LIT-426](../../../record/literature.d/LIT-426.md) v2 | The Pile: An 800GB Dataset of Diverse Text for Language Modeling | Gao et al. (2020), [ARXIV-2101.00027](https://arxiv.org/abs/2101.00027). 800GB assembled from 22 named sub-corpora with declared weights. The named domains and the default mixture are why the data-mixing line in this record is measured on it — and every "over The Pile's default weights" number is relative to a choice its authors made, not to an optimum. | Active |
 | [LIT-427](../../../record/literature.d/LIT-427.md) | SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model | Ben Allal et al. (2025), [ARXIV-2502.02737](https://arxiv.org/abs/2502.02737). The model report behind SmolLM2-135M-Instruct, which is the base [LIT-129](../../../record/literature.d/LIT-129.md)'s whole experiment runs on — and the source of the overtraining ratio that makes a 135M model worth fine-tuning at all. | Active |
+| [LIT-433](../../../record/literature.d/LIT-433.md) | Learning to summarize from human feedback | Stiennon et al. (2020), [ARXIV-2009.01325](https://arxiv.org/abs/2009.01325). The step where the preference loop crosses into language: human comparisons between summaries, a reward model fit to them, PPO against that reward. The summaries beat the human reference summaries, and beat much larger models fine-tuned supervised — which is the result that made the loop look like a general answer rather than a control technique. | Active |

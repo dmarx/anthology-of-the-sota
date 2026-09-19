@@ -2,9 +2,18 @@
 
 # Lines of work
 
-11 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+12 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
+
+## adaptation-and-tuning
+
+### From Deep reinforcement learning from human preferences
+
+- [LIT-434](../record/literature.d/LIT-434.md) — Deep reinforcement learning from human preferences *(Active)*
+  - [LIT-433](../record/literature.d/LIT-433.md) — Learning to summarize from human feedback *(Active)*
+    - [LIT-377](../record/literature.d/LIT-377.md) — Training language models to follow instructions with human feedback *(Active)*
+- alongside: [LIT-432](../record/literature.d/LIT-432.md) — Finetuned Language Models Are Zero-Shot Learners *(Active)*
 
 ## attention-techniques
 

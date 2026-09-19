@@ -1,0 +1,82 @@
+---
+status: Active
+title: 'NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis'
+version: 1
+tags:
+- vision-and-graphics
+- representation-and-encoding
+date: '2026-09-19'
+published: '2020-03-19'
+arxiv: '2003.08934'
+first_author: 'Mildenhall'
+keywords:
+- 'neural-radiance-field'
+- 'view-synthesis'
+- 'volume-rendering'
+- 'positional-encoding'
+- 'coordinate-network'
+extended_by:
+- LIT-086
+- LIT-108
+implementations:
+- NeRF
+summary: >-
+  Mildenhall et al. (2020), [ARXIV-2003.08934](https://arxiv.org/abs/2003.08934). The coordinate network the
+  record's one scene-representation practice exists to replace. An MLP maps a
+  5D coordinate — position and viewing direction — to density and
+  view-dependent colour; differentiable volume rendering means posed images
+  are the only supervision needed.
+---
+
+<!-- inactive-ok-file: SOTA-167 — Proposed, and named as the parallel case: the record holds a position on linear attention the same way SOTA-205 holds one here, which is the comparison this note draws -->
+
+# LIT-tmpkbyen: NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis
+
+Mildenhall et al. (2020) — [ARXIV-2003.08934](https://arxiv.org/abs/2003.08934)
+
+## Key takeaways
+
+- **A scene is a function, and the weights are the scene.** A
+  fully-connected network maps a continuous 5D coordinate (3D position plus
+  2D viewing direction) to volume density and view-dependent RGB. No voxels,
+  no mesh, no convolution
+- **Differentiable volume rendering is what makes it trainable.** Classical
+  volume rendering accumulates samples along a camera ray; because that is
+  differentiable, the only supervision required is *a set of images with
+  known camera poses*
+- **Positional encoding is not optional.** The paper is explicit that the
+  basic implementation "does not converge to a sufficiently high-resolution
+  representation" — mapping the input coordinate into a higher-dimensional
+  space is what lets the MLP represent high-frequency scene content, and the
+  ablation without it is oversmoothed
+- **Hierarchical sampling is the other half**, allocating the MLP's capacity
+  toward space that actually contains visible content rather than sampling
+  the ray uniformly
+- **Multiview consistency is enforced architecturally**, not by a loss:
+  density is a function of position alone, while colour is a function of
+  position *and* direction. Eight 256-channel layers produce density and a
+  feature vector; one more 128-channel layer takes that plus the ray
+  direction and emits colour
+
+## Standing in the anthology
+
+**The trunk under the record's one scene-representation practice, and the
+thing that practice exists to replace.** [SOTA-205](../practices.d/SOTA-205.md) says to "replace a large
+coordinate network with a compact explicit structure and a small decoder" —
+and the large coordinate network it means is this one. Its four sources are
+all reactions to this paper: Instant-NGP ([LIT-064](LIT-064.md)), K-Planes ([LIT-086](LIT-086.md)),
+3D Gaussian Splatting ([LIT-108](LIT-108.md)) and NeuS2 ([LIT-109](LIT-109.md)).
+
+**Carries no practice, deliberately.** The record's position on coordinate
+networks is `SOTA-205`'s, which is a recommendation against this design;
+filing a competing practice would be recommending both. Same shape as
+[LIT-428](LIT-428.md), where the record holds `SOTA-167`'s position on linear attention
+and the trunk note carries none of its own.
+
+Filed because the practice was unreadable without it. `SOTA-205` recommends
+replacing something the record could not point at, and two of its four
+sources name this paper in their own notes. `DP-007` — what everyone agrees
+on has no author, and "the coordinate MLP" was the shared assumption the
+whole cluster was arguing with.
+
+Read — [NOTE-tmpfjniz](../notes.d/NOTE-tmpfjniz.md).

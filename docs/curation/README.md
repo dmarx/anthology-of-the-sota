@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [19 Sep 01:37 — Every relation checked both ways, and three of the queries were the thing that was wrong](2026-09.md#every-relation-checked-both-ways-and-three-of-the-queries-were-the-thing-that-was-wrong)
 - [19 Sep 00:27 — A claim about the record is the one kind of claim the record cannot check](2026-09.md#a-claim-about-the-record-is-the-one-kind-of-claim-the-record-cannot-check)
 - [19 Sep 00:13 — The query found a note that had already written the answer down](2026-09.md#the-query-found-a-note-that-had-already-written-the-answer-down)
 - [18 Sep 22:50 — Six documents agreed about a paper nobody had filed](2026-09.md#six-documents-agreed-about-a-paper-nobody-had-filed)
@@ -112,9 +113,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-105 entries across 2 books, newest first.
+106 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 103 | 2026-09-05 | 2026-09-19 |
+| [2026-09](2026-09.md) | 104 | 2026-09-05 | 2026-09-19 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

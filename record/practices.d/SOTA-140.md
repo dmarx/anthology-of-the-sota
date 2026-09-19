@@ -51,6 +51,7 @@ summary: >-
 extended_by:
 - SOTA-141
 - SOTA-142
+- SOTA-tmpzrzg8
 ---
 
 # SOTA-140: Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens

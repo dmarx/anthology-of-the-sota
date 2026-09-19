@@ -6,13 +6,13 @@
 
 **Attention techniques** — attention variants and alternative mechanisms, implementation optimizations, context length.
 
-22 of 248 SOTA documents. Back to the [full index](../README.md).
+22 of 249 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [SOTA-085](../../../record/practices.d/SOTA-085.md) v3 | Use flash attention for all attention computations when hardware supports it | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
 | [SOTA-086](../../../record/practices.d/SOTA-086.md) v4 | Tiling size should match hardware SRAM size | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
-| [SOTA-087](../../../record/practices.d/SOTA-087.md) v3 | Recompute attention during backward pass instead of storing it | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
+| [SOTA-087](../../../record/practices.d/SOTA-087.md) v4 | Recompute attention during backward pass instead of storing it | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
 | [SOTA-106](../../../record/practices.d/SOTA-106.md) v3 | Use flash-attention-2 over original flash-attention when available | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Active |
 | [SOTA-107](../../../record/practices.d/SOTA-107.md) v3 | Keep sequence lengths multiple of 128 for best performance | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Rejected — The 128 is traced and belongs to a different quantity. Every occurrence in the source is a head dimension or a block size; none is a sequence length, and "multiple of" and "divisible" appear zero times |
 | [SOTA-108](../../../record/practices.d/SOTA-108.md) v3 | Pad attention masks to block boundaries for better hardware utilization | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Rejected — Not in the cited paper. "padding", "padded", "pad", "block boundar" and "divisible" appear zero times each; the body's reasoning about skipping fully-masked blocks is correct and is not the source's |

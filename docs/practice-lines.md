@@ -209,8 +209,9 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 ### From Tiling size should match hardware SRAM size
 
 - [SOTA-086](../record/practices.d/SOTA-086.md) — Tiling size should match hardware SRAM size *(Active, unassessed)*
-  - [SOTA-087](../record/practices.d/SOTA-087.md) — Recompute attention during backward pass instead of storing it *(Active, unassessed)*
+  - [SOTA-087](../record/practices.d/SOTA-087.md) — Recompute attention during backward pass instead of storing it *(Active, unassessed)* — also extends SOTA-249
   - [SOTA-107](../record/practices.d/SOTA-107.md) — Keep sequence lengths multiple of 128 for best performance *(Rejected, unassessed)*
+- [SOTA-249](../record/practices.d/SOTA-249.md) — Recompute activations from a sqrt(n) subset of checkpoints when activation memory is the binding constraint *(Active, universal)*
 - alongside: [SOTA-089](../record/practices.d/SOTA-089.md) — Align tensor dimensions to hardware boundaries *(Active, unassessed)*
 - alongside: [SOTA-108](../record/practices.d/SOTA-108.md) — Pad attention masks to block boundaries for better hardware utilization *(Rejected, unassessed)*
 

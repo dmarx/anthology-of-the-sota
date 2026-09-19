@@ -6,10 +6,11 @@
 
 **Systems optimization** — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
-9 of 369 LIT documents. Back to the [full index](../README.md).
+10 of 369 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
+| [LIT-004](../../../record/literature.d/LIT-004.md) v3 | Training Deep Nets with Sublinear Memory Cost | Chen et al. (2016), [ARXIV-1604.06174](https://arxiv.org/abs/1604.06174). Gradient checkpointing: store activations at O(sqrt(n)) layers and recompute the segments between them in the backward pass, for the cost of one extra forward pass per minibatch. A 1,000-layer ResNet drops from 48G to 7G for 30% more running time. | Active |
 | [LIT-059](../../../record/literature.d/LIT-059.md) v2 | CheckFreq: Frequent, Fine-Grained DNN Checkpointing | Mohan et al. (2021), FAST '21. Checkpoint frequency should be computed, not guessed: online profiling picks an iteration-granularity interval, adaptive tuning holds the overhead under a bound, and two-phase checkpointing pipelines the write against compute. | Active |
 | [LIT-063](../../../record/literature.d/LIT-063.md) v2 | TVM: An Automated End-to-End Optimizing Compiler for Deep Learning | Chen et al. (2018), [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799). Graph-level and operator-level optimization in one compiler, with a learned cost model searching the low-level schedule space, so performance is portable across back-ends instead of living in vendor libraries. | Active |
 | [LIT-066](../../../record/literature.d/LIT-066.md) v2 | Data Movement Is All You Need: A Case Study on Optimizing Transformers | Ivanov et al. (2020), [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). Transformer training is bound by data movement, not compute: existing frameworks use suboptimal layouts, and a systematic movement-first optimization cuts data movement 22.91% for a 1.30x speedup on a BERT encoder layer. | Active |

@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-26 of 248 SOTA documents. Back to the [full index](../README.md).
+26 of 249 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

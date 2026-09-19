@@ -6,7 +6,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-54 of 248 SOTA documents. Back to the [full index](../README.md).
+54 of 249 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

@@ -10,7 +10,7 @@
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [LIT-004](../../../record/literature.d/LIT-004.md) v2 | Training Deep Nets with Sublinear Memory Cost | Chen et al. (2016), [ARXIV-1604.06174](https://arxiv.org/abs/1604.06174). Introduces gradient checkpointing. | Active |
+| [LIT-004](../../../record/literature.d/LIT-004.md) v3 | Training Deep Nets with Sublinear Memory Cost | Chen et al. (2016), [ARXIV-1604.06174](https://arxiv.org/abs/1604.06174). Gradient checkpointing: store activations at O(sqrt(n)) layers and recompute the segments between them in the backward pass, for the cost of one extra forward pass per minibatch. A 1,000-layer ResNet drops from 48G to 7G for 30% more running time. | Active |
 | [LIT-007](../../../record/literature.d/LIT-007.md) | Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour | Goyal et al. (2017), [ARXIV-1706.02677](https://arxiv.org/abs/1706.02677). Linear scaling rule for learning rates with batch size. | Active |
 | [LIT-016](../../../record/literature.d/LIT-016.md) v2 | GPipe: Efficient Training of Giant Neural Networks using Pipeline Parallelism | Huang et al. (2018), [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965). Introduces pipeline parallelism for training. | Active |
 | [LIT-022](../../../record/literature.d/LIT-022.md) v2 | Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism | Shoeybi et al. (2019), [ARXIV-1909.08053](https://arxiv.org/abs/1909.08053). Model parallel transformers. | Active |

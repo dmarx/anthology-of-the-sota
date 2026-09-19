@@ -6,7 +6,7 @@
 
 **Not judged** — nobody has assessed where the field stands on this; the default, and true of most of the corpus.
 
-137 of 248 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
+137 of 249 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -93,7 +93,7 @@
 | [SOTA-084](../../../record/practices.d/SOTA-084.md) | Profile-guided optimization for hot paths | Chen et al. (2018), [LIT-063](../../../record/literature.d/LIT-063.md) — [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799). | Active |
 | [SOTA-085](../../../record/practices.d/SOTA-085.md) v3 | Use flash attention for all attention computations when hardware supports it | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
 | [SOTA-086](../../../record/practices.d/SOTA-086.md) v4 | Tiling size should match hardware SRAM size | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
-| [SOTA-087](../../../record/practices.d/SOTA-087.md) v3 | Recompute attention during backward pass instead of storing it | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
+| [SOTA-087](../../../record/practices.d/SOTA-087.md) v4 | Recompute attention during backward pass instead of storing it | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
 | [SOTA-088](../../../record/practices.d/SOTA-088.md) | Fuse small operations into larger kernels | Ivanov et al. (2020), [LIT-066](../../../record/literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). | Active |
 | [SOTA-089](../../../record/practices.d/SOTA-089.md) | Align tensor dimensions to hardware boundaries | Ivanov et al. (2020), [LIT-066](../../../record/literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). | Active |
 | [SOTA-090](../../../record/practices.d/SOTA-090.md) | Use hardware-specific memory layouts | Ivanov et al. (2020), [LIT-066](../../../record/literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). | Active |

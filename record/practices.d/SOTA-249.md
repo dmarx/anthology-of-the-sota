@@ -1,5 +1,8 @@
 ---
+number: 249
 status: Active
+formerly:
+- SOTA-tmpz59lh
 consensus: universal
 consensus_note: >-
   Every large-model training stack in the record ships this: SOTA-087 for
@@ -27,7 +30,7 @@ summary: >-
   1000-layer ResNet at 48G to 7G for 30% more wall clock.
 ---
 
-# SOTA-tmpz59lh: Recompute activations from a sqrt(n) subset of checkpoints when activation memory is the binding constraint
+# SOTA-249: Recompute activations from a sqrt(n) subset of checkpoints when activation memory is the binding constraint
 
 ## Source
 

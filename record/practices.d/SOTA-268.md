@@ -1,5 +1,8 @@
 ---
+number: 268
 status: Proposed
+formerly:
+- SOTA-tmphckqj
 promote_when: >-
   A second group measuring knowledge acquisition against both model size and
   mixing ratio and reporting a threshold, on a natural knowledge-dense corpus
@@ -19,12 +22,12 @@ tags:
 - data-pipeline
 date: '2026-09-20'
 source:
-- LIT-tmphrxdn
+- LIT-451
 introduced_by:
-- LIT-tmphrxdn
+- LIT-451
 implementations: []
 summary: >-
-  Gu et al. (2025), [LIT-tmphrxdn](../literature.d/LIT-tmphrxdn.md) — knowledge acquisition from a
+  Gu et al. (2025), [LIT-451](../literature.d/LIT-451.md) — knowledge acquisition from a
   knowledge-dense dataset mixed into web text has thresholds, not a smooth
   curve. Below a critical model size, or a critical mixing ratio, the model
   memorises almost nothing however long it trains; past it, accuracy jumps
@@ -32,23 +35,23 @@ summary: >-
   ratio chosen at one scale can be on the wrong side of a transition at
   another.
 explained_by:
-- THEORY-tmpijbl9
+- THEORY-029
 ---
 
-# SOTA-tmphckqj: Do not transfer a data mixing ratio across model scales; the threshold where a domain starts being learned moves with size
+# SOTA-268: Do not transfer a data mixing ratio across model scales; the threshold where a domain starts being learned moves with size
 <!-- inactive-ok-file: SOTA-166 — Proposed, and one of the two practices this contests; the contest is declared on those practices -->
-<!-- inactive-ok-file: THEORY-tmpijbl9 — Proposed, and filed in this same contribution as this practice's explanation -->
+<!-- inactive-ok-file: THEORY-029 — Proposed, and filed in this same contribution as this practice's explanation -->
 
 ## Source
 
-Gu et al. (2025), [LIT-tmphrxdn](../literature.d/LIT-tmphrxdn.md) — [ARXIV-2505.18091](https://arxiv.org/abs/2505.18091).
+Gu et al. (2025), [LIT-451](../literature.d/LIT-451.md) — [ARXIV-2505.18091](https://arxiv.org/abs/2505.18091).
 
 ## What breaks
 
 Knowledge acquired from a knowledge-dense dataset scales linearly with model
 size — when that dataset is trained on **alone**. That law is well
 established, from synthetic biographies and independently from Wikidata
-triples ([LIT-tmpvt6e3](../literature.d/LIT-tmpvt6e3.md)).
+triples ([LIT-452](../literature.d/LIT-452.md)).
 
 Mix the same dataset into web text at a realistic share and the law is gone.
 Two thresholds appear:
@@ -97,7 +100,7 @@ loss signal to follow.
 
 ## The mechanism, and why it matters beyond this
 
-[THEORY-tmpijbl9](../theory.d/THEORY-tmpijbl9.md) is the account: a model of bounded capacity allocating it
+[THEORY-029](../theory.d/THEORY-029.md) is the account: a model of bounded capacity allocating it
 across datasets is solving a discrete problem, and a discrete optimum moves
 discontinuously when its inputs move continuously. If that is right, the
 discontinuity should show up for things other than factual memorisation,

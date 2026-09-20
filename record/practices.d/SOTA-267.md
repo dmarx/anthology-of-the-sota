@@ -1,5 +1,8 @@
 ---
+number: 267
 status: Proposed
+formerly:
+- SOTA-tmp8nitg
 promote_when: >-
   A data schedule of this shape run on a natural corpus rather than a
   synthetic population, with the out-of-distribution cost measured as well as
@@ -19,27 +22,27 @@ tags:
 - data-pipeline
 date: '2026-09-20'
 source:
-- LIT-tmpbtdlg
+- LIT-450
 introduced_by:
-- LIT-tmpbtdlg
+- LIT-450
 implementations: []
 summary: >-
-  Zucchet et al. (2025), [LIT-tmpbtdlg](../literature.d/LIT-tmpbtdlg.md) — two quantities move in opposite
+  Zucchet et al. (2025), [LIT-450](../literature.d/LIT-450.md) — two quantities move in opposite
   directions. Plateau length is governed by how often the *most* common
   entities appear; acquisition speed after the plateau by how often the
   *least* common ones do. So imbalance buys an early exit from the plateau
   and costs the tail, and a schedule that starts imbalanced and flattens
   beats every fixed distribution tested.
 explained_by:
-- THEORY-tmp8a4gm
+- THEORY-028
 ---
 
-# SOTA-tmp8nitg: Start the training distribution imbalanced and flatten it, rather than holding it uniform throughout
+# SOTA-267: Start the training distribution imbalanced and flatten it, rather than holding it uniform throughout
 <!-- inactive-ok-file: SOTA-130 — Proposed, and named as one of the task-stage curricula this is not -->
 
 ## Source
 
-Zucchet et al. (2025), [LIT-tmpbtdlg](../literature.d/LIT-tmpbtdlg.md) — [ARXIV-2503.21676](https://arxiv.org/abs/2503.21676).
+Zucchet et al. (2025), [LIT-450](../literature.d/LIT-450.md) — [ARXIV-2503.21676](https://arxiv.org/abs/2503.21676).
 
 ## The trade-off is the practice
 
@@ -80,7 +83,7 @@ record on curricula in this setting is poor.
 
 ## The mechanism is what makes it more than a fit
 
-[THEORY-tmp8a4gm](../theory.d/THEORY-tmp8a4gm.md) is the account: the plateau is the attention extraction
+[THEORY-028](../theory.d/THEORY-028.md) is the account: the plateau is the attention extraction
 circuit being built, and until it exists the error at the attribute token
 does not reach the name tokens, so the key-value store cannot learn.
 Concentrating the distribution gets that circuit built on fewer entities;

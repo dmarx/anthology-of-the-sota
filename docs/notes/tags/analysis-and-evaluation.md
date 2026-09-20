@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-45 of 198 NOTE documents. Back to the [full index](../README.md).
+46 of 201 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -53,3 +53,4 @@
 | [NOTE-181](../../../record/notes.d/NOTE-181.md) | Understanding Black-box Predictions via Influence Functions | Traces a prediction back to the training points responsible for it by upweighting each point infinitesimally and differentiating, which needs only gradients and Hessian-vector products rather than retraining. Establishes the four uses of training-data attribution — explanation, poisoning, domain-mismatch debugging, and finding mislabelled data. | Read |
 | [NOTE-183](../../../record/notes.d/NOTE-183.md) | The Unreasonable Effectiveness of Deep Features as a Perceptual Metric | Collect human similarity judgements first, then ask which metric agrees with them. Deep features beat every hand-designed metric by a wide margin, and the surprise is the insensitivity — architecture barely matters and supervision barely matters, but training on *something* matters a great deal, because a randomly initialized network does not work. Perceptual similarity looks like an emergent property of learned visual representations rather than of any particular training signal. | Read |
 | [NOTE-190](../../../record/notes.d/NOTE-190.md) | How much do language models memorize? | Defines memorization as compression rate against the model, separates it from generalization by training on uniform random bitstrings, and measures GPT-style transformer capacity at ~3.6 bits per parameter, linear in parameter count and nearly indifferent to precision. Double descent begins exactly where the data's information content crosses that capacity. | Read |
+| [NOTE-200](../../../record/notes.d/NOTE-200.md) | Scaling Laws for Fact Memorization | Fact capacity is linear in model size and saturates in epochs along a negative exponential; all of Wikidata would want ~1000B non-embedding parameters at 100 epochs. Redundant facts cost full price unless they share direction and structure. Generalisation to unseen facts exists and scales like ordinary pretraining. | Read |

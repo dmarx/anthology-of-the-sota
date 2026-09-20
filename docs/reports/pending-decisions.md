@@ -5,16 +5,16 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**94 document(s) awaiting a decision.**
+**97 document(s) awaiting a decision.**
 
 ## SOTAs
 
-65 of the 94.
+67 of the 97.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 35 | 2 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
-| 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 22 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
+| 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 25 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
 | 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 19 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
 | 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 13 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 10 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
@@ -27,8 +27,8 @@
 | 2026-09-07 | Proposed | [SOTA-156](../../record/practices.d/SOTA-156.md) | 5 | 0 | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed |
 | 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 2 | 0 | Pack training documents by best fit instead of concatenating and splitting |
 | 2026-09-08 | Proposed | [SOTA-173](../../record/practices.d/SOTA-173.md) | 19 | 0 | Augment the objective to make multi-epoch pretraining productive on a fixed corpus |
+| 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 15 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
 | 2026-09-08 | Proposed | [SOTA-160](../../record/practices.d/SOTA-160.md) | 13 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
-| 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 12 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
 | 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 9 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
 | 2026-09-08 | Proposed | [SOTA-158](../../record/practices.d/SOTA-158.md) | 8 | 0 | Bound the activation's output range when training in low precision |
 | 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 8 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
@@ -74,6 +74,8 @@
 | 2026-09-19 | Proposed | [SOTA-256](../../record/practices.d/SOTA-256.md) | 0 | 0 | Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget |
 | 2026-09-20 | Proposed | [SOTA-261](../../record/practices.d/SOTA-261.md) | 4 | 0 | Set AdamW's weight decay by targeting a timescale that follows a power law in tokens-per-parameter |
 | 2026-09-20 | Proposed | [SOTA-260](../../record/practices.d/SOTA-260.md) | 3 | 0 | Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it |
+| 2026-09-20 | Proposed | [SOTA-268](../../record/practices.d/SOTA-268.md) | 3 | 0 | Do not transfer a data mixing ratio across model scales; the threshold where a domain starts being learned moves with size |
+| 2026-09-20 | Proposed | [SOTA-267](../../record/practices.d/SOTA-267.md) | 2 | 0 | Start the training distribution imbalanced and flatten it, rather than holding it uniform throughout |
 | 2026-09-20 | Proposed | [SOTA-259](../../record/practices.d/SOTA-259.md) | 1 | 0 | Hold Adam's second-moment half-life fixed in tokens when the batch size changes, not beta_2 |
 | 2026-09-20 | Proposed | [SOTA-262](../../record/practices.d/SOTA-262.md) | 1 | 0 | Give each modality its own weights and let the streams attend jointly |
 | 2026-09-20 | Proposed | [SOTA-263](../../record/practices.d/SOTA-263.md) | 1 | 0 | Shift the timestep schedule when the resolution changes, because more pixels need more noise |
@@ -81,7 +83,7 @@
 
 ## THEORYs
 
-10 of the 94.
+11 of the 97.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -93,12 +95,13 @@
 | 2026-09-16 | Proposed | [THEORY-012](../../record/theory.d/THEORY-012.md) | 7 | 0 | How far a batch-size scaling heuristic transfers is a property of the optimizer, not of the heuristic |
 | 2026-09-16 | Proposed | [THEORY-014](../../record/theory.d/THEORY-014.md) | 3 | 0 | The outer optimizer is what buys the inner step count |
 | 2026-09-17 | Proposed | [THEORY-023](../../record/theory.d/THEORY-023.md) | 2 | 0 | Depth-dependent computation in a transformer falls into four stages, of which detokenization is the first |
-| 2026-09-19 | Proposed | [THEORY-025](../../record/theory.d/THEORY-025.md) | 0 | 0 | A transformer holds about 3.6 bits per parameter, and generalization begins where the data outgrows that budget |
+| 2026-09-19 | Proposed | [THEORY-025](../../record/theory.d/THEORY-025.md) | 7 | 0 | A transformer holds about 3.6 bits per parameter, and generalization begins where the data outgrows that budget |
 | 2026-09-20 | Proposed | [THEORY-026](../../record/theory.d/THEORY-026.md) | 3 | 0 | Critical batch size is set by how much data has been seen, not by how large the model is |
+| 2026-09-20 | Proposed | [THEORY-029](../../record/theory.d/THEORY-029.md) | 3 | 0 | A model of bounded capacity allocates it across datasets like a knapsack, so the optimum jumps rather than sliding |
 
 ## LITs
 
-3 of the 94.
+3 of the 97.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -108,7 +111,7 @@
 
 ## ADRs
 
-16 of the 94.
+16 of the 97.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -133,4 +136,4 @@ The citation count is the second axis, and it flips the priority: an old proposa
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (11): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md), [ADR-040](../../record/decisions.d/ADR-040.md), [ADR-042](../../record/decisions.d/ADR-042.md), [SOTA-234](../../record/practices.d/SOTA-234.md), [SOTA-256](../../record/practices.d/SOTA-256.md), [THEORY-025](../../record/theory.d/THEORY-025.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (10): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md), [ADR-040](../../record/decisions.d/ADR-040.md), [ADR-042](../../record/decisions.d/ADR-042.md), [SOTA-234](../../record/practices.d/SOTA-234.md), [SOTA-256](../../record/practices.d/SOTA-256.md) — these are the cheapest to close, since nothing depends on the answer.

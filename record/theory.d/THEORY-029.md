@@ -1,5 +1,8 @@
 ---
+number: 29
 status: Proposed
+formerly:
+- THEORY-tmpijbl9
 promote_when: >-
   A demonstration that the discontinuity appears for something other than
   factual memorisation — a capability, a skill, a benchmark — which is what
@@ -15,11 +18,11 @@ tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmphrxdn
+- LIT-451
 explains:
-- SOTA-tmphckqj
+- SOTA-268
 summary: >-
-  Gu et al. (2025), [LIT-tmphrxdn](../literature.d/LIT-tmphrxdn.md) — a model with bounded capacity training
+  Gu et al. (2025), [LIT-451](../literature.d/LIT-451.md) — a model with bounded capacity training
   on a mixture must decide how much capacity each dataset gets, and the
   allocation minimising total loss is a discrete choice. A discrete optimum
   moves discontinuously when its inputs move continuously, which is why
@@ -27,13 +30,13 @@ summary: >-
   than the smooth scaling the single-dataset case shows.
 ---
 
-# THEORY-tmpijbl9: A model of bounded capacity allocates it across datasets like a knapsack, so the optimum jumps rather than sliding
+# THEORY-029: A model of bounded capacity allocates it across datasets like a knapsack, so the optimum jumps rather than sliding
 <!-- inactive-ok-file: THEORY-025 — Proposed, and the single-claimant case this account generalises -->
-<!-- inactive-ok-file: SOTA-tmphckqj — Proposed, and filed in this same contribution as the practice this explains; also named in `explains:` -->
+<!-- inactive-ok-file: SOTA-268 — Proposed, and filed in this same contribution as the practice this explains; also named in `explains:` -->
 
 ## Source
 
-Gu et al. (2025), [LIT-tmphrxdn](../literature.d/LIT-tmphrxdn.md) — [ARXIV-2505.18091](https://arxiv.org/abs/2505.18091).
+Gu et al. (2025), [LIT-451](../literature.d/LIT-451.md) — [ARXIV-2505.18091](https://arxiv.org/abs/2505.18091).
 
 ## What was actually shown
 
@@ -61,7 +64,7 @@ data without risking anything.
 
 ## What this makes sense of
 
-**Why a mixing recipe does not transfer across scale** ([SOTA-tmphckqj](../practices.d/SOTA-tmphckqj.md)).
+**Why a mixing recipe does not transfer across scale** ([SOTA-268](../practices.d/SOTA-268.md)).
 Not because small models are noisy estimates of large ones, but because the
 two can sit on opposite sides of a transition, so the small run is measuring
 a different regime's answer.

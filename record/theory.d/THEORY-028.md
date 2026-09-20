@@ -1,16 +1,19 @@
 ---
+number: 28
 status: Active
+formerly:
+- THEORY-tmp8a4gm
 title: 'The plateau before factual recall is the formation of the attention circuit that recall needs'
 version: 1
 tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmpbtdlg
+- LIT-450
 explains:
-- SOTA-tmp8nitg
+- SOTA-267
 summary: >-
-  Zucchet et al. (2025), [LIT-tmpbtdlg](../literature.d/LIT-tmpbtdlg.md) — during the plateau between generic
+  Zucchet et al. (2025), [LIT-450](../literature.d/LIT-450.md) — during the plateau between generic
   statistics and entity-specific knowledge, the attention circuit that
   selects an attribute value is being built, and until it exists the error at
   the attribute token does not reach the name tokens. Shown by patching a
@@ -18,12 +21,12 @@ summary: >-
   entirely.
 ---
 
-# THEORY-tmp8a4gm: The plateau before factual recall is the formation of the attention circuit that recall needs
-<!-- inactive-ok-file: SOTA-tmp8nitg — Proposed, and filed in this same contribution as the practice this explains; also named in `explains:` -->
+# THEORY-028: The plateau before factual recall is the formation of the attention circuit that recall needs
+<!-- inactive-ok-file: SOTA-267 — Proposed, and filed in this same contribution as the practice this explains; also named in `explains:` -->
 
 ## Source
 
-Zucchet et al. (2025), [LIT-tmpbtdlg](../literature.d/LIT-tmpbtdlg.md) — [ARXIV-2503.21676](https://arxiv.org/abs/2503.21676).
+Zucchet et al. (2025), [LIT-450](../literature.d/LIT-450.md) — [ARXIV-2503.21676](https://arxiv.org/abs/2503.21676).
 
 ## What was actually shown
 
@@ -83,7 +86,7 @@ size is measured where population size is exactly known, which is what a
 synthetic setting buys and a natural corpus does not have.
 
 **It does not make the schedule free.** The practice it explains
-([SOTA-tmp8nitg](../practices.d/SOTA-tmp8nitg.md)) follows from the mechanism, and the mechanism says nothing
+([SOTA-267](../practices.d/SOTA-267.md)) follows from the mechanism, and the mechanism says nothing
 about the out-of-distribution cost of training on a concentrated
 distribution — which the neighbouring literature says exists.
 

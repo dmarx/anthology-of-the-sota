@@ -15,7 +15,7 @@ history:
 - version: 3
   date: '2026-09-20'
   note: >-
-    Moved to `contested`, with LIT-tmphrxdn named. Setting domain weights with
+    Moved to `contested`, with LIT-451 named. Setting domain weights with
     a small proxy assumes the weight that is right for the proxy is right, or
     nearly right, for the target. That paper finds knowledge acquisition under
     mixing has thresholds in model size, so proxy and target can sit on
@@ -25,7 +25,7 @@ tags:
 - data-pipeline
 consensus: contested
 contested_by:
-- LIT-tmphrxdn
+- LIT-451
 consensus_note: >-
   The baseline the data-mixing literature measures itself against, and the
   method later work cites when it wants a non-heuristic comparison. Not
@@ -48,7 +48,7 @@ summary: >-
 ---
 
 # SOTA-238: Set domain weights with a small proxy model under group DRO on excess loss, then transfer them
-<!-- inactive-ok-file: SOTA-tmphckqj — Proposed, and filed in this same contribution as the practice drawn from the contesting paper -->
+<!-- inactive-ok-file: SOTA-268 — Proposed, and filed in this same contribution as the practice drawn from the contesting paper -->
 
 <!-- inactive-ok-file: SOTA-166 — Proposed, and this practice's counterpart; naming it is how the record holds the choice -->
 
@@ -105,7 +105,7 @@ is for.
 
 ## Contested: the proxy and the target may be in different regimes
 
-Gu et al., [LIT-tmphrxdn](../literature.d/LIT-tmphrxdn.md), find that knowledge acquisition from a
+Gu et al., [LIT-451](../literature.d/LIT-451.md), find that knowledge acquisition from a
 knowledge-dense dataset mixed into web text has a **threshold in model
 size**: below it the model acquires almost nothing however long it trains,
 above it acquisition jumps. The threshold's location depends on the mixing
@@ -122,7 +122,7 @@ rather than a demonstrated failure: nobody has run group DRO across a
 transition and watched it choose wrongly. It is worth knowing because the
 failure mode is silent — the proxy reports a confident answer either way —
 and because it bites hardest on the small knowledge-dense domains where
-getting the weight right matters most. [SOTA-tmphckqj](SOTA-tmphckqj.md) is the practice drawn
+getting the weight right matters most. [SOTA-268](SOTA-268.md) is the practice drawn
 from that finding.
 
 ## Conditions

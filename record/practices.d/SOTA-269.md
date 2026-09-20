@@ -1,5 +1,8 @@
 ---
+number: 269
 status: Active
+formerly:
+- SOTA-tmppfvpd
 consensus: emerging
 consensus_note: >-
   The cost measurement is one group's; that retrieval-augmented pretraining
@@ -17,14 +20,14 @@ source:
 # Lu et al. is the cost argument and the claim rests on it. LIT-060 is here
 # because a recommendation to do X instead of Y needs X to be viable, and
 # RETRO is the record's evidence that it is (ADR-017).
-- LIT-tmpvt6e3
+- LIT-452
 - LIT-060
 introduced_by:
-- LIT-tmpvt6e3
+- LIT-452
 implementations:
 - 'RETRO'
 summary: >-
-  Lu et al. (2024), [LIT-tmpvt6e3](../literature.d/LIT-tmpvt6e3.md) — fact capacity is linear in model size
+  Lu et al. (2024), [LIT-452](../literature.d/LIT-452.md) — fact capacity is linear in model size
   and saturates in epochs, and the extrapolation is damning: all of Wikidata
   would want about 1000B non-embedding parameters trained for 100 epochs.
   Derivable facts cost full price unless they happen to share direction and
@@ -32,12 +35,12 @@ summary: >-
   alternative works at scale.
 ---
 
-# SOTA-tmppfvpd: Keep a knowledge base outside the weights; parameters are an expensive and lossy place to memorise facts
+# SOTA-269: Keep a knowledge base outside the weights; parameters are an expensive and lossy place to memorise facts
 <!-- inactive-ok-file: THEORY-025 — Proposed, and named as the corroborating measurement in different units -->
 
 ## Source
 
-Lu et al. (2024), [LIT-tmpvt6e3](../literature.d/LIT-tmpvt6e3.md) — [ARXIV-2406.15720](https://arxiv.org/abs/2406.15720). The cost argument, and
+Lu et al. (2024), [LIT-452](../literature.d/LIT-452.md) — [ARXIV-2406.15720](https://arxiv.org/abs/2406.15720). The cost argument, and
 what this practice rests on.
 
 Borgeaud et al. (2021), [LIT-060](../literature.d/LIT-060.md) — RETRO. Here because a recommendation to

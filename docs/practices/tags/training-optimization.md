@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-65 of 266 SOTA documents. Back to the [full index](../README.md).
+66 of 269 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -75,3 +75,4 @@
 | [SOTA-259](../../../record/practices.d/SOTA-259.md) | Hold Adam's second-moment half-life fixed in tokens when the batch size changes, not beta_2 | Marek et al. (2025), [LIT-444](../../../record/literature.d/LIT-444.md) — `beta_2` is a decay per optimizer step, and a step is not a fixed amount of data. Changing batch size from `B` to `B'` while holding `beta_2` fixed changes the second moment's averaging window in tokens by the same factor. Hold the half-life fixed instead: `beta_2' = beta_2^(B'/B)`. `beta_1`'s default is fine. | Proposed |
 | [SOTA-260](../../../record/practices.d/SOTA-260.md) | Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it | Marek et al. (2025), [LIT-444](../../../record/literature.d/LIT-444.md) — batch size one trains stably once Adam's second-moment half-life is held fixed in tokens, matches or beats large batches per FLOP, and is far more robust to hyperparameter misspecification. Gradient accumulation costs memory for the accumulated gradient and forgoes optimizer steps, and is worth it only when multiple device replicas are bottlenecked on interconnect bandwidth. | Proposed |
 | [SOTA-261](../../../record/practices.d/SOTA-261.md) | Set AdamW's weight decay by targeting a timescale that follows a power law in tokens-per-parameter | Bergsma et al. (2025), [LIT-443](../../../record/literature.d/LIT-443.md) — under AdamW the weights are an EMA of updates with timescale `1/(eta*lambda)`, and the fraction of training it averages, `tau = 1/(eta*lambda*S)`, is the quantity that scales. It follows a power law in tokens-per-parameter with exponent about -0.52 across three orders of magnitude of compute, so weight decay can be read off in advance rather than swept. | Proposed |
+| [SOTA-269](../../../record/practices.d/SOTA-269.md) | Keep a knowledge base outside the weights; parameters are an expensive and lossy place to memorise facts | Lu et al. (2024), [LIT-452](../../../record/literature.d/LIT-452.md) — fact capacity is linear in model size and saturates in epochs, and the extrapolation is damning: all of Wikidata would want about 1000B non-embedding parameters trained for 100 epochs. Derivable facts cost full price unless they happen to share direction and structure. Borgeaud et al., [LIT-060](../../../record/literature.d/LIT-060.md), is the record's evidence that the alternative works at scale. | Active |

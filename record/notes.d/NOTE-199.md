@@ -1,6 +1,9 @@
 ---
+number: 199
 status: Read
-paper: LIT-tmpbtdlg
+formerly:
+- NOTE-tmp7om7u
+paper: LIT-450
 title: 'How do language models learn facts?'
 version: 1
 date: '2026-09-20'
@@ -12,7 +15,7 @@ summary: >-
   it, so a schedule from imbalanced to uniform beats either fixed choice.
 ---
 
-# NOTE-tmp7om7u: How do language models learn facts?
+# NOTE-199: How do language models learn facts?
 <!-- inactive-ok-file: SOTA-130 — Proposed, and named among the task-stage curricula this reading distinguishes itself from -->
 
 ## Contribution

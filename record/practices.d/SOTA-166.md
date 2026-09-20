@@ -12,7 +12,7 @@ promote_when: >-
   the expensive version of this and is already what the field does.
 consensus: contested
 contested_by:
-- LIT-tmphrxdn
+- LIT-451
 
 consensus_note: >-
   One group, one functional form. Nobody has disputed it and nobody has
@@ -24,7 +24,7 @@ history:
 - version: 2
   date: '2026-09-20'
   note: >-
-    Moved to `contested`, with LIT-tmphrxdn named. That paper measures
+    Moved to `contested`, with LIT-451 named. That paper measures
     knowledge acquisition under mixing and finds thresholds in both model size
     and mixing ratio, with the critical ratio following a power law in size —
     so a proportion fitted on small runs can be an estimate of a different
@@ -48,7 +48,7 @@ summary: >-
 ---
 
 # SOTA-166: Set the pretraining data proportions by fitting a mixing law on small runs, not by argument
-<!-- inactive-ok-file: SOTA-tmphckqj — Proposed, and filed in this same contribution as the practice drawn from the contesting paper -->
+<!-- inactive-ok-file: SOTA-268 — Proposed, and filed in this same contribution as the practice drawn from the contesting paper -->
 
 ## Source
 
@@ -87,7 +87,7 @@ legible as the same idea.
 
 ## Contested: the fitted quantity may not be continuous in scale
 
-Gu et al., [LIT-tmphrxdn](../literature.d/LIT-tmphrxdn.md), measure knowledge acquisition from a
+Gu et al., [LIT-451](../literature.d/LIT-451.md), measure knowledge acquisition from a
 knowledge-dense dataset mixed into web text, and find **thresholds rather
 than a curve**: below a critical model size, or a critical mixing ratio, the
 model acquires almost nothing however long it trains. The critical ratio
@@ -105,7 +105,7 @@ transitions at both scales will transfer fine — plausibly the common case for
 the large web domains it was validated on. The exposure is to exactly the
 case the method is most wanted for: small, high-value, knowledge-dense
 domains at low share, where the transition is most likely to fall in between.
-[SOTA-tmphckqj](SOTA-tmphckqj.md) is the practice drawn from that finding.
+[SOTA-268](SOTA-268.md) is the practice drawn from that finding.
 
 ## Conditions, and why this is Proposed
 

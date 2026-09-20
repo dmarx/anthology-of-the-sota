@@ -1,6 +1,9 @@
 ---
+number: 201
 status: Read
-paper: LIT-tmphrxdn
+formerly:
+- NOTE-tmpp6ac8
+paper: LIT-451
 title: 'Data Mixing Can Induce Phase Transitions in Knowledge Acquisition'
 version: 1
 date: '2026-09-20'
@@ -12,7 +15,7 @@ summary: >-
   knapsack, with the critical ratio a power law in model size.
 ---
 
-# NOTE-tmpp6ac8: Data Mixing Can Induce Phase Transitions in Knowledge Acquisition
+# NOTE-201: Data Mixing Can Induce Phase Transitions in Knowledge Acquisition
 <!-- inactive-ok-file: THEORY-025 — Proposed, and the single-claimant case this reading bounds -->
 <!-- inactive-ok-file: SOTA-166 — Proposed, and one of the two practices this reading contests -->
 
@@ -116,7 +119,7 @@ against the measured transitions.
 ## Connections
 
 Takes the linear scaling law of Allen-Zhu and Li's biography experiments as
-its null hypothesis, and cites [LIT-tmpvt6e3](../literature.d/LIT-tmpvt6e3.md)'s Wikidata measurement as the
+its null hypothesis, and cites [LIT-452](../literature.d/LIT-452.md)'s Wikidata measurement as the
 same law reached by a different route, plus a theoretical treatment. All of
 these are single-dataset results, which is the paper's point.
 

@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-36 of 198 NOTE documents. Back to the [full index](../README.md).
+39 of 201 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -44,3 +44,6 @@
 | [NOTE-193](../../../record/notes.d/NOTE-193.md) | Power Lines | Scales the AdamW timescale rather than the weight decay, and finds it follows a power law in tokens-per-parameter with exponent about -0.52 over three orders of magnitude of compute. Optimal and critical batch size both scale as power laws in the token budget, not in compute. | Read |
 | [NOTE-194](../../../record/notes.d/NOTE-194.md) | Small Batch Size Training for Language Models | Small batches look unstable because `beta_2` is held fixed while the batch changes. Hold the second moment's half-life fixed in tokens instead and batch size one trains stably, matches larger batches per FLOP, is far more robust to hyperparameters, and lets momentum-free SGD match AdamW at 1.3B. | Read |
 | [NOTE-195](../../../record/notes.d/NOTE-195.md) | How Does Critical Batch Size Scale in Pre-training? | Decouples model size from data size — which every prior batch-size study had scaled together — and finds critical batch size tracks the token budget and is nearly flat in model size. Supported by a muP argument for the model half and a least-squares analysis for the data half. | Read |
+| [NOTE-199](../../../record/notes.d/NOTE-199.md) | How do language models learn facts? | Factual recall is learned in three phases, and the plateau between generic statistics and individual knowledge is the attention recall circuit being built — patching in a trained model's attention patterns removes the plateau. Imbalanced data shortens the plateau and slows acquisition after it, so a schedule from imbalanced to uniform beats either fixed choice. | Read |
+| [NOTE-200](../../../record/notes.d/NOTE-200.md) | Scaling Laws for Fact Memorization | Fact capacity is linear in model size and saturates in epochs along a negative exponential; all of Wikidata would want ~1000B non-embedding parameters at 100 epochs. Redundant facts cost full price unless they share direction and structure. Generalisation to unseen facts exists and scales like ordinary pretraining. | Read |
+| [NOTE-201](../../../record/notes.d/NOTE-201.md) | Data Mixing Can Induce Phase Transitions in Knowledge Acquisition | Linear scaling of acquired knowledge in model size holds when a knowledge-dense dataset is trained on alone and breaks once it is mixed into web text: below a critical model size, or a critical mixing ratio, the model memorises almost nothing. Attributed to capacity allocation as a knapsack, with the critical ratio a power law in model size. | Read |

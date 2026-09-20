@@ -1,6 +1,9 @@
 ---
+number: 200
 status: Read
-paper: LIT-tmpvt6e3
+formerly:
+- NOTE-tmpk9vmg
+paper: LIT-452
 title: 'Scaling Laws for Fact Memorization'
 version: 1
 date: '2026-09-20'
@@ -12,7 +15,7 @@ summary: >-
   scales like ordinary pretraining.
 ---
 
-# NOTE-tmpk9vmg: Scaling Laws for Fact Memorization
+# NOTE-200: Scaling Laws for Fact Memorization
 <!-- inactive-ok-file: THEORY-025 — Proposed, and the account this reading corroborates in different units -->
 
 ## Contribution
@@ -176,7 +179,7 @@ the paper makes it explicitly.
   [LIT-440](../literature.d/LIT-440.md) be checked against each other rather than merely agreeing in
   shape.
 - Does the epoch saturation interact with the mixing thresholds of
-  [LIT-tmphrxdn](../literature.d/LIT-tmphrxdn.md)? Both are about how much of a small dense corpus gets
+  [LIT-451](../literature.d/LIT-451.md)? Both are about how much of a small dense corpus gets
   stored, from different directions, and neither cites the other.
 - Can redundancy be made to compress by construction — canonicalising facts
   into a single direction and structure before training?

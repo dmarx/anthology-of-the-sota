@@ -17,13 +17,13 @@ history:
 - version: 2
   date: '2026-09-20'
   note: >-
-    Two neighbours arrived. Lu et al. (LIT-tmpvt6e3) measure fact capacity on
+    Two neighbours arrived. Lu et al. (LIT-452) measure fact capacity on
     Wikidata and find it linear in model size — the same functional form
     through a different instrument and different units, which is the second
-    measurement this account's linear claim wanted. Gu et al. (LIT-tmphrxdn)
+    measurement this account's linear claim wanted. Gu et al. (LIT-451)
     bound it: the fixed-budget picture is the single-claimant case, and with
     two datasets competing the allocation between them is discrete
-    (THEORY-tmpijbl9). `explains:` is still empty and the reason is unchanged.
+    (THEORY-029). `explains:` is still empty and the reason is unchanged.
     The account is not revised.
 tags:
 - analysis-and-evaluation
@@ -42,7 +42,7 @@ summary: >-
 ---
 
 # THEORY-025: A transformer holds about 3.6 bits per parameter, and generalization begins where the data outgrows that budget
-<!-- inactive-ok-file: THEORY-tmpijbl9 — Proposed, and filed in this same contribution as the account that bounds this one -->
+<!-- inactive-ok-file: THEORY-029 — Proposed, and filed in this same contribution as the account that bounds this one -->
 <!-- inactive-ok-file: SOTA-124 — Proposed, and the practice whose linear-scaling conjecture this measurement half-checks -->
 <!-- inactive-ok-file: SOTA-173 — Proposed, and named as one of the two positions this would bridge if the experiment were run -->
 
@@ -126,7 +126,7 @@ that was checked.
 
 ## A second measurement, and a boundary
 
-**Corroboration.** Lu et al., [LIT-tmpvt6e3](../literature.d/LIT-tmpvt6e3.md), measure how many Wikidata
+**Corroboration.** Lu et al., [LIT-452](../literature.d/LIT-452.md), measure how many Wikidata
 triples a model can recall and find capacity **linear in model size**, with a
 separate negative-exponential saturation in training epochs. That is this
 account's linear claim reached through an entirely different instrument:
@@ -140,12 +140,12 @@ is what would let the two be checked against each other rather than merely
 rhyming. Until somebody does it, this is agreement in shape and not in
 magnitude.
 
-**Boundary.** Gu et al., [LIT-tmphrxdn](../literature.d/LIT-tmphrxdn.md), show that the clean picture here is
+**Boundary.** Gu et al., [LIT-451](../literature.d/LIT-451.md), show that the clean picture here is
 the **single-claimant** case. Mix a knowledge-dense dataset into web text and
 knowledge acquisition acquires thresholds in both model size and mixing
 ratio: below them, almost nothing is stored however long training runs. The
 account offered is that bounded capacity allocated across datasets is a
-discrete problem, so its optimum jumps — [THEORY-tmpijbl9](THEORY-tmpijbl9.md).
+discrete problem, so its optimum jumps — [THEORY-029](THEORY-029.md).
 
 Nothing here is wrong; the measurements were made on one dataset at a time,
 and that is exactly the case where the budget has one claimant and fills

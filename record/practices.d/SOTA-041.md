@@ -32,6 +32,7 @@ summary: >-
 ---
 
 # SOTA-041: lr tuning less important for larger models
+<!-- inactive-ok-file: SOTA-062 — Superseded, and named in passing as a hyperparameter this practice's claim does not extend to; the point survives its retirement -->
 
 ## Source
 

@@ -18,6 +18,7 @@ implementations:
 ---
 
 # SOTA-096: `num_tokens ~ 20 * num_params`
+<!-- inactive-ok-file: SOTA-097 — Superseded, and named here only to record where the mis-sourced batch claim went; the sentence is history -->
 
 ## Source
 

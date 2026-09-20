@@ -1,0 +1,92 @@
+---
+status: Active
+title: 'Small Batch Size Training for Language Models: When Vanilla SGD Works, and Why Gradient Accumulation Is Wasteful'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-20'
+published: '2025-07-01'
+arxiv: '2507.07101'
+first_author: 'Marek'
+keywords:
+- 'batch-size'
+- 'gradient-accumulation'
+- 'adam-hyperparameters'
+- 'moment-half-life'
+- 'sgd'
+implementations: []
+summary: >-
+  Marek et al. (2025), [ARXIV-2507.07101](https://arxiv.org/abs/2507.07101). Batch size one trains
+  stably, and the reason small batches looked unstable is that `beta_2` was
+  held fixed while the batch changed. Hold the second moment's half-life
+  fixed in tokens instead and small batches match or beat large ones per
+  FLOP, are far more robust to hyperparameter choice, and let plain SGD
+  without momentum match AdamW at 1.3B.
+---
+
+# LIT-tmp5ytk5: Small Batch Size Training for Language Models: When Vanilla SGD Works, and Why Gradient Accumulation Is Wasteful
+<!-- inactive-ok-file: SOTA-097 — Superseded in this same change; named as one of the practices that assume bigger batches are what you want -->
+<!-- inactive-ok-file: SOTA-062 — Superseded in this same change; named in the same list and for the same reason -->
+
+## Key takeaways
+
+- **The received belief and the artifact behind it.** Small batches are
+  thought to destabilize language-model training, which is why gradient
+  accumulation is standard. Practitioners do commonly lower the learning rate
+  for a smaller batch — and hold everything else, `beta_2` included, at its
+  default. That last part is the bug.
+- **The fix is a change of variable, and it is the paper's whole content.**
+  Express Adam's decay rates as *half-lives measured in tokens*:
+  `t_half = B · ln(2)/ln(1/beta)`. Holding the second moment's half-life
+  `t_2` fixed while the batch size changes — rather than holding `beta_2`
+  fixed — makes training stable all the way down to batch size one. Scaling
+  down from `B` to `B'` means `beta_2' = beta_2^(B'/B)`.
+- **`beta_1`'s default is fine.** The commonly used first-moment value works
+  across batch sizes; it is specifically `beta_2` that has to move, and
+  holding it fixed is what breaks small batches.
+- **Small batches are more robust, not merely viable.** At batch size 1,
+  SGD, Adafactor, Adam and Muon all reach similar loss; the gap between
+  optimizers opens up as the batch grows. The loss surface over
+  hyperparameters is much flatter at small batch, so less tuning is needed.
+- **Vanilla SGD, no momentum, no optimizer state, batch size 1** matches the
+  AdamW configuration from GPT-3 on a 1.3B model. Adam and Adafactor at batch
+  size 1 beat that baseline.
+- **The square-root learning-rate rule overshoots.** Scaling the batch from 1
+  to 1024, the rule asks for 32×; about 3× worked better.
+- **The recommendation for `B`**: the *smallest* batch that still maximizes
+  throughput (or MFU) — in practice at least a few hundred tokens per device,
+  raised if a second-order optimizer's per-step overhead starts to bite.
+- **Against gradient accumulation** except when training across devices with
+  multiple replicas bottlenecked on interconnect bandwidth. Accumulation
+  costs memory for the accumulated gradient *and* forgoes optimizer steps.
+- Holds in fine-tuning too: a Gemma 3 4B fine-tune at batch size 1 with the
+  half-life rule, with LoRA and full fine-tuning compared at matched memory.
+
+## Standing in the anthology
+
+**It answers a question the record's batch-size material never asks.** Every
+practice the record holds on this topic is about how large a batch may
+usefully be — [SOTA-097](../practices.d/SOTA-097.md)'s exponent, [SOTA-062](../practices.d/SOTA-062.md)'s heuristic, [SOTA-198](../practices.d/SOTA-198.md)'s noise
+scale, [SOTA-093](../practices.d/SOTA-093.md)'s ramp. All of them take for granted that bigger is what
+you want and the only question is how much you can afford. This says the
+useful target is the *smallest* batch that saturates the hardware, and that
+the case against small batches was a hyperparameter artifact.
+
+That is compatible with the critical-batch-size line rather than opposed to
+it: `B_crit` is a ceiling above which parallelism stops paying, and this is
+an argument about where to sit below it. The two together give a range with a
+reason at each end.
+
+**The half-life reparameterization deserves to outlive the recommendation.**
+`beta_2 = 0.95` is a number the field copies without a unit attached; what it
+means depends on the batch size, and nobody says so. Expressing the moment
+decay in tokens gives the constant a unit and makes it transferable, which is
+the same move [LIT-tmp5olz5](LIT-tmp5olz5.md) makes for weight decay via the AdamW timescale.
+Two papers, two hyperparameters, one lesson: the number people copy is a
+ratio whose denominator was left implicit.
+
+**What it does not establish.** Everything at the interesting end is small —
+30M for the optimizer sweeps, 124M and 1.3B for the scale checks, and the
+1.3B run is under-trained at roughly 10 tokens per parameter. Nothing here
+says batch size one is workable when the model must be sharded across many
+devices, where the batch is not a free choice.

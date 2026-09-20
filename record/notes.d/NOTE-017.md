@@ -12,6 +12,7 @@ summary: >-
 ---
 
 # NOTE-017: Scaling Laws for Neural Language Models
+<!-- inactive-ok-file: SOTA-097 — Superseded since this reading was filed; the verdict here is about what Kaplan says, which is unchanged, and ADR-025 keeps a reading's findings distinct from the record's position -->
 
 ## Contribution
 

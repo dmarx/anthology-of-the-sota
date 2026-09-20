@@ -1,0 +1,83 @@
+---
+status: Active
+title: 'Data Mixing Can Induce Phase Transitions in Knowledge Acquisition'
+version: 1
+tags:
+- data-pipeline
+- training-optimization
+date: '2026-09-20'
+published: '2025-05-01'
+arxiv: '2505.18091'
+first_author: 'Gu'
+keywords:
+- 'data-mixing'
+- 'knowledge-acquisition'
+- 'phase-transition'
+- 'capacity-allocation'
+- 'scaling-laws'
+implementations: []
+summary: >-
+  Gu et al. (2025), [ARXIV-2505.18091](https://arxiv.org/abs/2505.18091). Knowledge acquired from a
+  knowledge-dense dataset scales linearly with model size when that dataset
+  is trained on alone — and stops doing so once it is mixed into web text.
+  Below a critical mixing ratio the model memorises almost nothing however
+  long it trains; below a critical model size, likewise. The critical ratio
+  follows a power law in model size, so the transitions are predictable.
+---
+
+# LIT-tmphrxdn: Data Mixing Can Induce Phase Transitions in Knowledge Acquisition
+<!-- inactive-ok-file: THEORY-025 — Proposed, and the account this paper bounds; naming it is what the Standing section is for -->
+<!-- inactive-ok-file: SOTA-166 — Proposed, and one of the two practices this paper is counter-evidence to -->
+
+## Key takeaways
+
+- **The premise is the composition of a real corpus.** In OLMo 2 over 95% of
+  tokens are web text and under 5% are knowledge-dense; Wikipedia alone is
+  under 0.1%. The question is what a model can actually acquire from a
+  fraction that small.
+- **The expected answer was linear scaling**, established for
+  knowledge-dense data trained on *alone* — Allen-Zhu and Li on synthetic
+  biographies, Lu et al. on Wikidata triples ([LIT-tmpvt6e3](LIT-tmpvt6e3.md)), with a
+  theoretical treatment since. Mixing was assumed not to change the shape.
+- **It does, and not gently.** Two phase transitions, measured on Pythia
+  models from 14M to 6.9B on synthetic biographies mixed into FineWeb-Edu or
+  the Pile:
+  - **In model size.** At a fixed mixing ratio, accuracy stays at zero as the
+    model grows, then past a threshold jumps to over 60%.
+  - **In mixing ratio.** At a fixed model size, accuracy stays at zero as the
+    ratio rises, then past a threshold climbs rapidly.
+- **The mechanism is capacity allocation, framed as a knapsack.** A model
+  with bounded capacity minimising overall test loss must decide how much of
+  that capacity each dataset gets. The optimal allocation is a discrete
+  choice, and a discrete optimum moves discontinuously as the inputs change.
+  Formalised information-theoretically.
+- **The transitions are predictable**: the critical mixing ratio follows a
+  **power law in model size**.
+- The stated consequence: *a good mixing recipe for large models may not be
+  optimal for small models, and vice versa.*
+
+## Standing in the anthology
+
+**It is counter-evidence to two practices that both extrapolate a mixture
+from small runs.** [SOTA-166](../practices.d/SOTA-166.md) fits a mixing law on small runs and
+extrapolates; [SOTA-238](../practices.d/SOTA-238.md) sets domain weights with a small proxy model under
+group DRO. Both assume the quantity being fitted is continuous in scale.
+
+If the amount a model learns from a domain has a threshold in model size, and
+the threshold's location depends on the mixing ratio, then a small run can
+sit on the wrong side of a transition the target model will be on the other
+side of. The fitted weight is then not a noisy estimate of the right answer;
+it is an estimate of a different regime's answer. Neither practice is refuted
+— both are measured and both work at the scales they were measured at — and
+both now have a named way to fail that nobody had checked for.
+
+**It also bounds [THEORY-025](../theory.d/THEORY-025.md).** That account says a model has a fixed budget
+of bits and switches to generalisation when the data exceeds it. This is the
+same picture with more than one claimant on the budget, and the addition is
+that allocation between claimants is discrete. The smooth plateau
+[THEORY-025](../theory.d/THEORY-025.md) measures is the single-dataset case.
+
+**The knapsack framing is the part worth keeping.** It predicts that
+mixing-ratio effects should be discontinuous in general, not only for
+factual knowledge, which is a claim broad enough to be wrong and nobody has
+tested it outside this setting.

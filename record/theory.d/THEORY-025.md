@@ -12,7 +12,19 @@ promote_when: >-
   unique data. What would not settle it: another double-descent curve with
   parameters and samples on the axes, which is the framing this replaces.
 title: 'A transformer holds about 3.6 bits per parameter, and generalization begins where the data outgrows that budget'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-20'
+  note: >-
+    Two neighbours arrived. Lu et al. (LIT-tmpvt6e3) measure fact capacity on
+    Wikidata and find it linear in model size — the same functional form
+    through a different instrument and different units, which is the second
+    measurement this account's linear claim wanted. Gu et al. (LIT-tmphrxdn)
+    bound it: the fixed-budget picture is the single-claimant case, and with
+    two datasets competing the allocation between them is discrete
+    (THEORY-tmpijbl9). `explains:` is still empty and the reason is unchanged.
+    The account is not revised.
 tags:
 - analysis-and-evaluation
 date: '2026-09-19'
@@ -30,6 +42,7 @@ summary: >-
 ---
 
 # THEORY-025: A transformer holds about 3.6 bits per parameter, and generalization begins where the data outgrows that budget
+<!-- inactive-ok-file: THEORY-tmpijbl9 — Proposed, and filed in this same contribution as the account that bounds this one -->
 <!-- inactive-ok-file: SOTA-124 — Proposed, and the practice whose linear-scaling conjecture this measurement half-checks -->
 <!-- inactive-ok-file: SOTA-173 — Proposed, and named as one of the two positions this would bridge if the experiment were run -->
 
@@ -110,6 +123,34 @@ architecture family, one training procedure, one precision regime, measured
 as a lower bound. Used to reason about orders of magnitude it is the best
 number available; used to size a model it is an extrapolation past everything
 that was checked.
+
+## A second measurement, and a boundary
+
+**Corroboration.** Lu et al., [LIT-tmpvt6e3](../literature.d/LIT-tmpvt6e3.md), measure how many Wikidata
+triples a model can recall and find capacity **linear in model size**, with a
+separate negative-exponential saturation in training epochs. That is this
+account's linear claim reached through an entirely different instrument:
+facts on a real knowledge base, where generalisation is possible and is
+separately quantified, against bits on random bitstrings where it is
+impossible by construction.
+
+Two instruments agreeing on the functional form is better than either alone.
+What is still missing is the conversion — how many bits a fact costs — which
+is what would let the two be checked against each other rather than merely
+rhyming. Until somebody does it, this is agreement in shape and not in
+magnitude.
+
+**Boundary.** Gu et al., [LIT-tmphrxdn](../literature.d/LIT-tmphrxdn.md), show that the clean picture here is
+the **single-claimant** case. Mix a knowledge-dense dataset into web text and
+knowledge acquisition acquires thresholds in both model size and mixing
+ratio: below them, almost nothing is stored however long training runs. The
+account offered is that bounded capacity allocated across datasets is a
+discrete problem, so its optimum jumps — [THEORY-tmpijbl9](THEORY-tmpijbl9.md).
+
+Nothing here is wrong; the measurements were made on one dataset at a time,
+and that is exactly the case where the budget has one claimant and fills
+smoothly. The plateau this account measures is the shape competition does not
+produce.
 
 ## Why `Proposed`
 

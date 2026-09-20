@@ -4,7 +4,7 @@ status: 'Active'
 formerly:
 - SOTA-tmp4n8k9
 title: 'Set domain weights with a small proxy model under group DRO on excess loss, then transfer them'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-18'
@@ -12,9 +12,20 @@ history:
     Names what the +6.5 points is measured against. The Pile is now filed;
     its default weights are a judgement call, which is what the gain is
     relative to. Recommendation and consensus unchanged.
+- version: 3
+  date: '2026-09-20'
+  note: >-
+    Moved to `contested`, with LIT-tmphrxdn named. Setting domain weights with
+    a small proxy assumes the weight that is right for the proxy is right, or
+    nearly right, for the target. That paper finds knowledge acquisition under
+    mixing has thresholds in model size, so proxy and target can sit on
+    opposite sides of one. The recommendation is unchanged; the method is not
+    refuted; the exposure is now named.
 tags:
 - data-pipeline
-consensus: converged
+consensus: contested
+contested_by:
+- LIT-tmphrxdn
 consensus_note: >-
   The baseline the data-mixing literature measures itself against, and the
   method later work cites when it wants a non-heuristic comparison. Not
@@ -37,6 +48,7 @@ summary: >-
 ---
 
 # SOTA-238: Set domain weights with a small proxy model under group DRO on excess loss, then transfer them
+<!-- inactive-ok-file: SOTA-tmphckqj — Proposed, and filed in this same contribution as the practice drawn from the contesting paper -->
 
 <!-- inactive-ok-file: SOTA-166 — Proposed, and this practice's counterpart; naming it is how the record holds the choice -->
 
@@ -90,6 +102,28 @@ A downstream task. Weights are produced with no evaluation target in the loop
 knowing the target cost nothing there, which is the paper's most surprising
 result and the reason this is usable before anyone has decided what the model
 is for.
+
+## Contested: the proxy and the target may be in different regimes
+
+Gu et al., [LIT-tmphrxdn](../literature.d/LIT-tmphrxdn.md), find that knowledge acquisition from a
+knowledge-dense dataset mixed into web text has a **threshold in model
+size**: below it the model acquires almost nothing however long it trains,
+above it acquisition jumps. The threshold's location depends on the mixing
+ratio, through a power law.
+
+A small proxy model can therefore sit below a transition the target model
+will sit above. The domain looks worthless to the proxy — little excess loss
+to reduce, so little for the group-DRO objective to weight toward — and the
+weight it assigns is a fact about the proxy's regime rather than the
+target's.
+
+**Not a refutation.** The method's evidence stands, and this is an exposure
+rather than a demonstrated failure: nobody has run group DRO across a
+transition and watched it choose wrongly. It is worth knowing because the
+failure mode is silent — the proxy reports a confident answer either way —
+and because it bites hardest on the small knowledge-dense domains where
+getting the weight right matters most. [SOTA-tmphckqj](SOTA-tmphckqj.md) is the practice drawn
+from that finding.
 
 ## Conditions
 

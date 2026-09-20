@@ -10,13 +10,27 @@ promote_when: >-
   at a scale it did not fit on. What would not move it: another report saying
   its proportions came from "ablation studies on smaller models", which is
   the expensive version of this and is already what the field does.
-consensus: unreplicated
+consensus: contested
+contested_by:
+- LIT-tmphrxdn
+
 consensus_note: >-
   One group, one functional form. Nobody has disputed it and nobody has
   reproduced it; the frontier reports in this record either say their
   proportions came from small-scale ablations or say nothing at all.
 title: 'Set the pretraining data proportions by fitting a mixing law on small runs, not by argument'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-20'
+  note: >-
+    Moved to `contested`, with LIT-tmphrxdn named. That paper measures
+    knowledge acquisition under mixing and finds thresholds in both model size
+    and mixing ratio, with the critical ratio following a power law in size —
+    so a proportion fitted on small runs can be an estimate of a different
+    regime's answer rather than a noisy estimate of the right one. The
+    recommendation is unchanged and the method is not refuted; what it gains is
+    a named way to fail that nobody had checked for.
 tags:
 - data-pipeline
 date: '2026-09-08'
@@ -34,6 +48,7 @@ summary: >-
 ---
 
 # SOTA-166: Set the pretraining data proportions by fitting a mixing law on small runs, not by argument
+<!-- inactive-ok-file: SOTA-tmphckqj — Proposed, and filed in this same contribution as the practice drawn from the contesting paper -->
 
 ## Source
 
@@ -69,6 +84,28 @@ sweep, and [LIT-145](../literature.d/LIT-145.md) fits scaling laws from one run'
 run per duration. This is that move applied to the data mixture — converting
 a judgement call into a fitted prediction — and it is filed so the three are
 legible as the same idea.
+
+## Contested: the fitted quantity may not be continuous in scale
+
+Gu et al., [LIT-tmphrxdn](../literature.d/LIT-tmphrxdn.md), measure knowledge acquisition from a
+knowledge-dense dataset mixed into web text, and find **thresholds rather
+than a curve**: below a critical model size, or a critical mixing ratio, the
+model acquires almost nothing however long it trains. The critical ratio
+follows a power law in model size.
+
+Fitting a mixing law on small runs and extrapolating assumes the quantity
+being fitted moves continuously with scale. Where a domain's transition falls
+between the proxy scale and the target scale, it does not — the small run is
+then measuring a different regime, and the extrapolation has nothing to say
+about the one that matters.
+
+**This is not a refutation.** The method was measured and works where it was
+measured, and a mixture whose domains all sit on the same side of their
+transitions at both scales will transfer fine — plausibly the common case for
+the large web domains it was validated on. The exposure is to exactly the
+case the method is most wanted for: small, high-value, knowledge-dense
+domains at low share, where the transition is most likely to fall in between.
+[SOTA-tmphckqj](SOTA-tmphckqj.md) is the practice drawn from that finding.
 
 ## Conditions, and why this is Proposed
 

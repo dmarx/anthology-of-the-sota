@@ -1,0 +1,93 @@
+---
+status: Active
+title: 'Contextures: The Mechanism of Representation Learning'
+version: 1
+tags:
+- representation-and-encoding
+- training-optimization
+date: '2026-09-20'
+published: '2025-04-01'
+arxiv: '2504.19792'
+first_author: 'Zhai'
+keywords:
+- 'representation-learning'
+- 'pretraining-objectives'
+- 'context-variable'
+- 'singular-value-decay'
+- 'diminishing-returns'
+implementations: []
+summary: >-
+  Zhai (2025), [ARXIV-2504.19792](https://arxiv.org/abs/2504.19792) — a CMU dissertation. A representation
+  is learned from the association between the input and a *context
+  variable*; an encoder capturing the maximum information of that association
+  is optimal on tasks compatible with the context. A context is most useful
+  when the association is neither too strong nor too weak, and mixing
+  contexts is a cheap way to get there.
+---
+
+# LIT-tmpguznl: Contextures: The Mechanism of Representation Learning
+<!-- inactive-ok-file: SOTA-tmpne4bq — Proposed, and filed in this same contribution from this note -->
+<!-- inactive-ok-file: SOTA-256 — Proposed, and named as the practice this dissertation reaches the same worry from a different direction than -->
+
+## Key takeaways
+
+- **One object underneath many methods.** Supervised learning,
+  self-supervised learning and generative pretraining are treated as
+  different things; the claim is that each learns the association between the
+  input `X` and some **context variable** `A`, and that the differences are
+  differences of context.
+- **"Learning the contexture"** is capturing the maximum information of that
+  association. The theorem: an encoder that does is optimal on the class of
+  tasks *compatible with the context* — which makes "what is this
+  representation good for" a question with an answer rather than an
+  empirical finding.
+- **A context is most useful when the association is neither too strong nor
+  too weak**, stated spectrally: the singular values of the expectation
+  operator should decay neither too fast nor too slowly. Too strong and the
+  representation collapses onto what the context already determines; too weak
+  and there is little to learn.
+- **Contexts can be mixed.** Several contexts whose associations are
+  individually too strong or too weak combine into a better one — described
+  as an effortless way to build good contexts from existing ones.
+- **The implication is a prediction about scaling**: aligning to the top
+  singular functions is what scale buys, and once alignment is high enough,
+  more scale gives diminishing returns. *"Further improvement requires better
+  contexts."*
+- Two general objectives are introduced, **SVME** and **KISE**, plus
+  statistical learning bounds and an extension to semi-supervised learning
+  through spectrally transformed kernel regression.
+
+## Standing in the anthology
+
+**It gives the record a way to talk about pretraining objectives as a class**
+rather than one at a time. The registry holds many objective practices —
+masked diffusion, fill-in-the-middle, multi-token prediction, the
+augmentation families — and no document saying what they have in common or
+what would make a new one good. This proposes that they all differ in one
+variable and that the variable has a measurable sweet spot.
+
+Sources [SOTA-tmpne4bq](../practices.d/SOTA-tmpne4bq.md). The practice is the spectral criterion plus the
+mixing move, and it is filed `Proposed` because the theory is a dissertation
+with worked objectives and the record holds no training run that chose a
+context this way.
+
+**It also sits against the record's data-constrained cluster.** [SOTA-256](../practices.d/SOTA-256.md)
+judges a scaling recipe by its asymptote; [LIT-441](LIT-441.md) shows regularisation and
+ensembling moving that asymptote. This says the asymptote is set by the
+context, and that no amount of scaling moves it — which is a stronger and
+more falsifiable version of the same worry, from a different direction.
+
+## Read how far
+
+**`Skimmed`, and the reading says so.** This is a 313,000-character
+dissertation; what was read is the abstract, the introduction, the stated
+implications, and the sections naming the two objectives. The theorems, the
+statistical learning bounds and the semi-supervised extension were not
+worked through, and no claim here should be taken as checked against its
+proof.
+
+[ADR-025](../decisions.d/ADR-025.md) makes `Skimmed` a respectable status and explicitly not enough to
+source a practice from on its own. The practice drawn from it rests on the
+stated criterion and the mixing construction, both of which are asserted in
+the summary sections rather than derived in what was read — which is
+recorded in that practice's conditions rather than smoothed over.

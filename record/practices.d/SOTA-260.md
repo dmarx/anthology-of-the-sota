@@ -1,5 +1,8 @@
 ---
+number: 260
 status: Proposed
+formerly:
+- SOTA-tmpbfftm
 promote_when: >-
   A second group running pretraining at or near batch size one with the
   half-life rule applied, at 1B or above and at a Chinchilla-or-better token
@@ -19,12 +22,12 @@ tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmp5ytk5
+- LIT-444
 introduced_by:
-- LIT-tmp5ytk5
+- LIT-444
 implementations: []
 summary: >-
-  Marek et al. (2025), [LIT-tmp5ytk5](../literature.d/LIT-tmp5ytk5.md) — batch size one trains stably once
+  Marek et al. (2025), [LIT-444](../literature.d/LIT-444.md) — batch size one trains stably once
   Adam's second-moment half-life is held fixed in tokens, matches or beats
   large batches per FLOP, and is far more robust to hyperparameter
   misspecification. Gradient accumulation costs memory for the accumulated
@@ -32,15 +35,15 @@ summary: >-
   device replicas are bottlenecked on interconnect bandwidth.
 ---
 
-# SOTA-tmpbfftm: Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it
+# SOTA-260: Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it
 <!-- inactive-ok-file: SOTA-097 — Superseded in this same change; named as one of the practices whose shared assumption this one disputes -->
 <!-- inactive-ok-file: SOTA-062 — Superseded in this same change; named in the same list -->
-<!-- inactive-ok-file: SOTA-tmp1t2ao — Proposed, and filed in this same contribution as this practice's safety condition -->
-<!-- inactive-ok-file: SOTA-tmpuz5ea — Proposed, and filed in this same contribution; named for the unexamined interaction with weight decay -->
+<!-- inactive-ok-file: SOTA-259 — Proposed, and filed in this same contribution as this practice's safety condition -->
+<!-- inactive-ok-file: SOTA-261 — Proposed, and filed in this same contribution; named for the unexamined interaction with weight decay -->
 
 ## Source
 
-Marek et al. (2025), [LIT-tmp5ytk5](../literature.d/LIT-tmp5ytk5.md) — [ARXIV-2507.07101](https://arxiv.org/abs/2507.07101).
+Marek et al. (2025), [LIT-444](../literature.d/LIT-444.md) — [ARXIV-2507.07101](https://arxiv.org/abs/2507.07101).
 
 ## The recommendation, and the one it replaces
 
@@ -60,7 +63,7 @@ optimization.
 
 ## This is only safe with the half-life rule
 
-[SOTA-tmp1t2ao](SOTA-tmp1t2ao.md) is not an optional companion. The entire reputation of small
+[SOTA-259](SOTA-259.md) is not an optional companion. The entire reputation of small
 batches for instability comes from holding `beta_2` fixed while shrinking the
 batch, which shortens the second moment's averaging window in tokens by the
 same factor. A reader who adopts the small batch without rescaling `beta_2`
@@ -81,7 +84,7 @@ gets precisely the instability this practice is explaining away.
 
 ## Where it sits against the ceiling
 
-[SOTA-tmp0cq3b](SOTA-tmp0cq3b.md) establishes that critical batch size grows with the token
+[SOTA-258](SOTA-258.md) establishes that critical batch size grows with the token
 budget. That is a ceiling above which parallelism stops paying; this is an
 argument about where to sit below it, and the two are compatible. Together
 they give a range with a reason at each end, which the record did not have:
@@ -111,7 +114,7 @@ argument rather than from a matched-conditions measurement.
 
 Weight decay is switched off rather than rescaled in the batch-size-1
 configurations, which leaves its interaction with the half-life rule
-unexamined — and [SOTA-tmpuz5ea](SOTA-tmpuz5ea.md) says weight decay is the hyperparameter that
+unexamined — and [SOTA-261](SOTA-261.md) says weight decay is the hyperparameter that
 should be moving.
 
 ## Known implementations

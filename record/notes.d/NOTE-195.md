@@ -1,6 +1,9 @@
 ---
+number: 195
 status: Read
-paper: LIT-tmphgpkf
+formerly:
+- NOTE-tmpm8s5j
+paper: LIT-445
 title: 'How Does Critical Batch Size Scale in Pre-training?'
 version: 1
 date: '2026-09-20'
@@ -11,7 +14,7 @@ summary: >-
   the model half and a least-squares analysis for the data half.
 ---
 
-# NOTE-tmpm8s5j: How Does Critical Batch Size Scale in Pre-training?
+# NOTE-195: How Does Critical Batch Size Scale in Pre-training?
 <!-- inactive-ok-file: SOTA-097 — Superseded in this same change, and this reading is half the evidence -->
 <!-- inactive-ok-file: SOTA-062 — Superseded in this same change, and this reading is the experiment that retires it -->
 
@@ -118,7 +121,7 @@ whose compute exponent the record carries, and departs from the
 gradient-noise-scale framing of [LIT-017](../literature.d/LIT-017.md) by making the token budget rather
 than the run's internal statistics the reported variable.
 
-Converges with [LIT-tmp5olz5](../literature.d/LIT-tmp5olz5.md), which reaches `0.47` where this reaches
+Converges with [LIT-443](../literature.d/LIT-443.md), which reaches `0.47` where this reaches
 `0.462`, from a different architecture, dataset, context length,
 parameterization, schedule and tuning strategy. Neither is a replication of
 the other's protocol; the agreement is between two independent ways of asking.
@@ -149,7 +152,7 @@ where this study needs it — the large-batch regime.
   size sub-linearly. That practice's body says a reader with a measurement
   should prefer it; this is the measurement, and the model-size dependence
   very nearly disappears.
-- **Half of the evidence retiring [SOTA-097](../practices.d/SOTA-097.md)**, jointly with [LIT-tmp5olz5](../literature.d/LIT-tmp5olz5.md).
+- **Half of the evidence retiring [SOTA-097](../practices.d/SOTA-097.md)**, jointly with [LIT-443](../literature.d/LIT-443.md).
 - **Should produce a theory document.** The muP argument plus the
   least-squares result is an account of *why* the split falls where it does,
   which is separable from the recommendation and is what `THEORY` is for.

@@ -1,6 +1,9 @@
 ---
+number: 194
 status: Read
-paper: LIT-tmp5ytk5
+formerly:
+- NOTE-tmp4v78r
+paper: LIT-444
 title: 'Small Batch Size Training for Language Models'
 version: 1
 date: '2026-09-20'
@@ -11,7 +14,7 @@ summary: >-
   robust to hyperparameters, and lets momentum-free SGD match AdamW at 1.3B.
 ---
 
-# NOTE-tmp4v78r: Small Batch Size Training for Language Models
+# NOTE-194: Small Batch Size Training for Language Models
 <!-- inactive-ok-file: SOTA-097 — Superseded in this same change; named among the practices that assume a large batch is the target -->
 <!-- inactive-ok-file: SOTA-062 — Superseded in this same change; named in the same list -->
 
@@ -123,7 +126,7 @@ line — `B_crit` is a ceiling, this is an argument about where to sit below it
 — but it is a contradiction of the assumption they share, that you want to be
 near the ceiling.
 
-The reparameterization is the same move [LIT-tmp5olz5](../literature.d/LIT-tmp5olz5.md) makes for weight
+The reparameterization is the same move [LIT-443](../literature.d/LIT-443.md) makes for weight
 decay through the AdamW timescale: a copied constant turns out to be a ratio
 with an implicit denominator, and naming the denominator makes the constant
 transferable. Two papers, two hyperparameters, one lesson — which is worth
@@ -179,7 +182,7 @@ comparison LoRA is usually spared.
   the parallelism topology.
 - Weight decay is switched off rather than rescaled in the batch-1
   configurations, which leaves its interaction with the half-life rule
-  unexamined — and [LIT-tmp5olz5](../literature.d/LIT-tmp5olz5.md) says weight decay is the hyperparameter that
+  unexamined — and [LIT-443](../literature.d/LIT-443.md) says weight decay is the hyperparameter that
   should be moving.
 - C5 is an inference from the other results plus a memory argument, not a
   measurement of accumulation against its alternative at matched conditions.

@@ -31,8 +31,8 @@ bare code and run `luria link --fix`.
 
 ## By topic
 
-**[Training optimization](tags/training-optimization.md)** (3) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
-[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md)
+**[Training optimization](tags/training-optimization.md)** (4) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
+[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md) · [026](../../record/theory.d/THEORY-026.md)
 
 **[Systems optimization](tags/systems-optimization.md)** (0) — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
@@ -66,7 +66,7 @@ bare code and run `luria link --fix`.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (13) · [Offered](status/Proposed.md) (9) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (13) · [Offered](status/Proposed.md) (10) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -107,4 +107,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-023](../../record/theory.d/THEORY-023.md) | Depth-dependent computation in a transformer falls into four stages, of which detokenization is the first | Lad et al. (2024), [LIT-417](../../record/literature.d/LIT-417.md) — the reading the authors put on their own localized-sensitivity result, and they put a question mark in the title. Four stages: detokenization lifts raw token embeddings into contextual ones by integrating local context; feature engineering refines task and entity features; prediction ensembling aggregates hidden states toward next-token predictions; residual sharpening suppresses irrelevant features at the end. The fourth carries a real experiment. The boundaries are approximate by the authors' own account, and stages may co-occur in one layer. | Proposed |
 | [THEORY-024](../../record/theory.d/THEORY-024.md) | Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map | Bernstein and Newhouse (2024), [LIT-438](../../record/literature.d/LIT-438.md) — gradients are dual vectors and weights are primal, so the subtraction in gradient descent needs a duality map. Build it recursively from per-layer operator norms and the Linear case is a Newton-Schulz iteration, which is what Muon does. The same construction shows muP and Shampoo are partial approximations of one map. | Active |
 | [THEORY-025](../../record/theory.d/THEORY-025.md) | A transformer holds about 3.6 bits per parameter, and generalization begins where the data outgrows that budget | Morris et al. (2025), [LIT-440](../../record/literature.d/LIT-440.md) — measured on uniform random bitstrings where generalization is impossible, GPT-style transformers store 3.5-4 bits per parameter, linear in parameter count and almost indifferent to weight precision. On real text, double descent begins exactly where the data's information content crosses that capacity. The proposed mechanism — that a model past capacity must share representation, and sharing is generalization — is an interpretation, not a measurement. | Proposed |
+| [THEORY-026](../../record/theory.d/THEORY-026.md) | Critical batch size is set by how much data has been seen, not by how large the model is | Zhang et al. (2024), [LIT-445](../../record/literature.d/LIT-445.md) — under maximal update parameterization there is a width past which more width does not raise the batch a step can usefully absorb, while for mini-batch SGD on least squares under power-law source and capacity conditions the useful batch grows as a power of the sample count. Two arguments, one for each half of the split the measurements show. | Proposed |
 

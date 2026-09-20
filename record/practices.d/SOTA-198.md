@@ -12,13 +12,13 @@ title: 'Measure the gradient noise scale instead of sweeping batch size, and exp
 version: 2
 history:
 # inactive-ok: SOTA-097 — Superseded in this same change; this entry says so
-# inactive-ok: THEORY-tmpzbrsl — Proposed, and filed in this same contribution as the account of the correction
+# inactive-ok: THEORY-026 — Proposed, and filed in this same contribution as the account of the correction
 - version: 2
   date: '2026-09-20'
   note: >-
     SOTA-097, the prediction this practice was set against, is now
     Superseded: the batch-size scaling variable is the token budget, not
-    compute (SOTA-tmp0cq3b, THEORY-tmpzbrsl). The section naming that
+    compute (SOTA-258, THEORY-026). The section naming that
     disagreement now says it was resolved, and says why the instrument
     survives the resolution — a noise scale rising through a run is what
     growth in tokens seen looks like from inside it. The recommendation is
@@ -42,7 +42,7 @@ implementations:
      why the record does not hold it. -->
 
 # SOTA-198: Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run
-<!-- inactive-ok-file: THEORY-tmpzbrsl — Proposed, and filed in this same contribution as the account of why the exponent this practice was set against was wrong -->
+<!-- inactive-ok-file: THEORY-026 — Proposed, and filed in this same contribution as the account of why the exponent this practice was set against was wrong -->
 
 ## Source
 
@@ -106,7 +106,7 @@ first.
 [SOTA-097](SOTA-097.md) gave `B ∝ C^0.24` from Kaplan's equation 1.7 — a **prediction** from
 compute budget, against this practice's **measurement** from the run in front
 of you. It is now `Superseded`, and by the better outcome: the disagreement
-was resolved rather than left open. The successor is [SOTA-tmp0cq3b](SOTA-tmp0cq3b.md), and the
+was resolved rather than left open. The successor is [SOTA-258](SOTA-258.md), and the
 scaling variable is the **token budget**, not compute — `B_crit ∝ D^0.46` from
 two groups who did not coordinate.
 
@@ -117,7 +117,7 @@ tells you to measure and the thing the new law predicts are the same
 quantity, observed two ways. What was wrong was the *prediction* from
 compute, not the measurement, and the reason to measure rather than predict
 stands: the exponent is fitted on somebody's model family and the noise scale
-is yours. [THEORY-tmpzbrsl](../theory.d/THEORY-tmpzbrsl.md) is the account.
+is yours. [THEORY-026](../theory.d/THEORY-026.md) is the account.
 
 `LIT-065` also supplies the systems consequence: the batch ceiling is why data
 parallelism runs out, and therefore why model parallelism exists at all. At

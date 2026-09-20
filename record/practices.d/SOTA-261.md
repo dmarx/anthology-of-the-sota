@@ -1,5 +1,8 @@
 ---
+number: 261
 status: Proposed
+formerly:
+- SOTA-tmpuz5ea
 promote_when: >-
   A second group fitting the normalized AdamW timescale against
   tokens-per-parameter and reporting an exponent, or a pretraining report
@@ -18,12 +21,12 @@ tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmp5olz5
+- LIT-443
 introduced_by:
-- LIT-tmp5olz5
+- LIT-443
 implementations: []
 summary: >-
-  Bergsma et al. (2025), [LIT-tmp5olz5](../literature.d/LIT-tmp5olz5.md) — under AdamW the weights are an
+  Bergsma et al. (2025), [LIT-443](../literature.d/LIT-443.md) — under AdamW the weights are an
   EMA of updates with timescale `1/(eta*lambda)`, and the fraction of
   training it averages, `tau = 1/(eta*lambda*S)`, is the quantity that
   scales. It follows a power law in tokens-per-parameter with exponent about
@@ -31,12 +34,12 @@ summary: >-
   read off in advance rather than swept.
 ---
 
-# SOTA-tmpuz5ea: Set AdamW's weight decay by targeting a timescale that follows a power law in tokens-per-parameter
+# SOTA-261: Set AdamW's weight decay by targeting a timescale that follows a power law in tokens-per-parameter
 <!-- inactive-ok-file: SOTA-255 — Proposed, and the practice whose stated gap this one does and does not close; the distinction is the section -->
 
 ## Source
 
-Bergsma et al. (2025), [LIT-tmp5olz5](../literature.d/LIT-tmp5olz5.md) — [ARXIV-2505.13738](https://arxiv.org/abs/2505.13738).
+Bergsma et al. (2025), [LIT-443](../literature.d/LIT-443.md) — [ARXIV-2505.13738](https://arxiv.org/abs/2505.13738).
 
 ## Why weight decay is the wrong thing to hold constant
 

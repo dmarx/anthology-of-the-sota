@@ -1,5 +1,8 @@
 ---
+number: 26
 status: Proposed
+formerly:
+- THEORY-tmpzbrsl
 promote_when: >-
   A measurement of critical batch size at fixed token budget across model
   sizes well beyond 1.2B — the scale at which the muP argument predicts the
@@ -15,12 +18,12 @@ tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmphgpkf
-- LIT-tmp5olz5
+- LIT-445
+- LIT-443
 explains:
-- SOTA-tmp0cq3b
+- SOTA-258
 summary: >-
-  Zhang et al. (2024), [LIT-tmphgpkf](../literature.d/LIT-tmphgpkf.md) — under maximal update
+  Zhang et al. (2024), [LIT-445](../literature.d/LIT-445.md) — under maximal update
   parameterization there is a width past which more width does not raise the
   batch a step can usefully absorb, while for mini-batch SGD on least squares
   under power-law source and capacity conditions the useful batch grows as a
@@ -28,14 +31,14 @@ summary: >-
   the measurements show.
 ---
 
-# THEORY-tmpzbrsl: Critical batch size is set by how much data has been seen, not by how large the model is
-<!-- inactive-ok-file: SOTA-tmpbfftm — Proposed, and named to say this account does NOT bear on where to operate below the ceiling -->
+# THEORY-026: Critical batch size is set by how much data has been seen, not by how large the model is
+<!-- inactive-ok-file: SOTA-260 — Proposed, and named to say this account does NOT bear on where to operate below the ceiling -->
 
 ## Source
 
-Zhang et al. (2024), [LIT-tmphgpkf](../literature.d/LIT-tmphgpkf.md) — [ARXIV-2410.21676](https://arxiv.org/abs/2410.21676).
+Zhang et al. (2024), [LIT-445](../literature.d/LIT-445.md) — [ARXIV-2410.21676](https://arxiv.org/abs/2410.21676).
 
-Bergsma et al. (2025), [LIT-tmp5olz5](../literature.d/LIT-tmp5olz5.md) — [ARXIV-2505.13738](https://arxiv.org/abs/2505.13738), for the
+Bergsma et al. (2025), [LIT-443](../literature.d/LIT-443.md) — [ARXIV-2505.13738](https://arxiv.org/abs/2505.13738), for the
 independent measurement of the exponent.
 
 ## What was actually shown
@@ -93,7 +96,7 @@ observation is evidence *for* this account, and what changes is the variable a
 practitioner should plan from, not the instrument.
 
 **It says nothing about where to operate below the ceiling.** Critical batch
-size is a speed-against-efficiency boundary. [SOTA-tmpbfftm](../practices.d/SOTA-tmpbfftm.md) argues from a
+size is a speed-against-efficiency boundary. [SOTA-260](../practices.d/SOTA-260.md) argues from a
 different source that the useful operating point is far below it, and nothing
 in this account bears on that.
 
@@ -111,6 +114,6 @@ independently. What is offered as explanation is one asymptotic argument about
 width that does not say where "past a certain width" begins, and one exact
 result in a setting several steps removed from the one measured.
 
-That is enough to explain [SOTA-tmp0cq3b](../practices.d/SOTA-tmp0cq3b.md) and to say why the old compute
+That is enough to explain [SOTA-258](../practices.d/SOTA-258.md) and to say why the old compute
 exponent fitted a projection. It is not yet enough to predict the exponent,
 which is what would make this `Active`.

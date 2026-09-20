@@ -7,7 +7,7 @@ status_note: >-
   describes the data; two independent groups measuring off that line find
   optimal and critical batch size scale in the token budget, not in compute.
   `Superseded` rather than `Rejected` because the fit is not an error and the
-  quantity is real — the successor is [SOTA-tmp0cq3b](SOTA-tmp0cq3b.md), and
+  quantity is real — the successor is [SOTA-258](SOTA-258.md), and
   [ADR-017](../decisions.d/ADR-017.md)'s corrective succession is the shape.
 title: 'Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`'
 version: 4
@@ -28,7 +28,7 @@ history:
 - version: 4
   date: '2026-09-20'
   note: >-
-    Superseded by SOTA-tmp0cq3b. This practice's own body said the batch
+    Superseded by SOTA-258. This practice's own body said the batch
     exponent had never been re-derived and should be held loosely. It has now
     been re-derived twice, by groups who did not coordinate, and the variable
     is wrong: critical and optimal batch size scale in the token budget D,
@@ -58,9 +58,9 @@ summary: >-
 extended_by:
 - SOTA-198
 superseded_by:
-- SOTA-tmp0cq3b
+- SOTA-258
 corrected_by:
-- SOTA-tmp0cq3b
+- SOTA-258
 ---
 
 # SOTA-097: Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`

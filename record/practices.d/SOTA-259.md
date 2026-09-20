@@ -1,5 +1,8 @@
 ---
+number: 259
 status: Proposed
+formerly:
+- SOTA-tmp1t2ao
 promote_when: >-
   A second group reporting that rescaling `beta_2` to hold the token half-life
   fixed removes a small-batch deficit, at any scale; or a training framework
@@ -17,25 +20,25 @@ tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmp5ytk5
+- LIT-444
 introduced_by:
-- LIT-tmp5ytk5
+- LIT-444
 implementations: []
 summary: >-
-  Marek et al. (2025), [LIT-tmp5ytk5](../literature.d/LIT-tmp5ytk5.md) — `beta_2` is a decay per optimizer
+  Marek et al. (2025), [LIT-444](../literature.d/LIT-444.md) — `beta_2` is a decay per optimizer
   step, and a step is not a fixed amount of data. Changing batch size from
   `B` to `B'` while holding `beta_2` fixed changes the second moment's
   averaging window in tokens by the same factor. Hold the half-life fixed
   instead: `beta_2' = beta_2^(B'/B)`. `beta_1`'s default is fine.
 ---
 
-# SOTA-tmp1t2ao: Hold Adam's second-moment half-life fixed in tokens when the batch size changes, not beta_2
-<!-- inactive-ok-file: SOTA-tmpbfftm — Proposed, and filed in this same contribution as the practice this one is the safety condition for -->
-<!-- inactive-ok-file: SOTA-tmpuz5ea — Proposed, and filed in this same contribution as the same move on a different hyperparameter -->
+# SOTA-259: Hold Adam's second-moment half-life fixed in tokens when the batch size changes, not beta_2
+<!-- inactive-ok-file: SOTA-260 — Proposed, and filed in this same contribution as the practice this one is the safety condition for -->
+<!-- inactive-ok-file: SOTA-261 — Proposed, and filed in this same contribution as the same move on a different hyperparameter -->
 
 ## Source
 
-Marek et al. (2025), [LIT-tmp5ytk5](../literature.d/LIT-tmp5ytk5.md) — [ARXIV-2507.07101](https://arxiv.org/abs/2507.07101).
+Marek et al. (2025), [LIT-444](../literature.d/LIT-444.md) — [ARXIV-2507.07101](https://arxiv.org/abs/2507.07101).
 
 ## The rule
 
@@ -64,7 +67,7 @@ previously published result showing small batches underperforming with fixed
 
 ## Why it is worth filing separately from the batch-size advice
 
-Because it is true independently of whether you take [SOTA-tmpbfftm](SOTA-tmpbfftm.md)'s advice
+Because it is true independently of whether you take [SOTA-260](SOTA-260.md)'s advice
 about *which* batch size to use. Anyone who changes batch size for any reason
 — a new cluster, a memory constraint, a fine-tuning run at a different scale —
 is silently changing the averaging window unless they apply it. That includes
@@ -80,7 +83,7 @@ is a number the field copies with an implicit denominator — a step — that
 varies between every two runs that compare it. Naming the denominator makes
 the constant transferable.
 
-[SOTA-tmpuz5ea](SOTA-tmpuz5ea.md) is the same move on a different hyperparameter: weight decay
+[SOTA-261](SOTA-261.md) is the same move on a different hyperparameter: weight decay
 only means something against a learning rate and a step count, and the AdamW
 timescale is what naming that denominator produces. Two papers, two
 hyperparameters, one diagnosis — the numbers everyone copies are ratios whose

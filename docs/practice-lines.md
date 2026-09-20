@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-44 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+43 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -117,11 +117,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [SOTA-036](../record/practices.d/SOTA-036.md) — Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective *(Active, unassessed)*
   - [SOTA-037](../record/practices.d/SOTA-037.md) — LM in-context learning emerges at scale *(Active, unassessed)*
   - [SOTA-038](../record/practices.d/SOTA-038.md) — ICL permits few-shot task adaptability *(Active, unassessed)*
-
-### From Use largest batch that maintains >80% sample efficiency
-
-- alongside: [SOTA-061](../record/practices.d/SOTA-061.md) — Use largest batch that maintains >80% sample efficiency *(Active, unassessed)*
-- alongside: [SOTA-062](../record/practices.d/SOTA-062.md) — Scale batch size with model size but sub-linearly *(Active, unassessed)*
 
 ### From At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width
 
@@ -261,10 +256,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [SOTA-131](../record/practices.d/SOTA-131.md) — When training with Muon at scale, rescale query and key weights whenever attention logits exceed a threshold (QK-Clip) *(Active, unassessed)*
 - alongside: [SOTA-168](../record/practices.d/SOTA-168.md) — Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself *(Proposed, unreplicated)*
 
-### From Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`
+### From Scale batch size with model size but sub-linearly
 
-- [SOTA-097](../record/practices.d/SOTA-097.md) — Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)` *(Active, unassessed)*
+- [SOTA-062](../record/practices.d/SOTA-062.md) — Scale batch size with model size but sub-linearly *(Superseded, unassessed)*
+  - [SOTA-258](../record/practices.d/SOTA-258.md) — Scale batch size with the token budget, not with compute or model size *(Active, emerging)* — also extends SOTA-097
+- [SOTA-097](../record/practices.d/SOTA-097.md) — Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)` *(Superseded, unassessed)*
   - [SOTA-198](../record/practices.d/SOTA-198.md) — Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run *(Active, emerging)*
+- alongside: [SOTA-061](../record/practices.d/SOTA-061.md) — Use largest batch that maintains >80% sample efficiency *(Active, unassessed)*
 
 ### From Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens
 

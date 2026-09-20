@@ -1,5 +1,8 @@
 ---
+number: 258
 status: Active
+formerly:
+- SOTA-tmp0cq3b
 consensus: emerging
 consensus_note: >-
   Two groups, independently, on different architectures, corpora, context
@@ -13,36 +16,36 @@ tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmphgpkf
-- LIT-tmp5olz5
+- LIT-445
+- LIT-443
 introduced_by:
-- LIT-tmphgpkf
+- LIT-445
 corrects:
 - SOTA-097
 - SOTA-062
 implementations: []
 summary: >-
-  Zhang et al. (2024), [LIT-tmphgpkf](../literature.d/LIT-tmphgpkf.md), and Bergsma et al. (2025),
-  [LIT-tmp5olz5](../literature.d/LIT-tmp5olz5.md) — critical batch size scales as `D^0.46` and `D^0.47`
+  Zhang et al. (2024), [LIT-445](../literature.d/LIT-445.md), and Bergsma et al. (2025),
+  [LIT-443](../literature.d/LIT-443.md) — critical batch size scales as `D^0.46` and `D^0.47`
   respectively, and is nearly flat in model size once the token budget is held
   fixed. Optimal batch size likewise goes as `D^0.38`. The compute exponent
   the field has used since Kaplan fits a projection: along the Chinchilla
   line `C` and `D` move together and only `D` is doing the work.
 explained_by:
-- THEORY-tmpzbrsl
+- THEORY-026
 ---
 
-# SOTA-tmp0cq3b: Scale batch size with the token budget, not with compute or model size
-<!-- inactive-ok-file: THEORY-tmpzbrsl — Proposed, and filed in this same contribution as the explanation of this practice -->
+# SOTA-258: Scale batch size with the token budget, not with compute or model size
+<!-- inactive-ok-file: THEORY-026 — Proposed, and filed in this same contribution as the explanation of this practice -->
 <!-- inactive-ok-file: SOTA-097 — Superseded by THIS practice; naming it is how the succession is legible -->
 <!-- inactive-ok-file: SOTA-062 — Superseded by THIS practice, for the same reason -->
-<!-- inactive-ok-file: SOTA-tmpbfftm — Proposed, and filed in this same contribution as the argument from the other end of the range -->
+<!-- inactive-ok-file: SOTA-260 — Proposed, and filed in this same contribution as the argument from the other end of the range -->
 
 ## Source
 
-Zhang et al. (2024), [LIT-tmphgpkf](../literature.d/LIT-tmphgpkf.md) — [ARXIV-2410.21676](https://arxiv.org/abs/2410.21676).
+Zhang et al. (2024), [LIT-445](../literature.d/LIT-445.md) — [ARXIV-2410.21676](https://arxiv.org/abs/2410.21676).
 
-Bergsma et al. (2025), [LIT-tmp5olz5](../literature.d/LIT-tmp5olz5.md) — [ARXIV-2505.13738](https://arxiv.org/abs/2505.13738).
+Bergsma et al. (2025), [LIT-443](../literature.d/LIT-443.md) — [ARXIV-2505.13738](https://arxiv.org/abs/2505.13738).
 
 Both are load-bearing and they are not the same evidence. Zhang et al. is the
 decoupling experiment — hold model size fixed, hold data fixed, see which one
@@ -111,14 +114,14 @@ is the reported variable, not the measurement.
 
 Two independent measurements agreeing on an exponent, one of them from a
 controlled decoupling experiment designed to answer exactly this question,
-plus a theoretical account of the split ([THEORY-tmpzbrsl](../theory.d/THEORY-tmpzbrsl.md)). The practice it
+plus a theoretical account of the split ([THEORY-026](../theory.d/THEORY-026.md)). The practice it
 replaces rested on a single 2020 fit that its own entry in this record had
 already flagged as never re-derived.
 
 ## Conditions
 
 **`B_crit` is a ceiling, not a target.** It marks where extra parallelism
-stops buying speed; it does not say to sit there. [SOTA-tmpbfftm](SOTA-tmpbfftm.md) argues from
+stops buying speed; it does not say to sit there. [SOTA-260](SOTA-260.md) argues from
 the other end that the useful operating point is well below it.
 
 The exponent is robust across two groups; the *level* is not, and it depends

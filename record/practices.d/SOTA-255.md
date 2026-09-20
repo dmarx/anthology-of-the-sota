@@ -23,7 +23,7 @@ history:
   note: >-
     The gap this practice's conditions named — no rule for predicting the
     optimum from the parameter-to-token ratio — now has a candidate, and the
-    candidate does not fit. Bergsma et al. (LIT-tmp5olz5, SOTA-tmpuz5ea) give
+    candidate does not fit. Bergsma et al. (LIT-443, SOTA-261) give
     a power law for the AdamW timescale in tokens-per-parameter, fitted over
     TPP 20 to 1280 under explicitly single-epoch training. This practice's
     source epochs a fixed corpus at TPP below 20 and often below 1. Two
@@ -48,7 +48,7 @@ summary: >-
 ---
 
 # SOTA-255: Tune weight decay upward when pretraining over a repeated corpus, rather than inheriting the customary value
-<!-- inactive-ok-file: SOTA-tmpuz5ea — Proposed, and filed in this same contribution as the law in the other regime -->
+<!-- inactive-ok-file: SOTA-261 — Proposed, and filed in this same contribution as the law in the other regime -->
 <!-- inactive-ok-file: SOTA-173 — Proposed, and named as one of the positions this practice says was measured at one setting of weight decay -->
 
 ## Source
@@ -125,7 +125,7 @@ arise.
 
 The conditions above say the paper "gives no way to predict the optimum from
 the parameter-to-token ratio, so the practice is really *sweep it, and sweep
-upward*". [SOTA-tmpuz5ea](SOTA-tmpuz5ea.md) is a law in exactly that ratio — the normalized AdamW
+upward*". [SOTA-261](SOTA-261.md) is a law in exactly that ratio — the normalized AdamW
 timescale, `1/(η λ S)`, following a power law in tokens-per-parameter with
 exponent about −0.52, fitted over three orders of magnitude of compute.
 

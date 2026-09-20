@@ -7,7 +7,7 @@ status_note: >-
   very nearly vanishes. What the heuristic was tracking is the data that
   scaled alongside the model. `Superseded` rather than `Rejected` because
   following it along the Chinchilla line gives roughly the right answer for
-  the wrong reason — the successor is [SOTA-tmp0cq3b](SOTA-tmp0cq3b.md).
+  the wrong reason — the successor is [SOTA-258](SOTA-258.md).
 title: 'Scale batch size with model size but sub-linearly'
 version: 2
 history:
@@ -17,10 +17,10 @@ history:
 - version: 2
   date: '2026-09-20'
   note: >-
-    Superseded by SOTA-tmp0cq3b, and retagged. Zhang et al. (LIT-tmphgpkf)
+    Superseded by SOTA-258, and retagged. Zhang et al. (LIT-445)
     ran the decoupling experiment this practice's body invited — hold the
     token budget fixed and vary model size — and the dependence very nearly
-    disappears; Bergsma et al. (LIT-tmp5olz5) agree from a scaling-law fit.
+    disappears; Bergsma et al. (LIT-443) agree from a scaling-law fit.
     The retag from `model-architecture` to `training-optimization` is correct
     on its own terms and would be right with or without the supersession:
     `batch size` is named in the training-optimization blurb and nothing in
@@ -37,11 +37,11 @@ introduced_by:
 compared_against:
 - SOTA-061
 superseded_by:
-- SOTA-tmp0cq3b
+- SOTA-258
 summary: >-
   Fedus et al. (2021), [LIT-061](../literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684).
 corrected_by:
-- SOTA-tmp0cq3b
+- SOTA-258
 ---
 
 # SOTA-062: Scale batch size with model size but sub-linearly

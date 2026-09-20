@@ -1,6 +1,9 @@
 ---
+number: 193
 status: Read
-paper: LIT-tmp5olz5
+formerly:
+- NOTE-tmp20dox
+paper: LIT-443
 title: 'Power Lines'
 version: 1
 date: '2026-09-20'
@@ -11,7 +14,7 @@ summary: >-
   scale as power laws in the token budget, not in compute.
 ---
 
-# NOTE-tmp20dox: Power Lines
+# NOTE-193: Power Lines
 <!-- inactive-ok-file: SOTA-097 — Superseded in this same change, and this reading is the evidence -->
 <!-- inactive-ok-file: SOTA-062 — Superseded in this same change, and named as contradicted by implication -->
 <!-- inactive-ok-file: SOTA-255 — Proposed, and named because this reading says why the two do NOT compose -->
@@ -169,7 +172,7 @@ consistency check a scaling law rarely gets.
 - **Retires [SOTA-097](../practices.d/SOTA-097.md).** `B ∝ C^0.24` is a fit to a projection. That
   practice's own body already flagged that the exponent had never been
   re-derived; it now has been, twice, and the variable is wrong.
-- **Contradicts [SOTA-062](../practices.d/SOTA-062.md)** by implication and [LIT-tmphgpkf](../literature.d/LIT-tmphgpkf.md) directly:
+- **Contradicts [SOTA-062](../practices.d/SOTA-062.md)** by implication and [LIT-445](../literature.d/LIT-445.md) directly:
   batch size does not track model size once the token budget is held fixed.
 - **Should produce practices** for R1 and R3, and R4 is worth filing as the
   Pareto claim it is.

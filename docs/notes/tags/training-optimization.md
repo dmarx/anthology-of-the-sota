@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-33 of 192 NOTE documents. Back to the [full index](../README.md).
+36 of 195 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -41,3 +41,6 @@
 | [NOTE-189](../../../record/notes.d/NOTE-189.md) | Modular Duality in Deep Learning | Gradients live in the dual space and weights live in the primal one, so subtracting one from the other is a type error that ordinary gradient descent commits every step. Fix it with a duality map built recursively from per-layer operator norms. Two consequences the record cares about: muP and Shampoo turn out to be partial approximations of one such map, and the map for Linear layers is a Newton-Schulz iteration — which is Muon. | Read |
 | [NOTE-190](../../../record/notes.d/NOTE-190.md) | How much do language models memorize? | Defines memorization as compression rate against the model, separates it from generalization by training on uniform random bitstrings, and measures GPT-style transformer capacity at ~3.6 bits per parameter, linear in parameter count and nearly indifferent to precision. Double descent begins exactly where the data's information content crosses that capacity. | Read |
 | [NOTE-191](../../../record/notes.d/NOTE-191.md) | Pre-training under infinite compute | Under a fixed 200M-token corpus and no compute limit, the standard recipe overfits; tuning weight decay to ~30x the customary 0.1 makes loss monotone in parameter count. Ensembling independently trained models then beats parameter scaling on asymptote, and distils back down at ~83% retention. | Read |
+| [NOTE-193](../../../record/notes.d/NOTE-193.md) | Power Lines | Scales the AdamW timescale rather than the weight decay, and finds it follows a power law in tokens-per-parameter with exponent about -0.52 over three orders of magnitude of compute. Optimal and critical batch size both scale as power laws in the token budget, not in compute. | Read |
+| [NOTE-194](../../../record/notes.d/NOTE-194.md) | Small Batch Size Training for Language Models | Small batches look unstable because `beta_2` is held fixed while the batch changes. Hold the second moment's half-life fixed in tokens instead and batch size one trains stably, matches larger batches per FLOP, is far more robust to hyperparameters, and lets momentum-free SGD match AdamW at 1.3B. | Read |
+| [NOTE-195](../../../record/notes.d/NOTE-195.md) | How Does Critical Batch Size Scale in Pre-training? | Decouples model size from data size — which every prior batch-size study had scaled together — and finds critical batch size tracks the token budget and is nearly flat in model size. Supported by a muP argument for the model half and a least-squares analysis for the data half. | Read |

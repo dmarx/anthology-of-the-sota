@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**87 document(s) awaiting a decision.**
+**91 document(s) awaiting a decision.**
 
 ## SOTAs
 
-59 of the 87.
+62 of the 91.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -67,15 +67,18 @@
 | 2026-09-17 | Proposed | [SOTA-247](../../record/practices.d/SOTA-247.md) | 1 | 0 | Add a multi-token word to a frozen model's vocabulary from the model's own detokenized representation of it |
 | 2026-09-17 | Proposed | [SOTA-248](../../record/practices.d/SOTA-248.md) | 1 | 0 | Stretch and clip the softmax so an attention head can output exact zeros |
 | 2026-09-17 | Proposed | [SOTA-234](../../record/practices.d/SOTA-234.md) | 0 | 0 | Train in the target low-bit format from scratch rather than quantizing a finished model |
-| 2026-09-19 | Proposed | [SOTA-255](../../record/practices.d/SOTA-255.md) | 5 | 0 | Tune weight decay upward when pretraining over a repeated corpus, rather than inheriting the customary value |
+| 2026-09-19 | Proposed | [SOTA-255](../../record/practices.d/SOTA-255.md) | 10 | 0 | Tune weight decay upward when pretraining over a repeated corpus, rather than inheriting the customary value |
 | 2026-09-19 | Proposed | [SOTA-251](../../record/practices.d/SOTA-251.md) | 2 | 0 | Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule |
 | 2026-09-19 | Proposed | [SOTA-254](../../record/practices.d/SOTA-254.md) | 2 | 0 | Train the language model as a masked diffusion model when the corpus is fixed and the compute is not |
 | 2026-09-19 | Proposed | [SOTA-257](../../record/practices.d/SOTA-257.md) | 1 | 0 | Spend surplus compute on an ensemble of independently seeded models and distil it, rather than on one larger model |
 | 2026-09-19 | Proposed | [SOTA-256](../../record/practices.d/SOTA-256.md) | 0 | 0 | Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget |
+| 2026-09-20 | Proposed | [SOTA-261](../../record/practices.d/SOTA-261.md) | 4 | 0 | Set AdamW's weight decay by targeting a timescale that follows a power law in tokens-per-parameter |
+| 2026-09-20 | Proposed | [SOTA-260](../../record/practices.d/SOTA-260.md) | 3 | 0 | Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it |
+| 2026-09-20 | Proposed | [SOTA-259](../../record/practices.d/SOTA-259.md) | 1 | 0 | Hold Adam's second-moment half-life fixed in tokens when the batch size changes, not beta_2 |
 
 ## THEORYs
 
-9 of the 87.
+10 of the 91.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -88,10 +91,11 @@
 | 2026-09-16 | Proposed | [THEORY-014](../../record/theory.d/THEORY-014.md) | 3 | 0 | The outer optimizer is what buys the inner step count |
 | 2026-09-17 | Proposed | [THEORY-023](../../record/theory.d/THEORY-023.md) | 2 | 0 | Depth-dependent computation in a transformer falls into four stages, of which detokenization is the first |
 | 2026-09-19 | Proposed | [THEORY-025](../../record/theory.d/THEORY-025.md) | 0 | 0 | A transformer holds about 3.6 bits per parameter, and generalization begins where the data outgrows that budget |
+| 2026-09-20 | Proposed | [THEORY-026](../../record/theory.d/THEORY-026.md) | 3 | 0 | Critical batch size is set by how much data has been seen, not by how large the model is |
 
 ## LITs
 
-3 of the 87.
+3 of the 91.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -101,7 +105,7 @@
 
 ## ADRs
 
-16 of the 87.
+16 of the 91.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -112,7 +116,7 @@
 | 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 7 | 1 | Every practice states its origin, even when it is the primary source |
 | 2026-09-15 | Proposed | [ADR-034](../../record/decisions.d/ADR-034.md) | 7 | 0 | A document that changes scheme is Superseded where it leaves, and names its successor across the boundary |
 | 2026-09-15 | Proposed | [ADR-033](../../record/decisions.d/ADR-033.md) | 0 | 0 | Readings made in another context port into the record; their agenda does not |
-| 2026-09-16 | Proposed | [ADR-035](../../record/decisions.d/ADR-035.md) | 37 | 0 | A document may carry more than one topic; the first is the primary |
+| 2026-09-16 | Proposed | [ADR-035](../../record/decisions.d/ADR-035.md) | 38 | 0 | A document may carry more than one topic; the first is the primary |
 | 2026-09-16 | Proposed | [ADR-038](../../record/decisions.d/ADR-038.md) | 13 | 0 | A note has no topics of its own: it derives them from its paper |
 | 2026-09-16 | Proposed | [ADR-041](../../record/decisions.d/ADR-041.md) | 8 | 0 | An algorithm-local tuning constant belongs in the reading of the paper that measured it, not in the practice registry |
 | 2026-09-16 | Proposed | [ADR-039](../../record/decisions.d/ADR-039.md) | 2 | 0 | The configuration is part of the record, and the lint reads it |

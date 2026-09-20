@@ -6,7 +6,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-30 of 257 SOTA documents. Back to the [full index](../README.md).
+31 of 261 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -28,7 +28,7 @@
 | [SOTA-186](../../../record/practices.d/SOTA-186.md) | Bootstrap a large annotation set with the model you are training, staging the automation as it improves |  | Active |
 | [SOTA-194](../../../record/practices.d/SOTA-194.md) | When an objective arrives with its own dataset, state the composition before crediting the objective |  | Active |
 | [SOTA-196](../../../record/practices.d/SOTA-196.md) | Report zero-shot and in-distribution performance separately; one hyperparameter can move them in opposite directions |  | Active |
-| [SOTA-198](../../../record/practices.d/SOTA-198.md) | Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run |  | Active |
+| [SOTA-198](../../../record/practices.d/SOTA-198.md) v2 | Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run |  | Active |
 | [SOTA-200](../../../record/practices.d/SOTA-200.md) | Check whether an emergent capability is a metric artefact before believing it |  | Active |
 | [SOTA-201](../../../record/practices.d/SOTA-201.md) | Give each pretrained component its own learning rate when fine-tuning a composite model |  | Active |
 | [SOTA-206](../../../record/practices.d/SOTA-206.md) | Keep a multi-step sampling option in a few-step generative model | Song et al. (2023), [LIT-093](../../../record/literature.d/LIT-093.md). A one-step model that cannot spend more compute has no quality dial: whatever it produces is what you get. Consistency models trade compute for quality at inference without retraining, and that property is worth preserving by design. | Active |
@@ -40,3 +40,4 @@
 | [SOTA-219](../../../record/practices.d/SOTA-219.md) | Leave the inner optimizer state unsynchronised in local-update training | When workers train independently for hundreds of steps and synchronise by exchanging deltas, the Adam moments each worker accumulated are local state and should stay local. Synchronising them triples the communication for negligible quality gain — which means most of what the scheme saves is not saved by communicating rarely, but by communicating less each time. | Active |
 | [SOTA-236](../../../record/practices.d/SOTA-236.md) | Predict scene geometry directly instead of solving for cameras first and triangulating | Wang et al. (2023), [LIT-385](../../../record/literature.d/LIT-385.md) — [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132); Wang et al. (2025), [LIT-384](../../../record/literature.d/LIT-384.md) — [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651). Given uncalibrated, unposed images, regress the 3D structure and let camera parameters and pixel matches fall out of it, rather than estimating calibration and pose first so that triangulation becomes possible. The quantities the classical pipeline needs as inputs are by-products of this one. | Active |
 | [SOTA-246](../../../record/practices.d/SOTA-246.md) | Find mislabelled training data by self-influence, not by training loss | Koh and Liang (2017), [LIT-403](../../../record/literature.d/LIT-403.md), with [LIT-400](../../../record/literature.d/LIT-400.md) — rank training points by their influence on their own loss and inspect from the top. Mislabelled examples are strong proponents of themselves, so they sort to the front; high training loss does not separate them nearly as well. | Proposed |
+| [SOTA-258](../../../record/practices.d/SOTA-258.md) | Scale batch size with the token budget, not with compute or model size | Zhang et al. (2024), [LIT-445](../../../record/literature.d/LIT-445.md), and Bergsma et al. (2025), [LIT-443](../../../record/literature.d/LIT-443.md) — critical batch size scales as `D^0.46` and `D^0.47` respectively, and is nearly flat in model size once the token budget is held fixed. Optimal batch size likewise goes as `D^0.38`. The compute exponent the field has used since Kaplan fits a projection: along the Chinchilla line `C` and `D` move together and only `D` is doing the work. | Active |

@@ -9,7 +9,7 @@ consensus_note: >-
   clip; the Kimi line takes the other route. The invariant is agreed, the
   instrument is not.
 title: 'Normalize the queries and keys before the attention dot product'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-18'
@@ -21,6 +21,16 @@ history:
   # the line this tag binds; nothing here rests on its standing
   note: >-
     Adds `training-optimization`. Normalizing queries and keys is a training-dynamics intervention, and it is the value shared by the line running through SOTA-121, SOTA-165 and SOTA-168 (ADR-049).
+- version: 4
+  date: '2026-09-20'
+  note: >-
+    Records an independent arrival. Esser et al. (LIT-tmps0tea) adopt QK-norm
+    for a high-resolution diffusion transformer after mixed-precision
+    training diverged, diagnosing it through the discriminative ViT
+    literature's attention-entropy result rather than through anything in the
+    language-model line this practice was filed from. Neither line cites the
+    other. The recommendation is unchanged; what is added is that the
+    invariant now has two arrival events from two different failures.
 tags:
 - model-stability
 - attention-techniques
@@ -87,6 +97,23 @@ DeepSeek-V4 runs Muon with QK-norm and reports not needing it.
 **Nobody has compared them.** The record now carries both, and which is
 preferable — or whether the clip is only necessary when the normalization is
 absent — is unresolved.
+
+## A third arrival, from generative modelling
+
+The two routes above are both from language-model training. A third arrives
+from image synthesis and does not cite either: Esser et al., [LIT-tmps0tea](../literature.d/LIT-tmps0tea.md),
+found that mixed-precision training of an 8B diffusion transformer **diverged
+when moving to high resolution**, took the diagnosis from the discriminative
+ViT literature — attention entropy growing without bound — and fixed it with
+RMSNorm on Q and K in both streams of their architecture.
+
+Same intervention, same invariant, a failure mode the language-model line
+never reports, and no citation in either direction.
+
+[DP-007](../principles.d/DP-007.md) says agreement has no author and therefore no arrival event.
+This is the interesting variant: there are two arrival events, in different
+literatures, and the record can see both only because it files by the kind of
+claim rather than by the domain the claim was found in ([ADR-026](../decisions.d/ADR-026.md)).
 
 ## Conditions
 

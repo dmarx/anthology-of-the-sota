@@ -1,0 +1,99 @@
+---
+status: Active
+title: 'Scaling Rectified Flow Transformers for High-Resolution Image Synthesis'
+version: 1
+tags:
+- generative-modeling
+- model-architecture
+date: '2026-09-20'
+published: '2024-03-01'
+arxiv: '2403.03206'
+first_author: 'Esser'
+extends:
+- LIT-tmpdkrfi
+keywords:
+- 'rectified-flow'
+- 'logit-normal-sampling'
+- 'timestep-shifting'
+- 'multimodal-transformer'
+- 'text-to-image'
+- 'scaling'
+implementations:
+- 'Stable Diffusion 3'
+summary: >-
+  Esser et al. (2024), [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206). A 61-way comparison of
+  diffusion and rectified-flow formulations settles on a straight-line path
+  with timesteps drawn from a logit-normal, then scales it to 8B for
+  text-to-image. Adds a resolution-dependent shift of the timestep schedule,
+  and MMDiT, which gives each modality its own weights while letting the two
+  token streams attend jointly.
+---
+
+# LIT-tmps0tea: Scaling Rectified Flow Transformers for High-Resolution Image Synthesis
+<!-- inactive-ok-file: SOTA-tmp4jpf3 — Proposed, and filed in this same contribution from this note -->
+<!-- inactive-ok-file: SOTA-tmp28zyj — Proposed, and filed in this same contribution from this note -->
+
+## Key takeaways
+
+- **The premise is that rectified flow had better theory and no mandate.**
+  Straight-line paths between data and noise had been shown to help in small
+  and medium class-conditional experiments — [LIT-tmpdkrfi](LIT-tmpdkrfi.md) is the one the
+  paper names — and had not been established at scale or for text-to-image.
+- **The systematic study is the load-bearing part**: 61 formulations —
+  epsilon and v prediction, several noise schedules, rectified flow with
+  several timestep distributions — swept at matched settings and ranked.
+  Rectified flow with a **logit-normal timestep distribution** wins; rectified
+  flow with *uniform* timesteps does not, which is the distinction that
+  matters and the one a summary would drop.
+- **Rectified flows are sample-efficient**, clearly better at few sampling
+  steps; by 25 steps only the best-tuned variant stays ahead of `eps/linear`.
+  So the advantage is largest exactly where inference cost binds.
+- **Resolution-dependent timestep shifting.** More pixels need more noise to
+  destroy the same amount of signal, so a timestep at one resolution must be
+  mapped to a different timestep at another to corrupt equivalently. Without
+  the shift, a schedule tuned at low resolution is wrong at high resolution
+  in a predictable direction.
+- **MMDiT**: separate weights for the text and image streams — separate
+  projections and MLPs per modality — with attention run over the
+  concatenated sequence so information flows both ways. Beats UViT and DiT
+  on the same budget, and improves typography, prompt following and human
+  preference specifically.
+- **Predictable scaling**, and validation loss correlates with human
+  preference and with the automated text-to-image metrics — which is what
+  licenses choosing a configuration by loss before spending on the large run.
+- **QK-RMSNorm to survive high resolution.** Mixed-precision training
+  diverged when moving to high resolution; normalizing Q and K before
+  attention, following the ViT literature's attention-entropy diagnosis,
+  fixed it.
+- More latent channels in the autoencoder (16) improve reconstruction and
+  scale better, because the harder prediction task rewards capacity.
+- Largest model 8B, weights and code released.
+
+## Standing in the anthology
+
+**It closes a gap the record had left open while naming it.** [SOTA-188](../practices.d/SOTA-188.md)
+already lists Stable Diffusion 3 as an implementation, and the record did not
+hold the paper. The listing was right: SD3's logit-normal over timesteps is
+[SOTA-188](../practices.d/SOTA-188.md)'s "concentrate the training noise in the middle" in
+rectified-flow coordinates, and this is now an 8B confirmation of that half
+of the practice in a formulation EDM did not test.
+
+**Two instructions here are new to the record.** Resolution-dependent
+timestep shifting ([SOTA-tmp4jpf3](../practices.d/SOTA-tmp4jpf3.md)) is the kind of correction that is obvious
+once stated and absent everywhere until it is. And MMDiT ([SOTA-tmp28zyj](../practices.d/SOTA-tmp28zyj.md))
+is the record's first document on how a multimodal generative backbone should
+divide its parameters.
+
+**The QK-normalization finding is a rediscovery, and worth recording as
+one.** The record already holds QK-norm from the language-model side
+([SOTA-131](../practices.d/SOTA-131.md), [SOTA-192](../practices.d/SOTA-192.md), [SOTA-050](../practices.d/SOTA-050.md)). Here it arrives independently, from a
+divergence at high resolution in mixed precision, diagnosed through the ViT
+literature rather than the LLM one. That two lines reached the same fix from
+different failures is the sort of thing [DP-007](../principles.d/DP-007.md) says has no author and so
+no arrival event — except that here there are two, and neither cites the
+other's.
+
+What it does not settle is whether the straight-line path is better *because*
+it is straight. The study ranks formulations and does not isolate a
+mechanism; [LIT-tmpdkrfi](LIT-tmpdkrfi.md)'s transport-cost argument is the nearest thing to one
+and it is an observation about path length, not a proof.

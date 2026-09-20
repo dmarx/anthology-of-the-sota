@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-65 of 261 SOTA documents. Back to the [full index](../README.md).
+65 of 266 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -57,8 +57,8 @@
 | [SOTA-162](../../../record/practices.d/SOTA-162.md) | Train with auxiliary multi-token-prediction heads alongside next-token prediction | Gloeckle et al. (2024), [LIT-163](../../../record/literature.d/LIT-163.md) — predict the next n tokens through n independent heads on a shared trunk, as an auxiliary task rather than a replacement. No training-time overhead, the benefit grows with model size and survives multi-epoch training, and the extra heads are a draft model you already trained. | Active |
 | [SOTA-165](../../../record/practices.d/SOTA-165.md) | Precondition the gradient with matrices rather than entrywise scaling | Wen et al. (2025), [LIT-156](../../../record/literature.d/LIT-156.md) — under per-optimizer tuning across ten optimizers and four scales, every fastest one multiplies gradients by matrices rather than scaling entrywise. A structural finding that survives a fair comparison, and the class the record's Muon practice is one member of. The advantage is 1.4× at 0.1B and 1.1× at 1.2B. | Active |
 | [SOTA-168](../../../record/practices.d/SOTA-168.md) | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself | Vyas et al. (2024), [LIT-157](../../../record/literature.d/LIT-157.md) — Shampoo at the 1/2 power is Adafactor in the eigenbasis of Shampoo's preconditioner, so run the better optimizer in that basis. SOAP is Adam there, adding exactly one hyperparameter over Adam. Over 40% fewer iterations and 35% less wall-clock than AdamW at 360M–660M in the large-batch regime. | Proposed |
-| [SOTA-188](../../../record/practices.d/SOTA-188.md) v3 | Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal |  | Active |
-| [SOTA-192](../../../record/practices.d/SOTA-192.md) v3 | Normalize the queries and keys before the attention dot product |  | Active |
+| [SOTA-188](../../../record/practices.d/SOTA-188.md) v4 | Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal |  | Active |
+| [SOTA-192](../../../record/practices.d/SOTA-192.md) v4 | Normalize the queries and keys before the attention dot product |  | Active |
 | [SOTA-195](../../../record/practices.d/SOTA-195.md) | Predict v rather than the noise when the model will be evaluated at low signal-to-noise |  | Active |
 | [SOTA-198](../../../record/practices.d/SOTA-198.md) v2 | Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run |  | Active |
 | [SOTA-202](../../../record/practices.d/SOTA-202.md) | Clamp the prediction to the training range at every step when sampling from a model's own output |  | Active |

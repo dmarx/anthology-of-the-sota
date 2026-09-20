@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [20 Sep 06:31 — The record named an implementation it did not hold, and the half of a result that a summary drops](2026-09.md#the-record-named-an-implementation-it-did-not-hold-and-the-half-of-a-result-that-a-summary-drops)
 - [20 Sep 00:24 — A fit is not wrong just because the variable is: retiring the batch-size exponent](2026-09.md#a-fit-is-not-wrong-just-because-the-variable-is-retiring-the-batch-size-exponent)
 - [19 Sep 23:56 — Three papers, one diagnosis, three different remedies — and the variable none of the old measurements controlled](2026-09.md#three-papers-one-diagnosis-three-different-remedies--and-the-variable-none-of-the-old-measurements-controlled)
 - [19 Sep 23:29 — The arrival event came from outside the record](2026-09.md#the-arrival-event-came-from-outside-the-record)
@@ -121,9 +122,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-114 entries across 2 books, newest first.
+115 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 112 | 2026-09-05 | 2026-09-20 |
+| [2026-09](2026-09.md) | 113 | 2026-09-05 | 2026-09-20 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

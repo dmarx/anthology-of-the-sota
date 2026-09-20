@@ -1,17 +1,20 @@
 ---
+number: 27
 status: Active
+formerly:
+- THEORY-tmp962qd
 title: 'In continuous time the diffusion bound depends on the noise schedule only through its endpoints'
 version: 1
 tags:
 - generative-modeling
 date: '2026-09-20'
 source:
-- LIT-tmp4xjcz
+- LIT-446
 explains:
 - SOTA-188
-- SOTA-tmpc0pb9
+- SOTA-264
 summary: >-
-  Kingma et al. (2021), [LIT-tmp4xjcz](../literature.d/LIT-tmp4xjcz.md) — integrate the diffusion
+  Kingma et al. (2021), [LIT-446](../literature.d/LIT-446.md) — integrate the diffusion
   variational bound over signal-to-noise ratio instead of over time and the
   schedule leaves the integrand, remaining only in the limits. The bound and
   the generative distribution therefore depend on the schedule through two
@@ -19,12 +22,12 @@ summary: >-
   the same model up to a rescaling of the latents.
 ---
 
-# THEORY-tmp962qd: In continuous time the diffusion bound depends on the noise schedule only through its endpoints
-<!-- inactive-ok-file: SOTA-tmpc0pb9 — Proposed, and filed in this same contribution as the practice this account licenses; it is also named in `explains:` -->
+# THEORY-027: In continuous time the diffusion bound depends on the noise schedule only through its endpoints
+<!-- inactive-ok-file: SOTA-264 — Proposed, and filed in this same contribution as the practice this account licenses; it is also named in `explains:` -->
 
 ## Source
 
-Kingma et al. (2021), [LIT-tmp4xjcz](../literature.d/LIT-tmp4xjcz.md) — [ARXIV-2107.00630](https://arxiv.org/abs/2107.00630).
+Kingma et al. (2021), [LIT-446](../literature.d/LIT-446.md) — [ARXIV-2107.00630](https://arxiv.org/abs/2107.00630).
 
 ## What was actually shown
 
@@ -57,7 +60,7 @@ literature had been settling empirically.
 
 A free parameter is only interesting once somebody spends it. The source
 spends the freed schedule shape on minimizing the variance of the loss
-estimator, which is [SOTA-tmpc0pb9](../practices.d/SOTA-tmpc0pb9.md). The field spent it differently — EDM
+estimator, which is [SOTA-264](../practices.d/SOTA-264.md). The field spent it differently — EDM
 and its successors concentrate training noise where the model has something
 to learn, which is [SOTA-188](../practices.d/SOTA-188.md).
 

@@ -1,5 +1,8 @@
 ---
+number: 264
 status: Proposed
+formerly:
+- SOTA-tmpc0pb9
 promote_when: >-
   A second group learning a continuous-time noise schedule against estimator
   variance and reporting the optimization speedup, or a training framework
@@ -19,29 +22,29 @@ tags:
 - generative-modeling
 date: '2026-09-20'
 source:
-- LIT-tmp4xjcz
+- LIT-446
 introduced_by:
-- LIT-tmp4xjcz
+- LIT-446
 implementations: []
 summary: >-
-  Kingma et al. (2021), [LIT-tmp4xjcz](../literature.d/LIT-tmp4xjcz.md) — in continuous time the bound
+  Kingma et al. (2021), [LIT-446](../literature.d/LIT-446.md) — in continuous time the bound
   depends on the schedule only through its endpoints, so the shape is free.
   Spend it: optimise the endpoints against the VLB and the shape against the
   variance of the loss estimator. Same bound, faster optimisation, and a
   low-discrepancy sampler for the time variable cuts the variance further.
 explained_by:
-- THEORY-tmp962qd
+- THEORY-027
 ---
 
-# SOTA-tmpc0pb9: Fix the noise schedule's endpoints against the bound and choose its shape to minimise the loss estimator's variance
+# SOTA-264: Fix the noise schedule's endpoints against the bound and choose its shape to minimise the loss estimator's variance
 
 ## Source
 
-Kingma et al. (2021), [LIT-tmp4xjcz](../literature.d/LIT-tmp4xjcz.md) — [ARXIV-2107.00630](https://arxiv.org/abs/2107.00630).
+Kingma et al. (2021), [LIT-446](../literature.d/LIT-446.md) — [ARXIV-2107.00630](https://arxiv.org/abs/2107.00630).
 
 ## The practice follows from the theorem
 
-[THEORY-tmp962qd](../theory.d/THEORY-tmp962qd.md) says the continuous-time variational bound sees the noise
+[THEORY-027](../theory.d/THEORY-027.md) says the continuous-time variational bound sees the noise
 schedule only through its endpoint signal-to-noise ratios. Everything between
 them is free.
 

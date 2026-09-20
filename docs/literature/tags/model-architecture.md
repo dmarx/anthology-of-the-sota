@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-51 of 380 LIT documents. Back to the [full index](../README.md).
+53 of 384 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -61,3 +61,5 @@
 | [LIT-429](../../../record/literature.d/LIT-429.md) | Eagle and Finch: RWKV with Matrix-Valued States and Dynamic Recurrence | Peng et al. (2024), [ARXIV-2404.05892](https://arxiv.org/abs/2404.05892). RWKV-5 and RWKV-6, and the two changes the line is still built on: the state becomes matrix-valued rather than vector-valued, and the decay becomes a function of the input rather than a learned constant. | Active |
 | [LIT-430](../../../record/literature.d/LIT-430.md) | RWKV: Reinventing RNNs for the Transformer Era | Peng et al. (2023), [ARXIV-2305.13048](https://arxiv.org/abs/2305.13048). The paper the RWKV line starts from, and the first to take the architecture to 14B: AFT's position bias becomes an exponential decay over relative position, which makes the layer trainable in parallel and runnable as a constant-memory recurrence. | Active |
 | [LIT-431](../../../record/literature.d/LIT-431.md) | An Attention Free Transformer | Zhai et al. (2021), [ARXIV-2105.14103](https://arxiv.org/abs/2105.14103). Drops the query-key product entirely: keys and values are combined with a learned position bias and the query enters element-wise. The record holds it because it is where RWKV's letters come from — `R`, `W`, `K`, `V` is this construction renamed. | Active |
+| [LIT-448](../../../record/literature.d/LIT-448.md) | Scalable Diffusion Models with Transformers | Peebles and Xie (2022), [ARXIV-2212.09748](https://arxiv.org/abs/2212.09748). Replaces the U-Net backbone every diffusion model had inherited from DDPM with a transformer over latent patches, and shows FID falls monotonically with forward-pass GFLOPs however the GFLOPs are bought — depth, width or token count. DiT-XL/2 reaches 2.27 FID on class-conditional ImageNet 256. | Active |
+| [LIT-449](../../../record/literature.d/LIT-449.md) | Scaling Rectified Flow Transformers for High-Resolution Image Synthesis | Esser et al. (2024), [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206). A 61-way comparison of diffusion and rectified-flow formulations settles on a straight-line path with timesteps drawn from a logit-normal, then scales it to 8B for text-to-image. Adds a resolution-dependent shift of the timestep schedule, and MMDiT, which gives each modality its own weights while letting the two token streams attend jointly. | Active |

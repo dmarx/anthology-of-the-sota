@@ -1,5 +1,8 @@
 ---
+number: 262
 status: Proposed
+formerly:
+- SOTA-tmp28zyj
 promote_when: >-
   A second group reporting per-modality weights against a shared-weight
   backbone at matched compute, or an ablation separating the separate weights
@@ -19,24 +22,24 @@ tags:
 - generative-modeling
 date: '2026-09-20'
 source:
-- LIT-tmps0tea
+- LIT-449
 introduced_by:
-- LIT-tmps0tea
+- LIT-449
 implementations:
 - 'Stable Diffusion 3'
 summary: >-
-  Esser et al. (2024), [LIT-tmps0tea](../literature.d/LIT-tmps0tea.md) — MMDiT gives the text and image
+  Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md) — MMDiT gives the text and image
   streams separate projections and MLPs, then runs attention over the
   concatenated sequence so information flows both ways. It beats UViT and
   DiT at matched budget, follows predictable scaling trends, and the gains
   land specifically on text comprehension, typography and human preference.
 ---
 
-# SOTA-tmp28zyj: Give each modality its own weights and let the streams attend jointly
+# SOTA-262: Give each modality its own weights and let the streams attend jointly
 
 ## Source
 
-Esser et al. (2024), [LIT-tmps0tea](../literature.d/LIT-tmps0tea.md) — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206).
+Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md) — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206).
 
 ## The shape of the recommendation
 

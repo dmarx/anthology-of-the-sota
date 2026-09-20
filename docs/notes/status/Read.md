@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-193 of 195 NOTE documents. Back to the [full index](../README.md).
+196 of 198 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -203,3 +203,6 @@
 | [NOTE-193](../../../record/notes.d/NOTE-193.md) | Power Lines | Scales the AdamW timescale rather than the weight decay, and finds it follows a power law in tokens-per-parameter with exponent about -0.52 over three orders of magnitude of compute. Optimal and critical batch size both scale as power laws in the token budget, not in compute. | Read |
 | [NOTE-194](../../../record/notes.d/NOTE-194.md) | Small Batch Size Training for Language Models | Small batches look unstable because `beta_2` is held fixed while the batch changes. Hold the second moment's half-life fixed in tokens instead and batch size one trains stably, matches larger batches per FLOP, is far more robust to hyperparameters, and lets momentum-free SGD match AdamW at 1.3B. | Read |
 | [NOTE-195](../../../record/notes.d/NOTE-195.md) | How Does Critical Batch Size Scale in Pre-training? | Decouples model size from data size — which every prior batch-size study had scaled together — and finds critical batch size tracks the token budget and is nearly flat in model size. Supported by a muP argument for the model half and a least-squares analysis for the data half. | Read |
+| [NOTE-196](../../../record/notes.d/NOTE-196.md) | Scaling Rectified Flow Transformers | A 61-way sweep over diffusion and rectified-flow formulations settles on a straight-line path with logit-normal timestep sampling — rectified flow with uniform timesteps does not win. Adds a resolution-dependent timestep shift, MMDiT's per-modality weights with joint attention, and QK-RMSNorm for high-resolution stability. 8B, weights released. | Read |
+| [NOTE-197](../../../record/notes.d/NOTE-197.md) | SiT: Scalable Interpolant Transformers | Walks one variable at a time from DiT to SiT with the architecture, parameter count and GFLOPs held fixed: discrete to continuous time, score to velocity prediction, variance-preserving to linear interpolant, ODE to a tuned SDE sampler. Velocity and the linear interpolant carry most of the gain, and the sampler's diffusion coefficient turns out to be choosable after training. | Read |
+| [NOTE-198](../../../record/notes.d/NOTE-198.md) | Variational Diffusion Models | Integrating the diffusion VLB over signal-to-noise ratio rather than time collapses the schedule out of the expression: in continuous time the bound depends on it only through the endpoint SNRs. VP and VE specifications are therefore equivalent, and the freed schedule shape is spent on minimizing the loss estimator's variance. | Read |

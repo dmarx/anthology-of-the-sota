@@ -1,5 +1,8 @@
 ---
+number: 265
 status: Active
+formerly:
+- SOTA-tmpf60k7
 consensus: emerging
 consensus_note: >-
   One group demonstrates it, but the claim rests on an identity rather than
@@ -13,13 +16,13 @@ tags:
 - generative-modeling
 date: '2026-09-20'
 source:
-- LIT-tmpdkrfi
+- LIT-447
 introduced_by:
-- LIT-tmpdkrfi
+- LIT-447
 implementations:
 - 'SiT-XL'
 summary: >-
-  Ma et al. (2024), [LIT-tmpdkrfi](../literature.d/LIT-tmpdkrfi.md) — score-based diffusion conventionally
+  Ma et al. (2024), [LIT-447](../literature.d/LIT-447.md) — score-based diffusion conventionally
   takes the reverse SDE's diffusion coefficient from the forward process, and
   presents the two as intrinsically tied. They are not: the coefficient
   affects neither the velocity nor the score, only the integration. So it is
@@ -27,11 +30,11 @@ summary: >-
   the KL divergence to the target.
 ---
 
-# SOTA-tmpf60k7: Tune the stochastic sampler's diffusion coefficient after training; it is not fixed by the forward process
+# SOTA-265: Tune the stochastic sampler's diffusion coefficient after training; it is not fixed by the forward process
 
 ## Source
 
-Ma et al. (2024), [LIT-tmpdkrfi](../literature.d/LIT-tmpdkrfi.md) — [ARXIV-2401.08740](https://arxiv.org/abs/2401.08740).
+Ma et al. (2024), [LIT-447](../literature.d/LIT-447.md) — [ARXIV-2401.08740](https://arxiv.org/abs/2401.08740).
 
 ## The claim is structural before it is empirical
 
@@ -66,7 +69,7 @@ is what it is actually for: it decouples the sampling discretization from the
 training discretization, so the integration can be re-chosen after the fact.
 A discrete-time model has already committed.
 
-That makes [SOTA-tmpwzlqh](SOTA-tmpwzlqh.md)'s and this practice's cases interlock — a
+That makes [SOTA-266](SOTA-266.md)'s and this practice's cases interlock — a
 marginal-looking choice earns its place by what it leaves open.
 
 ## Against the record's assumption about samplers

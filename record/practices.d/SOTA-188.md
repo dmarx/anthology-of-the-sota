@@ -25,11 +25,11 @@ history:
   date: '2026-09-20'
   note: >-
     The implementation this practice already listed now has its paper.
-    LIT-tmps0tea is Stable Diffusion 3, and its logit-normal over timesteps
+    LIT-449 is Stable Diffusion 3, and its logit-normal over timesteps
     is this practice's log-normal over noise levels in rectified-flow
     coordinates — an 8B confirmation of the noise-distribution half in a
     formulation EDM did not test, from a 61-way sweep in which the uniform
-    variant does not win. THEORY-tmp962qd is now the account of why choosing
+    variant does not win. THEORY-027 is now the account of why choosing
     that distribution is an optimisation decision rather than a change of
     model, which this practice had never answered. The recommendation is
     unchanged.
@@ -52,7 +52,7 @@ implementations:
 extended_by:
 - SOTA-195
 explained_by:
-- THEORY-tmp962qd
+- THEORY-027
 ---
 
 # SOTA-188: Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal
@@ -118,7 +118,7 @@ type, and which this practice's derivation explains.
 
 ## Confirmed at 8B, in the other coordinate system
 
-Esser et al., [LIT-tmps0tea](../literature.d/LIT-tmps0tea.md), rank 61 formulations and the winner draws its
+Esser et al., [LIT-449](../literature.d/LIT-449.md), rank 61 formulations and the winner draws its
 training **timesteps** from a logit-normal — a density that vanishes at both
 endpoints and concentrates in the middle, which is this practice's
 recommendation written for a rectified flow instead of for EDM's noise
@@ -133,7 +133,7 @@ reach the same instruction about where along it to train.
 ## The objection this practice never answered
 
 A reader told to change where they sample the noise may reasonably ask
-whether they have changed the model. [THEORY-tmp962qd](../theory.d/THEORY-tmp962qd.md) is the answer, and it
+whether they have changed the model. [THEORY-027](../theory.d/THEORY-027.md) is the answer, and it
 is a qualified no: in continuous time the variational bound depends on the
 noise schedule only through its endpoints, so the shape is not part of the
 model and choosing it is an optimisation decision.

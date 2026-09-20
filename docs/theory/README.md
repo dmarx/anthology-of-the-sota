@@ -60,13 +60,14 @@ bare code and run `luria link --fix`.
 **[Analysis and evaluation](tags/analysis-and-evaluation.md)** (10) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
 [002](../../record/theory.d/THEORY-002.md) · [004](../../record/theory.d/THEORY-004.md) · [006](../../record/theory.d/THEORY-006.md) · [007](../../record/theory.d/THEORY-007.md) · [008](../../record/theory.d/THEORY-008.md) · [009](../../record/theory.d/THEORY-009.md) · [017](../../record/theory.d/THEORY-017.md) · [018](../../record/theory.d/THEORY-018.md) · [023](../../record/theory.d/THEORY-023.md) · [025](../../record/theory.d/THEORY-025.md)
 
-**[Generative modeling](tags/generative-modeling.md)** (0) — diffusion, samplers, text-to-image, conditioning and control.
+**[Generative modeling](tags/generative-modeling.md)** (1) — diffusion, samplers, text-to-image, conditioning and control:
+[027](../../record/theory.d/THEORY-027.md)
 
 **[Vision and graphics](tags/vision-and-graphics.md)** (0) — neural rendering, reconstruction, perception, visual foundation models.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (13) · [Offered](status/Proposed.md) (10) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (14) · [Offered](status/Proposed.md) (10) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -108,4 +109,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-024](../../record/theory.d/THEORY-024.md) | Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map | Bernstein and Newhouse (2024), [LIT-438](../../record/literature.d/LIT-438.md) — gradients are dual vectors and weights are primal, so the subtraction in gradient descent needs a duality map. Build it recursively from per-layer operator norms and the Linear case is a Newton-Schulz iteration, which is what Muon does. The same construction shows muP and Shampoo are partial approximations of one map. | Active |
 | [THEORY-025](../../record/theory.d/THEORY-025.md) | A transformer holds about 3.6 bits per parameter, and generalization begins where the data outgrows that budget | Morris et al. (2025), [LIT-440](../../record/literature.d/LIT-440.md) — measured on uniform random bitstrings where generalization is impossible, GPT-style transformers store 3.5-4 bits per parameter, linear in parameter count and almost indifferent to weight precision. On real text, double descent begins exactly where the data's information content crosses that capacity. The proposed mechanism — that a model past capacity must share representation, and sharing is generalization — is an interpretation, not a measurement. | Proposed |
 | [THEORY-026](../../record/theory.d/THEORY-026.md) | Critical batch size is set by how much data has been seen, not by how large the model is | Zhang et al. (2024), [LIT-445](../../record/literature.d/LIT-445.md) — under maximal update parameterization there is a width past which more width does not raise the batch a step can usefully absorb, while for mini-batch SGD on least squares under power-law source and capacity conditions the useful batch grows as a power of the sample count. Two arguments, one for each half of the split the measurements show. | Proposed |
+| [THEORY-027](../../record/theory.d/THEORY-027.md) | In continuous time the diffusion bound depends on the noise schedule only through its endpoints | Kingma et al. (2021), [LIT-446](../../record/literature.d/LIT-446.md) — integrate the diffusion variational bound over signal-to-noise ratio instead of over time and the schedule leaves the integrand, remaining only in the limits. The bound and the generative distribution therefore depend on the schedule through two numbers, and variance-preserving and variance-exploding specifications are the same model up to a rescaling of the latents. | Active |
 

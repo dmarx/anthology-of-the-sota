@@ -6,8 +6,8 @@
 
 **Generative modeling** — diffusion, samplers, text-to-image, conditioning and control.
 
-0 of 26 THEORY documents. Back to the [full index](../README.md).
+1 of 27 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [THEORY-027](../../../record/theory.d/THEORY-027.md) | In continuous time the diffusion bound depends on the noise schedule only through its endpoints | Kingma et al. (2021), [LIT-446](../../../record/literature.d/LIT-446.md) — integrate the diffusion variational bound over signal-to-noise ratio instead of over time and the schedule leaves the integrand, remaining only in the limits. The bound and the generative distribution therefore depend on the schedule through two numbers, and variance-preserving and variance-exploding specifications are the same model up to a rescaling of the latents. | Active |

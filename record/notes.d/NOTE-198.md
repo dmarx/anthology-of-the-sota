@@ -1,6 +1,9 @@
 ---
+number: 198
 status: Read
-paper: LIT-tmp4xjcz
+formerly:
+- NOTE-tmpx6slq
+paper: LIT-446
 title: 'Variational Diffusion Models'
 version: 1
 date: '2026-09-20'
@@ -12,7 +15,7 @@ summary: >-
   the loss estimator's variance.
 ---
 
-# NOTE-tmpx6slq: Variational Diffusion Models
+# NOTE-198: Variational Diffusion Models
 
 ## Contribution
 

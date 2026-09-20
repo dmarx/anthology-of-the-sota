@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-26 of 261 SOTA documents. Back to the [full index](../README.md).
+27 of 266 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -36,3 +36,4 @@
 | [SOTA-209](../../../record/practices.d/SOTA-209.md) | Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch | Komatsuzaki et al. (2022), [LIT-227](../../../record/literature.d/LIT-227.md) — seed the experts from a dense checkpoint you already paid for. Upcycled T5 and ViT models beat their dense counterparts at ~50% of the dense pretraining sunk cost, and beat sparse models trained from scratch on 100% of it: same architecture, same compute, different initialization. | Proposed |
 | [SOTA-253](../../../record/practices.d/SOTA-253.md) | Add a new instance by reconstructing it, not by training on it | Sun et al. (2022), [LIT-111](../../../record/literature.d/LIT-111.md) — [ARXIV-2205.12257](https://arxiv.org/abs/2205.12257). Split what the system knows about a specific object from what it has learned in general. Build the object's structure once by reconstruction; match against it with a network that never saw the object or its category. Adding an object is then a scan, not a training run. | Active |
 | [SOTA-254](../../../record/practices.d/SOTA-254.md) | Train the language model as a masked diffusion model when the corpus is fixed and the compute is not | Prabhudesai et al. (2025), [LIT-442](../../../record/literature.d/LIT-442.md) — masked diffusion keeps extracting signal from a repeated corpus for roughly 512 epochs where autoregressive training stops at 32. Below a critical compute threshold, given in closed form from the unique-token count, autoregressive training is better and by a wide margin; above it, diffusion is better. The recommendation is the condition, not the objective. | Proposed |
+| [SOTA-262](../../../record/practices.d/SOTA-262.md) | Give each modality its own weights and let the streams attend jointly | Esser et al. (2024), [LIT-449](../../../record/literature.d/LIT-449.md) — MMDiT gives the text and image streams separate projections and MLPs, then runs attention over the concatenated sequence so information flows both ways. It beats UViT and DiT at matched budget, follows predictable scaling trends, and the gains land specifically on text comprehension, typography and human preference. | Proposed |

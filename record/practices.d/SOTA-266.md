@@ -1,5 +1,8 @@
 ---
+number: 266
 status: Active
+formerly:
+- SOTA-tmpwzlqh
 consensus: emerging
 consensus_note: >-
   Two groups, one controlled ablation and one 61-way sweep carried to 8B with
@@ -13,31 +16,31 @@ tags:
 - generative-modeling
 date: '2026-09-20'
 source:
-- LIT-tmps0tea
-- LIT-tmpdkrfi
+- LIT-449
+- LIT-447
 introduced_by:
-- LIT-tmpdkrfi
+- LIT-447
 implementations:
 - 'Stable Diffusion 3'
 - 'SiT-XL'
 summary: >-
-  Esser et al. (2024), [LIT-tmps0tea](../literature.d/LIT-tmps0tea.md), and Ma et al. (2024),
-  [LIT-tmpdkrfi](../literature.d/LIT-tmpdkrfi.md) — the straight-line path between data and noise beats the
+  Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md), and Ma et al. (2024),
+  [LIT-447](../literature.d/LIT-447.md) — the straight-line path between data and noise beats the
   curved variance-preserving one at fixed architecture and compute, and the
   advantage is largest at few sampling steps. The timestep distribution is
   not a detail: rectified flow with uniform timesteps does not win, and with
   a logit-normal it does.
 ---
 
-# SOTA-tmpwzlqh: Connect data and noise on a straight line, and sample the training timesteps from a logit-normal rather than uniformly
+# SOTA-266: Connect data and noise on a straight line, and sample the training timesteps from a logit-normal rather than uniformly
 <!-- inactive-ok-file: SOTA-157 — Proposed, and named to mark the boundary: this practice is about image synthesis and does not carry to discrete-token diffusion -->
 <!-- inactive-ok-file: SOTA-254 — Proposed, and named in the same sentence and for the same reason -->
 
 ## Source
 
-Ma et al. (2024), [LIT-tmpdkrfi](../literature.d/LIT-tmpdkrfi.md) — [ARXIV-2401.08740](https://arxiv.org/abs/2401.08740).
+Ma et al. (2024), [LIT-447](../literature.d/LIT-447.md) — [ARXIV-2401.08740](https://arxiv.org/abs/2401.08740).
 
-Esser et al. (2024), [LIT-tmps0tea](../literature.d/LIT-tmps0tea.md) — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206).
+Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md) — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206).
 
 Both are load-bearing and they do different jobs. SiT is the controlled
 attribution: DiT's architecture, parameter count and GFLOPs held exactly

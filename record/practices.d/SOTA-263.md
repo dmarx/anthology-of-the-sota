@@ -1,5 +1,8 @@
 ---
+number: 263
 status: Proposed
+formerly:
+- SOTA-tmp4jpf3
 promote_when: >-
   An ablation reporting what the shift is worth — the same model finetuned at
   a new resolution with and without it — from anyone, or a second
@@ -20,13 +23,13 @@ tags:
 - generative-modeling
 date: '2026-09-20'
 source:
-- LIT-tmps0tea
+- LIT-449
 introduced_by:
-- LIT-tmps0tea
+- LIT-449
 implementations:
 - 'Stable Diffusion 3'
 summary: >-
-  Esser et al. (2024), [LIT-tmps0tea](../literature.d/LIT-tmps0tea.md) — a timestep is not a fixed amount of
+  Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md) — a timestep is not a fixed amount of
   corruption. Destroying the signal in an image with more pixels takes more
   noise, so a timestep at one resolution must be mapped to a different one at
   another to corrupt equivalently. A schedule carried unchanged from
@@ -34,11 +37,11 @@ summary: >-
   wrong in a predictable direction.
 ---
 
-# SOTA-tmp4jpf3: Shift the timestep schedule when the resolution changes, because more pixels need more noise
+# SOTA-263: Shift the timestep schedule when the resolution changes, because more pixels need more noise
 
 ## Source
 
-Esser et al. (2024), [LIT-tmps0tea](../literature.d/LIT-tmps0tea.md) — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206).
+Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md) — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206).
 
 ## The correction
 
@@ -71,7 +74,7 @@ attributed to data or to scale.
 
 ## Relation to the schedule material the record holds
 
-[THEORY-tmp962qd](../theory.d/THEORY-tmp962qd.md) says the continuous-time bound is indifferent to the
+[THEORY-027](../theory.d/THEORY-027.md) says the continuous-time bound is indifferent to the
 schedule's *shape* given its endpoints. This practice is not in tension with
 that: a resolution shift changes which corruption level a given `t` produces,
 which is a statement about the map from time to signal-to-noise, and the

@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-10 of 195 NOTE documents. Back to the [full index](../README.md).
+11 of 198 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -18,3 +18,4 @@
 | [NOTE-069](../../../record/notes.d/NOTE-069.md) | PaLI: A Jointly-Scaled Multilingual Language-Image Model | Scales language and vision components jointly across 100+ languages and shows a properly scaled model handles many languages while keeping English-only state of the art. Its most useful passage is an ablation honest enough to explain a regression by the language ratio of the data that caused it. | Read |
 | [NOTE-168](../../../record/notes.d/NOTE-168.md) | The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits | Ternary weights trained from scratch, matching FP16 from 3B upward at equal size and tokens. The interesting claim is not the compression ratio but that the matrix multiply becomes integer addition — which is a bet on hardware, and the one place the paper's argument outruns its measurements. | Read |
 | [NOTE-170](../../../record/notes.d/NOTE-170.md) | VGGT: Visual Geometry Grounded Transformer | One feed-forward pass produces camera parameters, point maps, depth maps and 3D point tracks together, in under a second, beating methods that post-process with geometry optimisation. Removes the global alignment step DUSt3R still needed, and works as a pretrained backbone — which is when a subject stops being a field and becomes a component. | Read |
+| [NOTE-196](../../../record/notes.d/NOTE-196.md) | Scaling Rectified Flow Transformers | A 61-way sweep over diffusion and rectified-flow formulations settles on a straight-line path with logit-normal timestep sampling — rectified flow with uniform timesteps does not win. Adds a resolution-dependent timestep shift, MMDiT's per-modality weights with joint attention, and QK-RMSNorm for high-resolution stability. 8B, weights released. | Read |

@@ -24,7 +24,7 @@ history:
 - version: 4
   date: '2026-09-20'
   note: >-
-    Records an independent arrival. Esser et al. (LIT-tmps0tea) adopt QK-norm
+    Records an independent arrival. Esser et al. (LIT-449) adopt QK-norm
     for a high-resolution diffusion transformer after mixed-precision
     training diverged, diagnosing it through the discriminative ViT
     literature's attention-entropy result rather than through anything in the
@@ -101,7 +101,7 @@ absent — is unresolved.
 ## A third arrival, from generative modelling
 
 The two routes above are both from language-model training. A third arrives
-from image synthesis and does not cite either: Esser et al., [LIT-tmps0tea](../literature.d/LIT-tmps0tea.md),
+from image synthesis and does not cite either: Esser et al., [LIT-449](../literature.d/LIT-449.md),
 found that mixed-precision training of an 8B diffusion transformer **diverged
 when moving to high resolution**, took the diagnosis from the discriminative
 ViT literature — attention entropy growing without bound — and fixed it with

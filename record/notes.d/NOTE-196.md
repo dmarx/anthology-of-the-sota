@@ -1,6 +1,9 @@
 ---
+number: 196
 status: Read
-paper: LIT-tmps0tea
+formerly:
+- NOTE-tmp31z9k
+paper: LIT-449
 title: 'Scaling Rectified Flow Transformers'
 version: 1
 date: '2026-09-20'
@@ -12,7 +15,7 @@ summary: >-
   for high-resolution stability. 8B, weights released.
 ---
 
-# NOTE-tmp31z9k: Scaling Rectified Flow Transformers
+# NOTE-196: Scaling Rectified Flow Transformers
 
 ## Contribution
 
@@ -126,7 +129,7 @@ metrics before committing to 8B.
 
 ## Connections
 
-Extends [LIT-tmpdkrfi](../literature.d/LIT-tmpdkrfi.md), which it names as the prior evidence for the
+Extends [LIT-447](../literature.d/LIT-447.md), which it names as the prior evidence for the
 straight-line path and whose limitation it states precisely: small and medium
 scale, class-conditional only.
 
@@ -163,7 +166,7 @@ holds it.
 
 ## Bearing on the record
 
-- **Should produce practices** for R1 (with [LIT-tmpdkrfi](../literature.d/LIT-tmpdkrfi.md) supplying the
+- **Should produce practices** for R1 (with [LIT-447](../literature.d/LIT-447.md) supplying the
   controlled attribution), R2 and R3. None has an equivalent in the record.
 - **Confirms half of [SOTA-188](../practices.d/SOTA-188.md) at 8B in a formulation EDM did not test.**
   That practice already lists Stable Diffusion 3 as an implementation and the
@@ -183,7 +186,7 @@ holds it.
 - The sweep and the 8B run are different experiments. C1 is well supported at
   the sweep's scale; C2 is one run applying its winner.
 - No mechanism. The study ranks formulations and does not isolate why the
-  straight path helps; the nearest account is [LIT-tmpdkrfi](../literature.d/LIT-tmpdkrfi.md)'s transport-cost
+  straight path helps; the nearest account is [LIT-447](../literature.d/LIT-447.md)'s transport-cost
   observation, which is itself correlational.
 - The resolution shift is derived and demonstrated qualitatively; its
   contribution to the final model is not ablated against not doing it.

@@ -1,6 +1,9 @@
 ---
+number: 197
 status: Read
-paper: LIT-tmpdkrfi
+formerly:
+- NOTE-tmpjco3e
+paper: LIT-447
 title: 'SiT: Scalable Interpolant Transformers'
 version: 1
 date: '2026-09-20'
@@ -13,7 +16,7 @@ summary: >-
   choosable after training.
 ---
 
-# NOTE-tmpjco3e: SiT: Scalable Interpolant Transformers
+# NOTE-197: SiT: Scalable Interpolant Transformers
 
 ## Contribution
 
@@ -121,7 +124,7 @@ and report the improvement it buys.
 
 ## Connections
 
-Built on DiT ([LIT-tmpfnkux](../literature.d/LIT-tmpfnkux.md)), whose backbone it holds fixed — the comparison
+Built on DiT ([LIT-448](../literature.d/LIT-448.md)), whose backbone it holds fixed — the comparison
 is unreadable without knowing that the architecture is identical.
 
 Sits in the stochastic-interpolant and flow-matching literature, which
@@ -129,7 +132,7 @@ generalizes score-based diffusion by decoupling the path from the process,
 and provides the first systematic empirical case for the straight-line path
 at transformer scale.
 
-Forward to [LIT-tmps0tea](../literature.d/LIT-tmps0tea.md), which names this paper as the prior evidence for
+Forward to [LIT-449](../literature.d/LIT-449.md), which names this paper as the prior evidence for
 rectified flow and states its limitation precisely: the advantages had been
 shown at small and medium scale, and only for class-conditional models.
 
@@ -153,7 +156,7 @@ shown at small and medium scale, and only for class-conditional models.
 
 ## Bearing on the record
 
-- **Should produce practices** for R2 (jointly with [LIT-tmps0tea](../literature.d/LIT-tmps0tea.md), which
+- **Should produce practices** for R2 (jointly with [LIT-449](../literature.d/LIT-449.md), which
   supplies the scale) and for R3, which the record has nothing resembling.
 - **R1 nearly duplicates [SOTA-195](../practices.d/SOTA-195.md)** — predict `v` rather than the noise at low
   signal-to-noise — and is better read as independent support for it than as
@@ -164,7 +167,7 @@ shown at small and medium scale, and only for class-conditional models.
   of training** — [SOTA-203](../practices.d/SOTA-203.md) on higher-order solvers, [SOTA-207](../practices.d/SOTA-207.md) on choosing
   the deterministic one. R3 says one parameter never was, which is a free
   tuning pass the record has not recorded.
-- **Supplies the controlled half of the rectified-flow case.** [LIT-tmps0tea](../literature.d/LIT-tmps0tea.md)
+- **Supplies the controlled half of the rectified-flow case.** [LIT-449](../literature.d/LIT-449.md)
   has the scale and a 61-way sweep; this has one variable changed at a time.
   A practice drawn from either alone would be weaker than one drawn from both.
 
@@ -190,5 +193,5 @@ shown at small and medium scale, and only for class-conditional models.
   An interpolant matched in path length but not straight would separate them.
 - How much of the diffusion-coefficient gain survives at few function
   evaluations, where the practical interest is?
-- Does the ranking hold under text conditioning and at scale? [LIT-tmps0tea](../literature.d/LIT-tmps0tea.md)
+- Does the ranking hold under text conditioning and at scale? [LIT-449](../literature.d/LIT-449.md)
   answers the interpolant part and not the rest.

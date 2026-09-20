@@ -4,7 +4,7 @@
 
 **generative-modeling**.
 
-12 of 195 NOTE documents. Back to the [full index](../README.md).
+15 of 198 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,6 @@
 | [NOTE-068](../../../record/notes.d/NOTE-068.md) | Denoising Diffusion Probabilistic Models | The paper that made diffusion work. Its Table 2 is the underquoted part: predicting ε rather than the posterior mean matters *only* under the simplified objective, learned reverse-process variances destabilise training, and the principled variational bound gives better codelengths while the unprincipled simplified loss gives better samples. | Read |
 | [NOTE-166](../../../record/notes.d/NOTE-166.md) | Scaling Diffusion Language Models via Adaptation from Autoregressive Models | Continual pretraining on under 200B tokens converts GPT2 and LLaMA at 127M-7B into diffusion language models competitive with their AR counterparts. The argument is economic before it is technical — diffusion LMs are hard to train at scale and AR checkpoints are abundant — and the capability that pays for it is infilling without prompt re-ordering. | Read |
 | [NOTE-192](../../../record/notes.d/NOTE-192.md) | Diffusion Beats AR in Data-Constrained Settings | Refits [LIT-166](../../../record/literature.d/LIT-166.md)'s data-constrained scaling law with the objective swapped from autoregressive to masked diffusion. The half-life of data reuse `R*` goes from 31.93 to 512.85. Diffusion loses badly at Chinchilla-optimal compute and wins past a crossover given in closed form. | Read |
+| [NOTE-196](../../../record/notes.d/NOTE-196.md) | Scaling Rectified Flow Transformers | A 61-way sweep over diffusion and rectified-flow formulations settles on a straight-line path with logit-normal timestep sampling — rectified flow with uniform timesteps does not win. Adds a resolution-dependent timestep shift, MMDiT's per-modality weights with joint attention, and QK-RMSNorm for high-resolution stability. 8B, weights released. | Read |
+| [NOTE-197](../../../record/notes.d/NOTE-197.md) | SiT: Scalable Interpolant Transformers | Walks one variable at a time from DiT to SiT with the architecture, parameter count and GFLOPs held fixed: discrete to continuous time, score to velocity prediction, variance-preserving to linear interpolant, ODE to a tuned SDE sampler. Velocity and the linear interpolant carry most of the gain, and the sampler's diffusion coefficient turns out to be choosable after training. | Read |
+| [NOTE-198](../../../record/notes.d/NOTE-198.md) | Variational Diffusion Models | Integrating the diffusion VLB over signal-to-noise ratio rather than time collapses the schedule out of the expression: in continuous time the bound depends on it only through the endpoint SNRs. VP and VE specifications are therefore equivalent, and the freed schedule shape is spent on minimizing the loss estimator's variance. | Read |

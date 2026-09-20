@@ -42,6 +42,7 @@ extends:
 - SOTA-165
 explained_by:
 - THEORY-024
+- THEORY-tmp6a2vb
 ---
 
 # SOTA-121: Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW

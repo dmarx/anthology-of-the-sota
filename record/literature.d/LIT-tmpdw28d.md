@@ -1,0 +1,68 @@
+---
+status: Active
+title: 'When do spectral gradient updates help in deep learning?'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-20'
+published: '2025-12-01'
+arxiv: '2512.04299'
+first_author: 'Davis'
+keywords:
+- 'spectral-descent'
+- 'muon'
+- 'stable-rank'
+- 'nuclear-rank'
+- 'random-features'
+implementations: []
+summary: >-
+  Davis and Drusvyatskiy (2025), [ARXIV-2512.04299](https://arxiv.org/abs/2512.04299). A spectral update
+  beats a Euclidean one on a block exactly when the gradient's squared
+  nuclear-to-Frobenius ratio exceeds the stable rank of that block's incoming
+  activations — a measurable condition, and they show it is satisfied
+  throughout transformer training.
+---
+
+<!-- inactive-ok-file: THEORY-024 THEORY-tmp5iwhe SOTA-tmpybkk5 — THEORY-024 is Proposed and is named as the other account, not as support; the other two are Proposed and filed here from this paper -->
+# LIT-tmpdw28d: When do spectral gradient updates help in deep learning?
+
+Davis and Drusvyatskiy (2025) — [ARXIV-2512.04299](https://arxiv.org/abs/2512.04299)
+
+## Key takeaways
+
+- **One inequality, two measurable quantities.** Compare the guaranteed
+  one-step loss decrease of a Euclidean step and a spectral step on a single
+  matrix block. Spectral wins when the gradient's *nuclear rank* — the
+  squared ratio of nuclear to Frobenius norm — exceeds the *stable rank* of
+  the activations feeding that block. Both sides are computable from
+  quantities a training run already has.
+- **The condition is blockwise, and that is the practical content.** For an
+  MLP the incoming matrix is the previous layer's post-activation; for a
+  transformer it is the RMS-normalized hidden states entering the attention
+  projections, or the post-activations entering the second MLP matrix. The
+  rule of thumb the paper states is that spectral updates are most
+  advantageous on the blocks whose incoming features are low stable rank and
+  whose gradients have spread-out spectra.
+- **Low stable rank is proved, not assumed.** At Gaussian initialization the
+  stable rank of the token-indicator matrix is exactly the inverse frequency
+  of the most common token — around 20 for a Zipf-like corpus — and the paper
+  shows this survives RMSNorm, attention and the MLP up to constants, giving
+  a depth-quadratic, width- and sequence-length-independent bound.
+- **The advantage is not only an initialization effect.** In spiked
+  random-feature regression, after a short burn-in the gradient's nuclear
+  rank grows with the data dimension while the activations' stable rank stays
+  bounded, so the predicted speedup scales with dimension rather than
+  decaying.
+- **The measurement holds in a real run.** In NanoGPT training the
+  intermediate activations stay low stable rank throughout and the gradients
+  keep large nuclear-to-Frobenius ratios — the regime the condition predicts
+  spectral updates should win in, which is the regime Muon is used in.
+
+## Standing in the anthology
+
+The second account this record now holds of why matrix preconditioning works,
+and the one that names quantities a practitioner can measure rather than a
+geometry to adopt. It reaches the same class as [THEORY-024](../theory.d/THEORY-024.md) from a
+different direction, and it is not the same claim: this says *when*, not
+*what the update is*. Filed as [THEORY-tmp5iwhe](../theory.d/THEORY-tmp5iwhe.md), with the diagnostic
+as [SOTA-tmpybkk5](../practices.d/SOTA-tmpybkk5.md).

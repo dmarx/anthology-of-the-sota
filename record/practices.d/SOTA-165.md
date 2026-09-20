@@ -36,6 +36,8 @@ summary: >-
   matrices rather than scaling entrywise. A structural finding that survives
   a fair comparison, and the class the record's Muon practice is one member
   of. The advantage is 1.4× at 0.1B and 1.1× at 1.2B.
+explained_by:
+- THEORY-tmp5iwhe
 ---
 
 # SOTA-165: Precondition the gradient with matrices rather than entrywise scaling

@@ -1,10 +1,32 @@
 ---
 number: 24
-status: Active
+status: Proposed
 formerly:
 - THEORY-tmpm3lav
 title: 'Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-20'
+  note: >-
+    Demoted from `Active` to `Proposed`. This document closed by saying all
+    three of its sources share authors and that it was `Active` "not because
+    anyone outside has confirmed the frame." Shumaylov et al. (LIT-tmp6umwv)
+    are the first outside group to test the frame, and they come back
+    negative on its explanatory force: an optimizer that replaces the
+    gradient's singular values with chaotic noise matches Muon. The
+    derivation is untouched and no text has been removed; a section records
+    what the test reaches and `promote_when` says what would restore the
+    status.
+promote_when: >-
+  An outside replication of the Kaon control at a scale where the record's
+  Muon practices are evidenced — a billion parameters or more — in which
+  the geometry-free optimizer does NOT match Muon. That is the result the
+  duality frame predicts and the small-scale control denies, and it is the
+  one that would put this back to `Active`. What would not settle it:
+  another derivation showing some further optimizer is a steepest-descent
+    step under some norm. The contested claim is that the geometry is what
+  pays, and reformulating the geometry does not test it.
 tags:
 - training-optimization
 date: '2026-09-19'
@@ -25,6 +47,7 @@ summary: >-
 ---
 
 <!-- inactive-ok-file: SOTA-168 SOTA-121 SOTA-143 — the three practices this account explains; SOTA-168 is Proposed and is cited as one of the two approximations, not as a settled recommendation -->
+<!-- inactive-ok-file: THEORY-tmp6a2vb THEORY-tmp5iwhe ADR-034 — the two rival accounts and the decision that keeps all three off the practices, all Proposed, all named in the v2 section rather than leaned on -->
 
 # THEORY-024: Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map
 
@@ -98,5 +121,43 @@ fixing the choice.
 
 **And it is one group.** All three papers share authors, and `ADR-010`'s
 neighbouring caution applies: a line agreeing with itself is not replication.
-`Active` because the argument is checkable and the practices it explains are
-independently evidenced, not because anyone outside has confirmed the frame.
+It was `Active` because the argument is checkable and the practices it
+explains are independently evidenced, not because anyone outside had
+confirmed the frame. At v2 somebody did, and the section below is what they
+found.
+
+## What an outside test found, and what it reaches
+
+*(Added at v2.)* The paragraph above rests the `Active` status on the
+argument being checkable and the practices being independently evidenced —
+not on anyone outside having confirmed the frame. Shumaylov et al.,
+[LIT-tmp6umwv](../literature.d/LIT-tmp6umwv.md), are the first outside group to look, and what they
+built is the control this frame never had.
+
+`Kaon` replaces the gradient's singular values with noise from a chaotic
+recurrence. It computes no linear minimization oracle, dualizes nothing, and
+targets no norm — and on NanoGPT it matches Muon. Two smaller results point
+the same way: `TruncatedSGD` shows that suppressing the large singular values
+is necessary and not sufficient, and the best exponent in the Schatten family
+on GPT-2 sits strictly in the quasi-norm regime, where Theorem 2.1 of that
+paper says no update can be steepest descent for any unitarily invariant
+norm.
+
+**What this reaches and what it does not.** The derivation here is
+mathematics: that Muon's Newton–Schulz step *is* the duality map for the
+spectral norm, and that muP and Shampoo fall out of one construction, are not
+claims an experiment can touch. What the experiment reaches is the sentence a
+reader takes away — that being the duality map is *why* Muon works. An
+account that cannot distinguish its object from a randomized control is not,
+on that evidence, doing the explanatory work. Hence `Proposed` rather than
+`Rejected`: the frame may still be right, and it has stopped being the thing
+the record can point to.
+
+The counter-evidence is NanoGPT and WikiText-2 at 118M tokens against
+practices demonstrated from 90M to 1.6T parameters, and that asymmetry is
+why the demotion stops where it does. [THEORY-tmp6a2vb](../theory.d/THEORY-tmp6a2vb.md) holds the
+account the controls leave standing; [THEORY-tmp5iwhe](../theory.d/THEORY-tmp5iwhe.md) holds a third,
+from an unrelated group, that reaches the same practices through rank
+structure rather than geometry. None of the three touches
+[SOTA-121](../practices.d/SOTA-121.md), [SOTA-143](../practices.d/SOTA-143.md) or [SOTA-168](../practices.d/SOTA-168.md), which is
+[ADR-034](../decisions.d/ADR-034.md)'s point exactly.

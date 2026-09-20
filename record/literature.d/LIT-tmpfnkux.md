@@ -1,0 +1,68 @@
+---
+status: Active
+title: 'Scalable Diffusion Models with Transformers'
+version: 1
+tags:
+- generative-modeling
+- model-architecture
+date: '2026-09-20'
+published: '2022-12-01'
+arxiv: '2212.09748'
+first_author: 'Peebles'
+keywords:
+- 'diffusion-transformer'
+- 'latent-diffusion'
+- 'scaling'
+- 'adaptive-layer-norm'
+implementations:
+- 'DiT-XL/2'
+summary: >-
+  Peebles and Xie (2022), [ARXIV-2212.09748](https://arxiv.org/abs/2212.09748). Replaces the U-Net backbone
+  every diffusion model had inherited from DDPM with a transformer over latent
+  patches, and shows FID falls monotonically with forward-pass GFLOPs however
+  the GFLOPs are bought — depth, width or token count. DiT-XL/2 reaches 2.27
+  FID on class-conditional ImageNet 256.
+extended_by:
+- LIT-tmpdkrfi
+---
+
+# LIT-tmpfnkux: Scalable Diffusion Models with Transformers
+
+## Key takeaways
+
+- **The U-Net in diffusion models was inherited, not chosen.** DDPM took it
+  from PixelCNN++ and conditional GANs; Dhariwal and Nichol ablated its
+  internals but left the high-level design intact. Every diffusion model
+  since had used it. This replaces it wholesale with a transformer over
+  latent patches.
+- **The scaling claim is the contribution, not the FID.** FID falls
+  consistently with forward-pass GFLOPs, and it does not matter which lever
+  buys the GFLOPs — more depth, more width, or more input tokens from a
+  smaller patch size all land on the same trend. That is what makes the
+  architecture a *backbone* rather than a model.
+- Conditioning is injected through adaptive layer norm, the variant the
+  paper finds best among the several it ablates.
+- DiT-XL/2 reaches **2.27 FID** on class-conditional ImageNet 256×256 and
+  state of the art at 512×512, beating the U-Net models it replaces at
+  comparable or lower compute.
+
+## Standing in the anthology
+
+**Filed as context, and filed unread — there is no `NOTE` for it, which per
+[ADR-025](../decisions.d/ADR-025.md) means exactly that.** This entered the record because two
+papers filed alongside it, [LIT-tmpdkrfi](LIT-tmpdkrfi.md) and [LIT-tmps0tea](LIT-tmps0tea.md), hold this
+architecture fixed while changing what is transported across it. SiT's entire
+method is "the same model structure, the same number of parameters, the same
+GFLOPs as DiT, with the transport changed"; without this note that comparison
+names something the record does not have.
+
+It is also the backbone under most of the current image and video generation
+line, and the record held nothing on it — not because anything complained,
+but because nothing in the record had needed to name a diffusion backbone
+before. A gap that produces no complaint is the kind this record finds only
+when something else arrives pointing at it.
+
+Filing it unread is a deliberate choice rather than a shortcut: what the
+neighbouring documents need from it is the scaling claim and the identity of
+the backbone, both of which are in the abstract and the headline figure, and
+claiming a reading the record has not done would be worse than saying so.

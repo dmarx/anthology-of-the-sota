@@ -1,0 +1,84 @@
+---
+status: Active
+title: 'Variational Diffusion Models'
+version: 1
+tags:
+- generative-modeling
+date: '2026-09-20'
+published: '2021-07-01'
+arxiv: '2107.00630'
+first_author: 'Kingma'
+extends:
+- LIT-036
+keywords:
+- 'continuous-time-diffusion'
+- 'variational-lower-bound'
+- 'signal-to-noise-ratio'
+- 'noise-schedule'
+- 'likelihood'
+- 'fourier-features'
+implementations: []
+summary: >-
+  Kingma et al. (2021), [ARXIV-2107.00630](https://arxiv.org/abs/2107.00630). Rewrites the diffusion VLB as
+  an integral over signal-to-noise ratio, and the expression collapses: in
+  continuous time the bound depends on the noise schedule only through its
+  two endpoints. Variance-preserving and variance-exploding specifications
+  are therefore equivalent up to a rescaling, and the schedule's shape is
+  free — spent here on minimizing the loss estimator's variance.
+---
+
+# LIT-tmp4xjcz: Variational Diffusion Models
+
+## Key takeaways
+
+- **The change of variables is the whole paper.** Integrate the
+  continuous-time diffusion loss with respect to the signal-to-noise ratio
+  rather than with respect to time. Because the SNR function is monotone and
+  therefore invertible, this is a legitimate substitution — and after it, the
+  schedule appears only in the integration limits.
+- **So the continuous-time VLB is invariant to the schedule's shape**, given
+  its endpoint SNRs. The generative distribution is too, up to a trivial
+  rescaling of the latents. Variance-preserving and variance-exploding
+  processes, treated as different model classes in the literature, are
+  **equivalent in continuous time**.
+- **The invariance is a licence, not a curiosity.** Once the shape does not
+  affect the bound, it can be spent on something else. Here it is spent on
+  **minimizing the variance of the Monte Carlo estimator of the loss**, with
+  the endpoints separately optimized against the VLB itself. Faster
+  optimization, same bound.
+- **Fourier features on the colour channels**, appended to the denoiser's
+  input, buy large likelihood improvements — and only when the SNR is learned.
+  With Ho et al.'s fixed schedule the maximum log-SNR is pinned near 8 and
+  the likelihood stalls above 4 bits/dim; learning the endpoints takes it to
+  about 13.3, and the fine-scale features become usable. The same features
+  gave no benefit in a PixelCNN++.
+- State-of-the-art likelihoods on CIFAR-10 and ImageNet 64×64, beating the
+  autoregressive models that had held those benchmarks for years. Also a
+  bits-back compression scheme reaching near-optimal lossless rates.
+- The discrete-time loss is an upper Riemann sum of the continuous-time
+  integral, so more timesteps is always at least as good — which is a clean
+  answer to a question the literature had been settling empirically.
+
+## Standing in the anthology
+
+**It supplies the account under a practice the record already holds.**
+[SOTA-188](../practices.d/SOTA-188.md) says to sample training noise from a log-normal concentrated in
+the middle of the range, because the extremes teach little. That is a
+recommendation about where to spend training compute along the noise axis,
+and the record has carried it without an answer to the obvious objection:
+*if you change where you sample, have you changed the model?*
+
+This says no — in continuous time, and for the unweighted bound. The schedule
+shape is not part of the model, so choosing it is an optimization decision
+and nothing else. [THEORY-tmp962qd](../theory.d/THEORY-tmp962qd.md) is that argument with its limits stated.
+
+It also fills the continuous-time gap in the record's diffusion line.
+[LIT-036](LIT-036.md) is discrete-time DDPM, [LIT-075](LIT-075.md) is EDM's design-space study with its
+own continuous formulation, and nothing between them said why the two could
+be discussed as the same object. This is the paper that proved they are.
+
+The bits-back result and the Fourier features are the parts the record has no
+home for yet. The Fourier-feature finding is the more interesting of the two,
+because its conditional form — useless unless the schedule is learned — is a
+small worked example of the invariance being load-bearing rather than
+decorative.

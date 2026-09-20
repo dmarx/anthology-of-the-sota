@@ -4,7 +4,7 @@ status: Active
 formerly:
 - SOTA-tmpm1xnl
 title: 'Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-09'
@@ -21,6 +21,18 @@ history:
   note: >-
     Enriched from the #123 readings. The recommendation is unchanged;
     the source list, the numbers or the neighbourhood are.
+- version: 4
+  date: '2026-09-20'
+  note: >-
+    The implementation this practice already listed now has its paper.
+    LIT-tmps0tea is Stable Diffusion 3, and its logit-normal over timesteps
+    is this practice's log-normal over noise levels in rectified-flow
+    coordinates — an 8B confirmation of the noise-distribution half in a
+    formulation EDM did not test, from a 61-way sweep in which the uniform
+    variant does not win. THEORY-tmp962qd is now the account of why choosing
+    that distribution is an optimisation decision rather than a change of
+    model, which this practice had never answered. The recommendation is
+    unchanged.
 tags:
 - training-optimization
 consensus: converged
@@ -39,6 +51,8 @@ implementations:
 - Stable Diffusion 3
 extended_by:
 - SOTA-195
+explained_by:
+- THEORY-tmp962qd
 ---
 
 # SOTA-188: Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal
@@ -101,6 +115,34 @@ anywhere.
 
 The practical consequence is [SOTA-195](SOTA-195.md) — predict `v` — which is what people
 type, and which this practice's derivation explains.
+
+## Confirmed at 8B, in the other coordinate system
+
+Esser et al., [LIT-tmps0tea](../literature.d/LIT-tmps0tea.md), rank 61 formulations and the winner draws its
+training **timesteps** from a logit-normal — a density that vanishes at both
+endpoints and concentrates in the middle, which is this practice's
+recommendation written for a rectified flow instead of for EDM's noise
+levels. The negative control is what makes it evidence: the same forward
+process with *uniform* timesteps does not win.
+
+Stable Diffusion 3 was already listed below as an implementation, before the
+record held the paper. The listing was right, and the reason is worth more
+than the listing: two formulations that parameterize corruption differently
+reach the same instruction about where along it to train.
+
+## The objection this practice never answered
+
+A reader told to change where they sample the noise may reasonably ask
+whether they have changed the model. [THEORY-tmp962qd](../theory.d/THEORY-tmp962qd.md) is the answer, and it
+is a qualified no: in continuous time the variational bound depends on the
+noise schedule only through its endpoints, so the shape is not part of the
+model and choosing it is an optimisation decision.
+
+The qualification matters. That invariance is stated for the *unweighted*
+bound, and this practice's loss weighting is exactly what puts it outside
+that statement. What the theory establishes is that the schedule is the kind
+of thing one is free to choose; it does not establish that this particular
+choice is neutral with respect to what is optimised.
 
 ## Conditions
 

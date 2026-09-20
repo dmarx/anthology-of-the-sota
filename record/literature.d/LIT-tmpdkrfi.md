@@ -1,0 +1,77 @@
+---
+status: Active
+title: 'SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers'
+version: 1
+tags:
+- generative-modeling
+date: '2026-09-20'
+published: '2024-01-01'
+arxiv: '2401.08740'
+first_author: 'Ma'
+extends:
+- LIT-tmpfnkux
+keywords:
+- 'stochastic-interpolants'
+- 'flow-matching'
+- 'velocity-prediction'
+- 'diffusion-coefficient'
+- 'diffusion-transformer'
+implementations:
+- 'SiT-XL'
+summary: >-
+  Ma et al. (2024), [ARXIV-2401.08740](https://arxiv.org/abs/2401.08740). Holds DiT's architecture,
+  parameter count and GFLOPs fixed and varies four transport choices one at a
+  time: discrete vs continuous time, score vs velocity prediction, the
+  interpolant connecting the distributions, and the sampler. Velocity
+  prediction and a linear interpolant each help substantially; the sampler's
+  diffusion coefficient turns out to be choosable after training.
+extended_by:
+- LIT-tmps0tea
+---
+
+# LIT-tmpdkrfi: SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers
+
+## Key takeaways
+
+- **The design is an ablation, not a model.** Starting from DiT — discrete
+  time, score prediction, variance-preserving interpolant — the paper walks
+  one variable at a time to SiT — continuous time, velocity prediction,
+  linear interpolant — with the architecture, parameter count and GFLOPs held
+  exactly fixed. That is what makes the attribution possible.
+- **What each step buys**: continuous time, marginal. Score → velocity
+  prediction, significant. Variance-preserving → linear or generalized-VP
+  interpolant, significant. A tuned stochastic sampler on top, further gain.
+- **The mechanism offered for the interpolant result is transport cost.**
+  Path length falls when moving from the VP interpolant to GVP or linear,
+  and the singularity the VP interpolant carries at one endpoint disappears.
+- **The diffusion coefficient is a sampler hyperparameter, not a training
+  one.** In score-based diffusion it is conventionally tied to the forward
+  process; the paper observes it need not be, because it affects neither the
+  velocity nor the score. So it can be **tuned after training, with no
+  retraining**, and tuning it tightens control of the KL divergence between
+  model and target.
+- Learn the velocity and express the score from it; only one of the two needs
+  estimating.
+- SiT-XL reaches **2.06 FID** at ImageNet 256×256 and 2.62 at 512×512, and
+  beats DiT uniformly across model sizes and throughout training.
+
+## Standing in the anthology
+
+**It is the controlled experiment under the rectified-flow recommendation.**
+[LIT-tmps0tea](LIT-tmps0tea.md) takes the straight-line path to 8B and text-to-image and is the
+reason to believe the choice survives scale; this is the reason to believe
+the choice is *the* cause, because everything else was held fixed. The two
+are load-bearing in different ways and the practice ([SOTA-tmpwzlqh](../practices.d/SOTA-tmpwzlqh.md)) needs
+both.
+
+**The diffusion-coefficient finding is separable and the record has nothing
+like it.** Every sampler practice the record holds — [SOTA-203](../practices.d/SOTA-203.md) on higher-order ODE
+solvers, [SOTA-207](../practices.d/SOTA-207.md) on when to take the deterministic sampler — treats the
+sampler as something you choose subject to what you trained. This says one of its parameters was never
+downstream of training at all, and that a free tuning pass exists which most
+practitioners are not taking. [SOTA-tmpf60k7](../practices.d/SOTA-tmpf60k7.md) records it.
+
+What it does not establish is anything outside class-conditional ImageNet at
+256 and 512, which is the limitation [LIT-tmps0tea](LIT-tmps0tea.md) exists to remove — and
+which that paper names explicitly when it says the advantages so far had been
+"limited to class-conditional models".

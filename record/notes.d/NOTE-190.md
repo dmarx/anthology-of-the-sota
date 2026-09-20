@@ -1,6 +1,9 @@
 ---
+number: 190
 status: Read
-paper: LIT-tmp28gse
+formerly:
+- NOTE-tmpbxl0o
+paper: LIT-440
 title: 'How much do language models memorize?'
 version: 1
 date: '2026-09-19'
@@ -12,7 +15,7 @@ summary: >-
   exactly where the data's information content crosses that capacity.
 ---
 
-# NOTE-tmpbxl0o: How much do language models memorize?
+# NOTE-190: How much do language models memorize?
 <!-- inactive-ok-file: SOTA-124 — Proposed, and the practice this reading half-settles; saying which half is the point -->
 <!-- inactive-ok-file: SOTA-173 — Proposed, and named as one of the two positions this reading supplies a quantity for -->
 

@@ -22,10 +22,10 @@ history:
   date: '2026-09-19'
   note: >-
     The augmentation claim was tested from outside its own source, and the
-    result points the other way. Prabhudesai et al. (LIT-tmp5xe2h) applied
+    result points the other way. Prabhudesai et al. (LIT-442) applied
     random token masking and attention dropout to an autoregressive arm under
     exactly these conditions and report that the overfitting did not close.
-    Kim et al. (LIT-tmp2udh1) reach the same diagnosis by a third route and
+    Kim et al. (LIT-441) reach the same diagnosis by a third route and
     fix it with regularization instead. Neither refutes the claim, which is
     about delay rather than removal; both are recorded in the body. Status and
     recommendation unchanged.
@@ -46,7 +46,7 @@ summary: >-
 ---
 
 # SOTA-173: Augment the objective to make multi-epoch pretraining productive on a fixed corpus
-<!-- inactive-ok-file: SOTA-tmp9rfqy — Proposed, and filed in this same contribution as the cheaper remedy this section names -->
+<!-- inactive-ok-file: SOTA-255 — Proposed, and filed in this same contribution as the cheaper remedy this section names -->
 
 ## Source
 
@@ -112,7 +112,7 @@ Two results now bear on this practice, and the record should say so
 plainly: neither refutes it, and neither supports it either.
 
 **The augmentation arm was run and did not close the gap.** Prabhudesai et
-al., [LIT-tmp5xe2h](../literature.d/LIT-tmp5xe2h.md), applied random token masking and attention dropout —
+al., [LIT-442](../literature.d/LIT-442.md), applied random token masking and attention dropout —
 two of the three families above — to an autoregressive model under exactly
 the multi-epoch, data-constrained conditions this practice describes. The
 model still overfit quickly and still trailed a masked diffusion model
@@ -122,9 +122,9 @@ in the record on it that does not come from its own source, and it points the
 other way.
 
 **A cheaper remedy exists for the same diagnosis.** Kim et al.,
-[LIT-tmp2udh1](../literature.d/LIT-tmp2udh1.md), agree that the overfitting belongs to the recipe rather
+[LIT-441](../literature.d/LIT-441.md), agree that the overfitting belongs to the recipe rather
 than to repetition, and fix it by raising weight decay roughly thirtyfold
-([SOTA-tmp9rfqy](SOTA-tmp9rfqy.md)). That is one hyperparameter sweep against three new
+([SOTA-255](SOTA-255.md)). That is one hyperparameter sweep against three new
 objective terms.
 
 The reframing this practice contributed is holding up better than its recipe.

@@ -6,7 +6,7 @@
 
 **Generative modeling** — diffusion, samplers, text-to-image, conditioning and control.
 
-0 of 24 THEORY documents. Back to the [full index](../README.md).
+0 of 25 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

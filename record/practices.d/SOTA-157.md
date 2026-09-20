@@ -22,10 +22,10 @@ history:
   date: '2026-09-19'
   note: >-
     Gained a second line of evidence and a specialization. Prabhudesai et al.
-    (LIT-tmp5xe2h) fit a data-constrained scaling law for masked diffusion and
+    (LIT-442) fit a data-constrained scaling law for masked diffusion and
     report a data-reuse half-life sixteen times the autoregressive one, which
     is the first reason in the record to prefer this objective that is not a
-    capability comparison. SOTA-tmp4dbv9 carries that conditional form. This
+    capability comparison. SOTA-254 carries that conditional form. This
     practice's unconditional recommendation and its `promote_when:` are
     unchanged: the new evidence is about data efficiency below 100M unique
     tokens, not about scale.
@@ -48,11 +48,11 @@ summary: >-
   bound. Competitive with LLaMA3 8B on in-context learning; past GPT-4o on
   reversal poem completion. Filed `Proposed` — one group, one model, 8B.
 extended_by:
-- SOTA-tmp4dbv9
+- SOTA-254
 ---
 
 # SOTA-157: Train the language model as a masked diffusion model rather than autoregressively
-<!-- inactive-ok-file: SOTA-tmp4dbv9 — Proposed, and filed in this same contribution as the conditional form of this practice -->
+<!-- inactive-ok-file: SOTA-254 — Proposed, and filed in this same contribution as the conditional form of this practice -->
 
 ## Source
 
@@ -106,7 +106,7 @@ unknown should say so rather than imply the cost is zero.
 
 ## A second line of evidence, conditional where this one is not
 
-Prabhudesai et al., [LIT-tmp5xe2h](../literature.d/LIT-tmp5xe2h.md), give the first reason to prefer this
+Prabhudesai et al., [LIT-442](../literature.d/LIT-442.md), give the first reason to prefer this
 objective that is not a capability comparison. Refitting [LIT-166](../literature.d/LIT-166.md)'s
 data-constrained scaling law with the objective swapped, the half-life of
 data reuse is 512.85 for masked diffusion against 31.93 for autoregressive
@@ -116,7 +116,7 @@ signal from repeated data roughly sixteen times longer.
 It comes with a boundary, which is why it is filed as its own practice rather
 than folded in here. Below a computable critical compute threshold the
 autoregressive model is better by a wide margin — 7.07 against 10.65 in
-validation loss at the single-epoch compute-optimal point. [SOTA-tmp4dbv9](SOTA-tmp4dbv9.md)
+validation loss at the single-epoch compute-optimal point. [SOTA-254](SOTA-254.md)
 carries that conditional form.
 
 Nothing in it moves this practice's own `promote_when:`. The evidence is

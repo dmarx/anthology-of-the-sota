@@ -1,5 +1,8 @@
 ---
+number: 255
 status: Proposed
+formerly:
+- SOTA-tmp9rfqy
 promote_when: >-
   A second group sweeping weight decay under a fixed corpus at
   above-Chinchilla parameter-to-token ratios and reporting where the optimum
@@ -19,12 +22,12 @@ tags:
 - training-optimization
 date: '2026-09-19'
 source:
-- LIT-tmp2udh1
+- LIT-441
 introduced_by:
-- LIT-tmp2udh1
+- LIT-441
 implementations: []
 summary: >-
-  Kim et al. (2025), [LIT-tmp2udh1](../literature.d/LIT-tmp2udh1.md) — with the corpus fixed and parameters
+  Kim et al. (2025), [LIT-441](../literature.d/LIT-441.md) — with the corpus fixed and parameters
   past Chinchilla-optimal, the weight decay of 0.1 everyone inherits from
   GPT-3 is far too small: loss turns upward as parameters or epochs are
   added. Tuned jointly with learning rate and epoch count, the optimum is
@@ -32,12 +35,12 @@ summary: >-
   steeper exponent than Chinchilla's.
 ---
 
-# SOTA-tmp9rfqy: Tune weight decay upward when pretraining over a repeated corpus, rather than inheriting the customary value
+# SOTA-255: Tune weight decay upward when pretraining over a repeated corpus, rather than inheriting the customary value
 <!-- inactive-ok-file: SOTA-173 — Proposed, and named as one of the positions this practice says was measured at one setting of weight decay -->
 
 ## Source
 
-Kim et al. (2025), [LIT-tmp2udh1](../literature.d/LIT-tmp2udh1.md) — [ARXIV-2509.14786](https://arxiv.org/abs/2509.14786).
+Kim et al. (2025), [LIT-441](../literature.d/LIT-441.md) — [ARXIV-2509.14786](https://arxiv.org/abs/2509.14786).
 
 ## What goes wrong without it
 

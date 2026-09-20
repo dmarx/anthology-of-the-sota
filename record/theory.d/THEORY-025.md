@@ -1,5 +1,8 @@
 ---
+number: 25
 status: Proposed
+formerly:
+- THEORY-tmpqd9wu
 promote_when: >-
   An independent measurement of bits-per-parameter capacity on a
   non-GPT-family architecture — a mixture-of-experts model, or one with
@@ -14,10 +17,10 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-19'
 source:
-- LIT-tmp28gse
+- LIT-440
 explains: []
 summary: >-
-  Morris et al. (2025), [LIT-tmp28gse](../literature.d/LIT-tmp28gse.md) — measured on uniform random
+  Morris et al. (2025), [LIT-440](../literature.d/LIT-440.md) — measured on uniform random
   bitstrings where generalization is impossible, GPT-style transformers store
   3.5-4 bits per parameter, linear in parameter count and almost indifferent
   to weight precision. On real text, double descent begins exactly where the
@@ -26,13 +29,13 @@ summary: >-
   generalization — is an interpretation, not a measurement.
 ---
 
-# THEORY-tmpqd9wu: A transformer holds about 3.6 bits per parameter, and generalization begins where the data outgrows that budget
+# THEORY-025: A transformer holds about 3.6 bits per parameter, and generalization begins where the data outgrows that budget
 <!-- inactive-ok-file: SOTA-124 — Proposed, and the practice whose linear-scaling conjecture this measurement half-checks -->
 <!-- inactive-ok-file: SOTA-173 — Proposed, and named as one of the two positions this would bridge if the experiment were run -->
 
 ## Source
 
-Morris et al. (2025), [LIT-tmp28gse](../literature.d/LIT-tmp28gse.md) — [ARXIV-2505.24832](https://arxiv.org/abs/2505.24832).
+Morris et al. (2025), [LIT-440](../literature.d/LIT-440.md) — [ARXIV-2505.24832](https://arxiv.org/abs/2505.24832).
 
 ## What was actually shown
 

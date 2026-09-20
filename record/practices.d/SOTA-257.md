@@ -1,5 +1,8 @@
 ---
+number: 257
 status: Proposed
+formerly:
+- SOTA-tmpdngkz
 promote_when: >-
   A second group comparing an ensemble against a single model of the same
   total parameter count under a fixed corpus, at any scale, with the
@@ -19,12 +22,12 @@ tags:
 - training-optimization
 date: '2026-09-19'
 source:
-- LIT-tmp2udh1
+- LIT-441
 introduced_by:
-- LIT-tmp2udh1
+- LIT-441
 implementations: []
 summary: >-
-  Kim et al. (2025), [LIT-tmp2udh1](../literature.d/LIT-tmp2udh1.md) — under a fixed corpus, training K
+  Kim et al. (2025), [LIT-441](../literature.d/LIT-441.md) — under a fixed corpus, training K
   models that differ only in seed and averaging their logits reaches a lower
   loss asymptote than scaling one model to the same total parameter count.
   Two 300M models beat one 600M. Members want more epochs and less weight
@@ -32,12 +35,12 @@ summary: >-
   300M student retaining about 83% of the gain.
 ---
 
-# SOTA-tmpdngkz: Spend surplus compute on an ensemble of independently seeded models and distil it, rather than on one larger model
-<!-- inactive-ok-file: SOTA-tmp9rfqy — Proposed, and filed in this same contribution from this same source -->
+# SOTA-257: Spend surplus compute on an ensemble of independently seeded models and distil it, rather than on one larger model
+<!-- inactive-ok-file: SOTA-255 — Proposed, and filed in this same contribution from this same source -->
 
 ## Source
 
-Kim et al. (2025), [LIT-tmp2udh1](../literature.d/LIT-tmp2udh1.md) — [ARXIV-2509.14786](https://arxiv.org/abs/2509.14786).
+Kim et al. (2025), [LIT-441](../literature.d/LIT-441.md) — [ARXIV-2509.14786](https://arxiv.org/abs/2509.14786).
 
 ## The claim, stated so the wrong version cannot be read into it
 
@@ -87,7 +90,7 @@ model. This says that at sufficient parameter count under a fixed corpus,
 that default is the wrong move — which is a claim the record has no other
 document to set against, because nothing in it trains an ensemble.
 
-The aggregate effect, combined with [SOTA-tmp9rfqy](SOTA-tmp9rfqy.md)'s regularization, is
+The aggregate effect, combined with [SOTA-255](SOTA-255.md)'s regularization, is
 reported as ~5.2x the data efficiency of the standard recipe at 200M seed
 tokens, and the fitted data-scaling laws say the multiple is roughly constant
 across token counts.

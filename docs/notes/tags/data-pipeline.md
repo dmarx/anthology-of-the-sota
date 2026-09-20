@@ -4,7 +4,7 @@
 
 **data-pipeline**.
 
-9 of 189 NOTE documents. Back to the [full index](../README.md).
+11 of 192 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,3 +17,5 @@
 | [NOTE-178](../../../record/notes.d/NOTE-178.md) | Studying Large Language Model Generalization with Influence Functions | Scales influence functions to 52B-parameter language models with an EK-FAC approximation to the IHVP and query batching over the gradient bottleneck, then uses them as an instrument. Generalization gets more abstract with scale; influence is heavy-tailed but not concentrated; and a training sequence only counts when the prompt-related phrase comes first. | Read |
 | [NOTE-180](../../../record/notes.d/NOTE-180.md) | Estimating Training Data Influence by Tracing Gradient Descent | Defines a training example's influence as the total change it caused in a test point's loss over the iterations where it was used, and approximates that by step-size-weighted gradient dot products at saved checkpoints. No Hessian, no convexity. Self-influence ranks mislabelled examples to the top. | Read |
 | [NOTE-181](../../../record/notes.d/NOTE-181.md) | Understanding Black-box Predictions via Influence Functions | Traces a prediction back to the training points responsible for it by upweighting each point infinitesimally and differentiating, which needs only gradients and Hessian-vector products rather than retraining. Establishes the four uses of training-data attribution — explanation, poisoning, domain-mismatch debugging, and finding mislabelled data. | Read |
+| [NOTE-191](../../../record/notes.d/NOTE-191.md) | Pre-training under infinite compute | Under a fixed 200M-token corpus and no compute limit, the standard recipe overfits; tuning weight decay to ~30x the customary 0.1 makes loss monotone in parameter count. Ensembling independently trained models then beats parameter scaling on asymptote, and distils back down at ~83% retention. | Read |
+| [NOTE-192](../../../record/notes.d/NOTE-192.md) | Diffusion Beats AR in Data-Constrained Settings | Refits [LIT-166](../../../record/literature.d/LIT-166.md)'s data-constrained scaling law with the objective swapped from autoregressive to masked diffusion. The half-life of data reuse `R*` goes from 31.93 to 512.85. Diffusion loses badly at Chinchilla-optimal compute and wins past a crossover given in closed form. | Read |

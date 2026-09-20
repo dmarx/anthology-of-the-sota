@@ -4,7 +4,7 @@
 
 **generative-modeling**.
 
-11 of 189 NOTE documents. Back to the [full index](../README.md).
+12 of 192 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -19,3 +19,4 @@
 | [NOTE-067](../../../record/notes.d/NOTE-067.md) v2 | Denoising Diffusion Implicit Models | Generalises DDPM to a family of *non-Markovian* forward processes that share DDPM's exact training objective, so the sampler can be replaced without retraining. Picking the deterministic member gives 10–50× fewer steps, plus latent interpolation and encoding that a stochastic sampler cannot do. Not a continuous-time or SDE paper — that is a different one. | Read |
 | [NOTE-068](../../../record/notes.d/NOTE-068.md) | Denoising Diffusion Probabilistic Models | The paper that made diffusion work. Its Table 2 is the underquoted part: predicting ε rather than the posterior mean matters *only* under the simplified objective, learned reverse-process variances destabilise training, and the principled variational bound gives better codelengths while the unprincipled simplified loss gives better samples. | Read |
 | [NOTE-166](../../../record/notes.d/NOTE-166.md) | Scaling Diffusion Language Models via Adaptation from Autoregressive Models | Continual pretraining on under 200B tokens converts GPT2 and LLaMA at 127M-7B into diffusion language models competitive with their AR counterparts. The argument is economic before it is technical — diffusion LMs are hard to train at scale and AR checkpoints are abundant — and the capability that pays for it is infilling without prompt re-ordering. | Read |
+| [NOTE-192](../../../record/notes.d/NOTE-192.md) | Diffusion Beats AR in Data-Constrained Settings | Refits [LIT-166](../../../record/literature.d/LIT-166.md)'s data-constrained scaling law with the objective swapped from autoregressive to masked diffusion. The half-life of data reuse `R*` goes from 31.93 to 512.85. Diffusion loses badly at Chinchilla-optimal compute and wins past a crossover given in closed form. | Read |

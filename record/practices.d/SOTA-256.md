@@ -1,5 +1,8 @@
 ---
+number: 256
 status: Proposed
+formerly:
+- SOTA-tmpa2zin
 promote_when: >-
   A second group adopting the asymptote as the reported figure of merit for a
   scaling comparison, or a paper showing that asymptote rankings and
@@ -19,12 +22,12 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-19'
 source:
-- LIT-tmp2udh1
+- LIT-441
 introduced_by:
-- LIT-tmp2udh1
+- LIT-441
 implementations: []
 summary: >-
-  Kim et al. (2025), [LIT-tmp2udh1](../literature.d/LIT-tmp2udh1.md) — when compute is not the binding
+  Kim et al. (2025), [LIT-441](../literature.d/LIT-441.md) — when compute is not the binding
   constraint, a recipe's loss at a chosen budget answers a question nobody
   asked. Fit the scaling law and compare the asymptote instead. The catch is
   that an asymptote is an extrapolation, and rankings at small scale can
@@ -32,13 +35,13 @@ summary: >-
   member counts.
 ---
 
-# SOTA-tmpa2zin: Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget
-<!-- inactive-ok-file: SOTA-tmp9rfqy — Proposed, and filed in this same contribution from this same source -->
-<!-- inactive-ok-file: SOTA-tmpdngkz — Proposed, and filed in this same contribution from this same source -->
+# SOTA-256: Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget
+<!-- inactive-ok-file: SOTA-255 — Proposed, and filed in this same contribution from this same source -->
+<!-- inactive-ok-file: SOTA-257 — Proposed, and filed in this same contribution from this same source -->
 
 ## Source
 
-Kim et al. (2025), [LIT-tmp2udh1](../literature.d/LIT-tmp2udh1.md) — [ARXIV-2509.14786](https://arxiv.org/abs/2509.14786).
+Kim et al. (2025), [LIT-441](../literature.d/LIT-441.md) — [ARXIV-2509.14786](https://arxiv.org/abs/2509.14786).
 
 ## The argument
 
@@ -71,7 +74,7 @@ variable without turning up. The source's own standard recipe is *not*
 monotone in parameter count under a data constraint — it overfits — and for
 it the asymptote is undefined and the criterion says nothing. Getting a
 recipe into the regime where this question can be asked is itself an
-intervention ([SOTA-tmp9rfqy](SOTA-tmp9rfqy.md)).
+intervention ([SOTA-255](SOTA-255.md)).
 
 ## What it costs
 
@@ -90,7 +93,7 @@ and the sensitivity — not just `E`.
 One group, and unlike the rest of that paper this is argued rather than
 measured: it is the protocol the results are reported under, not a result.
 The record files it because two other practices drawn from the same source
-([SOTA-tmp9rfqy](SOTA-tmp9rfqy.md), [SOTA-tmpdngkz](SOTA-tmpdngkz.md)) rest their comparisons on it, and a reader
+([SOTA-255](SOTA-255.md), [SOTA-257](SOTA-257.md)) rest their comparisons on it, and a reader
 weighing those is entitled to see the criterion stated and its cost named
 rather than inheriting it silently.
 

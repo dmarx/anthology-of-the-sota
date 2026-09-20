@@ -1,6 +1,9 @@
 ---
+number: 191
 status: Read
-paper: LIT-tmp2udh1
+formerly:
+- NOTE-tmpc6v83
+paper: LIT-441
 title: 'Pre-training under infinite compute'
 version: 1
 date: '2026-09-19'
@@ -11,7 +14,7 @@ summary: >-
   parameter scaling on asymptote, and distils back down at ~83% retention.
 ---
 
-# NOTE-tmpc6v83: Pre-training under infinite compute
+# NOTE-191: Pre-training under infinite compute
 <!-- inactive-ok-file: SOTA-124 — Proposed, and named among the positions this reading says are measured at one setting of a variable -->
 <!-- inactive-ok-file: SOTA-173 — Proposed, and named as the position this reaches independently and fixes more cheaply -->
 

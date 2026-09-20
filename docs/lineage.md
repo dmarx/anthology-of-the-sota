@@ -2,7 +2,7 @@
 
 # Lines of work
 
-15 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+16 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -30,6 +30,14 @@ Grouped by `tags`, which every line holds in common — a line about two things 
       - [LIT-133](../record/literature.d/LIT-133.md) — Kimi Linear: An Expressive, Efficient Attention Architecture *(Active)*
     - [LIT-165](../record/literature.d/LIT-165.md) — Mamba-3: Improved Sequence Modeling using State Space Principles *(Active)*
 - [LIT-195](../record/literature.d/LIT-195.md) — Parallelizing Linear Transformers with the Delta Rule over Sequence Length *(Active)*
+
+## data-pipeline
+
+### From Scaling Data-Constrained Language Models
+
+- [LIT-166](../record/literature.d/LIT-166.md) — Scaling Data-Constrained Language Models *(Active)*
+  - [LIT-441](../record/literature.d/LIT-441.md) — Pre-training under infinite compute *(Active)*
+  - [LIT-442](../record/literature.d/LIT-442.md) — Diffusion Beats Autoregressive in Data-Constrained Settings *(Active)*
 
 ## distributed-optimization
 

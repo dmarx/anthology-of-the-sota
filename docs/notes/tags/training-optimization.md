@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-31 of 189 NOTE documents. Back to the [full index](../README.md).
+33 of 192 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -39,3 +39,5 @@
 | [NOTE-144](../../../record/notes.d/NOTE-144.md) | Measuring the Effects of Data Parallelism on Neural Network Training | The relationship between batch size and training steps to a goal error always follows the same three-regime shape — perfect scaling (b-fold benefit), diminishing returns, and a maximum useful batch size beyond which adding more parallelism helps nothing — but where these transitions occur is workload-specific and cannot be reliably predicted from simple properties of the model, data, or optimizer. | Read |
 | [NOTE-176](../../../record/notes.d/NOTE-176.md) | Beyond neural scaling laws: beating power law scaling via data pruning | Power-law scaling of error in dataset size is a symptom of redundancy, not a ceiling. With a ranking of example difficulty and a pruning fraction that grows with the corpus, error can fall exponentially instead. Which end of the ranking to discard inverts with data abundance: keep hard examples when data is plentiful, easy ones when it is scarce. | Read |
 | [NOTE-189](../../../record/notes.d/NOTE-189.md) | Modular Duality in Deep Learning | Gradients live in the dual space and weights live in the primal one, so subtracting one from the other is a type error that ordinary gradient descent commits every step. Fix it with a duality map built recursively from per-layer operator norms. Two consequences the record cares about: muP and Shampoo turn out to be partial approximations of one such map, and the map for Linear layers is a Newton-Schulz iteration — which is Muon. | Read |
+| [NOTE-190](../../../record/notes.d/NOTE-190.md) | How much do language models memorize? | Defines memorization as compression rate against the model, separates it from generalization by training on uniform random bitstrings, and measures GPT-style transformer capacity at ~3.6 bits per parameter, linear in parameter count and nearly indifferent to precision. Double descent begins exactly where the data's information content crosses that capacity. | Read |
+| [NOTE-191](../../../record/notes.d/NOTE-191.md) | Pre-training under infinite compute | Under a fixed 200M-token corpus and no compute limit, the standard recipe overfits; tuning weight decay to ~30x the customary 0.1 makes loss monotone in parameter count. Ensembling independently trained models then beats parameter scaling on asymptote, and distils back down at ~83% retention. | Read |

@@ -1,5 +1,8 @@
 ---
+number: 254
 status: Proposed
+formerly:
+- SOTA-tmp4dbv9
 promote_when: >-
   A second group measuring the AR-versus-diffusion crossover at a unique-token
   budget an order of magnitude above 100M, with both arms swept over epoch
@@ -19,14 +22,14 @@ tags:
 - training-optimization
 date: '2026-09-19'
 source:
-- LIT-tmp5xe2h
+- LIT-442
 introduced_by:
-- LIT-tmp5xe2h
+- LIT-442
 extends:
 - SOTA-157
 implementations: []
 summary: >-
-  Prabhudesai et al. (2025), [LIT-tmp5xe2h](../literature.d/LIT-tmp5xe2h.md) — masked diffusion keeps
+  Prabhudesai et al. (2025), [LIT-442](../literature.d/LIT-442.md) — masked diffusion keeps
   extracting signal from a repeated corpus for roughly 512 epochs where
   autoregressive training stops at 32. Below a critical compute threshold,
   given in closed form from the unique-token count, autoregressive training
@@ -34,14 +37,14 @@ summary: >-
   recommendation is the condition, not the objective.
 ---
 
-# SOTA-tmp4dbv9: Train the language model as a masked diffusion model when the corpus is fixed and the compute is not
+# SOTA-254: Train the language model as a masked diffusion model when the corpus is fixed and the compute is not
 <!-- inactive-ok-file: SOTA-124 — Proposed, and named as one of the three positions this practice is placed among -->
 <!-- inactive-ok-file: SOTA-157 — Proposed, and the practice this one specializes; the pairing is declared in `extends:` -->
 <!-- inactive-ok-file: SOTA-173 — Proposed, and the practice whose remedy this one parts company with -->
 
 ## Source
 
-Prabhudesai et al. (2025), [LIT-tmp5xe2h](../literature.d/LIT-tmp5xe2h.md) — [ARXIV-2507.15857](https://arxiv.org/abs/2507.15857).
+Prabhudesai et al. (2025), [LIT-442](../literature.d/LIT-442.md) — [ARXIV-2507.15857](https://arxiv.org/abs/2507.15857).
 
 ## The recommendation is a conditional, and both arms of it are the practice
 

@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-43 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+44 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -142,6 +142,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [SOTA-149](../record/practices.d/SOTA-149.md) — Build the sparse layers from many small experts plus an always-on shared one, not a few large ones *(Active, emerging)*
   - [SOTA-180](../record/practices.d/SOTA-180.md) — Keep the routed experts' weights in a down-projected latent space and spend the saved bandwidth on more of them *(Active, emerging)*
   - [SOTA-209](../record/practices.d/SOTA-209.md) — Initialize a mixture-of-experts model from a dense checkpoint rather than training it from scratch *(Proposed, unassessed)*
+
+### From Train the language model as a masked diffusion model rather than autoregressively
+
+- [SOTA-157](../record/practices.d/SOTA-157.md) — Train the language model as a masked diffusion model rather than autoregressively *(Proposed, unreplicated)*
+  - [SOTA-254](../record/practices.d/SOTA-254.md) — Train the language model as a masked diffusion model when the corpus is fixed and the compute is not *(Proposed, unreplicated)*
 
 ## model-stability
 

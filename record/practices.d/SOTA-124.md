@@ -38,7 +38,7 @@ history:
   date: '2026-09-19'
   note: >-
     The linear-in-parameters conjecture is now half-checked. Morris et al.
-    (LIT-tmp28gse) measure transformer storage capacity at ~3.6 bits per
+    (LIT-440) measure transformer storage capacity at ~3.6 bits per
     parameter and find it linear in parameter count across three orders of
     magnitude. That is the scaling assumption this practice was taking on one
     figure. It is not the window itself, which is a token count, and nobody
@@ -109,7 +109,7 @@ hundred times is either augmenting implicitly or paying an unmeasured cost.
 
 `promote_when:` above asks for a measurement of the window at a second model
 scale, so the linear-in-parameters assumption can be checked rather than
-assumed. Morris et al., [LIT-tmp28gse](../literature.d/LIT-tmp28gse.md), get part of the way there.
+assumed. Morris et al., [LIT-440](../literature.d/LIT-440.md), get part of the way there.
 
 They measure transformer storage capacity by training on uniform random
 bitstrings, where generalization is impossible and the information content is

@@ -1,6 +1,9 @@
 ---
+number: 192
 status: Read
-paper: LIT-tmp5xe2h
+formerly:
+- NOTE-tmpd2fpc
+paper: LIT-442
 title: 'Diffusion Beats AR in Data-Constrained Settings'
 version: 1
 date: '2026-09-19'
@@ -11,7 +14,7 @@ summary: >-
   compute and wins past a crossover given in closed form.
 ---
 
-# NOTE-tmpd2fpc: Diffusion Beats AR in Data-Constrained Settings
+# NOTE-192: Diffusion Beats AR in Data-Constrained Settings
 <!-- inactive-ok-file: SOTA-124 — Proposed, and named to say this result does NOT bear on it -->
 <!-- inactive-ok-file: SOTA-157 — Proposed, and the practice this reading should produce a specialization of -->
 <!-- inactive-ok-file: SOTA-173 — Proposed, and the practice this reading tests from outside its own source -->

@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [19 Sep 23:56 — Three papers, one diagnosis, three different remedies — and the variable none of the old measurements controlled](2026-09.md#three-papers-one-diagnosis-three-different-remedies--and-the-variable-none-of-the-old-measurements-controlled)
 - [19 Sep 23:29 — The arrival event came from outside the record](2026-09.md#the-arrival-event-came-from-outside-the-record)
 - [19 Sep 23:09 — A criterion is not a house rule just because it worked twice](2026-09.md#a-criterion-is-not-a-house-rule-just-because-it-worked-twice)
 - [19 Sep 22:16 — The practice said "a large coordinate network" and the record could not point at one](2026-09.md#the-practice-said-a-large-coordinate-network-and-the-record-could-not-point-at-one)
@@ -119,9 +120,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-112 entries across 2 books, newest first.
+113 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 110 | 2026-09-05 | 2026-09-19 |
+| [2026-09](2026-09.md) | 111 | 2026-09-05 | 2026-09-19 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

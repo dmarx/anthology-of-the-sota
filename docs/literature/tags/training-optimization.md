@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-62 of 374 LIT documents. Back to the [full index](../README.md).
+64 of 377 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -72,3 +72,5 @@
 | [LIT-436](../../../record/literature.d/LIT-436.md) | Scalable Optimization in the Modular Norm | Large et al. (2024), [ARXIV-2405.14813](https://arxiv.org/abs/2405.14813). Generalises the per-layer natural norm to the whole weight space: the modular norm is defined recursively alongside the architecture. Normalising any base optimizer's updates in it makes the learning rate transferable across **width and depth**, with no optimizer-specific scale factors. | Active |
 | [LIT-437](../../../record/literature.d/LIT-437.md) | A Spectral Condition for Feature Learning | Yang et al. (2023), [ARXIV-2310.17813](https://arxiv.org/abs/2310.17813). Feature learning at large width follows from scaling the *spectral* norm of weights and their updates like sqrt(fan-out/fan-in) — not from the Frobenius-norm and entry-size heuristics in common use. It also yields an elementary derivation of muP. | Active |
 | [LIT-438](../../../record/literature.d/LIT-438.md) | Modular Duality in Deep Learning | Bernstein and Newhouse (2024), [ARXIV-2410.21265](https://arxiv.org/abs/2410.21265). The gradient is a dual vector and should not be subtracted from the weights without a duality map. Modular dualization builds that map recursively from per-layer operator norms; the Linear case is a rectangular Newton-Schulz iteration, and a variant of it set NanoGPT speed records — which is where Muon comes from. | Active |
+| [LIT-440](../../../record/literature.d/LIT-440.md) | How much do language models memorize? | Morris et al. (2025), [ARXIV-2505.24832](https://arxiv.org/abs/2505.24832). Separates what a model stores about a specific dataset from what it stores about the data-generating process, and measures the first by training on uniform random bitstrings where the second is impossible. GPT-style transformers hold about 3.6 bits per parameter, near-independent of precision, and the capacity is linear in parameter count across hundreds of models from 500K to 1.5B. | Active |
+| [LIT-441](../../../record/literature.d/LIT-441.md) | Pre-training under infinite compute | Kim et al. (2025), [ARXIV-2509.14786](https://arxiv.org/abs/2509.14786). Under a fixed corpus and no compute limit, the standard recipe of more epochs and more parameters overfits — and the fix is regularization, at roughly 30x the customary weight decay. Ensembling independently trained models then beats parameter scaling outright, and distilling the ensemble keeps most of the gain. The paper also proposes judging such recipes by their scaling law's asymptote rather than by loss at a budget. | Active |

@@ -1,6 +1,9 @@
 ---
+number: 203
 status: Read
-paper: LIT-tmp20sa6
+formerly:
+- NOTE-tmpgwkkj
+paper: LIT-453
 title: 'Central Flows'
 version: 1
 date: '2026-09-20'
@@ -12,7 +15,7 @@ summary: >-
   further later, which ablating makes them slower.
 ---
 
-# NOTE-tmpgwkkj: Central Flows
+# NOTE-203: Central Flows
 <!-- inactive-ok-file: SOTA-255 — Proposed, and named as one of the two explicit curvature-affecting knobs this reading says has no joint account with the implicit one -->
 <!-- inactive-ok-file: SOTA-261 — Proposed, and named in the same sentence and for the same reason -->
 
@@ -168,8 +171,8 @@ extract second-order information by oscillating. Neither cites the other.
 - **No practice should be filed from R1 or R2 yet.** Both are about full-batch
   training and every recipe the record holds is stochastic. Filing them would
   assert a transfer nobody has made.
-- **Third piece of the loss-curve account**, with [LIT-tmpdoa3b](../literature.d/LIT-tmpdoa3b.md) and
-  [LIT-tmp82k5k](../literature.d/LIT-tmp82k5k.md): the plotted trajectory is a time-average of something
+- **Third piece of the loss-curve account**, with [LIT-455](../literature.d/LIT-455.md) and
+  [LIT-454](../literature.d/LIT-454.md): the plotted trajectory is a time-average of something
   that is not smooth.
 
 ## Limitations

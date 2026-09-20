@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-73 of 387 LIT documents. Back to the [full index](../README.md).
+74 of 390 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -83,3 +83,4 @@
 | [LIT-433](../../../record/literature.d/LIT-433.md) | Learning to summarize from human feedback | Stiennon et al. (2020), [ARXIV-2009.01325](https://arxiv.org/abs/2009.01325). The step where the preference loop crosses into language: human comparisons between summaries, a reward model fit to them, PPO against that reward. The summaries beat the human reference summaries, and beat much larger models fine-tuned supervised — which is the result that made the loop look like a general answer rather than a control technique. | Active |
 | [LIT-440](../../../record/literature.d/LIT-440.md) | How much do language models memorize? | Morris et al. (2025), [ARXIV-2505.24832](https://arxiv.org/abs/2505.24832). Separates what a model stores about a specific dataset from what it stores about the data-generating process, and measures the first by training on uniform random bitstrings where the second is impossible. GPT-style transformers hold about 3.6 bits per parameter, near-independent of precision, and the capacity is linear in parameter count across hundreds of models from 500K to 1.5B. | Active |
 | [LIT-452](../../../record/literature.d/LIT-452.md) | Scaling Laws for Fact Memorization of Large Language Models | Lu et al. (2024), [ARXIV-2406.15720](https://arxiv.org/abs/2406.15720). Fact capacity scales linearly with model size and saturates in training epochs along a negative exponential. Extrapolated, memorising all 15B Wikidata triples wants about 1000B non-embedding parameters trained for 100 epochs. Redundant facts cost full price unless they share direction and structure, so parameters are an expensive place to keep a knowledge base. | Active |
+| [LIT-455](../../../record/literature.d/LIT-455.md) | Hidden Breakthroughs in Language Model Training | Kangaslahti et al. (2025), [ARXIV-2506.15872](https://arxiv.org/abs/2506.15872). A smooth loss curve is not evidence of smooth training. POLCA decomposes the change in loss along a low-rank basis of the training subspace and per example, and the breakthroughs the aggregate hides come back — on synthetic arithmetic it recovers the skill of carrying a digit, which clustering the exact loss curves does not. | Active |

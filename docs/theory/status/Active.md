@@ -6,7 +6,7 @@
 
 **The current account** — the best explanation the record holds for why this happens.
 
-15 of 29 THEORY documents. Back to the [full index](../README.md).
+16 of 31 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -25,3 +25,4 @@
 | [THEORY-024](../../../record/theory.d/THEORY-024.md) | Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map | Bernstein and Newhouse (2024), [LIT-438](../../../record/literature.d/LIT-438.md) — gradients are dual vectors and weights are primal, so the subtraction in gradient descent needs a duality map. Build it recursively from per-layer operator norms and the Linear case is a Newton-Schulz iteration, which is what Muon does. The same construction shows muP and Shampoo are partial approximations of one map. | Active |
 | [THEORY-027](../../../record/theory.d/THEORY-027.md) | In continuous time the diffusion bound depends on the noise schedule only through its endpoints | Kingma et al. (2021), [LIT-446](../../../record/literature.d/LIT-446.md) — integrate the diffusion variational bound over signal-to-noise ratio instead of over time and the schedule leaves the integrand, remaining only in the limits. The bound and the generative distribution therefore depend on the schedule through two numbers, and variance-preserving and variance-exploding specifications are the same model up to a rescaling of the latents. | Active |
 | [THEORY-028](../../../record/theory.d/THEORY-028.md) | The plateau before factual recall is the formation of the attention circuit that recall needs | Zucchet et al. (2025), [LIT-450](../../../record/literature.d/LIT-450.md) — during the plateau between generic statistics and entity-specific knowledge, the attention circuit that selects an attribute value is being built, and until it exists the error at the attribute token does not reach the name tokens. Shown by patching a reference model's attention patterns in, which removes the plateau entirely. | Active |
+| [THEORY-031](../../../record/theory.d/THEORY-031.md) | The aggregate loss curve is a lossy projection of training, in at least three measured ways | Three independent measurements of what the loss curve discards. It time-averages oscillation the optimizer is actually doing ([LIT-453](../../../record/literature.d/LIT-453.md)); it sums over transitions that are individually abrupt and differently timed, so smoothness is what many breakthroughs look like added up ([LIT-455](../../../record/literature.d/LIT-455.md)); and it reads flat while the weights keep travelling ([LIT-454](../../../record/literature.d/LIT-454.md)). | Active |

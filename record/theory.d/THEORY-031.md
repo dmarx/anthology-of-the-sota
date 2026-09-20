@@ -1,35 +1,38 @@
 ---
+number: 31
 status: Active
+formerly:
+- THEORY-tmpq5g15
 title: 'The aggregate loss curve is a lossy projection of training, in at least three measured ways'
 version: 1
 tags:
 - analysis-and-evaluation
 date: '2026-09-20'
 source:
-- LIT-tmpdoa3b
-- LIT-tmp20sa6
-- LIT-tmp82k5k
+- LIT-455
+- LIT-453
+- LIT-454
 explains:
-- SOTA-tmp8p02k
+- SOTA-270
 summary: >-
   Three independent measurements of what the loss curve discards. It
   time-averages oscillation the optimizer is actually doing
-  ([LIT-tmp20sa6](../literature.d/LIT-tmp20sa6.md)); it sums over transitions that are individually abrupt
+  ([LIT-453](../literature.d/LIT-453.md)); it sums over transitions that are individually abrupt
   and differently timed, so smoothness is what many breakthroughs look like
-  added up ([LIT-tmpdoa3b](../literature.d/LIT-tmpdoa3b.md)); and it reads flat while the weights keep
-  travelling ([LIT-tmp82k5k](../literature.d/LIT-tmp82k5k.md)).
+  added up ([LIT-455](../literature.d/LIT-455.md)); and it reads flat while the weights keep
+  travelling ([LIT-454](../literature.d/LIT-454.md)).
 ---
 
-# THEORY-tmpq5g15: The aggregate loss curve is a lossy projection of training, in at least three measured ways
-<!-- inactive-ok-file: THEORY-tmpmurnt — Proposed, and filed in this same contribution; named to contrast its narrower scope with this account's -->
+# THEORY-031: The aggregate loss curve is a lossy projection of training, in at least three measured ways
+<!-- inactive-ok-file: THEORY-030 — Proposed, and filed in this same contribution; named to contrast its narrower scope with this account's -->
 
 ## Source
 
-Kangaslahti et al. (2025), [LIT-tmpdoa3b](../literature.d/LIT-tmpdoa3b.md) — [ARXIV-2506.15872](https://arxiv.org/abs/2506.15872).
+Kangaslahti et al. (2025), [LIT-455](../literature.d/LIT-455.md) — [ARXIV-2506.15872](https://arxiv.org/abs/2506.15872).
 
-Cohen et al. (2024), [LIT-tmp20sa6](../literature.d/LIT-tmp20sa6.md) — [ARXIV-2410.24206](https://arxiv.org/abs/2410.24206).
+Cohen et al. (2024), [LIT-453](../literature.d/LIT-453.md) — [ARXIV-2410.24206](https://arxiv.org/abs/2410.24206).
 
-Kunin et al. (2021), [LIT-tmp82k5k](../literature.d/LIT-tmp82k5k.md) — [ARXIV-2107.09133](https://arxiv.org/abs/2107.09133).
+Kunin et al. (2021), [LIT-454](../literature.d/LIT-454.md) — [ARXIV-2107.09133](https://arxiv.org/abs/2107.09133).
 
 **No one of these states the claim; the record does, from holding all three.**
 That is the kind of synthesis [DP-007](../principles.d/DP-007.md) says has no author and therefore no
@@ -69,7 +72,7 @@ recall circuit under construction, demonstrated by patching the circuit in
 and watching the plateau disappear. That was one transition made visible by
 an intervention. The first collapse above says the population is large.
 
-[SOTA-tmp8p02k](../practices.d/SOTA-tmp8p02k.md) is the practice: do not read the curve as evidence about
+[SOTA-270](../practices.d/SOTA-270.md) is the practice: do not read the curve as evidence about
 the training, and decompose it when the answer matters.
 
 ## What this does not say
@@ -110,6 +113,6 @@ flow with an ablation, a negative control against a chance baseline, a fitted
 exponent with closed-form hyperparameter predictions.
 
 What is `Proposed` elsewhere in this contribution is the *mechanism* of any
-one leg ([THEORY-tmpmurnt](THEORY-tmpmurnt.md), whose scope is full-batch). The claim here is
+one leg ([THEORY-030](THEORY-030.md), whose scope is full-batch). The claim here is
 weaker and better supported: not why the curve is lossy in each case, but
 that it is, in ways that have been separately measured.

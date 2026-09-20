@@ -1,5 +1,8 @@
 ---
+number: 30
 status: Proposed
+formerly:
+- THEORY-tmpmurnt
 promote_when: >-
   The same analysis carried to stochastic gradients — a central flow for
   minibatch training whose predictions hold — which is the one step between
@@ -14,11 +17,11 @@ tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmp20sa6
+- LIT-453
 explains:
 - SOTA-001
 summary: >-
-  Cohen et al. (2024), [LIT-tmp20sa6](../literature.d/LIT-tmp20sa6.md) — at the edge of stability the
+  Cohen et al. (2024), [LIT-453](../literature.d/LIT-453.md) — at the edge of stability the
   effective step size is set by current sharpness, and the learning rate's
   role is to modulate an implicit curvature penalty that steers the
   trajectory toward flatter regions where larger steps are stable. Ablating
@@ -27,11 +30,11 @@ summary: >-
   information at no extra cost.
 ---
 
-# THEORY-tmpmurnt: Adaptive optimizers work by shaping the curvature they adapt to, and oscillation is how a first-order method sees curvature at all
+# THEORY-030: Adaptive optimizers work by shaping the curvature they adapt to, and oscillation is how a first-order method sees curvature at all
 
 ## Source
 
-Cohen et al. (2024), [LIT-tmp20sa6](../literature.d/LIT-tmp20sa6.md) — [ARXIV-2410.24206](https://arxiv.org/abs/2410.24206).
+Cohen et al. (2024), [LIT-453](../literature.d/LIT-453.md) — [ARXIV-2410.24206](https://arxiv.org/abs/2410.24206).
 
 ## What was actually shown
 

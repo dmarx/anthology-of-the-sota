@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-39 of 201 NOTE documents. Back to the [full index](../README.md).
+42 of 204 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -47,3 +47,6 @@
 | [NOTE-199](../../../record/notes.d/NOTE-199.md) | How do language models learn facts? | Factual recall is learned in three phases, and the plateau between generic statistics and individual knowledge is the attention recall circuit being built — patching in a trained model's attention patterns removes the plateau. Imbalanced data shortens the plateau and slows acquisition after it, so a schedule from imbalanced to uniform beats either fixed choice. | Read |
 | [NOTE-200](../../../record/notes.d/NOTE-200.md) | Scaling Laws for Fact Memorization | Fact capacity is linear in model size and saturates in epochs along a negative exponential; all of Wikidata would want ~1000B non-embedding parameters at 100 epochs. Redundant facts cost full price unless they share direction and structure. Generalisation to unseen facts exists and scales like ordinary pretraining. | Read |
 | [NOTE-201](../../../record/notes.d/NOTE-201.md) | Data Mixing Can Induce Phase Transitions in Knowledge Acquisition | Linear scaling of acquired knowledge in model size holds when a knowledge-dense dataset is trained on alone and breaks once it is mixed into web text: below a critical model size, or a critical mixing ratio, the model memorises almost nothing. Attributed to capacity allocation as a knapsack, with the critical ratio a power law in model size. | Read |
+| [NOTE-202](../../../record/notes.d/NOTE-202.md) | The Limiting Dynamics of SGD | Long after the loss converges the weights keep travelling, distance growing as a power law with a non-trivial exponent. Derives SGD at finite learning rate and batch size as an underdamped Langevin equation and shows the driver is a modified loss plus probability currents, with the motion incoherent oscillation in the Hessian's top eigensubspace rather than diffusion. | Read |
+| [NOTE-203](../../../record/notes.d/NOTE-203.md) | Central Flows | Models the time-averaged trajectory of an oscillating optimizer as a differential equation that predicts the real path numerically. Reading it: at the edge of stability sharpness sets the step size, not the learning rate; and adaptive optimizers steer away from curvature so they can step further later, which ablating makes them slower. | Read |
+| [NOTE-204](../../../record/notes.d/NOTE-204.md) | Hidden Breakthroughs in Language Model Training | A smooth loss curve is what many differently-timed abrupt transitions look like when averaged. POLCA decomposes loss change per example and along a curvature-derived low-rank basis; on synthetic arithmetic it recovers the carrying skill, which clustering the exact loss curves does not. | Read |

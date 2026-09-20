@@ -1,6 +1,9 @@
 ---
+number: 202
 status: Read
-paper: LIT-tmp82k5k
+formerly:
+- NOTE-tmpa0ky3
+paper: LIT-454
 title: 'The Limiting Dynamics of SGD'
 version: 1
 date: '2026-09-20'
@@ -13,7 +16,7 @@ summary: >-
   diffusion.
 ---
 
-# NOTE-tmpa0ky3: The Limiting Dynamics of SGD
+# NOTE-202: The Limiting Dynamics of SGD
 <!-- inactive-ok-file: ADR-034 — Proposed, and cited for the rule this reading leans on about what a Rejected theory does and does not retire -->
 <!-- inactive-ok-file: THEORY-013 — Rejected, and named three times on purpose: the shared SDE machinery makes guilt-by-association the available mistake, and saying so is what these passages are for -->
 
@@ -134,7 +137,7 @@ That rejection does not touch this paper. It was a claim about test accuracy;
 this one makes none. The shared machinery is a reason to read them together
 and not a reason to treat either as evidence about the other.
 
-With [LIT-tmp20sa6](../literature.d/LIT-tmp20sa6.md) and [LIT-tmpdoa3b](../literature.d/LIT-tmpdoa3b.md) it forms the third part of a picture
+With [LIT-453](../literature.d/LIT-453.md) and [LIT-455](../literature.d/LIT-455.md) it forms the third part of a picture
 about what the loss curve hides — here, that a flat tail is not a stopped
 optimizer.
 

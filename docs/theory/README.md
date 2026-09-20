@@ -31,8 +31,8 @@ bare code and run `luria link --fix`.
 
 ## By topic
 
-**[Training optimization](tags/training-optimization.md)** (6) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
-[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md) · [026](../../record/theory.d/THEORY-026.md) · [028](../../record/theory.d/THEORY-028.md) · [029](../../record/theory.d/THEORY-029.md)
+**[Training optimization](tags/training-optimization.md)** (7) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
+[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md) · [026](../../record/theory.d/THEORY-026.md) · [028](../../record/theory.d/THEORY-028.md) · [029](../../record/theory.d/THEORY-029.md) · [030](../../record/theory.d/THEORY-030.md)
 
 **[Systems optimization](tags/systems-optimization.md)** (0) — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
@@ -57,8 +57,8 @@ bare code and run `luria link --fix`.
 **[Representation and encoding](tags/representation-and-encoding.md)** (2) — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them:
 [021](../../record/theory.d/THEORY-021.md) · [022](../../record/theory.d/THEORY-022.md)
 
-**[Analysis and evaluation](tags/analysis-and-evaluation.md)** (10) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
-[002](../../record/theory.d/THEORY-002.md) · [004](../../record/theory.d/THEORY-004.md) · [006](../../record/theory.d/THEORY-006.md) · [007](../../record/theory.d/THEORY-007.md) · [008](../../record/theory.d/THEORY-008.md) · [009](../../record/theory.d/THEORY-009.md) · [017](../../record/theory.d/THEORY-017.md) · [018](../../record/theory.d/THEORY-018.md) · [023](../../record/theory.d/THEORY-023.md) · [025](../../record/theory.d/THEORY-025.md)
+**[Analysis and evaluation](tags/analysis-and-evaluation.md)** (11) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
+[002](../../record/theory.d/THEORY-002.md) · [004](../../record/theory.d/THEORY-004.md) · [006](../../record/theory.d/THEORY-006.md) · [007](../../record/theory.d/THEORY-007.md) · [008](../../record/theory.d/THEORY-008.md) · [009](../../record/theory.d/THEORY-009.md) · [017](../../record/theory.d/THEORY-017.md) · [018](../../record/theory.d/THEORY-018.md) · [023](../../record/theory.d/THEORY-023.md) · [025](../../record/theory.d/THEORY-025.md) · [031](../../record/theory.d/THEORY-031.md)
 
 **[Generative modeling](tags/generative-modeling.md)** (1) — diffusion, samplers, text-to-image, conditioning and control:
 [027](../../record/theory.d/THEORY-027.md)
@@ -67,7 +67,7 @@ bare code and run `luria link --fix`.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (15) · [Offered](status/Proposed.md) (11) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (16) · [Offered](status/Proposed.md) (12) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -112,4 +112,6 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-027](../../record/theory.d/THEORY-027.md) | In continuous time the diffusion bound depends on the noise schedule only through its endpoints | Kingma et al. (2021), [LIT-446](../../record/literature.d/LIT-446.md) — integrate the diffusion variational bound over signal-to-noise ratio instead of over time and the schedule leaves the integrand, remaining only in the limits. The bound and the generative distribution therefore depend on the schedule through two numbers, and variance-preserving and variance-exploding specifications are the same model up to a rescaling of the latents. | Active |
 | [THEORY-028](../../record/theory.d/THEORY-028.md) | The plateau before factual recall is the formation of the attention circuit that recall needs | Zucchet et al. (2025), [LIT-450](../../record/literature.d/LIT-450.md) — during the plateau between generic statistics and entity-specific knowledge, the attention circuit that selects an attribute value is being built, and until it exists the error at the attribute token does not reach the name tokens. Shown by patching a reference model's attention patterns in, which removes the plateau entirely. | Active |
 | [THEORY-029](../../record/theory.d/THEORY-029.md) | A model of bounded capacity allocates it across datasets like a knapsack, so the optimum jumps rather than sliding | Gu et al. (2025), [LIT-451](../../record/literature.d/LIT-451.md) — a model with bounded capacity training on a mixture must decide how much capacity each dataset gets, and the allocation minimising total loss is a discrete choice. A discrete optimum moves discontinuously when its inputs move continuously, which is why knowledge acquisition has thresholds in model size and mixing ratio rather than the smooth scaling the single-dataset case shows. | Proposed |
+| [THEORY-030](../../record/theory.d/THEORY-030.md) | Adaptive optimizers work by shaping the curvature they adapt to, and oscillation is how a first-order method sees curvature at all | Cohen et al. (2024), [LIT-453](../../record/literature.d/LIT-453.md) — at the edge of stability the effective step size is set by current sharpness, and the learning rate's role is to modulate an implicit curvature penalty that steers the trajectory toward flatter regions where larger steps are stable. Ablating the shaping while keeping the adaptation makes the optimizer slower. Separately, oscillation is how a first-order method acquires second-order information at no extra cost. | Proposed |
+| [THEORY-031](../../record/theory.d/THEORY-031.md) | The aggregate loss curve is a lossy projection of training, in at least three measured ways | Three independent measurements of what the loss curve discards. It time-averages oscillation the optimizer is actually doing ([LIT-453](../../record/literature.d/LIT-453.md)); it sums over transitions that are individually abrupt and differently timed, so smoothness is what many breakthroughs look like added up ([LIT-455](../../record/literature.d/LIT-455.md)); and it reads flat while the weights keep travelling ([LIT-454](../../record/literature.d/LIT-454.md)). | Active |
 

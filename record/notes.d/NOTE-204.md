@@ -1,6 +1,9 @@
 ---
+number: 204
 status: Read
-paper: LIT-tmpdoa3b
+formerly:
+- NOTE-tmpq6ok6
+paper: LIT-455
 title: 'Hidden Breakthroughs in Language Model Training'
 version: 1
 date: '2026-09-20'
@@ -11,7 +14,7 @@ summary: >-
   carrying skill, which clustering the exact loss curves does not.
 ---
 
-# NOTE-tmpq6ok6: Hidden Breakthroughs in Language Model Training
+# NOTE-204: Hidden Breakthroughs in Language Model Training
 
 ## Contribution
 
@@ -52,7 +55,7 @@ the conclusion that nothing structural is happening.
 - Top Hessian eigenvectors reflect local oscillation rather than long-term
   movement, so directions not lowering loss over the run are discarded — an
   assumption inherited from the EOS literature and consistent with
-  [LIT-tmp20sa6](../literature.d/LIT-tmp20sa6.md).
+  [LIT-453](../literature.d/LIT-453.md).
 
 ## Key results
 
@@ -123,7 +126,7 @@ biased sample of a larger population.
 Supports Nanda et al.'s speculation that "phase transitions are everywhere",
 and gives it a measurement rather than leaving it as a reading of anecdotes.
 
-Complements [LIT-tmp20sa6](../literature.d/LIT-tmp20sa6.md) from the other end: that paper says the
+Complements [LIT-453](../literature.d/LIT-453.md) from the other end: that paper says the
 trajectory you plot is a time-average of oscillation, this says the scalar you
 plot is an average over data and directions. Both are about what the curve
 threw away.
@@ -153,7 +156,7 @@ threw away.
   plateau is a circuit being built. That was one transition made visible by
   an intervention; this says the population is large and supplies a way to
   see it without one.
-- **With [LIT-tmp20sa6](../literature.d/LIT-tmp20sa6.md) and [LIT-tmp82k5k](../literature.d/LIT-tmp82k5k.md) it completes a three-part
+- **With [LIT-453](../literature.d/LIT-453.md) and [LIT-454](../literature.d/LIT-454.md) it completes a three-part
   account** of how the aggregate loss curve is lossy — time-averaged
   oscillation, summed transitions, and motion after apparent convergence.
   That synthesis is worth a theory document because no single paper states

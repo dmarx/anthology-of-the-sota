@@ -1,5 +1,8 @@
 ---
+number: 270
 status: Active
+formerly:
+- SOTA-tmp8p02k
 consensus: emerging
 consensus_note: >-
   The caution rests on three independent measurements from three groups and
@@ -13,32 +16,32 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-20'
 source:
-- LIT-tmpdoa3b
-- LIT-tmp20sa6
-- LIT-tmp82k5k
+- LIT-455
+- LIT-453
+- LIT-454
 introduced_by:
-- LIT-tmpdoa3b
+- LIT-455
 implementations:
 - 'POLCA'
 summary: >-
-  Kangaslahti et al. (2025), [LIT-tmpdoa3b](../literature.d/LIT-tmpdoa3b.md), with Cohen et al.
-  [LIT-tmp20sa6](../literature.d/LIT-tmp20sa6.md) and Kunin et al. [LIT-tmp82k5k](../literature.d/LIT-tmp82k5k.md) — the curve
+  Kangaslahti et al. (2025), [LIT-455](../literature.d/LIT-455.md), with Cohen et al.
+  [LIT-453](../literature.d/LIT-453.md) and Kunin et al. [LIT-454](../literature.d/LIT-454.md) — the curve
   time-averages oscillation, sums over differently-timed abrupt transitions,
   and reads flat while the weights still travel. Smoothness is what many
   breakthroughs look like added up, so it is not evidence about the training.
 explained_by:
-- THEORY-tmpq5g15
+- THEORY-031
 ---
 
-# SOTA-tmp8p02k: Do not read a smooth loss curve as evidence of smooth training; decompose it when the answer matters
+# SOTA-270: Do not read a smooth loss curve as evidence of smooth training; decompose it when the answer matters
 
 ## Source
 
-Kangaslahti et al. (2025), [LIT-tmpdoa3b](../literature.d/LIT-tmpdoa3b.md) — [ARXIV-2506.15872](https://arxiv.org/abs/2506.15872). The
+Kangaslahti et al. (2025), [LIT-455](../literature.d/LIT-455.md) — [ARXIV-2506.15872](https://arxiv.org/abs/2506.15872). The
 decomposition and the negative control.
 
-Cohen et al. (2024), [LIT-tmp20sa6](../literature.d/LIT-tmp20sa6.md) — [ARXIV-2410.24206](https://arxiv.org/abs/2410.24206), and Kunin et al.
-(2021), [LIT-tmp82k5k](../literature.d/LIT-tmp82k5k.md) — [ARXIV-2107.09133](https://arxiv.org/abs/2107.09133). The other two collapses; the
+Cohen et al. (2024), [LIT-453](../literature.d/LIT-453.md) — [ARXIV-2410.24206](https://arxiv.org/abs/2410.24206), and Kunin et al.
+(2021), [LIT-454](../literature.d/LIT-454.md) — [ARXIV-2107.09133](https://arxiv.org/abs/2107.09133). The other two collapses; the
 caution rests on all three and not on any one.
 
 ## The free half and the expensive half
@@ -66,7 +69,7 @@ of 0.514 — chance. Clustering the POLCA curves recovers both.
 ## What the caution is made of
 
 Three independent collapses, measured by three groups over four years, none
-citing the others ([THEORY-tmpq5g15](../theory.d/THEORY-tmpq5g15.md)):
+citing the others ([THEORY-031](../theory.d/THEORY-031.md)):
 
 - **Time-averaging.** At the edge of stability the optimizer oscillates, and
   the plotted path is the average of one that is not smooth.

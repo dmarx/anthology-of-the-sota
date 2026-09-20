@@ -1,0 +1,107 @@
+---
+status: Active
+title: 'Diffusion Beats Autoregressive in Data-Constrained Settings'
+version: 1
+tags:
+- generative-modeling
+- data-pipeline
+date: '2026-09-19'
+published: '2025-07-01'
+arxiv: '2507.15857'
+first_author: 'Prabhudesai'
+extends:
+- LIT-166
+keywords:
+- 'masked-diffusion'
+- 'data-constrained'
+- 'scaling-laws'
+- 'data-repetition'
+- 'critical-compute'
+implementations: []
+summary: >-
+  Prabhudesai et al. (2025), [ARXIV-2507.15857](https://arxiv.org/abs/2507.15857). Refits Muennighoff's
+  data-constrained scaling law for masked diffusion and gets a data-reuse
+  half-life of 512 epochs against autoregressive training's 32. Under a fixed
+  corpus, AR wins at Chinchilla-optimal compute and then overfits; diffusion
+  starts far worse and keeps improving to a lower final loss. A closed-form
+  critical-compute threshold says which side of the crossover you are on.
+---
+
+# LIT-tmp5xe2h: Diffusion Beats Autoregressive in Data-Constrained Settings
+<!-- inactive-ok-file: SOTA-124 — Proposed, and named as one of the three positions on repetition this result is placed against -->
+<!-- inactive-ok-file: SOTA-157 — Proposed, and the practice this paper supplies a conditional reason for -->
+<!-- inactive-ok-file: SOTA-173 — Proposed, and the practice this paper tests; the testing is what the note is for -->
+
+Prabhudesai et al. (2025) — [ARXIV-2507.15857](https://arxiv.org/abs/2507.15857)
+
+## Key takeaways
+
+- **The experiment is a re-run of [LIT-166](LIT-166.md)'s with one variable changed.** Same
+  C4 corpus, same hyperparameter recipe, same parametric form for the
+  scaling law — and the objective swapped from autoregressive to masked
+  diffusion. That is what makes the number comparable rather than merely
+  adjacent.
+- **The number: `R*`, the half-life of data reuse, is 512.85 for diffusion
+  against 31.93 for autoregressive.** `R*` is [LIT-166](LIT-166.md)'s own learned constant
+  for the epoch count past which repetition stops paying. Diffusion's is
+  sixteen times larger.
+- **Both halves of the crossover matter.** At the Chinchilla-optimal
+  single-epoch point diffusion is *much worse* — 10.65 validation loss
+  against 7.07 in the 100M-unique-token regime. Trained on, AR bottoms out
+  at 3.71 and then overfits; diffusion reaches 3.55 and, within the budget
+  explored, shows no overfitting at all. Best epoch counts: 50 for AR, 500
+  for diffusion.
+- **The crossover is predictable.** The compute at which diffusion overtakes
+  AR follows a power law in the unique-token count, given in closed form, so
+  a practitioner with a fixed corpus can compute which side they are on
+  instead of discovering it.
+- **The interpretation is implicit augmentation.** Masked diffusion exposes
+  the model to a distribution over token orderings and prediction tasks
+  where AR commits to one factorization. The authors test that reading
+  directly and it does not hold up as stated — see below.
+- Hundreds of models, 7M–2.5B parameters, unique budgets of 25M/50M/100M
+  tokens and up to 800 epochs, plus one 2.3B model on 500M unique tokens
+  trained for 130 epochs without converging.
+- The stated takeaway is a decision rule: *compute-constrained, use
+  autoregressive; data-constrained, use diffusion.*
+
+## The negative result is the one the record needed
+
+Appendix 7 applies **random token masking and attention dropout to the
+autoregressive arm** — two of the augmentations [SOTA-173](../practices.d/SOTA-173.md) recommends, under
+exactly the conditions that practice describes — and reports that AR *still*
+overfits quickly and still lags diffusion trained for 500+ epochs.
+
+That does not refute [SOTA-173](../practices.d/SOTA-173.md), whose claim is that augmentation *delays*
+overfitting rather than removing it, and whose source combines three families
+where this tries two. But it is the first thing in the record that has run
+the augmentation arm against a non-augmentation alternative in the
+multi-epoch data-constrained setting, and the alternative won. A reader
+choosing how to spend a fixed corpus should know the comparison exists.
+
+## Standing in the anthology
+
+Sources a practice, and lands in the middle of a dispute the record has been
+holding open.
+
+The record carries three positions on how far a corpus may be repeated —
+[SOTA-124](../practices.d/SOTA-124.md) (epoch size against the memorization window), [SOTA-171](../practices.d/SOTA-171.md) (four
+epochs, from [LIT-166](LIT-166.md)'s 400 runs) and [SOTA-173](../practices.d/SOTA-173.md) (repetition overfits, and
+the overfitting belongs to the objective). This paper is not a fourth
+position; it is a **direct test of [SOTA-173](../practices.d/SOTA-173.md)'s diagnosis, which it confirms
+and then acts on**. If the overfitting is a property of the objective, the
+sharpest move is not to patch the objective with augmentation but to change
+it, and that is what the 512-versus-32 half-life measures.
+
+It also moves [SOTA-157](../practices.d/SOTA-157.md), which records training as masked diffusion from the
+start and has been `Proposed` for want of a reason to prefer it over
+autoregressive training. This supplies one, and it is a *conditional* reason
+rather than a general one: diffusion is worse everywhere except past the
+crossover. That is a better shape of evidence than a benchmark win, because
+it says when it stops being true.
+
+What it does not supply is scale. The largest run is 2.3B on 500M unique
+tokens, and it was terminated before convergence. Nothing here says the
+crossover survives at frontier corpus sizes — the closed-form threshold is an
+extrapolation from three unique-token regimes, all under 100M for the fitted
+law.

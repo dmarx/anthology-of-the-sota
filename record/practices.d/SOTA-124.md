@@ -17,7 +17,7 @@ contested_by:
 - LIT-166
 - LIT-175
 title: 'Repeat high-quality data freely when its epoch size exceeds the model''s memorization window'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-07'
@@ -34,6 +34,16 @@ history:
     LIT-166 and LIT-175. The note said "nobody has contradicted it either"
     while the body had argued with both papers for a month — the field moved
     and the axis did not. The recommendation is unchanged.
+- version: 4
+  date: '2026-09-19'
+  note: >-
+    The linear-in-parameters conjecture is now half-checked. Morris et al.
+    (LIT-tmp28gse) measure transformer storage capacity at ~3.6 bits per
+    parameter and find it linear in parameter count across three orders of
+    magnitude. That is the scaling assumption this practice was taking on one
+    figure. It is not the window itself, which is a token count, and nobody
+    has done the conversion — so `promote_when:` stands as written and the
+    status does not move.
 tags:
 - data-pipeline
 - tiny-models
@@ -94,3 +104,22 @@ autoregressive pretraining overfits severely under heavy repetition, and
 that the overfitting belongs to the objective rather than to repetition,
 removable with augmentation. If that is right, a recipe repeating a source a
 hundred times is either augmenting implicitly or paying an unmeasured cost.
+
+## The linear scaling is now half-checked
+
+`promote_when:` above asks for a measurement of the window at a second model
+scale, so the linear-in-parameters assumption can be checked rather than
+assumed. Morris et al., [LIT-tmp28gse](../literature.d/LIT-tmp28gse.md), get part of the way there.
+
+They measure transformer storage capacity by training on uniform random
+bitstrings, where generalization is impossible and the information content is
+exactly computable, and find **~3.6 bits per parameter, linear in parameter
+count** across models spanning three orders of magnitude. That is the scaling
+shape this practice was taking from a single figure.
+
+It is not the window. Falcon's quantity is a token count — how much unique
+data must sit between repeats of a source before repetition starts being
+memorized. Morris's is a bit count — how much the model can hold at all. The
+two are related through the information content of the tokens, and that
+conversion is the step nobody has taken. So the conjecture is half-checked,
+`promote_when:` stands as written, and the status does not move.

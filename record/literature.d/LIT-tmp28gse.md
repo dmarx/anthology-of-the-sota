@@ -1,0 +1,97 @@
+---
+status: Active
+title: 'How much do language models memorize?'
+version: 1
+tags:
+- analysis-and-evaluation
+- training-optimization
+date: '2026-09-19'
+published: '2025-05-01'
+arxiv: '2505.24832'
+first_author: 'Morris'
+keywords:
+- 'memorization'
+- 'model-capacity'
+- 'double-descent'
+- 'membership-inference'
+- 'scaling-laws'
+implementations: []
+summary: >-
+  Morris et al. (2025), [ARXIV-2505.24832](https://arxiv.org/abs/2505.24832). Separates what a model stores
+  about a specific dataset from what it stores about the data-generating
+  process, and measures the first by training on uniform random bitstrings
+  where the second is impossible. GPT-style transformers hold about 3.6 bits
+  per parameter, near-independent of precision, and the capacity is linear in
+  parameter count across hundreds of models from 500K to 1.5B.
+---
+
+# LIT-tmp28gse: How much do language models memorize?
+<!-- inactive-ok-file: SOTA-124 — Proposed, and the practice whose conjecture this paper half-checks; every mention is deliberate -->
+<!-- inactive-ok-file: SOTA-173 — Proposed, and named as one of the two positions this supplies a common unit for -->
+
+Morris et al. (2025) — [ARXIV-2505.24832](https://arxiv.org/abs/2505.24832)
+
+## Key takeaways
+
+- **The methodological move is the contribution.** Memorization has been
+  measured by extraction (can the model be made to emit the string?) and by
+  membership inference (can train be told from test?). The paper argues
+  neither is necessary or sufficient — a model can be coerced into emitting
+  almost anything, and a model that correctly adds two numbers it never saw
+  has not memorized them. Instead: define memorization as **compression rate
+  in bits against the model**, and split it into *unintended memorization*
+  (information about this dataset) and *generalization* (information about
+  the process that produced it).
+- **Eliminate generalization by making it impossible.** Train on uniformly
+  sampled random bitstrings, where the Shannon information is exactly
+  computable and there is nothing general to learn. Whatever the model then
+  holds is capacity.
+- **The number is ~3.6 bits per parameter** for GPT-style transformers, and
+  the measurements cluster tightly (3.61–3.68) across widths and depths.
+- **Precision barely matters.** bfloat16 to float32 doubles the bits in the
+  weights and moves capacity from 3.51 to 3.83 — so nearly all the extra bits
+  are not used for storage. That is a fact about what parameters are for, and
+  it is the most quietly surprising line in the paper.
+- **Capacity is linear in parameter count**, smoothly, across models from
+  ~500K to 1.5B parameters. The authors note this is measured by gradient
+  descent and so is a *lower* bound on what the architecture could hold.
+- **Double descent gets a mechanism.** On both synthetic bitstrings and text,
+  the test loss turns over exactly where the dataset's information content
+  exceeds the model's capacity in bits — the first time the crossing point
+  has been located with both quantities measured rather than proxied. The
+  proposed reading: once the model can no longer store datapoints separately
+  it is forced to share representation between them, and sharing is
+  generalization.
+- **A scaling law for membership inference** follows, sigmoidal in
+  dataset-to-capacity ratio, and it predicts that modern models are trained
+  on far too much data for reliable membership inference on an average point.
+- What gets memorized most, in text, is the documents with the rarest words.
+
+## Standing in the anthology
+
+The record has argued about data repetition for months in a vocabulary it
+could not ground. [SOTA-124](../practices.d/SOTA-124.md) turns on a *memorization window* — roughly
+100–500 GT for a 7B model, "scaling linearly", which its own source calls an
+early understanding and which its `promote_when:` asks somebody to measure at
+a second scale. This is the closest thing published to that measurement, and
+it is worth being precise about how close.
+
+**What it does settle:** the linear-in-parameters assumption. Capacity here
+scales smoothly and linearly with parameter count over more than three orders
+of magnitude, measured rather than conjectured. [SOTA-124](../practices.d/SOTA-124.md) was relying on one
+figure for that shape.
+
+**What it does not settle:** the window itself. Falcon's quantity is a token
+count — how much unique data must sit between repeats before repetition stops
+being memorized. Morris's is a bit count — how much a model can hold at all.
+The two are related through the information content of the tokens, and that
+conversion is exactly what nobody has done. [SOTA-124](../practices.d/SOTA-124.md) stays `Proposed`, with
+its conjecture now half-checked rather than unchecked.
+
+The more useful transfer is to [SOTA-171](../practices.d/SOTA-171.md) and [SOTA-173](../practices.d/SOTA-173.md), which disagree about
+whether repetition overfits. This supplies the quantity that would make the
+disagreement decidable: overfitting on repeated data ought to begin when the
+corpus's information content stops exceeding the model's capacity, which is
+a prediction with two measurable sides. Nobody has tested it in the
+multi-epoch setting those practices describe — the double-descent result here
+is at fixed epochs and varying dataset size.

@@ -1,0 +1,108 @@
+---
+status: Active
+title: 'Pre-training under infinite compute'
+version: 1
+tags:
+- training-optimization
+- data-pipeline
+date: '2026-09-19'
+published: '2025-09-01'
+arxiv: '2509.14786'
+first_author: 'Kim'
+extends:
+- LIT-166
+keywords:
+- 'data-constrained'
+- 'weight-decay'
+- 'regularization'
+- 'ensembling'
+- 'distillation'
+- 'scaling-laws'
+implementations: []
+summary: >-
+  Kim et al. (2025), [ARXIV-2509.14786](https://arxiv.org/abs/2509.14786). Under a fixed corpus and no
+  compute limit, the standard recipe of more epochs and more parameters
+  overfits — and the fix is regularization, at roughly 30x the customary
+  weight decay. Ensembling independently trained models then beats parameter
+  scaling outright, and distilling the ensemble keeps most of the gain. The
+  paper also proposes judging such recipes by their scaling law's asymptote
+  rather than by loss at a budget.
+---
+
+# LIT-tmp2udh1: Pre-training under infinite compute
+<!-- inactive-ok-file: SOTA-124 — Proposed, and named as one of the three positions this leaves a variable uncontrolled in -->
+<!-- inactive-ok-file: SOTA-173 — Proposed, and named because this reaches its diagnosis by a different route -->
+
+Kim et al. (2025) — [ARXIV-2509.14786](https://arxiv.org/abs/2509.14786)
+
+## Key takeaways
+
+- **The premise is a crossing of two curves.** Web text grows about 1.03x a
+  year; pretraining compute about 4x. The paper takes the limit that implies
+  — fixed data, unbounded compute — and asks what recipe wins there.
+- **The standard recipe fails, and fails in a specific way.** Holding 200M
+  tokens fixed and adding epochs or parameters, loss eventually turns *up*.
+  Tuning epoch count per parameter count does not save it. The failure is
+  overfitting, not saturation.
+- **The first fix is regularization, and the magnitude is the finding.** The
+  weight decay everyone inherits from GPT-3 is 0.1. Jointly tuning weight
+  decay, learning rate and epoch count by coordinate descent at each
+  parameter count, the optimum for over-parameterized models is roughly
+  **30x that**. With it, loss becomes monotone in parameter count and follows
+  a clean power law with exponent ~0.23 — where Chinchilla's parameter
+  exponent is ~0.34, so the returns to size are *larger* once the data is
+  used properly.
+- **The second fix beats the first.** Ensembling `K` independently trained
+  models — same everything but the seed — and averaging logits gives a lower
+  asymptote than scaling one model to infinite width. Two 300M models beat
+  one 600M. Ensembling and parameter scaling compose.
+- **Ensemble members want different hyperparameters than a lone model**: more
+  epochs and *less* weight decay per member, which the authors read as each
+  member being usefully more overfit. Tuning for the many-member limit rather
+  than for one model moved the asymptote from 3.34 to 3.17.
+- **Distillation removes the inference cost.** An 8-member ensemble distils
+  into a 300M student retaining ~83% of the gain, and self-distillation at
+  equal size and architecture also helps — so the data efficiency does not
+  require a large final model, or even a large model during training.
+- **The aggregate number**: the joint recipe is ~5.2x more data efficient
+  than the standard one at 200M seed tokens, and the fitted data-scaling laws
+  say the multiple holds at higher token counts.
+- Downstream transfer is checked rather than assumed: +9% on PIQA/SciQ/ARC-E,
+  and on continued pretraining over math data the ensembling recipe on 4B
+  tokens beats default CPT on the full 73B.
+
+## The methodological proposal, which is separable
+
+The paper asks to evaluate a *monotone* scaling recipe by **the asymptote of
+its fitted scaling law** rather than by its loss at some chosen compute
+budget. The argument is that when compute is not the constraint, loss at a
+budget answers a question nobody asked; the asymptote answers "how good can
+this recipe get".
+
+That is a claim about how to measure, and it is what licenses every
+comparison in the paper — the ensembling recipe wins on asymptote while
+losing at small member counts. It also carries the paper's largest
+methodological risk: an asymptote is an extrapolation, and the authors' own
+sensitivity analysis puts run-to-run variation at 0.01 loss across three
+seeds, which is small but is measured on the fits rather than on the double
+limits that the headline numbers take.
+
+## Standing in the anthology
+
+Sources two practices and one measurement claim, and it arrives at the
+dispute the record holds over data repetition from a fourth direction.
+
+[SOTA-124](../practices.d/SOTA-124.md), [SOTA-171](../practices.d/SOTA-171.md) and [SOTA-173](../practices.d/SOTA-173.md) all ask *how many times may a corpus be
+repeated*. This paper's answer is that the question is underspecified,
+because the number depends on a hyperparameter everyone was copying rather
+than tuning. Under-regularized, the answer is "a few"; at 30x the weight
+decay it is "as many as you can afford", and the curve stops turning up. That
+is the same shape of argument as [SOTA-173](../practices.d/SOTA-173.md)'s — the overfitting is a
+property of the recipe, not of repetition — reached by a different
+intervention, and it is the cheaper of the two to try.
+
+The ensembling result also sits awkwardly beside everything the record says
+about scaling a single model, and deliberately so: it is a claim that at
+sufficient parameter count the field's default move is the wrong one. Nothing
+in this record trains an ensemble, and the largest ensemble member here is
+1.4B, so the awkwardness is not yet a contradiction.

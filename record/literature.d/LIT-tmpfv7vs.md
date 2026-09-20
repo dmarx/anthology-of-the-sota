@@ -1,0 +1,72 @@
+---
+status: Active
+title: 'Spectral Condition for muP under Width-Depth Scaling'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-20'
+published: '2026-02-01'
+arxiv: '2603.00541'
+first_author: 'Zheng'
+keywords:
+- 'mup'
+- 'depth-scaling'
+- 'spectral-condition'
+- 'hyperparameter-transfer'
+- 'residual-multiplier'
+extends:
+- LIT-437
+- LIT-150
+implementations: []
+summary: >-
+  Zheng et al. (2026), [ARXIV-2603.00541](https://arxiv.org/abs/2603.00541). Extends the spectral
+  condition for muP from width to width-and-depth, and finds the rule is set
+  by how many transformations a residual branch contains: one gives
+  Depth-muP, two or more gives CompleteP. Transformers are the second case.
+---
+
+<!-- inactive-ok-file: SOTA-144 — Proposed, and named as the practice whose promote_when this paper nearly meets, which is a statement about that field rather than a claim resting on the practice -->
+# LIT-tmpfv7vs: Spectral Condition for muP under Width-Depth Scaling
+
+Zheng et al. (2026) — [ARXIV-2603.00541](https://arxiv.org/abs/2603.00541)
+
+## Key takeaways
+
+- **The two depth parameterizations are one family, indexed by residual
+  branch depth.** Expanding the one-step feature change of a residual block
+  whose branch holds `k` transformations gives update terms of order 1
+  through `k`. At `k = 1` there is only a first-order term and the
+  constraints are looser, giving `α = Θ(1/√L)` — Depth-muP. At `k = 2` the
+  cross term `ΔW⁽²⁾ΔW⁽¹⁾`, where both branch weights moved in the same step,
+  must also be `Θ(1/L)`, and that extra constraint tightens the multiplier to
+  `α = Θ(1/L)` — CompleteP. Beyond `k = 2` nothing further changes.
+- **Every Transformer is the `k ≥ 2` case**, because attention and FFN blocks
+  hold more than one transformation. The paper's prediction is therefore that
+  Depth-muP-style scaling should fail to transfer on Transformers, and its
+  depth sweep to `L = 256` is where that prediction is tested.
+- **The implementation collapses to one extra multiplier.** For every modern
+  optimizer they treat except SGD, width-depth muP is width muP plus a hidden
+  residual multiplier `α_l = Θ(1/L)`. Normalization or preconditioning
+  removes the depth factor the raw hidden gradient carries, so the
+  optimizer-specific rule is unchanged. SGD's update is proportional to the
+  raw gradient and needs a further learning-rate rescaling.
+- **Nine optimizers, derived rather than tuned.** Muon-Kimi, Muon, Shampoo,
+  SOAP, AdamW, Sophia, Lion, SGD and the Spectral Sphere Optimizer, each
+  mapped from its own update rule to an HP parameterization. Existing
+  width-depth muP formulations come back as special cases.
+- **The derivation uses only subadditivity, submultiplicativity and a random
+  matrix norm bound** — the paper's own claim is that it replaces Tensor
+  Programs and dynamical mean-field theory with elementary linear algebra for
+  this purpose, which is a claim about accessibility and is checkable.
+
+## Standing in the anthology
+
+The depth half of a condition the record already holds for width. [LIT-437](../literature.d/LIT-437.md)
+is the spectral condition under width scaling and is declared as the
+antecedent; [LIT-150](../literature.d/LIT-150.md) is CompleteP, which this recovers as the `k ≥ 2`
+case and corroborates from an independent derivation.
+
+It also bears directly on [SOTA-144](../practices.d/SOTA-144.md), whose `promote_when` asked for an
+independent group training under CompleteP and reporting depth transfer. What
+arrived is close to that and not identical to it, and [NOTE-tmpepjgm](../notes.d/NOTE-tmpepjgm.md)
+sets out the difference rather than counting it as met.

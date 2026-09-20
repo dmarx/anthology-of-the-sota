@@ -29,6 +29,8 @@ introduced_by:
 - LIT-001
 summary: >-
   Kingma et al. (2014), [LIT-001](../literature.d/LIT-001.md) — [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980).
+explained_by:
+- THEORY-tmpmurnt
 ---
 
 # SOTA-001: Use Adam as the default optimizer absent a reason to choose otherwise

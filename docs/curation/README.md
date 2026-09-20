@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [20 Sep 23:51 — A promote_when nearly came true, and the interesting part is the word nearly](2026-09.md#a-promote_when-nearly-came-true-and-the-interesting-part-is-the-word-nearly)
 - [20 Sep 22:27 — An account this record called Active got its first outside test, and lost](2026-09.md#an-account-this-record-called-active-got-its-first-outside-test-and-lost)
 - [20 Sep 22:04 — Half a topic was missing, and both papers that found it stand on something the record does not hold](2026-09.md#half-a-topic-was-missing-and-both-papers-that-found-it-stand-on-something-the-record-does-not-hold)
 - [20 Sep 20:39 — Three papers that never met, and the status I assumed instead of reading](2026-09.md#three-papers-that-never-met-and-the-status-i-assumed-instead-of-reading)
@@ -126,9 +127,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-119 entries across 2 books, newest first.
+120 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 117 | 2026-09-05 | 2026-09-20 |
+| [2026-09](2026-09.md) | 118 | 2026-09-05 | 2026-09-20 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

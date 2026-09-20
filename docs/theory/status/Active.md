@@ -6,7 +6,7 @@
 
 **The current account** — the best explanation the record holds for why this happens.
 
-16 of 36 THEORY documents. Back to the [full index](../README.md).
+17 of 37 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -26,3 +26,4 @@
 | [THEORY-028](../../../record/theory.d/THEORY-028.md) | The plateau before factual recall is the formation of the attention circuit that recall needs | Zucchet et al. (2025), [LIT-450](../../../record/literature.d/LIT-450.md) — during the plateau between generic statistics and entity-specific knowledge, the attention circuit that selects an attribute value is being built, and until it exists the error at the attribute token does not reach the name tokens. Shown by patching a reference model's attention patterns in, which removes the plateau entirely. | Active |
 | [THEORY-031](../../../record/theory.d/THEORY-031.md) | The aggregate loss curve is a lossy projection of training, in at least three measured ways | Three independent measurements of what the loss curve discards. It time-averages oscillation the optimizer is actually doing ([LIT-453](../../../record/literature.d/LIT-453.md)); it sums over transitions that are individually abrupt and differently timed, so smoothness is what many breakthroughs look like added up ([LIT-455](../../../record/literature.d/LIT-455.md)); and it reads flat while the weights keep travelling ([LIT-454](../../../record/literature.d/LIT-454.md)). | Active |
 | [THEORY-035](../../../record/theory.d/THEORY-035.md) | Gradient descent drives the sharpness up to the largest value its own step size tolerates, and then trains there | Cohen et al. (2021), [LIT-461](../../../record/literature.d/LIT-461.md) — the top Hessian eigenvalue rises until it reaches `2/eta` and then stops, so the step size sets the curvature rather than responding to it. Full-batch gradient descent only: under SGD the sharpness settles nowhere predictable. | Active |
+| [THEORY-037](../../../record/theory.d/THEORY-037.md) | Residual-branch depth sets the depth scaling rule, because a branch with two transformations has a second-order update term that a branch with one does not | Zheng et al. (2026), [LIT-462](../../../record/literature.d/LIT-462.md) — Depth-muP and CompleteP are `k = 1` and `k ≥ 2` of one condition. The cross term where both weights in a branch move in the same step is what tightens the residual multiplier from `1/√L` to `1/L`, and it does not exist when the branch holds one weight. | Active |

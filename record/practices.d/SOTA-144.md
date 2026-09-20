@@ -5,14 +5,14 @@ promote_when: >-
   A run at a realistic token budget — not 300M tokens — under CompleteP-style
   depth scaling, reporting that the transferred learning rate is still the
   right one at the end of training. The independence question is now answered
-  (LIT-tmpfv7vs); what `Proposed` means here is that validation at scale is
+  (LIT-462); what `Proposed` means here is that validation at scale is
   missing, and every depth sweep in the record so far is deep and short. What
   would not settle it: another short depth sweep, or a result reaching depth
   transfer by a different mechanism — LIT-153 did that, and two routes to one
   property is evidence the property is reachable, not that this route works.
 consensus: emerging
 consensus_note: >-
-  A second, independent group (LIT-tmpfv7vs) derives the same depth scaling
+  A second, independent group (LIT-462) derives the same depth scaling
   from its own spectral framework and reports depth transfer to 256 layers
   across four optimizers. Not `converged`: still no production report in the
   record trained under it, and no run at a realistic token budget.
@@ -23,7 +23,7 @@ history:
   date: '2026-09-20'
   note: >-
     Consensus from `unreplicated` to `emerging`, and `promote_when` rewritten
-    to name what is actually left. Zheng et al. (LIT-tmpfv7vs) are an
+    to name what is actually left. Zheng et al. (LIT-462) are an
     independent group — Renmin University and ByteDance Seed, no overlap with
     the CompleteP authors — who derive the same depth scaling from an
     independent spectral framework and report learning-rate transfer to 256
@@ -48,9 +48,9 @@ extends:
 summary: >-
   Dey et al. (2025), [LIT-150](../literature.d/LIT-150.md) — the depth exponent α = 1 transfers the optimal learning rate across depth and keeps deep layers learning; 11.8% fewer FLOPs than µP at optimal shapes, 34.4% at 179 layers. One group so far.
 explained_by:
-- THEORY-tmpmnsb5
+- THEORY-037
 extended_by:
-- SOTA-tmpnjlal
+- SOTA-275
 ---
 
 # SOTA-144: Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too
@@ -90,7 +90,7 @@ stop ablating.
 
 ## The independent derivation, and what it does and does not settle
 
-*(Added at v2.)* Zheng et al., [LIT-tmpfv7vs](../literature.d/LIT-tmpfv7vs.md), reach this
+*(Added at v2.)* Zheng et al., [LIT-462](../literature.d/LIT-462.md), reach this
 parameterization from a different direction: a spectral condition on RMS
 operator norms under joint width-depth scaling, derived with elementary
 linear algebra rather than the machinery [LIT-150](../literature.d/LIT-150.md) used. CompleteP-style

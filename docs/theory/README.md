@@ -31,8 +31,8 @@ bare code and run `luria link --fix`.
 
 ## By topic
 
-**[Training optimization](tags/training-optimization.md)** (10) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
-[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md) · [026](../../record/theory.d/THEORY-026.md) · [028](../../record/theory.d/THEORY-028.md) · [029](../../record/theory.d/THEORY-029.md) · [030](../../record/theory.d/THEORY-030.md) · [032](../../record/theory.d/THEORY-032.md) · [033](../../record/theory.d/THEORY-033.md) · [035](../../record/theory.d/THEORY-035.md)
+**[Training optimization](tags/training-optimization.md)** (11) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
+[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md) · [026](../../record/theory.d/THEORY-026.md) · [028](../../record/theory.d/THEORY-028.md) · [029](../../record/theory.d/THEORY-029.md) · [030](../../record/theory.d/THEORY-030.md) · [032](../../record/theory.d/THEORY-032.md) · [033](../../record/theory.d/THEORY-033.md) · [035](../../record/theory.d/THEORY-035.md) · [037](../../record/theory.d/THEORY-037.md)
 
 **[Systems optimization](tags/systems-optimization.md)** (0) — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
 
@@ -67,7 +67,7 @@ bare code and run `luria link --fix`.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (16) · [Offered](status/Proposed.md) (17) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (17) · [Offered](status/Proposed.md) (17) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -119,4 +119,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-034](../../record/theory.d/THEORY-034.md) | Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations | Xiong (2026), [LIT-460](../../record/literature.d/LIT-460.md) — a linear attribute direction plus a separating threshold is a half-space, a concept is the intersection of its attributes' half-spaces, and the resulting regions form a complete lattice. Conceptual refinement is geometric meet, generalisation is join. Evidence is WordNet, which is a hand-built hierarchy and so the friendliest test there is. | Proposed |
 | [THEORY-035](../../record/theory.d/THEORY-035.md) | Gradient descent drives the sharpness up to the largest value its own step size tolerates, and then trains there | Cohen et al. (2021), [LIT-461](../../record/literature.d/LIT-461.md) — the top Hessian eigenvalue rises until it reaches `2/eta` and then stops, so the step size sets the curvature rather than responding to it. Full-batch gradient descent only: under SGD the sharpness settles nowhere predictable. | Active |
 | [THEORY-036](../../record/theory.d/THEORY-036.md) | Representations converge across architectures, objectives and modalities, and the endpoint is a model of what generated the data | Huh et al. (2024), [LIT-458](../../record/literature.d/LIT-458.md) — vision and language models measure distance between datapoints increasingly alike as they scale, across architectures and objectives. The conjecture is that they are converging on a representation of the joint distribution that generated the observations. The convergence is measured; the endpoint is proved only for a world of bijective observations. | Proposed |
+| [THEORY-037](../../record/theory.d/THEORY-037.md) | Residual-branch depth sets the depth scaling rule, because a branch with two transformations has a second-order update term that a branch with one does not | Zheng et al. (2026), [LIT-462](../../record/literature.d/LIT-462.md) — Depth-muP and CompleteP are `k = 1` and `k ≥ 2` of one condition. The cross term where both weights in a branch move in the same step is what tightens the residual multiplier from `1/√L` to `1/L`, and it does not exist when the branch holds one weight. | Active |
 

@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-10 of 36 THEORY documents. Back to the [full index](../README.md).
+11 of 37 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,4 @@
 | [THEORY-032](../../../record/theory.d/THEORY-032.md) | A spectral update wins where the incoming activations are low stable rank and the gradient spectrum is spread out | Davis and Drusvyatskiy (2025), [LIT-457](../../../record/literature.d/LIT-457.md) — the spectral step's one-step guarantee beats the Euclidean one by exactly the ratio of the gradient's nuclear rank to the incoming activations' stable rank, and transformers sit where that ratio is large. A comparison of bounds, not of realized training. | Proposed |
 | [THEORY-033](../../../record/theory.d/THEORY-033.md) | What a spectral optimizer buys is a step size that stays optimal, not adherence to a target geometry | Shumaylov et al. (2026), [LIT-456](../../../record/literature.d/LIT-456.md) — an optimizer with random singular values matches Muon, so the target spectrum is not what pays. What the controls leave standing is that the spectral update's optimal step size is constant where Euclidean descent's oscillates. NanoGPT scale. | Proposed |
 | [THEORY-035](../../../record/theory.d/THEORY-035.md) | Gradient descent drives the sharpness up to the largest value its own step size tolerates, and then trains there | Cohen et al. (2021), [LIT-461](../../../record/literature.d/LIT-461.md) — the top Hessian eigenvalue rises until it reaches `2/eta` and then stops, so the step size sets the curvature rather than responding to it. Full-batch gradient descent only: under SGD the sharpness settles nowhere predictable. | Active |
+| [THEORY-037](../../../record/theory.d/THEORY-037.md) | Residual-branch depth sets the depth scaling rule, because a branch with two transformations has a second-order update term that a branch with one does not | Zheng et al. (2026), [LIT-462](../../../record/literature.d/LIT-462.md) — Depth-muP and CompleteP are `k = 1` and `k ≥ 2` of one condition. The cross term where both weights in a branch move in the same step is what tightens the residual multiplier from `1/√L` to `1/L`, and it does not exist when the branch holds one weight. | Active |

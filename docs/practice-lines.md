@@ -274,7 +274,8 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 ### From Parameterize the model with µP and tune hyperparameters on a narrow proxy, transferring them across width
 
 - [SOTA-143](../record/practices.d/SOTA-143.md) — Parameterize the model with µP and tune hyperparameters on a narrow proxy, transferring them across width *(Active, unassessed)*
-  - [SOTA-144](../record/practices.d/SOTA-144.md) — Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too *(Proposed, unreplicated)*
+  - [SOTA-144](../record/practices.d/SOTA-144.md) — Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too *(Proposed, emerging)*
+    - [SOTA-275](../record/practices.d/SOTA-275.md) — Pick the depth parameterization from the residual branch: a Transformer branch has more than one transformation, so it needs the stricter rule *(Proposed, unassessed)*
   - [SOTA-159](../record/practices.d/SOTA-159.md) — Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling *(Proposed, unreplicated)*
 
 ### From Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal

@@ -1,38 +1,41 @@
 ---
+number: 37
 status: Active
+formerly:
+- THEORY-tmpmnsb5
 title: 'Residual-branch depth sets the depth scaling rule, because a branch with two transformations has a second-order update term that a branch with one does not'
 version: 1
 tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmpfv7vs
+- LIT-462
 explains:
 - SOTA-144
-- SOTA-tmpnjlal
-- SOTA-tmpr10ct
+- SOTA-275
+- SOTA-276
 summary: >-
-  Zheng et al. (2026), [LIT-tmpfv7vs](../literature.d/LIT-tmpfv7vs.md) — Depth-muP and CompleteP are
+  Zheng et al. (2026), [LIT-462](../literature.d/LIT-462.md) — Depth-muP and CompleteP are
   `k = 1` and `k ≥ 2` of one condition. The cross term where both weights in
   a branch move in the same step is what tightens the residual multiplier
   from `1/√L` to `1/L`, and it does not exist when the branch holds one
   weight.
 ---
 
-<!-- inactive-ok-file: SOTA-144 SOTA-tmpnjlal SOTA-tmpr10ct THEORY-024 — the three practices this account explains, all Proposed, two of them filed in this same contribution; THEORY-024 is Proposed and is distinguished from rather than leaned on -->
-# THEORY-tmpmnsb5: Residual-branch depth sets the depth scaling rule, because a branch with two transformations has a second-order update term that a branch with one does not
+<!-- inactive-ok-file: SOTA-144 SOTA-275 SOTA-276 THEORY-024 — the three practices this account explains, all Proposed, two of them filed in this same contribution; THEORY-024 is Proposed and is distinguished from rather than leaned on -->
+# THEORY-037: Residual-branch depth sets the depth scaling rule, because a branch with two transformations has a second-order update term that a branch with one does not
 
 ## Source
 
-Zheng et al. (2026), [LIT-tmpfv7vs](../literature.d/LIT-tmpfv7vs.md) — read as [NOTE-tmpepjgm](../notes.d/NOTE-tmpepjgm.md).
+Zheng et al. (2026), [LIT-462](../literature.d/LIT-462.md) — read as [NOTE-211](../notes.d/NOTE-211.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
 | [SOTA-144](../practices.d/SOTA-144.md) | use CompleteP to transfer across depth | the `k ≥ 2` member of one family, not a rival parameterization |
-| [SOTA-tmpnjlal](../practices.d/SOTA-tmpnjlal.md) | pick the rule from the residual branch | the family is indexed by branch depth, and that is the whole index |
-| [SOTA-tmpr10ct](../practices.d/SOTA-tmpr10ct.md) | add one `1/L` multiplier to width muP | preconditioning removes the depth factor, so nothing else moves |
+| [SOTA-275](../practices.d/SOTA-275.md) | pick the rule from the residual branch | the family is indexed by branch depth, and that is the whole index |
+| [SOTA-276](../practices.d/SOTA-276.md) | add one `1/L` multiplier to width muP | preconditioning removes the depth factor, so nothing else moves |
 
 ## The account
 

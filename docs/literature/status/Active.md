@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-380 of 396 LIT documents. Back to the [full index](../README.md).
+381 of 397 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -390,3 +390,4 @@
 | [LIT-459](../../../record/literature.d/LIT-459.md) | Contextures: The Mechanism of Representation Learning | Zhai (2025), [ARXIV-2504.19792](https://arxiv.org/abs/2504.19792) — a CMU dissertation. A representation is learned from the association between the input and a *context variable*; an encoder capturing the maximum information of that association is optimal on tasks compatible with the context. A context is most useful when the association is neither too strong nor too weak, and mixing contexts is a cheap way to get there. | Active |
 | [LIT-460](../../../record/literature.d/LIT-460.md) | The Lattice Representation Hypothesis of Large Language Models | Xiong (2026), [ARXIV-2603.01227](https://arxiv.org/abs/2603.01227). If concepts are linear directions with thresholds, each concept is a half-space, and intersecting half-spaces gives a concept lattice — so conceptual inclusion, intersection and union become geometric meet and join. Tested on WordNet sub-hierarchies. The Linear Representation Hypothesis gives binary concepts; this is the set-theoretic structure over them. | Active |
 | [LIT-461](../../../record/literature.d/LIT-461.md) | Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability | Cohen et al. (2021), [ARXIV-2103.00065](https://arxiv.org/abs/2103.00065). Full-batch gradient descent drives the maximum Hessian eigenvalue up until it reaches `2/eta`, then trains there: the loss goes non-monotone over short timescales and keeps falling over long ones. The paper the record has been treating as established premise without holding it. | Active |
+| [LIT-462](../../../record/literature.d/LIT-462.md) | Spectral Condition for muP under Width-Depth Scaling | Zheng et al. (2026), [ARXIV-2603.00541](https://arxiv.org/abs/2603.00541). Extends the spectral condition for muP from width to width-and-depth, and finds the rule is set by how many transformations a residual branch contains: one gives Depth-muP, two or more gives CompleteP. Transformers are the second case. | Active |

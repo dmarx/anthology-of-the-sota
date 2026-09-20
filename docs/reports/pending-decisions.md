@@ -5,18 +5,18 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**107 document(s) awaiting a decision.**
+**109 document(s) awaiting a decision.**
 
 ## SOTAs
 
-71 of the 107.
+73 of the 109.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 35 | 2 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
 | 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 25 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
+| 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 23 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 19 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
-| 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 13 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 10 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 9 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
 | 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 8 | 0 | Decay the learning rate linearly all the way to zero |
@@ -76,8 +76,10 @@
 | 2026-09-20 | Proposed | [SOTA-260](../../record/practices.d/SOTA-260.md) | 3 | 0 | Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it |
 | 2026-09-20 | Proposed | [SOTA-268](../../record/practices.d/SOTA-268.md) | 3 | 0 | Do not transfer a data mixing ratio across model scales; the threshold where a domain starts being learned moves with size |
 | 2026-09-20 | Proposed | [SOTA-274](../../record/practices.d/SOTA-274.md) | 3 | 0 | Before adopting a spectral optimizer, measure the stable rank of each block's incoming activations against its gradient's nuclear rank |
+| 2026-09-20 | Proposed | [SOTA-275](../../record/practices.d/SOTA-275.md) | 3 | 0 | Pick the depth parameterization from the residual branch: a Transformer branch has more than one transformation, so it needs the stricter rule |
 | 2026-09-20 | Proposed | [SOTA-267](../../record/practices.d/SOTA-267.md) | 2 | 0 | Start the training distribution imbalanced and flatten it, rather than holding it uniform throughout |
 | 2026-09-20 | Proposed | [SOTA-272](../../record/practices.d/SOTA-272.md) | 2 | 0 | Expect the loss to be non-monotone at the step size that trains fastest, and do not set the step size from a curvature bound |
+| 2026-09-20 | Proposed | [SOTA-276](../../record/practices.d/SOTA-276.md) | 2 | 0 | For a normalized or preconditioned optimizer, width-depth muP is width muP plus a hidden residual multiplier of order 1/L |
 | 2026-09-20 | Proposed | [SOTA-259](../../record/practices.d/SOTA-259.md) | 1 | 0 | Hold Adam's second-moment half-life fixed in tokens when the batch size changes, not beta_2 |
 | 2026-09-20 | Proposed | [SOTA-262](../../record/practices.d/SOTA-262.md) | 1 | 0 | Give each modality its own weights and let the streams attend jointly |
 | 2026-09-20 | Proposed | [SOTA-263](../../record/practices.d/SOTA-263.md) | 1 | 0 | Shift the timestep schedule when the resolution changes, because more pixels need more noise |
@@ -87,7 +89,7 @@
 
 ## THEORYs
 
-17 of the 107.
+17 of the 109.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -99,7 +101,7 @@
 | 2026-09-16 | Proposed | [THEORY-012](../../record/theory.d/THEORY-012.md) | 7 | 0 | How far a batch-size scaling heuristic transfers is a property of the optimizer, not of the heuristic |
 | 2026-09-16 | Proposed | [THEORY-014](../../record/theory.d/THEORY-014.md) | 3 | 0 | The outer optimizer is what buys the inner step count |
 | 2026-09-17 | Proposed | [THEORY-023](../../record/theory.d/THEORY-023.md) | 2 | 0 | Depth-dependent computation in a transformer falls into four stages, of which detokenization is the first |
-| 2026-09-19 | Proposed | [THEORY-024](../../record/theory.d/THEORY-024.md) | 20 | 0 | Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map |
+| 2026-09-19 | Proposed | [THEORY-024](../../record/theory.d/THEORY-024.md) | 24 | 0 | Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map |
 | 2026-09-19 | Proposed | [THEORY-025](../../record/theory.d/THEORY-025.md) | 7 | 0 | A transformer holds about 3.6 bits per parameter, and generalization begins where the data outgrows that budget |
 | 2026-09-20 | Proposed | [THEORY-030](../../record/theory.d/THEORY-030.md) | 11 | 0 | Adaptive optimizers work by shaping the curvature they adapt to, and oscillation is how a first-order method sees curvature at all |
 | 2026-09-20 | Proposed | [THEORY-032](../../record/theory.d/THEORY-032.md) | 6 | 0 | A spectral update wins where the incoming activations are low stable rank and the gradient spectrum is spread out |
@@ -111,7 +113,7 @@
 
 ## LITs
 
-3 of the 107.
+3 of the 109.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -121,7 +123,7 @@
 
 ## ADRs
 
-16 of the 107.
+16 of the 109.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

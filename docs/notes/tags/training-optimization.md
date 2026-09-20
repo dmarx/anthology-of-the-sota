@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-46 of 210 NOTE documents. Back to the [full index](../README.md).
+47 of 211 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -54,3 +54,4 @@
 | [NOTE-207](../../../record/notes.d/NOTE-207.md) | Contextures: The Mechanism of Representation Learning | A representation is the association between the input and a context variable; capturing its maximum information is optimal on tasks compatible with that context. A context is most useful when the association is neither too strong nor too weak, and mixing contexts is offered as the cheap way to get there. Skimmed: a 313k-character dissertation, read at summary level. | Skimmed |
 | [NOTE-208](../../../record/notes.d/NOTE-208.md) | Muon is Not That Special | An optimizer that replaces the gradient's singular values with chaotic noise matches Muon on NanoGPT. Reading it: the LMO account of spectral optimizers fails its own control, and what the control leaves standing is that Muon's optimal step size is constant where Euclidean descent's is not. | Read |
 | [NOTE-209](../../../record/notes.d/NOTE-209.md) | When Spectral Updates Help | A spectral step beats a Euclidean one on a block when the gradient's nuclear rank exceeds the stable rank of that block's incoming activations. Reading it: both sides are measurable, the activation side is provably small in transformers, and the gap grows with dimension. | Read |
+| [NOTE-211](../../../record/notes.d/NOTE-211.md) | Spectral muP under Width-Depth Scaling | Derives the muP spectral condition for joint width-depth scaling and shows the rule is indexed by residual-branch depth. Reading it: Depth-muP and CompleteP are `k = 1` and `k ≥ 2` of one family, Transformers are the second, and for preconditioned optimizers the whole depth correction is a `1/L` residual multiplier. | Read |

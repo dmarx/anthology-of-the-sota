@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-77 of 396 LIT documents. Back to the [full index](../README.md).
+78 of 397 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -87,3 +87,4 @@
 | [LIT-457](../../../record/literature.d/LIT-457.md) | When do spectral gradient updates help in deep learning? | Davis and Drusvyatskiy (2025), [ARXIV-2512.04299](https://arxiv.org/abs/2512.04299). A spectral update beats a Euclidean one on a block exactly when the gradient's squared nuclear-to-Frobenius ratio exceeds the stable rank of that block's incoming activations — a measurable condition, and they show it is satisfied throughout transformer training. | Active |
 | [LIT-459](../../../record/literature.d/LIT-459.md) | Contextures: The Mechanism of Representation Learning | Zhai (2025), [ARXIV-2504.19792](https://arxiv.org/abs/2504.19792) — a CMU dissertation. A representation is learned from the association between the input and a *context variable*; an encoder capturing the maximum information of that association is optimal on tasks compatible with the context. A context is most useful when the association is neither too strong nor too weak, and mixing contexts is a cheap way to get there. | Active |
 | [LIT-461](../../../record/literature.d/LIT-461.md) | Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability | Cohen et al. (2021), [ARXIV-2103.00065](https://arxiv.org/abs/2103.00065). Full-batch gradient descent drives the maximum Hessian eigenvalue up until it reaches `2/eta`, then trains there: the loss goes non-monotone over short timescales and keeps falling over long ones. The paper the record has been treating as established premise without holding it. | Active |
+| [LIT-462](../../../record/literature.d/LIT-462.md) | Spectral Condition for muP under Width-Depth Scaling | Zheng et al. (2026), [ARXIV-2603.00541](https://arxiv.org/abs/2603.00541). Extends the spectral condition for muP from width to width-and-depth, and finds the rule is set by how many transformations a residual branch contains: one gives Depth-muP, two or more gives CompleteP. Transformers are the second case. | Active |

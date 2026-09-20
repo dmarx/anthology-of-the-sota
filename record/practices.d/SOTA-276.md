@@ -1,5 +1,8 @@
 ---
+number: 276
 status: Proposed
+formerly:
+- SOTA-tmpr10ct
 consensus: unassessed
 consensus_note: >-
   One paper old, and stated as a simplification rather than adopted by
@@ -18,27 +21,27 @@ tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmpfv7vs
+- LIT-462
 introduced_by:
-- LIT-tmpfv7vs
+- LIT-462
 implementations: []
 summary: >-
-  Zheng et al. (2026), [LIT-tmpfv7vs](../literature.d/LIT-tmpfv7vs.md) — a normalized or preconditioned
+  Zheng et al. (2026), [LIT-462](../literature.d/LIT-462.md) — a normalized or preconditioned
   update has a norm that does not depend on the residual multiplier, so the
   depth factor the raw gradient carries is removed and the optimizer's own
   muP rule is unchanged. SGD is the exception and needs more.
 explained_by:
-- THEORY-tmpmnsb5
+- THEORY-037
 ---
 
-<!-- inactive-ok-file: SOTA-tmpnjlal — Proposed, and filed in this same contribution as what fixes the multiplier this practice says to add -->
-# SOTA-tmpr10ct: For a normalized or preconditioned optimizer, width-depth muP is width muP plus a hidden residual multiplier of order 1/L
+<!-- inactive-ok-file: SOTA-275 — Proposed, and filed in this same contribution as what fixes the multiplier this practice says to add -->
+# SOTA-276: For a normalized or preconditioned optimizer, width-depth muP is width muP plus a hidden residual multiplier of order 1/L
 
 ## Source
 
-Zheng et al. (2026), [LIT-tmpfv7vs](../literature.d/LIT-tmpfv7vs.md) — [ARXIV-2603.00541](https://arxiv.org/abs/2603.00541),
-read as [NOTE-tmpepjgm](../notes.d/NOTE-tmpepjgm.md), Takeaway 2. Accounted for by
-[THEORY-tmpmnsb5](../theory.d/THEORY-tmpmnsb5.md).
+Zheng et al. (2026), [LIT-462](../literature.d/LIT-462.md) — [ARXIV-2603.00541](https://arxiv.org/abs/2603.00541),
+read as [NOTE-211](../notes.d/NOTE-211.md), Takeaway 2. Accounted for by
+[THEORY-037](../theory.d/THEORY-037.md).
 
 ## What to do
 
@@ -92,7 +95,7 @@ for most of the optimizers the record recommends, rather than a re-derivation.
 ## Relation to the neighbours
 
 [SOTA-143](../practices.d/SOTA-143.md) is the width-muP setup this takes as given.
-[SOTA-tmpnjlal](../practices.d/SOTA-tmpnjlal.md) is what fixes `Θ(1/L)` rather than `Θ(1/√L)` as the
+[SOTA-275](../practices.d/SOTA-275.md) is what fixes `Θ(1/L)` rather than `Θ(1/√L)` as the
 multiplier to add. The record recommends Muon ([SOTA-121](../practices.d/SOTA-121.md)) and matrix
 preconditioning ([SOTA-165](../practices.d/SOTA-165.md)) and has never said how to muP either; this
 is the answer, and it is short because of what preconditioning does.

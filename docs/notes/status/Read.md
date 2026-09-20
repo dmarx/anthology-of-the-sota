@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-207 of 210 NOTE documents. Back to the [full index](../README.md).
+208 of 211 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -217,3 +217,4 @@
 | [NOTE-208](../../../record/notes.d/NOTE-208.md) | Muon is Not That Special | An optimizer that replaces the gradient's singular values with chaotic noise matches Muon on NanoGPT. Reading it: the LMO account of spectral optimizers fails its own control, and what the control leaves standing is that Muon's optimal step size is constant where Euclidean descent's is not. | Read |
 | [NOTE-209](../../../record/notes.d/NOTE-209.md) | When Spectral Updates Help | A spectral step beats a Euclidean one on a block when the gradient's nuclear rank exceeds the stable rank of that block's incoming activations. Reading it: both sides are measurable, the activation side is provably small in transformers, and the gap grows with dimension. | Read |
 | [NOTE-210](../../../record/notes.d/NOTE-210.md) | The Lattice Representation Hypothesis | A linear concept direction plus a threshold is a half-space; intersecting half-spaces gives a concept lattice, so inclusion, intersection and union become geometric meet and join on embeddings. Canonical form when the attribute directions are linearly independent. Evidence is WordNet sub-hierarchies, which is the friendliest available test. | Read |
+| [NOTE-211](../../../record/notes.d/NOTE-211.md) | Spectral muP under Width-Depth Scaling | Derives the muP spectral condition for joint width-depth scaling and shows the rule is indexed by residual-branch depth. Reading it: Depth-muP and CompleteP are `k = 1` and `k ≥ 2` of one family, Transformers are the second, and for preconditioned optimizers the whole depth correction is a `1/L` residual multiplier. | Read |

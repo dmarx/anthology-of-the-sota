@@ -2,7 +2,7 @@
 
 # Lines of work
 
-19 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+18 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -137,9 +137,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-148](../record/literature.d/LIT-148.md) — Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer *(Active)*
   - [LIT-149](../record/literature.d/LIT-149.md) — u-µP: The Unit-Scaled Maximal Update Parametrization *(Active)*
   - [LIT-150](../record/literature.d/LIT-150.md) — Don't be lazy: CompleteP enables compute-efficient deep transformers *(Active)*
-
-### From A Spectral Condition for Feature Learning
-
+    - [LIT-462](../record/literature.d/LIT-462.md) — Spectral Condition for muP under Width-Depth Scaling *(Active)* — also extends LIT-437
 - [LIT-437](../record/literature.d/LIT-437.md) — A Spectral Condition for Feature Learning *(Active)*
   - [LIT-436](../record/literature.d/LIT-436.md) — Scalable Optimization in the Modular Norm *(Active)*
     - [LIT-438](../record/literature.d/LIT-438.md) — Modular Duality in Deep Learning *(Active)*

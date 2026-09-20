@@ -1,6 +1,9 @@
 ---
+number: 211
 status: Read
-paper: LIT-tmpfv7vs
+formerly:
+- NOTE-tmpepjgm
+paper: LIT-462
 title: 'Spectral muP under Width-Depth Scaling'
 version: 1
 date: '2026-09-20'
@@ -12,8 +15,8 @@ summary: >-
   `1/L` residual multiplier.
 ---
 
-<!-- inactive-ok-file: SOTA-144 SOTA-tmpnjlal SOTA-tmpr10ct THEORY-024 — SOTA-144 is Proposed and this reading is the assessment of its promote_when; the two SOTA-tmp practices are Proposed and filed here from this reading; THEORY-024 is Proposed and is named as an adjacent frame this derivation does not need -->
-# NOTE-tmpepjgm: Spectral muP under Width-Depth Scaling
+<!-- inactive-ok-file: SOTA-144 SOTA-275 SOTA-276 THEORY-024 — SOTA-144 is Proposed and this reading is the assessment of its promote_when; the two SOTA-tmp practices are Proposed and filed here from this reading; THEORY-024 is Proposed and is named as an adjacent frame this derivation does not need -->
+# NOTE-211: Spectral muP under Width-Depth Scaling
 
 ## Contribution
 
@@ -141,11 +144,11 @@ the architecture rather than by indexing a condition on branch depth.
   it is not the literal test the field was asked for. `SOTA-144` moves from
   `unreplicated` to `emerging` and stays `Proposed`; validation at production
   scale is still missing, which is what `Proposed` means here.
-- **It produces [SOTA-tmpnjlal](../practices.d/SOTA-tmpnjlal.md)** — pick the depth rule from the
+- **It produces [SOTA-275](../practices.d/SOTA-275.md)** — pick the depth rule from the
   residual branch — which is a recommendation `SOTA-144` does not make.
   `SOTA-144` says use CompleteP; this says which architectures need it and
   why, and that the alternative demonstrably fails on Transformers.
-- **It produces [SOTA-tmpr10ct](../practices.d/SOTA-tmpr10ct.md)** — the one-multiplier
+- **It produces [SOTA-276](../practices.d/SOTA-276.md)** — the one-multiplier
   implementation rule, with SGD named as the exception.
 - **It bears on [SOTA-121](../practices.d/SOTA-121.md) and [SOTA-165](../practices.d/SOTA-165.md).** The record
   recommends Muon and matrix preconditioning and says nothing about how to

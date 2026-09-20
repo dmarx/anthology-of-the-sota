@@ -1,5 +1,8 @@
 ---
+number: 275
 status: Proposed
+formerly:
+- SOTA-tmpnjlal
 consensus: unassessed
 consensus_note: >-
   The choice between the two depth parameterizations is not something the
@@ -20,28 +23,28 @@ tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmpfv7vs
+- LIT-462
 introduced_by:
-- LIT-tmpfv7vs
+- LIT-462
 extends:
 - SOTA-144
 implementations: []
 summary: >-
-  Zheng et al. (2026), [LIT-tmpfv7vs](../literature.d/LIT-tmpfv7vs.md) — Depth-muP's `α = Θ(1/√L)` is
+  Zheng et al. (2026), [LIT-462](../literature.d/LIT-462.md) — Depth-muP's `α = Θ(1/√L)` is
   the rule for a one-transformation residual branch. Attention and FFN
   branches hold more than one, so Transformers need CompleteP's
   `α = Θ(1/L)`, and the looser rule measurably fails to transfer on them.
 explained_by:
-- THEORY-tmpmnsb5
+- THEORY-037
 ---
 
 <!-- inactive-ok-file: SOTA-144 — Proposed, and the practice this one extends: it says use CompleteP, this says which architectures need it -->
-# SOTA-tmpnjlal: Pick the depth parameterization from the residual branch: a Transformer branch has more than one transformation, so it needs the stricter rule
+# SOTA-275: Pick the depth parameterization from the residual branch: a Transformer branch has more than one transformation, so it needs the stricter rule
 
 ## Source
 
-Zheng et al. (2026), [LIT-tmpfv7vs](../literature.d/LIT-tmpfv7vs.md) — [ARXIV-2603.00541](https://arxiv.org/abs/2603.00541),
-read as [NOTE-tmpepjgm](../notes.d/NOTE-tmpepjgm.md). Accounted for by [THEORY-tmpmnsb5](../theory.d/THEORY-tmpmnsb5.md).
+Zheng et al. (2026), [LIT-462](../literature.d/LIT-462.md) — [ARXIV-2603.00541](https://arxiv.org/abs/2603.00541),
+read as [NOTE-211](../notes.d/NOTE-211.md). Accounted for by [THEORY-037](../theory.d/THEORY-037.md).
 
 ## What to do
 
@@ -71,7 +74,7 @@ Under muP each update is deliberately as large as stability allows, so when a
 branch holds two weights the term in which *both* moved in one step is the
 same order as the terms in which one did. Constraining that cross term is
 what tightens the multiplier. A branch with one weight has no such term, so
-its constraint set is genuinely looser. [THEORY-tmpmnsb5](../theory.d/THEORY-tmpmnsb5.md) holds the
+its constraint set is genuinely looser. [THEORY-037](../theory.d/THEORY-037.md) holds the
 derivation.
 
 ## Conditions

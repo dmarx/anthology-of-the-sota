@@ -1,0 +1,98 @@
+---
+status: Active
+title: 'Power Lines: Scaling Laws for Weight Decay and Batch Size in LLM Pre-training'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-20'
+published: '2025-05-01'
+arxiv: '2505.13738'
+first_author: 'Bergsma'
+corrects:
+- LIT-028
+keywords:
+- 'weight-decay'
+- 'batch-size'
+- 'critical-batch-size'
+- 'adamw-timescale'
+- 'scaling-laws'
+- 'maximal-update-parameterization'
+implementations: []
+summary: >-
+  Bergsma et al. (2025), [ARXIV-2505.13738](https://arxiv.org/abs/2505.13738). Hundreds of muP-trained
+  models say the AdamW timescale — not the weight decay itself — is the
+  quantity that scales, and it follows a power law in tokens-per-parameter
+  with exponent about -0.52. Optimal and critical batch size both scale as
+  power laws in the token budget `D`, independently of model size, which is
+  not what Kaplan's compute exponent says.
+---
+
+# LIT-tmp5olz5: Power Lines: Scaling Laws for Weight Decay and Batch Size in LLM Pre-training
+<!-- inactive-ok-file: SOTA-097 — Superseded in this same change, and this note is the evidence for it -->
+<!-- inactive-ok-file: SOTA-255 — Proposed, and named as the practice whose stated gap this paper does and does not close -->
+
+## Key takeaways
+
+- **The move is to scale a derived quantity rather than the hyperparameter.**
+  Under AdamW the weights are themselves an EMA of updates, with timescale
+  `τ = 1/(η λ)` in steps. Normalized by the total step count `S`, the
+  fraction `τ̃ = 1/(η λ S)` says what share of training is effectively
+  averaged into the final weights. `λ` is then read off from `τ̃` rather than
+  set directly.
+- **`τ̃` is not constant, and that is the correction.** Wang and Aitchison
+  proposed holding it fixed as scale changes. Across tokens-per-parameter
+  (TPP) from 20 to 1280, the optimal `τ̃` follows a **power law with exponent
+  ≈ −0.52** (bootstrapped 10th/90th percentiles −0.529 to −0.507, `R² =
+  0.975`) — roughly 1.0 at 1 TPP falling to 0.01 at 1000 TPP. Held-out points
+  at up to 1000× the fitting compute sit on the line.
+- **With muP in place, tune `λ` rather than `η`.** Against the usual practice
+  of sweeping the learning rate at a default `λ = 0.1`, tuning `λ` at the
+  muP-transferred learning rate was strictly better in 6 of 8 cases.
+- **Optimal batch size scales with the token budget, not with compute.**
+  `B_opt ∝ D^0.38` (10th/90th 0.367–0.391, `R² = 0.984`). The apparent
+  power law in compute that prior work fitted holds only at a fixed TPP; it
+  is a shadow of the `D` dependence.
+- **Critical batch size likewise**: `B_crit ∝ D^0.47` (`R² = 0.940`), against
+  Zhang et al.'s independently measured 0.462 — different context length,
+  architecture, dataset, parameterization, schedule and tuning strategy, and
+  the exponents agree to within about 2%.
+- **A method for `B_crit` that does not need a fixed training duration**,
+  which is what made the quantity awkward to measure under a decaying
+  schedule.
+- The Pareto analysis over training time against compute favours **small,
+  over-trained models**: they take fewer wall-clock steps and admit more data
+  parallelism, because `B_crit` grows with `D`.
+- GPT-2-like architecture with ALiBi and SwiGLU, muP, SlimPajama, linear
+  schedule with 10% warmup, models to 3.3B.
+
+## Standing in the anthology
+
+**It retires an exponent the record has carried since its first month.**
+[SOTA-097](../practices.d/SOTA-097.md) says optimal batch size scales as `B ∝ C^0.24`, from Kaplan's
+equation 1.7, and its own body already said the right thing: "that the batch
+exponent has not been re-derived by anyone since is a reason to hold it
+loosely". It has now been re-derived twice, by groups who did not coordinate,
+and the scaling variable is not compute.
+
+That is the rarer and more valuable kind of correction: not a better fit of
+the same relationship but a different independent variable. Kaplan's fit is
+not wrong within its slice — at fixed TPP, `D` and `C` move together and
+either fits — it is a measurement of a projection presented as the thing
+itself.
+
+**It also supplies what [SOTA-255](../practices.d/SOTA-255.md) said nobody had.** That practice records
+Kim et al.'s finding that optimal weight decay under data constraint is ~30×
+the inherited 0.1, and its conditions section says plainly: "the paper gives
+no way to predict the optimum from the parameter-to-token ratio, so the
+practice is really 'sweep it, and sweep upward'." Here is a law in exactly
+that ratio.
+
+**The two do not compose, and the record should not pretend they do.** This
+study normalizes by `S` on the explicit basis that "LLM pre-training only
+uses one epoch of data", and fits from 20 to 1280 TPP. Kim et al. epoch a
+fixed corpus many times at parameter-to-token ratios *above* Chinchilla —
+TPP below 20, and often below 1. The two laws are fitted in disjoint regimes
+under different assumptions about repetition, and nobody has checked whether
+either extrapolates into the other's. What the record holds now is two
+answers to "how should weight decay move under data pressure", each
+well-measured where it was measured.

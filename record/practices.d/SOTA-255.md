@@ -16,7 +16,19 @@ consensus_note: >-
   reported rather than derived, so a practitioner still has to sweep — but
   the direction is the finding and it is unambiguous.
 title: 'Tune weight decay upward when pretraining over a repeated corpus, rather than inheriting the customary value'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-20'
+  note: >-
+    The gap this practice's conditions named — no rule for predicting the
+    optimum from the parameter-to-token ratio — now has a candidate, and the
+    candidate does not fit. Bergsma et al. (LIT-tmp5olz5, SOTA-tmpuz5ea) give
+    a power law for the AdamW timescale in tokens-per-parameter, fitted over
+    TPP 20 to 1280 under explicitly single-epoch training. This practice's
+    source epochs a fixed corpus at TPP below 20 and often below 1. Two
+    disjoint regimes; the record holds both and composes neither. The
+    recommendation and `promote_when:` are unchanged.
 tags:
 - model-stability
 - training-optimization
@@ -36,6 +48,7 @@ summary: >-
 ---
 
 # SOTA-255: Tune weight decay upward when pretraining over a repeated corpus, rather than inheriting the customary value
+<!-- inactive-ok-file: SOTA-tmpuz5ea — Proposed, and filed in this same contribution as the law in the other regime -->
 <!-- inactive-ok-file: SOTA-173 — Proposed, and named as one of the positions this practice says was measured at one setting of weight decay -->
 
 ## Source
@@ -107,6 +120,27 @@ The regime matters. This is about parameter-to-token ratios *above*
 Chinchilla with repeated data. At or below the compute-optimal ratio the
 inherited value is not shown to be wrong, and the failure this fixes does not
 arise.
+
+## A law exists now, in the wrong regime
+
+The conditions above say the paper "gives no way to predict the optimum from
+the parameter-to-token ratio, so the practice is really *sweep it, and sweep
+upward*". [SOTA-tmpuz5ea](SOTA-tmpuz5ea.md) is a law in exactly that ratio — the normalized AdamW
+timescale, `1/(η λ S)`, following a power law in tokens-per-parameter with
+exponent about −0.52, fitted over three orders of magnitude of compute.
+
+**It does not close this gap, and treating it as though it did would be the
+easy mistake.** That law is fitted from 20 to 1280 tokens-per-parameter, and
+its normalization is introduced on the explicit ground that "LLM pre-training
+only uses one epoch of data". This practice's setting is the opposite end:
+parameters above Chinchilla-optimal, so TPP below 20 and often below 1, with
+the corpus repeated many times.
+
+Nobody has checked whether either law extrapolates into the other's regime.
+The record now holds two well-measured answers to how weight decay should
+move under data pressure, from opposite ends of one axis, and an unexamined
+gap between them. That is the honest state and it is a better question than
+either practice alone poses.
 
 ## Known implementations
 

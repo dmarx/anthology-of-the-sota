@@ -2,9 +2,21 @@
 number: 61
 status: 'Active'
 title: 'Use largest batch that maintains >80% sample efficiency'
-version: 1
+version: 2
+history:
+# inactive-ok-block: SOTA-062 — Superseded in this same change; named here
+# because it carried the identical mis-tag from the identical source
+- version: 2
+  date: '2026-09-20'
+  note: >-
+    Retagged from `model-architecture` to `training-optimization`. This is a
+    batch-size practice, `batch size` is named in the training-optimization
+    blurb, and nothing in the model-architecture blurb covers it — the same
+    mis-filing SOTA-062 carried, from the same source paper, and correct to
+    fix on its own terms. The recommendation, status and source are
+    unchanged.
 tags:
-- model-architecture
+- training-optimization
 date: '2026-08-24'
 source:
 - LIT-061

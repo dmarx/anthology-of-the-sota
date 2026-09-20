@@ -1,10 +1,34 @@
 ---
 number: 62
-status: 'Active'
+status: 'Superseded'
+status_note: >-
+  The decoupling experiment this practice's own body invited has been run:
+  holding the token budget fixed, the dependence of batch size on model size
+  very nearly vanishes. What the heuristic was tracking is the data that
+  scaled alongside the model. `Superseded` rather than `Rejected` because
+  following it along the Chinchilla line gives roughly the right answer for
+  the wrong reason — the successor is [SOTA-tmp0cq3b](SOTA-tmp0cq3b.md).
 title: 'Scale batch size with model size but sub-linearly'
-version: 1
+version: 2
+history:
+# inactive-ok-block: ADR-035 — Proposed, and cited for exactly the rule it
+# states: a tag must not be added in order to bind a relation. Naming it is
+# how this retag declares it was not
+- version: 2
+  date: '2026-09-20'
+  note: >-
+    Superseded by SOTA-tmp0cq3b, and retagged. Zhang et al. (LIT-tmphgpkf)
+    ran the decoupling experiment this practice's body invited — hold the
+    token budget fixed and vary model size — and the dependence very nearly
+    disappears; Bergsma et al. (LIT-tmp5olz5) agree from a scaling-law fit.
+    The retag from `model-architecture` to `training-optimization` is correct
+    on its own terms and would be right with or without the supersession:
+    `batch size` is named in the training-optimization blurb and nothing in
+    the model-architecture blurb covers it. It also happens to be what lets
+    the correction edge be declared, and saying so is better than not
+    (ADR-035).
 tags:
-- model-architecture
+- training-optimization
 date: '2026-08-24'
 source:
 - LIT-061
@@ -12,8 +36,12 @@ introduced_by:
 - LIT-061
 compared_against:
 - SOTA-061
+superseded_by:
+- SOTA-tmp0cq3b
 summary: >-
   Fedus et al. (2021), [LIT-061](../literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684).
+corrected_by:
+- SOTA-tmp0cq3b
 ---
 
 # SOTA-062: Scale batch size with model size but sub-linearly

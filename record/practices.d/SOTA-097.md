@@ -1,8 +1,16 @@
 ---
 number: 97
-status: 'Active'
+status: 'Superseded'
+status_note: >-
+  The exponent is a fit to a projection. Along the Chinchilla line `N` and
+  `D` scale together, so `C = 6ND` moves with `D` and a power law in either
+  describes the data; two independent groups measuring off that line find
+  optimal and critical batch size scale in the token budget, not in compute.
+  `Superseded` rather than `Rejected` because the fit is not an error and the
+  quantity is real — the successor is [SOTA-tmp0cq3b](SOTA-tmp0cq3b.md), and
+  [ADR-017](../decisions.d/ADR-017.md)'s corrective succession is the shape.
 title: 'Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-09'
@@ -17,6 +25,17 @@ history:
   note: >-
     Enriched from the #123 readings. The recommendation is unchanged;
     the source list, the numbers or the neighbourhood are.
+- version: 4
+  date: '2026-09-20'
+  note: >-
+    Superseded by SOTA-tmp0cq3b. This practice's own body said the batch
+    exponent had never been re-derived and should be held loosely. It has now
+    been re-derived twice, by groups who did not coordinate, and the variable
+    is wrong: critical and optimal batch size scale in the token budget D,
+    not in compute C. Kaplan's fit is not bad arithmetic — along the
+    Chinchilla line C and D move together, so a power law in either describes
+    the data, and equation 1.7 measured a projection. The body stays;
+    ADR-017's corrective succession is what this is.
 tags:
 - training-optimization
 date: '2026-08-24'
@@ -38,6 +57,10 @@ summary: >-
   Kaplan et al. (2020), [LIT-028](../literature.d/LIT-028.md) — [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361). Equation 1.7 gives B ∝ C^(α_C/α_B) = C^0.24, from α_C ≈ 0.050 and α_B ≈ 0.21.
 extended_by:
 - SOTA-198
+superseded_by:
+- SOTA-tmp0cq3b
+corrected_by:
+- SOTA-tmp0cq3b
 ---
 
 # SOTA-097: Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)`

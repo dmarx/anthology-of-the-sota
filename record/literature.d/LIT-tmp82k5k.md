@@ -1,0 +1,95 @@
+---
+status: Active
+title: 'The Limiting Dynamics of SGD: Modified Loss, Phase Space Oscillations, and Anomalous Diffusion'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-20'
+published: '2021-07-01'
+arxiv: '2107.09133'
+first_author: 'Kunin'
+keywords:
+- 'sgd-dynamics'
+- 'anomalous-diffusion'
+- 'langevin'
+- 'modified-loss'
+- 'stationary-distribution'
+implementations: []
+summary: >-
+  Kunin et al. (2021), [ARXIV-2107.09133](https://arxiv.org/abs/2107.09133). Long after the loss has
+  converged the weights keep moving, with distance travelled growing as a
+  power law with a non-trivial exponent. Derives SGD at finite learning rate
+  and batch size as an underdamped Langevin equation and shows what drives
+  the motion is not the training loss but a modified loss plus probability
+  currents that make the trajectory oscillate rather than diffuse randomly.
+---
+
+# LIT-tmp82k5k: The Limiting Dynamics of SGD: Modified Loss, Phase Space Oscillations, and Anomalous Diffusion
+<!-- inactive-ok-file: ADR-034 — Proposed, and cited for exactly the rule this paragraph applies: Rejected on a theory retires the reason, not the tools -->
+<!-- inactive-ok-file: THEORY-013 — Rejected, and named at length precisely to keep this paper from being read as reviving it (ADR-034) -->
+
+## Key takeaways
+
+- **Converged is not stationary.** Long after performance stops improving,
+  networks keep travelling through parameter space, and the distance grows as
+  a power law in the number of updates with a non-trivial exponent —
+  anomalous diffusion, as distinct from Brownian motion where distance is
+  linear in steps.
+- **The driver is not the training loss.** Via the Fokker-Planck equation,
+  the limiting dynamics are governed by a **modified loss**, which implicitly
+  regularises velocity, plus **probability currents**, which produce
+  oscillations in phase space. The stationary distribution depends on the
+  relationship between the gradient-noise covariance and the Hessian, not on
+  the original objective alone.
+- **The motion is not random.** Projected into the top eigensubspace of the
+  Hessian, the trajectory is incoherent oscillation rather than diffusion, and
+  that incoherence is what produces the anomalous exponent.
+- **The model is underdamped, and that matters.** Deriving SGD with finite
+  learning rate and batch size gives a second-order Langevin equation;
+  momentum is a physical parameter of it rather than a bolt-on.
+- **Closed form in the linear case**: for linear regression the dynamics are
+  an Ornstein-Uhlenbeck process whose moments are a sum of damped harmonic
+  oscillators in the eigenbasis of the data.
+- **Quantitative predictions that match**: theoretical expressions for how
+  learning rate, batch size and momentum influence the limiting speed and the
+  anomalous diffusion exponent, said to match the empirics exactly.
+
+## Standing in the anthology
+
+**It is the third way the loss curve misleads.** [LIT-tmp20sa6](LIT-tmp20sa6.md) says the
+plotted trajectory is a time-average of oscillation; [LIT-tmpdoa3b](LIT-tmpdoa3b.md) says the
+scalar sums over transitions that are individually abrupt; this says a flat
+tail does not mean the weights have stopped. Three different collapses, one
+plot.
+
+**It shares machinery with [THEORY-013](../theory.d/THEORY-013.md), which is `Rejected`, and the
+distinction matters.** That account also reads SGD as a stochastic
+differential equation, and was rejected because Shallue et al. ([LIT-058](LIT-058.md))
+swept 35 workloads and found no evidence that larger batches degrade
+out-of-sample performance once the metaparameters are retuned — so the
+phenomenon it explained was mostly an artefact of holding the learning rate
+fixed.
+
+**None of that reaches this paper, and it would be easy to assume it does.**
+What was rejected is a claim about *generalisation*: that the noise scale
+selects minima that test better. This paper makes no claim about test
+accuracy. It says where the weights go and how fast, under an explicit
+modified objective, and its hyperparameter predictions are about limiting
+speed and a diffusion exponent rather than about generalisation. Shallue's
+sweep is not evidence against any of that, because it did not measure any of
+it.
+
+Reviving a rejected account by association with a neighbour that shares its
+mathematics is the error available here, and [ADR-034](../decisions.d/ADR-034.md)'s rule is the guard:
+`Rejected` on a theory means the *reason* is wrong, and says nothing about
+adjacent reasons built from the same tools.
+
+**The hyperparameter predictions are the part with practical reach**, and
+they are also the part this record is least equipped to check: learning rate,
+batch size and momentum are all quantities the registry has practices about,
+and none of those practices is stated in terms of a limiting diffusion
+exponent. Whether the connection is useful or merely true is the open
+question, and it is why nothing here is filed as a practice.
+
+Filed 2021, and the record's optimizer material has grown around it without
+it.

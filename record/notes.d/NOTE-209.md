@@ -1,6 +1,9 @@
 ---
+number: 209
 status: Read
-paper: LIT-tmpdw28d
+formerly:
+- NOTE-tmprnxym
+paper: LIT-457
 title: 'When Spectral Updates Help'
 version: 1
 date: '2026-09-20'
@@ -11,8 +14,8 @@ summary: >-
   small in transformers, and the gap grows with dimension.
 ---
 
-<!-- inactive-ok-file: THEORY-024 THEORY-tmp5iwhe SOTA-tmpybkk5 — THEORY-024 is Proposed and is named as the account this one is not; the other two are Proposed and filed here from this reading -->
-# NOTE-tmprnxym: When Spectral Updates Help
+<!-- inactive-ok-file: THEORY-024 THEORY-032 SOTA-274 — THEORY-024 is Proposed and is named as the account this one is not; the other two are Proposed and filed here from this reading -->
+# NOTE-209: When Spectral Updates Help
 
 ## Contribution
 
@@ -109,10 +112,10 @@ quantity to the stable rank of the propagated data.
   The record's existing explanation of matrix preconditioning is the duality
   map; this is a different explanation of the same practice, from an
   unrelated group, and the two are not in conflict — one says what the update
-  *is*, this says when it *wins*. Filed as [THEORY-tmp5iwhe](../theory.d/THEORY-tmp5iwhe.md).
-- **It produces [SOTA-tmpybkk5](../practices.d/SOTA-tmpybkk5.md)**, the measurement: check the two
+  *is*, this says when it *wins*. Filed as [THEORY-032](../theory.d/THEORY-032.md).
+- **It produces [SOTA-274](../practices.d/SOTA-274.md)**, the measurement: check the two
   quantities before assuming a spectral optimizer will pay.
-- **It is the constructive half of the pair with [LIT-tmp6umwv](../literature.d/LIT-tmp6umwv.md).** That
+- **It is the constructive half of the pair with [LIT-456](../literature.d/LIT-456.md).** That
   paper rules an explanation out; this one offers a different one. They were
   read together and neither depends on the other.
 - **It does not license selective application.** The paper validates that the
@@ -139,6 +142,6 @@ quantity to the stable rank of the propagated data.
   the paper sets up and does not run.
 - Does the stable-rank structure hold at frontier width and sequence length,
   where the bounds say it should but nothing was measured?
-- How does this relate to the step-size account in [LIT-tmp6umwv](../literature.d/LIT-tmp6umwv.md)? Both
+- How does this relate to the step-size account in [LIT-456](../literature.d/LIT-456.md)? Both
   are non-geometric explanations of the same phenomenon and neither cites the
   other; whether they are one mechanism is open.

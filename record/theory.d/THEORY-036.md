@@ -1,5 +1,8 @@
 ---
+number: 36
 status: Proposed
+formerly:
+- THEORY-tmpwwu1v
 promote_when: >-
   A measurement of alignment that is not pairwise-distance agreement — a
   stronger notion of representational sameness — showing convergence
@@ -14,11 +17,11 @@ tags:
 - representation-and-encoding
 date: '2026-09-20'
 source:
-- LIT-tmpglvdv
+- LIT-458
 explains:
-- SOTA-tmp121r8
+- SOTA-271
 summary: >-
-  Huh et al. (2024), [LIT-tmpglvdv](../literature.d/LIT-tmpglvdv.md) — vision and language models measure
+  Huh et al. (2024), [LIT-458](../literature.d/LIT-458.md) — vision and language models measure
   distance between datapoints increasingly alike as they scale, across
   architectures and objectives. The conjecture is that they are converging on
   a representation of the joint distribution that generated the observations.
@@ -26,12 +29,12 @@ summary: >-
   bijective observations.
 ---
 
-# THEORY-tmpwwu1v: Representations converge across architectures, objectives and modalities, and the endpoint is a model of what generated the data
-<!-- inactive-ok-file: SOTA-tmp121r8 — Proposed, and filed in this same contribution as the practice this account underwrites; also named in `explains:` -->
+# THEORY-036: Representations converge across architectures, objectives and modalities, and the endpoint is a model of what generated the data
+<!-- inactive-ok-file: SOTA-271 — Proposed, and filed in this same contribution as the practice this account underwrites; also named in `explains:` -->
 
 ## Source
 
-Huh et al. (2024), [LIT-tmpglvdv](../literature.d/LIT-tmpglvdv.md) — [ARXIV-2405.07987](https://arxiv.org/abs/2405.07987).
+Huh et al. (2024), [LIT-458](../literature.d/LIT-458.md) — [ARXIV-2405.07987](https://arxiv.org/abs/2405.07987).
 
 ## Two claims, and the record should keep them apart
 
@@ -98,7 +101,7 @@ its condition.
 
 ## What it underwrites
 
-[SOTA-tmp121r8](../practices.d/SOTA-tmp121r8.md) — train on a second modality even when the target is
+[SOTA-271](../practices.d/SOTA-271.md) — train on a second modality even when the target is
 single-modality. That practice follows from the conjecture rather than from
 the measurement, which is why it is `Proposed` too, and why its conditions
 name this account's bijectivity assumption rather than hiding behind it.

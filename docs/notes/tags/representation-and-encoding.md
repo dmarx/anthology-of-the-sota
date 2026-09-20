@@ -4,7 +4,7 @@
 
 **representation-and-encoding**.
 
-5 of 204 NOTE documents. Back to the [full index](../README.md).
+8 of 210 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -13,3 +13,6 @@
 | [NOTE-125](../../../record/notes.d/NOTE-125.md) | 'Neural-gas' network for vector quantization and its application to time-series prediction | The key departure from SOM: instead of a fixed spatial grid defining neighborhood, neural gas uses the instantaneous rank of each neuron by distance to the current input. Neuron i gets update weight exp(-rank_i / lambda), where lambda decays over training. | Read |
 | [NOTE-129](../../../record/notes.d/NOTE-129.md) | A Growing Neural Gas Network Learns Topologies | Topology learning can be done incrementally and locally: connect the two nearest units to each input (Hebbian edge), age and prune stale edges, and periodically insert a new unit between the unit with maximum accumulated squared error and its worst-error neighbor. | Read |
 | [NOTE-188](../../../record/notes.d/NOTE-188.md) | NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis | Store the scene in the weights of an MLP that maps a 5D coordinate to density and view-dependent colour, and render it with classical volume rendering, which is differentiable — so posed images are the only supervision. Two additions do the work everybody remembers: positional encoding, without which the result is oversmoothed, and hierarchical sampling, without which it is unaffordable. | Read |
+| [NOTE-206](../../../record/notes.d/NOTE-206.md) | The Platonic Representation Hypothesis | Vision and language models measure distance between datapoints more alike as they get larger, across architectures and objectives. The conjecture is that they converge on a model of what generated the data. The proof holds for bijective observations only, and the caption-density experiment tests that boundary rather than asserting past it. | Read |
+| [NOTE-207](../../../record/notes.d/NOTE-207.md) | Contextures: The Mechanism of Representation Learning | A representation is the association between the input and a context variable; capturing its maximum information is optimal on tasks compatible with that context. A context is most useful when the association is neither too strong nor too weak, and mixing contexts is offered as the cheap way to get there. Skimmed: a 313k-character dissertation, read at summary level. | Skimmed |
+| [NOTE-210](../../../record/notes.d/NOTE-210.md) | The Lattice Representation Hypothesis | A linear concept direction plus a threshold is a half-space; intersecting half-spaces gives a concept lattice, so inclusion, intersection and union become geometric meet and join on embeddings. Canonical form when the attribute directions are linearly independent. Evidence is WordNet sub-hierarchies, which is the friendliest available test. | Read |

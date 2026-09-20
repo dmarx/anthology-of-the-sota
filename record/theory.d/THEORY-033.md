@@ -1,5 +1,8 @@
 ---
+number: 33
 status: Proposed
+formerly:
+- THEORY-tmp6a2vb
 promote_when: >-
   The `Kaon` control repeated at a scale where the record's Muon practices are
   evidenced — a billion parameters or more, on a real pretraining corpus. If
@@ -15,22 +18,22 @@ tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmp6umwv
+- LIT-456
 explains:
 - SOTA-121
 summary: >-
-  Shumaylov et al. (2026), [LIT-tmp6umwv](../literature.d/LIT-tmp6umwv.md) — an optimizer with random
+  Shumaylov et al. (2026), [LIT-456](../literature.d/LIT-456.md) — an optimizer with random
   singular values matches Muon, so the target spectrum is not what pays.
   What the controls leave standing is that the spectral update's optimal step
   size is constant where Euclidean descent's oscillates. NanoGPT scale.
 ---
 
-<!-- inactive-ok-file: THEORY-024 ADR-031 ADR-034 THEORY-tmp5iwhe — THEORY-024 is Proposed and is what this account argues with; the ADRs are Proposed and are why arguing with it leaves its practices alone; THEORY-tmp5iwhe is Proposed and filed in this same contribution -->
-# THEORY-tmp6a2vb: What a spectral optimizer buys is a step size that stays optimal, not adherence to a target geometry
+<!-- inactive-ok-file: THEORY-024 ADR-031 ADR-034 THEORY-032 — THEORY-024 is Proposed and is what this account argues with; the ADRs are Proposed and are why arguing with it leaves its practices alone; THEORY-032 is Proposed and filed in this same contribution -->
+# THEORY-033: What a spectral optimizer buys is a step size that stays optimal, not adherence to a target geometry
 
 ## Source
 
-Shumaylov et al. (2026), [LIT-tmp6umwv](../literature.d/LIT-tmp6umwv.md) — read as [NOTE-tmpnr9by](../notes.d/NOTE-tmpnr9by.md).
+Shumaylov et al. (2026), [LIT-456](../literature.d/LIT-456.md) — read as [NOTE-208](../notes.d/NOTE-208.md).
 
 ## The account
 
@@ -106,7 +109,7 @@ hypothesis.
 
 ## Why this is filed separately from the rank account
 
-[THEORY-tmp5iwhe](../theory.d/THEORY-tmp5iwhe.md) is also a non-geometric explanation of the same
+[THEORY-032](../theory.d/THEORY-032.md) is also a non-geometric explanation of the same
 practice, from an unrelated group, and it says something different: that the
 advantage comes from the rank structure of the activations and gradients.
 Neither paper cites the other. Whether they are two descriptions of one

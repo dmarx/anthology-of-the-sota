@@ -16,7 +16,7 @@ summary: >-
   for Linear layers is a Newton-Schulz iteration — which is Muon.
 ---
 
-<!-- inactive-ok-file: THEORY-024 — Proposed since the Kaon control (LIT-tmp6umwv); this reading is the source of that account, so it names it whatever its standing -->
+<!-- inactive-ok-file: THEORY-024 — Proposed since the Kaon control (LIT-456); this reading is the source of that account, so it names it whatever its standing -->
 # NOTE-189: Modular Duality in Deep Learning
 
 ## Contribution

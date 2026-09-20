@@ -1,27 +1,30 @@
 ---
+number: 35
 status: Active
+formerly:
+- THEORY-tmpp47kd
 title: 'Gradient descent drives the sharpness up to the largest value its own step size tolerates, and then trains there'
 version: 1
 tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmpnqv3x
+- LIT-461
 explains:
-- SOTA-tmp3zoc9
+- SOTA-272
 summary: >-
-  Cohen et al. (2021), [LIT-tmpnqv3x](../literature.d/LIT-tmpnqv3x.md) — the top Hessian eigenvalue rises
+  Cohen et al. (2021), [LIT-461](../literature.d/LIT-461.md) — the top Hessian eigenvalue rises
   until it reaches `2/eta` and then stops, so the step size sets the
   curvature rather than responding to it. Full-batch gradient descent only:
   under SGD the sharpness settles nowhere predictable.
 ---
 
 <!-- inactive-ok-file: THEORY-030 THEORY-013 — THEORY-030 is Proposed and is cited for the premise its promote_when names; THEORY-013 is Rejected, and is named for exactly what it was rejected for, which is the misreading this section warns against -->
-# THEORY-tmpp47kd: Gradient descent drives the sharpness up to the largest value its own step size tolerates, and then trains there
+# THEORY-035: Gradient descent drives the sharpness up to the largest value its own step size tolerates, and then trains there
 
 ## Source
 
-Cohen et al. (2021), [LIT-tmpnqv3x](../literature.d/LIT-tmpnqv3x.md) — read as [NOTE-tmp72c2z](../notes.d/NOTE-tmp72c2z.md).
+Cohen et al. (2021), [LIT-461](../literature.d/LIT-461.md) — read as [NOTE-205](../notes.d/NOTE-205.md).
 
 ## The account
 

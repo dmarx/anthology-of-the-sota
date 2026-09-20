@@ -1,6 +1,9 @@
 ---
+number: 207
 status: Skimmed
-paper: LIT-tmpguznl
+formerly:
+- NOTE-tmpmg0fm
+paper: LIT-459
 title: 'Contextures: The Mechanism of Representation Learning'
 version: 1
 date: '2026-09-20'
@@ -12,7 +15,7 @@ summary: >-
   get there. Skimmed: a 313k-character dissertation, read at summary level.
 ---
 
-# NOTE-tmpmg0fm: Contextures: The Mechanism of Representation Learning
+# NOTE-207: Contextures: The Mechanism of Representation Learning
 <!-- inactive-ok-file: SOTA-256 — Proposed, and named as the record's other account of where scaling stops paying -->
 
 ## What was read, and what was not

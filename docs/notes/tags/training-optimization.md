@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-42 of 204 NOTE documents. Back to the [full index](../README.md).
+46 of 210 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -50,3 +50,7 @@
 | [NOTE-202](../../../record/notes.d/NOTE-202.md) | The Limiting Dynamics of SGD | Long after the loss converges the weights keep travelling, distance growing as a power law with a non-trivial exponent. Derives SGD at finite learning rate and batch size as an underdamped Langevin equation and shows the driver is a modified loss plus probability currents, with the motion incoherent oscillation in the Hessian's top eigensubspace rather than diffusion. | Read |
 | [NOTE-203](../../../record/notes.d/NOTE-203.md) | Central Flows | Models the time-averaged trajectory of an oscillating optimizer as a differential equation that predicts the real path numerically. Reading it: at the edge of stability sharpness sets the step size, not the learning rate; and adaptive optimizers steer away from curvature so they can step further later, which ablating makes them slower. | Read |
 | [NOTE-204](../../../record/notes.d/NOTE-204.md) | Hidden Breakthroughs in Language Model Training | A smooth loss curve is what many differently-timed abrupt transitions look like when averaged. POLCA decomposes loss change per example and along a curvature-derived low-rank basis; on synthetic arithmetic it recovers the carrying skill, which clustering the exact loss curves does not. | Read |
+| [NOTE-205](../../../record/notes.d/NOTE-205.md) | Edge of Stability | Full-batch gradient descent raises the loss Hessian's top eigenvalue until it hits `2/eta` and then trains there. Reading it: the three standard analytical assumptions fail at every reasonable step size, and the curvature-based step-size rule loses to the fixed step size it forbids. | Read |
+| [NOTE-207](../../../record/notes.d/NOTE-207.md) | Contextures: The Mechanism of Representation Learning | A representation is the association between the input and a context variable; capturing its maximum information is optimal on tasks compatible with that context. A context is most useful when the association is neither too strong nor too weak, and mixing contexts is offered as the cheap way to get there. Skimmed: a 313k-character dissertation, read at summary level. | Skimmed |
+| [NOTE-208](../../../record/notes.d/NOTE-208.md) | Muon is Not That Special | An optimizer that replaces the gradient's singular values with chaotic noise matches Muon on NanoGPT. Reading it: the LMO account of spectral optimizers fails its own control, and what the control leaves standing is that Muon's optimal step size is constant where Euclidean descent's is not. | Read |
+| [NOTE-209](../../../record/notes.d/NOTE-209.md) | When Spectral Updates Help | A spectral step beats a Euclidean one on a block when the gradient's nuclear rank exceeds the stable rank of that block's incoming activations. Reading it: both sides are measurable, the activation side is provably small in transformers, and the gap grows with dimension. | Read |

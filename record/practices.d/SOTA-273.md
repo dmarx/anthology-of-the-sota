@@ -1,5 +1,8 @@
 ---
+number: 273
 status: Proposed
+formerly:
+- SOTA-tmpne4bq
 promote_when: >-
   A cheap estimator for the singular-value decay of a real pretraining
   context, demonstrated on one — without it the criterion names a quantity
@@ -20,12 +23,12 @@ tags:
 - representation-and-encoding
 date: '2026-09-20'
 source:
-- LIT-tmpguznl
+- LIT-459
 introduced_by:
-- LIT-tmpguznl
+- LIT-459
 implementations: []
 summary: >-
-  Zhai (2025), [LIT-tmpguznl](../literature.d/LIT-tmpguznl.md) — a pretraining objective is an association
+  Zhai (2025), [LIT-459](../literature.d/LIT-459.md) — a pretraining objective is an association
   between the input and a context variable, and the useful contexts are the
   ones whose association is neither too strong nor too weak: the singular
   values of the expectation operator should decay neither too fast nor too
@@ -33,15 +36,15 @@ summary: >-
   that does not.
 ---
 
-# SOTA-tmpne4bq: Choose a pretraining context whose association with the input is neither too strong nor too weak, and mix contexts to get there
+# SOTA-273: Choose a pretraining context whose association with the input is neither too strong nor too weak, and mix contexts to get there
 <!-- inactive-ok-file: SOTA-256 — Proposed, and named as the practice whose asymptote this one locates in the context -->
-<!-- inactive-ok-file: NOTE-tmpmg0fm — Skimmed, and cited precisely to record that this practice rests on a skim (ADR-025) -->
+<!-- inactive-ok-file: NOTE-207 — Skimmed, and cited precisely to record that this practice rests on a skim (ADR-025) -->
 
 ## Source
 
-Zhai (2025), [LIT-tmpguznl](../literature.d/LIT-tmpguznl.md) — [ARXIV-2504.19792](https://arxiv.org/abs/2504.19792), a CMU dissertation.
+Zhai (2025), [LIT-459](../literature.d/LIT-459.md) — [ARXIV-2504.19792](https://arxiv.org/abs/2504.19792), a CMU dissertation.
 
-**Read at summary level.** [NOTE-tmpmg0fm](../notes.d/NOTE-tmpmg0fm.md) is `Skimmed`, and the conditions
+**Read at summary level.** [NOTE-207](../notes.d/NOTE-207.md) is `Skimmed`, and the conditions
 below say what that costs this practice.
 
 ## The claim

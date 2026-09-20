@@ -1,5 +1,8 @@
 ---
+number: 274
 status: Proposed
+formerly:
+- SOTA-tmpybkk5
 consensus: unassessed
 consensus_note: >-
   One paper, one group, and no reported adoption of the measurement by
@@ -18,27 +21,27 @@ tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmpdw28d
+- LIT-457
 introduced_by:
-- LIT-tmpdw28d
+- LIT-457
 implementations: []
 summary: >-
-  Davis and Drusvyatskiy (2025), [LIT-tmpdw28d](../literature.d/LIT-tmpdw28d.md) — the spectral step's
+  Davis and Drusvyatskiy (2025), [LIT-457](../literature.d/LIT-457.md) — the spectral step's
   one-step guarantee beats the Euclidean one by the ratio of gradient
   nuclear rank to incoming activation stable rank. Both are cheap to compute
   from a run you are already doing, and the paper never uses them to route.
 explained_by:
-- THEORY-tmp5iwhe
+- THEORY-032
 ---
 
-<!-- inactive-ok-file: THEORY-tmp5iwhe — Proposed, and filed in this same contribution as the account of this measurement -->
-# SOTA-tmpybkk5: Before adopting a spectral optimizer, measure the stable rank of each block's incoming activations against its gradient's nuclear rank
+<!-- inactive-ok-file: THEORY-032 — Proposed, and filed in this same contribution as the account of this measurement -->
+# SOTA-274: Before adopting a spectral optimizer, measure the stable rank of each block's incoming activations against its gradient's nuclear rank
 
 ## Source
 
-Davis and Drusvyatskiy (2025), [LIT-tmpdw28d](../literature.d/LIT-tmpdw28d.md) —
-[ARXIV-2512.04299](https://arxiv.org/abs/2512.04299), read as [NOTE-tmprnxym](../notes.d/NOTE-tmprnxym.md).
-Accounted for by [THEORY-tmp5iwhe](../theory.d/THEORY-tmp5iwhe.md).
+Davis and Drusvyatskiy (2025), [LIT-457](../literature.d/LIT-457.md) —
+[ARXIV-2512.04299](https://arxiv.org/abs/2512.04299), read as [NOTE-209](../notes.d/NOTE-209.md).
+Accounted for by [THEORY-032](../theory.d/THEORY-032.md).
 
 ## What to measure
 

@@ -2,7 +2,7 @@
 
 # Lines of work
 
-18 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+19 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -143,6 +143,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-437](../record/literature.d/LIT-437.md) — A Spectral Condition for Feature Learning *(Active)*
   - [LIT-436](../record/literature.d/LIT-436.md) — Scalable Optimization in the Modular Norm *(Active)*
     - [LIT-438](../record/literature.d/LIT-438.md) — Modular Duality in Deep Learning *(Active)*
+
+### From Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability
+
+- [LIT-461](../record/literature.d/LIT-461.md) — Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability *(Active)*
+  - [LIT-453](../record/literature.d/LIT-453.md) — Understanding Optimization in Deep Learning with Central Flows *(Active)*
 
 ## vision-and-graphics
 

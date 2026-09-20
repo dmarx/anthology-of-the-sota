@@ -1,6 +1,9 @@
 ---
+number: 205
 status: Read
-paper: LIT-tmpnqv3x
+formerly:
+- NOTE-tmp72c2z
+paper: LIT-461
 title: 'Edge of Stability'
 version: 1
 date: '2026-09-20'
@@ -11,8 +14,8 @@ summary: >-
   curvature-based step-size rule loses to the fixed step size it forbids.
 ---
 
-<!-- inactive-ok-file: THEORY-030 SOTA-tmp3zoc9 — THEORY-030 is Proposed and is cited for what its own promote_when says, which is the gap this reading fills; SOTA-tmp3zoc9 is Proposed and filed here from this reading -->
-# NOTE-tmp72c2z: Edge of Stability
+<!-- inactive-ok-file: THEORY-030 SOTA-272 — THEORY-030 is Proposed and is cited for what its own promote_when says, which is the gap this reading fills; SOTA-272 is Proposed and filed here from this reading -->
+# NOTE-205: Edge of Stability
 
 ## Contribution
 
@@ -107,7 +110,7 @@ trajectory.
   The step from full-batch to stochastic that `THEORY-030` says would settle
   it is precisely the step §6 of this paper says has not been taken, five
   years earlier. The gap is old.
-- **It produces [SOTA-tmp3zoc9](../practices.d/SOTA-tmp3zoc9.md)**, on not reading short-timescale
+- **It produces [SOTA-272](../practices.d/SOTA-272.md)**, on not reading short-timescale
   non-monotonicity as instability and not setting the step size from a
   curvature bound.
 - **It is the converse of [SOTA-270](../practices.d/SOTA-270.md)**, which warns against reading a

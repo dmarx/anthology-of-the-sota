@@ -6,6 +6,8 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [20 Sep 22:27 — An account this record called Active got its first outside test, and lost](2026-09.md#an-account-this-record-called-active-got-its-first-outside-test-and-lost)
+- [20 Sep 22:04 — Half a topic was missing, and both papers that found it stand on something the record does not hold](2026-09.md#half-a-topic-was-missing-and-both-papers-that-found-it-stand-on-something-the-record-does-not-hold)
 - [20 Sep 20:39 — Three papers that never met, and the status I assumed instead of reading](2026-09.md#three-papers-that-never-met-and-the-status-i-assumed-instead-of-reading)
 - [20 Sep 18:10 — A law measured on one dataset, and what happens when something else wants the same capacity](2026-09.md#a-law-measured-on-one-dataset-and-what-happens-when-something-else-wants-the-same-capacity)
 - [20 Sep 06:31 — The record named an implementation it did not hold, and the half of a result that a summary drops](2026-09.md#the-record-named-an-implementation-it-did-not-hold-and-the-half-of-a-result-that-a-summary-drops)
@@ -124,9 +126,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-117 entries across 2 books, newest first.
+119 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 115 | 2026-09-05 | 2026-09-20 |
+| [2026-09](2026-09.md) | 117 | 2026-09-05 | 2026-09-20 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

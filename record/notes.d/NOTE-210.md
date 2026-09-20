@@ -1,6 +1,9 @@
 ---
+number: 210
 status: Read
-paper: LIT-tmpnglrb
+formerly:
+- NOTE-tmpv05j0
+paper: LIT-460
 title: 'The Lattice Representation Hypothesis'
 version: 1
 date: '2026-09-20'
@@ -12,7 +15,7 @@ summary: >-
   sub-hierarchies, which is the friendliest available test.
 ---
 
-# NOTE-tmpv05j0: The Lattice Representation Hypothesis
+# NOTE-210: The Lattice Representation Hypothesis
 
 ## Contribution
 
@@ -143,7 +146,7 @@ constructible rather than found. The paper does not take that step.
   structure and demonstrates it on a curated ontology; nothing here says what
   to do differently when training or serving. The obvious candidate — build
   steering vectors by meet and join — is not evaluated as an intervention.
-- **Names the same absent trunk as [LIT-tmpglvdv](../literature.d/LIT-tmpglvdv.md).** The Linear
+- **Names the same absent trunk as [LIT-458](../literature.d/LIT-458.md).** The Linear
   Representation Hypothesis is this paper's premise and the record holds no
   document for it, nor for steering vectors, nor for concept geometry.
   Filing the elaboration before the thing elaborated is backwards and should

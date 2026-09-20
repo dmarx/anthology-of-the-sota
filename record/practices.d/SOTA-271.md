@@ -1,5 +1,8 @@
 ---
+number: 271
 status: Proposed
+formerly:
+- SOTA-tmp121r8
 promote_when: >-
   A controlled run reporting what a second modality buys at matched token
   budget — the same language model trained with and without image data, on
@@ -20,26 +23,26 @@ tags:
 - representation-and-encoding
 date: '2026-09-20'
 source:
-- LIT-tmpglvdv
+- LIT-458
 introduced_by:
-- LIT-tmpglvdv
+- LIT-458
 implementations: []
 summary: >-
-  Huh et al. (2024), [LIT-tmpglvdv](../literature.d/LIT-tmpglvdv.md) — if representations converge on a
+  Huh et al. (2024), [LIT-458](../literature.d/LIT-458.md) — if representations converge on a
   modality-agnostic model of what generated the data, then data from any
   modality helps find it. The vision direction is already common practice;
   the language direction is not, and the paper cites a case where adding
   image data improved text performance.
 explained_by:
-- THEORY-tmpwwu1v
+- THEORY-036
 ---
 
-# SOTA-tmp121r8: Train on a second modality even when the target is single-modality
-<!-- inactive-ok-file: THEORY-tmpwwu1v — Proposed, and filed in this same contribution as this practice's account; its Proposed status is why this one is too -->
+# SOTA-271: Train on a second modality even when the target is single-modality
+<!-- inactive-ok-file: THEORY-036 — Proposed, and filed in this same contribution as this practice's account; its Proposed status is why this one is too -->
 
 ## Source
 
-Huh et al. (2024), [LIT-tmpglvdv](../literature.d/LIT-tmpglvdv.md) — [ARXIV-2405.07987](https://arxiv.org/abs/2405.07987).
+Huh et al. (2024), [LIT-458](../literature.d/LIT-458.md) — [ARXIV-2405.07987](https://arxiv.org/abs/2405.07987).
 
 ## The asymmetry is the recommendation
 
@@ -57,7 +60,7 @@ direction an argument picked out.
 
 ## Why it should work, and how much that is worth
 
-[THEORY-tmpwwu1v](../theory.d/THEORY-tmpwwu1v.md) is the account: representations converge on a model of the
+[THEORY-036](../theory.d/THEORY-036.md) is the account: representations converge on a model of the
 joint distribution that generated the observations, so any projection of that
 distribution is evidence about it.
 

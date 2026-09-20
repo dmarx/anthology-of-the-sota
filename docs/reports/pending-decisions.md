@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**98 document(s) awaiting a decision.**
+**107 document(s) awaiting a decision.**
 
 ## SOTAs
 
-67 of the 98.
+71 of the 107.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -32,8 +32,8 @@
 | 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 9 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
 | 2026-09-08 | Proposed | [SOTA-158](../../record/practices.d/SOTA-158.md) | 8 | 0 | Bound the activation's output range when training in low precision |
 | 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 8 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
+| 2026-09-08 | Proposed | [SOTA-168](../../record/practices.d/SOTA-168.md) | 8 | 0 | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself |
 | 2026-09-08 | Proposed | [SOTA-178](../../record/practices.d/SOTA-178.md) | 8 | 0 | Give the recurrence vector-valued gating and in-context learning rates so it can track state a softmax layer provably cannot |
-| 2026-09-08 | Proposed | [SOTA-168](../../record/practices.d/SOTA-168.md) | 7 | 0 | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself |
 | 2026-09-08 | Proposed | [SOTA-169](../../record/practices.d/SOTA-169.md) | 5 | 0 | Widen the residual stream into several streams and constrain the mixing between them |
 | 2026-09-08 | Proposed | [SOTA-176](../../record/practices.d/SOTA-176.md) | 5 | 0 | Hybridise inside the layer: long-term slots, a sliding window, and one softmax over both, with the window size as the only dial |
 | 2026-09-08 | Proposed | [SOTA-177](../../record/practices.d/SOTA-177.md) | 4 | 0 | Decouple the erase address from the write address in a delta-rule recurrence |
@@ -69,21 +69,25 @@
 | 2026-09-17 | Proposed | [SOTA-234](../../record/practices.d/SOTA-234.md) | 0 | 0 | Train in the target low-bit format from scratch rather than quantizing a finished model |
 | 2026-09-19 | Proposed | [SOTA-255](../../record/practices.d/SOTA-255.md) | 11 | 0 | Tune weight decay upward when pretraining over a repeated corpus, rather than inheriting the customary value |
 | 2026-09-19 | Proposed | [SOTA-254](../../record/practices.d/SOTA-254.md) | 3 | 0 | Train the language model as a masked diffusion model when the corpus is fixed and the compute is not |
+| 2026-09-19 | Proposed | [SOTA-256](../../record/practices.d/SOTA-256.md) | 3 | 0 | Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget |
 | 2026-09-19 | Proposed | [SOTA-251](../../record/practices.d/SOTA-251.md) | 2 | 0 | Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule |
 | 2026-09-19 | Proposed | [SOTA-257](../../record/practices.d/SOTA-257.md) | 1 | 0 | Spend surplus compute on an ensemble of independently seeded models and distil it, rather than on one larger model |
-| 2026-09-19 | Proposed | [SOTA-256](../../record/practices.d/SOTA-256.md) | 0 | 0 | Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget |
 | 2026-09-20 | Proposed | [SOTA-261](../../record/practices.d/SOTA-261.md) | 5 | 0 | Set AdamW's weight decay by targeting a timescale that follows a power law in tokens-per-parameter |
 | 2026-09-20 | Proposed | [SOTA-260](../../record/practices.d/SOTA-260.md) | 3 | 0 | Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it |
 | 2026-09-20 | Proposed | [SOTA-268](../../record/practices.d/SOTA-268.md) | 3 | 0 | Do not transfer a data mixing ratio across model scales; the threshold where a domain starts being learned moves with size |
+| 2026-09-20 | Proposed | [SOTA-274](../../record/practices.d/SOTA-274.md) | 3 | 0 | Before adopting a spectral optimizer, measure the stable rank of each block's incoming activations against its gradient's nuclear rank |
 | 2026-09-20 | Proposed | [SOTA-267](../../record/practices.d/SOTA-267.md) | 2 | 0 | Start the training distribution imbalanced and flatten it, rather than holding it uniform throughout |
+| 2026-09-20 | Proposed | [SOTA-272](../../record/practices.d/SOTA-272.md) | 2 | 0 | Expect the loss to be non-monotone at the step size that trains fastest, and do not set the step size from a curvature bound |
 | 2026-09-20 | Proposed | [SOTA-259](../../record/practices.d/SOTA-259.md) | 1 | 0 | Hold Adam's second-moment half-life fixed in tokens when the batch size changes, not beta_2 |
 | 2026-09-20 | Proposed | [SOTA-262](../../record/practices.d/SOTA-262.md) | 1 | 0 | Give each modality its own weights and let the streams attend jointly |
 | 2026-09-20 | Proposed | [SOTA-263](../../record/practices.d/SOTA-263.md) | 1 | 0 | Shift the timestep schedule when the resolution changes, because more pixels need more noise |
 | 2026-09-20 | Proposed | [SOTA-264](../../record/practices.d/SOTA-264.md) | 1 | 0 | Fix the noise schedule's endpoints against the bound and choose its shape to minimise the loss estimator's variance |
+| 2026-09-20 | Proposed | [SOTA-271](../../record/practices.d/SOTA-271.md) | 1 | 0 | Train on a second modality even when the target is single-modality |
+| 2026-09-20 | Proposed | [SOTA-273](../../record/practices.d/SOTA-273.md) | 1 | 0 | Choose a pretraining context whose association with the input is neither too strong nor too weak, and mix contexts to get there |
 
 ## THEORYs
 
-12 of the 98.
+17 of the 107.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -95,14 +99,19 @@
 | 2026-09-16 | Proposed | [THEORY-012](../../record/theory.d/THEORY-012.md) | 7 | 0 | How far a batch-size scaling heuristic transfers is a property of the optimizer, not of the heuristic |
 | 2026-09-16 | Proposed | [THEORY-014](../../record/theory.d/THEORY-014.md) | 3 | 0 | The outer optimizer is what buys the inner step count |
 | 2026-09-17 | Proposed | [THEORY-023](../../record/theory.d/THEORY-023.md) | 2 | 0 | Depth-dependent computation in a transformer falls into four stages, of which detokenization is the first |
+| 2026-09-19 | Proposed | [THEORY-024](../../record/theory.d/THEORY-024.md) | 20 | 0 | Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map |
 | 2026-09-19 | Proposed | [THEORY-025](../../record/theory.d/THEORY-025.md) | 7 | 0 | A transformer holds about 3.6 bits per parameter, and generalization begins where the data outgrows that budget |
+| 2026-09-20 | Proposed | [THEORY-030](../../record/theory.d/THEORY-030.md) | 11 | 0 | Adaptive optimizers work by shaping the curvature they adapt to, and oscillation is how a first-order method sees curvature at all |
+| 2026-09-20 | Proposed | [THEORY-032](../../record/theory.d/THEORY-032.md) | 6 | 0 | A spectral update wins where the incoming activations are low stable rank and the gradient spectrum is spread out |
+| 2026-09-20 | Proposed | [THEORY-033](../../record/theory.d/THEORY-033.md) | 6 | 0 | What a spectral optimizer buys is a step size that stays optimal, not adherence to a target geometry |
 | 2026-09-20 | Proposed | [THEORY-026](../../record/theory.d/THEORY-026.md) | 3 | 0 | Critical batch size is set by how much data has been seen, not by how large the model is |
 | 2026-09-20 | Proposed | [THEORY-029](../../record/theory.d/THEORY-029.md) | 3 | 0 | A model of bounded capacity allocates it across datasets like a knapsack, so the optimum jumps rather than sliding |
-| 2026-09-20 | Proposed | [THEORY-030](../../record/theory.d/THEORY-030.md) | 3 | 0 | Adaptive optimizers work by shaping the curvature they adapt to, and oscillation is how a first-order method sees curvature at all |
+| 2026-09-20 | Proposed | [THEORY-036](../../record/theory.d/THEORY-036.md) | 3 | 0 | Representations converge across architectures, objectives and modalities, and the endpoint is a model of what generated the data |
+| 2026-09-20 | Proposed | [THEORY-034](../../record/theory.d/THEORY-034.md) | 1 | 0 | Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations |
 
 ## LITs
 
-3 of the 98.
+3 of the 107.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -112,15 +121,15 @@
 
 ## ADRs
 
-16 of the 98.
+16 of the 107.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 2 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-09 | Proposed | [ADR-024](../../record/decisions.d/ADR-024.md) | 6 | 0 | The topic vocabulary has four recurring seams — options, not a decision |
 | 2026-09-14 | Proposed | [ADR-028](../../record/decisions.d/ADR-028.md) | 1 | 1 | One topic vocabulary, one set of glosses: the blurbs are shared too |
-| 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 18 | 0 | A scheme for explanations, complementing the practice registry |
-| 2026-09-15 | Proposed | [ADR-034](../../record/decisions.d/ADR-034.md) | 10 | 0 | A document that changes scheme is Superseded where it leaves, and names its successor across the boundary |
+| 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 22 | 0 | A scheme for explanations, complementing the practice registry |
+| 2026-09-15 | Proposed | [ADR-034](../../record/decisions.d/ADR-034.md) | 13 | 0 | A document that changes scheme is Superseded where it leaves, and names its successor across the boundary |
 | 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 7 | 1 | Every practice states its origin, even when it is the primary source |
 | 2026-09-15 | Proposed | [ADR-033](../../record/decisions.d/ADR-033.md) | 0 | 0 | Readings made in another context port into the record; their agenda does not |
 | 2026-09-16 | Proposed | [ADR-035](../../record/decisions.d/ADR-035.md) | 38 | 0 | A document may carry more than one topic; the first is the primary |
@@ -137,4 +146,4 @@ The citation count is the second axis, and it flips the priority: an old proposa
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (10): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md), [ADR-040](../../record/decisions.d/ADR-040.md), [ADR-042](../../record/decisions.d/ADR-042.md), [SOTA-234](../../record/practices.d/SOTA-234.md), [SOTA-256](../../record/practices.d/SOTA-256.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (9): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md), [ADR-040](../../record/decisions.d/ADR-040.md), [ADR-042](../../record/decisions.d/ADR-042.md), [SOTA-234](../../record/practices.d/SOTA-234.md) — these are the cheapest to close, since nothing depends on the answer.

@@ -1,5 +1,8 @@
 ---
+number: 272
 status: Proposed
+formerly:
+- SOTA-tmp3zoc9
 consensus: unassessed
 consensus_note: >-
   Nobody has surveyed what practitioners believe about short-timescale loss
@@ -20,26 +23,26 @@ tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmpnqv3x
+- LIT-461
 introduced_by:
-- LIT-tmpnqv3x
+- LIT-461
 implementations: []
 summary: >-
-  Cohen et al. (2021), [LIT-tmpnqv3x](../literature.d/LIT-tmpnqv3x.md) — gradient descent raises the
+  Cohen et al. (2021), [LIT-461](../literature.d/LIT-461.md) — gradient descent raises the
   sharpness until its own step size cannot tolerate more, so a rule that
   anneals the step size to the measured curvature is chasing a number it is
   producing, and loses to the fixed step it forbids. Demonstrated full-batch.
 explained_by:
-- THEORY-tmpp47kd
+- THEORY-035
 ---
 
-# SOTA-tmp3zoc9: Expect the loss to be non-monotone at the step size that trains fastest, and do not set the step size from a curvature bound
+# SOTA-272: Expect the loss to be non-monotone at the step size that trains fastest, and do not set the step size from a curvature bound
 
 ## Source
 
-Cohen et al. (2021), [LIT-tmpnqv3x](../literature.d/LIT-tmpnqv3x.md) — [ARXIV-2103.00065](https://arxiv.org/abs/2103.00065),
-read as [NOTE-tmp72c2z](../notes.d/NOTE-tmp72c2z.md). Accounted for by
-[THEORY-tmpp47kd](../theory.d/THEORY-tmpp47kd.md).
+Cohen et al. (2021), [LIT-461](../literature.d/LIT-461.md) — [ARXIV-2103.00065](https://arxiv.org/abs/2103.00065),
+read as [NOTE-205](../notes.d/NOTE-205.md). Accounted for by
+[THEORY-035](../theory.d/THEORY-035.md).
 
 ## What to do
 

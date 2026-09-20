@@ -1,5 +1,8 @@
 ---
+number: 34
 status: Proposed
+formerly:
+- THEORY-tmpbqmje
 promote_when: >-
   The lattice recovered for concepts nobody curated — clustered from a model's
   own embeddings rather than taken from an ontology built to have hierarchical
@@ -13,22 +16,22 @@ tags:
 - representation-and-encoding
 date: '2026-09-20'
 source:
-- LIT-tmpnglrb
+- LIT-460
 explains: []
 summary: >-
-  Xiong (2026), [LIT-tmpnglrb](../literature.d/LIT-tmpnglrb.md) — a linear attribute direction plus a
+  Xiong (2026), [LIT-460](../literature.d/LIT-460.md) — a linear attribute direction plus a
   separating threshold is a half-space, a concept is the intersection of its
   attributes' half-spaces, and the resulting regions form a complete lattice.
   Conceptual refinement is geometric meet, generalisation is join. Evidence is
   WordNet, which is a hand-built hierarchy and so the friendliest test there is.
 ---
 
-# THEORY-tmpbqmje: Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations
-<!-- inactive-ok-file: THEORY-tmpwwu1v — Proposed, and filed in this same contribution; named as standing on the same absent trunk -->
+# THEORY-034: Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations
+<!-- inactive-ok-file: THEORY-036 — Proposed, and filed in this same contribution; named as standing on the same absent trunk -->
 
 ## Source
 
-Xiong (2026), [LIT-tmpnglrb](../literature.d/LIT-tmpnglrb.md) — [ARXIV-2603.01227](https://arxiv.org/abs/2603.01227).
+Xiong (2026), [LIT-460](../literature.d/LIT-460.md) — [ARXIV-2603.01227](https://arxiv.org/abs/2603.01227).
 
 ## What was actually shown
 
@@ -96,7 +99,7 @@ version.
 
 ## The trunk underneath
 
-Both this and [THEORY-tmpwwu1v](THEORY-tmpwwu1v.md), filed in the same contribution, stand on the
+Both this and [THEORY-036](THEORY-036.md), filed in the same contribution, stand on the
 **Linear Representation Hypothesis** — and the record holds no document for
 it, nor for steering vectors, nor for concept directions generally. Filing
 two elaborations of an absent foundation is backwards.

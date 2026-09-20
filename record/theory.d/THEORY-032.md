@@ -1,5 +1,8 @@
 ---
+number: 32
 status: Proposed
+formerly:
+- THEORY-tmp5iwhe
 promote_when: >-
   An ablation that uses the condition as a decision rule — spectral updates on
   the blocks that pass it, Euclidean on the blocks that fail — and trains
@@ -15,25 +18,25 @@ tags:
 - training-optimization
 date: '2026-09-20'
 source:
-- LIT-tmpdw28d
+- LIT-457
 explains:
 - SOTA-165
-- SOTA-tmpybkk5
+- SOTA-274
 summary: >-
-  Davis and Drusvyatskiy (2025), [LIT-tmpdw28d](../literature.d/LIT-tmpdw28d.md) — the spectral step's
+  Davis and Drusvyatskiy (2025), [LIT-457](../literature.d/LIT-457.md) — the spectral step's
   one-step guarantee beats the Euclidean one by exactly the ratio of the
   gradient's nuclear rank to the incoming activations' stable rank, and
   transformers sit where that ratio is large. A comparison of bounds, not of
   realized training.
 ---
 
-<!-- inactive-ok-file: THEORY-024 SOTA-tmpybkk5 THEORY-tmp6a2vb — THEORY-024 is Proposed and is distinguished from, not leaned on; the other two are Proposed and filed in this same contribution -->
-# THEORY-tmp5iwhe: A spectral update wins where the incoming activations are low stable rank and the gradient spectrum is spread out
+<!-- inactive-ok-file: THEORY-024 SOTA-274 THEORY-033 — THEORY-024 is Proposed and is distinguished from, not leaned on; the other two are Proposed and filed in this same contribution -->
+# THEORY-032: A spectral update wins where the incoming activations are low stable rank and the gradient spectrum is spread out
 
 ## Source
 
-Davis and Drusvyatskiy (2025), [LIT-tmpdw28d](../literature.d/LIT-tmpdw28d.md) — read as
-[NOTE-tmprnxym](../notes.d/NOTE-tmprnxym.md).
+Davis and Drusvyatskiy (2025), [LIT-457](../literature.d/LIT-457.md) — read as
+[NOTE-209](../notes.d/NOTE-209.md).
 
 ## The account
 
@@ -86,7 +89,7 @@ ratio, and the paper does not claim it does.
 
 **It does not tell you to route updates by block.** The rule of thumb is
 stated, and the ablation that would test it — spectral where the condition
-holds, Euclidean elsewhere — is not run. [SOTA-tmpybkk5](../practices.d/SOTA-tmpybkk5.md) is therefore a
+holds, Euclidean elsewhere — is not run. [SOTA-274](../practices.d/SOTA-274.md) is therefore a
 measurement and not a routing recipe; that restraint is [ADR-017](../decisions.d/ADR-017.md)'s
 question about what a claim's source can carry.
 
@@ -96,7 +99,7 @@ norm. This says *when* a spectral update pays. Both could be true. What this
 does supply is the independent second account the record did not have — and
 `THEORY-024` closes by noting that all three of its sources share authors.
 
-**Nor is it [THEORY-tmp6a2vb](../theory.d/THEORY-tmp6a2vb.md)'s claim.** That account locates the
+**Nor is it [THEORY-033](../theory.d/THEORY-033.md)'s claim.** That account locates the
 advantage in step-size realizability. This one locates it in rank structure.
 Neither paper cites the other, and the record holds them as two hypotheses
 rather than one, because nobody has shown they are the same mechanism.

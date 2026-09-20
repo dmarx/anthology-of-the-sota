@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-74 of 390 LIT documents. Back to the [full index](../README.md).
+75 of 396 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -84,3 +84,4 @@
 | [LIT-440](../../../record/literature.d/LIT-440.md) | How much do language models memorize? | Morris et al. (2025), [ARXIV-2505.24832](https://arxiv.org/abs/2505.24832). Separates what a model stores about a specific dataset from what it stores about the data-generating process, and measures the first by training on uniform random bitstrings where the second is impossible. GPT-style transformers hold about 3.6 bits per parameter, near-independent of precision, and the capacity is linear in parameter count across hundreds of models from 500K to 1.5B. | Active |
 | [LIT-452](../../../record/literature.d/LIT-452.md) | Scaling Laws for Fact Memorization of Large Language Models | Lu et al. (2024), [ARXIV-2406.15720](https://arxiv.org/abs/2406.15720). Fact capacity scales linearly with model size and saturates in training epochs along a negative exponential. Extrapolated, memorising all 15B Wikidata triples wants about 1000B non-embedding parameters trained for 100 epochs. Redundant facts cost full price unless they share direction and structure, so parameters are an expensive place to keep a knowledge base. | Active |
 | [LIT-455](../../../record/literature.d/LIT-455.md) | Hidden Breakthroughs in Language Model Training | Kangaslahti et al. (2025), [ARXIV-2506.15872](https://arxiv.org/abs/2506.15872). A smooth loss curve is not evidence of smooth training. POLCA decomposes the change in loss along a low-rank basis of the training subspace and per example, and the breakthroughs the aggregate hides come back — on synthetic arithmetic it recovers the skill of carrying a digit, which clustering the exact loss curves does not. | Active |
+| [LIT-458](../../../record/literature.d/LIT-458.md) | The Platonic Representation Hypothesis | Huh et al. (2024), [ARXIV-2405.07987](https://arxiv.org/abs/2405.07987). Representations are converging: across architectures, objectives and modalities, and more so as models get larger. The conjecture is that they are converging on a statistical model of whatever generated the data. The mathematical argument holds only for bijective observations, which the authors say plainly and test at the boundary. | Active |

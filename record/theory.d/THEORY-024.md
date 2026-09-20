@@ -11,7 +11,7 @@ history:
   note: >-
     Demoted from `Active` to `Proposed`. This document closed by saying all
     three of its sources share authors and that it was `Active` "not because
-    anyone outside has confirmed the frame." Shumaylov et al. (LIT-tmp6umwv)
+    anyone outside has confirmed the frame." Shumaylov et al. (LIT-456)
     are the first outside group to test the frame, and they come back
     negative on its explanatory force: an optimizer that replaces the
     gradient's singular values with chaotic noise matches Muon. The
@@ -47,7 +47,7 @@ summary: >-
 ---
 
 <!-- inactive-ok-file: SOTA-168 SOTA-121 SOTA-143 — the three practices this account explains; SOTA-168 is Proposed and is cited as one of the two approximations, not as a settled recommendation -->
-<!-- inactive-ok-file: THEORY-tmp6a2vb THEORY-tmp5iwhe ADR-034 — the two rival accounts and the decision that keeps all three off the practices, all Proposed, all named in the v2 section rather than leaned on -->
+<!-- inactive-ok-file: THEORY-033 THEORY-032 ADR-034 — the two rival accounts and the decision that keeps all three off the practices, all Proposed, all named in the v2 section rather than leaned on -->
 
 # THEORY-024: Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map
 
@@ -131,7 +131,7 @@ found.
 *(Added at v2.)* The paragraph above rests the `Active` status on the
 argument being checkable and the practices being independently evidenced —
 not on anyone outside having confirmed the frame. Shumaylov et al.,
-[LIT-tmp6umwv](../literature.d/LIT-tmp6umwv.md), are the first outside group to look, and what they
+[LIT-456](../literature.d/LIT-456.md), are the first outside group to look, and what they
 built is the control this frame never had.
 
 `Kaon` replaces the gradient's singular values with noise from a chaotic
@@ -155,8 +155,8 @@ the record can point to.
 
 The counter-evidence is NanoGPT and WikiText-2 at 118M tokens against
 practices demonstrated from 90M to 1.6T parameters, and that asymmetry is
-why the demotion stops where it does. [THEORY-tmp6a2vb](../theory.d/THEORY-tmp6a2vb.md) holds the
-account the controls leave standing; [THEORY-tmp5iwhe](../theory.d/THEORY-tmp5iwhe.md) holds a third,
+why the demotion stops where it does. [THEORY-033](../theory.d/THEORY-033.md) holds the
+account the controls leave standing; [THEORY-032](../theory.d/THEORY-032.md) holds a third,
 from an unrelated group, that reaches the same practices through rank
 structure rather than geometry. None of the three touches
 [SOTA-121](../practices.d/SOTA-121.md), [SOTA-143](../practices.d/SOTA-143.md) or [SOTA-168](../practices.d/SOTA-168.md), which is

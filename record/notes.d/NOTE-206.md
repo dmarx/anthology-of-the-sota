@@ -1,6 +1,9 @@
 ---
+number: 206
 status: Read
-paper: LIT-tmpglvdv
+formerly:
+- NOTE-tmpjnc5p
+paper: LIT-458
 title: 'The Platonic Representation Hypothesis'
 version: 1
 date: '2026-09-20'
@@ -12,7 +15,7 @@ summary: >-
   that boundary rather than asserting past it.
 ---
 
-# NOTE-tmpjnc5p: The Platonic Representation Hypothesis
+# NOTE-206: The Platonic Representation Hypothesis
 
 ## Contribution
 
@@ -153,7 +156,7 @@ direction too, and that direction is much less common.
   fourteen notes are entirely tokenisation and positional encoding; nothing
   in the record says what a representation converges to.
 - **Names an absent trunk.** The Linear Representation Hypothesis is the
-  foundation this and [LIT-tmpnglrb](../literature.d/LIT-tmpnglrb.md) both build on, and the record holds
+  foundation this and [LIT-460](../literature.d/LIT-460.md) both build on, and the record holds
   no document for it.
 - **R2 should not be filed.** "Representations are portable" is not an
   instruction anybody can act on without the mapping, and the paper does not

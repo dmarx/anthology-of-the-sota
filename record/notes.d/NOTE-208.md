@@ -1,6 +1,9 @@
 ---
+number: 208
 status: Read
-paper: LIT-tmp6umwv
+formerly:
+- NOTE-tmpnr9by
+paper: LIT-456
 title: 'Muon is Not That Special'
 version: 1
 date: '2026-09-20'
@@ -11,8 +14,8 @@ summary: >-
   that Muon's optimal step size is constant where Euclidean descent's is not.
 ---
 
-<!-- inactive-ok-file: THEORY-024 THEORY-tmp6a2vb ADR-031 ADR-034 — THEORY-024 is Proposed as of this contribution and is what this reading demotes; THEORY-tmp6a2vb is Proposed and filed here from it; the two ADRs are Proposed and are the decisions that keep a contested explanation off its practices -->
-# NOTE-tmpnr9by: Muon is Not That Special
+<!-- inactive-ok-file: THEORY-024 THEORY-033 ADR-031 ADR-034 — THEORY-024 is Proposed as of this contribution and is what this reading demotes; THEORY-033 is Proposed and filed here from it; the two ADRs are Proposed and are the decisions that keep a contested explanation off its practices -->
+# NOTE-208: Muon is Not That Special
 
 ## Contribution
 
@@ -112,7 +115,7 @@ with a variable step size, non-LMO updates and stochasticity. It sits against
 the duality line — Bernstein and Newhouse, [LIT-438](../literature.d/LIT-438.md) — and against the
 LMO analyses of Kovalev and of Pethick et al. It cites Islamov et al. (2026),
 "Non-Euclidean gradient descent operates at the edge of stability", which
-joins this to [LIT-tmpnqv3x](../literature.d/LIT-tmpnqv3x.md); the record does not hold that paper.
+joins this to [LIT-461](../literature.d/LIT-461.md); the record does not hold that paper.
 Jiang et al.'s concurrent spectral clipping targets the same large singular
 values as `TruncatedSGD`.
 
@@ -127,7 +130,7 @@ values as `TruncatedSGD`.
   works; matrix preconditioning still wins the fair comparison. What is
   contested is the account, which is exactly the separation [ADR-031](../decisions.d/ADR-031.md)
   built the `THEORY` scheme for and [ADR-034](../decisions.d/ADR-034.md) restated.
-- **It produces [THEORY-tmp6a2vb](../theory.d/THEORY-tmp6a2vb.md)**, on step-size realizability as the
+- **It produces [THEORY-033](../theory.d/THEORY-033.md)**, on step-size realizability as the
   surviving account.
 - **It produces no practice.** The actionable residue — retune the learning
   rate per optimizer rather than transferring it — is already

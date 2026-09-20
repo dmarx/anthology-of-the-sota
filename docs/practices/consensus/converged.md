@@ -6,7 +6,7 @@
 
 **Agreed** — the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately.
 
-20 of 270 SOTA documents. Back to the [full index](../README.md).
+20 of 274 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

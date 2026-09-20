@@ -1,0 +1,69 @@
+---
+status: Active
+title: 'Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability'
+version: 1
+tags:
+- training-optimization
+date: '2026-09-20'
+published: '2021-02-01'
+arxiv: '2103.00065'
+first_author: 'Cohen'
+keywords:
+- 'edge-of-stability'
+- 'progressive-sharpening'
+- 'sharpness'
+- 'L-smoothness'
+- 'step-size-selection'
+implementations: []
+summary: >-
+  Cohen et al. (2021), [ARXIV-2103.00065](https://arxiv.org/abs/2103.00065). Full-batch gradient descent
+  drives the maximum Hessian eigenvalue up until it reaches `2/eta`, then
+  trains there: the loss goes non-monotone over short timescales and keeps
+  falling over long ones. The paper the record has been treating as
+  established premise without holding it.
+extended_by:
+- LIT-453
+---
+
+<!-- inactive-ok-file: THEORY-030 — Proposed, and named precisely to say that it asserted this regime as established while the record held no paper for it -->
+# LIT-tmpnqv3x: Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability
+
+Cohen et al. (2021) — [ARXIV-2103.00065](https://arxiv.org/abs/2103.00065)
+
+## Key takeaways
+
+- **Progressive sharpening, then a ceiling.** While the sharpness — strictly,
+  the maximum eigenvalue of the training-loss Hessian, and the paper is
+  explicit that it means nothing else by the word — is below `2/eta`, it
+  rises. Once it reaches `2/eta` it stops rising and hovers there for the
+  rest of training. The threshold is not incidental: `2/eta` is where
+  gradient descent on a quadratic becomes unstable.
+- **The regime is the rule, not the exception.** Step sizes small enough to
+  keep the sharpness below `2/eta` exist but are so small as to be
+  unreasonable on standard architectures and CIFAR-10. At any step size a
+  practitioner would pick, training is at the edge of stability.
+- **Three standard analytical moves fail there, and the paper names them.**
+  `L`-smoothness cannot hold along the trajectory, because the sharpness sits
+  just *above* the bound that assumption needs. Monotone descent does not
+  hold. And the local quadratic Taylor model diverges where the real
+  objective makes steady progress, so the behaviour is inherently
+  non-quadratic.
+- **The curvature-based step-size rule loses to the one it forbids.** The
+  textbook prescription sets `eta = 1/sharpness`. Run that against a fixed
+  `eta = 2/S0` — the step size the rule calls impermissible — and the fixed
+  one wins. The adaptive rule buys monotone descent by continually annealing,
+  and the annealing costs more than the non-monotonicity does.
+- **The authors decline two claims a reader will want to make for them.**
+  Sharpness here is not asserted to have any connection to generalization.
+  And the characterization is for *full-batch* gradient descent: under SGD
+  the sharpness does not settle at any predictable value, though large steps
+  and small batches do steer it lower.
+
+## Standing in the anthology
+
+The record cited this regime before it held the paper. [THEORY-030](../theory.d/THEORY-030.md)'s
+`promote_when` says of the edge of stability that it "is established and is
+the premise rather than the claim" — an assertion about the literature with
+nothing in the record behind it, which is the shape [ADR-017](../decisions.d/ADR-017.md) is about.
+[LIT-453](../literature.d/LIT-453.md) builds directly on this work, by the same first author, and
+declares the `extends` edge that the record could not previously write.

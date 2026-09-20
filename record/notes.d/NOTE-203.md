@@ -15,6 +15,7 @@ summary: >-
   further later, which ablating makes them slower.
 ---
 
+<!-- inactive-ok-file: THEORY-024 — Proposed since the Kaon control (LIT-tmp6umwv); named as the adjacent account this reading is not, which stands either way -->
 # NOTE-203: Central Flows
 <!-- inactive-ok-file: SOTA-255 — Proposed, and named as one of the two explicit curvature-affecting knobs this reading says has no joint account with the implicit one -->
 <!-- inactive-ok-file: SOTA-261 — Proposed, and named in the same sentence and for the same reason -->

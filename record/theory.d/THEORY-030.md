@@ -30,6 +30,7 @@ summary: >-
   information at no extra cost.
 ---
 
+<!-- inactive-ok-file: THEORY-024 — Proposed since the Kaon control (LIT-tmp6umwv); this section exists to contrast the two accounts, and a contrast with an account in doubt is still a contrast (ADR-010) -->
 # THEORY-030: Adaptive optimizers work by shaping the curvature they adapt to, and oscillation is how a first-order method sees curvature at all
 
 ## Source

@@ -21,8 +21,7 @@ source:
 introduced_by:
 - LIT-052
 implementations:
-- vision_transformer
-- bert
+- LIT-052
 summary: >-
   Tay et al. (2021), [LIT-052](../literature.d/LIT-052.md) — [ARXIV-2109.10686](https://arxiv.org/abs/2109.10686). Rejected: the source contains no discussion of layer normalization, and the claim names no adjustable quantity.
 ---

@@ -19,7 +19,7 @@ source:
 introduced_by:
 - LIT-383
 implementations:
-- 'SCoRe'
+- LIT-383
 summary: >-
   Kumar et al. (2024), [LIT-383](../literature.d/LIT-383.md) — [ARXIV-2409.12917](https://arxiv.org/abs/2409.12917). Self-correction is a
   capability to be trained, not a behaviour to be requested. Prompting a model

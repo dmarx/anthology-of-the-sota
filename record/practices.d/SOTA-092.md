@@ -16,7 +16,7 @@ introduced_by:
 summary: >-
   Chowdhery et al. (2022), [LIT-069](../literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311).
 implementations:
-- PaLM
+- LIT-069
 compared_against:
 - SOTA-093
 - SOTA-094

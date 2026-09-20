@@ -23,10 +23,10 @@ introduced_by:
 extends:
 - SOTA-150
 implementations:
-- DeepSeekMoE
-- DeepSeek-V3
-- DeepSeek-V4
-- Kimi K3
+- LIT-170
+- LIT-160
+- LIT-139
+- LIT-131
 summary: >-
   Dai et al. (2024), [LIT-170](../literature.d/LIT-170.md) — split into mN smaller experts and activate mK
   of them so the router chooses from a far larger combination space at the

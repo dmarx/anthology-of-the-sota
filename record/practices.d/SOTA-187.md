@@ -31,7 +31,7 @@ source:
 introduced_by:
 - LIT-062
 implementations:
-- Stable Diffusion
+- LIT-062
 ---
 
 # SOTA-187: Train the generative model in a learned compressed latent, not at full resolution

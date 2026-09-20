@@ -45,8 +45,8 @@ extends:
 compared_against:
 - SOTA-131
 implementations:
-- ViT-22B
-- DeepSeek-V4
+- LIT-088
+- LIT-139
 ---
 
 # SOTA-192: Normalize the queries and keys before the attention dot product

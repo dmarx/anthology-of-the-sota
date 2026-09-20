@@ -54,7 +54,7 @@ introduced_by:
 extends:
 - SOTA-150
 implementations:
-- DeepSeek-V3
+- LIT-160
 summary: >-
   Wang et al. (2024), [LIT-171](../literature.d/LIT-171.md) — add a per-expert bias to the routing scores
   before the top-K decision and update it from that expert's recent load, so

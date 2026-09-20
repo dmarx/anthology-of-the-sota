@@ -26,8 +26,7 @@ source:
 introduced_by:
 - LIT-381
 implementations:
-- 'DiffuGPT'
-- 'DiffuLLaMA'
+- LIT-381
 summary: >-
   Gong et al. (2024), [LIT-381](../literature.d/LIT-381.md) — [ARXIV-2410.17891](https://arxiv.org/abs/2410.17891). Continual pretraining on
   under 200B tokens turns an existing autoregressive model into a diffusion

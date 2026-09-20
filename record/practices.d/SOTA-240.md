@@ -30,7 +30,7 @@ source:
 introduced_by:
 - LIT-394
 implementations:
-- 'Falcon-H1-Tiny (0.1 after the linear projections, for a repeated FIM corpus)'
+- LIT-119
 summary: >-
   Srivastava et al. (2014), [LIT-395](../literature.d/LIT-395.md) — dropout has a "sweet spot" in
   dataset size and reports both of its edges: no gain at all on data small

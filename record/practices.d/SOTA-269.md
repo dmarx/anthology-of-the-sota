@@ -25,7 +25,7 @@ source:
 introduced_by:
 - LIT-452
 implementations:
-- 'RETRO'
+- LIT-060
 summary: >-
   Lu et al. (2024), [LIT-452](../literature.d/LIT-452.md) — fact capacity is linear in model size
   and saturates in epochs, and the extrapolation is damning: all of Wikidata

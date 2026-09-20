@@ -37,12 +37,12 @@ source:
 introduced_by:
 - LIT-188
 implementations:
-- DeepSeek-V3
-- DeepSeek-V4
-- Kimi K2
-- Kimi K3
-- Qwen3
-- Nemotron 3 Nano
+- LIT-160
+- LIT-139
+- LIT-132
+- LIT-131
+- LIT-182
+- LIT-183
 summary: >-
   Shazeer et al. (2017), [LIT-188](../literature.d/LIT-188.md) — route each token to a few of
   many feed-forward experts instead of running one dense feed-forward for

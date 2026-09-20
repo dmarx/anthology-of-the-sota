@@ -18,7 +18,7 @@ source:
 introduced_by:
 - LIT-072
 implementations:
-- OWL-ViT
+- LIT-072
 ---
 
 # SOTA-201: Give each pretrained component its own learning rate when fine-tuning a composite model

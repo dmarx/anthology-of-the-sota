@@ -19,7 +19,7 @@ source:
 introduced_by:
 - LIT-tmpdoa3b
 implementations:
-- 'POLCA'
+- LIT-tmpdoa3b
 summary: >-
   Kangaslahti et al. (2025), [LIT-tmpdoa3b](../literature.d/LIT-tmpdoa3b.md), with Cohen et al.
   [LIT-tmp20sa6](../literature.d/LIT-tmp20sa6.md) and Kunin et al. [LIT-tmp82k5k](../literature.d/LIT-tmp82k5k.md) — the curve

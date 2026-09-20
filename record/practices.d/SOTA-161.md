@@ -42,7 +42,7 @@ introduced_by:
 extends:
 - SOTA-085
 implementations:
-- 'Kimi K3'
+- LIT-131
 summary: >-
   Qiu et al. (2025), [LIT-198](../literature.d/LIT-198.md) — putting flash attention in BF16 while the
   FFN goes to FP8 sometimes explodes, and the cause is two things at once:

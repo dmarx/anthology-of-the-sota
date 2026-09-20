@@ -38,7 +38,7 @@ summary: >-
   scale in low precision: two groups now ship bounded replacements, on the
   grounds that SwiGLU's unbounded factors produce activation outliers.
 implementations:
-- llama2
+- LIT-003
 compared_against:
 - SOTA-158
 ---

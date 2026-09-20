@@ -24,7 +24,7 @@ source:
 introduced_by:
 - LIT-173
 implementations:
-- 'RWKV-7 Goose (0.19B–2.9B)'
+- LIT-173
 summary: >-
   Peng et al. (2025), [LIT-173](../literature.d/LIT-173.md) — a generalised delta rule with vector-valued
   gating and in-context learning rates, at constant memory and constant time

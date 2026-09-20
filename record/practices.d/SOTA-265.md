@@ -20,7 +20,7 @@ source:
 introduced_by:
 - LIT-447
 implementations:
-- 'SiT-XL'
+- LIT-447
 summary: >-
   Ma et al. (2024), [LIT-447](../literature.d/LIT-447.md) — score-based diffusion conventionally
   takes the reverse SDE's diffusion coefficient from the forward process, and

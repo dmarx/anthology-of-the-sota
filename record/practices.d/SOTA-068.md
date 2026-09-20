@@ -23,8 +23,7 @@ source:
 introduced_by:
 - LIT-052
 implementations:
-- vision_transformer
-- bert
+- LIT-052
 summary: >-
   Tay et al. (2021), [LIT-052](../literature.d/LIT-052.md) — [ARXIV-2109.10686](https://arxiv.org/abs/2109.10686). Superseded by [SOTA-035](SOTA-035.md), which cites Pascanu et al. and drops the "early training" qualifier.
 ---

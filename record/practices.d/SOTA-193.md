@@ -23,7 +23,7 @@ source:
 introduced_by:
 - LIT-065
 implementations:
-- MT-NLG
+- LIT-065
 ---
 
 # SOTA-193: Lower Adam's second-moment decay when the loss spikes, before reaching for the learning rate

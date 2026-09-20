@@ -26,8 +26,8 @@ source:
 introduced_by:
 - LIT-052
 implementations:
-- t5
-- vision_transformer
+- LIT-425
+- LIT-052
 compared_against:
 - SOTA-125
 summary: >-

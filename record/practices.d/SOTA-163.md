@@ -23,8 +23,8 @@ source:
 introduced_by:
 - LIT-197
 implementations:
-- 'DeepSeek-V4'
-- 'Kimi K3'
+- LIT-139
+- LIT-131
 summary: >-
   Rouhani et al. (2023), [LIT-197](../literature.d/LIT-197.md) — an MX block is 32 elements sharing one
   E8M0 scale, so applying the scale is an exponent adjustment rather than a

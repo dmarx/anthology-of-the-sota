@@ -18,7 +18,7 @@ source:
 introduced_by:
 - LIT-079
 implementations:
-- DreamBooth
+- LIT-079
 ---
 
 # SOTA-199: Regularize a narrow fine-tune against the pre-fine-tuning model's own samples

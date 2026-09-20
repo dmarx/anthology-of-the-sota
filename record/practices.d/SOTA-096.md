@@ -13,8 +13,8 @@ introduced_by:
 summary: >-
   Hoffmann et al. (2022), [LIT-068](../literature.d/LIT-068.md) — [ARXIV-2203.15556](https://arxiv.org/abs/2203.15556).
 implementations:
-- chinchilla
-- llama2
+- LIT-068
+- LIT-003
 ---
 
 # SOTA-096: `num_tokens ~ 20 * num_params`

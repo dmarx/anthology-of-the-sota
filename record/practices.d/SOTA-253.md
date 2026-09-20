@@ -20,7 +20,7 @@ source:
 introduced_by:
 - LIT-111
 implementations:
-- OnePose
+- LIT-111
 summary: >-
   Sun et al. (2022), [LIT-111](../literature.d/LIT-111.md) — [ARXIV-2205.12257](https://arxiv.org/abs/2205.12257). Split what the
   system knows about a specific object from what it has learned in general.

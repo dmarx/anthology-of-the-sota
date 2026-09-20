@@ -13,7 +13,7 @@ introduced_by:
 summary: >-
   Sennrich et al. (2015), [LIT-003](../literature.d/LIT-003.md) — [ARXIV-1508.07909](https://arxiv.org/abs/1508.07909).
 implementations:
-- llama2
+- LIT-003
 ---
 
 # SOTA-007: BPE tokenization for open vocabulary tasks

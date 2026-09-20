@@ -26,7 +26,7 @@ source:
 introduced_by:
 - LIT-449
 implementations:
-- 'Stable Diffusion 3'
+- LIT-449
 summary: >-
   Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md) — MMDiT gives the text and image
   streams separate projections and MLPs, then runs attention over the

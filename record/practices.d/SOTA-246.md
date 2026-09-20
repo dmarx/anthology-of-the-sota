@@ -31,7 +31,7 @@ source:
 introduced_by:
 - LIT-403
 implementations:
-- 'TracIn'
+- LIT-400
 summary: >-
   Koh and Liang (2017), [LIT-403](../literature.d/LIT-403.md), with [LIT-400](../literature.d/LIT-400.md) — rank training
   points by their influence on their own loss and inspect from the top.

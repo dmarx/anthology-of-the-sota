@@ -15,7 +15,7 @@ keywords:
 - 'learning-dynamics'
 - 'interpretability'
 implementations:
-- 'POLCA'
+- LIT-tmpdoa3b
 summary: >-
   Kangaslahti et al. (2025), [ARXIV-2506.15872](https://arxiv.org/abs/2506.15872). A smooth loss curve is
   not evidence of smooth training. POLCA decomposes the change in loss along

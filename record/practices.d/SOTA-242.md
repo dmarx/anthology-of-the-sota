@@ -28,7 +28,7 @@ source:
 introduced_by:
 - LIT-087
 implementations:
-- 'DSIR'
+- LIT-087
 summary: >-
   Xie et al. (2023), [LIT-087](../literature.d/LIT-087.md) — data selection needs a description of what you
   want, not a criterion for what is good. Supply a small sample of the target

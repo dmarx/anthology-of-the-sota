@@ -19,7 +19,7 @@ source:
 introduced_by:
 - LIT-225
 implementations:
-- 'GPT-3'
+- LIT-225
 summary: >-
   Child et al. (2019), [LIT-225](../literature.d/LIT-225.md) — [ARXIV-1904.10509](https://arxiv.org/abs/1904.10509). Superseded: the field
   went to exact attention made fast ([SOTA-086](SOTA-086.md), [SOTA-087](SOTA-087.md)) and then to sparsity

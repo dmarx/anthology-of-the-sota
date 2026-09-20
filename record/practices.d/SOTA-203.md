@@ -20,8 +20,8 @@ source:
 introduced_by:
 - LIT-076
 implementations:
-- Stable Diffusion
-- diffusers
+- LIT-062
+- LIT-tmpgpqc2
 summary: >-
   Lu et al. (2022), [LIT-076](../literature.d/LIT-076.md) — the diffusion ODE is semi-linear, so
   solve the linear part exactly and approximate only the neural integral.

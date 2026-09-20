@@ -38,7 +38,7 @@ source:
 introduced_by:
 - LIT-391
 implementations:
-- 'DoReMi'
+- LIT-391
 summary: >-
   Xie et al. (2023), [LIT-391](../literature.d/LIT-391.md) — [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429). Train a small proxy under
   group DRO to produce domain weights, then resample and train the real model

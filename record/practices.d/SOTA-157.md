@@ -40,7 +40,7 @@ source:
 introduced_by:
 - LIT-217
 implementations:
-- 'LLaDA 8B'
+- LIT-217
 summary: >-
   Nie et al. (2025), [LIT-217](../literature.d/LIT-217.md) — hold the paradigm fixed (pretrain, then
   SFT) and swap only the factorization: a forward masking process and a

@@ -23,9 +23,7 @@ introduced_by:
 extends:
 - SOTA-150
 implementations:
-- 'Kimi K3'
-- 'Nemotron-3 Super'
-- 'Nemotron-3 Ultra'
+- LIT-131
 summary: >-
   Elango et al. (2026), [LIT-196](../literature.d/LIT-196.md) — down-project the token before the routed
   experts and keep their weights in that latent space, dispatching and

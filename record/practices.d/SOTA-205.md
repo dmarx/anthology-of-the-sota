@@ -24,10 +24,10 @@ source:
 introduced_by:
 - LIT-064
 implementations:
-- Instant-NGP
-- 3D Gaussian Splatting
-- K-Planes
-- NeuS2
+- LIT-064
+- LIT-108
+- LIT-086
+- LIT-109
 summary: >-
   Four independent groups, three structures. Where a field is queried
   pointwise and the signal is spatially sparse, the capacity belongs in an

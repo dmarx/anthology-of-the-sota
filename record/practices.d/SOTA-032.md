@@ -38,7 +38,7 @@ source:
 introduced_by:
 - LIT-114
 implementations:
-- llama2
+- LIT-003
 compared_against:
 - SOTA-100
 summary: >-

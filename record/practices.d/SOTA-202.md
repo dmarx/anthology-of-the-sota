@@ -20,7 +20,7 @@ introduced_by:
 compared_against:
 - SOTA-035
 implementations:
-- Imagen
+- LIT-073
 ---
 
 # SOTA-202: Clamp the prediction to the training range at every step when sampling from a model's own output

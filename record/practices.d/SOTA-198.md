@@ -34,7 +34,7 @@ introduced_by:
 extends:
 - SOTA-097
 implementations:
-- MT-NLG
+- LIT-065
 ---
 
 <!-- inactive-ok-file: THEORY-013 — Rejected, and cited as what this

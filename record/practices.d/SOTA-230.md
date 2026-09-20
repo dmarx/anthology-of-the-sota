@@ -21,9 +21,7 @@ source:
 introduced_by:
 - LIT-378
 implementations:
-- 'bitsandbytes'
-- 'the 4-bit path in the major PEFT libraries'
-- 'Guanaco'
+- LIT-378
 summary: >-
   Dettmers et al. (2023), [LIT-378](../literature.d/LIT-378.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314). Store the frozen base
   weights in 4-bit NormalFloat and dequantize to BFloat16 for every matrix

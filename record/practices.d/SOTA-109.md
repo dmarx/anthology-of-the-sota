@@ -22,7 +22,7 @@ source:
 introduced_by:
 - LIT-100
 implementations:
-- llama2
+- LIT-003
 summary: >-
   Ainslie et al. (2023), [LIT-100](../literature.d/LIT-100.md) — group the query heads and give each group
   one key/value head: multi-query's cache saving without multi-query's quality

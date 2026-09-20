@@ -31,7 +31,7 @@ source:
 introduced_by:
 - LIT-380
 implementations:
-- 'BitNet b1.58'
+- LIT-380
 summary: >-
   Ma et al. (2024), [LIT-380](../literature.d/LIT-380.md) — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764). Decide the serving format
   before training and train in it, rather than training in FP16 and

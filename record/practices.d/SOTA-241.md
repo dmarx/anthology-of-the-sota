@@ -31,7 +31,7 @@ source:
 introduced_by:
 - LIT-087
 implementations:
-- 'DSIR'
+- LIT-087
 summary: >-
   Xie et al. (2023), [LIT-087](../literature.d/LIT-087.md) — KL reduction in a hashed n-gram space
   correlates with downstream performance across selection methods, including

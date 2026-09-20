@@ -26,7 +26,7 @@ source:
 introduced_by:
 - LIT-392
 implementations:
-- 'Skill-It'
+- LIT-392
 summary: >-
   Chen et al. (2023), [LIT-392](../literature.d/LIT-392.md) — [ARXIV-2307.14430](https://arxiv.org/abs/2307.14430). Training data has a
   prerequisite structure, and it is exploitable: train on a prerequisite skill

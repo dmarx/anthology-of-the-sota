@@ -21,8 +21,8 @@ source:
 introduced_by:
 - LIT-216
 implementations:
-- I-JEPA
-- V-JEPA 2
+- LIT-216
+- LIT-215
 summary: >-
   Assran et al. (2023), [LIT-216](../literature.d/LIT-216.md) — [ARXIV-2301.08243](https://arxiv.org/abs/2301.08243). Predict the
   *representations* of masked target blocks from a context block, with a

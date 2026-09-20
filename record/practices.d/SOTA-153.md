@@ -43,10 +43,10 @@ source:
 introduced_by:
 - LIT-208
 implementations:
-- 'RNoPE-SWA (Cohere, 8B)'
-- 'SWAN-GPT (NVIDIA, 1B and 8B)'
-- 'Kimi Linear 48B-A3B'
-- 'Kimi K3'
+- LIT-208
+- LIT-209
+- LIT-133
+- LIT-131
 compared_against:
 - SOTA-063
 summary: >-

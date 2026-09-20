@@ -40,11 +40,11 @@ introduced_by:
 compared_against:
 - SOTA-109
 implementations:
-- DeepSeek-V2
-- DeepSeek-V3
-- DeepSeek-V4
-- Kimi K3
-- Kimi Linear
+- LIT-174
+- LIT-160
+- LIT-139
+- LIT-131
+- LIT-133
 summary: >-
   DeepSeek-AI (2024), [LIT-174](../literature.d/LIT-174.md) — Multi-head Latent Attention projects keys and
   values into a single low-rank latent and caches that, cutting the KV cache

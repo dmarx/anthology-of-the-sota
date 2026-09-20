@@ -21,8 +21,8 @@ source:
 introduced_by:
 - LIT-447
 implementations:
-- 'Stable Diffusion 3'
-- 'SiT-XL'
+- LIT-449
+- LIT-447
 summary: >-
   Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md), and Ma et al. (2024),
   [LIT-447](../literature.d/LIT-447.md) — the straight-line path between data and noise beats the

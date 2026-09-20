@@ -28,7 +28,7 @@ introduced_by:
 extends:
 - SOTA-140
 implementations:
-- V-JEPA 2
+- LIT-215
 summary: >-
   Assran et al. (2025), [LIT-215](../literature.d/LIT-215.md) — [ARXIV-2506.09985](https://arxiv.org/abs/2506.09985). Spend warmup and
   the constant phase on short, low-resolution clips; raise resolution and clip

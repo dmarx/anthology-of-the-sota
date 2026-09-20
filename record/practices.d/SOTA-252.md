@@ -20,7 +20,7 @@ source:
 introduced_by:
 - LIT-113
 implementations:
-- Gaussian Shell Maps
+- LIT-113
 summary: >-
   Abdal et al. (2023), [LIT-113](../literature.d/LIT-113.md) — [ARXIV-2311.17857](https://arxiv.org/abs/2311.17857). Prior 3D GANs render
   small and upsample in 2D because volume rendering is too slow at training

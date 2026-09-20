@@ -20,8 +20,8 @@ introduced_by:
 extends:
 - SOTA-188
 implementations:
-- Progressive Distillation
-- Stable Diffusion 2
+- LIT-067
+- LIT-062
 ---
 
 # SOTA-195: Predict v rather than the noise when the model will be evaluated at low signal-to-noise

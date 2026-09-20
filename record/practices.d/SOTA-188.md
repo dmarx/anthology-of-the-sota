@@ -47,8 +47,8 @@ source:
 introduced_by:
 - LIT-075
 implementations:
-- EDM
-- Stable Diffusion 3
+- LIT-075
+- LIT-449
 extended_by:
 - SOTA-195
 explained_by:

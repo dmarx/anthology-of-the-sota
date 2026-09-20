@@ -14,7 +14,7 @@ source:
 introduced_by:
 - LIT-096
 implementations:
-- SA-1B
+- LIT-096
 ---
 
 # SOTA-186: Bootstrap a large annotation set with the model you are training, staging the automation as it improves

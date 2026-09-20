@@ -21,8 +21,8 @@ source:
 introduced_by:
 - LIT-385
 implementations:
-- 'DUSt3R'
-- 'VGGT'
+- LIT-385
+- LIT-384
 summary: >-
   Wang et al. (2023), [LIT-385](../literature.d/LIT-385.md) — [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132); Wang et al. (2025),
   [LIT-384](../literature.d/LIT-384.md) — [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651). Given uncalibrated, unposed images, regress

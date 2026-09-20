@@ -429,6 +429,25 @@ schemes:
       # paper, and ADR-017's retraction test picks the former by construction
       # — so with one field the record reads as though every practice began
       # with the paper it cites.
+      # Undeclared until 2026-09-20, and it showed: 142 distinct spellings
+      # across 216 declarations, most of them naming a LIT note the record
+      # already held. Typed here so the field states a relation between
+      # documents rather than a string nobody can follow. What it carries is
+      # ADOPTION, which DP-005 separated from evidence and sent here and to
+      # `consensus:` — so a system appearing here is NOT thereby a source
+      # (ADR-017), and no converse is written back: a paper's own note should
+      # not accumulate a list of every practice somebody used it for.
+      implementations:
+        label: Known implementations
+        blurb: >-
+          the systems known to use this, named by their note. Adoption, not
+          evidence (DP-005) — what a reader checks the recommendation against,
+          not what argues for it. A system with no note cannot be named here,
+          which is the point: the record had been asserting it knew of things
+          it held nothing for.
+        scheme: LIT
+        required: false
+        many: true
       introduced_by:
         label: First stated by
         blurb: >-
@@ -808,6 +827,19 @@ schemes:
     # Neither relation is `superseded_by:`: two live designs in different
     # production models are not a retirement.
     references:
+      # Declared for the same reason as on SOTA, and pointing at LIT from
+      # LIT is deliberate: a paper's note names the systems that shipped its
+      # method, which are usually other papers' notes. Self-reference is
+      # normal here — EDM's note names EDM.
+      implementations:
+        label: Known implementations
+        blurb: >-
+          the systems known to use this work, named by their note. Adoption
+          rather than lineage: `extends`/`corrects` say what a paper builds
+          on, this says who took it up.
+        scheme: LIT
+        required: false
+        many: true
       extends:
         label: Carries further
         blurb: >-

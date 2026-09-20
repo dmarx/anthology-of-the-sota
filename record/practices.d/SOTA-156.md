@@ -28,7 +28,7 @@ source:
 introduced_by:
 - LIT-213
 implementations:
-- 'facebookresearch/schedule_free'
+- LIT-213
 summary: >-
   Defazio et al. (2024), [LIT-213](../literature.d/LIT-213.md) — scheduling and iterate averaging
   are one mechanism, and the averaged form needs no stopping time T, no

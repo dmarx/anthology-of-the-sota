@@ -23,6 +23,7 @@ title: 'Stretch and clip the softmax so an attention head can output exact zeros
 version: 1
 tags:
 - attention-techniques
+- numerics-and-precision
 date: '2026-09-17'
 source:
 - LIT-414

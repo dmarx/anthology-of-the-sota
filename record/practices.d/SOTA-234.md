@@ -6,6 +6,7 @@ formerly:
 title: 'Train in the target low-bit format from scratch rather than quantizing a finished model'
 version: 1
 tags:
+- numerics-and-precision
 - systems-optimization
 promote_when: >-
   A second group training a model at or above 3B in a low-bit format from

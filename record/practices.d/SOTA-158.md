@@ -21,6 +21,7 @@ title: "Bound the activation's output range when training in low precision"
 version: 1
 tags:
 - model-architecture
+- numerics-and-precision
 date: '2026-09-08'
 source:
 # LIT-200 is the one with the evidence: scaling-law experiments, 7.9B and

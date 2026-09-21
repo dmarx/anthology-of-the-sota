@@ -4,6 +4,7 @@ status: 'Active'
 title: 'Use dynamic loss scaling that doubles every 2000 successful steps'
 version: 1
 tags:
+- numerics-and-precision
 - training-optimization
 date: '2026-08-24'
 source:

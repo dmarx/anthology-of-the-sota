@@ -9,6 +9,7 @@ history:
   note: >-
     Adds `model-architecture`, whose blurb names model families. In-context learning is a capability of the decoder-only-at-scale family SOTA-036 describes, which is what the relation between them asserts (ADR-049).
 tags:
+- in-context-learning
 - adaptation-and-tuning
 - model-architecture
 date: '2026-08-24'

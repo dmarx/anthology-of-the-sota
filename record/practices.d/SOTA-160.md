@@ -20,6 +20,7 @@ consensus_note: >-
 title: 'Treat the pretraining token budget and the post-training quantization plan as one decision, not two'
 version: 1
 tags:
+- numerics-and-precision
 - training-optimization
 date: '2026-09-08'
 source:

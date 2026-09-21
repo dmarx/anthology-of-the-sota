@@ -4,6 +4,7 @@ status: 'Active'
 title: 'Perform forward/backward passes in FP16'
 version: 1
 tags:
+- numerics-and-precision
 - training-optimization
 date: '2026-08-24'
 source:

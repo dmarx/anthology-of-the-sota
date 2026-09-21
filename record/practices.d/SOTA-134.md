@@ -15,6 +15,7 @@ history:
     unchanged.
 tags:
 - attention-techniques
+- numerics-and-precision
 date: '2026-09-05'
 source:
 # LIT-138 ran the ablation. LIT-191 and LIT-190 are what the gate is claimed

@@ -7,6 +7,7 @@ title: 'A softmax head with nothing to attend to must place its mass somewhere, 
 version: 1
 tags:
 - attention-techniques
+- numerics-and-precision
 date: '2026-09-17'
 source:
 - LIT-191

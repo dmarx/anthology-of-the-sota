@@ -4,6 +4,7 @@ status: 'Active'
 title: 'Employ mixed precision to reduce memory usage'
 version: 1
 tags:
+- numerics-and-precision
 - distributed-optimization
 date: '2026-08-24'
 source:

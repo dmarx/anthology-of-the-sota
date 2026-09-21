@@ -6,7 +6,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-40 of 307 SOTA documents. Back to the [full index](../README.md).
+41 of 308 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -50,3 +50,4 @@
 | [SOTA-278](../../../record/practices.d/SOTA-278.md) | Before reporting that a model cannot do something, rule out the evaluation | Hu and Frank (2024), [LIT-465](../../../record/literature.d/LIT-465.md) — the same capacity asked two ways scores differently, and the gap widens as the model weakens. Lawsen (2025), [LIT-463](../../../record/literature.d/LIT-463.md), is the worked example: an output cap, a scorer that cannot express refusal, and instances with no solution. | Active |
 | [SOTA-280](../../../record/practices.d/SOTA-280.md) | Sample several reasoning paths and take the majority answer rather than decoding one greedily | Wang et al. (2022), [LIT-468](../../../record/literature.d/LIT-468.md) — replace greedy decoding with sample-and-marginalize: GSM8K +17.9, SVAMP +11.0, AQuA +12.2. Five or ten paths recover most of it, which is the whole cost question. | Active |
 | [SOTA-291](../../../record/practices.d/SOTA-291.md) v2 | Evaluate a specific intervention on a specific affordance rather than the net effect of the system, and never read an individual-level null as the absence of a collective effect |  | Active |
+| [SOTA-308](../../../record/practices.d/SOTA-308.md) | When a retrieval change raises recall, measure relevance and the end-task metric before calling it an improvement | Wu et al. (2026), [LIT-502](../../../record/literature.d/LIT-502.md) — across three published GraphRAG pipelines on G-Medical, graph expansion raises retrieval recall (GFM-RAG **84.3%** against vanilla RAG's 71.8%) and drops context relevance (**38.5%** against 62.9%). The wider context is noisier, and generation accuracy falls with it — a system that retrieves more of the right thing and much more of the wrong thing answers worse. | Active |

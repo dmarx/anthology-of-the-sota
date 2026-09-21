@@ -1,6 +1,9 @@
 ---
+number: 249
 status: Read
-paper: LIT-tmpghnyd
+formerly:
+- NOTE-tmp73iuw
+paper: LIT-502
 title: 'MemGraphRAG: the pilot study is the contribution'
 version: 1
 date: '2026-09-21'
@@ -11,7 +14,7 @@ summary: >-
   relevance for recall at a net loss on the end task. That is the filing.
 ---
 
-# NOTE-tmp73iuw: MemGraphRAG: the pilot study is the contribution
+# NOTE-249: MemGraphRAG: the pilot study is the contribution
 
 ## Contribution
 
@@ -124,7 +127,7 @@ lineage the paper builds on, so nothing is left undeclared.
 ## Recommendations
 
 - **R1** — report relevance and the end-task metric beside any recall
-  improvement. *Filed* as `SOTA-tmp7wp0k`.
+  improvement. *Filed* as `SOTA-308`.
 - **R2** — check what fraction of a constructed index can be deleted without
   cost. *Folded into R1's practice* as a diagnostic rather than filed
   separately: one curve on one dataset, and the useful version of it is a
@@ -141,7 +144,7 @@ Gives [SOTA-269](../practices.d/SOTA-269.md) — keep a knowledge base outside t
 first companion on the question of how to tell whether the knowledge base is
 any good.
 
-The shape of `SOTA-tmp7wp0k` repeats [SOTA-210](../practices.d/SOTA-210.md) exactly: an
+The shape of `SOTA-308` repeats [SOTA-210](../practices.d/SOTA-210.md) exactly: an
 intervention moves two coupled metrics in opposite directions and the
 literature reports the favourable one. RL raises pass@k and lowers pass@1;
 graph expansion raises recall and lowers relevance. Two instances, two fields,

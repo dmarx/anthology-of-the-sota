@@ -1,5 +1,8 @@
 ---
+number: 308
 status: Active
+formerly:
+- SOTA-tmp7wp0k
 consensus: emerging
 consensus_note: >-
   The specific measurement is one group on one benchmark family, but it is a
@@ -16,12 +19,12 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpghnyd
+- LIT-502
 introduced_by:
-- LIT-tmpghnyd
+- LIT-502
 implementations: []
 summary: >-
-  Wu et al. (2026), [LIT-tmpghnyd](../literature.d/LIT-tmpghnyd.md) — across three published
+  Wu et al. (2026), [LIT-502](../literature.d/LIT-502.md) — across three published
   GraphRAG pipelines on G-Medical, graph expansion raises retrieval recall
   (GFM-RAG **84.3%** against vanilla RAG's 71.8%) and drops context relevance
   (**38.5%** against 62.9%). The wider context is noisier, and generation
@@ -29,12 +32,12 @@ summary: >-
   much more of the wrong thing answers worse.
 ---
 
-# SOTA-tmp7wp0k: When a retrieval change raises recall, measure relevance and the end-task metric before calling it an improvement
+# SOTA-308: When a retrieval change raises recall, measure relevance and the end-task metric before calling it an improvement
 
 ## Source
 
 Wu, Xiang, Tang, Chen, Zhang and Su (2026),
-[LIT-tmpghnyd](../literature.d/LIT-tmpghnyd.md) — read as [NOTE-tmp73iuw](../notes.d/NOTE-tmp73iuw.md).
+[LIT-502](../literature.d/LIT-502.md) — read as [NOTE-249](../notes.d/NOTE-249.md).
 
 ## When this applies
 

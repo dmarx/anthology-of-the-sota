@@ -1,6 +1,9 @@
 ---
+number: 243
 status: Read
-paper: LIT-tmpjyh2c
+formerly:
+- NOTE-tmpwtv8b
+paper: LIT-494
 title: 'GaussianToken and the cost of the continuous half'
 version: 1
 date: '2026-09-21'
@@ -12,7 +15,7 @@ summary: >-
   comparison is at equal token count, and nobody computed bits.
 ---
 
-# NOTE-tmpwtv8b: GaussianToken and the cost of the continuous half
+# NOTE-243: GaussianToken and the cost of the continuous half
 
 ## Contribution
 

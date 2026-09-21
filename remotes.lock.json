@@ -890,6 +890,9 @@
     "ARXIV/2507.22448": {
       "title": "Falcon-H1: A Family of Hybrid-Head Language Models Redefining Efficiency and Performance"
     },
+    "ARXIV/2508.09968": {
+      "title": "Noise Hypernetworks: Amortizing Test-Time Compute in Diffusion Models"
+    },
     "ARXIV/2509.02046": {
       "title": "Fantastic Pretraining Optimizers and Where to Find Them"
     },

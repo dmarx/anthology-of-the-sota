@@ -4,7 +4,7 @@
 
 **distributed-optimization**.
 
-43 of 242 NOTE documents. Back to the [full index](../README.md).
+43 of 243 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

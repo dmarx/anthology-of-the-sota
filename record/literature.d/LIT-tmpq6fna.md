@@ -1,0 +1,128 @@
+---
+status: Active
+title: 'Auditing Political Exposure Bias: Algorithmic Amplification on Twitter/X During the 2024 U.S. Presidential Election'
+version: 1
+tags:
+- deployment-and-society
+- analysis-and-evaluation
+date: '2026-09-21'
+published: '2024-11-01'
+arxiv: '2411.01852'
+first_author: 'Ye'
+keywords:
+- 'algorithmic-audit'
+- 'sock-puppet'
+- 'recommender-systems'
+- 'exposure-inequality'
+- 'amplification'
+implementations: []
+summary: >-
+  Ye, Luceri and Ferrara (2024), [ARXIV-2411.01852](https://arxiv.org/abs/2411.01852). 120 sock-puppet
+  accounts, six weeks, 9.79M tweets from Twitter/X's "For You" timeline. The
+  method is the transferable part: puppets that **never interact**, follow sets
+  controlled to the subject, and exposure weighted by rank rather than counted.
+  Accounts following nobody get the *most* diverse recommendations, so
+  personalization concentrates rather than broadens.
+---
+
+# LIT-tmpq6fna: Auditing Political Exposure Bias: Algorithmic Amplification on Twitter/X During the 2024 U.S. Presidential Election
+
+## Why it's here
+
+The first document filed under `deployment-and-society`, and the paper that
+made [ADR-052](../decisions.d/ADR-052.md) add the topic — it was the highest-revisit entry on the
+incoming list and the sixteen topics had no word for it.
+
+What justifies it in a record about ML practice is not the finding about
+Twitter. It is **the method**: how to measure what a recommender does when
+you have no access to it, no cooperation from its operator, and no way to
+inspect the model. Every design decision in §3 is a reasoned trade a
+practitioner would face again.
+
+## The design, and the reasoning behind it
+
+**120 sock-puppets in four arms** — 30 following nobody, 30 left-leaning, 30
+right-leaning, 30 balanced — with the partisan arms following ten media
+outlets drawn from the AllSides bias chart (seven moderate, three strong) plus
+four political figures or party accounts.
+
+**Follow sets are controlled to the subject, not to realism.** Prior audits
+replicate real users' follows for ecological validity. This deliberately does
+not, and says why: real users follow diverse non-political accounts, which
+would confound a measurement about political content. The trade is stated
+rather than assumed.
+
+**The puppets never interact.** No clicks, no follows-from-recommendations, no
+engagement of any kind — against the practice in radicalization studies, and
+for three reasons the paper gives: interaction creates feedback loops that
+make the baseline impossible to isolate; partisan accounts would engage
+differently, so cross-arm comparison stops being clean; and the target is the
+algorithm's inherent bias rather than user-algorithm dynamics.
+
+**Everything the platform forces you to specify is randomized** — the three
+required interests, birthdates between 1990 and 1999 — and a VPN removes
+location effects.
+
+**Exposure is weighted by rank, not counted.** A "weighted occurrence per
+1,000 tweets" applies an exponential decay over timeline position, calibrated
+from published attention data showing the top 20% of items take about 70% of
+views. A raw appearance count is not exposure, because nobody reads to the
+bottom.
+
+**Amplification is measured against the balanced arm**, not left against
+right, so the baseline is a timeline the algorithm itself produced rather than
+an opposing condition.
+
+Four collections a day, 2,000–3,000 tweets per account per day, October 2 to
+November 19 2024.
+
+## What was found
+
+**Exposure is concentrated everywhere.** Gini above 0.45 in every arm, with
+all pairwise differences significant at p < 0.001. Prior work put the Gini for
+exposure to *friends'* tweets at 0.6–0.7; out-of-network recommendation is
+comparably unequal.
+
+**The accounts following nobody get the most diverse recommendations.** Right-
+leaning accounts have the highest inequality, then balanced, then left; the
+neutral arm is the most diverse of all, which the paper attributes to cold
+start. Personalization concentrates.
+
+**A handful of moderate follows is enough.** Top aligned voices are amplified
+more than 50% above the balanced baseline in both partisan arms — from
+accounts following only ten media outlets and four political figures, most of
+them moderate. Left-arm amplification is slightly larger in magnitude than
+right-arm; de-amplification does not differ significantly.
+
+**The default timeline skews right.** In the neutral arm, right-leaning users
+take 30.16% of exposure among the top 20 recommended accounts against 12.92%
+for left-leaning ones; 35.26% against 22.34% in the top 50; 31.39% against
+20.83% in the top 100.
+
+## Conditions
+
+**One platform, one election, six weeks.** Twitter/X, the 2024 US
+presidential election, October to November 2024. A recommender is a moving
+target and this is a photograph of one.
+
+**Political leaning is assigned by hand from public information**, using the
+AllSides chart for outlets and profile descriptions plus external sources for
+individuals — and the paper says the classification "may be subject to
+inaccuracies or changes over time". The headline asymmetries rest on it.
+
+**The decay parameters are borrowed from other platforms.** The 20%/70%
+attention figure comes from TikTok and YouTube studies. It is a calibration
+assumption transplanted across platforms, and every exposure number inherits
+it.
+
+**Ecological validity is traded away on purpose.** Non-interacting accounts
+with narrow, curated follow lists are not users. The paper argues the trade is
+right for its question and names the literature that disagrees; a reader
+should not take the numbers as what a person would experience.
+
+**Cold start is the explanation offered for the neutral arm's diversity**, not
+one that is tested. It is plausible and it is an interpretation.
+
+**And the platform's own defaults are a confound the paper flags itself** —
+trending topics and default settings can still skew the neutral arm that is
+supposed to be the unbiased baseline.

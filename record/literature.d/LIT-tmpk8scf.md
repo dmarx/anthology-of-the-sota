@@ -1,0 +1,152 @@
+---
+status: Active
+title: Estimating the Probability of Sampling a Trained Neural Network at Random
+version: 1
+tags:
+- analysis-and-evaluation
+- model-stability
+- training-optimization
+date: '2026-09-21'
+published: '2025-01-01'
+arxiv: '2501.18812'
+first_author: 'Scherlis'
+keywords:
+- 'basin-volume'
+- 'generalization'
+- 'description-length'
+- 'singular-learning-theory'
+- 'preconditioning'
+implementations: []
+summary: >-
+  Scherlis and Belrose (2025), [ARXIV-2501.18812](https://arxiv.org/abs/2501.18812). An estimator for
+  the measure, under the initialization distribution, of the region around a
+  trained network whose behaviour matches it. Negative log of that measure is
+  a description length. A ConvNeXt deliberately trained to generalize badly
+  has a **smaller** such region — detectable on clean held-out data where its
+  behaviour is indistinguishable.
+---
+
+# LIT-tmpk8scf: Estimating the Probability of Sampling a Trained Neural Network at Random
+
+## Why it's here
+
+[SOTA-012](../practices.d/SOTA-012.md) says sharpness in the loss landscape correlates with test
+error, on one 2017 source and with `consensus` never assessed. This is the
+same intuition measured differently — volume rather than curvature, under the
+initialization measure rather than Lebesgue, and around a *behavioural*
+neighbourhood rather than a loss sublevel set — and it comes with an estimator
+somebody can run.
+
+It also supplies a number worth having in view. The probability of drawing the
+trained Pythia 31M from its own initialization distribution, within a small
+KL ball, is estimated at about **10⁻³·⁶ˣ¹⁰⁸**. The authors' comparison: there
+are roughly 10⁸⁰ atoms in the observable universe, so this is about the odds
+of guessing a specific one 4.5 million times running.
+
+## What it measures
+
+Fix a trained weight vector `w*` and a cost `c`. The neighbourhood is the
+largest star domain anchored at `w*` on which `c` stays under a threshold.
+Its **local volume** is the measure of that region — and the measure is the
+network's own initialization distribution rather than Lebesgue, which matters
+because some real neighbourhoods turn out to have *infinite* Lebesgue volume.
+
+Two choices of cost, and the paper argues for the second:
+
+- **Loss neighbourhoods** — points whose dataset loss stays low. Simpler to
+  interpret, better connected to the existing flat-minima literature.
+- **KL neighbourhoods** — points whose output distribution stays within a KL
+  budget of the anchor's, on inputs alone. No labels needed, exactly zero at
+  the anchor, far more compact, and readable as a description length.
+
+The MDL reading is the load-bearing one. Treat the neighbourhood as an
+ensemble, take the initialization distribution as the receiver's prior, and
+the bits-back argument makes `−log` local volume plus the data's code length
+the description length of model-and-data. Large volume, short description.
+
+## The hypothesis being tested
+
+Chiang et al.'s **volume hypothesis**: the implicit bias of neural networks
+comes from basins differing in volume, with good hypothesis classes occupying
+more of parameter space. The paper distinguishes a strong Bayesian version
+(training samples the posterior — the authors think this is false and use it
+as an intuition pump), a **basin volume hypothesis** restricted to hold
+between basins rather than within them, and a measure-theoretic weakening.
+
+The division of labour it implies is the memorable part: *the optimizer's job
+is to lower training loss; the architecture's job is to make simple functions
+abundant in parameter space; and the optimizer only has to pick low-loss
+parameters in a reasonably fair way relative to the prior.*
+
+## What was measured
+
+Three settings: a 4810-parameter MLP on UCI handwritten digits, a ConvNeXt
+Atto variant (3.4M parameters) on CIFAR-10, and Pythia 31M checkpoints. KL
+computed on held-out data — 773 images, 1024 images, and 20 sequences
+(10,926 tokens) respectively.
+
+**Poisoned networks shrink.** A ConvNeXt trained with an added term pushing it
+to do badly on a held-out poison set, while keeping training loss low, has a
+smaller local volume than its clean counterpart — with or without
+preconditioning. This is measured **on clean held-out data**, where the two
+models behave alike, which is the paper's own strongest claim for the method
+as an audit tool.
+
+**Volume falls through training**, smoothly and roughly exponentially for
+Pythia after an early sharp drop — the model's description length growing as
+it learns.
+
+**And the poisoned model is not simply always smaller.** For much of ConvNeXt
+training it has the *larger* volume, crossing below the clean model around
+30,000 steps — the same point where validation and poison losses diverge.
+Early on the poison term is just holding the network back; the shrink arrives
+with the overfitting.
+
+**Preconditioners matter and behave oddly.** Adam's second moment, K-FAC and
+HesScale all work well and similarly. The **full Hessian of the KL** — the
+Fisher matrix, which theory would nominate first — does no better than no
+preconditioning at all, and the authors say they do not know why constraining
+to axis-aligned directions helps so much.
+
+**Across cutoffs**, local volume follows a power law whose log-log slope is
+consistent with `d/2` for model dimension `d` — what a purely quadratic cost
+would give, and notably *unlike* Local Learning Coefficient results where
+`d/2` is a strict upper bound not seen in practice. The authors attribute the
+difference to using KL rather than the more singular training loss, or to the
+Gaussian prior smoothly cutting off flat directions.
+
+## Conditions
+
+**The estimator's accuracy against ground truth is unknown, and the paper says
+so.** "It is still unclear how close our estimates are to the ground truth."
+The aggregated estimate sits very close to the *largest individual sample*,
+which is what a lower bound that improves with better sampling looks like —
+and indeed one unpoisoned ConvNeXt run had a single outlier sample that nearly
+reached the preconditioned estimate on its own.
+
+**Scale.** 4810 parameters, 3.4M, and 31M. Pythia 31M is the largest language
+model here by three orders of magnitude less than anything the record's
+practices are argued on.
+
+**One poisoned/unpoisoned pair carries the generalization result.** Poisoning
+is a deliberate, adversarial way to produce bad generalization at low training
+loss; whether ordinary overfitting shrinks volume the same way is not shown.
+
+**Two artefacts are identified and one is not explained.** At high cutoffs the
+Adam preconditioner starts returning smaller-than-naive estimates, fixable by
+raising a hyperparameter. At very low cutoffs the poisoned ConvNeXt's volume
+plummets — confirmed to be a floating-point failure of the radius-finding
+binary search, not a finding. The Hessian's poor showing remains unexplained.
+
+**The claim about adaptive optimizers is an argument, not a result.** §3.3
+proposes that Adam and Adagrad generalize worse because, as approximations of
+natural gradient descent, they partly *undo* the architecture's nonuniform map
+from parameters to functions and so give up the overrepresentation of simple
+ones — making natural gradient descent a theoretical extreme rather than an
+ideal, with sharpness-aware minimization at the other end. Nothing in the
+paper measures this. It is the most quotable sentence in it and it has no
+experiment behind it.
+
+**And the hypothesis is not settled here.** The conclusion is explicit: the
+results are "broadly consistent with the volume hypothesis" and "more research
+is needed to confirm or refute any specific version".

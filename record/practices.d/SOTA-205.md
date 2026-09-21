@@ -17,7 +17,7 @@ history:
 - version: 2
   date: '2026-09-21'
   note: >-
-    Adds LIT-tmpuxbgc as a fifth source and the practice's first outside 3D.
+    Adds LIT-511 as a fifth source and the practice's first outside 3D.
     v1 rested on four radiance-field papers, so the claim was stated generally
     and evidenced in one setting. Image-GS carries it to single-image
     representation and supplies the decode-cost number the practice wanted:
@@ -31,7 +31,7 @@ source:
 - LIT-108
 - LIT-086
 - LIT-109
-- LIT-tmpuxbgc
+- LIT-511
 introduced_by:
 - LIT-064
 implementations:
@@ -60,13 +60,13 @@ Four papers, converging from different directions:
   the one that needs no custom kernels.
 - Wang et al. (2023), [LIT-109](../literature.d/LIT-109.md) — the hash-encoding line applied to
   implicit **surfaces** rather than radiance fields.
-- Zhang et al. (2024), [LIT-tmpuxbgc](../literature.d/LIT-tmpuxbgc.md) — read as [NOTE-tmpl6noj](../notes.d/NOTE-tmpl6noj.md) —
+- Zhang et al. (2024), [LIT-511](../literature.d/LIT-511.md) — read as [NOTE-256](../notes.d/NOTE-256.md) —
   **2D Gaussians for a single image**, and the first source here outside 3D.
 
 ## What it costs to decode, measured
 
 The four 3D sources argue the case from rendering speed, which entangles the
-representation with a rasterizer. [LIT-tmpuxbgc](../literature.d/LIT-tmpuxbgc.md) gives the number in
+representation with a rasterizer. [LIT-511](../literature.d/LIT-511.md) gives the number in
 the units the claim is actually about: **0.3K multiply-accumulates per pixel**
 to decode, against **3K MACs at 0.31 bpp** for C3, a neural codec in the same
 quality range. An order of magnitude, from moving the capacity out of the

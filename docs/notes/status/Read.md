@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-252 of 255 NOTE documents. Back to the [full index](../README.md).
+253 of 256 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -262,3 +262,4 @@
 | [NOTE-253](../../../record/notes.d/NOTE-253.md) | The information-bottleneck rebuttal, and the assumption it makes visible | Read from the ICLR 2018 version, supplied by the record's owner because no open route to the paper exists. Three claims tested, none general. The finding worth more than the headline is in Appendix C: the same `tanh` network, binned evenly in *net input* instead of evenly in *activity*, shows **no compression** — because `I(h;X)` in a deterministic network is infinite and every finite number is a property of an imposed noise model. | Read |
 | [NOTE-254](../../../record/notes.d/NOTE-254.md) | Adaptive estimators: a counter-rebuttal whose body is weaker than its abstract | Read to check whether it softens [LIT-509](../../../record/literature.d/LIT-509.md), as [#220](https://github.com/dmarx/anthology-of-the-sota/issues/220) feared. It does on one narrow point and not on the one that matters. Its own Figure 6 shows a ReLU network averaged over 50 initializations has **no distinct phase**, and it agrees with the rebuttal that hidden-layer compression does not correlate with generalization. | Read |
 | [NOTE-255](../../../record/notes.d/NOTE-255.md) | Gemini 1.0: complete disclosure, and an abstract that picks the flattering row | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for the model and filed for the appendices. The headline — first model to exceed human-expert MMLU — holds under one inference procedure out of three the report itself publishes, and under the other two GPT-4 is ahead. Nothing is concealed. The disambiguating numbers are in the same document, which is what makes this the corpus's cleanest instance of `DP-010`. | Read |
+| [NOTE-256](../../../record/notes.d/NOTE-256.md) | Image-GS: the rate accounting GaussianToken skipped, and an ablation that inverts its own headline | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for its adjacency to the tokenizer trunk. Two things worth keeping: a comparison run the way this record keeps asking for — six baselines at matched model size, bitrate on the axis — and an ablation in which the two unglamorous optimizer choices outweigh the content-adaptive allocation the paper is named for. | Read |

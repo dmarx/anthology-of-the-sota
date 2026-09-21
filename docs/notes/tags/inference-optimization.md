@@ -4,7 +4,7 @@
 
 **inference-optimization**.
 
-9 of 255 NOTE documents. Back to the [full index](../README.md).
+10 of 256 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,3 +17,4 @@
 | [NOTE-228](../../../record/notes.d/NOTE-228.md) | The Diffusion Duality | Reading it: the theorem is elegant and the ablation says it accounts for under half the likelihood gain. What the paper actually establishes is a regime split — masked diffusion wins on quality at many steps, uniform-state wins below about 32, and the reason is architectural rather than tuned. | Read |
 | [NOTE-235](../../../record/notes.d/NOTE-235.md) | ParScale | Read as a candidate third scaling axis. The scaling law is fitted honestly and the inference-cost analysis is better instrumented than most; the claim that carries furthest is the *asymmetry* — code benefits more than general text, on two independent measurements — and it is the claim the paper labels a conjecture. | Read |
 | [NOTE-240](../../../record/notes.d/NOTE-240.md) | Noise hypernetworks | Read as the amortized counterpart to `SOTA-301`. The headline — recover half of test-time optimization at 1/100th the latency — is well measured. The finding that carries further is the control: direct reward fine-tuning of the same model makes it worse, and worse the more steps you sample. | Read |
+| [NOTE-256](../../../record/notes.d/NOTE-256.md) | Image-GS: the rate accounting GaussianToken skipped, and an ablation that inverts its own headline | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for its adjacency to the tokenizer trunk. Two things worth keeping: a comparison run the way this record keeps asking for — six baselines at matched model size, bitrate on the axis — and an ablation in which the two unglamorous optimizer choices outweigh the content-adaptive allocation the paper is named for. | Read |

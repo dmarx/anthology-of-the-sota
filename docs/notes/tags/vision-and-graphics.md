@@ -4,7 +4,7 @@
 
 **vision-and-graphics**.
 
-21 of 255 NOTE documents. Back to the [full index](../README.md).
+22 of 256 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -29,3 +29,4 @@
 | [NOTE-224](../../../record/notes.d/NOTE-224.md) | Dropout Reduces Underfitting | Reading it: the persuasive number is the training loss, not the accuracy. Early dropout lowers ViT-T's training loss from 3.443 to 3.394 while standard dropout raises it to 3.885 — so the same operator is doing two opposite things depending only on when it runs, and one of them is not regularization. | Read |
 | [NOTE-237](../../../record/notes.d/NOTE-237.md) | gen2seg | Read as the counter-route to SAM's data engine. The headline (narrow finetuning, broad generalization) is well evidenced but the argument lives in the controls, which are unusually good: the same backbone under a conventional head scores ~1.5 mIoU, and swapping only the decoder recovers part of the gap. | Read |
 | [NOTE-243](../../../record/notes.d/NOTE-243.md) | GaussianToken and the cost of the continuous half | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist and filed without a practice. The idea — let the quantization units move and size themselves instead of sitting on a grid — is a good one, and the evidence for it cannot be separated from the five continuous parameters each token carries alongside its index. The comparison is at equal token count, and nobody computed bits. | Read |
+| [NOTE-256](../../../record/notes.d/NOTE-256.md) | Image-GS: the rate accounting GaussianToken skipped, and an ablation that inverts its own headline | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for its adjacency to the tokenizer trunk. Two things worth keeping: a comparison run the way this record keeps asking for — six baselines at matched model size, bitrate on the axis — and an ablation in which the two unglamorous optimizer choices outweigh the content-adaptive allocation the paper is named for. | Read |

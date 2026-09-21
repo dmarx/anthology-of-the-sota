@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [21 Sep 20:25 — Image-GS, and the second ablation this session that inverts its own headline](2026-09.md#image-gs-and-the-second-ablation-this-session-that-inverts-its-own-headline)
 - [21 Sep 20:17 — The Gemini report, and a running count that finally had to stop](2026-09.md#the-gemini-report-and-a-running-count-that-finally-had-to-stop)
 - [21 Sep 20:02 — The information-bottleneck dispute, and two framings that had to be abandoned](2026-09.md#the-information-bottleneck-dispute-and-two-framings-that-had-to-be-abandoned)
 - [21 Sep 19:49 — Opening the biological-sequence trunk, and not getting the practice that was expected](2026-09.md#opening-the-biological-sequence-trunk-and-not-getting-the-practice-that-was-expected)
@@ -169,9 +170,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-162 entries across 2 books, newest first.
+163 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 160 | 2026-09-05 | 2026-09-21 |
+| [2026-09](2026-09.md) | 161 | 2026-09-05 | 2026-09-21 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

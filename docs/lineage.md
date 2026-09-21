@@ -240,6 +240,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-435](../record/literature.d/LIT-435.md) — NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis *(Active)*
   - [LIT-086](../record/literature.d/LIT-086.md) — K-Planes: Explicit Radiance Fields in Space, Time, and Appearance *(Active)*
   - [LIT-108](../record/literature.d/LIT-108.md) — 3D Gaussian Splatting for Real-Time Radiance Field Rendering *(Active)*
+    - [LIT-511](../record/literature.d/LIT-511.md) — Image-GS: Content-Adaptive Image Representation via 2D Gaussians *(Active)*
 
 ### From Segment Anything
 

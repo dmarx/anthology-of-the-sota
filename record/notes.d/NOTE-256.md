@@ -1,6 +1,9 @@
 ---
+number: 256
 status: Read
-paper: LIT-tmpuxbgc
+formerly:
+- NOTE-tmpl6noj
+paper: LIT-511
 title: 'Image-GS: the rate accounting GaussianToken skipped, and an ablation that inverts its own headline'
 version: 1
 date: '2026-09-21'
@@ -17,7 +20,7 @@ summary: >-
      entry that this note explicitly declines to promote, not a recommendation
      being leaned on. -->
 
-# NOTE-tmpl6noj: Image-GS: the rate accounting GaussianToken skipped, and an ablation that inverts its own headline
+# NOTE-256: Image-GS: the rate accounting GaussianToken skipped, and an ablation that inverts its own headline
 
 ## Contribution
 

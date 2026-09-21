@@ -21,6 +21,7 @@ history:
   note: >-
     Adds `systems-optimization`, whose blurb names numerical precision — which is exactly what keeping the attention output in FP32 is about, and the value its line holds in common (ADR-049).
 tags:
+- numerics-and-precision
 # `flash-attention` removed. #101 added it to both this practice and its
 # counterpart to bind them under an invariant that then read `tags`, which
 # luria.yaml records as satisfying the check rather than answering it. With

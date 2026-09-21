@@ -4,6 +4,7 @@ status: 'Active'
 title: 'Store optimizer states in FP32'
 version: 1
 tags:
+- numerics-and-precision
 - training-optimization
 date: '2026-08-24'
 source:

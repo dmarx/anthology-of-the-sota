@@ -13,6 +13,7 @@ consensus_note: >-
 title: 'Put worked reasoning steps in the few-shot exemplars when the task needs more than one step, and only once the model is large enough'
 version: 1
 tags:
+- in-context-learning
 - adaptation-and-tuning
 date: '2026-09-21'
 source:

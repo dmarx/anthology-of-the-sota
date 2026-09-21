@@ -13,6 +13,7 @@ consensus_note: >-
 title: 'Quantize with block-scaled microscaling formats rather than one scale per tensor'
 version: 1
 tags:
+- numerics-and-precision
 - inference-optimization
 date: '2026-09-08'
 source:

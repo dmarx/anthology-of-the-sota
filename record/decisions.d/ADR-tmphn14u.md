@@ -1,0 +1,214 @@
+---
+status: Proposed
+title: 'Two more topics: numerics and precision, and in-context learning'
+version: 1
+tags:
+- taxonomy
+- record
+date: '2026-09-21'
+issue: '#213'
+summary: >-
+  The vocabulary goes from fourteen to sixteen. `numerics-and-precision`
+  because 48 documents about how many bits sat across nine topics with none
+  holding a quarter, and because two topics each claimed a fragment in a
+  trailing blurb item. `in-context-learning` because every item in
+  `adaptation-and-tuning`'s blurb changes the weights or the window and ICL
+  changes neither. A third candidate, retrieval, was rejected on counting.
+---
+
+<!-- inactive-ok-file: ADR-024 — Proposed, and that is the point: this decision takes the option
+     it listed and declined to choose between, so it is cited as the open question being
+     answered rather than as settled doctrine -->
+<!-- inactive-ok-file: SOTA-160 SOTA-234 SOTA-159 — Proposed, and all three are named as
+     evidence about how the corpus is filed, not cited for their recommendations -->
+# ADR-tmphn14u: Two more topics: numerics and precision, and in-context learning
+
+## Context
+
+[ADR-024](ADR-024.md) named four recurring seams in the topic vocabulary, listed four
+options and decided none, closing: *"the choice is which kind of claim the
+vocabulary is failing to name, and that is a judgement about the subject
+rather than about the record."* Two of its four options have since been taken
+— [ADR-035](ADR-035.md) relaxed `exactly-one`, and [ADR-026](ADR-026.md) with [ADR-046](ADR-046.md) supplied the
+filing rule. Option 1, adding a topic, never was.
+
+Since then the instrument `ADR-024` relied on has stopped reporting. [ADR-049](ADR-049.md)
+drove unbound relations to zero by liberal tagging, which is the right answer
+to that finding and leaves the report unable to show a *missing* word: a
+subject with no name does not produce an unbound edge, it produces documents
+filed in whatever topic was nearest.
+
+So this pass used a different instrument, and it is the one [DP-009](../../docs/design-principles.md#dp-9) names:
+**counting**. For a candidate subject, take the documents about it and ask how
+concentrated their primary topics are. A subject the vocabulary can say lands
+mostly in one topic. A subject it cannot say scatters.
+
+## The measurements
+
+Probes over all 720 `SOTA`, `LIT` and `THEORY` documents, requiring at least
+two mentions so that a passing reference does not count:
+
+| candidate | documents | top topic | share |
+|---|--:|---|--:|
+| **numerics / precision** | 48 | `training-optimization` | **25%** |
+| in-context learning / prompting | 20 | `adaptation-and-tuning` | 45% |
+| retrieval | 12 | `attention-techniques` | 33% |
+| RL post-training | 40 | `adaptation-and-tuning` | 68% |
+| scaling laws | 34 | `training-optimization` | 59% |
+| mixture-of-experts | 36 | `model-architecture` | 58% |
+
+The bottom three are *named*: a clear plurality, and each is written into an
+existing blurb — `adaptation-and-tuning` says "preference training and
+alignment", `training-optimization` says "scaling laws and scaling
+strategies", `model-architecture` says "component design". They stay.
+
+## Decision 1: `numerics-and-precision`
+
+48 documents, no topic holding a quarter, spread over nine.
+
+**The subject was not unnamed so much as half-named twice.**
+`systems-optimization`'s blurb ended with "numerical precision" and
+`inference-optimization`'s listed "quantization". Neither topic is *about*
+numerics; each carried a fragment as a trailing item, and a document had to
+pick a side that was really about something else. Both fragments move out.
+
+The split has a history. [ADR-021](ADR-021.md) created `inference-optimization` for serving
+and moved `SOTA-163` and `SOTA-185` into it — correctly, because
+post-training quantization *is* a serving decision. That left training-time
+precision behind in `training-optimization` and `model-stability`, and the
+subject has been cut in half ever since.
+
+**One topic, not two.** The train/serve split is real and it is not where the
+interesting work is. Four documents are about the *interaction* and would
+straddle any such split:
+
+- [SOTA-160](../practices.d/SOTA-160.md) — how many tokens a model saw determines how much
+  post-training quantization costs it
+- [LIT-186](../literature.d/LIT-186.md) — *Scaling Laws for Precision*: training in low precision
+  reduces effective parameter count
+- [SOTA-234](../practices.d/SOTA-234.md) and [LIT-380](../literature.d/LIT-380.md) — train natively in the target low-bit
+  format, which collapses the distinction entirely
+
+Splitting at the train/serve line would re-create the seam one level down,
+which is [ADR-024](ADR-024.md)'s own warning about what happens when a subject is divided
+by provenance.
+
+**Named for precision, not for quantization**, because "quantization" is a
+homonym in this corpus: [LIT-363](../literature.d/LIT-363.md) and [LIT-341](../literature.d/LIT-341.md) are about *vector*
+quantization, which is representation work and correctly filed under
+`representation-and-encoding`.
+
+## Decision 2: `in-context-learning`
+
+20 documents, top topic 45%.
+
+`adaptation-and-tuning`'s blurb read: "taking a trained model somewhere new
+— fine-tuning and transfer, preference training and alignment,
+parameter-efficient adaptation, context extension" (the last clause is
+amended below). **Every item on that list changes the weights or the
+window.** In-context learning changes neither: the
+model is fixed, the window is whatever it already was, and the claim is about
+what you put in it.
+
+That is why the documents scattered. [SOTA-037](../practices.d/SOTA-037.md) (ICL emerges at scale) went
+to `model-architecture` because emergence is a fact about the model;
+[SOTA-038](../practices.d/SOTA-038.md) (ICL permits few-shot adaptation) went to `adaptation-and-tuning`
+because adaptation is in the name; [LIT-420](../literature.d/LIT-420.md) (can chain of thought solve
+BIG-Bench Hard) went to `analysis-and-evaluation` because it is a benchmark
+paper. Three filings of one subject, each defensible, none findable from the
+others.
+
+## Decision 3: retrieval is rejected, on counting
+
+The probe returned 12 documents at 33%, which looked like the weakest of three
+real gaps. Inspected, **it is two**: [SOTA-269](../practices.d/SOTA-269.md) (keep a knowledge base
+outside the weights) and [LIT-060](../literature.d/LIT-060.md) (RETRO). The rest are a homonym —
+"retrieval" in [SOTA-135](../practices.d/SOTA-135.md), [LIT-137](../literature.d/LIT-137.md) and their neighbours means
+*retrieval benchmarks* for sequence models, the in-context recall task that
+linear-attention papers report, not retrieval-augmented generation.
+
+`DP-009`'s counting test is "if several documents are being declined for the
+same missing category, the category is missing". Two is not several. Revisit
+when there are more.
+
+**Three of this pass's probes were inflated by homonyms** and all three were
+caught only by reading the hits: "alignment" (gradient alignment, not safety —
+42 apparent documents, 2 real), "retrieval" (above), and "quantization"
+(vector quantization). A keyword probe over this corpus is a way to generate
+candidates and never a way to settle one.
+
+## Decision 4: `alignment` in a blurb becomes `safety alignment`
+
+`adaptation-and-tuning`'s blurb said "preference training and alignment". The
+word is a homonym and this pass proved it the expensive way: a probe for
+alignment returned 42 documents scattered across four topics, which read as a
+safety-shaped gap in the vocabulary. Two were about safety. The other forty
+are *gradient* alignment, aligned singular vectors, batch gradient alignment
+— the linear-algebra sense, which is most of what the optimizer literature in
+this record talks about.
+
+A blurb is what somebody reads when deciding where a document goes, and a
+blurb item that matches the wrong sense of its own word will send documents
+to the wrong place and hide the fact afterwards. It now reads **"preference
+training and safety alignment"**.
+
+This does not create a safety topic. The record holds two documents on the
+subject — [LIT-082](../literature.d/LIT-082.md) (Constitutional AI) and [SOTA-183](../practices.d/SOTA-183.md) (generate the
+harmlessness preference labels with the model itself) — and two is not
+several, which is the same test retrieval failed above. What it does is make
+the existing home for them say so.
+
+## Consequences
+
+**41 documents retagged**, 24 taking a new primary topic and 17 a secondary.
+Every one passes [ADR-046](ADR-046.md)'s test — the tag is true of the document — and the
+primary moved only where the document's central claim is the new topic. A
+document recommending a *parameterization* that happens to make FP8 work
+([SOTA-159](../practices.d/SOTA-159.md), [LIT-149](../literature.d/LIT-149.md)) keeps `training-optimization` first and takes
+the new topic second; a document recommending FP16 forward passes
+([SOTA-016](../practices.d/SOTA-016.md)) does not.
+
+**`systems-optimization` and `inference-optimization` lose a blurb item
+each.** No document loses a tag: the fragments were never the reason those
+topics applied, and where they were the only reason, the new topic now
+carries it alongside.
+
+**The count in the config was already wrong.** Its comment and blurb said
+"thirteen" while fourteen terms were declared — `tiny-models` was added
+without updating the prose. Now sixteen, and correct.
+
+**One unbound line survives and is not resolved here.**
+`SOTA-036 → SOTA-037 → SOTA-038 → SOTA-279` still has no tag common to every
+member. Both of [ADR-049](ADR-049.md)'s readings were tested against this pass's evidence:
+
+- *The invariant is missing.* No true tag binds it. `in-context-learning` is
+  not justifiably appropriate for `SOTA-036`, whose body is four pretraining
+  choices; `model-architecture` is not justifiably appropriate for a
+  prompting practice.
+- *The relation is wrong.* Checked against `extends`'s own blurb, and the
+  edges survive. "A rule that only exists because the earlier one is
+  followed" covers `SOTA-037 extends SOTA-036`: in-context learning emerges
+  in models trained under that frame. `SOTA-279 extends SOTA-038` is a
+  narrower case of its parent.
+
+So the line traverses a genuine change of subject with every step correctly
+expressed — which the report's own text allows for, saying an intersection
+"only shrinks as the component grows" and calling lines "the weaker signal of
+the two". This is stated as an open question for the record's owner rather
+than closed by asserting a tag nobody believes, and it is **not** the "note
+that somebody looked" that `ADR-049` forbids: both readings were tested and
+both failed, which is a result. Tracked in [#213](https://github.com/dmarx/anthology-of-the-sota/issues/213).
+
+## Alternatives considered
+
+**Two numerics topics, split at train/serve.** Matches `ADR-021`'s instinct
+and the audiences. Rejected: the four bridge documents, and native low-bit
+training is where the field is going.
+
+**A filing rule instead of a topic**, `ADR-024`'s option 2. Already taken by
+`ADR-026` and `ADR-046`, and it did not help: the rule says take the kind of
+claim, and there was no kind to take.
+
+**Leave serving quantization in `inference-optimization`.** Smallest change,
+and it keeps the subject half-named — which is the state this decision
+diagnoses rather than a lighter version of the fix.

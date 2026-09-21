@@ -6,6 +6,7 @@ formerly:
 title: 'Quantize weights after training by compensating each rounding error into the columns not yet quantized'
 version: 1
 tags:
+- numerics-and-precision
 - inference-optimization
 consensus: converged
 date: '2026-09-08'

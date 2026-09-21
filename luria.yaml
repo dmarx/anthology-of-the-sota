@@ -25,7 +25,7 @@
 # practice drawn from it still hold. Two schemes, two status fields, and the
 # relationship between them is a citation the lint can follow. See ADR-002.
 vocabularies:
-  # The thirteen topics: the primary axis of both the practice registry and the
+  # The sixteen topics: the primary axis of both the practice registry and the
   # reading list, in the order the indexes show them.
   #
   # The first seven are transcribed from the 2024 naming-conventions document;
@@ -63,9 +63,9 @@ vocabularies:
     # What the axis IS, which until luria 0.25.0 could only be said in a
     # comment no view could reach (LU-#279).
     blurb: >-
-      The thirteen kinds of claim this anthology files against — the primary
+      The sixteen kinds of claim this anthology files against — the primary
       axis of both the practice registry and the reading list, and the same
-      thirteen for each (ADR-026). The filing rule is the point: take a domain
+      sixteen for each (ADR-026). The filing rule is the point: take a domain
       topic when the claim is ABOUT the domain; a claim merely discovered in
       one still takes its kind.
     # What the axis says when you trip over it (LU-#273). `closed: true` on
@@ -87,7 +87,20 @@ vocabularies:
         blurb: optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies
       systems-optimization:
         label: Systems optimization
-        blurb: hardware utilization, kernels, compilation, memory access patterns, numerical precision
+        blurb: hardware utilization, kernels, compilation, memory access patterns — how an operation is executed, not how many bits it is executed in
+      # inactive-ok-block: ADR-tmphn14u SOTA-160 SOTA-234 — all Proposed; the decision is the
+      # one being recorded here and the two practices are named as the evidence for one word
+      # rather than two, not cited as recommendations
+      # Added by ADR-tmphn14u. `systems-optimization` carried "numerical precision"
+      # and `inference-optimization` carried "quantization", so the subject had
+      # two half-homes and 48 documents spread over nine topics with no topic
+      # holding a quarter. One word, because the interesting recent work is the
+      # interaction between the two poles: how much data a model saw determines
+      # how well it quantizes afterwards (SOTA-160), and native low-bit training
+      # collapses the distinction entirely (SOTA-234).
+      numerics-and-precision:
+        label: Numerics and precision
+        blurb: how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them
       model-stability:
         label: Model stability
         blurb: initialization, normalization, gradient handling, regularization, loss-landscape behaviour
@@ -105,10 +118,16 @@ vocabularies:
         blurb: architecture patterns, component design, structural choices, model families, multi-modal designs
       inference-optimization:
         label: Inference optimization
-        blurb: serving-time decisions — batching, cache layout, quantization, compression, sparsity, distillation, sampling algorithms
+        blurb: serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms
       adaptation-and-tuning:
         label: Adaptation and tuning
-        blurb: taking a trained model somewhere new — fine-tuning and transfer, preference training and alignment, parameter-efficient adaptation, context extension
+        blurb: taking a trained model somewhere new — fine-tuning and transfer, preference training and safety alignment, parameter-efficient adaptation, context extension
+      # Added by ADR-tmphn14u. Every item in `adaptation-and-tuning`'s blurb changes
+      # the weights or the window; in-context learning changes neither, and the
+      # twenty documents about it sat in four topics with none holding half.
+      in-context-learning:
+        label: In-context learning
+        blurb: getting behaviour out of a fixed model by what you put in the context — few-shot exemplars, chain of thought, prompting strategy, and what the context can and cannot buy
       representation-and-encoding:
         label: Representation and encoding
         blurb: how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them

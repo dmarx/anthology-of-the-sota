@@ -22,6 +22,7 @@ title: 'Combine µP with unit scaling so the hyperparameters decouple and FP8 ne
 version: 1
 tags:
 - training-optimization
+- numerics-and-precision
 date: '2026-09-08'
 source:
 - LIT-149

@@ -8,6 +8,7 @@ version: 1
 tags:
 - adaptation-and-tuning
 - systems-optimization
+- numerics-and-precision
 consensus: converged
 consensus_note: >-
   The default path for fine-tuning a model too large for the GPU in front of

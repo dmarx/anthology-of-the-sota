@@ -5,6 +5,7 @@ title: 'Use mixed precision during data loading'
 version: 1
 tags:
 - data-pipeline
+- numerics-and-precision
 date: '2026-08-24'
 source:
 - LIT-050

@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [21 Sep 18:33 — What filing the origin cost the practice](2026-09.md#what-filing-the-origin-cost-the-practice)
 - [21 Sep 18:24 — Filling the gap the last reading found](2026-09.md#filling-the-gap-the-last-reading-found)
 - [21 Sep 18:12 — More context, less evidence](2026-09.md#more-context-less-evidence)
 - [21 Sep 18:04 — A good idea I could not turn into a recommendation](2026-09.md#a-good-idea-i-could-not-turn-into-a-recommendation)
@@ -159,9 +160,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-152 entries across 2 books, newest first.
+153 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 150 | 2026-09-05 | 2026-09-21 |
+| [2026-09](2026-09.md) | 151 | 2026-09-05 | 2026-09-21 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

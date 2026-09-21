@@ -1,6 +1,9 @@
 ---
+number: 247
 status: Read
-paper: LIT-tmpov7yl
+formerly:
+- NOTE-tmptxi4l
+paper: LIT-500
 title: 'ViT-VQGAN: where the codebook advice comes from'
 version: 1
 date: '2026-09-21'
@@ -12,7 +15,7 @@ summary: >-
   near-worst FID, so utilization is necessary and not sufficient.
 ---
 
-# NOTE-tmptxi4l: ViT-VQGAN: where the codebook advice comes from
+# NOTE-247: ViT-VQGAN: where the codebook advice comes from
 
 ## Contribution
 

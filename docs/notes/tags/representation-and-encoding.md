@@ -4,7 +4,7 @@
 
 **representation-and-encoding**.
 
-14 of 246 NOTE documents. Back to the [full index](../README.md).
+15 of 247 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -22,3 +22,4 @@
 | [NOTE-243](../../../record/notes.d/NOTE-243.md) | GaussianToken and the cost of the continuous half | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist and filed without a practice. The idea — let the quantization units move and size themselves instead of sitting on a grid — is a good one, and the evidence for it cannot be separated from the five continuous parameters each token carries alongside its index. The comparison is at equal token count, and nobody computed bits. | Read |
 | [NOTE-245](../../../record/notes.d/NOTE-245.md) | VQ-VAE: what the three-term loss actually does | Read to give the discrete-tokenizer line a root. The durable content is three loss terms with three different owners and a gradient that is copied rather than derived — an engineering settlement that every descendant still runs unchanged, and that the paper is unusually honest about having chosen rather than justified. | Read |
 | [NOTE-246](../../../record/notes.d/NOTE-246.md) | VQGAN: the loss that made f=16 survivable | Read as the second step of the tokenizer trunk. The architecture is VQ-VAE's; what is new is a perceptual loss, a patch discriminator, and an adaptive weight that balances them without per-dataset tuning. That loss is the reason a `256×256` image can become 256 tokens and still look like anything, and it is why this line exists at all. | Read |
+| [NOTE-247](../../../record/notes.d/NOTE-247.md) | ViT-VQGAN: where the codebook advice comes from | Read to give `SOTA-306` its origin, and it corrected the practice in three places. The advice is not "use small code vectors" but "factorize lookup from embedding"; `ℓ₂`-normalization is ablated and is the largest single effect in the table; and the dimension-4 row shows 96% codebook usage with near-worst FID, so utilization is necessary and not sufficient. | Read |

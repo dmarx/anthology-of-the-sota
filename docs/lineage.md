@@ -94,8 +94,9 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-499](../record/literature.d/LIT-499.md) — Neural Discrete Representation Learning *(Active)*
   - [LIT-496](../record/literature.d/LIT-496.md) — Taming Transformers for High-Resolution Image Synthesis *(Active)*
     - [LIT-494](../record/literature.d/LIT-494.md) — GaussianToken: An Effective Image Tokenizer with 2D Gaussian Splatting *(Active)*
-    - [LIT-497](../record/literature.d/LIT-497.md) — Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation *(Active)*
     - [LIT-498](../record/literature.d/LIT-498.md) — MaskGIT: Masked Generative Image Transformer *(Active)*
+    - [LIT-500](../record/literature.d/LIT-500.md) — Vector-quantized Image Modeling with Improved VQGAN *(Active)*
+      - [LIT-497](../record/literature.d/LIT-497.md) — Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation *(Active)* — also extends LIT-496
 
 ## in-context-learning
 
@@ -156,8 +157,9 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-499](../record/literature.d/LIT-499.md) — Neural Discrete Representation Learning *(Active)*
   - [LIT-496](../record/literature.d/LIT-496.md) — Taming Transformers for High-Resolution Image Synthesis *(Active)*
     - [LIT-494](../record/literature.d/LIT-494.md) — GaussianToken: An Effective Image Tokenizer with 2D Gaussian Splatting *(Active)*
-    - [LIT-497](../record/literature.d/LIT-497.md) — Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation *(Active)*
     - [LIT-498](../record/literature.d/LIT-498.md) — MaskGIT: Masked Generative Image Transformer *(Active)*
+    - [LIT-500](../record/literature.d/LIT-500.md) — Vector-quantized Image Modeling with Improved VQGAN *(Active)*
+      - [LIT-497](../record/literature.d/LIT-497.md) — Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation *(Active)* — also extends LIT-496
 
 ## tiny-models
 

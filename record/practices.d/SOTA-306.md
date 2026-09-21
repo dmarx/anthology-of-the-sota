@@ -18,7 +18,7 @@ history:
 - version: 2
   date: '2026-09-21'
   note: >-
-    Filing the origin (LIT-tmpov7yl, ViT-VQGAN) corrected this in three places
+    Filing the origin (LIT-500, ViT-VQGAN) corrected this in three places
     and changed its title. (1) The instruction was "make the code vectors
     low-dimensional"; the origin's is to FACTORIZE — look up in a
     low-dimensional space, project the matched code back to a high-dimensional
@@ -35,14 +35,14 @@ tags:
 - generative-modeling
 date: '2026-09-21'
 source:
-- LIT-tmpov7yl
+- LIT-500
 - LIT-497
 - LIT-494
 introduced_by:
-- LIT-tmpov7yl
+- LIT-500
 implementations: []
 summary: >-
-  Yu et al. (2021), [LIT-tmpov7yl](../literature.d/LIT-tmpov7yl.md) — project the encoder output
+  Yu et al. (2021), [LIT-500](../literature.d/LIT-500.md) — project the encoder output
   down to a low-dimensional lookup space, `ℓ₂`-normalize it and the codebook,
   match there, and project the winner back up to a wide embedding. Codebook
   usage goes **4% → 95%** and FID **3.68 → 1.50** at unchanged throughput;
@@ -57,7 +57,7 @@ summary: >-
 ## Source
 
 Yu, Li, Koh, Zhang, Pang, Qin, Ku, Xu, Baldridge and Wu (2021),
-[LIT-tmpov7yl](../literature.d/LIT-tmpov7yl.md) — read as [NOTE-tmptxi4l](../notes.d/NOTE-tmptxi4l.md).
+[LIT-500](../literature.d/LIT-500.md) — read as [NOTE-247](../notes.d/NOTE-247.md).
 Confirmed independently by Sun et al. (2024), [LIT-497](../literature.d/LIT-497.md), which
 credits it, and by Dong et al. (2025), [LIT-494](../literature.d/LIT-494.md), which does not
 cite either.

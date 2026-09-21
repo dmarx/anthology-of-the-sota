@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-83 of 409 LIT documents. Back to the [full index](../README.md).
+84 of 410 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -93,3 +93,4 @@
 | [LIT-472](../../../record/literature.d/LIT-472.md) | nGPT: Normalized Transformer with Representation Learning on the Hypersphere | Loshchilov et al. (2024), [ARXIV-2410.01131](https://arxiv.org/abs/2410.01131). Normalize every embedding-dimension vector in every matrix to the unit hypersphere after each step, delete all normalization layers, weight decay and LR warmup, and make each block's residual contribution a learnable per-dimension step size. 4× / 10× / 20× fewer tokens to the same loss at 1k / 4k / 8k context, at 0.5B and 1B on OpenWebText — and 60–80% more time per step. | Active |
 | [LIT-473](../../../record/literature.d/LIT-473.md) | Quantized Evolution Strategies: High-precision Fine-tuning of Quantized LLMs at Low-precision Cost | Xu, Miikkulainen and Qiu (2026), [ARXIV-2602.03120](https://arxiv.org/abs/2602.03120). Fine-tune a quantized model in its own integer space: accumulate the part of each evolution-strategies update that is smaller than the lattice spacing until it crosses a grid point, and rematerialize that accumulator from stored seeds so it costs kilobytes instead of an FP16 copy of the weights. Countdown, Qwen2.5 at 1.5B and 3B, INT4/INT8/W8A8. | Active |
 | [LIT-474](../../../record/literature.d/LIT-474.md) | The Coverage Principle: How Pre-Training Enables Post-Training | Chen, Huang, Golowich, Malladi, Block, Ash, Krishnamurthy and Foster (2025), [ARXIV-2510.15020](https://arxiv.org/abs/2510.15020). Names the quantity cross-entropy is a bad proxy for: the **coverage profile**, the probability mass a model puts on rare high-quality responses. Proves it is necessary and sufficient for Best-of-N to succeed, that next-token prediction optimizes it faster than it optimizes cross-entropy, and that sequence-level KL carries a linear dependence on sequence length that coverage does not. | Active |
+| [LIT-475](../../../record/literature.d/LIT-475.md) | Dropout Reduces Underfitting | Liu, Xu, Jin, Shen and Darrell (2023), [ARXIV-2303.01500](https://arxiv.org/abs/2303.01500). Dropout applied only for the first stretch of training and then switched off lowers **training** loss and raises test accuracy on models too small to overfit — the regime where standard dropout costs up to 6 points. The mechanism is measured: early dropout reduces the angle between mini-batch gradients and the whole-dataset gradient. | Active |

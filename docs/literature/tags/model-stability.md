@@ -6,7 +6,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-26 of 409 LIT documents. Back to the [full index](../README.md).
+27 of 410 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -36,3 +36,4 @@
 | [LIT-395](../../../record/literature.d/LIT-395.md) | Dropout: A Simple Way to Prevent Neural Networks from Overfitting | Srivastava et al. (2014), JMLR 15:1929-1958. The definitive dropout paper, and the one that carries the conditions rather than just the technique: a "sweet spot" in dataset size outside which dropout buys nothing in either direction, a 2-3x training-time cost, the weight-scaling rule that makes a single test-time pass approximate the ensemble, and a practical guide (p = 0.5-0.8 hidden, 0.8 input, 10-100x the learning rate, momentum 0.95-0.99, max-norm c = 3-4) whose coupling between those knobs is the part most citations drop. | Active |
 | [LIT-396](../../../record/literature.d/LIT-396.md) | Dropout Training as Adaptive Regularization | Wager et al. (2013), [ARXIV-1307.1493](https://arxiv.org/abs/1307.1493). For generalized linear models, dropout is first-order equivalent to L2 applied after scaling the features by an estimate of the inverse diagonal Fisher information — so the penalty it imposes is data-dependent rather than isotropic, which is what distinguishes it from weight decay. The paper also connects the result to AdaGrad, and turns it into a semi-supervised method that builds the regularizer from unlabeled data. | Active |
 | [LIT-472](../../../record/literature.d/LIT-472.md) | nGPT: Normalized Transformer with Representation Learning on the Hypersphere | Loshchilov et al. (2024), [ARXIV-2410.01131](https://arxiv.org/abs/2410.01131). Normalize every embedding-dimension vector in every matrix to the unit hypersphere after each step, delete all normalization layers, weight decay and LR warmup, and make each block's residual contribution a learnable per-dimension step size. 4× / 10× / 20× fewer tokens to the same loss at 1k / 4k / 8k context, at 0.5B and 1B on OpenWebText — and 60–80% more time per step. | Active |
+| [LIT-475](../../../record/literature.d/LIT-475.md) | Dropout Reduces Underfitting | Liu, Xu, Jin, Shen and Darrell (2023), [ARXIV-2303.01500](https://arxiv.org/abs/2303.01500). Dropout applied only for the first stretch of training and then switched off lowers **training** loss and raises test accuracy on models too small to overfit — the regime where standard dropout costs up to 6 points. The mechanism is measured: early dropout reduces the angle between mini-batch gradients and the whole-dataset gradient. | Active |

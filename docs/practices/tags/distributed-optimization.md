@@ -6,7 +6,7 @@
 
 **Distributed optimization** — parallelism and sharding, communication, memory management, checkpointing.
 
-39 of 284 SOTA documents. Back to the [full index](../README.md).
+39 of 285 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

@@ -21,10 +21,10 @@ history:
   date: '2026-09-21'
   note: >-
     Bounds the negative half. The verdict is about dropout applied THROUGHOUT
-    training; LIT-tmpfdpkj shows the same operator on a prefix of training
+    training; LIT-475 shows the same operator on a prefix of training
     lowering training loss in exactly the regime where the throughout version
     costs ViT-T six points of ImageNet accuracy. A reader taking "not where it
-    cannot" as "never" would miss SOTA-tmpxll55. The recommendation is
+    cannot" as "never" would miss SOTA-285. The recommendation is
     unchanged and its evidence is strengthened -- that six-point drop is now
     the clearest measurement in the record of the cost this practice warns
     about.
@@ -56,11 +56,11 @@ explained_by:
 - THEORY-016
 ---
 
-<!-- inactive-ok-file: SOTA-tmpxll55 — Proposed, and named as the boundary case
+<!-- inactive-ok-file: SOTA-285 — Proposed, and named as the boundary case
      this practice's condition does not cover. Its unsettled status is part of
      what is said about it: the evidence for the boundary is vision only -->
 
-<!-- inactive-ok-file: THEORY-tmpbaqnm — Proposed, named once as the account of
+<!-- inactive-ok-file: THEORY-044 — Proposed, named once as the account of
      that boundary case and not relied on by anything here -->
 
 # SOTA-240: Apply dropout where the model can memorize what it is shown, and not where it cannot
@@ -150,7 +150,7 @@ vs 12.6).
 
 ## The verdict is about the schedule, not only the regime
 
-`LIT-tmpfdpkj` is the strongest single confirmation of the negative half
+`LIT-475` is the strongest single confirmation of the negative half
 above: standard dropout costs ViT-T **six** points of ImageNet-1K top-1 —
 73.9 down to 67.9 — on a model far too small to memorize 1.2M images, which
 is this practice's condition being paid in full.
@@ -160,8 +160,8 @@ training and then switched off *lowers training loss* on the same models. So
 what the condition rules out is dropout as a standing regularizer on a model
 that is not overfitting. It does not rule out the operator appearing briefly
 at the start, where it is doing something else entirely
-([SOTA-tmpxll55](SOTA-tmpxll55.md), explained by
-[THEORY-tmpbaqnm](../theory.d/THEORY-tmpbaqnm.md)).
+([SOTA-285](SOTA-285.md), explained by
+[THEORY-044](../theory.d/THEORY-044.md)).
 
 The evidence for that boundary is vision only, which is why it is a pointer
 here rather than a change to this practice's claim.

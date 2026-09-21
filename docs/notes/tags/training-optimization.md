@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-52 of 223 NOTE documents. Back to the [full index](../README.md).
+53 of 224 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -60,3 +60,4 @@
 | [NOTE-221](../../../record/notes.d/NOTE-221.md) | nGPT | Reading it: the headline is 4–20× and the footnote is 60–80% more time per step, so the honest wall-clock figure is roughly 5.5× at 4k. Still large. The part that generalises beyond this architecture is smaller and more interesting — that a matrix's norm is currently an accident of the learning rate and weight decay, and does not have to be. | Read |
 | [NOTE-222](../../../record/notes.d/NOTE-222.md) | Quantized Evolution Strategies | Reading it: the memory trick is the contribution, not the error feedback. Error feedback is 1-bit SGD's, correctly credited; what is new is refusing to store the accumulator at all and rebuilding it from seeds, which is the only reason the method fits in the memory budget that motivated it. | Read |
 | [NOTE-223](../../../record/notes.d/NOTE-223.md) | The Coverage Principle | Reading it: the strongest thing here is not the theorem but the Bernoulli example, which shows KL going to infinity while coverage stays fine on a two-outcome model. That is the whole argument in four lines, and it explains why a metric everybody watches can be anti-correlated with what they want. | Read |
+| [NOTE-224](../../../record/notes.d/NOTE-224.md) | Dropout Reduces Underfitting | Reading it: the persuasive number is the training loss, not the accuracy. Early dropout lowers ViT-T's training loss from 3.443 to 3.394 while standard dropout raises it to 3.885 — so the same operator is doing two opposite things depending only on when it runs, and one of them is not regularization. | Read |

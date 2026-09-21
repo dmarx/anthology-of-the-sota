@@ -1,6 +1,9 @@
 ---
+number: 224
 status: Read
-paper: LIT-tmpfdpkj
+formerly:
+- NOTE-tmpbrbwv
+paper: LIT-475
 title: 'Dropout Reduces Underfitting'
 version: 1
 date: '2026-09-21'
@@ -12,7 +15,7 @@ summary: >-
   regularization.
 ---
 
-# NOTE-tmpbrbwv: Dropout Reduces Underfitting
+# NOTE-224: Dropout Reduces Underfitting
 
 ## Contribution
 

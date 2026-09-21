@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**115 document(s) awaiting a decision.**
+**117 document(s) awaiting a decision.**
 
 ## SOTAs
 
-77 of the 115.
+78 of the 117.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -87,13 +87,14 @@
 | 2026-09-20 | Proposed | [SOTA-271](../../record/practices.d/SOTA-271.md) | 1 | 0 | Train on a second modality even when the target is single-modality |
 | 2026-09-20 | Proposed | [SOTA-273](../../record/practices.d/SOTA-273.md) | 1 | 0 | Choose a pretraining context whose association with the input is neither too strong nor too weak, and mix contexts to get there |
 | 2026-09-21 | Proposed | [SOTA-283](../../record/practices.d/SOTA-283.md) | 3 | 0 | To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it |
+| 2026-09-21 | Proposed | [SOTA-285](../../record/practices.d/SOTA-285.md) | 3 | 0 | Put dropout at the start of training if the model underfits, and at the end if it overfits — the schedule decides the sign, not the rate |
 | 2026-09-21 | Proposed | [SOTA-277](../../record/practices.d/SOTA-277.md) | 2 | 0 | For a task that is a sequential composition, buy depth rather than width |
 | 2026-09-21 | Proposed | [SOTA-282](../../record/practices.d/SOTA-282.md) | 1 | 0 | Put every matrix and hidden state on the unit hypersphere, and make each block's residual step size a learned per-dimension parameter |
 | 2026-09-21 | Proposed | [SOTA-284](../../record/practices.d/SOTA-284.md) | 1 | 0 | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |
 
 ## THEORYs
 
-19 of the 115.
+20 of the 117.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -115,11 +116,12 @@
 | 2026-09-20 | Proposed | [THEORY-036](../../record/theory.d/THEORY-036.md) | 3 | 0 | Representations converge across architectures, objectives and modalities, and the endpoint is a model of what generated the data |
 | 2026-09-20 | Proposed | [THEORY-034](../../record/theory.d/THEORY-034.md) | 1 | 0 | Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations |
 | 2026-09-21 | Proposed | [THEORY-043](../../record/theory.d/THEORY-043.md) | 1 | 0 | Cross-entropy pays an unbounded price for mass a learner never had, and that price grows with sequence length — which is why it drifts from what post-training needs |
+| 2026-09-21 | Proposed | [THEORY-044](../../record/theory.d/THEORY-044.md) | 1 | 0 | Dropout early in training buys a biased gradient estimate with much less directional variance, and the trade is favourable until it is not |
 | 2026-09-21 | Proposed | [THEORY-041](../../record/theory.d/THEORY-041.md) | 0 | 0 | Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing |
 
 ## LITs
 
-3 of the 115.
+3 of the 117.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -129,7 +131,7 @@
 
 ## ADRs
 
-16 of the 115.
+16 of the 117.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

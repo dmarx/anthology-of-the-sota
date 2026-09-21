@@ -1,5 +1,8 @@
 ---
+number: 44
 status: Proposed
+formerly:
+- THEORY-tmpbaqnm
 promote_when: >-
   The gradient-direction-error crossing measured on a model family other than
   the source's, and shown to *predict* where the switch point should go —
@@ -14,11 +17,11 @@ tags:
 - training-optimization
 date: '2026-09-21'
 source:
-- LIT-tmpfdpkj
+- LIT-475
 explains:
-- SOTA-tmpxll55
+- SOTA-285
 summary: >-
-  Liu et al. (2023), [LIT-tmpfdpkj](../literature.d/LIT-tmpfdpkj.md) — with dropout, mini-batch
+  Liu et al. (2023), [LIT-475](../literature.d/LIT-475.md) — with dropout, mini-batch
   gradients are a *biased* estimate of the whole-dataset gradient, because
   each batch runs through a different sub-network. Their directional variance
   falls far enough that the angle to the true gradient falls too — for about
@@ -26,22 +29,22 @@ summary: >-
   being a regularizer.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpxll55 — Proposed, and the practice this account
+<!-- inactive-ok-file: SOTA-285 — Proposed, and the practice this account
      explains; naming it in the `explains` table is the relation, not a claim that
      either is settled -->
 
-# THEORY-tmpbaqnm: Dropout early in training buys a biased gradient estimate with much less directional variance, and the trade is favourable until it is not
+# THEORY-044: Dropout early in training buys a biased gradient estimate with much less directional variance, and the trade is favourable until it is not
 
 ## Source
 
-Liu, Xu, Jin, Shen and Darrell (2023), [LIT-tmpfdpkj](../literature.d/LIT-tmpfdpkj.md) §3 — read as
-[NOTE-tmpbrbwv](../notes.d/NOTE-tmpbrbwv.md).
+Liu, Xu, Jin, Shen and Darrell (2023), [LIT-475](../literature.d/LIT-475.md) §3 — read as
+[NOTE-224](../notes.d/NOTE-224.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-tmpxll55](../practices.d/SOTA-tmpxll55.md) | dropout at the start if the model underfits, at the end if it overfits | not two uses of a regularizer but two different operators, separated by whether the bias it introduces is cheaper than the variance it removes |
+| [SOTA-285](../practices.d/SOTA-285.md) | dropout at the start if the model underfits, at the end if it overfits | not two uses of a regularizer but two different operators, separated by whether the bias it introduces is cheaper than the variance it removes |
 
 ## The account
 

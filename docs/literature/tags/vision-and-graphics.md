@@ -6,7 +6,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-22 of 409 LIT documents. Back to the [full index](../README.md).
+23 of 410 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -32,3 +32,4 @@
 | [LIT-423](../../../record/literature.d/LIT-423.md) | ImageNet Large Scale Visual Recognition Challenge | Russakovsky et al. (2014), [ARXIV-1409.0575](https://arxiv.org/abs/1409.0575). The thousand-class challenge built on a slice of [LIT-422](../../../record/literature.d/LIT-422.md)'s database, and the instrument almost every "ImageNet top-1" number in this record is actually measured on — including the human-error figure those numbers are read against. | Active |
 | [LIT-424](../../../record/literature.d/LIT-424.md) | Learning Multiple Layers of Features from Tiny Images | Krizhevsky (2009), University of Toronto technical report. The source of CIFAR-10 and CIFAR-100 — 32×32 labelled images drawn from the Tiny Images collection. Sixty-nine documents here measure something on it, which makes it the record's most-used instrument after ILSVRC. | Active |
 | [LIT-435](../../../record/literature.d/LIT-435.md) | NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis | Mildenhall et al. (2020), [ARXIV-2003.08934](https://arxiv.org/abs/2003.08934). The coordinate network the record's one scene-representation practice exists to replace. An MLP maps a 5D coordinate — position and viewing direction — to density and view-dependent colour; differentiable volume rendering means posed images are the only supervision needed. | Active |
+| [LIT-475](../../../record/literature.d/LIT-475.md) | Dropout Reduces Underfitting | Liu, Xu, Jin, Shen and Darrell (2023), [ARXIV-2303.01500](https://arxiv.org/abs/2303.01500). Dropout applied only for the first stretch of training and then switched off lowers **training** loss and raises test accuracy on models too small to overfit — the regime where standard dropout costs up to 6 points. The mechanism is measured: early dropout reduces the angle between mini-batch gradients and the whole-dataset gradient. | Active |

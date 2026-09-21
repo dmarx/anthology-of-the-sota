@@ -31,16 +31,16 @@ bare code and run `luria link --fix`.
 
 ## By topic
 
-**[Training optimization](tags/training-optimization.md)** (14) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
-[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md) · [026](../../record/theory.d/THEORY-026.md) · [028](../../record/theory.d/THEORY-028.md) · [029](../../record/theory.d/THEORY-029.md) · [030](../../record/theory.d/THEORY-030.md) · [032](../../record/theory.d/THEORY-032.md) · [033](../../record/theory.d/THEORY-033.md) · [035](../../record/theory.d/THEORY-035.md) · [037](../../record/theory.d/THEORY-037.md) · [040](../../record/theory.d/THEORY-040.md) · [042](../../record/theory.d/THEORY-042.md) · [043](../../record/theory.d/THEORY-043.md)
+**[Training optimization](tags/training-optimization.md)** (15) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
+[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md) · [026](../../record/theory.d/THEORY-026.md) · [028](../../record/theory.d/THEORY-028.md) · [029](../../record/theory.d/THEORY-029.md) · [030](../../record/theory.d/THEORY-030.md) · [032](../../record/theory.d/THEORY-032.md) · [033](../../record/theory.d/THEORY-033.md) · [035](../../record/theory.d/THEORY-035.md) · [037](../../record/theory.d/THEORY-037.md) · [040](../../record/theory.d/THEORY-040.md) · [042](../../record/theory.d/THEORY-042.md) · [043](../../record/theory.d/THEORY-043.md) · [044](../../record/theory.d/THEORY-044.md)
 
 **[Systems optimization](tags/systems-optimization.md)** (0) — hardware utilization, kernels, compilation, memory access patterns — how an operation is executed, not how many bits it is executed in.
 
 **[Numerics and precision](tags/numerics-and-precision.md)** (2) — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them:
 [019](../../record/theory.d/THEORY-019.md) · [042](../../record/theory.d/THEORY-042.md)
 
-**[Model stability](tags/model-stability.md)** (7) — initialization, normalization, gradient handling, regularization, loss-landscape behaviour:
-[001](../../record/theory.d/THEORY-001.md) · [003](../../record/theory.d/THEORY-003.md) · [010](../../record/theory.d/THEORY-010.md) · [011](../../record/theory.d/THEORY-011.md) · [015](../../record/theory.d/THEORY-015.md) · [016](../../record/theory.d/THEORY-016.md) · [041](../../record/theory.d/THEORY-041.md)
+**[Model stability](tags/model-stability.md)** (8) — initialization, normalization, gradient handling, regularization, loss-landscape behaviour:
+[001](../../record/theory.d/THEORY-001.md) · [003](../../record/theory.d/THEORY-003.md) · [010](../../record/theory.d/THEORY-010.md) · [011](../../record/theory.d/THEORY-011.md) · [015](../../record/theory.d/THEORY-015.md) · [016](../../record/theory.d/THEORY-016.md) · [041](../../record/theory.d/THEORY-041.md) · [044](../../record/theory.d/THEORY-044.md)
 
 **[Distributed optimization](tags/distributed-optimization.md)** (1) — parallelism and sharding, communication, memory management, checkpointing:
 [014](../../record/theory.d/THEORY-014.md)
@@ -73,7 +73,7 @@ bare code and run `luria link --fix`.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (21) · [Offered](status/Proposed.md) (19) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (21) · [Offered](status/Proposed.md) (20) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -132,4 +132,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-041](../../record/theory.d/THEORY-041.md) | Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing | Loshchilov et al. (2024), [LIT-472](../../record/literature.d/LIT-472.md) — trained GPT embeddings form a hyper-ellipsoid with a high condition number and attention matrices whose singular values suggest rank deficiency; renormalizing after training narrows the gap without closing it. `Proposed`, because the evidence is correlational: these models are worse conditioned and they also train slower, and nothing yet connects the two. | Proposed |
 | [THEORY-042](../../record/theory.d/THEORY-042.md) | An update smaller than the lattice spacing is not merely rounded away — it is cancelled exactly, and carrying the remainder makes the discrete path shadow the continuous one within half a grid cell | Xu et al. (2026), [LIT-473](../../record/literature.d/LIT-473.md) §5 — decompose rounding as identity plus error and expand the trajectory: when every step falls short of the grid, the accumulated quantization loss cancels the accumulated ideal update term for term and the weights never move. Stochastic rounding replaces stagnation with a random walk whose variance grows in `T`. Carrying the remainder bounds the deviation from the ideal path at `Δ/2` for all `T`. | Active |
 | [THEORY-043](../../record/theory.d/THEORY-043.md) | Cross-entropy pays an unbounded price for mass a learner never had, and that price grows with sequence length — which is why it drifts from what post-training needs | Chen et al. (2025), [LIT-474](../../record/literature.d/LIT-474.md) — KL charges `log(1/π̂)` for every response a well-generalizing learner happens not to cover, and that charge is unbounded; the coverage profile charges at most the missing mass itself. Sequence-level KL therefore grows linearly in sequence length where coverage does not, and next-token prediction optimizes coverage faster than it optimizes the loss on the screen. | Proposed |
+| [THEORY-044](../../record/theory.d/THEORY-044.md) | Dropout early in training buys a biased gradient estimate with much less directional variance, and the trade is favourable until it is not | Liu et al. (2023), [LIT-475](../../record/literature.d/LIT-475.md) — with dropout, mini-batch gradients are a *biased* estimate of the whole-dataset gradient, because each batch runs through a different sub-network. Their directional variance falls far enough that the angle to the true gradient falls too — for about the first thousand iterations, after which it rises and dropout goes back to being a regularizer. | Proposed |
 

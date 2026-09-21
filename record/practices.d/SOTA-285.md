@@ -1,5 +1,8 @@
 ---
+number: 285
 status: Proposed
+formerly:
+- SOTA-tmpxll55
 promote_when: >-
   Early dropout tried on a language-model pretraining run, where underfitting
   is the normal regime rather than a small-model artifact, with training loss
@@ -20,20 +23,20 @@ tags:
 - training-optimization
 date: '2026-09-21'
 source:
-- LIT-tmpfdpkj
+- LIT-475
 introduced_by:
-- LIT-tmpfdpkj
+- LIT-475
 implementations: []
 explained_by:
-- THEORY-tmpbaqnm
+- THEORY-044
 ---
 
-# SOTA-tmpxll55: Put dropout at the start of training if the model underfits, and at the end if it overfits — the schedule decides the sign, not the rate
+# SOTA-285: Put dropout at the start of training if the model underfits, and at the end if it overfits — the schedule decides the sign, not the rate
 
 ## Source
 
-Liu, Xu, Jin, Shen and Darrell (2023), [LIT-tmpfdpkj](../literature.d/LIT-tmpfdpkj.md) — read as
-[NOTE-tmpbrbwv](../notes.d/NOTE-tmpbrbwv.md). ImageNet-1K, models from 5M to 86M parameters, three
+Liu, Xu, Jin, Shen and Darrell (2023), [LIT-475](../literature.d/LIT-475.md) — read as
+[NOTE-224](../notes.d/NOTE-224.md). ImageNet-1K, models from 5M to 86M parameters, three
 seeds.
 
 ## The claim

@@ -1,5 +1,8 @@
 ---
+number: 301
 status: Proposed
+formerly:
+- SOTA-tmprcn0m
 promote_when: >-
   A second group reporting the ordering swap on a pretrained diffusion model,
   with the objective **and** a feasibility or execution measure both reported
@@ -21,14 +24,14 @@ tags:
 - generative-modeling
 date: '2026-09-21'
 source:
-- LIT-tmpzcf35
+- LIT-490
 introduced_by:
-- LIT-tmpzcf35
+- LIT-490
 implementations: []
 explained_by:
-- THEORY-tmphpdiq
+- THEORY-053
 summary: >-
-  Zhang et al. (2026), [LIT-tmpzcf35](../literature.d/LIT-tmpzcf35.md) — the usual recipe adds `−η∇f`
+  Zhang et al. (2026), [LIT-490](../literature.d/LIT-490.md) — the usual recipe adds `−η∇f`
   after the denoising step, which walks the sample off the geometry the model
   learned with nothing left to pull it back. Apply the gradient to the noisy
   iterate first and let the denoiser follow: it acts as an approximate
@@ -37,17 +40,17 @@ summary: >-
   between a plan that looks good and one that survives execution.
 ---
 
-<!-- inactive-ok-file: THEORY-tmphpdiq — Proposed, filed in this same
+<!-- inactive-ok-file: THEORY-053 — Proposed, filed in this same
      contribution, and the sentence citing it says so and says the practice
      does not rest on it: the empirical failure of the other ordering is
      direct, the proofs are the account of why -->
 
-# SOTA-tmprcn0m: Apply the objective gradient before the denoiser, not after it, when guiding diffusion toward a task objective
+# SOTA-301: Apply the objective gradient before the denoiser, not after it, when guiding diffusion toward a task objective
 
 ## Source
 
-Zhang, Zhang, Zardini, Amin and Ozdaglar (2026), [LIT-tmpzcf35](../literature.d/LIT-tmpzcf35.md) —
-[ARXIV-2608.29507](https://arxiv.org/abs/2608.29507) — read as [NOTE-tmpyuelo](../notes.d/NOTE-tmpyuelo.md).
+Zhang, Zhang, Zardini, Amin and Ozdaglar (2026), [LIT-490](../literature.d/LIT-490.md) —
+[ARXIV-2608.29507](https://arxiv.org/abs/2608.29507) — read as [NOTE-239](../notes.d/NOTE-239.md).
 
 ## What to do
 
@@ -69,7 +72,7 @@ that happens: you end the step off the geometry, and nothing corrects it.
 Added **before**, the denoiser is the correction, because it maps noisy
 points back toward the data support.
 
-[THEORY-tmphpdiq](../theory.d/THEORY-tmphpdiq.md) is the account — the Stein denoiser as an approximate
+[THEORY-053](../theory.d/THEORY-053.md) is the account — the Stein denoiser as an approximate
 projection — and with it the reverse process is an inexact projected-gradient
 method with finite-time guarantees on linear subspaces, compact convex sets
 and compact Riemannian submanifolds. It is `Proposed`, and the practice does

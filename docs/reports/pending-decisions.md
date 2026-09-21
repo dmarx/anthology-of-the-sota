@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**136 document(s) awaiting a decision.**
+**138 document(s) awaiting a decision.**
 
 ## SOTAs
 
-91 of the 136.
+92 of the 138.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -99,6 +99,7 @@
 | 2026-09-21 | Proposed | [SOTA-297](../../record/practices.d/SOTA-297.md) | 1 | 0 | Scale parallel computation with learnable input transforms, not parameters, when inference memory is the binding constraint |
 | 2026-09-21 | Proposed | [SOTA-298](../../record/practices.d/SOTA-298.md) | 1 | 0 | Measure a writing assistant by the outcome it was deployed to improve, not by the text features that used to predict it |
 | 2026-09-21 | Proposed | [SOTA-299](../../record/practices.d/SOTA-299.md) | 1 | 0 | Finetune the whole generative model, encoder and decoder, for a dense perception task instead of attaching a head to a backbone |
+| 2026-09-21 | Proposed | [SOTA-301](../../record/practices.d/SOTA-301.md) | 1 | 0 | Apply the objective gradient before the denoiser, not after it, when guiding diffusion toward a task objective |
 | 2026-09-21 | Proposed | [SOTA-287](../../record/practices.d/SOTA-287.md) | 0 | 0 | If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input |
 | 2026-09-21 | Proposed | [SOTA-288](../../record/practices.d/SOTA-288.md) | 0 | 0 | Late in training, replicate a small subset of the weights, train the copies against shared base weights, and average the subset back into one model |
 | 2026-09-21 | Proposed | [SOTA-293](../../record/practices.d/SOTA-293.md) | 0 | 0 | Count embedding parameters when you report a tiny model's size |
@@ -107,7 +108,7 @@
 
 ## THEORYs
 
-26 of the 136.
+27 of the 138.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -136,11 +137,12 @@
 | 2026-09-21 | Proposed | [THEORY-047](../../record/theory.d/THEORY-047.md) | 1 | 0 | Personalizing a feed concentrates what it shows rather than broadening it, and a handful of moderate signals is enough to start |
 | 2026-09-21 | Proposed | [THEORY-049](../../record/theory.d/THEORY-049.md) | 1 | 0 | Modalities compete for the same feed-forward parameters, the competition is not symmetric between them, and that is where separating by modality pays |
 | 2026-09-21 | Proposed | [THEORY-052](../../record/theory.d/THEORY-052.md) | 1 | 0 | Synthesis requires equivariant representations and discriminative pretraining rewards invariant ones, which is why a generative prior groups objects it was never shown |
+| 2026-09-21 | Proposed | [THEORY-053](../../record/theory.d/THEORY-053.md) | 1 | 0 | The Stein posterior-mean denoiser acts as an approximate projection onto the learned data geometry |
 | 2026-09-21 | Proposed | [THEORY-041](../../record/theory.d/THEORY-041.md) | 0 | 0 | Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing |
 
 ## LITs
 
-3 of the 136.
+3 of the 138.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -150,7 +152,7 @@
 
 ## ADRs
 
-16 of the 136.
+16 of the 138.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

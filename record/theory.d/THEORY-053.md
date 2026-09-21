@@ -1,5 +1,8 @@
 ---
+number: 53
 status: Proposed
+formerly:
+- THEORY-tmphpdiq
 promote_when: >-
   The projection reading shown to hold for a **learned** denoiser rather than
   an exact posterior-mean one — a measurement of how far `D(x)` sits from the
@@ -17,11 +20,11 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpzcf35
+- LIT-490
 explains:
-- SOTA-tmprcn0m
+- SOTA-301
 summary: >-
-  Zhang et al. (2026), [LIT-tmpzcf35](../literature.d/LIT-tmpzcf35.md) — `D(x) = E[x₀ | x]` maps a noisy
+  Zhang et al. (2026), [LIT-490](../literature.d/LIT-490.md) — `D(x) = E[x₀ | x]` maps a noisy
   point toward the data support, and where the clean data lie on a linear
   subspace, inside a compact convex set, or on a compact smooth submanifold,
   the paper bounds its distance from the corresponding projection. The
@@ -29,22 +32,22 @@ summary: >-
   method rather than as sampling with a nudge.
 ---
 
-<!-- inactive-ok-file: SOTA-tmprcn0m — Proposed, filed in this same
+<!-- inactive-ok-file: SOTA-301 — Proposed, filed in this same
      contribution; this theory declares `explains:` on it, so the citation is
      the relation itself and cannot wait on the practice being settled -->
 
-# THEORY-tmphpdiq: The Stein posterior-mean denoiser acts as an approximate projection onto the learned data geometry
+# THEORY-053: The Stein posterior-mean denoiser acts as an approximate projection onto the learned data geometry
 
 ## Source
 
-Zhang, Zhang, Zardini, Amin and Ozdaglar (2026), [LIT-tmpzcf35](../literature.d/LIT-tmpzcf35.md) §§3–6 —
-read as [NOTE-tmpyuelo](../notes.d/NOTE-tmpyuelo.md).
+Zhang, Zhang, Zardini, Amin and Ozdaglar (2026), [LIT-490](../literature.d/LIT-490.md) §§3–6 —
+read as [NOTE-239](../notes.d/NOTE-239.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-tmprcn0m](../practices.d/SOTA-tmprcn0m.md) | apply the objective gradient before the denoiser, not after | you are not adding a prior to an optimizer, you are *running* an optimizer — the denoiser is the projection step, so the ordering is not a preference but the difference between projected and unprojected gradient descent |
+| [SOTA-301](../practices.d/SOTA-301.md) | apply the objective gradient before the denoiser, not after | you are not adding a prior to an optimizer, you are *running* an optimizer — the denoiser is the projection step, so the ordering is not a preference but the difference between projected and unprojected gradient descent |
 
 ## The account
 

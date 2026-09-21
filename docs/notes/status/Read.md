@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-235 of 238 NOTE documents. Back to the [full index](../README.md).
+236 of 239 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -245,3 +245,4 @@
 | [NOTE-236](../../../record/notes.d/NOTE-236.md) | AI on Change.org | Read to test it against `SOTA-291`'s promotion condition, which it satisfies. The platform-level difference-in-differences is the strong evidence; the repeat-writer analysis reads stronger than it is; and the finding with the longest reach — that the text features stopped predicting outcomes — is in the appendix. | Read |
 | [NOTE-237](../../../record/notes.d/NOTE-237.md) | gen2seg | Read as the counter-route to SAM's data engine. The headline (narrow finetuning, broad generalization) is well evidenced but the argument lives in the controls, which are unusually good: the same backbone under a conventional head scores ~1.5 mIoU, and swapping only the decoder recovers part of the gap. | Read |
 | [NOTE-238](../../../record/notes.d/NOTE-238.md) | PHi: prediction of hidden states | Read for the instrument. The diagnosis of next-token loss is clean and the boring/interesting separation is convincing on two architectures. The reasoning-selection result is weaker than the abstract implies, and the paper says so itself in a sentence most readers will pass over: picking by next-token loss alone already scores 71%. | Read |
+| [NOTE-239](../../../record/notes.d/NOTE-239.md) | Denoising-corrected gradient guidance | Read for a practice the record's diffusion line was missing. The ordering change is well motivated and cheaply adopted; the theory is proved under idealized assumptions the authors name; and the useful experimental result is that the standard method was optimizing the plan rather than the executed outcome. | Read |

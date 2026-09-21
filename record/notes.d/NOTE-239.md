@@ -1,6 +1,9 @@
 ---
+number: 239
 status: Read
-paper: LIT-tmpzcf35
+formerly:
+- NOTE-tmpyuelo
+paper: LIT-490
 title: 'Denoising-corrected gradient guidance'
 version: 1
 date: '2026-09-21'
@@ -12,7 +15,7 @@ summary: >-
   executed outcome.
 ---
 
-# NOTE-tmpyuelo: Denoising-corrected gradient guidance
+# NOTE-239: Denoising-corrected gradient guidance
 
 ## Contribution
 

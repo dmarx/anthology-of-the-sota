@@ -4,7 +4,7 @@
 
 **generative-modeling**.
 
-19 of 238 NOTE documents. Back to the [full index](../README.md).
+20 of 239 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -27,3 +27,4 @@
 | [NOTE-228](../../../record/notes.d/NOTE-228.md) | The Diffusion Duality | Reading it: the theorem is elegant and the ablation says it accounts for under half the likelihood gain. What the paper actually establishes is a regime split — masked diffusion wins on quality at many steps, uniform-state wins below about 32, and the reason is architectural rather than tuned. | Read |
 | [NOTE-232](../../../record/notes.d/NOTE-232.md) | Mixture-of-Transformers | Read to test whether it satisfies `SOTA-262`'s promotion condition. It does, as that condition was written — second group, per-modality weights against a shared-weight backbone, FLOPs held identical. The component ablation is a bonus the condition did not ask for and the practice needed. | Read |
 | [NOTE-237](../../../record/notes.d/NOTE-237.md) | gen2seg | Read as the counter-route to SAM's data engine. The headline (narrow finetuning, broad generalization) is well evidenced but the argument lives in the controls, which are unusually good: the same backbone under a conventional head scores ~1.5 mIoU, and swapping only the decoder recovers part of the gap. | Read |
+| [NOTE-239](../../../record/notes.d/NOTE-239.md) | Denoising-corrected gradient guidance | Read for a practice the record's diffusion line was missing. The ordering change is well motivated and cheaply adopted; the theory is proved under idealized assumptions the authors name; and the useful experimental result is that the standard method was optimizing the plan rather than the executed outcome. | Read |

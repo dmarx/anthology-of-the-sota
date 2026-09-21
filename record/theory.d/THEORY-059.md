@@ -32,9 +32,6 @@ summary: >-
   error rather than the weights underperforms.
 ---
 
-<!-- inactive-ok-file: SOTA-314 — Proposed, filed in this same
-     contribution; this theory declares `explains:` on it, so the citation is
-     the relation itself. -->
 
 # THEORY-059: A low-rank branch corrects quantization because weight spectra are steep and quantization-error spectra are flat
 

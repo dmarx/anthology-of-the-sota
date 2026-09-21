@@ -33,11 +33,6 @@ summary: >-
   once the bins are placed adaptively.
 ---
 
-<!-- inactive-ok-file: SOTA-312 SOTA-200 — SOTA-312 is Proposed
-     only in the sense that it is filed in this same contribution; this theory
-     declares `explains:` on it, so the citation is the relation itself.
-     SOTA-200 is named in "What it does not say" to distinguish this account
-     from it, which is the opposite of relying on it. -->
 
 # THEORY-058: Apparent compression in the information plane is saturating activations collapsing into extreme bins, not information being discarded
 

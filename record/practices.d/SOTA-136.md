@@ -13,9 +13,11 @@ consensus_note: >-
   month of each other, by different arguments and with opposite remedies
   (LIT-151, LIT-181), while it ships at 1.6T in DeepSeek-V4. Production
   adoption and public dispute at once, which is the state `status:` alone
-  could not express.
+  could not express. A third group has since repaired the constraint's
+  implementation rather than its geometry (LIT-tmpzi9vi) — which does not
+  resolve the dispute and does not join either side of it.
 title: 'Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections)'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -26,6 +28,18 @@ history:
     evaluation that arrived — while the field named only the source paper.
     DeepSeek-V4 shipping it at 1.6T stays adoption. Neither the status nor
     the recommendation moves.
+- version: 3
+  date: '2026-09-21'
+  note: >-
+    Adds LIT-tmpzi9vi as a source and one instruction: if you adopt the
+    constraint, construct it exactly rather than approximating it with
+    Sinkhorn-Knopp. The recommendation and the status are unchanged, and
+    the promotion condition is unmet for the third time — LIT-139 was the
+    production report, LIT-152 the independent evaluation, and this repairs
+    the implementation; none of the three measures a stream statistic. The
+    new source also makes the constraint EXACT, which is the condition under
+    which LIT-151's objection should bite hardest, so the miss is recorded
+    in the body rather than only in the note.
 tags:
 - model-architecture
 date: '2026-09-05'
@@ -38,6 +52,7 @@ source:
 # the dispute and live in contested_by.
 - LIT-140
 - LIT-152
+- LIT-tmpzi9vi
 introduced_by:
 - LIT-140
 contested_by:
@@ -85,6 +100,34 @@ homogenize, diversity and distinct do not appear in it. So the condition
 stands unmet by the one report that looked most likely to meet it — which is
 a thing to say out loud, because a reader who knows V4 ships mHC at 1.6T
 will otherwise assume the question was settled by shipping.
+
+## Construct the constraint, do not approximate it
+
+Yang (2026), [LIT-tmpzi9vi](../literature.d/LIT-tmpzi9vi.md) — read as [NOTE-tmpa0q97](../notes.d/NOTE-tmpa0q97.md) — shows the
+Sinkhorn-Knopp projection does not arrive. Across SK inputs measured during
+training, about **27.9%** have relative range `1/ν ≥ 10¹³`, where 20
+iterations do not converge; a single residual matrix's column sum can be off
+by **100%**, and the column sums of the layer-wise product `∏_l H^res_l` by
+**220%** in a 24-layer network.
+
+The replacement follows from Birkhoff-von Neumann: every doubly stochastic
+matrix is a convex combination of permutation matrices, so parameterize the
+convex weights with a softmax and the matrix is doubly stochastic **by
+construction**. No iteration, no approximation gap, and no fused CUDA kernel —
+native matrix operations, at throughput matching a naive implementation.
+
+So the instruction inside this branch is: if you take the constraint, build it
+rather than approximate it. What that does *not* settle is whether the
+constraint is the right one, which is the dispute below.
+
+**And it is the sharpest missed opportunity in that dispute.** Under
+Sinkhorn-Knopp mHC the matrices are not actually doubly stochastic, so
+[LIT-151](../literature.d/LIT-151.md)'s objection has an escape hatch: whatever keeps the streams
+distinct might be surviving through the approximation gap. Exact construction
+closes it. That makes [LIT-tmpzi9vi](../literature.d/LIT-tmpzi9vi.md) the cleanest available test of
+whether the doubly-stochastic set homogenizes the streams — the objection
+predicts it should homogenize *more* — and it reports no stream statistic at
+all. One histogram, on a model already trained, with code already public.
 
 Why *Proposed*: **the condition this was filed under has been met, and is
 not being applied.** That is worth explaining rather than quietly leaving

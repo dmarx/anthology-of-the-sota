@@ -22,11 +22,6 @@ summary: >-
   absorbs it, treat enough and the controls fail too.
 ---
 
-<!-- inactive-ok-file: SOTA-291 — Proposed, and the practice this account
-     explains. The document's own point is that a sound reason to distrust a design
-     is not evidence that a different programme works, so the practice's unsettled
-     status is the thing being said -->
-
 # THEORY-048: Randomizing individuals estimates an individual quantity, and when the units interact the collective effect is not the sum of it — so a null from such a trial is not evidence of no effect
 
 ## Source

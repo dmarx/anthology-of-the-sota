@@ -1,5 +1,8 @@
 ---
+number: 292
 status: Proposed
+formerly:
+- SOTA-tmpxrcae
 promote_when: >-
   The detection method run on a corpus other than this one — ideally an ML
   corpus rather than a social-media one — with the undisclosed share reported
@@ -19,18 +22,18 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpvcocw
+- LIT-481
 introduced_by:
-- LIT-tmpvcocw
+- LIT-481
 implementations: []
 ---
 
-# SOTA-tmpxrcae: Check industry ties yourself when reading a literature about deployed platforms — disclosure is unreliable and the ties are mechanically detectable
+# SOTA-292: Check industry ties yourself when reading a literature about deployed platforms — disclosure is unreliable and the ties are mechanically detectable
 
 ## Source
 
-Bak-Coleman, West, O'Connor and Bergstrom (2026), [LIT-tmpvcocw](../literature.d/LIT-tmpvcocw.md) — read
-as [NOTE-tmpvi1gr](../notes.d/NOTE-tmpvi1gr.md). 295 papers in *Science*, *Nature*, *PNAS* and
+Bak-Coleman, West, O'Connor and Bergstrom (2026), [LIT-481](../literature.d/LIT-481.md) — read
+as [NOTE-231](../notes.d/NOTE-231.md). 295 papers in *Science*, *Nature*, *PNAS* and
 their transfer journals, 1210 authors.
 
 ## The claim

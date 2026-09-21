@@ -1,5 +1,8 @@
 ---
+number: 291
 status: Proposed
+formerly:
+- SOTA-tmphxqsm
 promote_when: >-
   A specific-affordance evaluation run at collective scale with the group-level
   outcome actually measured — the source notes two large platform studies that
@@ -20,20 +23,20 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpz0ivc
+- LIT-482
 introduced_by:
-- LIT-tmpz0ivc
+- LIT-482
 implementations: []
 explained_by:
-- THEORY-tmp5y2y6
+- THEORY-048
 ---
 
-# SOTA-tmphxqsm: Evaluate a specific intervention on a specific affordance rather than the net effect of the system, and never read an individual-level null as the absence of a collective effect
+# SOTA-291: Evaluate a specific intervention on a specific affordance rather than the net effect of the system, and never read an individual-level null as the absence of a collective effect
 
 ## Source
 
 Bak-Coleman, Lewandowsky, Lorenz-Spreen, Narayanan, Orben and Oswald (2025),
-[LIT-tmpz0ivc](../literature.d/LIT-tmpz0ivc.md) — read as [NOTE-tmp09u28](../notes.d/NOTE-tmp09u28.md).
+[LIT-482](../literature.d/LIT-482.md) — read as [NOTE-230](../notes.d/NOTE-230.md).
 
 ## When this applies
 
@@ -45,7 +48,7 @@ is one instance of it rather than the scope.
 ## The negative half
 
 **A null from an individual-level randomized trial is not evidence that the
-system has no collective effect.** [THEORY-tmp5y2y6](../theory.d/THEORY-tmp5y2y6.md) gives four
+system has no collective effect.** [THEORY-048](../theory.d/THEORY-048.md) gives four
 separable reasons; two of them are structural and cannot be fixed with more
 data:
 
@@ -104,7 +107,7 @@ design can conclude. A reader who takes it as "those studies were wrong" has
 taken more than it says — and the direction of the error is not determined.
 
 **Read the surrounding literature with its funding visible.**
-[LIT-tmpvcocw](../literature.d/LIT-tmpvcocw.md) finds industry ties in 49% of high-profile papers in
+[LIT-481](../literature.d/LIT-481.md) finds industry ties in 49% of high-profile papers in
 this field, mostly undisclosed, and **sparse in exactly the platform-dynamics
 cluster** this practice points you toward. That is correlational and its
 authors say so; it is still the context in which "the evidence is mixed" gets

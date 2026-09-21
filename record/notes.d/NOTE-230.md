@@ -1,6 +1,9 @@
 ---
+number: 230
 status: Read
-paper: LIT-tmpz0ivc
+formerly:
+- NOTE-tmp09u28
+paper: LIT-482
 title: 'Informative and Actionable Social Media Research'
 version: 1
 date: '2026-09-21'
@@ -11,7 +14,7 @@ summary: >-
   nothing about that argument is specific to social media.
 ---
 
-# NOTE-tmp09u28: Informative and Actionable Social Media Research
+# NOTE-230: Informative and Actionable Social Media Research
 
 ## Contribution
 
@@ -106,7 +109,7 @@ specific-affordance questions; continuous rather than one-shot evaluation.
   is structural rather than noisy. This is that concern aimed at deployed
   systems, and the mechanisms are different — metric deformation there,
   estimand mismatch here.
-- [LIT-tmpvcocw](../literature.d/LIT-tmpvcocw.md), filed alongside, finds that industry-tied research
+- [LIT-481](../literature.d/LIT-481.md), filed alongside, finds that industry-tied research
   is sparse in exactly the platform-dynamics cluster this paper says the
   effects live in. Same first author, so not an independent corroboration —
   but the two halves fit.

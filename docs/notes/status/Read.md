@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-226 of 229 NOTE documents. Back to the [full index](../README.md).
+228 of 231 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -236,3 +236,5 @@
 | [NOTE-227](../../../record/notes.d/NOTE-227.md) | Late-phase weights | Reading it: three ablations constrain the recommendation more than the headline does. Starting at initialization fails outright, the fanciest variant is worse than doing nothing, and replicating every weight instead of a few is worse than replicating a few. All three are reported. | Read |
 | [NOTE-228](../../../record/notes.d/NOTE-228.md) | The Diffusion Duality | Reading it: the theorem is elegant and the ablation says it accounts for under half the likelihood gain. What the paper actually establishes is a regime split — masked diffusion wins on quality at many steps, uniform-state wins below about 32, and the reason is architectural rather than tuned. | Read |
 | [NOTE-229](../../../record/notes.d/NOTE-229.md) | Auditing Political Exposure Bias | Reading it to find out whether `deployment-and-society` earns its place: it does, and not because of the finding. The methods section is a sequence of stated trades about measuring a system you cannot inspect, and the sharpest result is that the arm following nobody gets the most diverse timeline. | Read |
+| [NOTE-230](../../../record/notes.d/NOTE-230.md) | Informative and Actionable Social Media Research | Reading it: the power-grid example is the whole paper and it is worth the space. Treat too few substations and the grid absorbs it; treat enough and the controls black out too. Both give "no effect", both are wrong, and nothing about that argument is specific to social media. | Read |
+| [NOTE-231](../../../record/notes.d/NOTE-231.md) | Industry Influence in Social Media Research | Reading it: the number that matters is not 49% of papers but 21% of authors. A field where half the high-profile output has industry ties held by a fifth of its people is not a field engaging broadly with industry — it is a small group with durable relationships, and that is a different diagnosis. | Read |

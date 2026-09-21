@@ -1,6 +1,9 @@
 ---
+number: 231
 status: Read
-paper: LIT-tmpvcocw
+formerly:
+- NOTE-tmpvi1gr
+paper: LIT-481
 title: 'Industry Influence in Social Media Research'
 version: 1
 date: '2026-09-21'
@@ -11,7 +14,7 @@ summary: >-
   group with durable relationships, and that is a different diagnosis.
 ---
 
-# NOTE-tmpvi1gr: Industry Influence in Social Media Research
+# NOTE-231: Industry Influence in Social Media Research
 
 ## Contribution
 
@@ -92,7 +95,7 @@ that matters more than any individual paper's conclusions.
 
 ## Connections
 
-- [LIT-tmpz0ivc](../literature.d/LIT-tmpz0ivc.md), filed alongside, argues the effects worth
+- [LIT-482](../literature.d/LIT-482.md), filed alongside, argues the effects worth
   measuring live at platform and collective scale. This finds industry ties
   **sparse in exactly that cluster** and over-represented in the cluster about
   what individual users share. The halves fit — and share a first author, so

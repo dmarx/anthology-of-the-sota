@@ -4,8 +4,10 @@
 
 **deployment-and-society**.
 
-1 of 229 NOTE documents. Back to the [full index](../README.md).
+3 of 231 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-229](../../../record/notes.d/NOTE-229.md) | Auditing Political Exposure Bias | Reading it to find out whether `deployment-and-society` earns its place: it does, and not because of the finding. The methods section is a sequence of stated trades about measuring a system you cannot inspect, and the sharpest result is that the arm following nobody gets the most diverse timeline. | Read |
+| [NOTE-230](../../../record/notes.d/NOTE-230.md) | Informative and Actionable Social Media Research | Reading it: the power-grid example is the whole paper and it is worth the space. Treat too few substations and the grid absorbs it; treat enough and the controls black out too. Both give "no effect", both are wrong, and nothing about that argument is specific to social media. | Read |
+| [NOTE-231](../../../record/notes.d/NOTE-231.md) | Industry Influence in Social Media Research | Reading it: the number that matters is not 49% of papers but 21% of authors. A field where half the high-profile output has industry ties held by a fifth of its people is not a field engaging broadly with industry — it is a small group with durable relationships, and that is a different diagnosis. | Read |

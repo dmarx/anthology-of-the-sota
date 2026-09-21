@@ -6,8 +6,10 @@
 
 **Deployment and society** — what a system does once it is running among people, and how anyone outside it could find out — audits of deployed platforms and recommenders, information ecosystems, moderation and governance, and the access problems and funding pressures of studying any of it from the outside.
 
-1 of 415 LIT documents. Back to the [full index](../README.md).
+3 of 417 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [LIT-480](../../../record/literature.d/LIT-480.md) | Auditing Political Exposure Bias: Algorithmic Amplification on Twitter/X During the 2024 U.S. Presidential Election | Ye, Luceri and Ferrara (2024), [ARXIV-2411.01852](https://arxiv.org/abs/2411.01852). 120 sock-puppet accounts, six weeks, 9.79M tweets from Twitter/X's "For You" timeline. The method is the transferable part: puppets that **never interact**, follow sets controlled to the subject, and exposure weighted by rank rather than counted. Accounts following nobody get the *most* diverse recommendations, so personalization concentrates rather than broadens. | Active |
+| [LIT-481](../../../record/literature.d/LIT-481.md) | Industry Influence in High-Profile Social Media Research | Bak-Coleman, West, O'Connor and Bergstrom (2026), [ARXIV-2601.11507](https://arxiv.org/abs/2601.11507). **49% of social media papers in Science, Nature and PNAS have a disclosable industry tie and most go undisclosed** — from 21% of authors, so a concentrated group rather than broad engagement. Ties are over-represented in research on what users share and sparse in research on platform dynamics. | Active |
+| [LIT-482](../../../record/literature.d/LIT-482.md) | Moving towards informative and actionable social media research | Bak-Coleman, Lewandowsky, Lorenz-Spreen, Narayanan, Orben and Oswald (2025), [ARXIV-2505.09254](https://arxiv.org/abs/2505.09254). Individual-level randomized trials do not estimate collective effects, for four named reasons — non-linearity across scale, hysteresis, feedback in time, and SUTVA violation through the network. A null from such a trial is not evidence of no effect, and the positive recommendation is to evaluate specific interventions instead of net effects. | Active |

@@ -1,5 +1,8 @@
 ---
+number: 48
 status: Active
+formerly:
+- THEORY-tmp5y2y6
 title: 'Randomizing individuals estimates an individual quantity, and when the units interact the collective effect is not the sum of it — so a null from such a trial is not evidence of no effect'
 version: 1
 tags:
@@ -7,11 +10,11 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpz0ivc
+- LIT-482
 explains:
-- SOTA-tmphxqsm
+- SOTA-291
 summary: >-
-  Bak-Coleman et al. (2025), [LIT-tmpz0ivc](../literature.d/LIT-tmpz0ivc.md) — four named reasons an
+  Bak-Coleman et al. (2025), [LIT-482](../literature.d/LIT-482.md) — four named reasons an
   individual-level randomized trial fails to estimate a collective effect:
   non-linearity across scale, hysteresis, feedback in time, and violation of
   the stable unit treatment value assumption through the network. The power
@@ -19,23 +22,23 @@ summary: >-
   absorbs it, treat enough and the controls fail too.
 ---
 
-<!-- inactive-ok-file: SOTA-tmphxqsm — Proposed, and the practice this account
+<!-- inactive-ok-file: SOTA-291 — Proposed, and the practice this account
      explains. The document's own point is that a sound reason to distrust a design
      is not evidence that a different programme works, so the practice's unsettled
      status is the thing being said -->
 
-# THEORY-tmp5y2y6: Randomizing individuals estimates an individual quantity, and when the units interact the collective effect is not the sum of it — so a null from such a trial is not evidence of no effect
+# THEORY-048: Randomizing individuals estimates an individual quantity, and when the units interact the collective effect is not the sum of it — so a null from such a trial is not evidence of no effect
 
 ## Source
 
 Bak-Coleman, Lewandowsky, Lorenz-Spreen, Narayanan, Orben and Oswald (2025),
-[LIT-tmpz0ivc](../literature.d/LIT-tmpz0ivc.md) — read as [NOTE-tmp09u28](../notes.d/NOTE-tmp09u28.md).
+[LIT-482](../literature.d/LIT-482.md) — read as [NOTE-230](../notes.d/NOTE-230.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-tmphxqsm](../practices.d/SOTA-tmphxqsm.md) | evaluate a specific intervention, not the net effect, and do not read an individual-level null as absence | not caution about noisy measurement but a mismatch between the design's estimand and the question's, with four separable causes |
+| [SOTA-291](../practices.d/SOTA-291.md) | evaluate a specific intervention, not the net effect, and do not read an individual-level null as absence | not caution about noisy measurement but a mismatch between the design's estimand and the question's, with four separable causes |
 
 ## The account
 
@@ -90,7 +93,7 @@ it holds or the estimate is not what the design claims. Hysteresis is a
 property of the system, and the inference withdrawal studies make from it is a
 symmetry assumption that can be written down and seen to be unwarranted.
 
-The status is about the account. [SOTA-tmphxqsm](../practices.d/SOTA-tmphxqsm.md) is `Proposed`,
+The status is about the account. [SOTA-291](../practices.d/SOTA-291.md) is `Proposed`,
 because a sound reason not to trust a design is not by itself evidence that a
 different programme works.
 

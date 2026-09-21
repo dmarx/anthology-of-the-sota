@@ -1,0 +1,91 @@
+---
+status: Active
+title: 'Noise Hypernetworks: Amortizing Test-Time Compute in Diffusion Models'
+version: 1
+tags:
+- generative-modeling
+- inference-optimization
+- adaptation-and-tuning
+date: '2026-09-21'
+published: '2025-08-01'
+arxiv: '2508.09968'
+first_author: 'Eyring'
+keywords:
+- 'test-time-scaling'
+- 'reward-alignment'
+- 'noise-optimization'
+- 'hypernetwork'
+- 'distilled-diffusion'
+implementations: []
+compared_against:
+- LIT-490
+summary: >-
+  Eyring et al. (2025), [ARXIV-2508.09968](https://arxiv.org/abs/2508.09968). Reward-guided test-time noise
+  optimization costs 20–40 seconds a sample. Train a LoRA hypernetwork once to
+  predict the optimized noise instead, and recover roughly half the gain at
+  **0.1 s** of added latency — 33–300× faster. The comparison that carries
+  it: direct reward fine-tuning of the same generator makes it **worse**
+  (GenEval 0.73 → 0.62 at four steps), because the KL term that would stop
+  reward-hacking is intractable in data space and tractable in noise space.
+---
+
+<!-- inactive-ok-file: SOTA-301 — Proposed, and cited throughout as the other
+     side of a trade rather than as support: it is the inference-time route,
+     this is the amortized one, and the comparison is between their cost
+     profiles. A contrast does not wait on the contrasted document being
+     settled, and both carry the same `unreplicated` standing -->
+
+# LIT-tmpksq2o: Noise Hypernetworks: Amortizing Test-Time Compute in Diffusion Models
+
+Eyring, Karthik, Dosovitskiy, Ruiz and Akata (2025) — [ARXIV-2508.09968](https://arxiv.org/abs/2508.09968)
+
+## Key takeaways
+
+- **The problem is a latency figure.** Reward-guided test-time noise
+  optimization works — ReNO takes SANA-Sprint from 0.70 to **0.81** on
+  GenEval — and costs **30 seconds** a sample against the base model's 0.2.
+  Gradient-based variants backpropagate through the full model; gradient-free
+  ones need thousands of denoiser evaluations. The paper's framing is that
+  this is test-time scaling's general problem, met here in a tractable case.
+- **The move is to amortize it into weights, once.** Train a lightweight
+  network to predict the optimized initial noise directly, so inference is
+  one extra forward pass rather than an optimization loop.
+- **Where the adaptation goes is the actual contribution.** The target is a
+  reward-tilted distribution, and learning it needs a KL term to the base
+  model or the result reward-hacks. In **data space** that KL requires
+  Jacobian determinants through the generator — intractable. Moved into
+  **noise space** it becomes, under a Lipschitz condition, an `L2` penalty on
+  the magnitude of the noise modification, and the data-processing inequality
+  makes it an upper bound on the data-space divergence you actually wanted.
+- **The negative result is the sharp one.** Direct LoRA reward fine-tuning of
+  the same generator does not merely underperform — it **degrades the base
+  model**, and degrades further with more sampling steps: SANA-Sprint GenEval
+  0.70 → **0.67** at one step, 0.72 → **0.66** at two, 0.73 → **0.62** at
+  four. HyperNoise on the same model goes 0.70 → **0.75**, 0.72 → 0.76,
+  0.73 → 0.77.
+- **What it recovers, stated honestly.** SD-Turbo 0.49 → **0.57** (ReNO:
+  0.63). SANA-Sprint 0.70 → **0.75** (ReNO: 0.81, best-of-N: 0.79, LLM prompt
+  optimization: 0.75). FLUX-schnell 0.68 → **0.72** (ReNO: 0.76). The
+  authors' own summary — "about half of the performance gains achieved by
+  ReNO" — matches the numbers.
+- **Cost accounting is scrupulous.** Added latency is 0.1–0.2 s; the tables
+  count the hypernetwork pass as an extra NFE (a "one-step" model becomes
+  NFEs = 2). 33× to 300× faster than the test-time methods it substitutes for.
+- **It is a few-step technique and the paper shows where it stops.** The gain
+  shrinks as NFEs grow — at 8 steps 0.74 → 0.76, at 16 steps 0.73 → 0.75, at
+  32 steps 0.71 → 0.72. Worth noting the base distilled model peaks around 4
+  steps and declines after, so both curves are flat where it matters.
+
+## Standing in the anthology
+
+The other half of a trade the record only had one side of. [SOTA-301](../practices.d/SOTA-301.md),
+filed from [LIT-490](LIT-490.md), is the inference-time route: steer the sampler with
+an objective gradient, correctly ordered, paying per sample. This is the
+amortized route: pay once in post-training, pay almost nothing per sample,
+and recover roughly half. `compared_against: LIT-490` is declared because the
+two answer the same question with opposite cost profiles and neither
+dominates.
+
+It also lands beside [SOTA-184](../practices.d/SOTA-184.md) with an unusual twist: LoRA is the
+mechanism in both, and here it adapts the *input* rather than the model,
+which is what makes the regularizer tractable.

@@ -62,22 +62,27 @@ work perfectly well.
   in that order of preference — the first two resolve through a remote, a
   URL is a string nothing can check ([ADR-009](record/decisions.d/ADR-009.md)). Two papers reached the old
   corpus with no identifier at all; that is now impossible.
-<!-- inactive-ok-block: ADR-035 — Proposed, and the decision this rule states; cited three times in this bullet, twice for what it actually says after a compression of it was misread -->
 - **The first tag is the primary topic, and a document may carry more than
   one.** The thirteen live in the `topics` vocabulary in `luria.yaml` — one
   table, named by the practice registry and the reading list alike, glosses
   included. List the topic the document is *most* about first: `primary_topic`
-  derives `{tags[0]}`, so tag order is what the indexes read. **Add a second
-  topic when it is genuinely true of the document, and leave it off when it is
-  not.** That is the whole test. The chain invariant reads the whole tag list,
-  so a second topic can bind a relation — which `ADR-035` calls "the point and
-  the risk", and the risk it names is a *free-form label* invented to satisfy
-  the check, not a real topic added after the unbound report pointed at it.
-  The report exists to surface exactly those candidates, and acting on one is
-  the intended response; `ADR-035` weighs three newly-bound edges and keeps
-  two. On `SOTA`, `LIT` and `THEORY` the vocabulary is closed, so the old
-  failure is structurally unavailable there — the only tag you *can* add is
-  one of the thirteen, and then the truth test is the only question left.
+  derives `{tags[0]}`, so tag order is what the indexes read. **Tag the
+  document's subject, liberally** — more than one topic is normal and three is
+  fine. The test is whether a tag is *justifiably appropriate*: would someone
+  browsing that topic be right to expect this document? Not whether it is the
+  single best word, and not why the record went and got the thing (`ADR-046`).
+- **An unbound relation is a defect, and "somebody looked at it" is not an
+  answer.** `chains` declare `invariant: tags`, so a relation the report calls
+  unbound has exactly two readings — the invariant is missing, or the relation
+  is wrong — and never a third (`ADR-049`, which took 22 unbound relations and
+  10 unbound lines to zero and rejected an acknowledgement directive for the
+  purpose). So the report is where you find documents that are not saying what
+  they are about, and answering one by adding a true topic is the intended
+  response. The narrow thing that stays forbidden is inventing a *label* to
+  satisfy the check (`ADR-035` §4) — impossible on `SOTA`, `LIT` and `THEORY`
+  anyway, where the vocabulary is closed. If the honest tags will not bind,
+  say so and fix it: either the relation is wrong, or the vocabulary is short
+  a word and the next bullet is what to do about it.
 - **The tag vocabulary is closed, and that is an invitation.** A tag not in
   `topics` fails the lint on `SOTA`, `LIT` and `THEORY`. That is there so
   every tag is one somebody chose and blurbed — **not** because the list is

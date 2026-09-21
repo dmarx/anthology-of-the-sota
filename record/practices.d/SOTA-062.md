@@ -11,9 +11,6 @@ status_note: >-
 title: 'Scale batch size with model size but sub-linearly'
 version: 2
 history:
-# inactive-ok-block: ADR-035 — Proposed, and cited for exactly the rule it
-# states: a tag must not be added in order to bind a relation. Naming it is
-# how this retag declares it was not
 - version: 2
   date: '2026-09-20'
   note: >-

@@ -2,7 +2,7 @@
 
 # Lines of work
 
-20 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+21 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -16,6 +16,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-432](../record/literature.d/LIT-432.md) — Finetuned Language Models Are Zero-Shot Learners *(Active)*
 
 ## analysis-and-evaluation
+
+### From Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models
+
+- [LIT-077](../record/literature.d/LIT-077.md) — Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models *(Active)*
+  - [LIT-471](../record/literature.d/LIT-471.md) — Are Emergent Abilities of Large Language Models a Mirage? *(Active)* — also extends LIT-470
+- [LIT-470](../record/literature.d/LIT-470.md) — Emergent Abilities of Large Language Models *(Active)*
 
 ### From The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity
 

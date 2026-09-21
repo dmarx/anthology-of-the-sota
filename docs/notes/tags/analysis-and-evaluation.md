@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-52 of 218 NOTE documents. Back to the [full index](../README.md).
+54 of 220 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -60,3 +60,5 @@
 | [NOTE-213](../../../record/notes.d/NOTE-213.md) | Comment on the Illusion of Thinking | Argues the reported collapse is evaluation design. Reading it: the unsolvable-instance claim is a checkable fact and lands; the rest is a reinterpretation of a measurement the two papers agree on, from a preprint that is underpowered and has already been corrected once. | Read |
 | [NOTE-214](../../../record/notes.d/NOTE-214.md) | Limitations of multi-layer Transformers | First unconditional lower bound for a decoder-only transformer of more than one layer. Reading it: the bound comes from causal masking rather than from circuit complexity, and it buys an exponential depth-width tradeoff, an encoder/decoder separation, and a provable benefit of chain of thought. | Read |
 | [NOTE-215](../../../record/notes.d/NOTE-215.md) | Auxiliary Task Demands | Four capacities, each measured two ways; the higher-demand way scores lower and the gap shrinks with model size and training time. Reading it: the interaction is what matters, because it means cross-scale comparisons under a demanding evaluation overstate the difference between models. | Read |
+| [NOTE-219](../../../record/notes.d/NOTE-219.md) | Emergent Abilities | The paper that named the phenomenon, read for what it actually argues rather than what it is cited for. It raises the metric explanation itself, in §5.1, and declines it on two grounds — one of which was later answered and one of which still stands. | Read |
+| [NOTE-220](../../../record/notes.d/NOTE-220.md) | Emergence as a Mirage | Reading it: the strongest evidence is not the rebuttal of GPT-3's arithmetic curve but the vision experiments, where emergence is manufactured in models that had never shown it. The weakest part is what "mirage" gets read as — the paper explicitly declines the claim that emergence is impossible. | Read |

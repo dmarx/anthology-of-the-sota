@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-388 of 404 LIT documents. Back to the [full index](../README.md).
+390 of 406 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -398,3 +398,5 @@
 | [LIT-467](../../../record/literature.d/LIT-467.md) | Chain-of-Thought Prompting Elicits Reasoning in Large Language Models | Wei et al. (2022), [ARXIV-2201.11903](https://arxiv.org/abs/2201.11903). Put worked reasoning steps in the few-shot exemplars and a 540B model more than doubles on GSM8K. Three ablations rule out the obvious alternative explanations, and the effect is absent — sometimes negative — below about 100B parameters. | Active |
 | [LIT-468](../../../record/literature.d/LIT-468.md) | Self-Consistency Improves Chain of Thought Reasoning in Language Models | Wang et al. (2022), [ARXIV-2203.11171](https://arxiv.org/abs/2203.11171). Replace greedy decoding with sample-and-marginalize: draw several reasoning paths, take the most common final answer. GSM8K +17.9, SVAMP +11.0, AQuA +12.2. The gain saturates by about five or ten samples. | Active |
 | [LIT-469](../../../record/literature.d/LIT-469.md) | Large Language Models are Zero-Shot Reasoners | Kojima et al. (2022), [ARXIV-2205.11916](https://arxiv.org/abs/2205.11916). One fixed sentence — "Let's think step by step" — with no exemplars at all takes MultiArith from 17.7% to 78.7% and GSM8K from 10.4% to 40.7%. It beats eight-shot standard prompting and still loses to hand-written few-shot chains. | Active |
+| [LIT-470](../../../record/literature.d/LIT-470.md) | Emergent Abilities of Large Language Models | Wei et al. (2022), [ARXIV-2206.07682](https://arxiv.org/abs/2206.07682). Names and defines *emergent abilities* — present in larger models, absent in smaller ones, and therefore not predictable by extrapolating a scaling law. A survey of existing curves rather than new experiments: eight few-shot examples across five model families, plus prompting strategies that only help past a threshold. Section 5.1 raises the metric explanation itself and argues against it on two specific grounds. | Active |
+| [LIT-471](../../../record/literature.d/LIT-471.md) | Are Emergent Abilities of Large Language Models a Mirage? | Schaeffer et al. (2023), [ARXIV-2304.15004](https://arxiv.org/abs/2304.15004). A sharp capability curve can be produced from a smooth one by the metric alone. Rescoring *fixed* GPT-3 outputs under Token Edit Distance removes the emergence; >92% of hand-annotated BIG-Bench emergent abilities sit under two metrics, one nonlinear and one discontinuous; and emergence is induced on demand in vision models that had never shown it. | Active |

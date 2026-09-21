@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-11 of 39 THEORY documents. Back to the [full index](../README.md).
+12 of 40 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,3 +21,4 @@
 | [THEORY-033](../../../record/theory.d/THEORY-033.md) | What a spectral optimizer buys is a step size that stays optimal, not adherence to a target geometry | Shumaylov et al. (2026), [LIT-456](../../../record/literature.d/LIT-456.md) — an optimizer with random singular values matches Muon, so the target spectrum is not what pays. What the controls leave standing is that the spectral update's optimal step size is constant where Euclidean descent's oscillates. NanoGPT scale. | Proposed |
 | [THEORY-035](../../../record/theory.d/THEORY-035.md) | Gradient descent drives the sharpness up to the largest value its own step size tolerates, and then trains there | Cohen et al. (2021), [LIT-461](../../../record/literature.d/LIT-461.md) — the top Hessian eigenvalue rises until it reaches `2/eta` and then stops, so the step size sets the curvature rather than responding to it. Full-batch gradient descent only: under SGD the sharpness settles nowhere predictable. | Active |
 | [THEORY-037](../../../record/theory.d/THEORY-037.md) | Residual-branch depth sets the depth scaling rule, because a branch with two transformations has a second-order update term that a branch with one does not | Zheng et al. (2026), [LIT-462](../../../record/literature.d/LIT-462.md) — Depth-muP and CompleteP are `k = 1` and `k ≥ 2` of one condition. The cross term where both weights in a branch move in the same step is what tightens the residual multiplier from `1/√L` to `1/L`, and it does not exist when the branch holds one weight. | Active |
+| [THEORY-040](../../../record/theory.d/THEORY-040.md) | A metric that composes or thresholds per-token error turns a smooth capability curve into a sharp one, with nothing happening in the model | Schaeffer et al. (2023), [LIT-471](../../../record/literature.d/LIT-471.md) — if per-token accuracy rises smoothly with scale, a metric demanding all `L` tokens goes as `p^L` and is flat-then-sharp by construction; a thresholded metric does the same by a step. Demonstrated by rescoring fixed outputs, and by manufacturing emergence in vision models that had never shown it. | Active |

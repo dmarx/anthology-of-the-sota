@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-47 of 218 NOTE documents. Back to the [full index](../README.md).
+49 of 220 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -55,3 +55,5 @@
 | [NOTE-208](../../../record/notes.d/NOTE-208.md) | Muon is Not That Special | An optimizer that replaces the gradient's singular values with chaotic noise matches Muon on NanoGPT. Reading it: the LMO account of spectral optimizers fails its own control, and what the control leaves standing is that Muon's optimal step size is constant where Euclidean descent's is not. | Read |
 | [NOTE-209](../../../record/notes.d/NOTE-209.md) | When Spectral Updates Help | A spectral step beats a Euclidean one on a block when the gradient's nuclear rank exceeds the stable rank of that block's incoming activations. Reading it: both sides are measurable, the activation side is provably small in transformers, and the gap grows with dimension. | Read |
 | [NOTE-211](../../../record/notes.d/NOTE-211.md) | Spectral muP under Width-Depth Scaling | Derives the muP spectral condition for joint width-depth scaling and shows the rule is indexed by residual-branch depth. Reading it: Depth-muP and CompleteP are `k = 1` and `k ≥ 2` of one family, Transformers are the second, and for preconditioned optimizers the whole depth correction is a `1/L` residual multiplier. | Read |
+| [NOTE-219](../../../record/notes.d/NOTE-219.md) | Emergent Abilities | The paper that named the phenomenon, read for what it actually argues rather than what it is cited for. It raises the metric explanation itself, in §5.1, and declines it on two grounds — one of which was later answered and one of which still stands. | Read |
+| [NOTE-220](../../../record/notes.d/NOTE-220.md) | Emergence as a Mirage | Reading it: the strongest evidence is not the rebuttal of GPT-3's arithmetic curve but the vision experiments, where emergence is manufactured in models that had never shown it. The weakest part is what "mirage" gets read as — the paper explicitly declines the claim that emergence is impossible. | Read |

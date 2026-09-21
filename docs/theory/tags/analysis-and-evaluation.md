@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-13 of 39 THEORY documents. Back to the [full index](../README.md).
+14 of 40 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -23,3 +23,4 @@
 | [THEORY-031](../../../record/theory.d/THEORY-031.md) | The aggregate loss curve is a lossy projection of training, in at least three measured ways | Three independent measurements of what the loss curve discards. It time-averages oscillation the optimizer is actually doing ([LIT-453](../../../record/literature.d/LIT-453.md)); it sums over transitions that are individually abrupt and differently timed, so smoothness is what many breakthroughs look like added up ([LIT-455](../../../record/literature.d/LIT-455.md)); and it reads flat while the weights keep travelling ([LIT-454](../../../record/literature.d/LIT-454.md)). | Active |
 | [THEORY-038](../../../record/theory.d/THEORY-038.md) | A decoder cannot compose over a long context in few layers, because each position forgets what it forwarded | Chen et al. (2024), [LIT-464](../../../record/literature.d/LIT-464.md) — causal masking makes a decoder a line of forgetful communicating players, one epoch per layer, and sequential composition needs more epochs than a constant-depth model has. An unconditional bound on what can be expressed, not on what can be learned. | Active |
 | [THEORY-039](../../../record/theory.d/THEORY-039.md) | A measured capability is the capability minus whatever the evaluation itself demands, and the gap is widest for the weakest model | Hu and Frank (2024), [LIT-465](../../../record/literature.d/LIT-465.md) — the same capacity measured two ways scores differently, and the difference shrinks with size and training. So a score is a joint function of model and design, and cross-scale comparisons under a demanding evaluation inflate the gap they report. | Active |
+| [THEORY-040](../../../record/theory.d/THEORY-040.md) | A metric that composes or thresholds per-token error turns a smooth capability curve into a sharp one, with nothing happening in the model | Schaeffer et al. (2023), [LIT-471](../../../record/literature.d/LIT-471.md) — if per-token accuracy rises smoothly with scale, a metric demanding all `L` tokens goes as `p^L` and is flat-then-sharp by construction; a thresholded metric does the same by a step. Demonstrated by rescoring fixed outputs, and by manufacturing emergence in vision models that had never shown it. | Active |

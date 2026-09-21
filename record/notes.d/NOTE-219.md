@@ -1,6 +1,9 @@
 ---
+number: 219
 status: Read
-paper: LIT-tmpc4fk2
+formerly:
+- NOTE-tmpna4sp
+paper: LIT-470
 title: 'Emergent Abilities'
 version: 1
 date: '2026-09-21'
@@ -11,7 +14,7 @@ summary: >-
   which still stands.
 ---
 
-# NOTE-tmpna4sp: Emergent Abilities
+# NOTE-219: Emergent Abilities
 
 ## Contribution
 
@@ -83,7 +86,7 @@ against their own thesis.
 
 - [LIT-077](../literature.d/LIT-077.md) is both the source of four of the eight curves and the
   origin of the metric objection the paper answers in §5.1.
-- [LIT-tmpgnhq2](../literature.d/LIT-tmpgnhq2.md) is the direct reply, three years of citation later.
+- [LIT-471](../literature.d/LIT-471.md) is the direct reply, three years of citation later.
 - §4's chain-of-thought discussion is the scale condition that
   [SOTA-279](../practices.d/SOTA-279.md) and its descendants carry; this paper is where
   "flat or harmful below ~100B" comes from as a general shape rather than a
@@ -121,6 +124,6 @@ compatible with the thresholds being artefacts of what was plotted.
   partial-credit measure over traces, and the record has reasons
   ([SOTA-278](../practices.d/SOTA-278.md)) to distrust reading traces as explanations at all.
 - Whether any of the eight curves survives rescoring under a continuous
-  metric. [LIT-tmpgnhq2](../literature.d/LIT-tmpgnhq2.md) rescored two arithmetic tasks and LaMDA's
+  metric. [LIT-471](../literature.d/LIT-471.md) rescored two arithmetic tasks and LaMDA's
   multiple-choice tasks; the other families were never published in a form
   that allows it.

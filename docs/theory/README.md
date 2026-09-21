@@ -31,8 +31,8 @@ bare code and run `luria link --fix`.
 
 ## By topic
 
-**[Training optimization](tags/training-optimization.md)** (11) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
-[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md) · [026](../../record/theory.d/THEORY-026.md) · [028](../../record/theory.d/THEORY-028.md) · [029](../../record/theory.d/THEORY-029.md) · [030](../../record/theory.d/THEORY-030.md) · [032](../../record/theory.d/THEORY-032.md) · [033](../../record/theory.d/THEORY-033.md) · [035](../../record/theory.d/THEORY-035.md) · [037](../../record/theory.d/THEORY-037.md)
+**[Training optimization](tags/training-optimization.md)** (12) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
+[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md) · [026](../../record/theory.d/THEORY-026.md) · [028](../../record/theory.d/THEORY-028.md) · [029](../../record/theory.d/THEORY-029.md) · [030](../../record/theory.d/THEORY-030.md) · [032](../../record/theory.d/THEORY-032.md) · [033](../../record/theory.d/THEORY-033.md) · [035](../../record/theory.d/THEORY-035.md) · [037](../../record/theory.d/THEORY-037.md) · [040](../../record/theory.d/THEORY-040.md)
 
 **[Systems optimization](tags/systems-optimization.md)** (0) — hardware utilization, kernels, compilation, memory access patterns — how an operation is executed, not how many bits it is executed in.
 
@@ -63,8 +63,8 @@ bare code and run `luria link --fix`.
 **[Representation and encoding](tags/representation-and-encoding.md)** (4) — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them:
 [021](../../record/theory.d/THEORY-021.md) · [022](../../record/theory.d/THEORY-022.md) · [034](../../record/theory.d/THEORY-034.md) · [036](../../record/theory.d/THEORY-036.md)
 
-**[Analysis and evaluation](tags/analysis-and-evaluation.md)** (13) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
-[002](../../record/theory.d/THEORY-002.md) · [004](../../record/theory.d/THEORY-004.md) · [006](../../record/theory.d/THEORY-006.md) · [007](../../record/theory.d/THEORY-007.md) · [008](../../record/theory.d/THEORY-008.md) · [009](../../record/theory.d/THEORY-009.md) · [017](../../record/theory.d/THEORY-017.md) · [018](../../record/theory.d/THEORY-018.md) · [023](../../record/theory.d/THEORY-023.md) · [025](../../record/theory.d/THEORY-025.md) · [031](../../record/theory.d/THEORY-031.md) · [038](../../record/theory.d/THEORY-038.md) · [039](../../record/theory.d/THEORY-039.md)
+**[Analysis and evaluation](tags/analysis-and-evaluation.md)** (14) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
+[002](../../record/theory.d/THEORY-002.md) · [004](../../record/theory.d/THEORY-004.md) · [006](../../record/theory.d/THEORY-006.md) · [007](../../record/theory.d/THEORY-007.md) · [008](../../record/theory.d/THEORY-008.md) · [009](../../record/theory.d/THEORY-009.md) · [017](../../record/theory.d/THEORY-017.md) · [018](../../record/theory.d/THEORY-018.md) · [023](../../record/theory.d/THEORY-023.md) · [025](../../record/theory.d/THEORY-025.md) · [031](../../record/theory.d/THEORY-031.md) · [038](../../record/theory.d/THEORY-038.md) · [039](../../record/theory.d/THEORY-039.md) · [040](../../record/theory.d/THEORY-040.md)
 
 **[Generative modeling](tags/generative-modeling.md)** (1) — diffusion, samplers, text-to-image, conditioning and control:
 [027](../../record/theory.d/THEORY-027.md)
@@ -73,7 +73,7 @@ bare code and run `luria link --fix`.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (19) · [Offered](status/Proposed.md) (17) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (20) · [Offered](status/Proposed.md) (17) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -128,4 +128,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-037](../../record/theory.d/THEORY-037.md) | Residual-branch depth sets the depth scaling rule, because a branch with two transformations has a second-order update term that a branch with one does not | Zheng et al. (2026), [LIT-462](../../record/literature.d/LIT-462.md) — Depth-muP and CompleteP are `k = 1` and `k ≥ 2` of one condition. The cross term where both weights in a branch move in the same step is what tightens the residual multiplier from `1/√L` to `1/L`, and it does not exist when the branch holds one weight. | Active |
 | [THEORY-038](../../record/theory.d/THEORY-038.md) | A decoder cannot compose over a long context in few layers, because each position forgets what it forwarded | Chen et al. (2024), [LIT-464](../../record/literature.d/LIT-464.md) — causal masking makes a decoder a line of forgetful communicating players, one epoch per layer, and sequential composition needs more epochs than a constant-depth model has. An unconditional bound on what can be expressed, not on what can be learned. | Active |
 | [THEORY-039](../../record/theory.d/THEORY-039.md) | A measured capability is the capability minus whatever the evaluation itself demands, and the gap is widest for the weakest model | Hu and Frank (2024), [LIT-465](../../record/literature.d/LIT-465.md) — the same capacity measured two ways scores differently, and the difference shrinks with size and training. So a score is a joint function of model and design, and cross-scale comparisons under a demanding evaluation inflate the gap they report. | Active |
+| [THEORY-040](../../record/theory.d/THEORY-040.md) | A metric that composes or thresholds per-token error turns a smooth capability curve into a sharp one, with nothing happening in the model | Schaeffer et al. (2023), [LIT-471](../../record/literature.d/LIT-471.md) — if per-token accuracy rises smoothly with scale, a metric demanding all `L` tokens goes as `p^L` and is flat-then-sharp by construction; a thresholded metric does the same by a step. Demonstrated by rescoring fixed outputs, and by manufacturing emergence in vision models that had never shown it. | Active |
 

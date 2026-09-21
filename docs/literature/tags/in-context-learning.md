@@ -6,7 +6,7 @@
 
 **In-context learning** — getting behaviour out of a fixed model by what you put in the context — few-shot exemplars, chain of thought, prompting strategy, and what the context can and cannot buy.
 
-9 of 404 LIT documents. Back to the [full index](../README.md).
+10 of 406 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -19,3 +19,4 @@
 | [LIT-467](../../../record/literature.d/LIT-467.md) | Chain-of-Thought Prompting Elicits Reasoning in Large Language Models | Wei et al. (2022), [ARXIV-2201.11903](https://arxiv.org/abs/2201.11903). Put worked reasoning steps in the few-shot exemplars and a 540B model more than doubles on GSM8K. Three ablations rule out the obvious alternative explanations, and the effect is absent — sometimes negative — below about 100B parameters. | Active |
 | [LIT-468](../../../record/literature.d/LIT-468.md) | Self-Consistency Improves Chain of Thought Reasoning in Language Models | Wang et al. (2022), [ARXIV-2203.11171](https://arxiv.org/abs/2203.11171). Replace greedy decoding with sample-and-marginalize: draw several reasoning paths, take the most common final answer. GSM8K +17.9, SVAMP +11.0, AQuA +12.2. The gain saturates by about five or ten samples. | Active |
 | [LIT-469](../../../record/literature.d/LIT-469.md) | Large Language Models are Zero-Shot Reasoners | Kojima et al. (2022), [ARXIV-2205.11916](https://arxiv.org/abs/2205.11916). One fixed sentence — "Let's think step by step" — with no exemplars at all takes MultiArith from 17.7% to 78.7% and GSM8K from 10.4% to 40.7%. It beats eight-shot standard prompting and still loses to hand-written few-shot chains. | Active |
+| [LIT-470](../../../record/literature.d/LIT-470.md) | Emergent Abilities of Large Language Models | Wei et al. (2022), [ARXIV-2206.07682](https://arxiv.org/abs/2206.07682). Names and defines *emergent abilities* — present in larger models, absent in smaller ones, and therefore not predictable by extrapolating a scaling law. A survey of existing curves rather than new experiments: eight few-shot examples across five model families, plus prompting strategies that only help past a threshold. Section 5.1 raises the metric explanation itself and argues against it on two specific grounds. | Active |

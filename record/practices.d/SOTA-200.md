@@ -6,7 +6,7 @@ formerly:
 consensus: emerging
 consensus_note: >-
   That some emergence is a metric artefact is well evidenced and widely cited,
-  and `LIT-tmpgnhq2` made the case directly enough to be hard to ignore. What
+  and `LIT-471` made the case directly enough to be hard to ignore. What
   share of it is remains open. The >92% figure counts which *metrics* the
   published claims sit under, not how many of those claims survive rescoring
   — most cannot be rescored, because the outputs were never released. So this
@@ -19,8 +19,8 @@ history:
 - version: 2
   date: '2026-09-21'
   note: >-
-    Adds LIT-tmpgnhq2, which is the paper that made this argument, and
-    LIT-tmpc4fk2, which is the claim it argues against — the practice
+    Adds LIT-471, which is the paper that made this argument, and
+    LIT-470, which is the claim it argues against — the practice
     previously recommended a check while the record held neither. Adds the
     discontinuous-metric check as a third question: the first two questions
     both missed Multiple Choice Grade, which is a step function rather than
@@ -36,13 +36,13 @@ date: '2026-09-10'
 source:
 - LIT-077
 - LIT-085
-- LIT-tmpgnhq2
+- LIT-471
 introduced_by:
 - LIT-077
 implementations: []
 explained_by:
 - THEORY-039
-- THEORY-tmpacv6c
+- THEORY-040
 ---
 
 # SOTA-200: Check whether an emergent capability is a metric artefact before believing it
@@ -56,12 +56,12 @@ human raters.
 Nanda et al. (2023), [LIT-085](../literature.d/LIT-085.md) — the grokking analysis, which reverse-engineers
 one network and recovers the continuous progress underneath its discontinuity.
 
-Schaeffer et al. (2023), [LIT-tmpgnhq2](../literature.d/LIT-tmpgnhq2.md) — read as [NOTE-tmpnb7kf](../notes.d/NOTE-tmpnb7kf.md) — the
+Schaeffer et al. (2023), [LIT-471](../literature.d/LIT-471.md) — read as [NOTE-220](../notes.d/NOTE-220.md) — the
 direct argument, which rescores fixed model outputs, counts which metrics the
 published claims sit under, and then manufactures emergence on demand in
 vision models that had never shown it.
 
-The claim being checked is [LIT-tmpc4fk2](../literature.d/LIT-tmpc4fk2.md), which is worth reading first:
+The claim being checked is [LIT-470](../literature.d/LIT-470.md), which is worth reading first:
 it raises the metric explanation itself and declines it for two stated
 reasons, one of which is still standing.
 
@@ -86,7 +86,7 @@ over a continuous quantity, with no long target and no compounding involved.
 Of Wei et al.'s hand-annotated BIG-Bench emergent abilities, **>92% sit under
 Multiple Choice Grade or Exact String Match**: one discontinuous, one
 nonlinear. Asking only the first question would have cleared the
-classification tasks, which is exactly the mistake [LIT-tmpc4fk2](../literature.d/LIT-tmpc4fk2.md) §5.1
+classification tasks, which is exactly the mistake [LIT-470](../literature.d/LIT-470.md) §5.1
 made when it argued the metric explanation could not cover them.
 
 **Is the discontinuity a property of the regime?** Grokking — delayed
@@ -128,7 +128,7 @@ artefactual. `LIT-085` is one modular-addition task on a one-layer transformer
 with weight decay `λ = 1` — the authors call the generalisation to emergence "a
 proof of concept" and it is nonetheless how the paper is usually cited.
 
-`LIT-tmpgnhq2` is the strongest of the three and still does not license the
+`LIT-471` is the strongest of the three and still does not license the
 conclusion. It says so itself: *"nothing in this paper should be interpreted as
 claiming that large language models cannot display emergent abilities"*. Its
 demonstration that a metric **can** manufacture a sharp curve establishes
@@ -136,7 +136,7 @@ sufficiency, not necessity, and its meta-analysis counts metrics rather than
 adjudicating claims. Caballero et al. and Michaud et al. both hold that some
 emergence is real, and neither is refuted.
 
-One objection survives all three sources. [LIT-tmpc4fk2](../literature.d/LIT-tmpc4fk2.md) §5.1 noted that
+One objection survives all three sources. [LIT-470](../literature.d/LIT-470.md) §5.1 noted that
 the *quality of intermediate reasoning steps* jumps too, which is not a
 property of how a final answer is scored. Nobody has answered it, and this
 record has independent reasons ([SOTA-278](SOTA-278.md)) to distrust reading traces as

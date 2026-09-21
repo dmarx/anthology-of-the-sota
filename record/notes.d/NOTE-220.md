@@ -1,6 +1,9 @@
 ---
+number: 220
 status: Read
-paper: LIT-tmpgnhq2
+formerly:
+- NOTE-tmpnb7kf
+paper: LIT-471
 title: 'Emergence as a Mirage'
 version: 1
 date: '2026-09-21'
@@ -11,7 +14,7 @@ summary: >-
   the paper explicitly declines the claim that emergence is impossible.
 ---
 
-# NOTE-tmpnb7kf: Emergence as a Mirage
+# NOTE-220: Emergence as a Mirage
 
 ## Contribution
 
@@ -91,7 +94,7 @@ counterpart of Multiple Choice Grade.
 
 - [LIT-077](../literature.d/LIT-077.md) hypothesized the metric role; this converts the
   hypothesis into predictions and tests them. `extends`.
-- [LIT-tmpc4fk2](../literature.d/LIT-tmpc4fk2.md) is what it argues against, and specifically answers
+- [LIT-470](../literature.d/LIT-470.md) is what it argues against, and specifically answers
   that paper's second §5.1 objection. `corrects`.
 - [LIT-085](../literature.d/LIT-085.md) is the other half of [SOTA-200](../practices.d/SOTA-200.md)'s evidence and a different
   kind: grokking's discontinuity dissolves under a *regime* change (data
@@ -130,7 +133,7 @@ groups published — a limitation the paper turns into an argument for
 releasing model outputs.
 
 **It does not touch the intermediate-step objection**, which is
-[LIT-tmpc4fk2](../literature.d/LIT-tmpc4fk2.md) §5.1's first reason and the one still standing.
+[LIT-470](../literature.d/LIT-470.md) §5.1's first reason and the one still standing.
 
 ## Open questions
 

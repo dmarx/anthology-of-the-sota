@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [21 Sep 13:36 — The record recommended a check against a claim it did not hold, and the primary source disagrees with its own reputation](2026-09.md#the-record-recommended-a-check-against-a-claim-it-did-not-hold-and-the-primary-source-disagrees-with-its-own-reputation)
 - [21 Sep 13:20 — A permission was widened, and a workflow condition that had been correct stopped being correct](2026-09.md#a-permission-was-widened-and-a-workflow-condition-that-had-been-correct-stopped-being-correct)
 - [21 Sep 13:13 — Two papers that had a topic waiting for them, and a number that is smaller than it looks](2026-09.md#two-papers-that-had-a-topic-waiting-for-them-and-a-number-that-is-smaller-than-it-looks)
 - [21 Sep 06:13 — The report that found the last vocabulary gap cannot find this kind, and three probes lied](2026-09.md#the-report-that-found-the-last-vocabulary-gap-cannot-find-this-kind-and-three-probes-lied)
@@ -133,9 +134,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-126 entries across 2 books, newest first.
+127 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 124 | 2026-09-05 | 2026-09-21 |
+| [2026-09](2026-09.md) | 125 | 2026-09-05 | 2026-09-21 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

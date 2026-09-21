@@ -1,0 +1,139 @@
+---
+status: Active
+title: The Diffusion Duality
+version: 1
+tags:
+- generative-modeling
+- model-architecture
+- inference-optimization
+date: '2026-09-21'
+published: '2025-06-01'
+arxiv: '2506.10892'
+first_author: 'Sahoo'
+keywords:
+- 'discrete-diffusion'
+- 'uniform-state'
+- 'consistency-distillation'
+- 'curriculum-learning'
+- 'few-step-generation'
+implementations: []
+summary: >-
+  Sahoo, Deschenaux, Gokaslan, Wang, Chiu and Kuleshov (2025),
+  [ARXIV-2506.10892](https://arxiv.org/abs/2506.10892). Uniform-state discrete diffusion is the
+  `argmax` of a Gaussian diffusion, which lets Gaussian techniques transfer:
+  a variance-reducing curriculum doubles training speed, and consistency
+  distillation cuts sampling from 1024 steps to 8. Masked diffusion still wins
+  on likelihood; this wins in the few-step regime, where masked models cannot
+  revise what they have already emitted.
+---
+
+<!-- inactive-ok-file: SOTA-157 — Proposed, and named to say this document does
+     NOT contest it: masked diffusion is ahead on likelihood in the source's own
+     tables, and the claim here is about a regime that practice does not cover -->
+
+<!-- inactive-ok-file: SOTA-254 — Proposed, and named in the same sentence and for
+     the same reason as SOTA-157 -->
+
+# LIT-tmpvrm26: The Diffusion Duality
+
+## Why it's here
+
+[SOTA-157](../practices.d/SOTA-157.md) and [SOTA-254](../practices.d/SOTA-254.md) recommend training a language
+model as a **masked** diffusion model. This is about the other discrete
+diffusion family — uniform-state — and it does not contest them on their own
+ground. Its conclusion says so: *"while USDMs trail MDMs in terms of
+perplexity, we showed that they outperform in few-step generation."*
+
+That regime split is the useful content, and the record had no way to express
+it because it held only one half of the family.
+
+It also brings MDLM and SEDD into the record as baselines. Neither is filed;
+both are here only as numbers in a table.
+
+## The duality
+
+Take a Gaussian diffusion on `R^K`, and map each latent to the one-hot vector
+of its largest coordinate. The claim proved is that this `argmax` carries the
+Gaussian marginals to the marginals of a **uniform-state discrete diffusion**,
+under a reparameterization of the diffusion coefficient — and that the
+discretized process satisfies the defining ODE of a discrete diffusion, so it
+is one, not merely something that looks like one.
+
+The consequence the paper is after: everything the Gaussian literature knows
+about training and sampling becomes available. The conclusion is explicit that
+this is the strategic point, and that **no such connection exists for masked
+diffusion**.
+
+## What it builds on it
+
+**A curriculum that anneals the discretization.** `argmax` is the zero-
+temperature limit of a tempered softmax, so relax it and give the denoising
+model access to the continuous latent early in training, then anneal toward
+the discrete process. Training starts easy — most of the signal survives —
+and ends at the objective you actually want. Gradient variance on the
+highest-variance weights falls by an order of magnitude.
+
+The honesty worth noting: **the training loss is not a valid NELBO** except in
+the limit, because the model is fed a continuous variable while the bound is
+defined for a discrete process. Evaluation is done as a proper discrete
+diffusion model.
+
+**Discrete Consistency Distillation**, adapting consistency distillation from
+the continuous setting, plus a *Greedy-Tail* sampler.
+
+## What was measured
+
+Likelihood, LM1B and OpenWebText: Duo 29.9 / 25.2 PPL against UDLM's 31.3 /
+27.4 and SEDD Uniform's 40.3 / 29.7 — best in its family. Masked diffusion
+stays ahead: MDLM 27.0 / 23.2. The gap to absorbing-state diffusion is under
+two perplexity points.
+
+Zero-shot on seven datasets, trained on OWT. Duo beats every uniform-state and
+Gaussian baseline on all seven, beats SEDD Absorb on 4/7, beats **MDLM on
+1/7**, and beats an autoregressive transformer on **3/7** — Lambada
+(49.78 vs 51.28), Pubmed (44.48 vs 49.01), Arxiv (40.39 vs 41.73). Diffusion
+numbers are upper bounds, so a bound that beats an exact AR perplexity is a
+conservative comparison rather than a flattering one.
+
+Sampling: distillation takes ancestral sampling from 1024 steps to **16**
+(64×) at matched Gen PPL, and the Greedy-Tail sampler to **8** (128×) with
+slightly better Gen PPL and lower entropy. Distilled Duo beats distilled MDLM
+below about 32 function evaluations; above that MDLM wins.
+
+## The mechanism behind the regime split
+
+Masked diffusion models generate many tokens independently and **cannot
+revise them**, so at low step counts they emit incoherence they cannot take
+back. Uniform-state models are self-correcting: a later denoising step can
+overwrite an earlier mistake. That is why the ordering flips with the step
+budget, and it is an architectural property rather than a tuning artefact.
+
+## Conditions
+
+**Most of the likelihood gain is not the duality.** The ablation splits Duo's
+three-point improvement over UDLM roughly evenly between a Rao-Blackwellized
+ELBO (~1.7 points) and the curriculum (~1.3). The Rao-Blackwellization has
+nothing to do with the Gaussian connection. So the headline theoretical
+result accounts for well under half of the headline empirical one, and the
+paper says so in an ablation table.
+
+**"2× faster training" is one comparison.** Duo at 510K steps beats UDLM at
+1M by about 1.5 PPL. That is against the previous uniform-state model, not
+against masked diffusion or autoregression.
+
+**Masked diffusion still wins on likelihood**, on 6 of 7 zero-shot datasets
+and on both LM1B and OWT. Nothing here displaces `SOTA-157` or `SOTA-254`.
+
+**Generative perplexity is a metric that can be gamed by numerics**, and the
+paper handles it properly: citing the finding that masked diffusion models can
+show misleading Gen PPL and low diversity under low-precision sampling, it
+runs **all** sampling experiments in float64. It also reports entropy
+alongside Gen PPL — MDLM distilled with SDTT matches the autoregressive
+model's Gen PPL at 5.4 entropy against 5.6, which is a diversity loss the
+perplexity number alone would hide.
+
+**Scale.** LM1B and OpenWebText, GPT-2-scale models. Nothing at the sizes
+where a serving decision about few-step generation would actually be made.
+
+**One group.** Cornell Tech, and the same lab authored MDLM, the strongest
+baseline it is compared against.

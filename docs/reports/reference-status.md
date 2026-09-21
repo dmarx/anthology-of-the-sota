@@ -91,4 +91,4 @@ None. Every scanned file is checked. ✅
 
 ## Directives that no longer apply
 
-- record/theory.d/THEORY-048.md:25: annotation no longer applies — SOTA-291 is Active now
+None. Every annotation still governs something. ✅

@@ -1,0 +1,58 @@
+---
+status: Active
+title: 'Large Language Models are Zero-Shot Reasoners'
+version: 1
+tags:
+- in-context-learning
+date: '2026-09-21'
+published: '2022-05-01'
+arxiv: '2205.11916'
+first_author: 'Kojima'
+keywords:
+- 'zero-shot'
+- 'chain-of-thought'
+- 'prompting'
+- 'reasoning'
+- 'emergent-abilities'
+extends:
+- LIT-467
+implementations: []
+summary: >-
+  Kojima et al. (2022), [ARXIV-2205.11916](https://arxiv.org/abs/2205.11916). One fixed sentence —
+  "Let's think step by step" — with no exemplars at all takes MultiArith from
+  17.7% to 78.7% and GSM8K from 10.4% to 40.7%. It beats eight-shot standard
+  prompting and still loses to hand-written few-shot chains.
+---
+
+# LIT-tmpglf4i: Large Language Models are Zero-Shot Reasoners
+
+Kojima et al. (2022) — [ARXIV-2205.11916](https://arxiv.org/abs/2205.11916)
+
+## Key takeaways
+
+- **One prompt, twelve datasets, no exemplars.** The same trigger sentence is
+  used across arithmetic, commonsense, symbolic and logical reasoning. The
+  method is two-stage: extract a reasoning trace, then extract an answer from
+  it. Nothing is task-specific, which is the whole claim.
+- **The numbers are large and the baseline is what makes them large.**
+  MultiArith 17.7 → 78.7, GSM8K 10.4 → 40.7 on text-davinci-002. Those are
+  against *zero-shot* prompting, which is the right comparison for the claim
+  and not the same as beating the state of the art.
+- **It underperforms few-shot chain of thought and beats eight-shot standard
+  prompting.** The paper states this plainly. That ordering is the practical
+  content: it is the cheap baseline, not the better method, and the
+  hand-written chains of [LIT-467](../literature.d/LIT-467.md) are still worth their labour when
+  the task justifies it.
+- **Same scale threshold as its parent.** Flat or negative below roughly 100B;
+  the gain arrives with size, across Original and Instruct GPT-3 and PaLM.
+  17 models from 0.3B to 540B.
+- **The honest prior-art note.** Reynolds and McDonell had proposed a similar
+  trigger, and the paper says so — the difference claimed is that theirs was
+  task-specific and never evaluated quantitatively against baselines.
+
+## Standing in the anthology
+
+The second of the three documents `SOTA-279` named as uncovered when the
+chain-of-thought trunk was filed, and the one that most changes what a
+practitioner does first. Declared as `extends: LIT-467`, which it modifies by
+removing the exemplars.

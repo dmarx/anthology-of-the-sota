@@ -28,6 +28,9 @@ summary: >-
   steps more than doubled PaLM 540B on GSM8K, beating a fine-tuned model with
   a verifier. Three ablations rule out the equation, the extra tokens and
   knowledge activation. Below ~100B it does nothing or hurts.
+extended_by:
+- SOTA-tmp9d9au
+- SOTA-tmpi7boj
 ---
 
 <!-- inactive-ok-file: SOTA-130 — Proposed, and named as a practice that assumes this one, not as a source for it -->

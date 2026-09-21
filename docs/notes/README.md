@@ -32,6 +32,9 @@
 **[model-stability](tags/model-stability.md)** (12):
 [001](../../record/notes.d/NOTE-001.md) · [008](../../record/notes.d/NOTE-008.md) · [013](../../record/notes.d/NOTE-013.md) · [022](../../record/notes.d/NOTE-022.md) · [056](../../record/notes.d/NOTE-056.md) · [058](../../record/notes.d/NOTE-058.md) · [116](../../record/notes.d/NOTE-116.md) · [131](../../record/notes.d/NOTE-131.md) · [221](../../record/notes.d/NOTE-221.md) · [224](../../record/notes.d/NOTE-224.md) · [225](../../record/notes.d/NOTE-225.md) · [227](../../record/notes.d/NOTE-227.md)
 
+**[multimodal-learning](tags/multimodal-learning.md)** (5):
+[027](../../record/notes.d/NOTE-027.md) · [049](../../record/notes.d/NOTE-049.md) · [055](../../record/notes.d/NOTE-055.md) · [069](../../record/notes.d/NOTE-069.md) · [206](../../record/notes.d/NOTE-206.md)
+
 **[numerics-and-precision](tags/numerics-and-precision.md)** (4):
 [029](../../record/notes.d/NOTE-029.md) · [164](../../record/notes.d/NOTE-164.md) · [168](../../record/notes.d/NOTE-168.md) · [222](../../record/notes.d/NOTE-222.md)
 

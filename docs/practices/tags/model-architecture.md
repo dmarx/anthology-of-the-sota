@@ -2,9 +2,9 @@
 
 # SOTAs with `tags` `model-architecture`
 
-*Topics — The sixteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same sixteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+*Topics — The eighteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same eighteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
 
-**Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
+**Model architecture** — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in.
 
 31 of 289 SOTA documents. Back to the [full index](../README.md).
 

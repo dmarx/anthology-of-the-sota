@@ -140,7 +140,7 @@ vocabularies:
       vision-and-graphics:
         label: Vision and graphics
         blurb: neural rendering, reconstruction, perception, visual foundation models
-      # Added by ADR-tmpkp17k. `model-architecture`'s blurb ended with
+      # Added by ADR-052. `model-architecture`'s blurb ended with
       # "multi-modal designs" — a trailing clause on a topic about the shape of
       # the network, doing duty for a subject about how many kinds of signal go
       # in. Nine documents sat across six topics with `model-architecture`
@@ -148,7 +148,7 @@ vocabularies:
       multimodal-learning:
         label: Multimodal learning
         blurb: what changes when one model has to take in more than one kind of signal — joint architectures and fusion, contrastive image-text training, cross-modal transfer, and what a second modality buys the first
-      # Added by ADR-tmpkp17k, and the only topic here that named nothing on
+      # Added by ADR-052, and the only topic here that named nothing on
       # the day it was added. The record held no document about a system's
       # behaviour once it is deployed among people; the incoming list held
       # twenty-four, led by its single highest-revisit entry. DP-009: declining

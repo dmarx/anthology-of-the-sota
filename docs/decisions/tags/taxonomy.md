@@ -6,7 +6,7 @@
 
 **Taxonomy** — the topic vocabulary and what enforces it.
 
-14 of 51 decisions. Back to the [full index](../README.md).
+15 of 52 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -24,3 +24,4 @@
 | [ADR-041](../../../record/decisions.d/ADR-041.md) | An algorithm-local tuning constant belongs in the reading of the paper that measured it, not in the practice registry | A number fitted to one algorithm on one workload is a finding about that paper, not a recommendation to a reader who may not be running that algorithm. It stays in the note's `## Recommendations` section, where it is already visible and already attributed, and it does not become a `SOTA` document. The test: strip the algorithm's name from the sentence and see whether anything is left to do. | Proposed |
 | [ADR-049](../../../record/decisions.d/ADR-049.md) | Unbound is never the resting state: the relation is evidence that a tag is missing | An unbound relation is a defect with exactly two readings — the invariant is missing, or the relation is wrong — and never a third where the answer is to note that somebody looked. Twenty-two unbound relations and ten unbound lines are now **zero**, by naming what twenty-one documents were already about. Also removes a `groups.primary_topic` block that constrained nothing and had silently drifted from the vocabulary. Rejected: an acknowledgement directive, and dropping `analysis-and-evaluation`. | Active |
 | [ADR-050](../../../record/decisions.d/ADR-050.md) | Two more topics: numerics and precision, and in-context learning | The vocabulary goes from fourteen to sixteen. `numerics-and-precision` because 48 documents about how many bits sat across nine topics with none holding a quarter, and because two topics each claimed a fragment in a trailing blurb item. `in-context-learning` because every item in `adaptation-and-tuning`'s blurb changes the weights or the window and ICL changes neither. A third candidate, retrieval, was rejected on counting. | Proposed |
+| [ADR-052](../../../record/decisions.d/ADR-052.md) | Two more topics: one that had a trailing clause for a home, and one that had nothing | Eighteen topics, from sixteen. `multimodal-learning` takes nine documents that sat across six topics while `model-architecture`'s blurb carried "multi-modal designs" as a trailing clause — the same half-home shape `ADR-050` found for numerics. `deployment-and-society` names nothing in the record at all and twenty-four papers on the incoming list, led by its single highest-revisit entry. Rejected on counting: mechanistic interpretability, the physics of learning, safety, agents, graphs, federated learning, human-AI interaction and scientific domains. | Active |

@@ -50,7 +50,7 @@ bare code and run `luria link --fix`.
 **[Attention techniques](tags/attention-techniques.md)** (1) — attention variants and alternative mechanisms, implementation optimizations, context length:
 [019](../../record/theory.d/THEORY-019.md)
 
-**[Model architecture](tags/model-architecture.md)** (5) — architecture patterns, component design, structural choices, model families, multi-modal designs:
+**[Model architecture](tags/model-architecture.md)** (5) — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in:
 [005](../../record/theory.d/THEORY-005.md) · [020](../../record/theory.d/THEORY-020.md) · [038](../../record/theory.d/THEORY-038.md) · [041](../../record/theory.d/THEORY-041.md) · [046](../../record/theory.d/THEORY-046.md)
 
 **[Inference optimization](tags/inference-optimization.md)** (0) — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
@@ -70,6 +70,11 @@ bare code and run `luria link --fix`.
 [027](../../record/theory.d/THEORY-027.md) · [046](../../record/theory.d/THEORY-046.md)
 
 **[Vision and graphics](tags/vision-and-graphics.md)** (0) — neural rendering, reconstruction, perception, visual foundation models.
+
+**[Multimodal learning](tags/multimodal-learning.md)** (1) — what changes when one model has to take in more than one kind of signal — joint architectures and fusion, contrastive image-text training, cross-modal transfer, and what a second modality buys the first:
+[036](../../record/theory.d/THEORY-036.md)
+
+**[Deployment and society](tags/deployment-and-society.md)** (0) — what a system does once it is running among people, and how anyone outside it could find out — audits of deployed platforms and recommenders, information ecosystems, moderation and governance, and the access problems and funding pressures of studying any of it from the outside.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 

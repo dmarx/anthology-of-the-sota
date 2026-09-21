@@ -75,16 +75,16 @@
 | 2026-09-20 | Proposed | [SOTA-261](../../record/practices.d/SOTA-261.md) | 5 | 0 | Set AdamW's weight decay by targeting a timescale that follows a power law in tokens-per-parameter |
 | 2026-09-20 | Proposed | [SOTA-275](../../record/practices.d/SOTA-275.md) | 5 | 0 | Pick the depth parameterization from the residual branch: a Transformer branch has more than one transformation, so it needs the stricter rule |
 | 2026-09-20 | Proposed | [SOTA-260](../../record/practices.d/SOTA-260.md) | 3 | 0 | Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it |
+| 2026-09-20 | Proposed | [SOTA-262](../../record/practices.d/SOTA-262.md) | 3 | 0 | Give each modality its own weights and let the streams attend jointly |
 | 2026-09-20 | Proposed | [SOTA-268](../../record/practices.d/SOTA-268.md) | 3 | 0 | Do not transfer a data mixing ratio across model scales; the threshold where a domain starts being learned moves with size |
 | 2026-09-20 | Proposed | [SOTA-274](../../record/practices.d/SOTA-274.md) | 3 | 0 | Before adopting a spectral optimizer, measure the stable rank of each block's incoming activations against its gradient's nuclear rank |
 | 2026-09-20 | Proposed | [SOTA-267](../../record/practices.d/SOTA-267.md) | 2 | 0 | Start the training distribution imbalanced and flatten it, rather than holding it uniform throughout |
+| 2026-09-20 | Proposed | [SOTA-271](../../record/practices.d/SOTA-271.md) | 2 | 0 | Train on a second modality even when the target is single-modality |
 | 2026-09-20 | Proposed | [SOTA-272](../../record/practices.d/SOTA-272.md) | 2 | 0 | Expect the loss to be non-monotone at the step size that trains fastest, and do not set the step size from a curvature bound |
 | 2026-09-20 | Proposed | [SOTA-276](../../record/practices.d/SOTA-276.md) | 2 | 0 | For a normalized or preconditioned optimizer, width-depth muP is width muP plus a hidden residual multiplier of order 1/L |
 | 2026-09-20 | Proposed | [SOTA-259](../../record/practices.d/SOTA-259.md) | 1 | 0 | Hold Adam's second-moment half-life fixed in tokens when the batch size changes, not beta_2 |
-| 2026-09-20 | Proposed | [SOTA-262](../../record/practices.d/SOTA-262.md) | 1 | 0 | Give each modality its own weights and let the streams attend jointly |
 | 2026-09-20 | Proposed | [SOTA-263](../../record/practices.d/SOTA-263.md) | 1 | 0 | Shift the timestep schedule when the resolution changes, because more pixels need more noise |
 | 2026-09-20 | Proposed | [SOTA-264](../../record/practices.d/SOTA-264.md) | 1 | 0 | Fix the noise schedule's endpoints against the bound and choose its shape to minimise the loss estimator's variance |
-| 2026-09-20 | Proposed | [SOTA-271](../../record/practices.d/SOTA-271.md) | 1 | 0 | Train on a second modality even when the target is single-modality |
 | 2026-09-20 | Proposed | [SOTA-273](../../record/practices.d/SOTA-273.md) | 1 | 0 | Choose a pretraining context whose association with the input is neither too strong nor too weak, and mix contexts to get there |
 | 2026-09-21 | Proposed | [SOTA-285](../../record/practices.d/SOTA-285.md) | 4 | 0 | Put dropout at the start of training if the model underfits, and at the end if it overfits — the schedule decides the sign, not the rate |
 | 2026-09-21 | Proposed | [SOTA-283](../../record/practices.d/SOTA-283.md) | 3 | 0 | To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it |
@@ -155,7 +155,7 @@
 | 2026-09-16 | Proposed | [ADR-042](../../record/decisions.d/ADR-042.md) | 0 | 0 | A practice may be filed in order to say do not do this |
 | 2026-09-17 | Proposed | [ADR-043](../../record/decisions.d/ADR-043.md) | 6 | 0 | Doubt about whether an item is worth carrying is not a reason to leave it out, and not a third kind of provisional |
 | 2026-09-17 | Proposed | [ADR-045](../../record/decisions.d/ADR-045.md) | 2 | 0 | A claim about the signal is admissible however it was measured, including on people |
-| 2026-09-21 | Proposed | [ADR-050](../../record/decisions.d/ADR-050.md) | 3 | 0 | Two more topics: numerics and precision, and in-context learning |
+| 2026-09-21 | Proposed | [ADR-050](../../record/decisions.d/ADR-050.md) | 8 | 0 | Two more topics: numerics and precision, and in-context learning |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 

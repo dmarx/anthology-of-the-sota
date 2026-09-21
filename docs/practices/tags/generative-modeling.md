@@ -2,7 +2,7 @@
 
 # SOTAs with `tags` `generative-modeling`
 
-*Topics — The sixteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same sixteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+*Topics — The eighteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same eighteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
 
 **Generative modeling** — diffusion, samplers, text-to-image, conditioning and control.
 

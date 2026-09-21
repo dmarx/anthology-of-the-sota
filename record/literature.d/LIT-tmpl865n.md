@@ -1,0 +1,106 @@
+---
+status: Active
+title: 'TinyStories: How Small Can Language Models Be and Still Speak Coherent English?'
+version: 1
+tags:
+- tiny-models
+- data-pipeline
+- analysis-and-evaluation
+date: '2026-09-21'
+published: '2023-05-01'
+arxiv: '2305.07759'
+first_author: 'Eldan'
+keywords:
+- 'synthetic-data'
+- 'small-language-models'
+- 'model-organisms'
+- 'gpt-eval'
+- 'depth-vs-width'
+implementations: []
+summary: >-
+  Eldan and Li (2023), [ARXIV-2305.07759](https://arxiv.org/abs/2305.07759). Restrict the training corpus to
+  what a three-year-old's vocabulary can say and a model **below 10M
+  parameters** — or one with a **single transformer block** — writes fluent,
+  grammatical, multi-paragraph stories. The finding is about the corpus, not
+  the architecture: what stops small models speaking is the breadth of what
+  they are asked to learn, not the complexity of language.
+extended_by:
+- LIT-tmpvjesi
+---
+
+<!-- inactive-ok-file: SOTA-124 — Proposed, and named as the adjacent
+     data-constrained move rather than as support for anything this note
+     claims; the comparison holds whatever its standing -->
+
+<!-- inactive-ok-file: SOTA-125 — Proposed, and cited precisely to say this
+     paper does NOT satisfy its promotion condition. A citation whose content
+     is "this is not the evidence that practice is waiting for" is not
+     weakened by the practice being unsettled; that is the point of it -->
+
+# LIT-tmpl865n: TinyStories: How Small Can Language Models Be and Still Speak Coherent English?
+
+Eldan and Li (2023) — [ARXIV-2305.07759](https://arxiv.org/abs/2305.07759)
+
+## Key takeaways
+
+- **The question is a confound, and this is the paper that separated it.**
+  GPT-2 small and GPT-Neo small, at ~125M parameters, cannot reliably produce
+  coherent English after extensive training on the Pile or Common Crawl. Two
+  explanations were available: natural language is intrinsically too complex
+  for a model that size, or those corpora ask the model to learn English
+  *and* an encyclopaedia at once. Hold the architecture and shrink the
+  corpus's breadth, and the answer is the second one.
+- **Below 10M parameters, and one transformer block.** Models with an
+  embedding dimension of 256 produce multi-paragraph stories with near-perfect
+  grammar; a one-layer, 21M-parameter model produces syntactically correct
+  English, though it loses the plot. Reasoning of the disjunction-elimination
+  kind ("her mother didn't let her get a dog, so instead she…") appears at
+  2.5M.
+- **Diversity had to be engineered into the generator, and lexical sampling
+  was the mechanism.** Prompting a commercial model for children's stories
+  yields a repetitive corpus however high the temperature. The fix was a
+  ~1,500-word vocabulary split into nouns, verbs and adjectives, three words
+  drawn at random per story and required to appear, plus a random subset of
+  features (dialogue, a plot twist, a bad ending, a moral). This is a
+  deliberate diversity mechanism and it is the thing [LIT-tmpvjesi](LIT-tmpvjesi.md) later
+  measures and finds insufficient.
+- **Depth and width carry different things.** Across 1–8 layers and a swept
+  embedding dimension: factual knowledge tracks the **embedding dimension**,
+  context-tracking and instruction-following track the **number of layers**,
+  and grammar is the first thing a shallow model gets right. Model depth
+  matters more for staying consistent with content than for producing
+  syntactically correct language.
+- **GPT-Eval, which is where model-as-a-judge enters this line.** Grade the
+  generated completion the way a teacher grades a student, on separate axes
+  — grammar, creativity, consistency, instruction-following — rather than
+  scoring a single extracted token. The paper's argument is that standard
+  benchmarks demand structured short answers and therefore cannot measure
+  generation at all at this scale.
+- **The memorization objection is anticipated and tested.** Word and n-gram
+  overlap against the training set, plus out-of-distribution prompts, are
+  used to argue the small models are not template-matching. The prompt in
+  Figure 1 was checked to have no 6-gram overlap with the dataset.
+- **Small models here are more interpretable, and that is a claim about the
+  models, not the data.** In one- and two-layer models attention heads
+  separate cleanly into local and semantic, and MLP neurons activate on
+  tokens with a common role.
+
+## Standing in the anthology
+
+The trunk of a line the record was already eight practices deep into without
+holding. `SOTA-121` through `SOTA-128` are all `tiny-models` practices, and
+the paper that established that a tiny model can speak at all — and that the
+reason it usually cannot is the corpus — was not filed.
+
+It is also a data-curation claim that the record's data-constrained cluster
+should be read against: `SOTA-124` is about repeating high-quality data
+within a memorization window, and this is the adjacent move of shrinking what
+counts as the thing to be learned.
+
+What it does **not** settle is the parameter-budget trade in [SOTA-125](../practices.d/SOTA-125.md).
+That practice is about depth against **MLP width** in a hybrid at 90M, and
+asks for another hybrid or another 90M-class ablation. This sweeps depth
+against **embedding dimension** in a pure-attention GPT-Neo at 1–35M, has no
+SSM state to trade against, and is therefore a different measurement that
+happens to share a vocabulary. Filed here as the adjacent finding it is, not
+as the replication `SOTA-125` is waiting for.

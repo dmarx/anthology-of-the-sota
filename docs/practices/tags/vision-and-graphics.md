@@ -6,7 +6,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-7 of 298 SOTA documents. Back to the [full index](../README.md).
+8 of 299 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,3 +17,4 @@
 | [SOTA-251](../../../record/practices.d/SOTA-251.md) | Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule | Assran et al. (2025), [LIT-215](../../../record/literature.d/LIT-215.md) — [ARXIV-2506.09985](https://arxiv.org/abs/2506.09985). Spend warmup and the constant phase on short, low-resolution clips; raise resolution and clip length only in the final decay. Up to 8x less pretraining compute than training at full resolution throughout, for the same end state. | Proposed |
 | [SOTA-252](../../../record/practices.d/SOTA-252.md) | Make the full-resolution path affordable instead of upsampling, when the shortcut is what breaks correctness | Abdal et al. (2023), [LIT-113](../../../record/literature.d/LIT-113.md) — [ARXIV-2311.17857](https://arxiv.org/abs/2311.17857). Prior 3D GANs render small and upsample in 2D because volume rendering is too slow at training resolution — but a 2D upsampler is multi-view inconsistent by construction. Efficient Gaussian rendering makes native 512x512 affordable, and the inconsistency leaves with the upsampler rather than being mitigated. | Active |
 | [SOTA-253](../../../record/practices.d/SOTA-253.md) | Add a new instance by reconstructing it, not by training on it | Sun et al. (2022), [LIT-111](../../../record/literature.d/LIT-111.md) — [ARXIV-2205.12257](https://arxiv.org/abs/2205.12257). Split what the system knows about a specific object from what it has learned in general. Build the object's structure once by reconstruction; match against it with a network that never saw the object or its category. Adding an object is then a scan, not a training run. | Active |
+| [SOTA-299](../../../record/practices.d/SOTA-299.md) | Finetune the whole generative model, encoder and decoder, for a dense perception task instead of attaching a head to a backbone | Khangaonkar and Pirsiavash (2025), [LIT-488](../../../record/literature.d/LIT-488.md) — the freshly-initialized mask head is the part that cannot generalize, because it has only ever seen the finetuning categories. Keep every parameter generatively pretrained, encode the target as an image, and a model finetuned on **furniture and cars** segments people, x-rays and paintings. The same backbone under a conventional head scores **1.4–2.4 mIoU**. | Proposed |

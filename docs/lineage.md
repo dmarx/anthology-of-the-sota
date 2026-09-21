@@ -2,7 +2,7 @@
 
 # Lines of work
 
-22 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+23 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -195,6 +195,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-435](../record/literature.d/LIT-435.md) — NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis *(Active)*
   - [LIT-086](../record/literature.d/LIT-086.md) — K-Planes: Explicit Radiance Fields in Space, Time, and Appearance *(Active)*
   - [LIT-108](../record/literature.d/LIT-108.md) — 3D Gaussian Splatting for Real-Time Radiance Field Rendering *(Active)*
+
+### From Segment Anything
+
+- alongside: [LIT-096](../record/literature.d/LIT-096.md) — Segment Anything *(Active)*
+- alongside: [LIT-488](../record/literature.d/LIT-488.md) — gen2seg: Generative Models Enable Generalizable Instance Segmentation *(Active)*
 
 ### From Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture
 

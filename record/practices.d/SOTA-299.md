@@ -1,5 +1,8 @@
 ---
+number: 299
 status: Proposed
+formerly:
+- SOTA-tmpe5ykn
 promote_when: >-
   The same end-to-end-generative-finetuning recipe carrying a *different*
   dense task past its label distribution — depth, normals, correspondence,
@@ -26,14 +29,14 @@ tags:
 - representation-and-encoding
 date: '2026-09-21'
 source:
-- LIT-tmp7jc1f
+- LIT-488
 introduced_by:
-- LIT-tmp7jc1f
+- LIT-488
 implementations: []
 explained_by:
-- THEORY-tmply7jq
+- THEORY-052
 summary: >-
-  Khangaonkar and Pirsiavash (2025), [LIT-tmp7jc1f](../literature.d/LIT-tmp7jc1f.md) — the freshly-initialized
+  Khangaonkar and Pirsiavash (2025), [LIT-488](../literature.d/LIT-488.md) — the freshly-initialized
   mask head is the part that cannot generalize, because it has only ever seen
   the finetuning categories. Keep every parameter generatively pretrained,
   encode the target as an image, and a model finetuned on **furniture and
@@ -41,12 +44,12 @@ summary: >-
   conventional head scores **1.4–2.4 mIoU**.
 ---
 
-# SOTA-tmpe5ykn: Finetune the whole generative model, encoder and decoder, for a dense perception task instead of attaching a head to a backbone
+# SOTA-299: Finetune the whole generative model, encoder and decoder, for a dense perception task instead of attaching a head to a backbone
 
 ## Source
 
-Khangaonkar and Pirsiavash (2025), [LIT-tmp7jc1f](../literature.d/LIT-tmp7jc1f.md) — [ARXIV-2505.15263](https://arxiv.org/abs/2505.15263) — read
-as [NOTE-tmp7pqy4](../notes.d/NOTE-tmp7pqy4.md).
+Khangaonkar and Pirsiavash (2025), [LIT-488](../literature.d/LIT-488.md) — [ARXIV-2505.15263](https://arxiv.org/abs/2505.15263) — read
+as [NOTE-237](../notes.d/NOTE-237.md).
 
 ## What to do
 

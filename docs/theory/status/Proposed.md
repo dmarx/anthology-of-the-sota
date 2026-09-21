@@ -6,7 +6,7 @@
 
 **Offered** — stated and plausible, on evidence that is suggestive rather than settling — the document says what would settle it.
 
-25 of 51 THEORY documents. Back to the [full index](../README.md).
+26 of 52 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -35,3 +35,4 @@
 | [THEORY-049](../../../record/theory.d/THEORY-049.md) | Modalities compete for the same feed-forward parameters, the competition is not symmetric between them, and that is where separating by modality pays | Liang et al. (2024), [LIT-483](../../../record/literature.d/LIT-483.md) — untying transformer components by modality at controlled FLOPs pays most in the **feed-forward**, less in the attention projections, and not at all in the layer norms. Merging any two modalities into one tower degrades both, and by different amounts in each direction. | Proposed |
 | [THEORY-050](../../../record/theory.d/THEORY-050.md) | Parameters carry memorization and parallel computation carries reasoning | Chen et al. (2025), [LIT-486](../../../record/literature.d/LIT-486.md) — the exchange rate between parallel streams and parameters is fitted **higher on code (0.39) than on general text (0.33)**, and downstream a 1.6B model at `P = 8` matches a 4.4B model on coding but only a 2.8B one on general tasks. Two independent measurements pointing the same way, and an account the authors themselves call a conjecture. | Proposed |
 | [THEORY-051](../../../record/theory.d/THEORY-051.md) | A text feature predicts success partly by being uncommon, so a tool that gives it to everyone destroys its predictive value | Corpus et al. (2025), [LIT-487](../../../record/literature.d/LIT-487.md) — length, readability and lexical variety predicted petition success, an AI drafting tool moved all three in the successful direction and raised rated quality, and success did not follow. Inter-petition similarity rose **23%** in the same window, and the features' predictive strength weakened or reversed. | Proposed |
+| [THEORY-052](../../../record/theory.d/THEORY-052.md) | Synthesis requires equivariant representations and discriminative pretraining rewards invariant ones, which is why a generative prior groups objects it was never shown | Khangaonkar and Pirsiavash (2025), [LIT-488](../../../record/literature.d/LIT-488.md) — self-distillation and contrastive objectives explicitly reward representations that *do not change* under augmentation; instance segmentation needs representations that do. The paper's DINO control activates on objects and cannot separate their instances, which is the shape this account predicts. | Proposed |

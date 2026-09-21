@@ -6,7 +6,7 @@
 
 **Adaptation and tuning** — taking a trained model somewhere new — fine-tuning and transfer, preference training and safety alignment, parameter-efficient adaptation, context extension.
 
-44 of 422 LIT documents. Back to the [full index](../README.md).
+45 of 423 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -54,3 +54,4 @@
 | [LIT-467](../../../record/literature.d/LIT-467.md) | Chain-of-Thought Prompting Elicits Reasoning in Large Language Models | Wei et al. (2022), [ARXIV-2201.11903](https://arxiv.org/abs/2201.11903). Put worked reasoning steps in the few-shot exemplars and a 540B model more than doubles on GSM8K. Three ablations rule out the obvious alternative explanations, and the effect is absent — sometimes negative — below about 100B parameters. | Active |
 | [LIT-473](../../../record/literature.d/LIT-473.md) | Quantized Evolution Strategies: High-precision Fine-tuning of Quantized LLMs at Low-precision Cost | Xu, Miikkulainen and Qiu (2026), [ARXIV-2602.03120](https://arxiv.org/abs/2602.03120). Fine-tune a quantized model in its own integer space: accumulate the part of each evolution-strategies update that is smaller than the lattice spacing until it crosses a grid point, and rematerialize that accumulator from stored seeds so it costs kilobytes instead of an FP16 copy of the weights. Countdown, Qwen2.5 at 1.5B and 3B, INT4/INT8/W8A8. | Active |
 | [LIT-474](../../../record/literature.d/LIT-474.md) | The Coverage Principle: How Pre-Training Enables Post-Training | Chen, Huang, Golowich, Malladi, Block, Ash, Krishnamurthy and Foster (2025), [ARXIV-2510.15020](https://arxiv.org/abs/2510.15020). Names the quantity cross-entropy is a bad proxy for: the **coverage profile**, the probability mass a model puts on rare high-quality responses. Proves it is necessary and sufficient for Best-of-N to succeed, that next-token prediction optimizes it faster than it optimizes cross-entropy, and that sequence-level KL carries a linear dependence on sequence length that coverage does not. | Active |
+| [LIT-488](../../../record/literature.d/LIT-488.md) | gen2seg: Generative Models Enable Generalizable Instance Segmentation | Khangaonkar and Pirsiavash (2025), [ARXIV-2505.15263](https://arxiv.org/abs/2505.15263). Finetune Stable Diffusion or MAE end-to-end — encoder *and* decoder — for category-agnostic instance segmentation on **indoor furnishings and cars only**, and the model segments people, animals, x-rays and impressionist paintings. It approaches SAM across five domains on **0.3% of the annotated masks**, and beats it ~3× on fine structures. The controls are the argument: the same backbone under a standard segmentation head scores near zero. | Active |

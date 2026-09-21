@@ -6,7 +6,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-23 of 422 LIT documents. Back to the [full index](../README.md).
+24 of 423 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -33,3 +33,4 @@
 | [LIT-424](../../../record/literature.d/LIT-424.md) | Learning Multiple Layers of Features from Tiny Images | Krizhevsky (2009), University of Toronto technical report. The source of CIFAR-10 and CIFAR-100 — 32×32 labelled images drawn from the Tiny Images collection. Sixty-nine documents here measure something on it, which makes it the record's most-used instrument after ILSVRC. | Active |
 | [LIT-435](../../../record/literature.d/LIT-435.md) | NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis | Mildenhall et al. (2020), [ARXIV-2003.08934](https://arxiv.org/abs/2003.08934). The coordinate network the record's one scene-representation practice exists to replace. An MLP maps a 5D coordinate — position and viewing direction — to density and view-dependent colour; differentiable volume rendering means posed images are the only supervision needed. | Active |
 | [LIT-475](../../../record/literature.d/LIT-475.md) | Dropout Reduces Underfitting | Liu, Xu, Jin, Shen and Darrell (2023), [ARXIV-2303.01500](https://arxiv.org/abs/2303.01500). Dropout applied only for the first stretch of training and then switched off lowers **training** loss and raises test accuracy on models too small to overfit — the regime where standard dropout costs up to 6 points. The mechanism is measured: early dropout reduces the angle between mini-batch gradients and the whole-dataset gradient. | Active |
+| [LIT-488](../../../record/literature.d/LIT-488.md) | gen2seg: Generative Models Enable Generalizable Instance Segmentation | Khangaonkar and Pirsiavash (2025), [ARXIV-2505.15263](https://arxiv.org/abs/2505.15263). Finetune Stable Diffusion or MAE end-to-end — encoder *and* decoder — for category-agnostic instance segmentation on **indoor furnishings and cars only**, and the model segments people, animals, x-rays and impressionist paintings. It approaches SAM across five domains on **0.3% of the annotated masks**, and beats it ~3× on fine structures. The controls are the argument: the same backbone under a standard segmentation head scores near zero. | Active |

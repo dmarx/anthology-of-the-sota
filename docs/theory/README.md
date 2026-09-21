@@ -60,8 +60,8 @@ bare code and run `luria link --fix`.
 **[In-context learning](tags/in-context-learning.md)** (1) — getting behaviour out of a fixed model by what you put in the context — few-shot exemplars, chain of thought, prompting strategy, and what the context can and cannot buy:
 [038](../../record/theory.d/THEORY-038.md)
 
-**[Representation and encoding](tags/representation-and-encoding.md)** (4) — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them:
-[021](../../record/theory.d/THEORY-021.md) · [022](../../record/theory.d/THEORY-022.md) · [034](../../record/theory.d/THEORY-034.md) · [036](../../record/theory.d/THEORY-036.md)
+**[Representation and encoding](tags/representation-and-encoding.md)** (5) — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them:
+[021](../../record/theory.d/THEORY-021.md) · [022](../../record/theory.d/THEORY-022.md) · [034](../../record/theory.d/THEORY-034.md) · [036](../../record/theory.d/THEORY-036.md) · [052](../../record/theory.d/THEORY-052.md)
 
 **[Analysis and evaluation](tags/analysis-and-evaluation.md)** (20) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
 [002](../../record/theory.d/THEORY-002.md) · [004](../../record/theory.d/THEORY-004.md) · [006](../../record/theory.d/THEORY-006.md) · [007](../../record/theory.d/THEORY-007.md) · [008](../../record/theory.d/THEORY-008.md) · [009](../../record/theory.d/THEORY-009.md) · [017](../../record/theory.d/THEORY-017.md) · [018](../../record/theory.d/THEORY-018.md) · [023](../../record/theory.d/THEORY-023.md) · [025](../../record/theory.d/THEORY-025.md) · [031](../../record/theory.d/THEORY-031.md) · [038](../../record/theory.d/THEORY-038.md) · [039](../../record/theory.d/THEORY-039.md) · [040](../../record/theory.d/THEORY-040.md) · [043](../../record/theory.d/THEORY-043.md) · [045](../../record/theory.d/THEORY-045.md) · [047](../../record/theory.d/THEORY-047.md) · [048](../../record/theory.d/THEORY-048.md) · [050](../../record/theory.d/THEORY-050.md) · [051](../../record/theory.d/THEORY-051.md)
@@ -69,7 +69,8 @@ bare code and run `luria link --fix`.
 **[Generative modeling](tags/generative-modeling.md)** (2) — diffusion, samplers, text-to-image, conditioning and control:
 [027](../../record/theory.d/THEORY-027.md) · [046](../../record/theory.d/THEORY-046.md)
 
-**[Vision and graphics](tags/vision-and-graphics.md)** (0) — neural rendering, reconstruction, perception, visual foundation models.
+**[Vision and graphics](tags/vision-and-graphics.md)** (1) — neural rendering, reconstruction, perception, visual foundation models:
+[052](../../record/theory.d/THEORY-052.md)
 
 **[Multimodal learning](tags/multimodal-learning.md)** (2) — what changes when one model has to take in more than one kind of signal — joint architectures and fusion, contrastive image-text training, cross-modal transfer, and what a second modality buys the first:
 [036](../../record/theory.d/THEORY-036.md) · [049](../../record/theory.d/THEORY-049.md)
@@ -79,7 +80,7 @@ bare code and run `luria link --fix`.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (23) · [Offered](status/Proposed.md) (25) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (23) · [Offered](status/Proposed.md) (26) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -146,4 +147,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-049](../../record/theory.d/THEORY-049.md) | Modalities compete for the same feed-forward parameters, the competition is not symmetric between them, and that is where separating by modality pays | Liang et al. (2024), [LIT-483](../../record/literature.d/LIT-483.md) — untying transformer components by modality at controlled FLOPs pays most in the **feed-forward**, less in the attention projections, and not at all in the layer norms. Merging any two modalities into one tower degrades both, and by different amounts in each direction. | Proposed |
 | [THEORY-050](../../record/theory.d/THEORY-050.md) | Parameters carry memorization and parallel computation carries reasoning | Chen et al. (2025), [LIT-486](../../record/literature.d/LIT-486.md) — the exchange rate between parallel streams and parameters is fitted **higher on code (0.39) than on general text (0.33)**, and downstream a 1.6B model at `P = 8` matches a 4.4B model on coding but only a 2.8B one on general tasks. Two independent measurements pointing the same way, and an account the authors themselves call a conjecture. | Proposed |
 | [THEORY-051](../../record/theory.d/THEORY-051.md) | A text feature predicts success partly by being uncommon, so a tool that gives it to everyone destroys its predictive value | Corpus et al. (2025), [LIT-487](../../record/literature.d/LIT-487.md) — length, readability and lexical variety predicted petition success, an AI drafting tool moved all three in the successful direction and raised rated quality, and success did not follow. Inter-petition similarity rose **23%** in the same window, and the features' predictive strength weakened or reversed. | Proposed |
+| [THEORY-052](../../record/theory.d/THEORY-052.md) | Synthesis requires equivariant representations and discriminative pretraining rewards invariant ones, which is why a generative prior groups objects it was never shown | Khangaonkar and Pirsiavash (2025), [LIT-488](../../record/literature.d/LIT-488.md) — self-distillation and contrastive objectives explicitly reward representations that *do not change* under augmentation; instance segmentation needs representations that do. The paper's DINO control activates on objects and cannot separate their instances, which is the shape this account predicts. | Proposed |
 

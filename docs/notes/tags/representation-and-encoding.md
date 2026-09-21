@@ -4,7 +4,7 @@
 
 **representation-and-encoding**.
 
-9 of 236 NOTE documents. Back to the [full index](../README.md).
+10 of 237 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,3 +17,4 @@
 | [NOTE-207](../../../record/notes.d/NOTE-207.md) | Contextures: The Mechanism of Representation Learning | A representation is the association between the input and a context variable; capturing its maximum information is optimal on tasks compatible with that context. A context is most useful when the association is neither too strong nor too weak, and mixing contexts is offered as the cheap way to get there. Skimmed: a 313k-character dissertation, read at summary level. | Skimmed |
 | [NOTE-210](../../../record/notes.d/NOTE-210.md) | The Lattice Representation Hypothesis | A linear concept direction plus a threshold is a half-space; intersecting half-spaces gives a concept lattice, so inclusion, intersection and union become geometric meet and join on embeddings. Canonical form when the attribute directions are linearly independent. Evidence is WordNet sub-hierarchies, which is the friendliest available test. | Read |
 | [NOTE-234](../../../record/notes.d/NOTE-234.md) | SimpleStories | Read to see what, if anything, it establishes that its trunk did not. The dataset comparison is direct and well instrumented; the model comparison is confounded three ways and the authors say so. The practice this record takes from it is about the generation procedure, which was measured. | Read |
+| [NOTE-237](../../../record/notes.d/NOTE-237.md) | gen2seg | Read as the counter-route to SAM's data engine. The headline (narrow finetuning, broad generalization) is well evidenced but the argument lives in the controls, which are unusually good: the same backbone under a conventional head scores ~1.5 mIoU, and swapping only the decoder recovers part of the gap. | Read |

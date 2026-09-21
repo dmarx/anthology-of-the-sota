@@ -4,7 +4,7 @@
 
 **vision-and-graphics**.
 
-19 of 236 NOTE documents. Back to the [full index](../README.md).
+20 of 237 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -27,3 +27,4 @@
 | [NOTE-187](../../../record/notes.d/NOTE-187.md) | Video models are zero-shot learners and reasoners | The argument by analogy: LLMs became generalist from three primitives — large, generative, web-scale — and video models now have all three. The evidence is a catalogue of tasks Veo 3 was never trained for and can do anyway, from segmentation and edge detection through affordances and tool use to maze and symmetry solving. It is a position paper with demonstrations, and the demonstrations are of one proprietary model. | Read |
 | [NOTE-188](../../../record/notes.d/NOTE-188.md) | NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis | Store the scene in the weights of an MLP that maps a 5D coordinate to density and view-dependent colour, and render it with classical volume rendering, which is differentiable — so posed images are the only supervision. Two additions do the work everybody remembers: positional encoding, without which the result is oversmoothed, and hierarchical sampling, without which it is unaffordable. | Read |
 | [NOTE-224](../../../record/notes.d/NOTE-224.md) | Dropout Reduces Underfitting | Reading it: the persuasive number is the training loss, not the accuracy. Early dropout lowers ViT-T's training loss from 3.443 to 3.394 while standard dropout raises it to 3.885 — so the same operator is doing two opposite things depending only on when it runs, and one of them is not regularization. | Read |
+| [NOTE-237](../../../record/notes.d/NOTE-237.md) | gen2seg | Read as the counter-route to SAM's data engine. The headline (narrow finetuning, broad generalization) is well evidenced but the argument lives in the controls, which are unusually good: the same backbone under a conventional head scores ~1.5 mIoU, and swapping only the decoder recovers part of the gap. | Read |

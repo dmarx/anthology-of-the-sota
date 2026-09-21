@@ -6,7 +6,7 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-11 of 298 SOTA documents. Back to the [full index](../README.md).
+12 of 299 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,3 +21,4 @@
 | [SOTA-271](../../../record/practices.d/SOTA-271.md) | Train on a second modality even when the target is single-modality | Huh et al. (2024), [LIT-458](../../../record/literature.d/LIT-458.md) — if representations converge on a modality-agnostic model of what generated the data, then data from any modality helps find it. The vision direction is already common practice; the language direction is not, and the paper cites a case where adding image data improved text performance. | Proposed |
 | [SOTA-273](../../../record/practices.d/SOTA-273.md) | Choose a pretraining context whose association with the input is neither too strong nor too weak, and mix contexts to get there | Zhai (2025), [LIT-459](../../../record/literature.d/LIT-459.md) — a pretraining objective is an association between the input and a context variable, and the useful contexts are the ones whose association is neither too strong nor too weak: the singular values of the expectation operator should decay neither too fast nor too slowly. Contexts that individually miss the range can be mixed into one that does not. | Proposed |
 | [SOTA-294](../../../record/practices.d/SOTA-294.md) | Fit the tokenizer to the corpus when the corpus is deliberately narrow | Finke et al. (2025), [LIT-485](../../../record/literature.d/LIT-485.md) — holding the dataset and the architecture fixed and changing only the tokenizer, a **4,096**-token WordPiece vocabulary seeded with English affixes beats GPT-2's **50,257** by **+26.7 coherence** and **+27.5 quality**. It is the one fully controlled comparison in a paper that is mostly about something else, and the effect is larger than the architecture change measured beside it. | Proposed |
+| [SOTA-299](../../../record/practices.d/SOTA-299.md) | Finetune the whole generative model, encoder and decoder, for a dense perception task instead of attaching a head to a backbone | Khangaonkar and Pirsiavash (2025), [LIT-488](../../../record/literature.d/LIT-488.md) — the freshly-initialized mask head is the part that cannot generalize, because it has only ever seen the finetuning categories. Keep every parameter generatively pretrained, encode the target as an image, and a model finetuned on **furniture and cars** segments people, x-rays and paintings. The same backbone under a conventional head scores **1.4–2.4 mIoU**. | Proposed |

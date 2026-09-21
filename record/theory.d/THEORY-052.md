@@ -1,5 +1,8 @@
 ---
+number: 52
 status: Proposed
+formerly:
+- THEORY-tmply7jq
 promote_when: >-
   Equivariance measured rather than inferred — a representation-level test
   showing that generatively pretrained features track scale, pose and
@@ -17,33 +20,33 @@ tags:
 - vision-and-graphics
 date: '2026-09-21'
 source:
-- LIT-tmp7jc1f
+- LIT-488
 explains:
-- SOTA-tmpe5ykn
+- SOTA-299
 summary: >-
-  Khangaonkar and Pirsiavash (2025), [LIT-tmp7jc1f](../literature.d/LIT-tmp7jc1f.md) — self-distillation and
+  Khangaonkar and Pirsiavash (2025), [LIT-488](../literature.d/LIT-488.md) — self-distillation and
   contrastive objectives explicitly reward representations that *do not
   change* under augmentation; instance segmentation needs representations
   that do. The paper's DINO control activates on objects and cannot separate
   their instances, which is the shape this account predicts.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpe5ykn — Proposed, filed in this same
+<!-- inactive-ok-file: SOTA-299 — Proposed, filed in this same
      contribution; this theory declares `explains:` on it, so the citation is
      the relation itself and cannot wait on the practice being settled -->
 
-# THEORY-tmply7jq: Synthesis requires equivariant representations and discriminative pretraining rewards invariant ones, which is why a generative prior groups objects it was never shown
+# THEORY-052: Synthesis requires equivariant representations and discriminative pretraining rewards invariant ones, which is why a generative prior groups objects it was never shown
 
 ## Source
 
-Khangaonkar and Pirsiavash (2025), [LIT-tmp7jc1f](../literature.d/LIT-tmp7jc1f.md) §4.3 — read as
-[NOTE-tmp7pqy4](../notes.d/NOTE-tmp7pqy4.md).
+Khangaonkar and Pirsiavash (2025), [LIT-488](../literature.d/LIT-488.md) §4.3 — read as
+[NOTE-237](../notes.d/NOTE-237.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-tmpe5ykn](../practices.d/SOTA-tmpe5ykn.md) | finetune the generative model end to end rather than putting a head on a backbone | the backbone is not merely weaker here, it was trained to discard exactly what the task needs — so the recipe is not "use a bigger prior" but "use a prior of the right kind" |
+| [SOTA-299](../practices.d/SOTA-299.md) | finetune the generative model end to end rather than putting a head on a backbone | the backbone is not merely weaker here, it was trained to discard exactly what the task needs — so the recipe is not "use a bigger prior" but "use a prior of the right kind" |
 
 ## The account
 

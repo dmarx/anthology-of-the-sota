@@ -1,6 +1,9 @@
 ---
+number: 237
 status: Read
-paper: LIT-tmp7jc1f
+formerly:
+- NOTE-tmp7pqy4
+paper: LIT-488
 title: 'gen2seg'
 version: 1
 date: '2026-09-21'
@@ -12,12 +15,12 @@ summary: >-
   part of the gap.
 ---
 
-<!-- inactive-ok-file: THEORY-tmply7jq — Proposed, filed in this same
+<!-- inactive-ok-file: THEORY-052 — Proposed, filed in this same
      contribution, and the sentence citing it says the authors flag the
      account as a hypothesis and that no experiment isolates it. Its
      unsettledness is the content of the citation -->
 
-# NOTE-tmp7pqy4: gen2seg
+# NOTE-237: gen2seg
 
 ## Contribution
 
@@ -106,7 +109,7 @@ the body.
 **Argued, not measured:** the equivariance/invariance account of *why*
 discriminative pretraining fails here. The authors flag it as a hypothesis;
 it is the most interesting idea in the paper and no experiment isolates it.
-Filed as [THEORY-tmply7jq](../theory.d/THEORY-tmply7jq.md), `Proposed`.
+Filed as [THEORY-052](../theory.d/THEORY-052.md), `Proposed`.
 
 **Shown qualitatively only:** part-whole compositionality. Figures, no metric.
 

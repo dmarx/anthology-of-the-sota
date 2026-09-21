@@ -6,8 +6,8 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-0 of 51 THEORY documents. Back to the [full index](../README.md).
+1 of 52 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [THEORY-052](../../../record/theory.d/THEORY-052.md) | Synthesis requires equivariant representations and discriminative pretraining rewards invariant ones, which is why a generative prior groups objects it was never shown | Khangaonkar and Pirsiavash (2025), [LIT-488](../../../record/literature.d/LIT-488.md) — self-distillation and contrastive objectives explicitly reward representations that *do not change* under augmentation; instance segmentation needs representations that do. The paper's DINO control activates on objects and cannot separate their instances, which is the shape this account predicts. | Proposed |

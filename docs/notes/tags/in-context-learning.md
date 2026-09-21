@@ -4,7 +4,7 @@
 
 **in-context-learning**.
 
-7 of 237 NOTE documents. Back to the [full index](../README.md).
+8 of 238 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -15,3 +15,4 @@
 | [NOTE-217](../../../record/notes.d/NOTE-217.md) | Self-Consistency | Sample several chains, take the majority answer. Reading it: it is a decoding change rather than a prompt change, so it composes with everything else in the topic — and it counts answers, not reasoning, so it does not make the traces trustworthy. | Read |
 | [NOTE-218](../../../record/notes.d/NOTE-218.md) | Zero-Shot CoT | One fixed sentence, no exemplars, twelve datasets. Reading it: the ordering is the practical content — it loses to hand-written few-shot chains and beats eight-shot standard prompting, so it is the baseline to try first rather than the method to settle on. | Read |
 | [NOTE-219](../../../record/notes.d/NOTE-219.md) | Emergent Abilities | The paper that named the phenomenon, read for what it actually argues rather than what it is cited for. It raises the metric explanation itself, in §5.1, and declines it on two grounds — one of which was later answered and one of which still stands. | Read |
+| [NOTE-238](../../../record/notes.d/NOTE-238.md) | PHi: prediction of hidden states | Read for the instrument. The diagnosis of next-token loss is clean and the boring/interesting separation is convincing on two architectures. The reasoning-selection result is weaker than the abstract implies, and the paper says so itself in a sentence most readers will pass over: picking by next-token loss alone already scores 71%. | Read |

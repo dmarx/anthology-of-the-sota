@@ -1,6 +1,9 @@
 ---
+number: 238
 status: Read
-paper: LIT-tmpwr4bz
+formerly:
+- NOTE-tmpsw3lp
+paper: LIT-489
 title: 'PHi: prediction of hidden states'
 version: 1
 date: '2026-09-21'
@@ -18,7 +21,7 @@ summary: >-
      away from it. A citation that says "this does not disturb that" does not
      depend on that document's standing -->
 
-# NOTE-tmpsw3lp: PHi: prediction of hidden states
+# NOTE-238: PHi: prediction of hidden states
 
 ## Contribution
 

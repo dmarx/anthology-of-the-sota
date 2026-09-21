@@ -1,5 +1,8 @@
 ---
+number: 300
 status: Proposed
+formerly:
+- SOTA-tmpui4pt
 promote_when: >-
   A second group measuring hidden-state predictability against an
   **external** complexity ground truth — an analytic description length, a
@@ -25,12 +28,12 @@ tags:
 - in-context-learning
 date: '2026-09-21'
 source:
-- LIT-tmpwr4bz
+- LIT-489
 introduced_by:
-- LIT-tmpwr4bz
+- LIT-489
 implementations: []
 summary: >-
-  Herrmann et al. (2025), [LIT-tmpwr4bz](../literature.d/LIT-tmpwr4bz.md) — uniform noise maximizes
+  Herrmann et al. (2025), [LIT-489](../literature.d/LIT-489.md) — uniform noise maximizes
   next-token loss and requires no computation; reciting a memorized licence
   minimizes it and requires none either. Insert a variational bottleneck with
   a **learned autoregressive prior** and measure the posterior-prior KL: only
@@ -38,12 +41,12 @@ summary: >-
   and the signal survives controlling for next-token loss.
 ---
 
-# SOTA-tmpui4pt: To tell whether a model is doing non-trivial in-context computation, measure how well it predicts its own hidden states, not its next-token loss
+# SOTA-300: To tell whether a model is doing non-trivial in-context computation, measure how well it predicts its own hidden states, not its next-token loss
 
 ## Source
 
-Herrmann, Csordás and Schmidhuber (2025), [LIT-tmpwr4bz](../literature.d/LIT-tmpwr4bz.md) —
-[ARXIV-2503.13431](https://arxiv.org/abs/2503.13431) — read as [NOTE-tmpsw3lp](../notes.d/NOTE-tmpsw3lp.md).
+Herrmann, Csordás and Schmidhuber (2025), [LIT-489](../literature.d/LIT-489.md) —
+[ARXIV-2503.13431](https://arxiv.org/abs/2503.13431) — read as [NOTE-238](../notes.d/NOTE-238.md).
 
 ## The problem with the obvious metric
 

@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-63 of 237 NOTE documents. Back to the [full index](../README.md).
+64 of 238 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -71,3 +71,4 @@
 | [NOTE-234](../../../record/notes.d/NOTE-234.md) | SimpleStories | Read to see what, if anything, it establishes that its trunk did not. The dataset comparison is direct and well instrumented; the model comparison is confounded three ways and the authors say so. The practice this record takes from it is about the generation procedure, which was measured. | Read |
 | [NOTE-235](../../../record/notes.d/NOTE-235.md) | ParScale | Read as a candidate third scaling axis. The scaling law is fitted honestly and the inference-cost analysis is better instrumented than most; the claim that carries furthest is the *asymmetry* — code benefits more than general text, on two independent measurements — and it is the claim the paper labels a conjecture. | Read |
 | [NOTE-236](../../../record/notes.d/NOTE-236.md) | AI on Change.org | Read to test it against `SOTA-291`'s promotion condition, which it satisfies. The platform-level difference-in-differences is the strong evidence; the repeat-writer analysis reads stronger than it is; and the finding with the longest reach — that the text features stopped predicting outcomes — is in the appendix. | Read |
+| [NOTE-238](../../../record/notes.d/NOTE-238.md) | PHi: prediction of hidden states | Read for the instrument. The diagnosis of next-token loss is clean and the boring/interesting separation is convincing on two architectures. The reasoning-selection result is weaker than the abstract implies, and the paper says so itself in a sentence most readers will pass over: picking by next-token loss alone already scores 71%. | Read |

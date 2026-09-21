@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-18 of 299 SOTA documents. Back to the [full index](../README.md).
+19 of 300 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -28,3 +28,4 @@
 | [SOTA-292](../../../record/practices.d/SOTA-292.md) | Check industry ties yourself when reading a literature about deployed platforms — disclosure is unreliable and the ties are mechanically detectable |  | Proposed |
 | [SOTA-293](../../../record/practices.d/SOTA-293.md) | Count embedding parameters when you report a tiny model's size | Finke et al. (2025), [LIT-485](../../../record/literature.d/LIT-485.md) — at these sizes the embedding table is not a rounding error, it is most of the model: TinyStories-33M is **68M** parameters all-in, and an 8M model in the same paper is "more than half embeddings". Two papers can each claim the smaller model and both be telling the truth. Print the all-in figure. | Proposed |
 | [SOTA-298](../../../record/practices.d/SOTA-298.md) | Measure a writing assistant by the outcome it was deployed to improve, not by the text features that used to predict it | Corpus et al. (2025), [LIT-487](../../../record/literature.d/LIT-487.md) — Change.org's AI drafting tool made petitions 49% longer, more lexically varied and better rated by human judges on quality and persuasiveness, moving them toward the profile of successful pre-AI petitions. The share reaching 10 signatures fell **5.33 points**. The features had been chosen because they predicted success; afterwards they predicted it weakly or negatively. | Proposed |
+| [SOTA-300](../../../record/practices.d/SOTA-300.md) | To tell whether a model is doing non-trivial in-context computation, measure how well it predicts its own hidden states, not its next-token loss | Herrmann et al. (2025), [LIT-489](../../../record/literature.d/LIT-489.md) — uniform noise maximizes next-token loss and requires no computation; reciting a memorized licence minimizes it and requires none either. Insert a variational bottleneck with a **learned autoregressive prior** and measure the posterior-prior KL: only the genuinely in-context task scores high, on a Transformer and an LSTM, and the signal survives controlling for next-token loss. | Proposed |

@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-68 of 247 NOTE documents. Back to the [full index](../README.md).
+69 of 248 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -76,3 +76,4 @@
 | [NOTE-241](../../../record/notes.d/NOTE-241.md) | LLMs raise the opportunity cost of research time | Read for a mechanism `THEORY-051` named and the record could not supply: why effort would fall when a writing tool gets better. The answer is that a perfect time-saving tool raises the value of time, and the interesting part is not the decline but the **phase dependence** — the model predicts opposite signs for selectivity, and the opposite sign for thoroughness, from properties of the tool you can identify before deploying it. | Read |
 | [NOTE-242](../../../record/notes.d/NOTE-242.md) | Genesys and what survives its own controls | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for the architecture-discovery claim and filed for the code-generation one. Unit-by-unit generation with an execution-based checker takes valid output from 6% to 92% on the same proposals, with a stated mechanism that has nothing to do with architectures. The discovered architectures are a wash against their own seeds, by the paper's own table. | Read |
 | [NOTE-244](../../../record/notes.d/NOTE-244.md) | SQ hardness for semiautomata, and the regime it needs | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist. The theorem is clean and the regime it needs — an alphabet cubic in the number of states — is what a citing reader will drop. Filed for the mental model underneath it, which the record had nothing for: longer random sequences carry *less* information about a hidden transition structure, not more. | Read |
+| [NOTE-248](../../../record/notes.d/NOTE-248.md) | The FID Lottery: which lottery, and how big | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist, taken ahead of its dwell rank because `SOTA-305` had just landed on the adjacent question. The finding that matters is not that FID is noisy but *which* noise dominates: the training run, by 3.2×, in a term no amount of extra sampling touches — and a control that rules out the boring explanation. | Read |

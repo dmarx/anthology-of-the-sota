@@ -1,6 +1,9 @@
 ---
+number: 248
 status: Read
-paper: LIT-tmpjz53y
+formerly:
+- NOTE-tmpimuh6
+paper: LIT-501
 title: 'The FID Lottery: which lottery, and how big'
 version: 1
 date: '2026-09-21'
@@ -12,7 +15,7 @@ summary: >-
   that rules out the boring explanation.
 ---
 
-# NOTE-tmpimuh6: The FID Lottery: which lottery, and how big
+# NOTE-248: The FID Lottery: which lottery, and how big
 
 ## Contribution
 
@@ -145,7 +148,7 @@ which it does not; it uses it as an instrument.
 ## Recommendations
 
 - **R1** — report FID as an error bar over several training seeds, and treat
-  gaps under ≈2% as inconclusive. *Filed* as `SOTA-tmpmd52k`.
+  gaps under ≈2% as inconclusive. *Filed* as `SOTA-307`.
 - **R2** — tune and evaluate with the same FID variant you will report, and
   search the CFG scale per cell with golden section. *Filed inside R1's
   practice*, since it is a rider on the same protocol rather than a separate

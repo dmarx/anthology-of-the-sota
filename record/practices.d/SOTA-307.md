@@ -1,5 +1,8 @@
 ---
+number: 307
 status: Active
+formerly:
+- SOTA-tmpmd52k
 consensus: unreplicated
 consensus_note: >-
   One group, one combination — SiT under flow matching on class-conditional
@@ -17,12 +20,12 @@ tags:
 - generative-modeling
 date: '2026-09-21'
 source:
-- LIT-tmpjz53y
+- LIT-501
 introduced_by:
-- LIT-tmpjz53y
+- LIT-501
 implementations: []
 summary: >-
-  Dufour, Efros and Pérez (2026), [LIT-tmpjz53y](../literature.d/LIT-tmpjz53y.md) — on several
+  Dufour, Efros and Pérez (2026), [LIT-501](../literature.d/LIT-501.md) — on several
   hundred SiT networks, **retraining the same recipe moves FID 3.2× more than
   resampling from a fixed model**, and the coefficient of variation holds at
   **1–2%** across four model sizes and every compute budget to 2M steps.
@@ -30,12 +33,12 @@ summary: >-
   large one untouched. A lucky training seed is worth up to **2× the compute**.
 ---
 
-# SOTA-tmpmd52k: Report generative FID as an error bar over several training seeds, and treat any gap below about 2% of the mean as inconclusive
+# SOTA-307: Report generative FID as an error bar over several training seeds, and treat any gap below about 2% of the mean as inconclusive
 
 ## Source
 
-Dufour, Efros and Pérez (2026), [LIT-tmpjz53y](../literature.d/LIT-tmpjz53y.md) — read as
-[NOTE-tmpimuh6](../notes.d/NOTE-tmpimuh6.md).
+Dufour, Efros and Pérez (2026), [LIT-501](../literature.d/LIT-501.md) — read as
+[NOTE-248](../notes.d/NOTE-248.md).
 
 ## When this applies
 

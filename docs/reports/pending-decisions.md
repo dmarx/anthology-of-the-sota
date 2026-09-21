@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**149 document(s) awaiting a decision.**
+**150 document(s) awaiting a decision.**
 
 ## SOTAs
 
-96 of the 149.
+96 of the 150.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -112,7 +112,7 @@
 
 ## THEORYs
 
-33 of the 149.
+34 of the 150.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -134,6 +134,7 @@
 | 2026-09-20 | Proposed | [THEORY-036](../../record/theory.d/THEORY-036.md) | 3 | 0 | Representations converge across architectures, objectives and modalities, and the endpoint is a model of what generated the data |
 | 2026-09-20 | Proposed | [THEORY-034](../../record/theory.d/THEORY-034.md) | 1 | 0 | Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations |
 | 2026-09-21 | Proposed | [THEORY-051](../../record/theory.d/THEORY-051.md) | 8 | 0 | A text feature predicts success partly by being uncommon, so a tool that gives it to everyone destroys its predictive value |
+| 2026-09-21 | Proposed | [THEORY-060](../../record/theory.d/THEORY-060.md) | 5 | 0 | Calibration error and refinement error have separate minimizers during training, so the loss minimum is optimal for neither |
 | 2026-09-21 | Proposed | [THEORY-056](../../record/theory.d/THEORY-056.md) | 3 | 0 | Distinct state machines agree at chance on long random inputs, so a learner that reads only statistics loses the signal as the sequences get longer |
 | 2026-09-21 | Proposed | [THEORY-059](../../record/theory.d/THEORY-059.md) | 3 | 0 | A low-rank branch corrects quantization because weight spectra are steep and quantization-error spectra are flat |
 | 2026-09-21 | Proposed | [THEORY-045](../../record/theory.d/THEORY-045.md) | 2 | 0 | How much of parameter space behaves like your trained network is a description length, and the better-generalizing network occupies more of it |
@@ -152,7 +153,7 @@
 
 ## LITs
 
-3 of the 149.
+3 of the 150.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -162,14 +163,14 @@
 
 ## ADRs
 
-17 of the 149.
+17 of the 150.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 2 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-09 | Proposed | [ADR-024](../../record/decisions.d/ADR-024.md) | 10 | 0 | The topic vocabulary has four recurring seams — options, not a decision |
 | 2026-09-14 | Proposed | [ADR-028](../../record/decisions.d/ADR-028.md) | 1 | 1 | One topic vocabulary, one set of glosses: the blurbs are shared too |
-| 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 25 | 0 | A scheme for explanations, complementing the practice registry |
+| 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 29 | 0 | A scheme for explanations, complementing the practice registry |
 | 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 17 | 1 | Every practice states its origin, even when it is the primary source |
 | 2026-09-15 | Proposed | [ADR-034](../../record/decisions.d/ADR-034.md) | 13 | 0 | A document that changes scheme is Superseded where it leaves, and names its successor across the boundary |
 | 2026-09-15 | Proposed | [ADR-033](../../record/decisions.d/ADR-033.md) | 0 | 0 | Readings made in another context port into the record; their agenda does not |

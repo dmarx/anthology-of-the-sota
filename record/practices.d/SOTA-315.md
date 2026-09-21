@@ -1,5 +1,8 @@
 ---
+number: 315
 status: Active
+formerly:
+- SOTA-tmpony2u
 consensus: unreplicated
 consensus_note: >-
   One group, and an unusually broad study for one: 196 tabular datasets across
@@ -15,33 +18,33 @@ tags:
 - training-optimization
 date: '2026-09-21'
 source:
-- LIT-tmpanahl
+- LIT-514
 introduced_by:
-- LIT-tmpanahl
+- LIT-514
 implementations: []
 summary: >-
-  Berta et al. (2025), [LIT-tmpanahl](../literature.d/LIT-tmpanahl.md) — a proper loss is calibration
+  Berta et al. (2025), [LIT-514](../literature.d/LIT-514.md) — a proper loss is calibration
   error plus refinement error, and the two bottom out at different epochs, so
   the validation-loss minimum is optimal for neither. Fit a temperature on the
   validation set each time you would have read the loss, read the loss after
   it, and stop there; then keep the temperature. Measured across **196**
   classification datasets and a vision benchmark with ten runs per dataset.
 explained_by:
-- THEORY-tmp844b5
+- THEORY-060
 ---
 
-<!-- inactive-ok-file: THEORY-tmp844b5 — Proposed, filed in this same
+<!-- inactive-ok-file: THEORY-060 — Proposed, filed in this same
      contribution. This practice declares `explained_by:` on it, so the
      citation is the relation itself; the practice stands without the account
      and the account is the weaker of the two, which is why their statuses
      differ. -->
 
-# SOTA-tmpony2u: Early-stop and tune on validation loss after temperature scaling, then calibrate post hoc, instead of stopping on raw validation loss
+# SOTA-315: Early-stop and tune on validation loss after temperature scaling, then calibrate post hoc, instead of stopping on raw validation loss
 
 ## Source
 
-Berta, Holzmüller, Jordan and Bach (2025), [LIT-tmpanahl](../literature.d/LIT-tmpanahl.md) — read as
-[NOTE-tmp1et69](../notes.d/NOTE-tmp1et69.md). The account of why is [THEORY-tmp844b5](../theory.d/THEORY-tmp844b5.md).
+Berta, Holzmüller, Jordan and Bach (2025), [LIT-514](../literature.d/LIT-514.md) — read as
+[NOTE-259](../notes.d/NOTE-259.md). The account of why is [THEORY-060](../theory.d/THEORY-060.md).
 
 ## When this applies
 

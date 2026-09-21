@@ -1,5 +1,8 @@
 ---
+number: 60
 status: Proposed
+formerly:
+- THEORY-tmp844b5
 promote_when: >-
   The separation reproduced by a group that is not proposing a remedy for it:
   calibration and refinement plotted against epoch, from a training run set up
@@ -15,11 +18,11 @@ tags:
 - training-optimization
 date: '2026-09-21'
 source:
-- LIT-tmpanahl
+- LIT-514
 explains:
-- SOTA-tmpony2u
+- SOTA-315
 summary: >-
-  Berta et al. (2025), [LIT-tmpanahl](../literature.d/LIT-tmpanahl.md) — a proper loss is exactly
+  Berta et al. (2025), [LIT-514](../literature.d/LIT-514.md) — a proper loss is exactly
   calibration error plus refinement error, so minimizing it minimizes a sum
   whose two terms bottom out at different epochs. The proposed mechanism: as
   the training set becomes separable the model must grow confident to keep
@@ -28,18 +31,18 @@ summary: >-
 ---
 
 
-# THEORY-tmp844b5: Calibration error and refinement error have separate minimizers during training, so the loss minimum is optimal for neither
+# THEORY-060: Calibration error and refinement error have separate minimizers during training, so the loss minimum is optimal for neither
 
 ## Source
 
-Berta, Holzmüller, Jordan and Bach (2025), [LIT-tmpanahl](../literature.d/LIT-tmpanahl.md) — read as
-[NOTE-tmp1et69](../notes.d/NOTE-tmp1et69.md).
+Berta, Holzmüller, Jordan and Bach (2025), [LIT-514](../literature.d/LIT-514.md) — read as
+[NOTE-259](../notes.d/NOTE-259.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-tmpony2u](../practices.d/SOTA-tmpony2u.md) | stop and tune on validation loss after temperature scaling, then calibrate | the raw validation loss is a sum of two terms with different minima, so its own minimum is a compromise point nobody chose and neither term is at its best there |
+| [SOTA-315](../practices.d/SOTA-315.md) | stop and tune on validation loss after temperature scaling, then calibrate | the raw validation loss is a sum of two terms with different minima, so its own minimum is a compromise point nobody chose and neither term is at its best there |
 
 ## The account
 

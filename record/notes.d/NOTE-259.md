@@ -1,6 +1,9 @@
 ---
+number: 259
 status: Read
-paper: LIT-tmpanahl
+formerly:
+- NOTE-tmp1et69
+paper: LIT-514
 title: 'Refine, then calibrate: the validation-loss minimum is a compromise nobody chose'
 version: 1
 date: '2026-09-21'
@@ -13,8 +16,8 @@ summary: >-
   dataset.
 ---
 
-<!-- inactive-ok-file: THEORY-tmp844b5 ADR-031 SOTA-102 — all three named
-     rather than relied on. THEORY-tmp844b5 is Proposed and filed in this same
+<!-- inactive-ok-file: THEORY-060 ADR-031 SOTA-102 — all three named
+     rather than relied on. THEORY-060 is Proposed and filed in this same
      contribution as the account under this unit's practice, and this document
      says in as many words that it is the weaker of the two. ADR-031 is cited
      as the decision that splits practice from theory, which is what this unit
@@ -22,7 +25,7 @@ summary: >-
      the nearest thing a search for "calibration" returns, and about data
      mixing rather than probabilities, which is the point being made. -->
 
-# NOTE-tmp1et69: Refine, then calibrate: the validation-loss minimum is a compromise nobody chose
+# NOTE-259: Refine, then calibrate: the validation-loss minimum is a compromise nobody chose
 
 ## Contribution
 
@@ -108,9 +111,9 @@ practices touch training and none asked whether the probabilities mean
 anything. That absence is the reason this was worth a full unit rather than a
 note.
 
-**Two documents, on [ADR-031](../decisions.d/ADR-031.md)'s split.** [SOTA-tmpony2u](../practices.d/SOTA-tmpony2u.md) is the
+**Two documents, on [ADR-031](../decisions.d/ADR-031.md)'s split.** [SOTA-315](../practices.d/SOTA-315.md) is the
 instruction — stop on post-TS validation loss, then calibrate.
-[THEORY-tmp844b5](../theory.d/THEORY-tmp844b5.md) is the claim underneath it, that the two terms have
+[THEORY-060](../theory.d/THEORY-060.md) is the claim underneath it, that the two terms have
 separate minimizers, filed `Proposed` because the only measurement of it comes
 from the party proposing the remedy.
 

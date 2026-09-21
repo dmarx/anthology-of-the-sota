@@ -1,0 +1,110 @@
+---
+status: Active
+title: 'Vector-quantized Image Modeling with Improved VQGAN'
+version: 1
+tags:
+- representation-and-encoding
+- generative-modeling
+- model-architecture
+date: '2026-09-21'
+published: '2021-10-09'
+arxiv: '2110.04627'
+first_author: 'Yu'
+keywords:
+- 'vit-vqgan'
+- 'factorized-codes'
+- 'codebook-usage'
+- 'l2-normalized-codebook'
+- 'dead-codes'
+- 'vector-quantized-image-modeling'
+extends:
+- LIT-496
+extended_by:
+- LIT-497
+implementations: []
+summary: >-
+  Yu et al. (2021), [ARXIV-2110.04627](https://arxiv.org/abs/2110.04627). The origin of the codebook
+  advice `SOTA-306` rests on, and it says something sharper than its
+  descendants repeat: **factorize** the code, so lookup happens in a
+  low-dimensional space while the embedding stays high-dimensional, and
+  `ℓ₂`-normalize both sides. Its ablation puts codebook usage at **4%** at
+  lookup dimension 256, **95%** at 16 — and **2%** with normalization
+  removed, which is the largest single effect in the table.
+---
+
+# LIT-tmpov7yl: Vector-quantized Image Modeling with Improved VQGAN
+
+Yu, Li, Koh, Zhang, Pang, Qin, Ku, Xu, Baldridge and Wu (2021) —
+[ARXIV-2110.04627](https://arxiv.org/abs/2110.04627), read as [NOTE-tmptxi4l](../notes.d/NOTE-tmptxi4l.md).
+
+## Key takeaways
+
+- **The diagnosis is named and is not "low utilization".** Vanilla VQ-VAEs
+  suffer low codebook usage "due to the poor initialization of the codebook",
+  so a significant portion of codes are rarely used, or **dead**. Dead codes
+  shrink the effective codebook, which costs reconstruction in stage 1 and
+  diversity in stage 2.
+- **The causal claim the descendants dropped.** "As a result, VQGAN relies on
+  top-`k` and top-`p` (nucleus) sampling heuristics with a default codebook
+  size of 1024 to obtain best results for image synthesis." Fix the codebook
+  and the heuristics become unnecessary: this paper samples at temperature 1.0
+  with no top-`k` and no top-`p`, at codebook size 8192. The sampling tricks
+  were compensating for a broken vocabulary.
+- **Factorized codes are not the same as small codes.** A linear projection
+  takes the encoder output to a low-dimensional *lookup* space (768-d → 32-d
+  or 8-d), the nearest entry is found there, and the matched code is projected
+  back up to the high-dimensional embedding space. The paper's own framing:
+  "decoupling code lookup and code embedding". [LIT-497](../literature.d/LIT-497.md) later
+  reports the same effect with the whole codebook low-dimensional, which is a
+  different implementation of the same idea and is worth not conflating.
+- **`ℓ₂`-normalization turns Euclidean lookup into cosine similarity.** Both
+  encoder outputs and codebook entries are normalized onto a sphere, with the
+  codebook initialized from a normal distribution, so the `argmin` over
+  `‖ℓ₂(z_e) − ℓ₂(e_j)‖²` is a cosine comparison.
+- **Table 4 is the ablation everything downstream is quoting.** Base encoder
+  and decoder, ViT, StyleGAN discriminator, throughput flat at 954–960
+  throughout:
+
+  | lookup dim | `ℓ₂` | IS | FID | codebook usage |
+  |---|---|---|---|---|
+  | 256 | ✓ | 160.1 | 3.68 | **4%** |
+  | 128 | ✓ | 173.9 | 2.77 | 14% |
+  | 64 | ✓ | 179.5 | 2.50 | 37% |
+  | **16** | ✓ | **191.2** | **1.50** | 95% |
+  | 8 | ✓ | 189.5 | 1.52 | 96% |
+  | 4 | ✓ | 143.8 | 3.68 | **96%** |
+  | 32 | **✗** | 123.6 | **5.44** | **2%** |
+
+- **The dimension-4 row is the one to read twice.** Usage is 96% — the best in
+  the table — and FID is 3.68, tied for worst among normalized rows. High
+  utilization is necessary and not sufficient: below the optimum every code is
+  used and none of them can say enough.
+- **Two other architectural findings.** A ViT encoder-decoder beats the CNN on
+  quality *and* throughput; a StyleGAN discriminator is more stable and better
+  than the PatchGAN VQGAN used.
+- **Headline:** ImageNet `256×256` → `32×32` codes, codebook 8192. Generation
+  IS **175.1** and FID **4.17** against vanilla VQGAN's 70.6 and 17.04.
+  Representation: VIM-L linear probe **73.2%** against iGPT-L's 60.3% at
+  comparable size, beating iGPT-XL trained on extra web data.
+
+## Standing in the anthology
+
+The origin [#243](https://github.com/dmarx/anthology-of-the-sota/issues/243)'s closing named and did not fill. Filing it turns
+[SOTA-306](../practices.d/SOTA-306.md) from two independent measurements of somebody else's
+recommendation into a practice with its source, and corrects three things in
+the process — the factorization, the standing of `ℓ₂`-normalization, and what
+codebook utilization does and does not buy. That correction is the argument
+for filing origins rather than only the papers that cite them.
+
+It also carries `β = 0.25` forward, "set to 0.25 in all our experiments",
+inherited from [LIT-499](../literature.d/LIT-499.md) and not re-examined. That is now the third
+paper in this record to pass the number along untested, which sharpens the
+open question [NOTE-245](../notes.d/NOTE-245.md) filed rather than answering it.
+
+**What is not filed from it.** The ViT-over-CNN and StyleGAN-over-PatchGAN
+findings are single-paper architecture results inside one system, reported
+without the sweep that would separate them from the rest of the changes, and
+the record has no discriminator practice for them to join. The
+`VIM-L` representation-learning half is a different claim again — a
+linear-probe result the record's own evaluation practices would want to
+interrogate — and nothing here rests on it.

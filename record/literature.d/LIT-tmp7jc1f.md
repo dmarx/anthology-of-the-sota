@@ -1,0 +1,93 @@
+---
+status: Active
+title: 'gen2seg: Generative Models Enable Generalizable Instance Segmentation'
+version: 1
+tags:
+- vision-and-graphics
+- adaptation-and-tuning
+- generative-modeling
+- representation-and-encoding
+date: '2026-09-21'
+published: '2025-05-01'
+arxiv: '2505.15263'
+first_author: 'Khangaonkar'
+keywords:
+- 'instance-segmentation'
+- 'generative-prior'
+- 'zero-shot-generalization'
+- 'category-agnostic'
+- 'equivariance'
+compared_against:
+- LIT-096
+implementations: []
+summary: >-
+  Khangaonkar and Pirsiavash (2025), [ARXIV-2505.15263](https://arxiv.org/abs/2505.15263). Finetune Stable
+  Diffusion or MAE end-to-end — encoder *and* decoder — for category-agnostic
+  instance segmentation on **indoor furnishings and cars only**, and the model
+  segments people, animals, x-rays and impressionist paintings. It approaches
+  SAM across five domains on **0.3% of the annotated masks**, and beats it
+  ~3× on fine structures. The controls are the argument: the same backbone
+  under a standard segmentation head scores near zero.
+---
+
+# LIT-tmp7jc1f: gen2seg: Generative Models Enable Generalizable Instance Segmentation
+
+Khangaonkar and Pirsiavash (2025) — [ARXIV-2505.15263](https://arxiv.org/abs/2505.15263)
+
+## Key takeaways
+
+- **The setup is a deliberately extreme generalization test.** Finetuning
+  masks come only from Hypersim (indoor furnishings, 457 scenes) and Virtual
+  Kitti 2 (cars, five 15-second videos) — 86,000 images, no people, no
+  animals, one photorealistic style. Evaluation is on COCO minus the seen
+  categories, plus **art** (DRAM), **egocentric** (EgoHOS), **fine
+  structures** (iShape) and **luggage x-rays** (PIDRay).
+- **Segmentation as image-to-image translation.** Ground-truth masks are
+  encoded as an RGB image, one colour per instance, black background. Since
+  the colour assignment is arbitrary, the loss is permutation-free: low
+  variance within an instance, separation between instance means, and a
+  penalty for predicting an instance's colour outside it.
+- **The comparison to SAM, at 0.3% of the masks.** 29 hours on four RTX6000
+  Ada and 3.7M masks, against SAM's 68 hours on 256 A100s and 1.1B masks.
+  On COCO-Large the finetuned Stable Diffusion **marginally exceeds** SAM
+  (57.6 vs 57.0 mIoU at one prompt point); on iShape it beats it **51.4 vs
+  16.8**; it loses badly on COCO-Medium and Small (38.8 vs 59.5, 8.5 vs
+  56.9), which the authors attribute to pretraining biases toward large
+  central objects and to finetuning at much lower resolution.
+- **The controls are what make this more than a result.** `SimpleClick` —
+  the *same* MAE-B backbone, the *same* finetuning data, a conventional
+  promptable-segmenter head — scores **1.4 to 2.4 mIoU across every
+  dataset**, which is to say it does not work at all. Swap the generative
+  decoder onto discriminative features (DINO-B + frozen SD VAE) and you get
+  14.9 average against MAE-B's 21.6: better than nothing, worse than a
+  generative encoder.
+- **It is not about internet-scale pretraining.** MAE pretrained on
+  **unlabeled ImageNet-1K alone**, no text, no LAION, generalizes to art and
+  x-rays. Scale helps — SD beats MAE-H — but is not the mechanism.
+- **Nor about the finetuning data's diversity.** Ten Hypersim classes match
+  the full 33+; five classes (books, chairs, lamps, tables, pillows) still
+  generalize with a drop. Finetuning on COCO instead barely improves
+  anything, which the authors read as the zero-shot result already sitting
+  near the supervised ceiling.
+- **Crisper boundaries than SAM, and the ablation that proves the source.**
+  On BSDS500 edge AP, nearly all their models beat SAM — *including* models
+  finetuned on COCO's coarse polygonal masks, which lose less than 5 points.
+  A model trained on polygons does not predict polygons, so the fine edges
+  come from the generative prior rather than from clean synthetic labels.
+- **Part-whole structure emerges without part supervision**: related parts
+  of a scene receive subtly different hues, unrelated parts distinct colours.
+  Shown qualitatively only.
+
+## Standing in the anthology
+
+The counterweight to [SOTA-186](../practices.d/SOTA-186.md), which is SAM's answer to the same
+problem: bootstrap an enormous annotation set with the model you are
+training. This is the opposite route — annotate narrowly, and borrow the
+generality from a generative prior instead of buying it with labels. The two
+are not in conflict and the paper says so: it reaches ~70–100% of SAM on
+most domains, not past it, and loses decisively on small objects. What it
+changes is the price.
+
+`compared_against: LIT-096` is declared because SAM is the high-water mark
+this paper measures itself against directly, across five datasets it borrows
+from SAM's own evaluation suite.

@@ -1,0 +1,71 @@
+---
+status: Active
+title: 'Comment on The Illusion of Thinking'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-21'
+published: '2025-06-01'
+arxiv: '2506.09250'
+first_author: 'Lawsen'
+keywords:
+- 'evaluation-design'
+- 'task-demands'
+- 'output-limits'
+- 'unsolvable-instances'
+- 'reasoning-models'
+corrects:
+- LIT-tmpzsiks
+implementations: []
+summary: >-
+  Lawsen (2025), [ARXIV-2506.09250](https://arxiv.org/abs/2506.09250). Argues the reported accuracy
+  collapse is the evaluation: output-token limits, a scorer that cannot tell
+  refusal from failure, and River Crossing instances that have no solution
+  yet count as failures. One claim is a fact; the rest is argued.
+---
+
+# LIT-tmp85dyu: Comment on The Illusion of Thinking
+
+Lawsen (2025) — [ARXIV-2506.09250](https://arxiv.org/abs/2506.09250)
+
+## Key takeaways
+
+- **The unsolvable-instance claim is the one that does not depend on
+  interpretation.** The Missionaries–Cannibals family has no solution for
+  more than five pairs with a boat that holds three. [LIT-tmpzsiks](../literature.d/LIT-tmpzsiks.md)
+  tests such instances and scores a model zero for not solving them. If that
+  is right — and it is a checkable mathematical fact rather than a reading of
+  model behaviour — then part of the reported collapse is a scoring error.
+- **Output length is not reasoning length.** Tower of Hanoi needs
+  exponentially many moves and a trivial decision per move. An evaluation that
+  requires the moves enumerated measures how much a model will type. Models
+  are quoted stopping early with "to avoid making this too long".
+- **The representation test.** Ask for a Lua function that prints the solution
+  rather than the move list, and reported accuracy on instances previously
+  scored as total failures is high, in under 5,000 tokens. The author calls
+  this preliminary and says budget prevented a properly powered sample.
+- **Solution length is not difficulty.** Hanoi is exponentially long and
+  trivial per move; Blocks World is shorter and NP-hard to solve optimally —
+  and the Blocks World prompt asks for the *minimum* sequence while the
+  checker only verifies validity, so a compliant model is made to solve the
+  harder problem.
+
+## Standing in the anthology
+
+Held for the evaluation-design argument, and held with its weaknesses on the
+page. It is a single-author preprint; the author states that Claude Opus wrote
+the bulk of it and was removed as co-author under arXiv policy. The central
+empirical rebuttal is explicitly underpowered. And §4 is a **published
+self-correction**: an earlier version assumed the evaluation required
+intermediate states, commenters showed otherwise, and the section was
+rewritten — with the author noting the irony that the mistake came from a
+human reviewer rather than the model.
+
+Its own reference list cites `ARXIV-2501.12948` for Shojaee et al., which is
+DeepSeek-R1. The arXiv metadata names the right target; the bibliography does
+not. A small thing, and the kind of small thing that bears on how much weight
+the argued claims carry when the checkable one is strong.
+
+`corrects` is declared because that is what the document is for. It is not a
+statement that the record believes it won — see [LIT-tmpzsiks](../literature.d/LIT-tmpzsiks.md), which
+is NeurIPS 2025 and was revised after this appeared.

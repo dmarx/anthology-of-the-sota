@@ -1,0 +1,67 @@
+---
+status: Active
+title: 'The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-21'
+published: '2025-06-01'
+arxiv: '2506.06941'
+first_author: 'Shojaee'
+keywords:
+- 'reasoning-models'
+- 'accuracy-collapse'
+- 'puzzle-environments'
+- 'reasoning-traces'
+- 'inference-compute'
+implementations: []
+corrected_by:
+- LIT-tmp85dyu
+summary: >-
+  Shojaee et al. (2025), [ARXIV-2506.06941](https://arxiv.org/abs/2506.06941). Controllable puzzles
+  instead of contaminated benchmarks, and reasoning models collapse to zero
+  accuracy past a complexity threshold while *reducing* their thinking tokens.
+  NeurIPS 2025; the collapse reading is publicly contested and the three-regime
+  finding is not.
+---
+
+# LIT-tmpzsiks: The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity
+
+Shojaee et al. (2025) — [ARXIV-2506.06941](https://arxiv.org/abs/2506.06941)
+
+## Key takeaways
+
+- **The instrument is the point.** Established maths and coding benchmarks
+  are contaminated and score only final answers. Controllable puzzle
+  environments — Tower of Hanoi, River Crossing, Blocks World — let
+  compositional complexity be dialled while the logical structure stays
+  fixed, and let the reasoning trace be checked as well as the answer.
+- **Three regimes under matched inference compute.** At low complexity plain
+  models beat reasoning models and use fewer tokens; at medium complexity the
+  extra thinking pays; at high complexity both collapse.
+- **The counterintuitive scaling limit.** As problems get harder, reasoning
+  effort rises and then *falls* — models spend fewer thinking tokens on the
+  hardest problems while still holding budget in reserve.
+- **The negative claims about exact computation.** Models fail to follow an
+  explicit algorithm when given one, and reason inconsistently across puzzle
+  families.
+
+## Standing in the anthology
+
+Held for the instrument and the three-regime result, with the
+accuracy-collapse interpretation contested in the record rather than
+endorsed.
+
+[LIT-tmp85dyu](../literature.d/LIT-tmp85dyu.md) is a public comment arguing that the collapse is an
+artifact of the evaluation: output-token limits, a scorer that cannot tell
+refusal from failure, and River Crossing instances that are mathematically
+unsolvable yet scored as failures. The record takes the River Crossing point
+as established and the rest as argued — [NOTE-tmp8e2j0](../notes.d/NOTE-tmp8e2j0.md) sets out
+which is which.
+
+**This paper is NeurIPS 2025, camera-ready, revised in November 2025 — five
+months after the comment.** It went through peer review with the objection
+already public. That does not settle the dispute and it does rule out reading
+this as a debunked preprint, which is how a reader who met only the comment
+would be likely to read it. `Active`, `corrected_by` declared, and neither
+document treated as having won.

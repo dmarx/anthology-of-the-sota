@@ -1,0 +1,73 @@
+---
+status: Active
+title: 'Theoretical limitations of multi-layer Transformer'
+version: 1
+tags:
+- model-architecture
+- analysis-and-evaluation
+date: '2026-09-21'
+published: '2024-12-01'
+arxiv: '2412.02975'
+first_author: 'Chen'
+keywords:
+- 'expressive-power'
+- 'lower-bound'
+- 'depth-width-tradeoff'
+- 'chain-of-thought'
+- 'communication-complexity'
+implementations: []
+summary: >-
+  Chen et al. (2024), [ARXIV-2412.02975](https://arxiv.org/abs/2412.02975). The first unconditional
+  lower bound for a decoder-only transformer with more than one layer: any
+  constant-depth decoder needs polynomially many parameters to compose
+  functions sequentially. Depth, an encoder, or chain of thought each buy
+  what width cannot.
+---
+
+# LIT-tmpci13h: Theoretical limitations of multi-layer Transformer
+
+Chen et al. (2024) — [ARXIV-2412.02975](https://arxiv.org/abs/2412.02975)
+
+## Key takeaways
+
+- **Unconditional, and that is the contribution.** Every previous limitation
+  result for a multi-layer transformer rested on an unproven complexity
+  conjecture, and there was published speculation that proving one
+  unconditionally would require settling open circuit-lower-bound questions.
+  This proves one with no assumptions, by exploiting something specific to
+  decoders: causal masking means a position can never see what comes after
+  it, so the information bottleneck is real rather than conjectural.
+- **The hard task is sequential composition.** Given `k` functions and a
+  query, compute `f_k(...f_2(f_1(q)))`. An `L`-layer decoder-only transformer
+  cannot do `k`-sequential composition when the model is small relative to
+  context length — and `k` here can be small.
+- **Three separations fall out, all exponential.** A `log k`-layer decoder
+  solves the task with polylogarithmic parameters while a constant-layer one
+  needs polynomially many (depth-width tradeoff). An encoder solves it
+  exponentially shallower and smaller than any decoder can (the first
+  unconditional encoder/decoder separation). And a **one-layer** decoder with
+  chain of thought solves it with polylogarithmic parameters — the first
+  provable benefit of chain of thought that does not assume a complexity
+  conjecture.
+- **The proof technique is a communication model.** The *autoregressive
+  communication model*: players on a line, each able to message only players
+  to its right, and — the load-bearing feature — **forgetful**, in that a
+  player does not remember what it sent. One epoch of communication is one
+  attention layer. The lower bound is proved there and transferred.
+- **It is about representability, not learnability.** Nothing here says a
+  trained model of sufficient size will learn the composition, nor that a
+  model below the bound fails in practice on any concrete input length. It
+  says what a parameter count can and cannot express.
+
+## Standing in the anthology
+
+The record's first lower bound. Everything else in it is a recommendation or
+an account of why a recommendation works; this is a statement about what is
+not available at any amount of tuning, and the shape of that claim is new
+here.
+
+It also lands on an absence. The record holds **no practice recommending
+chain of thought** — [SOTA-127](../practices.d/SOTA-127.md) says to filter chain-of-thought traces
+*out* of tiny-model training data, and that is the whole of it. Corollary 1.4
+is not the paper to fix that with, for the reason [NOTE-tmpdirge](../notes.d/NOTE-tmpdirge.md) gives,
+but it makes the gap visible.

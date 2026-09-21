@@ -20,7 +20,7 @@ history:
   note: >-
     Proposed -> Active. The promotion condition asked for a specific-affordance
     evaluation run at collective scale with the group-level outcome actually
-    measured, and named the gap as small and nameable. LIT-tmptnd18 is that
+    measured, and named the gap as small and nameable. LIT-487 is that
     evaluation: one affordance (an AI drafting tool in one writing flow), a
     coherent counterfactual (a staggered rollout that reached three countries
     eleven weeks before a fourth), an eleven-week window against a 65-week
@@ -36,7 +36,7 @@ tags:
 date: '2026-09-21'
 source:
 - LIT-482
-- LIT-tmptnd18
+- LIT-487
 introduced_by:
 - LIT-482
 implementations: []
@@ -105,7 +105,7 @@ rather than looking for a better trial.
 no new data. The negative half is strong because two of its four mechanisms
 are structural; the positive half is three stated advantages and a direction.
 
-**The positive programme has now been run once.** [LIT-tmptnd18](../literature.d/LIT-tmptnd18.md) takes
+**The positive programme has now been run once.** [LIT-487](../literature.d/LIT-487.md) takes
 one affordance — Change.org's in-platform AI drafting tool — across a
 staggered rollout, and measures platform-level outcomes: the share of
 petitions clearing a signature threshold, inter-petition homogeneity, and

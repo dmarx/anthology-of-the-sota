@@ -6,9 +6,10 @@
 
 **Deployment and society** — what a system does once it is running among people, and how anyone outside it could find out — audits of deployed platforms and recommenders, information ecosystems, moderation and governance, and the access problems and funding pressures of studying any of it from the outside.
 
-2 of 50 THEORY documents. Back to the [full index](../README.md).
+3 of 51 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [THEORY-047](../../../record/theory.d/THEORY-047.md) | Personalizing a feed concentrates what it shows rather than broadening it, and a handful of moderate signals is enough to start | Ye, Luceri and Ferrara (2024), [LIT-480](../../../record/literature.d/LIT-480.md) — across four arms of an audit, the accounts following **nobody** receive the most diverse recommendations and the partisan arms the least. Ten moderate media follows and four political accounts are enough to amplify aligned voices more than 50% above a balanced baseline. | Proposed |
 | [THEORY-048](../../../record/theory.d/THEORY-048.md) | Randomizing individuals estimates an individual quantity, and when the units interact the collective effect is not the sum of it — so a null from such a trial is not evidence of no effect | Bak-Coleman et al. (2025), [LIT-482](../../../record/literature.d/LIT-482.md) — four named reasons an individual-level randomized trial fails to estimate a collective effect: non-linearity across scale, hysteresis, feedback in time, and violation of the stable unit treatment value assumption through the network. The power grid shows the first and the last together: treat too few and the system absorbs it, treat enough and the controls fail too. | Active |
+| [THEORY-051](../../../record/theory.d/THEORY-051.md) | A text feature predicts success partly by being uncommon, so a tool that gives it to everyone destroys its predictive value | Corpus et al. (2025), [LIT-487](../../../record/literature.d/LIT-487.md) — length, readability and lexical variety predicted petition success, an AI drafting tool moved all three in the successful direction and raised rated quality, and success did not follow. Inter-petition similarity rose **23%** in the same window, and the features' predictive strength weakened or reversed. | Proposed |

@@ -6,10 +6,11 @@
 
 **Deployment and society** — what a system does once it is running among people, and how anyone outside it could find out — audits of deployed platforms and recommenders, information ecosystems, moderation and governance, and the access problems and funding pressures of studying any of it from the outside.
 
-3 of 297 SOTA documents. Back to the [full index](../README.md).
+4 of 298 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [SOTA-290](../../../record/practices.d/SOTA-290.md) | To measure what a deployed recommender does, use sock-puppets that never interact, follow sets curated to your question, and exposure weighted by rank |  | Proposed |
-| [SOTA-291](../../../record/practices.d/SOTA-291.md) | Evaluate a specific intervention on a specific affordance rather than the net effect of the system, and never read an individual-level null as the absence of a collective effect |  | Proposed |
+| [SOTA-291](../../../record/practices.d/SOTA-291.md) v2 | Evaluate a specific intervention on a specific affordance rather than the net effect of the system, and never read an individual-level null as the absence of a collective effect |  | Active |
 | [SOTA-292](../../../record/practices.d/SOTA-292.md) | Check industry ties yourself when reading a literature about deployed platforms — disclosure is unreliable and the ties are mechanically detectable |  | Proposed |
+| [SOTA-298](../../../record/practices.d/SOTA-298.md) | Measure a writing assistant by the outcome it was deployed to improve, not by the text features that used to predict it | Corpus et al. (2025), [LIT-487](../../../record/literature.d/LIT-487.md) — Change.org's AI drafting tool made petitions 49% longer, more lexically varied and better rated by human judges on quality and persuasiveness, moving them toward the profile of successful pre-AI petitions. The share reaching 10 signatures fell **5.33 points**. The features had been chosen because they predicted success; afterwards they predicted it weakly or negatively. | Proposed |

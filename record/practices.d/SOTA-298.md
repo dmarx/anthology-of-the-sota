@@ -1,5 +1,8 @@
 ---
+number: 298
 status: Proposed
+formerly:
+- SOTA-tmpivc72
 promote_when: >-
   A second deployment where a text-quality proxy and the outcome it was chosen
   to stand for are both tracked across the rollout and diverge — on a platform
@@ -22,14 +25,14 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmptnd18
+- LIT-487
 introduced_by:
-- LIT-tmptnd18
+- LIT-487
 implementations: []
 explained_by:
-- THEORY-tmp8vfb1
+- THEORY-051
 summary: >-
-  Corpus et al. (2025), [LIT-tmptnd18](../literature.d/LIT-tmptnd18.md) — Change.org's AI drafting tool made
+  Corpus et al. (2025), [LIT-487](../literature.d/LIT-487.md) — Change.org's AI drafting tool made
   petitions 49% longer, more lexically varied and better rated by human judges
   on quality and persuasiveness, moving them toward the profile of successful
   pre-AI petitions. The share reaching 10 signatures fell **5.33 points**. The
@@ -37,17 +40,17 @@ summary: >-
   predicted it weakly or negatively.
 ---
 
-<!-- inactive-ok-file: THEORY-tmp8vfb1 — Proposed, filed in this same
+<!-- inactive-ok-file: THEORY-051 — Proposed, filed in this same
      contribution, and the sentence citing it says so and says the practice
      does not depend on it: all three candidate mechanisms imply the same
      recommendation -->
 
-# SOTA-tmpivc72: Measure a writing assistant by the outcome it was deployed to improve, not by the text features that used to predict it
+# SOTA-298: Measure a writing assistant by the outcome it was deployed to improve, not by the text features that used to predict it
 
 ## Source
 
-Corpus et al. (2025), [LIT-tmptnd18](../literature.d/LIT-tmptnd18.md) — [ARXIV-2511.13949](https://arxiv.org/abs/2511.13949) — read as
-[NOTE-tmpge2ux](../notes.d/NOTE-tmpge2ux.md).
+Corpus et al. (2025), [LIT-487](../literature.d/LIT-487.md) — [ARXIV-2511.13949](https://arxiv.org/abs/2511.13949) — read as
+[NOTE-236](../notes.d/NOTE-236.md).
 
 ## What to do
 
@@ -83,7 +86,7 @@ Every step of that worked on Change.org, and the outcome went the other way.
 - Afterwards, those features — and the rated quality and persuasiveness —
   became **weaker or negative** predictors of outcomes.
 
-[THEORY-tmp8vfb1](../theory.d/THEORY-tmp8vfb1.md) is the account this record files for why, and it is
+[THEORY-051](../theory.d/THEORY-051.md) is the account this record files for why, and it is
 `Proposed` because two rival explanations predict the same null. But the
 practice does not depend on which explanation is right: under all three, the
 proxy stopped tracking the outcome, and only the outcome would have told you.

@@ -1,6 +1,9 @@
 ---
+number: 236
 status: Read
-paper: LIT-tmptnd18
+formerly:
+- NOTE-tmpge2ux
+paper: LIT-487
 title: 'AI on Change.org'
 version: 1
 date: '2026-09-21'
@@ -22,7 +25,7 @@ summary: >-
      this reading runs its check against the present paper and reports the
      result. A practice being unsettled does not stop it being usable -->
 
-# NOTE-tmpge2ux: AI on Change.org
+# NOTE-236: AI on Change.org
 
 ## Contribution
 

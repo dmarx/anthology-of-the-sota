@@ -1,5 +1,8 @@
 ---
+number: 51
 status: Proposed
+formerly:
+- THEORY-tmp8vfb1
 promote_when: >-
   The inversion measured as the mechanism rather than inferred alongside it —
   the predictive validity of a feature tracked against that feature's
@@ -16,32 +19,32 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmptnd18
+- LIT-487
 explains:
-- SOTA-tmpivc72
+- SOTA-298
 summary: >-
-  Corpus et al. (2025), [LIT-tmptnd18](../literature.d/LIT-tmptnd18.md) — length, readability and lexical
+  Corpus et al. (2025), [LIT-487](../literature.d/LIT-487.md) — length, readability and lexical
   variety predicted petition success, an AI drafting tool moved all three in
   the successful direction and raised rated quality, and success did not
   follow. Inter-petition similarity rose **23%** in the same window, and the
   features' predictive strength weakened or reversed.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpivc72 — Proposed, filed in this same
+<!-- inactive-ok-file: SOTA-298 — Proposed, filed in this same
      contribution; this theory declares `explains:` on it, so the citation is
      the relation itself -->
 
-# THEORY-tmp8vfb1: A text feature predicts success partly by being uncommon, so a tool that gives it to everyone destroys its predictive value
+# THEORY-051: A text feature predicts success partly by being uncommon, so a tool that gives it to everyone destroys its predictive value
 
 ## Source
 
-Corpus et al. (2025), [LIT-tmptnd18](../literature.d/LIT-tmptnd18.md) — read as [NOTE-tmpge2ux](../notes.d/NOTE-tmpge2ux.md).
+Corpus et al. (2025), [LIT-487](../literature.d/LIT-487.md) — read as [NOTE-236](../notes.d/NOTE-236.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-tmpivc72](../practices.d/SOTA-tmpivc72.md) | measure a writing assistant by the outcome, not by the text features that used to predict it | the features are not a cheaper measurement of the same thing; their correlation with the outcome was partly a fact about the population, and the tool changes the population |
+| [SOTA-298](../practices.d/SOTA-298.md) | measure a writing assistant by the outcome, not by the text features that used to predict it | the features are not a cheaper measurement of the same thing; their correlation with the outcome was partly a fact about the population, and the tool changes the population |
 
 ## The account
 

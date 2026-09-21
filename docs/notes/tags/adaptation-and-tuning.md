@@ -4,7 +4,7 @@
 
 **adaptation-and-tuning**.
 
-24 of 215 NOTE documents. Back to the [full index](../README.md).
+25 of 216 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -32,3 +32,4 @@
 | [NOTE-167](../../../record/notes.d/NOTE-167.md) | The Surprising Effectiveness of Test-Time Training for Few-Shot Learning | Turn the in-context examples into a loss and take gradient steps on them at inference, then discard the update. Up to 6x a fine-tuned baseline on ARC and +7.3 points on BIG-Bench Hard at 10-shot. The finding underneath is about in-context learning: the same examples are worth several times more as gradient than as context. | Read |
 | [NOTE-169](../../../record/notes.d/NOTE-169.md) | Training Language Models to Self-Correct via Reinforcement Learning | SCoRe teaches self-correction with multi-turn online RL on the model's own traces, no teacher and no extra supervision, for +15.6% on MATH and +9.1% on HumanEval. The transferable half is the diagnosis: SFT on correction traces fails by distribution mismatch or by behaviour collapse, and the method's two stages are each aimed at one of those. | Read |
 | [NOTE-182](../../../record/notes.d/NOTE-182.md) | P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks | Prompt tuning did not fail because tuning a prompt is a weak idea; it failed because the prompt was only at the input layer, where it has too few parameters and too indirect a route to the prediction. Put prefix tokens at every layer and the same family matches full fine-tuning from 330M to 10B and on hard sequence labelling, at 0.1-3% of the parameters. The paper is explicit that it is not conceptually novel — it is deep prompt tuning, already published for generation, adapted to NLU and optimized properly. | Read |
+| [NOTE-216](../../../record/notes.d/NOTE-216.md) | Chain-of-Thought Prompting | Worked reasoning steps in the few-shot exemplars, nothing else. Reading it: the three ablations are the contribution — it is not the equation, not the extra tokens, and not knowledge activation — and the effect is absent or negative below about 100B parameters. | Read |

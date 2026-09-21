@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-385 of 401 LIT documents. Back to the [full index](../README.md).
+386 of 402 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -41,7 +41,7 @@
 | [LIT-032](../../../record/literature.d/LIT-032.md) v2 | PowerNorm: Rethinking Batch Normalization in Transformers | Shen et al. (2020), [ARXIV-2003.07845](https://arxiv.org/abs/2003.07845). Alternative to LayerNorm. | Active |
 | [LIT-033](../../../record/literature.d/LIT-033.md) v4 | Longformer: The Long-Document Transformer | Beltagy et al. (2020), [ARXIV-2004.05150](https://arxiv.org/abs/2004.05150). Efficient attention for long sequences. | Active |
 | [LIT-034](../../../record/literature.d/LIT-034.md) v2 | Don't Stop Pretraining: Adapt Language Models to Domains and Tasks | Gururangan et al. (2020), [ARXIV-2004.10964](https://arxiv.org/abs/2004.10964). Benefits of domain-adaptive pretraining. | Active |
-| [LIT-035](../../../record/literature.d/LIT-035.md) | Language Models are Few-Shot Learners | Brown et al. (2020), [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). Introduces GPT-3. | Active |
+| [LIT-035](../../../record/literature.d/LIT-035.md) v2 | Language Models are Few-Shot Learners | Brown et al. (2020), [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). Introduces GPT-3. | Active |
 | [LIT-036](../../../record/literature.d/LIT-036.md) v2 | Denoising Diffusion Probabilistic Models | Ho et al. (2020), [ARXIV-2006.11239](https://arxiv.org/abs/2006.11239). Introduces DDPM framework. | Active |
 | [LIT-037](../../../record/literature.d/LIT-037.md) v2 | On the difficulty of training Recurrent Neural Networks | Pascanu et al. (2012), [ARXIV-1211.5063](https://arxiv.org/abs/1211.5063). The origin of gradient-norm clipping: exploding gradients are a geometric fact about error surfaces with cliffs, and rescaling the gradient when its norm exceeds a threshold is the cheap, correct response. | Active |
 | [LIT-038](../../../record/literature.d/LIT-038.md) v3 | Denoising Diffusion Implicit Models | Song et al. (2020), [ARXIV-2010.02502](https://arxiv.org/abs/2010.02502). Continuous-time formulation of diffusion models. | Active |
@@ -395,3 +395,4 @@
 | [LIT-464](../../../record/literature.d/LIT-464.md) | Theoretical limitations of multi-layer Transformer | Chen et al. (2024), [ARXIV-2412.02975](https://arxiv.org/abs/2412.02975). The first unconditional lower bound for a decoder-only transformer with more than one layer: any constant-depth decoder needs polynomially many parameters to compose functions sequentially. Depth, an encoder, or chain of thought each buy what width cannot. | Active |
 | [LIT-465](../../../record/literature.d/LIT-465.md) | Auxiliary task demands mask the capabilities of smaller language models | Hu and Frank (2024), [ARXIV-2404.02418](https://arxiv.org/abs/2404.02418). Across four capacities, the higher-demand way of asking scores lower than the lower-demand way of asking the same question — and the gap is widest for the smallest and least-trained models, so demands are mistaken for missing capability. COLM 2024. | Active |
 | [LIT-466](../../../record/literature.d/LIT-466.md) | The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity | Shojaee et al. (2025), [ARXIV-2506.06941](https://arxiv.org/abs/2506.06941). Controllable puzzles instead of contaminated benchmarks, and reasoning models collapse to zero accuracy past a complexity threshold while *reducing* their thinking tokens. NeurIPS 2025; the collapse reading is publicly contested and the three-regime finding is not. | Active |
+| [LIT-467](../../../record/literature.d/LIT-467.md) | Chain-of-Thought Prompting Elicits Reasoning in Large Language Models | Wei et al. (2022), [ARXIV-2201.11903](https://arxiv.org/abs/2201.11903). Put worked reasoning steps in the few-shot exemplars and a 540B model more than doubles on GSM8K. Three ablations rule out the obvious alternative explanations, and the effect is absent — sometimes negative — below about 100B parameters. | Active |

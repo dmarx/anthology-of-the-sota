@@ -21,7 +21,7 @@ extends:
 summary: >-
   Brown et al. (2020), [LIT-035](../literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165).
 extended_by:
-- SOTA-tmplac25
+- SOTA-279
 ---
 
 # SOTA-038: ICL permits few-shot task adaptability

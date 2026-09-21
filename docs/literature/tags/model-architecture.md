@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-54 of 401 LIT documents. Back to the [full index](../README.md).
+54 of 402 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -14,7 +14,7 @@
 | [LIT-021](../../../record/literature.d/LIT-021.md) v3 | Mish: A Self Regularized Non-Monotonic Activation Function | Misra et al. (2019), [ARXIV-1908.08681](https://arxiv.org/abs/1908.08681). New activation function. | Active |
 | [LIT-024](../../../record/literature.d/LIT-024.md) v2 | Fast Transformer Decoding: One Write-Head is All You Need | Shazeer (2019), [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). Introduces multi-query attention. | Active |
 | [LIT-030](../../../record/literature.d/LIT-030.md) v2 | GLU Variants Improve Transformer | Shazeer et al. (2020), [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). Study of gating mechanisms. | Active |
-| [LIT-035](../../../record/literature.d/LIT-035.md) | Language Models are Few-Shot Learners | Brown et al. (2020), [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). Introduces GPT-3. | Active |
+| [LIT-035](../../../record/literature.d/LIT-035.md) v2 | Language Models are Few-Shot Learners | Brown et al. (2020), [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). Introduces GPT-3. | Active |
 | [LIT-045](../../../record/literature.d/LIT-045.md) v2 | RoFormer: Enhanced Transformer with Rotary Position Embedding | Su et al. (2021), [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864). Rotation-based positional encoding. | Active |
 | [LIT-048](../../../record/literature.d/LIT-048.md) v3 | Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation | Press et al. (2021), [ARXIV-2108.12409](https://arxiv.org/abs/2108.12409). Linear attention bias. | Active |
 | [LIT-052](../../../record/literature.d/LIT-052.md) v2 | Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers | Tay et al. (2021), [ARXIV-2109.10686](https://arxiv.org/abs/2109.10686). Model shape, not just model size, determines downstream fine-tuning quality; the DeepNarrow strategy reaches T5-Base quality with 50% fewer parameters and 40% faster training. | Active |

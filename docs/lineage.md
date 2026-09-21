@@ -2,11 +2,16 @@
 
 # Lines of work
 
-19 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+20 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
 ## adaptation-and-tuning
+
+### From Language Models are Few-Shot Learners
+
+- [LIT-035](../record/literature.d/LIT-035.md) — Language Models are Few-Shot Learners *(Active)*
+  - [LIT-467](../record/literature.d/LIT-467.md) — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models *(Active)*
 
 ### From Deep reinforcement learning from human preferences
 

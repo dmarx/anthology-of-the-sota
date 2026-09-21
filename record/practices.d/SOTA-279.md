@@ -1,5 +1,8 @@
 ---
+number: 279
 status: Active
+formerly:
+- SOTA-tmplac25
 consensus: universal
 consensus_note: >-
   Showing intermediate steps is now so standard that models are post-trained
@@ -13,26 +16,26 @@ tags:
 - adaptation-and-tuning
 date: '2026-09-21'
 source:
-- LIT-tmp7e923
+- LIT-467
 introduced_by:
-- LIT-tmp7e923
+- LIT-467
 extends:
 - SOTA-038
 implementations: []
 summary: >-
-  Wei et al. (2022), [LIT-tmp7e923](../literature.d/LIT-tmp7e923.md) — eight exemplars carrying worked
+  Wei et al. (2022), [LIT-467](../literature.d/LIT-467.md) — eight exemplars carrying worked
   steps more than doubled PaLM 540B on GSM8K, beating a fine-tuned model with
   a verifier. Three ablations rule out the equation, the extra tokens and
   knowledge activation. Below ~100B it does nothing or hurts.
 ---
 
 <!-- inactive-ok-file: SOTA-130 — Proposed, and named as a practice that assumes this one, not as a source for it -->
-# SOTA-tmplac25: Put worked reasoning steps in the few-shot exemplars when the task needs more than one step, and only once the model is large enough
+# SOTA-279: Put worked reasoning steps in the few-shot exemplars when the task needs more than one step, and only once the model is large enough
 
 ## Source
 
-Wei et al. (2022), [LIT-tmp7e923](../literature.d/LIT-tmp7e923.md) — [ARXIV-2201.11903](https://arxiv.org/abs/2201.11903),
-read as [NOTE-tmpfcpro](../notes.d/NOTE-tmpfcpro.md).
+Wei et al. (2022), [LIT-467](../literature.d/LIT-467.md) — [ARXIV-2201.11903](https://arxiv.org/abs/2201.11903),
+read as [NOTE-216](../notes.d/NOTE-216.md).
 
 ## What to do
 

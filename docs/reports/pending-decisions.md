@@ -14,10 +14,10 @@
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 35 | 2 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
-| 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 25 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
-| 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 25 | 2 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
+| 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 28 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
+| 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 25 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 19 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
-| 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 13 | 2 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
+| 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 13 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 10 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
 | 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 8 | 0 | Decay the learning rate linearly all the way to zero |
 | 2026-09-07 | Proposed | [SOTA-157](../../record/practices.d/SOTA-157.md) | 15 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
@@ -73,10 +73,10 @@
 | 2026-09-19 | Proposed | [SOTA-251](../../record/practices.d/SOTA-251.md) | 2 | 0 | Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule |
 | 2026-09-19 | Proposed | [SOTA-257](../../record/practices.d/SOTA-257.md) | 1 | 0 | Spend surplus compute on an ensemble of independently seeded models and distil it, rather than on one larger model |
 | 2026-09-20 | Proposed | [SOTA-261](../../record/practices.d/SOTA-261.md) | 5 | 0 | Set AdamW's weight decay by targeting a timescale that follows a power law in tokens-per-parameter |
+| 2026-09-20 | Proposed | [SOTA-275](../../record/practices.d/SOTA-275.md) | 5 | 0 | Pick the depth parameterization from the residual branch: a Transformer branch has more than one transformation, so it needs the stricter rule |
 | 2026-09-20 | Proposed | [SOTA-260](../../record/practices.d/SOTA-260.md) | 3 | 0 | Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it |
 | 2026-09-20 | Proposed | [SOTA-268](../../record/practices.d/SOTA-268.md) | 3 | 0 | Do not transfer a data mixing ratio across model scales; the threshold where a domain starts being learned moves with size |
 | 2026-09-20 | Proposed | [SOTA-274](../../record/practices.d/SOTA-274.md) | 3 | 0 | Before adopting a spectral optimizer, measure the stable rank of each block's incoming activations against its gradient's nuclear rank |
-| 2026-09-20 | Proposed | [SOTA-275](../../record/practices.d/SOTA-275.md) | 3 | 0 | Pick the depth parameterization from the residual branch: a Transformer branch has more than one transformation, so it needs the stricter rule |
 | 2026-09-20 | Proposed | [SOTA-267](../../record/practices.d/SOTA-267.md) | 2 | 0 | Start the training distribution imbalanced and flatten it, rather than holding it uniform throughout |
 | 2026-09-20 | Proposed | [SOTA-272](../../record/practices.d/SOTA-272.md) | 2 | 0 | Expect the loss to be non-monotone at the step size that trains fastest, and do not set the step size from a curvature bound |
 | 2026-09-20 | Proposed | [SOTA-276](../../record/practices.d/SOTA-276.md) | 2 | 0 | For a normalized or preconditioned optimizer, width-depth muP is width muP plus a hidden residual multiplier of order 1/L |

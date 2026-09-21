@@ -112,12 +112,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [SOTA-034](../record/practices.d/SOTA-034.md) — Use SwiGLU activation for transformers *(Active, contested)*
 - alongside: [SOTA-158](../record/practices.d/SOTA-158.md) — Bound the activation's output range when training in low precision *(Proposed, emerging)*
 
-### From Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective
-
-- [SOTA-036](../record/practices.d/SOTA-036.md) — Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective *(Active, unassessed)*
-  - [SOTA-037](../record/practices.d/SOTA-037.md) — LM in-context learning emerges at scale *(Active, unassessed)*
-  - [SOTA-038](../record/practices.d/SOTA-038.md) — ICL permits few-shot task adaptability *(Active, unassessed)*
-
 ### From At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width
 
 - alongside: [SOTA-125](../record/practices.d/SOTA-125.md) — At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width *(Proposed, unreplicated)*
@@ -287,3 +281,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [SOTA-218](../record/practices.d/SOTA-218.md) — Retune the learning rate, momentum and schedule at every batch size you compare, never by a scaling heuristic *(Active, unreplicated)*
 - alongside: [SOTA-221](../record/practices.d/SOTA-221.md) — To train past the batch size where your optimizer stalls, change the optimizer's conditioning rather than the scaling rule *(Active, unreplicated)*
+
+## Sharing no `tags`
+
+### From Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective
+
+- [SOTA-036](../record/practices.d/SOTA-036.md) — Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective *(Active, unassessed)*
+  - [SOTA-037](../record/practices.d/SOTA-037.md) — LM in-context learning emerges at scale *(Active, unassessed)*
+  - [SOTA-038](../record/practices.d/SOTA-038.md) — ICL permits few-shot task adaptability *(Active, unassessed)*
+    - [SOTA-279](../record/practices.d/SOTA-279.md) — Put worked reasoning steps in the few-shot exemplars when the task needs more than one step, and only once the model is large enough *(Active, universal)*

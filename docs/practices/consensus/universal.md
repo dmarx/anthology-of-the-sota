@@ -6,7 +6,7 @@
 
 **Assumed** — not doing it is what needs justifying.
 
-8 of 278 SOTA documents. Back to the [full index](../README.md).
+9 of 279 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -18,3 +18,4 @@
 | [SOTA-187](../../../record/practices.d/SOTA-187.md) v3 | Train the generative model in a learned compressed latent, not at full resolution |  | Active |
 | [SOTA-203](../../../record/practices.d/SOTA-203.md) | Sample a diffusion model with a higher-order ODE solver on the weights you already trained | Lu et al. (2022), [LIT-076](../../../record/literature.d/LIT-076.md) — the diffusion ODE is semi-linear, so solve the linear part exactly and approximate only the neural integral. 10-20 function evaluations, no retraining. Rests on [LIT-038](../../../record/literature.d/LIT-038.md), which established that the sampler is not fixed by the training objective. | Active |
 | [SOTA-249](../../../record/practices.d/SOTA-249.md) | Recompute activations from a sqrt(n) subset of checkpoints when activation memory is the binding constraint | Chen et al. (2016), [LIT-004](../../../record/literature.d/LIT-004.md) — [ARXIV-1604.06174](https://arxiv.org/abs/1604.06174). Store activations at O(sqrt(n)) checkpoints and recompute the rest during the backward pass. The price is one extra forward pass per minibatch; the measured case is a 1000-layer ResNet at 48G to 7G for 30% more wall clock. | Active |
+| [SOTA-279](../../../record/practices.d/SOTA-279.md) | Put worked reasoning steps in the few-shot exemplars when the task needs more than one step, and only once the model is large enough | Wei et al. (2022), [LIT-467](../../../record/literature.d/LIT-467.md) — eight exemplars carrying worked steps more than doubled PaLM 540B on GSM8K, beating a fine-tuned model with a verifier. Three ablations rule out the equation, the extra tokens and knowledge activation. Below ~100B it does nothing or hurts. | Active |

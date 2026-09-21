@@ -1,6 +1,9 @@
 ---
+number: 216
 status: Read
-paper: LIT-tmp7e923
+formerly:
+- NOTE-tmpfcpro
+paper: LIT-467
 title: 'Chain-of-Thought Prompting'
 version: 1
 date: '2026-09-21'
@@ -12,7 +15,7 @@ summary: >-
 ---
 
 <!-- inactive-ok-file: SOTA-130 — Proposed, and named for the same reason: it extends what this paper established and had no antecedent in the record -->
-# NOTE-tmpfcpro: Chain-of-Thought Prompting
+# NOTE-216: Chain-of-Thought Prompting
 
 ## Contribution
 
@@ -130,7 +133,7 @@ helps if you put something in it.
   filter such traces out of tiny models' training data — was the entire CoT
   presence. That practice now has the paper that explains why small models
   produce bad chains sitting next to it.
-- **It produces [SOTA-tmplac25](../practices.d/SOTA-tmplac25.md).**
+- **It produces [SOTA-279](../practices.d/SOTA-279.md).**
 - **C5 sits in a live tension the record already holds.** [SOTA-037](../practices.d/SOTA-037.md)
   says in-context learning emerges at scale; [SOTA-200](../practices.d/SOTA-200.md) says to check
   whether an emergent capability is a metric artefact before believing it.

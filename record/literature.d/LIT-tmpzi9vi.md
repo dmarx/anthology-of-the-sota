@@ -1,0 +1,61 @@
+---
+status: Active
+title: "mHC-lite: You Don't Need 20 Sinkhorn-Knopp Iterations"
+version: 1
+tags:
+- model-architecture
+date: '2026-09-21'
+published: '2026-01-09'
+arxiv: '2601.05732'
+first_author: 'Yang'
+keywords:
+- 'hyper-connections'
+- 'doubly stochastic'
+- 'Birkhoff-von Neumann'
+- 'Sinkhorn-Knopp'
+- 'residual streams'
+implementations: []
+compared_against:
+- LIT-140
+- LIT-141
+summary: >-
+  Yang (2026), [ARXIV-2601.05732](https://arxiv.org/abs/2601.05732) — not a fourth constraint but a
+  repair of the third. Keeps [LIT-140](LIT-140.md)'s doubly-stochastic constraint and
+  makes it **exact**, building the matrix as a convex combination of
+  permutation matrices (Birkhoff-von Neumann) instead of approximating the
+  projection with 20 Sinkhorn-Knopp iterations. Measures the approximation it
+  replaces: the column sums of the layer-wise product deviate from 1 by up to
+  **220%** in a 24-layer network. Read as [NOTE-tmpa0q97](../notes.d/NOTE-tmpa0q97.md).
+---
+
+<!-- inactive-ok-file: SOTA-136 SOTA-169 — both Proposed, and both named
+     as the practices this paper lands in rather than relied on as settled.
+     SOTA-136 is the branch it repairs and whose promotion condition it does
+     NOT meet, which this document says in as many words; SOTA-169 is the
+     trunk, named to record that its promote_when's exclusion does not apply
+     here and that it stays put regardless. -->
+
+# LIT-tmpzi9vi: mHC-lite: You Don't Need 20 Sinkhorn-Knopp Iterations
+
+Yang (2026) — [ARXIV-2601.05732](https://arxiv.org/abs/2601.05732), read as [NOTE-tmpa0q97](../notes.d/NOTE-tmpa0q97.md).
+
+## Standing
+
+**A repair of [SOTA-136](../practices.d/SOTA-136.md)'s branch, not a rival to it.** [SOTA-169](../practices.d/SOTA-169.md)'s
+promotion condition says in as many words that another paper proposing a
+*fourth constraint* would not move the trunk. This is not one: it keeps the
+doubly-stochastic constraint exactly as [LIT-140](LIT-140.md) states it and changes
+how the matrix is built. So the exclusion does not apply — and the trunk
+stays where it is anyway, because nothing here isolates width or ships in a
+released model.
+
+**Its diagnosis is the third distinct one in this dispute**, and it disagrees
+with the other two about where the fault lies. [LIT-151](LIT-151.md) and
+[LIT-181](LIT-181.md) both argue the doubly-stochastic *set* is the problem — bounded
+above but not below, or degenerate near the identity. This argues the *set is
+fine and the approximation to it is not*.
+
+**What it does not do is measure stream distinctness**, which is the one
+measurement [SOTA-136](../practices.d/SOTA-136.md)'s promotion condition asks for. That makes it the
+third document to look like it should settle the question and not —
+after [LIT-139](LIT-139.md) and [LIT-152](LIT-152.md).

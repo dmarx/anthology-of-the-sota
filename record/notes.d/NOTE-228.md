@@ -1,6 +1,9 @@
 ---
+number: 228
 status: Read
-paper: LIT-tmpvrm26
+formerly:
+- NOTE-tmp290m1
+paper: LIT-479
 title: 'The Diffusion Duality'
 version: 1
 date: '2026-09-21'
@@ -18,7 +21,7 @@ summary: >-
 <!-- inactive-ok-file: SOTA-254 — Proposed, and named in the same sentence and for
      the same reason as SOTA-157 -->
 
-# NOTE-tmp290m1: The Diffusion Duality
+# NOTE-228: The Diffusion Duality
 
 ## Contribution
 

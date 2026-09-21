@@ -6,7 +6,7 @@
 
 **The current account** — the best explanation the record holds for why this happens.
 
-21 of 45 THEORY documents. Back to the [full index](../README.md).
+22 of 46 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -31,3 +31,4 @@
 | [THEORY-039](../../../record/theory.d/THEORY-039.md) | A measured capability is the capability minus whatever the evaluation itself demands, and the gap is widest for the weakest model | Hu and Frank (2024), [LIT-465](../../../record/literature.d/LIT-465.md) — the same capacity measured two ways scores differently, and the difference shrinks with size and training. So a score is a joint function of model and design, and cross-scale comparisons under a demanding evaluation inflate the gap they report. | Active |
 | [THEORY-040](../../../record/theory.d/THEORY-040.md) | A metric that composes or thresholds per-token error turns a smooth capability curve into a sharp one, with nothing happening in the model | Schaeffer et al. (2023), [LIT-471](../../../record/literature.d/LIT-471.md) — if per-token accuracy rises smoothly with scale, a metric demanding all `L` tokens goes as `p^L` and is flat-then-sharp by construction; a thresholded metric does the same by a step. Demonstrated by rescoring fixed outputs, and by manufacturing emergence in vision models that had never shown it. | Active |
 | [THEORY-042](../../../record/theory.d/THEORY-042.md) | An update smaller than the lattice spacing is not merely rounded away — it is cancelled exactly, and carrying the remainder makes the discrete path shadow the continuous one within half a grid cell | Xu et al. (2026), [LIT-473](../../../record/literature.d/LIT-473.md) §5 — decompose rounding as identity plus error and expand the trajectory: when every step falls short of the grid, the accumulated quantization loss cancels the accumulated ideal update term for term and the weights never move. Stochastic rounding replaces stagnation with a random walk whose variance grows in `T`. Carrying the remainder bounds the deviation from the ideal path at `Δ/2` for all `T`. | Active |
+| [THEORY-046](../../../record/theory.d/THEORY-046.md) | Uniform-state discrete diffusion is the argmax of a Gaussian diffusion, which is why Gaussian technique transfers to it and not to masked diffusion | Sahoo et al. (2025), [LIT-479](../../../record/literature.d/LIT-479.md) — taking the `argmax` of a Gaussian diffusion's latents carries its marginals onto those of a uniform-state discrete diffusion, under a reparameterization of the noise schedule, and the discretized process satisfies the defining ODE of a discrete diffusion. So it is one. Masked diffusion has no such preimage. | Active |

@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-224 of 227 NOTE documents. Back to the [full index](../README.md).
+225 of 228 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -234,3 +234,4 @@
 | [NOTE-225](../../../record/notes.d/NOTE-225.md) | Local Volume | Reading it: the useful result is the audit, not the hypothesis. A network trained to generalize badly is detected on clean held-out data where its behaviour matches a clean model's, in a small number of forward passes. The volume hypothesis itself is left where it was found — "broadly consistent", by the authors' own conclusion. | Read |
 | [NOTE-226](../../../record/notes.d/NOTE-226.md) | NoProp | Reading it: the interesting number is in the train column, not the test one. NoProp matches backprop on test while sitting 8-15 points behind on train, which on MNIST and CIFAR costs nothing and would be the whole story anywhere fitting is the binding constraint. The paper does not mention it. | Read |
 | [NOTE-227](../../../record/notes.d/NOTE-227.md) | Late-phase weights | Reading it: three ablations constrain the recommendation more than the headline does. Starting at initialization fails outright, the fanciest variant is worse than doing nothing, and replicating every weight instead of a few is worse than replicating a few. All three are reported. | Read |
+| [NOTE-228](../../../record/notes.d/NOTE-228.md) | The Diffusion Duality | Reading it: the theorem is elegant and the ablation says it accounts for under half the likelihood gain. What the paper actually establishes is a regime split — masked diffusion wins on quality at many steps, uniform-state wins below about 32, and the reason is architectural rather than tuned. | Read |

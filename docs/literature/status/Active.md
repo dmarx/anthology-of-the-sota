@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-397 of 413 LIT documents. Back to the [full index](../README.md).
+398 of 414 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -407,3 +407,4 @@
 | [LIT-476](../../../record/literature.d/LIT-476.md) | Estimating the Probability of Sampling a Trained Neural Network at Random | Scherlis and Belrose (2025), [ARXIV-2501.18812](https://arxiv.org/abs/2501.18812). An estimator for the measure, under the initialization distribution, of the region around a trained network whose behaviour matches it. Negative log of that measure is a description length. A ConvNeXt deliberately trained to generalize badly has a **smaller** such region — detectable on clean held-out data where its behaviour is indistinguishable. | Active |
 | [LIT-477](../../../record/literature.d/LIT-477.md) | NoProp: Training Neural Networks without Full Back-propagation or Full Forward-propagation | Li, Teh and Pascanu (2025), [ARXIV-2503.24322](https://arxiv.org/abs/2503.24322). Train each block independently to denoise a noisy *label* embedding given the raw input — diffusion machinery pointed at a classifier. No forward or backward pass across the network at training time, about half the GPU memory, and test accuracy matching backprop on MNIST and CIFAR-10. Every block sees the input, which is what makes independence possible and what makes the comparison awkward. | Active |
 | [LIT-478](../../../record/literature.d/LIT-478.md) | Neural networks with late-phase weights | von Oswald, Kobayashi, Meulemans, Henning, Grewe and Sacramento (2020), [ARXIV-2007.12927](https://arxiv.org/abs/2007.12927). Late in training, replicate a *small* subset of the weights — BatchNorm's scale and shift will do — train `K` copies that share everything else, and average them into one model at the end. Inference cost unchanged. WRN 28-10 on CIFAR-100: 81.35 → 82.87. Starting the same procedure at initialization instead **fails to beat the baseline**. | Active |
+| [LIT-479](../../../record/literature.d/LIT-479.md) | The Diffusion Duality | Sahoo, Deschenaux, Gokaslan, Wang, Chiu and Kuleshov (2025), [ARXIV-2506.10892](https://arxiv.org/abs/2506.10892). Uniform-state discrete diffusion is the `argmax` of a Gaussian diffusion, which lets Gaussian techniques transfer: a variance-reducing curriculum doubles training speed, and consistency distillation cuts sampling from 1024 steps to 8. Masked diffusion still wins on likelihood; this wins in the few-step regime, where masked models cannot revise what they have already emitted. | Active |

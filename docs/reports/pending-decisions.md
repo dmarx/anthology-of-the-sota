@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**121 document(s) awaiting a decision.**
+**122 document(s) awaiting a decision.**
 
 ## SOTAs
 
-81 of the 121.
+82 of the 122.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -20,7 +20,7 @@
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 14 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 13 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
 | 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 8 | 0 | Decay the learning rate linearly all the way to zero |
-| 2026-09-07 | Proposed | [SOTA-157](../../record/practices.d/SOTA-157.md) | 15 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
+| 2026-09-07 | Proposed | [SOTA-157](../../record/practices.d/SOTA-157.md) | 23 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
 | 2026-09-07 | Proposed | [SOTA-155](../../record/practices.d/SOTA-155.md) | 13 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
 | 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 9 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
 | 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 6 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
@@ -68,7 +68,7 @@
 | 2026-09-17 | Proposed | [SOTA-247](../../record/practices.d/SOTA-247.md) | 1 | 0 | Add a multi-token word to a frozen model's vocabulary from the model's own detokenized representation of it |
 | 2026-09-17 | Proposed | [SOTA-248](../../record/practices.d/SOTA-248.md) | 1 | 0 | Stretch and clip the softmax so an attention head can output exact zeros |
 | 2026-09-19 | Proposed | [SOTA-255](../../record/practices.d/SOTA-255.md) | 11 | 0 | Tune weight decay upward when pretraining over a repeated corpus, rather than inheriting the customary value |
-| 2026-09-19 | Proposed | [SOTA-254](../../record/practices.d/SOTA-254.md) | 3 | 0 | Train the language model as a masked diffusion model when the corpus is fixed and the compute is not |
+| 2026-09-19 | Proposed | [SOTA-254](../../record/practices.d/SOTA-254.md) | 8 | 0 | Train the language model as a masked diffusion model when the corpus is fixed and the compute is not |
 | 2026-09-19 | Proposed | [SOTA-256](../../record/practices.d/SOTA-256.md) | 3 | 0 | Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget |
 | 2026-09-19 | Proposed | [SOTA-251](../../record/practices.d/SOTA-251.md) | 2 | 0 | Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule |
 | 2026-09-19 | Proposed | [SOTA-257](../../record/practices.d/SOTA-257.md) | 1 | 0 | Spend surplus compute on an ensemble of independently seeded models and distil it, rather than on one larger model |
@@ -90,6 +90,7 @@
 | 2026-09-21 | Proposed | [SOTA-283](../../record/practices.d/SOTA-283.md) | 3 | 0 | To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it |
 | 2026-09-21 | Proposed | [SOTA-277](../../record/practices.d/SOTA-277.md) | 2 | 0 | For a task that is a sequential composition, buy depth rather than width |
 | 2026-09-21 | Proposed | [SOTA-282](../../record/practices.d/SOTA-282.md) | 2 | 0 | Put every matrix and hidden state on the unit hypersphere, and make each block's residual step size a learned per-dimension parameter |
+| 2026-09-21 | Proposed | [SOTA-289](../../record/practices.d/SOTA-289.md) | 2 | 0 | When the sampling budget is small, prefer uniform-state discrete diffusion with consistency distillation — masked diffusion cannot revise what it has already emitted |
 | 2026-09-21 | Proposed | [SOTA-284](../../record/practices.d/SOTA-284.md) | 1 | 0 | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |
 | 2026-09-21 | Proposed | [SOTA-286](../../record/practices.d/SOTA-286.md) | 1 | 0 | To find a model that generalizes badly where its outputs look fine, measure how much of parameter space behaves the way it does |
 | 2026-09-21 | Proposed | [SOTA-287](../../record/practices.d/SOTA-287.md) | 0 | 0 | If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input |
@@ -97,7 +98,7 @@
 
 ## THEORYs
 
-21 of the 121.
+21 of the 122.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -125,7 +126,7 @@
 
 ## LITs
 
-3 of the 121.
+3 of the 122.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -135,14 +136,14 @@
 
 ## ADRs
 
-16 of the 121.
+16 of the 122.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 2 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-09 | Proposed | [ADR-024](../../record/decisions.d/ADR-024.md) | 10 | 0 | The topic vocabulary has four recurring seams — options, not a decision |
 | 2026-09-14 | Proposed | [ADR-028](../../record/decisions.d/ADR-028.md) | 1 | 1 | One topic vocabulary, one set of glosses: the blurbs are shared too |
-| 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 24 | 0 | A scheme for explanations, complementing the practice registry |
+| 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 25 | 0 | A scheme for explanations, complementing the practice registry |
 | 2026-09-15 | Proposed | [ADR-034](../../record/decisions.d/ADR-034.md) | 13 | 0 | A document that changes scheme is Superseded where it leaves, and names its successor across the boundary |
 | 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 7 | 1 | Every practice states its origin, even when it is the primary source |
 | 2026-09-15 | Proposed | [ADR-033](../../record/decisions.d/ADR-033.md) | 0 | 0 | Readings made in another context port into the record; their agenda does not |

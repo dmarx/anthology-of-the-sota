@@ -6,7 +6,7 @@
 
 **Inference optimization** — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
 
-10 of 413 LIT documents. Back to the [full index](../README.md).
+11 of 414 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,4 @@
 | [LIT-376](../../../record/literature.d/LIT-376.md) | Fast Inference from Transformers via Speculative Decoding | Leviathan et al. (2022), [ARXIV-2211.17192](https://arxiv.org/abs/2211.17192). Decoding is serial and memory-bandwidth-bound, so the arithmetic units are idle. Speculative decoding spends them: a cheap draft model guesses `gamma` tokens, the target model scores all `gamma + 1` positions in one parallel pass, and an accept-reject rule keeps a prefix of the guesses. The output distribution is exactly the target's — not approximately — and the serial count can never exceed plain autoregressive decoding. 2x-3x on T5-XXL with identical outputs. | Active |
 | [LIT-428](../../../record/literature.d/LIT-428.md) | Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention | Katharopoulos et al. (2020), [ARXIV-2006.16236](https://arxiv.org/abs/2006.16236). Where linear attention comes from, and the identity the record argues about in twelve documents without being able to cite it: drop the softmax for a kernel feature map, associativity reorders the product to O(N), and the autoregressive case is then literally an RNN. | Active |
 | [LIT-468](../../../record/literature.d/LIT-468.md) | Self-Consistency Improves Chain of Thought Reasoning in Language Models | Wang et al. (2022), [ARXIV-2203.11171](https://arxiv.org/abs/2203.11171). Replace greedy decoding with sample-and-marginalize: draw several reasoning paths, take the most common final answer. GSM8K +17.9, SVAMP +11.0, AQuA +12.2. The gain saturates by about five or ten samples. | Active |
+| [LIT-479](../../../record/literature.d/LIT-479.md) | The Diffusion Duality | Sahoo, Deschenaux, Gokaslan, Wang, Chiu and Kuleshov (2025), [ARXIV-2506.10892](https://arxiv.org/abs/2506.10892). Uniform-state discrete diffusion is the `argmax` of a Gaussian diffusion, which lets Gaussian techniques transfer: a variance-reducing curriculum doubles training speed, and consistency distillation cuts sampling from 1024 steps to 8. Masked diffusion still wins on likelihood; this wins in the few-step regime, where masked models cannot revise what they have already emitted. | Active |

@@ -1,5 +1,8 @@
 ---
+number: 289
 status: Proposed
+formerly:
+- SOTA-tmpzmile
 promote_when: >-
   The low-step crossover measured by a group unconnected to this one, at a
   scale where a latency budget would actually be set, against a masked
@@ -20,12 +23,12 @@ tags:
 - model-architecture
 date: '2026-09-21'
 source:
-- LIT-tmpvrm26
+- LIT-479
 introduced_by:
-- LIT-tmpvrm26
+- LIT-479
 implementations: []
 explained_by:
-- THEORY-tmprosv3
+- THEORY-046
 ---
 
 <!-- inactive-ok-file: SOTA-157 — Proposed, and named to say this document does
@@ -35,12 +38,12 @@ explained_by:
 <!-- inactive-ok-file: SOTA-254 — Proposed, and named in the same sentence and for
      the same reason as SOTA-157 -->
 
-# SOTA-tmpzmile: When the sampling budget is small, prefer uniform-state discrete diffusion with consistency distillation — masked diffusion cannot revise what it has already emitted
+# SOTA-289: When the sampling budget is small, prefer uniform-state discrete diffusion with consistency distillation — masked diffusion cannot revise what it has already emitted
 
 ## Source
 
 Sahoo, Deschenaux, Gokaslan, Wang, Chiu and Kuleshov (2025),
-[LIT-tmpvrm26](../literature.d/LIT-tmpvrm26.md) — read as [NOTE-tmp290m1](../notes.d/NOTE-tmp290m1.md). LM1B and
+[LIT-479](../literature.d/LIT-479.md) — read as [NOTE-228](../notes.d/NOTE-228.md). LM1B and
 OpenWebText at GPT-2 scale.
 
 ## The claim, and the regime it is about
@@ -86,7 +89,7 @@ with slightly better generative perplexity and lower entropy. Each distillation
 round improves both quality and diversity under Greedy-Tail, which is not true
 of ancestral sampling.
 
-**And train with the Gaussian-guided curriculum** ([THEORY-tmprosv3](../theory.d/THEORY-tmprosv3.md)),
+**And train with the Gaussian-guided curriculum** ([THEORY-046](../theory.d/THEORY-046.md)),
 which is what makes the base model good enough to distil from. It roughly
 halves training time to a given perplexity against the previous uniform-state
 model.

@@ -1,5 +1,8 @@
 ---
+number: 46
 status: Active
+formerly:
+- THEORY-tmprosv3
 title: 'Uniform-state discrete diffusion is the argmax of a Gaussian diffusion, which is why Gaussian technique transfers to it and not to masked diffusion'
 version: 1
 tags:
@@ -7,36 +10,36 @@ tags:
 - model-architecture
 date: '2026-09-21'
 source:
-- LIT-tmpvrm26
+- LIT-479
 explains:
-- SOTA-tmpzmile
+- SOTA-289
 summary: >-
-  Sahoo et al. (2025), [LIT-tmpvrm26](../literature.d/LIT-tmpvrm26.md) — taking the `argmax` of a
+  Sahoo et al. (2025), [LIT-479](../literature.d/LIT-479.md) — taking the `argmax` of a
   Gaussian diffusion's latents carries its marginals onto those of a
   uniform-state discrete diffusion, under a reparameterization of the noise
   schedule, and the discretized process satisfies the defining ODE of a
   discrete diffusion. So it is one. Masked diffusion has no such preimage.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpzmile — Proposed, and the practice this account
+<!-- inactive-ok-file: SOTA-289 — Proposed, and the practice this account
      explains; the document's own point is that a sound explanation does not
      promote the practice, so its unsettled status is what is being said -->
 
 <!-- inactive-ok-file: ADR-031 — Proposed, cited for the practice/explanation split
      that lets this account be Active while the practice stays Proposed -->
 
-# THEORY-tmprosv3: Uniform-state discrete diffusion is the argmax of a Gaussian diffusion, which is why Gaussian technique transfers to it and not to masked diffusion
+# THEORY-046: Uniform-state discrete diffusion is the argmax of a Gaussian diffusion, which is why Gaussian technique transfers to it and not to masked diffusion
 
 ## Source
 
 Sahoo, Deschenaux, Gokaslan, Wang, Chiu and Kuleshov (2025),
-[LIT-tmpvrm26](../literature.d/LIT-tmpvrm26.md) §3 — read as [NOTE-tmp290m1](../notes.d/NOTE-tmp290m1.md).
+[LIT-479](../literature.d/LIT-479.md) §3 — read as [NOTE-228](../notes.d/NOTE-228.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-tmpzmile](../practices.d/SOTA-tmpzmile.md) | for few-step generation, use uniform-state diffusion with consistency distillation | not a lucky transplant but a licensed one: the discrete process has a continuous preimage, so the continuous literature's methods have somewhere to land |
+| [SOTA-289](../practices.d/SOTA-289.md) | for few-step generation, use uniform-state diffusion with consistency distillation | not a lucky transplant but a licensed one: the discrete process has a continuous preimage, so the continuous literature's methods have somewhere to land |
 
 ## The account
 
@@ -72,7 +75,7 @@ perplexities today.
 
 Because it is a derivation with both halves shown, and one of them checked
 numerically as well. The status is about the account, not about the method's
-standing: [SOTA-tmpzmile](../practices.d/SOTA-tmpzmile.md) is `Proposed` and `unreplicated`, and an
+standing: [SOTA-289](../practices.d/SOTA-289.md) is `Proposed` and `unreplicated`, and an
 explanation being correct is not evidence that a practice is worth adopting —
 the split [ADR-031](../decisions.d/ADR-031.md) exists to keep visible.
 

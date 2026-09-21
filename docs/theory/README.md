@@ -50,8 +50,8 @@ bare code and run `luria link --fix`.
 **[Attention techniques](tags/attention-techniques.md)** (1) — attention variants and alternative mechanisms, implementation optimizations, context length:
 [019](../../record/theory.d/THEORY-019.md)
 
-**[Model architecture](tags/model-architecture.md)** (4) — architecture patterns, component design, structural choices, model families, multi-modal designs:
-[005](../../record/theory.d/THEORY-005.md) · [020](../../record/theory.d/THEORY-020.md) · [038](../../record/theory.d/THEORY-038.md) · [041](../../record/theory.d/THEORY-041.md)
+**[Model architecture](tags/model-architecture.md)** (5) — architecture patterns, component design, structural choices, model families, multi-modal designs:
+[005](../../record/theory.d/THEORY-005.md) · [020](../../record/theory.d/THEORY-020.md) · [038](../../record/theory.d/THEORY-038.md) · [041](../../record/theory.d/THEORY-041.md) · [046](../../record/theory.d/THEORY-046.md)
 
 **[Inference optimization](tags/inference-optimization.md)** (0) — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
 
@@ -66,14 +66,14 @@ bare code and run `luria link --fix`.
 **[Analysis and evaluation](tags/analysis-and-evaluation.md)** (16) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
 [002](../../record/theory.d/THEORY-002.md) · [004](../../record/theory.d/THEORY-004.md) · [006](../../record/theory.d/THEORY-006.md) · [007](../../record/theory.d/THEORY-007.md) · [008](../../record/theory.d/THEORY-008.md) · [009](../../record/theory.d/THEORY-009.md) · [017](../../record/theory.d/THEORY-017.md) · [018](../../record/theory.d/THEORY-018.md) · [023](../../record/theory.d/THEORY-023.md) · [025](../../record/theory.d/THEORY-025.md) · [031](../../record/theory.d/THEORY-031.md) · [038](../../record/theory.d/THEORY-038.md) · [039](../../record/theory.d/THEORY-039.md) · [040](../../record/theory.d/THEORY-040.md) · [043](../../record/theory.d/THEORY-043.md) · [045](../../record/theory.d/THEORY-045.md)
 
-**[Generative modeling](tags/generative-modeling.md)** (1) — diffusion, samplers, text-to-image, conditioning and control:
-[027](../../record/theory.d/THEORY-027.md)
+**[Generative modeling](tags/generative-modeling.md)** (2) — diffusion, samplers, text-to-image, conditioning and control:
+[027](../../record/theory.d/THEORY-027.md) · [046](../../record/theory.d/THEORY-046.md)
 
 **[Vision and graphics](tags/vision-and-graphics.md)** (0) — neural rendering, reconstruction, perception, visual foundation models.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (21) · [Offered](status/Proposed.md) (21) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (22) · [Offered](status/Proposed.md) (21) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -134,4 +134,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-043](../../record/theory.d/THEORY-043.md) | Cross-entropy pays an unbounded price for mass a learner never had, and that price grows with sequence length — which is why it drifts from what post-training needs | Chen et al. (2025), [LIT-474](../../record/literature.d/LIT-474.md) — KL charges `log(1/π̂)` for every response a well-generalizing learner happens not to cover, and that charge is unbounded; the coverage profile charges at most the missing mass itself. Sequence-level KL therefore grows linearly in sequence length where coverage does not, and next-token prediction optimizes coverage faster than it optimizes the loss on the screen. | Proposed |
 | [THEORY-044](../../record/theory.d/THEORY-044.md) | Dropout early in training buys a biased gradient estimate with much less directional variance, and the trade is favourable until it is not | Liu et al. (2023), [LIT-475](../../record/literature.d/LIT-475.md) — with dropout, mini-batch gradients are a *biased* estimate of the whole-dataset gradient, because each batch runs through a different sub-network. Their directional variance falls far enough that the angle to the true gradient falls too — for about the first thousand iterations, after which it rises and dropout goes back to being a regularizer. | Proposed |
 | [THEORY-045](../../record/theory.d/THEORY-045.md) | How much of parameter space behaves like your trained network is a description length, and the better-generalizing network occupies more of it | Scherlis and Belrose (2025), [LIT-476](../../record/literature.d/LIT-476.md) — measure the region around a trained network whose behaviour matches it, under the initialization distribution rather than Lebesgue. Negative log of that measure is, by the bits-back argument, a description length. A ConvNeXt trained to generalize badly occupies a smaller region, and local volume falls through training as the model's description grows. | Proposed |
+| [THEORY-046](../../record/theory.d/THEORY-046.md) | Uniform-state discrete diffusion is the argmax of a Gaussian diffusion, which is why Gaussian technique transfers to it and not to masked diffusion | Sahoo et al. (2025), [LIT-479](../../record/literature.d/LIT-479.md) — taking the `argmax` of a Gaussian diffusion's latents carries its marginals onto those of a uniform-state discrete diffusion, under a reparameterization of the noise schedule, and the discretized process satisfies the defining ODE of a discrete diffusion. So it is one. Masked diffusion has no such preimage. | Active |
 

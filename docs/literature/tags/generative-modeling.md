@@ -6,7 +6,7 @@
 
 **Generative modeling** — diffusion, samplers, text-to-image, conditioning and control.
 
-19 of 413 LIT documents. Back to the [full index](../README.md).
+20 of 414 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -29,3 +29,4 @@
 | [LIT-448](../../../record/literature.d/LIT-448.md) | Scalable Diffusion Models with Transformers | Peebles and Xie (2022), [ARXIV-2212.09748](https://arxiv.org/abs/2212.09748). Replaces the U-Net backbone every diffusion model had inherited from DDPM with a transformer over latent patches, and shows FID falls monotonically with forward-pass GFLOPs however the GFLOPs are bought — depth, width or token count. DiT-XL/2 reaches 2.27 FID on class-conditional ImageNet 256. | Active |
 | [LIT-449](../../../record/literature.d/LIT-449.md) | Scaling Rectified Flow Transformers for High-Resolution Image Synthesis | Esser et al. (2024), [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206). A 61-way comparison of diffusion and rectified-flow formulations settles on a straight-line path with timesteps drawn from a logit-normal, then scales it to 8B for text-to-image. Adds a resolution-dependent shift of the timestep schedule, and MMDiT, which gives each modality its own weights while letting the two token streams attend jointly. | Active |
 | [LIT-477](../../../record/literature.d/LIT-477.md) | NoProp: Training Neural Networks without Full Back-propagation or Full Forward-propagation | Li, Teh and Pascanu (2025), [ARXIV-2503.24322](https://arxiv.org/abs/2503.24322). Train each block independently to denoise a noisy *label* embedding given the raw input — diffusion machinery pointed at a classifier. No forward or backward pass across the network at training time, about half the GPU memory, and test accuracy matching backprop on MNIST and CIFAR-10. Every block sees the input, which is what makes independence possible and what makes the comparison awkward. | Active |
+| [LIT-479](../../../record/literature.d/LIT-479.md) | The Diffusion Duality | Sahoo, Deschenaux, Gokaslan, Wang, Chiu and Kuleshov (2025), [ARXIV-2506.10892](https://arxiv.org/abs/2506.10892). Uniform-state discrete diffusion is the `argmax` of a Gaussian diffusion, which lets Gaussian techniques transfer: a variance-reducing curriculum doubles training speed, and consistency distillation cuts sampling from 1024 steps to 8. Masked diffusion still wins on likelihood; this wins in the few-step regime, where masked models cannot revise what they have already emitted. | Active |

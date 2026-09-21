@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-56 of 413 LIT documents. Back to the [full index](../README.md).
+57 of 414 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -66,3 +66,4 @@
 | [LIT-464](../../../record/literature.d/LIT-464.md) | Theoretical limitations of multi-layer Transformer | Chen et al. (2024), [ARXIV-2412.02975](https://arxiv.org/abs/2412.02975). The first unconditional lower bound for a decoder-only transformer with more than one layer: any constant-depth decoder needs polynomially many parameters to compose functions sequentially. Depth, an encoder, or chain of thought each buy what width cannot. | Active |
 | [LIT-472](../../../record/literature.d/LIT-472.md) | nGPT: Normalized Transformer with Representation Learning on the Hypersphere | Loshchilov et al. (2024), [ARXIV-2410.01131](https://arxiv.org/abs/2410.01131). Normalize every embedding-dimension vector in every matrix to the unit hypersphere after each step, delete all normalization layers, weight decay and LR warmup, and make each block's residual contribution a learnable per-dimension step size. 4× / 10× / 20× fewer tokens to the same loss at 1k / 4k / 8k context, at 0.5B and 1B on OpenWebText — and 60–80% more time per step. | Active |
 | [LIT-477](../../../record/literature.d/LIT-477.md) | NoProp: Training Neural Networks without Full Back-propagation or Full Forward-propagation | Li, Teh and Pascanu (2025), [ARXIV-2503.24322](https://arxiv.org/abs/2503.24322). Train each block independently to denoise a noisy *label* embedding given the raw input — diffusion machinery pointed at a classifier. No forward or backward pass across the network at training time, about half the GPU memory, and test accuracy matching backprop on MNIST and CIFAR-10. Every block sees the input, which is what makes independence possible and what makes the comparison awkward. | Active |
+| [LIT-479](../../../record/literature.d/LIT-479.md) | The Diffusion Duality | Sahoo, Deschenaux, Gokaslan, Wang, Chiu and Kuleshov (2025), [ARXIV-2506.10892](https://arxiv.org/abs/2506.10892). Uniform-state discrete diffusion is the `argmax` of a Gaussian diffusion, which lets Gaussian techniques transfer: a variance-reducing curriculum doubles training speed, and consistency distillation cuts sampling from 1024 steps to 8. Masked diffusion still wins on likelihood; this wins in the few-step regime, where masked models cannot revise what they have already emitted. | Active |

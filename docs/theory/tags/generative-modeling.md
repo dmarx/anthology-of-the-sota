@@ -6,8 +6,9 @@
 
 **Generative modeling** — diffusion, samplers, text-to-image, conditioning and control.
 
-1 of 45 THEORY documents. Back to the [full index](../README.md).
+2 of 46 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [THEORY-027](../../../record/theory.d/THEORY-027.md) | In continuous time the diffusion bound depends on the noise schedule only through its endpoints | Kingma et al. (2021), [LIT-446](../../../record/literature.d/LIT-446.md) — integrate the diffusion variational bound over signal-to-noise ratio instead of over time and the schedule leaves the integrand, remaining only in the limits. The bound and the generative distribution therefore depend on the schedule through two numbers, and variance-preserving and variance-exploding specifications are the same model up to a rescaling of the latents. | Active |
+| [THEORY-046](../../../record/theory.d/THEORY-046.md) | Uniform-state discrete diffusion is the argmax of a Gaussian diffusion, which is why Gaussian technique transfers to it and not to masked diffusion | Sahoo et al. (2025), [LIT-479](../../../record/literature.d/LIT-479.md) — taking the `argmax` of a Gaussian diffusion's latents carries its marginals onto those of a uniform-state discrete diffusion, under a reparameterization of the noise schedule, and the discretized process satisfies the defining ODE of a discrete diffusion. So it is one. Masked diffusion has no such preimage. | Active |

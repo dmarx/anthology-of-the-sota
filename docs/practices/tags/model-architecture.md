@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-30 of 288 SOTA documents. Back to the [full index](../README.md).
+31 of 289 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -40,3 +40,4 @@
 | [SOTA-277](../../../record/practices.d/SOTA-277.md) | For a task that is a sequential composition, buy depth rather than width | Chen et al. (2024), [LIT-464](../../../record/literature.d/LIT-464.md) — composing `k` functions costs a constant-depth decoder polynomially many parameters and a `log k`-layer one polylogarithmically. An exponential separation, proved unconditionally, and about what a shape can express rather than what a run will learn. | Proposed |
 | [SOTA-282](../../../record/practices.d/SOTA-282.md) | Put every matrix and hidden state on the unit hypersphere, and make each block's residual step size a learned per-dimension parameter |  | Proposed |
 | [SOTA-287](../../../record/practices.d/SOTA-287.md) | If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input |  | Proposed |
+| [SOTA-289](../../../record/practices.d/SOTA-289.md) | When the sampling budget is small, prefer uniform-state discrete diffusion with consistency distillation — masked diffusion cannot revise what it has already emitted |  | Proposed |

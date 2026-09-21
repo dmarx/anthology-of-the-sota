@@ -4,7 +4,7 @@
 
 **generative-modeling**.
 
-16 of 227 NOTE documents. Back to the [full index](../README.md).
+17 of 228 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -24,3 +24,4 @@
 | [NOTE-197](../../../record/notes.d/NOTE-197.md) | SiT: Scalable Interpolant Transformers | Walks one variable at a time from DiT to SiT with the architecture, parameter count and GFLOPs held fixed: discrete to continuous time, score to velocity prediction, variance-preserving to linear interpolant, ODE to a tuned SDE sampler. Velocity and the linear interpolant carry most of the gain, and the sampler's diffusion coefficient turns out to be choosable after training. | Read |
 | [NOTE-198](../../../record/notes.d/NOTE-198.md) | Variational Diffusion Models | Integrating the diffusion VLB over signal-to-noise ratio rather than time collapses the schedule out of the expression: in continuous time the bound depends on it only through the endpoint SNRs. VP and VE specifications are therefore equivalent, and the freed schedule shape is spent on minimizing the loss estimator's variance. | Read |
 | [NOTE-226](../../../record/notes.d/NOTE-226.md) | NoProp | Reading it: the interesting number is in the train column, not the test one. NoProp matches backprop on test while sitting 8-15 points behind on train, which on MNIST and CIFAR costs nothing and would be the whole story anywhere fitting is the binding constraint. The paper does not mention it. | Read |
+| [NOTE-228](../../../record/notes.d/NOTE-228.md) | The Diffusion Duality | Reading it: the theorem is elegant and the ablation says it accounts for under half the likelihood gain. What the paper actually establishes is a regime split — masked diffusion wins on quality at many steps, uniform-state wins below about 32, and the reason is architectural rather than tuned. | Read |

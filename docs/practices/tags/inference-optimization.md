@@ -6,7 +6,7 @@
 
 **Inference optimization** — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
 
-12 of 288 SOTA documents. Back to the [full index](../README.md).
+13 of 289 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -22,3 +22,4 @@
 | [SOTA-229](../../../record/practices.d/SOTA-229.md) | Scale the draft model's training data, once nothing constrains it to predict the target's features | Draft models had stopped improving with more training data, and [LIT-185](../../../record/literature.d/LIT-185.md) identifies why: EAGLE trained its draft to predict the target's hidden features and read tokens off them, which supplies multi-step training signal and caps expressiveness. Remove the constraint — predict tokens directly, fuse features from several depths, and simulate the multi-step draft during training — and the speedup rises with the data instead of flattening. Up to 6.5x, about 1.4x over the previous version, on roughly 8x the data. | Proposed |
 | [SOTA-269](../../../record/practices.d/SOTA-269.md) | Keep a knowledge base outside the weights; parameters are an expensive and lossy place to memorise facts | Lu et al. (2024), [LIT-452](../../../record/literature.d/LIT-452.md) — fact capacity is linear in model size and saturates in epochs, and the extrapolation is damning: all of Wikidata would want about 1000B non-embedding parameters trained for 100 epochs. Derivable facts cost full price unless they happen to share direction and structure. Borgeaud et al., [LIT-060](../../../record/literature.d/LIT-060.md), is the record's evidence that the alternative works at scale. | Active |
 | [SOTA-280](../../../record/practices.d/SOTA-280.md) | Sample several reasoning paths and take the majority answer rather than decoding one greedily | Wang et al. (2022), [LIT-468](../../../record/literature.d/LIT-468.md) — replace greedy decoding with sample-and-marginalize: GSM8K +17.9, SVAMP +11.0, AQuA +12.2. Five or ten paths recover most of it, which is the whole cost question. | Active |
+| [SOTA-289](../../../record/practices.d/SOTA-289.md) | When the sampling budget is small, prefer uniform-state discrete diffusion with consistency distillation — masked diffusion cannot revise what it has already emitted |  | Proposed |

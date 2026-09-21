@@ -4,7 +4,7 @@
 
 **inference-optimization**.
 
-6 of 227 NOTE documents. Back to the [full index](../README.md).
+7 of 228 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -14,3 +14,4 @@
 | [NOTE-162](../../../record/notes.d/NOTE-162.md) | Efficiently Scaling Transformer Inference | An analytical model of where inference time actually goes, used to pick a partitioning rather than searching for one. Its organising finding is that prefill and decode have different performance characteristics and must be analysed separately, and that the dominant cost moves — weights at small batch and short context, the KV cache at large. On PaLM 540B across 64 TPU v4 chips: 29 ms per token at low batch with int8 weights, 76% MFU at large batch, and 32x longer context from multiquery attention once the partitioning is right. | Read |
 | [NOTE-163](../../../record/notes.d/NOTE-163.md) | EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test | EAGLE predicted the target model's features and then read tokens off them. That constraint is why feeding it more training data stopped helping. Drop it — predict tokens directly, fuse low, mid and high features instead of reusing the top layer, and simulate the multi-step draft during training so step two sees its own step-one output. The result is a scaling law for inference acceleration: more draft data, proportionally more speedup, up to 6.5x. And it raises throughput 1.38x at batch 64, where speculation is supposed to stop paying. | Read |
 | [NOTE-217](../../../record/notes.d/NOTE-217.md) | Self-Consistency | Sample several chains, take the majority answer. Reading it: it is a decoding change rather than a prompt change, so it composes with everything else in the topic — and it counts answers, not reasoning, so it does not make the traces trustworthy. | Read |
+| [NOTE-228](../../../record/notes.d/NOTE-228.md) | The Diffusion Duality | Reading it: the theorem is elegant and the ablation says it accounts for under half the likelihood gain. What the paper actually establishes is a regime split — masked diffusion wins on quality at many steps, uniform-state wins below about 32, and the reason is architectural rather than tuned. | Read |

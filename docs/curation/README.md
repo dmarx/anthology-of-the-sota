@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [21 Sep 15:10 — Three families in one session, all of them arriving as somebody else's baselines](2026-09.md#three-families-in-one-session-all-of-them-arriving-as-somebody-elses-baselines)
 - [21 Sep 14:59 — Three ablations that each make the claim smaller, all of them run by the authors](2026-09.md#three-ablations-that-each-make-the-claim-smaller-all-of-them-run-by-the-authors)
 - [21 Sep 14:49 — Parity on the test column, eight to fifteen points behind on the train column](2026-09.md#parity-on-the-test-column-eight-to-fifteen-points-behind-on-the-train-column)
 - [21 Sep 14:36 — A number that is a lower bound, a figure that crosses, and an argument with no experiment](2026-09.md#a-number-that-is-a-lower-bound-a-figure-that-crosses-and-an-argument-with-no-experiment)
@@ -141,9 +142,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-134 entries across 2 books, newest first.
+135 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 132 | 2026-09-05 | 2026-09-21 |
+| [2026-09](2026-09.md) | 133 | 2026-09-05 | 2026-09-21 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

@@ -1,0 +1,86 @@
+---
+status: Active
+title: 'Neural Discrete Representation Learning'
+version: 1
+tags:
+- representation-and-encoding
+- generative-modeling
+date: '2026-09-21'
+published: '2017-11-02'
+arxiv: '1711.00937'
+first_author: 'van den Oord'
+keywords:
+- 'vector-quantization'
+- 'discrete-latents'
+- 'straight-through-estimator'
+- 'commitment-loss'
+- 'posterior-collapse'
+- 'learned-prior'
+extended_by:
+- LIT-tmpb17dj
+implementations: []
+summary: >-
+  van den Oord, Vinyals and Kavukcuoglu (2017), [ARXIV-1711.00937](https://arxiv.org/abs/1711.00937). The
+  paper that made discrete latents trainable: nearest-neighbour lookup into a
+  learned codebook, gradients copied past the non-differentiable step by a
+  straight-through estimator, and two `L2` terms — one moving codes toward the
+  encoder, one committing the encoder to its code. ImageNet at `128×128×3`
+  compressed to `32×32` indices over `K = 512`, a **42.6×** bit reduction,
+  with a PixelCNN learned over the indices as the prior.
+compared_against:
+- LIT-494
+---
+
+# LIT-tmpxz6hg: Neural Discrete Representation Learning
+
+van den Oord, Vinyals and Kavukcuoglu (2017) —
+[ARXIV-1711.00937](https://arxiv.org/abs/1711.00937), read as [NOTE-tmp77eat](../notes.d/NOTE-tmp77eat.md).
+
+## Key takeaways
+
+- **The three-term loss is the whole trick, and every descendant still runs
+  it.** `L = log p(x | z_q(x)) + ‖sg[z_e(x)] − e‖² + β‖z_e(x) − sg[e]‖²`. The
+  decoder optimizes the first term, the codebook the second, the encoder the
+  first and third. The middle term is one step of online `k`-means; the last
+  keeps the encoder's output from drifting away from a codebook that trains
+  more slowly than it does.
+- **The gradient problem is dodged rather than solved.** `argmin` has no
+  gradient, so the paper copies the decoder-input gradient straight to the
+  encoder output. The authors say plainly that a subgradient would also be
+  available and that "this simple estimator worked well for the initial
+  experiments" — it is a choice that worked, not a derivation.
+- **`β` is reported as insensitive**: results did not vary for `β` from 0.1 to
+  2.0, and 0.25 is used throughout. That robustness claim is one of the more
+  load-bearing sentences in the paper for anyone reimplementing it.
+- **The stated motivation is posterior collapse.** A VAE with a powerful
+  autoregressive decoder learns to ignore its latents. A discrete bottleneck
+  with a *uniform* prior makes the KL term constant with respect to the
+  encoder, so there is nothing to collapse toward — and the paper demonstrates
+  a second-stage VQ-VAE with a PixelCNN decoder whose latents stay in use.
+- **Likelihood is slightly worse than continuous, which the paper reports.**
+  On CIFAR-10: VAE 4.51 bits/dim, VQ-VAE 4.67, VIMCO 5.14. The claim is parity
+  *enough* to be worth the discreteness, not superiority.
+- **The prior is learned, not fixed** — the second half of the title. Training
+  a PixelCNN over the index field is what turns a compression scheme into a
+  generative model, and is the template MaskGIT and LlamaGen both inherit.
+
+## Standing in the anthology
+
+The root of the discrete image-tokenizer line, filed to give that line a
+trunk. Before this the record held no VQ work of any kind, so
+[LIT-494](../literature.d/LIT-494.md) — a 2025 descendant — had nothing to attach to,
+which is what [#243](https://github.com/dmarx/anthology-of-the-sota/issues/243) was opened about.
+
+Everything downstream is a modification of this object rather than a
+replacement of it. [LIT-tmpb17dj](../literature.d/LIT-tmpb17dj.md) keeps the loss and adds
+perceptual and adversarial terms; MaskGIT and LlamaGen keep the tokenizer and
+change the prior; GaussianToken keeps the codebook and moves the quantization
+units off the grid. Twenty-five years of VQ literature preceded it and the
+paper says so; what it added was making the thing differentiable enough to
+drop into a deep autoencoder.
+
+**No practice is filed from this paper alone.** Its recommendations are
+architectural facts now carried by every descendant, and the two practices
+this contribution does file rest on later measurements —
+[LIT-tmpflmiq](../literature.d/LIT-tmpflmiq.md)'s ablations and [LIT-494](../literature.d/LIT-494.md)'s — which is
+where the numbers are.

@@ -13,7 +13,18 @@ promote_when: >-
   suspicion and diminished author effort are the other two, both of which
   predict the same null.
 title: 'A text feature predicts success partly by being uncommon, so a tool that gives it to everyone destroys its predictive value'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-21'
+  note: >-
+    No change to the account. Adds a section pointing at THEORY-tmp2lctc,
+    which describes a text distribution narrowing by a different route — a
+    model generating the tokens rather than a person accepting them — and
+    says why the record has not joined the two. #234 asked whether they are
+    one phenomenon; the answer filed is that nobody has measured it, and the
+    two documents name each other so the next reader does not have to
+    rediscover the question.
 tags:
 - deployment-and-society
 - analysis-and-evaluation
@@ -33,6 +44,12 @@ summary: >-
 <!-- inactive-ok-file: SOTA-298 — Proposed, filed in this same
      contribution; this theory declares `explains:` on it, so the citation is
      the relation itself -->
+
+<!-- inactive-ok-file: THEORY-tmp2lctc — Proposed, filed in the same
+     contribution as this v2. It is named in "A second narrowing", whose
+     entire content is that the record has NOT joined the two accounts;
+     citing a document in order to say the connection is unmeasured is the
+     opposite of citing it as settled. -->
 
 # THEORY-051: A text feature predicts success partly by being uncommon, so a tool that gives it to everyone destroys its predictive value
 
@@ -74,6 +91,42 @@ predicting when more people have it. A distinguishing one does.
 petitions rose 23% in the same window. That is what the loss of a
 distinguishing feature looks like from outside: the distribution narrows, and
 a narrow distribution cannot separate anything.
+
+## A second narrowing, and why this document does not claim it is the same one
+
+The record holds another account of a text distribution narrowing.
+[THEORY-tmp2lctc](THEORY-tmp2lctc.md) describes corpora a model generates directly:
+**59.38%** of TinyStories contains "once upon a time", and the proportion of
+synthetic pretraining data correlates negatively with what gets trained on it.
+Same destination — a narrower distribution of text — reached by a different
+route. There the model emits the tokens; here a person accepts, edits and
+posts what it suggested.
+
+The two are not joined in this record, and the reasons are worth carrying
+rather than settling:
+
+- **The metrics are not the same measurement.** That account is built on
+  n-gram over-concentration; this one on mean pairwise embedding similarity.
+  The two move independently in general — paraphrase preserves one and
+  destroys the other — and nobody has run both instruments on either corpus.
+- **This path has a selection step the other lacks.** Writers accept, reject
+  and rewrite, which could damp the narrowing or amplify it. [LIT-487](../literature.d/LIT-487.md)
+  cannot distinguish them: its treatment is *access* to the tool, not use of
+  it.
+- **The harms differ in kind.** There the damage is to a model trained on the
+  corpus. Here it is that a signal between people stopped carrying
+  information — and this document's account of *why* that happens, scarcity,
+  has no counterpart in the generated-corpus case at all. A pretraining
+  corpus is not competing with itself for a rivalrous outcome.
+
+That last point is the strongest reason to keep them apart. The two could
+share a statistical signature entirely and still have different causes, and
+the narrowing here is offered as the *visible trace* of the mechanism rather
+than as the mechanism.
+
+[#234](https://github.com/dmarx/anthology-of-the-sota/issues/234) is where this was argued out. The conclusion was to file both
+accounts separately and have them name each other, rather than to assert a
+connection neither source claims — [DP-009](../../docs/design-principles.md#dp-9).
 
 ## Why `Proposed`
 

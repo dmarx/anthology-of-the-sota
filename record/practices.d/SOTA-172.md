@@ -34,6 +34,8 @@ summary: >-
   The remedy inverts the usual move: edit human data at the token level, so
   the result stays anchored to a real distribution and the test error is
   provably bounded.
+explained_by:
+- THEORY-tmp2lctc
 ---
 
 # SOTA-172: Build synthetic pretraining data by editing human text at the token level, not by generating from scratch

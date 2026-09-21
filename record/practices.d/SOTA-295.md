@@ -39,6 +39,8 @@ summary: >-
   narrative feature per sample, and require the sample to open with a given
   part of speech and letter. Five diversity metrics move; measured simplicity
   does not.
+explained_by:
+- THEORY-tmp2lctc
 ---
 
 <!-- inactive-ok-file: SOTA-172 — Proposed, and the whole Conditions passage

@@ -6,8 +6,9 @@
 
 **ci**.
 
-1 of 50 decisions. Back to the [full index](../README.md).
+2 of 51 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [ADR-039](../../../record/decisions.d/ADR-039.md) v2 | The configuration is part of the record, and the lint reads it | `luria.yaml` joins `code.globs`. It carries 87 code citations across 38 documents — more decision references than any other file here — and nothing scanned it, so they went stale invisibly: 15 citations of codes that had been concretized months earlier, and two to a luria decision whose temporary code had since been numbered. Rejected: leaving it unscanned on the grounds that a config is not prose, and per-site directives over one file-level one. | Proposed |
+| [ADR-051](../../../record/decisions.d/ADR-051.md) | The Pages workflow declines a permission the repository grants | The `github-pages` environment was widened to allow deployment from any `claude/*` branch. The workflow now gates publishing on `main` in two places and leaves that permission unspent, held for a branch preview nobody has needed yet. `deploy` names the branch rather than excluding an event — the old `!= 'pull_request'` was a deny-list of one entry that a `workflow_dispatch` walked past — and the `pull_request` trigger is gone, which costs the automatic proof that the site still builds. Rejected: revoking the environment policy instead, and gating `build` as well. | Active |

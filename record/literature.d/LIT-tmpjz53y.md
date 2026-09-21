@@ -1,0 +1,97 @@
+---
+status: Active
+title: 'The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation'
+version: 1
+tags:
+- analysis-and-evaluation
+- generative-modeling
+- training-optimization
+date: '2026-09-21'
+published: '2026-06-18'
+arxiv: '2606.20536'
+first_author: 'Dufour'
+keywords:
+- 'fid'
+- 'seed-variance'
+- 'reproducibility'
+- 'classifier-free-guidance'
+- 'coefficient-of-variation'
+- 'evaluation-protocol'
+implementations: []
+summary: >-
+  Dufour, Efros and Pérez (2026), [ARXIV-2606.20536](https://arxiv.org/abs/2606.20536). Several hundred
+  SiT networks trained on class-conditional ImageNet `256×256`, with FID
+  treated as a random variable over a panel of training seeds × sampling
+  seeds. **Retraining moves FID 3.2× more than resampling does**, the
+  coefficient of variation holds at **1–2%** across four model sizes and ten
+  compute budgets, and a lucky training seed reaches the same FID with up to
+  **2× less compute**.
+---
+
+# LIT-tmpjz53y: The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation
+
+Dufour, Efros and Pérez (2026) —
+[ARXIV-2606.20536](https://arxiv.org/abs/2606.20536), read as [NOTE-tmpimuh6](../notes.d/NOTE-tmpimuh6.md).
+
+## Key takeaways
+
+- **The variance is in the training run, not the sampling.** On a converged
+  SiT-B/2 panel (25 training seeds × 10 sampling seeds, 400k steps, no CFG):
+  `σ_between = 0.438` (CoV ≈ 1.3%) against `σ_within = 0.137` (CoV ≈ 0.4%) —
+  a **3.2× ratio**. Per-seed mean FIDs span 33.75 to 35.42.
+- **Ten times the sampling budget buys nothing.** It shrinks within-seed
+  jitter by `√10 ≈ 3.2` and leaves the 0.44-wide between-seed envelope
+  untouched. Only adding training seeds reduces the dominant term. The
+  paper's own remark: that envelope "is already larger than the headline gain
+  claimed in many recent papers".
+- **Three sources, and initialisation is not the biggest.** Varying one at a
+  time: noise `0.336` (77% of the full `0.438`), init `0.294` (67%), data
+  order `0.221` (51%). The per-step Gaussian noise of the flow-matching loss
+  leads, which contradicts the informal "different seeds mean different
+  inits". They combine **sub-additively** — quadrature gives 0.50 against an
+  observed 0.44 — so one-at-a-time ablations overestimate what any single fix
+  recovers.
+- **The control that rules out the boring explanation.** 24 retrains with
+  init, data order and training noise all fixed, leaving only multi-GPU
+  floating-point non-determinism. The EMA weights drift **5–6% of their norm
+  apart** — genuinely different networks — and FID barely moves:
+  `σ_between = 0.047`, *below* the within-seed sampling floor of 0.119,
+  inverting the ratio to 0.4×. The lottery is the intended randomness.
+- **Scale does not tighten it.** Across SiT-S/B/L/XL at every 100k-step
+  checkpoint to 2M, CoV stays inside `[0.74%, 2.06%]` (median **1.30%**) in
+  all 76 cells, and is non-monotonic in size — S 0.74%, B 1.24%, XL 1.42%,
+  L 1.72%. "Reproducibility is a property of the metric and the loss, not of
+  compute or scale."
+- **Per-cell guidance tuning halves the floor and reshuffles the winners.**
+  Golden-section search on the CFG scale per (training, sampling) seed pair
+  takes CoV from 1.26% to **0.67%**, but the guided and unguided seed
+  rankings correlate at only Spearman **ρ = 0.73**, with 8 of 25 seeds moving
+  five or more places.
+- **A lucky seed is worth up to 2× the compute.** Anchored to the FID the
+  unluckiest of ~20 seeds reaches at 2M: the luckiest gets there at
+  1.25× less compute on S/B, 1.82× on L, **2.0×** on XL. Any single-seed
+  paper claiming a ~1.3× speedup on this architecture "is implicitly
+  competing with what the seed lottery already delivers without changing a
+  line of code".
+- **Seed rankings are near-random for the first half of training.** Spearman
+  ρ against the 2M ranking is 0.39–0.61 at 200k and only 0.65–0.81 by 1.1M.
+
+## Standing in the anthology
+
+The source for [SOTA-tmpmd52k](../practices.d/SOTA-tmpmd52k.md), and a second, measured qualification
+of [SOTA-143](../practices.d/SOTA-143.md): on this family µP transfers a **1.7× learning-rate
+window** rather than a point, because seed variance blurs the optimum into a
+flat region. Worse, selecting the learning rate on *unguided* single-seed FID
+lands on the edge of training stability — the same rate where 3 of 10 SiT-S
+seeds diverge — with a confident-looking number attached.
+
+It sits beside [SOTA-305](../practices.d/SOTA-305.md) without overlapping it. That practice is
+about *reconstruction* FID and says the rate must be stated; this is about
+*generation* FID and says the seed must be resampled. Same metric family, two
+independent ways to publish a number that does not mean what it appears to.
+
+**Read its limitations as a scope statement, not a hedge.** One combination —
+SiT, flow matching, class-conditional ImageNet `256×256`, Inception-V3 — and
+the authors say the ~1.3% CoV is "a calibration target for that combination,
+not a universal constant". What generalizes is the *shape* of the finding and
+the protocol; the number does not.

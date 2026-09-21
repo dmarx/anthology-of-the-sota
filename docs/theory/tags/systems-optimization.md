@@ -2,9 +2,9 @@
 
 # THEORYs with `tags` `systems-optimization`
 
-*Topics — The thirteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same thirteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+*Topics — The sixteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same sixteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
 
-**Systems optimization** — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
+**Systems optimization** — hardware utilization, kernels, compilation, memory access patterns — how an operation is executed, not how many bits it is executed in.
 
 0 of 39 THEORY documents. Back to the [full index](../README.md).
 

@@ -34,7 +34,10 @@ bare code and run `luria link --fix`.
 **[Training optimization](tags/training-optimization.md)** (11) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
 [012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md) · [026](../../record/theory.d/THEORY-026.md) · [028](../../record/theory.d/THEORY-028.md) · [029](../../record/theory.d/THEORY-029.md) · [030](../../record/theory.d/THEORY-030.md) · [032](../../record/theory.d/THEORY-032.md) · [033](../../record/theory.d/THEORY-033.md) · [035](../../record/theory.d/THEORY-035.md) · [037](../../record/theory.d/THEORY-037.md)
 
-**[Systems optimization](tags/systems-optimization.md)** (0) — hardware utilization, kernels, compilation, memory access patterns, numerical precision.
+**[Systems optimization](tags/systems-optimization.md)** (0) — hardware utilization, kernels, compilation, memory access patterns — how an operation is executed, not how many bits it is executed in.
+
+**[Numerics and precision](tags/numerics-and-precision.md)** (1) — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them:
+[019](../../record/theory.d/THEORY-019.md)
 
 **[Model stability](tags/model-stability.md)** (6) — initialization, normalization, gradient handling, regularization, loss-landscape behaviour:
 [001](../../record/theory.d/THEORY-001.md) · [003](../../record/theory.d/THEORY-003.md) · [010](../../record/theory.d/THEORY-010.md) · [011](../../record/theory.d/THEORY-011.md) · [015](../../record/theory.d/THEORY-015.md) · [016](../../record/theory.d/THEORY-016.md)
@@ -50,9 +53,12 @@ bare code and run `luria link --fix`.
 **[Model architecture](tags/model-architecture.md)** (3) — architecture patterns, component design, structural choices, model families, multi-modal designs:
 [005](../../record/theory.d/THEORY-005.md) · [020](../../record/theory.d/THEORY-020.md) · [038](../../record/theory.d/THEORY-038.md)
 
-**[Inference optimization](tags/inference-optimization.md)** (0) — serving-time decisions — batching, cache layout, quantization, compression, sparsity, distillation, sampling algorithms.
+**[Inference optimization](tags/inference-optimization.md)** (0) — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
 
-**[Adaptation and tuning](tags/adaptation-and-tuning.md)** (0) — taking a trained model somewhere new — fine-tuning and transfer, preference training and alignment, parameter-efficient adaptation, context extension.
+**[Adaptation and tuning](tags/adaptation-and-tuning.md)** (0) — taking a trained model somewhere new — fine-tuning and transfer, preference training and safety alignment, parameter-efficient adaptation, context extension.
+
+**[In-context learning](tags/in-context-learning.md)** (1) — getting behaviour out of a fixed model by what you put in the context — few-shot exemplars, chain of thought, prompting strategy, and what the context can and cannot buy:
+[038](../../record/theory.d/THEORY-038.md)
 
 **[Representation and encoding](tags/representation-and-encoding.md)** (4) — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them:
 [021](../../record/theory.d/THEORY-021.md) · [022](../../record/theory.d/THEORY-022.md) · [034](../../record/theory.d/THEORY-034.md) · [036](../../record/theory.d/THEORY-036.md)

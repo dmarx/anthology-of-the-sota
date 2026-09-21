@@ -172,6 +172,15 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [SOTA-182](../record/practices.d/SOTA-182.md) — Compute the normalization statistic without centering (RMSNorm) *(Active, universal)*
 - alongside: [SOTA-191](../record/practices.d/SOTA-191.md) — Consider removing LayerNorm's learnable gain and bias rather than tuning them *(Proposed, contested)*
 
+## numerics-and-precision
+
+### From Perform forward/backward passes in FP16
+
+- [SOTA-016](../record/practices.d/SOTA-016.md) — Perform forward/backward passes in FP16 *(Active, unassessed)*
+  - [SOTA-013](../record/practices.d/SOTA-013.md) — Use dynamic loss scaling that doubles every 2000 successful steps *(Active, unassessed)*
+  - [SOTA-014](../record/practices.d/SOTA-014.md) — Maintain master weights in FP32 *(Active, unassessed)*
+    - [SOTA-015](../record/practices.d/SOTA-015.md) — Store optimizer states in FP32 *(Active, unassessed)*
+
 ## representation-and-encoding
 
 ### From use RoPE for LLM (1D sequence) positional embeddings

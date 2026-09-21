@@ -20,6 +20,9 @@
 **[generative-modeling](tags/generative-modeling.md)** (15):
 [009](../../record/notes.d/NOTE-009.md) · [019](../../record/notes.d/NOTE-019.md) · [040](../../record/notes.d/NOTE-040.md) · [043](../../record/notes.d/NOTE-043.md) · [048](../../record/notes.d/NOTE-048.md) · [053](../../record/notes.d/NOTE-053.md) · [063](../../record/notes.d/NOTE-063.md) · [064](../../record/notes.d/NOTE-064.md) · [067](../../record/notes.d/NOTE-067.md) · [068](../../record/notes.d/NOTE-068.md) · [166](../../record/notes.d/NOTE-166.md) · [192](../../record/notes.d/NOTE-192.md) · [196](../../record/notes.d/NOTE-196.md) · [197](../../record/notes.d/NOTE-197.md) · [198](../../record/notes.d/NOTE-198.md)
 
+**[in-context-learning](tags/in-context-learning.md)** (4):
+[049](../../record/notes.d/NOTE-049.md) · [167](../../record/notes.d/NOTE-167.md) · [214](../../record/notes.d/NOTE-214.md) · [216](../../record/notes.d/NOTE-216.md)
+
 **[inference-optimization](tags/inference-optimization.md)** (5):
 [023](../../record/notes.d/NOTE-023.md) · [159](../../record/notes.d/NOTE-159.md) · [160](../../record/notes.d/NOTE-160.md) · [162](../../record/notes.d/NOTE-162.md) · [163](../../record/notes.d/NOTE-163.md)
 
@@ -28,6 +31,9 @@
 
 **[model-stability](tags/model-stability.md)** (8):
 [001](../../record/notes.d/NOTE-001.md) · [008](../../record/notes.d/NOTE-008.md) · [013](../../record/notes.d/NOTE-013.md) · [022](../../record/notes.d/NOTE-022.md) · [056](../../record/notes.d/NOTE-056.md) · [058](../../record/notes.d/NOTE-058.md) · [116](../../record/notes.d/NOTE-116.md) · [131](../../record/notes.d/NOTE-131.md)
+
+**[numerics-and-precision](tags/numerics-and-precision.md)** (3):
+[029](../../record/notes.d/NOTE-029.md) · [164](../../record/notes.d/NOTE-164.md) · [168](../../record/notes.d/NOTE-168.md)
 
 **[representation-and-encoding](tags/representation-and-encoding.md)** (8):
 [010](../../record/notes.d/NOTE-010.md) · [028](../../record/notes.d/NOTE-028.md) · [125](../../record/notes.d/NOTE-125.md) · [129](../../record/notes.d/NOTE-129.md) · [188](../../record/notes.d/NOTE-188.md) · [206](../../record/notes.d/NOTE-206.md) · [207](../../record/notes.d/NOTE-207.md) · [210](../../record/notes.d/NOTE-210.md)

@@ -2,9 +2,9 @@
 
 # LITs with `tags` `adaptation-and-tuning`
 
-*Topics — The thirteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same thirteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+*Topics — The sixteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same sixteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
 
-**Adaptation and tuning** — taking a trained model somewhere new — fine-tuning and transfer, preference training and alignment, parameter-efficient adaptation, context extension.
+**Adaptation and tuning** — taking a trained model somewhere new — fine-tuning and transfer, preference training and safety alignment, parameter-efficient adaptation, context extension.
 
 42 of 402 LIT documents. Back to the [full index](../README.md).
 

@@ -72,6 +72,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-447](../record/literature.d/LIT-447.md) — SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers *(Active)*
     - [LIT-449](../record/literature.d/LIT-449.md) — Scaling Rectified Flow Transformers for High-Resolution Image Synthesis *(Active)*
 
+## in-context-learning
+
+### From Language Models are Few-Shot Learners
+
+- [LIT-035](../record/literature.d/LIT-035.md) — Language Models are Few-Shot Learners *(Active)*
+  - [LIT-467](../record/literature.d/LIT-467.md) — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models *(Active)*
+
 ## model-architecture
 
 ### From Language Modeling with Gated Convolutional Networks

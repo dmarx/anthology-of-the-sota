@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [21 Sep 06:13 — The report that found the last vocabulary gap cannot find this kind, and three probes lied](2026-09.md#the-report-that-found-the-last-vocabulary-gap-cannot-find-this-kind-and-three-probes-lied)
 - [21 Sep 01:19 — Twice in one session I quoted a decision I had not read, and the second time it named what I was doing](2026-09.md#twice-in-one-session-i-quoted-a-decision-i-had-not-read-and-the-second-time-it-named-what-i-was-doing)
 - [21 Sep 00:36 — Filling a trunk I had named an hour earlier, and finding two things broken on the way](2026-09.md#filling-a-trunk-i-had-named-an-hour-earlier-and-finding-two-things-broken-on-the-way)
 - [21 Sep 00:07 — The record could say what to do and why it works, and had no way to say what is impossible](2026-09.md#the-record-could-say-what-to-do-and-why-it-works-and-had-no-way-to-say-what-is-impossible)
@@ -130,9 +131,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-123 entries across 2 books, newest first.
+124 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 121 | 2026-09-05 | 2026-09-21 |
+| [2026-09](2026-09.md) | 122 | 2026-09-05 | 2026-09-21 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

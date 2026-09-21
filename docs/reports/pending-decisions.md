@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**109 document(s) awaiting a decision.**
+**110 document(s) awaiting a decision.**
 
 ## SOTAs
 
-74 of the 109.
+74 of the 110.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -27,9 +27,9 @@
 | 2026-09-07 | Proposed | [SOTA-156](../../record/practices.d/SOTA-156.md) | 5 | 0 | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed |
 | 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 2 | 0 | Pack training documents by best fit instead of concatenating and splitting |
 | 2026-09-08 | Proposed | [SOTA-173](../../record/practices.d/SOTA-173.md) | 19 | 0 | Augment the objective to make multi-epoch pretraining productive on a fixed corpus |
+| 2026-09-08 | Proposed | [SOTA-160](../../record/practices.d/SOTA-160.md) | 15 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
 | 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 15 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
-| 2026-09-08 | Proposed | [SOTA-160](../../record/practices.d/SOTA-160.md) | 13 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
-| 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 9 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
+| 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 10 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
 | 2026-09-08 | Proposed | [SOTA-158](../../record/practices.d/SOTA-158.md) | 8 | 0 | Bound the activation's output range when training in low precision |
 | 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 8 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
 | 2026-09-08 | Proposed | [SOTA-168](../../record/practices.d/SOTA-168.md) | 8 | 0 | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself |
@@ -60,13 +60,13 @@
 | 2026-09-17 | Proposed | [SOTA-243](../../record/practices.d/SOTA-243.md) | 6 | 0 | Discard the easy examples when data is abundant and the hard ones when it is scarce |
 | 2026-09-17 | Proposed | [SOTA-241](../../record/practices.d/SOTA-241.md) | 5 | 0 | Rank candidate data selections with a model-free distributional proxy before spending a training run |
 | 2026-09-17 | Proposed | [SOTA-242](../../record/practices.d/SOTA-242.md) | 4 | 0 | Select pretraining data by matching a target distribution you can sample from, not by scoring it for quality |
+| 2026-09-17 | Proposed | [SOTA-234](../../record/practices.d/SOTA-234.md) | 2 | 0 | Train in the target low-bit format from scratch rather than quantizing a finished model |
 | 2026-09-17 | Proposed | [SOTA-239](../../record/practices.d/SOTA-239.md) | 2 | 0 | Order training data by skill prerequisite: teach the prerequisite and the dependent skill costs less data |
 | 2026-09-17 | Proposed | [SOTA-244](../../record/practices.d/SOTA-244.md) | 2 | 0 | Score example importance a few epochs into training, averaged over several initializations |
 | 2026-09-17 | Proposed | [SOTA-245](../../record/practices.d/SOTA-245.md) | 2 | 0 | State a relation in both orders in the training corpus if you want it usable in both directions |
 | 2026-09-17 | Proposed | [SOTA-232](../../record/practices.d/SOTA-232.md) | 1 | 0 | Convert an autoregressive model into a diffusion model by continual pretraining rather than training one from scratch |
 | 2026-09-17 | Proposed | [SOTA-247](../../record/practices.d/SOTA-247.md) | 1 | 0 | Add a multi-token word to a frozen model's vocabulary from the model's own detokenized representation of it |
 | 2026-09-17 | Proposed | [SOTA-248](../../record/practices.d/SOTA-248.md) | 1 | 0 | Stretch and clip the softmax so an attention head can output exact zeros |
-| 2026-09-17 | Proposed | [SOTA-234](../../record/practices.d/SOTA-234.md) | 0 | 0 | Train in the target low-bit format from scratch rather than quantizing a finished model |
 | 2026-09-19 | Proposed | [SOTA-255](../../record/practices.d/SOTA-255.md) | 11 | 0 | Tune weight decay upward when pretraining over a repeated corpus, rather than inheriting the customary value |
 | 2026-09-19 | Proposed | [SOTA-254](../../record/practices.d/SOTA-254.md) | 3 | 0 | Train the language model as a masked diffusion model when the corpus is fixed and the compute is not |
 | 2026-09-19 | Proposed | [SOTA-256](../../record/practices.d/SOTA-256.md) | 3 | 0 | Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget |
@@ -90,7 +90,7 @@
 
 ## THEORYs
 
-17 of the 109.
+17 of the 110.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -114,7 +114,7 @@
 
 ## LITs
 
-3 of the 109.
+3 of the 110.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -124,12 +124,12 @@
 
 ## ADRs
 
-15 of the 109.
+16 of the 110.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 2 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
-| 2026-09-09 | Proposed | [ADR-024](../../record/decisions.d/ADR-024.md) | 6 | 0 | The topic vocabulary has four recurring seams — options, not a decision |
+| 2026-09-09 | Proposed | [ADR-024](../../record/decisions.d/ADR-024.md) | 10 | 0 | The topic vocabulary has four recurring seams — options, not a decision |
 | 2026-09-14 | Proposed | [ADR-028](../../record/decisions.d/ADR-028.md) | 1 | 1 | One topic vocabulary, one set of glosses: the blurbs are shared too |
 | 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 23 | 0 | A scheme for explanations, complementing the practice registry |
 | 2026-09-15 | Proposed | [ADR-034](../../record/decisions.d/ADR-034.md) | 13 | 0 | A document that changes scheme is Superseded where it leaves, and names its successor across the boundary |
@@ -143,9 +143,10 @@
 | 2026-09-16 | Proposed | [ADR-042](../../record/decisions.d/ADR-042.md) | 0 | 0 | A practice may be filed in order to say do not do this |
 | 2026-09-17 | Proposed | [ADR-043](../../record/decisions.d/ADR-043.md) | 6 | 0 | Doubt about whether an item is worth carrying is not a reason to leave it out, and not a third kind of provisional |
 | 2026-09-17 | Proposed | [ADR-045](../../record/decisions.d/ADR-045.md) | 2 | 0 | A claim about the signal is admissible however it was measured, including on people |
+| 2026-09-21 | Proposed | [ADR-050](../../record/decisions.d/ADR-050.md) | 2 | 0 | Two more topics: numerics and precision, and in-context learning |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (9): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md), [ADR-040](../../record/decisions.d/ADR-040.md), [ADR-042](../../record/decisions.d/ADR-042.md), [SOTA-234](../../record/practices.d/SOTA-234.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (8): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md), [ADR-040](../../record/decisions.d/ADR-040.md), [ADR-042](../../record/decisions.d/ADR-042.md) — these are the cheapest to close, since nothing depends on the answer.

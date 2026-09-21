@@ -88,10 +88,10 @@ vocabularies:
       systems-optimization:
         label: Systems optimization
         blurb: hardware utilization, kernels, compilation, memory access patterns — how an operation is executed, not how many bits it is executed in
-      # inactive-ok-block: ADR-tmphn14u SOTA-160 SOTA-234 — all Proposed; the decision is the
+      # inactive-ok-block: ADR-050 SOTA-160 SOTA-234 — all Proposed; the decision is the
       # one being recorded here and the two practices are named as the evidence for one word
       # rather than two, not cited as recommendations
-      # Added by ADR-tmphn14u. `systems-optimization` carried "numerical precision"
+      # Added by ADR-050. `systems-optimization` carried "numerical precision"
       # and `inference-optimization` carried "quantization", so the subject had
       # two half-homes and 48 documents spread over nine topics with no topic
       # holding a quarter. One word, because the interesting recent work is the
@@ -122,7 +122,7 @@ vocabularies:
       adaptation-and-tuning:
         label: Adaptation and tuning
         blurb: taking a trained model somewhere new — fine-tuning and transfer, preference training and safety alignment, parameter-efficient adaptation, context extension
-      # Added by ADR-tmphn14u. Every item in `adaptation-and-tuning`'s blurb changes
+      # Added by ADR-050. Every item in `adaptation-and-tuning`'s blurb changes
       # the weights or the window; in-context learning changes neither, and the
       # twenty documents about it sat in four topics with none holding half.
       in-context-learning:

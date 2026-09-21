@@ -1,0 +1,90 @@
+---
+status: Active
+title: 'Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-21'
+published: '2025-02-28'
+arxiv: '2502.20914'
+first_author: 'Méloux'
+keywords:
+- 'mechanistic-interpretability'
+- 'identifiability'
+- 'circuit-discovery'
+- 'causal-alignment'
+- 'interchange-intervention-accuracy'
+- 'underdetermination'
+implementations: []
+summary: >-
+  Méloux, Maniu, Portet and Peyrard (2025), [ARXIV-2502.20914](https://arxiv.org/abs/2502.20914). Asks
+  whether mechanistic interpretability's own criteria pick out a unique
+  explanation, and answers no at every stage by exhaustive enumeration on
+  small MLPs. **No network had exactly one circuit interpretation**, under 2%
+  had exactly one valid minimal mapping, and the median count rises from
+  **38 to 910,000** as width goes from 2 to 5 — with both figures explicitly
+  lower bounds.
+---
+
+<!-- inactive-ok-file: SOTA-286 — Proposed, cited as one of the two existing
+     practices this one completes a set with. The citation is about what the
+     three are severally about, which does not wait on any of them being
+     settled -->
+
+# LIT-tmpj6eqy: Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?
+
+Méloux, Maniu, Portet and Peyrard (2025) —
+[ARXIV-2502.20914](https://arxiv.org/abs/2502.20914), read as [NOTE-tmpyf2sd](../notes.d/NOTE-tmpyf2sd.md).
+
+## Key takeaways
+
+- **The question had not been asked, and it is the obvious one.** A
+  mechanistic explanation has two parts — *what* algorithm, and *where* it
+  sits in the network. Borrowing identifiability from statistics, the paper
+  asks whether MI's validity criteria admit a unique answer to either. Four
+  questions, one per stage of the two dominant strategies; all four come back
+  negative.
+- **The method is exhaustive enumeration, which is why the answer is a fact
+  rather than an impression.** MLPs of shape `(2, k, k, n)` trained to
+  implement two-input logic gates, small enough to enumerate every circuit and
+  search the mappings completely.
+- **The headline counts.** Median computational abstractions rise from **38 to
+  910,000** (circuit-first) and **8 to 3,700** (algorithm-first) as `k` goes
+  from 2 to 5. **Under 2%** of trained networks had exactly one valid minimal
+  mapping. **No network** had exactly one circuit interpretation.
+- **Both counts are lower bounds by construction**, and the paper says so:
+  circuit enumeration is restricted to sparsity above 0.3 and to
+  two-input/one-output circuits, and interpretations are counted only for the
+  sparser circuits.
+- **It does not go away at scale.** A regression MLP on MNIST digits 0 and 1,
+  split so the tail `(3, 3, 3, 1)` could be enumerated against the head's
+  partial computations: **3,209 valid circuits** in the tail alone, and any
+  valid circuit in the head extends through one of them.
+- **One constructive finding**, and the only lever the paper reports: the
+  number of valid abstractions **decreases significantly with the number of
+  tasks** the network is trained on (`p = 0.05`), up to four tasks, after
+  which the effect stops being significant. Noise during training and a
+  tighter loss cutoff both move the counts without closing the gap.
+- **Occam's razor is considered and rejected as a fix**, in one sentence worth
+  keeping: "Should we dismiss an entirely different candidate explanation
+  simply because it involves one additional node than another?"
+
+## Standing in the anthology
+
+The source for [SOTA-tmp2f1hx](../practices.d/SOTA-tmp2f1hx.md), and the record's first document on
+whether an interpretability result means what it appears to.
+
+It belongs beside [SOTA-278](../practices.d/SOTA-278.md) — rule out the evaluation before
+reporting that a model cannot do something — and [SOTA-286](../practices.d/SOTA-286.md), on
+measuring how much of parameter space behaves the way the sample you looked at
+does. All three are about the distance between a demonstration and the claim
+it is taken to support, and this one closes the set at the explanation end:
+the circuit you found passing your criterion is compatible with a great many
+others passing it too, and nothing in the criterion tells you which.
+
+**What the paper does not claim, and the reading keeps separate.** It does not
+say mechanistic interpretability is wrong or useless. §5.1 lays out the
+pragmatic position — that predictivity and manipulability may be all an
+explanation is owed — and treats it as live rather than defeated. The finding
+is about *unicity*, and the authors' closing recommendation is to say out
+loud which epistemic goal an explanation is serving.

@@ -1,0 +1,71 @@
+---
+status: Active
+title: 'Chain-of-Thought Prompting Elicits Reasoning in Large Language Models'
+version: 1
+tags:
+- adaptation-and-tuning
+date: '2026-09-21'
+published: '2022-01-01'
+arxiv: '2201.11903'
+first_author: 'Wei'
+keywords:
+- 'chain-of-thought'
+- 'prompting'
+- 'few-shot'
+- 'reasoning'
+- 'emergent-abilities'
+extends:
+- LIT-035
+implementations: []
+summary: >-
+  Wei et al. (2022), [ARXIV-2201.11903](https://arxiv.org/abs/2201.11903). Put worked reasoning steps
+  in the few-shot exemplars and a 540B model more than doubles on GSM8K. Three
+  ablations rule out the obvious alternative explanations, and the effect is
+  absent — sometimes negative — below about 100B parameters.
+---
+
+<!-- inactive-ok-file: SOTA-130 — Proposed, and named as one of the things standing on this paper rather than as support for it; a practice that assumes chain of thought is evidence that the trunk was missing, whatever its own standing -->
+# LIT-tmp7e923: Chain-of-Thought Prompting Elicits Reasoning in Large Language Models
+
+Wei et al. (2022) — [ARXIV-2201.11903](https://arxiv.org/abs/2201.11903)
+
+## Key takeaways
+
+- **The method is eight exemplars.** Show the model a handful of
+  input–rationale–output triples instead of input–output pairs. No
+  fine-tuning, no training data, no task-specific checkpoint: the paper says
+  plainly that no language model was fine-tuned in the writing of it.
+- **The ablations are why this is the trunk and not one result among many.**
+  Three rival explanations were built and tested. *Equation only* — emit just
+  the equation — does not help on GSM8K. *Variable compute only* — emit a row
+  of dots as long as the equation would be — performs at baseline, so it is
+  not merely buying the model more forward passes. *Chain of thought after
+  the answer* also performs at baseline, so the model is depending on the
+  chain causally rather than being reminded of pretraining knowledge.
+- **It is absent below roughly 100B parameters, and can be worse than not
+  doing it.** Smaller models produce "fluent but illogical" chains and score
+  below standard prompting. The gain is also largest on the hardest datasets
+  and negative or negligible on single-step problems.
+- **Robust in the ways prompting usually is not.** Three annotators wrote
+  independent chains; all beat standard prompting by a large margin.
+  Exemplars sampled from the GSM8K training set did as well as the
+  hand-written ones. Order and count of exemplars do not overturn it.
+- **The framing line.** "Standard prompting only provides a lower bound on
+  the capabilities of large language models." That sentence is the whole of
+  [SOTA-278](../practices.d/SOTA-278.md), written in 2022 by people who had just
+  demonstrated it.
+
+## Standing in the anthology
+
+The trunk of a topic the record had somehow never held. Until this was filed,
+the only chain-of-thought document in the corpus was [SOTA-127](../practices.d/SOTA-127.md), which
+says to filter such traces *out* of a tiny model's training data — a
+recommendation that reads very differently once the paper explaining why
+small models produce bad chains is present.
+
+It also stands underneath a great deal the record already carries.
+[SOTA-130](../practices.d/SOTA-130.md) skips the reasoning SFT stage and runs RL with verifiable
+rewards; [LIT-466](LIT-466.md) evaluates models whose defining feature is
+an extended thinking trace. Both assume the thing this paper established.
+Declared as `extends: LIT-035`, the GPT-3 paper, because few-shot prompting
+is what it modifies.

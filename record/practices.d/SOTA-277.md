@@ -37,7 +37,7 @@ explained_by:
 - THEORY-038
 ---
 
-<!-- inactive-ok-file: SOTA-125 SOTA-144 SOTA-tmpnjlal — SOTA-125 is Proposed and is the tiny-model neighbour this is compared with rather than derived from; SOTA-144 and SOTA-tmpnjlal are Proposed and are named to say that the cost of depth is an open question, which is a caveat rather than a claim -->
+<!-- inactive-ok-file: SOTA-125 SOTA-144 SOTA-275 — SOTA-125 is Proposed and is the tiny-model neighbour this is compared with rather than derived from; SOTA-144 and SOTA-275 are Proposed and are named to say that the cost of depth is an open question, which is a caveat rather than a claim -->
 # SOTA-277: For a task that is a sequential composition, buy depth rather than width
 
 ## Source
@@ -86,7 +86,7 @@ recommendation is the reason.
   touch.
 - **Depth is not free.** Deeper models are harder to train and to scale;
   the depth parameterization is its own open question — see
-  [SOTA-144](../practices.d/SOTA-144.md) and [SOTA-tmpnjlal](../practices.d/SOTA-tmpnjlal.md) — and none of that cost
+  [SOTA-144](../practices.d/SOTA-144.md) and [SOTA-275](SOTA-275.md) — and none of that cost
   appears in a representability bound.
 
 ## Relation to the neighbours

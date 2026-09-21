@@ -1,0 +1,94 @@
+---
+status: Active
+title: 'Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation'
+version: 1
+tags:
+- generative-modeling
+- representation-and-encoding
+- model-architecture
+date: '2026-09-21'
+published: '2024-06-10'
+arxiv: '2406.06525'
+first_author: 'Sun'
+keywords:
+- 'llamagen'
+- 'image-tokenizer'
+- 'codebook-dimension'
+- 'codebook-usage'
+- 'next-token-prediction'
+- 'reconstruction-fid'
+extends:
+- LIT-tmpb17dj
+implementations: []
+summary: >-
+  Sun et al. (2024), [ARXIV-2406.06525](https://arxiv.org/abs/2406.06525). Keeps VQGAN's
+  encoder-quantizer-decoder and retunes the codebook: `ℓ₂`-normalized codes,
+  **vector dimension 8** instead of 256, size 16384. Utilization goes from
+  **0.29% to 97%** and rFID from 9.21 to 2.19. Its other measurement is the
+  one the record needed — the *same* tokenizer spans rFID **2.19 → 0.70**
+  purely by changing how many tokens the image gets.
+compared_against:
+- LIT-494
+---
+
+# LIT-tmpflmiq: Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation
+
+Sun, Jiang, Chen, Zhang, Peng, Luo and Yuan (2024) —
+[ARXIV-2406.06525](https://arxiv.org/abs/2406.06525).
+
+## Key takeaways
+
+- **The codebook ablation is the part this record files.** At downsample 16,
+  codebook size 16384, on ImageNet 50k validation:
+
+  | code dim | rFID | PSNR | SSIM | usage |
+  |---|---|---|---|---|
+  | 256 | 9.21 | 18.32 | 0.575 | **0.29%** |
+  | 32 | 3.22 | 19.98 | 0.646 | 20.9% |
+  | **8** | **2.19** | 20.79 | 0.675 | **97.0%** |
+  | 4 | 9.88 | 19.39 | 0.593 | 82.0% |
+
+  A 256-dimensional codebook uses **three codes in a thousand**. Shrinking the
+  code is what makes the codebook exist at all.
+- **It is not monotone, and the caption says it is.** "Lower vector dimension
+  (from 256 to 8) improves both reconstruction quality and codebook usage
+  significantly" is true over the range it names and the table's next row,
+  dimension 4, reverses it — 9.88 rFID, worse than dimension 256. The
+  codebook-size caption is bounded the same way: "from 4096 to 16384", where
+  32768 is worse (2.26 vs 2.19) and usage runs 100% / 75% / 97% / 85%, which
+  is not monotone either.
+- **rFID is meaningless without the token count**, and this paper is where
+  that becomes measurable. Same tokenizer, downsample 16: 256 tokens →
+  **2.19**, 576 tokens → **0.94**, 1024 tokens → **0.70**. At downsample 8:
+  1024 → 0.59, 2304 → 0.37, 4096 → 0.39. A three-fold range from a knob that
+  is not the tokenizer.
+- **The abstract quotes the 576-token row.** "An image tokenizer with
+  downsample ratio of 16, reconstruction quality of 0.94 rFID" is true and
+  will be read as `256×256 → 16×16`, which is 2.19. The 0.94 comes from
+  encoding a `384×384` input to 576 tokens and resizing the reconstruction
+  back to 256 for scoring. §4's text gives the same pair as 2.43 and 0.99,
+  matching neither the table nor the abstract.
+- **Generation:** 2.18 FID on ImageNet `256×256` at 3.1B parameters, beating
+  LDM and DiT with no visual inductive bias, and 326–414% inference speedup
+  from standard LLM serving frameworks.
+- **Entropy loss is deliberately omitted** from codebook learning "for
+  simplicity", unlike MaskGIT and the MAGVIT line. Worth knowing when the
+  utilization numbers are compared across papers.
+
+## Standing in the anthology
+
+The measurement half of the tokenizer trunk, and the source for both practices
+filed in this contribution: [SOTA-tmpjm39m](../practices.d/SOTA-tmpjm39m.md) on code dimension and
+utilization, and [SOTA-tmp0cq9u](../practices.d/SOTA-tmp0cq9u.md) on what a reconstruction FID has to state
+before it means anything.
+
+It also settles a question [LIT-494](../literature.d/LIT-494.md) raised and could not
+answer. GaussianToken compares itself to "LlamaGen 2.19" at 256 tokens, which
+is the honest row — and then adds five continuous parameters per token, so the
+rate is unmatched in the other direction. Having this paper in the record is
+what lets that be stated as a fact about two documents rather than an
+observation about one.
+
+The design it credits — `ℓ₂`-normalized codes, low dimension, large codebook
+— it attributes to Yu et al. (2021), ViT-VQGAN, which the record does not
+hold. That is the next gap in this line and is named rather than filled.

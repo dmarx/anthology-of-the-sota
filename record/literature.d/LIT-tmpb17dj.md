@@ -1,0 +1,86 @@
+---
+status: Active
+title: 'Taming Transformers for High-Resolution Image Synthesis'
+version: 1
+tags:
+- representation-and-encoding
+- generative-modeling
+- model-architecture
+date: '2026-09-21'
+published: '2020-12-17'
+arxiv: '2012.09841'
+first_author: 'Esser'
+keywords:
+- 'vqgan'
+- 'image-tokenizer'
+- 'perceptual-loss'
+- 'patch-discriminator'
+- 'adaptive-loss-weight'
+- 'autoregressive-transformer'
+extends:
+- LIT-tmpxz6hg
+implementations: []
+summary: >-
+  Esser, Rombach and Ommer (2020), [ARXIV-2012.09841](https://arxiv.org/abs/2012.09841). Adds a
+  perceptual loss and a patch-based discriminator to the VQ autoencoder, with
+  an adaptive weight `λ = ∇[L_rec] / (∇[L_GAN] + δ)` computed from the decoder's
+  last layer. The result is that `f = 16` compression stops destroying
+  perceptual quality, so a `256×256` image becomes **16×16 tokens** a
+  transformer can model. Every tokenizer in this line since is this
+  architecture with the codebook retuned.
+extended_by:
+- LIT-494
+- LIT-tmpflmiq
+- LIT-tmpig8jj
+---
+
+# LIT-tmpb17dj: Taming Transformers for High-Resolution Image Synthesis
+
+Esser, Rombach and Ommer (2020) —
+[ARXIV-2012.09841](https://arxiv.org/abs/2012.09841), read as [NOTE-tmpgjjku](../notes.d/NOTE-tmpgjjku.md).
+
+## Key takeaways
+
+- **The contribution is a loss, not an architecture.** Encoder, codebook and
+  decoder are VQ-VAE's. What is added is a perceptual loss and an adversarial
+  term from a patch-based discriminator, which together let the model throw
+  away sixteen-fold spatial detail and still produce something that looks
+  right — pixel-wise reconstruction at that ratio does not.
+- **The adaptive weight is the practical detail people reimplement.**
+  `λ = ∇_{G_L}[L_rec] / (∇_{G_L}[L_GAN] + δ)`, gradients taken with respect to
+  the decoder's last layer. It balances two losses whose scales are not
+  commensurable and would otherwise need hand-tuning per dataset.
+- **The compression ratio is the point.** The paper's own framing is that
+  transformers are expressive and quadratic, so the way to put one on an image
+  is to shorten the sequence first — "use CNNs to learn a context-rich
+  vocabulary of image constituents, and transformers to model their
+  composition". `f = 16` is what makes `256×256` into 256 tokens.
+- **Only the full `f = 16` setting synthesizes high fidelity**, per the
+  paper's own ablation over compression ratios; smaller `f` leaves sequences
+  too long to model, larger `f` loses too much.
+- **Sliding-window attention for megapixels.** High-resolution synthesis is
+  done by attending within a window and sliding it, which is what makes the
+  "first semantically-guided megapixel synthesis with transformers" claim
+  possible; the transformer never sees the whole image at once.
+- **The transformer prior is autoregressive in raster order**, which is the
+  design decision MaskGIT ([LIT-tmpig8jj](../literature.d/LIT-tmpig8jj.md)) rejects and LlamaGen
+  ([LIT-tmpflmiq](../literature.d/LIT-tmpflmiq.md)) doubles down on.
+
+## Standing in the anthology
+
+The paper that made discrete image tokens practical, and the reason the rest
+of this line exists. Filed as the second step of the trunk
+[#243](https://github.com/dmarx/anthology-of-the-sota/issues/243) named.
+
+It is also the direct ancestor of something the record already holds on the
+continuous side: [SOTA-187](../practices.d/SOTA-187.md) says to train a generative model in a
+learned compressed latent rather than at full resolution, and the latent
+diffusion work that practice rests on comes from two of these three authors,
+with the same encoder-decoder and the quantization removed. The record had the
+continuous branch and not the discrete one; it now has both, and they are the
+same idea with different bottlenecks.
+
+**No practice from this paper alone.** Its design choices are now the
+substrate rather than a live recommendation — everyone in the line runs them
+— and the two practices filed in this contribution rest on the later ablations
+that measured the parts of it that are still tunable.

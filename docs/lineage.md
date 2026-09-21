@@ -8,11 +8,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ## adaptation-and-tuning
 
-### From Language Models are Few-Shot Learners
-
-- [LIT-035](../record/literature.d/LIT-035.md) — Language Models are Few-Shot Learners *(Active)*
-  - [LIT-467](../record/literature.d/LIT-467.md) — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models *(Active)*
-
 ### From Deep reinforcement learning from human preferences
 
 - [LIT-434](../record/literature.d/LIT-434.md) — Deep reinforcement learning from human preferences *(Active)*
@@ -78,6 +73,8 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-035](../record/literature.d/LIT-035.md) — Language Models are Few-Shot Learners *(Active)*
   - [LIT-467](../record/literature.d/LIT-467.md) — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models *(Active)*
+    - [LIT-468](../record/literature.d/LIT-468.md) — Self-Consistency Improves Chain of Thought Reasoning in Language Models *(Active)*
+    - [LIT-469](../record/literature.d/LIT-469.md) — Large Language Models are Zero-Shot Reasoners *(Active)*
 
 ## model-architecture
 

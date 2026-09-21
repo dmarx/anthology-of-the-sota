@@ -6,7 +6,7 @@
 
 **Adaptation and tuning** — taking a trained model somewhere new — fine-tuning and transfer, preference training and safety alignment, parameter-efficient adaptation, context extension.
 
-18 of 279 SOTA documents. Back to the [full index](../README.md).
+18 of 281 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

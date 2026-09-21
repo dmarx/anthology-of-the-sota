@@ -6,7 +6,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-176 of 279 SOTA documents. Back to the [full index](../README.md).
+178 of 281 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -186,3 +186,5 @@
 | [SOTA-270](../../../record/practices.d/SOTA-270.md) | Do not read a smooth loss curve as evidence of smooth training; decompose it when the answer matters | Kangaslahti et al. (2025), [LIT-455](../../../record/literature.d/LIT-455.md), with Cohen et al. [LIT-453](../../../record/literature.d/LIT-453.md) and Kunin et al. [LIT-454](../../../record/literature.d/LIT-454.md) — the curve time-averages oscillation, sums over differently-timed abrupt transitions, and reads flat while the weights still travel. Smoothness is what many breakthroughs look like added up, so it is not evidence about the training. | Active |
 | [SOTA-278](../../../record/practices.d/SOTA-278.md) | Before reporting that a model cannot do something, rule out the evaluation | Hu and Frank (2024), [LIT-465](../../../record/literature.d/LIT-465.md) — the same capacity asked two ways scores differently, and the gap widens as the model weakens. Lawsen (2025), [LIT-463](../../../record/literature.d/LIT-463.md), is the worked example: an output cap, a scorer that cannot express refusal, and instances with no solution. | Active |
 | [SOTA-279](../../../record/practices.d/SOTA-279.md) | Put worked reasoning steps in the few-shot exemplars when the task needs more than one step, and only once the model is large enough | Wei et al. (2022), [LIT-467](../../../record/literature.d/LIT-467.md) — eight exemplars carrying worked steps more than doubled PaLM 540B on GSM8K, beating a fine-tuned model with a verifier. Three ablations rule out the equation, the extra tokens and knowledge activation. Below ~100B it does nothing or hurts. | Active |
+| [SOTA-280](../../../record/practices.d/SOTA-280.md) | Sample several reasoning paths and take the majority answer rather than decoding one greedily | Wang et al. (2022), [LIT-468](../../../record/literature.d/LIT-468.md) — replace greedy decoding with sample-and-marginalize: GSM8K +17.9, SVAMP +11.0, AQuA +12.2. Five or ten paths recover most of it, which is the whole cost question. | Active |
+| [SOTA-281](../../../record/practices.d/SOTA-281.md) | Try the single step-by-step instruction before writing exemplars; it recovers most of the gain for none of the labour | Kojima et al. (2022), [LIT-469](../../../record/literature.d/LIT-469.md) — one fixed sentence with no exemplars takes MultiArith from 17.7% to 78.7% and GSM8K from 10.4% to 40.7%. It beats eight-shot standard prompting and loses to hand-written few-shot chains, which is the ordering that makes it a first move. | Active |

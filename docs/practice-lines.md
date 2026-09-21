@@ -299,3 +299,5 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [SOTA-037](../record/practices.d/SOTA-037.md) — LM in-context learning emerges at scale *(Active, unassessed)*
   - [SOTA-038](../record/practices.d/SOTA-038.md) — ICL permits few-shot task adaptability *(Active, unassessed)*
     - [SOTA-279](../record/practices.d/SOTA-279.md) — Put worked reasoning steps in the few-shot exemplars when the task needs more than one step, and only once the model is large enough *(Active, universal)*
+      - [SOTA-280](../record/practices.d/SOTA-280.md) — Sample several reasoning paths and take the majority answer rather than decoding one greedily *(Active, emerging)*
+      - [SOTA-281](../record/practices.d/SOTA-281.md) — Try the single step-by-step instruction before writing exemplars; it recovers most of the gain for none of the labour *(Active, universal)*

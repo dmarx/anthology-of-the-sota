@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-386 of 402 LIT documents. Back to the [full index](../README.md).
+388 of 404 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -396,3 +396,5 @@
 | [LIT-465](../../../record/literature.d/LIT-465.md) | Auxiliary task demands mask the capabilities of smaller language models | Hu and Frank (2024), [ARXIV-2404.02418](https://arxiv.org/abs/2404.02418). Across four capacities, the higher-demand way of asking scores lower than the lower-demand way of asking the same question — and the gap is widest for the smallest and least-trained models, so demands are mistaken for missing capability. COLM 2024. | Active |
 | [LIT-466](../../../record/literature.d/LIT-466.md) | The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity | Shojaee et al. (2025), [ARXIV-2506.06941](https://arxiv.org/abs/2506.06941). Controllable puzzles instead of contaminated benchmarks, and reasoning models collapse to zero accuracy past a complexity threshold while *reducing* their thinking tokens. NeurIPS 2025; the collapse reading is publicly contested and the three-regime finding is not. | Active |
 | [LIT-467](../../../record/literature.d/LIT-467.md) | Chain-of-Thought Prompting Elicits Reasoning in Large Language Models | Wei et al. (2022), [ARXIV-2201.11903](https://arxiv.org/abs/2201.11903). Put worked reasoning steps in the few-shot exemplars and a 540B model more than doubles on GSM8K. Three ablations rule out the obvious alternative explanations, and the effect is absent — sometimes negative — below about 100B parameters. | Active |
+| [LIT-468](../../../record/literature.d/LIT-468.md) | Self-Consistency Improves Chain of Thought Reasoning in Language Models | Wang et al. (2022), [ARXIV-2203.11171](https://arxiv.org/abs/2203.11171). Replace greedy decoding with sample-and-marginalize: draw several reasoning paths, take the most common final answer. GSM8K +17.9, SVAMP +11.0, AQuA +12.2. The gain saturates by about five or ten samples. | Active |
+| [LIT-469](../../../record/literature.d/LIT-469.md) | Large Language Models are Zero-Shot Reasoners | Kojima et al. (2022), [ARXIV-2205.11916](https://arxiv.org/abs/2205.11916). One fixed sentence — "Let's think step by step" — with no exemplars at all takes MultiArith from 17.7% to 78.7% and GSM8K from 10.4% to 40.7%. It beats eight-shot standard prompting and still loses to hand-written few-shot chains. | Active |

@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-213 of 216 NOTE documents. Back to the [full index](../README.md).
+215 of 218 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -223,3 +223,5 @@
 | [NOTE-214](../../../record/notes.d/NOTE-214.md) | Limitations of multi-layer Transformers | First unconditional lower bound for a decoder-only transformer of more than one layer. Reading it: the bound comes from causal masking rather than from circuit complexity, and it buys an exponential depth-width tradeoff, an encoder/decoder separation, and a provable benefit of chain of thought. | Read |
 | [NOTE-215](../../../record/notes.d/NOTE-215.md) | Auxiliary Task Demands | Four capacities, each measured two ways; the higher-demand way scores lower and the gap shrinks with model size and training time. Reading it: the interaction is what matters, because it means cross-scale comparisons under a demanding evaluation overstate the difference between models. | Read |
 | [NOTE-216](../../../record/notes.d/NOTE-216.md) | Chain-of-Thought Prompting | Worked reasoning steps in the few-shot exemplars, nothing else. Reading it: the three ablations are the contribution — it is not the equation, not the extra tokens, and not knowledge activation — and the effect is absent or negative below about 100B parameters. | Read |
+| [NOTE-217](../../../record/notes.d/NOTE-217.md) | Self-Consistency | Sample several chains, take the majority answer. Reading it: it is a decoding change rather than a prompt change, so it composes with everything else in the topic — and it counts answers, not reasoning, so it does not make the traces trustworthy. | Read |
+| [NOTE-218](../../../record/notes.d/NOTE-218.md) | Zero-Shot CoT | One fixed sentence, no exemplars, twelve datasets. Reading it: the ordering is the practical content — it loses to hand-written few-shot chains and beats eight-shot standard prompting, so it is the baseline to try first rather than the method to settle on. | Read |

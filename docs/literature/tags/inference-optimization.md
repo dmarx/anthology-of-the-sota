@@ -6,7 +6,7 @@
 
 **Inference optimization** — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
 
-9 of 402 LIT documents. Back to the [full index](../README.md).
+10 of 404 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -19,3 +19,4 @@
 | [LIT-375](../../../record/literature.d/LIT-375.md) | Accelerating Large Language Model Decoding with Speculative Sampling | Chen et al. (2023), [ARXIV-2302.01318](https://arxiv.org/abs/2302.01318). The same algorithm as [LIT-376](../../../record/literature.d/LIT-376.md), arrived at independently two months later and demonstrated at a scale the first paper did not reach: Chinchilla, 70B, in a distributed setup, 2-2.5x decoding speedup with the target distribution preserved "within hardware numerics". Its sharpest observation is that the resulting tokens per second "often exceeds the idealised ceiling on auto-regressive sampling speed imposed by the memory bandwidth" — which is the premise of the whole family, measured. | Active |
 | [LIT-376](../../../record/literature.d/LIT-376.md) | Fast Inference from Transformers via Speculative Decoding | Leviathan et al. (2022), [ARXIV-2211.17192](https://arxiv.org/abs/2211.17192). Decoding is serial and memory-bandwidth-bound, so the arithmetic units are idle. Speculative decoding spends them: a cheap draft model guesses `gamma` tokens, the target model scores all `gamma + 1` positions in one parallel pass, and an accept-reject rule keeps a prefix of the guesses. The output distribution is exactly the target's — not approximately — and the serial count can never exceed plain autoregressive decoding. 2x-3x on T5-XXL with identical outputs. | Active |
 | [LIT-428](../../../record/literature.d/LIT-428.md) | Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention | Katharopoulos et al. (2020), [ARXIV-2006.16236](https://arxiv.org/abs/2006.16236). Where linear attention comes from, and the identity the record argues about in twelve documents without being able to cite it: drop the softmax for a kernel feature map, associativity reorders the product to O(N), and the autoregressive case is then literally an RNN. | Active |
+| [LIT-468](../../../record/literature.d/LIT-468.md) | Self-Consistency Improves Chain of Thought Reasoning in Language Models | Wang et al. (2022), [ARXIV-2203.11171](https://arxiv.org/abs/2203.11171). Replace greedy decoding with sample-and-marginalize: draw several reasoning paths, take the most common final answer. GSM8K +17.9, SVAMP +11.0, AQuA +12.2. The gain saturates by about five or ten samples. | Active |

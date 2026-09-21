@@ -1,5 +1,8 @@
 ---
+number: 280
 status: Active
+formerly:
+- SOTA-tmp9d9au
 consensus: emerging
 consensus_note: >-
   One group, one paper, but across four model families and five benchmarks,
@@ -13,24 +16,24 @@ tags:
 - inference-optimization
 date: '2026-09-21'
 source:
-- LIT-tmp43eio
+- LIT-468
 introduced_by:
-- LIT-tmp43eio
+- LIT-468
 extends:
 - SOTA-279
 implementations: []
 summary: >-
-  Wang et al. (2022), [LIT-tmp43eio](../literature.d/LIT-tmp43eio.md) — replace greedy decoding with
+  Wang et al. (2022), [LIT-468](../literature.d/LIT-468.md) — replace greedy decoding with
   sample-and-marginalize: GSM8K +17.9, SVAMP +11.0, AQuA +12.2. Five or ten
   paths recover most of it, which is the whole cost question.
 ---
 
-# SOTA-tmp9d9au: Sample several reasoning paths and take the majority answer rather than decoding one greedily
+# SOTA-280: Sample several reasoning paths and take the majority answer rather than decoding one greedily
 
 ## Source
 
-Wang et al. (2022), [LIT-tmp43eio](../literature.d/LIT-tmp43eio.md) — [ARXIV-2203.11171](https://arxiv.org/abs/2203.11171),
-read as [NOTE-tmpkw9rw](../notes.d/NOTE-tmpkw9rw.md).
+Wang et al. (2022), [LIT-468](../literature.d/LIT-468.md) — [ARXIV-2203.11171](https://arxiv.org/abs/2203.11171),
+read as [NOTE-217](../notes.d/NOTE-217.md).
 
 ## What to do
 
@@ -79,7 +82,7 @@ Extends [SOTA-279](../practices.d/SOTA-279.md) by changing how its output is rea
 it is asked. Being a sampling algorithm, it also files under
 `inference-optimization`, whose blurb names them.
 
-It composes with [SOTA-tmpi7boj](../practices.d/SOTA-tmpi7boj.md) in principle — nothing requires the
+It composes with [SOTA-281](../practices.d/SOTA-281.md) in principle — nothing requires the
 sampled chains to come from exemplars rather than a trigger sentence — but
 that pairing is not what either paper measured, and the record should not
 imply it was.

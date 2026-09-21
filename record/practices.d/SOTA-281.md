@@ -1,5 +1,8 @@
 ---
+number: 281
 status: Active
+formerly:
+- SOTA-tmpi7boj
 consensus: universal
 consensus_note: >-
   "Let's think step by step" is one of the most widely repeated instructions
@@ -12,25 +15,25 @@ tags:
 - in-context-learning
 date: '2026-09-21'
 source:
-- LIT-tmpglf4i
+- LIT-469
 introduced_by:
-- LIT-tmpglf4i
+- LIT-469
 extends:
 - SOTA-279
 implementations: []
 summary: >-
-  Kojima et al. (2022), [LIT-tmpglf4i](../literature.d/LIT-tmpglf4i.md) — one fixed sentence with no
+  Kojima et al. (2022), [LIT-469](../literature.d/LIT-469.md) — one fixed sentence with no
   exemplars takes MultiArith from 17.7% to 78.7% and GSM8K from 10.4% to
   40.7%. It beats eight-shot standard prompting and loses to hand-written
   few-shot chains, which is the ordering that makes it a first move.
 ---
 
-# SOTA-tmpi7boj: Try the single step-by-step instruction before writing exemplars; it recovers most of the gain for none of the labour
+# SOTA-281: Try the single step-by-step instruction before writing exemplars; it recovers most of the gain for none of the labour
 
 ## Source
 
-Kojima et al. (2022), [LIT-tmpglf4i](../literature.d/LIT-tmpglf4i.md) — [ARXIV-2205.11916](https://arxiv.org/abs/2205.11916),
-read as [NOTE-tmpsi60o](../notes.d/NOTE-tmpsi60o.md).
+Kojima et al. (2022), [LIT-469](../literature.d/LIT-469.md) — [ARXIV-2205.11916](https://arxiv.org/abs/2205.11916),
+read as [NOTE-218](../notes.d/NOTE-218.md).
 
 ## What to do
 
@@ -73,6 +76,6 @@ price and you should find out what it buys on your task before paying it.
 ## Relation to the neighbours
 
 Extends [SOTA-279](../practices.d/SOTA-279.md) by removing its exemplars. It composes with
-[SOTA-tmp9d9au](../practices.d/SOTA-tmp9d9au.md) in principle — nothing requires the sampled chains to
+[SOTA-280](../practices.d/SOTA-280.md) in principle — nothing requires the sampled chains to
 come from exemplars — though that combination is not what either paper
 measured.

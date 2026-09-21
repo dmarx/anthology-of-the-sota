@@ -20,11 +20,11 @@
 **[generative-modeling](tags/generative-modeling.md)** (15):
 [009](../../record/notes.d/NOTE-009.md) · [019](../../record/notes.d/NOTE-019.md) · [040](../../record/notes.d/NOTE-040.md) · [043](../../record/notes.d/NOTE-043.md) · [048](../../record/notes.d/NOTE-048.md) · [053](../../record/notes.d/NOTE-053.md) · [063](../../record/notes.d/NOTE-063.md) · [064](../../record/notes.d/NOTE-064.md) · [067](../../record/notes.d/NOTE-067.md) · [068](../../record/notes.d/NOTE-068.md) · [166](../../record/notes.d/NOTE-166.md) · [192](../../record/notes.d/NOTE-192.md) · [196](../../record/notes.d/NOTE-196.md) · [197](../../record/notes.d/NOTE-197.md) · [198](../../record/notes.d/NOTE-198.md)
 
-**[in-context-learning](tags/in-context-learning.md)** (4):
-[049](../../record/notes.d/NOTE-049.md) · [167](../../record/notes.d/NOTE-167.md) · [214](../../record/notes.d/NOTE-214.md) · [216](../../record/notes.d/NOTE-216.md)
+**[in-context-learning](tags/in-context-learning.md)** (6):
+[049](../../record/notes.d/NOTE-049.md) · [167](../../record/notes.d/NOTE-167.md) · [214](../../record/notes.d/NOTE-214.md) · [216](../../record/notes.d/NOTE-216.md) · [217](../../record/notes.d/NOTE-217.md) · [218](../../record/notes.d/NOTE-218.md)
 
-**[inference-optimization](tags/inference-optimization.md)** (5):
-[023](../../record/notes.d/NOTE-023.md) · [159](../../record/notes.d/NOTE-159.md) · [160](../../record/notes.d/NOTE-160.md) · [162](../../record/notes.d/NOTE-162.md) · [163](../../record/notes.d/NOTE-163.md)
+**[inference-optimization](tags/inference-optimization.md)** (6):
+[023](../../record/notes.d/NOTE-023.md) · [159](../../record/notes.d/NOTE-159.md) · [160](../../record/notes.d/NOTE-160.md) · [162](../../record/notes.d/NOTE-162.md) · [163](../../record/notes.d/NOTE-163.md) · [217](../../record/notes.d/NOTE-217.md)
 
 **[model-architecture](tags/model-architecture.md)** (12):
 [004](../../record/notes.d/NOTE-004.md) · [011](../../record/notes.d/NOTE-011.md) · [016](../../record/notes.d/NOTE-016.md) · [028](../../record/notes.d/NOTE-028.md) · [054](../../record/notes.d/NOTE-054.md) · [055](../../record/notes.d/NOTE-055.md) · [060](../../record/notes.d/NOTE-060.md) · [069](../../record/notes.d/NOTE-069.md) · [168](../../record/notes.d/NOTE-168.md) · [170](../../record/notes.d/NOTE-170.md) · [196](../../record/notes.d/NOTE-196.md) · [214](../../record/notes.d/NOTE-214.md)
@@ -47,7 +47,7 @@
 **[vision-and-graphics](tags/vision-and-graphics.md)** (18):
 [018](../../record/notes.d/NOTE-018.md) · [027](../../record/notes.d/NOTE-027.md) · [032](../../record/notes.d/NOTE-032.md) · [035](../../record/notes.d/NOTE-035.md) · [037](../../record/notes.d/NOTE-037.md) · [042](../../record/notes.d/NOTE-042.md) · [044](../../record/notes.d/NOTE-044.md) · [045](../../record/notes.d/NOTE-045.md) · [046](../../record/notes.d/NOTE-046.md) · [047](../../record/notes.d/NOTE-047.md) · [170](../../record/notes.d/NOTE-170.md) · [171](../../record/notes.d/NOTE-171.md) · [172](../../record/notes.d/NOTE-172.md) · [173](../../record/notes.d/NOTE-173.md) · [185](../../record/notes.d/NOTE-185.md) · [186](../../record/notes.d/NOTE-186.md) · [187](../../record/notes.d/NOTE-187.md) · [188](../../record/notes.d/NOTE-188.md)
 
-**By status:** [Read](status/Read.md) (213) · [Skimmed](status/Skimmed.md) (3) · [Unread](status/Unread.md) (0) · [Re-read](status/Superseded.md) (0)
+**By status:** [Read](status/Read.md) (215) · [Skimmed](status/Skimmed.md) (3) · [Unread](status/Unread.md) (0) · [Re-read](status/Superseded.md) (0)
 
 What the status column means in this scheme — the words are luria's, the meanings are this project's.
 
@@ -276,4 +276,6 @@ What the status column means in this scheme — the words are luria's, the meani
 | [NOTE-214](../../record/notes.d/NOTE-214.md) | Limitations of multi-layer Transformers | First unconditional lower bound for a decoder-only transformer of more than one layer. Reading it: the bound comes from causal masking rather than from circuit complexity, and it buys an exponential depth-width tradeoff, an encoder/decoder separation, and a provable benefit of chain of thought. | Read |
 | [NOTE-215](../../record/notes.d/NOTE-215.md) | Auxiliary Task Demands | Four capacities, each measured two ways; the higher-demand way scores lower and the gap shrinks with model size and training time. Reading it: the interaction is what matters, because it means cross-scale comparisons under a demanding evaluation overstate the difference between models. | Read |
 | [NOTE-216](../../record/notes.d/NOTE-216.md) | Chain-of-Thought Prompting | Worked reasoning steps in the few-shot exemplars, nothing else. Reading it: the three ablations are the contribution — it is not the equation, not the extra tokens, and not knowledge activation — and the effect is absent or negative below about 100B parameters. | Read |
+| [NOTE-217](../../record/notes.d/NOTE-217.md) | Self-Consistency | Sample several chains, take the majority answer. Reading it: it is a decoding change rather than a prompt change, so it composes with everything else in the topic — and it counts answers, not reasoning, so it does not make the traces trustworthy. | Read |
+| [NOTE-218](../../record/notes.d/NOTE-218.md) | Zero-Shot CoT | One fixed sentence, no exemplars, twelve datasets. Reading it: the ordering is the practical content — it loses to hand-written few-shot chains and beats eight-shot standard prompting, so it is the baseline to try first rather than the method to settle on. | Read |
 

@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-54 of 402 LIT documents. Back to the [full index](../README.md).
+54 of 404 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

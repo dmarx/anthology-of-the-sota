@@ -1,6 +1,9 @@
 ---
+number: 218
 status: Read
-paper: LIT-tmpglf4i
+formerly:
+- NOTE-tmpsi60o
+paper: LIT-469
 title: 'Zero-Shot CoT'
 version: 1
 date: '2026-09-21'
@@ -12,7 +15,7 @@ summary: >-
 ---
 
 <!-- inactive-ok-file: ADR-050 — Proposed, and named as the decision that created the topic this reading is filed under, which is a fact about the filing rather than a claim resting on the decision -->
-# NOTE-tmpsi60o: Zero-Shot CoT
+# NOTE-218: Zero-Shot CoT
 
 ## Contribution
 
@@ -87,7 +90,7 @@ quantitatively evaluated.
 
 ## Bearing on the record
 
-- **It produces [SOTA-tmpi7boj](../practices.d/SOTA-tmpi7boj.md)**, which is a claim about what to try
+- **It produces [SOTA-281](../practices.d/SOTA-281.md)**, which is a claim about what to try
   *first* rather than what is best — an ordering, which is what C2 and C3
   together license and all they license.
 - **It sharpens [SOTA-279](../practices.d/SOTA-279.md)'s conditions.** That practice says to write

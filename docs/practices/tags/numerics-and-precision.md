@@ -6,7 +6,7 @@
 
 **Numerics and precision** — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them.
 
-16 of 279 SOTA documents. Back to the [full index](../README.md).
+16 of 281 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

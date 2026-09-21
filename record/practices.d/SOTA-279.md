@@ -29,8 +29,8 @@ summary: >-
   a verifier. Three ablations rule out the equation, the extra tokens and
   knowledge activation. Below ~100B it does nothing or hurts.
 extended_by:
-- SOTA-tmp9d9au
-- SOTA-tmpi7boj
+- SOTA-280
+- SOTA-281
 ---
 
 <!-- inactive-ok-file: SOTA-130 — Proposed, and named as a practice that assumes this one, not as a source for it -->

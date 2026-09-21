@@ -13,4 +13,4 @@ A relation is an assertion that the documents it joins have something in common.
 
 | Declared by | Field | Members |
 |---|---|---|
-| practice | `tags` | [SOTA-036](../../record/practices.d/SOTA-036.md), [SOTA-037](../../record/practices.d/SOTA-037.md), [SOTA-038](../../record/practices.d/SOTA-038.md), [SOTA-279](../../record/practices.d/SOTA-279.md) |
+| practice | `tags` | [SOTA-036](../../record/practices.d/SOTA-036.md), [SOTA-037](../../record/practices.d/SOTA-037.md), [SOTA-038](../../record/practices.d/SOTA-038.md), [SOTA-279](../../record/practices.d/SOTA-279.md), [SOTA-280](../../record/practices.d/SOTA-280.md), [SOTA-281](../../record/practices.d/SOTA-281.md) |

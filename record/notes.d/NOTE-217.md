@@ -1,6 +1,9 @@
 ---
+number: 217
 status: Read
-paper: LIT-tmp43eio
+formerly:
+- NOTE-tmpkw9rw
+paper: LIT-468
 title: 'Self-Consistency'
 version: 1
 date: '2026-09-21'
@@ -11,7 +14,7 @@ summary: >-
   make the traces trustworthy.
 ---
 
-# NOTE-tmpkw9rw: Self-Consistency
+# NOTE-217: Self-Consistency
 
 ## Contribution
 
@@ -74,13 +77,13 @@ decoding greedily; extract each path's final answer; return the most frequent.
 ## Connections
 
 Extends [LIT-467](../literature.d/LIT-467.md), which it leaves untouched and decodes differently. It
-composes with [LIT-tmpglf4i](../literature.d/LIT-tmpglf4i.md) — nothing about it requires the chains to
+composes with [LIT-469](../literature.d/LIT-469.md) — nothing about it requires the chains to
 come from exemplars rather than from a trigger sentence, though that
 combination is not what was measured here.
 
 ## Bearing on the record
 
-- **It produces [SOTA-tmp9d9au](../practices.d/SOTA-tmp9d9au.md)**, with the sample count and the
+- **It produces [SOTA-280](../practices.d/SOTA-280.md)**, with the sample count and the
   saturation guidance in its conditions, because the cost is the whole
   question a practitioner has.
 - **It is filed under `inference-optimization` as well as

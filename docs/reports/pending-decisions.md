@@ -143,7 +143,7 @@
 | 2026-09-16 | Proposed | [ADR-042](../../record/decisions.d/ADR-042.md) | 0 | 0 | A practice may be filed in order to say do not do this |
 | 2026-09-17 | Proposed | [ADR-043](../../record/decisions.d/ADR-043.md) | 6 | 0 | Doubt about whether an item is worth carrying is not a reason to leave it out, and not a third kind of provisional |
 | 2026-09-17 | Proposed | [ADR-045](../../record/decisions.d/ADR-045.md) | 2 | 0 | A claim about the signal is admissible however it was measured, including on people |
-| 2026-09-21 | Proposed | [ADR-050](../../record/decisions.d/ADR-050.md) | 2 | 0 | Two more topics: numerics and precision, and in-context learning |
+| 2026-09-21 | Proposed | [ADR-050](../../record/decisions.d/ADR-050.md) | 3 | 0 | Two more topics: numerics and precision, and in-context learning |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 

@@ -1,29 +1,42 @@
 ---
 number: 291
-status: Proposed
+status: Active
 formerly:
 - SOTA-tmphxqsm
-promote_when: >-
-  A specific-affordance evaluation run at collective scale with the group-level
-  outcome actually measured — the source notes two large platform studies that
-  tested realistic ranking changes and assessed only individual outcomes, so
-  the missing piece is small and nameable. A further argument that individual
-  trials are inadequate is not it; that is the premise.
-consensus: unreplicated
+consensus: emerging
 consensus_note: >-
   The negative half — that individual-level trials cannot identify collective
   effects when units interact — is not really in dispute once stated; SUTVA
-  violation and path-dependence are structural. What is unreplicated is the
-  positive programme, and its two sources share a first author, so the record
-  holds one position argued twice rather than two groups agreeing.
+  violation and path-dependence are structural. The positive programme now has
+  one execution as well as its argument, by a different group on a different
+  platform, which is why this is `emerging` rather than `unreplicated`. It is
+  not `converged`: one worked example is not a method the field runs, and the
+  two documents arguing for the programme still share a first author.
 title: 'Evaluate a specific intervention on a specific affordance rather than the net effect of the system, and never read an individual-level null as the absence of a collective effect'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-21'
+  note: >-
+    Proposed -> Active. The promotion condition asked for a specific-affordance
+    evaluation run at collective scale with the group-level outcome actually
+    measured, and named the gap as small and nameable. LIT-tmptnd18 is that
+    evaluation: one affordance (an AI drafting tool in one writing flow), a
+    coherent counterfactual (a staggered rollout that reached three countries
+    eleven weeks before a fourth), an eleven-week window against a 65-week
+    pre-period, and outcomes measured at the platform level rather than the
+    user level. The authors arrive at the design from this practice's own
+    reasoning independently — they decline individual-level estimates because
+    an interconnected platform biases them — which is stronger than following
+    the source would have been. The recommendation is unchanged; what changes
+    is that the positive half has been done rather than only argued.
 tags:
 - deployment-and-society
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
 - LIT-482
+- LIT-tmptnd18
 introduced_by:
 - LIT-482
 implementations: []
@@ -92,10 +105,20 @@ rather than looking for a better trial.
 no new data. The negative half is strong because two of its four mechanisms
 are structural; the positive half is three stated advantages and a direction.
 
-**The positive programme has not been run at the scale it asks for.** The
-source notes that two large platform studies did test realistic ranking
-interventions — and did not assess collective outcomes at the group level. So
-the missing step is specific and small, and nobody has taken it.
+**The positive programme has now been run once.** [LIT-tmptnd18](../literature.d/LIT-tmptnd18.md) takes
+one affordance — Change.org's in-platform AI drafting tool — across a
+staggered rollout, and measures platform-level outcomes: the share of
+petitions clearing a signature threshold, inter-petition homogeneity, and
+total participation. It finds the text transformed and the outcomes flat or
+worse. That is the missing step, taken, and the practice moves to `Active` on
+it.
+
+It is one execution, on a platform with four country-level clusters and an
+eleven-week window, and it should be read as proof that the design is
+available rather than as evidence that it is easy. The source's original
+observation still stands for the ranking literature specifically: the two
+large platform studies it named tested realistic interventions and assessed
+only individual outcomes.
 
 **"Limited value" is a judgement, not a measurement.** How much an
 individual-level trial still tells you is not quantified for any published

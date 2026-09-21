@@ -1,5 +1,8 @@
 ---
+number: 278
 status: Active
+formerly:
+- SOTA-tmpwqjj5
 consensus: emerging
 consensus_note: >-
   The demand gap is measured across five model families and the mechanism is
@@ -13,35 +16,35 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpmftfr
-- LIT-tmp85dyu
+- LIT-465
+- LIT-463
 introduced_by:
-- LIT-tmpmftfr
+- LIT-465
 implementations: []
 summary: >-
-  Hu and Frank (2024), [LIT-tmpmftfr](../literature.d/LIT-tmpmftfr.md) — the same capacity asked two
+  Hu and Frank (2024), [LIT-465](../literature.d/LIT-465.md) — the same capacity asked two
   ways scores differently, and the gap widens as the model weakens. Lawsen
-  (2025), [LIT-tmp85dyu](../literature.d/LIT-tmp85dyu.md), is the worked example: an output cap, a
+  (2025), [LIT-463](../literature.d/LIT-463.md), is the worked example: an output cap, a
   scorer that cannot express refusal, and instances with no solution.
 explained_by:
-- THEORY-tmptybdn
+- THEORY-039
 ---
 
-# SOTA-tmpwqjj5: Before reporting that a model cannot do something, rule out the evaluation
+# SOTA-278: Before reporting that a model cannot do something, rule out the evaluation
 
 ## Source
 
-Hu and Frank (2024), [LIT-tmpmftfr](../literature.d/LIT-tmpmftfr.md) — [ARXIV-2404.02418](https://arxiv.org/abs/2404.02418),
-read as [NOTE-tmpzsxfv](../notes.d/NOTE-tmpzsxfv.md) — for the systematic evidence. Lawsen (2025),
-[LIT-tmp85dyu](../literature.d/LIT-tmp85dyu.md), for the worked example. Accounted for by
-[THEORY-tmptybdn](../theory.d/THEORY-tmptybdn.md).
+Hu and Frank (2024), [LIT-465](../literature.d/LIT-465.md) — [ARXIV-2404.02418](https://arxiv.org/abs/2404.02418),
+read as [NOTE-215](../notes.d/NOTE-215.md) — for the systematic evidence. Lawsen (2025),
+[LIT-463](../literature.d/LIT-463.md), for the worked example. Accounted for by
+[THEORY-039](../theory.d/THEORY-039.md).
 
 ## What to check
 
 Four checks, in rough order of how often they bite.
 
 **Are any of the instances impossible?** Verify solvability before scoring.
-The River Crossing benchmark in [LIT-tmpzsiks](../literature.d/LIT-tmpzsiks.md) includes
+The River Crossing benchmark in [LIT-466](../literature.d/LIT-466.md) includes
 configurations with no solution — the Missionaries–Cannibals family has none
 for more than five pairs with a boat of three — and models were scored zero
 for not solving them. This is the cheapest check and the one that produced an
@@ -73,7 +76,7 @@ less-trained models — significantly so across five model families.
 Because the check is cheap, the mechanism is measured rather than argued, and
 the failure it prevents is expensive: a published claim that a class of model
 cannot do something, when what was observed is that an evaluation did not let
-it. [LIT-tmpmftfr](../literature.d/LIT-tmpmftfr.md) is a peer-reviewed study across 13 models and five
+it. [LIT-465](../literature.d/LIT-465.md) is a peer-reviewed study across 13 models and five
 families with a stated statistical test, and it is the source of record here.
 The dispute that supplies the vivid example is *not* settled and the practice
 does not need it to be.
@@ -92,11 +95,11 @@ does not need it to be.
   the cases people argue about hardest, the strongest form of this check is
   unavailable and the four structural checks above are what is left.
 - **The worked example is a preprint with known weaknesses**, and they are
-  recorded in [NOTE-tmp8e2j0](../notes.d/NOTE-tmp8e2j0.md): single author, underpowered central
+  recorded in [NOTE-213](../notes.d/NOTE-213.md): single author, underpowered central
   experiment, already publicly corrected once. Its unsolvable-instance claim
   is a mathematical fact and does not depend on any of that; the rest of it
   is argument.
-- **Do not read this as a verdict on [LIT-tmpzsiks](../literature.d/LIT-tmpzsiks.md).** That paper is
+- **Do not read this as a verdict on [LIT-466](../literature.d/LIT-466.md).** That paper is
   NeurIPS 2025, revised after the comment, and its three-regime result is
   untouched. It is the example because it is well documented, not because the
   record has decided it is wrong.

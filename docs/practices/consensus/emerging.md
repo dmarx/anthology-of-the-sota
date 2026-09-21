@@ -6,7 +6,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-36 of 276 SOTA documents. Back to the [full index](../README.md).
+37 of 278 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -46,3 +46,4 @@
 | [SOTA-266](../../../record/practices.d/SOTA-266.md) | Connect data and noise on a straight line, and sample the training timesteps from a logit-normal rather than uniformly | Esser et al. (2024), [LIT-449](../../../record/literature.d/LIT-449.md), and Ma et al. (2024), [LIT-447](../../../record/literature.d/LIT-447.md) — the straight-line path between data and noise beats the curved variance-preserving one at fixed architecture and compute, and the advantage is largest at few sampling steps. The timestep distribution is not a detail: rectified flow with uniform timesteps does not win, and with a logit-normal it does. | Active |
 | [SOTA-269](../../../record/practices.d/SOTA-269.md) | Keep a knowledge base outside the weights; parameters are an expensive and lossy place to memorise facts | Lu et al. (2024), [LIT-452](../../../record/literature.d/LIT-452.md) — fact capacity is linear in model size and saturates in epochs, and the extrapolation is damning: all of Wikidata would want about 1000B non-embedding parameters trained for 100 epochs. Derivable facts cost full price unless they happen to share direction and structure. Borgeaud et al., [LIT-060](../../../record/literature.d/LIT-060.md), is the record's evidence that the alternative works at scale. | Active |
 | [SOTA-270](../../../record/practices.d/SOTA-270.md) | Do not read a smooth loss curve as evidence of smooth training; decompose it when the answer matters | Kangaslahti et al. (2025), [LIT-455](../../../record/literature.d/LIT-455.md), with Cohen et al. [LIT-453](../../../record/literature.d/LIT-453.md) and Kunin et al. [LIT-454](../../../record/literature.d/LIT-454.md) — the curve time-averages oscillation, sums over differently-timed abrupt transitions, and reads flat while the weights still travel. Smoothness is what many breakthroughs look like added up, so it is not evidence about the training. | Active |
+| [SOTA-278](../../../record/practices.d/SOTA-278.md) | Before reporting that a model cannot do something, rule out the evaluation | Hu and Frank (2024), [LIT-465](../../../record/literature.d/LIT-465.md) — the same capacity asked two ways scores differently, and the gap widens as the model weakens. Lawsen (2025), [LIT-463](../../../record/literature.d/LIT-463.md), is the worked example: an output cap, a scorer that cannot express refusal, and instances with no solution. | Active |

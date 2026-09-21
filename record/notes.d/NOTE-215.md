@@ -1,6 +1,9 @@
 ---
+number: 215
 status: Read
-paper: LIT-tmpmftfr
+formerly:
+- NOTE-tmpzsxfv
+paper: LIT-465
 title: 'Auxiliary Task Demands'
 version: 1
 date: '2026-09-21'
@@ -11,7 +14,7 @@ summary: >-
   a demanding evaluation overstate the difference between models.
 ---
 
-# NOTE-tmpzsxfv: Auxiliary Task Demands
+# NOTE-215: Auxiliary Task Demands
 
 ## Contribution
 
@@ -94,13 +97,13 @@ gap is the smaller model paying more for the same test.
 Builds on a line showing performance gaps between higher- and lower-demand
 evaluations in linguistic domains, and on developmental psychology's use of
 task demands. It is the systematic counterpart to the reasoning-model dispute
-in [LIT-tmpzsiks](../literature.d/LIT-tmpzsiks.md) and [LIT-tmp85dyu](../literature.d/LIT-tmp85dyu.md), neither of which cites it
+in [LIT-466](../literature.d/LIT-466.md) and [LIT-463](../literature.d/LIT-463.md), neither of which cites it
 and both of which are arguing about one instance of what this measures across
 four.
 
 ## Bearing on the record
 
-- **It is the primary source for [SOTA-tmpwqjj5](../practices.d/SOTA-tmpwqjj5.md)**, and the reason that
+- **It is the primary source for [SOTA-278](../practices.d/SOTA-278.md)**, and the reason that
   practice can be `Active` rather than `Proposed`: the caution rests on a
   measured, tested interaction across five model families, not on one
   contested dispute.
@@ -111,7 +114,7 @@ four.
 - **It bears on [SOTA-196](../practices.d/SOTA-196.md)** and anything else comparing models across
   scale on a single evaluation, because C2 means such comparisons are
   inflated by an amount nobody has measured.
-- **It produces [THEORY-tmptybdn](../theory.d/THEORY-tmptybdn.md)**, the account.
+- **It produces [THEORY-039](../theory.d/THEORY-039.md)**, the account.
 
 ## Limitations
 

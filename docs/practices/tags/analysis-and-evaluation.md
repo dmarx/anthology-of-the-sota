@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-10 of 276 SOTA documents. Back to the [full index](../README.md).
+11 of 278 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,4 @@
 | [SOTA-246](../../../record/practices.d/SOTA-246.md) | Find mislabelled training data by self-influence, not by training loss | Koh and Liang (2017), [LIT-403](../../../record/literature.d/LIT-403.md), with [LIT-400](../../../record/literature.d/LIT-400.md) — rank training points by their influence on their own loss and inspect from the top. Mislabelled examples are strong proponents of themselves, so they sort to the front; high training loss does not separate them nearly as well. | Proposed |
 | [SOTA-256](../../../record/practices.d/SOTA-256.md) | Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget | Kim et al. (2025), [LIT-441](../../../record/literature.d/LIT-441.md) — when compute is not the binding constraint, a recipe's loss at a chosen budget answers a question nobody asked. Fit the scaling law and compare the asymptote instead. The catch is that an asymptote is an extrapolation, and rankings at small scale can invert: the ensembling recipe wins on asymptote while losing at small member counts. | Proposed |
 | [SOTA-270](../../../record/practices.d/SOTA-270.md) | Do not read a smooth loss curve as evidence of smooth training; decompose it when the answer matters | Kangaslahti et al. (2025), [LIT-455](../../../record/literature.d/LIT-455.md), with Cohen et al. [LIT-453](../../../record/literature.d/LIT-453.md) and Kunin et al. [LIT-454](../../../record/literature.d/LIT-454.md) — the curve time-averages oscillation, sums over differently-timed abrupt transitions, and reads flat while the weights still travel. Smoothness is what many breakthroughs look like added up, so it is not evidence about the training. | Active |
+| [SOTA-278](../../../record/practices.d/SOTA-278.md) | Before reporting that a model cannot do something, rule out the evaluation | Hu and Frank (2024), [LIT-465](../../../record/literature.d/LIT-465.md) — the same capacity asked two ways scores differently, and the gap widens as the model weakens. Lawsen (2025), [LIT-463](../../../record/literature.d/LIT-463.md), is the worked example: an output cap, a scorer that cannot express refusal, and instances with no solution. | Active |

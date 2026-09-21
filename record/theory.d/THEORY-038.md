@@ -1,5 +1,8 @@
 ---
+number: 38
 status: Active
+formerly:
+- THEORY-tmpahhzk
 title: 'A decoder cannot compose over a long context in few layers, because each position forgets what it forwarded'
 version: 1
 tags:
@@ -7,21 +10,21 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpci13h
+- LIT-464
 explains:
-- SOTA-tmphvq7d
+- SOTA-277
 summary: >-
-  Chen et al. (2024), [LIT-tmpci13h](../literature.d/LIT-tmpci13h.md) — causal masking makes a decoder a
+  Chen et al. (2024), [LIT-464](../literature.d/LIT-464.md) — causal masking makes a decoder a
   line of forgetful communicating players, one epoch per layer, and sequential
   composition needs more epochs than a constant-depth model has. An
   unconditional bound on what can be expressed, not on what can be learned.
 ---
 
-# THEORY-tmpahhzk: A decoder cannot compose over a long context in few layers, because each position forgets what it forwarded
+# THEORY-038: A decoder cannot compose over a long context in few layers, because each position forgets what it forwarded
 
 ## Source
 
-Chen et al. (2024), [LIT-tmpci13h](../literature.d/LIT-tmpci13h.md) — read as [NOTE-tmpdirge](../notes.d/NOTE-tmpdirge.md).
+Chen et al. (2024), [LIT-464](../literature.d/LIT-464.md) — read as [NOTE-214](../notes.d/NOTE-214.md).
 
 ## The account
 

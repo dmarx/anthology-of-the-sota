@@ -1,6 +1,9 @@
 ---
+number: 212
 status: Read
-paper: LIT-tmpzsiks
+formerly:
+- NOTE-tmp3rkau
+paper: LIT-466
 title: 'The Illusion of Thinking'
 version: 1
 date: '2026-09-21'
@@ -11,7 +14,7 @@ summary: >-
   contested on scoring grounds the paper does not address.
 ---
 
-# NOTE-tmp3rkau: The Illusion of Thinking
+# NOTE-212: The Illusion of Thinking
 
 ## Contribution
 
@@ -39,7 +42,7 @@ running out of room.
   this as compositional depth.
 - **The programmatic checker's verdict is the model's capability.** A failed
   check is read as a reasoning failure. This is the assumption
-  [LIT-tmp85dyu](../literature.d/LIT-tmp85dyu.md) attacks.
+  [LIT-463](../literature.d/LIT-463.md) attacks.
 - **Models with visible thinking tokens.** Claude 3.7 Sonnet (thinking and
   not) and DeepSeek-R1/V3, chosen because the traces are accessible; o-series
   appears for final accuracy only.
@@ -73,7 +76,7 @@ running out of room.
 | C1 | Three regimes by complexity, with non-thinking models better at the bottom | strong | matched backbones, matched compute, pass@k, across four puzzle families |
 | C2 | Reasoning effort declines as problems approach the collapse threshold | strong | direct token measurement, five models; the "well below the limit" observation is the paper's own and is not disputed by its critic |
 | C3 | Accuracy collapses to zero past a threshold | moderate | measured, but the measurement counts unsolvable River Crossing instances as failures, so the location of at least one threshold is affected |
-| C4 | The collapse is a fundamental limitation of reasoning | weak | an interpretation of C3; the alternative reading — output-length decisions and scoring artefacts — is argued in [LIT-tmp85dyu](../literature.d/LIT-tmp85dyu.md) and not addressed here |
+| C4 | The collapse is a fundamental limitation of reasoning | weak | an interpretation of C3; the alternative reading — output-length decisions and scoring artefacts — is argued in [LIT-463](../literature.d/LIT-463.md) and not addressed here |
 | C5 | Models cannot execute an explicitly supplied algorithm | moderate | measured, and subject to the same enumeration-versus-reasoning objection |
 
 ## Concepts
@@ -86,7 +89,7 @@ running out of room.
 ## Connections
 
 Positioned against contaminated benchmark evaluation. The puzzle-simulator
-apparatus is the methodological contribution. [LIT-tmp85dyu](../literature.d/LIT-tmp85dyu.md) is a
+apparatus is the methodological contribution. [LIT-463](../literature.d/LIT-463.md) is a
 public comment on it.
 
 ## Bearing on the record
@@ -95,7 +98,7 @@ public comment on it.
   independently of the dispute: at low complexity a reasoning model is worse
   and more expensive than its own non-thinking twin, which is an inference
   decision somebody makes daily.
-- **C4 is what [SOTA-tmpwqjj5](../practices.d/SOTA-tmpwqjj5.md) exists to caution against**, and this
+- **C4 is what [SOTA-278](../practices.d/SOTA-278.md) exists to caution against**, and this
   paper is the worked example rather than the villain: the collapse is
   measured correctly and the step from "the scorer returned zero" to "the
   model cannot reason" is the step the practice says to check.

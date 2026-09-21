@@ -20,7 +20,7 @@ introduced_by:
 - LIT-077
 implementations: []
 explained_by:
-- THEORY-tmptybdn
+- THEORY-039
 ---
 
 # SOTA-200: Check whether an emergent capability is a metric artefact before believing it

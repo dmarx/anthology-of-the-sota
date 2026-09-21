@@ -1,37 +1,40 @@
 ---
+number: 39
 status: Active
+formerly:
+- THEORY-tmptybdn
 title: 'A measured capability is the capability minus whatever the evaluation itself demands, and the gap is widest for the weakest model'
 version: 1
 tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpmftfr
-- LIT-tmp85dyu
+- LIT-465
+- LIT-463
 explains:
-- SOTA-tmpwqjj5
+- SOTA-278
 - SOTA-200
 summary: >-
-  Hu and Frank (2024), [LIT-tmpmftfr](../literature.d/LIT-tmpmftfr.md) — the same capacity measured two
+  Hu and Frank (2024), [LIT-465](../literature.d/LIT-465.md) — the same capacity measured two
   ways scores differently, and the difference shrinks with size and training.
   So a score is a joint function of model and design, and cross-scale
   comparisons under a demanding evaluation inflate the gap they report.
 ---
 
 <!-- inactive-ok-file: ADR-031 — Proposed, and cited for the practice/explanation split that lets this account be Active while the dispute it draws an example from stays open -->
-# THEORY-tmptybdn: A measured capability is the capability minus whatever the evaluation itself demands, and the gap is widest for the weakest model
+# THEORY-039: A measured capability is the capability minus whatever the evaluation itself demands, and the gap is widest for the weakest model
 
 ## Source
 
-Hu and Frank (2024), [LIT-tmpmftfr](../literature.d/LIT-tmpmftfr.md) — read as [NOTE-tmpzsxfv](../notes.d/NOTE-tmpzsxfv.md) —
-with [LIT-tmp85dyu](../literature.d/LIT-tmp85dyu.md) ([NOTE-tmp8e2j0](../notes.d/NOTE-tmp8e2j0.md)) as the worked
+Hu and Frank (2024), [LIT-465](../literature.d/LIT-465.md) — read as [NOTE-215](../notes.d/NOTE-215.md) —
+with [LIT-463](../literature.d/LIT-463.md) ([NOTE-213](../notes.d/NOTE-213.md)) as the worked
 example in a case people argued about.
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-tmpwqjj5](../practices.d/SOTA-tmpwqjj5.md) | rule out the evaluation before reporting a limit | the demand gap is a known quantity with a known sign, so the check has a target |
+| [SOTA-278](../practices.d/SOTA-278.md) | rule out the evaluation before reporting a limit | the demand gap is a known quantity with a known sign, so the check has a target |
 | [SOTA-200](../practices.d/SOTA-200.md) | check whether an emergent capability is a metric artefact | the same instrument problem with the sign reversed — scale paying down a demand looks like scale unlocking a capacity |
 
 ## The account
@@ -94,8 +97,8 @@ cannot measure.
 
 **And the low-demand readout does not always exist.** Reading a probability
 is a low-demand method for word prediction. There is no equivalent for
-multi-step planning, which is where [LIT-tmpzsiks](../literature.d/LIT-tmpzsiks.md) and
-[LIT-tmp85dyu](../literature.d/LIT-tmp85dyu.md) are arguing. So the mechanism is established in a
+multi-step planning, which is where [LIT-466](../literature.d/LIT-466.md) and
+[LIT-463](../literature.d/LIT-463.md) are arguing. So the mechanism is established in a
 domain where it can be measured and applied in one where it cannot, which is
 a real extrapolation and not a hidden one.
 

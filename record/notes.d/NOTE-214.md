@@ -1,6 +1,9 @@
 ---
+number: 214
 status: Read
-paper: LIT-tmpci13h
+formerly:
+- NOTE-tmpdirge
+paper: LIT-464
 title: 'Limitations of multi-layer Transformers'
 version: 1
 date: '2026-09-21'
@@ -11,8 +14,8 @@ summary: >-
   encoder/decoder separation, and a provable benefit of chain of thought.
 ---
 
-<!-- inactive-ok-file: SOTA-125 SOTA-tmphvq7d — SOTA-125 is Proposed and is named as the independently-reached tiny-model counterpart, not as support for this result; SOTA-tmphvq7d is Proposed and filed here from this reading -->
-# NOTE-tmpdirge: Limitations of multi-layer Transformers
+<!-- inactive-ok-file: SOTA-125 SOTA-277 — SOTA-125 is Proposed and is named as the independently-reached tiny-model counterpart, not as support for this result; SOTA-277 is Proposed and filed here from this reading -->
+# NOTE-214: Limitations of multi-layer Transformers
 
 ## Contribution
 
@@ -111,10 +114,10 @@ justifies.
 - **It is the record's first lower bound.** Everything else here says what to
   do or why something works. A claim about what is unavailable at any tuning
   is a different shape, and the record had none.
-- **It produces [SOTA-tmphvq7d](../practices.d/SOTA-tmphvq7d.md)** — buy depth rather than width for
+- **It produces [SOTA-277](../practices.d/SOTA-277.md)** — buy depth rather than width for
   compositional tasks — which is the general-scale theoretical counterpart to
   [SOTA-125](../practices.d/SOTA-125.md), filed from tiny-model experiments.
-- **It produces [THEORY-tmpahhzk](../theory.d/THEORY-tmpahhzk.md)**, the forgetfulness account.
+- **It produces [THEORY-038](../theory.d/THEORY-038.md)**, the forgetfulness account.
 - **It does not produce a chain-of-thought practice, and the record has
   none.** [SOTA-127](../practices.d/SOTA-127.md) says to filter chain-of-thought traces out of tiny
   models' training data; that is the record's only CoT document. Corollary 1.4

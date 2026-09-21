@@ -9,7 +9,7 @@ Every reference in the record is a claim — "this is why things are the way the
 
 Only an `Active` document is in force. `Proposed` and `Deferred` mean *not in force yet* — an open question, being cited as if it were settled — while `Superseded` and `Rejected` mean *no longer in force*, which is often a perfectly good thing to cite: history, or a rejection worth pointing at. Either way the citation should be deliberate, and this section lists the ones nobody has vouched for yet.
 
-**7 documents cited without acknowledgement.** Not listed: 1000 citations someone has already vouched for with an `inactive-ok:` comment at the citing site.
+**9 documents cited without acknowledgement.** Not listed: 1005 citations someone has already vouched for with an `inactive-ok:` comment at the citing site.
 
 To vouch for one, put the reason where the citation is — `inactive-ok:` covers its own line and the line below it, `inactive-ok-block:` its paragraph, `inactive-ok-file:` the whole page:
 
@@ -34,6 +34,24 @@ Repeat high-quality data freely when its epoch size exceeds the model's memoriza
 
 - [`record/decisions.d/ADR-017.md:78`](../../record/decisions.d/ADR-017.md)
 - [`record/decisions.d/ADR-017.md:116`](../../record/decisions.d/ADR-017.md)
+
+### [SOTA-125](../../record/practices.d/SOTA-125.md) — Proposed
+
+At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width
+
+2 citations in 1 file await a look; 11 other citations of it are acknowledged.
+
+- [`record/practices.d/SOTA-277.md:40`](../../record/practices.d/SOTA-277.md)
+- [`record/practices.d/SOTA-277.md:94`](../../record/practices.d/SOTA-277.md)
+
+### [SOTA-144](../../record/practices.d/SOTA-144.md) — Proposed
+
+Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too
+
+2 citations in 1 file await a look; 23 other citations of it are acknowledged.
+
+- [`record/practices.d/SOTA-277.md:40`](../../record/practices.d/SOTA-277.md)
+- [`record/practices.d/SOTA-277.md:89`](../../record/practices.d/SOTA-277.md)
 
 ### [ADR-028](../../record/decisions.d/ADR-028.md) — Proposed
 
@@ -79,9 +97,13 @@ Keep key/value projections shared across heads while query projections remain se
 
 A reference the reader cannot follow: the code names no document in this record. A typo, a number carried in from another project, and an illustrative code in an example all look identical from here — telling them apart takes a human, so this is a report, not an error.
 
-**0 codes unaccounted for.** Not listed: 1 mention marked deliberate with an `unresolved-ok:` comment (same syntax and scopes as `inactive-ok:` above).
+**1 code unaccounted for.** Not listed: 1 mention marked deliberate with an `unresolved-ok:` comment (same syntax and scopes as `inactive-ok:` above).
 
-Every code resolves. ✅
+
+### SOTA-tmpnjlal — resolves to nothing (2 unmarked sites)
+
+- [`record/practices.d/SOTA-277.md:40`](../../record/practices.d/SOTA-277.md)
+- [`record/practices.d/SOTA-277.md:89`](../../record/practices.d/SOTA-277.md)
 
 ## Files that opt out of reference checking
 
@@ -91,4 +113,4 @@ None. Every scanned file is checked. ✅
 
 ## Directives that no longer apply
 
-None. Every annotation still governs something. ✅
+- record/practices.d/SOTA-277.md:40: annotation names unknown document(s): SOTA-tmpnjlal — so it excuses nothing, leaving SOTA-125 (2 sites), SOTA-144 (2 sites) unacknowledged

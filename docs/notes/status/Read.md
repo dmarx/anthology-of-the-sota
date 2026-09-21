@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-208 of 211 NOTE documents. Back to the [full index](../README.md).
+212 of 215 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -218,3 +218,7 @@
 | [NOTE-209](../../../record/notes.d/NOTE-209.md) | When Spectral Updates Help | A spectral step beats a Euclidean one on a block when the gradient's nuclear rank exceeds the stable rank of that block's incoming activations. Reading it: both sides are measurable, the activation side is provably small in transformers, and the gap grows with dimension. | Read |
 | [NOTE-210](../../../record/notes.d/NOTE-210.md) | The Lattice Representation Hypothesis | A linear concept direction plus a threshold is a half-space; intersecting half-spaces gives a concept lattice, so inclusion, intersection and union become geometric meet and join on embeddings. Canonical form when the attribute directions are linearly independent. Evidence is WordNet sub-hierarchies, which is the friendliest available test. | Read |
 | [NOTE-211](../../../record/notes.d/NOTE-211.md) | Spectral muP under Width-Depth Scaling | Derives the muP spectral condition for joint width-depth scaling and shows the rule is indexed by residual-branch depth. Reading it: Depth-muP and CompleteP are `k = 1` and `k ≥ 2` of one family, Transformers are the second, and for preconditioned optimizers the whole depth correction is a `1/L` residual multiplier. | Read |
+| [NOTE-212](../../../record/notes.d/NOTE-212.md) | The Illusion of Thinking | Controllable puzzles replace contaminated benchmarks; reasoning models collapse to zero past a threshold and reduce thinking tokens as they do. Reading it: the three-regime result is solid, and the collapse reading is contested on scoring grounds the paper does not address. | Read |
+| [NOTE-213](../../../record/notes.d/NOTE-213.md) | Comment on the Illusion of Thinking | Argues the reported collapse is evaluation design. Reading it: the unsolvable-instance claim is a checkable fact and lands; the rest is a reinterpretation of a measurement the two papers agree on, from a preprint that is underpowered and has already been corrected once. | Read |
+| [NOTE-214](../../../record/notes.d/NOTE-214.md) | Limitations of multi-layer Transformers | First unconditional lower bound for a decoder-only transformer of more than one layer. Reading it: the bound comes from causal masking rather than from circuit complexity, and it buys an exponential depth-width tradeoff, an encoder/decoder separation, and a provable benefit of chain of thought. | Read |
+| [NOTE-215](../../../record/notes.d/NOTE-215.md) | Auxiliary Task Demands | Four capacities, each measured two ways; the higher-demand way scores lower and the gap shrinks with model size and training time. Reading it: the interaction is what matters, because it means cross-scale comparisons under a demanding evaluation overstate the difference between models. | Read |

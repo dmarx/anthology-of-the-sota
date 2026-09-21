@@ -2,7 +2,7 @@
 
 # Lines of work
 
-18 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+19 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -14,6 +14,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-433](../record/literature.d/LIT-433.md) — Learning to summarize from human feedback *(Active)*
     - [LIT-377](../record/literature.d/LIT-377.md) — Training language models to follow instructions with human feedback *(Active)*
 - alongside: [LIT-432](../record/literature.d/LIT-432.md) — Finetuned Language Models Are Zero-Shot Learners *(Active)*
+
+## analysis-and-evaluation
+
+### From The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity
+
+- [LIT-466](../record/literature.d/LIT-466.md) — The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity *(Active)*
+  - [LIT-463](../record/literature.d/LIT-463.md) — Comment on The Illusion of Thinking *(Active)*
 
 ## attention-techniques
 

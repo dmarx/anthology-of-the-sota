@@ -1,5 +1,8 @@
 ---
+number: 277
 status: Proposed
+formerly:
+- SOTA-tmphvq7d
 consensus: unassessed
 consensus_note: >-
   Depth-versus-width is settled as a scaling question and not as a
@@ -21,26 +24,26 @@ tags:
 - model-architecture
 date: '2026-09-21'
 source:
-- LIT-tmpci13h
+- LIT-464
 introduced_by:
-- LIT-tmpci13h
+- LIT-464
 implementations: []
 summary: >-
-  Chen et al. (2024), [LIT-tmpci13h](../literature.d/LIT-tmpci13h.md) — composing `k` functions costs a
+  Chen et al. (2024), [LIT-464](../literature.d/LIT-464.md) — composing `k` functions costs a
   constant-depth decoder polynomially many parameters and a `log k`-layer one
   polylogarithmically. An exponential separation, proved unconditionally, and
   about what a shape can express rather than what a run will learn.
 explained_by:
-- THEORY-tmpahhzk
+- THEORY-038
 ---
 
 <!-- inactive-ok-file: SOTA-125 SOTA-144 SOTA-tmpnjlal — SOTA-125 is Proposed and is the tiny-model neighbour this is compared with rather than derived from; SOTA-144 and SOTA-tmpnjlal are Proposed and are named to say that the cost of depth is an open question, which is a caveat rather than a claim -->
-# SOTA-tmphvq7d: For a task that is a sequential composition, buy depth rather than width
+# SOTA-277: For a task that is a sequential composition, buy depth rather than width
 
 ## Source
 
-Chen et al. (2024), [LIT-tmpci13h](../literature.d/LIT-tmpci13h.md) — [ARXIV-2412.02975](https://arxiv.org/abs/2412.02975),
-read as [NOTE-tmpdirge](../notes.d/NOTE-tmpdirge.md). Accounted for by [THEORY-tmpahhzk](../theory.d/THEORY-tmpahhzk.md).
+Chen et al. (2024), [LIT-464](../literature.d/LIT-464.md) — [ARXIV-2412.02975](https://arxiv.org/abs/2412.02975),
+read as [NOTE-214](../notes.d/NOTE-214.md). Accounted for by [THEORY-038](../theory.d/THEORY-038.md).
 
 ## What to do
 
@@ -58,7 +61,7 @@ The reason is specific to decoders and worth knowing, because it tells you
 when the advice does not apply: causal masking means a position cannot see
 what follows it, and a position does not retain what it forwarded. Each layer
 buys one round of information movement. Composition needs `k` rounds or
-enough bits per position to shortcut them. [THEORY-tmpahhzk](../theory.d/THEORY-tmpahhzk.md) has the
+enough bits per position to shortcut them. [THEORY-038](../theory.d/THEORY-038.md) has the
 argument.
 
 ## Conditions

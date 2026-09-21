@@ -6,7 +6,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-73 of 276 SOTA documents. Back to the [full index](../README.md).
+74 of 278 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -83,3 +83,4 @@
 | [SOTA-274](../../../record/practices.d/SOTA-274.md) | Before adopting a spectral optimizer, measure the stable rank of each block's incoming activations against its gradient's nuclear rank | Davis and Drusvyatskiy (2025), [LIT-457](../../../record/literature.d/LIT-457.md) — the spectral step's one-step guarantee beats the Euclidean one by the ratio of gradient nuclear rank to incoming activation stable rank. Both are cheap to compute from a run you are already doing, and the paper never uses them to route. | Proposed |
 | [SOTA-275](../../../record/practices.d/SOTA-275.md) | Pick the depth parameterization from the residual branch: a Transformer branch has more than one transformation, so it needs the stricter rule | Zheng et al. (2026), [LIT-462](../../../record/literature.d/LIT-462.md) — Depth-muP's `α = Θ(1/√L)` is the rule for a one-transformation residual branch. Attention and FFN branches hold more than one, so Transformers need CompleteP's `α = Θ(1/L)`, and the looser rule measurably fails to transfer on them. | Proposed |
 | [SOTA-276](../../../record/practices.d/SOTA-276.md) | For a normalized or preconditioned optimizer, width-depth muP is width muP plus a hidden residual multiplier of order 1/L | Zheng et al. (2026), [LIT-462](../../../record/literature.d/LIT-462.md) — a normalized or preconditioned update has a norm that does not depend on the residual multiplier, so the depth factor the raw gradient carries is removed and the optimizer's own muP rule is unchanged. SGD is the exception and needs more. | Proposed |
+| [SOTA-277](../../../record/practices.d/SOTA-277.md) | For a task that is a sequential composition, buy depth rather than width | Chen et al. (2024), [LIT-464](../../../record/literature.d/LIT-464.md) — composing `k` functions costs a constant-depth decoder polynomially many parameters and a `log k`-layer one polylogarithmically. An exponential separation, proved unconditionally, and about what a shape can express rather than what a run will learn. | Proposed |

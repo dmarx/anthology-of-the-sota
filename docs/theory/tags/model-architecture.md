@@ -6,9 +6,10 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-2 of 37 THEORY documents. Back to the [full index](../README.md).
+3 of 39 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [THEORY-005](../../../record/theory.d/THEORY-005.md) | Dense feed-forward layers are already mixtures of experts, and pre-training settles the partition before the neurons | Zhang et al. (2021, 2023), [LIT-226](../../../record/literature.d/LIT-226.md) and [LIT-228](../../../record/literature.d/LIT-228.md) — a trained dense FFN uses a tiny fraction of its neurons per input, the co-activating neurons partition into functional experts that can be recovered post hoc with the same parameters, and through pre-training the partition stabilizes earlier than the neurons in it. A mixture of experts makes explicit a structure dense training arrives at anyway. | Proposed |
 | [THEORY-020](../../../record/theory.d/THEORY-020.md) | Layer importance is not uniform with depth: middle layers tolerate deletion and reordering, the first and last do not | Lad et al. (2024), [LIT-417](../../../record/literature.d/LIT-417.md) — deleting a layer outright, or swapping two adjacent ones, at inference and without fine-tuning, leaves 72-95% of top-1 predictions unchanged. The degradation is localized rather than uniform: the first and last layers are fragile, the middle is not, and swapping hurts less than dropping. Measured layer by layer across four GPT-2 and four Pythia models and confirmed on HellaSwag, ARC-Easy and LAMBADA. Robustness grows with depth, so it is not a small-model artifact. | Active |
+| [THEORY-038](../../../record/theory.d/THEORY-038.md) | A decoder cannot compose over a long context in few layers, because each position forgets what it forwarded | Chen et al. (2024), [LIT-464](../../../record/literature.d/LIT-464.md) — causal masking makes a decoder a line of forgetful communicating players, one epoch per layer, and sequential composition needs more epochs than a constant-depth model has. An unconditional bound on what can be expressed, not on what can be learned. | Active |

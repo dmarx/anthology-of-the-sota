@@ -1,6 +1,9 @@
 ---
+number: 213
 status: Read
-paper: LIT-tmp85dyu
+formerly:
+- NOTE-tmp8e2j0
+paper: LIT-463
 title: 'Comment on the Illusion of Thinking'
 version: 1
 date: '2026-09-21'
@@ -11,7 +14,7 @@ summary: >-
   that is underpowered and has already been corrected once.
 ---
 
-# NOTE-tmp8e2j0: Comment on the Illusion of Thinking
+# NOTE-213: Comment on the Illusion of Thinking
 
 ## Contribution
 
@@ -45,14 +48,14 @@ sees the transcript.
 
 - **River Crossing includes unsolvable instances.** Missionaries–Cannibals
   variants have no solution for more than five pairs with boat capacity
-  three. [LIT-tmpzsiks](../literature.d/LIT-tmpzsiks.md) tests such instances and scores zero for
+  three. [LIT-466](../literature.d/LIT-466.md) tests such instances and scores zero for
   them. *Holds when:* always — it is a published combinatorial fact, not a
   measurement.
 - **The collapse happens below the token limit, and both papers say so.**
   §4's arithmetic gives maximum solvable sizes above where collapse is
   reported. The comment's own conclusion from this is that models terminate
   early and "may be poorly calibrated about their own context length
-  capabilities". [LIT-tmpzsiks](../literature.d/LIT-tmpzsiks.md) reports the same fact — models are
+  capabilities". [LIT-466](../literature.d/LIT-466.md) reports the same fact — models are
   "well below their generation length limits" — and reads it as a scaling
   limitation of thinking. **The disagreement is about what the shared
   observation means, not about the observation.**
@@ -86,18 +89,18 @@ sees the transcript.
 
 ## Connections
 
-A direct comment on [LIT-tmpzsiks](../literature.d/LIT-tmpzsiks.md), declared as `corrects`. The
+A direct comment on [LIT-466](../literature.d/LIT-466.md), declared as `corrects`. The
 general form of its argument — that evaluation demands unrelated to the
-capacity depress measured performance — is [LIT-tmpmftfr](../literature.d/LIT-tmpmftfr.md), which is a
+capacity depress measured performance — is [LIT-465](../literature.d/LIT-465.md), which is a
 systematic study rather than a dispute, and which this does not cite.
 
 ## Bearing on the record
 
-- **It supplies the worked example for [SOTA-tmpwqjj5](../practices.d/SOTA-tmpwqjj5.md)**, and a good
+- **It supplies the worked example for [SOTA-278](../practices.d/SOTA-278.md)**, and a good
   one, because the three failure modes it names — an output cap, a scorer
   that cannot express refusal, and instances with no solution — are things a
   reader can check in their own evaluation this afternoon.
-- **It does not license treating [LIT-tmpzsiks](../literature.d/LIT-tmpzsiks.md) as debunked.** That
+- **It does not license treating [LIT-466](../literature.d/LIT-466.md) as debunked.** That
   paper is NeurIPS 2025, camera-ready, revised five months after this comment
   appeared. Its three-regime result is untouched by anything here.
 - **`corrects` is declared for what the document is, not for who won.**
@@ -130,5 +133,5 @@ The record should hold these as prominently as the argument.
 - Does the generating-function result hold in a powered study?
 - Is emitting a correct recursive algorithm the same capability as executing
   it? The comment assumes so; that assumption is exactly what
-  [LIT-tmpci13h](../literature.d/LIT-tmpci13h.md) suggests might be false, since a task can be easy to
+  [LIT-464](../literature.d/LIT-464.md) suggests might be false, since a task can be easy to
   express and hard to carry out within a fixed depth.

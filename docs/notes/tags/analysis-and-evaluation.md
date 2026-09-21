@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-48 of 211 NOTE documents. Back to the [full index](../README.md).
+52 of 215 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -56,3 +56,7 @@
 | [NOTE-200](../../../record/notes.d/NOTE-200.md) | Scaling Laws for Fact Memorization | Fact capacity is linear in model size and saturates in epochs along a negative exponential; all of Wikidata would want ~1000B non-embedding parameters at 100 epochs. Redundant facts cost full price unless they share direction and structure. Generalisation to unseen facts exists and scales like ordinary pretraining. | Read |
 | [NOTE-204](../../../record/notes.d/NOTE-204.md) | Hidden Breakthroughs in Language Model Training | A smooth loss curve is what many differently-timed abrupt transitions look like when averaged. POLCA decomposes loss change per example and along a curvature-derived low-rank basis; on synthetic arithmetic it recovers the carrying skill, which clustering the exact loss curves does not. | Read |
 | [NOTE-206](../../../record/notes.d/NOTE-206.md) | The Platonic Representation Hypothesis | Vision and language models measure distance between datapoints more alike as they get larger, across architectures and objectives. The conjecture is that they converge on a model of what generated the data. The proof holds for bijective observations only, and the caption-density experiment tests that boundary rather than asserting past it. | Read |
+| [NOTE-212](../../../record/notes.d/NOTE-212.md) | The Illusion of Thinking | Controllable puzzles replace contaminated benchmarks; reasoning models collapse to zero past a threshold and reduce thinking tokens as they do. Reading it: the three-regime result is solid, and the collapse reading is contested on scoring grounds the paper does not address. | Read |
+| [NOTE-213](../../../record/notes.d/NOTE-213.md) | Comment on the Illusion of Thinking | Argues the reported collapse is evaluation design. Reading it: the unsolvable-instance claim is a checkable fact and lands; the rest is a reinterpretation of a measurement the two papers agree on, from a preprint that is underpowered and has already been corrected once. | Read |
+| [NOTE-214](../../../record/notes.d/NOTE-214.md) | Limitations of multi-layer Transformers | First unconditional lower bound for a decoder-only transformer of more than one layer. Reading it: the bound comes from causal masking rather than from circuit complexity, and it buys an exponential depth-width tradeoff, an encoder/decoder separation, and a provable benefit of chain of thought. | Read |
+| [NOTE-215](../../../record/notes.d/NOTE-215.md) | Auxiliary Task Demands | Four capacities, each measured two ways; the higher-demand way scores lower and the gap shrinks with model size and training time. Reading it: the interaction is what matters, because it means cross-scale comparisons under a demanding evaluation overstate the difference between models. | Read |

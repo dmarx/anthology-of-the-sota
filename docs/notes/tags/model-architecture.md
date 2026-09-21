@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-19 of 244 NOTE documents. Back to the [full index](../README.md).
+20 of 246 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -27,3 +27,4 @@
 | [NOTE-235](../../../record/notes.d/NOTE-235.md) | ParScale | Read as a candidate third scaling axis. The scaling law is fitted honestly and the inference-cost analysis is better instrumented than most; the claim that carries furthest is the *asymmetry* — code benefits more than general text, on two independent measurements — and it is the claim the paper labels a conjecture. | Read |
 | [NOTE-242](../../../record/notes.d/NOTE-242.md) | Genesys and what survives its own controls | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for the architecture-discovery claim and filed for the code-generation one. Unit-by-unit generation with an execution-based checker takes valid output from 6% to 92% on the same proposals, with a stated mechanism that has nothing to do with architectures. The discovered architectures are a wash against their own seeds, by the paper's own table. | Read |
 | [NOTE-244](../../../record/notes.d/NOTE-244.md) | SQ hardness for semiautomata, and the regime it needs | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist. The theorem is clean and the regime it needs — an alphabet cubic in the number of states — is what a citing reader will drop. Filed for the mental model underneath it, which the record had nothing for: longer random sequences carry *less* information about a hidden transition structure, not more. | Read |
+| [NOTE-246](../../../record/notes.d/NOTE-246.md) | VQGAN: the loss that made f=16 survivable | Read as the second step of the tokenizer trunk. The architecture is VQ-VAE's; what is new is a perceptual loss, a patch discriminator, and an adaptive weight that balances them without per-dataset tuning. That loss is the reason a `256×256` image can become 256 tokens and still look like anything, and it is why this line exists at all. | Read |

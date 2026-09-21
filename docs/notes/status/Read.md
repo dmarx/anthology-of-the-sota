@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-241 of 244 NOTE documents. Back to the [full index](../README.md).
+243 of 246 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -251,3 +251,5 @@
 | [NOTE-242](../../../record/notes.d/NOTE-242.md) | Genesys and what survives its own controls | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for the architecture-discovery claim and filed for the code-generation one. Unit-by-unit generation with an execution-based checker takes valid output from 6% to 92% on the same proposals, with a stated mechanism that has nothing to do with architectures. The discovered architectures are a wash against their own seeds, by the paper's own table. | Read |
 | [NOTE-243](../../../record/notes.d/NOTE-243.md) | GaussianToken and the cost of the continuous half | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist and filed without a practice. The idea — let the quantization units move and size themselves instead of sitting on a grid — is a good one, and the evidence for it cannot be separated from the five continuous parameters each token carries alongside its index. The comparison is at equal token count, and nobody computed bits. | Read |
 | [NOTE-244](../../../record/notes.d/NOTE-244.md) | SQ hardness for semiautomata, and the regime it needs | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist. The theorem is clean and the regime it needs — an alphabet cubic in the number of states — is what a citing reader will drop. Filed for the mental model underneath it, which the record had nothing for: longer random sequences carry *less* information about a hidden transition structure, not more. | Read |
+| [NOTE-245](../../../record/notes.d/NOTE-245.md) | VQ-VAE: what the three-term loss actually does | Read to give the discrete-tokenizer line a root. The durable content is three loss terms with three different owners and a gradient that is copied rather than derived — an engineering settlement that every descendant still runs unchanged, and that the paper is unusually honest about having chosen rather than justified. | Read |
+| [NOTE-246](../../../record/notes.d/NOTE-246.md) | VQGAN: the loss that made f=16 survivable | Read as the second step of the tokenizer trunk. The architecture is VQ-VAE's; what is new is a perceptual loss, a patch discriminator, and an adaptive weight that balances them without per-dataset tuning. That loss is the reason a `256×256` image can become 256 tokens and still look like anything, and it is why this line exists at all. | Read |

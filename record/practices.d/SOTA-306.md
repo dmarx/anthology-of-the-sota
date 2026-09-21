@@ -1,5 +1,8 @@
 ---
+number: 306
 status: Active
+formerly:
+- SOTA-tmpjm39m
 consensus: emerging
 consensus_note: >-
   Two independent groups measured it on different architectures and datasets
@@ -15,13 +18,13 @@ tags:
 - generative-modeling
 date: '2026-09-21'
 source:
-- LIT-tmpflmiq
+- LIT-497
 - LIT-494
 introduced_by:
-- LIT-tmpflmiq
+- LIT-497
 implementations: []
 summary: >-
-  Sun et al. (2024), [LIT-tmpflmiq](../literature.d/LIT-tmpflmiq.md) — at codebook size 16384,
+  Sun et al. (2024), [LIT-497](../literature.d/LIT-497.md) — at codebook size 16384,
   dropping the code vector dimension from 256 to 8 takes utilization from
   **0.29% to 97%** and rFID from 9.21 to 2.19. A 256-dimensional codebook uses
   three codes in a thousand. [LIT-494](../literature.d/LIT-494.md) finds the same shape
@@ -30,20 +33,20 @@ summary: >-
   optimum to find rather than a direction to follow forever.
 ---
 
-# SOTA-tmpjm39m: Make the codebook's code vectors low-dimensional and the codebook large, and report utilization alongside reconstruction quality
+# SOTA-306: Make the codebook's code vectors low-dimensional and the codebook large, and report utilization alongside reconstruction quality
 
 ## Source
 
 Sun, Jiang, Chen, Zhang, Peng, Luo and Yuan (2024),
-[LIT-tmpflmiq](../literature.d/LIT-tmpflmiq.md); corroborated by Dong et al. (2025),
+[LIT-497](../literature.d/LIT-497.md); corroborated by Dong et al. (2025),
 [LIT-494](../literature.d/LIT-494.md).
 
 ## When this applies
 
 You are training a vector-quantized autoencoder — an image tokenizer, an audio
 one, any bottleneck that snaps a feature vector to its nearest entry in a
-learned codebook. The lineage is [LIT-tmpxz6hg](../literature.d/LIT-tmpxz6hg.md) and
-[LIT-tmpb17dj](../literature.d/LIT-tmpb17dj.md); the tunable parts are the codebook's two shapes.
+learned codebook. The lineage is [LIT-499](../literature.d/LIT-499.md) and
+[LIT-496](../literature.d/LIT-496.md); the tunable parts are the codebook's two shapes.
 
 ## Do this
 

@@ -2,7 +2,7 @@
 
 # Lines of work
 
-24 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+25 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -89,6 +89,14 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-490](../record/literature.d/LIT-490.md) — Denoising as Projection: Constrained Optimization with Gradient-Guided Diffusion *(Active)*
 - alongside: [LIT-491](../record/literature.d/LIT-491.md) — Noise Hypernetworks: Amortizing Test-Time Compute in Diffusion Models *(Active)*
 
+### From Neural Discrete Representation Learning
+
+- [LIT-499](../record/literature.d/LIT-499.md) — Neural Discrete Representation Learning *(Active)*
+  - [LIT-496](../record/literature.d/LIT-496.md) — Taming Transformers for High-Resolution Image Synthesis *(Active)*
+    - [LIT-494](../record/literature.d/LIT-494.md) — GaussianToken: An Effective Image Tokenizer with 2D Gaussian Splatting *(Active)*
+    - [LIT-497](../record/literature.d/LIT-497.md) — Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation *(Active)*
+    - [LIT-498](../record/literature.d/LIT-498.md) — MaskGIT: Masked Generative Image Transformer *(Active)*
+
 ## in-context-learning
 
 ### From Language Models are Few-Shot Learners
@@ -142,6 +150,14 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-208](../record/literature.d/LIT-208.md) — Rope to Nope and Back Again: A New Hybrid Attention Strategy *(Active)*
   - [LIT-209](../record/literature.d/LIT-209.md) — SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling *(Active)*
 - alongside: [LIT-048](../record/literature.d/LIT-048.md) — Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation *(Active)*
+
+### From Neural Discrete Representation Learning
+
+- [LIT-499](../record/literature.d/LIT-499.md) — Neural Discrete Representation Learning *(Active)*
+  - [LIT-496](../record/literature.d/LIT-496.md) — Taming Transformers for High-Resolution Image Synthesis *(Active)*
+    - [LIT-494](../record/literature.d/LIT-494.md) — GaussianToken: An Effective Image Tokenizer with 2D Gaussian Splatting *(Active)*
+    - [LIT-497](../record/literature.d/LIT-497.md) — Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation *(Active)*
+    - [LIT-498](../record/literature.d/LIT-498.md) — MaskGIT: Masked Generative Image Transformer *(Active)*
 
 ## tiny-models
 

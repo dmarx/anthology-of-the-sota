@@ -4,7 +4,7 @@
 
 **representation-and-encoding**.
 
-12 of 244 NOTE documents. Back to the [full index](../README.md).
+14 of 246 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,5 @@
 | [NOTE-237](../../../record/notes.d/NOTE-237.md) | gen2seg | Read as the counter-route to SAM's data engine. The headline (narrow finetuning, broad generalization) is well evidenced but the argument lives in the controls, which are unusually good: the same backbone under a conventional head scores ~1.5 mIoU, and swapping only the decoder recovers part of the gap. | Read |
 | [NOTE-238](../../../record/notes.d/NOTE-238.md) | PHi: prediction of hidden states | Read for the instrument. The diagnosis of next-token loss is clean and the boring/interesting separation is convincing on two architectures. The reasoning-selection result is weaker than the abstract implies, and the paper says so itself in a sentence most readers will pass over: picking by next-token loss alone already scores 71%. | Read |
 | [NOTE-243](../../../record/notes.d/NOTE-243.md) | GaussianToken and the cost of the continuous half | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist and filed without a practice. The idea — let the quantization units move and size themselves instead of sitting on a grid — is a good one, and the evidence for it cannot be separated from the five continuous parameters each token carries alongside its index. The comparison is at equal token count, and nobody computed bits. | Read |
+| [NOTE-245](../../../record/notes.d/NOTE-245.md) | VQ-VAE: what the three-term loss actually does | Read to give the discrete-tokenizer line a root. The durable content is three loss terms with three different owners and a gradient that is copied rather than derived — an engineering settlement that every descendant still runs unchanged, and that the paper is unusually honest about having chosen rather than justified. | Read |
+| [NOTE-246](../../../record/notes.d/NOTE-246.md) | VQGAN: the loss that made f=16 survivable | Read as the second step of the tokenizer trunk. The architecture is VQ-VAE's; what is new is a perceptual loss, a patch discriminator, and an adaptive weight that balances them without per-dataset tuning. That loss is the reason a `256×256` image can become 256 tokens and still look like anything, and it is why this line exists at all. | Read |

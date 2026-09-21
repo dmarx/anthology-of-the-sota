@@ -1,5 +1,8 @@
 ---
+number: 305
 status: Active
+formerly:
+- SOTA-tmp0cq9u
 consensus: unassessed
 consensus_note: >-
   Nobody has assessed where the field stands on this, and the honest reading
@@ -15,13 +18,13 @@ tags:
 - representation-and-encoding
 date: '2026-09-21'
 source:
-- LIT-tmpflmiq
+- LIT-497
 - LIT-494
 introduced_by:
-- LIT-tmpflmiq
+- LIT-497
 implementations: []
 summary: >-
-  Sun et al. (2024), [LIT-tmpflmiq](../literature.d/LIT-tmpflmiq.md) — the **same tokenizer** at
+  Sun et al. (2024), [LIT-497](../literature.d/LIT-497.md) — the **same tokenizer** at
   downsample 16 scores rFID **2.19, 0.94 and 0.70** on 256, 576 and 1024
   tokens, all evaluated on `256×256` reconstructions. A three-fold range from
   a knob that is not the tokenizer. Two papers in this line then quote
@@ -29,12 +32,12 @@ summary: >-
   they appear in.
 ---
 
-# SOTA-tmp0cq9u: State the token count and input resolution beside any reconstruction FID, and compare tokenizers only at equal rate
+# SOTA-305: State the token count and input resolution beside any reconstruction FID, and compare tokenizers only at equal rate
 
 ## Source
 
 Sun, Jiang, Chen, Zhang, Peng, Luo and Yuan (2024),
-[LIT-tmpflmiq](../literature.d/LIT-tmpflmiq.md) — whose Table 3 is the measurement — with
+[LIT-497](../literature.d/LIT-497.md) — whose Table 3 is the measurement — with
 Dong et al. (2025), [LIT-494](../literature.d/LIT-494.md) as the second case.
 
 ## When this applies

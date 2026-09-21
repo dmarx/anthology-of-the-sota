@@ -1,6 +1,9 @@
 ---
+number: 245
 status: Read
-paper: LIT-tmpxz6hg
+formerly:
+- NOTE-tmp77eat
+paper: LIT-499
 title: 'VQ-VAE: what the three-term loss actually does'
 version: 1
 date: '2026-09-21'
@@ -12,7 +15,7 @@ summary: >-
   rather than justified.
 ---
 
-# NOTE-tmp77eat: VQ-VAE: what the three-term loss actually does
+# NOTE-245: VQ-VAE: what the three-term loss actually does
 
 ## Contribution
 
@@ -101,9 +104,9 @@ is what makes it generative rather than merely compressive.
 
 ## Connections
 
-Downstream in this record: [LIT-tmpb17dj](../literature.d/LIT-tmpb17dj.md) keeps this loss and adds
-perceptual and adversarial terms; [LIT-tmpig8jj](../literature.d/LIT-tmpig8jj.md) and
-[LIT-tmpflmiq](../literature.d/LIT-tmpflmiq.md) keep the tokenizer and change the prior;
+Downstream in this record: [LIT-496](../literature.d/LIT-496.md) keeps this loss and adds
+perceptual and adversarial terms; [LIT-498](../literature.d/LIT-498.md) and
+[LIT-497](../literature.d/LIT-497.md) keep the tokenizer and change the prior;
 [LIT-494](../literature.d/LIT-494.md) keeps the codebook and moves the quantization units
 off the grid. The `extended_by` declaration records the first step; the rest
 chain from there.
@@ -133,10 +136,10 @@ contribution rest on later measurements of the object this paper defines.
   same setting.
 - **Codebook utilization is never measured**, which is the failure mode the
   whole downstream literature ends up organized around — and which
-  [SOTA-tmpjm39m](../practices.d/SOTA-tmpjm39m.md) is about. `K = 512` in 2017 was small enough that
+  [SOTA-306](../practices.d/SOTA-306.md) is about. `K = 512` in 2017 was small enough that
   the problem did not bite.
 - **Reconstructions at 42.6× are not perceptually good** by later standards,
-  which is precisely the gap [LIT-tmpb17dj](../literature.d/LIT-tmpb17dj.md) closes with a
+  which is precisely the gap [LIT-496](../literature.d/LIT-496.md) closes with a
   perceptual and adversarial loss. The paper is measuring likelihood, not
   perceptual quality, and the two diverge badly at high compression.
 - **The straight-through estimator is biased** and the paper does not

@@ -6,7 +6,7 @@
 
 **Not judged** — nobody has assessed where the field stands on this; the default, and true of most of the corpus.
 
-144 of 304 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
+145 of 306 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -154,3 +154,4 @@
 | [SOTA-276](../../../record/practices.d/SOTA-276.md) | For a normalized or preconditioned optimizer, width-depth muP is width muP plus a hidden residual multiplier of order 1/L | Zheng et al. (2026), [LIT-462](../../../record/literature.d/LIT-462.md) — a normalized or preconditioned update has a norm that does not depend on the residual multiplier, so the depth factor the raw gradient carries is removed and the optimizer's own muP rule is unchanged. SGD is the exception and needs more. | Proposed |
 | [SOTA-277](../../../record/practices.d/SOTA-277.md) | For a task that is a sequential composition, buy depth rather than width | Chen et al. (2024), [LIT-464](../../../record/literature.d/LIT-464.md) — composing `k` functions costs a constant-depth decoder polynomially many parameters and a `log k`-layer one polylogarithmically. An exponential separation, proved unconditionally, and about what a shape can express rather than what a run will learn. | Proposed |
 | [SOTA-293](../../../record/practices.d/SOTA-293.md) | Count embedding parameters when you report a tiny model's size | Finke et al. (2025), [LIT-485](../../../record/literature.d/LIT-485.md) — at these sizes the embedding table is not a rounding error, it is most of the model: TinyStories-33M is **68M** parameters all-in, and an 8M model in the same paper is "more than half embeddings". Two papers can each claim the smaller model and both be telling the truth. Print the all-in figure. | Proposed |
+| [SOTA-305](../../../record/practices.d/SOTA-305.md) | State the token count and input resolution beside any reconstruction FID, and compare tokenizers only at equal rate | Sun et al. (2024), [LIT-497](../../../record/literature.d/LIT-497.md) — the **same tokenizer** at downsample 16 scores rFID **2.19, 0.94 and 0.70** on 256, 576 and 1024 tokens, all evaluated on `256×256` reconstructions. A three-fold range from a knob that is not the tokenizer. Two papers in this line then quote reconstruction numbers whose rate a reader cannot recover from the sentence they appear in. | Active |

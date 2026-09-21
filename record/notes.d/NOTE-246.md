@@ -1,6 +1,9 @@
 ---
+number: 246
 status: Read
-paper: LIT-tmpb17dj
+formerly:
+- NOTE-tmpgjjku
+paper: LIT-496
 title: 'VQGAN: the loss that made f=16 survivable'
 version: 1
 date: '2026-09-21'
@@ -12,7 +15,7 @@ summary: >-
   anything, and it is why this line exists at all.
 ---
 
-# NOTE-tmpgjjku: VQGAN: the loss that made f=16 survivable
+# NOTE-246: VQGAN: the loss that made f=16 survivable
 
 ## Contribution
 
@@ -49,7 +52,7 @@ is to carry texture.
   applied in a sliding window rather than over the whole token field, so the
   transformer never conditions on the full image.
 - Raster-scan autoregressive ordering over the token grid. Assumed, not
-  argued, and rejected two years later by [LIT-tmpig8jj](../literature.d/LIT-tmpig8jj.md).
+  argued, and rejected two years later by [LIT-498](../literature.d/LIT-498.md).
 
 ## Key results
 
@@ -98,9 +101,9 @@ token field.
 
 ## Connections
 
-Extends [LIT-tmpxz6hg](../literature.d/LIT-tmpxz6hg.md) directly and declares it. Extended by
-[LIT-tmpig8jj](../literature.d/LIT-tmpig8jj.md), which keeps the tokenizer and discards the raster
-order, and by [LIT-tmpflmiq](../literature.d/LIT-tmpflmiq.md), which keeps both and retunes the
+Extends [LIT-499](../literature.d/LIT-499.md) directly and declares it. Extended by
+[LIT-498](../literature.d/LIT-498.md), which keeps the tokenizer and discards the raster
+order, and by [LIT-497](../literature.d/LIT-497.md), which keeps both and retunes the
 codebook. [LIT-494](../literature.d/LIT-494.md) plugs its Gaussian module into this
 architecture and compares against it.
 
@@ -130,7 +133,7 @@ without that there is no image-as-sequence line to have a gap in.
 
 The practices filed in this contribution are both about the *codebook*, which
 this paper inherited from VQ-VAE and did not retune; the retuning is
-[LIT-tmpflmiq](../literature.d/LIT-tmpflmiq.md)'s.
+[LIT-497](../literature.d/LIT-497.md)'s.
 
 ## Limitations
 

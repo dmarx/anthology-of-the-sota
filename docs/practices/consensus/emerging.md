@@ -6,7 +6,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-40 of 304 SOTA documents. Back to the [full index](../README.md).
+41 of 306 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -50,3 +50,4 @@
 | [SOTA-278](../../../record/practices.d/SOTA-278.md) | Before reporting that a model cannot do something, rule out the evaluation | Hu and Frank (2024), [LIT-465](../../../record/literature.d/LIT-465.md) — the same capacity asked two ways scores differently, and the gap widens as the model weakens. Lawsen (2025), [LIT-463](../../../record/literature.d/LIT-463.md), is the worked example: an output cap, a scorer that cannot express refusal, and instances with no solution. | Active |
 | [SOTA-280](../../../record/practices.d/SOTA-280.md) | Sample several reasoning paths and take the majority answer rather than decoding one greedily | Wang et al. (2022), [LIT-468](../../../record/literature.d/LIT-468.md) — replace greedy decoding with sample-and-marginalize: GSM8K +17.9, SVAMP +11.0, AQuA +12.2. Five or ten paths recover most of it, which is the whole cost question. | Active |
 | [SOTA-291](../../../record/practices.d/SOTA-291.md) v2 | Evaluate a specific intervention on a specific affordance rather than the net effect of the system, and never read an individual-level null as the absence of a collective effect |  | Active |
+| [SOTA-306](../../../record/practices.d/SOTA-306.md) | Make the codebook's code vectors low-dimensional and the codebook large, and report utilization alongside reconstruction quality | Sun et al. (2024), [LIT-497](../../../record/literature.d/LIT-497.md) — at codebook size 16384, dropping the code vector dimension from 256 to 8 takes utilization from **0.29% to 97%** and rFID from 9.21 to 2.19. A 256-dimensional codebook uses three codes in a thousand. [LIT-494](../../../record/literature.d/LIT-494.md) finds the same shape independently, on a different architecture and dataset, with the same stated mechanism — and in both the curve turns back up, so there is an interior optimum to find rather than a direction to follow forever. | Active |

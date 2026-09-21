@@ -6,7 +6,7 @@
 
 **Generative modeling** — diffusion, samplers, text-to-image, conditioning and control.
 
-12 of 304 SOTA documents. Back to the [full index](../README.md).
+13 of 306 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -22,3 +22,4 @@
 | [SOTA-289](../../../record/practices.d/SOTA-289.md) | When the sampling budget is small, prefer uniform-state discrete diffusion with consistency distillation — masked diffusion cannot revise what it has already emitted |  | Proposed |
 | [SOTA-301](../../../record/practices.d/SOTA-301.md) | Apply the objective gradient before the denoiser, not after it, when guiding diffusion toward a task objective | Zhang et al. (2026), [LIT-490](../../../record/literature.d/LIT-490.md) — the usual recipe adds `−η∇f` after the denoising step, which walks the sample off the geometry the model learned with nothing left to pull it back. Apply the gradient to the noisy iterate first and let the denoiser follow: it acts as an approximate projection, and the sampler becomes an inexact projected-gradient method. Same cost, one line, and in trajectory planning it is the difference between a plan that looks good and one that survives execution. | Proposed |
 | [SOTA-302](../../../record/practices.d/SOTA-302.md) | Steer a distilled generator by modulating its input noise, not by fine-tuning its weights | Eyring et al. (2025), [LIT-491](../../../record/literature.d/LIT-491.md) — train a LoRA hypernetwork to predict an improved initial noise for a frozen step-distilled generator. GenEval on SANA-Sprint goes **0.70 → 0.75** for **0.1 s** of added latency, recovering about half of what 30-second test-time optimization buys. Reward fine-tuning the same model instead takes it **0.73 → 0.62**: the anchoring KL term is intractable in weight space and tractable in noise space. | Proposed |
+| [SOTA-306](../../../record/practices.d/SOTA-306.md) | Make the codebook's code vectors low-dimensional and the codebook large, and report utilization alongside reconstruction quality | Sun et al. (2024), [LIT-497](../../../record/literature.d/LIT-497.md) — at codebook size 16384, dropping the code vector dimension from 256 to 8 takes utilization from **0.29% to 97%** and rFID from 9.21 to 2.19. A 256-dimensional codebook uses three codes in a thousand. [LIT-494](../../../record/literature.d/LIT-494.md) finds the same shape independently, on a different architecture and dataset, with the same stated mechanism — and in both the curve turns back up, so there is an interior optimum to find rather than a direction to follow forever. | Active |

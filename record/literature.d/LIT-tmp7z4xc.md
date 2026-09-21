@@ -1,0 +1,132 @@
+---
+status: Active
+title: 'nGPT: Normalized Transformer with Representation Learning on the Hypersphere'
+version: 1
+tags:
+- model-architecture
+- model-stability
+- training-optimization
+date: '2026-09-21'
+published: '2024-10-01'
+arxiv: '2410.01131'
+first_author: 'Loshchilov'
+keywords:
+- 'hypersphere'
+- 'normalization'
+- 'transformer-variant'
+- 'convergence-speed'
+- 'conditioning'
+implementations: []
+summary: >-
+  Loshchilov et al. (2024), [ARXIV-2410.01131](https://arxiv.org/abs/2410.01131). Normalize every
+  embedding-dimension vector in every matrix to the unit hypersphere after
+  each step, delete all normalization layers, weight decay and LR warmup, and
+  make each block's residual contribution a learnable per-dimension step size.
+  4× / 10× / 20× fewer tokens to the same loss at 1k / 4k / 8k context, at
+  0.5B and 1B on OpenWebText — and 60–80% more time per step.
+---
+
+<!-- inactive-ok-file: SOTA-122 — Proposed, and named as the record's earlier
+     arrival at the same diagnosis by a different remedy. That it is not yet
+     settled is the point being made about it, not a claim resting on it -->
+
+# LIT-tmp7z4xc: nGPT: Normalized Transformer with Representation Learning on the Hypersphere
+
+## Why it's here
+
+A rare thing: an architecture change that removes machinery instead of adding
+it. All of RMSNorm/LayerNorm, weight decay and learning-rate warmup come out,
+and the claim is that the result trains in a fraction of the tokens. The
+record recommends warmup ([SOTA-008](../practices.d/SOTA-008.md), [SOTA-009](../practices.d/SOTA-009.md)) and decoupled weight
+decay ([SOTA-120](../practices.d/SOTA-120.md)), so a recipe that deletes both and reports a large win is
+worth holding precisely so the conditions can be stated.
+
+It is also the second document in the record arguing that a matrix's norm
+should be managed explicitly rather than as a side-effect of the learning
+rate and weight decay — [SOTA-122](../practices.d/SOTA-122.md) is the first, by a different route.
+
+## What it does
+
+Every matrix — embeddings, `Q`, `K`, `V`, output projection, MLP up and down —
+is normalized along its embedding dimension after each optimizer step. Every
+hidden state is on the unit sphere too. A matrix-vector product is then a
+cosine similarity in `[-1, 1]`, which is what makes the rest coherent:
+
+- **Normalization layers are deleted entirely**, because nothing is ever off
+  the sphere for long.
+- **The residual update becomes an interpolation.** Instead of
+  `h ← h + Attn(h)`, it is `h ← Norm(h + α_A ⊙ (Attn(h) − h))` — a LERP toward
+  the block's suggestion followed by a retraction onto the sphere. The `α` are
+  learnable **per embedding dimension**, and the paper calls them *eigen
+  learning rates*.
+- **Scaling factors are reintroduced where normalization would have destroyed
+  information**: `s_qk` before the QK product, `s_u`/`s_v` on the MLP
+  intermediate, `s_z` on the logits. Constraining the inputs of non-linear
+  units is the failure this fixes, and the paper is explicit that the
+  normalization alone would not have worked without it.
+- **Softmax scaling changes from `1/√d_k` to `√d_k`.**
+- **Weight decay and warmup are set to zero**, not tuned to zero — the
+  normalization is claimed to make both unnecessary.
+
+The reading is that the network is a variable-metric optimizer on the sphere:
+each block proposes a direction, `α` is the step size, the normalization is a
+Riemannian retraction, and a token's forward pass is a trajectory from its
+input embedding to the point that best predicts the next token.
+
+## What was measured
+
+0.5B and 1B parameter models, OpenWebText, LLaMA-2 tokenizer, 64 A100s, global
+batch 512, bf16. Parameter counts match to within 0.4M, so this is not a
+capacity comparison.
+
+- 1B at 4k context: nGPT reaches at 20k iterations the validation loss GPT
+  reaches at 200k — **10×** in iterations and tokens.
+- Across context lengths the factor is **4× at 1k, 10× at 4k, 20× at 8k**.
+  The gap grows with context length, and the paper does not explain why.
+- Downstream task averages track the perplexity result.
+- GPT's input embeddings are worse conditioned; its attention matrices
+  "degenerate into lower-rank matrices". Renormalizing GPT's matrices after
+  training reduces but does not close the condition-number gap.
+- The learned `α` are modest: about 0.25 (attention) and 0.37 (MLP) at 0.5B,
+  falling to 0.20 and 0.32 at 1B. The network chooses small steps.
+
+## Conditions
+
+**The speedup is in tokens, not time.** Step time is **80% higher at 4k and
+60% higher at 8k** — six normalizations per layer instead of two, and
+unfused. So 10× in tokens is about 5.5× in wall clock as measured, and 20× is
+about 12.5×. The paper attributes the overhead to unoptimized kernels and
+expects it to shrink on larger networks; that is a prediction, not a result.
+
+**0.5B and 1B, on a dataset the authors call not of the highest quality.**
+Their own conclusion asks for "larger network sizes, real-world datasets, and
+a broader range of tasks". Nothing here reaches the scale where the record's
+other training-recipe practices are argued.
+
+**One group.** NVIDIA, one architecture family, one codebase (internal
+Megatron-LM). The public re-implementation at `NVIDIA/ngpt` is stated to
+"only qualitatively replicate" the internal experiments.
+
+**Only the learning rate was tuned, for both models** — which makes the
+baseline fair on the axis that matters most and leaves GPT's weight decay at
+0.1 and warmup at 2000 steps untuned. Those are conventional values rather
+than a strawman, but they are defaults rather than a search.
+
+**A sensitivity showed up at the largest setting.** 1B at 8k context needed
+Adam's `ε` on the `α` parameters raised from its default to 0.1 to restore
+smooth hyperparameter curves. That is one knob traded for the two removed,
+and it appeared at the largest configuration tested — the direction that
+matters.
+
+**The authors name an implementation trap**: the parameters held by the
+optimizer must be normalized too, not only the instantiated model parameters.
+They call missing it a common bug.
+
+## Ablations worth knowing
+
+Removing QK normalization costs +0.12% validation loss and saves about 12% of
+step time (0.657 → 0.576 s/step), but the paper keeps it because it helps
+length extrapolation. Replacing LERP with SLERP gains 0.08% for about 10% more
+time. Fixed rather than learnable scaling factors, and a single global
+learnable value, degrade accuracy only slightly — so most of the six new
+parameter groups are not load-bearing.

@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-55 of 411 LIT documents. Back to the [full index](../README.md).
+56 of 412 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -65,3 +65,4 @@
 | [LIT-449](../../../record/literature.d/LIT-449.md) | Scaling Rectified Flow Transformers for High-Resolution Image Synthesis | Esser et al. (2024), [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206). A 61-way comparison of diffusion and rectified-flow formulations settles on a straight-line path with timesteps drawn from a logit-normal, then scales it to 8B for text-to-image. Adds a resolution-dependent shift of the timestep schedule, and MMDiT, which gives each modality its own weights while letting the two token streams attend jointly. | Active |
 | [LIT-464](../../../record/literature.d/LIT-464.md) | Theoretical limitations of multi-layer Transformer | Chen et al. (2024), [ARXIV-2412.02975](https://arxiv.org/abs/2412.02975). The first unconditional lower bound for a decoder-only transformer with more than one layer: any constant-depth decoder needs polynomially many parameters to compose functions sequentially. Depth, an encoder, or chain of thought each buy what width cannot. | Active |
 | [LIT-472](../../../record/literature.d/LIT-472.md) | nGPT: Normalized Transformer with Representation Learning on the Hypersphere | Loshchilov et al. (2024), [ARXIV-2410.01131](https://arxiv.org/abs/2410.01131). Normalize every embedding-dimension vector in every matrix to the unit hypersphere after each step, delete all normalization layers, weight decay and LR warmup, and make each block's residual contribution a learnable per-dimension step size. 4× / 10× / 20× fewer tokens to the same loss at 1k / 4k / 8k context, at 0.5B and 1B on OpenWebText — and 60–80% more time per step. | Active |
+| [LIT-477](../../../record/literature.d/LIT-477.md) | NoProp: Training Neural Networks without Full Back-propagation or Full Forward-propagation | Li, Teh and Pascanu (2025), [ARXIV-2503.24322](https://arxiv.org/abs/2503.24322). Train each block independently to denoise a noisy *label* embedding given the raw input — diffusion machinery pointed at a classifier. No forward or backward pass across the network at training time, about half the GPU memory, and test accuracy matching backprop on MNIST and CIFAR-10. Every block sees the input, which is what makes independence possible and what makes the comparison awkward. | Active |

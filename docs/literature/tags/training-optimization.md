@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-85 of 411 LIT documents. Back to the [full index](../README.md).
+86 of 412 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -95,3 +95,4 @@
 | [LIT-474](../../../record/literature.d/LIT-474.md) | The Coverage Principle: How Pre-Training Enables Post-Training | Chen, Huang, Golowich, Malladi, Block, Ash, Krishnamurthy and Foster (2025), [ARXIV-2510.15020](https://arxiv.org/abs/2510.15020). Names the quantity cross-entropy is a bad proxy for: the **coverage profile**, the probability mass a model puts on rare high-quality responses. Proves it is necessary and sufficient for Best-of-N to succeed, that next-token prediction optimizes it faster than it optimizes cross-entropy, and that sequence-level KL carries a linear dependence on sequence length that coverage does not. | Active |
 | [LIT-475](../../../record/literature.d/LIT-475.md) | Dropout Reduces Underfitting | Liu, Xu, Jin, Shen and Darrell (2023), [ARXIV-2303.01500](https://arxiv.org/abs/2303.01500). Dropout applied only for the first stretch of training and then switched off lowers **training** loss and raises test accuracy on models too small to overfit — the regime where standard dropout costs up to 6 points. The mechanism is measured: early dropout reduces the angle between mini-batch gradients and the whole-dataset gradient. | Active |
 | [LIT-476](../../../record/literature.d/LIT-476.md) | Estimating the Probability of Sampling a Trained Neural Network at Random | Scherlis and Belrose (2025), [ARXIV-2501.18812](https://arxiv.org/abs/2501.18812). An estimator for the measure, under the initialization distribution, of the region around a trained network whose behaviour matches it. Negative log of that measure is a description length. A ConvNeXt deliberately trained to generalize badly has a **smaller** such region — detectable on clean held-out data where its behaviour is indistinguishable. | Active |
+| [LIT-477](../../../record/literature.d/LIT-477.md) | NoProp: Training Neural Networks without Full Back-propagation or Full Forward-propagation | Li, Teh and Pascanu (2025), [ARXIV-2503.24322](https://arxiv.org/abs/2503.24322). Train each block independently to denoise a noisy *label* embedding given the raw input — diffusion machinery pointed at a classifier. No forward or backward pass across the network at training time, about half the GPU memory, and test accuracy matching backprop on MNIST and CIFAR-10. Every block sees the input, which is what makes independence possible and what makes the comparison awkward. | Active |

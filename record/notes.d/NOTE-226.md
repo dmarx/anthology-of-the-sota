@@ -1,6 +1,9 @@
 ---
+number: 226
 status: Read
-paper: LIT-tmp9ubz0
+formerly:
+- NOTE-tmpbp3dj
+paper: LIT-477
 title: 'NoProp'
 version: 1
 date: '2026-09-21'
@@ -11,7 +14,7 @@ summary: >-
   fitting is the binding constraint. The paper does not mention it.
 ---
 
-# NOTE-tmpbp3dj: NoProp
+# NOTE-226: NoProp
 
 ## Contribution
 

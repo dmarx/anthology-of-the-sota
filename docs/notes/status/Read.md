@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-222 of 225 NOTE documents. Back to the [full index](../README.md).
+223 of 226 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -232,3 +232,4 @@
 | [NOTE-223](../../../record/notes.d/NOTE-223.md) | The Coverage Principle | Reading it: the strongest thing here is not the theorem but the Bernoulli example, which shows KL going to infinity while coverage stays fine on a two-outcome model. That is the whole argument in four lines, and it explains why a metric everybody watches can be anti-correlated with what they want. | Read |
 | [NOTE-224](../../../record/notes.d/NOTE-224.md) | Dropout Reduces Underfitting | Reading it: the persuasive number is the training loss, not the accuracy. Early dropout lowers ViT-T's training loss from 3.443 to 3.394 while standard dropout raises it to 3.885 — so the same operator is doing two opposite things depending only on when it runs, and one of them is not regularization. | Read |
 | [NOTE-225](../../../record/notes.d/NOTE-225.md) | Local Volume | Reading it: the useful result is the audit, not the hypothesis. A network trained to generalize badly is detected on clean held-out data where its behaviour matches a clean model's, in a small number of forward passes. The volume hypothesis itself is left where it was found — "broadly consistent", by the authors' own conclusion. | Read |
+| [NOTE-226](../../../record/notes.d/NOTE-226.md) | NoProp | Reading it: the interesting number is in the train column, not the test one. NoProp matches backprop on test while sitting 8-15 points behind on train, which on MNIST and CIFAR costs nothing and would be the whole story anywhere fitting is the binding constraint. The paper does not mention it. | Read |

@@ -6,7 +6,7 @@
 
 **Generative modeling** — diffusion, samplers, text-to-image, conditioning and control.
 
-18 of 411 LIT documents. Back to the [full index](../README.md).
+19 of 412 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -28,3 +28,4 @@
 | [LIT-447](../../../record/literature.d/LIT-447.md) | SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers | Ma et al. (2024), [ARXIV-2401.08740](https://arxiv.org/abs/2401.08740). Holds DiT's architecture, parameter count and GFLOPs fixed and varies four transport choices one at a time: discrete vs continuous time, score vs velocity prediction, the interpolant connecting the distributions, and the sampler. Velocity prediction and a linear interpolant each help substantially; the sampler's diffusion coefficient turns out to be choosable after training. | Active |
 | [LIT-448](../../../record/literature.d/LIT-448.md) | Scalable Diffusion Models with Transformers | Peebles and Xie (2022), [ARXIV-2212.09748](https://arxiv.org/abs/2212.09748). Replaces the U-Net backbone every diffusion model had inherited from DDPM with a transformer over latent patches, and shows FID falls monotonically with forward-pass GFLOPs however the GFLOPs are bought — depth, width or token count. DiT-XL/2 reaches 2.27 FID on class-conditional ImageNet 256. | Active |
 | [LIT-449](../../../record/literature.d/LIT-449.md) | Scaling Rectified Flow Transformers for High-Resolution Image Synthesis | Esser et al. (2024), [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206). A 61-way comparison of diffusion and rectified-flow formulations settles on a straight-line path with timesteps drawn from a logit-normal, then scales it to 8B for text-to-image. Adds a resolution-dependent shift of the timestep schedule, and MMDiT, which gives each modality its own weights while letting the two token streams attend jointly. | Active |
+| [LIT-477](../../../record/literature.d/LIT-477.md) | NoProp: Training Neural Networks without Full Back-propagation or Full Forward-propagation | Li, Teh and Pascanu (2025), [ARXIV-2503.24322](https://arxiv.org/abs/2503.24322). Train each block independently to denoise a noisy *label* embedding given the raw input — diffusion machinery pointed at a classifier. No forward or backward pass across the network at training time, about half the GPU memory, and test accuracy matching backprop on MNIST and CIFAR-10. Every block sees the input, which is what makes independence possible and what makes the comparison awkward. | Active |

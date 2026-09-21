@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-74 of 286 SOTA documents. Back to the [full index](../README.md).
+75 of 287 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -84,3 +84,4 @@
 | [SOTA-282](../../../record/practices.d/SOTA-282.md) | Put every matrix and hidden state on the unit hypersphere, and make each block's residual step size a learned per-dimension parameter |  | Proposed |
 | [SOTA-283](../../../record/practices.d/SOTA-283.md) | To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it |  | Proposed |
 | [SOTA-285](../../../record/practices.d/SOTA-285.md) | Put dropout at the start of training if the model underfits, and at the end if it overfits — the schedule decides the sign, not the rate |  | Proposed |
+| [SOTA-287](../../../record/practices.d/SOTA-287.md) | If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input |  | Proposed |

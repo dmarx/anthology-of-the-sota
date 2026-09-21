@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**119 document(s) awaiting a decision.**
+**120 document(s) awaiting a decision.**
 
 ## SOTAs
 
-79 of the 119.
+80 of the 120.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -92,10 +92,11 @@
 | 2026-09-21 | Proposed | [SOTA-282](../../record/practices.d/SOTA-282.md) | 2 | 0 | Put every matrix and hidden state on the unit hypersphere, and make each block's residual step size a learned per-dimension parameter |
 | 2026-09-21 | Proposed | [SOTA-284](../../record/practices.d/SOTA-284.md) | 1 | 0 | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |
 | 2026-09-21 | Proposed | [SOTA-286](../../record/practices.d/SOTA-286.md) | 1 | 0 | To find a model that generalizes badly where its outputs look fine, measure how much of parameter space behaves the way it does |
+| 2026-09-21 | Proposed | [SOTA-287](../../record/practices.d/SOTA-287.md) | 0 | 0 | If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input |
 
 ## THEORYs
 
-21 of the 119.
+21 of the 120.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -123,7 +124,7 @@
 
 ## LITs
 
-3 of the 119.
+3 of the 120.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -133,7 +134,7 @@
 
 ## ADRs
 
-16 of the 119.
+16 of the 120.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -158,4 +159,4 @@ The citation count is the second axis, and it flips the priority: an old proposa
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (9): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md), [ADR-040](../../record/decisions.d/ADR-040.md), [ADR-042](../../record/decisions.d/ADR-042.md), [THEORY-041](../../record/theory.d/THEORY-041.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (10): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md), [ADR-040](../../record/decisions.d/ADR-040.md), [ADR-042](../../record/decisions.d/ADR-042.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [THEORY-041](../../record/theory.d/THEORY-041.md) — these are the cheapest to close, since nothing depends on the answer.

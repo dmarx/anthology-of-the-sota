@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-29 of 286 SOTA documents. Back to the [full index](../README.md).
+30 of 287 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -39,3 +39,4 @@
 | [SOTA-262](../../../record/practices.d/SOTA-262.md) | Give each modality its own weights and let the streams attend jointly | Esser et al. (2024), [LIT-449](../../../record/literature.d/LIT-449.md) — MMDiT gives the text and image streams separate projections and MLPs, then runs attention over the concatenated sequence so information flows both ways. It beats UViT and DiT at matched budget, follows predictable scaling trends, and the gains land specifically on text comprehension, typography and human preference. | Proposed |
 | [SOTA-277](../../../record/practices.d/SOTA-277.md) | For a task that is a sequential composition, buy depth rather than width | Chen et al. (2024), [LIT-464](../../../record/literature.d/LIT-464.md) — composing `k` functions costs a constant-depth decoder polynomially many parameters and a `log k`-layer one polylogarithmically. An exponential separation, proved unconditionally, and about what a shape can express rather than what a run will learn. | Proposed |
 | [SOTA-282](../../../record/practices.d/SOTA-282.md) | Put every matrix and hidden state on the unit hypersphere, and make each block's residual step size a learned per-dimension parameter |  | Proposed |
+| [SOTA-287](../../../record/practices.d/SOTA-287.md) | If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input |  | Proposed |

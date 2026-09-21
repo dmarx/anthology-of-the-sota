@@ -1,5 +1,8 @@
 ---
+number: 287
 status: Proposed
+formerly:
+- SOTA-tmp8b9jt
 promote_when: >-
   A result on a task where backpropagation is not already at ceiling on the
   training set — anything large enough that fitting is the binding constraint
@@ -21,18 +24,18 @@ tags:
 - model-architecture
 date: '2026-09-21'
 source:
-- LIT-tmp9ubz0
+- LIT-477
 introduced_by:
-- LIT-tmp9ubz0
+- LIT-477
 implementations: []
 ---
 
-# SOTA-tmp8b9jt: If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input
+# SOTA-287: If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input
 
 ## Source
 
-Li, Teh and Pascanu (2025), [LIT-tmp9ubz0](../literature.d/LIT-tmp9ubz0.md) — read as
-[NOTE-tmpbp3dj](../notes.d/NOTE-tmpbp3dj.md). MNIST, CIFAR-10 and CIFAR-100, no data
+Li, Teh and Pascanu (2025), [LIT-477](../literature.d/LIT-477.md) — read as
+[NOTE-226](../notes.d/NOTE-226.md). MNIST, CIFAR-10 and CIFAR-100, no data
 augmentation, 3 seeds × 5 inference runs.
 
 ## When this applies

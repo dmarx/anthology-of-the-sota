@@ -6,7 +6,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-79 of 286 SOTA documents. Back to the [full index](../README.md).
+80 of 287 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -89,3 +89,4 @@
 | [SOTA-284](../../../record/practices.d/SOTA-284.md) | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |  | Proposed |
 | [SOTA-285](../../../record/practices.d/SOTA-285.md) | Put dropout at the start of training if the model underfits, and at the end if it overfits — the schedule decides the sign, not the rate |  | Proposed |
 | [SOTA-286](../../../record/practices.d/SOTA-286.md) | To find a model that generalizes badly where its outputs look fine, measure how much of parameter space behaves the way it does |  | Proposed |
+| [SOTA-287](../../../record/practices.d/SOTA-287.md) | If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input |  | Proposed |

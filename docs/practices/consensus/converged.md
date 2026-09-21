@@ -6,7 +6,7 @@
 
 **Agreed** — the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately.
 
-21 of 312 SOTA documents. Back to the [full index](../README.md).
+21 of 313 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,7 +20,7 @@
 | [SOTA-192](../../../record/practices.d/SOTA-192.md) v4 | Normalize the queries and keys before the attention dot product |  | Active |
 | [SOTA-193](../../../record/practices.d/SOTA-193.md) | Lower Adam's second-moment decay when the loss spikes, before reaching for the learning rate |  | Proposed |
 | [SOTA-195](../../../record/practices.d/SOTA-195.md) | Predict v rather than the noise when the model will be evaluated at low signal-to-noise |  | Active |
-| [SOTA-197](../../../record/practices.d/SOTA-197.md) | Account for test-set proximity to the training data when evaluating, and state your contamination exposure |  | Active |
+| [SOTA-197](../../../record/practices.d/SOTA-197.md) v2 | Account for test-set proximity to the training data when evaluating, and state your contamination exposure |  | Active |
 | [SOTA-199](../../../record/practices.d/SOTA-199.md) | Regularize a narrow fine-tune against the pre-fine-tuning model's own samples |  | Active |
 | [SOTA-202](../../../record/practices.d/SOTA-202.md) | Clamp the prediction to the training range at every step when sampling from a model's own output |  | Active |
 | [SOTA-205](../../../record/practices.d/SOTA-205.md) | Replace a large coordinate network with a compact explicit structure and a small decoder | Four independent groups, three structures. Where a field is queried pointwise and the signal is spatially sparse, the capacity belongs in an addressable structure that training optimises directly, not in a network evaluated per point. | Active |

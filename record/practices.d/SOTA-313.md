@@ -1,5 +1,8 @@
 ---
+number: 313
 status: Active
+formerly:
+- SOTA-tmpecji3
 consensus: unassessed
 consensus_note: >-
   One report, and no assessment of what the field does. The measurement behind
@@ -15,12 +18,12 @@ tags:
 - in-context-learning
 date: '2026-09-21'
 source:
-- LIT-tmpgqsmp
+- LIT-510
 introduced_by:
-- LIT-tmpgqsmp
+- LIT-510
 implementations: []
 summary: >-
-  Gemini Team (2023), [LIT-tmpgqsmp](../literature.d/LIT-tmpgqsmp.md) — on MMLU, greedy sampling puts
+  Gemini Team (2023), [LIT-510](../literature.d/LIT-510.md) — on MMLU, greedy sampling puts
   GPT-4 ahead by 0.2, plain chain-of-thought at 32 samples puts it ahead by
   2.3, and uncertainty-routed CoT at 32 samples puts Gemini Ultra ahead by
   **2.7**. Same models, same benchmark, same harness. The procedure is worth
@@ -34,12 +37,12 @@ summary: >-
      declines to join. Citing a practice in order to say the count does NOT
      extend to it is not citing it as settled. -->
 
-# SOTA-tmpecji3: Treat the inference-time decision procedure as part of what you are comparing, and report the ordering under each one
+# SOTA-313: Treat the inference-time decision procedure as part of what you are comparing, and report the ordering under each one
 
 ## Source
 
-Gemini Team, Google (2023), [LIT-tmpgqsmp](../literature.d/LIT-tmpgqsmp.md) — read as
-[NOTE-tmp13fue](../notes.d/NOTE-tmp13fue.md). Appendix 10.2.
+Gemini Team, Google (2023), [LIT-510](../literature.d/LIT-510.md) — read as
+[NOTE-255](../notes.d/NOTE-255.md). Appendix 10.2.
 
 ## When this applies
 
@@ -131,7 +134,7 @@ share. Five of those and this one is a count, not a principle —
 
 ## Known implementations
 
-None recorded as a reporting standard. [LIT-tmpgqsmp](../literature.d/LIT-tmpgqsmp.md)'s own Appendix
+None recorded as a reporting standard. [LIT-510](../literature.d/LIT-510.md)'s own Appendix
 10.2 is the worked example, which is the awkward and accurate position: the
 paper that demonstrates the problem also demonstrates the remedy, one appendix
 away from the abstract that needed it.

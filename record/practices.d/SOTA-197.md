@@ -15,7 +15,7 @@ history:
 - version: 2
   date: '2026-09-21'
   note: >-
-    Adds LIT-tmpgqsmp as a third source, and with it the practice's first
+    Adds LIT-510 as a third source, and with it the practice's first
     number. v1 rested on a proposal (LIT-060) and a disclosure (LIT-077), and
     its consensus_note observed that what almost nobody does is state their
     exposure. A frontier lab now has, and priced it: a hundred fine-tuning
@@ -27,7 +27,7 @@ date: '2026-09-10'
 source:
 - LIT-060
 - LIT-077
-- LIT-tmpgqsmp
+- LIT-510
 introduced_by:
 - LIT-060
 implementations: []
@@ -43,12 +43,12 @@ of proximity of test documents with the training set".
 Srivastava et al. (2022), [LIT-077](../literature.d/LIT-077.md) — BIG-bench, which states its own exposure
 and ships a probe for future models.
 
-Gemini Team, Google (2023), [LIT-tmpgqsmp](../literature.d/LIT-tmpgqsmp.md) — read as
-[NOTE-tmp13fue](../notes.d/NOTE-tmp13fue.md) — which does both and measures the size of the effect.
+Gemini Team, Google (2023), [LIT-510](../literature.d/LIT-510.md) — read as
+[NOTE-255](../notes.d/NOTE-255.md) — which does both and measures the size of the effect.
 
 ## What it is worth, measured
 
-[LIT-tmpgqsmp](../literature.d/LIT-tmpgqsmp.md) supplies the number this practice lacked. An
+[LIT-510](../literature.d/LIT-510.md) supplies the number this practice lacked. An
 **additional hundred fine-tuning steps** on website extracts corresponding to
 the HellaSwag *training* set — extracts that were not in the pretraining data —
 take validation accuracy to **89.6%** for Gemini Pro and **96.0%** for Gemini

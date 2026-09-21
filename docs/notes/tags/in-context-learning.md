@@ -4,7 +4,7 @@
 
 **in-context-learning**.
 
-10 of 254 NOTE documents. Back to the [full index](../README.md).
+11 of 255 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -18,3 +18,4 @@
 | [NOTE-238](../../../record/notes.d/NOTE-238.md) | PHi: prediction of hidden states | Read for the instrument. The diagnosis of next-token loss is clean and the boring/interesting separation is convincing on two architectures. The reasoning-selection result is weaker than the abstract implies, and the paper says so itself in a sentence most readers will pass over: picking by next-token loss alone already scores 71%. | Read |
 | [NOTE-242](../../../record/notes.d/NOTE-242.md) | Genesys and what survives its own controls | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for the architecture-discovery claim and filed for the code-generation one. Unit-by-unit generation with an execution-based checker takes valid output from 6% to 92% on the same proposals, with a stated mechanism that has nothing to do with architectures. The discovered architectures are a wash against their own seeds, by the paper's own table. | Read |
 | [NOTE-249](../../../record/notes.d/NOTE-249.md) | MemGraphRAG: the pilot study is the contribution | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist in rank order. The system is a multi-agent GraphRAG pipeline with single-run numbers; the durable part is §3, which measures other people's systems and finds graph expansion trading relevance for recall at a net loss on the end task. That is the filing. | Read |
+| [NOTE-255](../../../record/notes.d/NOTE-255.md) | Gemini 1.0: complete disclosure, and an abstract that picks the flattering row | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for the model and filed for the appendices. The headline — first model to exceed human-expert MMLU — holds under one inference procedure out of three the report itself publishes, and under the other two GPT-4 is ahead. Nothing is concealed. The disambiguating numbers are in the same document, which is what makes this the corpus's cleanest instance of `DP-010`. | Read |

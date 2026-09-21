@@ -4,7 +4,7 @@
 
 **multimodal-learning**.
 
-7 of 254 NOTE documents. Back to the [full index](../README.md).
+8 of 255 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -15,3 +15,4 @@
 | [NOTE-196](../../../record/notes.d/NOTE-196.md) | Scaling Rectified Flow Transformers | A 61-way sweep over diffusion and rectified-flow formulations settles on a straight-line path with logit-normal timestep sampling — rectified flow with uniform timesteps does not win. Adds a resolution-dependent timestep shift, MMDiT's per-modality weights with joint attention, and QK-RMSNorm for high-resolution stability. 8B, weights released. | Read |
 | [NOTE-206](../../../record/notes.d/NOTE-206.md) | The Platonic Representation Hypothesis | Vision and language models measure distance between datapoints more alike as they get larger, across architectures and objectives. The conjecture is that they converge on a model of what generated the data. The proof holds for bijective observations only, and the caption-density experiment tests that boundary rather than asserting past it. | Read |
 | [NOTE-232](../../../record/notes.d/NOTE-232.md) | Mixture-of-Transformers | Read to test whether it satisfies `SOTA-262`'s promotion condition. It does, as that condition was written — second group, per-modality weights against a shared-weight backbone, FLOPs held identical. The component ablation is a bonus the condition did not ask for and the practice needed. | Read |
+| [NOTE-255](../../../record/notes.d/NOTE-255.md) | Gemini 1.0: complete disclosure, and an abstract that picks the flattering row | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for the model and filed for the appendices. The headline — first model to exceed human-expert MMLU — holds under one inference procedure out of three the report itself publishes, and under the other two GPT-4 is ahead. Nothing is concealed. The disambiguating numbers are in the same document, which is what makes this the corpus's cleanest instance of `DP-010`. | Read |

@@ -6,7 +6,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-187 of 312 SOTA documents. Back to the [full index](../README.md).
+188 of 313 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -147,7 +147,7 @@
 | [SOTA-194](../../../record/practices.d/SOTA-194.md) | When an objective arrives with its own dataset, state the composition before crediting the objective |  | Active |
 | [SOTA-195](../../../record/practices.d/SOTA-195.md) | Predict v rather than the noise when the model will be evaluated at low signal-to-noise |  | Active |
 | [SOTA-196](../../../record/practices.d/SOTA-196.md) | Report zero-shot and in-distribution performance separately; one hyperparameter can move them in opposite directions |  | Active |
-| [SOTA-197](../../../record/practices.d/SOTA-197.md) | Account for test-set proximity to the training data when evaluating, and state your contamination exposure |  | Active |
+| [SOTA-197](../../../record/practices.d/SOTA-197.md) v2 | Account for test-set proximity to the training data when evaluating, and state your contamination exposure |  | Active |
 | [SOTA-198](../../../record/practices.d/SOTA-198.md) v2 | Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run |  | Active |
 | [SOTA-199](../../../record/practices.d/SOTA-199.md) | Regularize a narrow fine-tune against the pre-fine-tuning model's own samples |  | Active |
 | [SOTA-200](../../../record/practices.d/SOTA-200.md) v2 | Check whether an emergent capability is a metric artefact before believing it |  | Active |
@@ -197,3 +197,4 @@
 | [SOTA-310](../../../record/practices.d/SOTA-310.md) | Treat a mechanistic explanation that passes circuit error or causal alignment as one of many, and report what you did to rule the others out | Méloux, Maniu, Portet and Peyrard (2025), [LIT-504](../../../record/literature.d/LIT-504.md) — by exhaustive enumeration on small MLPs, **no network** had exactly one circuit interpretation and **under 2%** had exactly one valid minimal mapping. The median number of explanations satisfying the criteria rises from **38 to 910,000** as width goes 2 → 5, and both counts are lower bounds. Passing circuit error or IIA establishes that an explanation is admissible, not that it is the explanation. | Active |
 | [SOTA-311](../../../record/practices.d/SOTA-311.md) | Evaluate a search on tasks held out of its own fitness function, and report the gap against the tasks it selected on | No source states this; it is filed on a priori grounds with one instance. Cheng, Clark and Richardson (2025), [LIT-493](../../../record/literature.d/LIT-493.md), searched 1,062 pretrained designs against a fitness function of average downstream accuracy, then reported the top five on nine benchmarks drawn from the same pool and chosen — per its own Table 16 — for **largest standard deviation across the search population**. The best discovered design beats the best seed by **0.03** points. | Active |
 | [SOTA-312](../../../record/practices.d/SOTA-312.md) | State the noise or binning assumption behind any mutual information you report for a deterministic network, and show the conclusion survives changing it | Saxe et al. (2018), [LIT-509](../../../record/literature.d/LIT-509.md) — in a deterministic network `I(h;X)` is **infinite**, so every finite number on an information plane is a property of a noise model the analyst imposed and the network never had. The same `tanh` run, binned evenly in net input instead of evenly in activity, loses its compression phase entirely; and [LIT-507](../../../record/literature.d/LIT-507.md) makes compression *appear* in ReLU networks by changing the binning the other way. | Active |
+| [SOTA-313](../../../record/practices.d/SOTA-313.md) | Treat the inference-time decision procedure as part of what you are comparing, and report the ordering under each one | Gemini Team (2023), [LIT-510](../../../record/literature.d/LIT-510.md) — on MMLU, greedy sampling puts GPT-4 ahead by 0.2, plain chain-of-thought at 32 samples puts it ahead by 2.3, and uncertainty-routed CoT at 32 samples puts Gemini Ultra ahead by **2.7**. Same models, same benchmark, same harness. The procedure is worth **6.0** points to one model and **3.1** to the other, so running the same procedure on both is not enough — the ordering is a property of the procedure you chose to report. | Active |

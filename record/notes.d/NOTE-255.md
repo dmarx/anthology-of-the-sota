@@ -1,6 +1,9 @@
 ---
+number: 255
 status: Read
-paper: LIT-tmpgqsmp
+formerly:
+- NOTE-tmp13fue
+paper: LIT-510
 title: 'Gemini 1.0: complete disclosure, and an abstract that picks the flattering row'
 version: 1
 date: '2026-09-21'
@@ -18,7 +21,7 @@ summary: >-
      declines to join. Citing a practice in order to say the count does NOT
      extend to it is not citing it as settled. -->
 
-# NOTE-tmp13fue: Gemini 1.0: complete disclosure, and an abstract that picks the flattering row
+# NOTE-255: Gemini 1.0: complete disclosure, and an abstract that picks the flattering row
 
 ## Contribution
 
@@ -114,7 +117,7 @@ defensible readings of tables that also contain the rows that qualify them.
 
 ## Bearing on the record
 
-**One new practice and one strengthened.** [SOTA-tmpecji3](../practices.d/SOTA-tmpecji3.md) takes C1:
+**One new practice and one strengthened.** [SOTA-313](../practices.d/SOTA-313.md) takes C1:
 the inference procedure is part of what is being compared, and reporting the
 sweep rather than the best row is what makes a comparison a comparison.
 [SOTA-197](../practices.d/SOTA-197.md) — account for test-set proximity and state your exposure —

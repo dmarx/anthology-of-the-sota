@@ -1,0 +1,64 @@
+---
+status: Active
+title: 'Auxiliary task demands mask the capabilities of smaller language models'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-21'
+published: '2024-04-01'
+arxiv: '2404.02418'
+first_author: 'Hu'
+keywords:
+- 'task-demands'
+- 'evaluation-design'
+- 'demand-gap'
+- 'metalinguistic-prompting'
+- 'model-scale'
+implementations: []
+summary: >-
+  Hu and Frank (2024), [ARXIV-2404.02418](https://arxiv.org/abs/2404.02418). Across four capacities,
+  the higher-demand way of asking scores lower than the lower-demand way of
+  asking the same question — and the gap is widest for the smallest and
+  least-trained models, so demands are mistaken for missing capability.
+  COLM 2024.
+---
+
+# LIT-tmpmftfr: Auxiliary task demands mask the capabilities of smaller language models
+
+Hu and Frank (2024) — [ARXIV-2404.02418](https://arxiv.org/abs/2404.02418)
+
+## Key takeaways
+
+- **The concept is borrowed from developmental psychology and it transfers.**
+  A child failing a theory-of-mind task may lack the capacity or may be
+  defeated by the auxiliary demands of the task — understanding the question,
+  holding several facts, inhibiting a response. The same fork applies to a
+  model, and the field has mostly been reading failure as absence.
+- **The demand gap is measured, not asserted.** Four capacities — analogical
+  reasoning, reflective reasoning, word prediction, grammaticality judgement
+  — each evaluated in a higher-demand and a lower-demand way that target the
+  same underlying ability. The higher-demand method scores lower every time.
+  A metalinguistic prompt asking a model for its prediction is the
+  high-demand version; reading the probability of the target word directly is
+  the low-demand version.
+- **The gap is not uniform across models, and that is the finding with
+  consequences.** It is largest for models with fewer parameters and less
+  training data. So a comparison between a small and a large model under a
+  high-demand evaluation overstates the difference between them, and some of
+  what is read as scale unlocking a capability is scale paying the task's
+  overhead.
+- **The conclusion is about inference, not about models.** Performance is a
+  joint function of the model's knowledge and the evaluation's design, so a
+  score is evidence about a construct only through the design — which the
+  paper puts as capacities "seen through the lens of researchers' design
+  choices".
+
+## Standing in the anthology
+
+The systematic evidence behind [SOTA-tmpwqjj5](../practices.d/SOTA-tmpwqjj5.md), and the general form
+of what the reasoning-model dispute ([LIT-tmpzsiks](../literature.d/LIT-tmpzsiks.md),
+[LIT-tmp85dyu](../literature.d/LIT-tmp85dyu.md)) is one loud instance of. It is also the mirror of
+[SOTA-200](../practices.d/SOTA-200.md): that practice says a capability that appears with scale may
+be a metric artefact; this says a limit that appears at small scale may be a
+task-demand artefact. The record now holds both directions of the same
+caution, from independent literatures.

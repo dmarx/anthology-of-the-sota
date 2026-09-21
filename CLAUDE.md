@@ -66,11 +66,23 @@ work perfectly well.
   one.** The thirteen live in the `topics` vocabulary in `luria.yaml` — one
   table, named by the practice registry and the reading list alike, glosses
   included. List the topic the document is *most* about first: `primary_topic`
-  derives `{tags[0]}`, so tag order is what the indexes read. Add a second
-  topic when it is genuinely true, and never to bind a relation — the chain
-  invariant reads the whole tag list now, so an incidental tag will bind an
-<!-- inactive-ok: ADR-035 — Proposed, and the decision this rule states -->
-  edge that should have stayed open (`ADR-035`).
+  derives `{tags[0]}`, so tag order is what the indexes read. **Tag the
+  document's subject, liberally** — more than one topic is normal and three is
+  fine. The test is whether a tag is *justifiably appropriate*: would someone
+  browsing that topic be right to expect this document? Not whether it is the
+  single best word, and not why the record went and got the thing (`ADR-046`).
+- **An unbound relation is a defect, and "somebody looked at it" is not an
+  answer.** `chains` declare `invariant: tags`, so a relation the report calls
+  unbound has exactly two readings — the invariant is missing, or the relation
+  is wrong — and never a third (`ADR-049`, which took 22 unbound relations and
+  10 unbound lines to zero and rejected an acknowledgement directive for the
+  purpose). So the report is where you find documents that are not saying what
+  they are about, and answering one by adding a true topic is the intended
+  response. The narrow thing that stays forbidden is inventing a *label* to
+  satisfy the check (`ADR-035` §4) — impossible on `SOTA`, `LIT` and `THEORY`
+  anyway, where the vocabulary is closed. If the honest tags will not bind,
+  say so and fix it: either the relation is wrong, or the vocabulary is short
+  a word and the next bullet is what to do about it.
 - **The tag vocabulary is closed, and that is an invitation.** A tag not in
   `topics` fails the lint on `SOTA`, `LIT` and `THEORY`. That is there so
   every tag is one somebody chose and blurbed — **not** because the list is

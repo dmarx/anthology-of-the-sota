@@ -9,7 +9,6 @@ tags:
 # its blurb. SOTA-070, from the same paper and compared against it, is
 # already filed there.
 - model-stability
-# inactive-ok: ADR-035 — Proposed, and what permits this tag
 # Secondary, restored: `training-optimization` names training dynamics, which is what is being watched (ADR-035).
 - training-optimization
 date: '2026-08-24'

@@ -121,7 +121,7 @@ vocabularies:
         blurb: serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms
       adaptation-and-tuning:
         label: Adaptation and tuning
-        blurb: taking a trained model somewhere new — fine-tuning and transfer, preference training and alignment, parameter-efficient adaptation, context extension
+        blurb: taking a trained model somewhere new — fine-tuning and transfer, preference training and safety alignment, parameter-efficient adaptation, context extension
       # Added by ADR-tmphn14u. Every item in `adaptation-and-tuning`'s blurb changes
       # the weights or the window; in-context learning changes neither, and the
       # twenty documents about it sat in four topics with none holding half.

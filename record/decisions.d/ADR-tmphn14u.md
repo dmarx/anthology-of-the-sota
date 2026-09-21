@@ -102,10 +102,11 @@ quantization, which is representation work and correctly filed under
 
 20 documents, top topic 45%.
 
-`adaptation-and-tuning`'s blurb reads: "taking a trained model somewhere new
+`adaptation-and-tuning`'s blurb read: "taking a trained model somewhere new
 — fine-tuning and transfer, preference training and alignment,
-parameter-efficient adaptation, context extension". **Every item on that list
-changes the weights or the window.** In-context learning changes neither: the
+parameter-efficient adaptation, context extension" (the last clause is
+amended below). **Every item on that list changes the weights or the
+window.** In-context learning changes neither: the
 model is fixed, the window is whatever it already was, and the claim is about
 what you put in it.
 
@@ -135,6 +136,27 @@ caught only by reading the hits: "alignment" (gradient alignment, not safety —
 42 apparent documents, 2 real), "retrieval" (above), and "quantization"
 (vector quantization). A keyword probe over this corpus is a way to generate
 candidates and never a way to settle one.
+
+## Decision 4: `alignment` in a blurb becomes `safety alignment`
+
+`adaptation-and-tuning`'s blurb said "preference training and alignment". The
+word is a homonym and this pass proved it the expensive way: a probe for
+alignment returned 42 documents scattered across four topics, which read as a
+safety-shaped gap in the vocabulary. Two were about safety. The other forty
+are *gradient* alignment, aligned singular vectors, batch gradient alignment
+— the linear-algebra sense, which is most of what the optimizer literature in
+this record talks about.
+
+A blurb is what somebody reads when deciding where a document goes, and a
+blurb item that matches the wrong sense of its own word will send documents
+to the wrong place and hide the fact afterwards. It now reads **"preference
+training and safety alignment"**.
+
+This does not create a safety topic. The record holds two documents on the
+subject — [LIT-082](../literature.d/LIT-082.md) (Constitutional AI) and [SOTA-183](../practices.d/SOTA-183.md) (generate the
+harmlessness preference labels with the model itself) — and two is not
+several, which is the same test retrieval failed above. What it does is make
+the existing home for them say so.
 
 ## Consequences
 

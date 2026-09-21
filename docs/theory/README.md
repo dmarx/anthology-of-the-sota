@@ -31,13 +31,13 @@ bare code and run `luria link --fix`.
 
 ## By topic
 
-**[Training optimization](tags/training-optimization.md)** (12) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
-[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md) · [026](../../record/theory.d/THEORY-026.md) · [028](../../record/theory.d/THEORY-028.md) · [029](../../record/theory.d/THEORY-029.md) · [030](../../record/theory.d/THEORY-030.md) · [032](../../record/theory.d/THEORY-032.md) · [033](../../record/theory.d/THEORY-033.md) · [035](../../record/theory.d/THEORY-035.md) · [037](../../record/theory.d/THEORY-037.md) · [040](../../record/theory.d/THEORY-040.md)
+**[Training optimization](tags/training-optimization.md)** (13) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
+[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md) · [026](../../record/theory.d/THEORY-026.md) · [028](../../record/theory.d/THEORY-028.md) · [029](../../record/theory.d/THEORY-029.md) · [030](../../record/theory.d/THEORY-030.md) · [032](../../record/theory.d/THEORY-032.md) · [033](../../record/theory.d/THEORY-033.md) · [035](../../record/theory.d/THEORY-035.md) · [037](../../record/theory.d/THEORY-037.md) · [040](../../record/theory.d/THEORY-040.md) · [042](../../record/theory.d/THEORY-042.md)
 
 **[Systems optimization](tags/systems-optimization.md)** (0) — hardware utilization, kernels, compilation, memory access patterns — how an operation is executed, not how many bits it is executed in.
 
-**[Numerics and precision](tags/numerics-and-precision.md)** (1) — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them:
-[019](../../record/theory.d/THEORY-019.md)
+**[Numerics and precision](tags/numerics-and-precision.md)** (2) — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them:
+[019](../../record/theory.d/THEORY-019.md) · [042](../../record/theory.d/THEORY-042.md)
 
 **[Model stability](tags/model-stability.md)** (7) — initialization, normalization, gradient handling, regularization, loss-landscape behaviour:
 [001](../../record/theory.d/THEORY-001.md) · [003](../../record/theory.d/THEORY-003.md) · [010](../../record/theory.d/THEORY-010.md) · [011](../../record/theory.d/THEORY-011.md) · [015](../../record/theory.d/THEORY-015.md) · [016](../../record/theory.d/THEORY-016.md) · [041](../../record/theory.d/THEORY-041.md)
@@ -73,7 +73,7 @@ bare code and run `luria link --fix`.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (20) · [Offered](status/Proposed.md) (18) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (21) · [Offered](status/Proposed.md) (18) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -130,4 +130,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-039](../../record/theory.d/THEORY-039.md) | A measured capability is the capability minus whatever the evaluation itself demands, and the gap is widest for the weakest model | Hu and Frank (2024), [LIT-465](../../record/literature.d/LIT-465.md) — the same capacity measured two ways scores differently, and the difference shrinks with size and training. So a score is a joint function of model and design, and cross-scale comparisons under a demanding evaluation inflate the gap they report. | Active |
 | [THEORY-040](../../record/theory.d/THEORY-040.md) | A metric that composes or thresholds per-token error turns a smooth capability curve into a sharp one, with nothing happening in the model | Schaeffer et al. (2023), [LIT-471](../../record/literature.d/LIT-471.md) — if per-token accuracy rises smoothly with scale, a metric demanding all `L` tokens goes as `p^L` and is flat-then-sharp by construction; a thresholded metric does the same by a step. Demonstrated by rescoring fixed outputs, and by manufacturing emergence in vision models that had never shown it. | Active |
 | [THEORY-041](../../record/theory.d/THEORY-041.md) | Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing | Loshchilov et al. (2024), [LIT-472](../../record/literature.d/LIT-472.md) — trained GPT embeddings form a hyper-ellipsoid with a high condition number and attention matrices whose singular values suggest rank deficiency; renormalizing after training narrows the gap without closing it. `Proposed`, because the evidence is correlational: these models are worse conditioned and they also train slower, and nothing yet connects the two. | Proposed |
+| [THEORY-042](../../record/theory.d/THEORY-042.md) | An update smaller than the lattice spacing is not merely rounded away — it is cancelled exactly, and carrying the remainder makes the discrete path shadow the continuous one within half a grid cell | Xu et al. (2026), [LIT-473](../../record/literature.d/LIT-473.md) §5 — decompose rounding as identity plus error and expand the trajectory: when every step falls short of the grid, the accumulated quantization loss cancels the accumulated ideal update term for term and the weights never move. Stochastic rounding replaces stagnation with a random walk whose variance grows in `T`. Carrying the remainder bounds the deviation from the ideal path at `Δ/2` for all `T`. | Active |
 

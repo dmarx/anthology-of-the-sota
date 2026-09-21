@@ -151,6 +151,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-237](../record/literature.d/LIT-237.md) — Evolutionary Strategies lead to Catastrophic Forgetting in LLMs *(Active)*
       - [LIT-238](../record/literature.d/LIT-238.md) — Overcoming Forgetting in LLM Fine-Tuning with Evolution Strategies *(Active)* — also extends LIT-235
     - [LIT-240](../record/literature.d/LIT-240.md) — ESSAM: A Novel Competitive Evolution Strategies Approach to Reinforcement Learning for Memory Efficient LLMs Fine-Tuning *(Active)*
+    - [LIT-473](../record/literature.d/LIT-473.md) — Quantized Evolution Strategies: High-precision Fine-tuning of Quantized LLMs at Low-precision Cost *(Active)*
 - alongside: [LIT-230](../record/literature.d/LIT-230.md) — Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO *(Active)*
 - alongside: [LIT-239](../record/literature.d/LIT-239.md) — ESSA: Evolutionary Strategies for Scalable Alignment *(Active)*
 

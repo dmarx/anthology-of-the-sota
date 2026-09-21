@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**112 document(s) awaiting a decision.**
+**113 document(s) awaiting a decision.**
 
 ## SOTAs
 
-75 of the 112.
+76 of the 113.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -86,16 +86,17 @@
 | 2026-09-20 | Proposed | [SOTA-264](../../record/practices.d/SOTA-264.md) | 1 | 0 | Fix the noise schedule's endpoints against the bound and choose its shape to minimise the loss estimator's variance |
 | 2026-09-20 | Proposed | [SOTA-271](../../record/practices.d/SOTA-271.md) | 1 | 0 | Train on a second modality even when the target is single-modality |
 | 2026-09-20 | Proposed | [SOTA-273](../../record/practices.d/SOTA-273.md) | 1 | 0 | Choose a pretraining context whose association with the input is neither too strong nor too weak, and mix contexts to get there |
+| 2026-09-21 | Proposed | [SOTA-283](../../record/practices.d/SOTA-283.md) | 3 | 0 | To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it |
 | 2026-09-21 | Proposed | [SOTA-277](../../record/practices.d/SOTA-277.md) | 2 | 0 | For a task that is a sequential composition, buy depth rather than width |
 | 2026-09-21 | Proposed | [SOTA-282](../../record/practices.d/SOTA-282.md) | 1 | 0 | Put every matrix and hidden state on the unit hypersphere, and make each block's residual step size a learned per-dimension parameter |
 
 ## THEORYs
 
-18 of the 112.
+18 of the 113.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
-| 2026-09-15 | Proposed | [THEORY-006](../../record/theory.d/THEORY-006.md) | 22 | 0 | Task-improving weight perturbations are dense around pretrained weights, and denser the larger the model |
+| 2026-09-15 | Proposed | [THEORY-006](../../record/theory.d/THEORY-006.md) | 25 | 0 | Task-improving weight perturbations are dense around pretrained weights, and denser the larger the model |
 | 2026-09-15 | Proposed | [THEORY-007](../../record/theory.d/THEORY-007.md) | 9 | 0 | Fine-tuning landscapes are low-dimensional in curvature, and improving directions are degenerate rather than unique |
 | 2026-09-15 | Proposed | [THEORY-002](../../record/theory.d/THEORY-002.md) | 7 | 0 | A dense network contains a sparse subnetwork that matches its accuracy when trained from the same initialization |
 | 2026-09-15 | Proposed | [THEORY-005](../../record/theory.d/THEORY-005.md) | 3 | 0 | Dense feed-forward layers are already mixtures of experts, and pre-training settles the partition before the neurons |
@@ -116,7 +117,7 @@
 
 ## LITs
 
-3 of the 112.
+3 of the 113.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -126,14 +127,14 @@
 
 ## ADRs
 
-16 of the 112.
+16 of the 113.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 2 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-09 | Proposed | [ADR-024](../../record/decisions.d/ADR-024.md) | 10 | 0 | The topic vocabulary has four recurring seams — options, not a decision |
 | 2026-09-14 | Proposed | [ADR-028](../../record/decisions.d/ADR-028.md) | 1 | 1 | One topic vocabulary, one set of glosses: the blurbs are shared too |
-| 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 23 | 0 | A scheme for explanations, complementing the practice registry |
+| 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 24 | 0 | A scheme for explanations, complementing the practice registry |
 | 2026-09-15 | Proposed | [ADR-034](../../record/decisions.d/ADR-034.md) | 13 | 0 | A document that changes scheme is Superseded where it leaves, and names its successor across the boundary |
 | 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 7 | 1 | Every practice states its origin, even when it is the primary source |
 | 2026-09-15 | Proposed | [ADR-033](../../record/decisions.d/ADR-033.md) | 0 | 0 | Readings made in another context port into the record; their agenda does not |

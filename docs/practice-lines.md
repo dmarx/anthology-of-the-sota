@@ -20,6 +20,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [SOTA-154](../record/practices.d/SOTA-154.md) — Fine-tune with evolution strategies instead of policy-gradient reinforcement learning *(Active, contested)*
   - [SOTA-212](../record/practices.d/SOTA-212.md) — Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them *(Proposed, unreplicated)*
   - [SOTA-213](../record/practices.d/SOTA-213.md) — Control evolution-strategies drift with a larger population or an anchor penalty, not by stopping training early *(Proposed, emerging)*
+  - [SOTA-283](../record/practices.d/SOTA-283.md) — To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it *(Proposed, unreplicated)*
 
 ## attention-techniques
 

@@ -1,5 +1,8 @@
 ---
+number: 283
 status: Proposed
+formerly:
+- SOTA-tmpjdocv
 promote_when: >-
   A group sharing no author with LIT-211 reporting quantized fine-tuning with
   an error-feedback accumulator, on a task other than Countdown, with repeats
@@ -20,25 +23,25 @@ tags:
 - training-optimization
 date: '2026-09-21'
 source:
-- LIT-tmp14peb
+- LIT-473
 introduced_by:
-- LIT-tmp14peb
+- LIT-473
 extends:
 - SOTA-154
 implementations: []
 explained_by:
-- THEORY-tmp8xhjh
+- THEORY-042
 ---
 
 <!-- inactive-ok-file: THEORY-006 — Proposed, and named in 'What is not claimed
      here' to say this practice is not evidence for it -->
 
-# SOTA-tmpjdocv: To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it
+# SOTA-283: To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it
 
 ## Source
 
-Xu, Miikkulainen and Qiu (2026), [LIT-tmp14peb](../literature.d/LIT-tmp14peb.md) — read as
-[NOTE-tmp4sz3x](../notes.d/NOTE-tmp4sz3x.md). Countdown, Qwen2.5 at 1.5B and 3B, INT4, INT8 and
+Xu, Miikkulainen and Qiu (2026), [LIT-473](../literature.d/LIT-473.md) — read as
+[NOTE-222](../notes.d/NOTE-222.md). Countdown, Qwen2.5 at 1.5B and 3B, INT4, INT8 and
 W8A8.
 
 ## When this applies

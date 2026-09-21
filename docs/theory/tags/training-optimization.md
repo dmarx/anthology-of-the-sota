@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-12 of 41 THEORY documents. Back to the [full index](../README.md).
+13 of 42 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -22,3 +22,4 @@
 | [THEORY-035](../../../record/theory.d/THEORY-035.md) | Gradient descent drives the sharpness up to the largest value its own step size tolerates, and then trains there | Cohen et al. (2021), [LIT-461](../../../record/literature.d/LIT-461.md) — the top Hessian eigenvalue rises until it reaches `2/eta` and then stops, so the step size sets the curvature rather than responding to it. Full-batch gradient descent only: under SGD the sharpness settles nowhere predictable. | Active |
 | [THEORY-037](../../../record/theory.d/THEORY-037.md) | Residual-branch depth sets the depth scaling rule, because a branch with two transformations has a second-order update term that a branch with one does not | Zheng et al. (2026), [LIT-462](../../../record/literature.d/LIT-462.md) — Depth-muP and CompleteP are `k = 1` and `k ≥ 2` of one condition. The cross term where both weights in a branch move in the same step is what tightens the residual multiplier from `1/√L` to `1/L`, and it does not exist when the branch holds one weight. | Active |
 | [THEORY-040](../../../record/theory.d/THEORY-040.md) | A metric that composes or thresholds per-token error turns a smooth capability curve into a sharp one, with nothing happening in the model | Schaeffer et al. (2023), [LIT-471](../../../record/literature.d/LIT-471.md) — if per-token accuracy rises smoothly with scale, a metric demanding all `L` tokens goes as `p^L` and is flat-then-sharp by construction; a thresholded metric does the same by a step. Demonstrated by rescoring fixed outputs, and by manufacturing emergence in vision models that had never shown it. | Active |
+| [THEORY-042](../../../record/theory.d/THEORY-042.md) | An update smaller than the lattice spacing is not merely rounded away — it is cancelled exactly, and carrying the remainder makes the discrete path shadow the continuous one within half a grid cell | Xu et al. (2026), [LIT-473](../../../record/literature.d/LIT-473.md) §5 — decompose rounding as identity plus error and expand the trajectory: when every step falls short of the grid, the accumulated quantization loss cancels the accumulated ideal update term for term and the weights never move. Stochastic rounding replaces stagnation with a random walk whose variance grows in `T`. Carrying the remainder bounds the deviation from the ideal path at `Δ/2` for all `T`. | Active |

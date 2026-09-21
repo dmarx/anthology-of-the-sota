@@ -6,7 +6,7 @@
 
 **Numerics and precision** — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them.
 
-16 of 282 SOTA documents. Back to the [full index](../README.md).
+17 of 283 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -26,3 +26,4 @@
 | [SOTA-230](../../../record/practices.d/SOTA-230.md) | Quantize the frozen base to 4-bit and keep the adapters in 16-bit | Dettmers et al. (2023), [LIT-378](../../../record/literature.d/LIT-378.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314). Store the frozen base weights in 4-bit NormalFloat and dequantize to BFloat16 for every matrix multiply, training only 16-bit LoRA adapters. Fine-tuning a 65B model falls from >780GB to <48GB with no measured loss against a 16-bit fully fine-tuned baseline, because the arithmetic never happens in 4 bits. | Active |
 | [SOTA-234](../../../record/practices.d/SOTA-234.md) | Train in the target low-bit format from scratch rather than quantizing a finished model | Ma et al. (2024), [LIT-380](../../../record/literature.d/LIT-380.md) — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764). Decide the serving format before training and train in it, rather than training in FP16 and compressing afterwards. Ternary weights trained from scratch match an FP16 model of equal size and token budget from 3B upward — but the compute argument assumes hardware built for the format, and only the memory saving is measured on machines that exist. | Proposed |
 | [SOTA-248](../../../record/practices.d/SOTA-248.md) | Stretch and clip the softmax so an attention head can output exact zeros | Bondarenko et al. (2023), [LIT-414](../../../record/literature.d/LIT-414.md) — a head that wants to do nothing has to drive its softmax input to infinity to approximate exact zeros, and that is what creates the activation outliers that break INT8. Stretch the softmax to (γ, ζ) and clip back to (0,1) and zeros become reachable from a finite input. On BERT-base: W8A8 perplexity 1294 → 4.55, max infinity-norm 735 → 20, and the FP16 model gets slightly better rather than worse. Evidence is BERT-base, OPT-125M and ViT-S/16 — small and encoder-heavy. | Proposed |
+| [SOTA-283](../../../record/practices.d/SOTA-283.md) | To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it |  | Proposed |

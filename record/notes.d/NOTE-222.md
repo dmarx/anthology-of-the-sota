@@ -1,6 +1,9 @@
 ---
+number: 222
 status: Read
-paper: LIT-tmp14peb
+formerly:
+- NOTE-tmp4sz3x
+paper: LIT-473
 title: 'Quantized Evolution Strategies'
 version: 1
 date: '2026-09-21'
@@ -14,7 +17,7 @@ summary: >-
 <!-- inactive-ok-file: THEORY-006 — Proposed, and named as the misuse this reading
      declines rather than as support; see that account's promote_when -->
 
-# NOTE-tmp4sz3x: Quantized Evolution Strategies
+# NOTE-222: Quantized Evolution Strategies
 
 ## Contribution
 

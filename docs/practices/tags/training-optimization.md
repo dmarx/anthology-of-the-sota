@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-72 of 282 SOTA documents. Back to the [full index](../README.md).
+73 of 283 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -82,3 +82,4 @@
 | [SOTA-275](../../../record/practices.d/SOTA-275.md) | Pick the depth parameterization from the residual branch: a Transformer branch has more than one transformation, so it needs the stricter rule | Zheng et al. (2026), [LIT-462](../../../record/literature.d/LIT-462.md) — Depth-muP's `α = Θ(1/√L)` is the rule for a one-transformation residual branch. Attention and FFN branches hold more than one, so Transformers need CompleteP's `α = Θ(1/L)`, and the looser rule measurably fails to transfer on them. | Proposed |
 | [SOTA-276](../../../record/practices.d/SOTA-276.md) | For a normalized or preconditioned optimizer, width-depth muP is width muP plus a hidden residual multiplier of order 1/L | Zheng et al. (2026), [LIT-462](../../../record/literature.d/LIT-462.md) — a normalized or preconditioned update has a norm that does not depend on the residual multiplier, so the depth factor the raw gradient carries is removed and the optimizer's own muP rule is unchanged. SGD is the exception and needs more. | Proposed |
 | [SOTA-282](../../../record/practices.d/SOTA-282.md) | Put every matrix and hidden state on the unit hypersphere, and make each block's residual step size a learned per-dimension parameter |  | Proposed |
+| [SOTA-283](../../../record/practices.d/SOTA-283.md) | To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it |  | Proposed |

@@ -6,7 +6,7 @@
 
 **Adaptation and tuning** — taking a trained model somewhere new — fine-tuning and transfer, preference training and safety alignment, parameter-efficient adaptation, context extension.
 
-42 of 407 LIT documents. Back to the [full index](../README.md).
+43 of 408 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -52,3 +52,4 @@
 | [LIT-433](../../../record/literature.d/LIT-433.md) | Learning to summarize from human feedback | Stiennon et al. (2020), [ARXIV-2009.01325](https://arxiv.org/abs/2009.01325). The step where the preference loop crosses into language: human comparisons between summaries, a reward model fit to them, PPO against that reward. The summaries beat the human reference summaries, and beat much larger models fine-tuned supervised — which is the result that made the loop look like a general answer rather than a control technique. | Active |
 | [LIT-434](../../../record/literature.d/LIT-434.md) | Deep reinforcement learning from human preferences | Christiano et al. (2017), [ARXIV-1706.03741](https://arxiv.org/abs/1706.03741). The construction the record's whole post-training spine assumes and could not cite: when the reward function is the thing you cannot write down, fit one to human comparisons instead and optimize against the fit. Atari and simulated locomotion, on feedback covering under 1% of the agent's interactions. | Active |
 | [LIT-467](../../../record/literature.d/LIT-467.md) | Chain-of-Thought Prompting Elicits Reasoning in Large Language Models | Wei et al. (2022), [ARXIV-2201.11903](https://arxiv.org/abs/2201.11903). Put worked reasoning steps in the few-shot exemplars and a 540B model more than doubles on GSM8K. Three ablations rule out the obvious alternative explanations, and the effect is absent — sometimes negative — below about 100B parameters. | Active |
+| [LIT-473](../../../record/literature.d/LIT-473.md) | Quantized Evolution Strategies: High-precision Fine-tuning of Quantized LLMs at Low-precision Cost | Xu, Miikkulainen and Qiu (2026), [ARXIV-2602.03120](https://arxiv.org/abs/2602.03120). Fine-tune a quantized model in its own integer space: accumulate the part of each evolution-strategies update that is smaller than the lattice spacing until it crosses a grid point, and rematerialize that accumulator from stored seeds so it costs kilobytes instead of an FP16 copy of the weights. Countdown, Qwen2.5 at 1.5B and 3B, INT4/INT8/W8A8. | Active |

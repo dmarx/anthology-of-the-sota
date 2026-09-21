@@ -1,5 +1,8 @@
 ---
+number: 42
 status: Active
+formerly:
+- THEORY-tmp8xhjh
 title: 'An update smaller than the lattice spacing is not merely rounded away — it is cancelled exactly, and carrying the remainder makes the discrete path shadow the continuous one within half a grid cell'
 version: 1
 tags:
@@ -7,11 +10,11 @@ tags:
 - training-optimization
 date: '2026-09-21'
 source:
-- LIT-tmp14peb
+- LIT-473
 explains:
-- SOTA-tmpjdocv
+- SOTA-283
 summary: >-
-  Xu et al. (2026), [LIT-tmp14peb](../literature.d/LIT-tmp14peb.md) §5 — decompose rounding as identity
+  Xu et al. (2026), [LIT-473](../literature.d/LIT-473.md) §5 — decompose rounding as identity
   plus error and expand the trajectory: when every step falls short of the
   grid, the accumulated quantization loss cancels the accumulated ideal update
   term for term and the weights never move. Stochastic rounding replaces
@@ -19,25 +22,25 @@ summary: >-
   remainder bounds the deviation from the ideal path at `Δ/2` for all `T`.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpjdocv — Proposed, and the practice this account
+<!-- inactive-ok-file: SOTA-283 — Proposed, and the practice this account
      explains; the document's point is that a sound explanation does not promote
      the practice, so its unsettled status is the thing being said -->
 
 <!-- inactive-ok-file: ADR-031 — Proposed, cited for the practice/explanation
      split that lets this account be Active while the practice stays Proposed -->
 
-# THEORY-tmp8xhjh: An update smaller than the lattice spacing is not merely rounded away — it is cancelled exactly, and carrying the remainder makes the discrete path shadow the continuous one within half a grid cell
+# THEORY-042: An update smaller than the lattice spacing is not merely rounded away — it is cancelled exactly, and carrying the remainder makes the discrete path shadow the continuous one within half a grid cell
 
 ## Source
 
-Xu, Miikkulainen and Qiu (2026), [LIT-tmp14peb](../literature.d/LIT-tmp14peb.md) §5 — read as
-[NOTE-tmp4sz3x](../notes.d/NOTE-tmp4sz3x.md).
+Xu, Miikkulainen and Qiu (2026), [LIT-473](../literature.d/LIT-473.md) §5 — read as
+[NOTE-222](../notes.d/NOTE-222.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-tmpjdocv](../practices.d/SOTA-tmpjdocv.md) | bank the sub-lattice part of each update | not a refinement but the difference between moving and not moving, with a bound on how far the discrete path can drift |
+| [SOTA-283](../practices.d/SOTA-283.md) | bank the sub-lattice part of each update | not a refinement but the difference between moving and not moving, with a bound on how far the discrete path can drift |
 
 ## The account
 
@@ -86,7 +89,7 @@ That transfer is argued, checkable, and does not depend on the source's
 experiments.
 
 The status is about the account, not about the size of the practical win.
-[SOTA-tmpjdocv](../practices.d/SOTA-tmpjdocv.md) is `Proposed` and `unreplicated`, and stays there: an
+[SOTA-283](../practices.d/SOTA-283.md) is `Proposed` and `unreplicated`, and stays there: an
 explanation being sound is not evidence that the method is worth adopting,
 which is the split [ADR-031](../decisions.d/ADR-031.md) exists to keep visible.
 
@@ -108,7 +111,7 @@ obvious test this account invites.
 from the ideal trajectory at each step. It does not bound the difference in
 final *loss*, and it does not say the ideal trajectory was any good.
 
-**The bound assumes the residual is kept exactly.** [SOTA-tmpjdocv](../practices.d/SOTA-tmpjdocv.md)'s
+**The bound assumes the residual is kept exactly.** [SOTA-283](../practices.d/SOTA-283.md)'s
 memory-saving form rebuilds it from a truncated history, so the guarantee
 holds for the oracle variant and approximately for the practical one — and
 the source's own decay ablation shows the approximation failing loudly when

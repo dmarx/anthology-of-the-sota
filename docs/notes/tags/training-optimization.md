@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-50 of 221 NOTE documents. Back to the [full index](../README.md).
+51 of 222 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -58,3 +58,4 @@
 | [NOTE-219](../../../record/notes.d/NOTE-219.md) | Emergent Abilities | The paper that named the phenomenon, read for what it actually argues rather than what it is cited for. It raises the metric explanation itself, in §5.1, and declines it on two grounds — one of which was later answered and one of which still stands. | Read |
 | [NOTE-220](../../../record/notes.d/NOTE-220.md) | Emergence as a Mirage | Reading it: the strongest evidence is not the rebuttal of GPT-3's arithmetic curve but the vision experiments, where emergence is manufactured in models that had never shown it. The weakest part is what "mirage" gets read as — the paper explicitly declines the claim that emergence is impossible. | Read |
 | [NOTE-221](../../../record/notes.d/NOTE-221.md) | nGPT | Reading it: the headline is 4–20× and the footnote is 60–80% more time per step, so the honest wall-clock figure is roughly 5.5× at 4k. Still large. The part that generalises beyond this architecture is smaller and more interesting — that a matrix's norm is currently an accident of the learning rate and weight decay, and does not have to be. | Read |
+| [NOTE-222](../../../record/notes.d/NOTE-222.md) | Quantized Evolution Strategies | Reading it: the memory trick is the contribution, not the error feedback. Error feedback is 1-bit SGD's, correctly credited; what is new is refusing to store the accumulator at all and rebuilding it from seeds, which is the only reason the method fits in the memory budget that motivated it. | Read |

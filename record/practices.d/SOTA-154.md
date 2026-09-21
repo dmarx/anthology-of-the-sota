@@ -112,7 +112,7 @@ explained_by:
 extended_by:
 - SOTA-212
 - SOTA-213
-- SOTA-tmpjdocv
+- SOTA-283
 ---
 
 # SOTA-154: Fine-tune with evolution strategies instead of policy-gradient reinforcement learning

@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [21 Sep 14:04 — An approximation that beats its own oracle is telling you the error bars are missing](2026-09.md#an-approximation-that-beats-its-own-oracle-is-telling-you-the-error-bars-are-missing)
 - [21 Sep 13:50 — A speedup quoted in tokens, a cost quoted in a footnote, and two groups who found the same thing without meeting](2026-09.md#a-speedup-quoted-in-tokens-a-cost-quoted-in-a-footnote-and-two-groups-who-found-the-same-thing-without-meeting)
 - [21 Sep 13:36 — The record recommended a check against a claim it did not hold, and the primary source disagrees with its own reputation](2026-09.md#the-record-recommended-a-check-against-a-claim-it-did-not-hold-and-the-primary-source-disagrees-with-its-own-reputation)
 - [21 Sep 13:20 — A permission was widened, and a workflow condition that had been correct stopped being correct](2026-09.md#a-permission-was-widened-and-a-workflow-condition-that-had-been-correct-stopped-being-correct)
@@ -135,9 +136,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-128 entries across 2 books, newest first.
+129 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 126 | 2026-09-05 | 2026-09-21 |
+| [2026-09](2026-09.md) | 127 | 2026-09-05 | 2026-09-21 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

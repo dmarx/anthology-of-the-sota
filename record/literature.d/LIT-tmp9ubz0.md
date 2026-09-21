@@ -1,0 +1,134 @@
+---
+status: Active
+title: 'NoProp: Training Neural Networks without Full Back-propagation or Full Forward-propagation'
+version: 1
+tags:
+- training-optimization
+- model-architecture
+- generative-modeling
+date: '2026-09-21'
+published: '2025-03-01'
+arxiv: '2503.24322'
+first_author: 'Li'
+keywords:
+- 'backpropagation-free'
+- 'local-learning'
+- 'denoising'
+- 'diffusion'
+- 'activation-memory'
+implementations: []
+summary: >-
+  Li, Teh and Pascanu (2025), [ARXIV-2503.24322](https://arxiv.org/abs/2503.24322). Train each block
+  independently to denoise a noisy *label* embedding given the raw input —
+  diffusion machinery pointed at a classifier. No forward or backward pass
+  across the network at training time, about half the GPU memory, and test
+  accuracy matching backprop on MNIST and CIFAR-10. Every block sees the
+  input, which is what makes independence possible and what makes the
+  comparison awkward.
+---
+
+# LIT-tmp9ubz0: NoProp: Training Neural Networks without Full Back-propagation or Full Forward-propagation
+
+## Why it's here
+
+The record holds one gradient-free training line — evolution strategies, under
+[SOTA-154](../practices.d/SOTA-154.md) — and nothing at all on **local-learning** methods: no
+forward-forward, no target propagation, no forward gradients. That is a whole
+family of answers to "what if not backpropagation", and this is its
+highest-traffic recent entry point.
+
+It is also a clean instance of machinery moving between subfields. The
+objective is a variational diffusion ELBO; the thing being diffused is a class
+label embedding; and the network is a classifier.
+
+## What it does
+
+Take a classification pair `(x, y)`. Embed `y` into `R^m` with a trainable
+matrix and run a variance-preserving Ornstein-Uhlenbeck process on it, so
+`z_0 … z_T` is a noisy trajectory from the label to Gaussian noise. Train each
+block `û_t` **independently** to predict the clean label embedding from
+`(z_{t-1}, x)` under an L2 loss, with a cross-entropy term on the final
+readout.
+
+At inference the blocks run in sequence: each takes the noisy embedding the
+previous one produced and steps it toward its own prediction. So the forward
+pass looks like a residual network with noise — but it was never trained as
+one. At training time there is no forward propagation *and* no backward
+propagation across blocks, which is where the name comes from.
+
+The structural price is stated plainly in the paper: **every block is
+conditioned directly on `x`**, and the authors note this "is different from a
+standard deep neural network which does not have direct connections from the
+input into each block". That is what lets a block be trained without knowing
+what the blocks below it computed — and it means the stack is not learning a
+hierarchy of representations in the usual sense.
+
+Three variants: discrete-time (NoProp-DT), continuous-time diffusion
+(NoProp-CT), and flow matching (NoProp-FM).
+
+## What was measured
+
+MNIST, CIFAR-10 and CIFAR-100, **no data augmentation**, 15 values per cell
+(3 seeds × 5 inference runs). The backprop baseline was built to have the
+same forward structure, which makes it a fair comparison rather than a
+convenient one.
+
+Test accuracy, discrete time:
+
+| method | MNIST | CIFAR-10 | CIFAR-100 |
+|---|---|---|---|
+| Backprop (one-hot) | 99.46 | 79.92 | 45.85 |
+| Backprop (prototype) | 99.44 | 79.58 | **47.80** |
+| NoProp-DT (one-hot) | 99.47 | 79.25 | 45.93 |
+| NoProp-DT (prototype) | **99.54** | **80.54** | 46.06 |
+
+So NoProp-DT matches or slightly beats backprop on MNIST and CIFAR-10, and
+loses to it on CIFAR-100 by about 1.7 points.
+
+**Against prior backprop-free methods the margin is large**: Forward-Forward
+98.63 on MNIST; Local Greedy Forward Gradient 69.32 on CIFAR-10; Difference
+Target Propagation 50.71 on CIFAR-10, against NoProp-DT's ~80.
+
+**Memory roughly halves.** Discrete time: 0.49 / 0.64 / 1.23 GB against
+backprop's 0.87 / 1.17 / 1.73. Continuous time the gap is much larger —
+NoProp-CT at 0.45–1.05 GB against the adjoint sensitivity method's 2.32–6.45.
+
+## The number the table gives you that the text does not discuss
+
+**NoProp fits the training set much less well.** CIFAR-10 train accuracy:
+backprop 99.98, NoProp-DT 95.02–97.23. CIFAR-100: backprop 98.63–99.19,
+NoProp-DT 83.25–90.70.
+
+Matching test accuracy while being 8–15 points behind on train is a
+regularization-shaped result, not an optimization-parity one. On these
+datasets, where backprop is at ceiling on train and the test numbers are set
+by generalization, that costs nothing. It is exactly the situation that
+changes when the task is large enough that fitting the training data is the
+binding constraint — which is every setting this record's practices are argued
+in. The paper does not raise this.
+
+## Conditions
+
+**MNIST and CIFAR, no augmentation.** Three small image classification sets,
+and the largest model is whatever fits that.
+
+**The continuous-time variants are much weaker, and one fails.** NoProp-CT
+reaches 33.66 on CIFAR-100 against NoProp-DT's ~46; **NoProp-FM with one-hot
+embeddings gets 6.38 ± 4.9 on CIFAR-100** — it does not learn. Learned
+embeddings rescue it (31.14). So "NoProp works" is carried by the
+discrete-time variant, and the headline should not be read as covering the
+family.
+
+**The comparison to other backprop-free methods is not like-for-like, and the
+authors say so**: those methods "use different architectures and do not
+condition layers explicitly on image inputs as NoProp does — making direct
+comparisons challenging". Giving every block the raw input is a large
+advantage and it is the thing being compared away.
+
+**The parallelism argument is motivational, not measured.** The introduction
+names impeded parallel computation across devices as one of three reasons to
+want a backprop-free method. Nothing here measures a distributed run.
+
+**And the conclusion lists no limitations at all.** It is a page of positive
+summary. The caveats above are recoverable from the tables and from one
+sentence in §2.1, not from a limitations section, because there is not one.

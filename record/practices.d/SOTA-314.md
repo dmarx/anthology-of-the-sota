@@ -1,5 +1,8 @@
 ---
+number: 314
 status: Active
+formerly:
+- SOTA-tmp0iki2
 consensus: unreplicated
 consensus_note: >-
   One group, one paper, three model families inside it. The mechanism is
@@ -15,32 +18,32 @@ tags:
 - systems-optimization
 date: '2026-09-21'
 source:
-- LIT-tmpglyct
+- LIT-512
 introduced_by:
-- LIT-tmpglyct
+- LIT-512
 implementations: []
 summary: >-
-  Li et al. (2024), [LIT-tmpglyct](../literature.d/LIT-tmpglyct.md) — at 4 bits on both weights and
+  Li et al. (2024), [LIT-512](../literature.d/LIT-512.md) — at 4 bits on both weights and
   activations, smoothing alone is not enough. Shift outliers from activations
   into weights, peel the dominant singular values into a 16-bit rank-32
   branch, quantize the residual. Then fuse: run naïvely the branch costs
   **57%** latency and cancels the win; fused it gives **3.0×** over W4A16 and
   **3.5×** memory on 12B FLUX.1.
 explained_by:
-- THEORY-tmpo44nu
+- THEORY-059
 ---
 
-<!-- inactive-ok-file: THEORY-tmpo44nu — Proposed, filed in this same
+<!-- inactive-ok-file: THEORY-059 — Proposed, filed in this same
      contribution. This practice declares `explained_by:` on it, so the
      citation is the relation itself, and the sentence citing it says the
      spectral premise is what remains unsettled. -->
 
-# SOTA-tmp0iki2: Absorb quantization outliers into a high-precision low-rank branch taken from the weights, and fuse its kernels into the low-bit ones
+# SOTA-314: Absorb quantization outliers into a high-precision low-rank branch taken from the weights, and fuse its kernels into the low-bit ones
 
 ## Source
 
 Li, Lin, Zhang, Cai, Li, Guo, Xie, Meng, Zhu and Han (2024),
-[LIT-tmpglyct](../literature.d/LIT-tmpglyct.md) — read as [NOTE-tmpujtdw](../notes.d/NOTE-tmpujtdw.md).
+[LIT-512](../literature.d/LIT-512.md) — read as [NOTE-257](../notes.d/NOTE-257.md).
 
 ## When this applies
 
@@ -59,7 +62,7 @@ quantization — but it makes the weights the single place outliers live.
 **Take the low-rank branch off the weights, not off the quantization error.**
 Compute the SVD of the smoothed weight `Ŵ`, keep the top `r` singular
 directions in 16 bits, and quantize only the residual `R = Ŵ − L₁L₂`. The
-ordering is the whole thing, and [THEORY-tmpo44nu](../theory.d/THEORY-tmpo44nu.md) is why: a weight
+ordering is the whole thing, and [THEORY-059](../theory.d/THEORY-059.md) is why: a weight
 matrix has a steep spectrum so rank 32 removes a lot of magnitude, while a
 quantization error has a flat one so the same rank removes almost nothing.
 Doing it the other way round is a published method that underperforms.
@@ -108,7 +111,7 @@ reduction of that magnitude. The recommendation follows from the bound, and
 the ablation ordering matches what the bound predicts.
 
 What one source cannot settle is whether the spectral premise holds outside
-diffusion transformers, which is what [THEORY-tmpo44nu](../theory.d/THEORY-tmpo44nu.md) carries as
+diffusion transformers, which is what [THEORY-059](../theory.d/THEORY-059.md) carries as
 `Proposed`.
 
 ## Conditions

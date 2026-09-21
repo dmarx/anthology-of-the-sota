@@ -1,6 +1,9 @@
 ---
+number: 257
 status: Read
-paper: LIT-tmpglyct
+formerly:
+- NOTE-tmpujtdw
+paper: LIT-512
 title: 'SVDQuant: a low-rank branch on the weights, not on the error'
 version: 1
 date: '2026-09-21'
@@ -15,7 +18,7 @@ summary: >-
      quantization practices this paper's error bound maps, to say what each
      one acts on. A survey of neighbours, not a recommendation relied on. -->
 
-# NOTE-tmpujtdw: SVDQuant: a low-rank branch on the weights, not on the error
+# NOTE-257: SVDQuant: a low-rank branch on the weights, not on the error
 
 ## Contribution
 

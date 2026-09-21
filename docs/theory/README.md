@@ -36,8 +36,8 @@ bare code and run `luria link --fix`.
 
 **[Systems optimization](tags/systems-optimization.md)** (0) — hardware utilization, kernels, compilation, memory access patterns — how an operation is executed, not how many bits it is executed in.
 
-**[Numerics and precision](tags/numerics-and-precision.md)** (2) — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them:
-[019](../../record/theory.d/THEORY-019.md) · [042](../../record/theory.d/THEORY-042.md)
+**[Numerics and precision](tags/numerics-and-precision.md)** (3) — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them:
+[019](../../record/theory.d/THEORY-019.md) · [042](../../record/theory.d/THEORY-042.md) · [059](../../record/theory.d/THEORY-059.md)
 
 **[Model stability](tags/model-stability.md)** (9) — initialization, normalization, gradient handling, regularization, loss-landscape behaviour:
 [001](../../record/theory.d/THEORY-001.md) · [003](../../record/theory.d/THEORY-003.md) · [010](../../record/theory.d/THEORY-010.md) · [011](../../record/theory.d/THEORY-011.md) · [015](../../record/theory.d/THEORY-015.md) · [016](../../record/theory.d/THEORY-016.md) · [041](../../record/theory.d/THEORY-041.md) · [044](../../record/theory.d/THEORY-044.md) · [045](../../record/theory.d/THEORY-045.md)
@@ -54,7 +54,8 @@ bare code and run `luria link --fix`.
 **[Model architecture](tags/model-architecture.md)** (7) — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in:
 [005](../../record/theory.d/THEORY-005.md) · [020](../../record/theory.d/THEORY-020.md) · [038](../../record/theory.d/THEORY-038.md) · [041](../../record/theory.d/THEORY-041.md) · [046](../../record/theory.d/THEORY-046.md) · [050](../../record/theory.d/THEORY-050.md) · [056](../../record/theory.d/THEORY-056.md)
 
-**[Inference optimization](tags/inference-optimization.md)** (0) — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
+**[Inference optimization](tags/inference-optimization.md)** (1) — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms:
+[059](../../record/theory.d/THEORY-059.md)
 
 **[Adaptation and tuning](tags/adaptation-and-tuning.md)** (0) — taking a trained model somewhere new — fine-tuning and transfer, preference training and safety alignment, parameter-efficient adaptation, context extension.
 
@@ -81,7 +82,7 @@ bare code and run `luria link --fix`.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (23) · [Offered](status/Proposed.md) (32) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (23) · [Offered](status/Proposed.md) (33) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -155,4 +156,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-056](../../record/theory.d/THEORY-056.md) | Distinct state machines agree at chance on long random inputs, so a learner that reads only statistics loses the signal as the sequences get longer | Giapitzakis, Fountoulakis, Nichani and Lee (2025), [LIT-495](../../record/literature.d/LIT-495.md) — reading a uniformly random word drives a random walk on `S_N × S_N`, and the probability two distinct semiautomata land in the same state is `1/N + error` with `\|error\| ≤ (1 − 1/2N)^T`. The quantity that identifies which machine you are looking at decays **exponentially in sequence length**, so more data of this kind is less evidence, not more. | Proposed |
 | [THEORY-057](../../record/theory.d/THEORY-057.md) | A corpus a model generates is narrower than the distribution it imitates, and the narrowing shows up as n-gram over-concentration | Zhu et al. (2024), [LIT-205](../../record/literature.d/LIT-205.md), and Finke et al. (2025), [LIT-485](../../record/literature.d/LIT-485.md) — two groups, different corpora, no citation between them, both locating the damage in the same statistic. Generated text concentrates on the generator's high-probability continuations, so the corpus is narrower than what it imitates; **59.38%** of TinyStories contains "once upon a time", and the proportion of synthetic pretraining data correlates *negatively* with downstream performance. | Proposed |
 | [THEORY-058](../../record/theory.d/THEORY-058.md) | Apparent compression in the information plane is saturating activations collapsing into extreme bins, not information being discarded | Saxe et al. (2018), [LIT-509](../../record/literature.d/LIT-509.md) — a `tanh` unit must grow its weights to compute anything nonlinear, and as it does its activity piles into the saturation regions. Under a fixed binning that is a distribution collapsing into two bins — about **1 bit** — which the information plane draws as a compression phase. `Proposed`, because [LIT-507](../../record/literature.d/LIT-507.md) shows compression in *some* non-saturating networks once the bins are placed adaptively. | Proposed |
+| [THEORY-059](../../record/theory.d/THEORY-059.md) | A low-rank branch corrects quantization because weight spectra are steep and quantization-error spectra are flat | Li et al. (2024), [LIT-512](../../record/literature.d/LIT-512.md) — two propositions bound the output error by the *magnitude* of weights and activations, not only by their rounding errors. So a rank-`r` branch helps exactly when the thing it subtracts has a few dominant singular values. A weight matrix does; a quantization error does not, which is why the same trick applied to the error rather than the weights underperforms. | Proposed |
 

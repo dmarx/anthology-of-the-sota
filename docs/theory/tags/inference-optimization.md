@@ -6,8 +6,8 @@
 
 **Inference optimization** — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
 
-0 of 58 THEORY documents. Back to the [full index](../README.md).
+1 of 59 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [THEORY-059](../../../record/theory.d/THEORY-059.md) | A low-rank branch corrects quantization because weight spectra are steep and quantization-error spectra are flat | Li et al. (2024), [LIT-512](../../../record/literature.d/LIT-512.md) — two propositions bound the output error by the *magnitude* of weights and activations, not only by their rounding errors. So a rank-`r` branch helps exactly when the thing it subtracts has a few dominant singular values. A weight matrix does; a quantization error does not, which is why the same trick applied to the error rather than the weights underperforms. | Proposed |

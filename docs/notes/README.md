@@ -26,8 +26,8 @@
 **[in-context-learning](tags/in-context-learning.md)** (11):
 [049](../../record/notes.d/NOTE-049.md) · [167](../../record/notes.d/NOTE-167.md) · [214](../../record/notes.d/NOTE-214.md) · [216](../../record/notes.d/NOTE-216.md) · [217](../../record/notes.d/NOTE-217.md) · [218](../../record/notes.d/NOTE-218.md) · [219](../../record/notes.d/NOTE-219.md) · [238](../../record/notes.d/NOTE-238.md) · [242](../../record/notes.d/NOTE-242.md) · [249](../../record/notes.d/NOTE-249.md) · [255](../../record/notes.d/NOTE-255.md)
 
-**[inference-optimization](tags/inference-optimization.md)** (10):
-[023](../../record/notes.d/NOTE-023.md) · [159](../../record/notes.d/NOTE-159.md) · [160](../../record/notes.d/NOTE-160.md) · [162](../../record/notes.d/NOTE-162.md) · [163](../../record/notes.d/NOTE-163.md) · [217](../../record/notes.d/NOTE-217.md) · [228](../../record/notes.d/NOTE-228.md) · [235](../../record/notes.d/NOTE-235.md) · [240](../../record/notes.d/NOTE-240.md) · [256](../../record/notes.d/NOTE-256.md)
+**[inference-optimization](tags/inference-optimization.md)** (11):
+[023](../../record/notes.d/NOTE-023.md) · [159](../../record/notes.d/NOTE-159.md) · [160](../../record/notes.d/NOTE-160.md) · [162](../../record/notes.d/NOTE-162.md) · [163](../../record/notes.d/NOTE-163.md) · [217](../../record/notes.d/NOTE-217.md) · [228](../../record/notes.d/NOTE-228.md) · [235](../../record/notes.d/NOTE-235.md) · [240](../../record/notes.d/NOTE-240.md) · [256](../../record/notes.d/NOTE-256.md) · [257](../../record/notes.d/NOTE-257.md)
 
 **[model-architecture](tags/model-architecture.md)** (21):
 [004](../../record/notes.d/NOTE-004.md) · [011](../../record/notes.d/NOTE-011.md) · [016](../../record/notes.d/NOTE-016.md) · [028](../../record/notes.d/NOTE-028.md) · [054](../../record/notes.d/NOTE-054.md) · [055](../../record/notes.d/NOTE-055.md) · [060](../../record/notes.d/NOTE-060.md) · [069](../../record/notes.d/NOTE-069.md) · [168](../../record/notes.d/NOTE-168.md) · [170](../../record/notes.d/NOTE-170.md) · [196](../../record/notes.d/NOTE-196.md) · [214](../../record/notes.d/NOTE-214.md) · [221](../../record/notes.d/NOTE-221.md) · [226](../../record/notes.d/NOTE-226.md) · [228](../../record/notes.d/NOTE-228.md) · [232](../../record/notes.d/NOTE-232.md) · [235](../../record/notes.d/NOTE-235.md) · [242](../../record/notes.d/NOTE-242.md) · [244](../../record/notes.d/NOTE-244.md) · [246](../../record/notes.d/NOTE-246.md) · [247](../../record/notes.d/NOTE-247.md)
@@ -38,14 +38,14 @@
 **[multimodal-learning](tags/multimodal-learning.md)** (8):
 [027](../../record/notes.d/NOTE-027.md) · [049](../../record/notes.d/NOTE-049.md) · [055](../../record/notes.d/NOTE-055.md) · [069](../../record/notes.d/NOTE-069.md) · [196](../../record/notes.d/NOTE-196.md) · [206](../../record/notes.d/NOTE-206.md) · [232](../../record/notes.d/NOTE-232.md) · [255](../../record/notes.d/NOTE-255.md)
 
-**[numerics-and-precision](tags/numerics-and-precision.md)** (4):
-[029](../../record/notes.d/NOTE-029.md) · [164](../../record/notes.d/NOTE-164.md) · [168](../../record/notes.d/NOTE-168.md) · [222](../../record/notes.d/NOTE-222.md)
+**[numerics-and-precision](tags/numerics-and-precision.md)** (5):
+[029](../../record/notes.d/NOTE-029.md) · [164](../../record/notes.d/NOTE-164.md) · [168](../../record/notes.d/NOTE-168.md) · [222](../../record/notes.d/NOTE-222.md) · [257](../../record/notes.d/NOTE-257.md)
 
 **[representation-and-encoding](tags/representation-and-encoding.md)** (19):
 [010](../../record/notes.d/NOTE-010.md) · [028](../../record/notes.d/NOTE-028.md) · [125](../../record/notes.d/NOTE-125.md) · [129](../../record/notes.d/NOTE-129.md) · [188](../../record/notes.d/NOTE-188.md) · [206](../../record/notes.d/NOTE-206.md) · [207](../../record/notes.d/NOTE-207.md) · [210](../../record/notes.d/NOTE-210.md) · [234](../../record/notes.d/NOTE-234.md) · [237](../../record/notes.d/NOTE-237.md) · [238](../../record/notes.d/NOTE-238.md) · [243](../../record/notes.d/NOTE-243.md) · [245](../../record/notes.d/NOTE-245.md) · [246](../../record/notes.d/NOTE-246.md) · [247](../../record/notes.d/NOTE-247.md) · [252](../../record/notes.d/NOTE-252.md) · [253](../../record/notes.d/NOTE-253.md) · [254](../../record/notes.d/NOTE-254.md) · [256](../../record/notes.d/NOTE-256.md)
 
-**[systems-optimization](tags/systems-optimization.md)** (4):
-[122](../../record/notes.d/NOTE-122.md) · [164](../../record/notes.d/NOTE-164.md) · [168](../../record/notes.d/NOTE-168.md) · [184](../../record/notes.d/NOTE-184.md)
+**[systems-optimization](tags/systems-optimization.md)** (5):
+[122](../../record/notes.d/NOTE-122.md) · [164](../../record/notes.d/NOTE-164.md) · [168](../../record/notes.d/NOTE-168.md) · [184](../../record/notes.d/NOTE-184.md) · [257](../../record/notes.d/NOTE-257.md)
 
 **[tiny-models](tags/tiny-models.md)** (2):
 [233](../../record/notes.d/NOTE-233.md) · [234](../../record/notes.d/NOTE-234.md)
@@ -56,7 +56,7 @@
 **[vision-and-graphics](tags/vision-and-graphics.md)** (22):
 [018](../../record/notes.d/NOTE-018.md) · [027](../../record/notes.d/NOTE-027.md) · [032](../../record/notes.d/NOTE-032.md) · [035](../../record/notes.d/NOTE-035.md) · [037](../../record/notes.d/NOTE-037.md) · [042](../../record/notes.d/NOTE-042.md) · [044](../../record/notes.d/NOTE-044.md) · [045](../../record/notes.d/NOTE-045.md) · [046](../../record/notes.d/NOTE-046.md) · [047](../../record/notes.d/NOTE-047.md) · [170](../../record/notes.d/NOTE-170.md) · [171](../../record/notes.d/NOTE-171.md) · [172](../../record/notes.d/NOTE-172.md) · [173](../../record/notes.d/NOTE-173.md) · [185](../../record/notes.d/NOTE-185.md) · [186](../../record/notes.d/NOTE-186.md) · [187](../../record/notes.d/NOTE-187.md) · [188](../../record/notes.d/NOTE-188.md) · [224](../../record/notes.d/NOTE-224.md) · [237](../../record/notes.d/NOTE-237.md) · [243](../../record/notes.d/NOTE-243.md) · [256](../../record/notes.d/NOTE-256.md)
 
-**By status:** [Read](status/Read.md) (253) · [Skimmed](status/Skimmed.md) (3) · [Unread](status/Unread.md) (0) · [Re-read](status/Superseded.md) (0)
+**By status:** [Read](status/Read.md) (254) · [Skimmed](status/Skimmed.md) (3) · [Unread](status/Unread.md) (0) · [Re-read](status/Superseded.md) (0)
 
 What the status column means in this scheme — the words are luria's, the meanings are this project's.
 
@@ -325,4 +325,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [NOTE-254](../../record/notes.d/NOTE-254.md) | Adaptive estimators: a counter-rebuttal whose body is weaker than its abstract | Read to check whether it softens [LIT-509](../../record/literature.d/LIT-509.md), as [#220](https://github.com/dmarx/anthology-of-the-sota/issues/220) feared. It does on one narrow point and not on the one that matters. Its own Figure 6 shows a ReLU network averaged over 50 initializations has **no distinct phase**, and it agrees with the rebuttal that hidden-layer compression does not correlate with generalization. | Read |
 | [NOTE-255](../../record/notes.d/NOTE-255.md) | Gemini 1.0: complete disclosure, and an abstract that picks the flattering row | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for the model and filed for the appendices. The headline — first model to exceed human-expert MMLU — holds under one inference procedure out of three the report itself publishes, and under the other two GPT-4 is ahead. Nothing is concealed. The disambiguating numbers are in the same document, which is what makes this the corpus's cleanest instance of `DP-010`. | Read |
 | [NOTE-256](../../record/notes.d/NOTE-256.md) | Image-GS: the rate accounting GaussianToken skipped, and an ablation that inverts its own headline | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for its adjacency to the tokenizer trunk. Two things worth keeping: a comparison run the way this record keeps asking for — six baselines at matched model size, bitrate on the axis — and an ablation in which the two unglamorous optimizer choices outweigh the content-adaptive allocation the paper is named for. | Read |
+| [NOTE-257](../../record/notes.d/NOTE-257.md) | SVDQuant: a low-rank branch on the weights, not on the error | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist. The idea that travels is an ordering: decompose the weights and quantize the residual, rather than quantize and then patch the error. Two propositions and Eckart-Young say why, and a published method that does it the other way round is the control. | Read |
 

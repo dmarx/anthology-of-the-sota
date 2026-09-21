@@ -6,7 +6,7 @@
 
 **Numerics and precision** — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them.
 
-17 of 313 SOTA documents. Back to the [full index](../README.md).
+18 of 314 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -27,3 +27,4 @@
 | [SOTA-234](../../../record/practices.d/SOTA-234.md) | Train in the target low-bit format from scratch rather than quantizing a finished model | Ma et al. (2024), [LIT-380](../../../record/literature.d/LIT-380.md) — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764). Decide the serving format before training and train in it, rather than training in FP16 and compressing afterwards. Ternary weights trained from scratch match an FP16 model of equal size and token budget from 3B upward — but the compute argument assumes hardware built for the format, and only the memory saving is measured on machines that exist. | Proposed |
 | [SOTA-248](../../../record/practices.d/SOTA-248.md) | Stretch and clip the softmax so an attention head can output exact zeros | Bondarenko et al. (2023), [LIT-414](../../../record/literature.d/LIT-414.md) — a head that wants to do nothing has to drive its softmax input to infinity to approximate exact zeros, and that is what creates the activation outliers that break INT8. Stretch the softmax to (γ, ζ) and clip back to (0,1) and zeros become reachable from a finite input. On BERT-base: W8A8 perplexity 1294 → 4.55, max infinity-norm 735 → 20, and the FP16 model gets slightly better rather than worse. Evidence is BERT-base, OPT-125M and ViT-S/16 — small and encoder-heavy. | Proposed |
 | [SOTA-283](../../../record/practices.d/SOTA-283.md) | To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it |  | Proposed |
+| [SOTA-314](../../../record/practices.d/SOTA-314.md) | Absorb quantization outliers into a high-precision low-rank branch taken from the weights, and fuse its kernels into the low-bit ones | Li et al. (2024), [LIT-512](../../../record/literature.d/LIT-512.md) — at 4 bits on both weights and activations, smoothing alone is not enough. Shift outliers from activations into weights, peel the dominant singular values into a 16-bit rank-32 branch, quantize the residual. Then fuse: run naïvely the branch costs **57%** latency and cancels the win; fused it gives **3.0×** over W4A16 and **3.5×** memory on 12B FLUX.1. | Active |

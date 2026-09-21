@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**148 document(s) awaiting a decision.**
+**149 document(s) awaiting a decision.**
 
 ## SOTAs
 
-96 of the 148.
+96 of the 149.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -60,7 +60,7 @@
 | 2026-09-17 | Proposed | [SOTA-243](../../record/practices.d/SOTA-243.md) | 6 | 0 | Discard the easy examples when data is abundant and the hard ones when it is scarce |
 | 2026-09-17 | Proposed | [SOTA-241](../../record/practices.d/SOTA-241.md) | 5 | 0 | Rank candidate data selections with a model-free distributional proxy before spending a training run |
 | 2026-09-17 | Proposed | [SOTA-242](../../record/practices.d/SOTA-242.md) | 4 | 0 | Select pretraining data by matching a target distribution you can sample from, not by scoring it for quality |
-| 2026-09-17 | Proposed | [SOTA-234](../../record/practices.d/SOTA-234.md) | 2 | 0 | Train in the target low-bit format from scratch rather than quantizing a finished model |
+| 2026-09-17 | Proposed | [SOTA-234](../../record/practices.d/SOTA-234.md) | 3 | 0 | Train in the target low-bit format from scratch rather than quantizing a finished model |
 | 2026-09-17 | Proposed | [SOTA-239](../../record/practices.d/SOTA-239.md) | 2 | 0 | Order training data by skill prerequisite: teach the prerequisite and the dependent skill costs less data |
 | 2026-09-17 | Proposed | [SOTA-244](../../record/practices.d/SOTA-244.md) | 2 | 0 | Score example importance a few epochs into training, averaged over several initializations |
 | 2026-09-17 | Proposed | [SOTA-245](../../record/practices.d/SOTA-245.md) | 2 | 0 | State a relation in both orders in the training corpus if you want it usable in both directions |
@@ -112,7 +112,7 @@
 
 ## THEORYs
 
-32 of the 148.
+33 of the 149.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -135,6 +135,7 @@
 | 2026-09-20 | Proposed | [THEORY-034](../../record/theory.d/THEORY-034.md) | 1 | 0 | Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations |
 | 2026-09-21 | Proposed | [THEORY-051](../../record/theory.d/THEORY-051.md) | 8 | 0 | A text feature predicts success partly by being uncommon, so a tool that gives it to everyone destroys its predictive value |
 | 2026-09-21 | Proposed | [THEORY-056](../../record/theory.d/THEORY-056.md) | 3 | 0 | Distinct state machines agree at chance on long random inputs, so a learner that reads only statistics loses the signal as the sequences get longer |
+| 2026-09-21 | Proposed | [THEORY-059](../../record/theory.d/THEORY-059.md) | 3 | 0 | A low-rank branch corrects quantization because weight spectra are steep and quantization-error spectra are flat |
 | 2026-09-21 | Proposed | [THEORY-045](../../record/theory.d/THEORY-045.md) | 2 | 0 | How much of parameter space behaves like your trained network is a description length, and the better-generalizing network occupies more of it |
 | 2026-09-21 | Proposed | [THEORY-050](../../record/theory.d/THEORY-050.md) | 2 | 0 | Parameters carry memorization and parallel computation carries reasoning |
 | 2026-09-21 | Proposed | [THEORY-057](../../record/theory.d/THEORY-057.md) | 2 | 0 | A corpus a model generates is narrower than the distribution it imitates, and the narrowing shows up as n-gram over-concentration |
@@ -151,7 +152,7 @@
 
 ## LITs
 
-3 of the 148.
+3 of the 149.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -161,7 +162,7 @@
 
 ## ADRs
 
-17 of the 148.
+17 of the 149.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

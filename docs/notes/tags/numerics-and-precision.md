@@ -4,7 +4,7 @@
 
 **numerics-and-precision**.
 
-4 of 256 NOTE documents. Back to the [full index](../README.md).
+5 of 257 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -12,3 +12,4 @@
 | [NOTE-164](../../../record/notes.d/NOTE-164.md) | QLoRA: Efficient Finetuning of Quantized LLMs | Store the frozen base in 4 bits, compute in 16, and train only LoRA adapters: 65B fine-tuning goes from >780GB to <48GB with no measured loss against a 16-bit fully fine-tuned baseline. The quantization is the headline; the more useful result for anyone already using LoRA is that the standard query/value placement does not reach full fine-tuning at scale, and that the adapter count rather than the rank is what closes the gap. | Read |
 | [NOTE-168](../../../record/notes.d/NOTE-168.md) | The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits | Ternary weights trained from scratch, matching FP16 from 3B upward at equal size and tokens. The interesting claim is not the compression ratio but that the matrix multiply becomes integer addition — which is a bet on hardware, and the one place the paper's argument outruns its measurements. | Read |
 | [NOTE-222](../../../record/notes.d/NOTE-222.md) | Quantized Evolution Strategies | Reading it: the memory trick is the contribution, not the error feedback. Error feedback is 1-bit SGD's, correctly credited; what is new is refusing to store the accumulator at all and rebuilding it from seeds, which is the only reason the method fits in the memory budget that motivated it. | Read |
+| [NOTE-257](../../../record/notes.d/NOTE-257.md) | SVDQuant: a low-rank branch on the weights, not on the error | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist. The idea that travels is an ordering: decompose the weights and quantize the residual, rather than quantize and then patch the error. Two propositions and Eckart-Young say why, and a published method that does it the other way round is the control. | Read |

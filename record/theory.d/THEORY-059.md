@@ -1,5 +1,8 @@
 ---
+number: 59
 status: Proposed
+formerly:
+- THEORY-tmpo44nu
 promote_when: >-
   The spectral claim measured outside diffusion transformers: singular value
   distributions of `W`, of the smoothed `Ŵ`, and of the quantization residual
@@ -17,11 +20,11 @@ tags:
 - inference-optimization
 date: '2026-09-21'
 source:
-- LIT-tmpglyct
+- LIT-512
 explains:
-- SOTA-tmp0iki2
+- SOTA-314
 summary: >-
-  Li et al. (2024), [LIT-tmpglyct](../literature.d/LIT-tmpglyct.md) — two propositions bound the
+  Li et al. (2024), [LIT-512](../literature.d/LIT-512.md) — two propositions bound the
   output error by the *magnitude* of weights and activations, not only by
   their rounding errors. So a rank-`r` branch helps exactly when the thing it
   subtracts has a few dominant singular values. A weight matrix does; a
@@ -29,23 +32,23 @@ summary: >-
   error rather than the weights underperforms.
 ---
 
-<!-- inactive-ok-file: SOTA-tmp0iki2 — Proposed, filed in this same
+<!-- inactive-ok-file: SOTA-314 — Proposed, filed in this same
      contribution; this theory declares `explains:` on it, so the citation is
      the relation itself. -->
 
-# THEORY-tmpo44nu: A low-rank branch corrects quantization because weight spectra are steep and quantization-error spectra are flat
+# THEORY-059: A low-rank branch corrects quantization because weight spectra are steep and quantization-error spectra are flat
 
 ## Source
 
 Li, Lin, Zhang, Cai, Li, Guo, Xie, Meng, Zhu and Han (2024),
-[LIT-tmpglyct](../literature.d/LIT-tmpglyct.md) — read as [NOTE-tmpujtdw](../notes.d/NOTE-tmpujtdw.md). Propositions 4.1
+[LIT-512](../literature.d/LIT-512.md) — read as [NOTE-257](../notes.d/NOTE-257.md). Propositions 4.1
 and 4.2, with proofs in the appendix.
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-tmp0iki2](../practices.d/SOTA-tmp0iki2.md) | absorb outliers into a high-precision low-rank branch taken from the weights, and fuse its kernels | the branch pays off because the weight matrix is nearly low-rank in its largest directions, and it would not pay off if applied one step later |
+| [SOTA-314](../practices.d/SOTA-314.md) | absorb outliers into a high-precision low-rank branch taken from the weights, and fuse its kernels | the branch pays off because the weight matrix is nearly low-rank in its largest directions, and it would not pay off if applied one step later |
 
 ## The account
 

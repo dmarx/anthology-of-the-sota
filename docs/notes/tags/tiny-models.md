@@ -4,7 +4,7 @@
 
 **tiny-models**.
 
-2 of 256 NOTE documents. Back to the [full index](../README.md).
+2 of 257 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

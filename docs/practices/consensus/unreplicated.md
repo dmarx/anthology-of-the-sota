@@ -6,7 +6,7 @@
 
 **One source** — one group, one result — nobody has agreed or disagreed yet, which is not the same as contested, where people looked and differed.
 
-70 of 292 SOTA documents. Back to the [full index](../README.md).
+72 of 295 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -80,3 +80,5 @@
 | [SOTA-290](../../../record/practices.d/SOTA-290.md) | To measure what a deployed recommender does, use sock-puppets that never interact, follow sets curated to your question, and exposure weighted by rank |  | Proposed |
 | [SOTA-291](../../../record/practices.d/SOTA-291.md) | Evaluate a specific intervention on a specific affordance rather than the net effect of the system, and never read an individual-level null as the absence of a collective effect |  | Proposed |
 | [SOTA-292](../../../record/practices.d/SOTA-292.md) | Check industry ties yourself when reading a literature about deployed platforms — disclosure is unreliable and the ties are mechanically detectable |  | Proposed |
+| [SOTA-294](../../../record/practices.d/SOTA-294.md) | Fit the tokenizer to the corpus when the corpus is deliberately narrow | Finke et al. (2025), [LIT-485](../../../record/literature.d/LIT-485.md) — holding the dataset and the architecture fixed and changing only the tokenizer, a **4,096**-token WordPiece vocabulary seeded with English affixes beats GPT-2's **50,257** by **+26.7 coherence** and **+27.5 quality**. It is the one fully controlled comparison in a paper that is mostly about something else, and the effect is larger than the architecture change measured beside it. | Proposed |
+| [SOTA-295](../../../record/practices.d/SOTA-295.md) | Parameterize the generating prompt above the word list, and constrain how each sample opens | Finke et al. (2025), [LIT-485](../../../record/literature.d/LIT-485.md) — requiring a story to contain three words drawn from a vocabulary constrains the lexicon and leaves the frame alone, and the frame is where a generator repeats itself: **59.38%** of TinyStories begins "once upon a time". Name a theme, a topic, a style and a narrative feature per sample, and require the sample to open with a given part of speech and letter. Five diversity metrics move; measured simplicity does not. | Proposed |

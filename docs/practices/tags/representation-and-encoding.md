@@ -6,7 +6,7 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-10 of 292 SOTA documents. Back to the [full index](../README.md).
+11 of 295 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,4 @@
 | [SOTA-250](../../../record/practices.d/SOTA-250.md) | Pretrain by predicting representations of masked regions, not their pixels | Assran et al. (2023), [LIT-216](../../../record/literature.d/LIT-216.md) — [ARXIV-2301.08243](https://arxiv.org/abs/2301.08243). Predict the *representations* of masked target blocks from a context block, with a learned target-encoder, instead of reconstructing pixels. No hand-crafted augmentations, and a ViT-H/14 reaches strong downstream performance in under 1200 GPU-hours — faster than a ViT-S/16 trained with iBOT. | Active |
 | [SOTA-271](../../../record/practices.d/SOTA-271.md) | Train on a second modality even when the target is single-modality | Huh et al. (2024), [LIT-458](../../../record/literature.d/LIT-458.md) — if representations converge on a modality-agnostic model of what generated the data, then data from any modality helps find it. The vision direction is already common practice; the language direction is not, and the paper cites a case where adding image data improved text performance. | Proposed |
 | [SOTA-273](../../../record/practices.d/SOTA-273.md) | Choose a pretraining context whose association with the input is neither too strong nor too weak, and mix contexts to get there | Zhai (2025), [LIT-459](../../../record/literature.d/LIT-459.md) — a pretraining objective is an association between the input and a context variable, and the useful contexts are the ones whose association is neither too strong nor too weak: the singular values of the expectation operator should decay neither too fast nor too slowly. Contexts that individually miss the range can be mixed into one that does not. | Proposed |
+| [SOTA-294](../../../record/practices.d/SOTA-294.md) | Fit the tokenizer to the corpus when the corpus is deliberately narrow | Finke et al. (2025), [LIT-485](../../../record/literature.d/LIT-485.md) — holding the dataset and the architecture fixed and changing only the tokenizer, a **4,096**-token WordPiece vocabulary seeded with English affixes beats GPT-2's **50,257** by **+26.7 coherence** and **+27.5 quality**. It is the one fully controlled comparison in a paper that is mostly about something else, and the effect is larger than the architecture change measured beside it. | Proposed |

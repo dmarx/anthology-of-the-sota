@@ -6,7 +6,7 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-18 of 418 LIT documents. Back to the [full index](../README.md).
+19 of 420 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -28,3 +28,4 @@
 | [LIT-458](../../../record/literature.d/LIT-458.md) | The Platonic Representation Hypothesis | Huh et al. (2024), [ARXIV-2405.07987](https://arxiv.org/abs/2405.07987). Representations are converging: across architectures, objectives and modalities, and more so as models get larger. The conjecture is that they are converging on a statistical model of whatever generated the data. The mathematical argument holds only for bijective observations, which the authors say plainly and test at the boundary. | Active |
 | [LIT-459](../../../record/literature.d/LIT-459.md) | Contextures: The Mechanism of Representation Learning | Zhai (2025), [ARXIV-2504.19792](https://arxiv.org/abs/2504.19792) — a CMU dissertation. A representation is learned from the association between the input and a *context variable*; an encoder capturing the maximum information of that association is optimal on tasks compatible with the context. A context is most useful when the association is neither too strong nor too weak, and mixing contexts is a cheap way to get there. | Active |
 | [LIT-460](../../../record/literature.d/LIT-460.md) | The Lattice Representation Hypothesis of Large Language Models | Xiong (2026), [ARXIV-2603.01227](https://arxiv.org/abs/2603.01227). If concepts are linear directions with thresholds, each concept is a half-space, and intersecting half-spaces gives a concept lattice — so conceptual inclusion, intersection and union become geometric meet and join. Tested on WordNet sub-hierarchies. The Linear Representation Hypothesis gives binary concepts; this is the set-theoretic structure over them. | Active |
+| [LIT-485](../../../record/literature.d/LIT-485.md) | Parameterized Synthetic Text Generation with SimpleStories | Finke et al. (2025), [ARXIV-2504.09184](https://arxiv.org/abs/2504.09184). Sampling three words from a child's vocabulary was not enough: **59.38% of TinyStories begins "once upon a time"**. Parameterize the generating prompt by theme, topic, style, narrative feature, grammar feature and author persona, and constrain the opening part of speech and letter, and every diversity metric moves. The one clean ablation in the paper is about something else — a 4,096-token domain tokenizer beats GPT-2's 50,257 by **+26.7 coherence and +27.5 quality** at fixed data and architecture. | Active |

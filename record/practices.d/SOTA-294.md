@@ -1,5 +1,8 @@
 ---
+number: 294
 status: Proposed
+formerly:
+- SOTA-tmpu9u55
 promote_when: >-
   The same swap run on a second corpus, or run in the direction this paper
   did not: a tokenizer fitted to the *baseline* corpus, which would say
@@ -21,12 +24,12 @@ tags:
 - tiny-models
 date: '2026-09-21'
 source:
-- LIT-tmpvjesi
+- LIT-485
 introduced_by:
-- LIT-tmpvjesi
+- LIT-485
 implementations: []
 summary: >-
-  Finke et al. (2025), [LIT-tmpvjesi](../literature.d/LIT-tmpvjesi.md) — holding the dataset and the
+  Finke et al. (2025), [LIT-485](../literature.d/LIT-485.md) — holding the dataset and the
   architecture fixed and changing only the tokenizer, a **4,096**-token
   WordPiece vocabulary seeded with English affixes beats GPT-2's **50,257**
   by **+26.7 coherence** and **+27.5 quality**. It is the one fully
@@ -34,12 +37,12 @@ summary: >-
   the effect is larger than the architecture change measured beside it.
 ---
 
-# SOTA-tmpu9u55: Fit the tokenizer to the corpus when the corpus is deliberately narrow
+# SOTA-294: Fit the tokenizer to the corpus when the corpus is deliberately narrow
 
 ## Source
 
-Finke et al. (2025), [LIT-tmpvjesi](../literature.d/LIT-tmpvjesi.md) — [ARXIV-2504.09184](https://arxiv.org/abs/2504.09184) §3.5, read as
-[NOTE-tmppb47z](../notes.d/NOTE-tmppb47z.md).
+Finke et al. (2025), [LIT-485](../literature.d/LIT-485.md) — [ARXIV-2504.09184](https://arxiv.org/abs/2504.09184) §3.5, read as
+[NOTE-234](../notes.d/NOTE-234.md).
 
 ## What to do
 

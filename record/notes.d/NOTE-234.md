@@ -1,6 +1,9 @@
 ---
+number: 234
 status: Read
-paper: LIT-tmpvjesi
+formerly:
+- NOTE-tmppb47z
+paper: LIT-485
 title: 'SimpleStories'
 version: 1
 date: '2026-09-21'
@@ -11,11 +14,11 @@ summary: >-
   from it is about the generation procedure, which was measured.
 ---
 
-# NOTE-tmppb47z: SimpleStories
+# NOTE-234: SimpleStories
 
 ## Contribution
 
-`LIT-tmpl865n` needed a diverse synthetic corpus, described a mechanism for
+`LIT-484` needed a diverse synthetic corpus, described a mechanism for
 getting one, and did not check. This checks: **59.38% of TinyStories contains
 "once upon a time" verbatim**. Then it diagnoses why — the constraint was
 lexical, and repetition lives in the frame, not the word list — and builds a
@@ -119,7 +122,7 @@ single-layer models on each corpus.
 
 ## Connections
 
-- [LIT-tmpl865n](../literature.d/LIT-tmpl865n.md) is the trunk. Declared as `extends` — this modifies the
+- [LIT-484](../literature.d/LIT-484.md) is the trunk. Declared as `extends` — this modifies the
   generation procedure rather than disputing the finding.
 - [SOTA-127](../practices.d/SOTA-127.md) filters chain-of-thought traces out of a tiny model's
   training data. Same family of move: at this size the corpus is the
@@ -136,7 +139,7 @@ the part that was measured directly, one from the part that was ablated
 cleanly. A third, about how to report a small model's parameter count, is a
 convention the paper argues for rather than a result.
 
-It also closes a question `NOTE-tmp4zyro` left open: the trunk assumed its
+It also closes a question `NOTE-233` left open: the trunk assumed its
 diversity mechanism worked and this is the measurement.
 
 ## Limitations

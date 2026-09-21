@@ -2,7 +2,7 @@
 
 # Lines of work
 
-21 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+22 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -28,6 +28,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-466](../record/literature.d/LIT-466.md) — The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity *(Active)*
   - [LIT-463](../record/literature.d/LIT-463.md) — Comment on The Illusion of Thinking *(Active)*
 
+### From TinyStories: How Small Can Language Models Be and Still Speak Coherent English?
+
+- [LIT-484](../record/literature.d/LIT-484.md) — TinyStories: How Small Can Language Models Be and Still Speak Coherent English? *(Active)*
+  - [LIT-485](../record/literature.d/LIT-485.md) — Parameterized Synthetic Text Generation with SimpleStories *(Active)*
+
 ## attention-techniques
 
 ### From Longformer: The Long-Document Transformer
@@ -52,6 +57,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-441](../record/literature.d/LIT-441.md) — Pre-training under infinite compute *(Active)*
   - [LIT-442](../record/literature.d/LIT-442.md) — Diffusion Beats Autoregressive in Data-Constrained Settings *(Active)*
 
+### From TinyStories: How Small Can Language Models Be and Still Speak Coherent English?
+
+- [LIT-484](../record/literature.d/LIT-484.md) — TinyStories: How Small Can Language Models Be and Still Speak Coherent English? *(Active)*
+  - [LIT-485](../record/literature.d/LIT-485.md) — Parameterized Synthetic Text Generation with SimpleStories *(Active)*
+
 ## distributed-optimization
 
 ### From DiLoCo: Distributed Low-Communication Training of Language Models
@@ -66,6 +76,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-439](../record/literature.d/LIT-439.md) — Deep Unsupervised Learning using Nonequilibrium Thermodynamics *(Active)*
   - [LIT-036](../record/literature.d/LIT-036.md) — Denoising Diffusion Probabilistic Models *(Active)*
     - [LIT-446](../record/literature.d/LIT-446.md) — Variational Diffusion Models *(Active)*
+
+### From Scalable Diffusion Models with Transformers
+
+- [LIT-448](../record/literature.d/LIT-448.md) — Scalable Diffusion Models with Transformers *(Active)*
+  - [LIT-447](../record/literature.d/LIT-447.md) — SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers *(Active)*
+    - [LIT-449](../record/literature.d/LIT-449.md) — Scaling Rectified Flow Transformers for High-Resolution Image Synthesis *(Active)*
+- alongside: [LIT-483](../record/literature.d/LIT-483.md) — Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models *(Active)*
 
 ## in-context-learning
 
@@ -120,6 +137,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-208](../record/literature.d/LIT-208.md) — Rope to Nope and Back Again: A New Hybrid Attention Strategy *(Active)*
   - [LIT-209](../record/literature.d/LIT-209.md) — SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling *(Active)*
 - alongside: [LIT-048](../record/literature.d/LIT-048.md) — Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation *(Active)*
+
+## tiny-models
+
+### From TinyStories: How Small Can Language Models Be and Still Speak Coherent English?
+
+- [LIT-484](../record/literature.d/LIT-484.md) — TinyStories: How Small Can Language Models Be and Still Speak Coherent English? *(Active)*
+  - [LIT-485](../record/literature.d/LIT-485.md) — Parameterized Synthetic Text Generation with SimpleStories *(Active)*
 
 ## training-optimization
 
@@ -176,12 +200,3 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-216](../record/literature.d/LIT-216.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
   - [LIT-215](../record/literature.d/LIT-215.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*
-
-## Sharing no `tags`
-
-### From Scalable Diffusion Models with Transformers
-
-- [LIT-448](../record/literature.d/LIT-448.md) — Scalable Diffusion Models with Transformers *(Active)*
-  - [LIT-447](../record/literature.d/LIT-447.md) — SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers *(Active)*
-    - [LIT-449](../record/literature.d/LIT-449.md) — Scaling Rectified Flow Transformers for High-Resolution Image Synthesis *(Active)*
-- alongside: [LIT-483](../record/literature.d/LIT-483.md) — Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models *(Active)*

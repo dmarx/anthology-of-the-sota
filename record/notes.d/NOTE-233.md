@@ -1,6 +1,9 @@
 ---
+number: 233
 status: Read
-paper: LIT-tmpl865n
+formerly:
+- NOTE-tmp4zyro
+paper: LIT-484
 title: 'TinyStories'
 version: 1
 date: '2026-09-21'
@@ -18,7 +21,7 @@ summary: >-
      reading does not satisfy its promotion condition and why; the citation
      asserts a non-match, which its status cannot undermine -->
 
-# NOTE-tmp4zyro: TinyStories
+# NOTE-233: TinyStories
 
 ## Contribution
 
@@ -94,7 +97,7 @@ out-of-distribution prompts; the Figure 1 prompt was verified to have no
 
 **Assumed rather than shown:** that the generation procedure produced a
 diverse corpus. The paper argues the mechanism should work and does not
-measure the result. [LIT-tmpvjesi](../literature.d/LIT-tmpvjesi.md) measured it, and 59.38% of the
+measure the result. [LIT-485](../literature.d/LIT-485.md) measured it, and 59.38% of the
 stories begin "once upon a time".
 
 **A claim about the models, not the data:** that small models are more
@@ -110,7 +113,7 @@ dimension, head count against width, and compute against model size.
 
 ## Connections
 
-- [LIT-tmpvjesi](../literature.d/LIT-tmpvjesi.md) is the descendant that measures the diversity this
+- [LIT-485](../literature.d/LIT-485.md) is the descendant that measures the diversity this
   one engineered, finds it insufficient in a specific way, and replaces the
   mechanism.
 - [SOTA-123](../practices.d/SOTA-123.md) — pretrain tiny specialized models from scratch on the
@@ -147,7 +150,7 @@ removed in order to get its result.
 distributions are both GPT-family.
 
 **"Below 10M parameters" excludes embeddings**, which is not stated in the
-headline and is a live source of confusion — `LIT-tmpvjesi` puts
+headline and is a live source of confusion — `LIT-485` puts
 TinyStories-33M at 68M all-in and recommends the convention be changed.
 
 **Interpretability is argued by example.** Clear attention patterns in a
@@ -159,5 +162,5 @@ one-layer model are shown, not quantified against a baseline.
   establishes the direction and puts no number on how much breadth costs how
   much capacity.
 - What is the smallest model that speaks, counted honestly? The paper's own
-  answer excludes embeddings, and `LIT-tmpvjesi` reopens the question under a
+  answer excludes embeddings, and `LIT-485` reopens the question under a
   stricter count.

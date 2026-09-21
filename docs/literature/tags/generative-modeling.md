@@ -6,7 +6,7 @@
 
 **Generative modeling** — diffusion, samplers, text-to-image, conditioning and control.
 
-20 of 418 LIT documents. Back to the [full index](../README.md).
+21 of 420 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -30,3 +30,4 @@
 | [LIT-449](../../../record/literature.d/LIT-449.md) | Scaling Rectified Flow Transformers for High-Resolution Image Synthesis | Esser et al. (2024), [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206). A 61-way comparison of diffusion and rectified-flow formulations settles on a straight-line path with timesteps drawn from a logit-normal, then scales it to 8B for text-to-image. Adds a resolution-dependent shift of the timestep schedule, and MMDiT, which gives each modality its own weights while letting the two token streams attend jointly. | Active |
 | [LIT-477](../../../record/literature.d/LIT-477.md) | NoProp: Training Neural Networks without Full Back-propagation or Full Forward-propagation | Li, Teh and Pascanu (2025), [ARXIV-2503.24322](https://arxiv.org/abs/2503.24322). Train each block independently to denoise a noisy *label* embedding given the raw input — diffusion machinery pointed at a classifier. No forward or backward pass across the network at training time, about half the GPU memory, and test accuracy matching backprop on MNIST and CIFAR-10. Every block sees the input, which is what makes independence possible and what makes the comparison awkward. | Active |
 | [LIT-479](../../../record/literature.d/LIT-479.md) | The Diffusion Duality | Sahoo, Deschenaux, Gokaslan, Wang, Chiu and Kuleshov (2025), [ARXIV-2506.10892](https://arxiv.org/abs/2506.10892). Uniform-state discrete diffusion is the `argmax` of a Gaussian diffusion, which lets Gaussian techniques transfer: a variance-reducing curriculum doubles training speed, and consistency distillation cuts sampling from 1024 steps to 8. Masked diffusion still wins on likelihood; this wins in the few-step regime, where masked models cannot revise what they have already emitted. | Active |
+| [LIT-483](../../../record/literature.d/LIT-483.md) | Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models | Liang et al. (2024), [ARXIV-2411.04996](https://arxiv.org/abs/2411.04996). Untie every non-embedding parameter by modality — feed-forward, attention projections, layer norms — and keep global self-attention over the whole sequence. Matches a dense baseline at **55.8% of the FLOPs** in the Chameleon setting and 37.2% with speech added. The component ablation is the useful part: the feed-forward carries most of it, attention adds less, layer norms add nothing. | Active |

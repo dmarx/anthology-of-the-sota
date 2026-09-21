@@ -1,5 +1,8 @@
 ---
+number: 293
 status: Proposed
+formerly:
+- SOTA-tmph3t1d
 promote_when: >-
   A second group stating the convention and applying it — a tiny-model report
   that gives both counts, or a venue or benchmark that requires the all-in
@@ -20,24 +23,24 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpvjesi
+- LIT-485
 introduced_by:
-- LIT-tmpvjesi
+- LIT-485
 implementations: []
 summary: >-
-  Finke et al. (2025), [LIT-tmpvjesi](../literature.d/LIT-tmpvjesi.md) — at these sizes the embedding
+  Finke et al. (2025), [LIT-485](../literature.d/LIT-485.md) — at these sizes the embedding
   table is not a rounding error, it is most of the model: TinyStories-33M is
   **68M** parameters all-in, and an 8M model in the same paper is "more than
   half embeddings". Two papers can each claim the smaller model and both be
   telling the truth. Print the all-in figure.
 ---
 
-# SOTA-tmph3t1d: Count embedding parameters when you report a tiny model's size
+# SOTA-293: Count embedding parameters when you report a tiny model's size
 
 ## Source
 
-Finke et al. (2025), [LIT-tmpvjesi](../literature.d/LIT-tmpvjesi.md) — [ARXIV-2504.09184](https://arxiv.org/abs/2504.09184) §3.5, read as
-[NOTE-tmppb47z](../notes.d/NOTE-tmppb47z.md).
+Finke et al. (2025), [LIT-485](../literature.d/LIT-485.md) — [ARXIV-2504.09184](https://arxiv.org/abs/2504.09184) §3.5, read as
+[NOTE-234](../notes.d/NOTE-234.md).
 
 ## What to do
 

@@ -4,7 +4,7 @@
 
 **vision-and-graphics**.
 
-19 of 232 NOTE documents. Back to the [full index](../README.md).
+19 of 234 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

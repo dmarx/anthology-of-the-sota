@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [21 Sep 16:11 — The trunk under eight practices, and a paper whose abstract describes a different experiment than its ablations](2026-09.md#the-trunk-under-eight-practices-and-a-paper-whose-abstract-describes-a-different-experiment-than-its-ablations)
 - [21 Sep 15:52 — A promotion condition with two satisfiers, one of which is still open after the promotion](2026-09.md#a-promotion-condition-with-two-satisfiers-one-of-which-is-still-open-after-the-promotion)
 - [21 Sep 15:42 — A null that appears from either side of a real effect](2026-09.md#a-null-that-appears-from-either-side-of-a-real-effect)
 - [21 Sep 15:30 — The arm that was supposed to be the control turned out to be the finding](2026-09.md#the-arm-that-was-supposed-to-be-the-control-turned-out-to-be-the-finding)
@@ -146,9 +147,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-139 entries across 2 books, newest first.
+140 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 137 | 2026-09-05 | 2026-09-21 |
+| [2026-09](2026-09.md) | 138 | 2026-09-05 | 2026-09-21 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

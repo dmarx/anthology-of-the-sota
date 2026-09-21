@@ -1,5 +1,8 @@
 ---
+number: 295
 status: Proposed
+formerly:
+- SOTA-tmpvc466
 promote_when: >-
   A second group measuring corpus-level diversity before and after moving the
   constraint above the lexical level, on a synthetic corpus that is not a
@@ -23,13 +26,13 @@ tags:
 - tiny-models
 date: '2026-09-21'
 source:
-- LIT-tmpvjesi
+- LIT-485
 introduced_by:
-- LIT-tmpvjesi
+- LIT-485
 implementations:
 - 'SimpleStories'
 summary: >-
-  Finke et al. (2025), [LIT-tmpvjesi](../literature.d/LIT-tmpvjesi.md) — requiring a story to contain three
+  Finke et al. (2025), [LIT-485](../literature.d/LIT-485.md) — requiring a story to contain three
   words drawn from a vocabulary constrains the lexicon and leaves the frame
   alone, and the frame is where a generator repeats itself: **59.38%** of
   TinyStories begins "once upon a time". Name a theme, a topic, a style and a
@@ -45,14 +48,14 @@ summary: >-
      is drawn from the measurement `SOTA-172` reports rather than from its
      standing -->
 
-# SOTA-tmpvc466: Parameterize the generating prompt above the word list, and constrain how each sample opens
+# SOTA-295: Parameterize the generating prompt above the word list, and constrain how each sample opens
 
 ## Source
 
-Finke et al. (2025), [LIT-tmpvjesi](../literature.d/LIT-tmpvjesi.md) — [ARXIV-2504.09184](https://arxiv.org/abs/2504.09184) — read as
-[NOTE-tmppb47z](../notes.d/NOTE-tmppb47z.md).
+Finke et al. (2025), [LIT-485](../literature.d/LIT-485.md) — [ARXIV-2504.09184](https://arxiv.org/abs/2504.09184) — read as
+[NOTE-234](../notes.d/NOTE-234.md).
 
-The procedure it replaces is [LIT-tmpl865n](../literature.d/LIT-tmpl865n.md)'s, which is the reason this
+The procedure it replaces is [LIT-484](../literature.d/LIT-484.md)'s, which is the reason this
 is a practice and not an observation: TinyStories was not careless about
 diversity. It identified the problem — a commercial model prompted for
 stories repeats itself however high the temperature — and built a mechanism

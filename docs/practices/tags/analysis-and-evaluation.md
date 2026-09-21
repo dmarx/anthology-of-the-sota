@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-16 of 292 SOTA documents. Back to the [full index](../README.md).
+17 of 295 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -26,3 +26,4 @@
 | [SOTA-290](../../../record/practices.d/SOTA-290.md) | To measure what a deployed recommender does, use sock-puppets that never interact, follow sets curated to your question, and exposure weighted by rank |  | Proposed |
 | [SOTA-291](../../../record/practices.d/SOTA-291.md) | Evaluate a specific intervention on a specific affordance rather than the net effect of the system, and never read an individual-level null as the absence of a collective effect |  | Proposed |
 | [SOTA-292](../../../record/practices.d/SOTA-292.md) | Check industry ties yourself when reading a literature about deployed platforms — disclosure is unreliable and the ties are mechanically detectable |  | Proposed |
+| [SOTA-293](../../../record/practices.d/SOTA-293.md) | Count embedding parameters when you report a tiny model's size | Finke et al. (2025), [LIT-485](../../../record/literature.d/LIT-485.md) — at these sizes the embedding table is not a rounding error, it is most of the model: TinyStories-33M is **68M** parameters all-in, and an 8M model in the same paper is "more than half embeddings". Two papers can each claim the smaller model and both be telling the truth. Print the all-in figure. | Proposed |

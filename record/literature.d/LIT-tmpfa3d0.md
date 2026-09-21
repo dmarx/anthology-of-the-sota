@@ -1,0 +1,94 @@
+---
+status: Active
+title: 'The unintended consequences of large language models as a labor-augmenting technology in science'
+version: 1
+tags:
+- deployment-and-society
+- analysis-and-evaluation
+date: '2026-09-21'
+published: '2026-07-19'
+arxiv: '2607.17397'
+first_author: 'Duede'
+keywords:
+- 'labor-augmenting-technology'
+- 'opportunity-cost-of-time'
+- 'marginal-value-theorem'
+- 'optimal-foraging'
+- 'effort-allocation'
+- 'ai-for-science'
+implementations: []
+summary: >-
+  Duede, Gross, Crockett and Bergstrom (2026), [ARXIV-2607.17397](https://arxiv.org/abs/2607.17397). A
+  marginal-value-theorem model of how a time-saving tool changes what its users
+  produce, assuming the tool is **perfect** — faster with no added error and no
+  cost. Removing time raises the long-run rate of return, which *is* the
+  opportunity cost of time, so developed work is developed less thoroughly.
+  Which work gets developed at all moves in **opposite directions** depending on
+  the phase accelerated, and thoroughness reverses sign in the third phase — a
+  split the paper's own closing sentence does not carry.
+---
+
+<!-- inactive-ok-file: THEORY-051 — Proposed, and named in Standing as the
+     account this paper supplies a rival to. The citation is about what the
+     two documents each leave open, which does not wait on either being
+     settled -->
+
+# LIT-tmpfa3d0: The unintended consequences of large language models as a labor-augmenting technology in science
+
+Duede, Gross, Crockett and Bergstrom (2026) —
+[ARXIV-2607.17397](https://arxiv.org/abs/2607.17397), read as [NOTE-tmpcr9xy](../notes.d/NOTE-tmpcr9xy.md).
+
+## Key takeaways
+
+- **The tool is stipulated to be perfect.** Hallucination, fabricated
+  citations, sycophancy and deskilling are listed in the introduction and then
+  set aside: the model gives the LLM "as imagined by their most enthusiastic
+  proponents", reducing time cost without adding error, at negligible price.
+  Every consequence below is therefore a consequence of *speed*, not of
+  defect — which is what makes the paper hard to answer by improving the tool.
+- **Charnov's marginal value theorem, with a threshold.** A researcher spends
+  a fixed discovery phase `s` learning a project's value `v`, then either
+  abandons it or develops it for `t = a + b`, where `a` is the minimum needed
+  to publish at all and `b` is discretionary improvement. Payoff is `v·u(t)`
+  with `u` zero below `a` and concave above it. The optimal policy maximizes
+  the long-run rate `λ`, and is characterized by two things: a threshold `v₀`
+  below which projects are abandoned, and a first-order condition
+  `v·u'(τ(v)) = λ` for the rest.
+- **`λ` is the opportunity cost of time, and every acceleration raises it.**
+  That single quantity drives the results. Raise it and the first-order
+  condition binds sooner, so each developed project gets less discretionary
+  work.
+- **Selectivity splits by phase, and the split is the paper's real content.**
+  Shortening discovery `s` *raises* `v₀` (Prop. 6): returning to the drawing
+  board got cheaper, so fewer projects clear the bar. Shortening the fixed
+  publication cost `a` *lowers* `v₀` (Prop. 9): the opposing effect on the
+  opportunity cost is always dominated at the margin of indifference. More
+  published, or less, depending on which phase the tool touches.
+- **Thoroughness falls in two channels and rises in the third.** Props. 7 and
+  10 give the decline for `s` and `a`. Prop. 12 gives the *increase* when the
+  tool accelerates discretionary development itself, because that raises the
+  real value of `b` faster than it raises `λ`. Prop. 11 adds that this third
+  channel also lowers `v₀`, but only under a condition — that the elasticity
+  of the benefit curve is decreasing — which the main text acknowledges as
+  "ambiguous without further structure".
+
+## Standing in the anthology
+
+Kept as a mechanism the record was carrying an empirical shadow of and no
+account for. [LIT-487](LIT-487.md) measured a writing tool that made its users' text
+better on every feature and their outcomes no better, and [THEORY-051](../theory.d/THEORY-051.md) named
+three candidate explanations for that; one of them was diminished author
+effort, and nothing in the record said why effort would diminish. This
+supplies a reason that does not require the tool to be bad.
+
+It is a model with no data. Nothing here is measured, the institutions are
+held static by assumption, and the authors say so. What it buys is a sign
+prediction that depends on an identifiable property of the tool, which is
+more than "more output, worse quality" — that conclusion is compatible with
+almost anything, and this says when to expect the opposite.
+
+**One thing to carry when citing it.** The closing line — "impelling us to do
+more, less well" — is the most quotable sentence in the paper and is the one
+its own Proposition 12 contradicts for one of the three channels. The
+analysis section states the exception plainly; the abstract and the discussion
+generalize past it. [DP-010](../../docs/design-principles.md#dp-10) in both directions, in a single paper.

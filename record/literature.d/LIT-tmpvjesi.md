@@ -1,0 +1,94 @@
+---
+status: Active
+title: 'Parameterized Synthetic Text Generation with SimpleStories'
+version: 1
+tags:
+- data-pipeline
+- tiny-models
+- representation-and-encoding
+- analysis-and-evaluation
+date: '2026-09-21'
+published: '2025-04-01'
+arxiv: '2504.09184'
+first_author: 'Finke'
+keywords:
+- 'synthetic-data'
+- 'prompt-parameterization'
+- 'dataset-diversity'
+- 'tokenizer'
+- 'interpretability'
+extends:
+- LIT-tmpl865n
+implementations: []
+summary: >-
+  Finke et al. (2025), [ARXIV-2504.09184](https://arxiv.org/abs/2504.09184). Sampling three words from a
+  child's vocabulary was not enough: **59.38% of TinyStories begins "once upon
+  a time"**. Parameterize the generating prompt by theme, topic, style,
+  narrative feature, grammar feature and author persona, and constrain the
+  opening part of speech and letter, and every diversity metric moves. The
+  one clean ablation in the paper is about something else — a 4,096-token
+  domain tokenizer beats GPT-2's 50,257 by **+26.7 coherence and +27.5
+  quality** at fixed data and architecture.
+---
+
+# LIT-tmpvjesi: Parameterized Synthetic Text Generation with SimpleStories
+
+Finke et al. (2025) — [ARXIV-2504.09184](https://arxiv.org/abs/2504.09184)
+
+## Key takeaways
+
+- **The diagnosis is a number.** `LIT-tmpl865n` engineered diversity by drawing
+  three words from a 1,500-word vocabulary and requiring them to appear. That
+  constrains the *lexicon* and leaves the *frame* alone, and the frame is
+  where the repetition lives: **59.38%** of TinyStories contains "once upon a
+  time" verbatim, 28.24% "there was a little", 16.52% "a little girl named".
+  The most frequent 4-gram in SimpleStories occurs in 7.49% of samples.
+- **The fix is parameterization above the lexical level, plus an opening
+  constraint.** Each generation names a theme (63 options), a topic (48), a
+  writing style (23) and a narrative feature (26); half also name a grammar
+  feature and a third an author persona. Separately, each story is required to
+  begin with a given part of speech and initial letter, with letter
+  frequencies drawn from a reference corpus. That last constraint is what
+  "disambiguates generations from the first token onwards", which is exactly
+  the failure the 59.38% figure names.
+- **Measured five ways, and they agree.** 4-gram frequency distribution,
+  compression ratio, Self-BLEU self-homogenization, n-gram diversity score at
+  n = 1…10, and POS-template rate (88.9 vs TinyStories' 100, template-per-token
+  0.016 vs 0.026). Model-as-a-judge finds much greater content and style
+  diversity with **no significant difference in simplicity** — which is the
+  claim that matters, since simplicity is the thing diversity was traded
+  against.
+- **The labels are a by-product and they are real.** Because the parameters
+  are chosen rather than inferred, every story ships with them. A judge model
+  recovers `topic` well and the more abstract `theme`, `style` and
+  `narrative feature` above chance, with no elicitation — a lower bound.
+- **The tokenizer result is the best-controlled thing in the paper, and it is
+  not about the dataset.** Holding data and architecture fixed and swapping
+  only the tokenizer, a 4,096-token WordPiece vocabulary seeded with English
+  affixes beats GPT-2's 50,257 by **+26.7 coherence** and **+27.5 quality**.
+- **Counting embedding parameters.** TinyStories' model names exclude them;
+  these include them. TinyStories-33M is 68M all-in. The paper recommends
+  counting all parameters when claiming "the smallest model that outputs
+  grammatical English", and cites a documented case of the ambiguity causing
+  a misreading.
+- **Dataset artefacts reach the weights.** In single-layer bilinear-MLP models,
+  the strongest bigram outlier for the TinyStories model is `[bos, 'once']`,
+  and **6–10% of its outliers are non-ASCII** characters traceable to encoding
+  errors in the corpus.
+
+## Standing in the anthology
+
+The descendant that measures what the trunk asserted. `LIT-tmpl865n` says a
+diversity mechanism was needed and describes one; this is the paper that
+checks whether it worked, finds a specific way it did not, and fixes that way.
+
+**The headline comparison is confounded and the authors say so.** The
+SimpleStories models differ from TinyStories-33M in dataset, tokenizer *and*
+architecture at once, so "our models beat TinyStories-33M on all four metrics
+with fewer parameters" is not a measurement of the dataset. The tokenizer
+ablation separates one of the three and it is large; no ablation separates
+the dataset, and the Limitations section names the missing arm precisely — a
+custom tokenizer trained on TinyStories, which would isolate tokenization from
+corpus. That is why the practice this record files from it is about the
+generation procedure, which the dataset metrics measure directly, rather than
+about downstream model quality, which they do not.

@@ -2,12 +2,26 @@
 number: 143
 status: Active
 title: 'Parameterize the model with µP and tune hyperparameters on a narrow proxy, transferring them across width'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-21'
+  note: >-
+    Adds a measurement of the hedge this practice already carried. The
+    Conditions said transferred values are "a starting point that production
+    recipes then adjust", on the evidence of production reports. LIT-tmpjz53y
+    sweeps ten µP-coordinated learning rates across four SiT sizes with ten
+    seeds each and finds the optimum is a 1.7x-wide window rather than a
+    point, because seed variance blurs it into a flat region -- and that
+    selecting the rate on single-seed unguided FID lands on the edge of
+    training stability. The recommendation is unchanged; what changes is that
+    its resolution is now measured on one family instead of described.
 tags:
 - training-optimization
 date: '2026-09-05'
 source:
 - LIT-148
+- LIT-tmpjz53y
 introduced_by:
 - LIT-148
 summary: >-
@@ -32,6 +46,24 @@ the model gets wider. Then tune on a narrow proxy and transfer the values
 to the full model without tuning it: the paper beats the published
 BERT-large from a 13M-parameter sweep, and the published GPT-3 6.7B from a
 40M-parameter sweep at about 7% of the large model's pretraining cost.
+
+**The optimum transfers as a window, not a point, and the width of that
+window has now been measured.** [LIT-tmpjz53y](../literature.d/LIT-tmpjz53y.md) sweeps ten
+µP-coordinated learning rates over `[5×10⁻⁵, 5×10⁻⁴]` across four SiT sizes
+with ten training seeds per cell. Under a per-cell tuned FID the valleys are
+flat-bottomed near `2–3×10⁻⁴` at every size, with the two rates flanking each
+minimum sitting inside its seed envelope — three adjacent learning rates share
+the per-size best, a **1.7× window**. µP transfers the optimum; what it
+transfers is a region.
+
+Two riders from the same sweep. Selecting the rate on *unguided* single-seed
+FID gives a monotone curve whose argmin sits at the right edge, `5×10⁻⁴`,
+which is also where 3 of 10 small-model seeds diverge — a confident-looking
+number pointing at the edge of stability. And the seed variance does **not**
+dip at the optimal rate: it is 1.7–2.3% there, inside the general floor, so
+the flat region is not a low-variance region. This is one family at 100k
+steps and is a measurement of this practice's resolution, not a challenge to
+its claim; [SOTA-tmpmd52k](../practices.d/SOTA-tmpmd52k.md) carries the underlying variance result.
 
 Conditions: transfer is across *width*. Depth, batch size and training
 <!-- inactive-ok: SOTA-144 — a Proposed extension of µP transfer, named as part of the chain -->

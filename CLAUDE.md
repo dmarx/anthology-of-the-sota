@@ -62,15 +62,22 @@ work perfectly well.
   in that order of preference — the first two resolve through a remote, a
   URL is a string nothing can check ([ADR-009](record/decisions.d/ADR-009.md)). Two papers reached the old
   corpus with no identifier at all; that is now impossible.
+<!-- inactive-ok-block: ADR-035 — Proposed, and the decision this rule states; cited three times in this bullet, twice for what it actually says after a compression of it was misread -->
 - **The first tag is the primary topic, and a document may carry more than
   one.** The thirteen live in the `topics` vocabulary in `luria.yaml` — one
   table, named by the practice registry and the reading list alike, glosses
   included. List the topic the document is *most* about first: `primary_topic`
-  derives `{tags[0]}`, so tag order is what the indexes read. Add a second
-  topic when it is genuinely true, and never to bind a relation — the chain
-  invariant reads the whole tag list now, so an incidental tag will bind an
-<!-- inactive-ok: ADR-035 — Proposed, and the decision this rule states -->
-  edge that should have stayed open (`ADR-035`).
+  derives `{tags[0]}`, so tag order is what the indexes read. **Add a second
+  topic when it is genuinely true of the document, and leave it off when it is
+  not.** That is the whole test. The chain invariant reads the whole tag list,
+  so a second topic can bind a relation — which `ADR-035` calls "the point and
+  the risk", and the risk it names is a *free-form label* invented to satisfy
+  the check, not a real topic added after the unbound report pointed at it.
+  The report exists to surface exactly those candidates, and acting on one is
+  the intended response; `ADR-035` weighs three newly-bound edges and keeps
+  two. On `SOTA`, `LIT` and `THEORY` the vocabulary is closed, so the old
+  failure is structurally unavailable there — the only tag you *can* add is
+  one of the thirteen, and then the truth test is the only question left.
 - **The tag vocabulary is closed, and that is an invitation.** A tag not in
   `topics` fails the lint on `SOTA`, `LIT` and `THEORY`. That is there so
   every tag is one somebody chose and blurbed — **not** because the list is

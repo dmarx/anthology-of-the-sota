@@ -1,0 +1,96 @@
+---
+status: Active
+title: 'Measuring In-Context Computation Complexity via Hidden State Prediction'
+version: 1
+tags:
+- analysis-and-evaluation
+- in-context-learning
+- representation-and-encoding
+date: '2026-09-21'
+published: '2025-03-01'
+arxiv: '2503.13431'
+first_author: 'Herrmann'
+keywords:
+- 'hidden-state-prediction'
+- 'information-bottleneck'
+- 'in-context-learning'
+- 'description-length'
+- 'interestingness'
+implementations: []
+summary: >-
+  Herrmann, Csordás and Schmidhuber (2025), [ARXIV-2503.13431](https://arxiv.org/abs/2503.13431). Next-token
+  loss cannot tell hard from *interesting*: random noise scores high and
+  requires no computation, memorized recitation scores low. Insert a
+  variational bottleneck with a **learned autoregressive prior** mid-network
+  and measure the KL between posterior and prior — the nats of hidden-state
+  information the past did not predict. That quantity separates in-context
+  learning from memorization and noise, and tracks formal-language
+  description length and maths difficulty *after controlling for* next-token
+  loss.
+---
+
+<!-- inactive-ok-file: SOTA-101 — cited to mark a boundary rather than to
+     lean on it: perplexity filtering ranks documents by typicality, which is
+     a different job for the same number, and this paper's claim is bounded
+     away from it. A citation that says "this does not disturb that" does not
+     depend on that document's standing -->
+
+# LIT-tmpwr4bz: Measuring In-Context Computation Complexity via Hidden State Prediction
+
+Herrmann, Csordás and Schmidhuber (2025) — [ARXIV-2503.13431](https://arxiv.org/abs/2503.13431)
+
+## Key takeaways
+
+- **The diagnosis is sharp and is the reason the paper exists.** Next-token
+  loss conflates *hard to predict* with *requiring computation*. Uniform
+  random tokens maximize it and demand nothing; reciting a memorized licence
+  minimizes it and demands nothing either. Both endpoints are uninteresting
+  and the metric puts them at opposite extremes.
+- **The instrument.** Split an autoregressive model in two, insert a PHi
+  layer between the halves: a posterior encoder to a latent, a decoder back
+  to the hidden state, and — the novel part — a **learned autoregressive
+  prior** that predicts the latent from its own past. The metric is
+  `KL(posterior ‖ prior)`, the nats of novel information at each step. Train
+  jointly with the next-token loss, or bolt onto a frozen pretrained model.
+- **It separates boring from interesting where next-token loss does not.**
+  Across four tasks (memorized subsequences, memorized automata, in-context
+  learning of a fresh automaton, uniform noise), on both a Transformer and an
+  LSTM, **only the in-context learning task shows high PHi loss**. Next-token
+  loss instead orders them memorized < in-context < random.
+- **It tracks complexity beyond next-token loss, which is the load-bearing
+  control.** Binning tokens by next-token loss and stratifying by the
+  analytically computed description length of the generating automaton, more
+  complex automata give higher PHi loss within every bin. Partial correlation
+  with next-token loss controlled is significant.
+- **It survives transplant into a frozen LLM.** A single PHi layer trained
+  into Llama-3.2-3B reproduces the task separation — unseen literature and a
+  private code base score high, trivial tasks, memorized licences and
+  shuffled tokens score low — while next-token loss shows **no consistent
+  pattern** across the same five.
+- **Placement matters and the failure mode is named.** Inserting the
+  bottleneck in early layers causes **posterior collapse**: next-token loss
+  degrades badly and PHi loss goes to nearly zero. Layers 18–24 of 3B are
+  where the metric discriminates and the model is undisturbed.
+- **On self-generated reasoning:** given a correct and an incorrect rationale
+  for a GSM-8K problem, picking the higher-PHi-loss one beats chance, and
+  does so on the adversarial subset where the *lower* next-token-loss answer
+  is wrong. The paper is candid that **choosing by lower next-token loss
+  alone already scores 71%**, and it does not claim PHi beats that as a
+  standalone selector — the demonstrated value is incremental.
+- **A tentative and interesting asymmetry:** on counterintuitive questions,
+  high PHi loss predicts correctness for *hard* problems and not for easy
+  ones. The authors suggest hard failures come from rationales that are too
+  simple, easy failures from genuine misconceptions.
+
+## Standing in the anthology
+
+The record's `analysis-and-evaluation` line is largely about what a
+measurement cannot tell you — [SOTA-200](../practices.d/SOTA-200.md) on metric artefacts,
+[SOTA-270](../practices.d/SOTA-270.md) on what an aggregate loss curve hides. This is the same
+genre with a constructive answer attached: a named failure of the field's
+default metric, and an instrument that does not share it.
+
+It does not disturb [SOTA-101](../practices.d/SOTA-101.md), which uses perplexity to filter training
+data for quality. That is a different job for the same number — ranking
+documents by how typical they are — and nothing here argues against it. The
+claim is bounded to asking what computation a model is *doing*.

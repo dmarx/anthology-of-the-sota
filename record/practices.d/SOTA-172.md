@@ -35,7 +35,7 @@ summary: >-
   the result stays anchored to a real distribution and the test error is
   provably bounded.
 explained_by:
-- THEORY-tmp2lctc
+- THEORY-057
 ---
 
 # SOTA-172: Build synthetic pretraining data by editing human text at the token level, not by generating from scratch

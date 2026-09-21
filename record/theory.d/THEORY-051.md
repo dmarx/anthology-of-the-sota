@@ -18,7 +18,7 @@ history:
 - version: 2
   date: '2026-09-21'
   note: >-
-    No change to the account. Adds a section pointing at THEORY-tmp2lctc,
+    No change to the account. Adds a section pointing at THEORY-057,
     which describes a text distribution narrowing by a different route — a
     model generating the tokens rather than a person accepting them — and
     says why the record has not joined the two. #234 asked whether they are
@@ -45,7 +45,7 @@ summary: >-
      contribution; this theory declares `explains:` on it, so the citation is
      the relation itself -->
 
-<!-- inactive-ok-file: THEORY-tmp2lctc — Proposed, filed in the same
+<!-- inactive-ok-file: THEORY-057 — Proposed, filed in the same
      contribution as this v2. It is named in "A second narrowing", whose
      entire content is that the record has NOT joined the two accounts;
      citing a document in order to say the connection is unmeasured is the
@@ -95,7 +95,7 @@ a narrow distribution cannot separate anything.
 ## A second narrowing, and why this document does not claim it is the same one
 
 The record holds another account of a text distribution narrowing.
-[THEORY-tmp2lctc](THEORY-tmp2lctc.md) describes corpora a model generates directly:
+[THEORY-057](THEORY-057.md) describes corpora a model generates directly:
 **59.38%** of TinyStories contains "once upon a time", and the proportion of
 synthetic pretraining data correlates negatively with what gets trained on it.
 Same destination — a narrower distribution of text — reached by a different

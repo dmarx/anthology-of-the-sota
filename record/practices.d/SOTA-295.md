@@ -40,7 +40,7 @@ summary: >-
   part of speech and letter. Five diversity metrics move; measured simplicity
   does not.
 explained_by:
-- THEORY-tmp2lctc
+- THEORY-057
 ---
 
 <!-- inactive-ok-file: SOTA-172 — Proposed, and the whole Conditions passage

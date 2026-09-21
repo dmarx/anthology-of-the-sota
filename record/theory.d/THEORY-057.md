@@ -1,5 +1,8 @@
 ---
+number: 57
 status: Proposed
+formerly:
+- THEORY-tmp2lctc
 promote_when: >-
   One corpus, two generators, one measurement: the same lexical or semantic
   seed distribution run through models of materially different capability or
@@ -39,7 +42,7 @@ summary: >-
      document in order to say the record has not joined them to this one is
      the opposite of citing it as settled. -->
 
-# THEORY-tmp2lctc: A corpus a model generates is narrower than the distribution it imitates, and the narrowing shows up as n-gram over-concentration
+# THEORY-057: A corpus a model generates is narrower than the distribution it imitates, and the narrowing shows up as n-gram over-concentration
 
 ## Source
 

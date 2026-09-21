@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**145 document(s) awaiting a decision.**
+**146 document(s) awaiting a decision.**
 
 ## SOTAs
 
-96 of the 145.
+96 of the 146.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -69,7 +69,7 @@
 | 2026-09-17 | Proposed | [SOTA-248](../../record/practices.d/SOTA-248.md) | 1 | 0 | Stretch and clip the softmax so an attention head can output exact zeros |
 | 2026-09-19 | Proposed | [SOTA-255](../../record/practices.d/SOTA-255.md) | 11 | 0 | Tune weight decay upward when pretraining over a repeated corpus, rather than inheriting the customary value |
 | 2026-09-19 | Proposed | [SOTA-254](../../record/practices.d/SOTA-254.md) | 8 | 0 | Train the language model as a masked diffusion model when the corpus is fixed and the compute is not |
-| 2026-09-19 | Proposed | [SOTA-256](../../record/practices.d/SOTA-256.md) | 4 | 0 | Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget |
+| 2026-09-19 | Proposed | [SOTA-256](../../record/practices.d/SOTA-256.md) | 6 | 0 | Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget |
 | 2026-09-19 | Proposed | [SOTA-257](../../record/practices.d/SOTA-257.md) | 3 | 0 | Spend surplus compute on an ensemble of independently seeded models and distil it, rather than on one larger model |
 | 2026-09-19 | Proposed | [SOTA-251](../../record/practices.d/SOTA-251.md) | 2 | 0 | Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule |
 | 2026-09-20 | Proposed | [SOTA-261](../../record/practices.d/SOTA-261.md) | 5 | 0 | Set AdamW's weight decay by targeting a timescale that follows a power law in tokens-per-parameter |
@@ -88,6 +88,7 @@
 | 2026-09-21 | Proposed | [SOTA-301](../../record/practices.d/SOTA-301.md) | 6 | 0 | Apply the objective gradient before the denoiser, not after it, when guiding diffusion toward a task objective |
 | 2026-09-21 | Proposed | [SOTA-285](../../record/practices.d/SOTA-285.md) | 4 | 0 | Put dropout at the start of training if the model underfits, and at the end if it overfits — the schedule decides the sign, not the rate |
 | 2026-09-21 | Proposed | [SOTA-286](../../record/practices.d/SOTA-286.md) | 4 | 0 | To find a model that generalizes badly where its outputs look fine, measure how much of parameter space behaves the way it does |
+| 2026-09-21 | Proposed | [SOTA-304](../../record/practices.d/SOTA-304.md) | 4 | 0 | Generate a long program unit by unit, freezing each unit that passes an execution-based check, instead of regenerating the whole artifact on failure |
 | 2026-09-21 | Proposed | [SOTA-283](../../record/practices.d/SOTA-283.md) | 3 | 0 | To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it |
 | 2026-09-21 | Proposed | [SOTA-309](../../record/practices.d/SOTA-309.md) | 3 | 0 | Score a control interface by the mutual information between the operator's command and the state change it induces, and choose the horizon of that state change deliberately |
 | 2026-09-21 | Proposed | [SOTA-277](../../record/practices.d/SOTA-277.md) | 2 | 0 | For a task that is a sequential composition, buy depth rather than width |
@@ -96,7 +97,6 @@
 | 2026-09-21 | Proposed | [SOTA-295](../../record/practices.d/SOTA-295.md) | 2 | 0 | Parameterize the generating prompt above the word list, and constrain how each sample opens |
 | 2026-09-21 | Proposed | [SOTA-298](../../record/practices.d/SOTA-298.md) | 2 | 0 | Measure a writing assistant by the outcome it was deployed to improve, not by the text features that used to predict it |
 | 2026-09-21 | Proposed | [SOTA-303](../../record/practices.d/SOTA-303.md) | 2 | 0 | Name the phase a time-saving tool accelerates before predicting what it will do to the quality of what people produce with it |
-| 2026-09-21 | Proposed | [SOTA-304](../../record/practices.d/SOTA-304.md) | 2 | 0 | Generate a long program unit by unit, freezing each unit that passes an execution-based check, instead of regenerating the whole artifact on failure |
 | 2026-09-21 | Proposed | [SOTA-284](../../record/practices.d/SOTA-284.md) | 1 | 0 | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |
 | 2026-09-21 | Proposed | [SOTA-290](../../record/practices.d/SOTA-290.md) | 1 | 0 | To measure what a deployed recommender does, use sock-puppets that never interact, follow sets curated to your question, and exposure weighted by rank |
 | 2026-09-21 | Proposed | [SOTA-292](../../record/practices.d/SOTA-292.md) | 1 | 0 | Check industry ties yourself when reading a literature about deployed platforms — disclosure is unreliable and the ties are mechanically detectable |
@@ -112,7 +112,7 @@
 
 ## THEORYs
 
-30 of the 145.
+30 of the 146.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -149,7 +149,7 @@
 
 ## LITs
 
-3 of the 145.
+3 of the 146.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -159,7 +159,7 @@
 
 ## ADRs
 
-16 of the 145.
+17 of the 146.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -167,8 +167,8 @@
 | 2026-09-09 | Proposed | [ADR-024](../../record/decisions.d/ADR-024.md) | 10 | 0 | The topic vocabulary has four recurring seams — options, not a decision |
 | 2026-09-14 | Proposed | [ADR-028](../../record/decisions.d/ADR-028.md) | 1 | 1 | One topic vocabulary, one set of glosses: the blurbs are shared too |
 | 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 25 | 0 | A scheme for explanations, complementing the practice registry |
+| 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 17 | 1 | Every practice states its origin, even when it is the primary source |
 | 2026-09-15 | Proposed | [ADR-034](../../record/decisions.d/ADR-034.md) | 13 | 0 | A document that changes scheme is Superseded where it leaves, and names its successor across the boundary |
-| 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 7 | 1 | Every practice states its origin, even when it is the primary source |
 | 2026-09-15 | Proposed | [ADR-033](../../record/decisions.d/ADR-033.md) | 0 | 0 | Readings made in another context port into the record; their agenda does not |
 | 2026-09-16 | Proposed | [ADR-038](../../record/decisions.d/ADR-038.md) | 13 | 0 | A note has no topics of its own: it derives them from its paper |
 | 2026-09-16 | Proposed | [ADR-041](../../record/decisions.d/ADR-041.md) | 8 | 0 | An algorithm-local tuning constant belongs in the reading of the paper that measured it, not in the practice registry |
@@ -179,6 +179,7 @@
 | 2026-09-17 | Proposed | [ADR-043](../../record/decisions.d/ADR-043.md) | 6 | 0 | Doubt about whether an item is worth carrying is not a reason to leave it out, and not a third kind of provisional |
 | 2026-09-17 | Proposed | [ADR-045](../../record/decisions.d/ADR-045.md) | 2 | 0 | A claim about the signal is admissible however it was measured, including on people |
 | 2026-09-21 | Proposed | [ADR-050](../../record/decisions.d/ADR-050.md) | 8 | 0 | Two more topics: numerics and precision, and in-context learning |
+| 2026-09-21 | Proposed | [ADR-053](../../record/decisions.d/ADR-053.md) | 6 | 0 | A practice may state that it has no identifiable origin, by leaving introduced_by empty |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 

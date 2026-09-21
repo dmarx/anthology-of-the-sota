@@ -7,7 +7,7 @@
 #
 # inactive-ok-file: ADR-020, ADR-027, ADR-029 — Superseded, and named here AS history, in prose that says so: "ADR-027 added `analysis-and-evaluation`; ADR-026 then added ... superseding ADR-020", and the cut DP-005 made in ADR-029 that ADR-030 refined.
 # inactive-ok-file: ADR-030, ADR-031, ADR-035, ADR-038, ADR-039 — Proposed, which in this record is the resting state of a decision nobody has moved (60 documents are undecided) rather than a signal that the schema rests on something unsettled.
-# inactive-ok-file: ADR-tmpvlp2h — Proposed, and filed in this same contribution. It is the decision that set `introduced_by.required` to `false`, so the comment beside that key cites it to say where the value came from; citing a decision as the provenance of the line it decided is not citing it as settled.
+# inactive-ok-file: ADR-053 — Proposed, and filed in this same contribution. It is the decision that set `introduced_by.required` to `false`, so the comment beside that key cites it to say where the value came from; citing a decision as the provenance of the line it decided is not citing it as settled.
 #
 # Scoped to the file rather than left per-site because every citation here is
 # the same kind of claim, and because the alternative is nineteen directives
@@ -473,14 +473,14 @@ schemes:
           ADR-029, refined by ADR-030; with one field the record would read as
           though every practice began with the paper it cites. Leave it empty
           only to say the record looked and found no origin document, with a
-          comment saying so — ADR-tmpvlp2h.
+          comment saying so — ADR-053.
         scheme: LIT
-        # `false` since ADR-tmpvlp2h, and NOT a return to ADR-029's
+        # `false` since ADR-053, and NOT a return to ADR-029's
         # optionality. ADR-030 required this because an absent field was
         # ambiguous between "the origin is the primary source" and "nobody
         # checked". A third case it did not anticipate has arrived: the record
         # looked, and no document in or out of the corpus states the
-        # recommendation. Every practice but the ones ADR-tmpvlp2h lists still
+        # recommendation. Every practice but the ones ADR-053 lists still
         # carries the field, so an empty one is a deliberate act rather than a
         # default, and the comment beside it is what makes it a claim a reader
         # can find wrong.

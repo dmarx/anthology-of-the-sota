@@ -1,5 +1,8 @@
 ---
+number: 311
 status: Active
+formerly:
+- SOTA-tmp0obtv
 consensus: unassessed
 consensus_note: >-
   Nobody has assessed where the field stands on this, and the record cannot
@@ -21,7 +24,7 @@ source:
 # NOT the ADR-030 ambiguity that field was made required to remove — "the
 # origin is the primary source" would be LIT-493, which is false, since
 # Genesys is an instance of the failure and states no such recommendation.
-# The gap is real and is what #241 stays open for. See ADR-tmpvlp2h.
+# The gap is real and is what #241 stays open for. See ADR-053.
 introduced_by: []
 implementations: []
 summary: >-
@@ -34,14 +37,14 @@ summary: >-
   **0.03** points.
 ---
 
-<!-- inactive-ok-file: ADR-tmpvlp2h ADR-030 SOTA-256 SOTA-304 — all Proposed.
-     ADR-tmpvlp2h is filed in this same contribution and is what permits this
+<!-- inactive-ok-file: ADR-053 ADR-030 SOTA-256 SOTA-304 — all Proposed.
+     ADR-053 is filed in this same contribution and is what permits this
      practice's empty `introduced_by:`; ADR-030 is named as the decision it
      amends, which is the opposite of citing it as settled. SOTA-256 and
      SOTA-304 are both named to say what this practice is NOT — the two
      nearest documents in the corpus, distinguished rather than relied on. -->
 
-# SOTA-tmp0obtv: Evaluate a search on tasks held out of its own fitness function, and report the gap against the tasks it selected on
+# SOTA-311: Evaluate a search on tasks held out of its own fitness function, and report the gap against the tasks it selected on
 
 ## Source
 
@@ -55,7 +58,7 @@ not as evidence for the recommendation. Genesys does not recommend holding
 tasks out; it is a search that did not, and it published enough of its own
 numbers that a reader can see what that cost. Citing it for the instance is
 honest; citing it for the claim would not be, which is why `introduced_by:` is
-empty and [ADR-tmpvlp2h](../decisions.d/ADR-tmpvlp2h.md) exists to say what an empty one means.
+empty and [ADR-053](../decisions.d/ADR-053.md) exists to say what an empty one means.
 
 The recommendation itself rests on a fact about maximization rather than on a
 measurement: the maximum of many noisy estimates is a biased estimate of the

@@ -6,7 +6,7 @@
 
 **Not judged** — nobody has assessed where the field stands on this; the default, and true of most of the corpus.
 
-145 of 310 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
+146 of 311 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -155,3 +155,4 @@
 | [SOTA-277](../../../record/practices.d/SOTA-277.md) | For a task that is a sequential composition, buy depth rather than width | Chen et al. (2024), [LIT-464](../../../record/literature.d/LIT-464.md) — composing `k` functions costs a constant-depth decoder polynomially many parameters and a `log k`-layer one polylogarithmically. An exponential separation, proved unconditionally, and about what a shape can express rather than what a run will learn. | Proposed |
 | [SOTA-293](../../../record/practices.d/SOTA-293.md) | Count embedding parameters when you report a tiny model's size | Finke et al. (2025), [LIT-485](../../../record/literature.d/LIT-485.md) — at these sizes the embedding table is not a rounding error, it is most of the model: TinyStories-33M is **68M** parameters all-in, and an 8M model in the same paper is "more than half embeddings". Two papers can each claim the smaller model and both be telling the truth. Print the all-in figure. | Proposed |
 | [SOTA-305](../../../record/practices.d/SOTA-305.md) | State the token count and input resolution beside any reconstruction FID, and compare tokenizers only at equal rate | Sun et al. (2024), [LIT-497](../../../record/literature.d/LIT-497.md) — the **same tokenizer** at downsample 16 scores rFID **2.19, 0.94 and 0.70** on 256, 576 and 1024 tokens, all evaluated on `256×256` reconstructions. A three-fold range from a knob that is not the tokenizer. Two papers in this line then quote reconstruction numbers whose rate a reader cannot recover from the sentence they appear in. | Active |
+| [SOTA-311](../../../record/practices.d/SOTA-311.md) | Evaluate a search on tasks held out of its own fitness function, and report the gap against the tasks it selected on | No source states this; it is filed on a priori grounds with one instance. Cheng, Clark and Richardson (2025), [LIT-493](../../../record/literature.d/LIT-493.md), searched 1,062 pretrained designs against a fitness function of average downstream accuracy, then reported the top five on nine benchmarks drawn from the same pool and chosen — per its own Table 16 — for **largest standard deviation across the search population**. The best discovered design beats the best seed by **0.03** points. | Active |

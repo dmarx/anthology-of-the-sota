@@ -1,0 +1,100 @@
+---
+status: Active
+title: Industry Influence in High-Profile Social Media Research
+version: 1
+tags:
+- deployment-and-society
+- analysis-and-evaluation
+date: '2026-09-21'
+published: '2026-01-01'
+arxiv: '2601.11507'
+first_author: 'Bak-Coleman'
+keywords:
+- 'metascience'
+- 'conflicts-of-interest'
+- 'disclosure'
+- 'research-integrity'
+- 'topical-bias'
+implementations: []
+summary: >-
+  Bak-Coleman, West, O'Connor and Bergstrom (2026), [ARXIV-2601.11507](https://arxiv.org/abs/2601.11507).
+  **49% of social media papers in Science, Nature and PNAS have a disclosable
+  industry tie and most go undisclosed** — from 21% of authors, so a
+  concentrated group rather than broad engagement. Ties are over-represented
+  in research on what users share and sparse in research on platform dynamics.
+---
+
+# LIT-tmpvcocw: Industry Influence in High-Profile Social Media Research
+
+## Why it's here
+
+Filed beside [LIT-tmpz0ivc](LIT-tmpz0ivc.md), and the pairing is the point. That paper
+argues the effects worth measuring live at the platform and collective scale
+rather than the individual one. This one finds that industry-tied research is
+**sparse in exactly that cluster** and over-represented in the cluster about
+what individual users share.
+
+So the two halves are a methodological argument about where to look, and a
+measurement showing the field's incentives point elsewhere.
+
+For this record it is also a worked instance of `DP-005` — adoption is not
+evidence — in an unusual direction: the corpus studied is extraordinarily
+well-adopted, at 180 citations per paper and **745 policy documents**, and
+that is the reason to look at it rather than a reason to trust it.
+
+## What was measured
+
+295 articles from *Science*, *Nature* and *PNAS* plus their transfer journals,
+found via OpenAlex, written by 1210 authors. For each author, any year of
+funding from, collaboration with, or employment by Meta, X, Google or
+Microsoft — every funding and employment tie **manually validated against
+sources independent of OpenAlex**, and counted against each journal's own
+competing-interest window (three years for Nature, four for PNAS, five for
+Science).
+
+- **49% of papers have a disclosable tie**, and the majority of those ties are
+  not disclosed in the published work.
+- **Only 21% of authors have one.** So this is not the field engaging broadly
+  with industry; it is a small group with durable relationships.
+- By firm: Meta 14%, Google 8%, Microsoft 6%, X 1%.
+- **Editors and reviewers carry undisclosed ties too**, found by the same
+  detection plus public CVs.
+- Industry-tied work draws more attention — in citations, in policy documents,
+  in news and on social media.
+- **Topical skew.** Bibliographic coupling gives five communities:
+  misinformation sharing, platform dynamics, mental health, social network
+  analysis, political behavior. Three are at the corpus average. Industry ties
+  are **over-abundant in misinformation sharing** and **sparse in platform
+  dynamics** — the industry-linked cluster concentrating on experiments about
+  people sharing false headlines, the independent one on network structure and
+  dynamics.
+
+The corpus's reach, which is why any of this matters: 53,120 citations,
+15,708 news articles, 100,863 social media mentions, 418 Wikipedia mentions,
+745 policy documents.
+
+## Conditions
+
+**The topical finding is correlational and the authors say so** — the paper
+states it cannot definitively show that industry funding causes the skew.
+Researchers interested in user-level questions may attract industry funding
+rather than industry funding directing them there, and the design cannot
+separate those.
+
+**"Disclosable tie" is the paper's own construct**, defined to be detectable
+and to match journal policy windows rather than to capture everything a reader
+might count as a competing interest. It is deliberately narrower than
+"conflict of interest" and the paper is explicit about the distinction.
+
+**Four firms, seven journals, one field.** Meta, X, Google and Microsoft;
+*Science*, *Nature*, *PNAS* and their transfer venues. A tie to a firm outside
+that set, or a paper outside those journals, is invisible here.
+
+**Detection is asymmetric.** Ties found are ties that left a public trace —
+OpenAlex records, announced RFPs, fellowships, CVs. Undetected ties bias the
+49% *downward*, which is the conservative direction, and it means the figure
+is a floor rather than an estimate.
+
+**Same first author as [LIT-tmpz0ivc](LIT-tmpz0ivc.md).** The two papers are filed as a
+pair and argue complementary halves of one position. They are not independent
+sources and the record should not count them as two groups agreeing.

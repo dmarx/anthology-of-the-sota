@@ -1,6 +1,9 @@
 ---
+number: 253
 status: Read
-paper: LIT-tmpsld21
+formerly:
+- NOTE-tmp11zjy
+paper: LIT-509
 title: 'The information-bottleneck rebuttal, and the assumption it makes visible'
 version: 1
 date: '2026-09-21'
@@ -13,11 +16,11 @@ summary: >-
   and every finite number is a property of an imposed noise model.
 ---
 
-# NOTE-tmp11zjy: The information-bottleneck rebuttal, and the assumption it makes visible
+# NOTE-253: The information-bottleneck rebuttal, and the assumption it makes visible
 
 ## Contribution
 
-Takes the three claims of [LIT-tmpm2gzh](../literature.d/LIT-tmpm2gzh.md) — two phases, compression
+Takes the three claims of [LIT-508](../literature.d/LIT-508.md) — two phases, compression
 causes generalization, compression comes from SGD's diffusion — and tests each
 in the setting that produced them, using the original authors' released code.
 None survives as a general statement.
@@ -117,7 +120,7 @@ appear for reasons that are about the data rather than the estimator.
 
 **The ReLU binning choice is the one thing later contested.** Bins are placed
 over a single global range `[0, m]`, `m` the largest activity anywhere in the
-network over all of training. [LIT-tmpcnvbw](../literature.d/LIT-tmpcnvbw.md) shows the last layer
+network over all of training. [LIT-507](../literature.d/LIT-507.md) shows the last layer
 dominates that maximum, so earlier layers are under-resolved. The KDE and
 Kraskov confirmations do not use that binning, which is why C1 does not fall
 with it — but the specific ReLU panel is fair game.
@@ -153,7 +156,7 @@ compression regularizers as where the idea may still pay.
   problem above, and this paper does not take it up.
 - **Is the computational benefit of depth still standing?** The original's
   fourth claim — depth dramatically reduces epochs to good generalization — is
-  examined by neither this paper nor [LIT-tmpcnvbw](../literature.d/LIT-tmpcnvbw.md).
+  examined by neither this paper nor [LIT-507](../literature.d/LIT-507.md).
 - **Do real tasks put signal in high-variance input directions?** Named by the
   paper as uninvestigated, and the one route by which compression might be
   about data rather than instruments.

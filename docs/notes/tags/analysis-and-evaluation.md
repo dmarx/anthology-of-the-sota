@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-73 of 252 NOTE documents. Back to the [full index](../README.md).
+75 of 254 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -81,3 +81,5 @@
 | [NOTE-250](../../../record/notes.d/NOTE-250.md) | MIMI: the objective that needs the knowledge it assumes away | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist in rank order. The headline is a task-agnostic interface score; the durable finding is its failure case, where an assistant doing its job drives the metric *negative* and the fix is a horizon hyperparameter that requires exactly the task knowledge the objective was built to avoid. | Read |
 | [NOTE-251](../../../record/notes.d/NOTE-251.md) | Non-identifiability of mechanistic explanations | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist, the strongest of the remaining candidates. Asks whether mechanistic interpretability's criteria pick out a unique explanation and answers no at all four stages by exhaustive enumeration — no network had exactly one circuit interpretation — with both counts lower bounds by construction. | Read |
 | [NOTE-252](../../../record/notes.d/NOTE-252.md) | RNA-FM, and the control that does not carry the claim | Read to open the biological-sequence trunk, which this record did not hold. The structural results are large and the paper's one clean input-swap control is not: replacing one-hot sequence with a 640-dimensional pretrained embedding in a published UTR model moves `R²` from **0.814 to 0.816** on the real-human set, where a 16-dimensional predicted secondary structure moves it to **0.820**. No practice filed. | Read |
+| [NOTE-253](../../../record/notes.d/NOTE-253.md) | The information-bottleneck rebuttal, and the assumption it makes visible | Read from the ICLR 2018 version, supplied by the record's owner because no open route to the paper exists. Three claims tested, none general. The finding worth more than the headline is in Appendix C: the same `tanh` network, binned evenly in *net input* instead of evenly in *activity*, shows **no compression** — because `I(h;X)` in a deterministic network is infinite and every finite number is a property of an imposed noise model. | Read |
+| [NOTE-254](../../../record/notes.d/NOTE-254.md) | Adaptive estimators: a counter-rebuttal whose body is weaker than its abstract | Read to check whether it softens [LIT-509](../../../record/literature.d/LIT-509.md), as [#220](https://github.com/dmarx/anthology-of-the-sota/issues/220) feared. It does on one narrow point and not on the one that matters. Its own Figure 6 shows a ReLU network averaged over 50 initializations has **no distinct phase**, and it agrees with the rebuttal that hidden-layer compression does not correlate with generalization. | Read |

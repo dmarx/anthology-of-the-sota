@@ -1,5 +1,8 @@
 ---
+number: 58
 status: Proposed
+formerly:
+- THEORY-tmppkfku
 promote_when: >-
   The saturation mechanism isolated from the estimator: activation histograms
   tracked alongside the information estimate across training, in networks
@@ -17,37 +20,37 @@ tags:
 - representation-and-encoding
 date: '2026-09-21'
 source:
-- LIT-tmpsld21
+- LIT-509
 explains:
-- SOTA-tmpgvchd
+- SOTA-312
 summary: >-
-  Saxe et al. (2018), [LIT-tmpsld21](../literature.d/LIT-tmpsld21.md) — a `tanh` unit must grow its
+  Saxe et al. (2018), [LIT-509](../literature.d/LIT-509.md) — a `tanh` unit must grow its
   weights to compute anything nonlinear, and as it does its activity piles
   into the saturation regions. Under a fixed binning that is a distribution
   collapsing into two bins — about **1 bit** — which the information plane
   draws as a compression phase. `Proposed`, because
-  [LIT-tmpcnvbw](../literature.d/LIT-tmpcnvbw.md) shows compression in *some* non-saturating networks
+  [LIT-507](../literature.d/LIT-507.md) shows compression in *some* non-saturating networks
   once the bins are placed adaptively.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpgvchd SOTA-200 — SOTA-tmpgvchd is Proposed
+<!-- inactive-ok-file: SOTA-312 SOTA-200 — SOTA-312 is Proposed
      only in the sense that it is filed in this same contribution; this theory
      declares `explains:` on it, so the citation is the relation itself.
      SOTA-200 is named in "What it does not say" to distinguish this account
      from it, which is the opposite of relying on it. -->
 
-# THEORY-tmppkfku: Apparent compression in the information plane is saturating activations collapsing into extreme bins, not information being discarded
+# THEORY-058: Apparent compression in the information plane is saturating activations collapsing into extreme bins, not information being discarded
 
 ## Source
 
 Saxe, Bansal, Dapello, Advani, Kolchinsky, Tracey and Cox (2018),
-[LIT-tmpsld21](../literature.d/LIT-tmpsld21.md) — read as [NOTE-tmp11zjy](../notes.d/NOTE-tmp11zjy.md).
+[LIT-509](../literature.d/LIT-509.md) — read as [NOTE-253](../notes.d/NOTE-253.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-tmpgvchd](../practices.d/SOTA-tmpgvchd.md) | state the noise or binning assumption and show the conclusion survives changing it | there is a concrete, understood mechanism by which the assumption and the activation function jointly manufacture a phase that nothing in the learning corresponds to |
+| [SOTA-312](../practices.d/SOTA-312.md) | state the noise or binning assumption and show the conclusion survives changing it | there is a concrete, understood mechanism by which the assumption and the activation function jointly manufacture a phase that nothing in the learning corresponds to |
 
 ## The account
 
@@ -81,7 +84,7 @@ gradients.
 
 ## Why `Proposed`
 
-**[LIT-tmpcnvbw](../literature.d/LIT-tmpcnvbw.md) contests exactly this mechanism**, and its criticism
+**[LIT-507](../literature.d/LIT-507.md) contests exactly this mechanism**, and its criticism
 is specific enough to take seriously: with bins placed adaptively per layer
 and epoch, some ReLU initializations do compress, so saturation would not be
 necessary. That its own 50-initialization average shows no phase weakens the
@@ -98,7 +101,7 @@ present.
 **It is entangled with the very estimator dependence it is meant to explain.**
 The account says a fixed binning cannot resolve the saturation region — which
 is true, and is also why a differently placed binning removes the effect
-([LIT-tmpsld21](../literature.d/LIT-tmpsld21.md)'s own Appendix C). Distinguishing "saturation caused
+([LIT-509](../literature.d/LIT-509.md)'s own Appendix C). Distinguishing "saturation caused
 this" from "this binning was in the wrong place" needs the control the
 `promote_when` asks for, and neither paper ran it.
 
@@ -114,7 +117,7 @@ training. What fails is the claim that this appears as a second phase in
 **It does not explain generalization, and does not need to.** The
 compression-causes-generalization claim is refuted independently, by a
 dissociation in all four combinations and — separately and from the other
-side of the argument — by [LIT-tmpcnvbw](../literature.d/LIT-tmpcnvbw.md) finding no significant
+side of the argument — by [LIT-507](../literature.d/LIT-507.md) finding no significant
 correlation between hidden-layer compression and generalization.
 
 **It is not [SOTA-200](../practices.d/SOTA-200.md)'s mechanism.** There, a real underlying quantity

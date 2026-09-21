@@ -1,5 +1,8 @@
 ---
+number: 312
 status: Active
+formerly:
+- SOTA-tmpgvchd
 consensus: emerging
 consensus_note: >-
   Two independent groups, disagreeing about the object level and demonstrating
@@ -16,38 +19,38 @@ tags:
 - representation-and-encoding
 date: '2026-09-21'
 source:
-- LIT-tmpsld21
-- LIT-tmpcnvbw
+- LIT-509
+- LIT-507
 introduced_by:
-- LIT-tmpsld21
+- LIT-509
 implementations: []
 summary: >-
-  Saxe et al. (2018), [LIT-tmpsld21](../literature.d/LIT-tmpsld21.md) — in a deterministic network
+  Saxe et al. (2018), [LIT-509](../literature.d/LIT-509.md) — in a deterministic network
   `I(h;X)` is **infinite**, so every finite number on an information plane is
   a property of a noise model the analyst imposed and the network never had.
   The same `tanh` run, binned evenly in net input instead of evenly in
   activity, loses its compression phase entirely; and
-  [LIT-tmpcnvbw](../literature.d/LIT-tmpcnvbw.md) makes compression *appear* in ReLU networks by
+  [LIT-507](../literature.d/LIT-507.md) makes compression *appear* in ReLU networks by
   changing the binning the other way.
 explained_by:
-- THEORY-tmppkfku
+- THEORY-058
 ---
 
-<!-- inactive-ok-file: THEORY-tmppkfku — Proposed, filed in this same
+<!-- inactive-ok-file: THEORY-058 — Proposed, filed in this same
      contribution and carrying the object-level question this practice
      deliberately does not settle. The practice declares `explained_by:` on
      it, so the citation is the relation itself, and the sentence citing it
      says in as many words that it is unsettled. -->
 
-# SOTA-tmpgvchd: State the noise or binning assumption behind any mutual information you report for a deterministic network, and show the conclusion survives changing it
+# SOTA-312: State the noise or binning assumption behind any mutual information you report for a deterministic network, and show the conclusion survives changing it
 
 ## Source
 
 Saxe, Bansal, Dapello, Advani, Kolchinsky, Tracey and Cox (2018),
-[LIT-tmpsld21](../literature.d/LIT-tmpsld21.md) — read as [NOTE-tmp11zjy](../notes.d/NOTE-tmp11zjy.md).
+[LIT-509](../literature.d/LIT-509.md) — read as [NOTE-253](../notes.d/NOTE-253.md).
 
-Chelombiev, Houghton and O'Donnell (2019), [LIT-tmpcnvbw](../literature.d/LIT-tmpcnvbw.md) — read as
-[NOTE-tmplxznx](../notes.d/NOTE-tmplxznx.md) — which argues against the first and demonstrates the
+Chelombiev, Houghton and O'Donnell (2019), [LIT-507](../literature.d/LIT-507.md) — read as
+[NOTE-254](../notes.d/NOTE-254.md) — which argues against the first and demonstrates the
 same point in the opposite direction.
 
 ## When this applies
@@ -86,9 +89,9 @@ here are the demonstration:
 
 | | changed | result |
 |---|---|---|
-| [LIT-tmpsld21](../literature.d/LIT-tmpsld21.md) | `tanh` run, bins even in *net input* rather than in *activity* | the compression phase **disappears** |
-| [LIT-tmpsld21](../literature.d/LIT-tmpsld21.md) | binning at full machine precision | information pinned at `log₂(P)`, nothing moves |
-| [LIT-tmpcnvbw](../literature.d/LIT-tmpcnvbw.md) | ReLU run, adaptive per-layer bins rather than one global range | compression **appears** |
+| [LIT-509](../literature.d/LIT-509.md) | `tanh` run, bins even in *net input* rather than in *activity* | the compression phase **disappears** |
+| [LIT-509](../literature.d/LIT-509.md) | binning at full machine precision | information pinned at `log₂(P)`, nothing moves |
+| [LIT-507](../literature.d/LIT-507.md) | ReLU run, adaptive per-layer bins rather than one global range | compression **appears** |
 
 Two groups, arguing against each other, each showing that the conclusion is
 the analyst's choice. That is stronger evidence than either intended.
@@ -96,7 +99,7 @@ the analyst's choice. That is stronger evidence than either intended.
 **Prefer a network that actually has the noise.** If the architecture is
 stochastic — a variational bottleneck, an explicitly noisy channel — the
 mutual information is a property of the model and none of this applies.
-[LIT-tmpsld21](../literature.d/LIT-tmpsld21.md) points at exactly this as where the information bottleneck
+[LIT-509](../literature.d/LIT-509.md) points at exactly this as where the information bottleneck
 idea may still pay.
 
 **Do not compare architectures in "the common currency of mutual
@@ -116,7 +119,7 @@ Markov chain the DPI needs is not the one being measured.
 Because the two sources disagree about almost everything else and agree,
 without either saying so, about this. The object-level question — whether
 `tanh`'s compression is *specifically* a saturation artifact — is open, and
-[THEORY-tmppkfku](../theory.d/THEORY-tmppkfku.md) carries it as `Proposed` for that reason. The
+[THEORY-058](../theory.d/THEORY-058.md) carries it as `Proposed` for that reason. The
 instrument-level question is not open: the infinity is analytic, and the
 sensitivity is demonstrated twice in opposite directions.
 
@@ -147,6 +150,6 @@ only from holding both.
 
 ## Known implementations
 
-None recorded. [LIT-tmpsld21](../literature.d/LIT-tmpsld21.md) does it to itself — three estimators, two
+None recorded. [LIT-509](../literature.d/LIT-509.md) does it to itself — three estimators, two
 binning schemes, a machine-precision control — and is the nearest thing to a
 worked example.

@@ -6,7 +6,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-41 of 311 SOTA documents. Back to the [full index](../README.md).
+42 of 312 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -51,3 +51,4 @@
 | [SOTA-280](../../../record/practices.d/SOTA-280.md) | Sample several reasoning paths and take the majority answer rather than decoding one greedily | Wang et al. (2022), [LIT-468](../../../record/literature.d/LIT-468.md) — replace greedy decoding with sample-and-marginalize: GSM8K +17.9, SVAMP +11.0, AQuA +12.2. Five or ten paths recover most of it, which is the whole cost question. | Active |
 | [SOTA-291](../../../record/practices.d/SOTA-291.md) v2 | Evaluate a specific intervention on a specific affordance rather than the net effect of the system, and never read an individual-level null as the absence of a collective effect |  | Active |
 | [SOTA-308](../../../record/practices.d/SOTA-308.md) | When a retrieval change raises recall, measure relevance and the end-task metric before calling it an improvement | Wu et al. (2026), [LIT-502](../../../record/literature.d/LIT-502.md) — across three published GraphRAG pipelines on G-Medical, graph expansion raises retrieval recall (GFM-RAG **84.3%** against vanilla RAG's 71.8%) and drops context relevance (**38.5%** against 62.9%). The wider context is noisier, and generation accuracy falls with it — a system that retrieves more of the right thing and much more of the wrong thing answers worse. | Active |
+| [SOTA-312](../../../record/practices.d/SOTA-312.md) | State the noise or binning assumption behind any mutual information you report for a deterministic network, and show the conclusion survives changing it | Saxe et al. (2018), [LIT-509](../../../record/literature.d/LIT-509.md) — in a deterministic network `I(h;X)` is **infinite**, so every finite number on an information plane is a property of a noise model the analyst imposed and the network never had. The same `tanh` run, binned evenly in net input instead of evenly in activity, loses its compression phase entirely; and [LIT-507](../../../record/literature.d/LIT-507.md) makes compression *appear* in ReLU networks by changing the binning the other way. | Active |

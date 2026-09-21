@@ -4,7 +4,7 @@
 
 **representation-and-encoding**.
 
-16 of 252 NOTE documents. Back to the [full index](../README.md).
+18 of 254 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -24,3 +24,5 @@
 | [NOTE-246](../../../record/notes.d/NOTE-246.md) | VQGAN: the loss that made f=16 survivable | Read as the second step of the tokenizer trunk. The architecture is VQ-VAE's; what is new is a perceptual loss, a patch discriminator, and an adaptive weight that balances them without per-dataset tuning. That loss is the reason a `256×256` image can become 256 tokens and still look like anything, and it is why this line exists at all. | Read |
 | [NOTE-247](../../../record/notes.d/NOTE-247.md) | ViT-VQGAN: where the codebook advice comes from | Read to give `SOTA-306` its origin, and it corrected the practice in three places. The advice is not "use small code vectors" but "factorize lookup from embedding"; `ℓ₂`-normalization is ablated and is the largest single effect in the table; and the dimension-4 row shows 96% codebook usage with near-worst FID, so utilization is necessary and not sufficient. | Read |
 | [NOTE-252](../../../record/notes.d/NOTE-252.md) | RNA-FM, and the control that does not carry the claim | Read to open the biological-sequence trunk, which this record did not hold. The structural results are large and the paper's one clean input-swap control is not: replacing one-hot sequence with a 640-dimensional pretrained embedding in a published UTR model moves `R²` from **0.814 to 0.816** on the real-human set, where a 16-dimensional predicted secondary structure moves it to **0.820**. No practice filed. | Read |
+| [NOTE-253](../../../record/notes.d/NOTE-253.md) | The information-bottleneck rebuttal, and the assumption it makes visible | Read from the ICLR 2018 version, supplied by the record's owner because no open route to the paper exists. Three claims tested, none general. The finding worth more than the headline is in Appendix C: the same `tanh` network, binned evenly in *net input* instead of evenly in *activity*, shows **no compression** — because `I(h;X)` in a deterministic network is infinite and every finite number is a property of an imposed noise model. | Read |
+| [NOTE-254](../../../record/notes.d/NOTE-254.md) | Adaptive estimators: a counter-rebuttal whose body is weaker than its abstract | Read to check whether it softens [LIT-509](../../../record/literature.d/LIT-509.md), as [#220](https://github.com/dmarx/anthology-of-the-sota/issues/220) feared. It does on one narrow point and not on the one that matters. Its own Figure 6 shows a ReLU network averaged over 50 initializations has **no distinct phase**, and it agrees with the rebuttal that hidden-layer compression does not correlate with generalization. | Read |

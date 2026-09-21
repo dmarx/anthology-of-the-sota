@@ -1,28 +1,31 @@
 ---
+number: 254
 status: Read
-paper: LIT-tmpcnvbw
+formerly:
+- NOTE-tmplxznx
+paper: LIT-507
 title: 'Adaptive estimators: a counter-rebuttal whose body is weaker than its abstract'
 version: 1
 date: '2026-09-21'
 summary: >-
-  Read to check whether it softens [LIT-tmpsld21](../literature.d/LIT-tmpsld21.md), as
+  Read to check whether it softens [LIT-509](../literature.d/LIT-509.md), as
   [#220](https://github.com/dmarx/anthology-of-the-sota/issues/220) feared. It does on one narrow point and not on the one that
   matters. Its own Figure 6 shows a ReLU network averaged over 50
   initializations has **no distinct phase**, and it agrees with the rebuttal
   that hidden-layer compression does not correlate with generalization.
 ---
 
-# NOTE-tmplxznx: Adaptive estimators: a counter-rebuttal whose body is weaker than its abstract
+# NOTE-254: Adaptive estimators: a counter-rebuttal whose body is weaker than its abstract
 
 ## Contribution
 
-Argues that [LIT-tmpsld21](../literature.d/LIT-tmpsld21.md)'s ReLU result is an artifact of its binning,
+Argues that [LIT-509](../literature.d/LIT-509.md)'s ReLU result is an artifact of its binning,
 develops adaptive binning and adaptive kernel-density estimators, and reports
 that under them saturation is not required for compression.
 
 ## Key results
 
-**The technical criticism is specific and correct.** [LIT-tmpsld21](../literature.d/LIT-tmpsld21.md) bins
+**The technical criticism is specific and correct.** [LIT-509](../literature.d/LIT-509.md) bins
 ReLU activity over one global range `[0, m]`, `m` the largest activity
 anywhere in the network across all of training. This paper's Figure 1 shows
 the **last** ReLU layer dominates that maximum, so a single range
@@ -49,7 +52,7 @@ cited is the one the paper's own protocol does not support.
 Quantifying hidden-layer compression and comparing it against generalization,
 **no significant correlation is observed**. Only compression of the last
 softmax layer correlates. That is the same conclusion
-[LIT-tmpsld21](../literature.d/LIT-tmpsld21.md) reaches by a four-cell dissociation, arrived at
+[LIT-509](../literature.d/LIT-509.md) reaches by a four-cell dissociation, arrived at
 independently by a group trying to defend the theory.
 
 **One genuinely new finding.** L2 regularization induces compression in ReLU
@@ -75,7 +78,7 @@ carefully and rests its headline on the second.
 **It does not address the deterministic-infinity problem at all.** Its
 adaptive estimators are a better choice of imposed noise model, not an escape
 from having to impose one. Nothing in it answers
-[LIT-tmpsld21](../literature.d/LIT-tmpsld21.md)'s Appendix C, where a different binning of the *same*
+[LIT-509](../literature.d/LIT-509.md)'s Appendix C, where a different binning of the *same*
 `tanh` run removes the compression the original claimed.
 
 **Nothing on SGD.** The third IB claim — compression arises from SGD's
@@ -97,7 +100,7 @@ answer**, pointing the opposite way from the first. The rebuttal changes the
 binning and compression *disappears*; this paper changes the binning and
 compression *appears*. Neither is the truth, because there is no truth of the
 matter for a deterministic map. That symmetry is what
-[SOTA-tmpgvchd](../practices.d/SOTA-tmpgvchd.md) rests on, and neither paper states it as its
+[SOTA-312](../practices.d/SOTA-312.md) rests on, and neither paper states it as its
 own conclusion.
 
 ## Open questions

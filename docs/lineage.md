@@ -2,7 +2,7 @@
 
 # Lines of work
 
-26 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+27 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -37,6 +37,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-484](../record/literature.d/LIT-484.md) — TinyStories: How Small Can Language Models Be and Still Speak Coherent English? *(Active)*
   - [LIT-485](../record/literature.d/LIT-485.md) — Parameterized Synthetic Text Generation with SimpleStories *(Active)*
+
+### From Adaptive Estimators Show Information Compression in Deep Neural Networks
+
+- alongside: [LIT-507](../record/literature.d/LIT-507.md) — Adaptive Estimators Show Information Compression in Deep Neural Networks *(Active)*
+- alongside: [LIT-508](../record/literature.d/LIT-508.md) — Opening the Black Box of Deep Neural Networks via Information *(Active)*
+- alongside: [LIT-509](../record/literature.d/LIT-509.md) — On the Information Bottleneck Theory of Deep Learning *(Active)*
 
 ## attention-techniques
 
@@ -170,6 +176,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-505](../record/literature.d/LIT-505.md) — Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences *(Active)*
   - [LIT-506](../record/literature.d/LIT-506.md) — Interpretable RNA Foundation Model from Unannotated Data for Highly Accurate RNA Structure and Function Predictions *(Active)*
+
+### From Adaptive Estimators Show Information Compression in Deep Neural Networks
+
+- alongside: [LIT-507](../record/literature.d/LIT-507.md) — Adaptive Estimators Show Information Compression in Deep Neural Networks *(Active)*
+- alongside: [LIT-508](../record/literature.d/LIT-508.md) — Opening the Black Box of Deep Neural Networks via Information *(Active)*
+- alongside: [LIT-509](../record/literature.d/LIT-509.md) — On the Information Bottleneck Theory of Deep Learning *(Active)*
 
 ## tiny-models
 

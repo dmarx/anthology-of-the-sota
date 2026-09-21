@@ -3,43 +3,64 @@ number: 306
 status: Active
 formerly:
 - SOTA-tmpjm39m
-consensus: emerging
+consensus: converged
 consensus_note: >-
-  Two independent groups measured it on different architectures and datasets
-  and got the same shape, and both credit it to a third line of work
-  (ViT-VQGAN) the record does not yet hold. It is not `converged` because the
-  interior optimum is at a different dimension in each — 8 for LlamaGen, 3 for
-  GaussianToken — so the rule is "shrink it and check", not a number anyone
-  can carry across models.
-title: "Make the codebook's code vectors low-dimensional and the codebook large, and report utilization alongside reconstruction quality"
-version: 1
+  Three groups, five years apart, on three architectures and three datasets,
+  with the same shape and the same interior optimum, and the two later ones
+  credit the first. Raised from `emerging` when the origin was filed: two
+  measurements of somebody else's recommendation is corroboration, and a
+  recommendation plus two independent confirmations of it is what the field
+  having settled looks like. What is *not* settled is where the optimum sits —
+  16, 8 and 3 on the three — so the rule is still "shrink it and sweep".
+title: "Factorize the codebook: look up in a low-dimensional normalized space, embed in a high-dimensional one, and report utilization alongside reconstruction quality"
+version: 2
+history:
+- version: 2
+  date: '2026-09-21'
+  note: >-
+    Filing the origin (LIT-tmpov7yl, ViT-VQGAN) corrected this in three places
+    and changed its title. (1) The instruction was "make the code vectors
+    low-dimensional"; the origin's is to FACTORIZE — look up in a
+    low-dimensional space, project the matched code back to a high-dimensional
+    embedding — which names the mechanism the descendants' framing conceals.
+    (2) `ℓ₂`-normalization was carried as an unablated design detail because
+    neither source ablated it; the origin does, and it is the largest single
+    effect in the table. (3) The practice called utilization "the mechanism";
+    the origin's dimension-4 row has 96% utilization with near-worst FID, so
+    it is a necessary condition that can be met while quality collapses.
+    `introduced_by` moves from LlamaGen to the origin, the source order puts
+    it first, and consensus goes `emerging` -> `converged`.
 tags:
 - representation-and-encoding
 - generative-modeling
 date: '2026-09-21'
 source:
+- LIT-tmpov7yl
 - LIT-497
 - LIT-494
 introduced_by:
-- LIT-497
+- LIT-tmpov7yl
 implementations: []
 summary: >-
-  Sun et al. (2024), [LIT-497](../literature.d/LIT-497.md) — at codebook size 16384,
-  dropping the code vector dimension from 256 to 8 takes utilization from
-  **0.29% to 97%** and rFID from 9.21 to 2.19. A 256-dimensional codebook uses
-  three codes in a thousand. [LIT-494](../literature.d/LIT-494.md) finds the same shape
-  independently, on a different architecture and dataset, with the same stated
-  mechanism — and in both the curve turns back up, so there is an interior
-  optimum to find rather than a direction to follow forever.
+  Yu et al. (2021), [LIT-tmpov7yl](../literature.d/LIT-tmpov7yl.md) — project the encoder output
+  down to a low-dimensional lookup space, `ℓ₂`-normalize it and the codebook,
+  match there, and project the winner back up to a wide embedding. Codebook
+  usage goes **4% → 95%** and FID **3.68 → 1.50** at unchanged throughput;
+  removing the normalization alone drops usage to **2%**. Confirmed
+  independently by [LIT-497](../literature.d/LIT-497.md) and [LIT-494](../literature.d/LIT-494.md), and in all
+  three the curve turns back up, so there is an optimum to find rather than a
+  direction to follow.
 ---
 
-# SOTA-306: Make the codebook's code vectors low-dimensional and the codebook large, and report utilization alongside reconstruction quality
+# SOTA-306: Factorize the codebook: look up in a low-dimensional normalized space, embed in a high-dimensional one, and report utilization alongside reconstruction quality
 
 ## Source
 
-Sun, Jiang, Chen, Zhang, Peng, Luo and Yuan (2024),
-[LIT-497](../literature.d/LIT-497.md); corroborated by Dong et al. (2025),
-[LIT-494](../literature.d/LIT-494.md).
+Yu, Li, Koh, Zhang, Pang, Qin, Ku, Xu, Baldridge and Wu (2021),
+[LIT-tmpov7yl](../literature.d/LIT-tmpov7yl.md) — read as [NOTE-tmptxi4l](../notes.d/NOTE-tmptxi4l.md).
+Confirmed independently by Sun et al. (2024), [LIT-497](../literature.d/LIT-497.md), which
+credits it, and by Dong et al. (2025), [LIT-494](../literature.d/LIT-494.md), which does not
+cite either.
 
 ## When this applies
 
@@ -50,74 +71,107 @@ learned codebook. The lineage is [LIT-499](../literature.d/LIT-499.md) and
 
 ## Do this
 
-**Shrink the code vector dimension into single digits and grow the codebook.**
-Nearest-neighbour matching in a high-dimensional space is the problem: in 256
-dimensions almost every encoder output has the same nearest neighbour, the
-rest of the codebook is never selected, and the effective vocabulary is a
-handful of entries whatever `K` says.
+**Separate the lookup from the embedding.** This is the instruction, and it is
+not the same as "use small code vectors". Project the encoder output down to a
+low-dimensional *lookup* space — 768-d to 32-d or 8-d in the origin — find the
+nearest entry there, then project that entry back up to a high-dimensional
+embedding for the decoder. Nearest-neighbour search wants low dimension,
+because at 256 or 768 dimensions distances concentrate and one entry wins
+nearly every query; the embedding wants high dimension, because that is where
+the capacity is. Forcing both into one space is what kills codebooks.
 
-| code dim | rFID | utilization |
-|---|---|---|
-| 256 | 9.21 | **0.29%** |
-| 32 | 3.22 | 20.9% |
-| **8** | **2.19** | **97.0%** |
-| 4 | 9.88 | 82.0% |
+**`ℓ₂`-normalize both sides, and initialize the codebook from a normal
+distribution.** The lookup then compares cosine similarity on a sphere. This
+is the *larger* of the two effects, not a refinement on top of the first.
 
-*(LlamaGen, codebook size 16384, downsample 16, ImageNet 50k validation.)*
+| lookup dim | `ℓ₂` | IS ↑ | FID ↓ | usage |
+|---|---|---|---|---|
+| 256 | ✓ | 160.1 | 3.68 | **4%** |
+| 128 | ✓ | 173.9 | 2.77 | 14% |
+| 64 | ✓ | 179.5 | 2.50 | 37% |
+| **16** | ✓ | **191.2** | **1.50** | 95% |
+| 8 | ✓ | 189.5 | 1.52 | 96% |
+| 4 | ✓ | 143.8 | 3.68 | **96%** |
+| 32 | **✗** | 123.6 | **5.44** | **2%** |
 
-**Measure utilization, not just reconstruction.** It is the mechanism and it
-is the diagnostic: a tokenizer that reconstructs acceptably at 20% utilization
-is one whose codebook is mostly decoration, and enlarging `K` will not help
-it. LlamaGen reports the percentage of codes used across a queue of 65,536
-samples; any equivalent will do.
+*(ViT-VQGAN, ImageNet, codebook 8192. Throughput is 954–960 across every row,
+so none of this costs anything.)*
 
-**`ℓ₂`-normalize the code vectors.** Carried from the same source, which in
-turn credits ViT-VQGAN. It is reported as part of the same design and is not
-separately ablated in either paper here.
+Dropping the normalization is worse than any dimension choice in the table —
+worse than leaving the lookup at 256.
 
-**Then find the optimum rather than following the direction.** Both sources
-turn back up:
+**Measure utilization, and do not stop there.** It is the diagnostic, and the
+dimension-4 row is why it is not the target: **96% usage, 3.68 FID**, tied for
+worst among the normalized rows. Every code gets used and none of them can say
+enough. A tokenizer reconstructing acceptably at 20% usage has a codebook that
+is mostly decoration and will not be helped by a larger `K`; a tokenizer at
+96% usage may simply have too little room per code.
 
-- LlamaGen: dimension 4 scores 9.88 rFID, *worse than 256*, while still using
-  82% of the codebook.
-- GaussianToken: 16.34 at dimension 2, **12.94 at 3**, 13.89 at 4, 13.86 at 8.
+**Sweep for the optimum rather than following the direction.** All three
+sources turn back up, at different places:
 
-The two optima are at different dimensions on different architectures, which
-is why this practice says to sweep rather than naming a number.
+- ViT-VQGAN: best at lookup dimension **16**; dimension 4 loses 40 IS points.
+- LlamaGen: 256 → 9.21 rFID at 0.29% usage, **8 → 2.19** at 97%, 4 → 9.88 at
+  82%.
+- GaussianToken: 16.34 at 2, **12.94 at 3**, 13.89 at 4, 13.86 at 8.
+
+Sixteen, eight and three, on three architectures. Nothing in the three
+predicts where it sits on a fourth.
 
 **Codebook size is the weaker lever and also non-monotone.** LlamaGen:
 4096 → 3.02 (100% used), 8192 → 2.91 (75%), **16384 → 2.19** (97%),
 32768 → 2.26 (85%). GaussianToken's sweep moves rFID by 1.6 across a 32× range
-of `K` and its utilization falls below 50% at 16,384. Size buys less than
-dimension does, and past the point where utilization drops it buys nothing.
+of `K`, with utilization below 50% at 16,384. Fix the lookup first; size buys
+little on its own and nothing past the point where utilization falls.
 
-## Why `Active`
+## Why `Active`, and why `converged`
 
-Because two groups with no overlap measured it on different architectures
-(pure VQGAN versus a Gaussian-splatting quantizer), different datasets
-(ImageNet versus CIFAR) and different metrics, and reported the same shape and
-the same mechanism; and because both credit a third, earlier line for the
-design, which is what a practice that has quietly become standard looks like.
-The instruction is also cheap to follow and cheap to check.
+Three groups, five years apart, on three architectures (ViT, CNN and a
+Gaussian-splatting quantizer), three datasets and three metric sets, reporting
+the same shape and the same mechanism — with the two later ones crediting the
+first and one of them arriving at it without citing anybody. The instruction
+is cheap to follow, free at inference by the origin's own throughput column,
+and cheap to check.
+
+The consensus was `emerging` while the record held only the two descendants,
+because two measurements of somebody else's recommendation is corroboration
+rather than agreement. Filing the origin is what changed it.
 
 ## Conditions
 
-**Both sources state the monotone half in their captions and leave the
+**The descendants state the monotone half in their captions and leave the
 reversal in the table.** LlamaGen's caption reads "Lower vector dimension
 (from 256 to 8) improves both", bounded exactly to exclude dimension 4. Its
 codebook-size caption is bounded the same way. GaussianToken, to its credit,
-describes its own curve as rising then falling. Anyone taking the captions
-rather than the tables gets "smaller is better", which is false at the end.
+describes its own curve as rising then falling, and the origin's table simply
+prints the reversal without a caption claiming otherwise. Anyone taking the
+descendants' captions rather than the tables gets "smaller is better", which
+is false at the end.
 
-**The optimum is not transferable.** 8 and 3 on two models; nothing here
-predicts where it sits on a third.
+**The optimum is not transferable.** 16, 8 and 3 on three models, and no
+source offers an account of what sets it.
 
-**The utilization metric is not standardized.** LlamaGen measures over a
-65,536-sample queue and deliberately omits the entropy loss that MaskGIT and
-the MAGVIT line use in codebook learning. Utilization numbers across papers
-that differ on that term are not directly comparable.
+**The two mechanisms are not separated from each other.** In the origin's
+table every normalized row is also factorized and the single un-normalized row
+sits at one dimension, so there is no un-normalized, un-factorized control and
+the interaction is unmeasured.
 
-**Two sources, and neither is the origin.** Both attribute the design to Yu
-et al. (2021), which this record does not hold. The corroboration is real —
-independent measurement — but it is two measurements of somebody else's
-recommendation rather than two independent discoveries.
+**Factorization versus a plainly narrow codebook is untested.** The origin
+factorizes and keeps a wide embedding; LlamaGen makes the whole codebook
+8-dimensional and reports a comparable effect. Nobody has run the comparison,
+so this practice states the mechanism the origin names while acknowledging
+that the simpler implementation appears to work too.
+
+**The utilization metric is not standardized, and the three sources differ.**
+The origin counts codes used over a batch of 256 test images averaged across
+the test set; LlamaGen counts over a queue of 65,536 samples and deliberately
+omits the entropy loss that MaskGIT and the MAGVIT line use in codebook
+learning. A per-batch definition reads higher than a per-queue one. None of
+the three flags this, and utilization numbers should not be compared across
+them.
+
+**The origin's ablation rides alongside architecture changes.** ViT-versus-CNN
+and StyleGAN-versus-PatchGAN sit in the same table as the codebook rows and
+are not crossed with them, so the headline FID cannot be apportioned. The
+codebook rows themselves are internally controlled, which is what this
+practice rests on.

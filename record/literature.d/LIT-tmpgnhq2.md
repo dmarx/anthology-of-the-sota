@@ -1,0 +1,124 @@
+---
+status: Active
+title: Are Emergent Abilities of Large Language Models a Mirage?
+version: 1
+tags:
+- analysis-and-evaluation
+- training-optimization
+date: '2026-09-21'
+published: '2023-04-01'
+arxiv: '2304.15004'
+first_author: 'Schaeffer'
+keywords:
+- 'emergent-abilities'
+- 'metric-choice'
+- 'scaling'
+- 'big-bench'
+- 'measurement'
+extends:
+- LIT-077
+corrects:
+- LIT-tmpc4fk2
+implementations: []
+summary: >-
+  Schaeffer et al. (2023), [ARXIV-2304.15004](https://arxiv.org/abs/2304.15004). A sharp capability
+  curve can be produced from a smooth one by the metric alone. Rescoring
+  *fixed* GPT-3 outputs under Token Edit Distance removes the emergence;
+  >92% of hand-annotated BIG-Bench emergent abilities sit under two metrics,
+  one nonlinear and one discontinuous; and emergence is induced on demand in
+  vision models that had never shown it.
+---
+
+# LIT-tmpgnhq2: Are Emergent Abilities of Large Language Models a Mirage?
+
+## Why it's here
+
+[SOTA-200](../practices.d/SOTA-200.md) told the reader to check whether an emergent capability is a
+metric artefact, and sourced that to a benchmark paper that raised the
+possibility and a grokking paper that showed one discontinuity dissolving.
+This is the paper that made the argument directly, and the one that supplies
+the *cheap positive check* the practice said it did not have.
+
+## What it shows
+
+The mechanism is arithmetic. Suppose per-token cross entropy falls smoothly
+with scale — the thing scaling laws assert. Then the per-token probability of
+the correct token rises smoothly toward 1. Now score a length-`L` target with
+Accuracy, which demands every token: performance goes as roughly `p^L`, which
+on a linear-log plot is flat for a long time and then turns up sharply. The
+model's behaviour changed smoothly; the plot did not. A discontinuous metric
+like Multiple Choice Grade does the same by a different route.
+
+Three tests, escalating:
+
+**1. Fixed outputs, changed metric.** InstructGPT/GPT-3 (350M, 1.3B, 6.7B,
+175B) on 2-shot 2-digit multiplication and 2-shot 4-digit addition shows
+emergence at 4–5 digit targets under Accuracy. Holding the models' outputs
+*fixed* and rescoring with Token Edit Distance gives a smooth, continuous
+curve. Separately, generating more test data shows every model above chance
+under Accuracy too — the zero was resolution, not inability.
+
+**2. Meta-analysis.** Of BIG-Bench's 39 preferred metrics, at most 5 show
+emergence under an emergence score; hand-annotation puts it at 4/39, and
+**two metrics account for >92%** of claimed emergent abilities: Multiple
+Choice Grade (discontinuous) and Exact String Match (nonlinear). LaMDA's
+emergence under Multiple Choice Grade disappears under Brier Score, a proper
+scoring rule available in the same benchmark.
+
+**3. Manufacture.** Shallow autoencoders on CIFAR-100 have smoothly falling
+reconstruction error; define reconstruction as the fraction of images under a
+squared-error threshold and a sharp unpredictable ability appears. Omniglot
+transformers classify better with scale; score a length-`L` sequence only when
+every image is right and emergence appears there too. Neither domain had shown
+emergence before.
+
+The discussion adds a multiple-comparisons point worth its own line: BIG-Bench
+alone holds ≥220 tasks × ~40 metrics × ~10 model families ≈ 10⁶
+task-metric-model-family triplets, so finding *some* sharp curve by chance is
+not a small probability.
+
+## What it does not claim
+
+The paper says this outright, and it is routinely dropped in citation:
+
+> nothing in this paper should be interpreted as claiming that large language
+> models cannot display emergent abilities
+
+The claim is about the *previously published* curves, and the verb is "might
+likely be a mirage". It is evidence that the reported instances are
+artefactual, not a theorem that the phenomenon is impossible.
+
+## What it answers, and what it leaves
+
+[LIT-tmpc4fk2](LIT-tmpc4fk2.md) §5.1 declined the metric explanation on two grounds. This
+answers one of them: the objection that emergence persists "on many
+classification tasks" assumed the metric problem was about denying partial
+credit on long strings, and Multiple Choice Grade is a *discontinuous* metric
+rather than a long-string one — so classification tasks are inside the
+explanation, not outside it. The >92% figure is exactly that reply.
+
+It does not answer the other. [LIT-tmpc4fk2](LIT-tmpc4fk2.md) observed that the quality of
+intermediate reasoning steps also jumps, which is not a scoring property of
+the final answer. Nothing here addresses intermediate-step quality, and that
+objection is still open.
+
+## Conditions
+
+**The mathematical model assumes token independence**, which the authors state
+is false and defend as producing a qualitative match rather than a
+quantitative one. The model is an illustration of a mechanism, not a fit.
+
+**Only one model family was probed directly.** GPT-3/InstructGPT, because it
+was the only one publicly queryable; everything else is analysis of published
+numbers or of BIG-Bench's stored outputs. The paper names this as a finding
+of its own — independent scrutiny needs published outputs.
+
+**Inducing emergence proves sufficiency, not necessity.** Showing that a metric
+*can* manufacture a sharp curve does not establish that every published curve
+was manufactured that way. The meta-analysis is what carries the share claim,
+and it is a count of metrics rather than a per-task adjudication.
+
+**Caballero et al. and Michaud et al. dissent**, and the paper says so:
+broken neural scaling laws explain emergence as a real change in the governing
+power law, and the quantization model gives conditions under which emergence
+is real. Neither is refuted here.

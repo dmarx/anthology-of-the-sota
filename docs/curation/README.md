@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [21 Sep 18:12 — More context, less evidence](2026-09.md#more-context-less-evidence)
 - [21 Sep 18:04 — A good idea I could not turn into a recommendation](2026-09.md#a-good-idea-i-could-not-turn-into-a-recommendation)
 - [21 Sep 17:54 — A paper that hands you the means to check its weakest claim](2026-09.md#a-paper-that-hands-you-the-means-to-check-its-weakest-claim)
 - [21 Sep 17:41 — The mechanism arrives four papers after the observation](2026-09.md#the-mechanism-arrives-four-papers-after-the-observation)
@@ -157,9 +158,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-150 entries across 2 books, newest first.
+151 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 148 | 2026-09-05 | 2026-09-21 |
+| [2026-09](2026-09.md) | 149 | 2026-09-05 | 2026-09-21 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

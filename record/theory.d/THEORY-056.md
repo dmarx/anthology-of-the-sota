@@ -1,5 +1,8 @@
 ---
+number: 56
 status: Proposed
+formerly:
+- THEORY-tmp38xax
 promote_when: >-
   The effect measured outside the construction that proves it: agreement
   between distinct state machines tracked against sequence length at an
@@ -16,9 +19,9 @@ tags:
 - model-architecture
 date: '2026-09-21'
 source:
-- LIT-tmpzynnf
+- LIT-495
 summary: >-
-  Giapitzakis, Fountoulakis, Nichani and Lee (2025), [LIT-tmpzynnf](../literature.d/LIT-tmpzynnf.md) —
+  Giapitzakis, Fountoulakis, Nichani and Lee (2025), [LIT-495](../literature.d/LIT-495.md) —
   reading a uniformly random word drives a random walk on `S_N × S_N`, and the
   probability two distinct semiautomata land in the same state is
   `1/N + error` with `|error| ≤ (1 − 1/2N)^T`. The quantity that identifies
@@ -30,12 +33,12 @@ summary: >-
      to keep an expressivity claim and a learnability claim apart. That is a
      statement about what the two are about, not a reliance on either -->
 
-# THEORY-tmp38xax: Distinct state machines agree at chance on long random inputs, so a learner that reads only statistics loses the signal as the sequences get longer
+# THEORY-056: Distinct state machines agree at chance on long random inputs, so a learner that reads only statistics loses the signal as the sequences get longer
 
 ## Source
 
 Giapitzakis, Fountoulakis, Nichani and Lee (2025),
-[LIT-tmpzynnf](../literature.d/LIT-tmpzynnf.md) — read as [NOTE-tmpi0371](../notes.d/NOTE-tmpi0371.md).
+[LIT-495](../literature.d/LIT-495.md) — read as [NOTE-244](../notes.d/NOTE-244.md).
 
 ## The account
 

@@ -1,6 +1,9 @@
 ---
+number: 244
 status: Read
-paper: LIT-tmpzynnf
+formerly:
+- NOTE-tmpi0371
+paper: LIT-495
 title: 'SQ hardness for semiautomata, and the regime it needs'
 version: 1
 date: '2026-09-21'
@@ -12,7 +15,7 @@ summary: >-
   transition structure, not more.
 ---
 
-<!-- inactive-ok-file: THEORY-tmp38xax — Proposed, filed in this same
+<!-- inactive-ok-file: THEORY-056 — Proposed, filed in this same
      contribution; the Recommendations and Open questions sections name it as
      where R1 went and what would move it, which is the note's job -->
 
@@ -20,7 +23,7 @@ summary: >-
      to distinguish expressivity from learnability. The distinction is the
      point of the citation and does not depend on either being settled -->
 
-# NOTE-tmpi0371: SQ hardness for semiautomata, and the regime it needs
+# NOTE-244: SQ hardness for semiautomata, and the regime it needs
 
 ## Contribution
 
@@ -139,7 +142,7 @@ nor the DFA hardness line, so there is nothing to relate to.
   different limits, and this paper is a case where the object is trivially
   representable and provably hard to learn by a broad class of algorithms.
   **Not filed as a practice**, because the evidence is a proof about a family
-  in a regime nobody trains in. Carried as `THEORY-tmp38xax` instead, which is
+  in a regime nobody trains in. Carried as `THEORY-056` instead, which is
   the honest shape: a claim about what is true, not an instruction.
 - **R2** — do not train on uniformly random sequences when what you want
   learned is a hidden transition structure, and expect longer random contexts
@@ -194,7 +197,7 @@ reasons a capability can look absent, and the record now names all three.
   no training needed — and nobody has run it.
 - **Does a transformer trained on random words actually fail, and does it fail
   worse with longer contexts?** That is R2's missing evidence, and it is the
-  result that would turn `THEORY-tmp38xax` into a practice about what
+  result that would turn `THEORY-056` into a practice about what
   sequences to train on. A non-uniform curriculum should help by the same
   argument, which makes it jointly testable.
 - **How tight is the SQ–SGD equivalence at the batch sizes and precisions in

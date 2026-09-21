@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [21 Sep 19:06 — A test that everything passes](2026-09.md#a-test-that-everything-passes)
 - [21 Sep 18:57 — The metric that punishes the assistant for assisting](2026-09.md#the-metric-that-punishes-the-assistant-for-assisting)
 - [21 Sep 18:48 — Evidence against the presenter](2026-09.md#evidence-against-the-presenter)
 - [21 Sep 18:41 — Two lotteries, and the field reports the wrong one](2026-09.md#two-lotteries-and-the-field-reports-the-wrong-one)
@@ -163,9 +164,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-156 entries across 2 books, newest first.
+157 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 154 | 2026-09-05 | 2026-09-21 |
+| [2026-09](2026-09.md) | 155 | 2026-09-05 | 2026-09-21 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

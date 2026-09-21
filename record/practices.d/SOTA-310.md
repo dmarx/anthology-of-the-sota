@@ -1,5 +1,8 @@
 ---
+number: 310
 status: Active
+formerly:
+- SOTA-tmp2f1hx
 consensus: unreplicated
 consensus_note: >-
   One group, one paper. It is filed `Active` on that because the result is a
@@ -15,12 +18,12 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpj6eqy
+- LIT-504
 introduced_by:
-- LIT-tmpj6eqy
+- LIT-504
 implementations: []
 summary: >-
-  Méloux, Maniu, Portet and Peyrard (2025), [LIT-tmpj6eqy](../literature.d/LIT-tmpj6eqy.md) — by
+  Méloux, Maniu, Portet and Peyrard (2025), [LIT-504](../literature.d/LIT-504.md) — by
   exhaustive enumeration on small MLPs, **no network** had exactly one circuit
   interpretation and **under 2%** had exactly one valid minimal mapping. The
   median number of explanations satisfying the criteria rises from **38 to
@@ -34,12 +37,12 @@ summary: >-
      three are severally about, which does not wait on any of them being
      settled -->
 
-# SOTA-tmp2f1hx: Treat a mechanistic explanation that passes circuit error or causal alignment as one of many, and report what you did to rule the others out
+# SOTA-310: Treat a mechanistic explanation that passes circuit error or causal alignment as one of many, and report what you did to rule the others out
 
 ## Source
 
-Méloux, Maniu, Portet and Peyrard (2025), [LIT-tmpj6eqy](../literature.d/LIT-tmpj6eqy.md) —
-read as [NOTE-tmpyf2sd](../notes.d/NOTE-tmpyf2sd.md).
+Méloux, Maniu, Portet and Peyrard (2025), [LIT-504](../literature.d/LIT-504.md) —
+read as [NOTE-251](../notes.d/NOTE-251.md).
 
 ## When this applies
 

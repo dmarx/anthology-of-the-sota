@@ -1,6 +1,9 @@
 ---
+number: 251
 status: Read
-paper: LIT-tmpj6eqy
+formerly:
+- NOTE-tmpyf2sd
+paper: LIT-504
 title: 'Non-identifiability of mechanistic explanations'
 version: 1
 date: '2026-09-21'
@@ -21,7 +24,7 @@ summary: >-
      three are severally about, which does not wait on any of them being
      settled -->
 
-# NOTE-tmpyf2sd: Non-identifiability of mechanistic explanations
+# NOTE-251: Non-identifiability of mechanistic explanations
 
 ## Contribution
 
@@ -139,7 +142,7 @@ first interpretability-methodology document here.
 ## Recommendations
 
 - **R1** — treat an explanation that passes the criteria as one of many, and
-  report what was done to rule out the rest. *Filed* as `SOTA-tmp2f1hx`.
+  report what was done to rule out the rest. *Filed* as `SOTA-310`.
 - **R2** — state the epistemic goal the explanation serves. *Folded into R1*,
   because it is the source's own constructive proposal and it is the sentence
   that makes R1 actionable rather than merely deflating.

@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [21 Sep 22:30 — mHC-lite, and a promotion condition that kept doing its job](2026-09.md#mhc-lite-and-a-promotion-condition-that-kept-doing-its-job)
 - [21 Sep 20:33 — SVDQuant, and a practice that had to carry its own systems half](2026-09.md#svdquant-and-a-practice-that-had-to-carry-its-own-systems-half)
 - [21 Sep 20:25 — Image-GS, and the second ablation this session that inverts its own headline](2026-09.md#image-gs-and-the-second-ablation-this-session-that-inverts-its-own-headline)
 - [21 Sep 20:17 — The Gemini report, and a running count that finally had to stop](2026-09.md#the-gemini-report-and-a-running-count-that-finally-had-to-stop)
@@ -171,9 +172,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-164 entries across 2 books, newest first.
+165 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 162 | 2026-09-05 | 2026-09-21 |
+| [2026-09](2026-09.md) | 163 | 2026-09-05 | 2026-09-21 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

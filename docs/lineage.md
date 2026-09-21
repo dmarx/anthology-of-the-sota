@@ -134,6 +134,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-181](../record/literature.d/LIT-181.md) — Beyond the Birkhoff Polytope: Spectral-Sphere-Constrained Hyper-Connections *(Active)*
 - alongside: [LIT-134](../record/literature.d/LIT-134.md) — Attention Residuals *(Active)*
 - alongside: [LIT-152](../record/literature.d/LIT-152.md) — On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability *(Active)*
+- alongside: [LIT-513](../record/literature.d/LIT-513.md) — mHC-lite: You Don't Need 20 Sinkhorn-Knopp Iterations *(Active)*
 
 ### From Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer
 

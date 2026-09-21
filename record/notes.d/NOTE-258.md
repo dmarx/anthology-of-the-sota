@@ -1,6 +1,9 @@
 ---
+number: 258
 status: Read
-paper: LIT-tmpzi9vi
+formerly:
+- NOTE-tmpa0q97
+paper: LIT-513
 title: 'mHC-lite: the experiment that was one measurement from settling the Birkhoff dispute'
 version: 1
 date: '2026-09-21'
@@ -19,7 +22,7 @@ summary: >-
      trunk, named to record that its promote_when's exclusion does not apply
      here and that it stays put regardless. -->
 
-# NOTE-tmpa0q97: mHC-lite: the experiment that was one measurement from settling the Birkhoff dispute
+# NOTE-258: mHC-lite: the experiment that was one measurement from settling the Birkhoff dispute
 
 ## Contribution
 

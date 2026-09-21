@@ -14,7 +14,7 @@ consensus_note: >-
   (LIT-151, LIT-181), while it ships at 1.6T in DeepSeek-V4. Production
   adoption and public dispute at once, which is the state `status:` alone
   could not express. A third group has since repaired the constraint's
-  implementation rather than its geometry (LIT-tmpzi9vi) — which does not
+  implementation rather than its geometry (LIT-513) — which does not
   resolve the dispute and does not join either side of it.
 title: 'Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections)'
 version: 3
@@ -31,7 +31,7 @@ history:
 - version: 3
   date: '2026-09-21'
   note: >-
-    Adds LIT-tmpzi9vi as a source and one instruction: if you adopt the
+    Adds LIT-513 as a source and one instruction: if you adopt the
     constraint, construct it exactly rather than approximating it with
     Sinkhorn-Knopp. The recommendation and the status are unchanged, and
     the promotion condition is unmet for the third time — LIT-139 was the
@@ -52,7 +52,7 @@ source:
 # the dispute and live in contested_by.
 - LIT-140
 - LIT-152
-- LIT-tmpzi9vi
+- LIT-513
 introduced_by:
 - LIT-140
 contested_by:
@@ -103,7 +103,7 @@ will otherwise assume the question was settled by shipping.
 
 ## Construct the constraint, do not approximate it
 
-Yang (2026), [LIT-tmpzi9vi](../literature.d/LIT-tmpzi9vi.md) — read as [NOTE-tmpa0q97](../notes.d/NOTE-tmpa0q97.md) — shows the
+Yang (2026), [LIT-513](../literature.d/LIT-513.md) — read as [NOTE-258](../notes.d/NOTE-258.md) — shows the
 Sinkhorn-Knopp projection does not arrive. Across SK inputs measured during
 training, about **27.9%** have relative range `1/ν ≥ 10¹³`, where 20
 iterations do not converge; a single residual matrix's column sum can be off
@@ -124,7 +124,7 @@ constraint is the right one, which is the dispute below.
 Sinkhorn-Knopp mHC the matrices are not actually doubly stochastic, so
 [LIT-151](../literature.d/LIT-151.md)'s objection has an escape hatch: whatever keeps the streams
 distinct might be surviving through the approximation gap. Exact construction
-closes it. That makes [LIT-tmpzi9vi](../literature.d/LIT-tmpzi9vi.md) the cleanest available test of
+closes it. That makes [LIT-513](../literature.d/LIT-513.md) the cleanest available test of
 whether the doubly-stochastic set homogenizes the streams — the objection
 predicts it should homogenize *more* — and it reports no stream statistic at
 all. One histogram, on a model already trained, with code already public.

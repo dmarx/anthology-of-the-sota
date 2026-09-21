@@ -15,8 +15,8 @@
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [SOTA-124](../../record/practices.d/SOTA-124.md) | 37 | 2 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window |
 | 2026-09-05 | Proposed | [SOTA-130](../../record/practices.d/SOTA-130.md) | 28 | 0 | Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model |
+| 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 25 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
 | 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 25 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
-| 2026-09-05 | Proposed | [SOTA-136](../../record/practices.d/SOTA-136.md) | 19 | 0 | Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections) |
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 17 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 14 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
 | 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 8 | 0 | Decay the learning rate linearly all the way to zero |
@@ -32,10 +32,10 @@
 | 2026-09-08 | Proposed | [SOTA-172](../../record/practices.d/SOTA-172.md) | 11 | 0 | Build synthetic pretraining data by editing human text at the token level, not by generating from scratch |
 | 2026-09-08 | Proposed | [SOTA-178](../../record/practices.d/SOTA-178.md) | 11 | 0 | Give the recurrence vector-valued gating and in-context learning rates so it can track state a softmax layer provably cannot |
 | 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 10 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
+| 2026-09-08 | Proposed | [SOTA-169](../../record/practices.d/SOTA-169.md) | 9 | 0 | Widen the residual stream into several streams and constrain the mixing between them |
 | 2026-09-08 | Proposed | [SOTA-158](../../record/practices.d/SOTA-158.md) | 8 | 0 | Bound the activation's output range when training in low precision |
 | 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 8 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
 | 2026-09-08 | Proposed | [SOTA-168](../../record/practices.d/SOTA-168.md) | 8 | 0 | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself |
-| 2026-09-08 | Proposed | [SOTA-169](../../record/practices.d/SOTA-169.md) | 5 | 0 | Widen the residual stream into several streams and constrain the mixing between them |
 | 2026-09-08 | Proposed | [SOTA-176](../../record/practices.d/SOTA-176.md) | 5 | 0 | Hybridise inside the layer: long-term slots, a sliding window, and one softmax over both, with the window size as the only dial |
 | 2026-09-08 | Proposed | [SOTA-177](../../record/practices.d/SOTA-177.md) | 4 | 0 | Decouple the erase address from the write address in a delta-rule recurrence |
 | 2026-09-08 | Proposed | [SOTA-179](../../record/practices.d/SOTA-179.md) | 2 | 0 | Truncate the rotary encoding's low frequencies rather than rescaling its base |

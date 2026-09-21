@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-254 of 257 NOTE documents. Back to the [full index](../README.md).
+255 of 258 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -264,3 +264,4 @@
 | [NOTE-255](../../../record/notes.d/NOTE-255.md) | Gemini 1.0: complete disclosure, and an abstract that picks the flattering row | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for the model and filed for the appendices. The headline — first model to exceed human-expert MMLU — holds under one inference procedure out of three the report itself publishes, and under the other two GPT-4 is ahead. Nothing is concealed. The disambiguating numbers are in the same document, which is what makes this the corpus's cleanest instance of `DP-010`. | Read |
 | [NOTE-256](../../../record/notes.d/NOTE-256.md) | Image-GS: the rate accounting GaussianToken skipped, and an ablation that inverts its own headline | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for its adjacency to the tokenizer trunk. Two things worth keeping: a comparison run the way this record keeps asking for — six baselines at matched model size, bitrate on the axis — and an ablation in which the two unglamorous optimizer choices outweigh the content-adaptive allocation the paper is named for. | Read |
 | [NOTE-257](../../../record/notes.d/NOTE-257.md) | SVDQuant: a low-rank branch on the weights, not on the error | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist. The idea that travels is an ordering: decompose the weights and quantize the residual, rather than quantize and then patch the error. Two propositions and Eckart-Young say why, and a published method that does it the other way round is the control. | Read |
+| [NOTE-258](../../../record/notes.d/NOTE-258.md) | mHC-lite: the experiment that was one measurement from settling the Birkhoff dispute | Read from the #180 worklist. It makes the doubly-stochastic constraint exact, which is precisely the condition under which [LIT-151](../../../record/literature.d/LIT-151.md)'s objection should bite hardest — and it reports no stream statistic, so the dispute stands. The approximation it replaces is real and measured: column sums of the layer-wise product off by up to **220%** at 24 layers. | Read |

@@ -6,7 +6,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-76 of 283 SOTA documents. Back to the [full index](../README.md).
+77 of 284 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -86,3 +86,4 @@
 | [SOTA-277](../../../record/practices.d/SOTA-277.md) | For a task that is a sequential composition, buy depth rather than width | Chen et al. (2024), [LIT-464](../../../record/literature.d/LIT-464.md) — composing `k` functions costs a constant-depth decoder polynomially many parameters and a `log k`-layer one polylogarithmically. An exponential separation, proved unconditionally, and about what a shape can express rather than what a run will learn. | Proposed |
 | [SOTA-282](../../../record/practices.d/SOTA-282.md) | Put every matrix and hidden state on the unit hypersphere, and make each block's residual step size a learned per-dimension parameter |  | Proposed |
 | [SOTA-283](../../../record/practices.d/SOTA-283.md) | To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it |  | Proposed |
+| [SOTA-284](../../../record/practices.d/SOTA-284.md) | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |  | Proposed |

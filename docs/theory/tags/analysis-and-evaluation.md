@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-14 of 42 THEORY documents. Back to the [full index](../README.md).
+15 of 43 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -24,3 +24,4 @@
 | [THEORY-038](../../../record/theory.d/THEORY-038.md) | A decoder cannot compose over a long context in few layers, because each position forgets what it forwarded | Chen et al. (2024), [LIT-464](../../../record/literature.d/LIT-464.md) — causal masking makes a decoder a line of forgetful communicating players, one epoch per layer, and sequential composition needs more epochs than a constant-depth model has. An unconditional bound on what can be expressed, not on what can be learned. | Active |
 | [THEORY-039](../../../record/theory.d/THEORY-039.md) | A measured capability is the capability minus whatever the evaluation itself demands, and the gap is widest for the weakest model | Hu and Frank (2024), [LIT-465](../../../record/literature.d/LIT-465.md) — the same capacity measured two ways scores differently, and the difference shrinks with size and training. So a score is a joint function of model and design, and cross-scale comparisons under a demanding evaluation inflate the gap they report. | Active |
 | [THEORY-040](../../../record/theory.d/THEORY-040.md) | A metric that composes or thresholds per-token error turns a smooth capability curve into a sharp one, with nothing happening in the model | Schaeffer et al. (2023), [LIT-471](../../../record/literature.d/LIT-471.md) — if per-token accuracy rises smoothly with scale, a metric demanding all `L` tokens goes as `p^L` and is flat-then-sharp by construction; a thresholded metric does the same by a step. Demonstrated by rescoring fixed outputs, and by manufacturing emergence in vision models that had never shown it. | Active |
+| [THEORY-043](../../../record/theory.d/THEORY-043.md) | Cross-entropy pays an unbounded price for mass a learner never had, and that price grows with sequence length — which is why it drifts from what post-training needs | Chen et al. (2025), [LIT-474](../../../record/literature.d/LIT-474.md) — KL charges `log(1/π̂)` for every response a well-generalizing learner happens not to cover, and that charge is unbounded; the coverage profile charges at most the missing mass itself. Sequence-level KL therefore grows linearly in sequence length where coverage does not, and next-token prediction optimizes coverage faster than it optimizes the loss on the screen. | Proposed |

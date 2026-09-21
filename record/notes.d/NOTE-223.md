@@ -1,6 +1,9 @@
 ---
+number: 223
 status: Read
-paper: LIT-tmpkyvap
+formerly:
+- NOTE-tmpxy07e
+paper: LIT-474
 title: 'The Coverage Principle'
 version: 1
 date: '2026-09-21'
@@ -11,7 +14,7 @@ summary: >-
   why a metric everybody watches can be anti-correlated with what they want.
 ---
 
-# NOTE-tmpxy07e: The Coverage Principle
+# NOTE-223: The Coverage Principle
 
 ## Contribution
 

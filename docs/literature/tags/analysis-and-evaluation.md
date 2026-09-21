@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-81 of 408 LIT documents. Back to the [full index](../README.md).
+82 of 409 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -91,3 +91,4 @@
 | [LIT-466](../../../record/literature.d/LIT-466.md) | The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity | Shojaee et al. (2025), [ARXIV-2506.06941](https://arxiv.org/abs/2506.06941). Controllable puzzles instead of contaminated benchmarks, and reasoning models collapse to zero accuracy past a complexity threshold while *reducing* their thinking tokens. NeurIPS 2025; the collapse reading is publicly contested and the three-regime finding is not. | Active |
 | [LIT-470](../../../record/literature.d/LIT-470.md) | Emergent Abilities of Large Language Models | Wei et al. (2022), [ARXIV-2206.07682](https://arxiv.org/abs/2206.07682). Names and defines *emergent abilities* — present in larger models, absent in smaller ones, and therefore not predictable by extrapolating a scaling law. A survey of existing curves rather than new experiments: eight few-shot examples across five model families, plus prompting strategies that only help past a threshold. Section 5.1 raises the metric explanation itself and argues against it on two specific grounds. | Active |
 | [LIT-471](../../../record/literature.d/LIT-471.md) | Are Emergent Abilities of Large Language Models a Mirage? | Schaeffer et al. (2023), [ARXIV-2304.15004](https://arxiv.org/abs/2304.15004). A sharp capability curve can be produced from a smooth one by the metric alone. Rescoring *fixed* GPT-3 outputs under Token Edit Distance removes the emergence; >92% of hand-annotated BIG-Bench emergent abilities sit under two metrics, one nonlinear and one discontinuous; and emergence is induced on demand in vision models that had never shown it. | Active |
+| [LIT-474](../../../record/literature.d/LIT-474.md) | The Coverage Principle: How Pre-Training Enables Post-Training | Chen, Huang, Golowich, Malladi, Block, Ash, Krishnamurthy and Foster (2025), [ARXIV-2510.15020](https://arxiv.org/abs/2510.15020). Names the quantity cross-entropy is a bad proxy for: the **coverage profile**, the probability mass a model puts on rare high-quality responses. Proves it is necessary and sufficient for Best-of-N to succeed, that next-token prediction optimizes it faster than it optimizes cross-entropy, and that sequence-level KL carries a linear dependence on sequence length that coverage does not. | Active |

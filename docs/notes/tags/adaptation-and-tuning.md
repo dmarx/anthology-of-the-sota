@@ -4,7 +4,7 @@
 
 **adaptation-and-tuning**.
 
-26 of 222 NOTE documents. Back to the [full index](../README.md).
+27 of 223 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -34,3 +34,4 @@
 | [NOTE-182](../../../record/notes.d/NOTE-182.md) | P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks | Prompt tuning did not fail because tuning a prompt is a weak idea; it failed because the prompt was only at the input layer, where it has too few parameters and too indirect a route to the prediction. Put prefix tokens at every layer and the same family matches full fine-tuning from 330M to 10B and on hard sequence labelling, at 0.1-3% of the parameters. The paper is explicit that it is not conceptually novel — it is deep prompt tuning, already published for generation, adapted to NLU and optimized properly. | Read |
 | [NOTE-216](../../../record/notes.d/NOTE-216.md) | Chain-of-Thought Prompting | Worked reasoning steps in the few-shot exemplars, nothing else. Reading it: the three ablations are the contribution — it is not the equation, not the extra tokens, and not knowledge activation — and the effect is absent or negative below about 100B parameters. | Read |
 | [NOTE-222](../../../record/notes.d/NOTE-222.md) | Quantized Evolution Strategies | Reading it: the memory trick is the contribution, not the error feedback. Error feedback is 1-bit SGD's, correctly credited; what is new is refusing to store the accumulator at all and rebuilding it from seeds, which is the only reason the method fits in the memory budget that motivated it. | Read |
+| [NOTE-223](../../../record/notes.d/NOTE-223.md) | The Coverage Principle | Reading it: the strongest thing here is not the theorem but the Bernoulli example, which shows KL going to infinity while coverage stays fine on a two-outcome model. That is the whole argument in four lines, and it explains why a metric everybody watches can be anti-correlated with what they want. | Read |

@@ -1,5 +1,8 @@
 ---
+number: 43
 status: Proposed
+formerly:
+- THEORY-tmp16mrv
 promote_when: >-
   The coverage/cross-entropy divergence measured on a real pre-training run —
   checkpoints from a transformer on natural text, coverage estimated on a
@@ -15,11 +18,11 @@ tags:
 - training-optimization
 date: '2026-09-21'
 source:
-- LIT-tmpkyvap
+- LIT-474
 explains:
-- SOTA-tmpkxz0v
+- SOTA-284
 summary: >-
-  Chen et al. (2025), [LIT-tmpkyvap](../literature.d/LIT-tmpkyvap.md) — KL charges `log(1/π̂)` for
+  Chen et al. (2025), [LIT-474](../literature.d/LIT-474.md) — KL charges `log(1/π̂)` for
   every response a well-generalizing learner happens not to cover, and that
   charge is unbounded; the coverage profile charges at most the missing mass
   itself. Sequence-level KL therefore grows linearly in sequence length where
@@ -27,22 +30,22 @@ summary: >-
   it optimizes the loss on the screen.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpkxz0v — Proposed, and the practice this account
+<!-- inactive-ok-file: SOTA-284 — Proposed, and the practice this account
      explains; naming it in the `explains` table is the relation, not a claim
      that either is settled -->
 
-# THEORY-tmp16mrv: Cross-entropy pays an unbounded price for mass a learner never had, and that price grows with sequence length — which is why it drifts from what post-training needs
+# THEORY-043: Cross-entropy pays an unbounded price for mass a learner never had, and that price grows with sequence length — which is why it drifts from what post-training needs
 
 ## Source
 
 Chen, Huang, Golowich, Malladi, Block, Ash, Krishnamurthy and Foster (2025),
-[LIT-tmpkyvap](../literature.d/LIT-tmpkyvap.md) — read as [NOTE-tmpxy07e](../notes.d/NOTE-tmpxy07e.md).
+[LIT-474](../literature.d/LIT-474.md) — read as [NOTE-223](../notes.d/NOTE-223.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-tmpkxz0v](../practices.d/SOTA-tmpkxz0v.md) | select the post-training checkpoint on coverage, not validation cross-entropy | two metrics that agree until missing mass and sequence length pull them apart, which is exactly where the interesting checkpoints are |
+| [SOTA-284](../practices.d/SOTA-284.md) | select the post-training checkpoint on coverage, not validation cross-entropy | two metrics that agree until missing mass and sequence length pull them apart, which is exactly where the interesting checkpoints are |
 | [SOTA-210](../practices.d/SOTA-210.md) | report pass@k as well as pass@1 | pass@k is an estimator of the quantity that actually gates post-training, and pass@1 is not |
 
 ## The account

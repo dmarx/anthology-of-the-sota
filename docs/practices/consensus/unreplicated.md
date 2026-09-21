@@ -6,7 +6,7 @@
 
 **One source** — one group, one result — nobody has agreed or disagreed yet, which is not the same as contested, where people looked and differed.
 
-62 of 283 SOTA documents. Back to the [full index](../README.md).
+63 of 284 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -72,3 +72,4 @@
 | [SOTA-271](../../../record/practices.d/SOTA-271.md) | Train on a second modality even when the target is single-modality | Huh et al. (2024), [LIT-458](../../../record/literature.d/LIT-458.md) — if representations converge on a modality-agnostic model of what generated the data, then data from any modality helps find it. The vision direction is already common practice; the language direction is not, and the paper cites a case where adding image data improved text performance. | Proposed |
 | [SOTA-282](../../../record/practices.d/SOTA-282.md) | Put every matrix and hidden state on the unit hypersphere, and make each block's residual step size a learned per-dimension parameter |  | Proposed |
 | [SOTA-283](../../../record/practices.d/SOTA-283.md) | To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it |  | Proposed |
+| [SOTA-284](../../../record/practices.d/SOTA-284.md) | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |  | Proposed |

@@ -6,7 +6,7 @@
 
 **Adaptation and tuning** — taking a trained model somewhere new — fine-tuning and transfer, preference training and safety alignment, parameter-efficient adaptation, context extension.
 
-19 of 283 SOTA documents. Back to the [full index](../README.md).
+20 of 284 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -29,3 +29,4 @@
 | [SOTA-235](../../../record/practices.d/SOTA-235.md) v3 | Update the weights at inference on the test instance when the task is structurally novel | Akyürek et al. (2024), [LIT-379](../../../record/literature.d/LIT-379.md) — [ARXIV-2411.07279](https://arxiv.org/abs/2411.07279). Build a loss from the test instance's own in-context examples, take gradient steps at inference, then discard the update. Up to 6x a fine-tuned baseline on ARC-AGI (53.0% at 8B) and +7.3 points on BIG-Bench Hard at 10-shot. The examples are worth several times more as gradient than as context. | Active |
 | [SOTA-279](../../../record/practices.d/SOTA-279.md) | Put worked reasoning steps in the few-shot exemplars when the task needs more than one step, and only once the model is large enough | Wei et al. (2022), [LIT-467](../../../record/literature.d/LIT-467.md) — eight exemplars carrying worked steps more than doubled PaLM 540B on GSM8K, beating a fine-tuned model with a verifier. Three ablations rule out the equation, the extra tokens and knowledge activation. Below ~100B it does nothing or hurts. | Active |
 | [SOTA-283](../../../record/practices.d/SOTA-283.md) | To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it |  | Proposed |
+| [SOTA-284](../../../record/practices.d/SOTA-284.md) | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |  | Proposed |

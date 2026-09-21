@@ -1,5 +1,8 @@
 ---
+number: 284
 status: Proposed
+formerly:
+- SOTA-tmpkxz0v
 promote_when: >-
   A run where the choice was made and paid off: candidate checkpoints from a
   real pre-training or mid-training run, selected by a coverage estimate and
@@ -21,24 +24,24 @@ tags:
 - adaptation-and-tuning
 date: '2026-09-21'
 source:
-- LIT-tmpkyvap
+- LIT-474
 introduced_by:
-- LIT-tmpkyvap
+- LIT-474
 implementations: []
 explained_by:
-- THEORY-tmp16mrv
+- THEORY-043
 ---
 
-<!-- inactive-ok-file: THEORY-tmp16mrv — Proposed, and the account this practice
+<!-- inactive-ok-file: THEORY-043 — Proposed, and the account this practice
      declares as its explanation. Both are Proposed on the same single
      theoretical source, which is the state being recorded -->
 
-# SOTA-tmpkxz0v: Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy
+# SOTA-284: Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy
 
 ## Source
 
 Chen, Huang, Golowich, Malladi, Block, Ash, Krishnamurthy and Foster (2025),
-[LIT-tmpkyvap](../literature.d/LIT-tmpkyvap.md) — read as [NOTE-tmpxy07e](../notes.d/NOTE-tmpxy07e.md). Theory, with a
+[LIT-474](../literature.d/LIT-474.md) — read as [NOTE-223](../notes.d/NOTE-223.md). Theory, with a
 graph-reasoning task as illustration.
 
 ## The claim
@@ -54,7 +57,7 @@ systematically**, and the source shows them doing so during a single training
 run: KL improves monotonically while the coverage profile *degrades*, and at
 large `N` the coverage profile is the better predictor of Best-of-N
 performance while cross-entropy can be anti-correlated with it.
-[THEORY-tmp16mrv](../theory.d/THEORY-tmp16mrv.md) is why.
+[THEORY-043](../theory.d/THEORY-043.md) is why.
 
 ## What to do instead
 

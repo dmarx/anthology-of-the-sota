@@ -1,0 +1,120 @@
+---
+status: Active
+title: The Pages workflow declines a permission the repository grants
+version: 1
+tags:
+- record
+- ci
+date: '2026-09-21'
+summary: >-
+  The `github-pages` environment was widened to allow deployment from any
+  `claude/*` branch. The workflow now gates publishing on `main` in two
+  places and leaves that permission unspent, held for a branch preview
+  nobody has needed yet. `deploy` names the branch rather than excluding an
+  event — the old `!= 'pull_request'` was a deny-list of one entry that a
+  `workflow_dispatch` walked past — and the `pull_request` trigger is gone,
+  which costs the automatic proof that the site still builds. Rejected:
+  revoking the environment policy instead, and gating `build` as well.
+---
+
+# ADR-tmpefbhq: The Pages workflow declines a permission the repository grants
+
+## Context
+
+The `github-pages` environment's deployment branch policy was widened to
+admit any branch matching `claude/*` alongside `main`. That is a repository
+setting; no file in the repository records it, and nothing in the repository
+changed when it was made.
+
+What it changed is what the existing workflow is *allowed* to do. `Pages` had
+two publishing paths and gated only one of them:
+
+- `workflow_run` was already filtered `branches: [main]`, so a Docs completion
+  on a branch never reached it.
+- `workflow_dispatch` takes no branch filter at all. A manual dispatch runs on
+  whatever ref it is dispatched from, and `deploy`'s condition was
+  `if: github.event_name != 'pull_request'` — a deny-list with one entry,
+  which a dispatch is not.
+
+Before the widening, that path failed at the environment's branch policy: the
+job started and GitHub refused it. After the widening it would succeed, and
+publish the dispatching branch's tree over the site. Pages has no rollback
+except re-running the deploy from `main`, so the failure mode is a published
+site that silently disagrees with the record until someone notices.
+
+The permission itself is wanted — a branch preview is a reasonable thing to
+want, and the day one is needed the policy is already in place. It is just not
+needed yet, and a permission held open is spent by the first thing that
+happens to reach it.
+
+## Decision
+
+Gate publishing on `main`, in the workflow, twice, and leave the permission
+unspent.
+
+1. **`deploy` names the branch instead of excluding an event.** The condition
+   is now an allow-list of two exact cases: a `workflow_run` whose
+   `head_branch` is `main`, or a `workflow_dispatch` whose `github.ref` is
+   `refs/heads/main`. The two events are checked separately because they
+   report the branch in different places — a `workflow_run` run's own
+   `github.ref` is not the triggering run's branch, and `head_branch` is.
+   This duplicates the `branches: [main]` filter on the trigger, deliberately:
+   the trigger filter and the job condition guard different events, and the
+   one that was missing is the one that mattered.
+
+2. **The `pull_request` trigger is removed.** `Pages` no longer runs on pull
+   requests at all.
+
+3. **`build` is not gated.** A `workflow_dispatch` from any branch still
+   builds the site and uploads the artifact; it just cannot publish it. The
+   asymmetry is the point: proving the site builds is useful from anywhere,
+   and publishing is not.
+
+The load-bearing detail is (1), not (2). (2) is a narrowing of surface; (1) is
+the correctness fix, and it is what makes (2) cheap to reverse.
+
+## Alternatives considered
+
+- **Gate `deploy` only, and keep the `pull_request` trigger.** This closes the
+  hole completely — the pull-request path never deployed, and after (1) it
+  could not if it tried. It lost on the instruction, which was to gate the
+  workflow rather than the job, and on the observation that `docs-check`
+  already covers pull-request *correctness* against sources. It did not lose
+  on merit, and the cost of not taking it is recorded under Consequences.
+- **Revoke the environment's branch policy instead.** The most direct fix, and
+  the one with no record: the policy lives in repository settings, so
+  revoking it leaves nothing a reader of this repository can see, and
+  re-granting it means the settings UI again. Declining the permission in the
+  workflow is a diff, is reviewable, and is where somebody looking at the
+  workflow will find it.
+- **Gate `build` as well, or drop `workflow_dispatch`.** Either removes the
+  last way to prove the site builds from a branch, which is precisely what the
+  `pull_request` trigger was there for. Having removed that trigger, removing
+  its replacement too would leave the site's buildability unverified until a
+  merge.
+- **Status quo.** One manual dispatch from a `claude/*` branch publishes that
+  branch over the site, with no error and no obvious signal. The widened
+  policy makes this a matter of someone clicking "Run workflow" on the wrong
+  ref.
+
+## Consequences
+
+- Two gates, both naming `main`, and neither trusting an event name to stand
+  in for a branch.
+- **The permission is granted and unused, and this decision is why.** That is
+  the state most likely to be "tidied up" by a future reader — either by
+  revoking a policy somebody wanted, or by reaching for it because it is
+  there. Both now have somewhere to read first.
+- **Pull requests no longer prove the site builds.** `docs-check` still runs
+  on every pull request and still lints the sources, so nothing about record
+  *correctness* is lost. What is lost is automatic: a change that breaks
+  `luria site` now surfaces on the post-merge Pages run rather than in review.
+  A `workflow_dispatch` from the branch is the pre-merge check, and it has to
+  be remembered — which is a worse check than one that runs itself, and the
+  honest cost of this decision.
+- **Restoring the pull-request build is one line** (`pull_request:` under
+  `on:`) and is safe in a way it was not before, because `deploy` now refuses
+  a branch on its own terms rather than by naming the one event it declines.
+- When the branch preview is wanted, this decision is what to supersede — the
+  policy will already allow it, and the change is to the allow-list in
+  `deploy`, in the open.

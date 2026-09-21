@@ -6,8 +6,8 @@
 
 **Deployment and society** — what a system does once it is running among people, and how anyone outside it could find out — audits of deployed platforms and recommenders, information ecosystems, moderation and governance, and the access problems and funding pressures of studying any of it from the outside.
 
-0 of 414 LIT documents. Back to the [full index](../README.md).
+1 of 415 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [LIT-480](../../../record/literature.d/LIT-480.md) | Auditing Political Exposure Bias: Algorithmic Amplification on Twitter/X During the 2024 U.S. Presidential Election | Ye, Luceri and Ferrara (2024), [ARXIV-2411.01852](https://arxiv.org/abs/2411.01852). 120 sock-puppet accounts, six weeks, 9.79M tweets from Twitter/X's "For You" timeline. The method is the transferable part: puppets that **never interact**, follow sets controlled to the subject, and exposure weighted by rank rather than counted. Accounts following nobody get the *most* diverse recommendations, so personalization concentrates rather than broadens. | Active |

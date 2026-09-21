@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**122 document(s) awaiting a decision.**
+**124 document(s) awaiting a decision.**
 
 ## SOTAs
 
-82 of the 122.
+83 of the 124.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -93,12 +93,13 @@
 | 2026-09-21 | Proposed | [SOTA-289](../../record/practices.d/SOTA-289.md) | 2 | 0 | When the sampling budget is small, prefer uniform-state discrete diffusion with consistency distillation — masked diffusion cannot revise what it has already emitted |
 | 2026-09-21 | Proposed | [SOTA-284](../../record/practices.d/SOTA-284.md) | 1 | 0 | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |
 | 2026-09-21 | Proposed | [SOTA-286](../../record/practices.d/SOTA-286.md) | 1 | 0 | To find a model that generalizes badly where its outputs look fine, measure how much of parameter space behaves the way it does |
+| 2026-09-21 | Proposed | [SOTA-290](../../record/practices.d/SOTA-290.md) | 1 | 0 | To measure what a deployed recommender does, use sock-puppets that never interact, follow sets curated to your question, and exposure weighted by rank |
 | 2026-09-21 | Proposed | [SOTA-287](../../record/practices.d/SOTA-287.md) | 0 | 0 | If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input |
 | 2026-09-21 | Proposed | [SOTA-288](../../record/practices.d/SOTA-288.md) | 0 | 0 | Late in training, replicate a small subset of the weights, train the copies against shared base weights, and average the subset back into one model |
 
 ## THEORYs
 
-21 of the 122.
+22 of the 124.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -122,11 +123,12 @@
 | 2026-09-21 | Proposed | [THEORY-045](../../record/theory.d/THEORY-045.md) | 2 | 0 | How much of parameter space behaves like your trained network is a description length, and the better-generalizing network occupies more of it |
 | 2026-09-21 | Proposed | [THEORY-043](../../record/theory.d/THEORY-043.md) | 1 | 0 | Cross-entropy pays an unbounded price for mass a learner never had, and that price grows with sequence length — which is why it drifts from what post-training needs |
 | 2026-09-21 | Proposed | [THEORY-044](../../record/theory.d/THEORY-044.md) | 1 | 0 | Dropout early in training buys a biased gradient estimate with much less directional variance, and the trade is favourable until it is not |
+| 2026-09-21 | Proposed | [THEORY-047](../../record/theory.d/THEORY-047.md) | 1 | 0 | Personalizing a feed concentrates what it shows rather than broadening it, and a handful of moderate signals is enough to start |
 | 2026-09-21 | Proposed | [THEORY-041](../../record/theory.d/THEORY-041.md) | 0 | 0 | Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing |
 
 ## LITs
 
-3 of the 122.
+3 of the 124.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -136,7 +138,7 @@
 
 ## ADRs
 
-16 of the 122.
+16 of the 124.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

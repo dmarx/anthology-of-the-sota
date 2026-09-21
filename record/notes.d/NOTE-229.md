@@ -1,6 +1,9 @@
 ---
+number: 229
 status: Read
-paper: LIT-tmpq6fna
+formerly:
+- NOTE-tmpz4t8g
+paper: LIT-480
 title: 'Auditing Political Exposure Bias'
 version: 1
 date: '2026-09-21'
@@ -11,7 +14,7 @@ summary: >-
   result is that the arm following nobody gets the most diverse timeline.
 ---
 
-# NOTE-tmpz4t8g: Auditing Political Exposure Bias
+# NOTE-229: Auditing Political Exposure Bias
 
 ## Contribution
 

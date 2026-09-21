@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-13 of 289 SOTA documents. Back to the [full index](../README.md).
+14 of 290 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -23,3 +23,4 @@
 | [SOTA-278](../../../record/practices.d/SOTA-278.md) | Before reporting that a model cannot do something, rule out the evaluation | Hu and Frank (2024), [LIT-465](../../../record/literature.d/LIT-465.md) — the same capacity asked two ways scores differently, and the gap widens as the model weakens. Lawsen (2025), [LIT-463](../../../record/literature.d/LIT-463.md), is the worked example: an output cap, a scorer that cannot express refusal, and instances with no solution. | Active |
 | [SOTA-284](../../../record/practices.d/SOTA-284.md) | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |  | Proposed |
 | [SOTA-286](../../../record/practices.d/SOTA-286.md) | To find a model that generalizes badly where its outputs look fine, measure how much of parameter space behaves the way it does |  | Proposed |
+| [SOTA-290](../../../record/practices.d/SOTA-290.md) | To measure what a deployed recommender does, use sock-puppets that never interact, follow sets curated to your question, and exposure weighted by rank |  | Proposed |

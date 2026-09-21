@@ -1,5 +1,8 @@
 ---
+number: 47
 status: Proposed
+formerly:
+- THEORY-tmp0qzbq
 promote_when: >-
   The no-follow-is-most-diverse ordering measured on a second platform, by a
   group unconnected to this one. That would make "personalization
@@ -13,33 +16,33 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpq6fna
+- LIT-480
 explains:
-- SOTA-tmpxtcgk
+- SOTA-290
 summary: >-
-  Ye, Luceri and Ferrara (2024), [LIT-tmpq6fna](../literature.d/LIT-tmpq6fna.md) — across four arms of
+  Ye, Luceri and Ferrara (2024), [LIT-480](../literature.d/LIT-480.md) — across four arms of
   an audit, the accounts following **nobody** receive the most diverse
   recommendations and the partisan arms the least. Ten moderate media follows
   and four political accounts are enough to amplify aligned voices more than
   50% above a balanced baseline.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpxtcgk — Proposed, and the practice this account
+<!-- inactive-ok-file: SOTA-290 — Proposed, and the practice this account
      explains; naming it in the `explains` table is the relation, not a claim that
      either is settled -->
 
-# THEORY-tmp0qzbq: Personalizing a feed concentrates what it shows rather than broadening it, and a handful of moderate signals is enough to start
+# THEORY-047: Personalizing a feed concentrates what it shows rather than broadening it, and a handful of moderate signals is enough to start
 
 ## Source
 
-Ye, Luceri and Ferrara (2024), [LIT-tmpq6fna](../literature.d/LIT-tmpq6fna.md) — read as
-[NOTE-tmpz4t8g](../notes.d/NOTE-tmpz4t8g.md).
+Ye, Luceri and Ferrara (2024), [LIT-480](../literature.d/LIT-480.md) — read as
+[NOTE-229](../notes.d/NOTE-229.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-tmpxtcgk](../practices.d/SOTA-tmpxtcgk.md) | include an arm that follows nobody | not a control that reports the null, but the arm that carries the finding — the ordering across arms is the measurement |
+| [SOTA-290](../practices.d/SOTA-290.md) | include an arm that follows nobody | not a control that reports the null, but the arm that carries the finding — the ordering across arms is the measurement |
 
 ## The account
 

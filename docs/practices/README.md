@@ -58,8 +58,8 @@ code and run `luria link --fix`.
 **[Representation and encoding](tags/representation-and-encoding.md)** (10) — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them:
 [007](../../record/practices.d/SOTA-007.md) · [063](../../record/practices.d/SOTA-063.md) · [151](../../record/practices.d/SOTA-151.md) · [153](../../record/practices.d/SOTA-153.md) · [179](../../record/practices.d/SOTA-179.md) · [187](../../record/practices.d/SOTA-187.md) · [247](../../record/practices.d/SOTA-247.md) · [250](../../record/practices.d/SOTA-250.md) · [271](../../record/practices.d/SOTA-271.md) · [273](../../record/practices.d/SOTA-273.md)
 
-**[Analysis and evaluation](tags/analysis-and-evaluation.md)** (13) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
-[194](../../record/practices.d/SOTA-194.md) · [196](../../record/practices.d/SOTA-196.md) · [197](../../record/practices.d/SOTA-197.md) · [200](../../record/practices.d/SOTA-200.md) · [210](../../record/practices.d/SOTA-210.md) · [241](../../record/practices.d/SOTA-241.md) · [245](../../record/practices.d/SOTA-245.md) · [246](../../record/practices.d/SOTA-246.md) · [256](../../record/practices.d/SOTA-256.md) · [270](../../record/practices.d/SOTA-270.md) · [278](../../record/practices.d/SOTA-278.md) · [284](../../record/practices.d/SOTA-284.md) · [286](../../record/practices.d/SOTA-286.md)
+**[Analysis and evaluation](tags/analysis-and-evaluation.md)** (14) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
+[194](../../record/practices.d/SOTA-194.md) · [196](../../record/practices.d/SOTA-196.md) · [197](../../record/practices.d/SOTA-197.md) · [200](../../record/practices.d/SOTA-200.md) · [210](../../record/practices.d/SOTA-210.md) · [241](../../record/practices.d/SOTA-241.md) · [245](../../record/practices.d/SOTA-245.md) · [246](../../record/practices.d/SOTA-246.md) · [256](../../record/practices.d/SOTA-256.md) · [270](../../record/practices.d/SOTA-270.md) · [278](../../record/practices.d/SOTA-278.md) · [284](../../record/practices.d/SOTA-284.md) · [286](../../record/practices.d/SOTA-286.md) · [290](../../record/practices.d/SOTA-290.md)
 
 **[Generative modeling](tags/generative-modeling.md)** (10) — diffusion, samplers, text-to-image, conditioning and control:
 [203](../../record/practices.d/SOTA-203.md) · [206](../../record/practices.d/SOTA-206.md) · [207](../../record/practices.d/SOTA-207.md) · [232](../../record/practices.d/SOTA-232.md) · [262](../../record/practices.d/SOTA-262.md) · [263](../../record/practices.d/SOTA-263.md) · [264](../../record/practices.d/SOTA-264.md) · [265](../../record/practices.d/SOTA-265.md) · [266](../../record/practices.d/SOTA-266.md) · [289](../../record/practices.d/SOTA-289.md)
@@ -70,14 +70,15 @@ code and run `luria link --fix`.
 **[Multimodal learning](tags/multimodal-learning.md)** (2) — what changes when one model has to take in more than one kind of signal — joint architectures and fusion, contrastive image-text training, cross-modal transfer, and what a second modality buys the first:
 [262](../../record/practices.d/SOTA-262.md) · [271](../../record/practices.d/SOTA-271.md)
 
-**[Deployment and society](tags/deployment-and-society.md)** (0) — what a system does once it is running among people, and how anyone outside it could find out — audits of deployed platforms and recommenders, information ecosystems, moderation and governance, and the access problems and funding pressures of studying any of it from the outside.
+**[Deployment and society](tags/deployment-and-society.md)** (1) — what a system does once it is running among people, and how anyone outside it could find out — audits of deployed platforms and recommenders, information ecosystems, moderation and governance, and the access problems and funding pressures of studying any of it from the outside:
+[290](../../record/practices.d/SOTA-290.md)
 
 **[Tiny models](tags/tiny-models.md)** (8) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts:
 [121](../../record/practices.d/SOTA-121.md) · [122](../../record/practices.d/SOTA-122.md) · [123](../../record/practices.d/SOTA-123.md) · [124](../../record/practices.d/SOTA-124.md) · [125](../../record/practices.d/SOTA-125.md) · [126](../../record/practices.d/SOTA-126.md) · [127](../../record/practices.d/SOTA-127.md) · [128](../../record/practices.d/SOTA-128.md)
 
-**By consensus:** [Not judged](consensus/unassessed.md) (143, the default) · [One source](consensus/unreplicated.md) (68) · [In dispute](consensus/contested.md) (10) · [Spreading](consensus/emerging.md) (38) · [Agreed](consensus/converged.md) (20) · [Assumed](consensus/universal.md) (10)
+**By consensus:** [Not judged](consensus/unassessed.md) (143, the default) · [One source](consensus/unreplicated.md) (69) · [In dispute](consensus/contested.md) (10) · [Spreading](consensus/emerging.md) (38) · [Agreed](consensus/converged.md) (20) · [Assumed](consensus/universal.md) (10)
 
-**By status:** [Current practice](status/Active.md) (178) · [Promising](status/Proposed.md) (82) · [Not yet judged](status/Deferred.md) (0) · [Replaced](status/Superseded.md) (11) · [Retired](status/Rejected.md) (18)
+**By status:** [Current practice](status/Active.md) (178) · [Promising](status/Proposed.md) (83) · [Not yet judged](status/Deferred.md) (0) · [Replaced](status/Superseded.md) (11) · [Retired](status/Rejected.md) (18)
 
 ## Chronological
 
@@ -382,4 +383,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [SOTA-287](../../record/practices.d/SOTA-287.md) | If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input |  | Proposed |
 | [SOTA-288](../../record/practices.d/SOTA-288.md) | Late in training, replicate a small subset of the weights, train the copies against shared base weights, and average the subset back into one model |  | Proposed |
 | [SOTA-289](../../record/practices.d/SOTA-289.md) | When the sampling budget is small, prefer uniform-state discrete diffusion with consistency distillation — masked diffusion cannot revise what it has already emitted |  | Proposed |
+| [SOTA-290](../../record/practices.d/SOTA-290.md) | To measure what a deployed recommender does, use sock-puppets that never interact, follow sets curated to your question, and exposure weighted by rank |  | Proposed |
 

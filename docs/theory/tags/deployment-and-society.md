@@ -6,8 +6,8 @@
 
 **Deployment and society** — what a system does once it is running among people, and how anyone outside it could find out — audits of deployed platforms and recommenders, information ecosystems, moderation and governance, and the access problems and funding pressures of studying any of it from the outside.
 
-0 of 46 THEORY documents. Back to the [full index](../README.md).
+1 of 47 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [THEORY-047](../../../record/theory.d/THEORY-047.md) | Personalizing a feed concentrates what it shows rather than broadening it, and a handful of moderate signals is enough to start | Ye, Luceri and Ferrara (2024), [LIT-480](../../../record/literature.d/LIT-480.md) — across four arms of an audit, the accounts following **nobody** receive the most diverse recommendations and the partisan arms the least. Ten moderate media follows and four political accounts are enough to amplify aligned voices more than 50% above a balanced baseline. | Proposed |

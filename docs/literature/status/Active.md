@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-398 of 414 LIT documents. Back to the [full index](../README.md).
+399 of 415 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -408,3 +408,4 @@
 | [LIT-477](../../../record/literature.d/LIT-477.md) | NoProp: Training Neural Networks without Full Back-propagation or Full Forward-propagation | Li, Teh and Pascanu (2025), [ARXIV-2503.24322](https://arxiv.org/abs/2503.24322). Train each block independently to denoise a noisy *label* embedding given the raw input — diffusion machinery pointed at a classifier. No forward or backward pass across the network at training time, about half the GPU memory, and test accuracy matching backprop on MNIST and CIFAR-10. Every block sees the input, which is what makes independence possible and what makes the comparison awkward. | Active |
 | [LIT-478](../../../record/literature.d/LIT-478.md) | Neural networks with late-phase weights | von Oswald, Kobayashi, Meulemans, Henning, Grewe and Sacramento (2020), [ARXIV-2007.12927](https://arxiv.org/abs/2007.12927). Late in training, replicate a *small* subset of the weights — BatchNorm's scale and shift will do — train `K` copies that share everything else, and average them into one model at the end. Inference cost unchanged. WRN 28-10 on CIFAR-100: 81.35 → 82.87. Starting the same procedure at initialization instead **fails to beat the baseline**. | Active |
 | [LIT-479](../../../record/literature.d/LIT-479.md) | The Diffusion Duality | Sahoo, Deschenaux, Gokaslan, Wang, Chiu and Kuleshov (2025), [ARXIV-2506.10892](https://arxiv.org/abs/2506.10892). Uniform-state discrete diffusion is the `argmax` of a Gaussian diffusion, which lets Gaussian techniques transfer: a variance-reducing curriculum doubles training speed, and consistency distillation cuts sampling from 1024 steps to 8. Masked diffusion still wins on likelihood; this wins in the few-step regime, where masked models cannot revise what they have already emitted. | Active |
+| [LIT-480](../../../record/literature.d/LIT-480.md) | Auditing Political Exposure Bias: Algorithmic Amplification on Twitter/X During the 2024 U.S. Presidential Election | Ye, Luceri and Ferrara (2024), [ARXIV-2411.01852](https://arxiv.org/abs/2411.01852). 120 sock-puppet accounts, six weeks, 9.79M tweets from Twitter/X's "For You" timeline. The method is the transferable part: puppets that **never interact**, follow sets controlled to the subject, and exposure weighted by rank rather than counted. Accounts following nobody get the *most* diverse recommendations, so personalization concentrates rather than broadens. | Active |

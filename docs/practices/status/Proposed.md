@@ -6,7 +6,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-82 of 289 SOTA documents. Back to the [full index](../README.md).
+83 of 290 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -92,3 +92,4 @@
 | [SOTA-287](../../../record/practices.d/SOTA-287.md) | If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input |  | Proposed |
 | [SOTA-288](../../../record/practices.d/SOTA-288.md) | Late in training, replicate a small subset of the weights, train the copies against shared base weights, and average the subset back into one model |  | Proposed |
 | [SOTA-289](../../../record/practices.d/SOTA-289.md) | When the sampling budget is small, prefer uniform-state discrete diffusion with consistency distillation — masked diffusion cannot revise what it has already emitted |  | Proposed |
+| [SOTA-290](../../../record/practices.d/SOTA-290.md) | To measure what a deployed recommender does, use sock-puppets that never interact, follow sets curated to your question, and exposure weighted by rank |  | Proposed |

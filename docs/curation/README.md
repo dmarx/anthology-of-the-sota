@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [21 Sep 15:30 — The arm that was supposed to be the control turned out to be the finding](2026-09.md#the-arm-that-was-supposed-to-be-the-control-turned-out-to-be-the-finding)
 - [21 Sep 15:21 — Six rejections and two additions, and the rejections took longer](2026-09.md#six-rejections-and-two-additions-and-the-rejections-took-longer)
 - [21 Sep 15:10 — Three families in one session, all of them arriving as somebody else's baselines](2026-09.md#three-families-in-one-session-all-of-them-arriving-as-somebody-elses-baselines)
 - [21 Sep 14:59 — Three ablations that each make the claim smaller, all of them run by the authors](2026-09.md#three-ablations-that-each-make-the-claim-smaller-all-of-them-run-by-the-authors)
@@ -143,9 +144,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-136 entries across 2 books, newest first.
+137 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 134 | 2026-09-05 | 2026-09-21 |
+| [2026-09](2026-09.md) | 135 | 2026-09-05 | 2026-09-21 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

@@ -6,8 +6,8 @@
 
 **Deployment and society** — what a system does once it is running among people, and how anyone outside it could find out — audits of deployed platforms and recommenders, information ecosystems, moderation and governance, and the access problems and funding pressures of studying any of it from the outside.
 
-0 of 289 SOTA documents. Back to the [full index](../README.md).
+1 of 290 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [SOTA-290](../../../record/practices.d/SOTA-290.md) | To measure what a deployed recommender does, use sock-puppets that never interact, follow sets curated to your question, and exposure weighted by rank |  | Proposed |

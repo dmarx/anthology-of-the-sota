@@ -1,5 +1,8 @@
 ---
+number: 290
 status: Proposed
+formerly:
+- SOTA-tmpxtcgk
 promote_when: >-
   The design applied to a different platform by a group unconnected to this
   one, with the non-interaction choice and the rank weighting carried over and
@@ -20,24 +23,24 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpq6fna
+- LIT-480
 introduced_by:
-- LIT-tmpq6fna
+- LIT-480
 implementations: []
 explained_by:
-- THEORY-tmp0qzbq
+- THEORY-047
 ---
 
-<!-- inactive-ok-file: THEORY-tmp0qzbq — Proposed, and the account this practice
+<!-- inactive-ok-file: THEORY-047 — Proposed, and the account this practice
      declares as its explanation. Both rest on one six-week audit of one platform,
      which is the state being recorded -->
 
-# SOTA-tmpxtcgk: To measure what a deployed recommender does, use sock-puppets that never interact, follow sets curated to your question, and exposure weighted by rank
+# SOTA-290: To measure what a deployed recommender does, use sock-puppets that never interact, follow sets curated to your question, and exposure weighted by rank
 
 ## Source
 
-Ye, Luceri and Ferrara (2024), [LIT-tmpq6fna](../literature.d/LIT-tmpq6fna.md) — read as
-[NOTE-tmpz4t8g](../notes.d/NOTE-tmpz4t8g.md). 120 accounts, six weeks, 9.79M tweets from
+Ye, Luceri and Ferrara (2024), [LIT-480](../literature.d/LIT-480.md) — read as
+[NOTE-229](../notes.d/NOTE-229.md). 120 accounts, six weeks, 9.79M tweets from
 Twitter/X's "For You" timeline.
 
 ## When this applies
@@ -83,7 +86,7 @@ VPN so location does not vary.
 
 The most useful result in the source comes from the arm designed as a control.
 Accounts following nobody receive the **most diverse** recommendations of any
-group, which is what [THEORY-tmp0qzbq](../theory.d/THEORY-tmp0qzbq.md) is about, and it is the only arm
+group, which is what [THEORY-047](../theory.d/THEORY-047.md) is about, and it is the only arm
 that measures what a new user gets before personalization starts.
 
 It is also the arm that shows the system's defaults, which is usually the

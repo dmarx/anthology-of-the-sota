@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-236 of 239 NOTE documents. Back to the [full index](../README.md).
+237 of 240 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -246,3 +246,4 @@
 | [NOTE-237](../../../record/notes.d/NOTE-237.md) | gen2seg | Read as the counter-route to SAM's data engine. The headline (narrow finetuning, broad generalization) is well evidenced but the argument lives in the controls, which are unusually good: the same backbone under a conventional head scores ~1.5 mIoU, and swapping only the decoder recovers part of the gap. | Read |
 | [NOTE-238](../../../record/notes.d/NOTE-238.md) | PHi: prediction of hidden states | Read for the instrument. The diagnosis of next-token loss is clean and the boring/interesting separation is convincing on two architectures. The reasoning-selection result is weaker than the abstract implies, and the paper says so itself in a sentence most readers will pass over: picking by next-token loss alone already scores 71%. | Read |
 | [NOTE-239](../../../record/notes.d/NOTE-239.md) | Denoising-corrected gradient guidance | Read for a practice the record's diffusion line was missing. The ordering change is well motivated and cheaply adopted; the theory is proved under idealized assumptions the authors name; and the useful experimental result is that the standard method was optimizing the plan rather than the executed outcome. | Read |
+| [NOTE-240](../../../record/notes.d/NOTE-240.md) | Noise hypernetworks | Read as the amortized counterpart to `SOTA-301`. The headline — recover half of test-time optimization at 1/100th the latency — is well measured. The finding that carries further is the control: direct reward fine-tuning of the same model makes it worse, and worse the more steps you sample. | Read |

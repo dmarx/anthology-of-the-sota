@@ -1,5 +1,8 @@
 ---
+number: 54
 status: Proposed
+formerly:
+- THEORY-tmpq2xg2
 promote_when: >-
   The bound shown to hold where it is used — a measurement that the noise-space
   `L2` penalty actually tracks the data-space KL over a real training run,
@@ -16,33 +19,33 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpksq2o
+- LIT-491
 explains:
-- SOTA-tmplndwz
+- SOTA-302
 summary: >-
-  Eyring et al. (2025), [LIT-tmpksq2o](../literature.d/LIT-tmpksq2o.md) — the KL to the base model needs
+  Eyring et al. (2025), [LIT-491](../literature.d/LIT-491.md) — the KL to the base model needs
   Jacobian determinants through the generator and is intractable in data
   space. Posed over the *input noise* it reduces, under a Lipschitz condition,
   to an `L2` penalty on the modification, and the data processing inequality
   makes that an upper bound on the data-space divergence.
 ---
 
-<!-- inactive-ok-file: SOTA-tmplndwz — Proposed, filed in this same
+<!-- inactive-ok-file: SOTA-302 — Proposed, filed in this same
      contribution; this theory declares `explains:` on it, so the citation is
      the relation itself -->
 
-# THEORY-tmpq2xg2: The regularizer that is intractable in data space is tractable in noise space, and bounds the data-space divergence
+# THEORY-054: The regularizer that is intractable in data space is tractable in noise space, and bounds the data-space divergence
 
 ## Source
 
-Eyring, Karthik, Dosovitskiy, Ruiz and Akata (2025), [LIT-tmpksq2o](../literature.d/LIT-tmpksq2o.md) §3.1
-and Appendix A.4 — read as [NOTE-tmptc2jq](../notes.d/NOTE-tmptc2jq.md).
+Eyring, Karthik, Dosovitskiy, Ruiz and Akata (2025), [LIT-491](../literature.d/LIT-491.md) §3.1
+and Appendix A.4 — read as [NOTE-240](../notes.d/NOTE-240.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-tmplndwz](../practices.d/SOTA-tmplndwz.md) | steer a distilled generator by modulating its input noise rather than fine-tuning its weights | the choice is not stylistic and not about parameter count — it is the difference between an objective whose anchoring term can be computed and one whose cannot, which is why the weight-space version reward-hacks |
+| [SOTA-302](../practices.d/SOTA-302.md) | steer a distilled generator by modulating its input noise rather than fine-tuning its weights | the choice is not stylistic and not about parameter count — it is the difference between an objective whose anchoring term can be computed and one whose cannot, which is why the weight-space version reward-hacks |
 
 ## The account
 

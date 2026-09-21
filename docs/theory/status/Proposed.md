@@ -6,7 +6,7 @@
 
 **Offered** — stated and plausible, on evidence that is suggestive rather than settling — the document says what would settle it.
 
-27 of 53 THEORY documents. Back to the [full index](../README.md).
+28 of 54 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -37,3 +37,4 @@
 | [THEORY-051](../../../record/theory.d/THEORY-051.md) | A text feature predicts success partly by being uncommon, so a tool that gives it to everyone destroys its predictive value | Corpus et al. (2025), [LIT-487](../../../record/literature.d/LIT-487.md) — length, readability and lexical variety predicted petition success, an AI drafting tool moved all three in the successful direction and raised rated quality, and success did not follow. Inter-petition similarity rose **23%** in the same window, and the features' predictive strength weakened or reversed. | Proposed |
 | [THEORY-052](../../../record/theory.d/THEORY-052.md) | Synthesis requires equivariant representations and discriminative pretraining rewards invariant ones, which is why a generative prior groups objects it was never shown | Khangaonkar and Pirsiavash (2025), [LIT-488](../../../record/literature.d/LIT-488.md) — self-distillation and contrastive objectives explicitly reward representations that *do not change* under augmentation; instance segmentation needs representations that do. The paper's DINO control activates on objects and cannot separate their instances, which is the shape this account predicts. | Proposed |
 | [THEORY-053](../../../record/theory.d/THEORY-053.md) | The Stein posterior-mean denoiser acts as an approximate projection onto the learned data geometry | Zhang et al. (2026), [LIT-490](../../../record/literature.d/LIT-490.md) — `D(x) = E[x₀ \| x]` maps a noisy point toward the data support, and where the clean data lie on a linear subspace, inside a compact convex set, or on a compact smooth submanifold, the paper bounds its distance from the corresponding projection. The reverse process then reads as a time-varying inexact projected-gradient method rather than as sampling with a nudge. | Proposed |
+| [THEORY-054](../../../record/theory.d/THEORY-054.md) | The regularizer that is intractable in data space is tractable in noise space, and bounds the data-space divergence | Eyring et al. (2025), [LIT-491](../../../record/literature.d/LIT-491.md) — the KL to the base model needs Jacobian determinants through the generator and is intractable in data space. Posed over the *input noise* it reduces, under a Lipschitz condition, to an `L2` penalty on the modification, and the data processing inequality makes that an upper bound on the data-space divergence. | Proposed |

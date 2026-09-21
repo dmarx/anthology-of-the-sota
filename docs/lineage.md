@@ -2,7 +2,7 @@
 
 # Lines of work
 
-23 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+24 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -83,6 +83,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-447](../record/literature.d/LIT-447.md) — SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers *(Active)*
     - [LIT-449](../record/literature.d/LIT-449.md) — Scaling Rectified Flow Transformers for High-Resolution Image Synthesis *(Active)*
 - alongside: [LIT-483](../record/literature.d/LIT-483.md) — Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models *(Active)*
+
+### From Denoising as Projection: Constrained Optimization with Gradient-Guided Diffusion
+
+- alongside: [LIT-490](../record/literature.d/LIT-490.md) — Denoising as Projection: Constrained Optimization with Gradient-Guided Diffusion *(Active)*
+- alongside: [LIT-491](../record/literature.d/LIT-491.md) — Noise Hypernetworks: Amortizing Test-Time Compute in Diffusion Models *(Active)*
 
 ## in-context-learning
 

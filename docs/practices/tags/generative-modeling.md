@@ -6,7 +6,7 @@
 
 **Generative modeling** — diffusion, samplers, text-to-image, conditioning and control.
 
-11 of 301 SOTA documents. Back to the [full index](../README.md).
+12 of 302 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,3 +21,4 @@
 | [SOTA-266](../../../record/practices.d/SOTA-266.md) | Connect data and noise on a straight line, and sample the training timesteps from a logit-normal rather than uniformly | Esser et al. (2024), [LIT-449](../../../record/literature.d/LIT-449.md), and Ma et al. (2024), [LIT-447](../../../record/literature.d/LIT-447.md) — the straight-line path between data and noise beats the curved variance-preserving one at fixed architecture and compute, and the advantage is largest at few sampling steps. The timestep distribution is not a detail: rectified flow with uniform timesteps does not win, and with a logit-normal it does. | Active |
 | [SOTA-289](../../../record/practices.d/SOTA-289.md) | When the sampling budget is small, prefer uniform-state discrete diffusion with consistency distillation — masked diffusion cannot revise what it has already emitted |  | Proposed |
 | [SOTA-301](../../../record/practices.d/SOTA-301.md) | Apply the objective gradient before the denoiser, not after it, when guiding diffusion toward a task objective | Zhang et al. (2026), [LIT-490](../../../record/literature.d/LIT-490.md) — the usual recipe adds `−η∇f` after the denoising step, which walks the sample off the geometry the model learned with nothing left to pull it back. Apply the gradient to the noisy iterate first and let the denoiser follow: it acts as an approximate projection, and the sampler becomes an inexact projected-gradient method. Same cost, one line, and in trajectory planning it is the difference between a plan that looks good and one that survives execution. | Proposed |
+| [SOTA-302](../../../record/practices.d/SOTA-302.md) | Steer a distilled generator by modulating its input noise, not by fine-tuning its weights | Eyring et al. (2025), [LIT-491](../../../record/literature.d/LIT-491.md) — train a LoRA hypernetwork to predict an improved initial noise for a frozen step-distilled generator. GenEval on SANA-Sprint goes **0.70 → 0.75** for **0.1 s** of added latency, recovering about half of what 30-second test-time optimization buys. Reward fine-tuning the same model instead takes it **0.73 → 0.62**: the anchoring KL term is intractable in weight space and tractable in noise space. | Proposed |

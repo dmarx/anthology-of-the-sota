@@ -4,7 +4,7 @@
 
 **inference-optimization**.
 
-8 of 239 NOTE documents. Back to the [full index](../README.md).
+9 of 240 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -16,3 +16,4 @@
 | [NOTE-217](../../../record/notes.d/NOTE-217.md) | Self-Consistency | Sample several chains, take the majority answer. Reading it: it is a decoding change rather than a prompt change, so it composes with everything else in the topic — and it counts answers, not reasoning, so it does not make the traces trustworthy. | Read |
 | [NOTE-228](../../../record/notes.d/NOTE-228.md) | The Diffusion Duality | Reading it: the theorem is elegant and the ablation says it accounts for under half the likelihood gain. What the paper actually establishes is a regime split — masked diffusion wins on quality at many steps, uniform-state wins below about 32, and the reason is architectural rather than tuned. | Read |
 | [NOTE-235](../../../record/notes.d/NOTE-235.md) | ParScale | Read as a candidate third scaling axis. The scaling law is fitted honestly and the inference-cost analysis is better instrumented than most; the claim that carries furthest is the *asymmetry* — code benefits more than general text, on two independent measurements — and it is the claim the paper labels a conjecture. | Read |
+| [NOTE-240](../../../record/notes.d/NOTE-240.md) | Noise hypernetworks | Read as the amortized counterpart to `SOTA-301`. The headline — recover half of test-time optimization at 1/100th the latency — is well measured. The finding that carries further is the control: direct reward fine-tuning of the same model makes it worse, and worse the more steps you sample. | Read |

@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [21 Sep 17:27 — Two sides of a trade, filed an hour apart](2026-09.md#two-sides-of-a-trade-filed-an-hour-apart)
 - [21 Sep 17:19 — Three papers, three subfields, one shape](2026-09.md#three-papers-three-subfields-one-shape)
 - [21 Sep 17:10 — The number that decides the practice is in section 3.2.3](2026-09.md#the-number-that-decides-the-practice-is-in-section-323)
 - [21 Sep 17:03 — A control that scores zero, and why it is the whole paper](2026-09.md#a-control-that-scores-zero-and-why-it-is-the-whole-paper)
@@ -153,9 +154,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-146 entries across 2 books, newest first.
+147 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 144 | 2026-09-05 | 2026-09-21 |
+| [2026-09](2026-09.md) | 145 | 2026-09-05 | 2026-09-21 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

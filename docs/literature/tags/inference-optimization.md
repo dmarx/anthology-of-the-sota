@@ -6,7 +6,7 @@
 
 **Inference optimization** — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
 
-12 of 425 LIT documents. Back to the [full index](../README.md).
+13 of 426 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -22,3 +22,4 @@
 | [LIT-468](../../../record/literature.d/LIT-468.md) | Self-Consistency Improves Chain of Thought Reasoning in Language Models | Wang et al. (2022), [ARXIV-2203.11171](https://arxiv.org/abs/2203.11171). Replace greedy decoding with sample-and-marginalize: draw several reasoning paths, take the most common final answer. GSM8K +17.9, SVAMP +11.0, AQuA +12.2. The gain saturates by about five or ten samples. | Active |
 | [LIT-479](../../../record/literature.d/LIT-479.md) | The Diffusion Duality | Sahoo, Deschenaux, Gokaslan, Wang, Chiu and Kuleshov (2025), [ARXIV-2506.10892](https://arxiv.org/abs/2506.10892). Uniform-state discrete diffusion is the `argmax` of a Gaussian diffusion, which lets Gaussian techniques transfer: a variance-reducing curriculum doubles training speed, and consistency distillation cuts sampling from 1024 steps to 8. Masked diffusion still wins on likelihood; this wins in the few-step regime, where masked models cannot revise what they have already emitted. | Active |
 | [LIT-486](../../../record/literature.d/LIT-486.md) | Parallel Scaling Law for Language Models | Chen et al. (2025), [ARXIV-2505.10475](https://arxiv.org/abs/2505.10475). Run the *same* weights over `P` learnably-prefixed copies of the input and aggregate the outputs: the loss falls as if the parameter count had risen by `O(log P)`. Fitted across 0.5B–4.4B and `P = 1…8` on two corpora. At batch size 1, matching a parameter-scaled model costs **22× less added memory and 6× less added latency** — and **P× the training FLOPs**, which is the real price. | Active |
+| [LIT-491](../../../record/literature.d/LIT-491.md) | Noise Hypernetworks: Amortizing Test-Time Compute in Diffusion Models | Eyring et al. (2025), [ARXIV-2508.09968](https://arxiv.org/abs/2508.09968). Reward-guided test-time noise optimization costs 20–40 seconds a sample. Train a LoRA hypernetwork once to predict the optimized noise instead, and recover roughly half the gain at **0.1 s** of added latency — 33–300× faster. The comparison that carries it: direct reward fine-tuning of the same generator makes it **worse** (GenEval 0.73 → 0.62 at four steps), because the KL term that would stop reward-hacking is intractable in data space and tractable in noise space. | Active |

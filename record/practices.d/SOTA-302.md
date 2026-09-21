@@ -1,5 +1,8 @@
 ---
+number: 302
 status: Proposed
+formerly:
+- SOTA-tmplndwz
 promote_when: >-
   A second group aligning a generator to a reward through its input rather
   than its weights, reporting the **direct fine-tuning baseline on the same
@@ -24,14 +27,14 @@ tags:
 - inference-optimization
 date: '2026-09-21'
 source:
-- LIT-tmpksq2o
+- LIT-491
 introduced_by:
-- LIT-tmpksq2o
+- LIT-491
 implementations: []
 explained_by:
-- THEORY-tmpq2xg2
+- THEORY-054
 summary: >-
-  Eyring et al. (2025), [LIT-tmpksq2o](../literature.d/LIT-tmpksq2o.md) — train a LoRA hypernetwork to
+  Eyring et al. (2025), [LIT-491](../literature.d/LIT-491.md) — train a LoRA hypernetwork to
   predict an improved initial noise for a frozen step-distilled generator.
   GenEval on SANA-Sprint goes **0.70 → 0.75** for **0.1 s** of added latency,
   recovering about half of what 30-second test-time optimization buys. Reward
@@ -43,17 +46,17 @@ summary: >-
      the same decision, with its cost profile quoted rather than its authority
      borrowed -->
 
-<!-- inactive-ok-file: THEORY-tmpq2xg2 — Proposed, filed in this same
+<!-- inactive-ok-file: THEORY-054 — Proposed, filed in this same
      contribution, and the sentence citing it says it is why the penalty is
      the right one rather than merely convenient; the practice rests on the
      measured fine-tuning failure, not on the proof -->
 
-# SOTA-tmplndwz: Steer a distilled generator by modulating its input noise, not by fine-tuning its weights
+# SOTA-302: Steer a distilled generator by modulating its input noise, not by fine-tuning its weights
 
 ## Source
 
-Eyring, Karthik, Dosovitskiy, Ruiz and Akata (2025), [LIT-tmpksq2o](../literature.d/LIT-tmpksq2o.md) —
-[ARXIV-2508.09968](https://arxiv.org/abs/2508.09968) — read as [NOTE-tmptc2jq](../notes.d/NOTE-tmptc2jq.md).
+Eyring, Karthik, Dosovitskiy, Ruiz and Akata (2025), [LIT-491](../literature.d/LIT-491.md) —
+[ARXIV-2508.09968](https://arxiv.org/abs/2508.09968) — read as [NOTE-240](../notes.d/NOTE-240.md).
 
 ## What to do
 
@@ -68,7 +71,7 @@ modulation start as the identity, which stabilizes training and keeps the
 Lipschitz condition the objective's approximation depends on.
 
 Train by maximizing the reward minus `½‖Δ(ε)‖²`. That penalty is the whole
-anchoring mechanism, and [THEORY-tmpq2xg2](../theory.d/THEORY-tmpq2xg2.md) is why it is the right one
+anchoring mechanism, and [THEORY-054](../theory.d/THEORY-054.md) is why it is the right one
 rather than a convenient one.
 
 Training needs **no data samples** — only base noise, the frozen generator,

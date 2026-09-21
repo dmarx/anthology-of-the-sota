@@ -4,7 +4,7 @@
 
 **adaptation-and-tuning**.
 
-28 of 239 NOTE documents. Back to the [full index](../README.md).
+29 of 240 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -36,3 +36,4 @@
 | [NOTE-222](../../../record/notes.d/NOTE-222.md) | Quantized Evolution Strategies | Reading it: the memory trick is the contribution, not the error feedback. Error feedback is 1-bit SGD's, correctly credited; what is new is refusing to store the accumulator at all and rebuilding it from seeds, which is the only reason the method fits in the memory budget that motivated it. | Read |
 | [NOTE-223](../../../record/notes.d/NOTE-223.md) | The Coverage Principle | Reading it: the strongest thing here is not the theorem but the Bernoulli example, which shows KL going to infinity while coverage stays fine on a two-outcome model. That is the whole argument in four lines, and it explains why a metric everybody watches can be anti-correlated with what they want. | Read |
 | [NOTE-237](../../../record/notes.d/NOTE-237.md) | gen2seg | Read as the counter-route to SAM's data engine. The headline (narrow finetuning, broad generalization) is well evidenced but the argument lives in the controls, which are unusually good: the same backbone under a conventional head scores ~1.5 mIoU, and swapping only the decoder recovers part of the gap. | Read |
+| [NOTE-240](../../../record/notes.d/NOTE-240.md) | Noise hypernetworks | Read as the amortized counterpart to `SOTA-301`. The headline — recover half of test-time optimization at 1/100th the latency — is well measured. The finding that carries further is the control: direct reward fine-tuning of the same model makes it worse, and worse the more steps you sample. | Read |

@@ -1,6 +1,9 @@
 ---
+number: 240
 status: Read
-paper: LIT-tmpksq2o
+formerly:
+- NOTE-tmptc2jq
+paper: LIT-491
 title: 'Noise hypernetworks'
 version: 1
 date: '2026-09-21'
@@ -17,7 +20,7 @@ summary: >-
      profiles. A contrast does not wait on the contrasted document being
      settled, and both carry the same `unreplicated` standing -->
 
-# NOTE-tmptc2jq: Noise hypernetworks
+# NOTE-240: Noise hypernetworks
 
 ## Contribution
 

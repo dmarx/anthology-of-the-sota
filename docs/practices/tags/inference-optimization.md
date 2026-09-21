@@ -6,7 +6,7 @@
 
 **Inference optimization** — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
 
-15 of 301 SOTA documents. Back to the [full index](../README.md).
+16 of 302 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -25,3 +25,4 @@
 | [SOTA-289](../../../record/practices.d/SOTA-289.md) | When the sampling budget is small, prefer uniform-state discrete diffusion with consistency distillation — masked diffusion cannot revise what it has already emitted |  | Proposed |
 | [SOTA-296](../../../record/practices.d/SOTA-296.md) | Add the parallel streams in a short final training stage, not from the start | Chen et al. (2025), [LIT-486](../../../record/literature.d/LIT-486.md) — parallel scaling costs `P`× the training FLOPs, which is what would otherwise make it unaffordable. Train 1T tokens the ordinary way, then switch the streams on for **20B tokens, 2% of the budget**. The loss spikes when the random prefixes appear and recovers within **0.0002T tokens**, and the logarithmic gains in `P` are the same ones the from-scratch runs show. | Proposed |
 | [SOTA-297](../../../record/practices.d/SOTA-297.md) | Scale parallel computation with learnable input transforms, not parameters, when inference memory is the binding constraint | Chen et al. (2025), [LIT-486](../../../record/literature.d/LIT-486.md) — run the same weights over `P` learnably-prefixed copies of the input and learn the aggregation. Loss falls as if the parameters had grown by `O(log P)`; a 1.6B model at `P = 8` matches a 4.4B one on code. At batch size 1 that costs **22× less added memory and 6× less added latency** than the parameter scaling it replaces — and `P`× the training FLOPs. | Proposed |
+| [SOTA-302](../../../record/practices.d/SOTA-302.md) | Steer a distilled generator by modulating its input noise, not by fine-tuning its weights | Eyring et al. (2025), [LIT-491](../../../record/literature.d/LIT-491.md) — train a LoRA hypernetwork to predict an improved initial noise for a frozen step-distilled generator. GenEval on SANA-Sprint goes **0.70 → 0.75** for **0.1 s** of added latency, recovering about half of what 30-second test-time optimization buys. Reward fine-tuning the same model instead takes it **0.73 → 0.62**: the anchoring KL term is intractable in weight space and tractable in noise space. | Proposed |

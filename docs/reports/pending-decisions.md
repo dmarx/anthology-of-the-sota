@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**138 document(s) awaiting a decision.**
+**140 document(s) awaiting a decision.**
 
 ## SOTAs
 
-92 of the 138.
+93 of the 140.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -85,6 +85,7 @@
 | 2026-09-20 | Proposed | [SOTA-263](../../record/practices.d/SOTA-263.md) | 1 | 0 | Shift the timestep schedule when the resolution changes, because more pixels need more noise |
 | 2026-09-20 | Proposed | [SOTA-264](../../record/practices.d/SOTA-264.md) | 1 | 0 | Fix the noise schedule's endpoints against the bound and choose its shape to minimise the loss estimator's variance |
 | 2026-09-20 | Proposed | [SOTA-273](../../record/practices.d/SOTA-273.md) | 1 | 0 | Choose a pretraining context whose association with the input is neither too strong nor too weak, and mix contexts to get there |
+| 2026-09-21 | Proposed | [SOTA-301](../../record/practices.d/SOTA-301.md) | 6 | 0 | Apply the objective gradient before the denoiser, not after it, when guiding diffusion toward a task objective |
 | 2026-09-21 | Proposed | [SOTA-285](../../record/practices.d/SOTA-285.md) | 4 | 0 | Put dropout at the start of training if the model underfits, and at the end if it overfits — the schedule decides the sign, not the rate |
 | 2026-09-21 | Proposed | [SOTA-283](../../record/practices.d/SOTA-283.md) | 3 | 0 | To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it |
 | 2026-09-21 | Proposed | [SOTA-277](../../record/practices.d/SOTA-277.md) | 2 | 0 | For a task that is a sequential composition, buy depth rather than width |
@@ -99,7 +100,7 @@
 | 2026-09-21 | Proposed | [SOTA-297](../../record/practices.d/SOTA-297.md) | 1 | 0 | Scale parallel computation with learnable input transforms, not parameters, when inference memory is the binding constraint |
 | 2026-09-21 | Proposed | [SOTA-298](../../record/practices.d/SOTA-298.md) | 1 | 0 | Measure a writing assistant by the outcome it was deployed to improve, not by the text features that used to predict it |
 | 2026-09-21 | Proposed | [SOTA-299](../../record/practices.d/SOTA-299.md) | 1 | 0 | Finetune the whole generative model, encoder and decoder, for a dense perception task instead of attaching a head to a backbone |
-| 2026-09-21 | Proposed | [SOTA-301](../../record/practices.d/SOTA-301.md) | 1 | 0 | Apply the objective gradient before the denoiser, not after it, when guiding diffusion toward a task objective |
+| 2026-09-21 | Proposed | [SOTA-302](../../record/practices.d/SOTA-302.md) | 1 | 0 | Steer a distilled generator by modulating its input noise, not by fine-tuning its weights |
 | 2026-09-21 | Proposed | [SOTA-287](../../record/practices.d/SOTA-287.md) | 0 | 0 | If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input |
 | 2026-09-21 | Proposed | [SOTA-288](../../record/practices.d/SOTA-288.md) | 0 | 0 | Late in training, replicate a small subset of the weights, train the copies against shared base weights, and average the subset back into one model |
 | 2026-09-21 | Proposed | [SOTA-293](../../record/practices.d/SOTA-293.md) | 0 | 0 | Count embedding parameters when you report a tiny model's size |
@@ -108,7 +109,7 @@
 
 ## THEORYs
 
-27 of the 138.
+28 of the 140.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -138,11 +139,12 @@
 | 2026-09-21 | Proposed | [THEORY-049](../../record/theory.d/THEORY-049.md) | 1 | 0 | Modalities compete for the same feed-forward parameters, the competition is not symmetric between them, and that is where separating by modality pays |
 | 2026-09-21 | Proposed | [THEORY-052](../../record/theory.d/THEORY-052.md) | 1 | 0 | Synthesis requires equivariant representations and discriminative pretraining rewards invariant ones, which is why a generative prior groups objects it was never shown |
 | 2026-09-21 | Proposed | [THEORY-053](../../record/theory.d/THEORY-053.md) | 1 | 0 | The Stein posterior-mean denoiser acts as an approximate projection onto the learned data geometry |
+| 2026-09-21 | Proposed | [THEORY-054](../../record/theory.d/THEORY-054.md) | 1 | 0 | The regularizer that is intractable in data space is tractable in noise space, and bounds the data-space divergence |
 | 2026-09-21 | Proposed | [THEORY-041](../../record/theory.d/THEORY-041.md) | 0 | 0 | Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing |
 
 ## LITs
 
-3 of the 138.
+3 of the 140.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -152,7 +154,7 @@
 
 ## ADRs
 
-16 of the 138.
+16 of the 140.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

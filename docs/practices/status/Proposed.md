@@ -6,7 +6,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-78 of 285 SOTA documents. Back to the [full index](../README.md).
+79 of 286 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -88,3 +88,4 @@
 | [SOTA-283](../../../record/practices.d/SOTA-283.md) | To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it |  | Proposed |
 | [SOTA-284](../../../record/practices.d/SOTA-284.md) | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |  | Proposed |
 | [SOTA-285](../../../record/practices.d/SOTA-285.md) | Put dropout at the start of training if the model underfits, and at the end if it overfits — the schedule decides the sign, not the rate |  | Proposed |
+| [SOTA-286](../../../record/practices.d/SOTA-286.md) | To find a model that generalizes badly where its outputs look fine, measure how much of parameter space behaves the way it does |  | Proposed |

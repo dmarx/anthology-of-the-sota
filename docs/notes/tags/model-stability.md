@@ -4,7 +4,7 @@
 
 **model-stability**.
 
-10 of 224 NOTE documents. Back to the [full index](../README.md).
+11 of 225 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -18,3 +18,4 @@
 | [NOTE-131](../../../record/notes.d/NOTE-131.md) | The Role of Permutation Invariance in Linear Mode Connectivity of Neural Networks | For overparameterized networks, the loss landscape has essentially one basin modulo permutation symmetry. Two independently trained networks represent the same function with permuted neurons. Averaging their weights directly interpolates between permuted copies and crosses a loss barrier. If you first align the permutations, the interpolation stays in the flat basin. | Read |
 | [NOTE-221](../../../record/notes.d/NOTE-221.md) | nGPT | Reading it: the headline is 4–20× and the footnote is 60–80% more time per step, so the honest wall-clock figure is roughly 5.5× at 4k. Still large. The part that generalises beyond this architecture is smaller and more interesting — that a matrix's norm is currently an accident of the learning rate and weight decay, and does not have to be. | Read |
 | [NOTE-224](../../../record/notes.d/NOTE-224.md) | Dropout Reduces Underfitting | Reading it: the persuasive number is the training loss, not the accuracy. Early dropout lowers ViT-T's training loss from 3.443 to 3.394 while standard dropout raises it to 3.885 — so the same operator is doing two opposite things depending only on when it runs, and one of them is not regularization. | Read |
+| [NOTE-225](../../../record/notes.d/NOTE-225.md) | Local Volume | Reading it: the useful result is the audit, not the hypothesis. A network trained to generalize badly is detected on clean held-out data where its behaviour matches a clean model's, in a small number of forward passes. The volume hypothesis itself is left where it was found — "broadly consistent", by the authors' own conclusion. | Read |

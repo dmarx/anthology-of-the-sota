@@ -1,5 +1,8 @@
 ---
+number: 286
 status: Proposed
+formerly:
+- SOTA-tmpczmhy
 promote_when: >-
   The audit run by somebody other than the authors, catching a
   badly-generalizing model that was *not* produced adversarially — an
@@ -20,24 +23,24 @@ tags:
 - model-stability
 date: '2026-09-21'
 source:
-- LIT-tmpk8scf
+- LIT-476
 introduced_by:
-- LIT-tmpk8scf
+- LIT-476
 implementations: []
 explained_by:
-- THEORY-tmp8wi2a
+- THEORY-045
 ---
 
-<!-- inactive-ok-file: THEORY-tmp8wi2a — Proposed, and the account this practice
+<!-- inactive-ok-file: THEORY-045 — Proposed, and the account this practice
      declares as its explanation. Both rest on one source whose estimator the
      source itself does not claim to have validated -->
 
-# SOTA-tmpczmhy: To find a model that generalizes badly where its outputs look fine, measure how much of parameter space behaves the way it does
+# SOTA-286: To find a model that generalizes badly where its outputs look fine, measure how much of parameter space behaves the way it does
 
 ## Source
 
-Scherlis and Belrose (2025), [LIT-tmpk8scf](../literature.d/LIT-tmpk8scf.md) — read as
-[NOTE-tmpw2aa7](../notes.d/NOTE-tmpw2aa7.md). A 4810-parameter MLP, a 3.4M-parameter ConvNeXt on
+Scherlis and Belrose (2025), [LIT-476](../literature.d/LIT-476.md) — read as
+[NOTE-225](../notes.d/NOTE-225.md). A 4810-parameter MLP, a 3.4M-parameter ConvNeXt on
 CIFAR-10, and Pythia 31M.
 
 ## The problem it addresses
@@ -54,7 +57,7 @@ Estimate the **local volume** of the trained weights: the measure, under the
 model's own initialization distribution, of the region of parameter space
 whose behaviour stays within a small KL budget of the model's, on held-out
 inputs. `−log` of that number is a description length
-([THEORY-tmp8wi2a](../theory.d/THEORY-tmp8wi2a.md)), and the badly-generalizing model has the
+([THEORY-045](../theory.d/THEORY-045.md)), and the badly-generalizing model has the
 shorter region and the longer description.
 
 The demonstration is the point. A ConvNeXt trained with an added term making

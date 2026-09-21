@@ -6,7 +6,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-34 of 285 SOTA documents. Back to the [full index](../README.md).
+35 of 286 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -44,3 +44,4 @@
 | [SOTA-255](../../../record/practices.d/SOTA-255.md) v2 | Tune weight decay upward when pretraining over a repeated corpus, rather than inheriting the customary value | Kim et al. (2025), [LIT-441](../../../record/literature.d/LIT-441.md) — with the corpus fixed and parameters past Chinchilla-optimal, the weight decay of 0.1 everyone inherits from GPT-3 is far too small: loss turns upward as parameters or epochs are added. Tuned jointly with learning rate and epoch count, the optimum is roughly 30x larger, and loss becomes monotone in parameter count with a steeper exponent than Chinchilla's. | Proposed |
 | [SOTA-282](../../../record/practices.d/SOTA-282.md) | Put every matrix and hidden state on the unit hypersphere, and make each block's residual step size a learned per-dimension parameter |  | Proposed |
 | [SOTA-285](../../../record/practices.d/SOTA-285.md) | Put dropout at the start of training if the model underfits, and at the end if it overfits — the schedule decides the sign, not the rate |  | Proposed |
+| [SOTA-286](../../../record/practices.d/SOTA-286.md) | To find a model that generalizes badly where its outputs look fine, measure how much of parameter space behaves the way it does |  | Proposed |

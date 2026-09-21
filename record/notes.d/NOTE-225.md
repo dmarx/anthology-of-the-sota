@@ -1,6 +1,9 @@
 ---
+number: 225
 status: Read
-paper: LIT-tmpk8scf
+formerly:
+- NOTE-tmpw2aa7
+paper: LIT-476
 title: 'Local Volume'
 version: 1
 date: '2026-09-21'
@@ -16,7 +19,7 @@ summary: >-
      this measurement is NOT the one its promotion condition asks for; the
      distinction is the point being made, not a claim resting on it -->
 
-# NOTE-tmpw2aa7: Local Volume
+# NOTE-225: Local Volume
 
 ## Contribution
 

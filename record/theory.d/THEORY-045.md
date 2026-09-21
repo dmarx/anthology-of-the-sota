@@ -1,5 +1,8 @@
 ---
+number: 45
 status: Proposed
+formerly:
+- THEORY-tmp8wi2a
 promote_when: >-
   The volume/generalization relation shown on *ordinary* overfitting rather
   than deliberate poisoning — two models differing only in when training
@@ -14,11 +17,11 @@ tags:
 - model-stability
 date: '2026-09-21'
 source:
-- LIT-tmpk8scf
+- LIT-476
 explains:
-- SOTA-tmpczmhy
+- SOTA-286
 summary: >-
-  Scherlis and Belrose (2025), [LIT-tmpk8scf](../literature.d/LIT-tmpk8scf.md) — measure the region
+  Scherlis and Belrose (2025), [LIT-476](../literature.d/LIT-476.md) — measure the region
   around a trained network whose behaviour matches it, under the
   initialization distribution rather than Lebesgue. Negative log of that
   measure is, by the bits-back argument, a description length. A ConvNeXt
@@ -26,22 +29,22 @@ summary: >-
   falls through training as the model's description grows.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpczmhy — Proposed, and the practice this account
+<!-- inactive-ok-file: SOTA-286 — Proposed, and the practice this account
      explains; naming it in the `explains` table is the relation, not a claim
      that either is settled -->
 
-# THEORY-tmp8wi2a: How much of parameter space behaves like your trained network is a description length, and the better-generalizing network occupies more of it
+# THEORY-045: How much of parameter space behaves like your trained network is a description length, and the better-generalizing network occupies more of it
 
 ## Source
 
-Scherlis and Belrose (2025), [LIT-tmpk8scf](../literature.d/LIT-tmpk8scf.md) — read as
-[NOTE-tmpw2aa7](../notes.d/NOTE-tmpw2aa7.md).
+Scherlis and Belrose (2025), [LIT-476](../literature.d/LIT-476.md) — read as
+[NOTE-225](../notes.d/NOTE-225.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-tmpczmhy](../practices.d/SOTA-tmpczmhy.md) | estimate local volume on clean held-out data to catch a model that generalizes badly | reading a description length off the geometry, which is why it works where behavioural testing on the same data does not |
+| [SOTA-286](../practices.d/SOTA-286.md) | estimate local volume on clean held-out data to catch a model that generalizes badly | reading a description length off the geometry, which is why it works where behavioural testing on the same data does not |
 
 ## The account
 

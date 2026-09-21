@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-55 of 224 NOTE documents. Back to the [full index](../README.md).
+56 of 225 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -63,3 +63,4 @@
 | [NOTE-219](../../../record/notes.d/NOTE-219.md) | Emergent Abilities | The paper that named the phenomenon, read for what it actually argues rather than what it is cited for. It raises the metric explanation itself, in §5.1, and declines it on two grounds — one of which was later answered and one of which still stands. | Read |
 | [NOTE-220](../../../record/notes.d/NOTE-220.md) | Emergence as a Mirage | Reading it: the strongest evidence is not the rebuttal of GPT-3's arithmetic curve but the vision experiments, where emergence is manufactured in models that had never shown it. The weakest part is what "mirage" gets read as — the paper explicitly declines the claim that emergence is impossible. | Read |
 | [NOTE-223](../../../record/notes.d/NOTE-223.md) | The Coverage Principle | Reading it: the strongest thing here is not the theorem but the Bernoulli example, which shows KL going to infinity while coverage stays fine on a two-outcome model. That is the whole argument in four lines, and it explains why a metric everybody watches can be anti-correlated with what they want. | Read |
+| [NOTE-225](../../../record/notes.d/NOTE-225.md) | Local Volume | Reading it: the useful result is the audit, not the hypothesis. A network trained to generalize badly is detected on clean held-out data where its behaviour matches a clean model's, in a small number of forward passes. The volume hypothesis itself is left where it was found — "broadly consistent", by the authors' own conclusion. | Read |

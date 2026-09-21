@@ -6,7 +6,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-27 of 410 LIT documents. Back to the [full index](../README.md).
+28 of 411 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -37,3 +37,4 @@
 | [LIT-396](../../../record/literature.d/LIT-396.md) | Dropout Training as Adaptive Regularization | Wager et al. (2013), [ARXIV-1307.1493](https://arxiv.org/abs/1307.1493). For generalized linear models, dropout is first-order equivalent to L2 applied after scaling the features by an estimate of the inverse diagonal Fisher information — so the penalty it imposes is data-dependent rather than isotropic, which is what distinguishes it from weight decay. The paper also connects the result to AdaGrad, and turns it into a semi-supervised method that builds the regularizer from unlabeled data. | Active |
 | [LIT-472](../../../record/literature.d/LIT-472.md) | nGPT: Normalized Transformer with Representation Learning on the Hypersphere | Loshchilov et al. (2024), [ARXIV-2410.01131](https://arxiv.org/abs/2410.01131). Normalize every embedding-dimension vector in every matrix to the unit hypersphere after each step, delete all normalization layers, weight decay and LR warmup, and make each block's residual contribution a learnable per-dimension step size. 4× / 10× / 20× fewer tokens to the same loss at 1k / 4k / 8k context, at 0.5B and 1B on OpenWebText — and 60–80% more time per step. | Active |
 | [LIT-475](../../../record/literature.d/LIT-475.md) | Dropout Reduces Underfitting | Liu, Xu, Jin, Shen and Darrell (2023), [ARXIV-2303.01500](https://arxiv.org/abs/2303.01500). Dropout applied only for the first stretch of training and then switched off lowers **training** loss and raises test accuracy on models too small to overfit — the regime where standard dropout costs up to 6 points. The mechanism is measured: early dropout reduces the angle between mini-batch gradients and the whole-dataset gradient. | Active |
+| [LIT-476](../../../record/literature.d/LIT-476.md) | Estimating the Probability of Sampling a Trained Neural Network at Random | Scherlis and Belrose (2025), [ARXIV-2501.18812](https://arxiv.org/abs/2501.18812). An estimator for the measure, under the initialization distribution, of the region around a trained network whose behaviour matches it. Negative log of that measure is a description length. A ConvNeXt deliberately trained to generalize badly has a **smaller** such region — detectable on clean held-out data where its behaviour is indistinguishable. | Active |

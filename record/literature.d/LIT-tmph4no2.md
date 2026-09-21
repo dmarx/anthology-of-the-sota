@@ -1,0 +1,58 @@
+---
+status: Active
+title: 'Interpretable RNA Foundation Model from Unannotated Data for Highly Accurate RNA Structure and Function Predictions'
+version: 1
+tags:
+- representation-and-encoding
+- adaptation-and-tuning
+- analysis-and-evaluation
+date: '2026-09-21'
+published: '2022-04-01'
+arxiv: '2204.00300'
+first_author: 'Chen'
+keywords:
+- 'RNA foundation model'
+- 'non-coding RNA'
+- 'self-supervised learning'
+- 'secondary structure prediction'
+- 'RNA embedding'
+implementations: []
+extends:
+- LIT-tmp5vl15
+summary: >-
+  Chen et al. (2022), [ARXIV-2204.00300](https://arxiv.org/abs/2204.00300) — a 12-layer BERT encoder
+  trained by masked-token prediction on **23.7 million** unannotated ncRNA
+  sequences from RNAcentral, then used as a frozen feature extractor for
+  secondary structure, 3D contact, protein-RNA binding and UTR regulation.
+  Beats twelve secondary-structure methods (F1 **0.941** on ArchiveII600,
+  **0.704** on bpRNA TS0). Read as [NOTE-tmprvzrn](../notes.d/NOTE-tmprvzrn.md), which records that the
+  paper's one clean input-swap control moves `R²` by **0.002** on the
+  generalization set.
+---
+
+# LIT-tmph4no2: Interpretable RNA Foundation Model from Unannotated Data for Highly Accurate RNA Structure and Function Predictions
+
+Chen, Hu, Sun, Tan, Wang, Yu, Zong, Hong, Xiao, Shen, King and Li (2022) —
+[ARXIV-2204.00300](https://arxiv.org/abs/2204.00300), read as [NOTE-tmprvzrn](../notes.d/NOTE-tmprvzrn.md).
+
+## Standing
+
+**The first RNA foundation model, and the record's entry point to biological
+sequence modelling.** It is the RNA half of a recipe [LIT-tmp5vl15](LIT-tmp5vl15.md)
+established for proteins: mask tokens, train on the whole unannotated
+database, attach a small head per task. The `extends:` relation is not a
+family resemblance — the paper cites it as reference 66 and takes its
+downstream ResNet32 from it verbatim.
+
+**Held for what it measures, not for what it recommends.** The
+recommendation — pretrain self-supervised on the unlabelled pool when labels
+are scarce — is one this record already carries implicitly across every
+practice that touches pretraining, and this paper adds an instance in a new
+domain rather than evidence about the claim. No practice is filed from it, and
+[NOTE-tmprvzrn](../notes.d/NOTE-tmprvzrn.md) gives the reason in numbers.
+
+**The paper is honest where it matters most.** Its own Discussion says "the
+improvement brought by RNA-FM in the functional tasks seems more slight
+compared with the gain in the structural tasks" and offers a hypothesis for
+why. That sentence is worth more than the abstract, and it is not in the
+abstract.

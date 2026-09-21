@@ -1,0 +1,141 @@
+---
+status: Active
+title: Dropout Reduces Underfitting
+version: 1
+tags:
+- model-stability
+- training-optimization
+- vision-and-graphics
+date: '2026-09-21'
+published: '2023-03-01'
+arxiv: '2303.01500'
+first_author: 'Liu'
+keywords:
+- 'dropout'
+- 'stochastic-depth'
+- 'gradient-variance'
+- 'underfitting'
+- 'early-training'
+implementations: []
+summary: >-
+  Liu, Xu, Jin, Shen and Darrell (2023), [ARXIV-2303.01500](https://arxiv.org/abs/2303.01500). Dropout
+  applied only for the first stretch of training and then switched off lowers
+  **training** loss and raises test accuracy on models too small to overfit —
+  the regime where standard dropout costs up to 6 points. The mechanism is
+  measured: early dropout reduces the angle between mini-batch gradients and
+  the whole-dataset gradient.
+---
+
+# LIT-tmpfdpkj: Dropout Reduces Underfitting
+
+## Why it's here
+
+[SOTA-240](../practices.d/SOTA-240.md) says to apply dropout where the model can memorize what it
+is shown, and not where it cannot. This paper agrees emphatically — standard
+dropout costs ViT-T six accuracy points on ImageNet-1K — and then shows that
+the *same operator on a different schedule* helps in exactly the regime where
+the throughout-training version hurts.
+
+So it does not contest the record's dropout practice. It finds a boundary the
+practice did not have, and the boundary is the schedule rather than the
+regime.
+
+## What it claims
+
+Two symmetric recommendations from one observation.
+
+**Early dropout.** For a model in the underfitting regime — one that does
+*worse* with standard dropout — apply dropout for the first stretch of
+training and then turn it off. Training loss falls and test accuracy rises.
+
+**Late dropout.** For a model already using dropout because it overfits, skip
+it for the first stretch and apply it afterwards. Test accuracy rises while
+training loss holds or increases, which is what a regularizer working
+properly looks like.
+
+The regime criterion is operational and the paper is candid about it: *if a
+model generalizes better with standard dropout it is overfitting; if better
+without, it is underfitting*. That is a definition you can apply, and applying
+it costs a run.
+
+## The mechanism, measured
+
+The analysis is the best part and it starts from a contradiction. With
+dropout, gradient norms are **smaller** — yet the model ends up **farther**
+from its initialization. Smaller steps, more distance travelled.
+
+The resolution is direction. Two quantities are defined and measured on ViT-T:
+
+- **Gradient direction variance** — the average pairwise cosine distance among
+  mini-batch gradients. Dropout lowers it for roughly the first 1000
+  iterations.
+- **Gradient direction error** — the average cosine distance from mini-batch
+  gradients to the gradient over the *whole* training set, with dropout in
+  inference mode. Dropout lowers this too, early, and then **raises** it after
+  about 1000 iterations. The crossing is read as the point where dropout stops
+  reducing underfitting and starts reducing overfitting.
+
+Framed as bias and variance: without dropout a mini-batch gradient is an
+unbiased estimate of the full-dataset gradient. With dropout it is biased,
+because each batch runs through a different sub-network — but the variance
+falls far enough that the total error falls with it.
+
+The effect is not specific to one optimizer or architecture. Measured as area
+under the gradient-direction-error curve over the first 1500 iterations:
+AdamW −13.60%, SGD −9.30%, momentum SGD −6.67% on ViT-T; Swin-F −17.41%,
+ConvNeXt-F stochastic depth −7.62%.
+
+## What was measured
+
+ImageNet-1K, top-1 validation accuracy, **3 seeds with average standard
+deviation 0.142%** — which is enough to read the table honestly.
+
+Early dropout, on models of 5–20M parameters under the ConvNeXt recipe:
+
+| model | baseline | + standard dropout | + early dropout | + early s.d. |
+|---|---|---|---|---|
+| ViT-T | 73.9 | 67.9 | 74.3 | 74.4 |
+| Mixer-S | 71.0 | 67.1 | 71.3 | 71.7 |
+| Swin-F | 74.3 | 71.6 | 74.7 | 75.2 |
+| ConvNeXt-F | 76.1 | — (s.d. 75.5) | — | 76.3 |
+
+Training loss moves the same way: ViT-T 3.443 → 3.394 with early dropout,
+against 3.885 with standard dropout. **That is the evidence that this is an
+underfitting remedy** — a regularizer raises training loss by construction.
+
+Under an improved recipe (double epochs, weaker mixup and cutmix) the
+baselines rise a lot — ViT-T to 76.3, past the literature numbers — and early
+dropout still adds 0.4.
+
+Late stochastic depth, on ViT-B (59M) and Mixer-B (86M): 81.6 → **82.3** and
+78.0 → **78.6**. On ViT-B it also beats a linearly increasing schedule (82.1)
+and a curriculum schedule (82.0), each at its own best hyperparameters.
+
+Gains survive transfer with dropout switched off during fine-tuning: COCO
+detection and segmentation, ADE20K (ViT-T 39.2 → 40.0 mIoU; ViT-B with late
+s.d. 44.3 → 45.7), and five downstream classification sets. So it improves
+the representation rather than the evaluation.
+
+## Conditions
+
+**Vision only.** ImageNet-1K, ViT, Mixer, Swin, ConvNeXt, and vision
+downstream tasks. No language-model result at any scale, and the underfitting
+regime this targets is defined by small models on a fixed 1.2M-image dataset
+— not obviously the same object as a large model under-trained on a large
+corpus.
+
+**Some of the gains are inside the noise.** With standard deviation 0.142%,
++0.2 (ConvNeXt-F) is not resolvable; +0.4 to +0.9 is. The paper reports the
+deviation, which is what makes the distinction possible.
+
+**The regime test requires running both arms.** You cannot apply the practice
+without first knowing which regime you are in, and the paper's definition of
+the regime is the outcome of the comparison.
+
+**Two hyperparameters, reported robust.** The switch point works anywhere from
+1% to 50% of total epochs; the drop rate is "moderately robust". Robust is not
+free — both still have to be chosen.
+
+**The turning point is an observation on one model.** "About 1000 iterations"
+comes from ViT-T on ImageNet-1K. Nothing predicts where it sits elsewhere, and
+the practice's switch point is what that number would inform.

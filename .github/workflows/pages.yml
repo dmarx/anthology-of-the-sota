@@ -24,6 +24,22 @@
 # unrelated later push happened to trigger Pages again. If you rename the Docs
 # workflow, rename it here too.
 #
+# Publishing is gated on `main`, and deliberately more narrowly than the
+# repository is configured to allow: the `github-pages` environment also
+# permits deployment from `claude/*` branches, kept for the day a branch has
+# to publish a preview. Until that day the workflow declines the permission
+# rather than spending it. `workflow_run` already filters `branches: [main]`;
+# `deploy` checks the branch a SECOND time, because `workflow_dispatch` takes
+# no branch filter at all and a dispatch from a branch would otherwise publish
+# that branch's tree over the site.
+#
+# `build` is not gated, and the asymmetry is the point. A `workflow_dispatch`
+# from any branch still proves the site builds — which is what the
+# `pull_request` trigger did automatically until it was removed here, now that
+# `docs-check` covers pull-request correctness on its own. Restoring it costs
+# one line (`pull_request:` under `on:`) and nothing else, because `deploy` now
+# refuses a branch on its own terms instead of by trusting the event name.
+#
 # Delete this file if you would rather not publish. Nothing else depends on
 # it — `luria site` is a build step, and the record it reads is the record
 # every other command reads.
@@ -34,7 +50,6 @@ on:
     workflows: [Docs]
     types: [completed]
     branches: [main]
-  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -66,10 +81,17 @@ jobs:
         with:
           path: ${{ steps.site.outputs.path }}
 
-  # Separate from the build because it is the only job that needs to write:
-  # a pull request proves the site still builds and publishes nothing.
+  # Separate from the build because it is the only job that needs to write —
+  # and the only one that must not run off `main`. The condition names the
+  # branch rather than excluding an event: the previous `!= 'pull_request'`
+  # was a deny-list of one entry, and a `workflow_dispatch` walked straight
+  # past it. `workflow_run` reports the triggering run's branch in
+  # `head_branch`, not in `github.ref`, so the two events are checked
+  # separately.
   deploy:
-    if: github.event_name != 'pull_request'
+    if: >-
+      (github.event_name == 'workflow_run' && github.event.workflow_run.head_branch == 'main')
+      || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main')
     needs: build
     runs-on: ubuntu-latest
     permissions:

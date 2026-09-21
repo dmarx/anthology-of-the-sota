@@ -1,0 +1,59 @@
+---
+status: Active
+title: 'Image-GS: Content-Adaptive Image Representation via 2D Gaussians'
+version: 1
+tags:
+- representation-and-encoding
+- vision-and-graphics
+- inference-optimization
+date: '2026-09-21'
+published: '2024-07-02'
+arxiv: '2407.01866'
+first_author: 'Zhang'
+keywords:
+- '2D Gaussians'
+- 'image representation'
+- 'rate-distortion'
+- 'texture compression'
+- 'level of detail'
+implementations: []
+extends:
+- LIT-108
+summary: >-
+  Zhang et al. (2024), [ARXIV-2407.01866](https://arxiv.org/abs/2407.01866) — the 2D descendant of
+  [LIT-108](LIT-108.md), and the paper that does the rate accounting
+  [LIT-494](LIT-494.md) skipped. Anisotropic colored 2D Gaussians, spawned by image-gradient
+  magnitude and grown where error persists, decoded at **0.3K MACs per pixel**
+  against C3's 3K at comparable bitrate. Beats six neural image
+  representations at **matched model size** across the bitrate range, and
+  beats JPEG below **0.244 bpp**. Read as [NOTE-tmpl6noj](../notes.d/NOTE-tmpl6noj.md).
+---
+
+# LIT-tmpuxbgc: Image-GS: Content-Adaptive Image Representation via 2D Gaussians
+
+Zhang, Li, Kuznetsov, Jindal, Diolatzis, Chen, Sochenov, Kaplanyan and Sun
+(2024) — [ARXIV-2407.01866](https://arxiv.org/abs/2407.01866), read as [NOTE-tmpl6noj](../notes.d/NOTE-tmpl6noj.md).
+
+## Standing
+
+**A fifth source for [SOTA-205](../practices.d/SOTA-205.md), and the first outside 3D.** That practice
+— replace a large coordinate network with a compact explicit structure and a
+small decoder — is `converged` on four radiance-field papers. This carries the
+same claim into single-image representation and supplies the decode-cost
+number that makes it concrete.
+
+**The `extends:` on [LIT-108](LIT-108.md) is earned rather than a family
+resemblance.** The paper says its work "is inspired by the recent success of
+Gaussian Splatting", defines its primitives "similar to the Gaussian
+primitives in 3D Gaussian Splatting", and states what it drops — no spherical
+harmonics, "as an image essentially shows a single view".
+
+**Held also as the constructive counterpart to [LIT-494](LIT-494.md).** GaussianToken
+reached this record two units earlier with no bit accounting: its comparisons
+were matched on token *count* while each token carried an index plus five
+continuous floats, and [NOTE-243](../notes.d/NOTE-243.md) recorded that the obvious rival
+explanation was never ruled out. Image-GS is the same Gaussian machinery in
+the same year, reporting bits per pixel throughout and matching model sizes in
+kilobytes. No relation is declared between them: nobody ran that comparison,
+and [ADR-011](../decisions.d/ADR-011.md) means what it says. The connection is this record's
+reading and is stated in prose.

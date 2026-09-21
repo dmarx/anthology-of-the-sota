@@ -1,0 +1,83 @@
+---
+status: Active
+title: 'Denoising as Projection: Constrained Optimization with Gradient-Guided Diffusion'
+version: 1
+tags:
+- generative-modeling
+- analysis-and-evaluation
+date: '2026-09-21'
+published: '2026-08-01'
+arxiv: '2608.29507'
+first_author: 'Zhang'
+keywords:
+- 'gradient-guidance'
+- 'diffusion-sampling'
+- 'projected-gradient'
+- 'stein-denoiser'
+- 'trajectory-optimization'
+implementations: []
+summary: >-
+  Zhang et al. (2026), [ARXIV-2608.29507](https://arxiv.org/abs/2608.29507). Standard gradient guidance adds
+  the objective gradient *after* the denoising step, which can push the sample
+  off the learned data geometry. Swap the order — gradient first, then one
+  pretrained-denoiser call — and the denoiser acts as an approximate
+  projection, making the sampler an inexact projected-gradient method with
+  convergence guarantees on linear subspaces, compact convex sets and compact
+  Riemannian submanifolds. One gradient and one denoiser call per step; no
+  score Jacobians, no fine-tuning, no extra samples.
+---
+
+# LIT-tmpzcf35: Denoising as Projection: Constrained Optimization with Gradient-Guided Diffusion
+
+Zhang, Zhang, Zardini, Amin and Ozdaglar (2026) — [ARXIV-2608.29507](https://arxiv.org/abs/2608.29507)
+
+## Key takeaways
+
+- **The intervention is an ordering, and that is the whole appeal.** Standard
+  gradient guidance — the paper calls it *post-denoising gradient guidance*,
+  PDG — computes the denoised estimate and then adds `−η∇f` outside it. DCG
+  applies the gradient to the noisy iterate **first**, then passes the result
+  through the denoiser. Same two ingredients, same cost, opposite order.
+- **Why the order matters is geometric.** When the data lie on a structured
+  feasible set — a manifold, a convex region, a family of dynamically
+  admissible trajectories — the objective gradient need not be tangent to it.
+  Added after denoising, it moves the sample off the geometry the model
+  learned. Added before, the denoiser gets a chance to pull it back, because
+  the Stein posterior-mean denoiser maps noisy points toward the data support.
+- **That reading is formalised, not asserted.** The paper proves bounds
+  between the Stein denoiser and the relevant projection in three settings —
+  linear-Gaussian, compact convex, compact smooth submanifold — and then
+  reads the reverse process as a time-varying **inexact projected-gradient
+  method**, with finite-time guarantees in each: geometric contraction for
+  strongly convex objectives, a best-iterate rate for smooth nonconvex.
+- **The cost claim is the selling point against the alternatives.** One
+  gradient evaluation and one denoiser call per reverse step, a single
+  trajectory. The comparison table has the nearest optimization-oriented
+  methods requiring score **Jacobians** or **multiple reverse trajectories**;
+  manifold-aware guidance and reward alignment generally need fine-tuning or
+  auxiliary models.
+- **The planning experiments are the informative ones, and they are a
+  measurement story.** In double-integrator and unicycle trajectory tracking,
+  PDG produces plans that follow the reference closely — and much of that
+  gain **disappears once the controls are executed through the true
+  dynamics**. DCG's planned improvement survives rollout: it reports the
+  lowest rollout cost and dynamic-feasibility error among guided methods on
+  both random references. The finding is less "better optimizer" than
+  "PDG was optimizing the plan rather than the outcome".
+- **The reinforcement-learning result is thin and the paper says so.** On
+  Hopper, Walker and HalfCheetah (medium-v2) under a Diffuser-style pipeline,
+  DCG achieves **"slightly higher"** normalized returns than PDG on all
+  three. Three tasks, one baseline, a qualifier the authors chose themselves.
+
+## Standing in the anthology
+
+The record's diffusion line is about how to train and how to sample —
+[SOTA-266](../practices.d/SOTA-266.md) on the interpolant and timestep distribution, [SOTA-203](../practices.d/SOTA-203.md) on
+using a higher-order solver with weights you already have, [SOTA-187](../practices.d/SOTA-187.md) on
+working in a learned latent. This adds the case where sampling is being bent
+toward an external objective, which none of them covers and which is where
+diffusion models meet planning and control.
+
+It belongs beside `SOTA-203` in kind as much as in subject: both are
+inference-time changes that need no retraining, and both are the sort of
+one-line edit that is easy to get backwards.

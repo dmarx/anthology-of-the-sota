@@ -4,7 +4,7 @@
 
 **in-context-learning**.
 
-8 of 241 NOTE documents. Back to the [full index](../README.md).
+9 of 242 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -16,3 +16,4 @@
 | [NOTE-218](../../../record/notes.d/NOTE-218.md) | Zero-Shot CoT | One fixed sentence, no exemplars, twelve datasets. Reading it: the ordering is the practical content — it loses to hand-written few-shot chains and beats eight-shot standard prompting, so it is the baseline to try first rather than the method to settle on. | Read |
 | [NOTE-219](../../../record/notes.d/NOTE-219.md) | Emergent Abilities | The paper that named the phenomenon, read for what it actually argues rather than what it is cited for. It raises the metric explanation itself, in §5.1, and declines it on two grounds — one of which was later answered and one of which still stands. | Read |
 | [NOTE-238](../../../record/notes.d/NOTE-238.md) | PHi: prediction of hidden states | Read for the instrument. The diagnosis of next-token loss is clean and the boring/interesting separation is convincing on two architectures. The reasoning-selection result is weaker than the abstract implies, and the paper says so itself in a sentence most readers will pass over: picking by next-token loss alone already scores 71%. | Read |
+| [NOTE-242](../../../record/notes.d/NOTE-242.md) | Genesys and what survives its own controls | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for the architecture-discovery claim and filed for the code-generation one. Unit-by-unit generation with an execution-based checker takes valid output from 6% to 92% on the same proposals, with a stated mechanism that has nothing to do with architectures. The discovered architectures are a wash against their own seeds, by the paper's own table. | Read |

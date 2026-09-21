@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-238 of 241 NOTE documents. Back to the [full index](../README.md).
+239 of 242 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -248,3 +248,4 @@
 | [NOTE-239](../../../record/notes.d/NOTE-239.md) | Denoising-corrected gradient guidance | Read for a practice the record's diffusion line was missing. The ordering change is well motivated and cheaply adopted; the theory is proved under idealized assumptions the authors name; and the useful experimental result is that the standard method was optimizing the plan rather than the executed outcome. | Read |
 | [NOTE-240](../../../record/notes.d/NOTE-240.md) | Noise hypernetworks | Read as the amortized counterpart to `SOTA-301`. The headline — recover half of test-time optimization at 1/100th the latency — is well measured. The finding that carries further is the control: direct reward fine-tuning of the same model makes it worse, and worse the more steps you sample. | Read |
 | [NOTE-241](../../../record/notes.d/NOTE-241.md) | LLMs raise the opportunity cost of research time | Read for a mechanism `THEORY-051` named and the record could not supply: why effort would fall when a writing tool gets better. The answer is that a perfect time-saving tool raises the value of time, and the interesting part is not the decline but the **phase dependence** — the model predicts opposite signs for selectivity, and the opposite sign for thoroughness, from properties of the tool you can identify before deploying it. | Read |
+| [NOTE-242](../../../record/notes.d/NOTE-242.md) | Genesys and what survives its own controls | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for the architecture-discovery claim and filed for the code-generation one. Unit-by-unit generation with an execution-based checker takes valid output from 6% to 92% on the same proposals, with a stated mechanism that has nothing to do with architectures. The discovered architectures are a wash against their own seeds, by the paper's own table. | Read |

@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-17 of 241 NOTE documents. Back to the [full index](../README.md).
+18 of 242 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -25,3 +25,4 @@
 | [NOTE-228](../../../record/notes.d/NOTE-228.md) | The Diffusion Duality | Reading it: the theorem is elegant and the ablation says it accounts for under half the likelihood gain. What the paper actually establishes is a regime split — masked diffusion wins on quality at many steps, uniform-state wins below about 32, and the reason is architectural rather than tuned. | Read |
 | [NOTE-232](../../../record/notes.d/NOTE-232.md) | Mixture-of-Transformers | Read to test whether it satisfies `SOTA-262`'s promotion condition. It does, as that condition was written — second group, per-modality weights against a shared-weight backbone, FLOPs held identical. The component ablation is a bonus the condition did not ask for and the practice needed. | Read |
 | [NOTE-235](../../../record/notes.d/NOTE-235.md) | ParScale | Read as a candidate third scaling axis. The scaling law is fitted honestly and the inference-cost analysis is better instrumented than most; the claim that carries furthest is the *asymmetry* — code benefits more than general text, on two independent measurements — and it is the claim the paper labels a conjecture. | Read |
+| [NOTE-242](../../../record/notes.d/NOTE-242.md) | Genesys and what survives its own controls | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for the architecture-discovery claim and filed for the code-generation one. Unit-by-unit generation with an execution-based checker takes valid output from 6% to 92% on the same proposals, with a stated mechanism that has nothing to do with architectures. The discovered architectures are a wash against their own seeds, by the paper's own table. | Read |

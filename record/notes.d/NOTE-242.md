@@ -1,6 +1,9 @@
 ---
+number: 242
 status: Read
-paper: LIT-tmpesppq
+formerly:
+- NOTE-tmpavng3
+paper: LIT-493
 title: 'Genesys and what survives its own controls'
 version: 1
 date: '2026-09-21'
@@ -13,11 +16,11 @@ summary: >-
   seeds, by the paper's own table.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpe69t0 — Proposed, filed in this same
+<!-- inactive-ok-file: SOTA-304 — Proposed, filed in this same
      contribution; the Recommendations section names it as where R1 went,
      which is the note's job rather than a claim that it is settled -->
 
-# NOTE-tmpavng3: Genesys and what survives its own controls
+# NOTE-242: Genesys and what survives its own controls
 
 ## Contribution
 
@@ -156,7 +159,7 @@ is not a relation the vocabulary has a word for.
   retrying. *Topic:* code generation with a fixed model. *Status:*
   experimental. *Strength:* strong. *Applies when:* the artifact decomposes
   into independently checkable pieces and a cheap checker exists. Filed as
-  `SOTA-tmpe69t0`.
+  `SOTA-304`.
 - **R2** — if you can only build one of the two, build the checker. *Same
   source, same table*; carried as a paragraph inside R1's practice rather than
   as its own document, because it is a refinement of the same instruction.

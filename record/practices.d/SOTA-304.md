@@ -1,5 +1,8 @@
 ---
+number: 304
 status: Proposed
+formerly:
+- SOTA-tmpe69t0
 promote_when: >-
   The same comparison run on a different kind of artifact, by a group that is
   not selling the scaffold: one model, one budget, generating long constrained
@@ -23,12 +26,12 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpesppq
+- LIT-493
 introduced_by:
-- LIT-tmpesppq
+- LIT-493
 implementations: []
 summary: >-
-  Cheng, Clark and Richardson (2025), [LIT-tmpesppq](../literature.d/LIT-tmpesppq.md) — on 100 held-out
+  Cheng, Clark and Richardson (2025), [LIT-493](../literature.d/LIT-493.md) — on 100 held-out
   proposals, the same model produced valid implementations **92%** of the time
   generating unit by unit against an execution-based checker, and **6%** of
   the time one-shot with retries; the one-shot outputs were also trivial, 49
@@ -36,12 +39,12 @@ summary: >-
   decomposition alone costs 19 — so if you build one, build the checker.
 ---
 
-# SOTA-tmpe69t0: Generate a long program unit by unit, freezing each unit that passes an execution-based check, instead of regenerating the whole artifact on failure
+# SOTA-304: Generate a long program unit by unit, freezing each unit that passes an execution-based check, instead of regenerating the whole artifact on failure
 
 ## Source
 
 Cheng, Clark and Richardson (2025),
-[LIT-tmpesppq](../literature.d/LIT-tmpesppq.md) — read as [NOTE-tmpavng3](../notes.d/NOTE-tmpavng3.md).
+[LIT-493](../literature.d/LIT-493.md) — read as [NOTE-242](../notes.d/NOTE-242.md).
 
 ## When this applies
 
@@ -137,4 +140,4 @@ Mamba2 on 6 of 9 benchmarks, and that claim is a maximum over the five best of
 1,062 designs on tasks selected from the search's own statistics — on the
 average column the five discovered designs land **below** the five human seeds
 they were bred from. The record files the code generation and not the
-discovery, and [LIT-tmpesppq](../literature.d/LIT-tmpesppq.md) says why at length.
+discovery, and [LIT-493](../literature.d/LIT-493.md) says why at length.

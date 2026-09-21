@@ -6,7 +6,7 @@
 
 **In-context learning** — getting behaviour out of a fixed model by what you put in the context — few-shot exemplars, chain of thought, prompting strategy, and what the context can and cannot buy.
 
-7 of 303 SOTA documents. Back to the [full index](../README.md).
+8 of 304 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,3 +17,4 @@
 | [SOTA-280](../../../record/practices.d/SOTA-280.md) | Sample several reasoning paths and take the majority answer rather than decoding one greedily | Wang et al. (2022), [LIT-468](../../../record/literature.d/LIT-468.md) — replace greedy decoding with sample-and-marginalize: GSM8K +17.9, SVAMP +11.0, AQuA +12.2. Five or ten paths recover most of it, which is the whole cost question. | Active |
 | [SOTA-281](../../../record/practices.d/SOTA-281.md) | Try the single step-by-step instruction before writing exemplars; it recovers most of the gain for none of the labour | Kojima et al. (2022), [LIT-469](../../../record/literature.d/LIT-469.md) — one fixed sentence with no exemplars takes MultiArith from 17.7% to 78.7% and GSM8K from 10.4% to 40.7%. It beats eight-shot standard prompting and loses to hand-written few-shot chains, which is the ordering that makes it a first move. | Active |
 | [SOTA-300](../../../record/practices.d/SOTA-300.md) | To tell whether a model is doing non-trivial in-context computation, measure how well it predicts its own hidden states, not its next-token loss | Herrmann et al. (2025), [LIT-489](../../../record/literature.d/LIT-489.md) — uniform noise maximizes next-token loss and requires no computation; reciting a memorized licence minimizes it and requires none either. Insert a variational bottleneck with a **learned autoregressive prior** and measure the posterior-prior KL: only the genuinely in-context task scores high, on a Transformer and an LSTM, and the signal survives controlling for next-token loss. | Proposed |
+| [SOTA-304](../../../record/practices.d/SOTA-304.md) | Generate a long program unit by unit, freezing each unit that passes an execution-based check, instead of regenerating the whole artifact on failure | Cheng, Clark and Richardson (2025), [LIT-493](../../../record/literature.d/LIT-493.md) — on 100 held-out proposals, the same model produced valid implementations **92%** of the time generating unit by unit against an execution-based checker, and **6%** of the time one-shot with retries; the one-shot outputs were also trivial, 49 lines against 181. Removing the checker alone costs 62 points, removing the decomposition alone costs 19 — so if you build one, build the checker. | Proposed |

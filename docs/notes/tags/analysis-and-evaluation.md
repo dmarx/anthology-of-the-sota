@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-66 of 241 NOTE documents. Back to the [full index](../README.md).
+67 of 242 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -74,3 +74,4 @@
 | [NOTE-238](../../../record/notes.d/NOTE-238.md) | PHi: prediction of hidden states | Read for the instrument. The diagnosis of next-token loss is clean and the boring/interesting separation is convincing on two architectures. The reasoning-selection result is weaker than the abstract implies, and the paper says so itself in a sentence most readers will pass over: picking by next-token loss alone already scores 71%. | Read |
 | [NOTE-239](../../../record/notes.d/NOTE-239.md) | Denoising-corrected gradient guidance | Read for a practice the record's diffusion line was missing. The ordering change is well motivated and cheaply adopted; the theory is proved under idealized assumptions the authors name; and the useful experimental result is that the standard method was optimizing the plan rather than the executed outcome. | Read |
 | [NOTE-241](../../../record/notes.d/NOTE-241.md) | LLMs raise the opportunity cost of research time | Read for a mechanism `THEORY-051` named and the record could not supply: why effort would fall when a writing tool gets better. The answer is that a perfect time-saving tool raises the value of time, and the interesting part is not the decline but the **phase dependence** — the model predicts opposite signs for selectivity, and the opposite sign for thoroughness, from properties of the tool you can identify before deploying it. | Read |
+| [NOTE-242](../../../record/notes.d/NOTE-242.md) | Genesys and what survives its own controls | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for the architecture-discovery claim and filed for the code-generation one. Unit-by-unit generation with an execution-based checker takes valid output from 6% to 92% on the same proposals, with a stated mechanism that has nothing to do with architectures. The discovered architectures are a wash against their own seeds, by the paper's own table. | Read |

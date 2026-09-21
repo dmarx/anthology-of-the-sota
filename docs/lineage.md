@@ -2,7 +2,7 @@
 
 # Lines of work
 
-25 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+26 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -14,6 +14,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-433](../record/literature.d/LIT-433.md) — Learning to summarize from human feedback *(Active)*
     - [LIT-377](../record/literature.d/LIT-377.md) — Training language models to follow instructions with human feedback *(Active)*
 - alongside: [LIT-432](../record/literature.d/LIT-432.md) — Finetuned Language Models Are Zero-Shot Learners *(Active)*
+
+### From Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences
+
+- [LIT-505](../record/literature.d/LIT-505.md) — Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences *(Active)*
+  - [LIT-506](../record/literature.d/LIT-506.md) — Interpretable RNA Foundation Model from Unannotated Data for Highly Accurate RNA Structure and Function Predictions *(Active)*
 
 ## analysis-and-evaluation
 
@@ -160,6 +165,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-498](../record/literature.d/LIT-498.md) — MaskGIT: Masked Generative Image Transformer *(Active)*
     - [LIT-500](../record/literature.d/LIT-500.md) — Vector-quantized Image Modeling with Improved VQGAN *(Active)*
       - [LIT-497](../record/literature.d/LIT-497.md) — Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation *(Active)* — also extends LIT-496
+
+### From Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences
+
+- [LIT-505](../record/literature.d/LIT-505.md) — Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences *(Active)*
+  - [LIT-506](../record/literature.d/LIT-506.md) — Interpretable RNA Foundation Model from Unannotated Data for Highly Accurate RNA Structure and Function Predictions *(Active)*
 
 ## tiny-models
 

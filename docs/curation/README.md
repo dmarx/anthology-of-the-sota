@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [21 Sep 19:49 — Opening the biological-sequence trunk, and not getting the practice that was expected](2026-09.md#opening-the-biological-sequence-trunk-and-not-getting-the-practice-that-was-expected)
 - [21 Sep 19:41 — Declining to answer #234, in a way the record can hold](2026-09.md#declining-to-answer-234-in-a-way-the-record-can-hold)
 - [21 Sep 19:34 — Filing a practice the record cannot source, and the field that had to change to allow it](2026-09.md#filing-a-practice-the-record-cannot-source-and-the-field-that-had-to-change-to-allow-it)
 - [21 Sep 19:06 — A test that everything passes](2026-09.md#a-test-that-everything-passes)
@@ -166,9 +167,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-159 entries across 2 books, newest first.
+160 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 157 | 2026-09-05 | 2026-09-21 |
+| [2026-09](2026-09.md) | 158 | 2026-09-05 | 2026-09-21 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

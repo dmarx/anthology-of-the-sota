@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-72 of 251 NOTE documents. Back to the [full index](../README.md).
+73 of 252 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -80,3 +80,4 @@
 | [NOTE-249](../../../record/notes.d/NOTE-249.md) | MemGraphRAG: the pilot study is the contribution | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist in rank order. The system is a multi-agent GraphRAG pipeline with single-run numbers; the durable part is §3, which measures other people's systems and finds graph expansion trading relevance for recall at a net loss on the end task. That is the filing. | Read |
 | [NOTE-250](../../../record/notes.d/NOTE-250.md) | MIMI: the objective that needs the knowledge it assumes away | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist in rank order. The headline is a task-agnostic interface score; the durable finding is its failure case, where an assistant doing its job drives the metric *negative* and the fix is a horizon hyperparameter that requires exactly the task knowledge the objective was built to avoid. | Read |
 | [NOTE-251](../../../record/notes.d/NOTE-251.md) | Non-identifiability of mechanistic explanations | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist, the strongest of the remaining candidates. Asks whether mechanistic interpretability's criteria pick out a unique explanation and answers no at all four stages by exhaustive enumeration — no network had exactly one circuit interpretation — with both counts lower bounds by construction. | Read |
+| [NOTE-252](../../../record/notes.d/NOTE-252.md) | RNA-FM, and the control that does not carry the claim | Read to open the biological-sequence trunk, which this record did not hold. The structural results are large and the paper's one clean input-swap control is not: replacing one-hot sequence with a 640-dimensional pretrained embedding in a published UTR model moves `R²` from **0.814 to 0.816** on the real-human set, where a 16-dimensional predicted secondary structure moves it to **0.820**. No practice filed. | Read |

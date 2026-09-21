@@ -1,6 +1,9 @@
 ---
+number: 252
 status: Read
-paper: LIT-tmph4no2
+formerly:
+- NOTE-tmprvzrn
+paper: LIT-506
 title: 'RNA-FM, and the control that does not carry the claim'
 version: 1
 date: '2026-09-21'
@@ -13,7 +16,7 @@ summary: >-
   structure moves it to **0.820**. No practice filed.
 ---
 
-# NOTE-tmprvzrn: RNA-FM, and the control that does not carry the claim
+# NOTE-252: RNA-FM, and the control that does not carry the claim
 
 ## Contribution
 
@@ -24,7 +27,7 @@ used as a frozen feature extractor across secondary structure, 3D contact and
 distance maps, SARS-CoV-2 genome structure, protein-RNA binding and 5'UTR
 translation regulation.
 
-It is the RNA transcription of [LIT-tmp5vl15](../literature.d/LIT-tmp5vl15.md)'s protein recipe, and says
+It is the RNA transcription of [LIT-505](../literature.d/LIT-505.md)'s protein recipe, and says
 so: the downstream head is ESM-1b's ResNet32, unchanged, reference 66.
 
 ## Key results
@@ -127,7 +130,7 @@ structural gain requires 23.7 million sequences is unmeasured.
 ## Bearing on the record
 
 **This opens a trunk the record did not have.** Before this filing the corpus
-held no protein, RNA or genomic sequence model. [LIT-tmp5vl15](../literature.d/LIT-tmp5vl15.md) is filed
+held no protein, RNA or genomic sequence model. [LIT-505](../literature.d/LIT-505.md) is filed
 alongside, unread, so that this paper can declare what it extends — the
 lesson [#243](https://github.com/dmarx/anthology-of-the-sota/issues/243) taught when GaussianToken landed on an empty tokenizer trunk
 and could name none of its four baselines.
@@ -170,7 +173,7 @@ finding in other people's work.
   the embedding and the predicted secondary structure carry overlapping
   information, and that the 640-dimensional version costs capacity the small
   CNN does not have to spare.
-- **Does the protein ancestor have the same gap?** [LIT-tmp5vl15](../literature.d/LIT-tmp5vl15.md) is filed
+- **Does the protein ancestor have the same gap?** [LIT-505](../literature.d/LIT-505.md) is filed
   unread. Whether its structural claims rest on linear probes or trained
   heads, and how its splits relate to its pretraining corpus, are the same two
   questions and would decide whether this is a property of this paper or of

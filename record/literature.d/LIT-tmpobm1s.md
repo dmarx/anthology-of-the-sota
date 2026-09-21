@@ -1,0 +1,126 @@
+---
+status: Active
+title: 'Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models'
+version: 1
+tags:
+- multimodal-learning
+- model-architecture
+- training-optimization
+date: '2026-09-21'
+published: '2024-11-01'
+arxiv: '2411.04996'
+first_author: 'Liang'
+keywords:
+- 'modality-specific-weights'
+- 'sparse-architecture'
+- 'early-fusion'
+- 'global-attention'
+- 'ablation'
+implementations: []
+compared_against:
+- LIT-449
+summary: >-
+  Liang et al. (2024), [ARXIV-2411.04996](https://arxiv.org/abs/2411.04996). Untie every non-embedding
+  parameter by modality — feed-forward, attention projections, layer norms —
+  and keep global self-attention over the whole sequence. Matches a dense
+  baseline at **55.8% of the FLOPs** in the Chameleon setting and 37.2% with
+  speech added. The component ablation is the useful part: the feed-forward
+  carries most of it, attention adds less, layer norms add nothing.
+---
+
+# LIT-tmpobm1s: Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models
+
+## Why it's here
+
+It is the second group, and it satisfies [SOTA-262](../practices.d/SOTA-262.md)'s promotion condition
+as that condition was written: *a second group reporting per-modality weights
+against a shared-weight backbone at matched compute.* Different lab, different
+domain — [LIT-449](LIT-449.md) is a diffusion model from Stability AI, this is an
+autoregressive multi-modal LLM from Meta — and the comparison is controlled:
+"all model implementations, built upon the dense model, maintain identical
+FLOPs for both training and testing."
+
+The condition also named what would **not** count: "another multimodal
+transformer that happens to use separate projections, which is common and is
+not a controlled comparison." This is not that.
+
+## What it does
+
+Every non-embedding parameter is duplicated per modality — feed-forward
+networks, `Q`/`K`/`V` and output projections, and layer norms — while **self-
+attention stays global** over the full sequence. Tokens are grouped by
+modality, projected with that modality's matrices, attended over jointly with
+everything else, then projected back and fed forward with that modality's
+weights.
+
+So each modality gets its own parameters and none of its own attention
+boundary. That is the same shape as MMDiT and arrived independently.
+
+## What was measured
+
+Three settings, against a dense baseline **and** a Mixture-of-Experts baseline
+with four experts, at identical FLOPs, across several model scales:
+
+- **Chameleon** (autoregressive text and image, images as 1,024 VQ-VAE tokens):
+  MoT matches the dense baseline's performance at **55.8% of the FLOPs** at 7B.
+- **Chameleon + speech** (three modalities, all autoregressive): speech
+  performance comparable to dense at **37.2% of the FLOPs**.
+- **Transfusion** (text autoregressive, image by diffusion — *different
+  objectives per modality*): a 7B MoT matches the dense baseline's image
+  performance at **one third of the FLOPs**, and a **760M MoT beats a 1.4B
+  dense baseline** on key image generation metrics.
+- **Wall clock**, on AWS p4de.24xlarge with A100s: dense-baseline image quality
+  in **47.2%** of the time, text quality in **75.6%**.
+
+## The ablation that sharpens the practice
+
+`SOTA-262` says to give each modality its own weights. This says **which
+weights**, at FLOPs controlled to the dense architecture:
+
+1. **Feed-forward only** — already a large improvement, with the substantial
+   gains on the image modality.
+2. **Plus `Q`/`K`/`V`** — a further real gain: about 33.3% FLOPs saved on the
+   image modality and 10% on text against feed-forward-only, on the Obelisc
+   held-out set. Smaller than the step before it.
+3. **Plus layer norms** — **negligible**.
+
+The reason offered for the ordering: at a context of 4,096 the feed-forward
+is the larger share of FLOPs, and the feed-forward is where a transformer
+keeps its memory, so separate memory per modality is where separation pays.
+
+The authors add a caveat worth keeping: the layer-norm result is about
+untying layer norms *on top of* the other two, and says nothing about untying
+them alone.
+
+## The leave-one-out analysis
+
+Merge any two modalities into one tower and both get worse. Leaving text out
+of the merge (so image and speech share) keeps most of image's gains while
+speech deteriorates; leaving speech out preserves speech's gains but removes
+the improvements for image and text. The paper calls this **non-reciprocal
+modality competition** — the cost of sharing is not symmetric between the
+modalities that share.
+
+## Conditions
+
+**FLOP-matched, not parameter-matched.** MoT is a sparse architecture: each
+modality activates only its own weights, so at identical FLOPs it holds more
+total parameters than the dense baseline. That is the standard framing for
+sparse models and it is the comparison `SOTA-262`'s promotion condition asked
+for, but "matches dense at 55.8% of the FLOPs" is not "matches dense at 55.8%
+of the memory".
+
+**The three settings share a lineage.** Chameleon and Transfusion are both
+Meta architectures, and this is a Meta paper. The comparison against dense and
+MoE-4x baselines is internal and controlled; the *settings* are not
+independent of the authors.
+
+**No ablation isolates the joint attention.** `SOTA-262`'s second possible
+satisfier — separating the modality-specific weights from the global attention
+— is still not done. Every variant here keeps attention global; what varies is
+which parameters are untied. So the pair of ideas still arrives together.
+
+**Speech is the weakest arm.** The three-modality result is reported at 7B
+with scalability across sizes, and speech is the modality where the FLOP
+ratio is most favourable — which is also the modality with the least
+established baseline.

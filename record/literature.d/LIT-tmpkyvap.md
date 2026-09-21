@@ -1,0 +1,144 @@
+---
+status: Active
+title: 'The Coverage Principle: How Pre-Training Enables Post-Training'
+version: 1
+tags:
+- analysis-and-evaluation
+- training-optimization
+- adaptation-and-tuning
+date: '2026-09-21'
+published: '2025-10-01'
+arxiv: '2510.15020'
+first_author: 'Chen'
+keywords:
+- 'coverage'
+- 'cross-entropy'
+- 'best-of-n'
+- 'generalization'
+- 'gradient-normalization'
+implementations: []
+summary: >-
+  Chen, Huang, Golowich, Malladi, Block, Ash, Krishnamurthy and Foster (2025),
+  [ARXIV-2510.15020](https://arxiv.org/abs/2510.15020). Names the quantity cross-entropy is a bad
+  proxy for: the **coverage profile**, the probability mass a model puts on
+  rare high-quality responses. Proves it is necessary and sufficient for
+  Best-of-N to succeed, that next-token prediction optimizes it faster than it
+  optimizes cross-entropy, and that sequence-level KL carries a linear
+  dependence on sequence length that coverage does not.
+---
+
+# LIT-tmpkyvap: The Coverage Principle: How Pre-Training Enables Post-Training
+
+## Why it's here
+
+The record already holds the observation that the aggregate loss curve hides
+things, and [SOTA-210](../practices.d/SOTA-210.md) — report pass@k as well as pass@1, because RL
+raises one and lowers the other. This is the theory underneath both. It names
+the quantity pass@k estimates, proves what it is good for, and shows why the
+number everybody watches during pre-training is not it.
+
+## The quantity
+
+The **coverage profile** `C_N(π)` measures how much probability mass a model
+places on responses the data distribution considers good, weighted so that it
+answers the question *"will Best-of-N find one?"* The paper proves a good
+coverage profile is **necessary and sufficient** for Best-of-N to succeed —
+and Best-of-N performance is, on prior evidence the paper cites, strongly
+indicative of how the model will do after RL.
+
+Two things follow immediately, and they are the useful half of the paper.
+
+**Cross-entropy is a bad proxy, and not only in practice.** Sequence-level KL
+divergence grows linearly with sequence length `H`. That is proved as a lower
+bound for autoregressive linear models — for *any* proper estimator there is a
+data distribution on which KL scales as `H` — and it is confirmed empirically
+on a graph-reasoning task where KL at convergence is linear in `H` while
+coverage shows no dependence on `H` at all. Pushed through the KL-to-coverage
+bound, this predicts test-time compute growing exponentially in sequence
+length, which is not what happens.
+
+**The mechanism is missing mass.** The Bernoulli case makes it vivid: with
+constant probability a small dataset contains no positive example, the maximum
+likelihood model assigns that outcome zero, and expected KL is **infinite**.
+The coverage profile stays well behaved, because it can write the missing mass
+off instead of paying `log(1/π̂)` for it. KL is unboundedly sensitive to
+responses a well-generalizing learner will nonetheless fail to cover;
+coverage is not.
+
+## The principle
+
+The main theorem bounds the coverage profile of the maximum-likelihood
+estimator by two terms. A **fine-grained** term reads the class's covering
+number at a small scale and is scaled by `1/N` — so coverage converges *faster*
+the further into the tail you look — and carries no explicit dependence on
+sequence length or density ratios. A **coarse-grained** term reads the covering
+number at a very large scale and captures the missing mass. Both are shown
+tight.
+
+That asymmetry is the coverage principle: **next-token prediction generalizes
+in coverage faster than it generalizes in cross-entropy**, and it inherits the
+training corpus's coverage over the tasks you care about without the price the
+KL analysis would charge.
+
+## The optimizer result
+
+For overparameterized autoregressive linear models trained by single-pass SGD
+— the compute-optimal regime — SGD does optimize coverage, with a term
+depending on sequence length `H`, and a matching lower bound shows that
+dependence is real rather than an artifact of the analysis. The cause is
+heterogeneity across prompts: on some prompts the effective gradient scale
+grows with `H` and demands a small learning rate, on others it is small and
+demands a large one.
+
+**Globally normalized SGD removes the `H` dependence**, provably, with
+minibatching required not for variance but to keep normalization from
+introducing bias.
+
+The Adam connection is the paper's own speculation and is labelled as such:
+"somewhat speculatively, we believe that it may be possible to use similar
+techniques". Adam-as-SignSGD normalizes per coordinate rather than globally,
+and the authors say that distinction matters for deep models. Nothing here
+proves anything about Adam.
+
+## Selecting on it
+
+Since cross-entropy can select the wrong checkpoint, the paper gives
+tournament procedures that pick the model minimizing worst-case empirical
+coverage against the others. For a small candidate set this is implementable
+by evaluating pairwise empirical coverage, and it is guaranteed to find a
+good-coverage model in the class even when the data distribution is not in
+the class — which maximum likelihood is not. An improved variant removes an
+additive penalty at the cost of estimating each candidate's coverage by
+sampling generations from it.
+
+## Conditions
+
+**Neither KL nor the coverage profile is observable.** The paper says so in a
+footnote. The scaling law it derives is "a theoretical prediction rather than
+a practical one as-is". What is estimable is cross-entropy, an upper bound on
+KL — which is the quantity being argued against — and empirical coverage on a
+labelled set, which is what the tournaments use.
+
+**The setting is closer to supervised fine-tuning than to pre-training.** The
+authors' first listed simplification: real corpora are variable-length and are
+not split into prompts and responses.
+
+**Realizability is assumed** for the main theorem. The misspecified case is
+handled by convexity of the class or by the tournaments, not by the principle
+itself.
+
+**The SGD results are for autoregressive linear models**, not transformers,
+and assume one gradient step per full sequence. The effect of a limited
+context window is explicitly out of scope.
+
+**Necessity is proved for Best-of-N, not for RL.** The paper is direct: "it is
+not clear what the minimal conditions required for RL are". The bridge to RL
+is the cited empirical finding that BoN predicts post-RL performance.
+
+**Sequence-level coverage is the conservative version.** For reasoning tasks
+what matters is *answer*-level coverage, which is bounded by it and can be
+strictly smaller. So the object analysed is not quite the object a reasoning
+practitioner cares about, and the gap is in the direction of pessimism.
+
+**The experiments are a graph-reasoning task.** Figures 1 and 2 are the whole
+empirical content, and they are illustrations of theorems rather than a study.

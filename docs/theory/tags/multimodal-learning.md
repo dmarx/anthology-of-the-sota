@@ -6,8 +6,9 @@
 
 **Multimodal learning** — what changes when one model has to take in more than one kind of signal — joint architectures and fusion, contrastive image-text training, cross-modal transfer, and what a second modality buys the first.
 
-1 of 48 THEORY documents. Back to the [full index](../README.md).
+2 of 49 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [THEORY-036](../../../record/theory.d/THEORY-036.md) | Representations converge across architectures, objectives and modalities, and the endpoint is a model of what generated the data | Huh et al. (2024), [LIT-458](../../../record/literature.d/LIT-458.md) — vision and language models measure distance between datapoints increasingly alike as they scale, across architectures and objectives. The conjecture is that they are converging on a representation of the joint distribution that generated the observations. The convergence is measured; the endpoint is proved only for a world of bijective observations. | Proposed |
+| [THEORY-049](../../../record/theory.d/THEORY-049.md) | Modalities compete for the same feed-forward parameters, the competition is not symmetric between them, and that is where separating by modality pays | Liang et al. (2024), [LIT-483](../../../record/literature.d/LIT-483.md) — untying transformer components by modality at controlled FLOPs pays most in the **feed-forward**, less in the attention projections, and not at all in the layer norms. Merging any two modalities into one tower degrades both, and by different amounts in each direction. | Proposed |

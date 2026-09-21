@@ -20,7 +20,7 @@ history:
   note: >-
     Proposed -> Active. The promotion condition asked for a second group
     reporting per-modality weights against a shared-weight backbone at
-    matched compute; LIT-tmpobm1s is that, from a different lab in a
+    matched compute; LIT-483 is that, from a different lab in a
     different family of model, with FLOPs held identical to the dense
     baseline across three settings and two baselines. It also brings the
     component ordering the practice could not previously state — untie the
@@ -37,18 +37,18 @@ tags:
 date: '2026-09-20'
 source:
 - LIT-449
-- LIT-tmpobm1s
+- LIT-483
 introduced_by:
 - LIT-449
 implementations:
 - 'Stable Diffusion 3'
 explained_by:
-- THEORY-tmpgsr9o
+- THEORY-049
 summary: >-
   Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md) — MMDiT gives the text and image
   streams separate projections and MLPs, then runs attention over the
   concatenated sequence so information flows both ways. It beats UViT and
-  DiT at matched budget. Liang et al. (2024), [LIT-tmpobm1s](../literature.d/LIT-tmpobm1s.md) — the same
+  DiT at matched budget. Liang et al. (2024), [LIT-483](../literature.d/LIT-483.md) — the same
   shape reached independently for autoregressive multi-modal LLMs, matching
   a dense baseline at **55.8% of the FLOPs**, and ablated component by
   component: the feed-forward carries most of the benefit, the attention
@@ -61,8 +61,8 @@ summary: >-
 
 Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md) — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206).
 
-Liang et al. (2024), [LIT-tmpobm1s](../literature.d/LIT-tmpobm1s.md) — [ARXIV-2411.04996](https://arxiv.org/abs/2411.04996) — read
-as [NOTE-tmpl9zt7](../notes.d/NOTE-tmpl9zt7.md).
+Liang et al. (2024), [LIT-483](../literature.d/LIT-483.md) — [ARXIV-2411.04996](https://arxiv.org/abs/2411.04996) — read
+as [NOTE-232](../notes.d/NOTE-232.md).
 
 ## The shape of the recommendation
 
@@ -77,7 +77,7 @@ That is the distinction worth holding. Cross-attention conditioning, the
 prevailing alternative, lets image tokens read text and not the reverse. Here
 the text representation is itself updated by what the image is doing.
 
-`LIT-tmpobm1s` puts the second half more precisely than the first source
+`LIT-483` puts the second half more precisely than the first source
 does. Global self-attention **normalizes attention weights across tokens of
 different modalities in one operation**; a cross-attention fusion design
 keeps the modalities in separate streams and joins them at intervals. So the
@@ -97,7 +97,7 @@ components one at a time with FLOPs held to the dense architecture:
    and smaller than the step before it.
 3. **The layer norms.** Negligible *on top of* the other two.
 
-<!-- inactive-ok-block: THEORY-tmpgsr9o — Proposed, filed in this same
+<!-- inactive-ok-block: THEORY-049 — Proposed, filed in this same
      contribution, and the sentence citing it says so: the account is named as
      an account and its unsettledness is stated in the same breath. What the
      practice asserts is the ordering, which is measured; the theory is why -->
@@ -106,7 +106,7 @@ Two reasons are offered for the ordering, and they are not the same reason.
 At a 4,096-token context the feed-forward is simply the larger share of the
 FLOPs. And the feed-forward is where a transformer keeps its memory, so
 separate memory per modality is where separation should pay. The first
-argument weakens as context grows; the second does not. [THEORY-tmpgsr9o](../theory.d/THEORY-tmpgsr9o.md)
+argument weakens as context grows; the second does not. [THEORY-049](../theory.d/THEORY-049.md)
 is the account, and is `Proposed` for reasons of its own.
 
 **Do not read step 3 as "layer norms do not matter".** The authors are
@@ -124,7 +124,7 @@ bidirectional design should fix. It also **follows predictable scaling
 trends**, with validation loss tracking the downstream metrics, which is what
 made it safe to commit an 8B run to.
 
-**In autoregressive and mixed-objective multi-modal LLMs** (`LIT-tmpobm1s`),
+**In autoregressive and mixed-objective multi-modal LLMs** (`LIT-483`),
 against a dense baseline and a four-expert mixture-of-experts baseline at
 identical FLOPs: dense-level performance at **55.8% of the FLOPs** in the
 Chameleon setting at 7B, **37.2%** with speech added as a third modality, and

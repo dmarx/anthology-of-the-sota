@@ -4,7 +4,7 @@
 
 **multimodal-learning**.
 
-5 of 231 NOTE documents. Back to the [full index](../README.md).
+7 of 232 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -12,4 +12,6 @@
 | [NOTE-049](../../../record/notes.d/NOTE-049.md) | Learning to Prompt for Vision-Language Models | Replaces hand-written CLIP prompts with continuous context vectors learned end-to-end while every pretrained parameter stays frozen. One or two shots beat prompt engineering; sixteen shots average about 15% gain, over 45% at the best. The paper also reports where it overfits and names the cause as noisy labels. | Read |
 | [NOTE-055](../../../record/notes.d/NOTE-055.md) | CoCa: Contrastive Captioners are Image-Text Foundation Models | Trains one encoder-decoder with both a contrastive and a captioning loss by omitting cross-attention in the first half of the decoder — so those layers produce unimodal text embeddings for the contrastive loss, and the cascaded remainder cross-attends for captioning. Both objectives share one computational graph, at minimal extra cost. | Read |
 | [NOTE-069](../../../record/notes.d/NOTE-069.md) | PaLI: A Jointly-Scaled Multilingual Language-Image Model | Scales language and vision components jointly across 100+ languages and shows a properly scaled model handles many languages while keeping English-only state of the art. Its most useful passage is an ablation honest enough to explain a regression by the language ratio of the data that caused it. | Read |
+| [NOTE-196](../../../record/notes.d/NOTE-196.md) | Scaling Rectified Flow Transformers | A 61-way sweep over diffusion and rectified-flow formulations settles on a straight-line path with logit-normal timestep sampling — rectified flow with uniform timesteps does not win. Adds a resolution-dependent timestep shift, MMDiT's per-modality weights with joint attention, and QK-RMSNorm for high-resolution stability. 8B, weights released. | Read |
 | [NOTE-206](../../../record/notes.d/NOTE-206.md) | The Platonic Representation Hypothesis | Vision and language models measure distance between datapoints more alike as they get larger, across architectures and objectives. The conjecture is that they converge on a model of what generated the data. The proof holds for bijective observations only, and the caption-density experiment tests that boundary rather than asserting past it. | Read |
+| [NOTE-232](../../../record/notes.d/NOTE-232.md) | Mixture-of-Transformers | Read to test whether it satisfies `SOTA-262`'s promotion condition. It does, as that condition was written — second group, per-modality weights against a shared-weight backbone, FLOPs held identical. The component ablation is a bonus the condition did not ask for and the practice needed. | Read |

@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-56 of 231 NOTE documents. Back to the [full index](../README.md).
+57 of 232 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -64,3 +64,4 @@
 | [NOTE-225](../../../record/notes.d/NOTE-225.md) | Local Volume | Reading it: the useful result is the audit, not the hypothesis. A network trained to generalize badly is detected on clean held-out data where its behaviour matches a clean model's, in a small number of forward passes. The volume hypothesis itself is left where it was found — "broadly consistent", by the authors' own conclusion. | Read |
 | [NOTE-226](../../../record/notes.d/NOTE-226.md) | NoProp | Reading it: the interesting number is in the train column, not the test one. NoProp matches backprop on test while sitting 8-15 points behind on train, which on MNIST and CIFAR costs nothing and would be the whole story anywhere fitting is the binding constraint. The paper does not mention it. | Read |
 | [NOTE-227](../../../record/notes.d/NOTE-227.md) | Late-phase weights | Reading it: three ablations constrain the recommendation more than the headline does. Starting at initialization fails outright, the fanciest variant is worse than doing nothing, and replicating every weight instead of a few is worse than replicating a few. All three are reported. | Read |
+| [NOTE-232](../../../record/notes.d/NOTE-232.md) | Mixture-of-Transformers | Read to test whether it satisfies `SOTA-262`'s promotion condition. It does, as that condition was written — second group, per-modality weights against a shared-weight backbone, FLOPs held identical. The component ablation is a bonus the condition did not ask for and the practice needed. | Read |

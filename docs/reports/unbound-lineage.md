@@ -9,8 +9,9 @@ A relation is an assertion that the documents it joins have something in common.
 
 **0 unbound relations.** Two documents joined directly, sharing nothing.
 
-**1 unbound line.** A whole sequence with no value common to every member — which can happen while every single step is expressed, because a component's intersection only shrinks as the component grows. The weaker signal of the two, and the one to read whole before acting on.
+**2 unbound lines.** A whole sequence with no value common to every member — which can happen while every single step is expressed, because a component's intersection only shrinks as the component grows. The weaker signal of the two, and the one to read whole before acting on.
 
 | Declared by | Field | Members |
 |---|---|---|
 | practice | `tags` | [SOTA-036](../../record/practices.d/SOTA-036.md), [SOTA-037](../../record/practices.d/SOTA-037.md), [SOTA-038](../../record/practices.d/SOTA-038.md), [SOTA-279](../../record/practices.d/SOTA-279.md), [SOTA-280](../../record/practices.d/SOTA-280.md), [SOTA-281](../../record/practices.d/SOTA-281.md) |
+| lineage | `tags` | [LIT-447](../../record/literature.d/LIT-447.md), [LIT-448](../../record/literature.d/LIT-448.md), [LIT-449](../../record/literature.d/LIT-449.md), [LIT-483](../../record/literature.d/LIT-483.md) |

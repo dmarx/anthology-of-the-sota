@@ -31,8 +31,8 @@ bare code and run `luria link --fix`.
 
 ## By topic
 
-**[Training optimization](tags/training-optimization.md)** (15) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
-[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md) · [026](../../record/theory.d/THEORY-026.md) · [028](../../record/theory.d/THEORY-028.md) · [029](../../record/theory.d/THEORY-029.md) · [030](../../record/theory.d/THEORY-030.md) · [032](../../record/theory.d/THEORY-032.md) · [033](../../record/theory.d/THEORY-033.md) · [035](../../record/theory.d/THEORY-035.md) · [037](../../record/theory.d/THEORY-037.md) · [040](../../record/theory.d/THEORY-040.md) · [042](../../record/theory.d/THEORY-042.md) · [043](../../record/theory.d/THEORY-043.md) · [044](../../record/theory.d/THEORY-044.md)
+**[Training optimization](tags/training-optimization.md)** (16) — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies:
+[012](../../record/theory.d/THEORY-012.md) · [013](../../record/theory.d/THEORY-013.md) · [024](../../record/theory.d/THEORY-024.md) · [026](../../record/theory.d/THEORY-026.md) · [028](../../record/theory.d/THEORY-028.md) · [029](../../record/theory.d/THEORY-029.md) · [030](../../record/theory.d/THEORY-030.md) · [032](../../record/theory.d/THEORY-032.md) · [033](../../record/theory.d/THEORY-033.md) · [035](../../record/theory.d/THEORY-035.md) · [037](../../record/theory.d/THEORY-037.md) · [040](../../record/theory.d/THEORY-040.md) · [042](../../record/theory.d/THEORY-042.md) · [043](../../record/theory.d/THEORY-043.md) · [044](../../record/theory.d/THEORY-044.md) · [049](../../record/theory.d/THEORY-049.md)
 
 **[Systems optimization](tags/systems-optimization.md)** (0) — hardware utilization, kernels, compilation, memory access patterns — how an operation is executed, not how many bits it is executed in.
 
@@ -71,15 +71,15 @@ bare code and run `luria link --fix`.
 
 **[Vision and graphics](tags/vision-and-graphics.md)** (0) — neural rendering, reconstruction, perception, visual foundation models.
 
-**[Multimodal learning](tags/multimodal-learning.md)** (1) — what changes when one model has to take in more than one kind of signal — joint architectures and fusion, contrastive image-text training, cross-modal transfer, and what a second modality buys the first:
-[036](../../record/theory.d/THEORY-036.md)
+**[Multimodal learning](tags/multimodal-learning.md)** (2) — what changes when one model has to take in more than one kind of signal — joint architectures and fusion, contrastive image-text training, cross-modal transfer, and what a second modality buys the first:
+[036](../../record/theory.d/THEORY-036.md) · [049](../../record/theory.d/THEORY-049.md)
 
 **[Deployment and society](tags/deployment-and-society.md)** (2) — what a system does once it is running among people, and how anyone outside it could find out — audits of deployed platforms and recommenders, information ecosystems, moderation and governance, and the access problems and funding pressures of studying any of it from the outside:
 [047](../../record/theory.d/THEORY-047.md) · [048](../../record/theory.d/THEORY-048.md)
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (23) · [Offered](status/Proposed.md) (22) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (23) · [Offered](status/Proposed.md) (23) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -143,4 +143,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-046](../../record/theory.d/THEORY-046.md) | Uniform-state discrete diffusion is the argmax of a Gaussian diffusion, which is why Gaussian technique transfers to it and not to masked diffusion | Sahoo et al. (2025), [LIT-479](../../record/literature.d/LIT-479.md) — taking the `argmax` of a Gaussian diffusion's latents carries its marginals onto those of a uniform-state discrete diffusion, under a reparameterization of the noise schedule, and the discretized process satisfies the defining ODE of a discrete diffusion. So it is one. Masked diffusion has no such preimage. | Active |
 | [THEORY-047](../../record/theory.d/THEORY-047.md) | Personalizing a feed concentrates what it shows rather than broadening it, and a handful of moderate signals is enough to start | Ye, Luceri and Ferrara (2024), [LIT-480](../../record/literature.d/LIT-480.md) — across four arms of an audit, the accounts following **nobody** receive the most diverse recommendations and the partisan arms the least. Ten moderate media follows and four political accounts are enough to amplify aligned voices more than 50% above a balanced baseline. | Proposed |
 | [THEORY-048](../../record/theory.d/THEORY-048.md) | Randomizing individuals estimates an individual quantity, and when the units interact the collective effect is not the sum of it — so a null from such a trial is not evidence of no effect | Bak-Coleman et al. (2025), [LIT-482](../../record/literature.d/LIT-482.md) — four named reasons an individual-level randomized trial fails to estimate a collective effect: non-linearity across scale, hysteresis, feedback in time, and violation of the stable unit treatment value assumption through the network. The power grid shows the first and the last together: treat too few and the system absorbs it, treat enough and the controls fail too. | Active |
+| [THEORY-049](../../record/theory.d/THEORY-049.md) | Modalities compete for the same feed-forward parameters, the competition is not symmetric between them, and that is where separating by modality pays | Liang et al. (2024), [LIT-483](../../record/literature.d/LIT-483.md) — untying transformer components by modality at controlled FLOPs pays most in the **feed-forward**, less in the attention projections, and not at all in the layer norms. Merging any two modalities into one tower degrades both, and by different amounts in each direction. | Proposed |
 

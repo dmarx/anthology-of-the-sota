@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-15 of 231 NOTE documents. Back to the [full index](../README.md).
+16 of 232 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -23,3 +23,4 @@
 | [NOTE-221](../../../record/notes.d/NOTE-221.md) | nGPT | Reading it: the headline is 4–20× and the footnote is 60–80% more time per step, so the honest wall-clock figure is roughly 5.5× at 4k. Still large. The part that generalises beyond this architecture is smaller and more interesting — that a matrix's norm is currently an accident of the learning rate and weight decay, and does not have to be. | Read |
 | [NOTE-226](../../../record/notes.d/NOTE-226.md) | NoProp | Reading it: the interesting number is in the train column, not the test one. NoProp matches backprop on test while sitting 8-15 points behind on train, which on MNIST and CIFAR costs nothing and would be the whole story anywhere fitting is the binding constraint. The paper does not mention it. | Read |
 | [NOTE-228](../../../record/notes.d/NOTE-228.md) | The Diffusion Duality | Reading it: the theorem is elegant and the ablation says it accounts for under half the likelihood gain. What the paper actually establishes is a regime split — masked diffusion wins on quality at many steps, uniform-state wins below about 32, and the reason is architectural rather than tuned. | Read |
+| [NOTE-232](../../../record/notes.d/NOTE-232.md) | Mixture-of-Transformers | Read to test whether it satisfies `SOTA-262`'s promotion condition. It does, as that condition was written — second group, per-modality weights against a shared-weight backbone, FLOPs held identical. The component ablation is a bonus the condition did not ask for and the practice needed. | Read |

@@ -1,6 +1,9 @@
 ---
+number: 232
 status: Read
-paper: LIT-tmpobm1s
+formerly:
+- NOTE-tmpl9zt7
+paper: LIT-483
 title: 'Mixture-of-Transformers'
 version: 1
 date: '2026-09-21'
@@ -11,7 +14,7 @@ summary: >-
   bonus the condition did not ask for and the practice needed.
 ---
 
-# NOTE-tmpl9zt7: Mixture-of-Transformers
+# NOTE-232: Mixture-of-Transformers
 
 ## Contribution
 

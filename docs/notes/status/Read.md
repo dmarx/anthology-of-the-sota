@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-228 of 231 NOTE documents. Back to the [full index](../README.md).
+229 of 232 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -238,3 +238,4 @@
 | [NOTE-229](../../../record/notes.d/NOTE-229.md) | Auditing Political Exposure Bias | Reading it to find out whether `deployment-and-society` earns its place: it does, and not because of the finding. The methods section is a sequence of stated trades about measuring a system you cannot inspect, and the sharpest result is that the arm following nobody gets the most diverse timeline. | Read |
 | [NOTE-230](../../../record/notes.d/NOTE-230.md) | Informative and Actionable Social Media Research | Reading it: the power-grid example is the whole paper and it is worth the space. Treat too few substations and the grid absorbs it; treat enough and the controls black out too. Both give "no effect", both are wrong, and nothing about that argument is specific to social media. | Read |
 | [NOTE-231](../../../record/notes.d/NOTE-231.md) | Industry Influence in Social Media Research | Reading it: the number that matters is not 49% of papers but 21% of authors. A field where half the high-profile output has industry ties held by a fifth of its people is not a field engaging broadly with industry — it is a small group with durable relationships, and that is a different diagnosis. | Read |
+| [NOTE-232](../../../record/notes.d/NOTE-232.md) | Mixture-of-Transformers | Read to test whether it satisfies `SOTA-262`'s promotion condition. It does, as that condition was written — second group, per-modality weights against a shared-weight backbone, FLOPs held identical. The component ablation is a bonus the condition did not ask for and the practice needed. | Read |

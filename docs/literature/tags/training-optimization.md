@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-87 of 417 LIT documents. Back to the [full index](../README.md).
+88 of 418 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -97,3 +97,4 @@
 | [LIT-476](../../../record/literature.d/LIT-476.md) | Estimating the Probability of Sampling a Trained Neural Network at Random | Scherlis and Belrose (2025), [ARXIV-2501.18812](https://arxiv.org/abs/2501.18812). An estimator for the measure, under the initialization distribution, of the region around a trained network whose behaviour matches it. Negative log of that measure is a description length. A ConvNeXt deliberately trained to generalize badly has a **smaller** such region — detectable on clean held-out data where its behaviour is indistinguishable. | Active |
 | [LIT-477](../../../record/literature.d/LIT-477.md) | NoProp: Training Neural Networks without Full Back-propagation or Full Forward-propagation | Li, Teh and Pascanu (2025), [ARXIV-2503.24322](https://arxiv.org/abs/2503.24322). Train each block independently to denoise a noisy *label* embedding given the raw input — diffusion machinery pointed at a classifier. No forward or backward pass across the network at training time, about half the GPU memory, and test accuracy matching backprop on MNIST and CIFAR-10. Every block sees the input, which is what makes independence possible and what makes the comparison awkward. | Active |
 | [LIT-478](../../../record/literature.d/LIT-478.md) | Neural networks with late-phase weights | von Oswald, Kobayashi, Meulemans, Henning, Grewe and Sacramento (2020), [ARXIV-2007.12927](https://arxiv.org/abs/2007.12927). Late in training, replicate a *small* subset of the weights — BatchNorm's scale and shift will do — train `K` copies that share everything else, and average them into one model at the end. Inference cost unchanged. WRN 28-10 on CIFAR-100: 81.35 → 82.87. Starting the same procedure at initialization instead **fails to beat the baseline**. | Active |
+| [LIT-483](../../../record/literature.d/LIT-483.md) | Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models | Liang et al. (2024), [ARXIV-2411.04996](https://arxiv.org/abs/2411.04996). Untie every non-embedding parameter by modality — feed-forward, attention projections, layer norms — and keep global self-attention over the whole sequence. Matches a dense baseline at **55.8% of the FLOPs** in the Chameleon setting and 37.2% with speech added. The component ablation is the useful part: the feed-forward carries most of it, attention adds less, layer norms add nothing. | Active |

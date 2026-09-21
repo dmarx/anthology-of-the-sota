@@ -1,5 +1,8 @@
 ---
+number: 49
 status: Proposed
+formerly:
+- THEORY-tmpgsr9o
 promote_when: >-
   The competition measured directly rather than inferred from the benefit of
   separating — gradient conflict or interference between modalities in a
@@ -13,23 +16,23 @@ tags:
 - training-optimization
 date: '2026-09-21'
 source:
-- LIT-tmpobm1s
+- LIT-483
 explains:
 - SOTA-262
 summary: >-
-  Liang et al. (2024), [LIT-tmpobm1s](../literature.d/LIT-tmpobm1s.md) — untying transformer components
+  Liang et al. (2024), [LIT-483](../literature.d/LIT-483.md) — untying transformer components
   by modality at controlled FLOPs pays most in the **feed-forward**, less in
   the attention projections, and not at all in the layer norms. Merging any two
   modalities into one tower degrades both, and by different amounts in each
   direction.
 ---
 
-# THEORY-tmpgsr9o: Modalities compete for the same feed-forward parameters, the competition is not symmetric between them, and that is where separating by modality pays
+# THEORY-049: Modalities compete for the same feed-forward parameters, the competition is not symmetric between them, and that is where separating by modality pays
 
 ## Source
 
-Liang, Yu, Luo, Iyer and colleagues (2024), [LIT-tmpobm1s](../literature.d/LIT-tmpobm1s.md) §3.5 and §4
-— read as [NOTE-tmpl9zt7](../notes.d/NOTE-tmpl9zt7.md).
+Liang, Yu, Luo, Iyer and colleagues (2024), [LIT-483](../literature.d/LIT-483.md) §3.5 and §4
+— read as [NOTE-232](../notes.d/NOTE-232.md).
 
 ## What it explains
 

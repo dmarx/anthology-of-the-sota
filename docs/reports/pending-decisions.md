@@ -9,7 +9,7 @@
 
 ## SOTAs
 
-85 of the 126.
+84 of the 126.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -75,7 +75,6 @@
 | 2026-09-20 | Proposed | [SOTA-261](../../record/practices.d/SOTA-261.md) | 5 | 0 | Set AdamW's weight decay by targeting a timescale that follows a power law in tokens-per-parameter |
 | 2026-09-20 | Proposed | [SOTA-275](../../record/practices.d/SOTA-275.md) | 5 | 0 | Pick the depth parameterization from the residual branch: a Transformer branch has more than one transformation, so it needs the stricter rule |
 | 2026-09-20 | Proposed | [SOTA-260](../../record/practices.d/SOTA-260.md) | 3 | 0 | Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it |
-| 2026-09-20 | Proposed | [SOTA-262](../../record/practices.d/SOTA-262.md) | 3 | 0 | Give each modality its own weights and let the streams attend jointly |
 | 2026-09-20 | Proposed | [SOTA-268](../../record/practices.d/SOTA-268.md) | 3 | 0 | Do not transfer a data mixing ratio across model scales; the threshold where a domain starts being learned moves with size |
 | 2026-09-20 | Proposed | [SOTA-274](../../record/practices.d/SOTA-274.md) | 3 | 0 | Before adopting a spectral optimizer, measure the stable rank of each block's incoming activations against its gradient's nuclear rank |
 | 2026-09-20 | Proposed | [SOTA-267](../../record/practices.d/SOTA-267.md) | 2 | 0 | Start the training distribution imbalanced and flatten it, rather than holding it uniform throughout |
@@ -101,7 +100,7 @@
 
 ## THEORYs
 
-22 of the 126.
+23 of the 126.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -126,6 +125,7 @@
 | 2026-09-21 | Proposed | [THEORY-043](../../record/theory.d/THEORY-043.md) | 1 | 0 | Cross-entropy pays an unbounded price for mass a learner never had, and that price grows with sequence length — which is why it drifts from what post-training needs |
 | 2026-09-21 | Proposed | [THEORY-044](../../record/theory.d/THEORY-044.md) | 1 | 0 | Dropout early in training buys a biased gradient estimate with much less directional variance, and the trade is favourable until it is not |
 | 2026-09-21 | Proposed | [THEORY-047](../../record/theory.d/THEORY-047.md) | 1 | 0 | Personalizing a feed concentrates what it shows rather than broadening it, and a handful of moderate signals is enough to start |
+| 2026-09-21 | Proposed | [THEORY-049](../../record/theory.d/THEORY-049.md) | 1 | 0 | Modalities compete for the same feed-forward parameters, the competition is not symmetric between them, and that is where separating by modality pays |
 | 2026-09-21 | Proposed | [THEORY-041](../../record/theory.d/THEORY-041.md) | 0 | 0 | Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing |
 
 ## LITs

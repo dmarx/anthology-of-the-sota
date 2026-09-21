@@ -6,7 +6,7 @@
 
 **Systems optimization** — hardware utilization, kernels, compilation, memory access patterns — how an operation is executed, not how many bits it is executed in.
 
-11 of 449 LIT documents. Back to the [full index](../README.md).
+12 of 450 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,3 +21,4 @@
 | [LIT-380](../../../record/literature.d/LIT-380.md) | The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits | Ma et al. (2024), [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764). Every weight is ternary, {-1, 0, +1}, and the model is trained that way from scratch rather than quantized afterwards. From 3B upward it matches an FP16 LLaMA of the same size and token budget on perplexity and end-task accuracy, while the matrix multiply reduces to integer addition — a compute paradigm rather than a compression ratio. | Active |
 | [LIT-418](../../../record/literature.d/LIT-418.md) | HybridFlow: A Flexible and Efficient RLHF Framework | Sheng et al. (2024), [ARXIV-2409.19256](https://arxiv.org/abs/2409.19256). The paper behind verl — a hybrid single/multi-controller execution model for the RLHF dataflow, with a 3D resharding engine between the training and generation phases. Named in [ADR-032](../../../record/decisions.d/ADR-032.md) as one of the four references at the top of the backlog it opened. | Active |
 | [LIT-512](../../../record/literature.d/LIT-512.md) | SVDQuant: Absorbing Outliers by Low-Rank Components for 4-Bit Diffusion Models | Li et al. (2024), [ARXIV-2411.05007](https://arxiv.org/abs/2411.05007) — 4-bit weights **and** activations for diffusion transformers. Shift outliers from activations into the weights by smoothing, peel the dominant singular values into a 16-bit rank-32 branch, quantize only the residual. Two propositions bound the output error by the *magnitudes* rather than only the rounding errors, which is why shrinking the residual works. Naïvely the extra branch costs **57%** latency; fused, the system reaches **3.0×** over a W4A16 baseline and **3.5×** memory reduction on 12B FLUX.1. Read as [NOTE-257](../../../record/notes.d/NOTE-257.md). | Active |
+| [LIT-515](../../../record/literature.d/LIT-515.md) | Exploiting Block Coordinate Descent for Cost-Effective LLM Model Training | Liu et al. (2025), [ARXIV-2506.12037](https://arxiv.org/abs/2506.12037) — full-parameter training one block at a time, with blocks cut on layer boundaries so the optimized kernels still apply. Reaches comparable or better perplexity at 2B **on about three times the iterations**, using one A800 where full-parameter needs two. Read as [NOTE-260](../../../record/notes.d/NOTE-260.md). | Active |

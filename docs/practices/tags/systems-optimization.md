@@ -6,7 +6,7 @@
 
 **Systems optimization** — hardware utilization, kernels, compilation, memory access patterns — how an operation is executed, not how many bits it is executed in.
 
-21 of 315 SOTA documents. Back to the [full index](../README.md).
+22 of 316 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -31,3 +31,4 @@
 | [SOTA-249](../../../record/practices.d/SOTA-249.md) | Recompute activations from a sqrt(n) subset of checkpoints when activation memory is the binding constraint | Chen et al. (2016), [LIT-004](../../../record/literature.d/LIT-004.md) — [ARXIV-1604.06174](https://arxiv.org/abs/1604.06174). Store activations at O(sqrt(n)) checkpoints and recompute the rest during the backward pass. The price is one extra forward pass per minibatch; the measured case is a 1000-layer ResNet at 48G to 7G for 30% more wall clock. | Active |
 | [SOTA-252](../../../record/practices.d/SOTA-252.md) | Make the full-resolution path affordable instead of upsampling, when the shortcut is what breaks correctness | Abdal et al. (2023), [LIT-113](../../../record/literature.d/LIT-113.md) — [ARXIV-2311.17857](https://arxiv.org/abs/2311.17857). Prior 3D GANs render small and upsample in 2D because volume rendering is too slow at training resolution — but a 2D upsampler is multi-view inconsistent by construction. Efficient Gaussian rendering makes native 512x512 affordable, and the inconsistency leaves with the upsampler rather than being mitigated. | Active |
 | [SOTA-314](../../../record/practices.d/SOTA-314.md) | Absorb quantization outliers into a high-precision low-rank branch taken from the weights, and fuse its kernels into the low-bit ones | Li et al. (2024), [LIT-512](../../../record/literature.d/LIT-512.md) — at 4 bits on both weights and activations, smoothing alone is not enough. Shift outliers from activations into weights, peel the dominant singular values into a 16-bit rank-32 branch, quantize the residual. Then fuse: run naïvely the branch costs **57%** latency and cancels the win; fused it gives **3.0×** over W4A16 and **3.5×** memory on 12B FLUX.1. | Active |
+| [SOTA-316](../../../record/practices.d/SOTA-316.md) | When you are memory-bound rather than time-bound, train all the parameters a block at a time, partitioned on layer boundaries | Liu et al. (2025), [LIT-515](../../../record/literature.d/LIT-515.md) — freeze all but one block of layers, train it to local convergence, rotate. Memory falls to roughly the active block, so a 7B trains on one A800 where full-parameter needs two, and perplexity at 2B matches or beats the full-parameter baseline. The price is about **three times the iterations**, which the paper's own table shows and its abstract does not. | Proposed |

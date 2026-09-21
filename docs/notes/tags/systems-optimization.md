@@ -4,7 +4,7 @@
 
 **systems-optimization**.
 
-5 of 259 NOTE documents. Back to the [full index](../README.md).
+6 of 260 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -13,3 +13,4 @@
 | [NOTE-168](../../../record/notes.d/NOTE-168.md) | The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits | Ternary weights trained from scratch, matching FP16 from 3B upward at equal size and tokens. The interesting claim is not the compression ratio but that the matrix multiply becomes integer addition — which is a bet on hardware, and the one place the paper's argument outruns its measurements. | Read |
 | [NOTE-184](../../../record/notes.d/NOTE-184.md) | Training Deep Nets with Sublinear Memory Cost | Two contributions, and the famous one is the second. First, treat memory allocation over the computation graph as a compiler problem — liveness analysis, in-place operations, memory sharing. Then, on top of that, drop most intermediate feature maps and recompute them segment by segment during the backward pass. Dividing an n-layer chain into sqrt(n) segments costs sqrt(n) memory for one extra forward pass; the extreme of the same analysis is log n memory for n log n extra forward computation. | Read |
 | [NOTE-257](../../../record/notes.d/NOTE-257.md) | SVDQuant: a low-rank branch on the weights, not on the error | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist. The idea that travels is an ordering: decompose the weights and quantize the residual, rather than quantize and then patch the error. Two propositions and Eckart-Young say why, and a published method that does it the other way round is the control. | Read |
+| [NOTE-260](../../../record/notes.d/NOTE-260.md) | Block coordinate descent: a smaller machine bought with three times the steps | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist as the last of the 5-revisit tier. The method is sound and the accounting needs separating: the headline 2.6% mixes the method with the price of a 4090, the same-device figure is 33%, and the iteration counts in the paper's own Table 2 show BCD paying about 3× the steps for the memory it saves. | Read |

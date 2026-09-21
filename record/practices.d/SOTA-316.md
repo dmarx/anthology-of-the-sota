@@ -1,5 +1,8 @@
 ---
+number: 316
 status: Proposed
+formerly:
+- SOTA-tmpz9mlh
 promote_when: >-
   Quality compared at the scale the cost is claimed at: a 7B-or-larger model
   trained both ways to the same token budget, with the final loss and at least
@@ -22,12 +25,12 @@ tags:
 - training-optimization
 date: '2026-09-21'
 source:
-- LIT-tmpxiqj4
+- LIT-515
 introduced_by:
-- LIT-tmpxiqj4
+- LIT-515
 implementations: []
 summary: >-
-  Liu et al. (2025), [LIT-tmpxiqj4](../literature.d/LIT-tmpxiqj4.md) — freeze all but one block of
+  Liu et al. (2025), [LIT-515](../literature.d/LIT-515.md) — freeze all but one block of
   layers, train it to local convergence, rotate. Memory falls to roughly the
   active block, so a 7B trains on one A800 where full-parameter needs two, and
   perplexity at 2B matches or beats the full-parameter baseline. The price is
@@ -35,11 +38,11 @@ summary: >-
   its abstract does not.
 ---
 
-# SOTA-tmpz9mlh: When you are memory-bound rather than time-bound, train all the parameters a block at a time, partitioned on layer boundaries
+# SOTA-316: When you are memory-bound rather than time-bound, train all the parameters a block at a time, partitioned on layer boundaries
 
 ## Source
 
-Liu et al. (2025), [LIT-tmpxiqj4](../literature.d/LIT-tmpxiqj4.md) — read as [NOTE-tmpyl1mo](../notes.d/NOTE-tmpyl1mo.md).
+Liu et al. (2025), [LIT-515](../literature.d/LIT-515.md) — read as [NOTE-260](../notes.d/NOTE-260.md).
 
 ## When this applies
 

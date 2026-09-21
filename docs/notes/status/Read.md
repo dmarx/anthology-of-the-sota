@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-256 of 259 NOTE documents. Back to the [full index](../README.md).
+257 of 260 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -266,3 +266,4 @@
 | [NOTE-257](../../../record/notes.d/NOTE-257.md) | SVDQuant: a low-rank branch on the weights, not on the error | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist. The idea that travels is an ordering: decompose the weights and quantize the residual, rather than quantize and then patch the error. Two propositions and Eckart-Young say why, and a published method that does it the other way round is the control. | Read |
 | [NOTE-258](../../../record/notes.d/NOTE-258.md) | mHC-lite: the experiment that was one measurement from settling the Birkhoff dispute | Read from the #180 worklist. It makes the doubly-stochastic constraint exact, which is precisely the condition under which [LIT-151](../../../record/literature.d/LIT-151.md)'s objection should bite hardest — and it reports no stream statistic, so the dispute stands. The approximation it replaces is real and measured: column sums of the layer-wise product off by up to **220%** at 24 layers. | Read |
 | [NOTE-259](../../../record/notes.d/NOTE-259.md) | Refine, then calibrate: the validation-loss minimum is a compromise nobody chose | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist and filed because the record had no calibration document at all. A proper loss is calibration error plus refinement error; the two bottom out at different epochs, so stopping on validation loss lands between them. Fit a temperature before reading the loss and the compromise goes away. 196 tabular datasets, three model families, ten runs per vision dataset. | Read |
+| [NOTE-260](../../../record/notes.d/NOTE-260.md) | Block coordinate descent: a smaller machine bought with three times the steps | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist as the last of the 5-revisit tier. The method is sound and the accounting needs separating: the headline 2.6% mixes the method with the price of a 4090, the same-device figure is 33%, and the iteration counts in the paper's own Table 2 show BCD paying about 3× the steps for the memory it saves. | Read |

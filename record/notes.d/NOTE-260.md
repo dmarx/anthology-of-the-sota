@@ -1,6 +1,9 @@
 ---
+number: 260
 status: Read
-paper: LIT-tmpxiqj4
+formerly:
+- NOTE-tmpyl1mo
+paper: LIT-515
 title: 'Block coordinate descent: a smaller machine bought with three times the steps'
 version: 1
 date: '2026-09-21'
@@ -12,7 +15,7 @@ summary: >-
   steps for the memory it saves.
 ---
 
-# NOTE-tmpyl1mo: Block coordinate descent: a smaller machine bought with three times the steps
+# NOTE-260: Block coordinate descent: a smaller machine bought with three times the steps
 
 ## Contribution
 

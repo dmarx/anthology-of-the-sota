@@ -1,0 +1,64 @@
+---
+status: Active
+title: 'Self-Consistency Improves Chain of Thought Reasoning in Language Models'
+version: 1
+tags:
+- in-context-learning
+- inference-optimization
+date: '2026-09-21'
+published: '2022-03-01'
+arxiv: '2203.11171'
+first_author: 'Wang'
+keywords:
+- 'self-consistency'
+- 'chain-of-thought'
+- 'decoding'
+- 'marginalization'
+- 'calibration'
+extends:
+- LIT-467
+implementations: []
+summary: >-
+  Wang et al. (2022), [ARXIV-2203.11171](https://arxiv.org/abs/2203.11171). Replace greedy decoding
+  with sample-and-marginalize: draw several reasoning paths, take the most
+  common final answer. GSM8K +17.9, SVAMP +11.0, AQuA +12.2. The gain
+  saturates by about five or ten samples.
+---
+
+# LIT-tmp43eio: Self-Consistency Improves Chain of Thought Reasoning in Language Models
+
+Wang et al. (2022) — [ARXIV-2203.11171](https://arxiv.org/abs/2203.11171)
+
+## Key takeaways
+
+- **It is a decoding strategy, not a prompt.** Chain-of-thought prompting is
+  unchanged; what changes is that greedy decoding is replaced by sampling a
+  diverse set of paths and marginalizing over them to the most consistent
+  final answer. That makes it composable with anything else in this topic.
+- **The intuition is that a hard problem admits many routes to one answer.**
+  Agreement between independently sampled derivations is evidence; a single
+  greedy path has no such check, and is exposed to both local optimality and
+  the stochasticity of one sample.
+- **Gains across the board**: GSM8K +17.9, SVAMP +11.0, AQuA +12.2,
+  StrategyQA +6.4, ARC-challenge +3.9, over four model families at varying
+  scale.
+- **The cost is stated and bounded.** More samples means more compute, and the
+  authors' own guidance is that five or ten recovers most of the gain because
+  performance saturates quickly.
+- **Two by-products the authors name.** It supplies an uncertainty estimate
+  and improves calibration, and it yields rationales worth collecting — the
+  second of which is the seed of using it to generate fine-tuning data, which
+  they flag as future work.
+
+## Standing in the anthology
+
+The third document `SOTA-279` named as uncovered. It is tagged
+`inference-optimization` as well as `in-context-learning` because it is
+literally a sampling algorithm, which that topic's blurb names.
+
+Its limitation is one the record already holds from a different direction:
+the authors note that models sometimes generate incorrect or nonsensical
+reasoning paths, and [LIT-467](../literature.d/LIT-467.md)'s own error analysis found correct answers
+reached through incorrect chains. Marginalizing over paths counts answers,
+not reasoning, so it improves the answer without making the trace
+trustworthy.

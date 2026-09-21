@@ -1,0 +1,52 @@
+---
+status: Active
+title: 'Exploiting Block Coordinate Descent for Cost-Effective LLM Model Training'
+version: 1
+tags:
+- systems-optimization
+- training-optimization
+date: '2026-09-21'
+published: '2025-06-13'
+arxiv: '2506.12037'
+first_author: 'Liu'
+keywords:
+- 'block coordinate descent'
+- 'memory-efficient training'
+- 'full-parameter training'
+- 'commodity GPUs'
+- 'parameter freezing'
+implementations: []
+summary: >-
+  Liu et al. (2025), [ARXIV-2506.12037](https://arxiv.org/abs/2506.12037) — full-parameter training
+  one block at a time, with blocks cut on layer boundaries so the optimized
+  kernels still apply. Reaches comparable or better perplexity at 2B **on
+  about three times the iterations**, using one A800 where full-parameter
+  needs two. Read as [NOTE-tmpyl1mo](../notes.d/NOTE-tmpyl1mo.md).
+---
+
+# LIT-tmpxiqj4: Exploiting Block Coordinate Descent for Cost-Effective LLM Model Training
+
+Liu et al. (2025) — [ARXIV-2506.12037](https://arxiv.org/abs/2506.12037), read as
+[NOTE-tmpyl1mo](../notes.d/NOTE-tmpyl1mo.md).
+
+## Standing
+
+<!-- inactive-ok-block: SOTA-155 — Proposed, named as a near-miss this practice is distinguished from -->
+**It fills a hole between two things the record already holds.**
+[SOTA-184](../practices.d/SOTA-184.md) adapts a model by training a low-rank update, which is cheap
+and is *not* full-parameter training; [SOTA-155](../practices.d/SOTA-155.md) spreads training across
+poorly connected workers, which assumes you have the workers. Neither answers
+"I want every parameter trained and I have one small GPU", and that is the
+question this takes.
+
+**Its headline number mixes two things and the body separates them.** The
+abstract's **2.6%** on RTX 4090 includes the 4090's hourly price being about a
+quarter of an A100's, so it is an economic claim about hardware as much as an
+efficiency claim about the method. The same-device figure — **33%** on
+A100/A800 — is the one that isolates the method, and even that is largely
+"one GPU instead of two".
+
+**The evidence and the claim sit at different scales.** Quality is compared
+at ResNet, GPT-2 0.15B and 2B; the 7B appears only in the cost experiments,
+and sizes beyond 7B are explicitly *estimated* from single-round speeds rather
+than measured.

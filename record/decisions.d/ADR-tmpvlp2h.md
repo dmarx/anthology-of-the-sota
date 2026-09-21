@@ -1,0 +1,131 @@
+---
+status: Proposed
+title: 'A practice may state that it has no identifiable origin, by leaving introduced_by empty'
+version: 1
+tags:
+- record
+- process
+date: '2026-09-21'
+issue: '#241'
+summary: >-
+  [ADR-030](ADR-030.md) made `introduced_by:` required because an absent field was
+  ambiguous between "the origin is the primary source" and "nobody checked".
+  A third case has arrived that neither reading covers: the record looked, and
+  no document states the recommendation. `required:` goes back to `false` so
+  that case can be written down — but the rule is the opposite of
+  [ADR-029](ADR-029.md)'s optionality. Write the field explicitly empty, with a comment
+  saying what was searched, and the emptiness is a claim a reader can falsify
+  by naming the paper. Rejected: filling the field with the primary source
+  anyway, which asserts something false; and inventing a sentinel LIT
+  document, which puts a non-paper in the reading list.
+---
+
+<!-- inactive-ok-file: ADR-029 ADR-030 — both Proposed. This decision is
+     about the history of one field and cannot be stated without naming the
+     two decisions that set it; ADR-030 is the one being amended, and citing
+     a decision in order to change it is not citing it as settled. -->
+
+# ADR-tmpvlp2h: A practice may state that it has no identifiable origin, by leaving introduced_by empty
+
+## Context
+
+[ADR-029](ADR-029.md) added `introduced_by:` and made it optional. [ADR-030](ADR-030.md) made it
+required, and its reason was not that the values were interesting — the pass
+it ran found three practices in 208 whose origin differed from their primary
+source, which is the duplication [ADR-029](ADR-029.md) had warned about. The reason was
+what an **absent** field meant:
+
+> an absent field was ambiguous between "the origin is the primary source"
+> and "nobody checked", and those are different claims
+
+That argument is correct and this decision does not disturb it. What it missed
+is that there is a third thing an author might want to say, and it is not
+either of those two:
+
+> the record looked, and no document it can name states this recommendation.
+
+[SOTA-tmp0obtv](../practices.d/SOTA-tmp0obtv.md) is the case that forced it. The recommendation is to
+evaluate a search on tasks held out of its own fitness function. Its only
+source, [LIT-493](../literature.d/LIT-493.md), is an instance of the failure: a search that did not
+hold anything out, and that recommends nothing of the kind. The general
+argument under the practice — selecting on a statistic and then reporting it
+inflates the comparison — is older than this corpus and standard in
+statistics, and the record holds no paper that states or quantifies it.
+
+Under [ADR-030](ADR-030.md) the only legal filings were both false. Writing
+`introduced_by: [LIT-493]` asserts that Genesys first made this
+recommendation, which it did not. Declining to file the practice asserts that
+the record has nothing to say, when what it has is a recommendation whose
+origin it cannot name — and the owner's instruction was to file it anyway,
+on the grounds that knowing the practice exists is worth more than knowing
+who said it first.
+
+## Decision
+
+**`schemes.SOTA.references.introduced_by.required` goes to `false`,** and the
+convention around it is narrower than the schema:
+
+1. **Write the field, empty.** `introduced_by: []`, not an omitted line. The
+   lint reads the two identically; a human does not. An author who omits the
+   line has probably forgotten, and an author who writes it empty has decided.
+2. **Put a comment beside it saying what was searched and did not turn up.**
+   The emptiness is an assertion — *no such document exists that this record
+   can name* — and the comment is what makes it a falsifiable one. Naming the
+   paper is how a reader refutes it.
+3. **Say the same thing in the body.** A practice with no origin should
+   explain, in its Source section, why its `source:` is not also its origin.
+   [SOTA-tmp0obtv](../practices.d/SOTA-tmp0obtv.md) does this in its first paragraph.
+
+This is not a return to [ADR-029](ADR-029.md)'s optionality, and the difference is the
+corpus rather than the config. When [ADR-029](ADR-029.md) made the field optional, no
+practice carried it and an absent field meant nothing at all. Every practice
+carries it now — [ADR-030](ADR-030.md)'s pass is what put them there — so an empty one
+stands out against 300-odd populated ones. The population is doing the work
+the `required:` flag used to do.
+
+## What this costs
+
+**The lint can no longer catch a practice that simply forgot.** This is a real
+loss and it is the price. [ADR-030](ADR-030.md) bought a guarantee, and this trades the
+guarantee for the ability to say a true thing that the guarantee made
+unsayable. The mitigation is a convention, and conventions decay.
+
+**What would buy both back** is an upstream change: a `required:` that is
+satisfied by an explicitly empty list but not by an absent key — the
+distinction luria currently collapses, which is why this decision had to
+choose between them at all. `luria lint` reports an empty `introduced_by:` as
+"no `introduced_by:` in frontmatter", and those are different documents. If
+that lands, this decision reverts to `required: true` and keeps every rule
+above; the convention becomes the schema and nothing else changes. Worth
+raising against luria, and not raisable from this repository.
+
+## Rejected
+
+**Fill `introduced_by:` with `source[0]` anyway and explain in prose.** This
+is what [ADR-030](ADR-030.md) leaves as the only option, and it is exactly the failure
+[ADR-029](ADR-029.md) predicted for the field — reflexive duplication — except worse,
+because here the duplication is not merely uninformative but wrong. It would
+put "Genesys first recommended holding tasks out of the fitness function" into
+a machine-readable field, where the index reads it and no prose can reach.
+
+**Mint a sentinel LIT document meaning "no known origin".** The obvious hack,
+and it fails on what `LIT` is: a paper's standing in the anthology. A sentinel
+is not a paper, it would appear in the reading list and the lineage report,
+and every practice pointing at it would declare a relation to a document with
+no content. [ADR-035](ADR-035.md) §4 forbids inventing a label to satisfy a check, and
+this is the same move one scheme over.
+
+**Decline to file the practice.** Defensible, and it was this record's first
+answer — [#241](https://github.com/dmarx/anthology-of-the-sota/issues/241) exists because of it. What changed is a judgement about what
+the anthology is for: a recommendation that is right, cheap, and uncited is
+still worth a page, provided the page says which of those three it is short
+of. The alternative leaves the shelf empty and the reader with nothing, which
+is not more honest — it is only quieter.
+
+## Scope
+
+One practice uses this today. The field stays populated everywhere else, and
+a second empty one should be argued for on its own terms rather than by
+pointing here. If empty `introduced_by:` becomes common, that is evidence the
+corpus is filing recommendations it cannot source, and the response is to look
+at the practices rather than at this decision.

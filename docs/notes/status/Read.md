@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-246 of 249 NOTE documents. Back to the [full index](../README.md).
+247 of 250 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -256,3 +256,4 @@
 | [NOTE-247](../../../record/notes.d/NOTE-247.md) | ViT-VQGAN: where the codebook advice comes from | Read to give `SOTA-306` its origin, and it corrected the practice in three places. The advice is not "use small code vectors" but "factorize lookup from embedding"; `ℓ₂`-normalization is ablated and is the largest single effect in the table; and the dimension-4 row shows 96% codebook usage with near-worst FID, so utilization is necessary and not sufficient. | Read |
 | [NOTE-248](../../../record/notes.d/NOTE-248.md) | The FID Lottery: which lottery, and how big | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist, taken ahead of its dwell rank because `SOTA-305` had just landed on the adjacent question. The finding that matters is not that FID is noisy but *which* noise dominates: the training run, by 3.2×, in a term no amount of extra sampling touches — and a control that rules out the boring explanation. | Read |
 | [NOTE-249](../../../record/notes.d/NOTE-249.md) | MemGraphRAG: the pilot study is the contribution | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist in rank order. The system is a multi-agent GraphRAG pipeline with single-run numbers; the durable part is §3, which measures other people's systems and finds graph expansion trading relevance for recall at a net loss on the end task. That is the filing. | Read |
+| [NOTE-250](../../../record/notes.d/NOTE-250.md) | MIMI: the objective that needs the knowledge it assumes away | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist in rank order. The headline is a task-agnostic interface score; the durable finding is its failure case, where an assistant doing its job drives the metric *negative* and the fix is a horizon hyperparameter that requires exactly the task knowledge the objective was built to avoid. | Read |

@@ -1,5 +1,8 @@
 ---
+number: 309
 status: Proposed
+formerly:
+- SOTA-tmplzyt9
 promote_when: >-
   The horizon dependence characterized rather than worked around: a second
   setting where the same interface data is scored at several values of `Δ`
@@ -23,12 +26,12 @@ tags:
 - deployment-and-society
 date: '2026-09-21'
 source:
-- LIT-tmp36izs
+- LIT-503
 introduced_by:
-- LIT-tmp36izs
+- LIT-503
 implementations: []
 summary: >-
-  Reddy, Levine and Dragan (2022), [LIT-tmp36izs](../literature.d/LIT-tmp36izs.md) — whatever the
+  Reddy, Levine and Dragan (2022), [LIT-503](../literature.d/LIT-503.md) — whatever the
   operator is trying to do, a better interface yields less noisy commands, so
   `I(x_t, (s_t, s_{t+Δ}))` scores it with no labels, no reward and no task
   knowledge. Spearman **ρ = 0.43** against true task completion across 540K
@@ -37,12 +40,12 @@ summary: >-
   a detail.
 ---
 
-# SOTA-tmplzyt9: Score a control interface by the mutual information between the operator's command and the state change it induces, and choose the horizon of that state change deliberately
+# SOTA-309: Score a control interface by the mutual information between the operator's command and the state change it induces, and choose the horizon of that state change deliberately
 
 ## Source
 
-Reddy, Levine and Dragan (2022), [LIT-tmp36izs](../literature.d/LIT-tmp36izs.md) — read as
-[NOTE-tmpt536g](../notes.d/NOTE-tmpt536g.md).
+Reddy, Levine and Dragan (2022), [LIT-503](../literature.d/LIT-503.md) — read as
+[NOTE-250](../notes.d/NOTE-250.md).
 
 ## When this applies
 

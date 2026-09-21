@@ -1,6 +1,9 @@
 ---
+number: 250
 status: Read
-paper: LIT-tmp36izs
+formerly:
+- NOTE-tmpt536g
+paper: LIT-503
 title: 'MIMI: the objective that needs the knowledge it assumes away'
 version: 1
 date: '2026-09-21'
@@ -12,11 +15,11 @@ summary: >-
   objective was built to avoid.
 ---
 
-<!-- inactive-ok-file: SOTA-tmplzyt9 — Proposed, filed in this same
+<!-- inactive-ok-file: SOTA-309 — Proposed, filed in this same
      contribution; the Recommendations section names it as where R1 went and
      Bearing names what would move it, which is the note's job -->
 
-# NOTE-tmpt536g: MIMI: the objective that needs the knowledge it assumes away
+# NOTE-250: MIMI: the objective that needs the knowledge it assumes away
 
 ## Contribution
 
@@ -121,7 +124,7 @@ assistive interfaces, so no relation is declared and none is missing.
 
 - **R1** — score a control interface by command-to-outcome mutual information
   when labels and rewards are unavailable, and choose the horizon
-  deliberately. *Filed* as `SOTA-tmplzyt9`, with the horizon in the title
+  deliberately. *Filed* as `SOTA-309`, with the horizon in the title
   because the sign depends on it.
 - **R2** — do not read a one-step influence metric as a measure of how well an
   assistant is helping. **Folded into R1's Conditions** rather than filed

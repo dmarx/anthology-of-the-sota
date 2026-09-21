@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-60 of 249 NOTE documents. Back to the [full index](../README.md).
+61 of 250 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -68,3 +68,4 @@
 | [NOTE-235](../../../record/notes.d/NOTE-235.md) | ParScale | Read as a candidate third scaling axis. The scaling law is fitted honestly and the inference-cost analysis is better instrumented than most; the claim that carries furthest is the *asymmetry* — code benefits more than general text, on two independent measurements — and it is the claim the paper labels a conjecture. | Read |
 | [NOTE-244](../../../record/notes.d/NOTE-244.md) | SQ hardness for semiautomata, and the regime it needs | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist. The theorem is clean and the regime it needs — an alphabet cubic in the number of states — is what a citing reader will drop. Filed for the mental model underneath it, which the record had nothing for: longer random sequences carry *less* information about a hidden transition structure, not more. | Read |
 | [NOTE-248](../../../record/notes.d/NOTE-248.md) | The FID Lottery: which lottery, and how big | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist, taken ahead of its dwell rank because `SOTA-305` had just landed on the adjacent question. The finding that matters is not that FID is noisy but *which* noise dominates: the training run, by 3.2×, in a term no amount of extra sampling touches — and a control that rules out the boring explanation. | Read |
+| [NOTE-250](../../../record/notes.d/NOTE-250.md) | MIMI: the objective that needs the knowledge it assumes away | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist in rank order. The headline is a task-agnostic interface score; the durable finding is its failure case, where an assistant doing its job drives the metric *negative* and the fix is a horizon hyperparameter that requires exactly the task knowledge the objective was built to avoid. | Read |

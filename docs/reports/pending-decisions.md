@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**144 document(s) awaiting a decision.**
+**145 document(s) awaiting a decision.**
 
 ## SOTAs
 
-95 of the 144.
+96 of the 145.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -95,6 +95,7 @@
 | 2026-09-21 | Proposed | [SOTA-298](../../record/practices.d/SOTA-298.md) | 2 | 0 | Measure a writing assistant by the outcome it was deployed to improve, not by the text features that used to predict it |
 | 2026-09-21 | Proposed | [SOTA-303](../../record/practices.d/SOTA-303.md) | 2 | 0 | Name the phase a time-saving tool accelerates before predicting what it will do to the quality of what people produce with it |
 | 2026-09-21 | Proposed | [SOTA-304](../../record/practices.d/SOTA-304.md) | 2 | 0 | Generate a long program unit by unit, freezing each unit that passes an execution-based check, instead of regenerating the whole artifact on failure |
+| 2026-09-21 | Proposed | [SOTA-309](../../record/practices.d/SOTA-309.md) | 2 | 0 | Score a control interface by the mutual information between the operator's command and the state change it induces, and choose the horizon of that state change deliberately |
 | 2026-09-21 | Proposed | [SOTA-284](../../record/practices.d/SOTA-284.md) | 1 | 0 | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |
 | 2026-09-21 | Proposed | [SOTA-286](../../record/practices.d/SOTA-286.md) | 1 | 0 | To find a model that generalizes badly where its outputs look fine, measure how much of parameter space behaves the way it does |
 | 2026-09-21 | Proposed | [SOTA-290](../../record/practices.d/SOTA-290.md) | 1 | 0 | To measure what a deployed recommender does, use sock-puppets that never interact, follow sets curated to your question, and exposure weighted by rank |
@@ -111,7 +112,7 @@
 
 ## THEORYs
 
-30 of the 144.
+30 of the 145.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -148,7 +149,7 @@
 
 ## LITs
 
-3 of the 144.
+3 of the 145.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -158,7 +159,7 @@
 
 ## ADRs
 
-16 of the 144.
+16 of the 145.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

@@ -4,7 +4,7 @@
 
 **deployment-and-society**.
 
-5 of 249 NOTE documents. Back to the [full index](../README.md).
+6 of 250 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -13,3 +13,4 @@
 | [NOTE-231](../../../record/notes.d/NOTE-231.md) | Industry Influence in Social Media Research | Reading it: the number that matters is not 49% of papers but 21% of authors. A field where half the high-profile output has industry ties held by a fifth of its people is not a field engaging broadly with industry — it is a small group with durable relationships, and that is a different diagnosis. | Read |
 | [NOTE-236](../../../record/notes.d/NOTE-236.md) | AI on Change.org | Read to test it against `SOTA-291`'s promotion condition, which it satisfies. The platform-level difference-in-differences is the strong evidence; the repeat-writer analysis reads stronger than it is; and the finding with the longest reach — that the text features stopped predicting outcomes — is in the appendix. | Read |
 | [NOTE-241](../../../record/notes.d/NOTE-241.md) | LLMs raise the opportunity cost of research time | Read for a mechanism `THEORY-051` named and the record could not supply: why effort would fall when a writing tool gets better. The answer is that a perfect time-saving tool raises the value of time, and the interesting part is not the decline but the **phase dependence** — the model predicts opposite signs for selectivity, and the opposite sign for thoroughness, from properties of the tool you can identify before deploying it. | Read |
+| [NOTE-250](../../../record/notes.d/NOTE-250.md) | MIMI: the objective that needs the knowledge it assumes away | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist in rank order. The headline is a task-agnostic interface score; the durable finding is its failure case, where an assistant doing its job drives the metric *negative* and the fix is a horizon hyperparameter that requires exactly the task knowledge the objective was built to avoid. | Read |

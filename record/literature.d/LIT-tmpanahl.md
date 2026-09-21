@@ -1,0 +1,62 @@
+---
+status: Active
+title: 'Rethinking Early Stopping: Refine, Then Calibrate'
+version: 1
+tags:
+- analysis-and-evaluation
+- training-optimization
+date: '2026-09-21'
+published: '2025-01-31'
+arxiv: '2501.19195'
+first_author: 'Berta'
+keywords:
+- 'calibration'
+- 'refinement'
+- 'proper losses'
+- 'temperature scaling'
+- 'early stopping'
+implementations: []
+summary: >-
+  Berta, Holzmüller, Jordan and Bach (2025), [ARXIV-2501.19195](https://arxiv.org/abs/2501.19195) — the
+  record's first document on probability calibration. A proper loss splits
+  into calibration error and refinement error; the two are **not minimized at
+  the same epoch**, so stopping on validation loss lands at a compromise
+  optimal for neither. Stop on validation loss *after* temperature scaling
+  instead, then calibrate. **196** tabular datasets across three model
+  families, plus a vision benchmark of ten runs per dataset. Read as
+  [NOTE-tmp1et69](../notes.d/NOTE-tmp1et69.md).
+---
+
+<!-- inactive-ok-file: THEORY-tmp844b5 ADR-031 SOTA-102 — all three named
+     rather than relied on. THEORY-tmp844b5 is Proposed and filed in this same
+     contribution as the account under this unit's practice, and this document
+     says in as many words that it is the weaker of the two. ADR-031 is cited
+     as the decision that splits practice from theory, which is what this unit
+     is applying. SOTA-102 is Superseded and named ONLY as a false positive —
+     the nearest thing a search for "calibration" returns, and about data
+     mixing rather than probabilities, which is the point being made. -->
+
+# LIT-tmpanahl: Rethinking Early Stopping: Refine, Then Calibrate
+
+Berta, Holzmüller, Jordan and Bach (2025) — [ARXIV-2501.19195](https://arxiv.org/abs/2501.19195), read as
+[NOTE-tmp1et69](../notes.d/NOTE-tmp1et69.md).
+
+## Standing
+
+**This record held nothing on calibration before it.** Searching the practices
+for calibration returns quantization scales, data-mixing temperature
+([SOTA-102](../practices.d/SOTA-102.md), and `Superseded`) and incidental uses of the word
+"confidence". A corpus with eighty practices touching training and none about
+whether a model's probabilities mean anything was missing a subject, not a
+paper.
+
+**It contributes two documents**, on [ADR-031](../decisions.d/ADR-031.md)'s split:
+[SOTA-tmpony2u](../practices.d/SOTA-tmpony2u.md) takes the instruction, and [THEORY-tmp844b5](../theory.d/THEORY-tmp844b5.md) takes
+the claim underneath it — that the two error terms have separate minimizers,
+which the paper both measures and analyses for high-dimensional logistic
+regression.
+
+**The evidence is unusually broad for a single group.** 196 classification
+datasets, three model families, 30 hyperparameter configurations per split;
+separately, CIFAR-scale vision with **ten runs per dataset** and about 300
+GPU hours. Most of what this record holds is a single run.

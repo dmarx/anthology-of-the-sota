@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-86 of 412 LIT documents. Back to the [full index](../README.md).
+87 of 413 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -96,3 +96,4 @@
 | [LIT-475](../../../record/literature.d/LIT-475.md) | Dropout Reduces Underfitting | Liu, Xu, Jin, Shen and Darrell (2023), [ARXIV-2303.01500](https://arxiv.org/abs/2303.01500). Dropout applied only for the first stretch of training and then switched off lowers **training** loss and raises test accuracy on models too small to overfit — the regime where standard dropout costs up to 6 points. The mechanism is measured: early dropout reduces the angle between mini-batch gradients and the whole-dataset gradient. | Active |
 | [LIT-476](../../../record/literature.d/LIT-476.md) | Estimating the Probability of Sampling a Trained Neural Network at Random | Scherlis and Belrose (2025), [ARXIV-2501.18812](https://arxiv.org/abs/2501.18812). An estimator for the measure, under the initialization distribution, of the region around a trained network whose behaviour matches it. Negative log of that measure is a description length. A ConvNeXt deliberately trained to generalize badly has a **smaller** such region — detectable on clean held-out data where its behaviour is indistinguishable. | Active |
 | [LIT-477](../../../record/literature.d/LIT-477.md) | NoProp: Training Neural Networks without Full Back-propagation or Full Forward-propagation | Li, Teh and Pascanu (2025), [ARXIV-2503.24322](https://arxiv.org/abs/2503.24322). Train each block independently to denoise a noisy *label* embedding given the raw input — diffusion machinery pointed at a classifier. No forward or backward pass across the network at training time, about half the GPU memory, and test accuracy matching backprop on MNIST and CIFAR-10. Every block sees the input, which is what makes independence possible and what makes the comparison awkward. | Active |
+| [LIT-478](../../../record/literature.d/LIT-478.md) | Neural networks with late-phase weights | von Oswald, Kobayashi, Meulemans, Henning, Grewe and Sacramento (2020), [ARXIV-2007.12927](https://arxiv.org/abs/2007.12927). Late in training, replicate a *small* subset of the weights — BatchNorm's scale and shift will do — train `K` copies that share everything else, and average them into one model at the end. Inference cost unchanged. WRN 28-10 on CIFAR-100: 81.35 → 82.87. Starting the same procedure at initialization instead **fails to beat the baseline**. | Active |

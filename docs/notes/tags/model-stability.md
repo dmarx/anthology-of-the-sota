@@ -4,7 +4,7 @@
 
 **model-stability**.
 
-11 of 226 NOTE documents. Back to the [full index](../README.md).
+12 of 227 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -19,3 +19,4 @@
 | [NOTE-221](../../../record/notes.d/NOTE-221.md) | nGPT | Reading it: the headline is 4–20× and the footnote is 60–80% more time per step, so the honest wall-clock figure is roughly 5.5× at 4k. Still large. The part that generalises beyond this architecture is smaller and more interesting — that a matrix's norm is currently an accident of the learning rate and weight decay, and does not have to be. | Read |
 | [NOTE-224](../../../record/notes.d/NOTE-224.md) | Dropout Reduces Underfitting | Reading it: the persuasive number is the training loss, not the accuracy. Early dropout lowers ViT-T's training loss from 3.443 to 3.394 while standard dropout raises it to 3.885 — so the same operator is doing two opposite things depending only on when it runs, and one of them is not regularization. | Read |
 | [NOTE-225](../../../record/notes.d/NOTE-225.md) | Local Volume | Reading it: the useful result is the audit, not the hypothesis. A network trained to generalize badly is detected on clean held-out data where its behaviour matches a clean model's, in a small number of forward passes. The volume hypothesis itself is left where it was found — "broadly consistent", by the authors' own conclusion. | Read |
+| [NOTE-227](../../../record/notes.d/NOTE-227.md) | Late-phase weights | Reading it: three ablations constrain the recommendation more than the headline does. Starting at initialization fails outright, the fanciest variant is worse than doing nothing, and replicating every weight instead of a few is worse than replicating a few. All three are reported. | Read |

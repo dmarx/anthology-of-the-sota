@@ -1,6 +1,9 @@
 ---
+number: 227
 status: Read
-paper: LIT-tmpledv1
+formerly:
+- NOTE-tmpdgwy1
+paper: LIT-478
 title: 'Late-phase weights'
 version: 1
 date: '2026-09-21'
@@ -19,7 +22,7 @@ summary: >-
      in the text as a reading rather than a result, which is why its unsettled
      status is not a problem for the sentence that names it -->
 
-# NOTE-tmpdgwy1: Late-phase weights
+# NOTE-227: Late-phase weights
 
 ## Contribution
 

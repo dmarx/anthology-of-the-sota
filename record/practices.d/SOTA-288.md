@@ -1,5 +1,8 @@
 ---
+number: 288
 status: Proposed
+formerly:
+- SOTA-tmpw07d8
 promote_when: >-
   The method applied to a transformer — LayerNorm's gain and bias are the
   obvious substitute for BatchNorm's — with stochastic weight averaging as the
@@ -20,18 +23,18 @@ tags:
 - model-stability
 date: '2026-09-21'
 source:
-- LIT-tmpledv1
+- LIT-478
 introduced_by:
-- LIT-tmpledv1
+- LIT-478
 implementations: []
 ---
 
-# SOTA-tmpw07d8: Late in training, replicate a small subset of the weights, train the copies against shared base weights, and average the subset back into one model
+# SOTA-288: Late in training, replicate a small subset of the weights, train the copies against shared base weights, and average the subset back into one model
 
 ## Source
 
 von Oswald, Kobayashi, Meulemans, Henning, Grewe and Sacramento (2020),
-[LIT-tmpledv1](../literature.d/LIT-tmpledv1.md) — read as [NOTE-tmpdgwy1](../notes.d/NOTE-tmpdgwy1.md). CIFAR-10/100,
+[LIT-478](../literature.d/LIT-478.md) — read as [NOTE-227](../notes.d/NOTE-227.md). CIFAR-10/100,
 ImageNet fine-tuning, and an enwik8 LSTM, five seeds throughout.
 
 ## The claim

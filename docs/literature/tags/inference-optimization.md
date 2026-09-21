@@ -6,7 +6,7 @@
 
 **Inference optimization** — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
 
-11 of 420 LIT documents. Back to the [full index](../README.md).
+12 of 421 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,3 +21,4 @@
 | [LIT-428](../../../record/literature.d/LIT-428.md) | Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention | Katharopoulos et al. (2020), [ARXIV-2006.16236](https://arxiv.org/abs/2006.16236). Where linear attention comes from, and the identity the record argues about in twelve documents without being able to cite it: drop the softmax for a kernel feature map, associativity reorders the product to O(N), and the autoregressive case is then literally an RNN. | Active |
 | [LIT-468](../../../record/literature.d/LIT-468.md) | Self-Consistency Improves Chain of Thought Reasoning in Language Models | Wang et al. (2022), [ARXIV-2203.11171](https://arxiv.org/abs/2203.11171). Replace greedy decoding with sample-and-marginalize: draw several reasoning paths, take the most common final answer. GSM8K +17.9, SVAMP +11.0, AQuA +12.2. The gain saturates by about five or ten samples. | Active |
 | [LIT-479](../../../record/literature.d/LIT-479.md) | The Diffusion Duality | Sahoo, Deschenaux, Gokaslan, Wang, Chiu and Kuleshov (2025), [ARXIV-2506.10892](https://arxiv.org/abs/2506.10892). Uniform-state discrete diffusion is the `argmax` of a Gaussian diffusion, which lets Gaussian techniques transfer: a variance-reducing curriculum doubles training speed, and consistency distillation cuts sampling from 1024 steps to 8. Masked diffusion still wins on likelihood; this wins in the few-step regime, where masked models cannot revise what they have already emitted. | Active |
+| [LIT-486](../../../record/literature.d/LIT-486.md) | Parallel Scaling Law for Language Models | Chen et al. (2025), [ARXIV-2505.10475](https://arxiv.org/abs/2505.10475). Run the *same* weights over `P` learnably-prefixed copies of the input and aggregate the outputs: the loss falls as if the parameter count had risen by `O(log P)`. Fitted across 0.5B–4.4B and `P = 1…8` on two corpora. At batch size 1, matching a parameter-scaled model costs **22× less added memory and 6× less added latency** — and **P× the training FLOPs**, which is the real price. | Active |

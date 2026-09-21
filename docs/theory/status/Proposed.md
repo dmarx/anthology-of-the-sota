@@ -6,7 +6,7 @@
 
 **Offered** — stated and plausible, on evidence that is suggestive rather than settling — the document says what would settle it.
 
-23 of 49 THEORY documents. Back to the [full index](../README.md).
+24 of 50 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -33,3 +33,4 @@
 | [THEORY-045](../../../record/theory.d/THEORY-045.md) | How much of parameter space behaves like your trained network is a description length, and the better-generalizing network occupies more of it | Scherlis and Belrose (2025), [LIT-476](../../../record/literature.d/LIT-476.md) — measure the region around a trained network whose behaviour matches it, under the initialization distribution rather than Lebesgue. Negative log of that measure is, by the bits-back argument, a description length. A ConvNeXt trained to generalize badly occupies a smaller region, and local volume falls through training as the model's description grows. | Proposed |
 | [THEORY-047](../../../record/theory.d/THEORY-047.md) | Personalizing a feed concentrates what it shows rather than broadening it, and a handful of moderate signals is enough to start | Ye, Luceri and Ferrara (2024), [LIT-480](../../../record/literature.d/LIT-480.md) — across four arms of an audit, the accounts following **nobody** receive the most diverse recommendations and the partisan arms the least. Ten moderate media follows and four political accounts are enough to amplify aligned voices more than 50% above a balanced baseline. | Proposed |
 | [THEORY-049](../../../record/theory.d/THEORY-049.md) | Modalities compete for the same feed-forward parameters, the competition is not symmetric between them, and that is where separating by modality pays | Liang et al. (2024), [LIT-483](../../../record/literature.d/LIT-483.md) — untying transformer components by modality at controlled FLOPs pays most in the **feed-forward**, less in the attention projections, and not at all in the layer norms. Merging any two modalities into one tower degrades both, and by different amounts in each direction. | Proposed |
+| [THEORY-050](../../../record/theory.d/THEORY-050.md) | Parameters carry memorization and parallel computation carries reasoning | Chen et al. (2025), [LIT-486](../../../record/literature.d/LIT-486.md) — the exchange rate between parallel streams and parameters is fitted **higher on code (0.39) than on general text (0.33)**, and downstream a 1.6B model at `P = 8` matches a 4.4B model on coding but only a 2.8B one on general tasks. Two independent measurements pointing the same way, and an account the authors themselves call a conjecture. | Proposed |

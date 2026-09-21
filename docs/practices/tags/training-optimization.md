@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-76 of 295 SOTA documents. Back to the [full index](../README.md).
+78 of 297 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -86,3 +86,5 @@
 | [SOTA-285](../../../record/practices.d/SOTA-285.md) | Put dropout at the start of training if the model underfits, and at the end if it overfits — the schedule decides the sign, not the rate |  | Proposed |
 | [SOTA-287](../../../record/practices.d/SOTA-287.md) | If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input |  | Proposed |
 | [SOTA-288](../../../record/practices.d/SOTA-288.md) | Late in training, replicate a small subset of the weights, train the copies against shared base weights, and average the subset back into one model |  | Proposed |
+| [SOTA-296](../../../record/practices.d/SOTA-296.md) | Add the parallel streams in a short final training stage, not from the start | Chen et al. (2025), [LIT-486](../../../record/literature.d/LIT-486.md) — parallel scaling costs `P`× the training FLOPs, which is what would otherwise make it unaffordable. Train 1T tokens the ordinary way, then switch the streams on for **20B tokens, 2% of the budget**. The loss spikes when the random prefixes appear and recovers within **0.0002T tokens**, and the logarithmic gains in `P` are the same ones the from-scratch runs show. | Proposed |
+| [SOTA-297](../../../record/practices.d/SOTA-297.md) | Scale parallel computation with learnable input transforms, not parameters, when inference memory is the binding constraint | Chen et al. (2025), [LIT-486](../../../record/literature.d/LIT-486.md) — run the same weights over `P` learnably-prefixed copies of the input and learn the aggregation. Loss falls as if the parameters had grown by `O(log P)`; a 1.6B model at `P = 8` matches a 4.4B one on code. At batch size 1 that costs **22× less added memory and 6× less added latency** than the parameter scaling it replaces — and `P`× the training FLOPs. | Proposed |

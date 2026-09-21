@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in.
 
-5 of 49 THEORY documents. Back to the [full index](../README.md).
+6 of 50 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -15,3 +15,4 @@
 | [THEORY-038](../../../record/theory.d/THEORY-038.md) | A decoder cannot compose over a long context in few layers, because each position forgets what it forwarded | Chen et al. (2024), [LIT-464](../../../record/literature.d/LIT-464.md) — causal masking makes a decoder a line of forgetful communicating players, one epoch per layer, and sequential composition needs more epochs than a constant-depth model has. An unconditional bound on what can be expressed, not on what can be learned. | Active |
 | [THEORY-041](../../../record/theory.d/THEORY-041.md) | Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing | Loshchilov et al. (2024), [LIT-472](../../../record/literature.d/LIT-472.md) — trained GPT embeddings form a hyper-ellipsoid with a high condition number and attention matrices whose singular values suggest rank deficiency; renormalizing after training narrows the gap without closing it. `Proposed`, because the evidence is correlational: these models are worse conditioned and they also train slower, and nothing yet connects the two. | Proposed |
 | [THEORY-046](../../../record/theory.d/THEORY-046.md) | Uniform-state discrete diffusion is the argmax of a Gaussian diffusion, which is why Gaussian technique transfers to it and not to masked diffusion | Sahoo et al. (2025), [LIT-479](../../../record/literature.d/LIT-479.md) — taking the `argmax` of a Gaussian diffusion's latents carries its marginals onto those of a uniform-state discrete diffusion, under a reparameterization of the noise schedule, and the discretized process satisfies the defining ODE of a discrete diffusion. So it is one. Masked diffusion has no such preimage. | Active |
+| [THEORY-050](../../../record/theory.d/THEORY-050.md) | Parameters carry memorization and parallel computation carries reasoning | Chen et al. (2025), [LIT-486](../../../record/literature.d/LIT-486.md) — the exchange rate between parallel streams and parameters is fitted **higher on code (0.39) than on general text (0.33)**, and downstream a 1.6B model at `P = 8` matches a 4.4B model on coding but only a 2.8B one on general tasks. Two independent measurements pointing the same way, and an account the authors themselves call a conjecture. | Proposed |

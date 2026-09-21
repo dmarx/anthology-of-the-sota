@@ -1,5 +1,8 @@
 ---
+number: 297
 status: Proposed
+formerly:
+- SOTA-tmp9spic
 promote_when: >-
   A second group fitting the parallel–parameter exchange rate, at a different
   architecture family or past `P = 8`, and reporting inference cost in memory
@@ -23,14 +26,14 @@ tags:
 - training-optimization
 date: '2026-09-21'
 source:
-- LIT-tmpitbks
+- LIT-486
 introduced_by:
-- LIT-tmpitbks
+- LIT-486
 implementations: []
 explained_by:
-- THEORY-tmprktkw
+- THEORY-050
 summary: >-
-  Chen et al. (2025), [LIT-tmpitbks](../literature.d/LIT-tmpitbks.md) — run the same weights over `P`
+  Chen et al. (2025), [LIT-486](../literature.d/LIT-486.md) — run the same weights over `P`
   learnably-prefixed copies of the input and learn the aggregation. Loss falls
   as if the parameters had grown by `O(log P)`; a 1.6B model at `P = 8`
   matches a 4.4B one on code. At batch size 1 that costs **22× less added
@@ -38,20 +41,20 @@ summary: >-
   and `P`× the training FLOPs.
 ---
 
-<!-- inactive-ok-file: THEORY-tmprktkw — Proposed, filed in this same
+<!-- inactive-ok-file: THEORY-050 — Proposed, filed in this same
      contribution and named as `Proposed` in the sentence that cites it. The
      practice rests on the measured asymmetry, not on the account of it -->
 
-<!-- inactive-ok-file: SOTA-tmp91kxm — Proposed, filed in this same
+<!-- inactive-ok-file: SOTA-296 — Proposed, filed in this same
      contribution; it is the mitigation for this practice's training cost and
      is cited as such, which is a fact about what it recommends -->
 
-# SOTA-tmp9spic: Scale parallel computation with learnable input transforms, not parameters, when inference memory is the binding constraint
+# SOTA-297: Scale parallel computation with learnable input transforms, not parameters, when inference memory is the binding constraint
 
 ## Source
 
-Chen et al. (2025), [LIT-tmpitbks](../literature.d/LIT-tmpitbks.md) — [ARXIV-2505.10475](https://arxiv.org/abs/2505.10475) — read as
-[NOTE-tmp5l9o0](../notes.d/NOTE-tmp5l9o0.md).
+Chen et al. (2025), [LIT-486](../literature.d/LIT-486.md) — [ARXIV-2505.10475](https://arxiv.org/abs/2505.10475) — read as
+[NOTE-235](../notes.d/NOTE-235.md).
 
 ## What to do
 
@@ -79,7 +82,7 @@ models gain more — the loss contours flatten as parameters grow.
 Downstream, and the asymmetry is the interesting part: a 1.6B model at
 `P = 8` matches the **4.4B** baseline on coding (39.1 against 39.2) and only
 the **2.8B** baseline on general tasks (55.7 against 55.2).
-[THEORY-tmprktkw](../theory.d/THEORY-tmprktkw.md) is the account of why, and is `Proposed`.
+[THEORY-050](../theory.d/THEORY-050.md) is the account of why, and is `Proposed`.
 
 ## Why "when inference memory is the binding constraint" is in the title
 
@@ -110,7 +113,7 @@ been much less true.
 ## Conditions
 
 **`P`× the training FLOPs.** This is the cost and it is not small. The
-mitigation is [SOTA-tmp91kxm](SOTA-tmp91kxm.md) — add the streams in a short final stage —
+mitigation is [SOTA-296](SOTA-296.md) — add the streams in a short final stage —
 and it is a mitigation rather than an answer.
 
 **The law is fitted, not derived.** The theoretical result says the parameter

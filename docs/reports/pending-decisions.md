@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**129 document(s) awaiting a decision.**
+**132 document(s) awaiting a decision.**
 
 ## SOTAs
 
-87 of the 129.
+89 of the 132.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -69,9 +69,9 @@
 | 2026-09-17 | Proposed | [SOTA-248](../../record/practices.d/SOTA-248.md) | 1 | 0 | Stretch and clip the softmax so an attention head can output exact zeros |
 | 2026-09-19 | Proposed | [SOTA-255](../../record/practices.d/SOTA-255.md) | 11 | 0 | Tune weight decay upward when pretraining over a repeated corpus, rather than inheriting the customary value |
 | 2026-09-19 | Proposed | [SOTA-254](../../record/practices.d/SOTA-254.md) | 8 | 0 | Train the language model as a masked diffusion model when the corpus is fixed and the compute is not |
-| 2026-09-19 | Proposed | [SOTA-256](../../record/practices.d/SOTA-256.md) | 3 | 0 | Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget |
+| 2026-09-19 | Proposed | [SOTA-256](../../record/practices.d/SOTA-256.md) | 4 | 0 | Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget |
+| 2026-09-19 | Proposed | [SOTA-257](../../record/practices.d/SOTA-257.md) | 3 | 0 | Spend surplus compute on an ensemble of independently seeded models and distil it, rather than on one larger model |
 | 2026-09-19 | Proposed | [SOTA-251](../../record/practices.d/SOTA-251.md) | 2 | 0 | Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule |
-| 2026-09-19 | Proposed | [SOTA-257](../../record/practices.d/SOTA-257.md) | 1 | 0 | Spend surplus compute on an ensemble of independently seeded models and distil it, rather than on one larger model |
 | 2026-09-20 | Proposed | [SOTA-261](../../record/practices.d/SOTA-261.md) | 5 | 0 | Set AdamW's weight decay by targeting a timescale that follows a power law in tokens-per-parameter |
 | 2026-09-20 | Proposed | [SOTA-275](../../record/practices.d/SOTA-275.md) | 5 | 0 | Pick the depth parameterization from the residual branch: a Transformer branch has more than one transformation, so it needs the stricter rule |
 | 2026-09-20 | Proposed | [SOTA-260](../../record/practices.d/SOTA-260.md) | 3 | 0 | Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it |
@@ -94,6 +94,8 @@
 | 2026-09-21 | Proposed | [SOTA-284](../../record/practices.d/SOTA-284.md) | 1 | 0 | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |
 | 2026-09-21 | Proposed | [SOTA-286](../../record/practices.d/SOTA-286.md) | 1 | 0 | To find a model that generalizes badly where its outputs look fine, measure how much of parameter space behaves the way it does |
 | 2026-09-21 | Proposed | [SOTA-290](../../record/practices.d/SOTA-290.md) | 1 | 0 | To measure what a deployed recommender does, use sock-puppets that never interact, follow sets curated to your question, and exposure weighted by rank |
+| 2026-09-21 | Proposed | [SOTA-296](../../record/practices.d/SOTA-296.md) | 1 | 0 | Add the parallel streams in a short final training stage, not from the start |
+| 2026-09-21 | Proposed | [SOTA-297](../../record/practices.d/SOTA-297.md) | 1 | 0 | Scale parallel computation with learnable input transforms, not parameters, when inference memory is the binding constraint |
 | 2026-09-21 | Proposed | [SOTA-287](../../record/practices.d/SOTA-287.md) | 0 | 0 | If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input |
 | 2026-09-21 | Proposed | [SOTA-288](../../record/practices.d/SOTA-288.md) | 0 | 0 | Late in training, replicate a small subset of the weights, train the copies against shared base weights, and average the subset back into one model |
 | 2026-09-21 | Proposed | [SOTA-292](../../record/practices.d/SOTA-292.md) | 0 | 0 | Check industry ties yourself when reading a literature about deployed platforms — disclosure is unreliable and the ties are mechanically detectable |
@@ -103,7 +105,7 @@
 
 ## THEORYs
 
-23 of the 129.
+24 of the 132.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -125,6 +127,7 @@
 | 2026-09-20 | Proposed | [THEORY-036](../../record/theory.d/THEORY-036.md) | 3 | 0 | Representations converge across architectures, objectives and modalities, and the endpoint is a model of what generated the data |
 | 2026-09-20 | Proposed | [THEORY-034](../../record/theory.d/THEORY-034.md) | 1 | 0 | Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations |
 | 2026-09-21 | Proposed | [THEORY-045](../../record/theory.d/THEORY-045.md) | 2 | 0 | How much of parameter space behaves like your trained network is a description length, and the better-generalizing network occupies more of it |
+| 2026-09-21 | Proposed | [THEORY-050](../../record/theory.d/THEORY-050.md) | 2 | 0 | Parameters carry memorization and parallel computation carries reasoning |
 | 2026-09-21 | Proposed | [THEORY-043](../../record/theory.d/THEORY-043.md) | 1 | 0 | Cross-entropy pays an unbounded price for mass a learner never had, and that price grows with sequence length — which is why it drifts from what post-training needs |
 | 2026-09-21 | Proposed | [THEORY-044](../../record/theory.d/THEORY-044.md) | 1 | 0 | Dropout early in training buys a biased gradient estimate with much less directional variance, and the trade is favourable until it is not |
 | 2026-09-21 | Proposed | [THEORY-047](../../record/theory.d/THEORY-047.md) | 1 | 0 | Personalizing a feed concentrates what it shows rather than broadening it, and a handful of moderate signals is enough to start |
@@ -133,7 +136,7 @@
 
 ## LITs
 
-3 of the 129.
+3 of the 132.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -143,7 +146,7 @@
 
 ## ADRs
 
-16 of the 129.
+16 of the 132.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

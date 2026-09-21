@@ -1,6 +1,9 @@
 ---
+number: 235
 status: Read
-paper: LIT-tmpitbks
+formerly:
+- NOTE-tmp5l9o0
+paper: LIT-486
 title: 'ParScale'
 version: 1
 date: '2026-09-21'
@@ -21,12 +24,12 @@ summary: >-
      then reports nobody has answered here. Citing an open question as open
      is the correct use of an unsettled document -->
 
-<!-- inactive-ok-file: THEORY-tmprktkw — Proposed, filed in this same
+<!-- inactive-ok-file: THEORY-050 — Proposed, filed in this same
      contribution, and the sentence citing it says it is a conjecture the
      authors labelled as one. Its unsettledness is the content of the
      citation -->
 
-# NOTE-tmp5l9o0: ParScale
+# NOTE-235: ParScale
 
 ## Contribution
 
@@ -115,7 +118,7 @@ that parameters carry memorization while computation carries reasoning. The
 evidence is real and indirect — two corpora with different fitted
 coefficients, plus the 4.4B-vs-2.8B downstream asymmetry. It is also a clean
 two-way agreement between a fitted constant and a benchmark, which is more
-than most conjectures get. Filed as [THEORY-tmprktkw](../theory.d/THEORY-tmprktkw.md), `Proposed`.
+than most conjectures get. Filed as [THEORY-050](../theory.d/THEORY-050.md), `Proposed`.
 
 **Asserted with an ablation behind it:** that the specific input
 transformation does not matter. This is load-bearing — it is what makes the

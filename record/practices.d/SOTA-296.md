@@ -1,5 +1,8 @@
 ---
+number: 296
 status: Proposed
+formerly:
+- SOTA-tmp91kxm
 promote_when: >-
   A division point chosen by measurement rather than by assertion — a sweep
   over what fraction of the token budget the parallel stage needs, at one
@@ -20,12 +23,12 @@ tags:
 - inference-optimization
 date: '2026-09-21'
 source:
-- LIT-tmpitbks
+- LIT-486
 introduced_by:
-- LIT-tmpitbks
+- LIT-486
 implementations: []
 summary: >-
-  Chen et al. (2025), [LIT-tmpitbks](../literature.d/LIT-tmpitbks.md) — parallel scaling costs `P`× the
+  Chen et al. (2025), [LIT-486](../literature.d/LIT-486.md) — parallel scaling costs `P`× the
   training FLOPs, which is what would otherwise make it unaffordable. Train
   1T tokens the ordinary way, then switch the streams on for **20B tokens,
   2% of the budget**. The loss spikes when the random prefixes appear and
@@ -33,12 +36,12 @@ summary: >-
   the same ones the from-scratch runs show.
 ---
 
-# SOTA-tmp91kxm: Add the parallel streams in a short final training stage, not from the start
+# SOTA-296: Add the parallel streams in a short final training stage, not from the start
 
 ## Source
 
-Chen et al. (2025), [LIT-tmpitbks](../literature.d/LIT-tmpitbks.md) — [ARXIV-2505.10475](https://arxiv.org/abs/2505.10475) §4, read as
-[NOTE-tmp5l9o0](../notes.d/NOTE-tmp5l9o0.md).
+Chen et al. (2025), [LIT-486](../literature.d/LIT-486.md) — [ARXIV-2505.10475](https://arxiv.org/abs/2505.10475) §4, read as
+[NOTE-235](../notes.d/NOTE-235.md).
 
 ## What to do
 

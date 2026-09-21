@@ -1,5 +1,8 @@
 ---
+number: 50
 status: Proposed
+formerly:
+- THEORY-tmprktkw
 promote_when: >-
   The split measured on a third corpus chosen to separate the two skills
   rather than to contrast two off-the-shelf datasets — or, better, a
@@ -17,11 +20,11 @@ tags:
 - model-architecture
 date: '2026-09-21'
 source:
-- LIT-tmpitbks
+- LIT-486
 explains:
-- SOTA-tmp9spic
+- SOTA-297
 summary: >-
-  Chen et al. (2025), [LIT-tmpitbks](../literature.d/LIT-tmpitbks.md) — the exchange rate between parallel
+  Chen et al. (2025), [LIT-486](../literature.d/LIT-486.md) — the exchange rate between parallel
   streams and parameters is fitted **higher on code (0.39) than on general
   text (0.33)**, and downstream a 1.6B model at `P = 8` matches a 4.4B model
   on coding but only a 2.8B one on general tasks. Two independent
@@ -29,22 +32,22 @@ summary: >-
   call a conjecture.
 ---
 
-<!-- inactive-ok-file: SOTA-tmp9spic — Proposed, filed in this same
+<!-- inactive-ok-file: SOTA-297 — Proposed, filed in this same
      contribution; this theory declares `explains:` on it, so the citation is
      the relation itself and cannot wait on the practice being settled -->
 
-# THEORY-tmprktkw: Parameters carry memorization and parallel computation carries reasoning
+# THEORY-050: Parameters carry memorization and parallel computation carries reasoning
 
 ## Source
 
-Chen et al. (2025), [LIT-tmpitbks](../literature.d/LIT-tmpitbks.md) §3.2 and §3.3 — read as
-[NOTE-tmp5l9o0](../notes.d/NOTE-tmp5l9o0.md).
+Chen et al. (2025), [LIT-486](../literature.d/LIT-486.md) §3.2 and §3.3 — read as
+[NOTE-235](../notes.d/NOTE-235.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-tmp9spic](../practices.d/SOTA-tmp9spic.md) | scale parallel computation instead of parameters when inference memory binds | you are buying one of the two things parameters buy, and not the other — which is why the practice's benefit is uneven across tasks rather than uniform, and why the decision is task-dependent rather than purely an efficiency calculation |
+| [SOTA-297](../practices.d/SOTA-297.md) | scale parallel computation instead of parameters when inference memory binds | you are buying one of the two things parameters buy, and not the other — which is why the practice's benefit is uneven across tasks rather than uniform, and why the decision is task-dependent rather than purely an efficiency calculation |
 
 ## The account
 

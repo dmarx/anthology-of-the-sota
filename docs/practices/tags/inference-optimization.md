@@ -6,7 +6,7 @@
 
 **Inference optimization** — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
 
-13 of 295 SOTA documents. Back to the [full index](../README.md).
+15 of 297 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -23,3 +23,5 @@
 | [SOTA-269](../../../record/practices.d/SOTA-269.md) | Keep a knowledge base outside the weights; parameters are an expensive and lossy place to memorise facts | Lu et al. (2024), [LIT-452](../../../record/literature.d/LIT-452.md) — fact capacity is linear in model size and saturates in epochs, and the extrapolation is damning: all of Wikidata would want about 1000B non-embedding parameters trained for 100 epochs. Derivable facts cost full price unless they happen to share direction and structure. Borgeaud et al., [LIT-060](../../../record/literature.d/LIT-060.md), is the record's evidence that the alternative works at scale. | Active |
 | [SOTA-280](../../../record/practices.d/SOTA-280.md) | Sample several reasoning paths and take the majority answer rather than decoding one greedily | Wang et al. (2022), [LIT-468](../../../record/literature.d/LIT-468.md) — replace greedy decoding with sample-and-marginalize: GSM8K +17.9, SVAMP +11.0, AQuA +12.2. Five or ten paths recover most of it, which is the whole cost question. | Active |
 | [SOTA-289](../../../record/practices.d/SOTA-289.md) | When the sampling budget is small, prefer uniform-state discrete diffusion with consistency distillation — masked diffusion cannot revise what it has already emitted |  | Proposed |
+| [SOTA-296](../../../record/practices.d/SOTA-296.md) | Add the parallel streams in a short final training stage, not from the start | Chen et al. (2025), [LIT-486](../../../record/literature.d/LIT-486.md) — parallel scaling costs `P`× the training FLOPs, which is what would otherwise make it unaffordable. Train 1T tokens the ordinary way, then switch the streams on for **20B tokens, 2% of the budget**. The loss spikes when the random prefixes appear and recovers within **0.0002T tokens**, and the logarithmic gains in `P` are the same ones the from-scratch runs show. | Proposed |
+| [SOTA-297](../../../record/practices.d/SOTA-297.md) | Scale parallel computation with learnable input transforms, not parameters, when inference memory is the binding constraint | Chen et al. (2025), [LIT-486](../../../record/literature.d/LIT-486.md) — run the same weights over `P` learnably-prefixed copies of the input and learn the aggregation. Loss falls as if the parameters had grown by `O(log P)`; a 1.6B model at `P = 8` matches a 4.4B one on code. At batch size 1 that costs **22× less added memory and 6× less added latency** than the parameter scaling it replaces — and `P`× the training FLOPs. | Proposed |

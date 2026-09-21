@@ -50,8 +50,8 @@ bare code and run `luria link --fix`.
 **[Attention techniques](tags/attention-techniques.md)** (1) — attention variants and alternative mechanisms, implementation optimizations, context length:
 [019](../../record/theory.d/THEORY-019.md)
 
-**[Model architecture](tags/model-architecture.md)** (5) — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in:
-[005](../../record/theory.d/THEORY-005.md) · [020](../../record/theory.d/THEORY-020.md) · [038](../../record/theory.d/THEORY-038.md) · [041](../../record/theory.d/THEORY-041.md) · [046](../../record/theory.d/THEORY-046.md)
+**[Model architecture](tags/model-architecture.md)** (6) — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in:
+[005](../../record/theory.d/THEORY-005.md) · [020](../../record/theory.d/THEORY-020.md) · [038](../../record/theory.d/THEORY-038.md) · [041](../../record/theory.d/THEORY-041.md) · [046](../../record/theory.d/THEORY-046.md) · [050](../../record/theory.d/THEORY-050.md)
 
 **[Inference optimization](tags/inference-optimization.md)** (0) — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
 
@@ -63,8 +63,8 @@ bare code and run `luria link --fix`.
 **[Representation and encoding](tags/representation-and-encoding.md)** (4) — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them:
 [021](../../record/theory.d/THEORY-021.md) · [022](../../record/theory.d/THEORY-022.md) · [034](../../record/theory.d/THEORY-034.md) · [036](../../record/theory.d/THEORY-036.md)
 
-**[Analysis and evaluation](tags/analysis-and-evaluation.md)** (18) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
-[002](../../record/theory.d/THEORY-002.md) · [004](../../record/theory.d/THEORY-004.md) · [006](../../record/theory.d/THEORY-006.md) · [007](../../record/theory.d/THEORY-007.md) · [008](../../record/theory.d/THEORY-008.md) · [009](../../record/theory.d/THEORY-009.md) · [017](../../record/theory.d/THEORY-017.md) · [018](../../record/theory.d/THEORY-018.md) · [023](../../record/theory.d/THEORY-023.md) · [025](../../record/theory.d/THEORY-025.md) · [031](../../record/theory.d/THEORY-031.md) · [038](../../record/theory.d/THEORY-038.md) · [039](../../record/theory.d/THEORY-039.md) · [040](../../record/theory.d/THEORY-040.md) · [043](../../record/theory.d/THEORY-043.md) · [045](../../record/theory.d/THEORY-045.md) · [047](../../record/theory.d/THEORY-047.md) · [048](../../record/theory.d/THEORY-048.md)
+**[Analysis and evaluation](tags/analysis-and-evaluation.md)** (19) — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too:
+[002](../../record/theory.d/THEORY-002.md) · [004](../../record/theory.d/THEORY-004.md) · [006](../../record/theory.d/THEORY-006.md) · [007](../../record/theory.d/THEORY-007.md) · [008](../../record/theory.d/THEORY-008.md) · [009](../../record/theory.d/THEORY-009.md) · [017](../../record/theory.d/THEORY-017.md) · [018](../../record/theory.d/THEORY-018.md) · [023](../../record/theory.d/THEORY-023.md) · [025](../../record/theory.d/THEORY-025.md) · [031](../../record/theory.d/THEORY-031.md) · [038](../../record/theory.d/THEORY-038.md) · [039](../../record/theory.d/THEORY-039.md) · [040](../../record/theory.d/THEORY-040.md) · [043](../../record/theory.d/THEORY-043.md) · [045](../../record/theory.d/THEORY-045.md) · [047](../../record/theory.d/THEORY-047.md) · [048](../../record/theory.d/THEORY-048.md) · [050](../../record/theory.d/THEORY-050.md)
 
 **[Generative modeling](tags/generative-modeling.md)** (2) — diffusion, samplers, text-to-image, conditioning and control:
 [027](../../record/theory.d/THEORY-027.md) · [046](../../record/theory.d/THEORY-046.md)
@@ -79,7 +79,7 @@ bare code and run `luria link --fix`.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (23) · [Offered](status/Proposed.md) (23) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (23) · [Offered](status/Proposed.md) (24) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -144,4 +144,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-047](../../record/theory.d/THEORY-047.md) | Personalizing a feed concentrates what it shows rather than broadening it, and a handful of moderate signals is enough to start | Ye, Luceri and Ferrara (2024), [LIT-480](../../record/literature.d/LIT-480.md) — across four arms of an audit, the accounts following **nobody** receive the most diverse recommendations and the partisan arms the least. Ten moderate media follows and four political accounts are enough to amplify aligned voices more than 50% above a balanced baseline. | Proposed |
 | [THEORY-048](../../record/theory.d/THEORY-048.md) | Randomizing individuals estimates an individual quantity, and when the units interact the collective effect is not the sum of it — so a null from such a trial is not evidence of no effect | Bak-Coleman et al. (2025), [LIT-482](../../record/literature.d/LIT-482.md) — four named reasons an individual-level randomized trial fails to estimate a collective effect: non-linearity across scale, hysteresis, feedback in time, and violation of the stable unit treatment value assumption through the network. The power grid shows the first and the last together: treat too few and the system absorbs it, treat enough and the controls fail too. | Active |
 | [THEORY-049](../../record/theory.d/THEORY-049.md) | Modalities compete for the same feed-forward parameters, the competition is not symmetric between them, and that is where separating by modality pays | Liang et al. (2024), [LIT-483](../../record/literature.d/LIT-483.md) — untying transformer components by modality at controlled FLOPs pays most in the **feed-forward**, less in the attention projections, and not at all in the layer norms. Merging any two modalities into one tower degrades both, and by different amounts in each direction. | Proposed |
+| [THEORY-050](../../record/theory.d/THEORY-050.md) | Parameters carry memorization and parallel computation carries reasoning | Chen et al. (2025), [LIT-486](../../record/literature.d/LIT-486.md) — the exchange rate between parallel streams and parameters is fitted **higher on code (0.39) than on general text (0.33)**, and downstream a 1.6B model at `P = 8` matches a 4.4B model on coding but only a 2.8B one on general tasks. Two independent measurements pointing the same way, and an account the authors themselves call a conjecture. | Proposed |
 

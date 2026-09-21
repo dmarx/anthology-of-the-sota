@@ -1,6 +1,9 @@
 ---
+number: 221
 status: Read
-paper: LIT-tmp7z4xc
+formerly:
+- NOTE-tmp04rue
+paper: LIT-472
 title: 'nGPT'
 version: 1
 date: '2026-09-21'
@@ -16,7 +19,7 @@ summary: >-
      unreplicated arrival at this diagnosis; the reading's observation is that
      two groups reached it independently, which needs both to be unsettled -->
 
-# NOTE-tmp04rue: nGPT
+# NOTE-221: nGPT
 
 ## Contribution
 

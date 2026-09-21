@@ -1,5 +1,8 @@
 ---
+number: 282
 status: Proposed
+formerly:
+- SOTA-tmpg9ovm
 promote_when: >-
   An independent group training a normalized transformer at a scale where the
   record's other training-recipe practices are argued — and reporting the
@@ -20,24 +23,24 @@ tags:
 - training-optimization
 date: '2026-09-21'
 source:
-- LIT-tmp7z4xc
+- LIT-472
 introduced_by:
-- LIT-tmp7z4xc
+- LIT-472
 implementations: []
 explained_by:
-- THEORY-tmp99061
+- THEORY-041
 ---
 
 <!-- inactive-ok-file: SOTA-122 — Proposed and unreplicated, exactly as this
      practice is, and named as the sibling remedy rather than as support. The
      section citing it says so in its own first sentence -->
 
-# SOTA-tmpg9ovm: Put every matrix and hidden state on the unit hypersphere, and make each block's residual step size a learned per-dimension parameter
+# SOTA-282: Put every matrix and hidden state on the unit hypersphere, and make each block's residual step size a learned per-dimension parameter
 
 ## Source
 
-Loshchilov, Hsieh, Sun and Ginsburg (2024), [LIT-tmp7z4xc](../literature.d/LIT-tmp7z4xc.md) — read as
-[NOTE-tmp04rue](../notes.d/NOTE-tmp04rue.md). 0.5B and 1B decoder-only models on OpenWebText at
+Loshchilov, Hsieh, Sun and Ginsburg (2024), [LIT-472](../literature.d/LIT-472.md) — read as
+[NOTE-221](../notes.d/NOTE-221.md). 0.5B and 1B decoder-only models on OpenWebText at
 1k, 4k and 8k context.
 
 ## The claim

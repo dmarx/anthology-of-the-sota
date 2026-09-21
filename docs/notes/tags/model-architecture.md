@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-12 of 220 NOTE documents. Back to the [full index](../README.md).
+13 of 221 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,4 @@
 | [NOTE-170](../../../record/notes.d/NOTE-170.md) | VGGT: Visual Geometry Grounded Transformer | One feed-forward pass produces camera parameters, point maps, depth maps and 3D point tracks together, in under a second, beating methods that post-process with geometry optimisation. Removes the global alignment step DUSt3R still needed, and works as a pretrained backbone — which is when a subject stops being a field and becomes a component. | Read |
 | [NOTE-196](../../../record/notes.d/NOTE-196.md) | Scaling Rectified Flow Transformers | A 61-way sweep over diffusion and rectified-flow formulations settles on a straight-line path with logit-normal timestep sampling — rectified flow with uniform timesteps does not win. Adds a resolution-dependent timestep shift, MMDiT's per-modality weights with joint attention, and QK-RMSNorm for high-resolution stability. 8B, weights released. | Read |
 | [NOTE-214](../../../record/notes.d/NOTE-214.md) | Limitations of multi-layer Transformers | First unconditional lower bound for a decoder-only transformer of more than one layer. Reading it: the bound comes from causal masking rather than from circuit complexity, and it buys an exponential depth-width tradeoff, an encoder/decoder separation, and a provable benefit of chain of thought. | Read |
+| [NOTE-221](../../../record/notes.d/NOTE-221.md) | nGPT | Reading it: the headline is 4–20× and the footnote is 60–80% more time per step, so the honest wall-clock figure is roughly 5.5× at 4k. Still large. The part that generalises beyond this architecture is smaller and more interesting — that a matrix's norm is currently an accident of the learning rate and weight decay, and does not have to be. | Read |

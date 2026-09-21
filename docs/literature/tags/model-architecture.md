@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-54 of 406 LIT documents. Back to the [full index](../README.md).
+55 of 407 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -64,3 +64,4 @@
 | [LIT-448](../../../record/literature.d/LIT-448.md) | Scalable Diffusion Models with Transformers | Peebles and Xie (2022), [ARXIV-2212.09748](https://arxiv.org/abs/2212.09748). Replaces the U-Net backbone every diffusion model had inherited from DDPM with a transformer over latent patches, and shows FID falls monotonically with forward-pass GFLOPs however the GFLOPs are bought — depth, width or token count. DiT-XL/2 reaches 2.27 FID on class-conditional ImageNet 256. | Active |
 | [LIT-449](../../../record/literature.d/LIT-449.md) | Scaling Rectified Flow Transformers for High-Resolution Image Synthesis | Esser et al. (2024), [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206). A 61-way comparison of diffusion and rectified-flow formulations settles on a straight-line path with timesteps drawn from a logit-normal, then scales it to 8B for text-to-image. Adds a resolution-dependent shift of the timestep schedule, and MMDiT, which gives each modality its own weights while letting the two token streams attend jointly. | Active |
 | [LIT-464](../../../record/literature.d/LIT-464.md) | Theoretical limitations of multi-layer Transformer | Chen et al. (2024), [ARXIV-2412.02975](https://arxiv.org/abs/2412.02975). The first unconditional lower bound for a decoder-only transformer with more than one layer: any constant-depth decoder needs polynomially many parameters to compose functions sequentially. Depth, an encoder, or chain of thought each buy what width cannot. | Active |
+| [LIT-472](../../../record/literature.d/LIT-472.md) | nGPT: Normalized Transformer with Representation Learning on the Hypersphere | Loshchilov et al. (2024), [ARXIV-2410.01131](https://arxiv.org/abs/2410.01131). Normalize every embedding-dimension vector in every matrix to the unit hypersphere after each step, delete all normalization layers, weight decay and LR warmup, and make each block's residual contribution a learnable per-dimension step size. 4× / 10× / 20× fewer tokens to the same loss at 1k / 4k / 8k context, at 0.5B and 1B on OpenWebText — and 60–80% more time per step. | Active |

@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families, multi-modal designs.
 
-28 of 281 SOTA documents. Back to the [full index](../README.md).
+29 of 282 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -38,3 +38,4 @@
 | [SOTA-254](../../../record/practices.d/SOTA-254.md) | Train the language model as a masked diffusion model when the corpus is fixed and the compute is not | Prabhudesai et al. (2025), [LIT-442](../../../record/literature.d/LIT-442.md) — masked diffusion keeps extracting signal from a repeated corpus for roughly 512 epochs where autoregressive training stops at 32. Below a critical compute threshold, given in closed form from the unique-token count, autoregressive training is better and by a wide margin; above it, diffusion is better. The recommendation is the condition, not the objective. | Proposed |
 | [SOTA-262](../../../record/practices.d/SOTA-262.md) | Give each modality its own weights and let the streams attend jointly | Esser et al. (2024), [LIT-449](../../../record/literature.d/LIT-449.md) — MMDiT gives the text and image streams separate projections and MLPs, then runs attention over the concatenated sequence so information flows both ways. It beats UViT and DiT at matched budget, follows predictable scaling trends, and the gains land specifically on text comprehension, typography and human preference. | Proposed |
 | [SOTA-277](../../../record/practices.d/SOTA-277.md) | For a task that is a sequential composition, buy depth rather than width | Chen et al. (2024), [LIT-464](../../../record/literature.d/LIT-464.md) — composing `k` functions costs a constant-depth decoder polynomially many parameters and a `log k`-layer one polylogarithmically. An exponential separation, proved unconditionally, and about what a shape can express rather than what a run will learn. | Proposed |
+| [SOTA-282](../../../record/practices.d/SOTA-282.md) | Put every matrix and hidden state on the unit hypersphere, and make each block's residual step size a learned per-dimension parameter |  | Proposed |

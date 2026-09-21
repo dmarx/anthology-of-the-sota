@@ -6,7 +6,7 @@
 
 **Offered** — stated and plausible, on evidence that is suggestive rather than settling — the document says what would settle it.
 
-17 of 40 THEORY documents. Back to the [full index](../README.md).
+18 of 41 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -27,3 +27,4 @@
 | [THEORY-033](../../../record/theory.d/THEORY-033.md) | What a spectral optimizer buys is a step size that stays optimal, not adherence to a target geometry | Shumaylov et al. (2026), [LIT-456](../../../record/literature.d/LIT-456.md) — an optimizer with random singular values matches Muon, so the target spectrum is not what pays. What the controls leave standing is that the spectral update's optimal step size is constant where Euclidean descent's oscillates. NanoGPT scale. | Proposed |
 | [THEORY-034](../../../record/theory.d/THEORY-034.md) | Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations | Xiong (2026), [LIT-460](../../../record/literature.d/LIT-460.md) — a linear attribute direction plus a separating threshold is a half-space, a concept is the intersection of its attributes' half-spaces, and the resulting regions form a complete lattice. Conceptual refinement is geometric meet, generalisation is join. Evidence is WordNet, which is a hand-built hierarchy and so the friendliest test there is. | Proposed |
 | [THEORY-036](../../../record/theory.d/THEORY-036.md) | Representations converge across architectures, objectives and modalities, and the endpoint is a model of what generated the data | Huh et al. (2024), [LIT-458](../../../record/literature.d/LIT-458.md) — vision and language models measure distance between datapoints increasingly alike as they scale, across architectures and objectives. The conjecture is that they are converging on a representation of the joint distribution that generated the observations. The convergence is measured; the endpoint is proved only for a world of bijective observations. | Proposed |
+| [THEORY-041](../../../record/theory.d/THEORY-041.md) | Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing | Loshchilov et al. (2024), [LIT-472](../../../record/literature.d/LIT-472.md) — trained GPT embeddings form a hyper-ellipsoid with a high condition number and attention matrices whose singular values suggest rank deficiency; renormalizing after training narrows the gap without closing it. `Proposed`, because the evidence is correlational: these models are worse conditioned and they also train slower, and nothing yet connects the two. | Proposed |

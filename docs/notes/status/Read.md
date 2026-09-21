@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-217 of 220 NOTE documents. Back to the [full index](../README.md).
+218 of 221 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -227,3 +227,4 @@
 | [NOTE-218](../../../record/notes.d/NOTE-218.md) | Zero-Shot CoT | One fixed sentence, no exemplars, twelve datasets. Reading it: the ordering is the practical content — it loses to hand-written few-shot chains and beats eight-shot standard prompting, so it is the baseline to try first rather than the method to settle on. | Read |
 | [NOTE-219](../../../record/notes.d/NOTE-219.md) | Emergent Abilities | The paper that named the phenomenon, read for what it actually argues rather than what it is cited for. It raises the metric explanation itself, in §5.1, and declines it on two grounds — one of which was later answered and one of which still stands. | Read |
 | [NOTE-220](../../../record/notes.d/NOTE-220.md) | Emergence as a Mirage | Reading it: the strongest evidence is not the rebuttal of GPT-3's arithmetic curve but the vision experiments, where emergence is manufactured in models that had never shown it. The weakest part is what "mirage" gets read as — the paper explicitly declines the claim that emergence is impossible. | Read |
+| [NOTE-221](../../../record/notes.d/NOTE-221.md) | nGPT | Reading it: the headline is 4–20× and the footnote is 60–80% more time per step, so the honest wall-clock figure is roughly 5.5× at 4k. Still large. The part that generalises beyond this architecture is smaller and more interesting — that a matrix's norm is currently an accident of the learning rate and weight decay, and does not have to be. | Read |

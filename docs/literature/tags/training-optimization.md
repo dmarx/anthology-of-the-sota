@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-80 of 406 LIT documents. Back to the [full index](../README.md).
+81 of 407 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -90,3 +90,4 @@
 | [LIT-462](../../../record/literature.d/LIT-462.md) | Spectral Condition for muP under Width-Depth Scaling | Zheng et al. (2026), [ARXIV-2603.00541](https://arxiv.org/abs/2603.00541). Extends the spectral condition for muP from width to width-and-depth, and finds the rule is set by how many transformations a residual branch contains: one gives Depth-muP, two or more gives CompleteP. Transformers are the second case. | Active |
 | [LIT-470](../../../record/literature.d/LIT-470.md) | Emergent Abilities of Large Language Models | Wei et al. (2022), [ARXIV-2206.07682](https://arxiv.org/abs/2206.07682). Names and defines *emergent abilities* — present in larger models, absent in smaller ones, and therefore not predictable by extrapolating a scaling law. A survey of existing curves rather than new experiments: eight few-shot examples across five model families, plus prompting strategies that only help past a threshold. Section 5.1 raises the metric explanation itself and argues against it on two specific grounds. | Active |
 | [LIT-471](../../../record/literature.d/LIT-471.md) | Are Emergent Abilities of Large Language Models a Mirage? | Schaeffer et al. (2023), [ARXIV-2304.15004](https://arxiv.org/abs/2304.15004). A sharp capability curve can be produced from a smooth one by the metric alone. Rescoring *fixed* GPT-3 outputs under Token Edit Distance removes the emergence; >92% of hand-annotated BIG-Bench emergent abilities sit under two metrics, one nonlinear and one discontinuous; and emergence is induced on demand in vision models that had never shown it. | Active |
+| [LIT-472](../../../record/literature.d/LIT-472.md) | nGPT: Normalized Transformer with Representation Learning on the Hypersphere | Loshchilov et al. (2024), [ARXIV-2410.01131](https://arxiv.org/abs/2410.01131). Normalize every embedding-dimension vector in every matrix to the unit hypersphere after each step, delete all normalization layers, weight decay and LR warmup, and make each block's residual contribution a learnable per-dimension step size. 4× / 10× / 20× fewer tokens to the same loss at 1k / 4k / 8k context, at 0.5B and 1B on OpenWebText — and 60–80% more time per step. | Active |

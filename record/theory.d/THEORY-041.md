@@ -1,5 +1,8 @@
 ---
+number: 41
 status: Proposed
+formerly:
+- THEORY-tmp99061
 title: 'Left unconstrained, a transformer''s matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing'
 version: 1
 promote_when: >-
@@ -13,11 +16,11 @@ tags:
 - model-architecture
 date: '2026-09-21'
 source:
-- LIT-tmp7z4xc
+- LIT-472
 explains:
-- SOTA-tmpg9ovm
+- SOTA-282
 summary: >-
-  Loshchilov et al. (2024), [LIT-tmp7z4xc](../literature.d/LIT-tmp7z4xc.md) — trained GPT embeddings
+  Loshchilov et al. (2024), [LIT-472](../literature.d/LIT-472.md) — trained GPT embeddings
   form a hyper-ellipsoid with a high condition number and attention matrices
   whose singular values suggest rank deficiency; renormalizing after training
   narrows the gap without closing it. `Proposed`, because the evidence is
@@ -29,22 +32,22 @@ summary: >-
      come closest to settling this account, which is a use that requires it to
      be untested rather than one that leans on it -->
 
-<!-- inactive-ok-file: SOTA-tmpg9ovm — Proposed, and the practice this account
+<!-- inactive-ok-file: SOTA-282 — Proposed, and the practice this account
      explains; naming it in the `explains` table is the relation, not a claim
      that either is settled -->
 
-# THEORY-tmp99061: Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing
+# THEORY-041: Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing
 
 ## Source
 
-Loshchilov, Hsieh, Sun and Ginsburg (2024), [LIT-tmp7z4xc](../literature.d/LIT-tmp7z4xc.md) — read as
-[NOTE-tmp04rue](../notes.d/NOTE-tmp04rue.md).
+Loshchilov, Hsieh, Sun and Ginsburg (2024), [LIT-472](../literature.d/LIT-472.md) — read as
+[NOTE-221](../notes.d/NOTE-221.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-tmpg9ovm](../practices.d/SOTA-tmpg9ovm.md) | put every matrix and hidden state on the unit hypersphere | removing a degree of freedom nothing was steering, which had been drifting somewhere bad |
+| [SOTA-282](../practices.d/SOTA-282.md) | put every matrix and hidden state on the unit hypersphere | removing a degree of freedom nothing was steering, which had been drifting somewhere bad |
 
 ## The account
 

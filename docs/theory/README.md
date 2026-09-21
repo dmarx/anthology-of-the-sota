@@ -39,8 +39,8 @@ bare code and run `luria link --fix`.
 **[Numerics and precision](tags/numerics-and-precision.md)** (1) — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them:
 [019](../../record/theory.d/THEORY-019.md)
 
-**[Model stability](tags/model-stability.md)** (6) — initialization, normalization, gradient handling, regularization, loss-landscape behaviour:
-[001](../../record/theory.d/THEORY-001.md) · [003](../../record/theory.d/THEORY-003.md) · [010](../../record/theory.d/THEORY-010.md) · [011](../../record/theory.d/THEORY-011.md) · [015](../../record/theory.d/THEORY-015.md) · [016](../../record/theory.d/THEORY-016.md)
+**[Model stability](tags/model-stability.md)** (7) — initialization, normalization, gradient handling, regularization, loss-landscape behaviour:
+[001](../../record/theory.d/THEORY-001.md) · [003](../../record/theory.d/THEORY-003.md) · [010](../../record/theory.d/THEORY-010.md) · [011](../../record/theory.d/THEORY-011.md) · [015](../../record/theory.d/THEORY-015.md) · [016](../../record/theory.d/THEORY-016.md) · [041](../../record/theory.d/THEORY-041.md)
 
 **[Distributed optimization](tags/distributed-optimization.md)** (1) — parallelism and sharding, communication, memory management, checkpointing:
 [014](../../record/theory.d/THEORY-014.md)
@@ -50,8 +50,8 @@ bare code and run `luria link --fix`.
 **[Attention techniques](tags/attention-techniques.md)** (1) — attention variants and alternative mechanisms, implementation optimizations, context length:
 [019](../../record/theory.d/THEORY-019.md)
 
-**[Model architecture](tags/model-architecture.md)** (3) — architecture patterns, component design, structural choices, model families, multi-modal designs:
-[005](../../record/theory.d/THEORY-005.md) · [020](../../record/theory.d/THEORY-020.md) · [038](../../record/theory.d/THEORY-038.md)
+**[Model architecture](tags/model-architecture.md)** (4) — architecture patterns, component design, structural choices, model families, multi-modal designs:
+[005](../../record/theory.d/THEORY-005.md) · [020](../../record/theory.d/THEORY-020.md) · [038](../../record/theory.d/THEORY-038.md) · [041](../../record/theory.d/THEORY-041.md)
 
 **[Inference optimization](tags/inference-optimization.md)** (0) — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
 
@@ -73,7 +73,7 @@ bare code and run `luria link --fix`.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (20) · [Offered](status/Proposed.md) (17) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (20) · [Offered](status/Proposed.md) (18) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -129,4 +129,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-038](../../record/theory.d/THEORY-038.md) | A decoder cannot compose over a long context in few layers, because each position forgets what it forwarded | Chen et al. (2024), [LIT-464](../../record/literature.d/LIT-464.md) — causal masking makes a decoder a line of forgetful communicating players, one epoch per layer, and sequential composition needs more epochs than a constant-depth model has. An unconditional bound on what can be expressed, not on what can be learned. | Active |
 | [THEORY-039](../../record/theory.d/THEORY-039.md) | A measured capability is the capability minus whatever the evaluation itself demands, and the gap is widest for the weakest model | Hu and Frank (2024), [LIT-465](../../record/literature.d/LIT-465.md) — the same capacity measured two ways scores differently, and the difference shrinks with size and training. So a score is a joint function of model and design, and cross-scale comparisons under a demanding evaluation inflate the gap they report. | Active |
 | [THEORY-040](../../record/theory.d/THEORY-040.md) | A metric that composes or thresholds per-token error turns a smooth capability curve into a sharp one, with nothing happening in the model | Schaeffer et al. (2023), [LIT-471](../../record/literature.d/LIT-471.md) — if per-token accuracy rises smoothly with scale, a metric demanding all `L` tokens goes as `p^L` and is flat-then-sharp by construction; a thresholded metric does the same by a step. Demonstrated by rescoring fixed outputs, and by manufacturing emergence in vision models that had never shown it. | Active |
+| [THEORY-041](../../record/theory.d/THEORY-041.md) | Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing | Loshchilov et al. (2024), [LIT-472](../../record/literature.d/LIT-472.md) — trained GPT embeddings form a hyper-ellipsoid with a high condition number and attention matrices whose singular values suggest rank deficiency; renormalizing after training narrows the gap without closing it. `Proposed`, because the evidence is correlational: these models are worse conditioned and they also train slower, and nothing yet connects the two. | Proposed |
 

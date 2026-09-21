@@ -15,6 +15,7 @@ title: 'Representations converge across architectures, objectives and modalities
 version: 1
 tags:
 - representation-and-encoding
+- multimodal-learning
 date: '2026-09-20'
 source:
 - LIT-458

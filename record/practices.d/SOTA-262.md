@@ -18,6 +18,7 @@ consensus_note: >-
 title: 'Give each modality its own weights and let the streams attend jointly'
 version: 1
 tags:
+- multimodal-learning
 - model-architecture
 - generative-modeling
 date: '2026-09-20'

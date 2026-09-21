@@ -19,6 +19,7 @@ consensus_note: >-
 title: 'Train on a second modality even when the target is single-modality'
 version: 1
 tags:
+- multimodal-learning
 - data-pipeline
 - representation-and-encoding
 date: '2026-09-20'

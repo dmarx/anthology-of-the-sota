@@ -25,7 +25,7 @@
 # practice drawn from it still hold. Two schemes, two status fields, and the
 # relationship between them is a citation the lint can follow. See ADR-002.
 vocabularies:
-  # The sixteen topics: the primary axis of both the practice registry and the
+  # The eighteen topics: the primary axis of both the practice registry and the
   # reading list, in the order the indexes show them.
   #
   # The first seven are transcribed from the 2024 naming-conventions document;
@@ -63,9 +63,9 @@ vocabularies:
     # What the axis IS, which until luria 0.25.0 could only be said in a
     # comment no view could reach (LU-#279).
     blurb: >-
-      The sixteen kinds of claim this anthology files against — the primary
+      The eighteen kinds of claim this anthology files against — the primary
       axis of both the practice registry and the reading list, and the same
-      sixteen for each (ADR-026). The filing rule is the point: take a domain
+      eighteen for each (ADR-026). The filing rule is the point: take a domain
       topic when the claim is ABOUT the domain; a claim merely discovered in
       one still takes its kind.
     # What the axis says when you trip over it (LU-#273). `closed: true` on
@@ -115,7 +115,7 @@ vocabularies:
         blurb: attention variants and alternative mechanisms, implementation optimizations, context length
       model-architecture:
         label: Model architecture
-        blurb: architecture patterns, component design, structural choices, model families, multi-modal designs
+        blurb: architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in
       inference-optimization:
         label: Inference optimization
         blurb: serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms
@@ -140,12 +140,28 @@ vocabularies:
       vision-and-graphics:
         label: Vision and graphics
         blurb: neural rendering, reconstruction, perception, visual foundation models
+      # Added by ADR-tmpkp17k. `model-architecture`'s blurb ended with
+      # "multi-modal designs" — a trailing clause on a topic about the shape of
+      # the network, doing duty for a subject about how many kinds of signal go
+      # in. Nine documents sat across six topics with `model-architecture`
+      # holding three, and thirty-five more are queued.
+      multimodal-learning:
+        label: Multimodal learning
+        blurb: what changes when one model has to take in more than one kind of signal — joint architectures and fusion, contrastive image-text training, cross-modal transfer, and what a second modality buys the first
+      # Added by ADR-tmpkp17k, and the only topic here that named nothing on
+      # the day it was added. The record held no document about a system's
+      # behaviour once it is deployed among people; the incoming list held
+      # twenty-four, led by its single highest-revisit entry. DP-009: declining
+      # a document because no category fits is the self-confirming reading.
+      deployment-and-society:
+        label: Deployment and society
+        blurb: what a system does once it is running among people, and how anyone outside it could find out — audits of deployed platforms and recommenders, information ecosystems, moderation and governance, and the access problems and funding pressures of studying any of it from the outside
       # ── Secondary-only words ─────────────────────────────────────────────
       # Declared so they have a label and a blurb rather than rendering as bare
       # strings, and so `closed: true` on SOTA, LIT and THEORY can require that
       # every tag those three carry is one somebody chose. NOTE's `tags:` names no
       # vocabulary, so it is not covered. They are NOT in the `primary_topic` group,
-      # which is still the thirteen above: a document may carry one of these
+      # which is still the seventeen above: a document may carry one of these
       # alongside its topic, never instead of it.
       #
       # This matters more since the chain invariant moved to `tags`

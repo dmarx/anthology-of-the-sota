@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [21 Sep 17:41 — The mechanism arrives four papers after the observation](2026-09.md#the-mechanism-arrives-four-papers-after-the-observation)
 - [21 Sep 17:27 — Two sides of a trade, filed an hour apart](2026-09.md#two-sides-of-a-trade-filed-an-hour-apart)
 - [21 Sep 17:19 — Three papers, three subfields, one shape](2026-09.md#three-papers-three-subfields-one-shape)
 - [21 Sep 17:10 — The number that decides the practice is in section 3.2.3](2026-09.md#the-number-that-decides-the-practice-is-in-section-323)
@@ -154,9 +155,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-147 entries across 2 books, newest first.
+148 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 145 | 2026-09-05 | 2026-09-21 |
+| [2026-09](2026-09.md) | 146 | 2026-09-05 | 2026-09-21 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

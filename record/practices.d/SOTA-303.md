@@ -1,5 +1,8 @@
 ---
+number: 303
 status: Proposed
+formerly:
+- SOTA-tmpri5k6
 promote_when: >-
   Two deployments of time-saving tools whose phases differ, with the fraction
   of started work that ships measured in both, moving in **opposite**
@@ -26,14 +29,14 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpfa3d0
+- LIT-492
 introduced_by:
-- LIT-tmpfa3d0
+- LIT-492
 implementations: []
 explained_by:
-- THEORY-tmpcad7s
+- THEORY-055
 summary: >-
-  Duede, Gross, Crockett and Bergstrom (2026), [LIT-tmpfa3d0](../literature.d/LIT-tmpfa3d0.md) — in a
+  Duede, Gross, Crockett and Bergstrom (2026), [LIT-492](../literature.d/LIT-492.md) — in a
   marginal-value-theorem model, accelerating the phase before value is known
   makes producers **more** selective, accelerating the minimum cost of
   shipping makes them **less** selective, and both make each item less
@@ -43,7 +46,7 @@ summary: >-
   direction.
 ---
 
-<!-- inactive-ok-file: THEORY-tmpcad7s — Proposed, filed in this same
+<!-- inactive-ok-file: THEORY-055 — Proposed, filed in this same
      contribution and declared as this practice's `explained_by:`; the
      citation is the relation -->
 
@@ -51,12 +54,12 @@ summary: >-
      practice is NOT evidence for and to state that neither supports the
      other. A comparison between two open claims does not wait on either -->
 
-# SOTA-tmpri5k6: Name the phase a time-saving tool accelerates before predicting what it will do to the quality of what people produce with it
+# SOTA-303: Name the phase a time-saving tool accelerates before predicting what it will do to the quality of what people produce with it
 
 ## Source
 
 Duede, Gross, Crockett and Bergstrom (2026),
-[LIT-tmpfa3d0](../literature.d/LIT-tmpfa3d0.md) — read as [NOTE-tmpcr9xy](../notes.d/NOTE-tmpcr9xy.md).
+[LIT-492](../literature.d/LIT-492.md) — read as [NOTE-241](../notes.d/NOTE-241.md).
 
 ## When this applies
 
@@ -91,7 +94,7 @@ Then read the prediction off the phase:
 | 2 — minimum to ship | **rises** (less selective) | falls |
 | 3 — discretionary improvement | rises, under a regularity condition | **rises** |
 
-[THEORY-tmpcad7s](../theory.d/THEORY-tmpcad7s.md) gives the reason all three share: the producer's own
+[THEORY-055](../theory.d/THEORY-055.md) gives the reason all three share: the producer's own
 rate of return is the price of their time, every acceleration raises it, and
 the marginal hour of improvement then has to clear a higher bar. Phase 3 is
 the case where the hour's value rises faster than the bar.

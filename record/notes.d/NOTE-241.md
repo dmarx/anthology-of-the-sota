@@ -1,6 +1,9 @@
 ---
+number: 241
 status: Read
-paper: LIT-tmpfa3d0
+formerly:
+- NOTE-tmpcr9xy
+paper: LIT-492
 title: 'LLMs raise the opportunity cost of research time'
 version: 1
 date: '2026-09-21'
@@ -18,7 +21,7 @@ summary: >-
      explanation it could not account for, and its unsettledness is the
      point of the citation rather than a problem with it -->
 
-# NOTE-tmpcr9xy: LLMs raise the opportunity cost of research time
+# NOTE-241: LLMs raise the opportunity cost of research time
 
 ## Contribution
 

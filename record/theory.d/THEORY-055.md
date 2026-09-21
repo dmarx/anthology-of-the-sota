@@ -1,5 +1,8 @@
 ---
+number: 55
 status: Proposed
+formerly:
+- THEORY-tmpcad7s
 promote_when: >-
   The opportunity-cost channel identified against its rivals in a real
   deployment, not just observed alongside them: a population of producers
@@ -18,11 +21,11 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-21'
 source:
-- LIT-tmpfa3d0
+- LIT-492
 explains:
-- SOTA-tmpri5k6
+- SOTA-303
 summary: >-
-  Duede, Gross, Crockett and Bergstrom (2026), [LIT-tmpfa3d0](../literature.d/LIT-tmpfa3d0.md) — in a
+  Duede, Gross, Crockett and Bergstrom (2026), [LIT-492](../literature.d/LIT-492.md) — in a
   marginal-value-theorem model of effort allocation, the long-run rate of
   return is simultaneously the objective and the opportunity cost of the
   marginal hour. Any acceleration raises it, so the marginal hour of
@@ -31,7 +34,7 @@ summary: >-
   **which phase** was accelerated rather than on how much time was saved.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpri5k6 — Proposed, filed in this same
+<!-- inactive-ok-file: SOTA-303 — Proposed, filed in this same
      contribution; this theory declares `explains:` on it, so the citation is
      the relation itself -->
 
@@ -39,18 +42,18 @@ summary: >-
      say" precisely to record that the two accounts are rivals and neither is
      settled -->
 
-# THEORY-tmpcad7s: A producer's own rate of return is the price of their time, so making them faster raises the bar on every marginal hour of improvement
+# THEORY-055: A producer's own rate of return is the price of their time, so making them faster raises the bar on every marginal hour of improvement
 
 ## Source
 
 Duede, Gross, Crockett and Bergstrom (2026),
-[LIT-tmpfa3d0](../literature.d/LIT-tmpfa3d0.md) — read as [NOTE-tmpcr9xy](../notes.d/NOTE-tmpcr9xy.md).
+[LIT-492](../literature.d/LIT-492.md) — read as [NOTE-241](../notes.d/NOTE-241.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-tmpri5k6](../practices.d/SOTA-tmpri5k6.md) | attribute the phase a tool accelerates before predicting its effect on quality | not a caveat about tool quality but a consequence of the producer re-optimizing against a price that the tool itself moved |
+| [SOTA-303](../practices.d/SOTA-303.md) | attribute the phase a tool accelerates before predicting its effect on quality | not a caveat about tool quality but a consequence of the producer re-optimizing against a price that the tool itself moved |
 
 ## The account
 
@@ -118,7 +121,7 @@ phases by example — discovery-like in "some technical fields", publication-lik
 in "fieldwork-based disciplines" — and gives no method for the attribution.
 Since the predictions have opposite signs across phases, an account that
 cannot attribute the phase predicts nothing in particular. That gap is the
-reason [SOTA-tmpri5k6](../practices.d/SOTA-tmpri5k6.md) is phrased as an instruction to do the
+reason [SOTA-303](../practices.d/SOTA-303.md) is phrased as an instruction to do the
 attribution rather than as a prediction to apply.
 
 **It is not a claim about LLMs specifically, and the record should not file it

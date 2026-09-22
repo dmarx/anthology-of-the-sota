@@ -1,6 +1,9 @@
 ---
+number: 276
 status: Read
-paper: LIT-tmpvwpn4
+formerly:
+- NOTE-tmp4ho8v
+paper: LIT-536
 title: 'Order-sensitivity refutes it, and the models everyone measured were trained for the task'
 version: 1
 date: '2026-09-22'
@@ -13,10 +16,10 @@ summary: >-
   fine-tuning on three metrics across four datasets.
 ---
 
-# NOTE-tmp4ho8v: Order-sensitivity refutes it, and the models everyone measured were trained for the task
+# NOTE-276: Order-sensitivity refutes it, and the models everyone measured were trained for the task
 
-<!-- inactive-ok-file: THEORY-tmpvwjjo — Rejected, and cited as the rejected account itself: this document is part of the evidence that retired it, not a recommendation resting on it. -->
-<!-- inactive-ok-file: SOTA-tmpaocvh — Proposed, the sibling practice filed in this same contribution and named as its counterpart; it is new, not retired. -->
+<!-- inactive-ok-file: THEORY-068 — Rejected, and cited as the rejected account itself: this document is part of the evidence that retired it, not a recommendation resting on it. -->
+<!-- inactive-ok-file: SOTA-323 — Proposed, the sibling practice filed in this same contribution and named as its counterpart; it is new, not retired. -->
 
 ## Contribution
 
@@ -100,14 +103,14 @@ and Adam.
 
 ## Bearing on the record
 
-It is the source of [SOTA-tmpaocvh](../practices.d/SOTA-tmpaocvh.md) — test a claim about what pretraining
+It is the source of [SOTA-323](../practices.d/SOTA-323.md) — test a claim about what pretraining
 produces on a model trained with the pretraining objective — which is the
 transferable part and is not specific to in-context learning at all.
 
-It is also the reason [THEORY-tmpvwjjo](../theory.d/THEORY-tmpvwjjo.md) is `Rejected` rather than left standing:
+It is also the reason [THEORY-068](../theory.d/THEORY-068.md) is `Rejected` rather than left standing:
 for real pretrained models the evidence is a contradiction plus a measured
 gap, and for ICL-objective models [ARXIV-2310.17086](https://arxiv.org/abs/2310.17086) supplies a separation of
-its own. What survives is [THEORY-tmpknb4d](../theory.d/THEORY-tmpknb4d.md), the expressivity claim, which this
+its own. What survives is [THEORY-067](../theory.d/THEORY-067.md), the expressivity claim, which this
 paper explicitly leaves intact.
 
 **[DP-007](../../docs/design-principles.md#dp-7).** The gradient-descent reading became consensus without anyone

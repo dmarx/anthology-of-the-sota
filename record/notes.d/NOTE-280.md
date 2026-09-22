@@ -1,6 +1,9 @@
 ---
+number: 280
 status: Read
-paper: LIT-tmpehkbl
+formerly:
+- NOTE-tmpvx5ab
+paper: LIT-533
 title: 'The construction is exact, and the trained model it describes is one layer deep'
 version: 1
 date: '2026-09-22'
@@ -14,9 +17,9 @@ summary: >-
   description beyond one layer.
 ---
 
-# NOTE-tmpvx5ab: The construction is exact, and the trained model it describes is one layer deep
+# NOTE-280: The construction is exact, and the trained model it describes is one layer deep
 
-<!-- inactive-ok-file: THEORY-tmpvwjjo — Rejected, and cited as the rejected account itself: this document is part of the evidence that retired it, not a recommendation resting on it. -->
+<!-- inactive-ok-file: THEORY-068 — Rejected, and cited as the rejected account itself: this document is part of the evidence that retired it, not a recommendation resting on it. -->
 
 ## Contribution
 
@@ -93,8 +96,8 @@ sparsity it would require in a real model and does not find it.
 ## Bearing on the record
 
 This is the source of the expressivity claim the record now files as
-[THEORY-tmpknb4d](../theory.d/THEORY-tmpknb4d.md), and the source of the identification it files as
-[THEORY-tmpvwjjo](../theory.d/THEORY-tmpvwjjo.md) and rejects. Both come from the same paper, and separating
+[THEORY-067](../theory.d/THEORY-067.md), and the source of the identification it files as
+[THEORY-068](../theory.d/THEORY-068.md) and rejects. Both come from the same paper, and separating
 them is the point: Proposition 1 is untouched, and what is contested is the
 inference from it.
 

@@ -1,5 +1,8 @@
 ---
+number: 323
 status: Proposed
+formerly:
+- SOTA-tmpaocvh
 title: 'Test a claim about what pretraining produces on a model trained with the pretraining objective, not one trained on the task family you are testing'
 version: 1
 tags:
@@ -8,12 +11,12 @@ tags:
 - adaptation-and-tuning
 date: '2026-09-22'
 source:
-- LIT-tmpvwpn4
+- LIT-536
 introduced_by:
-- LIT-tmpvwpn4
+- LIT-536
 contested_by: []
 explained_by:
-- THEORY-tmpknb4d
+- THEORY-067
 promote_when: >-
   A second dispute outside in-context learning is resolved the same way —
   a claim about an emergent capability that survived while the evidence came
@@ -21,7 +24,7 @@ promote_when: >-
   once the same measurement was run on models trained only on the general
   objective.
 summary: >-
-  Shen, Mishra and Khashabi (2023), [LIT-tmpvwpn4](../literature.d/LIT-tmpvwpn4.md) — "there exist weights such
+  Shen, Mishra and Khashabi (2023), [LIT-536](../literature.d/LIT-536.md) — "there exist weights such
   that" and "pretraining produces weights such that" are different claims, and
   training a model on the task family you are about to test collapses them.
   Their separation of these as Hypothesis 2 and Hypothesis 1 is what let them
@@ -29,14 +32,14 @@ summary: >-
   models had tested neither the models nor the objective.
 ---
 
-# SOTA-tmpaocvh: Test a claim about what pretraining produces on a model trained with the pretraining objective, not one trained on the task family you are testing
+# SOTA-323: Test a claim about what pretraining produces on a model trained with the pretraining objective, not one trained on the task family you are testing
 
-<!-- inactive-ok-file: SOTA-tmpxlbv7 — Proposed, the sibling practice filed in this same contribution and named as its counterpart; it is new, not retired. -->
+<!-- inactive-ok-file: SOTA-324 — Proposed, the sibling practice filed in this same contribution and named as its counterpart; it is new, not retired. -->
 
 ## Source
 
-Shen, Mishra and Khashabi (2023), [LIT-tmpvwpn4](../literature.d/LIT-tmpvwpn4.md) — ICML 2024. Read as
-[NOTE-tmp4ho8v](../notes.d/NOTE-tmp4ho8v.md).
+Shen, Mishra and Khashabi (2023), [LIT-536](../literature.d/LIT-536.md) — ICML 2024. Read as
+[NOTE-276](../notes.d/NOTE-276.md).
 
 ## The practice
 
@@ -73,7 +76,7 @@ not add evidence ([DP-005](../../docs/design-principles.md#dp-5)).
 ## Scope
 
 This is not an argument against training a model on a task family to study
-it. [LIT-tmpf6jxc](../literature.d/LIT-tmpf6jxc.md)'s setup is how the mechanism question became answerable at
+it. [LIT-534](../literature.d/LIT-534.md)'s setup is how the mechanism question became answerable at
 all, and the results in it are real results about transformers. The practice
 is about what a result in that setup licenses you to say about a model
 pretrained on text.
@@ -92,4 +95,4 @@ its demonstrations and batch gradient descent is not, so no argument about
 weights was needed to know the two cannot be equivalent. Look for a property
 the claimed mechanism *must* have, check whether the real phenomenon has it,
 and do that before building the apparatus that would confirm the mechanism.
-That half of the method is filed separately as [SOTA-tmpxlbv7](SOTA-tmpxlbv7.md).
+That half of the method is filed separately as [SOTA-324](SOTA-324.md).

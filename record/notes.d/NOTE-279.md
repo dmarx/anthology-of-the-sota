@@ -1,6 +1,9 @@
 ---
+number: 279
 status: Read
-paper: LIT-tmpf6jxc
+formerly:
+- NOTE-tmptsb58
+paper: LIT-534
 title: 'The setup that made the mechanism question answerable'
 version: 1
 date: '2026-09-22'
@@ -13,7 +16,7 @@ summary: >-
   to everything built on it.
 ---
 
-# NOTE-tmptsb58: The setup that made the mechanism question answerable
+# NOTE-279: The setup that made the mechanism question answerable
 
 ## Contribution
 

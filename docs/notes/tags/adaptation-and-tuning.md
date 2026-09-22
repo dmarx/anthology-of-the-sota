@@ -4,7 +4,7 @@
 
 **adaptation-and-tuning**.
 
-31 of 275 NOTE documents. Back to the [full index](../README.md).
+32 of 280 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -39,3 +39,4 @@
 | [NOTE-240](../../../record/notes.d/NOTE-240.md) | Noise hypernetworks | Read as the amortized counterpart to `SOTA-301`. The headline — recover half of test-time optimization at 1/100th the latency — is well measured. The finding that carries further is the control: direct reward fine-tuning of the same model makes it worse, and worse the more steps you sample. | Read |
 | [NOTE-252](../../../record/notes.d/NOTE-252.md) | RNA-FM, and the control that does not carry the claim | Read to open the biological-sequence trunk, which this record did not hold. The structural results are large and the paper's one clean input-swap control is not: replacing one-hot sequence with a 640-dimensional pretrained embedding in a published UTR model moves `R²` from **0.814 to 0.816** on the real-human set, where a 16-dimensional predicted secondary structure moves it to **0.820**. No practice filed. | Read |
 | [NOTE-264](../../../record/notes.d/NOTE-264.md) | Low-rank structure in a transformer is non-uniform, and a global rank is measurably the wrong choice | Read second in the spectral cluster, and it is the one that carries a recommendation. "Transformer weights are low rank" turns out to be true of some matrices and false of others, with the split systematic by component and by depth. The comparison against a uniform rank at matched compression was run and the margins are large. | Read |
+| [NOTE-276](../../../record/notes.d/NOTE-276.md) | Order-sensitivity refutes it, and the models everyone measured were trained for the task | Read as the challenge from outside the setup. It separates the hypothesis that pretrained models *do* in-context learning by gradient descent from the hypothesis that transformer weights *exist* which simulate it, and shows the literature had been testing only the second. Theorem 1 then gives a contradiction from order sensitivity alone, and LLaMA-7B disagrees with fine-tuning on three metrics across four datasets. | Read |

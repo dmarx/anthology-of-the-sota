@@ -1,6 +1,9 @@
 ---
+number: 278
 status: Read
-paper: LIT-tmprd6ad
+formerly:
+- NOTE-tmpnpngw
+paper: LIT-535
 title: 'Linear in Newton steps, exponential in gradient steps: a rate is what separates the rivals'
 version: 1
 date: '2026-09-22'
@@ -14,10 +17,10 @@ summary: >-
   cannot separate these rivals and rates can.
 ---
 
-# NOTE-tmpnpngw: Linear in Newton steps, exponential in gradient steps: a rate is what separates the rivals
+# NOTE-278: Linear in Newton steps, exponential in gradient steps: a rate is what separates the rivals
 
-<!-- inactive-ok-file: THEORY-tmpvwjjo — Rejected, and cited as the rejected account itself: this document is part of the evidence that retired it, not a recommendation resting on it. -->
-<!-- inactive-ok-file: SOTA-tmpxlbv7 — Proposed, the sibling practice filed in this same contribution and named as its counterpart; it is new, not retired. -->
+<!-- inactive-ok-file: THEORY-068 — Rejected, and cited as the rejected account itself: this document is part of the evidence that retired it, not a recommendation resting on it. -->
+<!-- inactive-ok-file: SOTA-324 — Proposed, the sibling practice filed in this same contribution and named as its counterpart; it is new, not retired. -->
 
 ## Contribution
 
@@ -98,13 +101,13 @@ statement about a causal decoder.
 ## Bearing on the record
 
 It is the strongest evidence in this cluster, and the reason the record files
-[THEORY-tmpvwjjo](../theory.d/THEORY-tmpvwjjo.md) as `Rejected` rather than `Proposed` for the deep-model case:
+[THEORY-068](../theory.d/THEORY-068.md) as `Rejected` rather than `Proposed` for the deep-model case:
 the rate measurement and the conditioning probe are two independent
 separations, and both point the same way.
 
 The method — separate rival accounts of an internal computation by a rate and
 by a regime where they must differ, rather than by output similarity — is
-filed as [SOTA-tmpxlbv7](../practices.d/SOTA-tmpxlbv7.md), because it generalizes past this dispute and the record
+filed as [SOTA-324](../practices.d/SOTA-324.md), because it generalizes past this dispute and the record
 holds nothing else that says it.
 
 ## Open questions

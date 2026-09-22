@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-27 of 275 NOTE documents. Back to the [full index](../README.md).
+29 of 280 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -35,3 +35,5 @@
 | [NOTE-272](../../../record/notes.d/NOTE-272.md) | An idealization that checks its own assumptions against ALBERT, and clusters within a few layers | Read a second time, in full, after being declined on a skim. The decline said the `t → ∞` frozen-weights idealization put it too far from a trained model to be evidence about one, and that it underwrites no practice. Both halves were wrong: the record's own schema says a theory need underwrite nothing, and the paper checks its hypotheses on ALBERT, gives the discrete-time analogue, and says clustering arrives within a few layers. | Read |
 | [NOTE-274](../../../record/notes.d/NOTE-274.md) | The trunk under a term the record was using for two different things | Read because four documents in this record lean on "rank collapse" and none of them held its source. Reading it produced a finding that was not the point of the unit: the record carries that term for two distinct phenomena, and the conflation is the field's rather than ours. | Read |
 | [NOTE-275](../../../record/notes.d/NOTE-275.md) | The trunk states the condition its successors were refuted for dropping | Read because the record filed a three-paper information-bottleneck dispute and the paper all three argue about was absent — a gap this session created. Reading it reassigns some blame: the rebuttal's central objection is that mutual information needs stochasticity, and the founding paper says so in one sentence before anybody measured anything. | Read |
+| [NOTE-277](../../../record/notes.d/NOTE-277.md) | The algorithm changes with depth, and the one it lands on is Bayes-optimal ridge | Read as the second, independent arrival at the mesa-optimization construction. Its title asks which algorithm, and its answer is that there is no single one: shallow learners sit nearest gradient descent, deeper ones nearest ridge, deepest nearest ordinary least squares, and under label noise the best-fitting ridge parameter is the Bayes-optimal `σ²/τ²` at every setting. The gradient-descent phase is the small-model phase. | Read |
+| [NOTE-279](../../../record/notes.d/NOTE-279.md) | The setup that made the mechanism question answerable | Read because every later claim about what in-context learning *is* measures in this setup. A 9.5M-parameter GPT-2 trained from scratch on `(x, f(x))` sequences matches ordinary least squares on unseen linear functions and Lasso on sparse ones, in a single forward pass. The training objective is the setup's power and, later, the ground of the main objection to everything built on it. | Read |

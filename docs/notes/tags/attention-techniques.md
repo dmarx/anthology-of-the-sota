@@ -4,7 +4,7 @@
 
 **attention-techniques**.
 
-15 of 275 NOTE documents. Back to the [full index](../README.md).
+16 of 280 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -23,3 +23,4 @@
 | [NOTE-272](../../../record/notes.d/NOTE-272.md) | An idealization that checks its own assumptions against ALBERT, and clusters within a few layers | Read a second time, in full, after being declined on a skim. The decline said the `t → ∞` frozen-weights idealization put it too far from a trained model to be evidence about one, and that it underwrites no practice. Both halves were wrong: the record's own schema says a theory need underwrite nothing, and the paper checks its hypotheses on ALBERT, gives the discrete-time analogue, and says clustering arrives within a few layers. | Read |
 | [NOTE-273](../../../record/notes.d/NOTE-273.md) | The observation outlived the method, and it is the observation the record needed | Read for one figure. The record holds two practices resting on attention being low rank and held no source for the claim; the record also already holds the verdict that this paper's *method* was overtaken. Those are different things and the reading keeps them apart. | Read |
 | [NOTE-274](../../../record/notes.d/NOTE-274.md) | The trunk under a term the record was using for two different things | Read because four documents in this record lean on "rank collapse" and none of them held its source. Reading it produced a finding that was not the point of the unit: the record carries that term for two distinct phenomena, and the conflation is the field's rather than ours. | Read |
+| [NOTE-280](../../../record/notes.d/NOTE-280.md) | The construction is exact, and the trained model it describes is one layer deep | Read as the trunk of the mesa-optimization line. Proposition 1's weight construction is exact and a single trained linear-self-attention layer approximately finds it. The result that matters most for what came after is four pages later and rarely quoted: deeper trained models do not match gradient descent, they match GD++ — gradient descent on data transformed by `I − γXXᵀ` — which is the paper's own evidence that plain GD is the wrong description beyond one layer. | Read |

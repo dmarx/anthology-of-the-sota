@@ -1,6 +1,9 @@
 ---
+number: 277
 status: Read
-paper: LIT-tmp700y6
+formerly:
+- NOTE-tmpmxdgb
+paper: LIT-532
 title: 'The algorithm changes with depth, and the one it lands on is Bayes-optimal ridge'
 version: 1
 date: '2026-09-22'
@@ -13,9 +16,9 @@ summary: >-
   setting. The gradient-descent phase is the small-model phase.
 ---
 
-# NOTE-tmpmxdgb: The algorithm changes with depth, and the one it lands on is Bayes-optimal ridge
+# NOTE-277: The algorithm changes with depth, and the one it lands on is Bayes-optimal ridge
 
-<!-- inactive-ok-file: THEORY-tmpvwjjo — Rejected, and cited as the rejected account itself: this document is part of the evidence that retired it, not a recommendation resting on it. -->
+<!-- inactive-ok-file: THEORY-068 — Rejected, and cited as the rejected account itself: this document is part of the evidence that retired it, not a recommendation resting on it. -->
 
 ## Contribution
 
@@ -88,11 +91,11 @@ the phase the paper reports for its least capable learners.
 
 ## Bearing on the record
 
-It is the independent second source under [THEORY-tmpknb4d](../theory.d/THEORY-tmpknb4d.md): two different
+It is the independent second source under [THEORY-067](../theory.d/THEORY-067.md): two different
 constructions, by different authors, for two different algorithms, which is
 precisely why the expressivity claim cannot identify an algorithm.
 
-For [THEORY-tmpvwjjo](../theory.d/THEORY-tmpvwjjo.md) it is evidence on both sides, and the record files it that
+For [THEORY-068](../theory.d/THEORY-068.md) it is evidence on both sides, and the record files it that
 way rather than counting it for the side its title suggests.
 
 ## Open questions

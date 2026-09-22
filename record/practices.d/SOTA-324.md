@@ -1,5 +1,8 @@
 ---
+number: 324
 status: Proposed
+formerly:
+- SOTA-tmpxlbv7
 title: 'Separate rival accounts of an internal algorithm by convergence rate and conditioning, not by how well each fits the output'
 version: 1
 tags:
@@ -8,12 +11,12 @@ tags:
 - training-optimization
 date: '2026-09-22'
 source:
-- LIT-tmprd6ad
+- LIT-535
 introduced_by:
-- LIT-tmprd6ad
+- LIT-535
 contested_by: []
 explained_by:
-- THEORY-tmpknb4d
+- THEORY-067
 promote_when: >-
   The layer-to-iteration measurement is run on a model pretrained on a general
   objective rather than on the task family, and reports a rate — of any order —
@@ -21,7 +24,7 @@ promote_when: >-
   dispute lacks, and a method that only works on purpose-trained models is
   worth less than this one claims.
 summary: >-
-  Fu, Chen, Jia and Sharan (2023), [LIT-tmprd6ad](../literature.d/LIT-tmprd6ad.md) — output similarity cannot tell
+  Fu, Chen, Jia and Sharan (2023), [LIT-535](../literature.d/LIT-535.md) — output similarity cannot tell
   gradient descent from Newton's method, because both converge to the same
   answer. Matching each layer to the best-fitting step count of each candidate
   gives a linear trend for the right rate and an exponential one for the wrong
@@ -30,21 +33,21 @@ summary: >-
   was not.
 ---
 
-# SOTA-tmpxlbv7: Separate rival accounts of an internal algorithm by convergence rate and conditioning, not by how well each fits the output
+# SOTA-324: Separate rival accounts of an internal algorithm by convergence rate and conditioning, not by how well each fits the output
 
-<!-- inactive-ok-file: SOTA-tmpaocvh — Proposed, the sibling practice filed in this same contribution and named as its counterpart; it is new, not retired. -->
+<!-- inactive-ok-file: SOTA-323 — Proposed, the sibling practice filed in this same contribution and named as its counterpart; it is new, not retired. -->
 
 ## Source
 
-Fu, Chen, Jia and Sharan (2023), [LIT-tmprd6ad](../literature.d/LIT-tmprd6ad.md) — NeurIPS 2024. Read as
-[NOTE-tmpnpngw](../notes.d/NOTE-tmpnpngw.md).
+Fu, Chen, Jia and Sharan (2023), [LIT-535](../literature.d/LIT-535.md) — NeurIPS 2024. Read as
+[NOTE-278](../notes.d/NOTE-278.md).
 
 ## The practice
 
 When two candidate algorithms are proposed for what a network computes
 internally, do not compare each one's output to the network's. Both
 candidates converge to the same answer on the task, so both will fit — and
-[LIT-tmprd6ad](../literature.d/LIT-tmprd6ad.md) reports exactly that: gradient descent shows high output
+[LIT-535](../literature.d/LIT-535.md) reports exactly that: gradient descent shows high output
 similarity with the trained model at later layers, and it is still the wrong
 description.
 
@@ -71,7 +74,7 @@ Two independent separations pointing the same way is what "the model is doing
 
 ## Claim the result at the strength the method supports
 
-[LIT-tmprd6ad](../literature.d/LIT-tmprd6ad.md)'s own discipline is part of the practice: BFGS shows the same
+[LIT-535](../literature.d/LIT-535.md)'s own discipline is part of the practice: BFGS shows the same
 linear trend as Iterative Newton, so the paper claims *a* second-order method
 rather than a named one. A rate identifies an algorithm's *class*. Naming a
 specific member requires evidence the rate does not carry, and the record
@@ -85,15 +88,15 @@ established rates — linear regression obliges, most things do not. Whether
 the method extends to a setting without an answer key is untested.
 
 **And it has only been run on purpose-trained models**, which is the gap
-[SOTA-tmpaocvh](SOTA-tmpaocvh.md) names. That is what `promote_when` asks for: the same
+[SOTA-323](SOTA-323.md) names. That is what `promote_when` asks for: the same
 measurement on a model pretrained on a general objective. It is also the
 experiment this record could not find anybody having done, on either side of
 the dispute.
 
 ## Relation to the other half
 
-[SOTA-tmpaocvh](SOTA-tmpaocvh.md) says to check what family of models your evidence comes from.
+[SOTA-323](SOTA-323.md) says to check what family of models your evidence comes from.
 This says how to tell two mechanisms apart once you have the right models.
 They came out of different papers on the same dispute and neither subsumes the
-other: [LIT-tmprd6ad](../literature.d/LIT-tmprd6ad.md) applies this method inside the purpose-trained setting
-[SOTA-tmpaocvh](SOTA-tmpaocvh.md) warns about, and reaches a sound conclusion about that setting.
+other: [LIT-535](../literature.d/LIT-535.md) applies this method inside the purpose-trained setting
+[SOTA-323](SOTA-323.md) warns about, and reaches a sound conclusion about that setting.

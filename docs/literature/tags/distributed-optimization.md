@@ -6,7 +6,7 @@
 
 **Distributed optimization** — parallelism and sharding, communication, memory management, checkpointing.
 
-54 of 479 LIT documents. Back to the [full index](../README.md).
+55 of 479 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -19,6 +19,7 @@
 | [LIT-043](../../../record/literature.d/LIT-043.md) | Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM | Narayanan et al. (2021), [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473). 3D parallel training strategy. | Active |
 | [LIT-051](../../../record/literature.d/LIT-051.md) | A Unified Architecture for Accelerating Distributed DNN Training in Heterogeneous GPU/CPU Clusters | Jiang et al. (2020), OSDI '20. BytePS: spare CPU and network capacity in a GPU cluster is a resource, and a communication framework that uses it subsumes both all-reduce and parameter-server as special cases. | Active |
 | [LIT-056](../../../record/literature.d/LIT-056.md) v2 | Deep Gradient Compression: Reducing the Communication Bandwidth for Distributed Training | Lin et al. (2017), [ARXIV-1712.01887](https://arxiv.org/abs/1712.01887). 99.9% of the gradient exchange in distributed SGD is redundant; sending the rest, with four corrections that keep accuracy, compresses gradients 270–600× and puts multi-node training on commodity 1Gbps Ethernet. | Active |
+| [LIT-059](../../../record/literature.d/LIT-059.md) v2 | CheckFreq: Frequent, Fine-Grained DNN Checkpointing | Mohan et al. (2021), FAST '21. Checkpoint frequency should be computed, not guessed: online profiling picks an iteration-granularity interval, adaptive tuning holds the overhead under a bound, and two-phase checkpointing pipelines the write against compute. | Active |
 | [LIT-065](../../../record/literature.d/LIT-065.md) v2 | Using DeepSpeed and Megatron to Train Megatron-Turing NLG 530B, A Large-Scale Generative Language Model | Smith et al. (2022), [ARXIV-2201.11990](https://arxiv.org/abs/2201.11990). Large scale training techniques. | Active |
 | [LIT-083](../../../record/literature.d/LIT-083.md) v2 | PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel | Zhao et al. (2022), [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). Improved memory efficiency over ZeRO. | Active |
 | [LIT-098](../../../record/literature.d/LIT-098.md) v2 | PipeMare: Asynchronous Pipeline Parallel DNN Training | Yang et al. (2019), [ARXIV-1910.05124](https://arxiv.org/abs/1910.05124). Asynchronous pipeline parallelism. | Active |

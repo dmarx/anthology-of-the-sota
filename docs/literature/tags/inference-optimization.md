@@ -6,10 +6,11 @@
 
 **Inference optimization** — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
 
-20 of 479 LIT documents. Back to the [full index](../README.md).
+21 of 479 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
+| [LIT-024](../../../record/literature.d/LIT-024.md) v2 | Fast Transformer Decoding: One Write-Head is All You Need | Shazeer (2019), [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150). Introduces multi-query attention. | Active |
 | [LIT-081](../../../record/literature.d/LIT-081.md) v3 | GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers | Frantar et al. (2022), [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323). One-shot weight quantization to 3-4 bits: round column by column and push each rounding error into the columns not yet done, using approximate second-order information from a small calibration set. | Active |
 | [LIT-103](../../../record/literature.d/LIT-103.md) v2 | SARATHI: Efficient LLM Inference by Piggybacking Decodes with Chunked Prefills | Agrawal et al. (2023), [ARXIV-2308.16369](https://arxiv.org/abs/2308.16369). Prefill saturates the GPU and decode starves it, so split prefills into chunks and fill the rest of each batch with decodes that ride along nearly free. | Active |
 | [LIT-110](../../../record/literature.d/LIT-110.md) v2 | Efficiently Scaling Transformer Inference | Pope et al. (2022), [ARXIV-2211.05102](https://arxiv.org/abs/2211.05102). Inference partitioning derived rather than guessed: an analytical model of communication and memory cost picks the best parallel layout for a given model size, batch and latency target, and the answer changes with the target. | Active |

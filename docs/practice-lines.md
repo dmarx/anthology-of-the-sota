@@ -93,6 +93,18 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [SOTA-223](../record/practices.d/SOTA-223.md) — Do not keep the gossip topology static: sample a fresh random neighbourhood every round *(Proposed, unreplicated)*
   - [SOTA-226](../record/practices.d/SOTA-226.md) — If the gossip topology is static, make it a directed exponential graph, not a ring *(Active, unreplicated)*
 
+## generative-modeling
+
+### From Train the language model as a masked diffusion model rather than autoregressively
+
+- [SOTA-157](../record/practices.d/SOTA-157.md) — Train the language model as a masked diffusion model rather than autoregressively *(Proposed, unreplicated)*
+  - [SOTA-254](../record/practices.d/SOTA-254.md) — Train the language model as a masked diffusion model when the corpus is fixed and the compute is not *(Proposed, unreplicated)*
+
+### From Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal
+
+- [SOTA-188](../record/practices.d/SOTA-188.md) — Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal *(Active, converged)*
+  - [SOTA-195](../record/practices.d/SOTA-195.md) — Predict v rather than the noise when the model will be evaluated at low signal-to-noise *(Active, converged)*
+
 ## inference-optimization
 
 ### From PagedAttention to accelerate batch inference for LLM sampling

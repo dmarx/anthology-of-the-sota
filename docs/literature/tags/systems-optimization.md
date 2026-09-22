@@ -6,7 +6,7 @@
 
 **Systems optimization** — hardware utilization, kernels, compilation, memory access patterns — how an operation is executed, not how many bits it is executed in.
 
-12 of 479 LIT documents. Back to the [full index](../README.md).
+13 of 479 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -14,6 +14,7 @@
 | [LIT-059](../../../record/literature.d/LIT-059.md) v2 | CheckFreq: Frequent, Fine-Grained DNN Checkpointing | Mohan et al. (2021), FAST '21. Checkpoint frequency should be computed, not guessed: online profiling picks an iteration-granularity interval, adaptive tuning holds the overhead under a bound, and two-phase checkpointing pipelines the write against compute. | Active |
 | [LIT-063](../../../record/literature.d/LIT-063.md) v2 | TVM: An Automated End-to-End Optimizing Compiler for Deep Learning | Chen et al. (2018), [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799). Graph-level and operator-level optimization in one compiler, with a learned cost model searching the low-level schedule space, so performance is portable across back-ends instead of living in vendor libraries. | Active |
 | [LIT-066](../../../record/literature.d/LIT-066.md) v2 | Data Movement Is All You Need: A Case Study on Optimizing Transformers | Ivanov et al. (2020), [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072). Transformer training is bound by data movement, not compute: existing frameworks use suboptimal layouts, and a systematic movement-first optimization cuts data movement 22.91% for a 1.30x speedup on a BERT encoder layer. | Active |
+| [LIT-074](../../../record/literature.d/LIT-074.md) v2 | FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness | Dao et al. (2022), [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). IO-aware attention implementation. | Active |
 | [LIT-116](../../../record/literature.d/LIT-116.md) v2 | TensorRT-LLM: A Compiler and Runtime for LLMs | A synthetic entry the migration produced: no paper of this title exists, and the identifier it carried belongs to an unrelated physics preprint. Retired rather than deleted. The source field points at the software project itself. | Rejected — software with no published paper behind it, and no reading in the record |
 | [LIT-197](../../../record/literature.d/LIT-197.md) | Microscaling Data Formats for Deep Learning | Rouhani et al. (2023), [ARXIV-2310.10537](https://arxiv.org/abs/2310.10537). The MX formats: a block of 32 elements sharing one 8-bit power-of-two scale, with the elements themselves in FP8, FP6, FP4 or INT8. Over two dozen benchmarks — 8-bit MX runs inference on FP32 checkpoints with no calibration, 6-bit matches FP32 for training weights, activations *and* gradients with no recipe change, and 4-bit weights cost only a minor drop. The first sub-8-bit training result of that kind. | Active |
 | [LIT-367](../../../record/literature.d/LIT-367.md) | ZeRO-Infinity: Breaking the GPU Memory Wall for Extreme Scale Deep Learning | Rajbhandari et al. (2021), [ARXIV-2104.07857](https://arxiv.org/abs/2104.07857). ZeRO-Infinity offloads parameters, gradients and optimizer state to CPU and NVMe with bandwidth- centric partitioning, so model size stops being bounded by aggregate GPU memory. | Active |

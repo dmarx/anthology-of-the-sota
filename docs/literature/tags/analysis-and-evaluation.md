@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-127 of 479 LIT documents. Back to the [full index](../README.md).
+129 of 479 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -16,6 +16,8 @@
 | [LIT-039](../../../record/literature.d/LIT-039.md) v3 | Gradient Flow in Sparse Neural Networks and How Lottery Tickets Win | Evci et al. (2020), [ARXIV-2010.03533](https://arxiv.org/abs/2010.03533). Sparse networks trained from scratch underperform because they have poor gradient flow, and a lottery ticket wins by re-learning the pruned solution it came from rather than by having found a better sparse architecture. | Active |
 | [LIT-041](../../../record/literature.d/LIT-041.md) | Clusterability in Neural Networks | Filan et al. (2021), [ARXIV-2103.03386](https://arxiv.org/abs/2103.03386). Larger models develop more modular features. | Rejected — the result does not look interesting enough to carry |
 | [LIT-057](../../../record/literature.d/LIT-057.md) v2 | What Makes for Good Views for Contrastive Learning? | Tian et al. (2020), [ARXIV-2005.10243](https://arxiv.org/abs/2005.10243). Analysis of view generation. | Rejected — theoretical, with no concrete training recommendation |
+| [LIT-060](../../../record/literature.d/LIT-060.md) v2 | Improving Language Models by Retrieving from Trillions of Tokens | Borgeaud et al. (2021), [ARXIV-2112.04426](https://arxiv.org/abs/2112.04426). Retrieval-augmented language models. | Active |
+| [LIT-072](../../../record/literature.d/LIT-072.md) v2 | Simple Open-Vocabulary Object Detection with Vision Transformers | Minderer et al. (2022), [ARXIV-2205.06230](https://arxiv.org/abs/2205.06230). Open vocabulary detection. | Active |
 | [LIT-077](../../../record/literature.d/LIT-077.md) v2 | Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models | Srivastava et al. (2022), [ARXIV-2206.04615](https://arxiv.org/abs/2206.04615). Comprehensive evaluation framework. | Active |
 | [LIT-085](../../../record/literature.d/LIT-085.md) v3 | Progress measures for grokking via mechanistic interpretability | Nanda et al. (2023), [ARXIV-2301.05217](https://arxiv.org/abs/2301.05217). Grokking measurement. | Active — measurement rather than actionable practice |
 | [LIT-092](../../../record/literature.d/LIT-092.md) v2 | Understanding Contrastive Learning Requires Incorporating Inductive Biases | Saunshi et al. (2022), [ARXIV-2202.14037](https://arxiv.org/abs/2202.14037). Role of inductive biases. | Rejected — theoretical analysis without concrete recommendations |

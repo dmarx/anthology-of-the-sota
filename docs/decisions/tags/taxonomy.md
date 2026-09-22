@@ -6,7 +6,7 @@
 
 **Taxonomy** — the topic vocabulary and what enforces it.
 
-15 of 54 decisions. Back to the [full index](../README.md).
+16 of 55 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -25,3 +25,4 @@
 | [ADR-049](../../../record/decisions.d/ADR-049.md) | Unbound is never the resting state: the relation is evidence that a tag is missing | An unbound relation is a defect with exactly two readings — the invariant is missing, or the relation is wrong — and never a third where the answer is to note that somebody looked. Twenty-two unbound relations and ten unbound lines are now **zero**, by naming what twenty-one documents were already about. Also removes a `groups.primary_topic` block that constrained nothing and had silently drifted from the vocabulary. Rejected: an acknowledgement directive, and dropping `analysis-and-evaluation`. | Active |
 | [ADR-050](../../../record/decisions.d/ADR-050.md) | Two more topics: numerics and precision, and in-context learning | The vocabulary goes from fourteen to sixteen. `numerics-and-precision` because 48 documents about how many bits sat across nine topics with none holding a quarter, and because two topics each claimed a fragment in a trailing blurb item. `in-context-learning` because every item in `adaptation-and-tuning`'s blurb changes the weights or the window and ICL changes neither. A third candidate, retrieval, was rejected on counting. | Proposed |
 | [ADR-052](../../../record/decisions.d/ADR-052.md) | Two more topics: one that had a trailing clause for a home, and one that had nothing | Eighteen topics, from sixteen. `multimodal-learning` takes nine documents that sat across six topics while `model-architecture`'s blurb carried "multi-modal designs" as a trailing clause — the same half-home shape `ADR-050` found for numerics. `deployment-and-society` names nothing in the record at all and twenty-four papers on the incoming list, led by its single highest-revisit entry. Rejected on counting: mechanistic interpretability, the physics of learning, safety, agents, graphs, federated learning, human-AI interaction and scientific domains. | Active |
+| [ADR-055](../../../record/decisions.d/ADR-055.md) | Declare invariant: tags on SOTA.source, after taking the backlog to zero | `schemes.SOTA.references.source` now declares `invariant: tags`, so a practice and every paper behind it must share at least one topic. The declaration is second: the pass came first, and took 60 unbound rows to 0. Rejected: declaring it over the standing backlog, which would have made the report read 60 with no way to retire a row that had been looked at — a signal turned into wallpaper, since no `unbound-ok:` directive exists. | Proposed |

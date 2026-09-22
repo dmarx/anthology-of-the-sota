@@ -4,10 +4,11 @@
 
 **inference-optimization**.
 
-14 of 288 NOTE documents. Back to the [full index](../README.md).
+15 of 288 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
+| [NOTE-016](../../../record/notes.d/NOTE-016.md) | Fast Transformer Decoding: multi-query attention | Incremental decoding is bounded by the memory bandwidth of reloading the keys and values, not by arithmetic. Share one key/value head across all query heads: much faster decoding, "only minor quality degradation". | Read |
 | [NOTE-023](../../../record/notes.d/NOTE-023.md) | PagedAttention and vLLM | KV cache memory is huge, grows and shrinks dynamically, and was managed as one contiguous block — so fragmentation and duplication capped the batch size. PagedAttention borrows OS paging: near-zero waste, sharing within and across requests, 2–4× throughput at equal latency. | Read |
 | [NOTE-159](../../../record/notes.d/NOTE-159.md) | Accelerating Large Language Model Decoding with Speculative Sampling | The same construction as [NOTE-160](../../../record/notes.d/NOTE-160.md), reached independently two months later and demonstrated at 70B in a distributed setup. Its contribution to the record is corroboration plus two sharper statements: the guarantee holds "within hardware numerics" rather than absolutely, and the achieved tokens per second exceed the memory-bandwidth ceiling that bounds autoregressive decoding — which is the family's premise, measured rather than assumed. | Read |
 | [NOTE-160](../../../record/notes.d/NOTE-160.md) | Fast Inference from Transformers via Speculative Decoding | Autoregressive decoding is serial and memory-bandwidth-bound, so the arithmetic units sit idle while weights stream. Speculative decoding spends that idle compute: a cheap draft proposes `gamma` tokens, the target scores all `gamma + 1` positions in one parallel pass, and an accept-reject rule keeps a prefix. The rule is constructed so the output distribution is exactly the target's, which is what makes this a free speedup rather than a quality trade. | Read |

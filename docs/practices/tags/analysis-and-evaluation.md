@@ -6,10 +6,12 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-35 of 325 SOTA documents. Back to the [full index](../README.md).
+37 of 325 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
+| [SOTA-011](../../../record/practices.d/SOTA-011.md) v2 | Map the Hessian ratio \|lambda_min / lambda_max\| to find where the loss surface is non-convex | Li et al. (2017), [LIT-014](../../../record/literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). | Active |
+| [SOTA-012](../../../record/practices.d/SOTA-012.md) v3 | sharpness in the loss landscape correlates with test error | Li et al. (2017), [LIT-014](../../../record/literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). | Active |
 | [SOTA-194](../../../record/practices.d/SOTA-194.md) | When an objective arrives with its own dataset, state the composition before crediting the objective |  | Active |
 | [SOTA-196](../../../record/practices.d/SOTA-196.md) | Report zero-shot and in-distribution performance separately; one hyperparameter can move them in opposite directions |  | Active |
 | [SOTA-197](../../../record/practices.d/SOTA-197.md) v2 | Account for test-set proximity to the training data when evaluating, and state your contamination exposure |  | Active |

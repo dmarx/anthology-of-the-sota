@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [22 Sep 20:58 — Sixty rows, and fifty-seven of them were the same thing](2026-09.md#sixty-rows-and-fifty-seven-of-them-were-the-same-thing)
 - [22 Sep 04:09 — Two literatures using the same word for different objects](2026-09.md#two-literatures-using-the-same-word-for-different-objects)
 - [22 Sep 03:52 — The command was in the toolbox the whole time](2026-09.md#the-command-was-in-the-toolbox-the-whole-time)
 - [22 Sep 03:42 — A practice was resting on one paper, and the paper it was resting on had a trunk](2026-09.md#a-practice-was-resting-on-one-paper-and-the-paper-it-was-resting-on-had-a-trunk)
@@ -184,9 +185,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-177 entries across 2 books, newest first.
+178 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 175 | 2026-09-05 | 2026-09-22 |
+| [2026-09](2026-09.md) | 176 | 2026-09-05 | 2026-09-22 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

@@ -1,0 +1,74 @@
+---
+status: Active
+title: 'Pion: A Spectrum-Preserving Optimizer via Orthogonal Equivalence Transformation'
+version: 1
+tags:
+- training-optimization
+- model-stability
+date: '2026-09-22'
+published: '2026-05-12'
+arxiv: '2605.12492'
+first_author: 'Shi'
+keywords:
+- 'spectrum-preserving optimization'
+- 'orthogonal equivalence transformation'
+- 'iso-spectral manifold'
+- 'Muon'
+- 'normalization-free training'
+implementations: []
+summary: >-
+  Shi et al. (2026), [ARXIV-2605.12492](https://arxiv.org/abs/2605.12492) — instead of bounding
+  or renormalizing a weight matrix's spectrum, never change it: update `W` by
+  left and right orthogonal transformations so the singular values are
+  invariant and only the singular vectors rotate. On a 60M LLaMA with **every
+  normalization layer removed**, AdamW and Muon produce NaNs and Pion trains
+  9.6B tokens. Read as [NOTE-tmpwddew](../notes.d/NOTE-tmpwddew.md).
+---
+
+# LIT-tmpeu23i: Pion: A Spectrum-Preserving Optimizer via Orthogonal Equivalence Transformation
+
+Shi, Li, Qiu, Wen, Buchholz and Liu (2026) —
+[ARXIV-2605.12492](https://arxiv.org/abs/2605.12492). Read as
+[NOTE-tmpwddew](../notes.d/NOTE-tmpwddew.md).
+
+## Key takeaways
+
+- **The spectrum is fixed by construction.** Updates are coupled left and right
+  orthogonal transformations, derived on the iso-spectral manifold, so singular
+  values never move and no explicit normalization is needed. The update's own
+  spectral norm is bounded, which makes it µP-compatible.
+- **The motivating gap is real and is Muon's.** Muon orthogonalizes the
+  *update*, so each step is µP-compatible, but the weights' spectral norms
+  still drift over training. Pion removes the drift rather than correcting it.
+- **Pretraining, LLaMA-1.3B on 54B tokens** (2× Chinchilla, ~400K steps):
+  average benchmark 44.74 AdamW, 46.34 Muon, **47.69** Pion. Validation loss
+  2.7700 / **2.7225** / 2.7350 — so Pion wins the benchmarks and Muon wins the
+  loss.
+- **Normalization-free pretraining is the striking result.** Strip every
+  normalization layer from a 60M LLaMA: AdamW and Muon make initial progress
+  then diverge to NaN; Pion completes 9.6B tokens.
+- **The depth result is marginal and should be quoted as such.** At 200 layers
+  the mean local-loss standard deviation is 0.0931 AdamW, 0.0927 Muon, 0.0892
+  Pion.
+- **Cost.** +16.0% peak memory over AdamW and +26.6% over Muon; 44.4% slower
+  per step than AdamW, 3.2% slower than Muon. Dropping second-moment buffers
+  removes most of the memory overhead at slightly worse quality.
+
+## Standing in the anthology
+
+**It is the third position on the same axis, and the most extreme.**
+[LIT-tmpzz9pi](LIT-tmpzz9pi.md) renormalizes the weight spectrum every step;
+[LIT-tmp8a9ww](LIT-tmp8a9ww.md) bounds how fast it may move; this forbids it
+from moving at all. The record carries all three and no comparison between
+them exists.
+
+**It sits against a measurement filed the same day.**
+[LIT-tmpxqt7b](LIT-tmpxqt7b.md) reports that the trace-normalized spectrum
+stops changing early in ordinary pretraining. Pion imposes from step zero what
+that paper observes emerging. The two are contemporaneous, neither cites the
+other, and nobody has asked whether the early-training spectral motion Pion
+forbids is the part that mattered.
+
+**No practice is filed from it**, and the reason is in the reading: the claim
+worth recommending — that spectrum-preserving updates can stand in for
+normalization — rests on one 60M model, one run.

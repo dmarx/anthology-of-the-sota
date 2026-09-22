@@ -238,16 +238,20 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-230](../record/literature.d/LIT-230.md) — Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO *(Active)*
 - alongside: [LIT-239](../record/literature.d/LIT-239.md) — ESSA: Evolutionary Strategies for Scalable Alignment *(Active)*
 
-### From Feature Learning in Infinite-Width Neural Networks
+### From Neural Tangent Kernel: Convergence and Generalization in Neural Networks
 
-- [LIT-548](../record/literature.d/LIT-548.md) — Feature Learning in Infinite-Width Neural Networks *(Active)*
-  - [LIT-148](../record/literature.d/LIT-148.md) — Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer *(Active)*
-    - [LIT-149](../record/literature.d/LIT-149.md) — u-µP: The Unit-Scaled Maximal Update Parametrization *(Active)*
-    - [LIT-150](../record/literature.d/LIT-150.md) — Don't be lazy: CompleteP enables compute-efficient deep transformers *(Active)*
-      - [LIT-462](../record/literature.d/LIT-462.md) — Spectral Condition for muP under Width-Depth Scaling *(Active)* — also extends LIT-437
-  - [LIT-437](../record/literature.d/LIT-437.md) — A Spectral Condition for Feature Learning *(Active)*
-    - [LIT-436](../record/literature.d/LIT-436.md) — Scalable Optimization in the Modular Norm *(Active)*
-      - [LIT-438](../record/literature.d/LIT-438.md) — Modular Duality in Deep Learning *(Active)*
+- [LIT-360](../record/literature.d/LIT-360.md) — Neural Tangent Kernel: Convergence and Generalization in Neural Networks *(Active)*
+  - [LIT-557](../record/literature.d/LIT-557.md) — Tensor Programs II: Neural Tangent Kernel for Any Architecture *(Active)* — also extends LIT-558
+    - [LIT-556](../record/literature.d/LIT-556.md) — Tensor Programs III: Neural Matrix Laws *(Active)*
+      - [LIT-548](../record/literature.d/LIT-548.md) — Feature Learning in Infinite-Width Neural Networks *(Active)*
+        - [LIT-148](../record/literature.d/LIT-148.md) — Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer *(Active)*
+          - [LIT-149](../record/literature.d/LIT-149.md) — u-µP: The Unit-Scaled Maximal Update Parametrization *(Active)*
+          - [LIT-150](../record/literature.d/LIT-150.md) — Don't be lazy: CompleteP enables compute-efficient deep transformers *(Active)*
+            - [LIT-462](../record/literature.d/LIT-462.md) — Spectral Condition for muP under Width-Depth Scaling *(Active)* — also extends LIT-437
+        - [LIT-437](../record/literature.d/LIT-437.md) — A Spectral Condition for Feature Learning *(Active)*
+          - [LIT-436](../record/literature.d/LIT-436.md) — Scalable Optimization in the Modular Norm *(Active)*
+            - [LIT-438](../record/literature.d/LIT-438.md) — Modular Duality in Deep Learning *(Active)*
+- [LIT-558](../record/literature.d/LIT-558.md) — Tensor Programs I: Wide Feedforward or Recurrent Neural Networks of Any Architecture are Gaussian Processes *(Active)*
 
 ### From Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability
 

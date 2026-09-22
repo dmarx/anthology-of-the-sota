@@ -1,0 +1,77 @@
+---
+status: Active
+title: 'Grokking as the Transition from Lazy to Rich Training Dynamics'
+version: 1
+tags:
+- analysis-and-evaluation
+- training-optimization
+- model-stability
+date: '2026-09-22'
+published: '2023-10-09'
+arxiv: '2310.06110'
+first_author: 'Kumar'
+keywords:
+- 'grokking'
+- 'lazy training'
+- 'feature learning'
+- 'neural tangent kernel'
+- 'kernel alignment'
+implementations: []
+summary: >-
+  Kumar, Bordelon, Gershman and Pehlevan (2023), [ARXIV-2310.06110](https://arxiv.org/abs/2310.06110), ICLR 2024 —
+  the counterexample. A two-layer MLP groks on modular arithmetic **with no
+  weight decay at all**, and its parameter norm *rises* through the transition,
+  which the weight-norm accounts cannot produce. The proposed replacement:
+  grokking is the network leaving the lazy (linearised) regime and starting to
+  learn features, controlled by an output-scale parameter `α` and by the
+  alignment between the initial neural tangent kernel and the target. Read as
+  [NOTE-tmpvrr0d](../notes.d/NOTE-tmpvrr0d.md).
+---
+
+# LIT-tmp069e7: Grokking as the Transition from Lazy to Rich Training Dynamics
+
+Kumar, Bordelon, Gershman and Pehlevan (2023) — [ARXIV-2310.06110](https://arxiv.org/abs/2310.06110), ICLR 2024.
+Read as [NOTE-tmpvrr0d](../notes.d/NOTE-tmpvrr0d.md).
+
+## Key takeaways
+
+- **The counterexample, stated as §3's whole point.** Modular arithmetic,
+  two-layer MLP, **no weight decay**: the model groks and the parameter weight
+  norm *increases* during training. Prior accounts ([ARXIV-2210.01117](https://arxiv.org/abs/2210.01117)'s LU
+  mechanism, [ARXIV-2309.02390](https://arxiv.org/abs/2309.02390)'s circuit efficiency) both turn on a late
+  decrease in weight norm, so neither can be the general explanation.
+- **The proposed account.** Early training is close to linearised (lazy)
+  dynamics: the network fits the training set with its *initial* features, so
+  training loss falls with no test improvement. Grokking is the late breakdown
+  of that approximation as feature learning begins.
+- **Two knobs, both measurable.** `α`, an output-scale parameter controlling
+  laziness (also reachable by label rescaling), which in a sweep makes grokking
+  more dramatic or removes it entirely; and `ε`, the alignment between the
+  initial NTK's top eigenvectors and the target, generalised to arbitrary
+  tasks as **centered kernel alignment**.
+- **Three stated conditions for grokking:** the top NTK eigenvectors and the
+  labels are misaligned; the dataset is large enough that generalization is
+  eventually possible but not so large that training loss tracks test loss
+  throughout; and the network starts lazy.
+- **Worse initial alignment gives a lower *final* test loss**, because it is
+  the case where feature learning is necessary rather than optional — "lazy,
+  misaligned networks grok the most intensely".
+- **Analysed on polynomial regression with a two-layer network**, where
+  sufficient statistics for the test loss can be tracked directly; carried over
+  to MNIST, one-layer transformers and student–teacher setups.
+- **A methodological aside the record should keep:** the paper works in loss
+  rather than accuracy because loss is what drives the dynamics, and shows in
+  its appendix that accuracy curves on regression tasks can be gamed by the
+  choice of metric.
+
+## Standing in the anthology
+
+**`Active`, and it is the reason this cluster is filed as a dispute.** Two
+published mechanisms and an explicit counterexample to both is exactly the
+configuration in which filing one account alone would put a wrong thing in the
+record.
+
+**What it does not do is explain ungrokking or semi-grokking.**
+[ARXIV-2309.02390](https://arxiv.org/abs/2309.02390) predicted those before observing them, and nothing in the
+lazy-to-rich account addresses them. The honest reading is that neither
+account is general and the record says so rather than picking.

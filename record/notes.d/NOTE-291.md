@@ -1,6 +1,9 @@
 ---
+number: 291
 status: Read
-paper: LIT-tmpeafhj
+formerly:
+- NOTE-tmpeaxtx
+paper: LIT-547
 title: 'Matryoshka Representation Learning'
 version: 1
 date: '2026-09-22'
@@ -12,9 +15,9 @@ summary: >-
   remaining appendix tables were skimmed.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpclqxm — Proposed, filed in this same contribution from this paper; new, not retired, and cited as the practice this document sources -->
+<!-- inactive-ok-file: SOTA-327 — Proposed, filed in this same contribution from this paper; new, not retired, and cited as the practice this document sources -->
 
-# NOTE-tmpeaxtx: Matryoshka Representation Learning
+# NOTE-291: Matryoshka Representation Learning
 
 ## Contribution
 
@@ -93,18 +96,18 @@ contrast.
 
 It descends from nested dropout (Rippel et al.), which ordered all `d`
 dimensions. MRL optimizes only `O(log d)` and interpolates the rest.
-MatFormer ([LIT-tmp7xt7l](../literature.d/LIT-tmp7xt7l.md)) applies the same nesting to FFN weights.
+MatFormer ([LIT-546](../literature.d/LIT-546.md)) applies the same nesting to FFN weights.
 
 ## Recommendations
 
 - **R1** — Train embeddings meant for retrieval with nested prefix losses,
   store one database, shortlist on a prefix and re-rank on the full vector.
   *Topic:* representation-and-encoding. *Status:* standard in practice.
-  *Strength:* moderate. Filed as [SOTA-tmpclqxm](../practices.d/SOTA-tmpclqxm.md)
+  *Strength:* moderate. Filed as [SOTA-327](../practices.d/SOTA-327.md)
 
 ## Bearing on the record
 
-- **[SOTA-tmpclqxm](../practices.d/SOTA-tmpclqxm.md)** is new
+- **[SOTA-327](../practices.d/SOTA-327.md)** is new
 - **[SOTA-308](../practices.d/SOTA-308.md)** (measure relevance and the end task, not only recall, when
   changing retrieval) applies directly. MRL's own metric is class-label
   mAP@10, which is a recall-style proxy

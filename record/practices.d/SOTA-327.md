@@ -1,5 +1,8 @@
 ---
+number: 327
 status: Proposed
+formerly:
+- SOTA-tmpclqxm
 promote_when: >-
   A published measurement, by a group other than the MRL authors, of a
   text-embedding model trained with nested prefix losses, against separately
@@ -14,9 +17,9 @@ tags:
 - inference-optimization
 date: '2026-09-22'
 source:
-- LIT-tmpeafhj
+- LIT-547
 introduced_by:
-- LIT-tmpeafhj
+- LIT-547
 consensus: emerging
 consensus_note: >-
   It has spread beyond the authors, though not only to independent groups.
@@ -32,7 +35,7 @@ implementations:
 - text-embedding-3
 - EmbeddingGemma
 summary: >-
-  Kusupati, Bhatt, Rege et al. (2022), [LIT-tmpeafhj](../literature.d/LIT-tmpeafhj.md) — put the loss on
+  Kusupati, Bhatt, Rege et al. (2022), [LIT-547](../literature.d/LIT-547.md) — put the loss on
   log(d) nested prefixes of the embedding. Each prefix then matches a
   separately trained model of that width (ResNet50, ImageNet), and one
   database supports shortlisting on 16 dimensions and re-ranking on 2048:
@@ -40,12 +43,12 @@ summary: >-
   text embedding models without an independent comparison in the record.
 ---
 
-# SOTA-tmpclqxm: Train retrieval embeddings with nested losses, so a prefix of the vector can shortlist and the full vector re-rank
+# SOTA-327: Train retrieval embeddings with nested losses, so a prefix of the vector can shortlist and the full vector re-rank
 
 ## Source
 
-Kusupati, Bhatt, Rege et al. (2022), [LIT-tmpeafhj](../literature.d/LIT-tmpeafhj.md) — Matryoshka
-Representation Learning. Read as [NOTE-tmpeaxtx](../notes.d/NOTE-tmpeaxtx.md).
+Kusupati, Bhatt, Rege et al. (2022), [LIT-547](../literature.d/LIT-547.md) — Matryoshka
+Representation Learning. Read as [NOTE-291](../notes.d/NOTE-291.md).
 
 ## The practice
 

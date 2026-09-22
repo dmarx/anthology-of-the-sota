@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-100 of 288 NOTE documents. Back to the [full index](../README.md).
+102 of 293 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -108,3 +108,5 @@
 | [NOTE-286](../../../record/notes.d/NOTE-286.md) | The effective parameter count is a volume exponent, and the Hessian is measuring the wrong thing | Read as the trunk under a school the record was already citing. Its single most consequential sentence for this record is that the RLCT matters more than the curvature of the directions it counts — a published argument that the quantity a sharpness visualisation displays is not the quantity that governs generalisation, which is what `SOTA-012` rests on. | Read |
 | [NOTE-287](../../../record/notes.d/NOTE-287.md) | Stage boundaries found without knowing in advance what to look for | Read as the application that makes the LLC matter to this record. Critical points of the LLC curve divide two transformers into five stages each, and the boundaries land on bigrams, n-grams, previous-token heads and the induction circuit — found without a mechanistic hypothesis in hand, which is what `LIT-085`'s progress measures require. Its in-context regression model acquires in-context learning and then loses it. | Read |
 | [NOTE-288](../../../record/notes.d/NOTE-288.md) | The transition the posterior makes and the transition SGD makes are not the same transition | Read for the distinction in its title, which the record needed and did not have. Bayesian phase transitions are changes in where the posterior concentrates as sample size grows, and are well defined; dynamical transitions are changes in the SGD trajectory, and are not. In the one model where both are computed, the sharpest Bayesian transition — predicted at `n_cr ≈ 600` and observed at 600–700 — has no dynamical counterpart at all. | Read |
+| [NOTE-290](../../../record/notes.d/NOTE-290.md) | ReFT | A learned low-rank edit to the residual stream at a few prompt positions, with the model frozen. Up to 65× fewer parameters than LoRA. It leads on commonsense QA and on GPT-4-judged instruction following, is level on GLUE, and loses on arithmetic chain of thought. All baselines are copied from earlier papers. Read §1–6 and Appendix D; the other appendices were not read. | Read |
+| [NOTE-292](../../../record/notes.d/NOTE-292.md) | Tensor Programs IV | Classifies width-scaling parametrizations (abc-parametrizations) and proves that every stable, nontrivial one either learns features in the wide limit or trains as a kernel, not both. The standard parametrization is stable only at an O(1/width) learning rate, which is the kernel side. Introduces µP as the unique member that updates every layer maximally. Read end to end through §10 and Appendices A, C.1 and D. The proofs in Appendix H were not checked line by line. | Read |

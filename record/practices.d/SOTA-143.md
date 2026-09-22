@@ -31,7 +31,7 @@ extended_by:
 - SOTA-159
 explained_by:
 - THEORY-024
-- THEORY-tmp9m644
+- THEORY-076
 ---
 
 # SOTA-143: Parameterize the model with µP and tune hyperparameters on a narrow proxy, transferring them across width

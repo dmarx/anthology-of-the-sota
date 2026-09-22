@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-43 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+44 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -21,6 +21,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [SOTA-212](../record/practices.d/SOTA-212.md) — Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them *(Proposed, unreplicated)*
   - [SOTA-213](../record/practices.d/SOTA-213.md) — Control evolution-strategies drift with a larger population or an anchor penalty, not by stopping training early *(Proposed, emerging)*
   - [SOTA-283](../record/practices.d/SOTA-283.md) — To fine-tune a model that is already quantized, bank the part of each update that is smaller than the lattice spacing, and rebuild the accumulator from seeds rather than storing it *(Proposed, unreplicated)*
+
+### From Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself
+
+- alongside: [SOTA-184](../record/practices.d/SOTA-184.md) — Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself *(Active, universal)*
+- alongside: [SOTA-329](../record/practices.d/SOTA-329.md) — For short-output tasks, adapt a frozen model with a low-rank intervention on a few positions of the residual stream, not a weight adapter; do not use it for long chain-of-thought *(Proposed, unreplicated)*
 
 ## attention-techniques
 

@@ -4,7 +4,7 @@
 
 **inference-optimization**.
 
-15 of 288 NOTE documents. Back to the [full index](../README.md).
+18 of 293 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -23,3 +23,6 @@
 | [NOTE-263](../../../record/notes.d/NOTE-263.md) | An MP bulk plus outliers at both ends, and why magnitude order is not importance order | Read to answer [THEORY-059](../../../record/theory.d/THEORY-059.md)'s open question. It answers it and complicates it: language-transformer weight spectra are steep at the top, as the account needs, but the bottom of the spectrum in non-square matrices holds directions whose removal is catastrophic. Frobenius magnitude and functional importance are ordered differently, and a method that peels the top and quantizes the rest is keeping exactly the part this paper says is fragile. | Read |
 | [NOTE-264](../../../record/notes.d/NOTE-264.md) | Low-rank structure in a transformer is non-uniform, and a global rank is measurably the wrong choice | Read second in the spectral cluster, and it is the one that carries a recommendation. "Transformer weights are low rank" turns out to be true of some matrices and false of others, with the split systematic by component and by depth. The comparison against a uniform rank at matched compression was run and the margins are large. | Read |
 | [NOTE-273](../../../record/notes.d/NOTE-273.md) | The observation outlived the method, and it is the observation the record needed | Read for one figure. The record holds two practices resting on attention being low rank and held no source for the claim; the record also already holds the verdict that this paper's *method* was overtaken. Those are different things and the reading keeps them apart. | Read |
+| [NOTE-289](../../../record/notes.d/NOTE-289.md) | MatFormer | One Transformer with four nested FFN widths, trained one width per step, gives four sizes plus Mix'n'Match sizes nobody trained. At the compute of training the four separately, it matches the largest and beats the smaller ones, which see up to 4× the data through shared weights. Read §1–5 and Appendices B, D.1, E.1 and F. | Read |
+| [NOTE-291](../../../record/notes.d/NOTE-291.md) | Matryoshka Representation Learning | Sum the task loss over log(d) nested prefixes of one embedding, and each prefix matches a separately trained model of that width on ResNet50 and ImageNet. Retrieval that shortlists on 16 dimensions and re-ranks on 2048 is 14× faster at equal mAP@10. Read §1–6 and Appendices D.2 and I; the remaining appendix tables were skimmed. | Read |
+| [NOTE-293](../../../record/notes.d/NOTE-293.md) | Gemma 3n | Per-Layer Embeddings: every token id indexes a table with one 256-d vector per layer, gated into the residual at each layer, about 2.35B parameters held off the accelerator. No measurements are published. Read from the model overview, the developer guide, and the Hugging Face `transformers` implementation, which is the only place the mechanism is fully specified. | Read |

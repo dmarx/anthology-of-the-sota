@@ -4,7 +4,7 @@
 
 **model-stability**.
 
-26 of 288 NOTE documents. Back to the [full index](../README.md).
+27 of 293 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -34,3 +34,4 @@
 | [NOTE-285](../../../record/notes.d/NOTE-285.md) | A complexity measure that discriminates where the training loss is identically zero | Read as the instrument that makes the school usable. The LLC is the volume scaling exponent of the near-optimal set around one minimum, estimated by SGLD at inverse temperature `1/log n`. Validated against known theoretical values on deep linear networks to 100M parameters. The result that makes it a practice: on ResNet18/CIFAR10 it separates learning rate, batch size and momentum settings whose training losses have all collapsed to zero. | Read |
 | [NOTE-286](../../../record/notes.d/NOTE-286.md) | The effective parameter count is a volume exponent, and the Hessian is measuring the wrong thing | Read as the trunk under a school the record was already citing. Its single most consequential sentence for this record is that the RLCT matters more than the curvature of the directions it counts — a published argument that the quantity a sharpness visualisation displays is not the quantity that governs generalisation, which is what `SOTA-012` rests on. | Read |
 | [NOTE-288](../../../record/notes.d/NOTE-288.md) | The transition the posterior makes and the transition SGD makes are not the same transition | Read for the distinction in its title, which the record needed and did not have. Bayesian phase transitions are changes in where the posterior concentrates as sample size grows, and are well defined; dynamical transitions are changes in the SGD trajectory, and are not. In the one model where both are computed, the sharpest Bayesian transition — predicted at `n_cr ≈ 600` and observed at 600–700 — has no dynamical counterpart at all. | Read |
+| [NOTE-292](../../../record/notes.d/NOTE-292.md) | Tensor Programs IV | Classifies width-scaling parametrizations (abc-parametrizations) and proves that every stable, nontrivial one either learns features in the wide limit or trains as a kernel, not both. The standard parametrization is stable only at an O(1/width) learning rate, which is the kernel side. Introduces µP as the unique member that updates every layer maximally. Read end to end through §10 and Appendices A, C.1 and D. The proofs in Appendix H were not checked line by line. | Read |

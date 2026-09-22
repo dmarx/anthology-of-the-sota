@@ -6,6 +6,8 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [22 Sep 22:15 — The item named the wrong source, and the right evidence was already in the record](2026-09.md#the-item-named-the-wrong-source-and-the-right-evidence-was-already-in-the-record)
+- [22 Sep 21:59 — The issue was right and the journal that closed it was not](2026-09.md#the-issue-was-right-and-the-journal-that-closed-it-was-not)
 - [22 Sep 21:07 — I cited a decision for the opposite of what it now implies](2026-09.md#i-cited-a-decision-for-the-opposite-of-what-it-now-implies)
 - [22 Sep 20:58 — Sixty rows, and fifty-seven of them were the same thing](2026-09.md#sixty-rows-and-fifty-seven-of-them-were-the-same-thing)
 - [22 Sep 04:09 — Two literatures using the same word for different objects](2026-09.md#two-literatures-using-the-same-word-for-different-objects)
@@ -186,9 +188,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-179 entries across 2 books, newest first.
+181 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 177 | 2026-09-05 | 2026-09-22 |
+| [2026-09](2026-09.md) | 179 | 2026-09-05 | 2026-09-22 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

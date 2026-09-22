@@ -1,6 +1,9 @@
 ---
+number: 292
 status: Read
-paper: LIT-tmpppu9n
+formerly:
+- NOTE-tmpib9c9
+paper: LIT-548
 title: 'Tensor Programs IV'
 version: 1
 date: '2026-09-22'
@@ -14,7 +17,7 @@ summary: >-
   checked line by line.
 ---
 
-# NOTE-tmpib9c9: Tensor Programs IV
+# NOTE-292: Tensor Programs IV
 
 ## Contribution
 
@@ -118,7 +121,7 @@ condition by [LIT-437](../literature.d/LIT-437.md).
 ## Bearing on the record
 
 - **[SOTA-143](../practices.d/SOTA-143.md)** is sourced to TP-V for µP. The parametrization and the reason
-  it is needed are here, and are filed as [THEORY-tmp9m644](../theory.d/THEORY-tmp9m644.md), which explains
+  it is needed are here, and are filed as [THEORY-076](../theory.d/THEORY-076.md), which explains
   that practice
 - **The 2026-09-19 curation entry's claim that TP-V "is" the µP paper is
   wrong.** TP-V is µTransfer, and µP was introduced here

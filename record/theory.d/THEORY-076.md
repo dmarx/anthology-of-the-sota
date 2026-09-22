@@ -1,5 +1,8 @@
 ---
+number: 76
 status: Active
+formerly:
+- THEORY-tmp9m644
 title: 'Under the standard parametrization a learning rate that stays stable as width grows leaves the network training as a kernel, and µP is the parametrization that escapes this by updating every layer maximally'
 version: 1
 tags:
@@ -8,11 +11,11 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-22'
 source:
-- LIT-tmpppu9n
+- LIT-548
 explains:
 - SOTA-143
 summary: >-
-  Yang and Hu (2020), [LIT-tmpppu9n](../literature.d/LIT-tmpppu9n.md) — Tensor Programs IV. Under SP a learning
+  Yang and Hu (2020), [LIT-548](../literature.d/LIT-548.md) — Tensor Programs IV. Under SP a learning
   rate large enough to move the features blows up the logits, and one small
   enough to be stable (`O(1/width)`) leaves the wide limit a kernel machine.
   µP rescales the readout and first layer so a width-independent rate is both
@@ -24,11 +27,11 @@ extended_by:
 
 <!-- inactive-ok-file: THEORY-024 — Proposed, named as the rival frame this account does not depend on, not leaned on -->
 
-# THEORY-tmp9m644: Under the standard parametrization a learning rate that stays stable as width grows leaves the network training as a kernel, and µP is the parametrization that escapes this by updating every layer maximally
+# THEORY-076: Under the standard parametrization a learning rate that stays stable as width grows leaves the network training as a kernel, and µP is the parametrization that escapes this by updating every layer maximally
 
 ## Source
 
-Yang and Hu (2020), [LIT-tmpppu9n](../literature.d/LIT-tmpppu9n.md) — read as [NOTE-tmpib9c9](../notes.d/NOTE-tmpib9c9.md).
+Yang and Hu (2020), [LIT-548](../literature.d/LIT-548.md) — read as [NOTE-292](../notes.d/NOTE-292.md).
 
 ## What it explains
 

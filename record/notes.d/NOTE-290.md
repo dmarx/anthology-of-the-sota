@@ -1,6 +1,9 @@
 ---
+number: 290
 status: Read
-paper: LIT-tmpu3ldd
+formerly:
+- NOTE-tmpa7gpl
+paper: LIT-549
 title: 'ReFT'
 version: 1
 date: '2026-09-22'
@@ -13,9 +16,9 @@ summary: >-
   were not read.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpx0l6h — Proposed, filed in this same contribution from this paper; new, not retired, and cited as the practice this document sources -->
+<!-- inactive-ok-file: SOTA-329 — Proposed, filed in this same contribution from this paper; new, not retired, and cited as the practice this document sources -->
 
-# NOTE-tmpa7gpl: ReFT
+# NOTE-290: ReFT
 
 ## Contribution
 
@@ -89,9 +92,9 @@ DiReFT is LoRA's form applied to activations. It compares against LoRA
 
 - **R1** — For classification and short-answer tasks, try LoReFT before a
   weight adapter when trainable parameters or adapter storage are the
-  constraint. *Strength:* weak to moderate. Filed as [SOTA-tmpx0l6h](../practices.d/SOTA-tmpx0l6h.md)
+  constraint. *Strength:* weak to moderate. Filed as [SOTA-329](../practices.d/SOTA-329.md)
 - **R2** — Do not use prompt-position interventions for long chain-of-thought
-  generation. *Strength:* moderate. Part of [SOTA-tmpx0l6h](../practices.d/SOTA-tmpx0l6h.md)
+  generation. *Strength:* moderate. Part of [SOTA-329](../practices.d/SOTA-329.md)
 
 ## Bearing on the record
 

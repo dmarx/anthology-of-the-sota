@@ -4,7 +4,7 @@
 
 **adaptation-and-tuning**.
 
-33 of 288 NOTE documents. Back to the [full index](../README.md).
+34 of 293 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -41,3 +41,4 @@
 | [NOTE-252](../../../record/notes.d/NOTE-252.md) | RNA-FM, and the control that does not carry the claim | Read to open the biological-sequence trunk, which this record did not hold. The structural results are large and the paper's one clean input-swap control is not: replacing one-hot sequence with a 640-dimensional pretrained embedding in a published UTR model moves `R²` from **0.814 to 0.816** on the real-human set, where a 16-dimensional predicted secondary structure moves it to **0.820**. No practice filed. | Read |
 | [NOTE-264](../../../record/notes.d/NOTE-264.md) | Low-rank structure in a transformer is non-uniform, and a global rank is measurably the wrong choice | Read second in the spectral cluster, and it is the one that carries a recommendation. "Transformer weights are low rank" turns out to be true of some matrices and false of others, with the split systematic by component and by depth. The comparison against a uniform rank at matched compression was run and the margins are large. | Read |
 | [NOTE-276](../../../record/notes.d/NOTE-276.md) | Order-sensitivity refutes it, and the models everyone measured were trained for the task | Read as the challenge from outside the setup. It separates the hypothesis that pretrained models *do* in-context learning by gradient descent from the hypothesis that transformer weights *exist* which simulate it, and shows the literature had been testing only the second. Theorem 1 then gives a contradiction from order sensitivity alone, and LLaMA-7B disagrees with fine-tuning on three metrics across four datasets. | Read |
+| [NOTE-290](../../../record/notes.d/NOTE-290.md) | ReFT | A learned low-rank edit to the residual stream at a few prompt positions, with the model frozen. Up to 65× fewer parameters than LoRA. It leads on commonsense QA and on GPT-4-judged instruction following, is level on GLUE, and loses on arithmetic chain of thought. All baselines are copied from earlier papers. Read §1–6 and Appendix D; the other appendices were not read. | Read |

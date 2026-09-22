@@ -1,5 +1,8 @@
 ---
+number: 328
 status: Proposed
+formerly:
+- SOTA-tmpgvgkf
 promote_when: >-
   A group outside Google trains a nested model at several billion
   parameters, against separately trained sizes at the same total compute,
@@ -15,20 +18,20 @@ tags:
 - training-optimization
 date: '2026-09-22'
 source:
-- LIT-tmp7xt7l
+- LIT-546
 introduced_by:
-- LIT-tmp7xt7l
+- LIT-546
 consensus: unreplicated
 consensus_note: >-
   One group reports the comparisons. Gemma 3n ships the architecture: E4B
   contains a jointly trained E2B, and Mix'n'Match sizes between them are
-  offered (LIT-tmp5bcs0). That is production adoption by the authors' own
+  offered (LIT-545). That is production adoption by the authors' own
   organization with no published ablation, so it counts as adoption and not
   evidence (DP-005).
 implementations:
 - Gemma 3n
 summary: >-
-  Devvrit, Kudugunta, Kusupati et al. (2023), [LIT-tmp7xt7l](../literature.d/LIT-tmp7xt7l.md) — nest four FFN
+  Devvrit, Kudugunta, Kusupati et al. (2023), [LIT-546](../literature.d/LIT-546.md) — nest four FFN
   widths in one Transformer, train one width per step, and extract any size
   in between by choosing widths per layer. Up to 850M parameters, at the
   compute of training the four sizes separately, the largest matches its
@@ -36,12 +39,12 @@ summary: >-
   to train the family. Gemma 3n ships it.
 ---
 
-# SOTA-tmpgvgkf: Train one nested model instead of a family of separately trained sizes, and extract the sizes you need from it
+# SOTA-328: Train one nested model instead of a family of separately trained sizes, and extract the sizes you need from it
 
 ## Source
 
-Devvrit, Kudugunta, Kusupati et al. (2023), [LIT-tmp7xt7l](../literature.d/LIT-tmp7xt7l.md) — MatFormer. Read
-as [NOTE-tmp98tod](../notes.d/NOTE-tmp98tod.md).
+Devvrit, Kudugunta, Kusupati et al. (2023), [LIT-546](../literature.d/LIT-546.md) — MatFormer. Read
+as [NOTE-289](../notes.d/NOTE-289.md).
 
 ## The practice
 

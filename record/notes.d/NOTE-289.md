@@ -1,6 +1,9 @@
 ---
+number: 289
 status: Read
-paper: LIT-tmp7xt7l
+formerly:
+- NOTE-tmp98tod
+paper: LIT-546
 title: 'MatFormer'
 version: 1
 date: '2026-09-22'
@@ -12,9 +15,9 @@ summary: >-
   §1–5 and Appendices B, D.1, E.1 and F.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpgvgkf — Proposed, filed in this same contribution from this paper; new, not retired, and cited as the practice this document sources -->
+<!-- inactive-ok-file: SOTA-328 — Proposed, filed in this same contribution from this paper; new, not retired, and cited as the practice this document sources -->
 
-# NOTE-tmp98tod: MatFormer
+# NOTE-289: MatFormer
 
 ## Contribution
 
@@ -99,20 +102,20 @@ embedding to the weights. It builds on Slimmable Networks and DynaBERT (fixed
 widths trained jointly) and on Once-for-All (random subnetworks plus NAS),
 and differs from both in sampling one of a few preset nested sizes per step.
 Flextron extends it to attention heads with a router. Gemma 3n
-([LIT-tmp5bcs0](../literature.d/LIT-tmp5bcs0.md)) ships it.
+([LIT-545](../literature.d/LIT-545.md)) ships it.
 
 ## Recommendations
 
 - **R1** — If you will deploy several sizes, train one nested model rather
   than several separate ones, and sample one size per step. *Topic:*
   model-architecture. *Status:* experimental. *Strength:* moderate. *Applies
-  when:* you would otherwise train the whole family. Filed as [SOTA-tmpgvgkf](../practices.d/SOTA-tmpgvgkf.md)
+  when:* you would otherwise train the whole family. Filed as [SOTA-328](../practices.d/SOTA-328.md)
 - **R2** — For an intermediate budget, widen FFNs monotonically with depth
-  rather than mixing extremes. *Strength:* weak. Folded into [SOTA-tmpgvgkf](../practices.d/SOTA-tmpgvgkf.md)
+  rather than mixing extremes. *Strength:* weak. Folded into [SOTA-328](../practices.d/SOTA-328.md)
 
 ## Bearing on the record
 
-- **[SOTA-tmpgvgkf](../practices.d/SOTA-tmpgvgkf.md)** is new and sourced here
+- **[SOTA-328](../practices.d/SOTA-328.md)** is new and sourced here
 - **[SOTA-227](../practices.d/SOTA-227.md)** (speculative decoding) gets a small corroborating result: a
   draft that shares weights with the verifier is more consistent with it, and
   that is worth a few points of speed-up. Not enough to change that practice

@@ -1,5 +1,8 @@
 ---
+number: 326
 status: Proposed
+formerly:
+- SOTA-tmp0fz4e
 promote_when: >-
   A group other than Qwen ablates n-gram table placement (one layer against
   the same budget split over several, early against deep) and the trade
@@ -27,7 +30,7 @@ consensus_note: >-
   al.'s conditional-memory lookup for the n-gram form and for offloading.
   That is adoption, not evidence for this practice (DP-005), and none of
   those sources is in the record except Gemma 3n's documentation
-  (LIT-tmp5bcs0).
+  (LIT-545).
 implementations:
 - Qwen3.8-Flash-Next
 summary: >-
@@ -41,7 +44,7 @@ summary: >-
   host-memory prefetch overlaps layer 1.
 ---
 
-# SOTA-tmp0fz4e: Add n-gram embedding memory as one table read early in the network, on top of the expert budget rather than in place of experts
+# SOTA-326: Add n-gram embedding memory as one table read early in the network, on top of the expert budget rather than in place of experts
 
 ## Source
 
@@ -115,7 +118,7 @@ benchmarks. Choose its size on the benchmarks you care about, not on loss.
 
 ## What this does not say
 
-**It is not about per-layer embeddings.** Gemma 3n ([LIT-tmp5bcs0](../literature.d/LIT-tmp5bcs0.md)) reads a
+**It is not about per-layer embeddings.** Gemma 3n ([LIT-545](../literature.d/LIT-545.md)) reads a
 small *token*-keyed table at *every* layer, and ships it on device for the
 same off-accelerator reason. The two-layer result here is about splitting
 an *n-gram* table's fixed budget. It does not test Gemma's design and does

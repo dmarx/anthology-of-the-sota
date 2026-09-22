@@ -2,11 +2,16 @@
 
 # Lines of work
 
-27 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+29 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
 ## adaptation-and-tuning
+
+### From LoRA: Low-Rank Adaptation of Large Language Models
+
+- alongside: [LIT-046](../record/literature.d/LIT-046.md) — LoRA: Low-Rank Adaptation of Large Language Models *(Active)*
+- alongside: [LIT-549](../record/literature.d/LIT-549.md) — ReFT: Representation Finetuning for Language Models *(Active)*
 
 ### From Deep reinforcement learning from human preferences
 
@@ -118,6 +123,14 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-468](../record/literature.d/LIT-468.md) — Self-Consistency Improves Chain of Thought Reasoning in Language Models *(Active)*
     - [LIT-469](../record/literature.d/LIT-469.md) — Large Language Models are Zero-Shot Reasoners *(Active)*
 
+## inference-optimization
+
+### From Matryoshka Representation Learning
+
+- [LIT-547](../record/literature.d/LIT-547.md) — Matryoshka Representation Learning *(Active)*
+  - [LIT-546](../record/literature.d/LIT-546.md) — MatFormer: Nested Transformer for Elastic Inference *(Active)*
+    - [LIT-545](../record/literature.d/LIT-545.md) — Gemma 3n model overview *(Active)*
+
 ## model-architecture
 
 ### From Language Modeling with Gated Convolutional Networks
@@ -219,15 +232,16 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-230](../record/literature.d/LIT-230.md) — Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO *(Active)*
 - alongside: [LIT-239](../record/literature.d/LIT-239.md) — ESSA: Evolutionary Strategies for Scalable Alignment *(Active)*
 
-### From Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer
+### From Feature Learning in Infinite-Width Neural Networks
 
-- [LIT-148](../record/literature.d/LIT-148.md) — Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer *(Active)*
-  - [LIT-149](../record/literature.d/LIT-149.md) — u-µP: The Unit-Scaled Maximal Update Parametrization *(Active)*
-  - [LIT-150](../record/literature.d/LIT-150.md) — Don't be lazy: CompleteP enables compute-efficient deep transformers *(Active)*
-    - [LIT-462](../record/literature.d/LIT-462.md) — Spectral Condition for muP under Width-Depth Scaling *(Active)* — also extends LIT-437
-- [LIT-437](../record/literature.d/LIT-437.md) — A Spectral Condition for Feature Learning *(Active)*
-  - [LIT-436](../record/literature.d/LIT-436.md) — Scalable Optimization in the Modular Norm *(Active)*
-    - [LIT-438](../record/literature.d/LIT-438.md) — Modular Duality in Deep Learning *(Active)*
+- [LIT-548](../record/literature.d/LIT-548.md) — Feature Learning in Infinite-Width Neural Networks *(Active)*
+  - [LIT-148](../record/literature.d/LIT-148.md) — Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer *(Active)*
+    - [LIT-149](../record/literature.d/LIT-149.md) — u-µP: The Unit-Scaled Maximal Update Parametrization *(Active)*
+    - [LIT-150](../record/literature.d/LIT-150.md) — Don't be lazy: CompleteP enables compute-efficient deep transformers *(Active)*
+      - [LIT-462](../record/literature.d/LIT-462.md) — Spectral Condition for muP under Width-Depth Scaling *(Active)* — also extends LIT-437
+  - [LIT-437](../record/literature.d/LIT-437.md) — A Spectral Condition for Feature Learning *(Active)*
+    - [LIT-436](../record/literature.d/LIT-436.md) — Scalable Optimization in the Modular Norm *(Active)*
+      - [LIT-438](../record/literature.d/LIT-438.md) — Modular Duality in Deep Learning *(Active)*
 
 ### From Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability
 

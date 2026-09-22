@@ -4,7 +4,7 @@
 
 **representation-and-encoding**.
 
-21 of 288 NOTE documents. Back to the [full index](../README.md).
+23 of 293 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -29,3 +29,5 @@
 | [NOTE-256](../../../record/notes.d/NOTE-256.md) | Image-GS: the rate accounting GaussianToken skipped, and an ablation that inverts its own headline | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for its adjacency to the tokenizer trunk. Two things worth keeping: a comparison run the way this record keeps asking for — six baselines at matched model size, bitrate on the axis — and an ablation in which the two unglamorous optimizer choices outweigh the content-adaptive allocation the paper is named for. | Read |
 | [NOTE-270](../../../record/notes.d/NOTE-270.md) | Concepts live in the quiet directions, and the paper labels its own claims robust or partial | Read last of the batch and the easiest call to make, for a reason that has little to do with the finding: it arrives with a table grading its own six claims, a robust null against the hypothesis it set out to confirm, and partial results labelled partial. The finding itself is that contextual concept directions sit at the bottom of the unembedding spectrum and static vocabulary contrasts sit at the top. | Read |
 | [NOTE-275](../../../record/notes.d/NOTE-275.md) | The trunk states the condition its successors were refuted for dropping | Read because the record filed a three-paper information-bottleneck dispute and the paper all three argue about was absent — a gap this session created. Reading it reassigns some blame: the rebuttal's central objection is that mutual information needs stochasticity, and the founding paper says so in one sentence before anybody measured anything. | Read |
+| [NOTE-291](../../../record/notes.d/NOTE-291.md) | Matryoshka Representation Learning | Sum the task loss over log(d) nested prefixes of one embedding, and each prefix matches a separately trained model of that width on ResNet50 and ImageNet. Retrieval that shortlists on 16 dimensions and re-ranks on 2048 is 14× faster at equal mAP@10. Read §1–6 and Appendices D.2 and I; the remaining appendix tables were skimmed. | Read |
+| [NOTE-293](../../../record/notes.d/NOTE-293.md) | Gemma 3n | Per-Layer Embeddings: every token id indexes a table with one 256-d vector per layer, gated into the residual at each layer, about 2.35B parameters held off the accelerator. No measurements are published. Read from the model overview, the developer guide, and the Hugging Face `transformers` implementation, which is the only place the mechanism is fully specified. | Read |

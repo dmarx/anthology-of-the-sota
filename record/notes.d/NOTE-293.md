@@ -1,6 +1,9 @@
 ---
+number: 293
 status: Read
-paper: LIT-tmp5bcs0
+formerly:
+- NOTE-tmpsgjrr
+paper: LIT-545
 title: 'Gemma 3n'
 version: 1
 date: '2026-09-22'
@@ -12,9 +15,9 @@ summary: >-
   implementation, which is the only place the mechanism is fully specified.
 ---
 
-<!-- inactive-ok-file: SOTA-tmp0fz4e — Proposed, filed in this same contribution from this paper's own ablations; new, not retired, and cited as the practice this document feeds -->
+<!-- inactive-ok-file: SOTA-326 — Proposed, filed in this same contribution from this paper's own ablations; new, not retired, and cited as the practice this document feeds -->
 
-# NOTE-tmpsgjrr: Gemma 3n
+# NOTE-293: Gemma 3n
 
 ## Contribution
 
@@ -85,11 +88,11 @@ attention. That detail is specific to Gemma 3n's other components.
 It is one of several designs that add capacity as lookup tables rather than
 as layers. The Qwen3.8-Flash-Next report ([LIT-152](../literature.d/LIT-152.md)) cites it with RWKV-8's
 DeepEmbed, STEM and L3 for unigram lookup, and generalizes the key from a
-token to an n-gram. It ships alongside MatFormer ([LIT-tmp7xt7l](../literature.d/LIT-tmp7xt7l.md)). Gemma 4 carries PLE forward in its two smallest models.
+token to an n-gram. It ships alongside MatFormer ([LIT-546](../literature.d/LIT-546.md)). Gemma 4 carries PLE forward in its two smallest models.
 
 ## Bearing on the record
 
-- **[SOTA-tmp0fz4e](../practices.d/SOTA-tmp0fz4e.md)** counts this as adoption of off-accelerator embedding
+- **[SOTA-326](../practices.d/SOTA-326.md)** counts this as adoption of off-accelerator embedding
   memory, not as evidence for it
 - **`#163`'s description of PLE as the source of Qwen's n-gram embedding is
   too strong.** Qwen cites it for unigram memory and for offloading, and

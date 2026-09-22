@@ -1,5 +1,8 @@
 ---
+number: 329
 status: Proposed
+formerly:
+- SOTA-tmpx0l6h
 promote_when: >-
   A group other than the ReFT authors runs LoReFT and LoRA under one tuning
   protocol, tuned on development sets with the same search budget for each,
@@ -12,9 +15,9 @@ tags:
 - adaptation-and-tuning
 date: '2026-09-22'
 source:
-- LIT-tmpu3ldd
+- LIT-549
 introduced_by:
-- LIT-tmpu3ldd
+- LIT-549
 compared_against:
 - SOTA-184
 consensus: unreplicated
@@ -27,7 +30,7 @@ consensus_note: >-
 implementations:
 - pyreft
 summary: >-
-  Wu, Arora et al. (2024), [LIT-tmpu3ldd](../literature.d/LIT-tmpu3ldd.md) — LoReFT sets an r-dimensional
+  Wu, Arora et al. (2024), [LIT-549](../literature.d/LIT-549.md) — LoReFT sets an r-dimensional
   subspace of the hidden state at a few prompt positions to a learned
   linear function of that state, with the model frozen. At 0.03% of
   parameters against LoRA's 0.8%, it leads on commonsense QA (LLaMA-7B 80.2
@@ -36,11 +39,11 @@ summary: >-
   other papers.
 ---
 
-# SOTA-tmpx0l6h: For short-output tasks, adapt a frozen model with a low-rank intervention on a few positions of the residual stream, not a weight adapter; do not use it for long chain-of-thought
+# SOTA-329: For short-output tasks, adapt a frozen model with a low-rank intervention on a few positions of the residual stream, not a weight adapter; do not use it for long chain-of-thought
 
 ## Source
 
-Wu, Arora et al. (2024), [LIT-tmpu3ldd](../literature.d/LIT-tmpu3ldd.md) — ReFT. Read as [NOTE-tmpa7gpl](../notes.d/NOTE-tmpa7gpl.md).
+Wu, Arora et al. (2024), [LIT-549](../literature.d/LIT-549.md) — ReFT. Read as [NOTE-290](../notes.d/NOTE-290.md).
 
 ## The practice
 

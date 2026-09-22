@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**171 document(s) awaiting a decision.**
+**175 document(s) awaiting a decision.**
 
 ## SOTAs
 
-104 of the 171.
+108 of the 175.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -111,8 +111,12 @@
 | 2026-09-21 | Proposed | [SOTA-300](../../record/practices.d/SOTA-300.md) | 0 | 0 | To tell whether a model is doing non-trivial in-context computation, measure how well it predicts its own hidden states, not its next-token loss |
 | 2026-09-21 | Proposed | [SOTA-316](../../record/practices.d/SOTA-316.md) | 0 | 0 | When you are memory-bound rather than time-bound, train all the parameters a block at a time, partitioned on layer boundaries |
 | 2026-09-22 | Proposed | [SOTA-323](../../record/practices.d/SOTA-323.md) | 4 | 0 | Test a claim about what pretraining produces on a model trained with the pretraining objective, not one trained on the task family you are testing |
+| 2026-09-22 | Proposed | [SOTA-326](../../record/practices.d/SOTA-326.md) | 4 | 0 | Add n-gram embedding memory as one table read early in the network, on top of the expert budget rather than in place of experts |
+| 2026-09-22 | Proposed | [SOTA-328](../../record/practices.d/SOTA-328.md) | 4 | 0 | Train one nested model instead of a family of separately trained sizes, and extract the sizes you need from it |
 | 2026-09-22 | Proposed | [SOTA-319](../../record/practices.d/SOTA-319.md) | 3 | 0 | Reparameterize every linear layer by its spectral norm with a learned scalar |
 | 2026-09-22 | Proposed | [SOTA-325](../../record/practices.d/SOTA-325.md) | 3 | 0 | When the training loss has saturated and runs still differ, measure loss-landscape degeneracy rather than curvature |
+| 2026-09-22 | Proposed | [SOTA-327](../../record/practices.d/SOTA-327.md) | 3 | 0 | Train retrieval embeddings with nested losses, so a prefix of the vector can shortlist and the full vector re-rank |
+| 2026-09-22 | Proposed | [SOTA-329](../../record/practices.d/SOTA-329.md) | 3 | 0 | For short-output tasks, adapt a frozen model with a low-rank intervention on a few positions of the residual stream, not a weight adapter; do not use it for long chain-of-thought |
 | 2026-09-22 | Proposed | [SOTA-324](../../record/practices.d/SOTA-324.md) | 2 | 0 | Separate rival accounts of an internal algorithm by convergence rate and conditioning, not by how well each fits the output |
 | 2026-09-22 | Proposed | [SOTA-320](../../record/practices.d/SOTA-320.md) | 1 | 0 | Bound the learning rate by the ratio of the update's spectral norm to the weight's, and drop warmup |
 | 2026-09-22 | Proposed | [SOTA-321](../../record/practices.d/SOTA-321.md) | 1 | 0 | Verify a model's lineage from the singular spectra of its attention products, which survive permutation and rescaling |
@@ -120,7 +124,7 @@
 
 ## THEORYs
 
-45 of the 171.
+45 of the 175.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -132,7 +136,7 @@
 | 2026-09-16 | Proposed | [THEORY-012](../../record/theory.d/THEORY-012.md) | 7 | 0 | How far a batch-size scaling heuristic transfers is a property of the optimizer, not of the heuristic |
 | 2026-09-16 | Proposed | [THEORY-014](../../record/theory.d/THEORY-014.md) | 3 | 0 | The outer optimizer is what buys the inner step count |
 | 2026-09-17 | Proposed | [THEORY-023](../../record/theory.d/THEORY-023.md) | 2 | 0 | Depth-dependent computation in a transformer falls into four stages, of which detokenization is the first |
-| 2026-09-19 | Proposed | [THEORY-024](../../record/theory.d/THEORY-024.md) | 24 | 0 | Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map |
+| 2026-09-19 | Proposed | [THEORY-024](../../record/theory.d/THEORY-024.md) | 26 | 0 | Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map |
 | 2026-09-19 | Proposed | [THEORY-025](../../record/theory.d/THEORY-025.md) | 7 | 0 | A transformer holds about 3.6 bits per parameter, and generalization begins where the data outgrows that budget |
 | 2026-09-20 | Proposed | [THEORY-030](../../record/theory.d/THEORY-030.md) | 11 | 0 | Adaptive optimizers work by shaping the curvature they adapt to, and oscillation is how a first-order method sees curvature at all |
 | 2026-09-20 | Proposed | [THEORY-032](../../record/theory.d/THEORY-032.md) | 6 | 0 | A spectral update wins where the incoming activations are low stable rank and the gradient spectrum is spread out |
@@ -172,7 +176,7 @@
 
 ## LITs
 
-3 of the 171.
+3 of the 175.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -182,7 +186,7 @@
 
 ## ADRs
 
-19 of the 171.
+19 of the 175.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

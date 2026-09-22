@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-30 of 288 NOTE documents. Back to the [full index](../README.md).
+32 of 293 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -38,3 +38,5 @@
 | [NOTE-277](../../../record/notes.d/NOTE-277.md) | The algorithm changes with depth, and the one it lands on is Bayes-optimal ridge | Read as the second, independent arrival at the mesa-optimization construction. Its title asks which algorithm, and its answer is that there is no single one: shallow learners sit nearest gradient descent, deeper ones nearest ridge, deepest nearest ordinary least squares, and under label noise the best-fitting ridge parameter is the Bayes-optimal `σ²/τ²` at every setting. The gradient-descent phase is the small-model phase. | Read |
 | [NOTE-279](../../../record/notes.d/NOTE-279.md) | The setup that made the mechanism question answerable | Read because every later claim about what in-context learning *is* measures in this setup. A 9.5M-parameter GPT-2 trained from scratch on `(x, f(x))` sequences matches ordinary least squares on unseen linear functions and Lasso on sparse ones, in a single forward pass. The training objective is the setup's power and, later, the ground of the main objection to everything built on it. | Read |
 | [NOTE-287](../../../record/notes.d/NOTE-287.md) | Stage boundaries found without knowing in advance what to look for | Read as the application that makes the LLC matter to this record. Critical points of the LLC curve divide two transformers into five stages each, and the boundaries land on bigrams, n-grams, previous-token heads and the induction circuit — found without a mechanistic hypothesis in hand, which is what `LIT-085`'s progress measures require. Its in-context regression model acquires in-context learning and then loses it. | Read |
+| [NOTE-289](../../../record/notes.d/NOTE-289.md) | MatFormer | One Transformer with four nested FFN widths, trained one width per step, gives four sizes plus Mix'n'Match sizes nobody trained. At the compute of training the four separately, it matches the largest and beats the smaller ones, which see up to 4× the data through shared weights. Read §1–5 and Appendices B, D.1, E.1 and F. | Read |
+| [NOTE-293](../../../record/notes.d/NOTE-293.md) | Gemma 3n | Per-Layer Embeddings: every token id indexes a table with one 256-d vector per layer, gated into the residual at each layer, about 2.35B parameters held off the accelerator. No measurements are published. Read from the model overview, the developer guide, and the Hugging Face `transformers` implementation, which is the only place the mechanism is fully specified. | Read |

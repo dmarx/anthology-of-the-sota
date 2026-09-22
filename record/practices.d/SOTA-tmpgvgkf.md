@@ -19,6 +19,12 @@ source:
 introduced_by:
 - LIT-tmp7xt7l
 consensus: unreplicated
+consensus_note: >-
+  One group reports the comparisons. Gemma 3n ships the architecture: E4B
+  contains a jointly trained E2B, and Mix'n'Match sizes between them are
+  offered (LIT-tmp5bcs0). That is production adoption by the authors' own
+  organization with no published ablation, so it counts as adoption and not
+  evidence (DP-005).
 implementations:
 - Gemma 3n
 summary: >-
@@ -92,14 +98,6 @@ size. What you get for that is every size in between.
   `Loss(N, D)` "extremely similar" to a Transformer's, but the fitted
   exponent is −0.13 against −0.10 and the offset 1.33 against 0.89. Over
   78M–850M the curves overlap. How they extrapolate is not established
-
-## Consensus
-
-`unreplicated`. One group reports the comparisons. Gemma 3n ships the
-architecture: E4B contains a jointly trained E2B, and Mix'n'Match sizes
-between them are offered ([LIT-tmp5bcs0](../literature.d/LIT-tmp5bcs0.md)). That is production adoption by the
-authors' own organization, with no published ablation, so it counts as
-adoption and not evidence ([DP-005](../../docs/design-principles.md#dp-5)).
 
 ## Known implementations
 

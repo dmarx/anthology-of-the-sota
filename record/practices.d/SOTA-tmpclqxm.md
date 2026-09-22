@@ -18,6 +18,16 @@ source:
 introduced_by:
 - LIT-tmpeafhj
 consensus: emerging
+consensus_note: >-
+  It has spread beyond the authors, though not only to independent groups.
+  Google's EmbeddingGemma paper evaluates its model with truncated outputs,
+  and Google is also the authors' organization. OpenAI's text-embedding-3
+  models take a dimensions parameter, which third-party documentation
+  (Weaviate, Supabase) credits to MRL. Vector databases document prefix
+  shortlisting as a supported pattern. That is adoption, not evidence
+  (DP-005). The status stays Proposed because the record holds no
+  measurement of what people actually use it for, which is text retrieval,
+  and the one measurement it does hold is the authors' own.
 implementations:
 - text-embedding-3
 - EmbeddingGemma
@@ -70,20 +80,6 @@ is the only change.
   the full model's features, which is a weak baseline
 - **Measure the end task, not only the retrieval metric** ([SOTA-308](SOTA-308.md)). The
   paper's mAP@10 is label recall
-
-## Consensus
-
-`emerging`. It has spread beyond the authors, though not only to independent groups:
-
-- Google's EmbeddingGemma paper evaluates its model with truncated outputs.
-  Google is also the authors' organization
-- OpenAI's `text-embedding-3` models take a `dimensions` parameter, and
-  third-party documentation (Weaviate, Supabase) credits it to MRL
-- Vector databases document prefix shortlisting as a supported pattern
-
-That is adoption, not evidence ([DP-005](../../docs/design-principles.md#dp-5)). The status is `Proposed` because the
-record holds no measurement of the thing people actually use it for, which is
-text retrieval, and the one measurement it does hold is the authors' own.
 
 ## Known implementations
 

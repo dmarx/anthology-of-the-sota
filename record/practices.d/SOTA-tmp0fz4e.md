@@ -18,6 +18,16 @@ source:
 introduced_by:
 - LIT-152
 consensus: unreplicated
+consensus_note: >-
+  Unreplicated for the instruction as stated: only one group has published
+  the placement and budget ablations. The broader idea, capacity in
+  deterministically addressed tables held off the accelerator, has several
+  independent adopters. Google ships a token-keyed version (Gemma 3n,
+  Gemma 4 E2B/E4B), RWKV-8 has DeepEmbed, and the report cites Cheng et
+  al.'s conditional-memory lookup for the n-gram form and for offloading.
+  That is adoption, not evidence for this practice (DP-005), and none of
+  those sources is in the record except Gemma 3n's documentation
+  (LIT-tmp5bcs0).
 implementations:
 - Qwen3.8-Flash-Next
 summary: >-
@@ -115,17 +125,6 @@ not argue against it.
 report compares table placements and table sizes with each other and
 against no table. It does not compare against the same parameters spent on
 width, depth or a larger unigram vocabulary.
-
-## Consensus
-
-`unreplicated`, for the instruction as stated: only one group has published
-the placement and budget ablations. The broader idea, capacity in
-deterministically addressed tables held off the accelerator, has several
-independent adopters. Google ships a token-keyed version (Gemma 3n, Gemma 4
-E2B/E4B), RWKV-8 has DeepEmbed, and the report cites Cheng et al.'s
-conditional-memory lookup for the n-gram form and for offloading. That is
-adoption and not evidence for this practice ([DP-005](../../docs/design-principles.md#dp-5)), and none of those
-sources is in the record apart from Gemma 3n's documentation.
 
 ## Known implementations
 

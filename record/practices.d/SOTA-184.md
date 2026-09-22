@@ -26,6 +26,8 @@ summary: >-
   and learn a rank-r product BA beside each one, so the trainable parameter
   count and the optimizer state fall by orders of magnitude and the adapter
   folds back into the weight at inference.
+compared_against:
+- SOTA-tmpx0l6h
 ---
 
 # SOTA-184: Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself

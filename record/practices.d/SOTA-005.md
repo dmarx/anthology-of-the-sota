@@ -5,6 +5,7 @@ title: 'Use running statistics for inference'
 version: 1
 tags:
 - inference-optimization
+- model-stability
 date: '2026-08-24'
 source:
 - LIT-002

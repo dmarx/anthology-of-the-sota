@@ -20,6 +20,7 @@ version: 1
 tags:
 - model-architecture
 - training-optimization
+- generative-modeling
 date: '2026-09-19'
 source:
 - LIT-442

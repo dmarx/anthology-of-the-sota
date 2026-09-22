@@ -28,6 +28,7 @@ history:
     this code carries, and the record that the move happened.
 tags:
 - training-optimization
+- model-stability
 date: '2026-08-24'
 source:
 - LIT-014

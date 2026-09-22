@@ -14,6 +14,7 @@ title: 'Do not read a smooth loss curve as evidence of smooth training; decompos
 version: 1
 tags:
 - analysis-and-evaluation
+- training-optimization
 date: '2026-09-20'
 source:
 - LIT-455

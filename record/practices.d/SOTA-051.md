@@ -26,6 +26,7 @@ history:
     changes is that the title now says it.
 tags:
 - model-stability
+- adaptation-and-tuning
 date: '2026-08-24'
 source:
 # LIT-047 is the origin: near-zero final-layer init for depth.

@@ -12,6 +12,7 @@ title: "Clamp the prediction to the training range at every step when sampling f
 version: 1
 tags:
 - training-optimization
+- generative-modeling
 date: '2026-09-10'
 source:
 - LIT-073

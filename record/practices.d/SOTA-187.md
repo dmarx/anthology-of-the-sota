@@ -20,6 +20,7 @@ history:
     unchanged; only the stale topic name is fixed.
 tags:
 - representation-and-encoding
+- generative-modeling
 consensus: universal
 date: '2026-09-08'
 source:

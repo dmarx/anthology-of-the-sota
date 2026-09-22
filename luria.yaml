@@ -456,6 +456,21 @@ schemes:
         scheme: LIT
         required: true
         many: true
+        # Declared after #202's pass took the residue from 60 rows to zero. A
+        # practice and every paper behind it must share at least one topic.
+        # (Cited by issue rather than by decision code on purpose: ADR-039
+        # records that concretization rewrites the record and not this file,
+        # so a temporary code written here would go stale with no mechanism
+        # to fix it.)
+        # This is the same bargain ADR-035 struck for the two `chains:`: rows
+        # land in unbound-lineage.md and do not fail the lint, so the report's
+        # all-clear is the signal. There is still no acknowledgement directive
+        # for a deliberately unbound row — no `unbound-ok:` exists upstream —
+        # which is why the pass came first and the declaration second: turning
+        # this on over a standing backlog would have converted a signal into
+        # wallpaper, and there would have been no way to retire a row that had
+        # been looked at and judged fine.
+        invariant: tags
       # The other half of the cut DP-005 made (ADR-029, refined by ADR-030).
       # That principle
       # separated ADOPTION from evidence and sent adoption to `consensus:`.

@@ -20,6 +20,7 @@ title: 'Judge a monotone scaling recipe by its asymptote, not by its loss at a c
 version: 1
 tags:
 - analysis-and-evaluation
+- training-optimization
 date: '2026-09-19'
 source:
 - LIT-441

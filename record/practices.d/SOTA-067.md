@@ -14,6 +14,7 @@ history:
     Rejected with the rest of the LIT-052 cluster.
 tags:
 - model-stability
+- training-optimization
 date: '2026-08-24'
 source:
 - LIT-052

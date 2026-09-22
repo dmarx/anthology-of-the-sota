@@ -23,6 +23,7 @@ history:
     are introduced. The recommendation is unchanged.
 tags:
 - analysis-and-evaluation
+- adaptation-and-tuning
 date: '2026-09-15'
 source:
 # Two independent groups, and the order matters: LIT-230 is the

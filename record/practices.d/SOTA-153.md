@@ -26,6 +26,7 @@ history:
     `emerging` still rests on the same three laboratories.
 tags:
 - representation-and-encoding
+- attention-techniques
 date: '2026-09-07'
 source:
 # The origin, then the two designs that arrived at the layout independently.

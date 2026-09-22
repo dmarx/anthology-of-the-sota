@@ -12,6 +12,7 @@ title: 'Predict v rather than the noise when the model will be evaluated at low 
 version: 1
 tags:
 - training-optimization
+- generative-modeling
 date: '2026-09-10'
 source:
 - LIT-067

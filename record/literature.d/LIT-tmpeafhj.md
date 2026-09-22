@@ -1,0 +1,81 @@
+---
+status: Active
+title: 'Matryoshka Representation Learning'
+version: 1
+tags:
+- representation-and-encoding
+- inference-optimization
+date: '2026-09-22'
+published: '2022-05-01'
+arxiv: '2205.13147'
+first_author: 'Kusupati'
+keywords:
+- 'matryoshka-representations'
+- 'nested-embeddings'
+- 'adaptive-retrieval'
+- 'adaptive-classification'
+- 'embedding-truncation'
+implementations:
+- text-embedding-3
+- EmbeddingGemma
+summary: >-
+  Kusupati, Bhatt, Rege et al. (2022), [ARXIV-2205.13147](https://arxiv.org/abs/2205.13147). Add the task loss
+  at about log(d) prefix lengths of one embedding (8, 16, …, 2048), and
+  every prefix works as a representation. ResNet50 on ImageNet: each prefix
+  is at least as accurate as a separately trained model of that width.
+  Shortlisting with 16 dimensions and re-ranking with 2048 matches
+  full-width retrieval at 128× fewer FLOPs, 14× faster in wall-clock time.
+  At full width it costs a few tenths of a point on the web-scale models.
+extended_by:
+- LIT-tmp7xt7l
+---
+
+<!-- inactive-ok-file: SOTA-tmpclqxm — Proposed, filed in this same contribution from this paper; new, not retired, and cited as the practice this document sources -->
+
+# LIT-tmpeafhj: Matryoshka Representation Learning
+
+Kusupati, Bhatt, Rege et al., University of Washington, Google Research,
+Harvard (2022; NeurIPS 2022) — [ARXIV-2205.13147](https://arxiv.org/abs/2205.13147)
+
+## Key takeaways
+
+- **The objective:** sum the usual loss over nested prefixes `z[1:m]` for
+  `m ∈ M = {8, 16, …, d}`, each with its own linear head. MRL–E ties those
+  heads into one. Weights are uniform unless tuned. Nothing else in the
+  pipeline changes, and the paper reuses the baseline hyperparameters
+- **Each prefix is a working representation.** On ResNet50 ImageNet-1K, MRL
+  is "at least as accurate" as a separately trained model of each width in
+  linear classification. In 1-NN it is up to 2% better at low widths, and in
+  retrieval mAP@10 up to 3% better. SVD, random features and slimmable
+  networks fall off sharply below 256 dimensions
+- **Widths nobody trained also work.** Accuracy interpolates across all `d`
+  dimensions, not only the `O(log d)` that were optimized
+- **Adaptive retrieval:** shortlist 200 with a 16-d prefix and re-rank with
+  2048. That matches single-shot 2048-d mAP@10 at about 128× fewer
+  theoretical FLOPs and 14× lower wall-clock (HNSW, same hardware). The
+  harder ImageNet-4K needs a 64-d shortlist, for 32× and 6×
+- **Adaptive classification:** a cascade that escalates width on low
+  confidence reaches 76.30%, a 512-d model's accuracy, at an expected ~37
+  dimensions
+- **Web scale:** ViT-B/16 on JFT-300M and ALIGN. BERT MLM accuracy comes
+  within 0.5% of the fixed-width model
+
+## Standing in the anthology
+
+**The idea MatFormer ([LIT-tmp7xt7l](LIT-tmp7xt7l.md)) moves into the weights**, from the same
+group. Filed from `#163` as "Matryoshka embeddings", and it sources
+[SOTA-tmpclqxm](../practices.d/SOTA-tmpclqxm.md).
+
+**Two hedges the abstract does not carry.** At web scale, the lower-width
+comparison is against *random features* of the full model, not against
+separately trained narrow models. That is a much weaker baseline, and the
+paper says it made the choice for cost. At full width MRL gives something
+up: Table 4 has ALIGN 67.85 against 68.00 and JFT-ViT 71.85 against 72.10
+top-1 k-NN. Small, but "no additional cost" is about inference, not about
+accuracy at `d`.
+
+**No text retrieval is measured.** The BERT result is masked-LM accuracy.
+The practice's use in text embedding models is adoption ([DP-005](../../docs/design-principles.md#dp-5)), and it
+is widespread.
+
+Read — [NOTE-tmpeaxtx](../notes.d/NOTE-tmpeaxtx.md).

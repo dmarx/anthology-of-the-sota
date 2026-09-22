@@ -1,0 +1,22 @@
+#!/bin/sh
+# .githooks/pre-commit
+#
+# Enforce ADR-018: generated views land on `main` only. CI regenerates and
+# commits them on the push; a pull request writes none. A branch carrying
+# views is not more up to date, it is a conflict with every other branch.
+#
+# Installed by `make hooks`, which sets core.hooksPath to this directory.
+
+branch=$(git rev-parse --abbrev-ref HEAD)
+[ "$branch" = "main" ] && exit 0
+
+staged=$(git diff --cached --name-only --diff-filter=ACMR -- docs/)
+[ -z "$staged" ] && exit 0
+
+echo "pre-commit: refusing to commit generated views on '$branch' (ADR-018)." >&2
+echo >&2
+echo "$staged" | sed 's/^/  /' >&2
+echo >&2
+echo "  make views-reset    # discard them, then commit again" >&2
+echo "  git commit --no-verify   # if you really are editing a source under docs/" >&2
+exit 1

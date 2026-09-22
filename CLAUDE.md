@@ -103,17 +103,25 @@ work perfectly well.
 ## Working
 
     luria new sota --title "..."   # or: theory, lit, adr, dp, changelog
-    luria link --fix              # spell the targets
+    luria repair                  # every mechanical fix, including the targets
     luria index                   # regenerate every view
     luria lint                    # the only command that can fail
 
-Run all four before pushing — then **do not commit what `luria index`
+<!-- inactive-ok-file: ADR-tmpnxv2f — Proposed, and cited as the decision that put `repair` in this sequence and the hook behind the discard step; Proposed is the resting state of an unmoved decision here, not a sign the sequence is unsettled. -->
+
+Or `make ready`, which runs those three and discards the views ([ADR-tmpnxv2f](record/decisions.d/ADR-tmpnxv2f.md)).
+**`repair`, not `link --fix`** — it does the linking *and* the rest, including
+populating a journal entry's `created:` from the path `luria new` chose, which
+is a violation four units in a row fixed by hand.
+
+Run all of them before pushing — then **do not commit what `luria index`
 regenerated.** Views land on `main` only: CI regenerates and commits them on
 the push, and a pull request writes none ([ADR-018](record/decisions.d/ADR-018.md)). Run `index` locally
 anyway, because `docs/reports/reference-status.md` is what tells you which
 citations the lint is about to flag; then `git checkout -- docs/` before you
 commit. A branch carrying views is not more up to date, it is a conflict with
-every other branch.
+every other branch. Run `make hooks` once per clone and the tracked
+`pre-commit` hook refuses them for you.
 
 `luria lint` is warn-first: warnings are real findings, not noise, and the
 ones about retired citations are the check this project adopted the record to

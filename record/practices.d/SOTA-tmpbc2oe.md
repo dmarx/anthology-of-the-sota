@@ -1,0 +1,77 @@
+---
+status: Proposed
+promote_when: >-
+  A quantitative long-rollout comparison (FVD or a per-frame quality metric
+  against rollout length) at transformer scale, between per-token-noise
+  training with noised-history conditioning and teacher-forced next-frame
+  diffusion under the same architecture and data, run by a group other than
+  the authors. The source shows it on a small RNN with videos only. A system
+  that adopts the recipe without reporting the ablation does not count.
+title: 'For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history'
+version: 1
+tags:
+- generative-modeling
+- vision-and-graphics
+date: '2026-09-23'
+source:
+- LIT-tmpcjzih
+introduced_by:
+- LIT-tmpcjzih
+consensus: unassessed
+consensus_note: >-
+  The record holds only the source paper. Whether later autoregressive
+  video systems adopted it, and whether any measured it, has not been
+  looked at here.
+implementations: []
+summary: >-
+  Chen et al. (2024), [LIT-tmpcjzih](../literature.d/LIT-tmpcjzih.md) — train a causal model to denoise tokens
+  that each carry an independent noise level. At rollout, treat the
+  generated history as slightly noisy, so accumulated errors look like
+  training noise. The same model then samples autoregressively, plans with
+  horizon-wide guidance, and keeps near-future tokens cleaner than far ones.
+  Long-rollout stability is shown on video qualitatively, with a small RNN.
+  Planning and robot gains are measured.
+---
+
+# SOTA-tmpbc2oe: For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history
+
+## Source
+
+Chen et al. (2024), [LIT-tmpcjzih](../literature.d/LIT-tmpcjzih.md) — Diffusion Forcing. Read as [NOTE-tmp0rqt2](../notes.d/NOTE-tmp0rqt2.md).
+
+## The practice
+
+When a model generates **continuous tokens one step at a time** (video
+frames, trajectories, actions) and must run past the length it was trained
+on:
+
+- **Train with an independent noise level for every token** in the
+  sequence, with a causal model and an ordinary denoising loss. This covers
+  clean-history next-token prediction and equal-noise full-sequence
+  diffusion as special cases
+- **At rollout, mark the generated history as slightly noisy**
+  (`0 < k ≪ K`) and do not treat it as clean ground truth. The model has
+  seen noisy history in training, so its own small errors do not push it out
+  of distribution
+- **Choose the schedule at inference.** Keep the near future cleaner than
+  the far future when planning, so uncertainty grows with the horizon, and
+  guide over the whole horizon if there is a reward
+
+## What was measured
+
+- Minecraft and DMLab video: coherent to 1,000 frames, where teacher-forced
+  and causal full-sequence baselines on the same RNN diverge. **Figure 3
+  only, no metric**
+- D4RL Maze2D: average reward 141.7 against Diffuser's 119.5, which needs a
+  hand-coded controller and gets 8.7 executing its own actions
+- A real robot task needing memory: 80% success. 76% with occluded
+  observations, marked as noisy, against 48% for a next-frame baseline
+
+## Conditions
+
+- **A small convolutional RNN.** The authors name transformers and scale as
+  future work
+- **The anti-drift claim is qualitative** in the source
+- **Continuous tokens.** For discrete tokens, teacher forcing does not
+  diverge in the same way, and this is not a recommendation for language
+  models

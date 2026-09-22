@@ -1,0 +1,78 @@
+---
+status: Active
+title: 'Warm Diffusion: Recipe for Blur-Noise Mixture Diffusion Models'
+version: 1
+tags:
+- generative-modeling
+- analysis-and-evaluation
+date: '2026-09-23'
+published: '2025-11-01'
+arxiv: '2511.16904'
+first_author: 'Hsueh'
+keywords:
+- 'blur-noise-mixture'
+- 'blur-to-noise-ratio'
+- 'spectral-dependency'
+- 'data-manifold'
+implementations: []
+extends:
+- LIT-tmpb9kuz
+compared_against:
+- LIT-075
+summary: >-
+  Hsueh et al. (2025), [ARXIV-2511.16904](https://arxiv.org/abs/2511.16904). Degrade with blur and noise
+  together, and predict the blurry image and the missing high frequencies
+  with two heads. Blur lets the model use the dependency of fine detail on
+  coarse structure. Noise keeps intermediate states on the data manifold.
+  Sweeping the blur-to-noise ratio on CIFAR-10 at 35 steps gives FID 1.97
+  at BNR = 0 (EDM), 1.85 at BNR = 0.5 and 11.97 at BNR = 10. A small gain,
+  and a large loss as the process goes cold.
+---
+
+<!-- inactive-ok-file: THEORY-tmpc9v4u THEORY-tmpyyfqg — the Rejected account this paper corrects and the Proposed account it supports, both filed in this same contribution -->
+
+# LIT-tmphm11f: Warm Diffusion: Recipe for Blur-Noise Mixture Diffusion Models
+
+Hsueh, Yen, Peng, Huang, National Yang Ming Chiao Tung University (2025) —
+[ARXIV-2511.16904](https://arxiv.org/abs/2511.16904)
+
+## Key takeaways
+
+- **One process spanning hot and cold:** `q(x | x₀) = N(V M_α Vᵀ x₀, β² I)`,
+  a DCT-domain Gaussian blur of level `α` plus noise of level `β`. BNR =
+  `α/β` moves from hot (0) to cold (∞)
+- **Divide and conquer:** a denoiser predicts the blurry clean image and a
+  deblurrer predicts the missing high-frequency residual. They share most
+  of an EDM network with doubled output channels, so BNR does not change
+  capacity
+- **The trade-off it names:** raising BNR hands work from the denoiser to
+  the deblurrer, which can exploit spectral dependency. But it shrinks the
+  noise that covers the space between samples, so reverse steps from an
+  ill-posed deblurring more often leave the data manifold
+- **Choosing BNR from spectra:** natural images fall off as `1/f²` and
+  white noise is flat. BNR = 0.5 is where blur starts attenuating a band
+  about when noise already dominates it
+- **Table 3 (CIFAR-10, NFE 35):** BNR 0 / 0.1 / 0.3 / 0.5 / 0.65 / 1 / 2 /
+  10 give FID 1.97 / 1.97 / 1.90 / 1.85 / 1.91 / 2.01 / 2.57 / 11.97
+- **Blurring Diffusion's schedule**, re-implemented in this framework, needs
+  many more steps to be competitive (Table 4), which the paper reads as a
+  schedule sitting at high BNR
+
+## Standing in the anthology
+
+**Filed from `#163`** ("[theory] warm diffusion"). Its account of why
+noise matters is [THEORY-tmpyyfqg](../theory.d/THEORY-tmpyyfqg.md), which `corrects` Cold Diffusion's
+([THEORY-tmpc9v4u](../theory.d/THEORY-tmpc9v4u.md)).
+
+**Small gain, clear shape.** The improvement over EDM at the best BNR is
+0.12 FID, reported as the best of three sampling rounds with no variance.
+What the sweep shows more robustly is the other side: going cold costs a
+lot (11.97 at BNR 10). That is the part the correction rests on.
+
+**A misattributed baseline.** Table 1 lists Cold Diffusion (Blur) at FID
+80.08 for unconditional CIFAR-10 generation. That number is Cold
+Diffusion's CIFAR-10 *deblurring* FID (its Table 1), a conditional
+restoration result. Cold Diffusion reports unconditional generation only on
+CelebA and AFHQ.
+
+Read — [NOTE-tmp0qg1j](../notes.d/NOTE-tmp0qg1j.md).

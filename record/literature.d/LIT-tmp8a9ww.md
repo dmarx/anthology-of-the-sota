@@ -1,0 +1,78 @@
+---
+status: Active
+title: 'Taming Transformer Without Using Learning Rate Warmup'
+version: 1
+tags:
+- model-stability
+- training-optimization
+- attention-techniques
+date: '2026-09-22'
+published: '2025-05-28'
+arxiv: '2505.21910'
+first_author: 'Qi'
+keywords:
+- 'spectral energy concentration'
+- 'entropy collapse'
+- "Weyl's inequality"
+- 'learning rate warmup'
+- 'training stability'
+implementations: []
+summary: >-
+  Qi et al. (2025), [ARXIV-2505.21910](https://arxiv.org/abs/2505.21910) — attention entropy
+  collapse comes in two modes, and only one crashes the model: sparse **and
+  low-rank** is fatal, sparse alone is benign. The driver is spectral energy
+  concentration in `W_q^T W_k`. Suppressing it by bounding the learning rate
+  with Weyl's inequality trains ViT, Swin and GPT **without warmup**, matching
+  warmed-up AdamW on all five configurations. Read as
+  [NOTE-tmpo1rg6](../notes.d/NOTE-tmpo1rg6.md).
+---
+
+# LIT-tmp8a9ww: Taming Transformer Without Using Learning Rate Warmup
+
+Qi, He, Ye, Li, Zi, Dai, Zou and Xiao (2025) —
+[ARXIV-2505.21910](https://arxiv.org/abs/2505.21910), ICLR 2025. Read as
+[NOTE-tmpo1rg6](../notes.d/NOTE-tmpo1rg6.md).
+
+## Key takeaways
+
+- **Two collapse modes, and the distinction is the contribution.** When
+  attention collapses the map goes sparse. If it is sparse *but not low-rank*
+  — close to an identity matrix — the paper calls it **benign** and the model
+  trains fine. If it is sparse *and simultaneously low-rank*, it is
+  **malignant** and the run crashes.
+- **So low entropy is not the criterion.** The paper states this as a
+  counterexample: by the entropy-collapse definition the benign state should
+  crash, and it does not.
+- **The criterion offered instead is spectral energy concentration** of
+  `W_q^T W_k` — `SEC(d_q, s)`, the share of spectral energy in the top `s`
+  directions. In crashed models it concentrates into fewer than 10 directions;
+  in healthy ones it stays spread.
+- **Theorem 1** gives the conditions: `X` low-rank and `W = W_q^T W_k`
+  low-rank with a few dominant singular values together make the attention map
+  sparse and low-rank with high probability.
+- **The remedy comes from Weyl's inequality.** `σ₁(W₁+W₂) ≤ σ₁(W₁)+σ₁(W₂)`, so
+  cap the step: if `α_t > τ·σ₁(W_{t−1})/σ₁(∇W_t)`, truncate it to that value.
+  Three power iterations, and the authors say two suffice.
+- **It removes warmup, at matched or better quality.**
+
+| | ViT-B 86M | ViT-L 307M | GPT-S 125M | Swin-S 50M | Swin-B 88M |
+|---|---|---|---|---|---|
+| AdamW, with warmup | 80.22 | 81.65 | 2.848 | 83.02 | 83.48 |
+| AdamW², no warmup | **80.58** | **81.82** | **2.840** | **83.14** | 83.44 |
+
+## Standing in the anthology
+
+**It corrects an account, and the record carries both sides.**
+[LIT-tmpzz9pi](LIT-tmpzz9pi.md) argues that entropy collapse causes
+instability and proves a bound on the entropy. This says the entropy criterion
+admits a stable counterexample and relocates the cause to the spectrum of
+`W_q^T W_k`. One group against another, and nobody has adjudicated it.
+
+**It sharpens what [SOTA-192](../practices.d/SOTA-192.md) says about its own failure mode.**
+That practice describes near-zero attention entropy as the failure. On this
+reading near-zero entropy is necessary and not sufficient, and the measurable
+predictor is concentration rather than entropy.
+
+**It is the second of three papers in this cluster to drop warmup** by a
+spectral mechanism, and it is the only one to target the *update* rather than
+the weight.

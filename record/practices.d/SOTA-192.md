@@ -9,7 +9,7 @@ consensus_note: >-
   clip; the Kimi line takes the other route. The invariant is agreed, the
   instrument is not.
 title: 'Normalize the queries and keys before the attention dot product'
-version: 4
+version: 5
 history:
 - version: 2
   date: '2026-09-18'
@@ -31,6 +31,19 @@ history:
     language-model line this practice was filed from. Neither line cites the
     other. The recommendation is unchanged; what is added is that the
     invariant now has two arrival events from two different failures.
+- version: 5
+  date: '2026-09-22'
+  note: >-
+    Adds a condition about the failure's DIAGNOSIS, not its remedy. This
+    document describes near-zero attention entropy as the failure. Qi et al.
+    (LIT-tmp8a9ww) report a stable regime with near-zero entropy and argue the
+    discriminator is whether the attention map is also low-rank, with the
+    upstream cause being spectral energy concentration in the query-key
+    product. That is one group contradicting another and is recorded as such.
+    The recommendation is unchanged and so is the status: bounding the logits
+    prevents both candidate modes, so nothing about what to do turns on which
+    account is right. What turns on it is what a reader watching a live run
+    should measure.
 tags:
 - model-stability
 - attention-techniques
@@ -47,7 +60,13 @@ compared_against:
 implementations:
 - ViT-22B
 - DeepSeek-V4
+explained_by:
+- THEORY-tmp4mah6
 ---
+<!-- inactive-ok-file: THEORY-tmpyirh9 — Proposed, filed in this same
+     contribution and named in a condition that says it is one group's
+     unadjudicated counterexample. The condition depends on it being
+     unsettled. -->
 
 # SOTA-192: Normalize the queries and keys before the attention dot product
 
@@ -116,6 +135,20 @@ literatures, and the record can see both only because it files by the kind of
 claim rather than by the domain the claim was found in ([ADR-026](../decisions.d/ADR-026.md)).
 
 ## Conditions
+
+**Entropy alone may be the wrong instrument for diagnosis.** Qi et al.
+([LIT-tmp8a9ww](../literature.d/LIT-tmp8a9ww.md), read as [NOTE-tmpo1rg6](../notes.d/NOTE-tmpo1rg6.md)) report attention
+maps that are sparse but **not** low-rank — near-identity, near-zero entropy —
+in runs that train perfectly well, and present that as a counterexample to the
+entropy criterion. On their account the fatal state is sparse *and* low-rank,
+and the predictor is spectral energy concentration in `W_q^T W_k`, which in
+crashed runs falls into fewer than ten directions. That is one group against
+another, at 50M–307M, and nobody has adjudicated it — see
+[THEORY-tmpyirh9](../theory.d/THEORY-tmpyirh9.md).
+
+It changes nothing about this recommendation, because bounding the logits
+suppresses both modes. It changes what to look at when deciding whether a run
+in progress is in trouble.
 
 `LIT-088` is a **vision encoder**. The mechanism — logit growth, entropy
 collapse, vanishing gradient — is architecture-independent and is the reason the

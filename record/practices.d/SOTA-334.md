@@ -1,5 +1,8 @@
 ---
+number: 334
 status: Proposed
+formerly:
+- SOTA-tmpb0fn3
 promote_when: >-
   An independent group reports, for a style- or condition-modulated
   convolutional generator, demodulation against instance or adaptive
@@ -13,9 +16,9 @@ tags:
 - model-architecture
 date: '2026-09-23'
 source:
-- LIT-tmppdats
+- LIT-560
 introduced_by:
-- LIT-tmppdats
+- LIT-560
 consensus: unreplicated
 consensus_note: >-
   Used by StyleGAN2 and StyleGAN3, both the same group's. The record holds
@@ -24,7 +27,7 @@ implementations:
 - StyleGAN2
 - StyleGAN3
 summary: >-
-  Karras et al. (2019), [LIT-tmppdats](../literature.d/LIT-tmppdats.md) — AdaIN's instance normalization
+  Karras et al. (2019), [LIT-560](../literature.d/LIT-560.md) — AdaIN's instance normalization
   discards relative feature magnitudes, so the generator smuggles scale
   past it with a localized spike, the "water droplet" in every StyleGAN
   image. Scale each output channel's modulated weights by
@@ -33,11 +36,11 @@ summary: >-
   4.39).
 ---
 
-# SOTA-tmpb0fn3: In a style-modulated generator, demodulate the convolution weights instead of instance-normalizing the activations
+# SOTA-334: In a style-modulated generator, demodulate the convolution weights instead of instance-normalizing the activations
 
 ## Source
 
-Karras et al. (2019), [LIT-tmppdats](../literature.d/LIT-tmppdats.md) — StyleGAN2. Read as [NOTE-tmpejv2l](../notes.d/NOTE-tmpejv2l.md).
+Karras et al. (2019), [LIT-560](../literature.d/LIT-560.md) — StyleGAN2. Read as [NOTE-301](../notes.d/NOTE-301.md).
 
 ## The practice
 

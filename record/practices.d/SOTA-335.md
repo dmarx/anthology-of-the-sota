@@ -1,5 +1,8 @@
 ---
+number: 335
 status: Proposed
+formerly:
+- SOTA-tmpi4xv3
 promote_when: >-
   A group outside the StyleGAN authors reports equivariance (an EQ-T or
   EQ-R style measurement) and quality for an alias-free generator against
@@ -14,9 +17,9 @@ tags:
 - model-architecture
 date: '2026-09-23'
 source:
-- LIT-tmp8n96l
+- LIT-559
 introduced_by:
-- LIT-tmp8n96l
+- LIT-559
 consensus: unreplicated
 consensus_note: >-
   One group's paper. The record holds no outside measurement of the
@@ -24,7 +27,7 @@ consensus_note: >-
 implementations:
 - StyleGAN3
 summary: >-
-  Karras et al. (2021), [LIT-tmp8n96l](../literature.d/LIT-tmp8n96l.md) — fine detail in GAN output sticks to
+  Karras et al. (2021), [LIT-559](../literature.d/LIT-559.md) — fine detail in GAN output sticks to
   pixel coordinates because the generator aliases. Apply each nonlinearity
   at 2× temporary resolution and low-pass filter back, start from Fourier
   features rather than a learned constant, remove per-pixel noise, and
@@ -32,11 +35,11 @@ summary: >-
   63 dB (and rotation to 40 dB for the -R variant) at StyleGAN2's FID.
 ---
 
-# SOTA-tmpi4xv3: When generated content must move continuously, as in video or animation, build the generator alias-free: treat features as continuous signals and low-pass filter around every nonlinearity
+# SOTA-335: When generated content must move continuously, as in video or animation, build the generator alias-free: treat features as continuous signals and low-pass filter around every nonlinearity
 
 ## Source
 
-Karras et al. (2021), [LIT-tmp8n96l](../literature.d/LIT-tmp8n96l.md) — StyleGAN3. Read as [NOTE-tmp508h6](../notes.d/NOTE-tmp508h6.md).
+Karras et al. (2021), [LIT-559](../literature.d/LIT-559.md) — StyleGAN3. Read as [NOTE-300](../notes.d/NOTE-300.md).
 Filed for `#163`'s "equivariant representation".
 
 ## The practice

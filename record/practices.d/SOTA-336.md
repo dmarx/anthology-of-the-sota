@@ -1,5 +1,8 @@
 ---
+number: 336
 status: Proposed
+formerly:
+- SOTA-tmpld8su
 promote_when: >-
   A group other than NVIDIA's StyleGAN authors compares progressive growing
   against a fixed skip/residual topology at 512² or above, in a GAN not
@@ -14,9 +17,9 @@ tags:
 - vision-and-graphics
 date: '2026-09-23'
 source:
-- LIT-tmppdats
+- LIT-560
 introduced_by:
-- LIT-tmppdats
+- LIT-560
 consensus: unreplicated
 consensus_note: >-
   StyleGAN2 and its successor StyleGAN3 train without growing, but both are
@@ -25,7 +28,7 @@ implementations:
 - StyleGAN2
 - StyleGAN3
 summary: >-
-  Karras et al. (2019), [LIT-tmppdats](../literature.d/LIT-tmppdats.md) — progressive growing makes each
+  Karras et al. (2019), [LIT-560](../literature.d/LIT-560.md) — progressive growing makes each
   resolution briefly the output, so it learns output-level detail and
   leaves features stuck to pixel positions. A fixed generator that sums
   upsampled RGB outputs from every resolution, with a residual
@@ -33,11 +36,11 @@ summary: >-
   topology. FFHQ FID 4.34 → 3.31, and the phase artifacts are gone.
 ---
 
-# SOTA-tmpld8su: Train high-resolution GANs at a fixed topology with output skips in the generator and a residual discriminator, not by progressive growing
+# SOTA-336: Train high-resolution GANs at a fixed topology with output skips in the generator and a residual discriminator, not by progressive growing
 
 ## Source
 
-Karras et al. (2019), [LIT-tmppdats](../literature.d/LIT-tmppdats.md) — StyleGAN2. Read as [NOTE-tmpejv2l](../notes.d/NOTE-tmpejv2l.md).
+Karras et al. (2019), [LIT-560](../literature.d/LIT-560.md) — StyleGAN2. Read as [NOTE-301](../notes.d/NOTE-301.md).
 Filed for `#163`'s "progressive training".
 
 ## The practice
@@ -71,7 +74,7 @@ In the main ablation this change takes FFHQ FID from 4.34 to 3.31.
 - **Dataset-dependent winner.** On LSUN Car the best pair is residual G
   with residual D (2.66). The skip-G/residual-D choice is FFHQ's
 - **Single training runs**, snapshot selected by lowest FID
-- **The skips are the replaceable part.** StyleGAN3 ([LIT-tmp8n96l](../literature.d/LIT-tmp8n96l.md)) keeps
+- **The skips are the replaceable part.** StyleGAN3 ([LIT-559](../literature.d/LIT-559.md)) keeps
   the fixed topology but removes the output skips, on the hypothesis that
   their benefit was mainly gradient-magnitude dynamics, which it handles
   with an EMA normalization instead. What survives both papers is *no

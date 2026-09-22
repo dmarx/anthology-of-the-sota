@@ -1,6 +1,9 @@
 ---
+number: 300
 status: Read
-paper: LIT-tmp8n96l
+formerly:
+- NOTE-tmp508h6
+paper: LIT-559
 title: 'StyleGAN3'
 version: 1
 date: '2026-09-23'
@@ -12,9 +15,9 @@ summary: >-
   representation analysis and the appendices were skimmed.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpi4xv3 SOTA-tmpld8su — Proposed, filed in this same contribution; the first from this paper, the second named because this paper qualifies it -->
+<!-- inactive-ok-file: SOTA-335 SOTA-336 — Proposed, filed in this same contribution; the first from this paper, the second named because this paper qualifies it -->
 
-# NOTE-tmp508h6: StyleGAN3
+# NOTE-300: StyleGAN3
 
 ## Contribution
 
@@ -63,14 +66,14 @@ represented at higher resolution and band-limited afterward.
 ## Recommendations
 
 - **R1** — For content that must move with the scene, build the generator
-  alias-free. Filed as [SOTA-tmpi4xv3](../practices.d/SOTA-tmpi4xv3.md)
+  alias-free. Filed as [SOTA-335](../practices.d/SOTA-335.md)
 
 ## Bearing on the record
 
-- **[SOTA-tmpld8su](../practices.d/SOTA-tmpld8su.md)** (no progressive growing, output skips): StyleGAN3
+- **[SOTA-336](../practices.d/SOTA-336.md)** (no progressive growing, output skips): StyleGAN3
   keeps the fixed topology but drops the output skips, which it believes
   were mainly fixing gradient-magnitude dynamics
-- **[SOTA-tmpi4xv3](../practices.d/SOTA-tmpi4xv3.md)** is filed from this paper
+- **[SOTA-335](../practices.d/SOTA-335.md)** is filed from this paper
 
 ## Limitations
 

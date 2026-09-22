@@ -2,7 +2,7 @@
 
 # Lines of work
 
-30 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+31 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -120,6 +120,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-500](../record/literature.d/LIT-500.md) — Vector-quantized Image Modeling with Improved VQGAN *(Active)*
       - [LIT-497](../record/literature.d/LIT-497.md) — Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation *(Active)* — also extends LIT-496
 
+### From A Style-Based Generator Architecture for Generative Adversarial Networks
+
+- [LIT-561](../record/literature.d/LIT-561.md) — A Style-Based Generator Architecture for Generative Adversarial Networks *(Active)*
+  - [LIT-560](../record/literature.d/LIT-560.md) — Analyzing and Improving the Image Quality of StyleGAN *(Active)*
+    - [LIT-559](../record/literature.d/LIT-559.md) — Alias-Free Generative Adversarial Networks *(Active)*
+
 ## in-context-learning
 
 ### From Language Models are Few-Shot Learners
@@ -169,6 +175,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-430](../record/literature.d/LIT-430.md) — RWKV: Reinventing RNNs for the Transformer Era *(Active)*
       - [LIT-429](../record/literature.d/LIT-429.md) — Eagle and Finch: RWKV with Matrix-Valued States and Dynamic Recurrence *(Active)*
         - [LIT-173](../record/literature.d/LIT-173.md) — RWKV-7 "Goose" with Expressive Dynamic State Evolution *(Active)*
+
+### From A Style-Based Generator Architecture for Generative Adversarial Networks
+
+- [LIT-561](../record/literature.d/LIT-561.md) — A Style-Based Generator Architecture for Generative Adversarial Networks *(Active)*
+  - [LIT-560](../record/literature.d/LIT-560.md) — Analyzing and Improving the Image Quality of StyleGAN *(Active)*
+    - [LIT-559](../record/literature.d/LIT-559.md) — Alias-Free Generative Adversarial Networks *(Active)*
 
 ## representation-and-encoding
 
@@ -278,3 +290,9 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-216](../record/literature.d/LIT-216.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
   - [LIT-215](../record/literature.d/LIT-215.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*
+
+### From A Style-Based Generator Architecture for Generative Adversarial Networks
+
+- [LIT-561](../record/literature.d/LIT-561.md) — A Style-Based Generator Architecture for Generative Adversarial Networks *(Active)*
+  - [LIT-560](../record/literature.d/LIT-560.md) — Analyzing and Improving the Image Quality of StyleGAN *(Active)*
+    - [LIT-559](../record/literature.d/LIT-559.md) — Alias-Free Generative Adversarial Networks *(Active)*

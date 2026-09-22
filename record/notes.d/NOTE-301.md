@@ -1,6 +1,9 @@
 ---
+number: 301
 status: Read
-paper: LIT-tmppdats
+formerly:
+- NOTE-tmpejv2l
+paper: LIT-560
 title: 'StyleGAN2'
 version: 1
 date: '2026-09-23'
@@ -12,9 +15,9 @@ summary: >-
   §4.2 onward and the appendices were skimmed.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpld8su SOTA-tmpb0fn3 — both Proposed, filed in this same contribution from this paper -->
+<!-- inactive-ok-file: SOTA-336 SOTA-334 — both Proposed, filed in this same contribution from this paper -->
 
-# NOTE-tmpejv2l: StyleGAN2
+# NOTE-301: StyleGAN2
 
 ## Contribution
 
@@ -70,22 +73,22 @@ grouped convolutions. Path-length regularizer:
 
 ## Connections
 
-It fixes StyleGAN ([LIT-tmppzrje](../literature.d/LIT-tmppzrje.md)), which inherits progressive growing from
-Progressive GAN (not in the record). StyleGAN3 ([LIT-tmp8n96l](../literature.d/LIT-tmp8n96l.md)) takes the
+It fixes StyleGAN ([LIT-561](../literature.d/LIT-561.md)), which inherits progressive growing from
+Progressive GAN (not in the record). StyleGAN3 ([LIT-559](../literature.d/LIT-559.md)) takes the
 phase-artifact diagnosis further, into aliasing throughout the generator.
 
 ## Recommendations
 
 - **R1** — No progressive growing: output-skip G, residual D. Filed as
-  [SOTA-tmpld8su](../practices.d/SOTA-tmpld8su.md)
+  [SOTA-336](../practices.d/SOTA-336.md)
 - **R2** — Demodulate weights instead of instance normalization in
-  style-modulated layers. Filed as [SOTA-tmpb0fn3](../practices.d/SOTA-tmpb0fn3.md)
+  style-modulated layers. Filed as [SOTA-334](../practices.d/SOTA-334.md)
 - **R3** — Compute expensive regularizers lazily, every k steps. Not filed:
   one configuration, one regularizer
 
 ## Bearing on the record
 
-- **[SOTA-tmpld8su](../practices.d/SOTA-tmpld8su.md)** and **[SOTA-tmpb0fn3](../practices.d/SOTA-tmpb0fn3.md)** are new
+- **[SOTA-336](../practices.d/SOTA-336.md)** and **[SOTA-334](../practices.d/SOTA-334.md)** are new
 - The ViT-VQGAN note ([LIT-500](../literature.d/LIT-500.md)) records a StyleGAN discriminator beating
   PatchGAN in its own ablation. That is a different comparison
 

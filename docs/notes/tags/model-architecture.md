@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-33 of 299 NOTE documents. Back to the [full index](../README.md).
+35 of 301 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -41,3 +41,5 @@
 | [NOTE-289](../../../record/notes.d/NOTE-289.md) | MatFormer | One Transformer with four nested FFN widths, trained one width per step, gives four sizes plus Mix'n'Match sizes nobody trained. At the compute of training the four separately, it matches the largest and beats the smaller ones, which see up to 4× the data through shared weights. Read §1–5 and Appendices B, D.1, E.1 and F. | Read |
 | [NOTE-293](../../../record/notes.d/NOTE-293.md) | Gemma 3n | Per-Layer Embeddings: every token id indexes a table with one 256-d vector per layer, gated into the residual at each layer, about 2.35B parameters held off the accelerator. No measurements are published. Read from the model overview, the developer guide, and the Hugging Face `transformers` implementation, which is the only place the mechanism is fully specified. | Read |
 | [NOTE-295](../../../record/notes.d/NOTE-295.md) | SIREN | Sine-activated MLPs whose derivatives are well behaved, trainable because weights U(±√(6/n)) keep pre-activations standard normal and outputs arcsine at every depth, with ω₀ = 30 on the first layer. They fit signals and derivatives that ReLU, tanh and positional encoding do not. Read §1–4.2 and supplement §1; the later experiments were skimmed. | Read |
+| [NOTE-300](../../../record/notes.d/NOTE-300.md) | StyleGAN3 | Aliasing in the generator glues fine detail to pixel coordinates. Continuous-signal design, with 2×-upsampled filtered nonlinearities, Fourier input and no noise, gives translation- and rotation-equivariant generators at StyleGAN2's FID. Read §1–3.2 and Figure 3; the internal representation analysis and the appendices were skimmed. | Read |
+| [NOTE-301](../../../record/notes.d/NOTE-301.md) | StyleGAN2 | Diagnoses two StyleGAN artifacts and fixes each at its cause: weight demodulation instead of instance normalization, and a fixed skip/residual architecture instead of progressive growing. Adds lazy regularization and path-length regularization. Read §1–4.1 and Tables 1–2; §4.2 onward and the appendices were skimmed. | Read |

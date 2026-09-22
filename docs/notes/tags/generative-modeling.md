@@ -4,7 +4,7 @@
 
 **generative-modeling**.
 
-29 of 299 NOTE documents. Back to the [full index](../README.md).
+31 of 301 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -37,3 +37,5 @@
 | [NOTE-297](../../../record/notes.d/NOTE-297.md) | Warm Diffusion | Blur and noise mixed in one forward process, with a two-headed model that denoises to the blurry image and deblurs the residual. A blur-to-noise ratio of 0.5, chosen from image and noise spectra, edges EDM on CIFAR-10 (1.85 against 1.97). High ratios degrade sharply, which is the evidence that noise keeps samples on the manifold. Read in full (8 pages). | Read |
 | [NOTE-298](../../../record/notes.d/NOTE-298.md) | Diffusion Forcing | Independent per-token noise levels during training give one causal model both autoregressive sampling and horizon-wide guidance, with sampling schedules chosen at inference. Stable long video rollouts are shown qualitatively. Planning and robot results are measured. Read §1–5; the appendix proofs and time-series results were not read. | Read |
 | [NOTE-299](../../../record/notes.d/NOTE-299.md) | Cold Diffusion | Diffusion generalized to deterministic degradations (blur, masking, downsampling, snow) with a restorer and a sampler that is exact for degradations linear in severity. Conditional restoration works. Noiseless unconditional generation is far worse than noise diffusion, and adding a little noise recovers half the gap. Read §1–5.3; the appendix was not read. | Read |
+| [NOTE-300](../../../record/notes.d/NOTE-300.md) | StyleGAN3 | Aliasing in the generator glues fine detail to pixel coordinates. Continuous-signal design, with 2×-upsampled filtered nonlinearities, Fourier input and no noise, gives translation- and rotation-equivariant generators at StyleGAN2's FID. Read §1–3.2 and Figure 3; the internal representation analysis and the appendices were skimmed. | Read |
+| [NOTE-301](../../../record/notes.d/NOTE-301.md) | StyleGAN2 | Diagnoses two StyleGAN artifacts and fixes each at its cause: weight demodulation instead of instance normalization, and a fixed skip/residual architecture instead of progressive growing. Adds lazy regularization and path-length regularization. Read §1–4.1 and Tables 1–2; §4.2 onward and the appendices were skimmed. | Read |

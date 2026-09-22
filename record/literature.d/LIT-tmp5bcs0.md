@@ -16,6 +16,8 @@ keywords:
 - 'matformer'
 - 'parameter-offloading'
 - 'embedding-memory'
+extends:
+- LIT-tmp7xt7l
 implementations:
 - Gemma 3n
 - Gemma 4 E2B

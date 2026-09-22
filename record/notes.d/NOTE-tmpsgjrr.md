@@ -85,8 +85,7 @@ attention. That detail is specific to Gemma 3n's other components.
 It is one of several designs that add capacity as lookup tables rather than
 as layers. The Qwen3.8-Flash-Next report ([LIT-152](../literature.d/LIT-152.md)) cites it with RWKV-8's
 DeepEmbed, STEM and L3 for unigram lookup, and generalizes the key from a
-token to an n-gram. It ships alongside MatFormer (`#163`, not yet in the
-record). Gemma 4 carries PLE forward in its two smallest models.
+token to an n-gram. It ships alongside MatFormer ([LIT-tmp7xt7l](../literature.d/LIT-tmp7xt7l.md)). Gemma 4 carries PLE forward in its two smallest models.
 
 ## Bearing on the record
 

@@ -1,0 +1,89 @@
+---
+status: Active
+title: 'MatFormer: Nested Transformer for Elastic Inference'
+version: 1
+tags:
+- model-architecture
+- inference-optimization
+- training-optimization
+date: '2026-09-22'
+published: '2023-10-01'
+arxiv: '2310.07707'
+first_author: 'Devvrit'
+keywords:
+- 'nested-models'
+- 'elastic-inference'
+- 'matryoshka'
+- 'mix-n-match'
+- 'speculative-decoding'
+- 'adaptive-retrieval'
+implementations:
+- Gemma 3n
+summary: >-
+  Devvrit, Kudugunta, Kusupati et al. (2023), [ARXIV-2310.07707](https://arxiv.org/abs/2310.07707). Nest four
+  FFN widths inside one Transformer, so each smaller FFN is the first
+  neurons of the larger. Train one width per step, sampled uniformly, and
+  pick a different width per layer at inference to extract sizes nobody
+  trained. Up to 850M parameters it matches four separately trained sizes
+  at the same total compute. The small submodels beat theirs partly because
+  shared weights see up to 4× the tokens.
+extended_by:
+- LIT-tmp5bcs0
+---
+
+<!-- inactive-ok-file: SOTA-tmpgvgkf — Proposed, filed in this same contribution from this paper; new, not retired, and cited as the practice this document sources -->
+
+# LIT-tmp7xt7l: MatFormer: Nested Transformer for Elastic Inference
+
+Devvrit, Kudugunta, Kusupati et al., Google DeepMind, UT Austin, UW,
+Harvard (2023; NeurIPS 2024) — [ARXIV-2310.07707](https://arxiv.org/abs/2310.07707)
+
+## Key takeaways
+
+- **Nested FFNs.** Granularity `i` uses the first `mᵢ` hidden neurons of
+  every FFN, so `T₁ ⊂ T₂ ⊂ … ⊂ T_g`. The paper uses `g = 4`, with FFN ratios
+  {0.5, 1, 2, 4}. Attention and embeddings are shared across sizes. The same
+  nesting on attention heads is in Appendix F.2
+- **Training samples one granularity per step**, uniformly by default. That
+  is the design choice separating it from DynaBERT, which averages all four
+  losses per step and so takes a quarter of the gradient updates. DynaBERT
+  trails by 0.01 log-perplexity at 850M and still does with 15% more compute
+- **Mix'n'Match:** choose each layer's granularity independently to get
+  sizes that were never trained. The recommended heuristic is non-decreasing
+  width with depth and the least change between adjacent layers. It matches
+  or beats evolutionary NAS
+- **The compute comparison is against the family.** MatLM is trained on 4X
+  tokens, one granularity per step. The four baselines get X tokens each. At
+  the same total, the nested S effectively sees 4X, M 3X, L 2X and XL X. So
+  **XL matches its baseline** and the smaller sizes beat theirs (Appendix
+  B.4)
+- **Consistency:** submodels agree with XL on up to 11.5% more tokens than
+  independently trained models of the same size do. A MatLM S drafting for
+  XL speeds speculative decoding 1.14× on LAMBADA, against 1.10× for
+  separate baselines, and 1.16× with a shared attention cache
+- **MatViT:** the same nesting in ViT-B/16 and L/16 matches or beats
+  separately trained ViTs by up to 0.35%. Smaller encoders keep the large
+  one's metric space well enough to query a corpus it embedded, 40% cheaper
+  at under 0.5% 1-NN accuracy loss. Separately trained small encoders score
+  near zero on that task
+
+## Standing in the anthology
+
+**The architecture under Gemma 3n**, whose E4B contains a jointly trained
+E2B and whose documentation ([LIT-tmp5bcs0](LIT-tmp5bcs0.md)) cites this paper for it. Filed
+from `#163`.
+
+**Sources [SOTA-tmpgvgkf](../practices.d/SOTA-tmpgvgkf.md)**, the recommendation to train one nested model
+instead of several separate sizes. That practice is `Proposed`. The largest
+model here is 850M, every result is one group's, and the one production
+adopter shares the group's organization.
+
+**The sentence to be careful with** is the abstract's claim that extracted
+models are "better … than independently trained counterparts". It is true
+at matched *family* compute. It is not a claim that MatFormer's largest
+model beats a model of that size trained alone, which it only matches. The
+paper says so in Appendix B.4, and its scaling-law fits (Table 3:
+`b = −0.10` vs `−0.13`, `c = 0.89` vs `1.33`) are less similar than the
+text's "extremely similar".
+
+Read — [NOTE-tmp98tod](../notes.d/NOTE-tmp98tod.md).

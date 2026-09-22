@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**167 document(s) awaiting a decision.**
+**170 document(s) awaiting a decision.**
 
 ## SOTAs
 
-103 of the 167.
+104 of the 170.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -112,6 +112,7 @@
 | 2026-09-21 | Proposed | [SOTA-316](../../record/practices.d/SOTA-316.md) | 0 | 0 | When you are memory-bound rather than time-bound, train all the parameters a block at a time, partitioned on layer boundaries |
 | 2026-09-22 | Proposed | [SOTA-323](../../record/practices.d/SOTA-323.md) | 4 | 0 | Test a claim about what pretraining produces on a model trained with the pretraining objective, not one trained on the task family you are testing |
 | 2026-09-22 | Proposed | [SOTA-319](../../record/practices.d/SOTA-319.md) | 3 | 0 | Reparameterize every linear layer by its spectral norm with a learned scalar |
+| 2026-09-22 | Proposed | [SOTA-325](../../record/practices.d/SOTA-325.md) | 3 | 0 | When the training loss has saturated and runs still differ, measure loss-landscape degeneracy rather than curvature |
 | 2026-09-22 | Proposed | [SOTA-324](../../record/practices.d/SOTA-324.md) | 2 | 0 | Separate rival accounts of an internal algorithm by convergence rate and conditioning, not by how well each fits the output |
 | 2026-09-22 | Proposed | [SOTA-320](../../record/practices.d/SOTA-320.md) | 1 | 0 | Bound the learning rate by the ratio of the update's spectral norm to the weight's, and drop warmup |
 | 2026-09-22 | Proposed | [SOTA-321](../../record/practices.d/SOTA-321.md) | 1 | 0 | Verify a model's lineage from the singular spectra of its attention products, which survive permutation and rescaling |
@@ -119,7 +120,7 @@
 
 ## THEORYs
 
-43 of the 167.
+45 of the 170.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -158,18 +159,20 @@
 | 2026-09-21 | Proposed | [THEORY-054](../../record/theory.d/THEORY-054.md) | 1 | 0 | The regularizer that is intractable in data space is tractable in noise space, and bounds the data-space divergence |
 | 2026-09-21 | Proposed | [THEORY-055](../../record/theory.d/THEORY-055.md) | 1 | 0 | A producer's own rate of return is the price of their time, so making them faster raises the bar on every marginal hour of improvement |
 | 2026-09-22 | Proposed | [THEORY-062](../../record/theory.d/THEORY-062.md) | 6 | 0 | What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such |
+| 2026-09-22 | Proposed | [THEORY-071](../../record/theory.d/THEORY-071.md) | 6 | 0 | A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips at a critical dataset size |
 | 2026-09-22 | Proposed | [THEORY-061](../../record/theory.d/THEORY-061.md) | 5 | 0 | Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product |
-| 2026-09-22 | Proposed | [THEORY-071](../../record/theory.d/THEORY-071.md) | 3 | 0 | A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips at a critical dataset size |
+| 2026-09-22 | Proposed | [THEORY-070](../../record/theory.d/THEORY-070.md) | 5 | 0 | Grokking is the transition from lazy to rich training dynamics |
+| 2026-09-22 | Proposed | [THEORY-072](../../record/theory.d/THEORY-072.md) | 5 | 0 | Training and test loss disagree as functions of weight norm, and shrinking the norm through the gap is what takes so long |
 | 2026-09-22 | Proposed | [THEORY-064](../../record/theory.d/THEORY-064.md) | 2 | 0 | Transformers are biased toward low-sensitivity functions, and that bias is what their robustness is made of |
-| 2026-09-22 | Proposed | [THEORY-070](../../record/theory.d/THEORY-070.md) | 2 | 0 | Grokking is the transition from lazy to rich training dynamics |
-| 2026-09-22 | Proposed | [THEORY-072](../../record/theory.d/THEORY-072.md) | 2 | 0 | Training and test loss disagree as functions of weight norm, and shrinking the norm through the gap is what takes so long |
+| 2026-09-22 | Proposed | [THEORY-073](../../record/theory.d/THEORY-073.md) | 2 | 0 | Training passes through stages marked by changes in loss-landscape degeneracy, and the loss curve does not show them |
+| 2026-09-22 | Proposed | [THEORY-074](../../record/theory.d/THEORY-074.md) | 1 | 0 | A phase transition of the Bayesian posterior and a transition in the training trajectory are different events, and only the first is well defined |
 | 2026-09-22 | Proposed | [THEORY-063](../../record/theory.d/THEORY-063.md) | 0 | 0 | Contextual concept directions sit in the low-variance tail of the unembedding spectrum while vocabulary contrasts sit at the top |
 | 2026-09-22 | Proposed | [THEORY-065](../../record/theory.d/THEORY-065.md) | 0 | 0 | Self-attention drives tokens into a few clusters, and the spectrum of the value matrix decides the geometry they land in |
 | 2026-09-22 | Proposed | [THEORY-066](../../record/theory.d/THEORY-066.md) | 0 | 0 | Pure self-attention collapses every token onto one, and skip connections prevent it by keeping short paths alive |
 
 ## LITs
 
-3 of the 167.
+3 of the 170.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -179,14 +182,14 @@
 
 ## ADRs
 
-18 of the 167.
+18 of the 170.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-09-05 | Proposed | [ADR-012](../../record/decisions.d/ADR-012.md) | 2 | 0 | A practice declares its altitude, and one with no body cannot claim to be a design decision |
 | 2026-09-09 | Proposed | [ADR-024](../../record/decisions.d/ADR-024.md) | 10 | 0 | The topic vocabulary has four recurring seams — options, not a decision |
 | 2026-09-14 | Proposed | [ADR-028](../../record/decisions.d/ADR-028.md) | 1 | 1 | One topic vocabulary, one set of glosses: the blurbs are shared too |
-| 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 31 | 0 | A scheme for explanations, complementing the practice registry |
+| 2026-09-15 | Proposed | [ADR-031](../../record/decisions.d/ADR-031.md) | 32 | 0 | A scheme for explanations, complementing the practice registry |
 | 2026-09-15 | Proposed | [ADR-030](../../record/decisions.d/ADR-030.md) | 17 | 1 | Every practice states its origin, even when it is the primary source |
 | 2026-09-15 | Proposed | [ADR-034](../../record/decisions.d/ADR-034.md) | 13 | 0 | A document that changes scheme is Superseded where it leaves, and names its successor across the boundary |
 | 2026-09-15 | Proposed | [ADR-033](../../record/decisions.d/ADR-033.md) | 0 | 0 | Readings made in another context port into the record; their agenda does not |

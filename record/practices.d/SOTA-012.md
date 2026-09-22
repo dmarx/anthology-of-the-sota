@@ -16,11 +16,11 @@ history:
   date: '2026-09-22'
   note: >-
     Adds a condition, not a correction. The correlation stands and so does the
-    advice. What is new is LIT-tmp63rr1's argument that curvature is not the
+    advice. What is new is LIT-541's argument that curvature is not the
     load-bearing quantity at all: neural networks are singular models, the
     theorems contain the exponent of the volume law and curvature is its
     prefactor. Filter normalisation fixes the rescaling artefact; it does not
-    make the Hessian the right object. SOTA-tmpnp2m8 is the alternative
+    make the Hessian the right object. SOTA-325 is the alternative
     measurement, and no compared_against is declared between them because
     nobody has run the comparison.
 tags:
@@ -28,7 +28,7 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-014
-- LIT-tmp63rr1
+- LIT-541
 introduced_by:
 - LIT-014
 # `SOTA-010` is Superseded because it moved to the THEORY scheme, not
@@ -46,7 +46,7 @@ summary: >-
 
 # SOTA-012: sharpness in the loss landscape correlates with test error
 
-<!-- inactive-ok-file: SOTA-tmpnp2m8 — Proposed, filed in this same contribution as the alternative measurement, filed today; new, not retired. -->
+<!-- inactive-ok-file: SOTA-325 — Proposed, filed in this same contribution as the alternative measurement, filed today; new, not retired. -->
 
 ## Source
 
@@ -80,7 +80,7 @@ reparameterisation-invariant. There is a second objection it does not answer,
 and the record now holds it: **curvature may be the wrong quantity even when
 measured perfectly.**
 
-`LIT-tmp63rr1` makes the case. Neural networks are *singular* statistical
+`LIT-541` makes the case. Neural networks are *singular* statistical
 models — many parameters give the same function, so the set of optima is a
 variety rather than a point and the loss is not locally quadratic. In
 Watanabe's volume law `V(ε) ∝ ε^λ`, the quantity that enters the model-selection
@@ -96,8 +96,8 @@ it holds; the advice below — treat a visibly sharp basin as worth suspecting �
 costs nothing and is still good. What it does is bound the explanation: the
 correlation is evidence that something about the local geometry tracks
 generalisation, and the geometry a visualisation displays may not be the part
-doing the tracking. `SOTA-tmpnp2m8` is the practice that measures the exponent
-instead, and `THEORY-tmpzuan6` is the account behind it.
+doing the tracking. `SOTA-325` is the practice that measures the exponent
+instead, and `THEORY-075` is the account behind it.
 
 Reading this practice as "make the minimum flatter and the model generalises"
 is the failure it invites. What it supports is narrower and still useful: a

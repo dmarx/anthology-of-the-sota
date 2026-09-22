@@ -1,5 +1,8 @@
 ---
+number: 325
 status: Proposed
+formerly:
+- SOTA-tmpnp2m8
 title: 'When the training loss has saturated and runs still differ, measure loss-landscape degeneracy rather than curvature'
 version: 1
 tags:
@@ -8,12 +11,12 @@ tags:
 - model-stability
 date: '2026-09-22'
 source:
-- LIT-tmp6dook
+- LIT-542
 introduced_by:
-- LIT-tmp6dook
+- LIT-542
 contested_by: []
 explained_by:
-- THEORY-tmpzuan6
+- THEORY-075
 promote_when: >-
   A group other than the measure's authors reports the lower-LLC/better-
   generalization relation on a workload they were not studying the measure with,
@@ -21,7 +24,7 @@ promote_when: >-
   currently three one-dimensional sweeps on one model and one dataset, and
   `Active` needs it to survive somebody else's confounds.
 summary: >-
-  Lau, Furman, Wang, Murfet and Wei (2023), [LIT-tmp6dook](../literature.d/LIT-tmp6dook.md) — on ResNet18/CIFAR10,
+  Lau, Furman, Wang, Murfet and Wei (2023), [LIT-542](../literature.d/LIT-542.md) — on ResNet18/CIFAR10,
   stronger implicit regularization (higher learning rate, lower batch size,
   higher momentum) gives a lower local learning coefficient and higher test
   accuracy, **while every training loss has collapsed to zero**. The estimator
@@ -30,14 +33,14 @@ summary: >-
   Where the loss has stopped distinguishing runs, the geometry has not.
 ---
 
-# SOTA-tmpnp2m8: When the training loss has saturated and runs still differ, measure loss-landscape degeneracy rather than curvature
+# SOTA-325: When the training loss has saturated and runs still differ, measure loss-landscape degeneracy rather than curvature
 
-<!-- inactive-ok-file: THEORY-tmpgrdfw — Proposed, filed in this same contribution as the account of what the measure finds during training; new, not retired. -->
+<!-- inactive-ok-file: THEORY-073 — Proposed, filed in this same contribution as the account of what the measure finds during training; new, not retired. -->
 
 ## Source
 
-Lau, Furman, Wang, Murfet and Wei (2023), [LIT-tmp6dook](../literature.d/LIT-tmp6dook.md). Read as
-[NOTE-tmp13c7y](../notes.d/NOTE-tmp13c7y.md). Explained by [THEORY-tmpzuan6](../theory.d/THEORY-tmpzuan6.md).
+Lau, Furman, Wang, Murfet and Wei (2023), [LIT-542](../literature.d/LIT-542.md). Read as
+[NOTE-285](../notes.d/NOTE-285.md). Explained by [THEORY-075](../theory.d/THEORY-075.md).
 
 ## The practice
 
@@ -78,7 +81,7 @@ The nearby practice is `SOTA-012`: sharpness in the loss landscape correlates
 with test error, on filter-normalised visualisations. That practice is careful
 and its advice survives. But filter normalisation fixes the *rescaling
 artefact*; it does not make curvature the right quantity. Per
-[THEORY-tmpzuan6](../theory.d/THEORY-tmpzuan6.md), the theorems contain the **exponent** of the volume law, and
+[THEORY-075](../theory.d/THEORY-075.md), the theorems contain the **exponent** of the volume law, and
 curvature is its prefactor — it does not appear in the model-selection
 criterion `n L_n(w_0) + λ log n`, nor in the Bayes generalisation rate `λ/n`.
 
@@ -91,7 +94,7 @@ were asking sharpness to answer.
 run filter-normalised sharpness and the local learning coefficient against
 each other as predictors of test error on the same models; the argument
 that the exponent is the right quantity is theoretical, from
-[LIT-tmp63rr1](../literature.d/LIT-tmp63rr1.md), and this record labels it as one.
+[LIT-541](../literature.d/LIT-541.md), and this record labels it as one.
 
 ## Conditions
 
@@ -112,7 +115,7 @@ school's own stated bottleneck.
 
 **Lower is not automatically better.** The reported direction is that stronger
 implicit regularization lowers `λ̂` and raises accuracy on this workload. It is
-not a claim that minimising `λ̂` is an objective, and [LIT-tmpgj3s9](../literature.d/LIT-tmpgj3s9.md) observes
+not a claim that minimising `λ̂` is an objective, and [LIT-543](../literature.d/LIT-543.md) observes
 stages where `λ̂` falls during ordinary training for reasons nobody has
 explained.
 
@@ -120,7 +123,7 @@ explained.
 
 - Comparing training recipes whose training losses have all converged.
 - Detecting that *something* changed during a run when the loss curve is
-  smooth — [LIT-tmpgj3s9](../literature.d/LIT-tmpgj3s9.md) is that use, and [THEORY-tmpgrdfw](../theory.d/THEORY-tmpgrdfw.md) is what the record
+  smooth — [LIT-543](../literature.d/LIT-543.md) is that use, and [THEORY-073](../theory.d/THEORY-073.md) is what the record
   thinks of it.
 - As an alternative to a hand-built progress measure when no mechanistic
   hypothesis is available yet. `SOTA-200` records that `LIT-085`'s measures

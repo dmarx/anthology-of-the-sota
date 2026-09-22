@@ -1,5 +1,8 @@
 ---
+number: 73
 status: Proposed
+formerly:
+- THEORY-tmpgrdfw
 title: 'Training passes through stages marked by changes in loss-landscape degeneracy, and the loss curve does not show them'
 version: 1
 tags:
@@ -8,10 +11,10 @@ tags:
 - training-optimization
 date: '2026-09-22'
 source:
-- LIT-tmpgj3s9
-- LIT-tmpjlg44
+- LIT-543
+- LIT-544
 extends:
-- THEORY-tmpzuan6
+- THEORY-075
 promote_when: >-
   The stage division is reproduced on a model somebody else trained, for a
   purpose other than studying it — a checkpoint series from a public training
@@ -20,7 +23,7 @@ promote_when: >-
   authors is what `Proposed` is for; a third from outside is what would settle
   it. A second paper agreeing that degeneracy is interesting would not.
 summary: >-
-  Hoogland et al. ([LIT-tmpgj3s9](../literature.d/LIT-tmpgj3s9.md)) estimate the local learning coefficient
+  Hoogland et al. ([LIT-543](../literature.d/LIT-543.md)) estimate the local learning coefficient
   through training and take critical points of that curve as stage boundaries.
   In a 2-layer language transformer the five stages land on bigrams, n-grams,
   previous-token heads and the induction circuit; in an in-context regression
@@ -30,9 +33,9 @@ summary: >-
   across two models, and the authors call it suggestive.
 ---
 
-# THEORY-tmpgrdfw: Training passes through stages marked by changes in loss-landscape degeneracy, and the loss curve does not show them
+# THEORY-073: Training passes through stages marked by changes in loss-landscape degeneracy, and the loss curve does not show them
 
-<!-- The relation to THEORY-tmpzuan6 is `extends`, not `corrects`: the
+<!-- The relation to THEORY-075 is `extends`, not `corrects`: the
      foundations say the exponent is the right complexity measure, and this
      says the exponent moves in structured ways during training. Same
      mechanism, applied further. -->
@@ -72,7 +75,7 @@ distribution, with layer-normalization weights collapsing to zero, all while
 the loss keeps falling.
 
 **In a toy model, the same structure is derived rather than observed.**
-[LIT-tmpjlg44](../literature.d/LIT-tmpjlg44.md) shows that in the Toy Model of Superposition the critical points
+[LIT-544](../literature.d/LIT-544.md) shows that in the Toy Model of Superposition the critical points
 governing the posterior's phases are the same ones that explain SGD's plateaus
 — which is the closest thing to a mechanism this account has.
 

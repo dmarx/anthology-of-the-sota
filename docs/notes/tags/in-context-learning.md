@@ -4,7 +4,7 @@
 
 **in-context-learning**.
 
-16 of 284 NOTE documents. Back to the [full index](../README.md).
+17 of 288 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -24,3 +24,4 @@
 | [NOTE-278](../../../record/notes.d/NOTE-278.md) | Linear in Newton steps, exponential in gradient steps: a rate is what separates the rivals | Read as the challenge from inside the gradient-descent line's own setup. Matching each transformer layer to the best number of steps of a candidate algorithm gives a linear trend against Iterative Newton — about 3 iterations per middle layer — and an exponential one against gradient descent; on data with condition number 100 the transformer is unchanged while GD needs 2,000 steps a 12-layer model cannot hold. The method is the contribution: fits cannot separate these rivals and rates can. | Read |
 | [NOTE-279](../../../record/notes.d/NOTE-279.md) | The setup that made the mechanism question answerable | Read because every later claim about what in-context learning *is* measures in this setup. A 9.5M-parameter GPT-2 trained from scratch on `(x, f(x))` sequences matches ordinary least squares on unseen linear functions and Lasso on sparse ones, in a single forward pass. The training objective is the setup's power and, later, the ground of the main objection to everything built on it. | Read |
 | [NOTE-280](../../../record/notes.d/NOTE-280.md) | The construction is exact, and the trained model it describes is one layer deep | Read as the trunk of the mesa-optimization line. Proposition 1's weight construction is exact and a single trained linear-self-attention layer approximately finds it. The result that matters most for what came after is four pages later and rarely quoted: deeper trained models do not match gradient descent, they match GD++ — gradient descent on data transformed by `I − γXXᵀ` — which is the paper's own evidence that plain GD is the wrong description beyond one layer. | Read |
+| [NOTE-287](../../../record/notes.d/NOTE-287.md) | Stage boundaries found without knowing in advance what to look for | Read as the application that makes the LLC matter to this record. Critical points of the LLC curve divide two transformers into five stages each, and the boundaries land on bigrams, n-grams, previous-token heads and the induction circuit — found without a mechanistic hypothesis in hand, which is what `LIT-085`'s progress measures require. Its in-context regression model acquires in-context learning and then loses it. | Read |

@@ -1,6 +1,9 @@
 ---
+number: 286
 status: Read
-paper: LIT-tmp63rr1
+formerly:
+- NOTE-tmpeplml
+paper: LIT-541
 title: 'The effective parameter count is a volume exponent, and the Hessian is measuring the wrong thing'
 version: 1
 date: '2026-09-22'
@@ -12,7 +15,7 @@ summary: >-
   governs generalisation, which is what `SOTA-012` rests on.
 ---
 
-# NOTE-tmpeplml: The effective parameter count is a volume exponent, and the Hessian is measuring the wrong thing
+# NOTE-286: The effective parameter count is a volume exponent, and the Hessian is measuring the wrong thing
 
 ## Contribution
 
@@ -87,10 +90,10 @@ intractable; the paper notes that variational approximations may not inherit
 the relationship, because free energy and generalisation error can have
 *different* learning coefficients for approximate posteriors — documented for
 one-hidden-layer networks by Nakajima and Watanabe (2007). That is a real gap
-and `LIT-tmp6dook` is the attempt to close the estimation half of it.
+and `LIT-542` is the attempt to close the estimation half of it.
 
 **Nothing here is about training dynamics.** The whole framework is Bayesian.
-`LIT-tmpjlg44` is the paper that takes that seriously rather than eliding it.
+`LIT-544` is the paper that takes that seriously rather than eliding it.
 
 ## Bearing on the record
 
@@ -115,5 +118,5 @@ does not make the Hessian the right object.
   raises this and cites a counterexample from 2007. Nothing this record holds
   answers it, and every practical LLC estimate depends on the answer.
 - **What is the RLCT of a transformer?** Theoretical values exist for a handful
-  of architectures, most from decades ago. `LIT-tmp6dook` estimates rather than
+  of architectures, most from decades ago. `LIT-542` estimates rather than
   derives, and the derivation gap is the school's own stated bottleneck.

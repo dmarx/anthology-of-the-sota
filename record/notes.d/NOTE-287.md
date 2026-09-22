@@ -1,6 +1,9 @@
 ---
+number: 287
 status: Read
-paper: LIT-tmpgj3s9
+formerly:
+- NOTE-tmpwex9g
+paper: LIT-543
 title: 'Stage boundaries found without knowing in advance what to look for'
 version: 1
 date: '2026-09-22'
@@ -13,7 +16,7 @@ summary: >-
   acquires in-context learning and then loses it.
 ---
 
-# NOTE-tmpwex9g: Stage boundaries found without knowing in advance what to look for
+# NOTE-287: Stage boundaries found without knowing in advance what to look for
 
 ## Contribution
 
@@ -36,7 +39,7 @@ what was detected, and both halves are stated by the authors.
 
 ## Assumptions
 
-- The LLC estimator of `LIT-tmp6dook`, with all of its assumptions — SGLD,
+- The LLC estimator of `LIT-542`, with all of its assumptions — SGLD,
   `β* = 1/log n`, a localizing radius, a Bayesian object measured at an
   SGD point.
 - Stage boundaries are **critical points of the `λ̂` curve**, a stipulated rule

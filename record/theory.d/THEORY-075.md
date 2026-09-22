@@ -1,5 +1,8 @@
 ---
+number: 75
 status: Active
+formerly:
+- THEORY-tmpzuan6
 title: 'Neural networks are singular, so effective complexity is how the volume of near-optimal parameters scales, not how curved the optimum is'
 version: 1
 tags:
@@ -8,13 +11,13 @@ tags:
 - training-optimization
 date: '2026-09-22'
 source:
-- LIT-tmp63rr1
-- LIT-tmp6dook
+- LIT-541
+- LIT-542
 explains:
-- SOTA-tmpnp2m8
+- SOTA-325
 summary: >-
   Watanabe's singular learning theory, as this record receives it from
-  [LIT-tmp63rr1](../literature.d/LIT-tmp63rr1.md) and [LIT-tmp6dook](../literature.d/LIT-tmp6dook.md). The set of parameters realising a given
+  [LIT-541](../literature.d/LIT-541.md) and [LIT-542](../literature.d/LIT-542.md). The set of parameters realising a given
   function is a variety with singularities, not a point, so the loss is not
   locally quadratic and `d/2` is not the effective parameter count. What is, is
   the exponent `λ` in `V(ε) ∝ ε^λ` — the rate at which the volume of
@@ -23,13 +26,13 @@ summary: >-
   (`λ/n`), and the sense in which one trained network is simpler than another.
   Curvature is the prefactor, and the prefactor is not what governs any of them.
 extended_by:
-- THEORY-tmpgrdfw
-- THEORY-tmpzq41c
+- THEORY-073
+- THEORY-074
 ---
 
-# THEORY-tmpzuan6: Neural networks are singular, so effective complexity is how the volume of near-optimal parameters scales, not how curved the optimum is
+# THEORY-075: Neural networks are singular, so effective complexity is how the volume of near-optimal parameters scales, not how curved the optimum is
 
-<!-- inactive-ok-file: THEORY-tmpzq41c — Proposed, filed in this same contribution as the caution that extends this account; new, not retired. -->
+<!-- inactive-ok-file: THEORY-074 — Proposed, filed in this same contribution as the caution that extends this account; new, not retired. -->
 
 ## The account
 
@@ -70,7 +73,7 @@ not enter the criterion, and they do not enter the generalisation rate.
 ## Why `Active`
 
 **The mathematics is Watanabe's and is not in dispute.** What was in dispute is
-whether it reaches practice, and [LIT-tmp6dook](../literature.d/LIT-tmp6dook.md) answers the measurement half:
+whether it reaches practice, and [LIT-542](../literature.d/LIT-542.md) answers the measurement half:
 an SGLD estimator, `λ̂(w*) = n β* [E_{w|w*,β*,γ} L_n(w) − L_n(w*)]` at
 `β* = 1/log n`, reproduces known theoretical learning coefficients on deep
 linear networks **up to 100M parameters**, including when evaluated at an
@@ -96,7 +99,7 @@ advice — treat a visibly sharp basin as worth suspecting — survives.
 
 **It says nothing about training.** Every result above concerns the Bayesian
 posterior, asymptotically in sample size. Reading it as a claim about what SGD
-does is the error `THEORY-tmpzq41c` exists to prevent.
+does is the error `THEORY-074` exists to prevent.
 
 ## What would change this
 
@@ -105,5 +108,5 @@ in a realistic setting — the deep-linear validation is the only place both are
 available, and it is a setting chosen because it is tractable. Or a
 demonstration that the free energy and the generalisation error carry
 *different* learning coefficients under the approximate posteriors anyone can
-actually compute, which [LIT-tmp63rr1](../literature.d/LIT-tmp63rr1.md) raises as a live concern, citing a
+actually compute, which [LIT-541](../literature.d/LIT-541.md) raises as a live concern, citing a
 one-hidden-layer counterexample from 2007.

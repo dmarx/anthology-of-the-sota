@@ -4,7 +4,7 @@
 
 **systems-optimization**.
 
-6 of 284 NOTE documents. Back to the [full index](../README.md).
+6 of 288 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

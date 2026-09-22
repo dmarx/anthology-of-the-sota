@@ -1,5 +1,8 @@
 ---
+number: 74
 status: Proposed
+formerly:
+- THEORY-tmpzq41c
 title: 'A phase transition of the Bayesian posterior and a transition in the training trajectory are different events, and only the first is well defined'
 version: 1
 tags:
@@ -8,9 +11,9 @@ tags:
 - model-stability
 date: '2026-09-22'
 source:
-- LIT-tmpjlg44
+- LIT-544
 extends:
-- THEORY-tmpzuan6
+- THEORY-075
 promote_when: >-
   The Bayesian Antecedent Hypothesis is tested somewhere the answer could come
   out either way — a model where dynamical transitions are observed and the
@@ -20,7 +23,7 @@ promote_when: >-
   in a model with two hidden dimensions. Confirmation in a second toy model
   would not move this.
 summary: >-
-  Chen, Lau, Mendel, Wei and Murfet ([LIT-tmpjlg44](../literature.d/LIT-tmpjlg44.md)). A **Bayesian** phase
+  Chen, Lau, Mendel, Wei and Murfet ([LIT-544](../literature.d/LIT-544.md)). A **Bayesian** phase
   transition is a change in where the posterior concentrates as sample size `n`
   grows, follows from the free energy formula
   `F_n ≈ min_α [n L_n(w*_α) + λ_α log n + c_α]`, and is mathematically well
@@ -30,10 +33,10 @@ summary: >-
   at `n_cr ≈ 600`, observed at 600–700 — has no dynamical counterpart at all.
 ---
 
-# THEORY-tmpzq41c: A phase transition of the Bayesian posterior and a transition in the training trajectory are different events, and only the first is well defined
+# THEORY-074: A phase transition of the Bayesian posterior and a transition in the training trajectory are different events, and only the first is well defined
 
 <!-- inactive-ok-file: THEORY-070, THEORY-071, THEORY-072 — all Proposed, and named here as the three rival grokking mechanisms, every one of them a claim about a trajectory. That they are Proposed is the point being made when they are cited. -->
-<!-- inactive-ok-file: THEORY-tmpgrdfw — Proposed, filed in this same contribution as the stagewise account this one cautions; new, not retired. -->
+<!-- inactive-ok-file: THEORY-073 — Proposed, filed in this same contribution as the stagewise account this one cautions; new, not retired. -->
 <!-- inactive-ok-file: ADR-031 — Proposed, cited as the decision that separates an explanation from the practice it explains, which is the schema this document is filed under; Proposed is the resting state of an unmoved decision here. -->
 
 ## The account
@@ -103,7 +106,7 @@ classification the paper declines to call exhaustive.
 down the weight norm), `THEORY-071` (norm moving from a memorising circuit
 to a more efficient one) and `THEORY-070` (leaving the lazy regime) are
 all claims about a trajectory, all `Proposed`, and none is general.
-`THEORY-tmpgrdfw`'s stages are dynamical too. Everything `THEORY-tmpzuan6`
+`THEORY-073`'s stages are dynamical too. Everything `THEORY-075`
 supplies is Bayesian.
 
 Without this document the record would hold two literatures that use the same

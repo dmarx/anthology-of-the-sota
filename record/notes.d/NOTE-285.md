@@ -1,6 +1,9 @@
 ---
+number: 285
 status: Read
-paper: LIT-tmp6dook
+formerly:
+- NOTE-tmp13c7y
+paper: LIT-542
 title: 'A complexity measure that discriminates where the training loss is identically zero'
 version: 1
 date: '2026-09-22'
@@ -13,9 +16,9 @@ summary: >-
   momentum settings whose training losses have all collapsed to zero.
 ---
 
-# NOTE-tmp13c7y: A complexity measure that discriminates where the training loss is identically zero
+# NOTE-285: A complexity measure that discriminates where the training loss is identically zero
 
-<!-- inactive-ok-file: SOTA-tmpnp2m8 — Proposed, filed in this same contribution as the practice this reading supports; new, not retired. -->
+<!-- inactive-ok-file: SOTA-325 — Proposed, filed in this same contribution as the practice this reading supports; new, not retired. -->
 
 ## Contribution
 
@@ -101,7 +104,7 @@ dangling comparison into a relation the record can carry.
 and calls that "the cost of recovering a continuous measure when no continuous
 metric over the *outputs* exists". The LLC is a continuous measure over the
 *parameters* that needs no reverse-engineering, and it is the reason
-`SOTA-tmpnp2m8` is filed as a practice rather than left as a finding.
+`SOTA-325` is filed as a practice rather than left as a finding.
 
 ## Open questions
 

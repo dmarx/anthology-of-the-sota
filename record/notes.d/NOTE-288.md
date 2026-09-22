@@ -1,6 +1,9 @@
 ---
+number: 288
 status: Read
-paper: LIT-tmpjlg44
+formerly:
+- NOTE-tmpx2d9k
+paper: LIT-544
 title: 'The transition the posterior makes and the transition SGD makes are not the same transition'
 version: 1
 date: '2026-09-22'
@@ -13,7 +16,7 @@ summary: >-
   `n_cr ≈ 600` and observed at 600–700 — has no dynamical counterpart at all.
 ---
 
-# NOTE-tmpx2d9k: The transition the posterior makes and the transition SGD makes are not the same transition
+# NOTE-288: The transition the posterior makes and the transition SGD makes are not the same transition
 
 <!-- inactive-ok-file: THEORY-070, THEORY-071, THEORY-072 — all Proposed, and named here as the three rival grokking mechanisms, every one of them a claim about a trajectory. That they are Proposed is the point being made when they are cited. -->
 

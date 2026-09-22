@@ -1,0 +1,84 @@
+---
+status: Active
+title: 'Attention is not all you need: pure attention loses rank doubly exponentially with depth'
+version: 1
+tags:
+- attention-techniques
+- model-architecture
+- model-stability
+date: '2026-09-22'
+published: '2021-03-05'
+arxiv: '2103.03404'
+first_author: 'Dong'
+keywords:
+- 'rank collapse'
+- 'token uniformity'
+- 'path decomposition'
+- 'skip connections'
+- 'self-attention networks'
+implementations: []
+summary: >-
+  Dong, Cordonnier and Loukas (2021), [ARXIV-2103.03404](https://arxiv.org/abs/2103.03404) — strip
+  the skip connections and MLPs out of a transformer and its output converges
+  **doubly exponentially** to a rank-1 matrix with identical rows. Skip
+  connections stop it, MLPs slow it, and **layer normalization provably does
+  nothing** — it is a right-multiplication, and right-multiplication cannot
+  raise rank. Read as [NOTE-tmpsokgi](../notes.d/NOTE-tmpsokgi.md).
+---
+
+# LIT-tmpcv53l: Attention is not all you need: pure attention loses rank doubly exponentially with depth
+
+Dong, Cordonnier and Loukas (2021) —
+[ARXIV-2103.03404](https://arxiv.org/abs/2103.03404), ICML 2021. Read as
+[NOTE-tmpsokgi](../notes.d/NOTE-tmpsokgi.md).
+
+## Key takeaways
+
+- **The path decomposition.** A depth-`L`, `H`-head self-attention network's
+  output is a sum over paths, each path a choice of one head per layer. With
+  skip connections the path of length `l` count becomes `C(L,l)·H^l`, so short
+  paths exist — including the path that skips every layer.
+- **Theorem 2.2.** For a pure self-attention network,
+  `‖res(SAN(X))‖ ≤ (4γβ/√d_qk)^((3^L−1)/2) · ‖res(X)‖^(3^L)` — a **cubic**
+  rate, doubly exponential in depth. The authors' rule of thumb: a linear rate
+  needs about a dozen iterations to fall three orders of magnitude, a cubic
+  rate needs two or three.
+- **Skip connections are the thing that saves it** (Claim 3.1): the
+  length-zero path preserves the residual, so infinitely many
+  parameterizations have `‖res(X_L)‖ ≥ ‖res(X)‖` even as `L → ∞`. A tight
+  lower bound is posed as an open challenge.
+- **MLPs help, at a price.** The bound gains the MLP's Lipschitz constant λ;
+  more powerful MLPs slow the collapse. The authors state the cost themselves:
+  larger Lipschitz constants make the model **less robust and more sensitive
+  to input perturbations**, and raise gradient variance.
+- **Layer normalization plays no role**, and the argument is two lines: `LN`
+  absorbs into `W̃_h = W_h D_LN^{-1}` plus a rank-1 shift, and right
+  multiplication cannot increase rank.
+- **Measured on BERT, ALBERT and XLNet**, at initialization and pretrained.
+
+## Standing in the anthology
+
+**It is the trunk under a term the record was already using — for a different
+phenomenon.** [NOTE-105](../notes.d/NOTE-105.md) and its source
+[LIT-350](LIT-350.md) use "rank collapse" for *weight matrices converging to
+low-rank subspaces during training*. This paper's rank collapse is *token
+representations converging to rank 1 through depth in a forward pass*, and it
+is prevented by the residual connection every real transformer has. Two
+phenomena, one name, and the record now holds both with the distinction
+written down.
+
+**It supplies a second, independent reason for skip connections.**
+[THEORY-011](../theory.d/THEORY-011.md) holds that they smooth the loss landscape. This says
+they preserve rank, and says explicitly that this is "a previously unknown
+vital effect of skip connections beyond facilitating optimization." Two
+accounts of one component, different mechanisms, no relation declared.
+
+**And the record holds its rejection without holding it.**
+[LIT-521](LIT-521.md) argues this account identifies the wrong locus — that
+the cause of a crash sits in the weight matrix rather than in the activations.
+That rejection has been in the record since earlier today with nothing to
+reject.
+
+**[LIT-528](LIT-528.md) refines it** rather than repeating it: without skip
+connections everything lumps into one tight cluster, and with them a
+classification of limiting geometries emerges.

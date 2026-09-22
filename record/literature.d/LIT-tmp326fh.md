@@ -1,0 +1,75 @@
+---
+status: Active
+title: 'Linformer: Self-Attention with Linear Complexity'
+version: 1
+tags:
+- attention-techniques
+- inference-optimization
+date: '2026-09-22'
+published: '2020-06-08'
+arxiv: '2006.04768'
+first_author: 'Wang'
+keywords:
+- 'low-rank attention'
+- 'linear complexity'
+- 'spectrum analysis'
+- 'Johnson-Lindenstrauss'
+- 'efficient transformers'
+implementations: []
+summary: >-
+  Wang, Li, Khabsa, Fang and Ma (2020), [ARXIV-2006.04768](https://arxiv.org/abs/2006.04768) — the
+  measurement the record needed, attached to a method it has already moved
+  past. SVD of the attention matrix in RoBERTa-base and RoBERTa-large over 10k
+  sentences shows a long-tail spectrum at every layer, head and task, skewing
+  further in higher layers; Theorem 1 gives a `rank Θ(log n)` approximation.
+  Read as [NOTE-tmpqs6fj](../notes.d/NOTE-tmpqs6fj.md).
+---
+
+# LIT-tmp326fh: Linformer: Self-Attention with Linear Complexity
+
+Wang, Li, Khabsa, Fang and Ma (2020) —
+[ARXIV-2006.04768](https://arxiv.org/abs/2006.04768). Read as
+[NOTE-tmpqs6fj](../notes.d/NOTE-tmpqs6fj.md).
+
+## Key takeaways
+
+- **The measurement.** SVD of the context mapping matrix `P` across layers and
+  heads of RoBERTa-base (12 layers) and RoBERTa-large (24 layers), `n = 512`,
+  averaged over 10k sentences, on Wiki103 and IMDB. A clear long-tail spectrum
+  at **every layer, head and task** — most of `P` is recoverable from the
+  first few singular values.
+- **And it varies with depth.** The heatmap of normalized cumulative singular
+  value at the 128th of 512 shows higher layers more skewed than lower ones:
+  deeper means lower rank.
+- **Theorem 1.** For any `Q, K, V` and projections, there is a `P̃` with
+  `rank(P̃) = Θ(log n)` satisfying `‖P̃wᵀ − Pwᵀ‖ < ε‖Pwᵀ‖` with probability
+  `1 − o(1)` — a Johnson-Lindenstrauss argument.
+- **The method** projects keys and values to a fixed `k`, giving `O(n)` time
+  and space against the transformer's `O(n²)`, Sparse Transformer's `O(n√n)`
+  and Reformer's `O(n log n)`. Pretrained on BookCorpus plus Wikipedia,
+  finetuned on three GLUE tasks and IMDB, comparable or slightly better.
+
+## Standing in the anthology
+
+**Filed for the observation, not the method, and the record already holds the
+verdict on the method.** [NOTE-005](../notes.d/NOTE-005.md) positions FlashAttention directly
+against this literature — Reformer, Performer, Linformer and relatives —
+"whose premise it undermines by showing the cost model was wrong". That
+verdict stands and is about the *motivation*. It says nothing about whether
+`P` is low rank, which is the part the record needs.
+
+**It is the empirical half of a pair whose theoretical half arrived three years
+later.** [LIT-528](LIT-528.md)'s Theorem 2.1 derives a low-rank Boolean limit
+for the attention matrix, and its own framing is the sharp one: in Linformer
+and in LoRA "the low-rank structure is imposed rather than extracted from `P`
+itself". This is where it was imposed from.
+
+**Two practices in this record inherit the assumption.**
+[SOTA-184](../practices.d/SOTA-184.md) trains a low-rank update and [SOTA-147](../practices.d/SOTA-147.md)
+compresses the KV cache into a shared latent; both rest on attention having
+usable low-rank structure, and neither had a source for it.
+
+**`Active`, not `Superseded`, and the distinction is deliberate.** The record
+retires a document when its claim stops holding. The cost-model argument for
+the method was overtaken; the spectrum measurement was not, and nothing here
+has been contradicted.

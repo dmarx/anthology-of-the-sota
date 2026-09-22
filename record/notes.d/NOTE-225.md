@@ -110,7 +110,8 @@ cutoff.
 
 *Local volume*; *loss* versus *KL neighbourhoods*; the *volume hypothesis* in
 its strong, basin and measure-theoretic forms; the bits-back MDL reading;
-the Local Learning Coefficient as the singular-learning-theory neighbour.
+the Local Learning Coefficient as the singular-learning-theory neighbour
+([LIT-tmp6dook](../literature.d/LIT-tmp6dook.md), filed since; the frame is [THEORY-tmpzuan6](../theory.d/THEORY-tmpzuan6.md)).
 
 ## Connections
 

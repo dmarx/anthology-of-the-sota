@@ -1,0 +1,81 @@
+---
+status: Active
+title: 'Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains'
+version: 1
+tags:
+- representation-and-encoding
+- vision-and-graphics
+- analysis-and-evaluation
+date: '2026-09-23'
+published: '2020-06-01'
+arxiv: '2006.10739'
+first_author: 'Tancik'
+keywords:
+- 'fourier-features'
+- 'positional-encoding'
+- 'spectral-bias'
+- 'neural-tangent-kernel'
+- 'coordinate-network'
+implementations:
+- NeRF
+extends:
+- LIT-435
+summary: >-
+  Tancik, Srinivasan, Mildenhall et al. (2020), [ARXIV-2006.10739](https://arxiv.org/abs/2006.10739). A plain MLP
+  on low-dimensional coordinates learns high frequencies so slowly that in
+  practice it never does. In the NTK picture this is because the kernel's
+  eigenvalues fall off fast with frequency. Mapping the input through
+  sinusoids makes the kernel stationary, with a bandwidth set by the
+  frequencies. Random Gaussian frequencies beat NeRF's positional encoding
+  on all seven tasks, and only their scale matters.
+---
+
+# LIT-tmp0lo8a: Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains
+
+Tancik, Srinivasan, Mildenhall, Fridovich-Keil, Raghavan, Singhal,
+Ramamoorthi, Barron, Ng, UC Berkeley, Google Research, UCSD (2020) —
+[ARXIV-2006.10739](https://arxiv.org/abs/2006.10739)
+
+## Key takeaways
+
+- **Why NeRF needed positional encoding.** In the kernel (NTK) regime, a
+  network's training error decays along each kernel eigenvector at a rate
+  proportional to its eigenvalue. A coordinate MLP's NTK has eigenvalues
+  that fall off rapidly with frequency, so high-frequency content is learned
+  "extremely slowly", which is the spectral bias
+- **What the mapping does:** `γ(v) = [a_j cos(2πb_jᵀv), a_j sin(2πb_jᵀv)]`
+  induces a kernel that depends only on `v₁ − v₂`, so it is stationary, and
+  whose spectrum is set by the `b_j` and `a_j`. Too narrow underfits high
+  frequencies. Too wide overfits and aliases
+- **Only the scale matters.** Random Fourier features drawn from Gaussian,
+  uniform, log-uniform or Laplacian distributions trace the same test-error
+  curve against the standard deviation of the frequencies (Figure 4). Sixteen
+  sampled frequencies match a dense basis
+- **Table 1 (PSNR, or IoU for 3D shape):** no mapping, basic, positional
+  encoding (NeRF-style, log-spaced on-axis) and Gaussian on image, 3D shape,
+  CT, MRI and simplified NeRF tasks. Gaussian is best on all of them. For
+  example: natural images 19.32 / 21.71 / 24.95 / 25.57, NeRF 22.41 /
+  23.16 / 25.28 / 25.48
+
+## Standing in the anthology
+
+**The explanation for the step NeRF ([LIT-435](LIT-435.md)) called necessary.** Mildenhall
+et al. reported that the network without positional encoding oversmoothed.
+This paper, from an overlapping group, says why and generalizes the
+encoding. Filed from `#163` as "[theory] fourier features". The account is
+[THEORY-tmpwobgx](../theory.d/THEORY-tmpwobgx.md) and the recommendation is [SOTA-tmpwa18v](../practices.d/SOTA-tmpwa18v.md).
+
+**The theory is a kernel-regime argument**, and [THEORY-076](../theory.d/THEORY-076.md) says the kernel
+regime is exactly where networks do not learn features. The two are
+consistent. Fourier features act on the input, before any feature learning,
+and the paper checks the kernel prediction against trained 4-layer,
+1024-wide networks (Figure 3), where it holds. But it is not a claim about
+feature-learning dynamics.
+
+**The language-model echo is analogy.** YaRN ([LIT-193](LIT-193.md)) motivates its
+NTK-aware RoPE interpolation with this argument ("RoPE is close to a
+Fourier feature"). This paper studies MLPs on 1–3-dimensional coordinates,
+not attention over token positions, and the record does not treat it as
+evidence for [SOTA-151](../practices.d/SOTA-151.md).
+
+Read — [NOTE-tmpqp5q1](../notes.d/NOTE-tmpqp5q1.md).

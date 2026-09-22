@@ -101,7 +101,7 @@ warmup, normalization, or both. Nobody has compared them, and the axis is only
 visible because all three are filed together.
 
 **It juxtaposes sharply with a paper filed hours earlier.**
-[LIT-tmpxqt7b](../literature.d/LIT-tmpxqt7b.md) measures that the trace-normalized spectrum
+[LIT-520](../literature.d/LIT-520.md) measures that the trace-normalized spectrum
 stops moving early in ordinary pretraining and stays put. Pion makes it never
 move. The obvious question — is the early spectral motion Pion forbids the
 part that was doing the work? — is asked by neither paper, and the two are

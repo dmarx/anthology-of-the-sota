@@ -1,0 +1,77 @@
+---
+status: Active
+title: 'Concepts Whisper: Spectral Anti-Concentration and the Dual Geometry of Transformer Representations'
+version: 1
+tags:
+- representation-and-encoding
+- analysis-and-evaluation
+date: '2026-09-22'
+published: '2026-05-02'
+arxiv: '2605.01609'
+first_author: 'Acharya'
+keywords:
+- 'linear representation hypothesis'
+- 'causal inner product'
+- 'unembedding covariance'
+- 'concept directions'
+- 'activation steering'
+implementations: []
+summary: >-
+  Acharya, Rimal and Dhakal (2026), [ARXIV-2605.01609](https://arxiv.org/abs/2605.01609) —
+  contextual concept directions sit in the **low**-variance tail of the
+  unembedding covariance in 17 of 17 models, while static vocabulary contrasts
+  sit at the top. The paper also reports a robust null against the hypothesis
+  it set out to test, and labels each of its own claims robust, partial or
+  suggestive. Read as [NOTE-tmpruk19](../notes.d/NOTE-tmpruk19.md).
+---
+<!-- inactive-ok-file: THEORY-034 — Proposed, named as the geometry claim
+     this one stands beside; the sentence says neither subsumes the other. -->
+
+# LIT-tmpdi9f9: Concepts Whisper: Spectral Anti-Concentration and the Dual Geometry of Transformer Representations
+
+Acharya, Rimal and Dhakal (2026) —
+[ARXIV-2605.01609](https://arxiv.org/abs/2605.01609). Read as
+[NOTE-tmpruk19](../notes.d/NOTE-tmpruk19.md).
+
+## Key takeaways
+
+- **Concept directions anti-concentrate.** Residual-stream
+  difference-of-means vectors for 22 semantic categories sit in the
+  low-eigenvalue directions of the unembedding second moment — 17 of 17 models
+  against a uniform baseline (`p = 3.8×10⁻⁹`), 13 of 17 against a
+  norm-matched random-direction null.
+- **Three extraction methods agree.** Difference-of-means, sparse-autoencoder
+  features (`p = 4.5×10⁻¹⁹` across concepts within a model) and linear probes
+  on Llama and Qwen.
+- **A dual geometry.** *Static* unembedding-row contrasts concentrate in the
+  high-variance directions (`p < 10⁻⁴`) while *activation-space* concept
+  directions anti-concentrate. Same model, opposite ends of the same spectrum,
+  depending on whether the representation is contextual.
+- **A robust null, reported as the headline it displaced.** The work began by
+  testing whether a published causal inner product aids cross-lingual concept
+  transport. Across 17 models and four language pairs it finds no benefit over
+  spectral regularization alone: `p = 0.95`.
+- **The paper grades its own claims.** A table in the body labels each finding
+  robust, partial or suggestive, with the evidence beside it, and marks two
+  of six as partial.
+
+## Standing in the anthology
+
+**It is a second geometry claim beside the one the record holds.**
+[THEORY-034](../theory.d/THEORY-034.md) says concepts sit in embedding space as intersections
+of half-spaces. This says *where* in the spectrum they sit, and that the
+answer differs between static vocabulary geometry and contextual activation
+geometry. Neither subsumes the other and neither cites the other.
+
+**It generalizes a shape this record keeps meeting.** The smallest directions
+of a matrix carrying what matters is now recorded three times in unrelated
+literatures — the bottom of the weight spectrum in
+[LIT-517](LIT-517.md), the spectral tail of the unembedding
+covariance here, and the residual that low-rank compression hands its
+quantizer in [SOTA-314](../practices.d/SOTA-314.md). Three different matrices; the record
+counts them and does not join them.
+
+**Filed partly for how it reports itself.** The self-graded claim table, the
+robust null against its own starting hypothesis, and the four-of-five and
+six-of-eight partial results stated as partial are the practices
+[DP-010](../../docs/design-principles.md#dp-10) exists to ask for.

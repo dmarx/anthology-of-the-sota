@@ -1,0 +1,88 @@
+---
+status: Active
+title: 'Feature Learning in Infinite-Width Neural Networks'
+version: 1
+tags:
+- training-optimization
+- model-stability
+- analysis-and-evaluation
+date: '2026-09-22'
+published: '2020-11-01'
+arxiv: '2011.14522'
+first_author: 'Yang'
+keywords:
+- 'tensor-programs'
+- 'maximal-update-parametrization'
+- 'feature-learning'
+- 'infinite-width'
+- 'neural-tangent-kernel'
+- 'mean-field'
+- 'abc-parametrization'
+implementations: []
+summary: >-
+  Yang and Hu (2020), [ARXIV-2011.14522](https://arxiv.org/abs/2011.14522) — Tensor Programs IV, where µP is
+  introduced. Among parametrizations that scale initialization, multipliers
+  and learning rate with width, every stable, nontrivial one either learns
+  features in the wide limit or trains as a kernel, never both. The standard
+  parametrization is stable only at an O(1/width) learning rate, which puts it
+  in the kernel regime. µP is the one that updates every layer maximally, and
+  its maximum stable learning rate does not move with width.
+extended_by:
+- LIT-148
+- LIT-437
+---
+
+# LIT-tmpppu9n: Feature Learning in Infinite-Width Neural Networks
+
+Yang and Hu, Microsoft (2020) — [ARXIV-2011.14522](https://arxiv.org/abs/2011.14522)
+
+## Key takeaways
+
+- **One family covers the familiar parametrizations.** An
+  *abc-parametrization* sets, per layer, a width exponent on the multiplier
+  (`a`), on the initialization scale (`b`), and one on the learning rate
+  (`c`). Standard (PyTorch default), NTK and mean-field parametrizations are
+  all points in it
+- **Dynamical Dichotomy.** Every stable, nontrivial abc-parametrization has an
+  infinite-width limit that either learns features or evolves as kernel
+  gradient descent. It cannot do both. The kernel limit makes pretraining no
+  better than random initialization for transfer (Theorem H.17)
+- **The standard parametrization can stay stable only at a learning rate of
+  `O(1/width)`**, and at that rate it is in the kernel regime (Theorem 4.1).
+  A larger rate blows up the logits after one step
+- **µP** divides the logits by `√width`, scales the first layer's effective update
+  up by `width` and holds the learning rate constant in width. It is the unique
+  stable abc-parametrization in which every weight is *updated maximally* and
+  the readout is *initialized maximally* (Appendix C.1)
+- **Measured:** on a two-hidden-layer ReLU MLP on CIFAR-10, the largest
+  usable learning rate scales like `1/width` under SP and stays constant
+  under µP. On Word2Vec and first-order-MAML Omniglot, the exact µP limit of
+  a one-hidden-layer *linear* network beats the NTK/GP limits (word analogy:
+  56.45 against 0.0 on fil9), and finite µP networks approach it from below
+  as width grows
+
+## Standing in the anthology
+
+**Where µP comes from.** [SOTA-143](../practices.d/SOTA-143.md) tells you to parametrize with µP and
+transfer hyperparameters across width. It is sourced to Tensor Programs V
+([LIT-148](LIT-148.md)), which is the *transfer* paper. The parametrization itself, and the
+theorem that says why the standard one fails at width, are here, and TP-V
+builds on both. The spectral-condition paper ([LIT-437](LIT-437.md)) is a re-derivation of
+the same object.
+
+A curation entry of 2026-09-19 said the record already carried the µP paper,
+because TP-V "*is* the µP paper". That was wrong. This note corrects it.
+
+**What it contributes that TP-V does not** is the *reason*, filed as
+[THEORY-tmp9m644](../theory.d/THEORY-tmp9m644.md). Under SP the width that makes a model big is the same width
+that forces its learning rate down. It is a theorem about scaling
+exponents, not an empirical regularity. It is also a different account from
+<!-- inactive-ok: THEORY-024 — Proposed, named as the rival frame this account does not depend on, not leaned on -->
+[THEORY-024](../theory.d/THEORY-024.md)'s duality frame, and neither needs the other.
+
+**Carries no practice of its own.** Its instruction is `SOTA-143`'s, and the
+evidence for *transfer* (rather than a stable maximum rate) is TP-V's. The
+paper's own experiments use SGD, MLPs and linear networks. Adam, Transformers
+and tuning a proxy are all TP-V.
+
+Read — [NOTE-tmpib9c9](../notes.d/NOTE-tmpib9c9.md).

@@ -6,7 +6,7 @@
 
 **In-context learning** — getting behaviour out of a fixed model by what you put in the context — few-shot exemplars, chain of thought, prompting strategy, and what the context can and cannot buy.
 
-19 of 471 LIT documents. Back to the [full index](../README.md).
+19 of 475 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

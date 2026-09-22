@@ -1,5 +1,8 @@
 ---
+number: 70
 status: Proposed
+formerly:
+- THEORY-tmplnntp
 title: 'Grokking is the transition from lazy to rich training dynamics'
 version: 1
 tags:
@@ -8,10 +11,10 @@ tags:
 - model-stability
 date: '2026-09-22'
 source:
-- LIT-tmp069e7
+- LIT-537
 corrects:
-- THEORY-tmpz9vjh
-- THEORY-tmpmiiyl
+- THEORY-072
+- THEORY-071
 promote_when: >-
   The account is extended to cover ungrokking — a grokked network regressing
   to near-random test accuracy at a sharp threshold in dataset size, with an
@@ -20,7 +23,7 @@ promote_when: >-
   replacing them, and the record holds three partial explanations rather than
   one.
 summary: >-
-  Kumar, Bordelon, Gershman and Pehlevan ([LIT-tmp069e7](../literature.d/LIT-tmp069e7.md)). The memorising phase
+  Kumar, Bordelon, Gershman and Pehlevan ([LIT-537](../literature.d/LIT-537.md)). The memorising phase
   is early *lazy* training: the network fits the training set in its initial
   feature basis, which the linearised approximation describes, so training loss
   falls with no test improvement. Grokking is the late breakdown of that
@@ -31,10 +34,10 @@ summary: >-
   explicit counterexample to them.
 ---
 
-# THEORY-tmplnntp: Grokking is the transition from lazy to rich training dynamics
+# THEORY-070: Grokking is the transition from lazy to rich training dynamics
 
-<!-- inactive-ok-file: THEORY-tmpmiiyl — Proposed, and named here as one of the three rival mechanisms this cluster holds; Proposed is the record's judgement on its scope, which is the point being made when it is cited. -->
-<!-- inactive-ok-file: THEORY-tmpz9vjh — Proposed, and named here as one of the three rival mechanisms this cluster holds; Proposed is the record's judgement on its scope, which is the point being made when it is cited. -->
+<!-- inactive-ok-file: THEORY-071 — Proposed, and named here as one of the three rival mechanisms this cluster holds; Proposed is the record's judgement on its scope, which is the point being made when it is cited. -->
+<!-- inactive-ok-file: THEORY-072 — Proposed, and named here as one of the three rival mechanisms this cluster holds; Proposed is the record's judgement on its scope, which is the point being made when it is cited. -->
 
 ## The account
 
@@ -69,7 +72,7 @@ throughout; and the network starts lazy.
 decay: the model groks, and the parameter weight norm rises through the
 transition.** The polynomial-regression task behaves the same way.
 
-Both [THEORY-tmpz9vjh](THEORY-tmpz9vjh.md) and [THEORY-tmpmiiyl](THEORY-tmpmiiyl.md) explain grokking by a late *decrease*
+Both [THEORY-072](THEORY-072.md) and [THEORY-071](THEORY-071.md) explain grokking by a late *decrease*
 in weight norm — one as a walk down to the generalizing shell, the other as
 norm moving from the memorising circuit to the more efficient one. Neither can
 produce a run with no regularizer and a rising norm. That is why `corrects` is
@@ -91,7 +94,7 @@ about the experiments either paper reports.
 ## Why it is `Proposed`
 
 **It leaves its predecessor's two confirmed novel predictions unexplained.**
-[THEORY-tmpmiiyl](THEORY-tmpmiiyl.md) derived ungrokking and semi-grokking before anybody had seen
+[THEORY-071](THEORY-071.md) derived ungrokking and semi-grokking before anybody had seen
 them, and this account says nothing about a grokked network regressing at a
 sharp threshold in dataset size with a weight-decay-independent endpoint. A
 correction that cannot reproduce what it corrects has narrowed the earlier
@@ -102,5 +105,5 @@ transformer and MNIST results are reported as consistent rather than derived.
 
 **And its second condition is a dataset-size window** — so the paper attacking
 the others hardest still agrees with all of them, and with [LIT-085](../literature.d/LIT-085.md) and
-[LIT-tmp4uno1](../literature.d/LIT-tmp4uno1.md), about the regime. That agreement is [THEORY-tmpdlyut](THEORY-tmpdlyut.md) and it is the
+[LIT-538](../literature.d/LIT-538.md), about the regime. That agreement is [THEORY-069](THEORY-069.md) and it is the
 only `Active` account here.

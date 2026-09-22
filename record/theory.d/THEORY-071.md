@@ -1,5 +1,8 @@
 ---
+number: 71
 status: Proposed
+formerly:
+- THEORY-tmpmiiyl
 title: 'A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips at a critical dataset size'
 version: 1
 tags:
@@ -8,7 +11,7 @@ tags:
 - training-optimization
 date: '2026-09-22'
 source:
-- LIT-tmp9xrey
+- LIT-539
 - LIT-085
 promote_when: >-
   The efficiency crossover is demonstrated outside algorithmic data — a
@@ -17,7 +20,7 @@ promote_when: >-
   what stands between this account and being the record's explanation of
   grokking, not more evidence in the setting it already covers.
 summary: >-
-  Varma et al. ([LIT-tmp9xrey](../literature.d/LIT-tmp9xrey.md)), making precise the "simpler solution" genre
+  Varma et al. ([LIT-539](../literature.d/LIT-539.md)), making precise the "simpler solution" genre
   [LIT-085](../literature.d/LIT-085.md) proposed. Two circuit families fit the training set; once
   cross-entropy is near zero the only remaining pressure is weight decay, which
   prefers whichever produces a given logit at lower parameter norm.
@@ -25,14 +28,14 @@ summary: >-
   not, so they cross at a critical dataset size `D_crit`. From that the paper
   derived **ungrokking** and **semi-grokking** and then observed both.
   `Proposed`, on scope rather than on evidence: it needs weight decay, and
-  [LIT-tmp069e7](../literature.d/LIT-tmp069e7.md) groks without any.
+  [LIT-537](../literature.d/LIT-537.md) groks without any.
 corrected_by:
-- THEORY-tmplnntp
+- THEORY-070
 ---
 
-# THEORY-tmpmiiyl: A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips at a critical dataset size
+# THEORY-071: A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips at a critical dataset size
 
-<!-- inactive-ok-file: THEORY-tmplnntp — Proposed, and named here as one of the three rival mechanisms this cluster holds; Proposed is the record's judgement on its scope, which is the point being made when it is cited. -->
+<!-- inactive-ok-file: THEORY-070 — Proposed, and named here as one of the three rival mechanisms this cluster holds; Proposed is the record's judgement on its scope, which is the point being made when it is cited. -->
 
 ## The account
 
@@ -81,7 +84,7 @@ addition at `P = 113`, with nine further algorithmic tasks in the appendix.
 
 ## Why it is `Proposed` anyway
 
-**It needs weight decay, and [LIT-tmp069e7](../literature.d/LIT-tmp069e7.md) exhibits grokking without any** — on
+**It needs weight decay, and [LIT-537](../literature.d/LIT-537.md) exhibits grokking without any** — on
 modular arithmetic, with a two-layer MLP, and with the parameter norm *rising*
 through the transition. The three ingredients are claimed sufficient rather
 than necessary, so this is not an internal contradiction; it does mean the
@@ -96,5 +99,5 @@ is exactly what the `promote_when` asks somebody to supply.
 
 The status is about scope. On evidential shape — risky predictions, made
 first, confirmed after — this is the best-supported account here, and
-[THEORY-tmplnntp](THEORY-tmplnntp.md), which contradicts it, leaves both of its novel phenomena
+[THEORY-070](THEORY-070.md), which contradicts it, leaves both of its novel phenomena
 unexplained.

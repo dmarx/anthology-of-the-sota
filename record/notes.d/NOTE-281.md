@@ -1,6 +1,9 @@
 ---
+number: 281
 status: Read
-paper: LIT-tmp4uno1
+formerly:
+- NOTE-tmphxkj0
+paper: LIT-538
 title: 'The founding paper already measured the regime dependence'
 version: 1
 date: '2026-09-22'
@@ -13,7 +16,7 @@ summary: >-
   intervention it found, which is the thread every later mechanism pulls on.
 ---
 
-# NOTE-tmphxkj0: The founding paper already measured the regime dependence
+# NOTE-281: The founding paper already measured the regime dependence
 
 ## Contribution
 

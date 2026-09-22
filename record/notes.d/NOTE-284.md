@@ -1,6 +1,9 @@
 ---
+number: 284
 status: Read
-paper: LIT-tmp069e7
+formerly:
+- NOTE-tmpvrr0d
+paper: LIT-537
 title: 'A counterexample with no weight decay and a rising weight norm'
 version: 1
 date: '2026-09-22'
@@ -13,7 +16,7 @@ summary: >-
   with two measurable knobs; what it does not address is ungrokking.
 ---
 
-# NOTE-tmpvrr0d: A counterexample with no weight decay and a rising weight norm
+# NOTE-284: A counterexample with no weight decay and a rising weight norm
 
 ## Contribution
 

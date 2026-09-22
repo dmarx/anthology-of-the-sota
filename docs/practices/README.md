@@ -293,7 +293,7 @@ What the status column means in this scheme — the words are luria's, the meani
 | [SOTA-197](../../record/practices.d/SOTA-197.md) v2 | Account for test-set proximity to the training data when evaluating, and state your contamination exposure |  | Active |
 | [SOTA-198](../../record/practices.d/SOTA-198.md) v2 | Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run |  | Active |
 | [SOTA-199](../../record/practices.d/SOTA-199.md) | Regularize a narrow fine-tune against the pre-fine-tuning model's own samples |  | Active |
-| [SOTA-200](../../record/practices.d/SOTA-200.md) v2 | Check whether an emergent capability is a metric artefact before believing it |  | Active |
+| [SOTA-200](../../record/practices.d/SOTA-200.md) v3 | Check whether an emergent capability is a metric artefact before believing it |  | Active |
 | [SOTA-201](../../record/practices.d/SOTA-201.md) | Give each pretrained component its own learning rate when fine-tuning a composite model |  | Active |
 | [SOTA-202](../../record/practices.d/SOTA-202.md) | Clamp the prediction to the training range at every step when sampling from a model's own output |  | Active |
 | [SOTA-203](../../record/practices.d/SOTA-203.md) | Sample a diffusion model with a higher-order ODE solver on the weights you already trained | Lu et al. (2022), [LIT-076](../../record/literature.d/LIT-076.md) — the diffusion ODE is semi-linear, so solve the linear part exactly and approximate only the neural integral. 10-20 function evaluations, no retraining. Rests on [LIT-038](../../record/literature.d/LIT-038.md), which established that the sampler is not fixed by the training objective. | Active |

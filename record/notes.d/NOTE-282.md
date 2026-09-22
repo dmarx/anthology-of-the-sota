@@ -1,6 +1,9 @@
 ---
+number: 282
 status: Read
-paper: LIT-tmpkn1i6
+formerly:
+- NOTE-tmpi8cjd
+paper: LIT-540
 title: 'Induced on images, text and molecules, and eliminated on demand'
 version: 1
 date: '2026-09-22'
@@ -13,7 +16,7 @@ summary: >-
   grokking on algorithmic data.
 ---
 
-# NOTE-tmpi8cjd: Induced on images, text and molecules, and eliminated on demand
+# NOTE-282: Induced on images, text and molecules, and eliminated on demand
 
 ## Contribution
 

@@ -1,6 +1,9 @@
 ---
+number: 283
 status: Read
-paper: LIT-tmp9xrey
+formerly:
+- NOTE-tmpp2k64
+paper: LIT-539
 title: 'Two novel phenomena predicted from the theory and then observed'
 version: 1
 date: '2026-09-22'
@@ -14,7 +17,7 @@ summary: >-
   counterexample lands.
 ---
 
-# NOTE-tmpp2k64: Two novel phenomena predicted from the theory and then observed
+# NOTE-283: Two novel phenomena predicted from the theory and then observed
 
 ## Contribution
 

@@ -1,6 +1,9 @@
 ---
+number: 296
 status: Read
-paper: LIT-tmp0lo8a
+formerly:
+- NOTE-tmpqp5q1
+paper: LIT-550
 title: 'Fourier features'
 version: 1
 date: '2026-09-23'
@@ -15,7 +18,7 @@ summary: >-
 
 <!-- inactive-ok-file: THEORY-064 — Proposed, named as a separate account built on the same NTK spectral bias, not leaned on -->
 
-# NOTE-tmpqp5q1: Fourier features
+# NOTE-296: Fourier features
 
 ## Contribution
 
@@ -87,7 +90,7 @@ from the same NTK spectral bias, in a different setting.
 
 - **R1** — Encode low-dimensional coordinates with sinusoids of sampled
   frequencies, and tune the scale on held-out data. *Topic:*
-  representation-and-encoding. *Strength:* moderate. Filed as [SOTA-tmpwa18v](../practices.d/SOTA-tmpwa18v.md)
+  representation-and-encoding. *Strength:* moderate. Filed as [SOTA-331](../practices.d/SOTA-331.md)
 
 ## Bearing on the record
 
@@ -96,7 +99,7 @@ from the same NTK spectral bias, in a different setting.
 - **[SOTA-205](../practices.d/SOTA-205.md)** replaces the coordinate MLP with explicit structures such as
   hash grids. Those are another way to give the network high-frequency
   capacity, and this paper's account covers why they are needed
-- **[THEORY-tmpwobgx](../theory.d/THEORY-tmpwobgx.md)** is filed from this paper
+- **[THEORY-077](../theory.d/THEORY-077.md)** is filed from this paper
 
 ## Limitations
 

@@ -1,6 +1,9 @@
 ---
+number: 294
 status: Read
-paper: LIT-tmpeekbd
+formerly:
+- NOTE-tmpkzvug
+paper: LIT-552
 title: 'XGrammar'
 version: 1
 date: '2026-09-23'
@@ -13,7 +16,7 @@ summary: >-
   syntactic validity. Read §1–6; the appendix was not read.
 ---
 
-# NOTE-tmpkzvug: XGrammar
+# NOTE-294: XGrammar
 
 ## Contribution
 
@@ -84,11 +87,11 @@ with speculative decoding ([SOTA-227](../practices.d/SOTA-227.md)) and jump-forw
 
 - **R1** — Enforce structure with a grammar mask, not by retrying or
   post-hoc parsing, and use an engine that precomputes per-state masks and
-  overlaps them with the forward pass. Filed as [SOTA-tmpazros](../practices.d/SOTA-tmpazros.md)
+  overlaps them with the forward pass. Filed as [SOTA-330](../practices.d/SOTA-330.md)
 
 ## Bearing on the record
 
-- **[SOTA-tmpazros](../practices.d/SOTA-tmpazros.md)** is new. The record had no constrained-decoding practice
+- **[SOTA-330](../practices.d/SOTA-330.md)** is new. The record had no constrained-decoding practice
 - **[SOTA-227](../practices.d/SOTA-227.md)** (speculative decoding): the persistent stack's rollback is
   what lets a grammar mask coexist with draft-and-verify
 

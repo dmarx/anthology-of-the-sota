@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-290 of 293 NOTE documents. Back to the [full index](../README.md).
+293 of 296 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -300,3 +300,6 @@
 | [NOTE-291](../../../record/notes.d/NOTE-291.md) | Matryoshka Representation Learning | Sum the task loss over log(d) nested prefixes of one embedding, and each prefix matches a separately trained model of that width on ResNet50 and ImageNet. Retrieval that shortlists on 16 dimensions and re-ranks on 2048 is 14× faster at equal mAP@10. Read §1–6 and Appendices D.2 and I; the remaining appendix tables were skimmed. | Read |
 | [NOTE-292](../../../record/notes.d/NOTE-292.md) | Tensor Programs IV | Classifies width-scaling parametrizations (abc-parametrizations) and proves that every stable, nontrivial one either learns features in the wide limit or trains as a kernel, not both. The standard parametrization is stable only at an O(1/width) learning rate, which is the kernel side. Introduces µP as the unique member that updates every layer maximally. Read end to end through §10 and Appendices A, C.1 and D. The proofs in Appendix H were not checked line by line. | Read |
 | [NOTE-293](../../../record/notes.d/NOTE-293.md) | Gemma 3n | Per-Layer Embeddings: every token id indexes a table with one 256-d vector per layer, gated into the residual at each layer, about 2.35B parameters held off the accelerator. No measurements are published. Read from the model overview, the developer guide, and the Hugging Face `transformers` implementation, which is the only place the mechanism is fully specified. | Read |
+| [NOTE-294](../../../record/notes.d/NOTE-294.md) | XGrammar | Grammar-constrained decoding made nearly free. It splits the vocabulary into tokens whose validity depends only on the automaton's stack top, which are precomputed, and the under-1% that need the full stack, which are checked at runtime. The mask is built on the CPU during the forward pass. Each optimization is ablated. Output quality is measured only as syntactic validity. Read §1–6; the appendix was not read. | Read |
+| [NOTE-295](../../../record/notes.d/NOTE-295.md) | SIREN | Sine-activated MLPs whose derivatives are well behaved, trainable because weights U(±√(6/n)) keep pre-activations standard normal and outputs arcsine at every depth, with ω₀ = 30 on the first layer. They fit signals and derivatives that ReLU, tanh and positional encoding do not. Read §1–4.2 and supplement §1; the later experiments were skimmed. | Read |
+| [NOTE-296](../../../record/notes.d/NOTE-296.md) | Fourier features | A coordinate MLP's NTK has fast spectral falloff, so it fits high frequencies too slowly to matter. A sinusoidal input mapping makes the composed kernel stationary and sets its bandwidth, and the NTK linear model predicts the trained networks' loss curves. Gaussian random frequencies are best on seven tasks, and only their scale matters. Read §1–7; the appendices were not read. | Read |

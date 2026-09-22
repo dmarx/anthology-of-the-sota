@@ -1,9 +1,12 @@
 ---
+number: 332
 status: Proposed
+formerly:
+- SOTA-tmpx07li
 promote_when: >-
   An independent comparison, on a derivative-supervised task (a PDE,
   an Eikonal SDF fit, or gradient-domain reconstruction), of SIREN against a
-  ReLU network with a tuned Fourier-feature encoding (LIT-tmp0lo8a) at equal
+  ReLU network with a tuned Fourier-feature encoding (LIT-550) at equal
   size, reporting error on the derivatives and not only on values. The
   source paper compares against ReLU with positional encoding only on an
   image fit, and never against Fourier features.
@@ -15,9 +18,9 @@ tags:
 - vision-and-graphics
 date: '2026-09-23'
 source:
-- LIT-tmpe1y6b
+- LIT-551
 introduced_by:
-- LIT-tmpe1y6b
+- LIT-551
 consensus: unreplicated
 consensus_note: >-
   One group's paper, widely reused as a baseline. The one outside
@@ -28,24 +31,24 @@ consensus_note: >-
 implementations:
 - SIREN
 summary: >-
-  Sitzmann et al. (2020), [LIT-tmpe1y6b](../literature.d/LIT-tmpe1y6b.md) — a sine network's derivative is
+  Sitzmann et al. (2020), [LIT-551](../literature.d/LIT-551.md) — a sine network's derivative is
   another sine network, so gradients and Laplacians of the fit are well
   behaved where a ReLU network's second derivative is zero. Initialize
   hidden weights U(±√(6/n)) and scale the first layer by ω₀ = 30 (tune it to
   the signal), or deep sine networks do not train. It fits images, video,
   SDFs and PDE solutions from derivative supervision.
 explained_by:
-- THEORY-tmpx6puj
+- THEORY-078
 ---
 
-<!-- inactive-ok-file: THEORY-tmpx6puj — Proposed, filed in this same contribution as the account of this practice's initialization -->
+<!-- inactive-ok-file: THEORY-078 — Proposed, filed in this same contribution as the account of this practice's initialization -->
 
-# SOTA-tmpx07li: When an implicit representation will be supervised through its derivatives, use sine activations with the SIREN initialization rather than a ReLU network
+# SOTA-332: When an implicit representation will be supervised through its derivatives, use sine activations with the SIREN initialization rather than a ReLU network
 
 ## Source
 
-Sitzmann et al. (2020), [LIT-tmpe1y6b](../literature.d/LIT-tmpe1y6b.md) — SIREN. Read as [NOTE-tmpncb8j](../notes.d/NOTE-tmpncb8j.md). The
-initialization account is [THEORY-tmpx6puj](../theory.d/THEORY-tmpx6puj.md).
+Sitzmann et al. (2020), [LIT-551](../literature.d/LIT-551.md) — SIREN. Read as [NOTE-295](../notes.d/NOTE-295.md). The
+initialization account is [THEORY-078](../theory.d/THEORY-078.md).
 
 ## The practice
 
@@ -81,10 +84,10 @@ Helmholtz solve, or gradient-domain image editing:
   prefers explicit structures ([SOTA-205](SOTA-205.md)), and an outside same-size benchmark
   ([LIT-511](../literature.d/LIT-511.md)) has SIREN losing to them
 - **No comparison against Fourier features**, the concurrent input-side fix
-  ([LIT-tmp0lo8a](../literature.d/LIT-tmp0lo8a.md), [SOTA-tmpwa18v](SOTA-tmpwa18v.md)). Which is better for derivative supervision
+  ([LIT-550](../literature.d/LIT-550.md), [SOTA-331](SOTA-331.md)). Which is better for derivative supervision
   is open in the record
 - **The initialization is not optional**, according to the authors, but its
-  necessity is asserted, not ablated ([THEORY-tmpx6puj](../theory.d/THEORY-tmpx6puj.md))
+  necessity is asserted, not ablated ([THEORY-078](../theory.d/THEORY-078.md))
 
 ## Known implementations
 

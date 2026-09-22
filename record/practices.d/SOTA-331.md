@@ -1,5 +1,8 @@
 ---
+number: 331
 status: Active
+formerly:
+- SOTA-tmpwa18v
 title: 'Pass low-dimensional coordinate inputs through sinusoids of sampled frequencies before an MLP, and tune the frequency scale rather than the distribution'
 version: 1
 tags:
@@ -7,10 +10,10 @@ tags:
 - vision-and-graphics
 date: '2026-09-23'
 source:
-- LIT-tmp0lo8a
+- LIT-550
 - LIT-435
 introduced_by:
-- LIT-tmp0lo8a
+- LIT-550
 consensus: converged
 consensus_note: >-
   Converged for the general move: sinusoidal encoding of coordinate inputs
@@ -22,7 +25,7 @@ consensus_note: >-
 implementations:
 - NeRF
 summary: >-
-  Tancik et al. (2020), [LIT-tmp0lo8a](../literature.d/LIT-tmp0lo8a.md), with NeRF ([LIT-435](../literature.d/LIT-435.md)) — an MLP on raw
+  Tancik et al. (2020), [LIT-550](../literature.d/LIT-550.md), with NeRF ([LIT-435](../literature.d/LIT-435.md)) — an MLP on raw
   coordinates never fits high frequencies. Map the input to
   `[cos 2πBv, sin 2πBv]` with `B ~ N(0, σ²)` and tune `σ` on held-out data:
   too small blurs, too large aliases, and the distribution's shape does not
@@ -30,18 +33,18 @@ summary: >-
   encoding on all seven image, shape, CT, MRI and view-synthesis tasks
   tested.
 explained_by:
-- THEORY-tmpwobgx
+- THEORY-077
 ---
 
 <!-- inactive-ok-file: SOTA-179 — Proposed, named as a practice this paper is not evidence for -->
 
-# SOTA-tmpwa18v: Pass low-dimensional coordinate inputs through sinusoids of sampled frequencies before an MLP, and tune the frequency scale rather than the distribution
+# SOTA-331: Pass low-dimensional coordinate inputs through sinusoids of sampled frequencies before an MLP, and tune the frequency scale rather than the distribution
 
 ## Source
 
-Tancik et al. (2020), [LIT-tmp0lo8a](../literature.d/LIT-tmp0lo8a.md) — read as [NOTE-tmpqp5q1](../notes.d/NOTE-tmpqp5q1.md). NeRF
+Tancik et al. (2020), [LIT-550](../literature.d/LIT-550.md) — read as [NOTE-296](../notes.d/NOTE-296.md). NeRF
 ([LIT-435](../literature.d/LIT-435.md)), from an overlapping group and published first, is the ablation
-showing that the network without an encoding oversmooths. Explained by [THEORY-tmpwobgx](../theory.d/THEORY-tmpwobgx.md).
+showing that the network without an encoding oversmooths. Explained by [THEORY-077](../theory.d/THEORY-077.md).
 
 ## The practice
 

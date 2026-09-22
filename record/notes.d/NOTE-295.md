@@ -1,6 +1,9 @@
 ---
+number: 295
 status: Read
-paper: LIT-tmpe1y6b
+formerly:
+- NOTE-tmpncb8j
+paper: LIT-551
 title: 'SIREN'
 version: 1
 date: '2026-09-23'
@@ -12,9 +15,9 @@ summary: >-
   Read §1–4.2 and supplement §1; the later experiments were skimmed.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpx07li THEORY-tmpx6puj — both Proposed, filed in this same contribution from this paper; new, not retired -->
+<!-- inactive-ok-file: SOTA-332 THEORY-078 — both Proposed, filed in this same contribution from this paper; new, not retired -->
 
-# NOTE-tmpncb8j: SIREN
+# NOTE-295: SIREN
 
 ## Contribution
 
@@ -76,7 +79,7 @@ speeds training.
 
 ## Connections
 
-It is concurrent with Fourier features ([LIT-tmp0lo8a](../literature.d/LIT-tmp0lo8a.md)) and NeRF's
+It is concurrent with Fourier features ([LIT-550](../literature.d/LIT-550.md)) and NeRF's
 positional encoding ([LIT-435](../literature.d/LIT-435.md)), which address the same high-frequency
 failure from the input side. SIREN addresses it through the activation, and
 adds derivatives. Image-GS ([LIT-511](../literature.d/LIT-511.md)) later benchmarks SIREN and Fourier
@@ -85,17 +88,17 @@ features at fixed size for image fitting.
 ## Recommendations
 
 - **R1** — When the fit will be supervised through its derivatives, use
-  sine activations with this initialization. Filed as [SOTA-tmpx07li](../practices.d/SOTA-tmpx07li.md)
+  sine activations with this initialization. Filed as [SOTA-332](../practices.d/SOTA-332.md)
 - **R2** — If you use periodic activations at all, initialize so
   pre-activations are about N(0, 1) and set the first-layer frequency to
-  the signal. Part of [SOTA-tmpx07li](../practices.d/SOTA-tmpx07li.md)
+  the signal. Part of [SOTA-332](../practices.d/SOTA-332.md)
 
 ## Bearing on the record
 
 - **[SOTA-205](../practices.d/SOTA-205.md)** (explicit structures over coordinate MLPs) is about fitting
   values efficiently, and SIREN does not contest it there. Image-GS
   ([LIT-511](../literature.d/LIT-511.md)) has all the coordinate MLPs losing on value fitting
-- **[THEORY-tmpx6puj](../theory.d/THEORY-tmpx6puj.md)** files the initialization account at `Proposed`
+- **[THEORY-078](../theory.d/THEORY-078.md)** files the initialization account at `Proposed`
 
 ## Limitations
 

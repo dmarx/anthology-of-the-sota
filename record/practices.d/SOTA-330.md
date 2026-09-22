@@ -1,5 +1,8 @@
 ---
+number: 330
 status: Active
+formerly:
+- SOTA-tmpazros
 title: 'Enforce output structure by masking logits against a grammar, with masks precomputed per automaton state and built on the CPU while the GPU runs the forward pass'
 version: 1
 tags:
@@ -7,9 +10,9 @@ tags:
 - systems-optimization
 date: '2026-09-23'
 source:
-- LIT-tmpeekbd
+- LIT-552
 introduced_by:
-- LIT-tmpeekbd
+- LIT-552
 consensus: emerging
 consensus_note: >-
   Grammar-constrained decoding is widely offered by serving engines, through
@@ -23,7 +26,7 @@ implementations:
 - SGLang
 - MLC-LLM
 summary: >-
-  Dong et al. (2024), [LIT-tmpeekbd](../literature.d/LIT-tmpeekbd.md) — split the vocabulary by whether a
+  Dong et al. (2024), [LIT-552](../literature.d/LIT-552.md) — split the vocabulary by whether a
   token's validity depends only on the grammar automaton's current node
   (over 99% of tokens for JSON). Precompute those per node, check the rest
   against the full stack at runtime, and build each mask on the CPU during
@@ -32,11 +35,11 @@ summary: >-
   syntax. It does not measure whether answers stay correct.
 ---
 
-# SOTA-tmpazros: Enforce output structure by masking logits against a grammar, with masks precomputed per automaton state and built on the CPU while the GPU runs the forward pass
+# SOTA-330: Enforce output structure by masking logits against a grammar, with masks precomputed per automaton state and built on the CPU while the GPU runs the forward pass
 
 ## Source
 
-Dong et al. (2024), [LIT-tmpeekbd](../literature.d/LIT-tmpeekbd.md) — XGrammar. Read as [NOTE-tmpkzvug](../notes.d/NOTE-tmpkzvug.md).
+Dong et al. (2024), [LIT-552](../literature.d/LIT-552.md) — XGrammar. Read as [NOTE-294](../notes.d/NOTE-294.md).
 
 ## The practice
 

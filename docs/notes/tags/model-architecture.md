@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-32 of 293 NOTE documents. Back to the [full index](../README.md).
+33 of 296 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -40,3 +40,4 @@
 | [NOTE-287](../../../record/notes.d/NOTE-287.md) | Stage boundaries found without knowing in advance what to look for | Read as the application that makes the LLC matter to this record. Critical points of the LLC curve divide two transformers into five stages each, and the boundaries land on bigrams, n-grams, previous-token heads and the induction circuit — found without a mechanistic hypothesis in hand, which is what `LIT-085`'s progress measures require. Its in-context regression model acquires in-context learning and then loses it. | Read |
 | [NOTE-289](../../../record/notes.d/NOTE-289.md) | MatFormer | One Transformer with four nested FFN widths, trained one width per step, gives four sizes plus Mix'n'Match sizes nobody trained. At the compute of training the four separately, it matches the largest and beats the smaller ones, which see up to 4× the data through shared weights. Read §1–5 and Appendices B, D.1, E.1 and F. | Read |
 | [NOTE-293](../../../record/notes.d/NOTE-293.md) | Gemma 3n | Per-Layer Embeddings: every token id indexes a table with one 256-d vector per layer, gated into the residual at each layer, about 2.35B parameters held off the accelerator. No measurements are published. Read from the model overview, the developer guide, and the Hugging Face `transformers` implementation, which is the only place the mechanism is fully specified. | Read |
+| [NOTE-295](../../../record/notes.d/NOTE-295.md) | SIREN | Sine-activated MLPs whose derivatives are well behaved, trainable because weights U(±√(6/n)) keep pre-activations standard normal and outputs arcsine at every depth, with ω₀ = 30 on the first layer. They fit signals and derivatives that ReLU, tanh and positional encoding do not. Read §1–4.2 and supplement §1; the later experiments were skimmed. | Read |

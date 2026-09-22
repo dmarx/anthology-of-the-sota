@@ -4,7 +4,7 @@
 
 **systems-optimization**.
 
-7 of 293 NOTE documents. Back to the [full index](../README.md).
+8 of 296 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -15,3 +15,4 @@
 | [NOTE-184](../../../record/notes.d/NOTE-184.md) | Training Deep Nets with Sublinear Memory Cost | Two contributions, and the famous one is the second. First, treat memory allocation over the computation graph as a compiler problem — liveness analysis, in-place operations, memory sharing. Then, on top of that, drop most intermediate feature maps and recompute them segment by segment during the backward pass. Dividing an n-layer chain into sqrt(n) segments costs sqrt(n) memory for one extra forward pass; the extreme of the same analysis is log n memory for n log n extra forward computation. | Read |
 | [NOTE-257](../../../record/notes.d/NOTE-257.md) | SVDQuant: a low-rank branch on the weights, not on the error | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist. The idea that travels is an ordering: decompose the weights and quantize the residual, rather than quantize and then patch the error. Two propositions and Eckart-Young say why, and a published method that does it the other way round is the control. | Read |
 | [NOTE-260](../../../record/notes.d/NOTE-260.md) | Block coordinate descent: a smaller machine bought with three times the steps | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist as the last of the 5-revisit tier. The method is sound and the accounting needs separating: the headline 2.6% mixes the method with the price of a 4090, the same-device figure is 33%, and the iteration counts in the paper's own Table 2 show BCD paying about 3× the steps for the memory it saves. | Read |
+| [NOTE-294](../../../record/notes.d/NOTE-294.md) | XGrammar | Grammar-constrained decoding made nearly free. It splits the vocabulary into tokens whose validity depends only on the automaton's stack top, which are precomputed, and the under-1% that need the full stack, which are checked at runtime. The mask is built on the CPU during the forward pass. Each optimization is ablated. Output quality is measured only as syntactic validity. Read §1–6; the appendix was not read. | Read |

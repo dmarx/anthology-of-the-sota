@@ -4,7 +4,7 @@
 
 **inference-optimization**.
 
-18 of 293 NOTE documents. Back to the [full index](../README.md).
+19 of 296 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -26,3 +26,4 @@
 | [NOTE-289](../../../record/notes.d/NOTE-289.md) | MatFormer | One Transformer with four nested FFN widths, trained one width per step, gives four sizes plus Mix'n'Match sizes nobody trained. At the compute of training the four separately, it matches the largest and beats the smaller ones, which see up to 4× the data through shared weights. Read §1–5 and Appendices B, D.1, E.1 and F. | Read |
 | [NOTE-291](../../../record/notes.d/NOTE-291.md) | Matryoshka Representation Learning | Sum the task loss over log(d) nested prefixes of one embedding, and each prefix matches a separately trained model of that width on ResNet50 and ImageNet. Retrieval that shortlists on 16 dimensions and re-ranks on 2048 is 14× faster at equal mAP@10. Read §1–6 and Appendices D.2 and I; the remaining appendix tables were skimmed. | Read |
 | [NOTE-293](../../../record/notes.d/NOTE-293.md) | Gemma 3n | Per-Layer Embeddings: every token id indexes a table with one 256-d vector per layer, gated into the residual at each layer, about 2.35B parameters held off the accelerator. No measurements are published. Read from the model overview, the developer guide, and the Hugging Face `transformers` implementation, which is the only place the mechanism is fully specified. | Read |
+| [NOTE-294](../../../record/notes.d/NOTE-294.md) | XGrammar | Grammar-constrained decoding made nearly free. It splits the vocabulary into tokens whose validity depends only on the automaton's stack top, which are precomputed, and the under-1% that need the full stack, which are checked at runtime. The mask is built on the CPU during the forward pass. Each optimization is ablated. Output quality is measured only as syntactic validity. Read §1–6; the appendix was not read. | Read |

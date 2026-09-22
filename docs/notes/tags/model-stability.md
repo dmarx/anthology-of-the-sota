@@ -4,7 +4,7 @@
 
 **model-stability**.
 
-27 of 293 NOTE documents. Back to the [full index](../README.md).
+28 of 296 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -35,3 +35,4 @@
 | [NOTE-286](../../../record/notes.d/NOTE-286.md) | The effective parameter count is a volume exponent, and the Hessian is measuring the wrong thing | Read as the trunk under a school the record was already citing. Its single most consequential sentence for this record is that the RLCT matters more than the curvature of the directions it counts — a published argument that the quantity a sharpness visualisation displays is not the quantity that governs generalisation, which is what `SOTA-012` rests on. | Read |
 | [NOTE-288](../../../record/notes.d/NOTE-288.md) | The transition the posterior makes and the transition SGD makes are not the same transition | Read for the distinction in its title, which the record needed and did not have. Bayesian phase transitions are changes in where the posterior concentrates as sample size grows, and are well defined; dynamical transitions are changes in the SGD trajectory, and are not. In the one model where both are computed, the sharpest Bayesian transition — predicted at `n_cr ≈ 600` and observed at 600–700 — has no dynamical counterpart at all. | Read |
 | [NOTE-292](../../../record/notes.d/NOTE-292.md) | Tensor Programs IV | Classifies width-scaling parametrizations (abc-parametrizations) and proves that every stable, nontrivial one either learns features in the wide limit or trains as a kernel, not both. The standard parametrization is stable only at an O(1/width) learning rate, which is the kernel side. Introduces µP as the unique member that updates every layer maximally. Read end to end through §10 and Appendices A, C.1 and D. The proofs in Appendix H were not checked line by line. | Read |
+| [NOTE-295](../../../record/notes.d/NOTE-295.md) | SIREN | Sine-activated MLPs whose derivatives are well behaved, trainable because weights U(±√(6/n)) keep pre-activations standard normal and outputs arcsine at every depth, with ω₀ = 30 on the first layer. They fit signals and derivatives that ReLU, tanh and positional encoding do not. Read §1–4.2 and supplement §1; the later experiments were skimmed. | Read |

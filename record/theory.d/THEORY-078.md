@@ -1,5 +1,8 @@
 ---
+number: 78
 status: Proposed
+formerly:
+- THEORY-tmpx6puj
 promote_when: >-
   A training comparison, not a statistics check at initialization: deep
   sine networks under standard initializations (Xavier, Kaiming, or the
@@ -15,11 +18,11 @@ tags:
 - model-architecture
 date: '2026-09-23'
 source:
-- LIT-tmpe1y6b
+- LIT-551
 explains:
-- SOTA-tmpx07li
+- SOTA-332
 summary: >-
-  Sitzmann et al. (2020), [LIT-tmpe1y6b](../literature.d/LIT-tmpe1y6b.md) — with weights U(±√(6/n)), a sum of
+  Sitzmann et al. (2020), [LIT-551](../literature.d/LIT-551.md) — with weights U(±√(6/n)), a sum of
   arcsine inputs is about N(0,1), and a unit normal through sin is arcsine
   again, so every layer sees the same distribution and few pre-activations
   exceed π. The mechanism is verified at initialization for 6 and 50
@@ -27,13 +30,13 @@ summary: >-
   "failed to robustly outperform" before, is not tested.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpx07li — Proposed, filed in this same contribution as the practice this account explains -->
+<!-- inactive-ok-file: SOTA-332 — Proposed, filed in this same contribution as the practice this account explains -->
 
-# THEORY-tmpx6puj: Deep sine networks train when initialization holds every pre-activation near a standard normal, which keeps each layer arcsine-distributed and frequency growth slow; that initialization is what earlier periodic networks lacked
+# THEORY-078: Deep sine networks train when initialization holds every pre-activation near a standard normal, which keeps each layer arcsine-distributed and frequency growth slow; that initialization is what earlier periodic networks lacked
 
 ## Source
 
-Sitzmann et al. (2020), [LIT-tmpe1y6b](../literature.d/LIT-tmpe1y6b.md) — read as [NOTE-tmpncb8j](../notes.d/NOTE-tmpncb8j.md). Filed for
+Sitzmann et al. (2020), [LIT-551](../literature.d/LIT-551.md) — read as [NOTE-295](../notes.d/NOTE-295.md). Filed for
 `#163`'s question: why did people struggle to get periodic activations to
 work?
 
@@ -41,7 +44,7 @@ work?
 
 | document | what it says | what this says it is |
 |---|---|---|
-| [SOTA-tmpx07li](../practices.d/SOTA-tmpx07li.md) | use sine activations with the SIREN initialization | the initialization is what makes the architecture trainable |
+| [SOTA-332](../practices.d/SOTA-332.md) | use sine activations with the SIREN initialization | the initialization is what makes the architecture trainable |
 
 ## The account
 

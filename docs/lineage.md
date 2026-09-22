@@ -256,6 +256,8 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-086](../record/literature.d/LIT-086.md) — K-Planes: Explicit Radiance Fields in Space, Time, and Appearance *(Active)*
   - [LIT-108](../record/literature.d/LIT-108.md) — 3D Gaussian Splatting for Real-Time Radiance Field Rendering *(Active)*
     - [LIT-511](../record/literature.d/LIT-511.md) — Image-GS: Content-Adaptive Image Representation via 2D Gaussians *(Active)*
+  - [LIT-550](../record/literature.d/LIT-550.md) — Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains *(Active)*
+- alongside: [LIT-551](../record/literature.d/LIT-551.md) — Implicit Neural Representations with Periodic Activation Functions *(Active)*
 
 ### From Segment Anything
 

@@ -1,5 +1,8 @@
 ---
+number: 77
 status: Active
+formerly:
+- THEORY-tmpwobgx
 title: "A coordinate MLP learns high frequencies slowly because its tangent kernel's spectrum falls off fast, and a sinusoidal input mapping works by making that kernel stationary with a bandwidth you choose"
 version: 1
 tags:
@@ -7,11 +10,11 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-23'
 source:
-- LIT-tmp0lo8a
+- LIT-550
 explains:
-- SOTA-tmpwa18v
+- SOTA-331
 summary: >-
-  Tancik et al. (2020), [LIT-tmp0lo8a](../literature.d/LIT-tmp0lo8a.md) — in the NTK regime, error along each
+  Tancik et al. (2020), [LIT-550](../literature.d/LIT-550.md) — in the NTK regime, error along each
   kernel eigenvector decays at a rate set by its eigenvalue, and a coordinate
   MLP's eigenvalues fall off fast with frequency. Sinusoids of the input give
   a stationary composed kernel whose bandwidth the frequencies set. The
@@ -21,17 +24,17 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-179 — Proposed, named as a practice this account deliberately does not explain -->
 
-# THEORY-tmpwobgx: A coordinate MLP learns high frequencies slowly because its tangent kernel's spectrum falls off fast, and a sinusoidal input mapping works by making that kernel stationary with a bandwidth you choose
+# THEORY-077: A coordinate MLP learns high frequencies slowly because its tangent kernel's spectrum falls off fast, and a sinusoidal input mapping works by making that kernel stationary with a bandwidth you choose
 
 ## Source
 
-Tancik et al. (2020), [LIT-tmp0lo8a](../literature.d/LIT-tmp0lo8a.md) — read as [NOTE-tmpqp5q1](../notes.d/NOTE-tmpqp5q1.md).
+Tancik et al. (2020), [LIT-550](../literature.d/LIT-550.md) — read as [NOTE-296](../notes.d/NOTE-296.md).
 
 ## What it explains
 
 | document | what it says | what this says it is |
 |---|---|---|
-| [SOTA-tmpwa18v](../practices.d/SOTA-tmpwa18v.md) | encode coordinates with sampled sinusoids, tune the scale | choosing the composed kernel's bandwidth |
+| [SOTA-331](../practices.d/SOTA-331.md) | encode coordinates with sampled sinusoids, tune the scale | choosing the composed kernel's bandwidth |
 | [LIT-435](../literature.d/LIT-435.md) (NeRF) | without positional encoding the result is oversmoothed | the high-frequency eigen-directions never converge |
 
 ## The account

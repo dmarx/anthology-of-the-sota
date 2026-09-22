@@ -14,7 +14,7 @@ consensus_note: >-
   `emerging` rather than `converged` on the grounds that nobody has measured
   where the field now stands.
 title: 'Check whether an emergent capability is a metric artefact before believing it'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-21'
@@ -30,6 +30,18 @@ history:
     scoring rule is cheap, and only `LIT-085`'s progress measures needed the
     network reverse-engineered first. The recommendation itself — check,
     do not conclude — is unchanged.
+- version: 3
+  date: '2026-09-22'
+  note: >-
+    The third check said grokking is "a data-starved-regime phenomenon", on
+    LIT-085's 60% figure alone, with the grokking trunk absent from the record.
+    Filing it changes the check rather than confirming it: LIT-tmp4uno1
+    reported the data dependence first, and LIT-tmpkn1i6 and LIT-tmp069e7 add
+    two more axes — initialization scale relative to the generalizing weight
+    norm, and initial kernel-task alignment. The check becomes "move the
+    regime and see whether the discontinuity moves", with ungrokking
+    (LIT-tmp9xrey) as its sharpest instance. Sources and explained_by extended
+    accordingly.
 tags:
 - analysis-and-evaluation
 date: '2026-09-10'
@@ -37,12 +49,17 @@ source:
 - LIT-077
 - LIT-085
 - LIT-471
+- LIT-tmp4uno1
+- LIT-tmpkn1i6
+- LIT-tmp9xrey
+- LIT-tmp069e7
 introduced_by:
 - LIT-077
 implementations: []
 explained_by:
 - THEORY-039
 - THEORY-040
+- THEORY-tmpdlyut
 ---
 
 # SOTA-200: Check whether an emergent capability is a metric artefact before believing it
@@ -64,6 +81,13 @@ vision models that had never shown it.
 The claim being checked is [LIT-470](../literature.d/LIT-470.md), which is worth reading first:
 it raises the metric explanation itself and declines it for two stated
 reasons, one of which is still standing.
+
+The grokking line, for the third check: Power et al. (2022),
+`LIT-tmp4uno1`, which named the phenomenon and measured its data dependence;
+Liu, Michaud and Tegmark (2022), `LIT-tmpkn1i6`, which induces it outside
+algorithmic data and eliminates it on demand; Varma et al. (2023),
+`LIT-tmp9xrey`, which predicts and then observes ungrokking; and Kumar et al.
+(2023), `LIT-tmp069e7`, which adds the kernel-alignment axis.
 
 ## The claim
 
@@ -91,10 +115,26 @@ made when it argued the metric explanation could not cover them.
 
 **Is the discontinuity a property of the regime?** Grokking — delayed
 generalization long after memorization — is the most-cited mysterious training
-phenomenon of its period, and `LIT-085` finds it **disappears above roughly 60%
-data**. At sufficiently large data fractions generalization is immediate.
-Smaller fractions grok more slowly. The phenomenon is real and it is a
-data-starved-regime phenomenon, not a fundamental one.
+phenomenon of its period, and it is a regime a run is put into, not a fact
+about a task. `LIT-085` finds it **disappears above roughly 60% data** on
+modular addition; `LIT-tmp4uno1`, the paper that named it, already reported
+that converged accuracy is flat across a range of training fractions while the
+*time* to reach it explodes as the fraction falls. But data fraction is one
+axis of three. `LIT-tmpkn1i6` **induces** grokking on MNIST, IMDb and QM9 by
+shrinking the training set *and* inflating the initialization scale — at
+standard initialization there is none on any of them — and **eliminates** it on
+algorithmic data by constraining the weight norm. `LIT-tmp069e7` adds a third
+axis, the alignment between the initial neural tangent kernel and the target,
+which is computable on any task as centered kernel alignment. The full account
+is `THEORY-tmpdlyut`.
+
+So the check is not "was the data starved" but **move the regime and see
+whether the discontinuity moves with it**. `LIT-tmp9xrey` supplies the sharpest
+version: *ungrokking*, in which a network that has already grokked regresses to
+near-random test accuracy when trained on a smaller dataset, at a sharp
+threshold, with an endpoint independent of the weight decay. A capability a
+model gives back when you shrink its training set is not a capability the model
+acquired at a scale.
 
 ## What a positive check looks like
 
@@ -127,6 +167,17 @@ experiment, and it puts no number on what share of observed emergence is
 artefactual. `LIT-085` is one modular-addition task on a one-layer transformer
 with weight decay `λ = 1` — the authors call the generalisation to emergence "a
 proof of concept" and it is nonetheless how the paper is usually cited.
+
+The grokking sources are narrow in a way the third check has to carry.
+`LIT-tmp4uno1` and `LIT-tmp9xrey` are algorithmic tasks throughout — modular
+arithmetic and binary operation tables — and `LIT-tmp9xrey`'s circuits are
+identified against a known trigonometric construction that no realistic task
+has. `LIT-tmpkn1i6`'s results outside algorithmic data change **two** things at
+once, a much smaller training set and an inflated initialization, so the axes
+are established jointly rather than separately, and every such signal is
+described by its authors as weaker than on algorithmic data. What the check
+licenses is "move the regime and look", not a prediction about which knob will
+turn out to matter.
 
 `LIT-471` is the strongest of the three and still does not license the
 conclusion. It says so itself: *"nothing in this paper should be interpreted as

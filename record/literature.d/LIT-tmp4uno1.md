@@ -1,0 +1,72 @@
+---
+status: Active
+title: 'Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets'
+version: 1
+tags:
+- analysis-and-evaluation
+- training-optimization
+- model-stability
+date: '2026-09-22'
+published: '2022-01-06'
+arxiv: '2201.02177'
+first_author: 'Power'
+keywords:
+- 'grokking'
+- 'generalization'
+- 'algorithmic datasets'
+- 'weight decay'
+- 'data efficiency'
+implementations: []
+summary: >-
+  Power, Burda, Edwards, Babuschkin and Misra (2022), [ARXIV-2201.02177](https://arxiv.org/abs/2201.02177) — the
+  paper that named grokking. A small transformer on division mod 97 at 50%
+  data reaches near-perfect training accuracy in under 10³ steps and
+  near-perfect validation accuracy around 10⁶, with almost no generalization
+  before 10⁵. The regime dependence is measured here, not later: near 25–30%
+  data on S₅, removing 1% of the training set raises median time to
+  generalization by 40–50%, while time to fit stays at 10³–10⁴ throughout.
+  Weight decay more than halves the data needed. Read as [NOTE-tmphxkj0](../notes.d/NOTE-tmphxkj0.md).
+---
+
+# LIT-tmp4uno1: Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets
+
+Power, Burda, Edwards, Babuschkin and Misra (2022) — [ARXIV-2201.02177](https://arxiv.org/abs/2201.02177). Read
+as [NOTE-tmphxkj0](../notes.d/NOTE-tmphxkj0.md).
+
+## Key takeaways
+
+- **The phenomenon.** On binary operation tables `a ∘ b = c` with every symbol
+  an unrelated token, validation accuracy can rise from chance to perfect
+  **long after** training accuracy saturates. Division mod 97, 50% training
+  data: training accuracy near-perfect at `< 10³` steps, validation reaching
+  the same level near `10⁶`, with very little generalization before `10⁵`.
+- **The data dependence is in this paper.** Converged performance stays at
+  100% across a range of training-set sizes while the *time* to get there
+  grows sharply as the set shrinks. On the product in `S₅`, in the vicinity of
+  25–30% data a 1% decrease raises median steps-to-99%-validation by 40–50%.
+  Steps to 99% *training* accuracy trends the other way and stays at `10³`–`10⁴`.
+- **Weight decay is the strongest intervention tried**, more than halving the
+  samples needed against most alternatives; toward the origin beats toward the
+  initialization. Gradient and weight noise help. Learning rate has to be
+  tuned within about one order of magnitude.
+- **Not every operation groks.** `x³ + xy² + y (mod 97)` failed to generalize
+  at any fraction up to 95% within the budget — the model memorized and the
+  data was effectively random to it. Symmetric operations need less data than
+  their asymmetric counterparts.
+- **Validation loss double-descends**, and learned symbol embeddings sometimes
+  show the structure of the underlying object — a circular "number line" for
+  modular addition.
+
+## Standing in the anthology
+
+**`Active`, and it is the trunk the record was missing.** `LIT-085` (Nanda et
+al.) was the only grokking paper here, and `SOTA-200` staked its third check
+on that paper's ~60%-data finding without the work it sharpens being present.
+
+**Its own framing is more careful than the phenomenon's reputation.** The
+paper proposes algorithmic datasets as a *testbed* — reproducible on one GPU,
+with data efficiency and memorization cleanly separable — and reports the
+regime dependence as a headline result rather than a caveat. The mystery
+belongs to the reception (`DP-010`): the striking left panel of Figure 1 is
+what travelled, and the centre panel of the same figure is the one that says
+the effect is a function of how much data you withheld.

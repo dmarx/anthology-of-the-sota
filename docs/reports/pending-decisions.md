@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**166 document(s) awaiting a decision.**
+**167 document(s) awaiting a decision.**
 
 ## SOTAs
 
-103 of the 166.
+103 of the 167.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -119,7 +119,7 @@
 
 ## THEORYs
 
-43 of the 166.
+43 of the 167.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -169,7 +169,7 @@
 
 ## LITs
 
-3 of the 166.
+3 of the 167.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -179,7 +179,7 @@
 
 ## ADRs
 
-17 of the 166.
+18 of the 167.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -200,6 +200,7 @@
 | 2026-09-17 | Proposed | [ADR-045](../../record/decisions.d/ADR-045.md) | 2 | 0 | A claim about the signal is admissible however it was measured, including on people |
 | 2026-09-21 | Proposed | [ADR-050](../../record/decisions.d/ADR-050.md) | 8 | 0 | Two more topics: numerics and precision, and in-context learning |
 | 2026-09-21 | Proposed | [ADR-053](../../record/decisions.d/ADR-053.md) | 6 | 0 | A practice may state that it has no identifiable origin, by leaving introduced_by empty |
+| 2026-09-22 | Proposed | [ADR-054](../../record/decisions.d/ADR-054.md) | 1 | 0 | The four commands are five, and two of them are invariants a hook can hold |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 

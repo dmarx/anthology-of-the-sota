@@ -107,9 +107,9 @@ work perfectly well.
     luria index                   # regenerate every view
     luria lint                    # the only command that can fail
 
-<!-- inactive-ok-file: ADR-tmpnxv2f — Proposed, and cited as the decision that put `repair` in this sequence and the hook behind the discard step; Proposed is the resting state of an unmoved decision here, not a sign the sequence is unsettled. -->
+<!-- inactive-ok-file: ADR-054 — Proposed, and cited as the decision that put `repair` in this sequence and the hook behind the discard step; Proposed is the resting state of an unmoved decision here, not a sign the sequence is unsettled. -->
 
-Or `make ready`, which runs those three and discards the views ([ADR-tmpnxv2f](record/decisions.d/ADR-tmpnxv2f.md)).
+Or `make ready`, which runs those three and discards the views ([ADR-054](record/decisions.d/ADR-054.md)).
 **`repair`, not `link --fix`** — it does the linking *and* the rest, including
 populating a journal entry's `created:` from the path `luria new` chose, which
 is a violation four units in a row fixed by hand.

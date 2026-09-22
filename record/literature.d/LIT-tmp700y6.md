@@ -1,0 +1,66 @@
+---
+status: Active
+title: 'What learning algorithm is in-context learning? Investigations with linear models'
+version: 1
+tags:
+- in-context-learning
+- analysis-and-evaluation
+- model-architecture
+date: '2026-09-22'
+published: '2022-11-28'
+arxiv: '2211.15661'
+first_author: 'Akyürek'
+keywords:
+- 'in-context learning'
+- 'linear regression'
+- 'ridge regression'
+- 'Bayesian inference'
+- 'probing'
+implementations: []
+summary: >-
+  Akyürek, Schuurmans, Andreas, Ma and Zhou (2022), [ARXIV-2211.15661](https://arxiv.org/abs/2211.15661),
+  ICLR 2023 — the independent construction, and the finding the title
+  undersells. A transformer needs constant depth and `O(d)` hidden size for a
+  gradient step and `O(d²)` for a Sherman–Morrison ridge update; but the
+  trained model's behaviour moves through three algorithmic phases as depth
+  grows — gradient descent, then ridge, then ordinary least squares — and at
+  every noise level the ridge parameter that best fits it is the one that
+  minimizes Bayes risk. Read as [NOTE-tmpmxdgb](../notes.d/NOTE-tmpmxdgb.md).
+---
+
+# LIT-tmp700y6: What learning algorithm is in-context learning? Investigations with linear models
+
+Akyürek, Schuurmans, Andreas, Ma and Zhou (2022) — [ARXIV-2211.15661](https://arxiv.org/abs/2211.15661),
+ICLR 2023. Read as [NOTE-tmpmxdgb](../notes.d/NOTE-tmpmxdgb.md).
+
+## Key takeaways
+
+- **Two constructions, not one.** Theorem 1: a transformer computes the
+  prediction of a single gradient step with constant layers and `O(d)` hidden
+  space. Theorem 2: it computes a single Sherman–Morrison ridge update with
+  constant layers and `O(d²)`. Both extend to `n` steps by stacking `n` groups
+  of layers.
+- **On noiseless data the trained learner matches ordinary least squares**,
+  including the minimum-norm solution in the underdetermined region where
+  many linear models fit the context exactly.
+- **On noisy data it matches the minimum-Bayes-risk ridge predictor.** Sweeping
+  data noise `σ²` and prior variance `τ²`, the best-fitting ridge parameter
+  moves with `σ²/τ²` — which is the Bayes-optimal regularizer, not a fitted
+  constant.
+- **The algorithm depends on the model's size.** Varying depth with hidden
+  size and heads tuned, the learner passes through three regimes: closest to
+  gradient descent when shallow, then ridge, then OLS.
+- **Preliminary probing evidence** that late layers non-linearly encode weight
+  vectors and moment matrices.
+
+## Standing in the anthology
+
+**It is the second, independent arrival at the same construction**, and the
+one whose empirical section is least well summarized by the gradient-descent
+reading. Its own strongest result is Bayes-optimality, which a closed-form
+estimator satisfies and a fixed number of gradient steps generally does not;
+the gradient-descent phase is the one it reports for the *smallest* models.
+
+**`Active`.** Nothing has overturned either theorem or the phase measurement.
+What [ARXIV-2310.17086](https://arxiv.org/abs/2310.17086) and [ARXIV-2310.08540](https://arxiv.org/abs/2310.08540) contest is the identification the
+field read into this line of work, not these results.

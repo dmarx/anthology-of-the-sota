@@ -1,0 +1,70 @@
+---
+status: Active
+title: 'Transformers Learn to Achieve Second-Order Convergence Rates for In-Context Linear Regression'
+version: 1
+tags:
+- in-context-learning
+- analysis-and-evaluation
+- training-optimization
+date: '2026-09-22'
+published: '2023-10-26'
+arxiv: '2310.17086'
+first_author: 'Fu'
+keywords:
+- 'in-context learning'
+- 'second-order optimization'
+- 'Iterative Newton'
+- 'convergence rate'
+- 'ill-conditioning'
+implementations: []
+summary: >-
+  Fu, Chen, Jia and Sharan (2023), [ARXIV-2310.17086](https://arxiv.org/abs/2310.17086), NeurIPS 2024 — the
+  challenge from inside the same setup. In Garg et al.'s exact training
+  regime, successive transformer layers track Iterative Newton *linearly*
+  (roughly 3 iterations per middle layer) and gradient descent only
+  *exponentially*; on data with condition number 100 the transformer is
+  unaffected while GD needs 2,000 steps, which twelve layers cannot hold.
+  Theorem 5.1 builds `k` Newton iterations in `k + 8` layers with `O(d)`
+  width. Read as [NOTE-tmpnpngw](../notes.d/NOTE-tmpnpngw.md).
+---
+
+# LIT-tmprd6ad: Transformers Learn to Achieve Second-Order Convergence Rates for In-Context Linear Regression
+
+Fu, Chen, Jia and Sharan (2023) — [ARXIV-2310.17086](https://arxiv.org/abs/2310.17086), NeurIPS 2024. Read as
+[NOTE-tmpnpngw](../notes.d/NOTE-tmpnpngw.md).
+
+## Key takeaways
+
+- **The measurement is a rate, not a fit.** Re-training only a read-out head
+  on each layer's hidden states, predictions improve monotonically with depth.
+  Matching each layer to the best number of steps of a candidate algorithm
+  gives a **linear** trend against Iterative Newton between layers 3 and 9 —
+  about 3 iterations per layer — and an **exponential** one against gradient
+  descent. Some single layers advance as far as hundreds of GD steps.
+- **Ill-conditioning separates them.** With `κ(Σ) = 100` and a random
+  eigenbasis per sequence, the transformer still matches Iterative Newton at
+  21 iterations, exactly as in the isotropic case; GD needs about 2,000 steps,
+  which a 12-layer model cannot implement. No fixed or sparse preconditioner
+  helps, because the eigenbasis is resampled.
+- **Theorem 5.1**: for any `k` there exist transformer weights predicting
+  `x_testᵀ ŵ_k^Newton` with `M_j = 2M_{j−1} − M_{j−1} S M_{j−1}`, `M_0 = αS`,
+  `S = XᵀX`; `O(d)` hidden dimension, `k + 8` layers — one layer per Newton
+  iteration, 3 to initialize and 5 to read out.
+- **The claim is deliberately weaker than the evidence would allow.** BFGS
+  shows the same linear trend, so the paper claims *some* second-order method,
+  not Iterative Newton specifically.
+- **It is architectural, not generic.** LSTMs trained identically behave like
+  online gradient descent — later examples weighted more than earlier ones —
+  and their predictions do not improve across layers at all.
+
+## Standing in the anthology
+
+**`Active`, and it is the strongest single piece of evidence in this
+cluster**, because it separates the rivals where they actually differ. Fitting
+a transformer's output to GD's output and to Newton's output both give high
+similarity; the *rate* at which layers advance does not, and neither does
+behaviour under ill-conditioning.
+
+It attacks [ARXIV-2212.07677](https://arxiv.org/abs/2212.07677)'s identification from inside its own setup —
+same task, same GPT-2 backbone, same training objective — which is what makes
+it a different kind of objection from [ARXIV-2310.08540](https://arxiv.org/abs/2310.08540)'s.

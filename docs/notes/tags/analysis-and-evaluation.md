@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-103 of 296 NOTE documents. Back to the [full index](../README.md).
+105 of 299 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -111,3 +111,5 @@
 | [NOTE-290](../../../record/notes.d/NOTE-290.md) | ReFT | A learned low-rank edit to the residual stream at a few prompt positions, with the model frozen. Up to 65× fewer parameters than LoRA. It leads on commonsense QA and on GPT-4-judged instruction following, is level on GLUE, and loses on arithmetic chain of thought. All baselines are copied from earlier papers. Read §1–6 and Appendix D; the other appendices were not read. | Read |
 | [NOTE-292](../../../record/notes.d/NOTE-292.md) | Tensor Programs IV | Classifies width-scaling parametrizations (abc-parametrizations) and proves that every stable, nontrivial one either learns features in the wide limit or trains as a kernel, not both. The standard parametrization is stable only at an O(1/width) learning rate, which is the kernel side. Introduces µP as the unique member that updates every layer maximally. Read end to end through §10 and Appendices A, C.1 and D. The proofs in Appendix H were not checked line by line. | Read |
 | [NOTE-296](../../../record/notes.d/NOTE-296.md) | Fourier features | A coordinate MLP's NTK has fast spectral falloff, so it fits high frequencies too slowly to matter. A sinusoidal input mapping makes the composed kernel stationary and sets its bandwidth, and the NTK linear model predicts the trained networks' loss curves. Gaussian random frequencies are best on seven tasks, and only their scale matters. Read §1–7; the appendices were not read. | Read |
+| [NOTE-297](../../../record/notes.d/NOTE-297.md) | Warm Diffusion | Blur and noise mixed in one forward process, with a two-headed model that denoises to the blurry image and deblurs the residual. A blur-to-noise ratio of 0.5, chosen from image and noise spectra, edges EDM on CIFAR-10 (1.85 against 1.97). High ratios degrade sharply, which is the evidence that noise keeps samples on the manifold. Read in full (8 pages). | Read |
+| [NOTE-299](../../../record/notes.d/NOTE-299.md) | Cold Diffusion | Diffusion generalized to deterministic degradations (blur, masking, downsampling, snow) with a restorer and a sampler that is exact for degradations linear in severity. Conditional restoration works. Noiseless unconditional generation is far worse than noise diffusion, and adding a little noise recovers half the gap. Read §1–5.3; the appendix was not read. | Read |

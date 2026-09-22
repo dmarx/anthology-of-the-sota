@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in.
 
-38 of 332 SOTA documents. Back to the [full index](../README.md).
+38 of 333 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

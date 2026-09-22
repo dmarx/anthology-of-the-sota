@@ -1,5 +1,8 @@
 ---
+number: 333
 status: Proposed
+formerly:
+- SOTA-tmpbc2oe
 promote_when: >-
   A quantitative long-rollout comparison (FVD or a per-frame quality metric
   against rollout length) at transformer scale, between per-token-noise
@@ -14,9 +17,9 @@ tags:
 - vision-and-graphics
 date: '2026-09-23'
 source:
-- LIT-tmpcjzih
+- LIT-554
 introduced_by:
-- LIT-tmpcjzih
+- LIT-554
 consensus: unassessed
 consensus_note: >-
   The record holds only the source paper. Whether later autoregressive
@@ -24,7 +27,7 @@ consensus_note: >-
   looked at here.
 implementations: []
 summary: >-
-  Chen et al. (2024), [LIT-tmpcjzih](../literature.d/LIT-tmpcjzih.md) — train a causal model to denoise tokens
+  Chen et al. (2024), [LIT-554](../literature.d/LIT-554.md) — train a causal model to denoise tokens
   that each carry an independent noise level. At rollout, treat the
   generated history as slightly noisy, so accumulated errors look like
   training noise. The same model then samples autoregressively, plans with
@@ -33,11 +36,11 @@ summary: >-
   Planning and robot gains are measured.
 ---
 
-# SOTA-tmpbc2oe: For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history
+# SOTA-333: For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history
 
 ## Source
 
-Chen et al. (2024), [LIT-tmpcjzih](../literature.d/LIT-tmpcjzih.md) — Diffusion Forcing. Read as [NOTE-tmp0rqt2](../notes.d/NOTE-tmp0rqt2.md).
+Chen et al. (2024), [LIT-554](../literature.d/LIT-554.md) — Diffusion Forcing. Read as [NOTE-298](../notes.d/NOTE-298.md).
 
 ## The practice
 

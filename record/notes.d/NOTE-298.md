@@ -1,6 +1,9 @@
 ---
+number: 298
 status: Read
-paper: LIT-tmpcjzih
+formerly:
+- NOTE-tmp0rqt2
+paper: LIT-554
 title: 'Diffusion Forcing'
 version: 1
 date: '2026-09-23'
@@ -12,9 +15,9 @@ summary: >-
   appendix proofs and time-series results were not read.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpbc2oe — Proposed, filed in this same contribution from this paper -->
+<!-- inactive-ok-file: SOTA-333 — Proposed, filed in this same contribution from this paper -->
 
-# NOTE-tmp0rqt2: Diffusion Forcing
+# NOTE-298: Diffusion Forcing
 
 ## Contribution
 
@@ -75,11 +78,11 @@ diffusion, Diffuser for planning, diffusion policy for control). SIREN
 
 - **R1** — For autoregressive generation of continuous tokens, train with
   per-token noise and condition on slightly noised history. Filed as
-  [SOTA-tmpbc2oe](../practices.d/SOTA-tmpbc2oe.md)
+  [SOTA-333](../practices.d/SOTA-333.md)
 
 ## Bearing on the record
 
-- **[SOTA-tmpbc2oe](../practices.d/SOTA-tmpbc2oe.md)** is new
+- **[SOTA-333](../practices.d/SOTA-333.md)** is new
 
 ## Limitations
 

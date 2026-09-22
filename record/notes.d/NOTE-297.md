@@ -1,6 +1,9 @@
 ---
+number: 297
 status: Read
-paper: LIT-tmphm11f
+formerly:
+- NOTE-tmp0qg1j
+paper: LIT-555
 title: 'Warm Diffusion'
 version: 1
 date: '2026-09-23'
@@ -12,9 +15,9 @@ summary: >-
   that noise keeps samples on the manifold. Read in full (8 pages).
 ---
 
-<!-- inactive-ok-file: THEORY-tmpc9v4u THEORY-tmpyyfqg — the Rejected account this paper corrects and the Proposed account it supports, both filed in this same contribution -->
+<!-- inactive-ok-file: THEORY-079 THEORY-080 — the Rejected account this paper corrects and the Proposed account it supports, both filed in this same contribution -->
 
-# NOTE-tmp0qg1j: Warm Diffusion
+# NOTE-297: Warm Diffusion
 
 ## Contribution
 
@@ -63,14 +66,14 @@ the process on the data manifold.
 
 ## Connections
 
-It extends Cold Diffusion ([LIT-tmpb9kuz](../literature.d/LIT-tmpb9kuz.md)) and compares against EDM
+It extends Cold Diffusion ([LIT-553](../literature.d/LIT-553.md)) and compares against EDM
 ([LIT-075](../literature.d/LIT-075.md)), Blurring Diffusion and inverse heat dissipation. Table 1's Cold
 Diffusion entry quotes a deblurring FID as a generation FID (see the LIT
 note).
 
 ## Bearing on the record
 
-- **[THEORY-tmpyyfqg](../theory.d/THEORY-tmpyyfqg.md)** files its account, which corrects [THEORY-tmpc9v4u](../theory.d/THEORY-tmpc9v4u.md)
+- **[THEORY-080](../theory.d/THEORY-080.md)** files its account, which corrects [THEORY-079](../theory.d/THEORY-079.md)
 - **No practice filed.** The gain over EDM is too small and too thinly
   reported to recommend mixing in blur
 

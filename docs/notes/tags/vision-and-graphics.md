@@ -4,7 +4,7 @@
 
 **vision-and-graphics**.
 
-24 of 296 NOTE documents. Back to the [full index](../README.md).
+25 of 299 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -32,3 +32,4 @@
 | [NOTE-256](../../../record/notes.d/NOTE-256.md) | Image-GS: the rate accounting GaussianToken skipped, and an ablation that inverts its own headline | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for its adjacency to the tokenizer trunk. Two things worth keeping: a comparison run the way this record keeps asking for — six baselines at matched model size, bitrate on the axis — and an ablation in which the two unglamorous optimizer choices outweigh the content-adaptive allocation the paper is named for. | Read |
 | [NOTE-295](../../../record/notes.d/NOTE-295.md) | SIREN | Sine-activated MLPs whose derivatives are well behaved, trainable because weights U(±√(6/n)) keep pre-activations standard normal and outputs arcsine at every depth, with ω₀ = 30 on the first layer. They fit signals and derivatives that ReLU, tanh and positional encoding do not. Read §1–4.2 and supplement §1; the later experiments were skimmed. | Read |
 | [NOTE-296](../../../record/notes.d/NOTE-296.md) | Fourier features | A coordinate MLP's NTK has fast spectral falloff, so it fits high frequencies too slowly to matter. A sinusoidal input mapping makes the composed kernel stationary and sets its bandwidth, and the NTK linear model predicts the trained networks' loss curves. Gaussian random frequencies are best on seven tasks, and only their scale matters. Read §1–7; the appendices were not read. | Read |
+| [NOTE-298](../../../record/notes.d/NOTE-298.md) | Diffusion Forcing | Independent per-token noise levels during training give one causal model both autoregressive sampling and horizon-wide guidance, with sampling schedules chosen at inference. Stable long video rollouts are shown qualitatively. Planning and robot results are measured. Read §1–5; the appendix proofs and time-series results were not read. | Read |

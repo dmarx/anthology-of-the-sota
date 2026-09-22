@@ -1,5 +1,8 @@
 ---
+number: 80
 status: Proposed
+formerly:
+- THEORY-tmpyyfqg
 promote_when: >-
   A direct measurement that high blur-to-noise processes send intermediate
   samples off the data manifold (for example a density, classifier or
@@ -15,12 +18,12 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-23'
 source:
-- LIT-tmphm11f
-- LIT-tmpb9kuz
+- LIT-555
+- LIT-553
 corrects:
-- THEORY-tmpc9v4u
+- THEORY-079
 summary: >-
-  Hsueh et al. (2025), [LIT-tmphm11f](../literature.d/LIT-tmphm11f.md) — blur removes high frequencies
+  Hsueh et al. (2025), [LIT-555](../literature.d/LIT-555.md) — blur removes high frequencies
   deterministically, so many images share a blurry one and the deblurring
   target is their mean. Stepping toward it leaves the manifold unless noise
   has already made those images indistinguishable. Natural spectra fall as
@@ -30,12 +33,12 @@ summary: >-
   measured.
 ---
 
-# THEORY-tmpyyfqg: A diffusion process needs noise to keep its intermediate states on the data manifold, and blur helps only while noise still dominates the bands it removes
+# THEORY-080: A diffusion process needs noise to keep its intermediate states on the data manifold, and blur helps only while noise still dominates the bands it removes
 
 ## Source
 
-Hsueh et al. (2025), [LIT-tmphm11f](../literature.d/LIT-tmphm11f.md) — read as [NOTE-tmp0qg1j](../notes.d/NOTE-tmp0qg1j.md). The cold end of
-the evidence is Bansal et al. (2022), [LIT-tmpb9kuz](../literature.d/LIT-tmpb9kuz.md). Filed for `#163`'s
+Hsueh et al. (2025), [LIT-555](../literature.d/LIT-555.md) — read as [NOTE-297](../notes.d/NOTE-297.md). The cold end of
+the evidence is Bansal et al. (2022), [LIT-553](../literature.d/LIT-553.md). Filed for `#163`'s
 "[theory] warm diffusion".
 
 ## The account
@@ -65,10 +68,10 @@ deblurrer. On CIFAR-10 that is about BNR = 0.5.
 
 - **The degradation curve.** At fixed model, sampler and 35 steps, FID
   1.97 → 1.85 → 2.01 → 2.57 → 11.97 as BNR goes 0 → 0.5 → 1 → 2 → 10
-  ([LIT-tmphm11f](../literature.d/LIT-tmphm11f.md), Table 3). Higher BNR also needs more steps to recover
+  ([LIT-555](../literature.d/LIT-555.md), Table 3). Higher BNR also needs more steps to recover
   (Figure 5)
 - **The cold end, independently.** Cold Diffusion's noiseless generation is
-  FID 97.00 on CelebA, and σ = 0.002 of noise halves it ([LIT-tmpb9kuz](../literature.d/LIT-tmpb9kuz.md),
+  FID 97.00 on CelebA, and σ = 0.002 of noise halves it ([LIT-553](../literature.d/LIT-553.md),
   Table 5)
 
 ## What this does not say

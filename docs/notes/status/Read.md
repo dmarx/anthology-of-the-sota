@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-293 of 296 NOTE documents. Back to the [full index](../README.md).
+296 of 299 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -303,3 +303,6 @@
 | [NOTE-294](../../../record/notes.d/NOTE-294.md) | XGrammar | Grammar-constrained decoding made nearly free. It splits the vocabulary into tokens whose validity depends only on the automaton's stack top, which are precomputed, and the under-1% that need the full stack, which are checked at runtime. The mask is built on the CPU during the forward pass. Each optimization is ablated. Output quality is measured only as syntactic validity. Read §1–6; the appendix was not read. | Read |
 | [NOTE-295](../../../record/notes.d/NOTE-295.md) | SIREN | Sine-activated MLPs whose derivatives are well behaved, trainable because weights U(±√(6/n)) keep pre-activations standard normal and outputs arcsine at every depth, with ω₀ = 30 on the first layer. They fit signals and derivatives that ReLU, tanh and positional encoding do not. Read §1–4.2 and supplement §1; the later experiments were skimmed. | Read |
 | [NOTE-296](../../../record/notes.d/NOTE-296.md) | Fourier features | A coordinate MLP's NTK has fast spectral falloff, so it fits high frequencies too slowly to matter. A sinusoidal input mapping makes the composed kernel stationary and sets its bandwidth, and the NTK linear model predicts the trained networks' loss curves. Gaussian random frequencies are best on seven tasks, and only their scale matters. Read §1–7; the appendices were not read. | Read |
+| [NOTE-297](../../../record/notes.d/NOTE-297.md) | Warm Diffusion | Blur and noise mixed in one forward process, with a two-headed model that denoises to the blurry image and deblurs the residual. A blur-to-noise ratio of 0.5, chosen from image and noise spectra, edges EDM on CIFAR-10 (1.85 against 1.97). High ratios degrade sharply, which is the evidence that noise keeps samples on the manifold. Read in full (8 pages). | Read |
+| [NOTE-298](../../../record/notes.d/NOTE-298.md) | Diffusion Forcing | Independent per-token noise levels during training give one causal model both autoregressive sampling and horizon-wide guidance, with sampling schedules chosen at inference. Stable long video rollouts are shown qualitatively. Planning and robot results are measured. Read §1–5; the appendix proofs and time-series results were not read. | Read |
+| [NOTE-299](../../../record/notes.d/NOTE-299.md) | Cold Diffusion | Diffusion generalized to deterministic degradations (blur, masking, downsampling, snow) with a restorer and a sampler that is exact for degradations linear in severity. Conditional restoration works. Noiseless unconditional generation is far worse than noise diffusion, and adding a little noise recovers half the gap. Read §1–5.3; the appendix was not read. | Read |

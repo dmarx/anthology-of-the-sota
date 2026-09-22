@@ -1,6 +1,9 @@
 ---
+number: 299
 status: Read
-paper: LIT-tmpb9kuz
+formerly:
+- NOTE-tmpvd2bq
+paper: LIT-553
 title: 'Cold Diffusion'
 version: 1
 date: '2026-09-23'
@@ -13,9 +16,9 @@ summary: >-
   read.
 ---
 
-<!-- inactive-ok-file: THEORY-tmpc9v4u THEORY-tmpyyfqg — the Rejected account this paper offered and the Proposed correction, both filed in this same contribution and named as such -->
+<!-- inactive-ok-file: THEORY-079 THEORY-080 — the Rejected account this paper offered and the Proposed correction, both filed in this same contribution and named as such -->
 
-# NOTE-tmpvd2bq: Cold Diffusion
+# NOTE-299: Cold Diffusion
 
 ## Contribution
 
@@ -63,7 +66,7 @@ for blur where the naive sampler drifts.
 ## Connections
 
 It relates to blurring diffusion and inverse heat dissipation, which it
-does not compare against directly. Warm Diffusion ([LIT-tmphm11f](../literature.d/LIT-tmphm11f.md)) extends it
+does not compare against directly. Warm Diffusion ([LIT-555](../literature.d/LIT-555.md)) extends it
 by mixing blur with noise and gives the account of why noise matters. The
 fixed-noise variant is related to DDIM's deterministic sampling
 (Appendix A.6).
@@ -77,8 +80,8 @@ fixed-noise variant is related to DDIM's deterministic sampling
 
 ## Bearing on the record
 
-- **[THEORY-tmpc9v4u](../theory.d/THEORY-tmpc9v4u.md)** files the paper's account, `Rejected`
-- **[THEORY-tmpyyfqg](../theory.d/THEORY-tmpyyfqg.md)** (Warm Diffusion) is the correction
+- **[THEORY-079](../theory.d/THEORY-079.md)** files the paper's account, `Rejected`
+- **[THEORY-080](../theory.d/THEORY-080.md)** (Warm Diffusion) is the correction
 
 ## Limitations
 

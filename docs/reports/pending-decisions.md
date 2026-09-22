@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**177 document(s) awaiting a decision.**
+**179 document(s) awaiting a decision.**
 
 ## SOTAs
 
-109 of the 177.
+110 of the 179.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -122,10 +122,11 @@
 | 2026-09-22 | Proposed | [SOTA-321](../../record/practices.d/SOTA-321.md) | 1 | 0 | Verify a model's lineage from the singular spectra of its attention products, which survive permutation and rescaling |
 | 2026-09-22 | Proposed | [SOTA-322](../../record/practices.d/SOTA-322.md) | 0 | 0 | Trade attention heads for depth: more heads conditions the attention block, and the layers you drop cost nothing |
 | 2026-09-23 | Proposed | [SOTA-332](../../record/practices.d/SOTA-332.md) | 4 | 0 | When an implicit representation will be supervised through its derivatives, use sine activations with the SIREN initialization rather than a ReLU network |
+| 2026-09-23 | Proposed | [SOTA-333](../../record/practices.d/SOTA-333.md) | 3 | 0 | For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history |
 
 ## THEORYs
 
-46 of the 177.
+47 of the 179.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -174,11 +175,12 @@
 | 2026-09-22 | Proposed | [THEORY-063](../../record/theory.d/THEORY-063.md) | 0 | 0 | Contextual concept directions sit in the low-variance tail of the unembedding spectrum while vocabulary contrasts sit at the top |
 | 2026-09-22 | Proposed | [THEORY-065](../../record/theory.d/THEORY-065.md) | 0 | 0 | Self-attention drives tokens into a few clusters, and the spectrum of the value matrix decides the geometry they land in |
 | 2026-09-22 | Proposed | [THEORY-066](../../record/theory.d/THEORY-066.md) | 0 | 0 | Pure self-attention collapses every token onto one, and skip connections prevent it by keeping short paths alive |
+| 2026-09-23 | Proposed | [THEORY-080](../../record/theory.d/THEORY-080.md) | 5 | 0 | A diffusion process needs noise to keep its intermediate states on the data manifold, and blur helps only while noise still dominates the bands it removes |
 | 2026-09-23 | Proposed | [THEORY-078](../../record/theory.d/THEORY-078.md) | 4 | 0 | Deep sine networks train when initialization holds every pre-activation near a standard normal, which keeps each layer arcsine-distributed and frequency growth slow; that initialization is what earlier periodic networks lacked |
 
 ## LITs
 
-3 of the 177.
+3 of the 179.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -188,7 +190,7 @@
 
 ## ADRs
 
-19 of the 177.
+19 of the 179.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

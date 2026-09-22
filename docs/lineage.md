@@ -2,7 +2,7 @@
 
 # Lines of work
 
-29 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+30 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -92,6 +92,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-439](../record/literature.d/LIT-439.md) — Deep Unsupervised Learning using Nonequilibrium Thermodynamics *(Active)*
   - [LIT-036](../record/literature.d/LIT-036.md) — Denoising Diffusion Probabilistic Models *(Active)*
     - [LIT-446](../record/literature.d/LIT-446.md) — Variational Diffusion Models *(Active)*
+
+### From Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise
+
+- [LIT-553](../record/literature.d/LIT-553.md) — Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise *(Active)*
+  - [LIT-555](../record/literature.d/LIT-555.md) — Warm Diffusion: Recipe for Blur-Noise Mixture Diffusion Models *(Active)*
+- alongside: [LIT-075](../record/literature.d/LIT-075.md) — Elucidating the Design Space of Diffusion-Based Generative Models *(Active)*
 
 ### From Scalable Diffusion Models with Transformers
 

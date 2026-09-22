@@ -1,0 +1,114 @@
+---
+status: Proposed
+title: 'The four commands are five, and two of them are invariants a hook can hold'
+version: 1
+tags:
+- record
+- ci
+date: '2026-09-22'
+summary: >-
+  `luria repair` is in the documented sequence, which had four commands and
+  needed five. A `Makefile` wraps the sequence and a tracked `pre-commit` hook
+  refuses generated views on a branch, which is [ADR-018](ADR-018.md) stated as an invariant
+  rather than remembered. Rejected: gitignoring `docs/` on branches, since main
+  tracks them; and leaving the sequence undocumented on the grounds that
+  `luria --help` is authoritative, which is true and is not where anybody looks.
+---
+
+# ADR-tmpnxv2f: The four commands are five, and two of them are invariants a hook can hold
+
+## Context
+
+`CLAUDE.md` documents the working sequence as four commands — `new`,
+`link --fix`, `index`, `lint` — and says to run all four before pushing, then
+discard what `index` regenerated.
+
+Two things are wrong with that, and both cost something in the four filing
+units of 2026-09-22.
+
+**`luria repair` is missing, and it is a superset of `link --fix`.** Its own
+help says it writes *"every mechanical source repair: link bare references,
+populate `created:` from a journal entry's path, move a note out of `status:`
+into `status_note:` and `superseded_by:`, retire a stale configuration
+reference"*. The second of those is exactly the violation
+`record/curation.d/2026/09/22/031952.md` produced — a `created:` timestamp
+written by hand that disagreed with the path `luria new` had chosen — and it
+was fixed by hand because the documented sequence does not contain the command
+that fixes it. Four units ran `link --fix` and none ran `repair`.
+
+**The discard step is discipline, and discipline is what fails.**
+[ADR-018](ADR-018.md) settled that views land on `main` only: CI regenerates and commits
+them on the push, and a pull request writes none. The mechanism for holding
+that is a sentence in `CLAUDE.md` saying to run `git checkout -- docs/` before
+committing. It held four times out of four, which is not evidence that it is
+reliable — the same session shipped a stale acknowledgement directive, a
+citation to another contribution's temporary code, and a directive naming a
+code that does not exist, each of which was also governed by a sentence
+somebody was supposed to remember.
+
+A branch carrying views is not a cosmetic problem. It conflicts with every
+other branch and with CI's own commit.
+
+## Decision
+
+**`luria repair` joins the sequence, before `index`.** The documented ritual is
+now `new` → `repair` → `index` → `lint`, and `link --fix` is no longer named
+separately because `repair` does it. `index` keeps its place and its reason:
+it is run as much for `docs/reports/reference-status.md`, which names the
+citing sites an acknowledgement has to be written from, as for the views.
+
+**A `Makefile` carries the sequence**, with `make ready` as the single
+pre-commit entry point — `repair`, `index`, `lint`, then discard the views.
+It is four lines of recipe and exists so the order is in the repository rather
+than in a habit.
+
+**A tracked `pre-commit` hook refuses staged paths under `docs/` on any branch
+but `main`**, printing the offending paths and the two ways out. It lives in
+`.githooks/` and is installed by `make hooks`, which sets `core.hooksPath` —
+so the hook is version-controlled and reviewable, which a file in `.git/hooks/`
+is not.
+
+The load-bearing detail is that the hook checks the **branch**, not the
+content. `main` must be able to commit views, because that is where CI commits
+them.
+
+## Alternatives considered
+
+- **Gitignore `docs/` and have CI force-add.** The cleanest-looking option and
+  it does not survive contact: `main` tracks these files, the site builds from
+  them, and an ignored path that is also tracked is a configuration that
+  confuses every tool that reads it.
+- **Leave the sequence to `luria --help`, which is authoritative.** `CLAUDE.md`
+  says of itself that it is "a map, not a copy" and that when it disagrees with
+  `luria --help`, this file is wrong. That is the right rule and it did not
+  help: nobody ran `luria repair --help` for four units, because the map said
+  there were four commands and the map is what gets read. A map that omits a
+  road is still wrong.
+- **A `--check` in CI instead of a local hook.** CI already rejects stale views
+  and would eventually catch this, at the cost of a round trip and a
+  force-push. The hook costs nothing and fails at the moment the mistake is
+  made.
+- **Status quo.** Keep paying `git checkout -- docs/ && git clean -fdq docs/`
+  by hand every commit, and keep relying on remembering to. It worked four
+  times; three neighbouring disciplines in the same session did not.
+
+## Consequences
+
+`make hooks` is a once-per-clone step and nothing enforces that it was run —
+a hook cannot install itself. The failure mode is the status quo, which is
+acceptable: this makes the invariant enforceable, not automatic.
+
+The hook is deliberately overridable with `git commit --no-verify`, and the
+message says so. Someone editing a genuine source under `docs/` — the
+`README.stub` files are sources — must be able to commit it, and the hook
+cannot tell a stub from a view without duplicating `luria index`'s knowledge
+of its own outputs.
+
+**This decision is about two invariants that a tool can hold. Three others
+from the same session cannot be held here and are upstream work:** a lint
+baseline, so the standing seven warnings and 184 link targets stop living in
+a contributor's memory; an `ack` command that writes acknowledgement
+directives from `reference-status.md` rather than from recall; and a
+branch-side check for citations to temporary codes this contribution does not
+itself mint. Each corresponds to a defect that shipped or nearly shipped, and
+each belongs in `luria` rather than here.

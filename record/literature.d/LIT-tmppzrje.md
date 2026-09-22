@@ -1,0 +1,60 @@
+---
+status: Active
+title: 'A Style-Based Generator Architecture for Generative Adversarial Networks'
+version: 1
+tags:
+- generative-modeling
+- model-architecture
+- vision-and-graphics
+date: '2026-09-23'
+published: '2018-12-01'
+arxiv: '1812.04948'
+first_author: 'Karras'
+keywords:
+- 'stylegan'
+- 'mapping-network'
+- 'adain'
+- 'style-mixing'
+- 'ffhq'
+implementations:
+- StyleGAN
+summary: >-
+  Karras, Laine, Aila (2018), [ARXIV-1812.04948](https://arxiv.org/abs/1812.04948). StyleGAN: a mapping network
+  turns the latent z into an intermediate w, and w modulates every synthesis
+  layer through AdaIN. Per-layer noise inputs supply stochastic detail, and
+  mixing two w's across layers regularizes the model toward scale-specific
+  control. Built on progressive growing. FFHQ FID goes from 8.04
+  (Progressive GAN) to 4.40, most of it from tuning (5.25) and the mapping
+  network and styles (4.85). Also introduced the FFHQ dataset and the
+  perceptual path length metric.
+extended_by:
+- LIT-tmppdats
+---
+
+# LIT-tmppzrje: A Style-Based Generator Architecture for Generative Adversarial Networks
+
+Karras, Laine, Aila, NVIDIA (2018) — [ARXIV-1812.04948](https://arxiv.org/abs/1812.04948)
+
+## Key takeaways
+
+- **Table 1 (FFHQ FID, lowest over training):** Progressive GAN 8.04 →
+  tuning, including bilinear resampling, 5.25 → mapping network and styles
+  4.85 → constant input 4.88 → noise inputs 4.42 → mixing regularization
+  4.40. The largest single step is the improved baseline, not the style
+  architecture
+- **The architecture:** an MLP maps `z` to `w`. Learned affine maps
+  of `w` give per-layer styles applied by AdaIN. The synthesis network
+  starts from a learned constant. Per-pixel noise is added at each layer
+- **It is still progressively grown**, inheriting Progressive GAN's
+  networks and hyperparameters
+- Also introduced the FFHQ dataset, and perceptual path length (PPL) and
+  linear separability as measures of latent-space quality
+
+## Standing in the anthology
+
+**Filed from `#163`** (StyleGAN/2/3) as the base of the line StyleGAN →
+StyleGAN2 ([LIT-tmppdats](LIT-tmppdats.md)) → StyleGAN3 ([LIT-tmp8n96l](LIT-tmp8n96l.md)). The practices are
+filed from the later two. What they fix here is AdaIN's droplet artifacts
+and progressive growing's phase artifacts.
+
+**Skimmed:** abstract, introduction and Table 1. No NOTE.

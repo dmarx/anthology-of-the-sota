@@ -1,0 +1,71 @@
+---
+status: Active
+title: 'Alias-Free Generative Adversarial Networks'
+version: 1
+tags:
+- generative-modeling
+- model-architecture
+- vision-and-graphics
+date: '2026-09-23'
+published: '2021-06-01'
+arxiv: '2106.12423'
+first_author: 'Karras'
+keywords:
+- 'stylegan3'
+- 'aliasing'
+- 'equivariance'
+- 'texture-sticking'
+- 'filtered-nonlinearities'
+implementations:
+- StyleGAN3
+extends:
+- LIT-tmppdats
+summary: >-
+  Karras et al. (2021), [ARXIV-2106.12423](https://arxiv.org/abs/2106.12423). StyleGAN3: fine detail in GAN
+  images sticks to pixel coordinates ("texture sticking") because the
+  generator aliases. Treat every feature map as a bandlimited continuous
+  signal. Low-pass filter around each nonlinearity at 2× temporary
+  upsampling, feed Fourier features instead of a constant, drop noise
+  inputs. The generator becomes translation-equivariant (EQ-T 63 dB), or
+  also rotation-equivariant (StyleGAN3-R, EQ-R 40 dB), at StyleGAN2's FID.
+---
+
+<!-- inactive-ok-file: SOTA-tmpi4xv3 THEORY-052 — SOTA-tmpi4xv3 is Proposed and filed from this paper in this same contribution; THEORY-052 is Proposed and named to distinguish its claim from this paper's, not leaned on -->
+
+# LIT-tmp8n96l: Alias-Free Generative Adversarial Networks
+
+Karras, Aittala, Laine, Härkönen, Hellsten, Lehtinen, Aila, NVIDIA and Aalto
+(2021) — [ARXIV-2106.12423](https://arxiv.org/abs/2106.12423)
+
+## Key takeaways
+
+- **The diagnosis:** coarse features in a GAN control whether fine features
+  exist but not where they go. Fine detail stays fixed in pixel coordinates.
+  The cause is aliasing: boundary padding, pointwise nonlinearities and
+  sloppy up- and downsampling all leak absolute-position information and
+  high frequencies into the hierarchy
+- **The fix, from signal processing:** treat features as continuous
+  bandlimited signals. A pointwise nonlinearity commutes with translation
+  and rotation in the continuous domain but creates frequencies beyond the
+  band, so apply it at 2× temporary resolution and low-pass filter back
+  down. Nonlinearities are then the only source of new frequencies, and
+  their cutoff per layer controls how much detail each layer adds
+- **Figure 3 (FFHQ-U 256², FID / EQ-T / EQ-R in dB):** StyleGAN2 5.14 / – /
+  – → Fourier-feature input 4.79 / 16.2 → … → filtered nonlinearities
+  6.35 / 30.6 → non-critical sampling 4.78 / 43.9 → StyleGAN3-T 4.62 / 63.0
+  / 13.1 → StyleGAN3-R 4.50 / 66.7 / 40.5
+- **Cost:** parameter ablations trade equivariance against time and memory.
+  Upsampling by 4 instead of 2 raises EQ-T to 74 at 2.3× time
+
+## Standing in the anthology
+
+**Filed from `#163`** (StyleGAN/2/3, "equivariant representation"). It
+sources [SOTA-tmpi4xv3](../practices.d/SOTA-tmpi4xv3.md) and `extends` StyleGAN2 ([LIT-tmppdats](LIT-tmppdats.md)). Its input is
+a Fourier-feature mapping in the sense of [LIT-550](LIT-550.md).
+
+**Equivariance here is an output property, measured.** EQ-T and EQ-R are
+PSNRs between transforming the input and transforming the output. That is
+a different claim from [THEORY-052](../theory.d/THEORY-052.md)'s about equivariant *representations* in
+generative priors, though the two agree on direction.
+
+Read — [NOTE-tmp508h6](../notes.d/NOTE-tmp508h6.md).

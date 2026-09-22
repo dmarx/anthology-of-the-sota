@@ -1,0 +1,76 @@
+---
+status: Active
+title: 'XGrammar: Flexible and Efficient Structured Generation Engine for Large Language Models'
+version: 1
+tags:
+- inference-optimization
+- systems-optimization
+date: '2026-09-23'
+published: '2024-11-01'
+arxiv: '2411.15100'
+first_author: 'Dong'
+keywords:
+- 'constrained-decoding'
+- 'structured-generation'
+- 'context-free-grammar'
+- 'pushdown-automaton'
+- 'token-mask'
+implementations:
+- XGrammar
+- SGLang
+- MLC-LLM
+summary: >-
+  Dong et al. (2024), [ARXIV-2411.15100](https://arxiv.org/abs/2411.15100). Constrained decoding sets the logits
+  of grammar-violating tokens to −∞. Doing that for a context-free grammar
+  means interpreting a pushdown automaton over the whole vocabulary every
+  step. XGrammar precomputes, per automaton node, the verdict for tokens
+  that do not depend on the rest of the stack (over 99% for JSON on
+  Llama-3.1), and builds the mask on the CPU during the GPU forward pass.
+  Per-token mask time is 36 µs against milliseconds for earlier engines,
+  with end-to-end overhead of about 0.1 ms per token.
+---
+
+# LIT-tmpeekbd: XGrammar: Flexible and Efficient Structured Generation Engine for Large Language Models
+
+Dong, Ruan, Cai, Lai, Xu, Zhao, Chen, CMU, NVIDIA, SJTU, UC Berkeley
+(2024; MLSys 2025) — [ARXIV-2411.15100](https://arxiv.org/abs/2411.15100)
+
+## Key takeaways
+
+- **Where the cost is.** A context-free grammar needs a stack, so the set of
+  valid next tokens depends on unbounded state and cannot simply be cached.
+  A naive engine checks all 128k tokens against the automaton every step
+- **Most tokens only need the stack top.** A token that stays inside the
+  current rule, or pushes into a child rule, is decided by the top node
+  alone. Only a token that pops back to a parent rule needs the whole
+  stack. For JSON on Llama-3.1, 1,134 of 128k tokens are context-dependent.
+  The rest are precomputed per node in an *adaptive token mask cache*,
+  stored as whichever of the accepted or rejected lists is smaller (160 MB
+  down to 0.46 MB)
+- **The rest is engineering, and it is ablated** (Table 3, per-token mask
+  latency): PDA baseline 65.8 ms → node merging 38.3 → mask cache 0.154 →
+  rule inlining 0.035 → context expansion 0.018 ms
+- **Overlap with the model.** Mask generation needs only the tokens so far,
+  so it runs on the CPU while the GPU computes logits, synchronizing before
+  sampling. MLC-LLM with Llama-3.1 8B: TPOT 6.2 → 6.3 ms at batch 1, 9.0 →
+  9.2 ms at batch 16 (Table 2)
+- **Against other engines (Figure 9):** on JSON Schema, 36 µs per token
+  against 125 µs to 7 ms for Outlines, llama.cpp and lm-format-enforcer. On
+  the context-free grammars only two other engines are plotted, at 4.7–9.4
+  ms for unconstrained JSON and up to hundreds of milliseconds for XML and
+  the Python DSL
+
+## Standing in the anthology
+
+**Filed from `#163`** ("sampling structured outputs (xgrammar?)"). The
+record had no document on constrained decoding. Sources [SOTA-tmpazros](../practices.d/SOTA-tmpazros.md).
+
+**The "accuracy" in Table 4 is syntax.** Function calling goes from 62% to
+100% and XML from 80% to 100%, measured as syntactic correctness, which a
+grammar mask guarantees by construction. Whether the masked output is as
+*right* as it is well-formed is not measured. Masking greedily and
+renormalizing can change the distribution over valid strings, which
+nothing in the record has measured, and the paper does not claim otherwise, but its caption's "better generation
+quality" is the sentence that will travel ([DP-010](../../docs/design-principles.md#dp-10)).
+
+Read — [NOTE-tmpkzvug](../notes.d/NOTE-tmpkzvug.md).

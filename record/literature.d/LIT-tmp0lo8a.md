@@ -28,6 +28,8 @@ summary: >-
   sinusoids makes the kernel stationary, with a bandwidth set by the
   frequencies. Random Gaussian frequencies beat NeRF's positional encoding
   on all seven tasks, and only their scale matters.
+compared_against:
+- LIT-511
 ---
 
 # LIT-tmp0lo8a: Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains

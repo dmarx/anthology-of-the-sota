@@ -5,7 +5,7 @@
 
 help:
 	@echo "make hooks        install .githooks (ADR-018 guard); run once per clone"
-	@echo "make check        luria repair -> index -> lint"
+	@echo "make check        luria repair -> link --fix -> index -> lint"
 	@echo "make views-reset  discard everything luria index regenerated"
 	@echo "make ready        check, then views-reset — run before you commit"
 
@@ -13,16 +13,23 @@ hooks:
 	git config core.hooksPath .githooks
 	@echo "core.hooksPath = .githooks"
 
-# `repair` subsumes `link --fix` and also populates `created:` from a journal
-# entry's path. `index` is run for its side effect on the reports as much as
-# for the views: docs/reports/reference-status.md is what names the citing
-# sites an acknowledgement has to be written from.
+# BOTH `repair` and `link --fix` are needed and neither contains the other.
+# `repair` populates `created:` from a journal entry's path and retires stale
+# config references; `link --fix` writes the converse of a declared relation,
+# which `repair` does not. `index` is run for its side effect on the reports as
+# much as for the views: docs/reports/reference-status.md is what names the
+# citing sites an acknowledgement has to be written from.
 check:
 	luria repair
+	luria link --fix
 	luria index
 	luria lint
 
+# Unstage first: the pre-commit hook fires on *staged* views, and at that
+# point `git checkout -- docs/` restores them from the index, which is where
+# the unwanted copies already are. Found by the hook, on its first real catch.
 views-reset:
+	git reset -q HEAD -- docs/ 2>/dev/null || true
 	git checkout -- docs/
 	git clean -fdq docs/
 

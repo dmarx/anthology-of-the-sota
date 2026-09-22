@@ -103,16 +103,20 @@ work perfectly well.
 ## Working
 
     luria new sota --title "..."   # or: theory, lit, adr, dp, changelog
-    luria repair                  # every mechanical fix, including the targets
+    luria repair                  # created:, status notes, stale config refs
+    luria link --fix              # spell the targets, complete the relations
     luria index                   # regenerate every view
     luria lint                    # the only command that can fail
 
 <!-- inactive-ok-file: ADR-tmpnxv2f — Proposed, and cited as the decision that put `repair` in this sequence and the hook behind the discard step; Proposed is the resting state of an unmoved decision here, not a sign the sequence is unsettled. -->
 
-Or `make ready`, which runs those three and discards the views ([ADR-tmpnxv2f](record/decisions.d/ADR-tmpnxv2f.md)).
-**`repair`, not `link --fix`** — it does the linking *and* the rest, including
-populating a journal entry's `created:` from the path `luria new` chose, which
-is a violation four units in a row fixed by hand.
+Or `make ready`, which runs those four and discards the views ([ADR-tmpnxv2f](record/decisions.d/ADR-tmpnxv2f.md)).
+**You need both `repair` and `link --fix`, and neither contains the other.**
+`repair` populates a journal entry's `created:` from the path `luria new`
+chose, moves a note out of `status:`, and retires a stale config reference.
+`link --fix` **writes the converse of a declared relation**, which `repair`
+does not — measured, not assumed: `repair` reported nothing to do on a tree
+where `link --fix` then wrote two back-references.
 
 Run all of them before pushing — then **do not commit what `luria index`
 regenerated.** Views land on `main` only: CI regenerates and commits them on

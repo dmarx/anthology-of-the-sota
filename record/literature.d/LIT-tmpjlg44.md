@@ -1,0 +1,81 @@
+---
+status: Active
+title: 'Dynamical versus Bayesian Phase Transitions in a Toy Model of Superposition'
+version: 1
+tags:
+- analysis-and-evaluation
+- training-optimization
+- model-stability
+date: '2026-09-22'
+published: '2023-10-10'
+arxiv: '2310.06301'
+first_author: 'Chen'
+keywords:
+- 'phase transitions'
+- 'singular learning theory'
+- 'free energy'
+- 'superposition'
+- 'local learning coefficient'
+implementations: []
+summary: >-
+  Chen, Lau, Mendel, Wei and Murfet (2023), [ARXIV-2310.06301](https://arxiv.org/abs/2310.06301) — the paper that
+  separates two things everyone calls a phase transition. In the Toy Model of
+  Superposition at two hidden dimensions, regular `k`-gons are critical points
+  with derivable local learning coefficients; the free energy formula
+  `F_n ≈ min_α [n L_n(w*_α) + λ_α log n + c_α]` then predicts a Bayesian
+  `5 → 6` transition at `n_cr ≈ 600`, observed at `600 ≤ n ≤ 700`. The same
+  critical points govern SGD plateaus — **and the 5 → 6 transition is not one
+  of the dynamical ones**. Read as [NOTE-tmpx2d9k](../notes.d/NOTE-tmpx2d9k.md).
+---
+
+# LIT-tmpjlg44: Dynamical versus Bayesian Phase Transitions in a Toy Model of Superposition
+
+<!-- inactive-ok-file: THEORY-070, THEORY-071, THEORY-072 — all Proposed, and named here as the three rival grokking mechanisms, every one of them a claim about a trajectory. That they are Proposed is the point being made when they are cited. -->
+
+Chen, Lau, Mendel, Wei and Murfet (2023) — [ARXIV-2310.06301](https://arxiv.org/abs/2310.06301). Read as
+[NOTE-tmpx2d9k](../notes.d/NOTE-tmpx2d9k.md).
+
+## Key takeaways
+
+- **The distinction.** A *Bayesian* phase transition is a change in which
+  region of parameter space the posterior concentrates on, as a function of
+  **sample size `n`**, and it is mathematically well defined in SLT. A
+  *dynamical* transition is a change in the SGD trajectory as a function of
+  **training step**, and its "formal status has remained elusive". The paper's
+  title is its thesis.
+- **The mechanism, in one formula.** The local free energy is
+  `F_n(W_α) = n L_n(w*_α) + λ_α log n − (m_α − 1) log log n + O_p(1)`,
+  approximated as `F_n ≈ min_α [n L_n(w*_α) + λ_α log n + c_α]`. At small `n`
+  the `λ log n` term dominates, so the posterior prefers **low complexity even
+  at high loss**; at large `n` the `n L_n` term dominates and it prefers **low
+  loss at higher complexity**. The transitions are where the ordering swaps.
+  That is Occam's razor as an internal, automatic, `n`-dependent mechanism.
+- **A quantitative prediction, confirmed.** For the Toy Model of Superposition
+  with `r = 2` hidden dimensions, regular `k`-gons are proved to be critical
+  points, and their local learning coefficients are derived. The free energy
+  formula predicts the `5 → 6` transition at `n_cr ≈ 600`; MCMC over the
+  posterior shows it at `600 ≤ n ≤ 700`.
+- **And the honest negative.** "There is **no necessary relation** between
+  these two kinds of transitions." The `5 → 6` Bayesian transition **has not
+  been observed as a dynamical transition** — the regions may be separated by
+  energy barriers SGD does not cross.
+- **The Bayesian Antecedent Hypothesis.** The conjecture that dynamical
+  transitions encountered in training *do* have Bayesian antecedents. Its main
+  obstruction is that a Bayesian transition requires `λ` to increase. The
+  paper's own analysis finds antecedents for its observed dynamical
+  transitions with two inconclusive cases.
+
+## Standing in the anthology
+
+**`Active`, and the most load-bearing single idea in this cluster for a record
+that holds three `Proposed` grokking mechanisms and a practice about emergent
+capabilities.** Everything in `THEORY-072`, `THEORY-071` and
+`THEORY-070` is dynamical. Everything SLT proves is Bayesian. This paper
+is where the field says out loud that those are different events and supplies
+the one worked example in which both are computed.
+
+**It is a toy model, deliberately.** Two hidden dimensions, high sparsity
+limit, and the classification of critical points is not claimed to be
+exhaustive. What that buys is the only setting in which the theoretical `λ`
+is available, the prediction is numerical, and the comparison is therefore a
+test rather than an analogy.

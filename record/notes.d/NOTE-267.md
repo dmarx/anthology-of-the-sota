@@ -1,6 +1,9 @@
 ---
+number: 267
 status: Read
-paper: LIT-tmpeu23i
+formerly:
+- NOTE-tmpwddew
+paper: LIT-522
 title: 'Freezing the spectrum by construction, and what one 60M run can and cannot show'
 version: 1
 date: '2026-09-22'
@@ -12,7 +15,7 @@ summary: >-
   which is why no practice is filed.
 ---
 
-# NOTE-tmpwddew: Freezing the spectrum by construction, and what one 60M run can and cannot show
+# NOTE-267: Freezing the spectrum by construction, and what one 60M run can and cannot show
 
 ## Contribution
 
@@ -91,9 +94,9 @@ explanation, and the paper offers none.
 
 **It completes an axis the record can now see in full.** Three ways to handle
 a drifting weight spectrum: renormalize it every step
-([LIT-tmpzz9pi](../literature.d/LIT-tmpzz9pi.md)), bound how fast it may move
-([LIT-tmp8a9ww](../literature.d/LIT-tmp8a9ww.md)), or forbid it from moving
-([LIT-tmpeu23i](../literature.d/LIT-tmpeu23i.md)). All three report removing a crutch —
+([LIT-523](../literature.d/LIT-523.md)), bound how fast it may move
+([LIT-521](../literature.d/LIT-521.md)), or forbid it from moving
+([LIT-522](../literature.d/LIT-522.md)). All three report removing a crutch —
 warmup, normalization, or both. Nobody has compared them, and the axis is only
 visible because all three are filed together.
 

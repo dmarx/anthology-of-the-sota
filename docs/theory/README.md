@@ -39,8 +39,8 @@ bare code and run `luria link --fix`.
 **[Numerics and precision](tags/numerics-and-precision.md)** (3) — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them:
 [019](../../record/theory.d/THEORY-019.md) · [042](../../record/theory.d/THEORY-042.md) · [059](../../record/theory.d/THEORY-059.md)
 
-**[Model stability](tags/model-stability.md)** (9) — initialization, normalization, gradient handling, regularization, loss-landscape behaviour:
-[001](../../record/theory.d/THEORY-001.md) · [003](../../record/theory.d/THEORY-003.md) · [010](../../record/theory.d/THEORY-010.md) · [011](../../record/theory.d/THEORY-011.md) · [015](../../record/theory.d/THEORY-015.md) · [016](../../record/theory.d/THEORY-016.md) · [041](../../record/theory.d/THEORY-041.md) · [044](../../record/theory.d/THEORY-044.md) · [045](../../record/theory.d/THEORY-045.md)
+**[Model stability](tags/model-stability.md)** (11) — initialization, normalization, gradient handling, regularization, loss-landscape behaviour:
+[001](../../record/theory.d/THEORY-001.md) · [003](../../record/theory.d/THEORY-003.md) · [010](../../record/theory.d/THEORY-010.md) · [011](../../record/theory.d/THEORY-011.md) · [015](../../record/theory.d/THEORY-015.md) · [016](../../record/theory.d/THEORY-016.md) · [041](../../record/theory.d/THEORY-041.md) · [044](../../record/theory.d/THEORY-044.md) · [045](../../record/theory.d/THEORY-045.md) · [061](../../record/theory.d/THEORY-061.md) · [062](../../record/theory.d/THEORY-062.md)
 
 **[Distributed optimization](tags/distributed-optimization.md)** (1) — parallelism and sharding, communication, memory management, checkpointing:
 [014](../../record/theory.d/THEORY-014.md)
@@ -48,8 +48,8 @@ bare code and run `luria link --fix`.
 **[Data pipeline](tags/data-pipeline.md)** (1) — loading, quality assessment and selection, preprocessing, batch preparation:
 [057](../../record/theory.d/THEORY-057.md)
 
-**[Attention techniques](tags/attention-techniques.md)** (1) — attention variants and alternative mechanisms, implementation optimizations, context length:
-[019](../../record/theory.d/THEORY-019.md)
+**[Attention techniques](tags/attention-techniques.md)** (3) — attention variants and alternative mechanisms, implementation optimizations, context length:
+[019](../../record/theory.d/THEORY-019.md) · [061](../../record/theory.d/THEORY-061.md) · [062](../../record/theory.d/THEORY-062.md)
 
 **[Model architecture](tags/model-architecture.md)** (7) — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in:
 [005](../../record/theory.d/THEORY-005.md) · [020](../../record/theory.d/THEORY-020.md) · [038](../../record/theory.d/THEORY-038.md) · [041](../../record/theory.d/THEORY-041.md) · [046](../../record/theory.d/THEORY-046.md) · [050](../../record/theory.d/THEORY-050.md) · [056](../../record/theory.d/THEORY-056.md)
@@ -82,7 +82,7 @@ bare code and run `luria link --fix`.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (23) · [Offered](status/Proposed.md) (34) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (23) · [Offered](status/Proposed.md) (36) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -158,4 +158,6 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-058](../../record/theory.d/THEORY-058.md) | Apparent compression in the information plane is saturating activations collapsing into extreme bins, not information being discarded | Saxe et al. (2018), [LIT-509](../../record/literature.d/LIT-509.md) — a `tanh` unit must grow its weights to compute anything nonlinear, and as it does its activity piles into the saturation regions. Under a fixed binning that is a distribution collapsing into two bins — about **1 bit** — which the information plane draws as a compression phase. `Proposed`, because [LIT-507](../../record/literature.d/LIT-507.md) shows compression in *some* non-saturating networks once the bins are placed adaptively. | Proposed |
 | [THEORY-059](../../record/theory.d/THEORY-059.md) v2 | A low-rank branch corrects quantization because weight spectra are steep and quantization-error spectra are flat | Li et al. (2024), [LIT-512](../../record/literature.d/LIT-512.md) — two propositions bound the output error by the *magnitude* of weights and activations, not only by their rounding errors. So a rank-`r` branch helps exactly when the thing it subtracts has a few dominant singular values. A weight matrix does; a quantization error does not, which is why the same trick applied to the error rather than the weights underperforms. | Proposed |
 | [THEORY-060](../../record/theory.d/THEORY-060.md) | Calibration error and refinement error have separate minimizers during training, so the loss minimum is optimal for neither | Berta et al. (2025), [LIT-514](../../record/literature.d/LIT-514.md) — a proper loss is exactly calibration error plus refinement error, so minimizing it minimizes a sum whose two terms bottom out at different epochs. The proposed mechanism: as the training set becomes separable the model must grow confident to keep *training* calibration error small, and across a generalization gap that confidence does not transfer — while refinement is still improving. | Proposed |
+| [THEORY-061](../../record/theory.d/THEORY-061.md) | Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product | Zhai et al. (2023), [LIT-523](../../record/literature.d/LIT-523.md) — with `σ = ‖W_K W_Q^T‖₂·‖XX^T‖₂`, the minimum attainable attention entropy behaves like `Ω(Tσe^{−σ})`, and the bound is tight. So a saturated softmax is not bad luck: growing weights force it. Adaptive optimizers make it worse, because the idealized Adam update's spectral norm grows like `√w` in the width. `Proposed`, because a later paper exhibits a stable network in precisely the collapsed state. | Proposed |
+| [THEORY-062](../../record/theory.d/THEORY-062.md) | What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such | Qi et al. (2025), [LIT-521](../../record/literature.d/LIT-521.md) — an attention map that is sparse but **not** low-rank has near-zero entropy and trains fine; one that is sparse **and** low-rank crashes. So entropy is the symptom. The cause offered is spectral energy concentration of `W_q^T W_k`, which in crashed runs collapses into fewer than 10 directions. `Proposed`: it is one group's counterexample to another group's account, at 300M and below. | Proposed |
 

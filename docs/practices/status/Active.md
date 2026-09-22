@@ -6,7 +6,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-192 of 318 SOTA documents. Back to the [full index](../README.md).
+192 of 320 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -143,7 +143,7 @@
 | [SOTA-186](../../../record/practices.d/SOTA-186.md) | Bootstrap a large annotation set with the model you are training, staging the automation as it improves |  | Active |
 | [SOTA-187](../../../record/practices.d/SOTA-187.md) v3 | Train the generative model in a learned compressed latent, not at full resolution |  | Active |
 | [SOTA-188](../../../record/practices.d/SOTA-188.md) v4 | Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal |  | Active |
-| [SOTA-192](../../../record/practices.d/SOTA-192.md) v4 | Normalize the queries and keys before the attention dot product |  | Active |
+| [SOTA-192](../../../record/practices.d/SOTA-192.md) v5 | Normalize the queries and keys before the attention dot product |  | Active |
 | [SOTA-194](../../../record/practices.d/SOTA-194.md) | When an objective arrives with its own dataset, state the composition before crediting the objective |  | Active |
 | [SOTA-195](../../../record/practices.d/SOTA-195.md) | Predict v rather than the noise when the model will be evaluated at low signal-to-noise |  | Active |
 | [SOTA-196](../../../record/practices.d/SOTA-196.md) | Report zero-shot and in-distribution performance separately; one hyperparameter can move them in opposite directions |  | Active |

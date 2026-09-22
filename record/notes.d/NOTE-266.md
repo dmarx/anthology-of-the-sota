@@ -1,6 +1,9 @@
 ---
+number: 266
 status: Read
-paper: LIT-tmp8a9ww
+formerly:
+- NOTE-tmpo1rg6
+paper: LIT-521
 title: 'Not all entropy collapse crashes a model, and the discriminator is low-rankness'
 version: 1
 date: '2026-09-22'
@@ -11,11 +14,11 @@ summary: >-
   the symptom and spectral energy concentration in the query-key product the
   cause, and it makes a warmup-free optimizer fall out.
 ---
-<!-- inactive-ok-file: THEORY-tmp4mah6 THEORY-tmpyirh9 — both Proposed and
+<!-- inactive-ok-file: THEORY-061 THEORY-062 — both Proposed and
      both filed in this contribution. This reading is about the disagreement
      between them, so naming them is the subject rather than a reliance. -->
 
-# NOTE-tmpo1rg6: Not all entropy collapse crashes a model, and the discriminator is low-rankness
+# NOTE-266: Not all entropy collapse crashes a model, and the discriminator is low-rankness
 
 ## Contribution
 
@@ -101,7 +104,7 @@ arrive another way.
 
 **It corrects a filed account rather than extending it.** The distinction
 matters for how the record stores this:
-[THEORY-tmp4mah6](../theory.d/THEORY-tmp4mah6.md) says low attention entropy is what breaks a
+[THEORY-061](../theory.d/THEORY-061.md) says low attention entropy is what breaks a
 transformer. This says there is a stable state with low attention entropy, so
 the reasoning is replaced even though most of what the earlier account
 predicts still happens. `corrects`, not `extends`, and the record carries both
@@ -121,7 +124,7 @@ size by a ratio of spectral norms. Three places to intervene, no comparison
 between them.
 
 **Second of three warmup removals**, and the tempting synthesis is left
-unfiled for the reason given in [NOTE-tmp4pghv](NOTE-tmp4pghv.md).
+unfiled for the reason given in [NOTE-265](NOTE-265.md).
 
 ## Open questions
 

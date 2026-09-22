@@ -6,7 +6,7 @@
 
 **Attention techniques** — attention variants and alternative mechanisms, implementation optimizations, context length.
 
-38 of 455 LIT documents. Back to the [full index](../README.md).
+40 of 458 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -48,3 +48,5 @@
 | [LIT-429](../../../record/literature.d/LIT-429.md) | Eagle and Finch: RWKV with Matrix-Valued States and Dynamic Recurrence | Peng et al. (2024), [ARXIV-2404.05892](https://arxiv.org/abs/2404.05892). RWKV-5 and RWKV-6, and the two changes the line is still built on: the state becomes matrix-valued rather than vector-valued, and the decay becomes a function of the input rather than a learned constant. | Active |
 | [LIT-430](../../../record/literature.d/LIT-430.md) | RWKV: Reinventing RNNs for the Transformer Era | Peng et al. (2023), [ARXIV-2305.13048](https://arxiv.org/abs/2305.13048). The paper the RWKV line starts from, and the first to take the architecture to 14B: AFT's position bias becomes an exponential decay over relative position, which makes the layer trainable in parallel and runnable as a constant-memory recurrence. | Active |
 | [LIT-431](../../../record/literature.d/LIT-431.md) | An Attention Free Transformer | Zhai et al. (2021), [ARXIV-2105.14103](https://arxiv.org/abs/2105.14103). Drops the query-key product entirely: keys and values are combined with a learned position bias and the query enters element-wise. The record holds it because it is where RWKV's letters come from — `R`, `W`, `K`, `V` is this construction renamed. | Active |
+| [LIT-521](../../../record/literature.d/LIT-521.md) | Taming Transformer Without Using Learning Rate Warmup | Qi et al. (2025), [ARXIV-2505.21910](https://arxiv.org/abs/2505.21910) — attention entropy collapse comes in two modes, and only one crashes the model: sparse **and low-rank** is fatal, sparse alone is benign. The driver is spectral energy concentration in `W_q^T W_k`. Suppressing it by bounding the learning rate with Weyl's inequality trains ViT, Swin and GPT **without warmup**, matching warmed-up AdamW on all five configurations. Read as [NOTE-266](../../../record/notes.d/NOTE-266.md). | Active |
+| [LIT-523](../../../record/literature.d/LIT-523.md) | Stabilizing Transformer Training by Preventing Attention Entropy Collapse | Zhai et al. (2023), [ARXIV-2303.06296](https://arxiv.org/abs/2303.06296) — proves a tight lower bound on attention entropy that falls like `Ω(Tσe^{-σ})` in the spectral norm of `W_K W_Q^T`, then removes the growth by reparameterizing every linear layer as `γ·W/σ(W)`. A ViT trained this way reaches 82.2% on ImageNet **without pre-LN, warmup, weight decay or an adaptive optimizer**. Read as [NOTE-265](../../../record/notes.d/NOTE-265.md). | Active |

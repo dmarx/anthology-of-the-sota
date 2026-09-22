@@ -1,6 +1,9 @@
 ---
+number: 265
 status: Read
-paper: LIT-tmpzz9pi
+formerly:
+- NOTE-tmp4pghv
+paper: LIT-523
 title: 'A proved bound under the entropy-collapse observation, and a reparameterization that removes four crutches'
 version: 1
 date: '2026-09-22'
@@ -11,12 +14,12 @@ summary: >-
   remedy. The accuracy numbers are nearly flat; what changes is how many
   hyperparameters have to be right.
 ---
-<!-- inactive-ok-file: THEORY-tmp4mah6 SOTA-122 SOTA-282 — all Proposed.
+<!-- inactive-ok-file: THEORY-061 SOTA-122 SOTA-282 — all Proposed.
      The two practices are named as the nearest antecedents in a paragraph
      saying nobody has compared them; the theory is this reading's own
      account, filed in the same contribution. -->
 
-# NOTE-tmp4pghv: A proved bound under the entropy-collapse observation, and a reparameterization that removes four crutches
+# NOTE-265: A proved bound under the entropy-collapse observation, and a reparameterization that removes four crutches
 
 ## Contribution
 
@@ -115,7 +118,7 @@ same move — strip the scale, learn it back — at the level of the spectral no
 None of the three cites the others in this record's reading, and nobody has
 compared them.
 
-**Its account is contested by [LIT-tmp8a9ww](../literature.d/LIT-tmp8a9ww.md)**, which exhibits a
+**Its account is contested by [LIT-521](../literature.d/LIT-521.md)**, which exhibits a
 stable network in a state the entropy criterion says should crash. That
 dispute is live and both sides are filed.
 

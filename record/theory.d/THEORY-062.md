@@ -1,5 +1,8 @@
 ---
+number: 62
 status: Proposed
+formerly:
+- THEORY-tmpyirh9
 promote_when: >-
   The benign state confirmed by a second group, or at a scale where
   instability is expensive: a training run held in the sparse-but-not-low-rank
@@ -16,31 +19,31 @@ tags:
 - attention-techniques
 date: '2026-09-22'
 source:
-- LIT-tmp8a9ww
+- LIT-521
 explains:
-- SOTA-tmpyf7w7
+- SOTA-320
 corrects:
-- THEORY-tmp4mah6
+- THEORY-061
 summary: >-
-  Qi et al. (2025), [LIT-tmp8a9ww](../literature.d/LIT-tmp8a9ww.md) — an attention map that is
+  Qi et al. (2025), [LIT-521](../literature.d/LIT-521.md) — an attention map that is
   sparse but **not** low-rank has near-zero entropy and trains fine; one that
   is sparse **and** low-rank crashes. So entropy is the symptom. The cause
   offered is spectral energy concentration of `W_q^T W_k`, which in crashed
   runs collapses into fewer than 10 directions. `Proposed`: it is one group's
   counterexample to another group's account, at 300M and below.
 ---
-<!-- inactive-ok-file: THEORY-tmp4mah6 — Proposed, and the account this one
+<!-- inactive-ok-file: THEORY-061 — Proposed, and the account this one
      corrects. The `corrects` relation is the citation. -->
 
-<!-- inactive-ok-file: SOTA-tmpyf7w7 — Proposed, filed in this same
+<!-- inactive-ok-file: SOTA-320 — Proposed, filed in this same
      contribution and named in the `explains` table. -->
 
-# THEORY-tmpyirh9: What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such
+# THEORY-062: What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such
 
 ## Source
 
 Qi, He, Ye, Li, Zi, Dai, Zou and Xiao (2025),
-[LIT-tmp8a9ww](../literature.d/LIT-tmp8a9ww.md) — read as [NOTE-tmpo1rg6](../notes.d/NOTE-tmpo1rg6.md).
+[LIT-521](../literature.d/LIT-521.md) — read as [NOTE-266](../notes.d/NOTE-266.md).
 Theorem 1, with the mode distinction in §3.3 and the discussion in the
 appendix.
 
@@ -48,7 +51,7 @@ appendix.
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-tmpyf7w7](../practices.d/SOTA-tmpyf7w7.md) | cap the step by `τ·σ₁(W_{t−1})/σ₁(∇W_t)` | Weyl's inequality makes that ratio the exact handle on how fast `σ₁` can grow, and it is the growth that concentrates the energy |
+| [SOTA-320](../practices.d/SOTA-320.md) | cap the step by `τ·σ₁(W_{t−1})/σ₁(∇W_t)` | Weyl's inequality makes that ratio the exact handle on how fast `σ₁` can grow, and it is the growth that concentrates the energy |
 
 ## The account
 
@@ -79,7 +82,7 @@ lives in the weight matrix and the activations only carry it forward.
 
 ## What it corrects, and how much of it survives
 
-[THEORY-tmp4mah6](THEORY-tmp4mah6.md) says low attention entropy is what breaks
+[THEORY-061](THEORY-061.md) says low attention entropy is what breaks
 training, and proves a tight bound making low entropy inevitable once the
 spectral norm is large. **The bound is untouched.** What is replaced is the
 step from low entropy to instability: on this account there is a low-entropy

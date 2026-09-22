@@ -1,5 +1,8 @@
 ---
+number: 61
 status: Proposed
+formerly:
+- THEORY-tmp4mah6
 promote_when: >-
   An intervention that separates entropy from the spectral norm: something
   that restores attention entropy WITHOUT bounding `‖W_K W_Q^T‖₂`, or bounds
@@ -16,12 +19,12 @@ tags:
 - attention-techniques
 date: '2026-09-22'
 source:
-- LIT-tmpzz9pi
+- LIT-523
 explains:
-- SOTA-tmpqevxe
+- SOTA-319
 - SOTA-192
 summary: >-
-  Zhai et al. (2023), [LIT-tmpzz9pi](../literature.d/LIT-tmpzz9pi.md) — with
+  Zhai et al. (2023), [LIT-523](../literature.d/LIT-523.md) — with
   `σ = ‖W_K W_Q^T‖₂·‖XX^T‖₂`, the minimum attainable attention entropy behaves
   like `Ω(Tσe^{−σ})`, and the bound is tight. So a saturated softmax is not
   bad luck: growing weights force it. Adaptive optimizers make it worse,
@@ -29,22 +32,22 @@ summary: >-
   width. `Proposed`, because a later paper exhibits a stable network in
   precisely the collapsed state.
 corrected_by:
-- THEORY-tmpyirh9
+- THEORY-062
 ---
-<!-- inactive-ok-file: THEORY-tmpyirh9 — Proposed, and the account that
+<!-- inactive-ok-file: THEORY-062 — Proposed, and the account that
      corrects this one. Naming the objection that keeps this document
      `Proposed` requires it to be unsettled. -->
 
-<!-- inactive-ok-file: SOTA-tmpqevxe — Proposed, filed in this same
+<!-- inactive-ok-file: SOTA-319 — Proposed, filed in this same
      contribution and named in the `explains` table, which is the relation
      itself. -->
 
-# THEORY-tmp4mah6: Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product
+# THEORY-061: Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product
 
 ## Source
 
 Zhai, Likhomanenko, Littwin, Busbridge, Ramapuram, Zhang, Gu and Susskind
-(2023), [LIT-tmpzz9pi](../literature.d/LIT-tmpzz9pi.md) — read as [NOTE-tmp4pghv](../notes.d/NOTE-tmp4pghv.md).
+(2023), [LIT-523](../literature.d/LIT-523.md) — read as [NOTE-265](../notes.d/NOTE-265.md).
 Theorem 3.1 and Proposition 3.2, proved in the appendix.
 
 ## What it explains
@@ -52,7 +55,7 @@ Theorem 3.1 and Proposition 3.2, proved in the appendix.
 | practice | what it says to do | what this says is going on |
 |---|---|---|
 | [SOTA-192](../practices.d/SOTA-192.md) | normalize queries and keys before the dot product | bounding the two vectors bounds `σ`, and `σ` is the quantity the entropy bound decays in |
-| [SOTA-tmpqevxe](../practices.d/SOTA-tmpqevxe.md) | reparameterize every linear layer by its spectral norm | the same lever, applied to the matrix rather than the activations, with the growth rate decoupled from width |
+| [SOTA-319](../practices.d/SOTA-319.md) | reparameterize every linear layer by its spectral norm | the same lever, applied to the matrix rather than the activations, with the growth rate decoupled from width |
 
 ## The account
 
@@ -86,7 +89,7 @@ saturation is what growth forces.
 ## Why `Proposed`
 
 **A later paper exhibits a stable network in the collapsed state.**
-[THEORY-tmpyirh9](THEORY-tmpyirh9.md) distinguishes attention maps that are sparse but
+[THEORY-062](THEORY-062.md) distinguishes attention maps that are sparse but
 not low-rank from those that are both, reports that the first trains fine, and
 says so explicitly as a counterexample to the entropy criterion. If that
 observation holds, low entropy is a symptom and not the cause. It is one

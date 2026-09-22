@@ -1,5 +1,8 @@
 ---
+number: 320
 status: Proposed
+formerly:
+- SOTA-tmpyf7w7
 promote_when: >-
   The warmup-free result at a scale where warmup is known to be load-bearing —
   a billion-parameter-plus language model pretrained with the spectral cap and
@@ -22,33 +25,33 @@ tags:
 - model-stability
 date: '2026-09-22'
 source:
-- LIT-tmp8a9ww
+- LIT-521
 introduced_by:
-- LIT-tmp8a9ww
+- LIT-521
 explained_by:
-- THEORY-tmpyirh9
+- THEORY-062
 implementations: []
 summary: >-
-  Qi et al. (2025), [LIT-tmp8a9ww](../literature.d/LIT-tmp8a9ww.md) — if
+  Qi et al. (2025), [LIT-521](../literature.d/LIT-521.md) — if
   `α_t > τ·σ₁(W_{t−1})/σ₁(∇W_t)`, truncate the step to that value; otherwise
   use the schedule. Weyl's inequality makes this a direct cap on how fast a
   weight's largest singular value can grow. ViT-B, ViT-L, GPT-S, Swin-S and
   Swin-B all train **without any warmup** and match or beat warmed-up AdamW.
 ---
-<!-- inactive-ok-file: THEORY-tmpyirh9 — Proposed, filed in this same
+<!-- inactive-ok-file: THEORY-062 — Proposed, filed in this same
      contribution; this practice declares `explained_by:` on it and the
      sentence citing it says the account is one group's correction of
      another's. -->
 
-<!-- inactive-ok-file: SOTA-tmpqevxe — Proposed, named as one of three
+<!-- inactive-ok-file: SOTA-319 — Proposed, named as one of three
      alternative remedies this paper does not compare against. -->
 
-# SOTA-tmpyf7w7: Bound the learning rate by the ratio of the update's spectral norm to the weight's, and drop warmup
+# SOTA-320: Bound the learning rate by the ratio of the update's spectral norm to the weight's, and drop warmup
 
 ## Source
 
 Qi, He, Ye, Li, Zi, Dai, Zou and Xiao (2025),
-[LIT-tmp8a9ww](../literature.d/LIT-tmp8a9ww.md) — read as [NOTE-tmpo1rg6](../notes.d/NOTE-tmpo1rg6.md). ICLR 2025.
+[LIT-521](../literature.d/LIT-521.md) — read as [NOTE-266](../notes.d/NOTE-266.md). ICLR 2025.
 
 ## Do this
 
@@ -90,7 +93,7 @@ has tested the other's regime.
 
 **One group, no comparison against the alternatives.** The baseline is AdamW
 with warmup. The three other remedies for the same underlying failure —
-[SOTA-192](SOTA-192.md), [SOTA-131](SOTA-131.md), [SOTA-tmpqevxe](SOTA-tmpqevxe.md) — do not
+[SOTA-192](SOTA-192.md), [SOTA-131](SOTA-131.md), [SOTA-319](SOTA-319.md) — do not
 appear, so "this works" is established and "this is what to reach for" is not.
 
 **`τ` replaces the hyperparameter it removes.** The paper ablates four values
@@ -114,7 +117,7 @@ is closer to "warmup computed rather than guessed".
 decoder-only model at scale, and nothing with a different optimizer.
 
 **The account it comes with is one group's correction of another's.**
-[THEORY-tmpyirh9](../theory.d/THEORY-tmpyirh9.md) holds that spectral energy concentration, not
+[THEORY-062](../theory.d/THEORY-062.md) holds that spectral energy concentration, not
 low entropy, is what crashes a run. If that is wrong the practice may still
 work, since capping `σ₁` growth suppresses both candidate failure modes.
 

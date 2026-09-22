@@ -4,7 +4,7 @@
 
 **model-stability**.
 
-14 of 264 NOTE documents. Back to the [full index](../README.md).
+17 of 267 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -22,3 +22,6 @@
 | [NOTE-227](../../../record/notes.d/NOTE-227.md) | Late-phase weights | Reading it: three ablations constrain the recommendation more than the headline does. Starting at initialization fails outright, the fanciest variant is worse than doing nothing, and replicating every weight instead of a few is worse than replicating a few. All three are reported. | Read |
 | [NOTE-261](../../../record/notes.d/NOTE-261.md) | The singular distribution stops moving long before the weights do | Read for one question: is the spectral shape that three other papers measure a stable property or a snapshot? It is stable, and early. The empirical section was read and the theory that derives the stability bound was not, which is stated rather than implied. | Read |
 | [NOTE-262](../../../record/notes.d/NOTE-262.md) | Eleven checkpoints agree on where the spectrum concentrates, and imitating it does not help | Read for breadth rather than depth of claim. Eleven GPT-2-style checkpoints differing in size, language, tokenizer and corpus share a depth profile in effective-rank entropy, which is the right instrument for a claim about where a matrix's magnitude sits. The paper's own headline — that you can initialize from that profile — is a negative result, reported as one. | Read |
+| [NOTE-265](../../../record/notes.d/NOTE-265.md) | A proved bound under the entropy-collapse observation, and a reparameterization that removes four crutches | Read on its own merits after being triaged past once. The record already held the failure this paper is about and two remedies for it, and had neither the inequality that makes the failure inevitable nor this third remedy. The accuracy numbers are nearly flat; what changes is how many hyperparameters have to be right. | Read |
+| [NOTE-266](../../../record/notes.d/NOTE-266.md) | Not all entropy collapse crashes a model, and the discriminator is low-rankness | Read after the paper it contradicts. The contribution is a distinction the record did not have: an attention map can be sparse with near-zero entropy and the run is fine, provided it is not also low-rank. That makes entropy the symptom and spectral energy concentration in the query-key product the cause, and it makes a warmup-free optimizer fall out. | Read |
+| [NOTE-267](../../../record/notes.d/NOTE-267.md) | Freezing the spectrum by construction, and what one 60M run can and cannot show | Read as the third position on one axis. If the problem is that weight spectra drift during training, the options are renormalize them, bound how fast they move, or make them constant. This does the third. The idea is clean and the evidence for the claim worth recommending is one model at 60M, which is why no practice is filed. | Read |

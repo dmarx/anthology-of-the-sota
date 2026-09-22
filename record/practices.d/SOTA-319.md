@@ -1,5 +1,8 @@
 ---
+number: 319
 status: Proposed
+formerly:
+- SOTA-tmpqevxe
 promote_when: >-
   A comparison against the remedies that target the same failure — QK-norm
   (SOTA-192) or QK-clip (SOTA-131) — at a scale where the failure actually
@@ -14,7 +17,7 @@ consensus_note: >-
   find in a released model. The invariant it enforces is agreed and widely
   enforced — SOTA-192 is `converged` — but this particular instrument is not
   the one the field picked up, and the account behind it is disputed by
-  LIT-tmp8a9ww.
+  LIT-521.
 title: 'Reparameterize every linear layer by its spectral norm with a learned scalar'
 version: 1
 tags:
@@ -22,39 +25,39 @@ tags:
 - training-optimization
 date: '2026-09-22'
 source:
-- LIT-tmpzz9pi
+- LIT-523
 introduced_by:
-- LIT-tmpzz9pi
+- LIT-523
 explained_by:
-- THEORY-tmp4mah6
+- THEORY-061
 implementations:
 - ml-sigma-reparam
 summary: >-
-  Zhai et al. (2023), [LIT-tmpzz9pi](../literature.d/LIT-tmpzz9pi.md) — replace each linear
+  Zhai et al. (2023), [LIT-523](../literature.d/LIT-523.md) — replace each linear
   layer's `W` with `γ·W/σ(W)`, `γ` a learnable scalar initialized to 1 and
   `σ` the spectral norm from power iteration. A ViT-B trained this way reaches
   **82.2%** against a DeiT baseline's 81.8% with no pre-LN, no warmup, no
   weight decay and LARS in place of Adam. Spectral normalization without the
   scalar gets **69.81%**.
 ---
-<!-- inactive-ok-file: THEORY-tmp4mah6 THEORY-tmpyirh9 — both Proposed, filed
+<!-- inactive-ok-file: THEORY-061 THEORY-062 — both Proposed, filed
      in this same contribution. This practice declares `explained_by:` on the
      first and the section citing both says the mechanism is disputed, which
      requires them to be unsettled rather than leaning on them. -->
 
-<!-- inactive-ok-file: SOTA-tmpyf7w7 — Proposed, filed in this same
+<!-- inactive-ok-file: SOTA-320 — Proposed, filed in this same
      contribution and named as an untested sibling remedy. -->
 
 <!-- inactive-ok-file: SOTA-122 SOTA-282 — both Proposed, named as the two
      practices this one overlaps without being either, in a paragraph that
      says nobody has compared the three. -->
 
-# SOTA-tmpqevxe: Reparameterize every linear layer by its spectral norm with a learned scalar
+# SOTA-319: Reparameterize every linear layer by its spectral norm with a learned scalar
 
 ## Source
 
 Zhai, Likhomanenko, Littwin, Busbridge, Ramapuram, Zhang, Gu and Susskind
-(2023), [LIT-tmpzz9pi](../literature.d/LIT-tmpzz9pi.md) — read as [NOTE-tmp4pghv](../notes.d/NOTE-tmp4pghv.md).
+(2023), [LIT-523](../literature.d/LIT-523.md) — read as [NOTE-265](../notes.d/NOTE-265.md).
 
 ## Do this
 
@@ -101,9 +104,9 @@ on the query and key projections, and no one has compared it with either. A
 practice whose closest competitors are both in production and never tested
 against it is not something to recommend over them.
 
-**The account behind it is disputed.** [THEORY-tmp4mah6](../theory.d/THEORY-tmp4mah6.md) holds
+**The account behind it is disputed.** [THEORY-061](../theory.d/THEORY-061.md) holds
 that low attention entropy is what breaks training.
-[THEORY-tmpyirh9](../theory.d/THEORY-tmpyirh9.md) exhibits a stable network with near-zero
+[THEORY-062](../theory.d/THEORY-062.md) exhibits a stable network with near-zero
 entropy. The remedy may work for a reason other than the one given, which does
 not make it wrong and does mean the mechanism is not settled.
 
@@ -119,7 +122,7 @@ constrained spectral normalization does.
 
 **Power iteration is an approximation.** The main text does not state the
 iteration count used. A neighbouring paper doing the same thing reports two
-iterations as sufficient ([NOTE-tmpo1rg6](../notes.d/NOTE-tmpo1rg6.md)).
+iterations as sufficient ([NOTE-266](../notes.d/NOTE-266.md)).
 
 **One scalar per layer is a small but real parameter change**, and the
 initialization at 1 matters — it makes the reparameterized layer match the

@@ -4,7 +4,7 @@
 
 **attention-techniques**.
 
-9 of 264 NOTE documents. Back to the [full index](../README.md).
+11 of 267 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,3 +17,5 @@
 | [NOTE-059](../../../record/notes.d/NOTE-059.md) | Longformer: The Long-Document Transformer | Replaces full self-attention with a sliding window plus a small set of task-chosen global positions, giving linear cost in sequence length. The global tokens are the design decision that matters — they are where the task's inductive bias is stated, and they are why the pattern can be adapted per task rather than fixed. | Read |
 | [NOTE-065](../../../record/notes.d/NOTE-065.md) | Pay Less Attention with Lightweight and Dynamic Convolutions | Shows a depthwise convolution with softmax-normalized weights, shared across channel groups and with a kernel fixed at 31 or less, matches self-attention on translation — 29.7 BLEU on WMT En-De. Dynamic convolution predicts the kernel from the current token alone, so the mixing weights depend on position rather than on the pair of positions being mixed. | Read |
 | [NOTE-173](../../../record/notes.d/NOTE-173.md) | LoFTR: Detector-Free Local Feature Matching with Transformers | Remove the keypoint detector and match densely, coarse-to-fine, with descriptors conditioned on both images by cross attention. The argument is a failure mode rather than an efficiency: detectors cannot emit repeatable points in low-texture regions, so no downstream matcher can recover what was never proposed. | Read |
+| [NOTE-265](../../../record/notes.d/NOTE-265.md) | A proved bound under the entropy-collapse observation, and a reparameterization that removes four crutches | Read on its own merits after being triaged past once. The record already held the failure this paper is about and two remedies for it, and had neither the inequality that makes the failure inevitable nor this third remedy. The accuracy numbers are nearly flat; what changes is how many hyperparameters have to be right. | Read |
+| [NOTE-266](../../../record/notes.d/NOTE-266.md) | Not all entropy collapse crashes a model, and the discriminator is low-rankness | Read after the paper it contradicts. The contribution is a distinction the record did not have: an attention map can be sparse with near-zero entropy and the run is fine, provided it is not also low-rank. That makes entropy the symptom and spectral energy concentration in the query-key product the cause, and it makes a warmup-free optimizer fall out. | Read |

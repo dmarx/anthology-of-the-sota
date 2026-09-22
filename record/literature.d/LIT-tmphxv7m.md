@@ -1,0 +1,75 @@
+---
+status: Active
+title: 'From Low Rank Gradient Subspace Stabilization to Low-Rank Weights: Observations, Theories, and Applications'
+version: 1
+tags:
+- inference-optimization
+- adaptation-and-tuning
+- training-optimization
+date: '2026-09-22'
+published: '2024-07-15'
+arxiv: '2407.11239'
+first_author: 'Jaiswal'
+keywords:
+- 'low-rank weights'
+- 'gradient subspace'
+- 'non-uniform rank reduction'
+- 'model compression'
+- 'memory-efficient finetuning'
+implementations: []
+summary: >-
+  Jaiswal et al. (2024), [ARXIV-2407.11239](https://arxiv.org/abs/2407.11239) — how nearly
+  low-rank a transformer weight matrix is depends on **which** matrix and
+  **how deep**: Query/Key and MLP Gate converge to low rank, MLP Up/Down and
+  Value do not, and middle blocks resist while the first and last few give
+  way. Picking the rank per matrix instead of globally is **~6.4×** better in
+  perplexity than uniform reduction at 30% on LLaMA-2 7B and **~47×** better
+  at 40% on 13B. Read as [NOTE-tmpzvhd1](../notes.d/NOTE-tmpzvhd1.md).
+---
+<!-- inactive-ok-file: THEORY-059 — Proposed, and this paper is the evidence
+     bearing on whether its spectral premise holds. Naming the account you are
+     supplying a measurement for is not leaning on it. -->
+
+# LIT-tmphxv7m: From Low Rank Gradient Subspace Stabilization to Low-Rank Weights: Observations, Theories, and Applications
+
+Jaiswal, Wang, Yin, Liu, Chen, Zhao, Grama, Tian and Wang (2024) —
+[ARXIV-2407.11239](https://arxiv.org/abs/2407.11239), ICML 2025. Read as
+[NOTE-tmpzvhd1](../notes.d/NOTE-tmpzvhd1.md).
+
+## Key takeaways
+
+- **"Weight matrices are low rank" is false as a uniform statement.** The
+  paper splits matrices into Low-rank Components, characterised by a heavy
+  tail in the sorted singular values, and Non-Low-rank Components, which lack
+  one.
+- **The split is systematic by component.** Query/Key and the MLP Gate
+  projection show a clear Hessian gap and rapidly settling gradient subspaces,
+  so they converge to low rank. MLP Up/Down and the attention Value
+  projection do not.
+- **And by depth.** Middle blocks have small Hessian gaps and stay high rank;
+  the first and last few blocks go low rank. At 50% effective-rank reduction
+  on LLaMA-2 7B, `q_proj` and `k_proj` take **over 90%** compression.
+- **Non-uniform rank beats uniform rank by margins that are not close.**
+  ~6.4× better perplexity than uniform at 30% reduction (LLaMA-2 7B), ~47×
+  at 40% (13B). On LLaMA-7B at 25% compression, factoid-QA goes 79.02 full
+  model, **34.63** uniform, 71.89 non-uniform.
+- **The same partition guides fine-tuning.** Updating only the Low-rank
+  Components matches or beats full fine-tuning at 35% of the trainable
+  parameters.
+
+## Standing in the anthology
+
+**It is the strongest single answer to [THEORY-059](../theory.d/THEORY-059.md)'s open
+question, and the answer is "yes, but not uniformly".** The account behind
+[SOTA-314](../practices.d/SOTA-314.md) needs weight spectra to be steep. They are — in some
+matrices, at some depths — and this paper measures which, on LLaMA-2 7B and
+13B and Mistral-7B.
+
+**It is also the source of a recommendation the record did not hold.** The
+comparison against uniform rank reduction at matched compression is run, not
+argued, and it is what [SOTA-tmpsbgvf](../practices.d/SOTA-tmpsbgvf.md) rests on.
+
+**What it does not settle is the partition itself.** Its grouping disagrees
+with [LIT-tmpmftzj](LIT-tmpmftzj.md)'s on two matrix types out of six, which is
+the reason the practice filed from it says *measure yours* rather than *use
+this list*.

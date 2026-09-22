@@ -1,0 +1,70 @@
+---
+status: Active
+title: 'Transformers learn in-context by gradient descent'
+version: 1
+tags:
+- in-context-learning
+- attention-techniques
+- analysis-and-evaluation
+date: '2026-09-22'
+published: '2022-12-15'
+arxiv: '2212.07677'
+first_author: 'von Oswald'
+keywords:
+- 'in-context learning'
+- 'mesa-optimization'
+- 'linear self-attention'
+- 'gradient descent'
+- 'induction heads'
+implementations: []
+summary: >-
+  von Oswald, Niklasson, Randazzo, Sacramento, Mordvintsev, Zhmoginov and
+  Vladymyrov (2022), [ARXIV-2212.07677](https://arxiv.org/abs/2212.07677), ICML 2023 — the paper that named the
+  mesa-optimizer. Proposition 1 constructs key, query, value and projection
+  matrices for which one linear self-attention layer is exactly one
+  gradient-descent step on an implicit linear model, and a single trained
+  layer is shown to find approximately those weights. Deeper trained models do
+  not match plain gradient descent; they match GD++, gradient descent with an
+  iterative curvature correction — a result of this paper's own. Read as
+  [NOTE-tmpvx5ab](../notes.d/NOTE-tmpvx5ab.md).
+---
+
+# LIT-tmpehkbl: Transformers learn in-context by gradient descent
+
+von Oswald et al. (2022) — [ARXIV-2212.07677](https://arxiv.org/abs/2212.07677), ICML 2023. Read as
+[NOTE-tmpvx5ab](../notes.d/NOTE-tmpvx5ab.md).
+
+## Key takeaways
+
+- **Proposition 1 is a construction, and it is exact.** With tokens
+  `e_j = (x_j, y_j)` and `W_K = W_Q = [[I_x, 0], [0, 0]]`,
+  `W_V = [[0, 0], [W_0, −I_y]]`, `P = (η/N)I`, one linear self-attention step
+  on every token equals the change a gradient step on the regression loss
+  would induce: `e_j ← (x_j, y_j) + (0, −ΔW x_j)`.
+- **A single trained LSA layer lands approximately on that construction.**
+  Cosine similarity between the trained weights and `θ_GD` rises toward 1
+  during training, the two models' predictions converge, and applying the
+  trained layer repeatedly tracks repeated gradient steps once both learning
+  rates are damped.
+- **Deeper models beat plain gradient descent, and match GD++ instead.**
+  Looped two-layer and unrolled five-layer LSA models outperform `K` steps of
+  GD; they align well with gradient descent on data transformed by
+  `H(X) = (I − γ X Xᵀ)`, one extra parameter per layer. The paper names this
+  variant, fits its parameters, and reports the alignment.
+- **Linear self-attention beats softmax self-attention in this setting.**
+- **Induction heads are offered as a special case** of in-context learning by
+  gradient descent, via a copying layer (Proposition 3).
+
+## Standing in the anthology
+
+**`Active`, and the reason is the construction rather than the headline.**
+Proposition 1 is a proof and nobody disputes it; it is the origin of the
+mesa-optimizer frame and is cited by everything downstream, including both
+papers that argue against the title.
+
+**The title outruns the paper's own strongest result.** The GD++ finding says
+that once there is more than one layer, plain gradient descent is the wrong
+description — a first-order step plus a data-dependent preconditioner is not
+gradient descent, and the paper says so in its own figures. [DP-010](../../docs/design-principles.md#dp-10): the most
+citable sentence here is the title, and the result that qualifies it is four
+pages in.

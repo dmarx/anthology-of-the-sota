@@ -1,5 +1,8 @@
 ---
+number: 65
 status: Proposed
+formerly:
+- THEORY-tmpcz8go
 promote_when: >-
   The clustering measured in a trained transformer's actual forward pass:
   token representations tracked layer by layer in a model this record holds,
@@ -18,9 +21,9 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-22'
 source:
-- LIT-tmpmx0ir
+- LIT-528
 summary: >-
-  Geshkovski, Letrouit, Polyanskiy and Rigollet (2023), [LIT-tmpmx0ir](../literature.d/LIT-tmpmx0ir.md) —
+  Geshkovski, Letrouit, Polyanskiy and Rigollet (2023), [LIT-528](../literature.d/LIT-528.md) —
   with weights held fixed, self-attention is an interacting particle system
   and its tokens cluster. Which clusters is not arbitrary: `V = I` sends them
   to the vertices of a convex polytope, a simple positive leading eigenvalue
@@ -29,12 +32,12 @@ summary: >-
   Boolean — the structure Linformer and LoRA assume and impose.
 ---
 
-# THEORY-tmpcz8go: Self-attention drives tokens into a few clusters, and the spectrum of the value matrix decides the geometry they land in
+# THEORY-065: Self-attention drives tokens into a few clusters, and the spectrum of the value matrix decides the geometry they land in
 
 ## Source
 
 Geshkovski, Letrouit, Polyanskiy and Rigollet (2023),
-[LIT-tmpmx0ir](../literature.d/LIT-tmpmx0ir.md) — read as [NOTE-tmp582ca](../notes.d/NOTE-tmp582ca.md).
+[LIT-528](../literature.d/LIT-528.md) — read as [NOTE-272](../notes.d/NOTE-272.md).
 NeurIPS 2023.
 
 ## The account

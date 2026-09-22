@@ -6,7 +6,7 @@
 
 **Attention techniques** — attention variants and alternative mechanisms, implementation optimizations, context length.
 
-41 of 462 LIT documents. Back to the [full index](../README.md).
+42 of 463 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -51,3 +51,4 @@
 | [LIT-521](../../../record/literature.d/LIT-521.md) | Taming Transformer Without Using Learning Rate Warmup | Qi et al. (2025), [ARXIV-2505.21910](https://arxiv.org/abs/2505.21910) — attention entropy collapse comes in two modes, and only one crashes the model: sparse **and low-rank** is fatal, sparse alone is benign. The driver is spectral energy concentration in `W_q^T W_k`. Suppressing it by bounding the learning rate with Weyl's inequality trains ViT, Swin and GPT **without warmup**, matching warmed-up AdamW on all five configurations. Read as [NOTE-266](../../../record/notes.d/NOTE-266.md). | Active |
 | [LIT-523](../../../record/literature.d/LIT-523.md) | Stabilizing Transformer Training by Preventing Attention Entropy Collapse | Zhai et al. (2023), [ARXIV-2303.06296](https://arxiv.org/abs/2303.06296) — proves a tight lower bound on attention entropy that falls like `Ω(Tσe^{-σ})` in the spectral norm of `W_K W_Q^T`, then removes the growth by reparameterizing every linear layer as `γ·W/σ(W)`. A ViT trained this way reaches 82.2% on ImageNet **without pre-LN, warmup, weight decay or an adaptive optimizer**. Read as [NOTE-265](../../../record/notes.d/NOTE-265.md). | Active |
 | [LIT-527](../../../record/literature.d/LIT-527.md) | Leaner Transformers: More Heads, Less Depth | Saratchandran, Teney and Lucey (2025), [ARXIV-2505.20802](https://arxiv.org/abs/2505.20802) — a theorem that more attention heads lower the condition number of the attention block, and twelve redesigned architectures trading heads for layers. In the five configurations where the MLP width is held fixed, accuracy holds or improves at **29–53% fewer parameters**. Read as [NOTE-269](../../../record/notes.d/NOTE-269.md). | Active |
+| [LIT-528](../../../record/literature.d/LIT-528.md) | The emergence of clusters in self-attention dynamics | Geshkovski, Letrouit, Polyanskiy and Rigollet (2023), [ARXIV-2305.05465](https://arxiv.org/abs/2305.05465) — treat tokens as interacting particles and self-attention as their dynamics. Tokens cluster, and **the spectrum of the value matrix decides the limiting geometry**: `V = I` gives the vertices of a convex polytope, a simple positive leading eigenvalue gives at most three parallel hyperplanes, `V = −I` gives one cluster at the origin. In one dimension the attention matrix provably converges to a low-rank Boolean matrix. Read as [NOTE-272](../../../record/notes.d/NOTE-272.md). | Active |

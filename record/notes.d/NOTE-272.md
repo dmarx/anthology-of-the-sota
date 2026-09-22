@@ -1,6 +1,9 @@
 ---
+number: 272
 status: Read
-paper: LIT-tmpmx0ir
+formerly:
+- NOTE-tmp582ca
+paper: LIT-528
 title: 'An idealization that checks its own assumptions against ALBERT, and clusters within a few layers'
 version: 1
 date: '2026-09-22'
@@ -13,7 +16,7 @@ summary: >-
   discrete-time analogue, and says clustering arrives within a few layers.
 ---
 
-# NOTE-tmp582ca: An idealization that checks its own assumptions against ALBERT, and clusters within a few layers
+# NOTE-272: An idealization that checks its own assumptions against ALBERT, and clusters within a few layers
 
 ## Contribution
 

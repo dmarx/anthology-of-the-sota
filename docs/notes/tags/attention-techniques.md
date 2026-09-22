@@ -4,7 +4,7 @@
 
 **attention-techniques**.
 
-12 of 271 NOTE documents. Back to the [full index](../README.md).
+13 of 272 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,4 @@
 | [NOTE-265](../../../record/notes.d/NOTE-265.md) | A proved bound under the entropy-collapse observation, and a reparameterization that removes four crutches | Read on its own merits after being triaged past once. The record already held the failure this paper is about and two remedies for it, and had neither the inequality that makes the failure inevitable nor this third remedy. The accuracy numbers are nearly flat; what changes is how many hyperparameters have to be right. | Read |
 | [NOTE-266](../../../record/notes.d/NOTE-266.md) | Not all entropy collapse crashes a model, and the discriminator is low-rankness | Read after the paper it contradicts. The contribution is a distinction the record did not have: an attention map can be sparse with near-zero entropy and the run is fine, provided it is not also low-rank. That makes entropy the symptom and spectral energy concentration in the query-key product the cause, and it makes a warmup-free optimizer fall out. | Read |
 | [NOTE-269](../../../record/notes.d/NOTE-269.md) | Heads traded for depth, and the five rows where only those two things move | Read on its merits after being triaged past. The headline is an architecture recommendation and the interesting part is the mechanism: more heads lower the condition number of the attention block, which is the same quantity [THEORY-041](../../../record/theory.d/THEORY-041.md) says drifts the wrong way when nothing manages it. Half the configurations confound the trade by also halving the MLP; the other half do not, and those are the result. | Read |
+| [NOTE-272](../../../record/notes.d/NOTE-272.md) | An idealization that checks its own assumptions against ALBERT, and clusters within a few layers | Read a second time, in full, after being declined on a skim. The decline said the `t → ∞` frozen-weights idealization put it too far from a trained model to be evidence about one, and that it underwrites no practice. Both halves were wrong: the record's own schema says a theory need underwrite nothing, and the paper checks its hypotheses on ALBERT, gives the discrete-time analogue, and says clustering arrives within a few layers. | Read |

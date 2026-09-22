@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-24 of 271 NOTE documents. Back to the [full index](../README.md).
+25 of 272 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -32,3 +32,4 @@
 | [NOTE-258](../../../record/notes.d/NOTE-258.md) | mHC-lite: the experiment that was one measurement from settling the Birkhoff dispute | Read from the #180 worklist. It makes the doubly-stochastic constraint exact, which is precisely the condition under which [LIT-151](../../../record/literature.d/LIT-151.md)'s objection should bite hardest — and it reports no stream statistic, so the dispute stands. The approximation it replaces is real and measured: column sums of the layer-wise product off by up to **220%** at 24 layers. | Read |
 | [NOTE-269](../../../record/notes.d/NOTE-269.md) | Heads traded for depth, and the five rows where only those two things move | Read on its merits after being triaged past. The headline is an architecture recommendation and the interesting part is the mechanism: more heads lower the condition number of the attention block, which is the same quantity [THEORY-041](../../../record/theory.d/THEORY-041.md) says drifts the wrong way when nothing manages it. Half the configurations confound the trade by also halving the MLP; the other half do not, and those are the result. | Read |
 | [NOTE-271](../../../record/notes.d/NOTE-271.md) | One metric that separates transformers from every other architecture, and what it buys | Read for whether the record wants an inductive-bias claim. It does, because the claim comes with a computable scalar rather than an adjective, and the scalar does four jobs — separates architectures, predicts robustness, correlates with flatness, and moves during a grokking plateau. The fourth is the one this record has an existing use for. | Read |
+| [NOTE-272](../../../record/notes.d/NOTE-272.md) | An idealization that checks its own assumptions against ALBERT, and clusters within a few layers | Read a second time, in full, after being declined on a skim. The decline said the `t → ∞` frozen-weights idealization put it too far from a trained model to be evidence about one, and that it underwrites no practice. Both halves were wrong: the record's own schema says a theory need underwrite nothing, and the paper checks its hypotheses on ALBERT, gives the discrete-time analogue, and says clustering arrives within a few layers. | Read |

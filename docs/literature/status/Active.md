@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-446 of 462 LIT documents. Back to the [full index](../README.md).
+447 of 463 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -456,3 +456,4 @@
 | [LIT-525](../../../record/literature.d/LIT-525.md) | Transformers Learn Low Sensitivity Functions: Investigations and Implications | Vasudeva et al. (2024), [ARXIV-2403.06925](https://arxiv.org/abs/2403.06925) — sensitivity to token-wise random input perturbations is one number that separates transformers from MLPs, CNNs, ConvMixers and LSTMs across vision and language. It also predicts robustness, tracks flatness, can be regularized for, and keeps falling through a grokking plateau while the loss does not move. Read as [NOTE-271](../../../record/notes.d/NOTE-271.md). | Active |
 | [LIT-526](../../../record/literature.d/LIT-526.md) | Concepts Whisper: Spectral Anti-Concentration and the Dual Geometry of Transformer Representations | Acharya, Rimal and Dhakal (2026), [ARXIV-2605.01609](https://arxiv.org/abs/2605.01609) — contextual concept directions sit in the **low**-variance tail of the unembedding covariance in 17 of 17 models, while static vocabulary contrasts sit at the top. The paper also reports a robust null against the hypothesis it set out to test, and labels each of its own claims robust, partial or suggestive. Read as [NOTE-270](../../../record/notes.d/NOTE-270.md). | Active |
 | [LIT-527](../../../record/literature.d/LIT-527.md) | Leaner Transformers: More Heads, Less Depth | Saratchandran, Teney and Lucey (2025), [ARXIV-2505.20802](https://arxiv.org/abs/2505.20802) — a theorem that more attention heads lower the condition number of the attention block, and twelve redesigned architectures trading heads for layers. In the five configurations where the MLP width is held fixed, accuracy holds or improves at **29–53% fewer parameters**. Read as [NOTE-269](../../../record/notes.d/NOTE-269.md). | Active |
+| [LIT-528](../../../record/literature.d/LIT-528.md) | The emergence of clusters in self-attention dynamics | Geshkovski, Letrouit, Polyanskiy and Rigollet (2023), [ARXIV-2305.05465](https://arxiv.org/abs/2305.05465) — treat tokens as interacting particles and self-attention as their dynamics. Tokens cluster, and **the spectrum of the value matrix decides the limiting geometry**: `V = I` gives the vertices of a convex polytope, a simple positive leading eigenvalue gives at most three parallel hyperplanes, `V = −I` gives one cluster at the origin. In one dimension the attention matrix provably converges to a low-rank Boolean matrix. Read as [NOTE-272](../../../record/notes.d/NOTE-272.md). | Active |

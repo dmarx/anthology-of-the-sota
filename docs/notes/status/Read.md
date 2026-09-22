@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-268 of 271 NOTE documents. Back to the [full index](../README.md).
+269 of 272 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -278,3 +278,4 @@
 | [NOTE-269](../../../record/notes.d/NOTE-269.md) | Heads traded for depth, and the five rows where only those two things move | Read on its merits after being triaged past. The headline is an architecture recommendation and the interesting part is the mechanism: more heads lower the condition number of the attention block, which is the same quantity [THEORY-041](../../../record/theory.d/THEORY-041.md) says drifts the wrong way when nothing manages it. Half the configurations confound the trade by also halving the MLP; the other half do not, and those are the result. | Read |
 | [NOTE-270](../../../record/notes.d/NOTE-270.md) | Concepts live in the quiet directions, and the paper labels its own claims robust or partial | Read last of the batch and the easiest call to make, for a reason that has little to do with the finding: it arrives with a table grading its own six claims, a robust null against the hypothesis it set out to confirm, and partial results labelled partial. The finding itself is that contextual concept directions sit at the bottom of the unembedding spectrum and static vocabulary contrasts sit at the top. | Read |
 | [NOTE-271](../../../record/notes.d/NOTE-271.md) | One metric that separates transformers from every other architecture, and what it buys | Read for whether the record wants an inductive-bias claim. It does, because the claim comes with a computable scalar rather than an adjective, and the scalar does four jobs — separates architectures, predicts robustness, correlates with flatness, and moves during a grokking plateau. The fourth is the one this record has an existing use for. | Read |
+| [NOTE-272](../../../record/notes.d/NOTE-272.md) | An idealization that checks its own assumptions against ALBERT, and clusters within a few layers | Read a second time, in full, after being declined on a skim. The decline said the `t → ∞` frozen-weights idealization put it too far from a trained model to be evidence about one, and that it underwrites no practice. Both halves were wrong: the record's own schema says a theory need underwrite nothing, and the paper checks its hypotheses on ALBERT, gives the discrete-time analogue, and says clustering arrives within a few layers. | Read |

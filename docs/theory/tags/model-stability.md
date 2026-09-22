@@ -6,7 +6,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-11 of 64 THEORY documents. Back to the [full index](../README.md).
+11 of 65 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

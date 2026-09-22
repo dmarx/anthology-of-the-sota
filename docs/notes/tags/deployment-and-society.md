@@ -4,7 +4,7 @@
 
 **deployment-and-society**.
 
-7 of 271 NOTE documents. Back to the [full index](../README.md).
+7 of 272 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

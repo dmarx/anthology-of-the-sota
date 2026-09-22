@@ -10,6 +10,11 @@
 branch=$(git rev-parse --abbrev-ref HEAD)
 [ "$branch" = "main" ] && exit 0
 
+# A merge brings in whatever the other side had, and merging `main` into a
+# branch necessarily brings main's views. That is incorporation, not
+# authorship, and refusing it would make the branch unmergeable.
+git rev-parse -q --verify MERGE_HEAD >/dev/null 2>&1 && exit 0
+
 staged=$(git diff --cached --name-only --diff-filter=ACMR -- docs/)
 [ -z "$staged" ] && exit 0
 

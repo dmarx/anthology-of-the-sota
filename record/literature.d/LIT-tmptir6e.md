@@ -1,0 +1,59 @@
+---
+status: Active
+title: 'Tensor Programs I: Wide Feedforward or Recurrent Neural Networks of Any Architecture are Gaussian Processes'
+version: 1
+tags:
+- analysis-and-evaluation
+- model-stability
+- training-optimization
+date: '2026-09-23'
+published: '2019-10-01'
+arxiv: '1910.12478'
+first_author: 'Yang'
+keywords:
+- 'tensor-programs'
+- 'nngp'
+- 'gaussian-process'
+- 'infinite-width'
+- 'netsor'
+implementations: []
+summary: >-
+  Yang (2019), [ARXIV-1910.12478](https://arxiv.org/abs/1910.12478). At random initialization, any network
+  built from MLPs, RNNs, convolutions, pooling, skip connections, attention,
+  batchnorm or layernorm converges to a Gaussian process as width grows.
+  This is the NNGP correspondence extended from MLPs and CNNs to all standard
+  architectures, proved by expressing the forward pass in the NETSOR
+  language. The first paper of the series and the tutorial for its
+  machinery. A statement about initialization, not training.
+extended_by:
+- LIT-tmphvjvq
+---
+
+# LIT-tmptir6e: Tensor Programs I: Wide Feedforward or Recurrent Neural Networks of Any Architecture are Gaussian Processes
+
+Yang, Microsoft Research (2019) — [ARXIV-1910.12478](https://arxiv.org/abs/1910.12478)
+
+## Key takeaways
+
+- **Every standard architecture is a GP at initialization, in the
+  infinite-width limit.** This covers RNNs (with a notion of GP over
+  variable-length outputs), batchnorm, layernorm and attention, which were
+  new here
+- **NETSOR**, a language of matrix multiplications and coordinatewise
+  nonlinearities that can express these forward passes. The GP result holds
+  for anything it expresses
+- **No weight transposes in the forward pass.** Architectures that use `W`
+  and `Wᵀ` together are deferred to later papers
+- Reference kernels for a simple RNN, GRU, transformer and batchnorm-ReLU
+  network (GP4A)
+
+## Standing in the anthology
+
+**Filed from `#163`** to complete the Tensor Programs series under TP-IV
+([LIT-548](LIT-548.md)), where µP comes from. This paper holds no practice, and none is
+filed. Its role is as the first step in the line TP-I → TP-II
+([LIT-tmphvjvq](LIT-tmphvjvq.md)) → TP-III ([LIT-tmp7lkvi](LIT-tmp7lkvi.md)) → TP-IV → TP-V ([LIT-148](LIT-148.md)).
+
+**Skimmed, not read:** abstract, introduction and contribution statements.
+No NOTE is filed. The theorems are summarized here from the paper's own
+statements of them, not from checking the proofs.

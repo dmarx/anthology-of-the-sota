@@ -1,0 +1,66 @@
+---
+status: Active
+title: 'Tensor Programs II: Neural Tangent Kernel for Any Architecture'
+version: 1
+tags:
+- analysis-and-evaluation
+- model-stability
+- training-optimization
+date: '2026-09-23'
+published: '2020-06-01'
+arxiv: '2006.14548'
+first_author: 'Yang'
+keywords:
+- 'tensor-programs'
+- 'neural-tangent-kernel'
+- 'gradient-independence-assumption'
+- 'infinite-width'
+- 'netsor-transpose'
+implementations: []
+extends:
+- LIT-tmptir6e
+- LIT-360
+summary: >-
+  Yang (2020), [ARXIV-2006.14548](https://arxiv.org/abs/2006.14548). The neural tangent kernel of a randomly
+  initialized network of any standard architecture converges to a
+  deterministic limit as width grows, and the paper shows how to compute it.
+  It also gives a checkable condition (Simple GIA Check) under which the
+  common heuristic that backprop's Wᵀ is independent of forward W is
+  correct, and cases where that heuristic gives wrong answers.
+extended_by:
+- LIT-tmp7lkvi
+---
+
+# LIT-tmphvjvq: Tensor Programs II: Neural Tangent Kernel for Any Architecture
+
+Yang, Microsoft Research (2020) — [ARXIV-2006.14548](https://arxiv.org/abs/2006.14548)
+
+## Key takeaways
+
+- **NTK at initialization, for every standard architecture:** the kernel
+  `⟨∇θ f(x), ∇θ f(x̄)⟩` converges almost surely to a computable
+  deterministic limit. This is Jacot et al.'s NTK INIT step ([LIT-360](LIT-360.md)),
+  generalized beyond MLPs. The NTK TRAIN step, that the kernel stays fixed
+  during training, is deferred
+- **NETSOR⊤** adds matrix transposes to TP-I's language, so backpropagation
+  can be expressed
+- **The Gradient Independence Assumption**, treating `Wᵀ` in backprop as
+  independent of `W`, is justified under a *Simple GIA Check* that most
+  architectures meet. When the check fails, GIA-based calculations can be
+  wrong (§6.3)
+- The empirical NTK deviates from the limit roughly as `width^(−1/2)` for
+  batchnorm-ReLU, transformer and RNN, over 100 seeds and widths 2⁶–2¹³
+
+## Standing in the anthology
+
+**Filed from `#163`**, as the second step of the Tensor Programs line under
+TP-IV ([LIT-548](LIT-548.md)). It `extends` TP-I ([LIT-tmptir6e](LIT-tmptir6e.md)) and the NTK paper
+([LIT-360](LIT-360.md)). No practice.
+
+**The kernel regime this paper generalizes is the one TP-IV shows to be
+feature-free** ([THEORY-076](../theory.d/THEORY-076.md)). That is the series' own arc: characterize the
+kernel limit for every architecture, then show why real networks should not
+be parametrized into it.
+
+**Skimmed, not read:** abstract, introduction and contribution statements.
+No NOTE.

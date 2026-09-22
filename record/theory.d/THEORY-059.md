@@ -39,8 +39,8 @@ source:
 # could not survive losing now that it claims generality. Neither proposes
 # the account, and the body says so.
 - LIT-512
-- LIT-tmpmftzj
-- LIT-tmphxv7m
+- LIT-517
+- LIT-516
 explains:
 - SOTA-314
 summary: >-
@@ -62,8 +62,8 @@ The account is Li, Lin, Zhang, Cai, Li, Guo, Xie, Meng, Zhu and Han (2024),
 and 4.2, with proofs in the appendix.
 
 Its spectral premise is measured outside that paper's model class by Staats,
-Thamm and Rosenow (2024), [LIT-tmpmftzj](../literature.d/LIT-tmpmftzj.md), and Jaiswal et al.
-(2024), [LIT-tmphxv7m](../literature.d/LIT-tmphxv7m.md). Neither proposes this account; they are
+Thamm and Rosenow (2024), [LIT-517](../literature.d/LIT-517.md), and Jaiswal et al.
+(2024), [LIT-516](../literature.d/LIT-516.md). Neither proposes this account; they are
 cited as sources because what the account now claims — that this is how
 weight matrices behave, not how diffusion transformer weight matrices behave
 — rests on them.
@@ -122,7 +122,7 @@ a shape the account did not anticipate.
 singular spectrum is a Marchenko-Pastur bulk plus a few outliers — exact
 agreement with the MP law at initialization, departures after training,
 measured on BERT, Pythia-410M and Llama-3.1-8B
-([LIT-tmpmftzj](../literature.d/LIT-tmpmftzj.md)). That is what "steep" means here: most
+([LIT-517](../literature.d/LIT-517.md)). That is what "steep" means here: most
 singular values sit in a narrow band and a handful stand above it, so
 subtracting the top `r` removes a large share of `‖W‖_F`.
 
@@ -135,7 +135,7 @@ still not a measurement, because nobody has plotted the residual's spectrum.
 That is now the whole of the `promote_when`.
 
 **But it is not a property of weight matrices; it is a property of some of
-them.** [LIT-tmphxv7m](../literature.d/LIT-tmphxv7m.md) splits a transformer's matrices by whether
+them.** [LIT-516](../literature.d/LIT-516.md) splits a transformer's matrices by whether
 the sorted singular values have a heavy tail. Query, Key and MLP Gate do;
 MLP Up, MLP Down and Value do not. Middle blocks resist and the first and
 last few give way. At 50% effective-rank reduction on LLaMA-2 7B, `q_proj`
@@ -143,19 +143,19 @@ and `k_proj` take over 90% compression while others take almost none — and
 choosing one global rank instead costs ~6.4× in perplexity at 30% reduction.
 Eleven GPT-2-style checkpoints across six languages agree that concentration
 varies systematically with depth, peaking in the residual-writing matrices of
-the last few blocks ([LIT-tmpx9iti](../literature.d/LIT-tmpx9iti.md)).
+the last few blocks ([LIT-519](../literature.d/LIT-519.md)).
 
 **The shape is stable once it forms**, which is what makes reading it once
 meaningful: the trace-normalized spectrum reaches stationarity within roughly
 a thousand pretraining steps and holds across GPT-2 and LLaMA, three
 schedules, varied weight decay, AdamW and Muon
-([LIT-tmpxqt7b](../literature.d/LIT-tmpxqt7b.md)).
+([LIT-520](../literature.d/LIT-520.md)).
 
 So the account generalizes, and the sentence "a weight matrix is the steep
 case" does not. The corrected version is: *some* weight matrices are the steep
 case, the difference is large enough to dominate a compression decision, and
 which ones is a question you answer per model — which is
-[SOTA-tmpsbgvf](../practices.d/SOTA-tmpsbgvf.md).
+[SOTA-318](../practices.d/SOTA-318.md).
 
 ## What the measurement also cost this account
 
@@ -165,7 +165,7 @@ includes the *bottom* of the spectrum, and in non-square transformer matrices
 the bottom is not noise. Its singular vectors overlap the activation
 covariance at 3σ, and zeroing the smallest decile of Llama-3 8B's
 Down-Projection costs 41 points of GSM8K — second only to zeroing the largest
-decile ([NOTE-tmpsv1p1](../notes.d/NOTE-tmpsv1p1.md)).
+decile ([NOTE-263](../notes.d/NOTE-263.md)).
 
 This is not a refutation and should not be read as one. Zeroing a direction is
 not quantizing it, the measurement is on language models rather than diffusion
@@ -219,7 +219,7 @@ account is about Frobenius norm throughout — legitimately, because
 Propositions 4.1 and 4.2 bound the output error by magnitudes. What it never
 claims, and what a reader is likely to supply, is that the directions holding
 least magnitude are the ones the model needs least.
-[SOTA-tmp6xtka](../practices.d/SOTA-tmp6xtka.md) is the practice about that, and it points the
+[SOTA-317](../practices.d/SOTA-317.md) is the practice about that, and it points the
 other way.
 
 **It says nothing about activations beyond the smoothing step.** The account

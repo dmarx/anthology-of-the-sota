@@ -4,7 +4,7 @@
 
 **adaptation-and-tuning**.
 
-30 of 260 NOTE documents. Back to the [full index](../README.md).
+31 of 264 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -38,3 +38,4 @@
 | [NOTE-237](../../../record/notes.d/NOTE-237.md) | gen2seg | Read as the counter-route to SAM's data engine. The headline (narrow finetuning, broad generalization) is well evidenced but the argument lives in the controls, which are unusually good: the same backbone under a conventional head scores ~1.5 mIoU, and swapping only the decoder recovers part of the gap. | Read |
 | [NOTE-240](../../../record/notes.d/NOTE-240.md) | Noise hypernetworks | Read as the amortized counterpart to `SOTA-301`. The headline — recover half of test-time optimization at 1/100th the latency — is well measured. The finding that carries further is the control: direct reward fine-tuning of the same model makes it worse, and worse the more steps you sample. | Read |
 | [NOTE-252](../../../record/notes.d/NOTE-252.md) | RNA-FM, and the control that does not carry the claim | Read to open the biological-sequence trunk, which this record did not hold. The structural results are large and the paper's one clean input-swap control is not: replacing one-hot sequence with a 640-dimensional pretrained embedding in a published UTR model moves `R²` from **0.814 to 0.816** on the real-human set, where a 16-dimensional predicted secondary structure moves it to **0.820**. No practice filed. | Read |
+| [NOTE-264](../../../record/notes.d/NOTE-264.md) | Low-rank structure in a transformer is non-uniform, and a global rank is measurably the wrong choice | Read second in the spectral cluster, and it is the one that carries a recommendation. "Transformer weights are low rank" turns out to be true of some matrices and false of others, with the split systematic by component and by depth. The comparison against a uniform rank at matched compression was run and the margins are large. | Read |

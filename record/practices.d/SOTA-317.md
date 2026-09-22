@@ -1,5 +1,8 @@
 ---
+number: 317
 status: Active
+formerly:
+- SOTA-tmp6xtka
 promote_when: >-
   The same dissociation shown under a compression method rather than under
   deletion: smallest-decile directions represented at reduced precision
@@ -17,7 +20,7 @@ consensus_note: >-
   activation covariance, and benchmark damage — and it reconciles two
   previously conflicting published results by varying only the order of
   pruning and fine-tuning. What no second group has done is repeat it. The
-  neighbouring measurement in LIT-tmphxv7m is independent evidence that
+  neighbouring measurement in LIT-516 is independent evidence that
   matrices differ, not evidence about this particular claim.
 title: 'Do not rank singular directions by magnitude when deciding what to discard; check the small end, and check it after fine-tuning'
 version: 1
@@ -26,12 +29,12 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-22'
 source:
-- LIT-tmpmftzj
+- LIT-517
 introduced_by:
-- LIT-tmpmftzj
+- LIT-517
 implementations: []
 summary: >-
-  Staats, Thamm and Rosenow (2024), [LIT-tmpmftzj](../literature.d/LIT-tmpmftzj.md) — in a
+  Staats, Thamm and Rosenow (2024), [LIT-517](../literature.d/LIT-517.md) — in a
   transformer's **non-square** matrices, the smallest singular directions
   carry data directions and their removal is catastrophic: Llama-3 8B on
   GSM8K falls from 43.2% to **2.0%** when the smallest decile of the
@@ -40,12 +43,12 @@ summary: >-
   fine-tuning.
 ---
 
-# SOTA-tmp6xtka: Do not rank singular directions by magnitude when deciding what to discard; check the small end, and check it after fine-tuning
+# SOTA-317: Do not rank singular directions by magnitude when deciding what to discard; check the small end, and check it after fine-tuning
 
 ## Source
 
-Staats, Thamm and Rosenow (2024), [LIT-tmpmftzj](../literature.d/LIT-tmpmftzj.md) — read as
-[NOTE-tmpsv1p1](../notes.d/NOTE-tmpsv1p1.md).
+Staats, Thamm and Rosenow (2024), [LIT-517](../literature.d/LIT-517.md) — read as
+[NOTE-263](../notes.d/NOTE-263.md).
 
 ## When this applies
 
@@ -89,7 +92,7 @@ measured on a base model does not transfer to an aligned or fine-tuned one.
 
 Two published results disagreed: one found small singular values essential,
 another found removing them *improved* reasoning — GPT-J on CounterFact
-13.3% → 24.1% off a single layer, [LIT-tmptsr98](../literature.d/LIT-tmptsr98.md). Both are
+13.3% → 24.1% off a single layer, [LIT-518](../literature.d/LIT-518.md). Both are
 right. The first fine-tunes before pruning and the second evaluates a
 pretrained model without fine-tuning. Varying only that order reproduces both
 outcomes in one experiment, which makes the order of operations the finding
@@ -128,7 +131,7 @@ Llama-3.1-8B, one run per cell except the BERT fine-tuning experiment.
 **It cuts against a convenience, not against Eckart-Young.** The truncated SVD
 really is the optimal low-rank approximation in Frobenius norm. What this
 says is that the quantity being optimized was chosen for tractability, and the
-model's behaviour is ordered differently. [SOTA-tmpsbgvf](SOTA-tmpsbgvf.md) chooses *how
+model's behaviour is ordered differently. [SOTA-318](SOTA-318.md) chooses *how
 much* rank per matrix from the magnitude spectrum and is the right companion;
 neither replaces the other.
 

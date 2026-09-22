@@ -6,7 +6,7 @@
 
 **Adaptation and tuning** — taking a trained model somewhere new — fine-tuning and transfer, preference training and safety alignment, parameter-efficient adaptation, context extension.
 
-22 of 316 SOTA documents. Back to the [full index](../README.md).
+23 of 318 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -32,3 +32,4 @@
 | [SOTA-284](../../../record/practices.d/SOTA-284.md) | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |  | Proposed |
 | [SOTA-299](../../../record/practices.d/SOTA-299.md) | Finetune the whole generative model, encoder and decoder, for a dense perception task instead of attaching a head to a backbone | Khangaonkar and Pirsiavash (2025), [LIT-488](../../../record/literature.d/LIT-488.md) — the freshly-initialized mask head is the part that cannot generalize, because it has only ever seen the finetuning categories. Keep every parameter generatively pretrained, encode the target as an image, and a model finetuned on **furniture and cars** segments people, x-rays and paintings. The same backbone under a conventional head scores **1.4–2.4 mIoU**. | Proposed |
 | [SOTA-302](../../../record/practices.d/SOTA-302.md) | Steer a distilled generator by modulating its input noise, not by fine-tuning its weights | Eyring et al. (2025), [LIT-491](../../../record/literature.d/LIT-491.md) — train a LoRA hypernetwork to predict an improved initial noise for a frozen step-distilled generator. GenEval on SANA-Sprint goes **0.70 → 0.75** for **0.1 s** of added latency, recovering about half of what 30-second test-time optimization buys. Reward fine-tuning the same model instead takes it **0.73 → 0.62**: the anchoring KL term is intractable in weight space and tractable in noise space. | Proposed |
+| [SOTA-318](../../../record/practices.d/SOTA-318.md) | Choose the rank per matrix when you compress a transformer, because low-rank structure varies by component and by depth | Jaiswal et al. (2024), [LIT-516](../../../record/literature.d/LIT-516.md) — "transformer weights are low rank" is true of some matrices and false of others. Query, Key and MLP Gate converge to low rank; MLP Up, MLP Down and Value do not; middle blocks resist while the first and last few give way. Setting the rank per matrix instead of globally is **~6.4×** better in perplexity than uniform reduction at 30% on LLaMA-2 7B and **~47×** at 40% on 13B. | Active |

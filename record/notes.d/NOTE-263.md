@@ -1,6 +1,9 @@
 ---
+number: 263
 status: Read
-paper: LIT-tmpmftzj
+formerly:
+- NOTE-tmpsv1p1
+paper: LIT-517
 title: 'An MP bulk plus outliers at both ends, and why magnitude order is not importance order'
 version: 1
 date: '2026-09-22'
@@ -20,7 +23,7 @@ summary: >-
      paragraph as the same shape one floor over. Cited as a comparison, and
      the sentence citing it says two is not several. -->
 
-# NOTE-tmpsv1p1: An MP bulk plus outliers at both ends, and why magnitude order is not importance order
+# NOTE-263: An MP bulk plus outliers at both ends, and why magnitude order is not importance order
 
 ## Contribution
 

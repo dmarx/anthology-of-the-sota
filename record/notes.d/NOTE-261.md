@@ -1,6 +1,9 @@
 ---
+number: 261
 status: Read
-paper: LIT-tmpxqt7b
+formerly:
+- NOTE-tmpg1l16
+paper: LIT-520
 title: 'The singular distribution stops moving long before the weights do'
 version: 1
 date: '2026-09-22'
@@ -14,7 +17,7 @@ summary: >-
      that this reading says is NOT the same claim. A use that requires it to
      be unsettled rather than one that leans on it. -->
 
-# NOTE-tmpg1l16: The singular distribution stops moving long before the weights do
+# NOTE-261: The singular distribution stops moving long before the weights do
 
 ## Contribution
 
@@ -78,7 +81,7 @@ here forces the spectrum to keep moving and shows the loss keeps falling.
 ## Bearing on the record
 
 **It is why a one-shot spectral reading means anything.**
-[SOTA-tmpsbgvf](../practices.d/SOTA-tmpsbgvf.md) reads a per-matrix spectrum once and picks a rank
+[SOTA-318](../practices.d/SOTA-318.md) reads a per-matrix spectrum once and picks a rank
 from it; [SOTA-314](../practices.d/SOTA-314.md) peels a fixed number of directions from a finished
 checkpoint. Both assume the shape they are reading is the shape the model has.
 This says it is — fixed within the first thousand steps or so and held

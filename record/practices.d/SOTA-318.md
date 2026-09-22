@@ -1,5 +1,8 @@
 ---
+number: 318
 status: Active
+formerly:
+- SOTA-tmpsbgvf
 promote_when: >-
   An independent group running the matched-compression comparison —
   per-matrix rank against a single global rank at the same overall
@@ -13,11 +16,11 @@ consensus: unreplicated
 consensus_note: >-
   The premise has three independent measurements and the remedy has one. That
   transformer weight matrices differ in how nearly low-rank they are is
-  reported by LIT-tmphxv7m (Hessian gaps and heavy tails), LIT-tmpmftzj
-  (activation-covariance overlap and perplexity ablation) and LIT-tmpx9iti
+  reported by LIT-516 (Hessian gaps and heavy tails), LIT-517
+  (activation-covariance overlap and perplexity ablation) and LIT-519
   (effective-rank entropy across eleven checkpoints), by three unrelated
   instruments. That choosing the rank per matrix therefore beats choosing one
-  globally has been measured by LIT-tmphxv7m alone. The three do not agree on
+  globally has been measured by LIT-516 alone. The three do not agree on
   which matrices fall where, which is an argument for the instruction as
   stated — measure yours — and against any published list.
 title: 'Choose the rank per matrix when you compress a transformer, because low-rank structure varies by component and by depth'
@@ -27,12 +30,12 @@ tags:
 - adaptation-and-tuning
 date: '2026-09-22'
 source:
-- LIT-tmphxv7m
+- LIT-516
 introduced_by:
-- LIT-tmphxv7m
+- LIT-516
 implementations: []
 summary: >-
-  Jaiswal et al. (2024), [LIT-tmphxv7m](../literature.d/LIT-tmphxv7m.md) — "transformer weights
+  Jaiswal et al. (2024), [LIT-516](../literature.d/LIT-516.md) — "transformer weights
   are low rank" is true of some matrices and false of others. Query, Key and
   MLP Gate converge to low rank; MLP Up, MLP Down and Value do not; middle
   blocks resist while the first and last few give way. Setting the rank per
@@ -40,12 +43,12 @@ summary: >-
   reduction at 30% on LLaMA-2 7B and **~47×** at 40% on 13B.
 ---
 
-# SOTA-tmpsbgvf: Choose the rank per matrix when you compress a transformer, because low-rank structure varies by component and by depth
+# SOTA-318: Choose the rank per matrix when you compress a transformer, because low-rank structure varies by component and by depth
 
 ## Source
 
 Jaiswal, Wang, Yin, Liu, Chen, Zhao, Grama, Tian and Wang (2024),
-[LIT-tmphxv7m](../literature.d/LIT-tmphxv7m.md) — read as [NOTE-tmpzvhd1](../notes.d/NOTE-tmpzvhd1.md).
+[LIT-516](../literature.d/LIT-516.md) — read as [NOTE-264](../notes.d/NOTE-264.md).
 
 ## When this applies
 
@@ -77,7 +80,7 @@ untouched.
 | first and last few blocks | middle blocks |
 
 The table is one paper's classification and a second measurement disagrees
-with it on two of six matrix types ([NOTE-tmpsv1p1](../notes.d/NOTE-tmpsv1p1.md)). Which is
+with it on two of six matrix types ([NOTE-263](../notes.d/NOTE-263.md)). Which is
 the point: the instruction is to measure, not to adopt the list.
 
 ## What it buys
@@ -117,13 +120,13 @@ What is genuinely unreplicated is the comparison itself, and that is what
 **The classification is not settled, and the practice does not depend on it
 being settled.** Three instruments agree that low-rank structure is
 non-uniform and disagree on where the lines fall — Value and Gate land
-differently in [NOTE-tmpsv1p1](../notes.d/NOTE-tmpsv1p1.md) and [NOTE-tmpzvhd1](../notes.d/NOTE-tmpzvhd1.md), and
-[NOTE-tmpptsb7](../notes.d/NOTE-tmpptsb7.md) reports MLP Down among the most concentrated
+differently in [NOTE-263](../notes.d/NOTE-263.md) and [NOTE-264](../notes.d/NOTE-264.md), and
+[NOTE-262](../notes.d/NOTE-262.md) reports MLP Down among the most concentrated
 matrices by entropy. Use your own spectra.
 
 **Concentration is not importance.** Choosing a rank from the magnitude
 spectrum tells you what you can subtract with least Frobenius error. It does
-not tell you what the model needs — [SOTA-tmp6xtka](SOTA-tmp6xtka.md) is the practice
+not tell you what the model needs — [SOTA-317](SOTA-317.md) is the practice
 about that, and the two should be read together.
 
 **Measured on language transformers.** LLaMA-2 7B and 13B, LLaMA-7B,
@@ -137,7 +140,7 @@ reduction from the heavy-tail property; it does not show that ratio is near
 the best available one.
 
 **The spectral shape you read is stable, which is what makes one reading
-enough.** [LIT-tmpxqt7b](../literature.d/LIT-tmpxqt7b.md) finds the trace-normalized spectrum
+enough.** [LIT-520](../literature.d/LIT-520.md) finds the trace-normalized spectrum
 reaches stationarity within roughly the first thousand pretraining steps and
 holds across architectures, schedules and optimizers. That licenses reading it
 once; it does not license assuming the *directions* stay put.

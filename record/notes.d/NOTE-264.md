@@ -1,6 +1,9 @@
 ---
+number: 264
 status: Read
-paper: LIT-tmphxv7m
+formerly:
+- NOTE-tmpzvhd1
+paper: LIT-516
 title: 'Low-rank structure in a transformer is non-uniform, and a global rank is measurably the wrong choice'
 version: 1
 date: '2026-09-22'
@@ -19,7 +22,7 @@ summary: >-
      paragraph as the same shape one floor over, and explicitly not promoted
      to a principle. -->
 
-# NOTE-tmpzvhd1: Low-rank structure in a transformer is non-uniform, and a global rank is measurably the wrong choice
+# NOTE-264: Low-rank structure in a transformer is non-uniform, and a global rank is measurably the wrong choice
 
 ## Contribution
 
@@ -87,7 +90,7 @@ its own; the explanation for it is the assumed part.
 paper is built against, and no third party has repeated the comparison.
 
 **The partition is not confirmed by the neighbouring measurement.**
-[LIT-tmpmftzj](../literature.d/LIT-tmpmftzj.md) reaches the same conclusion about *non-uniformity*
+[LIT-517](../literature.d/LIT-517.md) reaches the same conclusion about *non-uniformity*
 by an unrelated instrument — activation-covariance overlap and perplexity
 ablation rather than Hessian gaps — and agrees on four matrix types out of
 six. It disagrees on Value, which this paper calls high-rank and that one
@@ -103,7 +106,7 @@ at the ends of the network. They are not steep for the MLP Up and Down
 projections, which hold most of the parameters. So the account generalizes
 with a qualification the account does not currently carry.
 
-**It is the source of [SOTA-tmpsbgvf](../practices.d/SOTA-tmpsbgvf.md)**, which the record did not
+**It is the source of [SOTA-318](../practices.d/SOTA-318.md)**, which the record did not
 hold in any form. [SOTA-184](../practices.d/SOTA-184.md) trains a low-rank update and chooses one
 rank; [SOTA-314](../practices.d/SOTA-314.md) peels a rank-32 branch at 4 bits regardless of which
 matrix it is peeling. Neither says the rank is a per-matrix question.

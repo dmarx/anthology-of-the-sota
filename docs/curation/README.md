@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [22 Sep 00:03 — Half a promotion condition met, and the half that was met changed the claim](2026-09.md#half-a-promotion-condition-met-and-the-half-that-was-met-changed-the-claim)
 - [21 Sep 22:51 — Full-parameter training on one GPU, and an abstract that prices the GPU instead of the method](2026-09.md#full-parameter-training-on-one-gpu-and-an-abstract-that-prices-the-gpu-instead-of-the-method)
 - [21 Sep 22:40 — A subject the corpus was missing, found by grepping for it](2026-09.md#a-subject-the-corpus-was-missing-found-by-grepping-for-it)
 - [21 Sep 22:30 — mHC-lite, and a promotion condition that kept doing its job](2026-09.md#mhc-lite-and-a-promotion-condition-that-kept-doing-its-job)
@@ -174,9 +175,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-167 entries across 2 books, newest first.
+168 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 165 | 2026-09-05 | 2026-09-21 |
+| [2026-09](2026-09.md) | 166 | 2026-09-05 | 2026-09-22 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

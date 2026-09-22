@@ -4,7 +4,7 @@
 
 **model-stability**.
 
-12 of 260 NOTE documents. Back to the [full index](../README.md).
+14 of 264 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,5 @@
 | [NOTE-224](../../../record/notes.d/NOTE-224.md) | Dropout Reduces Underfitting | Reading it: the persuasive number is the training loss, not the accuracy. Early dropout lowers ViT-T's training loss from 3.443 to 3.394 while standard dropout raises it to 3.885 — so the same operator is doing two opposite things depending only on when it runs, and one of them is not regularization. | Read |
 | [NOTE-225](../../../record/notes.d/NOTE-225.md) | Local Volume | Reading it: the useful result is the audit, not the hypothesis. A network trained to generalize badly is detected on clean held-out data where its behaviour matches a clean model's, in a small number of forward passes. The volume hypothesis itself is left where it was found — "broadly consistent", by the authors' own conclusion. | Read |
 | [NOTE-227](../../../record/notes.d/NOTE-227.md) | Late-phase weights | Reading it: three ablations constrain the recommendation more than the headline does. Starting at initialization fails outright, the fanciest variant is worse than doing nothing, and replicating every weight instead of a few is worse than replicating a few. All three are reported. | Read |
+| [NOTE-261](../../../record/notes.d/NOTE-261.md) | The singular distribution stops moving long before the weights do | Read for one question: is the spectral shape that three other papers measure a stable property or a snapshot? It is stable, and early. The empirical section was read and the theory that derives the stability bound was not, which is stated rather than implied. | Read |
+| [NOTE-262](../../../record/notes.d/NOTE-262.md) | Eleven checkpoints agree on where the spectrum concentrates, and imitating it does not help | Read for breadth rather than depth of claim. Eleven GPT-2-style checkpoints differing in size, language, tokenizer and corpus share a depth profile in effective-rank entropy, which is the right instrument for a claim about where a matrix's magnitude sits. The paper's own headline — that you can initialize from that profile — is a negative result, reported as one. | Read |

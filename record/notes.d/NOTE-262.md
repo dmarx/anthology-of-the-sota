@@ -1,6 +1,9 @@
 ---
+number: 262
 status: Read
-paper: LIT-tmpx9iti
+formerly:
+- NOTE-tmpptsb7
+paper: LIT-519
 title: 'Eleven checkpoints agree on where the spectrum concentrates, and imitating it does not help'
 version: 1
 date: '2026-09-22'
@@ -14,7 +17,7 @@ summary: >-
 <!-- inactive-ok-file: THEORY-059 — Proposed, named as the question this
      reading supplies the breadth leg of. -->
 
-# NOTE-tmpptsb7: Eleven checkpoints agree on where the spectrum concentrates, and imitating it does not help
+# NOTE-262: Eleven checkpoints agree on where the spectrum concentrates, and imitating it does not help
 
 ## Contribution
 
@@ -83,13 +86,13 @@ compression decisions are usually made.
 ## Bearing on the record
 
 **It is the breadth leg of the answer to [THEORY-059](../theory.d/THEORY-059.md)'s question.**
-[LIT-tmpmftzj](../literature.d/LIT-tmpmftzj.md) goes deep on three models and
-[LIT-tmphxv7m](../literature.d/LIT-tmphxv7m.md) on three more; this holds the architecture fixed
+[LIT-517](../literature.d/LIT-517.md) goes deep on three models and
+[LIT-516](../literature.d/LIT-516.md) on three more; this holds the architecture fixed
 and varies everything else, which is what rules out "one tokenizer" or "one
 corpus" as the source of the spectral shape.
 
 **It agrees with the depth half of the non-uniformity finding and complicates
-the component half.** [LIT-tmphxv7m](../literature.d/LIT-tmphxv7m.md) finds the first and last blocks
+the component half.** [LIT-516](../literature.d/LIT-516.md) finds the first and last blocks
 compression-friendly and the middle resistant; this finds entropy dropping at
 the end, which is the same direction. But it finds `W_down` among the *most*
 concentrated matrices, where the other paper classes MLP Down as

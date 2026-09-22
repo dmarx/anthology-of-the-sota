@@ -5,6 +5,7 @@ title: 'Extend the context length in stages during pretraining rather than train
 version: 1
 tags:
 - training-optimization
+- attention-techniques
 date: '2026-09-05'
 source:
 - LIT-139

@@ -17,6 +17,7 @@ title: "Lower Adam's second-moment decay when the loss spikes, before reaching f
 version: 1
 tags:
 - model-stability
+- training-optimization
 date: '2026-09-10'
 source:
 - LIT-065

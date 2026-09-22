@@ -1,0 +1,119 @@
+---
+status: Proposed
+title: 'Declare invariant: tags on SOTA.source, after taking the backlog to zero'
+version: 1
+tags:
+- record
+- taxonomy
+date: '2026-09-22'
+issue: '#202'
+summary: >-
+  `schemes.SOTA.references.source` now declares `invariant: tags`, so a
+  practice and every paper behind it must share at least one topic. The
+  declaration is second: the pass came first, and took 60 unbound rows to 0.
+  Rejected: declaring it over the standing backlog, which would have made the
+  report read 60 with no way to retire a row that had been looked at — a signal
+  turned into wallpaper, since no `unbound-ok:` directive exists.
+---
+
+# ADR-tmps86bz: Declare invariant: tags on SOTA.source, after taking the backlog to zero
+
+## Context
+
+[#202](https://github.com/dmarx/anthology-of-the-sota/issues/202) found that the check already existed and this record had never
+declared it. `schemes.SOTA.references.source` accepts an `invariant:`, exactly
+as the two `chains:` do, and asserting it over `tags` finds every practice
+filed under a topic that no paper behind it holds.
+
+Run fresh on 2026-09-22 the query returned **60 rows** — 44 on `Active`
+practices, 51 with both sides in force. The issue reported 59 two days
+earlier; the record has grown since.
+
+The issue also named the reason not to simply turn it on: **there is no
+acknowledgement directive for an unbound row.** `inactive-ok:` covers
+citations, `target-ok:` covers link targets, `unresolved-ok:` covers codes.
+Nothing covers "this relation is deliberately unbound." So declaring the
+invariant over a standing backlog would have made
+`docs/reports/unbound-lineage.md` read 60 with no way to retire a row somebody
+had looked at and judged fine — and that report's all-clear is most of its
+value.
+
+## Decision
+
+**Work the rows first, declare the invariant second.** Both are in this
+contribution, in that order.
+
+The pass took **60 rows to 0**, across 49 documents. The distribution of
+readings was not what the issue anticipated:
+
+- **57 of 60 were under-tagging**, on one side or the other, and the fix was to
+  add a topic that was true and missing. *Attention Is All You Need* did not
+  carry `attention-techniques`. FlashAttention did not carry
+  `systems-optimization`. CheckFreq did not carry `distributed-optimization`,
+  whose blurb names checkpointing. A dozen diffusion practices did not carry
+  `generative-modeling`.
+- **1 was a mis-tagged practice.** `SOTA-033`, "continued pre-training for
+  fine tuning", was `model-architecture`; it is `adaptation-and-tuning`. This
+  is the only row where a primary topic moved.
+- **0 were the RETRO class** — a practice drawn from the wrong part of a paper.
+  That class was real when the issue was written and [#201](https://github.com/dmarx/anthology-of-the-sota/issues/201) closed it by filing
+  the missing retrieval practice.
+- **0 needed a word the vocabulary does not have.** The eighteen topics
+  absorbed every row.
+
+**Tags are appended, never reordered.** `primary_topic` derives `{tags[0]}`,
+so a prepend silently refiles a document. One primary topic moved in the whole
+pass, and it moved on purpose.
+
+## Alternatives considered
+
+- **Declare it and work the backlog afterwards.** The obvious sequencing and
+  the issue argues against it directly: a report that reads 60 with no way to
+  retire a row trains the next reader to ignore it. The two `chains:` sit at 0
+  today *because* they were worked down before being relied on, and this is
+  the same bargain.
+- **Ask upstream for an `unbound-ok:` directive first.** Would have been
+  necessary had the residue been large. It was zero, so the directive is not
+  needed to make this check permanent here — though its absence is still worth
+  recording, because the next record to declare this will face the same choice
+  with a different residue.
+- **Treat the rows as evidence the vocabulary is short a word.**
+  `unbound-lineage.md` itself says that is the usual reading, and for the two
+  `chains:` it has been. Here it was not: every row bound with an existing
+  topic, and reaching for a new one would have been the failure `ADR-035` §4
+  names.
+- **Add tags mechanically to clear the check.** The forbidden move, and the
+  reason each row was judged against the test in `CLAUDE.md` — *would someone
+  browsing that topic be right to expect this document?* — rather than against
+  whether it made the row go away. The batch is auditable: one topic per row,
+  each with a stated reason.
+- **Status quo.** The check stays undeclared and the drift stays invisible.
+  Nothing in prose was wrong in any of the 60 rows; the divergence lived
+  entirely in two `tags:` fields, which is exactly the class of defect a
+  structured-field detector exists to find ([#203](https://github.com/dmarx/anthology-of-the-sota/issues/203)).
+
+## Consequences
+
+`docs/reports/unbound-lineage.md` now asserts three invariants —
+`SOTA.source`, `practice`, `lineage` — and reads **0 unbound relations**. The
+one unbound *line* is the pre-existing `SOTA-036/037/038` sequence and is
+untouched by this.
+
+**The weakest row is named rather than buried.** `SOTA-060` (layer-norm init
+variance 0.02) sources `LIT-043` (Megatron-LM 3D parallelism), and
+`model-stability` was added to a parallelism paper. It is defensible — a paper
+that trains models at that scale does report stability settings, and this one
+is cited for exactly that — and it is the row a future reader is most likely to
+disagree with. It is also a symptom: `LIT-043`'s whole note is the sentence
+"3D parallel training strategy", and a note that thin cannot say what it is
+about. The row is as much a reading backlog as a tagging one.
+
+**Adding a topic to a paper changes which tag pages it appears on**, which is
+the point and is also a cost: 21 literature notes now appear under a topic they
+did not before. Each addition is one topic and was justified individually.
+
+**This does not make the check free.** A new practice whose source shares no
+topic with it will now show in the report, and the fix will be the same
+judgement call made 60 times here. What it buys is that the judgement happens
+when the document is filed, while the context is loaded, instead of two years
+later in a pass like this one.

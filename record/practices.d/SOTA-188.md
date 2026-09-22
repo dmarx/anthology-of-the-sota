@@ -35,6 +35,7 @@ history:
     unchanged.
 tags:
 - training-optimization
+- generative-modeling
 consensus: converged
 date: '2026-09-08'
 source:

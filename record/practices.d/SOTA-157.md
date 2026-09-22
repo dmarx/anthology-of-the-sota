@@ -31,6 +31,7 @@ history:
     tokens, not about scale.
 tags:
 - model-architecture
+- generative-modeling
 date: '2026-09-07'
 source:
 # One paper, and it is the only evidence there is. The comparison it reports

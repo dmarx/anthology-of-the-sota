@@ -47,6 +47,7 @@ history:
 tags:
 - data-pipeline
 - tiny-models
+- model-architecture
 date: '2026-09-05'
 source:
 # The memorization-window measurement the whole practice turns on is Figure 9

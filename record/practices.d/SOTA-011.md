@@ -15,6 +15,7 @@ history:
     body. The recommendation is unchanged.
 tags:
 - training-optimization
+- analysis-and-evaluation
 date: '2026-08-24'
 source:
 - LIT-014

@@ -12,6 +12,7 @@ title: 'Anneal a discretisation from coarse to fine over training rather than fi
 version: 1
 tags:
 - training-optimization
+- generative-modeling
 date: '2026-09-10'
 source:
 - LIT-093

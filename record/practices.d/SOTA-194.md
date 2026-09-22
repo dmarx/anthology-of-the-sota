@@ -11,6 +11,7 @@ title: 'When an objective arrives with its own dataset, state the composition be
 version: 1
 tags:
 - analysis-and-evaluation
+- data-pipeline
 date: '2026-09-10'
 source:
 - LIT-080

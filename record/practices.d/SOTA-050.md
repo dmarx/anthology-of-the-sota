@@ -11,6 +11,7 @@ history:
 tags:
 - model-stability
 - training-optimization
+- attention-techniques
 date: '2026-08-24'
 source:
 - LIT-008

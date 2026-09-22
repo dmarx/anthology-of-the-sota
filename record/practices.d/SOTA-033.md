@@ -4,7 +4,7 @@ status: 'Active'
 title: 'continued pre-training for fine tuning'
 version: 1
 tags:
-- model-architecture
+- adaptation-and-tuning
 date: '2026-08-24'
 source:
 - LIT-034

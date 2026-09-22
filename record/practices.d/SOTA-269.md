@@ -15,6 +15,7 @@ version: 1
 tags:
 - inference-optimization
 - training-optimization
+- model-architecture
 date: '2026-09-20'
 source:
 # Lu et al. is the cost argument and the claim rests on it. LIT-060 is here

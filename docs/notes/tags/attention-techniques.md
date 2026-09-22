@@ -4,7 +4,7 @@
 
 **attention-techniques**.
 
-13 of 272 NOTE documents. Back to the [full index](../README.md).
+15 of 274 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,3 +21,5 @@
 | [NOTE-266](../../../record/notes.d/NOTE-266.md) | Not all entropy collapse crashes a model, and the discriminator is low-rankness | Read after the paper it contradicts. The contribution is a distinction the record did not have: an attention map can be sparse with near-zero entropy and the run is fine, provided it is not also low-rank. That makes entropy the symptom and spectral energy concentration in the query-key product the cause, and it makes a warmup-free optimizer fall out. | Read |
 | [NOTE-269](../../../record/notes.d/NOTE-269.md) | Heads traded for depth, and the five rows where only those two things move | Read on its merits after being triaged past. The headline is an architecture recommendation and the interesting part is the mechanism: more heads lower the condition number of the attention block, which is the same quantity [THEORY-041](../../../record/theory.d/THEORY-041.md) says drifts the wrong way when nothing manages it. Half the configurations confound the trade by also halving the MLP; the other half do not, and those are the result. | Read |
 | [NOTE-272](../../../record/notes.d/NOTE-272.md) | An idealization that checks its own assumptions against ALBERT, and clusters within a few layers | Read a second time, in full, after being declined on a skim. The decline said the `t → ∞` frozen-weights idealization put it too far from a trained model to be evidence about one, and that it underwrites no practice. Both halves were wrong: the record's own schema says a theory need underwrite nothing, and the paper checks its hypotheses on ALBERT, gives the discrete-time analogue, and says clustering arrives within a few layers. | Read |
+| [NOTE-273](../../../record/notes.d/NOTE-273.md) | The observation outlived the method, and it is the observation the record needed | Read for one figure. The record holds two practices resting on attention being low rank and held no source for the claim; the record also already holds the verdict that this paper's *method* was overtaken. Those are different things and the reading keeps them apart. | Read |
+| [NOTE-274](../../../record/notes.d/NOTE-274.md) | The trunk under a term the record was using for two different things | Read because four documents in this record lean on "rank collapse" and none of them held its source. Reading it produced a finding that was not the point of the unit: the record carries that term for two distinct phenomena, and the conflation is the field's rather than ours. | Read |

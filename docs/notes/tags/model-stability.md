@@ -4,7 +4,7 @@
 
 **model-stability**.
 
-18 of 272 NOTE documents. Back to the [full index](../README.md).
+19 of 274 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -26,3 +26,4 @@
 | [NOTE-266](../../../record/notes.d/NOTE-266.md) | Not all entropy collapse crashes a model, and the discriminator is low-rankness | Read after the paper it contradicts. The contribution is a distinction the record did not have: an attention map can be sparse with near-zero entropy and the run is fine, provided it is not also low-rank. That makes entropy the symptom and spectral energy concentration in the query-key product the cause, and it makes a warmup-free optimizer fall out. | Read |
 | [NOTE-267](../../../record/notes.d/NOTE-267.md) | Freezing the spectrum by construction, and what one 60M run can and cannot show | Read as the third position on one axis. If the problem is that weight spectra drift during training, the options are renormalize them, bound how fast they move, or make them constant. This does the third. The idea is clean and the evidence for the claim worth recommending is one model at 60M, which is why no practice is filed. | Read |
 | [NOTE-271](../../../record/notes.d/NOTE-271.md) | One metric that separates transformers from every other architecture, and what it buys | Read for whether the record wants an inductive-bias claim. It does, because the claim comes with a computable scalar rather than an adjective, and the scalar does four jobs — separates architectures, predicts robustness, correlates with flatness, and moves during a grokking plateau. The fourth is the one this record has an existing use for. | Read |
+| [NOTE-274](../../../record/notes.d/NOTE-274.md) | The trunk under a term the record was using for two different things | Read because four documents in this record lean on "rank collapse" and none of them held its source. Reading it produced a finding that was not the point of the unit: the record carries that term for two distinct phenomena, and the conflation is the field's rather than ours. | Read |

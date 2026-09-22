@@ -1,6 +1,9 @@
 ---
+number: 274
 status: Read
-paper: LIT-tmpcv53l
+formerly:
+- NOTE-tmpsokgi
+paper: LIT-530
 title: 'The trunk under a term the record was using for two different things'
 version: 1
 date: '2026-09-22'
@@ -18,7 +21,7 @@ summary: >-
      asks whether its account and this one pull against each other. The
      question requires both to be unsettled. -->
 
-# NOTE-tmpsokgi: The trunk under a term the record was using for two different things
+# NOTE-274: The trunk under a term the record was using for two different things
 
 ## Contribution
 

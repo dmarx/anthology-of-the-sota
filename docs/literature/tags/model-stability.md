@@ -6,7 +6,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-35 of 463 LIT documents. Back to the [full index](../README.md).
+36 of 465 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -45,3 +45,4 @@
 | [LIT-522](../../../record/literature.d/LIT-522.md) | Pion: A Spectrum-Preserving Optimizer via Orthogonal Equivalence Transformation | Shi et al. (2026), [ARXIV-2605.12492](https://arxiv.org/abs/2605.12492) — instead of bounding or renormalizing a weight matrix's spectrum, never change it: update `W` by left and right orthogonal transformations so the singular values are invariant and only the singular vectors rotate. On a 60M LLaMA with **every normalization layer removed**, AdamW and Muon produce NaNs and Pion trains 9.6B tokens. Read as [NOTE-267](../../../record/notes.d/NOTE-267.md). | Active |
 | [LIT-523](../../../record/literature.d/LIT-523.md) | Stabilizing Transformer Training by Preventing Attention Entropy Collapse | Zhai et al. (2023), [ARXIV-2303.06296](https://arxiv.org/abs/2303.06296) — proves a tight lower bound on attention entropy that falls like `Ω(Tσe^{-σ})` in the spectral norm of `W_K W_Q^T`, then removes the growth by reparameterizing every linear layer as `γ·W/σ(W)`. A ViT trained this way reaches 82.2% on ImageNet **without pre-LN, warmup, weight decay or an adaptive optimizer**. Read as [NOTE-265](../../../record/notes.d/NOTE-265.md). | Active |
 | [LIT-525](../../../record/literature.d/LIT-525.md) | Transformers Learn Low Sensitivity Functions: Investigations and Implications | Vasudeva et al. (2024), [ARXIV-2403.06925](https://arxiv.org/abs/2403.06925) — sensitivity to token-wise random input perturbations is one number that separates transformers from MLPs, CNNs, ConvMixers and LSTMs across vision and language. It also predicts robustness, tracks flatness, can be regularized for, and keeps falling through a grokking plateau while the loss does not move. Read as [NOTE-271](../../../record/notes.d/NOTE-271.md). | Active |
+| [LIT-530](../../../record/literature.d/LIT-530.md) | Attention is not all you need: pure attention loses rank doubly exponentially with depth | Dong, Cordonnier and Loukas (2021), [ARXIV-2103.03404](https://arxiv.org/abs/2103.03404) — strip the skip connections and MLPs out of a transformer and its output converges **doubly exponentially** to a rank-1 matrix with identical rows. Skip connections stop it, MLPs slow it, and **layer normalization provably does nothing** — it is a right-multiplication, and right-multiplication cannot raise rank. Read as [NOTE-274](../../../record/notes.d/NOTE-274.md). | Active |

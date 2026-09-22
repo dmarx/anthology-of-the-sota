@@ -4,7 +4,7 @@
 
 **inference-optimization**.
 
-13 of 272 NOTE documents. Back to the [full index](../README.md).
+14 of 274 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,3 +21,4 @@
 | [NOTE-257](../../../record/notes.d/NOTE-257.md) | SVDQuant: a low-rank branch on the weights, not on the error | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist. The idea that travels is an ordering: decompose the weights and quantize the residual, rather than quantize and then patch the error. Two propositions and Eckart-Young say why, and a published method that does it the other way round is the control. | Read |
 | [NOTE-263](../../../record/notes.d/NOTE-263.md) | An MP bulk plus outliers at both ends, and why magnitude order is not importance order | Read to answer [THEORY-059](../../../record/theory.d/THEORY-059.md)'s open question. It answers it and complicates it: language-transformer weight spectra are steep at the top, as the account needs, but the bottom of the spectrum in non-square matrices holds directions whose removal is catastrophic. Frobenius magnitude and functional importance are ordered differently, and a method that peels the top and quantizes the rest is keeping exactly the part this paper says is fragile. | Read |
 | [NOTE-264](../../../record/notes.d/NOTE-264.md) | Low-rank structure in a transformer is non-uniform, and a global rank is measurably the wrong choice | Read second in the spectral cluster, and it is the one that carries a recommendation. "Transformer weights are low rank" turns out to be true of some matrices and false of others, with the split systematic by component and by depth. The comparison against a uniform rank at matched compression was run and the margins are large. | Read |
+| [NOTE-273](../../../record/notes.d/NOTE-273.md) | The observation outlived the method, and it is the observation the record needed | Read for one figure. The record holds two practices resting on attention being low rank and held no source for the claim; the record also already holds the verdict that this paper's *method* was overtaken. Those are different things and the reading keeps them apart. | Read |

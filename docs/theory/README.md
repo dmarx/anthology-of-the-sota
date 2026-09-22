@@ -39,8 +39,8 @@ bare code and run `luria link --fix`.
 **[Numerics and precision](tags/numerics-and-precision.md)** (3) — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them:
 [019](../../record/theory.d/THEORY-019.md) · [042](../../record/theory.d/THEORY-042.md) · [059](../../record/theory.d/THEORY-059.md)
 
-**[Model stability](tags/model-stability.md)** (11) — initialization, normalization, gradient handling, regularization, loss-landscape behaviour:
-[001](../../record/theory.d/THEORY-001.md) · [003](../../record/theory.d/THEORY-003.md) · [010](../../record/theory.d/THEORY-010.md) · [011](../../record/theory.d/THEORY-011.md) · [015](../../record/theory.d/THEORY-015.md) · [016](../../record/theory.d/THEORY-016.md) · [041](../../record/theory.d/THEORY-041.md) · [044](../../record/theory.d/THEORY-044.md) · [045](../../record/theory.d/THEORY-045.md) · [061](../../record/theory.d/THEORY-061.md) · [062](../../record/theory.d/THEORY-062.md)
+**[Model stability](tags/model-stability.md)** (12) — initialization, normalization, gradient handling, regularization, loss-landscape behaviour:
+[001](../../record/theory.d/THEORY-001.md) · [003](../../record/theory.d/THEORY-003.md) · [010](../../record/theory.d/THEORY-010.md) · [011](../../record/theory.d/THEORY-011.md) · [015](../../record/theory.d/THEORY-015.md) · [016](../../record/theory.d/THEORY-016.md) · [041](../../record/theory.d/THEORY-041.md) · [044](../../record/theory.d/THEORY-044.md) · [045](../../record/theory.d/THEORY-045.md) · [061](../../record/theory.d/THEORY-061.md) · [062](../../record/theory.d/THEORY-062.md) · [066](../../record/theory.d/THEORY-066.md)
 
 **[Distributed optimization](tags/distributed-optimization.md)** (1) — parallelism and sharding, communication, memory management, checkpointing:
 [014](../../record/theory.d/THEORY-014.md)
@@ -48,11 +48,11 @@ bare code and run `luria link --fix`.
 **[Data pipeline](tags/data-pipeline.md)** (1) — loading, quality assessment and selection, preprocessing, batch preparation:
 [057](../../record/theory.d/THEORY-057.md)
 
-**[Attention techniques](tags/attention-techniques.md)** (4) — attention variants and alternative mechanisms, implementation optimizations, context length:
-[019](../../record/theory.d/THEORY-019.md) · [061](../../record/theory.d/THEORY-061.md) · [062](../../record/theory.d/THEORY-062.md) · [065](../../record/theory.d/THEORY-065.md)
+**[Attention techniques](tags/attention-techniques.md)** (5) — attention variants and alternative mechanisms, implementation optimizations, context length:
+[019](../../record/theory.d/THEORY-019.md) · [061](../../record/theory.d/THEORY-061.md) · [062](../../record/theory.d/THEORY-062.md) · [065](../../record/theory.d/THEORY-065.md) · [066](../../record/theory.d/THEORY-066.md)
 
-**[Model architecture](tags/model-architecture.md)** (9) — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in:
-[005](../../record/theory.d/THEORY-005.md) · [020](../../record/theory.d/THEORY-020.md) · [038](../../record/theory.d/THEORY-038.md) · [041](../../record/theory.d/THEORY-041.md) · [046](../../record/theory.d/THEORY-046.md) · [050](../../record/theory.d/THEORY-050.md) · [056](../../record/theory.d/THEORY-056.md) · [064](../../record/theory.d/THEORY-064.md) · [065](../../record/theory.d/THEORY-065.md)
+**[Model architecture](tags/model-architecture.md)** (10) — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in:
+[005](../../record/theory.d/THEORY-005.md) · [020](../../record/theory.d/THEORY-020.md) · [038](../../record/theory.d/THEORY-038.md) · [041](../../record/theory.d/THEORY-041.md) · [046](../../record/theory.d/THEORY-046.md) · [050](../../record/theory.d/THEORY-050.md) · [056](../../record/theory.d/THEORY-056.md) · [064](../../record/theory.d/THEORY-064.md) · [065](../../record/theory.d/THEORY-065.md) · [066](../../record/theory.d/THEORY-066.md)
 
 **[Inference optimization](tags/inference-optimization.md)** (1) — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms:
 [059](../../record/theory.d/THEORY-059.md)
@@ -82,7 +82,7 @@ bare code and run `luria link --fix`.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-**By status:** [The current account](status/Active.md) (23) · [Offered](status/Proposed.md) (39) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
+**By status:** [The current account](status/Active.md) (23) · [Offered](status/Proposed.md) (40) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (3) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological
 
@@ -163,4 +163,5 @@ What the status column means in this scheme — the words are luria's, the meani
 | [THEORY-063](../../record/theory.d/THEORY-063.md) | Contextual concept directions sit in the low-variance tail of the unembedding spectrum while vocabulary contrasts sit at the top | Acharya, Rimal and Dhakal (2026), [LIT-526](../../record/literature.d/LIT-526.md) — concept directions read out of the residual stream anti-concentrate in the low-eigenvalue directions of the unembedding second moment, in 17 of 17 models and by three independent extraction methods. Static unembedding-row contrasts do the opposite. So the same model carries semantic content at both ends of one spectrum, depending on whether the representation is contextual. | Proposed |
 | [THEORY-064](../../record/theory.d/THEORY-064.md) | Transformers are biased toward low-sensitivity functions, and that bias is what their robustness is made of | Vasudeva et al. (2024), [LIT-525](../../record/literature.d/LIT-525.md) — the probability that a model's output changes under a random perturbation of one input token is lower for transformers than for MLPs, CNNs, ConvMixers or LSTMs, on vision and language alike. Low sensitivity is a simplicity bias in established senses, it provably implies robustness in the Boolean case, and it tracks flatness. `Proposed`: the theory is Boolean and NTK, the experiments are not, and the metric is defined relative to a perturbation distribution nobody has swept. | Proposed |
 | [THEORY-065](../../record/theory.d/THEORY-065.md) | Self-attention drives tokens into a few clusters, and the spectrum of the value matrix decides the geometry they land in | Geshkovski, Letrouit, Polyanskiy and Rigollet (2023), [LIT-528](../../record/literature.d/LIT-528.md) — with weights held fixed, self-attention is an interacting particle system and its tokens cluster. Which clusters is not arbitrary: `V = I` sends them to the vertices of a convex polytope, a simple positive leading eigenvalue to at most three parallel hyperplanes, `V = −I` to a single point at the origin. In one dimension the attention matrix provably becomes low-rank and Boolean — the structure Linformer and LoRA assume and impose. | Proposed |
+| [THEORY-066](../../record/theory.d/THEORY-066.md) | Pure self-attention collapses every token onto one, and skip connections prevent it by keeping short paths alive | Dong, Cordonnier and Loukas (2021), [LIT-530](../../record/literature.d/LIT-530.md) — decompose a self-attention network into paths, one head per layer, and the residual after removing the best rank-1 approximation shrinks at a **cubic** rate: doubly exponential in depth. Skip connections create short paths — including one that skips everything — and that is what stops it. MLPs slow it in proportion to their Lipschitz constant. **Layer normalization cannot help at all**, because it is a right multiplication. | Proposed |
 

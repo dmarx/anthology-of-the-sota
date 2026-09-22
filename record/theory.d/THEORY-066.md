@@ -1,5 +1,8 @@
 ---
+number: 66
 status: Proposed
+formerly:
+- THEORY-tmp91yaa
 promote_when: >-
   A tight lower bound on the residual with skip connections present — the open
   challenge the source itself poses. What is proved today is that SOME
@@ -19,9 +22,9 @@ tags:
 - model-stability
 date: '2026-09-22'
 source:
-- LIT-tmpcv53l
+- LIT-530
 summary: >-
-  Dong, Cordonnier and Loukas (2021), [LIT-tmpcv53l](../literature.d/LIT-tmpcv53l.md) — decompose a
+  Dong, Cordonnier and Loukas (2021), [LIT-530](../literature.d/LIT-530.md) — decompose a
   self-attention network into paths, one head per layer, and the residual after
   removing the best rank-1 approximation shrinks at a **cubic** rate: doubly
   exponential in depth. Skip connections create short paths — including one
@@ -37,12 +40,12 @@ summary: >-
      say" to record a tension neither source frames as one. The use requires
      it to be unsettled. -->
 
-# THEORY-tmp91yaa: Pure self-attention collapses every token onto one, and skip connections prevent it by keeping short paths alive
+# THEORY-066: Pure self-attention collapses every token onto one, and skip connections prevent it by keeping short paths alive
 
 ## Source
 
-Dong, Cordonnier and Loukas (2021), [LIT-tmpcv53l](../literature.d/LIT-tmpcv53l.md) — read as
-[NOTE-tmpsokgi](../notes.d/NOTE-tmpsokgi.md). ICML 2021.
+Dong, Cordonnier and Loukas (2021), [LIT-530](../literature.d/LIT-530.md) — read as
+[NOTE-274](../notes.d/NOTE-274.md). ICML 2021.
 
 ## The account
 
@@ -116,7 +119,7 @@ representations through depth in a single forward pass; this one is prevented
 by residual connections and nothing claims the other is. The conflation is the
 field's rather than this record's —
 [LIT-350](../literature.d/LIT-350.md) uses the term the other way in its own words — and
-[NOTE-tmpsokgi](../notes.d/NOTE-tmpsokgi.md) carries the table separating them.
+[NOTE-274](../notes.d/NOTE-274.md) carries the table separating them.
 
 **It is not the only account of why skip connections matter.**
 [THEORY-011](THEORY-011.md) holds that they smooth the loss landscape, which is where

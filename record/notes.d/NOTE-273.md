@@ -1,6 +1,9 @@
 ---
+number: 273
 status: Read
-paper: LIT-tmp326fh
+formerly:
+- NOTE-tmpqs6fj
+paper: LIT-529
 title: 'The observation outlived the method, and it is the observation the record needed'
 version: 1
 date: '2026-09-22'
@@ -11,7 +14,7 @@ summary: >-
   different things and the reading keeps them apart.
 ---
 
-# NOTE-tmpqs6fj: The observation outlived the method, and it is the observation the record needed
+# NOTE-273: The observation outlived the method, and it is the observation the record needed
 
 ## Contribution
 
@@ -92,7 +95,7 @@ showing the cost model was wrong. That is a verdict on `O(n)` being the right
 target, not on the spectrum. Keeping the two apart is why this is filed
 `Active`.
 
-**And it sits against [LIT-tmpcv53l](../literature.d/LIT-tmpcv53l.md) in a way neither paper
+**And it sits against [LIT-530](../literature.d/LIT-530.md) in a way neither paper
 notices.** Linformer measures `P` as low rank and treats that as an
 opportunity. Dong et al. proves `P` driving the representation to rank 1 is a
 pathology that skip connections exist to prevent. Same structural fact, read as

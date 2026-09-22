@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-269 of 272 NOTE documents. Back to the [full index](../README.md).
+271 of 274 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -279,3 +279,5 @@
 | [NOTE-270](../../../record/notes.d/NOTE-270.md) | Concepts live in the quiet directions, and the paper labels its own claims robust or partial | Read last of the batch and the easiest call to make, for a reason that has little to do with the finding: it arrives with a table grading its own six claims, a robust null against the hypothesis it set out to confirm, and partial results labelled partial. The finding itself is that contextual concept directions sit at the bottom of the unembedding spectrum and static vocabulary contrasts sit at the top. | Read |
 | [NOTE-271](../../../record/notes.d/NOTE-271.md) | One metric that separates transformers from every other architecture, and what it buys | Read for whether the record wants an inductive-bias claim. It does, because the claim comes with a computable scalar rather than an adjective, and the scalar does four jobs — separates architectures, predicts robustness, correlates with flatness, and moves during a grokking plateau. The fourth is the one this record has an existing use for. | Read |
 | [NOTE-272](../../../record/notes.d/NOTE-272.md) | An idealization that checks its own assumptions against ALBERT, and clusters within a few layers | Read a second time, in full, after being declined on a skim. The decline said the `t → ∞` frozen-weights idealization put it too far from a trained model to be evidence about one, and that it underwrites no practice. Both halves were wrong: the record's own schema says a theory need underwrite nothing, and the paper checks its hypotheses on ALBERT, gives the discrete-time analogue, and says clustering arrives within a few layers. | Read |
+| [NOTE-273](../../../record/notes.d/NOTE-273.md) | The observation outlived the method, and it is the observation the record needed | Read for one figure. The record holds two practices resting on attention being low rank and held no source for the claim; the record also already holds the verdict that this paper's *method* was overtaken. Those are different things and the reading keeps them apart. | Read |
+| [NOTE-274](../../../record/notes.d/NOTE-274.md) | The trunk under a term the record was using for two different things | Read because four documents in this record lean on "rank collapse" and none of them held its source. Reading it produced a finding that was not the point of the unit: the record carries that term for two distinct phenomena, and the conflation is the field's rather than ours. | Read |

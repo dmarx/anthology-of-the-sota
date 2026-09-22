@@ -1,0 +1,73 @@
+---
+status: Active
+title: 'Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion'
+version: 1
+tags:
+- generative-modeling
+- vision-and-graphics
+date: '2026-09-23'
+published: '2024-07-01'
+arxiv: '2407.01392'
+first_author: 'Chen'
+keywords:
+- 'diffusion-forcing'
+- 'per-token-noise'
+- 'autoregressive-video'
+- 'diffusion-planning'
+- 'monte-carlo-guidance'
+implementations: []
+summary: >-
+  Chen, Marti Monso, Du, Simchowitz, Tedrake, Sitzmann (2024),
+  [ARXIV-2407.01392](https://arxiv.org/abs/2407.01392). Train a causal sequence model to denoise tokens that
+  each carry an independent noise level. One model then samples
+  autoregressively, like next-token prediction, and supports guidance over a
+  whole horizon, like full-sequence diffusion. Video rollouts stay stable
+  past 1,000 frames where teacher forcing diverges, shown qualitatively only.
+  On D4RL mazes it beats Diffuser using its own generated actions. A
+  convolutional RNN, not a transformer, at small scale.
+---
+
+<!-- inactive-ok-file: SOTA-tmpbc2oe — Proposed, filed in this same contribution from this paper -->
+
+# LIT-tmpcjzih: Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion
+
+Chen, Marti Monso, Du, Simchowitz, Tedrake, Sitzmann, MIT and TU Munich
+(2024; NeurIPS 2024) — [ARXIV-2407.01392](https://arxiv.org/abs/2407.01392)
+
+## Key takeaways
+
+- **Noise as partial masking.** Zero noise is an unmasked token and full
+  noise a masked one. Training with an independent noise level per token
+  teaches the model every conditional between clean history and noisy
+  future. The paper proves the objective bounds the likelihood of all
+  training subsequences
+- **Sampling is a 2D schedule** over sequence position and noise level,
+  chosen at inference without retraining. Examples are autoregressive
+  (history clean), full-sequence (all equal) and "zig-zag" (near future
+  cleaner than far future)
+- **Stable long rollouts:** condition on history that is treated as
+  *slightly noisy* (`0 < k ≪ K`), so small prediction errors look like
+  training-distribution noise. On Minecraft and DMLab, rollouts stay coherent
+  to 1,000 frames where a teacher-forced next-frame diffusion model and a
+  causal full-sequence model diverge (Figure 3, qualitative)
+- **Planning (D4RL Maze2D, Table 1):** average reward 141.7 (single task)
+  and 146.2 (multi-task), against Diffuser's 119.5 and 129.4. Diffuser needs a
+  hand-coded PD controller and falls to 8.7 and 20.6 when executing its own
+  actions. Monte Carlo Guidance adds about 12 points on single-task
+- **A real-robot task needing memory:** 80% success, where a memoryless
+  diffusion policy fails. 76% with occluded or distracted observations,
+  against 48% for a next-frame baseline
+
+## Standing in the anthology
+
+**Filed from `#163`** ("diffusion forcing"), and sources [SOTA-tmpbc2oe](../practices.d/SOTA-tmpbc2oe.md) for
+the video-rollout use.
+
+**What travelled and what was measured.** The claim that it "stably rolls
+out past the training horizon" is the one people cite. In this paper it is
+Figure 3 and a project-page video, with no FVD or other number in the main
+text, on a small RNN and two game datasets. The measured results are the
+planning table and the robot success rates. The authors list
+transformer-scale implementation and scaling as open.
+
+Read — [NOTE-tmp0rqt2](../notes.d/NOTE-tmp0rqt2.md).

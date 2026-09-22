@@ -45,9 +45,6 @@ summary: >-
      first and the section citing both says the mechanism is disputed, which
      requires them to be unsettled rather than leaning on them. -->
 
-<!-- inactive-ok-file: SOTA-320 — Proposed, filed in this same
-     contribution and named as an untested sibling remedy. -->
-
 <!-- inactive-ok-file: SOTA-122 SOTA-282 — both Proposed, named as the two
      practices this one overlaps without being either, in a paragraph that
      says nobody has compared the three. -->

@@ -1,5 +1,8 @@
 ---
+number: 322
 status: Proposed
+formerly:
+- SOTA-tmpwlajs
 promote_when: >-
   The trade run at language-model pretraining scale with throughput reported:
   a decoder-only model at a billion parameters or more, rebuilt with more
@@ -23,12 +26,12 @@ tags:
 - attention-techniques
 date: '2026-09-22'
 source:
-- LIT-tmpqux2k
+- LIT-527
 introduced_by:
-- LIT-tmpqux2k
+- LIT-527
 implementations: []
 summary: >-
-  Saratchandran, Teney and Lucey (2025), [LIT-tmpqux2k](../literature.d/LIT-tmpqux2k.md) — more
+  Saratchandran, Teney and Lucey (2025), [LIT-527](../literature.d/LIT-527.md) — more
   heads lower the condition number of the attention block, which is part of
   what depth was buying. In the five configurations where the MLP width is
   held fixed, raising head count and cutting layers holds or improves accuracy
@@ -40,12 +43,12 @@ summary: >-
      two point opposite ways with no experiment between them, which requires
      it to be unsettled. -->
 
-# SOTA-tmpwlajs: Trade attention heads for depth: more heads conditions the attention block, and the layers you drop cost nothing
+# SOTA-322: Trade attention heads for depth: more heads conditions the attention block, and the layers you drop cost nothing
 
 ## Source
 
-Saratchandran, Teney and Lucey (2025), [LIT-tmpqux2k](../literature.d/LIT-tmpqux2k.md) — read as
-[NOTE-tmph5061](../notes.d/NOTE-tmph5061.md).
+Saratchandran, Teney and Lucey (2025), [LIT-527](../literature.d/LIT-527.md) — read as
+[NOTE-269](../notes.d/NOTE-269.md).
 
 ## Do this
 

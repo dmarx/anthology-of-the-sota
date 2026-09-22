@@ -1,6 +1,9 @@
 ---
+number: 270
 status: Read
-paper: LIT-tmpdi9f9
+formerly:
+- NOTE-tmpruk19
+paper: LIT-526
 title: 'Concepts live in the quiet directions, and the paper labels its own claims robust or partial'
 version: 1
 date: '2026-09-22'
@@ -15,7 +18,7 @@ summary: >-
 <!-- inactive-ok-file: THEORY-034 — Proposed, named in a paragraph saying
      the two answer different questions and the record has not joined them. -->
 
-# NOTE-tmpruk19: Concepts live in the quiet directions, and the paper labels its own claims robust or partial
+# NOTE-270: Concepts live in the quiet directions, and the paper labels its own claims robust or partial
 
 ## Contribution
 

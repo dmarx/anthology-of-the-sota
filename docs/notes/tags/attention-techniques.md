@@ -4,7 +4,7 @@
 
 **attention-techniques**.
 
-11 of 267 NOTE documents. Back to the [full index](../README.md).
+12 of 271 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -19,3 +19,4 @@
 | [NOTE-173](../../../record/notes.d/NOTE-173.md) | LoFTR: Detector-Free Local Feature Matching with Transformers | Remove the keypoint detector and match densely, coarse-to-fine, with descriptors conditioned on both images by cross attention. The argument is a failure mode rather than an efficiency: detectors cannot emit repeatable points in low-texture regions, so no downstream matcher can recover what was never proposed. | Read |
 | [NOTE-265](../../../record/notes.d/NOTE-265.md) | A proved bound under the entropy-collapse observation, and a reparameterization that removes four crutches | Read on its own merits after being triaged past once. The record already held the failure this paper is about and two remedies for it, and had neither the inequality that makes the failure inevitable nor this third remedy. The accuracy numbers are nearly flat; what changes is how many hyperparameters have to be right. | Read |
 | [NOTE-266](../../../record/notes.d/NOTE-266.md) | Not all entropy collapse crashes a model, and the discriminator is low-rankness | Read after the paper it contradicts. The contribution is a distinction the record did not have: an attention map can be sparse with near-zero entropy and the run is fine, provided it is not also low-rank. That makes entropy the symptom and spectral energy concentration in the query-key product the cause, and it makes a warmup-free optimizer fall out. | Read |
+| [NOTE-269](../../../record/notes.d/NOTE-269.md) | Heads traded for depth, and the five rows where only those two things move | Read on its merits after being triaged past. The headline is an architecture recommendation and the interesting part is the mechanism: more heads lower the condition number of the attention block, which is the same quantity [THEORY-041](../../../record/theory.d/THEORY-041.md) says drifts the wrong way when nothing manages it. Half the configurations confound the trade by also halving the MLP; the other half do not, and those are the result. | Read |

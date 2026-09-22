@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [22 Sep 01:25 — Seven of nine, and the two that were right to leave out](2026-09.md#seven-of-nine-and-the-two-that-were-right-to-leave-out)
 - [22 Sep 00:40 — Re-reading nine papers with the question removed, and finding a cluster the first pass could not see](2026-09.md#re-reading-nine-papers-with-the-question-removed-and-finding-a-cluster-the-first-pass-could-not-see)
 - [22 Sep 00:03 — Half a promotion condition met, and the half that was met changed the claim](2026-09.md#half-a-promotion-condition-met-and-the-half-that-was-met-changed-the-claim)
 - [21 Sep 22:51 — Full-parameter training on one GPU, and an abstract that prices the GPU instead of the method](2026-09.md#full-parameter-training-on-one-gpu-and-an-abstract-that-prices-the-gpu-instead-of-the-method)
@@ -176,9 +177,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-169 entries across 2 books, newest first.
+170 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 167 | 2026-09-05 | 2026-09-22 |
+| [2026-09](2026-09.md) | 168 | 2026-09-05 | 2026-09-22 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

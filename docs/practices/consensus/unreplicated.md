@@ -6,7 +6,7 @@
 
 **One source** — one group, one result — nobody has agreed or disagreed yet, which is not the same as contested, where people looked and differed.
 
-90 of 320 SOTA documents. Back to the [full index](../README.md).
+91 of 322 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -100,3 +100,4 @@
 | [SOTA-318](../../../record/practices.d/SOTA-318.md) | Choose the rank per matrix when you compress a transformer, because low-rank structure varies by component and by depth | Jaiswal et al. (2024), [LIT-516](../../../record/literature.d/LIT-516.md) — "transformer weights are low rank" is true of some matrices and false of others. Query, Key and MLP Gate converge to low rank; MLP Up, MLP Down and Value do not; middle blocks resist while the first and last few give way. Setting the rank per matrix instead of globally is **~6.4×** better in perplexity than uniform reduction at 30% on LLaMA-2 7B and **~47×** at 40% on 13B. | Active |
 | [SOTA-319](../../../record/practices.d/SOTA-319.md) | Reparameterize every linear layer by its spectral norm with a learned scalar | Zhai et al. (2023), [LIT-523](../../../record/literature.d/LIT-523.md) — replace each linear layer's `W` with `γ·W/σ(W)`, `γ` a learnable scalar initialized to 1 and `σ` the spectral norm from power iteration. A ViT-B trained this way reaches **82.2%** against a DeiT baseline's 81.8% with no pre-LN, no warmup, no weight decay and LARS in place of Adam. Spectral normalization without the scalar gets **69.81%**. | Proposed |
 | [SOTA-320](../../../record/practices.d/SOTA-320.md) | Bound the learning rate by the ratio of the update's spectral norm to the weight's, and drop warmup | Qi et al. (2025), [LIT-521](../../../record/literature.d/LIT-521.md) — if `α_t > τ·σ₁(W_{t−1})/σ₁(∇W_t)`, truncate the step to that value; otherwise use the schedule. Weyl's inequality makes this a direct cap on how fast a weight's largest singular value can grow. ViT-B, ViT-L, GPT-S, Swin-S and Swin-B all train **without any warmup** and match or beat warmed-up AdamW. | Proposed |
+| [SOTA-322](../../../record/practices.d/SOTA-322.md) | Trade attention heads for depth: more heads conditions the attention block, and the layers you drop cost nothing | Saratchandran, Teney and Lucey (2025), [LIT-527](../../../record/literature.d/LIT-527.md) — more heads lower the condition number of the attention block, which is part of what depth was buying. In the five configurations where the MLP width is held fixed, raising head count and cutting layers holds or improves accuracy at **29–53% fewer parameters** — TNT-B goes 65.4M → 30.9M at identical Top-1. | Proposed |

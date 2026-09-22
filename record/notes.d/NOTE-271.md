@@ -1,6 +1,9 @@
 ---
+number: 271
 status: Read
-paper: LIT-tmpc05l0
+formerly:
+- NOTE-tmpwuv3u
+paper: LIT-525
 title: 'One metric that separates transformers from every other architecture, and what it buys'
 version: 1
 date: '2026-09-22'
@@ -15,7 +18,7 @@ summary: >-
      SOTA-012 as the record's existing accounts, to say what this measure adds
      that they do not. -->
 
-# NOTE-tmpwuv3u: One metric that separates transformers from every other architecture, and what it buys
+# NOTE-271: One metric that separates transformers from every other architecture, and what it buys
 
 ## Contribution
 

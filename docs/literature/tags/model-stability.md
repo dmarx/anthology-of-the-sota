@@ -6,7 +6,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-34 of 458 LIT documents. Back to the [full index](../README.md).
+35 of 462 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -44,3 +44,4 @@
 | [LIT-521](../../../record/literature.d/LIT-521.md) | Taming Transformer Without Using Learning Rate Warmup | Qi et al. (2025), [ARXIV-2505.21910](https://arxiv.org/abs/2505.21910) — attention entropy collapse comes in two modes, and only one crashes the model: sparse **and low-rank** is fatal, sparse alone is benign. The driver is spectral energy concentration in `W_q^T W_k`. Suppressing it by bounding the learning rate with Weyl's inequality trains ViT, Swin and GPT **without warmup**, matching warmed-up AdamW on all five configurations. Read as [NOTE-266](../../../record/notes.d/NOTE-266.md). | Active |
 | [LIT-522](../../../record/literature.d/LIT-522.md) | Pion: A Spectrum-Preserving Optimizer via Orthogonal Equivalence Transformation | Shi et al. (2026), [ARXIV-2605.12492](https://arxiv.org/abs/2605.12492) — instead of bounding or renormalizing a weight matrix's spectrum, never change it: update `W` by left and right orthogonal transformations so the singular values are invariant and only the singular vectors rotate. On a 60M LLaMA with **every normalization layer removed**, AdamW and Muon produce NaNs and Pion trains 9.6B tokens. Read as [NOTE-267](../../../record/notes.d/NOTE-267.md). | Active |
 | [LIT-523](../../../record/literature.d/LIT-523.md) | Stabilizing Transformer Training by Preventing Attention Entropy Collapse | Zhai et al. (2023), [ARXIV-2303.06296](https://arxiv.org/abs/2303.06296) — proves a tight lower bound on attention entropy that falls like `Ω(Tσe^{-σ})` in the spectral norm of `W_K W_Q^T`, then removes the growth by reparameterizing every linear layer as `γ·W/σ(W)`. A ViT trained this way reaches 82.2% on ImageNet **without pre-LN, warmup, weight decay or an adaptive optimizer**. Read as [NOTE-265](../../../record/notes.d/NOTE-265.md). | Active |
+| [LIT-525](../../../record/literature.d/LIT-525.md) | Transformers Learn Low Sensitivity Functions: Investigations and Implications | Vasudeva et al. (2024), [ARXIV-2403.06925](https://arxiv.org/abs/2403.06925) — sensitivity to token-wise random input perturbations is one number that separates transformers from MLPs, CNNs, ConvMixers and LSTMs across vision and language. It also predicts robustness, tracks flatness, can be regularized for, and keeps falling through a grokking plateau while the loss does not move. Read as [NOTE-271](../../../record/notes.d/NOTE-271.md). | Active |

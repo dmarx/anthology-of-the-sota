@@ -1,6 +1,9 @@
 ---
+number: 268
 status: Read
-paper: LIT-tmp81ryb
+formerly:
+- NOTE-tmp42huo
+paper: LIT-524
 title: 'A data-free lineage check built on the products that survive permutation and scaling'
 version: 1
 date: '2026-09-22'
@@ -11,12 +14,12 @@ summary: >-
   cannot change — and the honest limit is that it is evidence of derivation,
   not proof against an adversary who has read the paper.
 ---
-<!-- inactive-ok-file: THEORY-061 THEORY-062 SOTA-tmp3ot5z — all
+<!-- inactive-ok-file: THEORY-061 THEORY-062 SOTA-321 — all
      Proposed. The two theories are named to record a coincidence of subject
      matter between unconnected literatures; the practice is the one this
      reading yields and is filed in the same contribution. -->
 
-# NOTE-tmp42huo: A data-free lineage check built on the products that survive permutation and scaling
+# NOTE-268: A data-free lineage check built on the products that survive permutation and scaling
 
 ## Contribution
 
@@ -110,7 +113,7 @@ and the obvious question, whether a model trained with spectral control has a
 less distinctive fingerprint, is asked by nobody.
 
 **It is filed as a practice because the instruction is short and the
-alternative is nothing.** [SOTA-tmp3ot5z](../practices.d/SOTA-tmp3ot5z.md) states it, `Proposed`,
+alternative is nothing.** [SOTA-321](../practices.d/SOTA-321.md) states it, `Proposed`,
 with the threat-model limit in its conditions.
 
 ## Open questions

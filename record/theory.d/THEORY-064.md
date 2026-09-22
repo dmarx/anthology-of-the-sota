@@ -1,5 +1,8 @@
 ---
+number: 64
 status: Proposed
+formerly:
+- THEORY-tmpn1efa
 promote_when: >-
   The sensitivity measure shown to be invariant to the choice it is defined
   relative to: the architecture ranking — transformers below MLPs, CNNs,
@@ -16,9 +19,9 @@ tags:
 - model-architecture
 date: '2026-09-22'
 source:
-- LIT-tmpc05l0
+- LIT-525
 summary: >-
-  Vasudeva et al. (2024), [LIT-tmpc05l0](../literature.d/LIT-tmpc05l0.md) — the probability
+  Vasudeva et al. (2024), [LIT-525](../literature.d/LIT-525.md) — the probability
   that a model's output changes under a random perturbation of one input token
   is lower for transformers than for MLPs, CNNs, ConvMixers or LSTMs, on
   vision and language alike. Low sensitivity is a simplicity bias in
@@ -28,12 +31,12 @@ summary: >-
   distribution nobody has swept.
 ---
 
-# THEORY-tmpn1efa: Transformers are biased toward low-sensitivity functions, and that bias is what their robustness is made of
+# THEORY-064: Transformers are biased toward low-sensitivity functions, and that bias is what their robustness is made of
 
 ## Source
 
 Vasudeva, Fu, Zhou, Kau, Huang and Sharan (2024),
-[LIT-tmpc05l0](../literature.d/LIT-tmpc05l0.md) — read as [NOTE-tmpwuv3u](../notes.d/NOTE-tmpwuv3u.md).
+[LIT-525](../literature.d/LIT-525.md) — read as [NOTE-271](../notes.d/NOTE-271.md).
 ICLR 2025.
 
 ## The account

@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in.
 
-33 of 320 SOTA documents. Back to the [full index](../README.md).
+34 of 322 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -43,3 +43,4 @@
 | [SOTA-289](../../../record/practices.d/SOTA-289.md) | When the sampling budget is small, prefer uniform-state discrete diffusion with consistency distillation — masked diffusion cannot revise what it has already emitted |  | Proposed |
 | [SOTA-297](../../../record/practices.d/SOTA-297.md) | Scale parallel computation with learnable input transforms, not parameters, when inference memory is the binding constraint | Chen et al. (2025), [LIT-486](../../../record/literature.d/LIT-486.md) — run the same weights over `P` learnably-prefixed copies of the input and learn the aggregation. Loss falls as if the parameters had grown by `O(log P)`; a 1.6B model at `P = 8` matches a 4.4B one on code. At batch size 1 that costs **22× less added memory and 6× less added latency** than the parameter scaling it replaces — and `P`× the training FLOPs. | Proposed |
 | [SOTA-311](../../../record/practices.d/SOTA-311.md) | Evaluate a search on tasks held out of its own fitness function, and report the gap against the tasks it selected on | No source states this; it is filed on a priori grounds with one instance. Cheng, Clark and Richardson (2025), [LIT-493](../../../record/literature.d/LIT-493.md), searched 1,062 pretrained designs against a fitness function of average downstream accuracy, then reported the top five on nine benchmarks drawn from the same pool and chosen — per its own Table 16 — for **largest standard deviation across the search population**. The best discovered design beats the best seed by **0.03** points. | Active |
+| [SOTA-322](../../../record/practices.d/SOTA-322.md) | Trade attention heads for depth: more heads conditions the attention block, and the layers you drop cost nothing | Saratchandran, Teney and Lucey (2025), [LIT-527](../../../record/literature.d/LIT-527.md) — more heads lower the condition number of the attention block, which is part of what depth was buying. In the five configurations where the MLP width is held fixed, raising head count and cutting layers holds or improves accuracy at **29–53% fewer parameters** — TNT-B goes 65.4M → 30.9M at identical Top-1. | Proposed |

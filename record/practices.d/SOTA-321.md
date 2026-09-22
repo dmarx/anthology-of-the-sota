@@ -1,5 +1,8 @@
 ---
+number: 321
 status: Proposed
+formerly:
+- SOTA-tmp3ot5z
 promote_when: >-
   The false-positive case measured: two models trained independently on
   similar public corpora with similar recipes and no derivation between them,
@@ -20,13 +23,13 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-22'
 source:
-- LIT-tmp81ryb
+- LIT-524
 introduced_by:
-- LIT-tmp81ryb
+- LIT-524
 implementations:
 - GhostSpec
 summary: >-
-  Wang et al. (2025), [LIT-tmp81ryb](../literature.d/LIT-tmp81ryb.md) — compare the per-layer
+  Wang et al. (2025), [LIT-524](../literature.d/LIT-524.md) — compare the per-layer
   singular spectra of `W_q W_k^T` and `W_v W_o`. Those products absorb the
   permutation and rescaling that change weights without changing the
   function, so the spectra identify a model through fine-tuning, pruning,
@@ -37,12 +40,12 @@ summary: >-
      flagging an unexamined interaction. The condition depends on it being
      untested. -->
 
-# SOTA-tmp3ot5z: Verify a model's lineage from the singular spectra of its attention products, which survive permutation and rescaling
+# SOTA-321: Verify a model's lineage from the singular spectra of its attention products, which survive permutation and rescaling
 
 ## Source
 
-Wang, Ma, Xinyi and Li (2025), [LIT-tmp81ryb](../literature.d/LIT-tmp81ryb.md) — read as
-[NOTE-tmp42huo](../notes.d/NOTE-tmp42huo.md). AAAI 2026.
+Wang, Ma, Xinyi and Li (2025), [LIT-524](../literature.d/LIT-524.md) — read as
+[NOTE-268](../notes.d/NOTE-268.md). AAAI 2026.
 
 ## When this applies
 

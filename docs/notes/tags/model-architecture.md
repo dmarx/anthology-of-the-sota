@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-22 of 267 NOTE documents. Back to the [full index](../README.md).
+24 of 271 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -30,3 +30,5 @@
 | [NOTE-246](../../../record/notes.d/NOTE-246.md) | VQGAN: the loss that made f=16 survivable | Read as the second step of the tokenizer trunk. The architecture is VQ-VAE's; what is new is a perceptual loss, a patch discriminator, and an adaptive weight that balances them without per-dataset tuning. That loss is the reason a `256×256` image can become 256 tokens and still look like anything, and it is why this line exists at all. | Read |
 | [NOTE-247](../../../record/notes.d/NOTE-247.md) | ViT-VQGAN: where the codebook advice comes from | Read to give `SOTA-306` its origin, and it corrected the practice in three places. The advice is not "use small code vectors" but "factorize lookup from embedding"; `ℓ₂`-normalization is ablated and is the largest single effect in the table; and the dimension-4 row shows 96% codebook usage with near-worst FID, so utilization is necessary and not sufficient. | Read |
 | [NOTE-258](../../../record/notes.d/NOTE-258.md) | mHC-lite: the experiment that was one measurement from settling the Birkhoff dispute | Read from the #180 worklist. It makes the doubly-stochastic constraint exact, which is precisely the condition under which [LIT-151](../../../record/literature.d/LIT-151.md)'s objection should bite hardest — and it reports no stream statistic, so the dispute stands. The approximation it replaces is real and measured: column sums of the layer-wise product off by up to **220%** at 24 layers. | Read |
+| [NOTE-269](../../../record/notes.d/NOTE-269.md) | Heads traded for depth, and the five rows where only those two things move | Read on its merits after being triaged past. The headline is an architecture recommendation and the interesting part is the mechanism: more heads lower the condition number of the attention block, which is the same quantity [THEORY-041](../../../record/theory.d/THEORY-041.md) says drifts the wrong way when nothing manages it. Half the configurations confound the trade by also halving the MLP; the other half do not, and those are the result. | Read |
+| [NOTE-271](../../../record/notes.d/NOTE-271.md) | One metric that separates transformers from every other architecture, and what it buys | Read for whether the record wants an inductive-bias claim. It does, because the claim comes with a computable scalar rather than an adjective, and the scalar does four jobs — separates architectures, predicts robustness, correlates with flatness, and moves during a grokking plateau. The fourth is the one this record has an existing use for. | Read |

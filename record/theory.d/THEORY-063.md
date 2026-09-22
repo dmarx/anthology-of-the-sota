@@ -1,5 +1,8 @@
 ---
+number: 63
 status: Proposed
+formerly:
+- THEORY-tmphj2w6
 promote_when: >-
   A consequence demonstrated: an intervention that exploits the placement —
   steering, editing or probing restricted to the low-variance subspace —
@@ -16,9 +19,9 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-22'
 source:
-- LIT-tmpdi9f9
+- LIT-526
 summary: >-
-  Acharya, Rimal and Dhakal (2026), [LIT-tmpdi9f9](../literature.d/LIT-tmpdi9f9.md) — concept
+  Acharya, Rimal and Dhakal (2026), [LIT-526](../literature.d/LIT-526.md) — concept
   directions read out of the residual stream anti-concentrate in the
   low-eigenvalue directions of the unembedding second moment, in 17 of 17
   models and by three independent extraction methods. Static unembedding-row
@@ -29,12 +32,12 @@ summary: >-
 <!-- inactive-ok-file: THEORY-034 — Proposed, named under "what it does not
      say" to record that this account does not contradict it. -->
 
-# THEORY-tmphj2w6: Contextual concept directions sit in the low-variance tail of the unembedding spectrum while vocabulary contrasts sit at the top
+# THEORY-063: Contextual concept directions sit in the low-variance tail of the unembedding spectrum while vocabulary contrasts sit at the top
 
 ## Source
 
-Acharya, Rimal and Dhakal (2026), [LIT-tmpdi9f9](../literature.d/LIT-tmpdi9f9.md) — read as
-[NOTE-tmpruk19](../notes.d/NOTE-tmpruk19.md).
+Acharya, Rimal and Dhakal (2026), [LIT-526](../literature.d/LIT-526.md) — read as
+[NOTE-270](../notes.d/NOTE-270.md).
 
 ## The account
 

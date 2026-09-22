@@ -1,6 +1,9 @@
 ---
+number: 269
 status: Read
-paper: LIT-tmpqux2k
+formerly:
+- NOTE-tmph5061
+paper: LIT-527
 title: 'Heads traded for depth, and the five rows where only those two things move'
 version: 1
 date: '2026-09-22'
@@ -16,7 +19,7 @@ summary: >-
      reading's Bearing section is about what each of them does and does not
      settle. Naming them is the subject, not a reliance. -->
 
-# NOTE-tmph5061: Heads traded for depth, and the five rows where only those two things move
+# NOTE-269: Heads traded for depth, and the five rows where only those two things move
 
 ## Contribution
 

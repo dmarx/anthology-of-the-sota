@@ -456,12 +456,20 @@ schemes:
         scheme: LIT
         required: true
         many: true
+        # inactive-ok-block: ADR-055 — Proposed, and it is the decision this
+        #   declaration records; naming it is how a reader finds out why the
+        #   invariant is here. Proposed is the resting state of an unmoved
+        #   decision in this record.
         # Declared after #202's pass took the residue from 60 rows to zero. A
         # practice and every paper behind it must share at least one topic.
-        # (Cited by issue rather than by decision code on purpose: ADR-039
-        # records that concretization rewrites the record and not this file,
-        # so a temporary code written here would go stale with no mechanism
-        # to fix it.)
+        # (Recorded as ADR-055. An earlier version of this comment claimed a
+        # temporary code written into this file would go stale because
+        # concretization does not reach it. That is false and was corrected
+        # the same day: `luria concretize` rewrites every file in
+        # `code.globs`, and ADR-039 put this file in that list — so adding
+        # the glob bought concretization here as well as linting, which
+        # ADR-039 did not claim and nobody had checked. Measured, not
+        # assumed; see ADR-039 v3.)
         # This is the same bargain ADR-035 struck for the two `chains:`: rows
         # land in unbound-lineage.md and do not fail the lint, so the report's
         # all-clear is the signal. There is still no acknowledgement directive

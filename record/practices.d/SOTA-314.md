@@ -11,7 +11,20 @@ consensus_note: >-
   outside diffusion. The 4-bit weight-and-activation setting it targets is
   also young enough that there is no field position to report.
 title: 'Absorb quantization outliers into a high-precision low-rank branch taken from the weights, and fuse its kernels into the low-bit ones'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-22'
+  note: >-
+    Two conditions added, no change to the recommendation or the status. The
+    rank is global — 32 at 4 bits, 16 at 8 — and in language transformers a
+    global rank is now measurably the wrong choice (SOTA-tmpsbgvf); nobody
+    has checked whether diffusion transformers share that non-uniformity.
+    Separately, the residual this hands its quantizer contains the bottom of
+    the spectrum, which in non-square language-transformer matrices is not
+    the negligible part (SOTA-tmp6xtka). Both are open questions about a
+    practice whose reported results stand, recorded here because a reader
+    porting this to a language model would otherwise meet them unwarned.
 tags:
 - numerics-and-precision
 - inference-optimization
@@ -140,6 +153,25 @@ is about.
 
 **Hardware-shaped.** NVFP4's advantage rests on Blackwell's native support for
 group size 16. The ordering of formats is a fact about the GPUs tested.
+
+**The rank is global, and outside diffusion that is known to be the wrong
+shape.** Rank 32 at 4 bits and 16 at 8, applied to every matrix. In language
+transformers how nearly low-rank a matrix is varies systematically by
+component and by depth, and picking one rank for all of them costs ~6.4× in
+perplexity against picking per matrix at the same compression
+([SOTA-tmpsbgvf](SOTA-tmpsbgvf.md)). Whether diffusion transformers have the same
+non-uniformity is unmeasured. This is not a defect in the reported results —
+the numbers are what they are — but a global rank is a choice the source does
+not defend, and the first thing to sweep when porting this.
+
+**What is handed to the quantizer is the bottom of the spectrum, and that may
+not be the negligible part.** Peeling the top 32 directions into 16 bits
+leaves everything else, including the smallest singular directions. In
+non-square language-transformer matrices those carry data directions and
+removing them is catastrophic ([SOTA-tmp6xtka](SOTA-tmp6xtka.md)). Quantizing is
+not removing, and no measurement here or there connects the two, so this is
+flagged and not claimed: the damage curve against bit-width for the smallest
+directions has not been drawn by anyone.
 
 ## Known implementations
 

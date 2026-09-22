@@ -17,6 +17,8 @@ keywords:
 - 'mix-n-match'
 - 'speculative-decoding'
 - 'adaptive-retrieval'
+extends:
+- LIT-tmpeafhj
 implementations:
 - Gemma 3n
 summary: >-

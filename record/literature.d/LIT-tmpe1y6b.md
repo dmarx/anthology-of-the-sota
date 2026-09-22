@@ -1,0 +1,87 @@
+---
+status: Active
+title: 'Implicit Neural Representations with Periodic Activation Functions'
+version: 1
+tags:
+- model-architecture
+- model-stability
+- vision-and-graphics
+date: '2026-09-23'
+published: '2020-06-01'
+arxiv: '2006.09661'
+first_author: 'Sitzmann'
+keywords:
+- 'siren'
+- 'periodic-activations'
+- 'implicit-neural-representations'
+- 'initialization'
+- 'boundary-value-problems'
+implementations:
+- SIREN
+compared_against:
+- LIT-435
+- LIT-511
+summary: >-
+  Sitzmann, Martel et al. (2020), [ARXIV-2006.09661](https://arxiv.org/abs/2006.09661). An MLP with `sin`
+  activations fits images, video, audio and signed distance functions,
+  and, unlike ReLU networks, their derivatives, because a SIREN's
+  derivative is itself a SIREN. It trains only with a specific
+  initialization: weights `U(±√(6/n))` keep every pre-activation near N(0,1),
+  and the first layer is scaled by `ω₀ = 30`. The initialization's
+  activation statistics are verified. Its role in earlier periodic networks'
+  failures is asserted, not ablated.
+---
+
+<!-- inactive-ok-file: SOTA-tmpx07li THEORY-tmpx6puj — both Proposed, filed in this same contribution from this paper; new, not retired -->
+
+# LIT-tmpe1y6b: Implicit Neural Representations with Periodic Activation Functions
+
+Sitzmann, Martel, Bergman, Lindell, Wetzstein, Stanford (2020) —
+[ARXIV-2006.09661](https://arxiv.org/abs/2006.09661)
+
+## Key takeaways
+
+- **Sine activations for coordinate networks.** `φ(x) = sin(Wx + b)` at
+  every layer. The derivative of a SIREN is a SIREN, so gradients and
+  Laplacians of the fit are as expressive as the fit. ReLU networks are
+  piecewise linear and have a zero second derivative everywhere
+- **The initialization is the method.** With inputs arcsine-distributed and
+  weights `U(−√(6/n), √(6/n))`, each pre-activation is approximately
+  N(0, 1) and each sine output is again arcsine, at every depth. Most
+  pre-activations stay below `π`, so frequency content grows only slowly
+  with depth. The first layer uses `sin(ω₀ · Wx + b)` with `ω₀ = 30` so it
+  spans several periods over `[−1, 1]`. The authors report that weights "not
+  carefully chosen" gave poor accuracy and slow convergence
+- **Checked at initialization:** in a 6-layer, 2048-wide SIREN, activation
+  histograms match the predicted normal and arcsine distributions layer by
+  layer, the maximum frequency grows slowly, and gradient statistics stay
+  constant with depth. The same holds at 50 layers (supplement, §1.4)
+- **Results:** it fits an image and its gradient and Laplacian where ReLU,
+  tanh, ReLU with positional encoding and RBF-ReLU do not get the
+  derivatives right (Figure 1). On a 300-frame 512×512 video it reaches
+  29.90 dB against 25.12 for ReLU. It fits a room-scale SDF with one 5-layer
+  MLP, and solves Poisson, Helmholtz and wave problems supervised only
+  through derivatives
+
+## Standing in the anthology
+
+**Filed from `#163`**, whose item asks why periodic activations used to
+struggle. The paper's answer is initialization, and the record holds it as
+[THEORY-tmpx6puj](../theory.d/THEORY-tmpx6puj.md) at `Proposed`. The authors verify that their initialization
+does what they derive. They do not train earlier periodic networks, or
+SIRENs with standard initializations, and show that this is where those
+fail. The practice it supports is [SOTA-tmpx07li](../practices.d/SOTA-tmpx07li.md), scoped to derivative
+supervision.
+
+**Measured by others at fixed size.** Image-GS ([LIT-511](LIT-511.md)) includes SIREN and
+Fourier-feature networks ([LIT-tmp0lo8a](LIT-tmp0lo8a.md)) in a same-size image-compression
+comparison, and all three coordinate MLPs lose to the Gaussian primitives.
+That is about fitting pixel values, where [SOTA-205](../practices.d/SOTA-205.md)'s explicit structures
+win. SIREN's distinctive claim is about derivatives, which that benchmark
+does not test.
+
+**The RoPE question in `#163`** ("leads into RoPE maybe? probably not"):
+the paper does not discuss attention or sequence position, and the record
+draws no link.
+
+Read — [NOTE-tmpncb8j](../notes.d/NOTE-tmpncb8j.md).

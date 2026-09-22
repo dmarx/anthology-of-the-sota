@@ -1,6 +1,9 @@
 ---
+number: 275
 status: Read
-paper: LIT-tmpyer2o
+formerly:
+- NOTE-tmpguwlt
+paper: LIT-531
 title: 'The trunk states the condition its successors were refuted for dropping'
 version: 1
 date: '2026-09-22'
@@ -12,7 +15,7 @@ summary: >-
   one sentence before anybody measured anything.
 ---
 
-# NOTE-tmpguwlt: The trunk states the condition its successors were refuted for dropping
+# NOTE-275: The trunk states the condition its successors were refuted for dropping
 
 <!-- inactive-ok-file: THEORY-058 — Proposed, cited as the account this record filed from the downstream dispute, whose objection this paper is shown to have anticipated; it is the live reading of that dispute, not a retired one. -->
 

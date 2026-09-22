@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-271 of 274 NOTE documents. Back to the [full index](../README.md).
+272 of 275 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -281,3 +281,4 @@
 | [NOTE-272](../../../record/notes.d/NOTE-272.md) | An idealization that checks its own assumptions against ALBERT, and clusters within a few layers | Read a second time, in full, after being declined on a skim. The decline said the `t → ∞` frozen-weights idealization put it too far from a trained model to be evidence about one, and that it underwrites no practice. Both halves were wrong: the record's own schema says a theory need underwrite nothing, and the paper checks its hypotheses on ALBERT, gives the discrete-time analogue, and says clustering arrives within a few layers. | Read |
 | [NOTE-273](../../../record/notes.d/NOTE-273.md) | The observation outlived the method, and it is the observation the record needed | Read for one figure. The record holds two practices resting on attention being low rank and held no source for the claim; the record also already holds the verdict that this paper's *method* was overtaken. Those are different things and the reading keeps them apart. | Read |
 | [NOTE-274](../../../record/notes.d/NOTE-274.md) | The trunk under a term the record was using for two different things | Read because four documents in this record lean on "rank collapse" and none of them held its source. Reading it produced a finding that was not the point of the unit: the record carries that term for two distinct phenomena, and the conflation is the field's rather than ours. | Read |
+| [NOTE-275](../../../record/notes.d/NOTE-275.md) | The trunk states the condition its successors were refuted for dropping | Read because the record filed a three-paper information-bottleneck dispute and the paper all three argue about was absent — a gap this session created. Reading it reassigns some blame: the rebuttal's central objection is that mutual information needs stochasticity, and the founding paper says so in one sentence before anybody measured anything. | Read |

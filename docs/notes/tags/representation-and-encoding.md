@@ -4,7 +4,7 @@
 
 **representation-and-encoding**.
 
-20 of 274 NOTE documents. Back to the [full index](../README.md).
+21 of 275 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -28,3 +28,4 @@
 | [NOTE-254](../../../record/notes.d/NOTE-254.md) | Adaptive estimators: a counter-rebuttal whose body is weaker than its abstract | Read to check whether it softens [LIT-509](../../../record/literature.d/LIT-509.md), as [#220](https://github.com/dmarx/anthology-of-the-sota/issues/220) feared. It does on one narrow point and not on the one that matters. Its own Figure 6 shows a ReLU network averaged over 50 initializations has **no distinct phase**, and it agrees with the rebuttal that hidden-layer compression does not correlate with generalization. | Read |
 | [NOTE-256](../../../record/notes.d/NOTE-256.md) | Image-GS: the rate accounting GaussianToken skipped, and an ablation that inverts its own headline | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for its adjacency to the tokenizer trunk. Two things worth keeping: a comparison run the way this record keeps asking for — six baselines at matched model size, bitrate on the axis — and an ablation in which the two unglamorous optimizer choices outweigh the content-adaptive allocation the paper is named for. | Read |
 | [NOTE-270](../../../record/notes.d/NOTE-270.md) | Concepts live in the quiet directions, and the paper labels its own claims robust or partial | Read last of the batch and the easiest call to make, for a reason that has little to do with the finding: it arrives with a table grading its own six claims, a robust null against the hypothesis it set out to confirm, and partial results labelled partial. The finding itself is that contextual concept directions sit at the bottom of the unembedding spectrum and static vocabulary contrasts sit at the top. | Read |
+| [NOTE-275](../../../record/notes.d/NOTE-275.md) | The trunk states the condition its successors were refuted for dropping | Read because the record filed a three-paper information-bottleneck dispute and the paper all three argue about was absent — a gap this session created. Reading it reassigns some blame: the rebuttal's central objection is that mutual information needs stochasticity, and the founding paper says so in one sentence before anybody measured anything. | Read |

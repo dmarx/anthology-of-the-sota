@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-26 of 274 NOTE documents. Back to the [full index](../README.md).
+27 of 275 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -34,3 +34,4 @@
 | [NOTE-271](../../../record/notes.d/NOTE-271.md) | One metric that separates transformers from every other architecture, and what it buys | Read for whether the record wants an inductive-bias claim. It does, because the claim comes with a computable scalar rather than an adjective, and the scalar does four jobs — separates architectures, predicts robustness, correlates with flatness, and moves during a grokking plateau. The fourth is the one this record has an existing use for. | Read |
 | [NOTE-272](../../../record/notes.d/NOTE-272.md) | An idealization that checks its own assumptions against ALBERT, and clusters within a few layers | Read a second time, in full, after being declined on a skim. The decline said the `t → ∞` frozen-weights idealization put it too far from a trained model to be evidence about one, and that it underwrites no practice. Both halves were wrong: the record's own schema says a theory need underwrite nothing, and the paper checks its hypotheses on ALBERT, gives the discrete-time analogue, and says clustering arrives within a few layers. | Read |
 | [NOTE-274](../../../record/notes.d/NOTE-274.md) | The trunk under a term the record was using for two different things | Read because four documents in this record lean on "rank collapse" and none of them held its source. Reading it produced a finding that was not the point of the unit: the record carries that term for two distinct phenomena, and the conflation is the field's rather than ours. | Read |
+| [NOTE-275](../../../record/notes.d/NOTE-275.md) | The trunk states the condition its successors were refuted for dropping | Read because the record filed a three-paper information-bottleneck dispute and the paper all three argue about was absent — a gap this session created. Reading it reassigns some blame: the rebuttal's central objection is that mutual information needs stochasticity, and the founding paper says so in one sentence before anybody measured anything. | Read |

@@ -142,6 +142,7 @@
 | 2026-09-21 | Proposed | [THEORY-041](../../record/theory.d/THEORY-041.md) | 8 | 0 | Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing |
 | 2026-09-21 | Proposed | [THEORY-051](../../record/theory.d/THEORY-051.md) | 8 | 0 | A text feature predicts success partly by being uncommon, so a tool that gives it to everyone destroys its predictive value |
 | 2026-09-21 | Proposed | [THEORY-060](../../record/theory.d/THEORY-060.md) | 5 | 0 | Calibration error and refinement error have separate minimizers during training, so the loss minimum is optimal for neither |
+| 2026-09-21 | Proposed | [THEORY-058](../../record/theory.d/THEORY-058.md) | 4 | 0 | Apparent compression in the information plane is saturating activations collapsing into extreme bins, not information being discarded |
 | 2026-09-21 | Proposed | [THEORY-056](../../record/theory.d/THEORY-056.md) | 3 | 0 | Distinct state machines agree at chance on long random inputs, so a learner that reads only statistics loses the signal as the sequences get longer |
 | 2026-09-21 | Proposed | [THEORY-045](../../record/theory.d/THEORY-045.md) | 2 | 0 | How much of parameter space behaves like your trained network is a description length, and the better-generalizing network occupies more of it |
 | 2026-09-21 | Proposed | [THEORY-050](../../record/theory.d/THEORY-050.md) | 2 | 0 | Parameters carry memorization and parallel computation carries reasoning |
@@ -154,7 +155,6 @@
 | 2026-09-21 | Proposed | [THEORY-053](../../record/theory.d/THEORY-053.md) | 1 | 0 | The Stein posterior-mean denoiser acts as an approximate projection onto the learned data geometry |
 | 2026-09-21 | Proposed | [THEORY-054](../../record/theory.d/THEORY-054.md) | 1 | 0 | The regularizer that is intractable in data space is tractable in noise space, and bounds the data-space divergence |
 | 2026-09-21 | Proposed | [THEORY-055](../../record/theory.d/THEORY-055.md) | 1 | 0 | A producer's own rate of return is the price of their time, so making them faster raises the bar on every marginal hour of improvement |
-| 2026-09-21 | Proposed | [THEORY-058](../../record/theory.d/THEORY-058.md) | 1 | 0 | Apparent compression in the information plane is saturating activations collapsing into extreme bins, not information being discarded |
 | 2026-09-22 | Proposed | [THEORY-062](../../record/theory.d/THEORY-062.md) | 6 | 0 | What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such |
 | 2026-09-22 | Proposed | [THEORY-061](../../record/theory.d/THEORY-061.md) | 5 | 0 | Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product |
 | 2026-09-22 | Proposed | [THEORY-064](../../record/theory.d/THEORY-064.md) | 2 | 0 | Transformers are biased toward low-sensitivity functions, and that bias is what their robustness is made of |

@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [22 Sep 02:58 — Refreshing an exhausted worklist, and finding my own gap at the top of it](2026-09.md#refreshing-an-exhausted-worklist-and-finding-my-own-gap-at-the-top-of-it)
 - [22 Sep 02:38 — Filing the trunks, and finding that one word was doing two jobs](2026-09.md#filing-the-trunks-and-finding-that-one-word-was-doing-two-jobs)
 - [22 Sep 02:20 — A decline reversed, and what the wrong reason was made of](2026-09.md#a-decline-reversed-and-what-the-wrong-reason-was-made-of)
 - [22 Sep 01:25 — Seven of nine, and the two that were right to leave out](2026-09.md#seven-of-nine-and-the-two-that-were-right-to-leave-out)
@@ -179,9 +180,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-172 entries across 2 books, newest first.
+173 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 170 | 2026-09-05 | 2026-09-22 |
+| [2026-09](2026-09.md) | 171 | 2026-09-05 | 2026-09-22 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

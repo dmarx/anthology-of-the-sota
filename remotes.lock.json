@@ -155,6 +155,9 @@
     "ARXIV/1808.07576": {
       "title": "Cooperative SGD: A unified Framework for the Design and Analysis of Communication-Efficient SGD Algorithms"
     },
+    "ARXIV/1810.00826": {
+      "title": "How Powerful are Graph Neural Networks?"
+    },
     "ARXIV/1811.03600": {
       "title": "Measuring the Effects of Data Parallelism on Neural Network Training"
     },
@@ -275,11 +278,20 @@
     "ARXIV/2005.14165": {
       "title": "Language Models are Few-Shot Learners"
     },
+    "ARXIV/2006.07733": {
+      "title": "Bootstrap your own latent: A new approach to self-supervised Learning"
+    },
     "ARXIV/2006.09661": {
       "title": "Implicit Neural Representations with Periodic Activation Functions"
     },
+    "ARXIV/2006.10739": {
+      "title": "Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains"
+    },
     "ARXIV/2006.11239": {
       "title": "Denoising Diffusion Probabilistic Models"
+    },
+    "ARXIV/2006.14548": {
+      "title": "Tensor Programs II: Neural Tangent Kernel for Any Architecture"
     },
     "ARXIV/2006.15704": {
       "title": "PyTorch Distributed: Experiences on Accelerating Data Parallel Training"
@@ -296,6 +308,9 @@
     "ARXIV/2007.06775": {
       "title": "Analyzing and Mitigating Data Stalls in DNN Training"
     },
+    "ARXIV/2007.12927": {
+      "title": "Neural networks with late-phase weights"
+    },
     "ARXIV/2009.01325": {
       "title": "Learning to summarize from human feedback"
     },
@@ -310,6 +325,9 @@
     },
     "ARXIV/2010.04592": {
       "title": "Contrastive Learning with Hard Negative Samples"
+    },
+    "ARXIV/2010.11929": {
+      "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale"
     },
     "ARXIV/2010.14701": {
       "title": "Scaling Laws for Autoregressive Generative Modeling"
@@ -350,6 +368,9 @@
     "ARXIV/2104.09864": {
       "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding"
     },
+    "ARXIV/2105.04906": {
+      "title": "VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning"
+    },
     "ARXIV/2106.02519": {
       "title": "Consensus Based Sampling"
     },
@@ -358,6 +379,9 @@
     },
     "ARXIV/2106.10207": {
       "title": "Distributed Deep Learning in Open Collaborations"
+    },
+    "ARXIV/2107.00630": {
+      "title": "Variational Diffusion Models"
     },
     "ARXIV/2107.03374": {
       "title": "Evaluating Large Language Models Trained on Code"
@@ -407,6 +431,9 @@
     "ARXIV/2112.10752": {
       "title": "High-Resolution Image Synthesis with Latent Diffusion Models"
     },
+    "ARXIV/2201.02177": {
+      "title": "Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets"
+    },
     "ARXIV/2201.05989": {
       "title": "Instant Neural Graphics Primitives with a Multiresolution Hash Encoding"
     },
@@ -434,6 +461,9 @@
     "ARXIV/2203.03466": {
       "title": "Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer"
     },
+    "ARXIV/2203.06026": {
+      "title": "The Role of ImageNet Classes in Fr\u00e9chet Inception Distance"
+    },
     "ARXIV/2203.11171": {
       "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models"
     },
@@ -458,6 +488,9 @@
     "ARXIV/2205.12257": {
       "title": "OnePose: One-Shot Object Pose Estimation without CAD Models"
     },
+    "ARXIV/2205.13147": {
+      "title": "Matryoshka Representation Learning"
+    },
     "ARXIV/2205.14135": {
       "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness"
     },
@@ -470,11 +503,17 @@
     "ARXIV/2206.04615": {
       "title": "Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models"
     },
+    "ARXIV/2206.07682": {
+      "title": "Emergent Abilities of Large Language Models"
+    },
     "ARXIV/2206.14486": {
       "title": "Beyond neural scaling laws: beating power law scaling via data pruning"
     },
     "ARXIV/2207.14255": {
       "title": "Efficient Training of Language Models to Fill in the Middle"
+    },
+    "ARXIV/2208.01066": {
+      "title": "What Can Transformers Learn In-Context? A Case Study of Simple Function Classes"
     },
     "ARXIV/2208.01618": {
       "title": "An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion"
@@ -563,14 +602,26 @@
     "ARXIV/2303.01469": {
       "title": "Consistency Models"
     },
+    "ARXIV/2303.06296": {
+      "title": "Stabilizing Transformer Training by Preventing Attention Entropy Collapse"
+    },
     "ARXIV/2303.06555": {
       "title": "One Transformer Fits All Distributions in Multi-Modal Diffusion at Scale"
+    },
+    "ARXIV/2303.08112": {
+      "title": "Eliciting Latent Predictions from Transformers with the Tuned Lens"
     },
     "ARXIV/2304.02643": {
       "title": "Segment Anything"
     },
+    "ARXIV/2304.07193": {
+      "title": "DINOv2: Learning Robust Visual Features without Supervision"
+    },
     "ARXIV/2304.11277": {
       "title": "PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel"
+    },
+    "ARXIV/2305.07759": {
+      "title": "TinyStories: How Small Can Language Models Be and Still Speak Coherent English?"
     },
     "ARXIV/2305.10403": {
       "title": "PaLM 2 Technical Report"
@@ -608,6 +659,9 @@
     "ARXIV/2306.15595": {
       "title": "Extending Context Window of Large Language Models via Positional Interpolation"
     },
+    "ARXIV/2307.01952": {
+      "title": "SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis"
+    },
     "ARXIV/2307.05695": {
       "title": "ReLoRA: High-Rank Training Through Low-Rank Updates"
     },
@@ -632,6 +686,9 @@
     "ARXIV/2309.00071": {
       "title": "YaRN: Efficient Context Window Extension of Large Language Models"
     },
+    "ARXIV/2309.00367": {
+      "title": "Where Did the Gap Go? Reassessing the Long-Range Graph Benchmark"
+    },
     "ARXIV/2309.06180": {
       "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention"
     },
@@ -653,6 +710,12 @@
     "ARXIV/2310.01972": {
       "title": "Epidemic Learning: Boosting Decentralized Learning with Randomized Communication"
     },
+    "ARXIV/2310.06110": {
+      "title": "Grokking as the Transition from Lazy to Rich Training Dynamics"
+    },
+    "ARXIV/2310.08540": {
+      "title": "Do pretrained Transformers Learn In-Context by Gradient Descent?"
+    },
     "ARXIV/2310.10537": {
       "title": "Microscaling Data Formats for Deep Learning"
     },
@@ -661,6 +724,9 @@
     },
     "ARXIV/2310.12802": {
       "title": "An effective theory of collective deep learning"
+    },
+    "ARXIV/2310.17813": {
+      "title": "A Spectral Condition for Feature Learning"
     },
     "ARXIV/2311.03496": {
       "title": "Asynchronous Local Computations in Distributed Bayesian Learning"
@@ -692,6 +758,9 @@
     "ARXIV/2401.06066": {
       "title": "DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models"
     },
+    "ARXIV/2402.02364": {
+      "title": "Loss Landscape Degeneracy and Stagewise Development in Transformers"
+    },
     "ARXIV/2402.03300": {
       "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models"
     },
@@ -707,11 +776,26 @@
     "ARXIV/2402.19427": {
       "title": "Griffin: Mixing Gated Linear Recurrences with Local Attention for Efficient Language Models"
     },
+    "ARXIV/2403.03206": {
+      "title": "Scaling Rectified Flow Transformers for High-Resolution Image Synthesis"
+    },
+    "ARXIV/2403.06925": {
+      "title": "Transformers Learn Low Sensitivity Functions: Investigations and Implications"
+    },
     "ARXIV/2403.16952": {
       "title": "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance"
     },
+    "ARXIV/2404.02418": {
+      "title": "Auxiliary task demands mask the capabilities of smaller language models"
+    },
+    "ARXIV/2404.03592": {
+      "title": "ReFT: Representation Finetuning for Language Models"
+    },
     "ARXIV/2404.03683": {
       "title": "Stream of Search (SoS): Learning to Search in Language"
+    },
+    "ARXIV/2404.05892": {
+      "title": "Eagle and Finch: RWKV with Matrix-Valued States and Dynamic Recurrence"
     },
     "ARXIV/2404.06395": {
       "title": "MiniCPM: Unveiling the Potential of Small Language Models with Scalable Training Strategies"
@@ -773,6 +857,9 @@
     "ARXIV/2409.19606": {
       "title": "Hyper-Connections"
     },
+    "ARXIV/2410.05864": {
+      "title": "From Tokens to Words: On the Inner Lexicon of LLMs"
+    },
     "ARXIV/2410.05985": {
       "title": "LAYUP: Asynchronous decentralized gradient descent with LAYer-wise UPdates"
     },
@@ -782,11 +869,23 @@
     "ARXIV/2410.17891": {
       "title": "Scaling Diffusion Language Models via Adaptation from Autoregressive Models"
     },
+    "ARXIV/2410.21676": {
+      "title": "How Does Critical Batch Size Scale in Pre-training?"
+    },
     "ARXIV/2411.04330": {
       "title": "Scaling Laws for Precision"
     },
+    "ARXIV/2411.04996": {
+      "title": "Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models"
+    },
+    "ARXIV/2411.05007": {
+      "title": "SVDQuant: Absorbing Outliers by Low-Rank Components for 4-Bit Diffusion Models"
+    },
     "ARXIV/2411.07279": {
       "title": "The Surprising Effectiveness of Test-Time Training for Few-Shot Learning"
+    },
+    "ARXIV/2411.15100": {
+      "title": "XGrammar: Flexible and Efficient Structured Generation Engine for Large Language Models"
     },
     "ARXIV/2411.15124": {
       "title": "Tulu 3: Pushing Frontiers in Open Language Model Post-Training"
@@ -796,6 +895,9 @@
     },
     "ARXIV/2412.02595": {
       "title": "Nemotron-CC: Transforming Common Crawl into a Refined Long-Horizon Pretraining Dataset"
+    },
+    "ARXIV/2412.02975": {
+      "title": "Theoretical limitations of multi-layer Transformer"
     },
     "ARXIV/2412.06464": {
       "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule"
@@ -842,6 +944,9 @@
     "ARXIV/2503.11651": {
       "title": "VGGT: Visual Geometry Grounded Transformer"
     },
+    "ARXIV/2503.13431": {
+      "title": "Measuring In-Context Computation Complexity via Hidden State Prediction"
+    },
     "ARXIV/2503.14456": {
       "title": "RWKV-7 \"Goose\" with Expressive Dynamic State Evolution"
     },
@@ -872,8 +977,14 @@
     "ARXIV/2505.06708": {
       "title": "Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free"
     },
+    "ARXIV/2505.09254": {
+      "title": "Moving towards informative and actionable social media research"
+    },
     "ARXIV/2505.09388": {
       "title": "Qwen3 Technical Report"
+    },
+    "ARXIV/2505.10475": {
+      "title": "Parallel Scaling Law for Language Models"
     },
     "ARXIV/2506.00204": {
       "title": "Structure-Aware Fill-in-the-Middle Pretraining for Code"
@@ -881,8 +992,20 @@
     "ARXIV/2506.01260": {
       "title": "Subspace Networks: Scaling Decentralized Training with Communication-Efficient Model Parallelism"
     },
+    "ARXIV/2506.06941": {
+      "title": "The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity"
+    },
     "ARXIV/2506.09985": {
       "title": "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning"
+    },
+    "ARXIV/2506.10892": {
+      "title": "The Diffusion Duality"
+    },
+    "ARXIV/2506.12037": {
+      "title": "Exploiting Block Coordinate Descent for Cost-Effective LLM Model Training"
+    },
+    "ARXIV/2506.15872": {
+      "title": "Hidden Breakthroughs in Language Model Training"
     },
     "ARXIV/2506.23836": {
       "title": "Proving the Limited Scalability of Centralized Distributed Optimization via a New Lower Bound Construction"
@@ -917,6 +1040,9 @@
     "ARXIV/2509.24372": {
       "title": "Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning"
     },
+    "ARXIV/2510.04115": {
+      "title": "On the Statistical Query Complexity of Learning Semiautomata: a Random Walk Approach"
+    },
     "ARXIV/2510.04212": {
       "title": "Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention"
     },
@@ -928,6 +1054,9 @@
     },
     "ARXIV/2511.16652": {
       "title": "Evolution Strategies at the Hyperscale"
+    },
+    "ARXIV/2511.16904": {
+      "title": "Warm Diffusion: Recipe for Blur-Noise Mixture Diffusion Models"
     },
     "ARXIV/2512.02556": {
       "title": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models"
@@ -953,6 +1082,12 @@
     "ARXIV/2601.04890": {
       "title": "Learnable Multipliers: Freeing the Scale of Language Model Matrix Layers"
     },
+    "ARXIV/2601.05732": {
+      "title": "mHC-lite: You Don't Need 20 Sinkhorn-Knopp Iterations"
+    },
+    "ARXIV/2601.11507": {
+      "title": "Industry Influence in High-Profile Social Media Research"
+    },
     "ARXIV/2601.18089": {
       "title": "LatentMoE: Toward Optimal Accuracy per FLOP and Parameter in Mixture of Experts"
     },
@@ -964,6 +1099,12 @@
     },
     "ARXIV/2602.01003": {
       "title": "ESSAM: A Novel Competitive Evolution Strategies Approach to Reinforcement Learning for Memory Efficient LLMs Fine-Tuning"
+    },
+    "ARXIV/2603.00541": {
+      "title": "Spectral Condition for $\u03bc$P under Width-Depth Scaling"
+    },
+    "ARXIV/2603.01227": {
+      "title": "The Lattice Representation Hypothesis of Large Language Models"
     },
     "ARXIV/2603.12228": {
       "title": "Neural Thickets: Diverse Task Experts Are Dense Around Pretrained Weights"
@@ -979,6 +1120,12 @@
     },
     "ARXIV/2604.01499": {
       "title": "Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training"
+    },
+    "ARXIV/2605.01609": {
+      "title": "Concepts Whisper: Spectral Anti-Concentration and the Dual Geometry of Transformer Representations"
+    },
+    "ARXIV/2605.12492": {
+      "title": "Pion: A Spectrum-Preserving Optimizer via Orthogonal Equivalence Transformation"
     },
     "ARXIV/2605.25704": {
       "title": "PowLU: An Activation Function for Stable Pre-Training of LLMs"
@@ -998,6 +1145,9 @@
     "ARXIV/2606.26560": {
       "title": "Erase-then-Delta Attention: Decoupling Erase and Write Addresses in Delta-Rule Linear Attention"
     },
+    "ARXIV/2607.09204": {
+      "title": "Complexity-Guided Component-wise Initialization for Language Model Pretraining"
+    },
     "ARXIV/2607.24653": {
       "title": "Kimi K3: Open Frontier Intelligence"
     },
@@ -1009,6 +1159,9 @@
     },
     "ARXIV/2608.27351": {
       "title": "Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO"
+    },
+    "ARXIV/2608.29507": {
+      "title": "Denoising as Projection: Constrained Optimization with Gradient-Guided Diffusion"
     },
     "ARXIV/2608.30320": {
       "title": "On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability"

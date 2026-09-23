@@ -1,5 +1,8 @@
 ---
+number: 369
 status: Active
+formerly:
+- SOTA-tmpj9zpp
 consensus: emerging
 consensus_note: >-
   The specific pipeline is one group's, and the record has one controlled
@@ -17,17 +20,17 @@ tags:
 - representation-and-encoding
 date: '2026-09-23'
 source:
-- LIT-tmpfwfu3
+- LIT-599
 introduced_by:
-- LIT-tmpfwfu3
+- LIT-599
 implementations: []
 ---
 
-# SOTA-tmpj9zpp: Curate a pretraining set by retrieving neighbours of curated seeds, rather than scaling the uncurated pool
+# SOTA-369: Curate a pretraining set by retrieving neighbours of curated seeds, rather than scaling the uncurated pool
 
 ## Source
 
-Oquab et al. (2023), [LIT-tmpfwfu3](../literature.d/LIT-tmpfwfu3.md) — [ARXIV-2304.07193](https://arxiv.org/abs/2304.07193), §3.
+Oquab et al. (2023), [LIT-599](../literature.d/LIT-599.md) — [ARXIV-2304.07193](https://arxiv.org/abs/2304.07193), §3.
 
 ## The claim
 

@@ -6,7 +6,7 @@
 
 **Data pipeline** — loading, quality assessment and selection, preprocessing, batch preparation.
 
-44 of 368 SOTA documents. Back to the [full index](../README.md).
+46 of 370 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -54,3 +54,5 @@
 | [SOTA-354](../../../record/practices.d/SOTA-354.md) | When unlabelled inputs vastly outnumber labelled ones, retrain from scratch on the labelled data mixed with the model's own high-confidence predictions for unlabelled inputs, under augmentation that stops it copying them | Jumper et al. (2021), [LIT-583](../../../record/literature.d/LIT-583.md) — about 100,000 solved structures and billions of sequences. AlphaFold 2 predicted structures for about 350,000 unlabeled sequences, kept the confident ones, and retrained the same architecture from scratch on those plus the PDB. Cropping and alignment subsampling mean the student cannot just reproduce the teacher. The ablation shows a clear gain. The filter is the model's own calibrated confidence ([SOTA-353](../../../record/practices.d/SOTA-353.md)). | Proposed |
 | [SOTA-359](../../../record/practices.d/SOTA-359.md) v2 | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |
 | [SOTA-361](../../../record/practices.d/SOTA-361.md) | Compose augmentations so the shortcut dies, and tune them for the contrastive objective rather than the supervised one |  | Active |
+| [SOTA-369](../../../record/practices.d/SOTA-369.md) | Curate a pretraining set by retrieving neighbours of curated seeds, rather than scaling the uncurated pool |  | Active |
+| [SOTA-370](../../../record/practices.d/SOTA-370.md) | Add many low-resolution views alongside the two full ones, because view count is what helps and resolution is what costs |  | Active |

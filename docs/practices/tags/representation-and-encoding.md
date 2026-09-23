@@ -6,7 +6,7 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-18 of 356 SOTA documents. Back to the [full index](../README.md).
+18 of 359 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

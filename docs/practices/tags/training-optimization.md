@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-92 of 356 SOTA documents. Back to the [full index](../README.md).
+93 of 359 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -102,3 +102,4 @@
 | [SOTA-328](../../../record/practices.d/SOTA-328.md) | Train one nested model instead of a family of separately trained sizes, and extract the sizes you need from it | Devvrit, Kudugunta, Kusupati et al. (2023), [LIT-546](../../../record/literature.d/LIT-546.md) — nest four FFN widths in one Transformer, train one width per step, and extract any size in between by choosing widths per layer. Up to 850M parameters, at the compute of training the four sizes separately, the largest matches its baseline and the smaller ones beat theirs. It pays only if you were going to train the family. Gemma 3n ships it. | Proposed |
 | [SOTA-338](../../../record/practices.d/SOTA-338.md) | Train the GAN discriminator on frozen multi-scale pretrained features with fixed random channel and scale mixing | Sauer et al. (2021), [LIT-562](../../../record/literature.d/LIT-562.md) — project real and generated images through a frozen EfficientNet, mix channels and scales with fixed random convolutions, and train one small discriminator per scale. It reaches StyleGAN2's best LSUN-Church FID after 1.1M images instead of 88M. The speed-up is measured in FID, and at equal FID on FFHQ a CLIP-space distance and human raters prefer StyleGAN2 ([LIT-563](../../../record/literature.d/LIT-563.md)). | Proposed |
 | [SOTA-354](../../../record/practices.d/SOTA-354.md) | When unlabelled inputs vastly outnumber labelled ones, retrain from scratch on the labelled data mixed with the model's own high-confidence predictions for unlabelled inputs, under augmentation that stops it copying them | Jumper et al. (2021), [LIT-583](../../../record/literature.d/LIT-583.md) — about 100,000 solved structures and billions of sequences. AlphaFold 2 predicted structures for about 350,000 unlabeled sequences, kept the confident ones, and retrained the same architecture from scratch on those plus the PDB. Cropping and alignment subsampling mean the student cannot just reproduce the teacher. The ablation shows a clear gain. The filter is the model's own calibrated confidence ([SOTA-353](../../../record/practices.d/SOTA-353.md)). | Proposed |
+| [SOTA-358](../../../record/practices.d/SOTA-358.md) | Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not |  | Active |

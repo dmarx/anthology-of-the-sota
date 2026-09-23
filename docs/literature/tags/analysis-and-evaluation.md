@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-153 of 521 LIT documents. Back to the [full index](../README.md).
+154 of 523 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -163,3 +163,4 @@
 | [LIT-580](../../../record/literature.d/LIT-580.md) | How Powerful are Graph Neural Networks? | Xu, Hu, Leskovec, Jegelka (ICLR 2019), [ARXIV-1810.00826](https://arxiv.org/abs/1810.00826). Message-passing GNNs are at most as discriminative as the 1-WL isomorphism test, and they reach that bound when aggregation and readout are injective on multisets. Sum aggregation with an MLP update (GIN) is; mean (GCN) and max (GraphSAGE) are not. On featureless Reddit graphs, mean-aggregation GNNs are at chance (50.0, 20.0) and GIN scores 92.4 and 57.5. On the other seven benchmarks, most differences are within a standard deviation. | Active |
 | [LIT-581](../../../record/literature.d/LIT-581.md) | Pitfalls of Graph Neural Network Evaluation | Shchur, Mumme, Bojchevski, Günnemann (R2L workshop, NeurIPS 2018), [ARXIV-1811.05868](https://arxiv.org/abs/1811.05868). GCN, GAT, MoNet and GraphSAGE were run with one shared training and tuning procedure, over 100 random splits × 20 seeds on 8 datasets. GCN has the best average rank (2.3) and relative accuracy (99.4%). On Planetoid's single split GAT wins Cora and Citeseer; on another random split of the same sizes GCN wins them. GAT's lower average on Amazon comes from 138 of 2,000 runs collapsing. | Active |
 | [LIT-586](../../../record/literature.d/LIT-586.md) | LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale | Dettmers et al. (2022), [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339). Int8 inference for the feed-forward and attention projections, at no measured cost in quality up to 175B, by isolating a small set of systematically emergent outlier feature dimensions into a 16-bit multiplication and quantizing the other 99.9% vector-wise. | Active |
+| [LIT-588](../../../record/literature.d/LIT-588.md) | Learning Transferable Visual Models From Natural Language Supervision | Radford et al. (2021), [ARXIV-2103.00020](https://arxiv.org/abs/2103.00020). Train an image encoder and a text encoder to match 400M (image, text) pairs contrastively, then build a classifier for any label set by embedding its class names. The most durable result is not the zero-shot accuracy — it is that supervised adaptation which raises ImageNet by 9.2% buys no average robustness. | Active |

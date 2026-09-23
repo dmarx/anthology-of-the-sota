@@ -1,5 +1,8 @@
 ---
+number: 358
 status: Active
+formerly:
+- SOTA-tmp9k3cq
 consensus: converged
 consensus_note: >-
   Measured, not assumed, and measured on the wrong half. The field has
@@ -17,17 +20,17 @@ tags:
 - vision-and-graphics
 date: '2026-09-23'
 source:
-- LIT-tmp81ije
+- LIT-587
 introduced_by:
-- LIT-tmp81ije
+- LIT-587
 implementations: []
 ---
 
-# SOTA-tmp9k3cq: Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not
+# SOTA-358: Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not
 
 ## Source
 
-Dosovitskiy et al. (2020), [LIT-tmp81ije](../literature.d/LIT-tmp81ije.md) — [ARXIV-2010.11929](https://arxiv.org/abs/2010.11929).
+Dosovitskiy et al. (2020), [LIT-587](../literature.d/LIT-587.md) — [ARXIV-2010.11929](https://arxiv.org/abs/2010.11929).
 
 ## The claim
 

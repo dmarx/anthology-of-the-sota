@@ -6,7 +6,7 @@
 
 **Data pipeline** — loading, quality assessment and selection, preprocessing, batch preparation.
 
-42 of 356 SOTA documents. Back to the [full index](../README.md).
+43 of 359 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -52,3 +52,4 @@
 | [SOTA-341](../../../record/practices.d/SOTA-341.md) | Condition an image generator on each training image's original size instead of discarding or upsampling small images | Podell et al. (2023), [LIT-566](../../../record/literature.d/LIT-566.md) — embed each training image's original height and width, like the timestep, and give it to the model. Then keep the small images that a minimum-resolution filter would drop (39% of SDXL's pretraining data below 256²) without teaching the model their blur. At inference, set the size you want. On class-conditional ImageNet 512²: FID-5k 43.84 discarding, 39.76 keeping unconditioned, 36.53 keeping with size conditioning. | Proposed |
 | [SOTA-352](../../../record/practices.d/SOTA-352.md) | When a structure predictor is made generative, add a regression model's predictions to the training data so disordered regions are learned as disorder rather than invented structure | Abramson et al. (2024), [LIT-584](../../../record/literature.d/LIT-584.md) — a diffusion head generates plausible compact structure even where the protein has none. AlphaFold- Multimer, a regression model, renders the same regions as extended loops. Mixing its predictions into training teaches the generative model that convention, and "greatly reduced" hallucination. Remaining hallucinations are flagged by low confidence but do not look disordered. | Proposed |
 | [SOTA-354](../../../record/practices.d/SOTA-354.md) | When unlabelled inputs vastly outnumber labelled ones, retrain from scratch on the labelled data mixed with the model's own high-confidence predictions for unlabelled inputs, under augmentation that stops it copying them | Jumper et al. (2021), [LIT-583](../../../record/literature.d/LIT-583.md) — about 100,000 solved structures and billions of sequences. AlphaFold 2 predicted structures for about 350,000 unlabeled sequences, kept the confident ones, and retrained the same architecture from scratch on those plus the PDB. Cropping and alignment subsampling mean the student cannot just reproduce the teacher. The ablation shows a clear gain. The filter is the model's own calibrated confidence ([SOTA-353](../../../record/practices.d/SOTA-353.md)). | Proposed |
+| [SOTA-359](../../../record/practices.d/SOTA-359.md) | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |

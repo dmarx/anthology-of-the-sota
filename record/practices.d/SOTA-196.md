@@ -8,7 +8,7 @@ consensus_note: >-
   Two clean measurements of the conflict, in settings where both metrics
   mattered, and the earlier one is the larger. The practice is
   uncontroversial once stated and is still not stated often. Revised
-  2026-09-23 when `LIT-tmpc8ymt` was filed; the note previously said one
+  2026-09-23 when `LIT-588` was filed; the note previously said one
   measurement, which was true of the record and not of the literature.
 title: 'Report zero-shot and in-distribution performance separately; one hyperparameter can move them in opposite directions'
 version: 2
@@ -24,7 +24,7 @@ tags:
 date: '2026-09-10'
 source:
 - LIT-072
-- LIT-tmpc8ymt
+- LIT-588
 introduced_by:
 - LIT-072
 implementations: []
@@ -68,7 +68,7 @@ is silent: nothing in the training loop reports it.
 
 ## The same conflict, a year earlier and larger
 
-`LIT-tmpc8ymt` measures it on CLIP, and the numbers are bigger. Fitting a
+`LIT-588` measures it on CLIP, and the numbers are bigger. Fitting a
 supervised linear classifier on ImageNet features raises ImageNet accuracy by
 **9.2%** — which the authors put at "roughly 3 years of improvement in SOTA"
 — and produces **no improvement in average accuracy across seven natural

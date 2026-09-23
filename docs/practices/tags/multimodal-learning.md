@@ -6,9 +6,11 @@
 
 **Multimodal learning** — what changes when one model has to take in more than one kind of signal — joint architectures and fusion, contrastive image-text training, cross-modal transfer, and what a second modality buys the first.
 
-2 of 356 SOTA documents. Back to the [full index](../README.md).
+4 of 359 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [SOTA-262](../../../record/practices.d/SOTA-262.md) v2 | Give each modality its own weights and let the streams attend jointly | Esser et al. (2024), [LIT-449](../../../record/literature.d/LIT-449.md) — MMDiT gives the text and image streams separate projections and MLPs, then runs attention over the concatenated sequence so information flows both ways. It beats UViT and DiT at matched budget. Liang et al. (2024), [LIT-483](../../../record/literature.d/LIT-483.md) — the same shape reached independently for autoregressive multi-modal LLMs, matching a dense baseline at **55.8% of the FLOPs**, and ablated component by component: the feed-forward carries most of the benefit, the attention projections less, the layer norms none. | Active |
 | [SOTA-271](../../../record/practices.d/SOTA-271.md) | Train on a second modality even when the target is single-modality | Huh et al. (2024), [LIT-458](../../../record/literature.d/LIT-458.md) — if representations converge on a modality-agnostic model of what generated the data, then data from any modality helps find it. The vision direction is already common practice; the language direction is not, and the paper cites a case where adding image data improved text performance. | Proposed |
+| [SOTA-357](../../../record/practices.d/SOTA-357.md) | Build a zero-shot classifier from prompt templates and ensemble them in embedding space |  | Active |
+| [SOTA-359](../../../record/practices.d/SOTA-359.md) | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |

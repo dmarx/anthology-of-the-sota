@@ -6,7 +6,7 @@
 
 **In-context learning** — getting behaviour out of a fixed model by what you put in the context — few-shot exemplars, chain of thought, prompting strategy, and what the context can and cannot buy.
 
-12 of 356 SOTA documents. Back to the [full index](../README.md).
+13 of 359 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -22,3 +22,4 @@
 | [SOTA-313](../../../record/practices.d/SOTA-313.md) | Treat the inference-time decision procedure as part of what you are comparing, and report the ordering under each one | Gemini Team (2023), [LIT-510](../../../record/literature.d/LIT-510.md) — on MMLU, greedy sampling puts GPT-4 ahead by 0.2, plain chain-of-thought at 32 samples puts it ahead by 2.3, and uncertainty-routed CoT at 32 samples puts Gemini Ultra ahead by **2.7**. Same models, same benchmark, same harness. The procedure is worth **6.0** points to one model and **3.1** to the other, so running the same procedure on both is not enough — the ordering is a property of the procedure you chose to report. | Active |
 | [SOTA-323](../../../record/practices.d/SOTA-323.md) | Test a claim about what pretraining produces on a model trained with the pretraining objective, not one trained on the task family you are testing | Shen, Mishra and Khashabi (2023), [LIT-536](../../../record/literature.d/LIT-536.md) — "there exist weights such that" and "pretraining produces weights such that" are different claims, and training a model on the task family you are about to test collapses them. Their separation of these as Hypothesis 2 and Hypothesis 1 is what let them show that a literature everyone read as evidence about pretrained language models had tested neither the models nor the objective. | Proposed |
 | [SOTA-324](../../../record/practices.d/SOTA-324.md) | Separate rival accounts of an internal algorithm by convergence rate and conditioning, not by how well each fits the output | Fu, Chen, Jia and Sharan (2023), [LIT-535](../../../record/literature.d/LIT-535.md) — output similarity cannot tell gradient descent from Newton's method, because both converge to the same answer. Matching each layer to the best-fitting step count of each candidate gives a linear trend for the right rate and an exponential one for the wrong one; a regime where the rivals must differ — here, condition number 100 — separates them again. Two measurements, both cheap, both decisive where a fit was not. | Proposed |
+| [SOTA-357](../../../record/practices.d/SOTA-357.md) | Build a zero-shot classifier from prompt templates and ensemble them in embedding space |  | Active |

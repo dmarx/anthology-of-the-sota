@@ -6,7 +6,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-202 of 356 SOTA documents. Back to the [full index](../README.md).
+205 of 359 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -146,7 +146,7 @@
 | [SOTA-192](../../../record/practices.d/SOTA-192.md) v5 | Normalize the queries and keys before the attention dot product |  | Active |
 | [SOTA-194](../../../record/practices.d/SOTA-194.md) | When an objective arrives with its own dataset, state the composition before crediting the objective |  | Active |
 | [SOTA-195](../../../record/practices.d/SOTA-195.md) | Predict v rather than the noise when the model will be evaluated at low signal-to-noise |  | Active |
-| [SOTA-196](../../../record/practices.d/SOTA-196.md) | Report zero-shot and in-distribution performance separately; one hyperparameter can move them in opposite directions |  | Active |
+| [SOTA-196](../../../record/practices.d/SOTA-196.md) v2 | Report zero-shot and in-distribution performance separately; one hyperparameter can move them in opposite directions |  | Active |
 | [SOTA-197](../../../record/practices.d/SOTA-197.md) v2 | Account for test-set proximity to the training data when evaluating, and state your contamination exposure |  | Active |
 | [SOTA-198](../../../record/practices.d/SOTA-198.md) v2 | Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run |  | Active |
 | [SOTA-199](../../../record/practices.d/SOTA-199.md) | Regularize a narrow fine-tune against the pre-fine-tuning model's own samples |  | Active |
@@ -212,3 +212,6 @@
 | [SOTA-351](../../../record/practices.d/SOTA-351.md) | In a message-passing GNN for graph-level tasks, aggregate neighbours by sum with an MLP update, not by mean or max, when graph structure rather than node features carries the signal | Xu et al. (2019), [LIT-580](../../../record/literature.d/LIT-580.md) — mean and max aggregation cannot count neighbors, so graphs that differ only in counts look the same to them. On featureless Reddit graphs, mean-aggregation GNNs are at chance (50.0, 20.0) and sum–MLP scores 92.4 and 57.5. With informative node features the choice matters much less, and results are mostly within noise. Use h = MLP((1 + ε)h + Σ neighbors) with ε = 0 and a sum readout. | Active |
 | [SOTA-355](../../../record/practices.d/SOTA-355.md) | Isolate the emergent outlier feature dimensions into 16-bit and quantize the rest to int8 | Dettmers et al. (2022), [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339). Quantize the projections vector-wise to int8, but pull the handful of systematically large feature dimensions out into a separate 16-bit multiplication — 99.9% of values in 8-bit, no measured quality cost up to 175B. | Active |
 | [SOTA-356](../../../record/practices.d/SOTA-356.md) | Protect the salient weight channels by scaling them before rounding, choosing them from the activations rather than the weights | Lin et al. (2023), [ARXIV-2306.00978](https://arxiv.org/abs/2306.00978). Identify the ~1% of weight channels whose activations are largest, scale them up by an equivalent transformation before rounding, and quantize everything uniformly — rather than keeping the important channels in higher precision. | Active |
+| [SOTA-357](../../../record/practices.d/SOTA-357.md) | Build a zero-shot classifier from prompt templates and ensemble them in embedding space |  | Active |
+| [SOTA-358](../../../record/practices.d/SOTA-358.md) | Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not |  | Active |
+| [SOTA-359](../../../record/practices.d/SOTA-359.md) | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |

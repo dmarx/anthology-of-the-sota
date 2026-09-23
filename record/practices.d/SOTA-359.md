@@ -1,5 +1,8 @@
 ---
+number: 359
 status: Active
+formerly:
+- SOTA-tmph2zob
 consensus: converged
 consensus_note: >-
   Every image-text foundation model this record has seen since is built this
@@ -17,17 +20,17 @@ tags:
 - vision-and-graphics
 date: '2026-09-23'
 source:
-- LIT-tmpc8ymt
+- LIT-588
 introduced_by:
-- LIT-tmpc8ymt
+- LIT-588
 implementations: []
 ---
 
-# SOTA-tmph2zob: Supervise vision from the caption, and match image to caption rather than predicting its words
+# SOTA-359: Supervise vision from the caption, and match image to caption rather than predicting its words
 
 ## Source
 
-Radford et al. (2021), [LIT-tmpc8ymt](../literature.d/LIT-tmpc8ymt.md) — [ARXIV-2103.00020](https://arxiv.org/abs/2103.00020).
+Radford et al. (2021), [LIT-588](../literature.d/LIT-588.md) — [ARXIV-2103.00020](https://arxiv.org/abs/2103.00020).
 
 ## The claim
 

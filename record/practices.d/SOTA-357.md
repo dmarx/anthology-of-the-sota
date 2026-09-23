@@ -1,5 +1,8 @@
 ---
+number: 357
 status: Active
+formerly:
+- SOTA-tmp4xixm
 consensus: converged
 consensus_note: >-
   Verified in library code rather than inferred. `mlfoundations/open_clip`
@@ -18,17 +21,17 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-23'
 source:
-- LIT-tmpc8ymt
+- LIT-588
 introduced_by:
-- LIT-tmpc8ymt
+- LIT-588
 implementations: []
 ---
 
-# SOTA-tmp4xixm: Build a zero-shot classifier from prompt templates and ensemble them in embedding space
+# SOTA-357: Build a zero-shot classifier from prompt templates and ensemble them in embedding space
 
 ## Source
 
-Radford et al. (2021), [LIT-tmpc8ymt](../literature.d/LIT-tmpc8ymt.md) — [ARXIV-2103.00020](https://arxiv.org/abs/2103.00020).
+Radford et al. (2021), [LIT-588](../literature.d/LIT-588.md) — [ARXIV-2103.00020](https://arxiv.org/abs/2103.00020).
 
 ## The claim
 

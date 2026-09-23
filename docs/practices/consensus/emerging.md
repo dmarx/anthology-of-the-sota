@@ -6,7 +6,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-44 of 356 SOTA documents. Back to the [full index](../README.md).
+44 of 359 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -28,7 +28,7 @@
 | [SOTA-183](../../../record/practices.d/SOTA-183.md) | Generate the harmlessness preference labels with the model itself, against a written set of principles | Bai et al. (2022), [LIT-082](../../../record/literature.d/LIT-082.md) — [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073). Replace the human harmlessness comparisons with model-generated ones: the model critiques and revises its own responses against an explicit list of principles, and the preference model trains on that. | Active |
 | [SOTA-186](../../../record/practices.d/SOTA-186.md) | Bootstrap a large annotation set with the model you are training, staging the automation as it improves |  | Active |
 | [SOTA-194](../../../record/practices.d/SOTA-194.md) | When an objective arrives with its own dataset, state the composition before crediting the objective |  | Active |
-| [SOTA-196](../../../record/practices.d/SOTA-196.md) | Report zero-shot and in-distribution performance separately; one hyperparameter can move them in opposite directions |  | Active |
+| [SOTA-196](../../../record/practices.d/SOTA-196.md) v2 | Report zero-shot and in-distribution performance separately; one hyperparameter can move them in opposite directions |  | Active |
 | [SOTA-198](../../../record/practices.d/SOTA-198.md) v2 | Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run |  | Active |
 | [SOTA-200](../../../record/practices.d/SOTA-200.md) v3 | Check whether an emergent capability is a metric artefact before believing it |  | Active |
 | [SOTA-201](../../../record/practices.d/SOTA-201.md) | Give each pretrained component its own learning rate when fine-tuning a composite model |  | Active |

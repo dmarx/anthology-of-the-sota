@@ -6,7 +6,7 @@
 
 **Agreed** — the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately.
 
-24 of 356 SOTA documents. Back to the [full index](../README.md).
+27 of 359 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -34,3 +34,6 @@
 | [SOTA-331](../../../record/practices.d/SOTA-331.md) | Pass low-dimensional coordinate inputs through sinusoids of sampled frequencies before an MLP, and tune the frequency scale rather than the distribution | Tancik et al. (2020), [LIT-550](../../../record/literature.d/LIT-550.md), with NeRF ([LIT-435](../../../record/literature.d/LIT-435.md)) — an MLP on raw coordinates never fits high frequencies. Map the input to `[cos 2πBv, sin 2πBv]` with `B ~ N(0, σ²)` and tune `σ` on held-out data: too small blurs, too large aliases, and the distribution's shape does not matter. Gaussian features beat no mapping and log-spaced positional encoding on all seven image, shape, CT, MRI and view-synthesis tasks tested. | Active |
 | [SOTA-355](../../../record/practices.d/SOTA-355.md) | Isolate the emergent outlier feature dimensions into 16-bit and quantize the rest to int8 | Dettmers et al. (2022), [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339). Quantize the projections vector-wise to int8, but pull the handful of systematically large feature dimensions out into a separate 16-bit multiplication — 99.9% of values in 8-bit, no measured quality cost up to 175B. | Active |
 | [SOTA-356](../../../record/practices.d/SOTA-356.md) | Protect the salient weight channels by scaling them before rounding, choosing them from the activations rather than the weights | Lin et al. (2023), [ARXIV-2306.00978](https://arxiv.org/abs/2306.00978). Identify the ~1% of weight channels whose activations are largest, scale them up by an equivalent transformation before rounding, and quantize everything uniformly — rather than keeping the important channels in higher precision. | Active |
+| [SOTA-357](../../../record/practices.d/SOTA-357.md) | Build a zero-shot classifier from prompt templates and ensemble them in embedding space |  | Active |
+| [SOTA-358](../../../record/practices.d/SOTA-358.md) | Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not |  | Active |
+| [SOTA-359](../../../record/practices.d/SOTA-359.md) | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |

@@ -26,6 +26,7 @@ summary: >-
   improving. The remedy is one scalar: temperature scaling beats every
   richer method tried, including the ones that contain it.
 ---
+<!-- inactive-ok-file: THEORY-060 — Proposed; named to mark what this paper is NOT a replication of — its decomposition is calibration against refinement, where Guo et al. separate a proper loss from the 0/1 loss -->
 
 # LIT-tmps0emi: On Calibration of Modern Neural Networks
 

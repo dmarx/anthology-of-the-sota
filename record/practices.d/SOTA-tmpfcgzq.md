@@ -34,6 +34,7 @@ summary: >-
   d=2048 and 50,000 samples their construction reversed a true ordering in
   100 trials out of 100, with standard deviations of 0.2 and 0.5.
 ---
+<!-- inactive-ok-file: SOTA-338 — Proposed; named for its promote_when, which says FID or KID alone cannot settle its question — the point being that KID inherits the feature-space problem this practice does not fix -->
 
 # SOTA-tmpfcgzq: Fix the sample count before comparing FID values, and settle a close comparison with an unbiased estimator rather than a tighter error bar
 

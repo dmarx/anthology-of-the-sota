@@ -30,6 +30,7 @@ summary: >-
   scaling, histogram binning, isotonic regression and BBQ — including the
   two that strictly contain it. Typical uncalibrated ECE is 4–10%.
 ---
+<!-- inactive-ok-file: THEORY-060 — Proposed; named to mark what this paper is NOT a replication of — its decomposition is calibration against refinement, where Guo et al. separate a proper loss from the 0/1 loss -->
 
 # SOTA-tmprlwc2: Calibrate a trained classifier with a single temperature fitted on held-out data, not with a richer map
 

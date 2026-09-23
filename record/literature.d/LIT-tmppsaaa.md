@@ -1,0 +1,93 @@
+---
+status: Active
+title: 'Neural Word Embedding as Implicit Matrix Factorization'
+version: 1
+tags:
+- representation-and-encoding
+- signal-structure
+date: '2026-09-23'
+published: '2014-12-01'
+url: 'https://papers.nips.cc/paper_files/paper/2014/hash/b78666971ceae55a8e87efb7cbfd9ad4-Abstract.html'
+first_author: 'Levy'
+keywords:
+- 'sgns'
+- 'pmi'
+- 'shifted-ppmi'
+- 'matrix-factorization'
+- 'svd'
+- 'nce'
+implementations:
+- word2vecf
+compared_against:
+- LIT-603
+summary: >-
+  Levy and Goldberg (NeurIPS 2014). With enough dimensions, skip-gram with
+  negative sampling reaches its optimum when w·c = PMI(w, c) − log k, so it
+  implicitly factorizes the word-context PMI matrix shifted by log of the
+  number of negatives. NCE factorizes log P(w|c) − log k in the same way. The
+  factorization is weighted: frequent pairs cost more to get wrong. Shifted
+  PPMI and SVD over it match SGNS on word similarity. SGNS stays ahead on
+  syntactic analogies, which the authors attribute to the weighting.
+extended_by:
+- LIT-607
+---
+
+# LIT-tmppsaaa: Neural Word Embedding as Implicit Matrix Factorization
+
+Levy and Goldberg, Bar-Ilan University — *NeurIPS 2014*. Code:
+`bitbucket.org/yoavgo/word2vecf`.
+
+## Key takeaways
+
+- **The derivation** (§3.1). Write SGNS's global objective per (w, c) pair:
+  #(w,c)·log σ(w·c) + k·#(w)#(c)/|D|·log σ(−w·c). Treat each dot product as
+  free, set the derivative to zero, and solve. The optimum is
+  **w·c = PMI(w, c) − log k**. With one negative, SGNS factorizes PMI. With
+  k negatives it factorizes PMI shifted down by log k.
+- **NCE is the same shape** (§3.1): w·c = log P(w|c) − log k.
+- **It is a weighted factorization** (§3.2). Each pair's loss scales with its
+  count and expected negatives, so when the dimension is too small to
+  reconstruct the matrix exactly, frequent pairs are fitted better than rare
+  ones.
+- **Shifted PPMI** (§4.1): max(PMI − log k, 0). A sparse matrix that comes
+  within 0.0001% of SGNS's optimal objective (Table 1), while SGNS itself is
+  6–39% off.
+- **SVD over it** (§4.2), with symmetric weighting U·√Σ. Exact and needs no
+  learning rate, but unweighted, and it degrades badly as k grows: 95% off
+  the objective at k = 5 and 266% at k = 15.
+- **Results** (Table 2, 1.5B tokens, d = 1000). Similarity: SVD and SPPMI
+  match or edge SGNS (WS353 0.691 against 0.666, MEN 0.735 against 0.716).
+  Mixed analogies: SPPMI 0.655 against SGNS 0.619. Syntactic analogies: SGNS
+  0.627 against 0.466 for the best alternative.
+- **Optimizing the objective is not the task** (§5). SPPMI optimizes SGNS's
+  objective almost perfectly and still loses to SGNS on syntactic analogies.
+
+## Standing in the anthology
+
+**It is the reason count and prediction methods can be compared at all.**
+[LIT-607](LIT-607.md) (Levy, Goldberg and Dagan 2015) `extends` it: once SGNS is known to
+factorize shifted PMI, its log k shift and its smoothed noise distribution
+become settings that can be given to PPMI and SVD. That is what reverses
+Baroni et al.'s result ([LIT-608](LIT-608.md)).
+
+[THEORY-tmpismnk](../theory.d/THEORY-tmpismnk.md) holds the result. [THEORY-089](../theory.d/THEORY-089.md) (why word vectors are linear)
+and [THEORY-092](../theory.d/THEORY-092.md) (why 3/4 smoothing helps) both `extend` it: the first needs
+skip-gram's dot products to fit a log co-occurrence statistic, and the
+second needs negative sampling and PMI to be the same computation.
+
+**No practice.** Shifted PPMI and symmetric SVD are settings of particular
+methods ([ADR-041](../decisions.d/ADR-041.md)). [LIT-607](LIT-607.md) measures both and finds the shift helps SGNS,
+helps or hurts PPMI depending on the task, and hurts SVD badly.
+
+## What it does not establish
+
+- **The optimum assumes unlimited dimensions.** With d in the hundreds, SGNS
+  is 6–39% away from it (Table 1). What the vectors encode at practical
+  dimensions is a weighted low-rank approximation, not the matrix itself.
+- **The unigram noise distribution.** word2vec samples from count^0.75, which
+  replaces P(c) in the PMI with a smoothed version. The paper notes this in a
+  footnote and does not analyse it. [LIT-607](LIT-607.md) does.
+- **Why weighting helps analogies is a conjecture**, offered for one dataset.
+- **Four benchmarks, one corpus, window 2.**
+
+<!-- inactive-ok-file: THEORY-089, THEORY-092 — Proposed; named as the accounts that extend the result this paper sources -->

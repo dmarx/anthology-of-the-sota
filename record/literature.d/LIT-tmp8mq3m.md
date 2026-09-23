@@ -1,0 +1,79 @@
+---
+status: Active
+title: 'AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration'
+version: 1
+tags:
+- numerics-and-precision
+- inference-optimization
+date: '2026-09-23'
+published: '2023-06-01'
+arxiv: '2306.00978'
+first_author: 'Lin'
+keywords:
+- 'quantization'
+- 'weight-only'
+- 'salient-channels'
+- 'calibration'
+summary: >-
+  Lin et al. (2023), [ARXIV-2306.00978](https://arxiv.org/abs/2306.00978). Weight-only low-bit quantization that
+  protects the ~1% of channels whose *activations* are largest, by scaling
+  them up before rounding rather than keeping them in higher precision. No
+  backpropagation and no reconstruction, so it does not overfit its
+  calibration set.
+compared_against:
+- LIT-081
+---
+
+# LIT-tmp8mq3m: AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration
+
+Lin et al. (2023) — [ARXIV-2306.00978](https://arxiv.org/abs/2306.00978)
+
+## Key takeaways
+
+- **Not all weights matter equally, and the weights do not tell you which.**
+  Protecting roughly 1% of channels recovers most of the quantization error,
+  and the channels worth protecting are identified from the **activation**
+  distribution, not from weight magnitude. That is the paper's central
+  claim and the one its name states.
+- **The protection is a scaling, not a mixed-precision carve-out.** Keeping
+  1% of channels in 16 bits would be hardware-inefficient — it makes the
+  kernel irregular. Instead the salient channels are scaled up by an
+  equivalent transformation before rounding, which the paper derives as
+  reducing their relative quantization error while leaving the layer's
+  function unchanged. The scale comes from activation statistics collected
+  offline.
+- **No backpropagation, no reconstruction.** This is the difference the
+  authors press on versus methods that fit a calibration objective: nothing
+  is optimized against the calibration set, so the result transfers across
+  domains and modalities. They report it holding for instruction-tuned
+  models and, they claim first, for multi-modal models.
+- **TinyChat is the accompanying kernel work**, reporting more than 3×
+  over an FP16 Hugging Face baseline on desktop and mobile GPUs through
+  kernel fusion and platform-aware weight packing. Worth separating from the
+  quantization claim: the speedup is the kernels, the accuracy is AWQ.
+
+## What this is doing in the record
+
+Filed from `#289`, which swept what the big libraries implement. AWQ is
+carried by both `vllm` and `transformers` — one of only three items in 91
+that two independent adoption indexes agreed on — while the record held
+GPTQ (`LIT-081`) three times and its direct competitor not at all.
+
+`compared_against: LIT-081` because the paper runs that comparison itself,
+which is what `ADR-011` requires of the field: somebody ran it, rather than
+the record noticing a family resemblance.
+
+## Reading it against GPTQ
+
+The two solve the same problem and disagree about the mechanism, which is
+the interesting part and is why both belong in the record. GPTQ treats
+quantization as an error-compensation problem — round a column, push the
+error into the columns not yet done, using second-order information from a
+calibration set. AWQ treats it as a salience problem — find the channels
+that matter from activations, scale them, round everything once.
+
+The claim that distinguishes them is about **generalization**: GPTQ fits a
+calibration objective and AWQ deliberately does not, and AWQ's argument for
+itself is that this is why it holds up on instruction-tuned and multi-modal
+models. That is a claim about robustness rather than about accuracy at a bit
+width, and it is the one a reader choosing between them should be checking.

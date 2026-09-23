@@ -19,6 +19,8 @@ summary: >-
   time and push the resulting error into the remaining columns using
   approximate second-order information, instead of rounding every weight
   independently to the nearest level.
+compared_against:
+- SOTA-tmpt7jr1
 ---
 
 # SOTA-185: Quantize weights after training by compensating each rounding error into the columns not yet quantized

@@ -47,7 +47,7 @@ clustering-based — and "consistently improves the performance for all the
 considered methods by a significant margin of 2–4% top-1".
 
 That is the transplant test the record usually has to wait for, performed in
-the introducing paper. Compare [SOTA-tmpacu6q](SOTA-tmpacu6q.md)'s variance term, the only other
+the introducing paper. Compare [SOTA-367](SOTA-367.md)'s variance term, the only other
 component in this cluster with evidence of working outside its own method.
 
 ## What it says about the mechanism, which is more than it looks
@@ -74,7 +74,7 @@ can sample it more densely for free.
   two branches no longer see the same distribution, which interacts with
   whatever anti-collapse mechanism is in use. SwAV's own is the equipartition
   constraint, not an architectural asymmetry, so the interaction is untested
-  for the predictor-and-stop-gradient family ([SOTA-tmp1kmsu](SOTA-tmp1kmsu.md)).
+  for the predictor-and-stop-gradient family ([SOTA-365](SOTA-365.md)).
 
 ## Known implementations
 

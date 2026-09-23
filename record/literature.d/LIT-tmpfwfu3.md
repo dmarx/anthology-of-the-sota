@@ -57,8 +57,8 @@ Oquab et al. (2023) — [ARXIV-2304.07193](https://arxiv.org/abs/2304.07193)
   spread uniformly within a batch; and **Sinkhorn-Knopp centering** borrowed
   from SwAV ([LIT-tmp6nq8y](LIT-tmp6nq8y.md)) in place of the teacher's softmax centering. Both
   appear as separate ablation rows. This is the same anti-collapse question
-  <!-- inactive-ok: THEORY-tmpf89jm — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
-  [THEORY-tmpf89jm](../theory.d/THEORY-tmpf89jm.md) tracks, arriving as a stack of regularisers rather than as
+  <!-- inactive-ok: THEORY-087 — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
+  [THEORY-087](../theory.d/THEORY-087.md) tracks, arriving as a stack of regularisers rather than as
   a mechanism anyone claims to understand.
 - **The deliverable is frozen features.** The whole argument is features that
   "work across image distributions and tasks without finetuning", competitive
@@ -74,6 +74,6 @@ Fréchet distance "in a non-ImageNet feature space (CLIP, SwAV or DINOv2)",
 and `SOTA-307` reports DINOv2 FID, precision, density and coverage. The
 record could not promote its own practice without a paper it did not hold.
 
-<!-- inactive-ok: THEORY-tmpf89jm — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
-Sources [SOTA-tmpj9zpp](../practices.d/SOTA-tmpj9zpp.md), and joins [THEORY-tmpf89jm](../theory.d/THEORY-tmpf89jm.md) as a source for the way it
+<!-- inactive-ok: THEORY-087 — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
+Sources [SOTA-tmpj9zpp](../practices.d/SOTA-tmpj9zpp.md), and joins [THEORY-087](../theory.d/THEORY-087.md) as a source for the way it
 stacks anti-collapse regularisers rather than choosing among them.

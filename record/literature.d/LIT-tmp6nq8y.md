@@ -45,8 +45,8 @@ Caron et al. (2020) — [ARXIV-2006.09882](https://arxiv.org/abs/2006.09882)
   this "ensures that the codes for different images in a batch are distinct,
   thus preventing the trivial solution where every image has the same code".
   This is a fifth account of collapse-avoidance, different from all four in
-  <!-- inactive-ok: THEORY-tmpf89jm — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
-  [THEORY-tmpf89jm](../theory.d/THEORY-tmpf89jm.md).
+  <!-- inactive-ok: THEORY-087 — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
+  [THEORY-087](../theory.d/THEORY-087.md).
 - **And it has its own collapse knob, pointing the wrong way.** The entropy
   regularisation `ε` smooths the assignment; "a strong entropy
   regularization generally leads to a trivial solution where all samples
@@ -80,5 +80,5 @@ but the 75.3% headline is ImageNet-pretrained, and the paper's own
 random-image experiment is a separate and much smaller result. The partial
 independence is real and the qualification is doing work.
 
-<!-- inactive-ok: THEORY-tmpf89jm — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
-Sources [SOTA-tmpoe0zb](../practices.d/SOTA-tmpoe0zb.md), and is added as a fifth source to [THEORY-tmpf89jm](../theory.d/THEORY-tmpf89jm.md).
+<!-- inactive-ok: THEORY-087 — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
+Sources [SOTA-tmpoe0zb](../practices.d/SOTA-tmpoe0zb.md), and is added as a fifth source to [THEORY-087](../theory.d/THEORY-087.md).

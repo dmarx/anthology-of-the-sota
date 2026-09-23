@@ -38,6 +38,8 @@ summary: >-
   examples in **4 of 5** domains. In the fifth the correlation was **strongly
   negative** at `Δ = 1` and positive at episode length — so the horizon is not
   a detail.
+explained_by:
+- THEORY-tmp1aw1p
 ---
 
 # SOTA-309: Score a control interface by the mutual information between the operator's command and the state change it induces, and choose the horizon of that state change deliberately

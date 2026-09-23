@@ -413,6 +413,9 @@
     "ARXIV/2201.10469": {
       "title": "Convex Analysis of the Mean Field Langevin Dynamics"
     },
+    "ARXIV/2201.11903": {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
+    },
     "ARXIV/2201.11990": {
       "title": "Using DeepSpeed and Megatron to Train Megatron-Turing NLG 530B, A Large-Scale Generative Language Model"
     },

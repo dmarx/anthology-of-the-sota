@@ -1,0 +1,99 @@
+---
+status: Active
+title: 'A Simple Framework for Contrastive Learning of Visual Representations'
+version: 1
+tags:
+- representation-and-encoding
+- data-pipeline
+- vision-and-graphics
+- model-stability
+date: '2026-09-23'
+published: '2020-02-01'
+arxiv: '2002.05709'
+first_author: 'Chen'
+keywords:
+- 'contrastive-learning'
+- 'data-augmentation'
+- 'projection-head'
+- 'nt-xent'
+- 'linear-evaluation'
+compared_against:
+- LIT-tmpbdwjn
+summary: >-
+  Chen et al. (2020), [ARXIV-2002.05709](https://arxiv.org/abs/2002.05709). Strips contrastive learning to
+  augment, encode, project, NT-Xent — no memory bank, no special
+  architecture — and then ablates each piece. The two findings that
+  outlived the method: the augmentation pair is the pretext task, and the
+  projection head is a sacrificial layer you throw away.
+---
+
+# LIT-tmpwwvv6: A Simple Framework for Contrastive Learning of Visual Representations
+
+Chen et al. (2020) — [ARXIV-2002.05709](https://arxiv.org/abs/2002.05709)
+
+## Key takeaways
+
+- **The augmentation composition *is* the pretext task, and the paper proves
+  it by removing pieces.** No single transformation suffices, "even though
+  the model can almost perfectly identify the positive pairs" — solving the
+  task and learning the representation come apart. The composition that
+  stands out is random crop **with** colour distortion, and the reason is
+  a shortcut: crops of one image share a colour histogram, so colour alone
+  identifies the image (their Figure 6 shows the histograms separating), and
+  the network will take that route unless colour is destroyed.
+- **Contrastive learning wants *stronger* augmentation than supervised
+  learning, and the two preferences run opposite.** Across colour-distortion
+  strength 1/8 → 1, SimCLR's linear probe rises 59.6 → 64.5 while the
+  supervised model falls 77.0 → 75.4. AutoAugment — a policy *searched under
+  supervision* — is best for supervised (77.1) and worse than plain
+  crop+colour for SimCLR (61.1 vs 64.5). An augmentation policy is tuned to
+  an objective and does not port across one.
+- **The projection head improves the layer it is not.** Nonlinear head beats
+  linear by ~3% and beats no head by >10%; but the representation *before*
+  the head is >10% better than the one after. The mechanism is checked, not
+  conjectured: train an MLP to recover the applied transformation from each.
+  From `h`, rotation is recoverable at 67.6% (chance 25); from `g(h)`, 25.6%.
+  Original-vs-corrupted: 99.5 against 59.6. The head absorbs the invariance
+  the loss demands, and `h` keeps the information the loss would have thrown
+  away.
+- **Batch norm leaks the answer.** With per-device BN and positives computed
+  on the same device, "the model can exploit the local information leakage to
+  improve prediction accuracy without improving representations". SimCLR's
+  fix is to aggregate BN statistics globally. MoCo ([LIT-tmpbdwjn](LIT-tmpbdwjn.md)) hit the
+  same bug independently and fixed it by shuffling instead.
+- **Batch size buys convergence speed, not a ceiling.** Larger batches help
+  markedly at 100 epochs and the gaps "decrease or disappear" with longer
+  training. So more negatives is a statement about how fast you get there.
+  Compare [THEORY-085](../theory.d/THEORY-085.md), where the information-theoretic story has a `log N`
+  cap: two different reasons the negative count is not a quality dial.
+- **NT-Xent's temperature is doing hardness weighting.** ℓ2 normalisation
+  plus temperature weights examples by difficulty; logistic and margin losses
+  do not weigh negatives by relative hardness, "as a result, one must apply
+  semi-hard negative mining" for them. The temperature replaces a mining
+  procedure.
+- **Results, and the honest framing.** ResNet-50 (4×), 1000 epochs: **76.5%
+  ImageNet top-1** under linear evaluation, matching a supervised ResNet-50;
+  **85.8% top-5 fine-tuned on 1% of labels**. Unsupervised benefits *more*
+  from bigger models — the gap to supervised narrows as width and depth grow.
+  Training cost is the part usually left out: batch 4096 on 128 TPU v3 cores,
+  ~1.5 hours per 100 epochs.
+- **The paper's own summary of its contribution is a warning about
+  ablations:** "almost all individual components of our framework have
+  appeared in previous work… The superiority of our framework is not
+  explained by any single design choice, but by their composition."
+
+## Standing in the anthology
+
+Unit B of `#304`. Sources [SOTA-tmp6nbsn](../practices.d/SOTA-tmp6nbsn.md) (augmentation as the pretext task),
+[SOTA-tmpca2pu](../practices.d/SOTA-tmpca2pu.md) (the sacrificial projection head) and, with [LIT-tmpbdwjn](LIT-tmpbdwjn.md),
+[SOTA-tmpw2bcy](../practices.d/SOTA-tmpw2bcy.md) (the batch-norm leak).
+
+`compared_against: LIT-tmpbdwjn` because SimCLR's state-of-the-art table runs
+the comparison directly (`ADR-011`); MoCo could not have run the converse, as
+it is the earlier paper.
+
+Note also what SimCLR says about the mutual-information framing that
+[THEORY-085](../theory.d/THEORY-085.md) files: "it is not clear if the success of contrastive approaches
+is determined by the mutual information, or by the specific form of the
+contrastive loss". That scepticism is contemporary with the method, not a
+later revision.

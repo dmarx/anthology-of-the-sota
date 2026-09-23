@@ -4,7 +4,7 @@
 
 **inference-optimization**.
 
-19 of 304 NOTE documents. Back to the [full index](../README.md).
+20 of 306 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -27,3 +27,4 @@
 | [NOTE-291](../../../record/notes.d/NOTE-291.md) | Matryoshka Representation Learning | Sum the task loss over log(d) nested prefixes of one embedding, and each prefix matches a separately trained model of that width on ResNet50 and ImageNet. Retrieval that shortlists on 16 dimensions and re-ranks on 2048 is 14× faster at equal mAP@10. Read §1–6 and Appendices D.2 and I; the remaining appendix tables were skimmed. | Read |
 | [NOTE-293](../../../record/notes.d/NOTE-293.md) | Gemma 3n | Per-Layer Embeddings: every token id indexes a table with one 256-d vector per layer, gated into the residual at each layer, about 2.35B parameters held off the accelerator. No measurements are published. Read from the model overview, the developer guide, and the Hugging Face `transformers` implementation, which is the only place the mechanism is fully specified. | Read |
 | [NOTE-294](../../../record/notes.d/NOTE-294.md) | XGrammar | Grammar-constrained decoding made nearly free. It splits the vocabulary into tokens whose validity depends only on the automaton's stack top, which are precomputed, and the under-1% that need the full stack, which are checked at runtime. The mask is built on the CPU during the forward pass. Each optimization is ablated. Output quality is measured only as syntactic validity. Read §1–6; the appendix was not read. | Read |
+| [NOTE-305](../../../record/notes.d/NOTE-305.md) | MARLIN | An FP16×INT4 GEMM kernel that stays memory-bound, and so near the 3.87× ideal 4-bit speed-up, up to batch 16–32 on a large layer, decaying toward 1.5× at 128. End-to-end in vLLM the same shape holds on four GPU classes (Table 2): 2.3–3.2× single-GPU at batch ≤16, 1.1–1.2× at 128, and much less when the model is sharded over eight A100s. The INT4 model it serves loses 3.3 points of mean accuracy (Table 1). | Read |

@@ -2,7 +2,7 @@
 
 # Lines of work
 
-31 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+33 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -93,6 +93,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-036](../record/literature.d/LIT-036.md) — Denoising Diffusion Probabilistic Models *(Active)*
     - [LIT-446](../record/literature.d/LIT-446.md) — Variational Diffusion Models *(Active)*
 
+### From High-Resolution Image Synthesis with Latent Diffusion Models
+
+- [LIT-062](../record/literature.d/LIT-062.md) — High-Resolution Image Synthesis with Latent Diffusion Models *(Active)*
+  - [LIT-566](../record/literature.d/LIT-566.md) — SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis *(Active)*
+
 ### From Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise
 
 - [LIT-553](../record/literature.d/LIT-553.md) — Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise *(Active)*
@@ -136,6 +141,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-469](../record/literature.d/LIT-469.md) — Large Language Models are Zero-Shot Reasoners *(Active)*
 
 ## inference-optimization
+
+### From GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers
+
+- [LIT-081](../record/literature.d/LIT-081.md) — GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers *(Active)*
+  - [LIT-567](../record/literature.d/LIT-567.md) — MARLIN: Mixed-Precision Auto-Regressive Parallel Inference on Large Language Models *(Active)*
 
 ### From Matryoshka Representation Learning
 
@@ -181,6 +191,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-561](../record/literature.d/LIT-561.md) — A Style-Based Generator Architecture for Generative Adversarial Networks *(Active)*
   - [LIT-560](../record/literature.d/LIT-560.md) — Analyzing and Improving the Image Quality of StyleGAN *(Active)*
     - [LIT-559](../record/literature.d/LIT-559.md) — Alias-Free Generative Adversarial Networks *(Active)*
+
+## numerics-and-precision
+
+### From GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers
+
+- [LIT-081](../record/literature.d/LIT-081.md) — GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers *(Active)*
+  - [LIT-567](../record/literature.d/LIT-567.md) — MARLIN: Mixed-Precision Auto-Regressive Parallel Inference on Large Language Models *(Active)*
 
 ## representation-and-encoding
 

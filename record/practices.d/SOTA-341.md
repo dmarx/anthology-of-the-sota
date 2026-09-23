@@ -1,5 +1,8 @@
 ---
+number: 341
 status: Proposed
+formerly:
+- SOTA-tmpalcy0
 promote_when: >-
   An ablation by another group on a text-to-image model, not
   class-conditional ImageNet alone, comparing size conditioning against
@@ -14,9 +17,9 @@ tags:
 - vision-and-graphics
 date: '2026-09-23'
 source:
-- LIT-tmpcxaow
+- LIT-566
 introduced_by:
-- LIT-tmpcxaow
+- LIT-566
 consensus: unassessed
 consensus_note: >-
   SDXL ships it. Whether later image models kept micro-conditioning has not
@@ -24,7 +27,7 @@ consensus_note: >-
 implementations:
 - SDXL
 summary: >-
-  Podell et al. (2023), [LIT-tmpcxaow](../literature.d/LIT-tmpcxaow.md) — embed each training image's original
+  Podell et al. (2023), [LIT-566](../literature.d/LIT-566.md) — embed each training image's original
   height and width, like the timestep, and give it to the model. Then keep
   the small images that a minimum-resolution filter would drop (39% of
   SDXL's pretraining data below 256²) without teaching the model their
@@ -33,11 +36,11 @@ summary: >-
   with size conditioning.
 ---
 
-# SOTA-tmpalcy0: Condition an image generator on each training image's original size instead of discarding or upsampling small images
+# SOTA-341: Condition an image generator on each training image's original size instead of discarding or upsampling small images
 
 ## Source
 
-Podell et al. (2023), [LIT-tmpcxaow](../literature.d/LIT-tmpcxaow.md) — SDXL. Read as [NOTE-tmpwcj43](../notes.d/NOTE-tmpwcj43.md).
+Podell et al. (2023), [LIT-566](../literature.d/LIT-566.md) — SDXL. Read as [NOTE-306](../notes.d/NOTE-306.md).
 
 ## The practice
 

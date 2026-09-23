@@ -1,5 +1,8 @@
 ---
+number: 340
 status: Proposed
+formerly:
+- SOTA-tmp0m39u
 promote_when: >-
   An independent serving benchmark, on more than one GPU class, measuring
   the speed-up of 4-bit weight-only kernels over FP16 against batch size,
@@ -14,9 +17,9 @@ tags:
 - systems-optimization
 date: '2026-09-23'
 source:
-- LIT-tmpjvhmz
+- LIT-567
 introduced_by:
-- LIT-tmpjvhmz
+- LIT-567
 consensus: unassessed
 consensus_note: >-
   MARLIN is integrated in vLLM, which is adoption. Where the field stands
@@ -25,7 +28,7 @@ consensus_note: >-
 implementations:
 - vLLM
 summary: >-
-  Frantar et al. (2024), [LIT-tmpjvhmz](../literature.d/LIT-tmpjvhmz.md) — weight-only quantization speeds up
+  Frantar et al. (2024), [LIT-567](../literature.d/LIT-567.md) — weight-only quantization speeds up
   decoding by loading fewer bytes, so the gain lasts only while the layer is
   memory-bound. A kernel designed to stay memory-bound (MARLIN) holds about
   3.9× over FP16 up to batch 16–32 on an A10, decaying toward 1.5× at 128.
@@ -34,11 +37,11 @@ summary: >-
   actually serve, and pay for it in accuracy only where it buys speed.
 ---
 
-# SOTA-tmp0m39u: Expect weight-only 4-bit quantization to speed up batched serving only while the batch keeps the matmul memory-bound, and use a kernel built to stay there
+# SOTA-340: Expect weight-only 4-bit quantization to speed up batched serving only while the batch keeps the matmul memory-bound, and use a kernel built to stay there
 
 ## Source
 
-Frantar et al. (2024), [LIT-tmpjvhmz](../literature.d/LIT-tmpjvhmz.md) — MARLIN. Read, as [NOTE-tmpngzlz](../notes.d/NOTE-tmpngzlz.md).
+Frantar et al. (2024), [LIT-567](../literature.d/LIT-567.md) — MARLIN. Read, as [NOTE-305](../notes.d/NOTE-305.md).
 The quantization itself is [SOTA-185](SOTA-185.md) (GPTQ).
 
 ## The practice

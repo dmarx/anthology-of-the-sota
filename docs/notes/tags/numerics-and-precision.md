@@ -4,7 +4,7 @@
 
 **numerics-and-precision**.
 
-5 of 304 NOTE documents. Back to the [full index](../README.md).
+6 of 306 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -13,3 +13,4 @@
 | [NOTE-168](../../../record/notes.d/NOTE-168.md) | The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits | Ternary weights trained from scratch, matching FP16 from 3B upward at equal size and tokens. The interesting claim is not the compression ratio but that the matrix multiply becomes integer addition — which is a bet on hardware, and the one place the paper's argument outruns its measurements. | Read |
 | [NOTE-222](../../../record/notes.d/NOTE-222.md) | Quantized Evolution Strategies | Reading it: the memory trick is the contribution, not the error feedback. Error feedback is 1-bit SGD's, correctly credited; what is new is refusing to store the accumulator at all and rebuilding it from seeds, which is the only reason the method fits in the memory budget that motivated it. | Read |
 | [NOTE-257](../../../record/notes.d/NOTE-257.md) | SVDQuant: a low-rank branch on the weights, not on the error | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist. The idea that travels is an ordering: decompose the weights and quantize the residual, rather than quantize and then patch the error. Two propositions and Eckart-Young say why, and a published method that does it the other way round is the control. | Read |
+| [NOTE-305](../../../record/notes.d/NOTE-305.md) | MARLIN | An FP16×INT4 GEMM kernel that stays memory-bound, and so near the 3.87× ideal 4-bit speed-up, up to batch 16–32 on a large layer, decaying toward 1.5× at 128. End-to-end in vLLM the same shape holds on four GPU classes (Table 2): 2.3–3.2× single-GPU at batch ≤16, 1.1–1.2× at 128, and much less when the model is sharded over eight A100s. The INT4 model it serves loses 3.3 points of mean accuracy (Table 1). | Read |

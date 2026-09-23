@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**184 document(s) awaiting a decision.**
+**186 document(s) awaiting a decision.**
 
 ## SOTAs
 
-115 of the 184.
+117 of the 186.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -128,10 +128,12 @@
 | 2026-09-23 | Proposed | [SOTA-333](../../record/practices.d/SOTA-333.md) | 3 | 0 | For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history |
 | 2026-09-23 | Proposed | [SOTA-334](../../record/practices.d/SOTA-334.md) | 3 | 0 | In a style-modulated generator, demodulate the convolution weights instead of instance-normalizing the activations |
 | 2026-09-23 | Proposed | [SOTA-339](../../record/practices.d/SOTA-339.md) | 2 | 0 | For unpaired image-to-image translation of appearance, constrain both mappings with a cycle-consistency loss |
+| 2026-09-23 | Proposed | [SOTA-340](../../record/practices.d/SOTA-340.md) | 1 | 0 | Expect weight-only 4-bit quantization to speed up batched serving only while the batch keeps the matmul memory-bound, and use a kernel built to stay there |
+| 2026-09-23 | Proposed | [SOTA-341](../../record/practices.d/SOTA-341.md) | 1 | 0 | Condition an image generator on each training image's original size instead of discarding or upsampling small images |
 
 ## THEORYs
 
-47 of the 184.
+47 of the 186.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -185,7 +187,7 @@
 
 ## LITs
 
-3 of the 184.
+3 of the 186.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -195,7 +197,7 @@
 
 ## ADRs
 
-19 of the 184.
+19 of the 186.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

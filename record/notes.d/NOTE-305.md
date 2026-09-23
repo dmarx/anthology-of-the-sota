@@ -1,6 +1,9 @@
 ---
+number: 305
 status: Read
-paper: LIT-tmpjvhmz
+formerly:
+- NOTE-tmpngzlz
+paper: LIT-567
 title: 'MARLIN'
 version: 1
 date: '2026-09-23'
@@ -13,7 +16,7 @@ summary: >-
   serves loses 3.3 points of mean accuracy (Table 1).
 ---
 
-# NOTE-tmpngzlz: MARLIN
+# NOTE-305: MARLIN
 
 ## Contribution
 

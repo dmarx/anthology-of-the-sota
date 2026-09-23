@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-301 of 304 NOTE documents. Back to the [full index](../README.md).
+303 of 306 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -311,3 +311,5 @@
 | [NOTE-302](../../../record/notes.d/NOTE-302.md) | CycleGAN | Unpaired translation with two adversarial losses and a bidirectional cycle-consistency loss. It works for appearance changes and fails for geometric ones. The ablation supports the cycle term against GAN-only, but not strictly the bidirectional form over one direction. Read §1–6; the appendix was skimmed. | Read |
 | [NOTE-303](../../../record/notes.d/NOTE-303.md) | Projected GAN | A GAN discriminator on frozen, randomly mixed, multi-scale pretrained features reaches prior-best FIDs up to 40× faster and sets new FIDs on 22 datasets. Everything is measured in FID or ImageNet-derived metrics, and the discriminator is ImageNet-pretrained, which [LIT-563](../../../record/literature.d/LIT-563.md) later shows distorts FID. Read §1–5; the appendix was not read. | Read |
 | [NOTE-304](../../../record/notes.d/NOTE-304.md) | The Role of ImageNet Classes in FID | FID can be lowered by two-thirds without changing a generator, by resampling its outputs to match ImageNet-class statistics. Non-ImageNet feature spaces barely move. An ImageNet-pretrained discriminator gets the same effect by accident. Read §1–5; the appendices were skimmed. | Read |
+| [NOTE-305](../../../record/notes.d/NOTE-305.md) | MARLIN | An FP16×INT4 GEMM kernel that stays memory-bound, and so near the 3.87× ideal 4-bit speed-up, up to batch 16–32 on a large layer, decaying toward 1.5× at 128. End-to-end in vLLM the same shape holds on four GPU classes (Table 2): 2.3–3.2× single-GPU at batch ≤16, 1.1–1.2× at 128, and much less when the model is sharded over eight A100s. The INT4 model it serves loses 3.3 points of mean accuracy (Table 1). | Read |
+| [NOTE-306](../../../record/notes.d/NOTE-306.md) | SDXL | A larger latent diffusion UNet with two text encoders, micro-conditioning on original size and crop, multi-aspect training and a refiner. Size conditioning is ablated on ImageNet: most of the gain is from keeping the data, and conditioning adds about 3 FID. Read §1–2.5 and Appendix B; the rest was skimmed. | Read |

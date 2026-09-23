@@ -1,6 +1,9 @@
 ---
+number: 306
 status: Read
-paper: LIT-tmpcxaow
+formerly:
+- NOTE-tmpwcj43
+paper: LIT-566
 title: 'SDXL'
 version: 1
 date: '2026-09-23'
@@ -12,7 +15,7 @@ summary: >-
   rest was skimmed.
 ---
 
-# NOTE-tmpwcj43: SDXL
+# NOTE-306: SDXL
 
 ## Contribution
 

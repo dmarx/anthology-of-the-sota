@@ -7,22 +7,28 @@ consensus: universal
 consensus_note: >-
   Not doing it is what needs justifying, and the record can show the
   descendants rather than assert it: every contrastive document `#304` filed
-  — `SOTA-360`, `SOTA-359`, `SOTA-363`, `SOTA-tmpgxyyv` — scores against
+  — `SOTA-360`, `SOTA-359`, `SOTA-363`, `SOTA-376` — scores against
   sampled negatives rather than normalising over a full candidate set, and
   CLIP (`LIT-588`) cites this line by name for its loss. What is *not*
   converged is the second half of the title: the guidance that `k` should
   fall as data grows is rarely restated and the vision line assumed the
   opposite. Read as of 2026-09.
 title: 'Sample a handful of negatives instead of normalizing over the vocabulary, and let the count fall as the data grows'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Re-sourced from LIT-609 to LIT-603, the same paper filed first; LIT-609
+    is retired as its duplicate. The practice is unchanged.
 tags:
 - representation-and-encoding
 - training-optimization
 date: '2026-09-23'
 source:
-- LIT-609
+- LIT-603
 introduced_by:
-- LIT-609
+- LIT-603
 implementations: []
 ---
 
@@ -30,7 +36,7 @@ implementations: []
 
 ## Source
 
-Mikolov et al. (2013), [LIT-609](../literature.d/LIT-609.md) — [ARXIV-1310.4546](https://arxiv.org/abs/1310.4546), §2.2.
+Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md) — [ARXIV-1310.4546](https://arxiv.org/abs/1310.4546), §2.2.
 
 ## The claim
 
@@ -80,10 +86,12 @@ hyperparameter rather than a principle.
   calibrated probability over the vocabulary, this is the wrong objective and
   the paper would agree.
 - **It is not the same experiment as the vision line**, and the record should
-  not pretend otherwise. `SOTA-tmptiobf` measures batch-size saturation for
+  not pretend otherwise. `SOTA-377` measures batch-size saturation for
   image-text contrastive pretraining; this measures `k` for skip-gram. They
   agree in direction and nobody has connected them.
 
 ## Known implementations
 
 -
+
+<!-- inactive-ok-file: LIT-609 — Superseded as a duplicate of LIT-603; named where the record says so -->

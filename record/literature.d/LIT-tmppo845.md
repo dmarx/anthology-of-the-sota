@@ -1,0 +1,88 @@
+---
+status: Active
+title: 'FLUX.2: Analyzing and Enhancing the Latent Space of FLUX – Representation Comparison'
+version: 1
+tags:
+- generative-modeling
+- representation-and-encoding
+- analysis-and-evaluation
+date: '2026-09-23'
+published: '2025-11-25'
+# A technical report published on BFL's site, never on arXiv (ADR-009). The
+# page embeds the report from /techblog/representation-comparison/index.html.
+url: 'https://bfl.ai/research/representation-comparison'
+first_author: 'Black Forest Labs'
+keywords:
+- 'flux'
+- 'autoencoder'
+- 'latent-space'
+- 'learnability'
+- 'timestep-shift'
+- 'repa'
+implementations:
+- FLUX.2
+extends:
+- LIT-tmpyiwh4
+summary: >-
+  Black Forest Labs (2025), technical report. DiT-XL flow models on ImageNet
+  256² in four latent spaces (SD-VAE, FLUX.1-VAE, FLUX.2-VAE, RAE), 30
+  configurations each: training timestep distribution, training shift and
+  sampling shift, with and without REPA. The training shift moves FID by
+  61–86%, and without tuning it per space the rankings flip. FLUX.1's VAE
+  reconstructs far better than SD's and is less learnable (gFID 10.1 against
+  7.7). FLUX.2's VAE, with 8× SD's dimensionality and semantic
+  regularization, gets both (LPIPS 0.27, gFID 3.7). FLUX.2 is that latent
+  plus Mistral-3 24B and a rectified-flow transformer.
+---
+
+# LIT-tmppo845: FLUX.2: Analyzing and Enhancing the Latent Space of FLUX – Representation Comparison
+
+Black Forest Labs (2025) — [url](https://bfl.ai/research/representation-comparison)
+
+## Key takeaways
+
+- **The trade-off:** a latent space is judged on learnability (how well a
+  generator learns in it), quality (reconstruction) and compression. They
+  conflict
+- **The setup:** a DiT-XL flow model on ImageNet 256², with a constant
+  learning rate of 1e-4, batch 256, 50 Euler steps and FID-50k. Each
+  autoencoder gets 3 timestep distributions (shifted uniform, logit-normal,
+  plateau logit-normal) × 5 training shifts × 5 sampling shifts, with and
+  without REPA. Sequence length is held at 256 tokens
+- **Reconstruction** (Table 1, LPIPS / PSNR / rFID): RAE 1.67 / 18.8 /
+  0.61. SD 0.95 / 25.1 / 0.65. FLUX.1 0.34 / 31.1 / 0.18. FLUX.2 0.27 /
+  31.5 / 0.11. RAE's rFID is good while its reference-based metrics are the
+  worst, which matters for editing
+- **Learnability** (Figure 1, gFID at the best configuration): RAE 3.10,
+  FLUX.2 3.70, SD 7.73, FLUX.1 10.13. Widening FLUX.1's bottleneck (4× the
+  latent dimension, weaker KL) for editing fidelity cost learnability
+- **Tuning matters more than the representation, at the margin:** the
+  best-to-worst training-shift gap is 61.5–86.4% relative FID. The training
+  distribution gap is 6.8–36.8%, with logit-normal or plateau logit-normal
+  always beating shifted uniform. The sampling-shift gap is 4.5–38.7%.
+  "Without shifting, RAE performs worse than the FLUX.2 AE with shifting,
+  whereas RAE outperforms the FLUX.2 AE if both are evaluated with optimal
+  parameters"
+- **REPA improves every latent space**, RAE included
+- **FLUX.2:** Mistral-3 24B VLM and a rectified-flow transformer (SwiGLU,
+  a global modulation mechanism), in this latent. Human-preference win rates
+  against open-weight models are 59.8–66.6%
+
+## Standing in the anthology
+
+**Filed from `#163`** (the stable diffusion lineage, "flux2"). FLUX.2 has
+no paper. This report is BFL's technical account of it, and the
+announcement post adds nothing measurable. It `extends` Kontext
+([LIT-tmpyiwh4](LIT-tmpyiwh4.md)), whose VAE it re-examines. It sources [SOTA-tmprnub7](../practices.d/SOTA-tmprnub7.md).
+
+**The √(m/n) claim is weaker than the report makes it sound.** It says the
+optimal training shift for SD and RAE is "consistent with" α = √(m/n) from
+latent dimensionality. But SD's optimum is α = 1, the baseline itself.
+RAE's predicted √(768/16) = 6.93 is the largest value in the grid, and the
+report says RAE's true optimum "might be even higher". FLUX.2 prefers 4.63
+against a prediction of 2.82. This bears on [SOTA-263](../practices.d/SOTA-263.md), whose correspondence
+it extends from resolution to channels without testing it.
+
+Read — [NOTE-tmpcr5tq](../notes.d/NOTE-tmpcr5tq.md).
+<!-- inactive-ok-file: SOTA-tmprnub7 — Proposed, filed in this same contribution from this report -->
+<!-- inactive-ok-file: SOTA-263 — Proposed, cited because this report bears on its correspondence without settling it -->

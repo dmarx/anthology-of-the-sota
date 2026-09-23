@@ -1,0 +1,74 @@
+---
+status: Active
+title: 'FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space'
+version: 1
+tags:
+- generative-modeling
+- vision-and-graphics
+date: '2026-09-23'
+published: '2025-06-01'
+arxiv: '2506.15742'
+first_author: 'Black Forest Labs'
+keywords:
+- 'flux'
+- 'rectified-flow'
+- 'image-editing'
+- 'in-context-generation'
+- 'sequence-concatenation'
+implementations:
+- FLUX.1
+extends:
+- LIT-449
+summary: >-
+  Black Forest Labs (2025), [ARXIV-2506.15742](https://arxiv.org/abs/2506.15742). The only paper describing
+  FLUX.1: a 12B rectified-flow transformer in a 16-channel VAE latent, with
+  double-stream then 38 single-stream blocks, fused feed-forward layers and
+  3D RoPE. Kontext fine-tunes it for editing by appending context-image
+  latents to the sequence, offset by a "virtual time step" in RoPE. The
+  evidence is human preference against other systems and a reconstruction
+  table. It has no ablations.
+extended_by:
+- LIT-tmppo845
+---
+
+# LIT-tmpyiwh4: FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space
+
+Black Forest Labs (2025) — [ARXIV-2506.15742](https://arxiv.org/abs/2506.15742)
+
+## Key takeaways
+
+- **FLUX.1** (§2): a rectified-flow transformer in the SD3 lineage
+  ([LIT-449](LIT-449.md)). The convolutional autoencoder is trained from scratch at 16
+  latent channels. The transformer has double-stream blocks (separate
+  weights for text and image, joint attention), then 38 single-stream
+  blocks. The single-stream feed-forward is fused with the attention
+  projections for larger matmuls. 3D RoPE indexes (t, h, w)
+- **Reconstruction** (Table 1, 4096 ImageNet images): FLUX-VAE PSNR 31.1,
+  against 29.6 for SD3's VAE and 25.9 for SDXL's
+- **Kontext** (§3): context-image tokens are appended to the target tokens,
+  with RoPE time index i for the i-th context image. It is trained with the
+  rectified-flow loss from a text-to-image checkpoint on "millions" of
+  curated pairs, then distilled with LADD for few-step sampling.
+  Channel-wise concatenation "was also tested" and did worse in initial
+  experiments. No numbers are given
+- **Appendix A.2:** SD3's resolution shift α of timesteps sampled from a
+  logit-normal is the same as a logit-normal with μ + log α. This is the
+  identity the FLUX.2 report ([LIT-tmppo845](LIT-tmppo845.md)) builds its sweep on
+- **Evaluation:** KontextBench, 1026 crowd-sourced image-prompt pairs, with
+  human preference and latency against GPT-Image-1, Gen-4 and others. It
+  leads on local and text editing and character reference, and is second on
+  global editing and style reference
+
+## Standing in the anthology
+
+**Filed from `#163`** (the stable diffusion lineage, "flux1"). FLUX.1
+itself was released without a paper, and this is the document BFL asks to be
+cited for it. It `extends` SD3 ([LIT-449](LIT-449.md)) and is `extended_by` the FLUX.2
+latent-space report.
+
+**No practice.** Every design choice here is asserted, not ablated, and
+the comparisons are against other systems. Sequence concatenation for
+editing is widely adopted since, and that adoption is not evidence
+([DP-005](../../docs/design-principles.md#dp-5)).
+
+Read — [NOTE-tmp3y8t2](../notes.d/NOTE-tmp3y8t2.md).

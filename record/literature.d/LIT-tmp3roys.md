@@ -1,0 +1,76 @@
+---
+status: Active
+title: 'Exploring Simple Siamese Representation Learning'
+version: 1
+tags:
+- representation-and-encoding
+- model-stability
+- vision-and-graphics
+date: '2026-09-23'
+published: '2020-11-01'
+arxiv: '2011.10566'
+first_author: 'Chen'
+keywords:
+- 'siamese-networks'
+- 'stop-gradient'
+- 'representation-collapse'
+- 'self-supervised-learning'
+extends:
+- LIT-tmpawe8p
+summary: >-
+  Chen & He (2020), [ARXIV-2011.10566](https://arxiv.org/abs/2011.10566). Strips a joint-embedding method to
+  nothing: no negatives, no large batch, no momentum encoder — shared
+  weights, a predictor on one side, a stop-gradient on the other. It works,
+  which makes stop-gradient the candidate for the load-bearing piece, and
+  contradicts BYOL's account of its own method.
+---
+
+# LIT-tmp3roys: Exploring Simple Siamese Representation Learning
+
+Chen & He (2020) — [ARXIV-2011.10566](https://arxiv.org/abs/2011.10566)
+
+## Key takeaways
+
+- **The paper is a subtraction, and the subtraction is the result.** SimSiam
+  is "BYOL without the momentum encoder": one shared-weight encoder, a
+  prediction MLP on one branch, a stop-gradient on the other, maximise
+  similarity. It uses **none** of (i) negative pairs, (ii) large batches,
+  (iii) momentum encoders — the three mechanisms the field had offered as
+  the reason collapse does not happen — and it still learns.
+- **Stop-gradient is the piece that cannot be removed, and the failure is
+  instant.** With architecture and every hyperparameter held fixed, removing
+  it means "the optimizer quickly finds a degenerated solution and reaches
+  the minimum possible loss of −1".
+- **The collapse detector is three lines and is the most portable thing
+  here.** Take the ℓ2-normalised output and measure its per-channel standard
+  deviation across samples. Collapsed to a constant → **0**. Scattered on the
+  unit hypersphere as a zero-mean isotropic Gaussian would be → **1/√d**.
+  The paper's own runs sit at 1/√d with stop-gradient and at 0 without it.
+  Filed as [SOTA-tmp3wrpo](../practices.d/SOTA-tmp3wrpo.md).
+- **It names the confound that hid this.** A momentum encoder "is always
+  accompanied with stop-gradient (as it is not updated by its parameters'
+  gradients)", so any experiment attributing the effect to momentum was
+  attributing it to a bundle. Removing the bundle and keeping only the
+  stop-gradient is the experiment nobody had run.
+- **The hypothesis is an alternating optimisation, and it is offered as a
+  hypothesis.** SimSiam is proposed as EM-like over two variable sets,
+  "analogous to k-means clustering" — `θ` plays the cluster centres, the
+  per-image variable plays the assignments — with the alternation interval
+  set to one SGD step. Proof-of-concept experiments follow; the paper does
+  not claim to have proved it.
+- **The direct empirical disagreement with BYOL.** BYOL reports that
+  removing its momentum encoder gives **0.3%** accuracy. SimSiam is that
+  removal and reports **67.7%** at 100 epochs (68.1% with BN on the projector
+  output, its default). Both papers are from careful groups and the discrepancy
+  <!-- inactive-ok: THEORY-tmpf89jm — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
+  is not resolved in either; [THEORY-tmpf89jm](../theory.d/THEORY-tmpf89jm.md) is where the record keeps it.
+
+## Standing in the anthology
+
+Unit C of `#304`. Declares `extends: LIT-tmpawe8p` because it is
+structurally BYOL minus one component; the disagreement about what that
+component does is prose here and a `Proposed` theory document there, rather
+than a `corrects` edge, because neither paper's *measurements* are in
+question — only their accounts.
+
+Sources [SOTA-tmp1kmsu](../practices.d/SOTA-tmp1kmsu.md) with BYOL, and [SOTA-tmp3wrpo](../practices.d/SOTA-tmp3wrpo.md) alone.

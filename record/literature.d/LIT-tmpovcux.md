@@ -1,0 +1,70 @@
+---
+status: Active
+title: 'Barlow Twins: Self-Supervised Learning via Redundancy Reduction'
+version: 1
+tags:
+- representation-and-encoding
+- model-stability
+- vision-and-graphics
+date: '2026-09-23'
+published: '2021-03-01'
+arxiv: '2103.03230'
+first_author: 'Zbontar'
+keywords:
+- 'redundancy-reduction'
+- 'cross-correlation'
+- 'representation-collapse'
+- 'self-supervised-learning'
+summary: >-
+  Zbontar et al. (2021), [ARXIV-2103.03230](https://arxiv.org/abs/2103.03230). Removes every asymmetry — no
+  predictor, no stop-gradient, no moving average — and prevents collapse in
+  the objective instead: drive the cross-correlation matrix between the two
+  branches' outputs toward the identity. 73.2% ImageNet linear, and unlike
+  its neighbours it wants a very high-dimensional output.
+compared_against:
+- LIT-tmpipfcy
+---
+
+# LIT-tmpovcux: Barlow Twins: Self-Supervised Learning via Redundancy Reduction
+
+Zbontar et al. (2021) — [ARXIV-2103.03230](https://arxiv.org/abs/2103.03230)
+
+## Key takeaways
+
+- **The loss does the work the architecture was doing.** Compute the
+  cross-correlation matrix `C` between the two branches' outputs across the
+  batch, then
+
+      L = Σ_i (1 − C_ii)²  +  λ · Σ_i Σ_{j≠i} C_ij²
+
+  The diagonal term makes the embedding invariant to the distortion; the
+  off-diagonal term decorrelates the components, and it is the off-diagonal
+  term that makes constant outputs unavailable. Named for Barlow's
+  redundancy-reduction principle.
+- **It needs none of the asymmetries.** No predictor network, no gradient
+  stopping, no moving average on the weights, no large batches. Taken with
+  [LIT-tmp3roys](LIT-tmp3roys.md) this is the useful contrast: SimSiam shows you can drop
+  negatives if you keep an asymmetry; Barlow Twins shows you can drop the
+  asymmetry too if the loss forbids the trivial answer directly.
+- **It wants a very high-dimensional projector output, which is the opposite
+  of its neighbours.** For BYOL and SimCLR "the projector network drastically
+  reduces the dimensionality of the ResNet output"; here performance keeps
+  improving with dimension, in the paper's words "in stark contrast". That
+  makes sense of the mechanism — the off-diagonal term is a budget of
+  decorrelated directions, and more directions is more capacity for it.
+- **Not free of the augmentation dependence.** The authors report the method
+  "is not robust to removing some types of data augmentations, like SimCLR
+  but unlike BYOL", and say so as a disadvantage. So the loss-side fix buys
+  independence from architectural tricks, not from [SOTA-tmp6nbsn](../practices.d/SOTA-tmp6nbsn.md).
+- **Numbers and protocol.** 73.2% ImageNet top-1 under linear evaluation,
+  ResNet-50, 1000 epochs, batch 2048 with LARS, following BYOL's optimisation
+  recipe. Competitive rather than dominant, which is the point: four very
+  different anti-collapse mechanisms land within a couple of points.
+
+## Standing in the anthology
+
+Unit C of `#304`. Sources [SOTA-tmpacu6q](../practices.d/SOTA-tmpacu6q.md) with [LIT-tmpipfcy](LIT-tmpipfcy.md), and supplies the
+<!-- inactive-ok: THEORY-tmpf89jm — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
+second family in [THEORY-tmpf89jm](../theory.d/THEORY-tmpf89jm.md)'s dispute — the one that makes the
+architectural accounts look less like explanations of collapse-avoidance in
+general and more like explanations of one family's version of it.

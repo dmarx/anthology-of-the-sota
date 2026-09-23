@@ -21,7 +21,7 @@ history:
 - version: 3
   date: '2026-09-23'
   note: >-
-    `extends` THEORY-tmpismnk, the factorization result its skip-gram half
+    `extends` THEORY-093, the factorization result its skip-gram half
     rests on. Unchanged otherwise.
 tags:
 - representation-and-encoding
@@ -33,7 +33,7 @@ source:
 - LIT-603
 - LIT-607
 extends:
-- THEORY-tmpismnk
+- THEORY-093
 summary: >-
   Pennington et al. (2014), [LIT-602](../literature.d/LIT-602.md), and Mikolov et al. (2013),
   [LIT-603](../literature.d/LIT-603.md) — what distinguishes words is the ratio of how often they
@@ -77,7 +77,7 @@ river → Volga River).
 ## What it rests on
 
 For skip-gram, the premise that dot products fit a log co-occurrence
-statistic is [THEORY-tmpismnk](THEORY-tmpismnk.md): SGNS's optimum is w·c = PMI(w, c) − log k.
+statistic is [THEORY-093](THEORY-093.md): SGNS's optimum is w·c = PMI(w, c) − log k.
 This account `extends` that one. It adds that ratios of those statistics
 become vector offsets.
 

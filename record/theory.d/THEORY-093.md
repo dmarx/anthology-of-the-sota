@@ -1,5 +1,8 @@
 ---
+number: 93
 status: Active
+formerly:
+- THEORY-tmpismnk
 title: 'Skip-gram with negative sampling implicitly factorizes the word-context PMI matrix shifted by log k, weighting frequent pairs more heavily'
 version: 1
 tags:
@@ -7,9 +10,9 @@ tags:
 - signal-structure
 date: '2026-09-23'
 source:
-- LIT-tmppsaaa
+- LIT-612
 summary: >-
-  Levy and Goldberg (2014), [LIT-tmppsaaa](../literature.d/LIT-tmppsaaa.md) — setting the derivative of SGNS's
+  Levy and Goldberg (2014), [LIT-612](../literature.d/LIT-612.md) — setting the derivative of SGNS's
   per-pair objective to zero gives w·c = PMI(w, c) − log k, with k the number
   of negatives. So word2vec's skip-gram is a factorization of the matrix
   count-based methods use, shifted by a constant, with each pair's error
@@ -21,11 +24,11 @@ extended_by:
 - THEORY-092
 ---
 
-# THEORY-tmpismnk: Skip-gram with negative sampling implicitly factorizes the word-context PMI matrix shifted by log k, weighting frequent pairs more heavily
+# THEORY-093: Skip-gram with negative sampling implicitly factorizes the word-context PMI matrix shifted by log k, weighting frequent pairs more heavily
 
 ## Source
 
-Levy and Goldberg (2014), [LIT-tmppsaaa](../literature.d/LIT-tmppsaaa.md), read as [NOTE-tmpqkikb](../notes.d/NOTE-tmpqkikb.md).
+Levy and Goldberg (2014), [LIT-612](../literature.d/LIT-612.md), read as [NOTE-331](../notes.d/NOTE-331.md).
 
 ## The account
 

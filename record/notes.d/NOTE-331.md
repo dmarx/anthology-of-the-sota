@@ -1,6 +1,9 @@
 ---
+number: 331
 status: 'Read'
-paper: 'LIT-tmppsaaa'
+formerly:
+- NOTE-tmpqkikb
+paper: 'LIT-612'
 title: 'Levy & Goldberg: SGNS as implicit PMI factorization'
 version: 1
 date: '2026-09-23'
@@ -11,7 +14,7 @@ summary: >-
   edge on syntactic analogies. Read in full.
 ---
 
-# NOTE-tmpqkikb: Levy & Goldberg: SGNS as implicit PMI factorization
+# NOTE-331: Levy & Goldberg: SGNS as implicit PMI factorization
 
 ## Contribution
 

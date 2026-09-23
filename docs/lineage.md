@@ -351,10 +351,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 ### From GloVe: Global Vectors for Word Representation
 
 - [LIT-602](../record/literature.d/LIT-602.md) — GloVe: Global Vectors for Word Representation *(Active)*
-  - [LIT-607](../record/literature.d/LIT-607.md) — Improving Distributional Similarity with Lessons Learned from Word Embeddings *(Active)* — also extends LIT-608
+  - [LIT-607](../record/literature.d/LIT-607.md) — Improving Distributional Similarity with Lessons Learned from Word Embeddings *(Active)* — also extends LIT-608, LIT-612
 - [LIT-604](../record/literature.d/LIT-604.md) — Efficient Estimation of Word Representations in Vector Space *(Active)*
   - [LIT-603](../record/literature.d/LIT-603.md) — Distributed Representations of Words and Phrases and their Compositionality *(Active)*
 - [LIT-608](../record/literature.d/LIT-608.md) — Don't count, predict! A systematic comparison of context-counting vs. context-predicting semantic vectors *(Active)*
+- [LIT-612](../record/literature.d/LIT-612.md) — Neural Word Embedding as Implicit Matrix Factorization *(Active)*
 
 ### From Efficient Estimation of Word Representations in Vector Space
 

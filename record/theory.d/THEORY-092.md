@@ -16,7 +16,7 @@ history:
 - version: 2
   date: '2026-09-23'
   note: >-
-    `extends` THEORY-tmpismnk, the factorization result it uses to equate
+    `extends` THEORY-093, the factorization result it uses to equate
     negative sampling with smoothed PMI, filed after it.
 tags:
 - signal-structure
@@ -25,7 +25,7 @@ date: '2026-09-23'
 source:
 - LIT-607
 extends:
-- THEORY-tmpismnk
+- THEORY-093
 explains:
 - SOTA-375
 summary: >-
@@ -55,7 +55,7 @@ weakness: it overweights infrequent events.
 Smoothing replaces P(c) with count(c)^α / Σ count^α, for α < 1. Rare
 contexts gain probability relative to frequent ones, so their PMI falls. In
 SGNS the same exponent sets the distribution negatives are drawn from. Since
-SGNS implicitly factorizes shifted PMI ([THEORY-tmpismnk](THEORY-tmpismnk.md)), drawing negatives from count^0.75 is
+SGNS implicitly factorizes shifted PMI ([THEORY-093](THEORY-093.md)), drawing negatives from count^0.75 is
 the same smoothing applied inside the objective.
 
 ## What it explains

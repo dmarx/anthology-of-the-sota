@@ -2,7 +2,7 @@
 
 # Lines of work
 
-41 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+42 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -299,6 +299,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-590](../record/literature.d/LIT-590.md) — Momentum Contrast for Unsupervised Visual Representation Learning *(Active)*
 - alongside: [LIT-591](../record/literature.d/LIT-591.md) — A Simple Framework for Contrastive Learning of Visual Representations *(Active)*
+
+### From Latent Dirichlet Allocation
+
+- alongside: [LIT-592](../record/literature.d/LIT-592.md) — Latent Dirichlet Allocation *(Active)*
+- alongside: [LIT-597](../record/literature.d/LIT-597.md) — Reading Tea Leaves: How Humans Interpret Topic Models *(Active)*
 
 ### From Bootstrap your own latent: A new approach to self-supervised Learning
 

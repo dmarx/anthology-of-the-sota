@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-515 of 531 LIT documents. Back to the [full index](../README.md).
+516 of 532 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -525,3 +525,4 @@
 | [LIT-594](../../../record/literature.d/LIT-594.md) | Bootstrap your own latent: A new approach to self-supervised Learning | Grill et al. (2020), [ARXIV-2006.07733](https://arxiv.org/abs/2006.07733). Learns a representation with no negatives at all: an online network predicts a slow EMA copy of itself under a different augmentation. 74.3% ImageNet linear. Why it does not collapse is a hypothesis in the paper, not a result, and [LIT-593](../../../record/literature.d/LIT-593.md) disputes which part is doing the work. | Active |
 | [LIT-595](../../../record/literature.d/LIT-595.md) | VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning | Bardes et al. (2021), [ARXIV-2105.04906](https://arxiv.org/abs/2105.04906). Three explicit terms — a hinge keeping each embedding dimension's standard deviation above a threshold, an invariance term, and a decorrelation term — applied to each branch separately. Needs no weight sharing, batch norm, stop-gradient or memory bank, and the variance term transplants into other methods and improves them. | Active |
 | [LIT-596](../../../record/literature.d/LIT-596.md) | Barlow Twins: Self-Supervised Learning via Redundancy Reduction | Zbontar et al. (2021), [ARXIV-2103.03230](https://arxiv.org/abs/2103.03230). Removes every asymmetry — no predictor, no stop-gradient, no moving average — and prevents collapse in the objective instead: drive the cross-correlation matrix between the two branches' outputs toward the identity. 73.2% ImageNet linear, and unlike its neighbours it wants a very high-dimensional output. | Active |
+| [LIT-597](../../../record/literature.d/LIT-597.md) | Reading Tea Leaves: How Humans Interpret Topic Models | Chang, Boyd-Graber, Gerrish, Wang and Blei (NIPS 2009). Two Mechanical Turk tasks measure whether a topic model's latent space means anything to people. In word intrusion, subjects find the odd word out among a topic's top five. In topic intrusion, they find the topic that does not belong to a document. On pLSI, LDA and CTM at 50, 100 and 150 topics over NYT and Wikipedia, CTM has the best held-out likelihood and the worst human scores. LDA is usually best. The paper concludes that likelihood does not track interpretability, and it reads the trend as a negative correlation. | Active |

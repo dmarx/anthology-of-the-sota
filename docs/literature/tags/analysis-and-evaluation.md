@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-155 of 531 LIT documents. Back to the [full index](../README.md).
+156 of 532 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -165,3 +165,4 @@
 | [LIT-586](../../../record/literature.d/LIT-586.md) | LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale | Dettmers et al. (2022), [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339). Int8 inference for the feed-forward and attention projections, at no measured cost in quality up to 175B, by isolating a small set of systematically emergent outlier feature dimensions into a 16-bit multiplication and quantizing the other 99.9% vector-wise. | Active |
 | [LIT-588](../../../record/literature.d/LIT-588.md) | Learning Transferable Visual Models From Natural Language Supervision | Radford et al. (2021), [ARXIV-2103.00020](https://arxiv.org/abs/2103.00020). Train an image encoder and a text encoder to match 400M (image, text) pairs contrastively, then build a classifier for any label set by embedding its class names. The most durable result is not the zero-shot accuracy — it is that supervised adaptation which raises ImageNet by 9.2% buys no average robustness. | Active |
 | [LIT-589](../../../record/literature.d/LIT-589.md) | Representation Learning with Contrastive Predictive Coding | Oord et al. (2018), [ARXIV-1807.03748](https://arxiv.org/abs/1807.03748). Predict the future in latent space and score it as a density ratio against sampled negatives, rather than reconstructing the observation. The loss is named InfoNCE here, and it is the objective CLIP, SimCLR and MoCo all run; the bound it maximizes is capped at log N, which the folklore about negatives leaves out. | Active |
+| [LIT-597](../../../record/literature.d/LIT-597.md) | Reading Tea Leaves: How Humans Interpret Topic Models | Chang, Boyd-Graber, Gerrish, Wang and Blei (NIPS 2009). Two Mechanical Turk tasks measure whether a topic model's latent space means anything to people. In word intrusion, subjects find the odd word out among a topic's top five. In topic intrusion, they find the topic that does not belong to a document. On pLSI, LDA and CTM at 50, 100 and 150 topics over NYT and Wikipedia, CTM has the best held-out likelihood and the worst human scores. LDA is usually best. The paper concludes that likelihood does not track interpretability, and it reads the trend as a negative correlation. | Active |

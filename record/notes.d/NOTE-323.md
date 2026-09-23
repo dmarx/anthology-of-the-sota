@@ -1,6 +1,9 @@
 ---
+number: 323
 status: Read
-paper: LIT-tmpmiyeb
+formerly:
+- NOTE-tmppi0z8
+paper: LIT-597
 title: 'Reading Tea Leaves'
 version: 1
 date: '2026-09-23'
@@ -11,7 +14,7 @@ summary: >-
   full.
 ---
 
-# NOTE-tmppi0z8: Reading Tea Leaves
+# NOTE-323: Reading Tea Leaves
 
 ## Contribution
 

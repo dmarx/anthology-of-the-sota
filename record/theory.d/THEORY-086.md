@@ -17,7 +17,7 @@ history:
 - version: 2
   date: '2026-09-23'
   note: >-
-    Adds human evidence from LIT-tmpmiyeb to 'Where it is weak'. Human and
+    Adds human evidence from LIT-597 to 'Where it is weak'. Human and
     model agree least on documents that span disparate subjects, which are
     the documents the mixture account is meant to handle best.
 tags:
@@ -67,7 +67,7 @@ compact description of what it is about.
   two ways, several topics per document and a Dirichlet prior. The paper
   does smooth the baseline, but it does not isolate the first
 - **Perplexity only**, on two small corpora, and for bag-of-words models.
-  Human evaluation came later ([LIT-tmpmiyeb](../literature.d/LIT-tmpmiyeb.md)). LDA's topics were the most
+  Human evaluation came later ([LIT-597](../literature.d/LIT-597.md)). LDA's topics were the most
   interpretable of three models, but people and model agreed least on
   documents that span disparate subjects ("Book"), and most on documents
   about one concept ("Lindy Hop"). Those multi-subject documents are the

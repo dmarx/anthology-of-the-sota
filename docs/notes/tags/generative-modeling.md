@@ -4,7 +4,7 @@
 
 **generative-modeling**.
 
-39 of 322 NOTE documents. Back to the [full index](../README.md).
+39 of 323 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -46,4 +46,4 @@
 | [NOTE-310](../../../record/notes.d/NOTE-310.md) | FLUX.1 Kontext | The FLUX.1 architecture, and an editing model built by appending context latents to the token sequence. It is a system report: human preference against other systems, latency, one reconstruction table, and no ablations. Main text and appendix A read. | Read |
 | [NOTE-311](../../../record/notes.d/NOTE-311.md) | FLUX.2 latent-space report | A controlled comparison of four autoencoder latents for flow models on ImageNet, with the timestep schedule swept per latent. The schedule decides the ranking. FLUX.2's VAE gets near-RAE learnability with the best reconstruction. Read in full from the rendered report, except the interactive Table 2, which did not load. | Read |
 | [NOTE-320](../../../record/notes.d/NOTE-320.md) | AlphaFold 3 | AlphaFold generalized to all biomolecular complexes, with a diffusion head over atom coordinates. It gains on ligands, nucleic acids and antibodies, and inherits generative failure modes (hallucination, chirality) that it patches with distillation and ranking. Main text read. Extended Data and supplementary methods not read. | Read |
-| [NOTE-322](../../../record/notes.d/NOTE-322.md) | Latent Dirichlet Allocation | The bag-of-words assumption, read through de Finetti, implies a document-level mixture. LDA is that mixture with Dirichlet topic proportions. It generalizes better than one-topic-per-document and per-document-parameter models by held-out perplexity. Main text read in full; the variational derivations in the appendices skimmed. | Read |
+| [NOTE-322](../../../record/notes.d/NOTE-322.md) v2 | Latent Dirichlet Allocation | The bag-of-words assumption, read through de Finetti, implies a document-level mixture. LDA is that mixture with Dirichlet topic proportions. It generalizes better than one-topic-per-document and per-document-parameter models by held-out perplexity. Main text read in full; the variational derivations in the appendices skimmed. | Read |

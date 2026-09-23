@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-50 of 367 SOTA documents. Back to the [full index](../README.md).
+51 of 368 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -60,3 +60,4 @@
 | [SOTA-353](../../../record/practices.d/SOTA-353.md) | Train a head that predicts the model's own accuracy on each output, against the metric you care about, and use it to rank samples and filter predictions | Jumper et al. (2021), [LIT-583](../../../record/literature.d/LIT-583.md) — regress the per-residue lDDT the prediction will score (pLDDT) and the predicted TM-score. They track truth at r = 0.76 and 0.85 over 10,795 chains, and pLDDT filters the self-distillation set. Abramson et al. (2024), [LIT-584](../../../record/literature.d/LIT-584.md), keep the head under diffusion by rolling out a cheap sample during training. They rank seeds by it, and antibody-interface quality keeps rising up to 1,000 seeds. | Proposed |
 | [SOTA-357](../../../record/practices.d/SOTA-357.md) | Build a zero-shot classifier from prompt templates and ensemble them in embedding space |  | Active |
 | [SOTA-366](../../../record/practices.d/SOTA-366.md) | Monitor the standard deviation of the l2-normalized embedding; healthy is one over root d and collapsed is zero |  | Active |
+| [SOTA-368](../../../record/practices.d/SOTA-368.md) | When a model's latent space is meant to be read by people, measure its interpretability with a human task such as word or topic intrusion, not by held-out likelihood | Chang et al. (2009), [LIT-597](../../../record/literature.d/LIT-597.md) — topic models are used for their topics, but they are judged by held-out likelihood, which measures the probability of observations and ignores the representation. On NYT and Wikipedia, CTM had the best likelihood and the worst human scores. Test the latent space directly. Plant an improbable word among a topic's top words, or an improbable topic among a document's top topics, and measure how often people find it. | Active |

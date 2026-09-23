@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-118 of 322 NOTE documents. Back to the [full index](../README.md).
+119 of 323 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -126,3 +126,4 @@
 | [NOTE-317](../../../record/notes.d/NOTE-317.md) | Where did the gap go? | Retuned message-passing baselines close the reported graph-transformer gap on LRGB's Peptides datasets, mostly by adding an MLP prediction head. Feature normalization lifts every model on the superpixel datasets. Read in full. | Read |
 | [NOTE-318](../../../record/notes.d/NOTE-318.md) | Pitfalls of GNN evaluation | With one shared training and tuning protocol over 100 splits × 20 seeds, GCN ranks first among four GNNs, and the single Planetoid split reorders models. Read in full. | Read |
 | [NOTE-319](../../../record/notes.d/NOTE-319.md) | GIN | Message passing is bounded by 1-WL, and sum aggregation with an MLP reaches the bound where mean and max do not. The theory predicts the training-fit ordering. Test accuracy separates the aggregators decisively only on featureless graphs. Main text read, proofs skimmed. | Read |
+| [NOTE-323](../../../record/notes.d/NOTE-323.md) | Reading Tea Leaves | Two human tasks, word intrusion and topic intrusion, measure whether a topic model's topics and document assignments mean anything to people. The model with the best held-out likelihood, CTM, does worst on both. Read in full. | Read |

@@ -10,7 +10,7 @@ history:
 - version: 2
   date: '2026-09-23'
   note: >-
-    The limitation on perplexity now points to LIT-tmpmiyeb, which measured
+    The limitation on perplexity now points to LIT-597, which measured
     topic interpretability with people and found it does not track held-out
     likelihood.
 date: '2026-09-23'
@@ -57,7 +57,7 @@ score documents it has not seen.
   substantiation"
 - **Perplexity is the only measure of topic quality.** Whether low perplexity
   means topics a person would recognize is not tested here. Chang et al.
-  ([LIT-tmpmiyeb](../literature.d/LIT-tmpmiyeb.md)) later tested it with people and found it does not, although
+  ([LIT-597](../literature.d/LIT-597.md)) later tested it with people and found it does not, although
   LDA's own topics came out as the most interpretable of the three models
   they compared
 - **Bag of words by design.** The paper states it is not doing language

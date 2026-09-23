@@ -1,5 +1,8 @@
 ---
+number: 368
 status: Active
+formerly:
+- SOTA-tmpa7058
 title: 'When a model''s latent space is meant to be read by people, measure its interpretability with a human task such as word or topic intrusion, not by held-out likelihood'
 version: 1
 tags:
@@ -7,9 +10,9 @@ tags:
 - representation-and-encoding
 date: '2026-09-23'
 source:
-- LIT-tmpmiyeb
+- LIT-597
 introduced_by:
-- LIT-tmpmiyeb
+- LIT-597
 consensus: unreplicated
 consensus_note: >-
   One group's study, with three models and two corpora. Its central
@@ -19,7 +22,7 @@ consensus_note: >-
   coherence has not been filed here.
 implementations: []
 summary: >-
-  Chang et al. (2009), [LIT-tmpmiyeb](../literature.d/LIT-tmpmiyeb.md) — topic models are used for their topics,
+  Chang et al. (2009), [LIT-597](../literature.d/LIT-597.md) — topic models are used for their topics,
   but they are judged by held-out likelihood, which measures the probability
   of observations and ignores the representation. On NYT and Wikipedia, CTM
   had the best likelihood and the worst human scores. Test the latent space
@@ -28,11 +31,11 @@ summary: >-
   people find it.
 ---
 
-# SOTA-tmpa7058: When a model's latent space is meant to be read by people, measure its interpretability with a human task such as word or topic intrusion, not by held-out likelihood
+# SOTA-368: When a model's latent space is meant to be read by people, measure its interpretability with a human task such as word or topic intrusion, not by held-out likelihood
 
 ## Source
 
-Chang et al. (2009), [LIT-tmpmiyeb](../literature.d/LIT-tmpmiyeb.md). Read as [NOTE-tmppi0z8](../notes.d/NOTE-tmppi0z8.md).
+Chang et al. (2009), [LIT-597](../literature.d/LIT-597.md). Read as [NOTE-323](../notes.d/NOTE-323.md).
 
 ## The practice
 

@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-44 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+45 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -127,6 +127,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [SOTA-113](../record/practices.d/SOTA-113.md) — Use continuous batching for inference *(Active, unassessed)*
     - [SOTA-115](../record/practices.d/SOTA-115.md) — Overlap prefill and decode compute *(Active, unassessed)*
 
+### From Quantize weights after training by compensating each rounding error into the columns not yet quantized
+
+- alongside: [SOTA-185](../record/practices.d/SOTA-185.md) — Quantize weights after training by compensating each rounding error into the columns not yet quantized *(Active, converged)*
+- alongside: [SOTA-356](../record/practices.d/SOTA-356.md) — Protect the salient weight channels by scaling them before rounding, choosing them from the activations rather than the weights *(Active, converged)*
+
 ### From Decode with a draft model and an accept-reject rule, which is exactly lossless
 
 - [SOTA-227](../record/practices.d/SOTA-227.md) — Decode with a draft model and an accept-reject rule, which is exactly lossless *(Active, converged)*
@@ -207,6 +212,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [SOTA-013](../record/practices.d/SOTA-013.md) — Use dynamic loss scaling that doubles every 2000 successful steps *(Active, unassessed)*
   - [SOTA-014](../record/practices.d/SOTA-014.md) — Maintain master weights in FP32 *(Active, unassessed)*
     - [SOTA-015](../record/practices.d/SOTA-015.md) — Store optimizer states in FP32 *(Active, unassessed)*
+
+### From Quantize weights after training by compensating each rounding error into the columns not yet quantized
+
+- alongside: [SOTA-185](../record/practices.d/SOTA-185.md) — Quantize weights after training by compensating each rounding error into the columns not yet quantized *(Active, converged)*
+- alongside: [SOTA-356](../record/practices.d/SOTA-356.md) — Protect the salient weight channels by scaling them before rounding, choosing them from the activations rather than the weights *(Active, converged)*
 
 ## representation-and-encoding
 

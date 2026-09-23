@@ -178,6 +178,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-081](../record/literature.d/LIT-081.md) — GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers *(Active)*
   - [LIT-567](../record/literature.d/LIT-567.md) — MARLIN: Mixed-Precision Auto-Regressive Parallel Inference on Large Language Models *(Active)*
+- alongside: [LIT-585](../record/literature.d/LIT-585.md) — AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration *(Active)*
 
 ### From Matryoshka Representation Learning
 
@@ -242,6 +243,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-081](../record/literature.d/LIT-081.md) — GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers *(Active)*
   - [LIT-567](../record/literature.d/LIT-567.md) — MARLIN: Mixed-Precision Auto-Regressive Parallel Inference on Large Language Models *(Active)*
+- alongside: [LIT-585](../record/literature.d/LIT-585.md) — AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration *(Active)*
 
 ## representation-and-encoding
 

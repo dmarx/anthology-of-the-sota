@@ -1,5 +1,8 @@
 ---
+number: 355
 status: Active
+formerly:
+- SOTA-tmphjeso
 title: 'Isolate the emergent outlier feature dimensions into 16-bit and quantize the rest to int8'
 version: 1
 tags:
@@ -15,9 +18,9 @@ consensus_note: >-
   that this particular decomposition is the best way.
 date: '2026-09-23'
 source:
-- LIT-tmpt6fwq
+- LIT-586
 introduced_by:
-- LIT-tmpt6fwq
+- LIT-586
 summary: >-
   Dettmers et al. (2022), [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339). Quantize the projections
   vector-wise to int8, but pull the handful of systematically large feature
@@ -25,11 +28,11 @@ summary: >-
   8-bit, no measured quality cost up to 175B.
 ---
 
-# SOTA-tmphjeso: Isolate the emergent outlier feature dimensions into 16-bit and quantize the rest to int8
+# SOTA-355: Isolate the emergent outlier feature dimensions into 16-bit and quantize the rest to int8
 
 ## Source
 
-Dettmers et al. (2022), [LIT-tmpt6fwq](../literature.d/LIT-tmpt6fwq.md) — [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339).
+Dettmers et al. (2022), [LIT-586](../literature.d/LIT-586.md) — [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339).
 
 ## What to do
 

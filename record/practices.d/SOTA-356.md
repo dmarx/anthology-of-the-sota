@@ -1,5 +1,8 @@
 ---
+number: 356
 status: Active
+formerly:
+- SOTA-tmpt7jr1
 title: 'Protect the salient weight channels by scaling them before rounding, choosing them from the activations rather than the weights'
 version: 1
 tags:
@@ -14,9 +17,9 @@ consensus_note: >-
   the field runs both, and the comparison between them is live.
 date: '2026-09-23'
 source:
-- LIT-tmp8mq3m
+- LIT-585
 introduced_by:
-- LIT-tmp8mq3m
+- LIT-585
 compared_against:
 - SOTA-185
 summary: >-
@@ -26,11 +29,11 @@ summary: >-
   than keeping the important channels in higher precision.
 ---
 
-# SOTA-tmpt7jr1: Protect the salient weight channels by scaling them before rounding, choosing them from the activations rather than the weights
+# SOTA-356: Protect the salient weight channels by scaling them before rounding, choosing them from the activations rather than the weights
 
 ## Source
 
-Lin et al. (2023), [LIT-tmp8mq3m](../literature.d/LIT-tmp8mq3m.md) — [ARXIV-2306.00978](https://arxiv.org/abs/2306.00978).
+Lin et al. (2023), [LIT-585](../literature.d/LIT-585.md) — [ARXIV-2306.00978](https://arxiv.org/abs/2306.00978).
 
 ## What to do
 

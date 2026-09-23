@@ -6,7 +6,7 @@
 
 **Signal structure** — what the data itself is like, independent of any model — the statistics and structure of language, images and other signals that methods exploit or must respect, such as frequency spectra, heavy-tailed and Zipfian distributions, and what counts as a unit.
 
-1 of 519 LIT documents. Back to the [full index](../README.md).
+1 of 521 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

@@ -16,6 +16,7 @@ version: 1
 tags:
 - representation-and-encoding
 - multimodal-learning
+- concept-geometry
 date: '2026-09-20'
 source:
 - LIT-458

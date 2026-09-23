@@ -13,6 +13,7 @@ title: 'Train sparse autoencoders with a TopK activation instead of an L1 penalt
 version: 1
 tags:
 - analysis-and-evaluation
+- concept-geometry
 date: '2026-09-23'
 source:
 - LIT-571

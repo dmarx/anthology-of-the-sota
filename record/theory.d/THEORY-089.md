@@ -15,6 +15,7 @@ version: 1
 tags:
 - representation-and-encoding
 - signal-structure
+- concept-geometry
 date: '2026-09-23'
 source:
 - LIT-602

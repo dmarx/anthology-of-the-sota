@@ -1,5 +1,8 @@
 ---
+number: 373
 status: Active
+formerly:
+- SOTA-tmpzm1n3
 consensus: emerging
 consensus_note: >-
   The specific 75% is widely copied for images and the *principle* is rarely
@@ -17,19 +20,19 @@ tags:
 - signal-structure
 date: '2026-09-23'
 source:
-- LIT-tmp0s7m8
+- LIT-601
 introduced_by:
-- LIT-tmp0s7m8
+- LIT-601
 implementations: []
 explained_by:
-- THEORY-tmpgwgsb
+- THEORY-088
 ---
 
-# SOTA-tmpzm1n3: Set the masking ratio by the signal's redundancy, not by the ratio that worked on text
+# SOTA-373: Set the masking ratio by the signal's redundancy, not by the ratio that worked on text
 
 ## Source
 
-He et al. (2021), [LIT-tmp0s7m8](../literature.d/LIT-tmp0s7m8.md) — [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377).
+He et al. (2021), [LIT-601](../literature.d/LIT-601.md) — [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377).
 
 ## The claim
 
@@ -72,13 +75,13 @@ single-block decoder already reaches 84.8% fine-tuned.
 
 - **Two modalities, one paper.** The 15%-versus-75% contrast is a comparison
   across two literatures, not a controlled experiment, and no third modality
-  <!-- inactive-ok: THEORY-tmpgwgsb — Proposed by design: the account rests on two points from two literatures, and the practice it explains is Active regardless. Citing the open question is the point. -->
-  is tested here. [THEORY-tmpgwgsb](../theory.d/THEORY-tmpgwgsb.md) is where the record keeps what would settle
+  <!-- inactive-ok: THEORY-088 — Proposed by design: the account rests on two points from two literatures, and the practice it explains is Active regardless. Citing the open question is the point. -->
+  is tested here. [THEORY-088](../theory.d/THEORY-088.md) is where the record keeps what would settle
   it.
 - **Redundancy is not one number.** Spatial redundancy in images, temporal
   redundancy in video and spectral redundancy in audio are different things,
   and a single scalar ratio may not be the right control for all of them.
-- **A high ratio compounds with [SOTA-tmpvf6yn](SOTA-tmpvf6yn.md)** — most of that practice's
+- **A high ratio compounds with [SOTA-372](SOTA-372.md)** — most of that practice's
   speedup is the masking ratio — so the two are usually chosen together and
   their benefits are not independent.
 - **It is about the ratio, not the pattern.** MAE masks uniformly at random;

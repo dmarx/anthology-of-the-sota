@@ -391,6 +391,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-216](../record/literature.d/LIT-216.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
   - [LIT-215](../record/literature.d/LIT-215.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*
+- alongside: [LIT-601](../record/literature.d/LIT-601.md) — Masked Autoencoders Are Scalable Vision Learners *(Active)*
 
 ### From A Style-Based Generator Architecture for Generative Adversarial Networks
 

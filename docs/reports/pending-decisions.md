@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**183 document(s) awaiting a decision.**
+**184 document(s) awaiting a decision.**
 
 ## SOTAs
 
-126 of the 183.
+126 of the 184.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -142,7 +142,7 @@
 
 ## THEORYs
 
-51 of the 183.
+52 of the 184.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -194,13 +194,14 @@
 | 2026-09-23 | Deferred | [THEORY-087](../../record/theory.d/THEORY-087.md) | 10 | 0 | Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other |
 | 2026-09-23 | Proposed | [THEORY-080](../../record/theory.d/THEORY-080.md) | 7 | 0 | A diffusion process needs noise to keep its intermediate states on the data manifold, and blur helps only while noise still dominates the bands it removes |
 | 2026-09-23 | Proposed | [THEORY-078](../../record/theory.d/THEORY-078.md) | 4 | 0 | Deep sine networks train when initialization holds every pre-activation near a standard normal, which keeps each layer arcsine-distributed and frequency growth slow; that initialization is what earlier periodic networks lacked |
+| 2026-09-23 | Proposed | [THEORY-088](../../record/theory.d/THEORY-088.md) | 2 | 0 | Masked prediction transfers across modalities only after the masking ratio is rescaled to the signal's information density |
 | 2026-09-23 | Proposed | [THEORY-081](../../record/theory.d/THEORY-081.md) | 1 | 0 | A transformer's feed-forward layers work as key-value memories: each hidden unit's input weights match input patterns, and its output weights promote the tokens that follow them |
 | 2026-09-23 | Proposed | [THEORY-084](../../record/theory.d/THEORY-084.md) | 1 | 0 | AlphaFold 2 needs the sequence alignment to find a protein's coarse fold, not to refine it, so accuracy collapses below a minimum alignment depth and barely improves above it |
 | 2026-09-23 | Proposed | [THEORY-086](../../record/theory.d/THEORY-086.md) | 1 | 0 | A text document is better modelled as a mixture of several topics, each a distribution over words, than as a draw from a single topic |
 
 ## LITs
 
-3 of the 183.
+3 of the 184.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -210,7 +211,7 @@
 
 ## ADRs
 
-3 of the 183.
+3 of the 184.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

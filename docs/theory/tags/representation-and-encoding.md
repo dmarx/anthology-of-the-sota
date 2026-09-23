@@ -6,7 +6,7 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-10 of 87 THEORY documents. Back to the [full index](../README.md).
+11 of 88 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,4 @@
 | [THEORY-077](../../../record/theory.d/THEORY-077.md) | A coordinate MLP learns high frequencies slowly because its tangent kernel's spectrum falls off fast, and a sinusoidal input mapping works by making that kernel stationary with a bandwidth you choose | Tancik et al. (2020), [LIT-550](../../../record/literature.d/LIT-550.md) — in the NTK regime, error along each kernel eigenvector decays at a rate set by its eigenvalue, and a coordinate MLP's eigenvalues fall off fast with frequency. Sinusoids of the input give a stationary composed kernel whose bandwidth the frequencies set. The linear model predicts trained networks' loss curves. It is a kernel-regime account of an input encoding, not of feature learning. | Active |
 | [THEORY-085](../../../record/theory.d/THEORY-085.md) | InfoNCE maximizes a lower bound on mutual information that cannot exceed log N |  | Active |
 | [THEORY-087](../../../record/theory.d/THEORY-087.md) v2 | Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other |  | Deferred |
+| [THEORY-088](../../../record/theory.d/THEORY-088.md) | Masked prediction transfers across modalities only after the masking ratio is rescaled to the signal's information density |  | Proposed |

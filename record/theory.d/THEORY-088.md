@@ -1,5 +1,8 @@
 ---
+number: 88
 status: Proposed
+formerly:
+- THEORY-tmpgwgsb
 promote_when: >-
   A controlled sweep of the masking ratio on at least three modalities that
   differ measurably in redundancy — say text, images and audio — under one
@@ -16,16 +19,16 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-23'
 source:
-- LIT-tmp0s7m8
+- LIT-601
 explains:
-- SOTA-tmpzm1n3
+- SOTA-373
 ---
 
-# THEORY-tmpgwgsb: Masked prediction transfers across modalities only after the masking ratio is rescaled to the signal's information density
+# THEORY-088: Masked prediction transfers across modalities only after the masking ratio is rescaled to the signal's information density
 
 ## Source
 
-He et al. (2021), [LIT-tmp0s7m8](../literature.d/LIT-tmp0s7m8.md) — [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377), §1.
+He et al. (2021), [LIT-601](../literature.d/LIT-601.md) — [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377), §1.
 
 ## The account
 
@@ -76,7 +79,7 @@ means, and this one does not.
 ## Standing
 
 `Proposed` rather than `Active`: plausible, directionally useful, resting on
-evidence that is suggestive rather than settling. `SOTA-tmpzm1n3` is `Active`
+evidence that is suggestive rather than settling. `SOTA-373` is `Active`
 regardless, because the *practice* — derive the ratio from your signal rather
 than inheriting it — is right even if this explanation of why is wrong. That
 split is `ADR-031`'s, and this is a cleaner instance than usual: a wrong

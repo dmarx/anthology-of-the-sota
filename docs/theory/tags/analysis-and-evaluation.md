@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-49 of 87 THEORY documents. Back to the [full index](../README.md).
+50 of 88 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -59,3 +59,4 @@
 | [THEORY-084](../../../record/theory.d/THEORY-084.md) | AlphaFold 2 needs the sequence alignment to find a protein's coarse fold, not to refine it, so accuracy collapses below a minimum alignment depth and barely improves above it | Jumper et al. (2021), [LIT-583](../../../record/literature.d/LIT-583.md) — accuracy falls steeply when the median alignment depth is below about 30 sequences and gains little above about 100. Dropping both metagenomic databases costs 6.1 GDT, almost all from a few targets losing 20 or more. The authors' hypothesis is that covariation in the alignment is needed early, to place the coarse fold, and that refinement to atomic accuracy does not depend on it. The threshold is measured. The two-stage account is not tested. | Proposed |
 | [THEORY-085](../../../record/theory.d/THEORY-085.md) | InfoNCE maximizes a lower bound on mutual information that cannot exceed log N |  | Active |
 | [THEORY-087](../../../record/theory.d/THEORY-087.md) v2 | Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other |  | Deferred |
+| [THEORY-088](../../../record/theory.d/THEORY-088.md) | Masked prediction transfers across modalities only after the masking ratio is rescaled to the signal's information density |  | Proposed |

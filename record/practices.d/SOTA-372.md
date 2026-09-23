@@ -1,5 +1,8 @@
 ---
+number: 372
 status: Active
+formerly:
+- SOTA-tmpvf6yn
 consensus: converged
 consensus_note: >-
   The design outlived the objective that motivated it. `SOTA-250`, which
@@ -15,17 +18,17 @@ tags:
 - representation-and-encoding
 date: '2026-09-23'
 source:
-- LIT-tmp0s7m8
+- LIT-601
 introduced_by:
-- LIT-tmp0s7m8
+- LIT-601
 implementations: []
 ---
 
-# SOTA-tmpvf6yn: Run the encoder on visible tokens only and push the mask tokens into a small decoder you discard
+# SOTA-372: Run the encoder on visible tokens only and push the mask tokens into a small decoder you discard
 
 ## Source
 
-He et al. (2021), [LIT-tmp0s7m8](../literature.d/LIT-tmp0s7m8.md) — [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377).
+He et al. (2021), [LIT-601](../literature.d/LIT-601.md) — [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377).
 
 ## The claim
 
@@ -65,10 +68,10 @@ argument.
   arrived after ViT ([LIT-587](../literature.d/LIT-587.md)) and not before. A convolution over a regular
   grid cannot simply omit a quarter of its input.
 - **The saving scales with the masking ratio**, so it compounds with
-  [SOTA-tmpzm1n3](SOTA-tmpzm1n3.md) and is worth much less at a low ratio. On a signal that
+  [SOTA-373](SOTA-373.md) and is worth much less at a low ratio. On a signal that
   cannot tolerate heavy masking this practice mostly evaporates.
 - **Decoder depth is not free to choose** — see the conditions on
-  [SOTA-tmpzm1n3](SOTA-tmpzm1n3.md) and the note's ablation. "Lightweight" is a claim about
+  [SOTA-373](SOTA-373.md) and the note's ablation. "Lightweight" is a claim about
   parameters, not about depth being irrelevant: a single block already gives
   84.8% fine-tuned, but linear probing wants more.
 - **The encoder's positional embeddings still carry the layout**, so the

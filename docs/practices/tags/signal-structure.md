@@ -6,7 +6,7 @@
 
 **Signal structure** — what the data itself is like, independent of any model — the statistics and structure of language, images and other signals that methods exploit or must respect, such as frequency spectra, heavy-tailed and Zipfian distributions, and what counts as a unit.
 
-7 of 371 SOTA documents. Back to the [full index](../README.md).
+8 of 373 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,3 +17,4 @@
 | [SOTA-263](../../../record/practices.d/SOTA-263.md) v2 | Shift the timestep schedule when the resolution changes, because more pixels need more noise | Esser et al. (2024), [LIT-449](../../../record/literature.d/LIT-449.md) — a timestep is not a fixed amount of corruption. Destroying the signal in an image with more pixels takes more noise, so a timestep at one resolution must be mapped to a different one at another to corrupt equivalently. A schedule carried unchanged from low-resolution pretraining to high-resolution finetuning is wrong, and wrong in a predictable direction. | Proposed |
 | [SOTA-267](../../../record/practices.d/SOTA-267.md) v2 | Start the training distribution imbalanced and flatten it, rather than holding it uniform throughout | Zucchet et al. (2025), [LIT-450](../../../record/literature.d/LIT-450.md) — two quantities move in opposite directions. Plateau length is governed by how often the *most* common entities appear; acquisition speed after the plateau by how often the *least* common ones do. So imbalance buys an early exit from the plateau and costs the tail, and a schedule that starts imbalanced and flattens beats every fixed distribution tested. | Proposed |
 | [SOTA-274](../../../record/practices.d/SOTA-274.md) v2 | Before adopting a spectral optimizer, measure the stable rank of each block's incoming activations against its gradient's nuclear rank | Davis and Drusvyatskiy (2025), [LIT-457](../../../record/literature.d/LIT-457.md) — the spectral step's one-step guarantee beats the Euclidean one by the ratio of gradient nuclear rank to incoming activation stable rank. Both are cheap to compute from a run you are already doing, and the paper never uses them to route. | Proposed |
+| [SOTA-373](../../../record/practices.d/SOTA-373.md) | Set the masking ratio by the signal's redundancy, not by the ratio that worked on text |  | Active |

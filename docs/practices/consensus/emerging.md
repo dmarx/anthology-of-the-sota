@@ -6,7 +6,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-49 of 380 SOTA documents. Back to the [full index](../README.md).
+50 of 382 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -59,3 +59,4 @@
 | [SOTA-369](../../../record/practices.d/SOTA-369.md) | Curate a pretraining set by retrieving neighbours of curated seeds, rather than scaling the uncurated pool |  | Active |
 | [SOTA-373](../../../record/practices.d/SOTA-373.md) | Set the masking ratio by the signal's redundancy, not by the ratio that worked on text |  | Active |
 | [SOTA-376](../../../record/practices.d/SOTA-376.md) | Score each image-text pair independently with a sigmoid, so the loss needs no global normalization |  | Active |
+| [SOTA-382](../../../record/practices.d/SOTA-382.md) | Subsample frequent tokens: it is faster and it improves the rare ones |  | Active |

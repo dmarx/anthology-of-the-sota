@@ -121,7 +121,7 @@
 | 2026-09-22 | Proposed | [SOTA-320](../../record/practices.d/SOTA-320.md) | 1 | 0 | Bound the learning rate by the ratio of the update's spectral norm to the weight's, and drop warmup |
 | 2026-09-22 | Proposed | [SOTA-321](../../record/practices.d/SOTA-321.md) | 1 | 0 | Verify a model's lineage from the singular spectra of its attention products, which survive permutation and rescaling |
 | 2026-09-22 | Proposed | [SOTA-322](../../record/practices.d/SOTA-322.md) | 0 | 0 | Trade attention heads for depth: more heads conditions the attention block, and the layers you drop cost nothing |
-| 2026-09-23 | Proposed | [SOTA-338](../../record/practices.d/SOTA-338.md) | 5 | 0 | Train the GAN discriminator on frozen multi-scale pretrained features with fixed random channel and scale mixing |
+| 2026-09-23 | Proposed | [SOTA-338](../../record/practices.d/SOTA-338.md) | 6 | 0 | Train the GAN discriminator on frozen multi-scale pretrained features with fixed random channel and scale mixing |
 | 2026-09-23 | Proposed | [SOTA-332](../../record/practices.d/SOTA-332.md) | 4 | 0 | When an implicit representation will be supervised through its derivatives, use sine activations with the SIREN initialization rather than a ReLU network |
 | 2026-09-23 | Proposed | [SOTA-335](../../record/practices.d/SOTA-335.md) | 4 | 0 | When generated content must move continuously, as in video or animation, build the generator alias-free: treat features as continuous signals and low-pass filter around every nonlinearity |
 | 2026-09-23 | Proposed | [SOTA-336](../../record/practices.d/SOTA-336.md) | 4 | 0 | Train high-resolution GANs at a fixed topology with output skips in the generator and a residual discriminator, not by progressive growing |

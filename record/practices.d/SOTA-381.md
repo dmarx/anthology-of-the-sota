@@ -1,5 +1,8 @@
 ---
+number: 381
 status: Active
+formerly:
+- SOTA-tmp3xeck
 consensus: universal
 consensus_note: >-
   Not doing it is what needs justifying, and the record can show the
@@ -17,17 +20,17 @@ tags:
 - training-optimization
 date: '2026-09-23'
 source:
-- LIT-tmpbcdbf
+- LIT-609
 introduced_by:
-- LIT-tmpbcdbf
+- LIT-609
 implementations: []
 ---
 
-# SOTA-tmp3xeck: Sample a handful of negatives instead of normalizing over the vocabulary, and let the count fall as the data grows
+# SOTA-381: Sample a handful of negatives instead of normalizing over the vocabulary, and let the count fall as the data grows
 
 ## Source
 
-Mikolov et al. (2013), [LIT-tmpbcdbf](../literature.d/LIT-tmpbcdbf.md) — [ARXIV-1310.4546](https://arxiv.org/abs/1310.4546), §2.2.
+Mikolov et al. (2013), [LIT-609](../literature.d/LIT-609.md) — [ARXIV-1310.4546](https://arxiv.org/abs/1310.4546), §2.2.
 
 ## The claim
 

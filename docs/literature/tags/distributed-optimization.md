@@ -6,7 +6,7 @@
 
 **Distributed optimization** — parallelism and sharding, communication, memory management, checkpointing.
 
-56 of 543 LIT documents. Back to the [full index](../README.md).
+56 of 546 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

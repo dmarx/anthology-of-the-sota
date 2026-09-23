@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in.
 
-87 of 543 LIT documents. Back to the [full index](../README.md).
+87 of 546 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

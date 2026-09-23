@@ -6,7 +6,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-47 of 543 LIT documents. Back to the [full index](../README.md).
+48 of 546 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -57,3 +57,4 @@
 | [LIT-598](../../../record/literature.d/LIT-598.md) | Unsupervised Learning of Visual Features by Contrasting Cluster Assignments | Caron et al. (2020), [ARXIV-2006.09882](https://arxiv.org/abs/2006.09882). Predict one view's cluster code from another view's representation instead of comparing features pairwise, with an equipartition constraint doing the anti-collapse work. 75.3% ImageNet linear — and multi-crop, which is the part that transplants into other methods for 2-4 points. | Active |
 | [LIT-599](../../../record/literature.d/LIT-599.md) | DINOv2: Learning Robust Visual Features without Supervision | Oquab et al. (2023), [ARXIV-2304.07193](https://arxiv.org/abs/2304.07193). The thesis is that existing self-supervised objectives already produce general-purpose features if the data is curated enough, so the contribution is a retrieval-based curation pipeline and the engineering to scale it — not a new objective. Frozen features, no finetuning, competitive with the best open weakly-supervised models. | Active |
 | [LIT-601](../../../record/literature.d/LIT-601.md) | Masked Autoencoders Are Scalable Vision Learners | He et al. (2021), [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377). Mask 75% of the patches, run the encoder on the visible quarter only, and reconstruct pixels with a small decoder you then throw away. 3x faster pretraining, 87.8% with ViT-Huge on ImageNet-1K alone — and the reason the ratio is 75% rather than BERT's 15% is an argument about the signal, not a sweep. | Active |
+| [LIT-611](../../../record/literature.d/LIT-611.md) | GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium | Heusel et al. (2017), [ARXIV-1706.08500](https://arxiv.org/abs/1706.08500). Where FID comes from — and it comes from a subsection of a paper about two time-scale update rules and Nash equilibria. Fit a Gaussian to Inception activations for each distribution and take the Wasserstein-2 distance between them. Validated by monotonicity under six synthetic corruptions. | Active |

@@ -1,5 +1,8 @@
 ---
+number: 382
 status: Active
+formerly:
+- SOTA-tmpoaohk
 consensus: emerging
 consensus_note: >-
   Standard wherever token frequency is Zipfian and the objective is
@@ -16,17 +19,17 @@ tags:
 - signal-structure
 date: '2026-09-23'
 source:
-- LIT-tmpbcdbf
+- LIT-609
 introduced_by:
-- LIT-tmpbcdbf
+- LIT-609
 implementations: []
 ---
 
-# SOTA-tmpoaohk: Subsample frequent tokens: it is faster and it improves the rare ones
+# SOTA-382: Subsample frequent tokens: it is faster and it improves the rare ones
 
 ## Source
 
-Mikolov et al. (2013), [LIT-tmpbcdbf](../literature.d/LIT-tmpbcdbf.md) — [ARXIV-1310.4546](https://arxiv.org/abs/1310.4546), §2.3.
+Mikolov et al. (2013), [LIT-609](../literature.d/LIT-609.md) — [ARXIV-1310.4546](https://arxiv.org/abs/1310.4546), §2.3.
 
 ## The claim
 

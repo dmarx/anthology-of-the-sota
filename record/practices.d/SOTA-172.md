@@ -18,9 +18,18 @@ consensus_note: >-
   auto-generated content out of the crawl "to mitigate the risk of model
   collapse" — but neither measures the effect this paper measures.
 title: 'Build synthetic pretraining data by editing human text at the token level, not by generating from scratch'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Appends `signal-structure`. A load-bearing part of this
+    document is a property of the data: it rests on a measured statistic of
+    generated text, distributional shift and n-gram over-concentration
+    relative to human text.
 tags:
 - data-pipeline
+- signal-structure
 date: '2026-09-08'
 source:
 - LIT-205

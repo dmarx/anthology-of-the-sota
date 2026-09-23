@@ -14,7 +14,15 @@ promote_when: >-
   filtering result reporting a quality crossover, which is a different object
   ranked on a different axis and is already SOTA-170.
 title: 'Discard the easy examples when data is abundant and the hard ones when it is scarce'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Appends `signal-structure`. A load-bearing part of this
+    document is a property of the data: it reads the power-law data-scaling
+    exponent as a measurement of how much the corpus repeats itself, a
+    property of the data rather than of the problem.
 consensus: unreplicated
 consensus_note: >-
   One group, 2022, and no independent test of the inversion at any scale. The
@@ -24,6 +32,7 @@ consensus_note: >-
 tags:
 - data-pipeline
 - training-optimization
+- signal-structure
 date: '2026-09-17'
 source:
 - LIT-399

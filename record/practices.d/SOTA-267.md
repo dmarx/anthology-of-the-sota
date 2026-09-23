@@ -17,9 +17,19 @@ consensus_note: >-
   established for an unreplicated result — the plateau's identity is shown
   by intervention, not inferred.
 title: 'Start the training distribution imbalanced and flatten it, rather than holding it uniform throughout'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Appends `signal-structure`. A load-bearing part of this
+    document is a property of the data: its mechanism is the frequency
+    distribution of entities in the training data: the head sets the
+    plateau, the tail sets acquisition speed, and the measured optimum is an
+    inverse power law.
 tags:
 - data-pipeline
+- signal-structure
 date: '2026-09-20'
 source:
 - LIT-450

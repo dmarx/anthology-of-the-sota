@@ -18,9 +18,18 @@ consensus_note: >-
   stated, which is a reason to suspect it is right and not a reason to think
   it has been checked.
 title: 'Shift the timestep schedule when the resolution changes, because more pixels need more noise'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Appends `signal-structure`. A load-bearing part of this
+    document is a property of the data: its mechanism is a property of
+    images: the redundancy across neighbouring pixels survives the same
+    noise at higher resolution.
 tags:
 - generative-modeling
+- signal-structure
 date: '2026-09-20'
 source:
 - LIT-449

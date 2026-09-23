@@ -13,10 +13,19 @@ promote_when: >-
   hardness theorem for another automaton class, which would add a second proof
   about a constructed family and still say nothing about the regime.
 title: 'Distinct state machines agree at chance on long random inputs, so a learner that reads only statistics loses the signal as the sequences get longer'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Appends `signal-structure`. A load-bearing part of this
+    document is a property of the data: its claim is that the information
+    distinguishing two generators is destroyed in the data itself, whose
+    sequences become statistically indistinguishable as they grow.
 tags:
 - analysis-and-evaluation
 - model-architecture
+- signal-structure
 date: '2026-09-21'
 source:
 - LIT-495

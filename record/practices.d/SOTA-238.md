@@ -4,7 +4,7 @@ status: 'Active'
 formerly:
 - SOTA-tmp4n8k9
 title: 'Set domain weights with a small proxy model under group DRO on excess loss, then transfer them'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-18'
@@ -21,8 +21,16 @@ history:
     mixing has thresholds in model size, so proxy and target can sit on
     opposite sides of one. The recommendation is unchanged; the method is not
     refuted; the exposure is now named.
+- version: 4
+  date: '2026-09-23'
+  note: >-
+    Appends `signal-structure`. A load-bearing part of this
+    document is a property of the data: it rests on each domain having a
+    different irreducible entropy, which is why it optimizes excess loss
+    rather than raw loss.
 tags:
 - data-pipeline
+- signal-structure
 consensus: contested
 contested_by:
 - LIT-451

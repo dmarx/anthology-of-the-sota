@@ -38,7 +38,6 @@ summary: >-
 
 <!-- inactive-ok-file: THEORY-070, THEORY-071, THEORY-072 — all Proposed, and named here as the three rival grokking mechanisms, every one of them a claim about a trajectory. That they are Proposed is the point being made when they are cited. -->
 <!-- inactive-ok-file: THEORY-073 — Proposed, filed in this same contribution as the stagewise account this one cautions; new, not retired. -->
-<!-- inactive-ok-file: ADR-031 — Proposed, cited as the decision that separates an explanation from the practice it explains, which is the schema this document is filed under; Proposed is the resting state of an unmoved decision here. -->
 
 ## The account
 

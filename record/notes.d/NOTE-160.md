@@ -17,10 +17,6 @@ summary: >-
   quality trade.
 ---
 
-<!-- inactive-ok-file: ADR-041 — Proposed, which is the resting state of
-     most of this record's decisions, and cited here as the rule under
-     which R2 and R3 stay in the reading rather than becoming practices. -->
-
 # NOTE-160: Fast Inference from Transformers via Speculative Decoding
 
 ## Contribution

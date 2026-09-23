@@ -36,10 +36,6 @@ summary: >-
   6.5x, about 1.4x over the previous version, on roughly 8x the data.
 ---
 
-<!-- inactive-ok-file: ADR-041 — Proposed, and cited as the decision under
-     which this practice declines to file the draft's layer and data
-     settings. The practice does not rest on it. -->
-
 # SOTA-229: Scale the draft model's training data, once nothing constrains it to predict the target's features
 
 ## What to do

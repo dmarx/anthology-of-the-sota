@@ -47,7 +47,7 @@ summary: >-
 ---
 
 <!-- inactive-ok-file: SOTA-168 SOTA-121 SOTA-143 — the three practices this account explains; SOTA-168 is Proposed and is cited as one of the two approximations, not as a settled recommendation -->
-<!-- inactive-ok-file: THEORY-033 THEORY-032 ADR-034 — the two rival accounts and the decision that keeps all three off the practices, all Proposed, all named in the v2 section rather than leaned on -->
+<!-- inactive-ok-file: THEORY-033 THEORY-032 — the two rival accounts, both Proposed, both named in the v2 section rather than leaned on -->
 
 # THEORY-024: Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map
 

@@ -43,9 +43,6 @@ summary: >-
 <!-- inactive-ok-file: SOTA-155, SOTA-216 — both Proposed, and named as the
      two practices in the same family that trade accuracy for bandwidth,
      which this one is claimed not to do. A contrast, not support. -->
-<!-- inactive-ok-file: ADR-041 — Proposed, and the decision under which
-     this document declines to file two constants. A Proposed decision is
-     the resting state of most of this record's decisions. -->
 
 # SOTA-222: Overlap the synchronisation with one or two local steps instead of communicating every step
 

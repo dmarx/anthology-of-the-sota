@@ -42,8 +42,8 @@ summary: >-
   Li et al. (2017), [LIT-014](../literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913).
 ---
 
-<!-- inactive-ok-file: SOTA-010, ADR-034 — the sibling link is kept
-     deliberately and the frontmatter says why; see the decision. -->
+<!-- inactive-ok-file: SOTA-010 — Superseded; the sibling link is kept
+     deliberately and the frontmatter says why (ADR-034). -->
 
 # SOTA-012: sharpness in the loss landscape correlates with test error
 

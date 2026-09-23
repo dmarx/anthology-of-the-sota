@@ -47,10 +47,6 @@ compared_against:
 - SOTA-012
 ---
 
-<!-- inactive-ok-file: ADR-034, ADR-031 — both Proposed: the decision
-     under which this document moved, and the scheme it moved into. Between
-     them they are the whole content of this page. -->
-
 # SOTA-010: skip connections promote training stability by smoothing out the loss landscape
 
 Li et al. (2017), [LIT-014](../literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913).

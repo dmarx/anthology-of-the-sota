@@ -17,9 +17,8 @@ summary: >-
 
 # NOTE-181: Understanding Black-box Predictions via Influence Functions
 
-<!-- inactive-ok-file: SOTA-246, THEORY-017, ADR-031, ADR-041 — the practice and
-     the (Rejected) explanation this reading files, plus the two Proposed decisions that
-     govern where its unfiled recommendations went. The Rejected theory is this paper's own
+<!-- inactive-ok-file: SOTA-246, THEORY-017 — the practice and
+     the (Rejected) explanation this reading files. The Rejected theory is this paper's own
      account, so it is the correct target. -->
 
 ## Contribution

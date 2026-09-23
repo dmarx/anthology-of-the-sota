@@ -34,10 +34,6 @@ it disagrees with `luria --help` or with the record, this file is wrong.
 
 ## The three schemes, and why there are three
 
-<!-- inactive-ok-block: ADR-031 — Proposed, and named from a map rather
-     than cited as a settled rule: the scheme exists and this section describes
-     it; whether it earns its keep is what its promotion condition asks. -->
-
 A **practice** (`SOTA`) is a claim about what you should do. A **theory**
 (`THEORY`) is a claim about why it works. A **note** (`LIT`) is a paper's
 standing in the anthology. They have separate statuses and are allowed to
@@ -108,8 +104,6 @@ work perfectly well.
     luria link --fix              # spell the targets, complete the relations
     luria index                   # regenerate every view
     luria lint                    # the only command that can fail
-
-<!-- inactive-ok-file: ADR-054 — Proposed, and cited as the decision that put `repair` in this sequence and the hook behind the discard step; Proposed is the resting state of an unmoved decision here, not a sign the sequence is unsettled. -->
 
 Or `make ready`, which runs those four and discards the views ([ADR-054](record/decisions.d/ADR-054.md)).
 **You need both `repair` and `link --fix`, and neither contains the other.**

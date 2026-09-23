@@ -17,9 +17,8 @@ summary: >-
 
 # NOTE-178: Studying Large Language Model Generalization with Influence Functions
 
-<!-- inactive-ok-file: SOTA-245, ADR-043 — the practice this reading files and the
-     decision under which its R3 is named rather than filed. Both Proposed; ADR-043 is a
-     day old and being exercised, which is what a Proposed decision is for. -->
+<!-- inactive-ok-file: SOTA-245 — the practice this reading files, Proposed on its
+     evidence. -->
 
 ## Contribution
 

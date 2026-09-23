@@ -17,10 +17,9 @@ summary: >-
 
 # NOTE-176: Beyond neural scaling laws: beating power law scaling via data pruning
 
-<!-- inactive-ok-file: SOTA-243, SOTA-241, ADR-043 — the practice this reading files,
-     the adjacent proxy practice named in the Bearing section for where R4 would have gone,
-     and the decision that governs naming a deferral's condition instead of filing it. All
-     Proposed; the reading is about what to file, so a Proposed target is the subject. -->
+<!-- inactive-ok-file: SOTA-243, SOTA-241 — the practice this reading files, and
+     the adjacent proxy practice named in the Bearing section for where R4 would have gone.
+     Both Proposed; the reading is about what to file, so a Proposed target is the subject. -->
 
 ## Contribution
 

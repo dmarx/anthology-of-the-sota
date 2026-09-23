@@ -147,7 +147,7 @@ method it argues is insufficient.
 
 ## Bearing on the record
 
-<!-- inactive-ok-block: ADR-034, SOTA-010 — Proposed and Superseded, and
+<!-- inactive-ok-block: SOTA-010 — Superseded, and
      this paragraph records that one of the three moved scheme -->
 **All three claims sourced to this note are confirmed.** One of them was a
 practice until [ADR-034](../decisions.d/ADR-034.md) moved it to the theory scheme, which is why the

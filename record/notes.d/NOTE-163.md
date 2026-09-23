@@ -22,9 +22,6 @@ summary: >-
      reading supports. Proposed because one target and one benchmark is
      what the paper has, which is stated in the practice's own
      promote_when. -->
-<!-- inactive-ok-file: ADR-041 — Proposed, the resting state of most of
-     this record's decisions, and cited as the rule under which this
-     paper's architectural settings stay in the reading. -->
 
 # NOTE-163: EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test
 

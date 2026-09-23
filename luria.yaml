@@ -1,19 +1,17 @@
 # Luria configuration for the Anthology of the SOTA.
 #
-# Two acknowledgements rather than one, split by the reason (LU-#278). Every
+# One acknowledgement, for the decisions this file names as history. Every
 # citation in this file is a decision the file IMPLEMENTS, and citing them is
 # what makes a schema choice readable as something somebody decided rather
-# than something somebody typed.
+# than something somebody typed. There used to be a second, for decisions
+# that were still Proposed; since 2026-09-23 every decision this file
+# implements is Active, so it has nothing left to vouch for (LU-#278).
 #
 # inactive-ok-file: ADR-020, ADR-027, ADR-029 — Superseded, and named here AS history, in prose that says so: "ADR-027 added `analysis-and-evaluation`; ADR-026 then added ... superseding ADR-020", and the cut DP-005 made in ADR-029 that ADR-030 refined.
-# inactive-ok-file: ADR-030, ADR-031, ADR-035, ADR-038, ADR-039 — Proposed, which in this record is the resting state of a decision nobody has moved (60 documents are undecided) rather than a signal that the schema rests on something unsettled.
-# inactive-ok-file: ADR-053 — Proposed, and filed in this same contribution. It is the decision that set `introduced_by.required` to `false`, so the comment beside that key cites it to say where the value came from; citing a decision as the provenance of the line it decided is not citing it as settled.
 #
 # Scoped to the file rather than left per-site because every citation here is
-# the same kind of claim, and because the alternative is nineteen directives
-# that each say the same sentence (ADR-039). Split in two because a directive
-# is read from its own line and a file-wide one is not position-sensitive, so
-# there is no cost to grouping them by why rather than crowding one line.
+# the same kind of claim, and because the alternative is a directive per
+# citation that each say the same sentence (ADR-039).
 #
 # The record has four families. Two of them are the anthology itself — `SOTA`
 # is the product (one document per recommendation) and `LIT` is the evidence
@@ -43,8 +41,6 @@ vocabularies:
   #            about tokenization had nowhere to go
   #   ADR-027  analysis-and-evaluation
   #   ADR-026  generative-modeling, vision-and-graphics
-  # inactive-ok-block: ADR-056 — Proposed, and it is the decision being
-  # recorded here rather than one this config relies on
   #   ADR-056  capability-thresholds -- `analysis-and-evaluation` was
   #            holding nineteen documents whose subject is whether a capability
   #            arrives abruptly, which is a claim about the world rather than a
@@ -101,9 +97,8 @@ vocabularies:
       systems-optimization:
         label: Systems optimization
         blurb: hardware utilization, kernels, compilation, memory access patterns — how an operation is executed, not how many bits it is executed in
-      # inactive-ok-block: ADR-050 SOTA-160 SOTA-234 — all Proposed; the decision is the
-      # one being recorded here and the two practices are named as the evidence for one word
-      # rather than two, not cited as recommendations
+      # inactive-ok-block: SOTA-160 SOTA-234 — Proposed, and named as the evidence for
+      # one word rather than two, not cited as recommendations
       # Added by ADR-050. `systems-optimization` carried "numerical precision"
       # and `inference-optimization` carried "quantization", so the subject had
       # two half-homes and 48 documents spread over nine topics with no topic
@@ -488,10 +483,6 @@ schemes:
         scheme: LIT
         required: true
         many: true
-        # inactive-ok-block: ADR-055 — Proposed, and it is the decision this
-        #   declaration records; naming it is how a reader finds out why the
-        #   invariant is here. Proposed is the resting state of an unmoved
-        #   decision in this record.
         # Declared after #202's pass took the residue from 60 rows to zero. A
         # practice and every paper behind it must share at least one topic.
         # (Recorded as ADR-055. An earlier version of this comment claimed a

@@ -28,7 +28,7 @@ summary: >-
   size is constant where Euclidean descent's oscillates. NanoGPT scale.
 ---
 
-<!-- inactive-ok-file: THEORY-024 ADR-031 ADR-034 THEORY-032 — THEORY-024 is Proposed and is what this account argues with; the ADRs are Proposed and are why arguing with it leaves its practices alone; THEORY-032 is Proposed and filed in this same contribution -->
+<!-- inactive-ok-file: THEORY-024 THEORY-032 — THEORY-024 is Proposed and is what this account argues with; THEORY-032 is Proposed and filed in this same contribution -->
 # THEORY-033: What a spectral optimizer buys is a step size that stays optimal, not adherence to a target geometry
 
 ## Source

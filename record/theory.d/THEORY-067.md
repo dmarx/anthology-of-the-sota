@@ -33,7 +33,6 @@ explains:
 # THEORY-067: A transformer can run a learning algorithm on a model held in its activations, and the architecture admits several, so a construction identifies none
 
 <!-- inactive-ok-file: THEORY-068 — Rejected, and cited as the rejected account itself: this document is part of the evidence that retired it, not a recommendation resting on it. -->
-<!-- inactive-ok-file: ADR-031 — Proposed, cited as the decision that lets an explanation be retired while the practice it explained goes on working; that is the schema this document is filed under, and Proposed is the resting state of an unmoved decision here. -->
 
 ## The account
 

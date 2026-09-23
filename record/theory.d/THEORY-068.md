@@ -30,8 +30,6 @@ corrected_by:
 
 # THEORY-068: In-context learning is gradient descent on an implicit model
 
-<!-- inactive-ok-file: ADR-031 — Proposed, cited as the decision that lets an explanation be retired while the practice it explained goes on working; that is the schema this document is filed under, and Proposed is the resting state of an unmoved decision here. -->
-
 ## The claim, as it was made
 
 A transformer given a prompt of `(x, y)` pairs and a query does not merely

@@ -16,12 +16,10 @@ summary: >-
   dataset.
 ---
 
-<!-- inactive-ok-file: THEORY-060 ADR-031 SOTA-102 — all three named
+<!-- inactive-ok-file: THEORY-060 SOTA-102 — both named
      rather than relied on. THEORY-060 is Proposed and filed in this same
      contribution as the account under this unit's practice, and this document
-     says in as many words that it is the weaker of the two. ADR-031 is cited
-     as the decision that splits practice from theory, which is what this unit
-     is applying. SOTA-102 is Superseded and named ONLY as a false positive —
+     says in as many words that it is the weaker of the two. SOTA-102 is Superseded and named ONLY as a false positive —
      the nearest thing a search for "calibration" returns, and about data
      mixing rather than probabilities, which is the point being made. -->
 

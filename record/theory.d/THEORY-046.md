@@ -25,9 +25,6 @@ summary: >-
      explains; the document's own point is that a sound explanation does not
      promote the practice, so its unsettled status is what is being said -->
 
-<!-- inactive-ok-file: ADR-031 — Proposed, cited for the practice/explanation split
-     that lets this account be Active while the practice stays Proposed -->
-
 # THEORY-046: Uniform-state discrete diffusion is the argmax of a Gaussian diffusion, which is why Gaussian technique transfers to it and not to masked diffusion
 
 ## Source

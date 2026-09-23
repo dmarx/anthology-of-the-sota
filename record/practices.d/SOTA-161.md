@@ -103,7 +103,7 @@ worth carrying is that a loss spike is not a flake.
 
 ## What it qualifies
 
-<!-- inactive-ok-block: ADR-012 — Proposed, and named as the decision that
+<!-- inactive-ok-block: ADR-012 — Deferred, and named as the decision that
      describes the bodyless stub this qualifies -->
 [SOTA-085](SOTA-085.md) says to use flash attention wherever the hardware supports it, and
 says nothing about precision — it is one of the bodyless migration stubs

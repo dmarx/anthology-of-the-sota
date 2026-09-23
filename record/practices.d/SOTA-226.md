@@ -35,9 +35,8 @@ summary: >-
 <!-- inactive-ok-file: SOTA-223 — Proposed, and cited as the practice
      that argues against this one. Filing a disagreement is what the pair
      is for; neither supports the other. -->
-<!-- inactive-ok-file: SOTA-222, ADR-041 — Proposed: a
-     neighbouring practice from a different paper, and the decision under
-     which this document declines LIT-254's densification schedule. -->
+<!-- inactive-ok-file: SOTA-222 — Proposed: a
+     neighbouring practice from a different paper. -->
 
 # SOTA-226: If the gossip topology is static, make it a directed exponential graph, not a ring
 

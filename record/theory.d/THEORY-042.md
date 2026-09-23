@@ -26,9 +26,6 @@ summary: >-
      explains; the document's point is that a sound explanation does not promote
      the practice, so its unsettled status is the thing being said -->
 
-<!-- inactive-ok-file: ADR-031 — Proposed, cited for the practice/explanation
-     split that lets this account be Active while the practice stays Proposed -->
-
 # THEORY-042: An update smaller than the lattice spacing is not merely rounded away — it is cancelled exactly, and carrying the remainder makes the discrete path shadow the continuous one within half a grid cell
 
 ## Source

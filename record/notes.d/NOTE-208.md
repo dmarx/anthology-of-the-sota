@@ -14,7 +14,7 @@ summary: >-
   that Muon's optimal step size is constant where Euclidean descent's is not.
 ---
 
-<!-- inactive-ok-file: THEORY-024 THEORY-033 ADR-031 ADR-034 — THEORY-024 is Proposed as of this contribution and is what this reading demotes; THEORY-033 is Proposed and filed here from it; the two ADRs are Proposed and are the decisions that keep a contested explanation off its practices -->
+<!-- inactive-ok-file: THEORY-024 THEORY-033 — THEORY-024 is Proposed as of this contribution and is what this reading demotes; THEORY-033 is Proposed and filed here from it -->
 # NOTE-208: Muon is Not That Special
 
 ## Contribution

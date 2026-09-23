@@ -17,7 +17,6 @@ summary: >-
 ---
 
 # NOTE-202: The Limiting Dynamics of SGD
-<!-- inactive-ok-file: ADR-034 — Proposed, and cited for the rule this reading leans on about what a Rejected theory does and does not retire -->
 <!-- inactive-ok-file: THEORY-013 — Rejected, and named three times on purpose: the shared SDE machinery makes guilt-by-association the available mistake, and saying so is what these passages are for -->
 
 ## Contribution

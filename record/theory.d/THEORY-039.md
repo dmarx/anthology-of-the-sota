@@ -21,7 +21,6 @@ summary: >-
   comparisons under a demanding evaluation inflate the gap they report.
 ---
 
-<!-- inactive-ok-file: ADR-031 — Proposed, and cited for the practice/explanation split that lets this account be Active while the dispute it draws an example from stays open -->
 # THEORY-039: A measured capability is the capability minus whatever the evaluation itself demands, and the gap is widest for the weakest model
 
 ## Source

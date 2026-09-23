@@ -37,11 +37,8 @@ summary: >-
   **0.03** points.
 ---
 
-<!-- inactive-ok-file: ADR-053 ADR-030 SOTA-256 SOTA-304 — all Proposed.
-     ADR-053 is filed in this same contribution and is what permits this
-     practice's empty `introduced_by:`; ADR-030 is named as the decision it
-     amends, which is the opposite of citing it as settled. SOTA-256 and
-     SOTA-304 are both named to say what this practice is NOT — the two
+<!-- inactive-ok-file: SOTA-256 SOTA-304 — both Proposed, and
+     both named to say what this practice is NOT — the two
      nearest documents in the corpus, distinguished rather than relied on. -->
 
 # SOTA-311: Evaluate a search on tasks held out of its own fitness function, and report the gap against the tasks it selected on

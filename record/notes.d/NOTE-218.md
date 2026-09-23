@@ -14,7 +14,6 @@ summary: >-
   rather than the method to settle on.
 ---
 
-<!-- inactive-ok-file: ADR-050 — Proposed, and named as the decision that created the topic this reading is filed under, which is a fact about the filing rather than a claim resting on the decision -->
 # NOTE-218: Zero-Shot CoT
 
 ## Contribution

@@ -25,9 +25,6 @@ date: '2026-09-15'
 # promote_when is about.
 source:
 - LIT-233
-# inactive-ok-block: ADR-030 — Proposed, and cited for what it says the field
-# is FOR, not as a settled decision; `introduced_by:` is required in
-# luria.yaml today whatever becomes of the decision that asked for it
 # NOT the same code as `source:`, and this is the case the field exists for
 # (ADR-030). LIT-233 produced the evidence and explicitly declines to
 # make the recommendation — "our goal is not to promote RandOpt as superior
@@ -72,9 +69,6 @@ measures the method and declines to promote it, in as many words: "our goal
 is not to promote RandOpt as superior to alternative methods. Rather, we use
 it as a probe." The instruction — post-train by perturbing the weights and
 selecting among the results, rather than by following a gradient — was
-<!-- inactive-ok-block: ADR-030 — Proposed, and cited for the distinction it
-     draws rather than as a settled decision; the field is required in
-     luria.yaml today either way -->
 stated by Qiu et al. ([LIT-211](../literature.d/LIT-211.md)), and this is that instruction with the
 iteration count set to one and an ensemble on the end. `introduced_by:` says
 so, which is the distinction [ADR-030](../decisions.d/ADR-030.md) requires every practice to make.

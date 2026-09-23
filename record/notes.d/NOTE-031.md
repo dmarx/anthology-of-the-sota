@@ -19,8 +19,8 @@ summary: >-
 
 # NOTE-031: Data Selection for Language Models via Importance Resampling
 
-<!-- inactive-ok-file: SOTA-242, SOTA-241, ADR-043 — the practices this
-     reading's R2 and R1 became and the decision that ruled on them. Cited from the
+<!-- inactive-ok-file: SOTA-242, SOTA-241 — the practices this
+     reading's R2 and R1 became. Cited from the
      Bearing section to say where each recommendation went; Proposed is the ruling, not
      an oversight. -->
 

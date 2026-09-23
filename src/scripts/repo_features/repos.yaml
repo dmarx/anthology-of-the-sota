@@ -9,6 +9,15 @@
 # implements one because somebody found it interesting, so its contents are a
 # reading list. Confusing them is how 62 unadopted architecture variants get
 # filed as practice candidates.
+#
+# `mlfoundations/open_clip` was read once for #290 and is deliberately absent.
+# Nine of the fifteen identifiers its README holds are checkpoint rows or
+# dataset cards, and the `arxiv` extractor cannot tell those from a technique:
+# the file is a model roster with a bibliography, which is a third kind of
+# index and not one #183 has a reading for. The pass harvested what it had
+# — `2103.00020`, `2109.01903`, `2303.15343`, `2212.00794` — and a roster is
+# worth a person's eye once, not a scrape every run, because every new
+# checkpoint grows it and none of the growth is a technique.
 repos:
   vllm:
     repo: vllm-project/vllm
@@ -38,4 +47,23 @@ repos:
     kind: catalogue
     ref: HEAD
     files:
+      README.md: arxiv
+  k-diffusion:
+    repo: crowsonkb/k-diffusion
+    kind: catalogue
+    ref: HEAD
+    files:
+      README.md: arxiv
+  captum:
+    repo: meta-pytorch/captum
+    kind: catalogue
+    ref: HEAD
+    files:
+      # `References of Algorithms` is the cleanest index of the four read for
+      # #290 — one line per public class, naming the paper it implements. It
+      # is a catalogue and not an adoption index despite being Meta's
+      # production library: the same README links `1810.03292` and
+      # `2106.07475`, both of which examine methods it ships anyway. A list
+      # that carries its own critiques is enumerating a literature, not
+      # reporting a convergence.
       README.md: arxiv

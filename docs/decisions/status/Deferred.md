@@ -6,8 +6,8 @@
 
 **Deferred** — not in force and not being worked on; the question is real and the answer waits on something.
 
-0 of 59 decisions. Back to the [full index](../README.md).
+1 of 59 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [ADR-012](../../../record/decisions.d/ADR-012.md) | A practice declares its altitude, and one with no body cannot claim to be a design decision | "Pin memory for CPU-GPU transfers" and "Use Muon in place of AdamW" are both `SOTA` documents with equal standing, and 103 of 144 practices have no body at all — the registry's apparent weight is mostly one synthetic note's bullet lists. Proposes a `kind:` field and a lint tying substance to altitude. | Deferred — Deferred on 2026-09-23. It was never adopted, and no practice carries `kind:`. Its first motivation is gone, since every practice now has a body. Its second, that totals mix a library flag with a design decision, is still an open question. |

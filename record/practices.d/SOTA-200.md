@@ -44,6 +44,7 @@ history:
     accordingly.
 tags:
 - analysis-and-evaluation
+- capability-thresholds
 date: '2026-09-10'
 source:
 - LIT-077

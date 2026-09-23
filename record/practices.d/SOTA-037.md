@@ -6,6 +6,7 @@ version: 1
 tags:
 - in-context-learning
 - model-architecture
+- capability-thresholds
 date: '2026-08-24'
 source:
 - LIT-035

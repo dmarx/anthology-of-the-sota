@@ -9,6 +9,7 @@ tags:
 - training-optimization
 - analysis-and-evaluation
 - model-stability
+- capability-thresholds
 date: '2026-09-22'
 source:
 - LIT-537

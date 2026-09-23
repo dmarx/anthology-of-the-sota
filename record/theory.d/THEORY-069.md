@@ -6,6 +6,7 @@ formerly:
 title: 'Grokking is a regime rather than a property of algorithmic data, and at least three knobs move it'
 version: 1
 tags:
+- capability-thresholds
 - analysis-and-evaluation
 - training-optimization
 - model-stability

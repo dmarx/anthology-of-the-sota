@@ -8,6 +8,7 @@ version: 1
 tags:
 - analysis-and-evaluation
 - training-optimization
+- capability-thresholds
 source:
 - LIT-471
 explains:

@@ -15,6 +15,7 @@ version: 1
 tags:
 - in-context-learning
 - adaptation-and-tuning
+- capability-thresholds
 date: '2026-09-21'
 source:
 - LIT-467

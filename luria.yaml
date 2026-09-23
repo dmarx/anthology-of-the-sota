@@ -26,7 +26,7 @@
 # practice drawn from it still hold. Two schemes, two status fields, and the
 # relationship between them is a citation the lint can follow. See ADR-002.
 vocabularies:
-  # The eighteen topics: the primary axis of both the practice registry and the
+  # The nineteen topics: the primary axis of both the practice registry and the
   # reading list, in the order the indexes show them.
   #
   # The first seven are transcribed from the 2024 naming-conventions document;
@@ -43,6 +43,12 @@ vocabularies:
   #            about tokenization had nowhere to go
   #   ADR-027  analysis-and-evaluation
   #   ADR-026  generative-modeling, vision-and-graphics
+  # inactive-ok-block: ADR-tmp77ilo — Proposed, and it is the decision being
+  # recorded here rather than one this config relies on
+  #   ADR-tmp77ilo  capability-thresholds -- `analysis-and-evaluation` was
+  #            holding nineteen documents whose subject is whether a capability
+  #            arrives abruptly, which is a claim about the world rather than a
+  #            method for checking one
   #
   # Every one of those words was already in the LIT scheme, which has carried
   # them since ADR-003; the practice registry caught up one decision at a time.
@@ -64,9 +70,9 @@ vocabularies:
     # What the axis IS, which until luria 0.25.0 could only be said in a
     # comment no view could reach (LU-#279).
     blurb: >-
-      The eighteen kinds of claim this anthology files against — the primary
+      The nineteen kinds of claim this anthology files against — the primary
       axis of both the practice registry and the reading list, and the same
-      eighteen for each (ADR-026). The filing rule is the point: take a domain
+      nineteen for each (ADR-026). The filing rule is the point: take a domain
       topic when the claim is ABOUT the domain; a claim merely discovered in
       one still takes its kind.
     # What the axis says when you trip over it (LU-#273). `closed: true` on
@@ -172,6 +178,17 @@ vocabularies:
       tiny-models:
         label: Tiny models
         blurb: claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts
+      # Added by the last decision in the roll-call above.
+      # `analysis-and-evaluation` was absorbing the whole subject: all 19
+      # documents that make this claim carried it, and for most of them it was
+      # the primary. Its blurb is "how to find out whether something worked",
+      # which is not "does this capability arrive abruptly, and is the
+      # abruptness real" — the second is a claim about the world and the first
+      # is a method. The gap surfaced from a `practice` chain whose invariant
+      # could not bind (LU-#311).
+      capability-thresholds:
+        label: Capability thresholds
+        blurb: a capability that arrives abruptly rather than smoothly — emergence at scale, grokking after long training, phase transitions in learning — which axis it turns on, and whether the discontinuity is real or an artefact of how it was measured
   # The old schema had three of these (`experimental`, `standard`,
   # `deprecated`) and used one: all 119 recommendations were `standard`,
   # because the two branches that could set the others read a field no

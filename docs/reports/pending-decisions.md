@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**190 document(s) awaiting a decision.**
+**192 document(s) awaiting a decision.**
 
 ## SOTAs
 
-121 of the 190.
+122 of the 192.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -127,6 +127,7 @@
 | 2026-09-23 | Proposed | [SOTA-338](../../record/practices.d/SOTA-338.md) | 4 | 0 | Train the GAN discriminator on frozen multi-scale pretrained features with fixed random channel and scale mixing |
 | 2026-09-23 | Proposed | [SOTA-333](../../record/practices.d/SOTA-333.md) | 3 | 0 | For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history |
 | 2026-09-23 | Proposed | [SOTA-334](../../record/practices.d/SOTA-334.md) | 3 | 0 | In a style-modulated generator, demodulate the convolution weights instead of instance-normalizing the activations |
+| 2026-09-23 | Proposed | [SOTA-347](../../record/practices.d/SOTA-347.md) | 3 | 0 | To write many facts into a model's weights, update a range of early-to-mid MLP layers jointly in one batched solve (MEMIT), choosing the range by measured edit success rather than causal tracing |
 | 2026-09-23 | Proposed | [SOTA-339](../../record/practices.d/SOTA-339.md) | 2 | 0 | For unpaired image-to-image translation of appearance, constrain both mappings with a cycle-consistency loss |
 | 2026-09-23 | Proposed | [SOTA-340](../../record/practices.d/SOTA-340.md) | 1 | 0 | Expect weight-only 4-bit quantization to speed up batched serving only while the batch keeps the matmul memory-bound, and use a kernel built to stay there |
 | 2026-09-23 | Proposed | [SOTA-341](../../record/practices.d/SOTA-341.md) | 1 | 0 | Condition an image generator on each training image's original size instead of discarding or upsampling small images |
@@ -137,7 +138,7 @@
 
 ## THEORYs
 
-47 of the 190.
+48 of the 192.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -188,10 +189,11 @@
 | 2026-09-22 | Proposed | [THEORY-066](../../record/theory.d/THEORY-066.md) | 0 | 0 | Pure self-attention collapses every token onto one, and skip connections prevent it by keeping short paths alive |
 | 2026-09-23 | Proposed | [THEORY-080](../../record/theory.d/THEORY-080.md) | 5 | 0 | A diffusion process needs noise to keep its intermediate states on the data manifold, and blur helps only while noise still dominates the bands it removes |
 | 2026-09-23 | Proposed | [THEORY-078](../../record/theory.d/THEORY-078.md) | 4 | 0 | Deep sine networks train when initialization holds every pre-activation near a standard normal, which keeps each layer arcsine-distributed and frequency growth slow; that initialization is what earlier periodic networks lacked |
+| 2026-09-23 | Proposed | [THEORY-081](../../record/theory.d/THEORY-081.md) | 1 | 0 | A transformer's feed-forward layers work as key-value memories: each hidden unit's input weights match input patterns, and its output weights promote the tokens that follow them |
 
 ## LITs
 
-3 of the 190.
+3 of the 192.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -201,7 +203,7 @@
 
 ## ADRs
 
-19 of the 190.
+19 of the 192.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

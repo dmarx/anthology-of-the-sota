@@ -1,6 +1,9 @@
 ---
+number: 312
 status: Read
-paper: LIT-tmp96ozs
+formerly:
+- NOTE-tmpah4r2
+paper: LIT-575
 title: 'FFN layers as key-value memories'
 version: 1
 date: '2026-09-23'
@@ -11,7 +14,7 @@ summary: >-
   outputs.
 ---
 
-# NOTE-tmpah4r2: FFN layers as key-value memories
+# NOTE-312: FFN layers as key-value memories
 
 ## Contribution
 

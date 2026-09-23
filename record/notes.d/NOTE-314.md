@@ -1,6 +1,9 @@
 ---
+number: 314
 status: Read
-paper: LIT-tmprhke9
+formerly:
+- NOTE-tmpi3p60
+paper: LIT-577
 title: 'RippleEdits'
 version: 1
 date: '2026-09-23'
@@ -10,7 +13,7 @@ summary: >-
   38–66, and prompting with the new fact beats them. Main text read.
 ---
 
-# NOTE-tmpi3p60: RippleEdits
+# NOTE-314: RippleEdits
 
 ## Contribution
 

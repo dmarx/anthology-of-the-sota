@@ -1,6 +1,9 @@
 ---
+number: 316
 status: Read
-paper: LIT-tmpmnwn4
+formerly:
+- NOTE-tmpk15k0
+paper: LIT-576
 title: 'MEMIT'
 version: 1
 date: '2026-09-23'
@@ -10,7 +13,7 @@ summary: >-
   on GPT-J, where ROME falls to 50.3. Main text read, appendices skimmed.
 ---
 
-# NOTE-tmpk15k0: MEMIT
+# NOTE-316: MEMIT
 
 ## Contribution
 

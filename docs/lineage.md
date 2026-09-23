@@ -2,7 +2,7 @@
 
 # Lines of work
 
-35 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+36 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -58,6 +58,14 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-570](../record/literature.d/LIT-570.md) — interpreting GPT: the logit lens *(Active)*
   - [LIT-569](../record/literature.d/LIT-569.md) — Eliciting Latent Predictions from Transformers with the Tuned Lens *(Active)*
+
+### From Transformer Feed-Forward Layers Are Key-Value Memories
+
+- [LIT-575](../record/literature.d/LIT-575.md) — Transformer Feed-Forward Layers Are Key-Value Memories *(Active)*
+  - [LIT-578](../record/literature.d/LIT-578.md) — Locating and Editing Factual Associations in GPT *(Active)*
+    - [LIT-574](../record/literature.d/LIT-574.md) — Does Localization Inform Editing? Surprising Differences in Causality-Based Localization vs. Knowledge Editing in Language Models *(Active)*
+    - [LIT-576](../record/literature.d/LIT-576.md) — Mass-Editing Memory in a Transformer *(Active)*
+- alongside: [LIT-577](../record/literature.d/LIT-577.md) — Evaluating the Ripple Effects of Knowledge Editing in Language Models *(Active)*
 
 ## attention-techniques
 

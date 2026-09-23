@@ -1,5 +1,8 @@
 ---
+number: 82
 status: Rejected
+formerly:
+- THEORY-tmpde7eo
 status_note: per-fact causal-tracing localization explains 0.1% of the variance in edit success once the edit layer is accounted for, and edits succeed at layers tracing does not point to
 title: 'Causal tracing shows where a language model stores a fact, and that is where the fact should be edited'
 version: 1
@@ -8,24 +11,24 @@ tags:
 - adaptation-and-tuning
 date: '2026-09-23'
 source:
-- LIT-tmpvij69
-- LIT-tmp6e8di
+- LIT-578
+- LIT-574
 summary: >-
-  Meng et al. (2022), [LIT-tmpvij69](../literature.d/LIT-tmpvij69.md) — tracing puts factual recall in mid-layer
+  Meng et al. (2022), [LIT-578](../literature.d/LIT-578.md) — tracing puts factual recall in mid-layer
   MLPs at the last subject token, and ROME and MEMIT edit there on that
-  basis. Hase et al. (2023), [LIT-tmp6e8di](../literature.d/LIT-tmp6e8di.md), test the link per fact on GPT-J.
+  basis. Hase et al. (2023), [LIT-574](../literature.d/LIT-574.md), test the link per fact on GPT-J.
   Tracing peaks are spread across layers, while edits succeed at layer 6
   for almost everything. The edit layer explains 94.7% of the variance in
   success and tracing 0.1% more. The editors work. The reason given for
   where they edit does not hold.
 ---
 
-# THEORY-tmpde7eo: Causal tracing shows where a language model stores a fact, and that is where the fact should be edited
+# THEORY-082: Causal tracing shows where a language model stores a fact, and that is where the fact should be edited
 
 ## Source
 
-Meng et al. (2022), [LIT-tmpvij69](../literature.d/LIT-tmpvij69.md), read as [NOTE-tmpicaci](../notes.d/NOTE-tmpicaci.md), for the account.
-Hase et al. (2023), [LIT-tmp6e8di](../literature.d/LIT-tmp6e8di.md), read as [NOTE-tmpceyj8](../notes.d/NOTE-tmpceyj8.md), for why it is
+Meng et al. (2022), [LIT-578](../literature.d/LIT-578.md), read as [NOTE-315](../notes.d/NOTE-315.md), for the account.
+Hase et al. (2023), [LIT-574](../literature.d/LIT-574.md), read as [NOTE-313](../notes.d/NOTE-313.md), for why it is
 filed already retired ([DP-003](../../docs/design-principles.md#dp-3)).
 
 ## The account
@@ -50,7 +53,7 @@ from the same analysis.
 
 ## What survives
 
-The editing methods (MEMIT is [SOTA-tmp2nfwy](../practices.d/SOTA-tmp2nfwy.md)), and causal tracing as a
+The editing methods (MEMIT is [SOTA-347](../practices.d/SOTA-347.md)), and causal tracing as a
 description of where information flows. What does not survive is using one
 to choose the other. Pick the edit layers by measured editing performance.
-<!-- inactive-ok-file: SOTA-tmp2nfwy — Proposed and contested, cited as the editing method that survives this account's rejection -->
+<!-- inactive-ok-file: SOTA-347 — Proposed and contested, cited as the editing method that survives this account's rejection -->

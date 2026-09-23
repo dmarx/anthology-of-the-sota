@@ -1,6 +1,9 @@
 ---
+number: 313
 status: Read
-paper: LIT-tmp6e8di
+formerly:
+- NOTE-tmpceyj8
+paper: LIT-574
 title: 'Does Localization Inform Editing?'
 version: 1
 date: '2026-09-23'
@@ -11,7 +14,7 @@ summary: >-
   skimmed.
 ---
 
-# NOTE-tmpceyj8: Does Localization Inform Editing?
+# NOTE-313: Does Localization Inform Editing?
 
 ## Contribution
 

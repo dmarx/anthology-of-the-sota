@@ -6,8 +6,8 @@
 
 **Adaptation and tuning** — taking a trained model somewhere new — fine-tuning and transfer, preference training and safety alignment, parameter-efficient adaptation, context extension.
 
-0 of 80 THEORY documents. Back to the [full index](../README.md).
+1 of 82 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [THEORY-082](../../../record/theory.d/THEORY-082.md) | Causal tracing shows where a language model stores a fact, and that is where the fact should be edited | Meng et al. (2022), [LIT-578](../../../record/literature.d/LIT-578.md) — tracing puts factual recall in mid-layer MLPs at the last subject token, and ROME and MEMIT edit there on that basis. Hase et al. (2023), [LIT-574](../../../record/literature.d/LIT-574.md), test the link per fact on GPT-J. Tracing peaks are spread across layers, while edits succeed at layer 6 for almost everything. The edit layer explains 94.7% of the variance in success and tracing 0.1% more. The editors work. The reason given for where they edit does not hold. | Rejected — per-fact causal-tracing localization explains 0.1% of the variance in edit success once the edit layer is accounted for, and edits succeed at layers tracing does not point to |

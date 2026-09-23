@@ -1,5 +1,8 @@
 ---
+number: 348
 status: Active
+formerly:
+- SOTA-tmprsfsm
 title: 'Evaluate a knowledge edit on the facts it implies — logical consequences, multi-hop compositions, aliases and the subject''s other facts — not only on the edited prompt, its paraphrases and unrelated neighbours'
 version: 1
 tags:
@@ -7,9 +10,9 @@ tags:
 - adaptation-and-tuning
 date: '2026-09-23'
 source:
-- LIT-tmprhke9
+- LIT-577
 introduced_by:
-- LIT-tmprhke9
+- LIT-577
 consensus: unreplicated
 consensus_note: >-
   One group's benchmark. Its central observation, that editors update the
@@ -18,7 +21,7 @@ consensus_note: >-
   editing papers now report ripple metrics has not been assessed here.
 implementations: []
 summary: >-
-  Cohen et al. (2023), [LIT-tmprhke9](../literature.d/LIT-tmprhke9.md) — the standard edit metrics (efficacy,
+  Cohen et al. (2023), [LIT-577](../literature.d/LIT-577.md) — the standard edit metrics (efficacy,
   paraphrase, neighborhood) cannot see whether an edit changed what the
   model knows or only what it says to one question. On six ripple criteria,
   ROME, MEMIT and MEND average 38–66, and logical generalization falls as low
@@ -27,11 +30,11 @@ summary: >-
   editing.
 ---
 
-# SOTA-tmprsfsm: Evaluate a knowledge edit on the facts it implies — logical consequences, multi-hop compositions, aliases and the subject's other facts — not only on the edited prompt, its paraphrases and unrelated neighbours
+# SOTA-348: Evaluate a knowledge edit on the facts it implies — logical consequences, multi-hop compositions, aliases and the subject's other facts — not only on the edited prompt, its paraphrases and unrelated neighbours
 
 ## Source
 
-Cohen et al. (2023), [LIT-tmprhke9](../literature.d/LIT-tmprhke9.md). Read as [NOTE-tmpi3p60](../notes.d/NOTE-tmpi3p60.md).
+Cohen et al. (2023), [LIT-577](../literature.d/LIT-577.md). Read as [NOTE-314](../notes.d/NOTE-314.md).
 
 ## The practice
 

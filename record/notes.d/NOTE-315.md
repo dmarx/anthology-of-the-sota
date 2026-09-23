@@ -1,6 +1,9 @@
 ---
+number: 315
 status: Read
-paper: LIT-tmpvij69
+formerly:
+- NOTE-tmpicaci
+paper: LIT-578
 title: 'ROME'
 version: 1
 date: '2026-09-23'
@@ -11,7 +14,7 @@ summary: >-
   appendix read.
 ---
 
-# NOTE-tmpicaci: ROME
+# NOTE-315: ROME
 
 ## Contribution
 
@@ -40,4 +43,4 @@ other keys.
 - **Neighborhood success falls** below the unedited model's on both models
 - **The edit layer comes from tracing averaged over facts.** Whether the
   average tells you anything about a given fact is the question Hase et al.
-  answer: it doesn't ([LIT-tmp6e8di](../literature.d/LIT-tmp6e8di.md))
+  answer: it doesn't ([LIT-574](../literature.d/LIT-574.md))

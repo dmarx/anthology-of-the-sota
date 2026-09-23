@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-308 of 311 NOTE documents. Back to the [full index](../README.md).
+313 of 316 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -318,3 +318,8 @@
 | [NOTE-309](../../../record/notes.d/NOTE-309.md) | Are Sparse Autoencoders Useful? A Case Study in Sparse Probing | On 113 datasets and five regimes, probes on SAE latents do not beat, or usefully add to, probes on raw activations once method selection is honest. Earlier wins, including the authors' own, came from weaker baselines. Main text read, appendices skimmed. | Read |
 | [NOTE-310](../../../record/notes.d/NOTE-310.md) | FLUX.1 Kontext | The FLUX.1 architecture, and an editing model built by appending context latents to the token sequence. It is a system report: human preference against other systems, latency, one reconstruction table, and no ablations. Main text and appendix A read. | Read |
 | [NOTE-311](../../../record/notes.d/NOTE-311.md) | FLUX.2 latent-space report | A controlled comparison of four autoencoder latents for flow models on ImageNet, with the timestep schedule swept per latent. The schedule decides the ranking. FLUX.2's VAE gets near-RAE learnability with the best reconstruction. Read in full from the rendered report, except the interactive Table 2, which did not load. | Read |
+| [NOTE-312](../../../record/notes.d/NOTE-312.md) | FFN layers as key-value memories | Keys fire on input patterns, and values project to next-token preferences. The reading is interpretable in upper layers of one small WikiText model, with weak key-value agreement and mostly compositional outputs. | Read |
+| [NOTE-313](../../../record/notes.d/NOTE-313.md) | Does Localization Inform Editing? | Per fact, causal tracing's localization is unrelated to where an edit succeeds. The edit layer explains 94.7% of the variance in ROME's success on GPT-J, and tracing adds 0.1%. Main text read, robustness appendices skimmed. | Read |
+| [NOTE-314](../../../record/notes.d/NOTE-314.md) | RippleEdits | Knowledge-editing benchmarks test the edited fact and leave its consequences untested. On six ripple criteria, weight editors average 38–66, and prompting with the new fact beats them. Main text read. | Read |
+| [NOTE-315](../../../record/notes.d/NOTE-315.md) | ROME | Causal tracing localizes factual recall to mid-layer MLPs at the last subject token, and a rank-one MLP edit there rewrites single facts with both generalization and specificity. Main text and the CounterFact appendix read. | Read |
+| [NOTE-316](../../../record/notes.d/NOTE-316.md) | MEMIT | ROME's idea extended to thousands of facts by spreading updates across a range of MLP layers in one batched solve. 85.8 on 10,000 CounterFact edits on GPT-J, where ROME falls to 50.3. Main text read, appendices skimmed. | Read |

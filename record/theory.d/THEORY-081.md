@@ -1,5 +1,8 @@
 ---
+number: 81
 status: Proposed
+formerly:
+- THEORY-tmp03ct6
 promote_when: >-
   The key and value analyses repeated on current gated-FFN models at scale,
   with automated rather than hand annotation of key patterns, finding
@@ -14,9 +17,9 @@ tags:
 - model-architecture
 date: '2026-09-23'
 source:
-- LIT-tmp96ozs
+- LIT-575
 summary: >-
-  Geva et al. (2021), [LIT-tmp96ozs](../literature.d/LIT-tmp96ozs.md) — read FF(x) = f(xK)V as a memory. Keys
+  Geva et al. (2021), [LIT-575](../literature.d/LIT-575.md) — read FF(x) = f(xK)V as a memory. Keys
   fire on recognizable prefix patterns, shallow in lower layers and semantic
   in upper ones. Values, projected to the vocabulary, favor the tokens that
   follow those patterns. The evidence is 160 keys of one 16-layer model,
@@ -25,11 +28,11 @@ summary: >-
   features by what they "hear" and "predict".
 ---
 
-# THEORY-tmp03ct6: A transformer's feed-forward layers work as key-value memories: each hidden unit's input weights match input patterns, and its output weights promote the tokens that follow them
+# THEORY-081: A transformer's feed-forward layers work as key-value memories: each hidden unit's input weights match input patterns, and its output weights promote the tokens that follow them
 
 ## Source
 
-Geva et al. (2021), [LIT-tmp96ozs](../literature.d/LIT-tmp96ozs.md). Read as [NOTE-tmpah4r2](../notes.d/NOTE-tmpah4r2.md).
+Geva et al. (2021), [LIT-575](../literature.d/LIT-575.md). Read as [NOTE-312](../notes.d/NOTE-312.md).
 
 ## The account
 
@@ -44,7 +47,7 @@ residual stream. The stream accumulates and refines those votes.
 - Why FFN units can be labeled by their triggering contexts and their
   vocabulary projections, the basis of FFN-feature browsers
 - Why ROME and MEMIT can write facts into MLP weights as associative
-  key-value pairs ([LIT-tmpvij69](../literature.d/LIT-tmpvij69.md), [LIT-tmpmnwn4](../literature.d/LIT-tmpmnwn4.md))
+  key-value pairs ([LIT-578](../literature.d/LIT-578.md), [LIT-576](../literature.d/LIT-576.md))
 
 ## Where it is weak
 

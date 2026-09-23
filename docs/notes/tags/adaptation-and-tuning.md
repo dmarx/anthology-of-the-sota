@@ -4,7 +4,7 @@
 
 **adaptation-and-tuning**.
 
-34 of 311 NOTE documents. Back to the [full index](../README.md).
+38 of 316 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -42,3 +42,7 @@
 | [NOTE-264](../../../record/notes.d/NOTE-264.md) | Low-rank structure in a transformer is non-uniform, and a global rank is measurably the wrong choice | Read second in the spectral cluster, and it is the one that carries a recommendation. "Transformer weights are low rank" turns out to be true of some matrices and false of others, with the split systematic by component and by depth. The comparison against a uniform rank at matched compression was run and the margins are large. | Read |
 | [NOTE-276](../../../record/notes.d/NOTE-276.md) | Order-sensitivity refutes it, and the models everyone measured were trained for the task | Read as the challenge from outside the setup. It separates the hypothesis that pretrained models *do* in-context learning by gradient descent from the hypothesis that transformer weights *exist* which simulate it, and shows the literature had been testing only the second. Theorem 1 then gives a contradiction from order sensitivity alone, and LLaMA-7B disagrees with fine-tuning on three metrics across four datasets. | Read |
 | [NOTE-290](../../../record/notes.d/NOTE-290.md) | ReFT | A learned low-rank edit to the residual stream at a few prompt positions, with the model frozen. Up to 65× fewer parameters than LoRA. It leads on commonsense QA and on GPT-4-judged instruction following, is level on GLUE, and loses on arithmetic chain of thought. All baselines are copied from earlier papers. Read §1–6 and Appendix D; the other appendices were not read. | Read |
+| [NOTE-313](../../../record/notes.d/NOTE-313.md) | Does Localization Inform Editing? | Per fact, causal tracing's localization is unrelated to where an edit succeeds. The edit layer explains 94.7% of the variance in ROME's success on GPT-J, and tracing adds 0.1%. Main text read, robustness appendices skimmed. | Read |
+| [NOTE-314](../../../record/notes.d/NOTE-314.md) | RippleEdits | Knowledge-editing benchmarks test the edited fact and leave its consequences untested. On six ripple criteria, weight editors average 38–66, and prompting with the new fact beats them. Main text read. | Read |
+| [NOTE-315](../../../record/notes.d/NOTE-315.md) | ROME | Causal tracing localizes factual recall to mid-layer MLPs at the last subject token, and a rank-one MLP edit there rewrites single facts with both generalization and specificity. Main text and the CounterFact appendix read. | Read |
+| [NOTE-316](../../../record/notes.d/NOTE-316.md) | MEMIT | ROME's idea extended to thousands of facts by spreading updates across a range of MLP layers in one batched solve. 85.8 on 10,000 CounterFact edits on GPT-J, where ROME falls to 50.3. Main text read, appendices skimmed. | Read |

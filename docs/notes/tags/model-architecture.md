@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-35 of 311 NOTE documents. Back to the [full index](../README.md).
+36 of 316 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -43,3 +43,4 @@
 | [NOTE-295](../../../record/notes.d/NOTE-295.md) | SIREN | Sine-activated MLPs whose derivatives are well behaved, trainable because weights U(±√(6/n)) keep pre-activations standard normal and outputs arcsine at every depth, with ω₀ = 30 on the first layer. They fit signals and derivatives that ReLU, tanh and positional encoding do not. Read §1–4.2 and supplement §1; the later experiments were skimmed. | Read |
 | [NOTE-300](../../../record/notes.d/NOTE-300.md) | StyleGAN3 | Aliasing in the generator glues fine detail to pixel coordinates. Continuous-signal design, with 2×-upsampled filtered nonlinearities, Fourier input and no noise, gives translation- and rotation-equivariant generators at StyleGAN2's FID. Read §1–3.2 and Figure 3; the internal representation analysis and the appendices were skimmed. | Read |
 | [NOTE-301](../../../record/notes.d/NOTE-301.md) | StyleGAN2 | Diagnoses two StyleGAN artifacts and fixes each at its cause: weight demodulation instead of instance normalization, and a fixed skip/residual architecture instead of progressive growing. Adds lazy regularization and path-length regularization. Read §1–4.1 and Tables 1–2; §4.2 onward and the appendices were skimmed. | Read |
+| [NOTE-312](../../../record/notes.d/NOTE-312.md) | FFN layers as key-value memories | Keys fire on input patterns, and values project to next-token preferences. The reading is interpretable in upper layers of one small WikiText model, with weak key-value agreement and mostly compositional outputs. | Read |

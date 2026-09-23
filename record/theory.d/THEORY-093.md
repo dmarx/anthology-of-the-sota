@@ -22,7 +22,7 @@ summary: >-
 extended_by:
 - THEORY-089
 - THEORY-092
-- THEORY-tmpk7p83
+- THEORY-094
 ---
 
 # THEORY-093: Skip-gram with negative sampling implicitly factorizes the word-context PMI matrix shifted by log k, weighting frequent pairs more heavily

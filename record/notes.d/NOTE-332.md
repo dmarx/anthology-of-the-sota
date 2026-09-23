@@ -1,6 +1,9 @@
 ---
+number: 332
 status: 'Read'
-paper: 'LIT-tmp724zz'
+formerly:
+- NOTE-tmpqrk79
+paper: 'LIT-613'
 title: 'Arora et al.: RAND-WALK and PMI in low dimensions'
 version: 1
 date: '2026-09-23'
@@ -12,7 +15,7 @@ summary: >-
   corpus. Read in full, with the main-text proofs.
 ---
 
-# NOTE-tmpqrk79: Arora et al.: RAND-WALK and PMI in low dimensions
+# NOTE-332: Arora et al.: RAND-WALK and PMI in low dimensions
 
 ## Contribution
 

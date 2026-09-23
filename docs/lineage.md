@@ -356,18 +356,19 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-603](../record/literature.d/LIT-603.md) — Distributed Representations of Words and Phrases and their Compositionality *(Active)*
 - [LIT-608](../record/literature.d/LIT-608.md) — Don't count, predict! A systematic comparison of context-counting vs. context-predicting semantic vectors *(Active)*
 - [LIT-612](../record/literature.d/LIT-612.md) — Neural Word Embedding as Implicit Matrix Factorization *(Active)*
+- alongside: [LIT-613](../record/literature.d/LIT-613.md) — A Latent Variable Model Approach to PMI-based Word Embeddings *(Active)*
 
 ### From Efficient Estimation of Word Representations in Vector Space
 
-- [LIT-610](../record/literature.d/LIT-610.md) — Efficient Estimation of Word Representations in Vector Space *(Active)*
-  - [LIT-609](../record/literature.d/LIT-609.md) — Distributed Representations of Words and Phrases and their Compositionality *(Active)*
+- [LIT-610](../record/literature.d/LIT-610.md) — Efficient Estimation of Word Representations in Vector Space *(Superseded)*
+  - [LIT-609](../record/literature.d/LIT-609.md) — Distributed Representations of Words and Phrases and their Compositionality *(Superseded)*
 
 ## signal-structure
 
 ### From Efficient Estimation of Word Representations in Vector Space
 
-- [LIT-610](../record/literature.d/LIT-610.md) — Efficient Estimation of Word Representations in Vector Space *(Active)*
-  - [LIT-609](../record/literature.d/LIT-609.md) — Distributed Representations of Words and Phrases and their Compositionality *(Active)*
+- [LIT-610](../record/literature.d/LIT-610.md) — Efficient Estimation of Word Representations in Vector Space *(Superseded)*
+  - [LIT-609](../record/literature.d/LIT-609.md) — Distributed Representations of Words and Phrases and their Compositionality *(Superseded)*
 
 ## tiny-models
 
@@ -426,8 +427,8 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ### From Efficient Estimation of Word Representations in Vector Space
 
-- [LIT-610](../record/literature.d/LIT-610.md) — Efficient Estimation of Word Representations in Vector Space *(Active)*
-  - [LIT-609](../record/literature.d/LIT-609.md) — Distributed Representations of Words and Phrases and their Compositionality *(Active)*
+- [LIT-610](../record/literature.d/LIT-610.md) — Efficient Estimation of Word Representations in Vector Space *(Superseded)*
+  - [LIT-609](../record/literature.d/LIT-609.md) — Distributed Representations of Words and Phrases and their Compositionality *(Superseded)*
 
 ## vision-and-graphics
 

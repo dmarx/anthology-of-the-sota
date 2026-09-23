@@ -44,7 +44,7 @@ summary: >-
   their contexts. Derived from the objectives and illustrated. The mechanism
   is not measured.
 extended_by:
-- THEORY-tmpk7p83
+- THEORY-094
 ---
 
 # THEORY-089: Word vectors trained on co-occurrence behave linearly because they encode log co-occurrence statistics: differences carry log ratios, which gives analogies, and sums carry products of context distributions, which gives composition

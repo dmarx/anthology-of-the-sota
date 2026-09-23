@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-328 of 331 NOTE documents. Back to the [full index](../README.md).
+329 of 332 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -338,3 +338,4 @@
 | [NOTE-329](../../../record/notes.d/NOTE-329.md) | Levy, Goldberg & Dagan: lessons from word embeddings | The prediction-over-count advantage for word embeddings came from design choices bundled with word2vec, not from the algorithm. Ported to PPMI and SVD and tuned alike across 672 representations, no method wins consistently, SGNS beats GloVe, and context-distribution smoothing is the only universally safe setting. Read in full. | Read |
 | [NOTE-330](../../../record/notes.d/NOTE-330.md) | Baroni, Dinu & Kruszewski: Don't count, predict! | 84 count and predict models on 14 lexical-semantics benchmarks from one 2.8B-token corpus. word2vec CBOW beats count vectors almost everywhere and is far more robust to bad settings. The count side lacked word2vec's smoothing and negative shift, which is how [LIT-607](../../../record/literature.d/LIT-607.md) later reversed the result. Read in full. | Read |
 | [NOTE-331](../../../record/notes.d/NOTE-331.md) | Levy & Goldberg: SGNS as implicit PMI factorization | SGNS's objective is optimized at w·c = PMI(w, c) − log k, a weighted factorization of the shifted PMI matrix. Shifted PPMI nearly attains that optimum and SVD over it matches SGNS on similarity, while SGNS keeps an edge on syntactic analogies. Read in full. | Read |
+| [NOTE-332](../../../record/notes.d/NOTE-332.md) | Arora et al.: RAND-WALK and PMI in low dimensions | A random-walk generative model with isotropic word vectors predicts PMI ≈ ⟨v, v'⟩/d in low dimensions, justifies GloVe's biases and CBOW's averaging, and explains why analogies survive large fitting error: isotropy denoises the offset. Its assumptions are checked loosely on one corpus. Read in full, with the main-text proofs. | Read |

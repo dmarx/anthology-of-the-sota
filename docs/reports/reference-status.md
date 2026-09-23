@@ -9,7 +9,7 @@ Every reference in the record is a claim — "this is why things are the way the
 
 Only an `Active` document is in force. `Proposed` and `Deferred` mean *not in force yet* — an open question, being cited as if it were settled — while `Superseded` and `Rejected` mean *no longer in force*, which is often a perfectly good thing to cite: history, or a rejection worth pointing at. Either way the citation should be deliberate, and this section lists the ones nobody has vouched for yet.
 
-**5 documents cited without acknowledgement.** Not listed: 1316 citations someone has already vouched for with an `inactive-ok:` comment at the citing site.
+**5 documents cited without acknowledgement.** Not listed: 1325 citations someone has already vouched for with an `inactive-ok:` comment at the citing site.
 
 To vouch for one, put the reason where the citation is — `inactive-ok:` covers its own line and the line below it, `inactive-ok-block:` its paragraph, `inactive-ok-file:` the whole page:
 
@@ -63,17 +63,9 @@ Keep key/value projections shared across heads while query projections remain se
 
 A reference the reader cannot follow: the code names no document in this record. A typo, a number carried in from another project, and an illustrative code in an example all look identical from here — telling them apart takes a human, so this is a report, not an error.
 
-**2 codes unaccounted for.** Not listed: 3 mentions marked deliberate with an `unresolved-ok:` comment (same syntax and scopes as `inactive-ok:` above).
+**0 codes unaccounted for.** Not listed: 3 mentions marked deliberate with an `unresolved-ok:` comment (same syntax and scopes as `inactive-ok:` above).
 
-
-### SOTA-tmptiobf — resolves to nothing (2 unmarked sites)
-
-- [`record/literature.d/LIT-609.md:71`](../../record/literature.d/LIT-609.md)
-- [`record/practices.d/SOTA-381.md:83`](../../record/practices.d/SOTA-381.md)
-
-### SOTA-tmpgxyyv — resolves to nothing (1 unmarked site)
-
-- [`record/practices.d/SOTA-381.md:10`](../../record/practices.d/SOTA-381.md)
+Every code resolves. ✅
 
 ## Files that opt out of reference checking
 

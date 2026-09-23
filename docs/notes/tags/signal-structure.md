@@ -4,7 +4,7 @@
 
 **signal-structure**.
 
-11 of 331 NOTE documents. Back to the [full index](../README.md).
+12 of 332 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -19,3 +19,4 @@
 | [NOTE-327](../../../record/notes.d/NOTE-327.md) | GloVe | Derives a word-embedding objective from the claim that meaning lives in ratios of co-occurrence probabilities. It fits log co-occurrence counts by weighted least squares and beats default-configured word2vec on analogies. Read in full. | Read |
 | [NOTE-329](../../../record/notes.d/NOTE-329.md) | Levy, Goldberg & Dagan: lessons from word embeddings | The prediction-over-count advantage for word embeddings came from design choices bundled with word2vec, not from the algorithm. Ported to PPMI and SVD and tuned alike across 672 representations, no method wins consistently, SGNS beats GloVe, and context-distribution smoothing is the only universally safe setting. Read in full. | Read |
 | [NOTE-331](../../../record/notes.d/NOTE-331.md) | Levy & Goldberg: SGNS as implicit PMI factorization | SGNS's objective is optimized at w·c = PMI(w, c) − log k, a weighted factorization of the shifted PMI matrix. Shifted PPMI nearly attains that optimum and SVD over it matches SGNS on similarity, while SGNS keeps an edge on syntactic analogies. Read in full. | Read |
+| [NOTE-332](../../../record/notes.d/NOTE-332.md) | Arora et al.: RAND-WALK and PMI in low dimensions | A random-walk generative model with isotropic word vectors predicts PMI ≈ ⟨v, v'⟩/d in low dimensions, justifies GloVe's biases and CBOW's averaging, and explains why analogies survive large fitting error: isotropy denoises the offset. Its assumptions are checked loosely on one corpus. Read in full, with the main-text proofs. | Read |

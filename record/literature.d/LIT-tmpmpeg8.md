@@ -1,0 +1,61 @@
+---
+status: Active
+title: 'Semi-Supervised Classification with Graph Convolutional Networks'
+version: 1
+tags:
+- model-architecture
+date: '2026-09-23'
+published: '2016-09-01'
+arxiv: '1609.02907'
+first_author: 'Kipf'
+keywords:
+- 'gcn'
+- 'graph-neural-network'
+- 'message-passing'
+- 'node-classification'
+- 'renormalization-trick'
+implementations: []
+summary: >-
+  Kipf and Welling (ICLR 2017), [ARXIV-1609.02907](https://arxiv.org/abs/1609.02907). The GCN layer is
+  H′ = σ(D̃^{-1/2}ÃD̃^{-1/2} H W), with self-loops added and the adjacency
+  symmetrically normalized. It is motivated as a first-order approximation
+  of spectral graph convolution. Two layers reach 81.5% on Cora, 70.3% on
+  Citeseer and 79.0% on Pubmed, all on the single Planetoid split. Models
+  deeper than about 7 layers are hard to train without residual
+  connections.
+compared_against:
+- LIT-tmp95aa1
+- LIT-tmpkhqrt
+---
+
+# LIT-tmpmpeg8: Semi-Supervised Classification with Graph Convolutional Networks
+
+Kipf and Welling, University of Amsterdam (ICLR 2017) — [ARXIV-1609.02907](https://arxiv.org/abs/1609.02907)
+
+## Key takeaways
+
+- **The layer:** multiply node features by the degree-normalized adjacency
+  with self-loops (the "renormalization trick"), then by a weight matrix.
+  Each layer mixes one hop of neighborhood, at cost linear in edges
+- **Propagation ablation** (Table 3, mean of 100 initializations on the
+  Planetoid split): the renormalized form is best on all three citation
+  graphs. Chebyshev K = 2 reaches 81.2 on Cora and 73.8 on Pubmed, against
+  81.5 and 79.0
+- **Results** (Table 2): 70.3 on Citeseer, 81.5 on Cora and 79.0 on Pubmed,
+  against Planetoid's 64.7, 75.7 and 77.2
+- **Depth** (appendix B): accuracy peaks at 2–3 layers. Beyond about 7,
+  training without residual connections becomes difficult
+
+## Standing in the anthology
+
+**Filed from `#163`** ("graph representation / gnn") as the reference
+architecture the other GNN papers here measure against. GIN
+([LIT-tmp95aa1](LIT-tmp95aa1.md)) and Shchur et al. ([LIT-tmpkhqrt](LIT-tmpkhqrt.md)) are `compared_against` it.
+
+**No practice from it.** Its numbers come from one fixed split, which
+Shchur et al. show can reorder models, and later work under fair tuning
+finds it a hard baseline to beat. That finding is filed from the papers
+that measured it.
+
+Skimmed: the layer, the propagation ablation and the depth appendix. No NOTE
+is filed.

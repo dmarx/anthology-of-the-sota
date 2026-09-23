@@ -1,0 +1,68 @@
+---
+status: Active
+title: 'Pitfalls of Graph Neural Network Evaluation'
+version: 1
+tags:
+- analysis-and-evaluation
+- model-architecture
+date: '2026-09-23'
+published: '2018-11-01'
+arxiv: '1811.05868'
+first_author: 'Shchur'
+keywords:
+- 'gnn-evaluation'
+- 'data-splits'
+- 'hyperparameter-tuning'
+- 'node-classification'
+- 'benchmarking'
+implementations:
+- gnn-benchmark
+compared_against:
+- LIT-tmpmpeg8
+summary: >-
+  Shchur, Mumme, Bojchevski, Günnemann (R2L workshop, NeurIPS 2018),
+  [ARXIV-1811.05868](https://arxiv.org/abs/1811.05868). GCN, GAT, MoNet and GraphSAGE were run with one shared
+  training and tuning procedure, over 100 random splits × 20 seeds on 8
+  datasets. GCN has the best average rank (2.3) and relative accuracy
+  (99.4%). On Planetoid's single split GAT wins Cora and Citeseer; on
+  another random split of the same sizes GCN wins them. GAT's lower average
+  on Amazon comes from 138 of 2,000 runs collapsing.
+---
+
+# LIT-tmpkhqrt: Pitfalls of Graph Neural Network Evaluation
+
+Shchur, Mumme, Bojchevski, Günnemann, TU Munich (R2L workshop, NeurIPS
+2018) — [ARXIV-1811.05868](https://arxiv.org/abs/1811.05868)
+
+## Key takeaways
+
+- **Two pitfalls:** evaluating every model on the same single split of the
+  same three citation graphs, and comparing a new model's own training
+  procedure against baselines trained differently
+- **The protocol:** original architectures, with the same optimizer, early
+  stopping, initialization and full-batch training for all. The same grid
+  search, under a matched parameter budget, is selected on average Cora and
+  Citeseer accuracy. 20 labels per class for training and 30 for
+  validation, 100 random splits × 20 initializations, and 8 datasets (4 of
+  them new)
+- **Results** (Tables 1 and 2a): GNNs beat MLP, logistic regression and label
+  propagation everywhere. Among GNNs there is no clear winner, and on 5 of
+  8 datasets the second and third are within 1% of the best. By relative
+  accuracy and rank, GCN comes first (99.4%, 2.3), then MoNet (99.0%, 2.7),
+  GraphSAGE-mean (98.3%) and GAT (95.9%, 3.6)
+- **Split sensitivity** (Table 2b): on the Planetoid split GAT leads Cora
+  (82.8) and Citeseer (71.0). On another random split of the same sizes,
+  GCN leads both (79.0 and 68.6) and MoNet leads Pubmed
+
+## Standing in the anthology
+
+**Filed from `#163`** ("graph representation / gnn"). It is
+`compared_against` GCN ([LIT-tmpmpeg8](LIT-tmpmpeg8.md)) and sources [SOTA-tmpdjto5](../practices.d/SOTA-tmpdjto5.md).
+
+**A caveat on its own protocol.** Hyperparameters were chosen on Cora and
+Citeseer and reused on the other six datasets, which can favor whichever
+model transfers best. GAT's average is pulled down by rare collapsed runs,
+while its median is close to the others'. That makes GAT's result a
+stability finding, not an accuracy one.
+
+Read — [NOTE-tmpsxyhg](../notes.d/NOTE-tmpsxyhg.md).

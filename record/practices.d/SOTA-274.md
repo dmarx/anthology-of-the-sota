@@ -16,9 +16,19 @@ promote_when: >-
   it: further confirmation that transformer activations have low stable
   rank, which is already proved at initialization and measured in training.
 title: "Before adopting a spectral optimizer, measure the stable rank of each block's incoming activations against its gradient's nuclear rank"
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Appends `signal-structure`. A load-bearing part of this
+    document is a property of the data: its prior is, in its own words,
+    derived entirely from language: low activation stable rank follows from
+    Zipfian token frequencies, and a workload whose inputs are not Zipfian
+    has no such guarantee.
 tags:
 - training-optimization
+- signal-structure
 date: '2026-09-20'
 source:
 - LIT-457

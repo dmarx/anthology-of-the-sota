@@ -13,10 +13,19 @@ promote_when: >-
   be formulaic. That is the observation this is an account of, and the record
   already holds two.
 title: 'A corpus a model generates is narrower than the distribution it imitates, and the narrowing shows up as n-gram over-concentration'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Appends `signal-structure`. A load-bearing part of this
+    document is a property of the data: its claim is a statistic of a
+    corpus: generated text is narrower than the distribution it imitates,
+    measured as n-gram over-concentration.
 tags:
 - data-pipeline
 - analysis-and-evaluation
+- signal-structure
 date: '2026-09-21'
 source:
 - LIT-205

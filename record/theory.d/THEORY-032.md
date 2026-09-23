@@ -13,9 +13,19 @@ promote_when: >-
   confirming that transformer activations have low stable rank, which is
   already proved at initialization and observed in training.
 title: 'A spectral update wins where the incoming activations are low stable rank and the gradient spectrum is spread out'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Appends `signal-structure`. A load-bearing part of this
+    document is a property of the data: what turns its inequality into a
+    prediction is that the stable rank of the token-indicator matrix is the
+    inverse frequency of the most common token, about 20 for a Zipfian
+    corpus.
 tags:
 - training-optimization
+- signal-structure
 date: '2026-09-20'
 source:
 - LIT-457

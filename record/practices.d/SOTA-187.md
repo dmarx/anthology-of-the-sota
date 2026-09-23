@@ -4,7 +4,7 @@ status: Active
 formerly:
 - SOTA-tmphxjle
 title: 'Train the generative model in a learned compressed latent, not at full resolution'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-10'
@@ -18,9 +18,17 @@ history:
     before it was retagged representation-and-encoding. The argument for
     filing by kind of claim rather than as a diffusion technique is
     unchanged; only the stale topic name is fixed.
+- version: 4
+  date: '2026-09-23'
+  note: >-
+    Appends `signal-structure`. A load-bearing part of this
+    document is a property of the data: it rests on a property of images:
+    most of a pixel-space model's bits describe imperceptible high-frequency
+    detail.
 tags:
 - representation-and-encoding
 - generative-modeling
+- signal-structure
 consensus: universal
 date: '2026-09-08'
 source:

@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-51 of 370 SOTA documents. Back to the [full index](../README.md).
+52 of 371 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -61,3 +61,4 @@
 | [SOTA-357](../../../record/practices.d/SOTA-357.md) | Build a zero-shot classifier from prompt templates and ensemble them in embedding space |  | Active |
 | [SOTA-366](../../../record/practices.d/SOTA-366.md) | Monitor the standard deviation of the l2-normalized embedding; healthy is one over root d and collapsed is zero |  | Active |
 | [SOTA-368](../../../record/practices.d/SOTA-368.md) | When a model's latent space is meant to be read by people, measure its interpretability with a human task such as word or topic intrusion, not by held-out likelihood | Chang et al. (2009), [LIT-597](../../../record/literature.d/LIT-597.md) — topic models are used for their topics, but they are judged by held-out likelihood, which measures the probability of observations and ignores the representation. On NYT and Wikipedia, CTM had the best likelihood and the worst human scores. Test the latent space directly. Plant an improbable word among a topic's top words, or an improbable topic among a document's top topics, and measure how often people find it. | Active |
+| [SOTA-371](../../../record/practices.d/SOTA-371.md) | Score topic coherence automatically as the average pointwise mutual information of a topic's top-word pairs, estimated on a large external reference corpus | Newman et al. (2010), [LIT-600](../../../record/literature.d/LIT-600.md) — when you cannot put every topic in front of people ([SOTA-368](../../../record/practices.d/SOTA-368.md)), approximate their judgment. Take the topic's top ten words and, for each of the 45 pairs, compute PMI from co-occurrence in 10-word windows over a large general corpus such as Wikipedia. Average the 45 scores. On 237 LDA topics this correlated with nine people's ratings at ρ ≈ 0.77, far better than WordNet measures. | Proposed |

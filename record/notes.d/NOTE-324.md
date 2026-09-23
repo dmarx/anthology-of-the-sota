@@ -1,6 +1,9 @@
 ---
+number: 324
 status: Read
-paper: LIT-tmpa9msy
+formerly:
+- NOTE-tmp7ltug
+paper: LIT-600
 title: 'Automatic Evaluation of Topic Coherence'
 version: 1
 date: '2026-09-23'
@@ -11,7 +14,7 @@ summary: >-
   are less reliable. Read in full.
 ---
 
-# NOTE-tmp7ltug: Automatic Evaluation of Topic Coherence
+# NOTE-324: Automatic Evaluation of Topic Coherence
 
 ## Contribution
 

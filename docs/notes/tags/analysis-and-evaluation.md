@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-119 of 323 NOTE documents. Back to the [full index](../README.md).
+120 of 324 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -127,3 +127,4 @@
 | [NOTE-318](../../../record/notes.d/NOTE-318.md) | Pitfalls of GNN evaluation | With one shared training and tuning protocol over 100 splits × 20 seeds, GCN ranks first among four GNNs, and the single Planetoid split reorders models. Read in full. | Read |
 | [NOTE-319](../../../record/notes.d/NOTE-319.md) | GIN | Message passing is bounded by 1-WL, and sum aggregation with an MLP reaches the bound where mean and max do not. The theory predicts the training-fit ordering. Test accuracy separates the aggregators decisively only on featureless graphs. Main text read, proofs skimmed. | Read |
 | [NOTE-323](../../../record/notes.d/NOTE-323.md) | Reading Tea Leaves | Two human tasks, word intrusion and topic intrusion, measure whether a topic model's topics and document assignments mean anything to people. The model with the best held-out likelihood, CTM, does worst on both. Read in full. | Read |
+| [NOTE-324](../../../record/notes.d/NOTE-324.md) | Automatic Evaluation of Topic Coherence | Average pairwise PMI of a topic's top words, estimated on Wikipedia, correlates with human coherence ratings about as well as the paper's measure of annotator agreement. Knowledge-base and search-engine measures are less reliable. Read in full. | Read |

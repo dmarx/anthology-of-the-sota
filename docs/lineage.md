@@ -36,7 +36,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 ### From The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity
 
 - [LIT-466](../record/literature.d/LIT-466.md) — The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity *(Active)*
-  - [LIT-463](../record/literature.d/LIT-463.md) — Comment on The Illusion of Thinking *(Active)*
+  - [LIT-463](../record/literature.d/LIT-463.md) — Comment on The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity *(Active)*
 
 ### From TinyStories: How Small Can Language Models Be and Still Speak Coherent English?
 
@@ -300,10 +300,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-590](../record/literature.d/LIT-590.md) — Momentum Contrast for Unsupervised Visual Representation Learning *(Active)*
 - alongside: [LIT-591](../record/literature.d/LIT-591.md) — A Simple Framework for Contrastive Learning of Visual Representations *(Active)*
 
-### From Latent Dirichlet Allocation
+### From Reading Tea Leaves: How Humans Interpret Topic Models
 
+- [LIT-597](../record/literature.d/LIT-597.md) — Reading Tea Leaves: How Humans Interpret Topic Models *(Active)*
+  - [LIT-600](../record/literature.d/LIT-600.md) — Automatic Evaluation of Topic Coherence *(Active)*
 - alongside: [LIT-592](../record/literature.d/LIT-592.md) — Latent Dirichlet Allocation *(Active)*
-- alongside: [LIT-597](../record/literature.d/LIT-597.md) — Reading Tea Leaves: How Humans Interpret Topic Models *(Active)*
 
 ### From Bootstrap your own latent: A new approach to self-supervised Learning
 
@@ -359,7 +360,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
         - [LIT-148](../record/literature.d/LIT-148.md) — Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer *(Active)*
           - [LIT-149](../record/literature.d/LIT-149.md) — u-µP: The Unit-Scaled Maximal Update Parametrization *(Active)*
           - [LIT-150](../record/literature.d/LIT-150.md) — Don't be lazy: CompleteP enables compute-efficient deep transformers *(Active)*
-            - [LIT-462](../record/literature.d/LIT-462.md) — Spectral Condition for muP under Width-Depth Scaling *(Active)* — also extends LIT-437
+            - [LIT-462](../record/literature.d/LIT-462.md) — Spectral Condition for μP under Width-Depth Scaling *(Active)* — also extends LIT-437
         - [LIT-437](../record/literature.d/LIT-437.md) — A Spectral Condition for Feature Learning *(Active)*
           - [LIT-436](../record/literature.d/LIT-436.md) — Scalable Optimization in the Modular Norm *(Active)*
             - [LIT-438](../record/literature.d/LIT-438.md) — Modular Duality in Deep Learning *(Active)*

@@ -4,7 +4,7 @@
 
 **representation-and-encoding**.
 
-27 of 323 NOTE documents. Back to the [full index](../README.md).
+28 of 324 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -35,3 +35,4 @@
 | [NOTE-311](../../../record/notes.d/NOTE-311.md) | FLUX.2 latent-space report | A controlled comparison of four autoencoder latents for flow models on ImageNet, with the timestep schedule swept per latent. The schedule decides the ranking. FLUX.2's VAE gets near-RAE learnability with the best reconstruction. Read in full from the rendered report, except the interactive Table 2, which did not load. | Read |
 | [NOTE-322](../../../record/notes.d/NOTE-322.md) v2 | Latent Dirichlet Allocation | The bag-of-words assumption, read through de Finetti, implies a document-level mixture. LDA is that mixture with Dirichlet topic proportions. It generalizes better than one-topic-per-document and per-document-parameter models by held-out perplexity. Main text read in full; the variational derivations in the appendices skimmed. | Read |
 | [NOTE-323](../../../record/notes.d/NOTE-323.md) | Reading Tea Leaves | Two human tasks, word intrusion and topic intrusion, measure whether a topic model's topics and document assignments mean anything to people. The model with the best held-out likelihood, CTM, does worst on both. Read in full. | Read |
+| [NOTE-324](../../../record/notes.d/NOTE-324.md) | Automatic Evaluation of Topic Coherence | Average pairwise PMI of a topic's top words, estimated on Wikipedia, correlates with human coherence ratings about as well as the paper's measure of annotator agreement. Knowledge-base and search-engine measures are less reliable. Read in full. | Read |

@@ -1,5 +1,8 @@
 ---
+number: 371
 status: Proposed
+formerly:
+- SOTA-tmpe36so
 promote_when: >-
   A study by others, on topics from more than one model family (for example
   neural topic models as well as LDA), showing that average-PMI coherence
@@ -13,9 +16,9 @@ tags:
 - representation-and-encoding
 date: '2026-09-23'
 source:
-- LIT-tmpa9msy
+- LIT-600
 introduced_by:
-- LIT-tmpa9msy
+- LIT-600
 consensus: unassessed
 consensus_note: >-
   PMI-style coherence, in this and later variants, became the default
@@ -24,7 +27,7 @@ consensus_note: >-
   assessed here.
 implementations: []
 summary: >-
-  Newman et al. (2010), [LIT-tmpa9msy](../literature.d/LIT-tmpa9msy.md) — when you cannot put every topic in
+  Newman et al. (2010), [LIT-600](../literature.d/LIT-600.md) — when you cannot put every topic in
   front of people ([SOTA-368](SOTA-368.md)), approximate their judgment. Take the topic's
   top ten words and, for each of the 45 pairs, compute PMI from
   co-occurrence in 10-word windows over a large general corpus such as
@@ -32,11 +35,11 @@ summary: >-
   nine people's ratings at ρ ≈ 0.77, far better than WordNet measures.
 ---
 
-# SOTA-tmpe36so: Score topic coherence automatically as the average pointwise mutual information of a topic's top-word pairs, estimated on a large external reference corpus
+# SOTA-371: Score topic coherence automatically as the average pointwise mutual information of a topic's top-word pairs, estimated on a large external reference corpus
 
 ## Source
 
-Newman et al. (2010), [LIT-tmpa9msy](../literature.d/LIT-tmpa9msy.md). Read as [NOTE-tmp7ltug](../notes.d/NOTE-tmp7ltug.md).
+Newman et al. (2010), [LIT-600](../literature.d/LIT-600.md). Read as [NOTE-324](../notes.d/NOTE-324.md).
 
 ## The practice
 

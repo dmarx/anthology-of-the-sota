@@ -986,6 +986,9 @@
     "ARXIV/2505.10475": {
       "title": "Parallel Scaling Law for Language Models"
     },
+    "ARXIV/2505.13738": {
+      "title": "Power Lines: Scaling Laws for Weight Decay and Batch Size in LLM Pre-training"
+    },
     "ARXIV/2506.00204": {
       "title": "Structure-Aware Fill-in-the-Middle Pretraining for Code"
     },

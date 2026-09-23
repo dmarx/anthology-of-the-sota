@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**182 document(s) awaiting a decision.**
+**183 document(s) awaiting a decision.**
 
 ## SOTAs
 
-125 of the 182.
+126 of the 183.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -138,10 +138,11 @@
 | 2026-09-23 | Proposed | [SOTA-344](../../record/practices.d/SOTA-344.md) | 1 | 0 | Train sparse autoencoders with a TopK activation instead of an L1 penalty, and prevent dead latents with transposed-decoder initialization and an auxiliary loss |
 | 2026-09-23 | Proposed | [SOTA-346](../../record/practices.d/SOTA-346.md) | 1 | 0 | Retune the training timestep shift for each autoencoder latent space, and never rank latent spaces for generation under one shared schedule |
 | 2026-09-23 | Proposed | [SOTA-352](../../record/practices.d/SOTA-352.md) | 1 | 0 | When a structure predictor is made generative, add a regression model's predictions to the training data so disordered regions are learned as disorder rather than invented structure |
+| 2026-09-23 | Proposed | [SOTA-371](../../record/practices.d/SOTA-371.md) | 1 | 0 | Score topic coherence automatically as the average pointwise mutual information of a topic's top-word pairs, estimated on a large external reference corpus |
 
 ## THEORYs
 
-51 of the 182.
+51 of the 183.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -199,7 +200,7 @@
 
 ## LITs
 
-3 of the 182.
+3 of the 183.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -209,7 +210,7 @@
 
 ## ADRs
 
-3 of the 182.
+3 of the 183.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

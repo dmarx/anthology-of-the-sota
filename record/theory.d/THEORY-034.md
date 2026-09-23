@@ -17,7 +17,7 @@ history:
   date: '2026-09-23'
   note: >-
     The Linear Representation Hypothesis it stands on is filed as
-    THEORY-tmpsbx36, which this extends. The trunk section is rewritten to
+    THEORY-090, which this extends. The trunk section is rewritten to
     say so. The account is unchanged.
 tags:
 - concept-geometry
@@ -27,7 +27,7 @@ source:
 - LIT-460
 explains: []
 extends:
-- THEORY-tmpsbx36
+- THEORY-090
 summary: >-
   Xiong (2026), [LIT-460](../literature.d/LIT-460.md) — a linear attribute direction plus a
   separating threshold is a half-space, a concept is the intersection of its
@@ -80,7 +80,7 @@ is not run.
 
 **It assumes the Linear Representation Hypothesis** and does not re-establish
 it. Everything here is downstream of that premise, which the record now
-holds as [THEORY-tmpsbx36](THEORY-tmpsbx36.md). That account's own evidence stops at the output
+holds as [THEORY-090](THEORY-090.md). That account's own evidence stops at the output
 space, and [LIT-526](../literature.d/LIT-526.md)'s null is against one of its uses.
 
 **Thresholds are assumed to exist and separate.** The soft version concedes
@@ -113,7 +113,7 @@ version.
 Both this and [THEORY-036](THEORY-036.md), filed in the same contribution, stand on the
 **Linear Representation Hypothesis**. When they were filed the record held no
 document for it and said so here. It now holds Park, Choe and Veitch
-([LIT-tmpoa14o](../literature.d/LIT-tmpoa14o.md)) and their account ([THEORY-tmpsbx36](THEORY-tmpsbx36.md)), which this one
+([LIT-606](../literature.d/LIT-606.md)) and their account ([THEORY-090](THEORY-090.md)), which this one
 `extends`: that account makes an attribute a direction, and this one adds the
 threshold. The lattice paper builds on that account's causal inner product
 ([NOTE-210](../notes.d/NOTE-210.md)), under which separable attributes are orthogonal. That is what
@@ -121,4 +121,4 @@ makes the canonical form's linear-independence condition more than a
 convenience. The two accounts share their weak point: neither is tested
 beyond curated concepts.
 
-<!-- inactive-ok-file: THEORY-tmpsbx36 — Proposed, named as the antecedent account this document had said was missing -->
+<!-- inactive-ok-file: THEORY-090 — Proposed, named as the antecedent account this document had said was missing -->

@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-121 of 327 NOTE documents. Back to the [full index](../README.md).
+122 of 328 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -129,3 +129,4 @@
 | [NOTE-323](../../../record/notes.d/NOTE-323.md) | Reading Tea Leaves | Two human tasks, word intrusion and topic intrusion, measure whether a topic model's topics and document assignments mean anything to people. The model with the best held-out likelihood, CTM, does worst on both. Read in full. | Read |
 | [NOTE-324](../../../record/notes.d/NOTE-324.md) | Automatic Evaluation of Topic Coherence | Average pairwise PMI of a topic's top words, estimated on Wikipedia, correlates with human coherence ratings about as well as the paper's measure of annotator agreement. Knowledge-base and search-engine measures are less reliable. Read in full. | Read |
 | [NOTE-325](../../../record/notes.d/NOTE-325.md) | word2vec (architectures) | CBOW and skip-gram, log-linear models that learn word vectors from billions of words cheaply, and the analogy benchmark that made "king − man + woman ≈ queen" a test. Read in full. | Read |
+| [NOTE-328](../../../record/notes.d/NOTE-328.md) | Linear Representation Hypothesis (Park, Choe, Veitch) | Formalizes "concepts are directions" with counterfactual word pairs, proves that the unembedding direction is a probe and the embedding direction a steering vector, and shows the two coincide under a causal inner product. One such product is the inverse unembedding covariance. The experiments, on LLaMA-2 7B, are qualitative. Read in full, appendices included. | Read |

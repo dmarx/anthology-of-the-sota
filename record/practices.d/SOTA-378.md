@@ -1,5 +1,8 @@
 ---
+number: 378
 status: Proposed
+formerly:
+- SOTA-tmpb5sn6
 consensus: contested
 consensus_note: >-
   One source recommends it, on qualitative evidence from two models. The one
@@ -23,11 +26,11 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-23'
 source:
-- LIT-tmpoa14o
+- LIT-606
 introduced_by:
-- LIT-tmpoa14o
+- LIT-606
 summary: >-
-  Park, Choe and Veitch (2024), [LIT-tmpoa14o](../literature.d/LIT-tmpoa14o.md) — training fixes a model's
+  Park, Choe and Veitch (2024), [LIT-606](../literature.d/LIT-606.md) — training fixes a model's
   representation only up to an invertible linear map, so Euclidean cosine
   between concept directions is not meaningful. Use ⟨u, v⟩ = uᵀ Cov(γ)⁻¹ v,
   with Cov(γ) the covariance of the unembedding rows, or equivalently
@@ -36,15 +39,15 @@ summary: >-
   in 17 models.
 implementations: []
 explained_by:
-- THEORY-tmpsbx36
+- THEORY-090
 ---
 
-# SOTA-tmpb5sn6: Compare, project and orthogonalize a language model's concept directions after whitening by the unembedding covariance, not by raw cosine
+# SOTA-378: Compare, project and orthogonalize a language model's concept directions after whitening by the unembedding covariance, not by raw cosine
 
 ## Source
 
-Park, Choe and Veitch (2024), [LIT-tmpoa14o](../literature.d/LIT-tmpoa14o.md) — [ARXIV-2311.03658](https://arxiv.org/abs/2311.03658), §3.2 and
-App D.2. The account is [THEORY-tmpsbx36](../theory.d/THEORY-tmpsbx36.md).
+Park, Choe and Veitch (2024), [LIT-606](../literature.d/LIT-606.md) — [ARXIV-2311.03658](https://arxiv.org/abs/2311.03658), §3.2 and
+App D.2. The account is [THEORY-090](../theory.d/THEORY-090.md).
 
 ## The claim
 
@@ -99,6 +102,6 @@ and each concept's probe and steering directions coincide.
 
 - `github.com/KihoPark/linear_rep_geometry` (the authors' code)
 
-<!-- inactive-ok-file: THEORY-tmpsbx36 — Proposed, filed in this same contribution as this practice's account -->
+<!-- inactive-ok-file: THEORY-090 — Proposed, filed in this same contribution as this practice's account -->
 
 <!-- inactive-ok-file: THEORY-063 — Proposed, named as the placement result whose bearing on whitening is unknown -->

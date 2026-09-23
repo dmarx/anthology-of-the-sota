@@ -1,6 +1,9 @@
 ---
+number: 328
 status: 'Read'
-paper: 'LIT-tmpoa14o'
+formerly:
+- NOTE-tmpsqg9c
+paper: 'LIT-606'
 title: 'Linear Representation Hypothesis (Park, Choe, Veitch)'
 version: 1
 date: '2026-09-23'
@@ -12,7 +15,7 @@ summary: >-
   on LLaMA-2 7B, are qualitative. Read in full, appendices included.
 ---
 
-# NOTE-tmpsqg9c: Linear Representation Hypothesis (Park, Choe, Veitch)
+# NOTE-328: Linear Representation Hypothesis (Park, Choe, Veitch)
 
 ## Contribution
 

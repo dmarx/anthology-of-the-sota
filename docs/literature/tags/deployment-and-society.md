@@ -2,11 +2,11 @@
 
 # LITs with `tags` `deployment-and-society`
 
-*Topics — The twenty-one kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-one for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
+*Topics — The twenty-two kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-two for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Deployment and society** — what a system does once it is running among people, and how anyone outside it could find out — audits of deployed platforms and recommenders, information ecosystems, moderation and governance, and the access problems and funding pressures of studying any of it from the outside.
 
-7 of 540 LIT documents. Back to the [full index](../README.md).
+7 of 541 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

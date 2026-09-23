@@ -105,7 +105,7 @@ refinement and generalisation relations.
 
 - **Linear Representation Hypothesis** — semantic features and concepts are
   encoded as linear directions or subspaces. The premise. It was not in the
-  record when this note was written, and is now [LIT-tmpoa14o](../literature.d/LIT-tmpoa14o.md).
+  record when this note was written, and is now [LIT-606](../literature.d/LIT-606.md).
 - **Formal Concept Analysis** — the lattice theory of objects and attributes,
   with extent (objects having the attributes) and intent (attributes shared
   by the objects) as duals.

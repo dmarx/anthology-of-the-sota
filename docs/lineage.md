@@ -2,7 +2,7 @@
 
 # Lines of work
 
-44 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+45 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -94,6 +94,25 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-583](../record/literature.d/LIT-583.md) — Highly accurate protein structure prediction with AlphaFold *(Active)*
   - [LIT-584](../record/literature.d/LIT-584.md) — Accurate structure prediction of biomolecular interactions with AlphaFold 3 *(Active)*
+
+## concept-geometry
+
+### From The Linear Representation Hypothesis and the Geometry of Large Language Models
+
+- [LIT-606](../record/literature.d/LIT-606.md) — The Linear Representation Hypothesis and the Geometry of Large Language Models *(Active)*
+  - [LIT-460](../record/literature.d/LIT-460.md) — The Lattice Representation Hypothesis of Large Language Models *(Active)*
+- alongside: [LIT-526](../record/literature.d/LIT-526.md) — Concepts Whisper: Spectral Anti-Concentration and the Dual Geometry of Transformer Representations *(Active)*
+
+### From Are Sparse Autoencoders Useful? A Case Study in Sparse Probing
+
+- alongside: [LIT-568](../record/literature.d/LIT-568.md) — Are Sparse Autoencoders Useful? A Case Study in Sparse Probing *(Active)*
+- alongside: [LIT-571](../record/literature.d/LIT-571.md) — Scaling and evaluating sparse autoencoders *(Active)*
+
+### From Efficient Estimation of Word Representations in Vector Space
+
+- [LIT-604](../record/literature.d/LIT-604.md) — Efficient Estimation of Word Representations in Vector Space *(Active)*
+  - [LIT-603](../record/literature.d/LIT-603.md) — Distributed Representations of Words and Phrases and their Compositionality *(Active)*
+- alongside: [LIT-602](../record/literature.d/LIT-602.md) — GloVe: Global Vectors for Word Representation *(Active)*
 
 ## data-pipeline
 

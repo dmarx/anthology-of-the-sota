@@ -54,7 +54,7 @@ vocabularies:
   #   ADR-045  signal-structure (v3) -- a finding about language measured
   #            on people had been filed under the closest word and said so;
   #            under ADR-059 the misfit was the finding
-  #   ADR-tmpw9gmq  concept-geometry -- three documents about how concepts sit
+  #   ADR-060  concept-geometry -- three documents about how concepts sit
   #            in representation space had each named the gap, from under a
   #            topic about input encoding
   #
@@ -188,7 +188,7 @@ vocabularies:
       signal-structure:
         label: Signal structure
         blurb: what the data itself is like, independent of any model — the statistics and structure of language, images and other signals that methods exploit or must respect, such as frequency spectra, heavy-tailed and Zipfian distributions, and what counts as a unit
-      # Added by ADR-tmpw9gmq. LIT-460 and LIT-458 each said the
+      # Added by ADR-060. LIT-460 and LIT-458 each said the
       # record had nothing on concept geometry, while filed under
       # `representation-and-encoding`, whose subject is the input.
       concept-geometry:

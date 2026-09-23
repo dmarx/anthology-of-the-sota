@@ -2,11 +2,11 @@
 
 # THEORYs with `tags` `analysis-and-evaluation`
 
-*Topics — The twenty-one kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-one for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
+*Topics — The twenty-two kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-two for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-50 of 89 THEORY documents. Back to the [full index](../README.md).
+51 of 90 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -60,3 +60,4 @@
 | [THEORY-085](../../../record/theory.d/THEORY-085.md) | InfoNCE maximizes a lower bound on mutual information that cannot exceed log N |  | Active |
 | [THEORY-087](../../../record/theory.d/THEORY-087.md) v2 | Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other |  | Deferred |
 | [THEORY-088](../../../record/theory.d/THEORY-088.md) | Masked prediction transfers across modalities only after the masking ratio is rescaled to the signal's information density |  | Proposed |
+| [THEORY-090](../../../record/theory.d/THEORY-090.md) | A concept's shared word-pair direction, its linear probe and its steering vector are one object, related by an inner product under which causally separable concepts are orthogonal | Park, Choe and Veitch (2024), [LIT-606](../../../record/literature.d/LIT-606.md) — the output-space direction that counterfactual word pairs share is provably a logit-linear probe, and the input-space direction is provably a steering vector that leaves separable concepts alone. Training fixes neither space's inner product, so cosine similarity is arbitrary. The inner product that makes separable concepts orthogonal maps one direction onto the other, and one member of that family is the inverse unembedding covariance. Proved under stated assumptions and shown on LLaMA-2 7B. | Proposed |

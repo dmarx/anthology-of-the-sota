@@ -2,11 +2,11 @@
 
 # SOTAs with `tags` `analysis-and-evaluation`
 
-*Topics — The twenty-one kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-one for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
+*Topics — The twenty-two kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-two for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-52 of 377 SOTA documents. Back to the [full index](../README.md).
+53 of 378 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -62,3 +62,4 @@
 | [SOTA-366](../../../record/practices.d/SOTA-366.md) | Monitor the standard deviation of the l2-normalized embedding; healthy is one over root d and collapsed is zero |  | Active |
 | [SOTA-368](../../../record/practices.d/SOTA-368.md) | When a model's latent space is meant to be read by people, measure its interpretability with a human task such as word or topic intrusion, not by held-out likelihood | Chang et al. (2009), [LIT-597](../../../record/literature.d/LIT-597.md) — topic models are used for their topics, but they are judged by held-out likelihood, which measures the probability of observations and ignores the representation. On NYT and Wikipedia, CTM had the best likelihood and the worst human scores. Test the latent space directly. Plant an improbable word among a topic's top words, or an improbable topic among a document's top topics, and measure how often people find it. | Active |
 | [SOTA-371](../../../record/practices.d/SOTA-371.md) | Score topic coherence automatically as the average pointwise mutual information of a topic's top-word pairs, estimated on a large external reference corpus | Newman et al. (2010), [LIT-600](../../../record/literature.d/LIT-600.md) — when you cannot put every topic in front of people ([SOTA-368](../../../record/practices.d/SOTA-368.md)), approximate their judgment. Take the topic's top ten words and, for each of the 45 pairs, compute PMI from co-occurrence in 10-word windows over a large general corpus such as Wikipedia. Average the 45 scores. On 237 LDA topics this correlated with nine people's ratings at ρ ≈ 0.77, far better than WordNet measures. | Proposed |
+| [SOTA-378](../../../record/practices.d/SOTA-378.md) | Compare, project and orthogonalize a language model's concept directions after whitening by the unembedding covariance, not by raw cosine | Park, Choe and Veitch (2024), [LIT-606](../../../record/literature.d/LIT-606.md) — training fixes a model's representation only up to an invertible linear map, so Euclidean cosine between concept directions is not meaningful. Use ⟨u, v⟩ = uᵀ Cov(γ)⁻¹ v, with Cov(γ) the covariance of the unembedding rows, or equivalently transform by Cov(γ)^(−1/2) and then use Euclidean tools. Shown on LLaMA-2 7B and Gemma-2B by heatmap. Contested by a null for cross-lingual transport in 17 models. | Proposed |

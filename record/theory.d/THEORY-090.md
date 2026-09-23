@@ -1,5 +1,8 @@
 ---
+number: 90
 status: Proposed
+formerly:
+- THEORY-tmpsbx36
 promote_when: >-
   The unification shown to hold where probing and steering are done, in
   intermediate layers, and not only at the output: steering vectors built
@@ -16,11 +19,11 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-23'
 source:
-- LIT-tmpoa14o
+- LIT-606
 explains:
-- SOTA-tmpb5sn6
+- SOTA-378
 summary: >-
-  Park, Choe and Veitch (2024), [LIT-tmpoa14o](../literature.d/LIT-tmpoa14o.md) — the output-space direction
+  Park, Choe and Veitch (2024), [LIT-606](../literature.d/LIT-606.md) — the output-space direction
   that counterfactual word pairs share is provably a logit-linear probe, and
   the input-space direction is provably a steering vector that leaves
   separable concepts alone. Training fixes neither space's inner product, so
@@ -32,11 +35,11 @@ extended_by:
 - THEORY-034
 ---
 
-# THEORY-tmpsbx36: A concept's shared word-pair direction, its linear probe and its steering vector are one object, related by an inner product under which causally separable concepts are orthogonal
+# THEORY-090: A concept's shared word-pair direction, its linear probe and its steering vector are one object, related by an inner product under which causally separable concepts are orthogonal
 
 ## Source
 
-Park, Choe and Veitch (2024), [LIT-tmpoa14o](../literature.d/LIT-tmpoa14o.md), read as [NOTE-tmpsqg9c](../notes.d/NOTE-tmpsqg9c.md).
+Park, Choe and Veitch (2024), [LIT-606](../literature.d/LIT-606.md), read as [NOTE-328](../notes.d/NOTE-328.md).
 
 ## The account
 

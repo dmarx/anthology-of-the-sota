@@ -15,7 +15,7 @@ history:
 - version: 2
   date: '2026-09-23'
   note: >-
-    `corrects` SOTA-tmpcx9ae, the Baroni et al. recommendation it overturns,
+    `corrects` SOTA-380, the Baroni et al. recommendation it overturns,
     filed after it.
 tags:
 - analysis-and-evaluation
@@ -26,7 +26,7 @@ source:
 introduced_by:
 - LIT-607
 corrects:
-- SOTA-tmpcx9ae
+- SOTA-380
 implementations:
 - hyperwords
 summary: >-
@@ -60,8 +60,8 @@ Levy, Goldberg and Dagan (2015), [LIT-607](../literature.d/LIT-607.md), read as 
 
 ## Why
 
-Baroni et al. (2014, [LIT-tmpat5ys](../literature.d/LIT-tmpat5ys.md)) found prediction-based embeddings well
-ahead, and recommended them ([SOTA-tmpcx9ae](SOTA-tmpcx9ae.md), now `Rejected`; this practice
+Baroni et al. (2014, [LIT-608](../literature.d/LIT-608.md)) found prediction-based embeddings well
+ahead, and recommended them ([SOTA-380](SOTA-380.md), now `Rejected`; this practice
 `corrects` it). They had
 compared word2vec with its recommended settings against vanilla PPMI and SVD,
 with SVD at its worst setting. Equalizing the settings removes the
@@ -82,4 +82,4 @@ worth up to 15.7 points over vanilla, more than the gap between methods.
 
 - `hyperwords` (the authors' code)
 
-<!-- inactive-ok-file: SOTA-tmpcx9ae — Rejected, and named as the retired recommendation; this citation records its retirement -->
+<!-- inactive-ok-file: SOTA-380 — Rejected, and named as the retired recommendation; this citation records its retirement -->

@@ -1,5 +1,8 @@
 ---
+number: 380
 status: Rejected
+formerly:
+- SOTA-tmpcx9ae
 status_note: >-
   the advantage it reports disappears when the count-based baselines get the
   design choices word2vec shipped with and every method is tuned alike
@@ -12,13 +15,13 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-23'
 source:
-- LIT-tmpat5ys
+- LIT-608
 introduced_by:
-- LIT-tmpat5ys
+- LIT-608
 implementations:
 - word2vec
 summary: >-
-  Baroni, Dinu and Kruszewski (2014), [LIT-tmpat5ys](../literature.d/LIT-tmpat5ys.md) — across 14 benchmarks,
+  Baroni, Dinu and Kruszewski (2014), [LIT-608](../literature.d/LIT-608.md) — across 14 benchmarks,
   word2vec CBOW beat PPMI, SVD and NMF count vectors almost everywhere, and
   the authors recommend "anybody interested in using DSMs" to "go for the
   predict models". Retired: [LIT-607](../literature.d/LIT-607.md) traces the gap to settings the count
@@ -27,11 +30,11 @@ corrected_by:
 - SOTA-379
 ---
 
-# SOTA-tmpcx9ae: Use prediction-based word vectors rather than count-based distributional vectors
+# SOTA-380: Use prediction-based word vectors rather than count-based distributional vectors
 
 ## Source
 
-Baroni, Dinu and Kruszewski (2014), [LIT-tmpat5ys](../literature.d/LIT-tmpat5ys.md), read as [NOTE-tmpkgbhw](../notes.d/NOTE-tmpkgbhw.md).
+Baroni, Dinu and Kruszewski (2014), [LIT-608](../literature.d/LIT-608.md), read as [NOTE-330](../notes.d/NOTE-330.md).
 
 ## What it said
 

@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-326 of 329 NOTE documents. Back to the [full index](../README.md).
+327 of 330 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -336,3 +336,4 @@
 | [NOTE-327](../../../record/notes.d/NOTE-327.md) | GloVe | Derives a word-embedding objective from the claim that meaning lives in ratios of co-occurrence probabilities. It fits log co-occurrence counts by weighted least squares and beats default-configured word2vec on analogies. Read in full. | Read |
 | [NOTE-328](../../../record/notes.d/NOTE-328.md) | Linear Representation Hypothesis (Park, Choe, Veitch) | Formalizes "concepts are directions" with counterfactual word pairs, proves that the unembedding direction is a probe and the embedding direction a steering vector, and shows the two coincide under a causal inner product. One such product is the inverse unembedding covariance. The experiments, on LLaMA-2 7B, are qualitative. Read in full, appendices included. | Read |
 | [NOTE-329](../../../record/notes.d/NOTE-329.md) | Levy, Goldberg & Dagan: lessons from word embeddings | The prediction-over-count advantage for word embeddings came from design choices bundled with word2vec, not from the algorithm. Ported to PPMI and SVD and tuned alike across 672 representations, no method wins consistently, SGNS beats GloVe, and context-distribution smoothing is the only universally safe setting. Read in full. | Read |
+| [NOTE-330](../../../record/notes.d/NOTE-330.md) | Baroni, Dinu & Kruszewski: Don't count, predict! | 84 count and predict models on 14 lexical-semantics benchmarks from one 2.8B-token corpus. word2vec CBOW beats count vectors almost everywhere and is far more robust to bad settings. The count side lacked word2vec's smoothing and negative shift, which is how [LIT-607](../../../record/literature.d/LIT-607.md) later reversed the result. Read in full. | Read |

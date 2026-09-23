@@ -1,6 +1,9 @@
 ---
+number: 330
 status: 'Read'
-paper: 'LIT-tmpat5ys'
+formerly:
+- NOTE-tmpkgbhw
+paper: 'LIT-608'
 title: 'Baroni, Dinu & Kruszewski: Don''t count, predict!'
 version: 1
 date: '2026-09-23'
@@ -12,7 +15,7 @@ summary: >-
   result. Read in full.
 ---
 
-# NOTE-tmpkgbhw: Baroni, Dinu & Kruszewski: Don't count, predict!
+# NOTE-330: Baroni, Dinu & Kruszewski: Don't count, predict!
 
 ## Contribution
 
@@ -60,6 +63,6 @@ configurations chosen to represent them.
 ## Recommendations
 
 - **R1** — use prediction-based vectors over count-based ones. *Filed as
-  retired*: [SOTA-tmpcx9ae](../practices.d/SOTA-tmpcx9ae.md), `Rejected` on [LIT-607](../literature.d/LIT-607.md)'s evidence.
+  retired*: [SOTA-380](../practices.d/SOTA-380.md), `Rejected` on [LIT-607](../literature.d/LIT-607.md)'s evidence.
 
-<!-- inactive-ok-file: SOTA-tmpcx9ae — Rejected, and named as the retired recommendation; this citation records its retirement -->
+<!-- inactive-ok-file: SOTA-380 — Rejected, and named as the retired recommendation; this citation records its retirement -->

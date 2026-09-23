@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-46 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+47 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -26,6 +26,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [SOTA-184](../record/practices.d/SOTA-184.md) — Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself *(Active, universal)*
 - alongside: [SOTA-329](../record/practices.d/SOTA-329.md) — For short-output tasks, adapt a frozen model with a low-rank intervention on a few positions of the residual stream, not a weight adapter; do not use it for long chain-of-thought *(Proposed, unreplicated)*
+
+## analysis-and-evaluation
+
+### From Use prediction-based word vectors rather than count-based distributional vectors
+
+- [SOTA-380](../record/practices.d/SOTA-380.md) — Use prediction-based word vectors rather than count-based distributional vectors *(Rejected, unassessed)*
+  - [SOTA-379](../record/practices.d/SOTA-379.md) — Before crediting a word-embedding method over count-based ones, give the baselines the same design choices and tune every method alike *(Active, unreplicated)*
 
 ## attention-techniques
 
@@ -225,6 +232,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [SOTA-063](../record/practices.d/SOTA-063.md) — use RoPE for LLM (1D sequence) positional embeddings *(Active, unassessed)*
   - [SOTA-151](../record/practices.d/SOTA-151.md) — Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length *(Active, converged)*
 - alongside: [SOTA-153](../record/practices.d/SOTA-153.md) — Drop positional encoding from the global-attention layers of a hybrid and let the cheap local layers carry position *(Active, emerging)*
+
+### From Use prediction-based word vectors rather than count-based distributional vectors
+
+- [SOTA-380](../record/practices.d/SOTA-380.md) — Use prediction-based word vectors rather than count-based distributional vectors *(Rejected, unassessed)*
+  - [SOTA-379](../record/practices.d/SOTA-379.md) — Before crediting a word-embedding method over count-based ones, give the baselines the same design choices and tune every method alike *(Active, unreplicated)*
 
 ## systems-optimization
 

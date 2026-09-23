@@ -4,7 +4,7 @@
 
 **signal-structure**.
 
-10 of 329 NOTE documents. Back to the [full index](../README.md).
+10 of 330 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

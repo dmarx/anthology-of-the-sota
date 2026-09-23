@@ -6,7 +6,7 @@
 
 **Assumed** — not doing it is what needs justifying.
 
-12 of 379 SOTA documents. Back to the [full index](../README.md).
+12 of 380 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

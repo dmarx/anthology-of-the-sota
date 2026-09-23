@@ -6,7 +6,7 @@
 
 **Retired** — no longer believed, with no successor — the attic.
 
-18 of 379 SOTA documents. Back to the [full index](../README.md).
+19 of 380 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -28,3 +28,4 @@
 | [SOTA-107](../../../record/practices.d/SOTA-107.md) v3 | Keep sequence lengths multiple of 128 for best performance | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Rejected — The 128 is traced and belongs to a different quantity. Every occurrence in the source is a head dimension or a block size; none is a sequence length, and "multiple of" and "divisible" appear zero times |
 | [SOTA-108](../../../record/practices.d/SOTA-108.md) v3 | Pad attention masks to block boundaries for better hardware utilization | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Rejected — Not in the cited paper. "padding", "padded", "pad", "block boundar" and "divisible" appear zero times each; the body's reasoning about skipping fully-masked blocks is correct and is not the source's |
 | [SOTA-112](../../../record/practices.d/SOTA-112.md) v4 | Combine Monarch Mixer layers with standard attention rather than replacing it wholesale | Fu et al. (2023), [LIT-115](../../../record/literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109). | Rejected — The source is attention-free and argues for replacement, not combination. "hybrid" occurs zero times in it; the hybrid argument belongs to the attention/SSM literature elsewhere in this record |
+| [SOTA-380](../../../record/practices.d/SOTA-380.md) | Use prediction-based word vectors rather than count-based distributional vectors | Baroni, Dinu and Kruszewski (2014), [LIT-608](../../../record/literature.d/LIT-608.md) — across 14 benchmarks, word2vec CBOW beat PPMI, SVD and NMF count vectors almost everywhere, and the authors recommend "anybody interested in using DSMs" to "go for the predict models". Retired: [LIT-607](../../../record/literature.d/LIT-607.md) traces the gap to settings the count models were not given, and finds no consistent winner once they are. | Rejected — the advantage it reports disappears when the count-based baselines get the design choices word2vec shipped with and every method is tuned alike ([LIT-607](../../../record/literature.d/LIT-607.md)): no family wins consistently. Retired with no successor. What replaces it is an evaluation practice, [SOTA-379](../../../record/practices.d/SOTA-379.md), which corrects it |

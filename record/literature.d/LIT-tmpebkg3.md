@@ -1,0 +1,75 @@
+---
+status: Active
+title: 'Eliciting Latent Predictions from Transformers with the Tuned Lens'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-23'
+published: '2023-03-01'
+arxiv: '2303.08112'
+first_author: 'Belrose'
+keywords:
+- 'tuned-lens'
+- 'logit-lens'
+- 'interpretability'
+- 'probing'
+- 'prompt-injection-detection'
+implementations:
+- tuned-lens
+extends:
+- LIT-tmpqsh8n
+summary: >-
+  Belrose et al. (2023), [ARXIV-2303.08112](https://arxiv.org/abs/2303.08112). The logit lens is unreliable:
+  it fails on BLOOM, OPT-125M and GPT-Neo, and even where it works it is
+  biased, 4–5 bits of KL from the final marginal on GPT-Neo-2.7B. The tuned
+  lens trains one affine translator per layer by distillation toward the
+  final logits. It has lower perplexity and bias on every model family
+  tested up to 20B, and features it relies on also matter to the model
+  (Spearman 0.89). Version 6 (2025) adds that every lens in the paper was
+  undertrained, and that Muon trains them much better.
+---
+
+# LIT-tmpebkg3: Eliciting Latent Predictions from Transformers with the Tuned Lens
+
+Belrose, Ostrovsky, McKinney, Furman, Smith, Halawi, Biderman, Steinhardt,
+EleutherAI, FAR AI, Toronto, BU and Berkeley (2023) — [ARXIV-2303.08112](https://arxiv.org/abs/2303.08112)
+
+## Key takeaways
+
+- **The logit lens is unreliable and biased** (§2). For BLOOM and OPT-125M
+  its top-1 is often the *input* token in more than half the layers. On
+  GPT-Neo-2.7B its marginal is 4–5 bits of KL from the final layer's, at
+  most layers. The comparison given is 0.0068 bits between Pythia-160M and
+  Pythia-12B
+- **The tuned lens** (§3): `LogitLens(A_ℓ h_ℓ + b_ℓ)`, one affine
+  "translator" per layer. It is initialized to the identity and trained on
+  held-out pretraining text with KL to the final logits. The distillation
+  target keeps it from learning more than the model knows. Lower perplexity
+  than the logit lens at every layer on Pythia 70M–12B and GPT-NeoX-20B
+  (Figure 5), with lower variance across models
+- **It is causally faithful, by the paper's tests** (§4). Directions that
+  move the lens also move the model (Spearman ρ = 0.89, Pythia-410M, layer
+  18), with no lens-only directions. Stimulus-response alignment is higher
+  than the logit lens's at every layer
+- **Transfer:** translators carry over to nearby layers and to fine-tuned
+  models. A LLaMA-13B lens on Vicuna-13B costs at most 0.3 bits per byte
+- **Applications** (§5). Trajectories fed to an off-the-shelf outlier
+  detector flag prompt injections on Pythia-12B, with AUROC near 1 on five
+  of nine tasks. But the SRM (Mahalanobis) baseline matches or beats it on
+  eight. On eliciting a fine-tuned model's secret word, the tuned lens beats
+  the logit lens at some layers and loses at others
+
+## Standing in the anthology
+
+**Filed from `#163`** ("LogitLens and adjacent mechanistic
+interpretability"). It `extends` the logit lens ([LIT-tmpqsh8n](LIT-tmpqsh8n.md)) and sources
+[SOTA-tmpeyp35](../practices.d/SOTA-tmpeyp35.md).
+
+**What the headline leaves out.** The abstract's "detect malicious inputs
+with high accuracy" is true against no baseline. Against a one-layer
+Mahalanobis detector, the lens wins on one task in nine. And the
+undertraining note added in version 6 means the paper's quantitative
+comparisons understate the method they recommend. It does not re-run them.
+
+Read — [NOTE-tmpsoytn](../notes.d/NOTE-tmpsoytn.md).
+<!-- inactive-ok-file: SOTA-tmpeyp35 — Proposed, filed in this same contribution from this paper -->

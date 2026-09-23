@@ -16,7 +16,7 @@ history:
 - version: 2
   date: '2026-09-23'
   note: >-
-    Adds LIT-tmp56jtw as a source: aligned design choices make count and
+    Adds LIT-607 as a source: aligned design choices make count and
     prediction methods converge, as the account predicts. Still Proposed.
 tags:
 - representation-and-encoding
@@ -26,7 +26,7 @@ date: '2026-09-23'
 source:
 - LIT-602
 - LIT-603
-- LIT-tmp56jtw
+- LIT-607
 summary: >-
   Pennington et al. (2014), [LIT-602](../literature.d/LIT-602.md), and Mikolov et al. (2013),
   [LIT-603](../literature.d/LIT-603.md) — what distinguishes words is the ratio of how often they
@@ -69,7 +69,7 @@ river → Volga River).
 
 ## Support from a controlled comparison
 
-[LIT-tmp56jtw](../literature.d/LIT-tmp56jtw.md) adds the test the two sources lacked. If count-based and
+[LIT-607](../literature.d/LIT-607.md) adds the test the two sources lacked. If count-based and
 prediction-based vectors fit the same statistics, they should converge once
 their design choices are aligned. Tuned alike, PPMI, SVD, SGNS and GloVe show
 no consistent winner, and the gaps change sign from task to task. That is

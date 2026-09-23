@@ -1,5 +1,8 @@
 ---
+number: 379
 status: Active
+formerly:
+- SOTA-tmpl3rwi
 consensus: unreplicated
 consensus_note: >-
   One group's controlled study for word representations. The same lesson,
@@ -13,13 +16,13 @@ tags:
 - representation-and-encoding
 date: '2026-09-23'
 source:
-- LIT-tmp56jtw
+- LIT-607
 introduced_by:
-- LIT-tmp56jtw
+- LIT-607
 implementations:
 - hyperwords
 summary: >-
-  Levy, Goldberg and Dagan (2015), [LIT-tmp56jtw](../literature.d/LIT-tmp56jtw.md) — word2vec and GloVe ship
+  Levy, Goldberg and Dagan (2015), [LIT-607](../literature.d/LIT-607.md) — word2vec and GloVe ship
   with design choices (context smoothing, the negative-sample shift, dynamic
   windows, subsampling, adding context vectors) that count-based PPMI and SVD
   can use too. Port them and tune every method the same way before comparing.
@@ -28,11 +31,11 @@ summary: >-
   and a single hyperparameter often matters more than the method.
 ---
 
-# SOTA-tmpl3rwi: Before crediting a word-embedding method over count-based ones, give the baselines the same design choices and tune every method alike
+# SOTA-379: Before crediting a word-embedding method over count-based ones, give the baselines the same design choices and tune every method alike
 
 ## Source
 
-Levy, Goldberg and Dagan (2015), [LIT-tmp56jtw](../literature.d/LIT-tmp56jtw.md), read as [NOTE-tmpebd0y](../notes.d/NOTE-tmpebd0y.md).
+Levy, Goldberg and Dagan (2015), [LIT-607](../literature.d/LIT-607.md), read as [NOTE-329](../notes.d/NOTE-329.md).
 
 ## Do this
 

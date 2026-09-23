@@ -11,6 +11,9 @@
     "ARXIV/1211.5063": {
       "title": "On the difficulty of training Recurrent Neural Networks"
     },
+    "ARXIV/1301.3781": {
+      "title": "Efficient Estimation of Word Representations in Vector Space"
+    },
     "ARXIV/1307.1493": {
       "title": "Dropout Training as Adaptive Regularization"
     },
@@ -634,6 +637,9 @@
     },
     "ARXIV/2305.10755": {
       "title": "Measurement-Device-Independent Quantum Secret Sharing"
+    },
+    "ARXIV/2305.13048": {
+      "title": "RWKV: Reinventing RNNs for the Transformer Era"
     },
     "ARXIV/2305.13245": {
       "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints"

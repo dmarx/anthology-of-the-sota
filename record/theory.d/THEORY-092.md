@@ -1,5 +1,8 @@
 ---
+number: 92
 status: Proposed
+formerly:
+- THEORY-tmpghqdh
 promote_when: >-
   The mechanism measured, not only the gain. For example, show that
   smoothing's benefit to a method grows with how much of that method's
@@ -14,11 +17,11 @@ tags:
 - representation-and-encoding
 date: '2026-09-23'
 source:
-- LIT-tmp56jtw
+- LIT-607
 explains:
 - SOTA-375
 summary: >-
-  Levy, Goldberg and Dagan (2015), [LIT-tmp56jtw](../literature.d/LIT-tmp56jtw.md) — PMI divides by the context's
+  Levy, Goldberg and Dagan (2015), [LIT-607](../literature.d/LIT-607.md) — PMI divides by the context's
   probability, so a rare context seen once with a word gets a high score and
   crowds out the informative ones. Raising context counts to α = 0.75 before
   normalizing raises rare contexts' probability and lowers their PMI. That
@@ -26,12 +29,12 @@ summary: >-
   smoothing helps PPMI most (up to 9.2 points) and SGNS least (at most 1.4).
 ---
 
-# THEORY-tmpghqdh: Raising context counts to the 3/4 power helps word representations because PMI overweights rare contexts, and smoothing lowers their association scores
+# THEORY-092: Raising context counts to the 3/4 power helps word representations because PMI overweights rare contexts, and smoothing lowers their association scores
 
 ## Source
 
-Levy, Goldberg and Dagan (2015), [LIT-tmp56jtw](../literature.d/LIT-tmp56jtw.md), §2.1, §3.2 and §6.2, read as
-[NOTE-tmpebd0y](../notes.d/NOTE-tmpebd0y.md).
+Levy, Goldberg and Dagan (2015), [LIT-607](../literature.d/LIT-607.md), §2.1, §3.2 and §6.2, read as
+[NOTE-329](../notes.d/NOTE-329.md).
 
 ## The account
 

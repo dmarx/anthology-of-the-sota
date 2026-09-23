@@ -9,7 +9,7 @@ history:
 - version: 2
   date: '2026-09-23'
   note: >-
-    Marked contested: an independent ablation (LIT-tmp56jtw) finds it helps
+    Marked contested: an independent ablation (LIT-607) finds it helps
     similarity and costs 4-12 points on analogies. Status unchanged.
 tags:
 - data-pipeline
@@ -23,12 +23,12 @@ introduced_by:
 consensus: contested
 consensus_note: >-
   The source measured it on its own method. The one independent ablation,
-  LIT-tmp56jtw, finds it task-dependent: it helps SGNS on similarity (up to
+  LIT-607, finds it task-dependent: it helps SGNS on similarity (up to
   +2.2) and costs 4.4 to 5.4 points on analogies, and PPMI 5 to 12. Its speed
   benefit is not disputed. It became part of the standard recipe, which is
   adoption, not evidence (DP-005).
 contested_by:
-- LIT-tmp56jtw
+- LIT-607
 implementations:
 - word2vec
 summary: >-
@@ -63,7 +63,7 @@ Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md). Read as [NOTE-326]
   structure, but that is not tested here
 - **Gains on word analogies were small or zero with enough negatives**
   (NEG-15: 61 → 61%)
-- **An independent ablation finds it hurts analogies.** [LIT-tmp56jtw](../literature.d/LIT-tmp56jtw.md) (Table
+- **An independent ablation finds it hurts analogies.** [LIT-607](../literature.d/LIT-607.md) (Table
   8b), at matched tuning on 1.5B tokens: SGNS similarity +0.1 to +2.2, and
   Google and MSR analogies −4.4 and −5.4. For PPMI the analogy losses are 5.0
   and 12.2. The best SGNS configuration used subsampling on 4 of 8 tasks. Use

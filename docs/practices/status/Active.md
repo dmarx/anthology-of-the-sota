@@ -6,7 +6,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-221 of 378 SOTA documents. Back to the [full index](../README.md).
+222 of 379 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -228,6 +228,7 @@
 | [SOTA-370](../../../record/practices.d/SOTA-370.md) | Add many low-resolution views alongside the two full ones, because view count is what helps and resolution is what costs |  | Active |
 | [SOTA-372](../../../record/practices.d/SOTA-372.md) | Run the encoder on visible tokens only and push the mask tokens into a small decoder you discard |  | Active |
 | [SOTA-373](../../../record/practices.d/SOTA-373.md) | Set the masking ratio by the signal's redundancy, not by the ratio that worked on text |  | Active |
-| [SOTA-374](../../../record/practices.d/SOTA-374.md) | When learning embeddings from co-occurrence, subsample very frequent tokens, discarding each occurrence with probability 1 − √(t/f) with t around 10⁻⁵ | Mikolov et al. (2013), [LIT-603](../../../record/literature.d/LIT-603.md) — in a Zipfian corpus, the few most frequent words co-occur with everything and dominate the updates while teaching little. Discard each occurrence of word w with probability 1 − √(t/f(w)). This cut skip-gram training time by 2–3× and raised accuracy, only slightly for words (59 → 60% at NEG-5) but a lot for phrases (27 → 42% at NEG-15, 19 → 47% with hierarchical softmax). | Active |
+| [SOTA-374](../../../record/practices.d/SOTA-374.md) v2 | When learning embeddings from co-occurrence, subsample very frequent tokens, discarding each occurrence with probability 1 − √(t/f) with t around 10⁻⁵ | Mikolov et al. (2013), [LIT-603](../../../record/literature.d/LIT-603.md) — in a Zipfian corpus, the few most frequent words co-occur with everything and dominate the updates while teaching little. Discard each occurrence of word w with probability 1 − √(t/f(w)). This cut skip-gram training time by 2–3× and raised accuracy, only slightly for words (59 → 60% at NEG-5) but a lot for phrases (27 → 42% at NEG-15, 19 → 47% with hierarchical softmax). | Active |
 | [SOTA-376](../../../record/practices.d/SOTA-376.md) | Score each image-text pair independently with a sigmoid, so the loss needs no global normalization |  | Active |
 | [SOTA-377](../../../record/practices.d/SOTA-377.md) | Stop scaling the contrastive batch past about 32k, because the benefit saturates there |  | Active |
+| [SOTA-379](../../../record/practices.d/SOTA-379.md) | Before crediting a word-embedding method over count-based ones, give the baselines the same design choices and tune every method alike | Levy, Goldberg and Dagan (2015), [LIT-607](../../../record/literature.d/LIT-607.md) — word2vec and GloVe ship with design choices (context smoothing, the negative-sample shift, dynamic windows, subsampling, adding context vectors) that count-based PPMI and SVD can use too. Port them and tune every method the same way before comparing. Done that way across 672 representations and 8 datasets, the prediction-over-count advantage disappears, SGNS beats GloVe on every task, and a single hyperparameter often matters more than the method. | Active |

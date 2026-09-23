@@ -4,7 +4,7 @@
 
 **representation-and-encoding**.
 
-32 of 328 NOTE documents. Back to the [full index](../README.md).
+33 of 329 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -40,3 +40,4 @@
 | [NOTE-325](../../../record/notes.d/NOTE-325.md) | word2vec (architectures) | CBOW and skip-gram, log-linear models that learn word vectors from billions of words cheaply, and the analogy benchmark that made "king − man + woman ≈ queen" a test. Read in full. | Read |
 | [NOTE-326](../../../record/notes.d/NOTE-326.md) | word2vec (negative sampling, subsampling, phrases) | The tricks that made word2vec the standard: negative sampling with a unigram^(3/4) noise distribution, subsampling of frequent words, and data-driven phrase tokens, plus additive compositionality. The 3/4 exponent is asserted without numbers. Read in full. | Read |
 | [NOTE-327](../../../record/notes.d/NOTE-327.md) | GloVe | Derives a word-embedding objective from the claim that meaning lives in ratios of co-occurrence probabilities. It fits log co-occurrence counts by weighted least squares and beats default-configured word2vec on analogies. Read in full. | Read |
+| [NOTE-329](../../../record/notes.d/NOTE-329.md) | Levy, Goldberg & Dagan: lessons from word embeddings | The prediction-over-count advantage for word embeddings came from design choices bundled with word2vec, not from the algorithm. Ported to PPMI and SVD and tuned alike across 672 representations, no method wins consistently, SGNS beats GloVe, and context-distribution smoothing is the only universally safe setting. Read in full. | Read |

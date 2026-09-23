@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-99 of 378 SOTA documents. Back to the [full index](../README.md).
+99 of 379 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -106,6 +106,6 @@
 | [SOTA-359](../../../record/practices.d/SOTA-359.md) v2 | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |
 | [SOTA-360](../../../record/practices.d/SOTA-360.md) | Score a density ratio against sampled negatives instead of reconstructing the target |  | Active |
 | [SOTA-363](../../../record/practices.d/SOTA-363.md) | Decouple the negative set from the batch with a queue, and keep the encoder that fills it slow |  | Active |
-| [SOTA-375](../../../record/practices.d/SOTA-375.md) | When training with sampled negatives, draw them from the unigram distribution raised to the 3/4 power, not from the unigram or uniform distribution | Mikolov et al. (2013), [LIT-603](../../../record/literature.d/LIT-603.md) — sample negatives in proportion to count^(3/4). That flattens the Zipfian head so frequent words are not nearly the only negatives, while keeping rare words rare. The authors report it "outperformed significantly the unigram and the uniform distributions … on every task we tried", but give no numbers. | Proposed |
+| [SOTA-375](../../../record/practices.d/SOTA-375.md) v2 | When training with sampled negatives, draw them from the unigram distribution raised to the 3/4 power, not from the unigram or uniform distribution | Mikolov et al. (2013), [LIT-603](../../../record/literature.d/LIT-603.md) — sample negatives in proportion to count^(3/4). That flattens the Zipfian head so frequent words are not nearly the only negatives, while keeping rare words rare. The authors report it "outperformed significantly the unigram and the uniform distributions … on every task we tried", but give no numbers. | Proposed |
 | [SOTA-376](../../../record/practices.d/SOTA-376.md) | Score each image-text pair independently with a sigmoid, so the loss needs no global normalization |  | Active |
 | [SOTA-377](../../../record/practices.d/SOTA-377.md) | Stop scaling the contrastive batch past about 32k, because the benefit saturates there |  | Active |

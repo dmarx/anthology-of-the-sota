@@ -14,7 +14,7 @@ history:
 - version: 2
   date: '2026-09-23'
   note: >-
-    Gains its first measurement, LIT-tmp56jtw (smoothing against none: SGNS
+    Gains its first measurement, LIT-607 (smoothing against none: SGNS
     0 to +1.4, PPMI up to +9.2), and consensus `unreplicated` for it. Still
     Proposed: only two exponents are compared.
 tags:
@@ -23,14 +23,14 @@ tags:
 date: '2026-09-23'
 source:
 - LIT-603
-- LIT-tmp56jtw
+- LIT-607
 introduced_by:
 - LIT-603
 consensus: unreplicated
 consensus_note: >-
   The 3/4 exponent is a fixture of embedding, recommendation and retrieval
   code. That is adoption (DP-005). The one controlled measurement is
-  LIT-tmp56jtw, a second group, against α = 1 only. GloVe independently found
+  LIT-607, a second group, against α = 1 only. GloVe independently found
   3/4 best for a different job, weighting co-occurrence counts, which is
   suggestive and not the same evidence.
 implementations:
@@ -42,7 +42,7 @@ summary: >-
   "outperformed significantly the unigram and the uniform distributions …
   on every task we tried", but give no numbers.
 explained_by:
-- THEORY-tmpghqdh
+- THEORY-092
 ---
 
 # SOTA-375: When training with sampled negatives, draw them from the unigram distribution raised to the 3/4 power, not from the unigram or uniform distribution
@@ -62,11 +62,11 @@ Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md). Read as [NOTE-326]
 
 - **Mikolov et al. give none.** "Significantly" better "on every task we
   tried", with no table.
-- **Levy, Goldberg and Dagan measure it** ([LIT-tmp56jtw](../literature.d/LIT-tmp56jtw.md), Table 8d), as
+- **Levy, Goldberg and Dagan measure it** ([LIT-607](../literature.d/LIT-607.md), Table 8d), as
   context-distribution smoothing against α = 1, over 8 similarity and
   analogy datasets. SGNS gains 0 to +1.4 points and never loses. PPMI gains
   up to +9.2 and SVD up to +2.2. The authors call it the one setting that can
-  be applied blindly. [THEORY-tmpghqdh](../theory.d/THEORY-tmpghqdh.md) is their account of why.
+  be applied blindly. [THEORY-092](../theory.d/THEORY-092.md) is their account of why.
 
 ## Why still `Proposed`
 
@@ -82,4 +82,4 @@ establish that 3/4 is the right exponent.
 - **Word-level skip-gram.** Other tasks and item distributions may want a
   different exponent
 
-<!-- inactive-ok-file: THEORY-tmpghqdh — Proposed, filed in this same contribution as this practice's account -->
+<!-- inactive-ok-file: THEORY-092 — Proposed, filed in this same contribution as this practice's account -->

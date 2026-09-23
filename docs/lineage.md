@@ -108,12 +108,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-568](../record/literature.d/LIT-568.md) — Are Sparse Autoencoders Useful? A Case Study in Sparse Probing *(Active)*
 - alongside: [LIT-571](../record/literature.d/LIT-571.md) — Scaling and evaluating sparse autoencoders *(Active)*
 
-### From Efficient Estimation of Word Representations in Vector Space
-
-- [LIT-604](../record/literature.d/LIT-604.md) — Efficient Estimation of Word Representations in Vector Space *(Active)*
-  - [LIT-603](../record/literature.d/LIT-603.md) — Distributed Representations of Words and Phrases and their Compositionality *(Active)*
-- alongside: [LIT-602](../record/literature.d/LIT-602.md) — GloVe: Global Vectors for Word Representation *(Active)*
-
 ## data-pipeline
 
 ### From Scaling Data-Constrained Language Models
@@ -342,11 +336,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-595](../record/literature.d/LIT-595.md) — VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning *(Active)*
 - alongside: [LIT-596](../record/literature.d/LIT-596.md) — Barlow Twins: Self-Supervised Learning via Redundancy Reduction *(Active)*
 
-### From Efficient Estimation of Word Representations in Vector Space
+### From GloVe: Global Vectors for Word Representation
 
+- [LIT-602](../record/literature.d/LIT-602.md) — GloVe: Global Vectors for Word Representation *(Active)*
+  - [LIT-607](../record/literature.d/LIT-607.md) — Improving Distributional Similarity with Lessons Learned from Word Embeddings *(Active)*
 - [LIT-604](../record/literature.d/LIT-604.md) — Efficient Estimation of Word Representations in Vector Space *(Active)*
   - [LIT-603](../record/literature.d/LIT-603.md) — Distributed Representations of Words and Phrases and their Compositionality *(Active)*
-- alongside: [LIT-602](../record/literature.d/LIT-602.md) — GloVe: Global Vectors for Word Representation *(Active)*
 
 ## tiny-models
 

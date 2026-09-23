@@ -1,6 +1,9 @@
 ---
+number: 329
 status: 'Read'
-paper: 'LIT-tmp56jtw'
+formerly:
+- NOTE-tmpebd0y
+paper: 'LIT-607'
 title: 'Levy, Goldberg & Dagan: lessons from word embeddings'
 version: 1
 date: '2026-09-23'
@@ -12,7 +15,7 @@ summary: >-
   only universally safe setting. Read in full.
 ---
 
-# NOTE-tmpebd0y: Levy, Goldberg & Dagan: lessons from word embeddings
+# NOTE-329: Levy, Goldberg & Dagan: lessons from word embeddings
 
 ## Contribution
 
@@ -76,12 +79,12 @@ methods are small and change sign from task to task.
 ## Recommendations
 
 - **R1** — give baselines the same design choices and tuning before crediting
-  a method. *Filed* as [SOTA-tmpl3rwi](../practices.d/SOTA-tmpl3rwi.md).
+  a method. *Filed* as [SOTA-379](../practices.d/SOTA-379.md).
 - **R2** — always apply context-distribution smoothing. *Folded into*
-  [SOTA-375](../practices.d/SOTA-375.md) as its first measurement. The account is [THEORY-tmpghqdh](../theory.d/THEORY-tmpghqdh.md).
+  [SOTA-375](../practices.d/SOTA-375.md) as its first measurement. The account is [THEORY-092](../theory.d/THEORY-092.md).
 - **R3** — do not use eig = 1 for SVD word vectors. *Left in the reading*
   ([ADR-041](../decisions.d/ADR-041.md)): it is a setting of one method.
 - **R4** — prefer many negatives for SGNS, and try w + c. *Left in the
   reading*: w + c changes sign across tasks.
 
-<!-- inactive-ok-file: SOTA-375, THEORY-tmpghqdh — Proposed; named as where this reading's recommendation R2 was folded -->
+<!-- inactive-ok-file: SOTA-375, THEORY-092 — Proposed; named as where this reading's recommendation R2 was folded -->

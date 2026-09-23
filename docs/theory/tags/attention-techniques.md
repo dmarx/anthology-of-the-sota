@@ -6,7 +6,7 @@
 
 **Attention techniques** — attention variants and alternative mechanisms, implementation optimizations, context length.
 
-5 of 91 THEORY documents. Back to the [full index](../README.md).
+5 of 92 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

@@ -1,0 +1,107 @@
+---
+status: Active
+title: 'Learning Transferable Visual Models From Natural Language Supervision'
+version: 1
+tags:
+- multimodal-learning
+- vision-and-graphics
+- analysis-and-evaluation
+date: '2026-09-23'
+published: '2021-02-01'
+arxiv: '2103.00020'
+first_author: 'Radford'
+keywords:
+- 'contrastive-pretraining'
+- 'natural-language-supervision'
+- 'zero-shot-transfer'
+- 'distribution-shift'
+- 'prompt-engineering'
+summary: >-
+  Radford et al. (2021), [ARXIV-2103.00020](https://arxiv.org/abs/2103.00020). Train an image encoder and a
+  text encoder to match 400M (image, text) pairs contrastively, then build
+  a classifier for any label set by embedding its class names. The most
+  durable result is not the zero-shot accuracy — it is that supervised
+  adaptation which raises ImageNet by 9.2% buys no average robustness.
+---
+
+# LIT-tmpc8ymt: Learning Transferable Visual Models From Natural Language Supervision
+
+Radford et al. (2021) — [ARXIV-2103.00020](https://arxiv.org/abs/2103.00020)
+
+## Key takeaways
+
+- **The objective was chosen for training efficiency, and the paper shows
+  the ladder.** Predicting the caption's words with a 63M transformer learns
+  ImageNet classes **3× slower** than predicting a bag-of-words encoding of
+  the same text; swapping that predictive objective for a contrastive one
+  gave a further **4×**. So the argument for contrastive is not that it is a
+  better representation learner in the abstract, it is that predicting
+  *which* caption is a much cheaper proxy than predicting *what* the caption
+  says.
+- **The mechanism is deliberately plain.** For a batch of `N` pairs, maximise
+  cosine similarity on the `N` real pairings and minimise it on the `N²−N`
+  wrong ones, under a symmetric cross-entropy. There is no non-linear
+  projection head — only a linear map into the joint space, and the authors
+  report no efficiency difference from dropping it. The only augmentation is
+  a random square crop. The temperature is learned, initialised at the
+  equivalent of 0.07 and **clipped at a logit scale of 100, which the paper
+  says was necessary to prevent training instability**.
+- **Zero-shot classification is a hypernetwork trick.** The text encoder
+  emits the weights of a linear classifier; the image encoder is the
+  backbone. The classifier is computed once per label set and cached, so its
+  cost amortises. This is what makes the label set a runtime argument rather
+  than an architecture decision.
+- **Scale: 400M pairs (WIT), assembled by searching for 500,000 query terms
+  with up to 20,000 pairs each.** Batch 32,768, 32 epochs, 12.8B images seen.
+  RN50x64 took 18 days on 592 V100s; ViT-L/14 took 12 days on 256. The
+  reported "CLIP" is ViT-L/14 with one extra epoch at 336px.
+- **The robustness result, which is the part this record most wants.**
+  Zero-shot CLIP closes the gap between ImageNet accuracy and accuracy under
+  seven natural distribution shifts by **up to 75%**. Then: fitting a
+  supervised linear classifier on ImageNet raises ImageNet accuracy by
+  **9.2% — "roughly 3 years of improvement in SOTA" — and produces no
+  improvement in average accuracy under shift.** The gain concentrates on
+  ImageNetV2, which was built to follow ImageNet's own construction, while
+  accuracy *falls* 4.7% on ImageNet-R, 3.8% on ObjectNet, 2.8% on Sketch and
+  1.9% on ImageNet-A. Effective robustness decays smoothly as shots are
+  added, and zero-shot CLIP is more robust than a few-shot model with the
+  same ImageNet accuracy.
+- **Prompt phrasing is worth about 4× compute.** The template
+  `"A photo of a {label}."` alone is +1.3% on ImageNet over the bare class
+  name; ensembling 80 context prompts in embedding space adds a further
+  +3.5%; together ~+5% averaged over 36 datasets, which the paper measures
+  as equivalent to using 4× more compute — and it is free once amortised,
+  because the ensemble is averaged into one cached classifier.
+- **The limitations section is unusually honest and is the antidote to the
+  abstract.** Zero-shot CLIP is "on average competitive with the simple
+  supervised baseline of a linear classifier on top of ResNet-50 features",
+  a baseline "now well below the overall state of the art", and the authors
+  estimate **~1000× more compute** would be needed for zero-shot CLIP to
+  reach SOTA. It is near chance on counting and on distance-to-nearest-car.
+  It gets **88% on MNIST, beaten by logistic regression on raw pixels**,
+  because almost nothing resembling MNIST is in the pre-training data. And
+  performance **drops** going from zero-shot to one- and two-shot, the
+  opposite of the human pattern. The authors also state that they repeatedly
+  queried full validation sets while developing, and that their 27-dataset
+  suite is "somewhat haphazardly assembled" and "undeniably co-adapted" with
+  CLIP.
+
+## Standing in the anthology
+
+Filed as a **defect repair, not a candidate**, on the same footing as
+[LIT-tmp81ije](LIT-tmp81ije.md): the `#290` catalogue triage measured 45 documents in this
+record that say "CLIP" and no note for the paper. It reached the queue from
+`open_clip`'s README, an index dropped from the manifest in the same pass for
+being a model roster — the roster was a bad thing to scrape and a good thing
+to read once.
+
+It sources [SOTA-tmph2zob](../practices.d/SOTA-tmph2zob.md) (supervise from the caption, match rather than
+predict) and [SOTA-tmp4xixm](../practices.d/SOTA-tmp4xixm.md) (templates and an embedding-space ensemble), and
+it is added as a second source to [SOTA-196](../practices.d/SOTA-196.md), whose `consensus_note` had said
+the zero-shot/in-distribution conflict rested on one clean measurement. It
+rests on two, and this is the earlier and larger one.
+
+[DP-010](../../docs/design-principles.md#dp-10) is visible here in a single document. The sentence everybody cites —
+zero-shot matching a supervised ResNet-50 on ImageNet — is in the abstract.
+The sentence that qualifies it, that this baseline is well below the state of
+the art and 1000× compute away from it, is in §6 where nobody quotes from.

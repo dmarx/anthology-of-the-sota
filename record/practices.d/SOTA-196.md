@@ -5,15 +5,26 @@ formerly:
 - SOTA-tmpkh4j4
 consensus: emerging
 consensus_note: >-
-  One clean measurement of the conflict, in a setting where both metrics
-  mattered. The practice is uncontroversial once stated and is not stated often.
+  Two clean measurements of the conflict, in settings where both metrics
+  mattered, and the earlier one is the larger. The practice is
+  uncontroversial once stated and is still not stated often. Revised
+  2026-09-23 when `LIT-tmpc8ymt` was filed; the note previously said one
+  measurement, which was true of the record and not of the literature.
 title: 'Report zero-shot and in-distribution performance separately; one hyperparameter can move them in opposite directions'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Second source added. CLIP had made the same measurement a year earlier
+    and larger, and the record did not hold it — the consensus note said
+    one measurement and meant one the record had read.
 tags:
 - analysis-and-evaluation
 date: '2026-09-10'
 source:
 - LIT-072
+- LIT-tmpc8ymt
 introduced_by:
 - LIT-072
 implementations: []
@@ -55,9 +66,31 @@ Any hyperparameter with that character — a fine-tuning rate, a regularisation
 weight, a KL-to-reference coefficient — will have the same property. The failure
 is silent: nothing in the training loop reports it.
 
+## The same conflict, a year earlier and larger
+
+`LIT-tmpc8ymt` measures it on CLIP, and the numbers are bigger. Fitting a
+supervised linear classifier on ImageNet features raises ImageNet accuracy by
+**9.2%** — which the authors put at "roughly 3 years of improvement in SOTA"
+— and produces **no improvement in average accuracy across seven natural
+distribution shifts**. It is not a wash made of noise, either: the gain
+concentrates on ImageNetV2, the one shift dataset built to follow ImageNet's
+own construction, while accuracy *falls* 4.7% on ImageNet-R, 3.8% on
+ObjectNet, 2.8% on ImageNet Sketch and 1.9% on ImageNet-A.
+
+CLIP also supplies the continuum `LIT-072` does not. Sweeping 0-, 1-, 2-,
+4-… 128-shot and fully supervised classifiers on the same features, effective
+robustness decays monotonically as shots are added, and zero-shot CLIP is
+more robust than a few-shot model with *equal* ImageNet accuracy. So the
+trade is not a property of one hyperparameter's setting — it is a property of
+how much distribution-specific supervision the model has seen at all.
+
+The authors state plainly that they do not know why, listing it as an open
+question. That is worth preserving: the practice this document states is
+about reporting, and it does not need the mechanism.
+
 ## Conditions
 
-One measurement, in vision, in 2022. The generalisation — that this happens
+Two measurements, both in vision, in 2021 and 2022. The generalisation — that this happens
 whenever a hyperparameter trades preservation against fitting — is the shape of
 the argument rather than something `LIT-072` establishes.
 

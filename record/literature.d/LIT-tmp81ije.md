@@ -1,0 +1,87 @@
+---
+status: Active
+title: 'An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale'
+version: 1
+tags:
+- model-architecture
+- vision-and-graphics
+- representation-and-encoding
+date: '2026-09-23'
+published: '2020-10-01'
+arxiv: '2010.11929'
+first_author: 'Dosovitskiy'
+keywords:
+- 'vision-transformer'
+- 'image-classification'
+- 'inductive-bias'
+- 'transfer-learning'
+- 'pre-training-scale'
+summary: >-
+  Dosovitskiy et al. (2020), [ARXIV-2010.11929](https://arxiv.org/abs/2010.11929). Cut the image into fixed
+  patches, linearly embed them, and feed the sequence to an unmodified
+  transformer encoder. The result is not that the architecture is better
+  — it is that at enough pre-training data the convolutional prior stops
+  paying for itself, and below that threshold it still does.
+---
+
+# LIT-tmp81ije: An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
+
+Dosovitskiy et al. (2020) — [ARXIV-2010.11929](https://arxiv.org/abs/2010.11929)
+
+## Key takeaways
+
+- **The model is deliberately unremarkable.** Reshape the image into
+  `N = HW/P²` flattened patches, apply one trainable linear projection, add
+  *learned 1D* position embeddings, prepend a `[class]` token, and run a
+  standard pre-norm transformer encoder with a GELU MLP. The stated design
+  goal is that "scalable NLP Transformer architectures — and their efficient
+  implementations — can be used almost out of the box". ViT-B/L/H are 86M,
+  307M and 632M parameters, and `B/L/H` plus the patch size is the whole
+  configuration space.
+- **The only 2D prior injected by hand is patch extraction, plus the 2D
+  interpolation of position embeddings when fine-tuning at higher
+  resolution.** Everything else about spatial structure is learned. The
+  paper checks this: the learned 1D embeddings recover distance and
+  row/column structure on their own, which is why the 2D-aware variants the
+  authors tried gave nothing.
+- **The finding is a threshold, not a ranking, and it cuts both ways.**
+  Pre-trained on ImageNet-1k, ViT-Large is *worse* than ViT-Base despite
+  regularisation. On ImageNet-21k they draw level. Only on JFT-300M does the
+  larger model pay. On random JFT subsets with hyperparameters held fixed,
+  ViT-B/32 is much worse than a comparable ResNet-50 at 9M images and better
+  at 90M+. The authors' summary is "large scale training trumps inductive
+  bias" — the corollary, which gets quoted far less, is that below the
+  threshold the convolutional prior is the better bet.
+- **The compute claim is about pre-training cost, and it is large.**
+  ViT-H/14 reaches 88.55% on ImageNet at 2.5k TPUv3-core-days, against
+  9.9k for BiT-L and 12.3k for Noisy Student, whose ImageNet numbers it
+  matches or beats (87.54 and 88.4/88.5). ViT-L/16 pre-trained on the
+  *public* ImageNet-21k costs 0.23k core-days — about 30 days on one 8-core
+  TPUv3 — and still reaches 85.30. In the controlled JFT scaling study ViT
+  needs roughly **2–4× less compute** than ResNets for equal transfer
+  performance, and does not saturate in the range tried.
+- **The self-supervision result is a negative one, and the paper says so.**
+  Masked patch prediction gets ViT-B/16 to 79.9% on ImageNet: 2 points above
+  training from scratch and still **4 points behind supervised
+  pre-training**. Contrastive pre-training is named as future work. The
+  paper that opened the modern vision backbone did not solve its own
+  pre-training objective, and what closed that gap arrived later.
+- **Hybrids (ResNet feature maps in place of raw patches) beat pure ViT at
+  small budgets and the gap vanishes as models grow** — the authors call
+  this surprising, and it is the same threshold in another coordinate.
+
+## Standing in the anthology
+
+Filed as a **defect repair, not a candidate**. The `#290` catalogue triage
+measured that 47 documents already in this record say "ViT" — as the backbone
+an experiment was run on, as the thing a scaling claim was measured across,
+as assumed background — and that the record held no note for the paper. A
+substrate paper supports no practice of its own and is shipped by no library
+as a feature, so neither `#202`'s topic audit nor `#289`'s adoption sweep
+could reach it; it took reading a catalogue's bibliography by hand.
+
+The recommendation it sources is [SOTA-tmp9k3cq](../practices.d/SOTA-tmp9k3cq.md), which states the threshold
+rather than the architecture. That is deliberate. "Use a ViT" is a fact about
+2020–2026 defaults; "the domain prior stops paying above a data scale you can
+measure, and still pays below it" is the claim that survives the next
+backbone, and it is the half of this paper that gets dropped in citation.

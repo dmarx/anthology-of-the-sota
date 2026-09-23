@@ -1,0 +1,104 @@
+---
+status: Active
+title: 'On Calibration of Modern Neural Networks'
+version: 1
+tags:
+- analysis-and-evaluation
+- training-optimization
+date: '2026-09-23'
+published: '2017-06-01'
+arxiv: '1706.04599'
+first_author: 'Guo'
+keywords:
+- 'calibration'
+- 'confidence'
+- 'temperature-scaling'
+- 'expected-calibration-error'
+- 'platt-scaling'
+implementations: []
+extended_by:
+- LIT-514
+summary: >-
+  Guo et al. (2017), [ARXIV-1706.04599](https://arxiv.org/abs/1706.04599). Modern networks are badly
+  calibrated where their 1998-era ancestors were not, and depth, width,
+  BatchNorm and *less* weight decay each make it worse while improving
+  accuracy. The mechanism is that NLL overfits while 0/1 loss keeps
+  improving. The remedy is one scalar: temperature scaling beats every
+  richer method tried, including the ones that contain it.
+---
+
+# LIT-tmps0emi: On Calibration of Modern Neural Networks
+
+Guo, Pleiss, Sun and Weinberger (2017) — [ARXIV-1706.04599](https://arxiv.org/abs/1706.04599)
+
+## Key takeaways
+
+- **The finding is a regression, and that is what makes it a finding.**
+  Niculescu-Mizil & Caruana showed in 2005 that neural networks produced
+  well-calibrated probabilities. A 5-layer LeNet on CIFAR-100 still does; a
+  110-layer ResNet, which is more accurate, does not. Typical ECE across
+  their datasets is **4–10%**, on convolutional, recurrent and deep-averaging
+  networks alike.
+
+- **Four knobs, all pointing the same way.** Depth, width and BatchNorm each
+  worsen calibration, and *reducing* weight decay worsens it — calibration
+  keeps improving with more regularization well past the point that minimizes
+  classification error. Every one of the four is something the field adopted
+  because it improves accuracy.
+
+- **The mechanism is an overfitting that the error rate does not show.**
+  Networks overfit to NLL without overfitting to 0/1 loss. On a CIFAR-100
+  ResNet, test error falls from 29% to 27% **in the region where NLL is
+  already overfitting**. Their words: "the network learns better
+  classification accuracy at the expense of well-modeled probabilities."
+
+- **Temperature scaling: one scalar, fitted after training.** Rescale the
+  logits by 1/T, with T optimized for NLL on a held-out set. Because a single
+  positive scalar cannot move the argmax, **accuracy is unchanged by
+  construction** — which is what makes it free to apply. Found in ~10
+  iterations of a conjugate-gradient solver, a fraction of a second.
+
+- **It beats the methods that contain it, and that is the informative
+  part.** Vector and matrix scaling are strictly more general and do worse;
+  the vector solution comes out with nearly constant entries. Their reading:
+  **"network miscalibration is intrinsically low dimensional."** Matrix
+  scaling fails outright above a few hundred classes and does not converge on
+  ImageNet's 1000. Binning methods (histogram binning, isotonic regression,
+  BBQ) work but change class predictions, so they cost accuracy.
+
+- **ECE is not theirs.** Expected Calibration Error and Maximum Calibration
+  Error are **Naeini et al. (2015)**; this paper adopts ECE as its primary
+  metric (M=15 bins) and is what made it the field's default. Worth keeping
+  straight — a metric's standard reference and its origin are different
+  facts, which is the sweep this note was filed by.
+
+- **Stated limits.** Reuters is not improved by any method, and they say so,
+  along with the possibility that "our measurements are affected by dataset
+  split or by the particular binning scheme". And the mechanism is left open:
+  "It remains future work to understand why these trends affect calibration
+  while improving accuracy."
+
+## Standing in the anthology
+
+`LIT-514` (Berta et al., 2025) is described in its own summary as **"the
+record's first document on probability calibration"**. It was also the only
+one. The record entered this literature at a 2025 refinement of it and never
+held the paper that established the phenomenon, named the remedy the
+refinement is built on, and made ECE the number everyone reports.
+
+The cost was visible: `SOTA-315`, `Active`, recommends fitting a temperature
+and keeping it, and its `consensus_note` said nobody else had reported "the
+separation or the remedy". The remedy is from here, and is nine years older.
+Corrected in the same contribution as this note.
+
+**What this paper is *not* is a replication of `THEORY-060`,** and the
+temptation to read it as one is why this paragraph is here. Figure 3 shades
+the epochs between the best validation loss and the best validation error —
+two minima that differ. `THEORY-060` is about two minima *inside* the proper
+loss, calibration error against refinement error. Adjacent phenomenon,
+different decomposition. `THEORY-060`'s `promote_when` asks for calibration
+and refinement plotted against epoch by a group not proposing a remedy, and
+this does not supply it.
+
+Filed under `analysis-and-evaluation` as primary: what the record needs from
+it is the measure and the post-hoc procedure, not the architecture survey.

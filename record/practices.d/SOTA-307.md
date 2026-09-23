@@ -14,7 +14,15 @@ consensus_note: >-
   the literature is a single number from a single run, which is not a
   competing measurement but the absence of one.
 title: 'Report generative FID as an error bar over several training seeds, and treat any gap below about 2% of the mean as inconclusive'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    A second source of error named, from a 2018 paper the record did not
+    hold. The error bar this practice asks for is spread around the FID
+    estimator's own mean; the estimator is biased, and the offset is
+    shared by every seed. Averaging runs does not touch it.
 tags:
 - analysis-and-evaluation
 - generative-modeling
@@ -31,6 +39,8 @@ summary: >-
   **1–2%** across four model sizes and every compute budget to 2M steps.
   Ten times the sampling budget shrinks the small term by `√10` and leaves the
   large one untouched. A lucky training seed is worth up to **2× the compute**.
+extended_by:
+- SOTA-tmpfcgzq
 ---
 
 # SOTA-307: Report generative FID as an error bar over several training seeds, and treat any gap below about 2% of the mean as inconclusive
@@ -134,6 +144,15 @@ papers.
 against the final 2M ranking is 0.39–0.61 at 200k and 0.65–0.81 at 1.1M.
 Picking a seed on an early checkpoint and reusing it for the long run is close
 to picking at random.
+
+**The error bar does not cover the estimator.** Everything measured here is
+spread at a fixed sample count. The FID estimator is also *biased* — the
+offset depends on the distribution being measured, so it is shared by every
+seed and survives any amount of averaging — and no unbiased estimator exists
+([THEORY-tmpb0yyu](../theory.d/THEORY-tmpb0yyu.md), from a paper published eight years before this
+one). A run-to-run interval of 1.3% says nothing about whether the centre of
+that interval is where the true distance is. Fix `n` as well:
+[SOTA-tmpfcgzq](SOTA-tmpfcgzq.md).
 
 **Finite panel.** 20–25 training seeds, 10 sampling seeds, nothing past
 SiT-XL or 2M steps. Production-scale behaviour is an extrapolation and the

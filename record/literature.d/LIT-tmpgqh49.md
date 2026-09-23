@@ -1,0 +1,99 @@
+---
+status: Active
+title: 'Improved Techniques for Training GANs'
+version: 1
+tags:
+- analysis-and-evaluation
+- generative-modeling
+- vision-and-graphics
+date: '2026-09-23'
+published: '2016-06-01'
+arxiv: '1606.03498'
+first_author: 'Salimans'
+keywords:
+- 'inception-score'
+- 'feature-matching'
+- 'minibatch-discrimination'
+- 'semi-supervised-gan'
+- 'mode-collapse'
+implementations: []
+extended_by:
+- LIT-611
+summary: >-
+  Salimans et al. (2016), [ARXIV-1606.03498](https://arxiv.org/abs/1606.03498). Where the Inception Score
+  comes from — `exp(E_x KL(p(y|x) ‖ p(y)))`, proposed as a cheap stand-in
+  for a Mechanical Turk study it correlates with, on **50k samples** because
+  part of what it measures is diversity. The incumbent `LIT-611` displaced,
+  and the paper that first tied generative evaluation to ImageNet class
+  structure on purpose.
+compared_against:
+- LIT-tmphun6n
+---
+
+# LIT-tmpgqh49: Improved Techniques for Training GANs
+
+Salimans, Goodfellow, Zaremba, Cheung, Radford and Chen (2016) — [ARXIV-1606.03498](https://arxiv.org/abs/1606.03498)
+
+## Key takeaways
+
+- **The Inception Score, and what it was a substitute for.** `exp(E_x
+  KL(p(y|x) ‖ p(y)))`: low entropy per image, high entropy in the marginal.
+  It is introduced in Section 4 explicitly as an automatic replacement for
+  the Mechanical Turk study in the same section, "which we find to correlate
+  well with human evaluation". It is a **proxy for a human panel**, adopted
+  because panels are expensive.
+
+- **A sample-size requirement, stated in the founding paper.** "We find that
+  it's important to evaluate the metric on a large enough number of samples
+  (i.e. 50k) as part of this metric measures diversity." The requirement is
+  as old as the measure; `LIT-tmphun6n` later shows the successor metric
+  needs one too, and for a different reason.
+
+- **The human baseline is itself unstable, and they say so.** "Results
+  change drastically when we give annotators feedback about their mistakes:
+  by learning from such feedback, annotators are better able to point out the
+  flaws in generated images, giving a more pessimistic quality assessment."
+  The thing the automatic metric was validated against moves depending on
+  whether the raters were trained. Rarely restated downstream, and directly
+  relevant wherever the record treats a preference study as the arbiter.
+
+- **"Objectness" was the design goal, not a side effect.** Section 5.1 says
+  the score "is explicitly constructed to measure the 'objectness' of a
+  generated image", and attributes its correlation with human judgement to
+  the human visual system being attuned to class-inferring statistics. So
+  the dependence of Inception-feature evaluation on ImageNet's class
+  structure — which `LIT-563` later measures as a defect in FID — is
+  present at the origin, as a stated feature.
+
+- **Five training techniques, filed here for completeness.** Feature
+  matching (match the discriminator's intermediate-layer expectations rather
+  than maximizing its output); minibatch discrimination (let the
+  discriminator see cross-sample L1 distances, so it can punish collapse it
+  cannot see per-example); historical averaging; one-sided label smoothing;
+  virtual batch normalization. Their own comparison is the interesting part:
+  **minibatch discrimination gives better samples, feature matching gives a
+  better semi-supervised classifier**, and using G trained with minibatch
+  discrimination for semi-supervised learning "does not work at all".
+
+- **Semi-supervised GAN.** Add a K+1-th "generated" class to a classifier
+  and the unsupervised term is exactly the standard GAN game value. They note
+  the K+1 output is over-parameterized and can be fixed to zero.
+
+## Standing in the anthology
+
+Unit E's shape — **the winner of a named comparison filed without the
+loser**. `LIT-611` states its advantage as being over the Inception Score;
+`LIT-tmphun6n` reruns the comparison and reaches a different answer about
+which is more monotonic. The record held the winner and the re-run and not
+the incumbent, so neither claim could be checked against what it was about.
+
+Filed on weak substrate and the note says so: the record named the Inception
+Score in three places before this, all of them in passing. It is filed for
+the lineage, not for the mentions — the sweep that produced it was looking
+for measures the record has an opinion about whose defining paper it does not
+hold, and this one's opinion is held at one remove, inside the notes on the
+metric that replaced it.
+
+Primary topic `analysis-and-evaluation` rather than `generative-modeling`,
+by the same reasoning as `LIT-611`: most of the paper is GAN training
+technique, but what the record came for is the measure (`ADR-046`).

@@ -9,10 +9,22 @@ consensus_note: >-
   three model families with 30 hyperparameter configurations each, plus a
   vision benchmark run ten times per dataset. Breadth is not independence, and
   the group proposing the criterion is the group measuring it. Nobody else has
-  reported the separation or the remedy, and the field's default is still to
-  stop on raw validation loss.
+  reported the separation, and the field's default is still to stop on raw
+  validation loss. The *remedy* is a different matter and this note used to
+  get it wrong: temperature scaling is Guo et al. (2017), LIT-tmps0emi, filed
+  after this practice was, and it is the field's standard post-hoc
+  calibrator rather than anything new here. What is new is applying it
+  inside model selection instead of after it.
 title: 'Early-stop and tune on validation loss after temperature scaling, then calibrate post hoc, instead of stopping on raw validation loss'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Consensus note corrected. It claimed nobody else had reported the
+    separation *or the remedy*; the remedy is nine years older than this
+    practice and universal. The record had not held the paper, which is
+    how a claim about the field came to be made about the record.
 tags:
 - analysis-and-evaluation
 - training-optimization

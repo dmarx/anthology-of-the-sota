@@ -1,0 +1,68 @@
+---
+status: Active
+title: 'Evaluating the Ripple Effects of Knowledge Editing in Language Models'
+version: 1
+tags:
+- analysis-and-evaluation
+- adaptation-and-tuning
+- in-context-learning
+date: '2026-09-23'
+published: '2023-07-01'
+arxiv: '2307.12976'
+first_author: 'Cohen'
+keywords:
+- 'knowledge-editing'
+- 'ripple-effects'
+- 'evaluation'
+- 'in-context-editing'
+- 'benchmark'
+implementations: []
+compared_against:
+- LIT-tmpmnwn4
+summary: >-
+  Cohen, Biran, Yoran, Globerson, Geva (2023), [ARXIV-2307.12976](https://arxiv.org/abs/2307.12976). An edit
+  implies other facts: logical consequences, multi-hop compositions,
+  aliases. RippleEdits tests 5K edits on six such criteria. ROME, MEMIT and
+  MEND average 38–66 across GPT-2, GPT-J, GPT-NeoX and LLaMA. Logical
+  generalization can be as low as 5.5–7.0. Stating the new fact in the
+  prompt (in-context editing) scores best, beating ROME by more than 10
+  points on GPT-NeoX and by 29 on LLaMA.
+---
+
+# LIT-tmprhke9: Evaluating the Ripple Effects of Knowledge Editing in Language Models
+
+Cohen, Biran, Yoran, Globerson, Geva, Tel Aviv University and Google
+(2023) — [ARXIV-2307.12976](https://arxiv.org/abs/2307.12976)
+
+## Key takeaways
+
+- **The criteria** (§3): Logical Generalization (symmetric or implied
+  relations), Compositionality I and II (multi-hop through the edited fact),
+  Subject Aliasing, Preservation (other objects of a one-to-many relation
+  survive), and Relation Specificity (the subject's other facts don't
+  change)
+- **The benchmark:** about 5K edits in three subsets. RECENT holds facts
+  newer than the models, RANDOM holds random Wikidata facts, and POPULAR
+  holds popular subjects. Each comes with generated test queries, filtered
+  to those the model answered correctly before editing
+- **Results** (Tables 3–5): parameter editors average 38–66. On POPULAR,
+  logical generalization is 5.5–7.0 for ROME and MEMIT on GPT-2 and GPT-J.
+  Subject aliasing is high everywhere (86–100), so edits reach the name and
+  stop there
+- **In-context editing (ICE):** prefix "Imagine that <new fact>" to the
+  query. It is best overall. LLaMA-7B with ICE averages 81–83 against 49–61
+  for ROME, and GPT-3 with ICE averages 78–90
+
+## Standing in the anthology
+
+**Filed from `#163`** (LARQL). It is `compared_against` MEMIT
+([LIT-tmpmnwn4](LIT-tmpmnwn4.md)), contests [SOTA-tmp2nfwy](../practices.d/SOTA-tmp2nfwy.md), and sources [SOTA-tmprsfsm](../practices.d/SOTA-tmprsfsm.md).
+
+**Relevance to the tool that prompted it.** LARQL's `INSERT` defaults to a
+KNN retrieval override (`MODE KNN`), not a weight edit, although the
+write-up introducing it calls it a direct weight-level edit. The default is
+closer to the retrieval approach this paper's results favor than to the
+editors it evaluates.
+
+Read — [NOTE-tmpi3p60](../notes.d/NOTE-tmpi3p60.md).
+<!-- inactive-ok-file: SOTA-tmp2nfwy — Proposed and contested by this paper, filed in this same contribution -->

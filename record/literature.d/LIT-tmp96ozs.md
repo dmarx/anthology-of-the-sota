@@ -1,0 +1,71 @@
+---
+status: Active
+title: 'Transformer Feed-Forward Layers Are Key-Value Memories'
+version: 1
+tags:
+- analysis-and-evaluation
+- model-architecture
+date: '2026-09-23'
+published: '2020-12-01'
+arxiv: '2012.14913'
+first_author: 'Geva'
+keywords:
+- 'feed-forward-layers'
+- 'key-value-memory'
+- 'interpretability'
+- 'vocabulary-projection'
+implementations: []
+summary: >-
+  Geva, Schuster, Berant, Levy (2021), [ARXIV-2012.14913](https://arxiv.org/abs/2012.14913). Read each FFN hidden
+  unit as a memory. Its input weight is a key that fires on human-recognizable
+  prefix patterns: shallow n-grams in lower layers, semantic topics in upper
+  ones. Its output weight is a value that, projected through the output
+  embedding, favors next tokens. The evidence is 160 sampled keys in one
+  16-layer WikiText-103 model. Top value predictions agree with the keys'
+  triggers at most 3.5% of the time, in upper layers only. Layer outputs are
+  mostly compositions, matching no single memory's prediction.
+extended_by:
+- LIT-tmpvij69
+---
+
+# LIT-tmp96ozs: Transformer Feed-Forward Layers Are Key-Value Memories
+
+Geva, Schuster, Berant, Levy, Tel Aviv University, AI2 and Cornell Tech
+(2021) — [ARXIV-2012.14913](https://arxiv.org/abs/2012.14913)
+
+## Key takeaways
+
+- **The reading:** `FF(x) = f(x·K)·V` has the form of an unnormalized
+  key-value memory. Row i of K is a key, row i of V is a value, and the
+  activation is the memory coefficient
+- **Keys** (§3): for 160 randomly sampled keys, annotators found patterns in
+  the top-25 triggering training prefixes for most of them. 65–80% of
+  those prefixes carry an identified pattern. Layers 1–9 are dominated by
+  shallow patterns (shared n-grams), layers 10–16 by semantic ones (topics)
+- **Values** (§4): projecting a value through the output embedding gives a
+  distribution over next tokens. From layer 11 up, its top token matches the
+  next token of the key's top trigger up to 3.5% of the time, against
+  0.0004% at random. In lower layers the agreement is near zero
+- **Aggregation** (§5): a layer's output is rarely any single memory's
+  prediction. Most outputs are compositions, and the residual stream refines
+  the prediction layer by layer
+
+## Standing in the anthology
+
+**Filed from `#163`** ("the various techniques demonstrated by that 'use
+SQL to query and modify the information in your network' thing"). The
+thing is LARQL (github.com/chrishayuk/larql). Its "vindex" lists, for each
+FFN feature, the tokens it "hears" and the tokens it "predicts". That is
+this paper's reading, turned into a database schema. The tool itself is
+software without an evaluation, so it is not filed.
+
+It is `extended_by` ROME ([LIT-tmpvij69](LIT-tmpvij69.md)), which treats FFN weights as
+linear associative memories in order to write to them. It sources
+[THEORY-tmp03ct6](../theory.d/THEORY-tmp03ct6.md).
+
+**The title claims more than the numbers.** 3.5% top-1 agreement in the
+best layers, in one small model, is "orders of magnitude above chance",
+not a memory lookup. The paper's own §5 says outputs are compositions.
+
+Read — [NOTE-tmpah4r2](../notes.d/NOTE-tmpah4r2.md).
+<!-- inactive-ok-file: THEORY-tmp03ct6 — Proposed, filed in this same contribution from this paper -->

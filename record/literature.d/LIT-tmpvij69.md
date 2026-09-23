@@ -1,0 +1,77 @@
+---
+status: Active
+title: 'Locating and Editing Factual Associations in GPT'
+version: 1
+tags:
+- analysis-and-evaluation
+- adaptation-and-tuning
+date: '2026-09-23'
+published: '2022-02-01'
+arxiv: '2202.05262'
+first_author: 'Meng'
+keywords:
+- 'rome'
+- 'causal-tracing'
+- 'knowledge-editing'
+- 'counterfact'
+- 'mlp-memory'
+implementations:
+- rome
+extends:
+- LIT-tmp96ozs
+summary: >-
+  Meng, Bau, Andonian, Belinkov (2022), [ARXIV-2202.05262](https://arxiv.org/abs/2202.05262). Causal tracing:
+  corrupt the subject tokens, then restore single hidden states to see
+  which carry the fact. The strongest effects are at mid-layer MLPs on the
+  last subject token. ROME writes a new fact as a rank-one update to one
+  such MLP, treated as a linear associative memory. On CounterFact it
+  scores 89.2 (GPT-2 XL) and 91.5 (GPT-J) against at most 68.7 for the
+  baselines. It edits one fact at a time and degrades after about 10.
+corrected_by:
+- LIT-tmp6e8di
+extended_by:
+- LIT-tmpmnwn4
+---
+
+# LIT-tmpvij69: Locating and Editing Factual Associations in GPT
+
+Meng, Bau, Andonian, Belinkov, MIT, Northeastern and Technion (2022) —
+[ARXIV-2202.05262](https://arxiv.org/abs/2202.05262)
+
+## Key takeaways
+
+- **Causal tracing** (§2): run the prompt clean and with the subject
+  embeddings noised, then restore one clean hidden state at a time into the
+  corrupted run. The states that recover the answer mediate the fact.
+  Averaged over facts, the effect concentrates on MLP outputs at the last
+  subject token in middle layers, and late at the last token through
+  attention
+- **ROME** (§3): choose a key (the MLP input at the last subject token) and
+  optimize a value that produces the new object. Insert the pair with a
+  closed-form rank-one update that minimally changes other keys, using a
+  covariance estimated on Wikipedia text
+- **CounterFact** (§3.3): 21,919 counterfactual edits scored on efficacy,
+  paraphrase generalization, neighborhood specificity, fluency and
+  consistency. The composite Score is the harmonic mean of the first three
+- **Results** (Table 4): ROME 89.2 on GPT-2 XL and 91.5 on GPT-J. Fine-tuning
+  hits 100% efficacy but wrecks neighbors on GPT-J (NS 10.3). Hypernetwork
+  editors trade one criterion for another
+- **Limits** (§3.7, in the authors' words): a tool for understanding, "not
+  intended as a practical method for large-scale model training". Edits are
+  one fact at a time, and directional
+
+## Standing in the anthology
+
+**Filed from `#163`** (LARQL, see [LIT-tmp96ozs](LIT-tmp96ozs.md)). It `extends` the key-value
+reading, is `extended_by` MEMIT ([LIT-tmpmnwn4](LIT-tmpmnwn4.md)), and is `corrected_by`
+Hase et al. ([LIT-tmp6e8di](LIT-tmp6e8di.md)). Its localization-to-editing account is filed
+retired, as [THEORY-tmpde7eo](../theory.d/THEORY-tmpde7eo.md).
+
+**What the composite hides.** ROME's neighborhood success (75.4 on GPT-2 XL,
+78.9 on GPT-J) is below the unedited model's (78.1, 83.0), so each edit
+does bleed over. And the default edit layer was chosen from causal tracing
+averaged over many facts, which Hase et al. later show does not predict
+where any one fact is best edited.
+
+Read — [NOTE-tmpicaci](../notes.d/NOTE-tmpicaci.md).
+<!-- inactive-ok-file: THEORY-tmpde7eo — Rejected, and named here as retired: this paper's account, filed already rejected -->

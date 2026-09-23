@@ -9,7 +9,7 @@ this file assumes you hold them.
 This is an anthology of current ML practice: what to do, and the published
 work that says why. Scoped by the **kind of claim**, not by the domain a
 technique was discovered in — vision, generative and inference work all
-qualify if the recommendation is one the eighteen topics can express
+qualify if the recommendation is one the nineteen topics can express
 ([ADR-026](record/decisions.d/ADR-026.md), superseding [ADR-020](record/decisions.d/ADR-020.md)). The bias toward language-model training is
 a bias, not a boundary, and since [ADR-026](record/decisions.d/ADR-026.md) the practice registry and the
 reading list share one topic vocabulary — the two schemes differ in what a
@@ -63,7 +63,7 @@ work perfectly well.
   URL is a string nothing can check ([ADR-009](record/decisions.d/ADR-009.md)). Two papers reached the old
   corpus with no identifier at all; that is now impossible.
 - **The first tag is the primary topic, and a document may carry more than
-  one.** The eighteen live in the `topics` vocabulary in `luria.yaml` — one
+  one.** The nineteen live in the `topics` vocabulary in `luria.yaml` — one
   table, named by the practice registry and the reading list alike, glosses
   included. List the topic the document is *most* about first: `primary_topic`
   derives `{tags[0]}`, so tag order is what the indexes read. **Tag the

@@ -2,23 +2,30 @@
 number: 38
 status: 'Active'
 title: 'ICL permits few-shot task adaptability'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-18'
   note: >-
     Adds `model-architecture`, whose blurb names model families. In-context learning is a capability of the decoder-only-at-scale family SOTA-036 describes, which is what the relation between them asserts (ADR-049).
+- version: 3
+  date: '2026-09-23'
+  note: >-
+    Removes `model-architecture`, and the `extends: SOTA-036` it was added to
+    bind. v2's reason justified the RELATION, not this document — the tag test
+    is whether someone browsing `model-architecture` would be right to expect
+    "ICL permits few-shot task adaptability", and they would not. The relation
+    went because `extends` means "could not stand without", and this practice
+    does not depend on SOTA-036's particular corpus or context length; the two
+    are siblings by `source`, which already says so.
 tags:
 - in-context-learning
 - adaptation-and-tuning
-- model-architecture
 date: '2026-08-24'
 source:
 - LIT-035
 introduced_by:
 - LIT-035
-extends:
-- SOTA-036
 summary: >-
   Brown et al. (2020), [LIT-035](../literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165).
 extended_by:

@@ -1,0 +1,128 @@
+---
+status: Proposed
+title: 'Three practices from one paper are siblings by source, not a line of practice'
+version: 1
+tags:
+- record
+- taxonomy
+date: '2026-09-23'
+issue: '#311'
+summary: >-
+  `SOTA-037 extends SOTA-036` and `SOTA-038 extends SOTA-036` are removed.
+  `extends` means "could not stand without", and neither practice depends on
+  [SOTA-036](../practices.d/SOTA-036.md)'s particular corpus, context length or objective — they depend on
+  the class of model. All three name `source: LIT-035`, which already records
+  the connection, so `extends` was saying "same paper" a second time in the
+  wrong vocabulary. `SOTA-038` also loses the `model-architecture` tag added
+  to bind the edge. Rejected: a new `enabled_by` relation, and a domain tag,
+  both of which preserve a lineage that is not one.
+---
+
+# ADR-tmpoglw4: Three practices from one paper are siblings by source, not a line of practice
+
+## Context
+
+The `practice` chain's one unbound line, surfaced by `LU-#311`:
+
+```
+SOTA-036, SOTA-037, SOTA-038, SOTA-279, SOTA-280, SOTA-281
+share no `tags` across the whole line
+```
+
+`SOTA-036` is the sole cause; drop it and the remaining five intersect on
+`in-context-learning`. Every *edge* binds, so `unbound-relations` never
+reported anything — `SOTA-037` and `SOTA-038` both share `model-architecture`
+with `SOTA-036`, and `SOTA-038` shares it **because a previous pass put it
+there to bind that edge** (v2, 2026-09-18, whose note reads *"In-context
+learning is a capability of the decoder-only-at-scale family [SOTA-036](../practices.d/SOTA-036.md)
+describes, which is what the relation between them asserts"*).
+
+That note justifies the **relation**, not the document. The tag test is the
+document's: would someone browsing `model-architecture` be right to expect
+"ICL permits few-shot task adaptability"? They would not. So the edge was
+bound by a tag that should not have been added, and the line is where that
+showed.
+
+## Decision
+
+**Remove both relations.** `SOTA-037` and `SOTA-038` no longer `extends`
+`SOTA-036`, and `SOTA-036`'s `extended_by` is empty. `SOTA-038` drops
+`model-architecture` and goes to v3.
+
+Two facts decide it, and neither is that the line does not bind.
+
+**`extends` means "could not stand without", and these do.** The relation's
+own blurb: *"the earlier practice this one builds on and could not stand
+without."* `SOTA-036` is a *specific* recipe — decoder-only, a broad web
+corpus, a fixed context, a single next-token objective. `SOTA-038` ("ICL
+permits few-shot task adaptability") does not depend on any of those
+particulars. Change the corpus or the context length and it still stands; it
+depends on the class of model, not on this recipe. The same holds for
+`SOTA-037`. A relation whose test the edge fails is a relation that is wrong,
+which is `ADR-049`'s second reading.
+
+**The connection is already recorded, by `source`.** All three name
+`source: LIT-035` and `introduced_by: LIT-035`. They are three recommendations
+drawn from one paper — siblings by provenance. `extends` was saying "same
+paper" a second time, in a vocabulary that means something else, and the
+`practice` chain then read that second saying as a lineage of refinement.
+
+`SOTA-279 extends SOTA-038` stays: chain-of-thought exemplars genuinely could
+not stand without few-shot prompting, and it is a narrower case of the same
+recommendation.
+
+## Alternatives considered
+
+- **Add `in-context-learning` to `SOTA-036`.** The one-tag fix, and forbidden
+  by that topic's own blurb — *"getting behaviour out of a **fixed** model by
+  what you put in the context."* `SOTA-036` is how the model is made. This is
+  the failure the vocabulary's `alert` names, and it is tempting precisely
+  because it is one line.
+- **Split `extends` into a second relation — `enabled_by`, for "a rule that
+  only exists because the earlier one is followed."** Considered at length,
+  and it solves a real problem: that third sense in `extends`' blurb cannot
+  preserve subject by construction, which is why an invariant over the chain
+  asserts more than the relation promises. It is the wrong fix *here* because
+  it preserves a lineage that is not one — the honest reading of these two
+  edges is not "a different kind of succession" but "not a succession". The
+  general question is worth its own decision, on an edge that survives this
+  test.
+- **A domain tag — `next-token-prediction` — under a domain sub-vocabulary
+  (`LU-#298`).** It would bind all six, and the diagnostic behind it is good:
+  where a rule exists only because an earlier one is followed, the earlier
+  one's subject is often the presupposition the whole line inherits. It is
+  still the wrong fix here, for the same reason: it makes the check pass by
+  recording what the six have in common as *background*, when what the line
+  claims is *succession*. It would also make the invariant easy to satisfy
+  everywhere — every autoregressive-LM practice shares that presupposition —
+  which is the vacuity the check exists to catch.
+- **Keep the relations and accept the standing row.** `LU-#311`'s
+  `lint.baseline` makes this cheap, and it is the wrong use of it: a baseline
+  is for a residue a record has read and cannot yet resolve, not for one it
+  has read and can.
+- **Status quo.** Leaves a tag on `SOTA-038` that fails the tag test, and a
+  `practice-lines.md` that shows a refinement lineage from a pretraining
+  recipe to a prompting technique, which is not what happened.
+
+## Consequences
+
+**`docs/practice-lines.md` loses a line and gains two singletons.**
+`SOTA-036` and `SOTA-037` now stand alone, and the chain-of-thought line
+starts at `SOTA-038`. The narrative — GPT-3's recipe, then in-context
+learning, then chain of thought — is real and is **not** a line of practice;
+it is readable from `LIT-035`'s own page, which lists all three practices
+sourced to it, and from their prose.
+
+**The unbound line goes to zero**, and that is a consequence rather than the
+reason. Had the relations survived the "could not stand without" test, the
+right outcome would have been to leave the row standing and say so.
+
+**`SOTA-037` keeps `model-architecture`**, which is a weaker tag than it looks
+and is left alone deliberately: it was original tagging rather than a tag
+added to bind an edge, so removing it is a different judgement made on
+different evidence, and there is now no relation for it to prop up.
+
+**The `extends` blurb still licenses three senses**, one of which cannot
+preserve subject. This decision does not fix that; it removes two edges that
+were not that sense either. The next line the invariant cannot bind is where
+that question gets answered.

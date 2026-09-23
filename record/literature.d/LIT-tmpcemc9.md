@@ -1,0 +1,75 @@
+---
+status: Active
+title: 'The Role of ImageNet Classes in Fréchet Inception Distance'
+version: 1
+tags:
+- analysis-and-evaluation
+- generative-modeling
+date: '2026-09-23'
+published: '2022-03-01'
+arxiv: '2203.06026'
+first_author: 'Kynkäänniemi'
+keywords:
+- 'fid'
+- 'evaluation-metrics'
+- 'perceptual-null-space'
+- 'imagenet-classes'
+- 'grad-cam'
+implementations: []
+summary: >-
+  Kynkäänniemi, Karras, Aittala, Aila, Lehtinen (2022), [ARXIV-2203.06026](https://arxiv.org/abs/2203.06026).
+  FID's feature space sits one affine map from ImageNet class logits, so it
+  attends to whatever ImageNet class an image evokes. That is often not the
+  subject: seat belts and bow ties on FFHQ faces. Resampling a fixed
+  generator's outputs to match those statistics cuts FFHQ FID from 5.30 to
+  1.78 (−66%) while a CLIP-space distance moves 2.76 → 2.64. A Projected
+  FastGAN with an ImageNet-pretrained discriminator matches StyleGAN2's FID
+  and loses to it in CLIP space and with humans.
+---
+
+<!-- inactive-ok-file: SOTA-tmptfakt — Proposed, filed in this same contribution; named because this paper contests it -->
+
+# LIT-tmpcemc9: The Role of ImageNet Classes in Fréchet Inception Distance
+
+Kynkäänniemi, Karras, Aittala, Aila, Lehtinen, Aalto and NVIDIA (2022;
+ICLR 2023) — [ARXIV-2203.06026](https://arxiv.org/abs/2203.06026)
+
+## Key takeaways
+
+- **What FID looks at.** A Grad-CAM adaptation shows which image regions
+  move FID. On FFHQ it is mostly outside the face, wherever the Top-1
+  ImageNet class (bow tie, seat belt, mortarboard) sits. ImageNet has no
+  "person" or "face" class
+- **The perceptual null space is large.** With the generator fixed:
+  - **Top-1 histogram matching** by rejection sampling lowers FID by about
+    10% on five datasets. CLIP-space FD moves about 1%
+  - **Optimizing sample weights** over 5× oversampled candidates to match
+    all "fringe features" lowers FFHQ FID 5.30 → 1.78 (−66%). ResNet-50 FD
+    falls 37%, SwAV-FD 13% and CLIP-FD 4%. The drop tracks how much ImageNet
+    each feature space has seen
+- **A practical case (§4):** Projected FastGAN ([LIT-tmpbzwal](LIT-tmpbzwal.md)), trained with
+  its public code on FFHQ, reaches FID 5.28 against StyleGAN2's 5.30 at
+  similar recall. CLIP-FD is 4.67 against 2.76, and human raters prefer
+  StyleGAN2. The paper says Sauer et al.'s own human study agreed
+- **Where FID stays reliable, per the authors:** detecting failed runs,
+  monitoring one run's convergence, and comparing hyperparameter sweeps
+  within one setup. Where it breaks: comparing sufficiently different
+  architectures or training setups, especially where one uses ImageNet
+  pretraining
+
+## Standing in the anthology
+
+**Filed from `#163`** while working on Projected GAN, because it is the
+measurement that contests it. It sources [SOTA-tmprzpgu](../practices.d/SOTA-tmprzpgu.md) and is the
+`contested_by` of [SOTA-tmptfakt](../practices.d/SOTA-tmptfakt.md).
+
+**A caveat on the source.** The authors include StyleGAN's authors, and
+the paper's worked example is a competitor losing to StyleGAN2. The
+resampling experiment, which involves no competitor, is the evidence that
+does not depend on that comparison.
+
+**It sits beside the record's other FID practices**, [SOTA-307](../practices.d/SOTA-307.md) (report FID
+over seeds) and the tokenizer-rate practice. Those are about FID's variance
+and comparability. This one is about its validity.
+
+Read — [NOTE-tmp5m0ns](../notes.d/NOTE-tmp5m0ns.md).

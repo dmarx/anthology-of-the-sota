@@ -1,0 +1,76 @@
+---
+status: Active
+title: 'Projected GANs Converge Faster'
+version: 1
+tags:
+- generative-modeling
+- vision-and-graphics
+- training-optimization
+date: '2026-09-23'
+published: '2021-11-01'
+arxiv: '2111.01007'
+first_author: 'Sauer'
+keywords:
+- 'projected-gan'
+- 'pretrained-discriminator'
+- 'random-projections'
+- 'convergence-speed'
+- 'fid'
+implementations:
+- Projected GAN
+summary: >-
+  Sauer, Chitta, Müller, Geiger (2021), [ARXIV-2111.01007](https://arxiv.org/abs/2111.01007). Feed real and
+  generated images through a frozen ImageNet-pretrained EfficientNet, mix
+  its multi-scale features with fixed random 1×1 and 3×3 convolutions, and
+  put a small discriminator on each scale. FID reaches StyleGAN2's best on
+  LSUN-Church after 1.1M images instead of 88M, and beats it on 22 datasets.
+  A later analysis ([LIT-tmpcemc9](LIT-tmpcemc9.md)) shows part of the gain is in FID's
+  perceptual null space: at equal FID, humans and a CLIP-feature distance
+  prefer StyleGAN2.
+---
+
+<!-- inactive-ok-file: SOTA-tmptfakt — Proposed and contested, filed in this same contribution from this paper -->
+
+# LIT-tmpbzwal: Projected GANs Converge Faster
+
+Sauer, Chitta, Müller, Geiger, Tübingen, MPI-IS and Heidelberg (2021;
+NeurIPS 2021) — [ARXIV-2111.01007](https://arxiv.org/abs/2111.01007)
+
+## Key takeaways
+
+- **Discriminate in a fixed feature space.** Four discriminators, one per
+  scale (64² to 8²) of a frozen pretrained network, each a small spectrally
+  normalized conv net. Their logits are summed
+- **Random mixing makes the deep features usable.** Without it the
+  discriminator ignores parts of the deeper, semantic features. Fixed
+  Kaiming-initialized 1×1 convolutions (cross-channel mixing, CCM) and 3×3
+  convolutions with upsampling (cross-scale mixing, CSM) help, and all four
+  discriminators then work best together
+- **Compact feature networks win.** EfficientNet-Lite1 gives FID 1.65 on
+  LSUN-Church. Larger and more ImageNet-accurate networks are worse (ViT at
+  12.38). ImageNet accuracy does not predict FID, and CLIP-R50 slightly beats
+  R50, which the paper takes as evidence ImageNet features are not required
+- **Speed and scores (Table 3, 256²):** LSUN-Church FID 1.59 against
+  StyleGAN2-ADA's 5.85 at 10M images. Bedroom 1.52 against GANformer's 6.15.
+  The previous best FID on Church, StyleGAN2's 3.39 at 88M images, is
+  reached after 1.1M, under 3 hours against 5 days
+- **Data efficiency:** large gains on small datasets (AnimalFace-Dog 17.88
+  against 60.90)
+
+## Standing in the anthology
+
+**Filed from `#163`** (Projected GAN). Sources [SOTA-tmptfakt](../practices.d/SOTA-tmptfakt.md), which is
+`Proposed` and `contested`.
+
+**The measurement problem is in the design.** The discriminator is trained
+on ImageNet features, and FID is computed in ImageNet-trained Inception
+features. The authors avoid Inception as the feature network and report
+KID, SwAV-FID and precision/recall in the appendix, which they say agree
+(not read here). Kynkäänniemi et al. ([LIT-tmpcemc9](LIT-tmpcemc9.md)) then trained Projected
+FastGAN with this paper's code on FFHQ. At FID 5.28 against StyleGAN2's
+5.30, the CLIP-space distance was 4.67 against 2.76, and human raters
+preferred StyleGAN2. They cite this paper's own human study as reaching the
+same conclusion on FFHQ. So "converges faster" is established in FID. How
+much of that is image quality is contested.
+
+Read — [NOTE-tmp4h72t](../notes.d/NOTE-tmp4h72t.md).

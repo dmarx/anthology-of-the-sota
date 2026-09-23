@@ -1,0 +1,91 @@
+---
+status: Active
+title: 'Momentum Contrast for Unsupervised Visual Representation Learning'
+version: 1
+tags:
+- representation-and-encoding
+- training-optimization
+- vision-and-graphics
+- model-stability
+date: '2026-09-23'
+published: '2019-11-01'
+arxiv: '1911.05722'
+first_author: 'He'
+keywords:
+- 'contrastive-learning'
+- 'momentum-encoder'
+- 'memory-queue'
+- 'instance-discrimination'
+- 'transfer-learning'
+summary: >-
+  He et al. (2019), [ARXIV-1911.05722](https://arxiv.org/abs/1911.05722). Reframes contrastive learning as
+  dictionary look-up and asks for a dictionary that is both large and
+  consistent: a queue makes it large independently of the batch, and an
+  EMA-updated key encoder makes it consistent. The momentum ablation is
+  the result that propagated — at m=0 it does not train at all.
+compared_against:
+- LIT-tmpwwvv6
+---
+
+# LIT-tmpbdwjn: Momentum Contrast for Unsupervised Visual Representation Learning
+
+He et al. (2019) — [ARXIV-1911.05722](https://arxiv.org/abs/1911.05722)
+
+## Key takeaways
+
+- **The reframing is the contribution: contrastive learning is dictionary
+  look-up.** Encode a query, look it up against keys, and InfoNCE is the log
+  loss of a `(K+1)`-way softmax classifier picking the right key. From that
+  framing two requirements fall out that were previously implicit — the
+  dictionary should be **large** (it samples a continuous, high-dimensional
+  space) and **consistent** (its keys should come from the same or a similar
+  encoder).
+- **A queue makes the dictionary large without making the batch large.**
+  Enqueue the current mini-batch's keys, dequeue the oldest — which is also
+  the least consistent, so the eviction policy is free. MoCo trains at batch
+  **256 on 8 GPUs** with `K` = 65536. The alternative, enlarging the batch,
+  is capped by memory and by large-batch optimisation being its own open
+  problem: their end-to-end ablation loses ~2% at batch 1024 without linear
+  learning-rate scaling.
+- **The momentum update is what makes the queue usable, and the ablation is
+  stark.** `θ_k ← m·θ_k + (1−m)·θ_q`, gradients only to `θ_q`. Accuracy by
+  `m`: **0 → fails to train**, 0.9 → 55.2, 0.99 → 57.8, 0.999 → 59.0.
+  Copying the query encoder outright is the `m = 0` case, and it does not
+  work. "A slowly evolving key encoder is a core to making use of a queue."
+  This is the direct ancestor of every EMA teacher that followed.
+- **Consistency, not size, is what beats the memory bank.** At the same `K`,
+  the memory-bank mechanism is 2.6% worse, because its keys were written by
+  encoders spread across an entire past epoch. All three mechanisms improve
+  with larger `K`; only MoCo gets large `K` and recent keys at once.
+- **Batch norm cheats, and the diagnosis is precise.** BN prevented good
+  representations; the model "appears to 'cheat' the pretext task and easily
+  finds a low-loss solution", because intra-batch communication leaks. The
+  appendix names the mechanism: without the fix "the sub-batch statistics can
+  serve as a 'signature' to tell which sub-batch the positive key is in". The
+  fix is to shuffle the mini-batch order across GPUs for the **key encoder
+  only**, so a query and its positive get statistics from different subsets.
+  SimCLR ([LIT-tmpwwvv6](LIT-tmpwwvv6.md)) hit the same bug and fixed it with global BN instead.
+- **The claim that mattered was transfer, not the linear probe.** MoCo
+  pre-training beats *supervised* ImageNet pre-training on **7
+  detection/segmentation tasks** across PASCAL VOC and COCO, "sometimes
+  surpassing it by large margins". Pre-trained on 940M uncurated Instagram
+  images instead, it improves further — but "consistently noticeable and
+  relatively small", which the authors read as the larger data not being
+  fully exploited by instance discrimination.
+- **A protocol gotcha worth carrying.** For the linear probe on frozen MoCo
+  features the optimal hyperparameters are learning rate **30** and weight
+  decay **0**, which the authors note implies the feature distribution
+  differs substantially from a supervised model's. A linear-probe number
+  obtained with supervised-style hyperparameters is not measuring what it
+  claims to.
+
+## Standing in the anthology
+
+Unit B of `#304`. Sources [SOTA-tmpv2jq0](../practices.d/SOTA-tmpv2jq0.md) (the queue and the slow key encoder)
+and, with [LIT-tmpwwvv6](LIT-tmpwwvv6.md), [SOTA-tmpw2bcy](../practices.d/SOTA-tmpw2bcy.md) (the batch-norm leak).
+
+Filed alongside SimCLR rather than after it because the two are the fork the
+field actually faced — large batch with in-batch negatives against small
+batch with a queue — and reading either alone makes the other's design look
+arbitrary. `LIT-tmpwwvv6` carries the `compared_against` edge, since SimCLR
+is the paper that ran the comparison.

@@ -27,6 +27,7 @@ explained_by:
 - THEORY-085
 extended_by:
 - SOTA-359
+- SOTA-tmpv2jq0
 ---
 
 # SOTA-360: Score a density ratio against sampled negatives instead of reconstructing the target

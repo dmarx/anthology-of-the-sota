@@ -1,0 +1,31 @@
+# src/scripts/repo_features/repos.yaml
+#
+# What to read, and how. `ref` is what gets resolved to a SHA each run; pin it
+# to a tag or a SHA to freeze a repository, leave it `HEAD` to track.
+#
+# `kind` is the thing #183 turns on and must not be guessed per-repo at read
+# time. An `adoption` repository implements a technique because people use it,
+# so its contents are evidence about `consensus`. A `catalogue` repository
+# implements one because somebody found it interesting, so its contents are a
+# reading list. Confusing them is how 62 unadopted architecture variants get
+# filed as practice candidates.
+repos:
+  vllm:
+    repo: vllm-project/vllm
+    kind: adoption
+    ref: HEAD
+    files:
+      docs/features/README.md: table:0
+      docs/features/quantization/README.md: table:0
+  diffusers:
+    repo: huggingface/diffusers
+    kind: adoption
+    ref: HEAD
+    files:
+      src/diffusers/schedulers/__init__.py: exports:Scheduler
+  x-transformers:
+    repo: lucidrains/x-transformers
+    kind: catalogue
+    ref: HEAD
+    files:
+      README.md: arxiv

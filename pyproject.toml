@@ -1,7 +1,8 @@
-# The anthology is a Luria record, not a Python project. What remains here is
-# one script — the migration that produced `record/` from the frozen YAML in
-# `data/`, kept re-runnable by ADR-008 — and the packaging metadata it needs
-# to be importable.
+# The anthology is a Luria record, not a Python project. What remains here are
+# the few scripts the record cannot get from `luria`: the migration that
+# produced `record/` from the frozen YAML in `data/`, kept re-runnable by
+# ADR-008; the arXiv metadata audit; and the repository-feature harness (#291),
+# which reads what the big libraries implement and diffs it against the record.
 #
 # Everything else that used to live here was removed with issue #41: a local
 # README generator superseded by templates and then by nothing, a directory
@@ -9,11 +10,21 @@
 [project]
 name = "scripts"
 version = "0.1.0"
-description = "The frozen migration that produced this record from its pre-luria YAML."
+description = "The scripts this record needs and luria does not provide."
 requires-python = ">=3.11"
 dependencies = [
     "pyyaml",
+    # Declared because they were already imported and were not declared:
+    # `audit/verify_arxiv.py` has used `fire` and `loguru` since it was
+    # written, and a dependency nothing names is one the next environment
+    # will not have.
+    "fire",
+    "loguru",
+    "omegaconf",
 ]
+
+[dependency-groups]
+dev = ["pytest"]
 
 [build-system]
 requires = ["hatchling"]

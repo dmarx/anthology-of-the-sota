@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-318 of 321 NOTE documents. Back to the [full index](../README.md).
+319 of 322 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -328,3 +328,4 @@
 | [NOTE-319](../../../record/notes.d/NOTE-319.md) | GIN | Message passing is bounded by 1-WL, and sum aggregation with an MLP reaches the bound where mean and max do not. The theory predicts the training-fit ordering. Test accuracy separates the aggregators decisively only on featureless graphs. Main text read, proofs skimmed. | Read |
 | [NOTE-320](../../../record/notes.d/NOTE-320.md) | AlphaFold 3 | AlphaFold generalized to all biomolecular complexes, with a diffusion head over atom coordinates. It gains on ligands, nucleic acids and antibodies, and inherits generative failure modes (hallucination, chirality) that it patches with distillation and ranking. Main text read. Extended Data and supplementary methods not read. | Read |
 | [NOTE-321](../../../record/notes.d/NOTE-321.md) | AlphaFold 2 | Near-experimental protein structure accuracy at CASP14, a calibrated confidence head, self-distillation on confident predictions, and a hard dependence on alignment depth below about 30 sequences. Main text and Methods read. The supplementary methods (architecture details, ablation descriptions) were not read. | Read |
+| [NOTE-322](../../../record/notes.d/NOTE-322.md) | Latent Dirichlet Allocation | The bag-of-words assumption, read through de Finetti, implies a document-level mixture. LDA is that mixture with Dirichlet topic proportions. It generalizes better than one-topic-per-document and per-document-parameter models by held-out perplexity. Main text read in full; the variational derivations in the appendices skimmed. | Read |

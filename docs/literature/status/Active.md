@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-510 of 526 LIT documents. Back to the [full index](../README.md).
+511 of 527 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -520,3 +520,4 @@
 | [LIT-589](../../../record/literature.d/LIT-589.md) | Representation Learning with Contrastive Predictive Coding | Oord et al. (2018), [ARXIV-1807.03748](https://arxiv.org/abs/1807.03748). Predict the future in latent space and score it as a density ratio against sampled negatives, rather than reconstructing the observation. The loss is named InfoNCE here, and it is the objective CLIP, SimCLR and MoCo all run; the bound it maximizes is capped at log N, which the folklore about negatives leaves out. | Active |
 | [LIT-590](../../../record/literature.d/LIT-590.md) | Momentum Contrast for Unsupervised Visual Representation Learning | He et al. (2019), [ARXIV-1911.05722](https://arxiv.org/abs/1911.05722). Reframes contrastive learning as dictionary look-up and asks for a dictionary that is both large and consistent: a queue makes it large independently of the batch, and an EMA-updated key encoder makes it consistent. The momentum ablation is the result that propagated — at m=0 it does not train at all. | Active |
 | [LIT-591](../../../record/literature.d/LIT-591.md) | A Simple Framework for Contrastive Learning of Visual Representations | Chen et al. (2020), [ARXIV-2002.05709](https://arxiv.org/abs/2002.05709). Strips contrastive learning to augment, encode, project, NT-Xent — no memory bank, no special architecture — and then ablates each piece. The two findings that outlived the method: the augmentation pair is the pretext task, and the projection head is a sacrificial layer you throw away. | Active |
+| [LIT-592](../../../record/literature.d/LIT-592.md) | Latent Dirichlet Allocation | Blei, Ng and Jordan (2003), JMLR 3:993–1022. If the words of a document are exchangeable (bag of words), de Finetti's theorem says the document is a mixture over a latent parameter. LDA makes that parameter a Dirichlet-distributed vector of topic proportions, one per document, with each topic a distribution over words. Fitted by variational EM, it has lower held-out perplexity than a unigram, a mixture-of-unigrams and a pLSI model on two corpora, and the two baselines overfit badly as the number of topics grows. Its 50 topic proportions stand in for 15,818 word features in Reuters classification. | Active |

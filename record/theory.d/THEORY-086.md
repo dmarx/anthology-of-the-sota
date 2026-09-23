@@ -1,5 +1,8 @@
 ---
+number: 86
 status: Proposed
+formerly:
+- THEORY-tmp7dspe
 promote_when: >-
   An ablation that separates the two things LDA adds over a one-topic
   mixture: several topics per document, and a Dirichlet prior on the
@@ -15,9 +18,9 @@ tags:
 - generative-modeling
 date: '2026-09-23'
 source:
-- LIT-tmp7yjup
+- LIT-592
 summary: >-
-  Blei, Ng and Jordan (2003), [LIT-tmp7yjup](../literature.d/LIT-tmp7yjup.md) — exchangeability of a document's
+  Blei, Ng and Jordan (2003), [LIT-592](../literature.d/LIT-592.md) — exchangeability of a document's
   words implies, by de Finetti, a mixture over a latent parameter. LDA takes
   that parameter to be a per-document distribution over topics. It has lower
   held-out perplexity than a mixture of unigrams, which forces one topic per
@@ -26,11 +29,11 @@ summary: >-
   separated, and perplexity is the only measure.
 ---
 
-# THEORY-tmp7dspe: A text document is better modelled as a mixture of several topics, each a distribution over words, than as a draw from a single topic
+# THEORY-086: A text document is better modelled as a mixture of several topics, each a distribution over words, than as a draw from a single topic
 
 ## Source
 
-Blei, Ng and Jordan (2003), [LIT-tmp7yjup](../literature.d/LIT-tmp7yjup.md). Read as [NOTE-tmp5yu4p](../notes.d/NOTE-tmp5yu4p.md).
+Blei, Ng and Jordan (2003), [LIT-592](../literature.d/LIT-592.md). Read as [NOTE-322](../notes.d/NOTE-322.md).
 
 ## The account
 

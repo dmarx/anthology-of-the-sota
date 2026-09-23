@@ -1,6 +1,9 @@
 ---
+number: 322
 status: Read
-paper: LIT-tmp7yjup
+formerly:
+- NOTE-tmp5yu4p
+paper: LIT-592
 title: 'Latent Dirichlet Allocation'
 version: 1
 date: '2026-09-23'
@@ -12,7 +15,7 @@ summary: >-
   full; the variational derivations in the appendices skimmed.
 ---
 
-# NOTE-tmp5yu4p: Latent Dirichlet Allocation
+# NOTE-322: Latent Dirichlet Allocation
 
 ## Contribution
 

@@ -1,0 +1,87 @@
+---
+status: Active
+title: 'Latent Dirichlet Allocation'
+version: 1
+tags:
+- signal-structure
+- representation-and-encoding
+- generative-modeling
+date: '2026-09-23'
+published: '2003-01-01'
+# JMLR 3 (2003), 993–1022. The MIT Press DOI once issued for it,
+# 10.1162/jmlr.2003.3.4-5.993, is listed by Crossref as deleted, so the
+# source is the journal's own page (ADR-009).
+url: 'https://jmlr.org/papers/v3/blei03a.html'
+first_author: 'Blei'
+keywords:
+- 'lda'
+- 'topic-model'
+- 'exchangeability'
+- 'de-finetti'
+- 'bag-of-words'
+- 'variational-inference'
+implementations: []
+summary: >-
+  Blei, Ng and Jordan (2003), JMLR 3:993–1022. If the words of a document
+  are exchangeable (bag of words), de Finetti's theorem says the document is
+  a mixture over a latent parameter. LDA makes that parameter a
+  Dirichlet-distributed vector of topic proportions, one per document, with
+  each topic a distribution over words. Fitted by variational EM, it has
+  lower held-out perplexity than a unigram, a mixture-of-unigrams and a pLSI
+  model on two corpora, and the two baselines overfit badly as the number of
+  topics grows. Its 50 topic proportions stand in for 15,818 word features
+  in Reuters classification.
+---
+
+# LIT-tmp7yjup: Latent Dirichlet Allocation
+
+Blei, Ng and Jordan, Berkeley and Stanford (JMLR 3, 2003) —
+<https://jmlr.org/papers/v3/blei03a.html>
+
+## Key takeaways
+
+- **The argument starts from an assumption about text** (§1, §3.1). LSI,
+  pLSI and tf-idf all treat a document as a bag of words, which in
+  probability terms is exchangeability of its words. By de Finetti's theorem,
+  an exchangeable sequence is a mixture, conditionally i.i.d. given a latent
+  parameter. So a principled bag-of-words model needs a document-level mixing
+  distribution. The authors call exchangeability "a major simplifying
+  assumption", justified mainly because it makes methods efficient
+- **The model** (§3): for each document, draw topic proportions
+  θ ~ Dir(α). For each word, draw a topic from θ, then the word from that
+  topic's distribution. Each document mixes several topics, unlike the
+  mixture of unigrams (one topic per document). Unlike pLSI, it defines a
+  probability for a document never seen in training, because θ is a random
+  variable and not a per-training-document parameter
+- **Inference** (§5): exact posteriors are intractable. A mean-field
+  variational bound and EM fit α and the topics
+- **Perplexity** (§7.1, Figure 9): 5,225 C. elegans abstracts and 16,333 AP
+  newswire articles, 10% held out. LDA has the lowest perplexity at every
+  number of topics. Uncorrected, the baselines overfit badly (Table 1, AP):
+  the mixture of unigrams reaches 4.19 × 10¹⁰⁶ at 50 topics, and pLSI with
+  marginalization reaches 5.04 × 10⁶. The plotted baselines are corrected,
+  pLSI by "folding in", which the authors say gives it "an unfair advantage"
+  by refitting k − 1 parameters on the test document
+- **Classification** (§7.2, Figure 10): Reuters-21578, 8,000 documents, two
+  binary tasks (EARN, GRAIN). An SVM on 50 LDA topic proportions (a 99.6%
+  feature reduction) matches or beats an SVM on all word features across
+  training-set sizes
+- **Collaborative filtering** (§7.3, Figure 11): EachMovie, users as
+  documents and movies as words. LDA has the best predictive perplexity
+
+## Standing in the anthology
+
+Filed on request, as a follow-up to the phrase-as-lemma work ([LIT-410](LIT-410.md)),
+and tagged `signal-structure` first. The paper is a method, but it is built
+on a stated claim about what text is like: its words are exchangeable, and
+a document is a mixture of topics. That claim sources [THEORY-tmp7dspe](../theory.d/THEORY-tmp7dspe.md). It
+also carries `representation-and-encoding` (topic proportions as a
+low-dimensional document representation) and `generative-modeling` (the
+classic generative model of a corpus).
+
+**No practice.** Nothing in it is what a practitioner would do today in
+place of something else. Its lasting contribution is the model and the
+framing, and those are what the note and the theory hold.
+
+Read — [NOTE-tmp5yu4p](../notes.d/NOTE-tmp5yu4p.md).
+<!-- inactive-ok-file: THEORY-tmp7dspe — Proposed, filed in this same contribution from this paper -->

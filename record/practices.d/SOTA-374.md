@@ -51,6 +51,7 @@ summary: >-
   accuracy, only slightly for words (59 → 60% at NEG-5) but a lot for
   phrases (27 → 42% at NEG-15, 19 → 47% with hierarchical softmax).
 ---
+<!-- inactive-ok-file: SOTA-382 — Superseded in this same contribution as the duplicate of SOTA-374; every citation here is to the retirement itself and what moved across -->
 
 # SOTA-374: When learning embeddings from co-occurrence, subsample very frequent tokens, discarding each occurrence with probability 1 − √(t/f) with t around 10⁻⁵
 

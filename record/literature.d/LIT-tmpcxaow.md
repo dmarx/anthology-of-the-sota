@@ -1,0 +1,66 @@
+---
+status: Active
+title: 'SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis'
+version: 1
+tags:
+- generative-modeling
+- vision-and-graphics
+date: '2026-09-23'
+published: '2023-07-01'
+arxiv: '2307.01952'
+first_author: 'Podell'
+keywords:
+- 'sdxl'
+- 'latent-diffusion'
+- 'micro-conditioning'
+- 'multi-aspect-training'
+- 'refiner'
+implementations:
+- SDXL
+extends:
+- LIT-062
+summary: >-
+  Podell et al. (2023), [ARXIV-2307.01952](https://arxiv.org/abs/2307.01952). SDXL: a 2.6B-parameter UNet
+  latent diffusion model, 3× Stable Diffusion's, with two text encoders
+  (CLIP ViT-L and OpenCLIP ViT-bigG) and pooled-text conditioning. It is
+  conditioned on each training image's original size and crop, trained on
+  multiple aspect ratios, and followed by an optional refiner applied
+  SDEdit-style. The one quantitative ablation is size conditioning on
+  class-conditional ImageNet. The headline comparisons are user studies.
+---
+
+# LIT-tmpcxaow: SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis
+
+Podell, English, Lacey, Blattmann, Dockhorn, Müller, Penna, Rombach,
+Stability AI (2023) — [ARXIV-2307.01952](https://arxiv.org/abs/2307.01952)
+
+## Key takeaways
+
+- **Scale and text encoders:** the UNet moves most transformer compute to
+  lower resolutions, and the cross-attention context doubles with two
+  concatenated text encoders. 2.6B parameters in the UNet
+- **Size conditioning:** instead of discarding small images (39% of the
+  pretraining data below 256² would have been dropped) or upsampling them
+  (which teaches blur), embed `(h_original, w_original)` with Fourier
+  features and add it to the timestep embedding. At inference, the size
+  condition sets the apparent resolution
+- **Table 2 (class-conditional ImageNet 512², FID-5k / IS-5k):** discard
+  below 512 (70k images) 43.84 / 110.64. All data, no conditioning 39.76 /
+  211.50. All data, size-conditioned 36.53 / 215.34
+- **Crop conditioning:** feed the random-crop offsets `(c_top, c_left)`, and
+  set them to zero at inference. This removes SD 1.x/2.x's cut-off objects.
+  Shown qualitatively
+- **Multi-aspect fine-tuning** on buckets of aspect ratios, and a refiner
+  that re-noises and denoises the base latents with a model specialized to
+  high resolution
+- **Evaluation:** user-preference studies against SD 1.5 and 2.1 (Figure
+  1). The authors note FID does not track the improvement
+
+## Standing in the anthology
+
+**Filed from `#163`** (the stable diffusion lineage, "sdxl"). It `extends`
+LDM ([LIT-062](LIT-062.md)) and sources [SOTA-tmpalcy0](../practices.d/SOTA-tmpalcy0.md). The other SDXL mentions in the
+record are as a quantization target ([LIT-512](LIT-512.md)).
+
+Read — [NOTE-tmpwcj43](../notes.d/NOTE-tmpwcj43.md).
+<!-- inactive-ok-file: SOTA-tmpalcy0 — Proposed, filed in this same contribution from this paper -->

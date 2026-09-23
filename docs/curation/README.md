@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [23 Sep 04:28 — The catalogues' best yield was not practice candidates, it was the substrate the record never filed](2026-09.md#the-catalogues-best-yield-was-not-practice-candidates-it-was-the-substrate-the-record-never-filed)
 - [23 Sep 04:03 — The sweep said AWQ; filing it needed the paper, and one row was two techniques](2026-09.md#the-sweep-said-awq-filing-it-needed-the-paper-and-one-row-was-two-techniques)
 - [23 Sep 03:52 — Three adoption indexes agree on three things, and only one of them is a technique](2026-09.md#three-adoption-indexes-agree-on-three-things-and-only-one-of-them-is-a-technique)
 - [23 Sep 02:34 — Deciding where one sentence should live found three defects the pilot could not](2026-09.md#deciding-where-one-sentence-should-live-found-three-defects-the-pilot-could-not)
@@ -193,9 +194,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-186 entries across 2 books, newest first.
+187 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 184 | 2026-09-05 | 2026-09-23 |
+| [2026-09](2026-09.md) | 185 | 2026-09-05 | 2026-09-23 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

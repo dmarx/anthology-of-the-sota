@@ -6,7 +6,7 @@
 
 **Replaced** — something newer does this better, and the record says what.
 
-11 of 382 SOTA documents. Back to the [full index](../README.md).
+12 of 382 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,3 +21,4 @@
 | [SOTA-102](../../../record/practices.d/SOTA-102.md) v2 | Implement dynamic temperature scaling for mixing | Albalak et al. (2023), [LIT-117](../../../record/literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406). | Superseded — by [SOTA-103](../../../record/practices.d/SOTA-103.md); Names a real component of ODM's policy imprecisely rather than something the paper does not do — the two were one practice split in the import, and SOTA-103 now describes the whole method |
 | [SOTA-137](../../../record/practices.d/SOTA-137.md) | Widen the residual stream into several streams with freely learned mixing (hyper-connections) | Zhu et al. (2024), [LIT-141](../../../record/literature.d/LIT-141.md) — n parallel residual streams with learnable mixing; gains on dense and MoE pretraining, and an identity-mapping property lost that its successor restores. | Superseded — by [SOTA-136](../../../record/practices.d/SOTA-136.md); constraining the mixing to a doubly-stochastic manifold keeps the width and restores the identity mapping this gave up |
 | [SOTA-208](../../../record/practices.d/SOTA-208.md) | Factorize long-sequence attention into a local window and a second head that escapes it | Child et al. (2019), [LIT-225](../../../record/literature.d/LIT-225.md) — [ARXIV-1904.10509](https://arxiv.org/abs/1904.10509). Superseded: the field went to exact attention made fast ([SOTA-086](../../../record/practices.d/SOTA-086.md), [SOTA-087](../../../record/practices.d/SOTA-087.md)) and then to sparsity that is LEARNED rather than fixed ([SOTA-138](../../../record/practices.d/SOTA-138.md)). What survives is the connectivity requirement — a window alone is not the design — which every hybrid the record recommends is an instance of. | Superseded — by [SOTA-138](../../../record/practices.d/SOTA-138.md) |
+| [SOTA-382](../../../record/practices.d/SOTA-382.md) v3 | Subsample frequent tokens: it is faster and it improves the rare ones |  | Superseded — by [SOTA-374](../../../record/practices.d/SOTA-374.md); the same recommendation from the same paper and section; [SOTA-374](../../../record/practices.d/SOTA-374.md) states the discard rule and carries the independent ablation |

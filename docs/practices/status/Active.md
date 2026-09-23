@@ -6,7 +6,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-218 of 373 SOTA documents. Back to the [full index](../README.md).
+219 of 375 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -228,3 +228,4 @@
 | [SOTA-370](../../../record/practices.d/SOTA-370.md) | Add many low-resolution views alongside the two full ones, because view count is what helps and resolution is what costs |  | Active |
 | [SOTA-372](../../../record/practices.d/SOTA-372.md) | Run the encoder on visible tokens only and push the mask tokens into a small decoder you discard |  | Active |
 | [SOTA-373](../../../record/practices.d/SOTA-373.md) | Set the masking ratio by the signal's redundancy, not by the ratio that worked on text |  | Active |
+| [SOTA-374](../../../record/practices.d/SOTA-374.md) | When learning embeddings from co-occurrence, subsample very frequent tokens, discarding each occurrence with probability 1 − √(t/f) with t around 10⁻⁵ | Mikolov et al. (2013), [LIT-603](../../../record/literature.d/LIT-603.md) — in a Zipfian corpus, the few most frequent words co-occur with everything and dominate the updates while teaching little. Discard each occurrence of word w with probability 1 − √(t/f(w)). This cut skip-gram training time by 2–3× and raised accuracy, only slightly for words (59 → 60% at NEG-5) but a lot for phrases (27 → 42% at NEG-15, 19 → 47% with hierarchical softmax). | Active |

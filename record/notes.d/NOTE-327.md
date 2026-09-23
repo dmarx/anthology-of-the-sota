@@ -1,6 +1,9 @@
 ---
+number: 327
 status: Read
-paper: LIT-tmp1v5mg
+formerly:
+- NOTE-tmpw8lop
+paper: LIT-602
 title: 'GloVe'
 version: 1
 date: '2026-09-23'
@@ -11,7 +14,7 @@ summary: >-
   Read in full.
 ---
 
-# NOTE-tmpw8lop: GloVe
+# NOTE-327: GloVe
 
 ## Contribution
 

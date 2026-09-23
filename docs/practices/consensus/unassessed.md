@@ -6,7 +6,7 @@
 
 **Not judged** — nobody has assessed where the field stands on this; the default, and true of most of the corpus.
 
-165 of 373 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
+166 of 375 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -175,3 +175,4 @@
 | [SOTA-354](../../../record/practices.d/SOTA-354.md) | When unlabelled inputs vastly outnumber labelled ones, retrain from scratch on the labelled data mixed with the model's own high-confidence predictions for unlabelled inputs, under augmentation that stops it copying them | Jumper et al. (2021), [LIT-583](../../../record/literature.d/LIT-583.md) — about 100,000 solved structures and billions of sequences. AlphaFold 2 predicted structures for about 350,000 unlabeled sequences, kept the confident ones, and retrained the same architecture from scratch on those plus the PDB. Cropping and alignment subsampling mean the student cannot just reproduce the teacher. The ablation shows a clear gain. The filter is the model's own calibrated confidence ([SOTA-353](../../../record/practices.d/SOTA-353.md)). | Proposed |
 | [SOTA-366](../../../record/practices.d/SOTA-366.md) | Monitor the standard deviation of the l2-normalized embedding; healthy is one over root d and collapsed is zero |  | Active |
 | [SOTA-371](../../../record/practices.d/SOTA-371.md) | Score topic coherence automatically as the average pointwise mutual information of a topic's top-word pairs, estimated on a large external reference corpus | Newman et al. (2010), [LIT-600](../../../record/literature.d/LIT-600.md) — when you cannot put every topic in front of people ([SOTA-368](../../../record/practices.d/SOTA-368.md)), approximate their judgment. Take the topic's top ten words and, for each of the 45 pairs, compute PMI from co-occurrence in 10-word windows over a large general corpus such as Wikipedia. Average the 45 scores. On 237 LDA topics this correlated with nine people's ratings at ρ ≈ 0.77, far better than WordNet measures. | Proposed |
+| [SOTA-375](../../../record/practices.d/SOTA-375.md) | When training with sampled negatives, draw them from the unigram distribution raised to the 3/4 power, not from the unigram or uniform distribution | Mikolov et al. (2013), [LIT-603](../../../record/literature.d/LIT-603.md) — sample negatives in proportion to count^(3/4). That flattens the Zipfian head so frequent words are not nearly the only negatives, while keeping rare words rare. The authors report it "outperformed significantly the unigram and the uniform distributions … on every task we tried", but give no numbers. | Proposed |

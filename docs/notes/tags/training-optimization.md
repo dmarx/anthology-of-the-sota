@@ -4,7 +4,7 @@
 
 **training-optimization**.
 
-83 of 324 NOTE documents. Back to the [full index](../README.md).
+84 of 327 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -91,3 +91,4 @@
 | [NOTE-289](../../../record/notes.d/NOTE-289.md) | MatFormer | One Transformer with four nested FFN widths, trained one width per step, gives four sizes plus Mix'n'Match sizes nobody trained. At the compute of training the four separately, it matches the largest and beats the smaller ones, which see up to 4× the data through shared weights. Read §1–5 and Appendices B, D.1, E.1 and F. | Read |
 | [NOTE-292](../../../record/notes.d/NOTE-292.md) | Tensor Programs IV | Classifies width-scaling parametrizations (abc-parametrizations) and proves that every stable, nontrivial one either learns features in the wide limit or trains as a kernel, not both. The standard parametrization is stable only at an O(1/width) learning rate, which is the kernel side. Introduces µP as the unique member that updates every layer maximally. Read end to end through §10 and Appendices A, C.1 and D. The proofs in Appendix H were not checked line by line. | Read |
 | [NOTE-303](../../../record/notes.d/NOTE-303.md) | Projected GAN | A GAN discriminator on frozen, randomly mixed, multi-scale pretrained features reaches prior-best FIDs up to 40× faster and sets new FIDs on 22 datasets. Everything is measured in FID or ImageNet-derived metrics, and the discriminator is ImageNet-pretrained, which [LIT-563](../../../record/literature.d/LIT-563.md) later shows distorts FID. Read §1–5; the appendix was not read. | Read |
+| [NOTE-326](../../../record/notes.d/NOTE-326.md) | word2vec (negative sampling, subsampling, phrases) | The tricks that made word2vec the standard: negative sampling with a unigram^(3/4) noise distribution, subsampling of frequent words, and data-driven phrase tokens, plus additive compositionality. The 3/4 exponent is asserted without numbers. Read in full. | Read |

@@ -2,7 +2,7 @@
 
 # Lines of work
 
-42 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+43 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -315,6 +315,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-595](../record/literature.d/LIT-595.md) — VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning *(Active)*
 - alongside: [LIT-596](../record/literature.d/LIT-596.md) — Barlow Twins: Self-Supervised Learning via Redundancy Reduction *(Active)*
+
+### From Efficient Estimation of Word Representations in Vector Space
+
+- [LIT-604](../record/literature.d/LIT-604.md) — Efficient Estimation of Word Representations in Vector Space *(Active)*
+  - [LIT-603](../record/literature.d/LIT-603.md) — Distributed Representations of Words and Phrases and their Compositionality *(Active)*
+- alongside: [LIT-602](../record/literature.d/LIT-602.md) — GloVe: Global Vectors for Word Representation *(Active)*
 
 ## tiny-models
 

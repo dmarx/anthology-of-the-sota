@@ -1,5 +1,8 @@
 ---
+number: 89
 status: Proposed
+formerly:
+- THEORY-tmp472k3
 promote_when: >-
   A test of the mechanism, not only of analogy accuracy. For example, show
   that word-vector differences predict log co-occurrence ratios
@@ -14,11 +17,11 @@ tags:
 - signal-structure
 date: '2026-09-23'
 source:
-- LIT-tmp1v5mg
-- LIT-tmp55q30
+- LIT-602
+- LIT-603
 summary: >-
-  Pennington et al. (2014), [LIT-tmp1v5mg](../literature.d/LIT-tmp1v5mg.md), and Mikolov et al. (2013),
-  [LIT-tmp55q30](../literature.d/LIT-tmp55q30.md) — what distinguishes words is the ratio of how often they
+  Pennington et al. (2014), [LIT-602](../literature.d/LIT-602.md), and Mikolov et al. (2013),
+  [LIT-603](../literature.d/LIT-603.md) — what distinguishes words is the ratio of how often they
   co-occur with probe words (ice and steam with solid versus gas). A model
   whose dot products fit log co-occurrence turns ratios into vector
   differences, so relations become offsets. The same log-linearity makes a
@@ -27,12 +30,12 @@ summary: >-
   is not measured.
 ---
 
-# THEORY-tmp472k3: Word vectors trained on co-occurrence behave linearly because they encode log co-occurrence statistics: differences carry log ratios, which gives analogies, and sums carry products of context distributions, which gives composition
+# THEORY-089: Word vectors trained on co-occurrence behave linearly because they encode log co-occurrence statistics: differences carry log ratios, which gives analogies, and sums carry products of context distributions, which gives composition
 
 ## Source
 
-Pennington et al. (2014), [LIT-tmp1v5mg](../literature.d/LIT-tmp1v5mg.md), read as [NOTE-tmpw8lop](../notes.d/NOTE-tmpw8lop.md), for the ratio
-account. Mikolov et al. (2013), [LIT-tmp55q30](../literature.d/LIT-tmp55q30.md), read as [NOTE-tmpd9zqq](../notes.d/NOTE-tmpd9zqq.md), for
+Pennington et al. (2014), [LIT-602](../literature.d/LIT-602.md), read as [NOTE-327](../notes.d/NOTE-327.md), for the ratio
+account. Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md), read as [NOTE-326](../notes.d/NOTE-326.md), for
 additive composition.
 
 ## The account

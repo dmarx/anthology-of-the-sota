@@ -1,5 +1,8 @@
 ---
+number: 374
 status: Active
+formerly:
+- SOTA-tmpt56rt
 title: 'When learning embeddings from co-occurrence, subsample very frequent tokens, discarding each occurrence with probability 1 − √(t/f) with t around 10⁻⁵'
 version: 1
 tags:
@@ -8,9 +11,9 @@ tags:
 - signal-structure
 date: '2026-09-23'
 source:
-- LIT-tmp55q30
+- LIT-603
 introduced_by:
-- LIT-tmp55q30
+- LIT-603
 consensus: unreplicated
 consensus_note: >-
   One paper's measurement, from the authors of the method. It became part of
@@ -19,7 +22,7 @@ consensus_note: >-
 implementations:
 - word2vec
 summary: >-
-  Mikolov et al. (2013), [LIT-tmp55q30](../literature.d/LIT-tmp55q30.md) — in a Zipfian corpus, the few most
+  Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md) — in a Zipfian corpus, the few most
   frequent words co-occur with everything and dominate the updates while
   teaching little. Discard each occurrence of word w with probability
   1 − √(t/f(w)). This cut skip-gram training time by 2–3× and raised
@@ -27,11 +30,11 @@ summary: >-
   phrases (27 → 42% at NEG-15, 19 → 47% with hierarchical softmax).
 ---
 
-# SOTA-tmpt56rt: When learning embeddings from co-occurrence, subsample very frequent tokens, discarding each occurrence with probability 1 − √(t/f) with t around 10⁻⁵
+# SOTA-374: When learning embeddings from co-occurrence, subsample very frequent tokens, discarding each occurrence with probability 1 − √(t/f) with t around 10⁻⁵
 
 ## Source
 
-Mikolov et al. (2013), [LIT-tmp55q30](../literature.d/LIT-tmp55q30.md). Read as [NOTE-tmpd9zqq](../notes.d/NOTE-tmpd9zqq.md).
+Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md). Read as [NOTE-326](../notes.d/NOTE-326.md).
 
 ## The practice
 

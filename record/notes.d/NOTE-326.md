@@ -1,6 +1,9 @@
 ---
+number: 326
 status: Read
-paper: LIT-tmp55q30
+formerly:
+- NOTE-tmpd9zqq
+paper: LIT-603
 title: 'word2vec (negative sampling, subsampling, phrases)'
 version: 1
 date: '2026-09-23'
@@ -11,7 +14,7 @@ summary: >-
   is asserted without numbers. Read in full.
 ---
 
-# NOTE-tmpd9zqq: word2vec (negative sampling, subsampling, phrases)
+# NOTE-326: word2vec (negative sampling, subsampling, phrases)
 
 ## Contribution
 

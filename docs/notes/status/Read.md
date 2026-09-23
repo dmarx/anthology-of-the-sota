@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-321 of 324 NOTE documents. Back to the [full index](../README.md).
+324 of 327 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -331,3 +331,6 @@
 | [NOTE-322](../../../record/notes.d/NOTE-322.md) v2 | Latent Dirichlet Allocation | The bag-of-words assumption, read through de Finetti, implies a document-level mixture. LDA is that mixture with Dirichlet topic proportions. It generalizes better than one-topic-per-document and per-document-parameter models by held-out perplexity. Main text read in full; the variational derivations in the appendices skimmed. | Read |
 | [NOTE-323](../../../record/notes.d/NOTE-323.md) | Reading Tea Leaves | Two human tasks, word intrusion and topic intrusion, measure whether a topic model's topics and document assignments mean anything to people. The model with the best held-out likelihood, CTM, does worst on both. Read in full. | Read |
 | [NOTE-324](../../../record/notes.d/NOTE-324.md) | Automatic Evaluation of Topic Coherence | Average pairwise PMI of a topic's top words, estimated on Wikipedia, correlates with human coherence ratings about as well as the paper's measure of annotator agreement. Knowledge-base and search-engine measures are less reliable. Read in full. | Read |
+| [NOTE-325](../../../record/notes.d/NOTE-325.md) | word2vec (architectures) | CBOW and skip-gram, log-linear models that learn word vectors from billions of words cheaply, and the analogy benchmark that made "king − man + woman ≈ queen" a test. Read in full. | Read |
+| [NOTE-326](../../../record/notes.d/NOTE-326.md) | word2vec (negative sampling, subsampling, phrases) | The tricks that made word2vec the standard: negative sampling with a unigram^(3/4) noise distribution, subsampling of frequent words, and data-driven phrase tokens, plus additive compositionality. The 3/4 exponent is asserted without numbers. Read in full. | Read |
+| [NOTE-327](../../../record/notes.d/NOTE-327.md) | GloVe | Derives a word-embedding objective from the claim that meaning lives in ratios of co-occurrence probabilities. It fits log co-occurrence counts by weighted least squares and beats default-configured word2vec on analogies. Read in full. | Read |

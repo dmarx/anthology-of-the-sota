@@ -4,7 +4,7 @@
 
 **signal-structure**.
 
-7 of 324 NOTE documents. Back to the [full index](../README.md).
+9 of 327 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -15,3 +15,5 @@
 | [NOTE-233](../../../record/notes.d/NOTE-233.md) | TinyStories | Read as the missing trunk under eight `tiny-models` practices. The result that matters is a separation, not a record: what stops a 125M model speaking coherent English is the breadth of the corpus, not the complexity of language — established by holding the architecture and shrinking the corpus. | Read |
 | [NOTE-297](../../../record/notes.d/NOTE-297.md) | Warm Diffusion | Blur and noise mixed in one forward process, with a two-headed model that denoises to the blurry image and deblurs the residual. A blur-to-noise ratio of 0.5, chosen from image and noise spectra, edges EDM on CIFAR-10 (1.85 against 1.97). High ratios degrade sharply, which is the evidence that noise keeps samples on the manifold. Read in full (8 pages). | Read |
 | [NOTE-322](../../../record/notes.d/NOTE-322.md) v2 | Latent Dirichlet Allocation | The bag-of-words assumption, read through de Finetti, implies a document-level mixture. LDA is that mixture with Dirichlet topic proportions. It generalizes better than one-topic-per-document and per-document-parameter models by held-out perplexity. Main text read in full; the variational derivations in the appendices skimmed. | Read |
+| [NOTE-326](../../../record/notes.d/NOTE-326.md) | word2vec (negative sampling, subsampling, phrases) | The tricks that made word2vec the standard: negative sampling with a unigram^(3/4) noise distribution, subsampling of frequent words, and data-driven phrase tokens, plus additive compositionality. The 3/4 exponent is asserted without numbers. Read in full. | Read |
+| [NOTE-327](../../../record/notes.d/NOTE-327.md) | GloVe | Derives a word-embedding objective from the claim that meaning lives in ratios of co-occurrence probabilities. It fits log co-occurrence counts by weighted least squares and beats default-configured word2vec on analogies. Read in full. | Read |

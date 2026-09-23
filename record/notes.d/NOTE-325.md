@@ -1,6 +1,9 @@
 ---
+number: 325
 status: Read
-paper: LIT-tmp9cbir
+formerly:
+- NOTE-tmp5cp8g
+paper: LIT-604
 title: 'word2vec (architectures)'
 version: 1
 date: '2026-09-23'
@@ -10,7 +13,7 @@ summary: >-
   + woman ≈ queen" a test. Read in full.
 ---
 
-# NOTE-tmp5cp8g: word2vec (architectures)
+# NOTE-325: word2vec (architectures)
 
 ## Contribution
 

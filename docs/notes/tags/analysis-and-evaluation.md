@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-120 of 324 NOTE documents. Back to the [full index](../README.md).
+121 of 327 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -128,3 +128,4 @@
 | [NOTE-319](../../../record/notes.d/NOTE-319.md) | GIN | Message passing is bounded by 1-WL, and sum aggregation with an MLP reaches the bound where mean and max do not. The theory predicts the training-fit ordering. Test accuracy separates the aggregators decisively only on featureless graphs. Main text read, proofs skimmed. | Read |
 | [NOTE-323](../../../record/notes.d/NOTE-323.md) | Reading Tea Leaves | Two human tasks, word intrusion and topic intrusion, measure whether a topic model's topics and document assignments mean anything to people. The model with the best held-out likelihood, CTM, does worst on both. Read in full. | Read |
 | [NOTE-324](../../../record/notes.d/NOTE-324.md) | Automatic Evaluation of Topic Coherence | Average pairwise PMI of a topic's top words, estimated on Wikipedia, correlates with human coherence ratings about as well as the paper's measure of annotator agreement. Knowledge-base and search-engine measures are less reliable. Read in full. | Read |
+| [NOTE-325](../../../record/notes.d/NOTE-325.md) | word2vec (architectures) | CBOW and skip-gram, log-linear models that learn word vectors from billions of words cheaply, and the analogy benchmark that made "king − man + woman ≈ queen" a test. Read in full. | Read |

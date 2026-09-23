@@ -1,0 +1,89 @@
+---
+status: Active
+title: 'Representation Learning with Contrastive Predictive Coding'
+version: 1
+tags:
+- representation-and-encoding
+- analysis-and-evaluation
+date: '2026-09-23'
+published: '2018-07-01'
+arxiv: '1807.03748'
+first_author: 'Oord'
+keywords:
+- 'contrastive-learning'
+- 'noise-contrastive-estimation'
+- 'mutual-information'
+- 'predictive-coding'
+- 'self-supervised-learning'
+summary: >-
+  Oord et al. (2018), [ARXIV-1807.03748](https://arxiv.org/abs/1807.03748). Predict the future in latent space
+  and score it as a density ratio against sampled negatives, rather than
+  reconstructing the observation. The loss is named InfoNCE here, and it is
+  the objective CLIP, SimCLR and MoCo all run; the bound it maximizes is
+  capped at log N, which the folklore about negatives leaves out.
+---
+
+# LIT-tmp5vq8g: Representation Learning with Contrastive Predictive Coding
+
+Oord et al. (2018) — [ARXIV-1807.03748](https://arxiv.org/abs/1807.03748)
+
+## Key takeaways
+
+- **The argument against reconstruction is quantitative, not aesthetic.**
+  A generative loss on `p(x|c)` must model every detail of the observation,
+  and the paper prices that: "images may contain thousands of bits of
+  information while the high-level latent variables such as the class label
+  contain much less (10 bits for 1,024 categories)". Unimodal losses — MSE,
+  cross-entropy — spend capacity on the part you are not trying to keep.
+- **So model a density ratio instead.** Learn `f_k(x_{t+k}, c_t) ∝
+  p(x_{t+k}|c_t) / p(x_{t+k})`, which **need not be normalised**. In the
+  paper it is a log-bilinear score `exp(z_{t+k}ᵀ W_k c_t)` with a separate
+  `W_k` per prediction step. An encoder `g_enc` produces `z_t`; an
+  autoregressive model `g_ar` summarises `z_{≤t}` into a context `c_t`.
+  Either can serve as the downstream representation.
+- **InfoNCE is named and derived here, and it is a classification loss.**
+  Given `N` samples — one positive from `p(x_{t+k}|c_t)`, `N−1` negatives
+  from the proposal `p(x_{t+k})` — minimise the categorical cross-entropy of
+  picking the positive. The paper shows the optimum of `f` is exactly the
+  density ratio, **independent of `N`**.
+- **The mutual-information bound, which is the most-quoted and
+  least-finished part.** `I(x_{t+k}; c_t) ≥ log(N) − L_N`, so minimising
+  InfoNCE maximises a lower bound on MI, and the bound "becomes tighter as N
+  becomes larger". Since `L_N ≥ 0`, the same inequality caps what the bound
+  can ever certify at **log N** — see [THEORY-tmpptbj9](../theory.d/THEORY-tmpptbj9.md).
+- **Predicting several steps ahead is the mechanism, not a detail.** Next-step
+  prediction exploits local smoothness; predicting further forces the model
+  onto "slow features" that span many steps — phonemes and intonation in
+  speech, objects in images, the story line in books.
+- **One mechanism, four modalities, all with a linear probe on top.**
+  LibriSpeech phone classification: **64.6%** against 39.7 for MFCC features
+  and 74.6 fully supervised; speaker classification **97.4%** against 17.6
+  and 98.5. ImageNet unsupervised linear probe: **48.7% top-1**, against
+  39.6 for the best prior ResNet-V2 result — **+9 absolute** — and **73.6%
+  top-5** against 69.3 for a four-way combination of prior pretext tasks.
+  BookCorpus sentence representations land at skip-thought's level (MR 76.9,
+  TREC 96.8) without a word-level LSTM decoder. Added as an auxiliary loss to
+  a batched A2C agent, it improves 4 of 5 DeepMind Lab tasks and is neutral on
+  the fifth, which needs no memory.
+- **The architecture is chosen to be uninteresting** — strided convolutions
+  with resnet blocks, a GRU — and the paper says more advanced autoregressive
+  models "could help improve results further". The claim is about the
+  objective.
+
+## Standing in the anthology
+
+Filed as the objective under the record's contrastive documents. `LIT-588`
+(CLIP) cites this paper by name for its loss, and `SOTA-359` states CLIP's
+version of the recommendation; this note supplies the general form,
+`SOTA-tmp6lc4c`.
+
+It also closes a vocabulary gap rather than only a coverage one. Before this,
+`InfoNCE`, `negative sampling`, `siamese` and `triplet loss` returned zero
+matches anywhere in the record — the audit is on `#304` — so the record held
+several practices built on an objective it could not name.
+
+Note what the paper does *not* claim, because the field later read it as
+claiming it: it does not show that more negatives give a better
+representation. It shows that the estimator's optimum is independent of `N`
+and that the MI *bound* tightens with `N`. Those are different sentences, and
+the second one has a ceiling.

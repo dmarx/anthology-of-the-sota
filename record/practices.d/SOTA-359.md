@@ -13,11 +13,24 @@ consensus_note: >-
   objective converged; the efficiency argument behind it is rarely restated.
   Read as of 2026-09.
 title: 'Supervise vision from the caption, and match image to caption rather than predicting its words'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    `training-optimization` added and `extends: SOTA-tmp6lc4c` declared. The
+    tag is true of the document on its own terms — this practice's entire
+    justification is a training-efficiency measurement, 3x and 4x in rate of
+    transfer per unit compute — and someone browsing that topic would be
+    right to expect it. It is written here rather than left implicit because
+    the relation is what prompted the re-reading (`ADR-049`).
 tags:
 - multimodal-learning
 - data-pipeline
 - vision-and-graphics
+- training-optimization
+extends:
+- SOTA-tmp6lc4c
 date: '2026-09-23'
 source:
 - LIT-588

@@ -1,0 +1,82 @@
+---
+status: Active
+title: 'Highly accurate protein structure prediction with AlphaFold'
+version: 1
+tags:
+- biomolecular-modeling
+- model-architecture
+- data-pipeline
+date: '2026-09-23'
+published: '2021-07-15'
+doi: '10.1038/s41586-021-03819-2'
+first_author: 'Jumper'
+keywords:
+- 'alphafold'
+- 'protein-structure-prediction'
+- 'evoformer'
+- 'self-distillation'
+- 'confidence-estimation'
+implementations:
+- AlphaFold
+summary: >-
+  Jumper et al. (Nature 2021), DOI 10.1038/s41586-021-03819-2. AlphaFold 2
+  predicts protein structure from sequence and a multiple sequence
+  alignment. At CASP14 its median backbone error was 0.96 Å r.m.s.d.95,
+  against 2.8 Å for the next best method. Its per-residue confidence, pLDDT,
+  tracks true accuracy (r = 0.76 over 10,795 chains). Self-distillation on
+  its own confident predictions for 350,000 unlabeled sequences improves
+  it. Accuracy falls sharply when the alignment has fewer than about 30
+  sequences.
+extended_by:
+- LIT-tmpzy774
+---
+
+# LIT-tmpmz8pl: Highly accurate protein structure prediction with AlphaFold
+
+Jumper, Evans, Pritzel, Green, Figurnov, Ronneberger et al., DeepMind (Nature
+596, 2021) — DOI 10.1038/s41586-021-03819-2
+
+## Key takeaways
+
+- **Accuracy:** CASP14 median backbone 0.96 Å r.m.s.d.95 (95% CI
+  0.85–1.16), next best 2.8 Å. All-atom 1.5 Å against 3.5 Å. The accuracy
+  holds on 10,795 PDB chains released after the training cutoff
+- **Architecture:** the Evoformer (48 blocks) updates an MSA representation
+  and a pair representation, with triangle updates and attention on the
+  pair. A structure module with invariant point attention builds per-residue
+  frames, trained end to end with the frame-aligned point error (FAPE).
+  "Recycling" runs the whole network three more times on its own outputs
+- **Confidence** (Figure 2c, d): the predicted lDDT (pLDDT) fits true
+  lDDT-Cα as 0.997·pLDDT − 1.17 (r = 0.76), and predicted TM-score fits
+  TM-score with r = 0.85
+- **Self-distillation:** predict structures for about 350,000 Uniclust30
+  sequences, keep a high-confidence subset, and retrain the same
+  architecture from scratch on PDB plus these. Cropping and MSA subsampling
+  make copying hard. The ablation shows it improving accuracy (Figure 4a).
+  A BERT-style masked-MSA loss is trained jointly, not as pretraining
+- **Ablations** (Figure 4a, 87 CASP14 domains and 2,261 low-template PDB
+  chains): removing invariant point attention together with recycling, or
+  end-to-end structure gradients, costs the most. Removing templates
+  changes little. The numbers are plotted, not tabulated
+- **Limits** (Figure 5): accuracy drops sharply when the median alignment
+  depth is below about 30 sequences, with small gains above about 100.
+  Removing both metagenomic databases costs 6.1 GDT on CASP14, mostly
+  through a few targets losing 20 or more. Chains whose shape comes from
+  other chains in a complex are predicted poorly
+
+## Standing in the anthology
+
+**Filed from `#163`** ("AlphaFold"). It was the item that prompted
+`biomolecular-modeling` ([ADR-tmpstxe6](../decisions.d/ADR-tmpstxe6.md)). It is `extended_by` AlphaFold 3
+([LIT-tmpzy774](LIT-tmpzy774.md)). It sources [SOTA-tmpydunc](../practices.d/SOTA-tmpydunc.md) (self-distillation),
+[SOTA-tmpej1tr](../practices.d/SOTA-tmpej1tr.md) (a head that predicts the model's own accuracy) and
+[THEORY-tmprhu7e](../theory.d/THEORY-tmprhu7e.md) (what the alignment is for).
+
+**Which evidence is which.** CASP14 is a blind test and the strongest
+evidence here. The ablations are three-seed comparisons shown only as a
+plot, so the practices cite their direction, not magnitudes. The protein
+language model line in the record ([LIT-505](LIT-505.md)) is the MSA-free alternative,
+and ESMFold, which puts the two together, is not filed.
+
+Read — [NOTE-tmprglmr](../notes.d/NOTE-tmprglmr.md).
+<!-- inactive-ok-file: SOTA-tmpydunc, SOTA-tmpej1tr, THEORY-tmprhu7e — Proposed, filed in this same contribution from this paper -->

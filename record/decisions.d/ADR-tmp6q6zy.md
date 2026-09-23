@@ -1,0 +1,142 @@
+---
+status: Proposed
+title: 'A library is evidence about consensus, and its observation lives in a report'
+version: 1
+tags:
+- record
+- taxonomy
+date: '2026-09-23'
+issue: '#288'
+summary: >-
+  A repository that implements a technique is evidence for `consensus` and for
+  nothing else. The judgement lands in `consensus_note`, naming the libraries
+  checked and the date; the observation lands in a generated report, pinned by
+  ref and recomputable. A library does not become a `LIT` note — its paper may
+  already be one. Rejected: `implementations:`, which already means four
+  things and would be made permanently unreadable by a fifth.
+---
+
+# ADR-tmp6q6zy: A library is evidence about consensus, and its observation lives in a report
+
+## Context
+
+`#183` wants the record to learn from what the big repositories implement.
+`#287` piloted one — vLLM, twenty-one features against 351 practices — and the
+question it could not answer from the armchair was where the output goes.
+
+Three candidate homes existed. The pilot and a survey of the corpus eliminated
+two of them on facts rather than on taste.
+
+**`implementations:` is not available.** It is declared in no scheme, carries
+data on 206 of 351 practices, and holds **85 distinct values across 84
+documents** — essentially no reuse. Those values are four different kinds of
+thing: models (`llama2`, `PaLM`, `DeepSeek-V3`), *methods* (`NeRF`,
+`CycleGAN`, `Progressive Distillation` — which are not implementations at all
+and have their own notes), libraries (`vLLM`, `diffusers`, `bitsandbytes`),
+and prose that escaped into a list field (*"the 4-bit path in the major PEFT
+libraries"*). A field meaning four things cannot be read by anything, and a
+fifth meaning would settle that permanently. It is `#293`.
+
+**A library is not a `LIT` note.** A note names a source that resolves and
+makes a claim that stays put. A repository has no fixed claim and changes
+weekly. Several of these repositories *do* have papers — vLLM's is `LIT-112`,
+Megatron's is `LIT-043` — and those are already notes. The paper and the
+library are different objects, and only one of them is a publication.
+
+## Decision
+
+**A repository that implements a technique is evidence about `consensus`, and
+about nothing else.** Not `status`, which is the record's own judgement of
+whether to recommend the thing, and not the practice's correctness. `DP-005`
+already says adoption is not evidence; what makes `consensus` the exception is
+that its vocabulary is *about* adoption by construction — *"converged: the
+field agrees and dissent is marginal, **whether or not each adopter made the
+choice deliberately**"*, *"universal: not doing it is what needs justifying"*.
+
+**The judgement goes in `consensus_note`, and names what was checked.** Which
+repositories, and when. A note saying "widely adopted" is not auditable; one
+saying "implemented in vLLM, SGLang and TensorRT-LLM as of 2026-09" can be
+disagreed with by someone who looks.
+
+**`consensus_note` should be declared, and cannot be yet.** It is used on 206
+practices and appears in no scheme — the same defect as `implementations:` —
+and this decision is what makes it load-bearing. Declaring it was attempted
+here and refused: luria types a field by the constraint it carries, and an
+optional prose field carries none, so `blurb` is unreachable without attaching
+`required`, `many`, `unique` or `required_when` — every one of which is false
+of this field (`LU-#319`).
+
+The honest declaration is `required_when` on every non-default `consensus`: a
+practice asserting the field has converged should have to say on what grounds.
+That is **8 documents away from being satisfiable** — 183 of the 191 practices
+with a non-default reading already carry a note — and those eight are asserting
+`universal`, `converged` or `emerging` on nothing at all ([#294](https://github.com/dmarx/anthology-of-the-sota/issues/294)). Writing eight
+consensus assessments is editorial judgement about what the field believes,
+which is the highest-stakes claim this record makes, and it does not belong as
+a side effect of a schema change.
+
+**The observation goes in a generated report** (`#291`), which fetches at a
+**pinned ref**, not `main`. This is the split the record already runs on: a
+source holds what a person concluded, a view holds what a machine derived
+([ADR-004](ADR-004.md)). A citation to a moving target silently becomes false, and the
+pilot made that concrete — it fetched vLLM's feature matrix from `main` and
+cannot now say which `main`.
+
+**Removal is a prompt, not a verdict.** The report's *gone since last run*
+column is the one signal nothing else in this project can produce, and it
+means "read this again", never "lower the consensus". A technique can leave a
+library because the library narrowed its scope.
+
+## Alternatives considered
+
+- **Extend `implementations:`.** The obvious move and the one the survey
+  killed. Adding libraries to a field that already holds models, methods and
+  prose fragments does not give libraries a home; it gives the field a fifth
+  meaning and removes the last chance of it ever being checkable (`#293`).
+- **A new `libraries:` field.** Clean, and premature. It would be the third
+  undeclared-or-barely-declared list field on this scheme, and the pilot did
+  not show that the *list* is what a reader wants — it showed that a
+  **count** is. A count belongs in a report, and a field would duplicate it
+  in a place that goes stale between sweeps.
+- **The library becomes a `LIT` note.** `ADR-015` put infrastructure in the
+  record, which makes this tempting. It fails on `source`: a note must name
+  something that resolves and holds still, and `README.md` on `main` does
+  neither. The paper, where one exists, is the note.
+- **`consensus_note` prose alone, with no report.** What the record does
+  today. The pilot's output was *21 features, 14 matched, 7 absent* — a number
+  that cannot be recomputed, diffed or re-run if it lives in sentences spread
+  across 206 documents. `DP-009` is that counting is the antidote, and prose
+  is where counts go to die.
+- **Status quo.** The sweeps in `#289` and `#290` would produce findings with
+  nowhere to land, and the first one to be written down would set the
+  convention by accident.
+
+## Consequences
+
+**`#289` and `#290` are unblocked**, and `#291` now has a specification: pinned
+refs, a diff, and a *gone* column.
+
+**`consensus_note` becomes checkable and gains a burden.** Naming the
+repositories and the date is more work than "widely adopted", and it is the
+whole value — the pilot declined to move `SOTA-105` and `SOTA-113` precisely
+because one repository could not honestly support the sentence.
+
+**This decision does not fix `implementations:`**, and routing around a broken
+field leaves it broken. `#293` holds that, and this ADR is evidence for it:
+the field's condition was discovered by needing it and finding it unusable.
+
+**`promote_when` is the next one to look at** — declared, but only as a
+`required_when` trigger with no vocabulary, on 128 practices. Not this
+decision's business; noted because the same survey found it.
+
+**Three findings came out of trying to write this decision down**, which is
+the argument for writing decisions down: `implementations:` means four things
+([#293](https://github.com/dmarx/anthology-of-the-sota/issues/293)), eight practices assert consensus on no grounds ([#294](https://github.com/dmarx/anthology-of-the-sota/issues/294)), and luria cannot
+declare a field it is not also checking (`LU-#319`). None was visible from the
+pilot; all three were found by asking where one sentence should live.
+
+**A report of what libraries implement will read as a leaderboard**, and
+that is the risk worth naming. It is a record of what is *served*, which is
+not a record of what is *good*, and the report's own prose has to say so
+where a reader will hit it — the way `unbound-lineage.md` says what an
+unbound row usually means.

@@ -11,13 +11,18 @@ promote_when: >-
   the account from their objectives and show it only by examples and
   benchmark scores.
 title: 'Word vectors trained on co-occurrence behave linearly because they encode log co-occurrence statistics: differences carry log ratios, which gives analogies, and sums carry products of context distributions, which gives composition'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-23'
   note: >-
     Adds LIT-607 as a source: aligned design choices make count and
     prediction methods converge, as the account predicts. Still Proposed.
+- version: 3
+  date: '2026-09-23'
+  note: >-
+    `extends` THEORY-tmpismnk, the factorization result its skip-gram half
+    rests on. Unchanged otherwise.
 tags:
 - representation-and-encoding
 - signal-structure
@@ -27,6 +32,8 @@ source:
 - LIT-602
 - LIT-603
 - LIT-607
+extends:
+- THEORY-tmpismnk
 summary: >-
   Pennington et al. (2014), [LIT-602](../literature.d/LIT-602.md), and Mikolov et al. (2013),
   [LIT-603](../literature.d/LIT-603.md) — what distinguishes words is the ratio of how often they
@@ -66,6 +73,13 @@ river → Volga River).
 - Why SVD on raw counts does poorly and on log counts much better (7.3%
   against 60.1% on analogies at 6B)
 - Why element-wise addition composes meaning
+
+## What it rests on
+
+For skip-gram, the premise that dot products fit a log co-occurrence
+statistic is [THEORY-tmpismnk](THEORY-tmpismnk.md): SGNS's optimum is w·c = PMI(w, c) − log k.
+This account `extends` that one. It adds that ratios of those statistics
+become vector offsets.
 
 ## Support from a controlled comparison
 

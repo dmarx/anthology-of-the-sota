@@ -11,13 +11,21 @@ promote_when: >-
   mechanism and shows only that PPMI, the method most exposed to it, gains
   most.
 title: 'Raising context counts to the 3/4 power helps word representations because PMI overweights rare contexts, and smoothing lowers their association scores'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    `extends` THEORY-tmpismnk, the factorization result it uses to equate
+    negative sampling with smoothed PMI, filed after it.
 tags:
 - signal-structure
 - representation-and-encoding
 date: '2026-09-23'
 source:
 - LIT-607
+extends:
+- THEORY-tmpismnk
 explains:
 - SOTA-375
 summary: >-
@@ -47,7 +55,7 @@ weakness: it overweights infrequent events.
 Smoothing replaces P(c) with count(c)^α / Σ count^α, for α < 1. Rare
 contexts gain probability relative to frequent ones, so their PMI falls. In
 SGNS the same exponent sets the distribution negatives are drawn from. Since
-SGNS implicitly factorizes shifted PMI, drawing negatives from count^0.75 is
+SGNS implicitly factorizes shifted PMI ([THEORY-tmpismnk](THEORY-tmpismnk.md)), drawing negatives from count^0.75 is
 the same smoothing applied inside the objective.
 
 ## What it explains

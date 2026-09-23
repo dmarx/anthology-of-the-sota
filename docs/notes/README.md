@@ -50,6 +50,9 @@
 **[representation-and-encoding](tags/representation-and-encoding.md)** (25):
 [010](../../record/notes.d/NOTE-010.md) · [028](../../record/notes.d/NOTE-028.md) · [125](../../record/notes.d/NOTE-125.md) · [129](../../record/notes.d/NOTE-129.md) · [188](../../record/notes.d/NOTE-188.md) · [206](../../record/notes.d/NOTE-206.md) · [207](../../record/notes.d/NOTE-207.md) · [210](../../record/notes.d/NOTE-210.md) · [234](../../record/notes.d/NOTE-234.md) · [237](../../record/notes.d/NOTE-237.md) · [238](../../record/notes.d/NOTE-238.md) · [243](../../record/notes.d/NOTE-243.md) · [245](../../record/notes.d/NOTE-245.md) · [246](../../record/notes.d/NOTE-246.md) · [247](../../record/notes.d/NOTE-247.md) · [252](../../record/notes.d/NOTE-252.md) · [253](../../record/notes.d/NOTE-253.md) · [254](../../record/notes.d/NOTE-254.md) · [256](../../record/notes.d/NOTE-256.md) · [270](../../record/notes.d/NOTE-270.md) · [275](../../record/notes.d/NOTE-275.md) · [291](../../record/notes.d/NOTE-291.md) · [293](../../record/notes.d/NOTE-293.md) · [296](../../record/notes.d/NOTE-296.md) · [311](../../record/notes.d/NOTE-311.md)
 
+**[signal-structure](tags/signal-structure.md)** (6):
+[009](../../record/notes.d/NOTE-009.md) · [094](../../record/notes.d/NOTE-094.md) · [199](../../record/notes.d/NOTE-199.md) · [209](../../record/notes.d/NOTE-209.md) · [233](../../record/notes.d/NOTE-233.md) · [297](../../record/notes.d/NOTE-297.md)
+
 **[systems-optimization](tags/systems-optimization.md)** (9):
 [005](../../record/notes.d/NOTE-005.md) · [122](../../record/notes.d/NOTE-122.md) · [164](../../record/notes.d/NOTE-164.md) · [168](../../record/notes.d/NOTE-168.md) · [184](../../record/notes.d/NOTE-184.md) · [257](../../record/notes.d/NOTE-257.md) · [260](../../record/notes.d/NOTE-260.md) · [294](../../record/notes.d/NOTE-294.md) · [305](../../record/notes.d/NOTE-305.md)
 

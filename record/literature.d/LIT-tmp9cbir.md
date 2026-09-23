@@ -1,0 +1,77 @@
+---
+status: Active
+title: 'Efficient Estimation of Word Representations in Vector Space'
+version: 1
+tags:
+- representation-and-encoding
+- analysis-and-evaluation
+date: '2026-09-23'
+published: '2013-01-01'
+arxiv: '1301.3781'
+first_author: 'Mikolov'
+keywords:
+- 'word2vec'
+- 'skip-gram'
+- 'cbow'
+- 'word-embeddings'
+- 'word-analogy'
+implementations:
+- word2vec
+extended_by:
+- LIT-tmp55q30
+summary: >-
+  Mikolov, Chen, Corrado and Dean (2013), [ARXIV-1301.3781](https://arxiv.org/abs/1301.3781). Two log-linear
+  architectures drop the hidden layer of a neural language model. CBOW
+  predicts a word from its averaged context, and skip-gram predicts the
+  context from the word. The paper also introduces the Semantic-Syntactic
+  Word Relationship test (8,869 semantic and 10,675 syntactic analogy
+  questions), answered by vector arithmetic. On it, skip-gram at 300
+  dimensions reaches 53.3% on 783M words in about 3 days on one CPU, far
+  ahead of earlier public embeddings. The comparisons are not controlled
+  for data size or dimension.
+---
+
+# LIT-tmp9cbir: Efficient Estimation of Word Representations in Vector Space
+
+Mikolov, Chen, Corrado and Dean, Google (2013) — [ARXIV-1301.3781](https://arxiv.org/abs/1301.3781)
+
+## Key takeaways
+
+- **The move** (§3): most of a neural language model's cost is the
+  non-linear hidden layer. Remove it and train only a projection and a
+  (hierarchical-softmax) output. CBOW averages the context vectors to
+  predict the middle word. Skip-gram uses the middle word to predict each
+  context word in a window
+- **The benchmark** (§4.1): analogies like big : biggest :: small : ?,
+  answered by the nearest word to vec(biggest) − vec(big) + vec(small).
+  8,869 semantic and 10,675 syntactic questions. Exact match only
+- **Scaling** (Table 2): CBOW accuracy rises with both dimension and data,
+  with diminishing returns in either alone
+- **Architectures on the same 320M words at 640 dimensions** (Table 3): RNNLM
+  9/36 (semantic/syntactic %), NNLM 23/53, CBOW 24/64, skip-gram 55/59.
+  Skip-gram is far ahead on semantic questions
+- **Against published vectors** (Table 4): skip-gram 300d on 783M words
+  scores 53.3% total, while earlier public embeddings score 2–25%, trained on
+  37M–990M words at 50–640 dimensions
+- **One epoch on twice the data** matches or beats three epochs (Table 5).
+  With DistBelief, 1000-dimensional skip-gram on 6B words reaches 65.6% in
+  2.5 days × 125 cores (Table 6)
+
+## Standing in the anthology
+
+Filed on request, with its follow-up [LIT-tmp55q30](LIT-tmp55q30.md) (negative sampling,
+subsampling, phrases) and GloVe ([LIT-tmp1v5mg](LIT-tmp1v5mg.md)), which compares against
+word2vec. The two word2vec papers are the prediction-based side of the
+count-versus-predict question GloVe addresses.
+
+**No practice.** Its instruction, a shallow model on much more data, is a
+2013 trade-off that later embedding and language-model work has moved past.
+The durable contributions are the architectures and the analogy test, which
+later papers, GloVe included, report on.
+
+**The headline comparison is loose.** "Large improvements in accuracy at
+much lower computational cost" is largely Table 4, which compares vectors
+trained on different corpora, sizes and dimensions. The controlled
+comparison is Table 3.
+
+Read — [NOTE-tmp5cp8g](../notes.d/NOTE-tmp5cp8g.md).

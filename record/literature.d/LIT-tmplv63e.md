@@ -1,0 +1,86 @@
+---
+status: Active
+title: 'GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium'
+version: 1
+tags:
+- analysis-and-evaluation
+- generative-modeling
+- vision-and-graphics
+date: '2026-09-23'
+published: '2017-06-01'
+arxiv: '1706.08500'
+first_author: 'Heusel'
+keywords:
+- 'frechet-inception-distance'
+- 'generative-evaluation'
+- 'two-time-scale'
+- 'gan-convergence'
+extended_by:
+- LIT-501
+- LIT-563
+summary: >-
+  Heusel et al. (2017), [ARXIV-1706.08500](https://arxiv.org/abs/1706.08500). Where FID comes from — and it
+  comes from a subsection of a paper about two time-scale update rules and
+  Nash equilibria. Fit a Gaussian to Inception activations for each
+  distribution and take the Wasserstein-2 distance between them. Validated
+  by monotonicity under six synthetic corruptions.
+---
+
+# LIT-tmplv63e: GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium
+
+Heusel et al. (2017) — [ARXIV-1706.08500](https://arxiv.org/abs/1706.08500)
+
+## Key takeaways
+
+- **FID is defined here, in a paper about something else.** The title,
+  abstract and three-quarters of the pages are about the two time-scale
+  update rule (TTUR) — a separate learning rate for discriminator and
+  generator, with a stochastic-approximation proof of convergence to a
+  stationary local Nash equilibrium, plus an argument that Adam under TTUR
+  behaves as a heavy ball with friction and so prefers flat minima. FID
+  arrives because the authors needed to evaluate those experiments.
+- **The definition, with its assumption stated.** Take Inception coding
+  units for real and generated images; **"we assume the coding units to
+  follow a multidimensional Gaussian"**; the distance between the two
+  Gaussians is the Fréchet distance, "also known as Wasserstein-2":
+
+      d²((m,C),(m_w,C_w)) = ‖m − m_w‖²₂ + Tr(C + C_w − 2(C·C_w)^{1/2})
+
+  The Gaussian fit is an assumption the paper makes explicitly and that
+  almost nothing downstream restates.
+- **The validation is monotonicity under synthetic corruption.** Figure 3
+  shows FID rising monotonically with the level of Gaussian noise, Gaussian
+  blur, implanted black rectangles, swirled images, salt-and-pepper noise,
+  and CelebA contaminated with ImageNet images. That is the evidence offered:
+  the measure orders *deliberately degraded* distributions correctly. It is
+  not evidence that small differences between two competent models are
+  meaningful, and the paper does not claim it is.
+- **Its stated advantage is over the Inception Score**, which it "captures
+  the similarity of generated images to real ones better than". A comparison
+  against one incumbent, not a general claim of fitness.
+
+## Standing in the anthology
+
+Unit H of `#304`, filed as the largest substrate defect this audit found:
+**68 documents in this record mention FID and none held the paper**. For
+scale, `LIT-587` (ViT) had 47 and `LIT-588` (CLIP) 45.
+
+And the dependency was not background. The record already held **two papers
+about this metric's failure modes and two `Active` practices telling readers
+how to survive them** — `LIT-563` on FID being movable without improving
+images, `LIT-501` on its ≈1.3% seed-noise floor, `SOTA-337` on when its gains
+cannot be trusted, `SOTA-307` on reporting it as an error bar — plus
+<!-- inactive-ok: SOTA-338 — Proposed, and named here as one of the documents that turns on FID without the record holding FID — which is the gap this note closes. -->
+`SOTA-338` turning on it. **Four documents deep into the critique, and no
+note for the thing being criticised.** The shape unit E found with MAE, at
+four times the scale and three levels further along.
+
+Reading it supplies two things the critiques assume without restating: the
+Gaussian fit, and the fact that the validation was ordering corrupted
+distributions rather than discriminating good ones. Both are load-bearing for `LIT-501`, which measures how much of a reported
+FID is noise, and for `LIT-563`, which shows it can be moved without
+improving images.
+
+Filed under `analysis-and-evaluation` rather than `generative-modeling` as
+primary because what the record needs from this paper is the metric, not the
+TTUR result — and `ADR-046` says to tag the subject the document is *for*.

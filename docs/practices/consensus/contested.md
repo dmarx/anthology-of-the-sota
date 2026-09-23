@@ -6,7 +6,7 @@
 
 **In dispute** — credible groups publicly disagree, now — the fork in a line of work, whose trunk is agreed and whose branches are not.
 
-10 of 336 SOTA documents. Back to the [full index](../README.md).
+11 of 339 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,4 @@
 | [SOTA-171](../../../record/practices.d/SOTA-171.md) v2 | Repeat a data-constrained corpus for up to about four epochs; past that, added compute stops paying | Muennighoff et al. (2023), [LIT-166](../../../record/literature.d/LIT-166.md) — with constrained data at fixed compute, up to four epochs of repeated data changes the loss negligibly against having that much unique data. Past that point the value of adding compute decays toward zero. 400 training runs, up to 900B tokens and 9B parameters, with a scaling law that prices repeated tokens and excess parameters. | Active |
 | [SOTA-191](../../../record/practices.d/SOTA-191.md) v2 | Consider removing LayerNorm's learnable gain and bias rather than tuning them | Xu et al. (2019), [LIT-025](../../../record/literature.d/LIT-025.md) — the bias and gain increase overfitting risk and "do not work in most cases"; LayerNorm-simple, with both removed, beats LayerNorm on four datasets and reaches state of the art on En-Vi. | Proposed |
 | [SOTA-238](../../../record/practices.d/SOTA-238.md) v3 | Set domain weights with a small proxy model under group DRO on excess loss, then transfer them | Xie et al. (2023), [LIT-391](../../../record/literature.d/LIT-391.md) — [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429). Train a small proxy under group DRO to produce domain weights, then resample and train the real model with them. Optimise worst-case EXCESS loss against a reference model, not worst-case loss — the naive form upweights whichever domain is noisiest, because every domain has a different irreducible entropy. | Active |
+| [SOTA-338](../../../record/practices.d/SOTA-338.md) | Train the GAN discriminator on frozen multi-scale pretrained features with fixed random channel and scale mixing | Sauer et al. (2021), [LIT-562](../../../record/literature.d/LIT-562.md) — project real and generated images through a frozen EfficientNet, mix channels and scales with fixed random convolutions, and train one small discriminator per scale. It reaches StyleGAN2's best LSUN-Church FID after 1.1M images instead of 88M. The speed-up is measured in FID, and at equal FID on FFHQ a CLIP-space distance and human raters prefer StyleGAN2 ([LIT-563](../../../record/literature.d/LIT-563.md)). | Proposed |

@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-105 of 301 NOTE documents. Back to the [full index](../README.md).
+106 of 304 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -113,3 +113,4 @@
 | [NOTE-296](../../../record/notes.d/NOTE-296.md) | Fourier features | A coordinate MLP's NTK has fast spectral falloff, so it fits high frequencies too slowly to matter. A sinusoidal input mapping makes the composed kernel stationary and sets its bandwidth, and the NTK linear model predicts the trained networks' loss curves. Gaussian random frequencies are best on seven tasks, and only their scale matters. Read §1–7; the appendices were not read. | Read |
 | [NOTE-297](../../../record/notes.d/NOTE-297.md) | Warm Diffusion | Blur and noise mixed in one forward process, with a two-headed model that denoises to the blurry image and deblurs the residual. A blur-to-noise ratio of 0.5, chosen from image and noise spectra, edges EDM on CIFAR-10 (1.85 against 1.97). High ratios degrade sharply, which is the evidence that noise keeps samples on the manifold. Read in full (8 pages). | Read |
 | [NOTE-299](../../../record/notes.d/NOTE-299.md) | Cold Diffusion | Diffusion generalized to deterministic degradations (blur, masking, downsampling, snow) with a restorer and a sampler that is exact for degradations linear in severity. Conditional restoration works. Noiseless unconditional generation is far worse than noise diffusion, and adding a little noise recovers half the gap. Read §1–5.3; the appendix was not read. | Read |
+| [NOTE-304](../../../record/notes.d/NOTE-304.md) | The Role of ImageNet Classes in FID | FID can be lowered by two-thirds without changing a generator, by resampling its outputs to match ImageNet-class statistics. Non-ImageNet feature spaces barely move. An ImageNet-pretrained discriminator gets the same effect by accident. Read §1–5; the appendices were skimmed. | Read |

@@ -1,6 +1,9 @@
 ---
+number: 302
 status: Read
-paper: LIT-tmpm6lfm
+formerly:
+- NOTE-tmp36vxd
+paper: LIT-564
 title: 'CycleGAN'
 version: 1
 date: '2026-09-23'
@@ -12,9 +15,9 @@ summary: >-
   appendix was skimmed.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpw7xk8 — Proposed, filed in this same contribution from this paper -->
+<!-- inactive-ok-file: SOTA-339 — Proposed, filed in this same contribution from this paper -->
 
-# NOTE-tmp36vxd: CycleGAN
+# NOTE-302: CycleGAN
 
 ## Contribution
 
@@ -54,12 +57,12 @@ input can be recovered forces the output to depend on it.
 ## Connections
 
 It is the unpaired counterpart of pix2pix. Projected GAN's related work
-([LIT-tmpbzwal](../literature.d/LIT-tmpbzwal.md)) cites perceptual-discriminator variants that improve on it.
+([LIT-562](../literature.d/LIT-562.md)) cites perceptual-discriminator variants that improve on it.
 
 ## Recommendations
 
 - **R1** — For unpaired appearance translation, use a cycle-consistency
-  loss. Filed as [SOTA-tmpw7xk8](../practices.d/SOTA-tmpw7xk8.md)
+  loss. Filed as [SOTA-339](../practices.d/SOTA-339.md)
 
 ## Limitations
 

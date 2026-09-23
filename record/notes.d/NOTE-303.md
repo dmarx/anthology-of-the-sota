@@ -1,6 +1,9 @@
 ---
+number: 303
 status: Read
-paper: LIT-tmpbzwal
+formerly:
+- NOTE-tmp4h72t
+paper: LIT-562
 title: 'Projected GAN'
 version: 1
 date: '2026-09-23'
@@ -8,13 +11,13 @@ summary: >-
   A GAN discriminator on frozen, randomly mixed, multi-scale pretrained
   features reaches prior-best FIDs up to 40× faster and sets new FIDs on 22
   datasets. Everything is measured in FID or ImageNet-derived metrics, and
-  the discriminator is ImageNet-pretrained, which [LIT-tmpcemc9](../literature.d/LIT-tmpcemc9.md) later shows
+  the discriminator is ImageNet-pretrained, which [LIT-563](../literature.d/LIT-563.md) later shows
   distorts FID. Read §1–5; the appendix was not read.
 ---
 
-<!-- inactive-ok-file: SOTA-tmptfakt — Proposed and contested, filed in this same contribution from this paper -->
+<!-- inactive-ok-file: SOTA-338 — Proposed and contested, filed in this same contribution from this paper -->
 
-# NOTE-tmp4h72t: Projected GAN
+# NOTE-303: Projected GAN
 
 ## Contribution
 
@@ -56,7 +59,7 @@ a subset.
 | id | claim | strength | support |
 |---|---|---|---|
 | C1 | Projected discrimination reaches a given FID far faster | strong, as a statement about FID | Figure 4, Table 3 |
-| C2 | It improves image quality | contested | FID-based; [LIT-tmpcemc9](../literature.d/LIT-tmpcemc9.md) finds human raters and CLIP-FD disagree on FFHQ |
+| C2 | It improves image quality | contested | FID-based; [LIT-563](../literature.d/LIT-563.md) finds human raters and CLIP-FD disagree on FFHQ |
 | C3 | ImageNet features are not required | weak | R50-CLIP slightly beats R50, while the best results use an ImageNet EfficientNet |
 | C4 | Random mixing improves use of deep features | moderate | Table 1 ablation of per-layer Fréchet distances |
 
@@ -64,15 +67,15 @@ a subset.
 
 It generalizes perceptual discriminators from image translation, where its
 related work cites an adversarial loss on frozen VGG features that improves
-CycleGAN ([LIT-tmpm6lfm](../literature.d/LIT-tmpm6lfm.md)), to unconditional synthesis. Its evaluation is
-examined by Kynkäänniemi et al. ([LIT-tmpcemc9](../literature.d/LIT-tmpcemc9.md)).
+CycleGAN ([LIT-564](../literature.d/LIT-564.md)), to unconditional synthesis. Its evaluation is
+examined by Kynkäänniemi et al. ([LIT-563](../literature.d/LIT-563.md)).
 
 ## Recommendations
 
 - **R1** — Discriminate on frozen pretrained multi-scale features with
-  random mixing, for speed. Filed as [SOTA-tmptfakt](../practices.d/SOTA-tmptfakt.md), `contested`
+  random mixing, for speed. Filed as [SOTA-338](../practices.d/SOTA-338.md), `contested`
 - **R2** — Evaluate such a model in a non-ImageNet feature space. Filed
-  from [LIT-tmpcemc9](../literature.d/LIT-tmpcemc9.md) as [SOTA-tmprzpgu](../practices.d/SOTA-tmprzpgu.md)
+  from [LIT-563](../literature.d/LIT-563.md) as [SOTA-337](../practices.d/SOTA-337.md)
 
 ## Limitations
 

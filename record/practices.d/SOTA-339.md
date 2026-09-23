@@ -1,5 +1,8 @@
 ---
+number: 339
 status: Proposed
+formerly:
+- SOTA-tmpw7xk8
 promote_when: >-
   A comparison by another group, on a quantitative metric beyond Cityscapes
   FCN scores, between cycle consistency and alternative content-preservation
@@ -13,9 +16,9 @@ tags:
 - vision-and-graphics
 date: '2026-09-23'
 source:
-- LIT-tmpm6lfm
+- LIT-564
 introduced_by:
-- LIT-tmpm6lfm
+- LIT-564
 consensus: unassessed
 consensus_note: >-
   CycleGAN is a standard baseline for unpaired translation. The record holds
@@ -24,18 +27,18 @@ consensus_note: >-
 implementations:
 - CycleGAN
 summary: >-
-  Zhu et al. (2017), [LIT-tmpm6lfm](../literature.d/LIT-tmpm6lfm.md) — learn X → Y and Y → X together, and
+  Zhu et al. (2017), [LIT-564](../literature.d/LIT-564.md) — learn X → Y and Y → X together, and
   penalize ‖F(G(x)) − x‖₁ and ‖G(F(y)) − y‖₁ alongside the two adversarial
   losses. With GAN losses alone the mapping may ignore its input. With the
   cycle it keeps content and changes appearance. It is scoped to colour and
   texture changes, and the authors report failure on geometric ones.
 ---
 
-# SOTA-tmpw7xk8: For unpaired image-to-image translation of appearance, constrain both mappings with a cycle-consistency loss
+# SOTA-339: For unpaired image-to-image translation of appearance, constrain both mappings with a cycle-consistency loss
 
 ## Source
 
-Zhu et al. (2017), [LIT-tmpm6lfm](../literature.d/LIT-tmpm6lfm.md) — CycleGAN. Read as [NOTE-tmp36vxd](../notes.d/NOTE-tmp36vxd.md).
+Zhu et al. (2017), [LIT-564](../literature.d/LIT-564.md) — CycleGAN. Read as [NOTE-302](../notes.d/NOTE-302.md).
 
 ## The practice
 

@@ -1,5 +1,8 @@
 ---
+number: 337
 status: Active
+formerly:
+- SOTA-tmprzpgu
 title: 'When ImageNet-pretrained networks take part in training a generator, confirm FID gains with a Fréchet distance in a non-ImageNet feature space'
 version: 1
 tags:
@@ -7,9 +10,9 @@ tags:
 - generative-modeling
 date: '2026-09-23'
 source:
-- LIT-tmpcemc9
+- LIT-563
 introduced_by:
-- LIT-tmpcemc9
+- LIT-563
 consensus: unreplicated
 consensus_note: >-
   One group's paper, but the central experiment involves no competitor: it
@@ -19,7 +22,7 @@ consensus_note: >-
   assessed here.
 implementations: []
 summary: >-
-  Kynkäänniemi et al. (2022), [LIT-tmpcemc9](../literature.d/LIT-tmpcemc9.md) — FID's features are nearly
+  Kynkäänniemi et al. (2022), [LIT-563](../literature.d/LIT-563.md) — FID's features are nearly
   ImageNet class logits, so matching ImageNet-class statistics lowers it
   without improving images. Resampling a fixed StyleGAN2's outputs cuts
   FFHQ FID 5.30 → 1.78, while CLIP-space FD moves 2.76 → 2.64. A model whose
@@ -28,11 +31,11 @@ summary: >-
   whenever that is the case.
 ---
 
-# SOTA-tmprzpgu: When ImageNet-pretrained networks take part in training a generator, confirm FID gains with a Fréchet distance in a non-ImageNet feature space
+# SOTA-337: When ImageNet-pretrained networks take part in training a generator, confirm FID gains with a Fréchet distance in a non-ImageNet feature space
 
 ## Source
 
-Kynkäänniemi et al. (2022), [LIT-tmpcemc9](../literature.d/LIT-tmpcemc9.md). Read as [NOTE-tmp5m0ns](../notes.d/NOTE-tmp5m0ns.md).
+Kynkäänniemi et al. (2022), [LIT-563](../literature.d/LIT-563.md). Read as [NOTE-304](../notes.d/NOTE-304.md).
 
 ## The practice
 

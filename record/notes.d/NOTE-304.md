@@ -1,6 +1,9 @@
 ---
+number: 304
 status: Read
-paper: LIT-tmpcemc9
+formerly:
+- NOTE-tmp5m0ns
+paper: LIT-563
 title: 'The Role of ImageNet Classes in FID'
 version: 1
 date: '2026-09-23'
@@ -11,9 +14,9 @@ summary: >-
   same effect by accident. Read §1–5; the appendices were skimmed.
 ---
 
-<!-- inactive-ok-file: SOTA-tmptfakt — Proposed, filed in this same contribution; named because this paper contests it -->
+<!-- inactive-ok-file: SOTA-338 — Proposed, filed in this same contribution; named because this paper contests it -->
 
-# NOTE-tmp5m0ns: The Role of ImageNet Classes in FID
+# NOTE-304: The Role of ImageNet Classes in FID
 
 ## Contribution
 
@@ -55,17 +58,17 @@ matter for the dataset.
 
 ## Connections
 
-It contests Projected GAN ([LIT-tmpbzwal](../literature.d/LIT-tmpbzwal.md)). It complements the FID Lottery
+It contests Projected GAN ([LIT-562](../literature.d/LIT-562.md)). It complements the FID Lottery
 ([LIT-501](../literature.d/LIT-501.md)), which is about seed variance.
 
 ## Recommendations
 
 - **R1** — When ImageNet-pretrained networks take part in training,
-  confirm FID gains in a non-ImageNet feature space. Filed as [SOTA-tmprzpgu](../practices.d/SOTA-tmprzpgu.md)
+  confirm FID gains in a non-ImageNet feature space. Filed as [SOTA-337](../practices.d/SOTA-337.md)
 
 ## Bearing on the record
 
-- **[SOTA-tmptfakt](../practices.d/SOTA-tmptfakt.md)** is contested by it
+- **[SOTA-338](../practices.d/SOTA-338.md)** is contested by it
 - **[SOTA-307](../practices.d/SOTA-307.md)** addresses variance, and this addresses bias. Both apply
 
 ## Limitations

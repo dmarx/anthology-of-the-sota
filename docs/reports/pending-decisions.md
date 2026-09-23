@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**182 document(s) awaiting a decision.**
+**184 document(s) awaiting a decision.**
 
 ## SOTAs
 
-113 of the 182.
+115 of the 184.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -124,12 +124,14 @@
 | 2026-09-23 | Proposed | [SOTA-332](../../record/practices.d/SOTA-332.md) | 4 | 0 | When an implicit representation will be supervised through its derivatives, use sine activations with the SIREN initialization rather than a ReLU network |
 | 2026-09-23 | Proposed | [SOTA-335](../../record/practices.d/SOTA-335.md) | 4 | 0 | When generated content must move continuously, as in video or animation, build the generator alias-free: treat features as continuous signals and low-pass filter around every nonlinearity |
 | 2026-09-23 | Proposed | [SOTA-336](../../record/practices.d/SOTA-336.md) | 4 | 0 | Train high-resolution GANs at a fixed topology with output skips in the generator and a residual discriminator, not by progressive growing |
+| 2026-09-23 | Proposed | [SOTA-338](../../record/practices.d/SOTA-338.md) | 4 | 0 | Train the GAN discriminator on frozen multi-scale pretrained features with fixed random channel and scale mixing |
 | 2026-09-23 | Proposed | [SOTA-333](../../record/practices.d/SOTA-333.md) | 3 | 0 | For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history |
 | 2026-09-23 | Proposed | [SOTA-334](../../record/practices.d/SOTA-334.md) | 3 | 0 | In a style-modulated generator, demodulate the convolution weights instead of instance-normalizing the activations |
+| 2026-09-23 | Proposed | [SOTA-339](../../record/practices.d/SOTA-339.md) | 2 | 0 | For unpaired image-to-image translation of appearance, constrain both mappings with a cycle-consistency loss |
 
 ## THEORYs
 
-47 of the 182.
+47 of the 184.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -183,7 +185,7 @@
 
 ## LITs
 
-3 of the 182.
+3 of the 184.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -193,7 +195,7 @@
 
 ## ADRs
 
-19 of the 182.
+19 of the 184.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

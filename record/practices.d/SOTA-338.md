@@ -1,5 +1,8 @@
 ---
+number: 338
 status: Proposed
+formerly:
+- SOTA-tmptfakt
 promote_when: >-
   A comparison at matched training budget in which projected discrimination
   beats a standard discriminator on a Fréchet distance computed in a
@@ -14,14 +17,14 @@ tags:
 - vision-and-graphics
 date: '2026-09-23'
 source:
-- LIT-tmpbzwal
+- LIT-562
 introduced_by:
-- LIT-tmpbzwal
+- LIT-562
 consensus: contested
 contested_by:
-- LIT-tmpcemc9
+- LIT-563
 consensus_note: >-
-  Kynkäänniemi et al. (LIT-tmpcemc9) trained Projected FastGAN with the
+  Kynkäänniemi et al. (LIT-563) trained Projected FastGAN with the
   released code on FFHQ. At FID 5.28 against StyleGAN2's 5.30, a CLIP-space
   Fréchet distance was 4.67 against 2.76, and human raters preferred
   StyleGAN2, which they say agrees with this paper's own human study on
@@ -30,20 +33,20 @@ consensus_note: >-
 implementations:
 - Projected GAN
 summary: >-
-  Sauer et al. (2021), [LIT-tmpbzwal](../literature.d/LIT-tmpbzwal.md) — project real and generated images
+  Sauer et al. (2021), [LIT-562](../literature.d/LIT-562.md) — project real and generated images
   through a frozen EfficientNet, mix channels and scales with fixed random
   convolutions, and train one small discriminator per scale. It reaches
   StyleGAN2's best LSUN-Church FID after 1.1M images instead of 88M. The
   speed-up is measured in FID, and at equal FID on FFHQ a CLIP-space
-  distance and human raters prefer StyleGAN2 ([LIT-tmpcemc9](../literature.d/LIT-tmpcemc9.md)).
+  distance and human raters prefer StyleGAN2 ([LIT-563](../literature.d/LIT-563.md)).
 ---
 
-# SOTA-tmptfakt: Train the GAN discriminator on frozen multi-scale pretrained features with fixed random channel and scale mixing
+# SOTA-338: Train the GAN discriminator on frozen multi-scale pretrained features with fixed random channel and scale mixing
 
 ## Source
 
-Sauer et al. (2021), [LIT-tmpbzwal](../literature.d/LIT-tmpbzwal.md) — Projected GAN. Read as [NOTE-tmp4h72t](../notes.d/NOTE-tmp4h72t.md).
-Contested by [LIT-tmpcemc9](../literature.d/LIT-tmpcemc9.md).
+Sauer et al. (2021), [LIT-562](../literature.d/LIT-562.md) — Projected GAN. Read as [NOTE-303](../notes.d/NOTE-303.md).
+Contested by [LIT-563](../literature.d/LIT-563.md).
 
 ## The practice
 
@@ -67,10 +70,10 @@ To make a GAN converge in a fraction of the usual training:
 Every number behind this practice is FID. The discriminator is itself
 ImageNet-pretrained, and FID's feature space is so close to ImageNet
 classes that matching their statistics lowers FID without improving images
-([LIT-tmpcemc9](../literature.d/LIT-tmpcemc9.md)). On FFHQ at equal FID, this model loses to StyleGAN2 in CLIP
+([LIT-563](../literature.d/LIT-563.md)). On FFHQ at equal FID, this model loses to StyleGAN2 in CLIP
 space and with human raters. The speed-up in reaching a given FID is real.
 Whether it is a speed-up in quality is what is disputed. Evaluate with
-[SOTA-tmprzpgu](SOTA-tmprzpgu.md) before relying on it.
+[SOTA-337](SOTA-337.md) before relying on it.
 
 ## Conditions
 

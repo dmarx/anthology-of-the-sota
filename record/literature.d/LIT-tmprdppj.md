@@ -1,0 +1,83 @@
+---
+status: Active
+title: 'Sigmoid Loss for Language Image Pre-Training'
+version: 1
+tags:
+- multimodal-learning
+- distributed-optimization
+- training-optimization
+date: '2026-09-23'
+published: '2023-03-01'
+arxiv: '2303.15343'
+first_author: 'Zhai'
+keywords:
+- 'sigmoid-loss'
+- 'contrastive-pretraining'
+- 'batch-size'
+- 'memory-efficiency'
+compared_against:
+- LIT-588
+summary: >-
+  Zhai et al. (2023), [ARXIV-2303.15343](https://arxiv.org/abs/2303.15343). Replace CLIP's softmax with a
+  pairwise sigmoid, so the loss never needs a global view of the similarity
+  matrix — no all-gathers, only a per-device block in memory, and better
+  results below 16k batch. Then trains at batch size one million and finds
+  the benefit saturated at 32k.
+---
+
+# LIT-tmprdppj: Sigmoid Loss for Language Image Pre-Training
+
+Zhai et al. (2023) — [ARXIV-2303.15343](https://arxiv.org/abs/2303.15343)
+
+## Key takeaways
+
+- **The change is to the normalization, not to the supervision.** CLIP
+  ([LIT-588](LIT-588.md)) scores a pair by softmax over the whole batch, which requires
+  every pairwise similarity before any term can be computed. SigLIP scores
+  each pair with a sigmoid against a label `z_ij ∈ {+1, −1}`, so the loss
+  "operates solely on image-text pairs and does not require a global view of
+  the pairwise similarities for normalization". Everything else about the
+  recipe stays.
+- **A learnable bias is load-bearing, and the reason is at initialisation.**
+  With `|B|²−|B|` negatives against `|B|` positives, "the heavy imbalance
+  coming from the many negatives dominates the loss, leading to large initial
+  optimization steps attempting to correct this bias". A learnable `b`
+  alongside the temperature fixes it, initialised at `b = −10` and
+  `t' = log 10` so "training starts roughly close to the prior". This is the
+  same class of detail as CLIP's clipped temperature: one line, and without
+  it the method is a different method.
+- **The distributed implementation is the practical payoff.** Data-parallel
+  contrastive training normally needs "expensive all-gathers and, more
+  importantly, the materialization of a memory-intensive `|B|×|B|` matrix".
+  The sigmoid form permits a chunked reformulation in which **there are no
+  all-gathers** and "at any point in time only the … (size `b×b`) is
+  materialized" — negatives are swapped between devices in a ring rather than
+  collected.
+- **It wins where the batch is small, and ties where it is large.** Sigmoid
+  "performs significantly better than the softmax loss when the batch size is
+  smaller than 16k. As the train batch size grows, the gap closes", with
+  sigmoid possibly slightly ahead at the top. The authors still recommend it
+  at large batch, on simplicity and memory grounds rather than accuracy.
+- **The negative result is the one worth keeping.** They trained at **batch
+  size one million** to find the limit of contrastive learning, and "to our
+  surprise, the performance saturates at 32k batch size" — **for softmax as
+  well as sigmoid**. They note that most existing studies "stop at 64k",
+  which is why nobody had seen the ceiling. Filed as [SOTA-tmptiobf](../practices.d/SOTA-tmptiobf.md).
+- **Efficiency headline:** a SigLiT model reaching **84.5% ImageNet zero-shot
+  in two days on four TPUv4 chips**, using a frozen public checkpoint under
+  Locked-image Tuning. At 32k batch, SigLIP beats a CLIP (WebLI) baseline.
+
+## Standing in the anthology
+
+Unit F of `#304`, and ranked there at 20 in `#290`'s tier B. It sources
+[SOTA-tmpgxyyv](../practices.d/SOTA-tmpgxyyv.md) (the loss) and [SOTA-tmptiobf](../practices.d/SOTA-tmptiobf.md) (the batch ceiling), and declares
+`compared_against: LIT-588` because it ran the comparison against CLIP.
+
+The saturation finding lands next to two others the record now holds, and
+none of the three is downstream of the others. `THEORY-085` gives an
+information-theoretic ceiling — the InfoNCE bound cannot certify more than
+`log N`. `LIT-591` (SimCLR) gives a training-budget one — batch-size gaps
+"decrease or disappear" with longer training. This gives a direct empirical
+one, measured by going four and a half doublings past where anyone had
+looked. **Three independent arguments that the negative count is not a
+quality dial**, which is about as corroborated as this record gets.

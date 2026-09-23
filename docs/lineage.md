@@ -2,7 +2,7 @@
 
 # Lines of work
 
-33 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+35 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -48,6 +48,16 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-507](../record/literature.d/LIT-507.md) — Adaptive Estimators Show Information Compression in Deep Neural Networks *(Active)*
 - alongside: [LIT-508](../record/literature.d/LIT-508.md) — Opening the Black Box of Deep Neural Networks via Information *(Active)*
 - alongside: [LIT-509](../record/literature.d/LIT-509.md) — On the Information Bottleneck Theory of Deep Learning *(Active)*
+
+### From Are Sparse Autoencoders Useful? A Case Study in Sparse Probing
+
+- alongside: [LIT-568](../record/literature.d/LIT-568.md) — Are Sparse Autoencoders Useful? A Case Study in Sparse Probing *(Active)*
+- alongside: [LIT-571](../record/literature.d/LIT-571.md) — Scaling and evaluating sparse autoencoders *(Active)*
+
+### From interpreting GPT: the logit lens
+
+- [LIT-570](../record/literature.d/LIT-570.md) — interpreting GPT: the logit lens *(Active)*
+  - [LIT-569](../record/literature.d/LIT-569.md) — Eliciting Latent Predictions from Transformers with the Tuned Lens *(Active)*
 
 ## attention-techniques
 

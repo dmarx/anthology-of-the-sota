@@ -1,6 +1,9 @@
 ---
+number: 308
 status: Read
-paper: LIT-tmpebkg3
+formerly:
+- NOTE-tmpsoytn
+paper: LIT-569
 title: 'Tuned Lens'
 version: 1
 date: '2026-09-23'
@@ -11,7 +14,7 @@ summary: >-
   tested. Sections 1–5 read, appendices skimmed.
 ---
 
-# NOTE-tmpsoytn: Tuned Lens
+# NOTE-308: Tuned Lens
 
 ## Contribution
 

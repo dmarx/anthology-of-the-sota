@@ -1,5 +1,8 @@
 ---
+number: 342
 status: Proposed
+formerly:
+- SOTA-tmp7u4vf
 promote_when: >-
   Adoption by independent SAE evaluations of a downstream-loss measure that
   is not normalized by zero ablation, with a demonstration beyond the
@@ -11,9 +14,9 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-23'
 source:
-- LIT-tmpydijh
+- LIT-571
 introduced_by:
-- LIT-tmpydijh
+- LIT-571
 consensus: unassessed
 consensus_note: >-
   "Fraction of loss recovered" remains common in SAE papers and
@@ -21,7 +24,7 @@ consensus_note: >-
   has not been assessed here.
 implementations: []
 summary: >-
-  Gao et al. (2024), [LIT-tmpydijh](../literature.d/LIT-tmpydijh.md) — splice the SAE's reconstruction into the
+  Gao et al. (2024), [LIT-571](../literature.d/LIT-571.md) — splice the SAE's reconstruction into the
   forward pass and report the resulting loss as the pretraining compute a
   model of that loss would need. Zero-ablating the residual stream is so
   destructive that "loss recovered" against it flatters any reconstruction.
@@ -29,12 +32,12 @@ summary: >-
   on 10% of the compute.
 ---
 
-# SOTA-tmp7u4vf: Report a sparse autoencoder's fidelity as downstream loss in compute-equivalent terms, not as fraction of loss recovered against zero ablation
+# SOTA-342: Report a sparse autoencoder's fidelity as downstream loss in compute-equivalent terms, not as fraction of loss recovered against zero ablation
 
 ## Source
 
-Gao et al. (2024), [LIT-tmpydijh](../literature.d/LIT-tmpydijh.md), §4.1 and footnote 11. Read as
-[NOTE-tmpr5ct1](../notes.d/NOTE-tmpr5ct1.md).
+Gao et al. (2024), [LIT-571](../literature.d/LIT-571.md), §4.1 and footnote 11. Read as
+[NOTE-307](../notes.d/NOTE-307.md).
 
 ## The practice
 
@@ -56,4 +59,4 @@ Gao et al. (2024), [LIT-tmpydijh](../literature.d/LIT-tmpydijh.md), §4.1 and fo
 - **The compute-equivalent figure needs a scaling curve** for the subject
   model, which outside labs rarely have
 - **Fidelity is not usefulness.** A faithful SAE can still fail to help on
-  a task ([LIT-tmp57c8v](../literature.d/LIT-tmp57c8v.md))
+  a task ([LIT-568](../literature.d/LIT-568.md))

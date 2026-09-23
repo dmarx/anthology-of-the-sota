@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-303 of 306 NOTE documents. Back to the [full index](../README.md).
+306 of 309 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -313,3 +313,6 @@
 | [NOTE-304](../../../record/notes.d/NOTE-304.md) | The Role of ImageNet Classes in FID | FID can be lowered by two-thirds without changing a generator, by resampling its outputs to match ImageNet-class statistics. Non-ImageNet feature spaces barely move. An ImageNet-pretrained discriminator gets the same effect by accident. Read §1–5; the appendices were skimmed. | Read |
 | [NOTE-305](../../../record/notes.d/NOTE-305.md) | MARLIN | An FP16×INT4 GEMM kernel that stays memory-bound, and so near the 3.87× ideal 4-bit speed-up, up to batch 16–32 on a large layer, decaying toward 1.5× at 128. End-to-end in vLLM the same shape holds on four GPU classes (Table 2): 2.3–3.2× single-GPU at batch ≤16, 1.1–1.2× at 128, and much less when the model is sharded over eight A100s. The INT4 model it serves loses 3.3 points of mean accuracy (Table 1). | Read |
 | [NOTE-306](../../../record/notes.d/NOTE-306.md) | SDXL | A larger latent diffusion UNet with two text encoders, micro-conditioning on original size and crop, multi-aspect training and a refiner. Size conditioning is ablated on ImageNet: most of the gain is from keeping the data, and conditioning adds about 3 FID. Read §1–2.5 and Appendix B; the rest was skimmed. | Read |
+| [NOTE-307](../../../record/notes.d/NOTE-307.md) | Scaling and evaluating sparse autoencoders | TopK SAEs, a dead-latent recipe, and scaling laws, demonstrated on a 16M-latent SAE on GPT-4. Also shows that the field's usual fidelity metric flatters. Sections 1–4 and 6 read. Section 5 (TopK variants, progressive codes) and the appendices skimmed. | Read |
+| [NOTE-308](../../../record/notes.d/NOTE-308.md) | Tuned Lens | The logit lens decodes intermediate layers with the final unembedding, and fails or misleads on many models. A per-layer affine translator, distilled toward the final logits, fixes this across every family tested. Sections 1–5 read, appendices skimmed. | Read |
+| [NOTE-309](../../../record/notes.d/NOTE-309.md) | Are Sparse Autoencoders Useful? A Case Study in Sparse Probing | On 113 datasets and five regimes, probes on SAE latents do not beat, or usefully add to, probes on raw activations once method selection is honest. Earlier wins, including the authors' own, came from weaker baselines. Main text read, appendices skimmed. | Read |

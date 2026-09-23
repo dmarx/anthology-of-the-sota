@@ -1,6 +1,9 @@
 ---
+number: 309
 status: Read
-paper: LIT-tmp57c8v
+formerly:
+- NOTE-tmptkt9y
+paper: LIT-568
 title: 'Are Sparse Autoencoders Useful? A Case Study in Sparse Probing'
 version: 1
 date: '2026-09-23'
@@ -11,7 +14,7 @@ summary: >-
   baselines. Main text read, appendices skimmed.
 ---
 
-# NOTE-tmptkt9y: Are Sparse Autoencoders Useful? A Case Study in Sparse Probing
+# NOTE-309: Are Sparse Autoencoders Useful? A Case Study in Sparse Probing
 
 ## Contribution
 

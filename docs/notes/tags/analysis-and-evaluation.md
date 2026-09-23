@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-106 of 306 NOTE documents. Back to the [full index](../README.md).
+109 of 309 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -114,3 +114,6 @@
 | [NOTE-297](../../../record/notes.d/NOTE-297.md) | Warm Diffusion | Blur and noise mixed in one forward process, with a two-headed model that denoises to the blurry image and deblurs the residual. A blur-to-noise ratio of 0.5, chosen from image and noise spectra, edges EDM on CIFAR-10 (1.85 against 1.97). High ratios degrade sharply, which is the evidence that noise keeps samples on the manifold. Read in full (8 pages). | Read |
 | [NOTE-299](../../../record/notes.d/NOTE-299.md) | Cold Diffusion | Diffusion generalized to deterministic degradations (blur, masking, downsampling, snow) with a restorer and a sampler that is exact for degradations linear in severity. Conditional restoration works. Noiseless unconditional generation is far worse than noise diffusion, and adding a little noise recovers half the gap. Read §1–5.3; the appendix was not read. | Read |
 | [NOTE-304](../../../record/notes.d/NOTE-304.md) | The Role of ImageNet Classes in FID | FID can be lowered by two-thirds without changing a generator, by resampling its outputs to match ImageNet-class statistics. Non-ImageNet feature spaces barely move. An ImageNet-pretrained discriminator gets the same effect by accident. Read §1–5; the appendices were skimmed. | Read |
+| [NOTE-307](../../../record/notes.d/NOTE-307.md) | Scaling and evaluating sparse autoencoders | TopK SAEs, a dead-latent recipe, and scaling laws, demonstrated on a 16M-latent SAE on GPT-4. Also shows that the field's usual fidelity metric flatters. Sections 1–4 and 6 read. Section 5 (TopK variants, progressive codes) and the appendices skimmed. | Read |
+| [NOTE-308](../../../record/notes.d/NOTE-308.md) | Tuned Lens | The logit lens decodes intermediate layers with the final unembedding, and fails or misleads on many models. A per-layer affine translator, distilled toward the final logits, fixes this across every family tested. Sections 1–5 read, appendices skimmed. | Read |
+| [NOTE-309](../../../record/notes.d/NOTE-309.md) | Are Sparse Autoencoders Useful? A Case Study in Sparse Probing | On 113 datasets and five regimes, probes on SAE latents do not beat, or usefully add to, probes on raw activations once method selection is honest. Earlier wins, including the authors' own, came from weaker baselines. Main text read, appendices skimmed. | Read |

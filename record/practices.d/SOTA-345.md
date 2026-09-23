@@ -1,14 +1,17 @@
 ---
+number: 345
 status: Active
+formerly:
+- SOTA-tmpzz4sk
 title: 'Probe language-model activations with logistic regression on the raw activations, and credit sparse-autoencoder probes only against that baseline under validation-based selection'
 version: 1
 tags:
 - analysis-and-evaluation
 date: '2026-09-23'
 source:
-- LIT-tmp57c8v
+- LIT-568
 introduced_by:
-- LIT-tmp57c8v
+- LIT-568
 consensus: unreplicated
 consensus_note: >-
   One group's paper, but a large comparison across 113
@@ -17,7 +20,7 @@ consensus_note: >-
   own. The case against SAE probes has not been independently re-run.
 implementations: []
 summary: >-
-  Kantamneni et al. (2025), [LIT-tmp57c8v](../literature.d/LIT-tmp57c8v.md) — across 113 datasets, adding
+  Kantamneni et al. (2025), [LIT-568](../literature.d/LIT-568.md) — across 113 datasets, adding
   SAE-latent probes to a toolkit of raw-activation probes, choosing per task
   by validation AUC, changes test AUC by −0.003. It does not help under data
   scarcity, class imbalance, label noise or shift. Reported SAE wins came
@@ -25,11 +28,11 @@ summary: >-
   regression on activations, and hold any SAE method to it.
 ---
 
-# SOTA-tmpzz4sk: Probe language-model activations with logistic regression on the raw activations, and credit sparse-autoencoder probes only against that baseline under validation-based selection
+# SOTA-345: Probe language-model activations with logistic regression on the raw activations, and credit sparse-autoencoder probes only against that baseline under validation-based selection
 
 ## Source
 
-Kantamneni et al. (2025), [LIT-tmp57c8v](../literature.d/LIT-tmp57c8v.md). Read as [NOTE-tmptkt9y](../notes.d/NOTE-tmptkt9y.md).
+Kantamneni et al. (2025), [LIT-568](../literature.d/LIT-568.md). Read as [NOTE-309](../notes.d/NOTE-309.md).
 
 ## The practice
 

@@ -1,5 +1,8 @@
 ---
+number: 344
 status: Proposed
+formerly:
+- SOTA-tmpmnhef
 promote_when: >-
   An independent comparison at scale, not from the TopK authors, of TopK
   against the current alternatives (JumpReLU, BatchTopK and Gated),
@@ -12,9 +15,9 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-23'
 source:
-- LIT-tmpydijh
+- LIT-571
 introduced_by:
-- LIT-tmpydijh
+- LIT-571
 consensus: unassessed
 consensus_note: >-
   TopK and its batch variant are used in public SAE suites (Llama Scope is
@@ -23,7 +26,7 @@ consensus_note: >-
 implementations:
 - openai/sparse_autoencoder
 summary: >-
-  Gao et al. (2024), [LIT-tmpydijh](../literature.d/LIT-tmpydijh.md) — keep the k largest pre-activations and
+  Gao et al. (2024), [LIT-571](../literature.d/LIT-571.md) — keep the k largest pre-activations and
   zero the rest, and train on reconstruction alone. L0 is then set, not
   tuned through an L1 coefficient that also shrinks the latents that fire.
   It beats ReLU SAEs on the MSE–L0 frontier by more as SAEs grow. Initialize
@@ -31,11 +34,11 @@ summary: >-
   residual from dead latents: 7% dead at 16M latents, against up to 90%.
 ---
 
-# SOTA-tmpmnhef: Train sparse autoencoders with a TopK activation instead of an L1 penalty, and prevent dead latents with transposed-decoder initialization and an auxiliary loss
+# SOTA-344: Train sparse autoencoders with a TopK activation instead of an L1 penalty, and prevent dead latents with transposed-decoder initialization and an auxiliary loss
 
 ## Source
 
-Gao et al. (2024), [LIT-tmpydijh](../literature.d/LIT-tmpydijh.md). Read as [NOTE-tmpr5ct1](../notes.d/NOTE-tmpr5ct1.md).
+Gao et al. (2024), [LIT-571](../literature.d/LIT-571.md). Read as [NOTE-307](../notes.d/NOTE-307.md).
 
 ## The practice
 
@@ -54,6 +57,6 @@ If you train an SAE on a model's activations:
 ## Conditions
 
 - **This says how to train an SAE, not whether to use one.** On probing,
-  SAE latents do not beat raw activations ([LIT-tmp57c8v](../literature.d/LIT-tmp57c8v.md), [SOTA-tmpzz4sk](SOTA-tmpzz4sk.md))
+  SAE latents do not beat raw activations ([LIT-568](../literature.d/LIT-568.md), [SOTA-345](SOTA-345.md))
 - **Fixed per-token L0 is a known weakness.** The authors suggest
   constraining the expected L0 instead, which BatchTopK does

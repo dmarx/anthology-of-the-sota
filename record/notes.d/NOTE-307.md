@@ -1,6 +1,9 @@
 ---
+number: 307
 status: Read
-paper: LIT-tmpydijh
+formerly:
+- NOTE-tmpr5ct1
+paper: LIT-571
 title: 'Scaling and evaluating sparse autoencoders'
 version: 1
 date: '2026-09-23'
@@ -11,7 +14,7 @@ summary: >-
   codes) and the appendices skimmed.
 ---
 
-# NOTE-tmpr5ct1: Scaling and evaluating sparse autoencoders
+# NOTE-307: Scaling and evaluating sparse autoencoders
 
 ## Contribution
 
@@ -42,7 +45,7 @@ sizes are at matched sparsity.
 ## Limitations
 
 - **All metrics are proxies**, as §6 says. None shows the SAE doing a task
-  better than an alternative that does not use it (see [LIT-tmp57c8v](../literature.d/LIT-tmp57c8v.md))
+  better than an alternative that does not use it (see [LIT-568](../literature.d/LIT-568.md))
 - **TopK fixes L0 per token**, which the authors think is suboptimal.
   BatchTopK and other variants followed
 - **Many GPT-4 latents are not interpretable** in random activating

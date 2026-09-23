@@ -1,5 +1,8 @@
 ---
+number: 343
 status: Proposed
+formerly:
+- SOTA-tmpeyp35
 promote_when: >-
   An independent comparison, not from the tuned lens's authors, on current
   open models, showing that tuned-lens readings of intermediate layers
@@ -12,9 +15,9 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-23'
 source:
-- LIT-tmpebkg3
+- LIT-569
 introduced_by:
-- LIT-tmpebkg3
+- LIT-569
 consensus: unreplicated
 consensus_note: >-
   The logit lens is still widely used as-is. The tuned lens's advantage is
@@ -23,8 +26,8 @@ consensus_note: >-
 implementations:
 - tuned-lens
 summary: >-
-  Belrose et al. (2023), [LIT-tmpebkg3](../literature.d/LIT-tmpebkg3.md) — decoding a hidden state with the
-  final unembedding (the logit lens, [LIT-tmpqsh8n](../literature.d/LIT-tmpqsh8n.md)) fails outright on BLOOM,
+  Belrose et al. (2023), [LIT-569](../literature.d/LIT-569.md) — decoding a hidden state with the
+  final unembedding (the logit lens, [LIT-570](../literature.d/LIT-570.md)) fails outright on BLOOM,
   OPT and GPT-Neo, and is biased by 4–5 bits where it works. Train one
   affine translator per layer by KL to the final logits, initialized to the
   identity, and read the layer through that. It is cheap (d×d per layer),
@@ -32,12 +35,12 @@ summary: >-
   0.89). Train it with Muon.
 ---
 
-# SOTA-tmpeyp35: Read a transformer's intermediate-layer predictions through a tuned lens, not the raw logit lens
+# SOTA-343: Read a transformer's intermediate-layer predictions through a tuned lens, not the raw logit lens
 
 ## Source
 
-Belrose et al. (2023), [LIT-tmpebkg3](../literature.d/LIT-tmpebkg3.md). Read as [NOTE-tmpsoytn](../notes.d/NOTE-tmpsoytn.md). It refines the
-logit lens, [LIT-tmpqsh8n](../literature.d/LIT-tmpqsh8n.md).
+Belrose et al. (2023), [LIT-569](../literature.d/LIT-569.md). Read as [NOTE-308](../notes.d/NOTE-308.md). It refines the
+logit lens, [LIT-570](../literature.d/LIT-570.md).
 
 ## The practice
 

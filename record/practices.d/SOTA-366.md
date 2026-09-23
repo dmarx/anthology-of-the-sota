@@ -55,7 +55,7 @@ training curve heading confidently to its floor is what collapse looks like,
 and is indistinguishable from success if the loss is all you plot.
 
 This is the second time in the `#304` reading that a contrastive failure has
-been *rewarded* by the obvious metric — [SOTA-tmpw2bcy](SOTA-tmpw2bcy.md) is the first, where the
+been *rewarded* by the obvious metric — [SOTA-364](SOTA-364.md) is the first, where the
 batch-norm leak makes the loss fall faster. In both cases the diagnosis came
 from measuring something the objective does not optimise.
 

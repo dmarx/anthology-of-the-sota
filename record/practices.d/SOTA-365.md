@@ -72,7 +72,7 @@ family is a way of arranging that.
 
 ## Why bother, when negatives work
 
-Negatives cost a batch or a queue ([SOTA-tmpv2jq0](SOTA-tmpv2jq0.md)) and they impose a
+Negatives cost a batch or a queue ([SOTA-363](SOTA-363.md)) and they impose a
 distribution you must design — the negative sampling *is* an assumption that
 two different images are dissimilar, which is wrong for near-duplicates and
 for fine-grained classes. Removing them removes that assumption and the
@@ -88,7 +88,7 @@ memory that carried it.
   *down*. Run [SOTA-366](SOTA-366.md).
 - **Weight decay is part of the method.** BYOL reports that removing it
   makes both BYOL and SimCLR diverge.
-- **The augmentation dependence does not go away** ([SOTA-tmp6nbsn](SOTA-tmp6nbsn.md)); these
+- **The augmentation dependence does not go away** ([SOTA-361](SOTA-361.md)); these
   methods still rely on the view construction to define what is invariant.
 - **The alternative family exists and is competitive** — [SOTA-367](SOTA-367.md) puts
   the constraint in the loss instead and lands within a couple of points.

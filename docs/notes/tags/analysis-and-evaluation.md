@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-109 of 309 NOTE documents. Back to the [full index](../README.md).
+110 of 311 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -117,3 +117,4 @@
 | [NOTE-307](../../../record/notes.d/NOTE-307.md) | Scaling and evaluating sparse autoencoders | TopK SAEs, a dead-latent recipe, and scaling laws, demonstrated on a 16M-latent SAE on GPT-4. Also shows that the field's usual fidelity metric flatters. Sections 1–4 and 6 read. Section 5 (TopK variants, progressive codes) and the appendices skimmed. | Read |
 | [NOTE-308](../../../record/notes.d/NOTE-308.md) | Tuned Lens | The logit lens decodes intermediate layers with the final unembedding, and fails or misleads on many models. A per-layer affine translator, distilled toward the final logits, fixes this across every family tested. Sections 1–5 read, appendices skimmed. | Read |
 | [NOTE-309](../../../record/notes.d/NOTE-309.md) | Are Sparse Autoencoders Useful? A Case Study in Sparse Probing | On 113 datasets and five regimes, probes on SAE latents do not beat, or usefully add to, probes on raw activations once method selection is honest. Earlier wins, including the authors' own, came from weaker baselines. Main text read, appendices skimmed. | Read |
+| [NOTE-311](../../../record/notes.d/NOTE-311.md) | FLUX.2 latent-space report | A controlled comparison of four autoencoder latents for flow models on ImageNet, with the timestep schedule swept per latent. The schedule decides the ranking. FLUX.2's VAE gets near-RAE learnability with the best reconstruction. Read in full from the rendered report, except the interactive Table 2, which did not load. | Read |

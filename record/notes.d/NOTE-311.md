@@ -1,6 +1,9 @@
 ---
+number: 311
 status: Read
-paper: LIT-tmppo845
+formerly:
+- NOTE-tmpcr5tq
+paper: LIT-572
 title: 'FLUX.2 latent-space report'
 version: 1
 date: '2026-09-23'
@@ -12,7 +15,7 @@ summary: >-
   interactive Table 2, which did not load.
 ---
 
-# NOTE-tmpcr5tq: FLUX.2 latent-space report
+# NOTE-311: FLUX.2 latent-space report
 
 ## Contribution
 

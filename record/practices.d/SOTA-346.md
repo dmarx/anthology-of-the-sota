@@ -1,5 +1,8 @@
 ---
+number: 346
 status: Proposed
+formerly:
+- SOTA-tmprnub7
 promote_when: >-
   An independent comparison of latent spaces for diffusion or flow models,
   with more than one seed per configuration, that tunes the training
@@ -14,9 +17,9 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-23'
 source:
-- LIT-tmppo845
+- LIT-572
 introduced_by:
-- LIT-tmppo845
+- LIT-572
 consensus: unassessed
 consensus_note: >-
   Papers proposing new latent spaces (RAE, semantic VAEs) do tune their
@@ -24,7 +27,7 @@ consensus_note: >-
   per-latent tuning of baselines is has not been assessed here.
 implementations: []
 summary: >-
-  Black Forest Labs (2025), [LIT-tmppo845](../literature.d/LIT-tmppo845.md) — four autoencoders, 30 timestep
+  Black Forest Labs (2025), [LIT-572](../literature.d/LIT-572.md) — four autoencoders, 30 timestep
   configurations each. The training shift alone moves FID by 61–86%. An RAE
   latent that wins when both are tuned loses to a tuned FLUX.2 latent when
   left unshifted. When you swap the autoencoder under a diffusion or flow
@@ -32,11 +35,11 @@ summary: >-
   When you compare autoencoders, compare each at its own optimum.
 ---
 
-# SOTA-tmprnub7: Retune the training timestep shift for each autoencoder latent space, and never rank latent spaces for generation under one shared schedule
+# SOTA-346: Retune the training timestep shift for each autoencoder latent space, and never rank latent spaces for generation under one shared schedule
 
 ## Source
 
-Black Forest Labs (2025), [LIT-tmppo845](../literature.d/LIT-tmppo845.md). Read as [NOTE-tmpcr5tq](../notes.d/NOTE-tmpcr5tq.md).
+Black Forest Labs (2025), [LIT-572](../literature.d/LIT-572.md). Read as [NOTE-311](../notes.d/NOTE-311.md).
 
 ## The practice
 
@@ -59,6 +62,6 @@ Black Forest Labs (2025), [LIT-tmppo845](../literature.d/LIT-tmppo845.md). Read 
 - **Single runs on ImageNet 256² with a DiT-XL.** Text-to-image at scale is
   not tested
 - **The report's √(m/n) rule for predicting the shift is not established by
-  its own data** (see [LIT-tmppo845](../literature.d/LIT-tmppo845.md)). Sweep it rather than computing it. The
+  its own data** (see [LIT-572](../literature.d/LIT-572.md)). Sweep it rather than computing it. The
   resolution form of the same argument is [SOTA-263](SOTA-263.md)
 <!-- inactive-ok-file: SOTA-263 — Proposed; cited as the resolution form of the same argument, not as settled -->

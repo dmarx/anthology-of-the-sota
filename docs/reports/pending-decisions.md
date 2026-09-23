@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**189 document(s) awaiting a decision.**
+**190 document(s) awaiting a decision.**
 
 ## SOTAs
 
-120 of the 189.
+121 of the 190.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -76,13 +76,13 @@
 | 2026-09-20 | Proposed | [SOTA-274](../../record/practices.d/SOTA-274.md) | 5 | 0 | Before adopting a spectral optimizer, measure the stable rank of each block's incoming activations against its gradient's nuclear rank |
 | 2026-09-20 | Proposed | [SOTA-275](../../record/practices.d/SOTA-275.md) | 5 | 0 | Pick the depth parameterization from the residual branch: a Transformer branch has more than one transformation, so it needs the stricter rule |
 | 2026-09-20 | Proposed | [SOTA-260](../../record/practices.d/SOTA-260.md) | 3 | 0 | Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it |
+| 2026-09-20 | Proposed | [SOTA-263](../../record/practices.d/SOTA-263.md) | 3 | 0 | Shift the timestep schedule when the resolution changes, because more pixels need more noise |
 | 2026-09-20 | Proposed | [SOTA-268](../../record/practices.d/SOTA-268.md) | 3 | 0 | Do not transfer a data mixing ratio across model scales; the threshold where a domain starts being learned moves with size |
 | 2026-09-20 | Proposed | [SOTA-267](../../record/practices.d/SOTA-267.md) | 2 | 0 | Start the training distribution imbalanced and flatten it, rather than holding it uniform throughout |
 | 2026-09-20 | Proposed | [SOTA-271](../../record/practices.d/SOTA-271.md) | 2 | 0 | Train on a second modality even when the target is single-modality |
 | 2026-09-20 | Proposed | [SOTA-272](../../record/practices.d/SOTA-272.md) | 2 | 0 | Expect the loss to be non-monotone at the step size that trains fastest, and do not set the step size from a curvature bound |
 | 2026-09-20 | Proposed | [SOTA-276](../../record/practices.d/SOTA-276.md) | 2 | 0 | For a normalized or preconditioned optimizer, width-depth muP is width muP plus a hidden residual multiplier of order 1/L |
 | 2026-09-20 | Proposed | [SOTA-259](../../record/practices.d/SOTA-259.md) | 1 | 0 | Hold Adam's second-moment half-life fixed in tokens when the batch size changes, not beta_2 |
-| 2026-09-20 | Proposed | [SOTA-263](../../record/practices.d/SOTA-263.md) | 1 | 0 | Shift the timestep schedule when the resolution changes, because more pixels need more noise |
 | 2026-09-20 | Proposed | [SOTA-264](../../record/practices.d/SOTA-264.md) | 1 | 0 | Fix the noise schedule's endpoints against the bound and choose its shape to minimise the loss estimator's variance |
 | 2026-09-20 | Proposed | [SOTA-273](../../record/practices.d/SOTA-273.md) | 1 | 0 | Choose a pretraining context whose association with the input is neither too strong nor too weak, and mix contexts to get there |
 | 2026-09-21 | Proposed | [SOTA-295](../../record/practices.d/SOTA-295.md) | 6 | 0 | Parameterize the generating prompt above the word list, and constrain how each sample opens |
@@ -133,10 +133,11 @@
 | 2026-09-23 | Proposed | [SOTA-342](../../record/practices.d/SOTA-342.md) | 1 | 0 | Report a sparse autoencoder's fidelity as downstream loss in compute-equivalent terms, not as fraction of loss recovered against zero ablation |
 | 2026-09-23 | Proposed | [SOTA-343](../../record/practices.d/SOTA-343.md) | 1 | 0 | Read a transformer's intermediate-layer predictions through a tuned lens, not the raw logit lens |
 | 2026-09-23 | Proposed | [SOTA-344](../../record/practices.d/SOTA-344.md) | 1 | 0 | Train sparse autoencoders with a TopK activation instead of an L1 penalty, and prevent dead latents with transposed-decoder initialization and an auxiliary loss |
+| 2026-09-23 | Proposed | [SOTA-346](../../record/practices.d/SOTA-346.md) | 1 | 0 | Retune the training timestep shift for each autoencoder latent space, and never rank latent spaces for generation under one shared schedule |
 
 ## THEORYs
 
-47 of the 189.
+47 of the 190.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -190,7 +191,7 @@
 
 ## LITs
 
-3 of the 189.
+3 of the 190.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -200,7 +201,7 @@
 
 ## ADRs
 
-19 of the 189.
+19 of the 190.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

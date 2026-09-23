@@ -4,7 +4,7 @@
 
 **generative-modeling**.
 
-35 of 309 NOTE documents. Back to the [full index](../README.md).
+37 of 311 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -43,3 +43,5 @@
 | [NOTE-303](../../../record/notes.d/NOTE-303.md) | Projected GAN | A GAN discriminator on frozen, randomly mixed, multi-scale pretrained features reaches prior-best FIDs up to 40× faster and sets new FIDs on 22 datasets. Everything is measured in FID or ImageNet-derived metrics, and the discriminator is ImageNet-pretrained, which [LIT-563](../../../record/literature.d/LIT-563.md) later shows distorts FID. Read §1–5; the appendix was not read. | Read |
 | [NOTE-304](../../../record/notes.d/NOTE-304.md) | The Role of ImageNet Classes in FID | FID can be lowered by two-thirds without changing a generator, by resampling its outputs to match ImageNet-class statistics. Non-ImageNet feature spaces barely move. An ImageNet-pretrained discriminator gets the same effect by accident. Read §1–5; the appendices were skimmed. | Read |
 | [NOTE-306](../../../record/notes.d/NOTE-306.md) | SDXL | A larger latent diffusion UNet with two text encoders, micro-conditioning on original size and crop, multi-aspect training and a refiner. Size conditioning is ablated on ImageNet: most of the gain is from keeping the data, and conditioning adds about 3 FID. Read §1–2.5 and Appendix B; the rest was skimmed. | Read |
+| [NOTE-310](../../../record/notes.d/NOTE-310.md) | FLUX.1 Kontext | The FLUX.1 architecture, and an editing model built by appending context latents to the token sequence. It is a system report: human preference against other systems, latency, one reconstruction table, and no ablations. Main text and appendix A read. | Read |
+| [NOTE-311](../../../record/notes.d/NOTE-311.md) | FLUX.2 latent-space report | A controlled comparison of four autoencoder latents for flow models on ImageNet, with the timestep schedule swept per latent. The schedule decides the ranking. FLUX.2's VAE gets near-RAE learnability with the best reconstruction. Read in full from the rendered report, except the interactive Table 2, which did not load. | Read |

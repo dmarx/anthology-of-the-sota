@@ -4,7 +4,7 @@
 
 **representation-and-encoding**.
 
-24 of 309 NOTE documents. Back to the [full index](../README.md).
+25 of 311 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -32,3 +32,4 @@
 | [NOTE-291](../../../record/notes.d/NOTE-291.md) | Matryoshka Representation Learning | Sum the task loss over log(d) nested prefixes of one embedding, and each prefix matches a separately trained model of that width on ResNet50 and ImageNet. Retrieval that shortlists on 16 dimensions and re-ranks on 2048 is 14× faster at equal mAP@10. Read §1–6 and Appendices D.2 and I; the remaining appendix tables were skimmed. | Read |
 | [NOTE-293](../../../record/notes.d/NOTE-293.md) | Gemma 3n | Per-Layer Embeddings: every token id indexes a table with one 256-d vector per layer, gated into the residual at each layer, about 2.35B parameters held off the accelerator. No measurements are published. Read from the model overview, the developer guide, and the Hugging Face `transformers` implementation, which is the only place the mechanism is fully specified. | Read |
 | [NOTE-296](../../../record/notes.d/NOTE-296.md) | Fourier features | A coordinate MLP's NTK has fast spectral falloff, so it fits high frequencies too slowly to matter. A sinusoidal input mapping makes the composed kernel stationary and sets its bandwidth, and the NTK linear model predicts the trained networks' loss curves. Gaussian random frequencies are best on seven tasks, and only their scale matters. Read §1–7; the appendices were not read. | Read |
+| [NOTE-311](../../../record/notes.d/NOTE-311.md) | FLUX.2 latent-space report | A controlled comparison of four autoencoder latents for flow models on ImageNet, with the timestep schedule swept per latent. The schedule decides the ranking. FLUX.2's VAE gets near-RAE learnability with the best reconstruction. Read in full from the rendered report, except the interactive Table 2, which did not load. | Read |

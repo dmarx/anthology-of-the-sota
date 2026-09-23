@@ -119,6 +119,8 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-448](../record/literature.d/LIT-448.md) — Scalable Diffusion Models with Transformers *(Active)*
   - [LIT-447](../record/literature.d/LIT-447.md) — SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers *(Active)*
     - [LIT-449](../record/literature.d/LIT-449.md) — Scaling Rectified Flow Transformers for High-Resolution Image Synthesis *(Active)*
+      - [LIT-573](../record/literature.d/LIT-573.md) — FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space *(Active)*
+        - [LIT-572](../record/literature.d/LIT-572.md) — FLUX.2: Analyzing and Enhancing the Latent Space of FLUX – Representation Comparison *(Active)*
 - alongside: [LIT-483](../record/literature.d/LIT-483.md) — Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models *(Active)*
 
 ### From Denoising as Projection: Constrained Optimization with Gradient-Guided Diffusion

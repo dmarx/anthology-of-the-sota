@@ -1,6 +1,9 @@
 ---
+number: 310
 status: Read
-paper: LIT-tmpyiwh4
+formerly:
+- NOTE-tmp3y8t2
+paper: LIT-573
 title: 'FLUX.1 Kontext'
 version: 1
 date: '2026-09-23'
@@ -11,7 +14,7 @@ summary: >-
   ablations. Main text and appendix A read.
 ---
 
-# NOTE-tmp3y8t2: FLUX.1 Kontext
+# NOTE-310: FLUX.1 Kontext
 
 ## Contribution
 

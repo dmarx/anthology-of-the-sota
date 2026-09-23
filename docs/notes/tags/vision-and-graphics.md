@@ -4,7 +4,7 @@
 
 **vision-and-graphics**.
 
-30 of 309 NOTE documents. Back to the [full index](../README.md).
+31 of 311 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -38,3 +38,4 @@
 | [NOTE-302](../../../record/notes.d/NOTE-302.md) | CycleGAN | Unpaired translation with two adversarial losses and a bidirectional cycle-consistency loss. It works for appearance changes and fails for geometric ones. The ablation supports the cycle term against GAN-only, but not strictly the bidirectional form over one direction. Read §1–6; the appendix was skimmed. | Read |
 | [NOTE-303](../../../record/notes.d/NOTE-303.md) | Projected GAN | A GAN discriminator on frozen, randomly mixed, multi-scale pretrained features reaches prior-best FIDs up to 40× faster and sets new FIDs on 22 datasets. Everything is measured in FID or ImageNet-derived metrics, and the discriminator is ImageNet-pretrained, which [LIT-563](../../../record/literature.d/LIT-563.md) later shows distorts FID. Read §1–5; the appendix was not read. | Read |
 | [NOTE-306](../../../record/notes.d/NOTE-306.md) | SDXL | A larger latent diffusion UNet with two text encoders, micro-conditioning on original size and crop, multi-aspect training and a refiner. Size conditioning is ablated on ImageNet: most of the gain is from keeping the data, and conditioning adds about 3 FID. Read §1–2.5 and Appendix B; the rest was skimmed. | Read |
+| [NOTE-310](../../../record/notes.d/NOTE-310.md) | FLUX.1 Kontext | The FLUX.1 architecture, and an editing model built by appending context latents to the token sequence. It is a system report: human preference against other systems, latency, one reconstruction table, and no ablations. Main text and appendix A read. | Read |

@@ -13,15 +13,21 @@ consensus_note: >-
   chosen rather than inherited has not been made (`DP-005`). Read as of
   2026-09.
 title: 'Subsample frequent tokens: it is faster and it improves the rare ones'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Re-sourced from LIT-609 to LIT-603, the same paper filed first; LIT-609
+    is retired as its duplicate. The practice is unchanged.
 tags:
 - data-pipeline
 - signal-structure
 date: '2026-09-23'
 source:
-- LIT-609
+- LIT-603
 introduced_by:
-- LIT-609
+- LIT-603
 implementations: []
 ---
 
@@ -29,7 +35,7 @@ implementations: []
 
 ## Source
 
-Mikolov et al. (2013), [LIT-609](../literature.d/LIT-609.md) — [ARXIV-1310.4546](https://arxiv.org/abs/1310.4546), §2.3.
+Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md) — [ARXIV-1310.4546](https://arxiv.org/abs/1310.4546), §2.3.
 
 ## The claim
 
@@ -72,3 +78,5 @@ is the test to run before assuming it transfers.
 ## Known implementations
 
 -
+
+<!-- inactive-ok-file: LIT-609 — Superseded as a duplicate of LIT-603; named where the record says so -->

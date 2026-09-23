@@ -1,0 +1,111 @@
+---
+status: Active
+title: 'A Latent Variable Model Approach to PMI-based Word Embeddings'
+version: 1
+tags:
+- representation-and-encoding
+- concept-geometry
+- signal-structure
+date: '2026-09-23'
+published: '2015-02-01'
+arxiv: '1502.03520'
+first_author: 'Arora'
+keywords:
+- 'rand-walk'
+- 'generative-model'
+- 'pmi'
+- 'isotropy'
+- 'partition-function'
+- 'relations-as-lines'
+- 'word-analogy'
+implementations:
+- SemanticVector
+compared_against:
+- LIT-602
+- LIT-603
+summary: >-
+  Arora, Li, Liang, Ma and Risteski (TACL 2016). A generative model of text:
+  a discourse vector drifts slowly on a random walk, and each word is emitted
+  with probability ∝ exp(⟨c, v_w⟩). If word vectors are isotropic, the
+  partition function is nearly constant, and integrating out the discourse
+  gives log p(w,w') ≈ ‖v_w + v_w'‖²/2d − 2 log Z, so PMI ≈ ⟨v_w, v_w'⟩/d in
+  low dimensions. Isotropy also explains why analogies survive large fitting
+  error: solving for v_a − v_b is a regression that denoises by √(d/n). The
+  squared norms of the fitted vectors correlate 0.75 with log frequency, and
+  the partition function concentrates within about ±10%.
+---
+
+# LIT-tmp724zz: A Latent Variable Model Approach to PMI-based Word Embeddings
+
+Arora, Li, Liang, Ma and Risteski, Princeton — *TACL* 4 (2016), 385–399,
+[ARXIV-1502.03520](https://arxiv.org/abs/1502.03520) (later versions titled "RAND-WALK"). Code:
+`github.com/PrincetonML/SemanticVector`.
+
+## Key takeaways
+
+- **The gap** (§1). PMI matrices are well approximated by low-rank
+  factorizations, and nothing explained why. [LIT-612](LIT-612.md)'s result holds only
+  when the dimension is large enough to fit every cell exactly.
+- **The model** (§2). A discourse vector c_t on the unit sphere does a slow
+  random walk. Word w is emitted with probability ∝ exp(⟨c_t, v_w⟩). Word
+  vectors are a scalar times a spherical Gaussian: isotropic in bulk, with
+  norms that vary to produce a power law of frequencies.
+- **Self-normalization** (Lemma 2.1). Under isotropy, Z_c = Σ exp(⟨v_w, c⟩)
+  is within 1 ± Õ(1/√n) of a constant for almost every c. That explains why
+  log-linear models can ignore the partition function.
+- **The main theorem** (Thm 2.2). log p(w,w') = ‖v_w + v_w'‖²/2d − 2 log Z
+  ± ε, and log p(w) = ‖v_w‖²/2d − log Z ± ε. Together these give
+  **PMI(w,w') = ⟨v_w, v_w'⟩/d ± O(ε)**, with ε small against the joint
+  terms but comparable to PMI itself. For window size q, add
+  log(q(q−1)/2), which matches [LIT-612](LIT-612.md)'s constant shift.
+- **What it justifies** (§3). Maximum likelihood gives a weighted least
+  squares objective (SN) with GloVe's form. The biases GloVe found by trial
+  and error come out as squared norms. CBOW's averaging of context vectors
+  is the maximum a posteriori estimate of the discourse vector.
+- **Relations are lines, despite error** (§4, Thm 4.1). A relation that
+  shifts log co-occurrence ratios consistently makes v_a − v_b the solution
+  of a regression whose design matrix is all the word vectors. If that
+  matrix is random-like (isotropic), the noise shrinks by √(d/n). That is
+  also a reason low-dimensional embeddings beat high-dimensional ones.
+- **Checks** (§5, 3B tokens of Wikipedia). Z_c concentrates mostly in
+  [0.9, 1.1] times its mean, for SN, GloVe and CBOW. The singular-value ratio
+  is a small constant for all four methods. Squared norm against log
+  frequency: r = 0.75. Relation differences load on one singular direction
+  (mean cosine 0.51) and not on the second (0.035).
+- **Analogy benchmarks can be gamed** (§5.3). Because each relation is
+  tested many times, estimating its direction from other questions adds
+  about 10 points. A non-cheating nearest-neighbour version adds about 3.
+
+## Standing in the anthology
+
+[THEORY-tmpk7p83](../theory.d/THEORY-tmpk7p83.md) holds the account, as `Proposed`. It `extends` [THEORY-093](../theory.d/THEORY-093.md)
+(SGNS factorizes shifted PMI), carrying it from the unconstrained optimum to
+low dimensions. It also `extends` [THEORY-089](../theory.d/THEORY-089.md) (linearity from log
+co-occurrence), supplying the step that account skipped: why a noisy fit
+still yields clean offsets.
+
+**It is one of the origins of the Linear Representation Hypothesis.** Park
+et al. ([LIT-606](LIT-606.md)) cite it, with Mikolov et al. and Elhage et al., as the
+source of the idea that concepts are directions. The relation-direction check in §5.3 is
+an early version of what [LIT-606](LIT-606.md) formalizes with counterfactual pairs.
+
+**No practice.** The SN objective performs close to GloVe and word2vec on
+analogies, not better (Table 1). The analogy-solving tricks exploit the
+benchmark's structure, and the paper says so.
+
+## What it does not establish
+
+- **The isotropy prior is an assumption, checked only loosely.** The
+  singular-value ratio, 1.4 for GloVe and 10.1 for CBOW, is reported as a
+  "small constant" either way. Section 2.2 weakens the prior to two
+  checkable properties, but checks them loosely too.
+- **The PMI error is not small.** The authors note ε is comparable to PMI
+  itself, and their PMI objective's weighted termwise error is 17%. The
+  theorem's value is the joint-probability form, which fits to 5%.
+- **The model ignores word order**, which the authors give as the reason SN
+  trails on syntactic analogies.
+- **Very frequent words do not fit.** The objective truncates their weights
+  "possibly because very frequent words … do not fit our model".
+- **One corpus, and analogy accuracy is the only downstream measure.**
+
+<!-- inactive-ok-file: THEORY-tmpk7p83, THEORY-089 — Proposed; the account filed from this paper in this contribution, and the account it extends -->

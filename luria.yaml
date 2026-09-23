@@ -43,9 +43,9 @@ vocabularies:
   #            about tokenization had nowhere to go
   #   ADR-027  analysis-and-evaluation
   #   ADR-026  generative-modeling, vision-and-graphics
-  # inactive-ok-block: ADR-tmp77ilo — Proposed, and it is the decision being
+  # inactive-ok-block: ADR-056 — Proposed, and it is the decision being
   # recorded here rather than one this config relies on
-  #   ADR-tmp77ilo  capability-thresholds -- `analysis-and-evaluation` was
+  #   ADR-056  capability-thresholds -- `analysis-and-evaluation` was
   #            holding nineteen documents whose subject is whether a capability
   #            arrives abruptly, which is a claim about the world rather than a
   #            method for checking one

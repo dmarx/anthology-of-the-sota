@@ -2,7 +2,7 @@
 
 # SOTAs with `tags` `representation-and-encoding`
 
-*Topics — The eighteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same eighteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+*Topics — The nineteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same nineteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 

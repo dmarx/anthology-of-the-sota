@@ -2,11 +2,11 @@
 
 # SOTAs with `tags` `model-architecture`
 
-*Topics — The eighteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same eighteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+*Topics — The nineteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same nineteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
 
 **Model architecture** — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in.
 
-44 of 351 SOTA documents. Back to the [full index](../README.md).
+43 of 351 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -15,7 +15,6 @@
 | [SOTA-034](../../../record/practices.d/SOTA-034.md) v3 | Use SwiGLU activation for transformers | Shazeer et al. (2020), [LIT-030](../../../record/literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). Contested at frontier scale in low precision: two groups now ship bounded replacements, on the grounds that SwiGLU's unbounded factors produce activation outliers. | Active |
 | [SOTA-036](../../../record/practices.d/SOTA-036.md) v2 | Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
 | [SOTA-037](../../../record/practices.d/SOTA-037.md) | LM in-context learning emerges at scale | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
-| [SOTA-038](../../../record/practices.d/SOTA-038.md) v2 | ICL permits few-shot task adaptability | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
 | [SOTA-039](../../../record/practices.d/SOTA-039.md) | single cycle of cosine decay is sufficient lr schedule | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Superseded — by [SOTA-140](../../../record/practices.d/SOTA-140.md); warmup-stable-decay matches it and leaves the token budget open; every report since 2024 in the record uses a stable-then-decay schedule |
 | [SOTA-095](../../../record/practices.d/SOTA-095.md) | consider rewinding to earlier checkpoint and skipping a few batches to mitigate unusual loss spikes | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
 | [SOTA-124](../../../record/practices.d/SOTA-124.md) v4 | Repeat high-quality data freely when its epoch size exceeds the model's memorization window | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Roughly 100–500 GT for a 7B model, scaling linearly; the authors call the understanding early. | Proposed |

@@ -2,7 +2,7 @@
 
 # SOTAs with `tags` `deployment-and-society`
 
-*Topics — The eighteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same eighteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+*Topics — The nineteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same nineteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
 
 **Deployment and society** — what a system does once it is running among people, and how anyone outside it could find out — audits of deployed platforms and recommenders, information ecosystems, moderation and governance, and the access problems and funding pressures of studying any of it from the outside.
 

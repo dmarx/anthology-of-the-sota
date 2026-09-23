@@ -6,7 +6,7 @@
 
 **ci**.
 
-3 of 55 decisions. Back to the [full index](../README.md).
+3 of 57 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

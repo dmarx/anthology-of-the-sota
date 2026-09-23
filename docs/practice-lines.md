@@ -110,6 +110,15 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [SOTA-188](../record/practices.d/SOTA-188.md) — Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal *(Active, converged)*
   - [SOTA-195](../record/practices.d/SOTA-195.md) — Predict v rather than the noise when the model will be evaluated at low signal-to-noise *(Active, converged)*
 
+## in-context-learning
+
+### From ICL permits few-shot task adaptability
+
+- [SOTA-038](../record/practices.d/SOTA-038.md) — ICL permits few-shot task adaptability *(Active, unassessed)*
+  - [SOTA-279](../record/practices.d/SOTA-279.md) — Put worked reasoning steps in the few-shot exemplars when the task needs more than one step, and only once the model is large enough *(Active, universal)*
+    - [SOTA-280](../record/practices.d/SOTA-280.md) — Sample several reasoning paths and take the majority answer rather than decoding one greedily *(Active, emerging)*
+    - [SOTA-281](../record/practices.d/SOTA-281.md) — Try the single step-by-step instruction before writing exemplars; it recovers most of the gain for none of the labour *(Active, universal)*
+
 ## inference-optimization
 
 ### From PagedAttention to accelerate batch inference for LLM sampling
@@ -308,14 +317,3 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [SOTA-218](../record/practices.d/SOTA-218.md) — Retune the learning rate, momentum and schedule at every batch size you compare, never by a scaling heuristic *(Active, unreplicated)*
 - alongside: [SOTA-221](../record/practices.d/SOTA-221.md) — To train past the batch size where your optimizer stalls, change the optimizer's conditioning rather than the scaling rule *(Active, unreplicated)*
-
-## Sharing no `tags`
-
-### From Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective
-
-- [SOTA-036](../record/practices.d/SOTA-036.md) — Train a decoder-only transformer on a broad web corpus with a fixed context and a single next-token objective *(Active, unassessed)*
-  - [SOTA-037](../record/practices.d/SOTA-037.md) — LM in-context learning emerges at scale *(Active, unassessed)*
-  - [SOTA-038](../record/practices.d/SOTA-038.md) — ICL permits few-shot task adaptability *(Active, unassessed)*
-    - [SOTA-279](../record/practices.d/SOTA-279.md) — Put worked reasoning steps in the few-shot exemplars when the task needs more than one step, and only once the model is large enough *(Active, universal)*
-      - [SOTA-280](../record/practices.d/SOTA-280.md) — Sample several reasoning paths and take the majority answer rather than decoding one greedily *(Active, emerging)*
-      - [SOTA-281](../record/practices.d/SOTA-281.md) — Try the single step-by-step instruction before writing exemplars; it recovers most of the gain for none of the labour *(Active, universal)*

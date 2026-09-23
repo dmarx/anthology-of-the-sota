@@ -83,6 +83,9 @@ bare code and run `luria link --fix`.
 
 **[Tiny models](tags/tiny-models.md)** (0) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
+**[Capability thresholds](tags/capability-thresholds.md)** (7) — a capability that arrives abruptly rather than smoothly — emergence at scale, grokking after long training, phase transitions in learning — which axis it turns on, and whether the discontinuity is real or an artefact of how it was measured:
+[040](../../record/theory.d/THEORY-040.md) · [069](../../record/theory.d/THEORY-069.md) · [070](../../record/theory.d/THEORY-070.md) · [071](../../record/theory.d/THEORY-071.md) · [072](../../record/theory.d/THEORY-072.md) · [073](../../record/theory.d/THEORY-073.md) · [074](../../record/theory.d/THEORY-074.md)
+
 **By status:** [The current account](status/Active.md) (29) · [Offered](status/Proposed.md) (48) · [Not yet judged](status/Deferred.md) (0) · [Disbelieved](status/Rejected.md) (6) · [Replaced](status/Superseded.md) (0)
 
 ## Chronological

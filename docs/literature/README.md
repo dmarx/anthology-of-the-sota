@@ -103,6 +103,9 @@ year sourcing nothing.
 **[Tiny models](tags/tiny-models.md)** (6) — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts:
 [119](../../record/literature.d/LIT-119.md) · [123](../../record/literature.d/LIT-123.md) · [129](../../record/literature.d/LIT-129.md) · [427](../../record/literature.d/LIT-427.md) · [484](../../record/literature.d/LIT-484.md) · [485](../../record/literature.d/LIT-485.md)
 
+**[Capability thresholds](tags/capability-thresholds.md)** (9) — a capability that arrives abruptly rather than smoothly — emergence at scale, grokking after long training, phase transitions in learning — which axis it turns on, and whether the discontinuity is real or an artefact of how it was measured:
+[085](../../record/literature.d/LIT-085.md) · [470](../../record/literature.d/LIT-470.md) · [471](../../record/literature.d/LIT-471.md) · [537](../../record/literature.d/LIT-537.md) · [538](../../record/literature.d/LIT-538.md) · [539](../../record/literature.d/LIT-539.md) · [540](../../record/literature.d/LIT-540.md) · [543](../../record/literature.d/LIT-543.md) · [544](../../record/literature.d/LIT-544.md)
+
 **By status:** [In the anthology](status/Active.md) (501) · [Watching](status/Proposed.md) (2) · [Unreviewed](status/Deferred.md) (1) · [Superseded](status/Superseded.md) (3) · [Attic](status/Rejected.md) (10)
 
 ## Chronological

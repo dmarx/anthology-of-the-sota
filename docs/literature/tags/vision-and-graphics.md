@@ -2,7 +2,7 @@
 
 # LITs with `tags` `vision-and-graphics`
 
-*Topics — The eighteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same eighteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+*Topics — The nineteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same nineteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 

@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**192 document(s) awaiting a decision.**
+**194 document(s) awaiting a decision.**
 
 ## SOTAs
 
-122 of the 192.
+122 of the 194.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -111,10 +111,10 @@
 | 2026-09-21 | Proposed | [SOTA-300](../../record/practices.d/SOTA-300.md) | 0 | 0 | To tell whether a model is doing non-trivial in-context computation, measure how well it predicts its own hidden states, not its next-token loss |
 | 2026-09-21 | Proposed | [SOTA-316](../../record/practices.d/SOTA-316.md) | 0 | 0 | When you are memory-bound rather than time-bound, train all the parameters a block at a time, partitioned on layer boundaries |
 | 2026-09-22 | Proposed | [SOTA-323](../../record/practices.d/SOTA-323.md) | 4 | 0 | Test a claim about what pretraining produces on a model trained with the pretraining objective, not one trained on the task family you are testing |
+| 2026-09-22 | Proposed | [SOTA-325](../../record/practices.d/SOTA-325.md) | 4 | 0 | When the training loss has saturated and runs still differ, measure loss-landscape degeneracy rather than curvature |
 | 2026-09-22 | Proposed | [SOTA-326](../../record/practices.d/SOTA-326.md) | 4 | 0 | Add n-gram embedding memory as one table read early in the network, on top of the expert budget rather than in place of experts |
 | 2026-09-22 | Proposed | [SOTA-328](../../record/practices.d/SOTA-328.md) | 4 | 0 | Train one nested model instead of a family of separately trained sizes, and extract the sizes you need from it |
 | 2026-09-22 | Proposed | [SOTA-319](../../record/practices.d/SOTA-319.md) | 3 | 0 | Reparameterize every linear layer by its spectral norm with a learned scalar |
-| 2026-09-22 | Proposed | [SOTA-325](../../record/practices.d/SOTA-325.md) | 3 | 0 | When the training loss has saturated and runs still differ, measure loss-landscape degeneracy rather than curvature |
 | 2026-09-22 | Proposed | [SOTA-327](../../record/practices.d/SOTA-327.md) | 3 | 0 | Train retrieval embeddings with nested losses, so a prefix of the vector can shortlist and the full vector re-rank |
 | 2026-09-22 | Proposed | [SOTA-329](../../record/practices.d/SOTA-329.md) | 3 | 0 | For short-output tasks, adapt a frozen model with a low-rank intervention on a few positions of the residual stream, not a weight adapter; do not use it for long chain-of-thought |
 | 2026-09-22 | Proposed | [SOTA-324](../../record/practices.d/SOTA-324.md) | 2 | 0 | Separate rival accounts of an internal algorithm by convergence rate and conditioning, not by how well each fits the output |
@@ -138,7 +138,7 @@
 
 ## THEORYs
 
-48 of the 192.
+48 of the 194.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -178,12 +178,12 @@
 | 2026-09-21 | Proposed | [THEORY-055](../../record/theory.d/THEORY-055.md) | 1 | 0 | A producer's own rate of return is the price of their time, so making them faster raises the bar on every marginal hour of improvement |
 | 2026-09-22 | Proposed | [THEORY-062](../../record/theory.d/THEORY-062.md) | 6 | 0 | What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such |
 | 2026-09-22 | Proposed | [THEORY-071](../../record/theory.d/THEORY-071.md) | 6 | 0 | A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips at a critical dataset size |
+| 2026-09-22 | Proposed | [THEORY-072](../../record/theory.d/THEORY-072.md) | 6 | 0 | Training and test loss disagree as functions of weight norm, and shrinking the norm through the gap is what takes so long |
 | 2026-09-22 | Proposed | [THEORY-061](../../record/theory.d/THEORY-061.md) | 5 | 0 | Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product |
 | 2026-09-22 | Proposed | [THEORY-070](../../record/theory.d/THEORY-070.md) | 5 | 0 | Grokking is the transition from lazy to rich training dynamics |
-| 2026-09-22 | Proposed | [THEORY-072](../../record/theory.d/THEORY-072.md) | 5 | 0 | Training and test loss disagree as functions of weight norm, and shrinking the norm through the gap is what takes so long |
+| 2026-09-22 | Proposed | [THEORY-074](../../record/theory.d/THEORY-074.md) | 4 | 0 | A phase transition of the Bayesian posterior and a transition in the training trajectory are different events, and only the first is well defined |
 | 2026-09-22 | Proposed | [THEORY-064](../../record/theory.d/THEORY-064.md) | 3 | 0 | Transformers are biased toward low-sensitivity functions, and that bias is what their robustness is made of |
-| 2026-09-22 | Proposed | [THEORY-073](../../record/theory.d/THEORY-073.md) | 2 | 0 | Training passes through stages marked by changes in loss-landscape degeneracy, and the loss curve does not show them |
-| 2026-09-22 | Proposed | [THEORY-074](../../record/theory.d/THEORY-074.md) | 1 | 0 | A phase transition of the Bayesian posterior and a transition in the training trajectory are different events, and only the first is well defined |
+| 2026-09-22 | Proposed | [THEORY-073](../../record/theory.d/THEORY-073.md) | 3 | 0 | Training passes through stages marked by changes in loss-landscape degeneracy, and the loss curve does not show them |
 | 2026-09-22 | Proposed | [THEORY-063](../../record/theory.d/THEORY-063.md) | 0 | 0 | Contextual concept directions sit in the low-variance tail of the unembedding spectrum while vocabulary contrasts sit at the top |
 | 2026-09-22 | Proposed | [THEORY-065](../../record/theory.d/THEORY-065.md) | 0 | 0 | Self-attention drives tokens into a few clusters, and the spectrum of the value matrix decides the geometry they land in |
 | 2026-09-22 | Proposed | [THEORY-066](../../record/theory.d/THEORY-066.md) | 0 | 0 | Pure self-attention collapses every token onto one, and skip connections prevent it by keeping short paths alive |
@@ -193,7 +193,7 @@
 
 ## LITs
 
-3 of the 192.
+3 of the 194.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -203,7 +203,7 @@
 
 ## ADRs
 
-19 of the 192.
+21 of the 194.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -224,11 +224,13 @@
 | 2026-09-17 | Proposed | [ADR-045](../../record/decisions.d/ADR-045.md) | 2 | 0 | A claim about the signal is admissible however it was measured, including on people |
 | 2026-09-21 | Proposed | [ADR-050](../../record/decisions.d/ADR-050.md) | 8 | 0 | Two more topics: numerics and precision, and in-context learning |
 | 2026-09-21 | Proposed | [ADR-053](../../record/decisions.d/ADR-053.md) | 6 | 0 | A practice may state that it has no identifiable origin, by leaving introduced_by empty |
+| 2026-09-22 | Proposed | [ADR-055](../../record/decisions.d/ADR-055.md) | 3 | 0 | Declare invariant: tags on SOTA.source, after taking the backlog to zero |
 | 2026-09-22 | Proposed | [ADR-054](../../record/decisions.d/ADR-054.md) | 1 | 0 | The four commands are five, and two of them are invariants a hook can hold |
-| 2026-09-22 | Proposed | [ADR-055](../../record/decisions.d/ADR-055.md) | 1 | 0 | Declare invariant: tags on SOTA.source, after taking the backlog to zero |
+| 2026-09-23 | Proposed | [ADR-056](../../record/decisions.d/ADR-056.md) | 1 | 0 | capability-thresholds: whether a capability arrives abruptly is a claim, not a method |
+| 2026-09-23 | Proposed | [ADR-057](../../record/decisions.d/ADR-057.md) | 0 | 0 | Three practices from one paper are siblings by source, not a line of practice |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (18): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md), [ADR-040](../../record/decisions.d/ADR-040.md), [ADR-042](../../record/decisions.d/ADR-042.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-288](../../record/practices.d/SOTA-288.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-294](../../record/practices.d/SOTA-294.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [THEORY-063](../../record/theory.d/THEORY-063.md), [THEORY-065](../../record/theory.d/THEORY-065.md), [THEORY-066](../../record/theory.d/THEORY-066.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (19): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md), [ADR-040](../../record/decisions.d/ADR-040.md), [ADR-042](../../record/decisions.d/ADR-042.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-288](../../record/practices.d/SOTA-288.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-294](../../record/practices.d/SOTA-294.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [THEORY-063](../../record/theory.d/THEORY-063.md), [THEORY-065](../../record/theory.d/THEORY-065.md), [THEORY-066](../../record/theory.d/THEORY-066.md), [ADR-057](../../record/decisions.d/ADR-057.md) — these are the cheapest to close, since nothing depends on the answer.

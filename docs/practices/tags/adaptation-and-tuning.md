@@ -2,7 +2,7 @@
 
 # SOTAs with `tags` `adaptation-and-tuning`
 
-*Topics — The eighteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same eighteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+*Topics — The nineteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same nineteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
 
 **Adaptation and tuning** — taking a trained model somewhere new — fine-tuning and transfer, preference training and safety alignment, parameter-efficient adaptation, context extension.
 
@@ -11,7 +11,7 @@
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [SOTA-033](../../../record/practices.d/SOTA-033.md) | continued pre-training for fine tuning | Gururangan et al. (2020), [LIT-034](../../../record/literature.d/LIT-034.md) — [ARXIV-2004.10964](https://arxiv.org/abs/2004.10964). | Active |
-| [SOTA-038](../../../record/practices.d/SOTA-038.md) v2 | ICL permits few-shot task adaptability | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
+| [SOTA-038](../../../record/practices.d/SOTA-038.md) v3 | ICL permits few-shot task adaptability | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
 | [SOTA-051](../../../record/practices.d/SOTA-051.md) v4 | Initialize a residual or adapter branch to exactly zero, not merely near zero | Bachlechner et al. (2020), [LIT-047](../../../record/literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887). Start an added branch at exactly zero so it is the identity at initialisation, and let training raise it. Exact zero rather than small-random is the claim: a small random branch is PROBABLY harmless, a zero one is PROVABLY the identity — which is what matters when the thing being protected is a residual stack deep enough to attenuate, or a pretrained model expensive enough that adapter noise is not worth risking. | Active |
 | [SOTA-123](../../../record/practices.d/SOTA-123.md) | For tiny specialized models, pretrain from scratch on the target SFT or reasoning data instead of pretrain-then-finetune | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. At 90M, 25% SFT data in the pretraining mix beat a separate SFT stage by 10 IFEval points and yields one checkpoint that is both base and instruct. | Active |
 | [SOTA-126](../../../record/practices.d/SOTA-126.md) | Run DPO on tiny models for one epoch only | Falcon-LLM Team (2026), [LIT-119](../../../record/literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. One epoch at LR 1e-6 to 3e-6 took a 90M model's IFEval from about 50 to over 65; a second epoch degraded it while the reward kept rising. | Active |

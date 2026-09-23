@@ -3,9 +3,9 @@
 # One acknowledgement, for the decisions this file names as history. Every
 # citation in this file is a decision the file IMPLEMENTS, and citing them is
 # what makes a schema choice readable as something somebody decided rather
-# than something somebody typed. There used to be a second, for decisions
-# that were still Proposed; since 2026-09-23 every decision this file
-# implements is Active, so it has nothing left to vouch for (LU-#278).
+# than something somebody typed. There used to be a second, file-wide, for
+# decisions that were still Proposed. Since 2026-09-23 the only one left is
+# ADR-045, acknowledged block-wise where it is cited (LU-#278).
 #
 # inactive-ok-file: ADR-020, ADR-027, ADR-029 — Superseded, and named here AS history, in prose that says so: "ADR-027 added `analysis-and-evaluation`; ADR-026 then added ... superseding ADR-020", and the cut DP-005 made in ADR-029 that ADR-030 refined.
 #
@@ -24,7 +24,7 @@
 # practice drawn from it still hold. Two schemes, two status fields, and the
 # relationship between them is a citation the lint can follow. See ADR-002.
 vocabularies:
-  # The twenty topics: the primary axis of both the practice registry and the
+  # The twenty-one topics: the primary axis of both the practice registry and the
   # reading list, in the order the indexes show them.
   #
   # The first seven are transcribed from the 2024 naming-conventions document;
@@ -49,6 +49,11 @@ vocabularies:
   #            "outside the topics", and two protein and RNA papers had been
   #            filed under the nearest wrong word; the axis follows the
   #            content, not the reverse
+  # inactive-ok-block: ADR-045 — Proposed, and it is the decision that added
+  # the word; its status waits on a second case, not on the topic
+  #   ADR-045  signal-structure (v3) -- a finding about language measured
+  #            on people had been filed under the closest word and said so;
+  #            under ADR-059 the misfit was the finding
   #
   # Every one of those words was already in the LIT scheme, which has carried
   # them since ADR-003; the practice registry caught up one decision at a time.
@@ -70,9 +75,9 @@ vocabularies:
     # What the axis IS, which until luria 0.25.0 could only be said in a
     # comment no view could reach (LU-#279).
     blurb: >-
-      The twenty kinds of claim this anthology files against — the primary
-      axis of both the practice registry and the reading list, and the same
-      twenty for each (ADR-026). The filing rule is the point: take a domain
+      The twenty-one kinds of claim this anthology files against — the
+      primary axis of both the practice registry and the reading list, and the
+      same twenty-one for each (ADR-026). The filing rule is the point: take a domain
       topic when the claim is ABOUT the domain; a claim merely discovered in
       one still takes its kind. The axis organizes the record, it does not
       bound it: content the list cannot place is evidence the list is short
@@ -173,12 +178,19 @@ vocabularies:
       biomolecular-modeling:
         label: Biomolecular modeling
         blurb: models whose data is molecules — protein and nucleic-acid structure prediction, biological sequence language models, docking and molecular property prediction — what they get right, what their benchmarks can show, and which of their methods travel to other domains
+      # Added by ADR-045 v3. That decision admitted a finding about language
+      # measured on people as a THEORY, then filed it under the closest word
+      # available and said so. Under ADR-059 the misfit is the finding and a
+      # word is the answer.
+      signal-structure:
+        label: Signal structure
+        blurb: what the data itself is like, independent of any model — the statistics and structure of language, images and other signals that methods exploit or must respect, such as frequency spectra, heavy-tailed and Zipfian distributions, and what counts as a unit
       # ── Secondary-only words ─────────────────────────────────────────────
       # Declared so they have a label and a blurb rather than rendering as bare
       # strings, and so `closed: true` on SOTA, LIT and THEORY can require that
       # every tag those three carry is one somebody chose. NOTE's `tags:` names no
       # vocabulary, so it is not covered. They are NOT in the `primary_topic` group,
-      # which is the eighteen above: a document may carry one of these
+      # which is the nineteen above: a document may carry one of these
       # alongside its topic, never instead of it.
       #
       # This matters more since the chain invariant moved to `tags`

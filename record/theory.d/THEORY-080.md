@@ -12,10 +12,19 @@ promote_when: >-
   worsening at high BNR does not settle it. That is the observation the
   account was built to explain, not a test of its mechanism.
 title: 'A diffusion process needs noise to keep its intermediate states on the data manifold, and blur helps only while noise still dominates the bands it removes'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Appends `signal-structure`, added by ADR-045 v3. The account rests on a
+    property of the data: natural image spectra fall as 1/f² against flat
+    noise, which is what decides where blur is safe. Someone browsing claims
+    about what signals are like would expect it.
 tags:
 - generative-modeling
 - analysis-and-evaluation
+- signal-structure
 date: '2026-09-23'
 source:
 - LIT-555
@@ -32,6 +41,8 @@ summary: >-
   sweep fits the account, and the manifold departure itself is not
   measured.
 ---
+
+<!-- inactive-ok-file: ADR-045 — Proposed, and named in the history as the decision that added the topic appended here -->
 
 # THEORY-080: A diffusion process needs noise to keep its intermediate states on the data manifold, and blur helps only while noise still dominates the bands it removes
 

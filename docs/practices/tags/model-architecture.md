@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in.
 
-44 of 360 SOTA documents. Back to the [full index](../README.md).
+45 of 364 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -54,3 +54,4 @@
 | [SOTA-350](../../../record/practices.d/SOTA-350.md) | Compare GNN architectures over many random data splits and seeds, with one shared training and hyperparameter-selection procedure for every model, never on a single fixed split | Shchur et al. (2018), [LIT-581](../../../record/literature.d/LIT-581.md) — on the Planetoid split GAT beats GCN. On another random split of the same size GCN wins, and averaged over 100 splits × 20 seeds with identical training and tuning, GCN ranks first of four GNNs. A single split selects the model that overfits it, and per-model recipes measure the recipe. Report mean and spread over many splits and seeds, with the same tuning budget for every model. | Active |
 | [SOTA-351](../../../record/practices.d/SOTA-351.md) | In a message-passing GNN for graph-level tasks, aggregate neighbours by sum with an MLP update, not by mean or max, when graph structure rather than node features carries the signal | Xu et al. (2019), [LIT-580](../../../record/literature.d/LIT-580.md) — mean and max aggregation cannot count neighbors, so graphs that differ only in counts look the same to them. On featureless Reddit graphs, mean-aggregation GNNs are at chance (50.0, 20.0) and sum–MLP scores 92.4 and 57.5. With informative node features the choice matters much less, and results are mostly within noise. Use h = MLP((1 + ε)h + Σ neighbors) with ε = 0 and a sum readout. | Active |
 | [SOTA-358](../../../record/practices.d/SOTA-358.md) | Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not |  | Active |
+| [SOTA-362](../../../record/practices.d/SOTA-362.md) | Train through a projection head and then discard it, taking the layer before as the representation |  | Active |

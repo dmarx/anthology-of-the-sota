@@ -1,11 +1,14 @@
 ---
+number: 363
 status: Active
+formerly:
+- SOTA-tmpv2jq0
 consensus: emerging
 consensus_note: >-
   Split, and the split is the interesting part. The **slow key encoder**
   converged — BYOL, DINO and their descendants all carry an EMA target, and
   the `#304` units still to file are where that gets confirmed or broken. The
-  **queue** did not: SimCLR (LIT-tmpwwvv6) dropped it for a large batch,
+  **queue** did not: SimCLR (LIT-591) dropped it for a large batch,
   CLIP (LIT-588) uses in-batch negatives at batch 32,768, and where accelerator
   memory is plentiful the queue is often skipped. So this is one practice with
   a converged half and a contested half, filed as `emerging` rather than
@@ -17,19 +20,19 @@ tags:
 - training-optimization
 date: '2026-09-23'
 source:
-- LIT-tmpbdwjn
+- LIT-590
 introduced_by:
-- LIT-tmpbdwjn
+- LIT-590
 extends:
 - SOTA-360
 implementations: []
 ---
 
-# SOTA-tmpv2jq0: Decouple the negative set from the batch with a queue, and keep the encoder that fills it slow
+# SOTA-363: Decouple the negative set from the batch with a queue, and keep the encoder that fills it slow
 
 ## Source
 
-He et al. (2019), [LIT-tmpbdwjn](../literature.d/LIT-tmpbdwjn.md) — [ARXIV-1911.05722](https://arxiv.org/abs/1911.05722).
+He et al. (2019), [LIT-590](../literature.d/LIT-590.md) — [ARXIV-1911.05722](https://arxiv.org/abs/1911.05722).
 
 ## The claim
 

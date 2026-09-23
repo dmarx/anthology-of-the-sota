@@ -6,7 +6,7 @@
 
 **Assumed** — not doing it is what needs justifying.
 
-11 of 360 SOTA documents. Back to the [full index](../README.md).
+12 of 364 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -21,3 +21,4 @@
 | [SOTA-279](../../../record/practices.d/SOTA-279.md) | Put worked reasoning steps in the few-shot exemplars when the task needs more than one step, and only once the model is large enough | Wei et al. (2022), [LIT-467](../../../record/literature.d/LIT-467.md) — eight exemplars carrying worked steps more than doubled PaLM 540B on GSM8K, beating a fine-tuned model with a verifier. Three ablations rule out the equation, the extra tokens and knowledge activation. Below ~100B it does nothing or hurts. | Active |
 | [SOTA-281](../../../record/practices.d/SOTA-281.md) | Try the single step-by-step instruction before writing exemplars; it recovers most of the gain for none of the labour | Kojima et al. (2022), [LIT-469](../../../record/literature.d/LIT-469.md) — one fixed sentence with no exemplars takes MultiArith from 17.7% to 78.7% and GSM8K from 10.4% to 40.7%. It beats eight-shot standard prompting and loses to hand-written few-shot chains, which is the ordering that makes it a first move. | Active |
 | [SOTA-360](../../../record/practices.d/SOTA-360.md) | Score a density ratio against sampled negatives instead of reconstructing the target |  | Active |
+| [SOTA-362](../../../record/practices.d/SOTA-362.md) | Train through a projection head and then discard it, taking the layer before as the representation |  | Active |

@@ -6,7 +6,7 @@
 
 **Data pipeline** — loading, quality assessment and selection, preprocessing, batch preparation.
 
-43 of 360 SOTA documents. Back to the [full index](../README.md).
+44 of 364 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -53,3 +53,4 @@
 | [SOTA-352](../../../record/practices.d/SOTA-352.md) | When a structure predictor is made generative, add a regression model's predictions to the training data so disordered regions are learned as disorder rather than invented structure | Abramson et al. (2024), [LIT-584](../../../record/literature.d/LIT-584.md) — a diffusion head generates plausible compact structure even where the protein has none. AlphaFold- Multimer, a regression model, renders the same regions as extended loops. Mixing its predictions into training teaches the generative model that convention, and "greatly reduced" hallucination. Remaining hallucinations are flagged by low confidence but do not look disordered. | Proposed |
 | [SOTA-354](../../../record/practices.d/SOTA-354.md) | When unlabelled inputs vastly outnumber labelled ones, retrain from scratch on the labelled data mixed with the model's own high-confidence predictions for unlabelled inputs, under augmentation that stops it copying them | Jumper et al. (2021), [LIT-583](../../../record/literature.d/LIT-583.md) — about 100,000 solved structures and billions of sequences. AlphaFold 2 predicted structures for about 350,000 unlabeled sequences, kept the confident ones, and retrained the same architecture from scratch on those plus the PDB. Cropping and alignment subsampling mean the student cannot just reproduce the teacher. The ablation shows a clear gain. The filter is the model's own calibrated confidence ([SOTA-353](../../../record/practices.d/SOTA-353.md)). | Proposed |
 | [SOTA-359](../../../record/practices.d/SOTA-359.md) v2 | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |
+| [SOTA-361](../../../record/practices.d/SOTA-361.md) | Compose augmentations so the shortcut dies, and tune them for the contrastive objective rather than the supervised one |  | Active |

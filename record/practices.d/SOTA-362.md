@@ -1,5 +1,8 @@
 ---
+number: 362
 status: Active
+formerly:
+- SOTA-tmpca2pu
 consensus: universal
 consensus_note: >-
   Not doing it is what needs justifying: every joint-embedding method the
@@ -16,17 +19,17 @@ tags:
 - model-architecture
 date: '2026-09-23'
 source:
-- LIT-tmpwwvv6
+- LIT-591
 introduced_by:
-- LIT-tmpwwvv6
+- LIT-591
 implementations: []
 ---
 
-# SOTA-tmpca2pu: Train through a projection head and then discard it, taking the layer before as the representation
+# SOTA-362: Train through a projection head and then discard it, taking the layer before as the representation
 
 ## Source
 
-Chen et al. (2020), [LIT-tmpwwvv6](../literature.d/LIT-tmpwwvv6.md) — [ARXIV-2002.05709](https://arxiv.org/abs/2002.05709), §4.2.
+Chen et al. (2020), [LIT-591](../literature.d/LIT-591.md) — [ARXIV-2002.05709](https://arxiv.org/abs/2002.05709), §4.2.
 
 ## The claim
 
@@ -75,7 +78,7 @@ tensor the loss was computed on, this is the question to ask.
 - **Nonlinear, and small.** Linear is measurably worse; output dimension
   barely matters once a head is present.
 - **It reduces the cost of a strong augmentation policy, it does not remove
-  it** ([SOTA-tmp6nbsn](SOTA-tmp6nbsn.md)). Information destroyed before the encoder cannot be
+  it** ([SOTA-361](SOTA-361.md)). Information destroyed before the encoder cannot be
   recovered after it.
 - **Measured under linear evaluation on ImageNet.** Whether `h` remains the
   better choice under full fine-tuning is not what this ablation asked.

@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-508 of 524 LIT documents. Back to the [full index](../README.md).
+510 of 526 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -518,3 +518,5 @@
 | [LIT-587](../../../record/literature.d/LIT-587.md) | An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale | Dosovitskiy et al. (2020), [ARXIV-2010.11929](https://arxiv.org/abs/2010.11929). Cut the image into fixed patches, linearly embed them, and feed the sequence to an unmodified transformer encoder. The result is not that the architecture is better — it is that at enough pre-training data the convolutional prior stops paying for itself, and below that threshold it still does. | Active |
 | [LIT-588](../../../record/literature.d/LIT-588.md) | Learning Transferable Visual Models From Natural Language Supervision | Radford et al. (2021), [ARXIV-2103.00020](https://arxiv.org/abs/2103.00020). Train an image encoder and a text encoder to match 400M (image, text) pairs contrastively, then build a classifier for any label set by embedding its class names. The most durable result is not the zero-shot accuracy — it is that supervised adaptation which raises ImageNet by 9.2% buys no average robustness. | Active |
 | [LIT-589](../../../record/literature.d/LIT-589.md) | Representation Learning with Contrastive Predictive Coding | Oord et al. (2018), [ARXIV-1807.03748](https://arxiv.org/abs/1807.03748). Predict the future in latent space and score it as a density ratio against sampled negatives, rather than reconstructing the observation. The loss is named InfoNCE here, and it is the objective CLIP, SimCLR and MoCo all run; the bound it maximizes is capped at log N, which the folklore about negatives leaves out. | Active |
+| [LIT-590](../../../record/literature.d/LIT-590.md) | Momentum Contrast for Unsupervised Visual Representation Learning | He et al. (2019), [ARXIV-1911.05722](https://arxiv.org/abs/1911.05722). Reframes contrastive learning as dictionary look-up and asks for a dictionary that is both large and consistent: a queue makes it large independently of the batch, and an EMA-updated key encoder makes it consistent. The momentum ablation is the result that propagated — at m=0 it does not train at all. | Active |
+| [LIT-591](../../../record/literature.d/LIT-591.md) | A Simple Framework for Contrastive Learning of Visual Representations | Chen et al. (2020), [ARXIV-2002.05709](https://arxiv.org/abs/2002.05709). Strips contrastive learning to augment, encode, project, NT-Xent — no memory bank, no special architecture — and then ablates each piece. The two findings that outlived the method: the augmentation pair is the pretext task, and the projection head is a sacrificial layer you throw away. | Active |

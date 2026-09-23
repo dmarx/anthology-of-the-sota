@@ -6,7 +6,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-206 of 360 SOTA documents. Back to the [full index](../README.md).
+210 of 364 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -216,3 +216,7 @@
 | [SOTA-358](../../../record/practices.d/SOTA-358.md) | Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not |  | Active |
 | [SOTA-359](../../../record/practices.d/SOTA-359.md) v2 | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |
 | [SOTA-360](../../../record/practices.d/SOTA-360.md) | Score a density ratio against sampled negatives instead of reconstructing the target |  | Active |
+| [SOTA-361](../../../record/practices.d/SOTA-361.md) | Compose augmentations so the shortcut dies, and tune them for the contrastive objective rather than the supervised one |  | Active |
+| [SOTA-362](../../../record/practices.d/SOTA-362.md) | Train through a projection head and then discard it, taking the layer before as the representation |  | Active |
+| [SOTA-363](../../../record/practices.d/SOTA-363.md) | Decouple the negative set from the batch with a queue, and keep the encoder that fills it slow |  | Active |
+| [SOTA-364](../../../record/practices.d/SOTA-364.md) | Break batch normalization's cross-sample leak before it solves your contrastive task for you |  | Active |

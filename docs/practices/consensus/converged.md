@@ -6,7 +6,7 @@
 
 **Agreed** — the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately.
 
-27 of 360 SOTA documents. Back to the [full index](../README.md).
+29 of 364 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -37,3 +37,5 @@
 | [SOTA-357](../../../record/practices.d/SOTA-357.md) | Build a zero-shot classifier from prompt templates and ensemble them in embedding space |  | Active |
 | [SOTA-358](../../../record/practices.d/SOTA-358.md) | Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not |  | Active |
 | [SOTA-359](../../../record/practices.d/SOTA-359.md) v2 | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |
+| [SOTA-361](../../../record/practices.d/SOTA-361.md) | Compose augmentations so the shortcut dies, and tune them for the contrastive objective rather than the supervised one |  | Active |
+| [SOTA-364](../../../record/practices.d/SOTA-364.md) | Break batch normalization's cross-sample leak before it solves your contrastive task for you |  | Active |

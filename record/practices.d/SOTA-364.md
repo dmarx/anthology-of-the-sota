@@ -1,5 +1,8 @@
 ---
+number: 364
 status: Active
+formerly:
+- SOTA-tmpw2bcy
 consensus: converged
 consensus_note: >-
   Two independent groups hit it within three months and shipped two different
@@ -16,19 +19,19 @@ tags:
 - distributed-optimization
 date: '2026-09-23'
 source:
-- LIT-tmpbdwjn
-- LIT-tmpwwvv6
+- LIT-590
+- LIT-591
 introduced_by:
-- LIT-tmpbdwjn
+- LIT-590
 implementations: []
 ---
 
-# SOTA-tmpw2bcy: Break batch normalization's cross-sample leak before it solves your contrastive task for you
+# SOTA-364: Break batch normalization's cross-sample leak before it solves your contrastive task for you
 
 ## Source
 
-He et al. (2019), [LIT-tmpbdwjn](../literature.d/LIT-tmpbdwjn.md) — [ARXIV-1911.05722](https://arxiv.org/abs/1911.05722), §3.3, and Chen et al.
-(2020), [LIT-tmpwwvv6](../literature.d/LIT-tmpwwvv6.md) — [ARXIV-2002.05709](https://arxiv.org/abs/2002.05709), §2.2. Two groups, three months
+He et al. (2019), [LIT-590](../literature.d/LIT-590.md) — [ARXIV-1911.05722](https://arxiv.org/abs/1911.05722), §3.3, and Chen et al.
+(2020), [LIT-591](../literature.d/LIT-591.md) — [ARXIV-2002.05709](https://arxiv.org/abs/2002.05709), §2.2. Two groups, three months
 apart, the same bug and two different fixes.
 
 ## The claim

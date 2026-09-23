@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [23 Sep 16:23 — Two groups found the same batch-norm leak, and the metric that should have caught it endorsed it](2026-09.md#two-groups-found-the-same-batch-norm-leak-and-the-metric-that-should-have-caught-it-endorsed-it)
 - [23 Sep 15:53 — The objective under CLIP had no note, and its most-quoted sentence has a ceiling](2026-09.md#the-objective-under-clip-had-no-note-and-its-most-quoted-sentence-has-a-ceiling)
 - [23 Sep 05:25 — The record had used ViT and CLIP for 92 documents without holding either](2026-09.md#the-record-had-used-vit-and-clip-for-92-documents-without-holding-either)
 - [23 Sep 04:28 — The catalogues' best yield was not practice candidates, it was the substrate the record never filed](2026-09.md#the-catalogues-best-yield-was-not-practice-candidates-it-was-the-substrate-the-record-never-filed)
@@ -196,9 +197,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-189 entries across 2 books, newest first.
+190 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 187 | 2026-09-05 | 2026-09-23 |
+| [2026-09](2026-09.md) | 188 | 2026-09-05 | 2026-09-23 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

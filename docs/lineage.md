@@ -2,7 +2,7 @@
 
 # Lines of work
 
-38 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+39 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -237,6 +237,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-583](../record/literature.d/LIT-583.md) — Highly accurate protein structure prediction with AlphaFold *(Active)*
   - [LIT-584](../record/literature.d/LIT-584.md) — Accurate structure prediction of biomolecular interactions with AlphaFold 3 *(Active)*
 
+## model-stability
+
+### From Momentum Contrast for Unsupervised Visual Representation Learning
+
+- alongside: [LIT-590](../record/literature.d/LIT-590.md) — Momentum Contrast for Unsupervised Visual Representation Learning *(Active)*
+- alongside: [LIT-591](../record/literature.d/LIT-591.md) — A Simple Framework for Contrastive Learning of Visual Representations *(Active)*
+
 ## numerics-and-precision
 
 ### From GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers
@@ -277,6 +284,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-507](../record/literature.d/LIT-507.md) — Adaptive Estimators Show Information Compression in Deep Neural Networks *(Active)*
 - alongside: [LIT-508](../record/literature.d/LIT-508.md) — Opening the Black Box of Deep Neural Networks via Information *(Active)*
 - alongside: [LIT-509](../record/literature.d/LIT-509.md) — On the Information Bottleneck Theory of Deep Learning *(Active)*
+
+### From Momentum Contrast for Unsupervised Visual Representation Learning
+
+- alongside: [LIT-590](../record/literature.d/LIT-590.md) — Momentum Contrast for Unsupervised Visual Representation Learning *(Active)*
+- alongside: [LIT-591](../record/literature.d/LIT-591.md) — A Simple Framework for Contrastive Learning of Visual Representations *(Active)*
 
 ## tiny-models
 
@@ -359,3 +371,8 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-561](../record/literature.d/LIT-561.md) — A Style-Based Generator Architecture for Generative Adversarial Networks *(Active)*
   - [LIT-560](../record/literature.d/LIT-560.md) — Analyzing and Improving the Image Quality of StyleGAN *(Active)*
     - [LIT-559](../record/literature.d/LIT-559.md) — Alias-Free Generative Adversarial Networks *(Active)*
+
+### From Momentum Contrast for Unsupervised Visual Representation Learning
+
+- alongside: [LIT-590](../record/literature.d/LIT-590.md) — Momentum Contrast for Unsupervised Visual Representation Learning *(Active)*
+- alongside: [LIT-591](../record/literature.d/LIT-591.md) — A Simple Framework for Contrastive Learning of Visual Representations *(Active)*

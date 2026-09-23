@@ -1,5 +1,8 @@
 ---
+number: 361
 status: Active
+formerly:
+- SOTA-tmp6nbsn
 consensus: converged
 consensus_note: >-
   Crop-plus-colour survived every later method this record has looked at —
@@ -16,17 +19,17 @@ tags:
 - representation-and-encoding
 date: '2026-09-23'
 source:
-- LIT-tmpwwvv6
+- LIT-591
 introduced_by:
-- LIT-tmpwwvv6
+- LIT-591
 implementations: []
 ---
 
-# SOTA-tmp6nbsn: Compose augmentations so the shortcut dies, and tune them for the contrastive objective rather than the supervised one
+# SOTA-361: Compose augmentations so the shortcut dies, and tune them for the contrastive objective rather than the supervised one
 
 ## Source
 
-Chen et al. (2020), [LIT-tmpwwvv6](../literature.d/LIT-tmpwwvv6.md) — [ARXIV-2002.05709](https://arxiv.org/abs/2002.05709).
+Chen et al. (2020), [LIT-591](../literature.d/LIT-591.md) — [ARXIV-2002.05709](https://arxiv.org/abs/2002.05709).
 
 ## The claim
 
@@ -70,7 +73,7 @@ solved to near-perfect accuracy with a representation that transfers badly.
   objective (`SOTA-250`) specifies its task differently.
 - **Every invariance is also a loss.** Destroying colour means the
   representation may no longer encode colour, which is a cost paid by any
-  downstream task that needed it. [SOTA-tmpca2pu](SOTA-tmpca2pu.md) is the partial mitigation:
+  downstream task that needed it. [SOTA-362](SOTA-362.md) is the partial mitigation:
   the head absorbs the invariance and the layer before it keeps more.
 - **The specific policy is not the claim.** Crop + colour + blur is SimCLR's
   answer for ImageNet in 2020. The claim is that the answer is objective-

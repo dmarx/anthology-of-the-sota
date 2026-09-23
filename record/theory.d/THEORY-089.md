@@ -11,7 +11,13 @@ promote_when: >-
   the account from their objectives and show it only by examples and
   benchmark scores.
 title: 'Word vectors trained on co-occurrence behave linearly because they encode log co-occurrence statistics: differences carry log ratios, which gives analogies, and sums carry products of context distributions, which gives composition'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Adds LIT-tmp56jtw as a source: aligned design choices make count and
+    prediction methods converge, as the account predicts. Still Proposed.
 tags:
 - representation-and-encoding
 - signal-structure
@@ -20,6 +26,7 @@ date: '2026-09-23'
 source:
 - LIT-602
 - LIT-603
+- LIT-tmp56jtw
 summary: >-
   Pennington et al. (2014), [LIT-602](../literature.d/LIT-602.md), and Mikolov et al. (2013),
   [LIT-603](../literature.d/LIT-603.md) — what distinguishes words is the ratio of how often they
@@ -59,6 +66,15 @@ river → Volga River).
 - Why SVD on raw counts does poorly and on log counts much better (7.3%
   against 60.1% on analogies at 6B)
 - Why element-wise addition composes meaning
+
+## Support from a controlled comparison
+
+[LIT-tmp56jtw](../literature.d/LIT-tmp56jtw.md) adds the test the two sources lacked. If count-based and
+prediction-based vectors fit the same statistics, they should converge once
+their design choices are aligned. Tuned alike, PPMI, SVD, SGNS and GloVe show
+no consistent winner, and the gaps change sign from task to task. That is
+indirect evidence: it shows convergence in benchmark scores, not that the
+vectors encode log ratios.
 
 ## Where it is weak
 

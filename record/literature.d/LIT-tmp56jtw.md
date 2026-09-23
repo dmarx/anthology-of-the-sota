@@ -1,0 +1,133 @@
+---
+status: Active
+title: 'Improving Distributional Similarity with Lessons Learned from Word Embeddings'
+version: 1
+tags:
+- analysis-and-evaluation
+- representation-and-encoding
+- signal-structure
+date: '2026-09-23'
+published: '2015-05-01'
+doi: '10.1162/tacl_a_00134'
+first_author: 'Levy'
+keywords:
+- 'word-embeddings'
+- 'ppmi'
+- 'svd'
+- 'sgns'
+- 'glove'
+- 'hyperparameters'
+- 'controlled-comparison'
+- 'context-distribution-smoothing'
+implementations:
+- hyperwords
+corrects:
+- LIT-602
+compared_against:
+- LIT-603
+summary: >-
+  Levy, Goldberg and Dagan (TACL 2015). Takes the design choices bundled into
+  word2vec and GloVe (dynamic windows, subsampling, shifted PMI,
+  context-distribution smoothing, adding context vectors, eigenvalue
+  weighting), transfers them to count-based PPMI and SVD, and compares all
+  four methods under the same tuning: 672 representations, 8 similarity and
+  analogy datasets, and cross-validated selection. Once tuned alike, no
+  method wins consistently. A single hyperparameter often matters more than
+  the choice of method. SGNS beats GloVe on every task, reversing GloVe's
+  headline comparison. Smoothing the context distribution by 0.75 is the one
+  setting that helps everywhere.
+---
+
+# LIT-tmp56jtw: Improving Distributional Similarity with Lessons Learned from Word Embeddings
+
+Levy, Goldberg and Dagan, Bar-Ilan University — *TACL* 3 (2015), 211–225,
+DOI 10.1162/tacl_a_00134. Code: `bitbucket.org/omerlevy/hyperwords`.
+
+## Key takeaways
+
+- **The question** (§1). Baroni et al. (2014) found prediction-based
+  embeddings beat count-based methods by a clear margin. But SGNS
+  implicitly factorizes a shifted PMI matrix (Levy and Goldberg 2014), the
+  same statistic count methods use. So where does the gap come from?
+- **The answer is the unstated design choices** (§3). word2vec and GloVe
+  ship with choices that are "reported in passing" or "not even mentioned",
+  and each can be ported to PPMI and SVD. Pre-processing: dynamic context
+  windows and subsampling. Association: shifted PMI (log k) and
+  context-distribution smoothing (counts^0.75). Post-processing: adding
+  context vectors (w + c), eigenvalue weighting and normalization.
+- **Design matters more than method** (Tables 2–4). Tuning adds up to 15.7
+  points over the vanilla setting, and more than 6 on average. Changing one
+  hyperparameter often gains more than switching methods. Cross-validated
+  tuning (Table 5) comes within about 1 point of the oracle.
+- **No method wins consistently** (§5.3, Table 5). On similarity, SVD beats
+  SGNS on average at windows 2 and 5, and SGNS never leads SVD by more than
+  1.7 points. On Google analogies SGNS and GloVe lead PPMI by 3.7 points.
+  Only MSR's syntactic analogies show a large gap. Baroni et al.'s result
+  came from pre-tuned word2vec against vanilla PPMI and SVD, with SVD at its
+  worst setting (eig = 1).
+- **SGNS beats GloVe on every task** (Table 5), on the same corpus with w + c
+  allowed for both, and still at 10.5B words. The only exception is 3CosAdd,
+  where GloVe leads by 0.8.
+- **Context-distribution smoothing is the one safe default** (§6.2,
+  Table 8d). Raising context counts to 0.75 in PMI never hurts materially.
+  It helps PPMI by up to 9.2 points (MSR), and SGNS by 0–1.4.
+- **Other settings cut both ways** (Table 8). Subsampling raises SGNS
+  similarity by up to 2.2 and lowers its analogies by 4.4–5.4, and PPMI's by
+  5–12. Shifted PMI helps SGNS and wrecks SVD. w + c swings from +4.7 to
+  −8.9.
+- **SVD "correctly" is SVD badly** (§6.1, Table 6). Weighting word vectors
+  by the singular values (eig = 1) drops average similarity from .616 to
+  .534 at window 5. The symmetric variants (eig = 0.5 or 0) do much better.
+- **More data does not always beat tuning** (§5.2). At 10.5B words, 3 of 6
+  similarity tasks gain more from a wider hyperparameter search than from 7×
+  the corpus. Analogies gain from data.
+
+## Standing in the anthology
+
+**It is the controlled comparison the word-vector papers did not run.**
+[LIT-604](LIT-604.md)'s headline table compares vectors trained on different corpora and
+sizes. [LIT-602](LIT-602.md) ran word2vec at its defaults against a tuned GloVe, which
+[LIT-602](LIT-602.md) already flagged as a caveat. This paper tunes all methods on one
+corpus, and GloVe's advantage reverses. It is filed as `corrects` [LIT-602](LIT-602.md) on
+that claim. GloVe's formulation and its ratio argument stand.
+
+**It supplies the numbers [LIT-603](LIT-603.md) did not.** The unigram^(3/4) exponent was
+asserted "significantly" better with no table. Here it is measured as
+context-distribution smoothing, against α = 1 only. It helps
+everywhere and helps SGNS least. [SOTA-375](../practices.d/SOTA-375.md) carries the measurement, and
+[THEORY-tmpghqdh](../theory.d/THEORY-tmpghqdh.md) carries the paper's reason: PMI overweights rare contexts.
+
+**It qualifies [SOTA-374](../practices.d/SOTA-374.md).** Subsampling costs 4–12 points on analogies for
+SGNS and PPMI while helping similarity. The practice now records that it is
+contested on this evidence.
+
+**It files one practice of its own**, [SOTA-tmpl3rwi](../practices.d/SOTA-tmpl3rwi.md): before crediting an
+embedding method over count-based ones, give the baselines the same design
+choices and tune them alike. The same lesson appears for GNNs in [SOTA-349](../practices.d/SOTA-349.md) and
+[SOTA-350](../practices.d/SOTA-350.md), from other fields and other groups.
+
+**It supports [THEORY-089](../theory.d/THEORY-089.md).** If the methods fit the same co-occurrence
+statistics, they should converge once their design choices are aligned. That
+is what Table 5 shows.
+
+**Eigenvalue weighting and w + c are not filed as practices.** They are
+settings of particular methods ([ADR-041](../decisions.d/ADR-041.md)), and w + c's effect changes sign
+from task to task.
+
+## What it does not establish
+
+- **English Wikipedia, word-level, similarity and analogy only.** Footnote 8
+  says so: other tasks, data and hyperparameters "may yield other
+  conclusions". Downstream tasks are not evaluated.
+- **No significance tests.** "Insignificant differences" in the abstract
+  means small, not tested.
+- **The search space is the authors' choice.** GloVe keeps its default
+  weighting function and cannot use shifted PMI or smoothing, so "tuned
+  alike" means the same space where applicable. That is fair, and it is not
+  identical treatment.
+- **Smoothing is compared at α = 1 and 0.75 only.** It shows 0.75 beats no
+  smoothing. It does not show 0.75 is the best exponent.
+- **The large-corpus comparison is SGNS against GloVe only.** The count
+  methods did not fit in memory.
+
+<!-- inactive-ok-file: SOTA-375, THEORY-tmpghqdh, THEORY-089 — Proposed; the practice this paper measures, the account filed from it in this contribution, and the account it supports -->

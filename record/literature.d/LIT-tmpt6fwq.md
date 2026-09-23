@@ -1,0 +1,66 @@
+---
+status: Active
+title: 'LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale'
+version: 1
+tags:
+- numerics-and-precision
+- inference-optimization
+- analysis-and-evaluation
+date: '2026-09-23'
+published: '2022-08-15'
+arxiv: '2208.07339'
+first_author: 'Dettmers'
+keywords:
+- 'quantization'
+- 'int8'
+- 'outlier-features'
+- 'mixed-precision'
+summary: >-
+  Dettmers et al. (2022), [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339). Int8 inference for the
+  feed-forward and attention projections, at no measured cost in quality up
+  to 175B, by isolating a small set of systematically emergent outlier
+  feature dimensions into a 16-bit multiplication and quantizing the other
+  99.9% vector-wise.
+---
+
+# LIT-tmpt6fwq: LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale
+
+Dettmers et al. (2022) — [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339)
+
+## Key takeaways
+
+- **The method is two parts, and the second one is why it works.**
+  Vector-wise quantization — a separate normalization constant per inner
+  product rather than per tensor — handles most of the matrix. A
+  mixed-precision decomposition then pulls the outlier feature dimensions
+  out into a 16-bit multiplication, leaving more than 99.9% of values
+  multiplied in 8-bit.
+- **The outliers are systematic, not noise.** The paper's substantive
+  empirical contribution is the characterization: a small number of feature
+  dimensions emerge with very large magnitudes, they appear across layers,
+  and they dominate attention and predictive performance. Quantizing them
+  with everything else is what breaks naive int8 at scale — which is why
+  methods that worked on small models had been reported as failing on large
+  ones.
+- **The result is memory, not speed.** A 175B 16/32-bit checkpoint loads,
+  converts and runs immediately at half the memory with no degradation they
+  could measure. The stated payoff is access — OPT-175B and BLOOM on one
+  server of consumer GPUs — rather than throughput.
+
+## What this is doing in the record
+
+Filed from `#289`. The sweep flagged `bitsandbytes` as carried by both
+`vllm` and `transformers`, and reading the row apart showed it was two
+techniques under one library name: the 4-bit NF4 path, which the record
+already held as `SOTA-230` sourced to `LIT-378`, and this one, which it did
+not. `load_in_8bit=True` is this paper.
+
+## The claim worth watching
+
+"Without any performance degradation" is doing a lot of work, and the paper
+means it as *no degradation we measured on our evaluations up to 175B*. It
+is a strong result and it is an absence-of-evidence claim about a specific
+evaluation suite, which is the shape `DP-005` and `DP-010` both warn about.
+The emergent-outlier characterization is the part that has been independently
+built on; the no-degradation headline is the part a later, harder evaluation
+could move.

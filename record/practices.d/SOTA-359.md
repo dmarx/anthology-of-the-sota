@@ -18,7 +18,7 @@ history:
 - version: 2
   date: '2026-09-23'
   note: >-
-    `training-optimization` added and `extends: SOTA-tmp6lc4c` declared. The
+    `training-optimization` added and `extends: SOTA-360` declared. The
     tag is true of the document on its own terms — this practice's entire
     justification is a training-efficiency measurement, 3x and 4x in rate of
     transfer per unit compute — and someone browsing that topic would be
@@ -30,7 +30,7 @@ tags:
 - vision-and-graphics
 - training-optimization
 extends:
-- SOTA-tmp6lc4c
+- SOTA-360
 date: '2026-09-23'
 source:
 - LIT-588

@@ -6,7 +6,7 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-18 of 359 SOTA documents. Back to the [full index](../README.md).
+19 of 360 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -28,3 +28,4 @@
 | [SOTA-327](../../../record/practices.d/SOTA-327.md) | Train retrieval embeddings with nested losses, so a prefix of the vector can shortlist and the full vector re-rank | Kusupati, Bhatt, Rege et al. (2022), [LIT-547](../../../record/literature.d/LIT-547.md) — put the loss on log(d) nested prefixes of the embedding. Each prefix then matches a separately trained model of that width (ResNet50, ImageNet), and one database supports shortlisting on 16 dimensions and re-ranking on 2048: equal mAP@10, 14× faster. Measured on image retrieval. Widely shipped in text embedding models without an independent comparison in the record. | Proposed |
 | [SOTA-331](../../../record/practices.d/SOTA-331.md) | Pass low-dimensional coordinate inputs through sinusoids of sampled frequencies before an MLP, and tune the frequency scale rather than the distribution | Tancik et al. (2020), [LIT-550](../../../record/literature.d/LIT-550.md), with NeRF ([LIT-435](../../../record/literature.d/LIT-435.md)) — an MLP on raw coordinates never fits high frequencies. Map the input to `[cos 2πBv, sin 2πBv]` with `B ~ N(0, σ²)` and tune `σ` on held-out data: too small blurs, too large aliases, and the distribution's shape does not matter. Gaussian features beat no mapping and log-spaced positional encoding on all seven image, shape, CT, MRI and view-synthesis tasks tested. | Active |
 | [SOTA-346](../../../record/practices.d/SOTA-346.md) | Retune the training timestep shift for each autoencoder latent space, and never rank latent spaces for generation under one shared schedule | Black Forest Labs (2025), [LIT-572](../../../record/literature.d/LIT-572.md) — four autoencoders, 30 timestep configurations each. The training shift alone moves FID by 61–86%. An RAE latent that wins when both are tuned loses to a tuned FLUX.2 latent when left unshifted. When you swap the autoencoder under a diffusion or flow model, sweep the shift again, using a logit-normal training distribution. When you compare autoencoders, compare each at its own optimum. | Proposed |
+| [SOTA-360](../../../record/practices.d/SOTA-360.md) | Score a density ratio against sampled negatives instead of reconstructing the target |  | Active |

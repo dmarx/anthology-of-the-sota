@@ -6,7 +6,7 @@
 
 **The current account** — the best explanation the record holds for why this happens.
 
-29 of 84 THEORY documents. Back to the [full index](../README.md).
+30 of 85 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -39,3 +39,4 @@
 | [THEORY-076](../../../record/theory.d/THEORY-076.md) | Under the standard parametrization a learning rate that stays stable as width grows leaves the network training as a kernel, and µP is the parametrization that escapes this by updating every layer maximally | Yang and Hu (2020), [LIT-548](../../../record/literature.d/LIT-548.md) — Tensor Programs IV. Under SP a learning rate large enough to move the features blows up the logits, and one small enough to be stable (`O(1/width)`) leaves the wide limit a kernel machine. µP rescales the readout and first layer so a width-independent rate is both stable and maximal for every layer. A theorem for SGD on MLPs. Why the *optimum* then transfers, and under Adam, is TP-V's claim, not this one. | Active |
 | [THEORY-077](../../../record/theory.d/THEORY-077.md) | A coordinate MLP learns high frequencies slowly because its tangent kernel's spectrum falls off fast, and a sinusoidal input mapping works by making that kernel stationary with a bandwidth you choose | Tancik et al. (2020), [LIT-550](../../../record/literature.d/LIT-550.md) — in the NTK regime, error along each kernel eigenvector decays at a rate set by its eigenvalue, and a coordinate MLP's eigenvalues fall off fast with frequency. Sinusoids of the input give a stationary composed kernel whose bandwidth the frequencies set. The linear model predicts trained networks' loss curves. It is a kernel-regime account of an input encoding, not of feature learning. | Active |
 | [THEORY-083](../../../record/theory.d/THEORY-083.md) | A message-passing GNN can distinguish no more graphs than the 1-WL test, and reaches that limit only if its neighbor aggregation is injective on multisets, as a sum followed by an MLP is and a mean or max is not | Xu et al. (2019), [LIT-580](../../../record/literature.d/LIT-580.md) — each message-passing layer refines node labels as one 1-WL iteration can at best, so 1-WL bounds what the network separates. Injective aggregation reaches the bound. Sums of an MLP over a multiset are injective. Means lose counts and maxes lose multiplicities. It is a theorem, and it explains the paper's training-fit ordering and the collapse of mean aggregators to chance on featureless graphs. | Active |
+| [THEORY-085](../../../record/theory.d/THEORY-085.md) | InfoNCE maximizes a lower bound on mutual information that cannot exceed log N |  | Active |

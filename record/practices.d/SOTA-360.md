@@ -1,5 +1,8 @@
 ---
+number: 360
 status: Active
+formerly:
+- SOTA-tmp6lc4c
 consensus: universal
 consensus_note: >-
   Not doing it is what needs justifying, and the record can now show the
@@ -16,21 +19,21 @@ tags:
 - training-optimization
 date: '2026-09-23'
 source:
-- LIT-tmp5vq8g
+- LIT-589
 introduced_by:
-- LIT-tmp5vq8g
+- LIT-589
 implementations: []
 explained_by:
-- THEORY-tmpptbj9
+- THEORY-085
 extended_by:
 - SOTA-359
 ---
 
-# SOTA-tmp6lc4c: Score a density ratio against sampled negatives instead of reconstructing the target
+# SOTA-360: Score a density ratio against sampled negatives instead of reconstructing the target
 
 ## Source
 
-Oord et al. (2018), [LIT-tmp5vq8g](../literature.d/LIT-tmp5vq8g.md) — [ARXIV-1807.03748](https://arxiv.org/abs/1807.03748).
+Oord et al. (2018), [LIT-589](../literature.d/LIT-589.md) — [ARXIV-1807.03748](https://arxiv.org/abs/1807.03748).
 
 ## The claim
 
@@ -68,7 +71,7 @@ This is the part most often inverted, so state it twice:
   optimal `f` is the density ratio regardless of how many negatives you drew.
 - **The mutual-information bound does depend on `N`, and is capped by it.**
   `I ≥ log N − L`, which tightens with `N` and can never certify more than
-  `log N` — [THEORY-tmpptbj9](../theory.d/THEORY-tmpptbj9.md).
+  `log N` — [THEORY-085](../theory.d/THEORY-085.md).
 
 So "more negatives is better" is a claim about the *certificate*, not about
 the *objective*, and it saturates. Scaling the batch because a paper said

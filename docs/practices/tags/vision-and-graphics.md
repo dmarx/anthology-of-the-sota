@@ -6,7 +6,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-18 of 359 SOTA documents. Back to the [full index](../README.md).
+18 of 360 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -27,4 +27,4 @@
 | [SOTA-339](../../../record/practices.d/SOTA-339.md) | For unpaired image-to-image translation of appearance, constrain both mappings with a cycle-consistency loss | Zhu et al. (2017), [LIT-564](../../../record/literature.d/LIT-564.md) — learn X → Y and Y → X together, and penalize ‖F(G(x)) − x‖₁ and ‖G(F(y)) − y‖₁ alongside the two adversarial losses. With GAN losses alone the mapping may ignore its input. With the cycle it keeps content and changes appearance. It is scoped to colour and texture changes, and the authors report failure on geometric ones. | Proposed |
 | [SOTA-341](../../../record/practices.d/SOTA-341.md) | Condition an image generator on each training image's original size instead of discarding or upsampling small images | Podell et al. (2023), [LIT-566](../../../record/literature.d/LIT-566.md) — embed each training image's original height and width, like the timestep, and give it to the model. Then keep the small images that a minimum-resolution filter would drop (39% of SDXL's pretraining data below 256²) without teaching the model their blur. At inference, set the size you want. On class-conditional ImageNet 512²: FID-5k 43.84 discarding, 39.76 keeping unconditioned, 36.53 keeping with size conditioning. | Proposed |
 | [SOTA-358](../../../record/practices.d/SOTA-358.md) | Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not |  | Active |
-| [SOTA-359](../../../record/practices.d/SOTA-359.md) | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |
+| [SOTA-359](../../../record/practices.d/SOTA-359.md) v2 | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |

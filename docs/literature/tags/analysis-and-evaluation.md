@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-154 of 523 LIT documents. Back to the [full index](../README.md).
+155 of 524 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -164,3 +164,4 @@
 | [LIT-581](../../../record/literature.d/LIT-581.md) | Pitfalls of Graph Neural Network Evaluation | Shchur, Mumme, Bojchevski, Günnemann (R2L workshop, NeurIPS 2018), [ARXIV-1811.05868](https://arxiv.org/abs/1811.05868). GCN, GAT, MoNet and GraphSAGE were run with one shared training and tuning procedure, over 100 random splits × 20 seeds on 8 datasets. GCN has the best average rank (2.3) and relative accuracy (99.4%). On Planetoid's single split GAT wins Cora and Citeseer; on another random split of the same sizes GCN wins them. GAT's lower average on Amazon comes from 138 of 2,000 runs collapsing. | Active |
 | [LIT-586](../../../record/literature.d/LIT-586.md) | LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale | Dettmers et al. (2022), [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339). Int8 inference for the feed-forward and attention projections, at no measured cost in quality up to 175B, by isolating a small set of systematically emergent outlier feature dimensions into a 16-bit multiplication and quantizing the other 99.9% vector-wise. | Active |
 | [LIT-588](../../../record/literature.d/LIT-588.md) | Learning Transferable Visual Models From Natural Language Supervision | Radford et al. (2021), [ARXIV-2103.00020](https://arxiv.org/abs/2103.00020). Train an image encoder and a text encoder to match 400M (image, text) pairs contrastively, then build a classifier for any label set by embedding its class names. The most durable result is not the zero-shot accuracy — it is that supervised adaptation which raises ImageNet by 9.2% buys no average robustness. | Active |
+| [LIT-589](../../../record/literature.d/LIT-589.md) | Representation Learning with Contrastive Predictive Coding | Oord et al. (2018), [ARXIV-1807.03748](https://arxiv.org/abs/1807.03748). Predict the future in latent space and score it as a density ratio against sampled negatives, rather than reconstructing the observation. The loss is named InfoNCE here, and it is the objective CLIP, SimCLR and MoCo all run; the bound it maximizes is capped at log N, which the folklore about negatives leaves out. | Active |

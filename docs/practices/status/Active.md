@@ -6,7 +6,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-205 of 359 SOTA documents. Back to the [full index](../README.md).
+206 of 360 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -214,4 +214,5 @@
 | [SOTA-356](../../../record/practices.d/SOTA-356.md) | Protect the salient weight channels by scaling them before rounding, choosing them from the activations rather than the weights | Lin et al. (2023), [ARXIV-2306.00978](https://arxiv.org/abs/2306.00978). Identify the ~1% of weight channels whose activations are largest, scale them up by an equivalent transformation before rounding, and quantize everything uniformly — rather than keeping the important channels in higher precision. | Active |
 | [SOTA-357](../../../record/practices.d/SOTA-357.md) | Build a zero-shot classifier from prompt templates and ensemble them in embedding space |  | Active |
 | [SOTA-358](../../../record/practices.d/SOTA-358.md) | Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not |  | Active |
-| [SOTA-359](../../../record/practices.d/SOTA-359.md) | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |
+| [SOTA-359](../../../record/practices.d/SOTA-359.md) v2 | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |
+| [SOTA-360](../../../record/practices.d/SOTA-360.md) | Score a density ratio against sampled negatives instead of reconstructing the target |  | Active |

@@ -1,5 +1,8 @@
 ---
+number: 85
 status: Active
+formerly:
+- THEORY-tmpptbj9
 title: 'InfoNCE maximizes a lower bound on mutual information that cannot exceed log N'
 version: 1
 tags:
@@ -7,16 +10,16 @@ tags:
 - representation-and-encoding
 date: '2026-09-23'
 source:
-- LIT-tmp5vq8g
+- LIT-589
 explains:
-- SOTA-tmp6lc4c
+- SOTA-360
 ---
 
-# THEORY-tmpptbj9: InfoNCE maximizes a lower bound on mutual information that cannot exceed log N
+# THEORY-085: InfoNCE maximizes a lower bound on mutual information that cannot exceed log N
 
 ## Source
 
-Oord et al. (2018), [LIT-tmp5vq8g](../literature.d/LIT-tmp5vq8g.md) — [ARXIV-1807.03748](https://arxiv.org/abs/1807.03748), §2.3.
+Oord et al. (2018), [LIT-589](../literature.d/LIT-589.md) — [ARXIV-1807.03748](https://arxiv.org/abs/1807.03748), §2.3.
 
 ## The claim
 
@@ -57,7 +60,7 @@ about what the encoder has *learned*. So:
 
 ## Standing
 
-Filed as the account behind [SOTA-tmp6lc4c](../practices.d/SOTA-tmp6lc4c.md), and filed separately from it
+Filed as the account behind [SOTA-360](../practices.d/SOTA-360.md), and filed separately from it
 because it is the kind of claim `ADR-031` splits out: the practice can be
 right while this explanation is the wrong reason for it. A subsequent
 literature argues exactly that — that the MI framing is a poor account of why

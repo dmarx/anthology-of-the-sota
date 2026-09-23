@@ -6,7 +6,7 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-8 of 84 THEORY documents. Back to the [full index](../README.md).
+9 of 85 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -18,3 +18,4 @@
 | [THEORY-058](../../../record/theory.d/THEORY-058.md) | Apparent compression in the information plane is saturating activations collapsing into extreme bins, not information being discarded | Saxe et al. (2018), [LIT-509](../../../record/literature.d/LIT-509.md) — a `tanh` unit must grow its weights to compute anything nonlinear, and as it does its activity piles into the saturation regions. Under a fixed binning that is a distribution collapsing into two bins — about **1 bit** — which the information plane draws as a compression phase. `Proposed`, because [LIT-507](../../../record/literature.d/LIT-507.md) shows compression in *some* non-saturating networks once the bins are placed adaptively. | Proposed |
 | [THEORY-063](../../../record/theory.d/THEORY-063.md) | Contextual concept directions sit in the low-variance tail of the unembedding spectrum while vocabulary contrasts sit at the top | Acharya, Rimal and Dhakal (2026), [LIT-526](../../../record/literature.d/LIT-526.md) — concept directions read out of the residual stream anti-concentrate in the low-eigenvalue directions of the unembedding second moment, in 17 of 17 models and by three independent extraction methods. Static unembedding-row contrasts do the opposite. So the same model carries semantic content at both ends of one spectrum, depending on whether the representation is contextual. | Proposed |
 | [THEORY-077](../../../record/theory.d/THEORY-077.md) | A coordinate MLP learns high frequencies slowly because its tangent kernel's spectrum falls off fast, and a sinusoidal input mapping works by making that kernel stationary with a bandwidth you choose | Tancik et al. (2020), [LIT-550](../../../record/literature.d/LIT-550.md) — in the NTK regime, error along each kernel eigenvector decays at a rate set by its eigenvalue, and a coordinate MLP's eigenvalues fall off fast with frequency. Sinusoids of the input give a stationary composed kernel whose bandwidth the frequencies set. The linear model predicts trained networks' loss curves. It is a kernel-regime account of an input encoding, not of feature learning. | Active |
+| [THEORY-085](../../../record/theory.d/THEORY-085.md) | InfoNCE maximizes a lower bound on mutual information that cannot exceed log N |  | Active |

@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-45 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+46 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -327,3 +327,8 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [SOTA-218](../record/practices.d/SOTA-218.md) — Retune the learning rate, momentum and schedule at every batch size you compare, never by a scaling heuristic *(Active, unreplicated)*
 - alongside: [SOTA-221](../record/practices.d/SOTA-221.md) — To train past the batch size where your optimizer stalls, change the optimizer's conditioning rather than the scaling rule *(Active, unreplicated)*
+
+### From Score a density ratio against sampled negatives instead of reconstructing the target
+
+- [SOTA-360](../record/practices.d/SOTA-360.md) — Score a density ratio against sampled negatives instead of reconstructing the target *(Active, universal)*
+  - [SOTA-359](../record/practices.d/SOTA-359.md) — Supervise vision from the caption, and match image to caption rather than predicting its words *(Active, converged)*

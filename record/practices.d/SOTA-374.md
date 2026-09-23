@@ -4,13 +4,18 @@ status: Active
 formerly:
 - SOTA-tmpt56rt
 title: 'When learning embeddings from co-occurrence, subsample very frequent tokens, discarding each occurrence with probability 1 − √(t/f) with t around 10⁻⁵'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-23'
   note: >-
     Marked contested: an independent ablation (LIT-607) finds it helps
     similarity and costs 4-12 points on analogies. Status unchanged.
+- version: 3
+  date: '2026-09-23'
+  note: >-
+    Adds Baroni et al. (LIT-tmpat5ys), whose best CBOW configurations all
+    subsample. Still contested.
 tags:
 - data-pipeline
 - representation-and-encoding
@@ -68,3 +73,6 @@ Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md). Read as [NOTE-326]
   Google and MSR analogies −4.4 and −5.4. For PPMI the analogy losses are 5.0
   and 12.2. The best SGNS configuration used subsampling on 4 of 8 tasks. Use
   it for speed, and check the task before counting on an accuracy gain
+- **Baroni et al. ([LIT-tmpat5ys](../literature.d/LIT-tmpat5ys.md)) point the other way on their mix.** Every
+  one of their ten best CBOW configurations, ranked across 14 benchmarks
+  mostly of relatedness and categorization, uses subsampling

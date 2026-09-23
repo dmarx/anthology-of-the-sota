@@ -10,7 +10,13 @@ consensus_note: >-
   the record for graph networks from other groups (SOTA-349, SOTA-350). This
   field-specific version has one source.
 title: 'Before crediting a word-embedding method over count-based ones, give the baselines the same design choices and tune every method alike'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    `corrects` SOTA-tmpcx9ae, the Baroni et al. recommendation it overturns,
+    filed after it.
 tags:
 - analysis-and-evaluation
 - representation-and-encoding
@@ -19,6 +25,8 @@ source:
 - LIT-607
 introduced_by:
 - LIT-607
+corrects:
+- SOTA-tmpcx9ae
 implementations:
 - hyperwords
 summary: >-
@@ -52,7 +60,9 @@ Levy, Goldberg and Dagan (2015), [LIT-607](../literature.d/LIT-607.md), read as 
 
 ## Why
 
-Baroni et al. (2014) found prediction-based embeddings well ahead. They had
+Baroni et al. (2014, [LIT-tmpat5ys](../literature.d/LIT-tmpat5ys.md)) found prediction-based embeddings well
+ahead, and recommended them ([SOTA-tmpcx9ae](SOTA-tmpcx9ae.md), now `Rejected`; this practice
+`corrects` it). They had
 compared word2vec with its recommended settings against vanilla PPMI and SVD,
 with SVD at its worst setting. Equalizing the settings removes the
 consistent gap. GloVe's win over word2vec reverses the same way. Tuning is
@@ -71,3 +81,5 @@ worth up to 15.7 points over vanilla, more than the gap between methods.
 ## Known implementations
 
 - `hyperwords` (the authors' code)
+
+<!-- inactive-ok-file: SOTA-tmpcx9ae — Rejected, and named as the retired recommendation; this citation records its retirement -->

@@ -1,0 +1,71 @@
+---
+status: Active
+title: 'VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning'
+version: 1
+tags:
+- representation-and-encoding
+- model-stability
+- vision-and-graphics
+date: '2026-09-23'
+published: '2021-05-01'
+arxiv: '2105.04906'
+first_author: 'Bardes'
+keywords:
+- 'variance-regularization'
+- 'decorrelation'
+- 'representation-collapse'
+- 'joint-embedding'
+compared_against:
+- LIT-tmpovcux
+summary: >-
+  Bardes et al. (2021), [ARXIV-2105.04906](https://arxiv.org/abs/2105.04906). Three explicit terms — a hinge
+  keeping each embedding dimension's standard deviation above a threshold,
+  an invariance term, and a decorrelation term — applied to each branch
+  separately. Needs no weight sharing, batch norm, stop-gradient or memory
+  bank, and the variance term transplants into other methods and improves
+  them.
+---
+
+# LIT-tmpipfcy: VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning
+
+Bardes et al. (2021) — [ARXIV-2105.04906](https://arxiv.org/abs/2105.04906)
+
+## Key takeaways
+
+- **Collapse is prevented by naming it and penalising it.** Three terms:
+  **variance**, a hinge `mean(max(0, γ − std(z_j)))` over embedding
+  dimensions with `γ = 1`, which simply forbids a dimension from going
+  constant; **invariance**, the mean-squared error between the two views'
+  embeddings; **covariance**, driving off-diagonal covariance entries to
+  zero so the dimensions do not encode the same thing.
+- **The difference from Barlow Twins is where the regularisation is
+  applied**, and the paper is explicit: VICReg regularises **each branch
+  separately**, while Barlow Twins works on the cross-correlation *between*
+  the branches. That independence is what lets VICReg drop weight sharing
+  between branches — the two encoders need not even be the same network.
+- **The list of things it does not need is the contribution.** "Weight
+  sharing between the branches, batch normalization, feature-wise
+  normalization, output quantization, stop gradient, memory banks". Every
+  item on that list is a mechanism some other method treats as essential.
+- **The variance term transplants.** The paper reports it "stabilizes the
+  training of other methods and leads to performance improvements" — which
+  makes it the one component of this cluster with evidence of working
+  outside its own method, and the reason [SOTA-tmpacu6q](../practices.d/SOTA-tmpacu6q.md) is stated as a
+  component rather than as a method.
+- **73.2% ImageNet top-1**, the same figure Barlow Twins reports. Four
+  mechanisms — predictor-plus-EMA, stop-gradient alone, cross-correlation
+  identity, explicit variance floor — all land within a couple of points of
+  <!-- inactive-ok: THEORY-tmpf89jm — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
+  each other, which is itself the evidence [THEORY-tmpf89jm](../theory.d/THEORY-tmpf89jm.md) rests on.
+
+## Standing in the anthology
+
+Unit C of `#304`. `compared_against: LIT-tmpovcux` because VICReg runs the
+comparison and names the architectural difference; the converse could not
+have been run, as Barlow Twins is the earlier paper.
+
+Worth noting for the record's own vocabulary: VICReg's framing splits the
+field into "contrastive methods and information maximization methods", which
+<!-- inactive-ok: THEORY-tmpf89jm — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
+is a third way of carving up what [THEORY-tmpf89jm](../theory.d/THEORY-tmpf89jm.md) treats as two families.
+The carve-ups do not agree either.

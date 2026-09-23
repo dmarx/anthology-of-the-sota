@@ -1,0 +1,68 @@
+---
+status: Active
+title: 'How Powerful are Graph Neural Networks?'
+version: 1
+tags:
+- model-architecture
+- analysis-and-evaluation
+date: '2026-09-23'
+published: '2018-10-01'
+arxiv: '1810.00826'
+first_author: 'Xu'
+keywords:
+- 'gin'
+- 'weisfeiler-lehman'
+- 'expressive-power'
+- 'aggregation'
+- 'graph-classification'
+implementations: []
+compared_against:
+- LIT-tmpmpeg8
+- LIT-tmp4yk7i
+summary: >-
+  Xu, Hu, Leskovec, Jegelka (ICLR 2019), [ARXIV-1810.00826](https://arxiv.org/abs/1810.00826). Message-passing
+  GNNs are at most as discriminative as the 1-WL isomorphism test, and they
+  reach that bound when aggregation and readout are injective on multisets.
+  Sum aggregation with an MLP update (GIN) is; mean (GCN) and max
+  (GraphSAGE) are not. On featureless Reddit graphs, mean-aggregation GNNs
+  are at chance (50.0, 20.0) and GIN scores 92.4 and 57.5. On the other
+  seven benchmarks, most differences are within a standard deviation.
+---
+
+# LIT-tmp95aa1: How Powerful are Graph Neural Networks?
+
+Xu, Hu, Leskovec, Jegelka, MIT and Stanford (ICLR 2019) — [ARXIV-1810.00826](https://arxiv.org/abs/1810.00826)
+
+## Key takeaways
+
+- **Upper bound** (Lemma 2): any aggregate-and-combine GNN is at most as
+  powerful as the 1-WL test at distinguishing graphs
+- **Achieving it** (Theorem 3): it is achieved when the neighbor aggregation,
+  the combine step and the graph readout are injective. Sums of an MLP over
+  a multiset are injective (Lemma 5), and this gives
+  `h_v = MLP((1 + ε)·h_v + Σ_u h_u)`
+- **Mean and max are weaker** (§5): mean captures the distribution of
+  neighbor features, not their counts. Max captures only the set. Figure 3
+  gives simple structures both fail to distinguish
+- **Training fit** (Figure 4): sum–MLP fits every training set almost
+  perfectly, and mean, max and 1-layer variants underfit many of them, in
+  the predicted order
+- **Test accuracy** (Table 1, 10-fold CV): GIN-0 is best or statistically
+  tied on all 9 datasets. The large gaps are on REDDIT-BINARY and MULTI-5K,
+  which have no node features: sum 92.4 and 57.5, mean exactly at chance.
+  Even with degree features, mean scores 71.2 and 41.3. Elsewhere,
+  differences are mostly within one standard deviation. On PTC, mean–MLP
+  (66.6) beats GIN-0 (64.6)
+
+## Standing in the anthology
+
+**Filed from `#163`** ("graph representation / gnn"). It is
+`compared_against` GCN ([LIT-tmpmpeg8](LIT-tmpmpeg8.md)), whose mean aggregator it analyzes. It
+sources [THEORY-tmplxq36](../theory.d/THEORY-tmplxq36.md) and [SOTA-tmpola8o](../practices.d/SOTA-tmpola8o.md).
+
+**What the table shows and what the abstract says.** "GIN achieves
+state-of-the-art" rests on ties within noise on most datasets. The decisive
+evidence is the featureless Reddit graphs and the training-fit curves,
+which is where the theory predicts a difference.
+
+Read — [NOTE-tmpvkwpe](../notes.d/NOTE-tmpvkwpe.md).

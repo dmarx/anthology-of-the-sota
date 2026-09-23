@@ -1,0 +1,84 @@
+---
+status: Active
+title: 'GloVe: Global Vectors for Word Representation'
+version: 1
+tags:
+- representation-and-encoding
+- signal-structure
+date: '2026-09-23'
+published: '2014-10-01'
+doi: '10.3115/v1/D14-1162'
+first_author: 'Pennington'
+keywords:
+- 'glove'
+- 'word-embeddings'
+- 'co-occurrence'
+- 'matrix-factorization'
+- 'word-analogy'
+implementations:
+- GloVe
+compared_against:
+- LIT-tmp55q30
+summary: >-
+  Pennington, Socher and Manning (EMNLP 2014), DOI 10.3115/v1/D14-1162.
+  Meaning shows in ratios of co-occurrence probabilities, not in the
+  probabilities themselves, so word vectors should make differences encode
+  log ratios. That leads to a weighted least-squares fit of wᵢ·w̃ⱼ + bᵢ +
+  b̃ⱼ to log Xᵢⱼ over nonzero counts, with a weight capped at x_max = 100 and
+  exponent 3/4. It scores 75.0% on the word analogy test with 42B tokens,
+  and 71.7% against word2vec skip-gram's 69.1% on the same 6B tokens. The
+  word2vec side of that comparison ran at default settings.
+---
+
+# LIT-tmp1v5mg: GloVe: Global Vectors for Word Representation
+
+Pennington, Socher and Manning, Stanford (EMNLP 2014) — DOI
+10.3115/v1/D14-1162
+
+## Key takeaways
+
+- **The argument from ratios** (§3, Table 1): on 6B tokens, P(solid|ice) /
+  P(solid|steam) = 8.9 and P(gas|ice) / P(gas|steam) = 0.085. For words
+  related to both or neither ("water", "fashion") the ratio is about 1. Raw
+  probabilities are dominated by frequent, non-discriminative words, while
+  ratios cancel them
+- **From that to a model:** require vector differences to encode log
+  ratios. Symmetry and a bias term give wᵢᵀw̃ⱼ + bᵢ + b̃ⱼ = log Xᵢⱼ. It is fit
+  by weighted least squares over nonzero co-occurrences, with f(x) =
+  (x/x_max)^α below x_max and 1 above. x_max = 100, and α = 3/4 gives "a
+  modest improvement" over α = 1. The final vector is W + W̃
+- **Relation to skip-gram** (§3.1): skip-gram's objective, summed over the
+  corpus, is a weighted cross-entropy on the same co-occurrence statistics.
+  GloVe is the "global" least-squares variant
+- **Results** (Tables 2–3): word analogy 75.0% (300d, 42B tokens). On 6B
+  tokens: GloVe 71.7%, skip-gram 69.1%, CBOW 65.7%, SVD on log counts 60.1%.
+  Word similarity, 42B: WS353 75.9 and RW 47.8. Context: 10 words either
+  side, with counts weighted 1/distance
+- **Against word2vec at equal time** (§4.7, Figure 4): same corpus,
+  vocabulary, window and dimension. Time is GloVe iterations against
+  word2vec negative samples, because the word2vec tool runs one epoch.
+  GloVe is ahead throughout
+
+## Standing in the anthology
+
+Filed on request, with the two word2vec papers ([LIT-tmp9cbir](LIT-tmp9cbir.md), [LIT-tmp55q30](LIT-tmp55q30.md)).
+It is `compared_against` the second. It is a source for [THEORY-tmp472k3](../theory.d/THEORY-tmp472k3.md).
+
+**`signal-structure`, because its founding argument is about language.**
+Which statistic carries meaning is a claim about text, and the ice/steam
+table is a measurement of it.
+
+**The comparison with word2vec is on word2vec's defaults.** The authors say
+so: they "set any unspecified parameters to their default values, assuming
+that they are close to optimal", and acknowledge this "should be relaxed".
+Training time for word2vec is varied through the number of negative samples,
+because its tool could not run more epochs, and its accuracy falls past
+about 10 samples. The margin is 2.6 points at 6B tokens. The record holds
+no re-tuned comparison.
+
+**No practice.** Its weighting function and constants are GloVe's own.
+Under [ADR-041](../decisions.d/ADR-041.md) they stay in the reading.
+
+Read — [NOTE-tmpw8lop](../notes.d/NOTE-tmpw8lop.md).
+
+<!-- inactive-ok-file: THEORY-tmp472k3 — Proposed, filed in this same contribution from this paper -->

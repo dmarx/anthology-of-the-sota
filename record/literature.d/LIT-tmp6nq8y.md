@@ -1,0 +1,84 @@
+---
+status: Active
+title: 'Unsupervised Learning of Visual Features by Contrasting Cluster Assignments'
+version: 1
+tags:
+- representation-and-encoding
+- data-pipeline
+- model-stability
+- vision-and-graphics
+date: '2026-09-23'
+published: '2020-06-01'
+arxiv: '2006.09882'
+first_author: 'Caron'
+keywords:
+- 'clustering'
+- 'swapped-prediction'
+- 'equipartition'
+- 'multi-crop'
+- 'self-supervised-learning'
+summary: >-
+  Caron et al. (2020), [ARXIV-2006.09882](https://arxiv.org/abs/2006.09882). Predict one view's cluster code
+  from another view's representation instead of comparing features
+  pairwise, with an equipartition constraint doing the anti-collapse work.
+  75.3% ImageNet linear — and multi-crop, which is the part that
+  transplants into other methods for 2-4 points.
+---
+
+# LIT-tmp6nq8y: Unsupervised Learning of Visual Features by Contrasting Cluster Assignments
+
+Caron et al. (2020) — [ARXIV-2006.09882](https://arxiv.org/abs/2006.09882)
+
+## Key takeaways
+
+- **Compare through prototypes, not pairwise.** Map each view's feature to
+  `K` trainable prototypes to get a *code*, then use a **swapped
+  prediction**: predict one view's code from the other view's
+  representation. No pairwise feature comparison, so no large batch and no
+  memory bank — "can be trained with large and small batches and can scale
+  to unlimited amounts of data".
+- **Equipartition is the anti-collapse mechanism, and it is a constraint
+  rather than a dynamic.** Codes are computed within the batch under the
+  constraint that examples are **equally partitioned across prototypes** —
+  Sinkhorn-Knopp on a transportation polytope restricted to the minibatch,
+  adapted from a full-dataset formulation. The paper's own justification:
+  this "ensures that the codes for different images in a batch are distinct,
+  thus preventing the trivial solution where every image has the same code".
+  This is a fifth account of collapse-avoidance, different from all four in
+  <!-- inactive-ok: THEORY-tmpf89jm — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
+  [THEORY-tmpf89jm](../theory.d/THEORY-tmpf89jm.md).
+- **And it has its own collapse knob, pointing the wrong way.** The entropy
+  regularisation `ε` smooths the assignment; "a strong entropy
+  regularization generally leads to a trivial solution where all samples
+  collapse into an unique representation and are all assigned uniformly to
+  all prototypes", so `ε` is kept low. A mechanism that prevents collapse has
+  a setting at which it causes it.
+- **Multi-crop is the separable contribution and the one that travels.**
+  Instead of two full-resolution views, use two standard crops plus several
+  smaller ones — more views at no extra compute or memory, because the extra
+  views are cheap. The paper does not keep it: applied to **SimCLR,
+  DeepCluster and DeepCluster-v2** it "consistently improves the performance
+  for all the considered methods by a significant margin of 2–4% top-1".
+  Filed as [SOTA-tmpoe0zb](../practices.d/SOTA-tmpoe0zb.md).
+- **Numbers.** 75.3% ImageNet top-1 linear with a standard ResNet-50, 78.5%
+  with a wider model; +4.2% over the prior state of the art and within 1.2%
+  of a fully supervised model on frozen features; surpasses supervised
+  pretraining on all transfer tasks considered. Pretraining on *random*
+  non-ImageNet images still beats training from scratch by +1.3%.
+
+## Standing in the anthology
+
+Unit D of `#304`, and filed as a **substrate defect**: `SOTA-337` is an
+`Active` practice that tells the reader to "report a CLIP or SwAV Fréchet
+distance beside FID" when an ImageNet-pretrained network has touched a
+generator's training, and its measured table carries a `SwAV FD` column. The
+record recommended an instrument it held no note for.
+
+That note also says SwAV "is partly independent: self-supervised, but on
+ImageNet images", which this reading grounds: the objective uses no labels,
+but the 75.3% headline is ImageNet-pretrained, and the paper's own
+random-image experiment is a separate and much smaller result. The partial
+independence is real and the qualification is doing work.
+
+<!-- inactive-ok: THEORY-tmpf89jm — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
+Sources [SOTA-tmpoe0zb](../practices.d/SOTA-tmpoe0zb.md), and is added as a fifth source to [THEORY-tmpf89jm](../theory.d/THEORY-tmpf89jm.md).

@@ -10,7 +10,7 @@ consensus_note: >-
   absorb the doubled on-chip footprint, citing this. Nobody has disputed it
   and nobody has independently reproduced the analysis.
 title: "Keep the attention output in FP32 during training, because flash attention's rounding bias compounds instead of cancelling"
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-18'
@@ -20,6 +20,13 @@ history:
   date: '2026-09-18'
   note: >-
     Adds `systems-optimization`, whose blurb names numerical precision — which is exactly what keeping the attention output in FP32 is about, and the value its line holds in common (ADR-049).
+- version: 4
+  date: '2026-09-23'
+  note: >-
+    Corrected a stale description of SOTA-085. It called that practice a
+    bodyless migration stub that says nothing about precision. SOTA-085 has since been written up: it treats flash attention
+    as exact, names accumulation order as the one numerical change, and
+    points here.
 tags:
 - numerics-and-precision
 # `flash-attention` removed. #101 added it to both this practice and its
@@ -103,13 +110,10 @@ worth carrying is that a loss spike is not a flake.
 
 ## What it qualifies
 
-<!-- inactive-ok-block: ADR-012 — Deferred, and named as the decision that
-     describes the bodyless stub this qualifies -->
-[SOTA-085](SOTA-085.md) says to use flash attention wherever the hardware supports it, and
-says nothing about precision — it is one of the bodyless migration stubs
-[ADR-012](../decisions.d/ADR-012.md) is about, so the configuration that fails is not something it
-recommends so much as something it fails to rule out. This practice extends
-it with the part that turned out to matter.
+[SOTA-085](SOTA-085.md) says to use flash attention wherever the hardware supports it, because
+the result is exact. The one numerical change it names is the order of
+accumulation, and it points here for why that matters at scale. This practice
+extends it with that part, which turned out to be the part that matters.
 
 ## Known implementations
 

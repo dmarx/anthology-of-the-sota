@@ -4,8 +4,18 @@ status: Active
 formerly:
 - THEORY-tmprceog
 title: 'A phrase placed in a word slot is read as a lemma, and the reading comes from the construction rather than the phrase''s frequency'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Took `signal-structure` as the primary topic when ADR-045 v3 added it.
+    The subject is a property of language, the signal, and `representation-
+    and-encoding` had been the closest word available, not a good fit
+    (ADR-045's own words). That tag stays second, because the practices
+    under it act on the structure this describes.
 tags:
+- signal-structure
 - representation-and-encoding
 date: '2026-09-17'
 source:
@@ -22,6 +32,8 @@ summary: >-
   **the lexical unit is delimited by construction, not by how often the string
   has been seen**, which is the assumption a frequency-merge tokenizer makes.
 ---
+
+<!-- inactive-ok-file: ADR-045 — Proposed, and named in the history as the decision this theory is filed under and that added its primary topic -->
 
 
 # THEORY-022: A phrase placed in a word slot is read as a lemma, and the reading comes from the construction rather than the phrase's frequency

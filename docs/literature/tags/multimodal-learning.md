@@ -6,7 +6,7 @@
 
 **Multimodal learning** — what changes when one model has to take in more than one kind of signal — joint architectures and fusion, contrastive image-text training, cross-modal transfer, and what a second modality buys the first.
 
-10 of 539 LIT documents. Back to the [full index](../README.md).
+11 of 540 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,4 @@
 | [LIT-483](../../../record/literature.d/LIT-483.md) | Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models | Liang et al. (2024), [ARXIV-2411.04996](https://arxiv.org/abs/2411.04996). Untie every non-embedding parameter by modality — feed-forward, attention projections, layer norms — and keep global self-attention over the whole sequence. Matches a dense baseline at **55.8% of the FLOPs** in the Chameleon setting and 37.2% with speech added. The component ablation is the useful part: the feed-forward carries most of it, attention adds less, layer norms add nothing. | Active |
 | [LIT-510](../../../record/literature.d/LIT-510.md) | Gemini: A Family of Highly Capable Multimodal Models | Gemini Team, Google (2023), [ARXIV-2312.11805](https://arxiv.org/abs/2312.11805) — held for its evaluation methodology rather than its models. Its appendices publish three things the record wanted: an MMLU sweep in which the **ordering against GPT-4 flips** depending on the inference procedure; a measurement of how cheaply a benchmark can be inflated (**100 fine-tuning steps** on HellaSwag-adjacent web extracts take Ultra to 96.0% at 1-shot); and a FLEURS ablation retraining without the benchmark's own training set. Read as [NOTE-255](../../../record/notes.d/NOTE-255.md). | Active |
 | [LIT-588](../../../record/literature.d/LIT-588.md) | Learning Transferable Visual Models From Natural Language Supervision | Radford et al. (2021), [ARXIV-2103.00020](https://arxiv.org/abs/2103.00020). Train an image encoder and a text encoder to match 400M (image, text) pairs contrastively, then build a classifier for any label set by embedding its class names. The most durable result is not the zero-shot accuracy — it is that supervised adaptation which raises ImageNet by 9.2% buys no average robustness. | Active |
+| [LIT-605](../../../record/literature.d/LIT-605.md) | Sigmoid Loss for Language Image Pre-Training | Zhai et al. (2023), [ARXIV-2303.15343](https://arxiv.org/abs/2303.15343). Replace CLIP's softmax with a pairwise sigmoid, so the loss never needs a global view of the similarity matrix — no all-gathers, only a per-device block in memory, and better results below 16k batch. Then trains at batch size one million and finds the benefit saturated at 32k. | Active |

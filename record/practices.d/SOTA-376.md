@@ -1,5 +1,8 @@
 ---
+number: 376
 status: Active
+formerly:
+- SOTA-tmpgxyyv
 consensus: emerging
 consensus_note: >-
   Adopted where it matters and not universal. `#290`'s reading of
@@ -16,19 +19,19 @@ tags:
 - training-optimization
 date: '2026-09-23'
 source:
-- LIT-tmprdppj
+- LIT-605
 introduced_by:
-- LIT-tmprdppj
+- LIT-605
 extends:
 - SOTA-359
 implementations: []
 ---
 
-# SOTA-tmpgxyyv: Score each image-text pair independently with a sigmoid, so the loss needs no global normalization
+# SOTA-376: Score each image-text pair independently with a sigmoid, so the loss needs no global normalization
 
 ## Source
 
-Zhai et al. (2023), [LIT-tmprdppj](../literature.d/LIT-tmprdppj.md) — [ARXIV-2303.15343](https://arxiv.org/abs/2303.15343).
+Zhai et al. (2023), [LIT-605](../literature.d/LIT-605.md) — [ARXIV-2303.15343](https://arxiv.org/abs/2303.15343).
 
 ## The claim
 

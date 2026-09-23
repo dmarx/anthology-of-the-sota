@@ -6,7 +6,7 @@
 
 **Multimodal learning** — what changes when one model has to take in more than one kind of signal — joint architectures and fusion, contrastive image-text training, cross-modal transfer, and what a second modality buys the first.
 
-4 of 375 SOTA documents. Back to the [full index](../README.md).
+6 of 377 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -14,3 +14,5 @@
 | [SOTA-271](../../../record/practices.d/SOTA-271.md) | Train on a second modality even when the target is single-modality | Huh et al. (2024), [LIT-458](../../../record/literature.d/LIT-458.md) — if representations converge on a modality-agnostic model of what generated the data, then data from any modality helps find it. The vision direction is already common practice; the language direction is not, and the paper cites a case where adding image data improved text performance. | Proposed |
 | [SOTA-357](../../../record/practices.d/SOTA-357.md) | Build a zero-shot classifier from prompt templates and ensemble them in embedding space |  | Active |
 | [SOTA-359](../../../record/practices.d/SOTA-359.md) v2 | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |
+| [SOTA-376](../../../record/practices.d/SOTA-376.md) | Score each image-text pair independently with a sigmoid, so the loss needs no global normalization |  | Active |
+| [SOTA-377](../../../record/practices.d/SOTA-377.md) | Stop scaling the contrastive batch past about 32k, because the benefit saturates there |  | Active |

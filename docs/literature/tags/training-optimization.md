@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-126 of 539 LIT documents. Back to the [full index](../README.md).
+127 of 540 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -136,3 +136,4 @@
 | [LIT-562](../../../record/literature.d/LIT-562.md) | Projected GANs Converge Faster | Sauer, Chitta, Müller, Geiger (2021), [ARXIV-2111.01007](https://arxiv.org/abs/2111.01007). Feed real and generated images through a frozen ImageNet-pretrained EfficientNet, mix its multi-scale features with fixed random 1×1 and 3×3 convolutions, and put a small discriminator on each scale. FID reaches StyleGAN2's best on LSUN-Church after 1.1M images instead of 88M, and beats it on 22 datasets. A later analysis ([LIT-563](../../../record/literature.d/LIT-563.md)) shows part of the gain is in FID's perceptual null space: at equal FID, humans and a CLIP-feature distance prefer StyleGAN2. | Active |
 | [LIT-590](../../../record/literature.d/LIT-590.md) | Momentum Contrast for Unsupervised Visual Representation Learning | He et al. (2019), [ARXIV-1911.05722](https://arxiv.org/abs/1911.05722). Reframes contrastive learning as dictionary look-up and asks for a dictionary that is both large and consistent: a queue makes it large independently of the batch, and an EMA-updated key encoder makes it consistent. The momentum ablation is the result that propagated — at m=0 it does not train at all. | Active |
 | [LIT-603](../../../record/literature.d/LIT-603.md) | Distributed Representations of Words and Phrases and their Compositionality | Mikolov, Sutskever, Chen, Corrado and Dean (NIPS 2013), [ARXIV-1310.4546](https://arxiv.org/abs/1310.4546). Makes skip-gram fast and better. Negative sampling replaces the softmax with logistic regression against k noise words drawn from the unigram distribution raised to the 3/4 power. Frequent words are subsampled, with discard probability 1 − √(t/f) at t ≈ 10⁻⁵, which runs 2–10× faster and helps rare words. High-PMI bigrams become single tokens. Vector sums compose meanings, for example Russian + river ≈ Volga River. | Active |
+| [LIT-605](../../../record/literature.d/LIT-605.md) | Sigmoid Loss for Language Image Pre-Training | Zhai et al. (2023), [ARXIV-2303.15343](https://arxiv.org/abs/2303.15343). Replace CLIP's softmax with a pairwise sigmoid, so the loss never needs a global view of the similarity matrix — no all-gathers, only a per-device block in memory, and better results below 16k batch. Then trains at batch size one million and finds the benefit saturated at 32k. | Active |

@@ -6,7 +6,7 @@
 
 **One source** — one group, one result — nobody has agreed or disagreed yet, which is not the same as contested, where people looked and differed.
 
-105 of 375 SOTA documents. Back to the [full index](../README.md).
+106 of 377 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -115,3 +115,4 @@
 | [SOTA-349](../../../record/practices.d/SOTA-349.md) | Before crediting a graph transformer with long-range gains, retune the message-passing baselines under the same budget, including an MLP prediction head, positional encodings and input feature normalization | Tönshoff et al. (2023), [LIT-579](../../../record/literature.d/LIT-579.md) — the Long-Range Graph Benchmark's case that graph transformers are needed rested partly on untuned message-passing baselines. With a basic sweep inside the same 500k-parameter budget, GCN beats GPS on both Peptides tasks. Most of the gain is from replacing a linear prediction head with a 2-layer MLP. Normalizing input features lifts every model on the superpixel tasks, where GPS still leads. Tune both sides before attributing a gap to attention. | Active |
 | [SOTA-368](../../../record/practices.d/SOTA-368.md) | When a model's latent space is meant to be read by people, measure its interpretability with a human task such as word or topic intrusion, not by held-out likelihood | Chang et al. (2009), [LIT-597](../../../record/literature.d/LIT-597.md) — topic models are used for their topics, but they are judged by held-out likelihood, which measures the probability of observations and ignores the representation. On NYT and Wikipedia, CTM had the best likelihood and the worst human scores. Test the latent space directly. Plant an improbable word among a topic's top words, or an improbable topic among a document's top topics, and measure how often people find it. | Active |
 | [SOTA-374](../../../record/practices.d/SOTA-374.md) | When learning embeddings from co-occurrence, subsample very frequent tokens, discarding each occurrence with probability 1 − √(t/f) with t around 10⁻⁵ | Mikolov et al. (2013), [LIT-603](../../../record/literature.d/LIT-603.md) — in a Zipfian corpus, the few most frequent words co-occur with everything and dominate the updates while teaching little. Discard each occurrence of word w with probability 1 − √(t/f(w)). This cut skip-gram training time by 2–3× and raised accuracy, only slightly for words (59 → 60% at NEG-5) but a lot for phrases (27 → 42% at NEG-15, 19 → 47% with hierarchical softmax). | Active |
+| [SOTA-377](../../../record/practices.d/SOTA-377.md) | Stop scaling the contrastive batch past about 32k, because the benefit saturates there |  | Active |

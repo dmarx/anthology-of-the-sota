@@ -2,7 +2,7 @@
 
 # Lines of work
 
-43 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+44 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -253,6 +253,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-595](../record/literature.d/LIT-595.md) — VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning *(Active)*
 - alongside: [LIT-596](../record/literature.d/LIT-596.md) — Barlow Twins: Self-Supervised Learning via Redundancy Reduction *(Active)*
+
+## multimodal-learning
+
+### From Learning Transferable Visual Models From Natural Language Supervision
+
+- alongside: [LIT-588](../record/literature.d/LIT-588.md) — Learning Transferable Visual Models From Natural Language Supervision *(Active)*
+- alongside: [LIT-605](../record/literature.d/LIT-605.md) — Sigmoid Loss for Language Image Pre-Training *(Active)*
 
 ## numerics-and-precision
 

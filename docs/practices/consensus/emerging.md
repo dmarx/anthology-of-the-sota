@@ -6,7 +6,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-48 of 375 SOTA documents. Back to the [full index](../README.md).
+49 of 377 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -58,3 +58,4 @@
 | [SOTA-367](../../../record/practices.d/SOTA-367.md) | Or put the anti-collapse constraint in the loss, as a variance floor and a decorrelation term |  | Active |
 | [SOTA-369](../../../record/practices.d/SOTA-369.md) | Curate a pretraining set by retrieving neighbours of curated seeds, rather than scaling the uncurated pool |  | Active |
 | [SOTA-373](../../../record/practices.d/SOTA-373.md) | Set the masking ratio by the signal's redundancy, not by the ratio that worked on text |  | Active |
+| [SOTA-376](../../../record/practices.d/SOTA-376.md) | Score each image-text pair independently with a sigmoid, so the loss needs no global normalization |  | Active |

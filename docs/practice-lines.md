@@ -332,4 +332,5 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [SOTA-360](../record/practices.d/SOTA-360.md) — Score a density ratio against sampled negatives instead of reconstructing the target *(Active, universal)*
   - [SOTA-359](../record/practices.d/SOTA-359.md) — Supervise vision from the caption, and match image to caption rather than predicting its words *(Active, converged)*
+    - [SOTA-376](../record/practices.d/SOTA-376.md) — Score each image-text pair independently with a sigmoid, so the loss needs no global normalization *(Active, emerging)*
   - [SOTA-363](../record/practices.d/SOTA-363.md) — Decouple the negative set from the batch with a queue, and keep the encoder that fills it slow *(Active, emerging)*

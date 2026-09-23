@@ -6,7 +6,7 @@
 
 **Distributed optimization** — parallelism and sharding, communication, memory management, checkpointing.
 
-40 of 375 SOTA documents. Back to the [full index](../README.md).
+41 of 377 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -50,3 +50,4 @@
 | [SOTA-226](../../../record/practices.d/SOTA-226.md) | If the gossip topology is static, make it a directed exponential graph, not a ring | Assran et al. (2018), [LIT-254](../../../record/literature.d/LIT-254.md). Having chosen gossip over a parameter server, the next choice is the graph, and it is not a detail: a ring's consensus rate degrades with the node count badly enough that the speedup regime recedes out of reach. A directed exponential graph — each node sends to peers at distance 1, 2, 4, 8, ... in rotation — reaches exact consensus in log2(n) rounds with constant out-degree per round, and spreads the load evenly. | Active |
 | [SOTA-249](../../../record/practices.d/SOTA-249.md) | Recompute activations from a sqrt(n) subset of checkpoints when activation memory is the binding constraint | Chen et al. (2016), [LIT-004](../../../record/literature.d/LIT-004.md) — [ARXIV-1604.06174](https://arxiv.org/abs/1604.06174). Store activations at O(sqrt(n)) checkpoints and recompute the rest during the backward pass. The price is one extra forward pass per minibatch; the measured case is a 1000-layer ResNet at 48G to 7G for 30% more wall clock. | Active |
 | [SOTA-364](../../../record/practices.d/SOTA-364.md) | Break batch normalization's cross-sample leak before it solves your contrastive task for you |  | Active |
+| [SOTA-376](../../../record/practices.d/SOTA-376.md) | Score each image-text pair independently with a sigmoid, so the loss needs no global normalization |  | Active |

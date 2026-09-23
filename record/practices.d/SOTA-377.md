@@ -1,5 +1,8 @@
 ---
+number: 377
 status: Active
+formerly:
+- SOTA-tmptiobf
 consensus: unreplicated
 consensus_note: >-
   One group, one measurement, and the measurement is the only one of its kind
@@ -16,17 +19,17 @@ tags:
 - multimodal-learning
 date: '2026-09-23'
 source:
-- LIT-tmprdppj
+- LIT-605
 introduced_by:
-- LIT-tmprdppj
+- LIT-605
 implementations: []
 ---
 
-# SOTA-tmptiobf: Stop scaling the contrastive batch past about 32k, because the benefit saturates there
+# SOTA-377: Stop scaling the contrastive batch past about 32k, because the benefit saturates there
 
 ## Source
 
-Zhai et al. (2023), [LIT-tmprdppj](../literature.d/LIT-tmprdppj.md) — [ARXIV-2303.15343](https://arxiv.org/abs/2303.15343), §4.
+Zhai et al. (2023), [LIT-605](../literature.d/LIT-605.md) — [ARXIV-2303.15343](https://arxiv.org/abs/2303.15343), §4.
 
 ## The claim
 

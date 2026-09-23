@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [23 Sep 18:48 — A consensus formed entirely inside a range, and the ceiling sat just past where everyone stopped](2026-09.md#a-consensus-formed-entirely-inside-a-range-and-the-ceiling-sat-just-past-where-everyone-stopped)
 - [23 Sep 18:17 — The record argued against MAE for a year without holding it, and two of its parts survive the argument](2026-09.md#the-record-argued-against-mae-for-a-year-without-holding-it-and-two-of-its-parts-survive-the-argument)
 - [23 Sep 18:01 — The record was recommending two instruments it did not hold, and I named the wrong document for it](2026-09.md#the-record-was-recommending-two-instruments-it-did-not-hold-and-i-named-the-wrong-document-for-it)
 - [23 Sep 16:38 — Four methods, four accounts of why they do not collapse, and a 0.3-versus-67.7 disagreement](2026-09.md#four-methods-four-accounts-of-why-they-do-not-collapse-and-a-03-versus-677-disagreement)
@@ -200,9 +201,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-193 entries across 2 books, newest first.
+194 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 191 | 2026-09-05 | 2026-09-23 |
+| [2026-09](2026-09.md) | 192 | 2026-09-05 | 2026-09-23 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

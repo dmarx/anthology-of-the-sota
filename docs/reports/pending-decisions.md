@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**188 document(s) awaiting a decision.**
+**189 document(s) awaiting a decision.**
 
 ## SOTAs
 
-128 of the 188.
+128 of the 189.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -144,7 +144,7 @@
 
 ## THEORYs
 
-54 of the 188.
+55 of the 189.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -199,13 +199,14 @@
 | 2026-09-23 | Proposed | [THEORY-089](../../record/theory.d/THEORY-089.md) | 5 | 0 | Word vectors trained on co-occurrence behave linearly because they encode log co-occurrence statistics: differences carry log ratios, which gives analogies, and sums carry products of context distributions, which gives composition |
 | 2026-09-23 | Proposed | [THEORY-078](../../record/theory.d/THEORY-078.md) | 4 | 0 | Deep sine networks train when initialization holds every pre-activation near a standard normal, which keeps each layer arcsine-distributed and frequency growth slow; that initialization is what earlier periodic networks lacked |
 | 2026-09-23 | Proposed | [THEORY-088](../../record/theory.d/THEORY-088.md) | 2 | 0 | Masked prediction transfers across modalities only after the masking ratio is rescaled to the signal's information density |
+| 2026-09-23 | Proposed | [THEORY-091](../../record/theory.d/THEORY-091.md) | 2 | 0 | Command-to-outcome mutual information scores an interface because it measures how reliably the operator's input determines what happens at the chosen horizon, which rewards a learnable channel rather than an intuitive one |
 | 2026-09-23 | Proposed | [THEORY-081](../../record/theory.d/THEORY-081.md) | 1 | 0 | A transformer's feed-forward layers work as key-value memories: each hidden unit's input weights match input patterns, and its output weights promote the tokens that follow them |
 | 2026-09-23 | Proposed | [THEORY-084](../../record/theory.d/THEORY-084.md) | 1 | 0 | AlphaFold 2 needs the sequence alignment to find a protein's coarse fold, not to refine it, so accuracy collapses below a minimum alignment depth and barely improves above it |
 | 2026-09-23 | Proposed | [THEORY-086](../../record/theory.d/THEORY-086.md) | 1 | 0 | A text document is better modelled as a mixture of several topics, each a distribution over words, than as a draw from a single topic |
 
 ## LITs
 
-3 of the 188.
+3 of the 189.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -215,7 +216,7 @@
 
 ## ADRs
 
-3 of the 188.
+3 of the 189.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

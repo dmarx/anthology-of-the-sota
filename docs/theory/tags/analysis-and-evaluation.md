@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-51 of 90 THEORY documents. Back to the [full index](../README.md).
+52 of 91 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -61,3 +61,4 @@
 | [THEORY-087](../../../record/theory.d/THEORY-087.md) v2 | Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other |  | Deferred |
 | [THEORY-088](../../../record/theory.d/THEORY-088.md) | Masked prediction transfers across modalities only after the masking ratio is rescaled to the signal's information density |  | Proposed |
 | [THEORY-090](../../../record/theory.d/THEORY-090.md) | A concept's shared word-pair direction, its linear probe and its steering vector are one object, related by an inner product under which causally separable concepts are orthogonal | Park, Choe and Veitch (2024), [LIT-606](../../../record/literature.d/LIT-606.md) — the output-space direction that counterfactual word pairs share is provably a logit-linear probe, and the input-space direction is provably a steering vector that leaves separable concepts alone. Training fixes neither space's inner product, so cosine similarity is arbitrary. The inner product that makes separable concepts orthogonal maps one direction onto the other, and one member of that family is the inverse unembedding covariance. Proved under stated assumptions and shown on LLaMA-2 7B. | Proposed |
+| [THEORY-091](../../../record/theory.d/THEORY-091.md) | Command-to-outcome mutual information scores an interface because it measures how reliably the operator's input determines what happens at the chosen horizon, which rewards a learnable channel rather than an intuitive one | Reddy, Levine and Dragan (2022), [LIT-503](../../../record/literature.d/LIT-503.md). The paper's reason is that an intuitive interface makes commands less noisy. Its own results fit a narrower account: the score measures how much the operator's input determines the state Δ steps later. Users adapt, so any consistent mapping scores well, and learned interfaces converge on both no perturbation and exact inversion. The account also explains the one failure: an assistant that overrides commands to prevent crashes lowers one-step influence and raises long-horizon influence. | Proposed |

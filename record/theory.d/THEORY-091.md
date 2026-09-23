@@ -1,5 +1,8 @@
 ---
+number: 91
 status: Proposed
+formerly:
+- THEORY-tmp1aw1p
 promote_when: >-
   The consistency reading tested against the intuitiveness reading directly:
   interfaces that are equally consistent but differ in how natural they are
@@ -29,7 +32,7 @@ summary: >-
   raises long-horizon influence.
 ---
 
-# THEORY-tmp1aw1p: Command-to-outcome mutual information scores an interface because it measures how reliably the operator's input determines what happens at the chosen horizon, which rewards a learnable channel rather than an intuitive one
+# THEORY-091: Command-to-outcome mutual information scores an interface because it measures how reliably the operator's input determines what happens at the chosen horizon, which rewards a learnable channel rather than an intuitive one
 
 ## Source
 

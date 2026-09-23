@@ -23,6 +23,16 @@ repos:
     ref: HEAD
     files:
       src/diffusers/schedulers/__init__.py: exports:Scheduler
+  transformers:
+    repo: huggingface/transformers
+    kind: adoption
+    ref: HEAD
+    files:
+      # The quantization overview's support matrix. Chosen because it is the
+      # one place `transformers` enumerates techniques rather than models —
+      # its doc tree is navigation, and its model list is 300+ architectures,
+      # which is a different question than #183 is asking.
+      docs/source/en/quantization/overview.md: table:0
   x-transformers:
     repo: lucidrains/x-transformers
     kind: catalogue

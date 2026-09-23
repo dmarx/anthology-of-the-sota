@@ -1,0 +1,88 @@
+---
+status: Active
+title: 'Masked Autoencoders Are Scalable Vision Learners'
+version: 1
+tags:
+- representation-and-encoding
+- systems-optimization
+- signal-structure
+- vision-and-graphics
+date: '2026-09-23'
+published: '2021-11-01'
+arxiv: '2111.06377'
+first_author: 'He'
+keywords:
+- 'masked-autoencoder'
+- 'masking-ratio'
+- 'asymmetric-encoder-decoder'
+- 'self-supervised-learning'
+summary: >-
+  He et al. (2021), [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377). Mask 75% of the patches, run the
+  encoder on the visible quarter only, and reconstruct pixels with a small
+  decoder you then throw away. 3x faster pretraining, 87.8% with ViT-Huge on
+  ImageNet-1K alone — and the reason the ratio is 75% rather than BERT's 15%
+  is an argument about the signal, not a sweep.
+compared_against:
+- LIT-216
+---
+
+# LIT-tmp0s7m8: Masked Autoencoders Are Scalable Vision Learners
+
+He et al. (2021) — [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377)
+
+## Key takeaways
+
+- **The paper opens by asking why masked autoencoding worked in language and
+  not in vision, and answers in three parts.** (i) *Architecture*:
+  convolutions cannot easily take mask tokens or positional embeddings —
+  closed by ViT ([LIT-587](LIT-587.md)). (ii) *Information density*: language is
+  "human-generated … highly semantic and information-dense", while images
+  are "natural signals with heavy spatial redundancy", so "a missing patch
+  can be recovered from neighboring patches with little high-level
+  understanding". (iii) *The decoder's role*: in vision it emits pixels,
+  "of a lower semantic level than common recognition tasks", where BERT's
+  decoder can be a trivial MLP. Three diagnoses, three different fixes.
+- **The 75% masking ratio follows from (ii) and is not a swept
+  hyperparameter.** High masking "largely eliminates redundancy, thus
+  creating a task that cannot be easily solved by extrapolation from
+  neighboring patches". The paper calls the optimum "surprisingly high" and
+  it is five times BERT's 15%.
+- **The asymmetric encoder-decoder is where the speed comes from.** The
+  encoder sees **only the visible patches** — mask tokens never enter it —
+  and a lightweight decoder takes encoded visible patches plus a shared
+  learned mask token and reconstructs pixels. "Shifting the mask tokens to
+  the small decoder … results in a large reduction in computation":
+  **3× or more** faster pretraining and less memory, with no specialised
+  sparse kernels. The decoder is discarded afterwards.
+- **Decoder depth sets the semantic level of the representation, and the two
+  evaluation protocols disagree about it.** A deep decoder matters for
+  **linear probing**; a **single-block** decoder already reaches **84.8%
+  fine-tuned**. Masking ratio behaves the same way — linear probing rises
+  steadily to a sweet spot while fine-tuning is flatter. Reporting one
+  protocol would have produced a different paper, which is `SOTA-196`'s claim
+  arriving from a third direction.
+- **Numbers.** ViT-Huge **87.8%**, the best among methods using only
+  ImageNet-1K data; downstream transfer beats supervised pretraining. For
+  scale: training a supervised ViT-L from scratch is "nontrivial" and needs
+  strong regularisation to reach 82.5%.
+
+## Standing in the anthology
+
+Unit E of `#304`, and filed because the record already argued against it
+without holding it. `SOTA-250` — *"Pretrain by predicting representations of
+masked regions, not their pixels"* — names MAE as the competitor it beats on
+compute, and `LIT-216` is the paper that ran that comparison. The record held
+the winner of a named comparison and not the loser.
+
+**What this note deliberately does not do is relitigate that.** `SOTA-250`'s
+position stands: predicting representations beats predicting pixels on the
+evidence the record holds. The two practices sourced here —
+[SOTA-tmpvf6yn](../practices.d/SOTA-tmpvf6yn.md) and [SOTA-tmpzm1n3](../practices.d/SOTA-tmpzm1n3.md) — are the parts of MAE that are
+*orthogonal* to the target choice. An encoder that skips mask tokens and a
+masking ratio set by redundancy are both needed whether you reconstruct
+pixels or predict representations, which is why they outlived the argument
+they arrived in.
+
+<!-- inactive-ok: THEORY-tmpgwgsb — Proposed by design: the account rests on two points from two literatures, and the practice it explains is Active regardless. Citing the open question is the point. -->
+The information-density claim is filed separately as [THEORY-tmpgwgsb](../theory.d/THEORY-tmpgwgsb.md), since
+it is a statement about signals rather than a recommendation.

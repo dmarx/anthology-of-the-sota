@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-320 of 323 NOTE documents. Back to the [full index](../README.md).
+321 of 324 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -330,3 +330,4 @@
 | [NOTE-321](../../../record/notes.d/NOTE-321.md) | AlphaFold 2 | Near-experimental protein structure accuracy at CASP14, a calibrated confidence head, self-distillation on confident predictions, and a hard dependence on alignment depth below about 30 sequences. Main text and Methods read. The supplementary methods (architecture details, ablation descriptions) were not read. | Read |
 | [NOTE-322](../../../record/notes.d/NOTE-322.md) v2 | Latent Dirichlet Allocation | The bag-of-words assumption, read through de Finetti, implies a document-level mixture. LDA is that mixture with Dirichlet topic proportions. It generalizes better than one-topic-per-document and per-document-parameter models by held-out perplexity. Main text read in full; the variational derivations in the appendices skimmed. | Read |
 | [NOTE-323](../../../record/notes.d/NOTE-323.md) | Reading Tea Leaves | Two human tasks, word intrusion and topic intrusion, measure whether a topic model's topics and document assignments mean anything to people. The model with the best held-out likelihood, CTM, does worst on both. Read in full. | Read |
+| [NOTE-324](../../../record/notes.d/NOTE-324.md) | Automatic Evaluation of Topic Coherence | Average pairwise PMI of a topic's top words, estimated on Wikipedia, correlates with human coherence ratings about as well as the paper's measure of annotator agreement. Knowledge-base and search-engine measures are less reliable. Read in full. | Read |

@@ -10,4 +10,4 @@
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-| [THEORY-087](../../../record/theory.d/THEORY-087.md) | Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other |  | Deferred |
+| [THEORY-087](../../../record/theory.d/THEORY-087.md) v2 | Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other |  | Deferred |

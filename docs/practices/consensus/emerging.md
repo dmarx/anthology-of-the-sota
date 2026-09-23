@@ -6,7 +6,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-46 of 368 SOTA documents. Back to the [full index](../README.md).
+47 of 371 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -56,3 +56,4 @@
 | [SOTA-330](../../../record/practices.d/SOTA-330.md) | Enforce output structure by masking logits against a grammar, with masks precomputed per automaton state and built on the CPU while the GPU runs the forward pass | Dong et al. (2024), [LIT-552](../../../record/literature.d/LIT-552.md) — split the vocabulary by whether a token's validity depends only on the grammar automaton's current node (over 99% of tokens for JSON). Precompute those per node, check the rest against the full stack at runtime, and build each mask on the CPU during the GPU forward pass. Mask time is 0.018 ms per token after the ablated optimizations, and end-to-end overhead is 0.1–0.2 ms. It guarantees syntax. It does not measure whether answers stay correct. | Active |
 | [SOTA-363](../../../record/practices.d/SOTA-363.md) | Decouple the negative set from the batch with a queue, and keep the encoder that fills it slow |  | Active |
 | [SOTA-367](../../../record/practices.d/SOTA-367.md) | Or put the anti-collapse constraint in the loss, as a variance floor and a decorrelation term |  | Active |
+| [SOTA-369](../../../record/practices.d/SOTA-369.md) | Curate a pretraining set by retrieving neighbours of curated seeds, rather than scaling the uncurated pool |  | Active |

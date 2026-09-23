@@ -1,11 +1,14 @@
 ---
+number: 370
 status: Active
+formerly:
+- SOTA-tmpoe0zb
 consensus: converged
 consensus_note: >-
   The rare case where the introducing paper supplied the replication itself:
   multi-crop was transplanted into SimCLR, DeepCluster and DeepCluster-v2 in
   the same paper and gained 2-4 points in every one. It then propagated —
-  DINO and DINOv2 (LIT-tmpfwfu3) both carry a local-crop stage, and the
+  DINO and DINOv2 (LIT-599) both carry a local-crop stage, and the
   `#304` reading found no joint-embedding method after 2020 that went back
   to two full-resolution views. Read as of 2026-09.
 title: 'Add many low-resolution views alongside the two full ones, because view count is what helps and resolution is what costs'
@@ -15,17 +18,17 @@ tags:
 - representation-and-encoding
 date: '2026-09-23'
 source:
-- LIT-tmp6nq8y
+- LIT-598
 introduced_by:
-- LIT-tmp6nq8y
+- LIT-598
 implementations: []
 ---
 
-# SOTA-tmpoe0zb: Add many low-resolution views alongside the two full ones, because view count is what helps and resolution is what costs
+# SOTA-370: Add many low-resolution views alongside the two full ones, because view count is what helps and resolution is what costs
 
 ## Source
 
-Caron et al. (2020), [LIT-tmp6nq8y](../literature.d/LIT-tmp6nq8y.md) — [ARXIV-2006.09882](https://arxiv.org/abs/2006.09882).
+Caron et al. (2020), [LIT-598](../literature.d/LIT-598.md) — [ARXIV-2006.09882](https://arxiv.org/abs/2006.09882).
 
 ## The claim
 

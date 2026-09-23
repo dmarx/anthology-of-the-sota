@@ -33,8 +33,8 @@ source:
 - LIT-594
 - LIT-595
 - LIT-596
-- LIT-tmp6nq8y
-- LIT-tmpfwfu3
+- LIT-598
+- LIT-599
 explains:
 - SOTA-365
 ---
@@ -55,7 +55,7 @@ inconsistent with the others**.
 | alternating optimisation | [LIT-593](../literature.d/LIT-593.md) | an EM-like alternation over two variable sets, "analogous to k-means" | stop-gradient |
 | redundancy reduction | [LIT-596](../literature.d/LIT-596.md) | the off-diagonal cross-correlation penalty makes constant outputs unavailable | neither asymmetry nor negatives |
 | explicit variance | [LIT-595](../literature.d/LIT-595.md) | a hinge on per-dimension standard deviation forbids collapse arithmetically | none of the above |
-| equipartition | [LIT-tmp6nq8y](../literature.d/LIT-tmp6nq8y.md) | codes are constrained so that a batch is equally divided across prototypes, so two images cannot share one | neither asymmetry nor a term on the embedding |
+| equipartition | [LIT-598](../literature.d/LIT-598.md) | codes are constrained so that a batch is equally divided across prototypes, so two images cannot share one | neither asymmetry nor a term on the embedding |
 
 ## Where they contradict
 

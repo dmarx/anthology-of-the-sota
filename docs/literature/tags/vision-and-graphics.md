@@ -6,7 +6,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-44 of 532 LIT documents. Back to the [full index](../README.md).
+46 of 535 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -54,3 +54,5 @@
 | [LIT-594](../../../record/literature.d/LIT-594.md) | Bootstrap your own latent: A new approach to self-supervised Learning | Grill et al. (2020), [ARXIV-2006.07733](https://arxiv.org/abs/2006.07733). Learns a representation with no negatives at all: an online network predicts a slow EMA copy of itself under a different augmentation. 74.3% ImageNet linear. Why it does not collapse is a hypothesis in the paper, not a result, and [LIT-593](../../../record/literature.d/LIT-593.md) disputes which part is doing the work. | Active |
 | [LIT-595](../../../record/literature.d/LIT-595.md) | VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning | Bardes et al. (2021), [ARXIV-2105.04906](https://arxiv.org/abs/2105.04906). Three explicit terms — a hinge keeping each embedding dimension's standard deviation above a threshold, an invariance term, and a decorrelation term — applied to each branch separately. Needs no weight sharing, batch norm, stop-gradient or memory bank, and the variance term transplants into other methods and improves them. | Active |
 | [LIT-596](../../../record/literature.d/LIT-596.md) | Barlow Twins: Self-Supervised Learning via Redundancy Reduction | Zbontar et al. (2021), [ARXIV-2103.03230](https://arxiv.org/abs/2103.03230). Removes every asymmetry — no predictor, no stop-gradient, no moving average — and prevents collapse in the objective instead: drive the cross-correlation matrix between the two branches' outputs toward the identity. 73.2% ImageNet linear, and unlike its neighbours it wants a very high-dimensional output. | Active |
+| [LIT-598](../../../record/literature.d/LIT-598.md) | Unsupervised Learning of Visual Features by Contrasting Cluster Assignments | Caron et al. (2020), [ARXIV-2006.09882](https://arxiv.org/abs/2006.09882). Predict one view's cluster code from another view's representation instead of comparing features pairwise, with an equipartition constraint doing the anti-collapse work. 75.3% ImageNet linear — and multi-crop, which is the part that transplants into other methods for 2-4 points. | Active |
+| [LIT-599](../../../record/literature.d/LIT-599.md) | DINOv2: Learning Robust Visual Features without Supervision | Oquab et al. (2023), [ARXIV-2304.07193](https://arxiv.org/abs/2304.07193). The thesis is that existing self-supervised objectives already produce general-purpose features if the data is curated enough, so the contribution is a retrieval-based curation pipeline and the engineering to scale it — not a new objective. Frozen features, no finetuning, competitive with the best open weakly-supervised models. | Active |

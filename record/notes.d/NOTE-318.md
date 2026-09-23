@@ -1,6 +1,9 @@
 ---
+number: 318
 status: Read
-paper: LIT-tmpkhqrt
+formerly:
+- NOTE-tmpsxyhg
+paper: LIT-581
 title: 'Pitfalls of GNN evaluation'
 version: 1
 date: '2026-09-23'
@@ -10,7 +13,7 @@ summary: >-
   models. Read in full.
 ---
 
-# NOTE-tmpsxyhg: Pitfalls of GNN evaluation
+# NOTE-318: Pitfalls of GNN evaluation
 
 ## Contribution
 

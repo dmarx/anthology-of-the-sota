@@ -1,14 +1,17 @@
 ---
+number: 351
 status: Active
+formerly:
+- SOTA-tmpola8o
 title: 'In a message-passing GNN for graph-level tasks, aggregate neighbours by sum with an MLP update, not by mean or max, when graph structure rather than node features carries the signal'
 version: 1
 tags:
 - model-architecture
 date: '2026-09-23'
 source:
-- LIT-tmp95aa1
+- LIT-580
 introduced_by:
-- LIT-tmp95aa1
+- LIT-580
 consensus: unassessed
 consensus_note: >-
   GIN and its edge-feature variant GINE are standard baselines, and the
@@ -17,7 +20,7 @@ consensus_note: >-
   current practice has not been assessed here.
 implementations: []
 summary: >-
-  Xu et al. (2019), [LIT-tmp95aa1](../literature.d/LIT-tmp95aa1.md) — mean and max aggregation cannot count
+  Xu et al. (2019), [LIT-580](../literature.d/LIT-580.md) — mean and max aggregation cannot count
   neighbors, so graphs that differ only in counts look the same to them. On
   featureless Reddit graphs, mean-aggregation GNNs are at chance (50.0,
   20.0) and sum–MLP scores 92.4 and 57.5. With informative node features the
@@ -25,12 +28,12 @@ summary: >-
   h = MLP((1 + ε)h + Σ neighbors) with ε = 0 and a sum readout.
 ---
 
-# SOTA-tmpola8o: In a message-passing GNN for graph-level tasks, aggregate neighbours by sum with an MLP update, not by mean or max, when graph structure rather than node features carries the signal
+# SOTA-351: In a message-passing GNN for graph-level tasks, aggregate neighbours by sum with an MLP update, not by mean or max, when graph structure rather than node features carries the signal
 
 ## Source
 
-Xu et al. (2019), [LIT-tmp95aa1](../literature.d/LIT-tmp95aa1.md). Read as [NOTE-tmpvkwpe](../notes.d/NOTE-tmpvkwpe.md). The reason is
-[THEORY-tmplxq36](../theory.d/THEORY-tmplxq36.md).
+Xu et al. (2019), [LIT-580](../literature.d/LIT-580.md). Read as [NOTE-319](../notes.d/NOTE-319.md). The reason is
+[THEORY-083](../theory.d/THEORY-083.md).
 
 ## The practice
 

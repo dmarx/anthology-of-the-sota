@@ -1,5 +1,8 @@
 ---
+number: 83
 status: Active
+formerly:
+- THEORY-tmplxq36
 title: 'A message-passing GNN can distinguish no more graphs than the 1-WL test, and reaches that limit only if its neighbor aggregation is injective on multisets, as a sum followed by an MLP is and a mean or max is not'
 version: 1
 tags:
@@ -7,9 +10,9 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-23'
 source:
-- LIT-tmp95aa1
+- LIT-580
 summary: >-
-  Xu et al. (2019), [LIT-tmp95aa1](../literature.d/LIT-tmp95aa1.md) — each message-passing layer refines node
+  Xu et al. (2019), [LIT-580](../literature.d/LIT-580.md) — each message-passing layer refines node
   labels as one 1-WL iteration can at best, so 1-WL bounds what the network
   separates. Injective aggregation reaches the bound. Sums of an MLP over a
   multiset are injective. Means lose counts and maxes lose multiplicities.
@@ -17,11 +20,11 @@ summary: >-
   collapse of mean aggregators to chance on featureless graphs.
 ---
 
-# THEORY-tmplxq36: A message-passing GNN can distinguish no more graphs than the 1-WL test, and reaches that limit only if its neighbor aggregation is injective on multisets, as a sum followed by an MLP is and a mean or max is not
+# THEORY-083: A message-passing GNN can distinguish no more graphs than the 1-WL test, and reaches that limit only if its neighbor aggregation is injective on multisets, as a sum followed by an MLP is and a mean or max is not
 
 ## Source
 
-Xu et al. (2019), [LIT-tmp95aa1](../literature.d/LIT-tmp95aa1.md). Read as [NOTE-tmpvkwpe](../notes.d/NOTE-tmpvkwpe.md).
+Xu et al. (2019), [LIT-580](../literature.d/LIT-580.md). Read as [NOTE-319](../notes.d/NOTE-319.md).
 
 ## The account
 

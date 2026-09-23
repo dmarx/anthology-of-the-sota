@@ -1,6 +1,9 @@
 ---
+number: 317
 status: Read
-paper: LIT-tmp4yk7i
+formerly:
+- NOTE-tmp1vdpi
+paper: LIT-579
 title: 'Where did the gap go?'
 version: 1
 date: '2026-09-23'
@@ -11,7 +14,7 @@ summary: >-
   in full.
 ---
 
-# NOTE-tmp1vdpi: Where did the gap go?
+# NOTE-317: Where did the gap go?
 
 ## Contribution
 

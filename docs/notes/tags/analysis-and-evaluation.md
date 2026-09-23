@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-115 of 316 NOTE documents. Back to the [full index](../README.md).
+118 of 319 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -123,3 +123,6 @@
 | [NOTE-314](../../../record/notes.d/NOTE-314.md) | RippleEdits | Knowledge-editing benchmarks test the edited fact and leave its consequences untested. On six ripple criteria, weight editors average 38–66, and prompting with the new fact beats them. Main text read. | Read |
 | [NOTE-315](../../../record/notes.d/NOTE-315.md) | ROME | Causal tracing localizes factual recall to mid-layer MLPs at the last subject token, and a rank-one MLP edit there rewrites single facts with both generalization and specificity. Main text and the CounterFact appendix read. | Read |
 | [NOTE-316](../../../record/notes.d/NOTE-316.md) | MEMIT | ROME's idea extended to thousands of facts by spreading updates across a range of MLP layers in one batched solve. 85.8 on 10,000 CounterFact edits on GPT-J, where ROME falls to 50.3. Main text read, appendices skimmed. | Read |
+| [NOTE-317](../../../record/notes.d/NOTE-317.md) | Where did the gap go? | Retuned message-passing baselines close the reported graph-transformer gap on LRGB's Peptides datasets, mostly by adding an MLP prediction head. Feature normalization lifts every model on the superpixel datasets. Read in full. | Read |
+| [NOTE-318](../../../record/notes.d/NOTE-318.md) | Pitfalls of GNN evaluation | With one shared training and tuning protocol over 100 splits × 20 seeds, GCN ranks first among four GNNs, and the single Planetoid split reorders models. Read in full. | Read |
+| [NOTE-319](../../../record/notes.d/NOTE-319.md) | GIN | Message passing is bounded by 1-WL, and sum aggregation with an MLP reaches the bound where mean and max do not. The theory predicts the training-fit ordering. Test accuracy separates the aggregators decisively only on featureless graphs. Main text read, proofs skimmed. | Read |

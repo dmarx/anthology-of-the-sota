@@ -1,5 +1,8 @@
 ---
+number: 349
 status: Active
+formerly:
+- SOTA-tmp7wtf2
 title: 'Before crediting a graph transformer with long-range gains, retune the message-passing baselines under the same budget, including an MLP prediction head, positional encodings and input feature normalization'
 version: 1
 tags:
@@ -7,9 +10,9 @@ tags:
 - model-architecture
 date: '2026-09-23'
 source:
-- LIT-tmp4yk7i
+- LIT-579
 introduced_by:
-- LIT-tmp4yk7i
+- LIT-579
 consensus: unreplicated
 consensus_note: >-
   One group's re-evaluation on one benchmark. It retunes the transformer
@@ -19,7 +22,7 @@ consensus_note: >-
   assessed here.
 implementations: []
 summary: >-
-  Tönshoff et al. (2023), [LIT-tmp4yk7i](../literature.d/LIT-tmp4yk7i.md) — the Long-Range Graph Benchmark's
+  Tönshoff et al. (2023), [LIT-579](../literature.d/LIT-579.md) — the Long-Range Graph Benchmark's
   case that graph transformers are needed rested partly on untuned
   message-passing baselines. With a basic sweep inside the same
   500k-parameter budget, GCN beats GPS on both Peptides tasks. Most of the
@@ -29,12 +32,12 @@ summary: >-
   attention.
 ---
 
-# SOTA-tmp7wtf2: Before crediting a graph transformer with long-range gains, retune the message-passing baselines under the same budget, including an MLP prediction head, positional encodings and input feature normalization
+# SOTA-349: Before crediting a graph transformer with long-range gains, retune the message-passing baselines under the same budget, including an MLP prediction head, positional encodings and input feature normalization
 
 ## Source
 
-Tönshoff et al. (2023), [LIT-tmp4yk7i](../literature.d/LIT-tmp4yk7i.md). Read as [NOTE-tmp1vdpi](../notes.d/NOTE-tmp1vdpi.md). The general
-form is [SOTA-tmpdjto5](SOTA-tmpdjto5.md).
+Tönshoff et al. (2023), [LIT-579](../literature.d/LIT-579.md). Read as [NOTE-317](../notes.d/NOTE-317.md). The general
+form is [SOTA-350](SOTA-350.md).
 
 ## The practice
 

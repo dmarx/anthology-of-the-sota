@@ -476,6 +476,9 @@
     "ARXIV/2208.01618": {
       "title": "An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion"
     },
+    "ARXIV/2208.09392": {
+      "title": "Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise"
+    },
     "ARXIV/2208.12242": {
       "title": "DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation"
     },

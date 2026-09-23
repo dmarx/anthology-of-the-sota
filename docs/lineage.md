@@ -2,7 +2,7 @@
 
 # Lines of work
 
-36 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+37 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -211,6 +211,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-561](../record/literature.d/LIT-561.md) — A Style-Based Generator Architecture for Generative Adversarial Networks *(Active)*
   - [LIT-560](../record/literature.d/LIT-560.md) — Analyzing and Improving the Image Quality of StyleGAN *(Active)*
     - [LIT-559](../record/literature.d/LIT-559.md) — Alias-Free Generative Adversarial Networks *(Active)*
+
+### From Where Did the Gap Go? Reassessing the Long-Range Graph Benchmark
+
+- alongside: [LIT-579](../record/literature.d/LIT-579.md) — Where Did the Gap Go? Reassessing the Long-Range Graph Benchmark *(Active)*
+- alongside: [LIT-580](../record/literature.d/LIT-580.md) — How Powerful are Graph Neural Networks? *(Active)*
+- alongside: [LIT-581](../record/literature.d/LIT-581.md) — Pitfalls of Graph Neural Network Evaluation *(Active)*
+- alongside: [LIT-582](../record/literature.d/LIT-582.md) — Semi-Supervised Classification with Graph Convolutional Networks *(Active)*
 
 ## numerics-and-precision
 

@@ -1,5 +1,8 @@
 ---
+number: 350
 status: Active
+formerly:
+- SOTA-tmpdjto5
 title: 'Compare GNN architectures over many random data splits and seeds, with one shared training and hyperparameter-selection procedure for every model, never on a single fixed split'
 version: 1
 tags:
@@ -7,19 +10,19 @@ tags:
 - model-architecture
 date: '2026-09-23'
 source:
-- LIT-tmpkhqrt
+- LIT-581
 introduced_by:
-- LIT-tmpkhqrt
+- LIT-581
 consensus: unassessed
 consensus_note: >-
-  The finding recurs in later GNN re-evaluations, including LIT-tmp4yk7i for
+  The finding recurs in later GNN re-evaluations, including LIT-579 for
   graph transformers. Many node-classification papers still report the
   Planetoid split. How common multi-split reporting has become has not been
   assessed here.
 implementations:
 - gnn-benchmark
 summary: >-
-  Shchur et al. (2018), [LIT-tmpkhqrt](../literature.d/LIT-tmpkhqrt.md) — on the Planetoid split GAT beats GCN.
+  Shchur et al. (2018), [LIT-581](../literature.d/LIT-581.md) — on the Planetoid split GAT beats GCN.
   On another random split of the same size GCN wins, and averaged over 100
   splits × 20 seeds with identical training and tuning, GCN ranks first of
   four GNNs. A single split selects the model that overfits it, and
@@ -27,11 +30,11 @@ summary: >-
   splits and seeds, with the same tuning budget for every model.
 ---
 
-# SOTA-tmpdjto5: Compare GNN architectures over many random data splits and seeds, with one shared training and hyperparameter-selection procedure for every model, never on a single fixed split
+# SOTA-350: Compare GNN architectures over many random data splits and seeds, with one shared training and hyperparameter-selection procedure for every model, never on a single fixed split
 
 ## Source
 
-Shchur et al. (2018), [LIT-tmpkhqrt](../literature.d/LIT-tmpkhqrt.md). Read as [NOTE-tmpsxyhg](../notes.d/NOTE-tmpsxyhg.md).
+Shchur et al. (2018), [LIT-581](../literature.d/LIT-581.md). Read as [NOTE-318](../notes.d/NOTE-318.md).
 
 ## The practice
 

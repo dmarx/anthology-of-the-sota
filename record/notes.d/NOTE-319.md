@@ -1,6 +1,9 @@
 ---
+number: 319
 status: Read
-paper: LIT-tmp95aa1
+formerly:
+- NOTE-tmpvkwpe
+paper: LIT-580
 title: 'GIN'
 version: 1
 date: '2026-09-23'
@@ -11,7 +14,7 @@ summary: >-
   only on featureless graphs. Main text read, proofs skimmed.
 ---
 
-# NOTE-tmpvkwpe: GIN
+# NOTE-319: GIN
 
 ## Contribution
 

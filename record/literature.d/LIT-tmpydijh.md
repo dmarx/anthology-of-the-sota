@@ -1,0 +1,71 @@
+---
+status: Active
+title: 'Scaling and evaluating sparse autoencoders'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-23'
+published: '2024-06-01'
+arxiv: '2406.04093'
+first_author: 'Gao'
+keywords:
+- 'sparse-autoencoder'
+- 'topk'
+- 'dead-latents'
+- 'interpretability'
+- 'dictionary-learning'
+implementations:
+- openai/sparse_autoencoder
+summary: >-
+  Gao et al. (2024), [ARXIV-2406.04093](https://arxiv.org/abs/2406.04093). TopK sparse autoencoders keep the k
+  largest latents, which sets L0 directly and replaces the L1 penalty. They
+  beat ReLU SAEs on the sparsity-reconstruction frontier, and the gap widens
+  with scale. Encoder-as-decoder-transpose initialization plus an auxiliary
+  dead-latent loss leave 7% dead latents in a 16M-latent SAE on GPT-4,
+  against up to 90% without them. Clean scaling laws in latents and k. That
+  SAE scores 98.2% "loss recovered", yet substituted into GPT-4 it matches a
+  model trained on 10% of GPT-4's compute.
+compared_against:
+- LIT-tmp57c8v
+---
+
+# LIT-tmpydijh: Scaling and evaluating sparse autoencoders
+
+Gao, Dupré la Tour, Tillman, Goh, Troll, Radford, Sutskever, Leike, Wu,
+OpenAI (2024) — [ARXIV-2406.04093](https://arxiv.org/abs/2406.04093)
+
+## Key takeaways
+
+- **TopK instead of L1** (§2.3): `z = TopK(W_enc(x − b_pre))`, trained on
+  reconstruction MSE alone. There is no L1 coefficient to tune, and no
+  shrinkage of active latents toward zero. L0 is chosen directly. It beats
+  ReLU, and matches Gated, on the MSE–L0 frontier at 32k latents
+  (Figure 2a). The advantage grows with the number of latents (Figure 2b),
+  and is larger on downstream loss than on MSE (Figure 5a)
+- **Dead latents** (§2.4): initialize the encoder to the transpose of the
+  decoder, and add an auxiliary loss that reconstructs the residual error
+  from the top-k_aux dead latents. That leaves 7% dead in the 16M-latent SAE,
+  against up to 90% without mitigation. For comparison, Anthropic's 34M
+  SAE had 12M live
+- **Scaling laws** (§3): MSE is a power law in compute, with an
+  irreducible term, and jointly in latents n and k at small k. The largest
+  stable learning rate scales as 1/√n
+- **Evaluation** (§4): downstream KL and cross-entropy when the
+  reconstruction replaces the residual stream, probe loss on known
+  features, explanation precision and recall, and ablation sparsity. Most
+  improve with SAE size
+
+## Standing in the anthology
+
+**Filed from `#163`** ("SAE"). It sources [SOTA-tmpmnhef](../practices.d/SOTA-tmpmnhef.md) (TopK and
+dead-latent prevention) and [SOTA-tmp7u4vf](../practices.d/SOTA-tmp7u4vf.md) (how to report fidelity).
+
+**The finding the record uses most.** "Fraction of loss recovered" against
+zero ablation, the metric prior SAE work reports, is inflated. Zeroing the
+residual stream is so destructive that a poor reconstruction still scores
+well. The same 16M SAE is 98.2% on it and, in compute-equivalent terms, a
+GPT-4 trained on 10% of its budget (§4.1, footnote 11). Whether SAEs are
+useful at all is a separate question, which [LIT-tmp57c8v](LIT-tmp57c8v.md) tests on probing.
+
+Read — [NOTE-tmpr5ct1](../notes.d/NOTE-tmpr5ct1.md).
+<!-- inactive-ok-file: SOTA-tmpmnhef, SOTA-tmp7u4vf — Proposed, filed in this same contribution from this paper -->

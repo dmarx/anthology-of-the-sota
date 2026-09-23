@@ -1,0 +1,56 @@
+---
+status: Active
+title: 'interpreting GPT: the logit lens'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-23'
+published: '2020-08-31'
+# A LessWrong post, never on arXiv, so the source is a `url:` (ADR-009).
+url: 'https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens'
+first_author: 'nostalgebraist'
+keywords:
+- 'logit-lens'
+- 'interpretability'
+- 'intermediate-predictions'
+- 'gpt-2'
+implementations: []
+summary: >-
+  nostalgebraist (2020), a LessWrong post. Apply GPT-2's final layer norm and
+  unembedding to each intermediate layer's residual stream and read the
+  result as a next-token distribution. On GPT-2 those distributions make
+  sense and converge on the final prediction well before the last layer,
+  and they almost never resemble the input tokens. The post calls it a
+  partial view.
+extended_by:
+- LIT-tmpebkg3
+---
+
+# LIT-tmpqsh8n: interpreting GPT: the logit lens
+
+nostalgebraist (2020), LessWrong — [url](https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens)
+
+## Key takeaways
+
+- **The method:** GPT-2's output is the final hidden state multiplied by
+  the transposed embedding matrix. Apply the same map, after the final layer
+  norm, to any intermediate block's output and read the result as a
+  distribution over the next token
+- **The observation (GPT-2 1.5B):** the intermediate guesses are sensible,
+  and the rank of the final top-1 token falls sharply by the middle layers.
+  The distributions refine smoothly toward the output. Early layers almost
+  never look like the *input* tokens. The post reads this as the model
+  "thinking in predictive space"
+- **The author's caveat:** a "lens" shows some of what is in the
+  activations, not all of it. A 2021 edit reports that it works less well
+  on other models, including GPT-Neo, and adds a variant decoder that keeps
+  the last block
+
+## Standing in the anthology
+
+**Filed from `#163`** ("LogitLens"). It is a blog post, and the record
+files it because the technique is cited by that name everywhere. The
+record's recommendation is its refinement, the tuned lens ([LIT-tmpebkg3](LIT-tmpebkg3.md)),
+which `extends` it and shows where it breaks.
+
+Read from the post text. No separate note.

@@ -1,0 +1,69 @@
+---
+status: Active
+title: 'Are Sparse Autoencoders Useful? A Case Study in Sparse Probing'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-23'
+published: '2025-02-01'
+arxiv: '2502.16681'
+first_author: 'Kantamneni'
+keywords:
+- 'sparse-autoencoder'
+- 'probing'
+- 'baselines'
+- 'interpretability'
+- 'negative-result'
+implementations: []
+compared_against:
+- LIT-tmpydijh
+summary: >-
+  Kantamneni, Engels et al. (2025), [ARXIV-2502.16681](https://arxiv.org/abs/2502.16681). On 113 probing datasets
+  over Gemma-2-9B, and replicated on Llama-3.1-8B, logistic-regression
+  probes are compared with probes on SAE latents. Selection is done the way
+  a practitioner would, by validation AUC over a "quiver" of methods. Adding
+  SAE probes does not help in standard conditions (−0.003 AUC) or under data
+  scarcity, class imbalance, label noise or covariate shift. Earlier
+  positive results for SAE probes disappear against stronger baselines,
+  including some of the authors' own.
+---
+
+# LIT-tmp57c8v: Are Sparse Autoencoders Useful? A Case Study in Sparse Probing
+
+Kantamneni, Engels, Rajamanoharan, Tegmark, Nanda, MIT and Google DeepMind
+(2025) — [ARXIV-2502.16681](https://arxiv.org/abs/2502.16681)
+
+## Key takeaways
+
+- **The question:** proxy metrics (reconstruction, downstream loss) do not
+  show that SAEs help understand or control a model. Do they help on a
+  concrete task where their interpretable basis should be an advantage?
+- **The method:** 113 binary probing datasets. Baselines are logistic
+  regression, PCA, KNN, XGBoost and an MLP on raw activations. SAE probes use
+  the top-k latents from Gemma Scope, and Llama Scope TopK SAEs for the
+  replication. The "quiver of arrows" picks each task's method by
+  *validation* AUC and reports test AUC, so SAEs cannot win by peeking at the
+  test set
+- **Standard conditions:** SAEs are picked for 14 of 113 tasks, and adding
+  them to the quiver changes mean test AUC by −0.003 ± 0.002 (Figure 4)
+- **Hard regimes:** no average gain at any level of data scarcity (2–1024
+  examples), class imbalance or label noise (Figure 6). SAE probes are also
+  worse under covariate shift
+- **Illusions it corrects:** max-pooled SAE probes beat a last-token
+  baseline on 19.6% of datasets. Give the baseline attention pooling and the
+  SAE win rate falls to 8.7% (Figure 11). SAE-based discoveries about
+  spurious features and label quality are reproduced with simple baselines
+- **Architectures:** eight SAE variants released over two years show a
+  slight upward trend against baseline, smaller than the spread (Figure 12)
+
+## Standing in the anthology
+
+**Filed from `#163`** ("SAE"). It is `compared_against` [LIT-tmpydijh](LIT-tmpydijh.md),
+whose TopK SAEs are among the probed architectures, and it sources
+[SOTA-tmpzz4sk](../practices.d/SOTA-tmpzz4sk.md).
+
+**Scope, in the authors' words:** probing is one proxy for SAE utility,
+not a wholesale critique of the paradigm. It is the reason the record's SAE
+practices say how to train and report an SAE, not that you should use one.
+
+Read — [NOTE-tmptkt9y](../notes.d/NOTE-tmptkt9y.md).

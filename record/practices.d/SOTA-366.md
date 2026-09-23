@@ -1,5 +1,8 @@
 ---
+number: 366
 status: Active
+formerly:
+- SOTA-tmp3wrpo
 consensus: unassessed
 consensus_note: >-
   Not judged, and that is the honest answer rather than a gap. The
@@ -15,17 +18,17 @@ tags:
 - model-stability
 date: '2026-09-23'
 source:
-- LIT-tmp3roys
+- LIT-593
 introduced_by:
-- LIT-tmp3roys
+- LIT-593
 implementations: []
 ---
 
-# SOTA-tmp3wrpo: Monitor the standard deviation of the l2-normalized embedding; healthy is one over root d and collapsed is zero
+# SOTA-366: Monitor the standard deviation of the l2-normalized embedding; healthy is one over root d and collapsed is zero
 
 ## Source
 
-Chen & He (2020), [LIT-tmp3roys](../literature.d/LIT-tmp3roys.md) — [ARXIV-2011.10566](https://arxiv.org/abs/2011.10566), §4.1.
+Chen & He (2020), [LIT-593](../literature.d/LIT-593.md) — [ARXIV-2011.10566](https://arxiv.org/abs/2011.10566), §4.1.
 
 ## The claim
 

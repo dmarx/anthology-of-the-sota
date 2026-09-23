@@ -1,5 +1,8 @@
 ---
+number: 367
 status: Active
+formerly:
+- SOTA-tmpacu6q
 consensus: emerging
 consensus_note: >-
   Real and adopted but not dominant. Both papers reach 73.2% ImageNet linear,
@@ -17,24 +20,24 @@ tags:
 - model-stability
 date: '2026-09-23'
 source:
-- LIT-tmpipfcy
-- LIT-tmpovcux
+- LIT-595
+- LIT-596
 introduced_by:
-- LIT-tmpovcux
+- LIT-596
 implementations: []
 ---
 
-# SOTA-tmpacu6q: Or put the anti-collapse constraint in the loss, as a variance floor and a decorrelation term
+# SOTA-367: Or put the anti-collapse constraint in the loss, as a variance floor and a decorrelation term
 
 ## Source
 
-Bardes et al. (2021), [LIT-tmpipfcy](../literature.d/LIT-tmpipfcy.md) — [ARXIV-2105.04906](https://arxiv.org/abs/2105.04906). Introduced by Zbontar
-et al. (2021), [LIT-tmpovcux](../literature.d/LIT-tmpovcux.md) — [ARXIV-2103.03230](https://arxiv.org/abs/2103.03230), which stated the loss-side
+Bardes et al. (2021), [LIT-595](../literature.d/LIT-595.md) — [ARXIV-2105.04906](https://arxiv.org/abs/2105.04906). Introduced by Zbontar
+et al. (2021), [LIT-596](../literature.d/LIT-596.md) — [ARXIV-2103.03230](https://arxiv.org/abs/2103.03230), which stated the loss-side
 approach first in its cross-correlation form.
 
 ## The claim
 
-A joint-embedding loss admits the constant solution. [SOTA-tmp1kmsu](SOTA-tmp1kmsu.md) removes it
+A joint-embedding loss admits the constant solution. [SOTA-365](SOTA-365.md) removes it
 by making the two branches different functions. The alternative is to remove
 it from the objective directly, with two terms that a constant output cannot
 satisfy:

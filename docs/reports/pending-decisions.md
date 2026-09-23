@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**181 document(s) awaiting a decision.**
+**182 document(s) awaiting a decision.**
 
 ## SOTAs
 
-125 of the 181.
+125 of the 182.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -141,7 +141,7 @@
 
 ## THEORYs
 
-50 of the 181.
+51 of the 182.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -191,6 +191,7 @@
 | 2026-09-22 | Proposed | [THEORY-065](../../record/theory.d/THEORY-065.md) | 0 | 0 | Self-attention drives tokens into a few clusters, and the spectrum of the value matrix decides the geometry they land in |
 | 2026-09-22 | Proposed | [THEORY-066](../../record/theory.d/THEORY-066.md) | 0 | 0 | Pure self-attention collapses every token onto one, and skip connections prevent it by keeping short paths alive |
 | 2026-09-23 | Proposed | [THEORY-080](../../record/theory.d/THEORY-080.md) | 7 | 0 | A diffusion process needs noise to keep its intermediate states on the data manifold, and blur helps only while noise still dominates the bands it removes |
+| 2026-09-23 | Deferred | [THEORY-087](../../record/theory.d/THEORY-087.md) | 6 | 0 | Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other |
 | 2026-09-23 | Proposed | [THEORY-078](../../record/theory.d/THEORY-078.md) | 4 | 0 | Deep sine networks train when initialization holds every pre-activation near a standard normal, which keeps each layer arcsine-distributed and frequency growth slow; that initialization is what earlier periodic networks lacked |
 | 2026-09-23 | Proposed | [THEORY-081](../../record/theory.d/THEORY-081.md) | 1 | 0 | A transformer's feed-forward layers work as key-value memories: each hidden unit's input weights match input patterns, and its output weights promote the tokens that follow them |
 | 2026-09-23 | Proposed | [THEORY-084](../../record/theory.d/THEORY-084.md) | 1 | 0 | AlphaFold 2 needs the sequence alignment to find a protein's coarse fold, not to refine it, so accuracy collapses below a minimum alignment depth and barely improves above it |
@@ -198,7 +199,7 @@
 
 ## LITs
 
-3 of the 181.
+3 of the 182.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -208,7 +209,7 @@
 
 ## ADRs
 
-3 of the 181.
+3 of the 182.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

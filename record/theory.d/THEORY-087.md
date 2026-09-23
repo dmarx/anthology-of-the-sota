@@ -1,5 +1,8 @@
 ---
+number: 87
 status: Deferred
+formerly:
+- THEORY-tmpf89jm
 promote_when: >-
   An ablation that varies the candidate mechanisms independently in one
   codebase under one training recipe — predictor, stop-gradient, EMA rate,
@@ -16,15 +19,15 @@ tags:
 - representation-and-encoding
 date: '2026-09-23'
 source:
-- LIT-tmp3roys
-- LIT-tmpawe8p
-- LIT-tmpipfcy
-- LIT-tmpovcux
+- LIT-593
+- LIT-594
+- LIT-595
+- LIT-596
 explains:
-- SOTA-tmp1kmsu
+- SOTA-365
 ---
 
-# THEORY-tmpf89jm: Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other
+# THEORY-087: Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other
 
 ## The situation
 
@@ -36,16 +39,16 @@ inconsistent with the others**.
 
 | account | source | mechanism claimed | what it says is essential |
 | --- | --- | --- | --- |
-| no joint loss | [LIT-tmpawe8p](../literature.d/LIT-tmpawe8p.md) | the target's update is not a gradient of the loss, so there is no objective being jointly minimised — "similar to GANs" | predictor **and** EMA target |
-| alternating optimisation | [LIT-tmp3roys](../literature.d/LIT-tmp3roys.md) | an EM-like alternation over two variable sets, "analogous to k-means" | stop-gradient |
-| redundancy reduction | [LIT-tmpovcux](../literature.d/LIT-tmpovcux.md) | the off-diagonal cross-correlation penalty makes constant outputs unavailable | neither asymmetry nor negatives |
-| explicit variance | [LIT-tmpipfcy](../literature.d/LIT-tmpipfcy.md) | a hinge on per-dimension standard deviation forbids collapse arithmetically | none of the above |
+| no joint loss | [LIT-594](../literature.d/LIT-594.md) | the target's update is not a gradient of the loss, so there is no objective being jointly minimised — "similar to GANs" | predictor **and** EMA target |
+| alternating optimisation | [LIT-593](../literature.d/LIT-593.md) | an EM-like alternation over two variable sets, "analogous to k-means" | stop-gradient |
+| redundancy reduction | [LIT-596](../literature.d/LIT-596.md) | the off-diagonal cross-correlation penalty makes constant outputs unavailable | neither asymmetry nor negatives |
+| explicit variance | [LIT-595](../literature.d/LIT-595.md) | a hinge on per-dimension standard deviation forbids collapse arithmetically | none of the above |
 
 ## Where they contradict
 
 **On the momentum encoder, directly and numerically.** BYOL reports that
 removing it gives **0.3%** accuracy and treats it as essential.
-`LIT-tmp3roys` *is* that removal and reports **67.7%**. Two careful groups,
+`LIT-593` *is* that removal and reports **67.7%**. Two careful groups,
 the same ablation, results three orders of magnitude apart. Neither paper
 resolves it, and the difference must lie in something neither isolated.
 
@@ -69,7 +72,7 @@ as a variance hinge, and no account covers both.
 - All four produce useful representations.
 
 So this document disputes the explanations, not the results — the
-distinction `ADR-031` exists for. `SOTA-tmp1kmsu` is `Active` while this is
+distinction `ADR-031` exists for. `SOTA-365` is `Active` while this is
 `Deferred`, and that pairing is deliberate.
 
 The status is `Deferred` rather than `Proposed` on the vocabulary's own

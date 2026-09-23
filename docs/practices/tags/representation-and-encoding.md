@@ -6,7 +6,7 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-22 of 364 SOTA documents. Back to the [full index](../README.md).
+24 of 367 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -32,3 +32,5 @@
 | [SOTA-361](../../../record/practices.d/SOTA-361.md) | Compose augmentations so the shortcut dies, and tune them for the contrastive objective rather than the supervised one |  | Active |
 | [SOTA-362](../../../record/practices.d/SOTA-362.md) | Train through a projection head and then discard it, taking the layer before as the representation |  | Active |
 | [SOTA-363](../../../record/practices.d/SOTA-363.md) | Decouple the negative set from the batch with a queue, and keep the encoder that fills it slow |  | Active |
+| [SOTA-365](../../../record/practices.d/SOTA-365.md) | Learn without negatives by breaking the symmetry: a predictor on one branch and a stop-gradient on the other |  | Active |
+| [SOTA-367](../../../record/practices.d/SOTA-367.md) | Or put the anti-collapse constraint in the loss, as a variance floor and a decorrelation term |  | Active |

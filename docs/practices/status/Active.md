@@ -6,7 +6,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-210 of 364 SOTA documents. Back to the [full index](../README.md).
+213 of 367 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -220,3 +220,6 @@
 | [SOTA-362](../../../record/practices.d/SOTA-362.md) | Train through a projection head and then discard it, taking the layer before as the representation |  | Active |
 | [SOTA-363](../../../record/practices.d/SOTA-363.md) | Decouple the negative set from the batch with a queue, and keep the encoder that fills it slow |  | Active |
 | [SOTA-364](../../../record/practices.d/SOTA-364.md) | Break batch normalization's cross-sample leak before it solves your contrastive task for you |  | Active |
+| [SOTA-365](../../../record/practices.d/SOTA-365.md) | Learn without negatives by breaking the symmetry: a predictor on one branch and a stop-gradient on the other |  | Active |
+| [SOTA-366](../../../record/practices.d/SOTA-366.md) | Monitor the standard deviation of the l2-normalized embedding; healthy is one over root d and collapsed is zero |  | Active |
+| [SOTA-367](../../../record/practices.d/SOTA-367.md) | Or put the anti-collapse constraint in the loss, as a variance floor and a decorrelation term |  | Active |

@@ -1,5 +1,8 @@
 ---
+number: 365
 status: Active
+formerly:
+- SOTA-tmp1kmsu
 consensus: converged
 consensus_note: >-
   The asymmetric family is what the descendants inherited. `LIT-216`
@@ -17,21 +20,21 @@ tags:
 - model-stability
 date: '2026-09-23'
 source:
-- LIT-tmpawe8p
-- LIT-tmp3roys
+- LIT-594
+- LIT-593
 introduced_by:
-- LIT-tmpawe8p
+- LIT-594
 implementations: []
 explained_by:
-- THEORY-tmpf89jm
+- THEORY-087
 ---
 
-# SOTA-tmp1kmsu: Learn without negatives by breaking the symmetry: a predictor on one branch and a stop-gradient on the other
+# SOTA-365: Learn without negatives by breaking the symmetry: a predictor on one branch and a stop-gradient on the other
 
 ## Source
 
-Grill et al. (2020), [LIT-tmpawe8p](../literature.d/LIT-tmpawe8p.md) — [ARXIV-2006.07733](https://arxiv.org/abs/2006.07733), and Chen & He (2020),
-[LIT-tmp3roys](../literature.d/LIT-tmp3roys.md) — [ARXIV-2011.10566](https://arxiv.org/abs/2011.10566).
+Grill et al. (2020), [LIT-594](../literature.d/LIT-594.md) — [ARXIV-2006.07733](https://arxiv.org/abs/2006.07733), and Chen & He (2020),
+[LIT-593](../literature.d/LIT-593.md) — [ARXIV-2011.10566](https://arxiv.org/abs/2011.10566).
 
 ## The claim
 
@@ -78,16 +81,16 @@ memory that carried it.
 ## Conditions
 
 - **Nothing here explains why it works**, and the two papers' explanations
-  <!-- inactive-ok: THEORY-tmpf89jm — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
-  are incompatible. [THEORY-tmpf89jm](../theory.d/THEORY-tmpf89jm.md) is the dispute; treat the recipe as
+  <!-- inactive-ok: THEORY-087 — Deferred by design: the question is open and this cluster is where the record says so. Citing it is the point, not an oversight. -->
+  are incompatible. [THEORY-087](../theory.d/THEORY-087.md) is the dispute; treat the recipe as
   empirical and do not reason from the mechanism.
 - **The collapse failure is silent unless you look for it.** Loss goes
-  *down*. Run [SOTA-tmp3wrpo](SOTA-tmp3wrpo.md).
+  *down*. Run [SOTA-366](SOTA-366.md).
 - **Weight decay is part of the method.** BYOL reports that removing it
   makes both BYOL and SimCLR diverge.
 - **The augmentation dependence does not go away** ([SOTA-tmp6nbsn](SOTA-tmp6nbsn.md)); these
   methods still rely on the view construction to define what is invariant.
-- **The alternative family exists and is competitive** — [SOTA-tmpacu6q](SOTA-tmpacu6q.md) puts
+- **The alternative family exists and is competitive** — [SOTA-367](SOTA-367.md) puts
   the constraint in the loss instead and lands within a couple of points.
 
 ## Known implementations

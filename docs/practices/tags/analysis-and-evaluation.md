@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-49 of 364 SOTA documents. Back to the [full index](../README.md).
+50 of 367 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -59,3 +59,4 @@
 | [SOTA-350](../../../record/practices.d/SOTA-350.md) | Compare GNN architectures over many random data splits and seeds, with one shared training and hyperparameter-selection procedure for every model, never on a single fixed split | Shchur et al. (2018), [LIT-581](../../../record/literature.d/LIT-581.md) — on the Planetoid split GAT beats GCN. On another random split of the same size GCN wins, and averaged over 100 splits × 20 seeds with identical training and tuning, GCN ranks first of four GNNs. A single split selects the model that overfits it, and per-model recipes measure the recipe. Report mean and spread over many splits and seeds, with the same tuning budget for every model. | Active |
 | [SOTA-353](../../../record/practices.d/SOTA-353.md) | Train a head that predicts the model's own accuracy on each output, against the metric you care about, and use it to rank samples and filter predictions | Jumper et al. (2021), [LIT-583](../../../record/literature.d/LIT-583.md) — regress the per-residue lDDT the prediction will score (pLDDT) and the predicted TM-score. They track truth at r = 0.76 and 0.85 over 10,795 chains, and pLDDT filters the self-distillation set. Abramson et al. (2024), [LIT-584](../../../record/literature.d/LIT-584.md), keep the head under diffusion by rolling out a cheap sample during training. They rank seeds by it, and antibody-interface quality keeps rising up to 1,000 seeds. | Proposed |
 | [SOTA-357](../../../record/practices.d/SOTA-357.md) | Build a zero-shot classifier from prompt templates and ensemble them in embedding space |  | Active |
+| [SOTA-366](../../../record/practices.d/SOTA-366.md) | Monitor the standard deviation of the l2-normalized embedding; healthy is one over root d and collapsed is zero |  | Active |

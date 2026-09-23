@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [23 Sep 02:34 — Deciding where one sentence should live found three defects the pilot could not](2026-09.md#deciding-where-one-sentence-should-live-found-three-defects-the-pilot-could-not)
 - [23 Sep 01:43 — Grepping a library against the registry finds the right gaps and the wrong matches](2026-09.md#grepping-a-library-against-the-registry-finds-the-right-gaps-and-the-wrong-matches)
 - [23 Sep 00:17 — A lint class made a vocabulary gap visible, and it was not the gap the line was about](2026-09.md#a-lint-class-made-a-vocabulary-gap-visible-and-it-was-not-the-gap-the-line-was-about)
 - [22 Sep 22:15 — The item named the wrong source, and the right evidence was already in the record](2026-09.md#the-item-named-the-wrong-source-and-the-right-evidence-was-already-in-the-record)
@@ -190,9 +191,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-183 entries across 2 books, newest first.
+184 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 181 | 2026-09-05 | 2026-09-23 |
+| [2026-09](2026-09.md) | 182 | 2026-09-05 | 2026-09-23 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**194 document(s) awaiting a decision.**
+**195 document(s) awaiting a decision.**
 
 ## SOTAs
 
-122 of the 194.
+122 of the 195.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -138,7 +138,7 @@
 
 ## THEORYs
 
-48 of the 194.
+48 of the 195.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -193,7 +193,7 @@
 
 ## LITs
 
-3 of the 194.
+3 of the 195.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -203,7 +203,7 @@
 
 ## ADRs
 
-21 of the 194.
+22 of the 195.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -228,9 +228,10 @@
 | 2026-09-22 | Proposed | [ADR-054](../../record/decisions.d/ADR-054.md) | 1 | 0 | The four commands are five, and two of them are invariants a hook can hold |
 | 2026-09-23 | Proposed | [ADR-056](../../record/decisions.d/ADR-056.md) | 1 | 0 | capability-thresholds: whether a capability arrives abruptly is a claim, not a method |
 | 2026-09-23 | Proposed | [ADR-057](../../record/decisions.d/ADR-057.md) | 0 | 0 | Three practices from one paper are siblings by source, not a line of practice |
+| 2026-09-23 | Proposed | [ADR-058](../../record/decisions.d/ADR-058.md) | 0 | 0 | A library is evidence about consensus, and its observation lives in a report |
 
 The citation count is the second axis, and it flips the priority: an old proposal nothing references is a stalled idea worth closing, while an old proposal many files cite is a decision the codebase has already made and hasn't written down.
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (19): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md), [ADR-040](../../record/decisions.d/ADR-040.md), [ADR-042](../../record/decisions.d/ADR-042.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-288](../../record/practices.d/SOTA-288.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-294](../../record/practices.d/SOTA-294.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [THEORY-063](../../record/theory.d/THEORY-063.md), [THEORY-065](../../record/theory.d/THEORY-065.md), [THEORY-066](../../record/theory.d/THEORY-066.md), [ADR-057](../../record/decisions.d/ADR-057.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (20): [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [ADR-033](../../record/decisions.d/ADR-033.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [ADR-037](../../record/decisions.d/ADR-037.md), [ADR-040](../../record/decisions.d/ADR-040.md), [ADR-042](../../record/decisions.d/ADR-042.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-288](../../record/practices.d/SOTA-288.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-294](../../record/practices.d/SOTA-294.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [THEORY-063](../../record/theory.d/THEORY-063.md), [THEORY-065](../../record/theory.d/THEORY-065.md), [THEORY-066](../../record/theory.d/THEORY-066.md), [ADR-057](../../record/decisions.d/ADR-057.md), [ADR-058](../../record/decisions.d/ADR-058.md) — these are the cheapest to close, since nothing depends on the answer.

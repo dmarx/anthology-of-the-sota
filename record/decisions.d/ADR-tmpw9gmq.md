@@ -1,0 +1,101 @@
+---
+status: Active
+title: 'concept-geometry'
+version: 1
+tags:
+- taxonomy
+- record
+date: '2026-09-23'
+summary: >-
+  A twenty-second topic, `concept-geometry`, for how concepts are laid out in
+  a model's representation space: linear directions and the structures built
+  from them, superposition and the dictionaries that separate it, probing and
+  steering along those directions, and whether different models reach the
+  same geometry. Four documents take it as their primary topic, moved from
+  `representation-and-encoding`, whose blurb is about encoding the input and
+  does not cover them. Twelve more add it as a secondary tag. Rejected:
+  widening `representation-and-encoding`, and `interpretability`, which names
+  a purpose rather than a subject and would absorb most of
+  `analysis-and-evaluation`.
+---
+
+# ADR-tmpw9gmq: concept-geometry
+
+## Context
+
+Filing Park, Choe and Veitch's *Linear Representation Hypothesis*
+([LIT-tmpoa14o](../literature.d/LIT-tmpoa14o.md)), the owner asked for a concept-geometry topic alongside it.
+The record had already said it needed one, three times. [LIT-460](../literature.d/LIT-460.md) said
+`representation-and-encoding` "holds fourteen notes, all about tokenisation
+and positional encoding. Nothing on concept geometry". [LIT-458](../literature.d/LIT-458.md) said the
+record "has no document for it, nor for steering vectors, nor for concept
+geometry". [THEORY-034](../theory.d/THEORY-034.md) called the missing hypothesis a trunk.
+
+Those documents were filed under `representation-and-encoding`, whose blurb
+is "how the signal is encoded before the expensive network sees it —
+tokenizers and learned latents, positional encoding". A concept lattice
+over the residual stream is not that. It was the nearest wrong word, which
+under [ADR-059](ADR-059.md) means the axis was short.
+
+The documents on this subject had spread since then. Sparse-autoencoder and
+probing work ([LIT-568](../literature.d/LIT-568.md), [LIT-571](../literature.d/LIT-571.md) and three practices) sits in
+`analysis-and-evaluation` alone. Superposition ([LIT-544](../literature.d/LIT-544.md)) sits in four topics,
+none of them this one. The word-vector papers just filed ([LIT-602](../literature.d/LIT-602.md) to [LIT-604](../literature.d/LIT-604.md))
+introduced the analogy offsets this subject begins from.
+
+## Decision
+
+**A twenty-second topic, primary-eligible:**
+
+> `concept-geometry` — how concepts are laid out in a model's representation
+> space: linear directions and the regions, lattices and spectra built from
+> them, superposition and the dictionaries that pull it apart, reading
+> concepts out with probes and writing them in with steering vectors, and
+> whether different models arrive at the same geometry.
+
+**Primary for four documents** whose subject it is and whose current primary
+is the misfit: [LIT-460](../literature.d/LIT-460.md), [THEORY-034](../theory.d/THEORY-034.md), [LIT-526](../literature.d/LIT-526.md), [THEORY-063](../theory.d/THEORY-063.md). They keep their
+other tags. This follows [ADR-059](ADR-059.md), which moved [LIT-505](../literature.d/LIT-505.md) and [LIT-506](../literature.d/LIT-506.md) to the new
+word as primary.
+
+**Secondary for twelve**, appended so their primaries stand: [LIT-458](../literature.d/LIT-458.md) and
+[THEORY-036](../theory.d/THEORY-036.md) (convergent representations), [LIT-544](../literature.d/LIT-544.md) (superposition), [LIT-568](../literature.d/LIT-568.md) and [LIT-571](../literature.d/LIT-571.md)
+(sparse autoencoders and sparse probing), [SOTA-342](../practices.d/SOTA-342.md), [SOTA-344](../practices.d/SOTA-344.md) and [SOTA-345](../practices.d/SOTA-345.md)
+(SAE training and evaluation, probing), [LIT-602](../literature.d/LIT-602.md), [LIT-603](../literature.d/LIT-603.md) and [LIT-604](../literature.d/LIT-604.md) (the
+word-vector offsets), [THEORY-089](../theory.d/THEORY-089.md) (why those offsets exist). The test is
+[ADR-046](ADR-046.md)'s: would someone browsing concept geometry expect it?
+
+**Filed with it:** [LIT-tmpoa14o](../literature.d/LIT-tmpoa14o.md), its note, [THEORY-tmpsbx36](../theory.d/THEORY-tmpsbx36.md) and
+[SOTA-tmpb5sn6](../practices.d/SOTA-tmpb5sn6.md), all under the new word first.
+
+## Alternatives considered
+
+- **Widen `representation-and-encoding`.** Its subject is what happens to
+  the signal before the network. This subject is what the network builds
+  from it. One word for both would make the input-encoding papers and the
+  concept papers hard to find apart, which is the problem [ADR-052](ADR-052.md) fixed for
+  `multimodal-learning`.
+- **`interpretability`.** `analysis-and-evaluation`'s blurb already claims
+  interpretability, and the word names a purpose. The logit lens, causal
+  tracing and knowledge editing are interpretability without being claims
+  about how concepts are laid out, and they would all move. The subject
+  here is narrower and is a claim about the model, not a method of checking
+  it.
+- **Leave it to the trunk to arrive.** The three documents that named the gap
+  were each filed under a topic their subject did not fit. Waiting is how the
+  scatter above happened.
+
+## Consequences
+
+- Twenty-two topics, twenty primary-eligible. `CLAUDE.md` and `luria.yaml`
+  change their counts.
+- **Not retagged**: the logit and tuned lenses ([LIT-569](../literature.d/LIT-569.md), [LIT-570](../literature.d/LIT-570.md), [SOTA-343](../practices.d/SOTA-343.md)),
+  the FFN key-value and causal-tracing papers ([LIT-575](../literature.d/LIT-575.md), [LIT-578](../literature.d/LIT-578.md) and their
+  theories), and LoReFT ([SOTA-329](../practices.d/SOTA-329.md)). They read or edit hidden states without
+  claiming how concepts are arranged in them. The first to make such a claim
+  should take the tag.
+- Relations among the new and retagged documents bind on the new tag:
+  [LIT-460](../literature.d/LIT-460.md) `extends` [LIT-tmpoa14o](../literature.d/LIT-tmpoa14o.md), [LIT-526](../literature.d/LIT-526.md) `compared_against` it, and
+  [THEORY-034](../theory.d/THEORY-034.md) `extends` [THEORY-tmpsbx36](../theory.d/THEORY-tmpsbx36.md).
+
+<!-- inactive-ok-file: THEORY-tmpsbx36, SOTA-tmpb5sn6, THEORY-034, THEORY-063, THEORY-089, THEORY-036, SOTA-329, SOTA-342, SOTA-343, SOTA-344 — Proposed, named as documents this decision files, retags or declines to retag, not cited as recommendations or established accounts -->

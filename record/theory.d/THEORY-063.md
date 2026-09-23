@@ -15,6 +15,7 @@ promote_when: >-
 title: 'Contextual concept directions sit in the low-variance tail of the unembedding spectrum while vocabulary contrasts sit at the top'
 version: 1
 tags:
+- concept-geometry
 - representation-and-encoding
 - analysis-and-evaluation
 date: '2026-09-22'

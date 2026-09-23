@@ -7,6 +7,7 @@ title: 'Probe language-model activations with logistic regression on the raw act
 version: 1
 tags:
 - analysis-and-evaluation
+- concept-geometry
 date: '2026-09-23'
 source:
 - LIT-568

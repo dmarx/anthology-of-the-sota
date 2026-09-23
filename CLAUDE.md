@@ -60,7 +60,7 @@ work perfectly well.
   URL is a string nothing can check ([ADR-009](record/decisions.d/ADR-009.md)). Two papers reached the old
   corpus with no identifier at all; that is now impossible.
 - **The first tag is the primary topic, and a document may carry more than
-  one.** The twenty-one live in the `topics` vocabulary in `luria.yaml` — one
+  one.** The twenty-two live in the `topics` vocabulary in `luria.yaml` — one
   table, named by the practice registry and the reading list alike, glosses
   included. List the topic the document is *most* about first: `primary_topic`
   derives `{tags[0]}`, so tag order is what the indexes read. **Tag the

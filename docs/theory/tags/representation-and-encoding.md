@@ -2,11 +2,11 @@
 
 # THEORYs with `tags` `representation-and-encoding`
 
-*Topics — The nineteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same nineteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+*Topics — The twenty kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-8 of 83 THEORY documents. Back to the [full index](../README.md).
+8 of 84 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

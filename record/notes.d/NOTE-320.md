@@ -1,6 +1,9 @@
 ---
+number: 320
 status: Read
-paper: LIT-tmpzy774
+formerly:
+- NOTE-tmp0bufb
+paper: LIT-584
 title: 'AlphaFold 3'
 version: 1
 date: '2026-09-23'
@@ -12,7 +15,7 @@ summary: >-
   Extended Data and supplementary methods not read.
 ---
 
-# NOTE-tmp0bufb: AlphaFold 3
+# NOTE-320: AlphaFold 3
 
 ## Contribution
 

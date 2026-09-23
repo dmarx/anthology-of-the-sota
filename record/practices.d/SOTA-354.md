@@ -1,5 +1,8 @@
 ---
+number: 354
 status: Proposed
+formerly:
+- SOTA-tmpydunc
 promote_when: >-
   An independent retraining (for example OpenFold's) that reports what
   self-distillation adds, as a number, with and without it at matched
@@ -14,9 +17,9 @@ tags:
 - biomolecular-modeling
 date: '2026-09-23'
 source:
-- LIT-tmpmz8pl
+- LIT-583
 introduced_by:
-- LIT-tmpmz8pl
+- LIT-583
 consensus: unassessed
 consensus_note: >-
   Noisy-student self-training predates AlphaFold, and later structure models
@@ -25,26 +28,26 @@ consensus_note: >-
 implementations:
 - AlphaFold
 summary: >-
-  Jumper et al. (2021), [LIT-tmpmz8pl](../literature.d/LIT-tmpmz8pl.md) — about 100,000 solved structures and
+  Jumper et al. (2021), [LIT-583](../literature.d/LIT-583.md) — about 100,000 solved structures and
   billions of sequences. AlphaFold 2 predicted structures for about 350,000
   unlabeled sequences, kept the confident ones, and retrained the same
   architecture from scratch on those plus the PDB. Cropping and alignment
   subsampling mean the student cannot just reproduce the teacher. The
   ablation shows a clear gain. The filter is the model's own calibrated
-  confidence ([SOTA-tmpej1tr](SOTA-tmpej1tr.md)).
+  confidence ([SOTA-353](SOTA-353.md)).
 ---
 
-# SOTA-tmpydunc: When unlabelled inputs vastly outnumber labelled ones, retrain from scratch on the labelled data mixed with the model's own high-confidence predictions for unlabelled inputs, under augmentation that stops it copying them
+# SOTA-354: When unlabelled inputs vastly outnumber labelled ones, retrain from scratch on the labelled data mixed with the model's own high-confidence predictions for unlabelled inputs, under augmentation that stops it copying them
 
 ## Source
 
-Jumper et al. (2021), [LIT-tmpmz8pl](../literature.d/LIT-tmpmz8pl.md). Read as [NOTE-tmprglmr](../notes.d/NOTE-tmprglmr.md).
+Jumper et al. (2021), [LIT-583](../literature.d/LIT-583.md). Read as [NOTE-321](../notes.d/NOTE-321.md).
 
 ## The practice
 
 - **Label the unlabeled pool with the trained model**, and keep only
   predictions the model is confident in. This needs a confidence estimate
-  that tracks accuracy ([SOTA-tmpej1tr](SOTA-tmpej1tr.md))
+  that tracks accuracy ([SOTA-353](SOTA-353.md))
 - **Retrain from scratch, not by fine-tuning**, on a mixture of real labels
   and distilled ones
 - **Make the student's input harder than the teacher's.** AlphaFold crops
@@ -59,4 +62,4 @@ Jumper et al. (2021), [LIT-tmpmz8pl](../literature.d/LIT-tmpmz8pl.md). Read as [
   errors come back as training labels
 - **One system, one plotted ablation.** The gain's size is not stated in
   text
-<!-- inactive-ok-file: SOTA-tmpej1tr — Proposed, filed alongside as the confidence filter this practice depends on -->
+<!-- inactive-ok-file: SOTA-353 — Proposed, filed alongside as the confidence filter this practice depends on -->

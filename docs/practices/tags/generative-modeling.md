@@ -2,11 +2,11 @@
 
 # SOTAs with `tags` `generative-modeling`
 
-*Topics — The nineteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same nineteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+*Topics — The twenty kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Generative modeling** — diffusion, samplers, text-to-image, conditioning and control.
 
-30 of 351 SOTA documents. Back to the [full index](../README.md).
+31 of 354 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -40,3 +40,4 @@
 | [SOTA-339](../../../record/practices.d/SOTA-339.md) | For unpaired image-to-image translation of appearance, constrain both mappings with a cycle-consistency loss | Zhu et al. (2017), [LIT-564](../../../record/literature.d/LIT-564.md) — learn X → Y and Y → X together, and penalize ‖F(G(x)) − x‖₁ and ‖G(F(y)) − y‖₁ alongside the two adversarial losses. With GAN losses alone the mapping may ignore its input. With the cycle it keeps content and changes appearance. It is scoped to colour and texture changes, and the authors report failure on geometric ones. | Proposed |
 | [SOTA-341](../../../record/practices.d/SOTA-341.md) | Condition an image generator on each training image's original size instead of discarding or upsampling small images | Podell et al. (2023), [LIT-566](../../../record/literature.d/LIT-566.md) — embed each training image's original height and width, like the timestep, and give it to the model. Then keep the small images that a minimum-resolution filter would drop (39% of SDXL's pretraining data below 256²) without teaching the model their blur. At inference, set the size you want. On class-conditional ImageNet 512²: FID-5k 43.84 discarding, 39.76 keeping unconditioned, 36.53 keeping with size conditioning. | Proposed |
 | [SOTA-346](../../../record/practices.d/SOTA-346.md) | Retune the training timestep shift for each autoencoder latent space, and never rank latent spaces for generation under one shared schedule | Black Forest Labs (2025), [LIT-572](../../../record/literature.d/LIT-572.md) — four autoencoders, 30 timestep configurations each. The training shift alone moves FID by 61–86%. An RAE latent that wins when both are tuned loses to a tuned FLUX.2 latent when left unshifted. When you swap the autoencoder under a diffusion or flow model, sweep the shift again, using a logit-normal training distribution. When you compare autoencoders, compare each at its own optimum. | Proposed |
+| [SOTA-352](../../../record/practices.d/SOTA-352.md) | When a structure predictor is made generative, add a regression model's predictions to the training data so disordered regions are learned as disorder rather than invented structure | Abramson et al. (2024), [LIT-584](../../../record/literature.d/LIT-584.md) — a diffusion head generates plausible compact structure even where the protein has none. AlphaFold- Multimer, a regression model, renders the same regions as extended loops. Mixing its predictions into training teaches the generative model that convention, and "greatly reduced" hallucination. Remaining hallucinations are flagged by low confidence but do not look disordered. | Proposed |

@@ -4,7 +4,7 @@
 
 **data-pipeline**.
 
-17 of 319 NOTE documents. Back to the [full index](../README.md).
+18 of 321 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -25,3 +25,4 @@
 | [NOTE-201](../../../record/notes.d/NOTE-201.md) | Data Mixing Can Induce Phase Transitions in Knowledge Acquisition | Linear scaling of acquired knowledge in model size holds when a knowledge-dense dataset is trained on alone and breaks once it is mixed into web text: below a critical model size, or a critical mixing ratio, the model memorises almost nothing. Attributed to capacity allocation as a knapsack, with the critical ratio a power law in model size. | Read |
 | [NOTE-233](../../../record/notes.d/NOTE-233.md) | TinyStories | Read as the missing trunk under eight `tiny-models` practices. The result that matters is a separation, not a record: what stops a 125M model speaking coherent English is the breadth of the corpus, not the complexity of language — established by holding the architecture and shrinking the corpus. | Read |
 | [NOTE-234](../../../record/notes.d/NOTE-234.md) | SimpleStories | Read to see what, if anything, it establishes that its trunk did not. The dataset comparison is direct and well instrumented; the model comparison is confounded three ways and the authors say so. The practice this record takes from it is about the generation procedure, which was measured. | Read |
+| [NOTE-321](../../../record/notes.d/NOTE-321.md) | AlphaFold 2 | Near-experimental protein structure accuracy at CASP14, a calibrated confidence head, self-distillation on confident predictions, and a hard dependence on alignment depth below about 30 sequences. Main text and Methods read. The supplementary methods (architecture details, ablation descriptions) were not read. | Read |

@@ -2,11 +2,11 @@
 
 # LITs with `tags` `numerics-and-precision`
 
-*Topics — The nineteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same nineteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+*Topics — The twenty kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Numerics and precision** — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them.
 
-15 of 517 LIT documents. Back to the [full index](../README.md).
+15 of 519 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

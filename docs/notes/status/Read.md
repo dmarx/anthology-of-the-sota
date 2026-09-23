@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-316 of 319 NOTE documents. Back to the [full index](../README.md).
+318 of 321 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -326,3 +326,5 @@
 | [NOTE-317](../../../record/notes.d/NOTE-317.md) | Where did the gap go? | Retuned message-passing baselines close the reported graph-transformer gap on LRGB's Peptides datasets, mostly by adding an MLP prediction head. Feature normalization lifts every model on the superpixel datasets. Read in full. | Read |
 | [NOTE-318](../../../record/notes.d/NOTE-318.md) | Pitfalls of GNN evaluation | With one shared training and tuning protocol over 100 splits × 20 seeds, GCN ranks first among four GNNs, and the single Planetoid split reorders models. Read in full. | Read |
 | [NOTE-319](../../../record/notes.d/NOTE-319.md) | GIN | Message passing is bounded by 1-WL, and sum aggregation with an MLP reaches the bound where mean and max do not. The theory predicts the training-fit ordering. Test accuracy separates the aggregators decisively only on featureless graphs. Main text read, proofs skimmed. | Read |
+| [NOTE-320](../../../record/notes.d/NOTE-320.md) | AlphaFold 3 | AlphaFold generalized to all biomolecular complexes, with a diffusion head over atom coordinates. It gains on ligands, nucleic acids and antibodies, and inherits generative failure modes (hallucination, chirality) that it patches with distillation and ranking. Main text read. Extended Data and supplementary methods not read. | Read |
+| [NOTE-321](../../../record/notes.d/NOTE-321.md) | AlphaFold 2 | Near-experimental protein structure accuracy at CASP14, a calibrated confidence head, self-distillation on confident predictions, and a hard dependence on alignment depth below about 30 sequences. Main text and Methods read. The supplementary methods (architecture details, ablation descriptions) were not read. | Read |

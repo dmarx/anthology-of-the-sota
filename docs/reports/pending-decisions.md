@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**195 document(s) awaiting a decision.**
+**199 document(s) awaiting a decision.**
 
 ## SOTAs
 
-122 of the 195.
+125 of the 199.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -125,20 +125,23 @@
 | 2026-09-23 | Proposed | [SOTA-335](../../record/practices.d/SOTA-335.md) | 4 | 0 | When generated content must move continuously, as in video or animation, build the generator alias-free: treat features as continuous signals and low-pass filter around every nonlinearity |
 | 2026-09-23 | Proposed | [SOTA-336](../../record/practices.d/SOTA-336.md) | 4 | 0 | Train high-resolution GANs at a fixed topology with output skips in the generator and a residual discriminator, not by progressive growing |
 | 2026-09-23 | Proposed | [SOTA-338](../../record/practices.d/SOTA-338.md) | 4 | 0 | Train the GAN discriminator on frozen multi-scale pretrained features with fixed random channel and scale mixing |
+| 2026-09-23 | Proposed | [SOTA-353](../../record/practices.d/SOTA-353.md) | 4 | 0 | Train a head that predicts the model's own accuracy on each output, against the metric you care about, and use it to rank samples and filter predictions |
 | 2026-09-23 | Proposed | [SOTA-333](../../record/practices.d/SOTA-333.md) | 3 | 0 | For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history |
 | 2026-09-23 | Proposed | [SOTA-334](../../record/practices.d/SOTA-334.md) | 3 | 0 | In a style-modulated generator, demodulate the convolution weights instead of instance-normalizing the activations |
 | 2026-09-23 | Proposed | [SOTA-347](../../record/practices.d/SOTA-347.md) | 3 | 0 | To write many facts into a model's weights, update a range of early-to-mid MLP layers jointly in one batched solve (MEMIT), choosing the range by measured edit success rather than causal tracing |
 | 2026-09-23 | Proposed | [SOTA-339](../../record/practices.d/SOTA-339.md) | 2 | 0 | For unpaired image-to-image translation of appearance, constrain both mappings with a cycle-consistency loss |
+| 2026-09-23 | Proposed | [SOTA-354](../../record/practices.d/SOTA-354.md) | 2 | 0 | When unlabelled inputs vastly outnumber labelled ones, retrain from scratch on the labelled data mixed with the model's own high-confidence predictions for unlabelled inputs, under augmentation that stops it copying them |
 | 2026-09-23 | Proposed | [SOTA-340](../../record/practices.d/SOTA-340.md) | 1 | 0 | Expect weight-only 4-bit quantization to speed up batched serving only while the batch keeps the matmul memory-bound, and use a kernel built to stay there |
 | 2026-09-23 | Proposed | [SOTA-341](../../record/practices.d/SOTA-341.md) | 1 | 0 | Condition an image generator on each training image's original size instead of discarding or upsampling small images |
 | 2026-09-23 | Proposed | [SOTA-342](../../record/practices.d/SOTA-342.md) | 1 | 0 | Report a sparse autoencoder's fidelity as downstream loss in compute-equivalent terms, not as fraction of loss recovered against zero ablation |
 | 2026-09-23 | Proposed | [SOTA-343](../../record/practices.d/SOTA-343.md) | 1 | 0 | Read a transformer's intermediate-layer predictions through a tuned lens, not the raw logit lens |
 | 2026-09-23 | Proposed | [SOTA-344](../../record/practices.d/SOTA-344.md) | 1 | 0 | Train sparse autoencoders with a TopK activation instead of an L1 penalty, and prevent dead latents with transposed-decoder initialization and an auxiliary loss |
 | 2026-09-23 | Proposed | [SOTA-346](../../record/practices.d/SOTA-346.md) | 1 | 0 | Retune the training timestep shift for each autoencoder latent space, and never rank latent spaces for generation under one shared schedule |
+| 2026-09-23 | Proposed | [SOTA-352](../../record/practices.d/SOTA-352.md) | 1 | 0 | When a structure predictor is made generative, add a regression model's predictions to the training data so disordered regions are learned as disorder rather than invented structure |
 
 ## THEORYs
 
-48 of the 195.
+49 of the 199.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -190,10 +193,11 @@
 | 2026-09-23 | Proposed | [THEORY-080](../../record/theory.d/THEORY-080.md) | 5 | 0 | A diffusion process needs noise to keep its intermediate states on the data manifold, and blur helps only while noise still dominates the bands it removes |
 | 2026-09-23 | Proposed | [THEORY-078](../../record/theory.d/THEORY-078.md) | 4 | 0 | Deep sine networks train when initialization holds every pre-activation near a standard normal, which keeps each layer arcsine-distributed and frequency growth slow; that initialization is what earlier periodic networks lacked |
 | 2026-09-23 | Proposed | [THEORY-081](../../record/theory.d/THEORY-081.md) | 1 | 0 | A transformer's feed-forward layers work as key-value memories: each hidden unit's input weights match input patterns, and its output weights promote the tokens that follow them |
+| 2026-09-23 | Proposed | [THEORY-084](../../record/theory.d/THEORY-084.md) | 1 | 0 | AlphaFold 2 needs the sequence alignment to find a protein's coarse fold, not to refine it, so accuracy collapses below a minimum alignment depth and barely improves above it |
 
 ## LITs
 
-3 of the 195.
+3 of the 199.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -203,7 +207,7 @@
 
 ## ADRs
 
-22 of the 195.
+22 of the 199.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

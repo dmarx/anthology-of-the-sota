@@ -1,5 +1,8 @@
 ---
+number: 84
 status: Proposed
+formerly:
+- THEORY-tmprhu7e
 promote_when: >-
   An experiment that separates the two roles, for example giving AlphaFold
   a deep alignment for the early recycling iterations and a shallow or empty
@@ -13,9 +16,9 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-23'
 source:
-- LIT-tmpmz8pl
+- LIT-583
 summary: >-
-  Jumper et al. (2021), [LIT-tmpmz8pl](../literature.d/LIT-tmpmz8pl.md) — accuracy falls steeply when the
+  Jumper et al. (2021), [LIT-583](../literature.d/LIT-583.md) — accuracy falls steeply when the
   median alignment depth is below about 30 sequences and gains little above
   about 100. Dropping both metagenomic databases costs 6.1 GDT, almost all
   from a few targets losing 20 or more. The authors' hypothesis is that
@@ -24,12 +27,12 @@ summary: >-
   threshold is measured. The two-stage account is not tested.
 ---
 
-# THEORY-tmprhu7e: AlphaFold 2 needs the sequence alignment to find a protein's coarse fold, not to refine it, so accuracy collapses below a minimum alignment depth and barely improves above it
+# THEORY-084: AlphaFold 2 needs the sequence alignment to find a protein's coarse fold, not to refine it, so accuracy collapses below a minimum alignment depth and barely improves above it
 
 ## Source
 
-Jumper et al. (2021), [LIT-tmpmz8pl](../literature.d/LIT-tmpmz8pl.md), "MSA depth and cross-chain contacts".
-Read as [NOTE-tmprglmr](../notes.d/NOTE-tmprglmr.md).
+Jumper et al. (2021), [LIT-583](../literature.d/LIT-583.md), "MSA depth and cross-chain contacts".
+Read as [NOTE-321](../notes.d/NOTE-321.md).
 
 ## The account
 

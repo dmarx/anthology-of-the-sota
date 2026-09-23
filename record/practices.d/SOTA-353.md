@@ -1,5 +1,8 @@
 ---
+number: 353
 status: Proposed
+formerly:
+- SOTA-tmpej1tr
 promote_when: >-
   Calibration of a learned self-accuracy head measured by someone other than
   its builders, on data after the model's cutoff, showing that ranking
@@ -12,10 +15,10 @@ tags:
 - biomolecular-modeling
 date: '2026-09-23'
 source:
-- LIT-tmpmz8pl
-- LIT-tmpzy774
+- LIT-583
+- LIT-584
 introduced_by:
-- LIT-tmpmz8pl
+- LIT-583
 consensus: unassessed
 consensus_note: >-
   pLDDT and pTM are how AlphaFold predictions are read in practice. That is
@@ -26,21 +29,21 @@ implementations:
 - AlphaFold
 - AlphaFold 3
 summary: >-
-  Jumper et al. (2021), [LIT-tmpmz8pl](../literature.d/LIT-tmpmz8pl.md) — regress the per-residue lDDT the
+  Jumper et al. (2021), [LIT-583](../literature.d/LIT-583.md) — regress the per-residue lDDT the
   prediction will score (pLDDT) and the predicted TM-score. They track truth
   at r = 0.76 and 0.85 over 10,795 chains, and pLDDT filters the
-  self-distillation set. Abramson et al. (2024), [LIT-tmpzy774](../literature.d/LIT-tmpzy774.md), keep the head
+  self-distillation set. Abramson et al. (2024), [LIT-584](../literature.d/LIT-584.md), keep the head
   under diffusion by rolling out a cheap sample during training. They rank
   seeds by it, and antibody-interface quality keeps rising up to 1,000
   seeds.
 ---
 
-# SOTA-tmpej1tr: Train a head that predicts the model's own accuracy on each output, against the metric you care about, and use it to rank samples and filter predictions
+# SOTA-353: Train a head that predicts the model's own accuracy on each output, against the metric you care about, and use it to rank samples and filter predictions
 
 ## Source
 
-Jumper et al. (2021), [LIT-tmpmz8pl](../literature.d/LIT-tmpmz8pl.md), and Abramson et al. (2024),
-[LIT-tmpzy774](../literature.d/LIT-tmpzy774.md). Read as [NOTE-tmprglmr](../notes.d/NOTE-tmprglmr.md) and [NOTE-tmp0bufb](../notes.d/NOTE-tmp0bufb.md).
+Jumper et al. (2021), [LIT-583](../literature.d/LIT-583.md), and Abramson et al. (2024),
+[LIT-584](../literature.d/LIT-584.md). Read as [NOTE-321](../notes.d/NOTE-321.md) and [NOTE-320](../notes.d/NOTE-320.md).
 
 ## The practice
 
@@ -54,7 +57,7 @@ Jumper et al. (2021), [LIT-tmpmz8pl](../literature.d/LIT-tmpmz8pl.md), and Abram
 - **Use it to spend inference compute.** Draw several seeds or samples and
   keep the one the head rates best. Add hard penalties for constraint
   violations (chirality, clashes) that the head does not capture
-- **Use it to curate training data** ([SOTA-tmpydunc](SOTA-tmpydunc.md))
+- **Use it to curate training data** ([SOTA-354](SOTA-354.md))
 
 ## Conditions
 
@@ -62,4 +65,4 @@ Jumper et al. (2021), [LIT-tmpmz8pl](../literature.d/LIT-tmpmz8pl.md), and Abram
   confident prediction can still be wrong
 - **The head inherits the model's blind spots.** AF3's hallucinated
   regions are low-confidence, but not recognizably disordered
-<!-- inactive-ok-file: SOTA-tmpydunc — Proposed, filed alongside as a use of this practice -->
+<!-- inactive-ok-file: SOTA-354 — Proposed, filed alongside as a use of this practice -->

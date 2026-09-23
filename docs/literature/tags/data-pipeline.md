@@ -2,11 +2,11 @@
 
 # LITs with `tags` `data-pipeline`
 
-*Topics — The nineteen kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same nineteen for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind.*
+*Topics — The twenty kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Data pipeline** — loading, quality assessment and selection, preprocessing, batch preparation.
 
-40 of 517 LIT documents. Back to the [full index](../README.md).
+41 of 519 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -50,3 +50,4 @@
 | [LIT-484](../../../record/literature.d/LIT-484.md) | TinyStories: How Small Can Language Models Be and Still Speak Coherent English? | Eldan and Li (2023), [ARXIV-2305.07759](https://arxiv.org/abs/2305.07759). Restrict the training corpus to what a three-year-old's vocabulary can say and a model **below 10M parameters** — or one with a **single transformer block** — writes fluent, grammatical, multi-paragraph stories. The finding is about the corpus, not the architecture: what stops small models speaking is the breadth of what they are asked to learn, not the complexity of language. | Active |
 | [LIT-485](../../../record/literature.d/LIT-485.md) | Parameterized Synthetic Text Generation with SimpleStories | Finke et al. (2025), [ARXIV-2504.09184](https://arxiv.org/abs/2504.09184). Sampling three words from a child's vocabulary was not enough: **59.38% of TinyStories begins "once upon a time"**. Parameterize the generating prompt by theme, topic, style, narrative feature, grammar feature and author persona, and constrain the opening part of speech and letter, and every diversity metric moves. The one clean ablation in the paper is about something else — a 4,096-token domain tokenizer beats GPT-2's 50,257 by **+26.7 coherence and +27.5 quality** at fixed data and architecture. | Active |
 | [LIT-565](../../../record/literature.d/LIT-565.md) | FLUX-Reason-6M & PRISM-Bench: A Million-Scale Text-to-Image Reasoning Dataset and Comprehensive Benchmark | Fang et al. (2025), [ARXIV-2509.09680](https://arxiv.org/abs/2509.09680). 6 million FLUX-generated images with 20 million bilingual captions, organized by six characteristics (imagination, entity, text rendering, style, affection, composition), and with "Generation Chain-of-Thought" breakdowns. Curation cost 15,000 A100 GPU-days. Released with PRISM-Bench, seven tracks scored by vision-language models, used to evaluate 19 text-to-image models. A dataset and a benchmark, with no training ablation read here. | Active |
+| [LIT-583](../../../record/literature.d/LIT-583.md) | Highly accurate protein structure prediction with AlphaFold | Jumper et al. (Nature 2021), DOI 10.1038/s41586-021-03819-2. AlphaFold 2 predicts protein structure from sequence and a multiple sequence alignment. At CASP14 its median backbone error was 0.96 Å r.m.s.d.95, against 2.8 Å for the next best method. Its per-residue confidence, pLDDT, tracks true accuracy (r = 0.76 over 10,795 chains). Self-distillation on its own confident predictions for 350,000 unlabeled sequences improves it. Accuracy falls sharply when the alignment has fewer than about 30 sequences. | Active |

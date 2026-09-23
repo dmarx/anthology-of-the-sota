@@ -1,5 +1,8 @@
 ---
+number: 352
 status: Proposed
+formerly:
+- SOTA-tmp3m2p6
 promote_when: >-
   A reported ablation (in the main text or by another group) of a
   generative structure model with and without regression-model distillation
@@ -14,9 +17,9 @@ tags:
 - biomolecular-modeling
 date: '2026-09-23'
 source:
-- LIT-tmpzy774
+- LIT-584
 introduced_by:
-- LIT-tmpzy774
+- LIT-584
 consensus: unassessed
 consensus_note: >-
   Specific to the move from regression to diffusion heads in structure
@@ -26,7 +29,7 @@ consensus_note: >-
 implementations:
 - AlphaFold 3
 summary: >-
-  Abramson et al. (2024), [LIT-tmpzy774](../literature.d/LIT-tmpzy774.md) — a diffusion head generates
+  Abramson et al. (2024), [LIT-584](../literature.d/LIT-584.md) — a diffusion head generates
   plausible compact structure even where the protein has none. AlphaFold-
   Multimer, a regression model, renders the same regions as extended loops.
   Mixing its predictions into training teaches the generative model that
@@ -34,11 +37,11 @@ summary: >-
   are flagged by low confidence but do not look disordered.
 ---
 
-# SOTA-tmp3m2p6: When a structure predictor is made generative, add a regression model's predictions to the training data so disordered regions are learned as disorder rather than invented structure
+# SOTA-352: When a structure predictor is made generative, add a regression model's predictions to the training data so disordered regions are learned as disorder rather than invented structure
 
 ## Source
 
-Abramson et al. (2024), [LIT-tmpzy774](../literature.d/LIT-tmpzy774.md). Read as [NOTE-tmp0bufb](../notes.d/NOTE-tmp0bufb.md).
+Abramson et al. (2024), [LIT-584](../literature.d/LIT-584.md). Read as [NOTE-320](../notes.d/NOTE-320.md).
 
 ## The practice
 

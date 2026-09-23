@@ -2,7 +2,7 @@
 
 # Lines of work
 
-37 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+38 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -82,6 +82,18 @@ Grouped by `tags`, which every line holds in common — a line about two things 
       - [LIT-133](../record/literature.d/LIT-133.md) — Kimi Linear: An Expressive, Efficient Attention Architecture *(Active)*
     - [LIT-165](../record/literature.d/LIT-165.md) — Mamba-3: Improved Sequence Modeling using State Space Principles *(Active)*
 - [LIT-195](../record/literature.d/LIT-195.md) — Parallelizing Linear Transformers with the Delta Rule over Sequence Length *(Active)*
+
+## biomolecular-modeling
+
+### From Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences
+
+- [LIT-505](../record/literature.d/LIT-505.md) — Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences *(Active)*
+  - [LIT-506](../record/literature.d/LIT-506.md) — Interpretable RNA Foundation Model from Unannotated Data for Highly Accurate RNA Structure and Function Predictions *(Active)*
+
+### From Highly accurate protein structure prediction with AlphaFold
+
+- [LIT-583](../record/literature.d/LIT-583.md) — Highly accurate protein structure prediction with AlphaFold *(Active)*
+  - [LIT-584](../record/literature.d/LIT-584.md) — Accurate structure prediction of biomolecular interactions with AlphaFold 3 *(Active)*
 
 ## data-pipeline
 
@@ -218,6 +230,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-580](../record/literature.d/LIT-580.md) — How Powerful are Graph Neural Networks? *(Active)*
 - alongside: [LIT-581](../record/literature.d/LIT-581.md) — Pitfalls of Graph Neural Network Evaluation *(Active)*
 - alongside: [LIT-582](../record/literature.d/LIT-582.md) — Semi-Supervised Classification with Graph Convolutional Networks *(Active)*
+
+### From Highly accurate protein structure prediction with AlphaFold
+
+- [LIT-583](../record/literature.d/LIT-583.md) — Highly accurate protein structure prediction with AlphaFold *(Active)*
+  - [LIT-584](../record/literature.d/LIT-584.md) — Accurate structure prediction of biomolecular interactions with AlphaFold 3 *(Active)*
 
 ## numerics-and-precision
 

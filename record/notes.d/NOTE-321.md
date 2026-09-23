@@ -1,6 +1,9 @@
 ---
+number: 321
 status: Read
-paper: LIT-tmpmz8pl
+formerly:
+- NOTE-tmprglmr
+paper: LIT-583
 title: 'AlphaFold 2'
 version: 1
 date: '2026-09-23'
@@ -12,7 +15,7 @@ summary: >-
   descriptions) were not read.
 ---
 
-# NOTE-tmprglmr: AlphaFold 2
+# NOTE-321: AlphaFold 2
 
 ## Contribution
 

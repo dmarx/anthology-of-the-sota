@@ -49,7 +49,7 @@ vocabularies:
   #            holding nineteen documents whose subject is whether a capability
   #            arrives abruptly, which is a claim about the world rather than a
   #            method for checking one
-  #   ADR-tmpstxe6  biomolecular-modeling -- AlphaFold was left unfiled as
+  #   ADR-059  biomolecular-modeling -- AlphaFold was left unfiled as
   #            "outside the topics", and two protein and RNA papers had been
   #            filed under the nearest wrong word; the axis follows the
   #            content, not the reverse
@@ -80,7 +80,7 @@ vocabularies:
       topic when the claim is ABOUT the domain; a claim merely discovered in
       one still takes its kind. The axis organizes the record, it does not
       bound it: content the list cannot place is evidence the list is short
-      (ADR-tmpstxe6).
+      (ADR-059).
     # What the axis says when you trip over it (LU-#273). `closed: true` on
     # SOTA, LIT and THEORY is an enforcement mechanism, and the failure it
     # risks is discouraging the growth it exists to channel — somebody
@@ -169,7 +169,7 @@ vocabularies:
       deployment-and-society:
         label: Deployment and society
         blurb: what a system does once it is running among people, and how anyone outside it could find out — audits of deployed platforms and recommenders, information ecosystems, moderation and governance, and the access problems and funding pressures of studying any of it from the outside
-      # Added by ADR-tmpstxe6. Two documents about protein and RNA models were
+      # Added by ADR-059. Two documents about protein and RNA models were
       # already filed under `representation-and-encoding` because the list had
       # no word for them, and AlphaFold had been left unfiled for the same
       # reason. That is the axis being short, not the content being out of

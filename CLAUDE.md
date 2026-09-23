@@ -11,7 +11,7 @@ work that says why. Organized by the **kind of claim**, not by the domain a
 technique was discovered in ([ADR-026](record/decisions.d/ADR-026.md), superseding [ADR-020](record/decisions.d/ADR-020.md)). **The topics are
 an axis, not a scope:** if something the anthology wants cannot be placed on
 it, that is a finding about the axis — add the topic, never decline the
-document ([ADR-tmpstxe6](record/decisions.d/ADR-tmpstxe6.md)). The bias toward language-model training is
+document ([ADR-059](record/decisions.d/ADR-059.md)). The bias toward language-model training is
 a bias, not a boundary, and since [ADR-026](record/decisions.d/ADR-026.md) the practice registry and the
 reading list share one topic vocabulary — the two schemes differ in what a
 document *is*, not in what it may be *about*. Its memory is a Luria record — scaffolded,

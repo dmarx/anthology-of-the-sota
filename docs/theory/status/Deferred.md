@@ -6,8 +6,8 @@
 
 **Not yet judged** — filed because the question is real; no position taken on the answer.
 
-0 of 86 THEORY documents. Back to the [full index](../README.md).
+1 of 87 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [THEORY-087](../../../record/theory.d/THEORY-087.md) | Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other |  | Deferred |

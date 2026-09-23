@@ -12,7 +12,14 @@ promote_when: >-
   the source's two. The source compares whole models, so the multi-topic
   claim and the prior are confounded.
 title: 'A text document is better modelled as a mixture of several topics, each a distribution over words, than as a draw from a single topic'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    Adds human evidence from LIT-597 to 'Where it is weak'. Human and
+    model agree least on documents that span disparate subjects, which are
+    the documents the mixture account is meant to handle best.
 tags:
 - signal-structure
 - generative-modeling
@@ -59,7 +66,12 @@ compact description of what it is about.
 - **Confounded with the prior.** LDA differs from the mixture of unigrams in
   two ways, several topics per document and a Dirichlet prior. The paper
   does smooth the baseline, but it does not isolate the first
-- **Perplexity only**, on two small corpora, and for bag-of-words models
+- **Perplexity only**, on two small corpora, and for bag-of-words models.
+  Human evaluation came later ([LIT-597](../literature.d/LIT-597.md)). LDA's topics were the most
+  interpretable of three models, but people and model agreed least on
+  documents that span disparate subjects ("Book"), and most on documents
+  about one concept ("Lindy Hop"). Those multi-subject documents are the
+  case this account is meant to handle best
 - **A modelling claim about text, not a measurement of it.** The
   exchangeability it starts from is, in the authors' words, a simplifying
   assumption chosen for efficiency

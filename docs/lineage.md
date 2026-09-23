@@ -2,7 +2,7 @@
 
 # Lines of work
 
-39 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+42 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -244,6 +244,16 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-590](../record/literature.d/LIT-590.md) — Momentum Contrast for Unsupervised Visual Representation Learning *(Active)*
 - alongside: [LIT-591](../record/literature.d/LIT-591.md) — A Simple Framework for Contrastive Learning of Visual Representations *(Active)*
 
+### From Bootstrap your own latent: A new approach to self-supervised Learning
+
+- [LIT-594](../record/literature.d/LIT-594.md) — Bootstrap your own latent: A new approach to self-supervised Learning *(Active)*
+  - [LIT-593](../record/literature.d/LIT-593.md) — Exploring Simple Siamese Representation Learning *(Active)*
+
+### From VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning
+
+- alongside: [LIT-595](../record/literature.d/LIT-595.md) — VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning *(Active)*
+- alongside: [LIT-596](../record/literature.d/LIT-596.md) — Barlow Twins: Self-Supervised Learning via Redundancy Reduction *(Active)*
+
 ## numerics-and-precision
 
 ### From GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers
@@ -289,6 +299,21 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-590](../record/literature.d/LIT-590.md) — Momentum Contrast for Unsupervised Visual Representation Learning *(Active)*
 - alongside: [LIT-591](../record/literature.d/LIT-591.md) — A Simple Framework for Contrastive Learning of Visual Representations *(Active)*
+
+### From Latent Dirichlet Allocation
+
+- alongside: [LIT-592](../record/literature.d/LIT-592.md) — Latent Dirichlet Allocation *(Active)*
+- alongside: [LIT-597](../record/literature.d/LIT-597.md) — Reading Tea Leaves: How Humans Interpret Topic Models *(Active)*
+
+### From Bootstrap your own latent: A new approach to self-supervised Learning
+
+- [LIT-594](../record/literature.d/LIT-594.md) — Bootstrap your own latent: A new approach to self-supervised Learning *(Active)*
+  - [LIT-593](../record/literature.d/LIT-593.md) — Exploring Simple Siamese Representation Learning *(Active)*
+
+### From VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning
+
+- alongside: [LIT-595](../record/literature.d/LIT-595.md) — VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning *(Active)*
+- alongside: [LIT-596](../record/literature.d/LIT-596.md) — Barlow Twins: Self-Supervised Learning via Redundancy Reduction *(Active)*
 
 ## tiny-models
 
@@ -376,3 +401,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-590](../record/literature.d/LIT-590.md) — Momentum Contrast for Unsupervised Visual Representation Learning *(Active)*
 - alongside: [LIT-591](../record/literature.d/LIT-591.md) — A Simple Framework for Contrastive Learning of Visual Representations *(Active)*
+
+### From Bootstrap your own latent: A new approach to self-supervised Learning
+
+- [LIT-594](../record/literature.d/LIT-594.md) — Bootstrap your own latent: A new approach to self-supervised Learning *(Active)*
+  - [LIT-593](../record/literature.d/LIT-593.md) — Exploring Simple Siamese Representation Learning *(Active)*
+
+### From VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning
+
+- alongside: [LIT-595](../record/literature.d/LIT-595.md) — VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning *(Active)*
+- alongside: [LIT-596](../record/literature.d/LIT-596.md) — Barlow Twins: Self-Supervised Learning via Redundancy Reduction *(Active)*

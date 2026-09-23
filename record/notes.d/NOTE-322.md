@@ -5,7 +5,14 @@ formerly:
 - NOTE-tmp5yu4p
 paper: LIT-592
 title: 'Latent Dirichlet Allocation'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-23'
+  note: >-
+    The limitation on perplexity now points to LIT-597, which measured
+    topic interpretability with people and found it does not track held-out
+    likelihood.
 date: '2026-09-23'
 summary: >-
   The bag-of-words assumption, read through de Finetti, implies a
@@ -49,8 +56,10 @@ score documents it has not seen.
   included (without labels). The authors say the result "need[s] further
   substantiation"
 - **Perplexity is the only measure of topic quality.** Whether low perplexity
-  means topics a person would recognize is not tested here, and the record
-  holds no later work on it
+  means topics a person would recognize is not tested here. Chang et al.
+  ([LIT-597](../literature.d/LIT-597.md)) later tested it with people and found it does not, although
+  LDA's own topics came out as the most interpretable of the three models
+  they compared
 - **Bag of words by design.** The paper states it is not doing language
   modeling, and word order is discarded
 - **Two small corpora**, with results shown only as plots

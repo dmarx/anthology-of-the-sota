@@ -68,6 +68,7 @@ explained_by:
 - THEORY-011
 - THEORY-tmpt3lzt
 ---
+<!-- inactive-ok-file: THEORY-tmpt3lzt — Proposed, filed in this same contribution as the account under SOTA-032's cost. The practice declares explained_by on it, so the citation is the relation itself; the practice stands without the account and the account is the weaker of the two, which is why their statuses differ -->
 
 # SOTA-032: Put the layer normalization inside the residual block, before the sublayer
 

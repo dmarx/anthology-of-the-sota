@@ -27,6 +27,7 @@ summary: >-
   no-warmup claim costs — **32.28 against 35.12 BLEU** at E6D6, and 31.82
   against 35.18 at E12D12.
 ---
+<!-- inactive-ok-file: THEORY-tmpt3lzt — Proposed, filed in this same contribution as the account under SOTA-032's cost. The practice declares explained_by on it, so the citation is the relation itself; the practice stands without the account and the account is the weaker of the two, which is why their statuses differ -->
 
 # LIT-tmpeqjkq: ResiDual: Transformer with Dual Residual Connections
 

@@ -1,0 +1,120 @@
+---
+status: Active
+title: 'Better plain ViT baselines for ImageNet-1k'
+version: 1
+tags:
+- analysis-and-evaluation
+- vision-and-graphics
+- training-optimization
+date: '2026-09-24'
+published: '2022-05-01'
+arxiv: '2205.01580'
+first_author: 'Beyer'
+keywords:
+- 'vision-transformer'
+- 'baselines'
+- 'augmentation'
+- 'imagenet-1k'
+- 'reproducibility'
+implementations:
+- big_vision
+extends:
+- LIT-587
+summary: >-
+  Beyer, Zhai and Kolesnikov (2022), [ARXIV-2205.01580](https://arxiv.org/abs/2205.01580). Four pages that move a
+  plain ViT-S/16 on ImageNet-1k from **66.8% to 80.0%** with five changes,
+  none of them novel and none of them a regulariser. The original recipe
+  scores 66.8 / 67.2 / 67.1 at 90 / 150 / 300 epochs — **it cannot use more
+  training at all.** The belief the abstract names is that ViT needs
+  sophisticated regularisation at this scale; the answer is that standard
+  augmentation is sufficient.
+---
+
+# LIT-tmp5t7v1: Better plain ViT baselines for ImageNet-1k
+
+Beyer, Zhai and Kolesnikov (2022), Google Research Brain Zürich — [ARXIV-2205.01580](https://arxiv.org/abs/2205.01580)
+
+## Key takeaways
+
+- **The ablation is the paper.** ViT-S/16, ImageNet-1k, top-1 at three epoch
+  budgets:
+
+  | setting | 90ep | 150ep | 300ep |
+  | --- | --: | --: | --: |
+  | all five changes | **76.5** | **78.5** | **80.0** |
+  | − RandAugment + Mixup | 73.6 | 73.7 | **73.7** |
+  | sin-cos 2D → learned positions | 75.0 | 78.0 | 79.6 |
+  | batch 1024 → 4096 | 74.7 | 77.3 | 78.6 |
+  | average pooling → `[cls]` token | 75.0 | 76.9 | 78.2 |
+  | MLP head → linear head | 76.7 | 78.6 | 79.8 |
+  | original + RandAugment + Mixup | 71.6 | 74.8 | 76.1 |
+  | **original recipe** | **66.8** | **67.2** | **67.1** |
+
+- **The original recipe does not improve with training, and that is the
+  finding.** 66.8 → 67.2 → 67.1: it is *done* by 90 epochs and slightly worse
+  by 300. Every comparison drawn from ViT's ImageNet-1k numbers was drawn
+  against a configuration that had stopped learning.
+
+- **Augmentation is what buys the use of a longer schedule.** Remove
+  RandAugment and Mixup from the improved recipe and the curve flattens in
+  the same way — 73.6 → 73.7 → 73.7. The other four changes raise the level;
+  augmentation is what lets more epochs mean anything. Both are needed and
+  they do different jobs.
+
+- **None of the five changes is novel and none is a regulariser.** Batch 1024
+  rather than 4096; global average pooling rather than a `[cls]` token; fixed
+  2D sin-cos position embeddings rather than learned; a *small* amount of
+  RandAugment (level 10) and Mixup (p = 0.2), explicitly less than prior
+  tuned recipes. **"A collection of almost trivial changes can accumulate to
+  an important overall improvement."**
+
+- **One change makes no difference, and they report it.** The classification
+  head as a single linear layer versus an MLP with a `tanh` hidden layer:
+  76.7 against 76.5. Reported as no significant difference rather than
+  quietly kept.
+
+- **The list of what is absent is deliberate.** No dropout, no stochastic
+  depth, no SAM, no CutMix, no repeated augmentation, no blurring, no
+  high-resolution fine-tuning, no checkpoint averaging, no distillation from
+  a teacher. The baseline is defined as much by the omissions as the changes.
+
+- **They keep 1% of train as a minival, and say why**: "to encourage the
+  community to stop selecting design choices on the validation (de-facto
+  test) set." A methodological recommendation smuggled into an experimental
+  setup paragraph.
+
+- **Cost, stated in wall clock on hardware people have.** 90 epochs in
+  **6h30 on a TPUv3-8**, reaching 76.5% — comparable to the classic
+  ResNet-50 90-epoch baseline. 80% in under a day at 300 epochs.
+
+- **More than top-1.** Table 2 adds ReaL and ImageNet-v2: original 66.8 /
+  72.8 / 52.2 against theirs at 300 epochs, 80.0 / 85.4 / 68.3. The gain is
+  not a single-benchmark artefact.
+
+## Standing in the anthology
+
+Unit 2 of `#326`, reversed from `#290`'s `D-variant` declines where it was
+filed as a variant named "SimpleViT". **It is not a variant.** It changes no
+architecture — it is a negative result about a belief concerning the
+incumbent, which is the class `#290` promoted `2102.11972` for on exactly
+that reasoning.
+
+What it bears on is `SOTA-358`, whose first measurement is that ViT-Large is
+worse than ViT-Base on ImageNet-1k *"despite tuned regularisation"*. This
+paper's abstract names that belief and answers it: the lever was augmentation,
+not regularisation, and the recipe those numbers came from leaves **13.2
+points** unclaimed.
+
+**What that does and does not do.** It does not retest the size crossover —
+Beyer et al. run ViT-S/16 only, and whether ViT-L would still lose to ViT-B
+under this recipe is untested. So `SOTA-358`'s conclusion stands, but it
+stands on its *second* measurement rather than its first: the JFT
+9M/30M/90M/300M sweep with hyperparameters held fixed, where the comparison
+is internally consistent and does not depend on anyone having tuned the
+ImageNet-1k setting well.
+
+`extends: LIT-587` — it works on the incumbent's own weakest reported
+setting, which the incumbent itself calls an afterthought: *"The addition of
+results when pre-training only on ImageNet-1k was an afterthought, mostly to
+ablate the effect of data scale."* That sentence is why the gap existed and
+why nobody noticed for two years.

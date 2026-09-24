@@ -8,12 +8,24 @@ consensus_note: >-
   Converged for the straight path, emerging for the logit-normal. The path
   is now the default objective of the video line: Movie Gen, HunyuanVideo,
   Step-Video and Wan all train with it (LIT-626, LIT-620, LIT-624, LIT-619).
-  That is adoption, per DP-005. The logit-normal half has one source, SD3,
-  and Wan is the only video report that states it. `emerging` stands because
-  the practice is both halves together. Read as of 2026-09.
+  That is adoption, per DP-005. The logit-normal half has one controlled
+  source, SD3. Among the video reports, Movie Gen, HunyuanVideo, Open-Sora
+  2.0 and Wan state that they use it, and LTX-Video cites SD3's distribution.
+  Movie Gen's Table 8a changes the path and the timestep distribution
+  together, so it supports the combination and cannot separate the halves.
+  `emerging` stands because the practice is both halves together. Read as of 2026-09.
 title: 'Connect data and noise on a straight line, and sample the training timesteps from a logit-normal rather than uniformly'
-version: 2
+version: 3
 history:
+- version: 3
+  date: '2026-09-24'
+  note: >-
+    Corrected against full readings of Flow Matching (NOTE-tmpa4mlk),
+    Rectified Flow (NOTE-tmp77r8c) and Movie Gen (NOTE-tmp012dg). The
+    logit-normal is stated by four video reports, not only Wan. Rectified
+    Flow's Table 1a is partly controlled, since its training budget is
+    unstated. Flow Matching's path comparison replicates at ImageNet-32 and
+    64 inside the same paper.
 - version: 2
   date: '2026-09-24'
   note: >-
@@ -64,7 +76,8 @@ Liu, Gong and Liu (2022), [LIT-636](../literature.d/LIT-636.md), and Lipman et a
 Vanden-Eijnden's stochastic interpolants. Flow Matching contributes the
 first controlled comparison: the same U-Net, hyperparameters and epochs
 give CIFAR-10 FID 6.35 on the straight path against 8.06 on the diffusion
-path (its Table 1). It trained with uniform timesteps.
+path (its Table 1). The same comparison holds at ImageNet-32 and
+ImageNet-64 in the same table. It trained with uniform timesteps.
 
 Ma et al. (2024), [LIT-447](../literature.d/LIT-447.md) — [ARXIV-2401.08740](https://arxiv.org/abs/2401.08740).
 
@@ -99,8 +112,9 @@ not beat well-tuned epsilon-prediction; rectified flow with logit-normal
 timesteps does.** That is a finding about SD3's setting: latent
 text-to-image, against a tuned ε-prediction baseline. It is not a finding
 that uniform timesteps fail in general. The originating papers used uniform
-sampling and won their controlled comparisons against VP diffusion in pixel
-space ([LIT-630](../literature.d/LIT-630.md) Table 1, [LIT-636](../literature.d/LIT-636.md) Table 1a). At SD3's scale the
+sampling and beat VP diffusion in pixel space. Flow Matching's comparison
+is controlled ([LIT-630](../literature.d/LIT-630.md) Table 1). Rectified Flow's is partly controlled,
+because its training budget is unstated ([LIT-636](../literature.d/LIT-636.md) Table 1a). At SD3's scale the
 logit-normal decides the ranking. At small scale the path alone was enough.
 A reader training a large latent model should take both halves.
 

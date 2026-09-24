@@ -20,7 +20,20 @@ consensus_note: >-
   4B comparison. Per DP-005, that is adoption. The field agrees and has
   measured it once. Read as of 2026-09.
 title: 'In a video diffusion transformer, attend over space and time jointly rather than factorizing, and budget for the cost'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    Corrected against a full reading of CogVideoX (NOTE-tmpkkcdb). The
+    ablation's whole reported result is that factorized attention's FVD is
+    "much higher than 3D attention in early steps", and that factorized
+    attention is "unstable and prone to collapse". v1 said everything else
+    was held fixed, that full attention won on training loss, and that the
+    model used 2×2 patches. The text states none of these. The cost is
+    1.08× to 2.30× inference time depending on resolution, not a flat 2.3×.
+    The ablation is absent from v1, and v2 was not checked. Added
+    AnimateDiff's plug-in compatibility as a condition.
 tags:
 - attention-techniques
 - generative-modeling
@@ -52,10 +65,18 @@ position. VDM ([LIT-627](../literature.d/LIT-627.md)), Video LDM ([LIT-621](../l
 ([LIT-632](../literature.d/LIT-632.md)) all do this. **In a transformer over a compressed latent,
 attend over all space-time tokens at once.**
 
-CogVideoX compares the two in its video DiT, with everything else fixed
-(Fig. 8), and full 3D attention wins on FVD and on training loss. It also
-measures the cost. One forward pass at 768×1360 for 5s takes 9.60s with
-full attention against 4.17s factorized, 2.3× slower (Table 8).
+CogVideoX compares the two in its video DiT (Fig. 8). The text reports
+the whole result in two sentences. With factorized 2D+1D attention, "the
+FVD will become much higher than 3D attention in early steps", and
+factorized attention "is unstable and prone to collapse". The only setup
+it gives is the evaluation: FVD on 500 WebVid test videos. Model size,
+steps, resolution, patch size, parameter matching and FVD values are not
+stated. The loss curve (Fig. 10b) is cited without comment.
+
+The cost is measured. Table 8 gives inference time for one DiT forward
+step on an H800. Full attention is 1.08× the factorized time at 256×384,
+1.67× at 480×720 and 2.30× at 768×1360. The ratio grows with resolution
+because attention is quadratic in tokens.
 
 Budget for that cost, because it grows. Attention is quadratic in token
 count, so it dominates at video lengths. Wan ([LIT-619](../literature.d/LIT-619.md) §4.3) measures
@@ -66,19 +87,23 @@ decides the systems design as well as the quality.
 
 ## Conditions
 
-- **One controlled comparison, with numbers in a plot.** The CogVideoX
-  ablation appears only in the paper's third arXiv version. Its model size
-  and step count are not stated in the text, and the figure's values were
-  not extractable here, so this document states the direction and not the
-  size. Step-Video's 4B comparison agrees and reports no numbers.
-- **It assumes a compressed latent.** The comparison is made at 8×8×4
-  compression with 2×2 patches. At higher token counts the 2.3× cost ratio
-  grows, and no one reports where factorizing becomes worth it again.
-- **The motivation is motion.** Step-Video's unquantified result says the
-  advantage shows "particularly [in] high motion". Factorized attention can
-  only relate two positions in different frames through an intermediate
-  step, and large motion is exactly where related content changes position.
-  That is an argument, not a measurement.
-- **The record has no evidence on the inverse question.** No document tests
-  whether a factorized model given the 2.3× compute back, as depth or width,
-  would close the gap.
+- **One comparison, reported in words.** The evidence is a direction
+  ("much higher… in early steps") and an instability observation. It is not
+  clear whether the FVD gap lasts past early training. The ablation is not
+  in the paper's first arXiv version. Step-Video (LIT-624) ran a 4B
+  comparison and reports "better, particularly high motion" with no numbers.
+  So the record has two unquantified agreements and no measured margin.
+- **The cost grows with resolution.** At 256×384 full attention is nearly
+  free (1.08×). At 768×1360 it is 2.30×, and it keeps rising with token
+  count. No report says where factorizing becomes worth it again.
+- **The motivation is motion.** Factorized attention can relate two
+  positions in different frames only through an intermediate step, and
+  large motion is where related content changes position. That is an
+  argument, not a measurement.
+- **Full attention gives up plug-in compatibility.** AnimateDiff (LIT-633)
+  keeps the image model's spatial layers seeing one frame at a time so that
+  personalized image checkpoints can be dropped in. Joint 3D attention
+  removes that option. This is a reason some systems factorize on purpose.
+- **The inverse question is untested.** Nothing in the record tests whether
+  a factorized model given the extra compute back, as depth or width, would
+  close the gap.

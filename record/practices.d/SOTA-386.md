@@ -1,6 +1,13 @@
 ---
 number: 386
-status: Active
+status: Proposed
+promote_when: >-
+  A comparison that holds compute fixed and changes only whether image data
+  is present: the same video model, data, steps and per-step token budget,
+  trained with and without a separate image corpus, or initialized from an
+  image model against from scratch at matched total compute. It should
+  report a video metric or human preference with an interval. The
+  qualitative agreement of every large report does not count, per DP-005.
 formerly:
 - SOTA-tmp3b17n
 consensus: converged
@@ -14,11 +21,25 @@ consensus_note: >-
   (LIT-635), AnimateDiff (LIT-633) and Open-Sora 2.0 (LIT-634)
   all start from an image model or train on images, and none of them tests
   it.
-  That is adoption, per DP-005, and it is why the evidence below is the three
-  small controlled studies and not the large reports. Read as of 2026-09.
+  LTX-Video (LIT-618 §2.5.4) trains on images alongside video, as one of
+  its resolution-duration buckets. That is adoption, per DP-005. The field has
+  converged, and no report has isolated the effect. Read as of 2026-09.
 title: 'Show a video diffusion model images before and alongside video'
-version: 2
+version: 3
 history:
+- version: 3
+  date: '2026-09-24'
+  note: >-
+    Status moves from Active to Proposed after full readings of all three
+    sources (NOTE-tmpmja2n, NOTE-tmpeb8mt, NOTE-tmp651x9). None separates
+    images from compute. VDM's image arms process 20 and 24 frames per step
+    against 16, and the paper calls it "a memory optimization to fit more
+    independent examples in a batch". Video LDM's pretrained arm gets 73K
+    extra image-model steps and trains only temporal layers. SVD's init
+    comparison states neither resolution nor steps. None uses a separate
+    image corpus: VDM's and Video LDM's images are frames of their own
+    videos. Imagen Video, read in full, is joint training with no stated
+    image initialization.
 - version: 2
   date: '2026-09-24'
   note: >-
@@ -50,8 +71,9 @@ implementations:
 
 ## Source
 
-Ho, Salimans et al. (2022), [LIT-627](../literature.d/LIT-627.md); Blattmann et al. (2023),
-[LIT-621](../literature.d/LIT-621.md); Blattmann, Dockhorn, Kulal et al. (2023), [LIT-625](../literature.d/LIT-625.md).
+Ho, Salimans et al. (2022), LIT-627; Blattmann et al. (2023), LIT-621;
+Blattmann, Dockhorn, Kulal et al. (2023), LIT-625. All three were read in
+full as NOTE-tmpmja2n, NOTE-tmpeb8mt and NOTE-tmp651x9.
 
 ## The claim
 
@@ -59,43 +81,60 @@ Ho, Salimans et al. (2022), [LIT-627](../literature.d/LIT-627.md); Blattmann et 
 spatial layers from a text-to-image model, or pretrain it on images first.
 Then keep still images in the batch once video training starts.
 
-Three controlled comparisons support it, each changing one thing:
+Every video report in the record does some version of this. The three
+comparisons that come closest to testing it all point the same way, and
+none of them isolates the effect:
 
-- **Adding images to video batches.** Same model, same videos, with
-  independent frames appended to each video and temporal attention masked
-  for them. FVD falls from 202 with none to 58 with eight ([LIT-627](../literature.d/LIT-627.md),
-  Table 4).
-- **Image initialization against end-to-end training.** Same architecture on
-  driving scenes, with and without a pretrained image LDM underneath. FVD is
-  534 against 1155 and FID 48 against 71 ([LIT-621](../literature.d/LIT-621.md), Table 1).
-- **Image-initialized against random spatial layers.** Human raters prefer
-  the image-initialized model ([LIT-625](../literature.d/LIT-625.md), Fig. 3a).
+- **Adding frames to video batches** (LIT-627, Table 4). Same model, data,
+  batch size and 200K steps. FVD falls from 202 with no extra frames to 68
+  with four and 58 with eight, with temporal attention masked for the extra
+  frames. The extra frames are also extra compute: the arms process 16, 20
+  and 24 frames per example. The paper calls the change "a memory
+  optimization to fit more independent examples in a batch". The table
+  cannot separate "images help" from "more independent frames per step
+  help".
+- **Image initialization against end-to-end training** (LIT-621, Table 1).
+  On driving scenes, FVD is 534 against 1155. The pretrained arm gets 73K
+  image-model steps the other arm never gets (Table 7), and trains only its
+  temporal layers while the other trains everything. Initialization,
+  compute and freezing change together.
+- **Image-initialized against random spatial layers** (LIT-625, Fig. 3a).
+  Human raters prefer the image-initialized model. The figure gives no
+  counts, and the text states neither its resolution nor its step count.
+
+## Why it is `Proposed`
+
+The practice is probably right, and the record cannot yet say it believes
+it on this evidence. Each comparison gives the image arm more compute, or
+bundles initialization with freezing, or states too little of its setup to
+check. None uses the thing the practice recommends, a separate image corpus.
+VDM's and Video LDM's "images" are frames drawn from their own video
+datasets. Every large report adopts the practice, and none of them tests it.
+The `promote_when` asks for the one missing comparison.
 
 ## Conditions
 
-- **All three results are small.** The first is one seed of a small
-  text-to-video model at 16×64×64. The second is a smaller model on driving
-  scenes. The third reports only a preference chart with no counts in the
-  text. No report tests the claim at the 10B+ scale where it is now always
-  used.
-- **What "images" means changed.** VDM's images are frames from its own
-  videos, and it leaves a separate image corpus to future work. Every later
-  report uses a separate, much larger image corpus. That is the version in
-  use, and none of the three sources tests it. It first appears in Imagen
-  Video ([LIT-637](../literature.d/LIT-637.md) §2.6), which asserts that it "significantly increases
-  the overall quality" and shows no numbers.
+- **What "images" means changed.** Every report since Imagen Video
+  (LIT-637 §2.6) trains on a separate, much larger image-text corpus. Imagen
+  Video asserts that this "significantly increases the overall quality" and
+  shows no numbers. Imagen Video also states no image initialization, so it
+  is the "alongside" half without the "before" half.
 - **Freezing is a third way to keep what the image model knows.** Emu Video
-  ([LIT-635](../literature.d/LIT-635.md)) and AnimateDiff ([LIT-633](../literature.d/LIT-633.md)) freeze the image layers and
-  show the video stages no images. Emu Video's controlled result is that
-  freezing beats full fine-tuning only narrowly: 55.0 / 58.1 human win rate
-  on quality / faithfulness (its Table 1). Nobody compares freezing with
-  joint image-video training. The practice's "alongside" clause is untested
-  against that alternative.
+  (LIT-635) and AnimateDiff (LIT-633) freeze the image layers and show the
+  video stages no images. Emu Video's controlled result is that freezing
+  beats full fine-tuning narrowly, 55.0 / 58.1 on quality / faithfulness
+  (its Table 1). Its unfrozen arm was unfrozen only during the 512px stage,
+  and both arms were given the same conditioning images. So the test cannot
+  see whether unfreezing damages the image model, which is the reason to
+  freeze. Nobody compares freezing with joint image-video training.
+- **SVD tests only the first half.** It initializes from an image model and
+  never trains on images alongside video.
 - **The large reports give a different reason.** Wan presents image-first
   pretraining as a throughput fix: long, high-resolution video starves the
-  batch and causes gradient-variance spikes. That is an argument about
-  compute, not quality. The practice may be right for both reasons, and only
-  the quality reason has been measured.
+  batch and causes "training instability caused by spikes in gradient
+  variance". That is an argument about compute. It may be the real reason
+  the practice works, and it is exactly what the three comparisons do not
+  control for.
 - **VDM's own explanation was never measured.** VDM says joint training works
-  because it "reduces the variance of minibatch gradients". It shows no
-  gradient statistics. Cite the FVD numbers, not the mechanism.
+  because it "reduces the variance of minibatch gradients", and shows no
+  gradient statistics.

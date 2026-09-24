@@ -1,0 +1,171 @@
+---
+status: Active
+title: 'Softmax is not Enough (for Sharp Size Generalisation)'
+version: 1
+tags:
+- attention-techniques
+- analysis-and-evaluation
+- model-architecture
+date: '2026-09-24'
+published: '2024-10-01'
+arxiv: '2410.01104'
+first_author: 'Veličković'
+keywords:
+- 'softmax'
+- 'dispersion'
+- 'length-generalisation'
+- 'attention-entropy'
+- 'adaptive-temperature'
+implementations: []
+summary: >-
+  Veličković, Perivolaropoulos, Barbero and Pascanu (2024),
+  [ARXIV-2410.01104](https://arxiv.org/abs/2410.01104). Twenty-three practices in this record name the softmax and
+  no note held it. This one proves a limit on it: in a Transformer over a
+  finite vocabulary, attention coefficients **must** decay towards zero as the
+  number of items grows, so a head that is sharp in distribution cannot stay
+  sharp on larger inputs. Max retrieval falls from 98.6% at 16 items to 12.4%
+  at 16,384.
+---
+
+# LIT-tmpqchjl: Softmax is not Enough (for Sharp Size Generalisation)
+
+Veličković, Perivolaropoulos, Barbero and Pascanu (2024) — [ARXIV-2410.01104](https://arxiv.org/abs/2410.01104)
+
+## The result
+
+**Lemma 2.1 — softmax must disperse.** Given `n` logits bounded with spread
+`δ = max e − min e` and temperature `θ > 0`,
+
+    softmax_θ(e)_k ≤ (1/n) · exp(δ / θ)
+
+so every coefficient decays as `O(1/n)`. Nothing here is specific to
+attention; it is a property of a normalised exponential over a growing number
+of terms.
+
+**Theorem 2.2 — and in a Transformer the premise always holds.** Over a
+**finite input vocabulary**, the embeddings live in a compact set; feedforward
+layers are continuous so map compact to compact; self-attention outputs convex
+combinations so stay in the same compact set. Therefore the query-key dot
+products are bounded in **every** attention layer, `δ` exists, and Lemma 2.1
+applies everywhere. Concretely, for any `ε` the coefficients fall below it
+once `n > exp(δ/θ)/ε`.
+
+**The consequence (Corollary B.1).** A function that depends on any fixed
+number of input values — `max`, `min`, a lookup — cannot be computed robustly
+as `n` grows, because the mass any one item can hold is bounded and shrinking.
+*"Even for tasks as simple as finding the maximum key, any learned circuitry
+must disperse as the number of items grows at test time."*
+
+The paper is careful about its own novelty: dispersion had been **observed**
+before (Yan et al. 2020; Ebrahimi et al. 2024), and the contribution is
+proving it, attributing it to the softmax operator specifically, and doing so
+in the regime where *the number of logits varies*, which is the regime
+generalisation happens in.
+
+## What it measures
+
+Single-head max retrieval, trained at 16 items, evaluated out to 16,384. No
+parameter changes between columns — this is one trained model read at
+different input sizes:
+
+| items | 16 | 128 | 512 | 1,024 | 4,096 | 16,384 |
+| --- | --: | --: | --: | --: | --: | --: |
+| baseline | 98.6% | 89.7% | 70.1% | 53.8% | 22.6% | **12.4%** |
+| adaptive `θ` | 98.6% | 89.9% | 72.5% | 57.7% | 24.9% | **14.0%** |
+
+Also fine-tuned Gemma 2B on the thirty CLRS-Text algorithmic tasks, where the
+adaptive-temperature variant is ahead on nearly all of them — but only when
+the temperature module is present **during fine-tuning as well as inference**,
+because the inference-only transplant *"does not empirically work well"* on
+text where a number spans several tokens.
+
+## The proposition that ties this to what the record already holds
+
+**Proposition 3.1 — sharpness in Transformers necessitates large weights.**
+
+    δ ≤ 2 · σ_max(Q) · σ_max(K) · ‖y‖ · max_i ‖x_i‖
+
+A head can only be sharp by having a large logit spread, and the spread is
+bounded by the singular values of the query and key matrices times the norms
+of the activations. The paper then says the part that matters here:
+
+> there is a common practice of leveraging operators such as layer
+> normalisation… which clamps `‖x_i‖` and `‖y‖` if applied right before the
+> query-key mechanism, **accentuating the impact of Q and K's singular
+> values**.
+
+That is `SOTA-192`. The record's three documents on attention sharpness now
+have a fourth side:
+
+<!-- inactive-ok-block: THEORY-061, THEORY-062 — both Proposed, and named as
+     the two accounts this result meets from the other direction. The list is a
+     census of what the record already holds on attention sharpness; nothing in
+     it turns on either being settled, and THEORY-062 is explicitly the
+     unadjudicated side of a dispute. -->
+- `SOTA-192` bounds the logits structurally, to stop entropy collapsing to
+  zero during training.
+- `THEORY-062` says the predictor of a crashed run is spectral energy
+  concentrating in `W_q^T W_k` — the same singular values Proposition 3.1
+  names.
+- `THEORY-061` bounds attention entropy **below** by a quantity falling in the
+  spectral norm of the query-key product.
+- This paper bounds it **above**, as a function of `n` rather than of the
+  weights.
+
+So attention entropy is squeezed from two directions by two different
+variables, and the record held only one of them. Worth stating as a reading
+rather than a result, because nobody has run the experiment: **the same
+normalisation that prevents entropy collapse also shrinks `δ`, and a smaller
+`δ` makes the dispersion bound tighter at every `n`.** By the paper's own
+inequality the sharpness a head can hold is bounded by `exp(δ/θ)/n`; reducing
+`δ` reduces it. Whether that costs anything measurable at the sequence lengths
+people actually run is unmeasured here and not claimed.
+
+## Adaptive temperature, recorded and not filed as a practice
+
+The paper's proposed mitigation: compute the Shannon entropy of the attention
+coefficients, map it through a fitted degree-4 polynomial to a temperature,
+and re-softmax — never raising entropy, and skipping heads already below 0.5
+nats. It streams, so it composes with FlashAttention-style `O(n)` attention.
+
+**Not filed as a recommendation**, and the numbers above are why. The gains
+are real and statistically significant (`p < 0.05` from 64 items up, largest
+at +3.9 points) and they are a rounding error against the collapse itself:
+98.6% → 12.4% becomes 98.6% → 14.0%. The authors call it *"an ad-hoc
+technique"* and say it *"warrants further investigation"*. A practice here
+would be recommending a 1.6-point patch on an 86-point failure.
+
+It would become one if somebody showed the correction holding accuracy roughly
+flat over a decade of `n`, or showed the CLRS-Text-style gain on a model
+nobody trained for the purpose.
+
+## What escapes the theorem, and what the record does not hold
+
+The proof needs three things: a finite vocabulary, `θ > 0`, and normalised
+attention. The paper names the escapes:
+
+- **Unnormalised attention** — linear, sigmoidal, stick-breaking — *"does not
+  have the dispersion issues presented here"*, at the cost that *"it becomes
+  substantially harder to meaningfully rank items"*.
+- **Selective attention**, which removes excess attention explicitly, *"in a
+  way that is capable of alleviating dispersion"*.
+- **The Differential Transformer** may **not** escape it, because subtracting
+  two distributions *after* each softmax does not undo dispersion that has
+  already happened inside them.
+
+The record holds **none** of these: zero documents name the Differential
+Transformer, selective attention, sigmoid attention or stick-breaking
+attention. That is a gap this note opens rather than fills, and it is the
+interesting kind — the record has a linear-attention line (`#161`) filed as an
+efficiency story, and this is an argument for the same family on
+*expressivity* grounds.
+
+## Standing in the anthology
+
+Unit 2 of `#342`, `#290`'s promotion [#17](https://github.com/dmarx/anthology-of-the-sota/issues/17), and the substrate defect that issue
+ranked second: **106 documents in this record name the softmax, 23 practices
+name it, and no note held it.** `#290`'s own line was *"analysis of softmax, a
+component with no document behind it"*, which was right.
+
+`THEORY-tmp4t3x7` holds the account. This note carries the rest — the
+measurement, the escapes, and the mitigation that is not worth recommending.

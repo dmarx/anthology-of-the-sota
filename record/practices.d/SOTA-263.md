@@ -1,24 +1,18 @@
 ---
 number: 263
-status: Proposed
+status: Active
 formerly:
 - SOTA-tmp4jpf3
-promote_when: >-
-  An ablation reporting what the shift is worth — the same model finetuned at
-  a new resolution with and without it — from anyone, or a second
-  high-resolution training report that says it shifted for this reason. What
-  would not move it: another model trained at multiple resolutions that
-  happens to retune its schedule empirically, which is consistent with the
-  correction and does not test the correspondence it rests on.
-consensus: unreplicated
+consensus: emerging
 consensus_note: >-
-  One group. The argument is a derivation rather than a measurement, and the
-  paper demonstrates it qualitatively inside a pipeline where several things
-  changed at once. It is also the kind of correction that is obvious once
-  stated, which is a reason to suspect it is right and not a reason to think
-  it has been checked.
+  Measured twice, concurrently, by two Google Brain groups in pixel space
+  (simple diffusion and Chen 2023). SD3 measured the sampling-time value by
+  human preference. SVD, LTX-Video and Open-Sora 2.0 adopt it and say why.
+  HunyuanVideo shifts by step count instead, which is a different
+  correction. `emerging` rather than `converged`, because the magnitude is
+  tuned in every source and nobody agrees on it.
 title: 'Shift the timestep schedule when the resolution changes, because more pixels need more noise'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-23'
@@ -27,30 +21,58 @@ history:
     document is a property of the data: its mechanism is a property of
     images: the redundancy across neighbouring pixels survives the same
     noise at higher resolution.
+- version: 3
+  date: '2026-09-24'
+  note: >-
+    Promoted to Active. The first clause of promote_when, an ablation of
+    what the shift is worth, was met 14 months before this practice was
+    filed. Simple diffusion (ARXIV-2301.11093) Table 2 and Chen
+    (ARXIV-2301.10972) Table 4 are controlled, and SD3's own Fig. 6 is a
+    human-preference sweep the document had called qualitative.
+    introduced_by moves from SD3 to the two 2023 papers, which SD3 cites
+    for the log-SNR shift. The second clause, a report that says it
+    shifted for this reason, was also met by LTX-Video and Open-Sora 2.0.
+    It was not used, because per DP-005 it counts adoption.
 tags:
 - generative-modeling
 - signal-structure
 date: '2026-09-20'
 source:
+- LIT-tmpu1h5o
+- LIT-tmpnbpgd
 - LIT-449
 introduced_by:
-- LIT-449
+- LIT-tmpu1h5o
+- LIT-tmpnbpgd
 implementations:
+- 'simple diffusion'
 - 'Stable Diffusion 3'
+- 'Stable Video Diffusion'
+- 'LTX-Video'
+- 'Open-Sora 2.0'
 summary: >-
-  Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md) — a timestep is not a fixed amount of
-  corruption. Destroying the signal in an image with more pixels takes more
-  noise, so a timestep at one resolution must be mapped to a different one at
-  another to corrupt equivalently. A schedule carried unchanged from
-  low-resolution pretraining to high-resolution finetuning is wrong, and
-  wrong in a predictable direction.
+  Hoogeboom et al. (2023), [LIT-tmpu1h5o](../literature.d/LIT-tmpu1h5o.md), and Chen (2023), [LIT-tmpnbpgd](../literature.d/LIT-tmpnbpgd.md).
+  A timestep is not a fixed amount of corruption. Destroying the signal in
+  an image with more pixels takes more noise, so a schedule set at one
+  resolution under-corrupts at a higher one. Shifting log-SNR down with
+  resolution takes ImageNet 256 FID from 7.65 to 3.76 in pixel space. The
+  direction is measured. The magnitude is tuned in every source.
 ---
+<!-- inactive-ok-file: SOTA-346 — Proposed; cited for a latent-space datum on the shift's magnitude, not as settled -->
+
 
 # SOTA-263: Shift the timestep schedule when the resolution changes, because more pixels need more noise
 
 ## Source
 
-Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md) — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206).
+Hoogeboom, Heek and Salimans (2023), [LIT-tmpu1h5o](../literature.d/LIT-tmpu1h5o.md) — [ARXIV-2301.11093](https://arxiv.org/abs/2301.11093), and
+Chen (2023), [LIT-tmpnbpgd](../literature.d/LIT-tmpnbpgd.md) — [ARXIV-2301.10972](https://arxiv.org/abs/2301.10972). They are concurrent, and each
+cites the other.
+
+Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md) — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206). SD3 derives the shift
+again for rectified flow, measures the sampling-time value by human
+preference, and notes that its shift is "similar to (Hoogeboom et al.,
+2023)".
 
 ## The correction
 
@@ -65,7 +87,9 @@ another if the two are to corrupt equivalently, and the correspondence can be
 written down from the pixel count. The usual pipeline — pretrain at low
 resolution, finetune at high — carries the schedule across unchanged, which
 means the high-resolution stage trains against a schedule that under-corrupts
-throughout.
+throughout. The same error occurs without a second stage. The cosine
+schedule was designed at 32 and 64, and using it to train at 256 from
+scratch is where the error was first measured.
 
 The direction of the error is predictable, which is what makes this a
 practice rather than an observation: higher resolution wants more noise at
@@ -91,21 +115,80 @@ endpoints move with it. What the invariance licenses is exactly this kind of
 reparameterization — if the shape were part of the model, shifting it would
 be a modelling change rather than a correction.
 
-## Conditions, and why this is `Proposed`
+## What it is worth
 
-**Derived, then demonstrated qualitatively.** The correspondence is argued
-from signal per pixel and shown with sample comparisons inside a pipeline
-that changed several things at once. There is no ablation reporting what the
-shift alone is worth, which is what `promote_when:` asks for.
+**Simple diffusion, Table 2.** Pixel-space ImageNet, where only the
+reference resolution of the cosine schedule changes:
 
-One group, one architecture, one resolution transition. The argument is
-general and the evidence is not.
+| resolution | unshifted (FID train / eval) | best shift | shifted (train / eval) |
+|---|---|---|---|
+| 128 | 2.96 / 3.38 | to 32 | 2.26 / 2.88 |
+| 256 | 7.65 / 6.87 | to 32 | 3.76 / 3.71 |
 
-It also assumes corruption should be matched in terms of signal destroyed,
-which is the natural reading and is a modelling choice rather than a
-theorem. A different notion of equivalent corruption would give a different
-map.
+The shift halves FID at 256, and the gain grows with resolution,
+which is the direction the argument predicts.
+
+**Chen, Table 4.** The same shift written as input scaling, x0 → b·x0.
+At 256 with a 1−t schedule, b = 1 gives 7.21 and b = 0.4 gives 3.52. The
+best b falls from about 1.0 at 64 to 0.6 at 128 and 0.4 at 256.
+
+**SD3, Fig. 6.** A human-preference sweep of the shift at sampling time, on
+a model trained at 1024². It shows "a strong preference for samples with
+shifts greater than 1.5 but less drastic differences among the higher
+shift values".
+
+## The direction is measured; the magnitude is not derived
+
+Every source derives a shift from the pixel count, and none uses the
+derived value:
+
+- **SD3.** The derivation gives α = √(m/n), which is 4 for 256² → 1024².
+  SD3 uses 3.0, chosen by preference, and the preference is flat above
+  1.5.
+- **Simple diffusion.** The reference resolution is picked empirically.
+  Shift-to-32 and shift-to-64 differ by 0.18 FID at 256, and the authors
+  recommend 64 "because it performed slightly better in early
+  iterations".
+- **Chen.** The optimum is found by sweeping b, and the sweep is not
+  monotone between neighbouring values.
+- **FLUX.2's latent-space sweep** ([LIT-572](../literature.d/LIT-572.md)) applies the same √(m/n)
+  argument to latent channels. SD's best training shift is 1, and FLUX.2
+  prefers 4.63 against a predicted 2.82. That is [SOTA-346](SOTA-346.md)'s territory, and
+  it shows the same pattern.
+
+So the practice is to shift in the predicted direction and then tune the
+amount. The formula is a starting point, not an answer.
+
+## Conditions
+
+- **Where it is measured.** The controlled measurements are pixel-space
+  class-conditional ImageNet, trained from scratch at each resolution. SD3
+  is the latent case, and only sampling-time. Nobody has reported the
+  pretrain-at-256, finetune-at-1024 path with and without the shift, which
+  is the situation this document was written about. The mechanism is the
+  same, and the measurement is adjacent.
+- **Guidance interacts with it.** Simple diffusion's shifted schedule
+  "can only tolerate little guidance" (Table 9). For text-to-image it
+  interpolates between two shifts instead.
+- **What counts as equivalent corruption is a modelling choice.** All
+  three sources match signal destroyed per pixel, with slightly different
+  arguments (pooling, redundancy, a constant image). A different notion of
+  equivalence would give a different map.
+- **Video adds duration.** Open-Sora 2.0 scales the shift with T×H×W, and
+  LTX-Video with token count. Both extend the argument to time without
+  testing it.
+
+## Relation to zero terminal SNR
+
+Emu Video ([LIT-635](../literature.d/LIT-635.md)) gives the same reason — "the residual signal is higher
+for high resolution video frames" — for a different fix. It rescales the
+schedule so the final step is pure noise, and its controlled comparison at
+512px wins 96.8% on quality against the standard schedule. That fixes the
+endpoint. This practice moves the whole curve. The two are compatible, and
+nobody has compared them.
 
 ## Known implementations
 
-- Stable Diffusion 3
+- simple diffusion, Chen (2023) with RIN, Stable Diffusion 3
+- Stable Video Diffusion, which raises P_mean from −1.2 through 0 to 1.0 as
+  resolution rises, LTX-Video, and Open-Sora 2.0 (adoption, per [DP-005](../../docs/design-principles.md#dp-5))

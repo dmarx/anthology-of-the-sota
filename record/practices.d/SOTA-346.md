@@ -64,4 +64,3 @@ Black Forest Labs (2025), [LIT-572](../literature.d/LIT-572.md). Read as [NOTE-3
 - **The report's √(m/n) rule for predicting the shift is not established by
   its own data** (see [LIT-572](../literature.d/LIT-572.md)). Sweep it rather than computing it. The
   resolution form of the same argument is [SOTA-263](SOTA-263.md)
-<!-- inactive-ok-file: SOTA-263 — Proposed; cited as the resolution form of the same argument, not as settled -->

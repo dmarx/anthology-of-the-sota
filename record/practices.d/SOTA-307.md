@@ -14,7 +14,7 @@ consensus_note: >-
   the literature is a single number from a single run, which is not a
   competing measurement but the absence of one.
 title: 'Report generative FID as an error bar over several training seeds, and treat any gap below about 2% of the mean as inconclusive'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-23'
@@ -23,6 +23,12 @@ history:
     hold. The error bar this practice asks for is spread around the FID
     estimator's own mean; the estimator is biased, and the offset is
     shared by every seed. Averaging runs does not touch it.
+- version: 3
+  date: '2026-09-24'
+  note: >-
+    Adds cases from the video line's readings (#331): MAGVIT-v2's 1.78
+    against 1.79 "beats diffusion" claim is inside the floor. VDM's
+    single-run gaps survive it. The recommendation is unchanged.
 tags:
 - analysis-and-evaluation
 - generative-modeling
@@ -157,6 +163,21 @@ that interval is where the true distance is. Fix `n` as well:
 **Finite panel.** 20–25 training seeds, 10 sampling seeds, nothing past
 SiT-XL or 2M steps. Production-scale behaviour is an extrapolation and the
 source says so.
+
+## Cases from the video line
+
+- **MAGVIT-v2** ([LIT-623](../literature.d/LIT-623.md), [NOTE-342](../notes.d/NOTE-342.md)) claims its tokenizer lets a language
+  model beat diffusion at ImageNet 256 with FID 1.78 against MDT's 1.79.
+  That is a 0.01 gap from one run each, far inside this practice's floor.
+  Its 512 result (1.91 against VDM++'s 2.65) is large enough to survive.
+- **VDM and Video LDM** ([LIT-627](../literature.d/LIT-627.md), [LIT-621](../literature.d/LIT-621.md)) report every ablation as a
+  single run. VDM's gaps, such as FVD 202 → 58 for joint image training,
+  are far larger than the floor. Which of Video LDM's gaps clear it has
+  not been checked.
+
+The floor was measured for image FID on SiT. Nobody has measured it for
+FVD, so these readings apply the image number as the best available
+guess.
 
 ## Related
 

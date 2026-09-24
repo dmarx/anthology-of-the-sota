@@ -1,0 +1,111 @@
+---
+status: Active
+title: 'Photorealistic Video Generation with Diffusion Models'
+version: 1
+tags:
+- generative-modeling
+- vision-and-graphics
+- attention-techniques
+date: '2026-09-24'
+published: '2023-12-01'
+arxiv: '2312.06662'
+first_author: 'Gupta'
+compared_against:
+- LIT-623
+- LIT-627
+- LIT-621
+- LIT-632
+keywords:
+- 'window-attention'
+- 'causal-video-encoder'
+- 'joint-image-video-training'
+- 'latent-video-diffusion'
+- 'cascade'
+implementations:
+- 'W.A.L.T'
+summary: >-
+  Gupta, Yu et al., Stanford and Google (2023), [ARXIV-2312.06662](https://arxiv.org/abs/2312.06662). A latent
+  video diffusion transformer over a causal image-and-video encoder. It
+  alternates per-frame spatial attention with local spatiotemporal windows.
+  Two single-run ablations bear on the record's video practices. Adding a
+  separate corpus of ~970M image-text pairs to ~89M text-video pairs takes
+  zero-shot UCF-101 FVD from 598.8 to 344.5 at 419M (Table 5), with compute
+  not stated. And windowed attention matches full self-attention on UCF-101
+  (FVD 55.3–59.6 against 59.9) while training 1.7x faster (Table 3b).
+---
+<!-- inactive-ok-file: SOTA-386, SOTA-390 — Proposed practices this paper bears on; named to weigh the evidence, not as settled advice -->
+
+
+# LIT-tmpwzgxl: Photorealistic Video Generation with Diffusion Models
+
+Gupta, Yu, Sohn, Gu, Hahn, Fei-Fei, Essa, Jiang and Lezama, Stanford,
+Google Research and Georgia Tech (December 2023) — [ARXIV-2312.06662](https://arxiv.org/abs/2312.06662).
+Known as W.A.L.T. Read at v1: §1–5, Tables 1–5 and Appendix Table 8.
+
+## Key takeaways
+
+- **The design.** A causal 3D encoder compresses a 17-frame clip to 5
+  latent frames at 8× spatial downsampling. An image is the first frame
+  alone, so images and videos share one latent space (§4). The
+  transformer alternates two block types (§4.2):
+  - Spatial-window blocks attend within one latent frame.
+  - Spatiotemporal-window blocks attend within a local 3D window.
+
+  For images, the spatiotemporal blocks pass values through unchanged.
+- **Joint image and video training (Table 5).** Two W.A.L.T-L models
+  (419M) were trained "using the default settings specified in § 5.2":
+
+  | data | IS | FVD |
+  |---|---|---|
+  | video only | 26.8 | 598.8 |
+  | video + image | 31.7 | 344.5 |
+
+  The image data is a separate corpus of ~970M text-image pairs, trained
+  alongside ~89M text-video pairs (§5.3). The evaluation is zero-shot
+  UCF-101. A 3B model reaches 258.1.
+- **Window attention against full attention (Table 3b).** UCF-101, model
+  L, 35K ablation steps, 5×16×16 latents:
+
+  | spatiotemporal window | FVD | IS | steps/s |
+  |---|---|---|---|
+  | 5×4×4 | 56.9 | 87.3 | 2.24 |
+  | 5×8×8 (default) | 59.6 | 87.4 | 2.00 |
+  | 5×16×16 | 55.3 | 87.4 | 1.75 |
+  | full self-attention | 59.9 | 87.8 | 1.20 |
+
+  In each windowed row, half the blocks attend within a single frame. The
+  5×16×16 row gives the other half full 3D coverage, so the comparison is
+  "full 3D attention everywhere" against "full 3D in half the blocks,
+  per-frame in the rest". "Full self-attention is not essential".
+- **Class-conditional results.** Kinetics-600 FVD 3.3 and UCF-101 FVD 46
+  (Table 1). ImageNet 256 FID 2.56 without guidance (Table 2).
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **The joint-training ablation does not state compute.** "Default
+  settings of § 5.2" are architecture settings: model L, patch size and
+  window sizes. Steps, batch size and the share of video in a mixed batch
+  are not given for the pair. With a fixed batch, adding images means
+  fewer video examples per step, so the direction of any confound is
+  unknown.
+- **Every ablation is a single run.** The window rows span 4.6 FVD, and
+  the paper reports no interval for FVD on UCF-101 ablations.
+- **The window result is at 128px, 17 frames and 35K steps.** Latents are
+  5×16×16, so a 5×16×16 window is already the whole clip. Whether local
+  windows hold up at the lengths and resolutions later reports train on is
+  not tested. Later reports use full attention ([SOTA-390](../practices.d/SOTA-390.md)).
+
+## Standing in the anthology
+
+Sora ([LIT-652](LIT-652.md)) cites it. It bears on two `Proposed` video practices:
+
+- **[SOTA-386](../practices.d/SOTA-386.md).** It is the only ablation found that switches a separate
+  image corpus on and off. VDM's and Video LDM's image arms use frames of
+  their own videos. It does not meet `promote_when`, which asks for matched
+  compute and an interval.
+- **[SOTA-390](../practices.d/SOTA-390.md).** It is a controlled, numbered comparison from a group other
+  than CogVideoX's. It points against the practice: windowed hybrids match
+  full attention at 1.7× the speed. The comparison is not the 2D+1D
+  factorization the practice rejects.

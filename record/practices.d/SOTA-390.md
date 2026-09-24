@@ -90,7 +90,7 @@ decides the systems design as well as the quality.
 - **One comparison, reported in words.** The evidence is a direction
   ("much higher… in early steps") and an instability observation. It is not
   clear whether the FVD gap lasts past early training. The ablation is not
-  in the paper's first arXiv version. Step-Video (LIT-624) ran a 4B
+  in the paper's first arXiv version. Step-Video ([LIT-624](../literature.d/LIT-624.md)) ran a 4B
   comparison and reports "better, particularly high motion" with no numbers.
   So the record has two unquantified agreements and no measured margin.
 - **The cost grows with resolution.** At 256×384 full attention is nearly
@@ -100,7 +100,7 @@ decides the systems design as well as the quality.
   positions in different frames only through an intermediate step, and
   large motion is where related content changes position. That is an
   argument, not a measurement.
-- **Full attention gives up plug-in compatibility.** AnimateDiff (LIT-633)
+- **Full attention gives up plug-in compatibility.** AnimateDiff ([LIT-633](../literature.d/LIT-633.md))
   keeps the image model's spatial layers seeing one frame at a time so that
   personalized image checkpoints can be dropped in. Joint 3D attention
   removes that option. This is a reason some systems factorize on purpose.

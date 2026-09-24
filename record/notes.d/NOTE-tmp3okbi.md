@@ -15,6 +15,8 @@ summary: >-
   against the base's 84.26.
 ---
 
+<!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
+
 # NOTE-tmp3okbi: Self Forcing
 
 Read in full from arXiv v2 (10 Nov 2025, NeurIPS 2025): the main text and

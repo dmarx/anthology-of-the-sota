@@ -13,6 +13,8 @@ summary: >-
   attention's forward pass is 1.08×, 1.67× and 2.30× slower at three sizes.
 ---
 
+<!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
+
 # NOTE-tmpkkcdb: CogVideoX
 
 Read in full from arXiv v3 (26 Mar 2025, the ICLR 2025 version), appendices

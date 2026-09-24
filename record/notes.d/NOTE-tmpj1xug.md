@@ -14,6 +14,8 @@ summary: >-
   error-accumulation explanation is not isolated.
 ---
 
+<!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
+
 # NOTE-tmpj1xug: CausVid
 
 Read in full from arXiv v4 (23 Sep 2025): the main text, the supplementary

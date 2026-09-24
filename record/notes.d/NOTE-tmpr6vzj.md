@@ -13,6 +13,8 @@ summary: >-
   reports copied, is asserted without a number.
 ---
 
+<!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
+
 # NOTE-tmpr6vzj: Imagen Video
 
 Read in full from arXiv v1 (5 Oct 2022), the only version supplied. The paper

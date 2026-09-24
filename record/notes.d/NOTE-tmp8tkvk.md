@@ -13,6 +13,8 @@ summary: >-
   the art" in the abstract is contradicted by the paper's own Table 9.
 ---
 
+<!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
+
 # NOTE-tmp8tkvk: Step-Video-T2V
 
 Read in full from arXiv v3 (24 February 2025): §§1–11, all tables,

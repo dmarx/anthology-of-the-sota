@@ -14,6 +14,8 @@ summary: >-
   any design choice, image initialization included.
 ---
 
+<!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
+
 # NOTE-tmpsnnex: Make-A-Video
 
 Read in full from arXiv 2209.14792v1 (29 Sep 2022): all 13 pages. This

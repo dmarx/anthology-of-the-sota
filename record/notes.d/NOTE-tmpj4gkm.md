@@ -13,6 +13,8 @@ summary: >-
   shipped model in objective, text encoder and conditioning.
 ---
 
+<!-- inactive-ok-file: SOTA-263 SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
+
 # NOTE-tmpj4gkm: HunyuanVideo
 
 Read in full from arXiv v6 (11 March 2025): §§1–8, the contributor list and

@@ -14,6 +14,8 @@ summary: >-
   fine-tuning cuts reconstruction FVD 390.88 → 32.94.
 ---
 
+<!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
+
 # NOTE-tmpeb8mt: Video LDM (Align your Latents)
 
 Read in full from arXiv 2304.08818v2 (28 Dec 2023): main text and

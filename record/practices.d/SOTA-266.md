@@ -17,15 +17,6 @@ consensus_note: >-
 title: 'Connect data and noise on a straight line, and sample the training timesteps from a logit-normal rather than uniformly'
 version: 3
 history:
-- version: 3
-  date: '2026-09-24'
-  note: >-
-    Corrected against full readings of Flow Matching (NOTE-tmpa4mlk),
-    Rectified Flow (NOTE-tmp77r8c) and Movie Gen (NOTE-tmp012dg). The
-    logit-normal is stated by four video reports, not only Wan. Rectified
-    Flow's Table 1a is partly controlled, since its training budget is
-    unstated. Flow Matching's path comparison replicates at ImageNet-32 and
-    64 inside the same paper.
 - version: 2
   date: '2026-09-24'
   note: >-
@@ -37,6 +28,15 @@ history:
     controlled pixel-space comparisons, and the earlier "equivocal for two
     years" gloss had no source. The conditions no longer say "all of it is
     image synthesis".
+- version: 3
+  date: '2026-09-24'
+  note: >-
+    Corrected against full readings of Flow Matching (NOTE-tmpa4mlk),
+    Rectified Flow (NOTE-tmp77r8c) and Movie Gen (NOTE-tmp012dg). The
+    logit-normal is stated by four video reports, not only Wan. Rectified
+    Flow's Table 1a is partly controlled, since its training budget is
+    unstated. Flow Matching's path comparison replicates at ImageNet-32 and
+    64 inside the same paper.
 tags:
 - generative-modeling
 date: '2026-09-20'

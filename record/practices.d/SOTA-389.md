@@ -87,12 +87,12 @@ separates a video model from an image model.
 
 The analogy is loose. Make-A-Video's text reaches its video decoder only
 through one CLIP image embedding, so its limit is partly architectural.
-Captioned video alone would not have fixed it (NOTE-tmpsnnex).
+Captioned video alone would not have fixed it ([NOTE-tmpsnnex](../notes.d/NOTE-tmpsnnex.md)).
 
 ## Conditions
 
 - **SVD measured a related choice and found the opposite.** In its caption
-  ablation (LIT-625, App. E.2.2), CoCa, an image captioner run on each
+  ablation ([LIT-625](../literature.d/LIT-625.md), App. E.2.2), CoCa, an image captioner run on each
   clip's middle frame, "surprisingly" beat the video captioner VideoBLIP on
   SVD's human-preference Elo. The two findings don't straightforwardly
   conflict. SVD's video captioner was a weak 2023 model, and Movie Gen's

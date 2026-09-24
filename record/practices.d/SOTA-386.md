@@ -27,6 +27,14 @@ consensus_note: >-
 title: 'Show a video diffusion model images before and alongside video'
 version: 3
 history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    Five more video reports were checked against this practice. None tests
+    it. Imagen Video is the origin of the separate image corpus, asserted
+    without numbers. Emu Video and AnimateDiff keep image knowledge by
+    freezing instead, and Emu Video's freeze-against-fine-tune result is
+    recorded as an adjacent condition.
 - version: 3
   date: '2026-09-24'
   note: >-
@@ -40,14 +48,6 @@ history:
     image corpus: VDM's and Video LDM's images are frames of their own
     videos. Imagen Video, read in full, is joint training with no stated
     image initialization.
-- version: 2
-  date: '2026-09-24'
-  note: >-
-    Five more video reports were checked against this practice. None tests
-    it. Imagen Video is the origin of the separate image corpus, asserted
-    without numbers. Emu Video and AnimateDiff keep image knowledge by
-    freezing instead, and Emu Video's freeze-against-fine-tune result is
-    recorded as an adjacent condition.
 tags:
 - generative-modeling
 - training-optimization
@@ -71,9 +71,9 @@ implementations:
 
 ## Source
 
-Ho, Salimans et al. (2022), LIT-627; Blattmann et al. (2023), LIT-621;
-Blattmann, Dockhorn, Kulal et al. (2023), LIT-625. All three were read in
-full as NOTE-tmpmja2n, NOTE-tmpeb8mt and NOTE-tmp651x9.
+Ho, Salimans et al. (2022), [LIT-627](../literature.d/LIT-627.md); Blattmann et al. (2023), [LIT-621](../literature.d/LIT-621.md);
+Blattmann, Dockhorn, Kulal et al. (2023), [LIT-625](../literature.d/LIT-625.md). All three were read in
+full as [NOTE-tmpmja2n](../notes.d/NOTE-tmpmja2n.md), [NOTE-tmpeb8mt](../notes.d/NOTE-tmpeb8mt.md) and [NOTE-tmp651x9](../notes.d/NOTE-tmp651x9.md).
 
 ## The claim
 
@@ -85,7 +85,7 @@ Every video report in the record does some version of this. The three
 comparisons that come closest to testing it all point the same way, and
 none of them isolates the effect:
 
-- **Adding frames to video batches** (LIT-627, Table 4). Same model, data,
+- **Adding frames to video batches** ([LIT-627](../literature.d/LIT-627.md), Table 4). Same model, data,
   batch size and 200K steps. FVD falls from 202 with no extra frames to 68
   with four and 58 with eight, with temporal attention masked for the extra
   frames. The extra frames are also extra compute: the arms process 16, 20
@@ -93,12 +93,12 @@ none of them isolates the effect:
   optimization to fit more independent examples in a batch". The table
   cannot separate "images help" from "more independent frames per step
   help".
-- **Image initialization against end-to-end training** (LIT-621, Table 1).
+- **Image initialization against end-to-end training** ([LIT-621](../literature.d/LIT-621.md), Table 1).
   On driving scenes, FVD is 534 against 1155. The pretrained arm gets 73K
   image-model steps the other arm never gets (Table 7), and trains only its
   temporal layers while the other trains everything. Initialization,
   compute and freezing change together.
-- **Image-initialized against random spatial layers** (LIT-625, Fig. 3a).
+- **Image-initialized against random spatial layers** ([LIT-625](../literature.d/LIT-625.md), Fig. 3a).
   Human raters prefer the image-initialized model. The figure gives no
   counts, and the text states neither its resolution nor its step count.
 
@@ -115,12 +115,12 @@ The `promote_when` asks for the one missing comparison.
 ## Conditions
 
 - **What "images" means changed.** Every report since Imagen Video
-  (LIT-637 §2.6) trains on a separate, much larger image-text corpus. Imagen
+  ([LIT-637](../literature.d/LIT-637.md) §2.6) trains on a separate, much larger image-text corpus. Imagen
   Video asserts that this "significantly increases the overall quality" and
   shows no numbers. Imagen Video also states no image initialization, so it
   is the "alongside" half without the "before" half.
 - **Freezing is a third way to keep what the image model knows.** Emu Video
-  (LIT-635) and AnimateDiff (LIT-633) freeze the image layers and show the
+  ([LIT-635](../literature.d/LIT-635.md)) and AnimateDiff ([LIT-633](../literature.d/LIT-633.md)) freeze the image layers and show the
   video stages no images. Emu Video's controlled result is that freezing
   beats full fine-tuning narrowly, 55.0 / 58.1 on quality / faithfulness
   (its Table 1). Its unfrozen arm was unfrozen only during the 512px stage,

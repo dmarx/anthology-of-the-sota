@@ -15,6 +15,8 @@ summary: >-
   its size.
 ---
 
+<!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
+
 # NOTE-tmpesnac: MAGVIT-v2
 
 Read in full from arXiv 2310.05737v3 (29 Mar 2024, ICLR 2024): main text

@@ -14,6 +14,8 @@ summary: >-
   decade of compute.
 ---
 
+<!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
+
 # NOTE-tmp012dg: Movie Gen
 
 Read in full from arXiv 2410.13720v2 (26 Feb 2025): §§1–8 and Appendices A–D.

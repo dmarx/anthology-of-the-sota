@@ -14,6 +14,8 @@ summary: >-
   matching is mixed, and the likelihood gains at ImageNet scale are 0.01 bpd.
 ---
 
+<!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
+
 # NOTE-tmpa4mlk: Flow Matching
 
 Read in full from arXiv v2 (8 Feb 2023): the main text, and Appendices A–F,

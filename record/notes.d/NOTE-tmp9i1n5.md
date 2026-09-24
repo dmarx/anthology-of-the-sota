@@ -15,6 +15,8 @@ summary: >-
   "most checkpoints" became "any".
 ---
 
+<!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
+
 # NOTE-tmp9i1n5: AnimateDiff
 
 Read in full: arXiv v2 (8 Feb 2024, ICLR 2024) end to end, and v1 (10 Jul

@@ -29,6 +29,8 @@ summary: >-
   applications in §5 are demonstrated almost entirely by figures.
 ---
 
+<!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
+
 # NOTE-333: Wan
 
 Read in full from arXiv 2503.20314v2 (19 Apr 2025), §1–7 including all of

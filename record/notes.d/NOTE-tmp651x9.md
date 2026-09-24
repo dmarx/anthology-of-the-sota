@@ -13,6 +13,8 @@ summary: >-
   two of the curation choices the paper shipped lost its own ablation.
 ---
 
+<!-- inactive-ok-file: SOTA-263 SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
+
 # NOTE-tmp651x9: Stable Video Diffusion
 
 Read in full from arXiv v1 (25 Nov 2023), appendices A–E included. The

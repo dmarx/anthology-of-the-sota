@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-129 of 548 LIT documents. Back to the [full index](../README.md).
+130 of 551 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -139,3 +139,4 @@
 | [LIT-605](../../../record/literature.d/LIT-605.md) | Sigmoid Loss for Language Image Pre-Training | Zhai et al. (2023), [ARXIV-2303.15343](https://arxiv.org/abs/2303.15343). Replace CLIP's softmax with a pairwise sigmoid, so the loss never needs a global view of the similarity matrix — no all-gathers, only a per-device block in memory, and better results below 16k batch. Then trains at batch size one million and finds the benefit saturated at 32k. | Active |
 | [LIT-609](../../../record/literature.d/LIT-609.md) v2 | Distributed Representations of Words and Phrases and their Compositionality | Mikolov et al. (2013), [ARXIV-1310.4546](https://arxiv.org/abs/1310.4546). Where negative sampling comes from — and it is NCE with the consistency deliberately dropped, kept only because the vectors stay good. Also: the number of negatives that helps *falls* as the dataset grows, which is the opposite of what the vision contrastive line later assumed. | Superseded — by [LIT-603](../../../record/literature.d/LIT-603.md); a duplicate of LIT-603, filed concurrently by |
 | [LIT-610](../../../record/literature.d/LIT-610.md) v2 | Efficient Estimation of Word Representations in Vector Space | Mikolov et al. (2013), [ARXIV-1301.3781](https://arxiv.org/abs/1301.3781). CBOW and Skip-gram: drop the non-linear hidden layer that made neural language models expensive, and word vectors become cheap enough to train on 1.6 billion words in under a day. The linear-analogy finding is here, and so is the test set built to stop it being an anecdote. | Superseded — by [LIT-604](../../../record/literature.d/LIT-604.md); a duplicate of LIT-604, filed concurrently by |
+| [LIT-616](../../../record/literature.d/LIT-616.md) | On Calibration of Modern Neural Networks | Guo et al. (2017), [ARXIV-1706.04599](https://arxiv.org/abs/1706.04599). Modern networks are badly calibrated where their 1998-era ancestors were not, and depth, width, BatchNorm and *less* weight decay each make it worse while improving accuracy. The mechanism is that NLL overfits while 0/1 loss keeps improving. The remedy is one scalar: temperature scaling beats every richer method tried, including the ones that contain it. | Active |

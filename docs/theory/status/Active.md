@@ -6,7 +6,7 @@
 
 **The current account** — the best explanation the record holds for why this happens.
 
-31 of 94 THEORY documents. Back to the [full index](../README.md).
+32 of 95 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -41,3 +41,4 @@
 | [THEORY-083](../../../record/theory.d/THEORY-083.md) | A message-passing GNN can distinguish no more graphs than the 1-WL test, and reaches that limit only if its neighbor aggregation is injective on multisets, as a sum followed by an MLP is and a mean or max is not | Xu et al. (2019), [LIT-580](../../../record/literature.d/LIT-580.md) — each message-passing layer refines node labels as one 1-WL iteration can at best, so 1-WL bounds what the network separates. Injective aggregation reaches the bound. Sums of an MLP over a multiset are injective. Means lose counts and maxes lose multiplicities. It is a theorem, and it explains the paper's training-fit ordering and the collapse of mean aggregators to chance on featureless graphs. | Active |
 | [THEORY-085](../../../record/theory.d/THEORY-085.md) | InfoNCE maximizes a lower bound on mutual information that cannot exceed log N |  | Active |
 | [THEORY-093](../../../record/theory.d/THEORY-093.md) | Skip-gram with negative sampling implicitly factorizes the word-context PMI matrix shifted by log k, weighting frequent pairs more heavily | Levy and Goldberg (2014), [LIT-612](../../../record/literature.d/LIT-612.md) — setting the derivative of SGNS's per-pair objective to zero gives w·c = PMI(w, c) − log k, with k the number of negatives. So word2vec's skip-gram is a factorization of the matrix count-based methods use, shifted by a constant, with each pair's error weighted by how often it occurs. NCE gives log P(w\|c) − log k the same way. Exact at the optimum with unconstrained dimensions. At practical dimensions it describes the target, not the result. | Active |
+| [THEORY-095](../../../record/theory.d/THEORY-095.md) | No unbiased estimator of FID exists, so its plug-in bias can reverse a comparison while the sample variance stays small | Bińkowski et al. (2018), [LIT-615](../../../record/literature.d/LIT-615.md) — the FID is a non-linear functional of the two distributions, and by the Bickel–Lehmann argument no estimator of it is unbiased for all distributions. The bias is therefore a property of the quantity, not of the plug-in formula, and it does not appear in the standard error: at d=2048 and 50,000 samples the estimator reversed a true ordering in all 100 trials, with standard deviations of 0.2 and 0.5 on a gap of 2.5. The non-existence proof needs a mixture family; what rescues it for practice is that Inception codes are not normal. | Active |

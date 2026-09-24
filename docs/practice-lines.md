@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-47 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+48 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -28,6 +28,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [SOTA-329](../record/practices.d/SOTA-329.md) — For short-output tasks, adapt a frozen model with a low-rank intervention on a few positions of the residual stream, not a weight adapter; do not use it for long chain-of-thought *(Proposed, unreplicated)*
 
 ## analysis-and-evaluation
+
+### From Report generative FID as an error bar over several training seeds, and treat any gap below about 2% of the mean as inconclusive
+
+- [SOTA-307](../record/practices.d/SOTA-307.md) — Report generative FID as an error bar over several training seeds, and treat any gap below about 2% of the mean as inconclusive *(Active, unreplicated)*
+  - [SOTA-383](../record/practices.d/SOTA-383.md) — Fix the sample count before comparing FID values, and settle a close comparison with an unbiased estimator rather than a tighter error bar *(Active, unreplicated)*
 
 ### From Use prediction-based word vectors rather than count-based distributional vectors
 
@@ -116,6 +121,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [SOTA-188](../record/practices.d/SOTA-188.md) — Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal *(Active, converged)*
   - [SOTA-195](../record/practices.d/SOTA-195.md) — Predict v rather than the noise when the model will be evaluated at low signal-to-noise *(Active, converged)*
+
+### From Report generative FID as an error bar over several training seeds, and treat any gap below about 2% of the mean as inconclusive
+
+- [SOTA-307](../record/practices.d/SOTA-307.md) — Report generative FID as an error bar over several training seeds, and treat any gap below about 2% of the mean as inconclusive *(Active, unreplicated)*
+  - [SOTA-383](../record/practices.d/SOTA-383.md) — Fix the sample count before comparing FID values, and settle a close comparison with an unbiased estimator rather than a tighter error bar *(Active, unreplicated)*
 
 ## in-context-learning
 

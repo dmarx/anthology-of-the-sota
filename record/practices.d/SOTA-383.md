@@ -1,5 +1,8 @@
 ---
+number: 383
 status: Active
+formerly:
+- SOTA-tmpfcgzq
 title: 'Fix the sample count before comparing FID values, and settle a close comparison with an unbiased estimator rather than a tighter error bar'
 version: 1
 tags:
@@ -8,9 +11,9 @@ tags:
 - vision-and-graphics
 date: '2026-09-23'
 source:
-- LIT-tmphun6n
+- LIT-615
 introduced_by:
-- LIT-tmphun6n
+- LIT-615
 consensus: unreplicated
 consensus_note: >-
   One group, and nobody has agreed or disagreed since — the record holds two
@@ -25,9 +28,9 @@ extends:
 - SOTA-307
 implementations: []
 explained_by:
-- THEORY-tmpb0yyu
+- THEORY-095
 summary: >-
-  Bińkowski et al. (2018), [LIT-tmphun6n](../literature.d/LIT-tmphun6n.md) — the FID estimator is biased,
+  Bińkowski et al. (2018), [LIT-615](../literature.d/LIT-615.md) — the FID estimator is biased,
   the bias depends on the distribution being measured, and no unbiased
   estimator exists. So two FID numbers are comparable only at equal `n`, and
   a small standard deviation is not evidence of a converged estimate: at
@@ -36,12 +39,12 @@ summary: >-
 ---
 <!-- inactive-ok-file: SOTA-338 — Proposed; named for its promote_when, which says FID or KID alone cannot settle its question — the point being that KID inherits the feature-space problem this practice does not fix -->
 
-# SOTA-tmpfcgzq: Fix the sample count before comparing FID values, and settle a close comparison with an unbiased estimator rather than a tighter error bar
+# SOTA-383: Fix the sample count before comparing FID values, and settle a close comparison with an unbiased estimator rather than a tighter error bar
 
 ## Source
 
-Bińkowski, Sutherland, Arbel and Gretton (2018), [LIT-tmphun6n](../literature.d/LIT-tmphun6n.md). The account
-of why is [THEORY-tmpb0yyu](../theory.d/THEORY-tmpb0yyu.md).
+Bińkowski, Sutherland, Arbel and Gretton (2018), [LIT-615](../literature.d/LIT-615.md). The account
+of why is [THEORY-095](../theory.d/THEORY-095.md).
 
 ## When this applies
 

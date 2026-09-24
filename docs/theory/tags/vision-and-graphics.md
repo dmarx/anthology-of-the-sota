@@ -6,8 +6,9 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-1 of 94 THEORY documents. Back to the [full index](../README.md).
+2 of 95 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [THEORY-052](../../../record/theory.d/THEORY-052.md) | Synthesis requires equivariant representations and discriminative pretraining rewards invariant ones, which is why a generative prior groups objects it was never shown | Khangaonkar and Pirsiavash (2025), [LIT-488](../../../record/literature.d/LIT-488.md) — self-distillation and contrastive objectives explicitly reward representations that *do not change* under augmentation; instance segmentation needs representations that do. The paper's DINO control activates on objects and cannot separate their instances, which is the shape this account predicts. | Proposed |
+| [THEORY-095](../../../record/theory.d/THEORY-095.md) | No unbiased estimator of FID exists, so its plug-in bias can reverse a comparison while the sample variance stays small | Bińkowski et al. (2018), [LIT-615](../../../record/literature.d/LIT-615.md) — the FID is a non-linear functional of the two distributions, and by the Bickel–Lehmann argument no estimator of it is unbiased for all distributions. The bias is therefore a property of the quantity, not of the plug-in formula, and it does not appear in the standard error: at d=2048 and 50,000 samples the estimator reversed a true ordering in all 100 trials, with standard deviations of 0.2 and 0.5 on a gap of 2.5. The non-existence proof needs a mixture family; what rescues it for practice is that Inception codes are not normal. | Active |

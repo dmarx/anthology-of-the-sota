@@ -2,7 +2,7 @@
 
 # Lines of work
 
-47 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+48 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -43,17 +43,24 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-484](../record/literature.d/LIT-484.md) — TinyStories: How Small Can Language Models Be and Still Speak Coherent English? *(Active)*
   - [LIT-485](../record/literature.d/LIT-485.md) — Parameterized Synthetic Text Generation with SimpleStories *(Active)*
 
-### From GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium
+### From Improved Techniques for Training GANs
 
-- [LIT-611](../record/literature.d/LIT-611.md) — GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium *(Active)*
-  - [LIT-501](../record/literature.d/LIT-501.md) — The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation *(Active)*
-  - [LIT-563](../record/literature.d/LIT-563.md) — The Role of ImageNet Classes in Fréchet Inception Distance *(Active)*
+- [LIT-614](../record/literature.d/LIT-614.md) — Improved Techniques for Training GANs *(Active)*
+  - [LIT-611](../record/literature.d/LIT-611.md) — GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium *(Active)*
+    - [LIT-501](../record/literature.d/LIT-501.md) — The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation *(Active)*
+    - [LIT-563](../record/literature.d/LIT-563.md) — The Role of ImageNet Classes in Fréchet Inception Distance *(Active)*
+    - [LIT-615](../record/literature.d/LIT-615.md) — Demystifying MMD GANs *(Active)*
 
 ### From Adaptive Estimators Show Information Compression in Deep Neural Networks
 
 - alongside: [LIT-507](../record/literature.d/LIT-507.md) — Adaptive Estimators Show Information Compression in Deep Neural Networks *(Active)*
 - alongside: [LIT-508](../record/literature.d/LIT-508.md) — Opening the Black Box of Deep Neural Networks via Information *(Active)*
 - alongside: [LIT-509](../record/literature.d/LIT-509.md) — On the Information Bottleneck Theory of Deep Learning *(Active)*
+
+### From On Calibration of Modern Neural Networks
+
+- [LIT-616](../record/literature.d/LIT-616.md) — On Calibration of Modern Neural Networks *(Active)*
+  - [LIT-514](../record/literature.d/LIT-514.md) — Rethinking Early Stopping: Refine, Then Calibrate *(Active)*
 
 ### From Are Sparse Autoencoders Useful? A Case Study in Sparse Probing
 
@@ -176,11 +183,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-500](../record/literature.d/LIT-500.md) — Vector-quantized Image Modeling with Improved VQGAN *(Active)*
       - [LIT-497](../record/literature.d/LIT-497.md) — Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation *(Active)* — also extends LIT-496
 
-### From GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium
+### From Improved Techniques for Training GANs
 
-- [LIT-611](../record/literature.d/LIT-611.md) — GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium *(Active)*
-  - [LIT-501](../record/literature.d/LIT-501.md) — The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation *(Active)*
-  - [LIT-563](../record/literature.d/LIT-563.md) — The Role of ImageNet Classes in Fréchet Inception Distance *(Active)*
+- [LIT-614](../record/literature.d/LIT-614.md) — Improved Techniques for Training GANs *(Active)*
+  - [LIT-611](../record/literature.d/LIT-611.md) — GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium *(Active)*
+    - [LIT-501](../record/literature.d/LIT-501.md) — The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation *(Active)*
+    - [LIT-563](../record/literature.d/LIT-563.md) — The Role of ImageNet Classes in Fréchet Inception Distance *(Active)*
+    - [LIT-615](../record/literature.d/LIT-615.md) — Demystifying MMD GANs *(Active)*
 
 ### From A Style-Based Generator Architecture for Generative Adversarial Networks
 
@@ -424,6 +433,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-461](../record/literature.d/LIT-461.md) — Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability *(Active)*
   - [LIT-453](../record/literature.d/LIT-453.md) — Understanding Optimization in Deep Learning with Central Flows *(Active)*
+
+### From On Calibration of Modern Neural Networks
+
+- [LIT-616](../record/literature.d/LIT-616.md) — On Calibration of Modern Neural Networks *(Active)*
+  - [LIT-514](../record/literature.d/LIT-514.md) — Rethinking Early Stopping: Refine, Then Calibrate *(Active)*
 
 ### From Efficient Estimation of Word Representations in Vector Space
 

@@ -1,5 +1,8 @@
 ---
+number: 384
 status: Active
+formerly:
+- SOTA-tmprlwc2
 title: 'Calibrate a trained classifier with a single temperature fitted on held-out data, not with a richer map'
 version: 1
 tags:
@@ -7,9 +10,9 @@ tags:
 - training-optimization
 date: '2026-09-23'
 source:
-- LIT-tmps0emi
+- LIT-616
 introduced_by:
-- LIT-tmps0emi
+- LIT-616
 consensus: converged
 consensus_note: >-
   Grounds, and their limits, stated rather than assumed. The comparison is
@@ -24,7 +27,7 @@ consensus_note: >-
   without comment wherever the probabilities are only ever argmaxed.
 implementations: []
 summary: >-
-  Guo et al. (2017), [LIT-tmps0emi](../literature.d/LIT-tmps0emi.md) — rescale the logits by a single learned
+  Guo et al. (2017), [LIT-616](../literature.d/LIT-616.md) — rescale the logits by a single learned
   `1/T` fitted for NLL on a held-out set. It cannot change the argmax, so
   accuracy is unchanged by construction, and it beats vector scaling, matrix
   scaling, histogram binning, isotonic regression and BBQ — including the
@@ -32,11 +35,11 @@ summary: >-
 ---
 <!-- inactive-ok-file: THEORY-060 — Proposed; named to mark what this paper is NOT a replication of — its decomposition is calibration against refinement, where Guo et al. separate a proper loss from the 0/1 loss -->
 
-# SOTA-tmprlwc2: Calibrate a trained classifier with a single temperature fitted on held-out data, not with a richer map
+# SOTA-384: Calibrate a trained classifier with a single temperature fitted on held-out data, not with a richer map
 
 ## Source
 
-Guo, Pleiss, Sun and Weinberger (2017), [LIT-tmps0emi](../literature.d/LIT-tmps0emi.md).
+Guo, Pleiss, Sun and Weinberger (2017), [LIT-616](../literature.d/LIT-616.md).
 
 ## When this applies
 

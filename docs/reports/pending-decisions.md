@@ -121,7 +121,7 @@
 | 2026-09-22 | Proposed | [SOTA-320](../../record/practices.d/SOTA-320.md) | 1 | 0 | Bound the learning rate by the ratio of the update's spectral norm to the weight's, and drop warmup |
 | 2026-09-22 | Proposed | [SOTA-321](../../record/practices.d/SOTA-321.md) | 1 | 0 | Verify a model's lineage from the singular spectra of its attention products, which survive permutation and rescaling |
 | 2026-09-22 | Proposed | [SOTA-322](../../record/practices.d/SOTA-322.md) | 0 | 0 | Trade attention heads for depth: more heads conditions the attention block, and the layers you drop cost nothing |
-| 2026-09-23 | Proposed | [SOTA-338](../../record/practices.d/SOTA-338.md) | 6 | 0 | Train the GAN discriminator on frozen multi-scale pretrained features with fixed random channel and scale mixing |
+| 2026-09-23 | Proposed | [SOTA-338](../../record/practices.d/SOTA-338.md) | 7 | 0 | Train the GAN discriminator on frozen multi-scale pretrained features with fixed random channel and scale mixing |
 | 2026-09-23 | Proposed | [SOTA-332](../../record/practices.d/SOTA-332.md) | 4 | 0 | When an implicit representation will be supervised through its derivatives, use sine activations with the SIREN initialization rather than a ReLU network |
 | 2026-09-23 | Proposed | [SOTA-335](../../record/practices.d/SOTA-335.md) | 4 | 0 | When generated content must move continuously, as in video or animation, build the generator alias-free: treat features as continuous signals and low-pass filter around every nonlinearity |
 | 2026-09-23 | Proposed | [SOTA-336](../../record/practices.d/SOTA-336.md) | 4 | 0 | Train high-resolution GANs at a fixed topology with output skips in the generator and a residual discriminator, not by progressive growing |
@@ -166,9 +166,9 @@
 | 2026-09-20 | Proposed | [THEORY-026](../../record/theory.d/THEORY-026.md) | 3 | 0 | Critical batch size is set by how much data has been seen, not by how large the model is |
 | 2026-09-20 | Proposed | [THEORY-029](../../record/theory.d/THEORY-029.md) | 3 | 0 | A model of bounded capacity allocates it across datasets like a knapsack, so the optimum jumps rather than sliding |
 | 2026-09-21 | Proposed | [THEORY-059](../../record/theory.d/THEORY-059.md) | 11 | 0 | A low-rank branch corrects quantization because weight spectra are steep and quantization-error spectra are flat |
+| 2026-09-21 | Proposed | [THEORY-060](../../record/theory.d/THEORY-060.md) | 9 | 0 | Calibration error and refinement error have separate minimizers during training, so the loss minimum is optimal for neither |
 | 2026-09-21 | Proposed | [THEORY-041](../../record/theory.d/THEORY-041.md) | 8 | 0 | Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing |
 | 2026-09-21 | Proposed | [THEORY-051](../../record/theory.d/THEORY-051.md) | 8 | 0 | A text feature predicts success partly by being uncommon, so a tool that gives it to everyone destroys its predictive value |
-| 2026-09-21 | Proposed | [THEORY-060](../../record/theory.d/THEORY-060.md) | 5 | 0 | Calibration error and refinement error have separate minimizers during training, so the loss minimum is optimal for neither |
 | 2026-09-21 | Proposed | [THEORY-058](../../record/theory.d/THEORY-058.md) | 4 | 0 | Apparent compression in the information plane is saturating activations collapsing into extreme bins, not information being discarded |
 | 2026-09-21 | Proposed | [THEORY-052](../../record/theory.d/THEORY-052.md) | 3 | 0 | Synthesis requires equivariant representations and discriminative pretraining rewards invariant ones, which is why a generative prior groups objects it was never shown |
 | 2026-09-21 | Proposed | [THEORY-056](../../record/theory.d/THEORY-056.md) | 3 | 0 | Distinct state machines agree at chance on long random inputs, so a learner that reads only statistics loses the signal as the sequences get longer |

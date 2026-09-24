@@ -40,7 +40,7 @@ summary: >-
   Ten times the sampling budget shrinks the small term by `√10` and leaves the
   large one untouched. A lucky training seed is worth up to **2× the compute**.
 extended_by:
-- SOTA-tmpfcgzq
+- SOTA-383
 ---
 
 # SOTA-307: Report generative FID as an error bar over several training seeds, and treat any gap below about 2% of the mean as inconclusive
@@ -149,10 +149,10 @@ to picking at random.
 spread at a fixed sample count. The FID estimator is also *biased* — the
 offset depends on the distribution being measured, so it is shared by every
 seed and survives any amount of averaging — and no unbiased estimator exists
-([THEORY-tmpb0yyu](../theory.d/THEORY-tmpb0yyu.md), from a paper published eight years before this
+([THEORY-095](../theory.d/THEORY-095.md), from a paper published eight years before this
 one). A run-to-run interval of 1.3% says nothing about whether the centre of
 that interval is where the true distance is. Fix `n` as well:
-[SOTA-tmpfcgzq](SOTA-tmpfcgzq.md).
+[SOTA-383](SOTA-383.md).
 
 **Finite panel.** 20–25 training seeds, 10 sampling seeds, nothing past
 SiT-XL or 2M steps. Production-scale behaviour is an extrapolation and the

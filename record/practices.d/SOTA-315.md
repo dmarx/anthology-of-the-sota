@@ -11,7 +11,7 @@ consensus_note: >-
   the group proposing the criterion is the group measuring it. Nobody else has
   reported the separation, and the field's default is still to stop on raw
   validation loss. The *remedy* is a different matter and this note used to
-  get it wrong: temperature scaling is Guo et al. (2017), LIT-tmps0emi, filed
+  get it wrong: temperature scaling is Guo et al. (2017), LIT-616, filed
   after this practice was, and it is the field's standard post-hoc
   calibrator rather than anything new here. What is new is applying it
   inside model selection instead of after it.

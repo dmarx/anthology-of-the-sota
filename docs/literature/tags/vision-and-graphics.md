@@ -6,7 +6,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-48 of 548 LIT documents. Back to the [full index](../README.md).
+50 of 551 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -58,3 +58,5 @@
 | [LIT-599](../../../record/literature.d/LIT-599.md) | DINOv2: Learning Robust Visual Features without Supervision | Oquab et al. (2023), [ARXIV-2304.07193](https://arxiv.org/abs/2304.07193). The thesis is that existing self-supervised objectives already produce general-purpose features if the data is curated enough, so the contribution is a retrieval-based curation pipeline and the engineering to scale it — not a new objective. Frozen features, no finetuning, competitive with the best open weakly-supervised models. | Active |
 | [LIT-601](../../../record/literature.d/LIT-601.md) | Masked Autoencoders Are Scalable Vision Learners | He et al. (2021), [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377). Mask 75% of the patches, run the encoder on the visible quarter only, and reconstruct pixels with a small decoder you then throw away. 3x faster pretraining, 87.8% with ViT-Huge on ImageNet-1K alone — and the reason the ratio is 75% rather than BERT's 15% is an argument about the signal, not a sweep. | Active |
 | [LIT-611](../../../record/literature.d/LIT-611.md) | GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium | Heusel et al. (2017), [ARXIV-1706.08500](https://arxiv.org/abs/1706.08500). Where FID comes from — and it comes from a subsection of a paper about two time-scale update rules and Nash equilibria. Fit a Gaussian to Inception activations for each distribution and take the Wasserstein-2 distance between them. Validated by monotonicity under six synthetic corruptions. | Active |
+| [LIT-614](../../../record/literature.d/LIT-614.md) | Improved Techniques for Training GANs | Salimans et al. (2016), [ARXIV-1606.03498](https://arxiv.org/abs/1606.03498). Where the Inception Score comes from — `exp(E_x KL(p(y\|x) ‖ p(y)))`, proposed as a cheap stand-in for a Mechanical Turk study it correlates with, on **50k samples** because part of what it measures is diversity. The incumbent `LIT-611` displaced, and the paper that first tied generative evaluation to ImageNet class structure on purpose. | Active |
+| [LIT-615](../../../record/literature.d/LIT-615.md) | Demystifying MMD GANs | Bińkowski et al. (2018), [ARXIV-1801.01401](https://arxiv.org/abs/1801.01401). Where KID comes from, and where the case against comparing FID numbers comes from. The plug-in FID estimator is biased, **no unbiased estimator of FID exists**, and at d=2048 with 50,000 samples it reliably returns the **wrong ordering** between two models with a standard deviation small enough to hide it. KID is the squared MMD in the same Inception features, with a cubic kernel and a simple unbiased estimator. | Active |

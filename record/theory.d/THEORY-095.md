@@ -1,5 +1,8 @@
 ---
+number: 95
 status: Active
+formerly:
+- THEORY-tmpb0yyu
 title: 'No unbiased estimator of FID exists, so its plug-in bias can reverse a comparison while the sample variance stays small'
 version: 1
 tags:
@@ -8,11 +11,11 @@ tags:
 - vision-and-graphics
 date: '2026-09-23'
 source:
-- LIT-tmphun6n
+- LIT-615
 explains:
-- SOTA-tmpfcgzq
+- SOTA-383
 summary: >-
-  Bińkowski et al. (2018), [LIT-tmphun6n](../literature.d/LIT-tmphun6n.md) — the FID is a non-linear
+  Bińkowski et al. (2018), [LIT-615](../literature.d/LIT-615.md) — the FID is a non-linear
   functional of the two distributions, and by the Bickel–Lehmann argument no
   estimator of it is unbiased for all distributions. The bias is therefore a
   property of the quantity, not of the plug-in formula, and it does not
@@ -22,17 +25,17 @@ summary: >-
   what rescues it for practice is that Inception codes are not normal.
 ---
 
-# THEORY-tmpb0yyu: No unbiased estimator of FID exists, so its plug-in bias can reverse a comparison while the sample variance stays small
+# THEORY-095: No unbiased estimator of FID exists, so its plug-in bias can reverse a comparison while the sample variance stays small
 
 ## Source
 
-Bińkowski, Sutherland, Arbel and Gretton (2018), [LIT-tmphun6n](../literature.d/LIT-tmphun6n.md), Appendix D.
+Bińkowski, Sutherland, Arbel and Gretton (2018), [LIT-615](../literature.d/LIT-615.md), Appendix D.
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-tmpfcgzq](../practices.d/SOTA-tmpfcgzq.md) | fix n before comparing, and settle a close call with an unbiased estimator instead of a tighter error bar | the error bar is measuring the wrong thing — it reports the spread of a statistic that is not centred on the quantity, and the offset shrinks with n while the spread shrinks faster |
+| [SOTA-383](../practices.d/SOTA-383.md) | fix n before comparing, and settle a close call with an unbiased estimator instead of a tighter error bar | the error bar is measuring the wrong thing — it reports the spread of a statistic that is not centred on the quantity, and the offset shrinks with n while the spread shrinks faster |
 
 ## The account
 
@@ -68,7 +71,7 @@ Inception codes are clearly not normal — the same ReLU observation that
 undermines FID's Gaussian fit in the first place — so **a practical
 unbiased estimator is impossible**, which is the claim this document makes.
 A reader who assumes the Gaussian fit is exact is not covered by the proof,
-and is already assuming the thing `LIT-tmphun6n` measures to be false.
+and is already assuming the thing `LIT-615` measures to be false.
 
 **The consequence that matters is not imprecision but confident inversion.**
 Bias moves every estimate in the same direction, but not by the same amount,

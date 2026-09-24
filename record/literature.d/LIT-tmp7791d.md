@@ -1,0 +1,139 @@
+---
+status: Active
+title: 'Intriguing Properties of Quantization at Scale'
+version: 1
+tags:
+- numerics-and-precision
+- training-optimization
+- capability-thresholds
+date: '2026-09-24'
+published: '2023-05-30'
+arxiv: '2305.19268'
+first_author: 'Ahmadian'
+keywords:
+- 'quantization'
+- 'outlier-features'
+- 'emergent-properties'
+- 'weight-decay'
+- 'bf16'
+implementations: []
+summary: >-
+  Ahmadian et al. (2023), [ARXIV-2305.19268](https://arxiv.org/abs/2305.19268). A controlled study from 410M to
+  52B, same architecture, varying weight decay, dropout, gradient clipping and
+  training dtype: **outlier dimensions are not an inherent product of scale**
+  but of the optimization conditions during pre-training. Their 52B model
+  loses **0.08%** to plain INT8 where OPT-66B loses about **42%**. The record's
+  largest cluster had the emergence framing in an `Active` practice's title.
+compared_against:
+- LIT-586
+---
+
+<!-- inactive-ok-file: SOTA-tmpqmou6, THEORY-tmp3s87v — both Proposed and both filed in this same contribution,
+     as the recipe and the account this paper supports. Their status is the
+     one this note argues for: one group, one architecture family. -->
+# LIT-tmp7791d: Intriguing Properties of Quantization at Scale
+
+Ahmadian, Dash, Chen, Venkitesh, Gou, Blunsom, Üstün and Hooker (2023) — [ARXIV-2305.19268](https://arxiv.org/abs/2305.19268)
+
+## The question, and why it is well posed
+
+Post-training quantization was reported to fail sharply above about 6B
+parameters, and that failure was described as an **emergent property** — the
+same word used for capabilities that appear at scale and not below. The
+motivating puzzle is a natural experiment the field already had: **OPT-175B is
+badly sensitive to INT8 and BLOOM-176B is relatively robust**, at the same
+scale and the same decoder-only shape.
+
+So the question is not whether the cliff exists but what it is a cliff *of*.
+
+## The design
+
+**Same architecture, one axis varied at a time, every variant trained from
+random initialization.** Weight decay `{0.001, 0.01, 0.1}`, gradient clipping
+`{none, 1.0}`, dropout `{0, 0.1, 0.4, 0.8}`, half precision `{fp16, bf16}`.
+Iterated at 410M, run at 6B, then the best recipe validated at 13B and 52B to
+convergence.
+
+The control that makes it a study rather than a demonstration: **every variant
+except `dropout=0.8` had similar pre-quantization performance.** They are
+comparing models of comparable quality that differ in how they survive
+quantization, not models that differ in quality.
+
+## What each knob does
+
+| choice | INT8 degradation |
+| --- | --: |
+| weight decay 0.1 | **0.09%** |
+| weight decay 0.001 | 1.36% |
+| weight decay 0.01 + fp16 | 1.73% |
+
+- **Weight decay: more is better**, by more than an order of magnitude on
+  degradation.
+- **Dropout: more is worse**, monotonically over `{0, 0.1, 0.4, 0.8}`.
+- **Gradient clipping helps**, and *"to an extent counteracts the effects of a
+  small weight-decay value."*
+- **bf16 over fp16**, and the effect compounds with low weight decay.
+
+At scale, with the best recipe (weight decay 0.1, no dropout, clip 1.0, bf16):
+the **52B model gains 0.08%** on the eight-task zero-shot average after plain
+INT8 and loses 0.01% on LAMBADA/HellaSwag/PIQA, against **~42% degradation
+reported for OPT-66B**.
+
+## The mechanism they offer, and a detail worth keeping
+
+The LayerNorm gain is the amplifier. In a pre-norm architecture the gain
+`g` directly sets the spread of the activations entering the projections, and
+`STD(g)` is higher in the variants that degrade — **2× higher for fp16 than
+bf16**. Compared across models, BLOOM's `STD(g)` is 5× theirs even though
+BLOOM is the robust one of the two public models.
+
+And a fact they flag as undocumented anywhere: **OPT-6B's LayerNorm gain
+parameters are all hardcoded to 1.0**, so its `STD(g)` is zero. They could not
+find the decision mentioned in the OPT paper or repository. That is the model
+the emergent-outlier story was largely measured on.
+
+## The replication failure, which the record should carry
+
+They tried to apply the outlier criterion from the paper the record's
+`SOTA-355` is built on:
+
+> we find that a threshold of 6.0 is **too high** to classify a feature
+> dimension as an outlier for all the variants we consider. After
+> correspondence with the authors, we also explored various adaptations of
+> this outlier detection recipe… However, **we did not observe a clear
+> correlation between these measures and sensitivity to quantization.**
+
+So an independent group, in contact with the original authors, could neither
+apply the published threshold nor find an adaptation of it that predicted what
+it is supposed to predict. `SOTA-355` step 2 is *"detect the feature dimensions
+whose magnitudes are far outside the rest"*, and this is the only independent
+attempt at that detection the record holds.
+
+## What it does not show
+
+**It is one group and one architecture family.** The counter-example is to the
+claim *outliers are inherent to scale*; it is not a demonstration that any
+model can be made quantization-friendly, and their models are their own.
+
+**The knobs are not free.** Weight decay, dropout and clipping are chosen for
+other reasons, and this paper gives no account of what the
+quantization-friendly settings cost elsewhere — only that pre-quantization
+quality was comparable across their variants, on their evaluations.
+
+**It does not refute the mechanism, only the inevitability.** Outliers plainly
+exist in OPT and BLOOM, and `SOTA-355` works on models that have them. The
+claim is that having them is a consequence of how you trained, not of how big
+you got.
+
+## Standing in the anthology
+
+Unit 5 of `#342`, `#290`'s promotion [#19](https://github.com/dmarx/anthology-of-the-sota/issues/19), ranked fifth on the record's
+**largest cluster: 127 documents naming quantization and 18 practices.**
+
+Three documents change. `THEORY-tmp3s87v` holds the account.
+`SOTA-tmpqmou6` holds the recipe. `SOTA-355` — `Active`, `converged`, with
+*"emergent outlier"* in its title — gains the condition, and `LIT-586` gains a
+correction: it had said the emergent-outlier characterization was *"the part
+that has been independently built on"* and the no-degradation headline was
+*"the part a later, harder evaluation could move."* The independent work went
+the other way.

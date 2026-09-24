@@ -28,6 +28,11 @@ implementations:
 extends:
 - LIT-448
 - LIT-449
+- LIT-tmpmi3yo
+compared_against:
+- LIT-tmpkcchp
+- LIT-tmplthcn
+- LIT-tmpqns7l
 summary: >-
   Wan Team, Alibaba (2025), [ARXIV-2503.20314](https://arxiv.org/abs/2503.20314). The open Wan2.1 video models,
   1.3B and 14B, and the full recipe behind them. The recipe covers data
@@ -112,7 +117,9 @@ of which would need its evidence checked against this text first:
 
 - Pre-train a video diffusion model on images at low resolution, then raise
   resolution before adding length. The report justifies this by throughput,
-  and it has no ablation.
+  and it has no ablation. The image-first half is now [SOTA-tmp3b17n](../practices.d/SOTA-tmp3b17n.md),
+  sourced from the earlier controlled studies. Wan is adoption of it, not
+  evidence. The resolution-then-length ordering is still unfiled.
 - Condition image-to-video by channel-concatenating a masked latent through a
   zero-initialized projection, and filter clips by how close the first frame
   is to the rest. This is the report's most transferable engineering.

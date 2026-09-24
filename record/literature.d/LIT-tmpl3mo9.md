@@ -1,0 +1,90 @@
+---
+status: Active
+title: 'Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models'
+version: 1
+tags:
+- generative-modeling
+- vision-and-graphics
+- adaptation-and-tuning
+date: '2026-09-24'
+published: '2023-04-01'
+arxiv: '2304.08818'
+first_author: 'Blattmann'
+keywords:
+- 'latent-video-diffusion'
+- 'temporal-layers'
+- 'video-fine-tuning'
+- 'temporal-decoder-finetuning'
+- 'video-super-resolution'
+- 'text-to-video'
+implementations: []
+extends:
+- LIT-062
+summary: >-
+  Blattmann et al., LMU Munich and NVIDIA (2023), [ARXIV-2304.08818](https://arxiv.org/abs/2304.08818). Video
+  LDM turns a pretrained image latent diffusion model into a video model by
+  inserting temporal layers and fine-tuning the decoder on video. Starting
+  from the image model halves driving-scene FVD against end-to-end training
+  (534 against 1155). The text-to-video model trained about 2.2B of its 3.1B
+  parameters, not just the temporal layers the abstract describes.
+extended_by:
+- LIT-tmprf8ak
+---
+
+# LIT-tmpl3mo9: Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models
+
+Blattmann et al., LMU Munich, NVIDIA, Vector Institute, Toronto, Waterloo
+(2023) — [ARXIV-2304.08818](https://arxiv.org/abs/2304.08818)
+
+## Key takeaways
+
+- **The method.** Temporal layers (3D-convolution residual blocks and temporal
+  attention) are interleaved into a pretrained image LDM, blended in with a
+  learned α, and trained on video (§3.1).
+- **Image pretraining is the controlled result.** On driving scenes, against
+  the same design trained end to end with no image pretraining, FVD is 534
+  against 1155 and FID 48.3 against 71.3 (Table 1). Attention-only temporal
+  layers, matched on trainable parameters, reach 704.
+- **The autoencoder has to learn video too.** Fine-tuning the decoder on
+  video with a video discriminator cuts reconstruction FVD from 390.88 to
+  32.94 on driving scenes (Table 3), and on WebVid from 35.82 to 18.66
+  (Table 11). Reconstruction FID gets slightly worse. Adding an image
+  discriminator back raises FVD to 51.01.
+- **Upsampling must be temporal as well.** A video-fine-tuned upsampler
+  reaches FVD 45.39 against 165.98 for frame-wise upsampling, with FID
+  unchanged (Table 3).
+- **Text-to-video is built on Stable Diffusion 2.1.** It ties Make-A-Video on
+  UCF-101 IS (33.45 against 33.00), is worse on FVD (550.61 against 367.23),
+  and is worse on MSR-VTT CLIPSIM (0.2929 against 0.3049; Tables 4–5).
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"Only need to train a temporal alignment model"** (abstract) is not what
+  the text-to-video model did. App. H.2 says the spatial layers were first
+  fine-tuned on WebVid, which is "necessary to prevent out-of-distribution
+  problems". The interpolation models trained all parameters, and the decoder
+  was fine-tuned. In total about 2.2B of 3.1B parameters were trained.
+- **"Up to 1280×2048"** comes from Stable Diffusion's 4× upscaler, trained on
+  320×320 crops and applied convolutionally.
+- **The samples and the metrics come from different models.** Most sample
+  figures are from the SD 1.4 model, while the metric tables use SD 2.1. The
+  SD 1.4 model scored worse (FVD 656.49; Tables 9–10).
+- **The key ablation is at driving-scene scale** on a smaller model, and the
+  pixel-space baseline in it is not matched in channels or steps (Table 7).
+
+## Standing in the anthology
+
+This is where the line moves into latent space, and the template later open
+video models start from: initialize from an image model, add time, and teach
+the autoencoder about video. Stable Video Diffusion comes from the same
+authors and extends this architecture directly. It is also the clearest
+evidence behind [SOTA-187](../practices.d/SOTA-187.md) for video: the "Pixel-space baseline" row is a
+controlled pixel-vs-latent comparison, though an unmatched one.
+
+The abstract describes a lighter method than the one that produced the
+headline model. The record should cite the ablation, not the abstract.
+
+Filed without a `NOTE`: the takeaways come from one full reading done for
+this filing, including appendices B–I.

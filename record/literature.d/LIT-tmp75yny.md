@@ -1,0 +1,92 @@
+---
+status: Active
+title: 'LTX-Video: Realtime Video Latent Diffusion'
+version: 1
+tags:
+- generative-modeling
+- representation-and-encoding
+- vision-and-graphics
+- inference-optimization
+date: '2026-09-24'
+published: '2024-12-01'
+arxiv: '2501.00103'
+first_author: 'HaCohen'
+keywords:
+- 'video-vae'
+- 'high-compression-latent'
+- 'denoising-decoder'
+- 'rectified-flow'
+- 'real-time-generation'
+- 'image-to-video'
+implementations:
+- 'LTX-Video'
+extends:
+- LIT-449
+compared_against:
+- LIT-tmplthcn
+summary: >-
+  HaCohen et al., Lightricks (2024), [ARXIV-2501.00103](https://arxiv.org/abs/2501.00103). It trades latent size
+  for speed: a 32×32×8 VAE with 128 channels (1:192) moves patchification
+  into the autoencoder, and the decoder does the last denoising step. It
+  generates 5s of 768×512 video in about 2s on an H100 at 20 steps. The
+  denoising decoder, the central idea, is supported by one internal
+  preference study with no reported numbers.
+---
+
+# LIT-tmp75yny: LTX-Video: Realtime Video Latent Diffusion
+
+HaCohen et al., Lightricks (2024) — [ARXIV-2501.00103](https://arxiv.org/abs/2501.00103)
+
+## Key takeaways
+
+- **The line's most aggressive compression.** The VAE compresses 32×32 in
+  space and 8× in time into 128 channels, a 1:8192 pixels-to-tokens ratio
+  with no patchifier. CogVideoX and HunyuanVideo are 1:1024 (Table 1). The
+  transformer therefore sees 8× fewer tokens, which is where the speed comes
+  from.
+- **The decoder denoises.** It is trained on t ∈ [0, 0.2] and run at
+  t = 0.05. The high-frequency detail a compressed latent cannot hold is
+  generated during decoding rather than reconstructed. Wan's related work
+  names this as LTX-Video's distinguishing idea.
+- **The speed claim is 121 frames of 768×512 in about 2s on an H100 with 20
+  steps (§1).** The quality survey used 40 steps.
+- **Human preference.** 85% text-to-video and 91% image-to-video win rates
+  across the survey, against 38% and 47% for CogVideoX-2B (Table 2). The
+  survey used 1,000 prompts and 20 raters.
+- **RoPE frequency spacing.** Exponential spacing gives lower loss than
+  inverse-exponential over about 140k steps, with everything else fixed
+  (Fig. 17). This is the paper's one clean ablation.
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **The central idea has no numbers.** The denoising decoder was "strongly
+  preferred" over t = 0 in an internal study, with no count, rater number or
+  win rate (§4.4).
+- **"Greatly enhances GAN stability"** (§2.1.2) is supported by one frame
+  (Fig. 16).
+- **"Real-time" and the quality numbers use different settings.** Speed is
+  measured at 20 steps and quality at 40. No timing table is given for any
+  model, and VAE and text-encoder costs are not broken out.
+- **The baselines were run away from their native resolution.** Everything
+  ran at 768×512. CogVideoX-2B's native resolution is 720×480.
+- **Architecture claims are asserted.** Cross-attention "work[s] better than
+  MM-DiT" and RMSNorm QK-norm are both stated as "we found".
+- **The training details are missing.** §4.1 is truncated mid-sentence
+  ("…ADAM-W optimizerAfter pre-training…"), with no steps, batch size or
+  data size.
+
+## Standing in the anthology
+
+LTX-Video is the speed end of the line. It asks how much the latent can be
+compressed before the generator suffers, and answers it with a decoder that
+restores what compression discards. CogVideoX found 16×16×8 "extremely
+difficult" to converge, and LTX-Video goes further, which makes the decoder
+the load-bearing part. That part is the least evidenced.
+
+`inference-optimization` is justified because the paper exists to make
+generation fast, and every design choice is argued from that goal.
+
+Filed without a `NOTE`: the takeaways come from one full reading of §§1–7
+done for this filing. There is no appendix beyond sample figures.

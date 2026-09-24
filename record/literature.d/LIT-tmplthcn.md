@@ -1,0 +1,98 @@
+---
+status: Active
+title: 'CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer'
+version: 1
+tags:
+- generative-modeling
+- vision-and-graphics
+- model-architecture
+- representation-and-encoding
+date: '2026-09-24'
+published: '2024-08-01'
+arxiv: '2408.06072'
+first_author: 'Yang'
+keywords:
+- 'text-to-video'
+- 'diffusion-transformer'
+- '3d-causal-vae'
+- 'expert-adaptive-layernorm'
+- '3d-full-attention'
+- 'video-captioning'
+implementations:
+- 'CogVideoX-2B'
+- 'CogVideoX-5B'
+- 'CogVideoX-5B-I2V'
+extends:
+- LIT-448
+- LIT-tmpmi3yo
+compared_against:
+- LIT-449
+- LIT-tmp75yny
+- LIT-tmpbr2sl
+summary: >-
+  Yang, Teng et al., Tsinghua and Zhipu AI (2024), [ARXIV-2408.06072](https://arxiv.org/abs/2408.06072). The
+  first widely used open DiT for text-to-video. It has a MAGVIT-style causal
+  3D VAE, one sequence over text and video with modality-specific adaLN, and
+  full 3D attention. Full 3D attention beats factorized attention at 2.3× the
+  forward cost. The architecture ablations appear only in the third arXiv
+  version, and the 2B model ships the position encoding they rejected.
+---
+
+# LIT-tmplthcn: CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer
+
+Yang, Teng et al., Tsinghua University and Zhipu AI (2024) — [ARXIV-2408.06072](https://arxiv.org/abs/2408.06072)
+
+## Key takeaways
+
+- **The causal 3D VAE's compression was chosen by ablation.** At 8×8×4 with
+  16 channels, flicker is 86.3 and PSNR 28.7, against 93.2 and 28.4 for SDXL's
+  2D VAE (Table 1). 32 channels reach 30.5 PSNR. At 16×16×8, "convergence
+  becomes extremely difficult". HunyuanVideo and Wan use the same 8×8×4,
+  16-channel point. Movie Gen, Step-Video and LTX-Video compress further.
+- **Text and video share one sequence and differ only in their adaLN.** The
+  "expert" adaLN is compared against SD3's MM-DiT ([LIT-449](LIT-449.md)) at equal
+  parameters and at equal depth (Fig. 8). This design choice is what
+  distinguishes CogVideoX. HunyuanVideo later moved to a FLUX-style
+  dual-then-single-stream design, and Wan and Step-Video to cross-attention.
+- **Full 3D attention beats factorized 2D+1D attention and costs more.** It
+  wins on FVD and loss (Fig. 8). One forward pass at 768×1360×5s takes 9.60s,
+  against 4.17s for factorized attention (Table 8). This is where the line
+  gives up VDM's factorization.
+- **Explicit uniform sampling.** Timestep ranges are split across
+  data-parallel ranks, which lowers validation loss at every timestep at 40k
+  steps, e.g. 0.116 against 0.119 at t=500 (Table 9).
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **The ablations arrived late.** The version-1 preprint had loss curves only.
+  The architecture ablations (Figs. 8 and 10) appear in version 3, and their
+  model size and step count are not stated in the text.
+- **The released 2B model uses the rejected option.** CogVideoX-2B uses
+  sinusoidal position encoding, not the RoPE the ablation favours (App.
+  Table 5).
+- **The abstract grew between versions.** Version 1 claims 720×480, 6s at
+  8 fps. Version 3 claims 768×1360, 10s at 16 fps. The paper does not say
+  whether a different checkpoint produced the new figures, and the Kling
+  human-evaluation table is unchanged between them.
+- **The captioning claim is not ablated.** The abstract says dense
+  recaptioning "significantly improves generation quality".
+- **The scaling claim is two model sizes.**
+- **Quality fine-tuning costs semantic ability.** Fine-tuning on the top 20%
+  of data caused "a slight degradation in the model's semantic ability"
+  (App. A). This appears only in the appendix.
+
+## Standing in the anthology
+
+This is the node the open line branches from. Its full 3D attention became
+the default, and HunyuanVideo and Wan kept its VAE ratio. Its expert adaLN
+did not survive, and the
+successors split two ways: HunyuanVideo went to FLUX-style joint streams,
+and Wan, Step-Video and LTX-Video went to cross-attention (LTX-Video calls it
+"better than MM-DiT" without an ablation). The successors disagree on how
+text should enter a video DiT, and none of them tests the alternatives against each other at scale.
+
+Filed without a `NOTE`: the takeaways come from one full reading of version 3
+done for this filing, with version 1's abstract and evaluation compared
+against it.

@@ -1,0 +1,100 @@
+---
+status: Active
+title: 'HunyuanVideo: A Systematic Framework For Large Video Generative Models'
+version: 1
+tags:
+- generative-modeling
+- vision-and-graphics
+- training-optimization
+- multimodal-learning
+- representation-and-encoding
+date: '2026-09-24'
+published: '2024-12-01'
+arxiv: '2412.03603'
+first_author: 'Kong'
+keywords:
+- 'video-generation'
+- 'causal-3d-vae'
+- 'flow-matching'
+- 'scaling-laws'
+- 'mllm-text-encoder'
+- 'dual-stream-transformer'
+implementations:
+- 'HunyuanVideo'
+extends:
+- LIT-449
+- LIT-tmpmi3yo
+compared_against:
+- LIT-tmpsjfid
+- LIT-tmpbr2sl
+- LIT-tmpqns7l
+summary: >-
+  Kong et al., Tencent Hunyuan (2024), [ARXIV-2412.03603](https://arxiv.org/abs/2412.03603). A 13B open video
+  model: FLUX-style dual-then-single-stream transformer, a multimodal LLM as
+  text encoder, a from-scratch causal 3D VAE. It fits the line's only
+  explicit video compute-optimal scaling law, on a proxy model that differs
+  from the shipped one in objective, text encoder and conditioning. It
+  reports no controlled ablations.
+---
+
+# LIT-tmpkcchp: HunyuanVideo: A Systematic Framework For Large Video Generative Models
+
+Kong et al., Tencent Hunyuan Foundation Model Team (2024) — [ARXIV-2412.03603](https://arxiv.org/abs/2412.03603)
+
+## Key takeaways
+
+- **The line's only video scaling law.** Chinchilla-style envelopes
+  ([LIT-068](LIT-068.md)) are fit as N_opt = a·C^b and D_opt = a·C^b, first for text-to-image
+  and then for video. The video fit gives b = 0.362 for parameters and 0.629
+  for data. The proxy family is "DiT-T2X" from 92M to 6.6B parameters, and
+  the fit covers "only the first stage of training" (§4.4, Fig. 10). It
+  sized the model at 13B. The video fit puts more of each added FLOP into
+  data than into parameters, more lopsided than the image fit or [LIT-179](LIT-179.md)'s
+  language fit. No other report in the line measures it.
+- **Architecture.** 20 dual-stream blocks feed 40 single-stream blocks with
+  full attention and 3D RoPE. Text comes from a decoder-only multimodal LLM
+  with a bidirectional token refiner, and pooled CLIP-L is added to the
+  timestep embedding.
+- **The VAE.** 4×8×8 into 16 channels, causal, trained from scratch on 4:1
+  video to image data. It reaches PSNR 35.39 on MCL-JCV against
+  CogVideoX-1.5's 33.22 (Table 1). Fine-tuning with tiling randomly on or
+  off removes tiling seams.
+- **Few-step sampling.** A timestep shift s·t/(1+(s−1)t) is used, with s
+  raised from 7 at 50 steps to 17 below 20 steps. It is compared against
+  Movie Gen's linear-quadratic schedule at 10 steps, qualitatively only
+  (Fig. 11b). CFG distillation gives about 1.9× speedup.
+- **Evaluation.** 1,533 prompts rated once each by 60 professional raters:
+  overall 41.3% against 37.7% for the best anonymized competitor, and the best
+  motion quality at 66.5% (Table 3).
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"Reduce computational resource requirements by up to 5×"** (intro) is
+  supported by no experiment in the paper.
+- **The scaling law is fit on a different model.** The proxy trains with
+  DDPM v-prediction, T5-XXL and cross-attention. The shipped model uses flow
+  matching, a multimodal LLM and dual/single streams (§4.4.1). That the fit
+  transfers is assumed.
+- **No design choice is ablated.** Full attention, the dual-to-single stream,
+  the multimodal-LLM encoder and the token refiner are all adopted or
+  justified by citation. Data filters were checked by "simple experiments
+  using a smaller HunyuanVideo model" whose results are not shown.
+- **The headline metric is undefined.** Table 3's "Overall" is not defined.
+  On visual quality the model ranks fourth of six (95.7% against 97.7%).
+
+## Standing in the anthology
+
+HunyuanVideo was the open baseline Wan measured itself against, in both its
+VAE comparison and its human evaluation. The two reports disagree most
+clearly on the text encoder. HunyuanVideo replaces T5 with a multimodal
+LLM on the strength of a claim it doesn't test. Wan tests the same question,
+finds the LLM ahead by 0.1 FID, and keeps umT5 anyway. The encoder question
+is open, and neither report settles it.
+
+The scaling fit is the most quantitative claim about video compute
+allocation in the record. It should be cited with its proxy caveat.
+
+Filed without a `NOTE`: the takeaways come from one reading through §8 done
+for this filing. The avatar and application demos in §7 were skimmed.

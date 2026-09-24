@@ -2,7 +2,16 @@
 number: 15
 status: 'Active'
 title: 'Store optimizer states in FP32'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    The stochastic-rounding hedge qualified. This practice said stochastic
+    rounding holds accuracy on many workloads; Gopher used it at 280B and
+    reported afterwards that it does not fully recover mixed-precision
+    performance. One large-scale negative result against a claim that was
+    stated without a scale attached.
 tags:
 - numerics-and-precision
 - training-optimization
@@ -44,3 +53,18 @@ Eight-bit optimizer states, and stochastic rounding in place of
 round-to-nearest, both recover most of the memory while holding accuracy on
 many workloads. The practice as stated is the conservative default, not a
 settled bound.
+
+**The stochastic-rounding half of that has a large-scale negative result
+against it.** Gopher ([LIT-tmpkxt2i](../literature.d/LIT-tmpkxt2i.md)) trained its 7.1B and 280B models with
+bfloat16 parameters updated by stochastic rounding, and reports: *"We
+subsequently found that stochastic rounding does not fully recover mixed
+precision training performance."* Its smaller models used float32 parameters
+with bfloat16 activations, so the comparison is between the two recipes
+inside one lineage.
+
+That does not overturn "holds accuracy on many workloads" — it names a
+workload where it did not, at a scale where the substitution is most
+tempting, and the finding is one group's aside rather than an ablation. What
+it does is put a scale on a sentence that had none. **A memory optimization
+verified at one size is not verified at twenty times that size**, and this is
+the specific case the record can now point at.

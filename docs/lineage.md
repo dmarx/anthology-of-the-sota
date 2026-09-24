@@ -2,7 +2,7 @@
 
 # Lines of work
 
-51 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+52 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -91,6 +91,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-033](../record/literature.d/LIT-033.md) — Longformer: The Long-Document Transformer *(Active)*
 - alongside: [LIT-225](../record/literature.d/LIT-225.md) — Generating Long Sequences with Sparse Transformers *(Active)*
+
+### From FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness
+
+- alongside: [LIT-074](../record/literature.d/LIT-074.md) — FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness *(Active)*
+- alongside: [LIT-655](../record/literature.d/LIT-655.md) — Self-attention Does Not Need O(n²) Memory *(Active)*
 
 ### From Mamba: Linear-Time Sequence Modeling with Selective State Spaces
 
@@ -415,6 +420,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-610](../record/literature.d/LIT-610.md) — Efficient Estimation of Word Representations in Vector Space *(Superseded)*
   - [LIT-609](../record/literature.d/LIT-609.md) — Distributed Representations of Words and Phrases and their Compositionality *(Superseded)*
+
+## systems-optimization
+
+### From FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness
+
+- alongside: [LIT-074](../record/literature.d/LIT-074.md) — FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness *(Active)*
+- alongside: [LIT-655](../record/literature.d/LIT-655.md) — Self-attention Does Not Need O(n²) Memory *(Active)*
 
 ## tiny-models
 

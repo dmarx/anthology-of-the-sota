@@ -11,7 +11,7 @@
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [SOTA-050](../../../record/practices.d/SOTA-050.md) v2 | Scale attention weights by 1/sqrt(head_dim) | Vaswani et al. (2017), [LIT-008](../../../record/literature.d/LIT-008.md) — [ARXIV-1706.03762](https://arxiv.org/abs/1706.03762). | Active |
-| [SOTA-085](../../../record/practices.d/SOTA-085.md) v3 | Use flash attention for all attention computations when hardware supports it | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
+| [SOTA-085](../../../record/practices.d/SOTA-085.md) v4 | Use flash attention for all attention computations when hardware supports it | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
 | [SOTA-086](../../../record/practices.d/SOTA-086.md) v4 | Tiling size should match hardware SRAM size | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
 | [SOTA-087](../../../record/practices.d/SOTA-087.md) v4 | Recompute attention during backward pass instead of storing it | Dao et al. (2022), [LIT-074](../../../record/literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135). | Active |
 | [SOTA-106](../../../record/practices.d/SOTA-106.md) v3 | Use flash-attention-2 over original flash-attention when available | Dao et al. (2023), [LIT-106](../../../record/literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691). | Active |

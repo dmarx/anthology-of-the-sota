@@ -16,7 +16,7 @@ history:
   date: '2026-09-24'
   note: >-
     Splits the memory claim from the speed claim, which this document had been
-    carrying as one. Rabe and Staats (LIT-tmp2jjuh), six months before
+    carrying as one. Rabe and Staats (LIT-655), six months before
     FlashAttention, get the same exactness and a 59x memory reduction at
     length 16,384 from the same algorithm — and measure it on TPU as "within a
     few percent of the runtime of the standard implementation", because
@@ -61,7 +61,7 @@ repeat of `SOTA-192`'s origin defect and asked for it to be verified first; it
 is not one. That practice's title was a generic technique credited to a paper
 that adopted it. This one names an **artifact** — *flash attention* is Dao et
 al.'s system, and the recommendation to run that kernel was first made by
-them. The antecedent is `LIT-tmp2jjuh`, which carries the memory-complexity
+them. The antecedent is `LIT-655`, which carries the memory-complexity
 result and the condition below, and which is a source rather than an origin.
 
 ## What "when hardware supports it" is carrying
@@ -84,7 +84,7 @@ Everything above is about whether the kernel **runs**. There is a second
 condition, about whether the benefit **transfers**, and it is measured in the
 work this line descends from.
 
-Rabe and Staats (`LIT-tmp2jjuh`) published the same algorithmic idea — exact
+Rabe and Staats (`LIT-655`) published the same algorithmic idea — exact
 attention without materialising the `N × N` matrix — six months earlier, with
 a JAX implementation on TPU. They get the memory result: **59× less overhead
 at sequence length 16,384**, 32× during differentiation. They do not get the

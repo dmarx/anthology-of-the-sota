@@ -10,10 +10,23 @@ consensus_note: >-
   HunyuanVideo (LIT-620), Step-Video (LIT-624) and Wan
   (LIT-619). The later four adopt it without testing it. Movie Gen and
   Step-Video mention unshown experiments. Wan justifies it by throughput.
+  Imagen Video (LIT-tmpzs77m), Make-A-Video (LIT-tmpff3eg), Emu Video
+  (LIT-tmpyt5og), AnimateDiff (LIT-tmpp7r27) and Open-Sora 2.0 (LIT-tmprr82r)
+  all start from an image model or train on images, and none of them tests
+  it.
   That is adoption, per DP-005, and it is why the evidence below is the three
   small controlled studies and not the large reports. Read as of 2026-09.
 title: 'Show a video diffusion model images before and alongside video'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    Five more video reports were checked against this practice. None tests
+    it. Imagen Video is the origin of the separate image corpus, asserted
+    without numbers. Emu Video and AnimateDiff keep image knowledge by
+    freezing instead, and Emu Video's freeze-against-fine-tune result is
+    recorded as an adjacent condition.
 tags:
 - generative-modeling
 - training-optimization
@@ -68,7 +81,16 @@ Three controlled comparisons support it, each changing one thing:
 - **What "images" means changed.** VDM's images are frames from its own
   videos, and it leaves a separate image corpus to future work. Every later
   report uses a separate, much larger image corpus. That is the version in
-  use, and none of the three sources tests it.
+  use, and none of the three sources tests it. It first appears in Imagen
+  Video ([LIT-tmpzs77m](../literature.d/LIT-tmpzs77m.md) §2.6), which asserts that it "significantly increases
+  the overall quality" and shows no numbers.
+- **Freezing is a third way to keep what the image model knows.** Emu Video
+  ([LIT-tmpyt5og](../literature.d/LIT-tmpyt5og.md)) and AnimateDiff ([LIT-tmpp7r27](../literature.d/LIT-tmpp7r27.md)) freeze the image layers and
+  show the video stages no images. Emu Video's controlled result is that
+  freezing beats full fine-tuning only narrowly: 55.0 / 58.1 human win rate
+  on quality / faithfulness (its Table 1). Nobody compares freezing with
+  joint image-video training. The practice's "alongside" clause is untested
+  against that alternative.
 - **The large reports give a different reason.** Wan presents image-first
   pretraining as a throughput fix: long, high-resolution video starves the
   batch and causes gradient-variance spikes. That is an argument about

@@ -1,0 +1,90 @@
+---
+status: Active
+title: 'AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning'
+version: 1
+tags:
+- generative-modeling
+- vision-and-graphics
+- adaptation-and-tuning
+date: '2026-09-24'
+published: '2023-07-01'
+arxiv: '2307.04725'
+first_author: 'Guo'
+keywords:
+- 'motion-module'
+- 'frozen-backbone'
+- 'personalization'
+- 'lora'
+- 'plug-and-play-adapters'
+- 'video-diffusion'
+implementations:
+- 'AnimateDiff'
+extends:
+- LIT-062
+summary: >-
+  Guo et al., CUHK, Shanghai AI Lab and Stanford (2023), [ARXIV-2307.04725](https://arxiv.org/abs/2307.04725).
+  Stable Diffusion 1.5 is frozen and only zero-initialized temporal "motion
+  modules" are trained. The modules then plug into community checkpoints
+  fine-tuned from the same base, with no tuning. Transfer is measured by
+  one table against two baselines not built for the task. The first version's
+  limitations section, which reports failure on stylized checkpoints, was
+  dropped from the second.
+---
+
+# LIT-tmpp7r27: AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning
+
+Guo et al., CUHK, Shanghai AI Laboratory and Stanford (2023) — [ARXIV-2307.04725](https://arxiv.org/abs/2307.04725)
+
+## Key takeaways
+
+- **Freeze the image model and train only motion.** Temporal-attention
+  modules with zero-initialized residual outputs are inserted into frozen SD
+  1.5 and trained on WebVid-10M (§4.2). Because the spatial weights never
+  change, the modules can be dropped into any checkpoint fine-tuned from the
+  same base, such as DreamBooth ([LIT-079](LIT-079.md)) or LoRA ([LIT-046](LIT-046.md)) personalizations.
+  That compatibility is the point of the design.
+- **A disposable domain adapter.** A LoRA on the spatial layers is trained on
+  video frames to absorb WebVid's defects (watermarks, blur) and dropped at
+  inference. Lowering its scale improves quality and removes watermarks
+  (Fig. 6, qualitative).
+- **MotionLoRA.** Rank-2 LoRAs on the motion modules learn a camera motion
+  from 20–50 clips in 2,000 iterations. Rank 2 is comparable to rank 128
+  (Fig. 7, qualitative).
+- **Transfer is measured once.** Against Text2Video-Zero and Tune-a-Video
+  (Table 1), AnimateDiff has the best user-study ranks. It has the lowest
+  CLIP text score of the three (31.39 against 35.98).
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **Freezing is never compared against fine-tuning.** Neither version tests
+  whether freezing the image model costs quality relative to fine-tuning it.
+  The design's premise is compatibility, not quality, and the paper does not
+  measure what compatibility costs.
+- **The limitation was removed.** Version 1 reported failure "when the domain
+  of the personalized T2I model is far from realistic, e.g., 2D Disney
+  cartoon" (v1 §5). Version 2 drops the limitations section, while its
+  abstract claims transfer to "any personalized T2Is originating from the
+  same base".
+- **The rest of the evidence is in the supplement.** User-study size, the
+  convolution-against-attention ablation and training configurations are in
+  supplementary material that is not in the arXiv PDF.
+
+## Standing in the anthology
+
+This is the adaptation end of [SOTA-386](../practices.d/SOTA-386.md). The image model is kept entirely and
+never updated. It supports the practice's first clause by adoption only, and
+says nothing about the second: no images are mixed in during motion
+training.
+
+It adds a reason to freeze that the practice does not mention. A frozen base
+keeps the ecosystem of personalized checkpoints usable. Emu Video
+([LIT-tmpyt5og](LIT-tmpyt5og.md)) freezes too, and its controlled result is that freezing
+beats full fine-tuning only narrowly (55/58). Together they make freezing a
+reasonable default when checkpoint compatibility matters. Neither shows
+that it wins on quality.
+
+Filed without a `NOTE`: the takeaways come from one full reading of v2 and
+v1's experiments and limitations, done for this filing. The supplementary
+material was not available.

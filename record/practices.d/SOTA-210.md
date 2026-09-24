@@ -12,7 +12,7 @@ consensus_note: >-
   pass@1-only reporting; what keeps this short of `converged` is that the
   practice it corrects is still what almost every post-training result does.
 title: 'Report pass@k as well as pass@1 after post-training: reinforcement learning raises one and lowers the other'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-17'
@@ -21,6 +21,19 @@ history:
     "the standard one" and cited the paper that USES it rather than the one
     that defines it; LIT-388 is where pass@k and the unbiased estimator
     are introduced. The recommendation is unchanged.
+- version: 3
+  date: '2026-09-24'
+  note: >-
+    Adds a bound on the metric this practice recommends. Li et al.
+    (LIT-tmp73dfo) define `n@k` — solved with `n` submissions from `k`
+    samples — and state that `pass@k = k@k` is an upper bound, because it
+    scores a system allowed to submit everything it generates. The
+    recommendation is unchanged and so is the finding it rests on, which is a
+    comparison of base against tuned on the same metric. What is added is
+    what the number means for a deployment with a selection step, which is
+    the deployment this practice's own conditions section says it matters
+    most for. Also adds the false-positive rate on HumanEval, since this
+    practice names LIT-388 as the metric's source.
 tags:
 - analysis-and-evaluation
 - adaptation-and-tuning
@@ -111,6 +124,47 @@ paper makes the argument this practice was compressing: the naive form "may
 look correct" but "underestimates the true value by a considerable margin",
 and the unbiased one trades a little early variance for comparability across
 different sample counts.
+
+## What `pass@k` is an upper bound on
+
+`pass@k` scores a system that may submit every sample it draws. Almost
+nothing does. Li et al. (`LIT-tmp73dfo`) name the general form — **`n@k`**,
+the fraction of problems solved with `n` submissions drawn from `k` samples —
+and state the relation plainly:
+
+> `pass@k = k@k`, and is an upper bound metric for using `k` samples.
+
+So `pass@k` measures **whether a correct sample exists in the pile**, not
+whether the system can find it. Between the two sits a selector, and the
+selector is where the loss is: in their setting, filtering candidate programs
+on the example tests given in the problem statement **removes about 99% of
+samples**, and on roughly **10% of problems no sample survives the filter at
+all**.
+
+None of that disturbs the finding above. The base-versus-tuned comparison is
+run on the same metric in both arms, so an upper bound applied to both still
+shows RL moving the two numbers in opposite directions. What it changes is the
+reading of the magnitude. This practice's conditions say the coverage matters
+*"where test-time sampling is the deployment — verifiable domains, agentic
+retries, best-of-n, majority voting, search over candidate solutions"* — and
+every one of those has a selection step. **Coverage you cannot select from is
+not coverage you can spend**, so `pass@k` overstates what post-training took
+away as well as what it left.
+
+Where the deployment has a submission or verification budget, report `n@k` at
+that budget beside `pass@k`. The gap between them is the part of the problem
+that is yours rather than the model's.
+
+## A note on the benchmark this metric came with
+
+`LIT-388` defines `pass@k` and is also HumanEval. Li et al. hand-checked fifty
+HumanEval problems their model solved and found **30% false positives** —
+programs passing every test and not correct — on 7.77 tests per problem. That
+is about the benchmark rather than the metric, and it is recorded in
+`LIT-388`'s own note with the qualifications it needs. It is named here
+because this practice sends a reader to that benchmark for the estimator, and
+a reader arriving at `pass@k` should know what a "pass" was measured to be
+worth.
 
 ## What this does not say
 

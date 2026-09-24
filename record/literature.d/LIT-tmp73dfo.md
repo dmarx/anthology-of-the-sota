@@ -1,0 +1,185 @@
+---
+status: Active
+title: 'Competition-Level Code Generation with AlphaCode'
+version: 1
+tags:
+- analysis-and-evaluation
+- inference-optimization
+- adaptation-and-tuning
+date: '2026-09-24'
+published: '2022-02-08'
+arxiv: '2203.07814'
+first_author: 'Li'
+keywords:
+- 'code-generation'
+- 'pass-at-k'
+- 'sampling'
+- 'benchmark-validity'
+- 'false-positives'
+implementations:
+- 'AlphaCode'
+summary: >-
+  Li et al. (2022), [ARXIV-2203.07814](https://arxiv.org/abs/2203.07814). Top 54.3% on ten Codeforces contests, by
+  sampling up to a million programs per problem and filtering 99% of them away
+  on the example tests. Two things the record needs are incidental to that:
+  **HumanEval's false-positive rate, hand-measured at 30%**, and the fact that
+  `pass@k` assumes every sample can be submitted and is therefore an **upper
+  bound** on what a system with a submission budget achieves.
+compared_against:
+- LIT-388
+---
+
+# LIT-tmp73dfo: Competition-Level Code Generation with AlphaCode
+
+Li et al. (2022) — [ARXIV-2203.07814](https://arxiv.org/abs/2203.07814)
+
+## The system, briefly
+
+Pre-train an encoder-decoder transformer on GitHub, fine-tune on CodeContests
+(their own temporally split competitive-programming dataset), then for each
+unseen problem **sample very large numbers of programs, filter to those that
+pass the example tests in the problem statement, cluster the survivors by
+program behaviour, and submit at most ten.**
+
+Ten simulated Codeforces contests with over 5,000 participants each: average
+ranking **top 54.3%**, estimated rating **1238**, better than 72% of users who
+entered a contest in the preceding six months. On held-out CodeContests
+problems, **34.2%** solved within ten submissions, against 1–5% previously
+reported on existing datasets.
+
+## The measurement the record needs: benchmarks pass wrong programs
+
+`LIT-388` is held and its metric is recommended. This paper measured what that
+benchmark's tests actually certify, by hand:
+
+| dataset | tests / problem | false-positive rate | FP or slow |
+| --- | --: | --: | --: |
+| APPS | 20.99 | **60%** | 70% |
+| **HumanEval** | **7.77** | **30%** | n/a |
+| CodeContests raw | 12.4 | 62% | 88% |
+| CodeContests | 203.7 | **4%** | 46% |
+
+**A false positive is a program that passes every test and is not correct.**
+The method is stated and is small: fifty problems their 1B model solved, one
+solution per problem examined manually. HumanEval has no timing constraints on
+most problems, so it has no slow-solution column.
+
+The cause is named and is general — *"input/output examples are an
+under-specification of program behavior"* — and so is the fix, which is why
+the bottom two rows differ: generating additional tests by mutating existing
+inputs, verifying each mutation against thirty known-correct solutions, and
+dropping problems with fewer than five tests producing at least two distinct
+outputs. That took 62% to 4%.
+
+Two things follow that are easy to state too strongly, so both are stated as
+the paper does. The 30% is **fifty hand-checked problems, in 2022, against
+one 1B model's outputs** — it is a measurement of the benchmark's test
+coverage, not a correction of any particular published score. And the paper
+notes the comparison is *unfavourable to itself*: it drew 10,000 samples per
+APPS problem and 200 per HumanEval against 1,000,000 for CodeContests, and
+fewer samples and simpler problems both push the false-positive rate down.
+
+## `pass@k` is an upper bound, and the paper says which one
+
+The metric this paper introduces is **`n@k`** — *"percentage of problems
+solved using `n` submissions from `k` samples per problem"*. Its own setting is
+`10@k`, ten submissions from `k` samples, because ten is what a Codeforces
+contestant gets.
+
+The line the record was missing:
+
+> `pass@k = k@k`, and is an upper bound metric for using `k` samples.
+
+`pass@k` is `n@k` with the submission budget removed. It scores a system that
+can submit everything it generates, so it measures **whether a correct sample
+exists**, not whether the system can find it. The gap between the two is the
+selection problem, and this paper's whole apparatus — filtering, clustering —
+exists to close it. `SOTA-210` recommends reporting `pass@k` and is amended in
+this same contribution to carry the bound.
+
+How wide the gap is, concretely: **filtering on the example tests removes
+about 99% of samples**, and on roughly **10% of problems no sample passes the
+example tests at all** — a correct program may be in the pile and the system
+cannot tell.
+
+## Sampling scales the solve rate log-linearly, and that is the bad news
+
+- Both `10@k` and `pass@k` scale **approximately log-linearly in `k`**, with
+  `10@k` bending down at high budgets. *"Improving solve rate requires
+  exponentially increasing amounts of samples and the costs quickly become
+  prohibitive."*
+- That sampling beyond ten still improves `10@k` is the argument for
+  large-scale sampling: you must explore before committing to the ten.
+- **Larger models have higher slopes**, so a better model reaches a given
+  solve rate with exponentially fewer samples. The paper's own conclusion is
+  that model quality is the lever against the sample explosion.
+- Training compute and sampling compute **both** scale the solve rate
+  log-linearly, and the optimal model size rises with the sampling budget.
+
+<!-- inactive-ok-block: SOTA-289 — Proposed, and named only as one of the two
+     nearest neighbours in a sentence saying the record has no cluster here.
+     The paragraph's claim is that nothing adjacent fits, which holds whatever
+     that practice's standing turns out to be. -->
+This is an allocation result about test-time compute, and it is not filed as a
+practice here. One system, one task family, 2022, and the record has no
+test-time-compute cluster for it to join or correct — `SOTA-289` and
+`SOTA-154` touch sampling budgets from entirely different directions. Recorded
+as a candidate rather than declined: it would promote with a second
+measurement of the training-versus-sampling trade-off on a different task.
+
+## Two smaller things, recorded where a reader would look for them
+
+**A controlled comparison of multi-query attention.** Table 6 holds the 1B
+model against two alternatives at matched training compute:
+
+| | samples / TPU·sec | 10@10K |
+| --- | --: | --: |
+| encoder-decoder + MQA | **4.74** | 17.3% |
+| decoder-only | 1.23 | 18.5% |
+| encoder-decoder, standard multi-head | 0.37 | 17.0% |
+
+<!-- inactive-ok-block: SOTA-023, SOTA-024 — both Superseded by SOTA-109, and the
+     paragraph says so. The citation IS the retirement: this is evidence that
+     arrived for a recommendation the record has already moved past, filed so a
+     reader can find the number attached to it. -->
+**12.8× the sampling throughput of standard multi-head attention at the same
+solve rate.** This is evidence for `SOTA-023` and `SOTA-024`, both
+`Superseded` by `SOTA-109` — history rather than a live recommendation, and
+recorded because a 12.8× number attached to the practice the record retired is
+worth being able to find. Note also that the decoder-only baseline is the
+*better* model and the slower sampler: the architecture choice buys throughput
+and costs 1.2 points, which is the trade the system was built to make.
+
+**Validation loss and the target metric diverge during fine-tuning.**
+Validation loss begins rising early — the ordinary sign of overfitting — while
+`10@1024` keeps improving well past 50k steps. Their hypothesis is that the
+model moves mass from atypical solutions onto typical ones, which is worse
+per-token and better one-of-many.
+
+<!-- inactive-ok-block: SOTA-284 — Proposed, and cited to say this finding does
+     NOT meet its promote_when. Its being unsettled is what the paragraph is
+     about; a promoted practice would make the sentence meaningless. -->
+That is `SOTA-284`'s premise, reported three years before `LIT-474`. It does
+**not** meet that practice's `promote_when`, which says in as many words that
+a further demonstration of cross-entropy predicting downstream performance
+poorly *"is not it — that is the premise, and it is already established."*
+What it adds is that the premise is older than the record's citation for it.
+
+## Standing in the anthology
+
+Unit 6 of `#326`, ranked last of six because **0 files said "AlphaCode"** and
+the argument for it was about `SOTA-210`'s *subject* rather than the record's
+dependence on the paper. The ranking was right about the paper's standing and
+wrong about the unit: the dependence is on `LIT-388`, which **25 documents
+name and six practices use**, and this is the work that measured what its
+tests certify.
+
+The `#290` row that declined it read `One Write-Head Is All You Need` — the
+title of Shazeer's multi-query attention paper, `1911.02150`, picked up from
+the README heading above the citation. AlphaCode is where MQA is *used*, and
+the table above is why, so the leak points at something real. It is still not
+what the paper is.
+
+Filed under `ADR-032`, which admits benchmarks and system reports and says
+such a note usually carries no practice. This one carries none; what it
+carries is two corrections to documents that do.

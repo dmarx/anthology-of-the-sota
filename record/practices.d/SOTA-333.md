@@ -16,7 +16,7 @@ history:
 - version: 2
   date: '2026-09-24'
   note: >-
-    Self Forcing (LIT-tmp0kzd1) and CausVid (LIT-tmpazb01) were filed.
+    Self Forcing (LIT-629) and CausVid (LIT-631) were filed.
     Consensus moves from `unassessed` to `contested`. Self Forcing argues
     against the rollout half in writing and does not test it. Its controlled
     transformer-scale comparison of the training half is split: diffusion
@@ -33,10 +33,10 @@ introduced_by:
 - LIT-554
 consensus: contested
 contested_by:
-- LIT-tmp0kzd1
+- LIT-629
 consensus_note: >-
-  CausVid (LIT-tmpazb01) adopts per-chunk independent noise when training its
-  causal student. Self Forcing (LIT-tmp0kzd1) argues that noising the context
+  CausVid (LIT-631) adopts per-chunk independent noise when training its
+  causal student. Self Forcing (LIT-629) argues that noising the context
   at inference "sacrifices temporal consistency" and "does not fundamentally
   resolve the exposure bias problem", with no experiment. It proposes
   training on the model's own rollouts instead. Credible groups disagree in
@@ -88,7 +88,7 @@ on:
 
 ## What has been measured since
 
-Self Forcing ([LIT-tmp0kzd1](../literature.d/LIT-tmp0kzd1.md), Table 2) ran the first controlled comparison at
+Self Forcing ([LIT-629](../literature.d/LIT-629.md), Table 2) ran the first controlled comparison at
 transformer scale by a group other than the authors: Wan2.1-1.3B, same
 initialization and prompts, 5s clips, scored by VBench total. It bears on
 the two halves differently.

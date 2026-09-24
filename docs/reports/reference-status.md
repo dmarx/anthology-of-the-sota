@@ -9,7 +9,7 @@ Every reference in the record is a claim — "this is why things are the way the
 
 Only an `Active` document is in force. `Proposed` and `Deferred` mean *not in force yet* — an open question, being cited as if it were settled — while `Superseded` and `Rejected` mean *no longer in force*, which is often a perfectly good thing to cite: history, or a rejection worth pointing at. Either way the citation should be deliberate, and this section lists the ones nobody has vouched for yet.
 
-**5 documents cited without acknowledgement.** Not listed: 1339 citations someone has already vouched for with an `inactive-ok:` comment at the citing site.
+**6 documents cited without acknowledgement.** Not listed: 1339 citations someone has already vouched for with an `inactive-ok:` comment at the citing site.
 
 To vouch for one, put the reason where the citation is — `inactive-ok:` covers its own line and the line below it, `inactive-ok-block:` its paragraph, `inactive-ok-file:` the whole page:
 
@@ -58,6 +58,14 @@ Keep key/value projections shared across heads while query projections remain se
 1 citation in 1 file awaits a look; 5 other citations of it are acknowledged.
 
 - [`record/practices.d/SOTA-109.md:13`](../../record/practices.d/SOTA-109.md)
+
+### [SOTA-333](../../record/practices.d/SOTA-333.md) — Proposed
+
+For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history
+
+1 citation in 1 file awaits a look; 3 other citations of it are acknowledged.
+
+- [`record/literature.d/LIT-629.md:115`](../../record/literature.d/LIT-629.md)
 
 ## Codes that resolve to no document
 

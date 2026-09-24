@@ -6,7 +6,7 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-71 of 563 LIT documents. Back to the [full index](../README.md).
+72 of 572 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -81,3 +81,4 @@
 | [LIT-623](../../../record/literature.d/LIT-623.md) | Language Model Beats Diffusion — Tokenizer is Key to Visual Generation | Yu et al., Google and CMU (2023), [ARXIV-2310.05737](https://arxiv.org/abs/2310.05737). MAGVIT-v2 is a causal 3D-CNN tokenizer with lookup-free quantization. The causal design lets images and video share one tokenizer, and LFQ lets generation keep improving as the vocabulary grows, where VQ turns worse. The title's "beats diffusion" holds only with guidance, and the "language model" is a masked, MaskGIT-style one. | Active |
 | [LIT-624](../../../record/literature.d/LIT-624.md) | Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model | Step-Video Team, StepFun (2025), [ARXIV-2502.10248](https://arxiv.org/abs/2502.10248). A 30B text-to-video DiT on a 16×16×8 VAE that reconstructs as well as HunyuanVideo's 8×8×4, so the model covers 204 frames. It also applies DPO to video (55% against 45%) and runs at 32% MFU. It reaches parity with Movie Gen and loses to the strongest commercial model it names, despite the abstract's "state-of-the-art". | Active |
 | [LIT-626](../../../record/literature.d/LIT-626.md) | Movie Gen: A Cast of Media Foundation Models | The Movie Gen team, Meta (2024), [ARXIV-2410.13720](https://arxiv.org/abs/2410.13720). A 30B video model built from a Llama 3-style transformer, flow matching and an 8×8×8 temporal autoencoder, with the most controlled ablations in the video line. At 5B, flow matching beats diffusion and video captions beat frame captions. The "LLaMa3 scaling laws" claim rests on image-only runs at four sizes. | Active |
+| [LIT-634](../../../record/literature.d/LIT-634.md) | Open-Sora 2.0: Training a Commercial-Level Video Generation Model in $200k | The Open-Sora team, HPC-AI Tech (2025), [ARXIV-2503.09642](https://arxiv.org/abs/2503.09642). An 11B video model initialized from FLUX, with most of its compute at 256px and a short 768px stage run as image-to-video. The "$200k" is one final diffusion-model run at an assumed H200 rental rate. It excludes the autoencoder, data, captioning, failed runs and FLUX. The efficiency case rests on a 4×32×32 autoencoder, but the evaluated model runs on HunyuanVideo's VAE. | Active |

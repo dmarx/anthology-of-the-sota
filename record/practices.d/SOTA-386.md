@@ -10,8 +10,8 @@ consensus_note: >-
   HunyuanVideo (LIT-620), Step-Video (LIT-624) and Wan
   (LIT-619). The later four adopt it without testing it. Movie Gen and
   Step-Video mention unshown experiments. Wan justifies it by throughput.
-  Imagen Video (LIT-tmpzs77m), Make-A-Video (LIT-tmpff3eg), Emu Video
-  (LIT-tmpyt5og), AnimateDiff (LIT-tmpp7r27) and Open-Sora 2.0 (LIT-tmprr82r)
+  Imagen Video (LIT-637), Make-A-Video (LIT-632), Emu Video
+  (LIT-635), AnimateDiff (LIT-633) and Open-Sora 2.0 (LIT-634)
   all start from an image model or train on images, and none of them tests
   it.
   That is adoption, per DP-005, and it is why the evidence below is the three
@@ -82,10 +82,10 @@ Three controlled comparisons support it, each changing one thing:
   videos, and it leaves a separate image corpus to future work. Every later
   report uses a separate, much larger image corpus. That is the version in
   use, and none of the three sources tests it. It first appears in Imagen
-  Video ([LIT-tmpzs77m](../literature.d/LIT-tmpzs77m.md) §2.6), which asserts that it "significantly increases
+  Video ([LIT-637](../literature.d/LIT-637.md) §2.6), which asserts that it "significantly increases
   the overall quality" and shows no numbers.
 - **Freezing is a third way to keep what the image model knows.** Emu Video
-  ([LIT-tmpyt5og](../literature.d/LIT-tmpyt5og.md)) and AnimateDiff ([LIT-tmpp7r27](../literature.d/LIT-tmpp7r27.md)) freeze the image layers and
+  ([LIT-635](../literature.d/LIT-635.md)) and AnimateDiff ([LIT-633](../literature.d/LIT-633.md)) freeze the image layers and
   show the video stages no images. Emu Video's controlled result is that
   freezing beats full fine-tuning only narrowly: 55.0 / 58.1 human win rate
   on quality / faithfulness (its Table 1). Nobody compares freezing with

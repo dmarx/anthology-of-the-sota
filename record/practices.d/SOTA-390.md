@@ -1,5 +1,8 @@
 ---
+number: 390
 status: Proposed
+formerly:
+- SOTA-tmpjc9ma
 promote_when: >-
   A second controlled comparison of joint 3D against factorized 2D+1D
   attention in a video diffusion transformer, with reported numbers (FVD,
@@ -12,7 +15,7 @@ consensus: converged
 consensus_note: >-
   Every video transformer in the record after CogVideoX uses full
   spatio-temporal attention: HunyuanVideo (LIT-620), Step-Video (LIT-624),
-  Wan (LIT-619), Movie Gen (LIT-626), Open-Sora 2.0 (LIT-tmprr82r).
+  Wan (LIT-619), Movie Gen (LIT-626), Open-Sora 2.0 (LIT-634).
   HunyuanVideo justifies it by citation, and Step-Video by an unquantified
   4B comparison. Per DP-005, that is adoption. The field agrees and has
   measured it once. Read as of 2026-09.
@@ -35,7 +38,7 @@ implementations:
 - 'Movie Gen'
 ---
 
-# SOTA-tmpjc9ma: In a video diffusion transformer, attend over space and time jointly rather than factorizing, and budget for the cost
+# SOTA-390: In a video diffusion transformer, attend over space and time jointly rather than factorizing, and budget for the cost
 
 ## Source
 
@@ -46,7 +49,7 @@ Yang, Teng et al. (2024), [LIT-622](../literature.d/LIT-622.md) — CogVideoX.
 The early video models factorized attention to save compute: spatial
 attention within each frame, then temporal attention across frames at each
 position. VDM ([LIT-627](../literature.d/LIT-627.md)), Video LDM ([LIT-621](../literature.d/LIT-621.md)) and Make-A-Video
-([LIT-tmpff3eg](../literature.d/LIT-tmpff3eg.md)) all do this. **In a transformer over a compressed latent,
+([LIT-632](../literature.d/LIT-632.md)) all do this. **In a transformer over a compressed latent,
 attend over all space-time tokens at once.**
 
 CogVideoX compares the two in its video DiT, with everything else fixed

@@ -149,23 +149,35 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-566](../record/literature.d/LIT-566.md) — SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis *(Active)*
   - [LIT-621](../record/literature.d/LIT-621.md) — Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models *(Active)*
     - [LIT-625](../record/literature.d/LIT-625.md) — Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets *(Active)* — also extends LIT-062
+  - [LIT-633](../record/literature.d/LIT-633.md) — AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning *(Active)*
+  - [LIT-635](../record/literature.d/LIT-635.md) — Emu Video: Factorizing Text-to-Video Generation by Explicit Image Conditioning *(Active)*
+- [LIT-067](../record/literature.d/LIT-067.md) — Progressive Distillation for Fast Sampling of Diffusion Models *(Active)*
+- [LIT-070](../record/literature.d/LIT-070.md) — Hierarchical Text-Conditional Image Generation with CLIP Latents *(Active)*
+  - [LIT-632](../record/literature.d/LIT-632.md) — Make-A-Video: Text-to-Video Generation without Text-Video Data *(Active)*
 - [LIT-439](../record/literature.d/LIT-439.md) — Deep Unsupervised Learning using Nonequilibrium Thermodynamics *(Active)*
   - [LIT-036](../record/literature.d/LIT-036.md) — Denoising Diffusion Probabilistic Models *(Active)*
     - [LIT-446](../record/literature.d/LIT-446.md) — Variational Diffusion Models *(Active)*
     - [LIT-627](../record/literature.d/LIT-627.md) — Video Diffusion Models *(Active)*
+      - [LIT-637](../record/literature.d/LIT-637.md) — Imagen Video: High Definition Video Generation with Diffusion Models *(Active)* — also extends LIT-067
 - [LIT-448](../record/literature.d/LIT-448.md) — Scalable Diffusion Models with Transformers *(Active)*
   - [LIT-447](../record/literature.d/LIT-447.md) — SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers *(Active)*
-    - [LIT-449](../record/literature.d/LIT-449.md) — Scaling Rectified Flow Transformers for High-Resolution Image Synthesis *(Active)*
+    - [LIT-449](../record/literature.d/LIT-449.md) — Scaling Rectified Flow Transformers for High-Resolution Image Synthesis *(Active)* — also extends LIT-636
       - [LIT-573](../record/literature.d/LIT-573.md) — FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space *(Active)*
         - [LIT-572](../record/literature.d/LIT-572.md) — FLUX.2: Analyzing and Enhancing the Latent Space of FLUX – Representation Comparison *(Active)*
       - [LIT-618](../record/literature.d/LIT-618.md) — LTX-Video: Realtime Video Latent Diffusion *(Active)*
       - [LIT-619](../record/literature.d/LIT-619.md) — Wan: Open and Advanced Large-Scale Video Generative Models *(Active)* — also extends LIT-448, LIT-623
+        - [LIT-629](../record/literature.d/LIT-629.md) — Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion *(Active)* — also extends LIT-631
       - [LIT-620](../record/literature.d/LIT-620.md) — HunyuanVideo: A Systematic Framework For Large Video Generative Models *(Active)* — also extends LIT-623
-      - [LIT-626](../record/literature.d/LIT-626.md) — Movie Gen: A Cast of Media Foundation Models *(Active)* — also extends LIT-062
+      - [LIT-626](../record/literature.d/LIT-626.md) — Movie Gen: A Cast of Media Foundation Models *(Active)* — also extends LIT-062, LIT-630, LIT-635
+      - [LIT-634](../record/literature.d/LIT-634.md) — Open-Sora 2.0: Training a Commercial-Level Video Generation Model in $200k *(Active)*
   - [LIT-622](../record/literature.d/LIT-622.md) — CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer *(Active)* — also extends LIT-623
   - [LIT-624](../record/literature.d/LIT-624.md) — Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model *(Active)*
 - [LIT-623](../record/literature.d/LIT-623.md) — Language Model Beats Diffusion — Tokenizer is Key to Visual Generation *(Active)*
+- [LIT-630](../record/literature.d/LIT-630.md) — Flow Matching for Generative Modeling *(Active)*
+- [LIT-631](../record/literature.d/LIT-631.md) — From Slow Bidirectional to Fast Autoregressive Video Diffusion Models *(Active)*
+- [LIT-636](../record/literature.d/LIT-636.md) — Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow *(Active)*
 - alongside: [LIT-483](../record/literature.d/LIT-483.md) — Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models *(Active)*
+- alongside: [LIT-554](../record/literature.d/LIT-554.md) — Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion *(Active)*
 
 ### From Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise
 

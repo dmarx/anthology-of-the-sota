@@ -17,7 +17,7 @@ history:
 - version: 2
   date: '2026-09-24'
   note: >-
-    The originating papers were filed (LIT-tmp8xj1x, LIT-tmpzfd9o), and
+    The originating papers were filed (LIT-630, LIT-636), and
     Movie Gen's 5B video ablation was added as evidence. `introduced_by`
     named SiT, which is 2024. The straight path is from 2022. The claim
     that uniform-timestep rectified flow "does not win" is scoped to SD3's
@@ -31,11 +31,11 @@ date: '2026-09-20'
 source:
 - LIT-449
 - LIT-447
-- LIT-tmp8xj1x
+- LIT-630
 - LIT-626
 introduced_by:
-- LIT-tmpzfd9o
-- LIT-tmp8xj1x
+- LIT-636
+- LIT-630
 implementations:
 - 'Stable Diffusion 3'
 - 'SiT-XL'
@@ -59,8 +59,8 @@ summary: >-
 
 ## Source
 
-Liu, Gong and Liu (2022), [LIT-tmpzfd9o](../literature.d/LIT-tmpzfd9o.md), and Lipman et al. (2022),
-[LIT-tmp8xj1x](../literature.d/LIT-tmp8xj1x.md), introduced the straight path concurrently, with Albergo and
+Liu, Gong and Liu (2022), [LIT-636](../literature.d/LIT-636.md), and Lipman et al. (2022),
+[LIT-630](../literature.d/LIT-630.md), introduced the straight path concurrently, with Albergo and
 Vanden-Eijnden's stochastic interpolants. Flow Matching contributes the
 first controlled comparison: the same U-Net, hyperparameters and epochs
 give CIFAR-10 FID 6.35 on the straight path against 8.06 on the diffusion
@@ -100,7 +100,7 @@ timesteps does.** That is a finding about SD3's setting: latent
 text-to-image, against a tuned ε-prediction baseline. It is not a finding
 that uniform timesteps fail in general. The originating papers used uniform
 sampling and won their controlled comparisons against VP diffusion in pixel
-space ([LIT-tmp8xj1x](../literature.d/LIT-tmp8xj1x.md) Table 1, [LIT-tmpzfd9o](../literature.d/LIT-tmpzfd9o.md) Table 1a). At SD3's scale the
+space ([LIT-630](../literature.d/LIT-630.md) Table 1, [LIT-636](../literature.d/LIT-636.md) Table 1a). At SD3's scale the
 logit-normal decides the ranking. At small scale the path alone was enough.
 A reader training a large latent model should take both halves.
 
@@ -141,7 +141,7 @@ path length falls — and that is an observation accompanying the result, not
 an intervention separating it. An interpolant matched in path length but not
 straight would tell them apart and nobody has run it. So the *whether* is
 well established and the *why* is open. The closest anyone has come is a
-2-D toy in Rectified Flow ([LIT-tmpzfd9o](../literature.d/LIT-tmpzfd9o.md) Fig. 5), which runs VP with a linear
+2-D toy in Rectified Flow ([LIT-636](../literature.d/LIT-636.md) Fig. 5), which runs VP with a linear
 α_t to separate path speed from curvature. It is qualitative. Rectified
 Flow's straightness theorems apply to the reflowed coupling, not the
 single-pass model this practice recommends.

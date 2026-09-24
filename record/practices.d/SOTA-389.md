@@ -1,5 +1,8 @@
 ---
+number: 389
 status: Proposed
+formerly:
+- SOTA-tmp0e0jt
 promote_when: >-
   A second controlled comparison, by a group other than Movie Gen's, of
   captions from a video-native captioner against captions built from
@@ -11,7 +14,7 @@ consensus: converged
 consensus_note: >-
   Every video report in the record from CogVideoX on recaptions its training
   video densely with a model that takes video input: CogVideoX (LIT-622),
-  HunyuanVideo (LIT-620), Wan (LIT-619), Open-Sora 2.0 (LIT-tmprr82r) and
+  HunyuanVideo (LIT-620), Wan (LIT-619), Open-Sora 2.0 (LIT-634) and
   Movie Gen (LIT-626). CogVideoX calls it a significant improvement without
   an ablation. Only Movie Gen measures it. Read as of 2026-09.
 title: 'Caption training video with a model that watches the video, not with captions of its frames'
@@ -32,7 +35,7 @@ implementations:
 - 'Wan2.1'
 ---
 
-# SOTA-tmp0e0jt: Caption training video with a model that watches the video, not with captions of its frames
+# SOTA-389: Caption training video with a model that watches the video, not with captions of its frames
 
 ## Source
 
@@ -59,7 +62,7 @@ The gain is concentrated on the thing frame captions cannot describe.
 
 ## Why the mechanism is plausible
 
-Make-A-Video ([LIT-tmpff3eg](../literature.d/LIT-tmpff3eg.md)) is the extreme case of the alternative. All of
+Make-A-Video ([LIT-632](../literature.d/LIT-632.md)) is the extreme case of the alternative. All of
 its text knowledge came from images, and its discussion concedes it "can
 not learn associations between text and phenomenon that can only be inferred
 in videos". Frame captions are a milder version of the same limit. They can

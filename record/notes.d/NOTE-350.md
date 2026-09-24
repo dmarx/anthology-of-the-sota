@@ -5,7 +5,14 @@ formerly:
 - NOTE-tmpszelm
 paper: LIT-618
 title: 'LTX-Video'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    Sora's "separate upsampler" came from LTX-Video's §2 attribution. Sora's
+    report, now filed, does not mention an upsampler. The claim is now LTX's
+    attribution, with a note that the report does not support it.
 date: '2026-09-24'
 summary: >-
   A 1.9B video DiT on a 32×32×8, 128-channel VAE with no patchifier (1:8192
@@ -42,8 +49,10 @@ the detail at decode time rather than trying to reconstruct it.** The
 decoder D(z_t, t) is trained on noisy latents at t ∈ [0, 0.2] with
 pixel-space losses. It maps between spaces of different dimensionality, so
 it cannot be iterated, but it can do the final step "in a manner
-inaccessible to the base model" (§2.1.1). Movie Gen and Sora pay for this
-with a separate upsampler. LTX-Video folds it into the decoder.
+inaccessible to the base model" (§2.1.1). Movie Gen pays for this with a
+separate upsampler. LTX-Video folds it into the decoder. The paper (§2)
+also credits Sora with a pixel-space upsampler, but Sora's report
+([LIT-tmpv3o90](../literature.d/LIT-tmpv3o90.md)) says nothing about one.
 
 ## Assumptions
 

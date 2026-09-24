@@ -6,11 +6,10 @@
 
 **Skimmed** — abstract, figures and selected sections; honest, useful, and explicitly not enough to source a practice from.
 
-4 of 333 NOTE documents. Back to the [full index](../README.md).
+3 of 351 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-054](../../../record/notes.d/NOTE-054.md) | Mish: A Self Regularized Non-Monotonic Activation Function | Proposes f(x) = x·tanh(softplus(x)), a smooth non-monotonic activation in the Swish family. Reported +2.1 AP50 over Leaky ReLU on YOLOv4/MS-COCO and ~1% top-1 over ReLU on ResNet-50/ImageNet. Read from the abstract only — ar5iv has no rendering for this identifier. | Skimmed |
 | [NOTE-074](../../../record/notes.d/NOTE-074.md) | Advances and Open Problems in Federated Learning | A 66,000-word multi-institution survey defining federated learning and cataloguing its open problems. Its durable contribution to this record is the cross-device / cross-silo distinction, which separates two settings with almost nothing in common operationally. | Skimmed |
 | [NOTE-207](../../../record/notes.d/NOTE-207.md) | Contextures: The Mechanism of Representation Learning | A representation is the association between the input and a context variable; capturing its maximum information is optimal on tasks compatible with that context. A context is most useful when the association is neither too strong nor too weak, and mixing contexts is offered as the cheap way to get there. Skimmed: a 313k-character dissertation, read at summary level. | Skimmed |
-| [NOTE-333](../../../record/notes.d/NOTE-333.md) | Wan | An open recipe for a 14B text-to-video DiT. Most of its evidence is engineering measurement: VAE throughput, parallelism overhead, inference speedups. Its three modelling ablations are small, judged mostly by training loss, and one of them shows the rejected option doing marginally better on FID. | Skimmed |

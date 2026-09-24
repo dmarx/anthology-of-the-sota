@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-41 of 333 NOTE documents. Back to the [full index](../README.md).
+43 of 351 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -49,3 +49,5 @@
 | [NOTE-319](../../../record/notes.d/NOTE-319.md) | GIN | Message passing is bounded by 1-WL, and sum aggregation with an MLP reaches the bound where mean and max do not. The theory predicts the training-fit ordering. Test accuracy separates the aggregators decisively only on featureless graphs. Main text read, proofs skimmed. | Read |
 | [NOTE-320](../../../record/notes.d/NOTE-320.md) | AlphaFold 3 | AlphaFold generalized to all biomolecular complexes, with a diffusion head over atom coordinates. It gains on ligands, nucleic acids and antibodies, and inherits generative failure modes (hallucination, chirality) that it patches with distillation and ranking. Main text read. Extended Data and supplementary methods not read. | Read |
 | [NOTE-321](../../../record/notes.d/NOTE-321.md) | AlphaFold 2 | Near-experimental protein structure accuracy at CASP14, a calibrated confidence head, self-distillation on confident predictions, and a hard dependence on alignment depth below about 30 sequences. Main text and Methods read. The supplementary methods (architecture details, ablation descriptions) were not read. | Read |
+| [NOTE-334](../../../record/notes.d/NOTE-334.md) | Movie Gen | At 5B, flow matching beats v-prediction diffusion on quality by 3.3 annotation σ, but on text alignment by only 1.9σ. Video-native captions beat captions stitched from three frames on alignment by 2.9σ. Every σ in the paper is rater variance, and each ablation arm was trained once. The Llama 3 block beats a DiT block that differs only in norm, activation and bias. The scaling claim rests on image-only runs covering less than a quarter of a decade of compute. | Read |
+| [NOTE-346](../../../record/notes.d/NOTE-346.md) | CogVideoX | An open text-to-video DiT whose design choices are backed by curves rather than numbers. On full 3D against factorized attention, the text says only that factorized FVD is "much higher … in early steps" and that factorized training is "unstable and prone to collapse". Model size, steps and resolution are unstated. The one measured number is the cost: full attention's forward pass is 1.08×, 1.67× and 2.30× slower at three sizes. | Read |

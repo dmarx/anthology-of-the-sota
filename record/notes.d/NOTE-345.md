@@ -1,5 +1,8 @@
 ---
+number: 345
 status: Read
+formerly:
+- NOTE-tmpkcmy8
 paper: LIT-634
 title: 'Open-Sora 2.0'
 version: 1
@@ -15,7 +18,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-263 SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
-# NOTE-tmpkcmy8: Open-Sora 2.0
+# NOTE-345: Open-Sora 2.0
 
 Read in full from arXiv v3 (2 March 2026), appendices A–I included, and
 checked against v1 (12 March 2025). The two agree on every number. v3 moves

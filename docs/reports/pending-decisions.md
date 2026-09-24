@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**195 document(s) awaiting a decision.**
+**196 document(s) awaiting a decision.**
 
 ## SOTAs
 
-132 of the 195.
+133 of the 196.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -70,13 +70,13 @@
 | 2026-09-19 | Proposed | [SOTA-255](../../record/practices.d/SOTA-255.md) | 11 | 0 | Tune weight decay upward when pretraining over a repeated corpus, rather than inheriting the customary value |
 | 2026-09-19 | Proposed | [SOTA-254](../../record/practices.d/SOTA-254.md) | 8 | 0 | Train the language model as a masked diffusion model when the corpus is fixed and the compute is not |
 | 2026-09-19 | Proposed | [SOTA-256](../../record/practices.d/SOTA-256.md) | 5 | 0 | Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget |
+| 2026-09-19 | Proposed | [SOTA-251](../../record/practices.d/SOTA-251.md) | 4 | 0 | Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule |
 | 2026-09-19 | Proposed | [SOTA-257](../../record/practices.d/SOTA-257.md) | 3 | 0 | Spend surplus compute on an ensemble of independently seeded models and distil it, rather than on one larger model |
-| 2026-09-19 | Proposed | [SOTA-251](../../record/practices.d/SOTA-251.md) | 2 | 0 | Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule |
+| 2026-09-20 | Proposed | [SOTA-263](../../record/practices.d/SOTA-263.md) | 10 | 0 | Shift the timestep schedule when the resolution changes, because more pixels need more noise |
 | 2026-09-20 | Proposed | [SOTA-261](../../record/practices.d/SOTA-261.md) | 5 | 0 | Set AdamW's weight decay by targeting a timescale that follows a power law in tokens-per-parameter |
 | 2026-09-20 | Proposed | [SOTA-274](../../record/practices.d/SOTA-274.md) | 5 | 0 | Before adopting a spectral optimizer, measure the stable rank of each block's incoming activations against its gradient's nuclear rank |
 | 2026-09-20 | Proposed | [SOTA-275](../../record/practices.d/SOTA-275.md) | 5 | 0 | Pick the depth parameterization from the residual branch: a Transformer branch has more than one transformation, so it needs the stricter rule |
 | 2026-09-20 | Proposed | [SOTA-260](../../record/practices.d/SOTA-260.md) | 4 | 0 | Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it |
-| 2026-09-20 | Proposed | [SOTA-263](../../record/practices.d/SOTA-263.md) | 3 | 0 | Shift the timestep schedule when the resolution changes, because more pixels need more noise |
 | 2026-09-20 | Proposed | [SOTA-268](../../record/practices.d/SOTA-268.md) | 3 | 0 | Do not transfer a data mixing ratio across model scales; the threshold where a domain starts being learned moves with size |
 | 2026-09-20 | Proposed | [SOTA-267](../../record/practices.d/SOTA-267.md) | 2 | 0 | Start the training distribution imbalanced and flatten it, rather than holding it uniform throughout |
 | 2026-09-20 | Proposed | [SOTA-271](../../record/practices.d/SOTA-271.md) | 2 | 0 | Train on a second modality even when the target is single-modality |
@@ -121,9 +121,9 @@
 | 2026-09-22 | Proposed | [SOTA-320](../../record/practices.d/SOTA-320.md) | 1 | 0 | Bound the learning rate by the ratio of the update's spectral norm to the weight's, and drop warmup |
 | 2026-09-22 | Proposed | [SOTA-321](../../record/practices.d/SOTA-321.md) | 1 | 0 | Verify a model's lineage from the singular spectra of its attention products, which survive permutation and rescaling |
 | 2026-09-22 | Proposed | [SOTA-322](../../record/practices.d/SOTA-322.md) | 0 | 0 | Trade attention heads for depth: more heads conditions the attention block, and the layers you drop cost nothing |
+| 2026-09-23 | Proposed | [SOTA-333](../../record/practices.d/SOTA-333.md) | 34 | 0 | For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history |
 | 2026-09-23 | Proposed | [SOTA-338](../../record/practices.d/SOTA-338.md) | 7 | 0 | Train the GAN discriminator on frozen multi-scale pretrained features with fixed random channel and scale mixing |
 | 2026-09-23 | Proposed | [SOTA-332](../../record/practices.d/SOTA-332.md) | 4 | 0 | When an implicit representation will be supervised through its derivatives, use sine activations with the SIREN initialization rather than a ReLU network |
-| 2026-09-23 | Proposed | [SOTA-333](../../record/practices.d/SOTA-333.md) | 4 | 1 | For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history |
 | 2026-09-23 | Proposed | [SOTA-335](../../record/practices.d/SOTA-335.md) | 4 | 0 | When generated content must move continuously, as in video or animation, build the generator alias-free: treat features as continuous signals and low-pass filter around every nonlinearity |
 | 2026-09-23 | Proposed | [SOTA-336](../../record/practices.d/SOTA-336.md) | 4 | 0 | Train high-resolution GANs at a fixed topology with output skips in the generator and a residual discriminator, not by progressive growing |
 | 2026-09-23 | Proposed | [SOTA-353](../../record/practices.d/SOTA-353.md) | 4 | 0 | Train a head that predicts the model's own accuracy on each output, against the metric you care about, and use it to rank samples and filter predictions |
@@ -141,14 +141,15 @@
 | 2026-09-23 | Proposed | [SOTA-346](../../record/practices.d/SOTA-346.md) | 1 | 0 | Retune the training timestep shift for each autoencoder latent space, and never rank latent spaces for generation under one shared schedule |
 | 2026-09-23 | Proposed | [SOTA-352](../../record/practices.d/SOTA-352.md) | 1 | 0 | When a structure predictor is made generative, add a regression model's predictions to the training data so disordered regions are learned as disorder rather than invented structure |
 | 2026-09-23 | Proposed | [SOTA-371](../../record/practices.d/SOTA-371.md) | 1 | 0 | Score topic coherence automatically as the average pointwise mutual information of a topic's top-word pairs, estimated on a large external reference corpus |
+| 2026-09-24 | Proposed | [SOTA-386](../../record/practices.d/SOTA-386.md) | 33 | 0 | Show a video diffusion model images before and alongside video |
+| 2026-09-24 | Proposed | [SOTA-390](../../record/practices.d/SOTA-390.md) | 23 | 0 | In a video diffusion transformer, attend over space and time jointly rather than factorizing, and budget for the cost |
+| 2026-09-24 | Proposed | [SOTA-389](../../record/practices.d/SOTA-389.md) | 22 | 0 | Caption training video with a model that watches the video, not with captions of its frames |
 | 2026-09-24 | Proposed | [SOTA-385](../../record/practices.d/SOTA-385.md) | 0 | 0 | Tighten the gradient-norm clip as the model grows rather than carrying one value across scales |
 | 2026-09-24 | Proposed | [SOTA-387](../../record/practices.d/SOTA-387.md) | 0 | 0 | Hold out a slice of the training set for model selection instead of selecting on the validation split |
-| 2026-09-24 | Proposed | [SOTA-389](../../record/practices.d/SOTA-389.md) | 0 | 0 | Caption training video with a model that watches the video, not with captions of its frames |
-| 2026-09-24 | Proposed | [SOTA-390](../../record/practices.d/SOTA-390.md) | 0 | 0 | In a video diffusion transformer, attend over space and time jointly rather than factorizing, and budget for the cost |
 
 ## THEORYs
 
-57 of the 195.
+57 of the 196.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -212,7 +213,7 @@
 
 ## LITs
 
-3 of the 195.
+3 of the 196.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -222,7 +223,7 @@
 
 ## ADRs
 
-3 of the 195.
+3 of the 196.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -234,4 +235,4 @@ The citation count is the second axis, and it flips the priority: an old proposa
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (18): [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-288](../../record/practices.d/SOTA-288.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-294](../../record/practices.d/SOTA-294.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [THEORY-065](../../record/theory.d/THEORY-065.md), [THEORY-066](../../record/theory.d/THEORY-066.md), [SOTA-385](../../record/practices.d/SOTA-385.md), [SOTA-387](../../record/practices.d/SOTA-387.md), [SOTA-389](../../record/practices.d/SOTA-389.md), [SOTA-390](../../record/practices.d/SOTA-390.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (16): [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-288](../../record/practices.d/SOTA-288.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-294](../../record/practices.d/SOTA-294.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [THEORY-065](../../record/theory.d/THEORY-065.md), [THEORY-066](../../record/theory.d/THEORY-066.md), [SOTA-385](../../record/practices.d/SOTA-385.md), [SOTA-387](../../record/practices.d/SOTA-387.md) — these are the cheapest to close, since nothing depends on the answer.

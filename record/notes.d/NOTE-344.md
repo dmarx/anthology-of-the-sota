@@ -1,5 +1,8 @@
 ---
+number: 344
 status: Read
+formerly:
+- NOTE-tmpj4gkm
 paper: LIT-620
 title: 'HunyuanVideo'
 version: 1
@@ -15,7 +18,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-263 SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
-# NOTE-tmpj4gkm: HunyuanVideo
+# NOTE-344: HunyuanVideo
 
 Read in full from arXiv v6 (11 March 2025): §§1–8, the contributor list and
 the references. There are no appendices. The application sections (§7:

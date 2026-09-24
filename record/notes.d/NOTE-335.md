@@ -1,5 +1,8 @@
 ---
+number: 335
 status: Read
+formerly:
+- NOTE-tmp3okbi
 paper: LIT-629
 title: 'Self Forcing'
 version: 1
@@ -17,7 +20,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
-# NOTE-tmp3okbi: Self Forcing
+# NOTE-335: Self Forcing
 
 Read in full from arXiv v2 (10 Nov 2025, NeurIPS 2025): the main text and
 Appendices A–E, including the training hyperparameters (Table 3), the

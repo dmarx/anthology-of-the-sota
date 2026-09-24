@@ -25,7 +25,7 @@ history:
 - version: 2
   date: '2026-09-24'
   note: >-
-    Corrected against a full reading of CogVideoX (NOTE-tmpkkcdb). The
+    Corrected against a full reading of CogVideoX (NOTE-346). The
     ablation's whole reported result is that factorized attention's FVD is
     "much higher than 3D attention in early steps", and that factorized
     attention is "unstable and prone to collapse". v1 said everything else

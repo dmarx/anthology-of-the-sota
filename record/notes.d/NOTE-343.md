@@ -1,5 +1,8 @@
 ---
+number: 343
 status: Read
+formerly:
+- NOTE-tmpj1xug
 paper: LIT-631
 title: 'CausVid'
 version: 1
@@ -16,7 +19,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
-# NOTE-tmpj1xug: CausVid
+# NOTE-343: CausVid
 
 Read in full from arXiv v4 (23 Sep 2025): the main text, the supplementary
 section bound into the PDF (VBench-Long Table 7, Figs. 10–11), and all

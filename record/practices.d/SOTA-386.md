@@ -39,7 +39,7 @@ history:
   date: '2026-09-24'
   note: >-
     Status moves from Active to Proposed after full readings of all three
-    sources (NOTE-tmpmja2n, NOTE-tmpeb8mt, NOTE-tmp651x9). None separates
+    sources (NOTE-347, NOTE-341, NOTE-336). None separates
     images from compute. VDM's image arms process 20 and 24 frames per step
     against 16, and the paper calls it "a memory optimization to fit more
     independent examples in a batch". Video LDM's pretrained arm gets 73K
@@ -73,7 +73,7 @@ implementations:
 
 Ho, Salimans et al. (2022), [LIT-627](../literature.d/LIT-627.md); Blattmann et al. (2023), [LIT-621](../literature.d/LIT-621.md);
 Blattmann, Dockhorn, Kulal et al. (2023), [LIT-625](../literature.d/LIT-625.md). All three were read in
-full as [NOTE-tmpmja2n](../notes.d/NOTE-tmpmja2n.md), [NOTE-tmpeb8mt](../notes.d/NOTE-tmpeb8mt.md) and [NOTE-tmp651x9](../notes.d/NOTE-tmp651x9.md).
+full as [NOTE-347](../notes.d/NOTE-347.md), [NOTE-341](../notes.d/NOTE-341.md) and [NOTE-336](../notes.d/NOTE-336.md).
 
 ## The claim
 

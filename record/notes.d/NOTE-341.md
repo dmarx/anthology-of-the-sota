@@ -1,5 +1,8 @@
 ---
+number: 341
 status: Read
+formerly:
+- NOTE-tmpeb8mt
 paper: LIT-621
 title: 'Video LDM (Align your Latents)'
 version: 1
@@ -16,7 +19,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
-# NOTE-tmpeb8mt: Video LDM (Align your Latents)
+# NOTE-341: Video LDM (Align your Latents)
 
 Read in full from arXiv 2304.08818v2 (28 Dec 2023): main text and
 Appendices A–I, including hyperparameter Tables 6–8 and the extra results in

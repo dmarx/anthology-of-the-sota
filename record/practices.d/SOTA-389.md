@@ -26,8 +26,8 @@ history:
 - version: 2
   date: '2026-09-24'
   note: >-
-    Corrected against full readings of Movie Gen (NOTE-tmp012dg), CogVideoX
-    (NOTE-tmpkkcdb) and SVD (NOTE-tmp651x9). The motion breakdown (+10.7,
+    Corrected against full readings of Movie Gen (NOTE-334), CogVideoX
+    (NOTE-346) and SVD (NOTE-336). The motion breakdown (+10.7,
     +16.1) is in Movie Gen's prose, which says "most", not "almost all".
     Table 8b holds only −0.8 and +10.8. CogVideoX is removed as an adopter
     and as an implementation. SVD's contrary captioner result is added.
@@ -87,7 +87,7 @@ separates a video model from an image model.
 
 The analogy is loose. Make-A-Video's text reaches its video decoder only
 through one CLIP image embedding, so its limit is partly architectural.
-Captioned video alone would not have fixed it ([NOTE-tmpsnnex](../notes.d/NOTE-tmpsnnex.md)).
+Captioned video alone would not have fixed it ([NOTE-349](../notes.d/NOTE-349.md)).
 
 ## Conditions
 

@@ -1,5 +1,8 @@
 ---
+number: 337
 status: Read
+formerly:
+- NOTE-tmp77r8c
 paper: LIT-636
 title: 'Rectified Flow'
 version: 1
@@ -17,7 +20,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
-# NOTE-tmp77r8c: Rectified Flow
+# NOTE-337: Rectified Flow
 
 Read in full from arXiv v1 (7 Sep 2022), which is the only version in the
 scratchpad: §§1–5, the proofs in §3, and Appendix A with Algorithms 2–4 and

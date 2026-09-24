@@ -1,5 +1,8 @@
 ---
+number: 350
 status: Read
+formerly:
+- NOTE-tmpszelm
 paper: LIT-618
 title: 'LTX-Video'
 version: 1
@@ -14,7 +17,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-263 SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
-# NOTE-tmpszelm: LTX-Video
+# NOTE-350: LTX-Video
 
 Read in full from arXiv v1 (30 December 2024): §§1–7, the sample figures
 (Figs. 18–19) and the references. There is no appendix. The text is

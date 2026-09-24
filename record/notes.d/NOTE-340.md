@@ -1,5 +1,8 @@
 ---
+number: 340
 status: Read
+formerly:
+- NOTE-tmpa4mlk
 paper: LIT-630
 title: 'Flow Matching'
 version: 1
@@ -16,7 +19,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
-# NOTE-tmpa4mlk: Flow Matching
+# NOTE-340: Flow Matching
 
 Read in full from arXiv v2 (8 Feb 2023): the main text, and Appendices A–F,
 including the proofs of Theorems 1–3, the probability-flow derivations

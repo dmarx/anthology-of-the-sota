@@ -1,5 +1,8 @@
 ---
+number: 338
 status: Read
+formerly:
+- NOTE-tmp8tkvk
 paper: LIT-624
 title: 'Step-Video-T2V'
 version: 1
@@ -15,7 +18,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
-# NOTE-tmp8tkvk: Step-Video-T2V
+# NOTE-338: Step-Video-T2V
 
 Read in full from arXiv v3 (24 February 2025): §§1–11, all tables,
 references and the contributor list, including the §6 systems material the

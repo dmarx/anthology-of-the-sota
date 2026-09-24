@@ -1,5 +1,8 @@
 ---
+number: 348
 status: Read
+formerly:
+- NOTE-tmpr6vzj
 paper: LIT-637
 title: 'Imagen Video'
 version: 1
@@ -15,7 +18,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
-# NOTE-tmpr6vzj: Imagen Video
+# NOTE-348: Imagen Video
 
 Read in full from arXiv v1 (5 Oct 2022), the only version supplied. The paper
 has no appendix. Figures 11 and 13 are plots whose values are not given in

@@ -1,5 +1,8 @@
 ---
+number: 336
 status: Read
+formerly:
+- NOTE-tmp651x9
 paper: LIT-625
 title: 'Stable Video Diffusion'
 version: 1
@@ -15,7 +18,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-263 SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
-# NOTE-tmp651x9: Stable Video Diffusion
+# NOTE-336: Stable Video Diffusion
 
 Read in full from arXiv v1 (25 Nov 2023), appendices A–E included. The
 figures themselves were not viewed: this environment cannot render PDF

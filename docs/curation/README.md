@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [24 Sep 05:50 — Reading the video line in full, and what it did to three practices](2026-09.md#reading-the-video-line-in-full-and-what-it-did-to-three-practices)
 - [24 Sep 05:14 — Working #331 through unit 5](2026-09.md#working-331-through-unit-5)
 - [24 Sep 04:53 — Filling in the video line behind Wan](2026-09.md#filling-in-the-video-line-behind-wan)
 - [24 Sep 04:28 — The video report LIT-218 asked for](2026-09.md#the-video-report-lit-218-asked-for)
@@ -211,9 +212,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-204 entries across 2 books, newest first.
+205 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 202 | 2026-09-05 | 2026-09-24 |
+| [2026-09](2026-09.md) | 203 | 2026-09-05 | 2026-09-24 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

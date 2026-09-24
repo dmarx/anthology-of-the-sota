@@ -1,5 +1,8 @@
 ---
+number: 334
 status: Read
+formerly:
+- NOTE-tmp012dg
 paper: LIT-626
 title: 'Movie Gen'
 version: 1
@@ -16,7 +19,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
-# NOTE-tmp012dg: Movie Gen
+# NOTE-334: Movie Gen
 
 Read in full from arXiv 2410.13720v2 (26 Feb 2025): §§1–8 and Appendices A–D.
 Everything was read, including audio (§6), personalization (§4), editing (§5)

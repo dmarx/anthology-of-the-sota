@@ -1,5 +1,8 @@
 ---
+number: 347
 status: Read
+formerly:
+- NOTE-tmpmja2n
 paper: LIT-627
 title: 'Video Diffusion Models'
 version: 1
@@ -16,7 +19,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
-# NOTE-tmpmja2n: Video Diffusion Models
+# NOTE-347: Video Diffusion Models
 
 Read in full from arXiv 2204.03458v2 (22 Jun 2022): main text, the
 Appendix A hyperparameter tables and the figure captions. The paper has no

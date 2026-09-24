@@ -1,5 +1,8 @@
 ---
+number: 346
 status: Read
+formerly:
+- NOTE-tmpkkcdb
 paper: LIT-622
 title: 'CogVideoX'
 version: 1
@@ -15,7 +18,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
-# NOTE-tmpkkcdb: CogVideoX
+# NOTE-346: CogVideoX
 
 Read in full from arXiv v3 (26 Mar 2025, the ICLR 2025 version), appendices
 A–K included. v1 (12 Aug 2024) was read in full to compare where versions

@@ -4,7 +4,7 @@
 
 **data-pipeline**.
 
-19 of 333 NOTE documents. Back to the [full index](../README.md).
+20 of 351 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -26,4 +26,5 @@
 | [NOTE-233](../../../record/notes.d/NOTE-233.md) | TinyStories | Read as the missing trunk under eight `tiny-models` practices. The result that matters is a separation, not a record: what stops a 125M model speaking coherent English is the breadth of the corpus, not the complexity of language — established by holding the architecture and shrinking the corpus. | Read |
 | [NOTE-234](../../../record/notes.d/NOTE-234.md) | SimpleStories | Read to see what, if anything, it establishes that its trunk did not. The dataset comparison is direct and well instrumented; the model comparison is confounded three ways and the authors say so. The practice this record takes from it is about the generation procedure, which was measured. | Read |
 | [NOTE-321](../../../record/notes.d/NOTE-321.md) | AlphaFold 2 | Near-experimental protein structure accuracy at CASP14, a calibrated confidence head, self-distillation on confident predictions, and a hard dependence on alignment depth below about 30 sequences. Main text and Methods read. The supplementary methods (architecture details, ablation descriptions) were not read. | Read |
-| [NOTE-333](../../../record/notes.d/NOTE-333.md) | Wan | An open recipe for a 14B text-to-video DiT. Most of its evidence is engineering measurement: VAE throughput, parallelism overhead, inference speedups. Its three modelling ablations are small, judged mostly by training loss, and one of them shows the rejected option doing marginally better on FID. | Skimmed |
+| [NOTE-333](../../../record/notes.d/NOTE-333.md) v2 | Wan | An open 14B text-to-video recipe whose evidence is mostly systems measurement: 2D context parallelism cuts communication overhead from over 10% to under 1%, and caching and 8-bit kernels give 1.62× and 1.27×. Its three modelling ablations run on 1.3B text-to-image. Two are read from training loss, and on FID one of them favours the rejected option. The applications in §5 are demonstrated almost entirely by figures. | Read |
+| [NOTE-336](../../../record/notes.d/NOTE-336.md) | Stable Video Diffusion | At fixed architecture and a fixed step count, a video model pretrained on a curated quarter of a 9.8M-clip pool is preferred by human raters to one trained on the whole pool, and the lead survives high-quality fine-tuning (Elo +127 against +89 over an image-only start at 10k steps). Almost every result is a preference bar from 64 prompts with no numbers in the text, and two of the curation choices the paper shipped lost its own ablation. | Read |

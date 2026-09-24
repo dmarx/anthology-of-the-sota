@@ -31,8 +31,8 @@ history:
 - version: 3
   date: '2026-09-24'
   note: >-
-    Corrected against full readings of Flow Matching (NOTE-tmpa4mlk),
-    Rectified Flow (NOTE-tmp77r8c) and Movie Gen (NOTE-tmp012dg). The
+    Corrected against full readings of Flow Matching (NOTE-340),
+    Rectified Flow (NOTE-337) and Movie Gen (NOTE-334). The
     logit-normal is stated by four video reports, not only Wan. Rectified
     Flow's Table 1a is partly controlled, since its training budget is
     unstated. Flow Matching's path comparison replicates at ImageNet-32 and

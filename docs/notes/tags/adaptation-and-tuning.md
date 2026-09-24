@@ -4,7 +4,7 @@
 
 **adaptation-and-tuning**.
 
-38 of 333 NOTE documents. Back to the [full index](../README.md).
+41 of 351 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -46,3 +46,6 @@
 | [NOTE-314](../../../record/notes.d/NOTE-314.md) | RippleEdits | Knowledge-editing benchmarks test the edited fact and leave its consequences untested. On six ripple criteria, weight editors average 38–66, and prompting with the new fact beats them. Main text read. | Read |
 | [NOTE-315](../../../record/notes.d/NOTE-315.md) | ROME | Causal tracing localizes factual recall to mid-layer MLPs at the last subject token, and a rank-one MLP edit there rewrites single facts with both generalization and specificity. Main text and the CounterFact appendix read. | Read |
 | [NOTE-316](../../../record/notes.d/NOTE-316.md) | MEMIT | ROME's idea extended to thousands of facts by spreading updates across a range of MLP layers in one batched solve. 85.8 on 10,000 CounterFact edits on GPT-J, where ROME falls to 50.3. Main text read, appendices skimmed. | Read |
+| [NOTE-338](../../../record/notes.d/NOTE-338.md) | Step-Video-T2V | A 30B text-to-video DiT on a 16×16×8 VAE. By the authors' own benchmark the VAE reconstructs about as well as HunyuanVideo's 8×8×4, and an independent measurement in Open-Sora 2.0 disagrees. Video DPO raises a tie-weighted preference score from 45% to 55% on 300 prompts. Every architecture comparison is reported without numbers, and the "state of the art" in the abstract is contradicted by the paper's own Table 9. | Read |
+| [NOTE-339](../../../record/notes.d/NOTE-339.md) | AnimateDiff | Temporal-attention modules trained on video over a frozen Stable Diffusion 1.5 plug into community checkpoints fine-tuned from the same base without further tuning. Against two baselines not built for the task it wins clearly only on smoothness: users ranked the training-free Text2Video-Zero higher on preserving the personalized domain (2.620 against 2.280), which is the property the design exists for. Version 1's reported failure on stylized domains was dropped in version 2, and its "most checkpoints" became "any". | Read |
+| [NOTE-341](../../../record/notes.d/NOTE-341.md) | Video LDM (Align your Latents) | Video LDM makes a latent image diffusion model into a video model by inserting temporal layers and fine-tuning the decoder and upsampler on video. On driving scenes, an image-pretrained LDM with frozen spatial layers reaches FVD 534.17 against 1155.10 for the same design trained from scratch. The "images" are 1 fps frames of the same driving videos, and the pretrained arm gets 73K image steps the other does not. Decoder video fine-tuning cuts reconstruction FVD 390.88 → 32.94. | Read |

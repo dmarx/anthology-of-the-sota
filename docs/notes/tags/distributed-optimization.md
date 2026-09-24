@@ -4,7 +4,7 @@
 
 **distributed-optimization**.
 
-44 of 333 NOTE documents. Back to the [full index](../README.md).
+45 of 351 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -51,4 +51,5 @@
 | [NOTE-156](../../../record/notes.d/NOTE-156.md) | Byzantine-Tolerant Machine Learning | Averaging is catastrophically fragile: a single Byzantine worker can steer the aggregate to any arbitrary vector. The fix is to replace aggregation with selection — choose the gradient vector that is most "centrally located" among its nearest correct neighbors, using the n-f-2 nearest neighbors to ensure the majority of those neighbors are correct workers. | Read |
 | [NOTE-157](../../../record/notes.d/NOTE-157.md) | SlowMo: Improving Communication-Efficient Distributed SGD with Slow Momentum | Adding a slow outer momentum step after every tau inner steps of local SGD or a decentralized optimizer consistently improves both optimization and generalization at negligible extra communication cost, because slow momentum corrects accumulated drift between workers at the outer level. | Read |
 | [NOTE-184](../../../record/notes.d/NOTE-184.md) | Training Deep Nets with Sublinear Memory Cost | Two contributions, and the famous one is the second. First, treat memory allocation over the computation graph as a compiler problem — liveness analysis, in-place operations, memory sharing. Then, on top of that, drop most intermediate feature maps and recompute them segment by segment during the backward pass. Dividing an n-layer chain into sqrt(n) segments costs sqrt(n) memory for one extra forward pass; the extreme of the same analysis is log n memory for n log n extra forward computation. | Read |
-| [NOTE-333](../../../record/notes.d/NOTE-333.md) | Wan | An open recipe for a 14B text-to-video DiT. Most of its evidence is engineering measurement: VAE throughput, parallelism overhead, inference speedups. Its three modelling ablations are small, judged mostly by training loss, and one of them shows the rejected option doing marginally better on FID. | Skimmed |
+| [NOTE-333](../../../record/notes.d/NOTE-333.md) v2 | Wan | An open 14B text-to-video recipe whose evidence is mostly systems measurement: 2D context parallelism cuts communication overhead from over 10% to under 1%, and caching and 8-bit kernels give 1.62× and 1.27×. Its three modelling ablations run on 1.3B text-to-image. Two are read from training loss, and on FID one of them favours the rejected option. The applications in §5 are demonstrated almost entirely by figures. | Read |
+| [NOTE-338](../../../record/notes.d/NOTE-338.md) | Step-Video-T2V | A 30B text-to-video DiT on a 16×16×8 VAE. By the authors' own benchmark the VAE reconstructs about as well as HunyuanVideo's 8×8×4, and an independent measurement in Open-Sora 2.0 disagrees. Video DPO raises a tie-weighted preference score from 45% to 55% on 300 prompts. Every architecture comparison is reported without numbers, and the "state of the art" in the abstract is contradicted by the paper's own Table 9. | Read |

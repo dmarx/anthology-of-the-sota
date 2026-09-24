@@ -1,5 +1,8 @@
 ---
+number: 351
 status: Read
+formerly:
+- NOTE-tmptd1wq
 paper: LIT-635
 title: 'Emu Video'
 version: 1
@@ -15,7 +18,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-251 SOTA-263 SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
-# NOTE-tmptd1wq: Emu Video
+# NOTE-351: Emu Video
 
 Read in full from arXiv v2 (2 Aug 2024), appendices 1–5 included. v1 (Nov
 2023) was compared on the ablation table, the freezing paragraph, the

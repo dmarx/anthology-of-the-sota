@@ -20,7 +20,7 @@ consensus_note: >-
   4B comparison. Per DP-005, that is adoption. The field agrees and has
   measured it once. Read as of 2026-09.
 title: 'In a video diffusion transformer, attend over space and time jointly rather than factorizing, and budget for the cost'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-24'
@@ -34,6 +34,13 @@ history:
     1.08× to 2.30× inference time depending on resolution, not a flat 2.3×.
     The ablation is absent from v1, and v2 was not checked. Added
     AnimateDiff's plug-in compatibility as a condition.
+- version: 3
+  date: '2026-09-24'
+  note: >-
+    Adds W.A.L.T (ARXIV-2312.06662) Table 3b as a condition. Windowed
+    hybrid attention matches full 3D attention on UCF-101 at 1.7x the speed.
+    It is not the factorization this practice rejects, so the status and
+    consensus are unchanged.
 tags:
 - attention-techniques
 - generative-modeling
@@ -104,6 +111,15 @@ decides the systems design as well as the quality.
   keeps the image model's spatial layers seeing one frame at a time so that
   personalized image checkpoints can be dropped in. Joint 3D attention
   removes that option. This is a reason some systems factorize on purpose.
+- **A controlled comparison points the other way, at small scale.**
+  W.A.L.T ([LIT-tmpwzgxl](../literature.d/LIT-tmpwzgxl.md), Table 3b) alternates per-frame spatial blocks with
+  local 3D-window blocks. On UCF-101 at 35K steps it matches or beats full
+  3D attention in every block: FVD 55.3–59.6 against 59.9, at 1.7× the
+  training speed. It is a different group and a numbered result. It is not
+  the 2D+1D factorization CogVideoX compared, and it is 17 frames at
+  128px, where full attention is cheap. So it does not contest the
+  practice, but it is the only numbered comparison against full attention
+  the record holds.
 - **The inverse question is untested.** Nothing in the record tests whether
   a factorized model given the extra compute back, as depth or width, would
   close the gap.

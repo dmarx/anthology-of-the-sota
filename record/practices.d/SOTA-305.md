@@ -12,7 +12,15 @@ consensus_note: >-
   unquantized floats each. The practice is `Active` because the measurement
   supporting it is unambiguous, not because anyone has counted who complies.
 title: 'State the token count and input resolution beside any reconstruction FID, and compare tokenizers only at equal rate'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    Adds four cases from the video line's readings (#331): MAGVIT-v2's
+    vocabulary step, Step-Video's "8 times" compression and LTX-Video's
+    token-ratio comparison break the rule, and Open-Sora 2.0's Table 1 follows
+    it. The recommendation is unchanged.
 tags:
 - analysis-and-evaluation
 - representation-and-encoding
@@ -96,6 +104,26 @@ parameters — roughly 80 further bits at fp16 against the index's 10 — so the
 comparison is matched on the quantity the paper controlled and unmatched on
 the quantity that determines the answer. Neither paper computes bits per
 image.
+
+## Cases from the video line
+
+Reading the video reports in full (`#331`) turned up four more cases. Three
+break the rule and one follows it:
+
+- **MAGVIT-v2** ([LIT-623](../literature.d/LIT-623.md), [NOTE-342](../notes.d/NOTE-342.md)). Table 5b's
+  largest single step, "+ large vocabulary" (rFID 2.48 → 1.34), raises bits
+  per token at a fixed token count. It is a rate increase reported in a
+  column of rate-neutral changes. The paper's compression comparison
+  (Table 3) is at equal bits per pixel, so the authors could control rate
+  when they chose to.
+- **Step-Video** ([LIT-624](../literature.d/LIT-624.md), [NOTE-338](../notes.d/NOTE-338.md)) says its VAE compresses "8 times
+  larger" (§9.6). That counts tokens. At 64 latent channels, the
+  information ratio against HunyuanVideo's VAE is 2×, not 8×.
+- **LTX-Video** ([LIT-618](../literature.d/LIT-618.md), [NOTE-350](../notes.d/NOTE-350.md)) compares latents by pixels-to-tokens
+  ratio (Table 1, 1:8192) and reports no reconstruction metric at any rate.
+- **Open-Sora 2.0** ([LIT-634](../literature.d/LIT-634.md), [NOTE-345](../notes.d/NOTE-345.md)) does it right. Table 1 matches
+  autoencoders at equal information rate, with values per latent against
+  pixels × 3, not at equal downsampling.
 
 ## Conditions
 

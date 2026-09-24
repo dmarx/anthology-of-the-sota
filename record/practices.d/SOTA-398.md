@@ -11,7 +11,14 @@ consensus_note: >-
   Sora and SD3 train on native aspect ratios. Per DP-005 that is adoption,
   and neither reports a controlled comparison.
 title: 'Pretrain a vision transformer on packed, aspect-preserved images at sampled resolutions, not on fixed square crops'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    Adds FiT (ARXIV-2402.12376) Table 3 as the one measured generative
+    case. It shows no square-output gain and a large non-square gain that the
+    square baseline never trained for. The status stays Proposed.
 tags:
 - vision-and-graphics
 - training-optimization
@@ -76,9 +83,15 @@ shown to be what makes it win.
 ## Conditions
 
 - **ViT encoders trained for classification or contrastive learning.**
-  JFT-4B and WebLI, B/32 to L/16, one lab. No generative model is
-  measured. Sora ([LIT-652](../literature.d/LIT-652.md)) and SDXL ([LIT-566](../literature.d/LIT-566.md), crop conditioning) argue for
-  the generative case with example images only.
+  JFT-4B and WebLI, B/32 to L/16, one lab. Sora ([LIT-652](../literature.d/LIT-652.md)) and SDXL
+  ([LIT-566](../literature.d/LIT-566.md), crop conditioning) argue for the generative case with example
+  images only. The one measured generative case is FiT ([LIT-tmpkcykt](../literature.d/LIT-tmpkcykt.md),
+  Table 3). A DiT-B trained on uncropped, aspect-preserved images scores
+  FID 43.34 against 44.83 for square crops at a 256² output, with a worse
+  sFID. At non-square outputs it wins by about 40–57 FID, but the square
+  model never trained on those shapes. For generation, preserving aspect
+  ratio is what makes non-square output possible. It is not shown to
+  improve square output.
 - **Evaluation has to match.** Much of the out-of-distribution gain
   appears when the square baseline is evaluated by square resize (Table
   5). With an aspect-preserving crop, ObjectNet is roughly tied.

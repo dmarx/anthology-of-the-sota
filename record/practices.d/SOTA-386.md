@@ -25,7 +25,7 @@ consensus_note: >-
   its resolution-duration buckets. That is adoption, per DP-005. The field has
   converged, and no report has isolated the effect. Read as of 2026-09.
 title: 'Show a video diffusion model images before and alongside video'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-24'
@@ -48,6 +48,13 @@ history:
     image corpus: VDM's and Video LDM's images are frames of their own
     videos. Imagen Video, read in full, is joint training with no stated
     image initialization.
+- version: 4
+  date: '2026-09-24'
+  note: >-
+    Adds W.A.L.T (ARXIV-2312.06662) Table 5 as a source. It is the only
+    ablation found that switches a separate image corpus on and off: FVD
+    598.8 → 344.5 at 419M. Compute is not stated, so promote_when is not met
+    and the status stays Proposed.
 tags:
 - generative-modeling
 - training-optimization
@@ -57,6 +64,7 @@ source:
 - LIT-627
 - LIT-621
 - LIT-625
+- LIT-tmpwzgxl
 introduced_by:
 - LIT-627
 implementations:
@@ -101,15 +109,21 @@ none of them isolates the effect:
 - **Image-initialized against random spatial layers** ([LIT-625](../literature.d/LIT-625.md), Fig. 3a).
   Human raters prefer the image-initialized model. The figure gives no
   counts, and the text states neither its resolution nor its step count.
+- **A separate image corpus, on and off** ([LIT-tmpwzgxl](../literature.d/LIT-tmpwzgxl.md), W.A.L.T Table 5).
+  Two 419M models trained with and without ~970M image-text pairs beside
+  ~89M text-video pairs. Zero-shot UCF-101 FVD is 598.8 without images and
+  344.5 with them. This is the only comparison that uses a separate image
+  corpus. Steps, batch size and the video share of each batch are not
+  stated, and it is a single run.
 
 ## Why it is `Proposed`
 
 The practice is probably right, and the record cannot yet say it believes
 it on this evidence. Each comparison gives the image arm more compute, or
 bundles initialization with freezing, or states too little of its setup to
-check. None uses the thing the practice recommends, a separate image corpus.
-VDM's and Video LDM's "images" are frames drawn from their own video
-datasets. Every large report adopts the practice, and none of them tests it.
+check. Only W.A.L.T uses the thing the practice recommends, a separate
+image corpus, and it does not say what compute each arm got. VDM's and
+Video LDM's "images" are frames drawn from their own video datasets. Every large report adopts the practice, and none of them tests it.
 The `promote_when` asks for the one missing comparison.
 
 ## Conditions

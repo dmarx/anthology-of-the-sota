@@ -85,7 +85,7 @@ shown to be what makes it win.
 - **ViT encoders trained for classification or contrastive learning.**
   JFT-4B and WebLI, B/32 to L/16, one lab. Sora ([LIT-652](../literature.d/LIT-652.md)) and SDXL
   ([LIT-566](../literature.d/LIT-566.md), crop conditioning) argue for the generative case with example
-  images only. The one measured generative case is FiT ([LIT-tmpkcykt](../literature.d/LIT-tmpkcykt.md),
+  images only. The one measured generative case is FiT ([LIT-658](../literature.d/LIT-658.md),
   Table 3). A DiT-B trained on uncropped, aspect-preserved images scores
   FID 43.34 against 44.83 for square crops at a 256² output, with a worse
   sFID. At non-square outputs it wins by about 40–57 FID, but the square

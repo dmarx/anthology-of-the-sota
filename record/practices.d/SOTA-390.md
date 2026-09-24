@@ -112,7 +112,7 @@ decides the systems design as well as the quality.
   personalized image checkpoints can be dropped in. Joint 3D attention
   removes that option. This is a reason some systems factorize on purpose.
 - **A controlled comparison points the other way, at small scale.**
-  W.A.L.T ([LIT-tmpwzgxl](../literature.d/LIT-tmpwzgxl.md), Table 3b) alternates per-frame spatial blocks with
+  W.A.L.T ([LIT-661](../literature.d/LIT-661.md), Table 3b) alternates per-frame spatial blocks with
   local 3D-window blocks. On UCF-101 at 35K steps it matches or beats full
   3D attention in every block: FVD 55.3–59.6 against 59.9, at 1.7× the
   training speed. It is a different group and a numbered result. It is not

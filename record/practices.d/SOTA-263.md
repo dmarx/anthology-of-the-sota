@@ -38,12 +38,12 @@ tags:
 - signal-structure
 date: '2026-09-20'
 source:
-- LIT-tmpu1h5o
-- LIT-tmpnbpgd
+- LIT-660
+- LIT-659
 - LIT-449
 introduced_by:
-- LIT-tmpu1h5o
-- LIT-tmpnbpgd
+- LIT-660
+- LIT-659
 implementations:
 - 'simple diffusion'
 - 'Stable Diffusion 3'
@@ -51,7 +51,7 @@ implementations:
 - 'LTX-Video'
 - 'Open-Sora 2.0'
 summary: >-
-  Hoogeboom et al. (2023), [LIT-tmpu1h5o](../literature.d/LIT-tmpu1h5o.md), and Chen (2023), [LIT-tmpnbpgd](../literature.d/LIT-tmpnbpgd.md).
+  Hoogeboom et al. (2023), [LIT-660](../literature.d/LIT-660.md), and Chen (2023), [LIT-659](../literature.d/LIT-659.md).
   A timestep is not a fixed amount of corruption. Destroying the signal in
   an image with more pixels takes more noise, so a schedule set at one
   resolution under-corrupts at a higher one. Shifting log-SNR down with
@@ -65,8 +65,8 @@ summary: >-
 
 ## Source
 
-Hoogeboom, Heek and Salimans (2023), [LIT-tmpu1h5o](../literature.d/LIT-tmpu1h5o.md) — [ARXIV-2301.11093](https://arxiv.org/abs/2301.11093), and
-Chen (2023), [LIT-tmpnbpgd](../literature.d/LIT-tmpnbpgd.md) — [ARXIV-2301.10972](https://arxiv.org/abs/2301.10972). They are concurrent, and each
+Hoogeboom, Heek and Salimans (2023), [LIT-660](../literature.d/LIT-660.md) — [ARXIV-2301.11093](https://arxiv.org/abs/2301.11093), and
+Chen (2023), [LIT-659](../literature.d/LIT-659.md) — [ARXIV-2301.10972](https://arxiv.org/abs/2301.10972). They are concurrent, and each
 cites the other.
 
 Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md) — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206). SD3 derives the shift

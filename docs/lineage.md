@@ -176,6 +176,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-622](../record/literature.d/LIT-622.md) — CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer *(Active)* — also extends LIT-623
   - [LIT-624](../record/literature.d/LIT-624.md) — Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model *(Active)*
   - [LIT-652](../record/literature.d/LIT-652.md) — Video generation models as world simulators *(Active)* — also extends LIT-648
+  - [LIT-658](../record/literature.d/LIT-658.md) — FiT: Flexible Vision Transformer for Diffusion Model *(Active)*
 - [LIT-553](../record/literature.d/LIT-553.md) — Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise *(Active)*
   - [LIT-555](../record/literature.d/LIT-555.md) — Warm Diffusion: Recipe for Blur-Noise Mixture Diffusion Models *(Active)*
 - [LIT-623](../record/literature.d/LIT-623.md) — Language Model Beats Diffusion — Tokenizer is Key to Visual Generation *(Active)*
@@ -199,6 +200,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-093](../record/literature.d/LIT-093.md) — Consistency Models *(Active)*
 - alongside: [LIT-483](../record/literature.d/LIT-483.md) — Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models *(Active)*
 - alongside: [LIT-554](../record/literature.d/LIT-554.md) — Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion *(Active)*
+- alongside: [LIT-661](../record/literature.d/LIT-661.md) — Photorealistic Video Generation with Diffusion Models *(Active)*
 
 ### From Denoising as Projection: Constrained Optimization with Gradient-Guided Diffusion
 

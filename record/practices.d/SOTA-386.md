@@ -64,7 +64,7 @@ source:
 - LIT-627
 - LIT-621
 - LIT-625
-- LIT-tmpwzgxl
+- LIT-661
 introduced_by:
 - LIT-627
 implementations:
@@ -109,7 +109,7 @@ none of them isolates the effect:
 - **Image-initialized against random spatial layers** ([LIT-625](../literature.d/LIT-625.md), Fig. 3a).
   Human raters prefer the image-initialized model. The figure gives no
   counts, and the text states neither its resolution nor its step count.
-- **A separate image corpus, on and off** ([LIT-tmpwzgxl](../literature.d/LIT-tmpwzgxl.md), W.A.L.T Table 5).
+- **A separate image corpus, on and off** ([LIT-661](../literature.d/LIT-661.md), W.A.L.T Table 5).
   Two 419M models trained with and without ~970M image-text pairs beside
   ~89M text-video pairs. Zero-shot UCF-101 FVD is 598.8 without images and
   344.5 with them. This is the only comparison that uses a separate image

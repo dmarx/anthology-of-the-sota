@@ -1,0 +1,103 @@
+---
+status: Active
+title: 'Emu Video: Factorizing Text-to-Video Generation by Explicit Image Conditioning'
+version: 1
+tags:
+- generative-modeling
+- vision-and-graphics
+date: '2026-09-24'
+published: '2023-11-01'
+arxiv: '2311.10709'
+first_author: 'Girdhar'
+keywords:
+- 'factorized-text-to-video'
+- 'image-conditioning'
+- 'zero-terminal-snr'
+- 'multi-stage-training'
+- 'high-quality-finetuning'
+- 'human-evaluation'
+implementations: []
+extends:
+- LIT-062
+compared_against:
+- LIT-tmpzs77m
+- LIT-tmpff3eg
+- LIT-621
+- LIT-625
+summary: >-
+  Girdhar et al., Meta GenAI (2023), [ARXIV-2311.10709](https://arxiv.org/abs/2311.10709). Text-to-video is
+  factored into generating an image and then a video conditioned on it, on
+  a frozen text-to-image model. The report runs controlled human-preference
+  ablations of the factorization, zero terminal SNR, low-then-high
+  resolution training and a 1.6K-clip motion-filtered fine-tune. Movie Gen
+  builds on this recipe. Freezing the image layers beats fine-tuning them
+  only narrowly (55/58).
+extended_by:
+- LIT-626
+---
+
+# LIT-tmpyt5og: Emu Video: Factorizing Text-to-Video Generation by Explicit Image Conditioning
+
+Girdhar et al., GenAI, Meta (2023) — [ARXIV-2311.10709](https://arxiv.org/abs/2311.10709)
+
+## Key takeaways
+
+- **The factorization.** Generate an image first, with the temporal layers
+  off, then generate the video conditioned on that image and the text. The
+  image is zero-padded in time, masked and concatenated on channels (§3.2),
+  which is the same conditioning Wan's image-to-video uses. The 2.7B spatial
+  parameters come from the Emu text-to-image model and stay frozen, and 1.7B
+  temporal parameters are trained.
+- **The ablations are controlled** (Table 1: human win rates on quality and
+  faithfulness, 307 prompts, majority of 5 raters, each design against the
+  same model without it):
+  - factorized against direct text-to-video: 70.5 / 63.3
+  - zero terminal SNR at 512px: 96.8 / 88.3
+  - multi-stage (256px then 512px) against 512px only, at the same budget:
+    81.8 / 84.1
+  - high-quality fine-tune: 65.1 / 79.6
+  - frozen against fully fine-tuned spatial layers: 55.0 / 58.1
+- **Low resolution first, with a measured sweet spot.** About 70K iterations
+  at 256px (one epoch) is best, and fewer or more is worse (App. Fig. 1).
+- **A tiny, motion-filtered fine-tune set.** 1.6K of 34M clips are kept, on
+  CLIP score, aesthetics and a minimum H.264 motion-vector score. The motion
+  score rises from 0.61 to 12.7 after fine-tuning (§3.3, App. Table 4).
+- **Against earlier systems.** Human raters prefer it on quality to Imagen
+  Video (81.8%), Make-A-Video (96.8%), Video LDM (92.3%) and, on
+  image-to-video, SVD (72.3%).
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **The zero-SNR baseline is under-specified.** The 512px stage switches to
+  v-prediction and zero-SNR rescaling together (App. Table 3), and the paper
+  does not say whether the baseline also used v-prediction. The 96.8% may
+  measure both changes.
+- **"At no additional training cost unlike [Imagen Video]"** (§3.2) contrasts
+  freezing with joint image-video training. The two are never compared.
+- **"81% vs Imagen Video"** (abstract) is quality. On faithfulness it is
+  56.4%, which the body calls outperforming "by 56%".
+- **Every comparison is a human win rate with no confidence interval.** On
+  unprocessed videos the rates are higher, and the authors attribute that to
+  rater bias (App. Table 10).
+- **Weights were not released.**
+
+## Standing in the anthology
+
+This is the report Movie Gen ([LIT-626](LIT-626.md)) builds on. The multi-stage schedule,
+the high-quality fine-tune and motion filtering are all tested here first.
+Its controlled results are the evidence for several things the later
+reports adopt:
+
+- low-resolution-then-high training (the curriculum Wan asserts)
+- a very small curated fine-tune set (SVD and Movie Gen)
+- image-first conditioning (Wan's image-to-video)
+
+On [SOTA-386](../practices.d/SOTA-386.md) it adds one adjacent fact. It keeps image knowledge by
+freezing the spatial layers rather than training on images, and freezing
+beats fine-tuning by a small margin. It does not test image initialization
+against random initialization, or joint training against video-only.
+
+Filed without a `NOTE`: the takeaways come from one full reading done for
+this filing, appendices included.

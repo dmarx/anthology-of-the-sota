@@ -11,7 +11,18 @@ promote_when: >-
   the authors. The source shows it on a small RNN with videos only. A system
   that adopts the recipe without reporting the ablation does not count.
 title: 'For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    Self Forcing (LIT-tmp0kzd1) and CausVid (LIT-tmpazb01) were filed.
+    Consensus moves from `unassessed` to `contested`. Self Forcing argues
+    against the rollout half in writing and does not test it. Its controlled
+    transformer-scale comparison of the training half is split: diffusion
+    forcing loses to teacher forcing in the many-step rows and wins after
+    distillation. Status and `promote_when` are unchanged, because neither
+    paper measures quality against rollout length with noised history.
 tags:
 - generative-modeling
 - vision-and-graphics
@@ -20,11 +31,16 @@ source:
 - LIT-554
 introduced_by:
 - LIT-554
-consensus: unassessed
+consensus: contested
+contested_by:
+- LIT-tmp0kzd1
 consensus_note: >-
-  The record holds only the source paper. Whether later autoregressive
-  video systems adopted it, and whether any measured it, has not been
-  looked at here.
+  CausVid (LIT-tmpazb01) adopts per-chunk independent noise when training its
+  causal student. Self Forcing (LIT-tmp0kzd1) argues that noising the context
+  at inference "sacrifices temporal consistency" and "does not fundamentally
+  resolve the exposure bias problem", with no experiment. It proposes
+  training on the model's own rollouts instead. Credible groups disagree in
+  writing, and nobody has run the comparison. Read as of 2026-09.
 implementations: []
 summary: >-
   Chen et al. (2024), [LIT-554](../literature.d/LIT-554.md) — train a causal model to denoise tokens
@@ -69,6 +85,25 @@ on:
   hand-coded controller and gets 8.7 executing its own actions
 - A real robot task needing memory: 80% success. 76% with occluded
   observations, marked as noisy, against 48% for a next-frame baseline
+
+## What has been measured since
+
+Self Forcing ([LIT-tmp0kzd1](../literature.d/LIT-tmp0kzd1.md), Table 2) ran the first controlled comparison at
+transformer scale by a group other than the authors: Wan2.1-1.3B, same
+initialization and prompts, 5s clips, scored by VBench total. It bears on
+the two halves differently.
+
+- **Training half, per-token noise against teacher forcing: split.** In the
+  many-step rows diffusion forcing loses (82.95 against 83.58 chunk-wise,
+  77.24 against 80.34 frame-wise). After DMD distillation it wins (82.76
+  against 82.32, 80.56 against 78.12). Both lose to training on the model's
+  own rollouts (84.31, 84.26).
+- **Rollout half, noised history: not tested.** The diffusion-forcing
+  baselines appear to roll out on clean context. That is not stated, but
+  the only inference procedure the paper gives caches clean outputs.
+
+Neither result meets `promote_when`. It asks for quality against rollout
+length with this practice's full recipe, and Table 2 measures neither.
 
 ## Conditions
 

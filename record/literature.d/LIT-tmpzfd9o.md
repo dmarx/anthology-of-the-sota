@@ -1,0 +1,93 @@
+---
+status: Active
+title: 'Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow'
+version: 1
+tags:
+- generative-modeling
+- inference-optimization
+date: '2026-09-24'
+published: '2022-09-01'
+arxiv: '2209.03003'
+first_author: 'Liu'
+keywords:
+- 'rectified-flow'
+- 'reflow'
+- 'straight-paths'
+- 'transport-cost'
+- 'distillation'
+- 'one-step-generation'
+implementations:
+- 'Stable Diffusion 3'
+- 'InstaFlow'
+compared_against:
+- LIT-036
+summary: >-
+  Liu, Gong and Liu, UT Austin (2022), [ARXIV-2209.03003](https://arxiv.org/abs/2209.03003). It names rectified
+  flow: regress a velocity onto x1 − x0 along the straight interpolation,
+  which beats VP and sub-VP probability-flow ODEs on CIFAR-10 at the same
+  architecture (FID 2.58 against 3.93). The "fast" in the title needs
+  "reflow". Without it, one-step FID is 378. After one reflow it is 12.2,
+  and full-simulation quality gets worse.
+extended_by:
+- LIT-449
+---
+
+# LIT-tmpzfd9o: Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow
+
+Liu, Gong and Liu, University of Texas at Austin (2022) — [ARXIV-2209.03003](https://arxiv.org/abs/2209.03003)
+
+## Key takeaways
+
+- **The method is one regression.** Sample t uniformly and set
+  x_t = t·x1 + (1−t)·x0. Regress v(x_t, t) onto x1 − x0 (eq. 1, Alg. 1). §2.3.1
+  says the linear interpolation "should be recommended as a default choice".
+  This is the name SD3 ([LIT-449](LIT-449.md)) and [SOTA-266](../practices.d/SOTA-266.md) use.
+- **The theory holds for exact minimizers.** Marginals are preserved under any
+  interpolation (Thm. 3.3). Convex transport cost does not increase (Thm.
+  3.5). Reflow straightens paths at O(1/K) (Thm. 3.7). Probability-flow ODEs
+  and DDIM are nonlinear rectified flows, and reflow does not straighten
+  them (Prop. 3.11, Fig. 4).
+- **At full simulation the straight path beats VP.** With the same DDPM++
+  architecture and RK45 sampling, FID is 2.58 for 1-rectified flow, against
+  3.93 for the VP ODE and 3.16 for sub-VP (Table 1a). Training-budget parity
+  is not stated.
+- **Few steps need reflow.** At one Euler step, 1-rectified flow scores FID
+  378. 2-rectified flow, after one reflow, scores 12.21, and 4.85 when
+  distilled (Table 1a).
+- **Reflow costs quality at many steps.** 2- and 3-rectified flow score FID
+  3.36 and 3.96 at full simulation, against 2.58 before reflow (§5.2).
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"High quality results even with a single Euler discretization step"**
+  (abstract) describes 2-rectified flow, after a second training pass. The
+  base method's one-step FID is 378. The 4.85 headline also needs
+  distillation with an LPIPS loss (App. A).
+- **The straightness theorems are about the reflowed coupling.** The
+  single-pass model, which is what everybody trains, is not straight (Fig.
+  10).
+- **Budget parity with the VP baselines is not stated.** It is unclear
+  whether they were retrained or taken from Song et al. Treat Table 1a as
+  partly controlled.
+- **Buried and useful:** Fig. 5's last column runs VP with a linear α_t,
+  which gives the same curve at uniform speed. This toy separates path
+  *speed* from path *curvature*, the mechanism experiment [SOTA-266](../practices.d/SOTA-266.md) says
+  nobody has run. It is 2-D and qualitative only.
+
+## Standing in the anthology
+
+This is the origin of the name "rectified flow", and one of the three
+concurrent origins of the straight path, with Flow Matching ([LIT-tmp8xj1x](LIT-tmp8xj1x.md))
+and stochastic interpolants. SD3 is "Scaling Rectified Flow Transformers",
+so this is the paper SD3 could not stand without.
+
+What travelled from it is the single-pass objective with a straight path.
+The reflow procedure, which is what the title and abstract are about, did
+not become standard. Few-step video generation today comes from separate
+distillation. Anything citing this paper for "few-step generation" should
+say it means reflow.
+
+Filed without a `NOTE`: the takeaways come from one full reading of §§1–5
+and App. A done for this filing.

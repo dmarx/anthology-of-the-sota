@@ -5,31 +5,52 @@ formerly:
 - SOTA-tmpwzlqh
 consensus: emerging
 consensus_note: >-
-  Two groups, one controlled ablation and one 61-way sweep carried to 8B with
-  weights released, and a production model shipped on it. Nothing in this
-  record contests it. `emerging` rather than `converged` because the
-  comparison at 8B is one run applying the smaller sweep's winner, and
-  because no mechanism has been isolated.
+  Converged for the straight path, emerging for the logit-normal. The path
+  is now the default objective of the video line: Movie Gen, HunyuanVideo,
+  Step-Video and Wan all train with it (LIT-626, LIT-620, LIT-624, LIT-619).
+  That is adoption, per DP-005. The logit-normal half has one source, SD3,
+  and Wan is the only video report that states it. `emerging` stands because
+  the practice is both halves together. Read as of 2026-09.
 title: 'Connect data and noise on a straight line, and sample the training timesteps from a logit-normal rather than uniformly'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    The originating papers were filed (LIT-tmp8xj1x, LIT-tmpzfd9o), and
+    Movie Gen's 5B video ablation was added as evidence. `introduced_by`
+    named SiT, which is 2024. The straight path is from 2022. The claim
+    that uniform-timestep rectified flow "does not win" is scoped to SD3's
+    setting. Both originating papers win with uniform timesteps in
+    controlled pixel-space comparisons, and the earlier "equivocal for two
+    years" gloss had no source. The conditions no longer say "all of it is
+    image synthesis".
 tags:
 - generative-modeling
 date: '2026-09-20'
 source:
 - LIT-449
 - LIT-447
+- LIT-tmp8xj1x
+- LIT-626
 introduced_by:
-- LIT-447
+- LIT-tmpzfd9o
+- LIT-tmp8xj1x
 implementations:
 - 'Stable Diffusion 3'
 - 'SiT-XL'
+- 'Movie Gen'
+- 'HunyuanVideo'
+- 'Step-Video-T2V'
+- 'Wan2.1'
 summary: >-
   Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md), and Ma et al. (2024),
   [LIT-447](../literature.d/LIT-447.md) — the straight-line path between data and noise beats the
   curved variance-preserving one at fixed architecture and compute, and the
-  advantage is largest at few sampling steps. The timestep distribution is
-  not a detail: rectified flow with uniform timesteps does not win, and with
-  a logit-normal it does.
+  advantage is largest at few sampling steps. Movie Gen (LIT-626) confirms
+  it for video at 5B. In SD3's latent text-to-image sweep, the timestep
+  distribution decides the ranking: uniform does not beat tuned
+  ε-prediction and logit-normal does.
 ---
 
 # SOTA-266: Connect data and noise on a straight line, and sample the training timesteps from a logit-normal rather than uniformly
@@ -37,6 +58,13 @@ summary: >-
 <!-- inactive-ok-file: SOTA-254 — Proposed, and named in the same sentence and for the same reason -->
 
 ## Source
+
+Liu, Gong and Liu (2022), [LIT-tmpzfd9o](../literature.d/LIT-tmpzfd9o.md), and Lipman et al. (2022),
+[LIT-tmp8xj1x](../literature.d/LIT-tmp8xj1x.md), introduced the straight path concurrently, with Albergo and
+Vanden-Eijnden's stochastic interpolants. Flow Matching contributes the
+first controlled comparison: the same U-Net, hyperparameters and epochs
+give CIFAR-10 FID 6.35 on the straight path against 8.06 on the diffusion
+path (its Table 1). It trained with uniform timesteps.
 
 Ma et al. (2024), [LIT-447](../literature.d/LIT-447.md) — [ARXIV-2401.08740](https://arxiv.org/abs/2401.08740).
 
@@ -48,6 +76,13 @@ fixed while the interpolant is changed and nothing else. SD3 is the scale and
 the breadth: 61 formulations ranked, then the winner taken to 8B
 text-to-image with weights released. A practice on either alone would be
 weaker — one would be a small-scale ablation, the other a leaderboard entry.
+
+The Movie Gen team (2024), [LIT-626](../literature.d/LIT-626.md), is the video evidence. At 5B, on video
+at 352×192, it compares flow matching against v-prediction diffusion with
+zero terminal SNR, with everything else held constant. Flow matching wins
+by a net +16.5 on human-rated quality and +7.1 on text alignment (its Table
+8a). That is the only controlled comparison of the objective in the video
+line. Every other video report adopts it.
 
 ## Both halves of the title are the practice
 
@@ -61,10 +96,13 @@ one endpoint.
 **The logit-normal.** This is the half that gets dropped in summary and
 should not be. In SD3's ranking, **rectified flow with uniform timesteps does
 not beat well-tuned epsilon-prediction; rectified flow with logit-normal
-timesteps does.** The prior literature wrote rectified flow with uniform
-sampling, which is why its advantage had looked equivocal for two years. A
-reader who adopts the path and keeps uniform timesteps has adopted the
-version that does not win.
+timesteps does.** That is a finding about SD3's setting: latent
+text-to-image, against a tuned ε-prediction baseline. It is not a finding
+that uniform timesteps fail in general. The originating papers used uniform
+sampling and won their controlled comparisons against VP diffusion in pixel
+space ([LIT-tmp8xj1x](../literature.d/LIT-tmp8xj1x.md) Table 1, [LIT-tmpzfd9o](../literature.d/LIT-tmpzfd9o.md) Table 1a). At SD3's scale the
+logit-normal decides the ranking. At small scale the path alone was enough.
+A reader training a large latent model should take both halves.
 
 ## Where the advantage is largest
 
@@ -102,15 +140,21 @@ files as `Active`.
 path length falls — and that is an observation accompanying the result, not
 an intervention separating it. An interpolant matched in path length but not
 straight would tell them apart and nobody has run it. So the *whether* is
-well established and the *why* is open.
+well established and the *why* is open. The closest anyone has come is a
+2-D toy in Rectified Flow ([LIT-tmpzfd9o](../literature.d/LIT-tmpzfd9o.md) Fig. 5), which runs VP with a linear
+α_t to separate path speed from curvature. It is qualitative. Rectified
+Flow's straightness theorems apply to the reflowed coupling, not the
+single-pass model this practice recommends.
 
 The 61-way sweep is at a smaller scale than the 8B run, which applies its
 winner rather than repeating it. SD3's own scaling argument says that should
 be fine, and *should be fine* is what is established.
 
-All of it is image synthesis — class-conditional ImageNet for the ablation,
-latent text-to-image for the scale run. Nothing here is about the diffusion
-*language* models the record also holds ([SOTA-157](SOTA-157.md), [SOTA-254](SOTA-254.md)), where the
+The image evidence is class-conditional ImageNet for the ablation and
+latent text-to-image for the scale run. The video evidence is one 5B
+ablation ([LIT-626](../literature.d/LIT-626.md)), judged by humans on 381 prompts. Its alignment margin
+is under twice the annotation σ that Movie Gen reports elsewhere. Nothing
+here is about the diffusion *language* models the record also holds ([SOTA-157](SOTA-157.md), [SOTA-254](SOTA-254.md)), where the
 data is discrete and the straight-line construction does not obviously
 transfer.
 
@@ -122,3 +166,4 @@ step counts, and it is a fit rather than a derivation.
 
 - Stable Diffusion 3 (8B, weights released)
 - SiT-XL
+- Movie Gen, HunyuanVideo, Step-Video-T2V, Wan2.1 (video)

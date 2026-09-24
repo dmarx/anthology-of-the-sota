@@ -1,0 +1,96 @@
+---
+status: Active
+title: 'Flow Matching for Generative Modeling'
+version: 1
+tags:
+- generative-modeling
+date: '2026-09-24'
+published: '2022-10-01'
+arxiv: '2210.02747'
+first_author: 'Lipman'
+keywords:
+- 'flow-matching'
+- 'conditional-flow-matching'
+- 'continuous-normalizing-flows'
+- 'probability-paths'
+- 'optimal-transport-displacement-interpolation'
+- 'simulation-free'
+implementations:
+- 'Stable Diffusion 3'
+- 'Movie Gen'
+compared_against:
+- LIT-036
+summary: >-
+  Lipman et al., Meta AI and Weizmann (2022), [ARXIV-2210.02747](https://arxiv.org/abs/2210.02747). A
+  continuous normalizing flow can be trained without simulation by regressing
+  onto a per-sample conditional vector field. Diffusion paths are special
+  cases. The straight "OT" path beats the diffusion path under the same
+  objective, architecture and epochs, and it needs about 60% of the function
+  evaluations. It used uniform timesteps.
+extended_by:
+- LIT-626
+---
+
+# LIT-tmp8xj1x: Flow Matching for Generative Modeling
+
+Lipman et al., Meta AI (FAIR) and Weizmann Institute (2022) — [ARXIV-2210.02747](https://arxiv.org/abs/2210.02747)
+
+## Key takeaways
+
+- **The objective is simulation-free.** Regressing onto a conditional vector
+  field, defined per sample, has the same gradients as the intractable
+  marginal flow-matching objective (Thms. 1–2, requiring only p_t(x) > 0).
+  So a CNF trains the way a diffusion model does, without ODE solves in the
+  loop.
+- **Diffusion is one choice of path.** Every Gaussian path has a closed-form
+  field (Thm. 3), with VE and VP diffusion as special cases. The "OT" path is
+  a linear interpolation with a σ_min floor (eq. 20). It is defined on all of
+  [0, 1], while VP must stop short of one end (App. E.1). This is the
+  endpoint singularity [SOTA-266](../practices.d/SOTA-266.md) mentions.
+- **The path comparison is controlled.** With the same ADM U-Net,
+  hyperparameters and epochs (Table 1), FID on CIFAR-10 is 6.35 for FM-OT,
+  8.06 for FM-diffusion and 7.48 for DDPM. On ImageNet-64 it is 14.45, 16.88
+  and 17.36. Comparing FM-OT with FM-diffusion isolates the path. Comparing
+  FM-diffusion with score matching isolates the objective.
+- **It needs fewer evaluations for the same error.** FM-OT reaches a given
+  ODE error in "roughly only 60% of the NFEs" (Fig. 7, ImageNet-32). The
+  numbers are given only in the figure.
+- **Timesteps are uniform** (eq. 5: t ~ U[0,1]). The straight path wins here
+  without a logit-normal.
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **The budget statements disagree.** §6.1 says baselines were "allowed
+  more iterations". App. E.2 says all methods trained "for the same number of
+  Epochs". Either way the comparison favours the baselines, but the two
+  sentences cannot both be true.
+- **"Consistently better likelihood"** is 0.01–0.02 bpd at ImageNet-32 and 64.
+- **"OT" describes the conditional path only.** §4 says "this by no means
+  imply that the marginal VF is an optimal transport solution". The learned
+  trajectories are not shown to be straight.
+- **The controlled comparison stops at 64 px.** The ImageNet-128 result is
+  compared against GANs, with a different batch size and iteration count.
+- **σ_min is never given a value.**
+
+## Standing in the anthology
+
+This is one of three concurrent origins of the straight data-to-noise path.
+The other two are Rectified Flow ([LIT-tmpzfd9o](LIT-tmpzfd9o.md)) and Albergo and
+Vanden-Eijnden's stochastic interpolants, and all three appeared within
+five weeks in autumn 2022. Before this filing, 13 files in the record
+mentioned "flow matching" and none held the paper. Among them were [SOTA-266](../practices.d/SOTA-266.md),
+which recommends the path, and the Movie Gen, HunyuanVideo and Step-Video
+reports, which train with it.
+
+Its bearing on [SOTA-266](../practices.d/SOTA-266.md) is specific. The practice said that rectified flow
+with uniform timesteps does not win. Table 1 here is a controlled,
+uniform-timestep, pixel-space comparison in which the straight path does
+win. The two results do not conflict, because SD3's finding is about
+ranking against well-tuned ε-prediction in latent text-to-image at scale.
+They do show that the uniform version's loss is a property of that setting
+and not a general fact.
+
+Filed without a `NOTE`: the takeaways come from one full reading done for
+this filing, appendices included and proofs skimmed.

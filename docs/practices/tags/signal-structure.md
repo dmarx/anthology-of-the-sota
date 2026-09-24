@@ -6,7 +6,7 @@
 
 **Signal structure** — what the data itself is like, independent of any model — the statistics and structure of language, images and other signals that methods exploit or must respect, such as frequency spectra, heavy-tailed and Zipfian distributions, and what counts as a unit.
 
-10 of 390 SOTA documents. Back to the [full index](../README.md).
+10 of 391 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

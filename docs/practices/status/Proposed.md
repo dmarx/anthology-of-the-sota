@@ -6,7 +6,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-133 of 390 SOTA documents. Back to the [full index](../README.md).
+134 of 391 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -143,3 +143,4 @@
 | [SOTA-387](../../../record/practices.d/SOTA-387.md) | Hold out a slice of the training set for model selection instead of selecting on the validation split | Beyer et al. (2022), [LIT-628](../../../record/literature.d/LIT-628.md) — they train on the first 99% of ImageNet-1k and keep 1% as a "minival", stated as being "to encourage the community to stop selecting design choices on the validation (de-facto test) set." A convention, asserted rather than measured, and the record held no document on it. | Proposed |
 | [SOTA-389](../../../record/practices.d/SOTA-389.md) v2 | Caption training video with a model that watches the video, not with captions of its frames |  | Proposed |
 | [SOTA-390](../../../record/practices.d/SOTA-390.md) v2 | In a video diffusion transformer, attend over space and time jointly rather than factorizing, and budget for the cost |  | Proposed |
+| [SOTA-391](../../../record/practices.d/SOTA-391.md) | Estimate attention resolution before training when choosing a position encoding, and measure it across the extrapolation boundary | Sun et al. (2022), [LIT-638](../../../record/literature.d/LIT-638.md) — attention resolution scores how well an attention pattern distinguishes token distance, and is estimable from the encoding **before a run**. Measured at the training length and twice it: **RoPE 0.91 → 0.08, ALiBi 0.81 → 0.88.** The record has four practices about rotary encoding and held no measure of this. | Proposed |

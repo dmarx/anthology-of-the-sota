@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in.
 
-89 of 572 LIT documents. Back to the [full index](../README.md).
+89 of 573 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -16,7 +16,7 @@
 | [LIT-030](../../../record/literature.d/LIT-030.md) v2 | GLU Variants Improve Transformer | Shazeer et al. (2020), [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202). Study of gating mechanisms. | Active |
 | [LIT-035](../../../record/literature.d/LIT-035.md) v2 | Language Models are Few-Shot Learners | Brown et al. (2020), [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). Introduces GPT-3. | Active |
 | [LIT-045](../../../record/literature.d/LIT-045.md) v2 | RoFormer: Enhanced Transformer with Rotary Position Embedding | Su et al. (2021), [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864). Rotation-based positional encoding. | Active |
-| [LIT-048](../../../record/literature.d/LIT-048.md) v3 | Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation | Press et al. (2021), [ARXIV-2108.12409](https://arxiv.org/abs/2108.12409). Linear attention bias. | Active |
+| [LIT-048](../../../record/literature.d/LIT-048.md) v4 | Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation | Press et al. (2021), [ARXIV-2108.12409](https://arxiv.org/abs/2108.12409). Linear attention bias. | Active |
 | [LIT-052](../../../record/literature.d/LIT-052.md) v2 | Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers | Tay et al. (2021), [ARXIV-2109.10686](https://arxiv.org/abs/2109.10686). Model shape, not just model size, determines downstream fine-tuning quality; the DeepNarrow strategy reaches T5-Base quality with 50% fewer parameters and 40% faster training. | Active |
 | [LIT-060](../../../record/literature.d/LIT-060.md) v2 | Improving Language Models by Retrieving from Trillions of Tokens | Borgeaud et al. (2021), [ARXIV-2112.04426](https://arxiv.org/abs/2112.04426). Retrieval-augmented language models. | Active |
 | [LIT-061](../../../record/literature.d/LIT-061.md) v2 | Efficient Large Scale Language Modeling with Mixtures of Experts | Artetxe et al. (2021), [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684). "A detailed empirical study of how autoregressive MoE language models scale in comparison with dense models" — across in- and out-of-domain language modelling, zero- and few-shot priming, and full fine-tuning. | Active |

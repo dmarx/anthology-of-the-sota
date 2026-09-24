@@ -6,7 +6,7 @@
 
 **Tiny models** — claims that hold at the small end and not in general — sub-billion-parameter training, where the usual scaling advice inverts.
 
-6 of 572 LIT documents. Back to the [full index](../README.md).
+6 of 573 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

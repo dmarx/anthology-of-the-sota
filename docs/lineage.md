@@ -327,6 +327,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-192](../record/literature.d/LIT-192.md) — Extending Context Window of Large Language Models via Positional Interpolation *(Active)*
     - [LIT-193](../record/literature.d/LIT-193.md) — YaRN: Efficient Context Window Extension of Large Language Models *(Active)*
   - [LIT-210](../record/literature.d/LIT-210.md) — Round and Round We Go! What makes Rotary Positional Encodings useful? *(Active)*
+  - [LIT-638](../record/literature.d/LIT-638.md) — A Length-Extrapolatable Transformer *(Active)*
 - [LIT-207](../record/literature.d/LIT-207.md) — The Impact of Positional Encoding on Length Generalization in Transformers *(Active)*
   - [LIT-208](../record/literature.d/LIT-208.md) — Rope to Nope and Back Again: A New Hybrid Attention Strategy *(Active)*
   - [LIT-209](../record/literature.d/LIT-209.md) — SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling *(Active)*

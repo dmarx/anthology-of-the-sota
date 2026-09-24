@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-59 of 390 SOTA documents. Back to the [full index](../README.md).
+60 of 391 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -69,3 +69,4 @@
 | [SOTA-384](../../../record/practices.d/SOTA-384.md) | Calibrate a trained classifier with a single temperature fitted on held-out data, not with a richer map | Guo et al. (2017), [LIT-616](../../../record/literature.d/LIT-616.md) — rescale the logits by a single learned `1/T` fitted for NLL on a held-out set. It cannot change the argmax, so accuracy is unchanged by construction, and it beats vector scaling, matrix scaling, histogram binning, isotonic regression and BBQ — including the two that strictly contain it. Typical uncalibrated ECE is 4–10%. | Active |
 | [SOTA-387](../../../record/practices.d/SOTA-387.md) | Hold out a slice of the training set for model selection instead of selecting on the validation split | Beyer et al. (2022), [LIT-628](../../../record/literature.d/LIT-628.md) — they train on the first 99% of ImageNet-1k and keep 1% as a "minival", stated as being "to encourage the community to stop selecting design choices on the validation (de-facto test) set." A convention, asserted rather than measured, and the record held no document on it. | Proposed |
 | [SOTA-388](../../../record/practices.d/SOTA-388.md) | Train a plain ViT on ImageNet-1k with average pooling, fixed 2D sin-cos positions, a 1024 batch and light augmentation | Beyer et al. (2022), [LIT-628](../../../record/literature.d/LIT-628.md) — five changes, none novel, take ViT-S/16 on ImageNet-1k from **66.8% to 76.5%** at 90 epochs and **80.0%** at 300. Global average pooling, fixed 2D sin-cos position embeddings, batch 1024, RandAugment at level 10 and Mixup at p = 0.2. **6h30 on a TPUv3-8** for the 90-epoch run. | Active |
+| [SOTA-391](../../../record/practices.d/SOTA-391.md) | Estimate attention resolution before training when choosing a position encoding, and measure it across the extrapolation boundary | Sun et al. (2022), [LIT-638](../../../record/literature.d/LIT-638.md) — attention resolution scores how well an attention pattern distinguishes token distance, and is estimable from the encoding **before a run**. Measured at the training length and twice it: **RoPE 0.91 → 0.08, ALiBi 0.81 → 0.88.** The record has four practices about rotary encoding and held no measure of this. | Proposed |

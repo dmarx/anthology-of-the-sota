@@ -31,7 +31,7 @@ history:
 - version: 3
   date: '2026-09-24'
   note: >-
-    Gains the distinction its own evidence does not draw. LIT-tmp9rshd
+    Gains the distinction its own evidence does not draw. LIT-638
     separates a perplexity that does not explode from a model that uses the
     longer context, and measures RoPE resolution collapsing 0.91 to 0.08
     across the boundary this practice rescales across. The recommendation
@@ -102,7 +102,7 @@ degrades gracefully and, notably, works on unmodified pretrained models.
 ## What "it works" means here, and what it does not
 
 **A perplexity that does not explode is not a model using the longer
-context.** [LIT-tmp9rshd](../literature.d/LIT-tmp9rshd.md) states the distinction and it is worth importing,
+context.** [LIT-638](../literature.d/LIT-638.md) states the distinction and it is worth importing,
 because every result behind this practice is reported as perplexity at the
 extended length: with a proper attention map "the perplexity does not explode
 but does not decrease at the same time. The ideal situation is to use the long

@@ -1,5 +1,8 @@
 ---
+number: 391
 status: Proposed
+formerly:
+- SOTA-tmppogp0
 promote_when: >-
   Attention resolution reported by a group that is not proposing a position
   encoding — computed for two or three existing schemes as a diagnostic,
@@ -17,9 +20,9 @@ tags:
 - attention-techniques
 date: '2026-09-24'
 source:
-- LIT-tmp9rshd
+- LIT-638
 introduced_by:
-- LIT-tmp9rshd
+- LIT-638
 consensus: unreplicated
 consensus_note: >-
   One group, one paper, and the metric has not been picked up as a diagnostic
@@ -32,18 +35,18 @@ consensus_note: >-
 implementations:
 - torchscale
 summary: >-
-  Sun et al. (2022), [LIT-tmp9rshd](../literature.d/LIT-tmp9rshd.md) — attention resolution scores how well an
+  Sun et al. (2022), [LIT-638](../literature.d/LIT-638.md) — attention resolution scores how well an
   attention pattern distinguishes token distance, and is estimable from the
   encoding **before a run**. Measured at the training length and twice it:
   **RoPE 0.91 → 0.08, ALiBi 0.81 → 0.88.** The record has four practices
   about rotary encoding and held no measure of this.
 ---
 
-# SOTA-tmppogp0: Estimate attention resolution before training when choosing a position encoding, and measure it across the extrapolation boundary
+# SOTA-391: Estimate attention resolution before training when choosing a position encoding, and measure it across the extrapolation boundary
 
 ## Source
 
-Sun et al. (2022), [LIT-tmp9rshd](../literature.d/LIT-tmp9rshd.md), §3.1 and §4.3.
+Sun et al. (2022), [LIT-638](../literature.d/LIT-638.md), §3.1 and §4.3.
 
 ## When this applies
 

@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**196 document(s) awaiting a decision.**
+**197 document(s) awaiting a decision.**
 
 ## SOTAs
 
-133 of the 196.
+134 of the 197.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -36,9 +36,9 @@
 | 2026-09-08 | Proposed | [SOTA-158](../../record/practices.d/SOTA-158.md) | 8 | 0 | Bound the activation's output range when training in low precision |
 | 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 8 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
 | 2026-09-08 | Proposed | [SOTA-168](../../record/practices.d/SOTA-168.md) | 8 | 0 | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself |
+| 2026-09-08 | Proposed | [SOTA-179](../../record/practices.d/SOTA-179.md) | 6 | 0 | Truncate the rotary encoding's low frequencies rather than rescaling its base |
 | 2026-09-08 | Proposed | [SOTA-176](../../record/practices.d/SOTA-176.md) | 5 | 0 | Hybridise inside the layer: long-term slots, a sliding window, and one softmax over both, with the window size as the only dial |
 | 2026-09-08 | Proposed | [SOTA-177](../../record/practices.d/SOTA-177.md) | 4 | 0 | Decouple the erase address from the write address in a delta-rule recurrence |
-| 2026-09-08 | Proposed | [SOTA-179](../../record/practices.d/SOTA-179.md) | 4 | 0 | Truncate the rotary encoding's low frequencies rather than rescaling its base |
 | 2026-09-08 | Proposed | [SOTA-175](../../record/practices.d/SOTA-175.md) | 0 | 0 | Mask whole syntactic units for code fill-in-the-middle, not random character spans |
 | 2026-09-09 | Proposed | [SOTA-190](../../record/practices.d/SOTA-190.md) | 11 | 0 | Increase depth before any other dimension when scaling a transformer |
 | 2026-09-09 | Proposed | [SOTA-191](../../record/practices.d/SOTA-191.md) | 10 | 0 | Consider removing LayerNorm's learnable gain and bias rather than tuning them |
@@ -146,10 +146,11 @@
 | 2026-09-24 | Proposed | [SOTA-389](../../record/practices.d/SOTA-389.md) | 22 | 0 | Caption training video with a model that watches the video, not with captions of its frames |
 | 2026-09-24 | Proposed | [SOTA-385](../../record/practices.d/SOTA-385.md) | 0 | 0 | Tighten the gradient-norm clip as the model grows rather than carrying one value across scales |
 | 2026-09-24 | Proposed | [SOTA-387](../../record/practices.d/SOTA-387.md) | 0 | 0 | Hold out a slice of the training set for model selection instead of selecting on the validation split |
+| 2026-09-24 | Proposed | [SOTA-391](../../record/practices.d/SOTA-391.md) | 0 | 0 | Estimate attention resolution before training when choosing a position encoding, and measure it across the extrapolation boundary |
 
 ## THEORYs
 
-57 of the 196.
+57 of the 197.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -213,7 +214,7 @@
 
 ## LITs
 
-3 of the 196.
+3 of the 197.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -223,7 +224,7 @@
 
 ## ADRs
 
-3 of the 196.
+3 of the 197.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -235,4 +236,4 @@ The citation count is the second axis, and it flips the priority: an old proposa
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (16): [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-288](../../record/practices.d/SOTA-288.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-294](../../record/practices.d/SOTA-294.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [THEORY-065](../../record/theory.d/THEORY-065.md), [THEORY-066](../../record/theory.d/THEORY-066.md), [SOTA-385](../../record/practices.d/SOTA-385.md), [SOTA-387](../../record/practices.d/SOTA-387.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (17): [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-288](../../record/practices.d/SOTA-288.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-294](../../record/practices.d/SOTA-294.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [THEORY-065](../../record/theory.d/THEORY-065.md), [THEORY-066](../../record/theory.d/THEORY-066.md), [SOTA-385](../../record/practices.d/SOTA-385.md), [SOTA-387](../../record/practices.d/SOTA-387.md), [SOTA-391](../../record/practices.d/SOTA-391.md) — these are the cheapest to close, since nothing depends on the answer.

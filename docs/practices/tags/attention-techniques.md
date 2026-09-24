@@ -6,7 +6,7 @@
 
 **Attention techniques** — attention variants and alternative mechanisms, implementation optimizations, context length.
 
-27 of 390 SOTA documents. Back to the [full index](../README.md).
+28 of 391 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -37,3 +37,4 @@
 | [SOTA-248](../../../record/practices.d/SOTA-248.md) | Stretch and clip the softmax so an attention head can output exact zeros | Bondarenko et al. (2023), [LIT-414](../../../record/literature.d/LIT-414.md) — a head that wants to do nothing has to drive its softmax input to infinity to approximate exact zeros, and that is what creates the activation outliers that break INT8. Stretch the softmax to (γ, ζ) and clip back to (0,1) and zeros become reachable from a finite input. On BERT-base: W8A8 perplexity 1294 → 4.55, max infinity-norm 735 → 20, and the FP16 model gets slightly better rather than worse. Evidence is BERT-base, OPT-125M and ViT-S/16 — small and encoder-heavy. | Proposed |
 | [SOTA-322](../../../record/practices.d/SOTA-322.md) | Trade attention heads for depth: more heads conditions the attention block, and the layers you drop cost nothing | Saratchandran, Teney and Lucey (2025), [LIT-527](../../../record/literature.d/LIT-527.md) — more heads lower the condition number of the attention block, which is part of what depth was buying. In the five configurations where the MLP width is held fixed, raising head count and cutting layers holds or improves accuracy at **29–53% fewer parameters** — TNT-B goes 65.4M → 30.9M at identical Top-1. | Proposed |
 | [SOTA-390](../../../record/practices.d/SOTA-390.md) v2 | In a video diffusion transformer, attend over space and time jointly rather than factorizing, and budget for the cost |  | Proposed |
+| [SOTA-391](../../../record/practices.d/SOTA-391.md) | Estimate attention resolution before training when choosing a position encoding, and measure it across the extrapolation boundary | Sun et al. (2022), [LIT-638](../../../record/literature.d/LIT-638.md) — attention resolution scores how well an attention pattern distinguishes token distance, and is estimable from the encoding **before a run**. Measured at the training length and twice it: **RoPE 0.91 → 0.08, ALiBi 0.81 → 0.88.** The record has four practices about rotary encoding and held no measure of this. | Proposed |

@@ -31,6 +31,8 @@ summary: >-
   RandAugment at level 10 and Mixup at p = 0.2. **6h30 on a TPUv3-8** for the
   90-epoch run.
 ---
+<!-- inactive-ok-file: THEORY-026 — Proposed; cited in the limitations as the account under SOTA-258, and stated there as explicitly NOT evidence for the 1024 figure -->
+<!-- inactive-ok-file: SOTA-260 — Proposed; cited in the limitations to say the batch-size reduction is unsurprising given what the record already holds, and stated there as explicitly NOT evidence for the 1024 figure -->
 
 # SOTA-tmp7zgk5: Train a plain ViT on ImageNet-1k with average pooling, fixed 2D sin-cos positions, a 1024 batch and light augmentation
 
@@ -86,8 +88,17 @@ is done at 90 epochs and will conclude that longer training does not help.
   opposite of the usual direction and is not explained. 1024 beats 4096 by
   1.4 points at fixed epochs. Whether that is an optimisation effect, an
   interaction with the augmentation, or a learning-rate artefact is untested
-  here, and [SOTA-258](SOTA-258.md) and [SOTA-097](SOTA-097.md) both concern batch-size scaling from
-  different angles.
+  here.
+
+  It is at least consonant with what the record already holds. [SOTA-258](SOTA-258.md) says
+  to scale batch size with the token budget rather than with compute or model
+  size, and at a fixed 90 epochs of ImageNet-1k the token budget is fixed, so
+  a larger batch buys nothing it can use. [THEORY-026](../theory.d/THEORY-026.md) is the account —
+  critical batch size is set by how much data has been seen — and [SOTA-260](SOTA-260.md)
+  recommends the smallest batch that saturates the device. **None of that is
+  evidence for this number**, and Beyer et al. offer no analysis; it is a
+  reason the result is unsurprising rather than a reason to believe 1024
+  specifically.
 - **`converged` refers to the reachable level, not this recipe.** Two
   concurrent efforts reach comparable accuracy by other routes; that is what
   makes 80% credible and what makes "these five changes specifically" one

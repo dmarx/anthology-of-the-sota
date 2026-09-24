@@ -16,7 +16,7 @@ summary: >-
   by construction it cannot see the first frame.
 ---
 
-<!-- inactive-ok-file: SOTA-251 SOTA-263 SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
+<!-- inactive-ok-file: SOTA-251 SOTA-333 SOTA-386 SOTA-389 SOTA-390 — Proposed, and cited here to weigh the evidence for them; this document is part of that evidence, not an endorsement -->
 
 # NOTE-351: Emu Video
 

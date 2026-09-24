@@ -9,7 +9,7 @@ consensus_note: >-
   clip; the Kimi line takes the other route. The invariant is agreed, the
   instrument is not.
 title: 'Normalize the queries and keys before the attention dot product'
-version: 6
+version: 7
 history:
 - version: 2
   date: '2026-09-18'
@@ -56,6 +56,18 @@ history:
     joins it there because it ran a controlled comparison of its own. The
     recommendation, the status and the consensus reading are unchanged --
     what changes is who the record says made the claim.
+- version: 7
+  date: '2026-09-24'
+  note: >-
+    Adds a condition about what bounding the logits costs, which nobody here
+    had stated. Veličković et al. (LIT-tmpqchjl) prove that softmax
+    coefficients are capped at `(1/n)·exp(δ/θ)`, and their Proposition 3.1
+    names normalisation before the query-key mechanism as clamping the
+    activation norms — this practice, by name. A smaller logit spread is the
+    point of the recommendation and also tightens that cap. The
+    recommendation, status and consensus are unchanged: the trade is
+    unmeasured, and what it would cost is sharpness at long inputs rather than
+    stability.
 tags:
 - model-stability
 - attention-techniques
@@ -203,6 +215,32 @@ another, at 50M–307M, and nobody has adjudicated it — see
 It changes nothing about this recommendation, because bounding the logits
 suppresses both modes. It changes what to look at when deciding whether a run
 in progress is in trouble.
+
+**Bounding the logits is what this practice is for, and it is not free.**
+Veličković et al. ([LIT-tmpqchjl](../literature.d/LIT-tmpqchjl.md)) prove that a softmax over `n` items
+caps every coefficient at `(1/n)·exp(δ/θ)`, where `δ` is the logit spread — so
+how sharp a head can be at a given input size is governed by exactly the
+quantity this recommendation exists to shrink. Their Proposition 3.1 names the
+intervention directly:
+
+> there is a common practice of leveraging operators such as layer
+> normalisation… which clamps `‖x_i‖` and `‖y‖` if applied right before the
+> query-key mechanism, **accentuating the impact of Q and K's singular
+> values**.
+
+Two things follow, and they point in opposite directions. Sharpness in a
+Transformer is only reachable by growing weights — `δ ≤ 2·σ_max(Q)·σ_max(K)·
+‖y‖·max‖x‖` — which is the same weight growth this practice treats as the
+failure. And a normalised `Q` and `K` leave `δ` to the singular values alone,
+which is also `THEORY-062`'s crash predictor.
+
+**Nothing here changes the recommendation**, and the reason is that the two
+failures live at different input sizes: entropy collapse is a training
+pathology at whatever length you train on, and dispersion is an
+out-of-distribution one. Nobody has measured whether QK-normalised models
+disperse sooner than unnormalised ones, and until somebody does this is a
+consequence of two bounds rather than a cost anyone has paid. It is recorded
+because a reader who bounds the logits should know what the bound also does.
 
 `LIT-088` is a **vision encoder**. The mechanism — logit growth, entropy
 collapse, vanishing gradient — is architecture-independent and is the reason the

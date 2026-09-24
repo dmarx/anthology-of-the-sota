@@ -1,0 +1,142 @@
+---
+status: Active
+title: 'DINOv3'
+version: 1
+tags:
+- representation-and-encoding
+- vision-and-graphics
+- training-optimization
+date: '2026-09-24'
+published: '2025-08-13'
+arxiv: '2508.10104'
+first_author: 'Siméoni'
+keywords:
+- 'gram-anchoring'
+- 'dense-features'
+- 'long-training'
+- 'self-supervised'
+- 'patch-consistency'
+implementations:
+- 'DINOv3'
+summary: >-
+  Siméoni et al. (2025), [ARXIV-2508.10104](https://arxiv.org/abs/2508.10104). The finding the record needs is not
+  the model: **train a self-supervised ViT long enough and its dense features
+  rot while its global metrics keep improving.** Segmentation mIoU declines
+  after ~200k iterations and for the 7B falls below its early levels, while
+  ImageNet classification rises monotonically throughout. Gram anchoring —
+  pull the student's patch Gram matrix towards an early teacher's — repairs it,
+  and it is **a different defect from the register artifacts.**
+compared_against:
+- LIT-599
+---
+
+# LIT-tmpuy1r1: DINOv3
+
+Siméoni, Vo, Seitzer, Baldassarre, Oquab, Jose, Khalidov et al. (2025) — [ARXIV-2508.10104](https://arxiv.org/abs/2508.10104)
+
+## The finding
+
+The intent was to train a 7B model *"for an extended duration, with the notion
+that it could potentially train indefinitely."* What happened instead:
+
+- **ImageNet linear-probe top-1 improves monotonically** throughout training,
+  for both ViT-g and ViT-7B.
+- **Pascal VOC segmentation mIoU declines after roughly 200k iterations**, and
+  for the ViT-7B *"falling below its early levels."*
+
+So the two curves point in opposite directions, and the paper names the
+consequence directly: *"a relative independence between learning strong
+discriminative features and maintaining local consistency, as observed in the
+lack of correlation between global and dense performance."*
+
+**The global metric cannot tell you the dense features are rotting.** It is
+improving while they rot.
+
+## What is actually degrading
+
+Not accuracy on anything global. **Locality.** Take a reference patch and plot
+its cosine similarity to every other patch: at 200k iterations the map is
+*"smooth and well-localized"*; by 600k *"the maps degrade substantially, with
+an increasing number of irrelevant patches with high similarity to the
+reference patch."* Meanwhile the cosine similarity between the CLS token and
+the patch outputs *"gradually increases during training"* — the patches are
+drifting towards the global summary and away from their own content.
+
+**And this is not the defect registers fixed.** The paper is explicit:
+
+> These patch-level irregularities **differ from the high-norm patch outliers
+> described in Darcet et al. 2024**. Specifically, **with the integration of
+> register tokens, patch norms remain stable throughout training.**
+
+That is the same group saying their own earlier fix worked and did not cover
+this. The record filed the register story yesterday (`LIT-662`,
+`THEORY-101`, `SOTA-400`); this is a second, distinct way the same
+family's dense features go wrong, on a different axis — **training duration
+rather than model size** — and it needed a different remedy.
+
+They also note the phenomenon *"was previously observed, to a lesser extent,
+during the training of DINOv2"*, and that to their knowledge *"it remains
+unresolved to date."*
+
+## Gram anchoring
+
+Regularize the **structure of patch similarities** rather than the features.
+With `X_S` and `X_G` the `P × d` matrices of `L2`-normalized patch features for
+the student and for a **Gram teacher**:
+
+    L_Gram = ‖ X_S · X_Sᵀ − X_G · X_Gᵀ ‖²_F
+
+The Gram teacher is *"an early iteration of the teacher network, which exhibits
+superior dense properties."* The design point is in their own sentence: *"By
+operating on the Gram matrix rather than the features themselves, the local
+features are free to move, provided the structure of similarities remains the
+same."*
+
+Mechanics worth carrying:
+
+- Computed on global crops only.
+- Started late — after 1M iterations, for efficiency — and *"the late
+  application of `L_Gram` still manages to 'repair' very degraded local
+  features."*
+- The Gram teacher is refreshed to the current EMA teacher every 10k
+  iterations.
+- Effect is *"almost immediate"*: significant dense-task gains **within the
+  first 10k iterations**, with further ADE20k gains after each Gram-teacher
+  update.
+
+One diagnostic observation they draw from the loss curves: the Gram objective
+makes the **iBOT** loss fall faster and leaves the **DINO** losses largely
+alone, which *"implies that the Gram and iBOT objectives impact the features in
+a similar way, whereas the DINO losses affect them differently."*
+
+<!-- inactive-ok-block: SOTA-tmp6ly4d — Proposed, filed in this same contribution as this paper's own
+     recommendation, and Proposed for the reason this note gives: one group, one
+     model line, a technical report. -->
+`SOTA-tmp6ly4d` is the recommendation.
+
+## What it does not settle
+
+**One group, one line of models, and a technical report.** The
+degradation curves are theirs, on their recipe; the claim that it *"remains
+unresolved to date"* is a claim about the literature rather than a measurement.
+
+**The Gram teacher is a hyperparameter with no search reported here.** Which
+early iteration, and how often to refresh, are stated as choices rather than
+tuned.
+
+**It is a repair, not an account.** Why patch features lose locality under a
+global objective as training continues is not explained; the paper observes
+the decoupling and regularizes against it. The record has no theory for this
+and this note does not supply one.
+
+## Standing in the anthology
+
+Filed with `LIT-tmpxre1q` (DINO) as the two ends of a lineage the record held
+only the middle of. `LIT-599` is DINOv2 and is amended here: the recipe it
+documents is the one whose dense features degrade under extended training, by
+its own authors' later measurement.
+
+The reason this is not merely a model report (`ADR-032`) is the decoupling
+result. A self-supervised recipe whose **global evaluation improves while the
+property people use it for gets worse** is a finding about how to read
+self-supervised training, not a checkpoint announcement.

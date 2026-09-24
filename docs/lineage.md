@@ -170,6 +170,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-448](../record/literature.d/LIT-448.md) — Scalable Diffusion Models with Transformers *(Active)*
   - [LIT-622](../record/literature.d/LIT-622.md) — CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer *(Active)* — also extends LIT-623
   - [LIT-624](../record/literature.d/LIT-624.md) — Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model *(Active)*
+  - [LIT-652](../record/literature.d/LIT-652.md) — Video generation models as world simulators *(Active)* — also extends LIT-648
 - [LIT-553](../record/literature.d/LIT-553.md) — Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise *(Active)*
   - [LIT-555](../record/literature.d/LIT-555.md) — Warm Diffusion: Recipe for Blur-Noise Mixture Diffusion Models *(Active)*
 - [LIT-623](../record/literature.d/LIT-623.md) — Language Model Beats Diffusion — Tokenizer is Key to Visual Generation *(Active)*
@@ -187,12 +188,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
         - [LIT-620](../record/literature.d/LIT-620.md) — HunyuanVideo: A Systematic Framework For Large Video Generative Models *(Active)* — also extends LIT-623
         - [LIT-626](../record/literature.d/LIT-626.md) — Movie Gen: A Cast of Media Foundation Models *(Active)* — also extends LIT-062, LIT-630, LIT-635
         - [LIT-634](../record/literature.d/LIT-634.md) — Open-Sora 2.0: Training a Commercial-Level Video Generation Model in $200k *(Active)*
+- [LIT-648](../record/literature.d/LIT-648.md) — Improving Image Generation with Better Captions *(Active)*
 - alongside: [LIT-038](../record/literature.d/LIT-038.md) — Denoising Diffusion Implicit Models *(Active)*
 - alongside: [LIT-075](../record/literature.d/LIT-075.md) — Elucidating the Design Space of Diffusion-Based Generative Models *(Active)*
 - alongside: [LIT-093](../record/literature.d/LIT-093.md) — Consistency Models *(Active)*
 - alongside: [LIT-483](../record/literature.d/LIT-483.md) — Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models *(Active)*
 - alongside: [LIT-554](../record/literature.d/LIT-554.md) — Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion *(Active)*
-- alongside: [LIT-648](../record/literature.d/LIT-648.md) — Improving Image Generation with Better Captions *(Active)*
 
 ### From Denoising as Projection: Constrained Optimization with Gradient-Guided Diffusion
 

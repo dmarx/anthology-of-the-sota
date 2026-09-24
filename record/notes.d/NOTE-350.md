@@ -52,7 +52,7 @@ it cannot be iterated, but it can do the final step "in a manner
 inaccessible to the base model" (§2.1.1). Movie Gen pays for this with a
 separate upsampler. LTX-Video folds it into the decoder. The paper (§2)
 also credits Sora with a pixel-space upsampler, but Sora's report
-([LIT-tmpv3o90](../literature.d/LIT-tmpv3o90.md)) says nothing about one.
+([LIT-652](../literature.d/LIT-652.md)) says nothing about one.
 
 ## Assumptions
 

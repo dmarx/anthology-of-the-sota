@@ -141,8 +141,8 @@
 | 2026-09-23 | Proposed | [SOTA-346](../../record/practices.d/SOTA-346.md) | 1 | 0 | Retune the training timestep shift for each autoencoder latent space, and never rank latent spaces for generation under one shared schedule |
 | 2026-09-23 | Proposed | [SOTA-352](../../record/practices.d/SOTA-352.md) | 1 | 0 | When a structure predictor is made generative, add a regression model's predictions to the training data so disordered regions are learned as disorder rather than invented structure |
 | 2026-09-23 | Proposed | [SOTA-371](../../record/practices.d/SOTA-371.md) | 1 | 0 | Score topic coherence automatically as the average pointwise mutual information of a topic's top-word pairs, estimated on a large external reference corpus |
-| 2026-09-24 | Proposed | [SOTA-386](../../record/practices.d/SOTA-386.md) | 34 | 0 | Show a video diffusion model images before and alongside video |
-| 2026-09-24 | Proposed | [SOTA-389](../../record/practices.d/SOTA-389.md) | 25 | 0 | Caption training video with a model that watches the video, not with captions of its frames |
+| 2026-09-24 | Proposed | [SOTA-386](../../record/practices.d/SOTA-386.md) | 35 | 0 | Show a video diffusion model images before and alongside video |
+| 2026-09-24 | Proposed | [SOTA-389](../../record/practices.d/SOTA-389.md) | 26 | 0 | Caption training video with a model that watches the video, not with captions of its frames |
 | 2026-09-24 | Proposed | [SOTA-390](../../record/practices.d/SOTA-390.md) | 25 | 0 | In a video diffusion transformer, attend over space and time jointly rather than factorizing, and budget for the cost |
 | 2026-09-24 | Proposed | [SOTA-395](../../record/practices.d/SOTA-395.md) | 7 | 0 | Post-train an autoregressive video generator on its own rollouts, and score the whole rollout |
 | 2026-09-24 | Proposed | [SOTA-394](../../record/practices.d/SOTA-394.md) | 5 | 0 | When distilling a causal few-step video generator, take the teacher bidirectional, not causal |

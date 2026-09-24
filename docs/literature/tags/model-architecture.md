@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in.
 
-92 of 587 LIT documents. Back to the [full index](../README.md).
+93 of 588 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -102,3 +102,4 @@
 | [LIT-639](../../../record/literature.d/LIT-639.md) | ResiDual: Transformer with Dual Residual Connections | Xie et al. (2023), [ARXIV-2304.14802](https://arxiv.org/abs/2304.14802). Gives the representation-collapse argument a **rate**: in a Pre-LN transformer the per-layer change in the normalised hidden state decays as `O(1/√k)`, and adding a layer to an `N−1` layer model moves the output by `O(1/√N)`. Also measures what Pre-LN's no-warmup claim costs — **32.28 against 35.12 BLEU** at E6D6, and 31.82 against 35.18 at E12D12. | Active |
 | [LIT-641](../../../record/literature.d/LIT-641.md) | Attention Approximates Sparse Distributed Memory | Bricken and Pehlevan (2021), [ARXIV-2111.05498](https://arxiv.org/abs/2111.05498). Attention's update rule is Kanerva's sparse distributed memory read, given two conditions: `L²` normalized vectors and a fitted softmax temperature `β`. The retrodiction is the interesting part — **those two conditions are QK-norm**, published a year earlier for unrelated reasons. Trained QK-norm heads learn **β ∈ [10, 25]**, the range that interpolates between SDM's optimality criteria. | Active |
 | [LIT-651](../../../record/literature.d/LIT-651.md) | Transformers without Tears: Improving the Normalization of Self-Attention | Nguyen and Salazar (2019), [ARXIV-1910.05895](https://arxiv.org/abs/1910.05895). The first systematic evaluation of pre-norm in the base Transformer regime — and it reports a result the record's `universal` pre-norm practice does not carry: **on high-resource WMT'14 English-German, post-norm wins, 27.58 to 26.83.** Also introduces ScaleNorm, the `ℓ₂`-normalization-with-one-learned-scalar that `LIT-640`'s QK-norm is an application of. | Active |
+| [LIT-653](../../../record/literature.d/LIT-653.md) | Softmax is not Enough (for Sharp Size Generalisation) | Veličković, Perivolaropoulos, Barbero and Pascanu (2024), [ARXIV-2410.01104](https://arxiv.org/abs/2410.01104). Twenty-three practices in this record name the softmax and no note held it. This one proves a limit on it: in a Transformer over a finite vocabulary, attention coefficients **must** decay towards zero as the number of items grows, so a head that is sharp in distribution cannot stay sharp on larger inputs. Max retrieval falls from 98.6% at 16 items to 12.4% at 16,384. | Active |

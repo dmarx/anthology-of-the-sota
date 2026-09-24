@@ -1,5 +1,8 @@
 ---
+number: 98
 status: Active
+formerly:
+- THEORY-tmp4t3x7
 title: 'Softmax attention coefficients must disperse as the number of items grows, so no learned attention circuit stays sharp out of distribution'
 version: 1
 tags:
@@ -7,9 +10,9 @@ tags:
 - model-architecture
 date: '2026-09-24'
 source:
-- LIT-tmpqchjl
+- LIT-653
 summary: >-
-  Veličković et al. (2024), [LIT-tmpqchjl](../literature.d/LIT-tmpqchjl.md). With logits bounded and temperature
+  Veličković et al. (2024), [LIT-653](../literature.d/LIT-653.md). With logits bounded and temperature
   non-zero, every softmax coefficient is at most `(1/n)·exp(δ/θ)` — and in a
   Transformer over a finite vocabulary the logits are *always* bounded, so the
   bound applies in every attention head. A head that looks sharp
@@ -17,11 +20,11 @@ summary: >-
   has not grown yet.
 ---
 
-# THEORY-tmp4t3x7: Softmax attention coefficients must disperse as the number of items grows, so no learned attention circuit stays sharp out of distribution
+# THEORY-098: Softmax attention coefficients must disperse as the number of items grows, so no learned attention circuit stays sharp out of distribution
 
 ## Source
 
-Veličković, Perivolaropoulos, Barbero and Pascanu (2024), `LIT-tmpqchjl`.
+Veličković, Perivolaropoulos, Barbero and Pascanu (2024), `LIT-653`.
 
 ## The claim
 

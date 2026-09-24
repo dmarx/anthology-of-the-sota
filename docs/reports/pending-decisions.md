@@ -194,8 +194,8 @@
 | 2026-09-21 | Proposed | [THEORY-053](../../record/theory.d/THEORY-053.md) | 1 | 0 | The Stein posterior-mean denoiser acts as an approximate projection onto the learned data geometry |
 | 2026-09-21 | Proposed | [THEORY-054](../../record/theory.d/THEORY-054.md) | 1 | 0 | The regularizer that is intractable in data space is tractable in noise space, and bounds the data-space divergence |
 | 2026-09-21 | Proposed | [THEORY-055](../../record/theory.d/THEORY-055.md) | 1 | 0 | A producer's own rate of return is the price of their time, so making them faster raises the bar on every marginal hour of improvement |
-| 2026-09-22 | Proposed | [THEORY-062](../../record/theory.d/THEORY-062.md) | 8 | 0 | What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such |
-| 2026-09-22 | Proposed | [THEORY-061](../../record/theory.d/THEORY-061.md) | 7 | 0 | Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product |
+| 2026-09-22 | Proposed | [THEORY-062](../../record/theory.d/THEORY-062.md) | 12 | 0 | What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such |
+| 2026-09-22 | Proposed | [THEORY-061](../../record/theory.d/THEORY-061.md) | 9 | 0 | Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product |
 | 2026-09-22 | Proposed | [THEORY-071](../../record/theory.d/THEORY-071.md) | 6 | 0 | A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips at a critical dataset size |
 | 2026-09-22 | Proposed | [THEORY-072](../../record/theory.d/THEORY-072.md) | 6 | 0 | Training and test loss disagree as functions of weight norm, and shrinking the norm through the gap is what takes so long |
 | 2026-09-22 | Proposed | [THEORY-070](../../record/theory.d/THEORY-070.md) | 5 | 0 | Grokking is the transition from lazy to rich training dynamics |

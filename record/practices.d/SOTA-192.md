@@ -60,7 +60,7 @@ history:
   date: '2026-09-24'
   note: >-
     Adds a condition about what bounding the logits costs, which nobody here
-    had stated. Veličković et al. (LIT-tmpqchjl) prove that softmax
+    had stated. Veličković et al. (LIT-653) prove that softmax
     coefficients are capped at `(1/n)·exp(δ/θ)`, and their Proposition 3.1
     names normalisation before the query-key mechanism as clamping the
     activation norms — this practice, by name. A smaller logit spread is the
@@ -217,7 +217,7 @@ suppresses both modes. It changes what to look at when deciding whether a run
 in progress is in trouble.
 
 **Bounding the logits is what this practice is for, and it is not free.**
-Veličković et al. ([LIT-tmpqchjl](../literature.d/LIT-tmpqchjl.md)) prove that a softmax over `n` items
+Veličković et al. ([LIT-653](../literature.d/LIT-653.md)) prove that a softmax over `n` items
 caps every coefficient at `(1/n)·exp(δ/θ)`, where `δ` is the logit spread — so
 how sharp a head can be at a given input size is governed by exactly the
 quantity this recommendation exists to shrink. Their Proposition 3.1 names the

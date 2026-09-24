@@ -6,7 +6,7 @@
 
 **Attention techniques** — attention variants and alternative mechanisms, implementation optimizations, context length.
 
-50 of 587 LIT documents. Back to the [full index](../README.md).
+51 of 588 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -60,3 +60,4 @@
 | [LIT-638](../../../record/literature.d/LIT-638.md) | A Length-Extrapolatable Transformer | Sun et al. (2022), [ARXIV-2212.10554](https://arxiv.org/abs/2212.10554). Defines **attention resolution** — a scalar for how well an attention pattern distinguishes token distance, estimable *before training* — and measures it across the extrapolation boundary. **RoPE collapses 0.91 → 0.08 at twice its training length; ALiBi holds 0.81 → 0.88** and is the only incumbent that does. The record holds both papers and four practices about RoPE, and had no measure of this. | Active |
 | [LIT-640](../../../record/literature.d/LIT-640.md) v2 | Query-Key Normalization for Transformers | Henry, Dachapally, Pawar and Chen (2020), [ARXIV-2010.04245](https://arxiv.org/abs/2010.04245). **The origin of QK-norm**, which thirty documents in this record name and `SOTA-192` recommends while sourcing an adopter. `ℓ₂`-normalize each query and key along the head dimension before the dot product, then scale by a **learnable parameter instead of dividing by √d** — so the temperature becomes a trained quantity rather than a constant. **+0.928 BLEU** averaged over five low-resource pairs. | Active |
 | [LIT-641](../../../record/literature.d/LIT-641.md) | Attention Approximates Sparse Distributed Memory | Bricken and Pehlevan (2021), [ARXIV-2111.05498](https://arxiv.org/abs/2111.05498). Attention's update rule is Kanerva's sparse distributed memory read, given two conditions: `L²` normalized vectors and a fitted softmax temperature `β`. The retrodiction is the interesting part — **those two conditions are QK-norm**, published a year earlier for unrelated reasons. Trained QK-norm heads learn **β ∈ [10, 25]**, the range that interpolates between SDM's optimality criteria. | Active |
+| [LIT-653](../../../record/literature.d/LIT-653.md) | Softmax is not Enough (for Sharp Size Generalisation) | Veličković, Perivolaropoulos, Barbero and Pascanu (2024), [ARXIV-2410.01104](https://arxiv.org/abs/2410.01104). Twenty-three practices in this record name the softmax and no note held it. This one proves a limit on it: in a Transformer over a finite vocabulary, attention coefficients **must** decay towards zero as the number of items grows, so a head that is sharp in distribution cannot stay sharp on larger inputs. Max retrieval falls from 98.6% at 16 items to 12.4% at 16,384. | Active |

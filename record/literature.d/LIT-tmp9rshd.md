@@ -1,0 +1,124 @@
+---
+status: Active
+title: 'A Length-Extrapolatable Transformer'
+version: 1
+tags:
+- analysis-and-evaluation
+- representation-and-encoding
+- attention-techniques
+date: '2026-09-24'
+published: '2022-12-01'
+arxiv: '2212.10554'
+first_author: 'Sun'
+keywords:
+- 'attention-resolution'
+- 'length-extrapolation'
+- 'position-encoding'
+- 'xpos'
+- 'blockwise-causal-attention'
+implementations:
+- torchscale
+extends:
+- LIT-045
+compared_against:
+- LIT-045
+- LIT-048
+summary: >-
+  Sun et al. (2022), [ARXIV-2212.10554](https://arxiv.org/abs/2212.10554). Defines **attention resolution** — a
+  scalar for how well an attention pattern distinguishes token distance,
+  estimable *before training* — and measures it across the extrapolation
+  boundary. **RoPE collapses 0.91 → 0.08 at twice its training length; ALiBi
+  holds 0.81 → 0.88** and is the only incumbent that does. The record holds
+  both papers and four practices about RoPE, and had no measure of this.
+---
+
+# LIT-tmp9rshd: A Length-Extrapolatable Transformer
+
+Sun, Dong, Patra, Ma, Huang, Benhaim, Chaudhary, Song and Wei (2022) — [ARXIV-2212.10554](https://arxiv.org/abs/2212.10554)
+
+## Key takeaways
+
+- **The measurement, which is why this note exists.** Average attention
+  resolution per layer, at the 1024 training length and at 2048:
+
+  | variant | 1024 (interpolation) | 2048 (extrapolation) |
+  | --- | --: | --: |
+  | absolute sinusoidal | 0.87 | **0.28** |
+  | ALiBi | 0.81 | **0.88** |
+  | RoPE (Roformer) | **0.91** | **0.08** |
+  | xPos + blockwise causal attention | 0.98 | 1.08 |
+  | xPos alone | 0.98 | 0.54 |
+
+  **RoPE is the best incumbent in-distribution and the worst out of it**, by
+  an order of magnitude. ALiBi is the only one of the three that survives the
+  boundary, and it is the weakest inside it.
+
+- **Attention resolution, defined.** With `s[n]` the expected pre-softmax
+  attention score at token distance `n`:
+
+      R(s) = Σᵢ e^{s[i]}(e^{s[i]} − e^{s[i+1]}) / (Σᵢ e^{s[i]})²
+
+  Monotonicity (`s[i] > s[i+1]`) is what it rewards; the softmax simulates
+  attention probability; the `e^{s[i]}` factor suppresses the long tail. The
+  property that makes it useful rather than descriptive: **"we can estimate
+  `s[n]` and `R(s)` quantitatively when we design Transformers"** — it is
+  computable from the encoding, before a run.
+
+- **Three design principles, stated as requirements rather than desiderata.**
+  *Order variance* (`f(P_π(X)) ≠ P_π(f(X))`; without it a transformer is a
+  bag-of-words model, and nearly every scheme satisfies it). *Translation
+  invariance* — the output should be unchanged by padding, which relative
+  schemes have and absolute ones do not. *Length extrapolation*.
+
+  The sharp remark is about why absolute sinusoidal *looks* like it should
+  satisfy the second: `PE_{pos+k}` is a linear function of `PE_pos`, but
+  adding the encoding into the word embedding "messes the attention weight,
+  where the spread form of `QK^T` has 4 components whose geometric connection
+  with position is unclear."
+
+- **ALiBi's stability is priced, and the price is named twice.** In prose:
+  its exponential decay works "like a soft sliding window", but "the absence
+  of long-term dependency contributes to a performance drop", with **ALiBi's
+  perplexity larger than RoPE by about 0.2–0.3**. In the resolution analysis:
+  ALiBi's stable number "comes from explicit decay, but it prevents the model
+  from learning position dependency itself."
+
+- **Half of their own extrapolation is not the encoding.** xPos alone reaches
+  0.54 resolution at 2048; with blockwise causal attention, 1.08. **BCA is an
+  inference-time masking change** applied to a model trained with ordinary
+  causal masking — the encoding supplies less than half the gain, and the
+  paper reports the split rather than the total.
+
+- **Not exploding is not extrapolating.** Their statement of the goal: with a
+  proper attention map "the perplexity does not explode but does not decrease
+  at the same time. **The ideal situation is to use the long context in the
+  right way**, in that case, the model should perform better instead of
+  saturation." A distinction most context-extension results do not draw.
+
+- **Setup.** 1024 hidden, 16 heads, 24 layers — "comparable to medium-size
+  GPT-3" — on a Pile subset, 16×V100, maximal length 1024 chosen partly *for*
+  extrapolation evaluation. In-distribution ablation: RoPE 17.74 perplexity
+  against xPos 17.54.
+
+## Standing in the anthology
+
+Unit 3 of `#326`, reversed from `#290`'s `D-variant` declines where it was
+recorded under the heading "Rotary Positional Embeddings" — a heading naming
+a different paper, which is the class of error `#326` exists to correct.
+
+**What the record was missing was a measure, not a method.** Four practices
+concern rotary position encoding — `SOTA-063` recommends it, `SOTA-151`
+extends context by rescaling it, `SOTA-179` truncates its low frequencies,
+`SOTA-153` drops it from a hybrid's global layers — and `SOTA-151` is already
+built on the fact that RoPE does not extrapolate. The phenomenon was held;
+the number was not, and neither was the instrument.
+
+It also settles something `LIT-048` left as a judgement. That note's standing
+section reads *"Nothing is sourced to this paper; RoPE won, and ALiBi is
+carried as the alternative that did not."* True about adoption. But on the
+one axis ALiBi was built for, **it is the only incumbent here that works** —
+and this paper prices the trade at 0.2–0.3 perplexity. Carried into `LIT-048`
+in this same contribution.
+
+`compared_against: LIT-045, LIT-048` — the comparison was run, in Table 3 and
+in the perplexity ablation, which is what `ADR-011` requires of the relation.

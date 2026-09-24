@@ -5,7 +5,16 @@ formerly:
 - NOTE-tmpjco3e
 paper: LIT-447
 title: 'SiT: Scalable Interpolant Transformers'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    Corrected the claim that R3 is new to the record. The stochastic-
+    interpolants framework (ARXIV-2303.08797), now filed, states it first, and
+    SOTA-265 records it. The Connections section now names the framework and
+    the 2209.15571 paper whose trigonometric path SiT's GVP interpolant uses.
+    The reading is otherwise unchanged.
 date: '2026-09-20'
 summary: >-
   Walks one variable at a time from DiT to SiT with the architecture,
@@ -130,7 +139,11 @@ is unreadable without knowing that the architecture is identical.
 Sits in the stochastic-interpolant and flow-matching literature, which
 generalizes score-based diffusion by decoupling the path from the process,
 and provides the first systematic empirical case for the straight-line path
-at transformer scale.
+at transformer scale. Its framework is [LIT-645](../literature.d/LIT-645.md) (2303.08797), which
+shares three of its authors and supplies most of its proofs. The freedom
+of the diffusion coefficient is stated there first, without an image
+metric; this paper is where it is measured. Its GVP interpolant is the
+trigonometric path of [LIT-644](../literature.d/LIT-644.md) (2209.15571).
 
 Forward to [LIT-449](../literature.d/LIT-449.md), which names this paper as the prior evidence for
 rectified flow and states its limitation precisely: the advantages had been
@@ -157,7 +170,10 @@ shown at small and medium scale, and only for class-conditional models.
 ## Bearing on the record
 
 - **Should produce practices** for R2 (jointly with [LIT-449](../literature.d/LIT-449.md), which
-  supplies the scale) and for R3, which the record has nothing resembling.
+  supplies the scale) and for R3. R3 is not original to this paper: the
+  interpolants framework ([LIT-645](../literature.d/LIT-645.md)) states it first. That paper is filed
+  and is `introduced_by` on the practice, [SOTA-265](../practices.d/SOTA-265.md); this paper supplies the
+  measurement.
 - **R1 nearly duplicates [SOTA-195](../practices.d/SOTA-195.md)** — predict `v` rather than the noise at low
   signal-to-noise — and is better read as independent support for it than as
   a new practice. The two arrive at velocity from different arguments:
@@ -166,7 +182,7 @@ shown at small and medium scale, and only for class-conditional models.
 - **Every sampler practice the record holds assumes the sampler is downstream
   of training** — [SOTA-203](../practices.d/SOTA-203.md) on higher-order solvers, [SOTA-207](../practices.d/SOTA-207.md) on choosing
   the deterministic one. R3 says one parameter never was, which is a free
-  tuning pass the record has not recorded.
+  tuning pass; [SOTA-265](../practices.d/SOTA-265.md) now records it.
 - **Supplies the controlled half of the rectified-flow case.** [LIT-449](../literature.d/LIT-449.md)
   has the scale and a 61-way sweep; this has one variable changed at a time.
   A practice drawn from either alone would be weaker than one drawn from both.

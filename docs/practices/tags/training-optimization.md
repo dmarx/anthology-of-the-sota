@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-105 of 397 SOTA documents. Back to the [full index](../README.md).
+107 of 399 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -115,3 +115,5 @@
 | [SOTA-386](../../../record/practices.d/SOTA-386.md) v3 | Show a video diffusion model images before and alongside video |  | Proposed |
 | [SOTA-388](../../../record/practices.d/SOTA-388.md) | Train a plain ViT on ImageNet-1k with average pooling, fixed 2D sin-cos positions, a 1024 batch and light augmentation | Beyer et al. (2022), [LIT-628](../../../record/literature.d/LIT-628.md) — five changes, none novel, take ViT-S/16 on ImageNet-1k from **66.8% to 76.5%** at 90 epochs and **80.0%** at 300. Global average pooling, fixed 2D sin-cos position embeddings, batch 1024, RandAugment at level 10 and Mixup at p = 0.2. **6h30 on a TPUv3-8** for the 90-epoch run. | Active |
 | [SOTA-395](../../../record/practices.d/SOTA-395.md) | Post-train an autoregressive video generator on its own rollouts, and score the whole rollout | Huang et al. (2025), [LIT-629](../../../record/literature.d/LIT-629.md). Training a causal video generator on context it generated itself, with a distribution-level loss over the whole clip, beats teacher-forced and diffusion-forced training under every objective tried (Table 2). It holds quality as the number of autoregressive steps grows, where they degrade. Evidence is VBench on 5s clips, and the exposure-bias mechanism is inferred, not measured. | Proposed |
+| [SOTA-398](../../../record/practices.d/SOTA-398.md) | Pretrain a vision transformer on packed, aspect-preserved images at sampled resolutions, not on fixed square crops | Dehghani et al. (2023), [LIT-657](../../../record/literature.d/LIT-657.md). Do not resize or crop images to one square resolution. Keep each image's aspect ratio and sample its resolution per example, favouring small side lengths. Pack the patches into fixed-length sequences with per-example attention masks. At matched compute this beats square fixed-resolution ViT pretraining, and matches the best ViT with 4x less compute. Most of the gain is throughput. | Proposed |
+| [SOTA-399](../../../record/practices.d/SOTA-399.md) | Choose pre-training weight decay, dropout, clipping and precision for the quantization you intend to ship |  | Proposed |

@@ -1,5 +1,8 @@
 ---
+number: 399
 status: Proposed
+formerly:
+- SOTA-tmpqmou6
 promote_when: >-
   A second group reporting the same direction on models they trained, or a
   frontier model report stating that its weight decay, dropout or training
@@ -21,19 +24,19 @@ tags:
 - training-optimization
 date: '2026-09-24'
 source:
-- LIT-tmp7791d
+- LIT-656
 introduced_by:
-- LIT-tmp7791d
+- LIT-656
 implementations: []
 explained_by:
-- THEORY-tmp3s87v
+- THEORY-100
 ---
 
-# SOTA-tmpqmou6: Choose pre-training weight decay, dropout, clipping and precision for the quantization you intend to ship
+# SOTA-399: Choose pre-training weight decay, dropout, clipping and precision for the quantization you intend to ship
 
 ## Source
 
-Ahmadian et al. (2023), `LIT-tmp7791d`.
+Ahmadian et al. (2023), `LIT-656`.
 
 ## What to do
 
@@ -64,7 +67,7 @@ hyperparameter you were setting anyway.
 **The two halves of the trade are measurable at different times**, which is
 the awkward part. The cost of a higher weight decay or no dropout is paid
 during pre-training and shows up in the model you get; the benefit is paid at
-serving time, months later. `LIT-tmp7791d` reports comparable pre-quantization
+serving time, months later. `LIT-656` reports comparable pre-quantization
 quality across its variants on its evaluations, which is the evidence that the
 cost is small — on one architecture family, on those evaluations.
 
@@ -93,6 +96,6 @@ worth having.
 
 ## Known implementations
 
-- None the record can name. `LIT-tmp7791d`'s own 410M–52B models are the only
+- None the record can name. `LIT-656`'s own 410M–52B models are the only
   ones trained this way on purpose; BLOOM-176B's relative robustness is
   consistent with it (bf16) and was not a quantization decision.

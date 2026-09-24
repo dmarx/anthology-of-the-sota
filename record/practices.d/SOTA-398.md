@@ -1,5 +1,8 @@
 ---
+number: 398
 status: Proposed
+formerly:
+- SOTA-tmpao7ji
 consensus: unreplicated
 consensus_note: >-
   One group, one paper, a large compute-matched sweep. The package clearly
@@ -22,13 +25,13 @@ promote_when: >-
   quantitative. Another report that adopts native aspect ratios does not
   count, and neither does a qualitative square-crop comparison like Sora's.
 source:
-- LIT-tmpofv7h
+- LIT-657
 introduced_by:
-- LIT-tmpofv7h
+- LIT-657
 implementations:
 - 'NaViT'
 summary: >-
-  Dehghani et al. (2023), [LIT-tmpofv7h](../literature.d/LIT-tmpofv7h.md). Do not resize or crop images to one
+  Dehghani et al. (2023), [LIT-657](../literature.d/LIT-657.md). Do not resize or crop images to one
   square resolution. Keep each image's aspect ratio and sample its
   resolution per example, favouring small side lengths. Pack the patches
   into fixed-length sequences with per-example attention masks. At matched
@@ -38,11 +41,11 @@ summary: >-
 <!-- inactive-ok-file: SOTA-251, SOTA-152 — Proposed neighbours this practice is set against; named to place it, not to rest on them -->
 
 
-# SOTA-tmpao7ji: Pretrain a vision transformer on packed, aspect-preserved images at sampled resolutions, not on fixed square crops
+# SOTA-398: Pretrain a vision transformer on packed, aspect-preserved images at sampled resolutions, not on fixed square crops
 
 ## Source
 
-Dehghani, Mustafa et al. (2023), [LIT-tmpofv7h](../literature.d/LIT-tmpofv7h.md) — [ARXIV-2307.06304](https://arxiv.org/abs/2307.06304).
+Dehghani, Mustafa et al. (2023), [LIT-657](../literature.d/LIT-657.md) — [ARXIV-2307.06304](https://arxiv.org/abs/2307.06304).
 
 ## The recipe
 

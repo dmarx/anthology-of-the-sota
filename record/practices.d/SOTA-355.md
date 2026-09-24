@@ -10,7 +10,7 @@ history:
   date: '2026-09-24'
   note: >-
     Adds a condition and leaves the recommendation alone. Ahmadian et al.
-    (LIT-tmp7791d) hold the architecture fixed, vary weight decay, dropout,
+    (LIT-656) hold the architecture fixed, vary weight decay, dropout,
     clipping and dtype from 410M to 52B, and find outlier dimensions track
     those rather than parameter count — so "emergent", in this title and in
     the source, is contested. They also could not make this document's
@@ -42,7 +42,7 @@ summary: >-
   8-bit, no measured quality cost up to 175B.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpqmou6, THEORY-tmp3s87v — both Proposed, filed in this same contribution and
+<!-- inactive-ok-file: SOTA-399, THEORY-100 — both Proposed, filed in this same contribution and
      named in a condition that says this practice's framing is CONTESTED by
      them. The condition depends on their being unsettled: if they were
      Active this section would be a supersession rather than a caveat, and
@@ -55,13 +55,13 @@ Dettmers et al. (2022), [LIT-586](../literature.d/LIT-586.md) — [ARXIV-2208.07
 
 ## Two conditions, one on the word in the title and one on step 2
 
-**"Emergent" is contested.** Ahmadian et al. ([LIT-tmp7791d](../literature.d/LIT-tmp7791d.md)) ran the
+**"Emergent" is contested.** Ahmadian et al. ([LIT-656](../literature.d/LIT-656.md)) ran the
 controlled version of the question — same architecture, varying weight decay,
 dropout, gradient clipping and half-precision format, 410M to 52B, every
 variant from scratch and at comparable pre-quantization quality — and found
 the sensitivity tracks those choices rather than parameter count. Their 52B
 model loses nothing to plain INT8 where OPT-66B is reported to lose about 42%.
-[THEORY-tmp3s87v](../theory.d/THEORY-tmp3s87v.md) holds that account; [SOTA-tmpqmou6](SOTA-tmpqmou6.md) is what to do about it
+[THEORY-100](../theory.d/THEORY-100.md) holds that account; [SOTA-399](SOTA-399.md) is what to do about it
 before training. The title keeps the word because it is the source's and the
 technique is known by it.
 

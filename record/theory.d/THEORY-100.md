@@ -1,5 +1,8 @@
 ---
+number: 100
 status: Proposed
+formerly:
+- THEORY-tmp3s87v
 promote_when: >-
   A second group training matched models under different optimization settings
   and reproducing the separation — ideally including a model deliberately
@@ -17,11 +20,11 @@ tags:
 - capability-thresholds
 date: '2026-09-24'
 source:
-- LIT-tmp7791d
+- LIT-656
 explains:
-- SOTA-tmpqmou6
+- SOTA-399
 summary: >-
-  Ahmadian et al. (2023), [LIT-tmp7791d](../literature.d/LIT-tmp7791d.md). The sharp post-training quantization
+  Ahmadian et al. (2023), [LIT-656](../literature.d/LIT-656.md). The sharp post-training quantization
   failure above ~6B was described as emergent. Hold the architecture fixed and
   vary weight decay, dropout, gradient clipping and half-precision format, and
   the failure moves with those instead: 0.09% degradation against 1.36% at 6B,
@@ -29,16 +32,16 @@ summary: >-
   discontinuity is in the recipe, not the parameter count.**
 ---
 
-<!-- inactive-ok-file: SOTA-tmpqmou6 — Proposed, filed in this same contribution as the practice this
+<!-- inactive-ok-file: SOTA-399 — Proposed, filed in this same contribution as the practice this
      account explains; the relation is declared, so the citation is the
      relation. Both rest on the same single study, which is the state being
      recorded rather than a problem. -->
-# THEORY-tmp3s87v: Activation outliers are a product of pre-training optimization choices, not an emergent property of scale
+# THEORY-100: Activation outliers are a product of pre-training optimization choices, not an emergent property of scale
 
 ## Source
 
 Ahmadian, Dash, Chen, Venkitesh, Gou, Blunsom, Üstün and Hooker (2023),
-`LIT-tmp7791d`.
+`LIT-656`.
 
 ## The claim
 
@@ -55,7 +58,7 @@ pre-norm block it sets the spread of the activations entering the projections,
 its standard deviation is larger in the variants that degrade, and settings
 that keep weights small keep it small.
 
-The consequence for a practitioner is `SOTA-tmpqmou6`. The consequence for
+The consequence for a practitioner is `SOTA-399`. The consequence for
 the record is that a cliff attributed to scale had a second variable nobody
 was holding fixed — **the two public models the story was measured on differ
 in training dtype**, and one of them has its LayerNorm gains hardcoded.

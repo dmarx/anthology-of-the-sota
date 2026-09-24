@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**206 document(s) awaiting a decision.**
+**209 document(s) awaiting a decision.**
 
 ## SOTAs
 
-140 of the 206.
+142 of the 209.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -25,7 +25,7 @@
 | 2026-09-07 | Proposed | [SOTA-146](../../record/practices.d/SOTA-146.md) | 9 | 0 | Correct the GRPO objective before running it — the published form has three independently identified defects |
 | 2026-09-07 | Proposed | [SOTA-148](../../record/practices.d/SOTA-148.md) | 6 | 0 | Balance mixture-of-experts load with a bias on the routing scores, not an auxiliary loss |
 | 2026-09-07 | Proposed | [SOTA-156](../../record/practices.d/SOTA-156.md) | 5 | 0 | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed |
-| 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 2 | 0 | Pack training documents by best fit instead of concatenating and splitting |
+| 2026-09-07 | Proposed | [SOTA-152](../../record/practices.d/SOTA-152.md) | 4 | 0 | Pack training documents by best fit instead of concatenating and splitting |
 | 2026-09-08 | Proposed | [SOTA-173](../../record/practices.d/SOTA-173.md) | 19 | 0 | Augment the objective to make multi-epoch pretraining productive on a fixed corpus |
 | 2026-09-08 | Proposed | [SOTA-160](../../record/practices.d/SOTA-160.md) | 15 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
 | 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 15 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
@@ -69,8 +69,8 @@
 | 2026-09-17 | Proposed | [SOTA-248](../../record/practices.d/SOTA-248.md) | 1 | 0 | Stretch and clip the softmax so an attention head can output exact zeros |
 | 2026-09-19 | Proposed | [SOTA-255](../../record/practices.d/SOTA-255.md) | 11 | 0 | Tune weight decay upward when pretraining over a repeated corpus, rather than inheriting the customary value |
 | 2026-09-19 | Proposed | [SOTA-254](../../record/practices.d/SOTA-254.md) | 8 | 0 | Train the language model as a masked diffusion model when the corpus is fixed and the compute is not |
+| 2026-09-19 | Proposed | [SOTA-251](../../record/practices.d/SOTA-251.md) | 6 | 0 | Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule |
 | 2026-09-19 | Proposed | [SOTA-256](../../record/practices.d/SOTA-256.md) | 5 | 0 | Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget |
-| 2026-09-19 | Proposed | [SOTA-251](../../record/practices.d/SOTA-251.md) | 4 | 0 | Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule |
 | 2026-09-19 | Proposed | [SOTA-257](../../record/practices.d/SOTA-257.md) | 3 | 0 | Spend surplus compute on an ensemble of independently seeded models and distil it, rather than on one larger model |
 | 2026-09-20 | Proposed | [SOTA-263](../../record/practices.d/SOTA-263.md) | 10 | 0 | Shift the timestep schedule when the resolution changes, because more pixels need more noise |
 | 2026-09-20 | Proposed | [SOTA-261](../../record/practices.d/SOTA-261.md) | 5 | 0 | Set AdamW's weight decay by targeting a timescale that follows a power law in tokens-per-parameter |
@@ -146,6 +146,8 @@
 | 2026-09-24 | Proposed | [SOTA-390](../../record/practices.d/SOTA-390.md) | 25 | 0 | In a video diffusion transformer, attend over space and time jointly rather than factorizing, and budget for the cost |
 | 2026-09-24 | Proposed | [SOTA-395](../../record/practices.d/SOTA-395.md) | 7 | 0 | Post-train an autoregressive video generator on its own rollouts, and score the whole rollout |
 | 2026-09-24 | Proposed | [SOTA-394](../../record/practices.d/SOTA-394.md) | 5 | 0 | When distilling a causal few-step video generator, take the teacher bidirectional, not causal |
+| 2026-09-24 | Proposed | [SOTA-398](../../record/practices.d/SOTA-398.md) | 3 | 0 | Pretrain a vision transformer on packed, aspect-preserved images at sampled resolutions, not on fixed square crops |
+| 2026-09-24 | Proposed | [SOTA-399](../../record/practices.d/SOTA-399.md) | 3 | 0 | Choose pre-training weight decay, dropout, clipping and precision for the quantization you intend to ship |
 | 2026-09-24 | Proposed | [SOTA-392](../../record/practices.d/SOTA-392.md) | 1 | 0 | To get a one-step sampler from a rectified flow, distil it; treat reflow as an optional extra pass, and keep the pre-reflow model for many steps |
 | 2026-09-24 | Proposed | [SOTA-385](../../record/practices.d/SOTA-385.md) | 0 | 0 | Tighten the gradient-norm clip as the model grows rather than carrying one value across scales |
 | 2026-09-24 | Proposed | [SOTA-387](../../record/practices.d/SOTA-387.md) | 0 | 0 | Hold out a slice of the training set for model selection instead of selecting on the validation split |
@@ -156,7 +158,7 @@
 
 ## THEORYs
 
-60 of the 206.
+61 of the 209.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -219,11 +221,12 @@
 | 2026-09-23 | Proposed | [THEORY-094](../../record/theory.d/THEORY-094.md) | 1 | 0 | Word vectors approximate PMI in low dimensions, and relations appear as clean directions despite a noisy fit, because text behaves as if generated by a slowly drifting discourse over isotropic word vectors |
 | 2026-09-24 | Proposed | [THEORY-096](../../record/theory.d/THEORY-096.md) | 3 | 0 | A Pre-LN residual stream's per-layer change decays as one over root k, so deep blocks cannot refine the representation |
 | 2026-09-24 | Proposed | [THEORY-099](../../record/theory.d/THEORY-099.md) | 3 | 0 | Muon's update matches the outer-product structure of associative memories, which is why it learns tail classes that Adam under-trains |
+| 2026-09-24 | Proposed | [THEORY-100](../../record/theory.d/THEORY-100.md) | 2 | 0 | Activation outliers are a product of pre-training optimization choices, not an emergent property of scale |
 | 2026-09-24 | Proposed | [THEORY-097](../../record/theory.d/THEORY-097.md) | 0 | 0 | Attention is an approximation of Kanerva's sparse distributed memory, which is why it needs normalized vectors and a fitted temperature |
 
 ## LITs
 
-3 of the 206.
+3 of the 209.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -233,7 +236,7 @@
 
 ## ADRs
 
-3 of the 206.
+3 of the 209.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

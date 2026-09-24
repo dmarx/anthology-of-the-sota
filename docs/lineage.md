@@ -2,7 +2,7 @@
 
 # Lines of work
 
-52 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+53 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -344,6 +344,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-567](../record/literature.d/LIT-567.md) — MARLIN: Mixed-Precision Auto-Regressive Parallel Inference on Large Language Models *(Active)*
 - alongside: [LIT-585](../record/literature.d/LIT-585.md) — AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration *(Active)*
 
+### From LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale
+
+- alongside: [LIT-586](../record/literature.d/LIT-586.md) — LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale *(Active)*
+- alongside: [LIT-656](../record/literature.d/LIT-656.md) — Intriguing Properties of Quantization at Scale *(Active)*
+
 ## representation-and-encoding
 
 ### From RoFormer: Enhanced Transformer with Rotary Position Embedding
@@ -535,6 +540,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-587](../record/literature.d/LIT-587.md) — An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale *(Active)*
   - [LIT-628](../record/literature.d/LIT-628.md) — Better plain ViT baselines for ImageNet-1k *(Active)*
+  - [LIT-657](../record/literature.d/LIT-657.md) — Patch n' Pack: NaViT, a Vision Transformer for any Aspect Ratio and Resolution *(Active)*
 
 ### From Momentum Contrast for Unsupervised Visual Representation Learning
 

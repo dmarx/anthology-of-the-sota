@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [24 Sep 16:14 — A practice that states its own cost and cites nothing for it](2026-09.md#a-practice-that-states-its-own-cost-and-cites-nothing-for-it)
 - [24 Sep 05:50 — Reading the video line in full, and what it did to three practices](2026-09.md#reading-the-video-line-in-full-and-what-it-did-to-three-practices)
 - [24 Sep 05:20 — Not degrading and working are different claims](2026-09.md#not-degrading-and-working-are-different-claims)
 - [24 Sep 05:14 — Working #331 through unit 5](2026-09.md#working-331-through-unit-5)
@@ -213,9 +214,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-206 entries across 2 books, newest first.
+207 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 204 | 2026-09-05 | 2026-09-24 |
+| [2026-09](2026-09.md) | 205 | 2026-09-05 | 2026-09-24 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

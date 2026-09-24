@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in.
 
-89 of 573 LIT documents. Back to the [full index](../README.md).
+90 of 574 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -99,3 +99,4 @@
 | [LIT-587](../../../record/literature.d/LIT-587.md) | An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale | Dosovitskiy et al. (2020), [ARXIV-2010.11929](https://arxiv.org/abs/2010.11929). Cut the image into fixed patches, linearly embed them, and feed the sequence to an unmodified transformer encoder. The result is not that the architecture is better — it is that at enough pre-training data the convolutional prior stops paying for itself, and below that threshold it still does. | Active |
 | [LIT-622](../../../record/literature.d/LIT-622.md) v2 | CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer | Yang, Teng et al., Tsinghua and Zhipu AI (2024), [ARXIV-2408.06072](https://arxiv.org/abs/2408.06072). The first widely used open DiT for text-to-video. It has a MAGVIT-style causal 3D VAE, one sequence over text and video with modality-specific adaLN, and full 3D attention. Full 3D attention beats factorized attention at 1.1× to 2.3× the forward time, rising with resolution. The architecture ablations are absent from the first arXiv version and present in the third, and the 2B model ships the position encoding they rejected. | Active |
 | [LIT-626](../../../record/literature.d/LIT-626.md) v2 | Movie Gen: A Cast of Media Foundation Models | The Movie Gen team, Meta (2024), [ARXIV-2410.13720](https://arxiv.org/abs/2410.13720). A 30B video model built from a Llama 3-style transformer, flow matching and an 8×8×8 temporal autoencoder, with the most controlled ablations in the video line. At 5B, flow matching beats diffusion and video captions beat frame captions. The "LLaMa3 scaling laws" claim rests on image-only runs at four sizes. | Active |
+| [LIT-639](../../../record/literature.d/LIT-639.md) | ResiDual: Transformer with Dual Residual Connections | Xie et al. (2023), [ARXIV-2304.14802](https://arxiv.org/abs/2304.14802). Gives the representation-collapse argument a **rate**: in a Pre-LN transformer the per-layer change in the normalised hidden state decays as `O(1/√k)`, and adding a layer to an `N−1` layer model moves the output by `O(1/√N)`. Also measures what Pre-LN's no-warmup claim costs — **32.28 against 35.12 BLEU** at E6D6, and 31.82 against 35.18 at E12D12. | Active |

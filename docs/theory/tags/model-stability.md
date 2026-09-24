@@ -6,7 +6,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-21 of 95 THEORY documents. Back to the [full index](../README.md).
+22 of 96 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -31,3 +31,4 @@
 | [THEORY-076](../../../record/theory.d/THEORY-076.md) | Under the standard parametrization a learning rate that stays stable as width grows leaves the network training as a kernel, and µP is the parametrization that escapes this by updating every layer maximally | Yang and Hu (2020), [LIT-548](../../../record/literature.d/LIT-548.md) — Tensor Programs IV. Under SP a learning rate large enough to move the features blows up the logits, and one small enough to be stable (`O(1/width)`) leaves the wide limit a kernel machine. µP rescales the readout and first layer so a width-independent rate is both stable and maximal for every layer. A theorem for SGD on MLPs. Why the *optimum* then transfers, and under Adam, is TP-V's claim, not this one. | Active |
 | [THEORY-078](../../../record/theory.d/THEORY-078.md) | Deep sine networks train when initialization holds every pre-activation near a standard normal, which keeps each layer arcsine-distributed and frequency growth slow; that initialization is what earlier periodic networks lacked | Sitzmann et al. (2020), [LIT-551](../../../record/literature.d/LIT-551.md) — with weights U(±√(6/n)), a sum of arcsine inputs is about N(0,1), and a unit normal through sin is arcsine again, so every layer sees the same distribution and few pre-activations exceed π. The mechanism is verified at initialization for 6 and 50 layers. The historical claim, that this is why periodic activations "failed to robustly outperform" before, is not tested. | Proposed |
 | [THEORY-087](../../../record/theory.d/THEORY-087.md) v2 | Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other |  | Deferred |
+| [THEORY-096](../../../record/theory.d/THEORY-096.md) | A Pre-LN residual stream's per-layer change decays as one over root k, so deep blocks cannot refine the representation | Xie et al. (2023), [LIT-639](../../../record/literature.d/LIT-639.md) — in a Pre-LN transformer the residual stream accumulates unnormalised, so by block `k` it has variance `~k` and a single block's contribution is a `1/√k` share of it. The change in the normalised input between consecutive blocks decays as `O(1/√k)`, and adding a block to an `N−1` block model moves the output `O(1/√N)`. **The architecture's benefit and its cost are the same mechanism.** | Proposed |

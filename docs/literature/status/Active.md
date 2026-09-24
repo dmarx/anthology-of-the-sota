@@ -6,7 +6,7 @@
 
 **In the anthology** — worth reading, whether or not a practice was drawn from it.
 
-555 of 573 LIT documents. Back to the [full index](../README.md).
+556 of 574 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -565,3 +565,4 @@
 | [LIT-636](../../../record/literature.d/LIT-636.md) v2 | Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow | Liu, Gong and Liu, UT Austin (2022), [ARXIV-2209.03003](https://arxiv.org/abs/2209.03003). It names rectified flow: regress a velocity onto x1 − x0 along the straight interpolation, which beats VP and sub-VP probability-flow ODEs on CIFAR-10 at the same architecture (FID 2.58 against 3.93). The "fast" in the title needs reflow or distillation. Without reflow or distillation one-step FID is 378. Distillation alone gives 6.18. One reflow gives 12.21 undistilled and 4.85 distilled, and full-simulation quality gets worse. | Active |
 | [LIT-637](../../../record/literature.d/LIT-637.md) v2 | Imagen Video: High Definition Video Generation with Diffusion Models | Ho et al., Google (2022), [ARXIV-2210.02303](https://arxiv.org/abs/2210.02303). VDM scaled into a seven-model, 11.6B cascade producing 128 frames at 1280×768. It is the first report to add a separate image-text corpus (60M internal pairs plus LAION-400M) to joint training, and it asserts the benefit without an ablation. Its tested results are that v-prediction beats ε-prediction for video super-resolution, and that distillation to 8 steps is 18× faster at a small metric cost under constant guidance and none under oscillating guidance. | Active |
 | [LIT-638](../../../record/literature.d/LIT-638.md) | A Length-Extrapolatable Transformer | Sun et al. (2022), [ARXIV-2212.10554](https://arxiv.org/abs/2212.10554). Defines **attention resolution** — a scalar for how well an attention pattern distinguishes token distance, estimable *before training* — and measures it across the extrapolation boundary. **RoPE collapses 0.91 → 0.08 at twice its training length; ALiBi holds 0.81 → 0.88** and is the only incumbent that does. The record holds both papers and four practices about RoPE, and had no measure of this. | Active |
+| [LIT-639](../../../record/literature.d/LIT-639.md) | ResiDual: Transformer with Dual Residual Connections | Xie et al. (2023), [ARXIV-2304.14802](https://arxiv.org/abs/2304.14802). Gives the representation-collapse argument a **rate**: in a Pre-LN transformer the per-layer change in the normalised hidden state decays as `O(1/√k)`, and adding a layer to an `N−1` layer model moves the output by `O(1/√N)`. Also measures what Pre-LN's no-warmup claim costs — **32.28 against 35.12 BLEU** at E6D6, and 31.82 against 35.18 at E12D12. | Active |

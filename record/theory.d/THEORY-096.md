@@ -1,5 +1,8 @@
 ---
+number: 96
 status: Proposed
+formerly:
+- THEORY-tmpt3lzt
 promote_when: >-
   The decay measured in a trained model rather than derived under
   independence: per-layer `|xˡⁿ_{k+1} − xˡⁿ_k|` plotted against `k` for a real
@@ -15,11 +18,11 @@ tags:
 - model-architecture
 date: '2026-09-24'
 source:
-- LIT-tmpeqjkq
+- LIT-639
 explains:
 - SOTA-032
 summary: >-
-  Xie et al. (2023), [LIT-tmpeqjkq](../literature.d/LIT-tmpeqjkq.md) — in a Pre-LN transformer the residual
+  Xie et al. (2023), [LIT-639](../literature.d/LIT-639.md) — in a Pre-LN transformer the residual
   stream accumulates unnormalised, so by block `k` it has variance `~k` and a
   single block's contribution is a `1/√k` share of it. The change in the
   normalised input between consecutive blocks decays as `O(1/√k)`, and adding
@@ -27,11 +30,11 @@ summary: >-
   architecture's benefit and its cost are the same mechanism.**
 ---
 
-# THEORY-tmpt3lzt: A Pre-LN residual stream's per-layer change decays as one over root k, so deep blocks cannot refine the representation
+# THEORY-096: A Pre-LN residual stream's per-layer change decays as one over root k, so deep blocks cannot refine the representation
 
 ## Source
 
-Xie et al. (2023), [LIT-tmpeqjkq](../literature.d/LIT-tmpeqjkq.md), §3.2.
+Xie et al. (2023), [LIT-639](../literature.d/LIT-639.md), §3.2.
 
 ## What it explains
 

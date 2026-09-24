@@ -6,7 +6,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-58 of 573 LIT documents. Back to the [full index](../README.md).
+59 of 574 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -68,3 +68,4 @@
 | [LIT-596](../../../record/literature.d/LIT-596.md) | Barlow Twins: Self-Supervised Learning via Redundancy Reduction | Zbontar et al. (2021), [ARXIV-2103.03230](https://arxiv.org/abs/2103.03230). Removes every asymmetry — no predictor, no stop-gradient, no moving average — and prevents collapse in the objective instead: drive the cross-correlation matrix between the two branches' outputs toward the identity. 73.2% ImageNet linear, and unlike its neighbours it wants a very high-dimensional output. | Active |
 | [LIT-598](../../../record/literature.d/LIT-598.md) | Unsupervised Learning of Visual Features by Contrasting Cluster Assignments | Caron et al. (2020), [ARXIV-2006.09882](https://arxiv.org/abs/2006.09882). Predict one view's cluster code from another view's representation instead of comparing features pairwise, with an equipartition constraint doing the anti-collapse work. 75.3% ImageNet linear — and multi-crop, which is the part that transplants into other methods for 2-4 points. | Active |
 | [LIT-599](../../../record/literature.d/LIT-599.md) | DINOv2: Learning Robust Visual Features without Supervision | Oquab et al. (2023), [ARXIV-2304.07193](https://arxiv.org/abs/2304.07193). The thesis is that existing self-supervised objectives already produce general-purpose features if the data is curated enough, so the contribution is a retrieval-based curation pipeline and the engineering to scale it — not a new objective. Frozen features, no finetuning, competitive with the best open weakly-supervised models. | Active |
+| [LIT-639](../../../record/literature.d/LIT-639.md) | ResiDual: Transformer with Dual Residual Connections | Xie et al. (2023), [ARXIV-2304.14802](https://arxiv.org/abs/2304.14802). Gives the representation-collapse argument a **rate**: in a Pre-LN transformer the per-layer change in the normalised hidden state decays as `O(1/√k)`, and adding a layer to an `N−1` layer model moves the output by `O(1/√N)`. Also measures what Pre-LN's no-warmup claim costs — **32.28 against 35.12 BLEU** at E6D6, and 31.82 against 35.18 at E12D12. | Active |

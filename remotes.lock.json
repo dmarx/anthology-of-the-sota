@@ -560,6 +560,9 @@
     "ARXIV/2211.05102": {
       "title": "Efficiently Scaling Transformer Inference"
     },
+    "ARXIV/2211.15661": {
+      "title": "What learning algorithm is in-context learning? Investigations with linear models"
+    },
     "ARXIV/2211.17192": {
       "title": "Fast Inference from Transformers via Speculative Decoding"
     },

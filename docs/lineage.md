@@ -2,7 +2,7 @@
 
 # Lines of work
 
-48 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+49 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -288,6 +288,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-584](../record/literature.d/LIT-584.md) — Accurate structure prediction of biomolecular interactions with AlphaFold 3 *(Active)*
 
 ## model-stability
+
+### From On Layer Normalization in the Transformer Architecture
+
+- [LIT-114](../record/literature.d/LIT-114.md) — On Layer Normalization in the Transformer Architecture *(Active)*
+  - [LIT-639](../record/literature.d/LIT-639.md) — ResiDual: Transformer with Dual Residual Connections *(Active)*
 
 ### From Momentum Contrast for Unsupervised Visual Representation Learning
 

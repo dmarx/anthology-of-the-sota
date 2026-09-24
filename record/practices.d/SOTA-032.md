@@ -31,7 +31,7 @@ history:
 - version: 4
   date: '2026-09-24'
   note: >-
-    The collapse cost gains a source and a rate (THEORY-tmpt3lzt), the
+    The collapse cost gains a source and a rate (THEORY-096), the
     no-warm-up consequence gains the measurement it lacked, and the
     `universal` reading gains the note it never had. The recommendation is
     unchanged. This practice had been stating the representation-collapse
@@ -44,10 +44,10 @@ consensus_note: >-
   Not doing it is what needs justifying, and the grounds are adoption rather
   than a survey: every large model in this record is pre-norm, `llama2` is
   listed here and the alternatives that exist — sandwich and peri-layernorm
-  placements, and LIT-tmpeqjkq's two streams — are rearrangements *of* it
+  placements, and LIT-639's two streams — are rearrangements *of* it
   rather than returns to post-norm. What is not established, and the reason
   this note exists rather than the value standing bare, is that the choice is
-  deliberate in each case. LIT-tmpeqjkq is the one paper here that measures
+  deliberate in each case. LIT-639 is the one paper here that measures
   both sides, and it finds post-norm failing outright at twelve encoder and
   twelve decoder layers even with warm-up — which is a reason the convergence
   is not merely inherited. Read as of 2026-09.
@@ -66,9 +66,9 @@ summary: >-
   the output are well behaved at initialization.
 explained_by:
 - THEORY-011
-- THEORY-tmpt3lzt
+- THEORY-096
 ---
-<!-- inactive-ok-file: THEORY-tmpt3lzt — Proposed, filed in this same contribution as the account under SOTA-032's cost. The practice declares explained_by on it, so the citation is the relation itself; the practice stands without the account and the account is the weaker of the two, which is why their statuses differ -->
+<!-- inactive-ok-file: THEORY-096 — Proposed, filed in this same contribution as the account under SOTA-032's cost. The practice declares explained_by on it, so the citation is the relation itself; the practice stands without the account and the account is the weaker of the two, which is why their statuses differ -->
 
 # SOTA-032: Put the layer normalization inside the residual block, before the sublayer
 
@@ -130,9 +130,9 @@ see later blocks contributing proportionally less — the representation
 collapse argument. Sandwich and peri-layernorm variants exist because of it.
 
 **That argument now has a source and a rate.** Xie et al.
-([LIT-tmpeqjkq](../literature.d/LIT-tmpeqjkq.md)) derive it: the per-layer change in the normalised hidden
+([LIT-639](../literature.d/LIT-639.md)) derive it: the per-layer change in the normalised hidden
 state decays as `O(1/√k)`, and adding a block to an `N−1` block model moves
-the output by `O(1/√N)`. [THEORY-tmpt3lzt](../theory.d/THEORY-tmpt3lzt.md) holds the account, and the
+the output by `O(1/√N)`. [THEORY-096](../theory.d/THEORY-096.md) holds the account, and the
 shape worth carrying is that **the benefit and the cost are one mechanism
 described twice** — the residual path being unrenormalised is what lets
 gradients reach the early blocks, and what lets the stream outgrow any single
@@ -151,7 +151,7 @@ are refinements of pre-norm rather than returns to post-norm.
 ## What "warm-up can be removed" costs
 
 The headline consequence above — that Pre-LN models train without a warm-up
-stage — is Xiong et al.'s and is stated here without a number. [LIT-tmpeqjkq](../literature.d/LIT-tmpeqjkq.md)
+stage — is Xiong et al.'s and is stated here without a number. [LIT-639](../literature.d/LIT-639.md)
 supplies one, on IWSLT:
 
 | method | warm-up | E6D6 | E12D12 |

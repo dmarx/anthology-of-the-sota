@@ -11,7 +11,7 @@ promote_when: >-
   the authors. The source shows it on a small RNN with videos only. A system
   that adopts the recipe without reporting the ablation does not count.
 title: 'For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-24'
@@ -32,6 +32,14 @@ history:
     model. Clean-context inference is stated in the paper's §1 and Fig. 2c,
     not only inferred. CausVid is recorded as adopting the training half
     only.
+- version: 4
+  date: '2026-09-24'
+  note: >-
+    The discrete-token condition had asserted, without a source, that
+    teacher forcing "does not diverge in the same way" for discrete tokens. It
+    now cites the RNN papers filed for the purpose (Scheduled Sampling,
+    MIXER, Professor Forcing): modest, confounded gains, and no measured
+    divergence. The recommendation is unchanged.
 tags:
 - generative-modeling
 - vision-and-graphics
@@ -128,6 +136,14 @@ length with this practice's full recipe, and Table 2 measures neither.
 - **A small convolutional RNN.** The authors name transformers and scale as
   future work
 - **The anti-drift claim is qualitative** in the source
-- **Continuous tokens.** For discrete tokens, teacher forcing does not
-  diverge in the same way, and this is not a recommendation for language
-  models
+- **Continuous tokens.** This is not a recommendation for language
+  models. The discrete-token evidence on the same mismatch is measurable
+  but modest, and none of it shows divergence. Scheduled Sampling
+  ([LIT-tmpylvlq](../literature.d/LIT-tmpylvlq.md)) has the largest effect, on its speech task: the
+  teacher-forced baseline has the best next-step error (15.0) and a
+  decoding error of 46.0, against 34.5 with scheduled sampling (its
+  Table 3). MIXER ([LIT-tmpnp0ky](../literature.d/LIT-tmpnp0ky.md)) gains 1 to 3 points, but it also
+  optimizes the test metric, so the gain is not isolated to exposure bias.
+  Professor Forcing ([LIT-tmp6j622](../literature.d/LIT-tmp6j622.md)) finds no difference on word-level Penn
+  Treebank and attributes that to dependency length; its strongest
+  result is on continuous handwriting

@@ -1,0 +1,126 @@
+---
+status: Active
+title: 'Stochastic Interpolants: A Unifying Framework for Flows and Diffusions'
+version: 1
+tags:
+- generative-modeling
+- inference-optimization
+- analysis-and-evaluation
+date: '2026-09-24'
+published: '2023-03-01'
+arxiv: '2303.08797'
+first_author: 'Albergo'
+keywords:
+- 'stochastic-interpolants'
+- 'one-sided-interpolant'
+- 'tunable-diffusion-coefficient'
+- 'probability-flow'
+- 'likelihood-control'
+- 'denoiser'
+- 'rectification'
+implementations:
+- 'SiT'
+extends:
+- LIT-tmp90ynr
+extended_by:
+- LIT-447
+summary: >-
+  Albergo, Boffi and Vanden-Eijnden (2023), [ARXIV-2303.08797](https://arxiv.org/abs/2303.08797). The earlier
+  interpolant objective is extended with a latent Gaussian term. One learned
+  velocity and score then give an ODE and a family of SDEs, all sharing the
+  interpolant's marginals, and the SDE's diffusion coefficient can be chosen
+  after training. For SDEs the regression losses bound the KL, and for the
+  ODE they do not. This is the framework SiT instantiates. The evidence that
+  SDE sampling beats ODE sampling is a 2-D checkerboard and a 128-D Gaussian
+  mixture. The paper reports no image metric and no diffusion baseline.
+---
+
+# LIT-tmpb08v0: Stochastic Interpolants: A Unifying Framework for Flows and Diffusions
+
+Albergo, Boffi and Vanden-Eijnden, New York University (2023) — [ARXIV-2303.08797](https://arxiv.org/abs/2303.08797). Read as v4, the JMLR 26 (2025) version. Authors listed alphabetically, with equal contribution.
+
+## Key takeaways
+
+- **The latent term is what is new.** x_t = I(t, x0, x1) + γ(t)z with
+  γ(0) = γ(1) = 0 (Def. 1). Remark 2 names this term, and an optional
+  coupling of x0 and x1, as the differences from [ARXIV-2209.15571](https://arxiv.org/abs/2209.15571). The term
+  smooths ρ(t) and the velocity. The paper shows this analytically on Gaussian
+  mixtures, where spurious intermediate modes disappear (Fig. 4, §4.2).
+- **The noise level is decoupled from training.** The density solves the
+  transport equation with velocity b and, for any ε(t) ≥ 0, the forward
+  and backward Fokker-Planck equations with drift b ± εs (Cor. 10). So one
+  learned b and s define an ODE and a whole family of SDEs with the same
+  marginals (Cor. 18). ε "can be specified after learning" (Fig. 3
+  caption). v1 already says so (§1.2).
+- **The losses bound SDE likelihood and not ODE likelihood.** For the ODE
+  the KL needs Fisher-divergence control that the regression does not give
+  (Lemma 21). For an SDE with ε > 0 the KL is bounded by the drift error
+  over 4ε (Lemma 22, eq. 2.42). So the b and s losses bound it (Thm. 23).
+- **Diffusion is a one-sided interpolant.** With a Gaussian base,
+  x_t = α(t)z + β(t)x1 (Def. 32, eq. 4.15). The score comes from a denoiser
+  E[z|x_t] (eq. 3.17), and the velocity comes from that same denoiser via
+  α η_z + β η_1 = x (eqs. 4.18–4.19). VP diffusion is α = √(1−t²),
+  β = t after a change of time (eq. 5.5). Its singularity at the endpoint
+  comes from compressing an infinite-time SDE, not from the density path
+  (§5.1).
+- **Rectification does not change the map.** Refitting on the learned
+  coupling gives straight trajectories with the same X_1 (Thm. 47). Straight
+  paths are "necessary … but not sufficient" for optimal transport (Remark
+  48).
+- **The SDE wins in low dimension.** On a 2-D checkerboard, every ε > 0
+  beats the ODE (Figs. 7–8). On a 5-mode Gaussian mixture in d = 128 the
+  best ε is nonzero for all four choices of learned pair. Learning b and the
+  denoiser is best (Fig. 12). The KL is measured between KDEs of the first
+  two coordinates (§7.2).
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"Illustrated on numerical examples" is the whole image story.** §7.3
+  trains one-sided linear and trigonometric interpolants on 128×128 Oxford
+  Flowers and shows samples and nearest neighbours only (Figs. 13–15). FID
+  is left "for a future study". No version reports FID or a diffusion
+  baseline. Table 3 lists an ImageNet-32 configuration that has no result
+  anywhere in the paper.
+- **The optimal ε cannot be computed as stated.** ε* in eq. 2.49 is the
+  square root of a ratio of excess losses, L − min L. The minima are
+  unknown in practice. SiT's w_KL (its eq. 13) is a different, computable
+  choice, derived from Lemma 22.
+- **v1 claimed more than later versions keep.** v1 §1.2 says the latent
+  amplitude and the noise strength "can both be tuned as model
+  hyper-parameter after training". Changing γ changes ρ(t), and so changes
+  what must be learned. By v3 only ε is post hoc.
+- **Eq. 4.9 is misprinted.** It writes α = t, β = 1 − t, which violates the
+  boundary conditions (4.2) and Table 1.
+
+## Standing in the anthology
+
+SiT ([LIT-447](LIT-447.md)) extends this paper. SiT shares three of its authors. SiT's
+Appendix A says "most proofs are derived from [2]", and [2] is this paper.
+Its own text shows what it takes:
+
+- the one-sided interpolant x_t = α_t x* + σ_t ε, reversed in time (its
+  §2.1 and eq. 12)
+- the velocity and score as conditional expectations (its eqs. 3 and 5)
+- score-from-velocity through x = E[x_t | x_t = x] (its eqs. 8–9, this
+  paper's eq. 4.18)
+- the free diffusion coefficient w_t, choosable after learning (its §2.4)
+- the SDE KL bound it cites as "Lemma 2.22 in [2]" (this is Lemma 22 in
+  v4). SiT uses it to derive w_KL (its App. A.5) and to explain why SDE
+  beats ODE (its Table 5).
+
+SiT's GVP interpolant is [ARXIV-2209.15571](https://arxiv.org/abs/2209.15571)'s trigonometric path. Its
+linear path is Liu et al.'s. SiT adds the cost-regularized w_KL,η and the
+ImageNet measurements.
+
+This moves where [SOTA-265](../practices.d/SOTA-265.md) comes from. The diffusion-coefficient identity
+it credits to [LIT-447](LIT-447.md) (`introduced_by`) and calls something "the record has
+nothing like" is Corollary 10 here, with the likelihood argument in Theorem
+23. SiT supplies the measurement on a frozen model. The earlier interpolant
+paper, [ARXIV-2209.15571](https://arxiv.org/abs/2209.15571), is filed alongside. This paper extends it.
+
+Filed without a `NOTE`: the takeaways come from one full reading of v4's
+main text and Appendix C done for this filing. The proofs in Appendix B were
+skimmed and not checked. v1 and v3 were checked only for the claims above
+and for image metrics.

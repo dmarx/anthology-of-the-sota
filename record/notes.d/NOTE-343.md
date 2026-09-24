@@ -5,7 +5,13 @@ formerly:
 - NOTE-tmpj1xug
 paper: LIT-631
 title: 'CausVid'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    DMD and DMD2 are now filed; the parenthetical saying neither was held is
+    replaced with their codes. The reading is otherwise unchanged.
 date: '2026-09-24'
 summary: >-
   Distilling a bidirectional video DiT into a 4-step block-causal student
@@ -143,7 +149,7 @@ inference it is "conditioned on the previously generated clean chunks"
 
 ## Connections
 
-It extends DMD and DMD2 (neither is held in the record) from images to
+It extends DMD ([LIT-tmp8mirn](../literature.d/LIT-tmp8mirn.md)) and DMD2 ([LIT-tmpcjcg4](../literature.d/LIT-tmpcjcg4.md)) from images to
 causal video. It borrows per-chunk independent noise from Diffusion Forcing
 ([LIT-554](../literature.d/LIT-554.md)). Self Forcing ([LIT-629](../literature.d/LIT-629.md)) replicates it inside its own framework as
 "DF + DMD". It argues that CausVid's DMD loss matches the wrong

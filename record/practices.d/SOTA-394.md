@@ -16,7 +16,13 @@ consensus_note: >-
   distribution-matching teacher for a causal 1.3B student. That is adoption
   and not a second test. Read as of 2026-09.
 title: 'When distilling a causal few-step video generator, take the teacher bidirectional, not causal'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    DMD and DMD2 are now filed; the condition that said the record did not
+    hold them cites them instead. The recommendation is unchanged.
 tags:
 - generative-modeling
 - inference-optimization
@@ -77,6 +83,7 @@ without it: 94.7 / 64.4 / 30.1 against 93.4 / 60.6 / 29.4.
   in temporal flickering and output diversity" (§5.2), and the diversity loss
   is "characteristic of reverse KL" (§6). The practice picks the teacher. It
   does not make distillation free.
-- **Distribution matching is the distillation method throughout.** The record
-  does not hold DMD or DMD2. Whether the result carries to other distillation
+- **Distribution matching is the distillation method throughout.** DMD
+  ([LIT-tmp8mirn](../literature.d/LIT-tmp8mirn.md)) and DMD2 ([LIT-tmpcjcg4](../literature.d/LIT-tmpcjcg4.md)) are its image-domain sources.
+  Whether the result carries to other distillation
   objectives is untested.

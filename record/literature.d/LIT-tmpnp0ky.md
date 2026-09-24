@@ -1,0 +1,115 @@
+---
+status: Active
+title: 'Sequence Level Training with Recurrent Neural Networks'
+version: 1
+tags:
+- training-optimization
+- adaptation-and-tuning
+- generative-modeling
+date: '2026-09-24'
+published: '2015-11-01'
+arxiv: '1511.06732'
+first_author: 'Ranzato'
+compared_against:
+- LIT-tmpylvlq
+keywords:
+- 'exposure-bias'
+- 'sequence-level-training'
+- 'mixer'
+- 'reinforce'
+- 'incremental-learning'
+- 'data-as-demonstrator'
+implementations:
+- 'MIXER (facebookresearch/MIXER)'
+summary: >-
+  Ranzato, Chopra, Auli and Zaremba, Facebook AI Research (2015),
+  [ARXIV-1511.06732](https://arxiv.org/abs/1511.06732). The paper that named exposure bias. MIXER anneals a
+  cross-entropy-trained RNN toward REINFORCE on the test metric over its
+  own samples, and beats cross-entropy by 1 to 3 points on three tasks with
+  greedy decoding. Its baselines that avoid exposure bias without a
+  sequence-level reward do not reliably help, so the gain is not shown to
+  come from fixing exposure bias.
+---
+<!-- inactive-ok-file: SOTA-333, SOTA-395 — Proposed practices this paper bears on; named as what the paper informs, not as settled advice -->
+
+
+# LIT-tmpnp0ky: Sequence Level Training with Recurrent Neural Networks
+
+Ranzato, Chopra, Auli and Zaremba, Facebook AI Research (2015; ICLR 2016) — [ARXIV-1511.06732](https://arxiv.org/abs/1511.06732). Known as "MIXER".
+
+## Key takeaways
+
+- **It names the problem.** A model trained on ground-truth prefixes and
+  run on its own is trained on "a different distribution of inputs". "We
+  refer to this discrepancy as exposure bias which occurs when a model is
+  only exposed to the training data distribution, instead of its own
+  predictions" (§1). It names a second, separate defect: the loss is at the
+  word level while evaluation is at the sequence level.
+- **The recipe.** Train with cross-entropy (XENT) for N_XENT epochs. Then
+  use XENT for the first s steps of every sequence and REINFORCE, with the
+  test metric as reward, for the rest, lowering s by Δ every N_XE+R epochs
+  until REINFORCE covers the whole sequence (Alg. 1). The REINFORCE baseline
+  is a linear regressor on the hidden state (§3.2.1). The chosen settings
+  are N_XENT = 20–25, N_XE+R = 5 and Δ = 2–3 (App. Table 2).
+- **Results, greedy decoding** (Fig. 5, test set, best of a validation
+  search per method). XENT / DAD / E2E / MIXER:
+  - Summarization, ROUGE-2: 13.01 / 12.18 / 12.78 / 16.22 (Gigaword
+    headlines, 179k training pairs, Elman RNN with 128 hidden units)
+  - Translation, BLEU-4: 17.74 / 20.12 / 17.77 / 20.73 (IWSLT14 De–En,
+    about 153k sentences, LSTM with 256 units)
+  - Captioning, BLEU-4: 27.8 / 28.16 / 26.42 / 29.16 (MSCOCO, about 80k
+    images, LSTM with 512 units, best of five references)
+- **Both halves of the schedule are needed.** REINFORCE from a random
+  policy never converged. The hybrid loss without incremental annealing was
+  "insufficient to make training take off" (§4.4).
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **The paper that named exposure bias does not isolate it.** Its Table 1
+  marks DAD (scheduled sampling) and its own E2E as avoiding exposure bias.
+  E2E ties XENT on translation (17.77 against 17.74) and loses on the other
+  two tasks. DAD loses on summarization (12.18 against 13.01). Only MIXER,
+  which also switches to a sequence-level reward, wins on all three. The
+  authors' own reading is that "these experiments demonstrate the
+  importance of optimizing for the metric used at test time" (§4.4).
+- **Optimizing one metric can cost another.** On summarization, MIXER
+  trained on ROUGE scores 5.80 BLEU, below XENT's 8.16. MIXER trained on
+  BLEU scores 15.1 ROUGE-2, below ROUGE-trained MIXER's 16.22 (§4.4).
+- **Single runs of small models.** Every number is one model per method,
+  with no variance. The largest has 512 hidden units, unrolled for 15–25
+  steps (§4).
+- **"Competitive with beam search"** (abstract) is shown only as curves
+  (Fig. 6, no numbers). Greedy MIXER is not matched by beam-searched
+  baselines on two of three tasks, and is "at least 10 times faster" than a
+  beam of 10 (§1, §4.4).
+
+## Standing in the anthology
+
+Self Forcing cites it ([NOTE-335](../notes.d/NOTE-335.md), reference [65]). [LIT-629](LIT-629.md) and the
+2026-09-24 curation entry name it without holding it. It is the source of
+the term that [LIT-629](LIT-629.md), [SOTA-395](../practices.d/SOTA-395.md) and [NOTE-335](../notes.d/NOTE-335.md) use throughout, and of the
+three papers [LIT-629](LIT-629.md) credits with naming it, the only one that uses it.
+
+It bears on [SOTA-395](../practices.d/SOTA-395.md) and [SOTA-333](../practices.d/SOTA-333.md) as a warning about attribution. [SOTA-395](../practices.d/SOTA-395.md)
+changes two things at once: the context comes from the model's own
+rollout, and the loss scores the whole clip. MIXER changed the same two things, and its own ablation found that the
+first alone did not reliably help. A reader of [SOTA-395](../practices.d/SOTA-395.md) should ask which
+of the two carries the gain.
+
+On the discrete-token condition in [SOTA-333](../practices.d/SOTA-333.md), this paper is about discrete
+tokens throughout, and it describes their errors as ones that "quickly
+accumulate" (§1). It does not measure that accumulation, and its gains are
+1 to 3 points, not a recovery from divergence.
+
+It is also the earliest document in reach of the record for the shape of
+language-model RL fine-tuning: cross-entropy first, then policy gradient on
+the model's own samples with a sequence-level reward and a variance-reducing
+baseline. [SOTA-145](../practices.d/SOTA-145.md) (a group baseline instead of a learned critic) and
+[SOTA-233](../practices.d/SOTA-233.md) (self-correction trained on the model's own traces) follow
+that shape. Neither uses the term exposure bias.
+
+Filed without a `NOTE`: the takeaways come from one full reading done for
+this filing, of the v7 text, all sixteen pages, including the
+supplementary material.

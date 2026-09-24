@@ -1,0 +1,116 @@
+---
+status: Active
+title: 'Building Normalizing Flows with Stochastic Interpolants'
+version: 1
+tags:
+- generative-modeling
+- analysis-and-evaluation
+date: '2026-09-24'
+published: '2022-09-01'
+arxiv: '2209.15571'
+first_author: 'Albergo'
+keywords:
+- 'stochastic-interpolants'
+- 'continuous-normalizing-flows'
+- 'simulation-free-training'
+- 'probability-flow'
+- 'trigonometric-interpolant'
+- 'optimal-transport'
+implementations: []
+compared_against:
+- LIT-036
+- LIT-446
+summary: >-
+  Albergo and Vanden-Eijnden (2022), [ARXIV-2209.15571](https://arxiv.org/abs/2209.15571). A continuous
+  normalizing flow can be trained without ODE solves by regressing a velocity
+  onto the time derivative of any interpolant between two densities. It is
+  one of three concurrent origins of this simulation-free objective, with
+  Flow Matching and Rectified Flow. Its path is not the straight line: every
+  experiment uses the trigonometric cos/sin interpolant, which SiT later
+  calls GVP. The image results arrived only in v3, and they are quoted
+  against diffusion baselines, not matched against them.
+extended_by:
+- LIT-tmpb08v0
+---
+
+# LIT-tmp90ynr: Building Normalizing Flows with Stochastic Interpolants
+
+Albergo and Vanden-Eijnden, New York University (2022) — [ARXIV-2209.15571](https://arxiv.org/abs/2209.15571). ICLR 2023. The model is called "InterFlow".
+
+## Key takeaways
+
+- **The objective is a quadratic regression.** For any interpolant
+  x_t = I_t(x0, x1) with independent endpoints, the interpolant's density
+  satisfies a continuity equation. Its velocity is the unique minimizer of
+  E[|v̂|² − 2 ∂_t I · v̂] (Prop. 1, eq. 9). No ODE is solved during training.
+  The per-epoch cost against FFJORD is 400× lower on MiniBooNE, with the
+  same vector-field architecture (App. I.1, Fig. I.1).
+- **The path used is trigonometric, not straight.** The paper's interpolant
+  is cos(πt/2)x0 + sin(πt/2)x1 (eq. 5). §3 uses it for every experiment "as
+  it is the one used to draw connections to … score based diffusions". The
+  straight line x0(1−t) + x1·t appears only in Remark D.5, credited to Liu et
+  al. The class a_t x0 + b_t x1 (eq. B.2) contains it, but the paper never
+  selects it.
+- **It works between any two densities.** Neither endpoint has to be
+  Gaussian. §3.2 learns a flow from one 2-D toy density to another. With a
+  Gaussian base the score follows from the velocity (Prop. 4, eq. 28). The
+  associated SDE is singular at t = 0, 1, and the velocity is not (§2.2).
+- **The loss bounds the transport error.** W2²(ρ1, ρ̂1) ≤ e^(1+2K̂)·H(v̂),
+  where K̂ is the learned field's Lipschitz constant (Prop. 3). The shifted
+  loss G̃ = 0 is a necessary, not sufficient, convergence check (eq. 11, Fig.
+  I.2).
+- **Tabular likelihoods match continuous flows.** Test NLL is −0.57 / −12.35
+  / 14.85 / 10.42 / −156.22 on POWER / GAS / HEPMASS / MINIBOONE / BSDS300,
+  against FFJORD's −0.46 / −8.59 / 14.92 / 10.43 / −157.40 (Table 2, left).
+  FFJORD is better on BSDS300. Neural Spline Flows, a discrete flow, is
+  better on four of the five.
+- **Optimizing the interpolant shortens the path.** A max-min over the
+  interpolant recovers optimal transport under assumptions (Prop. 2). It is
+  shown only on the 2-D checkerboard, with 7 Fourier coefficients (App. H,
+  Figs. H.1–H.2).
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **The diffusion comparison is quoted, not controlled.** Table 2 (right)
+  puts InterFlow's CIFAR-10 NLL 2.99 and FID 10.27 beside quoted DDPM (FID
+  3.17), ScoreSDE (2.99, 2.92), VDM and ScoreFlow. No baseline is retrained.
+  InterFlow runs on one A100 with lucidrains' DDPM U-Net, beta-reweighted
+  timesteps and no EMA (§3.4, Table 4). Its CIFAR-10 FID is the worst in
+  the table, more than three times ScoreSDE's. §3.4 calls it "proximal … though slightly behind the best".
+  On ImageNet-32 the comparison is closer: FID 8.49 against 8.42 (Soft
+  Truncation) and 10.18 (ScoreFlow). Its NLL of 3.48 is the table's best.
+- **The text and table disagree.** §3.4 reports NLLs "of 2.99 and 3.45",
+  and Table 2 gives 3.48 for ImageNet-32. Table 4 lists 315,123 training
+  points for Oxford Flowers, the same number as HEPMASS in Table 3.
+- **The images are a late addition.** v1 (30 Sep 2022) and v2 (20 Oct 2022)
+  have no image experiments and no FID. They benchmark only toy and tabular
+  density estimation. The abstract's "compares well with diffusions on image
+  generation" arrived in v3 (9 Mar 2023), after Flow Matching.
+- **The 128×128 "scaling" claim is samples only.** Oxford Flowers is shown
+  in Fig. 3 and Fig. I.3, with no metric.
+
+## Standing in the anthology
+
+Six documents name this paper and none held it. [LIT-630](LIT-630.md), [LIT-636](LIT-636.md), [SOTA-266](../practices.d/SOTA-266.md)
+and [NOTE-340](../notes.d/NOTE-340.md) call it one of three concurrent origins of the straight
+data-to-noise path, as does the 2026-09-24 curation journal. The reading
+supports a narrower claim. It is a concurrent origin of the simulation-free
+interpolant objective, which all three share. Its own path is the
+trigonometric one, and its related-work section says the other two
+"focus on straight interpolants" (§1.1). [SOTA-266](../practices.d/SOTA-266.md) should cite it for the
+objective and not for the straight line. That change strengthens [SOTA-266](../practices.d/SOTA-266.md),
+because the straight line now has two origins, not three.
+
+The trigonometric path is SiT's GVP interpolant. In SiT ([LIT-447](LIT-447.md), its
+Table 5: SiT-B, 400K steps, ODE sampling) GVP scores FID 34.6, linear 34.8
+and VP 39.8. The anthology's practice argues against VP, and this paper's
+path is not VP. The stochastic
+interpolants paper ([ARXIV-2303.08797](https://arxiv.org/abs/2303.08797), filed alongside) extends this one
+with a latent noise term and SDE samplers. That is the paper SiT builds
+on.
+
+Filed without a `NOTE`: the takeaways come from one full reading of v3,
+appendices included, done for this filing. v1 and v2 were checked only for
+their image experiments and related-work text.

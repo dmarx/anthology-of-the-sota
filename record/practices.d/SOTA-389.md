@@ -12,13 +12,25 @@ promote_when: >-
   comparison does not count.
 consensus: converged
 consensus_note: >-
-  Every video report in the record from CogVideoX on recaptions its training
-  video densely with a model that takes video input: CogVideoX (LIT-622),
-  HunyuanVideo (LIT-620), Wan (LIT-619), Open-Sora 2.0 (LIT-634) and
-  Movie Gen (LIT-626). CogVideoX calls it a significant improvement without
-  an ablation. Only Movie Gen measures it. Read as of 2026-09.
+  Converged in the recent reports: HunyuanVideo (LIT-620), Wan (LIT-619),
+  Open-Sora 2.0 (LIT-634) and Movie Gen (LIT-626) recaption with a model
+  that takes video input. CogVideoX (LIT-622) is not an example. Its
+  version 1 says the reported model trained on GPT-4 summaries of per-frame
+  image captions, and that its video captioner was for "the next
+  generation". Only Movie Gen measures the choice. SVD (LIT-625) measured a
+  related one and found the opposite (see Conditions). Read as of
+  2026-09.
 title: 'Caption training video with a model that watches the video, not with captions of its frames'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    Corrected against full readings of Movie Gen (NOTE-tmp012dg), CogVideoX
+    (NOTE-tmpkkcdb) and SVD (NOTE-tmp651x9). The motion breakdown (+10.7,
+    +16.1) is in Movie Gen's prose, which says "most", not "almost all".
+    Table 8b holds only −0.8 and +10.8. CogVideoX is removed as an adopter
+    and as an implementation. SVD's contrary captioner result is added.
 tags:
 - data-pipeline
 - generative-modeling
@@ -30,7 +42,6 @@ introduced_by:
 - LIT-626
 implementations:
 - 'Movie Gen'
-- 'CogVideoX'
 - 'HunyuanVideo'
 - 'Wan2.1'
 ---
@@ -49,14 +60,19 @@ the video**, not by captioning frames and rewriting the frame captions into
 a paragraph.
 
 Movie Gen compares the two at 5B, with the generator, data and budget
-fixed:
+fixed. The baseline captions three frames and rewrites the frame captions
+into one caption:
 
-- **Text alignment.** The video-captioned model wins by a net +10.8.
-- **Where the gain comes from.** Almost all of it is motion alignment: +10.7
-  overall and +16.1 on high-motion prompts.
-- **Visual quality** is roughly unchanged (−0.8).
+- **Text alignment.** The video-captioned model wins by a net +10.8 (Table
+  8b).
+- **Visual quality** is roughly unchanged, −0.8 (Table 8b).
+- **Where the gain comes from.** §3.6.2's prose says "most of the increase
+  coming from motion alignment (+10.7%)", "particularly on prompts that…
+  ask for a high degree of motion" (+16.1%). The breakdown is not in the
+  table and has no σ. The +16.1 could be motion alignment or total alignment
+  on the high-motion subset. The sentence allows either.
 - **Direct caption comparison.** Raters preferred the video captions
-  themselves 67% to 15%.
+  themselves 67% of the time and the frame-rewrite captions 15%.
 
 The gain is concentrated on the thing frame captions cannot describe.
 
@@ -69,7 +85,21 @@ in videos". Frame captions are a milder version of the same limit. They can
 name what is in the scene but not what happens, and "what happens" is what
 separates a video model from an image model.
 
+The analogy is loose. Make-A-Video's text reaches its video decoder only
+through one CLIP image embedding, so its limit is partly architectural.
+Captioned video alone would not have fixed it ([NOTE-tmpsnnex](../notes.d/NOTE-tmpsnnex.md)).
+
 ## Conditions
+
+- **SVD measured a related choice and found the opposite.** In its caption
+  ablation ([LIT-625](../literature.d/LIT-625.md), App. E.2.2), CoCa, an image captioner run on each
+  clip's middle frame, "surprisingly" beat the video captioner VideoBLIP on
+  SVD's human-preference Elo. The two findings don't straightforwardly
+  conflict. SVD's video captioner was a weak 2023 model, and Movie Gen's
+  baseline was a multi-frame rewrite, not a single image caption. They do
+  show that "video-native" is not enough on its own: the captioner has to be
+  good at the video part. A second comparison should report which captioner
+  it used.
 
 - **One controlled source.** The result is a human-rated win rate on 381
   prompts at 5B and 352×192. It has not been reproduced elsewhere, and the

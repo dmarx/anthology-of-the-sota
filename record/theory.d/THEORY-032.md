@@ -9,7 +9,7 @@ promote_when: >-
   the blocks that fail — and trains faster than applying spectral updates
   everywhere. That is the experiment the inequality sets up and the paper does
   not run. Since v3 the cheapest route to it is narrower and concrete: Wang et
-  al. (LIT-tmpaqpf2) ran the per-block ablation under a DIFFERENT rule and
+  al. (LIT-654) ran the per-block ablation under a DIFFERENT rule and
   found Muon on value-output plus FFN nearly recovers full Muon while Muon on
   query-key contributes little. So measure the stable rank of the incoming
   activations for QK, VO and FFN separately and see whether this condition
@@ -34,7 +34,7 @@ history:
   date: '2026-09-24'
   note: >-
     Sharpens `promote_when` into a discriminating measurement, and the account
-    is unchanged. Wang et al. (LIT-tmpaqpf2) ran the per-block ablation this
+    is unchanged. Wang et al. (LIT-654) ran the per-block ablation this
     document asked for, under a different decision rule — associative-memory
     role rather than stable rank — and found VO+FFN nearly recovers full Muon
     with QK contributing little. That establishes the half that was in doubt,

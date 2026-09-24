@@ -16,7 +16,7 @@ history:
 - version: 3
   date: '2026-09-24'
   note: >-
-    Adds where the gain comes from. Wang et al. (LIT-tmpaqpf2) ablate Muon
+    Adds where the gain comes from. Wang et al. (LIT-654) ablate Muon
     block by block: value-output attention weights plus the FFN nearly recover
     the full-Muon trajectory, and query-key contributes little. This document
     recommended an optimizer without saying which parameters it pays for, and
@@ -54,10 +54,10 @@ extends:
 explained_by:
 - THEORY-024
 - THEORY-033
-- THEORY-tmpt64ul
+- THEORY-099
 ---
 
-<!-- inactive-ok-file: THEORY-tmpt64ul — Proposed, filed in this same
+<!-- inactive-ok-file: THEORY-099 — Proposed, filed in this same
      contribution as the account under this practice's newly recorded scope
      finding. The practice declares explained_by on it, so the citation is the
      relation; the recommendation stands without the account, and the section
@@ -117,7 +117,7 @@ authors' group it changes this section again.
 ## Which parameters the gain is actually paid on
 
 This practice says to use Muon in place of AdamW and does not say where the
-advantage comes from. Wang et al. (`LIT-tmpaqpf2`) ran the ablation: train with
+advantage comes from. Wang et al. (`LIT-654`) ran the ablation: train with
 Muon on some blocks and Adam on the rest, everything else matched.
 
 - **VO + FFN nearly recovers the full-Muon trajectory**, in both gated and
@@ -130,7 +130,7 @@ Muon on some blocks and Adam on the rest, everything else matched.
 Not a parameter-count effect, and the paper says so: **QK and VO are the same
 size.** Their account is that VO and the FFN are the blocks that behave as
 associative memories, and that orthogonalising an update is what treats each
-stored outer-product direction alike — `THEORY-tmpt64ul`.
+stored outer-product direction alike — `THEORY-099`.
 
 **Nothing here changes the recommendation**, for two reasons. The recovery is
 architecture-sensitive: in the ungated setting VO + `W_out` alone nearly

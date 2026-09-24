@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [24 Sep 18:45 — A promote_when that was nearly met, by the wrong criterion](2026-09.md#a-promote_when-that-was-nearly-met-by-the-wrong-criterion)
 - [24 Sep 18:33 — The most-cited video report holds no measurement, and is cited for one it never made](2026-09.md#the-most-cited-video-report-holds-no-measurement-and-is-cited-for-one-it-never-made)
 - [24 Sep 18:18 — A component named in 23 practices and held by no note](2026-09.md#a-component-named-in-23-practices-and-held-by-no-note)
 - [24 Sep 18:04 — A practice credited the wrong origin, and the right answer was that there is none](2026-09.md#a-practice-credited-the-wrong-origin-and-the-right-answer-was-that-there-is-none)
@@ -221,9 +222,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-214 entries across 2 books, newest first.
+215 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 212 | 2026-09-05 | 2026-09-24 |
+| [2026-09](2026-09.md) | 213 | 2026-09-05 | 2026-09-24 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

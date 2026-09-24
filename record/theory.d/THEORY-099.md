@@ -1,5 +1,8 @@
 ---
+number: 99
 status: Proposed
+formerly:
+- THEORY-tmpt64ul
 promote_when: >-
   An independent group reproducing the block ablation at a scale where Muon is
   actually deployed — VO+FFN against full Muon on a model above 1B — or a
@@ -15,11 +18,11 @@ tags:
 - signal-structure
 date: '2026-09-24'
 source:
-- LIT-tmpaqpf2
+- LIT-654
 explains:
 - SOTA-121
 summary: >-
-  Wang et al. (2025), [LIT-tmpaqpf2](../literature.d/LIT-tmpaqpf2.md). A linear associative memory is a sum of
+  Wang et al. (2025), [LIT-654](../literature.d/LIT-654.md). A linear associative memory is a sum of
   outer products; orthogonalising the update treats every outer-product
   direction alike. So Muon produces more isotropic weight spectra than Adam,
   and on heavy-tailed data that shows up as **tail classes being learned**
@@ -35,11 +38,11 @@ summary: >-
      about. THEORY-081 is named as the Proposed premise this account inherits,
      which the document states as a reason for its own status. -->
 
-# THEORY-tmpt64ul: Muon's update matches the outer-product structure of associative memories, which is why it learns tail classes that Adam under-trains
+# THEORY-099: Muon's update matches the outer-product structure of associative memories, which is why it learns tail classes that Adam under-trains
 
 ## Source
 
-Wang, Zhang, Li, Du, Du, Pang, Yang, Hong and Tan (2025), `LIT-tmpaqpf2`.
+Wang, Zhang, Li, Du, Du, Pang, Yang, Hong and Tan (2025), `LIT-654`.
 
 ## The account, in three steps
 

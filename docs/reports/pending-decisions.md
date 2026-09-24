@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**192 document(s) awaiting a decision.**
+**193 document(s) awaiting a decision.**
 
 ## SOTAs
 
-129 of the 192.
+130 of the 193.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -75,7 +75,7 @@
 | 2026-09-20 | Proposed | [SOTA-261](../../record/practices.d/SOTA-261.md) | 5 | 0 | Set AdamW's weight decay by targeting a timescale that follows a power law in tokens-per-parameter |
 | 2026-09-20 | Proposed | [SOTA-274](../../record/practices.d/SOTA-274.md) | 5 | 0 | Before adopting a spectral optimizer, measure the stable rank of each block's incoming activations against its gradient's nuclear rank |
 | 2026-09-20 | Proposed | [SOTA-275](../../record/practices.d/SOTA-275.md) | 5 | 0 | Pick the depth parameterization from the residual branch: a Transformer branch has more than one transformation, so it needs the stricter rule |
-| 2026-09-20 | Proposed | [SOTA-260](../../record/practices.d/SOTA-260.md) | 3 | 0 | Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it |
+| 2026-09-20 | Proposed | [SOTA-260](../../record/practices.d/SOTA-260.md) | 4 | 0 | Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it |
 | 2026-09-20 | Proposed | [SOTA-263](../../record/practices.d/SOTA-263.md) | 3 | 0 | Shift the timestep schedule when the resolution changes, because more pixels need more noise |
 | 2026-09-20 | Proposed | [SOTA-268](../../record/practices.d/SOTA-268.md) | 3 | 0 | Do not transfer a data mixing ratio across model scales; the threshold where a domain starts being learned moves with size |
 | 2026-09-20 | Proposed | [SOTA-267](../../record/practices.d/SOTA-267.md) | 2 | 0 | Start the training distribution imbalanced and flatten it, rather than holding it uniform throughout |
@@ -142,10 +142,11 @@
 | 2026-09-23 | Proposed | [SOTA-352](../../record/practices.d/SOTA-352.md) | 1 | 0 | When a structure predictor is made generative, add a regression model's predictions to the training data so disordered regions are learned as disorder rather than invented structure |
 | 2026-09-23 | Proposed | [SOTA-371](../../record/practices.d/SOTA-371.md) | 1 | 0 | Score topic coherence automatically as the average pointwise mutual information of a topic's top-word pairs, estimated on a large external reference corpus |
 | 2026-09-24 | Proposed | [SOTA-385](../../record/practices.d/SOTA-385.md) | 0 | 0 | Tighten the gradient-norm clip as the model grows rather than carrying one value across scales |
+| 2026-09-24 | Proposed | [SOTA-387](../../record/practices.d/SOTA-387.md) | 0 | 0 | Hold out a slice of the training set for model selection instead of selecting on the validation split |
 
 ## THEORYs
 
-57 of the 192.
+57 of the 193.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -163,8 +164,8 @@
 | 2026-09-20 | Proposed | [THEORY-034](../../record/theory.d/THEORY-034.md) | 10 | 0 | Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations |
 | 2026-09-20 | Proposed | [THEORY-032](../../record/theory.d/THEORY-032.md) | 6 | 0 | A spectral update wins where the incoming activations are low stable rank and the gradient spectrum is spread out |
 | 2026-09-20 | Proposed | [THEORY-033](../../record/theory.d/THEORY-033.md) | 6 | 0 | What a spectral optimizer buys is a step size that stays optimal, not adherence to a target geometry |
+| 2026-09-20 | Proposed | [THEORY-026](../../record/theory.d/THEORY-026.md) | 4 | 0 | Critical batch size is set by how much data has been seen, not by how large the model is |
 | 2026-09-20 | Proposed | [THEORY-036](../../record/theory.d/THEORY-036.md) | 4 | 0 | Representations converge across architectures, objectives and modalities, and the endpoint is a model of what generated the data |
-| 2026-09-20 | Proposed | [THEORY-026](../../record/theory.d/THEORY-026.md) | 3 | 0 | Critical batch size is set by how much data has been seen, not by how large the model is |
 | 2026-09-20 | Proposed | [THEORY-029](../../record/theory.d/THEORY-029.md) | 3 | 0 | A model of bounded capacity allocates it across datasets like a knapsack, so the optimum jumps rather than sliding |
 | 2026-09-21 | Proposed | [THEORY-059](../../record/theory.d/THEORY-059.md) | 11 | 0 | A low-rank branch corrects quantization because weight spectra are steep and quantization-error spectra are flat |
 | 2026-09-21 | Proposed | [THEORY-060](../../record/theory.d/THEORY-060.md) | 9 | 0 | Calibration error and refinement error have separate minimizers during training, so the loss minimum is optimal for neither |
@@ -209,7 +210,7 @@
 
 ## LITs
 
-3 of the 192.
+3 of the 193.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -219,7 +220,7 @@
 
 ## ADRs
 
-3 of the 192.
+3 of the 193.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -231,4 +232,4 @@ The citation count is the second axis, and it flips the priority: an old proposa
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (15): [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-288](../../record/practices.d/SOTA-288.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-294](../../record/practices.d/SOTA-294.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [THEORY-065](../../record/theory.d/THEORY-065.md), [THEORY-066](../../record/theory.d/THEORY-066.md), [SOTA-385](../../record/practices.d/SOTA-385.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (16): [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-288](../../record/practices.d/SOTA-288.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-294](../../record/practices.d/SOTA-294.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [THEORY-065](../../record/theory.d/THEORY-065.md), [THEORY-066](../../record/theory.d/THEORY-066.md), [SOTA-385](../../record/practices.d/SOTA-385.md), [SOTA-387](../../record/practices.d/SOTA-387.md) — these are the cheapest to close, since nothing depends on the answer.

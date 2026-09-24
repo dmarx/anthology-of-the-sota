@@ -2,7 +2,7 @@
 
 # Lines of work
 
-47 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+48 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -480,6 +480,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-561](../record/literature.d/LIT-561.md) — A Style-Based Generator Architecture for Generative Adversarial Networks *(Active)*
   - [LIT-560](../record/literature.d/LIT-560.md) — Analyzing and Improving the Image Quality of StyleGAN *(Active)*
     - [LIT-559](../record/literature.d/LIT-559.md) — Alias-Free Generative Adversarial Networks *(Active)*
+
+### From An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
+
+- [LIT-587](../record/literature.d/LIT-587.md) — An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale *(Active)*
+  - [LIT-628](../record/literature.d/LIT-628.md) — Better plain ViT baselines for ImageNet-1k *(Active)*
 
 ### From Momentum Contrast for Unsupervised Visual Representation Learning
 

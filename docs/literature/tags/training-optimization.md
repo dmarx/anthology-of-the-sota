@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-133 of 562 LIT documents. Back to the [full index](../README.md).
+134 of 563 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -143,3 +143,4 @@
 | [LIT-617](../../../record/literature.d/LIT-617.md) | Scaling Language Models: Methods, Analysis & Insights from Training Gopher | Rae et al. (2021), [ARXIV-2112.11446](https://arxiv.org/abs/2112.11446). Six models on one dataset at one token budget, 44M to 280B, evaluated on 152 tasks — a controlled study of parameter scale. **The gains are nonuniform**: 51.2% of tasks improve by over 25%, 10.5% not at all, and Gopher is *worse* than its own smaller models on Abstract Algebra, Temporal Sequences and High School Mathematics. Also the allocation [LIT-068](../../../record/literature.d/LIT-068.md) corrects: 280B parameters on 300B tokens is **1.07 tokens per parameter** against Chinchilla's 20. | Active |
 | [LIT-620](../../../record/literature.d/LIT-620.md) | HunyuanVideo: A Systematic Framework For Large Video Generative Models | Kong et al., Tencent Hunyuan (2024), [ARXIV-2412.03603](https://arxiv.org/abs/2412.03603). A 13B open video model: FLUX-style dual-then-single-stream transformer, a multimodal LLM as text encoder, a from-scratch causal 3D VAE. It fits the line's only explicit video compute-optimal scaling law, on a proxy model that differs from the shipped one in objective, text encoder and conditioning. It reports no controlled ablations. | Active |
 | [LIT-626](../../../record/literature.d/LIT-626.md) | Movie Gen: A Cast of Media Foundation Models | The Movie Gen team, Meta (2024), [ARXIV-2410.13720](https://arxiv.org/abs/2410.13720). A 30B video model built from a Llama 3-style transformer, flow matching and an 8×8×8 temporal autoencoder, with the most controlled ablations in the video line. At 5B, flow matching beats diffusion and video captions beat frame captions. The "LLaMa3 scaling laws" claim rests on image-only runs at four sizes. | Active |
+| [LIT-628](../../../record/literature.d/LIT-628.md) | Better plain ViT baselines for ImageNet-1k | Beyer, Zhai and Kolesnikov (2022), [ARXIV-2205.01580](https://arxiv.org/abs/2205.01580). Four pages that move a plain ViT-S/16 on ImageNet-1k from **66.8% to 80.0%** with five changes, none of them novel and none of them a regulariser. The original recipe scores 66.8 / 67.2 / 67.1 at 90 / 150 / 300 epochs — **it cannot use more training at all.** The belief the abstract names is that ViT needs sophisticated regularisation at this scale; the answer is that standard augmentation is sufficient. | Active |

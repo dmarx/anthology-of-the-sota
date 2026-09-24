@@ -1,5 +1,8 @@
 ---
+number: 387
 status: Proposed
+formerly:
+- SOTA-tmp06fr2
 promote_when: >-
   A measurement of what selecting on the test split actually costs — the same
   design search run twice, once selecting on a held-out slice of train and
@@ -15,9 +18,9 @@ tags:
 - data-pipeline
 date: '2026-09-24'
 source:
-- LIT-tmp5t7v1
+- LIT-628
 introduced_by:
-- LIT-tmp5t7v1
+- LIT-628
 consensus: unassessed
 consensus_note: >-
   Not assessed, and the reason is that the question is about a convention
@@ -30,18 +33,18 @@ consensus_note: >-
 implementations:
 - big_vision
 summary: >-
-  Beyer et al. (2022), [LIT-tmp5t7v1](../literature.d/LIT-tmp5t7v1.md) — they train on the first 99% of
+  Beyer et al. (2022), [LIT-628](../literature.d/LIT-628.md) — they train on the first 99% of
   ImageNet-1k and keep 1% as a "minival", stated as being "to encourage the
   community to stop selecting design choices on the validation (de-facto test)
   set." A convention, asserted rather than measured, and the record held no
   document on it.
 ---
 
-# SOTA-tmp06fr2: Hold out a slice of the training set for model selection instead of selecting on the validation split
+# SOTA-387: Hold out a slice of the training set for model selection instead of selecting on the validation split
 
 ## Source
 
-Beyer, Zhai and Kolesnikov (2022), [LIT-tmp5t7v1](../literature.d/LIT-tmp5t7v1.md), §2.
+Beyer, Zhai and Kolesnikov (2022), [LIT-628](../literature.d/LIT-628.md), §2.
 
 ## When this applies
 

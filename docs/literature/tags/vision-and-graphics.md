@@ -6,7 +6,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-60 of 562 LIT documents. Back to the [full index](../README.md).
+61 of 563 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -70,3 +70,4 @@
 | [LIT-625](../../../record/literature.d/LIT-625.md) | Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets | Blattmann, Dockhorn, Kulal et al., Stability AI (2023), [ARXIV-2311.15127](https://arxiv.org/abs/2311.15127). Video LDM's architecture is held fixed, and the paper studies what the data does. Curating 4× fewer clips beats the uncurated set, and the advantage survives high-quality fine-tuning. It is the only controlled video-curation study in this line. One of its own filters lost the ablation and was kept anyway. | Active |
 | [LIT-626](../../../record/literature.d/LIT-626.md) | Movie Gen: A Cast of Media Foundation Models | The Movie Gen team, Meta (2024), [ARXIV-2410.13720](https://arxiv.org/abs/2410.13720). A 30B video model built from a Llama 3-style transformer, flow matching and an 8×8×8 temporal autoencoder, with the most controlled ablations in the video line. At 5B, flow matching beats diffusion and video captions beat frame captions. The "LLaMa3 scaling laws" claim rests on image-only runs at four sizes. | Active |
 | [LIT-627](../../../record/literature.d/LIT-627.md) | Video Diffusion Models | Ho, Salimans et al., Google (2022), [ARXIV-2204.03458](https://arxiv.org/abs/2204.03458). The first diffusion model for video: a U-Net factorized into space and time and trained jointly on videos and still frames. Adding eight still frames per video cuts FVD from 202 to 58 in a controlled ablation. The abstract's explanation, lower gradient variance, is never measured. | Active |
+| [LIT-628](../../../record/literature.d/LIT-628.md) | Better plain ViT baselines for ImageNet-1k | Beyer, Zhai and Kolesnikov (2022), [ARXIV-2205.01580](https://arxiv.org/abs/2205.01580). Four pages that move a plain ViT-S/16 on ImageNet-1k from **66.8% to 80.0%** with five changes, none of them novel and none of them a regulariser. The original recipe scores 66.8 / 67.2 / 67.1 at 90 / 150 / 300 epochs — **it cannot use more training at all.** The belief the abstract names is that ViT needs sophisticated regularisation at this scale; the answer is that standard augmentation is sufficient. | Active |

@@ -6,7 +6,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-226 of 386 SOTA documents. Back to the [full index](../README.md).
+227 of 388 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -213,7 +213,7 @@
 | [SOTA-355](../../../record/practices.d/SOTA-355.md) | Isolate the emergent outlier feature dimensions into 16-bit and quantize the rest to int8 | Dettmers et al. (2022), [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339). Quantize the projections vector-wise to int8, but pull the handful of systematically large feature dimensions out into a separate 16-bit multiplication — 99.9% of values in 8-bit, no measured quality cost up to 175B. | Active |
 | [SOTA-356](../../../record/practices.d/SOTA-356.md) | Protect the salient weight channels by scaling them before rounding, choosing them from the activations rather than the weights | Lin et al. (2023), [ARXIV-2306.00978](https://arxiv.org/abs/2306.00978). Identify the ~1% of weight channels whose activations are largest, scale them up by an equivalent transformation before rounding, and quantize everything uniformly — rather than keeping the important channels in higher precision. | Active |
 | [SOTA-357](../../../record/practices.d/SOTA-357.md) | Build a zero-shot classifier from prompt templates and ensemble them in embedding space |  | Active |
-| [SOTA-358](../../../record/practices.d/SOTA-358.md) | Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not |  | Active |
+| [SOTA-358](../../../record/practices.d/SOTA-358.md) v2 | Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not |  | Active |
 | [SOTA-359](../../../record/practices.d/SOTA-359.md) v2 | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |
 | [SOTA-360](../../../record/practices.d/SOTA-360.md) | Score a density ratio against sampled negatives instead of reconstructing the target |  | Active |
 | [SOTA-361](../../../record/practices.d/SOTA-361.md) | Compose augmentations so the shortcut dies, and tune them for the contrastive objective rather than the supervised one |  | Active |
@@ -236,3 +236,4 @@
 | [SOTA-383](../../../record/practices.d/SOTA-383.md) | Fix the sample count before comparing FID values, and settle a close comparison with an unbiased estimator rather than a tighter error bar | Bińkowski et al. (2018), [LIT-615](../../../record/literature.d/LIT-615.md) — the FID estimator is biased, the bias depends on the distribution being measured, and no unbiased estimator exists. So two FID numbers are comparable only at equal `n`, and a small standard deviation is not evidence of a converged estimate: at d=2048 and 50,000 samples their construction reversed a true ordering in 100 trials out of 100, with standard deviations of 0.2 and 0.5. | Active |
 | [SOTA-384](../../../record/practices.d/SOTA-384.md) | Calibrate a trained classifier with a single temperature fitted on held-out data, not with a richer map | Guo et al. (2017), [LIT-616](../../../record/literature.d/LIT-616.md) — rescale the logits by a single learned `1/T` fitted for NLL on a held-out set. It cannot change the argmax, so accuracy is unchanged by construction, and it beats vector scaling, matrix scaling, histogram binning, isotonic regression and BBQ — including the two that strictly contain it. Typical uncalibrated ECE is 4–10%. | Active |
 | [SOTA-386](../../../record/practices.d/SOTA-386.md) | Show a video diffusion model images before and alongside video |  | Active |
+| [SOTA-388](../../../record/practices.d/SOTA-388.md) | Train a plain ViT on ImageNet-1k with average pooling, fixed 2D sin-cos positions, a 1024 batch and light augmentation | Beyer et al. (2022), [LIT-628](../../../record/literature.d/LIT-628.md) — five changes, none novel, take ViT-S/16 on ImageNet-1k from **66.8% to 76.5%** at 90 epochs and **80.0%** at 300. Global average pooling, fixed 2D sin-cos position embeddings, batch 1024, RandAugment at level 10 and Mixup at p = 0.2. **6h30 on a TPUv3-8** for the 90-epoch run. | Active |

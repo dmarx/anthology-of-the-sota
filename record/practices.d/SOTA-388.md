@@ -1,5 +1,8 @@
 ---
+number: 388
 status: Active
+formerly:
+- SOTA-tmp7zgk5
 title: 'Train a plain ViT on ImageNet-1k with average pooling, fixed 2D sin-cos positions, a 1024 batch and light augmentation'
 version: 1
 tags:
@@ -8,9 +11,9 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-24'
 source:
-- LIT-tmp5t7v1
+- LIT-628
 introduced_by:
-- LIT-tmp5t7v1
+- LIT-628
 consensus: converged
 consensus_note: >-
   One group for the ablation, and the paper positions itself against two
@@ -25,7 +28,7 @@ consensus_note: >-
 implementations:
 - big_vision
 summary: >-
-  Beyer et al. (2022), [LIT-tmp5t7v1](../literature.d/LIT-tmp5t7v1.md) — five changes, none novel, take ViT-S/16
+  Beyer et al. (2022), [LIT-628](../literature.d/LIT-628.md) — five changes, none novel, take ViT-S/16
   on ImageNet-1k from **66.8% to 76.5%** at 90 epochs and **80.0%** at 300.
   Global average pooling, fixed 2D sin-cos position embeddings, batch 1024,
   RandAugment at level 10 and Mixup at p = 0.2. **6h30 on a TPUv3-8** for the
@@ -34,11 +37,11 @@ summary: >-
 <!-- inactive-ok-file: THEORY-026 — Proposed; cited in the limitations as the account under SOTA-258, and stated there as explicitly NOT evidence for the 1024 figure -->
 <!-- inactive-ok-file: SOTA-260 — Proposed; cited in the limitations to say the batch-size reduction is unsurprising given what the record already holds, and stated there as explicitly NOT evidence for the 1024 figure -->
 
-# SOTA-tmp7zgk5: Train a plain ViT on ImageNet-1k with average pooling, fixed 2D sin-cos positions, a 1024 batch and light augmentation
+# SOTA-388: Train a plain ViT on ImageNet-1k with average pooling, fixed 2D sin-cos positions, a 1024 batch and light augmentation
 
 ## Source
 
-Beyer, Zhai and Kolesnikov (2022), [LIT-tmp5t7v1](../literature.d/LIT-tmp5t7v1.md).
+Beyer, Zhai and Kolesnikov (2022), [LIT-628](../literature.d/LIT-628.md).
 
 ## When this applies
 

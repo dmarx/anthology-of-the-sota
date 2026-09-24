@@ -6,7 +6,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-129 of 386 SOTA documents. Back to the [full index](../README.md).
+130 of 388 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -139,3 +139,4 @@
 | [SOTA-375](../../../record/practices.d/SOTA-375.md) v2 | When training with sampled negatives, draw them from the unigram distribution raised to the 3/4 power, not from the unigram or uniform distribution | Mikolov et al. (2013), [LIT-603](../../../record/literature.d/LIT-603.md) — sample negatives in proportion to count^(3/4). That flattens the Zipfian head so frequent words are not nearly the only negatives, while keeping rare words rare. The authors report it "outperformed significantly the unigram and the uniform distributions … on every task we tried", but give no numbers. | Proposed |
 | [SOTA-378](../../../record/practices.d/SOTA-378.md) | Compare, project and orthogonalize a language model's concept directions after whitening by the unembedding covariance, not by raw cosine | Park, Choe and Veitch (2024), [LIT-606](../../../record/literature.d/LIT-606.md) — training fixes a model's representation only up to an invertible linear map, so Euclidean cosine between concept directions is not meaningful. Use ⟨u, v⟩ = uᵀ Cov(γ)⁻¹ v, with Cov(γ) the covariance of the unembedding rows, or equivalently transform by Cov(γ)^(−1/2) and then use Euclidean tools. Shown on LLaMA-2 7B and Gemma-2B by heatmap. Contested by a null for cross-lingual transport in 17 models. | Proposed |
 | [SOTA-385](../../../record/practices.d/SOTA-385.md) | Tighten the gradient-norm clip as the model grows rather than carrying one value across scales | Rae et al. (2021), [LIT-617](../../../record/literature.d/LIT-617.md) — the Gopher family clipped the global gradient norm at 1.0 for models up to 1.4B and at **0.25 for the 7.1B and 280B models**, "for improved stability". Three held practices say to clip and none names a value; this is the first number in the record, and it is not a constant. | Proposed |
+| [SOTA-387](../../../record/practices.d/SOTA-387.md) | Hold out a slice of the training set for model selection instead of selecting on the validation split | Beyer et al. (2022), [LIT-628](../../../record/literature.d/LIT-628.md) — they train on the first 99% of ImageNet-1k and keep 1% as a "minival", stated as being "to encourage the community to stop selecting design choices on the validation (de-facto test) set." A convention, asserted rather than measured, and the record held no document on it. | Proposed |

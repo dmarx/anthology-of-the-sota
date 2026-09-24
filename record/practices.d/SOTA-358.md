@@ -19,7 +19,7 @@ history:
   date: '2026-09-24'
   note: >-
     The weight shifted off the first measurement and onto the second.
-    Beyer et al. (LIT-tmp5t7v1) show the ImageNet-1k recipe those numbers
+    Beyer et al. (LIT-628) show the ImageNet-1k recipe those numbers
     came from leaves 13.2 points unclaimed, so "despite tuned
     regularisation" cannot carry the argument. The JFT subset sweep is
     unaffected and the conclusion now rests on it. Status unchanged.
@@ -79,7 +79,7 @@ hand-built prior against data volume — is not about vision.
 ## What the ImageNet-1k half no longer supports
 
 The first measurement above rests on ViT's ImageNet-1k configuration, and
-Beyer et al. ([LIT-tmp5t7v1](../literature.d/LIT-tmp5t7v1.md)) measured what that configuration was worth:
+Beyer et al. ([LIT-628](../literature.d/LIT-628.md)) measured what that configuration was worth:
 **66.8% top-1 for ViT-S/16, against 80.0% from five changes none of which is
 a regulariser.** The original recipe also does not improve with training —
 66.8 → 67.2 → 67.1 across 90, 150 and 300 epochs — so it had stopped learning

@@ -2,7 +2,7 @@
 
 # Lines of work
 
-49 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+50 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -95,6 +95,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
       - [LIT-133](../record/literature.d/LIT-133.md) — Kimi Linear: An Expressive, Efficient Attention Architecture *(Active)*
     - [LIT-165](../record/literature.d/LIT-165.md) — Mamba-3: Improved Sequence Modeling using State Space Principles *(Active)*
 - [LIT-195](../record/literature.d/LIT-195.md) — Parallelizing Linear Transformers with the Delta Rule over Sequence Length *(Active)*
+
+### From Query-Key Normalization for Transformers
+
+- alongside: [LIT-640](../record/literature.d/LIT-640.md) — Query-Key Normalization for Transformers *(Active)*
+- alongside: [LIT-641](../record/literature.d/LIT-641.md) — Attention Approximates Sparse Distributed Memory *(Active)*
 
 ## biomolecular-modeling
 

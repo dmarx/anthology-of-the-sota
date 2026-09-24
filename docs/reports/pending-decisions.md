@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**204 document(s) awaiting a decision.**
+**205 document(s) awaiting a decision.**
 
 ## SOTAs
 
-140 of the 204.
+140 of the 205.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -156,7 +156,7 @@
 
 ## THEORYs
 
-58 of the 204.
+59 of the 205.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -194,34 +194,35 @@
 | 2026-09-21 | Proposed | [THEORY-053](../../record/theory.d/THEORY-053.md) | 1 | 0 | The Stein posterior-mean denoiser acts as an approximate projection onto the learned data geometry |
 | 2026-09-21 | Proposed | [THEORY-054](../../record/theory.d/THEORY-054.md) | 1 | 0 | The regularizer that is intractable in data space is tractable in noise space, and bounds the data-space divergence |
 | 2026-09-21 | Proposed | [THEORY-055](../../record/theory.d/THEORY-055.md) | 1 | 0 | A producer's own rate of return is the price of their time, so making them faster raises the bar on every marginal hour of improvement |
-| 2026-09-22 | Proposed | [THEORY-062](../../record/theory.d/THEORY-062.md) | 6 | 0 | What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such |
+| 2026-09-22 | Proposed | [THEORY-062](../../record/theory.d/THEORY-062.md) | 8 | 0 | What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such |
+| 2026-09-22 | Proposed | [THEORY-061](../../record/theory.d/THEORY-061.md) | 7 | 0 | Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product |
 | 2026-09-22 | Proposed | [THEORY-071](../../record/theory.d/THEORY-071.md) | 6 | 0 | A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips at a critical dataset size |
 | 2026-09-22 | Proposed | [THEORY-072](../../record/theory.d/THEORY-072.md) | 6 | 0 | Training and test loss disagree as functions of weight norm, and shrinking the norm through the gap is what takes so long |
-| 2026-09-22 | Proposed | [THEORY-061](../../record/theory.d/THEORY-061.md) | 5 | 0 | Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product |
 | 2026-09-22 | Proposed | [THEORY-070](../../record/theory.d/THEORY-070.md) | 5 | 0 | Grokking is the transition from lazy to rich training dynamics |
 | 2026-09-22 | Proposed | [THEORY-074](../../record/theory.d/THEORY-074.md) | 4 | 0 | A phase transition of the Bayesian posterior and a transition in the training trajectory are different events, and only the first is well defined |
 | 2026-09-22 | Proposed | [THEORY-063](../../record/theory.d/THEORY-063.md) | 3 | 0 | Contextual concept directions sit in the low-variance tail of the unembedding spectrum while vocabulary contrasts sit at the top |
 | 2026-09-22 | Proposed | [THEORY-064](../../record/theory.d/THEORY-064.md) | 3 | 0 | Transformers are biased toward low-sensitivity functions, and that bias is what their robustness is made of |
 | 2026-09-22 | Proposed | [THEORY-073](../../record/theory.d/THEORY-073.md) | 3 | 0 | Training passes through stages marked by changes in loss-landscape degeneracy, and the loss curve does not show them |
-| 2026-09-22 | Proposed | [THEORY-065](../../record/theory.d/THEORY-065.md) | 0 | 0 | Self-attention drives tokens into a few clusters, and the spectrum of the value matrix decides the geometry they land in |
-| 2026-09-22 | Proposed | [THEORY-066](../../record/theory.d/THEORY-066.md) | 0 | 0 | Pure self-attention collapses every token onto one, and skip connections prevent it by keeping short paths alive |
+| 2026-09-22 | Proposed | [THEORY-065](../../record/theory.d/THEORY-065.md) | 2 | 0 | Self-attention drives tokens into a few clusters, and the spectrum of the value matrix decides the geometry they land in |
+| 2026-09-22 | Proposed | [THEORY-066](../../record/theory.d/THEORY-066.md) | 2 | 0 | Pure self-attention collapses every token onto one, and skip connections prevent it by keeping short paths alive |
 | 2026-09-23 | Proposed | [THEORY-089](../../record/theory.d/THEORY-089.md) | 12 | 0 | Word vectors trained on co-occurrence behave linearly because they encode log co-occurrence statistics: differences carry log ratios, which gives analogies, and sums carry products of context distributions, which gives composition |
 | 2026-09-23 | Deferred | [THEORY-087](../../record/theory.d/THEORY-087.md) | 10 | 0 | Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other |
 | 2026-09-23 | Proposed | [THEORY-090](../../record/theory.d/THEORY-090.md) | 10 | 0 | A concept's shared word-pair direction, its linear probe and its steering vector are one object, related by an inner product under which causally separable concepts are orthogonal |
 | 2026-09-23 | Proposed | [THEORY-080](../../record/theory.d/THEORY-080.md) | 7 | 0 | A diffusion process needs noise to keep its intermediate states on the data manifold, and blur helps only while noise still dominates the bands it removes |
 | 2026-09-23 | Proposed | [THEORY-078](../../record/theory.d/THEORY-078.md) | 4 | 0 | Deep sine networks train when initialization holds every pre-activation near a standard normal, which keeps each layer arcsine-distributed and frequency growth slow; that initialization is what earlier periodic networks lacked |
+| 2026-09-23 | Proposed | [THEORY-081](../../record/theory.d/THEORY-081.md) | 4 | 0 | A transformer's feed-forward layers work as key-value memories: each hidden unit's input weights match input patterns, and its output weights promote the tokens that follow them |
 | 2026-09-23 | Proposed | [THEORY-092](../../record/theory.d/THEORY-092.md) | 4 | 0 | Raising context counts to the 3/4 power helps word representations because PMI overweights rare contexts, and smoothing lowers their association scores |
 | 2026-09-23 | Proposed | [THEORY-088](../../record/theory.d/THEORY-088.md) | 2 | 0 | Masked prediction transfers across modalities only after the masking ratio is rescaled to the signal's information density |
 | 2026-09-23 | Proposed | [THEORY-091](../../record/theory.d/THEORY-091.md) | 2 | 0 | Command-to-outcome mutual information scores an interface because it measures how reliably the operator's input determines what happens at the chosen horizon, which rewards a learnable channel rather than an intuitive one |
-| 2026-09-23 | Proposed | [THEORY-081](../../record/theory.d/THEORY-081.md) | 1 | 0 | A transformer's feed-forward layers work as key-value memories: each hidden unit's input weights match input patterns, and its output weights promote the tokens that follow them |
 | 2026-09-23 | Proposed | [THEORY-084](../../record/theory.d/THEORY-084.md) | 1 | 0 | AlphaFold 2 needs the sequence alignment to find a protein's coarse fold, not to refine it, so accuracy collapses below a minimum alignment depth and barely improves above it |
 | 2026-09-23 | Proposed | [THEORY-086](../../record/theory.d/THEORY-086.md) | 1 | 0 | A text document is better modelled as a mixture of several topics, each a distribution over words, than as a draw from a single topic |
 | 2026-09-23 | Proposed | [THEORY-094](../../record/theory.d/THEORY-094.md) | 1 | 0 | Word vectors approximate PMI in low dimensions, and relations appear as clean directions despite a noisy fit, because text behaves as if generated by a slowly drifting discourse over isotropic word vectors |
 | 2026-09-24 | Proposed | [THEORY-096](../../record/theory.d/THEORY-096.md) | 3 | 0 | A Pre-LN residual stream's per-layer change decays as one over root k, so deep blocks cannot refine the representation |
+| 2026-09-24 | Proposed | [THEORY-097](../../record/theory.d/THEORY-097.md) | 0 | 0 | Attention is an approximation of Kanerva's sparse distributed memory, which is why it needs normalized vectors and a fitted temperature |
 
 ## LITs
 
-3 of the 204.
+3 of the 205.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -231,7 +232,7 @@
 
 ## ADRs
 
-3 of the 204.
+3 of the 205.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -243,4 +244,4 @@ The citation count is the second axis, and it flips the priority: an old proposa
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (23): [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-288](../../record/practices.d/SOTA-288.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-294](../../record/practices.d/SOTA-294.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [THEORY-065](../../record/theory.d/THEORY-065.md), [THEORY-066](../../record/theory.d/THEORY-066.md), [SOTA-385](../../record/practices.d/SOTA-385.md), [SOTA-387](../../record/practices.d/SOTA-387.md), [SOTA-391](../../record/practices.d/SOTA-391.md), [SOTA-392](../../record/practices.d/SOTA-392.md), [SOTA-393](../../record/practices.d/SOTA-393.md), [SOTA-394](../../record/practices.d/SOTA-394.md), [SOTA-395](../../record/practices.d/SOTA-395.md), [SOTA-396](../../record/practices.d/SOTA-396.md), [SOTA-397](../../record/practices.d/SOTA-397.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (22): [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-288](../../record/practices.d/SOTA-288.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-294](../../record/practices.d/SOTA-294.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [SOTA-385](../../record/practices.d/SOTA-385.md), [SOTA-387](../../record/practices.d/SOTA-387.md), [SOTA-391](../../record/practices.d/SOTA-391.md), [SOTA-392](../../record/practices.d/SOTA-392.md), [SOTA-393](../../record/practices.d/SOTA-393.md), [SOTA-394](../../record/practices.d/SOTA-394.md), [SOTA-395](../../record/practices.d/SOTA-395.md), [SOTA-396](../../record/practices.d/SOTA-396.md), [SOTA-397](../../record/practices.d/SOTA-397.md), [THEORY-097](../../record/theory.d/THEORY-097.md) — these are the cheapest to close, since nothing depends on the answer.

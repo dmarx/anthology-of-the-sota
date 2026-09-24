@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [24 Sep 16:31 — A hedge in the note the practice cites does not travel to the practice](2026-09.md#a-hedge-in-the-note-the-practice-cites-does-not-travel-to-the-practice)
 - [24 Sep 16:14 — A practice that states its own cost and cites nothing for it](2026-09.md#a-practice-that-states-its-own-cost-and-cites-nothing-for-it)
 - [24 Sep 13:39 — Six single-source practices from the video line](2026-09.md#six-single-source-practices-from-the-video-line)
 - [24 Sep 05:50 — Reading the video line in full, and what it did to three practices](2026-09.md#reading-the-video-line-in-full-and-what-it-did-to-three-practices)
@@ -215,9 +216,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-208 entries across 2 books, newest first.
+209 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 206 | 2026-09-05 | 2026-09-24 |
+| [2026-09](2026-09.md) | 207 | 2026-09-05 | 2026-09-24 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

@@ -6,7 +6,7 @@
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-169 of 574 LIT documents. Back to the [full index](../README.md).
+170 of 576 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -179,3 +179,4 @@
 | [LIT-628](../../../record/literature.d/LIT-628.md) | Better plain ViT baselines for ImageNet-1k | Beyer, Zhai and Kolesnikov (2022), [ARXIV-2205.01580](https://arxiv.org/abs/2205.01580). Four pages that move a plain ViT-S/16 on ImageNet-1k from **66.8% to 80.0%** with five changes, none of them novel and none of them a regulariser. The original recipe scores 66.8 / 67.2 / 67.1 at 90 / 150 / 300 epochs — **it cannot use more training at all.** The belief the abstract names is that ViT needs sophisticated regularisation at this scale; the answer is that standard augmentation is sufficient. | Active |
 | [LIT-638](../../../record/literature.d/LIT-638.md) | A Length-Extrapolatable Transformer | Sun et al. (2022), [ARXIV-2212.10554](https://arxiv.org/abs/2212.10554). Defines **attention resolution** — a scalar for how well an attention pattern distinguishes token distance, estimable *before training* — and measures it across the extrapolation boundary. **RoPE collapses 0.91 → 0.08 at twice its training length; ALiBi holds 0.81 → 0.88** and is the only incumbent that does. The record holds both papers and four practices about RoPE, and had no measure of this. | Active |
 | [LIT-639](../../../record/literature.d/LIT-639.md) | ResiDual: Transformer with Dual Residual Connections | Xie et al. (2023), [ARXIV-2304.14802](https://arxiv.org/abs/2304.14802). Gives the representation-collapse argument a **rate**: in a Pre-LN transformer the per-layer change in the normalised hidden state decays as `O(1/√k)`, and adding a layer to an `N−1` layer model moves the output by `O(1/√N)`. Also measures what Pre-LN's no-warmup claim costs — **32.28 against 35.12 BLEU** at E6D6, and 31.82 against 35.18 at E12D12. | Active |
+| [LIT-641](../../../record/literature.d/LIT-641.md) | Attention Approximates Sparse Distributed Memory | Bricken and Pehlevan (2021), [ARXIV-2111.05498](https://arxiv.org/abs/2111.05498). Attention's update rule is Kanerva's sparse distributed memory read, given two conditions: `L²` normalized vectors and a fitted softmax temperature `β`. The retrodiction is the interesting part — **those two conditions are QK-norm**, published a year earlier for unrelated reasons. Trained QK-norm heads learn **β ∈ [10, 25]**, the range that interpolates between SDM's optimality criteria. | Active |

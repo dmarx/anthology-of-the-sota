@@ -6,7 +6,7 @@
 
 **Numerics and precision** — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them.
 
-3 of 96 THEORY documents. Back to the [full index](../README.md).
+3 of 97 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

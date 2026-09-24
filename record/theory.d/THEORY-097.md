@@ -1,5 +1,8 @@
 ---
+number: 97
 status: Proposed
+formerly:
+- THEORY-tmpn3rkg
 promote_when: >-
   A point prediction from the SDM frame that could have come out wrong, tested
   on a model nobody chose for the purpose. The β range is not it — [10, 25]
@@ -17,11 +20,11 @@ tags:
 - model-architecture
 date: '2026-09-24'
 source:
-- LIT-tmpqahee
+- LIT-641
 explains:
 - SOTA-192
 summary: >-
-  Bricken and Pehlevan (2021), [LIT-tmpqahee](../literature.d/LIT-tmpqahee.md) — attention's update rule is SDM's
+  Bricken and Pehlevan (2021), [LIT-641](../literature.d/LIT-641.md) — attention's update rule is SDM's
   read operation under two conditions, `L²` normalized vectors and a fitted
   softmax temperature. Its one non-trivial consequence is a **retrodiction**:
   those two conditions are QK-norm, published a year earlier for unrelated
@@ -32,11 +35,11 @@ summary: >-
      nearest neighbour in order to say it is better evidenced than this one.
      Both are Proposed; that is the point of the comparison. -->
 
-# THEORY-tmpn3rkg: Attention is an approximation of Kanerva's sparse distributed memory, which is why it needs normalized vectors and a fitted temperature
+# THEORY-097: Attention is an approximation of Kanerva's sparse distributed memory, which is why it needs normalized vectors and a fitted temperature
 
 ## Source
 
-Bricken and Pehlevan (2021), [LIT-tmpqahee](../literature.d/LIT-tmpqahee.md).
+Bricken and Pehlevan (2021), [LIT-641](../literature.d/LIT-641.md).
 
 ## The account
 
@@ -59,7 +62,7 @@ free parameter the architecture has to get right.
 ## What it predicts, and it is one thing
 
 **Attention should want `L²`-normalized queries and keys and a fitted β rather
-than a fixed `1/√d`.** That is QK-norm — `LIT-tmp5bev1`, published in 2020,
+than a fixed `1/√d`.** That is QK-norm — `LIT-640`, published in 2020,
 motivated by softmax saturation in low-resource translation, with no
 reference to associative memory. The theory arrives at the same prescription
 from a different direction and afterwards.
@@ -70,7 +73,7 @@ normalization for a reason this theory does not give — bounding logits that
 would otherwise saturate the softmax and kill the gradient — and that reason
 is better evidenced. What this account adds is why the *temperature* is a
 thing worth fitting rather than a constant to be divided out, which is the
-half of `LIT-tmp5bev1`'s technique the record's later usage drops.
+half of `LIT-640`'s technique the record's later usage drops.
 
 And the temperature the theory says should be chosen well is one QK-norm makes
 *learnable*, so it can be read off a trained model: **β ∈ [10, 25]**, which

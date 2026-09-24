@@ -49,7 +49,7 @@ history:
   note: >-
     Corrects `introduced_by`. This practice named LIT-088 (ViT-22B, 2023) as
     the work that first stated the recommendation. It was first stated by
-    Henry et al. in 2020 (LIT-tmp5bev1), who named the technique; LIT-088's
+    Henry et al. in 2020 (LIT-640), who named the technique; LIT-088's
     own body says the record held no source establishing it. `introduced_by`
     repoints to the origin. LIT-088 stays in `source:` because the scale
     demonstration this document is built on is entirely its, and the origin
@@ -62,10 +62,10 @@ tags:
 - training-optimization
 date: '2026-09-10'
 source:
-- LIT-tmp5bev1
+- LIT-640
 - LIT-088
 introduced_by:
-- LIT-tmp5bev1
+- LIT-640
 extends:
 - SOTA-050
 compared_against:
@@ -75,7 +75,7 @@ implementations:
 - DeepSeek-V4
 explained_by:
 - THEORY-061
-- THEORY-tmpn3rkg
+- THEORY-097
 ---
 <!-- inactive-ok-file: THEORY-062 — Proposed, filed in this same
      contribution and named in a condition that says it is one group's
@@ -86,7 +86,7 @@ explained_by:
 
 ## Source
 
-Henry, Dachapally, Pawar and Chen (2020), `LIT-tmp5bev1` — the paper that
+Henry, Dachapally, Pawar and Chen (2020), `LIT-640` — the paper that
 named the technique and first made the recommendation.
 
 Dehghani et al. (2023), [LIT-088](../literature.d/LIT-088.md) — ViT-22B, where the mechanism is diagnosed
@@ -109,7 +109,7 @@ evidenced it ([ADR-029](../decisions.d/ADR-029.md), refined by [ADR-030](../deci
 Henry et al. made it in 2020, and the two arrivals differ in every respect
 except the intervention:
 
-| | `LIT-tmp5bev1` (2020) | [LIT-088](../literature.d/LIT-088.md) (2023) |
+| | `LIT-640` (2020) | [LIT-088](../literature.d/LIT-088.md) (2023) |
 | --- | --- | --- |
 | failure addressed | softmax saturation costing expressivity | divergence at ~8B parameters |
 | scale | low-resource translation | 22B-parameter vision encoder |
@@ -121,7 +121,7 @@ normalization in front of the existing scaling — they normalize the queries
 and keys and then **scale by a trained scalar instead of a constant**, which
 makes the softmax temperature a learned quantity. The record's later usage,
 and `LIT-088`'s, keeps `1/√d`. Both bound the logits; only one turns the
-temperature into a parameter, and that difference is what `LIT-tmpqahee`
+temperature into a parameter, and that difference is what `LIT-641`
 measures.
 
 So the two are not a citation chain but two independent arrivals — a third

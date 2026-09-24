@@ -2,7 +2,7 @@
 number: 121
 status: Active
 title: 'Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -13,6 +13,17 @@ history:
     about the magnitude of this practice's own claim, from a group outside
     the one making it. The body already turned on it when saying what should
     not be quoted any more. The recommendation is unchanged.
+- version: 3
+  date: '2026-09-24'
+  note: >-
+    Adds where the gain comes from. Wang et al. (LIT-tmpaqpf2) ablate Muon
+    block by block: value-output attention weights plus the FFN nearly recover
+    the full-Muon trajectory, and query-key contributes little. This document
+    recommended an optimizer without saying which parameters it pays for, and
+    the answer is not the one parameter counting predicts — QK and VO are the
+    same size. The recommendation is unchanged, because the finding is about
+    where the benefit sits rather than whether to take it, and because the
+    recovery is architecture-sensitive.
 tags:
 - training-optimization
 - tiny-models
@@ -43,7 +54,15 @@ extends:
 explained_by:
 - THEORY-024
 - THEORY-033
+- THEORY-tmpt64ul
 ---
+
+<!-- inactive-ok-file: THEORY-tmpt64ul — Proposed, filed in this same
+     contribution as the account under this practice's newly recorded scope
+     finding. The practice declares explained_by on it, so the citation is the
+     relation; the recommendation stands without the account, and the section
+     citing it says in its own text that the evidence is one group at small
+     scale. -->
 
 # SOTA-121: Use Muon with decoupled weight decay and AdamW-matched update RMS in place of AdamW
 
@@ -94,6 +113,34 @@ its largest scale. What should not be quoted any more is the 2×.
 constant decoupled weight decay fixing the equilibrium weight norm, and
 recovers 20–30% by pinning the norms instead. If that holds up outside its
 authors' group it changes this section again.
+
+## Which parameters the gain is actually paid on
+
+This practice says to use Muon in place of AdamW and does not say where the
+advantage comes from. Wang et al. (`LIT-tmpaqpf2`) ran the ablation: train with
+Muon on some blocks and Adam on the rest, everything else matched.
+
+- **VO + FFN nearly recovers the full-Muon trajectory**, in both gated and
+  ungated FFN settings.
+- **Query-key contributes little.** Applying Muon to `W_V` alone, or `W_O`
+  alone, already beats applying it to the whole of QK.
+- Within the effective set, `W_O` matters more than `W_V`, and `W_out` more
+  than `W_in`.
+
+Not a parameter-count effect, and the paper says so: **QK and VO are the same
+size.** Their account is that VO and the FFN are the blocks that behave as
+associative memories, and that orthogonalising an update is what treats each
+stored outer-product direction alike — `THEORY-tmpt64ul`.
+
+**Nothing here changes the recommendation**, for two reasons. The recovery is
+architecture-sensitive: in the ungated setting VO + `W_out` alone nearly
+recovers full Muon, and in the gated setting the same combination falls short.
+And VO+FFN *nearly recovers* full Muon rather than beating it, so this is not
+a reason to run a hybrid — it is an answer to what you are buying.
+
+It does bear on cost. If a deployment cannot afford Muon everywhere, the
+ablation says where to spend it first; that is a claim from one group at small
+scale with a 0.7B check, and is not yet a practice.
 
 ## Known implementations
 

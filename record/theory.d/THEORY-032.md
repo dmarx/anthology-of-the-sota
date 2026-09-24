@@ -4,16 +4,23 @@ status: Proposed
 formerly:
 - THEORY-tmp5iwhe
 promote_when: >-
-  An ablation that uses the condition as a decision rule — spectral updates on
-  the blocks that pass it, Euclidean on the blocks that fail — and trains
-  faster than applying spectral updates everywhere. That is the experiment
-  the inequality sets up and the paper does not run, and it is the one that
-  separates a real mechanism from a quantity that merely correlates with the
-  regime Muon is used in. What would not settle it: more measurements
-  confirming that transformer activations have low stable rank, which is
-  already proved at initialization and observed in training.
+  An ablation that uses THIS condition as a decision rule — spectral updates on
+  the blocks whose incoming activations pass the stable-rank test, Euclidean on
+  the blocks that fail — and trains faster than applying spectral updates
+  everywhere. That is the experiment the inequality sets up and the paper does
+  not run. Since v3 the cheapest route to it is narrower and concrete: Wang et
+  al. (LIT-tmpaqpf2) ran the per-block ablation under a DIFFERENT rule and
+  found Muon on value-output plus FFN nearly recovers full Muon while Muon on
+  query-key contributes little. So measure the stable rank of the incoming
+  activations for QK, VO and FFN separately and see whether this condition
+  orders them the same way. If it does not, this account does not explain
+  where Muon's gain actually comes from and the status should fall rather than
+  rise. What would still not settle it: more measurements confirming that
+  transformer activations have low stable rank, which is already proved at
+  initialization and observed in training; nor another per-block ablation
+  selecting blocks by architectural role rather than by this inequality.
 title: 'A spectral update wins where the incoming activations are low stable rank and the gradient spectrum is spread out'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-23'
@@ -23,6 +30,19 @@ history:
     prediction is that the stable rank of the token-indicator matrix is the
     inverse frequency of the most common token, about 20 for a Zipfian
     corpus.
+- version: 3
+  date: '2026-09-24'
+  note: >-
+    Sharpens `promote_when` into a discriminating measurement, and the account
+    is unchanged. Wang et al. (LIT-tmpaqpf2) ran the per-block ablation this
+    document asked for, under a different decision rule — associative-memory
+    role rather than stable rank — and found VO+FFN nearly recovers full Muon
+    with QK contributing little. That establishes the half that was in doubt,
+    that a per-block split is nearly costless, and leaves this account's
+    specific condition untested. It also makes failure cheap to demonstrate:
+    if the stable-rank ordering of QK, VO and FFN does not match the measured
+    gains, this is a quantity that correlates with the regime rather than the
+    mechanism, and the status should fall.
 tags:
 - training-optimization
 - signal-structure

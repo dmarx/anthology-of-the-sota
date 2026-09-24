@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**191 document(s) awaiting a decision.**
+**192 document(s) awaiting a decision.**
 
 ## SOTAs
 
-128 of the 191.
+129 of the 192.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -141,10 +141,11 @@
 | 2026-09-23 | Proposed | [SOTA-346](../../record/practices.d/SOTA-346.md) | 1 | 0 | Retune the training timestep shift for each autoencoder latent space, and never rank latent spaces for generation under one shared schedule |
 | 2026-09-23 | Proposed | [SOTA-352](../../record/practices.d/SOTA-352.md) | 1 | 0 | When a structure predictor is made generative, add a regression model's predictions to the training data so disordered regions are learned as disorder rather than invented structure |
 | 2026-09-23 | Proposed | [SOTA-371](../../record/practices.d/SOTA-371.md) | 1 | 0 | Score topic coherence automatically as the average pointwise mutual information of a topic's top-word pairs, estimated on a large external reference corpus |
+| 2026-09-24 | Proposed | [SOTA-385](../../record/practices.d/SOTA-385.md) | 0 | 0 | Tighten the gradient-norm clip as the model grows rather than carrying one value across scales |
 
 ## THEORYs
 
-57 of the 191.
+57 of the 192.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -170,10 +171,10 @@
 | 2026-09-21 | Proposed | [THEORY-041](../../record/theory.d/THEORY-041.md) | 8 | 0 | Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing |
 | 2026-09-21 | Proposed | [THEORY-051](../../record/theory.d/THEORY-051.md) | 8 | 0 | A text feature predicts success partly by being uncommon, so a tool that gives it to everyone destroys its predictive value |
 | 2026-09-21 | Proposed | [THEORY-058](../../record/theory.d/THEORY-058.md) | 4 | 0 | Apparent compression in the information plane is saturating activations collapsing into extreme bins, not information being discarded |
+| 2026-09-21 | Proposed | [THEORY-050](../../record/theory.d/THEORY-050.md) | 3 | 0 | Parameters carry memorization and parallel computation carries reasoning |
 | 2026-09-21 | Proposed | [THEORY-052](../../record/theory.d/THEORY-052.md) | 3 | 0 | Synthesis requires equivariant representations and discriminative pretraining rewards invariant ones, which is why a generative prior groups objects it was never shown |
 | 2026-09-21 | Proposed | [THEORY-056](../../record/theory.d/THEORY-056.md) | 3 | 0 | Distinct state machines agree at chance on long random inputs, so a learner that reads only statistics loses the signal as the sequences get longer |
 | 2026-09-21 | Proposed | [THEORY-045](../../record/theory.d/THEORY-045.md) | 2 | 0 | How much of parameter space behaves like your trained network is a description length, and the better-generalizing network occupies more of it |
-| 2026-09-21 | Proposed | [THEORY-050](../../record/theory.d/THEORY-050.md) | 2 | 0 | Parameters carry memorization and parallel computation carries reasoning |
 | 2026-09-21 | Proposed | [THEORY-057](../../record/theory.d/THEORY-057.md) | 2 | 0 | A corpus a model generates is narrower than the distribution it imitates, and the narrowing shows up as n-gram over-concentration |
 | 2026-09-21 | Proposed | [THEORY-043](../../record/theory.d/THEORY-043.md) | 1 | 0 | Cross-entropy pays an unbounded price for mass a learner never had, and that price grows with sequence length — which is why it drifts from what post-training needs |
 | 2026-09-21 | Proposed | [THEORY-044](../../record/theory.d/THEORY-044.md) | 1 | 0 | Dropout early in training buys a biased gradient estimate with much less directional variance, and the trade is favourable until it is not |
@@ -208,7 +209,7 @@
 
 ## LITs
 
-3 of the 191.
+3 of the 192.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -218,7 +219,7 @@
 
 ## ADRs
 
-3 of the 191.
+3 of the 192.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -230,4 +231,4 @@ The citation count is the second axis, and it flips the priority: an old proposa
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (14): [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-288](../../record/practices.d/SOTA-288.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-294](../../record/practices.d/SOTA-294.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [THEORY-065](../../record/theory.d/THEORY-065.md), [THEORY-066](../../record/theory.d/THEORY-066.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (15): [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-288](../../record/practices.d/SOTA-288.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-294](../../record/practices.d/SOTA-294.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [THEORY-065](../../record/theory.d/THEORY-065.md), [THEORY-066](../../record/theory.d/THEORY-066.md), [SOTA-385](../../record/practices.d/SOTA-385.md) — these are the cheapest to close, since nothing depends on the answer.

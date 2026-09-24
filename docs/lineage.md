@@ -2,7 +2,7 @@
 
 # Lines of work
 
-48 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+49 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -393,6 +393,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-028](../record/literature.d/LIT-028.md) — Scaling Laws for Neural Language Models *(Active)*
   - [LIT-443](../record/literature.d/LIT-443.md) — Power Lines: Scaling Laws for Weight Decay and Batch Size in LLM Pre-training *(Active)*
   - [LIT-445](../record/literature.d/LIT-445.md) — How Does Critical Batch Size Scale in Pre-training? *(Active)*
+
+### From Training Compute-Optimal Large Language Models
+
+- alongside: [LIT-068](../record/literature.d/LIT-068.md) — Training Compute-Optimal Large Language Models *(Active)*
+- alongside: [LIT-617](../record/literature.d/LIT-617.md) — Scaling Language Models: Methods, Analysis & Insights from Training Gopher *(Active)*
 
 ### From Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training
 

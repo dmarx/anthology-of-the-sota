@@ -55,7 +55,7 @@ many workloads. The practice as stated is the conservative default, not a
 settled bound.
 
 **The stochastic-rounding half of that has a large-scale negative result
-against it.** Gopher ([LIT-tmpkxt2i](../literature.d/LIT-tmpkxt2i.md)) trained its 7.1B and 280B models with
+against it.** Gopher ([LIT-617](../literature.d/LIT-617.md)) trained its 7.1B and 280B models with
 bfloat16 parameters updated by stochastic rounding, and reports: *"We
 subsequently found that stochastic rounding does not fully recover mixed
 precision training performance."* Its smaller models used float32 parameters

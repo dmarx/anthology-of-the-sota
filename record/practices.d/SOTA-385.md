@@ -1,5 +1,8 @@
 ---
+number: 385
 status: Proposed
+formerly:
+- SOTA-tmp3aoh0
 promote_when: >-
   A second lineage reporting a scale-dependent clip value, from a run family
   that varied the clip deliberately rather than reporting the value it
@@ -14,9 +17,9 @@ tags:
 - training-optimization
 date: '2026-09-24'
 source:
-- LIT-tmpkxt2i
+- LIT-617
 introduced_by:
-- LIT-tmpkxt2i
+- LIT-617
 consensus: unreplicated
 consensus_note: >-
   One group, one run family, and the value is reported rather than ablated —
@@ -30,18 +33,18 @@ extends:
 implementations:
 - gopher
 summary: >-
-  Rae et al. (2021), [LIT-tmpkxt2i](../literature.d/LIT-tmpkxt2i.md) — the Gopher family clipped the global
+  Rae et al. (2021), [LIT-617](../literature.d/LIT-617.md) — the Gopher family clipped the global
   gradient norm at 1.0 for models up to 1.4B and at **0.25 for the 7.1B and
   280B models**, "for improved stability". Three held practices say to clip
   and none names a value; this is the first number in the record, and it is
   not a constant.
 ---
 
-# SOTA-tmp3aoh0: Tighten the gradient-norm clip as the model grows rather than carrying one value across scales
+# SOTA-385: Tighten the gradient-norm clip as the model grows rather than carrying one value across scales
 
 ## Source
 
-Rae et al. (2021), [LIT-tmpkxt2i](../literature.d/LIT-tmpkxt2i.md), §3.2.
+Rae et al. (2021), [LIT-617](../literature.d/LIT-617.md), §3.2.
 
 ## When this applies
 

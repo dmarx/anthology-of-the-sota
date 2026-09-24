@@ -6,13 +6,13 @@
 
 **Numerics and precision** — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them.
 
-21 of 384 SOTA documents. Back to the [full index](../README.md).
+21 of 385 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [SOTA-013](../../../record/practices.d/SOTA-013.md) | Use dynamic loss scaling that doubles every 2000 successful steps | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |
 | [SOTA-014](../../../record/practices.d/SOTA-014.md) | Maintain master weights in FP32 | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |
-| [SOTA-015](../../../record/practices.d/SOTA-015.md) | Store optimizer states in FP32 | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |
+| [SOTA-015](../../../record/practices.d/SOTA-015.md) v2 | Store optimizer states in FP32 | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |
 | [SOTA-016](../../../record/practices.d/SOTA-016.md) | Perform forward/backward passes in FP16 | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |
 | [SOTA-043](../../../record/practices.d/SOTA-043.md) | Use mixed precision during data loading | Mohan et al. (2020), [LIT-050](../../../record/literature.d/LIT-050.md) — [ARXIV-2007.06775](https://arxiv.org/abs/2007.06775). | Active |
 | [SOTA-118](../../../record/practices.d/SOTA-118.md) | Employ mixed precision to reduce memory usage | Zhao et al. (2022), [LIT-083](../../../record/literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277). | Active |

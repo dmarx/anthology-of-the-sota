@@ -301,7 +301,8 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ### From use gradient clipping
 
-- alongside: [SOTA-035](../record/practices.d/SOTA-035.md) — use gradient clipping *(Active, unassessed)*
+- [SOTA-035](../record/practices.d/SOTA-035.md) — use gradient clipping *(Active, unassessed)*
+  - [SOTA-385](../record/practices.d/SOTA-385.md) — Tighten the gradient-norm clip as the model grows rather than carrying one value across scales *(Proposed, unreplicated)*
 - alongside: [SOTA-202](../record/practices.d/SOTA-202.md) — Clamp the prediction to the training range at every step when sampling from a model's own output *(Active, converged)*
 
 ### From larger models are more sample efficient

@@ -6,7 +6,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-47 of 384 SOTA documents. Back to the [full index](../README.md).
+48 of 385 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -57,3 +57,4 @@
 | [SOTA-365](../../../record/practices.d/SOTA-365.md) | Learn without negatives by breaking the symmetry: a predictor on one branch and a stop-gradient on the other |  | Active |
 | [SOTA-366](../../../record/practices.d/SOTA-366.md) | Monitor the standard deviation of the l2-normalized embedding; healthy is one over root d and collapsed is zero |  | Active |
 | [SOTA-367](../../../record/practices.d/SOTA-367.md) | Or put the anti-collapse constraint in the loss, as a variance floor and a decorrelation term |  | Active |
+| [SOTA-385](../../../record/practices.d/SOTA-385.md) | Tighten the gradient-norm clip as the model grows rather than carrying one value across scales | Rae et al. (2021), [LIT-617](../../../record/literature.d/LIT-617.md) — the Gopher family clipped the global gradient norm at 1.0 for models up to 1.4B and at **0.25 for the 7.1B and 280B models**, "for improved stability". Three held practices say to clip and none names a value; this is the first number in the record, and it is not a constant. | Proposed |

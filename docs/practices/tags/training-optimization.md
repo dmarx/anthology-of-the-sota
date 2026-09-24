@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-101 of 384 SOTA documents. Back to the [full index](../README.md).
+102 of 385 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,7 +20,7 @@
 | [SOTA-012](../../../record/practices.d/SOTA-012.md) v3 | sharpness in the loss landscape correlates with test error | Li et al. (2017), [LIT-014](../../../record/literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). | Active |
 | [SOTA-013](../../../record/practices.d/SOTA-013.md) | Use dynamic loss scaling that doubles every 2000 successful steps | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |
 | [SOTA-014](../../../record/practices.d/SOTA-014.md) | Maintain master weights in FP32 | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |
-| [SOTA-015](../../../record/practices.d/SOTA-015.md) | Store optimizer states in FP32 | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |
+| [SOTA-015](../../../record/practices.d/SOTA-015.md) v2 | Store optimizer states in FP32 | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |
 | [SOTA-016](../../../record/practices.d/SOTA-016.md) | Perform forward/backward passes in FP16 | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |
 | [SOTA-031](../../../record/practices.d/SOTA-031.md) v2 | Keep micro-batch size per GPU as large as memory allows | Rajbhandari et al. (2020), [LIT-027](../../../record/literature.d/LIT-027.md) — [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054). | Active |
 | [SOTA-035](../../../record/practices.d/SOTA-035.md) | use gradient clipping | Pascanu et al. (2012), [LIT-037](../../../record/literature.d/LIT-037.md) — [ARXIV-1211.5063](https://arxiv.org/abs/1211.5063). | Active |
@@ -111,3 +111,4 @@
 | [SOTA-377](../../../record/practices.d/SOTA-377.md) | Stop scaling the contrastive batch past about 32k, because the benefit saturates there |  | Active |
 | [SOTA-381](../../../record/practices.d/SOTA-381.md) v2 | Sample a handful of negatives instead of normalizing over the vocabulary, and let the count fall as the data grows |  | Active |
 | [SOTA-384](../../../record/practices.d/SOTA-384.md) | Calibrate a trained classifier with a single temperature fitted on held-out data, not with a richer map | Guo et al. (2017), [LIT-616](../../../record/literature.d/LIT-616.md) — rescale the logits by a single learned `1/T` fitted for NLL on a held-out set. It cannot change the argmax, so accuracy is unchanged by construction, and it beats vector scaling, matrix scaling, histogram binning, isotonic regression and BBQ — including the two that strictly contain it. Typical uncalibrated ECE is 4–10%. | Active |
+| [SOTA-385](../../../record/practices.d/SOTA-385.md) | Tighten the gradient-norm clip as the model grows rather than carrying one value across scales | Rae et al. (2021), [LIT-617](../../../record/literature.d/LIT-617.md) — the Gopher family clipped the global gradient norm at 1.0 for models up to 1.4B and at **0.25 for the 7.1B and 280B models**, "for improved stability". Three held practices say to clip and none names a value; this is the first number in the record, and it is not a constant. | Proposed |

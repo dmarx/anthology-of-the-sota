@@ -6,7 +6,7 @@
 
 **Not judged** — nobody has assessed where the field stands on this; the default, and true of most of the corpus.
 
-166 of 384 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
+166 of 385 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -23,7 +23,7 @@
 | [SOTA-012](../../../record/practices.d/SOTA-012.md) v3 | sharpness in the loss landscape correlates with test error | Li et al. (2017), [LIT-014](../../../record/literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). | Active |
 | [SOTA-013](../../../record/practices.d/SOTA-013.md) | Use dynamic loss scaling that doubles every 2000 successful steps | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |
 | [SOTA-014](../../../record/practices.d/SOTA-014.md) | Maintain master weights in FP32 | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |
-| [SOTA-015](../../../record/practices.d/SOTA-015.md) | Store optimizer states in FP32 | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |
+| [SOTA-015](../../../record/practices.d/SOTA-015.md) v2 | Store optimizer states in FP32 | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |
 | [SOTA-016](../../../record/practices.d/SOTA-016.md) | Perform forward/backward passes in FP16 | Micikevicius et al. (2017), [LIT-011](../../../record/literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740). | Active |
 | [SOTA-017](../../../record/practices.d/SOTA-017.md) v2 | Use micro-batch splitting for pipeline parallelism | Huang et al. (2018), [LIT-016](../../../record/literature.d/LIT-016.md) — [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965). | Active |
 | [SOTA-018](../../../record/practices.d/SOTA-018.md) v2 | Balance pipeline stages to minimize bubble overhead | Huang et al. (2018), [LIT-016](../../../record/literature.d/LIT-016.md) — [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965). | Active |

@@ -6,7 +6,7 @@
 
 **One source** — one group, one result — nobody has agreed or disagreed yet, which is not the same as contested, where people looked and differed.
 
-108 of 384 SOTA documents. Back to the [full index](../README.md).
+109 of 385 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -118,3 +118,4 @@
 | [SOTA-377](../../../record/practices.d/SOTA-377.md) | Stop scaling the contrastive batch past about 32k, because the benefit saturates there |  | Active |
 | [SOTA-379](../../../record/practices.d/SOTA-379.md) v2 | Before crediting a word-embedding method over count-based ones, give the baselines the same design choices and tune every method alike | Levy, Goldberg and Dagan (2015), [LIT-607](../../../record/literature.d/LIT-607.md) — word2vec and GloVe ship with design choices (context smoothing, the negative-sample shift, dynamic windows, subsampling, adding context vectors) that count-based PPMI and SVD can use too. Port them and tune every method the same way before comparing. Done that way across 672 representations and 8 datasets, the prediction-over-count advantage disappears, SGNS beats GloVe on every task, and a single hyperparameter often matters more than the method. | Active |
 | [SOTA-383](../../../record/practices.d/SOTA-383.md) | Fix the sample count before comparing FID values, and settle a close comparison with an unbiased estimator rather than a tighter error bar | Bińkowski et al. (2018), [LIT-615](../../../record/literature.d/LIT-615.md) — the FID estimator is biased, the bias depends on the distribution being measured, and no unbiased estimator exists. So two FID numbers are comparable only at equal `n`, and a small standard deviation is not evidence of a converged estimate: at d=2048 and 50,000 samples their construction reversed a true ordering in 100 trials out of 100, with standard deviations of 0.2 and 0.5. | Active |
+| [SOTA-385](../../../record/practices.d/SOTA-385.md) | Tighten the gradient-norm clip as the model grows rather than carrying one value across scales | Rae et al. (2021), [LIT-617](../../../record/literature.d/LIT-617.md) — the Gopher family clipped the global gradient norm at 1.0 for models up to 1.4B and at **0.25 for the 7.1B and 280B models**, "for improved stability". Three held practices say to clip and none names a value; this is the first number in the record, and it is not a constant. | Proposed |

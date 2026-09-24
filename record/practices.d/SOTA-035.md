@@ -16,7 +16,7 @@ summary: >-
 compared_against:
 - SOTA-202
 extended_by:
-- SOTA-tmp3aoh0
+- SOTA-385
 ---
 
 # SOTA-035: use gradient clipping

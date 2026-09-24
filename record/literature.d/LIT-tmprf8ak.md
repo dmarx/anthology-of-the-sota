@@ -1,0 +1,95 @@
+---
+status: Active
+title: 'Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets'
+version: 1
+tags:
+- data-pipeline
+- generative-modeling
+- vision-and-graphics
+date: '2026-09-24'
+published: '2023-11-01'
+arxiv: '2311.15127'
+first_author: 'Blattmann'
+keywords:
+- 'latent-video-diffusion'
+- 'video-data-curation'
+- 'image-to-video'
+- 'multi-view-synthesis'
+- 'noise-schedule-shift'
+- 'human-preference-evaluation'
+implementations:
+- 'SVD'
+- 'SVD-XT'
+extends:
+- LIT-tmpl3mo9
+- LIT-062
+summary: >-
+  Blattmann, Dockhorn, Kulal et al., Stability AI (2023), [ARXIV-2311.15127](https://arxiv.org/abs/2311.15127).
+  Video LDM's architecture is held fixed, and the paper studies what the data
+  does. Curating 4× fewer clips beats the uncurated set, and the advantage
+  survives high-quality fine-tuning. It is the only controlled video-curation
+  study in this line. One of its own filters lost the ablation and was kept
+  anyway.
+---
+
+# LIT-tmprf8ak: Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets
+
+Blattmann, Dockhorn, Kulal et al., Stability AI (2023) — [ARXIV-2311.15127](https://arxiv.org/abs/2311.15127)
+
+## Key takeaways
+
+- **Training runs in three stages.** Stage I is image pretraining (Stable
+  Diffusion 2.1), stage II video pretraining at low resolution on a large
+  curated set, and stage III fine-tuning on a small high-quality set (§3).
+  Human raters prefer image-initialized over randomly initialized spatial
+  layers (Fig. 3a).
+- **Curation beats quantity, in a controlled design.** Each annotation axis
+  (CLIP score, aesthetics, OCR text area, optical flow) is filtered on its
+  own at 12.5%, 25% and 50%. The model is held fixed: 8 frames at 256², 40k
+  steps, batch 256 (App. E.2.2). The curated LVD-10M-F is a quarter the size
+  of LVD-10M and is preferred on quality and prompt alignment (Fig. 3b). It
+  is also preferred over WebVid-10M and InternVid-10M (Fig. 4a–b).
+- **The pretraining advantage survives fine-tuning.** After the same stage
+  III, the curated-pretrained model gains more Elo than the uncurated one:
+  +127 against +89 at 10k steps and +103 against +70 at 50k (Fig. 4e).
+- **Scale.** LVD is 577M clips. After filtering, LVD-F is 152M (Table 1).
+  Cascaded cut detection finds about 4× more clips per video than a single
+  pass (Fig. 2).
+- **Image-to-video by concatenating a conditioning latent.** The design is
+  the one later reports, Wan ([LIT-tmpbr2sl](LIT-tmpbr2sl.md)) among them, cite as the standard
+  approach.
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **The motion filter lost its own ablation.** "The aggregated preference
+  score of the model trained with this filtering method does not rank as high
+  in human preference as the non-filtered score" (App. E.2.2). The 25%
+  threshold was kept anyway. §3.1 motivates motion filtering, and the
+  appendix shows it did not win.
+- **The ablations use a different recipe from the released model.** They
+  train with a linear schedule, offset noise and v-parameterization. The
+  released model uses EDM preconditioning (App. E.2.1). It is not shown that
+  the curation findings transfer.
+- **All evidence is human preference over 64 prompts.** Every curation claim
+  rests on about three votes per pair. No automatic metric supports them.
+- **Asserted, not ablated:** the noise-schedule shift toward higher noise at
+  high resolution, called "essential" (§2), and the CFG ramp across frames.
+- **"Competitive with closed-source"** (abstract) rests on a comparison with
+  Gen-2 and Pika that rated visual quality only (§4.3).
+
+## Standing in the anthology
+
+This is the evidence the video line's data sections point to, and the most
+controlled of them. Wan's curation ([LIT-tmpbr2sl](LIT-tmpbr2sl.md) §3) has the same design:
+filter on several axes, grade motion, keep a small top slice for
+post-training. Wan does not ablate any of it, so this paper is the evidence
+for that design and Wan is adoption of it.
+
+The overridden motion filter is the underreported sentence to look for under
+[DP-010](../../docs/design-principles.md#dp-10). The field now treats motion filtering as standard, and the one
+controlled test of it in this line did not favour it.
+
+Filed without a `NOTE`: the takeaways come from one full reading done for
+this filing, appendices A–E included.

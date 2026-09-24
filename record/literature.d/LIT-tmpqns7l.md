@@ -1,0 +1,98 @@
+---
+status: Active
+title: 'Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model'
+version: 1
+tags:
+- generative-modeling
+- vision-and-graphics
+- representation-and-encoding
+- adaptation-and-tuning
+- distributed-optimization
+date: '2026-09-24'
+published: '2025-02-01'
+arxiv: '2502.10248'
+first_author: 'Step-Video Team'
+keywords:
+- 'text-to-video'
+- 'video-vae'
+- 'deep-compression'
+- 'flow-matching'
+- 'video-dpo'
+- 'diffusion-transformer'
+implementations:
+- 'Step-Video-T2V'
+extends:
+- LIT-448
+compared_against:
+- LIT-tmpkcchp
+- LIT-tmpsjfid
+- LIT-tmpbr2sl
+summary: >-
+  Step-Video Team, StepFun (2025), [ARXIV-2502.10248](https://arxiv.org/abs/2502.10248). A 30B text-to-video
+  DiT on a 16×16×8 VAE that reconstructs as well as HunyuanVideo's 8×8×4, so
+  the model covers 204 frames. It also applies DPO to video (55% against 45%)
+  and runs at 32% MFU. It reaches parity with Movie Gen and loses to the
+  strongest commercial model it names, despite the abstract's
+  "state-of-the-art".
+---
+
+# LIT-tmpqns7l: Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model
+
+Step-Video Team, StepFun (2025) — [ARXIV-2502.10248](https://arxiv.org/abs/2502.10248)
+
+## Key takeaways
+
+- **Compression doubles in each spatial dimension with no loss.** A
+  dual-path VAE (pixel-unshuffle convolutions plus a channel-averaging
+  shortcut) compresses 16×16×8. It reconstructs at SSIM 0.978, PSNR 39.37 and
+  rFVD 3.61, against HunyuanVideo's 8×8×4 at 0.971, 39.56 and 4.17. Cosmos,
+  at the same 16×16×8 ratio, gets rFVD 40.33 (Table 15). This is the
+  counterexample to CogVideoX's finding that 16×16×8 is "extremely
+  difficult", and the architecture is the difference.
+- **The model.** A 30B DiT with 48 layers, full 3D attention and
+  cross-attention to two text encoders (a CLIP and a bilingual LLM). It uses
+  AdaLN-single, 3D RoPE and QK-norm, and trains with flow matching.
+- **Video DPO works, modestly.** DPO ([LIT-169](LIT-169.md)) is applied with fixed initial noise, and the DPO model is
+  preferred 55% to 45% over the baseline on 300 prompts (§9.7). Diffusion-DPO
+  defaults (β = 5000, lr 1e-8) converge too slowly, and a smaller β with a
+  higher learning rate fixes that. Gains saturate on off-policy pairs, which
+  motivates a reward model.
+- **Systems.** It reaches 32% MFU with TP8 + SP + ZeRO-1, and pipeline
+  parallelism was rejected for robustness. Hardware restarts run at 0.037 per
+  1k GPUs per day, against Llama 3.1's 0.422 (Table 5).
+- **Where it ranks.** Against HunyuanVideo on Movie Gen Bench it wins 615,
+  ties 313, loses 361. Against Movie Gen it wins 485, ties 315, loses 489,
+  i.e. parity (Table 14). It loses to T2VTopA (Table 9).
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"State-of-the-art … compared with both open-source and commercial
+  engines"** (abstract) is contradicted by §9.3, which ranks "T2VTopA >
+  Step-Video-T2V > T2VTopB".
+- **"State-of-the-art" reconstruction** is contradicted by Table 15, where
+  HunyuanVideo's PSNR is higher.
+- **Architecture comparisons are early and unquantified.** DiT against MMDiT
+  rests on "similar" early curves, and MMDiT was "not train[ed] … for an
+  extended period". Full 3D against factorized attention was run at 4B with
+  no numbers.
+- **The DPO β and learning rate are unreported,** and the effect is 55/45 on
+  300 prompts.
+- **The sample counts disagree.** §9.3 says 25.3M samples at 540P, and Table
+  6 totals 27.3M.
+
+## Standing in the anthology
+
+Step-Video is the line's evidence on how far a video latent can be
+compressed, and the one report that applies preference optimization to a
+video model. It is in this record for the VAE result and the DPO recipe,
+not for the "state-of-the-art" in its abstract.
+
+Its limitations section (§§10–11) is unusually candid, and it names the same
+failures as Wan's and Movie Gen's: complex actions, rare compositions,
+physics. It attributes them to "inherent limitations of diffusion models",
+which is asserted, not shown.
+
+Filed without a `NOTE`: the takeaways come from one reading through §11
+done for this filing. The §6 infrastructure details were skimmed.

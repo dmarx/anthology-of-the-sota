@@ -1,0 +1,96 @@
+---
+status: Active
+title: 'Language Model Beats Diffusion — Tokenizer is Key to Visual Generation'
+version: 1
+tags:
+- representation-and-encoding
+- generative-modeling
+- vision-and-graphics
+date: '2026-09-24'
+published: '2023-10-01'
+arxiv: '2310.05737'
+first_author: 'Yu'
+keywords:
+- 'visual-tokenizer'
+- 'lookup-free-quantization'
+- 'causal-3d-cnn'
+- 'masked-language-model'
+- 'codebook-size'
+- 'video-compression'
+implementations:
+- 'VideoPoet'
+- 'Open-MAGVIT2'
+compared_against:
+- LIT-448
+- LIT-062
+- LIT-tmpvcgyq
+summary: >-
+  Yu et al., Google and CMU (2023), [ARXIV-2310.05737](https://arxiv.org/abs/2310.05737). MAGVIT-v2 is a causal
+  3D-CNN tokenizer with lookup-free quantization. The causal design lets
+  images and video share one tokenizer, and LFQ lets generation keep
+  improving as the vocabulary grows, where VQ turns worse. The title's "beats
+  diffusion" holds only with guidance, and the "language model" is a masked,
+  MaskGIT-style one.
+extended_by:
+- LIT-tmpbr2sl
+- LIT-tmpkcchp
+- LIT-tmplthcn
+---
+
+# LIT-tmpmi3yo: Language Model Beats Diffusion — Tokenizer is Key to Visual Generation
+
+Yu et al., Google and Carnegie Mellon (2023) — [ARXIV-2310.05737](https://arxiv.org/abs/2310.05737)
+
+## Key takeaways
+
+- **Lookup-free quantization lets the vocabulary scale.** Each latent
+  dimension is sign-quantized and an entropy penalty is added. With standard
+  VQ, generation FID gets worse past a moderate vocabulary. With LFQ,
+  reconstruction and generation both keep improving up to about 2^18 (Fig. 1,
+  a controlled sweep on ImageNet 128).
+- **A causal 3D CNN lets images and video share a tokenizer.** The first
+  frame is encoded on its own, so a single image is a valid one-frame video.
+  It beats C-ViViT variants on reconstruction FVD, 96 against 437 and 317
+  (Table 5a), and a non-causal LFQ baseline on Kinetics generation, 5.2
+  against 11.6 (Table 1).
+- **The same generator improves with only the tokenizer swapped.** With the
+  MLM backbone unchanged, Kinetics-600 FVD goes from 9.9 to 5.2 and UCF-101
+  FVD from 76 to 58 (Table 1). This is the evidence for the "tokenizer is
+  key" half of the title.
+- **Most of the other design choices are shown on reconstruction only.** The
+  up- and downsamplers, late temporal downsampling, adaptive GroupNorm and
+  depth are ablated cumulatively (Tables 5b and 5c). None of them is shown to
+  help generation.
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"Language model" does not mean an autoregressive LLM.** It is a
+  bidirectional masked model decoded in 12–64 steps. The one autoregressive
+  result (Table 8, UCF FVD 109) is worse than the MLM's 58 and is not
+  compared against diffusion.
+- **"Beats diffusion" needs guidance.** Without guidance MAGVIT-v2 loses:
+  3.07 against VDM++ 2.99 at 512, and 3.65 against 2.40 at 256. With guidance
+  at 256 it is a tie, 1.78 against MDT's 1.79 (Tables 2 and 7).
+- **The claim of matched data and budget is never quantified.**
+- **The video diffusion baselines are old** (VDM, RIN), and UCF-101 has no
+  diffusion baseline at all (Table 1).
+- **There are no text-conditional results,** which the paper admits in App.
+  B.
+
+## Standing in the anthology
+
+The title makes a claim about generator families. The record keeps the paper
+for its tokenizer design, which later work adopted. **Its causal, first-frame-
+separate 3D encoder is the design the video VAEs in this line use.** Wan's
+VAE cites it by name for treating the first frame separately. CogVideoX's
+and HunyuanVideo's causal 3D VAEs have the same shape, though they use a
+continuous latent and not LFQ.
+
+The title's claim about generator families is not what the record relies on.
+Anything citing this paper for "language models beat diffusion" should cite
+the guided numbers and name the masked decoder.
+
+Filed without a `NOTE`: the takeaways come from one full reading done for
+this filing, including appendices A–B.

@@ -1,0 +1,159 @@
+---
+status: Active
+title: 'Vision Transformers Need Registers'
+version: 1
+tags:
+- representation-and-encoding
+- vision-and-graphics
+- model-architecture
+date: '2026-09-24'
+published: '2023-09-28'
+arxiv: '2309.16588'
+first_author: 'Darcet'
+keywords:
+- 'registers'
+- 'high-norm-tokens'
+- 'feature-map-artifacts'
+- 'dinov2'
+- 'object-discovery'
+implementations: []
+summary: >-
+  Darcet, Oquab, Mairal and Bojanowski (2023), [ARXIV-2309.16588](https://arxiv.org/abs/2309.16588). **107
+  documents in this record say "ViT" and none held this.** Large trained ViTs
+  put high-norm outlier tokens on background patches — 2.37% of tokens in
+  DINOv2 ViT-g — which hold little local information and a lot of global
+  information. The model is using redundant patches as scratch space. Append a
+  few tokens whose only job is to be scratch space and the artifacts vanish.
+compared_against:
+- LIT-599
+---
+
+<!-- inactive-ok-file: THEORY-tmp3s87v — Proposed, and cited only to draw a parallel that the same
+     paragraph says supports a question rather than a conclusion. Nothing here
+     rests on that account being settled; if it were Active the paragraph would
+     have to say less, not more, because the two results are not measurements
+     of one thing. -->
+# LIT-tmpic7xb: Vision Transformers Need Registers
+
+Darcet, Oquab, Mairal and Bojanowski (2023) — [ARXIV-2309.16588](https://arxiv.org/abs/2309.16588)
+
+## The characterization, which is the substantial part
+
+**The artifacts are high-norm tokens.** The distribution of patch-token norms
+in DINOv2 ViT-g is bimodal, so a cutoff works: above norm 150 is an outlier,
+and **2.37% of tokens** are. DINO ViT-B/16 does not show them.
+
+**They appear with scale and with training, not from the start.**
+
+- around **layer 15 of 40**, not at the input or the output;
+- only after about **one third of training**;
+- only in **ViT-Large, Huge and giant** — Tiny, Small and Base do not show them.
+
+Read alone, that is an emergent-property story: a phenomenon absent below a
+size threshold and present above it.
+
+**They sit where the image is redundant.** High-norm tokens have high cosine
+similarity to their four neighbours measured right after the patch embedding —
+before the transformer has done anything. They are uniform background.
+
+**They have thrown away their local content.** Linear probes on the patch
+embeddings:
+
+| | position top-1 | position avg. distance ↓ | reconstruction L2 ↓ |
+| --- | --: | --: | --: |
+| normal tokens | 41.7 | 0.79 | 18.38 |
+| outlier tokens | **22.8** | **5.09** | **25.23** |
+
+**And they have picked up global content instead.** Take one patch token at
+random as the whole image representation and train a logistic regression on
+it: the high-norm tokens classify **much better** than normal ones.
+
+So the model is not malfunctioning. It has found spare capacity in patches
+whose information is redundant and is using it for something else.
+
+## The hypothesis and the fix
+
+> large, sufficiently trained models learn to recognize redundant tokens, and
+> to use them as places to store, process and retrieve global information
+
+If that is right, the problem is that the model has nowhere else to put global
+state, so **give it somewhere**: append tokens to the input sequence that do
+not come from the image. Registers.
+
+**The artifacts disappear entirely**, and *"adding one brings most of the
+benefit"* — ablated at 0, 1, 2, 4, 8 and 16 on DINOv2 ViT-L/14, with an
+optimal count for dense tasks above one.
+
+## What it costs, and what it buys
+
+Linear probing on frozen features, three training paradigms, trained with and
+without:
+
+| | ImageNet top-1 | ADE20k mIoU | NYUd rmse ↓ |
+| --- | --: | --: | --: |
+| DeiT-III | 84.7 | 38.9 | 0.511 |
+| DeiT-III + reg | 84.7 | 39.1 | 0.512 |
+| OpenCLIP | 78.2 | 26.6 | 0.702 |
+| OpenCLIP + reg | 78.1 | 26.7 | **0.661** |
+| DINOv2 | 84.3 | 46.6 | 0.378 |
+| DINOv2 + reg | **84.8** | **47.9** | **0.366** |
+
+Nothing degrades and DINOv2 improves on all three. OpenCLIP's zero-shot
+ImageNet is unchanged (59.9 → 60.1 in their reproduction).
+
+Object discovery is where the gain is large, and it is where the artifacts
+were doing visible damage — LOST corloc:
+
+| | VOC 2007 | VOC 2012 | COCO 20k |
+| --- | --: | --: | --: |
+| DeiT-III | 11.7 | 13.1 | 10.7 |
+| DeiT-III + reg | **27.1** | **32.7** | **25.1** |
+| DINOv2 | 35.3 | | |
+| DINOv2 + reg | **55.4** | | |
+
+**+20.1 corloc for DINOv2 on VOC 2007.** Two honest qualifications the paper
+makes itself: DINOv2+registers at 55.4 **still does not match the original
+DINO's 61.9**, so registers narrow this gap rather than closing it; and
+**OpenCLIP is slightly worse with registers** on object discovery, the one
+place the intervention does not help.
+
+## The finding about a document the record already holds
+
+`LIT-599` is DINOv2, `Active`, and this paper says two things about it that
+note does not carry.
+
+The first is the 2.37%. The second is sharper and is a capability *loss*:
+
+> **we observed that DINOv2 is surprisingly incompatible with LOST**
+
+Object discovery methods were built on DINO and *"significantly surpassed the
+previous state of the art"* with it. DINOv2 is the better model on dense
+prediction and **breaks them**. That is a regression across a model
+generation, caused by artifacts nobody had characterized, and it is the kind
+of thing a note on a foundation model should say. `LIT-599` is amended here.
+
+## What this shares with `#342`'s previous unit, and where the parallel stops
+
+Unit 5 filed `THEORY-tmp3s87v`: activation outliers in language models were
+called emergent at scale, and a controlled study found they track optimization
+choices instead. This paper has the same **shape of inference** in its setup —
+outliers absent below ViT-Large, present above, appearing only after a third
+of training — and reaches a different resolution: the outliers are **the model
+solving a problem it has no dedicated machinery for**, and the fix is to give
+it the machinery.
+
+What the two share is that *"emergent at scale"* turned out not to be the end
+of the analysis in either case; the outliers had a cause and the cause was
+removable. What they do not share is the cause, the mechanism or the remedy —
+one is a hyperparameter story and one is an architectural one, in different
+modalities on different quantities. The record can see the pair at all only
+because it files by the kind of claim rather than the domain (`ADR-026`), and
+the resemblance is a prompt to ask the question, not evidence about either.
+
+## Standing in the anthology
+
+Unit 6 of `#342` and the last of its Tier A. `#290`'s promotion [#12](https://github.com/dmarx/anthology-of-the-sota/issues/12), ranked on
+**107 documents naming ViT** with the defect-and-fix unheld.
+
+`THEORY-tmpjr84g` holds the account and `SOTA-tmpnogfc` the recommendation.
+`LIT-599` gains the artifact finding and the LOST incompatibility.

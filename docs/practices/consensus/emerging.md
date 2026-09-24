@@ -6,7 +6,7 @@
 
 **Spreading** — several independent groups, moving toward default without being there.
 
-51 of 399 SOTA documents. Back to the [full index](../README.md).
+52 of 400 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -61,3 +61,4 @@
 | [SOTA-373](../../../record/practices.d/SOTA-373.md) | Set the masking ratio by the signal's redundancy, not by the ratio that worked on text |  | Active |
 | [SOTA-376](../../../record/practices.d/SOTA-376.md) | Score each image-text pair independently with a sigmoid, so the loss needs no global normalization |  | Active |
 | [SOTA-382](../../../record/practices.d/SOTA-382.md) v3 | Subsample frequent tokens: it is faster and it improves the rare ones |  | Superseded — by [SOTA-374](../../../record/practices.d/SOTA-374.md); the same recommendation from the same paper and section; [SOTA-374](../../../record/practices.d/SOTA-374.md) states the discard rule and carries the independent ablation |
+| [SOTA-400](../../../record/practices.d/SOTA-400.md) | Append a few register tokens to a ViT so it does not commandeer background patches for scratch space |  | Active |

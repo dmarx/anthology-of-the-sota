@@ -2,7 +2,7 @@
 
 # Lines of work
 
-53 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+54 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -406,6 +406,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-595](../record/literature.d/LIT-595.md) — VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning *(Active)*
 - alongside: [LIT-596](../record/literature.d/LIT-596.md) — Barlow Twins: Self-Supervised Learning via Redundancy Reduction *(Active)*
 
+### From DINOv2: Learning Robust Visual Features without Supervision
+
+- alongside: [LIT-599](../record/literature.d/LIT-599.md) — DINOv2: Learning Robust Visual Features without Supervision *(Active)*
+- alongside: [LIT-662](../record/literature.d/LIT-662.md) — Vision Transformers Need Registers *(Active)*
+
 ### From GloVe: Global Vectors for Word Representation
 
 - [LIT-602](../record/literature.d/LIT-602.md) — GloVe: Global Vectors for Word Representation *(Active)*
@@ -558,6 +563,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-595](../record/literature.d/LIT-595.md) — VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning *(Active)*
 - alongside: [LIT-596](../record/literature.d/LIT-596.md) — Barlow Twins: Self-Supervised Learning via Redundancy Reduction *(Active)*
+
+### From DINOv2: Learning Robust Visual Features without Supervision
+
+- alongside: [LIT-599](../record/literature.d/LIT-599.md) — DINOv2: Learning Robust Visual Features without Supervision *(Active)*
+- alongside: [LIT-662](../record/literature.d/LIT-662.md) — Vision Transformers Need Registers *(Active)*
 
 ## Sharing no `tags`
 

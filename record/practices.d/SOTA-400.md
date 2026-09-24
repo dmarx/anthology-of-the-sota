@@ -1,5 +1,8 @@
 ---
+number: 400
 status: Active
+formerly:
+- SOTA-tmpnogfc
 consensus: emerging
 consensus_note: >-
   The grounds are the evidence, not adoption. One paper, but a controlled
@@ -20,20 +23,20 @@ tags:
 - representation-and-encoding
 date: '2026-09-24'
 source:
-- LIT-tmpic7xb
+- LIT-662
 introduced_by:
-- LIT-tmpic7xb
+- LIT-662
 implementations:
 - DINOv2
 explained_by:
-- THEORY-tmpjr84g
+- THEORY-101
 ---
 
-# SOTA-tmpnogfc: Append a few register tokens to a ViT so it does not commandeer background patches for scratch space
+# SOTA-400: Append a few register tokens to a ViT so it does not commandeer background patches for scratch space
 
 ## Source
 
-Darcet, Oquab, Mairal and Bojanowski (2023), `LIT-tmpic7xb`.
+Darcet, Oquab, Mairal and Bojanowski (2023), `LIT-662`.
 
 ## What to do
 
@@ -48,7 +51,7 @@ beyond a longer sequence.
 ## Why
 
 Without them, a large trained ViT takes patches whose content is redundant with
-their neighbours and overwrites them with global state — `THEORY-tmpjr84g`.
+their neighbours and overwrites them with global state — `THEORY-101`.
 Those patches come out as **high-norm outlier tokens**, 2.37% of them in
 DINOv2 ViT-g, holding little information about their own position or pixels and
 a lot about the image as a whole. Anything downstream that reads the feature
@@ -99,7 +102,7 @@ artifacts, so below that threshold this buys nothing — the paper's sweep over
 model size is what says so.
 
 **One evaluation goes the other way.** OpenCLIP object discovery is slightly
-*worse* with registers, and neither the paper nor `THEORY-tmpjr84g` explains
+*worse* with registers, and neither the paper nor `THEORY-101` explains
 it. If the deployment is image-text pretraining for a spatial task, check
 rather than assume.
 

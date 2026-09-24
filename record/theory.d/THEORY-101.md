@@ -1,5 +1,8 @@
 ---
+number: 101
 status: Active
+formerly:
+- THEORY-tmpjr84g
 title: 'A large trained ViT repurposes redundant patch tokens as scratch space for global information, which is what its feature-map artifacts are'
 version: 1
 tags:
@@ -7,11 +10,11 @@ tags:
 - model-architecture
 date: '2026-09-24'
 source:
-- LIT-tmpic7xb
+- LIT-662
 explains:
-- SOTA-tmpnogfc
+- SOTA-400
 summary: >-
-  Darcet et al. (2023), [LIT-tmpic7xb](../literature.d/LIT-tmpic7xb.md). The high-norm tokens that spoil ViT
+  Darcet et al. (2023), [LIT-662](../literature.d/LIT-662.md). The high-norm tokens that spoil ViT
   feature maps are not damage: they sit on patches redundant with their
   neighbours, they have discarded their own local content, and they carry
   global information instead. The model found spare capacity and used it. The
@@ -19,15 +22,15 @@ summary: >-
   should move there — was tested and holds.
 ---
 
-<!-- inactive-ok-file: THEORY-tmp3s87v — Proposed, named in a section whose whole point is that these
+<!-- inactive-ok-file: THEORY-100 — Proposed, named in a section whose whole point is that these
      two accounts should NOT be read as corroborating each other: different
      modality, quantity, cause and remedy, and no comparison anyone ran
      (ADR-011). Its status is not load-bearing here. -->
-# THEORY-tmpjr84g: A large trained ViT repurposes redundant patch tokens as scratch space for global information, which is what its feature-map artifacts are
+# THEORY-101: A large trained ViT repurposes redundant patch tokens as scratch space for global information, which is what its feature-map artifacts are
 
 ## Source
 
-Darcet, Oquab, Mairal and Bojanowski (2023), `LIT-tmpic7xb`.
+Darcet, Oquab, Mairal and Bojanowski (2023), `LIT-662`.
 
 ## The claim
 

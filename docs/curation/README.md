@@ -7,6 +7,7 @@ Why things entered the anthology, and why they left.
 ## Currently — [September 2026](2026-09.md)
 
 - [24 Sep 22:42 — A practice waiting fourteen months for an ablation that already existed](2026-09.md#a-practice-waiting-fourteen-months-for-an-ablation-that-already-existed)
+- [24 Sep 22:27 — Two outlier phenomena, two different resolutions, one shared mistake](2026-09.md#two-outlier-phenomena-two-different-resolutions-one-shared-mistake)
 - [24 Sep 21:23 — The record bet on which half of a paper would survive, and picked the wrong one](2026-09.md#the-record-bet-on-which-half-of-a-paper-would-survive-and-picked-the-wrong-one)
 - [24 Sep 20:13 — A prediction that was wrong, and the condition that was there instead](2026-09.md#a-prediction-that-was-wrong-and-the-condition-that-was-there-instead)
 - [24 Sep 20:11 — The paper behind native-size training credits throughput, not aspect ratio](2026-09.md#the-paper-behind-native-size-training-credits-throughput-not-aspect-ratio)
@@ -226,9 +227,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-219 entries across 2 books, newest first.
+220 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 217 | 2026-09-05 | 2026-09-24 |
+| [2026-09](2026-09.md) | 218 | 2026-09-05 | 2026-09-24 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

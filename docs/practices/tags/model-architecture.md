@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in.
 
-46 of 399 SOTA documents. Back to the [full index](../README.md).
+47 of 400 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -56,3 +56,4 @@
 | [SOTA-358](../../../record/practices.d/SOTA-358.md) v2 | Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not |  | Active |
 | [SOTA-362](../../../record/practices.d/SOTA-362.md) | Train through a projection head and then discard it, taking the layer before as the representation |  | Active |
 | [SOTA-365](../../../record/practices.d/SOTA-365.md) | Learn without negatives by breaking the symmetry: a predictor on one branch and a stop-gradient on the other |  | Active |
+| [SOTA-400](../../../record/practices.d/SOTA-400.md) | Append a few register tokens to a ViT so it does not commandeer background patches for scratch space |  | Active |

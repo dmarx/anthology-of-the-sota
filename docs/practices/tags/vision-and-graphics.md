@@ -6,7 +6,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-28 of 399 SOTA documents. Back to the [full index](../README.md).
+29 of 400 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -38,3 +38,4 @@
 | [SOTA-396](../../../record/practices.d/SOTA-396.md) | When a latent video model reuses an image autoencoder or upsampler, fine-tune them on video so they see time | Blattmann et al. (2023), [LIT-621](../../../record/literature.d/LIT-621.md). An image autoencoder decodes each frame independently and flickers. Fine-tuning its decoder on video, with a video discriminator, cuts reconstruction FVD on three datasets: 390.88 to 32.94, 35.82 to 18.66, and 73.78 to 25.55. Making the upsampler temporal cuts FVD from 165.98 to 45.39. Reconstruction FID worsens on one dataset and improves on two. | Proposed |
 | [SOTA-397](../../../record/practices.d/SOTA-397.md) | To condition an unconditionally trained diffusion model on known frames, use reconstruction guidance, not replacement | Ho, Salimans et al. (2022), [LIT-627](../../../record/literature.d/LIT-627.md). Extending a video autoregressively from a model trained without conditioning, reconstruction guidance (steering each denoising step toward consistency with the known frames) gives FVD 136 against 451 for replacing the known frames' noisy latents (Table 6). The model and guidance weight are held fixed. | Proposed |
 | [SOTA-398](../../../record/practices.d/SOTA-398.md) v2 | Pretrain a vision transformer on packed, aspect-preserved images at sampled resolutions, not on fixed square crops | Dehghani et al. (2023), [LIT-657](../../../record/literature.d/LIT-657.md). Do not resize or crop images to one square resolution. Keep each image's aspect ratio and sample its resolution per example, favouring small side lengths. Pack the patches into fixed-length sequences with per-example attention masks. At matched compute this beats square fixed-resolution ViT pretraining, and matches the best ViT with 4x less compute. Most of the gain is throughput. | Proposed |
+| [SOTA-400](../../../record/practices.d/SOTA-400.md) | Append a few register tokens to a ViT so it does not commandeer background patches for scratch space |  | Active |

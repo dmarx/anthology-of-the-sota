@@ -6,7 +6,7 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-38 of 399 SOTA documents. Back to the [full index](../README.md).
+39 of 400 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -48,3 +48,4 @@
 | [SOTA-391](../../../record/practices.d/SOTA-391.md) | Estimate attention resolution before training when choosing a position encoding, and measure it across the extrapolation boundary | Sun et al. (2022), [LIT-638](../../../record/literature.d/LIT-638.md) — attention resolution scores how well an attention pattern distinguishes token distance, and is estimable from the encoding **before a run**. Measured at the training length and twice it: **RoPE 0.91 → 0.08, ALiBi 0.81 → 0.88.** The record has four practices about rotary encoding and held no measure of this. | Proposed |
 | [SOTA-396](../../../record/practices.d/SOTA-396.md) | When a latent video model reuses an image autoencoder or upsampler, fine-tune them on video so they see time | Blattmann et al. (2023), [LIT-621](../../../record/literature.d/LIT-621.md). An image autoencoder decodes each frame independently and flickers. Fine-tuning its decoder on video, with a video discriminator, cuts reconstruction FVD on three datasets: 390.88 to 32.94, 35.82 to 18.66, and 73.78 to 25.55. Making the upsampler temporal cuts FVD from 165.98 to 45.39. Reconstruction FID worsens on one dataset and improves on two. | Proposed |
 | [SOTA-398](../../../record/practices.d/SOTA-398.md) v2 | Pretrain a vision transformer on packed, aspect-preserved images at sampled resolutions, not on fixed square crops | Dehghani et al. (2023), [LIT-657](../../../record/literature.d/LIT-657.md). Do not resize or crop images to one square resolution. Keep each image's aspect ratio and sample its resolution per example, favouring small side lengths. Pack the patches into fixed-length sequences with per-example attention masks. At matched compute this beats square fixed-resolution ViT pretraining, and matches the best ViT with 4x less compute. Most of the gain is throughput. | Proposed |
+| [SOTA-400](../../../record/practices.d/SOTA-400.md) | Append a few register tokens to a ViT so it does not commandeer background patches for scratch space |  | Active |

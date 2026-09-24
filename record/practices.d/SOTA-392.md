@@ -1,5 +1,8 @@
 ---
+number: 392
 status: Proposed
+formerly:
+- SOTA-tmp62nb7
 promote_when: >-
   A second controlled comparison of distillation alone against reflow
   followed by distillation, for one-step or few-step generation from a
@@ -33,7 +36,7 @@ summary: >-
   and worsens many-step quality from 2.58 to 3.36.
 ---
 
-# SOTA-tmp62nb7: To get a one-step sampler from a rectified flow, distil it; treat reflow as an optional extra pass, and keep the pre-reflow model for many steps
+# SOTA-392: To get a one-step sampler from a rectified flow, distil it; treat reflow as an optional extra pass, and keep the pre-reflow model for many steps
 
 ## Source
 

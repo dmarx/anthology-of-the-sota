@@ -1,5 +1,8 @@
 ---
+number: 397
 status: Proposed
+formerly:
+- SOTA-tmpjhzoa
 promote_when: >-
   A second controlled comparison of reconstruction guidance against
   replacement for conditioning an unconditionally trained diffusion model
@@ -35,7 +38,7 @@ summary: >-
   (Table 6). The model and guidance weight are held fixed.
 ---
 
-# SOTA-tmpjhzoa: To condition an unconditionally trained diffusion model on known frames, use reconstruction guidance, not replacement
+# SOTA-397: To condition an unconditionally trained diffusion model on known frames, use reconstruction guidance, not replacement
 
 ## Source
 

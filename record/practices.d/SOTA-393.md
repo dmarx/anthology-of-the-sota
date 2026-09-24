@@ -1,5 +1,8 @@
 ---
+number: 393
 status: Proposed
+formerly:
+- SOTA-tmp6kqgw
 promote_when: >-
   A controlled comparison of freezing against unfreezing the spatial layers
   over the whole video-training run, not one stage. It should measure image
@@ -40,7 +43,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-386 SOTA-390 — Proposed; named here as the neighbouring practice this one must be read against, not as support -->
 
-# SOTA-tmp6kqgw: Freeze the image model's spatial layers when adding time if checkpoint compatibility matters; do not expect a quality gain from it
+# SOTA-393: Freeze the image model's spatial layers when adding time if checkpoint compatibility matters; do not expect a quality gain from it
 
 ## Source
 

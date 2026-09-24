@@ -1,5 +1,8 @@
 ---
+number: 394
 status: Proposed
+formerly:
+- SOTA-tmpblabi
 promote_when: >-
   A second group compares a bidirectional teacher against a causal teacher
   for the same causal few-step student, with the two teachers matched in
@@ -34,7 +37,7 @@ summary: >-
   works and does not isolate why.
 ---
 
-# SOTA-tmpblabi: When distilling a causal few-step video generator, take the teacher bidirectional, not causal
+# SOTA-394: When distilling a causal few-step video generator, take the teacher bidirectional, not causal
 
 ## Source
 

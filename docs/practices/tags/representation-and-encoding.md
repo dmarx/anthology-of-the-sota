@@ -6,7 +6,7 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-36 of 391 SOTA documents. Back to the [full index](../README.md).
+37 of 397 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -46,3 +46,4 @@
 | [SOTA-380](../../../record/practices.d/SOTA-380.md) | Use prediction-based word vectors rather than count-based distributional vectors | Baroni, Dinu and Kruszewski (2014), [LIT-608](../../../record/literature.d/LIT-608.md) — across 14 benchmarks, word2vec CBOW beat PPMI, SVD and NMF count vectors almost everywhere, and the authors recommend "anybody interested in using DSMs" to "go for the predict models". Retired: [LIT-607](../../../record/literature.d/LIT-607.md) traces the gap to settings the count models were not given, and finds no consistent winner once they are. | Rejected — the advantage it reports disappears when the count-based baselines get the design choices word2vec shipped with and every method is tuned alike ([LIT-607](../../../record/literature.d/LIT-607.md)): no family wins consistently. Retired with no successor. What replaces it is an evaluation practice, [SOTA-379](../../../record/practices.d/SOTA-379.md), which corrects it |
 | [SOTA-381](../../../record/practices.d/SOTA-381.md) v2 | Sample a handful of negatives instead of normalizing over the vocabulary, and let the count fall as the data grows |  | Active |
 | [SOTA-391](../../../record/practices.d/SOTA-391.md) | Estimate attention resolution before training when choosing a position encoding, and measure it across the extrapolation boundary | Sun et al. (2022), [LIT-638](../../../record/literature.d/LIT-638.md) — attention resolution scores how well an attention pattern distinguishes token distance, and is estimable from the encoding **before a run**. Measured at the training length and twice it: **RoPE 0.91 → 0.08, ALiBi 0.81 → 0.88.** The record has four practices about rotary encoding and held no measure of this. | Proposed |
+| [SOTA-396](../../../record/practices.d/SOTA-396.md) | When a latent video model reuses an image autoencoder or upsampler, fine-tune them on video so they see time | Blattmann et al. (2023), [LIT-621](../../../record/literature.d/LIT-621.md). An image autoencoder decodes each frame independently and flickers. Fine-tuning its decoder on video, with a video discriminator, cuts reconstruction FVD on three datasets: 390.88 to 32.94, 35.82 to 18.66, and 73.78 to 25.55. Making the upsampler temporal cuts FVD from 165.98 to 45.39. Reconstruction FID worsens on one dataset and improves on two. | Proposed |

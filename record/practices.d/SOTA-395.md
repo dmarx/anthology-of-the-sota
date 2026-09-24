@@ -1,5 +1,8 @@
 ---
+number: 395
 status: Proposed
+formerly:
+- SOTA-tmpgb7m7
 promote_when: >-
   A second group trains an autoregressive generator of continuous tokens on
   its own rollouts and compares it against teacher-forced and
@@ -37,7 +40,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-333 — Proposed; named here as the neighbouring practice this one must be read against, not as support -->
 
-# SOTA-tmpgb7m7: Post-train an autoregressive video generator on its own rollouts, and score the whole rollout
+# SOTA-395: Post-train an autoregressive video generator on its own rollouts, and score the whole rollout
 
 ## Source
 

@@ -1,5 +1,8 @@
 ---
+number: 396
 status: Proposed
+formerly:
+- SOTA-tmpi9445
 promote_when: >-
   A second group fine-tunes an image autoencoder's decoder, or an image
   upsampler, on video and compares it against the frame-wise original in
@@ -37,7 +40,7 @@ summary: >-
   improves on two.
 ---
 
-# SOTA-tmpi9445: When a latent video model reuses an image autoencoder or upsampler, fine-tune them on video so they see time
+# SOTA-396: When a latent video model reuses an image autoencoder or upsampler, fine-tune them on video so they see time
 
 ## Source
 

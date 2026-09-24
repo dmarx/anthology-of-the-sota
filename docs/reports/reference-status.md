@@ -63,9 +63,17 @@ Keep key/value projections shared across heads while query projections remain se
 
 A reference the reader cannot follow: the code names no document in this record. A typo, a number carried in from another project, and an illustrative code in an example all look identical from here — telling them apart takes a human, so this is a report, not an error.
 
-**0 codes unaccounted for.** Not listed: 3 mentions marked deliberate with an `unresolved-ok:` comment (same syntax and scopes as `inactive-ok:` above).
+**0 codes unaccounted for.** Not listed: 0 mentions marked deliberate with an `unresolved-ok:` comment (same syntax and scopes as `inactive-ok:` above).
 
 Every code resolves. ✅
+
+## Temporary codes this record does not mint
+
+A temporary code belongs to the contribution that created it, and only that contribution can cite it safely. One cited here with no document behind it is another branch's — it resolves for as long as both are open, and stops the moment the other merges and its code is numbered. The trunk never sees the spelling this record wrote down.
+
+**0 codes not minted here.** Not listed: 3 mentions marked deliberate with an `unresolved-ok:` comment — an illustrative code in an example is the usual one.
+
+Every temporary code cited here is this record's own. ✅
 
 ## Files that opt out of reference checking
 

@@ -84,6 +84,6 @@ without it: 94.7 / 64.4 / 30.1 against 93.4 / 60.6 / 29.4.
   is "characteristic of reverse KL" (§6). The practice picks the teacher. It
   does not make distillation free.
 - **Distribution matching is the distillation method throughout.** DMD
-  ([LIT-tmp8mirn](../literature.d/LIT-tmp8mirn.md)) and DMD2 ([LIT-tmpcjcg4](../literature.d/LIT-tmpcjcg4.md)) are its image-domain sources.
+  ([LIT-643](../literature.d/LIT-643.md)) and DMD2 ([LIT-646](../literature.d/LIT-646.md)) are its image-domain sources.
   Whether the result carries to other distillation
   objectives is untested.

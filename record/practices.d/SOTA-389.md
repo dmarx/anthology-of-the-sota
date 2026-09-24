@@ -121,6 +121,6 @@ Captioned video alone would not have fixed it ([NOTE-349](../notes.d/NOTE-349.md
   kind of model writes them.
 - **The image-domain antecedent is weaker than its reputation.** The
   observation that descriptive synthetic captions improve prompt following
-  is usually credited to DALL-E 3 ([LIT-tmpu3jdj](../literature.d/LIT-tmpu3jdj.md)), which Wan cites. Its
+  is usually credited to DALL-E 3 ([LIT-648](../literature.d/LIT-648.md)), which Wan cites. Its
   controlled evidence is CLIP score only, not human-rated alignment, and it
   credits Parti with training on synthetic captions first.

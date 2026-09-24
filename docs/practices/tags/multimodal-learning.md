@@ -16,4 +16,4 @@
 | [SOTA-359](../../../record/practices.d/SOTA-359.md) v2 | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |
 | [SOTA-376](../../../record/practices.d/SOTA-376.md) | Score each image-text pair independently with a sigmoid, so the loss needs no global normalization |  | Active |
 | [SOTA-377](../../../record/practices.d/SOTA-377.md) | Stop scaling the contrastive batch past about 32k, because the benefit saturates there |  | Active |
-| [SOTA-389](../../../record/practices.d/SOTA-389.md) v2 | Caption training video with a model that watches the video, not with captions of its frames |  | Proposed |
+| [SOTA-389](../../../record/practices.d/SOTA-389.md) v3 | Caption training video with a model that watches the video, not with captions of its frames |  | Proposed |

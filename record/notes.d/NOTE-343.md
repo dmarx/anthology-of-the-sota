@@ -149,7 +149,7 @@ inference it is "conditioned on the previously generated clean chunks"
 
 ## Connections
 
-It extends DMD ([LIT-tmp8mirn](../literature.d/LIT-tmp8mirn.md)) and DMD2 ([LIT-tmpcjcg4](../literature.d/LIT-tmpcjcg4.md)) from images to
+It extends DMD ([LIT-643](../literature.d/LIT-643.md)) and DMD2 ([LIT-646](../literature.d/LIT-646.md)) from images to
 causal video. It borrows per-chunk independent noise from Diffusion Forcing
 ([LIT-554](../literature.d/LIT-554.md)). Self Forcing ([LIT-629](../literature.d/LIT-629.md)) replicates it inside its own framework as
 "DF + DMD". It argues that CausVid's DMD loss matches the wrong

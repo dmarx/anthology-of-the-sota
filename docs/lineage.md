@@ -164,31 +164,35 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-446](../record/literature.d/LIT-446.md) — Variational Diffusion Models *(Active)*
     - [LIT-627](../record/literature.d/LIT-627.md) — Video Diffusion Models *(Active)*
       - [LIT-637](../record/literature.d/LIT-637.md) — Imagen Video: High Definition Video Generation with Diffusion Models *(Active)* — also extends LIT-067
+    - [LIT-643](../record/literature.d/LIT-643.md) — One-step Diffusion with Distribution Matching Distillation *(Active)*
+      - [LIT-646](../record/literature.d/LIT-646.md) — Improved Distribution Matching Distillation for Fast Image Synthesis *(Active)*
+        - [LIT-631](../record/literature.d/LIT-631.md) — From Slow Bidirectional to Fast Autoregressive Video Diffusion Models *(Active)* — also extends LIT-643
 - [LIT-448](../record/literature.d/LIT-448.md) — Scalable Diffusion Models with Transformers *(Active)*
-  - [LIT-447](../record/literature.d/LIT-447.md) — SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers *(Active)*
-    - [LIT-449](../record/literature.d/LIT-449.md) — Scaling Rectified Flow Transformers for High-Resolution Image Synthesis *(Active)* — also extends LIT-636
-      - [LIT-573](../record/literature.d/LIT-573.md) — FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space *(Active)*
-        - [LIT-572](../record/literature.d/LIT-572.md) — FLUX.2: Analyzing and Enhancing the Latent Space of FLUX – Representation Comparison *(Active)*
-      - [LIT-618](../record/literature.d/LIT-618.md) — LTX-Video: Realtime Video Latent Diffusion *(Active)*
-      - [LIT-619](../record/literature.d/LIT-619.md) — Wan: Open and Advanced Large-Scale Video Generative Models *(Active)* — also extends LIT-448, LIT-623
-        - [LIT-629](../record/literature.d/LIT-629.md) — Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion *(Active)* — also extends LIT-631
-      - [LIT-620](../record/literature.d/LIT-620.md) — HunyuanVideo: A Systematic Framework For Large Video Generative Models *(Active)* — also extends LIT-623
-      - [LIT-626](../record/literature.d/LIT-626.md) — Movie Gen: A Cast of Media Foundation Models *(Active)* — also extends LIT-062, LIT-630, LIT-635
-      - [LIT-634](../record/literature.d/LIT-634.md) — Open-Sora 2.0: Training a Commercial-Level Video Generation Model in $200k *(Active)*
   - [LIT-622](../record/literature.d/LIT-622.md) — CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer *(Active)* — also extends LIT-623
   - [LIT-624](../record/literature.d/LIT-624.md) — Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model *(Active)*
-- [LIT-623](../record/literature.d/LIT-623.md) — Language Model Beats Diffusion — Tokenizer is Key to Visual Generation *(Active)*
-- [LIT-630](../record/literature.d/LIT-630.md) — Flow Matching for Generative Modeling *(Active)*
-- [LIT-631](../record/literature.d/LIT-631.md) — From Slow Bidirectional to Fast Autoregressive Video Diffusion Models *(Active)*
-- [LIT-636](../record/literature.d/LIT-636.md) — Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow *(Active)*
-- alongside: [LIT-483](../record/literature.d/LIT-483.md) — Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models *(Active)*
-- alongside: [LIT-554](../record/literature.d/LIT-554.md) — Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion *(Active)*
-
-### From Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise
-
 - [LIT-553](../record/literature.d/LIT-553.md) — Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise *(Active)*
   - [LIT-555](../record/literature.d/LIT-555.md) — Warm Diffusion: Recipe for Blur-Noise Mixture Diffusion Models *(Active)*
+- [LIT-623](../record/literature.d/LIT-623.md) — Language Model Beats Diffusion — Tokenizer is Key to Visual Generation *(Active)*
+- [LIT-630](../record/literature.d/LIT-630.md) — Flow Matching for Generative Modeling *(Active)*
+- [LIT-636](../record/literature.d/LIT-636.md) — Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow *(Active)*
+- [LIT-644](../record/literature.d/LIT-644.md) — Building Normalizing Flows with Stochastic Interpolants *(Active)*
+  - [LIT-645](../record/literature.d/LIT-645.md) — Stochastic Interpolants: A Unifying Framework for Flows and Diffusions *(Active)*
+    - [LIT-447](../record/literature.d/LIT-447.md) — SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers *(Active)* — also extends LIT-448
+      - [LIT-449](../record/literature.d/LIT-449.md) — Scaling Rectified Flow Transformers for High-Resolution Image Synthesis *(Active)* — also extends LIT-636
+        - [LIT-573](../record/literature.d/LIT-573.md) — FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space *(Active)*
+          - [LIT-572](../record/literature.d/LIT-572.md) — FLUX.2: Analyzing and Enhancing the Latent Space of FLUX – Representation Comparison *(Active)*
+        - [LIT-618](../record/literature.d/LIT-618.md) — LTX-Video: Realtime Video Latent Diffusion *(Active)*
+        - [LIT-619](../record/literature.d/LIT-619.md) — Wan: Open and Advanced Large-Scale Video Generative Models *(Active)* — also extends LIT-448, LIT-623
+          - [LIT-629](../record/literature.d/LIT-629.md) — Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion *(Active)* — also extends LIT-631
+        - [LIT-620](../record/literature.d/LIT-620.md) — HunyuanVideo: A Systematic Framework For Large Video Generative Models *(Active)* — also extends LIT-623
+        - [LIT-626](../record/literature.d/LIT-626.md) — Movie Gen: A Cast of Media Foundation Models *(Active)* — also extends LIT-062, LIT-630, LIT-635
+        - [LIT-634](../record/literature.d/LIT-634.md) — Open-Sora 2.0: Training a Commercial-Level Video Generation Model in $200k *(Active)*
+- alongside: [LIT-038](../record/literature.d/LIT-038.md) — Denoising Diffusion Implicit Models *(Active)*
 - alongside: [LIT-075](../record/literature.d/LIT-075.md) — Elucidating the Design Space of Diffusion-Based Generative Models *(Active)*
+- alongside: [LIT-093](../record/literature.d/LIT-093.md) — Consistency Models *(Active)*
+- alongside: [LIT-483](../record/literature.d/LIT-483.md) — Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models *(Active)*
+- alongside: [LIT-554](../record/literature.d/LIT-554.md) — Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion *(Active)*
+- alongside: [LIT-648](../record/literature.d/LIT-648.md) — Improving Image Generation with Better Captions *(Active)*
 
 ### From Denoising as Projection: Constrained Optimization with Gradient-Guided Diffusion
 
@@ -217,6 +221,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-561](../record/literature.d/LIT-561.md) — A Style-Based Generator Architecture for Generative Adversarial Networks *(Active)*
   - [LIT-560](../record/literature.d/LIT-560.md) — Analyzing and Improving the Image Quality of StyleGAN *(Active)*
     - [LIT-559](../record/literature.d/LIT-559.md) — Alias-Free Generative Adversarial Networks *(Active)*
+
+### From Sequence Level Training with Recurrent Neural Networks
+
+- alongside: [LIT-647](../record/literature.d/LIT-647.md) — Sequence Level Training with Recurrent Neural Networks *(Active)*
+- alongside: [LIT-649](../record/literature.d/LIT-649.md) — Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks *(Active)*
 
 ## in-context-learning
 
@@ -475,6 +484,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-610](../record/literature.d/LIT-610.md) — Efficient Estimation of Word Representations in Vector Space *(Superseded)*
   - [LIT-609](../record/literature.d/LIT-609.md) — Distributed Representations of Words and Phrases and their Compositionality *(Superseded)*
+
+### From Sequence Level Training with Recurrent Neural Networks
+
+- alongside: [LIT-647](../record/literature.d/LIT-647.md) — Sequence Level Training with Recurrent Neural Networks *(Active)*
+- alongside: [LIT-649](../record/literature.d/LIT-649.md) — Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks *(Active)*
 
 ## vision-and-graphics
 

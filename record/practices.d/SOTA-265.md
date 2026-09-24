@@ -28,13 +28,13 @@ tags:
 date: '2026-09-20'
 source:
 - LIT-447
-- LIT-tmpb08v0
+- LIT-645
 introduced_by:
-- LIT-tmpb08v0
+- LIT-645
 implementations:
 - 'SiT-XL'
 summary: >-
-  Albergo, Boffi and Vanden-Eijnden (2023), LIT-tmpb08v0, state it and Ma
+  Albergo, Boffi and Vanden-Eijnden (2023), LIT-645, state it and Ma
   et al. (2024), [LIT-447](../literature.d/LIT-447.md), measure it — score-based diffusion conventionally
   takes the reverse SDE's diffusion coefficient from the forward process, and
   presents the two as intrinsically tied. They are not: the coefficient
@@ -47,7 +47,7 @@ summary: >-
 
 ## Source
 
-Albergo, Boffi and Vanden-Eijnden (2023), [LIT-tmpb08v0](../literature.d/LIT-tmpb08v0.md) — [ARXIV-2303.08797](https://arxiv.org/abs/2303.08797).
+Albergo, Boffi and Vanden-Eijnden (2023), [LIT-645](../literature.d/LIT-645.md) — [ARXIV-2303.08797](https://arxiv.org/abs/2303.08797).
 The framework paper introduces it: one learned velocity and score give a
 family of SDEs sharing the interpolant's marginals, and its v1 abstract says
 the noise strength "can be tuned as model hyper-parameter after training".

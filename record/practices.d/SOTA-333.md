@@ -139,11 +139,11 @@ length with this practice's full recipe, and Table 2 measures neither.
 - **Continuous tokens.** This is not a recommendation for language
   models. The discrete-token evidence on the same mismatch is measurable
   but modest, and none of it shows divergence. Scheduled Sampling
-  ([LIT-tmpylvlq](../literature.d/LIT-tmpylvlq.md)) has the largest effect, on its speech task: the
+  ([LIT-649](../literature.d/LIT-649.md)) has the largest effect, on its speech task: the
   teacher-forced baseline has the best next-step error (15.0) and a
   decoding error of 46.0, against 34.5 with scheduled sampling (its
-  Table 3). MIXER ([LIT-tmpnp0ky](../literature.d/LIT-tmpnp0ky.md)) gains 1 to 3 points, but it also
+  Table 3). MIXER ([LIT-647](../literature.d/LIT-647.md)) gains 1 to 3 points, but it also
   optimizes the test metric, so the gain is not isolated to exposure bias.
-  Professor Forcing ([LIT-tmp6j622](../literature.d/LIT-tmp6j622.md)) finds no difference on word-level Penn
+  Professor Forcing ([LIT-642](../literature.d/LIT-642.md)) finds no difference on word-level Penn
   Treebank and attributes that to dependency length; its strongest
   result is on continuous handwriting

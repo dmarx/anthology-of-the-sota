@@ -81,7 +81,7 @@ summary: >-
 
 Liu, Gong and Liu (2022), [LIT-636](../literature.d/LIT-636.md), and Lipman et al. (2022),
 [LIT-630](../literature.d/LIT-630.md), introduced the straight path concurrently. Albergo and Vanden-Eijnden's
-stochastic interpolants ([LIT-tmp90ynr](../literature.d/LIT-tmp90ynr.md)) are a concurrent origin of the
+stochastic interpolants ([LIT-644](../literature.d/LIT-644.md)) are a concurrent origin of the
 simulation-free objective but not of the straight path: they use a
 trigonometric interpolant and credit the linear one to Liu et al. Flow Matching contributes the
 first controlled comparison: the same U-Net, hyperparameters and epochs

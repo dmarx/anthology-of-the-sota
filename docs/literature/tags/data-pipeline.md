@@ -6,7 +6,7 @@
 
 **Data pipeline** — loading, quality assessment and selection, preprocessing, batch preparation.
 
-46 of 576 LIT documents. Back to the [full index](../README.md).
+47 of 584 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -56,3 +56,4 @@
 | [LIT-599](../../../record/literature.d/LIT-599.md) | DINOv2: Learning Robust Visual Features without Supervision | Oquab et al. (2023), [ARXIV-2304.07193](https://arxiv.org/abs/2304.07193). The thesis is that existing self-supervised objectives already produce general-purpose features if the data is curated enough, so the contribution is a retrieval-based curation pipeline and the engineering to scale it — not a new objective. Frozen features, no finetuning, competitive with the best open weakly-supervised models. | Active |
 | [LIT-619](../../../record/literature.d/LIT-619.md) v2 | Wan: Open and Advanced Large-Scale Video Generative Models | Wan Team, Alibaba (2025), [ARXIV-2503.20314](https://arxiv.org/abs/2503.20314). The open Wan2.1 video models, 1.3B and 14B, and the full recipe behind them. The recipe covers data curation, a 127M causal 3D VAE compressing 4×8×8, a cross-attention DiT trained by rectified flow on an image-then-video resolution curriculum, the 2D context parallelism it needs, and a mask-conditioned image-to-video variant. The abstract claims video scaling laws in data and model size, but the report plots no scaling curve. | Active |
 | [LIT-625](../../../record/literature.d/LIT-625.md) v2 | Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets | Blattmann, Dockhorn, Kulal et al., Stability AI (2023), [ARXIV-2311.15127](https://arxiv.org/abs/2311.15127). Video LDM's architecture is held fixed, and the paper studies what the data does. Curating 4× fewer clips beats the uncurated set, and the advantage survives high-quality fine-tuning. It is the only controlled video-curation study in this line. One of its own filters lost the ablation and was kept anyway. | Active |
+| [LIT-648](../../../record/literature.d/LIT-648.md) | Improving Image Generation with Better Captions | Betker et al., OpenAI and Microsoft (2023), no arXiv id. Identical T5-conditioned latent diffusion models are trained on the same images with alt-text, short synthetic or descriptive synthetic captions. The descriptive ones give higher CLIP score, and more synthetic in the blend is better up to the 95% tested. The controlled evidence is CLIP score alone, at 256px, and on ground-truth prompts the gain is inside the checkpoint noise. The paper does not describe the DALL-E 3 model, and it says its DALL-E 3 comparisons are not a measurement of recaptioning. | Active |

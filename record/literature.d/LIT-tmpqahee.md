@@ -1,0 +1,104 @@
+---
+status: Active
+title: 'Attention Approximates Sparse Distributed Memory'
+version: 1
+tags:
+- attention-techniques
+- analysis-and-evaluation
+- model-architecture
+date: '2026-09-24'
+published: '2021-11-01'
+arxiv: '2111.05498'
+first_author: 'Bricken'
+keywords:
+- 'sparse-distributed-memory'
+- 'associative-memory'
+- 'attention'
+- 'kanerva'
+- 'qknorm'
+implementations: []
+compared_against:
+- LIT-tmp5bev1
+summary: >-
+  Bricken and Pehlevan (2021), [ARXIV-2111.05498](https://arxiv.org/abs/2111.05498). Attention's update rule is
+  Kanerva's sparse distributed memory read, given two conditions: `L²`
+  normalized vectors and a fitted softmax temperature `β`. The retrodiction is
+  the interesting part — **those two conditions are QK-norm**, published a
+  year earlier for unrelated reasons. Trained QK-norm heads learn
+  **β ∈ [10, 25]**, the range that interpolates between SDM's optimality
+  criteria.
+---
+<!-- inactive-ok-file: THEORY-081 — Proposed, and cited twice as the
+     record's OTHER memory account, both times to say it is the better
+     evidenced of the two. Its being unsettled is the comparison, not a
+     problem for it. -->
+
+# LIT-tmpqahee: Attention Approximates Sparse Distributed Memory
+
+Bricken and Pehlevan (2021) — [ARXIV-2111.05498](https://arxiv.org/abs/2111.05498)
+
+## Key takeaways
+
+- **The correspondence, and the two conditions it needs.** SDM's read maps
+  onto attention's `ξ^new = P_p · softmax(β P_aᵀ ξ)` with keys as pattern
+  addresses, values as pointers and the query as the read address — **given
+  that (i) attention `L²`-normalizes its vectors and (ii) β is chosen to
+  approximate the near-exponential decay of SDM's circle-intersection
+  weighting.** Neither is free; both are assumptions about the architecture,
+  not consequences of it.
+
+- **The retrodiction is what makes it more than an analogy.** *"In requiring
+  that Attention vectors be `L²` normalized and β fitted, SDM predicted
+  Query-Key Norm."* Those are exactly the two things `LIT-tmp5bev1` does —
+  `ℓ₂`-normalize queries and keys, replace `1/√d` with a learnable scalar —
+  published a year earlier, motivated by softmax saturation in low-resource
+  translation, with no reference to associative memory.
+
+- **The measurement.** Trained Query-Key Norm heads learn **β ∈ [10, 25]**
+  (obtained from the QK-norm authors in private correspondence). SDM has
+  three different optimality criteria giving three different β — critical
+  distance, signal-to-noise ratio, and memory capacity — and the learned range
+  interpolates between them. GPT-2 is checked too, with "effective" β inferred
+  from query-key dot product magnitudes, "more approximate but... largely in
+  agreement".
+
+- **The authors state the weakness themselves**, which is why the theory filed
+  from this is `Proposed`: *"Attention learns useful pattern representations
+  that are far from random so this SDM β that fits the optimal `d*`s are only
+  a weak reference for what β values might be reasonable."* The band [10, 25]
+  is wide, the three criteria it interpolates between span a range, and
+  nothing here is a point prediction that could have failed.
+
+- **The mapping is used to read other components**, which is the part that
+  will age either well or badly: §4 interprets LayerNorm, the feed-forward
+  block and the residual stream through the SDM frame. Filed here as recorded
+  rather than endorsed — the record already has `THEORY-081` reading
+  feed-forward layers as key-value memories from direct measurement, which is
+  a different and better-evidenced route to an adjacent claim.
+
+## Standing in the anthology
+
+Unit 5 of `#326`, and the issue ranked it fifth and called it the weakest
+reversal — *"a `THEORY` candidate, not a substrate defect, and an unadopted
+account is still an account nobody depends on."* That assessment holds for
+the theory and **missed what reading it would surface.**
+
+<!-- inactive-ok-block: THEORY-065, THEORY-066, THEORY-061, THEORY-062 — all
+     Proposed, and named here as a census of what the record already holds on
+     this subject. A census counts documents; nothing in the paragraph rests
+     on any of them being settled. -->
+The record has five theories about what self-attention does — clustering
+(`THEORY-065`), collapse (`THEORY-066`), entropy and spectral bounds
+(`THEORY-061`, `THEORY-062`), circuit formation (`THEORY-028`) — and none
+about attention as associative memory. `THEORY-081` makes the memory claim for
+the *feed-forward* block. This is the attention-side counterpart, and it is
+the weaker of the two.
+
+What it also did was send the reading to QK-norm, whose origin the record did
+not hold while naming the technique in thirty documents and recommending it in an
+`Active` practice sourced to an adopter. **The weak paper was worth reading
+for what it cited, which is not a reason anyone can plan around.**
+
+`compared_against: LIT-tmp5bev1` — the β comparison is a real measurement
+against that paper's trained models, which is what `ADR-011` asks of the
+relation.

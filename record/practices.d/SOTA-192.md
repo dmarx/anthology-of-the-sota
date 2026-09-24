@@ -9,7 +9,7 @@ consensus_note: >-
   clip; the Kimi line takes the other route. The invariant is agreed, the
   instrument is not.
 title: 'Normalize the queries and keys before the attention dot product'
-version: 5
+version: 6
 history:
 - version: 2
   date: '2026-09-18'
@@ -44,15 +44,28 @@ history:
     prevents both candidate modes, so nothing about what to do turns on which
     account is right. What turns on it is what a reader watching a live run
     should measure.
+- version: 6
+  date: '2026-09-24'
+  note: >-
+    Corrects `introduced_by`. This practice named LIT-088 (ViT-22B, 2023) as
+    the work that first stated the recommendation. It was first stated by
+    Henry et al. in 2020 (LIT-tmp5bev1), who named the technique; LIT-088's
+    own body says the record held no source establishing it. `introduced_by`
+    repoints to the origin. LIT-088 stays in `source:` because the scale
+    demonstration this document is built on is entirely its, and the origin
+    joins it there because it ran a controlled comparison of its own. The
+    recommendation, the status and the consensus reading are unchanged --
+    what changes is who the record says made the claim.
 tags:
 - model-stability
 - attention-techniques
 - training-optimization
 date: '2026-09-10'
 source:
+- LIT-tmp5bev1
 - LIT-088
 introduced_by:
-- LIT-088
+- LIT-tmp5bev1
 extends:
 - SOTA-050
 compared_against:
@@ -62,6 +75,7 @@ implementations:
 - DeepSeek-V4
 explained_by:
 - THEORY-061
+- THEORY-tmpn3rkg
 ---
 <!-- inactive-ok-file: THEORY-062 — Proposed, filed in this same
      contribution and named in a condition that says it is one group's
@@ -72,8 +86,48 @@ explained_by:
 
 ## Source
 
+Henry, Dachapally, Pawar and Chen (2020), `LIT-tmp5bev1` — the paper that
+named the technique and first made the recommendation.
+
 Dehghani et al. (2023), [LIT-088](../literature.d/LIT-088.md) — ViT-22B, where the mechanism is diagnosed
-rather than only fixed.
+rather than only fixed, and the demonstration this document is built on.
+
+## Two papers, one recommendation, three years apart
+
+This practice was filed naming `LIT-088` as both its source and its origin.
+<!-- inactive-ok-block: ADR-029 — Superseded by ADR-030, which is cited beside
+     it. The pair is the point: ADR-029 drew the origin/evidence distinction
+     and ADR-030 refined it, so naming only the successor would hide where the
+     rule this correction applies came from. -->
+The origin was wrong, and `LIT-088`'s own body said so — it records that
+nothing in the record read a source establishing QK-norm, and calls itself
+*one of the earliest at scale*. That is an adoption claim, correctly hedged;
+what it could not do was fill the slot `introduced_by` asks for, which is the
+work that **first made the recommendation** rather than the work that
+evidenced it ([ADR-029](../decisions.d/ADR-029.md), refined by [ADR-030](../decisions.d/ADR-030.md)).
+
+Henry et al. made it in 2020, and the two arrivals differ in every respect
+except the intervention:
+
+| | `LIT-tmp5bev1` (2020) | [LIT-088](../literature.d/LIT-088.md) (2023) |
+| --- | --- | --- |
+| failure addressed | softmax saturation costing expressivity | divergence at ~8B parameters |
+| scale | low-resource translation | 22B-parameter vision encoder |
+| the scale factor | `1/√d` **replaced** by a learnable parameter | `1/√d` retained |
+| evidence | +0.928 BLEU over five pairs | one model diverging, then converging |
+
+The third row is the one that gets lost. Henry et al. do not add a
+normalization in front of the existing scaling — they normalize the queries
+and keys and then **scale by a trained scalar instead of a constant**, which
+makes the softmax temperature a learned quantity. The record's later usage,
+and `LIT-088`'s, keeps `1/√d`. Both bound the logits; only one turns the
+temperature into a parameter, and that difference is what `LIT-tmpqahee`
+measures.
+
+So the two are not a citation chain but two independent arrivals — a third
+sits below in diffusion transformers ([LIT-449](../literature.d/LIT-449.md)). What this correction adds
+is that the earliest of the three is now held, and that the record can stop
+reading a 22B vision encoder as the place a translation technique began.
 
 ## The failure it prevents
 

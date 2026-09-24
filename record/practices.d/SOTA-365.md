@@ -5,15 +5,31 @@ formerly:
 - SOTA-tmp1kmsu
 consensus: converged
 consensus_note: >-
-  The asymmetric family is what the descendants inherited. `LIT-216`
+  The asymmetric family is what its OWN descendants inherited. `LIT-216`
   (I-JEPA), which this record already held, is built on a predictor plus an
-  EMA target; the `#304` units still to file — DINO and DINOv2 — carry the
-  same structure. What has not converged is *why* it works — the body cites
+  EMA target. This note previously said DINO and DINOv2 carry the same
+  structure; **they do not** — DINO (LIT-tmpxre1q) avoids collapse with
+  centering and sharpening of the teacher output and has no predictor, so the
+  DINO line is a separate route to the same goal rather than more adoption of
+  this one. `converged` therefore describes the predictor family and not
+  negative-free learning in general. What has not converged is *why* it works — the body cites
   the deferred account — and a converged practice with a contested
   explanation is exactly the pair `ADR-031` splits apart. Read as of
   2026-09.
 title: 'Learn without negatives by breaking the symmetry: a predictor on one branch and a stop-gradient on the other'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    Corrects a factual claim the consensus note made about a paper the record
+    did not hold. The note said the unfiled `#304` units, DINO and DINOv2,
+    "carry the same structure" — predictor plus stop-gradient. DINO
+    (LIT-tmpxre1q, now filed) has no predictor: it avoids collapse with
+    centering and sharpening of the teacher output alone, and says so. So the
+    asymmetric-predictor family is one route and DINO is a second. The
+    recommendation is unchanged; `converged` is kept and its grounds are
+    narrowed to the family that does use a predictor.
 tags:
 - representation-and-encoding
 - model-architecture

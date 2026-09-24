@@ -17,7 +17,7 @@ consensus_note: >-
 corrects:
 - SOTA-063
 title: "Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length"
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -28,6 +28,14 @@ history:
     continued pretraining, at parity on short benchmarks. The
     recommendation is unchanged; the reason for not filing it as contested
     is now cost rather than impossibility.
+- version: 3
+  date: '2026-09-24'
+  note: >-
+    Gains the distinction its own evidence does not draw. LIT-tmp9rshd
+    separates a perplexity that does not explode from a model that uses the
+    longer context, and measures RoPE resolution collapsing 0.91 to 0.08
+    across the boundary this practice rescales across. The recommendation
+    is unchanged; what it is evidence *for* is narrower than it looked.
 tags:
 - representation-and-encoding
 date: '2026-09-07'
@@ -90,6 +98,39 @@ measure rather than a way to reach a target length.
 current sequence length instead of pinning it at the target. A fixed factor
 costs quality below the target and breaks abruptly above it; the dynamic form
 degrades gracefully and, notably, works on unmodified pretrained models.
+
+## What "it works" means here, and what it does not
+
+**A perplexity that does not explode is not a model using the longer
+context.** [LIT-tmp9rshd](../literature.d/LIT-tmp9rshd.md) states the distinction and it is worth importing,
+because every result behind this practice is reported as perplexity at the
+extended length: with a proper attention map "the perplexity does not explode
+but does not decrease at the same time. The ideal situation is to use the long
+context in the right way, in that case, the model should perform better
+instead of saturation."
+
+The same paper measures what rescaling is working against. Attention
+resolution — how well an attention pattern distinguishes token distance —
+for RoPE at a 1024 training length and at 2048: **0.91 → 0.08.** The best
+incumbent in-distribution, the worst outside it by an order of magnitude.
+ALiBi, which nothing in this record is sourced to, holds at 0.81 → 0.88.
+
+Two things follow, and they pull in opposite directions.
+
+**It strengthens the motivation.** The defect this practice names — RoPE does
+not extrapolate — now has a number attached, and the number is not marginal.
+
+**It narrows what the practice has been shown to buy.** The evidence is that
+rescaling keeps perplexity from degrading at the target length. Nobody in this
+record has measured whether a rescaled model *recognises position* at that
+length, and the one available instrument says the unrescaled pattern has
+almost no resolution there. **Not degrading and working are different claims**,
+and only the first is established.
+
+That is a gap in the evidence rather than a doubt about the practice. The
+production adoption in the consensus note is real, and a serving
+configuration extending 262144 to 1M is a strong signal about usability. It
+is not a measurement of position-recognisability.
 
 ## Why the frequencies fail in the first place
 

@@ -2,7 +2,7 @@
 
 # Lines of work
 
-50 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+51 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -32,6 +32,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-077](../record/literature.d/LIT-077.md) — Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models *(Active)*
   - [LIT-471](../record/literature.d/LIT-471.md) — Are Emergent Abilities of Large Language Models a Mirage? *(Active)* — also extends LIT-470
 - [LIT-470](../record/literature.d/LIT-470.md) — Emergent Abilities of Large Language Models *(Active)*
+
+### From Evaluating Large Language Models Trained on Code
+
+- alongside: [LIT-388](../record/literature.d/LIT-388.md) — Evaluating Large Language Models Trained on Code *(Active)*
+- alongside: [LIT-650](../record/literature.d/LIT-650.md) — Competition-Level Code Generation with AlphaCode *(Active)*
 
 ### From The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity
 

@@ -25,7 +25,7 @@ history:
   date: '2026-09-24'
   note: >-
     Adds a bound on the metric this practice recommends. Li et al.
-    (LIT-tmp73dfo) define `n@k` — solved with `n` submissions from `k`
+    (LIT-650) define `n@k` — solved with `n` submissions from `k`
     samples — and state that `pass@k = k@k` is an upper bound, because it
     scores a system allowed to submit everything it generates. The
     recommendation is unchanged and so is the finding it rests on, which is a
@@ -128,7 +128,7 @@ different sample counts.
 ## What `pass@k` is an upper bound on
 
 `pass@k` scores a system that may submit every sample it draws. Almost
-nothing does. Li et al. (`LIT-tmp73dfo`) name the general form — **`n@k`**,
+nothing does. Li et al. (`LIT-650`) name the general form — **`n@k`**,
 the fraction of problems solved with `n` submissions drawn from `k` samples —
 and state the relation plainly:
 

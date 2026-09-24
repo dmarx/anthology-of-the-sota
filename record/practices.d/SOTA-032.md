@@ -2,7 +2,7 @@
 number: 32
 status: Active
 title: 'Put the layer normalization inside the residual block, before the sublayer'
-version: 4
+version: 5
 history:
 # inactive-ok: LIT-029 — the retired duplicate, named as what this practice used to cite
 - version: 1
@@ -36,13 +36,27 @@ history:
     `universal` reading gains the note it never had. The recommendation is
     unchanged. This practice had been stating the representation-collapse
     argument in its own prose with no citation.
+- version: 5
+  date: '2026-09-24'
+  note: >-
+    Three changes, recommendation unchanged. `introduced_by` was LIT-114
+    (Xiong et al., Feb 2020); LIT-tmprikl1 (Oct 2019) predates it and
+    disowns the origin itself, crediting Chen et al. 2018, Wang et al. 2019
+    and three toolkits. So the field goes EMPTY under ADR-053 rather than
+    repointing — pre-norm was in the toolkits before anyone argued for it.
+    LIT-tmprikl1 joins `source:` as the first systematic evaluation. The body
+    gains the high-resource counter-result it never had — post-norm beats
+    pre-norm 27.58 to 26.83 on WMT'14 English-German — and the qualification
+    that smaller initialization recovers most of post-norm's stability. The
+    `universal` note is amended to say what the convergence does and does not
+    rest on.
 tags:
 - model-stability
 - model-architecture
 consensus: universal
 consensus_note: >-
-  Not doing it is what needs justifying, and the grounds are adoption rather
-  than a survey: every large model in this record is pre-norm, `llama2` is
+  Not doing it is what needs justifying **at the scales this record is about**,
+  and the grounds are adoption rather than a survey: every large model in this record is pre-norm, `llama2` is
   listed here and the alternatives that exist — sandwich and peri-layernorm
   placements, and LIT-639's two streams — are rearrangements *of* it
   rather than returns to post-norm. What is not established, and the reason
@@ -50,12 +64,25 @@ consensus_note: >-
   deliberate in each case. LIT-639 is the one paper here that measures
   both sides, and it finds post-norm failing outright at twelve encoder and
   twelve decoder layers even with warm-up — which is a reason the convergence
-  is not merely inherited. Read as of 2026-09.
+  is not merely inherited. The bound on the reading: LIT-tmprikl1 measured both
+  placements on high-resource WMT'14 English-German in the base regime and
+  **post-norm won**, 27.58 to 26.83, so `universal` is a statement about the
+  regime the record files for and not about transformers in general. Read as of
+  2026-09.
 date: '2026-08-24'
 source:
 - LIT-114
-introduced_by:
-- LIT-114
+- LIT-tmprikl1
+# Searched and not found: no document this record can name FIRST MADE this
+# recommendation. LIT-tmprikl1 (Oct 2019) is the earliest systematic evaluation
+# and explicitly attributes pre-norm to others — Chen et al. 2018
+# (1804.09849), who found it instrumental inside a larger system, and Wang et
+# al. 2019 (1906.01787), who first compared the placements at depth — while
+# noting it was "already implemented in popular toolkits (Vaswani et al. 2018;
+# Ott et al. 2019; Hieber et al. 2018), though not necessarily used by their
+# default recipes." The origin is code, not a paper. Naming a paper that argued
+# for it before Oct 2019 is how a reader refutes this (ADR-053 §2).
+introduced_by: []
 implementations:
 - llama2
 compared_against:
@@ -74,7 +101,22 @@ explained_by:
 
 ## Source
 
-Xiong et al. (2020), [LIT-114](../literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745).
+Xiong et al. (2020), [LIT-114](../literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745), the mean-field
+analysis. Nguyen and Salazar (2019), `LIT-tmprikl1`, the first systematic
+evaluation, four months earlier.
+
+<!-- inactive-ok-block: ADR-029 — Superseded by ADR-030, cited beside it
+     because the pair is what defines the field this paragraph is about:
+     ADR-029 drew the origin/evidence distinction, ADR-030 refined it, and
+     ADR-053 (Active) is the one being exercised here. -->
+**This practice has no `introduced_by`, and the emptiness is a claim.**
+Pre-norm was in OpenNMT, tensor2tensor and Sockeye, and was used inside larger
+systems, before anybody published an argument for it; the two earliest papers
+that argue for it both attribute it to others. So there is no work that *first
+made this recommendation* in the sense `ADR-029` and `ADR-030` mean, and
+`ADR-053` is what lets the record say so instead of promoting its best
+citation into the slot. The frontmatter comment names what was searched, which
+is how a reader refutes it.
 
 The original Transformer normalizes *after* the residual addition (Post-LN).
 Xiong et al.'s mean-field analysis shows that this leaves the expected
@@ -176,3 +218,45 @@ Worth noting where the number came from: Xie et al.'s own prose says Pre-LN
 "can train effectively without" warm-up, in the paragraph beneath a table
 showing a three-point drop. **The table is the finding and the sentence
 repeats the received view.**
+
+## The regime where post-norm wins, and how much of the rest is initialisation
+
+Everything above is about stability and about low-resource or deep settings.
+`LIT-tmprikl1` ran the comparison at **high resource** — base Transformer,
+WMT'14 English-German, `newstest2014`, tokenized BLEU — and the result goes
+the other way:
+
+| | BLEU |
+| --- | --: |
+| PostNorm + LayerNorm | **27.58** |
+| PostNorm + FixNorm + ScaleNorm | 27.57 |
+| PreNorm + FixNorm + ScaleNorm | 27.07 |
+| PreNorm + LayerNorm | **26.83** |
+
+**Post-norm by 0.75 BLEU**, which the paper flags as surprising and reports
+Wang et al. (2019) observing too. Their summary is the one to carry: *"while
+PostNorm performs better for high-resource NMT in the original base
+Transformer regime, PreNorm is both more stable and more competent in
+low-resource settings."*
+
+Their speculation about the mechanism is **not** the collapse argument above —
+they suggest identity residual networks act like shallow ensembles and thereby
+*"undermine the learning of the longest path"*, and say further study is
+required. Two accounts of the same cost, neither adjudicated here.
+
+The second qualification is sharper, because it is about the headline failure.
+On low-resource en→vi, post-norm with the default Xavier initialization
+**fails to converge** at 4k and 8k warm-up steps and reaches 5.76 BLEU at 16k.
+Reduce the attention layers' initialization (`SmallInit`) and the same
+post-norm model reaches **28.17** at 4k, against pre-norm's 28.52.
+
+So the dramatic version of this practice's motivation — post-norm diverges,
+pre-norm does not — is **partly an initialization artefact**. The paper's own
+phrasing is the accurate one: smaller initialization *"partly reclaims
+PostNorm's stability"*, and pre-norm is *"less sensitive to this magnitude"*.
+Less sensitive is a real advantage and a smaller one than "does not diverge".
+
+What survives all of this unchanged is depth without warm-up, where the
+placement difference is categorical rather than marginal: at five and six
+encoder/decoder layers with no warm-up, post-norm **fails** and pre-norm sits
+at 28.13 and 28.32.

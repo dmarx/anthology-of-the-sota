@@ -31,6 +31,7 @@ summary: >-
   holds 0.81 → 0.88** and is the only incumbent that does. The record holds
   both papers and four practices about RoPE, and had no measure of this.
 ---
+<!-- inactive-ok-file: SOTA-179 — Proposed; named as one of the two ways this record already recovers extrapolation after the field preferred RoPE's perplexity to ALiBi's native extrapolation, not relied on as a recommendation -->
 
 # LIT-tmp9rshd: A Length-Extrapolatable Transformer
 

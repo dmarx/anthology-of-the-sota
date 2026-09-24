@@ -19,15 +19,6 @@ corrects:
 title: "Extend a trained model's context by rescaling RoPE, not by fine-tuning at the longer length"
 version: 3
 history:
-- version: 3
-  date: '2026-09-24'
-  note: >-
-    Gains the distinction its own evidence does not draw. LIT-tmp9rshd
-    separates a perplexity that does not explode from a model that uses the
-    longer context, and measures RoPE resolution collapsing 0.91 to 0.08
-    across the boundary this practice rescales across. The recommendation
-    is unchanged; what it is evidence *for* is narrower than it looked.
-history:
 - version: 2
   date: '2026-09-07'
   note: >-
@@ -37,6 +28,14 @@ history:
     continued pretraining, at parity on short benchmarks. The
     recommendation is unchanged; the reason for not filing it as contested
     is now cost rather than impossibility.
+- version: 3
+  date: '2026-09-24'
+  note: >-
+    Gains the distinction its own evidence does not draw. LIT-tmp9rshd
+    separates a perplexity that does not explode from a model that uses the
+    longer context, and measures RoPE resolution collapsing 0.91 to 0.08
+    across the boundary this practice rescales across. The recommendation
+    is unchanged; what it is evidence *for* is narrower than it looked.
 tags:
 - representation-and-encoding
 date: '2026-09-07'

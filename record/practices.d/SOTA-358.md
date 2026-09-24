@@ -13,7 +13,16 @@ consensus_note: >-
   architecture, so adopters below it inherit a choice the paper argues
   against. Read as of 2026-09.
 title: 'Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    The weight shifted off the first measurement and onto the second.
+    Beyer et al. (LIT-tmp5t7v1) show the ImageNet-1k recipe those numbers
+    came from leaves 13.2 points unclaimed, so "despite tuned
+    regularisation" cannot carry the argument. The JFT subset sweep is
+    unaffected and the conclusion now rests on it. Status unchanged.
 tags:
 - model-architecture
 - training-optimization
@@ -45,7 +54,7 @@ The measurements, all with the architecture held fixed:
 - **Model size crosses over with data.** Pre-trained on ImageNet-1k,
   ViT-Large is *worse* than ViT-Base despite tuned regularisation. On
   ImageNet-21k (14M) they are level. Only on JFT-300M does the larger model
-  pay.
+  pay. **This measurement has since lost most of its weight** — see below.
 - **The crossover is not a regularisation artefact.** On random 9M/30M/90M/
   300M JFT subsets with hyperparameters and regularisation held fixed,
   ViT-B/32 — slightly cheaper than ResNet-50 — is *much worse* at 9M and
@@ -66,6 +75,37 @@ The claim is filed under `model-architecture` rather than
 `vision-and-graphics` because the domain is the setting, not the subject
 (`ADR-046`). Vision is where this was measured; the trade it names —
 hand-built prior against data volume — is not about vision.
+
+## What the ImageNet-1k half no longer supports
+
+The first measurement above rests on ViT's ImageNet-1k configuration, and
+Beyer et al. ([LIT-tmp5t7v1](../literature.d/LIT-tmp5t7v1.md)) measured what that configuration was worth:
+**66.8% top-1 for ViT-S/16, against 80.0% from five changes none of which is
+a regulariser.** The original recipe also does not improve with training —
+66.8 → 67.2 → 67.1 across 90, 150 and 300 epochs — so it had stopped learning
+before any of these comparisons were drawn.
+
+The phrase carrying the argument was *"despite tuned regularisation"*. Beyer
+et al.'s abstract names that belief directly and answers it: the lever was
+augmentation, and sophisticated regularisation was not what ImageNet-1k-scale
+ViT needed.
+
+**What this does not do is refute the crossover.** Beyer et al. ran ViT-S/16
+only. Whether ViT-Large would still lose to ViT-Base under their recipe is
+**untested**, and nothing here says the ordering flips.
+
+**What it does is move the load.** The second measurement — random JFT subsets
+at 9M / 30M / 90M / 300M with hyperparameters and regularisation held fixed —
+never depended on anyone having tuned ImageNet-1k well, because it compares
+ViT against ResNet inside one protocol across data scales. That is now where
+this practice's condition comes from. A reader who wants the threshold should
+read the second bullet and treat the first as an illustration whose numbers
+are known to be loose.
+
+The general form is worth keeping: **a crossover measured with an
+under-tuned configuration on one side is evidence about the tuning as much as
+about the crossover**, and which one it is cannot be told from the crossover
+alone.
 
 ## Conditions
 

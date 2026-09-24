@@ -2,7 +2,7 @@
 number: 32
 status: Active
 title: 'Put the layer normalization inside the residual block, before the sublayer'
-version: 3
+version: 4
 history:
 # inactive-ok: LIT-029 — the retired duplicate, named as what this practice used to cite
 - version: 1
@@ -28,10 +28,29 @@ history:
     was made for stability is why `model-stability` stays first. It
     does not bind the unbound edge to SOTA-100, which is a real
     crossing between an architectural fix and a schedule one.
+- version: 4
+  date: '2026-09-24'
+  note: >-
+    The collapse cost gains a source and a rate (THEORY-tmpt3lzt), the
+    no-warm-up consequence gains the measurement it lacked, and the
+    `universal` reading gains the note it never had. The recommendation is
+    unchanged. This practice had been stating the representation-collapse
+    argument in its own prose with no citation.
 tags:
 - model-stability
 - model-architecture
 consensus: universal
+consensus_note: >-
+  Not doing it is what needs justifying, and the grounds are adoption rather
+  than a survey: every large model in this record is pre-norm, `llama2` is
+  listed here and the alternatives that exist — sandwich and peri-layernorm
+  placements, and LIT-tmpeqjkq's two streams — are rearrangements *of* it
+  rather than returns to post-norm. What is not established, and the reason
+  this note exists rather than the value standing bare, is that the choice is
+  deliberate in each case. LIT-tmpeqjkq is the one paper here that measures
+  both sides, and it finds post-norm failing outright at twelve encoder and
+  twelve decoder layers even with warm-up — which is a reason the convergence
+  is not merely inherited. Read as of 2026-09.
 date: '2026-08-24'
 source:
 - LIT-114
@@ -47,7 +66,9 @@ summary: >-
   the output are well behaved at initialization.
 explained_by:
 - THEORY-011
+- THEORY-tmpt3lzt
 ---
+<!-- inactive-ok-file: THEORY-tmpt3lzt — Proposed, filed in this same contribution as the account under SOTA-032's cost. The practice declares explained_by on it, so the citation is the relation itself; the practice stands without the account and the account is the weaker of the two, which is why their statuses differ -->
 
 # SOTA-032: Put the layer normalization inside the residual block, before the sublayer
 
@@ -108,6 +129,50 @@ residual stream grows in magnitude with depth, and deep pre-norm models can
 see later blocks contributing proportionally less — the representation
 collapse argument. Sandwich and peri-layernorm variants exist because of it.
 
+**That argument now has a source and a rate.** Xie et al.
+([LIT-tmpeqjkq](../literature.d/LIT-tmpeqjkq.md)) derive it: the per-layer change in the normalised hidden
+state decays as `O(1/√k)`, and adding a block to an `N−1` block model moves
+the output by `O(1/√N)`. [THEORY-tmpt3lzt](../theory.d/THEORY-tmpt3lzt.md) holds the account, and the
+shape worth carrying is that **the benefit and the cost are one mechanism
+described twice** — the residual path being unrenormalised is what lets
+gradients reach the early blocks, and what lets the stream outgrow any single
+block's contribution.
+
+Two qualifications on that rate, both in the theory document: it is derived
+under an independence assumption that a trained network does not satisfy, and
+`O(1/√k)` is slow — at 24 layers the per-layer change is about a fifth of its
+value at the first, not a thousandth. "Collapse" names the direction and
+overstates the speed.
+
 Every large model in this record is pre-norm nonetheless, which is the honest
 summary: the stability is worth more than the margin, and the alternatives
 are refinements of pre-norm rather than returns to post-norm.
+
+## What "warm-up can be removed" costs
+
+The headline consequence above — that Pre-LN models train without a warm-up
+stage — is Xiong et al.'s and is stated here without a number. [LIT-tmpeqjkq](../literature.d/LIT-tmpeqjkq.md)
+supplies one, on IWSLT:
+
+| method | warm-up | E6D6 | E12D12 |
+| --- | --- | --: | --: |
+| Post-LN | yes | 35.37 | **fail** |
+| Post-LN | no | fail | fail |
+| Pre-LN | yes | 35.12 | 35.18 |
+| Pre-LN | **no** | **32.28** | **31.82** |
+
+**Removing warm-up costs 2.84 BLEU at E6D6 and 3.36 at E12D12.** Pre-LN
+trains without it, which is what Xiong et al. claimed and what that paper
+tested; it does not train *as well*, which nobody had measured here.
+
+That matters for the tension this practice flags with [SOTA-100](SOTA-100.md) and
+does not resolve. The tension is not "pre-norm made warm-up unnecessary and
+the record still recommends it" — on this evidence warm-up is still paying
+for itself under pre-norm, and the thing pre-norm removed is the *requirement*
+rather than the benefit. One dataset and one architecture family, so it
+narrows the claim rather than settling the question.
+
+Worth noting where the number came from: Xie et al.'s own prose says Pre-LN
+"can train effectively without" warm-up, in the paragraph beneath a table
+showing a three-point drop. **The table is the finding and the sentence
+repeats the received view.**

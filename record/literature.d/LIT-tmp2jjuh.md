@@ -1,0 +1,130 @@
+---
+status: Active
+title: 'Self-attention Does Not Need O(n²) Memory'
+version: 1
+tags:
+- systems-optimization
+- attention-techniques
+- inference-optimization
+date: '2026-09-24'
+published: '2021-12-10'
+arxiv: '2112.05682'
+first_author: 'Rabe'
+keywords:
+- 'memory-efficient-attention'
+- 'flashattention-antecedent'
+- 'lazy-softmax'
+- 'accelerator-memory'
+- 'tpu'
+implementations: []
+summary: >-
+  Rabe and Staats (2021), [ARXIV-2112.05682](https://arxiv.org/abs/2112.05682). Six months before FlashAttention:
+  attention in `O(1)` memory per query, self-attention in `O(log n)`, a
+  practical `O(√n)` implementation, exact rather than approximate, **59×
+  less memory overhead at sequence length 16,384**. And the number the record
+  needed and did not have: on TPU the same algorithm is *"within a few percent
+  of the runtime of the standard implementation"* — **the memory saving is
+  algorithmic and the speedup is not.**
+compared_against:
+- LIT-074
+---
+
+# LIT-tmp2jjuh: Self-attention Does Not Need O(n²) Memory
+
+Rabe and Staats (2021) — [ARXIV-2112.05682](https://arxiv.org/abs/2112.05682)
+
+## The result
+
+Move the softmax denominator to the end of the operation by the distributive
+law, and attention for a single query becomes a running sum:
+
+    s_i = dot(q, k_i),   s'_i = exp(s_i),   attention(q,k,v) = Σ_i v_i s'_i / Σ_j s'_j
+
+Carry a vector `v*` and a scalar `s*`, process keys and values one at a time,
+divide at the end. **`O(1)` memory with respect to sequence length.** Extend to
+self-attention by looping over queries and the overhead is one index —
+`O(log n)`. Numerical stability needs the running-maximum subtraction
+(scores ≥ 89 overflow bfloat16 and float32), which costs nothing asymptotically.
+
+The practical version chunks: constant chunk size for queries, `√n` for keys
+and values, giving **`O(√n)` memory**. At sequence length 16,384 the memory
+overhead of self-attention falls **59× for inference and 32× for
+differentiation**.
+
+It is **exact**, not an approximation — the paper's own check is a 100K-step
+training run reaching 62.69 evaluation accuracy against 62.59 for the standard
+implementation.
+
+## The number the record was missing
+
+> We provide a practical implementation for accelerators that requires `O(√n)`
+> memory, is numerically stable, and **is within a few percent of the runtime
+> of the standard implementation of attention.**
+
+And, on why their numbers differ from FlashAttention's:
+
+> One reason why we do not observe the same performance gains in this paper is
+> that **standard self-attention already balances the available FLOPs and
+> memory bandwidth of TPUs.**
+
+They say the same thing a third time about chunk sizes: `√n` is optimal for
+memory, but *"the runtime is also affected by the choice of chunk size in
+practice, which is heavily affected by the choice of hardware."*
+
+**So the two halves of the memory-efficient-attention story separate cleanly,
+and they separate on hardware class rather than on kernel availability.** The
+memory reduction is a property of the algorithm and holds anywhere. The
+speedup is a property of a memory hierarchy where HBM traffic is the
+bottleneck, which is the GPU case FlashAttention measures and explicitly not
+the TPU case measured here. `SOTA-085` carried the speedup and the memory
+saving as one claim; it now carries them as two.
+
+## The chain, which is three deep and of which the record held one link
+
+**Jang et al. (2019)** — "lazy softmax". Rabe and Staats say so themselves, in
+a note added after their first draft:
+
+> we were made aware that (1) is a **rediscovery** of the "lazy softmax"
+> method of Jang et al. 2019.
+
+What that paper does *not* do, by their account: discuss memory complexity at
+all, address numerical stability or backpropagation, or ship an
+implementation. It uses the identity to cut memory bandwidth when sharding
+key-value pairs across chips.
+
+**Rabe and Staats (2021)** — this paper. The memory-complexity result, the
+stability trick, differentiation, and a working JAX implementation. Their own
+framing of the contribution is modest and accurate: *"a simple trick… which
+appears to have been simply overlooked by the community."*
+
+**Dao et al. (2022)** — `LIT-074`, FlashAttention. A CUDA implementation with
+IO-awareness, block sizes derived from SRAM capacity, and the IO-optimality
+proposition. Rabe and Staats' own v3 credits it: *"Dao et al. 2022 provide a
+CUDA implementation of memory-efficient attention and demonstrate that the
+reduced memory requirements can translate to significant speedups on GPUs."*
+
+Jang et al. is unheld here and is not in `#290`'s queue, so it is unranked.
+
+## Why this is not the `introduced_by` defect `#342` predicted
+
+`#342` ranked this fourth, noting `SOTA-085` carries `introduced_by: LIT-074`
+(May 2022) while this paper is December 2021, and flagging *"same shape as
+`#338`; verify before asserting."* Verified, and it is a different shape.
+
+`SOTA-192`'s title was a generic technique — *normalize the queries and keys*
+— credited to a paper that adopted it. `SOTA-085`'s title names an artifact:
+*use flash attention*. FlashAttention is Dao et al.'s system, and the
+recommendation to run **that kernel** was first made by them. `introduced_by`
+stays where it is.
+
+What the practice was missing is not its origin but **a condition**, and this
+paper is where the condition is measured.
+
+## Standing in the anthology
+
+Unit 4 of `#342`, `#290`'s promotion #4, ranked on **61 documents naming
+FlashAttention and 5 practices recommending it**, with the antecedent unheld.
+
+`LIT-074` is amended in the same contribution to name the chain; it had said
+it was the source of four confirmed practices and named nothing before it.
+`SOTA-085` gains the hardware-class condition.

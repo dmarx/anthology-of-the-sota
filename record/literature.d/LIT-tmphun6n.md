@@ -1,0 +1,124 @@
+---
+status: Active
+title: 'Demystifying MMD GANs'
+version: 1
+tags:
+- analysis-and-evaluation
+- generative-modeling
+- vision-and-graphics
+date: '2026-09-23'
+published: '2018-01-01'
+arxiv: '1801.01401'
+first_author: 'Bińkowski'
+keywords:
+- 'maximum-mean-discrepancy'
+- 'kernel-inception-distance'
+- 'estimator-bias'
+- 'integral-probability-metrics'
+- 'gan-evaluation'
+implementations: []
+extends:
+- LIT-611
+compared_against:
+- LIT-611
+- LIT-tmpgqh49
+summary: >-
+  Bińkowski et al. (2018), [ARXIV-1801.01401](https://arxiv.org/abs/1801.01401). Where KID comes from, and
+  where the case against comparing FID numbers comes from. The plug-in FID
+  estimator is biased, **no unbiased estimator of FID exists**, and at
+  d=2048 with 50,000 samples it reliably returns the **wrong ordering**
+  between two models with a standard deviation small enough to hide it.
+  KID is the squared MMD in the same Inception features, with a cubic
+  kernel and a simple unbiased estimator.
+---
+
+# LIT-tmphun6n: Demystifying MMD GANs
+
+Bińkowski, Sutherland, Arbel and Gretton (2018) — [ARXIV-1801.01401](https://arxiv.org/abs/1801.01401)
+
+## Key takeaways
+
+- **The FID estimator is biased, and the bias is not small at the sample
+  sizes people use.** Estimating the distance between the CIFAR-10 train and
+  test sets — where the true value is 0 — the KID estimator is essentially
+  always 0 by n=2000, while the FID estimate at n=10,000, *the full size of
+  the CIFAR test set*, is still about **8.1 and still falling**. The
+  immediate consequence they draw: **FID scores can only be compared to one
+  another at the same n.**
+
+- **Worse than noisy — reliably wrong, with a small standard deviation.**
+  Appendix D.2 constructs two distributions at d=2048, the Inception coding
+  width, from ReLU-censored normals, which they note fit Inception codes
+  reasonably well. The true values are `FID(P₁,Q) ≈ 1123.0 > 1114.8 ≈
+  FID(P₂,Q)`. At m=50,000 samples the estimates are `1133.7 (sd 0.2)` and
+  `1136.2 (sd 0.5)` — the opposite order, and **across 100 evaluations the
+  largest P₁ estimate was below the smallest P₂ estimate**. At m=100,000 the
+  ordering came out right in all 100 trials. So the failure is not that the
+  answer is uncertain; it is that the answer is confidently reversed, and
+  the variance is smallest exactly where it misleads. Appendix D.1 shows the
+  same reversal analytically for one-dimensional normals.
+
+- **And it cannot be fixed by a better estimator.** Appendix D.3, by the
+  argument of Bickel & Lehmann (1969): there is no estimator of the FID that
+  is unbiased for all distributions. The bias is a property of the quantity,
+  not of the plug-in formula.
+
+- **KID, and why the shape of the definition matters.** The squared MMD
+  between Inception representations under the polynomial kernel
+
+      k(x,y) = ((1/d)·xᵀy + 1)³
+
+  — scikit-learn's default cubic kernel, chosen so nothing has to be tuned
+  and so the measure does not share an objective with the MMD-GAN critic.
+  Three differences from FID, each a direct answer to something FID assumes:
+  it fits **no parametric form**, it compares **skewness** as well as mean
+  and covariance, and it has a **simple unbiased estimator**.
+
+- **The sharpest objection to the Gaussian fit is a measurement, not an
+  argument.** Inception codes come through a ReLU, so they are non-negative
+  and **do not even have a density**: about **2% of components are typically
+  exactly zero**. `LIT-611` records the Gaussian assumption as stated once
+  and never tested; this is the paper that says what is wrong with it.
+
+- **Cost runs the other way from intuition.** The MMD estimator is O(n²d) and
+  the FID estimator O(nd² + d³) — at d=2048 the FID estimator is
+  *substantially slower*. Their recommendation is a relatively small n
+  averaged over several estimates.
+
+- **They disagree with `LIT-611` about its own validation.** Heusel et al.
+  established FID by showing it degrades monotonically under six families of
+  synthetic corruption, better than the Inception Score. Appendix E here
+  reruns that comparison and finds **the Inception Score more monotonic than
+  Heusel et al. did**, concluding the property "may not be very robust to
+  small changes in evaluation methods."
+
+- **A use for an unbiased measure beyond reporting.** Because KID is an MMD,
+  Bounliphone et al.'s relative similarity test applies directly, giving a
+  p-value for "is the current model closer to the validation set than the
+  model from k iterations ago". They use it to drop the learning rate on a
+  run of failures, rather than hand-tuning a GAN schedule.
+
+## Standing in the anthology
+
+Filed from the metric-definition sweep, and it changes the record's position
+rather than adding to it.
+
+The record held three documents on FID's failure modes — `LIT-501` on the
+≈1.3% seed floor, `LIT-563` on FID being movable without improving images,
+and `LIT-611` for the definition — and **not one of them mentions that the
+estimator is biased or that a comparison requires a fixed n.** Those are the
+oldest published objections of the three, they are the only ones with a
+proof attached, and they were absent.
+
+`#290` declined this paper as a `D-variant` — a variant metric behind an
+incumbent the record already had — on four record mentions. That was wrong,
+and wrong in an instructive way: **the mentions counted KID, and the paper's
+load is about FID.** A candidate ranked by the name in its contribution was
+ranked by the wrong thing.
+
+`extends: LIT-611` rather than `corrects:`, deliberately, and it is the
+narrower claim. What this paper overturns is how FID *is used*, which is not
+a claim Heusel et al. made; the one place it contradicts them directly is
+Appendix E's monotonicity rerun, which it words as "may not be very robust"
+rather than as a refutation. The record's other two FID critiques are filed
+as `extends` and this is the same relation for the same reason.

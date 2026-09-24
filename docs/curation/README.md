@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [24 Sep 01:44 — A triage rule that asks about the paper cannot find a defect in the record](2026-09.md#a-triage-rule-that-asks-about-the-paper-cannot-find-a-defect-in-the-record)
 - [23 Sep 23:11 — Retiring a duplicate is not the same as reconciling it](2026-09.md#retiring-a-duplicate-is-not-the-same-as-reconciling-it)
 - [23 Sep 22:45 — A metric accumulates critique documents faster than a definition document, and the sweep that tested it](2026-09.md#a-metric-accumulates-critique-documents-faster-than-a-definition-document-and-the-sweep-that-tested-it)
 - [23 Sep 21:48 — The record was four documents deep into criticising FID and had no note for FID](2026-09.md#the-record-was-four-documents-deep-into-criticising-fid-and-had-no-note-for-fid)
@@ -205,9 +206,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-198 entries across 2 books, newest first.
+199 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 196 | 2026-09-05 | 2026-09-23 |
+| [2026-09](2026-09.md) | 197 | 2026-09-05 | 2026-09-24 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

@@ -15,6 +15,8 @@ summary: >-
   Pascanu et al. (2012), [LIT-037](../literature.d/LIT-037.md) — [ARXIV-1211.5063](https://arxiv.org/abs/1211.5063).
 compared_against:
 - SOTA-202
+extended_by:
+- SOTA-tmp3aoh0
 ---
 
 # SOTA-035: use gradient clipping

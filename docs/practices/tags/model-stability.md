@@ -6,7 +6,7 @@
 
 **Model stability** — initialization, normalization, gradient handling, regularization, loss-landscape behaviour.
 
-48 of 400 SOTA documents. Back to the [full index](../README.md).
+48 of 401 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -54,7 +54,7 @@
 | [SOTA-325](../../../record/practices.d/SOTA-325.md) | When the training loss has saturated and runs still differ, measure loss-landscape degeneracy rather than curvature | Lau, Furman, Wang, Murfet and Wei (2023), [LIT-542](../../../record/literature.d/LIT-542.md) — on ResNet18/CIFAR10, stronger implicit regularization (higher learning rate, lower batch size, higher momentum) gives a lower local learning coefficient and higher test accuracy, **while every training loss has collapsed to zero**. The estimator is `λ̂(w*) = n β* [E_{w\|w*,β*,γ} L_n(w) − L_n(w*)]` at `β* = 1/log n`, run by SGLD, validated against theory on deep linear networks to 100M parameters. Where the loss has stopped distinguishing runs, the geometry has not. | Proposed |
 | [SOTA-332](../../../record/practices.d/SOTA-332.md) | When an implicit representation will be supervised through its derivatives, use sine activations with the SIREN initialization rather than a ReLU network | Sitzmann et al. (2020), [LIT-551](../../../record/literature.d/LIT-551.md) — a sine network's derivative is another sine network, so gradients and Laplacians of the fit are well behaved where a ReLU network's second derivative is zero. Initialize hidden weights U(±√(6/n)) and scale the first layer by ω₀ = 30 (tune it to the signal), or deep sine networks do not train. It fits images, video, SDFs and PDE solutions from derivative supervision. | Proposed |
 | [SOTA-364](../../../record/practices.d/SOTA-364.md) | Break batch normalization's cross-sample leak before it solves your contrastive task for you |  | Active |
-| [SOTA-365](../../../record/practices.d/SOTA-365.md) | Learn without negatives by breaking the symmetry: a predictor on one branch and a stop-gradient on the other |  | Active |
+| [SOTA-365](../../../record/practices.d/SOTA-365.md) v2 | Learn without negatives by breaking the symmetry: a predictor on one branch and a stop-gradient on the other |  | Active |
 | [SOTA-366](../../../record/practices.d/SOTA-366.md) | Monitor the standard deviation of the l2-normalized embedding; healthy is one over root d and collapsed is zero |  | Active |
 | [SOTA-367](../../../record/practices.d/SOTA-367.md) | Or put the anti-collapse constraint in the loss, as a variance floor and a decorrelation term |  | Active |
 | [SOTA-385](../../../record/practices.d/SOTA-385.md) | Tighten the gradient-norm clip as the model grows rather than carrying one value across scales | Rae et al. (2021), [LIT-617](../../../record/literature.d/LIT-617.md) — the Gopher family clipped the global gradient norm at 1.0 for models up to 1.4B and at **0.25 for the 7.1B and 280B models**, "for improved stability". Three held practices say to clip and none names a value; this is the first number in the record, and it is not a constant. | Proposed |

@@ -6,7 +6,7 @@
 
 **Promising** — early results are good, validation at scale is missing — the old `experimental` flag.
 
-141 of 400 SOTA documents. Back to the [full index](../README.md).
+142 of 401 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -151,3 +151,4 @@
 | [SOTA-397](../../../record/practices.d/SOTA-397.md) | To condition an unconditionally trained diffusion model on known frames, use reconstruction guidance, not replacement | Ho, Salimans et al. (2022), [LIT-627](../../../record/literature.d/LIT-627.md). Extending a video autoregressively from a model trained without conditioning, reconstruction guidance (steering each denoising step toward consistency with the known frames) gives FVD 136 against 451 for replacing the known frames' noisy latents (Table 6). The model and guidance weight are held fixed. | Proposed |
 | [SOTA-398](../../../record/practices.d/SOTA-398.md) v2 | Pretrain a vision transformer on packed, aspect-preserved images at sampled resolutions, not on fixed square crops | Dehghani et al. (2023), [LIT-657](../../../record/literature.d/LIT-657.md). Do not resize or crop images to one square resolution. Keep each image's aspect ratio and sample its resolution per example, favouring small side lengths. Pack the patches into fixed-length sequences with per-example attention masks. At matched compute this beats square fixed-resolution ViT pretraining, and matches the best ViT with 4x less compute. Most of the gain is throughput. | Proposed |
 | [SOTA-399](../../../record/practices.d/SOTA-399.md) | Choose pre-training weight decay, dropout, clipping and precision for the quantization you intend to ship |  | Proposed |
+| [SOTA-401](../../../record/practices.d/SOTA-401.md) | Anchor the patch Gram matrix to an early teacher when training long, because dense features decay while global metrics improve |  | Proposed |

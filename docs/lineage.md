@@ -410,6 +410,8 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-599](../record/literature.d/LIT-599.md) — DINOv2: Learning Robust Visual Features without Supervision *(Active)*
 - alongside: [LIT-662](../record/literature.d/LIT-662.md) — Vision Transformers Need Registers *(Active)*
+- alongside: [LIT-663](../record/literature.d/LIT-663.md) — DINOv3 *(Active)*
+- alongside: [LIT-664](../record/literature.d/LIT-664.md) — Emerging Properties in Self-Supervised Vision Transformers *(Active)*
 
 ### From GloVe: Global Vectors for Word Representation
 
@@ -568,6 +570,8 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-599](../record/literature.d/LIT-599.md) — DINOv2: Learning Robust Visual Features without Supervision *(Active)*
 - alongside: [LIT-662](../record/literature.d/LIT-662.md) — Vision Transformers Need Registers *(Active)*
+- alongside: [LIT-663](../record/literature.d/LIT-663.md) — DINOv3 *(Active)*
+- alongside: [LIT-664](../record/literature.d/LIT-664.md) — Emerging Properties in Self-Supervised Vision Transformers *(Active)*
 
 ## Sharing no `tags`
 

@@ -1,5 +1,8 @@
 ---
+number: 401
 status: Proposed
+formerly:
+- SOTA-tmp6ly4d
 promote_when: >-
   A second group reporting the dense-metric decline under a long self-supervised
   schedule and recovering it with a Gram-matrix anchor, or with anything else —
@@ -24,18 +27,18 @@ tags:
 - vision-and-graphics
 date: '2026-09-24'
 source:
-- LIT-tmpuy1r1
+- LIT-663
 introduced_by:
-- LIT-tmpuy1r1
+- LIT-663
 implementations:
 - DINOv3
 ---
 
-# SOTA-tmp6ly4d: Anchor the patch Gram matrix to an early teacher when training long, because dense features decay while global metrics improve
+# SOTA-401: Anchor the patch Gram matrix to an early teacher when training long, because dense features decay while global metrics improve
 
 ## Source
 
-Siméoni et al. (2025), `LIT-tmpuy1r1`.
+Siméoni et al. (2025), `LIT-663`.
 
 ## The problem this exists for, which is the part to read first
 

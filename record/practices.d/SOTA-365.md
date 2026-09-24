@@ -8,7 +8,7 @@ consensus_note: >-
   The asymmetric family is what its OWN descendants inherited. `LIT-216`
   (I-JEPA), which this record already held, is built on a predictor plus an
   EMA target. This note previously said DINO and DINOv2 carry the same
-  structure; **they do not** — DINO (LIT-tmpxre1q) avoids collapse with
+  structure; **they do not** — DINO (LIT-664) avoids collapse with
   centering and sharpening of the teacher output and has no predictor, so the
   DINO line is a separate route to the same goal rather than more adoption of
   this one. `converged` therefore describes the predictor family and not
@@ -25,7 +25,7 @@ history:
     Corrects a factual claim the consensus note made about a paper the record
     did not hold. The note said the unfiled `#304` units, DINO and DINOv2,
     "carry the same structure" — predictor plus stop-gradient. DINO
-    (LIT-tmpxre1q, now filed) has no predictor: it avoids collapse with
+    (LIT-664, now filed) has no predictor: it avoids collapse with
     centering and sharpening of the teacher output alone, and says so. So the
     asymmetric-predictor family is one route and DINO is a second. The
     recommendation is unchanged; `converged` is kept and its grounds are

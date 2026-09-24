@@ -6,7 +6,7 @@
 
 **Agreed** — the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately.
 
-37 of 400 SOTA documents. Back to the [full index](../README.md).
+37 of 401 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -39,7 +39,7 @@
 | [SOTA-359](../../../record/practices.d/SOTA-359.md) v2 | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |
 | [SOTA-361](../../../record/practices.d/SOTA-361.md) | Compose augmentations so the shortcut dies, and tune them for the contrastive objective rather than the supervised one |  | Active |
 | [SOTA-364](../../../record/practices.d/SOTA-364.md) | Break batch normalization's cross-sample leak before it solves your contrastive task for you |  | Active |
-| [SOTA-365](../../../record/practices.d/SOTA-365.md) | Learn without negatives by breaking the symmetry: a predictor on one branch and a stop-gradient on the other |  | Active |
+| [SOTA-365](../../../record/practices.d/SOTA-365.md) v2 | Learn without negatives by breaking the symmetry: a predictor on one branch and a stop-gradient on the other |  | Active |
 | [SOTA-370](../../../record/practices.d/SOTA-370.md) | Add many low-resolution views alongside the two full ones, because view count is what helps and resolution is what costs |  | Active |
 | [SOTA-372](../../../record/practices.d/SOTA-372.md) | Run the encoder on visible tokens only and push the mask tokens into a small decoder you discard |  | Active |
 | [SOTA-384](../../../record/practices.d/SOTA-384.md) | Calibrate a trained classifier with a single temperature fitted on held-out data, not with a richer map | Guo et al. (2017), [LIT-616](../../../record/literature.d/LIT-616.md) — rescale the logits by a single learned `1/T` fitted for NLL on a held-out set. It cannot change the argmax, so accuracy is unchanged by construction, and it beats vector scaling, matrix scaling, histogram binning, isotonic regression and BBQ — including the two that strictly contain it. Typical uncalibrated ECE is 4–10%. | Active |

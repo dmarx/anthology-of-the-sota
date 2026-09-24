@@ -6,7 +6,7 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-39 of 400 SOTA documents. Back to the [full index](../README.md).
+40 of 401 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -32,7 +32,7 @@
 | [SOTA-361](../../../record/practices.d/SOTA-361.md) | Compose augmentations so the shortcut dies, and tune them for the contrastive objective rather than the supervised one |  | Active |
 | [SOTA-362](../../../record/practices.d/SOTA-362.md) | Train through a projection head and then discard it, taking the layer before as the representation |  | Active |
 | [SOTA-363](../../../record/practices.d/SOTA-363.md) | Decouple the negative set from the batch with a queue, and keep the encoder that fills it slow |  | Active |
-| [SOTA-365](../../../record/practices.d/SOTA-365.md) | Learn without negatives by breaking the symmetry: a predictor on one branch and a stop-gradient on the other |  | Active |
+| [SOTA-365](../../../record/practices.d/SOTA-365.md) v2 | Learn without negatives by breaking the symmetry: a predictor on one branch and a stop-gradient on the other |  | Active |
 | [SOTA-367](../../../record/practices.d/SOTA-367.md) | Or put the anti-collapse constraint in the loss, as a variance floor and a decorrelation term |  | Active |
 | [SOTA-368](../../../record/practices.d/SOTA-368.md) | When a model's latent space is meant to be read by people, measure its interpretability with a human task such as word or topic intrusion, not by held-out likelihood | Chang et al. (2009), [LIT-597](../../../record/literature.d/LIT-597.md) — topic models are used for their topics, but they are judged by held-out likelihood, which measures the probability of observations and ignores the representation. On NYT and Wikipedia, CTM had the best likelihood and the worst human scores. Test the latent space directly. Plant an improbable word among a topic's top words, or an improbable topic among a document's top topics, and measure how often people find it. | Active |
 | [SOTA-369](../../../record/practices.d/SOTA-369.md) | Curate a pretraining set by retrieving neighbours of curated seeds, rather than scaling the uncurated pool |  | Active |
@@ -49,3 +49,4 @@
 | [SOTA-396](../../../record/practices.d/SOTA-396.md) | When a latent video model reuses an image autoencoder or upsampler, fine-tune them on video so they see time | Blattmann et al. (2023), [LIT-621](../../../record/literature.d/LIT-621.md). An image autoencoder decodes each frame independently and flickers. Fine-tuning its decoder on video, with a video discriminator, cuts reconstruction FVD on three datasets: 390.88 to 32.94, 35.82 to 18.66, and 73.78 to 25.55. Making the upsampler temporal cuts FVD from 165.98 to 45.39. Reconstruction FID worsens on one dataset and improves on two. | Proposed |
 | [SOTA-398](../../../record/practices.d/SOTA-398.md) v2 | Pretrain a vision transformer on packed, aspect-preserved images at sampled resolutions, not on fixed square crops | Dehghani et al. (2023), [LIT-657](../../../record/literature.d/LIT-657.md). Do not resize or crop images to one square resolution. Keep each image's aspect ratio and sample its resolution per example, favouring small side lengths. Pack the patches into fixed-length sequences with per-example attention masks. At matched compute this beats square fixed-resolution ViT pretraining, and matches the best ViT with 4x less compute. Most of the gain is throughput. | Proposed |
 | [SOTA-400](../../../record/practices.d/SOTA-400.md) | Append a few register tokens to a ViT so it does not commandeer background patches for scratch space |  | Active |
+| [SOTA-401](../../../record/practices.d/SOTA-401.md) | Anchor the patch Gram matrix to an early teacher when training long, because dense features decay while global metrics improve |  | Proposed |

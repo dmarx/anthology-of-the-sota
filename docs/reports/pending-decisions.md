@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**208 document(s) awaiting a decision.**
+**209 document(s) awaiting a decision.**
 
 ## SOTAs
 
-141 of the 208.
+142 of the 209.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -147,6 +147,7 @@
 | 2026-09-24 | Proposed | [SOTA-394](../../record/practices.d/SOTA-394.md) | 5 | 0 | When distilling a causal few-step video generator, take the teacher bidirectional, not causal |
 | 2026-09-24 | Proposed | [SOTA-398](../../record/practices.d/SOTA-398.md) | 4 | 0 | Pretrain a vision transformer on packed, aspect-preserved images at sampled resolutions, not on fixed square crops |
 | 2026-09-24 | Proposed | [SOTA-399](../../record/practices.d/SOTA-399.md) | 3 | 0 | Choose pre-training weight decay, dropout, clipping and precision for the quantization you intend to ship |
+| 2026-09-24 | Proposed | [SOTA-401](../../record/practices.d/SOTA-401.md) | 2 | 0 | Anchor the patch Gram matrix to an early teacher when training long, because dense features decay while global metrics improve |
 | 2026-09-24 | Proposed | [SOTA-392](../../record/practices.d/SOTA-392.md) | 1 | 0 | To get a one-step sampler from a rectified flow, distil it; treat reflow as an optional extra pass, and keep the pre-reflow model for many steps |
 | 2026-09-24 | Proposed | [SOTA-385](../../record/practices.d/SOTA-385.md) | 0 | 0 | Tighten the gradient-norm clip as the model grows rather than carrying one value across scales |
 | 2026-09-24 | Proposed | [SOTA-387](../../record/practices.d/SOTA-387.md) | 0 | 0 | Hold out a slice of the training set for model selection instead of selecting on the validation split |
@@ -157,7 +158,7 @@
 
 ## THEORYs
 
-61 of the 208.
+61 of the 209.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -225,7 +226,7 @@
 
 ## LITs
 
-3 of the 208.
+3 of the 209.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -235,7 +236,7 @@
 
 ## ADRs
 
-3 of the 208.
+3 of the 209.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

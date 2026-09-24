@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-107 of 400 SOTA documents. Back to the [full index](../README.md).
+108 of 401 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -117,3 +117,4 @@
 | [SOTA-395](../../../record/practices.d/SOTA-395.md) | Post-train an autoregressive video generator on its own rollouts, and score the whole rollout | Huang et al. (2025), [LIT-629](../../../record/literature.d/LIT-629.md). Training a causal video generator on context it generated itself, with a distribution-level loss over the whole clip, beats teacher-forced and diffusion-forced training under every objective tried (Table 2). It holds quality as the number of autoregressive steps grows, where they degrade. Evidence is VBench on 5s clips, and the exposure-bias mechanism is inferred, not measured. | Proposed |
 | [SOTA-398](../../../record/practices.d/SOTA-398.md) v2 | Pretrain a vision transformer on packed, aspect-preserved images at sampled resolutions, not on fixed square crops | Dehghani et al. (2023), [LIT-657](../../../record/literature.d/LIT-657.md). Do not resize or crop images to one square resolution. Keep each image's aspect ratio and sample its resolution per example, favouring small side lengths. Pack the patches into fixed-length sequences with per-example attention masks. At matched compute this beats square fixed-resolution ViT pretraining, and matches the best ViT with 4x less compute. Most of the gain is throughput. | Proposed |
 | [SOTA-399](../../../record/practices.d/SOTA-399.md) | Choose pre-training weight decay, dropout, clipping and precision for the quantization you intend to ship |  | Proposed |
+| [SOTA-401](../../../record/practices.d/SOTA-401.md) | Anchor the patch Gram matrix to an early teacher when training long, because dense features decay while global metrics improve |  | Proposed |

@@ -101,11 +101,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-165](../record/literature.d/LIT-165.md) — Mamba-3: Improved Sequence Modeling using State Space Principles *(Active)*
 - [LIT-195](../record/literature.d/LIT-195.md) — Parallelizing Linear Transformers with the Delta Rule over Sequence Length *(Active)*
 
-### From Query-Key Normalization for Transformers
-
-- alongside: [LIT-640](../record/literature.d/LIT-640.md) — Query-Key Normalization for Transformers *(Active)*
-- alongside: [LIT-641](../record/literature.d/LIT-641.md) — Attention Approximates Sparse Distributed Memory *(Active)*
-
 ## biomolecular-modeling
 
 ### From Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences
@@ -542,3 +537,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-595](../record/literature.d/LIT-595.md) — VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning *(Active)*
 - alongside: [LIT-596](../record/literature.d/LIT-596.md) — Barlow Twins: Self-Supervised Learning via Redundancy Reduction *(Active)*
+
+## Sharing no `tags`
+
+### From Query-Key Normalization for Transformers
+
+- alongside: [LIT-640](../record/literature.d/LIT-640.md) — Query-Key Normalization for Transformers *(Active)*
+- alongside: [LIT-641](../record/literature.d/LIT-641.md) — Attention Approximates Sparse Distributed Memory *(Active)*
+- alongside: [LIT-651](../record/literature.d/LIT-651.md) — Transformers without Tears: Improving the Normalization of Self-Attention *(Active)*

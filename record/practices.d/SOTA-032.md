@@ -40,11 +40,11 @@ history:
   date: '2026-09-24'
   note: >-
     Three changes, recommendation unchanged. `introduced_by` was LIT-114
-    (Xiong et al., Feb 2020); LIT-tmprikl1 (Oct 2019) predates it and
+    (Xiong et al., Feb 2020); LIT-651 (Oct 2019) predates it and
     disowns the origin itself, crediting Chen et al. 2018, Wang et al. 2019
     and three toolkits. So the field goes EMPTY under ADR-053 rather than
     repointing — pre-norm was in the toolkits before anyone argued for it.
-    LIT-tmprikl1 joins `source:` as the first systematic evaluation. The body
+    LIT-651 joins `source:` as the first systematic evaluation. The body
     gains the high-resource counter-result it never had — post-norm beats
     pre-norm 27.58 to 26.83 on WMT'14 English-German — and the qualification
     that smaller initialization recovers most of post-norm's stability. The
@@ -64,7 +64,7 @@ consensus_note: >-
   deliberate in each case. LIT-639 is the one paper here that measures
   both sides, and it finds post-norm failing outright at twelve encoder and
   twelve decoder layers even with warm-up — which is a reason the convergence
-  is not merely inherited. The bound on the reading: LIT-tmprikl1 measured both
+  is not merely inherited. The bound on the reading: LIT-651 measured both
   placements on high-resource WMT'14 English-German in the base regime and
   **post-norm won**, 27.58 to 26.83, so `universal` is a statement about the
   regime the record files for and not about transformers in general. Read as of
@@ -72,9 +72,9 @@ consensus_note: >-
 date: '2026-08-24'
 source:
 - LIT-114
-- LIT-tmprikl1
+- LIT-651
 # Searched and not found: no document this record can name FIRST MADE this
-# recommendation. LIT-tmprikl1 (Oct 2019) is the earliest systematic evaluation
+# recommendation. LIT-651 (Oct 2019) is the earliest systematic evaluation
 # and explicitly attributes pre-norm to others — Chen et al. 2018
 # (1804.09849), who found it instrumental inside a larger system, and Wang et
 # al. 2019 (1906.01787), who first compared the placements at depth — while
@@ -102,7 +102,7 @@ explained_by:
 ## Source
 
 Xiong et al. (2020), [LIT-114](../literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745), the mean-field
-analysis. Nguyen and Salazar (2019), `LIT-tmprikl1`, the first systematic
+analysis. Nguyen and Salazar (2019), `LIT-651`, the first systematic
 evaluation, four months earlier.
 
 <!-- inactive-ok-block: ADR-029 — Superseded by ADR-030, cited beside it
@@ -222,7 +222,7 @@ repeats the received view.**
 ## The regime where post-norm wins, and how much of the rest is initialisation
 
 Everything above is about stability and about low-resource or deep settings.
-`LIT-tmprikl1` ran the comparison at **high resource** — base Transformer,
+`LIT-651` ran the comparison at **high resource** — base Transformer,
 WMT'14 English-German, `newstest2014`, tokenized BLEU — and the result goes
 the other way:
 

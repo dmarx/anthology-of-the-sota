@@ -2,7 +2,7 @@
 
 # Lines of work
 
-49 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+47 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -143,31 +143,35 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ## generative-modeling
 
-### From Deep Unsupervised Learning using Nonequilibrium Thermodynamics
-
-- [LIT-439](../record/literature.d/LIT-439.md) — Deep Unsupervised Learning using Nonequilibrium Thermodynamics *(Active)*
-  - [LIT-036](../record/literature.d/LIT-036.md) — Denoising Diffusion Probabilistic Models *(Active)*
-    - [LIT-446](../record/literature.d/LIT-446.md) — Variational Diffusion Models *(Active)*
-
 ### From High-Resolution Image Synthesis with Latent Diffusion Models
 
 - [LIT-062](../record/literature.d/LIT-062.md) — High-Resolution Image Synthesis with Latent Diffusion Models *(Active)*
   - [LIT-566](../record/literature.d/LIT-566.md) — SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis *(Active)*
+  - [LIT-621](../record/literature.d/LIT-621.md) — Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models *(Active)*
+    - [LIT-625](../record/literature.d/LIT-625.md) — Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets *(Active)* — also extends LIT-062
+- [LIT-439](../record/literature.d/LIT-439.md) — Deep Unsupervised Learning using Nonequilibrium Thermodynamics *(Active)*
+  - [LIT-036](../record/literature.d/LIT-036.md) — Denoising Diffusion Probabilistic Models *(Active)*
+    - [LIT-446](../record/literature.d/LIT-446.md) — Variational Diffusion Models *(Active)*
+    - [LIT-627](../record/literature.d/LIT-627.md) — Video Diffusion Models *(Active)*
+- [LIT-448](../record/literature.d/LIT-448.md) — Scalable Diffusion Models with Transformers *(Active)*
+  - [LIT-447](../record/literature.d/LIT-447.md) — SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers *(Active)*
+    - [LIT-449](../record/literature.d/LIT-449.md) — Scaling Rectified Flow Transformers for High-Resolution Image Synthesis *(Active)*
+      - [LIT-573](../record/literature.d/LIT-573.md) — FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space *(Active)*
+        - [LIT-572](../record/literature.d/LIT-572.md) — FLUX.2: Analyzing and Enhancing the Latent Space of FLUX – Representation Comparison *(Active)*
+      - [LIT-618](../record/literature.d/LIT-618.md) — LTX-Video: Realtime Video Latent Diffusion *(Active)*
+      - [LIT-619](../record/literature.d/LIT-619.md) — Wan: Open and Advanced Large-Scale Video Generative Models *(Active)* — also extends LIT-448, LIT-623
+      - [LIT-620](../record/literature.d/LIT-620.md) — HunyuanVideo: A Systematic Framework For Large Video Generative Models *(Active)* — also extends LIT-623
+      - [LIT-626](../record/literature.d/LIT-626.md) — Movie Gen: A Cast of Media Foundation Models *(Active)* — also extends LIT-062
+  - [LIT-622](../record/literature.d/LIT-622.md) — CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer *(Active)* — also extends LIT-623
+  - [LIT-624](../record/literature.d/LIT-624.md) — Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model *(Active)*
+- [LIT-623](../record/literature.d/LIT-623.md) — Language Model Beats Diffusion — Tokenizer is Key to Visual Generation *(Active)*
+- alongside: [LIT-483](../record/literature.d/LIT-483.md) — Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models *(Active)*
 
 ### From Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise
 
 - [LIT-553](../record/literature.d/LIT-553.md) — Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise *(Active)*
   - [LIT-555](../record/literature.d/LIT-555.md) — Warm Diffusion: Recipe for Blur-Noise Mixture Diffusion Models *(Active)*
 - alongside: [LIT-075](../record/literature.d/LIT-075.md) — Elucidating the Design Space of Diffusion-Based Generative Models *(Active)*
-
-### From Scalable Diffusion Models with Transformers
-
-- [LIT-448](../record/literature.d/LIT-448.md) — Scalable Diffusion Models with Transformers *(Active)*
-  - [LIT-447](../record/literature.d/LIT-447.md) — SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers *(Active)*
-    - [LIT-449](../record/literature.d/LIT-449.md) — Scaling Rectified Flow Transformers for High-Resolution Image Synthesis *(Active)*
-      - [LIT-573](../record/literature.d/LIT-573.md) — FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space *(Active)*
-        - [LIT-572](../record/literature.d/LIT-572.md) — FLUX.2: Analyzing and Enhancing the Latent Space of FLUX – Representation Comparison *(Active)*
-- alongside: [LIT-483](../record/literature.d/LIT-483.md) — Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models *(Active)*
 
 ### From Denoising as Projection: Constrained Optimization with Gradient-Guided Diffusion
 

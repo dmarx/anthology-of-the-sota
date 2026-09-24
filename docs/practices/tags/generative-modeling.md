@@ -6,7 +6,7 @@
 
 **Generative modeling** — diffusion, samplers, text-to-image, conditioning and control.
 
-32 of 385 SOTA documents. Back to the [full index](../README.md).
+33 of 386 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -42,3 +42,4 @@
 | [SOTA-346](../../../record/practices.d/SOTA-346.md) | Retune the training timestep shift for each autoencoder latent space, and never rank latent spaces for generation under one shared schedule | Black Forest Labs (2025), [LIT-572](../../../record/literature.d/LIT-572.md) — four autoencoders, 30 timestep configurations each. The training shift alone moves FID by 61–86%. An RAE latent that wins when both are tuned loses to a tuned FLUX.2 latent when left unshifted. When you swap the autoencoder under a diffusion or flow model, sweep the shift again, using a logit-normal training distribution. When you compare autoencoders, compare each at its own optimum. | Proposed |
 | [SOTA-352](../../../record/practices.d/SOTA-352.md) | When a structure predictor is made generative, add a regression model's predictions to the training data so disordered regions are learned as disorder rather than invented structure | Abramson et al. (2024), [LIT-584](../../../record/literature.d/LIT-584.md) — a diffusion head generates plausible compact structure even where the protein has none. AlphaFold- Multimer, a regression model, renders the same regions as extended loops. Mixing its predictions into training teaches the generative model that convention, and "greatly reduced" hallucination. Remaining hallucinations are flagged by low confidence but do not look disordered. | Proposed |
 | [SOTA-383](../../../record/practices.d/SOTA-383.md) | Fix the sample count before comparing FID values, and settle a close comparison with an unbiased estimator rather than a tighter error bar | Bińkowski et al. (2018), [LIT-615](../../../record/literature.d/LIT-615.md) — the FID estimator is biased, the bias depends on the distribution being measured, and no unbiased estimator exists. So two FID numbers are comparable only at equal `n`, and a small standard deviation is not evidence of a converged estimate: at d=2048 and 50,000 samples their construction reversed a true ordering in 100 trials out of 100, with standard deviations of 0.2 and 0.5. | Active |
+| [SOTA-386](../../../record/practices.d/SOTA-386.md) | Show a video diffusion model images before and alongside video |  | Active |

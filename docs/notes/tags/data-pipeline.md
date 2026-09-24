@@ -4,7 +4,7 @@
 
 **data-pipeline**.
 
-18 of 332 NOTE documents. Back to the [full index](../README.md).
+19 of 333 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -26,3 +26,4 @@
 | [NOTE-233](../../../record/notes.d/NOTE-233.md) | TinyStories | Read as the missing trunk under eight `tiny-models` practices. The result that matters is a separation, not a record: what stops a 125M model speaking coherent English is the breadth of the corpus, not the complexity of language — established by holding the architecture and shrinking the corpus. | Read |
 | [NOTE-234](../../../record/notes.d/NOTE-234.md) | SimpleStories | Read to see what, if anything, it establishes that its trunk did not. The dataset comparison is direct and well instrumented; the model comparison is confounded three ways and the authors say so. The practice this record takes from it is about the generation procedure, which was measured. | Read |
 | [NOTE-321](../../../record/notes.d/NOTE-321.md) | AlphaFold 2 | Near-experimental protein structure accuracy at CASP14, a calibrated confidence head, self-distillation on confident predictions, and a hard dependence on alignment depth below about 30 sequences. Main text and Methods read. The supplementary methods (architecture details, ablation descriptions) were not read. | Read |
+| [NOTE-333](../../../record/notes.d/NOTE-333.md) | Wan | An open recipe for a 14B text-to-video DiT. Most of its evidence is engineering measurement: VAE throughput, parallelism overhead, inference speedups. Its three modelling ablations are small, judged mostly by training loss, and one of them shows the rejected option doing marginally better on FID. | Skimmed |

@@ -4,7 +4,7 @@
 
 **generative-modeling**.
 
-39 of 332 NOTE documents. Back to the [full index](../README.md).
+40 of 333 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -47,3 +47,4 @@
 | [NOTE-311](../../../record/notes.d/NOTE-311.md) | FLUX.2 latent-space report | A controlled comparison of four autoencoder latents for flow models on ImageNet, with the timestep schedule swept per latent. The schedule decides the ranking. FLUX.2's VAE gets near-RAE learnability with the best reconstruction. Read in full from the rendered report, except the interactive Table 2, which did not load. | Read |
 | [NOTE-320](../../../record/notes.d/NOTE-320.md) | AlphaFold 3 | AlphaFold generalized to all biomolecular complexes, with a diffusion head over atom coordinates. It gains on ligands, nucleic acids and antibodies, and inherits generative failure modes (hallucination, chirality) that it patches with distillation and ranking. Main text read. Extended Data and supplementary methods not read. | Read |
 | [NOTE-322](../../../record/notes.d/NOTE-322.md) v2 | Latent Dirichlet Allocation | The bag-of-words assumption, read through de Finetti, implies a document-level mixture. LDA is that mixture with Dirichlet topic proportions. It generalizes better than one-topic-per-document and per-document-parameter models by held-out perplexity. Main text read in full; the variational derivations in the appendices skimmed. | Read |
+| [NOTE-333](../../../record/notes.d/NOTE-333.md) | Wan | An open recipe for a 14B text-to-video DiT. Most of its evidence is engineering measurement: VAE throughput, parallelism overhead, inference speedups. Its three modelling ablations are small, judged mostly by training loss, and one of them shows the rejected option doing marginally better on FID. | Skimmed |

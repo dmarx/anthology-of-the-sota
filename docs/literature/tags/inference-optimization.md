@@ -6,7 +6,7 @@
 
 **Inference optimization** — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
 
-28 of 552 LIT documents. Back to the [full index](../README.md).
+29 of 562 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -38,3 +38,4 @@
 | [LIT-567](../../../record/literature.d/LIT-567.md) | MARLIN: Mixed-Precision Auto-Regressive Parallel Inference on Large Language Models | Frantar, Castro, Chen, Hoefler, Alistarh (2024), [ARXIV-2408.11743](https://arxiv.org/abs/2408.11743). An FP16×INT4 matrix-multiply kernel, the "Marlin format" being its quantization-specific weight layout. It keeps weight-only quantization's memory-bandwidth speed-up through batched serving: about 3.9× over FP16 (near the 3.87× ideal for 4-bit, group 128) up to batch 16–32, falling toward 1.5× at 128 as the problem turns compute-bound. In vLLM, about 2.8× lower time per output token on an A6000, and 2.3–3.2× single-GPU end-to-end at batch 16 or below, falling to 1.1–1.2× at 128. | Active |
 | [LIT-585](../../../record/literature.d/LIT-585.md) | AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration | Lin et al. (2023), [ARXIV-2306.00978](https://arxiv.org/abs/2306.00978). Weight-only low-bit quantization that protects the ~1% of channels whose *activations* are largest, by scaling them up before rounding rather than keeping them in higher precision. No backpropagation and no reconstruction, so it does not overfit its calibration set. | Active |
 | [LIT-586](../../../record/literature.d/LIT-586.md) | LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale | Dettmers et al. (2022), [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339). Int8 inference for the feed-forward and attention projections, at no measured cost in quality up to 175B, by isolating a small set of systematically emergent outlier feature dimensions into a 16-bit multiplication and quantizing the other 99.9% vector-wise. | Active |
+| [LIT-618](../../../record/literature.d/LIT-618.md) | LTX-Video: Realtime Video Latent Diffusion | HaCohen et al., Lightricks (2024), [ARXIV-2501.00103](https://arxiv.org/abs/2501.00103). It trades latent size for speed: a 32×32×8 VAE with 128 channels (1:192) moves patchification into the autoencoder, and the decoder does the last denoising step. It generates 5s of 768×512 video in about 2s on an H100 at 20 steps. The denoising decoder, the central idea, is supported by one internal preference study with no reported numbers. | Active |

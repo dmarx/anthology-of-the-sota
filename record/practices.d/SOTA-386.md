@@ -1,11 +1,14 @@
 ---
+number: 386
 status: Active
+formerly:
+- SOTA-tmp3b17n
 consensus: converged
 consensus_note: >-
   Every video report in the record trains on images before or alongside
-  video: Stable Video Diffusion (LIT-tmprf8ak), Movie Gen (LIT-tmpsjfid),
-  HunyuanVideo (LIT-tmpkcchp), Step-Video (LIT-tmpqns7l) and Wan
-  (LIT-tmpbr2sl). The later four adopt it without testing it. Movie Gen and
+  video: Stable Video Diffusion (LIT-625), Movie Gen (LIT-626),
+  HunyuanVideo (LIT-620), Step-Video (LIT-624) and Wan
+  (LIT-619). The later four adopt it without testing it. Movie Gen and
   Step-Video mention unshown experiments. Wan justifies it by throughput.
   That is adoption, per DP-005, and it is why the evidence below is the three
   small controlled studies and not the large reports. Read as of 2026-09.
@@ -17,11 +20,11 @@ tags:
 - vision-and-graphics
 date: '2026-09-24'
 source:
-- LIT-tmpvcgyq
-- LIT-tmpl3mo9
-- LIT-tmprf8ak
+- LIT-627
+- LIT-621
+- LIT-625
 introduced_by:
-- LIT-tmpvcgyq
+- LIT-627
 implementations:
 - 'Stable Video Diffusion'
 - 'Movie Gen'
@@ -30,12 +33,12 @@ implementations:
 - 'Wan2.1'
 ---
 
-# SOTA-tmp3b17n: Show a video diffusion model images before and alongside video
+# SOTA-386: Show a video diffusion model images before and alongside video
 
 ## Source
 
-Ho, Salimans et al. (2022), [LIT-tmpvcgyq](../literature.d/LIT-tmpvcgyq.md); Blattmann et al. (2023),
-[LIT-tmpl3mo9](../literature.d/LIT-tmpl3mo9.md); Blattmann, Dockhorn, Kulal et al. (2023), [LIT-tmprf8ak](../literature.d/LIT-tmprf8ak.md).
+Ho, Salimans et al. (2022), [LIT-627](../literature.d/LIT-627.md); Blattmann et al. (2023),
+[LIT-621](../literature.d/LIT-621.md); Blattmann, Dockhorn, Kulal et al. (2023), [LIT-625](../literature.d/LIT-625.md).
 
 ## The claim
 
@@ -47,13 +50,13 @@ Three controlled comparisons support it, each changing one thing:
 
 - **Adding images to video batches.** Same model, same videos, with
   independent frames appended to each video and temporal attention masked
-  for them. FVD falls from 202 with none to 58 with eight ([LIT-tmpvcgyq](../literature.d/LIT-tmpvcgyq.md),
+  for them. FVD falls from 202 with none to 58 with eight ([LIT-627](../literature.d/LIT-627.md),
   Table 4).
 - **Image initialization against end-to-end training.** Same architecture on
   driving scenes, with and without a pretrained image LDM underneath. FVD is
-  534 against 1155 and FID 48 against 71 ([LIT-tmpl3mo9](../literature.d/LIT-tmpl3mo9.md), Table 1).
+  534 against 1155 and FID 48 against 71 ([LIT-621](../literature.d/LIT-621.md), Table 1).
 - **Image-initialized against random spatial layers.** Human raters prefer
-  the image-initialized model ([LIT-tmprf8ak](../literature.d/LIT-tmprf8ak.md), Fig. 3a).
+  the image-initialized model ([LIT-625](../literature.d/LIT-625.md), Fig. 3a).
 
 ## Conditions
 

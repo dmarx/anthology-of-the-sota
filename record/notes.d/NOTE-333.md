@@ -1,6 +1,9 @@
 ---
+number: 333
 status: Skimmed
-paper: LIT-tmpbr2sl
+formerly:
+- NOTE-tmprmoo5
+paper: LIT-619
 title: 'Wan'
 version: 1
 date: '2026-09-24'
@@ -12,7 +15,7 @@ summary: >-
   better on FID.
 ---
 
-# NOTE-tmprmoo5: Wan
+# NOTE-333: Wan
 
 **This note is `Skimmed`, not `Read`.** It covers the full core report
 (§1–4: data, VAE, DiT, training, systems, inference, ablations), the

@@ -6,7 +6,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-225 of 385 SOTA documents. Back to the [full index](../README.md).
+226 of 386 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -235,3 +235,4 @@
 | [SOTA-381](../../../record/practices.d/SOTA-381.md) v2 | Sample a handful of negatives instead of normalizing over the vocabulary, and let the count fall as the data grows |  | Active |
 | [SOTA-383](../../../record/practices.d/SOTA-383.md) | Fix the sample count before comparing FID values, and settle a close comparison with an unbiased estimator rather than a tighter error bar | Bińkowski et al. (2018), [LIT-615](../../../record/literature.d/LIT-615.md) — the FID estimator is biased, the bias depends on the distribution being measured, and no unbiased estimator exists. So two FID numbers are comparable only at equal `n`, and a small standard deviation is not evidence of a converged estimate: at d=2048 and 50,000 samples their construction reversed a true ordering in 100 trials out of 100, with standard deviations of 0.2 and 0.5. | Active |
 | [SOTA-384](../../../record/practices.d/SOTA-384.md) | Calibrate a trained classifier with a single temperature fitted on held-out data, not with a richer map | Guo et al. (2017), [LIT-616](../../../record/literature.d/LIT-616.md) — rescale the logits by a single learned `1/T` fitted for NLL on a held-out set. It cannot change the argmax, so accuracy is unchanged by construction, and it beats vector scaling, matrix scaling, histogram binning, isotonic regression and BBQ — including the two that strictly contain it. Typical uncalibrated ECE is 4–10%. | Active |
+| [SOTA-386](../../../record/practices.d/SOTA-386.md) | Show a video diffusion model images before and alongside video |  | Active |

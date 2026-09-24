@@ -4,7 +4,7 @@
 
 **representation-and-encoding**.
 
-36 of 332 NOTE documents. Back to the [full index](../README.md).
+37 of 333 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -44,3 +44,4 @@
 | [NOTE-330](../../../record/notes.d/NOTE-330.md) | Baroni, Dinu & Kruszewski: Don't count, predict! | 84 count and predict models on 14 lexical-semantics benchmarks from one 2.8B-token corpus. word2vec CBOW beats count vectors almost everywhere and is far more robust to bad settings. The count side lacked word2vec's smoothing and negative shift, which is how [LIT-607](../../../record/literature.d/LIT-607.md) later reversed the result. Read in full. | Read |
 | [NOTE-331](../../../record/notes.d/NOTE-331.md) | Levy & Goldberg: SGNS as implicit PMI factorization | SGNS's objective is optimized at w·c = PMI(w, c) − log k, a weighted factorization of the shifted PMI matrix. Shifted PPMI nearly attains that optimum and SVD over it matches SGNS on similarity, while SGNS keeps an edge on syntactic analogies. Read in full. | Read |
 | [NOTE-332](../../../record/notes.d/NOTE-332.md) | Arora et al.: RAND-WALK and PMI in low dimensions | A random-walk generative model with isotropic word vectors predicts PMI ≈ ⟨v, v'⟩/d in low dimensions, justifies GloVe's biases and CBOW's averaging, and explains why analogies survive large fitting error: isotropy denoises the offset. Its assumptions are checked loosely on one corpus. Read in full, with the main-text proofs. | Read |
+| [NOTE-333](../../../record/notes.d/NOTE-333.md) | Wan | An open recipe for a 14B text-to-video DiT. Most of its evidence is engineering measurement: VAE throughput, parallelism overhead, inference speedups. Its three modelling ablations are small, judged mostly by training loss, and one of them shows the rejected option doing marginally better on FID. | Skimmed |

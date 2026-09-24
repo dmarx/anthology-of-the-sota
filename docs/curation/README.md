@@ -6,6 +6,8 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [24 Sep 04:53 — Filling in the video line behind Wan](2026-09.md#filling-in-the-video-line-behind-wan)
+- [24 Sep 04:28 — The video report LIT-218 asked for](2026-09.md#the-video-report-lit-218-asked-for)
 - [24 Sep 03:36 — Twelve documents downstream of a rule, and no note for the run the rule was derived against](2026-09.md#twelve-documents-downstream-of-a-rule-and-no-note-for-the-run-the-rule-was-derived-against)
 - [24 Sep 01:44 — A triage rule that asks about the paper cannot find a defect in the record](2026-09.md#a-triage-rule-that-asks-about-the-paper-cannot-find-a-defect-in-the-record)
 - [23 Sep 23:11 — Retiring a duplicate is not the same as reconciling it](2026-09.md#retiring-a-duplicate-is-not-the-same-as-reconciling-it)
@@ -207,9 +209,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-200 entries across 2 books, newest first.
+202 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 198 | 2026-09-05 | 2026-09-24 |
+| [2026-09](2026-09.md) | 200 | 2026-09-05 | 2026-09-24 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

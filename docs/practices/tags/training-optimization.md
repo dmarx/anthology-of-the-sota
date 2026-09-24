@@ -6,7 +6,7 @@
 
 **Training optimization** — optimizers, learning-rate schedules, batch size, training dynamics, scaling laws and scaling strategies.
 
-102 of 385 SOTA documents. Back to the [full index](../README.md).
+103 of 386 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -112,3 +112,4 @@
 | [SOTA-381](../../../record/practices.d/SOTA-381.md) v2 | Sample a handful of negatives instead of normalizing over the vocabulary, and let the count fall as the data grows |  | Active |
 | [SOTA-384](../../../record/practices.d/SOTA-384.md) | Calibrate a trained classifier with a single temperature fitted on held-out data, not with a richer map | Guo et al. (2017), [LIT-616](../../../record/literature.d/LIT-616.md) — rescale the logits by a single learned `1/T` fitted for NLL on a held-out set. It cannot change the argmax, so accuracy is unchanged by construction, and it beats vector scaling, matrix scaling, histogram binning, isotonic regression and BBQ — including the two that strictly contain it. Typical uncalibrated ECE is 4–10%. | Active |
 | [SOTA-385](../../../record/practices.d/SOTA-385.md) | Tighten the gradient-norm clip as the model grows rather than carrying one value across scales | Rae et al. (2021), [LIT-617](../../../record/literature.d/LIT-617.md) — the Gopher family clipped the global gradient norm at 1.0 for models up to 1.4B and at **0.25 for the 7.1B and 280B models**, "for improved stability". Three held practices say to clip and none names a value; this is the first number in the record, and it is not a constant. | Proposed |
+| [SOTA-386](../../../record/practices.d/SOTA-386.md) | Show a video diffusion model images before and alongside video |  | Active |

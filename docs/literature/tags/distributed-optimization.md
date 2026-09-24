@@ -6,7 +6,7 @@
 
 **Distributed optimization** — parallelism and sharding, communication, memory management, checkpointing.
 
-56 of 552 LIT documents. Back to the [full index](../README.md).
+58 of 562 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -66,3 +66,5 @@
 | [LIT-374](../../../record/literature.d/LIT-374.md) | LAYUP: Asynchronous decentralized gradient descent with LAYer-wise UPdates | Fokam et al. (2024), [ARXIV-2410.05985](https://arxiv.org/abs/2410.05985). LAYUP: decouple the forward and backward passes into separate threads with layer-wise updates, so straggler devices stop setting the step time. | Active |
 | [LIT-418](../../../record/literature.d/LIT-418.md) | HybridFlow: A Flexible and Efficient RLHF Framework | Sheng et al. (2024), [ARXIV-2409.19256](https://arxiv.org/abs/2409.19256). The paper behind verl — a hybrid single/multi-controller execution model for the RLHF dataflow, with a 3D resharding engine between the training and generation phases. Named in [ADR-032](../../../record/decisions.d/ADR-032.md) as one of the four references at the top of the backlog it opened. | Active |
 | [LIT-605](../../../record/literature.d/LIT-605.md) | Sigmoid Loss for Language Image Pre-Training | Zhai et al. (2023), [ARXIV-2303.15343](https://arxiv.org/abs/2303.15343). Replace CLIP's softmax with a pairwise sigmoid, so the loss never needs a global view of the similarity matrix — no all-gathers, only a per-device block in memory, and better results below 16k batch. Then trains at batch size one million and finds the benefit saturated at 32k. | Active |
+| [LIT-619](../../../record/literature.d/LIT-619.md) | Wan: Open and Advanced Large-Scale Video Generative Models | Wan Team, Alibaba (2025), [ARXIV-2503.20314](https://arxiv.org/abs/2503.20314). The open Wan2.1 video models, 1.3B and 14B, and the full recipe behind them. The recipe covers data curation, a 127M causal 3D VAE compressing 4×8×8, a cross-attention DiT trained by rectified flow on an image-then-video resolution curriculum, the 2D context parallelism it needs, and a mask-conditioned image-to-video variant. The abstract claims video scaling laws in data and model size, but the report plots no scaling curve. | Active |
+| [LIT-624](../../../record/literature.d/LIT-624.md) | Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model | Step-Video Team, StepFun (2025), [ARXIV-2502.10248](https://arxiv.org/abs/2502.10248). A 30B text-to-video DiT on a 16×16×8 VAE that reconstructs as well as HunyuanVideo's 8×8×4, so the model covers 204 frames. It also applies DPO to video (55% against 45%) and runs at 32% MFU. It reaches parity with Movie Gen and loses to the strongest commercial model it names, despite the abstract's "state-of-the-art". | Active |

@@ -4,7 +4,7 @@
 
 **multimodal-learning**.
 
-8 of 332 NOTE documents. Back to the [full index](../README.md).
+9 of 333 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -16,3 +16,4 @@
 | [NOTE-206](../../../record/notes.d/NOTE-206.md) | The Platonic Representation Hypothesis | Vision and language models measure distance between datapoints more alike as they get larger, across architectures and objectives. The conjecture is that they converge on a model of what generated the data. The proof holds for bijective observations only, and the caption-density experiment tests that boundary rather than asserting past it. | Read |
 | [NOTE-232](../../../record/notes.d/NOTE-232.md) | Mixture-of-Transformers | Read to test whether it satisfies `SOTA-262`'s promotion condition. It does, as that condition was written — second group, per-modality weights against a shared-weight backbone, FLOPs held identical. The component ablation is a bonus the condition did not ask for and the practice needed. | Read |
 | [NOTE-255](../../../record/notes.d/NOTE-255.md) | Gemini 1.0: complete disclosure, and an abstract that picks the flattering row | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist for the model and filed for the appendices. The headline — first model to exceed human-expert MMLU — holds under one inference procedure out of three the report itself publishes, and under the other two GPT-4 is ahead. Nothing is concealed. The disambiguating numbers are in the same document, which is what makes this the corpus's cleanest instance of `DP-010`. | Read |
+| [NOTE-333](../../../record/notes.d/NOTE-333.md) | Wan | An open recipe for a 14B text-to-video DiT. Most of its evidence is engineering measurement: VAE throughput, parallelism overhead, inference speedups. Its three modelling ablations are small, judged mostly by training loss, and one of them shows the rejected option doing marginally better on FID. | Skimmed |

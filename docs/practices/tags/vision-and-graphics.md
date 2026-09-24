@@ -6,7 +6,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-19 of 385 SOTA documents. Back to the [full index](../README.md).
+20 of 386 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -29,3 +29,4 @@
 | [SOTA-358](../../../record/practices.d/SOTA-358.md) | Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not |  | Active |
 | [SOTA-359](../../../record/practices.d/SOTA-359.md) v2 | Supervise vision from the caption, and match image to caption rather than predicting its words |  | Active |
 | [SOTA-383](../../../record/practices.d/SOTA-383.md) | Fix the sample count before comparing FID values, and settle a close comparison with an unbiased estimator rather than a tighter error bar | Bińkowski et al. (2018), [LIT-615](../../../record/literature.d/LIT-615.md) — the FID estimator is biased, the bias depends on the distribution being measured, and no unbiased estimator exists. So two FID numbers are comparable only at equal `n`, and a small standard deviation is not evidence of a converged estimate: at d=2048 and 50,000 samples their construction reversed a true ordering in 100 trials out of 100, with standard deviations of 0.2 and 0.5. | Active |
+| [SOTA-386](../../../record/practices.d/SOTA-386.md) | Show a video diffusion model images before and alongside video |  | Active |

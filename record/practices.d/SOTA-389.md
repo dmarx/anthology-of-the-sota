@@ -21,7 +21,7 @@ consensus_note: >-
   related one and found the opposite (see Conditions). Read as of
   2026-09.
 title: 'Caption training video with a model that watches the video, not with captions of its frames'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-24'
@@ -31,6 +31,12 @@ history:
     +16.1) is in Movie Gen's prose, which says "most", not "almost all".
     Table 8b holds only −0.8 and +10.8. CogVideoX is removed as an adopter
     and as an implementation. SVD's contrary captioner result is added.
+- version: 3
+  date: '2026-09-24'
+  note: >-
+    DALL-E 3 ("Improving Image Generation with Better Captions") is now
+    filed; the condition that said the image-domain antecedent was not held
+    cites it, with what its controlled evidence actually measures.
 tags:
 - data-pipeline
 - generative-modeling
@@ -113,6 +119,8 @@ Captioned video alone would not have fixed it ([NOTE-349](../notes.d/NOTE-349.md
   and motion poorly, and trains a dedicated annotator for them. If the
   captioner cannot see camera motion, captions will not teach it, whichever
   kind of model writes them.
-- **The image-domain antecedent is not held.** The observation that
-  descriptive synthetic captions improve prompt following, usually credited
-  to DALL-E 3, is cited by Wan and is not in the record.
+- **The image-domain antecedent is weaker than its reputation.** The
+  observation that descriptive synthetic captions improve prompt following
+  is usually credited to DALL-E 3 ([LIT-tmpu3jdj](../literature.d/LIT-tmpu3jdj.md)), which Wan cites. Its
+  controlled evidence is CLIP score only, not human-rated alignment, and it
+  credits Parti with training on synthetic captions first.

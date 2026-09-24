@@ -5,24 +5,37 @@ formerly:
 - SOTA-tmpf60k7
 consensus: emerging
 consensus_note: >-
-  One group demonstrates it, but the claim rests on an identity rather than
-  on a sweep: the coefficient does not enter the velocity or the score, so
+  One group states and demonstrates it (the stochastic-interpolants
+  framework and SiT share authors), but the claim rests on an identity
+  rather than on a sweep: the coefficient does not enter the velocity or the score, so
   it cannot be downstream of training. Nothing in the record contests it.
   `emerging` because no second group has reported tuning it, and because the
-  measured gain is on one dataset.
+  measured gain is on one dataset — the framework paper itself reports no
+  image metric.
 title: 'Tune the stochastic sampler''s diffusion coefficient after training; it is not fixed by the forward process'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-24'
+  note: >-
+    introduced_by moved from SiT to the stochastic-interpolants framework
+    (ARXIV-2303.08797), now filed: its v1 abstract already says the noise
+    strength can be tuned after training, and SiT takes the result from it.
+    SiT stays as a source, for the measurement. The recommendation is
+    unchanged.
 tags:
 - generative-modeling
 date: '2026-09-20'
 source:
 - LIT-447
+- LIT-tmpb08v0
 introduced_by:
-- LIT-447
+- LIT-tmpb08v0
 implementations:
 - 'SiT-XL'
 summary: >-
-  Ma et al. (2024), [LIT-447](../literature.d/LIT-447.md) — score-based diffusion conventionally
+  Albergo, Boffi and Vanden-Eijnden (2023), LIT-tmpb08v0, state it and Ma
+  et al. (2024), [LIT-447](../literature.d/LIT-447.md), measure it — score-based diffusion conventionally
   takes the reverse SDE's diffusion coefficient from the forward process, and
   presents the two as intrinsically tied. They are not: the coefficient
   affects neither the velocity nor the score, only the integration. So it is
@@ -34,7 +47,15 @@ summary: >-
 
 ## Source
 
-Ma et al. (2024), [LIT-447](../literature.d/LIT-447.md) — [ARXIV-2401.08740](https://arxiv.org/abs/2401.08740).
+Albergo, Boffi and Vanden-Eijnden (2023), [LIT-tmpb08v0](../literature.d/LIT-tmpb08v0.md) — [ARXIV-2303.08797](https://arxiv.org/abs/2303.08797).
+The framework paper introduces it: one learned velocity and score give a
+family of SDEs sharing the interpolant's marginals, and its v1 abstract says
+the noise strength "can be tuned as model hyper-parameter after training".
+Its evidence is a 2-D checkerboard and a 128-D Gaussian mixture.
+
+Ma et al. (2024), [LIT-447](../literature.d/LIT-447.md) — [ARXIV-2401.08740](https://arxiv.org/abs/2401.08740). Shares three
+authors with the framework, takes its KL bound to derive a computable
+coefficient, and supplies the ImageNet measurement.
 
 ## The claim is structural before it is empirical
 

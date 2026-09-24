@@ -1,0 +1,111 @@
+---
+status: Active
+title: 'Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks'
+version: 1
+tags:
+- training-optimization
+- generative-modeling
+date: '2026-09-24'
+published: '2015-06-01'
+arxiv: '1506.03099'
+first_author: 'Bengio'
+keywords:
+- 'scheduled-sampling'
+- 'curriculum-learning'
+- 'training-inference-discrepancy'
+- 'sequence-prediction'
+- 'inverse-sigmoid-decay'
+implementations: []
+summary: >-
+  Bengio, Vinyals, Jaitly and Shazeer, Google (2015), [ARXIV-1506.03099](https://arxiv.org/abs/1506.03099).
+  During training, each previous-token input is replaced by the model's own
+  prediction with a probability that grows on a schedule. On captioning,
+  parsing and frame-level speech recognition with small LSTMs this beats
+  training on ground truth only, and training only on the model's own
+  output does badly. The gains are single runs with no variance reported.
+  Feeding uniform random tokens recovers part of the captioning gain, and
+  the paper never measures how errors grow with sequence length.
+compared_against:
+- LIT-tmpnp0ky
+---
+<!-- inactive-ok-file: SOTA-333, SOTA-395 — Proposed practices this paper bears on; named as what the paper informs, not as settled advice -->
+
+
+# LIT-tmpylvlq: Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks
+
+Bengio, Vinyals, Jaitly and Shazeer, Google Research (2015; NIPS 2015) — [ARXIV-1506.03099](https://arxiv.org/abs/1506.03099)
+
+## Key takeaways
+
+- **The mechanism is a per-token coin flip.** For each token, the true
+  previous token is fed with probability ε_i and the model's own prediction
+  (sampled or argmax) otherwise. ε_i decays over training by a linear,
+  exponential or inverse-sigmoid schedule (§2.4, Fig. 2). No gradient flows
+  through the sampling decision (§2.4). Flipping once per sequence instead
+  of per token was "much worse" (footnote 2) and as poor as Always Sampling (§4.1).
+- **Captioning** on MSCOCO (75k training images, 5k development, one-layer
+  512-unit LSTM, 8,857-word vocabulary, inverse-sigmoid decay).
+  Scheduled Sampling against the teacher-forced baseline scores BLEU-4 30.6
+  against 28.8, METEOR 24.3 against 24.2 and CIDEr 92.1 against 89.5
+  (Table 1). Always Sampling, which trains only on the model's own output,
+  scores 11.2 / 15.7 / 49.7.
+- **Parsing** on WSJ 22 (one-layer 512-unit LSTM with attention, 40k
+  training sentences). F1 is 88.08 against 86.54, and 88.68 against 87.0
+  with dropout (Table 2). Always Sampling often produced invalid trees.
+- **Speech**, framewise HMM-state labels on TIMIT (two layers of 250 LSTM
+  cells, three models averaged, beam 10). The teacher-forced baseline has
+  the best next-step frame error rate (15.0) and the worst decoding error
+  rate (46.0). Scheduled Sampling with ε ramped from 0.25 to 0 decodes at
+  34.5 (Table 3). This row is the paper's clearest measurement of the
+  train-inference gap.
+- **It costs nothing measurable.** Training was "not meaningfully slower
+  (nor faster)" than the baseline (footnote 3).
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"Significant improvements"** (abstract) rests on single runs for
+  captioning and parsing with no variance reported. The speech rows average
+  three models and give no spread.
+- **Some of the captioning gain is regularization.** Uniform Scheduled
+  Sampling feeds random tokens instead of model predictions and still
+  scores 29.2 / 24.2 / 90.9 (Table 1). That is 0.4 of the 1.8-point BLEU-4
+  gain and 1.4 of the 2.6-point CIDEr gain. The authors read it as "better
+  than the baseline, but not as good as our proposed approach" (§4.1).
+- **The parsing gain is not attributed.** "Whether the effect of sampling
+  during training helps with regard to overfitting or the
+  training/inference mismatch is unclear" (§4.2).
+- **On speech, the schedule barely matters.** Always Sampling decodes at
+  35.8 against 34.5 for the best schedule, and ramping only from 0.9 to 0.5
+  gives 42.0 (Table 3). The authors attribute the result to redundant HMM
+  labels (§4.3).
+- **Error accumulation is argued, not measured.** §2.3 describes
+  compounding errors. No experiment plots error against position or length.
+- **Machine translation** is the motivating example of the abstract and
+  introduction and is not tested.
+- **Neither "exposure bias" nor "teacher forcing" appears in the paper.**
+  MIXER named the first term five months later.
+
+## Standing in the anthology
+
+No held document cites this paper by identifier. [LIT-629](LIT-629.md) names it among
+"the papers that named it [exposure bias] for RNNs", and the 2026-09-24
+curation entry lists it as missing substrate. By [NOTE-335](../notes.d/NOTE-335.md), Self Forcing does
+not cite it. MIXER compares against it as "DAD" (its Figure 5).
+
+Every experiment here uses discrete tokens. The speech row shows a
+teacher-forced model of discrete labels failing at inference by a wide
+margin (46.0 against 34.5). That complicates the condition in [SOTA-333](../practices.d/SOTA-333.md) that
+discrete-token teacher forcing "does not diverge in the same way". The paper
+shows a measured decoding penalty for discrete tokens, but it does not show
+divergence over length for either kind.
+
+The design also anticipates a choice in [SOTA-395](../practices.d/SOTA-395.md). Scheduled Sampling feeds
+the model its own outputs but does not back-propagate through them (§2.4).
+Self Forcing detaches its self-generated KV cache in the same spirit
+([LIT-629](LIT-629.md)).
+
+Filed without a `NOTE`: the takeaways come from one full reading done for
+this filing, of all nine pages including references. There are no
+appendices.

@@ -15,7 +15,7 @@ consensus_note: >-
   together, so it supports the combination and cannot separate the halves.
   `emerging` stands because the practice is both halves together. Read as of 2026-09.
 title: 'Connect data and noise on a straight line, and sample the training timesteps from a logit-normal rather than uniformly'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-24'
@@ -37,6 +37,14 @@ history:
     Flow's Table 1a is partly controlled, since its training budget is
     unstated. Flow Matching's path comparison replicates at ImageNet-32 and
     64 inside the same paper.
+- version: 4
+  date: '2026-09-24'
+  note: >-
+    Source corrected: stochastic interpolants are no longer named as a third
+    origin of the straight path. ARXIV-2209.15571 uses a trigonometric
+    interpolant and credits the linear path to Liu et al.; it is now filed and
+    cited for what it did originate, the simulation-free interpolant objective.
+    The recommendation is unchanged.
 tags:
 - generative-modeling
 date: '2026-09-20'
@@ -72,8 +80,10 @@ summary: >-
 ## Source
 
 Liu, Gong and Liu (2022), [LIT-636](../literature.d/LIT-636.md), and Lipman et al. (2022),
-[LIT-630](../literature.d/LIT-630.md), introduced the straight path concurrently, with Albergo and
-Vanden-Eijnden's stochastic interpolants. Flow Matching contributes the
+[LIT-630](../literature.d/LIT-630.md), introduced the straight path concurrently. Albergo and Vanden-Eijnden's
+stochastic interpolants ([LIT-tmp90ynr](../literature.d/LIT-tmp90ynr.md)) are a concurrent origin of the
+simulation-free objective but not of the straight path: they use a
+trigonometric interpolant and credit the linear one to Liu et al. Flow Matching contributes the
 first controlled comparison: the same U-Net, hyperparameters and epochs
 give CIFAR-10 FID 6.35 on the straight path against 8.06 on the diffusion
 path (its Table 1). The same comparison holds at ImageNet-32 and

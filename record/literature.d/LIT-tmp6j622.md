@@ -1,0 +1,108 @@
+---
+status: Active
+title: 'Professor Forcing: A New Algorithm for Training Recurrent Networks'
+version: 1
+tags:
+- training-optimization
+- generative-modeling
+date: '2026-09-24'
+published: '2016-10-01'
+arxiv: '1610.09038'
+first_author: 'Lamb'
+keywords:
+- 'professor-forcing'
+- 'teacher-forcing'
+- 'free-running-mode'
+- 'adversarial-domain-adaptation'
+- 'hidden-state-dynamics'
+- 'long-term-sequence-sampling'
+implementations: []
+summary: >-
+  Lamb, Goyal et al., MILA (2016), [ARXIV-1610.09038](https://arxiv.org/abs/1610.09038). A discriminator is
+  trained to tell a recurrent network's hidden-state dynamics under teacher
+  forcing from its dynamics when free-running, and the generator is trained
+  to fool it alongside the usual likelihood loss. Human raters prefer its
+  samples for handwriting generated 20 times past the training length and
+  for raw audio. The likelihood gains are small, the sequential-MNIST claim
+  has no teacher-forcing baseline, and word-level language modeling showed
+  no difference.
+---
+<!-- inactive-ok-file: SOTA-333, SOTA-395 — Proposed practices this paper bears on; named as what the paper informs, not as settled advice -->
+
+
+# LIT-tmp6j622: Professor Forcing: A New Algorithm for Training Recurrent Networks
+
+Lamb, Goyal, Zhang, Zhang, Courville and Bengio, MILA, Université de Montréal (2016; NIPS 2016) — [ARXIV-1610.09038](https://arxiv.org/abs/1610.09038)
+
+## Key takeaways
+
+- **Match the dynamics, not the tokens.** A bidirectional-GRU discriminator
+  classifies a "behavior sequence" (pre-tanh GRU states and optionally the
+  softmax outputs) as teacher-forced or free-running. The generator
+  minimizes NLL plus a term that makes free-running behaviour look
+  teacher-forced, optionally plus the reverse (§2.2, eqs. 2–4). Generator
+  gradients from the discriminator are used only when its accuracy is
+  above 75%, and the discriminator stops updating above 99% (§4.1).
+- **Past the training length it helps visibly.** A handwriting model trained
+  on 50-step sequences was sampled for 1,000 steps (IAM-OnDB). In 768
+  paired judgements by 48 volunteers, Professor Forcing was rated better in
+  76.9% (19.7% much better, 57.2% slightly) (Table 2). Training time was
+  equal (§4.4).
+- **Raw audio.** Monk chanting at 1 kHz, binned into 8,000 values, as
+  4,000-step sequences. 29 volunteers rated five samples from each model on
+  a 1–3 scale: 2.20 against 1.30 (§4.5, Fig. 7).
+- **The likelihood effect is small.** Character-level Penn Treebank with a
+  1,024-unit GRU on 500-character sequences reaches validation BPC 1.48
+  against 1.50, at three times the training time (§4.2).
+- **The two modes' hidden states overlap more.** Over 30 t-SNE runs for
+  each method, mean centroid distance falls from 3000.0 to 1800.0. Mean
+  distance between training-mode and sampling-mode states falls from 22.8
+  to 16.4 on vocal synthesis (Fig. 3 caption).
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"Improving test likelihood on … sequential MNIST"** (abstract). Table 1
+  reports 79.58 NLL against other published models (PixelRNN 79.2, DRAW
+  ≤ 80.97). No teacher-forced model with the same 3-layer GRU is reported.
+- **"Trade-offs between Professor Forcing and Scheduled Sampling are
+  discussed"** (abstract). They are discussed (§1, §3) and not measured. No
+  experiment has a scheduled-sampling arm.
+- **The negative results are the boundary.** "On word level Penn Treebank
+  we did not observe any difference", and none for speech synthesis on
+  sequences shorter than 100 (§4.6). The authors attribute this to shorter
+  dependencies.
+- **Single runs.** The 0.02 BPC gain has no variance. The audio likelihood
+  gain is shown only as curves (Fig. 6).
+- **The human studies are small.** The audio study is 10 samples from one
+  three-hour source, and the handwriting baseline is an open-source
+  implementation with its own hyperparameters (§4.4).
+- **The overlap measure lives in t-SNE space.** Distances in a t-SNE
+  embedding are not distances between the hidden states.
+
+## Standing in the anthology
+
+Self Forcing cites it among the RNN-era remedies ([NOTE-335](../notes.d/NOTE-335.md), reference [40]).
+[LIT-629](LIT-629.md) and the 2026-09-24 curation entry name it without holding it.
+[LIT-629](LIT-629.md) says it "named" exposure bias. It did not: the paper never uses the
+term and speaks of teacher forcing, after Williams and Zipser (1989).
+
+It is the closest of the three RNN-era papers to [SOTA-333](../practices.d/SOTA-333.md)'s setting. Its
+strongest result is a model trained on short sequences and rolled out 20
+times longer, the same shape as Diffusion Forcing's 1,000-frame video
+([LIT-554](LIT-554.md)), and on a continuous signal (pen coordinates). Its null result is
+on word-level language. That is the nearest these papers come to supporting
+[SOTA-333](../practices.d/SOTA-333.md)'s condition that discrete tokens "do not diverge in the same way".
+It is not the authors' reading: they attribute the null to dependency
+length, and character-level text, also discrete, improved slightly.
+
+It is also the first of the three with a distribution-level loss on
+free-running output, which [SOTA-395](../practices.d/SOTA-395.md) recommends. The objects differ. The
+discriminator here compares free-running dynamics with teacher-forced
+dynamics. Self Forcing's GAN variant compares generated clips with data
+([LIT-629](LIT-629.md)).
+
+Filed without a `NOTE`: the takeaways come from one full reading done for
+this filing, of all eleven pages of v1 including references. The
+supplementary audio samples were not examined.

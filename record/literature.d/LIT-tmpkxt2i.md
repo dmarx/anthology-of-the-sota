@@ -29,6 +29,7 @@ summary: >-
   Also the allocation [LIT-068](LIT-068.md) corrects: 280B parameters on 300B tokens is
   **1.07 tokens per parameter** against Chinchilla's 20.
 ---
+<!-- inactive-ok-file: THEORY-050 — Proposed; named to mark what Gopher's compression conjecture is NOT evidence for — a conjecture in a discussion section is not the within-corpus exchange-rate measurement this theory's promote_when asks for -->
 
 # LIT-tmpkxt2i: Scaling Language Models: Methods, Analysis & Insights from Training Gopher
 

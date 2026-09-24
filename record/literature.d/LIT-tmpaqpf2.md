@@ -1,0 +1,154 @@
+---
+status: Active
+title: 'Muon Outperforms Adam in Tail-End Associative Memory Learning'
+version: 1
+tags:
+- training-optimization
+- signal-structure
+- model-architecture
+date: '2026-09-24'
+published: '2025-09-30'
+arxiv: '2509.26030'
+first_author: 'Wang'
+keywords:
+- 'muon'
+- 'associative-memory'
+- 'heavy-tailed'
+- 'singular-spectrum'
+- 'optimizer-ablation'
+implementations: []
+summary: >-
+  Wang et al. (2025), [ARXIV-2509.26030](https://arxiv.org/abs/2509.26030). Ninety-four documents in this record
+  name Muon and seventeen practices recommend or condition on it; five theories
+  mention it and none says why it works. This one ablates Muon block by block:
+  **applying it to the value-output weights and the FFN alone almost recovers
+  the full-Muon trajectory, and applying it to query-key contributes little.**
+  The account is that Muon's update matches the outer-product structure of
+  associative memory, giving isotropic spectra and better learning of rare
+  classes.
+---
+
+<!-- inactive-ok-file: THEORY-032, THEORY-024, THEORY-033, THEORY-081, THEORY-tmpt64ul — all Proposed, and every citation here depends on that.
+     THEORY-032 is named as the account whose promote_when this paper nearly
+     meets and does not, which is a statement about an open condition;
+     THEORY-024 and THEORY-033 are the census of what the record already holds
+     on spectral updates; THEORY-081 is named as the Proposed premise this
+     paper's mechanism assumes, which is the point being made about it; and
+     THEORY-tmpt64ul is filed in this same contribution as the account. -->
+
+# LIT-tmpaqpf2: Muon Outperforms Adam in Tail-End Associative Memory Learning
+
+Wang, Zhang, Li, Du, Du, Pang, Yang, Hong and Tan (2025) — [ARXIV-2509.26030](https://arxiv.org/abs/2509.26030)
+
+## The ablation, which is the part the record has been waiting for
+
+Train with Muon on some blocks and Adam on the rest, everything else matched.
+
+- **`W_V` and `W_O` show substantially larger gains than `W_Q` and `W_K`.**
+  Applying Muon to `W_V` alone or `W_O` alone already beats applying it to the
+  whole of QK.
+- **VO + FFN nearly recovers the full-Muon trajectory**, in both gated and
+  ungated FFN settings. *"Applying Muon to QK contributes little to its overall
+  performance."* The authors attribute the small residual gap to VO+FFN
+  inheriting full-Muon's learning rate without retuning.
+- Within that set, `W_O` matters more than `W_V`, and `W_out` more than
+  `W_in`. In the ungated setting VO + `W_out` alone nearly recovers full Muon;
+  in the gated setting the same combination falls short, so **the recovery is
+  architecture-sensitive**.
+- They pre-empt the obvious objection themselves: *"this observation is not a
+  trivial consequence of parameter counting; although QK and VO are equal in
+  size, VO proves substantially more influential."* And they check that the
+  QK result is not the MoE logit explosion others report — logits do not
+  explode in their setting.
+
+Replicated at 0.7B in the appendix.
+
+## The account
+
+**Why those blocks.** VO and FFN are the transformer's associative memories,
+and a linear associative memory over key-value pairs is a sum of outer
+products, `W = Σ_i e_o_i e_s_i^T`. Muon orthogonalises the update, which is
+exactly the operation that treats each outer-product direction alike.
+
+**What that produces.** Muon's weight matrices come out with **more isotropic
+singular spectra** than Adam's — higher normalised SVD entropy and effective
+rank, smaller top-`k` energy fraction — consistently through training and
+across seeds.
+
+**What that buys.** Real corpora are heavy-tailed. On a knowledge-intensive
+task with a deliberately imbalanced class distribution, Muon **matches Adam on
+head classes and substantially beats it on tail classes**, narrowing the
+head–tail gap. And the hybrid runs line up with the ablation above: Muon on
+VO+FFN gives the tail-class gain, Muon on QK alone gives little.
+
+**The proof.** A one-layer linear associative memory with `K` fact triplets
+under class imbalance, initialised at zero, momentum disabled. One step of
+Muon gives a balance measure `ϱ ≥ 1 − ε(1 + O(log K / K))` **for any feature
+embeddings satisfying their assumption**, and multi-step Muon keeps it. Plain
+gradient descent gives `O(ε^{−r}K^{r−1})` with `r < 1`, which degrades with
+`K`. The phrase carrying the weight is *regardless of feature embeddings*:
+Adam's balance depends on properties of the embedding and Muon's does not.
+
+## What this does to `THEORY-032`, which is the interesting part
+
+`THEORY-032` says a spectral update wins where the incoming activations are
+low stable rank and the gradient spectrum is spread out. Its `promote_when`
+asks for:
+
+> An ablation that uses the condition as a decision rule — spectral updates on
+> the blocks that pass it, Euclidean on the blocks that fail — and trains
+> faster than applying spectral updates everywhere.
+
+**This is that ablation, run with a different decision rule, and it does not
+meet the condition.** Two gaps, and both matter:
+
+1. The rule used here is *is this block an associative memory* — an
+   architectural criterion — not *is the incoming activation low stable rank*.
+   Nobody has checked whether the two rules select the same blocks.
+2. VO+FFN **nearly recovers** full Muon. It does not beat it. `promote_when`
+   asks for faster, and the honest reading of "nearly recovers" is that the
+   selective variant is free, not better.
+
+What it does establish is the half that was in doubt: **a per-block split is
+nearly costless**, so a decision rule over blocks is a real object rather than
+a hypothetical. That converts `THEORY-032`'s open condition into a
+discriminating experiment — measure the stable rank of the incoming
+activations for QK, VO and FFN separately, and see whether the ordering
+matches the gains above. `THEORY-032`'s `promote_when` is amended in this same
+contribution to say so.
+
+## What it rests on, and what that is worth
+
+The mechanism assumes the associative-memory reading of FFN layers —
+`THEORY-081` here, `Proposed`, from Geva et al. (2021) via Bietti et al. and
+Meng et al. That account is now **load-bearing for an optimizer result**,
+which raises the cost of its being wrong without being evidence that it is
+right. Worth knowing when reading either document; not filed as a change to
+`THEORY-081`, because a downstream user is not the replication its
+`promote_when` asks for.
+
+## Conditions on the reading
+
+**One group, one paper.** The ablations are at small scale with a 0.7B check;
+the theory is a one-layer model with momentum disabled and zero
+initialisation.
+
+**The isotropy is a correlate, not a mechanism on its own.** Observation 2
+reports more isotropic spectra; the argument that isotropy *causes* the
+tail-class gain runs through the one-layer theorem, not through a measured
+intervention on isotropy.
+
+**"Muon learns more isotropic QK weights than Adam" too** — the paper says so
+— which sits slightly awkwardly beside QK contributing little to the gain. The
+isotropy is general; the benefit is not.
+
+## Standing in the anthology
+
+Unit 3 of `#342`, `#290`'s promotion #2, ranked third on measured dependence:
+**94 documents name Muon, 17 practices name it, and five theories mention it
+without accounting for it.** `THEORY-024`, `THEORY-032` and `THEORY-033` are
+about what spectral updates are and when their bounds win; this is the first
+document here about *which parameters carry the win and why the data
+distribution matters*.
+
+`THEORY-tmpt64ul` holds the account. `SOTA-121` gains the scope finding.

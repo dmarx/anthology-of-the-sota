@@ -22,7 +22,17 @@ promote_when: >-
   and they are why the consensus above reads `converged` while this line does
   not.
 title: 'Average the weights along the tail of training under a cyclical or high constant learning rate, then re-estimate the normalization statistics'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Notes that this practice's compute charge is a property of its method rather
+    than of weight averaging. SOTA-tmp0s2gj accumulates its averages inside the
+    run that was happening anyway, so the "extra epochs are real compute"
+    objection does not transfer to it — and the averaging window this practice
+    leaves implicit is, there, a post-hoc sweep. Recommendation, status and
+    consensus unchanged; nobody has compared the two.
 tags:
 - training-optimization
 - model-stability
@@ -86,6 +96,15 @@ that this "approximates Fast Geometric Ensembling with a single model" — an
 ensemble's generalization without an ensemble's inference cost.
 
 ## Conditions
+
+**The compute charge belongs to this method, not to averaging.**
+[SOTA-tmp0s2gj](SOTA-tmp0s2gj.md) maintains its averages during the training run and stores two
+parameter vectors per snapshot, so it pays storage instead of epochs, and the
+length of the average is chosen after the fact rather than by the cyclical
+schedule. Different cost structure for a related end, in a different setting
+(ImageNet-512 diffusion against ResNet classification here), and the two have
+never been compared. The charge below still applies to what this practice asks
+for.
 
 **The extra epochs are real compute.** +0.8 on ImageNet for ten epochs of
 averaging is a good trade at the end of a long run and a poor one if those

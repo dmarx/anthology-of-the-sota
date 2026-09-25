@@ -1,0 +1,140 @@
+---
+status: Active
+title: 'Common Diffusion Noise Schedules and Sample Steps are Flawed'
+version: 1
+tags:
+- generative-modeling
+- inference-optimization
+- training-optimization
+- signal-structure
+date: '2026-09-25'
+published: '2023-05-15'
+arxiv: '2305.08891'
+first_author: 'Lin'
+keywords:
+- 'zero-terminal-snr'
+- 'noise-schedule'
+- 'trailing-timestep-spacing'
+- 'v-prediction'
+- 'classifier-free-guidance-rescale'
+- 'train-inference-mismatch'
+implementations:
+- 'ByteDance/sd2.1-base-zsnr-laionaes5'
+- 'diffusers (rescale_betas_zero_snr, timestep_spacing, guidance_rescale)'
+extended_by:
+- LIT-687
+- LIT-635
+compared_against:
+- LIT-626
+summary: >-
+  Lin, Liu, Li and Yang (WACV 2024), [ARXIV-2305.08891](https://arxiv.org/abs/2305.08891). Common schedules
+  leave signal at the last timestep. Stable Diffusion's `x_T` is `0.068·x₀ +
+  0.998·ε`. The model learns to keep the leaked per-channel mean, and
+  pure-noise inference then pins samples to "medium brightness". Many
+  samplers also never start at `t = T`. It proposes four fixes: zero
+  terminal SNR, v-prediction, sampling from the last timestep, and a
+  guidance rescale. **The only numeric result applies all four at once**
+  (COCO FID 22.96 → 21.66). Every single-fix ablation is qualitative, on one
+  to three prompts. It credits the trailing discretization to DPM-Solver, and
+  it never calls the spacing fix "slight".
+---
+
+<!-- inactive-ok-file: SOTA-tmpwowqa SOTA-tmpzrrgi — Proposed; the two practices this paper
+     sources, filed with it -->
+
+# LIT-tmp6c6lg: Common Diffusion Noise Schedules and Sample Steps are Flawed
+
+Lin, Liu, Li and Yang (2023; WACV 2024, pp. 5404–5411) — [ARXIV-2305.08891](https://arxiv.org/abs/2305.08891)
+
+## Key takeaways
+
+**The two flaws.** "common diffusion noise schedules do not enforce the last
+timestep to have zero signal-to-noise ratio (SNR), and some implementations
+of diffusion samplers do not start from the last timestep." Terminal SNR at
+`T = 1000` is 4.0e-5 for the linear (DDPM) schedule, 2.4e-9 for cosine, and
+**0.0047** for Stable Diffusion's, where `√ᾱ_T = 0.068`.
+
+**The mechanism, argued.** "The leaked signal contains the lowest frequency
+information, such as the overall mean of each channel. The model subsequently
+learns to denoise respecting the mean from the leaked signal. At inference,
+pure Gaussian noise is given … resulting in images with medium brightness."
+
+**The four fixes.**
+1. **Zero terminal SNR.** Shift and scale `√ᾱ_t` so that `√ᾱ_T = 0` and `√ᾱ_1` is
+   unchanged (Algorithm 1). "variance-exploding formulation cannot truly reach
+   zero terminal SNR", so this is for VP schedules only.
+2. **v-prediction**, because at zero SNR "ε prediction becomes a trivial task".
+   At `t = T`, `v_T = x₀`. The only evidence given is that v-loss quality is
+   "similar to using ε loss". "We recommend always using v prediction". At
+   zero SNR, samplers "must avoid ε math formulation". Convert v to `x₀`
+   instead, because converting to ε divides by zero (§6, added in v4).
+3. **Sample from the last timestep.** Table 2 names the three spacings: leading
+   (DDIM, PNDM: 1, 101, …, 901), linspace (iDDPM) and trailing ("Trailing,
+   proposed in DPM[7]", i.e. DPM-Solver, [LIT-076](LIT-076.md)). The rule the
+   paper states is "sample steps should always include the last timestep".
+4. **Guidance rescale.** `x_rescaled = x_cfg · std(x_pos)/std(x_cfg)`, blended
+   back with `φ`. It is "inspired by" Imagen's dynamic thresholding and
+   "applicable to both image-space and latent-space models". "w = 7.5, φ = 0.7
+   works great."
+
+**The evaluation, Table 3** (10k COCO captions, DDIM 50 steps, w = 7.5):
+
+| model | FID ↓ | IS ↑ |
+| --- | --- | --- |
+| SD v2.1-base, official | 23.76 | 32.84 |
+| same data, no fixes | 22.96 | 34.11 |
+| all four fixes | **21.66** | **36.16** |
+
+## Traps
+
+- **The FID gain is bundled.** "Ours uses zero terminal SNR noise schedule, v
+  prediction, trailing sample steps, and guidance rescale factor φ = 0.7." It
+  is one run with no seeds. Do not cite Table 3 for any single fix. About 40%
+  of the gain over the official checkpoint comes from the data change alone.
+- **The brightness claim is never measured.** There is no luminance statistic
+  and no count. The evidence is Fig. 1 and eight same-seed pairs in Fig. 3, and
+  "Different negative prompts are used".
+- **There is no human evaluation** in any version.
+- **The spacing ablation is one image.** Fig. 4 uses one prompt and one seed, on
+  the authors' zero-terminal-SNR model. Its prose compares trailing with
+  *linspace* ("for common choices such as S = 25, the difference … is not
+  easily noticeable"). A v1 sentence about leading was removed from v4 and the
+  WACV version. In the figure, leading changes the composition even at 25
+  steps.
+- **"Slight" is not this paper's word.** [LIT-687](LIT-687.md) says the spacing fix
+  "provided only slight improvements for image generation [28]". This paper
+  never measures spacing alone, and calls it a contributor to a *severe*
+  brightness limit.
+- **Trailing spacing is not this paper's invention.** It credits DPM-Solver.
+  What it originates is the diagnosis, the rule, and the
+  leading/linspace/trailing naming that diffusers now cites.
+- **Guidance rescale is partly a guidance-strength change.** Pulling the
+  guided prediction toward the conditional std lowers effective guidance,
+  and COCO FID usually improves as guidance drops. There is no comparison at
+  matched effective guidance.
+
+## Standing in the anthology
+
+Filed as substrate on 2026-09-25. [LIT-687](LIT-687.md) extends it and measures the
+spacing fix alone. [LIT-635](LIT-635.md) (Emu Video) borrows zero terminal SNR and
+runs the only controlled comparison of it: 96.8% on quality at 512px video,
+with v-prediction switched in the same arm. [LIT-626](LIT-626.md) (Movie Gen)
+compares flow matching against "diffusion (v-prediction, zero terminal SNR)"
+and flow matching wins. [LIT-622](LIT-622.md) (CogVideoX) adopts both, which is
+adoption only.
+
+It sources three practices:
+- `SOTA-tmpwowqa`: zero terminal SNR together with v-prediction.
+- `SOTA-tmpzrrgi`: guidance rescale.
+- [SOTA-416](../practices.d/SOTA-416.md): trailing spacing. That practice was
+  corrected on reading this paper. It had called this paper the origin of
+  the spacing and the source of "slight".
+
+It is also the origin that [SOTA-263](../practices.d/SOTA-263.md)'s zero-terminal-SNR
+section lacked. This paper's reason is the leaked channel mean at *any*
+resolution. Emu Video added the resolution argument.
+
+**Library defaults, checked 2026-09-25.** diffusers' `DDIMScheduler` still
+defaults to `timestep_spacing="leading"` and cites this paper's Table 2.
+Marigold's v1-0 config runs leading, and its v1-1 config switches to
+trailing and zero terminal SNR. That is adoption, not evidence (`DP-005`).

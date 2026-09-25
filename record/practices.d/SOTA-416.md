@@ -1,14 +1,17 @@
 ---
 number: 416
-status: Proposed
+status: Active
 formerly:
 - SOTA-tmpetg8o
 consensus: emerging
 consensus_note: >-
-  Two groups report the defect: Lin et al. (2023, arXiv 2305.08891), which
-  the record does not yet hold, and LIT-687, which measures its cost with
-  everything else fixed. Adoption of trailing spacing as a library default was
-  not checked and is not asserted here. Read as of 2026-09.
+  Two groups report the defect. LIT-tmp6c6lg (Lin et al.) diagnoses it and
+  shows it on one same-seed image, and LIT-687 measures its cost with
+  everything else fixed. Marigold's own authors (LIT-tmp96875) measured the
+  leading arm without knowing it: about 34% NYUv2 AbsRel at one step. It is
+  not the library default. diffusers' DDIMScheduler still defaults to
+  leading (checked 2026-09-25), and adopters opt in per checkpoint (Marigold
+  v1-1). Read as of 2026-09.
 promote_when: >-
   Lin et al. is filed and its own leading-against-trailing comparison is read
   next to this one. This is a correctness fix with a single-variable
@@ -16,7 +19,19 @@ promote_when: >-
   between it and Active. A benchmark gain from a model that changed other
   things along with the spacing would not count.
 title: 'When sampling a diffusion model in few steps, start at t = T: use trailing, not leading, timestep spacing'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Active, as its promote_when set out: Lin et al. is filed and was read
+    next to LIT-687, and found no contradiction. It adds an independent
+    diagnosis and a same-seed single-variable comparison, though not a
+    second number. Marigold's own step curve supplies the leading arm's cost
+    on the same weights. The reading also corrected three things. Lin
+    credits the trailing discretization to DPM-Solver rather than proposing
+    it. "Slight" was LIT-687's word, not Lin's. And nothing in either paper
+    tests unconditional generation.
 tags:
 - generative-modeling
 - inference-optimization
@@ -24,8 +39,13 @@ tags:
 date: '2026-09-25'
 source:
 - LIT-687
+- LIT-tmp6c6lg
+# LIT-687 is the numeric single-variable measurement. LIT-tmp6c6lg states the
+# rule ("sample steps should always include the last timestep") and names
+# the three spacings; it credits the trailing discretization itself to
+# DPM-Solver (LIT-076), which was not checked (ADR-030).
 introduced_by:
-- LIT-687
+- LIT-tmp6c6lg
 implementations:
 - 'diffusers (timestep_spacing="trailing")'
 summary: >-
@@ -41,9 +61,15 @@ summary: >-
 
 ## Source
 
-Martin Garcia et al. (2024; WACV 2025), [LIT-687](../literature.d/LIT-687.md), applying
-the trailing setting Lin et al. (2023, arXiv 2305.08891) proposed. That
-paper is not yet held, and it is the practice's origin.
+Martin Garcia et al. (2024; WACV 2025), [LIT-687](../literature.d/LIT-687.md), measuring the
+rule Lin et al. (2023; WACV 2024), [LIT-tmp6c6lg](../literature.d/LIT-tmp6c6lg.md), stated: "sample steps
+should always include the last timestep t = T". Lin et al. named the leading,
+linspace and trailing spacings. They credit the trailing discretization itself
+to DPM-Solver ([LIT-076](../literature.d/LIT-076.md)), which this record has not checked.
+
+What it costs, measured before anyone knew: Marigold's authors report about
+34% NYUv2 AbsRel at one step ([LIT-tmp96875](../literature.d/LIT-tmp96875.md), Fig. 7) on weights that
+reach 5.7 at one step once the spacing is trailing.
 
 ## What to do
 
@@ -66,9 +92,14 @@ case for single-step inference and strongly conditioned models.
 ## Conditions
 
 - **It matters at few steps and fades toward T.** "In the limit of k → T
-  inference steps, both strategies converge."
-- **For unconditional or text-to-image generation the gain is reported as
-  slight.** That characterization is the source's, of Lin et al. For
+  inference steps, both strategies converge." That describes the timestep
+  list. On a zero-terminal-SNR model, Lin et al.'s one same-seed image shows
+  leading still changing the composition at 25 steps, because the single
+  pure-noise timestep is exactly the one leading skips. That is one image,
+  so it is a hedge, not a claim.
+- **For text-to-image generation [LIT-687](../literature.d/LIT-687.md) calls the gain "slight".** That is
+  its characterization of Lin et al. Lin never measures spacing alone.
+  Nothing in either paper tests unconditional generation. For
   image-conditional prediction it is the difference between output and
   noise.
 - **It is not zero-terminal-SNR rescaling.** Lin et al. propose both, and they
@@ -77,5 +108,5 @@ case for single-step inference and strongly conditioned models.
 
 ## Known implementations
 
-- diffusers exposes the setting. Which pipelines default to it was not
-  checked.
+- diffusers exposes the setting, and its DDIM default is still `leading`.
+  Marigold's v1-1 configuration opts in (adoption, `DP-005`).

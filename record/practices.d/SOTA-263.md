@@ -12,8 +12,15 @@ consensus_note: >-
   correction. `emerging` rather than `converged`, because the magnitude is
   tuned in every source and nobody agrees on it.
 title: 'Shift the timestep schedule when the resolution changes, because more pixels need more noise'
-version: 3
+version: 4
 history:
+- version: 4
+  date: '2026-09-25'
+  note: >-
+    The zero-terminal-SNR section now names its origin. LIT-tmp6c6lg (Lin et
+    al.) introduced the fix for a leaked channel mean at any resolution, and
+    Emu Video added the resolution argument. The recommendation is
+    unchanged.
 - version: 2
   date: '2026-09-23'
   note: >-
@@ -180,8 +187,11 @@ amount. The formula is a starting point, not an answer.
 
 ## Relation to zero terminal SNR
 
-Emu Video ([LIT-635](../literature.d/LIT-635.md)) gives the same reason — "the residual signal is higher
-for high resolution video frames" — for a different fix. It rescales the
+The fix comes from Lin et al. ([LIT-tmp6c6lg](../literature.d/LIT-tmp6c6lg.md)), and their reason is not
+resolution. It is the per-channel mean that leaks through Stable Diffusion's
+terminal SNR (`√ᾱ_T = 0.068`) at 512px. Emu Video ([LIT-635](../literature.d/LIT-635.md)) adds the
+resolution argument, "the residual signal is higher for high resolution video
+frames", for the same fix. It rescales the
 schedule so the final step is pure noise, and its controlled comparison at
 512px wins 96.8% on quality against the standard schedule. That fixes the
 endpoint. This practice moves the whole curve. The two are compatible, and

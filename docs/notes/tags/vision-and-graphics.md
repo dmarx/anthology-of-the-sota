@@ -4,7 +4,7 @@
 
 **vision-and-graphics**.
 
-51 of 372 NOTE documents. Back to the [full index](../README.md).
+52 of 377 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -59,3 +59,4 @@
 | [NOTE-362](../../../record/notes.d/NOTE-362.md) | Integrated Gradients | Integrating the gradient along the straight line from a baseline gives the unique path attribution that is implementation-invariant, complete and symmetry-preserving. The justification is axioms, not a measurement: the paper argues that empirical evaluation of attributions is confounded, and its one comparison with another method is by eye. | Read |
 | [NOTE-365](../../../record/notes.d/NOTE-365.md) | Sanity Checks for Saliency Maps | Randomize the model's weights, or train it on permuted labels, and see whether the saliency map changes. Gradients and GradCAM change. Guided Backprop is invariant to the higher layers. Integrated Gradients keeps the input's structure while its sign decorrelates. Visual inspection cannot tell these cases apart, and that is the paper's point. | Read |
 | [NOTE-371](../../../record/notes.d/NOTE-371.md) | FLIP | Removing 50% of image patches in CLIP training halves the image encoder's cost and lets the contrastive batch double at the same memory; ViT-L/16 on LAION-400M then matches its unmasked reproduction more than 3× faster and beats it by about a point at equal epochs. At equal batch the masking gains nothing, and at ViT-B/16 the full-schedule model is 0.2 behind — the improvement is the batch and the extra samples that masking pays for. | Read |
+| [NOTE-376](../../../record/notes.d/NOTE-376.md) | Surya: heliophysics foundation model | A 366M-parameter transformer pretrained on full-resolution (4096²) multi-instrument SDO imagery to forecast the next frame, then rollout-tuned, forecasts solar dynamics zero-shot. With LoRA fine-tuning it beats task-specific baselines on four downstream heliophysics tasks. | Skimmed |

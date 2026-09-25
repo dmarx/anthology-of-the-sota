@@ -1,6 +1,9 @@
 ---
+number: 375
 status: Skimmed
-paper: LIT-tmpxu9tr
+formerly:
+- NOTE-tmpulmt0
+paper: LIT-718
 title: 'Burrell: automated decision-making as domination'
 version: 1
 date: '2026-09-25'
@@ -8,9 +11,9 @@ summary: >-
   Defining algorithmic injustice as allocative unfairness is a product of computer science's status and funding, not of the harms themselves. Redefining it as domination, following Iris Marion Young, widens the remedies from code fixes to law, participation, resistance and bans.
 ---
 
-<!-- inactive-ok-file: LIT-tmpxu9tr — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
+<!-- inactive-ok-file: LIT-718 — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
 
-# NOTE-tmpulmt0: Burrell: automated decision-making as domination
+# NOTE-375: Burrell: automated decision-making as domination
 
 ## Contribution
 

@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-52 of 372 NOTE documents. Back to the [full index](../README.md).
+53 of 377 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -60,3 +60,4 @@
 | [NOTE-367](../../../record/notes.d/NOTE-367.md) | Narang et al., transformer modifications | About fifty transformer modifications reimplemented in one T5/Mesh TensorFlow codebase at 223M parameters, with hyperparameters fixed, on four task families. Most do not beat the vanilla pre-norm, relative-attention baseline. The winners are GLU-variant activations, RMSNorm, untied embeddings, and sparse experts or other variants that cost parameters or time. The Universal Transformer, ReZero, Fixup, block sharing and the Evolved Transformer all lose. The positives are largely same-codebase re-runs, GLU Variants included, so the paper is strong evidence against the losers and weak evidence that the winners transfer. | Read |
 | [NOTE-368](../../../record/notes.d/NOTE-368.md) | Attention-only transformers | A necessity test of the feed-forward layer with three matchings. Deleting it in place costs 0.47 nats. At matched FLOPs the cost is 0.26 nats. At matched parameters, with the budget moved into attention depth, the cost is 0.0055 nats, and it shrinks with tokens. What remains is concentrated on low-context tokens, where recall has to come from the weights. QK-norm is what keeps the attention-only stack trainable. At or below 87M parameters, on a synthetic reasoning corpus. | Read |
 | [NOTE-370](../../../record/notes.d/NOTE-370.md) | EDM2 | Magnitude-preserving layers plus forced weight normalization take the ADM U-Net from FID 8.00 to 2.56 on ImageNet-512 at equal compute, in a cumulative single-model ladder whose steps are all far larger than FID's noise. Post-hoc EMA reconstructs any averaging length from two stored power-function averages, and what it shows is that the best length depends on architecture, learning rate, guidance weight and the metric — the last by 2% against 14% under guidance. | Read |
+| [NOTE-376](../../../record/notes.d/NOTE-376.md) | Surya: heliophysics foundation model | A 366M-parameter transformer pretrained on full-resolution (4096²) multi-instrument SDO imagery to forecast the next frame, then rollout-tuned, forecasts solar dynamics zero-shot. With LoRA fine-tuning it beats task-specific baselines on four downstream heliophysics tasks. | Skimmed |

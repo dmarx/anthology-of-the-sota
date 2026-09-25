@@ -1,6 +1,9 @@
 ---
+number: 373
 status: Skimmed
-paper: LIT-tmpxyqya
+formerly:
+- NOTE-tmpb1tto
+paper: LIT-719
 title: 'Tiny RNNs discover cognitive strategies'
 version: 1
 date: '2026-09-25'
@@ -8,9 +11,9 @@ summary: >-
   GRUs with only 1–4 units predict individual animals' and humans' choices in six reward-learning tasks better than 30+ classical cognitive models of the same dimensionality. Because they are so small, they can be read as dynamical systems, exposing strategies (state-dependent learning rates, perseveration, reward-induced indifference) that no classical model contains.
 ---
 
-<!-- inactive-ok-file: LIT-tmpxyqya — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
+<!-- inactive-ok-file: LIT-719 — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
 
-# NOTE-tmpb1tto: Tiny RNNs discover cognitive strategies
+# NOTE-373: Tiny RNNs discover cognitive strategies
 
 ## Contribution
 

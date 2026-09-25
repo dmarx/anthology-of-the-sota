@@ -1,6 +1,9 @@
 ---
+number: 374
 status: Skimmed
-paper: LIT-tmpk9vfz
+formerly:
+- NOTE-tmpmg6jt
+paper: LIT-717
 title: 'Your Brain on ChatGPT (cognitive debt)'
 version: 1
 date: '2026-09-25'
@@ -8,9 +11,9 @@ summary: >-
   In a small four-month EEG study, participants who wrote essays with ChatGPT showed the weakest brain connectivity, the lowest sense of ownership and the worst recall of their own essays. Those switched from ChatGPT to no tools stayed under-engaged, which the authors call accumulated "cognitive debt".
 ---
 
-<!-- inactive-ok-file: LIT-tmpk9vfz — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
+<!-- inactive-ok-file: LIT-717 — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
 
-# NOTE-tmpmg6jt: Your Brain on ChatGPT (cognitive debt)
+# NOTE-374: Your Brain on ChatGPT (cognitive debt)
 
 ## Contribution
 

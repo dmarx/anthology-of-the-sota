@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-135 of 372 NOTE documents. Back to the [full index](../README.md).
+137 of 377 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -143,3 +143,5 @@
 | [NOTE-368](../../../record/notes.d/NOTE-368.md) | Attention-only transformers | A necessity test of the feed-forward layer with three matchings. Deleting it in place costs 0.47 nats. At matched FLOPs the cost is 0.26 nats. At matched parameters, with the budget moved into attention depth, the cost is 0.0055 nats, and it shrinks with tokens. What remains is concentrated on low-context tokens, where recall has to come from the weights. QK-norm is what keeps the attention-only stack trainable. At or below 87M parameters, on a synthetic reasoning corpus. | Read |
 | [NOTE-370](../../../record/notes.d/NOTE-370.md) | EDM2 | Magnitude-preserving layers plus forced weight normalization take the ADM U-Net from FID 8.00 to 2.56 on ImageNet-512 at equal compute, in a cumulative single-model ladder whose steps are all far larger than FID's noise. Post-hoc EMA reconstructs any averaging length from two stored power-function averages, and what it shows is that the best length depends on architecture, learning rate, guidance weight and the metric — the last by 2% against 14% under guidance. | Read |
 | [NOTE-372](../../../record/notes.d/NOTE-372.md) | Dropout as a Bayesian approximation | Dropout before every weight layer, with L2, is shown to optimize (up to an approximated KL term) a variational objective for a deep Gaussian process, so running T stochastic forward passes at test time yields a predictive mean and variance for free. The evidence is qualitative figures, a UCI regression table on 50-unit one-layer networks, and one RL run; the MC-versus-weight-scaling comparison is stated without numbers. | Read |
+| [NOTE-373](../../../record/notes.d/NOTE-373.md) | Tiny RNNs discover cognitive strategies | GRUs with only 1–4 units predict individual animals' and humans' choices in six reward-learning tasks better than 30+ classical cognitive models of the same dimensionality. Because they are so small, they can be read as dynamical systems, exposing strategies (state-dependent learning rates, perseveration, reward-induced indifference) that no classical model contains. | Skimmed |
+| [NOTE-375](../../../record/notes.d/NOTE-375.md) | Burrell: automated decision-making as domination | Defining algorithmic injustice as allocative unfairness is a product of computer science's status and funding, not of the harms themselves. Redefining it as domination, following Iris Marion Young, widens the remedies from code fixes to law, participation, resistance and bans. | Skimmed |

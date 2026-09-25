@@ -4,7 +4,7 @@
 
 **adaptation-and-tuning**.
 
-43 of 372 NOTE documents. Back to the [full index](../README.md).
+44 of 377 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -51,3 +51,4 @@
 | [NOTE-339](../../../record/notes.d/NOTE-339.md) | AnimateDiff | Temporal-attention modules trained on video over a frozen Stable Diffusion 1.5 plug into community checkpoints fine-tuned from the same base without further tuning. Against two baselines not built for the task it wins clearly only on smoothness: users ranked the training-free Text2Video-Zero higher on preserving the personalized domain (2.620 against 2.280), which is the property the design exists for. Version 1's reported failure on stylized domains was dropped in version 2, and its "most checkpoints" became "any". | Read |
 | [NOTE-341](../../../record/notes.d/NOTE-341.md) | Video LDM (Align your Latents) | Video LDM makes a latent image diffusion model into a video model by inserting temporal layers and fine-tuning the decoder and upsampler on video. On driving scenes, an image-pretrained LDM with frozen spatial layers reaches FVD 534.17 against 1155.10 for the same design trained from scratch. The "images" are 1 fps frames of the same driving videos, and the pretrained arm gets 73K image steps the other does not. Decoder video fine-tuning cuts reconstruction FVD 390.88 → 32.94. | Read |
 | [NOTE-360](../../../record/notes.d/NOTE-360.md) | MDLM | Masked diffusion's ELBO is a schedule-weighted average of masked-LM losses, and with a modern recipe it is the best discrete diffusion language model at 110M parameters. It does not beat autoregression in-domain, even with the AR baseline given half the optimizer steps; the paper's own checklist names that as its limitation. | Read |
+| [NOTE-376](../../../record/notes.d/NOTE-376.md) | Surya: heliophysics foundation model | A 366M-parameter transformer pretrained on full-resolution (4096²) multi-instrument SDO imagery to forecast the next frame, then rollout-tuned, forecasts solar dynamics zero-shot. With LoRA fine-tuning it beats task-specific baselines on four downstream heliophysics tasks. | Skimmed |

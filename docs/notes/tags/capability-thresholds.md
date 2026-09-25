@@ -4,7 +4,7 @@
 
 **capability-thresholds**.
 
-9 of 372 NOTE documents. Back to the [full index](../README.md).
+9 of 377 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

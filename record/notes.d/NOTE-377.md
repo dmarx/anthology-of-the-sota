@@ -1,6 +1,9 @@
 ---
+number: 377
 status: Skimmed
-paper: LIT-tmpgwgl7
+formerly:
+- NOTE-tmpz9s0f
+paper: LIT-716
 title: 'Generative AI on social media: an experiment'
 version: 1
 date: '2026-09-25'
@@ -8,9 +11,9 @@ summary: >-
   In a randomized experiment with 680 US participants, generative-AI writing aids raised engagement and output on a simulated social platform but lowered perceived quality and authenticity, with negative spill-over into threads, and no single tool improved both producer and consumer experience.
 ---
 
-<!-- inactive-ok-file: LIT-tmpgwgl7 — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
+<!-- inactive-ok-file: LIT-716 — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
 
-# NOTE-tmpz9s0f: Generative AI on social media: an experiment
+# NOTE-377: Generative AI on social media: an experiment
 
 ## Contribution
 

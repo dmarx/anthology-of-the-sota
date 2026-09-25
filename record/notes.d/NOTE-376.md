@@ -1,6 +1,9 @@
 ---
+number: 376
 status: Skimmed
-paper: LIT-tmp8s8gy
+formerly:
+- NOTE-tmpvnq0r
+paper: LIT-715
 title: 'Surya: heliophysics foundation model'
 version: 1
 date: '2026-09-25'
@@ -8,9 +11,9 @@ summary: >-
   A 366M-parameter transformer pretrained on full-resolution (4096²) multi-instrument SDO imagery to forecast the next frame, then rollout-tuned, forecasts solar dynamics zero-shot. With LoRA fine-tuning it beats task-specific baselines on four downstream heliophysics tasks.
 ---
 
-<!-- inactive-ok-file: LIT-tmp8s8gy — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
+<!-- inactive-ok-file: LIT-715 — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
 
-# NOTE-tmpvnq0r: Surya: heliophysics foundation model
+# NOTE-376: Surya: heliophysics foundation model
 
 ## Contribution
 

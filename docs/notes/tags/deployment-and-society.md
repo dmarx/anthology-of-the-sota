@@ -4,7 +4,7 @@
 
 **deployment-and-society**.
 
-8 of 372 NOTE documents. Back to the [full index](../README.md).
+11 of 377 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -16,3 +16,6 @@
 | [NOTE-250](../../../record/notes.d/NOTE-250.md) | MIMI: the objective that needs the knowledge it assumes away | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist in rank order. The headline is a task-agnostic interface score; the durable finding is its failure case, where an assistant doing its job drives the metric *negative* and the fix is a horizon hyperparameter that requires exactly the task knowledge the objective was built to avoid. | Read |
 | [NOTE-268](../../../record/notes.d/NOTE-268.md) | A data-free lineage check built on the products that survive permutation and scaling | Read because the grep came back empty: the record holds no document about model provenance. The method is one good idea executed cleanly — compare the spectra of matrix products that functionality-preserving transforms cannot change — and the honest limit is that it is evidence of derivation, not proof against an adversary who has read the paper. | Read |
 | [NOTE-354](../../../record/notes.d/NOTE-354.md) | AgentSociety | The paper presents a simulator of about 10k LLM-driven agents in a realistic urban, social and economic environment. It claims that the simulator's outcomes on polarization, inflammatory-message spread, UBI, hurricane mobility shocks and urban sustainability qualitatively match real-world empirical findings, which would make it usable as a testbed for social science. | Skimmed |
+| [NOTE-374](../../../record/notes.d/NOTE-374.md) | Your Brain on ChatGPT (cognitive debt) | In a small four-month EEG study, participants who wrote essays with ChatGPT showed the weakest brain connectivity, the lowest sense of ownership and the worst recall of their own essays. Those switched from ChatGPT to no tools stayed under-engaged, which the authors call accumulated "cognitive debt". | Skimmed |
+| [NOTE-375](../../../record/notes.d/NOTE-375.md) | Burrell: automated decision-making as domination | Defining algorithmic injustice as allocative unfairness is a product of computer science's status and funding, not of the harms themselves. Redefining it as domination, following Iris Marion Young, widens the remedies from code fixes to law, participation, resistance and bans. | Skimmed |
+| [NOTE-377](../../../record/notes.d/NOTE-377.md) | Generative AI on social media: an experiment | In a randomized experiment with 680 US participants, generative-AI writing aids raised engagement and output on a simulated social platform but lowered perceived quality and authenticity, with negative spill-over into threads, and no single tool improved both producer and consumer experience. | Skimmed |

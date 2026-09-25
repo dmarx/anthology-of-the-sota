@@ -4,9 +4,10 @@
 
 **tiny-models**.
 
-2 of 372 NOTE documents. Back to the [full index](../README.md).
+3 of 377 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-233](../../../record/notes.d/NOTE-233.md) | TinyStories | Read as the missing trunk under eight `tiny-models` practices. The result that matters is a separation, not a record: what stops a 125M model speaking coherent English is the breadth of the corpus, not the complexity of language — established by holding the architecture and shrinking the corpus. | Read |
 | [NOTE-234](../../../record/notes.d/NOTE-234.md) | SimpleStories | Read to see what, if anything, it establishes that its trunk did not. The dataset comparison is direct and well instrumented; the model comparison is confounded three ways and the authors say so. The practice this record takes from it is about the generation procedure, which was measured. | Read |
+| [NOTE-373](../../../record/notes.d/NOTE-373.md) | Tiny RNNs discover cognitive strategies | GRUs with only 1–4 units predict individual animals' and humans' choices in six reward-learning tasks better than 30+ classical cognitive models of the same dimensionality. Because they are so small, they can be read as dynamical systems, exposing strategies (state-dependent learning rates, perseveration, reward-induced indifference) that no classical model contains. | Skimmed |

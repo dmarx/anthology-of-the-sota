@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**241 document(s) awaiting a decision.**
+**246 document(s) awaiting a decision.**
 
 ## SOTAs
 
-165 of the 241.
+165 of the 246.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -181,7 +181,7 @@
 
 ## THEORYs
 
-67 of the 241.
+67 of the 246.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -255,7 +255,7 @@
 
 ## LITs
 
-6 of the 241.
+11 of the 246.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -265,10 +265,15 @@
 | 2026-09-25 | Deferred | [LIT-695](../../record/literature.d/LIT-695.md) | 1 | 0 | Language Design as Information Renormalization |
 | 2026-09-25 | Deferred | [LIT-697](../../record/literature.d/LIT-697.md) | 1 | 0 | AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society |
 | 2026-09-25 | Deferred | [LIT-698](../../record/literature.d/LIT-698.md) | 1 | 0 | Topos and Stacks of Deep Neural Networks |
+| 2026-09-25 | Deferred | [LIT-715](../../record/literature.d/LIT-715.md) | 1 | 0 | Surya: Foundation Model for Heliophysics |
+| 2026-09-25 | Deferred | [LIT-716](../../record/literature.d/LIT-716.md) | 1 | 0 | The Impact of Generative AI on Social Media: An Experimental Study |
+| 2026-09-25 | Deferred | [LIT-717](../../record/literature.d/LIT-717.md) | 1 | 0 | Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task |
+| 2026-09-25 | Deferred | [LIT-718](../../record/literature.d/LIT-718.md) | 1 | 0 | Automated decision-making as domination |
+| 2026-09-25 | Deferred | [LIT-719](../../record/literature.d/LIT-719.md) | 1 | 0 | Discovering cognitive strategies with tiny recurrent neural networks |
 
 ## ADRs
 
-3 of the 241.
+3 of the 246.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

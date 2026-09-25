@@ -22,8 +22,8 @@ history:
     Adds the scope line this practice was missing: when does the alignment step
     NOT apply. Two papers filed today average weights without aligning anything,
     because their points share an optimization trajectory — SWA along one
-    trajectory (LIT-tmpq75ig) and a fine-tuned model with its own initialization
-    (LIT-tmpsdcmd). The latter states the contrast in one sentence, reporting
+    trajectory (LIT-673) and a fine-tuned model with its own initialization
+    (LIT-674). The latter states the contrast in one sentence, reporting
     that averaging all layers of unrelated networks gives "no better accuracy
     than a randomly initialized neural network". That is the clearest statement
     of what this practice is for that the record holds, and it also bounds it.
@@ -114,12 +114,12 @@ This practice is about networks that were **trained separately**. If the weight
 vectors you want to average share an optimization trajectory, there is no
 permutation to undo and no alignment to run.
 
-<!-- inactive-ok: SOTA-tmp9l3pq SOTA-tmp7f0us — Proposed, both, and named as the cases this practice does not cover. Their status is not what is being asserted; what they do without alignment is. -->
-Two such cases are filed here. [SOTA-tmp9l3pq](SOTA-tmp9l3pq.md) averages points visited along one
-SGD trajectory. [SOTA-tmp7f0us](SOTA-tmp7f0us.md) interpolates a zero-shot model with the model
+<!-- inactive-ok: SOTA-408 SOTA-407 — Proposed, both, and named as the cases this practice does not cover. Their status is not what is being asserted; what they do without alignment is. -->
+Two such cases are filed here. [SOTA-408](SOTA-408.md) averages points visited along one
+SGD trajectory. [SOTA-407](SOTA-407.md) interpolates a zero-shot model with the model
 obtained by fine-tuning *from* it. Neither aligns anything, and both work.
 
-[LIT-tmpsdcmd](../literature.d/LIT-tmpsdcmd.md) puts the contrast in one sentence, which is worth having beside this
+[LIT-674](../literature.d/LIT-674.md) puts the contrast in one sentence, which is worth having beside this
 practice because it is also the sharpest argument *for* it:
 
 > ensembling all layers—as we do when end-to-end fine-tuning—typically fails,

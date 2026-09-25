@@ -6,7 +6,7 @@
 
 **Agreed** — the field agrees and dissent is marginal, whether or not each adopter made the choice deliberately.
 
-37 of 406 SOTA documents. Back to the [full index](../README.md).
+38 of 408 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -47,3 +47,4 @@
 | [SOTA-388](../../../record/practices.d/SOTA-388.md) | Train a plain ViT on ImageNet-1k with average pooling, fixed 2D sin-cos positions, a 1024 batch and light augmentation | Beyer et al. (2022), [LIT-628](../../../record/literature.d/LIT-628.md) — five changes, none novel, take ViT-S/16 on ImageNet-1k from **66.8% to 76.5%** at 90 epochs and **80.0%** at 300. Global average pooling, fixed 2D sin-cos position embeddings, batch 1024, RandAugment at level 10 and Mixup at p = 0.2. **6h30 on a TPUv3-8** for the 90-epoch run. | Active |
 | [SOTA-389](../../../record/practices.d/SOTA-389.md) v3 | Caption training video with a model that watches the video, not with captions of its frames |  | Proposed |
 | [SOTA-390](../../../record/practices.d/SOTA-390.md) v3 | In a video diffusion transformer, attend over space and time jointly rather than factorizing, and budget for the cost |  | Proposed |
+| [SOTA-408](../../../record/practices.d/SOTA-408.md) | Average the weights along the tail of training under a cyclical or high constant learning rate, then re-estimate the normalization statistics | Izmailov et al. (2018), [LIT-673](../../../record/literature.d/LIT-673.md). Hold the learning rate high — cyclical or constant — over the last stretch of training and keep a running average of the weights, then ship the average. From pretrained torchvision checkpoints, ten further epochs gives ImageNet top-1 **76.15 → 76.97** on ResNet-50 and **78.31 → 78.94** on ResNet-152, at one model's inference cost. With batch normalization, the running statistics must be recomputed with one pass over the data or the averaged model is broken rather than merely worse. | Proposed |

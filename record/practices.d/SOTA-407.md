@@ -1,5 +1,8 @@
 ---
+number: 407
 status: Active
+formerly:
+- SOTA-tmp7f0us
 consensus: emerging
 consensus_note: >-
   The grounds are the evidence, not adoption. One paper, but an unusually wide
@@ -18,13 +21,13 @@ tags:
 - model-stability
 date: '2026-09-25'
 source:
-- LIT-tmpsdcmd
+- LIT-674
 introduced_by:
-- LIT-tmpsdcmd
+- LIT-674
 implementations:
 - WiSE-FT
 summary: >-
-  Wortsman et al. (2021), [LIT-tmpsdcmd](../literature.d/LIT-tmpsdcmd.md). Fine-tuning a zero-shot model spends the
+  Wortsman et al. (2021), [LIT-674](../literature.d/LIT-674.md). Fine-tuning a zero-shot model spends the
   robustness that made it worth starting from. Ship
   `(1 − α)·θ_zero-shot + α·θ_fine-tuned` at **α = 0.5** instead: **+3.5 to
   +23.2 pp** under six distribution shifts against the fine-tuned model, with
@@ -33,14 +36,14 @@ summary: >-
   obtained *from* the zero-shot weights.
 ---
 
-# SOTA-tmp7f0us: Interpolate the zero-shot and fine-tuned weights at about half way rather than shipping the fine-tuned model
+# SOTA-407: Interpolate the zero-shot and fine-tuned weights at about half way rather than shipping the fine-tuned model
 
 <!-- inactive-ok-file: SOTA-217 THEORY-010 — Proposed, both, and cited to route the reader to the separately-trained case this practice does
      NOT cover, with the account of why it is harder. Their being open is the point. -->
 
 ## Source
 
-Wortsman et al. (2021), [LIT-tmpsdcmd](../literature.d/LIT-tmpsdcmd.md) —
+Wortsman et al. (2021), [LIT-674](../literature.d/LIT-674.md) —
 [ARXIV-2109.01903](https://arxiv.org/abs/2109.01903).
 
 ## What to do

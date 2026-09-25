@@ -1,5 +1,8 @@
 ---
+number: 408
 status: Proposed
+formerly:
+- SOTA-tmp9l3pq
 consensus: converged
 consensus_note: >-
   Awkward corner, stated deliberately: `Proposed` + `converged`. SWA is in
@@ -25,14 +28,14 @@ tags:
 - model-stability
 date: '2026-09-25'
 source:
-- LIT-tmpq75ig
+- LIT-673
 introduced_by:
-- LIT-tmpq75ig
+- LIT-673
 implementations:
 - 'PyTorch (torch.optim.swa_utils)'
 - SWA
 summary: >-
-  Izmailov et al. (2018), [LIT-tmpq75ig](../literature.d/LIT-tmpq75ig.md). Hold the learning rate high — cyclical or
+  Izmailov et al. (2018), [LIT-673](../literature.d/LIT-673.md). Hold the learning rate high — cyclical or
   constant — over the last stretch of training and keep a running average of the
   weights, then ship the average. From pretrained torchvision checkpoints, ten
   further epochs gives ImageNet top-1 **76.15 → 76.97** on ResNet-50 and
@@ -41,14 +44,14 @@ summary: >-
   the data or the averaged model is broken rather than merely worse.
 ---
 
-# SOTA-tmp9l3pq: Average the weights along the tail of training under a cyclical or high constant learning rate, then re-estimate the normalization statistics
+# SOTA-408: Average the weights along the tail of training under a cyclical or high constant learning rate, then re-estimate the normalization statistics
 
 <!-- inactive-ok-file: SOTA-217 — Proposed, and cited to say that this practice avoids the problem that one exists for, because a
      shared trajectory has no permutation to undo. -->
 
 ## Source
 
-Izmailov, Podoprikhin, Garipov, Vetrov and Wilson (2018), [LIT-tmpq75ig](../literature.d/LIT-tmpq75ig.md) —
+Izmailov, Podoprikhin, Garipov, Vetrov and Wilson (2018), [LIT-673](../literature.d/LIT-673.md) —
 [ARXIV-1803.05407](https://arxiv.org/abs/1803.05407).
 
 ## What to do
@@ -102,7 +105,7 @@ this record as a baseline, and the record has still never seen it measured in th
 setting its readers train in. Adoption is not evidence — `DP-005` — and here the
 adoption is real and the evidence is old.
 
-**Related but distinct from interpolating two endpoints.** [SOTA-tmp7f0us](SOTA-tmp7f0us.md)
+**Related but distinct from interpolating two endpoints.** [SOTA-407](SOTA-407.md)
 averages a zero-shot and a fine-tuned model; this averages points along one
 trajectory. Both avoid the permutation problem [SOTA-217](SOTA-217.md) exists for, for the same
 reason — a shared trajectory — and they are different operations with different

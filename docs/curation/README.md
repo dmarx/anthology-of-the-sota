@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [25 Sep 15:55 — Three prose claims about the record's own contents, all wrong](2026-09.md#three-prose-claims-about-the-records-own-contents-all-wrong)
 - [25 Sep 15:14 — A practice survived what its explanation did not](2026-09.md#a-practice-survived-what-its-explanation-did-not)
 - [25 Sep 07:13 — The ratio that worked on text was never shown to work on text](2026-09.md#the-ratio-that-worked-on-text-was-never-shown-to-work-on-text)
 - [25 Sep 06:36 — Kanerva's review, read in full: two of LIT-641's three optimal radii are in it](2026-09.md#kanervas-review-read-in-full-two-of-lit-641s-three-optimal-radii-are-in-it)
@@ -235,9 +236,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-228 entries across 2 books, newest first.
+229 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 226 | 2026-09-05 | 2026-09-25 |
+| [2026-09](2026-09.md) | 227 | 2026-09-05 | 2026-09-25 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

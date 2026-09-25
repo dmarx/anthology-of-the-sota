@@ -15,6 +15,10 @@ The generated views. This directory is for *reading*; filing happens in
   designs have been measured against each other. Walked from the `extends:`
   and `compared_against:` fields, so it cannot go stale the way the
   paragraphs it replaces did.
+- [Lines of explanation](theory-lines.md) — the same walk over the theories:
+  which account refined another (`extends:`) and which replaced one whose
+  reasoning broke (`corrects:`). A corrected explanation beside a practice
+  still in force is the normal case, and this is the page that shows it.
 
 **How the anthology is built**
 

@@ -1317,3 +1317,31 @@ chains:
     invariant: tags
     output: docs/lineage.md
     title: Lines of work
+  # The third line: how an EXPLANATION developed. Separate from the other two
+  # for the reason they are separate from each other -- a theory's lineage
+  # answers a different question (which account refined or broke which), and
+  # ADR-031 exists so that a practice can outlive the reason given for it. A
+  # corrected explanation and a practice still in force are both normal, and
+  # only a page of its own can show the first without implying the second.
+  #
+  # The spine is THEORY's own two relations, with the meanings the scheme
+  # gives them: `extends` refines an account that holds, `corrects` replaces
+  # one whose reasoning broke. No `sibling`: THEORY declares no
+  # `compared_against`, because no explanation here states a comparison.
+  #
+  # Same invariant as the other two chains, for the same reason: an account
+  # that refines or corrects another is about the same thing, and a topic in
+  # common is what says so.
+  theory:
+    scheme: THEORY
+    relation:
+    - extends
+    - corrects
+    invariant: tags
+    output: docs/theory-lines.md
+    title: Lines of explanation
+    # Status only. THEORY carries no consensus field; its status is the whole
+    # verdict, and it is what distinguishes a corrected account from the one
+    # that corrected it.
+    facet_by:
+    - status

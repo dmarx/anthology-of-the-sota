@@ -10,13 +10,28 @@ consensus_note: >-
   refer to. The record holds no paper arguing for first-order sampling on
   quality grounds after 2022.
 title: 'Sample a diffusion model with a higher-order ODE solver on the weights you already trained'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Bounds a recommendation that was `universal` and silent about the regime it
+    fails in. LIT-676 measures the fast solvers under classifier guidance at
+    scale 8.0: at 10 function evaluations FID is 13.04 for first-order DDIM,
+    114.62 for DPM-Solver-2 and 164.74 for DPM-Solver-3. Higher order is
+    monotonically worse, so this document's own framing — DDIM as "the
+    *first-order* case, the least accurate member of the family" — inverts in the
+    regime its implementations line describes, since guidance is on by default in
+    every serving stack. The recommendation stands for unguided sampling and the
+    guided case is now SOTA-410. Status and consensus unchanged: the claim
+    was never wrong, its scope was never written.
 tags:
 - generative-modeling
 date: '2026-09-10'
 source:
 - LIT-076
 - LIT-038
+- LIT-676
 introduced_by:
 - LIT-076
 implementations:
@@ -30,6 +45,9 @@ summary: >-
 ---
 
 # SOTA-203: Sample a diffusion model with a higher-order ODE solver on the weights you already trained
+
+<!-- inactive-ok-file: THEORY-104 — Proposed, and cited as the account of why this practice's recommendation inverts under guidance.
+     The bound on the practice rests on the measured table, not on the account being settled. -->
 
 ## Source
 
@@ -62,8 +80,11 @@ what buys the step count.
 - Beats Runge-Kutta of comparable order, which is the direct test of the
   argument rather than a benchmark win.
 - **DDIM is exactly DPM-Solver-1.** The widely used sampler is the
-  *first-order* case — the least accurate member of the family. This is the
-  reason to state the practice as "higher-order" rather than as a product name.
+  *first-order* case — the least accurate member of the family **without
+  guidance**. This is the reason to state the practice as "higher-order" rather
+  than as a product name, and the qualifier is load-bearing: under guidance the
+  ordering reverses and DDIM becomes the *most* accurate of them at a small
+  budget. See the condition below.
 
 ## Conditions
 
@@ -77,6 +98,33 @@ what buys the step count.
   of EDM's tuned `rho` than EDM offers.
 - Quality at 10 NFE is comparable, not equal, to a long run. Where fidelity
   matters more than latency, spend the steps.
+
+## The condition this practice was missing: guidance
+
+Everything above is measured **without** guidance. Guided sampling at a large
+scale is how conditional models are actually run — 7.5 is the recommended setting
+for Stable Diffusion — and there the recommendation inverts. [LIT-676](../literature.d/LIT-676.md),
+ImageNet 256×256 at classifier guidance 8.0, FID:
+
+| sampler | 10 NFE | 15 | 20 | 25 |
+| --- | --- | --- | --- | --- |
+| DDIM — order 1 | **13.04** | 11.27 | 10.21 | 9.87 |
+| DPM-Solver-2 | 114.62 | 44.05 | 20.33 | 9.84 |
+| DPM-Solver-3 | 164.74 | 91.59 | 64.11 | 29.40 |
+
+Monotone in the wrong direction, and two other solver families fail the same way.
+[THEORY-104](../theory.d/THEORY-104.md) is the account: guidance amplifies the model's derivatives, a
+`k`-th order method is built from `k`-th order derivatives, and the convergence
+radius narrows fastest for the largest `k`.
+
+So this practice applies to **unguided sampling**, and [SOTA-410](SOTA-410.md) is the
+guided case — second order, multistep, on the data prediction. The two are one
+recommendation split by regime rather than rivals.
+
+**Why the gap survived here.** This document's `implementations` line reads
+"default or selectable sampler in essentially every diffusion serving stack",
+which is precisely where guidance is on by default. A practice can name its
+deployment setting and still not have checked the setting's own defaults.
 
 ## What this does not cover
 

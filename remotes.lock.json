@@ -554,6 +554,9 @@
     "ARXIV/2210.02414": {
       "title": "GLM-130B: An Open Bilingual Pre-trained Model"
     },
+    "ARXIV/2210.02747": {
+      "title": "Flow Matching for Generative Modeling"
+    },
     "ARXIV/2210.06364": {
       "title": "AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs"
     },

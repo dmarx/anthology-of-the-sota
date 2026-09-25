@@ -14,7 +14,31 @@ consensus_note: >-
   directions: one conjectured that permutation explains the barrier, the other
   supplied the algorithms and closed it on real networks.
 title: 'Align the hidden-unit permutation before averaging weights from separately trained networks'
-version: 1
+version: 3
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Adds the scope line this practice was missing: when does the alignment step
+    NOT apply. Two papers filed today average weights without aligning anything,
+    because their points share an optimization trajectory — SWA along one
+    trajectory (LIT-673) and a fine-tuned model with its own initialization
+    (LIT-674). The latter states the contrast in one sentence, reporting
+    that averaging all layers of unrelated networks gives "no better accuracy
+    than a randomly initialized neural network". That is the clearest statement
+    of what this practice is for that the record holds, and it also bounds it.
+    Recommendation, status and consensus unchanged.
+- version: 3
+  date: '2026-09-25'
+  note: >-
+    Adds the third shared-trajectory case, SOTA-409, and with it the
+    qualification that the scope boundary is a spectrum rather than a dichotomy.
+    A shared initialization is not sufficient: the greedy soup recipe exists to
+    "avoid adding in models which may lie in a different basin", which can happen
+    when sweep members use high learning rates. So a shared start makes averaging
+    usually safe, a per-ingredient check makes it reliably safe, and this
+    practice's alignment is what is left for networks that share nothing.
+    Recommendation, status and consensus unchanged.
 tags:
 - model-stability
 date: '2026-09-15'
@@ -40,6 +64,7 @@ explained_by:
 ---
 
 # SOTA-217: Align the hidden-unit permutation before averaging weights from separately trained networks
+
 
 ## What to do
 
@@ -93,3 +118,40 @@ averaging event. Nothing here says what that costs at scale.
 **Vision architectures, moderate scale.** Whether transformer attention heads
 present the same symmetry in the same way — they have more structure to match
 and more of it is shared — is not covered by either paper.
+
+## When the alignment step is unnecessary
+
+This practice is about networks that were **trained separately**. If the weight
+vectors you want to average share an optimization trajectory, there is no
+permutation to undo and no alignment to run.
+
+<!-- inactive-ok: SOTA-408 SOTA-407 SOTA-409 — Proposed or Active, and named as the cases this practice does not cover. What they do without alignment is the assertion, not their status. -->
+Three such cases are filed here. [SOTA-408](SOTA-408.md) averages points visited along one
+SGD trajectory. [SOTA-407](SOTA-407.md) interpolates a zero-shot model with the model
+obtained by fine-tuning *from* it. [SOTA-409](SOTA-409.md) averages the members of a
+fine-tuning sweep that all started from one pretrained checkpoint. None aligns
+anything, and all three work.
+
+The third is the one that shows the boundary is not a clean line. A shared
+initialization is **not sufficient**: the greedy recipe exists because some sweep
+members land where the average cannot use them, and its own justification is to
+"avoid adding in models which may lie in a different basin of the error
+landscape", which can happen "if, for example, models are fine-tuned with high
+learning rates". So a shared starting point makes averaging *usually* safe and a
+per-ingredient check is what makes it reliably safe. Between that and this
+practice's alignment step there is a spectrum, not a dichotomy.
+
+[LIT-674](../literature.d/LIT-674.md) puts the contrast in one sentence, which is worth having beside this
+practice because it is also the sharpest argument *for* it:
+
+> ensembling all layers—as we do when end-to-end fine-tuning—typically fails,
+> achieving no better accuracy than a randomly initialized neural network.
+> However, as similarly observed by previous work where part of the optimization
+> trajectory is shared, we find that the zero-shot and fine-tuned models are
+> connected by a linear path in weight-space along which accuracy remains high.
+
+So the test before averaging is not "are these the same architecture" or "do
+these solve the same task", but **did one of these weight vectors come from the
+other**. If yes, average. If no, this practice applies and
+<!-- inactive-ok: THEORY-010 — Proposed, and cited for the same reason it is cited above: it is the record's account of why the separately-trained case is hard. -->
+[THEORY-010](../theory.d/THEORY-010.md) says why.

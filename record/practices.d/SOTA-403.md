@@ -6,8 +6,11 @@ formerly:
 consensus: unreplicated
 consensus_note: >-
   One group, one result, and the group that proposed the technique. Nobody has
-  run the ablation again, and nothing at current scale shares layers at all —
-  which is not a refutation. The field went to spending parameters rather than
+  run the ablation again, and nothing *shipped* at current scale shares layers
+  at all, which is not a refutation. One research model does: LIT-tmpdiu35
+  (3.5B) iterates a fully shared core block, feed-forward included, but it
+  spends the saving on more depth and never splits attention from
+  feed-forward, so it does not bear on this recommendation. The field went to spending parameters rather than
   saving them, so the question this ablation answers stopped being asked;
   `DP-005` says adoption is not evidence, and non-adoption is not evidence
   either. Read as of 2026-09.
@@ -19,7 +22,16 @@ promote_when: >-
   2019 measurement without answering whether the asymmetry survives the
   architecture the field actually uses.
 title: 'Share the attention parameters across layers if you need to cut parameters; do not share the feed-forward ones'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Consensus note corrected. "Nothing at current scale shares layers at all"
+    was false once LIT-tmpdiu35 (Huginn, 3.5B, a fully shared core iterated
+    up to 32 times) was filed. It is a research model, not a shipped one, and
+    it tests a different question. The recommendation, status and consensus
+    are unchanged.
 tags:
 - model-architecture
 - training-optimization

@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [25 Sep 17:02 — A universal practice that never named the regime it fails in](2026-09.md#a-universal-practice-that-never-named-the-regime-it-fails-in)
 - [25 Sep 16:17 — A second paper is not a second opinion](2026-09.md#a-second-paper-is-not-a-second-opinion)
 - [25 Sep 15:55 — Three prose claims about the record's own contents, all wrong](2026-09.md#three-prose-claims-about-the-records-own-contents-all-wrong)
 - [25 Sep 15:14 — A practice survived what its explanation did not](2026-09.md#a-practice-survived-what-its-explanation-did-not)
@@ -237,9 +238,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-230 entries across 2 books, newest first.
+231 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 228 | 2026-09-05 | 2026-09-25 |
+| [2026-09](2026-09.md) | 229 | 2026-09-05 | 2026-09-25 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

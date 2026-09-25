@@ -1,5 +1,8 @@
 ---
+number: 410
 status: Active
+formerly:
+- SOTA-tmpylyb1
 consensus: converged
 consensus_note: >-
   Not doing this is what needs justifying. `DPMSolverMultistepScheduler` is in
@@ -16,16 +19,16 @@ tags:
 - generative-modeling
 date: '2026-09-25'
 source:
-- LIT-tmp6mla4
+- LIT-676
 introduced_by:
-- LIT-tmp6mla4
+- LIT-676
 implementations:
 - 'diffusers (DPMSolverMultistepScheduler)'
 - 'DPM-Solver++'
 explained_by:
-- THEORY-tmp8i6gq
+- THEORY-104
 summary: >-
-  Lu et al. (2022), [LIT-tmp6mla4](../literature.d/LIT-tmp6mla4.md). [SOTA-203](SOTA-203.md)'s higher-order solver inverts under
+  Lu et al. (2022), [LIT-676](../literature.d/LIT-676.md). [SOTA-203](SOTA-203.md)'s higher-order solver inverts under
   guidance: at scale 8.0 and 10 evaluations, FID is **13.04** for first-order
   DDIM against **114.62** at order 2 and **164.74** at order 3. Sample instead
   with a **second-order multistep** solver parameterized on the **data
@@ -34,11 +37,11 @@ summary: >-
   20 evaluations then beat DDIM at 250.
 ---
 
-# SOTA-tmpylyb1: For guided sampling, use a second-order multistep solver on the data-prediction parameterization, not a higher-order solver on the noise prediction
+# SOTA-410: For guided sampling, use a second-order multistep solver on the data-prediction parameterization, not a higher-order solver on the noise prediction
 
 ## Source
 
-Lu, Zhou, Bao, Chen, Li and Zhu (2022), [LIT-tmp6mla4](../literature.d/LIT-tmp6mla4.md) —
+Lu, Zhou, Bao, Chen, Li and Zhu (2022), [LIT-676](../literature.d/LIT-676.md) —
 [ARXIV-2211.01095](https://arxiv.org/abs/2211.01095).
 
 ## What to do

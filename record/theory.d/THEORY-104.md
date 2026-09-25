@@ -1,5 +1,8 @@
 ---
+number: 104
 status: Proposed
+formerly:
+- THEORY-tmp8i6gq
 promote_when: >-
   The convergence radius is measured rather than inferred — a sweep of step size
   against guidance scale showing where each solver order starts to converge, or a
@@ -15,11 +18,11 @@ tags:
 - numerics-and-precision
 date: '2026-09-25'
 source:
-- LIT-tmp6mla4
+- LIT-676
 explains:
-- SOTA-tmpylyb1
+- SOTA-410
 summary: >-
-  Lu et al. (2022), [LIT-tmp6mla4](../literature.d/LIT-tmp6mla4.md). Why the fast diffusion samplers invert under
+  Lu et al. (2022), [LIT-676](../literature.d/LIT-676.md). Why the fast diffusion samplers invert under
   guidance. Classifier-free guidance scales the difference between conditional
   and unconditional predictions, which amplifies the model's **derivatives** as
   well as its output; a `k`-th order solver is built from `k`-th order
@@ -29,11 +32,11 @@ summary: >-
   evaluations for orders 1, 2 and 3.
 ---
 
-# THEORY-tmp8i6gq: A large guidance scale amplifies the model's derivatives, which narrows a high-order solver's convergence radius
+# THEORY-104: A large guidance scale amplifies the model's derivatives, which narrows a high-order solver's convergence radius
 
 ## Source
 
-Lu, Zhou, Bao, Chen, Li and Zhu (2022), [LIT-tmp6mla4](../literature.d/LIT-tmp6mla4.md).
+Lu, Zhou, Bao, Chen, Li and Zhu (2022), [LIT-676](../literature.d/LIT-676.md).
 
 ## The account
 

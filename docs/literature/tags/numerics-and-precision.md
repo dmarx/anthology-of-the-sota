@@ -6,7 +6,7 @@
 
 **Numerics and precision** — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them.
 
-18 of 610 LIT documents. Back to the [full index](../README.md).
+19 of 611 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -28,3 +28,4 @@
 | [LIT-585](../../../record/literature.d/LIT-585.md) | AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration | Lin et al. (2023), [ARXIV-2306.00978](https://arxiv.org/abs/2306.00978). Weight-only low-bit quantization that protects the ~1% of channels whose *activations* are largest, by scaling them up before rounding rather than keeping them in higher precision. No backpropagation and no reconstruction, so it does not overfit its calibration set. | Active |
 | [LIT-586](../../../record/literature.d/LIT-586.md) v2 | LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale | Dettmers et al. (2022), [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339). Int8 inference for the feed-forward and attention projections, at no measured cost in quality up to 175B, by isolating a small set of systematically emergent outlier feature dimensions into a 16-bit multiplication and quantizing the other 99.9% vector-wise. | Active |
 | [LIT-656](../../../record/literature.d/LIT-656.md) | Intriguing Properties of Quantization at Scale | Ahmadian et al. (2023), [ARXIV-2305.19268](https://arxiv.org/abs/2305.19268). A controlled study from 410M to 52B, same architecture, varying weight decay, dropout, gradient clipping and training dtype: **outlier dimensions are not an inherent product of scale** but of the optimization conditions during pre-training. Their 52B model loses **0.08%** to plain INT8 where OPT-66B loses about **42%**. The record's largest cluster had the emergence framing in an `Active` practice's title. | Active |
+| [LIT-676](../../../record/literature.d/LIT-676.md) | DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models | Lu, Zhou, Bao, Chen, Li and Zhu (2022), [ARXIV-2211.01095](https://arxiv.org/abs/2211.01095). The regime SOTA-203 does not mention. At a classifier guidance scale of 8.0 on ImageNet 256×256, FID at **10 function evaluations** is **13.04 for first-order DDIM, 114.62 for DPM-Solver-2 and 164.74 for DPM-Solver-3** — higher order is monotonically catastrophic, and the practice's own framing of DDIM as "the least accurate member of the family" inverts. Two causes, one of which the record already holds as SOTA-202. The fix is order **2**, multistep, on the data-prediction parameterization. | Active |

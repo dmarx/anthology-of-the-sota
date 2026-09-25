@@ -213,10 +213,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-648](../record/literature.d/LIT-648.md) — Improving Image Generation with Better Captions *(Active)*
 - alongside: [LIT-038](../record/literature.d/LIT-038.md) — Denoising Diffusion Implicit Models *(Active)*
 - alongside: [LIT-075](../record/literature.d/LIT-075.md) — Elucidating the Design Space of Diffusion-Based Generative Models *(Active)*
+- alongside: [LIT-076](../record/literature.d/LIT-076.md) — DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps *(Active)*
 - alongside: [LIT-093](../record/literature.d/LIT-093.md) — Consistency Models *(Active)*
 - alongside: [LIT-483](../record/literature.d/LIT-483.md) — Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models *(Active)*
 - alongside: [LIT-554](../record/literature.d/LIT-554.md) — Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion *(Active)*
 - alongside: [LIT-661](../record/literature.d/LIT-661.md) — Photorealistic Video Generation with Diffusion Models *(Active)*
+- alongside: [LIT-676](../record/literature.d/LIT-676.md) — DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models *(Active)*
 
 ### From Denoising as Projection: Constrained Optimization with Gradient-Guided Diffusion
 

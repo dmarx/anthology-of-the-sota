@@ -16,14 +16,14 @@ history:
   date: '2026-09-25'
   note: >-
     Bounds a recommendation that was `universal` and silent about the regime it
-    fails in. LIT-tmp6mla4 measures the fast solvers under classifier guidance at
+    fails in. LIT-676 measures the fast solvers under classifier guidance at
     scale 8.0: at 10 function evaluations FID is 13.04 for first-order DDIM,
     114.62 for DPM-Solver-2 and 164.74 for DPM-Solver-3. Higher order is
     monotonically worse, so this document's own framing — DDIM as "the
     *first-order* case, the least accurate member of the family" — inverts in the
     regime its implementations line describes, since guidance is on by default in
     every serving stack. The recommendation stands for unguided sampling and the
-    guided case is now SOTA-tmpylyb1. Status and consensus unchanged: the claim
+    guided case is now SOTA-410. Status and consensus unchanged: the claim
     was never wrong, its scope was never written.
 tags:
 - generative-modeling
@@ -31,7 +31,7 @@ date: '2026-09-10'
 source:
 - LIT-076
 - LIT-038
-- LIT-tmp6mla4
+- LIT-676
 introduced_by:
 - LIT-076
 implementations:
@@ -46,7 +46,7 @@ summary: >-
 
 # SOTA-203: Sample a diffusion model with a higher-order ODE solver on the weights you already trained
 
-<!-- inactive-ok-file: THEORY-tmp8i6gq — Proposed, and cited as the account of why this practice's recommendation inverts under guidance.
+<!-- inactive-ok-file: THEORY-104 — Proposed, and cited as the account of why this practice's recommendation inverts under guidance.
      The bound on the practice rests on the measured table, not on the account being settled. -->
 
 ## Source
@@ -103,7 +103,7 @@ what buys the step count.
 
 Everything above is measured **without** guidance. Guided sampling at a large
 scale is how conditional models are actually run — 7.5 is the recommended setting
-for Stable Diffusion — and there the recommendation inverts. [LIT-tmp6mla4](../literature.d/LIT-tmp6mla4.md),
+for Stable Diffusion — and there the recommendation inverts. [LIT-676](../literature.d/LIT-676.md),
 ImageNet 256×256 at classifier guidance 8.0, FID:
 
 | sampler | 10 NFE | 15 | 20 | 25 |
@@ -113,11 +113,11 @@ ImageNet 256×256 at classifier guidance 8.0, FID:
 | DPM-Solver-3 | 164.74 | 91.59 | 64.11 | 29.40 |
 
 Monotone in the wrong direction, and two other solver families fail the same way.
-[THEORY-tmp8i6gq](../theory.d/THEORY-tmp8i6gq.md) is the account: guidance amplifies the model's derivatives, a
+[THEORY-104](../theory.d/THEORY-104.md) is the account: guidance amplifies the model's derivatives, a
 `k`-th order method is built from `k`-th order derivatives, and the convergence
 radius narrows fastest for the largest `k`.
 
-So this practice applies to **unguided sampling**, and [SOTA-tmpylyb1](SOTA-tmpylyb1.md) is the
+So this practice applies to **unguided sampling**, and [SOTA-410](SOTA-410.md) is the
 guided case — second order, multistep, on the data prediction. The two are one
 recommendation split by regime rather than rivals.
 

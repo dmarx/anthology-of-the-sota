@@ -15,7 +15,7 @@ history:
   date: '2026-09-25'
   note: >-
     Adds the precondition this practice had without stating: the clamp needs the
-    sampler to be carrying `x̂₀`. LIT-tmp6mla4 arrives at the same boundedness
+    sampler to be carrying `x̂₀`. LIT-676 arrives at the same boundedness
     mechanism from the solver side and draws the consequence — a high-order solver
     written on the noise prediction has no data prediction to clamp at its
     intermediate stages, so this practice is unavailable exactly where guidance
@@ -26,7 +26,7 @@ tags:
 date: '2026-09-10'
 source:
 - LIT-073
-- LIT-tmp6mla4
+- LIT-676
 introduced_by:
 - LIT-073
 compared_against:
@@ -75,10 +75,10 @@ there is an `x̂₀` to clamp. A diffusion ODE solver can be written on the **no
 prediction `ε̂` instead, and a high-order one then has intermediate stages where
 no data prediction exists — so the clamp has nowhere to attach.
 
-[LIT-tmp6mla4](../literature.d/LIT-tmp6mla4.md) reaches this mechanism independently, from the solver side rather
+[LIT-676](../literature.d/LIT-676.md) reaches this mechanism independently, from the solver side rather
 than from Imagen's, and draws the design consequence: it solves the ODE for the
 data prediction model specifically because "thresholding methods are further
-available to keep the samples bounded". [SOTA-tmpylyb1](SOTA-tmpylyb1.md) is that recommendation.
+available to keep the samples bounded". [SOTA-410](SOTA-410.md) is that recommendation.
 
 The practical form: **this practice and a noise-prediction high-order sampler are
 not compatible**, and the incompatibility bites hardest at the large guidance

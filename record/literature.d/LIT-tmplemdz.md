@@ -1,0 +1,49 @@
+---
+status: Deferred
+status_note: seeded from the abstract and a skim on 2026-09-25; not read in full
+title: 'AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society'
+version: 1
+tags:
+- deployment-and-society
+date: '2026-09-25'
+published: '2025-02-01'
+arxiv: '2502.08691'
+doi: '10.48550/arXiv.2502.08691'
+first_author: 'Piao'
+keywords:
+- 'llm-agents'
+- 'social-simulation'
+- 'computational-social-science'
+- 'agent-based-modeling'
+implementations: []
+summary: >-
+  Piao et al. (2025), [ARXIV-2502.08691](https://arxiv.org/abs/2502.08691). The paper presents a simulator of about 10k LLM-driven agents in a realistic urban, social and economic environment. It claims that the simulator's outcomes on polarization, inflammatory-message spread, UBI, hurricane mobility shocks and urban sustainability qualitatively match real-world empirical findings, which would make it usable as a testbed for social science.
+---
+
+# LIT-tmplemdz: AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society
+
+Jinghua Piao, Yuwei Yan, Jun Zhang, Nian Li, Junbo Yan, Xiaochong Lan, Zhihong Lu, Zhiheng Zheng, Jing Yi Wang, Di Zhou, Chen Gao, Fengli Xu, Fang Zhang, Ke Rong, Jun Su, Yong Li (Tsinghua University) (2025), *arXiv preprint (cs.SI; v2 April 2026)* — [ARXIV-2502.08691](https://arxiv.org/abs/2502.08691)
+
+## Key takeaways
+
+- The paper presents a simulator of about 10k LLM-driven agents in a realistic urban, social and economic environment. It claims that the simulator's outcomes on polarization, inflammatory-message spread, UBI, hurricane mobility shocks and urban sustainability qualitatively match real-world empirical findings, which would make it usable as a testbed for social science.
+
+*Seeded from the abstract and a skim, not a reading. What follows is what the work says about itself.*
+
+The authors frame LLM-driven agent simulation as the next step for generative social science, replacing costly field experiments with scalable, replicable simulations. AgentSociety has three components: LLM-driven agents with psychological states, a societal environment covering urban mobility, social networks and an economy, and a distributed simulation engine. They report simulating over 10k agents and about 5 million interactions. They use five social issues as case studies of survey, interview and intervention methods, and they argue that the simulated outcomes align with real experimental results.
+
+## Standing in the record
+
+Filed by the reading-time triage of 2026-09-25: 1,020 seconds of active reading over 5 sessions in the papers-feed tracker. `Deferred` because nobody has read it closely here yet, not on merit.
+
+It was one of the triage's out-of-scope works, and it is filed here rather than in the catchall record, nucleation, because it sits on the boundary and the rule for the boundary is to keep it in the anthology. It is LLM agents deployed at scale as a stand-in for a society, which is a claim about what such systems do among (simulated) people.
+
+**Priority for a deeper reading: medium — the owner spent substantial time across 5 captures (t=1020 s), but the paper is mostly a systems and demonstration contribution whose validity claims rest on qualitative alignment.**
+
+What a deeper reading should check:
+
+- The validation is qualitative: outcomes point in the same direction as prior findings. A deeper reading should check whether any quantitative calibration exists and whether the results could simply echo LLM priors about what the literature says.
+- Sensitivity to the choice of LLM, the prompts and random seeds is a key question. It was not visible in the skim.
+- It is a reusable open framework and relevant to the use of LLM agents as research instruments.
+
+Access when seeded: I read the arXiv abstract page and downloaded the full 49-page PDF (current version v2). From the PDF I skimmed the overview figure, the engine/architecture sections and the experiment sections 7.2-7.6.

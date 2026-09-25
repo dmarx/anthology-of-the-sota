@@ -1,0 +1,50 @@
+---
+status: Deferred
+status_note: seeded from the abstract and a skim on 2026-09-25; not read in full
+title: 'Rigor with Machine Learning from Field Theory to the Poincaré Conjecture'
+version: 1
+tags:
+- analysis-and-evaluation
+date: '2026-09-25'
+published: '2024-02-01'
+arxiv: '2402.13321'
+doi: '10.1038/s42254-024-00709-0'
+first_author: 'Gukov'
+keywords:
+- 'machine learning'
+- 'rigor'
+- 'conjecture generation'
+- 'reinforcement learning'
+- 'neural network field theory'
+implementations: []
+summary: >-
+  Gukov et al. (2024), [ARXIV-2402.13321](https://arxiv.org/abs/2402.13321). Stochastic, black-box ML can still yield rigorous results in mathematics and physics along two routes. The first is conjecture generation followed by human proof, or RL searches whose outputs can be checked exactly; this is how an RL/Bayesian-optimized ribbon verifier ruled out over 800 candidate counterexamples to the smooth 4D Poincaré conjecture. The second is importing ML theory, such as NNGP/NN-field-theory and gradient-descent metric flows that include Perelman's Ricci flow.
+---
+
+# LIT-tmp0ke1e: Rigor with Machine Learning from Field Theory to the Poincaré Conjecture
+
+Sergei Gukov, James Halverson, Fabian Ruehle (2024), *Nature Reviews Physics (Perspective)* — [ARXIV-2402.13321](https://arxiv.org/abs/2402.13321)
+
+## Key takeaways
+
+- Stochastic, black-box ML can still yield rigorous results in mathematics and physics along two routes. The first is conjecture generation followed by human proof, or RL searches whose outputs can be checked exactly; this is how an RL/Bayesian-optimized ribbon verifier ruled out over 800 candidate counterexamples to the smooth 4D Poincaré conjecture. The second is importing ML theory, such as NNGP/NN-field-theory and gradient-descent metric flows that include Perelman's Ricci flow.
+
+*Seeded from the abstract and a skim, not a reading. What follows is what the work says about itself.*
+
+ML is powerful but stochastic, error-prone and opaque, which sits badly with fields that prize rigor and understanding. This Perspective describes ways to extract rigorous results anyway: using non-rigorous methods to generate conjectures, or using reinforcement learning to find solutions that can then be verified. It surveys uses from string theory to the smooth 4D Poincaré conjecture. It also describes direct bridges from ML theory: a neural-network-inspired approach to field theory, and a theory of metric flows induced by gradient descent that contains the Ricci flow used to prove the 3D Poincaré conjecture.
+
+## Standing in the record
+
+Filed by the reading-time triage of 2026-09-25: 800 seconds of active reading over 1 session in the papers-feed tracker. `Deferred` because nobody has read it closely here yet, not on merit.
+
+It was one of the triage's out-of-scope works, and it is filed here rather than in the catchall record, nucleation, because it sits on the boundary and the rule for the boundary is to keep it in the anthology. Its transferable claim is methodological: let a learned model search, and let an exact procedure verify what it finds.
+
+**Priority for a deeper reading: medium — It is a well-organized, citable map of "ML for rigorous math" with a transferable search-then-verify pattern. The skim captures its structure, t = 800 s is modest, and the primary papers matter more than a reread.**
+
+What a deeper reading should check:
+
+- The "rigor" rests on verification being exact: a found move sequence is a certificate. The ML itself is never trusted. That design pattern (search with ML, verify exactly) is the transferable lesson and ties to the anthology's evaluation and verification themes.
+- The claims are summaries of the authors' own and others' papers (refs. [20], [35], [39], [52]); check the originals for the 800-counterexample figure and the precise conditions of the Ricci-flow containment.
+- The NN-FT correspondence (§3.1) is relevant to ML theory of infinite-width networks, but this is a perspective and gives no new proofs here.
+
+Access when seeded: The arXiv abs page and the full PDF (17 pp.) were reachable. arXiv's comment says "Preprint of edited version in Nature Reviews Physics. Please cite journal version". I found the journal DOI with a Crossref bibliographic search; it matches the title exactly (published 2024-04-08). I read the contents, §2 in full, the opening of §3.1 and §3.2, and the §4 Outlook. The keywords above are mine.

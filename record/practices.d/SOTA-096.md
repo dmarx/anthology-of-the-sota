@@ -2,12 +2,25 @@
 number: 96
 status: 'Active'
 title: '`num_tokens ~ 20 * num_params`'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    LIT-tmp8bq22 (Porian et al.) added as a second source. It reproduces an
+    allocation exponent of 0.497 from 5M to 901M on two datasets, and lands
+    within 15% of Chinchilla's model size at Chinchilla's compute. It
+    measures the equal-proportion exponent directly. It does not pin the
+    ratio at 20: its optimal ratio ranges 14–16 on RefinedWeb and 11–22 on
+    OpenWebText2. The recommendation is unchanged.
 tags:
 - training-optimization
 date: '2026-08-24'
 source:
 - LIT-068
+# LIT-tmp8bq22 is an independent reproduction of the exponent (a ≈ 0.5), not
+# of the ratio "20", which it measures as 11–22 depending on data (ADR-030).
+- LIT-tmp8bq22
 introduced_by:
 - LIT-068
 summary: >-
@@ -15,6 +28,8 @@ summary: >-
 implementations:
 - chinchilla
 - llama2
+explained_by:
+- THEORY-tmp9y82q
 ---
 
 # SOTA-096: `num_tokens ~ 20 * num_params`

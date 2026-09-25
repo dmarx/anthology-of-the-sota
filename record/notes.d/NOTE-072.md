@@ -5,7 +5,14 @@ formerly:
 - NOTE-tmpyo7dp
 paper: LIT-040
 title: 'Scaling Laws for Autoregressive Generative Modeling'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    The Chinchilla attribution is corrected ("proposed", not "identified"),
+    and the open question on Section 6's inconsistency is answered for
+    language by Porian et al. (LIT-tmp8bq22).
 date: '2026-09-09'
 summary: >-
   Extends the language scaling laws to image, video, multimodal and mathematics, finding the same power-law-plus-constant form and a nearly domain-independent exponent for optimal model size, N_opt(C) ∝ C^0.7. That exponent implies D ∝ N^0.4 — sub-linear data scaling, which Chinchilla later overturned. The paper also flags the inconsistency that overturned it.
@@ -100,8 +107,11 @@ form for compute. Read `N_opt(C)` off the compute-scaling envelope.
 ## Connections
 
 Sibling to Kaplan (`LIT-028`), which `#114` read: same lab, same year, same
-functional form, and `LIT-028` carries `LR(N)` and the schedule choice that
-Chinchilla later identified as the source of the wrong allocation. This paper
+functional form, and `LIT-028` carries `LR(N)` and the fixed schedule that
+Chinchilla later *proposed* as the source of the wrong allocation. Porian et
+al. ([LIT-tmp8bq22](../literature.d/LIT-tmp8bq22.md)) find the warmup half is one cause of three and the
+decay half is not a main cause. They also say this paper "shares the
+methodological issues … (FLOP count and long warmup)". This paper
 carries the multi-domain generalisation *and* the sub-linear data conclusion,
 so it is the second half of the pre-Chinchilla picture.
 
@@ -162,6 +172,10 @@ paper: not retire it, but stop it being quietly wrong.
 - Section 6's inconsistency was resolved by Chinchilla changing the schedule
   methodology. Is the inconsistency *fully* accounted for by that, or is there
   residue? The paper poses a question the successor answered by other means.
+  *Answered for language, 2026-09-25:* not by the schedule. Changing the decay
+  accounts for about 0.03 of a 0.34 gap. Head FLOPs, warmup length and per-size
+  tuning account for the rest ([LIT-tmp8bq22](../literature.d/LIT-tmp8bq22.md)). It stays open for this paper's
+  non-language domains, which Porian et al. do not re-run.
 - C4 — model size buys no strong generalisation — has aged into one of the
   live disputes about reasoning models, and this is a 2020 measurement of it
   that nobody cites.

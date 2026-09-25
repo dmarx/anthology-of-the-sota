@@ -1,0 +1,144 @@
+---
+status: Active
+title: 'Transformer Language Models without Positional Encodings Still Learn Positional Information'
+version: 1
+tags:
+- representation-and-encoding
+- model-architecture
+- analysis-and-evaluation
+date: '2026-09-25'
+published: '2022-03-30'
+arxiv: '2203.16634'
+first_author: 'Haviv'
+keywords:
+- 'nope'
+- 'positional-encoding'
+- 'causal-mask'
+- 'probing'
+- 'masked-language-modeling'
+implementations: []
+summary: >-
+  Haviv, Ram, Press, Izsak and Levy (2022), [ARXIV-2203.16634](https://arxiv.org/abs/2203.16634). The result the
+  record's position-encoding cluster rests on, credited here to a paper a year
+  younger. A decoder-only LM with **no positional encoding at all** is
+  competitive; probing shows it acquires absolute position **within four
+  layers**. The mechanism is the causal mask, and the control that shows it is
+  a bidirectional MLM, where NoPos perplexity is **147.18 against 4.00**.
+compared_against:
+- LIT-207
+---
+
+# LIT-tmpbi5gf: Transformer Language Models without Positional Encodings Still Learn Positional Information
+
+Haviv, Ram, Press, Izsak and Levy (2022) — [ARXIV-2203.16634](https://arxiv.org/abs/2203.16634)
+
+## The result
+
+Train causal language models with no positional information at all (**NoPos**)
+against sinusoidal embeddings, learned embeddings and ALiBi. Validation
+perplexity gaps from the learned-embedding model:
+
+- **WikiText-103**, 512 tokens: 0.55
+- **The Pile**, 1.3B parameters, 1024 tokens: **0.05**
+
+The 0.55 needs the context the paper supplies: Press et al. report that five
+seeds of the sinusoidal model on WikiText-103 at length 3072 span **up to 0.9
+perplexity**, so a gap of 0.55 sits inside seed noise there.
+
+And the paper states the limitation the record should carry, in its own
+limitations section:
+
+> although the margins are very small, **NoPos is always slightly worse**,
+> suggesting that the inductive bias of positional encoding is indeed
+> important.
+
+Two scope conditions from their own tables. **Smaller models benefit from
+fixed, non-parametric encodings** (sinusoidal, ALiBi) and *"these performance
+gaps diminish as the models scale up"* — so this is a result about large
+models. And the sequence-length sweep is at 1.3B only.
+
+## Where the position comes from
+
+Probing for absolute position, layer by layer, on 1.3B models:
+
+- Layer 1: **no positional information**, on par with a random baseline —
+  as expected, since none was supplied.
+- **Within four layers** the model is position-aware, and appears to hold
+  *more* positional information than the ALiBi model.
+- By the **middle layer** it predicts absolute position about as well as the
+  model with learned positional embeddings.
+
+Shuffling the suffix of a sequence raises average token-level loss **from ~4 to
+~11**, so the position it has recovered is load-bearing rather than incidental.
+
+## The conjecture, and the control that tests it
+
+> the causal attention in autoregressive transformer language models allows
+> them to predict the number of attendable tokens at each position
+
+A token that can count how many predecessors it may attend to has, to that
+precision, its absolute index. The reasoning makes a prediction with a sharp
+consequence: **remove the causal mask and the mechanism should disappear.**
+
+A bidirectional encoder trained with masked language modelling has no such
+limitation, so it should be unable to recover position without an encoding.
+RoBERTa-large architecture on the Pile, 128 tokens:
+
+| positional encoding | MLM perplexity |
+| --- | --: |
+| Learned | 4.06 |
+| Sinusoidal | 4.07 |
+| ALiBi | 4.00 |
+| **NoPos** | **147.18** |
+
+Not slightly worse — **it fails**, by a factor of 36. `THEORY-tmptf1pd` holds
+the account, and this table is why its status is what it is: the conjecture
+predicted a specific failure and the experiment produced it.
+
+The paper notes this echoes Sinha et al. (2021), who saw the same degradation
+in MLMs without positional embeddings.
+
+## The priority question, which is why this unit exists
+
+`SOTA-153` recommends dropping positional encoding from the global-attention
+layers of a hybrid. Its `source:` carries a frontmatter comment saying:
+
+> `LIT-207` is not a hybrid paper — it is the result the other three rest on —
+> but it is the source of the claim that the global layers lose nothing by
+> dropping the encoding.
+
+`LIT-207` is Kazemnejad et al., **2023**, and its own summary in this record
+reads *"A decoder-only transformer without positional encoding is shown to
+represent both absolute and relative position anyway."*
+
+**That is this paper's result, a year earlier.** Kazemnejad et al.'s own
+contribution is the length-generalization comparison — five schemes trained
+under identical hyperparameters, and the one that extrapolates best is none at
+all — which is a different and genuinely theirs. What the record had done was
+attach the *implicit-position* finding to the paper that used it.
+
+Both documents are amended here. And the correction cuts in a useful
+direction: the phrase *"lose nothing by dropping the encoding"* is stronger
+than this paper supports. NoPos is always slightly worse at the training
+length; what it wins is extrapolation, which is `LIT-207`'s result and not
+this one's.
+
+## What the record gains besides a citation
+
+Three things it did not hold, on a cluster of ten practices:
+
+- **A mechanism.** 23 documents here say "NoPE" and none said why it works.
+- **A boundary.** The mechanism is the causal mask, so nothing about this
+  transfers to bidirectional attention — and the record's encoder-side
+  documents should not borrow it.
+- **A depth.** Position is absent at layer 1 and recovered by layer 4, which
+  is the kind of fact a hybrid layout (`SOTA-153`) has to reason about when
+  deciding which layers may go without.
+
+## Standing in the anthology
+
+Tier B unit 1 of `#342`, `#290`'s promotion [#15](https://github.com/dmarx/anthology-of-the-sota/issues/15), ranked on **45 documents
+saying "positional encoding", 23 saying "NoPE" and 8 practices**, with the
+paper unheld.
+
+Filed with `THEORY-tmptf1pd`. `LIT-207` and `SOTA-153` are corrected.

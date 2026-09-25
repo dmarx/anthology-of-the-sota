@@ -13,7 +13,7 @@ consensus_note: >-
   nobody has compared it against a properly extended RoPE model at matched
   cost.
 title: 'Drop positional encoding from the global-attention layers of a hybrid and let the cheap local layers carry position'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -24,15 +24,31 @@ history:
     without a test is consensus data. K3 ships the layout at 2.8T and runs
     no ablation; Kimi Linear ran it. The consensus_note already named K3, so
     `emerging` still rests on the same three laboratories.
+- version: 3
+  date: '2026-09-25'
+  note: >-
+    Adds LIT-tmpbi5gf to `source:` and splits a result the record had attached
+    to the wrong paper. This document's comment named LIT-207 (2023) as "the
+    result the other three rest on" for a decoder-only model representing
+    position without an encoding; the absolute-position half of that, with the
+    probing and the causal-mask mechanism, is Haviv et al. 2022. Two
+    qualifications follow into the body: NoPos is "always slightly worse" at
+    the training length by its authors' own summary, so "lose nothing" was too
+    strong — what NoPE wins is extrapolation, which is LIT-207's result — and
+    the mechanism is the causal mask, which bounds where this transfers. The
+    recommendation, status and consensus are unchanged.
 tags:
 - representation-and-encoding
 - attention-techniques
 date: '2026-09-07'
 source:
 # The origin, then the two designs that arrived at the layout independently.
-# LIT-207 is not a hybrid paper — it is the result the
-# other three rest on — but it is the source of the claim that the global
-# layers lose nothing by dropping the encoding.
+# LIT-207 and LIT-tmpbi5gf are not hybrid papers — they are the result the
+# other three rest on. The split between them, corrected at v3: the claim that
+# a decoder-only model recovers ABSOLUTE position without an encoding, and the
+# causal-mask mechanism for it, is LIT-tmpbi5gf (Haviv et al. 2022);
+# LIT-207 (Kazemnejad et al. 2023) is the length-generalization comparison and
+# the relative-position half. "Lose nothing" is also narrowed — see the body.
 # LIT-131 came out. The comment below used to end "then the deployments",
 # which is a deployment named as a source — written before ADR-017 said that
 # adoption without a test is consensus data. K3 ships the layout at 2.8T and
@@ -41,6 +57,7 @@ source:
 - LIT-209
 - LIT-133
 - LIT-207
+- LIT-tmpbi5gf
 introduced_by:
 - LIT-208
 implementations:
@@ -94,6 +111,37 @@ in a hybrid it does not even have to, because a windowed layer or a decaying
 recurrence sitting beneath it already has.
 
 ## The consequence that matters most
+
+## Why a layer can go without an encoding at all
+
+This practice removes positional encoding from some layers, and the reason that
+is possible is not in the hybrid papers. Haviv et al. ([LIT-tmpbi5gf](../literature.d/LIT-tmpbi5gf.md)) showed
+in 2022 that a decoder-only LM given **no** positional information is
+competitive — 0.05 perplexity from learned embeddings at 1.3B on the Pile —
+and probed where the position comes from: absent at layer 1, recovered
+**within four layers**, as accurate as learned embeddings by mid-network.
+
+[THEORY-tmptf1pd](../theory.d/THEORY-tmptf1pd.md) is the mechanism: the causal mask itself carries position,
+because a token that can count its attendable predecessors knows its index.
+Two consequences bear directly on this recommendation.
+
+**The mechanism is causal, so it is available to a decoder and to nothing
+else.** The same paper's control is a bidirectional MLM, where NoPos
+perplexity is **147.18 against 4.00** for position-aware baselines. Nothing
+about this layout transfers to an encoder.
+
+**Position accumulates over depth rather than being present at the input.** A
+hybrid is choosing which layers may go without an encoding, and those layers
+differ in how much implicit position has built up by the time they run. No
+document in this record says what that does, including that one — and it is
+the obvious question this layout raises.
+
+**"Lose nothing" was too strong.** Haviv et al.'s own limitations section says
+NoPos is *"always slightly worse"*, and their scale sweep shows smaller models
+benefiting from fixed non-parametric encodings with the gap closing as scale
+grows. What NoPE *wins* is extrapolation past the training length, and that is
+[LIT-207](../literature.d/LIT-207.md)'s result rather than this one's. The practice stands on the
+extrapolation, not on parity.
 
 **Context extension stops being an operation.** There is no positional
 parameter in the global layers, so there is nothing to rescale: no retuned

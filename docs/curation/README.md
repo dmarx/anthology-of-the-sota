@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [25 Sep 04:05 — Kanerva's memory, filed as the source THEORY-097 was about](2026-09.md#kanervas-memory-filed-as-the-source-theory-097-was-about)
 - [24 Sep 23:57 — The record attached a result to the paper that used it](2026-09.md#the-record-attached-a-result-to-the-paper-that-used-it)
 - [24 Sep 23:11 — A claim made across a gap the record had itself written down](2026-09.md#a-claim-made-across-a-gap-the-record-had-itself-written-down)
 - [24 Sep 22:42 — A practice waiting fourteen months for an ablation that already existed](2026-09.md#a-practice-waiting-fourteen-months-for-an-ablation-that-already-existed)
@@ -229,9 +230,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-222 entries across 2 books, newest first.
+223 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 220 | 2026-09-05 | 2026-09-24 |
+| [2026-09](2026-09.md) | 221 | 2026-09-05 | 2026-09-25 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

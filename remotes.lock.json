@@ -773,6 +773,9 @@
     "ARXIV/2401.06066": {
       "title": "DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models"
     },
+    "ARXIV/2401.08740": {
+      "title": "SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers"
+    },
     "ARXIV/2402.02364": {
       "title": "Loss Landscape Degeneracy and Stagewise Development in Transformers"
     },

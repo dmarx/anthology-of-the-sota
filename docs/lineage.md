@@ -309,10 +309,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-583](../record/literature.d/LIT-583.md) — Highly accurate protein structure prediction with AlphaFold *(Active)*
   - [LIT-584](../record/literature.d/LIT-584.md) — Accurate structure prediction of biomolecular interactions with AlphaFold 3 *(Active)*
 
-### From Query-Key Normalization for Transformers
+### From Sparse Distributed Memory
 
+- [LIT-666](../record/literature.d/LIT-666.md) — Sparse Distributed Memory *(Active)*
+  - [LIT-641](../record/literature.d/LIT-641.md) — Attention Approximates Sparse Distributed Memory *(Active)*
 - alongside: [LIT-640](../record/literature.d/LIT-640.md) — Query-Key Normalization for Transformers *(Active)*
-- alongside: [LIT-641](../record/literature.d/LIT-641.md) — Attention Approximates Sparse Distributed Memory *(Active)*
 - alongside: [LIT-651](../record/literature.d/LIT-651.md) — Transformers without Tears: Improving the Normalization of Self-Attention *(Active)*
 
 ## model-stability

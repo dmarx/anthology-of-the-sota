@@ -107,10 +107,10 @@ prompted positions.
 
 Generalizes Meng et al.'s concrete score matching; its implicit form
 coincides with Campbell et al.'s CTMC loss, and the ELBO follows Benton et
-al. MDLM (LIT-tmptr16a) re-derives SEDD's ELBO explicitly (its Suppl. C.2,
+al. MDLM ([LIT-tmptr16a](../literature.d/LIT-tmptr16a.md)) re-derives SEDD's ELBO explicitly (its Suppl. C.2,
 noting SEDD cites rather than derives it), shows the masked-diffusion score can
 be extracted from a mean-prediction model, and beats SEDD at matched training
-on every likelihood table. LIT-479 measures SEDD Uniform and SEDD Absorb as
+on every likelihood table. [LIT-479](../literature.d/LIT-479.md) measures SEDD Uniform and SEDD Absorb as
 baselines.
 
 ## Recommendations
@@ -126,7 +126,7 @@ baselines.
 ## Bearing on the record
 
 - [SOTA-157](../practices.d/SOTA-157.md) — a corroborating source for **absorbing over uniform**, which
-  is what "masked" in the practice's title asserts and which LIT-217 does not
+  is what "masked" in the practice's title asserts and which [LIT-217](../literature.d/LIT-217.md) does not
   test. Not a source for preferring diffusion to autoregression: the
   controlled LM1B comparison is a bound against an exact value and the AR
   side is lower, and the GPT-2 comparison holds neither data nor training
@@ -134,7 +134,7 @@ baselines.
 - [SOTA-254](../practices.d/SOTA-254.md) — not a source. Its section on inference cost gains one
   data point from §6: parity with AR wall-clock at about 100 steps, in
   unoptimized code, at batch sizes where the KV cache is the constraint.
-- LIT-479 — compared against this paper, SEDD Uniform and SEDD Absorb both;
+- [LIT-479](../literature.d/LIT-479.md) — compared against this paper, SEDD Uniform and SEDD Absorb both;
   declared there. MDLM declares its own comparison.
 
 ## Limitations
@@ -144,10 +144,10 @@ baselines.
 - The GPT-2 baseline differs in training data and was re-scored without a
   sliding window; 1BW was not recomputed.
 - Sampling numerical precision not reported, so the Gen PPL advantage is
-  open to the low-precision artefact LIT-479 guards against.
+  open to the low-precision artefact [LIT-479](../literature.d/LIT-479.md) guards against.
 - Uniform diffusion was not given its own schedule tuning, so "absorb beats
   uniform" is at the absorbing-favoured log-linear setting as much as it is a
-  property of the processes. LIT-479's later uniform-state results (Duo
+  property of the processes. [LIT-479](../literature.d/LIT-479.md)'s later uniform-state results (Duo
   29.9/25.2 against SEDD Uniform 40.3/29.7) show how much of that gap was
   recipe — and that masked diffusion still leads after it (MDLM 27.0/23.2).
 
@@ -155,5 +155,5 @@ baselines.
 
 - Does the near-tie with AR on LM1B survive with the AR arm tuned and at
   larger scale? MDLM's retrained comparison at the same size says no.
-- How much of the absorbing–uniform gap is intrinsic? LIT-479's regime split
+- How much of the absorbing–uniform gap is intrinsic? [LIT-479](../literature.d/LIT-479.md)'s regime split
   (uniform wins below ~32 steps) says the answer depends on the step budget.

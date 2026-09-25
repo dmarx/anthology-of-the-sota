@@ -122,11 +122,11 @@ ImageNet 256×256 at classifier guidance 8.0, FID:
 | DPM-Solver-3 | 164.74 | 91.59 | 64.11 | 29.40 |
 
 **What 8.0 is on this model.** The table is Dhariwal & Nichol's 256×256
-classifier-guided model (LIT-tmpcq7qo), whose authors tuned its scale for 25 DDIM
+classifier-guided model ([LIT-tmpcq7qo](../literature.d/LIT-tmpcq7qo.md)), whose authors tuned its scale for 25 DDIM
 steps at **2.5** (FID 5.44). 8.0 is a deliberate stress test at about three times
 that, and a classifier-gradient scale is not the same knob as Stable Diffusion's
 CFG weight of 7.5, however close the numbers look. The shipped-regime evidence is
-LIT-676's Stable Diffusion comparison; the ImageNet table is where the failure is
+[LIT-676](../literature.d/LIT-676.md)'s Stable Diffusion comparison; the ImageNet table is where the failure is
 cleanest, not where it is typical, and its FIDs are not the model's quality.
 
 Monotone in the wrong direction, and two other solver families fail the same way.

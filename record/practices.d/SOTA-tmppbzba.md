@@ -31,8 +31,8 @@ introduced_by:
 implementations:
 - 'ReLoRA reference implementation (github.com/guitaricet/relora)'
 summary: >-
-  Lialin et al. (2023), LIT-104 — ReLoRA's restart discipline, read as
-  NOTE-024. At every merge-and-reinit, prune the adapter's Adam state (99% by
+  Lialin et al. (2023), [LIT-104](../literature.d/LIT-104.md) — ReLoRA's restart discipline, read as
+  [NOTE-024](../notes.d/NOTE-024.md). At every merge-and-reinit, prune the adapter's Adam state (99% by
   magnitude) **and** drop the learning rate to zero and re-warm it over 50–100
   steps. In the 130M ablation (Table 6) the restart alone does nothing (34.25
   vs LoRA's 34.17), the re-warm without the reset does nothing (34.29), the
@@ -46,14 +46,14 @@ extends:
 
 ## Source
 
-Lialin et al. (2023), LIT-104 — [ARXIV-2307.05695](https://arxiv.org/abs/2307.05695),
-read in full (v4, December 2023) as NOTE-024. The evidence is Table 6 and the
+Lialin et al. (2023), [LIT-104](../literature.d/LIT-104.md) — [ARXIV-2307.05695](https://arxiv.org/abs/2307.05695),
+read in full (v4, December 2023) as [NOTE-024](../notes.d/NOTE-024.md). The evidence is Table 6 and the
 paragraph under "Adding restarts and optimizer resets" in §4.2; the recipe is
 Algorithm 1 and Figure 2.
 
 ## When this applies
 
-You are training a low-rank adapter (SOTA-184's `W + s·W_A W_B`) with Adam, and
+You are training a low-rank adapter ([SOTA-184](SOTA-184.md)'s `W + s·W_A W_B`) with Adam, and
 at some point **during** training you fold the adapter into the frozen weight
 and start a fresh one — `W ← W + s·W_A W_B`, `W_A` re-drawn (Kaiming), `W_B`
 zeroed — so that the next adapter can learn a direction the last one could not.
@@ -88,7 +88,7 @@ warm start, perplexity):
 | ✓ | ✓ | ✓ | 29.77 |
 
 Either half alone is worthless or worse. That is the negative half of this
-practice, and it carries its citation in the same table — the shape ADR-042
+practice, and it carries its citation in the same table — the shape [ADR-042](../decisions.d/ADR-042.md)
 asks a "do not do this" to have.
 
 ## What the evidence does not cover

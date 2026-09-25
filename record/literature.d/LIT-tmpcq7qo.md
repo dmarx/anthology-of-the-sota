@@ -32,7 +32,7 @@ compared_against:
 - LIT-561
 - LIT-693
 summary: >-
-  Dhariwal and Nichol (2021), ARXIV-2105.05233. Two things, and the record uses
+  Dhariwal and Nichol (2021), [ARXIV-2105.05233](https://arxiv.org/abs/2105.05233). Two things, and the record uses
   both: **ADM**, the diffusion U-Net that half the later image papers here run
   on, fixed by a single-run ablation on ImageNet 128×128; and **classifier
   guidance**, a gradient scale `s` on a noisy-image classifier that trades recall
@@ -47,12 +47,12 @@ summary: >-
 
 # LIT-tmpcq7qo: Diffusion Models Beat GANs on Image Synthesis
 
-Dhariwal and Nichol (2021) — ARXIV-2105.05233
+Dhariwal and Nichol (2021) — [ARXIV-2105.05233](https://arxiv.org/abs/2105.05233)
 
 ## Key takeaways
 
 **The architecture, and how it was chosen.** Starting from the DDPM U-Net
-(LIT-036), Table 1 ablates five changes on ImageNet 128×128 at batch 256 with
+([LIT-036](LIT-036.md)), Table 1 ablates five changes on ImageNet 128×128 at batch 256 with
 250 sampling steps, FID at 700K and 1200K iterations against a baseline of
 15.33 / 13.21: more attention heads (−0.54 / −0.82), attention at 32, 16 and 8
 rather than 16 alone (−0.72 / −0.66), BigGAN residual blocks for up- and
@@ -69,7 +69,7 @@ the diffusion model sees (the U-Net's downsampling trunk plus an attention pool)
 then shift each reverse step's mean by `sΣ∇log p(y|x_t)` (Algorithm 1), or for
 DDIM subtract `√(1−ᾱ_t)·∇log p(y|x_t)` from the predicted noise (Algorithm 2).
 The scale is justified as sampling from a sharpened classifier, `p(y|x)^s / Z`.
-The derivation is Sohl-Dickstein et al.'s (LIT-439) and Song et al.'s; the scale
+The derivation is Sohl-Dickstein et al.'s ([LIT-439](LIT-439.md)) and Song et al.'s; the scale
 and the practice of using it are this paper's.
 
 **The trade is not monotone, and the direction depends on the model.** Table 4,
@@ -100,7 +100,7 @@ threshold, after which point it cannot achieve better precision".
 and with 25 DDIM steps 5.98 / 5.44 / 8.41 against BigGAN-deep's 6.02 / 6.95 /
 8.43. Guidance combined with an upsampling stack gives 3.94 at 256 and 3.85 at
 512 (Table 6); only the low-resolution model is guided. Unconditional LSUN
-results beat StyleGAN/StyleGAN2 (LIT-561, LIT-560) with architecture alone,
+results beat StyleGAN/StyleGAN2 ([LIT-561](LIT-561.md), [LIT-560](LIT-560.md)) with architecture alone,
 bedroom 1.90, horse 2.57, cat 5.57 — at **1000** sampling steps; a hand-swept
 250-step schedule closes most of that gap (App. J).
 
@@ -112,7 +112,7 @@ from other papers.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **"We can increase this gradient scale factor by an order of magnitude
   without obtaining adversarial examples"** is in the introduction and has no
@@ -120,11 +120,11 @@ Per DP-010:
   and a nearest-neighbour check for memorisation run in Inception-V3 feature
   space (App. C). Every quantitative metric in the paper is computed on Inception
   features, and the paper does not say which network its precision and recall
-  use. This is the sentence THEORY-109 is about, and the paper does not test it.
+  use. This is the sentence [THEORY-109](../theory.d/THEORY-109.md) is about, and the paper does not test it.
 - **The best-scale cells are chosen on the metric they report.** App. I:
   scales swept over [0.5, 1, 2] at 128 and 256, [1 … 5] at 512, and separate
   sweeps for 25-step DDIM, with the winners in Table 14 (0.5, 1.0, 4.0; DDIM
-  1.25, 2.5, 9.0). Nothing is held out. It is the practice SOTA-307 tells a
+  1.25, 2.5, 9.0). Nothing is held out. It is the practice [SOTA-307](../practices.d/SOTA-307.md) tells a
   reader to follow, and here it is the source of every ADM-G number.
 - **"The same or lower compute budget" than BigGAN-deep** (App. A) rests on
   converting BigGAN's TPU-v3 estimates at "2 TPU-v3 day = 1 V100 day", which the
@@ -133,7 +133,7 @@ Per DP-010:
   (64–128). Their own naive implementation used 18–25% of the hardware (Table 7).
 - **Guidance needs labels.** Stated by the authors: "we have provided no
   effective strategy for trading off diversity for fidelity on unlabeled
-  datasets" (§7). That is the gap LIT-693 fills.
+  datasets" (§7). That is the gap [LIT-693](LIT-693.md) fills.
 - **Lower temperature does not substitute** (App. G): scaling the noise or ε by
   `1/τ` gives no substantial improvement and lowers precision *and* recall.
   One model, one figure.
@@ -141,23 +141,23 @@ Per DP-010:
 ## Standing in the anthology
 
 Filed because the record was already leaning on it without holding it. It is
-the model or the instrument in LIT-676 (DPM-Solver++'s ImageNet table runs on
-the 256×256 classifier-guided ADM), LIT-630 and NOTE-340 (flow matching trained
+the model or the instrument in [LIT-676](LIT-676.md) (DPM-Solver++'s ImageNet table runs on
+the 256×256 classifier-guided ADM), [LIT-630](LIT-630.md) and [NOTE-340](../notes.d/NOTE-340.md) (flow matching trained
 on its U-Net, and a throughput claim measured against its 4.36M-iteration run),
-LIT-692 (ablations on the ADM U-Net), and LIT-448 (DiT, which replaces the U-Net
-this paper ablated). It is the antecedent LIT-693 is named against, and the
-method THEORY-109 raises a suspicion about.
+[LIT-692](LIT-692.md) (ablations on the ADM U-Net), and [LIT-448](LIT-448.md) (DiT, which replaces the U-Net
+this paper ablated). It is the antecedent [LIT-693](LIT-693.md) is named against, and the
+method [THEORY-109](../theory.d/THEORY-109.md) raises a suspicion about.
 
 What it adds that the record did not have:
 
-- a source for THEORY-109's subject, including the two facts that bear on it
+- a source for [THEORY-109](../theory.d/THEORY-109.md)'s subject, including the two facts that bear on it
   from the predecessor's side — the guiding classifier is **not** the Inception
   network that scores, and at `s = 1` the paper itself saw a classifier satisfied
   by samples that did not look like the class;
-- the tuned scale for the model LIT-676 stress-tests: its authors' best 25-step
-  DDIM scale at 256×256 is **2.5**, giving FID 5.44, and LIT-676 runs it at
+- the tuned scale for the model [LIT-676](LIT-676.md) stress-tests: its authors' best 25-step
+  DDIM scale at 256×256 is **2.5**, giving FID 5.44, and [LIT-676](LIT-676.md) runs it at
   **8.0**;
 - the U-Net ablation, as a single-run architecture search, for anybody citing
   "the ADM U-Net" as a settled design.
 
-The reading is NOTE-tmpb6qj9.
+The reading is [NOTE-tmpb6qj9](../notes.d/NOTE-tmpb6qj9.md).

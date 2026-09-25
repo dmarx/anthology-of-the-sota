@@ -14,6 +14,7 @@ arxiv: '2406.07524'
 first_author: 'Sahoo'
 compared_against:
 - LIT-tmpfb0m4
+- LIT-479
 keywords:
 - 'masked-diffusion'
 - 'absorbing-state'
@@ -95,5 +96,5 @@ consistent — and not for preferring diffusion to autoregression, where its
 own controlled comparison goes the other way at 110M parameters. It is not a
 source of [SOTA-254](../practices.d/SOTA-254.md): nothing here varies unique data, though the LM1B gap
 to AR narrowing from 4.7 to 2.1 points between 33B and 327B tokens is the
-direction that practice predicts. LIT-479 measures against it and finds it
+direction that practice predicts. [LIT-479](LIT-479.md) measures against it and finds it
 still ahead of uniform-state diffusion on likelihood.

@@ -20,7 +20,7 @@ summary: >-
 ## Contribution
 
 Before this paper the edge of stability had been characterized for gradient
-descent (LIT-461), for adaptive preconditioned methods (Cohen et al. 2022,
+descent ([LIT-461](../literature.d/LIT-461.md)), for adaptive preconditioned methods (Cohen et al. 2022,
 not in the record) and for SAM, each with its own notion of sharpness. This
 gives one definition that covers all of them and extends to the optimizers
 that had not been studied: steepest descent under an arbitrary norm, which
@@ -136,15 +136,15 @@ Hessian the closed form is available and was used as the reference.
 
 ## Connections
 
-It extends LIT-461 directly: the same phenomenon, the same threshold, the
+It extends [LIT-461](../literature.d/LIT-461.md) directly: the same phenomenon, the same threshold, the
 same Taylor-approximation test (their Figure 6 is Cohen et al.'s Appendix E
 run under a different norm), on Cohen et al.'s code, with Cohen as an
-author. It borrows LIT-453's picture of oscillation in a multi-dimensional
+author. It borrows [LIT-453](../literature.d/LIT-453.md)'s picture of oscillation in a multi-dimensional
 unstable subspace to explain the gap above `2/η`, by analogy. Its update
 family is the steepest-descent-under-a-norm frame of the modular-duality line
-(LIT-438 and its predecessors); it cites *Old optimizer, new norm* for the
+([LIT-438](../literature.d/LIT-438.md) and its predecessors); it cites *Old optimizer, new norm* for the
 spectral block norm, not the modular-duality paper itself. Directional
-smoothness comes from Mishkin et al. (2024), not in the record. LIT-456
+smoothness comes from Mishkin et al. (2024), not in the record. [LIT-456](../literature.d/LIT-456.md)
 cites it as the paper joining the local-expansion analysis to the edge of
 stability.
 
@@ -169,7 +169,7 @@ covers, and the authors themselves name that regime as future work.
 
 ## Bearing on the record
 
-- **THEORY-035** — supported and refined. The account's two forces and one
+- **[THEORY-035](../theory.d/THEORY-035.md)** — supported and refined. The account's two forces and one
   equilibrium hold for every non-Euclidean optimizer tested, which is an
   outside replication of the regime in a new class of optimizers. But its
   quantity, "the maximum eigenvalue of the training-loss Hessian", is the
@@ -180,24 +180,24 @@ covers, and the authors themselves name that regime as future work.
   gap: it shows the *directional smoothness* must rise if the loss goes from
   decreasing to oscillating, which is a consequence of the oscillation, not a
   mechanism for Hessian curvature rising.
-- **THEORY-024** — not reached. The paper takes the steepest-descent-under-a-
+- **[THEORY-024](../theory.d/THEORY-024.md)** — not reached. The paper takes the steepest-descent-under-a-
   norm frame as its object and shows the frame is the right one for
   *describing where the stability threshold sits*. It does not compare
   optimizers on loss or test whether the geometry is what makes spectral
-  updates train well, which is what LIT-456's control contests. A reader
+  updates train well, which is what [LIT-456](../literature.d/LIT-456.md)'s control contests. A reader
   should not count this as evidence for the duality account's explanatory
   claim.
-- **THEORY-033** — not reached. Normalized Spectral GD's threshold is
+- **[THEORY-033](../theory.d/THEORY-033.md)** — not reached. Normalized Spectral GD's threshold is
   `2‖∇L‖_*/η`, an effective-step relation, but nothing here measures the
   optimal step size or its constancy.
-- **THEORY-030** — neighbouring, not tested. That document asks whether its
+- **[THEORY-030](../theory.d/THEORY-030.md)** — neighbouring, not tested. That document asks whether its
   curvature-shaping account and the duality account are one mechanism or two;
   this paper puts both kinds of optimizer under one stability condition but
   does not examine implicit curvature penalties or central flows for
   non-Euclidean methods.
-- **SOTA-121** (Muon) and **SOTA-272** — untouched. Nothing here compares
+- **[SOTA-121](../practices.d/SOTA-121.md)** (Muon) and **[SOTA-272](../practices.d/SOTA-272.md)** — untouched. Nothing here compares
   optimizers or step-size rules. The warning in R1 would apply to anyone who
-  tried to use SOTA-272's reasoning to monitor a Muon run by the Euclidean
+  tried to use [SOTA-272](../practices.d/SOTA-272.md)'s reasoning to monitor a Muon run by the Euclidean
   sharpness, but the record does not currently say to.
 
 ## Limitations
@@ -221,7 +221,7 @@ covers, and the authors themselves name that regime as future work.
 ## Open questions
 
 - Does generalized sharpness equilibrate at a predictable value under
-  stochastic gradients and momentum — i.e. for Muon as run? LIT-461 found
+  stochastic gradients and momentum — i.e. for Muon as run? [LIT-461](../literature.d/LIT-461.md) found
   Euclidean sharpness does not under SGD, so the answer is not obvious.
 - Why does the pre-EoS oscillatory regime (C7) exist for ℓ∞ and spectral
   norms and not for ℓ2?

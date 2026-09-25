@@ -155,12 +155,12 @@ and servable.
 
 ## Connections
 
-The DeepSeek line in the record: V3 (LIT-160) is the source of the MTP
+The DeepSeek line in the record: V3 ([LIT-160](../literature.d/LIT-160.md)) is the source of the MTP
 configuration, the auxiliary-loss-free balancing and the inference framework
-V4 inherits; V3.2's DeepSeek Sparse Attention (LIT-142), itself after NSA
-(LIT-143), is the selection step inside CSA; mHC is LIT-140; the Muon
-recipe follows Moonshot (LIT-122) except for the Newton-Schulz schedule and
-the absence of QK-Clip. MTP itself traces to Gloeckle et al. (LIT-163), which
+V4 inherits; V3.2's DeepSeek Sparse Attention ([LIT-142](../literature.d/LIT-142.md)), itself after NSA
+([LIT-143](../literature.d/LIT-143.md)), is the selection step inside CSA; mHC is [LIT-140](../literature.d/LIT-140.md); the Muon
+recipe follows Moonshot ([LIT-122](../literature.d/LIT-122.md)) except for the Newton-Schulz schedule and
+the absence of QK-Clip. MTP itself traces to Gloeckle et al. ([LIT-163](../literature.d/LIT-163.md)), which
 V4 cites alongside ProphetNet, EAGLE and V3.
 
 ## Recommendations
@@ -180,30 +180,30 @@ V4 cites alongside ProphetNet, EAGLE and V3.
 
 ## Bearing on the record
 
-- **LIT-185's claim that this model ships the EAGLE-3 arrangement is not
-  supported.** Its standing section said LIT-135 and this paper "ship the same
+- **[LIT-185](../literature.d/LIT-185.md)'s claim that this model ships the EAGLE-3 arrangement is not
+  supported.** Its standing section said [LIT-135](../literature.d/LIT-135.md) and this paper "ship the same
   arrangement" as Kimi K3 — the MTP head fine-tuned into a single-layer draft
   model. The full report says only that V4 keeps V3's MTP module unchanged
   as a training objective (C1); it says nothing about drafting or
   speculative decoding (C2). Whether DeepSeek serves V4 speculatively, as it
   may have V3, is not something this report states, and "the inference
   framework largely inherits from that of DeepSeek-V3" cannot carry it: the
-  sentence is about KV-cache management. LIT-185, SOTA-227 and LIT-163
+  sentence is about KV-cache management. [LIT-185](../literature.d/LIT-185.md), [SOTA-227](../practices.d/SOTA-227.md) and [LIT-163](../literature.d/LIT-163.md)
   are corrected alongside this reading.
-- **SOTA-162** (MTP heads) — V4 is an adopter, correctly listed, and its
+- **[SOTA-162](../practices.d/SOTA-162.md)** (MTP heads) — V4 is an adopter, correctly listed, and its
   report states only the *training* motive: an auxiliary loss with an
-  annealed weight, no inference use. SOTA-162 is qualified accordingly. That is a point
+  annealed weight, no inference use. [SOTA-162](../practices.d/SOTA-162.md) is qualified accordingly. That is a point
   for the practice's "double motive, which nobody has separated", not
   against it; it still ablates nothing.
-- **SOTA-227** (speculative decoding) — no bearing; this report is not an
-  adopter of record. SOTA-229 likewise.
-- **SOTA-131** (QK-Clip) — confirms what LIT-139 already records: a Muon
+- **[SOTA-227](../practices.d/SOTA-227.md)** (speculative decoding) — no bearing; this report is not an
+  adopter of record. [SOTA-229](../practices.d/SOTA-229.md) likewise.
+- **[SOTA-131](../practices.d/SOTA-131.md)** (QK-Clip) — confirms what [LIT-139](../literature.d/LIT-139.md) already records: a Muon
   run at 1.6T without QK-Clip, relying on q/KV RMSNorm instead (C4).
-- **SOTA-139** (staged context extension) — confirmed: 4K → 16K → 64K → 1M,
+- **[SOTA-139](../practices.d/SOTA-139.md)** (staged context extension) — confirmed: 4K → 16K → 64K → 1M,
   with sparse attention introduced partway.
-- **SOTA-148** (bias-based balancing) — V4 runs the bias at 0.001 *plus* a
-  0.0001 sequence-wise loss, as LIT-139 records.
-- **SOTA-121** (Muon with AdamW-matched RMS) — adopter; RMS target 0.18.
+- **[SOTA-148](../practices.d/SOTA-148.md)** (bias-based balancing) — V4 runs the bias at 0.001 *plus* a
+  0.0001 sequence-wise loss, as [LIT-139](../literature.d/LIT-139.md) records.
+- **[SOTA-121](../practices.d/SOTA-121.md)** (Muon with AdamW-matched RMS) — adopter; RMS target 0.18.
 
 ## Limitations
 
@@ -218,7 +218,7 @@ responses".
 ## Open questions
 
 - Is V4 served with MTP-based speculative decoding? Only DeepSeek's serving
-  code or a statement elsewhere (e.g. the V3 report, LIT-160, for the
+  code or a statement elsewhere (e.g. the V3 report, [LIT-160](../literature.d/LIT-160.md), for the
   predecessor) could settle it; this report does not.
 - How much of the 1M-context quality comes from CSA vs HCA vs the sliding
   window, and what does each cost at short context?

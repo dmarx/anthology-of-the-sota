@@ -130,7 +130,7 @@ evaluations (NFE) as the sampling budget.
   this paper builds. The bridge is the contribution; neither end is new.
 - MDLM and SEDD, the strongest baselines here, were **not in the record** when
   this was read; they arrived as table entries, the third family this session
-  to enter that way. Both are now filed and read (LIT-tmptr16a, LIT-tmpfb0m4),
+  to enter that way. Both are now filed and read ([LIT-tmptr16a](../literature.d/LIT-tmptr16a.md), [LIT-tmpfb0m4](../literature.d/LIT-tmpfb0m4.md)),
   from the survey of skipped readings of 2026-09-25.
 
 ## Bearing on the record

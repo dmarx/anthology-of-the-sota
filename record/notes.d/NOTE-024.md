@@ -154,15 +154,15 @@ the paper's own ablation makes that argument for it.
 
 ## Bearing on the record
 
-**R1 is filed as SOTA-tmppbzba** (2026-09-25), `Proposed`, sourced here. v1
+**R1 is filed as [SOTA-tmppbzba](../practices.d/SOTA-tmppbzba.md)** (2026-09-25), `Proposed`, sourced here. v1
 of this reading said it would not be — that R1 was "too narrow to matter
-outside this method" — and #121's audit then held it back on a scope question
-ADR-042 has since answered. It is narrow, and the practice says so: it is a
+outside this method" — and [#121](https://github.com/dmarx/anthology-of-the-sota/issues/121)'s audit then held it back on a scope question
+[ADR-042](../decisions.d/ADR-042.md) has since answered. It is narrow, and the practice says so: it is a
 rule for *how* to restart an adapter, conditional on restarting, with the
 ablation's scope (130M, from random initialisation) written into its
 `promote_when`. R3 is still not filed, in either direction: too weak to
 recommend, and Table 6 decomposes the gain rather than refuting it, so it
-does not clear ADR-042's third condition as a `Rejected` practice either.
+does not clear [ADR-042](../decisions.d/ADR-042.md)'s third condition as a `Rejected` practice either.
 
 *v1 read:* No practice is sourced to this paper, and this reading does not
 create one — R3 is too weak to file and R1 is too narrow to matter outside

@@ -138,7 +138,7 @@ The record already held two refinements of a practice it did not hold:
 
 - **[LIT-185](../literature.d/LIT-185.md) (EAGLE-3)** is a method for driving the draft's cost toward the
   `c ≈ 0` regime by making it a single decoder layer matched to the target's
-  structure. It is `Active` here, and read since (NOTE-163).
+  structure. It is `Active` here, and read since ([NOTE-163](../notes.d/NOTE-163.md)).
 - **[SOTA-162](SOTA-162.md)** trains auxiliary multi-token-prediction heads, and one of its
   two arguments is that "the extra heads are a draft model for speculative
   decoding you did not have to train separately" — a claim that had no
@@ -155,12 +155,12 @@ decoding — [LIT-131](../literature.d/LIT-131.md), [LIT-135](../literature.d/LI
 rather than an independent measurement of it, and is counted in
 `consensus_note` where counting is the right operation ([DP-005](../../docs/design-principles.md#dp-5)).
 
-One correction while counting: LIT-185's standing section said LIT-135 and
-LIT-139 "ship the same arrangement". LIT-135's note bears that out; LIT-139's
+One correction while counting: [LIT-185](../literature.d/LIT-185.md)'s standing section said [LIT-135](../literature.d/LIT-135.md) and
+[LIT-139](../literature.d/LIT-139.md) "ship the same arrangement". [LIT-135](../literature.d/LIT-135.md)'s note bears that out; [LIT-139](../literature.d/LIT-139.md)'s
 did not, and this document left it unrepaired rather than repair it from the
 same distance that produced it. **Settled by reading the full report**
-(NOTE-tmpr3mtt): DeepSeek-V4 keeps V3's multi-token-prediction module
+([NOTE-tmpr3mtt](../notes.d/NOTE-tmpr3mtt.md)): DeepSeek-V4 keeps V3's multi-token-prediction module
 "without modification" as a depth-1 training objective, and the report never
 mentions a draft model, an acceptance rate or speculative decoding. It is not
 an adopter of this practice on its own evidence, is not counted above, and
-LIT-185 now says so.
+[LIT-185](../literature.d/LIT-185.md) now says so.

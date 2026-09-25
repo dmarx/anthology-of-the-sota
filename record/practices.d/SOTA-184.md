@@ -28,6 +28,8 @@ summary: >-
   folds back into the weight at inference.
 compared_against:
 - SOTA-329
+extended_by:
+- SOTA-tmppbzba
 ---
 
 # SOTA-184: Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself

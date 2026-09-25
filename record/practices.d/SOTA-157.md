@@ -107,12 +107,12 @@ The practice's title makes two choices, and until 2026-09-25 the record held
 evidence for only one of them.
 
 **Masked, rather than another discrete diffusion.** Sahoo et al.,
-LIT-tmptr16a, and Lou et al., LIT-tmpfb0m4, are the evidence. SEDD trains
+[LIT-tmptr16a](../literature.d/LIT-tmptr16a.md), and Lou et al., [LIT-tmpfb0m4](../literature.d/LIT-tmpfb0m4.md), are the evidence. SEDD trains
 absorbing-state and uniform-state models on the same architecture and recipe,
 and absorbing wins on every table (LM1B ≤32.79 against ≤40.25). MDLM derives
 the masked-diffusion objective LLaDA trains with — a schedule-weighted average
 of masked-LM losses — and beats SEDD at matched training on every likelihood
-table it reports. LIT-479's uniform-state model narrows the gap and does not
+table it reports. [LIT-479](../literature.d/LIT-479.md)'s uniform-state model narrows the gap and does not
 close it. That half of the recommendation is well supported, at GPT-2 scale.
 
 **Rather than autoregressively.** Neither paper supports it, and one argues
@@ -132,7 +132,7 @@ None of that meets `promote_when:`. It is 110M parameters, the steps are not
 matched, and neither arm was swept. It is recorded because it is the nearest
 thing to the requested test that exists, and at small scale it favours the
 baseline. The case for this practice over autoregression still rests on
-LIT-217's demonstration at 8B and on SOTA-254's conditional, not on the two
+[LIT-217](../literature.d/LIT-217.md)'s demonstration at 8B and on [SOTA-254](SOTA-254.md)'s conditional, not on the two
 papers that made masked diffusion work.
 
 ## What adopting this would cost, which nobody has costed

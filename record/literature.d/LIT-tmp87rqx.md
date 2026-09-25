@@ -81,31 +81,31 @@ Islamov, Crawshaw, Cohen and Gower (2026; ICML 2026, oral) — [ARXIV-2603.05002
 ## Standing in the anthology
 
 **It is the paper that joins the record's two optimizer clusters.** One half
-is the edge of stability — LIT-461, which this extends and whose code
-it is built on, and LIT-453, whose account of multiple unstable
+is the edge of stability — [LIT-461](LIT-461.md), which this extends and whose code
+it is built on, and [LIT-453](LIT-453.md), whose account of multiple unstable
 eigenvalues it borrows to explain why its own sharpness sits slightly above
 `2/η`. The other half is steepest descent under a non-Euclidean norm — the
-frame of LIT-438 and of THEORY-024, contested by LIT-456, which
+frame of [LIT-438](LIT-438.md) and of [THEORY-024](../theory.d/THEORY-024.md), contested by [LIT-456](LIT-456.md), which
 cites this paper. It was named in the curation journal on 2026-09-20 as the
 link between them and carried as unfiled through five entries.
 
 **What it adds to the record's account of the edge of stability** is the
-statement that THEORY-035's "maximum eigenvalue of the training-loss
+statement that [THEORY-035](../theory.d/THEORY-035.md)'s "maximum eigenvalue of the training-loss
 Hessian" is the right quantity for Euclidean gradient descent only. For the
-spectral update the record recommends (SOTA-121), the equilibrium
+spectral update the record recommends ([SOTA-121](../practices.d/SOTA-121.md)), the equilibrium
 is at `2/η` in the spectral geometry and the Euclidean eigenvalue is far from
-it. That is a refinement, not a correction: LIT-461 never claimed more
+it. That is a refinement, not a correction: [LIT-461](LIT-461.md) never claimed more
 than gradient descent.
 
 **What it does not do** is bear on why spectral optimizers work. It measures
 where their stability threshold sits, not whether the geometry is what pays;
 no optimizer is compared with another on loss, and nothing here tests the
-`Kaon` result. It does not reach THEORY-024 or THEORY-033
-in either direction. See NOTE-tmpf0zmh.
+`Kaon` result. It does not reach [THEORY-024](../theory.d/THEORY-024.md) or [THEORY-033](../theory.d/THEORY-033.md)
+in either direction. See [NOTE-tmpf0zmh](../notes.d/NOTE-tmpf0zmh.md).
 
 **Scope.** Full-batch, deterministic, no momentum; MLPs, small CNNs, ResNet20
 and VGG11 on CIFAR-10 (often a 5k subset) with MSE loss, and a Transformer on
 Tiny Shakespeare. The authors name stochastic, momentum-based and adaptive
 optimizers as the extension that would make the diagnostic usable in
-practical training — which is the same gap THEORY-035 and
-THEORY-030 already name.
+practical training — which is the same gap [THEORY-035](../theory.d/THEORY-035.md) and
+[THEORY-030](../theory.d/THEORY-030.md) already name.

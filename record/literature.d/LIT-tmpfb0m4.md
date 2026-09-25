@@ -27,6 +27,9 @@ summary: >-
   (mask) process beats the uniform one on every table. The GPT-2 comparison is
   against the released model, trained on different data and re-evaluated
   without a sliding window.
+compared_against:
+- LIT-479
+- LIT-tmptr16a
 ---
 
 <!-- inactive-ok-file: SOTA-157 — Proposed, and named as the practice this paper is now a corroborating source of, for the absorbing-over-uniform comparison and nothing more -->
@@ -71,13 +74,13 @@ No hyperparameter or architecture search (C.4). Models are GPT-2 small and
 medium sized. The generative-perplexity comparison is against *un-annealed*
 GPT-2, which is the fair comparison for the sampler but not the setting
 anybody serves GPT-2 in, and the paper does not report the numerical
-precision of sampling — a variable later work (cited in LIT-479) found can
+precision of sampling — a variable later work (cited in [LIT-479](LIT-479.md)) found can
 flatter masked-diffusion generative perplexity.
 
 ## Standing in the anthology
 
 The paper that made discrete diffusion competitive on language likelihood,
-and the strongest baseline MDLM (LIT-tmptr16a) and LIT-479 measure against. It
+and the strongest baseline MDLM ([LIT-tmptr16a](LIT-tmptr16a.md)) and [LIT-479](LIT-479.md) measure against. It
 corroborates [SOTA-157](../practices.d/SOTA-157.md) on one point: of the two discrete processes, use
 the absorbing (masked) one. It does not support preferring diffusion to
 autoregression — the retrained comparison is a tie at best and the GPT-2 one

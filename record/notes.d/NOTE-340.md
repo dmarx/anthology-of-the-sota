@@ -98,7 +98,7 @@ over time, which the paper argues is "arguably" an easier regression target
   (Table 1, right). The model is 25% larger than ADM's, trained for 500k
   iterations at batch 1,536 (Table 3). The paper calls that "33% less image
   throughput" than ADM's 4.36M iterations at batch 256 (§6.1). That ADM run
-  (LIT-tmpcq7qo, Table 11: 422M parameters) is **class-conditional**; this
+  ([LIT-tmpcq7qo](../literature.d/LIT-tmpcq7qo.md), Table 11: 422M parameters) is **class-conditional**; this
   model is not.
 - **Sampling cost:** at a fixed ODE error, FM-OT needs "roughly only 60% of
   the NFEs" of the diffusion-path models (§6.2, Fig. 7). That is measured on
@@ -118,7 +118,7 @@ over time, which the paper argues is "arguably" an easier regression target
 | C4 | FM with the diffusion path trains better than score matching on the same path | weak | Table 1 is mixed. FM-Dif beats Score Matching on FID at CIFAR-10 and ImageNet-64 and loses at ImageNet-32 (6.37 against 5.68). It loses to DDPM at CIFAR-10 (8.06 against 7.48). Baseline budget is unclear (see Limitations) |
 | C5 | FM-OT has "consistently better" likelihood | weak | 0.01 bpd over the nearest competitor at ImageNet-32 and 64 (Table 1). At K = 1 on ImageNet-32 it ties DDPM at 3.62 (Table 4). CIFAR-10 is 0.10 |
 | C6 | The OT path samples with fewer function evaluations | moderate | Adaptive NFE lower on all three datasets (Table 1). The "60%" is one figure, one dataset, one solver (Fig. 7) |
-| C7 | FM converges faster in training | weak | Fig. 5 curves on ImageNet-64 with no values in text. The ImageNet-128 throughput comparison is against ADM's published run, not a controlled one, and that run is class-conditional while FM's is not (LIT-tmpcq7qo, Table 11) |
+| C7 | FM converges faster in training | weak | Fig. 5 curves on ImageNet-64 with no values in text. The ImageNet-128 throughput comparison is against ADM's published run, not a controlled one, and that run is class-conditional while FM's is not ([LIT-tmpcq7qo](../literature.d/LIT-tmpcq7qo.md), Table 11) |
 | C8 | Sampling cost stays constant during FM training and drifts under score matching | weak | Fig. 10, CIFAR-10, figure only |
 
 ## Method

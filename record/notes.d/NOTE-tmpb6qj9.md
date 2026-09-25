@@ -114,7 +114,7 @@ ADM-U.
 - **ADM / ADM-G / ADM-U** — the ablated diffusion model; with classifier
   guidance; the upsampling stack with the same architecture changes.
 - **Gradient scale `s`** — multiplier on `∇log p(y|x_t)`; equivalent to guiding
-  with `p(y|x)^s / Z`. Classifier-free guidance's `w` (LIT-693) has the same form
+  with `p(y|x)^s / Z`. Classifier-free guidance's `w` ([LIT-693](../literature.d/LIT-693.md)) has the same form
   but multiplies an implicit classifier's gradient, so equal values are not
   equal guidance.
 - **AdaGN** — `y_s·GroupNorm(h) + y_b`, with `(y_s, y_b)` projected from the
@@ -122,13 +122,13 @@ ADM-U.
 
 ## Connections
 
-It builds on DDPM (LIT-036) for the model and objective, on IDDPM for learned
-variances and the upsampling stack, and on DDIM (LIT-038) for the 25-step
+It builds on DDPM ([LIT-036](../literature.d/LIT-036.md)) for the model and objective, on IDDPM for learned
+variances and the upsampling stack, and on DDIM ([LIT-038](../literature.d/LIT-038.md)) for the 25-step
 sampler; the guided-transition derivation is reviewed from Sohl-Dickstein et al.
-(LIT-439). It is compared against StyleGAN (LIT-561), StyleGAN2 (LIT-560) and
-DDPM on LSUN with re-scored baselines. Classifier-free guidance (LIT-693) is the
+([LIT-439](../literature.d/LIT-439.md)). It is compared against StyleGAN ([LIT-561](../literature.d/LIT-561.md)), StyleGAN2 ([LIT-560](../literature.d/LIT-560.md)) and
+DDPM on LSUN with re-scored baselines. Classifier-free guidance ([LIT-693](../literature.d/LIT-693.md)) is the
 successor that removes the classifier and cites ADM-G as the number to beat.
-DiT (LIT-448) keeps the class-and-timestep modulation idea as adaLN and replaces
+DiT ([LIT-448](../literature.d/LIT-448.md)) keeps the class-and-timestep modulation idea as adaLN and replaces
 the U-Net.
 
 ## Recommendations
@@ -148,13 +148,13 @@ the U-Net.
 
 | document | disposition |
 |---|---|
-| THEORY-109 | **sharpened.** The suspicion concerns this paper's method, and this paper's own sentence against it (C7) is untested. Two facts it did not carry: the guiding classifier is a noisy-image U-Net trunk, not Inception-V3, so the concern is transfer between two ImageNet classifiers rather than attacking the scorer itself; and at `s = 1` the paper saw exactly the classifier-satisfied, visually-wrong shape the account predicts. Stays `Proposed` — neither fact is a classifier-free measurement |
-| LIT-693 | its account of the predecessor is correct (noisy-data classifier required; trade compared to truncation). Relation declared: it extends and was compared against this |
-| LIT-676, SOTA-203, SOTA-410 | **context added, no claim changed.** Their ImageNet table runs this model at classifier scale 8.0; the authors' own tuned 25-step DDIM scale at 256 is 2.5 (FID 5.44), and their widest sweep there stopped at 3.5. The table is a stress test at ~3× the tuned scale, which is what it is for — but its FIDs are not the model's quality, and a classifier scale of 8.0 is not the same knob as Stable Diffusion's CFG weight of 7.5 |
-| SOTA-307 | consistent. Every ADM-G number is a per-cell scale sweep chosen on FID with nothing held out — the practice it recommends, and the reason it matters |
-| NOTE-340 | its C7 caveat is strengthened: FM's "33% less image throughput" is measured against ADM's **class-conditional** 128×128 run (4360K × 256, Table 11), while FM's model is unconditional |
-| LIT-448 | "ablated its internals but left the high-level design intact" — correct (Tables 1–3) |
-| LIT-630, LIT-692 | use the ADM U-Net as an instrument; nothing to correct |
+| [THEORY-109](../theory.d/THEORY-109.md) | **sharpened.** The suspicion concerns this paper's method, and this paper's own sentence against it (C7) is untested. Two facts it did not carry: the guiding classifier is a noisy-image U-Net trunk, not Inception-V3, so the concern is transfer between two ImageNet classifiers rather than attacking the scorer itself; and at `s = 1` the paper saw exactly the classifier-satisfied, visually-wrong shape the account predicts. Stays `Proposed` — neither fact is a classifier-free measurement |
+| [LIT-693](../literature.d/LIT-693.md) | its account of the predecessor is correct (noisy-data classifier required; trade compared to truncation). Relation declared: it extends and was compared against this |
+| [LIT-676](../literature.d/LIT-676.md), [SOTA-203](../practices.d/SOTA-203.md), [SOTA-410](../practices.d/SOTA-410.md) | **context added, no claim changed.** Their ImageNet table runs this model at classifier scale 8.0; the authors' own tuned 25-step DDIM scale at 256 is 2.5 (FID 5.44), and their widest sweep there stopped at 3.5. The table is a stress test at ~3× the tuned scale, which is what it is for — but its FIDs are not the model's quality, and a classifier scale of 8.0 is not the same knob as Stable Diffusion's CFG weight of 7.5 |
+| [SOTA-307](../practices.d/SOTA-307.md) | consistent. Every ADM-G number is a per-cell scale sweep chosen on FID with nothing held out — the practice it recommends, and the reason it matters |
+| [NOTE-340](NOTE-340.md) | its C7 caveat is strengthened: FM's "33% less image throughput" is measured against ADM's **class-conditional** 128×128 run (4360K × 256, Table 11), while FM's model is unconditional |
+| [LIT-448](../literature.d/LIT-448.md) | "ablated its internals but left the high-level design intact" — correct (Tables 1–3) |
+| [LIT-630](../literature.d/LIT-630.md), [LIT-692](../literature.d/LIT-692.md) | use the ADM U-Net as an instrument; nothing to correct |
 
 ## Limitations
 
@@ -172,7 +172,7 @@ the U-Net.
 ## Open questions
 
 - Does guidance's FID gain survive a metric with no classifier in it? That is
-  THEORY-109's `promote_when`, and nothing in this paper touches it.
+  [THEORY-109](../theory.d/THEORY-109.md)'s `promote_when`, and nothing in this paper touches it.
 - Would the architecture ranking in Table 1 survive seeds, given effects of
   0.2–0.8 FID?
 - Why does `s = 1` fail on an unconditional model — the Taylor approximation, the

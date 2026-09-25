@@ -53,7 +53,7 @@ rather than about themselves.
 
 ## The account
 
-Classifier guidance (Dhariwal & Nichol, LIT-tmpcq7qo) improves a diffusion
+Classifier guidance (Dhariwal & Nichol, [LIT-tmpcq7qo](../literature.d/LIT-tmpcq7qo.md)) improves a diffusion
 model's FID and Inception Score, at a tuned scale, by mixing the model's score
 estimate with the input gradient of a classifier's log probability. Both of those metrics are computed by passing samples through an
 Inception classifier.
@@ -99,7 +99,7 @@ Hence the `promote_when`: the question needs a metric with no classifier in it.
 
 ## What the predecessor says for itself
 
-Dhariwal & Nichol (LIT-tmpcq7qo) anticipate the worry in one sentence of their
+Dhariwal & Nichol ([LIT-tmpcq7qo](../literature.d/LIT-tmpcq7qo.md)) anticipate the worry in one sentence of their
 introduction — the scale can be raised "by an order of magnitude without
 obtaining adversarial examples" — and **no experiment stands behind it**: the
 support is sample grids and a nearest-neighbour check run in Inception-V3 feature
@@ -126,7 +126,7 @@ It does add two facts that change the account's shape:
 
 **Not that classifier guidance's results were fake.** The paper raises a
 question, does not answer it about classifier guidance, and the record holds no
-paper that does — Dhariwal & Nichol (LIT-tmpcq7qo), now held, assert the
+paper that does — Dhariwal & Nichol ([LIT-tmpcq7qo](../literature.d/LIT-tmpcq7qo.md)), now held, assert the
 opposite in one sentence and do not test it.
 
 <!-- inactive-ok: SOTA-301 — Proposed, and cited to be excluded: it is named as the neighbouring practice this account does *not* bear on, so its standing is irrelevant to the exclusion. -->

@@ -49,7 +49,7 @@ model.
   masking is what makes them possible.
 - **The reverse process factorizes independently across tokens** given the
   current latent sequence: `p_θ(z_s^{1:L} | z_t^{1:L}) = Π_ℓ p_θ(z_s^ℓ | z_t^{1:L})`.
-  This is the property LIT-479 later identifies as why masked models cannot
+  This is the property [LIT-479](../literature.d/LIT-479.md) later identifies as why masked models cannot
   revise a token once emitted.
 - `α_t` strictly decreasing in `t`, `α_0 ≈ 1`, `α_1 ≈ 0`.
 - Experiments at 110M parameters (DiT backbone with RoPE, from SEDD),
@@ -123,7 +123,7 @@ A strict special case of D3PM's framework, derived variationally; Shi et
 al. and Ou et al. reached the same objective concurrently (Ou et al. from
 score matching). It borrows SEDD's backbone, schedule and data processing,
 and beats SEDD. It extracts the concrete score SEDD learns (Suppl. C.3), so
-score-based samplers apply. LIT-479, from the same lab, builds its
+score-based samplers apply. [LIT-479](../literature.d/LIT-479.md), from the same lab, builds its
 uniform-state model on this codebase and measures against it.
 
 ## Recommendations
@@ -144,7 +144,7 @@ uniform-state model on this codebase and measures against it.
 ## Bearing on the record
 
 - [SOTA-157](../practices.d/SOTA-157.md) — **corroborates the "masked" and not the "rather than
-  autoregressively".** LLaDA (LIT-217) trains with this objective, and MDLM
+  autoregressively".** LLaDA ([LIT-217](../literature.d/LIT-217.md)) trains with this objective, and MDLM
   plus SEDD are the evidence that the masking process is the right discrete
   corruption. On diffusion versus AR, this is the controlled comparison from
   a second group that the practice's `promote_when:` asks for — though with
@@ -157,7 +157,7 @@ uniform-state model on this codebase and measures against it.
   practice's statement that inference cost is "not accounted anywhere" is now
   slightly too strong: this paper and SEDD report wall-clock sampling numbers,
   though at matched sample quality and not at matched total cost.
-- LIT-479 — compared against this paper; the relation is declared there.
+- [LIT-479](../literature.d/LIT-479.md) — compared against this paper; the relation is declared there.
 
 ## Limitations
 

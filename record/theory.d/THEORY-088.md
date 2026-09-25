@@ -6,13 +6,33 @@ formerly:
 promote_when: >-
   A controlled sweep of the masking ratio on at least three modalities that
   differ measurably in redundancy — say text, images and audio — under one
-  architecture and one evaluation protocol, reporting the optimum against an
-  independently measured redundancy statistic. A paper that finds a high
-  ratio works for a fourth modality would not settle it: the claim is that
-  the optimum *tracks* redundancy, which needs the correlation and not
+  architecture, one evaluation protocol, **one model capacity and one masking
+  strategy**, reporting the optimum against an independently measured
+  redundancy statistic. The last two are not pedantry: LIT-tmpqkx1z moves the
+  optimum by a factor of nearly three within a single modality by changing
+  capacity alone, so a cross-modality correlation drawn from models of
+  different sizes measures capacity as much as redundancy. A paper that finds a
+  high ratio works for a fourth modality still would not settle it: the claim
+  is that the optimum *tracks* redundancy, which needs the correlation and not
   another point.
 title: 'Masked prediction transfers across modalities only after the masking ratio is rescaled to the signal''s information density'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Corrected, not qualified. The claim was that the masking optimum is a
+    property of the signal's information density. LIT-tmpqkx1z sweeps the rate
+    within one signal — English text — and finds the optimum moving with **model
+    capacity** (40% at 354M, 20% at 124M, 15% at 51M) and with **masking
+    strategy** (uniform admits a higher rate than span or PMI masking). Both
+    hold the signal fixed. And at an 80% rate, where validation perplexity
+    exceeds 1,000 and nothing can be reconstructed, 95% of fine-tuning
+    performance survives — so reconstruction feasibility, which is what
+    redundancy governs, is not what sets the useful rate. The `promote_when`
+    asked for a cross-modality correlation and has to ask for capacity and
+    strategy to be held fixed as well, or the correlation it finds will be
+    confounded.
 tags:
 - signal-structure
 - representation-and-encoding
@@ -20,6 +40,7 @@ tags:
 date: '2026-09-23'
 source:
 - LIT-601
+- LIT-tmpqkx1z
 explains:
 - SOTA-373
 ---
@@ -76,6 +97,34 @@ linear probing and fine-tuning put the optimal ratio in different places.
 Any account of where the optimum *should* be has to say which optimum it
 means, and this one does not.
 
+## What moves the optimum, measured within one signal
+
+The account says the optimum is a property of the signal. [LIT-tmpqkx1z](../literature.d/LIT-tmpqkx1z.md) holds the
+signal fixed — English text, one architecture family, one evaluation protocol —
+and moves the optimum anyway:
+
+- **by capacity.** 40% at 354M parameters, 20% at 124M, 15% at 51M. Nearly a
+  factor of three, with the signal identical.
+- **by masking strategy.** Uniform masking is an easier task than span or PMI
+  masking at a given rate, so it admits a higher optimum. The strategy is a
+  property of the objective, not of the text.
+
+So "information density" cannot be the whole story, and the honest form of the
+account reads *the optimum depends on the signal's redundancy, the model's
+capacity and the masking strategy* — at which point the cross-modality
+correlation the `promote_when` asks for has to hold the other two fixed, which
+it now says.
+
+**And the link to reconstruction is broken.** Redundancy governs whether a
+hidden region can be recovered from its neighbours; that is what this account is
+about. At an 80% masking rate on text, validation perplexity exceeds **1,000** —
+recovery is hopeless — and the model still preserves **95% of fine-tuning
+performance** and **90% of BLiMP probing accuracy** against a 15% baseline.
+Whether the masked content can be reconstructed and how good the representations
+are come apart. Wettig et al. suggest such a model may be operating as a
+powerful skip-gram model, which if true is a different account of what the
+objective buys.
+
 ## Standing
 
 `Proposed` rather than `Active`: plausible, directionally useful, resting on
@@ -86,3 +135,8 @@ split is `ADR-031`'s, and this is a cleaner instance than usual: a wrong
 theory here would leave the recommendation untouched, since "measure whether
 an interpolator can solve your masked task" is an empirical procedure that
 needs no account of density at all.
+
+That prediction has now been tested. `LIT-tmpqkx1z` damaged this account and
+left `SOTA-373` standing: the practice was amended twice in one day and its
+recommendation never changed, while the explanation behind it lost a term. The
+split was doing exactly what it was built for.

@@ -1,0 +1,149 @@
+---
+status: Active
+title: 'Should You Mask 15% in Masked Language Modeling?'
+version: 1
+tags:
+- representation-and-encoding
+- training-optimization
+- analysis-and-evaluation
+- signal-structure
+date: '2026-09-25'
+published: '2022-02-16'
+arxiv: '2202.08005'
+first_author: 'Wettig'
+keywords:
+- 'masking-rate'
+- 'masked-language-modeling'
+- 'corruption-rate'
+- 'prediction-rate'
+- '80-10-10'
+- 'span-masking'
+implementations: []
+compared_against:
+- LIT-670
+summary: >-
+  Wettig, Gao, Zhong and Chen (2022),
+  [ARXIV-2202.08005](https://arxiv.org/abs/2202.08005). The sweep BERT never ran, and the answer the
+  record has been openly missing: **15% is not universally optimal**, and the
+  optimum tracks **model size** — 40% at 354M, 20% at 124M, 15% at 51M. It also
+  decomposes the masking rate into a **corruption rate** and a **prediction
+  rate** whose effects are antagonistic, and uses that to find BERT's 80-10-10
+  substitution rule **worse** than plain `[MASK]`.
+---
+
+# LIT-tmpqkx1z: Should You Mask 15% in Masked Language Modeling?
+
+<!-- inactive-ok-file: THEORY-088 SOTA-tmpwlch2 SOTA-tmpz04ck SOTA-404 — Proposed, all four. THEORY-088
+     is named as the account this paper's model-size and strategy dependence corrects, and its being open
+     is the point; the three practices are what this note supplied and it is their only or primary source. -->
+
+Wettig, Gao, Zhong and Chen (2022) — [ARXIV-2202.08005](https://arxiv.org/abs/2202.08005)
+
+## Key takeaways
+
+**The sweep, and it turns on capacity rather than on the signal.** Models at
+three sizes, masking rates from 15% to 50%, under an efficient pre-training
+recipe. Optimal rate on average:
+
+| model | parameters | optimal masking rate |
+| --- | --- | --- |
+| large | 354M | **40%** |
+| base | 124M | 20% |
+| medium | 51M | 15% |
+
+The paper's reading is capacity: a larger model can "handle" predicting many
+tokens from less context. The convention held 15% fixed "regardless of model
+sizes or masking strategies", and both of those turn out to matter.
+
+**40% against 15% at 354M**, test GLUE plus SQuAD 1.1, efficient recipe:
+
+| | MNLI-m/mm | QNLI | QQP | RTE | SST-2 | MRPC | CoLA | STS-B | SQuAD |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 15% | 84.2/83.4 | 90.9 | 70.8 | 73.5 | **92.8** | 88.8 | **51.8** | 87.3 | 88.0 |
+| 40% | **84.7/84.0** | **91.3** | **70.9** | **75.5** | 92.6 | **89.8** | 50.7 | **87.6** | **89.8** |
+
+Seven of nine to 40%, with SQuAD +1.8 and RTE +2.0, against SST-2 −0.2 and
+CoLA −1.1. The efficiency framing is the stronger one: on QNLI and QQP the 40%
+model reaches the 15% model's performance **in half the training time**.
+
+**And the qualification the paper puts on its own headline.** The optimum
+depends on the recipe. Under a longer schedule and under RoBERTa's more
+expensive recipe, 40% ends up "achieving similar performance to the 15% masking
+rate" — so the advantage is largest where the compute is smallest, and the
+paper says so rather than leaving it in an appendix nobody reads.
+
+**80% masking still works, and that is the result that bears on why.** At an 80%
+rate validation perplexity is **above 1,000** — reconstruction is hopeless — and
+the model still preserves **95% of fine-tuning performance** and, on BLiMP
+linguistic probing, **90% of the probing accuracy** of the 15% baseline. The
+authors suggest such a model may be understood as a powerful skip-gram model.
+Whatever fixes the useful masking rate, it is not whether the masked content can
+be recovered.
+
+The paper engages the vision comparison directly: MAE's argument is that images
+are redundant while "language is highly semantic and information-dense", and
+Wettig et al. note their setting "differs from vision, where good reproductions
+are possible with high masking rates". Text at 80% cannot reconstruct and
+represents anyway.
+
+**Masking strategy is a second axis.** Span masking and PMI masking beat uniform
+masking in prior work — all of it at a fixed 15%. Raising the rate narrows that:
+uniform masking at a given rate "remains an easier task than span masking or PMI
+masking", so uniform admits a higher optimum for a given capacity. Part of the
+mechanism is measured — going from 15% to 40% uniform gives an **8-fold**
+increase in the chance of covering a whole PMI n-gram.
+
+**The decomposition, which is the paper's transferable idea.** A masking rate
+sets two quantities at once:
+
+- the **corruption rate** `m_corr` — how much context is removed, which makes
+  the prediction task harder;
+- the **prediction rate** `m_pred` — how many positions are predicted, which
+  gives more training signal per step and helps optimization.
+
+Conventionally `m_corr = m_pred = m`, and the paper unties them. Holding
+`m_pred` at 40% and lowering `m_corr` improves performance monotonically, with
+diminishing returns (40%→20% buys much more than 10%→5%); raising `m_pred` at
+fixed corruption helps. Their conclusion, stated flatly:
+
+> when we tune the masking rate, we are tuning the corruption rate and the
+> prediction rate together, which have antagonistic effects.
+
+**80-10-10 is worse than plain `[MASK]`.** BERT replaces 10% of selected
+positions with the original token and 10% with a random token, to reduce the
+pretrain/fine-tune mismatch, and the rule was copied into RoBERTa, SpanBERT and
+DeBERTa. Read through the decomposition, same-token predictions "neither count
+towards the corruption nor to the prediction", and the loss on random tokens is
+slightly *higher* than on `[MASK]`, because the model must additionally decide
+whether an input token is a corruption. Measured against a 40% all-`[MASK]`
+baseline, **80-10-10 performs worse on everything but SST-2**, and the stated
+motivation does not bite: "the model can adapt to full, uncorrupted sentences,
+regardless of the use of alternative corruption strategies in pre-training."
+
+## Standing in the anthology
+
+This is the paper the previous unit ranked and deliberately did not take.
+[SOTA-373](../practices.d/SOTA-373.md) had just been amended to say, in as many words, that its text
+anchor was "an unexamined default rather than a rival datum" and that this paper
+was what the line wanted. It arrives and answers it.
+
+What it changes:
+
+- **[SOTA-373](../practices.d/SOTA-373.md)** gets its text side. The recommendation — do not inherit a
+  ratio across modalities — is untouched and better supported, because the
+  inherited number turns out to be wrong even at home.
+- **[THEORY-088](../theory.d/THEORY-088.md)** is corrected. Its claim is that the optimum tracks the
+  signal's information density; here the optimum moves with **model capacity**
+  and with **masking strategy** while the signal is held fixed, and the 80%
+  result severs the link between reconstruction feasibility and representation
+  quality. The account needs those terms, and its `promote_when` needed them
+  too.
+- Supplies [SOTA-tmpwlch2](../practices.d/SOTA-tmpwlch2.md) (scale the rate with model size) and
+  [SOTA-tmpz04ck](../practices.d/SOTA-tmpz04ck.md) (drop 80-10-10).
+- Is the third source for [SOTA-404](../practices.d/SOTA-404.md), and the only one of the three to
+  *build* the decomposition rather than trip over the confound.
+
+**Where it stops.** One group, one architecture family, encoder-only MLM, GLUE
+and SQuAD, at 51M to 354M parameters. Nothing here is about decoder pretraining,
+and the recipe dependence the authors report means a practitioner on a long
+schedule should expect the 40% advantage to shrink.

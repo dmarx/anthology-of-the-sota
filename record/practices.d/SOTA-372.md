@@ -12,10 +12,21 @@ consensus_note: >-
   GPU-hours on the strength of it. `#304`'s remaining units are where a
   counterexample would show up; none has so far. Read as of 2026-09.
 title: 'Run the encoder on visible tokens only and push the mask tokens into a small decoder you discard'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    `training-optimization` added. The practice's measured result is a
+    training-cost one — 3× or more faster pretraining at lower memory — and
+    SOTA-359 took the same topic on the same grounds. Written now because
+    SOTA-tmpfo9e5 extends both this practice and SOTA-359, joining their
+    lines, and this was the one member not carrying the topic the rest share
+    (ADR-049). Recommendation unchanged.
 tags:
 - systems-optimization
 - representation-and-encoding
+- training-optimization
 date: '2026-09-23'
 source:
 - LIT-601

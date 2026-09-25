@@ -37,6 +37,8 @@ compared_against:
 - LIT-640
 ---
 
+<!-- inactive-ok-file: SOTA-403 — Proposed; named as a practice this paper bears on without settling, and its status is not relied on -->
+
 # LIT-tmpbukux: A Controlled Study of Attention-Only Transformers
 
 Ndubuaku, Mosoyan, Mroz, Cylich, Kumar, Sandhu, Shemet and Lee (2026) —

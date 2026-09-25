@@ -46,6 +46,9 @@ compared_against:
 - LIT-020
 ---
 
+<!-- inactive-ok-file: SOTA-403 — Proposed; named as a practice this paper bears on without settling, and its status is not relied on -->
+<!-- inactive-ok-file: SOTA-190 — Proposed; named as a practice this paper bounds without confirming, and its status is not relied on -->
+
 # LIT-tmpnc3oh: Do Transformer Modifications Transfer Across Implementations and Applications?
 
 Narang, Chung, Tay, Fedus, Fevry, Matena, Malkan, Fiedel, Shazeer, Lan, Zhou,

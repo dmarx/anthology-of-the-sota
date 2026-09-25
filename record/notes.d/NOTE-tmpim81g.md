@@ -14,6 +14,8 @@ summary: >-
   on a synthetic reasoning corpus.
 ---
 
+<!-- inactive-ok-file: SOTA-403 — Proposed; named as a practice this paper bears on without settling, and its status is not relied on -->
+
 # NOTE-tmpim81g: Attention-only transformers
 
 ## Contribution

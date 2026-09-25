@@ -16,6 +16,9 @@ summary: >-
   winners transfer.
 ---
 
+<!-- inactive-ok-file: SOTA-403 — Proposed; named as a practice this paper bears on without settling, and its status is not relied on -->
+<!-- inactive-ok-file: SOTA-190 — Proposed; named as a practice this paper bounds without confirming, and its status is not relied on -->
+
 # NOTE-tmpeqzam: Narang et al., transformer modifications
 
 ## Contribution

@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**236 document(s) awaiting a decision.**
+**235 document(s) awaiting a decision.**
 
 ## SOTAs
 
-159 of the 236.
+159 of the 235.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -128,11 +128,11 @@
 | 2026-09-23 | Proposed | [SOTA-353](../../record/practices.d/SOTA-353.md) | 4 | 0 | Train a head that predicts the model's own accuracy on each output, against the metric you care about, and use it to rank samples and filter predictions |
 | 2026-09-23 | Proposed | [SOTA-375](../../record/practices.d/SOTA-375.md) | 4 | 0 | When training with sampled negatives, draw them from the unigram distribution raised to the 3/4 power, not from the unigram or uniform distribution |
 | 2026-09-23 | Proposed | [SOTA-334](../../record/practices.d/SOTA-334.md) | 3 | 0 | In a style-modulated generator, demodulate the convolution weights instead of instance-normalizing the activations |
+| 2026-09-23 | Proposed | [SOTA-342](../../record/practices.d/SOTA-342.md) | 3 | 0 | Report a sparse autoencoder's fidelity as downstream loss in compute-equivalent terms, not as fraction of loss recovered against zero ablation |
+| 2026-09-23 | Proposed | [SOTA-344](../../record/practices.d/SOTA-344.md) | 3 | 0 | Train sparse autoencoders with a TopK activation instead of an L1 penalty, and prevent dead latents with transposed-decoder initialization and an auxiliary loss |
 | 2026-09-23 | Proposed | [SOTA-347](../../record/practices.d/SOTA-347.md) | 3 | 0 | To write many facts into a model's weights, update a range of early-to-mid MLP layers jointly in one batched solve (MEMIT), choosing the range by measured edit success rather than causal tracing |
 | 2026-09-23 | Proposed | [SOTA-339](../../record/practices.d/SOTA-339.md) | 2 | 0 | For unpaired image-to-image translation of appearance, constrain both mappings with a cycle-consistency loss |
-| 2026-09-23 | Proposed | [SOTA-342](../../record/practices.d/SOTA-342.md) | 2 | 0 | Report a sparse autoencoder's fidelity as downstream loss in compute-equivalent terms, not as fraction of loss recovered against zero ablation |
 | 2026-09-23 | Proposed | [SOTA-343](../../record/practices.d/SOTA-343.md) | 2 | 0 | Read a transformer's intermediate-layer predictions through a tuned lens, not the raw logit lens |
-| 2026-09-23 | Proposed | [SOTA-344](../../record/practices.d/SOTA-344.md) | 2 | 0 | Train sparse autoencoders with a TopK activation instead of an L1 penalty, and prevent dead latents with transposed-decoder initialization and an auxiliary loss |
 | 2026-09-23 | Proposed | [SOTA-346](../../record/practices.d/SOTA-346.md) | 2 | 0 | Retune the training timestep shift for each autoencoder latent space, and never rank latent spaces for generation under one shared schedule |
 | 2026-09-23 | Proposed | [SOTA-354](../../record/practices.d/SOTA-354.md) | 2 | 0 | When unlabelled inputs vastly outnumber labelled ones, retrain from scratch on the labelled data mixed with the model's own high-confidence predictions for unlabelled inputs, under augmentation that stops it copying them |
 | 2026-09-23 | Proposed | [SOTA-378](../../record/practices.d/SOTA-378.md) | 2 | 0 | Compare, project and orthogonalize a language model's concept directions after whitening by the unembedding covariance, not by raw cosine |
@@ -175,7 +175,7 @@
 
 ## THEORYs
 
-66 of the 236.
+66 of the 235.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -191,7 +191,7 @@
 | 2026-09-19 | Proposed | [THEORY-025](../../record/theory.d/THEORY-025.md) | 7 | 0 | A transformer holds about 3.6 bits per parameter, and generalization begins where the data outgrows that budget |
 | 2026-09-20 | Proposed | [THEORY-032](../../record/theory.d/THEORY-032.md) | 17 | 0 | A spectral update wins where the incoming activations are low stable rank and the gradient spectrum is spread out |
 | 2026-09-20 | Proposed | [THEORY-030](../../record/theory.d/THEORY-030.md) | 11 | 0 | Adaptive optimizers work by shaping the curvature they adapt to, and oscillation is how a first-order method sees curvature at all |
-| 2026-09-20 | Proposed | [THEORY-034](../../record/theory.d/THEORY-034.md) | 10 | 0 | Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations |
+| 2026-09-20 | Proposed | [THEORY-034](../../record/theory.d/THEORY-034.md) | 11 | 0 | Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations |
 | 2026-09-20 | Proposed | [THEORY-033](../../record/theory.d/THEORY-033.md) | 9 | 0 | What a spectral optimizer buys is a step size that stays optimal, not adherence to a target geometry |
 | 2026-09-20 | Proposed | [THEORY-026](../../record/theory.d/THEORY-026.md) | 5 | 0 | Critical batch size is set by how much data has been seen, not by how large the model is |
 | 2026-09-20 | Proposed | [THEORY-036](../../record/theory.d/THEORY-036.md) | 4 | 0 | Representations converge across architectures, objectives and modalities, and the endpoint is a model of what generated the data |
@@ -219,15 +219,15 @@
 | 2026-09-22 | Proposed | [THEORY-070](../../record/theory.d/THEORY-070.md) | 6 | 0 | Grokking is the transition from lazy to rich training dynamics |
 | 2026-09-22 | Proposed | [THEORY-072](../../record/theory.d/THEORY-072.md) | 6 | 0 | Training and test loss disagree as functions of weight norm, and shrinking the norm through the gap is what takes so long |
 | 2026-09-22 | Proposed | [THEORY-066](../../record/theory.d/THEORY-066.md) | 5 | 0 | Pure self-attention collapses every token onto one, and skip connections prevent it by keeping short paths alive |
+| 2026-09-22 | Proposed | [THEORY-063](../../record/theory.d/THEORY-063.md) | 4 | 0 | Contextual concept directions sit in the low-variance tail of the unembedding spectrum while vocabulary contrasts sit at the top |
 | 2026-09-22 | Proposed | [THEORY-065](../../record/theory.d/THEORY-065.md) | 4 | 0 | Self-attention drives tokens into a few clusters, and the spectrum of the value matrix decides the geometry they land in |
 | 2026-09-22 | Proposed | [THEORY-074](../../record/theory.d/THEORY-074.md) | 4 | 0 | A phase transition of the Bayesian posterior and a transition in the training trajectory are different events, and only the first is well defined |
-| 2026-09-22 | Proposed | [THEORY-063](../../record/theory.d/THEORY-063.md) | 3 | 0 | Contextual concept directions sit in the low-variance tail of the unembedding spectrum while vocabulary contrasts sit at the top |
 | 2026-09-22 | Proposed | [THEORY-064](../../record/theory.d/THEORY-064.md) | 3 | 0 | Transformers are biased toward low-sensitivity functions, and that bias is what their robustness is made of |
 | 2026-09-22 | Proposed | [THEORY-073](../../record/theory.d/THEORY-073.md) | 3 | 0 | Training passes through stages marked by changes in loss-landscape degeneracy, and the loss curve does not show them |
 | 2026-09-23 | Proposed | [THEORY-089](../../record/theory.d/THEORY-089.md) | 12 | 0 | Word vectors trained on co-occurrence behave linearly because they encode log co-occurrence statistics: differences carry log ratios, which gives analogies, and sums carry products of context distributions, which gives composition |
+| 2026-09-23 | Proposed | [THEORY-090](../../record/theory.d/THEORY-090.md) | 11 | 0 | A concept's shared word-pair direction, its linear probe and its steering vector are one object, related by an inner product under which causally separable concepts are orthogonal |
 | 2026-09-23 | Proposed | [THEORY-081](../../record/theory.d/THEORY-081.md) | 10 | 0 | A transformer's feed-forward layers work as key-value memories: each hidden unit's input weights match input patterns, and its output weights promote the tokens that follow them |
 | 2026-09-23 | Deferred | [THEORY-087](../../record/theory.d/THEORY-087.md) | 10 | 0 | Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other |
-| 2026-09-23 | Proposed | [THEORY-090](../../record/theory.d/THEORY-090.md) | 10 | 0 | A concept's shared word-pair direction, its linear probe and its steering vector are one object, related by an inner product under which causally separable concepts are orthogonal |
 | 2026-09-23 | Proposed | [THEORY-080](../../record/theory.d/THEORY-080.md) | 8 | 0 | A diffusion process needs noise to keep its intermediate states on the data manifold, and blur helps only while noise still dominates the bands it removes |
 | 2026-09-23 | Proposed | [THEORY-088](../../record/theory.d/THEORY-088.md) | 7 | 0 | Masked prediction transfers across modalities only after the masking ratio is rescaled to the signal's information density |
 | 2026-09-23 | Proposed | [THEORY-078](../../record/theory.d/THEORY-078.md) | 4 | 0 | Deep sine networks train when initialization holds every pre-activation near a standard normal, which keeps each layer arcsine-distributed and frequency growth slow; that initialization is what earlier periodic networks lacked |
@@ -248,7 +248,7 @@
 
 ## LITs
 
-8 of the 236.
+7 of the 235.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -257,13 +257,12 @@
 | 2026-09-15 | Deferred | [LIT-364](../../record/literature.d/LIT-364.md) | 2 | 0 | Classifying high-dimensional Gaussian mixtures: Where kernel methods fail and neural networks succeed |
 | 2026-09-25 | Deferred | [LIT-694](../../record/literature.d/LIT-694.md) | 1 | 0 | Rigor with Machine Learning from Field Theory to the Poincaré Conjecture |
 | 2026-09-25 | Deferred | [LIT-695](../../record/literature.d/LIT-695.md) | 1 | 0 | Language Design as Information Renormalization |
-| 2026-09-25 | Deferred | [LIT-696](../../record/literature.d/LIT-696.md) | 1 | 0 | Rarely categorical, highly separable representations along the cortical hierarchy |
 | 2026-09-25 | Deferred | [LIT-697](../../record/literature.d/LIT-697.md) | 1 | 0 | AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society |
 | 2026-09-25 | Deferred | [LIT-698](../../record/literature.d/LIT-698.md) | 1 | 0 | Topos and Stacks of Deep Neural Networks |
 
 ## ADRs
 
-3 of the 236.
+3 of the 235.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

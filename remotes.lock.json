@@ -491,6 +491,9 @@
     "ARXIV/2204.02311": {
       "title": "PaLM: Scaling Language Modeling with Pathways"
     },
+    "ARXIV/2204.03458": {
+      "title": "Video Diffusion Models"
+    },
     "ARXIV/2204.06125": {
       "title": "Hierarchical Text-Conditional Image Generation with CLIP Latents"
     },
@@ -838,6 +841,9 @@
     },
     "ARXIV/2405.04434": {
       "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model"
+    },
+    "ARXIV/2405.07987": {
+      "title": "The Platonic Representation Hypothesis"
     },
     "ARXIV/2405.15682": {
       "title": "The Road Less Scheduled"

@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-348 of 356 NOTE documents. Back to the [full index](../README.md).
+349 of 356 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -358,3 +358,4 @@
 | [NOTE-349](../../../record/notes.d/NOTE-349.md) | Make-A-Video | Make-A-Video extends an unCLIP text-to-image model to video with identity-initialized pseudo-3D conv and attention layers trained on video with no captions. Text reaches the video decoder only through one CLIP image embedding, so text-only-in-video associations cannot be learned, and the discussion concedes this. System-level results are strong (zero-shot UCF-101 FVD 367.23, MSR-VTT CLIPSIM 0.3049), and there is no ablation of any design choice, image initialization included. | Read |
 | [NOTE-350](../../../record/notes.d/NOTE-350.md) v2 | LTX-Video | A 1.9B video DiT on a 32×32×8, 128-channel VAE with no patchifier (1:8192 pixels to tokens), whose decoder also does the last denoising step. It is fast and preferred over same-size 2024 open models in a 20-rater survey. The VAE has no reconstruction metric at all, and the denoising decoder, the paper's central idea, rests on one unquantified internal study. | Read |
 | [NOTE-351](../../../record/notes.d/NOTE-351.md) | Emu Video | Generating a first frame and conditioning the video on it beats direct text-to-video at matched data, steps and trainable parameters (70.5% / 63.3% human win rate). Five one-change ablations with majority-of-5 votes on 307 prompts are the most controlled design evidence in the early video line. The freeze-versus-fine-tune result (55.0 / 58.1) is near chance, and by construction it cannot see the first frame. | Read |
+| [NOTE-353](../../../record/notes.d/NOTE-353.md) v2 | Rarely categorical, highly separable representations along the cortical hierarchy | In 14,000+ IBL Neuropixels units (4,617 passing a ΔR² ≥ 0.015 selectivity threshold), the clustering of 8-D encoding-model selectivity vectors beats a covariance-matched Gaussian null in only a handful of the ~20 testable cortical regions (VISp, AUDp, SSp-ul at Bonferroni p < 0.05; clustering z falls with hierarchy position, ρ = −0.62). Pooled modules and the whole cortex do cluster (whole-cortex z = 8.0). Among the 16 regions with enough trials, once the 16 task conditions are merged into pairwise-decodable "independent" ones (M_IC from 5 to 16, rising with hierarchy, ρ = 0.77), ≥ 95% of random balanced dichotomies are linearly decodable above a shuffle null in every region except gustatory cortex (≈0.82). | Read |

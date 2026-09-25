@@ -18,7 +18,7 @@ history:
 - version: 2
   date: '2026-09-25'
   note: >-
-    The ImageNet table's model is now held, LIT-tmpcq7qo. Its authors' tuned
+    The ImageNet table's model is now held, LIT-699. Its authors' tuned
     25-step DDIM classifier scale at 256×256 is 2.5 (FID 5.44), so the table's
     8.0 is a stress test at about three times that, and a classifier scale is
     not the same knob as Stable Diffusion's CFG weight of 7.5, which the text set
@@ -83,7 +83,7 @@ ImageNet 256×256, classifier guidance 8.0, no thresholding, FID:
 | **this practice — (2M)** | 14.44 | **9.46** | **9.10** | **9.11** | — |
 
 **What 8.0 is on this model.** The table is Dhariwal & Nichol's 256×256
-classifier-guided model ([LIT-tmpcq7qo](../literature.d/LIT-tmpcq7qo.md)), whose authors tuned its scale for 25 DDIM
+classifier-guided model ([LIT-699](../literature.d/LIT-699.md)), whose authors tuned its scale for 25 DDIM
 steps at **2.5** (FID 5.44). 8.0 is a deliberate stress test at about three times
 that, and a classifier-gradient scale is not the same knob as Stable Diffusion's
 CFG weight of 7.5, however close the numbers look. The shipped-regime evidence is

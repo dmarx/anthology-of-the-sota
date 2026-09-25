@@ -122,6 +122,29 @@ commit. A branch carrying views is not more up to date, it is a conflict with
 every other branch. Run `make hooks` once per clone and the tracked
 `pre-commit` hook refuses them for you.
 
+**Temporary codes land on `main` and are renamed a commit later, so wait for
+that commit before you branch.** `luria concretize` runs only where merges
+serialize — the push job on `main` — because that is the only place "the next
+free number" is a fact rather than a race, and a PR branch carrying
+`LIT-tmpy02tv` is therefore correct, not a mistake. The consequence is that
+`main`'s tip is briefly inconsistent: the merge commit still holds the temp
+codes and the bot's next commit renames them. Measured on `#367`, that window
+was 62 seconds, and CI serialises runs, so a queue makes it minutes. Branch
+inside it and cite anything the merged PR filed, and your next rebase conflicts
+on the renames. Before `git checkout -B`:
+
+    git ls-tree -r --name-only origin/main record/ | grep -c tmp
+
+Zero means `main` has caught up. **It has to be `git ls-tree origin/main`, not
+`ls` on your checkout** — a working tree descended from the merge commit still
+has the temp files, so the local check answers the wrong question and answers
+it reassuringly; that is how the trap was walked into three times in one
+session. `luria concretize --check` cannot help here either: it reads the
+working tree, and the question is about a ref. `LU-#325` asks the CLI to own
+this, so that the configured temp shape and the set of merge-allocated schemes
+are what gets checked rather than the substring `tmp`; delete this paragraph's
+grep when it ships.
+
 `luria lint` is warn-first: warnings are real findings, not noise, and the
 ones about retired citations are the check this project adopted the record to
 get. Acknowledge a deliberate one with an `inactive-ok:` comment at the

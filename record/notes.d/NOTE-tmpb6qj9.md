@@ -1,6 +1,6 @@
 ---
 status: Read
-paper: LIT-tmpcq7qo
+paper: LIT-699
 title: 'Diffusion Models Beat GANs'
 version: 1
 date: '2026-09-25'

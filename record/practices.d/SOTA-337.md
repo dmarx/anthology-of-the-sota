@@ -3,14 +3,27 @@ number: 337
 status: Active
 formerly:
 - SOTA-tmprzpgu
-title: 'When ImageNet-pretrained networks take part in training a generator, confirm FID gains with a Fréchet distance in a non-ImageNet feature space'
-version: 1
+title: 'When an ImageNet classifier is anywhere in the pipeline — training the generator or steering its sampling — confirm FID gains with a Fréchet distance in a non-ImageNet feature space'
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Widens the title to the scope the source already had. Kynkäänniemi et al.
+    suspected classifiers "placed in the sampling loop" as well as pretrained
+    discriminators, and the body said so from v1, but the title said "take part
+    in training a generator" — which excludes the most widely deployed
+    sampling-loop classifier there is. Adds LIT-699 as the case: classifier
+    guidance maximises an ImageNet classifier's confidence during sampling, and
+    that paper asserts it produces no adversarial examples without measuring it.
+    Recommendation, status and consensus unchanged.
 tags:
 - analysis-and-evaluation
 - generative-modeling
 date: '2026-09-23'
 source:
 - LIT-563
+- LIT-699
 introduced_by:
 - LIT-563
 consensus: unreplicated
@@ -28,10 +41,13 @@ summary: >-
   FFHQ FID 5.30 → 1.78, while CLIP-space FD moves 2.76 → 2.64. A model whose
   discriminator uses ImageNet features exploited this by accident, and the
   authors suspect data filters and samplers can too. Report a CLIP or SwAV Fréchet distance beside FID
-  whenever that is the case.
+  whenever that is the case. Classifier guidance (LIT-699) is the
+  sampling-loop instance and the least checked: it maximises an ImageNet
+  classifier's confidence on every step, and its paper denies producing
+  adversarial examples in one clause without running a test.
 ---
 
-# SOTA-337: When ImageNet-pretrained networks take part in training a generator, confirm FID gains with a Fréchet distance in a non-ImageNet feature space
+# SOTA-337: When an ImageNet classifier is anywhere in the pipeline — training the generator or steering its sampling — confirm FID gains with a Fréchet distance in a non-ImageNet feature space
 
 ## Source
 
@@ -39,11 +55,13 @@ Kynkäänniemi et al. (2022), [LIT-563](../literature.d/LIT-563.md). Read as [NO
 
 ## The practice
 
-**If an ImageNet-pretrained network touches the generator's training**,
-FID and KID are no longer trustworthy for comparing it with methods that do
-not use one. The demonstrated case is a pretrained discriminator. The
+**If an ImageNet classifier touches the pipeline at all**, FID and KID are no
+longer trustworthy for comparing the result with methods that do not use one.
+The demonstrated case is a pretrained discriminator during training. The
 authors suspect the same of classifiers used to curate the data or placed in
-the sampling loop.
+the sampling loop — and provenance is not what matters. A classifier trained
+from scratch on ImageNet labels has the same feature space as one downloaded;
+the hazard is the overlap with FID's features, not where the weights came from.
 
 - **Report a Fréchet distance in a feature space not trained on ImageNet
   classification**, such as CLIP. SwAV is partly independent: self-supervised,
@@ -72,3 +90,28 @@ practical case, Projected FastGAN matched StyleGAN2's FID (5.28 against
 - **CLIP is a partial check.** It has its own training data and biases
 - **Complements [SOTA-307](SOTA-307.md)**, which is about FID's variance across seeds. This
   practice is about its bias
+- **Says nothing about which side of a fidelity/diversity trade you are on.**
+  That is [SOTA-425](SOTA-425.md), and it uses precision and recall — which are computed
+  in the same ImageNet feature space, so they are subject to this practice too
+
+## The sampling-loop case
+
+Classifier guidance (Dhariwal and Nichol 2021, [LIT-699](../literature.d/LIT-699.md)) is this practice's
+sharpest instance and the reason v2 widened the title. The method takes gradient
+steps that raise an ImageNet classifier's log-probability of the target class,
+during sampling, on every step. FID and Inception Score are computed by passing
+the results through an ImageNet classifier. This is not a classifier that
+*happens* to share a feature space with the metric; it is a procedure whose
+objective is the thing the metric measures.
+
+The paper addresses it in one clause of its introduction — the scale can be
+raised "by an order of magnitude without obtaining adversarial examples" — and
+the word "adversarial" appears nowhere else in it. No test, no held-out
+classifier, no non-Inception distance. Its memorization check (App. C) is run in
+InceptionV3 feature space, which is the same problem again.
+
+So for guided sampling this practice is unmet, not satisfied: **nobody has run
+the CLIP or SwAV Fréchet distance on guided against unguided samples at matched
+<!-- inactive-ok: THEORY-109 — Proposed, cited as the open question this practice's instrument would close rather than as a settled account; a promote_when naming this practice is what makes the pairing correct. -->
+FID.** [THEORY-109](../theory.d/THEORY-109.md) is the open question, and this practice already names the
+instrument that would close it

@@ -9,8 +9,6 @@ A relation is an assertion that the documents it joins have something in common.
 
 **0 unbound relations.** Two documents joined directly, sharing nothing.
 
-**1 unbound line.** A whole sequence with no value common to every member — which can happen while every single step is expressed, because a component's intersection only shrinks as the component grows. The weaker signal of the two, and the one to read whole before acting on.
+**0 unbound lines.** A whole sequence with no value common to every member — which can happen while every single step is expressed, because a component's intersection only shrinks as the component grows. The weaker signal of the two, and the one to read whole before acting on.
 
-| Declared by | Field | Members |
-|---|---|---|
-| lineage | `tags` | [LIT-640](../../record/literature.d/LIT-640.md), [LIT-641](../../record/literature.d/LIT-641.md), [LIT-651](../../record/literature.d/LIT-651.md) |
+Every relation with an invariant declared is bound by a value both ends hold.

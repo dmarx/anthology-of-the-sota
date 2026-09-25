@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [25 Sep 22:56 — Two branches read the same paper on the same day, and the trunk found out before either of us](2026-09.md#two-branches-read-the-same-paper-on-the-same-day-and-the-trunk-found-out-before-either-of-us)
 - [25 Sep 22:41 — Five boundary works from the survey of what this record set aside](2026-09.md#five-boundary-works-from-the-survey-of-what-this-record-set-aside)
 - [25 Sep 22:24 — The second wave: twelve papers the journal promised, and what each headline measured against](2026-09.md#the-second-wave-twelve-papers-the-journal-promised-and-what-each-headline-measured-against)
 - [25 Sep 22:21 — An absence read as low priority twice, next to six practices working around it](2026-09.md#an-absence-read-as-low-priority-twice-next-to-six-practices-working-around-it)
@@ -250,9 +251,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-243 entries across 2 books, newest first.
+244 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 241 | 2026-09-05 | 2026-09-25 |
+| [2026-09](2026-09.md) | 242 | 2026-09-05 | 2026-09-25 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

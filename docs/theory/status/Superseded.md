@@ -6,8 +6,8 @@
 
 **Replaced** — a later account covers the same ground better, and this one names it.
 
-0 of 111 THEORY documents. Back to the [full index](../README.md).
+1 of 111 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [THEORY-111](../../../record/theory.d/THEORY-111.md) | A hyperparameter can look important because it is entangled with an averaging length you froze, so sensitivity attributed to one knob may belong to the pair | Karras et al. (2023), [LIT-720](../../../record/literature.d/LIT-720.md), measured on EDM2-S / ImageNet-512: with the weight-averaging length pinned at 13%, varying the learning-rate decay across `t_ref ∈ [30k, 160k]` moves FID **by up to 72%**; sweeping the averaging length post hoc puts the whole bracket **within 10% of the optimum**. The decay's apparent importance was mostly a fact about the pair. Generalising: a sensitivity curve measured with a second knob frozen at a guess attributes the interaction to the knob being swept, and there is no way to tell from the curve. | Superseded — by [SOTA-428](../../../record/practices.d/SOTA-428.md); Retired as redundant rather than wrong. The claim — that a hyperparameter's apparent importance can belong to its interaction with a frozen averaging length — is already stated in SOTA-428's Conditions, in the same words the source uses: "Much of what looks like learning-rate sensitivity is EMA mismatch", with the same 72%-against-10% bracket behind it. A theory document restating a practice's own condition from the same single measurement adds a citation target and no claim. `superseded_by:` points at the practice because that is where the content lives, not because a practice supersedes a theory. |

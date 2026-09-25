@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**247 document(s) awaiting a decision.**
+**246 document(s) awaiting a decision.**
 
 ## SOTAs
 
-165 of the 247.
+165 of the 246.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -155,12 +155,12 @@
 | 2026-09-24 | Proposed | [SOTA-391](../../record/practices.d/SOTA-391.md) | 0 | 0 | Estimate attention resolution before training when choosing a position encoding, and measure it across the extrapolation boundary |
 | 2026-09-24 | Proposed | [SOTA-393](../../record/practices.d/SOTA-393.md) | 0 | 0 | Freeze the image model's spatial layers when adding time if checkpoint compatibility matters; do not expect a quality gain from it |
 | 2026-09-24 | Proposed | [SOTA-396](../../record/practices.d/SOTA-396.md) | 0 | 0 | When a latent video model reuses an image autoencoder or upsampler, fine-tune them on video so they see time |
+| 2026-09-25 | Proposed | [SOTA-428](../../record/practices.d/SOTA-428.md) | 22 | 0 | Choose the EMA length after training: store two power-function averages at snapshots and reconstruct any length by least squares |
 | 2026-09-25 | Proposed | [SOTA-408](../../record/practices.d/SOTA-408.md) | 12 | 0 | Average the weights along the tail of training under a cyclical or high constant learning rate, then re-estimate the normalization statistics |
 | 2026-09-25 | Proposed | [SOTA-415](../../record/practices.d/SOTA-415.md) | 10 | 0 | During a warmup-stable-decay run, estimate the annealed score from a uniform average of recent stable-phase checkpoints instead of launching a decay branch |
 | 2026-09-25 | Proposed | [SOTA-403](../../record/practices.d/SOTA-403.md) | 6 | 0 | Share the attention parameters across layers if you need to cut parameters; do not share the feed-forward ones |
 | 2026-09-25 | Proposed | [SOTA-426](../../record/practices.d/SOTA-426.md) | 6 | 0 | When you merge and reinitialise a low-rank adapter mid-training, prune the optimizer state and re-warm the learning rate from zero — both, not either |
 | 2026-09-25 | Proposed | [SOTA-430](../../record/practices.d/SOTA-430.md) | 4 | 0 | Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks |
-| 2026-09-25 | Proposed | [SOTA-428](../../record/practices.d/SOTA-428.md) | 3 | 0 | Choose the EMA length after training: store two power-function averages at snapshots and reconstruct any length by least squares |
 | 2026-09-25 | Proposed | [SOTA-429](../../record/practices.d/SOTA-429.md) | 3 | 0 | Drop half the image patches when training a CLIP-style model, spend the saving on more pairs and a larger batch, and unmask only for a short final tune |
 | 2026-09-25 | Proposed | [SOTA-404](../../record/practices.d/SOTA-404.md) | 2 | 0 | When you ablate an auxiliary loss, ablate the input construction that came with it, or the result is about both |
 | 2026-09-25 | Proposed | [SOTA-405](../../record/practices.d/SOTA-405.md) | 2 | 0 | Scale the masked-language-modelling rate with model size rather than holding it at 15% |
@@ -181,7 +181,7 @@
 
 ## THEORYs
 
-68 of the 247.
+67 of the 246.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -248,7 +248,6 @@
 | 2026-09-24 | Proposed | [THEORY-099](../../record/theory.d/THEORY-099.md) | 3 | 0 | Muon's update matches the outer-product structure of associative memories, which is why it learns tail classes that Adam under-trains |
 | 2026-09-25 | Proposed | [THEORY-109](../../record/theory.d/THEORY-109.md) | 8 | 0 | Classifier guidance may flatter classifier-based metrics because it steps along a classifier gradient, and guidance without a classifier is the control |
 | 2026-09-25 | Proposed | [THEORY-103](../../record/theory.d/THEORY-103.md) | 7 | 0 | A transformer stores a fact where it needed it, so two-hop composition generalizes only to facts it already saw as a second hop |
-| 2026-09-25 | Proposed | [THEORY-111](../../record/theory.d/THEORY-111.md) | 5 | 0 | A hyperparameter can look important because it is entangled with an averaging length you froze, so sensitivity attributed to one knob may belong to the pair |
 | 2026-09-25 | Proposed | [THEORY-108](../../record/theory.d/THEORY-108.md) | 4 | 0 | Kaplan's and Chinchilla's compute-optimal exponents differ because of how small-scale runs were counted, warmed up and tuned, not because of the learning-rate decay |
 | 2026-09-25 | Proposed | [THEORY-104](../../record/theory.d/THEORY-104.md) | 3 | 0 | A large guidance scale amplifies the model's derivatives, which narrows a high-order solver's convergence radius |
 | 2026-09-25 | Proposed | [THEORY-110](../../record/theory.d/THEORY-110.md) | 2 | 0 | FID is not neutral between fidelity and coverage: it weights coverage more, so optimizing it walks toward variety at the cost of per-sample quality |
@@ -256,7 +255,7 @@
 
 ## LITs
 
-11 of the 247.
+11 of the 246.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -274,7 +273,7 @@
 
 ## ADRs
 
-3 of the 247.
+3 of the 246.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

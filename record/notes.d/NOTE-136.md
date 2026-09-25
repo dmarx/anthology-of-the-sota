@@ -5,7 +5,14 @@ formerly:
 - NOTE-tmpnnrhg
 paper: LIT-285
 title: 'Coordination of groups of mobile autonomous agents using nearest neighbor rules'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Corrections section added from a full reading of the TAC paper. Several
+    statements below are wrong and are kept, marked, rather than deleted.
+    LIT-285 carries the corrected account.
 date: '2026-09-15'
 summary: >-
   Even if a network is disconnected at every individual time step — no single
@@ -14,6 +21,30 @@ summary: >-
   length sliding window has a spanning tree.
 ---
 # NOTE-136: Coordination of groups of mobile autonomous agents using nearest neighbor rules
+
+## Corrections (2026-09-25)
+
+This reading came in with the import, and it misstates the paper. A full
+reading of the TAC version finds these errors. [LIT-285](../literature.d/LIT-285.md) has the
+corrected account.
+
+- **The graphs are undirected throughout.** There is no "directed spanning
+  tree" condition. Theorem 2 requires the undirected graphs to be jointly
+  connected across *contiguous, bounded* intervals, not windows of a fixed
+  length `T`.
+- **The proof uses Wolfowitz's ergodic-product theorem.** It does not use
+  doubly stochastic matrices or scrambling coefficients. The update matrices
+  are row-stochastic, and headings live in `[0, 2π)`, not `[−π, π]`.
+- **There is no undirected corollary.** The undirected case *is* the theorem.
+- **The paper does not show that the Vicsek dynamics satisfy its condition.** It
+  declines to model the dependence of switching on positions, and predicts
+  fragmentation for sparse starts.
+- **Omitted below:** the leader-following theorems (4 and 5), convergence for any
+  positive dwell time, and the computational finding that no common quadratic
+  Lyapunov function exists.
+- **"First rigorous" is contested** by Bertsekas and Tsitsiklis (2007) against
+  their 1980s agreement results.
+
 
 ## Contribution
 

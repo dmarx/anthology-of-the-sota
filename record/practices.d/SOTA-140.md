@@ -10,7 +10,7 @@ consensus_note: >-
 contested_by:
 - LIT-131
 title: 'Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens'
-version: 4
+version: 5
 tags:
 - training-optimization
 history:
@@ -35,6 +35,15 @@ history:
     stopping time rather than choosing a shape to decay through. Literature
     only at filing; now a Proposed practice of its own, named in the
     Sequence. The recommendation is unchanged.
+- version: 5
+  date: '2026-09-25'
+  note: >-
+    "Nobody has run the two against each other" is no longer true.
+    LIT-tmpbrc19 runs ScheduleFree+ against WSD from 120M to 2B, and WSD loses
+    at every size. It also reports tuned linear decay beating WSD at a known
+    horizon. Neither changes the recommendation. Both come from one author
+    and one seed per arm, and ScheduleFree+'s arm differs from the WSD arm in
+    weight decay as well as schedule. The practice stays contested.
 date: '2026-09-05'
 source:
 # The practice's own Source section names both — "Hu et al. (2024), LIT-144 —
@@ -150,9 +159,18 @@ Schedule-Free AdamW says the branch point above was the wrong one: the
 question is not which shape to decay through but whether to name a stopping
 time at all. It reaches this practice's headline property — the token budget
 need not be fixed when training starts — with no decay phase to launch and no
-peak re-tuned for a constant stage, since there is no constant stage. Nobody
-has run the two against each other; that practice's `promote_when:` is what
-this record is waiting for before it would displace this one.
+peak re-tuned for a constant stage, since there is no constant stage.
+
+Someone has now run the two against each other, though not in the form
+that practice's `promote_when:` asks for. [LIT-tmpbrc19](../literature.d/LIT-tmpbrc19.md) (2026) runs
+ScheduleFree+ against a WSD arm from 120M to 2B parameters, and WSD loses at
+every size and at every horizon it tests. Three things keep that from
+displacing this practice. The winning arm is a package (inner momentum,
+Polyak steps and AdamC weight decay) set against AdamW. How WSD was tuned is
+not stated. And the work is the Schedule-Free author's own, with one seed per
+arm. The same report finds tuned linear decay beating WSD "when tuned to the
+same training horizon". That concerns the known-horizon case, where this
+practice's open-budget property is not needed.
 
 ## Known implementations
 

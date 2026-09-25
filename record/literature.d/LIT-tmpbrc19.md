@@ -1,0 +1,142 @@
+---
+status: Active
+title: 'ScheduleFree+: Scaling Learning-Rate-Free & Schedule-Free Learning to Large Language Models'
+version: 1
+tags:
+- training-optimization
+- model-stability
+date: '2026-09-25'
+published: '2026-05-18'
+arxiv: '2605.19095'
+first_author: 'Defazio'
+keywords:
+- 'schedule-free'
+- 'polyak-step-size'
+- 'learning-rate-free'
+- 'iterate-averaging'
+- 'large-batch-momentum'
+- 'adamc'
+implementations:
+- 'facebookresearch/schedule_free (adamc_schedulefree_plus_paper.py)'
+extends:
+- LIT-213
+compared_against:
+- LIT-147
+- LIT-145
+summary: >-
+  Defazio (2026), [ARXIV-2605.19095](https://arxiv.org/abs/2605.19095), a single-author tech report from the
+  author of LIT-213. Plain Schedule-Free **fails at large batch** ("a scaling
+  'cliff' at 2M tokens per batch"). Its small weight decay was "compensating
+  for gradient norm drift, in a somewhat hacky way". ScheduleFree+ fixes both:
+  it restores inner momentum and adds Polyak step sizes with AdamC-style weight
+  decay. From 120M to 2B it beats WSD at every size, and it beats tuned linear
+  decay except at the largest short runs. The ladder changes six things at
+  once, and the one quantified margin, 31%, is for the 120M model only.
+---
+
+<!-- inactive-ok-file: SOTA-156 — Proposed; named as the practice this paper's
+     predecessor sources and that this paper amends without meeting its
+     promote_when, which is what the note says about it -->
+
+<!-- inactive-ok-file: SOTA-141 — Proposed; named as the practice this paper
+     corroborates on single seeds, deliberately NOT added to its sources -->
+
+# LIT-tmpbrc19: ScheduleFree+: Scaling Learning-Rate-Free & Schedule-Free Learning to Large Language Models
+
+Defazio (2026) — [ARXIV-2605.19095](https://arxiv.org/abs/2605.19095)
+
+## Key takeaways
+
+**What the "+" is.** Algorithm 1, "ScheduleFree+ (AdamC + Schedule-Free +
+Polyak)", has six parts:
+
+- **Inner momentum restored**, β1 = 0.75–0.9. The original removed it because
+  it "did not provide any benefit in their early experimentation on small
+  models".
+- **Polyak step sizes** normalized by the gradient's L1 norm. This makes the
+  optimizer learning-rate-free: there is no peak rate to set.
+- **Fully decoupled AdamC weight decay.** It "is necessary when using the
+  Polyak step size" and needs values "typically in the range 5-50".
+- **No averaging at the start** ("c-warmup"), for about twice the
+  learning-rate warmup.
+- **Outer momentum β annealed** from 0.8 or 0.9 to 0.965.
+- **`r = 1` averaging weights**, which win clearly past about 30B tokens.
+
+**The two admissions about the original are the findings that transfer.**
+1. **Large batch.** Plain Schedule-Free "hits a scaling 'cliff' at 2M tokens
+   per batch, compared to AdamW which has a similar cliff at 4M tokens" (120M,
+   FineWeb-EDU). The cleanest single-variable result in the paper is Fig. 3a:
+   the same setup with β1 of 0 or 0.9, and the learning rate swept.
+   Restoring inner momentum removes the cliff. Fig. 2's panels also change the
+   learning-rate coefficient, so they are less clean. The original missed the
+   cliff because it "was performed on V100 GPUs which can only handle
+   relatively small batch-sizes". This confirms outside reports that plain
+   Schedule-Free "falls behind" at large batch.
+2. **Weight decay.** The original's unusually small weight decay was
+   "compensating for gradient norm drift". The argument is that an average of
+   points on a weight-norm sphere lies inside it, so the averaged weights'
+   norm falls by roughly half. That raises gradient norms and so the effective
+   learning rate. Scaling steps by `1/‖g‖_1` "entirely eliminate[s] the
+   issue of rising weight norms" and matches the best previous loss (Fig. 6).
+   The mechanism is argued and correlational, and the author hedges
+   ("It's unclear if there is any deeper connection").
+
+**The ladders.** Linear decay to zero "using a learning rate tuned with a grid
+search", and WSD, against ScheduleFree+ with no learning-rate search. There
+are three horizons, all at sequence length 1024:
+- **1000 tokens/param, 120M to 1B at 1T tokens.** "significantly improves upon
+  the AdamW baseline". The one number is **120M only**: ScheduleFree+
+  "reached the same final loss value as a 45% longer run, a 31% reduction in
+  training time".
+- **100 tokens/param, to 2B.** It beats WSD at all sizes and beats linear
+  decay "at all but the 2B scale".
+- **20 tokens/param, to 2B.** "an advantage … at smaller model sizes, but … a
+  small performance gap for larger models when compared to the linear decay
+  schedule". It still beats WSD at every size.
+
+**Side results on schedules.** WSD "is consistently outperformed by the linear
+decay schedule in our experiments when tuned to the same training horizon".
+A cosine floor of 0.1 "is suboptimal" (500M, Fig. 16).
+
+## Traps
+
+- **The headline comparison is a package against AdamW.** ScheduleFree+
+  carries AdamC weight decay (λ = 20). Its linear-decay and WSD arms are AdamW
+  with λ = 0.05, and the paper's own Fig. 4a shows "AdamC slightly outperforms
+  AdamW" under linear decay. Some of the margin may be the weight decay's,
+  not the schedule's. How WSD was tuned is not stated. The runs use one seed
+  and report loss only, with no downstream evaluation, and the curves come
+  with no table of final losses.
+- **The paper disagrees with itself about short runs.** §1 says "No final loss
+  advantage is seen for short duration (20-100 TPP) runs", while §9.2 reports
+  an advantage at small sizes that closes, then reverses, at 2B. The
+  consistent reading is that the short-run advantage shrinks with scale.
+- **"Learning-rate-free" means no peak learning rate. Several other
+  hyperparameters remain:** a warmup schedule, a weight decay in a new range
+  that varies between experiments (5, 20, 50), β annealing endpoints, `r`,
+  the c-warmup length, the Polyak EMA coefficient and clipping.
+- **It is not Schedule-Free AdamW.** Evidence for ScheduleFree+ is not
+  evidence for the method [SOTA-156](../practices.d/SOTA-156.md) describes, and it
+  is not independent of it: it has the same author and the same repository.
+
+## Standing in the anthology
+
+Filed from the reading-time triage of 2026-09-25, as the successor of
+[LIT-213](LIT-213.md). It sources no practice of its own. It corrects two in
+place:
+
+- **[SOTA-156](../practices.d/SOTA-156.md)** gains it as a second, same-author source,
+  and its Conditions gain what it documents: the large-batch cliff without
+  inner momentum, and hyperparameters beyond "no additional hyperparameter".
+  It does **not** meet [SOTA-156](../practices.d/SOTA-156.md)'s `promote_when`. It stops at 1B / 1T rather
+  than going above, cosine is not in the ladder, WSD's tuning is unstated, and
+  there is no peak learning rate to sweep.
+- **[SOTA-140](../practices.d/SOTA-140.md)** said "Nobody has run the two against
+  each other". Someone now has, with the caveats above, and WSD lost at every
+  size. The practice stays `contested`. Its reply is that this
+  comparison is one author's package against an arm without AdamC.
+
+Its linear-decay results are a second group's corroboration of
+[SOTA-141](../practices.d/SOTA-141.md) (decay linearly to zero), but a side result on
+single seeds. That is noted here rather than added to the practice's
+sources.

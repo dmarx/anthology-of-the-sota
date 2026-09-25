@@ -71,6 +71,8 @@ summary: >-
   it for video at 5B. In SD3's latent text-to-image sweep, the timestep
   distribution decides the ranking: uniform does not beat tuned
   ε-prediction and logit-normal does.
+explained_by:
+- THEORY-tmpxkux1
 ---
 
 # SOTA-266: Connect data and noise on a straight line, and sample the training timesteps from a logit-normal rather than uniformly

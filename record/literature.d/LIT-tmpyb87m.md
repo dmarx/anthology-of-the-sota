@@ -1,0 +1,113 @@
+---
+status: Active
+title: 'Reconciling Kaplan and Chinchilla Scaling Laws'
+version: 1
+tags:
+- training-optimization
+- analysis-and-evaluation
+date: '2026-09-25'
+published: '2024-06-12'
+arxiv: '2406.12907'
+first_author: 'Pearce'
+keywords:
+- 'scaling-laws'
+- 'compute-optimal-allocation'
+- 'non-embedding-parameters'
+- 'kaplan-chinchilla-discrepancy'
+- 'irreducible-loss-offset'
+- 'parameter-counting'
+implementations:
+- 'github.com/TeaPearce/Reconciling_Kaplan_Chinchilla_Scaling_Laws'
+corrects:
+- LIT-028
+extends:
+- LIT-068
+summary: >-
+  Pearce and Song (TMLR 2024), [ARXIV-2406.12907](https://arxiv.org/abs/2406.12907). Kaplan's `N_opt ∝ C^0.73`
+  against Chinchilla's `C^0.50` is mostly a counting artifact. Kaplan counted
+  non-embedding parameters and fit at small scale, where embeddings are much
+  of the model. Simulating the Chinchilla study under those conditions gives
+  0.74–0.78. The result is a *simulation* from Chinchilla's fitted surface,
+  extrapolated four or more orders of magnitude below its range. The
+  experiments are five models of 0.8–4.6M parameters at context length 16.
+  They also find that the learning-rate schedule, which Chinchilla blamed, is
+  not the main cause.
+---
+
+<!-- inactive-ok-file: SOTA-tmp7rph1 — Proposed; the practice this paper sources, filed with it -->
+
+# LIT-tmpyb87m: Reconciling Kaplan and Chinchilla Scaling Laws
+
+Pearce and Song (2024; TMLR 11/2024) — [ARXIV-2406.12907](https://arxiv.org/abs/2406.12907)
+
+## Key takeaways
+
+**The claim.** "much of this discrepancy can be attributed to Kaplan counting
+non-embedding rather than total parameters, combined with their analysis
+being performed at small scale." The loss–compute exponents (Kaplan's
+`C^−0.057` against Chinchilla's `−0.155` to `−0.178`) differ for the same
+reasons, plus Kaplan's fit having no offset.
+
+**The method is analytical plus simulation.** Relate total to non-embedding
+parameters by `N_T = N_\E + ω N_\E^{1/3}`, fitted to Chinchilla's Table A9
+configurations. Substitute that into Chinchilla's `L = N_c/N^α + D_c/D^β + E`,
+using both Chinchilla's constants and Epoch AI's re-fit. The optimal
+`N_\E` against `C_\E` "is not a power law". Its local exponent moves from
+`β/(α/3+β)` at small scale to `β/(α+β)` at large scale, crossing near
+`N_\E ≈ 10⁷`. Simulated over Kaplan's range (790 to 1.58B non-embedding
+parameters), Chinchilla's Method 1 recovers **0.74** (Chinchilla constants)
+and **0.78** (Epoch constants), "close to the Kaplan coefficient of 0.73".
+
+**The experiments are tiny.** Five models from 0.8M to 4.6M total parameters,
+on BookCorpus, at **context length 16**. Relabelling the *same* runs by total
+or non-embedding count gives 0.49 or 0.74. It is a clean change of one thing,
+at the scale where it matters most. On the schedule: "Counter to
+Chinchilla's comment that moving from Kaplan's scheme 3 to scheme 4 would
+reduce the scaling coefficient, our experiment suggests the opposite is the
+case, increasing from 0.46 to 0.49."
+
+**Recommendations.** "report total, rather than non-embedding, parameters, and
+… include an offset in the compute-loss fitting models". Also: "a single fixed
+learning rate per model size is sufficient for measuring compute-optimal
+parameter coefficients."
+
+## Traps
+
+- **The main result inherits what it concludes.** 0.74–0.78 comes from
+  Chinchilla's own fitted surface, used as ground truth far below the 44M
+  where that surface was fit, and with Chinchilla's ω standing in for
+  Kaplan's different vocabulary and learned positions. "this paper
+  reaffirms Chinchilla's scaling coefficients" follows only on that premise.
+- **It reconciles Kaplan's *adjusted* exponent.** Kaplan's raw fit is 0.88. The
+  larger replication, Porian et al. 2024 (arXiv 2406.19146, not held),
+  attributes the gap stepwise. Reproducing Kaplan gives 0.835. Counting the
+  head's FLOPs gives 0.706. Correcting warmup gives 0.602, adding cosine decay
+  0.571, and tuning batch size, learning rate and β₂ gives 0.497. On that
+  account counting is part of the story, not most of it.
+- **"Count total parameters" and "count the head" are not the same
+  instruction.** With untied embeddings they differ by the input embedding.
+  Porian excludes it and this paper includes it.
+- **Two references in the published version are wrong.** One is a template
+  placeholder ("J. Smith and A. Doe. The role of xyz in abc"). The other gives
+  the "Hernandez et al., 2023" entry Kaplan's title and another paper's DOI.
+  Do not propagate either.
+
+## Standing in the anthology
+
+Filed from the reading-time triage of 2026-09-25. It is a correction of
+[LIT-028](LIT-028.md)'s allocation exponent, and it **changes a sentence the record
+repeated.** [LIT-028](LIT-028.md) said the fixed schedule was "the methodological choice
+Chinchilla later identified as the source of the wrong allocation
+exponent". Chinchilla *proposed* that. This paper, at tiny scale, and Porian
+et al., over 900 runs at 5M–901M, both find the schedule is not the main
+cause. [LIT-028](LIT-028.md) is amended in the same contribution. [NOTE-017](../notes.d/NOTE-017.md)
+and [NOTE-072](../notes.d/NOTE-072.md) repeat the same attribution and are left for a
+pass that also files Porian.
+
+It sources `SOTA-tmp7rph1`: count the output head, and fit with an offset.
+It supports [SOTA-096](../practices.d/SOTA-096.md)'s 20:1 as reaffirmation, not as a new
+measurement.
+
+**Porian et al. should be filed next.** It is the large-scale test, it
+corroborates this paper in part and corrects it in part, and it is what a
+theory of the Kaplan–Chinchilla gap would need as its primary source.

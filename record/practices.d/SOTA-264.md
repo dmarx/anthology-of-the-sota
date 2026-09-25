@@ -34,6 +34,8 @@ summary: >-
   low-discrepancy sampler for the time variable cuts the variance further.
 explained_by:
 - THEORY-027
+compared_against:
+- SOTA-tmp61nli
 ---
 
 # SOTA-264: Fix the noise schedule's endpoints against the bound and choose its shape to minimise the loss estimator's variance

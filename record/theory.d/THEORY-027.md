@@ -4,12 +4,24 @@ status: Active
 formerly:
 - THEORY-tmp962qd
 title: 'In continuous time the diffusion bound depends on the noise schedule only through its endpoints'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Scoped to scalar schedules. LIT-tmp1jb6n (MuLAN) shows the invariance
+    follows because a scalar schedule confines the bound's path in SNR-space
+    to one line. Its own scalar ablation and schedule-swap test reproduce
+    this document's result exactly (2.65 bits/dim either way). A per-dimension
+    schedule conditioned on a learned latent moves the bound (2.65 → 2.60 at
+    equal steps). The account is unchanged within its scope, and it stays
+    Active.
 tags:
 - generative-modeling
 date: '2026-09-20'
 source:
 - LIT-446
+- LIT-tmp1jb6n
 explains:
 - SOTA-188
 - SOTA-264
@@ -20,6 +32,8 @@ summary: >-
   the generative distribution therefore depend on the schedule through two
   numbers, and variance-preserving and variance-exploding specifications are
   the same model up to a rescaling of the latents.
+extended_by:
+- THEORY-tmpxkux1
 ---
 
 # THEORY-027: In continuous time the diffusion bound depends on the noise schedule only through its endpoints
@@ -90,6 +104,20 @@ interchangeable in a codebase, or their numerics equally well-conditioned.
 **It does not say how fast the discrete case approaches the continuous one.**
 The Riemann argument gives monotone improvement and no rate, and the rate is
 what a practitioner with a step budget needs.
+
+**It is about scalar schedules: one SNR function shared by every dimension.**
+That is the only kind [LIT-446](../literature.d/LIT-446.md) considers, and the substitution
+that removes the schedule from the integrand relies on it. With a
+per-dimension schedule the bound becomes a line integral along a path in
+SNR-space, and many paths connect the same endpoints.
+[LIT-tmp1jb6n](../literature.d/LIT-tmp1jb6n.md) (MuLAN) reports that such a schedule, conditioned on a
+learned auxiliary latent, improves the bound at equal steps (2.65 → 2.60 on
+CIFAR-10). It also re-measures this account inside its scope. A scalar
+schedule conditioned on the input gives no advantage, and a trained MuLAN
+denoiser moved onto a scalar or linear schedule "reduces to the same value as
+that of the VDM: 2.65". That path-dependence holds in general for
+multivariate schedules is argued by analogy in that paper, not proved. Its
+own time-only multivariate arm matched VDM.
 
 **It says nothing about sample quality.** The bound is a likelihood, the
 source's benchmarks are density estimation, and the record's diffusion

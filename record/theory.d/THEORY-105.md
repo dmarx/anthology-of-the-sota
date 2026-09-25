@@ -1,5 +1,8 @@
 ---
+number: 105
 status: Proposed
+formerly:
+- THEORY-tmpm6tyr
 title: "Soft targets transfer the teacher's similarity structure over wrong classes, which carries more information per example than a hard label"
 version: 1
 tags:
@@ -7,9 +10,9 @@ tags:
 - training-optimization
 date: '2026-09-25'
 source:
-- LIT-tmpa3ip4
+- LIT-680
 explains:
-- SOTA-tmprzws7
+- SOTA-420
 promote_when: >-
   An experiment that holds the soft targets' entropy fixed while scrambling
   the ranking over wrong classes, and shows that the ranking is what
@@ -17,7 +20,7 @@ promote_when: >-
   output-confidence regularization, which predicts the same gains. A further
   distillation success does not help, because both accounts predict it.
 summary: >-
-  Hinton et al. (2015), [LIT-tmpa3ip4](../literature.d/LIT-tmpa3ip4.md). The small probabilities a trained model
+  Hinton et al. (2015), [LIT-680](../literature.d/LIT-680.md). The small probabilities a trained model
   assigns to wrong classes encode how it generalizes: a BMW is rarely
   mistaken for a garbage truck, but far more often than for a carrot. Raising
   the temperature exposes that structure, and a student trained on it gets
@@ -27,13 +30,13 @@ summary: >-
   regularizer.
 ---
 
-<!-- inactive-ok-file: SOTA-tmprzws7 — Proposed; the practice this account would explain -->
+<!-- inactive-ok-file: SOTA-420 — Proposed; the practice this account would explain -->
 
-# THEORY-tmpm6tyr: Soft targets transfer the teacher's similarity structure over wrong classes, which carries more information per example than a hard label
+# THEORY-105: Soft targets transfer the teacher's similarity structure over wrong classes, which carries more information per example than a hard label
 
 ## Source
 
-Hinton, Vinyals and Dean (2015), [LIT-tmpa3ip4](../literature.d/LIT-tmpa3ip4.md), Introduction and §§3, 6.
+Hinton, Vinyals and Dean (2015), [LIT-680](../literature.d/LIT-680.md), Introduction and §§3, 6.
 
 ## The account
 
@@ -65,7 +68,7 @@ separation in either direction.
 
 ## What it explains
 
-Why [SOTA-tmprzws7](../practices.d/SOTA-tmprzws7.md) uses a raised temperature at all, and why
+Why [SOTA-420](../practices.d/SOTA-420.md) uses a raised temperature at all, and why
 a starved student prefers a moderate one. Under this account a moderate `T`
 keeps the informative wrong-class ranking and drops the noise in very
 negative logits that a small model cannot fit anyway.

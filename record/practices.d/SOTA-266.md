@@ -72,7 +72,7 @@ summary: >-
   distribution decides the ranking: uniform does not beat tuned
   ε-prediction and logit-normal does.
 explained_by:
-- THEORY-tmpxkux1
+- THEORY-106
 ---
 
 # SOTA-266: Connect data and noise on a straight line, and sample the training timesteps from a logit-normal rather than uniformly

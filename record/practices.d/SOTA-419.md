@@ -1,5 +1,8 @@
 ---
+number: 419
 status: Proposed
+formerly:
+- SOTA-tmpkawow
 consensus: unreplicated
 consensus_note: >-
   Two halves with different support. The premise, that at fixed parameter
@@ -23,17 +26,17 @@ tags:
 - tiny-models
 date: '2026-09-25'
 source:
-- LIT-tmpa75eq
+- LIT-681
 - LIT-028
-# LIT-tmpa75eq is the controlled study at small budget and states the rule.
+# LIT-681 is the controlled study at small budget and states the rule.
 # LIT-028 is the premise, shape insensitivity at fixed size, measured
 # independently and at far larger scale (ADR-030).
 introduced_by:
-- LIT-tmpa75eq
+- LIT-681
 implementations:
 - 'cramming (no QKV or linear biases, no decoder bias, sparse token prediction)'
 summary: >-
-  Geiping and Goldstein (2023), [LIT-tmpa75eq](../literature.d/LIT-tmpa75eq.md). Under a 24-hour, one-GPU budget,
+  Geiping and Goldstein (2023), [LIT-681](../literature.d/LIT-681.md). Under a 24-hour, one-GPU budget,
   every reshape tried (depth 4 to 24, deep-narrow, wide, funnel,
   FFN-every-k, shared layers) finishes within about 0.1 of the same MLM loss.
   A smaller model's extra throughput cancels its slower per-token learning.
@@ -46,11 +49,11 @@ summary: >-
 <!-- inactive-ok-file: SOTA-190 — Proposed, named as the claim this practice's
      source bounds at small budget without refuting -->
 
-# SOTA-tmpkawow: Under a fixed compute budget, change the architecture only where it cuts step time at constant parameter count
+# SOTA-419: Under a fixed compute budget, change the architecture only where it cuts step time at constant parameter count
 
 ## Source
 
-Geiping and Goldstein (ICML 2023), [LIT-tmpa75eq](../literature.d/LIT-tmpa75eq.md), on the premise
+Geiping and Goldstein (ICML 2023), [LIT-681](../literature.d/LIT-681.md), on the premise
 Kaplan et al. measured in [LIT-028](../literature.d/LIT-028.md).
 
 ## What to do

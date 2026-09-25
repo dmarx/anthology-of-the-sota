@@ -1,5 +1,8 @@
 ---
+number: 412
 status: Proposed
+formerly:
+- SOTA-tmp61nli
 consensus: unreplicated
 consensus_note: >-
   One group. Other learned-forward-process methods exist (NDM, DiffEnc), but
@@ -19,15 +22,15 @@ tags:
 - training-optimization
 date: '2026-09-25'
 source:
-- LIT-tmp1jb6n
+- LIT-677
 introduced_by:
-- LIT-tmp1jb6n
+- LIT-677
 compared_against:
 - SOTA-264
 implementations:
 - 'MuLAN (github.com/s-sahoo/MuLAN)'
 summary: >-
-  Sahoo et al. (NeurIPS 2024), [LIT-tmp1jb6n](../literature.d/LIT-tmp1jb6n.md). For density estimation with a
+  Sahoo et al. (NeurIPS 2024), [LIT-677](../literature.d/LIT-677.md). For density estimation with a
   pixel-space diffusion model, replace the scalar learned schedule with a
   per-dimension one conditioned on a small discrete latent that an encoder
   infers from the image. Keep the endpoints fixed. VDM's bound is reached in
@@ -39,11 +42,11 @@ summary: >-
 <!-- inactive-ok-file: SOTA-264 — Proposed; named as the rival for the same objective
      in the other regime, which is what the comparison says about it -->
 
-# SOTA-tmp61nli: When the target is likelihood, learn a per-dimension noise schedule conditioned on a learned latent; a scalar or unconditioned one buys nothing
+# SOTA-412: When the target is likelihood, learn a per-dimension noise schedule conditioned on a learned latent; a scalar or unconditioned one buys nothing
 
 ## Source
 
-Sahoo, Gokaslan, De Sa and Kuleshov (2023; NeurIPS 2024), [LIT-tmp1jb6n](../literature.d/LIT-tmp1jb6n.md).
+Sahoo, Gokaslan, De Sa and Kuleshov (2023; NeurIPS 2024), [LIT-677](../literature.d/LIT-677.md).
 
 ## What to do
 

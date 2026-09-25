@@ -1,5 +1,8 @@
 ---
+number: 420
 status: Proposed
+formerly:
+- SOTA-tmprzws7
 consensus: unassessed
 consensus_note: >-
   Training students on teacher outputs is everywhere, but temperature, the
@@ -20,25 +23,25 @@ tags:
 - training-optimization
 date: '2026-09-25'
 source:
-- LIT-tmpa3ip4
+- LIT-680
 introduced_by:
-- LIT-tmpa3ip4
+- LIT-680
 implementations: []
 summary: >-
-  Hinton et al. (2015), [LIT-tmpa3ip4](../literature.d/LIT-tmpa3ip4.md). Soft-target cross-entropy at temperature `T`
+  Hinton et al. (2015), [LIT-680](../literature.d/LIT-680.md). Soft-target cross-entropy at temperature `T`
   in both teacher and student, plus a hard-label cross-entropy at `T = 1` with
   a considerably lower weight. Multiply the soft term by `T²`, so the balance
   does not move when `T` changes. Start low for a small student. The paper's
   best realistic setting was `T = 2`, and a 30-unit MNIST net wanted 2.5–4.
 explained_by:
-- THEORY-tmpm6tyr
+- THEORY-105
 ---
 
-# SOTA-tmprzws7: When distilling a classifier, match the teacher's temperature-softened outputs at the same temperature and keep a down-weighted hard-label term
+# SOTA-420: When distilling a classifier, match the teacher's temperature-softened outputs at the same temperature and keep a down-weighted hard-label term
 
 ## Source
 
-Hinton, Vinyals and Dean (2015), [LIT-tmpa3ip4](../literature.d/LIT-tmpa3ip4.md).
+Hinton, Vinyals and Dean (2015), [LIT-680](../literature.d/LIT-680.md).
 
 ## What to do
 

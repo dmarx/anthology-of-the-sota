@@ -45,7 +45,7 @@ history:
   date: '2026-09-25'
   note: >-
     A second language model on the right edge, and this time one with a
-    standard architecture. LIT-tmpa75eq trains a BERT-base-shaped MLM for a single
+    standard architecture. LIT-681 trains a BERT-base-shaped MLM for a single
     epoch, and turning dropout on costs 0.8 MNLI-m (80.95 against 81.79).
     That is one run. The recommendation is unchanged. The note that the
     record had only "one 2019 encoder with an unusual architecture" no
@@ -62,7 +62,7 @@ source:
 - LIT-395
 - LIT-119
 - LIT-668
-- LIT-tmpa75eq
+- LIT-681
 introduced_by:
 - LIT-394
 implementations:
@@ -136,7 +136,7 @@ So the right edge holds on one language model, for the reason the 2014 curve
 gives. And 0.3 points of average on one configuration is a confirmation, not a
 large effect.
 
-[LIT-tmpa75eq](../literature.d/LIT-tmpa75eq.md) is the second, with an ordinary architecture. It is a
+[LIT-681](../literature.d/LIT-681.md) is the second, with an ordinary architecture. It is a
 BERT-base-shaped MLM trained for 24 hours on one GPU over a single epoch, where
 "overfitting is not possible". Dropout is off in pretraining and back on at 0.1
 for fine-tuning. The one row that turns it on in pretraining gives **80.95

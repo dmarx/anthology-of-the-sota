@@ -9,7 +9,7 @@ Every reference in the record is a claim — "this is why things are the way the
 
 Only an `Active` document is in force. `Proposed` and `Deferred` mean *not in force yet* — an open question, being cited as if it were settled — while `Superseded` and `Rejected` mean *no longer in force*, which is often a perfectly good thing to cite: history, or a rejection worth pointing at. Either way the citation should be deliberate, and this section lists the ones nobody has vouched for yet.
 
-**5 documents cited without acknowledgement.** Not listed: 1615 citations someone has already vouched for with an `inactive-ok:` comment at the citing site.
+**5 documents cited without acknowledgement.** Not listed: 1651 citations someone has already vouched for with an `inactive-ok:` comment at the citing site.
 
 To vouch for one, put the reason where the citation is — `inactive-ok:` covers its own line and the line below it, `inactive-ok-block:` its paragraph, `inactive-ok-file:` the whole page:
 
@@ -41,7 +41,7 @@ SGDR: Stochastic Gradient Descent with Warm Restarts
 
 1 citation in 1 file awaits a look; 11 other citations of it are acknowledged.
 
-- [`record/practices.d/SOTA-140.md:44`](../../record/practices.d/SOTA-140.md)
+- [`record/practices.d/SOTA-140.md:53`](../../record/practices.d/SOTA-140.md)
 
 ### [SOTA-023](../../record/practices.d/SOTA-023.md) — Superseded
 

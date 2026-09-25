@@ -1,10 +1,13 @@
 ---
+number: 411
 status: Proposed
+formerly:
+- SOTA-tmp5r387
 consensus: unreplicated
 consensus_note: >-
   One model, one successful run after two failures, from one group. Looped
   and universal transformers have a longer literature, but this record holds
-  none of it. The same authors' earlier LIT-tmpa75eq found no gain from
+  none of it. The same authors' earlier LIT-681 found no gain from
   recurrence at matched wall-clock on a small encoder. Read as of 2026-09.
 promote_when: >-
   A recurrent-depth model is compared against a standard transformer at
@@ -20,13 +23,13 @@ tags:
 - training-optimization
 date: '2026-09-25'
 source:
-- LIT-tmpdiu35
+- LIT-683
 introduced_by:
-- LIT-tmpdiu35
+- LIT-683
 implementations:
 - 'Huginn-0125'
 summary: >-
-  Geiping et al. (NeurIPS 2025), [LIT-tmpdiu35](../literature.d/LIT-tmpdiu35.md). Put a small core block
+  Geiping et al. (NeurIPS 2025), [LIT-683](../literature.d/LIT-683.md). Put a small core block
   between a short prelude and coda. At each training step sample how many
   times to iterate it, from a heavy-tailed distribution with mean 32.
   Backpropagate through the last few iterations only. Feed the input
@@ -36,11 +39,11 @@ summary: >-
   it beats a standard transformer of the same FLOPs.
 ---
 
-# SOTA-tmp5r387: To let a model spend more compute at inference without more parameters, train a depth-recurrent core on a randomly sampled iteration count, re-injecting the input at every iteration
+# SOTA-411: To let a model spend more compute at inference without more parameters, train a depth-recurrent core on a randomly sampled iteration count, re-injecting the input at every iteration
 
 ## Source
 
-Geiping et al. (2025), [LIT-tmpdiu35](../literature.d/LIT-tmpdiu35.md).
+Geiping et al. (2025), [LIT-683](../literature.d/LIT-683.md).
 
 ## What to do
 
@@ -69,7 +72,7 @@ architecture run once through the core, or the recurrent model evaluated at
 - **Per parameter, not per FLOP.** The source shows accuracy per parameter.
   It has no standard transformer trained at matched compute. The same authors
   found, at small scale and equal wall-clock, that shared recurrent layers
-  gave no gain over unshared ones ([LIT-tmpa75eq](../literature.d/LIT-tmpa75eq.md)).
+  gave no gain over unshared ones ([LIT-681](../literature.d/LIT-681.md)).
   Use this where parameters or memory bind. Where FLOPs bind, the case is not
   made.
 - **Training was fragile.** Two runs failed: one by representation collapse,

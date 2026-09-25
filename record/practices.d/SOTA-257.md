@@ -22,7 +22,7 @@ history:
 - version: 2
   date: '2026-09-25'
   note: >-
-    LIT-tmpa3ip4 (Hinton et al. 2015) added as a second source, for the
+    LIT-680 (Hinton et al. 2015) added as a second source, for the
     distillation leg only. It independently measures a 10-member ensemble
     distilling into one member-sized model and keeping 86% of the gain. It
     uses a different method from LIT-441 (soft targets rather than
@@ -34,10 +34,10 @@ tags:
 date: '2026-09-19'
 source:
 - LIT-441
-# LIT-tmpa3ip4 supports the distillation leg only ("distil to pay for it once").
+# LIT-680 supports the distillation leg only ("distil to pay for it once").
 # It never compares an ensemble with a single model of equal total size,
 # which is this practice's claim (ADR-030).
-- LIT-tmpa3ip4
+- LIT-680
 introduced_by:
 - LIT-441
 implementations: []
@@ -96,7 +96,7 @@ identical architecture — also improves on its teacher, which removes the
 large model from training as well as from serving.
 
 The distillation leg has a second, older measurement from a different
-method. Hinton et al. ([LIT-tmpa3ip4](../literature.d/LIT-tmpa3ip4.md)) distil a 10-member speech ensemble
+method. Hinton et al. ([LIT-680](../literature.d/LIT-680.md)) distil a 10-member speech ensemble
 into one model the size of a member, using temperature-softened soft targets,
 and keep **86%** of the frame-accuracy gain. Kim et al. use sequence-level
 distillation. Two methods, a decade apart, land at about the same fraction.

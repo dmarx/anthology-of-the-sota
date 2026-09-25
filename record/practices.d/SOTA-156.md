@@ -21,7 +21,7 @@ history:
 - version: 2
   date: '2026-09-25'
   note: >-
-    LIT-tmpbrc19 (ScheduleFree+, same author) added as a second source.
+    LIT-682 (ScheduleFree+, same author) added as a second source.
     Its admissions changed two passages. "No additional hyperparameter" was
     false at scale: plain Schedule-Free hits a cliff at 2M-token batches
     without inner momentum, and its small weight decay was compensating for
@@ -37,7 +37,7 @@ source:
 # practice that later gains a replication needs somewhere to put it
 # (ADR-010) — and gaining one is exactly what promote_when is waiting for.
 - LIT-213
-- LIT-tmpbrc19
+- LIT-682
 introduced_by:
 - LIT-213
 implementations:
@@ -87,7 +87,7 @@ record trains under it.
 One comparison is specifically *not* established and should not be read in:
 whether Schedule-Free was measured against a tuned warmup-stable-decay arm.
 The paper's case is made against schedules that fix T; [SOTA-140](SOTA-140.md)'s case is
-that WSD does not have to. Both claim the open budget. [LIT-tmpbrc19](../literature.d/LIT-tmpbrc19.md) has
+that WSD does not have to. Both claim the open budget. [LIT-682](../literature.d/LIT-682.md) has
 since run them against each other, from 120M to 2B, and WSD lost at every
 size. But the arm that won was ScheduleFree+, not Schedule-Free AdamW. It is
 a package with inner momentum, Polyak steps and AdamC weight decay, set

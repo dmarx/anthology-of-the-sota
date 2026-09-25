@@ -6,7 +6,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-30 of 410 SOTA documents. Back to the [full index](../README.md).
+32 of 420 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -40,3 +40,5 @@
 | [SOTA-398](../../../record/practices.d/SOTA-398.md) v2 | Pretrain a vision transformer on packed, aspect-preserved images at sampled resolutions, not on fixed square crops | Dehghani et al. (2023), [LIT-657](../../../record/literature.d/LIT-657.md). Do not resize or crop images to one square resolution. Keep each image's aspect ratio and sample its resolution per example, favouring small side lengths. Pack the patches into fixed-length sequences with per-example attention masks. At matched compute this beats square fixed-resolution ViT pretraining, and matches the best ViT with 4x less compute. Most of the gain is throughput. | Proposed |
 | [SOTA-400](../../../record/practices.d/SOTA-400.md) | Append a few register tokens to a ViT so it does not commandeer background patches for scratch space |  | Active |
 | [SOTA-401](../../../record/practices.d/SOTA-401.md) | Anchor the patch Gram matrix to an early teacher when training long, because dense features decay while global metrics improve |  | Proposed |
+| [SOTA-414](../../../record/practices.d/SOTA-414.md) | To make an image diffusion model a dense geometric predictor, fine-tune it end to end as a one-step model at t = T with a task loss | Martin Garcia et al. (WACV 2025), [LIT-687](../../../record/literature.d/LIT-687.md). Fix the timestep at T, feed zeros as the noise, decode the prediction through the frozen VAE, and train on the task's own loss: affine-invariant L1 for depth, angular error for normals. From 20K iterations on 74K synthetic images, the one-step model beats Marigold's 50-step, 10-member ensemble on depth AbsRel on all five zero-shot sets, and on normals by 2.6–3.0° of mean error. Starting from plain Stable Diffusion is nearly as good. | Proposed |
+| [SOTA-416](../../../record/practices.d/SOTA-416.md) | When sampling a diffusion model in few steps, start at t = T: use trailing, not leading, timestep spacing | Martin Garcia et al. (WACV 2025), [LIT-687](../../../record/literature.d/LIT-687.md). DDIM's "leading" spacing never visits the final timestep. So at one step, a pure-noise input is labelled with a timestep that claims an almost clean sample. With the same weights and only the spacing changed, Marigold's single-step depth goes from noise to NYUv2 AbsRel 5.7. The mismatch vanishes as the step count approaches T, which is why it goes unnoticed at 50 steps. | Proposed |

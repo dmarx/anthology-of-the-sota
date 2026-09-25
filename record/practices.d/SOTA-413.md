@@ -1,5 +1,8 @@
 ---
+number: 413
 status: Proposed
+formerly:
+- SOTA-tmp7rph1
 consensus: emerging
 consensus_note: >-
   Chinchilla counts total parameters, and Pearce and Song and Porian et al.
@@ -21,12 +24,12 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-25'
 source:
-- LIT-tmpyb87m
+- LIT-688
 introduced_by:
-- LIT-tmpyb87m
+- LIT-688
 implementations: []
 summary: >-
-  Pearce and Song (TMLR 2024), [LIT-tmpyb87m](../literature.d/LIT-tmpyb87m.md). At small scale the embedding
+  Pearce and Song (TMLR 2024), [LIT-688](../literature.d/LIT-688.md). At small scale the embedding
   and output head are a large share of the model. Excluding them from N, and
   from the FLOPs in `C = 6ND`, biases the fitted allocation exponent: 0.49
   becomes 0.74 when the same runs are relabelled. An offset-free loss–compute
@@ -34,11 +37,11 @@ summary: >-
   count differently.
 ---
 
-# SOTA-tmp7rph1: In a scaling-law study, count the output head in parameters and FLOPs, and fit loss against compute with an irreducible-loss offset
+# SOTA-413: In a scaling-law study, count the output head in parameters and FLOPs, and fit loss against compute with an irreducible-loss offset
 
 ## Source
 
-Pearce and Song (2024), [LIT-tmpyb87m](../literature.d/LIT-tmpyb87m.md), explaining the gap between
+Pearce and Song (2024), [LIT-688](../literature.d/LIT-688.md), explaining the gap between
 [LIT-028](../literature.d/LIT-028.md) and [LIT-068](../literature.d/LIT-068.md).
 
 ## What to do

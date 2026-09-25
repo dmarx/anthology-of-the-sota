@@ -2,7 +2,7 @@
 
 # Lines of explanation
 
-11 lines, walked from `extends:` and `corrects:` on THEORY documents. Each step explains itself; this page is the order they came in.
+12 lines, walked from `extends:` and `corrects:` on THEORY documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -63,6 +63,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [THEORY-034](../record/theory.d/THEORY-034.md) — Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations *(Proposed)*
 
 ## generative-modeling
+
+### From In continuous time the diffusion bound depends on the noise schedule only through its endpoints
+
+- [THEORY-027](../record/theory.d/THEORY-027.md) — In continuous time the diffusion bound depends on the noise schedule only through its endpoints *(Active)*
+  - [THEORY-106](../record/theory.d/THEORY-106.md) — Gaussian flow matching is a diffusion model; what separates the named recipes is loss weighting, network output and sampling schedule *(Active)*
 
 ### From What makes a diffusion model generative is iterated restoration of any degradation, not Gaussian noise
 

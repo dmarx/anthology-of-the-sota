@@ -1,8 +1,11 @@
 ---
+number: 415
 status: Proposed
+formerly:
+- SOTA-tmpc94s8
 consensus: emerging
 consensus_note: >-
-  Hägele et al. (LIT-145) and Li et al. (LIT-tmpgu920) report the effect
+  Hägele et al. (LIT-145) and Li et al. (LIT-684) report the effect
   independently, at ≤1B and up to 20B/200B MoE and 70B dense respectively.
   LIT-445 uses the same instrument. No one reports a contradiction. What is
   *not* established is using the average as a replacement for the anneal. Read
@@ -21,16 +24,16 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-25'
 source:
-- LIT-tmpgu920
+- LIT-684
 - LIT-145
-# LIT-tmpgu920 is the large-scale measurement and the one fork against a
+# LIT-684 is the large-scale measurement and the one fork against a
 # real anneal. LIT-145 is the earlier, independent result at smaller scale
 # (ADR-030).
 introduced_by:
 - LIT-145
 implementations: []
 summary: >-
-  Li et al. (2025), [LIT-tmpgu920](../literature.d/LIT-tmpgu920.md), extending Hägele et al. (2024), [LIT-145](../literature.d/LIT-145.md).
+  Li et al. (2025), [LIT-684](../literature.d/LIT-684.md), extending Hägele et al. (2024), [LIT-145](../literature.d/LIT-145.md).
   To see where a WSD run would land if annealed now, evaluate the simple
   average of its last ~10 stable-phase checkpoints. On the one fork measured,
   that proxy sits within about 1.5 points of a real 250B-token anneal on each
@@ -41,11 +44,11 @@ summary: >-
 <!-- inactive-ok-file: SOTA-156 — Proposed; named as the rival practice for dropping the
      decay, which this one explicitly does not recommend -->
 
-# SOTA-tmpc94s8: During a warmup-stable-decay run, estimate the annealed score from a uniform average of recent stable-phase checkpoints instead of launching a decay branch
+# SOTA-415: During a warmup-stable-decay run, estimate the annealed score from a uniform average of recent stable-phase checkpoints instead of launching a decay branch
 
 ## Source
 
-Li et al. (2025), [LIT-tmpgu920](../literature.d/LIT-tmpgu920.md). The practice's idea is earlier,
+Li et al. (2025), [LIT-684](../literature.d/LIT-684.md). The practice's idea is earlier,
 in Hägele et al. (2024), [LIT-145](../literature.d/LIT-145.md): averaging along a constant-LR
 trajectory improves the model at no training cost.
 

@@ -4,7 +4,7 @@
 
 **distributed-optimization**.
 
-45 of 351 NOTE documents. Back to the [full index](../README.md).
+46 of 351 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -37,6 +37,7 @@
 | [NOTE-130](../../../record/notes.d/NOTE-130.md) | OpenDiLoCo: An Open-Source Framework for Globally Distributed Low-Communication Training | DiLoCo's dual-optimizer local-SGD approach reduces inter-node communication by up to 500x with negligible quality loss, and pseudo-gradients can be all- reduced in FP16 without performance degradation, making billion-scale decentralized training practical. | Read |
 | [NOTE-133](../../../record/notes.d/NOTE-133.md) | Local SGD Converges Fast and Communicates Little | Workers can run SGD independently for H steps before averaging, and as long as H = O(sqrt(T/(Kb))), this infrequent synchronization incurs no asymptotic cost in convergence rate—communication can be slashed without sacrificing linear speedup. | Read |
 | [NOTE-135](../../../record/notes.d/NOTE-135.md) | SWARM Parallelism: Training Large Models Can Be Surprisingly Communication-Efficient | In pipeline parallelism, computation scales as O(n^3) while communication scales as O(n^2) with model size, so sufficiently large models can be trained efficiently even over internet-grade connections—SWARM exploits this by using stochastic pipelines that dynamically rebalance load across unreliable heterogeneous nodes. | Read |
+| [NOTE-136](../../../record/notes.d/NOTE-136.md) v2 | Coordination of groups of mobile autonomous agents using nearest neighbor rules | Even if a network is disconnected at every individual time step — no single round of communication reaches everyone — the agents can still reach consensus as long as the *union* of communication graphs over any fixed- length sliding window has a spanning tree. | Read |
 | [NOTE-137](../../../record/notes.d/NOTE-137.md) | Towards Crowdsourced Training of Large Neural Networks using Decentralized Mixture-of-Experts | Mixture-of-Experts architectures are uniquely suited to volunteer computing because each input activates only a small fraction of all experts, making asynchronous training with stale gradients far less harmful than in dense networks, while the DHT enables scalable decentralized bookkeeping without any central coordinator. | Read |
 | [NOTE-141](../../../record/notes.d/NOTE-141.md) | Generalized EXTRA stochastic gradient Langevin dynamics | Standard decentralized SGLD (DE-SGLD) suffers from a bias due to network effects that does not vanish even with full-batch gradients; adapting the EXTRA correction mechanism from decentralized optimization to Langevin dynamics eliminates this bias and yields faster convergence. | Read |
 | [NOTE-142](../../../record/notes.d/NOTE-142.md) | HOGWILD!: A Lock-Free Approach to Parallelizing Stochastic Gradient Descent | When the optimization problem is sparse (each gradient update touches only a small fraction of the decision variable), memory overwrites between processors are rare and introduce negligible error, making lock-free parallel SGD both safe and efficient. | Read |

@@ -1,5 +1,8 @@
 ---
+number: 106
 status: Active
+formerly:
+- THEORY-tmpxkux1
 title: 'Gaussian flow matching is a diffusion model; what separates the named recipes is loss weighting, network output and sampling schedule'
 version: 1
 tags:
@@ -7,7 +10,7 @@ tags:
 - training-optimization
 date: '2026-09-25'
 source:
-- LIT-tmp21kip
+- LIT-678
 - LIT-630
 extends:
 - THEORY-027
@@ -21,7 +24,7 @@ promote_when: >-
   or only the network output (û against v̂). A new "flow matching beats
   diffusion" result that changes all three at once would not settle it.
 summary: >-
-  Gao et al. (2024), [LIT-tmp21kip](../literature.d/LIT-tmp21kip.md), on [LIT-630](../literature.d/LIT-630.md). With a Gaussian
+  Gao et al. (2024), [LIT-678](../literature.d/LIT-678.md), on [LIT-630](../literature.d/LIT-630.md). With a Gaussian
   source the flow-matching interpolant is a diffusion forward process with
   `α_t = 1−t, σ_t = t`. The conditional flow-matching loss is an ε-MSE under
   one particular weighting, and the flow-matching Euler sampler is DDIM. So a
@@ -32,11 +35,11 @@ summary: >-
   integrates.
 ---
 
-# THEORY-tmpxkux1: Gaussian flow matching is a diffusion model; what separates the named recipes is loss weighting, network output and sampling schedule
+# THEORY-106: Gaussian flow matching is a diffusion model; what separates the named recipes is loss weighting, network output and sampling schedule
 
 ## Source
 
-Gao, Hoogeboom, Heek, De Bortoli, Murphy and Salimans (2024), [LIT-tmp21kip](../literature.d/LIT-tmp21kip.md),
+Gao, Hoogeboom, Heek, De Bortoli, Murphy and Salimans (2024), [LIT-678](../literature.d/LIT-678.md),
 a blog post that assembles derivations. Part of the account is already in
 [LIT-630](../literature.d/LIT-630.md), whose Theorem 3 and "diffusion is one choice of path"
 make the forward-process half. The weighting identity is Kingma & Gao (2023),

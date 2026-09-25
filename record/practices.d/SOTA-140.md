@@ -39,7 +39,7 @@ history:
   date: '2026-09-25'
   note: >-
     "Nobody has run the two against each other" is no longer true.
-    LIT-tmpbrc19 runs ScheduleFree+ against WSD from 120M to 2B, and WSD loses
+    LIT-682 runs ScheduleFree+ against WSD from 120M to 2B, and WSD loses
     at every size. It also reports tuned linear decay beating WSD at a known
     horizon. Neither changes the recommendation. Both come from one author
     and one seed per arm, and ScheduleFree+'s arm differs from the WSD arm in
@@ -162,7 +162,7 @@ need not be fixed when training starts — with no decay phase to launch and no
 peak re-tuned for a constant stage, since there is no constant stage.
 
 Someone has now run the two against each other, though not in the form
-that practice's `promote_when:` asks for. [LIT-tmpbrc19](../literature.d/LIT-tmpbrc19.md) (2026) runs
+that practice's `promote_when:` asks for. [LIT-682](../literature.d/LIT-682.md) (2026) runs
 ScheduleFree+ against a WSD arm from 120M to 2B parameters, and WSD loses at
 every size and at every horizon it tests. Three things keep that from
 displacing this practice. The winning arm is a package (inner momentum,

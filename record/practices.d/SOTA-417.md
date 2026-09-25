@@ -1,5 +1,8 @@
 ---
+number: 417
 status: Proposed
+formerly:
+- SOTA-tmphcbvi
 consensus: unreplicated
 consensus_note: >-
   One group, one budget, one pretraining run per cell. Heuristic filters that
@@ -20,13 +23,13 @@ tags:
 - training-optimization
 date: '2026-09-25'
 source:
-- LIT-tmpa75eq
+- LIT-681
 introduced_by:
-- LIT-tmpa75eq
+- LIT-681
 implementations:
 - 'cramming (t = 0.25 on a WordPiece tokenizer trained on the same corpus)'
 summary: >-
-  Geiping and Goldstein (2023), [LIT-tmpa75eq](../literature.d/LIT-tmpa75eq.md). Drop every document whose
+  Geiping and Goldstein (2023), [LIT-681](../literature.d/LIT-681.md). Drop every document whose
   token count exceeds `t` times its character count. Text a tokenizer trained
   on the corpus compresses badly is mostly markup, code fragments and debris.
   No model is needed. On C4 it lifts GLUE from **75.9 to 79.3**, and on
@@ -34,11 +37,11 @@ summary: >-
   dirty the source was.
 ---
 
-# SOTA-tmphcbvi: Filter pretraining text by how well the tokenizer compresses it
+# SOTA-417: Filter pretraining text by how well the tokenizer compresses it
 
 ## Source
 
-Geiping and Goldstein (ICML 2023), [LIT-tmpa75eq](../literature.d/LIT-tmpa75eq.md), §4.4 and Tables 2 and 7.
+Geiping and Goldstein (ICML 2023), [LIT-681](../literature.d/LIT-681.md), §4.4 and Tables 2 and 7.
 
 ## What to do
 

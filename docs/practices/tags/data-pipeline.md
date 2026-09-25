@@ -6,7 +6,7 @@
 
 **Data pipeline** — loading, quality assessment and selection, preprocessing, batch preparation.
 
-51 of 410 SOTA documents. Back to the [full index](../README.md).
+52 of 420 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -61,3 +61,4 @@
 | [SOTA-387](../../../record/practices.d/SOTA-387.md) | Hold out a slice of the training set for model selection instead of selecting on the validation split | Beyer et al. (2022), [LIT-628](../../../record/literature.d/LIT-628.md) — they train on the first 99% of ImageNet-1k and keep 1% as a "minival", stated as being "to encourage the community to stop selecting design choices on the validation (de-facto test) set." A convention, asserted rather than measured, and the record held no document on it. | Proposed |
 | [SOTA-389](../../../record/practices.d/SOTA-389.md) v3 | Caption training video with a model that watches the video, not with captions of its frames |  | Proposed |
 | [SOTA-402](../../../record/practices.d/SOTA-402.md) | To teach a model to reason over facts it holds, spend added data on facts derived from other facts rather than on more atomic facts | Wang et al. (2024), [LIT-667](../../../record/literature.d/LIT-667.md). Two sweeps that separate what is normally varied together: with the inferred/atomic ratio `φ` fixed, scaling the training set changes nothing about how a transformer acquires a two-fact inference rule; with the size effect thus accounted for, raising `φ` moves the acquisition monotonically, and at `φ = 18.0` the delay is gone — 96.7% before training accuracy has even saturated. Synthetic knowledge graphs only, and it buys rule application on facts already seen in compositions, not systematicity. | Proposed |
+| [SOTA-417](../../../record/practices.d/SOTA-417.md) | Filter pretraining text by how well the tokenizer compresses it | Geiping and Goldstein (2023), [LIT-681](../../../record/literature.d/LIT-681.md). Drop every document whose token count exceeds `t` times its character count. Text a tokenizer trained on the corpus compresses badly is mostly markup, code fragments and debris. No model is needed. On C4 it lifts GLUE from **75.9 to 79.3**, and on already-clean bookcorpus-wikipedia from 78.1 to 78.7. The gain tracks how dirty the source was. | Proposed |

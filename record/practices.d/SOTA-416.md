@@ -1,9 +1,12 @@
 ---
+number: 416
 status: Proposed
+formerly:
+- SOTA-tmpetg8o
 consensus: emerging
 consensus_note: >-
   Two groups report the defect: Lin et al. (2023, arXiv 2305.08891), which
-  the record does not yet hold, and LIT-tmpy1bpi, which measures its cost with
+  the record does not yet hold, and LIT-687, which measures its cost with
   everything else fixed. Adoption of trailing spacing as a library default was
   not checked and is not asserted here. Read as of 2026-09.
 promote_when: >-
@@ -20,13 +23,13 @@ tags:
 - vision-and-graphics
 date: '2026-09-25'
 source:
-- LIT-tmpy1bpi
+- LIT-687
 introduced_by:
-- LIT-tmpy1bpi
+- LIT-687
 implementations:
 - 'diffusers (timestep_spacing="trailing")'
 summary: >-
-  Martin Garcia et al. (WACV 2025), [LIT-tmpy1bpi](../literature.d/LIT-tmpy1bpi.md). DDIM's "leading" spacing
+  Martin Garcia et al. (WACV 2025), [LIT-687](../literature.d/LIT-687.md). DDIM's "leading" spacing
   never visits the final timestep. So at one step, a pure-noise input is
   labelled with a timestep that claims an almost clean sample. With the same
   weights and only the spacing changed, Marigold's single-step depth goes
@@ -34,11 +37,11 @@ summary: >-
   approaches T, which is why it goes unnoticed at 50 steps.
 ---
 
-# SOTA-tmpetg8o: When sampling a diffusion model in few steps, start at t = T: use trailing, not leading, timestep spacing
+# SOTA-416: When sampling a diffusion model in few steps, start at t = T: use trailing, not leading, timestep spacing
 
 ## Source
 
-Martin Garcia et al. (2024; WACV 2025), [LIT-tmpy1bpi](../literature.d/LIT-tmpy1bpi.md), applying
+Martin Garcia et al. (2024; WACV 2025), [LIT-687](../literature.d/LIT-687.md), applying
 the trailing setting Lin et al. (2023, arXiv 2305.08891) proposed. That
 paper is not yet held, and it is the practice's origin.
 

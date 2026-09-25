@@ -1,5 +1,8 @@
 ---
+number: 418
 status: Proposed
+formerly:
+- SOTA-tmpjqtxk
 consensus: unreplicated
 consensus_note: >-
   One group, two FLOP budgets up to 1.3B-equivalent, one run per
@@ -19,13 +22,13 @@ tags:
 - model-architecture
 date: '2026-09-25'
 source:
-- LIT-tmp959vc
+- LIT-679
 introduced_by:
-- LIT-tmp959vc
+- LIT-679
 implementations:
 - 'H-Net'
 summary: >-
-  Hwang, Wang and Gu (2025), [LIT-tmp959vc](../literature.d/LIT-tmp959vc.md). A byte-level model that must not
+  Hwang, Wang and Gu (2025), [LIT-679](../literature.d/LIT-679.md). A byte-level model that must not
   lose to a BPE Transformer at matched data and FLOPs should be hierarchical.
   Isotropic byte stacks lose by about 9 downstream points. It should use
   Mamba-2 layers for the encoder and decoder around the main network, and it
@@ -33,11 +36,11 @@ summary: >-
   only ties BPE and whitespace chunking. Expect about 2× slower training.
 ---
 
-# SOTA-tmpjqtxk: To drop the tokenizer without losing to BPE, use a two-stage hierarchy with learned chunk boundaries and SSM encoder and decoder layers, not an isotropic byte model
+# SOTA-418: To drop the tokenizer without losing to BPE, use a two-stage hierarchy with learned chunk boundaries and SSM encoder and decoder layers, not an isotropic byte model
 
 ## Source
 
-Hwang, Wang and Gu (2025), [LIT-tmp959vc](../literature.d/LIT-tmp959vc.md).
+Hwang, Wang and Gu (2025), [LIT-679](../literature.d/LIT-679.md).
 
 ## What to do
 

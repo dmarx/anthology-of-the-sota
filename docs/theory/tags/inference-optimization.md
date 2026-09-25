@@ -6,8 +6,9 @@
 
 **Inference optimization** — serving-time decisions — batching, cache layout, compression, sparsity, distillation, sampling algorithms.
 
-1 of 104 THEORY documents. Back to the [full index](../README.md).
+2 of 106 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [THEORY-059](../../../record/theory.d/THEORY-059.md) v2 | A low-rank branch corrects quantization because weight spectra are steep and quantization-error spectra are flat | Li et al. (2024), [LIT-512](../../../record/literature.d/LIT-512.md) — two propositions bound the output error by the *magnitude* of weights and activations, not only by their rounding errors. So a rank-`r` branch helps exactly when the thing it subtracts has a few dominant singular values. A weight matrix does; a quantization error does not, which is why the same trick applied to the error rather than the weights underperforms. | Proposed |
+| [THEORY-105](../../../record/theory.d/THEORY-105.md) | Soft targets transfer the teacher's similarity structure over wrong classes, which carries more information per example than a hard label | Hinton et al. (2015), [LIT-680](../../../record/literature.d/LIT-680.md). The small probabilities a trained model assigns to wrong classes encode how it generalizes: a BMW is rarely mistaken for a garbage truck, but far more often than for a carrot. Raising the temperature exposes that structure, and a student trained on it gets more information and less gradient variance per example. This is the account usually called "dark knowledge", a phrase that is not in the paper. Its evidence does not rule out the simpler reading, that soft targets are a regularizer. | Proposed |

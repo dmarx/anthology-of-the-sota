@@ -2,7 +2,7 @@
 
 # Lines of work
 
-56 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+58 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -32,11 +32,25 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ## analysis-and-evaluation
 
+### From Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers
+
+- alongside: [LIT-052](../record/literature.d/LIT-052.md) — Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers *(Active)*
+- alongside: [LIT-670](../record/literature.d/LIT-670.md) — BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding *(Active)*
+- alongside: [LIT-671](../record/literature.d/LIT-671.md) — RoBERTa: A Robustly Optimized BERT Pretraining Approach *(Active)*
+- alongside: [LIT-672](../record/literature.d/LIT-672.md) — Should You Mask 15% in Masked Language Modeling? *(Active)*
+- alongside: [LIT-681](../record/literature.d/LIT-681.md) — Cramming: Training a Language Model on a Single GPU in One Day *(Active)*
+
 ### From Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models
 
 - [LIT-077](../record/literature.d/LIT-077.md) — Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models *(Active)*
   - [LIT-471](../record/literature.d/LIT-471.md) — Are Emergent Abilities of Large Language Models a Mirage? *(Active)* — also extends LIT-470
 - [LIT-470](../record/literature.d/LIT-470.md) — Emergent Abilities of Large Language Models *(Active)*
+
+### From Coordination of groups of mobile autonomous agents using nearest neighbor rules
+
+- [LIT-285](../record/literature.d/LIT-285.md) — Coordination of groups of mobile autonomous agents using nearest neighbor rules *(Active)*
+  - [LIT-304](../record/literature.d/LIT-304.md) — Consensus Problems in Networks of Agents With Switching Topology and Time-Delays *(Active)*
+  - [LIT-326](../record/literature.d/LIT-326.md) — A Necessary and Sufficient Condition for Consensus Over Random Networks *(Active)*
 
 ### From Evaluating Large Language Models Trained on Code
 
@@ -89,12 +103,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-574](../record/literature.d/LIT-574.md) — Does Localization Inform Editing? Surprising Differences in Causality-Based Localization vs. Knowledge Editing in Language Models *(Active)*
     - [LIT-576](../record/literature.d/LIT-576.md) — Mass-Editing Memory in a Transformer *(Active)*
 - alongside: [LIT-577](../record/literature.d/LIT-577.md) — Evaluating the Ripple Effects of Knowledge Editing in Language Models *(Active)*
-
-### From BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
-
-- alongside: [LIT-670](../record/literature.d/LIT-670.md) — BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding *(Active)*
-- alongside: [LIT-671](../record/literature.d/LIT-671.md) — RoBERTa: A Robustly Optimized BERT Pretraining Approach *(Active)*
-- alongside: [LIT-672](../record/literature.d/LIT-672.md) — Should You Mask 15% in Masked Language Modeling? *(Active)*
 
 ### From Robust fine-tuning of zero-shot models
 
@@ -169,8 +177,10 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ## generative-modeling
 
-### From High-Resolution Image Synthesis with Latent Diffusion Models
+### From Denoising Diffusion Implicit Models
 
+- [LIT-038](../record/literature.d/LIT-038.md) — Denoising Diffusion Implicit Models *(Active)*
+  - [LIT-678](../record/literature.d/LIT-678.md) — Diffusion Meets Flow Matching: Two Sides of the Same Coin *(Active)* — also extends LIT-630
 - [LIT-062](../record/literature.d/LIT-062.md) — High-Resolution Image Synthesis with Latent Diffusion Models *(Active)*
   - [LIT-566](../record/literature.d/LIT-566.md) — SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis *(Active)*
   - [LIT-621](../record/literature.d/LIT-621.md) — Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models *(Active)*
@@ -183,6 +193,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-439](../record/literature.d/LIT-439.md) — Deep Unsupervised Learning using Nonequilibrium Thermodynamics *(Active)*
   - [LIT-036](../record/literature.d/LIT-036.md) — Denoising Diffusion Probabilistic Models *(Active)*
     - [LIT-446](../record/literature.d/LIT-446.md) — Variational Diffusion Models *(Active)*
+      - [LIT-677](../record/literature.d/LIT-677.md) — Diffusion Models With Learned Adaptive Noise *(Active)*
     - [LIT-627](../record/literature.d/LIT-627.md) — Video Diffusion Models *(Active)*
       - [LIT-637](../record/literature.d/LIT-637.md) — Imagen Video: High Definition Video Generation with Diffusion Models *(Active)* — also extends LIT-067
     - [LIT-643](../record/literature.d/LIT-643.md) — One-step Diffusion with Distribution Matching Distillation *(Active)*
@@ -211,7 +222,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
         - [LIT-626](../record/literature.d/LIT-626.md) — Movie Gen: A Cast of Media Foundation Models *(Active)* — also extends LIT-062, LIT-630, LIT-635
         - [LIT-634](../record/literature.d/LIT-634.md) — Open-Sora 2.0: Training a Commercial-Level Video Generation Model in $200k *(Active)*
 - [LIT-648](../record/literature.d/LIT-648.md) — Improving Image Generation with Better Captions *(Active)*
-- alongside: [LIT-038](../record/literature.d/LIT-038.md) — Denoising Diffusion Implicit Models *(Active)*
 - alongside: [LIT-075](../record/literature.d/LIT-075.md) — Elucidating the Design Space of Diffusion-Based Generative Models *(Active)*
 - alongside: [LIT-076](../record/literature.d/LIT-076.md) — DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps *(Active)*
 - alongside: [LIT-093](../record/literature.d/LIT-093.md) — Consistency Models *(Active)*
@@ -384,6 +394,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ## representation-and-encoding
 
+### From Neural Machine Translation of Rare Words with Subword Units
+
+- alongside: [LIT-003](../record/literature.d/LIT-003.md) — Neural Machine Translation of Rare Words with Subword Units *(Active)*
+- alongside: [LIT-679](../record/literature.d/LIT-679.md) — Dynamic Chunking for End-to-End Hierarchical Sequence Modeling *(Active)*
+
 ### From RoFormer: Enhanced Transformer with Rotary Position Embedding
 
 - [LIT-045](../record/literature.d/LIT-045.md) — RoFormer: Enhanced Transformer with Rotary Position Embedding *(Active)*
@@ -460,12 +475,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-610](../record/literature.d/LIT-610.md) — Efficient Estimation of Word Representations in Vector Space *(Superseded)*
   - [LIT-609](../record/literature.d/LIT-609.md) — Distributed Representations of Words and Phrases and their Compositionality *(Superseded)*
 
-### From BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
-
-- alongside: [LIT-670](../record/literature.d/LIT-670.md) — BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding *(Active)*
-- alongside: [LIT-671](../record/literature.d/LIT-671.md) — RoBERTa: A Robustly Optimized BERT Pretraining Approach *(Active)*
-- alongside: [LIT-672](../record/literature.d/LIT-672.md) — Should You Mask 15% in Masked Language Modeling? *(Active)*
-
 ## signal-structure
 
 ### From Efficient Estimation of Word Representations in Vector Space
@@ -489,16 +498,33 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ## training-optimization
 
+### From Large Batch Training of Convolutional Networks
+
+- [LIT-009](../record/literature.d/LIT-009.md) — Large Batch Training of Convolutional Networks *(Active)*
+  - [LIT-686](../record/literature.d/LIT-686.md) — On the distance between two neural networks and the stability of learning *(Active)*
+- [LIT-360](../record/literature.d/LIT-360.md) — Neural Tangent Kernel: Convergence and Generalization in Neural Networks *(Active)*
+  - [LIT-557](../record/literature.d/LIT-557.md) — Tensor Programs II: Neural Tangent Kernel for Any Architecture *(Active)* — also extends LIT-558
+    - [LIT-556](../record/literature.d/LIT-556.md) — Tensor Programs III: Neural Matrix Laws *(Active)*
+      - [LIT-548](../record/literature.d/LIT-548.md) — Feature Learning in Infinite-Width Neural Networks *(Active)*
+        - [LIT-148](../record/literature.d/LIT-148.md) — Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer *(Active)*
+          - [LIT-149](../record/literature.d/LIT-149.md) — u-µP: The Unit-Scaled Maximal Update Parametrization *(Active)*
+          - [LIT-150](../record/literature.d/LIT-150.md) — Don't be lazy: CompleteP enables compute-efficient deep transformers *(Active)*
+            - [LIT-462](../record/literature.d/LIT-462.md) — Spectral Condition for μP under Width-Depth Scaling *(Active)* — also extends LIT-437
+        - [LIT-437](../record/literature.d/LIT-437.md) — A Spectral Condition for Feature Learning *(Active)* — also extends LIT-686
+          - [LIT-436](../record/literature.d/LIT-436.md) — Scalable Optimization in the Modular Norm *(Active)* — also extends LIT-686
+            - [LIT-438](../record/literature.d/LIT-438.md) — Modular Duality in Deep Learning *(Active)*
+- [LIT-558](../record/literature.d/LIT-558.md) — Tensor Programs I: Wide Feedforward or Recurrent Neural Networks of Any Architecture are Gaussian Processes *(Active)*
+- alongside: [LIT-001](../record/literature.d/LIT-001.md) — Adam: A Method for Stochastic Optimization *(Active)*
+
 ### From Scaling Laws for Neural Language Models
 
 - [LIT-028](../record/literature.d/LIT-028.md) — Scaling Laws for Neural Language Models *(Active)*
   - [LIT-443](../record/literature.d/LIT-443.md) — Power Lines: Scaling Laws for Weight Decay and Batch Size in LLM Pre-training *(Active)*
   - [LIT-445](../record/literature.d/LIT-445.md) — How Does Critical Batch Size Scale in Pre-training? *(Active)*
-
-### From Training Compute-Optimal Large Language Models
-
-- alongside: [LIT-068](../record/literature.d/LIT-068.md) — Training Compute-Optimal Large Language Models *(Active)*
+  - [LIT-688](../record/literature.d/LIT-688.md) — Reconciling Kaplan and Chinchilla Scaling Laws *(Active)* — also extends LIT-068
+- [LIT-068](../record/literature.d/LIT-068.md) — Training Compute-Optimal Large Language Models *(Active)*
 - alongside: [LIT-617](../record/literature.d/LIT-617.md) — Scaling Language Models: Methods, Analysis & Insights from Training Gopher *(Active)*
+- alongside: [LIT-685](../record/literature.d/LIT-685.md) — Sub-Scaling Laws: On the Role of Data Density and Training Strategies in LLMs *(Active)*
 
 ### From Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training
 
@@ -520,20 +546,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-230](../record/literature.d/LIT-230.md) — Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO *(Active)*
 - alongside: [LIT-239](../record/literature.d/LIT-239.md) — ESSA: Evolutionary Strategies for Scalable Alignment *(Active)*
 
-### From Neural Tangent Kernel: Convergence and Generalization in Neural Networks
+### From Scaling Laws and Compute-Optimal Training Beyond Fixed Training Durations
 
-- [LIT-360](../record/literature.d/LIT-360.md) — Neural Tangent Kernel: Convergence and Generalization in Neural Networks *(Active)*
-  - [LIT-557](../record/literature.d/LIT-557.md) — Tensor Programs II: Neural Tangent Kernel for Any Architecture *(Active)* — also extends LIT-558
-    - [LIT-556](../record/literature.d/LIT-556.md) — Tensor Programs III: Neural Matrix Laws *(Active)*
-      - [LIT-548](../record/literature.d/LIT-548.md) — Feature Learning in Infinite-Width Neural Networks *(Active)*
-        - [LIT-148](../record/literature.d/LIT-148.md) — Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer *(Active)*
-          - [LIT-149](../record/literature.d/LIT-149.md) — u-µP: The Unit-Scaled Maximal Update Parametrization *(Active)*
-          - [LIT-150](../record/literature.d/LIT-150.md) — Don't be lazy: CompleteP enables compute-efficient deep transformers *(Active)*
-            - [LIT-462](../record/literature.d/LIT-462.md) — Spectral Condition for μP under Width-Depth Scaling *(Active)* — also extends LIT-437
-        - [LIT-437](../record/literature.d/LIT-437.md) — A Spectral Condition for Feature Learning *(Active)*
-          - [LIT-436](../record/literature.d/LIT-436.md) — Scalable Optimization in the Modular Norm *(Active)*
-            - [LIT-438](../record/literature.d/LIT-438.md) — Modular Duality in Deep Learning *(Active)*
-- [LIT-558](../record/literature.d/LIT-558.md) — Tensor Programs I: Wide Feedforward or Recurrent Neural Networks of Any Architecture are Gaussian Processes *(Active)*
+- [LIT-145](../record/literature.d/LIT-145.md) — Scaling Laws and Compute-Optimal Training Beyond Fixed Training Durations *(Active)*
+  - [LIT-684](../record/literature.d/LIT-684.md) — Model Merging in Pre-training of Large Language Models *(Active)*
+- [LIT-213](../record/literature.d/LIT-213.md) — The Road Less Scheduled *(Active)*
+  - [LIT-682](../record/literature.d/LIT-682.md) — ScheduleFree+: Scaling Learning-Rate-Free & Schedule-Free Learning to Large Language Models *(Active)*
+- alongside: [LIT-147](../record/literature.d/LIT-147.md) — Straight to Zero: Why Linearly Decaying the Learning Rate to Zero Works Best for LLMs *(Active)*
 
 ### From Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability
 

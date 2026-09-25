@@ -1,5 +1,8 @@
 ---
+number: 414
 status: Proposed
+formerly:
+- SOTA-tmpaisvs
 consensus: unreplicated
 consensus_note: >-
   One group, one backbone (Stable Diffusion v2), no seeds. Concurrent work by
@@ -20,13 +23,13 @@ tags:
 - inference-optimization
 date: '2026-09-25'
 source:
-- LIT-tmpy1bpi
+- LIT-687
 introduced_by:
-- LIT-tmpy1bpi
+- LIT-687
 implementations:
 - 'diffusion-e2e-ft'
 summary: >-
-  Martin Garcia et al. (WACV 2025), [LIT-tmpy1bpi](../literature.d/LIT-tmpy1bpi.md). Fix the timestep at T, feed
+  Martin Garcia et al. (WACV 2025), [LIT-687](../literature.d/LIT-687.md). Fix the timestep at T, feed
   zeros as the noise, decode the prediction through the frozen VAE, and train
   on the task's own loss: affine-invariant L1 for depth, angular error for
   normals. From 20K iterations on 74K synthetic images, the one-step model
@@ -35,15 +38,15 @@ summary: >-
   plain Stable Diffusion is nearly as good.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpetg8o — Proposed; named for the baseline comparison
+<!-- inactive-ok-file: SOTA-416 — Proposed; named for the baseline comparison
      only, which this practice does not depend on -->
 
-# SOTA-tmpaisvs: To make an image diffusion model a dense geometric predictor, fine-tune it end to end as a one-step model at t = T with a task loss
+# SOTA-414: To make an image diffusion model a dense geometric predictor, fine-tune it end to end as a one-step model at t = T with a task loss
 
 ## Source
 
 Martin Garcia, Knaebel, Schmidt, de Geus, Hermans and Leibe (2024; WACV 2025),
-[LIT-tmpy1bpi](../literature.d/LIT-tmpy1bpi.md).
+[LIT-687](../literature.d/LIT-687.md).
 
 ## What to do
 
@@ -83,7 +86,7 @@ SD gives 5.4 / 9.6 / 6.4 / 5.8 / 30.3.
   obvious case.
 - **One backbone, one fine-tuning budget, no seeds.** The SD-against-Marigold
   initialization comparison rests on 0.0–0.2 AbsRel.
-- **Depends on [SOTA-tmpetg8o](SOTA-tmpetg8o.md) only for the baseline.** The
+- **Depends on [SOTA-416](SOTA-416.md) only for the baseline.** The
   fine-tuning recipe fixes `t = T` directly. Scheduler spacing matters only to
   anyone comparing against multi-step inference, and that comparison is
   unfair until the spacing is trailing.

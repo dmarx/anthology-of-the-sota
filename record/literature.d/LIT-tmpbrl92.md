@@ -1,70 +1,84 @@
 ---
-# Don't copy this file by hand — run `luria new lit`.
-#
-# A note records why a paper is worth keeping. It is not a summary of the
-# paper; it is this project's reading of it.
-
-# Active | Proposed | Deferred | Superseded | Rejected, optionally " — note".
-# See statuses.yaml beside this file. `Rejected` is the attic: retire a paper
-# by setting it, with the reason in the status note and the long version
-# under "Standing in the anthology" below. Never by deleting the file —
-# something cites it.
 status: Active
-
-# The paper's title, verbatim. Repeat it as the body's `# LIT-tmpbrl92:` heading.
 title: 'Analysis of dropout learning regarded as ensemble learning'
-
 version: 1
-
-# Exactly one of the thirteen in tags.yaml, enforced by luria.toml — the same
-# thirteen the practice registry uses (ADR-026).
 tags:
-- training-optimization
-
-# When this note was filed. The record's own clock, not the paper's.
+- model-stability
 date: '2026-09-25'
-
-# REQUIRED. When the PAPER appeared — the arXiv posting month, from the id:
-# 2205.11487 → 2022-05. Distinct from `date:` above, which is when the record
-# got round to it.
-#
-# This is the one place the date lives. A practice reads it from its primary
-# source and a reading note from its paper, both by `derive`/`from` in
-# luria.toml, so neither carries a copy that could drift (#119).
-published: '2022-05-01'
-
-# A SOURCE is required — at least one of these three, enforced (ADR-009).
-# Prefer them in this order: an arXiv id or a DOI resolves through a remote
-# and can be pinned; a URL is a string nothing can check. Bare id, no
-# version suffix. Delete the lines you don't use.
-arxiv: '0000.00000'
-# doi: '10.0000/example'
-# url: 'https://example.org/report'
-
-first_author: 'Surname'
-
-# The paper's own subject words, kept verbatim. Free-form on purpose — this
-# is what the paper is about, whereas `tags:` is where the record files it.
-keywords: []
-
-# Optional. Models or codebases known to use this work.
-implementations: []
-
-# What the index table shows: the citation and the one finding that matters.
+published: '2017-06-20'
+arxiv: '1706.06859'
+first_author: 'Hara'
+keywords:
+- 'dropout'
+- 'ensemble-learning'
+- 'soft-committee-machine'
+- 'teacher-student'
+- 'on-line-learning'
+- 'l2-regularization'
+extends:
+- LIT-394
+summary: >-
+  Hara, Saitoh and Shouno (2017), ARXIV-1706.06859. In a teacher-student
+  soft-committee machine (erf units, N = 1000, 100 student units, one fixed
+  set of N inputs reused), dropout at p = 0.5 reaches lower test MSE than an
+  ensemble of two independently trained 50-unit halves. Its residual error is
+  about that of SGD with a tuned L2 penalty. The title says analysis, but no
+  analytic result is derived. Everything is simulation curves averaged over
+  10 trials, with no numbers or spread reported.
 ---
 
-<!-- unresolved-ok-file: LIT-000 — the placeholder a new note replaces -->
+# LIT-tmpbrl92: Analysis of dropout learning regarded as ensemble learning
 
-# LIT-000: The paper title, exactly as published
-
-Surname et al. (YEAR) — [ARXIV-0000.00000](https://arxiv.org/abs/0000.00000)
+Hara, Saitoh and Shouno (2017) — ARXIV-1706.06859
 
 ## Key takeaways
 
-- What it establishes, in claims rather than topics.
+**The framing.** At test time a dropout network sums units that were trained
+on this step and units that were not, scaled by `p`. At `p = 0.5` the paper
+reads that as an ensemble of two half-networks. The difference from ordinary
+ensemble learning is that the split into halves is redrawn at every step.
+
+**The setting.** A teacher-student soft-committee machine: hidden-to-output
+weights fixed at +1, `g(x) = erf(x/√2)`, i.i.d. zero-mean unit-variance inputs,
+and the thermodynamic limit assumed for the setup. The teacher has 2 hidden
+units and the student 100. Overfitting is induced by reusing a fixed set of
+`N` inputs, since on-line learning with fresh inputs cannot overfit.
+
+**The two comparisons (Figs. 5 and 6, 10 trials each).**
+- Dropout (one 100-unit student, `p = 0.5`) reaches a lower test MSE than an
+  ensemble of two 50-unit students trained independently and averaged. The
+  architectures are matched. The paper concludes that redrawing the split
+  every step beats fixing it.
+- Dropout's residual error is "almost the same" as SGD with L2, from which the
+  paper concludes that "the regularization effort of dropout learning is the
+  same as the L2 regularization".
+
+## Traps
+
+- **No analysis in the analytic sense.** The teacher-student setup is the one
+  statistical mechanics uses to derive order-parameter equations. None are
+  derived. The results are learning curves, and the key comparison sets
+  Fig. 5(a) against Fig. 5(b), which are separate panels.
+- **"Dropout learning has no tuning parameter" is false.** `p` is one, and only
+  `p = 0.5` is run.
+- **The L2 update as printed subtracts `α‖J‖²`, a scalar, from a vector.**
+  Presumably `αJ` was meant. `α` is not reported.
+- **The "same as L2" result is not evidence against THEORY-015.** The inputs
+  here are i.i.d. with unit variance. In that setting the data-scaled
+  penalties THEORY-015 collects (inputs scaled by magnitude or standard
+  deviation) reduce to something close to plain L2. So this setup could not
+  have told the two apart.
 
 ## Standing in the anthology
 
-Why this is here — or, once it is `Rejected` or `Superseded`, why it isn't
-any more, and what replaced it. Omit the section entirely while the answer is
-just "it's good work", which is the usual case.
+Filed so that the 09/17 dropout cluster is complete. The result is weak. It
+is one toy model with qualitative curves and no analytic content, and it
+sources nothing.
+
+It bears on THEORY-016, and the direction matters. THEORY-016 warns against
+reading "dropout is an ensemble" as the reason dropout helps. This paper's
+one clear finding points the same way: dropout beats the ensemble it is
+supposed to be. So the ensemble reading does not explain its advantage, which
+comes from the redrawn split. The paper does not identify a mechanism for
+that. It extends Hinton et al.'s 2012 proposal (LIT-394), which it cites as
+the method.

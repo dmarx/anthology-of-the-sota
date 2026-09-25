@@ -1,70 +1,133 @@
 ---
-# Don't copy this file by hand — run `luria new lit`.
-#
-# A note records why a paper is worth keeping. It is not a summary of the
-# paper; it is this project's reading of it.
-
-# Active | Proposed | Deferred | Superseded | Rejected, optionally " — note".
-# See statuses.yaml beside this file. `Rejected` is the attic: retire a paper
-# by setting it, with the reason in the status note and the long version
-# under "Standing in the anthology" below. Never by deleting the file —
-# something cites it.
 status: Active
-
-# The paper's title, verbatim. Repeat it as the body's `# LIT-tmpzn7w1:` heading.
 title: 'Analyzing and Improving the Training Dynamics of Diffusion Models'
-
 version: 1
-
-# Exactly one of the thirteen in tags.yaml, enforced by luria.toml — the same
-# thirteen the practice registry uses (ADR-026).
 tags:
+- generative-modeling
 - training-optimization
-
-# When this note was filed. The record's own clock, not the paper's.
+- model-architecture
+- model-stability
+- analysis-and-evaluation
 date: '2026-09-25'
-
-# REQUIRED. When the PAPER appeared — the arXiv posting month, from the id:
-# 2205.11487 → 2022-05. Distinct from `date:` above, which is when the record
-# got round to it.
-#
-# This is the one place the date lives. A practice reads it from its primary
-# source and a reading note from its paper, both by `derive`/`from` in
-# luria.toml, so neither carries a copy that could drift (#119).
-published: '2022-05-01'
-
-# A SOURCE is required — at least one of these three, enforced (ADR-009).
-# Prefer them in this order: an arXiv id or a DOI resolves through a remote
-# and can be pinned; a URL is a string nothing can check. Bare id, no
-# version suffix. Delete the lines you don't use.
-arxiv: '0000.00000'
-# doi: '10.0000/example'
-# url: 'https://example.org/report'
-
-first_author: 'Surname'
-
-# The paper's own subject words, kept verbatim. Free-form on purpose — this
-# is what the paper is about, whereas `tags:` is where the record files it.
-keywords: []
-
-# Optional. Models or codebases known to use this work.
-implementations: []
-
-# What the index table shows: the citation and the one finding that matters.
+published: '2023-12-01'
+arxiv: '2312.02696'
+first_author: 'Karras'
+keywords:
+- 'diffusion-models'
+- 'magnitude-preserving-layers'
+- 'forced-weight-normalization'
+- 'effective-learning-rate'
+- 'post-hoc-ema'
+- 'power-function-ema'
+- 'classifier-free-guidance'
+implementations:
+- 'NVlabs/edm2'
+summary: >-
+  Karras et al. (2023), ARXIV-2312.02696 — EDM2. Two contributions that do not
+  depend on each other. Rebuilding the ADM U-Net so every layer preserves
+  activation, weight and update magnitude takes ImageNet-512 FID from 8.00 to
+  2.56 at equal compute, the largest single step (6.96 → 3.75) being weight
+  normalization on the learned layers. And post-hoc EMA: store two
+  power-function averages at snapshots and reconstruct any EMA length after
+  training, which shows the optimal length moving with architecture, training
+  time, learning rate, guidance weight and — by a factor of seven under
+  guidance — with which metric you score it.
+extends:
+- LIT-075
+compared_against:
+- LIT-075
+- LIT-699
+- LIT-448
+- LIT-660
+- LIT-692
 ---
 
-<!-- unresolved-ok-file: LIT-000 — the placeholder a new note replaces -->
+# LIT-tmpzn7w1: Analyzing and Improving the Training Dynamics of Diffusion Models
 
-# LIT-000: The paper title, exactly as published
-
-Surname et al. (YEAR) — [ARXIV-0000.00000](https://arxiv.org/abs/0000.00000)
+Karras et al. (2023) — ARXIV-2312.02696 (CVPR 2024). Read in full as
+NOTE-tmpod74g, appendices included.
 
 ## Key takeaways
 
-- What it establishes, in claims rather than topics.
+- **The diagnosis is magnitude drift, measured.** In the ADM U-Net as run
+  under EDM, activation magnitudes on the main path grow without bound and
+  show no sign of stabilising by the end of training; weight magnitudes grow
+  too. Adding normalization to the main path was tried and made results
+  "significantly" worse. The fix is to make every layer preserve magnitude
+  *on expectation*, without looking at the activations.
+- **The ablation ladder, ImageNet-512 latent, ~300M parameters, FID without
+  guidance** (each row cumulative; each number the minimum of three FID
+  evaluations of one model):
+
+  | config | change | FID |
+  |---|---|--:|
+  | A | EDM baseline (ADM) | 8.00 |
+  | B | retuned hyperparameters, learned per-noise-level loss weight, no 32×32 attention | 7.24 |
+  | C | no biases, cosine attention, simplified group norm | 6.96 |
+  | D | **magnitude-preserving learned layers** (weight normalization, no learned gain) | **3.75** |
+  | E | **forced weight normalization** + inverse-sqrt LR decay | 3.02 |
+  | F | group norms removed, ¼ as many pixel norms | 2.71 |
+  | G | magnitude-preserving SiLU, Fourier features, sums and concatenation | 2.56 |
+
+  D is the step: normalizing each output channel's weight vector before use
+  severs the link from weight magnitude to activation magnitude. It then
+  makes weights grow faster (the update is orthogonal to the weight, so each
+  step lengthens it), which silently decays the effective learning rate, and
+  E removes that by renormalizing the stored weights after every step while
+  still normalizing on use — the second normalization is what keeps Adam's
+  second-moment estimate on the tangent-plane step.
+- **Scaled up, it sets records at far lower cost.** EDM2-XXL (1.5B): FID
+  **1.91** unguided, **1.81** guided on ImageNet-512, against 2.99 / 2.41
+  before, with 63 deterministic function evaluations where earlier diffusion
+  entries used 250–1000 stochastic ones. EDM2-S (280M, 102 Gflops) already
+  beats the previous unguided record. ImageNet-64 in pixel space: 2.22 (EDM)
+  → 1.58 at matched complexity, 1.33 scaled.
+- **Post-hoc EMA is a least-squares fit over stored averages.** Replace the
+  exponential profile with a power function `t^γ`, which gives the initial
+  weights zero weight and stretches with training length; track two averages
+  (`σ_rel` 0.05 and 0.10) and save both every ~8M images; afterwards, solve
+  a small linear system for the combination of snapshots whose profile best
+  matches any target profile. Reconstruction error falls about as `O(1/n⁴)`
+  in the number of snapshots, and 160–512 snapshots in fp16 give "nearly
+  perfect" reconstruction over `σ_rel ∈ [0.015, 0.25]`.
+- **What it reveals is that there is no EMA length to carry over.** The
+  optimum moves across configs B–G; it *narrows* as the architecture
+  improves, and per-tensor sweeps explain why — in B, moving one tensor's EMA
+  alone could improve FID ~10%, in G the tensors agree. It moves slowly
+  longer through training. It moves with guidance strength "very strongly".
+  And it moves with the metric: FID and FD_DINOv2 disagree on the optimum
+  unguided (13% vs 19%) and wildly at guidance 1.4 (**2% vs 14%**), each
+  rating the other's optimum as poor. They also disagree on the guidance
+  weight (1.4 vs 1.9).
+- **Two cheap guidance findings.** An XS unconditional model (125M) guides
+  the XXL conditional model as well as any larger one does, cutting guidance
+  overhead by almost half; and the authors suggest that the gap between
+  guided and unguided results in prior work may partly be an artefact of an
+  EMA length tuned for one and used for both.
 
 ## Standing in the anthology
 
-Why this is here — or, once it is `Rejected` or `Superseded`, why it isn't
-any more, and what replaced it. Omit the section entirely while the answer is
-just "it's good work", which is the usual case.
+Filed from `#290`'s promoted list (item 10), and the curation entry that sent
+it here says why it was unforced: it is the successor of LIT-075, the source
+of SOTA-188, and **neither of its two contributions was anywhere in this
+record** — no file said "post-hoc EMA" or "magnitude-preserving".
+
+It now sources two practices of its own, both `Proposed`: SOTA-tmp9x33t
+(choose the EMA length after training) and SOTA-tmpui8n0 (magnitude-preserving
+layers with forced weight normalization). Neither is `Active`, for the same
+reason: one group, one architecture family, and the authors' own discussion
+asks whether the layer changes would help a DiT. It is **not** added as a
+source to SOTA-188, whose recommendation it does not test; it corrects one
+sentence there instead — EDM's loss weighting equalises the noise levels at
+initialization only, and stops doing so as training proceeds. It also answers
+half of the capacity question SOTA-424 records as open.
+
+[DP-010](../../docs/design-principles.md#dp-10) applies to the headline in a specific way. "1.81" is guided and
+"1.91" is not, and the gap between them rests on an EMA length the paper
+itself shows is metric-specific; the finding that should travel is Appendix
+A.5, where the two Fréchet distances pick EMA lengths seven-fold apart.
+
+The record holds no practice for the thing post-hoc EMA refines — sample from
+an average of the weights at all. The paper calls it "indispensable" and
+supplies no arm without it, so it cannot source that trunk; the gap is written
+down in NOTE-tmpod74g rather than filled with adoption.

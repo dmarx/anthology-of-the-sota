@@ -103,7 +103,7 @@ DINOv2 also costs object discovery, and this account does not name it.
 ## Where it sits
 
 The record holds one other account of activation outliers in a trained network:
-`THEORY-tmp3s87v`, which says the outlier feature dimensions that break INT8
+`THEORY-100`, which says the outlier feature dimensions that break INT8
 quantization in language models track pre-training optimization choices rather
 than scale. Both accounts start from a phenomenon that correlates with size and
 both conclude the correlation is not the explanation.

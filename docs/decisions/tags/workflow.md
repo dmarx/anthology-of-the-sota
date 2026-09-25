@@ -6,7 +6,7 @@
 
 **workflow**.
 
-1 of 60 decisions. Back to the [full index](../README.md).
+1 of 61 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

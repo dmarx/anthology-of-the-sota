@@ -6,7 +6,7 @@
 
 **Superseded** — no longer in force because something replaced it; the successor is named in the field, not in the prose.
 
-7 of 60 decisions. Back to the [full index](../README.md).
+7 of 61 decisions. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

@@ -149,6 +149,7 @@ Everything not listed here is at Luria's default.
 | `code.historical` | `CHANGELOG.md`, `README.md` | `CHANGELOG.md` |
 | `chains.practice` | *7 keys set* | *unset* |
 | `chains.lineage` | *6 keys set* | *unset* |
+| `chains.theory` | *6 keys set* | *unset* |
 | `lint.fail_on` | `source-mismatch` | *empty* |
 | `lint.mute` | `inert-status`, `acknowledged-uniformity` | *empty* |
 | `lint.narrow_terms` | `adam`, `adamw`, `batchnorm`, `layernorm`, `transformer`, `llama2`, `flash-attention`, `arxiv`, `registry` | *empty* |

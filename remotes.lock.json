@@ -377,6 +377,9 @@
     "ARXIV/2104.09864": {
       "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding"
     },
+    "ARXIV/2104.14294": {
+      "title": "Emerging Properties in Self-Supervised Vision Transformers"
+    },
     "ARXIV/2105.04906": {
       "title": "VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning"
     },

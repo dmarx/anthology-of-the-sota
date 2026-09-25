@@ -1,5 +1,8 @@
 ---
+number: 424
 status: Active
+formerly:
+- SOTA-tmpfci2h
 consensus: universal
 consensus_note: >-
   Not doing this is what needs justifying. Every text-to-image diffusion model
@@ -16,15 +19,15 @@ tags:
 - training-optimization
 date: '2026-09-25'
 source:
-- LIT-tmpy02tv
+- LIT-693
 introduced_by:
-- LIT-tmpy02tv
+- LIT-693
 implementations:
 - 'Stable Diffusion'
 - 'Imagen'
 - 'diffusers'
 summary: >-
-  Ho and Salimans (2022), [LIT-tmpy02tv](../literature.d/LIT-tmpy02tv.md). Replace the conditioning with a null
+  Ho and Salimans (2022), [LIT-693](../literature.d/LIT-693.md). Replace the conditioning with a null
   token on a fraction of training examples — **0.1 is the measured best**, with
   0.2 and 0.5 worse — so one network learns both scores, then extrapolate away
   from the unconditional estimate at sampling. The weight is not a quality dial:
@@ -33,11 +36,11 @@ summary: >-
   sacrifice, and never compare two models at different weights.
 ---
 
-# SOTA-tmpfci2h: Train one network for both conditional and unconditional scores by dropping the condition on 10% of examples, then pick the guidance weight by which metric you are willing to lose
+# SOTA-424: Train one network for both conditional and unconditional scores by dropping the condition on 10% of examples, then pick the guidance weight by which metric you are willing to lose
 
 ## Source
 
-Ho and Salimans (2022), [LIT-tmpy02tv](../literature.d/LIT-tmpy02tv.md) —
+Ho and Salimans (2022), [LIT-693](../literature.d/LIT-693.md) —
 [ARXIV-2207.12598](https://arxiv.org/abs/2207.12598).
 
 ## What to do

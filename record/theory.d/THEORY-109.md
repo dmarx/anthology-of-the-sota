@@ -1,5 +1,8 @@
 ---
+number: 109
 status: Proposed
+formerly:
+- THEORY-tmpkf09c
 promote_when: >-
   The two guidance methods compared at matched sample quality under a metric that
   uses **no** classifier — a human preference study, or a feature distance from a
@@ -14,9 +17,9 @@ tags:
 - generative-modeling
 date: '2026-09-25'
 source:
-- LIT-tmpy02tv
+- LIT-693
 summary: >-
-  Ho and Salimans (2022), [LIT-tmpy02tv](../literature.d/LIT-tmpy02tv.md), raising the question about the method they
+  Ho and Salimans (2022), [LIT-693](../literature.d/LIT-693.md), raising the question about the method they
   replace. Classifier guidance mixes the score with an image classifier's input
   gradient, which "can be interpreted as attempting to confuse an image
   classifier with a gradient-based adversarial attack" — and FID and Inception
@@ -26,11 +29,11 @@ summary: >-
   — but on the same classifier-based metrics.
 ---
 
-# THEORY-tmpkf09c: Classifier guidance may flatter classifier-based metrics because it steps along a classifier gradient, and guidance without a classifier is the control
+# THEORY-109: Classifier guidance may flatter classifier-based metrics because it steps along a classifier gradient, and guidance without a classifier is the control
 
 ## Source
 
-Ho and Salimans (2022), [LIT-tmpy02tv](../literature.d/LIT-tmpy02tv.md), who raise it about their predecessor
+Ho and Salimans (2022), [LIT-693](../literature.d/LIT-693.md), who raise it about their predecessor
 rather than about themselves.
 
 ## The account
@@ -93,7 +96,7 @@ the thing the evaluation is computed with. The concern is specifically the
 coincidence between the network being differentiated and the network doing the
 scoring.
 
-**Not an argument for either method.** [SOTA-tmpfci2h](../practices.d/SOTA-tmpfci2h.md) recommends classifier-free
+**Not an argument for either method.** [SOTA-424](../practices.d/SOTA-424.md) recommends classifier-free
 guidance on grounds that have nothing to do with this — one model instead of two,
 no noisy-data classifier to train — and would stand if this account were
 abandoned entirely.

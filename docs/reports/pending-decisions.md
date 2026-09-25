@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**230 document(s) awaiting a decision.**
+**231 document(s) awaiting a decision.**
 
 ## SOTAs
 
-159 of the 230.
+159 of the 231.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -84,8 +84,8 @@
 | 2026-09-20 | Proposed | [SOTA-276](../../record/practices.d/SOTA-276.md) | 2 | 0 | For a normalized or preconditioned optimizer, width-depth muP is width muP plus a hidden residual multiplier of order 1/L |
 | 2026-09-20 | Proposed | [SOTA-259](../../record/practices.d/SOTA-259.md) | 1 | 0 | Hold Adam's second-moment half-life fixed in tokens when the batch size changes, not beta_2 |
 | 2026-09-20 | Proposed | [SOTA-273](../../record/practices.d/SOTA-273.md) | 1 | 0 | Choose a pretraining context whose association with the input is neither too strong nor too weak, and mix contexts to get there |
+| 2026-09-21 | Proposed | [SOTA-301](../../record/practices.d/SOTA-301.md) | 7 | 0 | Apply the objective gradient before the denoiser, not after it, when guiding diffusion toward a task objective |
 | 2026-09-21 | Proposed | [SOTA-295](../../record/practices.d/SOTA-295.md) | 6 | 0 | Parameterize the generating prompt above the word list, and constrain how each sample opens |
-| 2026-09-21 | Proposed | [SOTA-301](../../record/practices.d/SOTA-301.md) | 6 | 0 | Apply the objective gradient before the denoiser, not after it, when guiding diffusion toward a task objective |
 | 2026-09-21 | Proposed | [SOTA-288](../../record/practices.d/SOTA-288.md) | 5 | 0 | Late in training, replicate a small subset of the weights, train the copies against shared base weights, and average the subset back into one model |
 | 2026-09-21 | Proposed | [SOTA-309](../../record/practices.d/SOTA-309.md) | 5 | 0 | Score a control interface by the mutual information between the operator's command and the state change it induces, and choose the horizon of that state change deliberately |
 | 2026-09-21 | Proposed | [SOTA-282](../../record/practices.d/SOTA-282.md) | 4 | 0 | Put every matrix and hidden state on the unit hypersphere, and make each block's residual step size a learned per-dimension parameter |
@@ -149,12 +149,12 @@
 | 2026-09-24 | Proposed | [SOTA-399](../../record/practices.d/SOTA-399.md) | 3 | 0 | Choose pre-training weight decay, dropout, clipping and precision for the quantization you intend to ship |
 | 2026-09-24 | Proposed | [SOTA-401](../../record/practices.d/SOTA-401.md) | 2 | 0 | Anchor the patch Gram matrix to an early teacher when training long, because dense features decay while global metrics improve |
 | 2026-09-24 | Proposed | [SOTA-392](../../record/practices.d/SOTA-392.md) | 1 | 0 | To get a one-step sampler from a rectified flow, distil it; treat reflow as an optional extra pass, and keep the pre-reflow model for many steps |
+| 2026-09-24 | Proposed | [SOTA-397](../../record/practices.d/SOTA-397.md) | 1 | 0 | To condition an unconditionally trained diffusion model on known frames, use reconstruction guidance, not replacement |
 | 2026-09-24 | Proposed | [SOTA-385](../../record/practices.d/SOTA-385.md) | 0 | 0 | Tighten the gradient-norm clip as the model grows rather than carrying one value across scales |
 | 2026-09-24 | Proposed | [SOTA-387](../../record/practices.d/SOTA-387.md) | 0 | 0 | Hold out a slice of the training set for model selection instead of selecting on the validation split |
 | 2026-09-24 | Proposed | [SOTA-391](../../record/practices.d/SOTA-391.md) | 0 | 0 | Estimate attention resolution before training when choosing a position encoding, and measure it across the extrapolation boundary |
 | 2026-09-24 | Proposed | [SOTA-393](../../record/practices.d/SOTA-393.md) | 0 | 0 | Freeze the image model's spatial layers when adding time if checkpoint compatibility matters; do not expect a quality gain from it |
 | 2026-09-24 | Proposed | [SOTA-396](../../record/practices.d/SOTA-396.md) | 0 | 0 | When a latent video model reuses an image autoencoder or upsampler, fine-tune them on video so they see time |
-| 2026-09-24 | Proposed | [SOTA-397](../../record/practices.d/SOTA-397.md) | 0 | 0 | To condition an unconditionally trained diffusion model on known frames, use reconstruction guidance, not replacement |
 | 2026-09-25 | Proposed | [SOTA-403](../../record/practices.d/SOTA-403.md) | 2 | 0 | Share the attention parameters across layers if you need to cut parameters; do not share the feed-forward ones |
 | 2026-09-25 | Proposed | [SOTA-404](../../record/practices.d/SOTA-404.md) | 2 | 0 | When you ablate an auxiliary loss, ablate the input construction that came with it, or the result is about both |
 | 2026-09-25 | Proposed | [SOTA-405](../../record/practices.d/SOTA-405.md) | 2 | 0 | Scale the masked-language-modelling rate with model size rather than holding it at 15% |
@@ -175,7 +175,7 @@
 
 ## THEORYs
 
-65 of the 230.
+66 of the 231.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -243,11 +243,12 @@
 | 2026-09-25 | Proposed | [THEORY-103](../../record/theory.d/THEORY-103.md) | 7 | 0 | A transformer stores a fact where it needed it, so two-hop composition generalizes only to facts it already saw as a second hop |
 | 2026-09-25 | Proposed | [THEORY-108](../../record/theory.d/THEORY-108.md) | 4 | 0 | Kaplan's and Chinchilla's compute-optimal exponents differ because of how small-scale runs were counted, warmed up and tuned, not because of the learning-rate decay |
 | 2026-09-25 | Proposed | [THEORY-104](../../record/theory.d/THEORY-104.md) | 3 | 0 | A large guidance scale amplifies the model's derivatives, which narrows a high-order solver's convergence radius |
+| 2026-09-25 | Proposed | [THEORY-109](../../record/theory.d/THEORY-109.md) | 2 | 0 | Classifier guidance may flatter classifier-based metrics because it steps along a classifier gradient, and guidance without a classifier is the control |
 | 2026-09-25 | Proposed | [THEORY-105](../../record/theory.d/THEORY-105.md) | 1 | 0 | Soft targets transfer the teacher's similarity structure over wrong classes, which carries more information per example than a hard label |
 
 ## LITs
 
-3 of the 230.
+3 of the 231.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -257,7 +258,7 @@
 
 ## ADRs
 
-3 of the 230.
+3 of the 231.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -269,4 +270,4 @@ The citation count is the second axis, and it flips the priority: an old proposa
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (16): [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [SOTA-385](../../record/practices.d/SOTA-385.md), [SOTA-387](../../record/practices.d/SOTA-387.md), [SOTA-391](../../record/practices.d/SOTA-391.md), [SOTA-393](../../record/practices.d/SOTA-393.md), [SOTA-396](../../record/practices.d/SOTA-396.md), [SOTA-397](../../record/practices.d/SOTA-397.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (15): [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-189](../../record/practices.d/SOTA-189.md), [SOTA-209](../../record/practices.d/SOTA-209.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [SOTA-385](../../record/practices.d/SOTA-385.md), [SOTA-387](../../record/practices.d/SOTA-387.md), [SOTA-391](../../record/practices.d/SOTA-391.md), [SOTA-393](../../record/practices.d/SOTA-393.md), [SOTA-396](../../record/practices.d/SOTA-396.md) — these are the cheapest to close, since nothing depends on the answer.

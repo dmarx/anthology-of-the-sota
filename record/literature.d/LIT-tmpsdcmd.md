@@ -1,0 +1,111 @@
+---
+status: Active
+title: 'Robust fine-tuning of zero-shot models'
+version: 1
+tags:
+- adaptation-and-tuning
+- multimodal-learning
+- analysis-and-evaluation
+- model-stability
+date: '2026-09-25'
+published: '2021-09-04'
+arxiv: '2109.01903'
+first_author: 'Wortsman'
+keywords:
+- 'weight-space-ensembling'
+- 'wise-ft'
+- 'distribution-shift'
+- 'zero-shot'
+- 'clip'
+- 'fine-tuning'
+implementations:
+- WiSE-FT
+summary: >-
+  Wortsman, Ilharco, Kim, Li, Kornblith, Roelofs, Gontijo-Lopes, Hajishirzi,
+  Farhadi, Namkoong and Schmidt (2021),
+  [ARXIV-2109.01903](https://arxiv.org/abs/2109.01903). Fine-tuning a zero-shot model buys target
+  accuracy and costs robustness. Linearly interpolating the zero-shot and
+  fine-tuned weights recovers both: at `α = 0.5`, **+3.5 to +23.2 pp** under six
+  distribution shifts against the fine-tuned model while reference accuracy
+  falls **by at most 0.3 pp** and usually rises. No extra cost at training or
+  inference. And it names the precondition: averaging all the layers of two
+  unrelated networks "typically fails, achieving no better accuracy than a
+  randomly initialized neural network" — this works because the trajectory is
+  shared.
+---
+
+# LIT-tmpsdcmd: Robust fine-tuning of zero-shot models
+
+<!-- inactive-ok-file: SOTA-217 THEORY-010 — Proposed, both, and cited as the account of why averaging unrelated networks fails — which is
+     the boundary this paper's precondition sits on. Open is not in dispute here. -->
+
+Wortsman et al. (2021) — [ARXIV-2109.01903](https://arxiv.org/abs/2109.01903)
+
+## Key takeaways
+
+**The tension it addresses.** A zero-shot CLIP-style model is unusually
+consistent across data distributions. Fine-tuning it on a target distribution
+raises target accuracy and *lowers* that consistency — the robustness was a
+property of the zero-shot setting, and fine-tuning spends it.
+
+**The method is one line.** For a mixing coefficient `α ∈ [0, 1]`, evaluate the
+model whose weights are
+
+    (1 − α) · θ_zero-shot + α · θ_fine-tuned
+
+**`α = 0.5` is the recommendation** when no domain knowledge is available; the
+paper reports it "yields close to optimal performance across a range of
+experiments", and evaluating other values requires no new training.
+
+**What it buys, and the asymmetry that makes it interesting.** At `α = 0.5`
+against the fine-tuned solution, performance under six distribution shifts
+improves by **3.5, 6.2, 1.7, 2.1, 9.0 and 23.2 pp**, while accuracy on the
+reference distribution drops **by at most 0.3 pp and often improves**. Headline
+figures: on ImageNet and five derived shifts, 4 to 6 pp better under shift than
+prior work *and* 1.6 pp better on ImageNet; 0.8 to 3.3 pp over standard
+fine-tuning on seven transfer datasets. This is not a robustness/accuracy
+trade-off dial — intermediate `α` beats **both** endpoints on both axes.
+
+**And it is free.** No additional computational cost during fine-tuning or
+inference: one model's weights, one forward pass.
+
+**The precondition, stated plainly, which is the part the record most needed.**
+
+> ensembling all layers—as we do when end-to-end fine-tuning—typically fails,
+> achieving no better accuracy than a randomly initialized neural network.
+> However, as similarly observed by previous work where part of the optimization
+> trajectory is shared, we find that the zero-shot and fine-tuned models are
+> connected by a linear path in weight-space along which accuracy remains high.
+
+So weight averaging is not a general operation on networks that happen to solve
+the same task. It works here because `θ_fine-tuned` was obtained *from*
+`θ_zero-shot`, and the record's own account of why it fails otherwise is
+[THEORY-010](../theory.d/THEORY-010.md) — the barrier between independently trained networks is mostly
+permutation.
+
+**A case where the method reduces to something already known.** When only the
+linear classifier is fine-tuned, weight-space ensembling is **algebraically
+identical** to the ordinary output-space ensemble, because the head enters
+linearly. The interesting claim is therefore about end-to-end fine-tuning, where
+the equivalence breaks and averaging in weight space is doing something
+averaging in output space is not.
+
+**A side benefit worth the note.** Because varying `α` needs no retraining and
+the models it reaches are "as good or better than those achievable by other
+hyperparameter configurations", `α` can substitute for a hyperparameter search
+that would otherwise cost training runs.
+
+## Standing in the anthology
+
+Ranked into [#342](https://github.com/dmarx/anthology-of-the-sota/issues/342)'s
+second tier, and promoted within it once [LIT-478](LIT-478.md)'s statement about missing
+weight-space-ensembling coverage was checked. Filed with [LIT-tmpq75ig](LIT-tmpq75ig.md), which is
+the other half: SWA averages along one trajectory, this interpolates two
+endpoints that share one. Neither needs the permutation alignment [SOTA-217](../practices.d/SOTA-217.md)
+recommends, and this paper is the one that says why in a single sentence.
+
+**Where it stops.** The authors put it in their limitations: "our investigation
+here is limited to image classification". Every number above is a
+CLIP-family image classifier, and the robustness the method preserves is
+robustness the zero-shot model already had — nothing here manufactures
+robustness in a model that lacked it.

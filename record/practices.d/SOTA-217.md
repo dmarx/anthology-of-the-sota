@@ -14,7 +14,20 @@ consensus_note: >-
   directions: one conjectured that permutation explains the barrier, the other
   supplied the algorithms and closed it on real networks.
 title: 'Align the hidden-unit permutation before averaging weights from separately trained networks'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Adds the scope line this practice was missing: when does the alignment step
+    NOT apply. Two papers filed today average weights without aligning anything,
+    because their points share an optimization trajectory — SWA along one
+    trajectory (LIT-tmpq75ig) and a fine-tuned model with its own initialization
+    (LIT-tmpsdcmd). The latter states the contrast in one sentence, reporting
+    that averaging all layers of unrelated networks gives "no better accuracy
+    than a randomly initialized neural network". That is the clearest statement
+    of what this practice is for that the record holds, and it also bounds it.
+    Recommendation, status and consensus unchanged.
 tags:
 - model-stability
 date: '2026-09-15'
@@ -40,6 +53,7 @@ explained_by:
 ---
 
 # SOTA-217: Align the hidden-unit permutation before averaging weights from separately trained networks
+
 
 ## What to do
 
@@ -93,3 +107,29 @@ averaging event. Nothing here says what that costs at scale.
 **Vision architectures, moderate scale.** Whether transformer attention heads
 present the same symmetry in the same way — they have more structure to match
 and more of it is shared — is not covered by either paper.
+
+## When the alignment step is unnecessary
+
+This practice is about networks that were **trained separately**. If the weight
+vectors you want to average share an optimization trajectory, there is no
+permutation to undo and no alignment to run.
+
+<!-- inactive-ok: SOTA-tmp9l3pq SOTA-tmp7f0us — Proposed, both, and named as the cases this practice does not cover. Their status is not what is being asserted; what they do without alignment is. -->
+Two such cases are filed here. [SOTA-tmp9l3pq](SOTA-tmp9l3pq.md) averages points visited along one
+SGD trajectory. [SOTA-tmp7f0us](SOTA-tmp7f0us.md) interpolates a zero-shot model with the model
+obtained by fine-tuning *from* it. Neither aligns anything, and both work.
+
+[LIT-tmpsdcmd](../literature.d/LIT-tmpsdcmd.md) puts the contrast in one sentence, which is worth having beside this
+practice because it is also the sharpest argument *for* it:
+
+> ensembling all layers—as we do when end-to-end fine-tuning—typically fails,
+> achieving no better accuracy than a randomly initialized neural network.
+> However, as similarly observed by previous work where part of the optimization
+> trajectory is shared, we find that the zero-shot and fine-tuned models are
+> connected by a linear path in weight-space along which accuracy remains high.
+
+So the test before averaging is not "are these the same architecture" or "do
+these solve the same task", but **did one of these weight vectors come from the
+other**. If yes, average. If no, this practice applies and
+<!-- inactive-ok: THEORY-010 — Proposed, and cited for the same reason it is cited above: it is the record's account of why the separately-trained case is hard. -->
+[THEORY-010](../theory.d/THEORY-010.md) says why.

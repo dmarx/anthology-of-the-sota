@@ -1,0 +1,101 @@
+---
+status: Active
+title: 'Averaging Weights Leads to Wider Optima and Better Generalization'
+version: 1
+tags:
+- training-optimization
+- model-stability
+- analysis-and-evaluation
+date: '2026-09-25'
+published: '2018-03-14'
+arxiv: '1803.05407'
+first_author: 'Izmailov'
+keywords:
+- 'stochastic-weight-averaging'
+- 'weight-space-ensembling'
+- 'cyclical-learning-rate'
+- 'flat-minima'
+- 'batch-normalization'
+implementations:
+- SWA
+summary: >-
+  Izmailov, Podoprikhin, Garipov, Vetrov and Wilson (2018),
+  [ARXIV-1803.05407](https://arxiv.org/abs/1803.05407). Average the weights visited along the tail of
+  an SGD trajectory under a cyclical or high constant learning rate. The paper
+  LIT-478 named as the first thing missing from this record's weight-space
+  ensembling coverage, and the baseline SOTA-288's promotion condition asks
+  for. From pretrained torchvision models, **ten further epochs** gives
+  ImageNet top-1 **76.15 → 76.97** on ResNet-50 and **78.31 → 78.94** on
+  ResNet-152, at the inference cost of one model. One gotcha, stated in the
+  paper: batch normalization statistics have to be recomputed with a pass over
+  the data.
+---
+
+# LIT-tmpq75ig: Averaging Weights Leads to Wider Optima and Better Generalization
+
+<!-- inactive-ok-file: SOTA-217 THEORY-010 SOTA-288 — Proposed, all three. SOTA-288's promotion condition names this paper as the baseline it
+     needs, which is why it is cited and why it is still open; SOTA-217 and THEORY-010 are the
+     permutation half of weight averaging, named to say what was and was not missing. -->
+
+Izmailov, Podoprikhin, Garipov, Vetrov and Wilson (2018) —
+[ARXIV-1803.05407](https://arxiv.org/abs/1803.05407)
+
+## Key takeaways
+
+**The method, which is almost nothing.** Train as usual, then keep a running
+average of the weights visited over the last stretch of training while the
+learning rate is held high — cyclically or at a constant value rather than
+decayed to zero. Ship the average. The paper's own description is that it
+"approximates the recent Fast Geometric Ensembling approach with a single
+model", which is the point: an ensemble's generalization for one model's
+inference cost.
+
+**The numbers, from already-trained models.** ImageNet top-1, running SWA for
+ten further epochs on pretrained torchvision checkpoints with one cyclical
+schedule shared across architectures, mean over three runs:
+
+| | SGD | SWA, 5 epochs | SWA, 10 epochs |
+| --- | --- | --- | --- |
+| ResNet-50 | 76.15 | 76.83 ± 0.01 | **76.97 ± 0.05** |
+| ResNet-152 | 78.31 | 78.82 ± 0.01 | **78.94 ± 0.07** |
+
+So **+0.82** and **+0.63** for ten epochs of extra training and no change to the
+model. The paper also reports better than **+1.3%** on CIFAR-100 and better than
+**+0.4%** on CIFAR-10 across Preactivation ResNet-164, VGG-16 and
+Wide ResNet-28-10.
+
+**The gotcha, and it is in the paper rather than folklore.** If the network uses
+batch normalization, the running mean and variance stored in the checkpoint
+belong to the weights that were visited, not to their average, so **one
+additional pass over the data** is needed to recompute them with the averaged
+weights. Skip it and the averaged model is broken rather than merely
+disappointing.
+
+**The account the paper offers.** SWA's solutions are *flatter* than SGD's, and
+the paper argues SGD with a high learning rate circles the periphery of a wide
+flat region without entering it, while the average of those peripheral points
+lands inside. That is a claim about the geometry, and the record already has a
+cluster arguing about whether flatness earns its reputation — [SOTA-012](../practices.d/SOTA-012.md) is where
+the correlation is kept and hedged.
+
+## Standing in the anthology
+
+Filed because [LIT-478](LIT-478.md) named it. That note's "Why it's here" section says the
+record has "nothing on weight-space ensembling. No stochastic weight averaging,
+no model soups, no snapshot ensembles, no Polyak averaging", and it names SWA as
+the baseline the method it describes improves on. [SOTA-288](../practices.d/SOTA-288.md)'s `promote_when` then
+asks for a replication "with stochastic weight averaging as the baseline rather
+than plain SGD" — a condition the record could not have checked, because the
+baseline was not in it.
+
+It is worth being precise about what was missing, because [LIT-478](LIT-478.md) overstated it:
+the record held [SOTA-217](../practices.d/SOTA-217.md), [THEORY-010](../theory.d/THEORY-010.md), [LIT-333](LIT-333.md) and [LIT-251](LIT-251.md) — the
+permutation-alignment half of weight averaging — six days before that sentence
+was written. What was missing is the **shared-trajectory** half, which is this
+paper and [LIT-tmpsdcmd](LIT-tmpsdcmd.md), and where no alignment is needed at all.
+
+**What this is not.** The gains are fractions of a percent on ImageNet and
+around a point on CIFAR, on 2018 convolutional architectures, against an SGD
+baseline. Nothing here is measured on a transformer, which is exactly the gap
+[SOTA-288](../practices.d/SOTA-288.md)'s condition names, and the extra epochs are real compute rather than
+a free lunch.

@@ -1,0 +1,122 @@
+---
+status: Active
+title: 'Dynamic Chunking for End-to-End Hierarchical Sequence Modeling'
+version: 1
+tags:
+- representation-and-encoding
+- model-architecture
+- biomolecular-modeling
+date: '2026-09-25'
+published: '2025-07-10'
+arxiv: '2507.07955'
+first_author: 'Hwang'
+keywords:
+- 'tokenizer-free'
+- 'byte-level-language-modeling'
+- 'dynamic-chunking'
+- 'hierarchical-sequence-model'
+- 'mamba-encoder'
+- 'flop-matched-comparison'
+implementations:
+- 'H-Net (github.com/goombalab/hnet)'
+compared_against:
+- LIT-003
+summary: >-
+  Hwang, Wang and Gu (2025; ICLR 2026), [ARXIV-2507.07955](https://arxiv.org/abs/2507.07955). H-Net is a byte-level
+  hierarchical model that learns where to cut chunks. Compared with a GPT-2
+  BPE Transformer at **matched bytes per batch and FLOPs per byte**, a chain
+  of baselines separates each ingredient. **One stage of learned chunking
+  only ties BPE and whitespace chunking** (0.728 against 0.730 against 0.726
+  bits/byte at XL). The gain is the **second stage** (0.715, +2.7 downstream
+  average). The largest gains are on Chinese. It is limited to 1.3B-equivalent
+  FLOPs and trains about 2× slower in wall-clock.
+---
+
+<!-- inactive-ok-file: SOTA-tmpjqtxk SOTA-294 — Proposed; the practice this paper sources,
+     and a neighbour whose premise it corroborates without being relied on -->
+
+# LIT-tmp959vc: Dynamic Chunking for End-to-End Hierarchical Sequence Modeling
+
+Hwang, Wang and Gu (2025) — [ARXIV-2507.07955](https://arxiv.org/abs/2507.07955)
+
+## Key takeaways
+
+**The architecture.** An autoregressive U-Net. A Mamba-2 encoder runs on
+bytes. A router places a boundary where adjacent representations are
+dissimilar, `p_t = ½(1 − cos(W_q x̂_t, W_k x̂_{t−1}))`. The boundary vectors
+go to a main network (a Transformer, or another H-Net), and a Mamba-2
+decoder upsamples back. Three things make the discrete choice trainable: an
+EMA **smoothing** over chunk outputs, a straight-through confidence weight,
+and a ratio loss targeting a compression rate. Stability needs a norm at the
+end of every sub-network and per-stage learning-rate multipliers.
+
+**The matching protocol is the contribution.** "matching all models carefully
+in both bytes-per-batch and FLOPs-per-byte", on a 100B-token FineWeb-Edu
+subset, at GPT-3 Large (760M) and XL (1.3B) FLOP budgets, one run each. Each
+baseline in the chain changes one thing: SpaceByte → SpaceByte++ (Mamba
+outer networks and the fixes) → H-Net (space) (whitespace boundaries) → H-Net
+(1-stage) (learned boundaries) → H-Net (2-stage).
+
+| XL (1.3B FLOPs) | bits/byte ↓ | avg of 7 zero-shot |
+| --- | --- | --- |
+| Transformer (GPT-2 BPE) | 0.730 | 55.5 |
+| SpaceByte++ | 0.733 | 56.1 |
+| H-Net (space) | 0.726 | 57.1 |
+| H-Net (1-stage) | 0.728 | 56.2 |
+| H-Net (2-stage) | **0.715** | **58.2** |
+
+The isotropic byte models lose clearly. At Large, LlamaByte scores 0.859
+bits/byte and 44.1 average, against the Transformer's 0.756 and 53.3.
+
+**Where learned chunking beats heuristics** (XL-scale, Table 4). On Chinese,
+2-stage reaches 0.7032 bits/byte against 0.7404 for a Llama-3-tokenized
+Transformer and 0.7478 for whitespace chunking. On code, 2-stage and
+whitespace chunking tie (0.3161 against 0.3163). The 1-stage model's learned
+boundaries fall "predominantly at whitespace characters". The second stage
+learns multi-word units ("the backbone", "such as").
+
+**DNA (HG38).** H-Net at 64–66M parameters reaches the stable-phase
+perplexity of isotropic 29–33M baselines "with approximately 3.6× less
+data".
+
+## Traps
+
+- **"A 1-stage H-Net outperforms a BPE Transformer"** means within 0.002
+  bits/byte and under a point of average, one seed. The paper allows "possibly
+  … some noise". Read it as equal.
+- **"Matches a Transformer twice its size"** holds on the downstream average
+  only. On bits/byte the Large 2-stage (0.743) is worse than the XL
+  Transformer (0.730). And "twice" is about 1.6× in FLOPs.
+- **Parameters are not matched.** At matched FLOPs, 2-stage has 870M against
+  760M, and 1.6B against 1.3B. The check against "it is just parameters"
+  (Fig. 12) is a byte-level MoE, not a BPE one.
+- **FLOP-matched is not time-matched.** "approximately up to 2× slower than an
+  isotropic model during training."
+- **Bits/byte for the BPE baseline is overestimated**, by the paper's own
+  account, and not corrected. That favours H-Net. The English baseline
+  tokenizer is GPT-2's (2019).
+- **Robustness is mostly bytes against tokens.** Isotropic byte models also
+  score 34–37 against BPE's 20 on perturbed HellaSwag.
+- **"Nearly 4× on DNA"** is 3.6×, at tiny scale, in the stable phase, with
+  twice the parameters.
+
+## Standing in the anthology
+
+Filed from the reading-time triage of 2026-09-25. It is the record's first
+tokenizer-free model, which is also why [SOTA-007](../practices.d/SOTA-007.md)'s
+"every model in this record tokenises this way" is amended in this
+contribution.
+
+It sources `SOTA-tmpjqtxk`: if dropping the tokenizer, use two stages of
+learned chunking with SSM outer networks, not an isotropic byte stack.
+It is a controlled challenge to BPE as default, but from one group at small
+scale. It does not make [SOTA-007](../practices.d/SOTA-007.md) contested. "Credible groups publicly
+disagree" needs more than one matched ≤1.3B study.
+
+- [SOTA-294](../practices.d/SOTA-294.md) (fit the tokenizer to a narrow corpus) is
+  the same fact seen from the other side. A fixed tokenizer compresses unevenly
+  across domains (Llama-3 BPE: 3.62 bytes/token on Chinese), and learned
+  chunking adapts (5.81).
+- [THEORY-021](../theory.d/THEORY-021.md) (models build a latent vocabulary whose units
+  are not the tokenizer's) gets qualitative corroboration. Allowed to choose
+  its units, the second stage chooses words and multi-word expressions.

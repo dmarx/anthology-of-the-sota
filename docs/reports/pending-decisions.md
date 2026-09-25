@@ -47,7 +47,7 @@
 | 2026-09-10 | Proposed | [SOTA-193](../../record/practices.d/SOTA-193.md) | 1 | 0 | Lower Adam's second-moment decay when the loss spikes, before reaching for the learning rate |
 | 2026-09-15 | Proposed | [SOTA-213](../../record/practices.d/SOTA-213.md) | 14 | 0 | Control evolution-strategies drift with a larger population or an anchor penalty, not by stopping training early |
 | 2026-09-15 | Proposed | [SOTA-211](../../record/practices.d/SOTA-211.md) | 13 | 0 | Spend one fitness evaluation per evolution-strategies direction, not an antithetic pair |
-| 2026-09-15 | Proposed | [SOTA-217](../../record/practices.d/SOTA-217.md) | 8 | 0 | Align the hidden-unit permutation before averaging weights from separately trained networks |
+| 2026-09-15 | Proposed | [SOTA-217](../../record/practices.d/SOTA-217.md) | 10 | 0 | Align the hidden-unit permutation before averaging weights from separately trained networks |
 | 2026-09-15 | Proposed | [SOTA-212](../../record/practices.d/SOTA-212.md) | 6 | 0 | Post-train by scoring many random weight perturbations in one parallel pass and majority-voting the best of them |
 | 2026-09-15 | Proposed | [SOTA-216](../../record/practices.d/SOTA-216.md) | 3 | 0 | Switch from minibatch SGD to local SGD at the first learning-rate decay, rather than choosing between them |
 | 2026-09-15 | Proposed | [SOTA-215](../../record/practices.d/SOTA-215.md) | 2 | 0 | Freeze Adam's variance term after a warmup before compressing its update, and never compress the update directly |
@@ -156,11 +156,11 @@
 | 2026-09-24 | Proposed | [SOTA-396](../../record/practices.d/SOTA-396.md) | 0 | 0 | When a latent video model reuses an image autoencoder or upsampler, fine-tune them on video so they see time |
 | 2026-09-24 | Proposed | [SOTA-397](../../record/practices.d/SOTA-397.md) | 0 | 0 | To condition an unconditionally trained diffusion model on known frames, use reconstruction guidance, not replacement |
 | 2026-09-25 | Proposed | [SOTA-404](../../record/practices.d/SOTA-404.md) | 2 | 0 | When you ablate an auxiliary loss, ablate the input construction that came with it, or the result is about both |
+| 2026-09-25 | Proposed | [SOTA-408](../../record/practices.d/SOTA-408.md) | 2 | 0 | Average the weights along the tail of training under a cyclical or high constant learning rate, then re-estimate the normalization statistics |
 | 2026-09-25 | Proposed | [SOTA-402](../../record/practices.d/SOTA-402.md) | 1 | 0 | To teach a model to reason over facts it holds, spend added data on facts derived from other facts rather than on more atomic facts |
 | 2026-09-25 | Proposed | [SOTA-403](../../record/practices.d/SOTA-403.md) | 1 | 0 | Share the attention parameters across layers if you need to cut parameters; do not share the feed-forward ones |
 | 2026-09-25 | Proposed | [SOTA-405](../../record/practices.d/SOTA-405.md) | 1 | 0 | Scale the masked-language-modelling rate with model size rather than holding it at 15% |
 | 2026-09-25 | Proposed | [SOTA-406](../../record/practices.d/SOTA-406.md) | 1 | 0 | Replace every masked token with [MASK]; drop BERT's 80-10-10 substitution rule |
-| 2026-09-25 | Proposed | [SOTA-408](../../record/practices.d/SOTA-408.md) | 1 | 0 | Average the weights along the tail of training under a cyclical or high constant learning rate, then re-estimate the normalization statistics |
 
 ## THEORYs
 

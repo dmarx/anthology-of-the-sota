@@ -10,7 +10,7 @@ consensus_note: >-
   backbones in the appendix, and a mechanism whose failure mode is stated and
   explained. What holds it short of `converged` is that every measurement is
   image classification, which the authors say, and that the record still cannot
-  name an adopter outside the authors' own line of work. LIT-tmpay0h1 extends
+  name an adopter outside the authors' own line of work. LIT-675 extends
   the method and shares a first author with it, so `DP-005` counts the two as
   one line rather than as a result and its replication. `Active` because the
   recommendation is free and the downside is bounded at 0.3 pp. Read as of
@@ -24,7 +24,7 @@ history:
     Resolves the dependency this document's own consensus note named, and records
     that resolving it changes nothing. The note said the record could not name an
     adopter "outside the authors' own line of work — model soups, which this
-    record does not yet hold". LIT-tmpay0h1 is now filed, and it shares a first
+    record does not yet hold". LIT-675 is now filed, and it shares a first
     author with this practice's source, so `DP-005` counts the two as one line of
     work rather than as a measurement and a replication. Consensus stays
     `emerging`; what changes is that the note says why instead of leaving a paper
@@ -113,7 +113,7 @@ claim.
 **Image classification only.** The authors state the limitation. Every number
 here is a CLIP-family classifier on image benchmarks.
 
-The wider family has since reached text, barely: [LIT-tmpay0h1](../literature.d/LIT-tmpay0h1.md) reports greedy
+The wider family has since reached text, barely: [LIT-675](../literature.d/LIT-675.md) reports greedy
 soups on four GLUE tasks with gains of **+0.0, +0.7, +0.0 and +0.5** for BERT and
 calls the experiments preliminary. That is a data point for weight averaging
 outside vision and it is not a result for *this* practice, which nobody has run

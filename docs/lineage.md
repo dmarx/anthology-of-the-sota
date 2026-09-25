@@ -2,7 +2,7 @@
 
 # Lines of work
 
-55 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+56 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -24,6 +24,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-505](../record/literature.d/LIT-505.md) — Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences *(Active)*
   - [LIT-506](../record/literature.d/LIT-506.md) — Interpretable RNA Foundation Model from Unannotated Data for Highly Accurate RNA Structure and Function Predictions *(Active)*
+
+### From Robust fine-tuning of zero-shot models
+
+- alongside: [LIT-674](../record/literature.d/LIT-674.md) — Robust fine-tuning of zero-shot models *(Active)*
+- alongside: [LIT-675](../record/literature.d/LIT-675.md) — Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time *(Active)*
 
 ## analysis-and-evaluation
 
@@ -90,6 +95,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-670](../record/literature.d/LIT-670.md) — BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding *(Active)*
 - alongside: [LIT-671](../record/literature.d/LIT-671.md) — RoBERTa: A Robustly Optimized BERT Pretraining Approach *(Active)*
 - alongside: [LIT-672](../record/literature.d/LIT-672.md) — Should You Mask 15% in Masked Language Modeling? *(Active)*
+
+### From Robust fine-tuning of zero-shot models
+
+- alongside: [LIT-674](../record/literature.d/LIT-674.md) — Robust fine-tuning of zero-shot models *(Active)*
+- alongside: [LIT-675](../record/literature.d/LIT-675.md) — Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time *(Active)*
 
 ## attention-techniques
 
@@ -344,6 +354,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-595](../record/literature.d/LIT-595.md) — VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning *(Active)*
 - alongside: [LIT-596](../record/literature.d/LIT-596.md) — Barlow Twins: Self-Supervised Learning via Redundancy Reduction *(Active)*
+
+### From Robust fine-tuning of zero-shot models
+
+- alongside: [LIT-674](../record/literature.d/LIT-674.md) — Robust fine-tuning of zero-shot models *(Active)*
+- alongside: [LIT-675](../record/literature.d/LIT-675.md) — Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time *(Active)*
 
 ## multimodal-learning
 

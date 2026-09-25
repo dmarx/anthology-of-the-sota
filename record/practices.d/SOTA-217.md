@@ -31,7 +31,7 @@ history:
 - version: 3
   date: '2026-09-25'
   note: >-
-    Adds the third shared-trajectory case, SOTA-tmpchosw, and with it the
+    Adds the third shared-trajectory case, SOTA-409, and with it the
     qualification that the scope boundary is a spectrum rather than a dichotomy.
     A shared initialization is not sufficient: the greedy soup recipe exists to
     "avoid adding in models which may lie in a different basin", which can happen
@@ -125,10 +125,10 @@ This practice is about networks that were **trained separately**. If the weight
 vectors you want to average share an optimization trajectory, there is no
 permutation to undo and no alignment to run.
 
-<!-- inactive-ok: SOTA-408 SOTA-407 SOTA-tmpchosw — Proposed or Active, and named as the cases this practice does not cover. What they do without alignment is the assertion, not their status. -->
+<!-- inactive-ok: SOTA-408 SOTA-407 SOTA-409 — Proposed or Active, and named as the cases this practice does not cover. What they do without alignment is the assertion, not their status. -->
 Three such cases are filed here. [SOTA-408](SOTA-408.md) averages points visited along one
 SGD trajectory. [SOTA-407](SOTA-407.md) interpolates a zero-shot model with the model
-obtained by fine-tuning *from* it. [SOTA-tmpchosw](SOTA-tmpchosw.md) averages the members of a
+obtained by fine-tuning *from* it. [SOTA-409](SOTA-409.md) averages the members of a
 fine-tuning sweep that all started from one pretrained checkpoint. None aligns
 anything, and all three work.
 

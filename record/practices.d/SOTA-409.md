@@ -1,5 +1,8 @@
 ---
+number: 409
 status: Active
+formerly:
+- SOTA-tmpchosw
 consensus: emerging
 consensus_note: >-
   The grounds are the guarantee, not adoption. The greedy recipe cannot do worse
@@ -16,13 +19,13 @@ tags:
 - adaptation-and-tuning
 date: '2026-09-25'
 source:
-- LIT-tmpay0h1
+- LIT-675
 introduced_by:
-- LIT-tmpay0h1
+- LIT-675
 implementations:
 - 'model-soups'
 summary: >-
-  Wortsman et al. (2022), [LIT-tmpay0h1](../literature.d/LIT-tmpay0h1.md). A hyperparameter sweep ends by discarding
+  Wortsman et al. (2022), [LIT-675](../literature.d/LIT-675.md). A hyperparameter sweep ends by discarding
   every model but one. Average them instead — sorted by held-out accuracy,
   keeping each only if held-out accuracy improves, which makes the result
   **no worse than the best individual model on that set by construction**.
@@ -32,14 +35,14 @@ summary: >-
   out *worse* than the best one.
 ---
 
-# SOTA-tmpchosw: Average the fine-tuned models from your hyperparameter sweep instead of keeping only the best, adding each one in validation order and only if it helps
+# SOTA-409: Average the fine-tuned models from your hyperparameter sweep instead of keeping only the best, adding each one in validation order and only if it helps
 
 <!-- inactive-ok-file: SOTA-217 SOTA-408 — Proposed, both, and cited to route the reader to the neighbouring cases — the separately-trained
      one this practice does not cover, and the along-one-trajectory one it shares a precondition with. -->
 
 ## Source
 
-Wortsman et al. (2022), [LIT-tmpay0h1](../literature.d/LIT-tmpay0h1.md) —
+Wortsman et al. (2022), [LIT-675](../literature.d/LIT-675.md) —
 [ARXIV-2203.05482](https://arxiv.org/abs/2203.05482).
 
 ## What to do

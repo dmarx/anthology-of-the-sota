@@ -24,8 +24,10 @@ tags:
 # When this note was filed. The record's own clock, not the paper's.
 date: '2026-01-01'
 
-# REQUIRED. When the PAPER appeared — the arXiv posting month, from the id:
-# 2205.11487 → 2022-05. Distinct from `date:` above, which is when the record
+# REQUIRED. The exact date the work first appeared: the arXiv v1 "Submitted
+# on" date, else the earliest full date Crossref gives (in the recorded year),
+# else the date the document carries. The first of the month only when no
+# source gives a day. Distinct from `date:` above, which is when the record
 # got round to it.
 #
 # This is the one place the date lives. A practice reads it from its primary

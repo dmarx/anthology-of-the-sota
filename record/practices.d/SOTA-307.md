@@ -14,7 +14,7 @@ consensus_note: >-
   the literature is a single number from a single run, which is not a
   competing measurement but the absence of one.
 title: 'Report generative FID as an error bar over several training seeds, and treat any gap below about 2% of the mean as inconclusive'
-version: 4
+version: 5
 history:
 - version: 2
   date: '2026-09-23'
@@ -39,6 +39,17 @@ history:
     moves FID seventeen-fold and IS almost five-fold from a single checkpoint, so
     fixing it is prior to any seed-noise question rather than a refinement of one.
     Recommendation, status and consensus unchanged.
+- version: 5
+  date: '2026-09-25'
+  note: >-
+    Adds the one instance the record holds of the "measure your own floor"
+    instruction being followed elsewhere, and it lands far higher:
+    LIT-tmptzz06 reports FID varying "by up to ±14%" between consecutive
+    StyleGAN training iterations on FFHQ. Different family, different dataset and
+    a different quantity — snapshots of one run, not seeds — so it is a second
+    calibration point rather than a correction. Also notes what a second metric
+    does to the error bar this practice asks for. Recommendation, status,
+    consensus and the 2% figure unchanged.
 tags:
 - analysis-and-evaluation
 - generative-modeling
@@ -46,6 +57,7 @@ date: '2026-09-21'
 source:
 - LIT-501
 - LIT-693
+- LIT-tmptzz06
 introduced_by:
 - LIT-501
 implementations: []
@@ -156,6 +168,29 @@ the protocol, measure your own floor.**
 DINOv2 FID, precision, density, coverage — track Inception FID closely;
 **recall is the outlier**. A practice written from FID should not be assumed
 to cover diversity metrics.
+
+**A second calibration point, and it is much larger.** The instruction
+above is to port the protocol and measure your own floor; [LIT-tmptzz06](../literature.d/LIT-tmptzz06.md) is the one
+case in this record where somebody did. Training StyleGAN on FFHQ, they report
+FID varying "by up to **±14%** between consecutive training iterations" — quoted
+in passing, while explaining why they amortise over snapshots. That is a
+different family, a different dataset and a different quantity (consecutive
+snapshots of one run rather than independent seeds), so it does not touch the 2%
+this practice states, and a ±range over
+consecutive snapshots is not the coefficient of variation over seeds that the 2%
+is. What it does is price the warning: the two numbers are an order of magnitude
+apart in a setting that differs in every respect, so reusing either across
+families would be exactly the mistake this practice's own Conditions section
+predicts. Nobody has measured a GAN's seed-to-seed floor, or an LM-scale
+diffusion model's snapshot-to-snapshot one.
+
+**With two metrics the error bar becomes a frontier.** This practice asks for a
+spread over seeds because the best-of-N snapshot is an overestimate. [SOTA-425](SOTA-425.md)
+asks for precision and recall beside FID, and [LIT-tmptzz06](../literature.d/LIT-tmptzz06.md) shows that the
+snapshots of a single run span a range of precision/recall tradeoffs — so "the
+best snapshot" is no longer defined and the amortisation has to be a Pareto
+frontier instead of a mean and a spread. The two practices are compatible and
+neither one alone tells you what to report.
 
 **Per-cell guidance tuning helps and does not solve it.** Golden-section CFG
 search takes CoV from 1.26% to 0.67%, but the between-to-within ratio only

@@ -1,0 +1,151 @@
+---
+status: Active
+title: 'Improved Precision and Recall Metric for Assessing Generative Models'
+version: 1
+tags:
+- analysis-and-evaluation
+- generative-modeling
+- vision-and-graphics
+date: '2026-09-25'
+published: '2019-04-15'
+arxiv: '1904.06991'
+first_author: 'Kynkäänniemi'
+keywords:
+- 'precision-recall'
+- 'manifold-estimation'
+- 'k-nearest-neighbors'
+- 'truncation'
+- 'realism-score'
+implementations:
+- 'improved-precision-and-recall-metric'
+summary: >-
+  Kynkäänniemi, Karras, Laine, Lehtinen and Aila (2019), [ARXIV-1904.06991](https://arxiv.org/abs/1904.06991). The
+  definitions [SOTA-425](../practices.d/SOTA-425.md) rests on: build a k-NN hypersphere approximation of each
+  distribution's manifold in a feature space, then precision is the fraction of
+  generated samples inside the real manifold and recall the fraction of real
+  samples inside the generated one. **The features are VGG-16 fc2, not
+  Inception** — the record had this wrong. Its Figure 4 is the demonstration:
+  two StyleGAN setups at FID **16.9** and **16.7** where one produces good
+  samples at low variety and the other is "practically all images broken", and
+  the FID-optimised configuration has visible facial distortion.
+---
+
+# LIT-tmptzz06: Improved Precision and Recall Metric for Assessing Generative Models
+
+Kynkäänniemi, Karras, Laine, Lehtinen and Aila (2019) —
+[ARXIV-1904.06991](https://arxiv.org/abs/1904.06991)
+
+## Key takeaways
+
+- **The definition, and it is a set-membership question, not a density one.**
+  Embed 50 000 real and 50 000 generated images, and for each feature vector
+  form a hypersphere reaching its `k`th nearest neighbour. The union of the
+  spheres approximates that distribution's manifold. Then
+  `precision = fraction of generated samples inside the real manifold`,
+  `recall = fraction of real samples inside the generated manifold`. Two
+  manifolds, estimated separately, never mixed.
+- **The features are VGG-16, activations after the second fully connected
+  layer.** Not Inception-v3, which is what FID uses. The authors tried the
+  Zhang et al. perceptual stack too and found VGG-16 fc2 "works considerably
+  better", because it puts less weight on exact spatial arrangement. Figure 3c
+  shows Inception-v3 features give "substantially similar" results — so the two
+  metrics are not independent instruments, but they are also not the same
+  network, and a document that says they are is wrong.
+- **`k = 3` and 50 000 samples are the defaults, and `k` is not a free
+  parameter you can vary between compared runs.** "Higher values of `k`
+  increase the precision and recall estimates in a fairly consistent fashion,
+  and lower values decrease them", until they saturate at 1.0 or 0.0. `k`
+  trades manifold coverage against volume overestimation; `k = 3` was chosen as
+  the value that avoids saturating "most of the time".
+- **Figure 4 is the case for reporting both, and it is stronger than anything
+  the record had.** Four StyleGAN setups on FFHQ:
+
+  | setup | FID | what it looks like | P/R |
+  | --- | --- | --- | --- |
+  | A | 91.7 | heavily truncated; high quality, all alike | high P, low R |
+  | B | **16.9** | good quality, lower variation | higher P |
+  | C | 4.5 | the FID-optimised config; **faces start to distort** | lower P |
+  | D | **16.7** | "nearly all of the generated images have low quality" | much lower P |
+
+  **B and D are 0.2 FID apart and perceptually opposite.** The paper puts it
+  plainly: "it is unclear which application might favor setup D where
+  practically all images are broken over setup B that produces high-quality
+  samples at a lower variation." And C, the configuration FID picks, has visible
+  artifacts.
+- **FID is not neutral between the two components — it prefers recall.** Over
+  six StyleGAN training configurations (Fig. 7), "FID favors configurations with
+  high recall (A, F) over the ones with high precision (B, C), and the same is
+  also true for the individual snapshots". The best-recall configuration sets a
+<!-- inactive-ok: THEORY-tmpv11wm — Proposed, and this bullet is one of the two measurements it rests on; the account is not in force because the magnitude is unmeasured, which is exactly what this note's data leaves open. -->
+  new state-of-the-art FID on FFHQ. That asymmetry is [THEORY-tmpv11wm](../theory.d/THEORY-tmpv11wm.md).
+- **The mechanism for the asymmetry is stated, not just observed.** FID is a
+  Wasserstein-2 distance in feature space, so "low intrinsic variation implies
+  low FID even when much of that variation is missed". BigGAN's per-class
+  numbers show it: "Lemon" and "Broccoli" have very low recall and good FID,
+  while the classes Brock et al. call *difficult* have higher recall.
+- **FID varies by up to ±14% between consecutive training iterations** of
+  StyleGAN. Quoted while explaining why snapshots are amortised — a much larger
+  floor than the 1–2% [SOTA-307](../practices.d/SOTA-307.md) calibrates for SiT on ImageNet, in a different
+  family and for a different quantity (consecutive snapshots of one run, not
+  seeds).
+- **Two metrics turn model selection into a multi-objective problem, and the
+  paper's answer is the Pareto frontier.** With one metric you take the best
+  snapshot. With precision and recall, snapshots "represent a wide range of
+  different tradeoffs", so they report the minimal subset guaranteed to contain
+  the optimum for *any* tradeoff rather than assuming which tradeoff you want.
+- **The predecessor fails exactly where the metric is needed most.** Sajjadi et
+  al.'s (2018) precision/recall calls setups B, C and D "essentially perfect"
+  and gives the heavily truncated A the *lowest* precision. Under a truncation
+  sweep it reports **both** precision and recall rising as truncation is
+  removed, which is backwards. The diagnosis: truncation packs samples into a
+  small region, and a relative-density method reads a dense cluster with no real
+  images near it as low precision. Fewer clusters fixes precision and breaks
+  recall.
+- **The per-sample extension needs a different estimator.** The realism score
+  `R(φ_g, Φ_r) = max_φr { ‖φ_r − NN_k(φ_r, Φ_r)‖ / ‖φ_g − φ_r‖ }` is continuous
+  and agrees with the binary function at `R ≥ 1`. But sparse regions of the
+  training set give huge hyperspheres, which are harmless in aggregate and
+  ruinous for one sample, so **the half of the hyperspheres with the largest
+  radii are discarded** — for `R` only, never for `f`. An aggregate estimator
+  and a per-sample estimator of the same quantity needed different bias/variance
+  choices.
+- **A side result worth keeping.** Of 500 000 StyleGAN interpolation paths with
+  both endpoints on the real manifold, only **2.4%** crossed an unrealistic
+  region, "suggesting that the subset of W on the real manifold is highly
+  convex".
+
+## Standing in the anthology
+
+Filed because [SOTA-425](../practices.d/SOTA-425.md) made it load-bearing in the unit before this one. The
+2026-09-23 metric-definition sweep looked at `1904.06991` and declined it —
+"named twice, both times as 'the appendix also reports it'. Not load-bearing on
+anything" — which was accurate then. [SOTA-425](../practices.d/SOTA-425.md) now tells readers to report the
+metric and argues from its values, so the decline expired and that practice's
+Source section said so.
+
+What reading it changed:
+
+- **It corrected the record about its own instrument.** [SOTA-425](../practices.d/SOTA-425.md) and [SOTA-337](../practices.d/SOTA-337.md)
+  both said precision and recall are computed with "the same ImageNet network
+  FID uses". They are not: VGG-16 fc2 against Inception-v3 pool3. The hazard
+  those documents describe survives — both are ImageNet classifiers — but the
+  sentence did not, and it took the defining paper to see that.
+- It supplies [SOTA-425](../practices.d/SOTA-425.md) a better demonstration than its source had, two
+<!-- inactive-ok: THEORY-tmpv11wm — Proposed, listed as what this note supplied rather than relied on; a note naming the theory it introduced is the introduction, not a citation of a settled account. -->
+  conditions it lacked (`k`, and the Pareto frontier), and [THEORY-tmpv11wm](../theory.d/THEORY-tmpv11wm.md).
+- It supplies [SOTA-307](../practices.d/SOTA-307.md) a second variance figure from a different family.
+
+**What it does not settle.** Whether ADM's precision and recall — the numbers
+[SOTA-425](../practices.d/SOTA-425.md) argues from — were computed in VGG or Inception features. [LIT-699](LIT-699.md) cites
+this paper for the metric and says it evaluates "all models using the same
+codebase", but never names the feature network for precision and recall as it
+does for FID. So the values are internally consistent and their comparability
+with numbers from elsewhere is unstated.
+
+**The antecedent is unheld and that is a deliberate deferral, not an
+oversight.** Sajjadi et al. (2018), `1806.00035`, is the formulation this paper
+replaces, and everything the record knows about it comes from this paper's
+<!-- inactive-ok: THEORY-109 — Proposed, and cited for its procedural situation rather than its content: it is named as the precedent for deferring an antecedent, and being not-yet-in-force is the point of the comparison. -->
+account of it — the same one-sided position `THEORY-109` is in with respect to
+classifier guidance. Filing it would be the way to check that account rather
+than repeat it.

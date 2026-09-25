@@ -1,0 +1,157 @@
+---
+status: Active
+title: 'ALBERT: A Lite BERT for Self-supervised Learning of Language Representations'
+version: 1
+tags:
+- model-architecture
+- training-optimization
+- representation-and-encoding
+- model-stability
+date: '2026-09-25'
+published: '2019-09-26'
+arxiv: '1909.11942'
+first_author: 'Lan'
+keywords:
+- 'cross-layer-parameter-sharing'
+- 'factorized-embedding'
+- 'sentence-order-prediction'
+- 'parameter-efficiency'
+- 'bert'
+- 'dropout'
+implementations:
+- ALBERT
+summary: >-
+  Lan, Chen, Goodman, Gimpel, Sharma and Soricut (2019),
+  [ARXIV-1909.11942](https://arxiv.org/abs/1909.11942). The measurement behind cross-layer parameter
+  sharing, which this record started recommending — via the fix
+  THEORY-103 endorses — without holding a single paper on it. The
+  sharp result is an **asymmetry**: sharing the attention parameters across
+  every layer costs **+0.1 average** at `E = 128`, and sharing the
+  feed-forward parameters costs **−1.4**. Also carries a priority claim the
+  record's dropout practice should have: the first report that dropout hurts a
+  large transformer.
+---
+
+# LIT-tmp40orc: ALBERT: A Lite BERT for Self-supervised Learning of Language Representations
+
+<!-- inactive-ok-file: THEORY-103 SOTA-tmpgqcuy THEORY-065 THEORY-066 — Proposed, all four, and
+     that is the point at each site: the first two are what this note supplied and this paper is
+     their only source, and the last two are named as documents that measure ON ALBERT while the
+     record did not hold it, which is the gap this note closes rather than a claim it leans on. -->
+
+Lan, Chen, Goodman, Gimpel, Sharma and Soricut (2019) — [ARXIV-1909.11942](https://arxiv.org/abs/1909.11942)
+
+## Key takeaways
+
+**The asymmetry, which is the reason this note exists.** A transformer block has
+two halves, and they are not equally compressible across depth. On an
+ALBERT-base configuration, average over SQuAD 1.1/2.0, MNLI, SST-2 and RACE:
+
+| sharing strategy | params (`E = 128`) | Avg | params (`E = 768`) | Avg |
+| --- | --- | --- | --- | --- |
+| not shared (BERT-style) | 89M | 81.6 | 108M | 82.3 |
+| **attention shared only** | 64M | **81.7** | 83M | 81.6 |
+| FFN shared only | 38M | 80.2 | 57M | 79.5 |
+| all shared (ALBERT-style) | 12M | 80.1 | 31M | 79.8 |
+
+Sharing every attention block in the stack is **free** at `E = 128` (+0.1) and
+nearly free at `E = 768` (−0.7), and it removes roughly a quarter of the
+parameters — 89M to 64M, and 108M to 83M. Sharing the feed-forward blocks costs
+−1.4 and −2.8 for a larger saving. The paper states it
+plainly: *"most of the performance drop appears to come from sharing the
+FFN-layer parameters."* Grouped sharing interpolates — dividing `L` layers into
+groups of `M` and sharing within each, the smaller `M` is, the better.
+
+**Two parameter-reduction techniques, and what each is for.** Factorized
+embedding parameterization decomposes the `V × H` vocabulary embedding into
+`V × E` and `E × H`, which decouples the embedding width from the hidden width;
+under sharing, `E = 128` is best, and under BERT-style non-sharing, larger `E`
+is better "but not by much". Cross-layer sharing is the second, and the paper
+reports it *also* acts as a regularizer that "stabilizes the training".
+
+**A measured claim about stability, and a distinct one it is careful to
+separate.** The L2 distance and cosine similarity between each layer's input and
+output embeddings are **much smoother for ALBERT than for BERT**, which is the
+stabilization claim. Both metrics drop with depth and **do not converge to 0
+even after 24 layers** — the paper's point being that ALBERT's embeddings
+*oscillate* rather than converging, unlike the Deep Equilibrium Models of Bai et
+al. (2019), which reach a fixed point. Two different things are being denied
+here: a fixed point, and a collapse. Only the first is what was measured.
+
+**Sentence order prediction beats next sentence prediction, and the intrinsic
+numbers say why.** Three conditions on ALBERT-base — no inter-sentence loss,
+NSP, SOP — give downstream averages of **79.0 / 79.2 / 80.1**. The mechanism is
+in the intrinsic column: a model trained on NSP scores **52.0% on SOP**, which
+is chance, while a model trained on SOP scores **78.9% on NSP**. NSP is
+solvable by topic overlap, so training on it teaches nothing that SOP does not
+already contain.
+
+**Fewer parameters is not less compute, and the paper says so in its
+discussion.** The abstract sells "lower memory consumption and increase the
+training speed of BERT", and an ALBERT-large configuration is indeed 18× smaller
+and ~1.7× faster than BERT-large. But the *best* model, ALBERT-xxlarge, is
+**3.17× slower in data throughput than BERT-large** despite having fewer
+parameters, because sharing lets you spend the savings on width. The discussion
+opens by conceding it: *"While ALBERT-xxlarge has less parameters than
+BERT-large and gets significantly better results, it is computationally more
+expensive due to its larger structure."*
+
+**And then they run the comparison that settles it.** Controlling wall-clock
+rather than steps — BERT-large at 400k steps in 34h against ALBERT-xxlarge at
+125k steps in 32h — ALBERT is **+1.5 on average and +5.2 on RACE**. The
+parameter count was never the argument; the equal-time result is.
+
+**Dropout hurts, and this is the first report of it for a transformer.** After
+1M steps the largest models still do not overfit, so dropout was removed;
+MLM accuracy improves and so do the downstream tasks. The claim is stated with
+its own limit: *"To the best of our knowledge, we are the first to show that
+dropout can hurt performance in large Transformer-based models. However, the
+underlying network structure of ALBERT is a special case of the transformer and
+further experimentation is needed."*
+
+## Standing in the anthology
+
+Ranked into [#342](https://github.com/dmarx/anthology-of-the-sota/issues/342)'s
+second tier on 17 documents saying "ALBERT" against **zero practices**. What
+moved it to the front of that tier is the previous unit: filing
+[THEORY-103](../theory.d/THEORY-103.md) made cross-layer parameter sharing load-bearing here,
+and the record held nothing on it — 17 mentions of ALBERT, all of them either
+measuring *on* the model ([THEORY-065](../theory.d/THEORY-065.md), [THEORY-066](../theory.d/THEORY-066.md), [LIT-528](LIT-528.md), [LIT-530](LIT-530.md))
+or naming "ALBERT-style layer sharing" as an instrument ([LIT-303](LIT-303.md), [LIT-316](LIT-316.md)),
+and one mention of Universal Transformer, in a changelog fragment written the
+same day.
+
+It also **disagrees with the paper the record was implicitly relying on.**
+ALBERT's related-work section says so directly: *"Different from our
+observations, Dehghani et al. 2018 show that networks with cross-layer
+parameter sharing (Universal Transformer, UT) get better performance on language
+modeling and subject-verb agreement than the standard transformer."* Same
+intervention, opposite sign, and the disagreement is named rather than
+glossed — which is what makes it usable.
+
+What it changes here:
+
+- Supplies [SOTA-tmpgqcuy](../practices.d/SOTA-tmpgqcuy.md), the sharing asymmetry as a recommendation. Nothing in
+  this record previously said which half of a block you may share.
+- Qualifies [THEORY-103](../theory.d/THEORY-103.md). The fix that account endorses requires sharing
+  the feed-forward parameters — that is where the second copy of the facts
+  lives — and that is the expensive half.
+- Carries a language-model instance and a priority claim to [SOTA-240](../practices.d/SOTA-240.md), whose
+  negative half rested on a six-point ViT-T drop.
+
+**A gap this reading measured and did not close.** Neither
+`1810.04805` nor `1907.11692` — BERT and RoBERTa — is in this record, in any
+scheme. `THEORY-066` and `LIT-530` measure rank collapse on BERT; this note's
+own subject is a "lite BERT"; six documents name BERT as a baseline. The record
+has been reasoning about a model it does not hold, which is the same shape as
+the position-encoding gap the previous unit found and larger. Filed as a
+finding, not as work: it wants its own unit.
+
+**What this note is not.** The headline results — GLUE 89.4, SQuAD 2.0 F1 92.2,
+RACE 89.4 — are 2019 state of the art and are of historical interest only. The
+architecture did not win either: nothing at current scale shares layers, and
+that is worth stating carefully, because **non-adoption is not a measurement**
+any more than adoption is (`DP-005`). Nobody has published the experiment that
+would retire this; the field moved to spending parameters rather than saving
+them, and the question of which half of a block is compressible was left where
+this paper left it.

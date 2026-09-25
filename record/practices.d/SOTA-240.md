@@ -9,13 +9,14 @@ consensus_note: >-
   implementing it is what would need justifying. What this record has assessed
   is narrower than that — the *conditional*, that the decision turns on
   whether the model can memorize what it is shown. The grounds are
-  LIT-395 §7.4, which reports both edges of the sweet spot, and LIT-119,
+  LIT-395 §7.4, which reports both edges of the sweet spot; LIT-119,
   which reaches for dropout in 2026 under exactly the condition the 2014 paper
-  predicts. No survey of current pretraining recipes supports the stronger
-  reading, and this note is here so that the `converged` above is not read as
-  covering it.
+  predicts; and LIT-tmp40orc, which in 2019 removed dropout from a model that
+  would not overfit and gained on every task. No survey of current pretraining
+  recipes supports the stronger reading, and this note is here so that the
+  `converged` above is not read as covering it.
 title: 'Apply dropout where the model can memorize what it is shown, and not where it cannot'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-21'
@@ -28,6 +29,18 @@ history:
     unchanged and its evidence is strengthened -- that six-point drop is now
     the clearest measurement in the record of the cost this practice warns
     about.
+- version: 3
+  date: '2026-09-25'
+  note: >-
+    Converts this document's own admission into a reported result. v2 said that
+    where the sweet-spot curve leaves large-scale pretraining "is an inference,
+    not a reported result", and that the record had not confirmed why current
+    recipes set dropout to zero. LIT-tmp40orc is one confirmation, from 2019:
+    ALBERT-xxlarge does not overfit after 1M steps, so dropout was removed, and
+    MLM accuracy and every downstream task improve — 90.4 to 90.7 average. The
+    authors claim priority for it and bound their own claim. The recommendation
+    is unchanged; what changes is that its right edge now has a language model
+    behind it and not only a 2014 MNIST curve read forward.
 tags:
 - model-stability
 date: '2026-09-17'
@@ -39,6 +52,7 @@ date: '2026-09-17'
 source:
 - LIT-395
 - LIT-119
+- LIT-tmp40orc
 introduced_by:
 - LIT-394
 implementations:
@@ -95,13 +109,24 @@ would say *more data, more dropout*; a practice derived only from the right
 one would say the opposite. What the curve actually supports is a ratio
 claim, which is why this practice is stated as one.
 
-**Where that leaves large-scale pretraining is an inference, not a reported
-result.** If a corpus is large enough that a model sees most of it once and
-cannot memorize it, the right edge of §7.4 predicts little to gain — against
-a cost the same paper measures at 2-3x training time. The record has not
-surveyed current pretraining recipes to confirm that this is why they set
-dropout to zero, and until it has, that sentence is the anthology reading a
-2014 curve forward rather than a claim anybody has checked at scale.
+**Where that leaves large-scale pretraining was an inference; it now has one
+reported result behind it.** If a corpus is large enough that a model sees most
+of it once and cannot memorize it, the right edge of §7.4 predicts little to
+gain — against a cost the same paper measures at 2-3x training time.
+[LIT-tmp40orc](../literature.d/LIT-tmp40orc.md) reports the prediction coming true and gives the reason in the same
+terms: after 1M steps ALBERT-xxlarge "still do[es] not overfit to [its] training
+data", so dropout was removed, and MLM accuracy rose along with every downstream
+task — **90.4 to 90.7 on average**, with SQuAD 1.1, SQuAD 2.0, MNLI, SST-2 and
+RACE all improving. The authors claim priority (*"to the best of our knowledge,
+we are the first to show that dropout can hurt performance in large
+Transformer-based models"*) and immediately bound it, noting that ALBERT's
+shared-layer structure is "a special case of the transformer".
+
+So the right edge holds on one language model, for the reason the 2014 curve
+gives. What is still not surveyed is *current* recipes: this record has one 2019
+encoder with an unusual architecture, not a statement about why the field sets
+dropout to zero today. And 0.3 points of average on one configuration is a
+confirmation, not a large effect.
 
 **The converse case is live and recent.**
 [LIT-119](../literature.d/LIT-119.md) reports dropout 0.1 after the linear

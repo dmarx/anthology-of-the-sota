@@ -14,7 +14,7 @@ consensus_note: >-
   the literature is a single number from a single run, which is not a
   competing measurement but the absence of one.
 title: 'Report generative FID as an error bar over several training seeds, and treat any gap below about 2% of the mean as inconclusive'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-23'
@@ -29,12 +29,23 @@ history:
     Adds cases from the video line's readings (#331): MAGVIT-v2's 1.78
     against 1.79 "beats diffusion" claim is inside the floor. VDM's
     single-run gaps survive it. The recommendation is unchanged.
+- version: 4
+  date: '2026-09-25'
+  note: >-
+    Sources the guidance items. This practice told a reader to search the
+    classifier-free guidance scale per cell and quantified the noise ±0.05 on it
+    injects, while the record held no paper for the technique. LIT-tmpy02tv is now
+    filed, and its sweep is a stronger argument than the one made here: the weight
+    moves FID seventeen-fold and IS almost five-fold from a single checkpoint, so
+    fixing it is prior to any seed-noise question rather than a refinement of one.
+    Recommendation, status and consensus unchanged.
 tags:
 - analysis-and-evaluation
 - generative-modeling
 date: '2026-09-21'
 source:
 - LIT-501
+- LIT-tmpy02tv
 introduced_by:
 - LIT-501
 implementations: []
@@ -81,6 +92,14 @@ that differ by an order of magnitude.
    section converges in a logarithmic number of evaluations — and report the
    search tolerance with the number, because ±0.05 on the scale injects noise
    comparable to the whole within-seed floor.
+
+   The record now holds the measurement that makes this non-negotiable rather
+   than fastidious. [LIT-tmpy02tv](../literature.d/LIT-tmpy02tv.md) sweeps the guidance weight on ImageNet 64×64 and
+   takes **FID from 1.55 to 26.22 while IS goes from 66.11 to 260.2** — a
+   seventeen-fold swing in one metric and a near-quintupling of the other, from
+   one checkpoint. Against that, a seed-noise floor is a rounding error: a
+   comparison that does not fix the guidance weight is not measuring the
+   models.
 
 ## What it buys, and what it costs to ignore
 

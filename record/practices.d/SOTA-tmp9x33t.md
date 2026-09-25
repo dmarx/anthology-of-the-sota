@@ -1,0 +1,91 @@
+---
+# Don't copy this file by hand — run `luria new sota`, which assigns the
+# number and fills in what a machine can compute.
+#
+# A practice is a claim about what you should do. State it as an instruction,
+# not as a topic: "Keep sequence lengths a multiple of 128" rather than
+# "sequence length considerations".
+
+# Active | Proposed | Deferred | Superseded | Rejected, optionally " — note".
+# What each one means here is in statuses.yaml, beside this file. When a
+# practice stops being right, change the status and leave the body — the
+# record is more useful for saying what it used to believe.
+status: Proposed
+
+# REQUIRED while the status is Proposed or Deferred; delete it when the
+# practice goes Active. What would settle this — and it must name a KIND of
+# result, not a quantity of them. "An independent result" is satisfiable by a
+# paper that mentions the work in passing; "an independent group training
+# under it and reporting X" is not. The test when writing one: could this be
+# met by a paper that would not actually change my confidence? (ADR-014)
+promote_when: >-
+  The kind of result that would settle this, stated so that the wrong kind
+  of result cannot satisfy it.
+
+# The claim. Repeat it as the body's `# SOTA-tmp9x33t:` heading; the lint checks
+# that the two agree.
+title: 'Choose the EMA length after training: store two power-function averages at snapshots and reconstruct any length by least squares'
+
+version: 1
+
+# Exactly one of the thirteen in tags.yaml, enforced by luria.toml — the same
+# thirteen the reading list uses (ADR-026). Secondary tags beyond that are
+# unconstrained: add one when the practice genuinely belongs on a second page,
+# not to be thorough.
+#
+# Take a DOMAIN topic (`generative-modeling`, `vision-and-graphics`) only when
+# the claim is about that domain as such. A claim merely discovered there still
+# takes its kind — a preconditioning scheme found in diffusion is a
+# `training-optimization` practice.
+tags:
+- training-optimization
+
+date: '2026-09-25'
+
+# There is deliberately no `published:` line here. The practice's publication
+# date is DERIVED from the first entry in `source:` below — the primary source
+# — and writing it down is a lint violation, because the value has one home
+# and this is not it. To change it, change the source order.
+
+# REQUIRED, and a LIST. The reading notes this recommendation rests on. The
+# first is the primary source; the rest corroborate — a replication, the
+# production report that shipped it, the paper that argues the mechanism. A
+# recommendation with no paper behind it is an opinion, and the lint will
+# say so. If a paper isn't in the record yet, `luria new lit` first.
+#
+# One entry is fine. Writing it as a list anyway is the point: the practice
+# that later gains a replication has somewhere to put it (ADR-010).
+source:
+- LIT-000
+
+# The work that FIRST STATED the recommendation, which is frequently not the
+# work that produced the evidence for it (ADR-029). Usually this is the same
+# code as `source:` above, and writing it anyway is the point: the origin is
+# asserted rather than assumed. When they differ, say so in a comment here —
+# that difference is the whole reason the field exists.
+introduced_by:
+- LIT-000
+
+# Optional. Models or codebases known to do this.
+implementations: []
+
+# What the index table shows. Provenance is the useful thing here, since the
+# title already carries the claim: who said it, and where. Prose, so bare
+# codes in it get linked by `luria link --fix`.
+---
+
+<!-- unresolved-ok-file: LIT-000 — the placeholder a new practice replaces -->
+
+# SOTA-tmp9x33t: Choose the EMA length after training: store two power-function averages at snapshots and reconstruct any length by least squares
+
+## Source
+
+Author et al. (YEAR), LIT-000 — [ARXIV-0000.00000](https://arxiv.org/abs/0000.00000).
+
+Anything the claim needs to be usable: the conditions it holds under, the
+hardware or scale it assumes, the thing it trades away. A practice stated
+without its conditions is the one people cargo-cult.
+
+## Known implementations
+
+- 

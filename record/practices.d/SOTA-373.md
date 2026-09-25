@@ -7,20 +7,37 @@ consensus: emerging
 consensus_note: >-
   The specific 75% is widely copied for images and the *principle* is rarely
   restated, which makes the reading awkward. What the record can point to is
-  that the two masked-prediction documents it holds sit at very different
-  ratios for the same reason — MAE at 75% of image patches against BERT's
-  15% of tokens — and that `SOTA-250`'s masking design is argued from
-  semantic content rather than inherited. `emerging` because the principle is
-  followed more often than it is stated, and the record has not seen it
-  tested on a third modality. Read as of 2026-09.
+  that its two masked-prediction papers sit at very different ratios — MAE at
+  75% of image patches against BERT's 15% of tokens — and that `SOTA-250`'s
+  masking design is argued from semantic content rather than inherited. Only
+  one side of that contrast is a measurement: MAE swept the ratio and reports
+  the optimum as "surprisingly high", while BERT declared 15% and never varied
+  it. `emerging` because the principle is followed more often than it is
+  stated, and the record has not seen it tested on a third modality. Read as of
+  2026-09.
 title: "Set the masking ratio by the signal's redundancy, not by the ratio that worked on text"
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Two corrections, neither touching the recommendation. The consensus note
+    called BERT one of "the two masked-prediction documents it holds" and the
+    record held one; BERT is now filed as LIT-tmp4nnff and the claim is true.
+    Worse for the argument, and the reason this matters: BERT **never swept the
+    15%** — "in all of our experiments, we mask 15%", with the one appendix
+    table headed "Masking Rates" varying the 80/10/10 replacement split at a
+    fixed selection rate. RoBERTa (LIT-tmpxixm3) varies the masking schedule and
+    not the rate either. So the title's "the ratio that worked on text" names a
+    number that was declared rather than measured, and the practice now says so
+    instead of treating it as the text-side datum.
 tags:
 - representation-and-encoding
 - signal-structure
 date: '2026-09-23'
 source:
 - LIT-601
+- LIT-tmp4nnff
 introduced_by:
 - LIT-601
 implementations: []
@@ -47,6 +64,25 @@ as much — and the paper calls the optimum "surprisingly high". The
 justification is not a sweep: images are natural signals with heavy spatial
 redundancy, so a high ratio "largely eliminates redundancy, thus creating a
 task that cannot be easily solved by extrapolation from neighboring patches".
+
+**The text end of that contrast is weaker than it looks, and the difference
+matters to how this practice should be read.** BERT's own words are *"in all of
+our experiments, we mask 15% of all WordPiece tokens in each sequence at
+random"* — [LIT-tmp4nnff](../literature.d/LIT-tmp4nnff.md). There is no sweep of the rate in the paper. Its one
+appendix table on masking is headed "Masking Rates" and varies the 80/10/10
+`[MASK]`/random/unchanged substitution mix at a fixed 15% selection, which is a
+different knob. RoBERTa — [LIT-tmpxixm3](../literature.d/LIT-tmpxixm3.md) — revisits BERT's recipe in detail and
+varies *when* the mask is drawn, never how much of the sequence it covers.
+
+So "the ratio that worked on text" is not a result anybody reported. 15% is a
+choice from 2018 that nothing in this record shows to be right for text, which
+does not weaken the recommendation — it strengthens the half that says *do not
+inherit the number*. What it removes is the reading where 15% and 75% are two
+measured optima whose difference needs explaining. One of them is measured.
+
+Wettig et al. (2022), `2202.08005`, is the paper that sweeps the text side and
+reports a higher optimum. The record does not hold it, and until it does, this
+practice's text anchor is an unexamined default rather than a rival datum.
 
 ## How to set it for a signal nobody has done yet
 

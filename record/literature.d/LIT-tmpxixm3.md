@@ -1,0 +1,127 @@
+---
+status: Active
+title: 'RoBERTa: A Robustly Optimized BERT Pretraining Approach'
+version: 1
+tags:
+- analysis-and-evaluation
+- training-optimization
+- data-pipeline
+- representation-and-encoding
+date: '2026-09-25'
+published: '2019-07-26'
+arxiv: '1907.11692'
+first_author: 'Liu'
+keywords:
+- 'replication-study'
+- 'dynamic-masking'
+- 'next-sentence-prediction'
+- 'batch-size'
+- 'byte-level-bpe'
+- 'pretraining-data'
+implementations:
+- RoBERTa
+compared_against:
+- LIT-tmp4nnff
+summary: >-
+  Liu, Ott, Goyal, Du, Joshi, Chen, Levy, Lewis, Zettlemoyer and Stoyanov
+  (2019), [ARXIV-1907.11692](https://arxiv.org/abs/1907.11692). A replication study that finds
+  **BERT was significantly undertrained** and, more usefully here, that BERT's
+  own NSP ablation could not have shown what it claimed: it removed the loss
+  while keeping the paired-segment input format. Separate the two and
+  **removing NSP matches or slightly improves**. The paper is careful about
+  its own margins — dynamic masking is "comparable or slightly better", and
+  byte-level BPE is adopted despite being slightly worse.
+---
+
+# LIT-tmpxixm3: RoBERTa: A Robustly Optimized BERT Pretraining Approach
+
+<!-- inactive-ok-file: SOTA-tmpvgm7o — Proposed, and this note is its primary source. Filed Proposed
+     because two reversals show the confound can matter and say nothing about how often, which is
+     exactly what the citation here says about it. -->
+
+Liu, Ott, Goyal, Du, Joshi, Chen, Levy, Lewis, Zettlemoyer and Stoyanov (2019)
+— [ARXIV-1907.11692](https://arxiv.org/abs/1907.11692)
+
+## Key takeaways
+
+**The finding that makes this a methods paper rather than a model paper.**
+BERT reported that removing next sentence prediction hurts. RoBERTa notes what
+that ablation actually varied and what it did not:
+
+> It is possible that the original BERT implementation may only have removed
+> the loss term while still retaining the segment-pair input format.
+
+So the published conclusion covers a single knob that moved two things — the
+auxiliary loss and the way inputs are built. RoBERTa splits them into four
+conditions. `segment-pair+nsp` is BERT's. `sentence-pair+nsp` keeps the loss and
+shortens the inputs to single sentences, and **hurts**, which the authors
+attribute to losing long-range dependencies. `full-sentences` and
+`doc-sentences` drop the loss and pack contiguous text to 512 tokens, and
+**removing the NSP loss matches or slightly improves** downstream performance,
+with `doc-sentences` — which does not cross document boundaries — slightly ahead
+of `full-sentences`.
+
+The input format was doing the work the loss was credited with.
+
+**BERT was undertrained, with the comparison stated.** Same architecture, same
+objective, same 16GB BookCorpus-plus-Wikipedia, at 100K steps: SQuAD 1.1/2.0
+**94.0/87.7** against BERT-large's **90.9/81.8**, MNLI-m **89.3** against
+**86.6**, SST-2 **95.6** against **93.7**. Read carefully, though: that row
+already carries the four recipe changes and a much larger batch, so **+5.9 on
+SQuAD 2.0 is the recipe and the compute together**, not compute alone. The
+paper's own scaling from there is clean — 16GB to 160GB of text at fixed steps,
+then 100K to 300K to 500K steps — and both directions help.
+
+**Dynamic masking is a smaller result than its adoption suggests.** BERT masked
+once in preprocessing, duplicating the data ten times so each sequence was seen
+with four repeats of each of ten masks over 40 epochs. RoBERTa regenerates the
+mask on every pass. The table: SQuAD 2.0 **78.3 → 78.7**, MNLI-m **84.3 →
+84.0**, SST-2 **92.5 → 92.9** — one of the three goes the wrong way, and the
+paper says so, calling it "comparable or slightly better" and justifying the
+switch on efficiency as much as accuracy.
+
+**Two configurations shipped despite scoring worse.** RoBERTa uses
+`full-sentences`, though `doc-sentences` scores slightly higher, because the
+latter needs a variable batch size. And it adopts Radford et al.'s byte-level
+BPE at 50K units over BERT's 30K character-level BPE, having found *"only
+slight differences between these encodings, with the [byte-level] BPE achieving
+slightly worse end-task performance on some tasks"* — kept because a universal
+encoding never emits an unknown token. Both are stated plainly rather than
+buried.
+
+**Large batches, with the equivalence spelled out.** BERT-base's 1M steps at
+batch 256 is, at fixed compute, 125K steps at 2K or 31K at 8K. Larger batches
+improve held-out MLM perplexity *and* end-task accuracy at matched passes over
+the data, and RoBERTa trains at 8K.
+
+**Data.** 160GB over five corpora — BookCorpus+Wikipedia (16GB), CC-News
+(76GB), OpenWebText (38GB), and Stories. The scaling result rests on this and
+so does the reproducibility caveat, since not every corpus in the comparison
+literature was public.
+
+## Standing in the anthology
+
+Filed with [LIT-tmp4nnff](LIT-tmp4nnff.md), which it corrects, because the pair is what the record
+needed and either alone would mislead. Between them they source the pretraining
+recipe 89 files here refer to.
+
+The transferable content is the ablation defect, filed as
+[SOTA-tmpvgm7o](../practices.d/SOTA-tmpvgm7o.md): **an ablation that removes a component without removing what it
+brought with it measures the pair.** That is the second instance of this shape
+the record has acquired in a week — [LIT-667](LIT-667.md) is the other, where four
+grokking papers varied the training fraction of a fixed universe and so could
+not separate dataset size from dataset composition. Different literatures, same
+defect, and in both cases the conclusion reversed when somebody separated them.
+
+**Where this does not reach.** RoBERTa is a 2019 encoder study on GLUE-era
+tasks. Its conclusions about NSP and about masking schedules are about the BERT
+objective, and nothing here says how they transport to a decoder trained on
+next-token prediction. What does transport is the method, which is why the
+practice filed from it is about ablation design rather than about NSP.
+
+**And the 15% is untouched.** RoBERTa varies the masking *schedule* — when the
+mask is drawn — and never the *rate*. Between these two papers, the number the
+field inherited was fixed by declaration in 2018 and never swept by either.
+Wettig et al. (2022), `2202.08005`, is the paper that finally sweeps it and
+reports a higher optimum; the record does not hold it, and that is the next
+thing this line wants.

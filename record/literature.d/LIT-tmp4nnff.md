@@ -1,0 +1,121 @@
+---
+status: Active
+title: 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding'
+version: 1
+tags:
+- representation-and-encoding
+- adaptation-and-tuning
+- model-architecture
+- analysis-and-evaluation
+date: '2026-09-25'
+published: '2018-10-11'
+arxiv: '1810.04805'
+first_author: 'Devlin'
+keywords:
+- 'masked-language-modeling'
+- 'bidirectional'
+- 'next-sentence-prediction'
+- 'pretrain-finetune'
+- 'wordpiece'
+implementations:
+- BERT
+summary: >-
+  Devlin, Chang, Lee and Toutanova (2018),
+  [ARXIV-1810.04805](https://arxiv.org/abs/1810.04805). The model 89 files in this record referred to
+  and none held. Two things it is cited for here turn out not to be in it:
+  **the 15% masking rate was never swept** — "in all of our experiments, we
+  mask 15%", and the one appendix table headed "Masking Rates" varies the
+  80/10/10 replacement split at a fixed 15% — and its NSP ablation removes the
+  loss while keeping the paired-segment input format, which
+  LIT-tmpxixm3 later separates and reverses.
+compared_against:
+- LIT-tmpxixm3
+---
+
+# LIT-tmp4nnff: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
+
+<!-- inactive-ok-file: THEORY-065 THEORY-066 — Proposed, and named as two documents that reason about
+     BERT or measure on it while the record did not hold the paper. That they are open accounts is not
+     what is being asserted; that they lean on an unheld model is, and this note is the fix. -->
+
+Devlin, Chang, Lee and Toutanova (2018) — [ARXIV-1810.04805](https://arxiv.org/abs/1810.04805)
+
+## Key takeaways
+
+**The recipe.** A deep bidirectional encoder pretrained with two objectives and
+then fine-tuned with minimal task-specific parameters. Masked language
+modelling selects 15% of WordPiece positions and, for the selected ones,
+substitutes `[MASK]` 80% of the time, a random token 10%, and the original
+token 10% — the mix existing to reduce the pretrain/fine-tune mismatch, since
+`[MASK]` never appears downstream. Next sentence prediction is a binary
+classification over two concatenated segments, next-or-random at `p = 0.5`.
+Two sizes: **110M** (`L=12, H=768, A=12`) and **340M** (`L=24, H=1024, A=16`).
+
+**The headline, for the record rather than for use.** GLUE to **80.5** (7.7
+absolute over the prior best), MultiNLI **86.7**, SQuAD 1.1 test F1 **93.2**,
+SQuAD 2.0 test F1 **83.1**, eleven tasks. Against OpenAI GPT's 72.8 GLUE at
+the time.
+
+**15% was declared, not measured.** This is the reason the note was filed, and
+it needs the paper's own words: *"In all of our experiments, we mask 15% of all
+WordPiece tokens in each sequence at random."* There is no sweep of the rate
+anywhere in the paper. Appendix C.2 is headed **"Masking Rates"** and is a trap
+for a skimmer: its columns are `Mask / Same / Rnd` and every row holds the
+selection rate at 15% while varying the 80/10/10 substitution mix — and the
+variation barely matters, 84.2 against 84.3 on MNLI for 80/10/10 against
+100/0/0. So the paper ablates *which corruption* a selected token receives and
+never *how many tokens are selected*.
+
+What the paper does say about the rate is a cost, not an optimum: predicting
+only 15% of tokens per batch means "more pre-training steps may be required",
+and Appendix C.1 shows MLM converging marginally slower than a left-to-right
+model that predicts every token.
+
+**The NSP ablation removes a loss and keeps its input format.** Table 5,
+BERT-BASE dev, columns MNLI-m / QNLI / MRPC / SST-2 / SQuAD:
+
+| | MNLI-m | QNLI | MRPC | SST-2 | SQuAD |
+| --- | --- | --- | --- | --- | --- |
+| BERT-BASE | 84.4 | 88.4 | 86.7 | 92.7 | 88.5 |
+| No NSP | 83.9 | 84.9 | 86.5 | 92.6 | 87.9 |
+| LTR & No NSP | 82.1 | 84.3 | 77.5 | 92.1 | 77.8 |
+
+"No NSP" is described only as "a bidirectional model which is trained using the
+masked LM but without the next sentence prediction task" — nothing about the
+input construction, which stays paired segments. The paper reads the row as
+"removing NSP hurts performance significantly on QNLI, MNLI, and SQuAD 1.1",
+and one of those three carries it: QNLI falls **3.5**, while MNLI falls 0.5 and
+SQuAD 0.6.
+
+**The bidirectionality result is the solid one.** `LTR & No NSP` is worse
+everywhere and collapses where right-hand context is structurally needed —
+MRPC 86.5 to 77.5, SQuAD 87.9 to 77.8. Adding a randomly initialised BiLSTM on
+top recovers much of SQuAD and *hurts* GLUE. That comparison changes one thing
+and the conclusion survives.
+
+## Standing in the anthology
+
+Filed because the record had been reasoning about it for weeks without holding
+it: **89 files say "BERT"**, 51 of them reading notes, practices or
+explanations. `THEORY-066` and `LIT-530` measure rank collapse on it,
+`THEORY-065` reasons from a BERT-family architecture, `LIT-303` and `LIT-316`
+use "ALBERT-style layer sharing" — a BERT variant — as an instrument, and
+[LIT-668](LIT-668.md) is a *lite* version of it whose every ablation is against a BERT
+configuration.
+
+Two claims this closes and one it contradicts:
+
+- **[SOTA-373](../practices.d/SOTA-373.md)** contrasts MAE's 75% image-patch masking against "BERT's 15% of
+  tokens" and its consensus note called BERT one of "the two masked-prediction
+  documents it holds". The record held one. Worse for the argument: the 15% is
+  not a result, so "the ratio that worked on text" was never shown to work on
+  text. The practice is amended rather than retired — its recommendation
+  survives and its anchor changes.
+- The record now has a source for the pretrain-then-fine-tune pattern and for
+  the `[MASK]` substitution mix, both of which it had been treating as common
+  knowledge.
+
+**What this note is not.** The benchmark numbers are 2018 and are here for
+provenance. The architecture is an encoder, which is not what the field builds
+now, and the NSP objective was retired within a year — by
+[LIT-tmpxixm3](LIT-tmpxixm3.md), which is filed beside this and should be read with it.

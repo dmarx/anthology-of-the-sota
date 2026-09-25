@@ -5,7 +5,14 @@ formerly:
 - NOTE-tmpkuz31
 paper: LIT-028
 title: 'Scaling Laws for Neural Language Models'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Two sentences corrected against Porian et al. (LIT-tmp8bq22): Chinchilla
+    proposed, and did not identify, the schedule as the cause, and only the
+    warmup half of it is one. The old wording is kept in the marked notes.
 date: '2026-09-09'
 summary: >-
   Loss is a power law in model size, dataset size and compute over seven orders of magnitude, and shape barely matters. Its learning-rate finding is the opposite of what the record recorded: larger models require a *smaller* rate to avoid divergence, and the paper carries an explicit LR(N) rule.
@@ -34,18 +41,25 @@ spending on size rather than on passes over data — with data growing very
 slowly, `D ∼ C^0.27`.
 
 The part that aged worst is inseparable from the part that aged best: the
-allocation is only as good as the fitting protocol, and Chinchilla later
-showed this one held the learning-rate schedule in a way that penalised long
-runs.
+allocation is only as good as the fitting protocol. This one held a fixed
+warmup and fixed batch and learning rate that were wrong for small models, and
+did not count the output head's FLOPs (Porian et al.,
+[LIT-tmp8bq22](../literature.d/LIT-tmp8bq22.md)). Chinchilla's own suggestion, the decay schedule, turned out to
+matter little. *Corrected 2026-09-25. This read "Chinchilla later showed
+this one held the learning-rate schedule in a way that penalised long runs",
+and no source supports that.*
 
 ## Assumptions
 
 - **WebText2**, decoder-only Transformers, Adam (Adafactor above 1B), a fixed
   `2.5×10⁵` steps at batch size 512 × 1024 tokens unless noted.
 - **The learning-rate schedule was held fixed** — 3000-step linear warmup then
-  cosine decay to zero — across runs of very different length. This is the
-  methodological choice Chinchilla identified as the source of the wrong
-  exponent.
+  cosine decay to zero — across runs of very different length. Chinchilla
+  *proposed* this as the source of the wrong exponent. Porian et al. find its
+  halves behave differently. The fixed warmup, too long for small models, is
+  one of three causes (0.706 → 0.602). The decay is not (0.602 → 0.571 on a
+  side branch). The others are the uncounted head FLOPs and per-size tuning.
+  *Corrected 2026-09-25; this read "identified".*
 - Compute is estimated as `C ≈ 6NBS`, excluding terms proportional to
   `n_ctx`, so the scalings "may be confounded" where `n_ctx ≳ 12·d_model`.
 - The paper lists its own caveats, including that other hyperparameters

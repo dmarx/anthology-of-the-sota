@@ -1,13 +1,14 @@
 ---
 number: 413
-status: Proposed
+status: Active
 formerly:
 - SOTA-tmp7rph1
 consensus: emerging
 consensus_note: >-
-  Chinchilla counts total parameters, and Pearce and Song and Porian et al.
-  (arXiv 2406.19146, not yet held) independently find that the counting
-  choice moves the allocation exponent. A named list of studies still uses
+  Pearce and Song (LIT-688) and Porian et al. (LIT-tmp8bq22) independently find
+  that the counting choice moves the allocation exponent. By Porian's reading,
+  Chinchilla's Approaches 1–2 count roughly the head-inclusive `N`, and only
+  Approach 3 counts embeddings. A named list of studies still uses
   Kaplan's non-embedding count and offset-free fit. The two proponents
   disagree on whether the input embedding belongs in the count. Read as of
   2026-09.
@@ -18,13 +19,25 @@ promote_when: >-
   merely adopts total counts would not settle it, because it shows the
   convention and not which convention extrapolates.
 title: 'In a scaling-law study, count the output head in parameters and FLOPs, and fit loss against compute with an irreducible-loss offset'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Active, on the second clause of its promote_when. Porian et al.
+    (LIT-tmp8bq22) is filed and was read next to LIT-688. It measures the
+    counting effect at 5M–901M on two datasets with intervals, and its
+    offset fit extrapolates to a held-out 901M run. The first clause, a
+    head-to-head extrapolation test of the two conventions, is still unmet.
+    Two sentences were corrected: Chinchilla's counting, and "as much or
+    more", which should read "each about as much".
 tags:
 - training-optimization
 - analysis-and-evaluation
 date: '2026-09-25'
 source:
 - LIT-688
+- LIT-tmp8bq22
 introduced_by:
 - LIT-688
 implementations: []
@@ -35,7 +48,11 @@ summary: >-
   becomes 0.74 when the same runs are relabelled. An offset-free loss–compute
   fit biases that exponent too. Do not compare exponents across studies that
   count differently.
+explained_by:
+- THEORY-tmp9y82q
 ---
+
+<!-- inactive-ok-file: SOTA-tmpg915d — Proposed; named as the companion protocol for the non-counting factors -->
 
 # SOTA-413: In a scaling-law study, count the output head in parameters and FLOPs, and fit loss against compute with an irreducible-loss offset
 
@@ -69,10 +86,10 @@ exponent. Relabelling the same five runs changes the exponent from 0.49 to
 - **Matters most below a few hundred million parameters.** At frontier scale
   the head is a small share and the definitions converge.
 - **The source's evidence is small.** It is five runs at 0.8–4.6M with context
-  16, plus a simulation from Chinchilla's own fit. Porian et al. is the large
-  test (not yet held). It agrees that counting matters and finds warmup and
-  per-size tuning matter as much or more. This practice is the counting part
-  only.
+  16, plus a simulation from Chinchilla's own fit. Porian et al.
+  ([LIT-tmp8bq22](../literature.d/LIT-tmp8bq22.md)) is the large test. Counting the head's FLOPs takes 0.129
+  off the exponent, and warmup and per-size tuning each take about as much
+  ([SOTA-tmpg915d](SOTA-tmpg915d.md)). This practice is the counting part only.
 - **Counting is not the whole Kaplan–Chinchilla gap.** Do not read this as
   "Kaplan was wrong because of embeddings".
 

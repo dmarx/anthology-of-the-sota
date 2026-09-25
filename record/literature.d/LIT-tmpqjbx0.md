@@ -1,0 +1,149 @@
+---
+status: Active
+title: 'Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation'
+version: 1
+tags:
+- generative-modeling
+- training-optimization
+- analysis-and-evaluation
+date: '2026-09-25'
+published: '2023-03-01'
+arxiv: '2303.00848'
+first_author: 'Kingma'
+keywords:
+- 'diffusion-loss-weighting'
+- 'elbo-data-augmentation'
+- 'noise-schedule-invariance'
+- 'importance-sampling'
+- 'flow-matching-v-prediction-equivalence'
+- 'adaptive-noise-schedule'
+implementations:
+- 'VDM++'
+extends:
+- LIT-446
+- LIT-660
+extended_by:
+- LIT-449
+- LIT-678
+compared_against:
+- LIT-075
+summary: >-
+  Kingma and Gao (NeurIPS 2023), [ARXIV-2303.00848](https://arxiv.org/abs/2303.00848). Every standard diffusion loss
+  is `½∫ w(λ) E‖ε̂ − ε‖² dλ` for an implied weighting `w`. Given `w`, the loss
+  is invariant to the schedule's interior shape, and the schedule is only an
+  importance sampler. If `w` falls monotonically in log-SNR, the loss is the
+  expected ELBO of Gaussian-noise-augmented data. App. D.3 derives that flow
+  matching's weighting equals v-MSE's under a cosine schedule. In its 64×64
+  ablations the training schedule makes no difference, and the weighting and
+  the sampler each move FID by 0.1–0.3. Monotone weightings tie EDM. They do
+  not beat it.
+---
+
+<!-- inactive-ok-file: SOTA-264 — Proposed; named as the practice whose "nobody has run
+     the comparison" this paper falsified without meeting its promote_when -->
+
+# LIT-tmpqjbx0: Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation
+
+Kingma and Gao (2023; NeurIPS 2023) — [ARXIV-2303.00848](https://arxiv.org/abs/2303.00848)
+
+The title changed twice across versions. v1 was *Understanding the Diffusion
+Objective as a Weighted Integral of ELBOs*. Search by id.
+
+## Key takeaways
+
+**The weighted-loss frame (§3.1).** `L_w = ½ E_t[w(λ_t)(−dλ/dt)‖ε̂ − ε‖²]`. The
+ELBO is `w = 1`, and plain ε-MSE is `w = p(λ)`. Table 1 derives the implied
+weighting of each common recipe:
+
+| loss | w(λ) | monotone |
+| --- | --- | --- |
+| ELBO | 1 | ✓ |
+| ε-MSE, cosine | sech(λ/2) | |
+| EDM | N(λ; 2.4, 2.4²)·(e^{−λ} + 0.25) | |
+| v-MSE, cosine | e^{−λ/2} | ✓ |
+| flow matching, OT path | e^{−λ/2} | ✓ |
+| Min-SNR-γ | sech(λ/2)·min(1, γe^{−λ}) | |
+
+**Invariance, generalized (§3.2).** "this integral does not depend on the noise
+schedule … except for its endpoints … The only real difference between
+diffusion objectives is their difference in weighting w(λ)." It extends
+VDM's unweighted result to any weighting. But "this invariance does not hold
+for the Monte Carlo estimator … the noise schedule acts as an importance
+sampling distribution."
+
+**Theorem 1.** "If the weighting w(λ_t) is monotonic, then the weighted
+diffusion objective … is equivalent to the ELBO with data augmentation
+(additive noise)." Integrating by parts gives `E_{p_w(t)}[L(t;x)]` with
+`p_w = dw/dt`, a distribution only when `w` is monotone. `L(t;x)` is the
+expected negative ELBO of noise-perturbed data.
+
+**The flow-matching identity (App. D.3), verbatim.** "the CFM loss is equivalent
+to the v-prediction loss with cosine schedule." The derivation reaches
+`w(λ) = e^{−λ/2}` for FM-OT with uniform `t`.
+
+**Ablations at 64×64** (ImageNet, ADM U-Net, single runs, best-FID checkpoint).
+Each changes one thing:
+- **Weighting only**: 1.85 → 1.68 (DDPM sampler) and 1.55 → 1.46 (EDM sampler).
+- **Sampler only**: DDPM → EDM's stochastic Heun, 1.85 → 1.55.
+- **Training schedule only**: cosine → adaptive, 1.46 → 1.44. A tie.
+- **Network output only**: ε, F and v under EDM-monotonic weighting give 1.44,
+  1.43 and 1.45. A tie.
+- **Monotone against not**: EDM 1.43 against EDM-monotonic 1.43. A monotone
+  sigmoid under F-prediction gives 1.55.
+
+**Adaptive schedule.** `p(λ) ∝ E[w‖ε − ε̂‖²]`, tracked by an EMA. In the
+appendix it gives "approximately equal FID scores" and faster optimization "in
+half of the experiments".
+
+## Traps
+
+- **"Diffusion objectives are the ELBO" is stronger than the theorem.** With a
+  monotone weighting it is the expected ELBO of *noise-augmented* data. Clean
+  data enters only through a small point mass. With a non-monotone weighting
+  (ε-cosine, EDM, P2, Min-SNR) the "weighted integral of ELBOs" has negative
+  weights and is not a likelihood objective at all.
+- **"Flow matching ≡ v-MSE with cosine" is equality of the weighting, which is
+  less than equality of training.** The two sample `λ` from different
+  densities (logistic against hyperbolic secant), so gradient variance
+  differs, which is the paper's own §3.2 point. The network outputs also
+  differ.
+- **App. D.2.1 is wrong, and the paper's own §5.2 contradicts it.** D.2.1 says
+  v-MSE under a *shifted* cosine keeps the unshifted weighting. Checked
+  numerically, the shift reweights toward high noise by up to `(d/64)²`: 16× at
+  256, 64× at 512. Do not cite D.2.1 for "a resolution shift is only a
+  sampling change". The flow-matching identity holds for the **unshifted**
+  cosine.
+- **The high-resolution headline weightings are unspecified.** They are
+  "shifted" versions that the paper never defines, and the 256 and 512 training
+  details are absent. Those rows also change the training schedule and the
+  weighting together.
+- **Monotone does not mean better.** The best 64×64 result (1.43) ties the
+  authors' EDM reproduction (1.45). It does not reach EDM's published 1.36. SD3
+  later found a non-monotone weighting best at scale.
+- **Single seeds, with the best checkpoint picked by FID.** Gaps under about 2%
+  are inside [SOTA-307](../practices.d/SOTA-307.md)'s inconclusive band.
+
+## Standing in the anthology
+
+Filed on 2026-09-25 as the derivation [LIT-678](LIT-678.md) borrowed.
+[THEORY-106](../theory.d/THEORY-106.md) now cites it for the weighting identity, scoped to
+the unshifted cosine, and for the weighted invariance. [THEORY-027](../theory.d/THEORY-027.md)
+had carried the unweighted form. This paper sources `THEORY-tmp2ubdn`, the
+monotone-weighting theorem, and files no practice. Its evidence is parity,
+not advantage.
+
+- [LIT-449](LIT-449.md) (SD3) writes its 61-way objective comparison "following
+  Kingma & Gao (2023)". Under Theorem 1, plain rectified flow is a monotone,
+  ELBO-with-augmentation objective and SD3's logit-normal variant is not. SD3
+  found the non-monotone one better.
+- [SOTA-188](../practices.d/SOTA-188.md): in this frame EDM's log-normal is a factor of
+  the *objective's* weighting (App. D.1), not only of the estimator. Keeping
+  EDM's weighting while replacing its log-normal *sampling* with the adaptive
+  schedule moves FID 1.45 → 1.43.
+- [SOTA-264](../practices.d/SOTA-264.md): this paper runs a perceptual weighting together
+  with a variance-motivated adaptive schedule. That is the comparison [SOTA-264](../practices.d/SOTA-264.md)
+  said nobody had run. It comes from the same lab, so it is not the second
+  group [SOTA-264](../practices.d/SOTA-264.md)'s `promote_when` asks for.
+- It extends [LIT-660](LIT-660.md) (simple diffusion), whose U-ViT, baseline and
+  shifted schedule it uses at 128×128, and is compared against
+  [LIT-075](LIT-075.md) (EDM), which it re-implements and ties.

@@ -1,0 +1,139 @@
+---
+status: Active
+title: 'Resolving Discrepancies in Compute-Optimal Scaling of Language Models'
+version: 1
+tags:
+- training-optimization
+- analysis-and-evaluation
+date: '2026-09-25'
+published: '2024-06-27'
+arxiv: '2406.19146'
+first_author: 'Porian'
+keywords:
+- 'scaling-laws'
+- 'compute-optimal-allocation'
+- 'kaplan-chinchilla-discrepancy'
+- 'warmup-duration'
+- 'hyperparameter-scaling-laws'
+- 'adam-beta2'
+implementations:
+- 'github.com/formll/resolving-scaling-law-discrepancies'
+corrects:
+- LIT-028
+extends:
+- LIT-068
+compared_against:
+- LIT-688
+summary: >-
+  Porian, Wortsman, Jitsev, Schmidt and Carmon (NeurIPS 2024),
+  [ARXIV-2406.19146](https://arxiv.org/abs/2406.19146). It reproduces Kaplan's allocation exponent (0.835 on
+  RefinedWeb, 0.864 on OpenWebText2) over 900+ runs from 5M to 901M, then
+  removes it in steps. **Counting the head's FLOPs** takes 0.129 off,
+  **a warmup short enough for small models** takes 0.104, and **tuning
+  learning rate, batch and β₂ per size, with a constant learning rate**,
+  takes 0.105, landing on 0.497. Chinchilla's proposed cause, matching the
+  cosine decay to each run, moves it 0.031 on a side branch. "careful learning
+  rate decay is not essential for the validity of their scaling law."
+---
+
+<!-- inactive-ok-file: THEORY-tmp9y82q SOTA-tmpg915d — Proposed; the account and practice this
+     paper sources, filed with it -->
+
+<!-- inactive-ok-file: SOTA-141 SOTA-260 THEORY-026 — Proposed; each named to say this paper
+     is NOT evidence against it, which is the point of the sentence -->
+
+# LIT-tmp8bq22: Resolving Discrepancies in Compute-Optimal Scaling of Language Models
+
+Porian, Wortsman, Jitsev, Schmidt and Carmon (2024; NeurIPS 2024 Spotlight) — [ARXIV-2406.19146](https://arxiv.org/abs/2406.19146)
+
+## Key takeaways
+
+**The setup.** An OpenLM Llama-style decoder at sequence length 2048, with
+16 sizes from 5M to 901M, trained on OpenWebText2 and RefinedWeb over a FLOP
+grid up to about 2.6e19. `N` counts "all the linear layers of the model. That
+is, N excludes embedding layers, but includes the model's head". The
+exponents come from IsoFLOP fits with bootstrapped 95% intervals.
+
+**The attribution** (exponent `a` in `N* ∝ C^a`, RefinedWeb):
+
+| step | a |
+| --- | --- |
+| Kaplan, raw / adjusted (reported) | 0.88 / 0.73 |
+| reproducing Kaplan | 0.835 |
+| + count the head's FLOPs | 0.706 |
+| + warmup tokens = N | 0.602 |
+| &nbsp;&nbsp;(side branch: + cosine decay per run) | 0.571 |
+| tune LR, batch, β₂ per size, **constant LR** | **0.497** |
+
+The path 0.835 → 0.706 → 0.602 → 0.497 has **no decay step on it**. Tuning
+applied alone to the Kaplan setup (App. H) gives 0.717, close to Kaplan's own
+adjusted 0.73. The factors look roughly additive, but no factorial design was
+run.
+
+**Why warmup matters at small scale.** "for smaller-scale models, the optimal
+number of tokens as a function of compute is less than or close to the number
+of warmup tokens". Kaplan's 1.57B-token warmup forces small models to "escape"
+it, which inflates the exponent.
+
+**The head under-count** is −93.5% of `N` at 5M, −29.7% at 108M and −8.4% at
+901M.
+
+**Secondary results.** Optimal batch grows and optimal learning rate falls
+with size along the 20N line. "setting the AdamW β₂ parameter to be 0.95 is
+suboptimal at smaller batch sizes (128 and below)". And the paper reports "an
+optimal batch size below which performance degrades", hedged as "further
+tuning of β₂ … may be warranted". The tuned setup's loss follows a saturating
+power law with an offset that extrapolates to a held-out 901M run.
+
+## Traps
+
+- **"The schedule was not the cause" overstates it. The decay was not.**
+  Kaplan's fixed schedule includes the fixed warmup, which is one of the three
+  causes. Appendix A concedes Chinchilla's hypothesis "comprises both the warmup
+  and decay components". The accurate sentence: Chinchilla proposed the
+  schedule. The decay half barely moves the exponent. The warmup half matters,
+  for a reason Chinchilla did not name, and two further causes matter as much.
+- **Counting is a plurality, not most.** It is 0.129 of 0.338, with warmup and
+  tuning each about as large. That is not [LIT-688](LIT-688.md)'s "much of".
+- **"Count the head" is not "count total parameters".** `N` here excludes the
+  input embedding. By this paper's reading (App. B), only Chinchilla's Approach
+  3 counts embeddings.
+- **"Warmup tokens = N" is confounded with the budget.** Every compute-optimal
+  run is about 20N tokens, and the heuristic's ablation is one model (108M).
+  It cannot be told apart from "about 5% of the run", and it is not evidence
+  for [SOTA-100](../practices.d/SOTA-100.md)'s mechanism.
+- **A constant learning rate is for fitting the exponent, not for training.**
+  "the constant schedule clearly underperforms the cosine schedule", and decay
+  "becomes increasingly beneficial as compute grows". Do not cite this paper
+  against [SOTA-140](../practices.d/SOTA-140.md) or [SOTA-141](../practices.d/SOTA-141.md).
+- **"Optimal batch below which performance degrades" is not evidence against
+  [SOTA-260](../practices.d/SOTA-260.md).** At 901M, batch 160 was tried at one learning
+  rate with β₂ = 0.95, the setting the paper itself calls suboptimal at small
+  batch. That is plausibly the β₂ effect [LIT-444](LIT-444.md) isolates.
+- **The batch law is a Chinchilla-line measurement.** `N` and `D` move together,
+  which is the sweep [THEORY-026](../theory.d/THEORY-026.md)'s `promote_when` says cannot
+  separate them.
+- **The factors vanish with scale**, by the authors' account (§5.2). This explains
+  a small-scale measurement artefact. It is not a new allocation at the
+  frontier, though it lands within 15% of Chinchilla's size at Chinchilla
+  compute.
+
+## Standing in the anthology
+
+Filed on 2026-09-25 as the large-scale test that [LIT-688](LIT-688.md) (Pearce and
+Song) pointed to. The two name each other. They agree on counting, on decay
+being unnecessary for the exponent, and on tuning being necessary. They
+disagree on the target (0.88 raw against 0.73 adjusted), on the shares, and on
+the input embedding. This paper supplies the warmup factor Pearce and Song
+"do not identify".
+
+It sources `THEORY-tmp9y82q` (the three-factor account) and
+`SOTA-tmpg915d` (the fitting protocol). It moves [SOTA-413](../practices.d/SOTA-413.md)
+to `Active`, and it becomes a second, direct measurement for
+[SOTA-096](../practices.d/SOTA-096.md)'s equal-proportion allocation. It closes the record's
+repeated attribution in [LIT-028](LIT-028.md), [NOTE-017](../notes.d/NOTE-017.md) and
+[NOTE-072](../notes.d/NOTE-072.md), which are corrected in the same contribution.
+
+It says [LIT-040](LIT-040.md) (Henighan et al.) "shares the methodological issues …
+(FLOP count and long warmup)". That is asserted, not re-run on that paper's
+domains, so it stays in prose.

@@ -13,7 +13,15 @@ consensus_note: >-
   it is chiefly a latency technique, and where it stops paying on throughput
   is less settled than this document first said — see the conditions.
 title: 'Decode with a draft model and an accept-reject rule, which is exactly lossless'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    The open correction about LIT-139 is settled from DeepSeek-V4's full
+    report (NOTE-tmpr3mtt): it keeps MTP as a training objective and never
+    mentions speculative decoding, so it is not an adopter here; LIT-185 is
+    repaired to match.
 tags:
 - inference-optimization
 date: '2026-09-16'
@@ -130,7 +138,7 @@ The record already held two refinements of a practice it did not hold:
 
 - **[LIT-185](../literature.d/LIT-185.md) (EAGLE-3)** is a method for driving the draft's cost toward the
   `c ≈ 0` regime by making it a single decoder layer matched to the target's
-  structure. It is `Active` here and unread.
+  structure. It is `Active` here, and read since (NOTE-163).
 - **[SOTA-162](SOTA-162.md)** trains auxiliary multi-token-prediction heads, and one of its
   two arguments is that "the extra heads are a draft model for speculative
   decoding you did not have to train separately" — a claim that had no
@@ -147,11 +155,12 @@ decoding — [LIT-131](../literature.d/LIT-131.md), [LIT-135](../literature.d/LI
 rather than an independent measurement of it, and is counted in
 `consensus_note` where counting is the right operation ([DP-005](../../docs/design-principles.md#dp-5)).
 
-One correction while counting: [LIT-185](../literature.d/LIT-185.md)'s standing section says [LIT-135](../literature.d/LIT-135.md) and
-[LIT-139](../literature.d/LIT-139.md) "ship the same arrangement". [LIT-135](../literature.d/LIT-135.md)'s note bears that out; **[LIT-139](../literature.d/LIT-139.md)'s
-does not** — it records multi-token prediction carried over from its
-predecessor and says nothing about a draft or about speculative decoding.
-Either the note is short of what the paper does or the claim was extrapolated
-from the neighbouring reports. It is left as it is here rather than repaired
-from the same distance that produced it, and is the kind of thing [#87](https://github.com/dmarx/anthology-of-the-sota/issues/87)'s audit
-should pick up next.
+One correction while counting: LIT-185's standing section said LIT-135 and
+LIT-139 "ship the same arrangement". LIT-135's note bears that out; LIT-139's
+did not, and this document left it unrepaired rather than repair it from the
+same distance that produced it. **Settled by reading the full report**
+(NOTE-tmpr3mtt): DeepSeek-V4 keeps V3's multi-token-prediction module
+"without modification" as a depth-1 training objective, and the report never
+mentions a draft model, an acceptance rate or speculative decoding. It is not
+an adopter of this practice on its own evidence, is not counted above, and
+LIT-185 now says so.

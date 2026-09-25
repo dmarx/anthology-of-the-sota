@@ -39,9 +39,11 @@ summary: >-
   for precision and IS. The trade is not monotone in the direction people quote:
   on an *unconditional* 256×256 model, `s = 1` makes FID **worse** (26.21 →
   33.03) and only `s = 10` improves it (12.00); on the conditional model `s = 1`
-  is best (4.59) and `s = 10` is worse again (9.11). Every headline cell is the
-  best of a small scale sweep scored on the metric it reports.
+  is the best of the three (4.59) and `s = 10` is worse again (9.11). Every guided headline cell is
+  the best of a small scale sweep scored on the metric it reports.
 ---
+
+<!-- inactive-ok-file: THEORY-109 — Proposed, and named here as the open question this paper's method is the subject of: this reading supplies evidence bearing on it and relies on no settled account from it. -->
 
 # LIT-tmpcq7qo: Diffusion Models Beat GANs on Image Synthesis
 

@@ -190,9 +190,9 @@ V4 cites alongside ProphetNet, EAGLE and V3.
   framework largely inherits from that of DeepSeek-V3" cannot carry it: the
   sentence is about KV-cache management. LIT-185, SOTA-227 and LIT-163
   are corrected alongside this reading.
-- **SOTA-162** (MTP heads) — V4 is an adopter, correctly listed, and it is
-  the one adopter whose report states only the *training* motive: an
-  auxiliary loss with an annealed weight, no inference use. That is a point
+- **SOTA-162** (MTP heads) — V4 is an adopter, correctly listed, and its
+  report states only the *training* motive: an auxiliary loss with an
+  annealed weight, no inference use. SOTA-162 is qualified accordingly. That is a point
   for the practice's "double motive, which nobody has separated", not
   against it; it still ablates nothing.
 - **SOTA-227** (speculative decoding) — no bearing; this report is not an

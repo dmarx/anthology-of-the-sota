@@ -16,7 +16,7 @@ consensus_note: >-
   other practice in this record assumes the paradigm this one rejects, so
   the disagreement is wide and one-sided.
 title: 'Train the language model as a masked diffusion model rather than autoregressively'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-19'
@@ -29,15 +29,32 @@ history:
     practice's unconditional recommendation and its `promote_when:` are
     unchanged: the new evidence is about data efficiency below 100M unique
     tokens, not about scale.
+- version: 3
+  date: '2026-09-25'
+  note: >-
+    MDLM (LIT-tmptr16a) and SEDD (LIT-tmpfb0m4) filed and added as
+    corroborating sources, for the *masked* in the title only: both show the
+    absorbing process is the right discrete corruption, which LIT-217 does
+    not test. Neither supports *rather than autoregressively*. MDLM's
+    retrained, same-backbone comparison is the controlled second-group test
+    `promote_when:` asks for in all but its conditions, and at 110M it goes
+    to autoregression. Recorded in a new section; `promote_when:` and status
+    unchanged.
 tags:
 - model-architecture
 - generative-modeling
 date: '2026-09-07'
 source:
-# One paper, and it is the only evidence there is. The comparison it reports
-# is against its own ARM baselines plus published LLaMA3 8B numbers — which
-# is what promote_when is asking somebody else to redo.
+# LIT-217 is the only evidence for the half of the title that says "rather
+# than autoregressively". The comparison it reports is against its own ARM
+# baselines plus published LLaMA3 8B numbers — which is what promote_when is
+# asking somebody else to redo.
 - LIT-217
+# These two corroborate the other half — *masked* rather than another
+# discrete diffusion — and nothing else. On diffusion versus AR their
+# controlled numbers favour AR; see "What MDLM and SEDD support".
+- LIT-tmptr16a
+- LIT-tmpfb0m4
 introduced_by:
 - LIT-217
 implementations:
@@ -83,6 +100,40 @@ The comparison is against **self-constructed ARM baselines** plus published
 LLaMA3 numbers, and "comparable to our self-constructed ARM baselines" is the
 honest form of the claim. This is a demonstration that the paradigm scales,
 not a report that it wins, and one group has made it at one size.
+
+## What MDLM and SEDD support, and what they do not
+
+The practice's title makes two choices, and until 2026-09-25 the record held
+evidence for only one of them.
+
+**Masked, rather than another discrete diffusion.** Sahoo et al.,
+LIT-tmptr16a, and Lou et al., LIT-tmpfb0m4, are the evidence. SEDD trains
+absorbing-state and uniform-state models on the same architecture and recipe,
+and absorbing wins on every table (LM1B ≤32.79 against ≤40.25). MDLM derives
+the masked-diffusion objective LLaDA trains with — a schedule-weighted average
+of masked-LM losses — and beats SEDD at matched training on every likelihood
+table it reports. LIT-479's uniform-state model narrows the gap and does not
+close it. That half of the recommendation is well supported, at GPT-2 scale.
+
+**Rather than autoregressively.** Neither paper supports it, and one argues
+the other way. MDLM retrains an autoregressive baseline on its own backbone
+and data, which makes it the only same-architecture comparison in the record
+from a group other than LLaDA's. AR wins in-domain: LM1B 22.32 against ≤27.04
+at 33B tokens and 20.86 against ≤23.00 at 327B; OpenWebText 17.54 against
+≤23.21. That is with the AR arm trained for **half the optimizer steps**,
+because "matched tokens" counts only the masked tokens a diffusion model is
+scored on. MDLM wins 3 of 7 zero-shot sets, which its authors offer as a
+hypothesis about robustness, and its own checklist lists underperforming
+autoregression as the limitation. SEDD's "beats GPT-2" is 3 of 5 sets against
+the released model, trained on different data. Its retrained LM1B baseline
+is 31.98 exact against SEDD's ≤32.79 bound.
+
+None of that meets `promote_when:`. It is 110M parameters, the steps are not
+matched, and neither arm was swept. It is recorded because it is the nearest
+thing to the requested test that exists, and at small scale it favours the
+baseline. The case for this practice over autoregression still rests on
+LIT-217's demonstration at 8B and on SOTA-254's conditional, not on the two
+papers that made masked diffusion work.
 
 ## What adopting this would cost, which nobody has costed
 

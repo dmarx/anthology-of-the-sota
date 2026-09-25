@@ -11,7 +11,14 @@ consensus_note: >-
   and no adopter ablates it, so what the record has is wide adoption without
   a second measurement.
 title: 'Train with auxiliary multi-token-prediction heads alongside next-token prediction'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Qualified "the adoption is overwhelming" for draft heads: DeepSeek-V4's
+    full report (NOTE-tmpr3mtt) keeps MTP only as a training objective and
+    never mentions speculative decoding.
 tags:
 - training-optimization
 date: '2026-09-08'
@@ -72,6 +79,13 @@ adopting report isolates. That matters for reading this practice: if you want
 only the training benefit, the evidence for it is this one paper; if you want
 the draft heads, the adoption is overwhelming and the training claim comes
 along for free either way.
+
+Overwhelming for the *head*, that is, not for its use as a draft. Not every
+adopter says it drafts with the head: DeepSeek-V4's full report (NOTE-tmpr3mtt)
+keeps MTP only as an auxiliary loss, with its weight annealed from 0.3 to 0.1
+at learning-rate decay, and never mentions speculative decoding. Which
+of the other adopters' own texts state the inference use has not been
+re-checked here.
 
 ## Filed late, and the reason is the same as the deduplication one
 

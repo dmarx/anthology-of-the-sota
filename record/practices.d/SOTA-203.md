@@ -10,7 +10,7 @@ consensus_note: >-
   refer to. The record holds no paper arguing for first-order sampling on
   quality grounds after 2022.
 title: 'Sample a diffusion model with a higher-order ODE solver on the weights you already trained'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-25'
@@ -25,6 +25,15 @@ history:
     every serving stack. The recommendation stands for unguided sampling and the
     guided case is now SOTA-410. Status and consensus unchanged: the claim
     was never wrong, its scope was never written.
+- version: 3
+  date: '2026-09-25'
+  note: >-
+    The ImageNet table's model is now held, LIT-tmpcq7qo. Its authors' tuned
+    25-step DDIM classifier scale at 256×256 is 2.5 (FID 5.44), so the table's
+    8.0 is a stress test at about three times that, and a classifier scale is
+    not the same knob as Stable Diffusion's CFG weight of 7.5, which the text set
+    beside it. One clarifying paragraph; recommendation, status and consensus
+    unchanged.
 tags:
 - generative-modeling
 date: '2026-09-10'
@@ -111,6 +120,14 @@ ImageNet 256×256 at classifier guidance 8.0, FID:
 | DDIM — order 1 | **13.04** | 11.27 | 10.21 | 9.87 |
 | DPM-Solver-2 | 114.62 | 44.05 | 20.33 | 9.84 |
 | DPM-Solver-3 | 164.74 | 91.59 | 64.11 | 29.40 |
+
+**What 8.0 is on this model.** The table is Dhariwal & Nichol's 256×256
+classifier-guided model (LIT-tmpcq7qo), whose authors tuned its scale for 25 DDIM
+steps at **2.5** (FID 5.44). 8.0 is a deliberate stress test at about three times
+that, and a classifier-gradient scale is not the same knob as Stable Diffusion's
+CFG weight of 7.5, however close the numbers look. The shipped-regime evidence is
+LIT-676's Stable Diffusion comparison; the ImageNet table is where the failure is
+cleanest, not where it is typical, and its FIDs are not the model's quality.
 
 Monotone in the wrong direction, and two other solver families fail the same way.
 [THEORY-104](../theory.d/THEORY-104.md) is the account: guidance amplifies the model's derivatives, a

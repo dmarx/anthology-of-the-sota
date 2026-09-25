@@ -13,7 +13,17 @@ consensus_note: >-
   four evaluation budgets, with the failure it corrects measured rather than
   asserted. Read as of 2026-09.
 title: 'For guided sampling, use a second-order multistep solver on the data-prediction parameterization, not a higher-order solver on the noise prediction'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    The ImageNet table's model is now held, LIT-tmpcq7qo. Its authors' tuned
+    25-step DDIM classifier scale at 256×256 is 2.5 (FID 5.44), so the table's
+    8.0 is a stress test at about three times that, and a classifier scale is
+    not the same knob as Stable Diffusion's CFG weight of 7.5, which the text set
+    beside it. One clarifying paragraph; recommendation, status and consensus
+    unchanged.
 tags:
 - inference-optimization
 - generative-modeling
@@ -71,6 +81,14 @@ ImageNet 256×256, classifier guidance 8.0, no thresholding, FID:
 | DPM-Solver-2 | 114.62 | 44.05 | 20.33 | 9.84 | — |
 | DPM-Solver-3 | 164.74 | 91.59 | 64.11 | 29.40 | — |
 | **this practice — (2M)** | 14.44 | **9.46** | **9.10** | **9.11** | — |
+
+**What 8.0 is on this model.** The table is Dhariwal & Nichol's 256×256
+classifier-guided model (LIT-tmpcq7qo), whose authors tuned its scale for 25 DDIM
+steps at **2.5** (FID 5.44). 8.0 is a deliberate stress test at about three times
+that, and a classifier-gradient scale is not the same knob as Stable Diffusion's
+CFG weight of 7.5, however close the numbers look. The shipped-regime evidence is
+LIT-676's Stable Diffusion comparison; the ImageNet table is where the failure is
+cleanest, not where it is typical, and its FIDs are not the model's quality.
 
 Two readings. Against the *right* thing to do, this saves an order of magnitude
 of evaluations: **9.10 at 20 NFE beats DDIM's 9.37 at 250**. Against the *wrong*

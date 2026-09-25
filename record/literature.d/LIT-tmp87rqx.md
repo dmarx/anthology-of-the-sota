@@ -33,6 +33,8 @@ summary: >-
   exact value.
 ---
 
+<!-- inactive-ok-file: THEORY-024 THEORY-030 THEORY-033 — all Proposed, and named to say what this paper does not reach, not relied on -->
+
 # LIT-tmp87rqx: Non-Euclidean Gradient Descent Operates at the Edge of Stability
 
 Islamov, Crawshaw, Cohen and Gower (2026; ICML 2026, oral) — [ARXIV-2603.05002](https://arxiv.org/abs/2603.05002)

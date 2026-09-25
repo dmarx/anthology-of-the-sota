@@ -16,7 +16,17 @@ consensus_note: >-
   unique tokens. Nothing in the record contests it; nothing replicates it
   either. It strengthens SOTA-157 rather than competing with it.
 title: 'Train the language model as a masked diffusion model when the corpus is fixed and the compute is not'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    The inference-cost paragraph said the cost was "not accounted anywhere".
+    MDLM (LIT-tmptr16a) and SEDD (LIT-tmpfb0m4), filed today, report sampling
+    wall-clock at small scale, so the sentence now says what is measured and
+    what still is not. Neither paper is a source: neither varies the
+    unique-token count. Recommendation, sources and `promote_when:`
+    unchanged.
 tags:
 - model-architecture
 - training-optimization
@@ -108,10 +118,18 @@ addresses is arriving at corpus sizes four orders of magnitude above where
 the crossover was measured, and nothing here says the power law reaches
 there.
 
-**Inference cost is not accounted anywhere.** Every comparison is at matched
+**Inference cost is not accounted for in the comparison.** Every comparison is at matched
 *training* compute. A masked diffusion model pays sampling costs an
 autoregressive one does not, and the practitioner's real budget includes
 them. Whether the crossover survives at matched total cost is unmeasured.
+The record now holds only sampling-side numbers, at GPT-2 scale and apart
+from any data-constrained comparison. SEDD (LIT-tmpfb0m4) matches
+autoregressive wall-clock at about 100 sampling steps in unoptimized code.
+MDLM (LIT-tmptr16a) halves its own sampling time by caching a denoiser that
+ignores the timestep. Neither is a source here, since neither varies the
+unique-token count. MDLM's LM1B gap to AR narrows from 4.7 to 2.1 perplexity
+points between 33B and 327B tokens without crossing, which is the direction
+this practice predicts and is not a test of it.
 
 The mechanism is the weakest part. Implicit augmentation is asserted, and in
 the one place it is tested — by giving the autoregressive arm explicit

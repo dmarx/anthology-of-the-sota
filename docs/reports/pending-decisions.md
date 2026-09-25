@@ -241,9 +241,9 @@
 | 2026-09-24 | Proposed | [THEORY-097](../../record/theory.d/THEORY-097.md) | 3 | 0 | Attention is an approximation of Kanerva's sparse distributed memory, which is why it needs normalized vectors and a fitted temperature |
 | 2026-09-24 | Proposed | [THEORY-099](../../record/theory.d/THEORY-099.md) | 3 | 0 | Muon's update matches the outer-product structure of associative memories, which is why it learns tail classes that Adam under-trains |
 | 2026-09-25 | Proposed | [THEORY-103](../../record/theory.d/THEORY-103.md) | 7 | 0 | A transformer stores a fact where it needed it, so two-hop composition generalizes only to facts it already saw as a second hop |
+| 2026-09-25 | Proposed | [THEORY-109](../../record/theory.d/THEORY-109.md) | 5 | 0 | Classifier guidance may flatter classifier-based metrics because it steps along a classifier gradient, and guidance without a classifier is the control |
 | 2026-09-25 | Proposed | [THEORY-108](../../record/theory.d/THEORY-108.md) | 4 | 0 | Kaplan's and Chinchilla's compute-optimal exponents differ because of how small-scale runs were counted, warmed up and tuned, not because of the learning-rate decay |
 | 2026-09-25 | Proposed | [THEORY-104](../../record/theory.d/THEORY-104.md) | 3 | 0 | A large guidance scale amplifies the model's derivatives, which narrows a high-order solver's convergence radius |
-| 2026-09-25 | Proposed | [THEORY-109](../../record/theory.d/THEORY-109.md) | 2 | 0 | Classifier guidance may flatter classifier-based metrics because it steps along a classifier gradient, and guidance without a classifier is the control |
 | 2026-09-25 | Proposed | [THEORY-105](../../record/theory.d/THEORY-105.md) | 1 | 0 | Soft targets transfer the teacher's similarity structure over wrong classes, which carries more information per example than a hard label |
 
 ## LITs

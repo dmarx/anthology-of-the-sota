@@ -23,7 +23,7 @@ history:
     self-supervised encoder" without noticing that SOTA-337 already recommends
     precisely that, names CLIP and SwAV, and lists a classifier in the sampling
     loop among the cases it suspects. The condition now names that instrument and
-    that practice. Adds LIT-tmpbbn7z, read after this account was filed: the
+    that practice. Adds LIT-699, read after this account was filed: the
     antecedent asserts it produces no adversarial examples in one clause of its
     introduction and runs no test — so the question was denied before it was
     raised, and unmeasured in both papers. Status stays Proposed.
@@ -33,7 +33,7 @@ tags:
 date: '2026-09-25'
 source:
 - LIT-693
-- LIT-tmpbbn7z
+- LIT-699
 summary: >-
   Ho and Salimans (2022), [LIT-693](../literature.d/LIT-693.md), raising the question about the method they
   replace. Classifier guidance mixes the score with an image classifier's input
@@ -43,7 +43,7 @@ summary: >-
   be partly adversarial rather than perceptual. Classifier-free guidance obtains
   the same trade with no classifier anywhere, which is the control, and it wins
   — but on the same classifier-based metrics. The antecedent
-  (LIT-tmpbbn7z) had already asserted the
+  (LIT-699) had already asserted the
   negative, in one clause of its introduction, with no test anywhere in the
   paper. SOTA-337 names the instrument that would settle it and nobody has run
   it on guided sampling.
@@ -104,7 +104,7 @@ Hence the `promote_when`: the question needs a metric with no classifier in it.
 
 ## What the antecedent says about it, which is less than it looks
 
-[LIT-tmpbbn7z](../literature.d/LIT-tmpbbn7z.md) was read after this account was filed, and it changes the shape of
+[LIT-699](../literature.d/LIT-699.md) was read after this account was filed, and it changes the shape of
 the dispute rather than the verdict. **Dhariwal and Nichol got there first and
 did not measure it either.** Their introduction says the gradient scale can be
 raised

@@ -13,7 +13,7 @@ history:
     suspected classifiers "placed in the sampling loop" as well as pretrained
     discriminators, and the body said so from v1, but the title said "take part
     in training a generator" — which excludes the most widely deployed
-    sampling-loop classifier there is. Adds LIT-tmpbbn7z as the case: classifier
+    sampling-loop classifier there is. Adds LIT-699 as the case: classifier
     guidance maximises an ImageNet classifier's confidence during sampling, and
     that paper asserts it produces no adversarial examples without measuring it.
     Recommendation, status and consensus unchanged.
@@ -23,7 +23,7 @@ tags:
 date: '2026-09-23'
 source:
 - LIT-563
-- LIT-tmpbbn7z
+- LIT-699
 introduced_by:
 - LIT-563
 consensus: unreplicated
@@ -41,7 +41,7 @@ summary: >-
   FFHQ FID 5.30 → 1.78, while CLIP-space FD moves 2.76 → 2.64. A model whose
   discriminator uses ImageNet features exploited this by accident, and the
   authors suspect data filters and samplers can too. Report a CLIP or SwAV Fréchet distance beside FID
-  whenever that is the case. Classifier guidance (LIT-tmpbbn7z) is the
+  whenever that is the case. Classifier guidance (LIT-699) is the
   sampling-loop instance and the least checked: it maximises an ImageNet
   classifier's confidence on every step, and its paper denies producing
   adversarial examples in one clause without running a test.
@@ -91,12 +91,12 @@ practical case, Projected FastGAN matched StyleGAN2's FID (5.28 against
 - **Complements [SOTA-307](SOTA-307.md)**, which is about FID's variance across seeds. This
   practice is about its bias
 - **Says nothing about which side of a fidelity/diversity trade you are on.**
-  That is [SOTA-tmpyc66w](SOTA-tmpyc66w.md), and it uses precision and recall — which are computed
+  That is [SOTA-425](SOTA-425.md), and it uses precision and recall — which are computed
   in the same ImageNet feature space, so they are subject to this practice too
 
 ## The sampling-loop case
 
-Classifier guidance (Dhariwal and Nichol 2021, [LIT-tmpbbn7z](../literature.d/LIT-tmpbbn7z.md)) is this practice's
+Classifier guidance (Dhariwal and Nichol 2021, [LIT-699](../literature.d/LIT-699.md)) is this practice's
 sharpest instance and the reason v2 widened the title. The method takes gradient
 steps that raise an ImageNet classifier's log-probability of the target class,
 during sampling, on every step. FID and Inception Score are computed by passing

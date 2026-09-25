@@ -1,5 +1,8 @@
 ---
+number: 425
 status: Active
+formerly:
+- SOTA-tmpyc66w
 consensus: emerging
 consensus_note: >-
   The instrument is standard and the reporting discipline is not. Precision and
@@ -21,12 +24,12 @@ tags:
 - generative-modeling
 date: '2026-09-25'
 source:
-- LIT-tmpbbn7z
+- LIT-699
 introduced_by:
-- LIT-tmpbbn7z
+- LIT-699
 implementations: []
 summary: >-
-  Dhariwal and Nichol (2021), [LIT-tmpbbn7z](../literature.d/LIT-tmpbbn7z.md). FID mixes fidelity and diversity,
+  Dhariwal and Nichol (2021), [LIT-699](../literature.d/LIT-699.md). FID mixes fidelity and diversity,
   so on any knob that trades one for the other its optimum is interior and a
   single FID cannot say which side of the trade you are on. Their own Table 5 is
   the demonstration: ADM-G beats BigGAN-deep on FID at ImageNet 128, 256 and 512
@@ -35,11 +38,11 @@ summary: >-
   knob's value, and never read a single FID as "better samples".
 ---
 
-# SOTA-tmpyc66w: Report precision and recall beside FID whenever the generator has a fidelity-diversity knob, because FID's best value sits in the interior of that trade
+# SOTA-425: Report precision and recall beside FID whenever the generator has a fidelity-diversity knob, because FID's best value sits in the interior of that trade
 
 ## Source
 
-Dhariwal and Nichol (2021), [LIT-tmpbbn7z](../literature.d/LIT-tmpbbn7z.md) —
+Dhariwal and Nichol (2021), [LIT-699](../literature.d/LIT-699.md) —
 [ARXIV-2105.05233](https://arxiv.org/abs/2105.05233). The recommendation comes
 from that paper's tables, not from the metric's definition.
 

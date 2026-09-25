@@ -16,7 +16,7 @@ consensus_note: >-
   recipes supports the stronger reading, and this note is here so that the
   `converged` above is not read as covering it.
 title: 'Apply dropout where the model can memorize what it is shown, and not where it cannot'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-21'
@@ -41,6 +41,15 @@ history:
     authors claim priority for it and bound their own claim. The recommendation
     is unchanged; what changes is that its right edge now has a language model
     behind it and not only a 2014 MNIST curve read forward.
+- version: 4
+  date: '2026-09-25'
+  note: >-
+    A second language model on the right edge, and this time one with a
+    standard architecture. LIT-tmpa75eq trains a BERT-base-shaped MLM for a single
+    epoch, and turning dropout on costs 0.8 MNLI-m (80.95 against 81.79).
+    That is one run. The recommendation is unchanged. The note that the
+    record had only "one 2019 encoder with an unusual architecture" no
+    longer holds.
 tags:
 - model-stability
 date: '2026-09-17'
@@ -53,6 +62,7 @@ source:
 - LIT-395
 - LIT-119
 - LIT-668
+- LIT-tmpa75eq
 introduced_by:
 - LIT-394
 implementations:
@@ -123,10 +133,19 @@ Transformer-based models"*) and immediately bound it, noting that ALBERT's
 shared-layer structure is "a special case of the transformer".
 
 So the right edge holds on one language model, for the reason the 2014 curve
-gives. What is still not surveyed is *current* recipes: this record has one 2019
-encoder with an unusual architecture, not a statement about why the field sets
-dropout to zero today. And 0.3 points of average on one configuration is a
-confirmation, not a large effect.
+gives. And 0.3 points of average on one configuration is a confirmation, not a
+large effect.
+
+[LIT-tmpa75eq](../literature.d/LIT-tmpa75eq.md) is the second, with an ordinary architecture. It is a
+BERT-base-shaped MLM trained for 24 hours on one GPU over a single epoch, where
+"overfitting is not possible". Dropout is off in pretraining and back on at 0.1
+for fine-tuning. The one row that turns it on in pretraining gives **80.95
+MNLI-m against 81.79** (its Table 12, one pretraining run). The paper's reason
+is a different one from the 2014 curve: dropout "effectively reduces the number
+of gradient updates seen by each parameter" at nearly the same step cost. That
+argument is not measured. The outcome is, and it falls where this practice
+predicts. What is still not surveyed is *current* recipes. This record has
+two encoders, not a statement about why the field sets dropout to zero today.
 
 **The converse case is live and recent.**
 [LIT-119](../literature.d/LIT-119.md) reports dropout 0.1 after the linear

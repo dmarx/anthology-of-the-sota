@@ -1,130 +1,174 @@
 ---
-# Don't copy this file by hand — run `luria new note`, which assigns the
-# code and fills in what a machine can compute.
-#
-# A NOTE is a READING of a paper: what it contains, what it assumes, what it
-# proves, and how strongly. It is not the paper's standing in the anthology
-# — that is the LIT note's job, and the two are allowed to disagree
-# (ADR-025).
-
-# Read | Skimmed | Unread | Superseded, from statuses.yaml beside this file.
-# This says HOW DEEPLY THE PAPER WAS READ, not whether it is any good.
-# Be honest here. `Skimmed` is a useful, respectable status and is
-# deliberately not in force: it is not enough to source a practice from,
-# and the whole scheme exists because the record could not previously tell
-# a read paper from an unread one.
-status: Skimmed
-
-# REQUIRED. The LIT code this is a reading of. The bibliography — title,
-# authors, year, arxiv — lives there and is NOT repeated here.
-paper: LIT-000
-
-# Repeat the paper's short name as the body's `# NOTE-xxx:` heading; the
-# lint checks that the two agree.
+status: Read
+paper: LIT-tmpx7oed
 title: 'Integrated Gradients'
-
 version: 1
-
-# There is deliberately no `tags:` line here either, for the same reason and a
-# stronger one. A reading's topics are DERIVED from the paper named in `paper:`
-# above — a note and its paper are the same paper, so a second copy of its
-# subject is a second copy free to disagree, and four of them were
-# (ADR-038). Retag the LIT note; the reading follows.
-
 date: '2026-09-25'
-
-# There is deliberately no `published:` line here. A reading's publication date
-# is DERIVED from the paper named in `paper:` above, and writing it down is a
-# lint violation — the value has one home and this is not it.
-
-# What the index table shows. One or two sentences: the finding, not the
-# subject area. Prose, so bare codes get linked by `luria link --fix`.
+summary: >-
+  Integrating the gradient along the straight line from a baseline gives the
+  unique path attribution that is implementation-invariant, complete and
+  symmetry-preserving. The justification is axioms, not a measurement: the
+  paper argues that empirical evaluation of attributions is confounded, and
+  its one comparison with another method is by eye.
 ---
 
-<!-- unresolved-ok-file: LIT-000 — the placeholder a new note replaces -->
-
-# NOTE-xxx: <paper short name>
+# NOTE-tmp1z5qc: Integrated Gradients
 
 ## Contribution
 
-Two to four sentences. What did this add that did not exist before? Not what
-field it is in — what is true after it that was not true before.
+Before this, gradient-based and backpropagation-based attribution methods were
+compared by how their maps looked. This paper sets out properties an attribution
+method should have, shows with counterexamples which existing methods break
+them, and derives a method that satisfies them all: the path integral of
+gradients along the straight line from a baseline. It also imports the
+cost-sharing literature's uniqueness results. After it, "which attribution
+method" can be argued from properties rather than from pictures, and completeness
+gives a numerical check on the computation.
 
 ## Key insight
 
-One paragraph. The single mental model this paper installs: the thing to
-remember if everything else is forgotten.
+A gradient is a local derivative, so it reports zero wherever the function is
+flat at the input, even if the input's value mattered a great deal relative to
+where it started. Attribution is a question about a *difference*,
+`F(x) − F(x′)`, and the gradient answers a question about a *point*. Integrating
+the gradient along a path from `x′` to `x` answers the right question and keeps
+the gradient's independence from how the network is wired. The straight line is
+the only path that treats symmetric inputs symmetrically.
 
 ## Assumptions
 
-The formal conditions the main results require. State them as conditions,
-with the expressions where they have them.
-
-- `L`-smooth gradients: ‖∇f(x) − ∇f(y)‖ ≤ L‖x − y‖
-- Bounded stochastic variance: E[‖g − ∇f‖²] ≤ σ²
-- IID data across workers, or the heterogeneity bound if not
-
-Where a paper's setting differs from the one this record's practices assume
-— dense decoder-only transformers, large batch, homogeneous cluster — say so
-here rather than letting a reader assume it transfers.
+- `F` is continuous everywhere and its partial derivatives are
+  Lebesgue-integrable (discontinuities of measure zero). The paper notes that
+  sigmoid, ReLU and pooling networks satisfy this.
+- A baseline `x′` exists at which the prediction is near zero, so that
+  attributions can be read as distributing `F(x)`. Black images for vision and
+  the zero embedding for text are the paper's choices. The zero embedding is not
+  a valid input, and the paper says so.
+- For Proposition 2, the axioms are Friedman's (2004) as stated there, with the
+  benchmark fixed. The mapping to deep networks is argued in Remark 4, not
+  re-proved.
 
 ## Key results
 
-Theorem-level, with the **exact expressions**. `O(1/√(nK))` is more useful
-than "converges at the same rate as centralized". Give the regime each holds
-in.
-
-- **Theorem 1** — statement. *Holds when:* the parameter regime.
+- **Proposition 1 (Completeness).** For `F` differentiable almost everywhere,
+  `Σᵢ IG_i(x) = F(x) − F(x′)`. It implies Sensitivity(a) (Remark 2).
+- **Remark 3.** Every path method is implementation-invariant, complete and
+  sensitive.
+- **Proposition 2 (Friedman 2004, Theorem 1).** Path methods are the only
+  attribution methods that always satisfy Implementation Invariance,
+  Sensitivity(b) (Dummy), Linearity and Completeness.
+- **Theorem 1.** IG is the unique symmetry-preserving path method (Appendix A).
+  If averages over paths are allowed, Shapley–Shubik also qualifies (Remark 5).
+- **Counterexamples (Appendix B, Figure 7).** For two functionally equivalent
+  networks at `(3, 1)`, IG gives `(1.5, −0.5)` for both, while DeepLift and LRP
+  give `(1.5, −0.5)` and `(2, −1)`. DeconvNet and Guided Backprop give `x₂` zero
+  attribution for all inputs, despite the output depending on it.
+- **Approximation.** 20–300 Riemann steps are "enough to approximate the
+  integral (within 5%)". This is stated without data. The NMT model used
+  100–1000.
+- **Applications (§6).** These are demonstrations, each on one or a few
+  examples:
+  - GoogLeNet on ImageNet (Figure 2).
+  - A diabetic-retinopathy model, where attributions land on lesion boundaries
+    in one image.
+  - Question classification, where attributions surface "total number" as a
+    numeric trigger and "charles" as a spurious yes/no one.
+  - An NMT alignment.
+  - A molecular graph convolution: bonded pairs contribute 46% of the score,
+    and the method found a W1N2 architecture defect (atoms not fully convolved).
 
 ## Claims
 
-Only a `Read` note may fill this in. `strength` is about the *support*, not
-about how much you believe it.
-
 | id | claim | strength | support |
 |---|---|---|---|
-| C1 | plain English | strong / moderate / weak | Theorem 2 / experiment in §5 / informal argument |
+| C1 | IG attributions sum to `F(x) − F(x′)` | strong | Proposition 1, fundamental theorem of calculus for path integrals |
+| C2 | Gradients, DeconvNets and Guided Backprop violate Sensitivity(a); DeepLift and LRP violate Implementation Invariance | strong | explicit counterexamples, §2 and Appendix B |
+| C3 | Path methods are the only methods satisfying Implementation Invariance, Sensitivity(b), Linearity and Completeness | strong | Friedman (2004), cited; the correspondence to attribution is argued in Remark 4 |
+| C4 | IG is the unique symmetry-preserving path method | strong | Theorem 1, proof in Appendix A |
+| C5 | IG's maps reflect distinctive features of the input better than gradient×image | weak | visual comparison of a few images, Figure 2; no metric |
+| C6 | The axiomatic approach rules out artefacts of the attribution method | weak | argument in §8; the axioms exclude two named failures, not method artefacts in general |
+| C7 | 20–300 steps approximate the integral within 5% | weak | stated, no table |
+| C8 | IG helps debug networks and extract rules | weak | one example each (§6.3, §6.5); anecdote, not a rate |
 
 ## Method
 
-*(Omit this section entirely for empirical or survey papers.)*
-
-The algorithm, its steps, and its components.
+1. Choose a baseline `x′` with `F(x′) ≈ 0` that carries no signal.
+2. For `k = 1…m`, compute `∇F(x′ + (k/m)(x − x′))`. The gradients batch.
+3. Average them and multiply elementwise by `(x − x′)`.
+4. Check that `Σ IG_i ≈ F(x) − F(x′)`. If not, increase `m`.
 
 ## Concepts
 
-Terms as *this paper* defines them, which is not always as the field uses
-them.
-
-- **term** — precise definition as used here.
+- **Attribution** — a vector `A_F(x, x′) ∈ ℝⁿ` relative to a baseline. The
+  baseline is part of the definition (Definition 1, Remark 1).
+- **Sensitivity(a)** — if input and baseline differ in one feature and in
+  output, that feature gets non-zero attribution.
+- **Sensitivity(b)** (Friedman's *Dummy*) — a variable the function does not
+  depend on gets zero attribution.
+- **Implementation Invariance** — functionally equivalent networks get
+  identical attributions.
+- **Completeness** — attributions sum to the output difference. The paper calls
+  it "a sanity check that the attribution method is somewhat comprehensive".
+  That is a different use of "sanity check" from LIT-tmpzf4pd's.
+- **Path method** — attribution by integrating gradients along a monotone path
+  from `x′` to `x`.
 
 ## Connections
 
-How this builds on prior work, in prose. Machine-readable lineage —
-`extends:`, `corrects:`, `compared_against:` — is declared on the LIT and
-must not be duplicated here.
+It builds on gradient saliency (Baehrens et al.; Simonyan et al.) and on the
+baseline idea of DeepLift and LRP, whose Implementation Invariance it shows
+failing. Its theory is Aumann–Shapley cost sharing, via Friedman. It sets
+itself apart from LIME (implementation-invariant but not sensitive) and from
+attention weights, which are an incomplete account of influence in an LSTM.
+LIT-tmpzf4pd later includes IG among the methods it randomizes.
 
 ## Recommendations
 
-Practitioner-facing advice derived from the paper, useful beyond this
-record. These are candidate practices; a `SOTA` document is where one
-becomes a recommendation this anthology makes.
-
-- **R1** — the recommendation. *Topic:* short label. *Status:* standard or
-  experimental. *Strength:* strong / moderate / weak. *Applies when:* the
-  conditions.
+- **R1** — Use the completeness gap `|Σ IG_i − (F(x) − F(x′))|` as the
+  convergence check on the step count, rather than a fixed `m`. *Topic:*
+  analysis and evaluation. *Status:* standard. *Strength:* moderate. The
+  identity is a theorem; the step counts are anecdote. *Applies when:* any
+  Riemann-sum IG.
+- **R2** — Report the baseline with every IG attribution, and choose one whose
+  score is near zero. *Topic:* analysis and evaluation. *Status:* standard.
+  *Strength:* moderate. It follows from the definition, but the paper does not
+  measure baseline sensitivity. *Applies when:* always, since attributions are
+  relative to it.
+- **R3** — Do not take the axioms as evidence that a map is faithful to the
+  model. They exclude implementation dependence and dead-gradient zeros, and
+  nothing else. *Topic:* analysis and evaluation. *Strength:* moderate, from
+  reading the axioms against LIT-tmpzf4pd.
 
 ## Bearing on the record
 
-Which `SOTA` practices this reading confirms, contradicts, or should
-produce. Name the codes. If a practice cites this paper for something the
-paper does not say, this is where that gets written down.
+- No practice is sourced from this paper. R1 is sound and cheap, but it rests on
+  a theorem plus one unmeasured sentence, and the record has no practice on
+  computing attributions for it to belong to.
+- SOTA-tmpudd8t (from LIT-tmpzf4pd) is the practice this paper's argument sits
+  against. Here, empirical evaluation is set aside as confounded. There, a
+  specific empirical evaluation, randomization, is proposed because visual
+  evaluation misleads. The two are compatible. This paper's objection is to
+  perturbation and bounding-box metrics that cannot separate model artefacts
+  from method artefacts. The randomization tests are built to separate exactly
+  those.
+- The record's other attribution line is training-data attribution
+  (LIT-400, LIT-401, LIT-402), which asks a different question. NOTE-178's R3
+  and NOTE-179's R1, "validate an attribution method against the object it
+  estimates", are the same instinct on that side.
 
 ## Limitations
 
-What the paper does not establish, including what its own authors say it
-does not.
+- No quantitative evaluation of faithfulness. By the paper's own argument it
+  could not have one it trusted.
+- Baseline choice is left to the practitioner and not measured.
+- Theorem 1's uniqueness depends on accepting symmetry preservation and
+  restricting to single paths. The paper concedes that preferring IG over
+  Shapley–Shubik on `min(x₁, x₂)` is "somewhat subjective".
+- Interactions between features are explicitly not addressed (§8).
 
 ## Open questions
 
-What it leaves open, and what result would close it.
+- Is IG faithful to the model in any measurable sense? LIT-tmpzf4pd's result
+  suggests its magnitudes are dominated by the input.
+- How much do attributions change across reasonable baselines (black, noise,
+  blurred)?

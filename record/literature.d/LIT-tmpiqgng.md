@@ -1,70 +1,109 @@
 ---
-# Don't copy this file by hand — run `luria new lit`.
-#
-# A note records why a paper is worth keeping. It is not a summary of the
-# paper; it is this project's reading of it.
-
-# Active | Proposed | Deferred | Superseded | Rejected, optionally " — note".
-# See statuses.yaml beside this file. `Rejected` is the attic: retire a paper
-# by setting it, with the reason in the status note and the long version
-# under "Standing in the anthology" below. Never by deleting the file —
-# something cites it.
 status: Active
-
-# The paper's title, verbatim. Repeat it as the body's `# LIT-tmpiqgng:` heading.
 title: 'Primer: Searching for Efficient Transformers for Language Modeling'
-
 version: 1
-
-# Exactly one of the thirteen in tags.yaml, enforced by luria.toml — the same
-# thirteen the practice registry uses (ADR-026).
 tags:
+- model-architecture
+- attention-techniques
 - training-optimization
-
-# When this note was filed. The record's own clock, not the paper's.
 date: '2026-09-25'
-
-# REQUIRED. When the PAPER appeared — the arXiv posting month, from the id:
-# 2205.11487 → 2022-05. Distinct from `date:` above, which is when the record
-# got round to it.
-#
-# This is the one place the date lives. A practice reads it from its primary
-# source and a reading note from its paper, both by `derive`/`from` in
-# luria.toml, so neither carries a copy that could drift (#119).
-published: '2022-05-01'
-
-# A SOURCE is required — at least one of these three, enforced (ADR-009).
-# Prefer them in this order: an arXiv id or a DOI resolves through a remote
-# and can be pinned; a URL is a string nothing can check. Bare id, no
-# version suffix. Delete the lines you don't use.
-arxiv: '0000.00000'
-# doi: '10.0000/example'
-# url: 'https://example.org/report'
-
-first_author: 'Surname'
-
-# The paper's own subject words, kept verbatim. Free-form on purpose — this
-# is what the paper is about, whereas `tags:` is where the record files it.
-keywords: []
-
-# Optional. Models or codebases known to use this work.
-implementations: []
-
-# What the index table shows: the citation and the one finding that matters.
+published: '2021-09-17'
+arxiv: '2109.08668'
+first_author: 'So'
+keywords:
+- 'squared-relu'
+- 'multi-dconv-head-attention'
+- 'depthwise-convolution'
+- 'architecture-search'
+- 'evolutionary-search'
+- 'compute-efficiency'
+- 'primer-ez'
+implementations:
+- 'T5 / Lingvo (released by the authors)'
+- 'modded-nanogpt (squared ReLU)'
+- 'Nemotron-4 (squared ReLU)'
+compared_against:
+- LIT-008
+- LIT-030
+- LIT-189
+- LIT-425
+summary: >-
+  So et al. (NeurIPS 2021), [ARXIV-2109.08668](https://arxiv.org/abs/2109.08668). An evolutionary search over
+  TensorFlow primitives, at a fixed 24-hour training budget, finds two changes
+  that carry most of the gain. One squares the feed-forward ReLU. The other
+  adds a causal width-3 depthwise convolution after each per-head Q, K and V
+  projection (MDHA). The only direct activation comparison has squared ReLU
+  ahead of SwiGLU and ReGLU, in one 110M C4 figure. "4.2×" is against the original ReLU
+  T5 at 537M. Against the SwiGLU + RMSNorm baseline the saving is 2× at
+  equal final quality. On encoder–decoder masked LM, Primer-EZ does no better
+  than that baseline.
 ---
 
-<!-- unresolved-ok-file: LIT-000 — the placeholder a new note replaces -->
+# LIT-tmpiqgng: Primer: Searching for Efficient Transformers for Language Modeling
 
-# LIT-000: The paper title, exactly as published
-
-Surname et al. (YEAR) — [ARXIV-0000.00000](https://arxiv.org/abs/0000.00000)
+So et al. (2021; NeurIPS 2021) — [ARXIV-2109.08668](https://arxiv.org/abs/2109.08668)
 
 ## Key takeaways
 
-- What it establishes, in claims rather than topics.
+**The two modifications (Primer-EZ).**
+- **Squared ReLU** in the feed-forward block, `max(x, 0)²`. It adds no
+  parameters. It equals ReGLU when ReGLU's two matrices are tied (§3).
+- **Multi-DConv-Head Attention (MDHA).** After each head's Q, K and V
+  projection, apply a causal 3×1 depthwise convolution along the sequence.
+  Pointwise-then-depthwise works better than the usual separable order.
+  Wider kernels and full convolutions "do not improve performance, but in
+  several cases hurt it" (§3, Table 4).
+
+The discovered Primer carries other changes: shared Q/K, a custom norm, 12×
+FFN, post-softmax gating and a pre/post norm swap. They are weaker, and some
+are harmful. Shared QK "generally hurts". The 12× projection helps only near
+35M parameters, and the gating does not work at variable length (§3, App. A.7).
+
+**The comparisons, and their units.** "Speedup" is compute (accelerator
+hours) to reach the baseline's final quality. Step-time costs are therefore
+already counted, and both changes do slow a step (§2).
+- **LM1B, 35M** (App. A.6, several runs, ±): Primer-EZ is 2.34× vanilla in T2T
+  on TPUv2, 2.03× on V100 and 1.75× in T5. Transformer++ is 1.37×, 1.54× and
+  1.33×. **MDHA alone is 1.76×** in T2T.
+- **C4 and PG19, 110M, T5** (Fig. 9): at least 1.8× vanilla at the end of
+  training. Primer-EZ is **1.5× on Switch Transformer**, and squared ReLU alone
+  is **2.0× on Synthesizer**.
+- **Full T5 replica, 537M** (Table 1): 4.2× the original T5. Against T5++
+  (SwiGLU + RMSNorm), Primer reaches 13.25 perplexity in 3.8K TPUv3-hours
+  against 4.6K, about 1.2×, and 12.69 in 8.3K against 16.5K, about 2×.
+- **1.9B, GPT-3-XL-like** (Fig. 11, Table 6): full Primer against
+  **Transformer + GELU**, not Transformer++. Primer matches it with ⅓ of the
+  compute on pretraining perplexity and 27 one-shot tasks (5 better, 1 worse,
+  21 equal). The data is proprietary and the architecture has no SwiGLU arm.
+
+**Squared ReLU against the gated units** (Fig. 5 right): one bar chart at
+110M on C4, T5 codebase, 525K steps. Squared ReLU beats ReLU, GELU, Swish,
+ReGLU and SwiGLU. No variance is shown, and the paper does not say whether
+the gated variants were parameter-matched.
+
+## Traps
+
+- **"Gains increase with compute" has two meanings here, and the paper
+  separates them.** At compute-optimal sizes (Fig. 7), the saving is a
+  constant factor. At a fixed model size the factor grows the longer you
+  train, and the authors warn that this "can be 'gamed' by investing more
+  compute than is necessary for baseline models" (§4.3). The 4.2× is the
+  fixed-size kind, which is why they used Raffel et al.'s exact schedule.
+- **Hyperparameters are the Transformer's, untuned for Primer.** They are
+  Adafactor, rsqrt decay and regularization disabled (App. A.8). That favours
+  the baseline, so it is not a hidden advantage for Primer.
+- **Decoder-only.** On T5 encoder–decoder masked LM (App. A.12, single runs),
+  Primer-EZ "perform[s] only as well as Transformer++".
+- **Squared ReLU is unbounded and grows quadratically.** That is the property
+  [LIT-200](LIT-200.md) blames for SwiGLU's activation outliers at low precision.
+  Primer never tests narrow arithmetic.
 
 ## Standing in the anthology
 
-Why this is here — or, once it is `Rejected` or `Superseded`, why it isn't
-any more, and what replaced it. Omit the section entirely while the answer is
-just "it's good work", which is the usual case.
+Filed from `#290`'s catalogue triage. It is the only paper in the record
+that puts squared ReLU against SwiGLU. It supports no practice. It is now
+one of [SOTA-034](../practices.d/SOTA-034.md)'s `contested_by` papers, because it disputes SwiGLU's quality
+and not only its range. The evidence for that is one figure at one scale.
+MDHA has no practice. It predates the short causal convolutions later
+recurrent and hybrid layers put before their mixers. The record has not
+filed that lineage.

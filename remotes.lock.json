@@ -155,6 +155,9 @@
     "ARXIV/1806.07572": {
       "title": "Neural Tangent Kernel: Convergence and Generalization in Neural Networks"
     },
+    "ARXIV/1807.03748": {
+      "title": "Representation Learning with Contrastive Predictive Coding"
+    },
     "ARXIV/1808.07217": {
       "title": "Don't Use Large Mini-Batches, Use Local SGD"
     },

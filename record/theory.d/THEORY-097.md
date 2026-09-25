@@ -79,7 +79,7 @@ And the temperature the theory says should be chosen well is one QK-norm makes
 *learnable*, so it can be read off a trained model: **β ∈ [10, 25]**, which
 interpolates between SDM's critical-distance, signal-to-noise and
 memory-capacity optima. The first is derived in Kanerva's book ([LIT-666](../literature.d/LIT-666.md)),
-the other two in his 1992 review ([LIT-tmpwxmrr](../literature.d/LIT-tmpwxmrr.md)).
+the other two in his 1992 review ([LIT-669](../literature.d/LIT-669.md)).
 
 ## Why this is `Proposed` and likely to stay there
 

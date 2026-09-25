@@ -9,12 +9,28 @@ consensus_note: >-
   one: eleven distribution shifts, seven transfer datasets, twelve further
   backbones in the appendix, and a mechanism whose failure mode is stated and
   explained. What holds it short of `converged` is that every measurement is
-  image classification, which the authors say, and that the record cannot name
-  an adopter outside the authors' own line of work — model soups, which this
-  record does not yet hold. `Active` because the recommendation is free and the
-  downside is bounded at 0.3 pp. Read as of 2026-09.
+  image classification, which the authors say, and that the record still cannot
+  name an adopter outside the authors' own line of work. LIT-tmpay0h1 extends
+  the method and shares a first author with it, so `DP-005` counts the two as
+  one line rather than as a result and its replication. `Active` because the
+  recommendation is free and the downside is bounded at 0.3 pp. Read as of
+  2026-09.
 title: 'Interpolate the zero-shot and fine-tuned weights at about half way rather than shipping the fine-tuned model'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Resolves the dependency this document's own consensus note named, and records
+    that resolving it changes nothing. The note said the record could not name an
+    adopter "outside the authors' own line of work — model soups, which this
+    record does not yet hold". LIT-tmpay0h1 is now filed, and it shares a first
+    author with this practice's source, so `DP-005` counts the two as one line of
+    work rather than as a measurement and a replication. Consensus stays
+    `emerging`; what changes is that the note says why instead of leaving a paper
+    unread. Also nuances the image-classification limit: the *family* now has a
+    non-vision data point, which the authors label preliminary and on which two
+    of four tasks gain exactly nothing.
 tags:
 - adaptation-and-tuning
 - multimodal-learning
@@ -96,6 +112,12 @@ claim.
 
 **Image classification only.** The authors state the limitation. Every number
 here is a CLIP-family classifier on image benchmarks.
+
+The wider family has since reached text, barely: [LIT-tmpay0h1](../literature.d/LIT-tmpay0h1.md) reports greedy
+soups on four GLUE tasks with gains of **+0.0, +0.7, +0.0 and +0.5** for BERT and
+calls the experiments preliminary. That is a data point for weight averaging
+outside vision and it is not a result for *this* practice, which nobody has run
+on text.
 
 **It preserves robustness rather than creating it.** What the interpolation
 recovers is the zero-shot model's own consistency across distributions. Starting

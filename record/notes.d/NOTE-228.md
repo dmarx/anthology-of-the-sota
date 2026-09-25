@@ -5,7 +5,13 @@ formerly:
 - NOTE-tmp290m1
 paper: LIT-479
 title: 'The Diffusion Duality'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    MDLM and SEDD are now filed (LIT-tmptr16a, LIT-tmpfb0m4); the sentence
+    saying they are not in the record now says when that was true.
 date: '2026-09-21'
 summary: >-
   Reading it: the theorem is elegant and the ablation says it accounts for
@@ -122,9 +128,10 @@ evaluations (NFE) as the sampling budget.
   regime those practices do not address.
 - The record's flow and interpolant cluster is the Gaussian side of the bridge
   this paper builds. The bridge is the contribution; neither end is new.
-- MDLM and SEDD, the strongest baselines here, are **not in the record**. They
-  arrive as table entries, which is the third family this session to enter
-  that way.
+- MDLM and SEDD, the strongest baselines here, were **not in the record** when
+  this was read; they arrived as table entries, the third family this session
+  to enter that way. Both are now filed and read ([LIT-tmptr16a](../literature.d/LIT-tmptr16a.md), [LIT-tmpfb0m4](../literature.d/LIT-tmpfb0m4.md)),
+  from the survey of skipped readings of 2026-09-25.
 
 ## Bearing on the record
 

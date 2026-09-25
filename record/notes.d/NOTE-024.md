@@ -3,16 +3,27 @@ number: 24
 status: Read
 formerly:
 - NOTE-tmpqa1ya
-# inactive-ok: LIT-104 — Proposed — a watch-list paper, and this document is the reading that says what would take it off the list
 paper: LIT-104
 title: 'ReLoRA: High-Rank Training Through Low-Rank Updates'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Restart claims re-verified against the full text (arXiv v4). C2 holds as
+    written, with its scope stated: the ablation is at 130M from random
+    initialisation, and the reset and re-warm were never ablated from a warm
+    start. Added what v1 missed — Appendix A's hyperparameter guide,
+    Appendix B's null in fine-tuning, Appendix E's 2K warm start — and R1 is
+    now filed, as SOTA-tmppbzba, which the v1 Bearing section said it would
+    not be. LIT-104 is Active, so both inactive-ok directives naming it are removed.
 date: '2026-09-09'
 summary: >-
   Restart LoRA repeatedly during pretraining — merge the adapter, reinitialise it, prune the optimizer state, re-warm the learning rate — so a sequence of low-rank updates sums to a high-rank one. The ablation is the finding: the full-rank warm start it also requires accounts for most of the measured gain, and the restart machinery adds 0.42 perplexity on top of it.
 ---
 
 # NOTE-024: ReLoRA: High-Rank Training Through Low-Rank Updates
+<!-- inactive-ok-file: SOTA-tmppbzba — Proposed, and named as where R1 was filed; its Proposed status is this reading's own verdict on the scope of Table 6 -->
 
 ## Contribution
 
@@ -95,7 +106,8 @@ covers.
 | id | claim | strength | support |
 |---|---|---|---|
 | C1 | A sequence of low-rank updates accumulates into a high-rank one | strong | the arithmetic, plus the singular-value spectra |
-| C2 | Restarts require an optimizer reset *and* a jagged schedule or they fail | strong | ablated; the pair without the schedule diverges |
+| C2 | Restarts require an optimizer reset *and* a jagged schedule or they fail | strong | ablated (Table 6, 130M, from random init); the pair without the schedule diverges, the schedule without the reset gains nothing. Not ablated from a warm start |
+| C7 | ReLoRA helps in fine-tuning | **weak — contradicted by Appendix B** | on GLUE with T5-base and T5-large it does not outperform plain LoRA (Table 8) |
 | C3 | ReLoRA approaches full-rank quality at 1.3B | moderate | 17.27 vs 16.83 — close, and still a gap that does not visibly close |
 | C4 | ReLoRA's own mechanism is what delivers the result | **weak — contradicted by Table 6** | the warm start carries 25.46 of the 25.04 |
 | C5 | Efficiency improves with model size | moderate | asserted from 60M–1.3B; 9% wall-clock at the top end |
@@ -142,10 +154,20 @@ the paper's own ablation makes that argument for it.
 
 ## Bearing on the record
 
-**No practice is sourced to this paper, and this reading does not create one**
-— R3 is too weak to file and R1 is too narrow to matter outside this method.
+**R1 is filed as [SOTA-tmppbzba](../practices.d/SOTA-tmppbzba.md)** (2026-09-25), `Proposed`, sourced here. v1
+of this reading said it would not be — that R1 was "too narrow to matter
+outside this method" — and [#121](https://github.com/dmarx/anthology-of-the-sota/issues/121)'s audit then held it back on a scope question
+[ADR-042](../decisions.d/ADR-042.md) has since answered. It is narrow, and the practice says so: it is a
+rule for *how* to restart an adapter, conditional on restarting, with the
+ablation's scope (130M, from random initialisation) written into its
+`promote_when`. R3 is still not filed, in either direction: too weak to
+recommend, and Table 6 decomposes the gain rather than refuting it, so it
+does not clear [ADR-042](../decisions.d/ADR-042.md)'s third condition as a `Rejected` practice either.
 
-<!-- inactive-ok-block: LIT-104 — Proposed, and this paragraph is about that document's own defects -->
+*v1 read:* No practice is sourced to this paper, and this reading does not
+create one — R3 is too weak to file and R1 is too narrow to matter outside
+this method.
+
 The reading does correct `LIT-104`, whose takeaways were wrong about what the
 paper is:
 
@@ -158,6 +180,35 @@ paper is:
 
 The document was also tagged `model-architecture` on the strength of those
 bullets. Retagged `training-optimization`, which is what it is.
+
+## Re-verified against the full text (v2)
+
+Read end to end again, arXiv v4 (10 December 2023), for the restart claims
+specifically.
+
+- **C2 stands, and is narrower than it reads.** Table 6 is 130M, **without**
+  a warm start, one run per arm as far as the paper says. From a warm start
+  the paper reports only the full recipe against no restarts; the reset and
+  the re-warm were never separated there.
+- **"Optimizer reset" in the diverging arm is not defined.** §4.2 calls it "a
+  naive optimizer reset"; the method prunes 99% by magnitude. Algorithm 1 as
+  printed prunes the moments of `W_A` only.
+- **The 50-step re-warm is anecdote**: "in our initial experiments … as low
+  as 50 steps, instead of hundreds" for an optimizer initialised from
+  scratch. No table. The 1.3B run used 100 steps of initial warmup and 50 per
+  restart.
+- **Appendix A**, the practical guide, which v1 did not use: r ∈ {64, 128}
+  works to 1B; ReLoRA and LoRA need a **1.5–2× larger learning rate** than
+  full-rank training; no significant dependence on the pruning fraction above
+  90%, and higher fractions risk "loss instabilities during the reset"; reset
+  every 2K–5K steps, which "always led to better performance than no resets".
+- **Appendix B**: in fine-tuning ReLoRA does not beat LoRA (Table 8, T5-base
+  and T5-large on GLUE), and Table 9's reset-rate sweep on QNLI is flat
+  (94.33–94.73).
+- **Appendix E**: from a 2K-step warm start ReLoRA beats LoRA by 1.4 ppl
+  (23.64 vs 25.08) — the largest restart effect in the paper, in the regime
+  furthest from the recommended one.
+- The 1.3B final figure is 17.27 in Tables 2 and 4 and 17.24 in §4.1's prose.
 
 ## Limitations
 

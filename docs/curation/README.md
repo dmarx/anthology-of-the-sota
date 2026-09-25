@@ -6,9 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
-- [25 Sep 21:30 — A 62-second window on main, and three rebases spent blaming CI for it](2026-09.md#a-62-second-window-on-main-and-three-rebases-spent-blaming-ci-for-it)
 - [25 Sep 20:44 — Five boundary works, filed here by the owner's rule for the boundary](2026-09.md#five-boundary-works-filed-here-by-the-owners-rule-for-the-boundary)
-- [25 Sep 18:51 — Three gap sentences in three units, and an instrument the record already owned](2026-09.md#three-gap-sentences-in-three-units-and-an-instrument-the-record-already-owned)
 - [25 Sep 18:27 — The four follow-ups, and what reading the origins did to the records that cited them](2026-09.md#the-four-follow-ups-and-what-reading-the-origins-did-to-the-records-that-cited-them)
 - [25 Sep 17:59 — A seventeen-fold metric swing that three practices were steering around](2026-09.md#a-seventeen-fold-metric-swing-that-three-practices-were-steering-around)
 - [25 Sep 17:07 — Thirteen read, and the triage was wrong about four of them](2026-09.md#thirteen-read-and-the-triage-was-wrong-about-four-of-them)
@@ -245,9 +243,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-238 entries across 2 books, newest first.
+236 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 236 | 2026-09-05 | 2026-09-25 |
+| [2026-09](2026-09.md) | 234 | 2026-09-05 | 2026-09-25 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

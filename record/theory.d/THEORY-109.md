@@ -14,7 +14,7 @@ promote_when: >-
   guidance on FID and IS is not it: both are Inception-based, so a win there is
   consistent with both readings and is what this record already holds.
 title: 'Classifier guidance may flatter classifier-based metrics because it steps along a classifier gradient, and guidance without a classifier is the control'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-25'
@@ -27,6 +27,16 @@ history:
     antecedent asserts it produces no adversarial examples in one clause of its
     introduction and runs no test — so the question was denied before it was
     raised, and unmeasured in both papers. Status stays Proposed.
+- version: 3
+  date: '2026-09-25'
+  note: >-
+    A second, independent full reading of LIT-699 (NOTE on it filed with
+    this version) adds two facts: the guiding classifier is the noisy-image
+    U-Net trunk, not Inception-V3, so the closing "coincidence between the
+    network being differentiated and the network doing the scoring" was
+    wrong and now says transfer between two ImageNet classifiers; and at
+    scale 1 the paper itself saw a classifier report ~50% on samples that
+    were not the class. Status and promote_when unchanged.
 tags:
 - analysis-and-evaluation
 - generative-modeling
@@ -129,6 +139,23 @@ classifiers "placed in the sampling loop". That practice's v1 title said
 hours earlier the same day. The experiment is cheap, the instrument is named, and
 it has not been run.
 
+Two further facts from the full text bear on the account from the antecedent's
+side:
+
+- **The classifier being followed is not the classifier doing the scoring.** It
+  is the U-Net's downsampling trunk with an attention pool, trained on noised
+  ImageNet; FID and IS use Inception-V3. The mechanism would have to be
+  *transfer* — a gradient that raises one ImageNet classifier's confidence also
+  moving another's features — which is plausible, but is one step more than
+  "attacking the scorer".
+- **The paper observed the predicted shape once, at the low end.** On an
+  unconditional model at scale 1 "the classifier assigned reasonable
+  probabilities (around 50%) to the desired classes", and the samples "did not
+  match the intended classes upon visual inspection"; FID got worse (26.21 →
+  33.03). A classifier satisfied by images that do not look like the class is
+  what the account is about. Scaling up to 10 fixed it by eye and in FID, which
+  is the case the account cannot yet distinguish from a real improvement.
+
 ## What this does not say
 
 **Not that classifier guidance's results were fake.** The trade it reports is
@@ -140,9 +167,10 @@ classifier gradient, and neither paper measured it.
 **Not a general claim about gradient-based guidance.** [SOTA-301](../practices.d/SOTA-301.md) recommends
 applying an objective gradient before the denoiser when steering diffusion toward
 a task objective; nothing here bears on that, because the objective there is not
-the thing the evaluation is computed with. The concern is specifically the
-coincidence between the network being differentiated and the network doing the
-scoring.
+the thing the evaluation is computed with. The concern is specifically that
+the network being differentiated and the network doing the scoring are both
+ImageNet classifiers — not the same network, as [LIT-699](../literature.d/LIT-699.md) makes clear, but
+close enough for a gradient on one to plausibly move the other.
 
 **Not an argument for either method.** [SOTA-424](../practices.d/SOTA-424.md) recommends classifier-free
 guidance on grounds that have nothing to do with this — one model instead of two,

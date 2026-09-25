@@ -6,10 +6,9 @@ formerly:
 consensus: emerging
 consensus_note: >-
   The instrument is standard and the reporting discipline is not. Precision and
-  recall for generative models are Kynkäänniemi et al.'s (2019) definitions —
-  whose paper this record does not hold — and the diffusion literature does
-  report them in comparison tables — this paper,
-  its successors, DiT. What is not routine is using them the way this practice
+  recall for generative models are Kynkäänniemi et al.'s (2019) definitions,
+  LIT-703, and the diffusion literature does report them in comparison
+  tables — this paper, its successors, DiT. What is not routine is using them the way this practice
   asks: to say which side of a fidelity/diversity trade a model sits on, rather
   than as two more columns beside the FID that decides the ranking. `emerging`
   rather than `converged` because the record has one paper whose own table
@@ -18,13 +17,28 @@ consensus_note: >-
   Per DP-005, the columns appearing in tables is adoption of the metric, not of
   the practice. Read as of 2026-09.
 title: "Report precision and recall beside FID whenever the generator has a fidelity-diversity knob, because FID's best value sits in the interior of that trade"
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Corrects a false claim about the instrument this practice recommends. v1 said
+    precision and recall are "computed with the same ImageNet network FID uses".
+    They are not: LIT-703 uses VGG-16 activations after the second fully
+    connected layer, FID uses Inception-v3. The hazard SOTA-337 names survives
+    because both are ImageNet classifiers, but the sentence did not, and it took
+    filing the defining paper to see it. Adds the source, a better demonstration
+    than v1 had (two StyleGAN setups 0.2 FID apart and perceptually opposite),
+    and two conditions v1 lacked: `k` and the sample count have to be fixed, and
+    two metrics make model selection multi-objective. Recommendation, status and
+    consensus unchanged.
 tags:
 - analysis-and-evaluation
 - generative-modeling
 date: '2026-09-25'
 source:
 - LIT-699
+- LIT-703
 introduced_by:
 - LIT-699
 implementations: []
@@ -103,10 +117,33 @@ fidelity/diversity control is the ordinary case, and there FID's error bar and
 sample count matter more — [SOTA-307](SOTA-307.md) for the seed variance, [SOTA-383](SOTA-383.md) for the
 sample count.
 
-**Precision and recall do not escape the feature space.** They are computed
-with the same ImageNet network FID uses, so they answer "which side of the
-trade" and not "is the measurement trustworthy". [SOTA-337](SOTA-337.md) is the practice for
-the second question, and it applies to guided sampling in particular.
+**Precision and recall do not escape the feature space, and they are not
+computed in FID's.** Two separate facts, and v1 of this practice collapsed them
+into a false one. The metric's features are **VGG-16 activations after the second
+fully connected layer** ([LIT-703](../literature.d/LIT-703.md)); FID's are Inception-v3. So it is a
+*different* ImageNet classifier, not the same one — and it is still not a second
+opinion on FID's feature space, because that paper's Figure 3c finds Inception-v3
+features give "substantially similar" results. Two ImageNet classifiers agreeing
+is what [SOTA-337](SOTA-337.md) exists to warn about. This practice answers "which side of the
+trade"; [SOTA-337](SOTA-337.md) answers "is the measurement trustworthy", and it covers all
+three metrics.
+
+**Fix `k` and the sample count, and do not compare across them.** `k = 3` and
+50 000 samples are the conventional defaults, and `k` is not innocuous: higher
+values raise *both* precision and recall "in a fairly consistent fashion" until
+they saturate at 1.0 and 0.0. A precision of 0.86 at one `k` against 0.82 at
+another is not a comparison, for the same reason two FIDs at different guidance
+weights are not one.
+
+**Two metrics make model selection multi-objective, so "the best checkpoint"
+stops being defined.** With FID alone you take the best snapshot. With precision
+and recall, snapshots of one run span a range of tradeoffs, so [LIT-703](../literature.d/LIT-703.md)
+reports the **Pareto frontier** — the minimal subset guaranteed to contain the
+optimum for whatever tradeoff you turn out to want — rather than assuming one.
+Do that instead of picking a snapshot by either column. This is where the
+practice costs something real, and it interacts with [SOTA-307](SOTA-307.md): that practice
+asks for an error bar over seeds, and a frontier over two objectives is what an
+error bar becomes when there are two of them.
 
 **Low on both is a third outcome, not a middle.** Appendix G lowers the
 sampling temperature two different ways and gets **low precision and low

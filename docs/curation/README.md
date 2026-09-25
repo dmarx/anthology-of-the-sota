@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [25 Sep 21:50 — Filing the instrument found two wrong sentences about the instrument, both mine, both hours old](2026-09.md#filing-the-instrument-found-two-wrong-sentences-about-the-instrument-both-mine-both-hours-old)
 - [25 Sep 21:47 — Readings the journal promised and skipped, counted, and the first five taken](2026-09.md#readings-the-journal-promised-and-skipped-counted-and-the-first-five-taken)
 - [25 Sep 21:30 — A 62-second window on main, and three rebases spent blaming CI for it](2026-09.md#a-62-second-window-on-main-and-three-rebases-spent-blaming-ci-for-it)
 - [25 Sep 20:44 — Five boundary works, filed here by the owner's rule for the boundary](2026-09.md#five-boundary-works-filed-here-by-the-owners-rule-for-the-boundary)
@@ -246,9 +247,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-239 entries across 2 books, newest first.
+240 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 237 | 2026-09-05 | 2026-09-25 |
+| [2026-09](2026-09.md) | 238 | 2026-09-05 | 2026-09-25 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

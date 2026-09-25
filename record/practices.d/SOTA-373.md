@@ -16,7 +16,9 @@ consensus_note: >-
   stated, and the record has not seen it tested on a third modality. Read as of
   2026-09.
 title: "Set the masking ratio by the signal's redundancy, not by the ratio that worked on text"
-version: 2
+version: 3
+# inactive-ok-block: THEORY-088 — Proposed, and v3's note says so: the account lost a term to
+# LIT-tmpqkx1z while this recommendation did not change. Its being open is the point recorded here.
 history:
 - version: 2
   date: '2026-09-25'
@@ -31,6 +33,19 @@ history:
     not the rate either. So the title's "the ratio that worked on text" names a
     number that was declared rather than measured, and the practice now says so
     instead of treating it as the text-side datum.
+- version: 3
+  date: '2026-09-25'
+  note: >-
+    The question v2 left open is answered. LIT-tmpqkx1z sweeps the text side:
+    15% is not universally optimal and the optimum tracks model size — 40% at
+    354M, 20% at 124M, 15% at 51M. The recommendation is untouched and better
+    supported, because the inherited number turns out to be wrong at home as
+    well as abroad. What changes is the mechanism the contrast was carrying: the
+    optimum moves with capacity and with masking strategy while the signal is
+    held fixed, and text at an 80% rate cannot reconstruct anything (perplexity
+    above 1,000) while keeping 95% of fine-tuning performance. THEORY-088
+    absorbs that correction; this document stops implying that redundancy is the
+    only term.
 tags:
 - representation-and-encoding
 - signal-structure
@@ -38,6 +53,7 @@ date: '2026-09-23'
 source:
 - LIT-601
 - LIT-670
+- LIT-tmpqkx1z
 introduced_by:
 - LIT-601
 implementations: []
@@ -46,6 +62,7 @@ explained_by:
 ---
 
 # SOTA-373: Set the masking ratio by the signal's redundancy, not by the ratio that worked on text
+
 
 ## Source
 
@@ -80,9 +97,29 @@ does not weaken the recommendation — it strengthens the half that says *do not
 inherit the number*. What it removes is the reading where 15% and 75% are two
 measured optima whose difference needs explaining. One of them is measured.
 
-Wettig et al. (2022), `2202.08005`, is the paper that sweeps the text side and
-reports a higher optimum. The record does not hold it, and until it does, this
-practice's text anchor is an unexamined default rather than a rival datum.
+**Swept, the text side comes out higher than 15% and depends on the model.**
+[LIT-tmpqkx1z](../literature.d/LIT-tmpqkx1z.md) ran it: on average, 40% is optimal at 354M parameters, 20% at 124M
+and 15% at 51M. At 354M, 40% beats 15% on seven of nine GLUE-plus-SQuAD tasks and
+reaches the 15% model's QNLI and QQP scores in half the training time. So the
+five-fold gap this practice was explaining is nearer two-fold once both sides are
+measured — and the thing that moved was the number nobody had checked.
+
+**Which changes what the contrast can be used to argue.** Two of the things that
+move the text optimum are not properties of text: **model capacity**, and the
+**masking strategy** (uniform masking admits a higher rate than span or PMI
+masking, because it is an easier task at a given rate). And at an 80% rate text
+validation perplexity exceeds 1,000 — nothing can be reconstructed — while 95% of
+fine-tuning performance and 90% of BLiMP probing accuracy survive. Redundancy
+governs reconstruction; reconstruction turns out not to govern representation
+quality.
+
+The recommendation is unaffected and better founded: **do not inherit the
+number** is stronger advice once the inherited number is known to have been wrong
+in its own modality. What this document no longer claims is that the gap between
+75% and 15% is fully explained by the signals. The account that tries to explain
+it is
+<!-- inactive-ok: THEORY-088 — Proposed, and the sentence is that it has just lost a term. Open is the assertion. -->
+[THEORY-088](../theory.d/THEORY-088.md), and it has lost a term.
 
 ## How to set it for a signal nobody has done yet
 

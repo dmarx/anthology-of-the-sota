@@ -16,7 +16,18 @@ promote_when: >-
   third reversal would not settle it; a third paper naming the rule and
   applying it prospectively would.
 title: 'When you ablate an auxiliary loss, ablate the input construction that came with it, or the result is about both'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    A third source, and the first that builds the decomposition instead of
+    tripping over the confound. LIT-tmpqkx1z shows a masking rate is two
+    quantities — a corruption rate and a prediction rate — and that they pull in
+    opposite directions, so tuning the rate tunes both antagonistically. It then
+    uses the decomposition to find BERT's 80-10-10 rule worse than plain
+    `[MASK]`. Status unchanged: this is a third reversal, and the `promote_when`
+    asks for the case where an original conclusion survives.
 tags:
 - analysis-and-evaluation
 - training-optimization
@@ -24,6 +35,7 @@ date: '2026-09-25'
 source:
 - LIT-671
 - LIT-667
+- LIT-tmpqkx1z
 # Same code as `source:`'s first entry. Liu et al. both found the confound and
 # stated the corrective, though only for their own case; nobody has written it
 # as a rule, which is what this document is doing (ADR-030).
@@ -108,8 +120,29 @@ not a substitute for reporting variance.
 
 **Not specific to auxiliary losses**, though that is where it was named. The
 general form is that a component and its scaffolding are one knob unless you
-build them as two — but the record has instances for losses and for dataset
-construction only, so the title stays where the evidence is.
+build them as two — but the record has instances for losses, for dataset
+construction and for corruption rates only, so the title stays where the
+evidence is.
+
+## The third case, which is the constructive one
+
+[LIT-tmpqkx1z](../literature.d/LIT-tmpqkx1z.md) does not trip over the confound; it names it and builds around it. A
+masking rate sets a **corruption rate** — how much context is removed, which
+makes the task harder — and a **prediction rate** — how many positions are
+predicted, which gives more signal per step and helps optimization. Convention
+ties them, `m_corr = m_pred = m`. Untied, holding `m_pred` at 40% and lowering
+`m_corr` improves performance monotonically, and raising `m_pred` at fixed
+corruption also helps. Their statement of it is the sharpest version of this
+document's point that the record holds:
+
+> when we tune the masking rate, we are tuning the corruption rate and the
+> prediction rate together, which have antagonistic effects.
+
+**Antagonistic** is the word worth keeping. In the other two cases the two
+wired-together quantities pushed the same way, so the confound hid an
+attribution. Here they push opposite ways, so the confound can hide an effect
+entirely — a rate sweep that finds no optimum shift may be watching two real
+effects cancel.
 
 ## Known implementations
 

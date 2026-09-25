@@ -31,7 +31,7 @@ summary: >-
   guidance 1.4, FID wants 2% and FD_DINOv2 wants 14%.
 ---
 
-<!-- inactive-ok-file: SOTA-156 — Proposed; named as a neighbouring averaging practice this one does not rest on -->
+<!-- inactive-ok-file: SOTA-156, SOTA-408 — Proposed; named as neighbouring averaging practices this one does not rest on -->
 
 # SOTA-tmp9x33t: Choose the EMA length after training: store two power-function averages at snapshots and reconstruct any length by least squares
 

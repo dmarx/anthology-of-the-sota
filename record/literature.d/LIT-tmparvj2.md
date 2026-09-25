@@ -35,6 +35,7 @@ compared_against:
 - LIT-588
 ---
 
+<!-- inactive-ok-file: SOTA-tmpfo9e5 — Proposed practice this paper sources, named in its standing as what it produced -->
 # LIT-tmparvj2: Scaling Language-Image Pre-training via Masking
 
 Li, Fan, Hu, Feichtenhofer and He (2022) — ARXIV-2212.00794 (CVPR 2023).

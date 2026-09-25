@@ -15,7 +15,7 @@ summary: >-
 ---
 
 <!-- inactive-ok-file: SOTA-tmp9x33t, SOTA-tmpui8n0 — Proposed practices filed from this reading; named as what it produced, not relied on -->
-<!-- inactive-ok-file: SOTA-282, SOTA-156 — Proposed; named in Connections and Bearing as neighbours this paper does not source -->
+<!-- inactive-ok-file: SOTA-282, SOTA-156, SOTA-408 — Proposed; named in Connections and Bearing as neighbours this paper does not source -->
 
 # NOTE-tmpod74g: EDM2
 

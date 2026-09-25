@@ -47,6 +47,7 @@ summary: >-
   sacrifice, and never compare two models at different weights.
 ---
 
+<!-- inactive-ok-file: SOTA-tmp9x33t — Proposed; named as where the EMA side of the guidance sweep is held, not as support for this practice -->
 # SOTA-424: Train one network for both conditional and unconditional scores by dropping the condition on 10% of examples, then pick the guidance weight by which metric you are willing to lose
 
 ## Source

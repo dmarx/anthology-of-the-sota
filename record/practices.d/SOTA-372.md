@@ -35,6 +35,7 @@ introduced_by:
 implementations: []
 ---
 
+<!-- inactive-ok-file: SOTA-tmpfo9e5 — Proposed; named in the history as the practice whose relation prompted the retag -->
 # SOTA-372: Run the encoder on visible tokens only and push the mask tokens into a small decoder you discard
 
 ## Source

@@ -42,6 +42,7 @@ compared_against:
 - LIT-692
 ---
 
+<!-- inactive-ok-file: SOTA-tmp9x33t, SOTA-tmpui8n0 — Proposed practices this paper sources, named in its standing as what it produced -->
 # LIT-tmpzn7w1: Analyzing and Improving the Training Dynamics of Diffusion Models
 
 Karras et al. (2023) — ARXIV-2312.02696 (CVPR 2024). Read in full as

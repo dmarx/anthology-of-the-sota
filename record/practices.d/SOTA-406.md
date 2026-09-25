@@ -1,5 +1,8 @@
 ---
+number: 406
 status: Proposed
+formerly:
+- SOTA-tmpz04ck
 consensus: unreplicated
 consensus_note: >-
   One measurement against a convention adopted by almost every MLM after BERT —
@@ -20,16 +23,16 @@ tags:
 - training-optimization
 date: '2026-09-25'
 source:
-- LIT-tmpqkx1z
+- LIT-672
 - LIT-670
-# LIT-tmpqkx1z is the measurement. LIT-670 is the paper that introduced the
+# LIT-672 is the measurement. LIT-670 is the paper that introduced the
 # rule this practice drops, and is listed as evidence because its own ablation
 # is part of the case: the two rows differ by 0.1 on MNLI (ADR-030).
 introduced_by:
-- LIT-tmpqkx1z
+- LIT-672
 implementations: []
 summary: >-
-  Wettig et al. (2022), [LIT-tmpqkx1z](../literature.d/LIT-tmpqkx1z.md). BERT replaced 10% of selected positions
+  Wettig et al. (2022), [LIT-672](../literature.d/LIT-672.md). BERT replaced 10% of selected positions
   with the original token and 10% with a random token, to reduce the
   pretrain/fine-tune mismatch caused by `[MASK]` never appearing downstream.
   Measured against an all-`[MASK]` baseline at a matched 40% rate, **80-10-10 is
@@ -38,11 +41,11 @@ summary: >-
   use of alternative corruption strategies in pre-training".
 ---
 
-# SOTA-tmpz04ck: Replace every masked token with [MASK]; drop BERT's 80-10-10 substitution rule
+# SOTA-406: Replace every masked token with [MASK]; drop BERT's 80-10-10 substitution rule
 
 ## Source
 
-Wettig, Gao, Zhong and Chen (2022), [LIT-tmpqkx1z](../literature.d/LIT-tmpqkx1z.md) —
+Wettig, Gao, Zhong and Chen (2022), [LIT-672](../literature.d/LIT-672.md) —
 [ARXIV-2202.08005](https://arxiv.org/abs/2202.08005), measuring against the rule
 [LIT-670](../literature.d/LIT-670.md) introduced.
 

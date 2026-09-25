@@ -89,6 +89,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-670](../record/literature.d/LIT-670.md) — BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding *(Active)*
 - alongside: [LIT-671](../record/literature.d/LIT-671.md) — RoBERTa: A Robustly Optimized BERT Pretraining Approach *(Active)*
+- alongside: [LIT-672](../record/literature.d/LIT-672.md) — Should You Mask 15% in Masked Language Modeling? *(Active)*
 
 ## attention-techniques
 
@@ -446,6 +447,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-670](../record/literature.d/LIT-670.md) — BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding *(Active)*
 - alongside: [LIT-671](../record/literature.d/LIT-671.md) — RoBERTa: A Robustly Optimized BERT Pretraining Approach *(Active)*
+- alongside: [LIT-672](../record/literature.d/LIT-672.md) — Should You Mask 15% in Masked Language Modeling? *(Active)*
 
 ## signal-structure
 

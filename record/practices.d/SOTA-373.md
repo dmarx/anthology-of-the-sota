@@ -18,7 +18,7 @@ consensus_note: >-
 title: "Set the masking ratio by the signal's redundancy, not by the ratio that worked on text"
 version: 3
 # inactive-ok-block: THEORY-088 — Proposed, and v3's note says so: the account lost a term to
-# LIT-tmpqkx1z while this recommendation did not change. Its being open is the point recorded here.
+# LIT-672 while this recommendation did not change. Its being open is the point recorded here.
 history:
 - version: 2
   date: '2026-09-25'
@@ -36,7 +36,7 @@ history:
 - version: 3
   date: '2026-09-25'
   note: >-
-    The question v2 left open is answered. LIT-tmpqkx1z sweeps the text side:
+    The question v2 left open is answered. LIT-672 sweeps the text side:
     15% is not universally optimal and the optimum tracks model size — 40% at
     354M, 20% at 124M, 15% at 51M. The recommendation is untouched and better
     supported, because the inherited number turns out to be wrong at home as
@@ -53,7 +53,7 @@ date: '2026-09-23'
 source:
 - LIT-601
 - LIT-670
-- LIT-tmpqkx1z
+- LIT-672
 introduced_by:
 - LIT-601
 implementations: []
@@ -98,7 +98,7 @@ inherit the number*. What it removes is the reading where 15% and 75% are two
 measured optima whose difference needs explaining. One of them is measured.
 
 **Swept, the text side comes out higher than 15% and depends on the model.**
-[LIT-tmpqkx1z](../literature.d/LIT-tmpqkx1z.md) ran it: on average, 40% is optimal at 354M parameters, 20% at 124M
+[LIT-672](../literature.d/LIT-672.md) ran it: on average, 40% is optimal at 354M parameters, 20% at 124M
 and 15% at 51M. At 354M, 40% beats 15% on seven of nine GLUE-plus-SQuAD tasks and
 reaches the 15% model's QNLI and QQP scores in half the training time. So the
 five-fold gap this practice was explaining is nearer two-fold once both sides are

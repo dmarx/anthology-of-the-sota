@@ -8,7 +8,7 @@ promote_when: >-
   differ measurably in redundancy — say text, images and audio — under one
   architecture, one evaluation protocol, **one model capacity and one masking
   strategy**, reporting the optimum against an independently measured
-  redundancy statistic. The last two are not pedantry: LIT-tmpqkx1z moves the
+  redundancy statistic. The last two are not pedantry: LIT-672 moves the
   optimum by a factor of nearly three within a single modality by changing
   capacity alone, so a cross-modality correlation drawn from models of
   different sizes measures capacity as much as redundancy. A paper that finds a
@@ -22,7 +22,7 @@ history:
   date: '2026-09-25'
   note: >-
     Corrected, not qualified. The claim was that the masking optimum is a
-    property of the signal's information density. LIT-tmpqkx1z sweeps the rate
+    property of the signal's information density. LIT-672 sweeps the rate
     within one signal — English text — and finds the optimum moving with **model
     capacity** (40% at 354M, 20% at 124M, 15% at 51M) and with **masking
     strategy** (uniform admits a higher rate than span or PMI masking). Both
@@ -40,7 +40,7 @@ tags:
 date: '2026-09-23'
 source:
 - LIT-601
-- LIT-tmpqkx1z
+- LIT-672
 explains:
 - SOTA-373
 ---
@@ -99,7 +99,7 @@ means, and this one does not.
 
 ## What moves the optimum, measured within one signal
 
-The account says the optimum is a property of the signal. [LIT-tmpqkx1z](../literature.d/LIT-tmpqkx1z.md) holds the
+The account says the optimum is a property of the signal. [LIT-672](../literature.d/LIT-672.md) holds the
 signal fixed — English text, one architecture family, one evaluation protocol —
 and moves the optimum anyway:
 
@@ -136,7 +136,7 @@ theory here would leave the recommendation untouched, since "measure whether
 an interpolator can solve your masked task" is an empirical procedure that
 needs no account of density at all.
 
-That prediction has now been tested. `LIT-tmpqkx1z` damaged this account and
+That prediction has now been tested. `LIT-672` damaged this account and
 left `SOTA-373` standing: the practice was amended twice in one day and its
 recommendation never changed, while the explanation behind it lost a term. The
 split was doing exactly what it was built for.

@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**213 document(s) awaiting a decision.**
+**215 document(s) awaiting a decision.**
 
 ## SOTAs
 
-145 of the 213.
+147 of the 215.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -155,13 +155,15 @@
 | 2026-09-24 | Proposed | [SOTA-393](../../record/practices.d/SOTA-393.md) | 0 | 0 | Freeze the image model's spatial layers when adding time if checkpoint compatibility matters; do not expect a quality gain from it |
 | 2026-09-24 | Proposed | [SOTA-396](../../record/practices.d/SOTA-396.md) | 0 | 0 | When a latent video model reuses an image autoencoder or upsampler, fine-tune them on video so they see time |
 | 2026-09-24 | Proposed | [SOTA-397](../../record/practices.d/SOTA-397.md) | 0 | 0 | To condition an unconditionally trained diffusion model on known frames, use reconstruction guidance, not replacement |
+| 2026-09-25 | Proposed | [SOTA-404](../../record/practices.d/SOTA-404.md) | 2 | 0 | When you ablate an auxiliary loss, ablate the input construction that came with it, or the result is about both |
 | 2026-09-25 | Proposed | [SOTA-402](../../record/practices.d/SOTA-402.md) | 1 | 0 | To teach a model to reason over facts it holds, spend added data on facts derived from other facts rather than on more atomic facts |
 | 2026-09-25 | Proposed | [SOTA-403](../../record/practices.d/SOTA-403.md) | 1 | 0 | Share the attention parameters across layers if you need to cut parameters; do not share the feed-forward ones |
-| 2026-09-25 | Proposed | [SOTA-404](../../record/practices.d/SOTA-404.md) | 1 | 0 | When you ablate an auxiliary loss, ablate the input construction that came with it, or the result is about both |
+| 2026-09-25 | Proposed | [SOTA-405](../../record/practices.d/SOTA-405.md) | 1 | 0 | Scale the masked-language-modelling rate with model size rather than holding it at 15% |
+| 2026-09-25 | Proposed | [SOTA-406](../../record/practices.d/SOTA-406.md) | 1 | 0 | Replace every masked token with [MASK]; drop BERT's 80-10-10 substitution rule |
 
 ## THEORYs
 
-62 of the 213.
+62 of the 215.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -215,9 +217,9 @@
 | 2026-09-23 | Deferred | [THEORY-087](../../record/theory.d/THEORY-087.md) | 10 | 0 | Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other |
 | 2026-09-23 | Proposed | [THEORY-090](../../record/theory.d/THEORY-090.md) | 10 | 0 | A concept's shared word-pair direction, its linear probe and its steering vector are one object, related by an inner product under which causally separable concepts are orthogonal |
 | 2026-09-23 | Proposed | [THEORY-080](../../record/theory.d/THEORY-080.md) | 8 | 0 | A diffusion process needs noise to keep its intermediate states on the data manifold, and blur helps only while noise still dominates the bands it removes |
+| 2026-09-23 | Proposed | [THEORY-088](../../record/theory.d/THEORY-088.md) | 7 | 0 | Masked prediction transfers across modalities only after the masking ratio is rescaled to the signal's information density |
 | 2026-09-23 | Proposed | [THEORY-078](../../record/theory.d/THEORY-078.md) | 4 | 0 | Deep sine networks train when initialization holds every pre-activation near a standard normal, which keeps each layer arcsine-distributed and frequency growth slow; that initialization is what earlier periodic networks lacked |
 | 2026-09-23 | Proposed | [THEORY-092](../../record/theory.d/THEORY-092.md) | 4 | 0 | Raising context counts to the 3/4 power helps word representations because PMI overweights rare contexts, and smoothing lowers their association scores |
-| 2026-09-23 | Proposed | [THEORY-088](../../record/theory.d/THEORY-088.md) | 2 | 0 | Masked prediction transfers across modalities only after the masking ratio is rescaled to the signal's information density |
 | 2026-09-23 | Proposed | [THEORY-091](../../record/theory.d/THEORY-091.md) | 2 | 0 | Command-to-outcome mutual information scores an interface because it measures how reliably the operator's input determines what happens at the chosen horizon, which rewards a learnable channel rather than an intuitive one |
 | 2026-09-23 | Proposed | [THEORY-084](../../record/theory.d/THEORY-084.md) | 1 | 0 | AlphaFold 2 needs the sequence alignment to find a protein's coarse fold, not to refine it, so accuracy collapses below a minimum alignment depth and barely improves above it |
 | 2026-09-23 | Proposed | [THEORY-086](../../record/theory.d/THEORY-086.md) | 1 | 0 | A text document is better modelled as a mixture of several topics, each a distribution over words, than as a draw from a single topic |
@@ -230,7 +232,7 @@
 
 ## LITs
 
-3 of the 213.
+3 of the 215.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -240,7 +242,7 @@
 
 ## ADRs
 
-3 of the 213.
+3 of the 215.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

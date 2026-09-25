@@ -1,5 +1,8 @@
 ---
+number: 405
 status: Proposed
+formerly:
+- SOTA-tmpwlch2
 consensus: unreplicated
 consensus_note: >-
   One group, one sweep. The convention it displaces is `universal` in the
@@ -21,15 +24,15 @@ tags:
 - training-optimization
 date: '2026-09-25'
 source:
-- LIT-tmpqkx1z
+- LIT-672
 # Same code as `source:`. Wettig et al. ran the sweep and drew the
 # recommendation from it; the 15% it displaces was never a recommendation
 # anybody argued for, only one everybody copied (ADR-030).
 introduced_by:
-- LIT-tmpqkx1z
+- LIT-672
 implementations: []
 summary: >-
-  Wettig et al. (2022), [LIT-tmpqkx1z](../literature.d/LIT-tmpqkx1z.md). The masking rate has been held at 15%
+  Wettig et al. (2022), [LIT-672](../literature.d/LIT-672.md). The masking rate has been held at 15%
   "regardless of model sizes or masking strategies" since 2018, and the number
   was never swept. Swept, the optimum moves with capacity: **40% at 354M, 20%
   at 124M, 15% at 51M**. At 354M, 40% wins seven of nine GLUE-plus-SQuAD tasks
@@ -38,14 +41,14 @@ summary: >-
   schedules.
 ---
 
-# SOTA-tmpwlch2: Scale the masked-language-modelling rate with model size rather than holding it at 15%
+# SOTA-405: Scale the masked-language-modelling rate with model size rather than holding it at 15%
 
 <!-- inactive-ok-file: THEORY-088 — Proposed, named as the account this practice's evidence corrects:
      the rate moves with capacity while the signal is fixed. Open is the point. -->
 
 ## Source
 
-Wettig, Gao, Zhong and Chen (2022), [LIT-tmpqkx1z](../literature.d/LIT-tmpqkx1z.md) —
+Wettig, Gao, Zhong and Chen (2022), [LIT-672](../literature.d/LIT-672.md) —
 [ARXIV-2202.08005](https://arxiv.org/abs/2202.08005).
 
 ## What to do

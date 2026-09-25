@@ -22,7 +22,7 @@ history:
   date: '2026-09-25'
   note: >-
     A third source, and the first that builds the decomposition instead of
-    tripping over the confound. LIT-tmpqkx1z shows a masking rate is two
+    tripping over the confound. LIT-672 shows a masking rate is two
     quantities — a corruption rate and a prediction rate — and that they pull in
     opposite directions, so tuning the rate tunes both antagonistically. It then
     uses the decomposition to find BERT's 80-10-10 rule worse than plain
@@ -35,7 +35,7 @@ date: '2026-09-25'
 source:
 - LIT-671
 - LIT-667
-- LIT-tmpqkx1z
+- LIT-672
 # Same code as `source:`'s first entry. Liu et al. both found the confound and
 # stated the corrective, though only for their own case; nobody has written it
 # as a rule, which is what this document is doing (ADR-030).
@@ -126,7 +126,7 @@ evidence is.
 
 ## The third case, which is the constructive one
 
-[LIT-tmpqkx1z](../literature.d/LIT-tmpqkx1z.md) does not trip over the confound; it names it and builds around it. A
+[LIT-672](../literature.d/LIT-672.md) does not trip over the confound; it names it and builds around it. A
 masking rate sets a **corruption rate** — how much context is removed, which
 makes the task harder — and a **prediction rate** — how many positions are
 predicted, which gives more signal per step and helps optimization. Convention

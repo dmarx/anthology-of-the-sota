@@ -9,9 +9,25 @@ consensus_note: >-
   to do it unprompted and the field argues about how to evaluate the traces
   rather than whether to elicit them. `universal` is a statement about
   adoption and not about evidence — DP-005 — and the evidence here is one
-  paper on 2022-era models plus everything built on top since.
+  paper on 2022-era models plus everything built on top since, against which
+  the record now holds one 2024 measurement where eliciting the steps lost
+  and one where the rationales behind correct answers were mostly wrong.
 title: 'Put worked reasoning steps in the few-shot exemplars when the task needs more than one step, and only once the model is large enough'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Adds the first measured counter-case this document has held. The consensus
+    note said the evidence was one 2022 paper plus everything built on it
+    since; LIT-tmppwagl is a 2024 measurement on frontier models where
+    eliciting verbalized reasoning *lowered* accuracy — Gemini-1.5-Pro 37.3%
+    to 12.0% with retrieval, against 33.3% for chance — and where the failure
+    is legible: 70.7% of the verbalized responses conclude the answer cannot
+    be decided. It also escalates the existing condition on rationale
+    correctness from Wei et al.'s two-of-fifty to "most" of the correct
+    answers on a task where the proofs are checkable. Neither touches the
+    mechanism the 2022 ablations established; both bound where it applies.
 tags:
 - in-context-learning
 - adaptation-and-tuning
@@ -19,6 +35,7 @@ tags:
 date: '2026-09-21'
 source:
 - LIT-467
+- LIT-tmppwagl
 introduced_by:
 - LIT-467
 extends:
@@ -85,10 +102,27 @@ the trunk rather than one result among many:
 - **Chains are tokens.** The paper reports negative gains on the easiest
   problems and does not price the ones it wins on. There is a regime where
   this loses on accuracy and cost at once.
+- **Search over a large in-context fact base is one such regime, measured on
+  2024 models.** [LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) gives frontier models 28.2K facts (or 5.4K
+  retrieved, enough to deduce the answer) and asks a question whose proof needs
+  two bridge entities found among them. Against 33.3% for chance,
+  Gemini-1.5-Pro scores **28.7% answering directly and 11.3% when asked to
+  verbalize**; with retrieval, **37.3% against 12.0%**. GPT-4-Turbo is at
+  chance either way. The mechanism is visible rather than mysterious: **70.7%
+  of the verbalized responses conclude the answer cannot be decided** (58.7%
+  with retrieval) after searching, when it can. What the paper does not report
+  is how the verbalization was elicited — "prompted to verbalize the
+  reasoning", with no prompt given — so this bounds the *regime* rather than
+  singling out exemplars, and it lands on [SOTA-281](SOTA-281.md) and [SOTA-280](SOTA-280.md) equally.
 - **A correct chain is not guaranteed and a correct answer does not imply
   one.** Their own error analysis found two of fifty correct answers reached
   through incorrect reasoning. Reading a chain as an explanation of the
-  answer is a separate claim this does not support.
+  answer is a separate claim this does not support. [LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) makes that
+  much worse on a task where the proofs are mechanically checkable: **most**
+  of the rationales that reached the right answer were themselves wrong —
+  hallucinated facts or logical errors. That figure is from inspection and
+  carries no count, so take it as a reason to score the rationale rather than
+  as a rate.
 - **Whether the model is "reasoning" is explicitly left open by the
   authors**, and the practice takes no position either.
 - **The emergence claim rests on a brittle metric.** Exact-match over

@@ -4,7 +4,22 @@ status: Active
 formerly:
 - THEORY-tmpdlyut
 title: 'Grokking is a regime rather than a property of algorithmic data, and at least three knobs move it'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Qualifies the first of the three knobs. Every measurement behind
+    "training-set size" varies the training *fraction* of a fixed universe of
+    examples, which moves size and composition with one knob. LIT-tmppwagl has
+    two knobs and turns them one at a time: with the inferred/atomic ratio
+    fixed, scaling the training set changes nothing. That does not overturn the
+    algorithmic measurements — a ratio is not defined there — but it does mean
+    the first knob is established only where the two are fused, and the
+    paragraph now says which. Adds a fourth domain (knowledge-based reasoning)
+    and the observation that the remaining gap in "what would change this" has
+    narrowed to the data: this is grokking at a standard initialization, in a
+    standard optimizer, with nothing inflated.
 tags:
 - capability-thresholds
 - analysis-and-evaluation
@@ -16,6 +31,7 @@ source:
 - LIT-540
 - LIT-537
 - LIT-085
+- LIT-tmppwagl
 explains:
 - SOTA-200
 summary: >-
@@ -45,13 +61,23 @@ not a property of algorithmic datasets, and it is not a fundamental feature of
 overparameterized learning. Three separate knobs have been shown to control it,
 each demonstrated in both directions.
 
-**Training-set size.** [LIT-538](../literature.d/LIT-538.md) measures it in the paper that named the
-phenomenon: converged accuracy is flat across a range of training fractions
-while the *time* to reach it explodes as the fraction falls — in the vicinity
-of 25–30% on `S₅`, removing 1% of the data raises median steps-to-generalize by
-40–50%, while steps-to-fit stay at `10³`–`10⁴`. [LIT-085](../literature.d/LIT-085.md) puts a threshold on
-it: above roughly 60% data on modular addition, grokking is gone and
-generalization is immediate.
+**Training-set size — or something fused with it.** [LIT-538](../literature.d/LIT-538.md) measures it in
+the paper that named the phenomenon: converged accuracy is flat across a range
+of training fractions while the *time* to reach it explodes as the fraction
+falls — in the vicinity of 25–30% on `S₅`, removing 1% of the data raises
+median steps-to-generalize by 40–50%, while steps-to-fit stay at `10³`–`10⁴`.
+[LIT-085](../literature.d/LIT-085.md) puts a threshold on it: above roughly 60% data on modular
+addition, grokking is gone and generalization is immediate.
+
+Both vary the *fraction* of a fixed universe of examples, which is one knob
+moving two things — how much data there is, and what proportion of the possible
+examples it covers. [LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) has two knobs and turns them separately: on
+knowledge-based reasoning, holding the inferred/atomic ratio fixed and scaling
+the training set changes **nothing**, while moving the ratio at fixed size moves
+grokking speed monotonically. A ratio of that kind is not defined on modular
+arithmetic, so this does not overturn the measurements above; it does mean they
+could not have told which of the two they were measuring. The knob is real. What
+it is a knob *on* is open.
 
 **Initialization scale relative to the generalizing weight norm.**
 [LIT-540](../literature.d/LIT-540.md) induces grokking on **MNIST** (depth-3 MLP, 1k examples, Kaiming
@@ -73,11 +99,17 @@ The record holds three rival accounts of *why* — [THEORY-072](THEORY-072.md),
 [THEORY-071](THEORY-071.md) and [THEORY-070](THEORY-070.md) — and none is settled; one of them exists
 because it is an explicit counterexample to the other two. They disagree about
 the mechanism and they do not disagree about this. A dataset-size condition
-appears in all four papers, including in [LIT-537](../literature.d/LIT-537.md)'s own list of three
-conditions, which is the paper arguing hardest against the others.
+appears in all four of the algorithmic-data papers, including in
+[LIT-537](../literature.d/LIT-537.md)'s own list of three conditions, which is the paper arguing
+hardest against the others.
 
 A claim that survives the disagreement of every account of the thing it
 describes is in a different evidential position from any of them.
+
+The fifth source is the exception that has to be stated. [LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) does not
+disagree that the regime can be moved; it disagrees about what the first knob
+is, and unanimity among four papers that could not separate size from
+composition is not evidence about which of the two it was.
 
 ## What it is not
 
@@ -86,9 +118,15 @@ sharp, reproducible behaviour, and the representations [LIT-538](../literature.d
 are real structure. The phenomenon happens; it happens in a regime.
 
 **Not "three knobs is the list".** Three are established. Weight decay strength
-changes the *timing* in two of the accounts without being one of these axes,
-and [LIT-538](../literature.d/LIT-538.md) reports operations that never generalize at any data
-fraction, which no knob here explains.
+changes the *timing* in two of the accounts without being one of these axes —
+[LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) measures that directly, and raising it accelerates grokking — and
+[LIT-538](../literature.d/LIT-538.md) reports operations that never generalize at any data fraction,
+which no knob here explains.
+
+**Not "and now there are four".** The inferred/atomic ratio is not being added
+as a fourth axis, because on the reading [THEORY-071](THEORY-071.md) now takes it is the first
+axis seen properly: both are ways of making the memorising solution more
+expensive. Counting it twice would claim an independence nobody has shown.
 
 **Not a licence to read across the demonstrations.** Every result outside
 algorithmic data in [LIT-540](../literature.d/LIT-540.md) changes two things at once — a much smaller
@@ -99,6 +137,15 @@ jointly rather than separately, and the paper says so.
 
 A demonstration of delayed generalization at standard initialization, on a
 standard-sized dataset, with no knob turned — that is, grokking arriving
-unbidden in an ordinary training run. Nothing in these four papers is that, and
+unbidden in an ordinary training run. Nothing in these five papers is that, and
 the one setting where it occurs unbidden is the small algorithmic dataset,
 which is itself a regime choice.
+
+[LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) narrows what is left. An 8-layer GPT-2 at a standard
+initialization, AdamW at weight decay 0.1, nothing inflated and nothing
+constrained — and generalization arrives roughly **50× after** the training set
+is fit. The model and the optimizer are ordinary there. What is engineered is
+the *data*: a synthetic knowledge graph with a chosen ratio of derived to
+atomic facts. So the remaining gap in this section is no longer "grokking needs
+a doctored initialization"; it is that every setting in which anyone has watched
+grokking has a data distribution somebody chose.

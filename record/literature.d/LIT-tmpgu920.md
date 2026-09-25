@@ -126,4 +126,9 @@ stable-phase checkpoint average, and still anneal the model you ship.
 - [LIT-445](LIT-445.md) uses constant LR with weight averaging as an instrument that
   "reaches comparable loss", an independent use of the same idea at
   85M–1.2B.
+- [LIT-673](LIT-673.md) (SWA, Izmailov et al.) was filed on the same day in a
+  parallel contribution. It is the origin of averaging along one trajectory,
+  and this paper is its constant-learning-rate, pretraining-scale descendant.
+  No relation is declared here, because this paper's reference list was not
+  checked for it.
 - The record holds **no account of why weight averaging works**.

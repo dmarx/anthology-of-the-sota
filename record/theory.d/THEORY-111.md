@@ -1,8 +1,18 @@
 ---
 number: 111
-status: Proposed
+status: Superseded
 formerly:
 - THEORY-tmpwhyfx
+superseded_by: SOTA-428
+status_note: >-
+  Retired as redundant rather than wrong. The claim — that a hyperparameter's
+  apparent importance can belong to its interaction with a frozen averaging
+  length — is already stated in SOTA-428's Conditions, in the same words the
+  source uses: "Much of what looks like learning-rate sensitivity is EMA
+  mismatch", with the same 72%-against-10% bracket behind it. A theory document
+  restating a practice's own condition from the same single measurement adds a
+  citation target and no claim. `superseded_by:` points at the practice because
+  that is where the content lives, not because a practice supersedes a theory.
 promote_when: >-
   The same 2×2 — one hyperparameter swept against a frozen versus a swept
   averaging length — run outside diffusion, on a metric that is not FID. The
@@ -32,6 +42,8 @@ summary: >-
 ---
 
 <!-- inactive-ok-file: SOTA-415, SOTA-408 — Proposed, and named as the settings where this account's promote_when could be tested plus, for SOTA-415, a justification this account bears on. Neither is cited as support for the claim. -->
+
+<!-- inactive-ok-file: SOTA-428, SOTA-432, LIT-720 — this account is Superseded as redundant: its claim is a SOTA-428 Conditions bullet. It cites SOTA-428 as its replacement and the other two retired documents of the same duplicate unit. -->
 
 # THEORY-111: A hyperparameter can look important because it is entangled with an averaging length you froze, so sensitivity attributed to one knob may belong to the pair
 

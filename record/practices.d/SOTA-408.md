@@ -22,17 +22,24 @@ promote_when: >-
   and they are why the consensus above reads `converged` while this line does
   not.
 title: 'Average the weights along the tail of training under a cyclical or high constant learning rate, then re-estimate the normalization statistics'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-25'
   note: >-
     Notes that this practice's compute charge is a property of its method rather
-    than of weight averaging. SOTA-432 accumulates its averages inside the
+    than of weight averaging. SOTA-428 accumulates its averages inside the
     run that was happening anyway, so the "extra epochs are real compute"
     objection does not transfer to it — and the averaging window this practice
     leaves implicit is, there, a post-hoc sweep. Recommendation, status and
     consensus unchanged; nobody has compared the two.
+- version: 3
+  date: '2026-09-25'
+  note: >-
+    Repoints v2's reference from SOTA-432, a duplicate practice retired the same
+    day, to SOTA-428, which is the live one. The cost-structure observation is
+    unchanged and is not in SOTA-428, which names this practice only as a
+    neighbour.
 tags:
 - training-optimization
 - model-stability
@@ -53,6 +60,8 @@ summary: >-
   normalization, the running statistics must be recomputed with one pass over
   the data or the averaged model is broken rather than merely worse.
 ---
+
+<!-- inactive-ok-file: SOTA-428, SOTA-432 — SOTA-428 is Proposed and named for a cost structure this practice's objection does not reach, not relied on. SOTA-432 appears only in a v3 history note recording that v2 referenced a duplicate practice, retired the same day. -->
 
 # SOTA-408: Average the weights along the tail of training under a cyclical or high constant learning rate, then re-estimate the normalization statistics
 
@@ -98,7 +107,7 @@ ensemble's generalization without an ensemble's inference cost.
 ## Conditions
 
 **The compute charge belongs to this method, not to averaging.**
-[SOTA-432](SOTA-432.md) maintains its averages during the training run and stores two
+[SOTA-428](SOTA-428.md) maintains its averages during the training run and stores two
 parameter vectors per snapshot, so it pays storage instead of epochs, and the
 length of the average is chosen after the fact rather than by the cyclical
 schedule. Different cost structure for a related end, in a different setting

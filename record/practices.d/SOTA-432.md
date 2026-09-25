@@ -1,8 +1,16 @@
 ---
 number: 432
-status: Active
+status: Superseded
 formerly:
 - SOTA-tmp0s2gj
+superseded_by: SOTA-428
+status_note: >-
+  A duplicate of SOTA-428, which was filed from LIT-714 hours earlier and is the
+  same recommendation from the same paper. SOTA-428 is also the better document:
+  it carries the architecture, learning-rate, guidance and metric dependences,
+  where this one had only the first two. The `Active`/`unreplicated` pairing this
+  note argued for is a judgement SOTA-428 declined, at `Proposed`, and that is the
+  one that stands.
 consensus: unreplicated
 consensus_note: >-
   One group, one paper, one setting — ImageNet-512 diffusion with EDM2's own
@@ -44,6 +52,8 @@ summary: >-
 ---
 
 <!-- inactive-ok-file: SOTA-415, SOTA-408, SOTA-217, THEORY-111 — the neighbouring averaging practices, all Proposed, cited to be distinguished from this one rather than relied on; SOTA-415 is named for a justification this practice qualifies and SOTA-408 for a cost that does not transfer, so their not-being-in-force is beside the point. THEORY-111 is this practice's own account and Proposed for the reason stated there. -->
+
+<!-- inactive-ok-file: SOTA-428, LIT-720 — this practice is Superseded, a same-day duplicate of SOTA-428, and cites it as its own replacement; LIT-720 is the duplicate note it was filed from, also retired. Nothing here is relied on. -->
 
 # SOTA-432: Maintain two power-function weight averages during training and snapshot them, so the averaging length is a post-hoc sweep instead of a guess you have to make before the run
 

@@ -39,6 +39,7 @@ introduced_by:
 implementations: []
 extended_by:
 - SOTA-376
+- SOTA-tmpfo9e5
 ---
 
 # SOTA-359: Supervise vision from the caption, and match image to caption rather than predicting its words

@@ -9,7 +9,7 @@ consensus_note: >-
   clip; the Kimi line takes the other route. The invariant is agreed, the
   instrument is not.
 title: 'Normalize the queries and keys before the attention dot product'
-version: 7
+version: 8
 history:
 - version: 2
   date: '2026-09-18'
@@ -68,6 +68,16 @@ history:
     recommendation, status and consensus are unchanged: the trade is
     unmeasured, and what it would cost is sharpness at long inputs rather than
     stability.
+- version: 8
+  date: '2026-09-25'
+  note: >-
+    Records a controlled ablation from outside the language-model scaling
+    line. In LIT-tmpbukux's 20-layer attention-only decoder, removing QK-norm
+    diverged at the tuned Muon rate. It was the only divergence in the study,
+    and residual gates and ReZero residuals turned out neutral. It is one run
+    at one rate and 24M parameters, so it is recorded in the body and not
+    added as a source. The recommendation, status and consensus are
+    unchanged.
 tags:
 - model-stability
 - attention-techniques
@@ -250,6 +260,23 @@ using QK-norm in place of the clip.
 
 Adds two normalization operations per attention layer. ViT-22B does not report
 the cost separately.
+
+## An ablation from a model with no feed-forward layers
+
+[LIT-tmpbukux](../literature.d/LIT-tmpbukux.md) trains attention-only decoders, with every feed-forward layer
+deleted, to 48 layers and 105B tokens. It tested which component keeps them
+trainable. The authors expected residual gating. The answer was QK-norm.
+Removing it from the 20-layer, 24M-parameter model **diverged at the tuned
+learning rate** (validation loss 8.28), the only divergence in the study.
+Removing the gates, or swapping in a ReZero residual, changed loss by less
+than 0.004 nats.
+
+It is one run at one rate under Muon, in an architecture nobody ships, and the
+authors scope the claim to that rate. It is not another arrival like the
+ones above, because the paper cites [LIT-640](../literature.d/LIT-640.md) and [LIT-088](../literature.d/LIT-088.md) and adopted QK-norm
+from them. It is a test. It took the component out of an otherwise fixed
+model, and the model failed. It does not say which of the failure modes
+above occurred, since the run reports no entropy or logit measurements.
 
 ## Known implementations
 

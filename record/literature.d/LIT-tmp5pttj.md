@@ -1,0 +1,117 @@
+---
+status: Active
+title: 'Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning'
+version: 1
+tags:
+- model-stability
+- analysis-and-evaluation
+date: '2026-09-25'
+published: '2015-06-06'
+arxiv: '1506.02142'
+first_author: 'Gal'
+keywords:
+- 'dropout'
+- 'mc-dropout'
+- 'bayesian-deep-learning'
+- 'model-uncertainty'
+- 'variational-inference'
+- 'deep-gaussian-process'
+- 'thompson-sampling'
+implementations:
+- 'MC dropout: dropout left on at test time and T stochastic forward passes averaged'
+extends:
+- LIT-395
+summary: >-
+  Gal and Ghahramani (2015; ICML 2016), [ARXIV-1506.02142](https://arxiv.org/abs/1506.02142). With dropout before
+  every weight layer and L2 weight decay, the training objective is, for a
+  suitable precision `τ` and length-scale `l`, a variational objective whose
+  approximate posterior is Bernoulli-masked weight matrices under a deep
+  Gaussian process. Averaging `T` stochastic forward passes ("MC dropout")
+  then gives a predictive mean, and their spread plus `τ⁻¹` gives a
+  predictive variance. The equivalence is exact only up to an approximated KL
+  term, and the derivation is in a separate appendix paper. The benchmark
+  comparisons use one-hidden-layer, 50-unit networks on UCI regression.
+---
+
+# LIT-tmp5pttj: Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning
+
+Gal and Ghahramani (2015; ICML 2016) — [ARXIV-1506.02142](https://arxiv.org/abs/1506.02142)
+
+## Key takeaways
+
+**The claim.** "A neural network with arbitrary depth and non-linearities,
+with dropout applied before every weight layer, is mathematically equivalent
+to an approximation to the probabilistic deep Gaussian process." The
+approximating distribution is `W_i = M_i · diag(z_i)`, `z_ij ~ Bernoulli(p_i)`.
+Minimizing its KL to the deep-GP posterior, with a one-sample Monte Carlo
+estimate of the likelihood term and an approximation of the KL term, gives the
+usual dropout loss plus L2. The link between them is `τ = p l² / (2Nλ)`.
+
+**What it buys.** The model and its training are unchanged. At test time you
+leave dropout on and run `T` stochastic passes. Their mean estimates the
+predictive mean. Their sample variance plus `τ⁻¹` estimates the predictive
+variance. The paper calls the mean-of-passes estimate MC dropout, and says
+Srivastava et al.'s weight scaling is an approximation to it. The cost is `T`
+forward passes. The paper calls this "constant running time identical to that
+of standard dropout" only because the passes can be run concurrently.
+
+**The evidence.**
+- *Uncertainty shape* (Mauna Loa CO₂, about 200 points, 4–5 layers of 1024
+  units). Weight-scaled dropout extrapolates to 0 with high confidence. MC
+  dropout gives the same wrong mean with widening uncertainty. The widening is
+  unbounded for ReLU and bounded for TanH, which the paper ties to the
+  different GP covariances the two nonlinearities approximate. Qualitative
+  figures only.
+- *Classification* (LeNet on MNIST, dropout 0.5 before the last layer). A
+  rotated "1" is classified as 5 at two rotation angles while its softmax
+  *input* envelopes overlap heavily. This shows a high softmax output is not
+  confidence. One image, figures only.
+- *UCI regression* (Table 1, 10 datasets, 20 splits except Protein with 5 and
+  Year with 1). MC dropout has better test log-likelihood than PBP and
+  Graves' VI on every dataset, and equal or better RMSE on all but Yacht. The
+  network is one hidden layer of 50 units, with dropout 0.05 or 0.005,
+  `τ` found by Bayesian optimization on validation log-likelihood, and 10× the
+  epochs PBP used.
+- *Reinforcement learning* (a 2D maze agent). Thompson sampling with a dropout
+  Q-network passes reward 1 within 25 batches, where ε-greedy takes 175. One
+  run, one plot.
+
+## Traps
+
+- **"Mathematically equivalent" is an equivalence at a matched `τ` and `l`,
+  with an approximated KL term.** The derivation, including that
+  approximation, is in the appendix paper (arXiv 1506.02157). This record has
+  read the main text, not the appendix.
+- **"Significantly outperforms" is stronger than several rows support.**
+  Boston RMSE is 2.97 ± 0.19 against PBP's 3.01 ± 0.18, and Kin8nm and Naval
+  RMSE tie. The log-likelihood gaps are larger. A v6 footnote says an earlier
+  version inflated dropout's standard errors 4.5×, so older copies of the
+  table differ.
+- **MC dropout against weight scaling is asserted, not tabulated.** "We
+  observed an improvement using this estimate compared to the standard dropout
+  weight averaging." There are no numbers for that comparison. The one number
+  given is against dropout at `p = 0` on Boston (RMSE 3.07, LL −2.59).
+- **The uncertainty is only as good as the GP it approximates.** The paper
+  says so: different nonlinearities give different covariance functions and
+  different uncertainty. The Mauna Loa figure shows every model, the GP
+  included, missing the periodicity.
+
+## Standing in the anthology
+
+A third account of dropout, alongside [THEORY-015](../theory.d/THEORY-015.md) (a data-dependent
+penalty) and [THEORY-016](../theory.d/THEORY-016.md) (weight scaling computes a geometric-mean
+ensemble exactly for logistic units). It is not one more piece of evidence
+for either. It answers a different question: what the trained network's
+*distribution over outputs* means. It also disagrees with [THEORY-016](../theory.d/THEORY-016.md) on one
+point. Here the Monte Carlo mean is the quantity that should be computed, and
+weight scaling approximates it. There, weight scaling computes a normalized
+geometric mean exactly, and the Monte Carlo comparison in [LIT-395](LIT-395.md) §7.5 is
+the empirical check that the two agree. The disagreement is about which
+average is the target, not about any number.
+
+This paper does not bear on [SOTA-240](../practices.d/SOTA-240.md). It says what to do with dropout that
+is already there, not whether to add it. The practice it could source, using
+MC dropout for predictive uncertainty, is not filed. It would need a
+comparison against deep ensembles or a calibration measurement, and this paper
+has neither. It is the lineage [LIT-486](LIT-486.md) names when it lists "Monte Carlo
+dropout" among parameter-sharing ensembles.

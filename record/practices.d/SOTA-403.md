@@ -22,7 +22,7 @@ promote_when: >-
   2019 measurement without answering whether the asymmetry survives the
   architecture the field actually uses.
 title: 'Share the attention parameters across layers if you need to cut parameters; do not share the feed-forward ones'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-25'
@@ -32,6 +32,18 @@ history:
     up to 32 times) was filed. It is a research model, not a shipped one, and
     it tests a different question. The recommendation, status and consensus
     are unchanged.
+- version: 3
+  date: '2026-09-25'
+  note: >-
+    Records an outside test of cross-layer sharing and of the Universal
+    Transformer. Narang et al. (LIT-tmpnc3oh) found all-shared,
+    encoder-only and decoder-only sharing worse than no sharing. The
+    Universal Transformer did not match a vanilla baseline even after 25
+    tuning runs. Neither tests the attention/FFN split. The paragraph that
+    cited the Universal Transformer's gain as pointing the other way now says
+    the gain did not reproduce. Also notes that LIT-tmpbukux gives the
+    mechanism paragraph deletion evidence. Recommendation, status and
+    consensus are unchanged.
 tags:
 - model-architecture
 - training-optimization
@@ -122,6 +134,25 @@ standard transformer on language modelling and subject-verb agreement; Lan et al
 name the disagreement in their related work. The recommendation here survives it
 because the two are compatible — the question of whether sharing helps overall
 is open, and which half to share if you do is what got measured.
+
+**The Universal Transformer's gain did not reproduce, and neither did sharing in
+general.** Narang et al. ([LIT-tmpnc3oh](../literature.d/LIT-tmpnc3oh.md)) reimplemented both in a 223M T5
+encoder-decoder with hyperparameters fixed. The Universal Transformer reached
+early pre-training loss 2.40 against the vanilla 2.182, at about 4× the
+FLOPs. A 25-configuration sweep brought it to 2.265 and "we were ultimately
+unable to match the performance of the vanilla Transformer". ALBERT-style
+all-block sharing scored 2.497, encoder-only sharing 2.298 and decoder-only
+sharing 2.352, all worse. That weakens the counter-signal above, and it adds a
+second measurement that sharing costs quality. It still does not test the
+split. No configuration there shares attention alone, so the asymmetry
+remains one group's result.
+
+**On the mechanism, one causal data point.** [LIT-tmpbukux](../literature.d/LIT-tmpbukux.md) deletes the
+feed-forward layers from a small decoder and moves the parameters into
+attention depth. What is lost is almost entirely prediction on tokens the
+context cannot help with, which the authors call parametric recall. That fits
+the storage premise above. It deletes the FFN rather than sharing it, so it
+does not measure what sharing the FFN costs.
 
 ## Known implementations
 

@@ -7,12 +7,15 @@ consensus_note: >-
   numerical liability in low-precision training and ship bounded replacements
   — LIT-131 at 2.8T, LIT-200 at 124B. Neither disputes its quality, and
   neither compares the two remedies, so the recommendation is qualified
-  rather than replaced.
+  rather than replaced. An earlier paper, LIT-tmpiqgng (Primer, 2021),
+  does dispute the quality. Squared ReLU beats SwiGLU there, but in one 110M
+  figure with no variance.
 contested_by:
 - LIT-131
 - LIT-200
+- LIT-tmpiqgng
 title: 'Use SwiGLU activation for transformers'
-version: 3
+version: 5
 history:
 - version: 2
   date: '2026-09-07'
@@ -26,11 +29,29 @@ history:
     Noam → Shazeer in the citation line. LIT-030's first_author held the
     author's given name rather than his surname, so every rendering read
     "Noam et al." The recommendation is unchanged.
+- version: 4
+  date: '2026-09-25'
+  note: >-
+    Records the re-run. Narang et al. (LIT-tmpnc3oh) reimplemented about fifty
+    modifications with hyperparameters fixed, and SwiGLU and GeGLU were among
+    the few that won, on all four task families and with five seeds. It is
+    added as a corroborating source. The new section says what the re-run
+    cannot show: it used LIT-030's own codebase and configuration, so it
+    confirms the measurement and not its transfer. The recommendation,
+    status and consensus are unchanged.
+- version: 5
+  date: '2026-09-25'
+  note: >-
+    Primer (LIT-tmpiqgng) filed and added to contested_by. It is the one
+    paper in the record that disputes SwiGLU's quality rather than its range.
+    Squared ReLU wins its single 110M comparison. A new section sizes that
+    evidence. The recommendation, status and consensus are unchanged.
 tags:
 - model-architecture
 date: '2026-08-24'
 source:
 - LIT-030
+- LIT-tmpnc3oh
 introduced_by:
 - LIT-030
 summary: >-
@@ -104,6 +125,45 @@ each other, and either against SwiGLU at a scale where the instability does
 not appear. Until then this is `contested` rather than superseded — the
 field's default is being replaced in two places for one stated reason, and
 neither replacement has been checked against the other.
+
+## Re-run with five seeds, in the same codebase
+
+Narang et al. ([LIT-tmpnc3oh](../literature.d/LIT-tmpnc3oh.md)) ran about fifty published modifications through one
+T5 codebase with every hyperparameter fixed, and most of them lost to the
+baseline. SwiGLU did not. On pre-training loss it scored **2.127 ± 0.003
+against 2.182 ± 0.005** over five seeds, and on final loss 1.789 against 1.838. It beat
+the baseline on SuperGLUE, XSum, WebQuestions and WMT'14 at the same step
+rate. GeGLU scored within noise of it. The win also held when the baseline's
+relative position biases were swapped for learned absolute positions.
+
+This is weaker evidence than it looks, because it is not a transfer test.
+[LIT-030](../literature.d/LIT-030.md) used "the same code base, model architecture, and training task as
+the base model from" T5, and that is the baseline Narang et al. start from.
+Shazeer is an author of both. So the re-run confirms that the gain is real,
+survives seeds and holds on more task families. It does not show that the
+gain carries to another implementation, which is the question the paper was
+asking. What carries that weight here is adoption, not measurement.
+
+## Contested on quality too, by one figure
+
+The two objections above are about range. Primer ([LIT-tmpiqgng](../literature.d/LIT-tmpiqgng.md), 2021)
+predates both, and its objection is about quality. In one comparison (C4,
+110M, T5 codebase, 525K steps) a **squared ReLU**, `max(x, 0)²`, reaches
+lower perplexity than SwiGLU and ReGLU, and it has no third matrix. Squared
+ReLU equals ReGLU with its two matrices tied. The re-run above could not have
+caught this, because it predates squared ReLU and does not include it.
+
+Size that honestly. It is one bar chart with no variance, and the paper does
+not say whether the gated variants were parameter-matched. Everywhere else
+squared ReLU arrives together with a convolution change to attention, so the
+larger wins over the SwiGLU + RMSNorm baseline (about 2× compute at 537M) do
+not isolate the activation. On encoder–decoder masked LM the pair does no
+better than that baseline. The recommendation stands. What would move it is
+squared ReLU against SwiGLU at matched parameters above 1B, with seeds.
+
+Squared ReLU does not escape the range objection either. It grows
+quadratically by design, which is the asymptote [LIT-200](../literature.d/LIT-200.md) blames for
+SwiGLU's outliers.
 
 ## Known implementations
 

@@ -1,0 +1,120 @@
+---
+status: Active
+title: 'Understanding the Disharmony between Dropout and Batch Normalization by Variance Shift'
+version: 1
+tags:
+- model-stability
+- analysis-and-evaluation
+date: '2026-09-25'
+published: '2018-01-16'
+arxiv: '1801.05134'
+first_author: 'Li'
+keywords:
+- 'dropout'
+- 'batch-normalization'
+- 'variance-shift'
+- 'train-test-mismatch'
+- 'uout'
+- 'wide-resnet'
+extends:
+- LIT-395
+compared_against:
+- LIT-395
+summary: >-
+  Li, Chen, Hu and Yang (2018; CVPR 2019), [ARXIV-1801.05134](https://arxiv.org/abs/1801.05134). Dropout changes a
+  unit's variance between train and test mode, and a batch-norm layer
+  downstream keeps normalizing by the train-mode variance. Dropout 0.5 in every
+  DenseNet bottleneck costs 77.42% → 68.55% on CIFAR-100, and the model then
+  misclassifies its own training data in eval mode. The damage is measured and
+  large. The remedy's gain is not: one dropout layer after the last BN gives
+  about 0.2 top-1 on ImageNet and mixed, mostly sub-0.3 changes on CIFAR, with
+  no spread reported.
+---
+
+<!-- inactive-ok-file: SOTA-tmp0lvqr — Proposed; the practice this paper sources, filed with it -->
+
+# LIT-tmp68jdl: Understanding the Disharmony between Dropout and Batch Normalization by Variance Shift
+
+Li, Chen, Hu and Yang (2018; CVPR 2019) — [ARXIV-1801.05134](https://arxiv.org/abs/1801.05134)
+
+## Key takeaways
+
+**The mechanism.** With inverted dropout (scale by `1/p` in training, identity
+at test), a unit fed straight into BN has train-mode variance
+`(1/p)(c² + v) − c²` and test-mode variance `v`, where `c` and `v` are the
+input mean and variance. BN's moving variance is accumulated in train mode and
+frozen at test, so at test it normalizes by the wrong constant. The shift ratio
+is `Δ(p) = v / ((1/p)(c² + v) − c²) ≤ 1`. It is `p` when `c = 0`. "Variance
+shift" is the paper's name for this.
+
+**Two placements, and width decides the second.** In case (a) BN directly
+follows dropout. The only way to make `Δ → 1` is `p → 1`, i.e. no dropout. In
+case (b) a conv or linear layer sits between them. Then `Δ(p, d) → 1` as the
+fan-in `d` grows, because the term `d(cos θ)²` grows with `d`. The paper
+measures `(cos θ)²` at 0.01–0.10 in all four networks, and `d(cos θ)²` at
+2.6–3.8 for PreResNet and DenseNet against 44–53 for WRN-28-10. That is its
+account of why Wide ResNet's dropout helps when dropout in the other
+architectures hurts.
+
+**The damage is measured.** In Figure 1, DenseNet-BC on CIFAR-100 gets 77.42%
+with no dropout and 68.55% with dropout 0.5 in each bottleneck. Figure 5 shows
+the same models classifying their own *training* data less accurately in eval
+mode than in train mode, with every weight fixed. So the loss is a train/test
+mismatch, not ordinary regularization.
+
+**Recalibrating BN recovers much of it (Table 3, 5 seeds).** The weights are
+frozen, and the moving statistics are re-estimated by passing training data
+through the network in eval mode. DenseNet dropout-(a) 0.5 goes from 8.70 to
+6.82 error on CIFAR-10 and from 31.45 to 26.98 on CIFAR-100. PreResNet goes
+from 32.45 to 26.57 on CIFAR-100. **The text says these "outperform their
+baselines". The baseline meant is the same model before recalibration.**
+Against the no-dropout networks (Table 4, drop ratio 0.0), the recalibrated
+case-(a) models are still worse: PreResNet 6.42 against 5.02, DenseNet 6.82
+against 4.72 on CIFAR-10.
+
+**The remedy the paper recommends, and its size.**
+- *Dropout only after the last BN, just before the softmax* (Table 4, 5 seeds).
+  On CIFAR-10 the best change against no dropout is 0.05–0.13 points, and some
+  cells get worse (DenseNet 4.72 → 4.87 at 0.5). On CIFAR-100 the best case is
+  DenseNet at 0.1, 22.58 → 21.86. ResNeXt gets worse at every rate above 0.1.
+- *ImageNet* (Table 5, 5 seeds, drop 0.2 before the classifier). ResNet-200
+  21.70 → 21.48, ResNeXt-101 20.40 → 20.17 and SENet 18.89 → 18.68 top-1. The
+  paper calls these "consistent improvements". They are about 0.2 points each,
+  and no standard deviation is reported.
+- *Uout* (Table 6). This is multiplicative uniform noise `x(1 + r)`,
+  `r ~ U(−β, β)`, whose variance ratio `3/(3 + β²)` stays near 1. It gives
+  roughly 0.1–0.3 points in case-(b) placement, and ResNeXt is again the
+  exception.
+
+## Traps
+
+- **The quotable sentence is the remedy. The strong result is the diagnosis.**
+  The conclusion "highly recommand[s]" both strategies as "nearly free". What
+  the evidence supports well is *don't put dropout where BN will normalize its
+  output*. That the relocated dropout then helps is a 0.2-point claim with no
+  error bars ([DP-010](../../docs/design-principles.md#dp-10)).
+- **The derivation assumes a linear regime, i.i.d. inputs with a common mean and
+  variance, one shared correlation `ρ`, and weights "constant" late in
+  training.** The experiments check the prediction, not those assumptions.
+- **All evidence is convolutional image classification with BN.** Nothing here
+  concerns LayerNorm, whose statistics are per example and have no train/test
+  switch. The mechanism needs normalization by *stored* statistics.
+- **Wide ResNet's dropout benefit comes with its width.** The paper's own
+  numbers put WRN in a different regime (`d(cos θ)²` about 15× larger). A
+  narrow network that copies WRN's dropout placement is not getting WRN's
+  result.
+
+## Standing in the anthology
+
+One of three papers the 09/17 dropout entry left unfiled, and the one it
+said had a practice in it. It sources `SOTA-tmp0lvqr`, filed with it at
+`Proposed`: in a batch-normalized network, put dropout after the last BN
+layer, not upstream of one. It builds on Srivastava et al. ([LIT-395](LIT-395.md)), whose inverted-dropout
+form it analyses and runs as its baseline condition. It also builds on batch
+normalization ([LIT-002](LIT-002.md)), whose frozen moving variance is the other half
+of the mismatch.
+
+It adds a cause to [SOTA-005](../practices.d/SOTA-005.md)'s "subtle direction". There, running
+statistics go wrong because the data moved. Here they are wrong on the
+training data itself, because the network the statistics were accumulated in
+(train-mode dropout) is not the one evaluated.

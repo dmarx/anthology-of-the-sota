@@ -9,7 +9,16 @@ consensus_note: >-
   that followed. The record had the derived form of the principle (SOTA-188)
   and not the parameterization everyone actually types.
 title: 'Predict v rather than the noise when the model will be evaluated at low signal-to-noise'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    The weighting paragraph gains the one comparison the record holds of
+    LIT-067's weightings against an alternative. Hang et al.
+    (LIT-tmpjap5q) find min(SNR, 5) converges faster than both, under
+    x0, ε and v alike, and find max(SNR, 1) diverges with ε output. The
+    recommendation to predict v is unchanged.
 tags:
 - training-optimization
 - generative-modeling
@@ -70,6 +79,17 @@ with an unweighted L2 loss picks the weighting for you.
 
 **Check whether your loss weighting is zero anywhere you plan to evaluate.**
 That is a cheap check and it is what would have caught this.
+
+**The weighting v picks for you is not the only one, and it has been beaten
+once.** Hang et al. ([LIT-tmpjap5q](../literature.d/LIT-tmpjap5q.md)) trained with both of `LIT-067`'s
+weightings and with a cap, `min(SNR, 5)` in x0-space. On a v loss the cap is
+`min(SNR, 5)/(SNR + 1)`. On ImageNet 256 latents with a ViT-B, the cap
+converged fastest under x0, ε and v prediction alike. `max(SNR, 1)` with an ε
+output **diverged**, because it puts weight `1/SNR` on the ε loss. Nothing
+here argues against predicting v. It does mean that the unweighted v loss is a
+default with a measured alternative, from one group with single runs. For
+ε-prediction the gain was mostly early (UNet FID 8.55 → 7.32 at 200K, 4.21 →
+4.14 at 1M).
 
 ## Relation to [SOTA-188](SOTA-188.md)
 

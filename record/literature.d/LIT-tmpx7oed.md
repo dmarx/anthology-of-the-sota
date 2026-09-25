@@ -1,0 +1,126 @@
+---
+status: Active
+title: 'Axiomatic Attribution for Deep Networks'
+version: 1
+tags:
+- analysis-and-evaluation
+- vision-and-graphics
+date: '2026-09-25'
+published: '2017-03-04'
+arxiv: '1703.01365'
+first_author: 'Sundararajan'
+keywords:
+- 'integrated-gradients'
+- 'feature-attribution'
+- 'sensitivity'
+- 'implementation-invariance'
+- 'completeness'
+- 'path-methods'
+- 'aumann-shapley'
+- 'baseline'
+implementations:
+- 'captum (IntegratedGradients)'
+- 'github.com/ankurtaly/Attributions'
+summary: >-
+  Sundararajan, Taly and Yan (ICML 2017), [ARXIV-1703.01365](https://arxiv.org/abs/1703.01365). Integrated
+  Gradients: attribute a prediction to input features by integrating the
+  gradient along the straight line from a baseline `x′` to the input, times
+  `(x − x′)`. Its case is axiomatic, not empirical. It satisfies Sensitivity
+  and Implementation Invariance, which gradients, DeconvNets and Guided
+  Backprop (Sensitivity) and DeepLift and LRP (Implementation Invariance) each
+  break, and its attributions sum to `F(x) − F(x′)`. It is the unique
+  symmetry-preserving path method. **No experiment measures whether its maps
+  are faithful.** The only comparison with another method is visual (Figure 2).
+  The baseline is a free choice that changes the answer.
+---
+
+# LIT-tmpx7oed: Axiomatic Attribution for Deep Networks
+
+Sundararajan, Taly and Yan (2017; ICML 2017, PMLR 70) — [ARXIV-1703.01365](https://arxiv.org/abs/1703.01365)
+
+## Key takeaways
+
+**The method.** For input `x`, baseline `x′` and network `F`,
+`IG_i(x) = (x_i − x′_i) · ∫₀¹ ∂F(x′ + α(x − x′))/∂x_i dα`, computed as a
+Riemann sum over `m` points on the line (eq. 3). It needs only gradient calls
+and no change to the network.
+
+**The two axioms, and who breaks them.**
+- *Sensitivity(a).* If the input and baseline differ in one feature and give
+  different outputs, that feature gets non-zero attribution. Plain gradients
+  break it wherever the function flattens: `f(x) = 1 − ReLU(1 − x)` from 0 to 2
+  gets zero attribution. DeconvNets and Guided Backprop break it too. The
+  counterexample in Appendix B gives `x₂` zero attribution although the output
+  falls linearly in it.
+- *Implementation Invariance.* Two networks that compute the same function get
+  the same attributions. DeepLift and LRP break it, because the chain rule does
+  not hold for their discrete gradients. Figure 7 shows two equivalent ReLU
+  networks for which both give `(1.5, −0.5)` on one and `(2, −1)` on the other.
+
+**The theory.** Completeness (Proposition 1) is the fundamental theorem of
+calculus for path integrals: `Σ IG_i = F(x) − F(x′)`. Proposition 2 is
+Friedman (2004), cited and not re-proved here: path methods are the only methods
+satisfying Implementation Invariance, Sensitivity(b), Linearity and
+Completeness. Theorem 1, proved in Appendix A, says the straight line is the
+unique path method that preserves symmetry. IG is Aumann–Shapley cost sharing.
+
+**The practical advice**, all of it stated rather than measured:
+- Choose a baseline whose score is near zero, and that conveys "a complete
+  absence of signal". Use a black image for vision and the all-zero embedding
+  for text. An adversarial zero-score baseline would put its artefacts in the
+  attributions.
+- 20–300 steps approximate the integral "within 5%". Check that the
+  attributions sum to `F(x) − F(x′)` and add steps if not. The translation model
+  needed 100–1000.
+
+## Traps
+
+- **The evidence that IG is a *good* attribution method is entirely
+  axiomatic.** §4 argues that every empirical evaluation the authors could
+  think of confounds data artefacts, model misbehaviour and method misbehaviour,
+  and uses that as the reason to turn to axioms. The applications in §6 are
+  demonstrations: one retinal image, a handful of questions, one sentence
+  alignment and one molecule. The only comparison with another method is
+  Figure 2, gradients×image against IG by eye ("better at reflecting distinctive
+  features"). Visual inspection is exactly the evaluation [LIT-tmpzf4pd](LIT-tmpzf4pd.md) later shows
+  to be misleading.
+- **"The axiomatic approach rules out artifacts of the last type"** (§8, the
+  method's own artefacts) is the most citable sentence here, and it says more
+  than the axioms do. They rule out two named failures: attributions that
+  depend on implementation, and zero attribution to a feature that mattered.
+  They do not rule out a map dominated by the input's own structure. That is
+  the behaviour [LIT-tmpzf4pd](LIT-tmpzf4pd.md) measures in IG after the weights are randomized.
+- **The paper hedges its own uniqueness claim.** IG "certainly isn't the unique
+  method" satisfying the two axioms (§4). Canonicity needs the extra axioms of
+  Proposition 2 plus symmetry. Remark 5 concedes that Shapley–Shubik also
+  satisfies them if averaging over paths is allowed. On `min(x₁, x₂)` it
+  disagrees with IG, and "it seems somewhat subjective to prefer one result
+  over the other".
+- **The baseline is part of the answer.** Completeness is relative to `x′`. The
+  paper recommends black, notes that noise "has the same property", and prefers
+  black for "cleaner visualizations". It does not measure how the attributions
+  change across baselines.
+- **The 5% / 20–300 step figure has no table behind it.**
+
+## Standing in the anthology
+
+Filed on 2026-09-25 as the first of the two openers `#290` promoted from captum's
+reference list. Fourteen further attribution methods from that list were
+declined behind this one and [LIT-tmpzf4pd](LIT-tmpzf4pd.md). Before this, the record held no paper on
+attributing a prediction to its *input features*. It held only the
+training-data attribution line (influence functions, TracIn: [LIT-400](LIT-400.md),
+[LIT-401](LIT-401.md), [LIT-402](LIT-402.md)).
+
+[LIT-tmpzf4pd](LIT-tmpzf4pd.md) runs IG through both of its randomization tests, but no lineage
+relation is declared between the two notes. [LIT-tmpzf4pd](LIT-tmpzf4pd.md) does not build on IG or
+measure itself against it, and it does not show a claim of IG's to be wrong: it
+evaluates IG as one subject among eight. What it finds about IG is written in
+both notes: rank correlation *with* absolute values stays high after
+randomization and rank correlation *without* them falls to zero, so IG's sign
+tracks the weights and its magnitude tracks the input. A reader who wants the
+edge will find it in the prose, which is where the reasoning is.
+
+This paper sources no practice. Its advice to check completeness as the
+convergence test for the Riemann sum is sound and cheap, but the paper gives it
+no evidence beyond one sentence, and it is recorded as a recommendation in
+[NOTE-tmp1z5qc](../notes.d/NOTE-tmp1z5qc.md) rather than filed.

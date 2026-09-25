@@ -2,7 +2,7 @@
 number: 51
 status: 'Active'
 title: 'Initialize a residual or adapter branch to exactly zero, not merely near zero'
-version: 4
+version: 5
 history:
 - version: 2
   date: '2026-09-10'
@@ -24,6 +24,17 @@ history:
     refutes, and a reader who searched the registry for the exact-identity
     rule would not have found it. The recommendation is unchanged; what
     changes is that the title now says it.
+- version: 5
+  date: '2026-09-25'
+  note: >-
+    Records two outside tests of LIT-047's scalar. In Narang et al.
+    (LIT-tmpnc3oh), ReZero used in place of layer normalization was clearly
+    worse than a pre-norm baseline, even after a change of optimizer. In
+    LIT-tmpbukux, a ReZero residual with normalization kept was neutral. The
+    new section narrows the "warmup and careful initialisation become
+    unnecessary" sentence to what those tests leave standing. The
+    recommendation (exact zero rather than near zero, for an added branch) is
+    unchanged.
 tags:
 - model-stability
 - adaptation-and-tuning
@@ -70,6 +81,30 @@ That is stronger than "near zero" and the difference is the point: an exact
 identity at initialisation means depth costs nothing at step one, so the
 warmup and careful initialisation that deep stacks otherwise need become
 unnecessary rather than merely easier.
+
+## What ReZero's scalar does not buy, measured outside its paper
+
+The sentence above is [LIT-047](../literature.d/LIT-047.md)'s claim, and two outside tests bound it.
+
+- **As a replacement for normalization, it lost.** Narang et al.
+  ([LIT-tmpnc3oh](../literature.d/LIT-tmpnc3oh.md)) ran ReZero in a 223M T5 encoder-decoder against a pre-norm
+  LayerNorm baseline. Its early pre-training loss was **2.262 against 2.182 ±
+  0.005** and its SuperGLUE 61.69 against 71.66. ReZero + LayerNorm scored
+  2.223 and ReZero + RMSNorm 2.221, both still worse. The ReZero runs needed
+  Adam with its own warmup, because they did worse still under the baseline's
+  Adafactor. In that setting it did not make normalization or warmup
+  unnecessary.
+- **Alongside normalization, it was neutral.** [LIT-tmpbukux](../literature.d/LIT-tmpbukux.md) gives a
+  20-layer attention-only decoder a ReZero residual on top of pre-norm and
+  `1/(2N)` output scaling. The result is +0.0032 nats against its gated
+  baseline, and a plain residual scores −0.0013. Both are within a few
+  noise floors. Across 8 to 48 layers, gated and plain residuals match.
+
+Neither test touches what this practice recommends, which is exact zero
+rather than small random for a branch whose identity at initialisation
+matters. It is the adapter and ControlNet section below that carries that.
+What the two tests remove is the broader reading that the scalar can stand in
+for normalization in a standard transformer.
 
 ## The same instinct, three places in this record
 

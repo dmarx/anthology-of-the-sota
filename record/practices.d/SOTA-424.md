@@ -13,7 +13,18 @@ consensus_note: >-
   acceptable is that the paper's own sweep is the thing being adopted, not a
   headline. Read as of 2026-09.
 title: 'Train one network for both conditional and unconditional scores by dropping the condition on 10% of examples, then pick the guidance weight by which metric you are willing to lose'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    The capacity question this practice recorded as open is half answered
+    by EDM2 (LIT-tmpzn7w1): a separately trained unconditional model
+    about a twelfth the size guided its largest conditional model as well as
+    any larger one did. Also records EDM2's finding that the best EMA length
+    moves strongly with the guidance weight, and that FID and FD_DINOv2
+    choose different weights. Not a source: EDM2 does not train one network
+    for both scores. Recommendation, status and consensus unchanged.
 tags:
 - generative-modeling
 - training-optimization
@@ -36,6 +47,7 @@ summary: >-
   sacrifice, and never compare two models at different weights.
 ---
 
+<!-- inactive-ok-file: SOTA-tmp9x33t — Proposed; named as where the EMA side of the guidance sweep is held, not as support for this practice -->
 # SOTA-424: Train one network for both conditional and unconditional scores by dropping the condition on 10% of examples, then pick the guidance weight by which metric you are willing to lose
 
 ## Source
@@ -100,6 +112,23 @@ distributions. The sweep over `p_uncond` bounds how much unconditional training
 is useful and says nothing about whether a larger model would prefer a different
 split, or whether the conditional score is worse than it would have been from a
 dedicated model.
+
+EDM2 ([LIT-tmpzn7w1](../literature.d/LIT-tmpzn7w1.md)) answers the half of this that concerns the unconditional
+score, from the other design: it trains the unconditional model **separately**,
+and an XS model (125M parameters) guides its XXL conditional model (1.5B) as
+well as any larger unconditional model did — "using a larger unconditional
+model did not improve the results at all" — at almost half the sampling cost of
+guidance. One table, one conditional model, ImageNet-512. It says the
+unconditional score needs far less capacity than the conditional one; it does
+not say whether sharing one network, as recommended here, costs the conditional
+score anything.
+
+**The weight is not the only thing guidance moves.** EDM2 also finds the best
+EMA length depends "very strongly" on the guidance weight, and that FID and
+FD_DINOv2 disagree on the weight itself (1.4 against 1.9 in EDM2's convention,
+where 1 means no guidance — 0.4 against 0.9 on this practice's scale). A weight swept at one
+EMA length and reported at another is not the sweep it claims to be; the EMA
+side is [SOTA-tmp9x33t](SOTA-tmp9x33t.md).
 
 **Diversity is what is being spent.** The paper is explicit that raising the
 weight decreases sample variety and increases individual fidelity. If your

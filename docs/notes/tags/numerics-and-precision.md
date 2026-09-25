@@ -4,7 +4,7 @@
 
 **numerics-and-precision**.
 
-6 of 351 NOTE documents. Back to the [full index](../README.md).
+6 of 356 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

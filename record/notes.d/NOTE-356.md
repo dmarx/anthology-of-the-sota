@@ -1,6 +1,9 @@
 ---
+number: 356
 status: Skimmed
-paper: LIT-tmp0ke1e
+formerly:
+- NOTE-tmpu66fa
+paper: LIT-694
 title: 'Rigor with Machine Learning from Field Theory to the Poincaré Conjecture'
 version: 1
 date: '2026-09-25'
@@ -8,9 +11,9 @@ summary: >-
   Stochastic, black-box ML can still yield rigorous results in mathematics and physics along two routes. The first is conjecture generation followed by human proof, or RL searches whose outputs can be checked exactly; this is how an RL/Bayesian-optimized ribbon verifier ruled out over 800 candidate counterexamples to the smooth 4D Poincaré conjecture. The second is importing ML theory, such as NNGP/NN-field-theory and gradient-descent metric flows that include Perelman's Ricci flow.
 ---
 
-<!-- inactive-ok-file: LIT-tmp0ke1e — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
+<!-- inactive-ok-file: LIT-694 — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
 
-# NOTE-tmpu66fa: Rigor with Machine Learning from Field Theory to the Poincaré Conjecture
+# NOTE-356: Rigor with Machine Learning from Field Theory to the Poincaré Conjecture
 
 ## Contribution
 

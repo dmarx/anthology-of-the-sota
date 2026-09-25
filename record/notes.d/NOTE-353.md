@@ -1,6 +1,9 @@
 ---
+number: 353
 status: Skimmed
-paper: LIT-tmph7ql9
+formerly:
+- NOTE-tmp8dzmz
+paper: LIT-696
 title: 'Rarely categorical, highly separable representations along the cortical hierarchy'
 version: 1
 date: '2026-09-25'
@@ -8,9 +11,9 @@ summary: >-
   Within individual cortical areas neurons rarely form categorical (clustered) selectivity classes, only primary sensory areas do, but their response diversity yields high-dimensional population geometry, so every area is maximally linearly separable once only independently encoded conditions are counted; categorical organization appears only at whole-cortex scale, tracking anatomical connectivity.
 ---
 
-<!-- inactive-ok-file: LIT-tmph7ql9 — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
+<!-- inactive-ok-file: LIT-696 — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
 
-# NOTE-tmp8dzmz: Rarely categorical, highly separable representations along the cortical hierarchy
+# NOTE-353: Rarely categorical, highly separable representations along the cortical hierarchy
 
 ## Contribution
 

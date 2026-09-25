@@ -1,6 +1,9 @@
 ---
+number: 354
 status: Skimmed
-paper: LIT-tmplemdz
+formerly:
+- NOTE-tmpajiu7
+paper: LIT-697
 title: 'AgentSociety'
 version: 1
 date: '2026-09-25'
@@ -8,9 +11,9 @@ summary: >-
   The paper presents a simulator of about 10k LLM-driven agents in a realistic urban, social and economic environment. It claims that the simulator's outcomes on polarization, inflammatory-message spread, UBI, hurricane mobility shocks and urban sustainability qualitatively match real-world empirical findings, which would make it usable as a testbed for social science.
 ---
 
-<!-- inactive-ok-file: LIT-tmplemdz — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
+<!-- inactive-ok-file: LIT-697 — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
 
-# NOTE-tmpajiu7: AgentSociety
+# NOTE-354: AgentSociety
 
 ## Contribution
 

@@ -1,6 +1,9 @@
 ---
+number: 355
 status: Skimmed
-paper: LIT-tmps17v1
+formerly:
+- NOTE-tmpo7bs1
+paper: LIT-698
 title: 'Topos and Stacks of Deep Neural Networks'
 version: 1
 date: '2026-09-25'
@@ -8,9 +11,9 @@ summary: >-
   The authors claim that every DNN architecture defines a Grothendieck topos of sheaves over a site built from its graph, that backpropagation is a flow of morphisms in that topos, and that layer invariances (CNN translations, LSTM structure) are stacks, and they conjecture that these stacks explain generalization and support a homological notion of "semantic information".
 ---
 
-<!-- inactive-ok-file: LIT-tmps17v1 — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
+<!-- inactive-ok-file: LIT-698 — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
 
-# NOTE-tmpo7bs1: Topos and Stacks of Deep Neural Networks
+# NOTE-355: Topos and Stacks of Deep Neural Networks
 
 ## Contribution
 

@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**231 document(s) awaiting a decision.**
+**236 document(s) awaiting a decision.**
 
 ## SOTAs
 
-159 of the 231.
+159 of the 236.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -175,7 +175,7 @@
 
 ## THEORYs
 
-66 of the 231.
+66 of the 236.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -248,17 +248,22 @@
 
 ## LITs
 
-3 of the 231.
+8 of the 236.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-08-24 | Proposed | [LIT-104](../../record/literature.d/LIT-104.md) | 4 | 0 | ReLoRA: High-Rank Training Through Low-Rank Updates |
 | 2026-08-24 | Proposed | [LIT-101](../../record/literature.d/LIT-101.md) | 3 | 0 | AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs |
 | 2026-09-15 | Deferred | [LIT-364](../../record/literature.d/LIT-364.md) | 2 | 0 | Classifying high-dimensional Gaussian mixtures: Where kernel methods fail and neural networks succeed |
+| 2026-09-25 | Deferred | [LIT-694](../../record/literature.d/LIT-694.md) | 1 | 0 | Rigor with Machine Learning from Field Theory to the Poincaré Conjecture |
+| 2026-09-25 | Deferred | [LIT-695](../../record/literature.d/LIT-695.md) | 1 | 0 | Language Design as Information Renormalization |
+| 2026-09-25 | Deferred | [LIT-696](../../record/literature.d/LIT-696.md) | 1 | 0 | Rarely categorical, highly separable representations along the cortical hierarchy |
+| 2026-09-25 | Deferred | [LIT-697](../../record/literature.d/LIT-697.md) | 1 | 0 | AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society |
+| 2026-09-25 | Deferred | [LIT-698](../../record/literature.d/LIT-698.md) | 1 | 0 | Topos and Stacks of Deep Neural Networks |
 
 ## ADRs
 
-3 of the 231.
+3 of the 236.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

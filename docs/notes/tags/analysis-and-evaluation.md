@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-125 of 351 NOTE documents. Back to the [full index](../README.md).
+126 of 356 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -133,3 +133,4 @@
 | [NOTE-328](../../../record/notes.d/NOTE-328.md) | Linear Representation Hypothesis (Park, Choe, Veitch) | Formalizes "concepts are directions" with counterfactual word pairs, proves that the unembedding direction is a probe and the embedding direction a steering vector, and shows the two coincide under a causal inner product. One such product is the inverse unembedding covariance. The experiments, on LLaMA-2 7B, are qualitative. Read in full, appendices included. | Read |
 | [NOTE-329](../../../record/notes.d/NOTE-329.md) | Levy, Goldberg & Dagan: lessons from word embeddings | The prediction-over-count advantage for word embeddings came from design choices bundled with word2vec, not from the algorithm. Ported to PPMI and SVD and tuned alike across 672 representations, no method wins consistently, SGNS beats GloVe, and context-distribution smoothing is the only universally safe setting. Read in full. | Read |
 | [NOTE-330](../../../record/notes.d/NOTE-330.md) | Baroni, Dinu & Kruszewski: Don't count, predict! | 84 count and predict models on 14 lexical-semantics benchmarks from one 2.8B-token corpus. word2vec CBOW beats count vectors almost everywhere and is far more robust to bad settings. The count side lacked word2vec's smoothing and negative shift, which is how [LIT-607](../../../record/literature.d/LIT-607.md) later reversed the result. Read in full. | Read |
+| [NOTE-356](../../../record/notes.d/NOTE-356.md) | Rigor with Machine Learning from Field Theory to the Poincaré Conjecture | Stochastic, black-box ML can still yield rigorous results in mathematics and physics along two routes. The first is conjecture generation followed by human proof, or RL searches whose outputs can be checked exactly; this is how an RL/Bayesian-optimized ribbon verifier ruled out over 800 candidate counterexamples to the smooth 4D Poincaré conjecture. The second is importing ML theory, such as NNGP/NN-field-theory and gradient-descent metric flows that include Perelman's Ricci flow. | Skimmed |

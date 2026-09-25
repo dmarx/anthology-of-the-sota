@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-43 of 351 NOTE documents. Back to the [full index](../README.md).
+44 of 356 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -51,3 +51,4 @@
 | [NOTE-321](../../../record/notes.d/NOTE-321.md) | AlphaFold 2 | Near-experimental protein structure accuracy at CASP14, a calibrated confidence head, self-distillation on confident predictions, and a hard dependence on alignment depth below about 30 sequences. Main text and Methods read. The supplementary methods (architecture details, ablation descriptions) were not read. | Read |
 | [NOTE-334](../../../record/notes.d/NOTE-334.md) | Movie Gen | At 5B, flow matching beats v-prediction diffusion on quality by 3.3 annotation σ, but on text alignment by only 1.9σ. Video-native captions beat captions stitched from three frames on alignment by 2.9σ. Every σ in the paper is rater variance, and each ablation arm was trained once. The Llama 3 block beats a DiT block that differs only in norm, activation and bias. The scaling claim rests on image-only runs covering less than a quarter of a decade of compute. | Read |
 | [NOTE-346](../../../record/notes.d/NOTE-346.md) | CogVideoX | An open text-to-video DiT whose design choices are backed by curves rather than numbers. On full 3D against factorized attention, the text says only that factorized FVD is "much higher … in early steps" and that factorized training is "unstable and prone to collapse". Model size, steps and resolution are unstated. The one measured number is the cost: full attention's forward pass is 1.08×, 1.67× and 2.30× slower at three sizes. | Read |
+| [NOTE-355](../../../record/notes.d/NOTE-355.md) | Topos and Stacks of Deep Neural Networks | The authors claim that every DNN architecture defines a Grothendieck topos of sheaves over a site built from its graph, that backpropagation is a flow of morphisms in that topos, and that layer invariances (CNN translations, LSTM structure) are stacks, and they conjecture that these stacks explain generalization and support a homological notion of "semantic information". | Skimmed |

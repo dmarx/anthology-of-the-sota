@@ -4,7 +4,7 @@
 
 **deployment-and-society**.
 
-7 of 351 NOTE documents. Back to the [full index](../README.md).
+8 of 356 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -15,3 +15,4 @@
 | [NOTE-241](../../../record/notes.d/NOTE-241.md) | LLMs raise the opportunity cost of research time | Read for a mechanism `THEORY-051` named and the record could not supply: why effort would fall when a writing tool gets better. The answer is that a perfect time-saving tool raises the value of time, and the interesting part is not the decline but the **phase dependence** — the model predicts opposite signs for selectivity, and the opposite sign for thoroughness, from properties of the tool you can identify before deploying it. | Read |
 | [NOTE-250](../../../record/notes.d/NOTE-250.md) | MIMI: the objective that needs the knowledge it assumes away | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist in rank order. The headline is a task-agnostic interface score; the durable finding is its failure case, where an assistant doing its job drives the metric *negative* and the fix is a horizon hyperparameter that requires exactly the task knowledge the objective was built to avoid. | Read |
 | [NOTE-268](../../../record/notes.d/NOTE-268.md) | A data-free lineage check built on the products that survive permutation and scaling | Read because the grep came back empty: the record holds no document about model provenance. The method is one good idea executed cleanly — compare the spectra of matrix products that functionality-preserving transforms cannot change — and the honest limit is that it is evidence of derivation, not proof against an adversary who has read the paper. | Read |
+| [NOTE-354](../../../record/notes.d/NOTE-354.md) | AgentSociety | The paper presents a simulator of about 10k LLM-driven agents in a realistic urban, social and economic environment. It claims that the simulator's outcomes on polarization, inflammatory-message spread, UBI, hurricane mobility shocks and urban sustainability qualitatively match real-world empirical findings, which would make it usable as a testbed for social science. | Skimmed |

@@ -1,6 +1,9 @@
 ---
+number: 352
 status: Skimmed
-paper: LIT-tmp0lkmx
+formerly:
+- NOTE-tmp5qtcz
+paper: LIT-695
 title: 'Language Design as Information Renormalization'
 version: 1
 date: '2026-09-25'
@@ -8,9 +11,9 @@ summary: >-
   The paper models Chomsky's MERGE as a coarse-graining tensor, so that sentence probabilities form mostly loop-free stochastic tensor networks. It argues from this that tree-like syntax gives polynomially decaying (long-range) correlations. It then concludes that tree-structured networks (it names deep CNNs, as Tree Tensor Networks) fit language, while MPS-like models (RNNs, HMMs) with exponentially decaying correlations do not.
 ---
 
-<!-- inactive-ok-file: LIT-tmp0lkmx — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
+<!-- inactive-ok-file: LIT-695 — Deferred: this is the seeded skim of the paper, filed with it on 2026-09-25 -->
 
-# NOTE-tmp5qtcz: Language Design as Information Renormalization
+# NOTE-352: Language Design as Information Renormalization
 
 ## Contribution
 

@@ -1,0 +1,48 @@
+---
+status: Deferred
+status_note: seeded from the abstract and a skim on 2026-09-25; not read in full
+title: 'Rarely categorical, highly separable representations along the cortical hierarchy'
+version: 1
+tags:
+- concept-geometry
+date: '2026-09-25'
+published: '2024-11-01'
+doi: '10.1038/s41586-026-10668-4'
+first_author: 'Posani'
+keywords:
+- 'Decision'
+- 'Neural decoding'
+- 'Neural encoding'
+implementations: []
+summary: >-
+  Posani et al. (2024), DOI-10.1038/s41586-026-10668-4. Within individual cortical areas neurons rarely form categorical (clustered) selectivity classes, only primary sensory areas do, but their response diversity yields high-dimensional population geometry, so every area is maximally linearly separable once only independently encoded conditions are counted; categorical organization appears only at whole-cortex scale, tracking anatomical connectivity.
+---
+
+# LIT-tmph7ql9: Rarely categorical, highly separable representations along the cortical hierarchy
+
+Lorenzo Posani, Shuqi Wang, Samuel P. Muscinelli, Liam Paninski, Stefano Fusi (2024), *Nature (published online 15 July 2026; volume/pages not yet assigned in Crossref); earlier bioRxiv preprint* — DOI-10.1038/s41586-026-10668-4
+
+## Key takeaways
+
+- Within individual cortical areas neurons rarely form categorical (clustered) selectivity classes, only primary sensory areas do, but their response diversity yields high-dimensional population geometry, so every area is maximally linearly separable once only independently encoded conditions are counted; categorical organization appears only at whole-cortex scale, tracking anatomical connectivity.
+
+*Seeded from the abstract and a skim, not a reading. What follows is what the work says about itself.*
+
+The authors revisit whether cortical neurons fall into functionally distinct, categorically organized populations, using 14,000+ units across 43 cortical regions from the International Brain Laboratory Brainwide Map during a complex decision task. They find the answer depends on scale: across the whole cortex, selectivity is categorical and aligned with anatomical connectivity, but within single regions categorical structure is rare, confined to primary sensory areas, and responses are highly diverse. Theory and data together show this diversity produces high-dimensional representations and hence high linear separability of experimental conditions. Accounting for what each area actually encodes, all regions reach maximal separability, suggesting cortex favours diversity over categorical structure.
+
+## Standing in the record
+
+Filed by the reading-time triage of 2026-09-25: 885 seconds of active reading over 4 sessions in the papers-feed tracker. `Deferred` because nobody has read it closely here yet, not on merit.
+
+It was one of the triage's out-of-scope works, and it is filed here rather than in the catchall record, nucleation, because it sits on the boundary and the rule for the boundary is to keep it in the anthology. It measures in cortex the question `concept-geometry` asks of networks: whether concepts sit in categorical clusters or in separable, mixed-selective codes.
+
+**Priority for a deeper reading: high — recent, high-profile, open access, and its separability/probing caveat bears directly on how representations are analysed; the skim did not cover figures or the independent-conditions method, which is where the claims need checking.**
+
+What a deeper reading should check:
+
+- "Non-categorical" is defined narrowly (silhouette not different from a Gaussian null); the Discussion concedes elongated, non-isotropic distributions count as non-categorical, so check how much the headline depends on that definition and on k-means/silhouette choices.
+- The "maximal separability" result depends on the authors' procedure for finding independent conditions; that step (Methods, "Finding the independent conditions") is what to verify.
+- ML link (by analogy, not claimed by the paper beyond Cover's theorem): mixed/diverse selectivity giving high-dimensional, linearly separable codes parallels discussions of polysemantic units, random-feature expansions and linear probing in neural networks; the decoding caveat applies directly to probing studies of learned representations.
+- Very recent (July 2026); citation count and replication are minimal so far.
+
+Access when seeded: Full open-access article (CC BY-NC-ND 4.0) fetched from nature.com and read as HTML text (abstract, all main-text section headings and their opening paragraphs, Discussion, Methods headings); figures not viewed as images. Metadata confirmed via Crossref: authors, title, online date 2026-07-15; article history on the page: received 13 Feb 2025, accepted 15 May 2026. Crossref also lists a bioRxiv preprint by the same five authors, doi 10.1101/2024.11.15.623878, posted 2024-11-17, titled "Rarely categorical and highly separable: how neural representations change along the cortical hierarchy"; the published: date above is that preprint's month (first appearance). The preprint itself was not read. Keywords are the publisher's subject terms, not author keywords.

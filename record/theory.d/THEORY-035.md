@@ -4,7 +4,16 @@ status: Active
 formerly:
 - THEORY-tmpp47kd
 title: 'Gradient descent drives the sharpness up to the largest value its own step size tolerates, and then trains there'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Adds a section from Islamov et al. (LIT-tmp87rqx): the equilibrium
+    replicates for steepest descent under the spectral, l-infinity and block
+    norms, but only when sharpness is measured in the update's own norm.
+    The account's quantity, the top Hessian eigenvalue, is the right one for
+    Euclidean gradient descent only. Nothing removed; status unchanged.
 tags:
 - training-optimization
 date: '2026-09-20'
@@ -79,12 +88,38 @@ open one.
 reported, not accounted for. Half the equilibrium is a mechanism and half is
 an observation.
 
+## Which sharpness: the account in other geometries
+
+*(Added at v2.)* Islamov et al., LIT-tmp87rqx — read as NOTE-tmpf0zmh, and
+with Cohen among the authors — run the same test on steepest descent under
+other norms: Spectral GD (the update underneath Muon), ℓ∞-descent, block
+coordinate descent, and the normalized forms SignGD and normalized Spectral
+GD. The two forces and the one equilibrium reappear in every case, full-batch,
+on small networks. But the curvature that rises to `2/eta` and stays is
+`max_{‖d‖=1} dᵀ∇²L d` **in the norm the update is steepest in**, and on
+ResNet20 and VGG11 under Spectral GD and ℓ∞-descent the ordinary top Hessian
+eigenvalue stays well below `2/eta` throughout.
+
+So "the maximum eigenvalue of the training-loss Hessian" above is the
+Euclidean case of the account, not the account. For the spectral update the
+record recommends, the step size sets the curvature in the spectral geometry,
+and a reader who checked the Euclidean eigenvalue would conclude, wrongly,
+that the run is not at the edge.
+
+What this does not add: it is still full-batch, so the stochastic gap above
+is untouched; the non-Euclidean sharpness is a heuristic lower estimate of an
+NP-hard maximum; and its identity — the loss falls on a step iff the
+curvature along that step is at most `2/eta` — does not explain progressive
+sharpening either, since it constrains the curvature *along the step* once
+the loss oscillates rather than saying why the Hessian's curvature rises.
+
 ## Why `Active` on small-scale evidence
 
 Because the claim is about a regime, not about a number, and the regime was
 tested where it could have failed: across architectures, tasks and a sweep of
 step sizes, with a prediction derived from it and confirmed. It has been
 built on since — [LIT-453](../literature.d/LIT-453.md) turns the oscillation into a quantitative
-model of the averaged trajectory — and nothing in the record contests it.
+model of the averaged trajectory, and LIT-tmp87rqx carries it to
+non-Euclidean optimizers — and nothing in the record contests it.
 What is *not* established, and is marked above rather than smoothed over, is
 that any of it survives the move to stochastic gradients.

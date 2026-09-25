@@ -1,0 +1,87 @@
+---
+status: Active
+title: 'Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution'
+version: 1
+tags:
+- generative-modeling
+- training-optimization
+- inference-optimization
+date: '2026-09-25'
+published: '2023-10-01'
+arxiv: '2310.16834'
+first_author: 'Lou'
+keywords:
+- 'score-entropy'
+- 'concrete-score'
+- 'discrete-diffusion'
+- 'absorbing-state'
+- 'tweedie-tau-leaping'
+- 'infilling'
+implementations:
+- 'louaaron/Score-Entropy-Discrete-Diffusion'
+summary: >-
+  Lou, Meng and Ermon (2023), [ARXIV-2310.16834](https://arxiv.org/abs/2310.16834). SEDD: learn the ratios
+  `p_t(y)/p_t(x)` of a discrete diffusion with *score entropy*, a Bregman
+  loss that keeps them positive and yields an ELBO. The first discrete
+  diffusion model to reach GPT-2-level zero-shot perplexity, and the absorbing
+  (mask) process beats the uniform one on every table. The GPT-2 comparison is
+  against the released model, trained on different data and re-evaluated
+  without a sliding window.
+---
+
+<!-- inactive-ok-file: SOTA-157 — Proposed, and named as the practice this paper is now a corroborating source of, for the absorbing-over-uniform comparison and nothing more -->
+
+# LIT-tmpfb0m4: Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution
+
+Lou, Meng and Ermon (2023) — [ARXIV-2310.16834](https://arxiv.org/abs/2310.16834)
+
+## Key takeaways
+
+- **The loss.** Score entropy `Σ_y w_xy (s_θ(x)_y − r log s_θ(x)_y + K(r))`,
+  `r = p(y)/p(x)`, is the Bregman divergence of `−log` — a log barrier that
+  keeps the learned ratios positive, which the ℓ2 concrete-score-matching loss
+  does not. Its denoising form trains at roughly autoregressive cost, and the
+  diffusion-weighted version is an upper bound on negative log-likelihood.
+  Replacing it with concrete score matching gave 3–4× higher loss (Appendix
+  D.1).
+- **Absorbing beats uniform, everywhere.** Same architecture and training:
+  text8 1.39 vs 1.47 BPC, LM1B 32.79 vs 40.25, and all five GPT-2 zero-shot
+  sets at both sizes. Uniform also fails to give the log-linear
+  steps-versus-quality frontier absorbing does.
+- **Against autoregression the controlled number is a near-tie, not a win.**
+  On LM1B with a retrained transformer, SEDD Absorb is ≤32.79 against 31.98 —
+  "within 1 perplexity", an upper bound against an exact value.
+- **"Beats GPT-2"** is SEDD Absorb on 3 of 5 sets at each size, losing LAMBADA
+  and 1BW both times. The baseline is the released GPT-2 (WebText) against SEDD trained on
+  OpenWebText, with training length not reported; GPT-2 was re-scored
+  unconditionally, raising its numbers above the published ones, and its 1BW
+  figure was not recomputed.
+- **Sampling.** A Tweedie τ-leaping sampler, optimal among τ-leaping rules if
+  the scores are exact. Un-annealed generative perplexity matches GPT-2 with
+  32× fewer steps than the 2048 maximum and beats un-annealed GPT-2 by 6–8×
+  at 2048. Prompting at arbitrary positions needs no retraining, and MAUVE
+  with standard prompting (0.957) edges nucleus-sampled GPT-2 (0.955).
+- **Cost.** With the authors' unoptimized code, SEDD matches autoregressive
+  inference time at about 100 steps, and the missing KV cache lets the batch
+  be 4–6× larger.
+
+## Conditions
+
+No hyperparameter or architecture search (C.4). Models are GPT-2 small and
+medium sized. The generative-perplexity comparison is against *un-annealed*
+GPT-2, which is the fair comparison for the sampler but not the setting
+anybody serves GPT-2 in, and the paper does not report the numerical
+precision of sampling — a variable later work (cited in LIT-479) found can
+flatter masked-diffusion generative perplexity.
+
+## Standing in the anthology
+
+The paper that made discrete diffusion competitive on language likelihood,
+and the strongest baseline MDLM (LIT-tmptr16a) and LIT-479 measure against. It
+corroborates [SOTA-157](../practices.d/SOTA-157.md) on one point: of the two discrete processes, use
+the absorbing (masked) one. It does not support preferring diffusion to
+autoregression — the retrained comparison is a tie at best and the GPT-2 one
+does not hold data or training fixed. MDLM beats it at matched training on
+every likelihood table it reports, so as a method it is superseded in
+practice; as the source of the ratio view of discrete diffusion, and of the
+evidence that masking is the right corruption, it stays.

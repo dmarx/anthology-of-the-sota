@@ -1,0 +1,128 @@
+---
+status: Active
+title: 'Fine-Tuning Image-Conditional Diffusion Models is Easier than You Think'
+version: 1
+tags:
+- vision-and-graphics
+- adaptation-and-tuning
+- inference-optimization
+- generative-modeling
+date: '2026-09-25'
+published: '2024-09-17'
+arxiv: '2409.11355'
+first_author: 'Garcia'
+keywords:
+- 'monocular-depth-estimation'
+- 'trailing-timestep-spacing'
+- 'single-step-inference'
+- 'end-to-end-fine-tuning'
+- 'marigold'
+- 'surface-normal-estimation'
+implementations:
+- 'diffusion-e2e-ft (vision.rwth-aachen.de/diffusion-e2e-ft)'
+summary: >-
+  Martin Garcia, Knaebel, Schmidt, de Geus, Hermans and Leibe (WACV 2025),
+  [ARXIV-2409.11355](https://arxiv.org/abs/2409.11355). Marigold's "dismal" few-step depth came from the
+  DDIM scheduler's **leading** timestep spacing. The spacing hands a
+  pure-noise input a timestep that claims an almost clean one. Switching to
+  **trailing** spacing makes one step usable (NYUv2 AbsRel 5.7). The fixed
+  single step is still behind the 50-step, 10-member ensemble on all five
+  depth sets. What beats that ensemble everywhere is **end-to-end fine-tuning
+  as a one-step model with a task loss**, and it works nearly as well from
+  plain Stable Diffusion.
+---
+
+<!-- inactive-ok-file: SOTA-tmpetg8o SOTA-tmpaisvs — Proposed; the two practices this paper
+     sources, filed with it, at the standing one group's evidence earns -->
+
+# LIT-tmpy1bpi: Fine-Tuning Image-Conditional Diffusion Models is Easier than You Think
+
+Martin Garcia, Knaebel, Schmidt, de Geus, Hermans and Leibe (2024; WACV 2025) — [ARXIV-2409.11355](https://arxiv.org/abs/2409.11355)
+
+`first_author` follows arXiv's metadata ("Garcia, Gonzalo Martin"). The
+surname may be the double "Martin Garcia".
+
+## Key takeaways
+
+**The bug.** "for a single-step prediction, the model receives a timestep
+encoding that indicates an almost perfect depth map whereas the actual input
+is pure noise." DDIM's *leading* spacing "excludes the final timestep T".
+With `T = 1000`, one leading step is `[1]`, and one trailing step is `[1000]`.
+"In the limit of k → T inference steps, both strategies converge." So the
+bug bites exactly where few-step inference lives.
+
+**The fix is borrowed, and the paper says so.** "we can use the trailing setting
+as proposed in recent work [28]", which is Lin et al. 2023 (arXiv
+2305.08891). "this bug has already been reported in the general diffusion
+model literature". It takes **only the trailing spacing** from Lin et al.,
+and **not** the zero-terminal-SNR rescaling. SD's schedule is untouched. The
+contribution is showing that the fix, "slight" for image generation, is
+"crucial for single-step inference in models such as Marigold".
+
+**End-to-end fine-tuning.** Fix `t = T`. Feed zeros as the noise ("the mean of
+the noise distribution"). Convert the v-prediction to `ẑ₀`, decode through the
+**frozen** VAE, and train on the task loss: affine-invariant L1 for depth,
+angular error for normals. 20K iterations on the same 74K synthetic samples
+Marigold used, about 3 days on one H100. Fine-tuning the decoder too "does
+not improve performance".
+
+**Depth, zero-shot (AbsRel ↓):**
+
+| method | steps × ens. | NYUv2 | KITTI | ETH3D | ScanNet | DIODE |
+| --- | --- | --- | --- | --- | --- | --- |
+| Marigold | 50 × 10 | 5.5 | 9.9 | 6.5 | 6.4 | 30.8 |
+| Marigold | 50 × 1 | 6.0 | 10.5 | 7.1 | 6.9 | 31.0 |
+| Marigold + trailing fix | 1 × 1 | 5.7 | 10.8 | 6.9 | 6.6 | 31.1 |
+| Marigold + E2E FT | 1 × 1 | **5.2** | **9.6** | **6.2** | **5.8** | **30.2** |
+| SD + E2E FT | 1 × 1 | 5.4 | 9.6 | 6.4 | 5.8 | 30.3 |
+
+**Normals (mean angular error ↓):** Marigold (50 × 10) 18.8 / 17.7 / 18.4 /
+39.1 on NYUv2 / ScanNet / iBims-1 / Sintel. The fixed single step gives
+17.4 / 16.8 / 18.1 / 37.1, and E2E fine-tuning 16.2 / 14.7 / 15.8 / 33.5.
+
+**After the fix, more denoising steps make it worse.** "instead of improving the
+depth map with more denoising steps, the performance actually gets worse".
+The offered reason is that the model "expects noised ground truth latents
+instead of its own predictions". That reason is not tested, and the curve is
+shown only as a figure.
+
+## Traps
+
+- **"Single-step matches multi-step" is true only against the un-ensembled
+  run.** Against Marigold's 50-step, 10-member ensemble, the fixed single step
+  is worse on AbsRel on **all five** depth datasets. Against 50 steps without
+  ensembling it wins three of five. The abstract's "performs comparably" needs
+  that qualifier. What beats the ensemble everywhere is E2E fine-tuning, a
+  training change, and not the scheduler fix.
+- **Not zero terminal SNR.** This paper is evidence for Lin et al.'s *spacing*
+  fix and says nothing about its schedule rescaling.
+  [SOTA-263](../practices.d/SOTA-263.md)'s zero-terminal-SNR discussion should not cite it.
+- **">200× faster"** compares 500 network evaluations (50 steps × 10) with one.
+- **On normals, one metric disagrees.** The fixed single step wins on mean
+  angular error everywhere, but on the 11.25° accuracy metric it loses on
+  ScanNet and iBims-1.
+- **"SD is as good as Marigold's init"** rests on 0.0–0.2 AbsRel at one
+  fine-tuning budget, with no seeds. The normals baseline is a Marigold model
+  the authors trained themselves.
+
+## Standing in the anthology
+
+Filed from the reading-time triage of 2026-09-25. That entry summarized this
+paper as "once that is fixed single-step inference matches it". That is the
+trap above, and the summary here replaces it.
+
+It sources two practices:
+
+- **`SOTA-tmpetg8o`**: use trailing timestep spacing for few-step
+  sampling. This is a single-variable measurement: same weights, same data,
+  only the scheduler changed.
+- **`SOTA-tmpaisvs`**: to make an image diffusion model a dense geometric
+  predictor, fine-tune it end to end as a one-step model with a task loss.
+
+**Two papers it depends on are not held.** One is Marigold (Ke et al., CVPR
+2024, 2312.02145), the model it measures and corrects. The other is Lin et
+al. (2305.08891), the origin of the fix and also the zero-terminal-SNR source
+behind [NOTE-351](../notes.d/NOTE-351.md) and [NOTE-346](../notes.d/NOTE-346.md). Once they are
+filed, this note should carry `corrects` against the first and `extends`
+against the second. It has no direct relation to [LIT-107](LIT-107.md) (MiDaS
+v3.1). The paper compares against the original MiDaS, not v3.1.

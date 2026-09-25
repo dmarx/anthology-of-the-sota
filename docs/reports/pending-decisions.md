@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**235 document(s) awaiting a decision.**
+**236 document(s) awaiting a decision.**
 
 ## SOTAs
 
-160 of the 235.
+160 of the 236.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -176,7 +176,7 @@
 
 ## THEORYs
 
-66 of the 235.
+67 of the 236.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -241,15 +241,16 @@
 | 2026-09-24 | Proposed | [THEORY-096](../../record/theory.d/THEORY-096.md) | 3 | 0 | A Pre-LN residual stream's per-layer change decays as one over root k, so deep blocks cannot refine the representation |
 | 2026-09-24 | Proposed | [THEORY-097](../../record/theory.d/THEORY-097.md) | 3 | 0 | Attention is an approximation of Kanerva's sparse distributed memory, which is why it needs normalized vectors and a fitted temperature |
 | 2026-09-24 | Proposed | [THEORY-099](../../record/theory.d/THEORY-099.md) | 3 | 0 | Muon's update matches the outer-product structure of associative memories, which is why it learns tail classes that Adam under-trains |
+| 2026-09-25 | Proposed | [THEORY-109](../../record/theory.d/THEORY-109.md) | 8 | 0 | Classifier guidance may flatter classifier-based metrics because it steps along a classifier gradient, and guidance without a classifier is the control |
 | 2026-09-25 | Proposed | [THEORY-103](../../record/theory.d/THEORY-103.md) | 7 | 0 | A transformer stores a fact where it needed it, so two-hop composition generalizes only to facts it already saw as a second hop |
-| 2026-09-25 | Proposed | [THEORY-109](../../record/theory.d/THEORY-109.md) | 7 | 0 | Classifier guidance may flatter classifier-based metrics because it steps along a classifier gradient, and guidance without a classifier is the control |
 | 2026-09-25 | Proposed | [THEORY-108](../../record/theory.d/THEORY-108.md) | 4 | 0 | Kaplan's and Chinchilla's compute-optimal exponents differ because of how small-scale runs were counted, warmed up and tuned, not because of the learning-rate decay |
 | 2026-09-25 | Proposed | [THEORY-104](../../record/theory.d/THEORY-104.md) | 3 | 0 | A large guidance scale amplifies the model's derivatives, which narrows a high-order solver's convergence radius |
+| 2026-09-25 | Proposed | [THEORY-110](../../record/theory.d/THEORY-110.md) | 2 | 0 | FID is not neutral between fidelity and coverage: it weights coverage more, so optimizing it walks toward variety at the cost of per-sample quality |
 | 2026-09-25 | Proposed | [THEORY-105](../../record/theory.d/THEORY-105.md) | 1 | 0 | Soft targets transfer the teacher's similarity structure over wrong classes, which carries more information per example than a hard label |
 
 ## LITs
 
-6 of the 235.
+6 of the 236.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -262,7 +263,7 @@
 
 ## ADRs
 
-3 of the 235.
+3 of the 236.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

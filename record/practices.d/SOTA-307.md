@@ -44,7 +44,7 @@ history:
   note: >-
     Adds the one instance the record holds of the "measure your own floor"
     instruction being followed elsewhere, and it lands far higher:
-    LIT-tmptzz06 reports FID varying "by up to ±14%" between consecutive
+    LIT-703 reports FID varying "by up to ±14%" between consecutive
     StyleGAN training iterations on FFHQ. Different family, different dataset and
     a different quantity — snapshots of one run, not seeds — so it is a second
     calibration point rather than a correction. Also notes what a second metric
@@ -57,7 +57,7 @@ date: '2026-09-21'
 source:
 - LIT-501
 - LIT-693
-- LIT-tmptzz06
+- LIT-703
 introduced_by:
 - LIT-501
 implementations: []
@@ -170,7 +170,7 @@ DINOv2 FID, precision, density, coverage — track Inception FID closely;
 to cover diversity metrics.
 
 **A second calibration point, and it is much larger.** The instruction
-above is to port the protocol and measure your own floor; [LIT-tmptzz06](../literature.d/LIT-tmptzz06.md) is the one
+above is to port the protocol and measure your own floor; [LIT-703](../literature.d/LIT-703.md) is the one
 case in this record where somebody did. Training StyleGAN on FFHQ, they report
 FID varying "by up to **±14%** between consecutive training iterations" — quoted
 in passing, while explaining why they amortise over snapshots. That is a
@@ -186,7 +186,7 @@ diffusion model's snapshot-to-snapshot one.
 
 **With two metrics the error bar becomes a frontier.** This practice asks for a
 spread over seeds because the best-of-N snapshot is an overestimate. [SOTA-425](SOTA-425.md)
-asks for precision and recall beside FID, and [LIT-tmptzz06](../literature.d/LIT-tmptzz06.md) shows that the
+asks for precision and recall beside FID, and [LIT-703](../literature.d/LIT-703.md) shows that the
 snapshots of a single run span a range of precision/recall tradeoffs — so "the
 best snapshot" is no longer defined and the amortisation has to be a Pareto
 frontier instead of a mean and a spread. The two practices are compatible and

@@ -7,7 +7,7 @@ consensus: emerging
 consensus_note: >-
   The instrument is standard and the reporting discipline is not. Precision and
   recall for generative models are Kynkäänniemi et al.'s (2019) definitions,
-  LIT-tmptzz06, and the diffusion literature does report them in comparison
+  LIT-703, and the diffusion literature does report them in comparison
   tables — this paper, its successors, DiT. What is not routine is using them the way this practice
   asks: to say which side of a fidelity/diversity trade a model sits on, rather
   than as two more columns beside the FID that decides the ranking. `emerging`
@@ -24,7 +24,7 @@ history:
   note: >-
     Corrects a false claim about the instrument this practice recommends. v1 said
     precision and recall are "computed with the same ImageNet network FID uses".
-    They are not: LIT-tmptzz06 uses VGG-16 activations after the second fully
+    They are not: LIT-703 uses VGG-16 activations after the second fully
     connected layer, FID uses Inception-v3. The hazard SOTA-337 names survives
     because both are ImageNet classifiers, but the sentence did not, and it took
     filing the defining paper to see it. Adds the source, a better demonstration
@@ -38,7 +38,7 @@ tags:
 date: '2026-09-25'
 source:
 - LIT-699
-- LIT-tmptzz06
+- LIT-703
 introduced_by:
 - LIT-699
 implementations: []
@@ -120,7 +120,7 @@ sample count.
 **Precision and recall do not escape the feature space, and they are not
 computed in FID's.** Two separate facts, and v1 of this practice collapsed them
 into a false one. The metric's features are **VGG-16 activations after the second
-fully connected layer** ([LIT-tmptzz06](../literature.d/LIT-tmptzz06.md)); FID's are Inception-v3. So it is a
+fully connected layer** ([LIT-703](../literature.d/LIT-703.md)); FID's are Inception-v3. So it is a
 *different* ImageNet classifier, not the same one — and it is still not a second
 opinion on FID's feature space, because that paper's Figure 3c finds Inception-v3
 features give "substantially similar" results. Two ImageNet classifiers agreeing
@@ -137,7 +137,7 @@ weights are not one.
 
 **Two metrics make model selection multi-objective, so "the best checkpoint"
 stops being defined.** With FID alone you take the best snapshot. With precision
-and recall, snapshots of one run span a range of tradeoffs, so [LIT-tmptzz06](../literature.d/LIT-tmptzz06.md)
+and recall, snapshots of one run span a range of tradeoffs, so [LIT-703](../literature.d/LIT-703.md)
 reports the **Pareto frontier** — the minimal subset guaranteed to contain the
 optimum for whatever tradeoff you turn out to want — rather than assuming one.
 Do that instead of picking a snapshot by either column. This is where the

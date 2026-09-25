@@ -1,5 +1,8 @@
 ---
+number: 110
 status: Proposed
+formerly:
+- THEORY-tmpv11wm
 promote_when: >-
   A controlled sweep that moves fidelity and coverage by comparable amounts in a
   common unit and shows FID responding more to the coverage arm — ideally on a
@@ -16,10 +19,10 @@ tags:
 - generative-modeling
 date: '2026-09-25'
 source:
-- LIT-tmptzz06
+- LIT-703
 - LIT-699
 summary: >-
-  Kynkäänniemi et al. (2019), [LIT-tmptzz06](../literature.d/LIT-tmptzz06.md), measured on StyleGAN: "FID favors
+  Kynkäänniemi et al. (2019), [LIT-703](../literature.d/LIT-703.md), measured on StyleGAN: "FID favors
   configurations with high recall over the ones with high precision", and the
   best-recall configuration set a new state-of-the-art FID. The mechanism they
   give is that FID is a Wasserstein-2 distance in feature space, so low intrinsic
@@ -30,11 +33,11 @@ summary: >-
   direction, and a model tuned on FID is tuned toward coverage.
 ---
 
-# THEORY-tmpv11wm: FID is not neutral between fidelity and coverage: it weights coverage more, so optimizing it walks toward variety at the cost of per-sample quality
+# THEORY-110: FID is not neutral between fidelity and coverage: it weights coverage more, so optimizing it walks toward variety at the cost of per-sample quality
 
 ## Source
 
-Kynkäänniemi, Karras, Laine, Lehtinen and Aila (2019), [LIT-tmptzz06](../literature.d/LIT-tmptzz06.md), for the
+Kynkäänniemi, Karras, Laine, Lehtinen and Aila (2019), [LIT-703](../literature.d/LIT-703.md), for the
 measurement and the mechanism. Dhariwal and Nichol (2021), [LIT-699](../literature.d/LIT-699.md), for an
 instance in an unrelated model family.
 
@@ -102,7 +105,7 @@ for. A small asymmetry that never reverses a ranking would make this true and
 unimportant.
 
 **Not that precision and recall are the neutral alternative.** They have their
-own feature network — VGG-16 fc2, per [LIT-tmptzz06](../literature.d/LIT-tmptzz06.md), not the Inception-v3 FID
+own feature network — VGG-16 fc2, per [LIT-703](../literature.d/LIT-703.md), not the Inception-v3 FID
 uses — their own `k` parameter, and their own saturation behaviour. [SOTA-337](../practices.d/SOTA-337.md) is
 the record's holding on what an ImageNet feature space does to any of these
 numbers, and it covers all three metrics.

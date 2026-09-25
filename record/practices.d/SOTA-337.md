@@ -21,7 +21,7 @@ history:
   date: '2026-09-25'
   note: >-
     v2's new Conditions bullet said precision and recall are "computed in the
-    same ImageNet feature space" as FID. Wrong in the detail: LIT-tmptzz06 uses
+    same ImageNet feature space" as FID. Wrong in the detail: LIT-703 uses
     VGG-16 fc2 and FID uses Inception-v3. The conclusion the bullet drew survives
     and is arguably stronger — two *different* ImageNet classifiers that agree
     with each other is the situation this practice is about — but the stated
@@ -102,7 +102,7 @@ practical case, Projected FastGAN matched StyleGAN2's FID (5.28 against
 - **Says nothing about which side of a fidelity/diversity trade you are on.**
   That is [SOTA-425](SOTA-425.md), and precision and recall are subject to this practice too —
   not because they share FID's feature space, which they do not (VGG-16 fc2
-  against Inception-v3, [LIT-tmptzz06](../literature.d/LIT-tmptzz06.md)), but because they are a *second* ImageNet
+  against Inception-v3, [LIT-703](../literature.d/LIT-703.md)), but because they are a *second* ImageNet
   classifier, and their own paper reports that Inception features give
   "substantially similar" results. Two ImageNet classifiers agreeing is not a
   cross-check

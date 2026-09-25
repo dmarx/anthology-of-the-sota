@@ -1,0 +1,102 @@
+---
+status: Active
+title: 'Sparse Distributed Memory'
+version: 1
+tags:
+- model-architecture
+- attention-techniques
+date: '2026-09-25'
+published: '1988-11-01'
+url: 'https://mitpress.mit.edu/9780262514699/sparse-distributed-memory/'
+first_author: 'Kanerva'
+keywords:
+- 'sparse-distributed-memory'
+- 'associative-memory'
+- 'best-match-problem'
+- 'address-decoder'
+- 'cerebellum'
+implementations: []
+summary: >-
+  Kanerva (1988), MIT Press. An associative memory in a high-dimensional
+  binary space: a pattern is written to every fixed-address neuron within a
+  Hamming radius of it, and read back as the thresholded sum over the neurons
+  within that radius of the query. Held because `LIT-641` shows attention's
+  softmax approximates this read — the weighting it induces, the intersection
+  of two hyperspheres, decays near-exponentially in distance — and the record
+  carried that account (`THEORY-097`) without its source. **Filed from
+  secondary accounts; the book has not been read here.**
+extended_by:
+- LIT-641
+---
+<!-- inactive-ok-file: THEORY-097 — Proposed, and cited as the account this
+     book is the missing source for. Filing the source is what the theory's
+     standing waits on, not something it depends on being settled. -->
+
+# LIT-tmpb41ha: Sparse Distributed Memory
+
+Kanerva (MIT Press, 1988; paperback 2003) — <https://mitpress.mit.edu/9780262514699/sparse-distributed-memory/>
+
+## Key takeaways
+
+- **The problem is the best match.** Given a set of stored memories and a
+  query, return the stored item closest to the query, quickly, without
+  comparing against every memory. OSTI's catalogue abstract lists "the search
+  of memory for the best match" among the book's subjects, and `LIT-641`
+  restates the model as a solution to exactly that problem.
+
+- **The model, in three primitives.** Everything lives in `{0,1}ⁿ` with
+  Hamming distance. *Patterns* are an address and a pointer — the pointer is
+  the address itself when autoassociative, another pattern's address when
+  heteroassociative, which is how sequences are stored. *Neurons* sit at
+  fixed, randomly placed addresses, far fewer than `2ⁿ` of them, which is
+  where "sparse" comes from; each holds a vector of counters. The *query* is
+  an address to read from.
+
+- **Write and read are both distributed over a radius.** A write adds a
+  pattern's pointer to every neuron within Hamming distance `d` of its
+  address, so each neuron holds a superposition of many patterns. A read sums
+  the stored vectors of every neuron within `d` of the query and thresholds
+  each bit by majority. Because a pattern was stored in many neurons and the
+  query reads from many, the read weights each pattern by how many neurons the
+  two circles share — the **intersection of two hyperspheres**, which falls
+  off near-exponentially with the distance between query and pattern. That
+  weighting is the property `LIT-641` maps onto softmax.
+
+- **Neurons as address decoders, and the cerebellum.** Each neuron fires when
+  an input lies within `d` of its address, so the layer is an address decoder
+  over a sparse sample of the space. The book maps this onto the cerebellar
+  cortex: granule cells as the decoders, their parallel-fibre synapses as the
+  storage, Purkinje cells as the summation and threshold — the mapping
+  `LIT-641` §5 restates and credits to this book, while noting what it does
+  not explain.
+
+- **What is not attributed to it here.** The three optimal-radius criteria
+  `LIT-641` fits β against — signal-to-noise, memory capacity, critical
+  distance — are cited there to Kanerva's 1993 review, *Sparse Distributed
+  Memory and Related Models*, not to this book. That review is not held.
+
+## Standing in the anthology
+
+The record held the claim that attention approximates Kanerva's memory
+(`THEORY-097`, sourced to `LIT-641`) and did not hold the memory. This is
+the source that claim is about, and `LIT-641` could not stand without it —
+it is filed as what `LIT-641` carries further.
+
+**It has not been read.** The book is not openly available, and this note is
+written from two accounts of it: OSTI's catalogue abstract (record 7055202),
+which lists its contents, and `LIT-641`'s review of the model, §1 and §5.
+Every takeaway above says which of those it rests on. A reading would check
+two things this note could not:
+
+- whether the hypersphere-intersection weighting, and its near-exponential
+  decay, is derived in the book or first made explicit by later work;
+- which of the biological claims the book makes itself, rather than
+  `LIT-641`'s summary of them.
+
+Nothing here moves a practice. `SOTA-192` recommends QK-norm on its own
+evidence; the SDM account explains why the technique might work and does
+not change whether to use it.
+
+The source is a publisher's catalogue URL, the weakest kind this record
+accepts: the book has no DOI in Crossref, and ACM's `10.5555/534853` is an
+internal identifier that does not resolve through doi.org.

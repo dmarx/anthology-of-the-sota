@@ -43,7 +43,7 @@ Bricken and Pehlevan (2021), [LIT-641](../literature.d/LIT-641.md).
 
 ## The account
 
-Kanerva's sparse distributed memory stores patterns at binary addresses and
+Kanerva's sparse distributed memory ([LIT-tmpb41ha](../literature.d/LIT-tmpb41ha.md)) stores patterns at binary addresses and
 reads by querying an address, returning a weighted average of the pointers
 whose addresses lie within a Hamming distance `d` — with the weighting given
 by the intersection of two hyperspheres, which decays almost exponentially in

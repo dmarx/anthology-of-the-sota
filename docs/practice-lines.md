@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-50 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+51 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -122,6 +122,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [SOTA-188](../record/practices.d/SOTA-188.md) — Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal *(Active, converged)*
   - [SOTA-195](../record/practices.d/SOTA-195.md) — Predict v rather than the noise when the model will be evaluated at low signal-to-noise *(Active, converged)*
+  - [SOTA-431](../record/practices.d/SOTA-431.md) — Make every layer of a diffusion denoiser preserve activation magnitude, and force each weight vector back to fixed norm after every step *(Proposed, unassessed)*
 
 ### From Fix the noise schedule's endpoints against the bound and choose its shape to minimise the loss estimator's variance
 
@@ -231,6 +232,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [SOTA-182](../record/practices.d/SOTA-182.md) — Compute the normalization statistic without centering (RMSNorm) *(Active, universal)*
 - alongside: [SOTA-191](../record/practices.d/SOTA-191.md) — Consider removing LayerNorm's learnable gain and bias rather than tuning them *(Proposed, contested)*
+
+### From Apply dropout where the model can memorize what it is shown, and not where it cannot
+
+- [SOTA-240](../record/practices.d/SOTA-240.md) — Apply dropout where the model can memorize what it is shown, and not where it cannot *(Active, converged)*
+  - [SOTA-427](../record/practices.d/SOTA-427.md) — In a batch-normalized network, put dropout after the last batch-norm layer, not upstream of one *(Proposed, unreplicated)*
 
 ## numerics-and-precision
 
@@ -356,6 +362,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [SOTA-188](../record/practices.d/SOTA-188.md) — Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal *(Active, converged)*
   - [SOTA-195](../record/practices.d/SOTA-195.md) — Predict v rather than the noise when the model will be evaluated at low signal-to-noise *(Active, converged)*
+  - [SOTA-431](../record/practices.d/SOTA-431.md) — Make every layer of a diffusion denoiser preserve activation magnitude, and force each weight vector back to fixed norm after every step *(Proposed, unassessed)*
 
 ### From Retune the learning rate, momentum and schedule at every batch size you compare, never by a scaling heuristic
 
@@ -367,4 +374,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [SOTA-360](../record/practices.d/SOTA-360.md) — Score a density ratio against sampled negatives instead of reconstructing the target *(Active, universal)*
   - [SOTA-359](../record/practices.d/SOTA-359.md) — Supervise vision from the caption, and match image to caption rather than predicting its words *(Active, converged)*
     - [SOTA-376](../record/practices.d/SOTA-376.md) — Score each image-text pair independently with a sigmoid, so the loss needs no global normalization *(Active, emerging)*
+    - [SOTA-429](../record/practices.d/SOTA-429.md) — Drop half the image patches when training a CLIP-style model, spend the saving on more pairs and a larger batch, and unmask only for a short final tune *(Proposed, unassessed)* — also extends SOTA-372
   - [SOTA-363](../record/practices.d/SOTA-363.md) — Decouple the negative set from the batch with a queue, and keep the encoder that fills it slow *(Active, emerging)*
+- [SOTA-372](../record/practices.d/SOTA-372.md) — Run the encoder on visible tokens only and push the mask tokens into a small decoder you discard *(Active, converged)*

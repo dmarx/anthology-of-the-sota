@@ -4,7 +4,7 @@
 
 **generative-modeling**.
 
-61 of 361 NOTE documents. Back to the [full index](../README.md).
+63 of 372 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -69,3 +69,5 @@
 | [NOTE-357](../../../record/notes.d/NOTE-357.md) | SEDD | Score entropy makes the ratio view of discrete diffusion trainable and gives it a likelihood bound; with it, absorbing-state diffusion reaches a near-tie with a retrained autoregressive model on LM1B. "Beats GPT-2" is 3 of 5 zero-shot sets against a model trained on different data. The controlled result that lasts is that masking beats uniform corruption on every table. | Read |
 | [NOTE-358](../../../record/notes.d/NOTE-358.md) | Diffusion Models Beat GANs | An ablated U-Net (ADM) and a classifier-gradient scale that trades recall for precision take diffusion past BigGAN-deep on ImageNet FID. The architecture search is single-run; every guided number is the best of a small scale sweep scored on the metric it reports; and the trade is non-monotone — a scale of 1 makes an unconditional model's FID worse (26.21 → 33.03). The claim that large scales produce no adversarial examples is asserted in the introduction and checked only by eye and in Inception feature space. | Read |
 | [NOTE-360](../../../record/notes.d/NOTE-360.md) | MDLM | Masked diffusion's ELBO is a schedule-weighted average of masked-LM losses, and with a modern recipe it is the best discrete diffusion language model at 110M parameters. It does not beat autoregression in-domain, even with the AR baseline given half the optimizer steps; the paper's own checklist names that as its limitation. | Read |
+| [NOTE-369](../../../record/notes.d/NOTE-369.md) | Min-SNR weighting | Capping the x0-space loss weight at min(SNR, 5) speeds diffusion training under x0, ε and v prediction, and makes ε output trainable under weightings that otherwise diverge. The 3.4× headline is against constant-weighted x0-prediction. Against plain ε-MSE on a UNet, FID goes 8.55 → 7.32 at 200K iterations and 4.21 → 4.14 at 1M, single runs. The multi-task "conflicting gradients" account is motivated by one probe and a proxy objective, and is not tested against FID. | Read |
+| [NOTE-370](../../../record/notes.d/NOTE-370.md) | EDM2 | Magnitude-preserving layers plus forced weight normalization take the ADM U-Net from FID 8.00 to 2.56 on ImageNet-512 at equal compute, in a cumulative single-model ladder whose steps are all far larger than FID's noise. Post-hoc EMA reconstructs any averaging length from two stored power-function averages, and what it shows is that the best length depends on architecture, learning rate, guidance weight and the metric — the last by 2% against 14% under guidance. | Read |

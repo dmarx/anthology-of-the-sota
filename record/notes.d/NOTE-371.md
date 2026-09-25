@@ -1,6 +1,9 @@
 ---
+number: 371
 status: Read
-paper: LIT-tmparvj2
+formerly:
+- NOTE-tmpr24hg
+paper: LIT-706
 title: 'FLIP'
 version: 1
 date: '2026-09-25'
@@ -13,9 +16,9 @@ summary: >-
   improvement is the batch and the extra samples that masking pays for.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpfo9e5 — Proposed practice filed from this reading; named as what it produced -->
+<!-- inactive-ok-file: SOTA-429 — Proposed practice filed from this reading; named as what it produced -->
 
-# NOTE-tmpr24hg: FLIP
+# NOTE-371: FLIP
 
 ## Contribution
 
@@ -117,7 +120,7 @@ memory ceiling from the loss side rather than the input side.
 
 ## Bearing on the record
 
-- **Produces** [SOTA-tmpfo9e5](../practices.d/SOTA-tmpfo9e5.md) (R1), `Proposed`, extending [SOTA-359](../practices.d/SOTA-359.md) and
+- **Produces** [SOTA-429](../practices.d/SOTA-429.md) (R1), `Proposed`, extending [SOTA-359](../practices.d/SOTA-359.md) and
   [SOTA-372](../practices.d/SOTA-372.md). Written around Table 1b rather than the abstract: masking is how
   to *afford* the batch, not a better objective.
 - **[SOTA-359](../practices.d/SOTA-359.md)** — confirmed in the one place it is measured. Its Conditions

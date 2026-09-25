@@ -7,13 +7,13 @@ consensus_note: >-
   numerical liability in low-precision training and ship bounded replacements
   — LIT-131 at 2.8T, LIT-200 at 124B. Neither disputes its quality, and
   neither compares the two remedies, so the recommendation is qualified
-  rather than replaced. An earlier paper, LIT-tmpiqgng (Primer, 2021),
+  rather than replaced. An earlier paper, LIT-709 (Primer, 2021),
   does dispute the quality. Squared ReLU beats SwiGLU there, but in one 110M
   figure with no variance.
 contested_by:
 - LIT-131
 - LIT-200
-- LIT-tmpiqgng
+- LIT-709
 title: 'Use SwiGLU activation for transformers'
 version: 5
 history:
@@ -32,7 +32,7 @@ history:
 - version: 4
   date: '2026-09-25'
   note: >-
-    Records the re-run. Narang et al. (LIT-tmpnc3oh) reimplemented about fifty
+    Records the re-run. Narang et al. (LIT-711) reimplemented about fifty
     modifications with hyperparameters fixed, and SwiGLU and GeGLU were among
     the few that won, on all four task families and with five seeds. It is
     added as a corroborating source. The new section says what the re-run
@@ -42,7 +42,7 @@ history:
 - version: 5
   date: '2026-09-25'
   note: >-
-    Primer (LIT-tmpiqgng) filed and added to contested_by. It is the one
+    Primer (LIT-709) filed and added to contested_by. It is the one
     paper in the record that disputes SwiGLU's quality rather than its range.
     Squared ReLU wins its single 110M comparison. A new section sizes that
     evidence. The recommendation, status and consensus are unchanged.
@@ -51,7 +51,7 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-030
-- LIT-tmpnc3oh
+- LIT-711
 introduced_by:
 - LIT-030
 summary: >-
@@ -128,7 +128,7 @@ neither replacement has been checked against the other.
 
 ## Re-run with five seeds, in the same codebase
 
-Narang et al. ([LIT-tmpnc3oh](../literature.d/LIT-tmpnc3oh.md)) ran about fifty published modifications through one
+Narang et al. ([LIT-711](../literature.d/LIT-711.md)) ran about fifty published modifications through one
 T5 codebase with every hyperparameter fixed, and most of them lost to the
 baseline. SwiGLU did not. On pre-training loss it scored **2.127 ± 0.003
 against 2.182 ± 0.005** over five seeds, and on final loss 1.789 against 1.838. It beat
@@ -146,7 +146,7 @@ asking. What carries that weight here is adoption, not measurement.
 
 ## Contested on quality too, by one figure
 
-The two objections above are about range. Primer ([LIT-tmpiqgng](../literature.d/LIT-tmpiqgng.md), 2021)
+The two objections above are about range. Primer ([LIT-709](../literature.d/LIT-709.md), 2021)
 predates both, and its objection is about quality. In one comparison (C4,
 110M, T5 codebase, 525K steps) a **squared ReLU**, `max(x, 0)²`, reaches
 lower perplexity than SwiGLU and ReGLU, and it has no third matrix. Squared

@@ -4,7 +4,7 @@
 
 **representation-and-encoding**.
 
-44 of 361 NOTE documents. Back to the [full index](../README.md).
+45 of 372 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -52,3 +52,4 @@
 | [NOTE-345](../../../record/notes.d/NOTE-345.md) | Open-Sora 2.0 | An 11B video model initialized from FLUX, trained mostly at 256px, and adapted to 768px as text/image-to-video. The "$200k" is 4,160 H200 GPU-days for one final run on HunyuanVideo's VAE. The 4×32×32 Video DC-AE is a separate, unconverged experiment whose cost is outside that figure. Every training-strategy choice that makes the run cheap is asserted, not ablated. | Read |
 | [NOTE-346](../../../record/notes.d/NOTE-346.md) | CogVideoX | An open text-to-video DiT whose design choices are backed by curves rather than numbers. On full 3D against factorized attention, the text says only that factorized FVD is "much higher … in early steps" and that factorized training is "unstable and prone to collapse". Model size, steps and resolution are unstated. The one measured number is the cost: full attention's forward pass is 1.08×, 1.67× and 2.30× slower at three sizes. | Read |
 | [NOTE-350](../../../record/notes.d/NOTE-350.md) v2 | LTX-Video | A 1.9B video DiT on a 32×32×8, 128-channel VAE with no patchifier (1:8192 pixels to tokens), whose decoder also does the last denoising step. It is fast and preferred over same-size 2024 open models in a 20-rater survey. The VAE has no reconstruction metric at all, and the denoising decoder, the paper's central idea, rests on one unquantified internal study. | Read |
+| [NOTE-367](../../../record/notes.d/NOTE-367.md) | Narang et al., transformer modifications | About fifty transformer modifications reimplemented in one T5/Mesh TensorFlow codebase at 223M parameters, with hyperparameters fixed, on four task families. Most do not beat the vanilla pre-norm, relative-attention baseline. The winners are GLU-variant activations, RMSNorm, untied embeddings, and sparse experts or other variants that cost parameters or time. The Universal Transformer, ReZero, Fixup, block sharing and the Evolved Transformer all lose. The positives are largely same-codebase re-runs, GLU Variants included, so the paper is strong evidence against the losers and weak evidence that the winners transfer. | Read |

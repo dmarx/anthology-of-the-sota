@@ -1,6 +1,9 @@
 ---
+number: 365
 status: Read
-paper: LIT-tmpzf4pd
+formerly:
+- NOTE-tmp5d8h0
+paper: LIT-713
 title: 'Sanity Checks for Saliency Maps'
 version: 1
 date: '2026-09-25'
@@ -12,9 +15,9 @@ summary: >-
   these cases apart, and that is the paper's point.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpudd8t — Proposed; the practice filed from this reading's R1 -->
+<!-- inactive-ok-file: SOTA-430 — Proposed; the practice filed from this reading's R1 -->
 
-# NOTE-tmp5d8h0: Sanity Checks for Saliency Maps
+# NOTE-365: Sanity Checks for Saliency Maps
 
 ## Contribution
 
@@ -120,8 +123,8 @@ which is not held. Nie et al. had shown theoretically that Guided Backprop and
 DeconvNet do partial input recovery; this paper adds a test that anyone can run.
 It cites Ancona et al. for the equivalence of ε-LRP and DeepLift(Rescale) to
 input⊙gradient in bias-free ReLU networks, which is why it treats them as one
-family. IG ([LIT-tmpx7oed](../literature.d/LIT-tmpx7oed.md)) is one of the eight methods tested, and no lineage
-relation is declared (see [LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md)).
+family. IG ([LIT-712](../literature.d/LIT-712.md)) is one of the eight methods tested, and no lineage
+relation is declared (see [LIT-713](../literature.d/LIT-713.md)).
 
 ## Recommendations
 
@@ -130,7 +133,7 @@ relation is declared (see [LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md)).
   the method for that purpose if its maps survive. *Topic:* analysis and
   evaluation. *Status:* experimental. *Strength:* moderate. It is strong as a
   rejection rule and says nothing about sufficiency. *Applies when:* the task
-  depends on parameters or labels. Filed as [SOTA-tmpudd8t](../practices.d/SOTA-tmpudd8t.md).
+  depends on parameters or labels. Filed as [SOTA-430](../practices.d/SOTA-430.md).
 - **R2** — Report signed rank correlation alongside any absolute-value or
   perceptual similarity when comparing maps. The absolute-value measures hide
   the sign change that distinguishes IG on a trained model from IG on a random
@@ -140,11 +143,11 @@ relation is declared (see [LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md)).
 
 ## Bearing on the record
 
-- **[SOTA-tmpudd8t](../practices.d/SOTA-tmpudd8t.md) is filed from R1**, `Proposed`. The paper states the instruction
+- **[SOTA-430](../practices.d/SOTA-430.md) is filed from R1**, `Proposed`. The paper states the instruction
   outright ("sanity checks to perform before deploying a method in practice") and
   backs it with a broad sweep. It is one group, all image classifiers, and pass
   and fail are read from curves without thresholds. The practice says all three.
-- **Integrated Gradients ([LIT-tmpx7oed](../literature.d/LIT-tmpx7oed.md)).** This reading should stop the record
+- **Integrated Gradients ([LIT-712](../literature.d/LIT-712.md)).** This reading should stop the record
   citing either "IG passes" or "IG fails" the sanity checks. The paper puts IG
   in neither list, and the metrics disagree about it.
 - The four methods the paper gives verdicts on (gradient, GradCAM, Guided

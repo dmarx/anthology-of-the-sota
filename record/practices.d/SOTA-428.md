@@ -1,5 +1,8 @@
 ---
+number: 428
 status: Proposed
+formerly:
+- SOTA-tmp9x33t
 promote_when: >-
   A group outside NVIDIA, training something other than an ADM-style image
   U-Net — a diffusion transformer, a video or audio model, a language model —
@@ -17,13 +20,13 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-25'
 source:
-- LIT-tmpzn7w1
+- LIT-714
 introduced_by:
-- LIT-tmpzn7w1
+- LIT-714
 implementations:
 - 'NVlabs/edm2'
 summary: >-
-  Karras et al. (2023), [LIT-tmpzn7w1](../literature.d/LIT-tmpzn7w1.md) — EDM2. Track two power-function
+  Karras et al. (2023), [LIT-714](../literature.d/LIT-714.md) — EDM2. Track two power-function
   averages of the weights (`σ_rel` 0.05 and 0.10), save both every few
   thousand steps, and synthesize any EMA length after the run from a small
   linear solve. Then choose it per configuration, per guidance weight and per
@@ -33,12 +36,12 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-156, SOTA-408 — Proposed; named as neighbouring averaging practices this one does not rest on -->
 
-# SOTA-tmp9x33t: Choose the EMA length after training: store two power-function averages at snapshots and reconstruct any length by least squares
+# SOTA-428: Choose the EMA length after training: store two power-function averages at snapshots and reconstruct any length by least squares
 
 ## Source
 
-Karras et al. (2023), [LIT-tmpzn7w1](../literature.d/LIT-tmpzn7w1.md) — [ARXIV-2312.02696](https://arxiv.org/abs/2312.02696), §3, §4 and Appendix
-C; read as [NOTE-tmpod74g](../notes.d/NOTE-tmpod74g.md).
+Karras et al. (2023), [LIT-714](../literature.d/LIT-714.md) — [ARXIV-2312.02696](https://arxiv.org/abs/2312.02696), §3, §4 and Appendix
+C; read as [NOTE-370](../notes.d/NOTE-370.md).
 
 ## What to do
 

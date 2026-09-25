@@ -16,7 +16,7 @@ history:
   note: >-
     The weighting paragraph gains the one comparison the record holds of
     LIT-067's weightings against an alternative. Hang et al.
-    (LIT-tmpjap5q) find min(SNR, 5) converges faster than both, under
+    (LIT-710) find min(SNR, 5) converges faster than both, under
     x0, ε and v alike, and find max(SNR, 1) diverges with ε output. The
     recommendation to predict v is unchanged.
 tags:
@@ -81,7 +81,7 @@ with an unweighted L2 loss picks the weighting for you.
 That is a cheap check and it is what would have caught this.
 
 **The weighting v picks for you is not the only one, and it has been beaten
-once.** Hang et al. ([LIT-tmpjap5q](../literature.d/LIT-tmpjap5q.md)) trained with both of `LIT-067`'s
+once.** Hang et al. ([LIT-710](../literature.d/LIT-710.md)) trained with both of `LIT-067`'s
 weightings and with a cap, `min(SNR, 5)` in x0-space. On a v loss the cap is
 `min(SNR, 5)/(SNR + 1)`. On ImageNet 256 latents with a ViT-B, the cap
 converged fastest under x0, ε and v prediction alike. `max(SNR, 1)` with an ε

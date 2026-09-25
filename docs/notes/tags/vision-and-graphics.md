@@ -4,7 +4,7 @@
 
 **vision-and-graphics**.
 
-48 of 361 NOTE documents. Back to the [full index](../README.md).
+51 of 372 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -56,3 +56,6 @@
 | [NOTE-349](../../../record/notes.d/NOTE-349.md) | Make-A-Video | Make-A-Video extends an unCLIP text-to-image model to video with identity-initialized pseudo-3D conv and attention layers trained on video with no captions. Text reaches the video decoder only through one CLIP image embedding, so text-only-in-video associations cannot be learned, and the discussion concedes this. System-level results are strong (zero-shot UCF-101 FVD 367.23, MSR-VTT CLIPSIM 0.3049), and there is no ablation of any design choice, image initialization included. | Read |
 | [NOTE-350](../../../record/notes.d/NOTE-350.md) v2 | LTX-Video | A 1.9B video DiT on a 32×32×8, 128-channel VAE with no patchifier (1:8192 pixels to tokens), whose decoder also does the last denoising step. It is fast and preferred over same-size 2024 open models in a 20-rater survey. The VAE has no reconstruction metric at all, and the denoising decoder, the paper's central idea, rests on one unquantified internal study. | Read |
 | [NOTE-351](../../../record/notes.d/NOTE-351.md) | Emu Video | Generating a first frame and conditioning the video on it beats direct text-to-video at matched data, steps and trainable parameters (70.5% / 63.3% human win rate). Five one-change ablations with majority-of-5 votes on 307 prompts are the most controlled design evidence in the early video line. The freeze-versus-fine-tune result (55.0 / 58.1) is near chance, and by construction it cannot see the first frame. | Read |
+| [NOTE-362](../../../record/notes.d/NOTE-362.md) | Integrated Gradients | Integrating the gradient along the straight line from a baseline gives the unique path attribution that is implementation-invariant, complete and symmetry-preserving. The justification is axioms, not a measurement: the paper argues that empirical evaluation of attributions is confounded, and its one comparison with another method is by eye. | Read |
+| [NOTE-365](../../../record/notes.d/NOTE-365.md) | Sanity Checks for Saliency Maps | Randomize the model's weights, or train it on permuted labels, and see whether the saliency map changes. Gradients and GradCAM change. Guided Backprop is invariant to the higher layers. Integrated Gradients keeps the input's structure while its sign decorrelates. Visual inspection cannot tell these cases apart, and that is the paper's point. | Read |
+| [NOTE-371](../../../record/notes.d/NOTE-371.md) | FLIP | Removing 50% of image patches in CLIP training halves the image encoder's cost and lets the contrastive batch double at the same memory; ViT-L/16 on LAION-400M then matches its unmasked reproduction more than 3× faster and beats it by about a point at equal epochs. At equal batch the masking gains nothing, and at ViT-B/16 the full-schedule model is 0.2 behind — the improvement is the batch and the extra samples that masking pays for. | Read |

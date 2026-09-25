@@ -1,6 +1,9 @@
 ---
+number: 369
 status: Read
-paper: LIT-tmpjap5q
+formerly:
+- NOTE-tmpiw6ga
+paper: LIT-710
 title: 'Min-SNR weighting'
 version: 1
 date: '2026-09-25'
@@ -14,7 +17,7 @@ summary: >-
   objective, and is not tested against FID.
 ---
 
-# NOTE-tmpiw6ga: Min-SNR weighting
+# NOTE-369: Min-SNR weighting
 
 Read in full from arXiv v3 (11 Mar 2024). That covers §§1–5, the proof of
 Theorem 1 (App. A), the target-conversion derivations (App. B), the

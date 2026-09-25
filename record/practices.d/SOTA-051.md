@@ -28,9 +28,9 @@ history:
   date: '2026-09-25'
   note: >-
     Records two outside tests of LIT-047's scalar. In Narang et al.
-    (LIT-tmpnc3oh), ReZero used in place of layer normalization was clearly
+    (LIT-711), ReZero used in place of layer normalization was clearly
     worse than a pre-norm baseline, even after a change of optimizer. In
-    LIT-tmpbukux, a ReZero residual with normalization kept was neutral. The
+    LIT-708, a ReZero residual with normalization kept was neutral. The
     new section narrows the "warmup and careful initialisation become
     unnecessary" sentence to what those tests leave standing. The
     recommendation (exact zero rather than near zero, for an added branch) is
@@ -87,14 +87,14 @@ unnecessary rather than merely easier.
 The sentence above is [LIT-047](../literature.d/LIT-047.md)'s claim, and two outside tests bound it.
 
 - **As a replacement for normalization, it lost.** Narang et al.
-  ([LIT-tmpnc3oh](../literature.d/LIT-tmpnc3oh.md)) ran ReZero in a 223M T5 encoder-decoder against a pre-norm
+  ([LIT-711](../literature.d/LIT-711.md)) ran ReZero in a 223M T5 encoder-decoder against a pre-norm
   LayerNorm baseline. Its early pre-training loss was **2.262 against 2.182 ±
   0.005** and its SuperGLUE 61.69 against 71.66. ReZero + LayerNorm scored
   2.223 and ReZero + RMSNorm 2.221, both still worse. The ReZero runs needed
   Adam with its own warmup, because they did worse still under the baseline's
   Adafactor. In that setting it did not make normalization or warmup
   unnecessary.
-- **Alongside normalization, it was neutral.** [LIT-tmpbukux](../literature.d/LIT-tmpbukux.md) gives a
+- **Alongside normalization, it was neutral.** [LIT-708](../literature.d/LIT-708.md) gives a
   20-layer attention-only decoder a ReZero residual on top of pre-norm and
   `1/(2N)` output scaling. The result is +0.0032 nats against its gated
   baseline, and a plain residual scores −0.0013. Both are within a few

@@ -36,7 +36,7 @@ history:
 - version: 5
   date: '2026-09-25'
   note: >-
-    Corrected against EDM2 (LIT-tmpzn7w1), the source's successor. The
+    Corrected against EDM2 (LIT-714), the source's successor. The
     body said the loss weight makes every noise level contribute equally;
     that holds at initialization and drifts as training proceeds, which
     EDM2 measures and replaces with an adaptive weighting. Also records
@@ -62,7 +62,7 @@ implementations:
 - Stable Diffusion 3
 extended_by:
 - SOTA-195
-- SOTA-tmpui8n0
+- SOTA-431
 explained_by:
 - THEORY-027
 ---
@@ -159,7 +159,7 @@ choice is neutral with respect to what is optimised.
 
 ## The equal weighting holds only at the start
 
-EDM2 ([LIT-tmpzn7w1](../literature.d/LIT-tmpzn7w1.md)), from the same group, reports what
+EDM2 ([LIT-714](../literature.d/LIT-714.md)), from the same group, reports what
 happens after initialization: the per-noise-level loss falls quickly in the
 middle of the range and hardly at all at the ends, so a static `λ(σ)` that
 balanced the gradients at step zero stops balancing them, and "no static

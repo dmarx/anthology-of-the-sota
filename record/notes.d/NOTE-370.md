@@ -1,6 +1,9 @@
 ---
+number: 370
 status: Read
-paper: LIT-tmpzn7w1
+formerly:
+- NOTE-tmpod74g
+paper: LIT-714
 title: 'EDM2'
 version: 1
 date: '2026-09-25'
@@ -14,10 +17,10 @@ summary: >-
   by 2% against 14% under guidance.
 ---
 
-<!-- inactive-ok-file: SOTA-tmp9x33t, SOTA-tmpui8n0 — Proposed practices filed from this reading; named as what it produced, not relied on -->
+<!-- inactive-ok-file: SOTA-428, SOTA-431 — Proposed practices filed from this reading; named as what it produced, not relied on -->
 <!-- inactive-ok-file: SOTA-282, SOTA-156, SOTA-408 — Proposed; named in Connections and Bearing as neighbours this paper does not source -->
 
-# NOTE-tmpod74g: EDM2
+# NOTE-370: EDM2
 
 ## Contribution
 
@@ -201,7 +204,7 @@ EMA of weights as given.
 
 ## Bearing on the record
 
-- **Produces** [SOTA-tmp9x33t](../practices.d/SOTA-tmp9x33t.md) (R1) and [SOTA-tmpui8n0](../practices.d/SOTA-tmpui8n0.md) (R2), both `Proposed`.
+- **Produces** [SOTA-428](../practices.d/SOTA-428.md) (R1) and [SOTA-431](../practices.d/SOTA-431.md) (R2), both `Proposed`.
   R3 is recorded in [SOTA-424](../practices.d/SOTA-424.md) rather than filed: one table, one model.
 - **[SOTA-188](../practices.d/SOTA-188.md)** — not a new source, but one sentence was wrong. The practice
   said the loss weight "cancels `c_out`'s scaling so that every noise level

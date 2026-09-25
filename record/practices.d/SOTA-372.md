@@ -20,7 +20,7 @@ history:
     `training-optimization` added. The practice's measured result is a
     training-cost one — 3× or more faster pretraining at lower memory — and
     SOTA-359 took the same topic on the same grounds. Written now because
-    SOTA-tmpfo9e5 extends both this practice and SOTA-359, joining their
+    SOTA-429 extends both this practice and SOTA-359, joining their
     lines, and this was the one member not carrying the topic the rest share
     (ADR-049). Recommendation unchanged.
 tags:
@@ -34,10 +34,10 @@ introduced_by:
 - LIT-601
 implementations: []
 extended_by:
-- SOTA-tmpfo9e5
+- SOTA-429
 ---
 
-<!-- inactive-ok-file: SOTA-tmpfo9e5 — Proposed; named in the history as the practice whose relation prompted the retag -->
+<!-- inactive-ok-file: SOTA-429 — Proposed; named in the history as the practice whose relation prompted the retag -->
 # SOTA-372: Run the encoder on visible tokens only and push the mask tokens into a small decoder you discard
 
 ## Source

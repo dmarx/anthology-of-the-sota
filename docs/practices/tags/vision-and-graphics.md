@@ -6,7 +6,7 @@
 
 **Vision and graphics** — neural rendering, reconstruction, perception, visual foundation models.
 
-32 of 426 SOTA documents. Back to the [full index](../README.md).
+33 of 431 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -42,3 +42,4 @@
 | [SOTA-401](../../../record/practices.d/SOTA-401.md) | Anchor the patch Gram matrix to an early teacher when training long, because dense features decay while global metrics improve |  | Proposed |
 | [SOTA-414](../../../record/practices.d/SOTA-414.md) | To make an image diffusion model a dense geometric predictor, fine-tune it end to end as a one-step model at t = T with a task loss | Martin Garcia et al. (WACV 2025), [LIT-687](../../../record/literature.d/LIT-687.md). Fix the timestep at T, feed zeros as the noise, decode the prediction through the frozen VAE, and train on the task's own loss: affine-invariant L1 for depth, angular error for normals. From 20K iterations on 74K synthetic images, the one-step model beats Marigold's 50-step, 10-member ensemble on depth AbsRel on all five zero-shot sets, and on normals by 2.6–3.0° of mean error. Starting from plain Stable Diffusion is nearly as good. | Proposed |
 | [SOTA-416](../../../record/practices.d/SOTA-416.md) v2 | When sampling a diffusion model in few steps, start at t = T: use trailing, not leading, timestep spacing | Martin Garcia et al. (WACV 2025), [LIT-687](../../../record/literature.d/LIT-687.md). DDIM's "leading" spacing never visits the final timestep. So at one step, a pure-noise input is labelled with a timestep that claims an almost clean sample. With the same weights and only the spacing changed, Marigold's single-step depth goes from noise to NYUv2 AbsRel 5.7. The mismatch vanishes as the step count approaches T, which is why it goes unnoticed at 50 steps. | Active |
+| [SOTA-429](../../../record/practices.d/SOTA-429.md) | Drop half the image patches when training a CLIP-style model, spend the saving on more pairs and a larger batch, and unmask only for a short final tune | Li et al. (2022), [LIT-706](../../../record/literature.d/LIT-706.md) — FLIP. Remove 50% of image patches and run the ViT on the rest, with CLIP's loss and nothing else. The saving buys a 2× larger batch at the same memory and 2× the samples per hour; ViT-L/16 on LAION-400M reaches its unmasked reproduction's accuracy more than 3× faster. The accuracy comes from what the saving buys: at equal batch, masking is parity. | Proposed |

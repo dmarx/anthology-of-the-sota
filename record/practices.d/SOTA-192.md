@@ -72,7 +72,7 @@ history:
   date: '2026-09-25'
   note: >-
     Records a controlled ablation from outside the language-model scaling
-    line. In LIT-tmpbukux's 20-layer attention-only decoder, removing QK-norm
+    line. In LIT-708's 20-layer attention-only decoder, removing QK-norm
     diverged at the tuned Muon rate. It was the only divergence in the study,
     and residual gates and ReZero residuals turned out neutral. It is one run
     at one rate and 24M parameters, so it is recorded in the body and not
@@ -263,7 +263,7 @@ the cost separately.
 
 ## An ablation from a model with no feed-forward layers
 
-[LIT-tmpbukux](../literature.d/LIT-tmpbukux.md) trains attention-only decoders, with every feed-forward layer
+[LIT-708](../literature.d/LIT-708.md) trains attention-only decoders, with every feed-forward layer
 deleted, to 48 layers and 105B tokens. It tested which component keeps them
 trainable. The authors expected residual gating. The answer was QK-norm.
 Removing it from the 20-layer, 24M-parameter model **diverged at the tuned

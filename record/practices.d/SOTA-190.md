@@ -33,7 +33,7 @@ history:
 - version: 3
   date: '2026-09-25'
   note: >-
-    Records the depth sweep in Narang et al. (LIT-tmpnc3oh): 6 to 24 layers at
+    Records the depth sweep in Narang et al. (LIT-711): 6 to 24 layers at
     a fixed 223M in the T5 codebase. Final loss is non-monotone in depth, and
     step rate falls as depth rises. The paper's own sentence that deeper
     models "tend to outperform" reads the table more generously than the
@@ -141,7 +141,7 @@ that says what is.
 
 ## A same-lineage sweep at fixed parameters, and what it shows
 
-Narang et al. ([LIT-tmpnc3oh](../literature.d/LIT-tmpnc3oh.md)) trade depth against feed-forward width and heads
+Narang et al. ([LIT-711](../literature.d/LIT-711.md)) trade depth against feed-forward width and heads
 at a fixed 223M in a T5 encoder-decoder, with hyperparameters fixed:
 
 | layers | final loss | steps/s |

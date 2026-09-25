@@ -6,7 +6,7 @@
 
 **Representation and encoding** — how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them.
 
-43 of 426 SOTA documents. Back to the [full index](../README.md).
+43 of 431 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -38,7 +38,7 @@
 | [SOTA-369](../../../record/practices.d/SOTA-369.md) | Curate a pretraining set by retrieving neighbours of curated seeds, rather than scaling the uncurated pool |  | Active |
 | [SOTA-370](../../../record/practices.d/SOTA-370.md) | Add many low-resolution views alongside the two full ones, because view count is what helps and resolution is what costs |  | Active |
 | [SOTA-371](../../../record/practices.d/SOTA-371.md) | Score topic coherence automatically as the average pointwise mutual information of a topic's top-word pairs, estimated on a large external reference corpus | Newman et al. (2010), [LIT-600](../../../record/literature.d/LIT-600.md) — when you cannot put every topic in front of people ([SOTA-368](../../../record/practices.d/SOTA-368.md)), approximate their judgment. Take the topic's top ten words and, for each of the 45 pairs, compute PMI from co-occurrence in 10-word windows over a large general corpus such as Wikipedia. Average the 45 scores. On 237 LDA topics this correlated with nine people's ratings at ρ ≈ 0.77, far better than WordNet measures. | Proposed |
-| [SOTA-372](../../../record/practices.d/SOTA-372.md) | Run the encoder on visible tokens only and push the mask tokens into a small decoder you discard |  | Active |
+| [SOTA-372](../../../record/practices.d/SOTA-372.md) v2 | Run the encoder on visible tokens only and push the mask tokens into a small decoder you discard |  | Active |
 | [SOTA-373](../../../record/practices.d/SOTA-373.md) v3 | Set the masking ratio by the signal's redundancy, not by the ratio that worked on text |  | Active |
 | [SOTA-374](../../../record/practices.d/SOTA-374.md) v4 | When learning embeddings from co-occurrence, subsample very frequent tokens, discarding each occurrence with probability 1 − √(t/f) with t around 10⁻⁵ | Mikolov et al. (2013), [LIT-603](../../../record/literature.d/LIT-603.md) — in a Zipfian corpus, the few most frequent words co-occur with everything and dominate the updates while teaching little. Discard each occurrence of word w with probability 1 − √(t/f(w)). This cut skip-gram training time by 2–3× and raised accuracy, only slightly for words (59 → 60% at NEG-5) but a lot for phrases (27 → 42% at NEG-15, 19 → 47% with hierarchical softmax). | Active |
 | [SOTA-375](../../../record/practices.d/SOTA-375.md) v2 | When training with sampled negatives, draw them from the unigram distribution raised to the 3/4 power, not from the unigram or uniform distribution | Mikolov et al. (2013), [LIT-603](../../../record/literature.d/LIT-603.md) — sample negatives in proportion to count^(3/4). That flattens the Zipfian head so frequent words are not nearly the only negatives, while keeping rare words rare. The authors report it "outperformed significantly the unigram and the uniform distributions … on every task we tried", but give no numbers. | Proposed |

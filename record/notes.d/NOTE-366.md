@@ -1,6 +1,9 @@
 ---
+number: 366
 status: Read
-paper: LIT-tmpiqgng
+formerly:
+- NOTE-tmp700wg
+paper: LIT-709
 title: 'Primer'
 version: 1
 date: '2026-09-25'
@@ -19,7 +22,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-158 — Proposed; named as the practice squared ReLU's unbounded range is in tension with, not relied on as settled -->
 
-# NOTE-tmp700wg: Primer
+# NOTE-366: Primer
 
 Read in full from arXiv v2 (24 Jan 2022). That covers §§1–5 and Appendix A
 in full: the primitives vocabulary, graph construction, halving hurdles,

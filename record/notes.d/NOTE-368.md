@@ -1,6 +1,9 @@
 ---
+number: 368
 status: Read
-paper: LIT-tmpbukux
+formerly:
+- NOTE-tmpim81g
+paper: LIT-708
 title: 'Attention-only transformers'
 version: 1
 date: '2026-09-25'
@@ -16,7 +19,7 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-403 — Proposed; named as a practice this paper bears on without settling, and its status is not relied on -->
 
-# NOTE-tmpim81g: Attention-only transformers
+# NOTE-368: Attention-only transformers
 
 ## Contribution
 

@@ -1,6 +1,9 @@
 ---
+number: 372
 status: Read
-paper: LIT-tmp5pttj
+formerly:
+- NOTE-tmpxei9t
+paper: LIT-704
 title: 'Dropout as a Bayesian approximation'
 version: 1
 date: '2026-09-25'
@@ -13,7 +16,7 @@ summary: >-
   MC-versus-weight-scaling comparison is stated without numbers.
 ---
 
-# NOTE-tmpxei9t: Dropout as a Bayesian approximation
+# NOTE-372: Dropout as a Bayesian approximation
 
 ## Contribution
 

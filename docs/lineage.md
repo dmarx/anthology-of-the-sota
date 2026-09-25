@@ -2,7 +2,7 @@
 
 # Lines of work
 
-58 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+57 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -189,6 +189,8 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-067](../record/literature.d/LIT-067.md) — Progressive Distillation for Fast Sampling of Diffusion Models *(Active)*
 - [LIT-070](../record/literature.d/LIT-070.md) — Hierarchical Text-Conditional Image Generation with CLIP Latents *(Active)*
   - [LIT-632](../record/literature.d/LIT-632.md) — Make-A-Video: Text-to-Video Generation without Text-Video Data *(Active)*
+- [LIT-075](../record/literature.d/LIT-075.md) — Elucidating the Design Space of Diffusion-Based Generative Models *(Active)*
+  - [LIT-714](../record/literature.d/LIT-714.md) — Analyzing and Improving the Training Dynamics of Diffusion Models *(Active)*
 - [LIT-439](../record/literature.d/LIT-439.md) — Deep Unsupervised Learning using Nonequilibrium Thermodynamics *(Active)*
   - [LIT-036](../record/literature.d/LIT-036.md) — Denoising Diffusion Probabilistic Models *(Active)*
     - [LIT-446](../record/literature.d/LIT-446.md) — Variational Diffusion Models *(Active)*
@@ -211,6 +213,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
         - [LIT-631](../record/literature.d/LIT-631.md) — From Slow Bidirectional to Fast Autoregressive Video Diffusion Models *(Active)* — also extends LIT-643
     - [LIT-699](../record/literature.d/LIT-699.md) — Diffusion Models Beat GANs on Image Synthesis *(Active)* — also extends LIT-439
       - [LIT-693](../record/literature.d/LIT-693.md) — Classifier-Free Diffusion Guidance *(Active)*
+    - [LIT-710](../record/literature.d/LIT-710.md) — Efficient Diffusion Training via Min-SNR Weighting Strategy *(Active)*
 - [LIT-448](../record/literature.d/LIT-448.md) — Scalable Diffusion Models with Transformers *(Active)*
   - [LIT-622](../record/literature.d/LIT-622.md) — CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer *(Active)* — also extends LIT-623
   - [LIT-624](../record/literature.d/LIT-624.md) — Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model *(Active)*
@@ -232,7 +235,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-689](../record/literature.d/LIT-689.md) — Common Diffusion Noise Schedules and Sample Steps are Flawed *(Active)*
   - [LIT-687](../record/literature.d/LIT-687.md) — Fine-Tuning Image-Conditional Diffusion Models is Easier than You Think *(Active)* — also extends LIT-691
 - [LIT-691](../record/literature.d/LIT-691.md) — Repurposing Diffusion-Based Image Generators for Monocular Depth Estimation *(Active)*
-- alongside: [LIT-075](../record/literature.d/LIT-075.md) — Elucidating the Design Space of Diffusion-Based Generative Models *(Active)*
 - alongside: [LIT-076](../record/literature.d/LIT-076.md) — DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps *(Active)*
 - alongside: [LIT-093](../record/literature.d/LIT-093.md) — Consistency Models *(Active)*
 - alongside: [LIT-483](../record/literature.d/LIT-483.md) — Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models *(Active)*
@@ -304,11 +306,29 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ## model-architecture
 
-### From Language Modeling with Gated Convolutional Networks
+### From Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer
 
+- [LIT-188](../record/literature.d/LIT-188.md) — Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer *(Active)*
+  - [LIT-187](../record/literature.d/LIT-187.md) — GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding *(Active)*
+    - [LIT-170](../record/literature.d/LIT-170.md) — DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models *(Active)*
+    - [LIT-189](../record/literature.d/LIT-189.md) — Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity *(Active)*
 - [LIT-199](../record/literature.d/LIT-199.md) — Language Modeling with Gated Convolutional Networks *(Active)*
   - [LIT-030](../record/literature.d/LIT-030.md) — GLU Variants Improve Transformer *(Active)*
     - [LIT-200](../record/literature.d/LIT-200.md) — PowLU: An Activation Function for Stable Pre-Training of LLMs *(Active)*
+- [LIT-666](../record/literature.d/LIT-666.md) — Sparse Distributed Memory *(Active)*
+  - [LIT-669](../record/literature.d/LIT-669.md) — Sparse Distributed Memory and Related Models *(Active)*
+    - [LIT-641](../record/literature.d/LIT-641.md) — Attention Approximates Sparse Distributed Memory *(Active)* — also extends LIT-666
+- alongside: [LIT-008](../record/literature.d/LIT-008.md) — Attention Is All You Need *(Active)*
+- alongside: [LIT-020](../record/literature.d/LIT-020.md) — Pay Less Attention with Lightweight and Dynamic Convolutions *(Active)*
+- alongside: [LIT-023](../record/literature.d/LIT-023.md) — Root Mean Square Layer Normalization *(Active)*
+- alongside: [LIT-047](../record/literature.d/LIT-047.md) — ReZero is All You Need: Fast Convergence at Large Depth *(Active)*
+- alongside: [LIT-425](../record/literature.d/LIT-425.md) — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer *(Active)*
+- alongside: [LIT-640](../record/literature.d/LIT-640.md) — Query-Key Normalization for Transformers *(Active)*
+- alongside: [LIT-651](../record/literature.d/LIT-651.md) — Transformers without Tears: Improving the Normalization of Self-Attention *(Active)*
+- alongside: [LIT-668](../record/literature.d/LIT-668.md) — ALBERT: A Lite BERT for Self-supervised Learning of Language Representations *(Active)*
+- alongside: [LIT-708](../record/literature.d/LIT-708.md) — A Controlled Study of Attention-Only Transformers *(Active)*
+- alongside: [LIT-709](../record/literature.d/LIT-709.md) — Primer: Searching for Efficient Transformers for Language Modeling *(Active)*
+- alongside: [LIT-711](../record/literature.d/LIT-711.md) — Do Transformer Modifications Transfer Across Implementations and Applications? *(Active)*
 
 ### From Hyper-Connections
 
@@ -319,13 +339,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-134](../record/literature.d/LIT-134.md) — Attention Residuals *(Active)*
 - alongside: [LIT-152](../record/literature.d/LIT-152.md) — On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability *(Active)*
 - alongside: [LIT-513](../record/literature.d/LIT-513.md) — mHC-lite: You Don't Need 20 Sinkhorn-Knopp Iterations *(Active)*
-
-### From Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer
-
-- [LIT-188](../record/literature.d/LIT-188.md) — Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer *(Active)*
-  - [LIT-187](../record/literature.d/LIT-187.md) — GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding *(Active)*
-    - [LIT-170](../record/literature.d/LIT-170.md) — DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models *(Active)*
-    - [LIT-189](../record/literature.d/LIT-189.md) — Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity *(Active)*
 
 ### From Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention
 
@@ -347,20 +360,23 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-583](../record/literature.d/LIT-583.md) — Highly accurate protein structure prediction with AlphaFold *(Active)*
   - [LIT-584](../record/literature.d/LIT-584.md) — Accurate structure prediction of biomolecular interactions with AlphaFold 3 *(Active)*
 
-### From Sparse Distributed Memory
-
-- [LIT-666](../record/literature.d/LIT-666.md) — Sparse Distributed Memory *(Active)*
-  - [LIT-669](../record/literature.d/LIT-669.md) — Sparse Distributed Memory and Related Models *(Active)*
-    - [LIT-641](../record/literature.d/LIT-641.md) — Attention Approximates Sparse Distributed Memory *(Active)* — also extends LIT-666
-- alongside: [LIT-640](../record/literature.d/LIT-640.md) — Query-Key Normalization for Transformers *(Active)*
-- alongside: [LIT-651](../record/literature.d/LIT-651.md) — Transformers without Tears: Improving the Normalization of Self-Attention *(Active)*
-
 ## model-stability
 
 ### From On Layer Normalization in the Transformer Architecture
 
 - [LIT-114](../record/literature.d/LIT-114.md) — On Layer Normalization in the Transformer Architecture *(Active)*
   - [LIT-639](../record/literature.d/LIT-639.md) — ResiDual: Transformer with Dual Residual Connections *(Active)*
+
+### From Improving neural networks by preventing co-adaptation of feature detectors
+
+- [LIT-394](../record/literature.d/LIT-394.md) — Improving neural networks by preventing co-adaptation of feature detectors *(Active)*
+  - [LIT-707](../record/literature.d/LIT-707.md) — Analysis of dropout learning regarded as ensemble learning *(Active)*
+
+### From Dropout: A Simple Way to Prevent Neural Networks from Overfitting
+
+- [LIT-395](../record/literature.d/LIT-395.md) — Dropout: A Simple Way to Prevent Neural Networks from Overfitting *(Active)*
+  - [LIT-704](../record/literature.d/LIT-704.md) — Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning *(Active)*
+  - [LIT-705](../record/literature.d/LIT-705.md) — Understanding the Disharmony between Dropout and Batch Normalization by Variance Shift *(Active)*
 
 ### From Momentum Contrast for Unsupervised Visual Representation Learning
 
@@ -381,13 +397,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-674](../record/literature.d/LIT-674.md) — Robust fine-tuning of zero-shot models *(Active)*
 - alongside: [LIT-675](../record/literature.d/LIT-675.md) — Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time *(Active)*
-
-## multimodal-learning
-
-### From Learning Transferable Visual Models From Natural Language Supervision
-
-- alongside: [LIT-588](../record/literature.d/LIT-588.md) — Learning Transferable Visual Models From Natural Language Supervision *(Active)*
-- alongside: [LIT-605](../record/literature.d/LIT-605.md) — Sigmoid Loss for Language Image Pre-Training *(Active)*
 
 ## numerics-and-precision
 
@@ -606,7 +615,10 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-216](../record/literature.d/LIT-216.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
   - [LIT-215](../record/literature.d/LIT-215.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*
-- alongside: [LIT-601](../record/literature.d/LIT-601.md) — Masked Autoencoders Are Scalable Vision Learners *(Active)*
+- [LIT-588](../record/literature.d/LIT-588.md) — Learning Transferable Visual Models From Natural Language Supervision *(Active)*
+  - [LIT-706](../record/literature.d/LIT-706.md) — Scaling Language-Image Pre-training via Masking *(Active)* — also extends LIT-601
+- [LIT-601](../record/literature.d/LIT-601.md) — Masked Autoencoders Are Scalable Vision Learners *(Active)*
+- alongside: [LIT-605](../record/literature.d/LIT-605.md) — Sigmoid Loss for Language Image Pre-Training *(Active)*
 
 ### From An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
 

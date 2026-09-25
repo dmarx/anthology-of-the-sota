@@ -1,6 +1,9 @@
 ---
+number: 362
 status: Read
-paper: LIT-tmpx7oed
+formerly:
+- NOTE-tmp1z5qc
+paper: LIT-712
 title: 'Integrated Gradients'
 version: 1
 date: '2026-09-25'
@@ -12,9 +15,9 @@ summary: >-
   its one comparison with another method is by eye.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpudd8t — Proposed; named as the practice this paper's argument sits against, not relied on as settled -->
+<!-- inactive-ok-file: SOTA-430 — Proposed; named as the practice this paper's argument sits against, not relied on as settled -->
 
-# NOTE-tmp1z5qc: Integrated Gradients
+# NOTE-362: Integrated Gradients
 
 ## Contribution
 
@@ -111,7 +114,7 @@ the only path that treats symmetric inputs symmetrically.
   identical attributions.
 - **Completeness** — attributions sum to the output difference. The paper calls
   it "a sanity check that the attribution method is somewhat comprehensive".
-  That is a different use of "sanity check" from [LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md)'s.
+  That is a different use of "sanity check" from [LIT-713](../literature.d/LIT-713.md)'s.
 - **Path method** — attribution by integrating gradients along a monotone path
   from `x′` to `x`.
 
@@ -122,7 +125,7 @@ baseline idea of DeepLift and LRP, whose Implementation Invariance it shows
 failing. Its theory is Aumann–Shapley cost sharing, via Friedman. It sets
 itself apart from LIME (implementation-invariant but not sensitive) and from
 attention weights, which are an incomplete account of influence in an LSTM.
-[LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md) later includes IG among the methods it randomizes.
+[LIT-713](../literature.d/LIT-713.md) later includes IG among the methods it randomizes.
 
 ## Recommendations
 
@@ -139,14 +142,14 @@ attention weights, which are an incomplete account of influence in an LSTM.
 - **R3** — Do not take the axioms as evidence that a map is faithful to the
   model. They exclude implementation dependence and dead-gradient zeros, and
   nothing else. *Topic:* analysis and evaluation. *Strength:* moderate, from
-  reading the axioms against [LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md).
+  reading the axioms against [LIT-713](../literature.d/LIT-713.md).
 
 ## Bearing on the record
 
 - No practice is sourced from this paper. R1 is sound and cheap, but it rests on
   a theorem plus one unmeasured sentence, and the record has no practice on
   computing attributions for it to belong to.
-- [SOTA-tmpudd8t](../practices.d/SOTA-tmpudd8t.md) (from [LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md)) is the practice this paper's argument sits
+- [SOTA-430](../practices.d/SOTA-430.md) (from [LIT-713](../literature.d/LIT-713.md)) is the practice this paper's argument sits
   against. Here, empirical evaluation is set aside as confounded. There, a
   specific empirical evaluation, randomization, is proposed because visual
   evaluation misleads. The two are compatible. This paper's objection is to
@@ -170,7 +173,7 @@ attention weights, which are an incomplete account of influence in an LSTM.
 
 ## Open questions
 
-- Is IG faithful to the model in any measurable sense? [LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md)'s result
+- Is IG faithful to the model in any measurable sense? [LIT-713](../literature.d/LIT-713.md)'s result
   suggests its magnitudes are dominated by the input.
 - How much do attributions change across reasonable baselines (black, noise,
   blurred)?

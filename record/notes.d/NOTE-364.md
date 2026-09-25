@@ -1,6 +1,9 @@
 ---
+number: 364
 status: Read
-paper: LIT-tmp68jdl
+formerly:
+- NOTE-tmp4wfnp
+paper: LIT-705
 title: 'Dropout and BN variance shift'
 version: 1
 date: '2026-09-25'
@@ -13,9 +16,9 @@ summary: >-
   avoids the cost, but adds only about 0.2 top-1 on ImageNet by itself.
 ---
 
-<!-- inactive-ok-file: SOTA-tmp0lvqr — Proposed; the practice this reading sources, filed with it -->
+<!-- inactive-ok-file: SOTA-427 — Proposed; the practice this reading sources, filed with it -->
 
-# NOTE-tmp4wfnp: Dropout and BN variance shift
+# NOTE-364: Dropout and BN variance shift
 
 ## Contribution
 
@@ -132,7 +135,7 @@ explaining.
 
 ## Bearing on the record
 
-- **Sources `SOTA-tmp0lvqr`** (R1 and R2), filed `Proposed` with
+- **Sources `SOTA-427`** (R1 and R2), filed `Proposed` with
   `consensus: unreplicated`. The practice is stated so it rests on C1–C2, and
   it says that C4 is small. It extends [SOTA-240](../practices.d/SOTA-240.md): this is where to put dropout
   once that practice says to use it.

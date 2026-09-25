@@ -173,6 +173,9 @@
     "ARXIV/1811.03600": {
       "title": "Measuring the Effects of Data Parallelism on Neural Network Training"
     },
+    "ARXIV/1811.05868": {
+      "title": "Pitfalls of Graph Neural Network Evaluation"
+    },
     "ARXIV/1811.06965": {
       "title": "GPipe: Efficient Training of Giant Neural Networks using Pipeline Parallelism"
     },

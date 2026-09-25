@@ -1,6 +1,9 @@
 ---
+number: 367
 status: Read
-paper: LIT-tmpnc3oh
+formerly:
+- NOTE-tmpeqzam
+paper: LIT-711
 title: 'Narang et al., transformer modifications'
 version: 1
 date: '2026-09-25'
@@ -19,7 +22,7 @@ summary: >-
 <!-- inactive-ok-file: SOTA-403 — Proposed; named as a practice this paper bears on without settling, and its status is not relied on -->
 <!-- inactive-ok-file: SOTA-190 — Proposed; named as a practice this paper bounds without confirming, and its status is not relied on -->
 
-# NOTE-tmpeqzam: Narang et al., transformer modifications
+# NOTE-367: Narang et al., transformer modifications
 
 ## Contribution
 

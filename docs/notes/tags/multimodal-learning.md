@@ -4,7 +4,7 @@
 
 **multimodal-learning**.
 
-11 of 361 NOTE documents. Back to the [full index](../README.md).
+12 of 372 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -19,3 +19,4 @@
 | [NOTE-333](../../../record/notes.d/NOTE-333.md) v2 | Wan | An open 14B text-to-video recipe whose evidence is mostly systems measurement: 2D context parallelism cuts communication overhead from over 10% to under 1%, and caching and 8-bit kernels give 1.62× and 1.27×. Its three modelling ablations run on 1.3B text-to-image. Two are read from training loss, and on FID one of them favours the rejected option. The applications in §5 are demonstrated almost entirely by figures. | Read |
 | [NOTE-344](../../../record/notes.d/NOTE-344.md) | HunyuanVideo | A 13B open text-to-video model whose one quantitative design argument is a pair of compute-optimal fits on a proxy family: the image fit puts more of each added FLOP into parameters (0.5634 against 0.4325), and the video fit, initialized from the image envelope, reverses it (0.3618 against 0.6289). No architectural or data choice is ablated, and the proxy differs from the shipped model in objective, text encoder and conditioning. | Read |
 | [NOTE-349](../../../record/notes.d/NOTE-349.md) | Make-A-Video | Make-A-Video extends an unCLIP text-to-image model to video with identity-initialized pseudo-3D conv and attention layers trained on video with no captions. Text reaches the video decoder only through one CLIP image embedding, so text-only-in-video associations cannot be learned, and the discussion concedes this. System-level results are strong (zero-shot UCF-101 FVD 367.23, MSR-VTT CLIPSIM 0.3049), and there is no ablation of any design choice, image initialization included. | Read |
+| [NOTE-371](../../../record/notes.d/NOTE-371.md) | FLIP | Removing 50% of image patches in CLIP training halves the image encoder's cost and lets the contrastive batch double at the same memory; ViT-L/16 on LAION-400M then matches its unmasked reproduction more than 3× faster and beats it by about a point at equal epochs. At equal batch the masking gains nothing, and at ViT-B/16 the full-schedule model is 0.2 behind — the improvement is the batch and the extra samples that masking pays for. | Read |

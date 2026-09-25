@@ -1,5 +1,8 @@
 ---
+number: 427
 status: Proposed
+formerly:
+- SOTA-tmp0lvqr
 consensus: unreplicated
 consensus_note: >-
   One group, one paper, convolutional image classifiers only. The
@@ -22,19 +25,19 @@ tags:
 - model-stability
 date: '2026-09-25'
 source:
-- LIT-tmp68jdl
+- LIT-705
 # No earlier document in or out of the record is known to state the placement
 # rule. Ioffe and Szegedy (LIT-002) observed that BN can remove the need for
 # dropout, which is a different instruction, and SENet adopted the arrangement
 # without stating or measuring it, as this paper itself notes.
 introduced_by:
-- LIT-tmp68jdl
+- LIT-705
 extends:
 - SOTA-240
 implementations:
-- 'SENet (ILSVRC 2017): its one dropout layer sits before the classifier, per LIT-tmp68jdl §5'
+- 'SENet (ILSVRC 2017): its one dropout layer sits before the classifier, per LIT-705 §5'
 summary: >-
-  Li et al. (2018; CVPR 2019), [LIT-tmp68jdl](../literature.d/LIT-tmp68jdl.md). BN freezes a moving variance
+  Li et al. (2018; CVPR 2019), [LIT-705](../literature.d/LIT-705.md). BN freezes a moving variance
   accumulated while dropout was scaling activations. At test time dropout
   stops, the variance changes, and every later BN normalizes by the wrong
   constant. The cost is large: 77.42% → 68.55% on CIFAR-100 for DenseNet with
@@ -44,11 +47,11 @@ summary: >-
 ---
 
 
-# SOTA-tmp0lvqr: In a batch-normalized network, put dropout after the last batch-norm layer, not upstream of one
+# SOTA-427: In a batch-normalized network, put dropout after the last batch-norm layer, not upstream of one
 
 ## Source
 
-Li, Chen, Hu and Yang (2018; CVPR 2019), [LIT-tmp68jdl](../literature.d/LIT-tmp68jdl.md) —
+Li, Chen, Hu and Yang (2018; CVPR 2019), [LIT-705](../literature.d/LIT-705.md) —
 [ARXIV-1801.05134](https://arxiv.org/abs/1801.05134).
 
 ## What to do

@@ -6,7 +6,7 @@
 
 **Multimodal learning** — what changes when one model has to take in more than one kind of signal — joint architectures and fusion, contrastive image-text training, cross-modal transfer, and what a second modality buys the first.
 
-8 of 426 SOTA documents. Back to the [full index](../README.md).
+9 of 431 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -18,3 +18,4 @@
 | [SOTA-377](../../../record/practices.d/SOTA-377.md) | Stop scaling the contrastive batch past about 32k, because the benefit saturates there |  | Active |
 | [SOTA-389](../../../record/practices.d/SOTA-389.md) v3 | Caption training video with a model that watches the video, not with captions of its frames |  | Proposed |
 | [SOTA-407](../../../record/practices.d/SOTA-407.md) v2 | Interpolate the zero-shot and fine-tuned weights at about half way rather than shipping the fine-tuned model | Wortsman et al. (2021), [LIT-674](../../../record/literature.d/LIT-674.md). Fine-tuning a zero-shot model spends the robustness that made it worth starting from. Ship `(1 − α)·θ_zero-shot + α·θ_fine-tuned` at **α = 0.5** instead: **+3.5 to +23.2 pp** under six distribution shifts against the fine-tuned model, with reference accuracy falling **by at most 0.3 pp** and usually rising, at no cost in training or inference. Requires that the fine-tuned weights were obtained *from* the zero-shot weights. | Active |
+| [SOTA-429](../../../record/practices.d/SOTA-429.md) | Drop half the image patches when training a CLIP-style model, spend the saving on more pairs and a larger batch, and unmask only for a short final tune | Li et al. (2022), [LIT-706](../../../record/literature.d/LIT-706.md) — FLIP. Remove 50% of image patches and run the ViT on the rest, with CLIP's loss and nothing else. The saving buys a 2× larger batch at the same memory and 2× the samples per hour; ViT-L/16 on LAION-400M reaches its unmasked reproduction's accuracy more than 3× faster. The accuracy comes from what the saving buys: at equal batch, masking is parity. | Proposed |

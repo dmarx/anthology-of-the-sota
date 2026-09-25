@@ -36,12 +36,12 @@ history:
   date: '2026-09-25'
   note: >-
     Records an outside test of cross-layer sharing and of the Universal
-    Transformer. Narang et al. (LIT-tmpnc3oh) found all-shared,
+    Transformer. Narang et al. (LIT-711) found all-shared,
     encoder-only and decoder-only sharing worse than no sharing. The
     Universal Transformer did not match a vanilla baseline even after 25
     tuning runs. Neither tests the attention/FFN split. The paragraph that
     cited the Universal Transformer's gain as pointing the other way now says
-    the gain did not reproduce. Also notes that LIT-tmpbukux gives the
+    the gain did not reproduce. Also notes that LIT-708 gives the
     mechanism paragraph deletion evidence. Recommendation, status and
     consensus are unchanged.
 tags:
@@ -136,7 +136,7 @@ because the two are compatible — the question of whether sharing helps overall
 is open, and which half to share if you do is what got measured.
 
 **The Universal Transformer's gain did not reproduce, and neither did sharing in
-general.** Narang et al. ([LIT-tmpnc3oh](../literature.d/LIT-tmpnc3oh.md)) reimplemented both in a 223M T5
+general.** Narang et al. ([LIT-711](../literature.d/LIT-711.md)) reimplemented both in a 223M T5
 encoder-decoder with hyperparameters fixed. The Universal Transformer reached
 early pre-training loss 2.40 against the vanilla 2.182, at about 4× the
 FLOPs. A 25-configuration sweep brought it to 2.265 and "we were ultimately
@@ -147,7 +147,7 @@ second measurement that sharing costs quality. It still does not test the
 split. No configuration there shares attention alone, so the asymmetry
 remains one group's result.
 
-**On the mechanism, one causal data point.** [LIT-tmpbukux](../literature.d/LIT-tmpbukux.md) deletes the
+**On the mechanism, one causal data point.** [LIT-708](../literature.d/LIT-708.md) deletes the
 feed-forward layers from a small decoder and moves the parameters into
 attention depth. What is lost is almost entirely prediction on tokens the
 context cannot help with, which the authors call parametric recall. That fits

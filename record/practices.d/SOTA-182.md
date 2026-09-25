@@ -9,7 +9,7 @@ history:
 - version: 2
   date: '2026-09-25'
   note: >-
-    Records an outside re-run. Narang et al. (LIT-tmpnc3oh) reproduce the loss
+    Records an outside re-run. Narang et al. (LIT-711) reproduce the loss
     gain over LayerNorm in a T5 codebase, and it is added as a corroborating
     source. They measure a speedup of about 2–5%, not LIT-023's 7–64%, and
     the downstream gain does not hold once relative position biases are
@@ -21,7 +21,7 @@ consensus: universal
 date: '2026-09-08'
 source:
 - LIT-023
-- LIT-tmpnc3oh
+- LIT-711
 introduced_by:
 - LIT-023
 implementations:
@@ -51,7 +51,7 @@ the settings it measures.
 
 ## What an outside re-run found
 
-Narang et al. ([LIT-tmpnc3oh](../literature.d/LIT-tmpnc3oh.md)) swapped LayerNorm for RMSNorm in a 223M T5
+Narang et al. ([LIT-711](../literature.d/LIT-711.md)) swapped LayerNorm for RMSNorm in a 223M T5
 encoder-decoder with every other hyperparameter fixed. RMSNorm was one of the
 few changes among about fifty that beat the baseline. Early loss was **2.167 ± 0.008 against 2.182 ±
 0.005** over five seeds, final loss 1.821 against 1.838, and it won on all

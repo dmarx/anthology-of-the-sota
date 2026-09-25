@@ -1,6 +1,9 @@
 ---
+number: 363
 status: Read
-paper: LIT-tmpbrl92
+formerly:
+- NOTE-tmp3z8n7
+paper: LIT-707
 title: 'Dropout as ensemble learning'
 version: 1
 date: '2026-09-25'
@@ -11,7 +14,7 @@ summary: >-
   10 trials, with no derivation, no numbers, one `p` and one toy model.
 ---
 
-# NOTE-tmp3z8n7: Dropout as ensemble learning
+# NOTE-363: Dropout as ensemble learning
 
 ## Contribution
 

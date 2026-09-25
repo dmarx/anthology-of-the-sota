@@ -1,5 +1,8 @@
 ---
+number: 429
 status: Proposed
+formerly:
+- SOTA-tmpfo9e5
 promote_when: >-
   A group other than the authors trains a CLIP-style model with and without
   image-patch masking on the same data and reports the pair at matched
@@ -16,16 +19,16 @@ tags:
 - vision-and-graphics
 date: '2026-09-25'
 source:
-- LIT-tmparvj2
+- LIT-706
 introduced_by:
-- LIT-tmparvj2
+- LIT-706
 extends:
 - SOTA-359
 - SOTA-372
 implementations:
 - 'facebookresearch/flip'
 summary: >-
-  Li et al. (2022), [LIT-tmparvj2](../literature.d/LIT-tmparvj2.md) — FLIP. Remove 50% of image patches and run
+  Li et al. (2022), [LIT-706](../literature.d/LIT-706.md) — FLIP. Remove 50% of image patches and run
   the ViT on the rest, with CLIP's loss and nothing else. The saving buys a 2×
   larger batch at the same memory and 2× the samples per hour; ViT-L/16 on
   LAION-400M reaches its unmasked reproduction's accuracy more than 3× faster.
@@ -33,12 +36,12 @@ summary: >-
   parity.
 ---
 
-# SOTA-tmpfo9e5: Drop half the image patches when training a CLIP-style model, spend the saving on more pairs and a larger batch, and unmask only for a short final tune
+# SOTA-429: Drop half the image patches when training a CLIP-style model, spend the saving on more pairs and a larger batch, and unmask only for a short final tune
 
 ## Source
 
-Li, Fan, Hu, Feichtenhofer and He (2022), [LIT-tmparvj2](../literature.d/LIT-tmparvj2.md) — [ARXIV-2212.00794](https://arxiv.org/abs/2212.00794);
-read as [NOTE-tmpr24hg](../notes.d/NOTE-tmpr24hg.md).
+Li, Fan, Hu, Feichtenhofer and He (2022), [LIT-706](../literature.d/LIT-706.md) — [ARXIV-2212.00794](https://arxiv.org/abs/2212.00794);
+read as [NOTE-371](../notes.d/NOTE-371.md).
 
 ## What to do
 

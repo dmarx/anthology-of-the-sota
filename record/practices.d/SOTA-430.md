@@ -1,5 +1,8 @@
 ---
+number: 430
 status: Proposed
+formerly:
+- SOTA-tmpudd8t
 promote_when: >-
   A group other than the authors applies both randomization tests to a
   setting where the true dependence of the output on the input is KNOWN by
@@ -25,17 +28,17 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-25'
 source:
-- LIT-tmpzf4pd
+- LIT-713
 # The same authors stated the parameter-sensitivity check first, in "Local
 # explanation methods for deep neural networks lack sensitivity to parameter
 # values" (Adebayo, Gilmer, Goodfellow and Kim, 2018; ICLR workshop), which this
 # paper cites as [37]. That paper is not held. The two-test form, and the
 # instruction to run the tests before deploying a method, are stated here.
 introduced_by:
-- LIT-tmpzf4pd
+- LIT-713
 implementations: []
 summary: >-
-  Adebayo et al. (2018), [LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md), read as [NOTE-tmp5d8h0](../notes.d/NOTE-tmp5d8h0.md). An attribution map
+  Adebayo et al. (2018), [LIT-713](../literature.d/LIT-713.md), read as [NOTE-365](../notes.d/NOTE-365.md). An attribution map
   that survives re-initializing the model's weights, or retraining on permuted
   labels, cannot be telling you about the weights or the labels. Guided
   Backprop and Guided GradCAM survive the first above the lowest layers, and
@@ -44,13 +47,13 @@ summary: >-
   classifiers only, and pass or fail is read from curves.
 ---
 
-# SOTA-tmpudd8t: Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks
+# SOTA-430: Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks
 
 ## Source
 
 Adebayo, Gilmer, Muelly, Goodfellow, Hardt and Kim (2018; NeurIPS 2018),
-[LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md) — [ARXIV-1810.03292](https://arxiv.org/abs/1810.03292), read in full (v3, November 2020) as
-[NOTE-tmp5d8h0](../notes.d/NOTE-tmp5d8h0.md). The instruction is the paper's own: "our tests can be thought of
+[LIT-713](../literature.d/LIT-713.md) — [ARXIV-1810.03292](https://arxiv.org/abs/1810.03292), read in full (v3, November 2020) as
+[NOTE-365](../notes.d/NOTE-365.md). The instruction is the paper's own: "our tests can be thought of
 as sanity checks to perform before deploying a method in practice."
 
 ## Do this
@@ -88,7 +91,7 @@ similar" to the trained network's.
 | Integrated Gradients, gradient⊙input | structure persists; sign decorrelates | sign changes; input structure "clearly prevalent" |
 
 The paper names gradients and GradCAM as passing and Guided Backprop and Guided
-GradCAM as failing. **It gives Integrated Gradients ([LIT-tmpx7oed](../literature.d/LIT-tmpx7oed.md)) no verdict**,
+GradCAM as failing. **It gives Integrated Gradients ([LIT-712](../literature.d/LIT-712.md)) no verdict**,
 and neither does this practice.
 
 ## What the evidence does not cover

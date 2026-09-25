@@ -1,5 +1,8 @@
 ---
+number: 431
 status: Proposed
+formerly:
+- SOTA-tmpui8n0
 promote_when: >-
   A group outside NVIDIA applies magnitude-preserving layers with forced
   weight normalization to a denoiser that is not an ADM-style U-Net — a
@@ -17,15 +20,15 @@ tags:
 - generative-modeling
 date: '2026-09-25'
 source:
-- LIT-tmpzn7w1
+- LIT-714
 introduced_by:
-- LIT-tmpzn7w1
+- LIT-714
 extends:
 - SOTA-188
 implementations:
 - 'NVlabs/edm2'
 summary: >-
-  Karras et al. (2023), [LIT-tmpzn7w1](../literature.d/LIT-tmpzn7w1.md) — EDM2. Normalize each output channel's
+  Karras et al. (2023), [LIT-714](../literature.d/LIT-714.md) — EDM2. Normalize each output channel's
   weight vector on use, re-normalize the stored weights after every step,
   scale every fixed operation to preserve unit magnitude, and drop the group
   norms. On the ADM U-Net at ImageNet-512 this takes FID from 6.96 to 2.56 at
@@ -35,12 +38,12 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-282 — Proposed; named as the transformer-side sibling this practice has never been compared against, not as support -->
 
-# SOTA-tmpui8n0: Make every layer of a diffusion denoiser preserve activation magnitude, and force each weight vector back to fixed norm after every step
+# SOTA-431: Make every layer of a diffusion denoiser preserve activation magnitude, and force each weight vector back to fixed norm after every step
 
 ## Source
 
-Karras et al. (2023), [LIT-tmpzn7w1](../literature.d/LIT-tmpzn7w1.md) — [ARXIV-2312.02696](https://arxiv.org/abs/2312.02696), §2 and Appendix B;
-read as [NOTE-tmpod74g](../notes.d/NOTE-tmpod74g.md).
+Karras et al. (2023), [LIT-714](../literature.d/LIT-714.md) — [ARXIV-2312.02696](https://arxiv.org/abs/2312.02696), §2 and Appendix B;
+read as [NOTE-370](../notes.d/NOTE-370.md).
 
 ## The problem it removes
 

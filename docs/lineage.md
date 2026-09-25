@@ -364,6 +364,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-208](../record/literature.d/LIT-208.md) — Rope to Nope and Back Again: A New Hybrid Attention Strategy *(Active)*
   - [LIT-209](../record/literature.d/LIT-209.md) — SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling *(Active)*
 - alongside: [LIT-048](../record/literature.d/LIT-048.md) — Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation *(Active)*
+- alongside: [LIT-665](../record/literature.d/LIT-665.md) — Transformer Language Models without Positional Encodings Still Learn Positional Information *(Active)*
 
 ### From Neural Discrete Representation Learning
 

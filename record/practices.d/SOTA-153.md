@@ -27,7 +27,7 @@ history:
 - version: 3
   date: '2026-09-25'
   note: >-
-    Adds LIT-tmpbi5gf to `source:` and splits a result the record had attached
+    Adds LIT-665 to `source:` and splits a result the record had attached
     to the wrong paper. This document's comment named LIT-207 (2023) as "the
     result the other three rest on" for a decoder-only model representing
     position without an encoding; the absolute-position half of that, with the
@@ -43,10 +43,10 @@ tags:
 date: '2026-09-07'
 source:
 # The origin, then the two designs that arrived at the layout independently.
-# LIT-207 and LIT-tmpbi5gf are not hybrid papers — they are the result the
+# LIT-207 and LIT-665 are not hybrid papers — they are the result the
 # other three rest on. The split between them, corrected at v3: the claim that
 # a decoder-only model recovers ABSOLUTE position without an encoding, and the
-# causal-mask mechanism for it, is LIT-tmpbi5gf (Haviv et al. 2022);
+# causal-mask mechanism for it, is LIT-665 (Haviv et al. 2022);
 # LIT-207 (Kazemnejad et al. 2023) is the length-generalization comparison and
 # the relative-position half. "Lose nothing" is also narrowed — see the body.
 # LIT-131 came out. The comment below used to end "then the deployments",
@@ -57,7 +57,7 @@ source:
 - LIT-209
 - LIT-133
 - LIT-207
-- LIT-tmpbi5gf
+- LIT-665
 introduced_by:
 - LIT-208
 implementations:
@@ -115,13 +115,13 @@ recurrence sitting beneath it already has.
 ## Why a layer can go without an encoding at all
 
 This practice removes positional encoding from some layers, and the reason that
-is possible is not in the hybrid papers. Haviv et al. ([LIT-tmpbi5gf](../literature.d/LIT-tmpbi5gf.md)) showed
+is possible is not in the hybrid papers. Haviv et al. ([LIT-665](../literature.d/LIT-665.md)) showed
 in 2022 that a decoder-only LM given **no** positional information is
 competitive — 0.05 perplexity from learned embeddings at 1.3B on the Pile —
 and probed where the position comes from: absent at layer 1, recovered
 **within four layers**, as accurate as learned embeddings by mid-network.
 
-[THEORY-tmptf1pd](../theory.d/THEORY-tmptf1pd.md) is the mechanism: the causal mask itself carries position,
+[THEORY-102](../theory.d/THEORY-102.md) is the mechanism: the causal mask itself carries position,
 because a token that can count its attendable predecessors knows its index.
 Two consequences bear directly on this recommendation.
 

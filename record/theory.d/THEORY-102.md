@@ -1,5 +1,8 @@
 ---
+number: 102
 status: Active
+formerly:
+- THEORY-tmptf1pd
 title: 'A causal mask implicitly encodes absolute position, because a token can count how many predecessors it may attend to'
 version: 1
 tags:
@@ -7,9 +10,9 @@ tags:
 - model-architecture
 date: '2026-09-25'
 source:
-- LIT-tmpbi5gf
+- LIT-665
 summary: >-
-  Haviv et al. (2022), [LIT-tmpbi5gf](../literature.d/LIT-tmpbi5gf.md). A decoder-only transformer given no
+  Haviv et al. (2022), [LIT-665](../literature.d/LIT-665.md). A decoder-only transformer given no
   positional encoding recovers absolute position within four layers, and the
   reason is the mask: a token that can count its attendable predecessors knows
   its index. The account's prediction is that removing the mask removes the
@@ -17,11 +20,11 @@ summary: >-
   degrade — it fails, at **147.18 perplexity against 4.00**.
 ---
 
-# THEORY-tmptf1pd: A causal mask implicitly encodes absolute position, because a token can count how many predecessors it may attend to
+# THEORY-102: A causal mask implicitly encodes absolute position, because a token can count how many predecessors it may attend to
 
 ## Source
 
-Haviv, Ram, Press, Izsak and Levy (2022), `LIT-tmpbi5gf`.
+Haviv, Ram, Press, Izsak and Levy (2022), `LIT-665`.
 
 ## The claim
 

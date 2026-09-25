@@ -55,7 +55,7 @@ is an ensemble" cannot by itself explain why dropout helps.
 | C1 | At test time a dropout network can be read as an ensemble of trained and untrained half-networks | weak | Informal argument around Eq. 6, stated for `p = 0.5` only |
 | C2 | Dropout beats an architecture-matched ensemble of independently trained halves | weak | Fig. 5(a) vs 5(b), a cross-panel visual comparison, one toy model, one `p`, no numbers |
 | C3 | Dropout's regularization equals L2's | weak | Fig. 6 vs Fig. 5(b) visually; `α` unreported; i.i.d. unit-variance inputs make a data-scaled penalty and plain L2 hard to tell apart |
-| C4 | Dropout has no tuning parameter, unlike L2 | unsupported | `p` is a tuning parameter; only 0.5 is run |
+| C4 | Dropout has no tuning parameter, unlike L2 | weak | None: `p` is a tuning parameter, and only 0.5 is run |
 
 ## Concepts
 

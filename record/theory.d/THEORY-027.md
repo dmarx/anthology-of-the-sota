@@ -20,6 +20,8 @@ summary: >-
   the generative distribution therefore depend on the schedule through two
   numbers, and variance-preserving and variance-exploding specifications are
   the same model up to a rescaling of the latents.
+extended_by:
+- THEORY-tmpxkux1
 ---
 
 # THEORY-027: In continuous time the diffusion bound depends on the noise schedule only through its endpoints

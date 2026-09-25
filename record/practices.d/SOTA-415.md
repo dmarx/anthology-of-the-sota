@@ -18,18 +18,25 @@ promote_when: >-
   against an unannealed checkpoint does not count, because that is the
   premise, not the claim.
 title: 'During a warmup-stable-decay run, estimate the annealed score from a uniform average of recent stable-phase checkpoints instead of launching a decay branch'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-25'
   note: >-
     Qualifies one of the two reasons given for uniform averaging. "It has no
     hyperparameter" was true as a description of uniform averaging and false as an
-    argument for it: LIT-720 shows the averaging length can be swept after
+    argument for it: LIT-714 shows the averaging length can be swept after
     the run from stored snapshots, so the hyperparameter is avoidable rather than
     unaffordable — and this practice's own next bullet is a heuristic for tuning a
     window, which is the hyperparameter it said there was not one of.
     Recommendation, status and consensus unchanged.
+- version: 3
+  date: '2026-09-25'
+  note: >-
+    Repoints v2's references. They named LIT-720 and SOTA-432, which were a
+    duplicate filing of 2312.02696 retired the same day; the live documents are
+    LIT-714 and SOTA-428. The qualification itself is unchanged and was not part
+    of the duplicate — SOTA-428 does not mention this practice.
 tags:
 - training-optimization
 - analysis-and-evaluation
@@ -54,6 +61,8 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-156 — Proposed; named as the rival practice for dropping the
      decay, which this one explicitly does not recommend -->
+
+<!-- inactive-ok-file: SOTA-428, SOTA-432, LIT-720 — SOTA-428 is Proposed and named as the alternative to a heuristic this practice carries, not as settled support. SOTA-432 and LIT-720 appear only in a v3 history note recording that v2's references pointed at a duplicate filing that was retired the same day; naming a retired code is the point of that note. -->
 
 # SOTA-415: During a warmup-stable-decay run, estimate the annealed score from a uniform average of recent stable-phase checkpoints instead of launching a decay branch
 
@@ -80,7 +89,7 @@ curve. Launch the actual decay for the model you release.
 - **The window is a hyperparameter, and it does not have to be guessed.** The
   bullet above is a heuristic for tuning one, so "uniform averaging has no
   hyperparameter" — this practice's v1 wording — was describing the *scheme*
-  rather than the choice. [SOTA-432](SOTA-432.md) is the alternative: keep two
+  rather than the choice. [SOTA-428](SOTA-428.md) is the alternative: keep two
   power-function averages during the run and reconstruct any window afterwards by
   least squares, which works retroactively from stored snapshots at reduced
   accuracy. That makes the window measurable on runs already finished instead of

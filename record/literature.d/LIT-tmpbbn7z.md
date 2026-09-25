@@ -1,0 +1,163 @@
+---
+status: Active
+title: 'Diffusion Models Beat GANs on Image Synthesis'
+version: 1
+tags:
+- generative-modeling
+- analysis-and-evaluation
+- model-architecture
+date: '2026-09-25'
+published: '2021-05-11'
+arxiv: '2105.05233'
+first_author: 'Dhariwal'
+keywords:
+- 'classifier-guidance'
+- 'diffusion'
+- 'adagn'
+- 'precision-recall'
+- 'imagenet'
+implementations:
+- 'guided-diffusion'
+- 'ADM'
+- 'ADM-G'
+- 'ADM-U'
+summary: >-
+  Dhariwal and Nichol (2021), [ARXIV-2105.05233](https://arxiv.org/abs/2105.05233). The classifier-guidance paper,
+  the ablated U-Net the diffusion literature then treated as the default, and
+  the source of the guidance-scale trade. Its title claim is metric-dependent and the paper says
+  so: ADM-G beats BigGAN-deep on FID and recall at 128, 256 and 512, and
+  **loses on precision at all three** — 0.78 against 0.86, 0.82 against 0.87,
+  0.87 against 0.88. It also asserts, once, in the introduction, that the
+  gradient scale can be raised "by an order of magnitude without obtaining
+  adversarial examples", and runs no experiment anywhere in the paper that
+  tests it.
+---
+
+# LIT-tmpbbn7z: Diffusion Models Beat GANs on Image Synthesis
+
+Dhariwal and Nichol (2021) — [ARXIV-2105.05233](https://arxiv.org/abs/2105.05233)
+
+## Key takeaways
+
+- **Classifier guidance: train a classifier on the noised images, then shift
+  each sampling step's mean by `s·Σ∇ₓ log p_φ(y|xₜ)`.** The derivation is a
+  Taylor expansion of `log p_φ(y|xₜ)` around the predicted mean, valid because
+  `‖Σ‖ → 0` as the step count grows (Alg. 1). DDIM needs a separate route,
+  through the score identity `∇ₓ log p_θ(xₜ) = −ε_θ(xₜ)/√(1−ᾱₜ)`, giving a
+  modified noise prediction (Alg. 2) — two derivations, because the first one
+  only holds for stochastic sampling.
+- **The scale `s` is not a free knob: `s·∇ₓ log p(y|x) = ∇ₓ log (1/Z)·p(y|x)^s`.**
+  Raising it samples from a sharpened classifier distribution. That is the
+  whole account of why it works, and it is a good one.
+- **The architecture is an ablation, not a design.** ImageNet 128×128, FID at
+  700K/1200K iterations from a 15.33/13.21 baseline: more heads −0.54/−0.82,
+  attention at 32+16+8 rather than 16 alone −0.72/−0.66, BigGAN up/downsampling
+  blocks −1.20/−1.21, combined −3.14/−3.00. Adaptive group normalization
+  (`AdaGN(h,y) = y_s·GroupNorm(h) + y_b`) against the DDPM addition-then-norm
+  layer: 13.06 against 15.08.
+- **One of the five changes made FID worse**, and it is the one everybody else
+  had adopted: rescaling residual connections by `1/√2`, following Song et al.
+  and both StyleGAN papers, cost +0.16/+0.25.
+- **Two of the recommended settings are not the FID-best ones, and the paper
+  says so both times.** Increased depth improves FID but "takes longer to reach
+  the same performance as a wider model", so it is dropped. On head width, from
+  a one-head baseline of 14.08 FID, 32 channels per head gives −1.36 and 64
+  gives −1.03 — and they choose 64, for wall-clock time. Anyone copying "64
+  channels per head" or the final depth from this paper is copying a latency
+  decision, not the ablation's winner.
+- **Guidance trades diversity for fidelity, and FID's optimum is interior.**
+  Scaling past 1.0 "smoothly trades off recall for higher precision and IS",
+  and "since FID and sFID depend on both diversity and fidelity, their best
+  values are obtained at an intermediate point" (§4.3, Fig. 4). ImageNet
+  256×256, 2M iterations:
+
+  | conditional | guidance | FID | sFID | IS | Prec | Rec |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | ✗ | — | 26.21 | 6.35 | 39.70 | 0.61 | 0.63 |
+  | ✗ | 1.0 | 33.03 | 6.99 | 32.92 | 0.56 | 0.65 |
+  | ✗ | 10.0 | 12.00 | 10.40 | 95.41 | 0.76 | 0.44 |
+  | ✓ | — | 10.94 | 6.02 | 100.98 | 0.69 | 0.63 |
+  | ✓ | 1.0 | **4.59** | 5.25 | 186.70 | 0.82 | 0.52 |
+  | ✓ | 10.0 | 9.11 | 10.93 | 283.92 | 0.88 | 0.32 |
+
+  Guidance at 1.0 on an unconditional model makes FID **worse** (33.03 against
+  26.21) while the classifier's own confidence rises — the failure that
+  motivated scaling in the first place.
+- **The title claim is true on FID and false on precision, at every
+  resolution.** Table 5:
+
+  | ImageNet | model | FID ↓ | Prec ↑ | Rec ↑ |
+  | --- | --- | --- | --- | --- |
+  | 128 | BigGAN-deep | 6.02 | **0.86** | 0.35 |
+  | 128 | ADM-G | **2.97** | 0.78 | **0.59** |
+  | 256 | BigGAN-deep | 6.95 | **0.87** | 0.28 |
+  | 256 | ADM-G | **4.59** | 0.82 | **0.52** |
+  | 512 | BigGAN-deep | 8.43 | **0.88** | 0.29 |
+  | 512 | ADM-G | **7.72** | 0.87 | **0.42** |
+
+  The paper states the exception rather than burying it: classifier guidance
+  "is only a better choice up until a certain precision threshold, after which
+  point it cannot achieve better precision".
+- **Guidance and upsampling are complementary, not substitutes.** Upsampling
+  raises precision at constant recall; guidance buys precision with recall.
+  Combining them gives the paper's best numbers — 3.94 at 256×256 and 3.85 at
+  512×512 (Table 6) — and guidance is applied only to the low-resolution stage.
+- **Temperature is not a cheaper guidance.** Appendix G tries both ways of
+  lowering temperature and finds "neither technique provides any substantial
+  improvement", with low temperatures giving **low precision and low recall
+  together** and visibly blurry images. So the fidelity/diversity knob is not
+  simply sharpening the sampling distribution.
+- **The deployed scales are small.** The swept classifier scales were
+  [0.5, 1, 2] at 128 and 256 and up to 5 at 512 (App. I). The scale 10.0 rows
+  and the "order of magnitude" claim come from the *unconditional* setting.
+
+## The claim with no experiment behind it
+
+The introduction says the gradient scale can be raised
+
+> by an order of magnitude without obtaining adversarial examples
+
+with a citation to Szegedy et al. (2013). **The word "adversarial" appears
+nowhere else in the paper** — not in §4, not in the limitations, not in any
+appendix. There is no adversarial-example test, no robustness check, no
+comparison against a held-out classifier. The support is Figure 3, which shows
+that scale 10.0 gives "much more class-consistent images" on visual inspection,
+and a metrics table computed with Inception.
+
+The nearest thing to a check is Appendix C, and it is about a different worry —
+memorization — tested by looking at nearest neighbours "for a handful of
+samples" **in InceptionV3 feature space**. If guidance moves samples toward
+ImageNet-class modes, Inception distance is the wrong instrument for asking
+where those samples came from. The circularity that makes the adversarial
+question hard is the same circularity that makes this check weak.
+
+<!-- inactive-ok: THEORY-109 — Proposed, and its being Proposed is the point of the paragraph: this note is the evidence that neither paper measured the question, which is why the account is not in force. -->
+This changes the shape of what [THEORY-109](../theory.d/THEORY-109.md) is about. The order was not
+"raised by Ho and Salimans, already answered here". It was **asserted away
+here, unmeasured, and raised a year later** — so the record holds two papers
+that both gesture at the question and a measurement from neither.
+
+## Standing in the anthology
+
+Filed because it had become the record's most-cited unread paper. Four
+documents used it as an instrument or an authority while nothing held it:
+[LIT-448](LIT-448.md) on what it ablated, [NOTE-340](../notes.d/NOTE-340.md) for its U-Net and a throughput
+comparison, [LIT-630](LIT-630.md)'s controlled path comparison on the same U-Net, and
+[LIT-676](LIT-676.md)'s entire ImageNet table. [LIT-693](LIT-693.md), filed hours earlier, is a claim
+about this paper.
+
+What it supplies:
+
+- the source for [SOTA-337](../practices.d/SOTA-337.md)'s sampling-loop case, which that practice's own
+  source suspected and no document here had an example of;
+- [SOTA-tmpyc66w](../practices.d/SOTA-tmpyc66w.md), the precision/recall reporting practice, from Table 5's
+  disagreement between FID and precision;
+- the measured statement of the fidelity/diversity trade that
+  [SOTA-424](../practices.d/SOTA-424.md) inherits and reparameterizes;
+- the U-Net, AdaGN and attention configuration that [LIT-448](LIT-448.md), [NOTE-340](../notes.d/NOTE-340.md) and
+  [LIT-630](LIT-630.md) were already treating as given.
+
+**What it does not settle.** Whether classifier guidance's own gains were
+partly adversarial against Inception. The paper denies it in one clause and
+never measures it; the successor raises it and measures it only with Inception.
+Both sides of the question are now held here and neither answers it.

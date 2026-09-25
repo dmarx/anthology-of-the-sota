@@ -1,0 +1,102 @@
+---
+status: Active
+title: 'Theories get a chain of their own: lines of explanation'
+version: 1
+tags:
+- record
+- mechanism
+date: '2026-09-25'
+influenced_by:
+- ADR-011
+- ADR-031
+summary: >-
+  A third chain, `theory`, walks `extends:` and `corrects:` between THEORY
+  documents and renders `docs/theory-lines.md`, "Lines of explanation". It
+  mirrors the two chains [ADR-011](ADR-011.md) set up for papers and practices, with the
+  same `tags` invariant. It has no sibling relation, because THEORY declares
+  none, and is faceted by status alone, because a theory has no consensus
+  field. On the record as filed it walks 11 lines, and every one is bound.
+  Rejected: folding theories into the paper lineage, and leaving the
+  relations unrendered.
+---
+<!-- inactive-ok-file: THEORY-001, THEORY-017, THEORY-068, THEORY-070, THEORY-079, THEORY-080 — cited as examples of what the new page shows:
+     accounts that were corrected, and accounts still Proposed that did the
+     correcting. Their statuses are the point of the examples. Nothing here
+     depends on any of them being settled. -->
+
+# ADR-tmp79eh8: Theories get a chain of their own: lines of explanation
+
+## Context
+
+`ADR-011` turned the lines of work into a rendered chain: `extends:` and
+`corrects:` walked transitively, one page per scheme, so no document has to
+re-describe the line it sits in. It did that for the papers (`lineage`) and
+the practices (`practice`).
+
+`ADR-031` then split explanations out of practices into the THEORY scheme,
+and gave THEORY the same two relations. `extends` refines an account that
+holds. `corrects` replaces one whose reasoning broke. Fourteen theories now
+carry one or the other. Nothing walks them. A reader who lands on
+`THEORY-003` learns from its frontmatter that it corrects `THEORY-001`. They
+cannot see that the record holds six other corrections of the same shape,
+or that correction is the normal way an explanation's line develops here.
+
+## Decision
+
+**Declare a third chain in `luria.yaml`:**
+
+    theory:
+      scheme: THEORY
+      relation: [extends, corrects]
+      invariant: tags
+      output: docs/theory-lines.md
+      title: Lines of explanation
+      facet_by: [status]
+
+It is listed in `docs/README.md` beside the other two. The lint requires
+this: it reports a top-level view with no index entry.
+
+Three choices in it are worth stating.
+
+- **No `sibling`.** The other chains render `compared_against:` as a
+  cross-link. THEORY declares no such relation, since no explanation here
+  states a comparison, so there is nothing to render.
+- **`invariant: tags`, as on the other chains.** An account that refines or
+  corrects another is about the same thing, and a shared topic is what says
+  so. On the record as filed, all 11 lines bind. That is the check doing its
+  job at zero rather than a reason to leave it off. A future line that does
+  not bind should get the reading `ADR-049` gives: the invariant is missing
+  or the relation is wrong.
+- **Faceted by `status` only.** The practice chain adds `consensus`. THEORY
+  has no consensus field, and its status is the whole verdict. That is what
+  shows `THEORY-001` (Rejected) above `THEORY-003` (Active), which is most
+  of what the page is for.
+
+## Alternatives considered
+
+- **Fold the theories into the `lineage` chain.** One chain walks one
+  scheme, and the question differs anyway. The paper line asks what a paper
+  built on. This one asks which *reason* replaced which. `ADR-031` separated
+  explanations so that a practice could outlive its stated reason. A page
+  that mixed the two would put a rejected explanation in line with the papers
+  that are still good evidence.
+- **Leave the relations unrendered.** Status quo. They are already declared
+  and linted, and each document names its neighbours. That is the arrangement
+  `ADR-011` replaced for papers: a line that exists only as each member's
+  local view, which nobody can read whole.
+- **Add `compared_against:` to THEORY so the chain has a sibling.** The
+  scheme's own comment says why not: a relation nobody writes is a converse
+  the fixer can never complete. Add it when a theory states a comparison.
+
+## Consequences
+
+`docs/theory-lines.md` is generated on `main` like every other view. On the
+record as filed it shows 11 lines. Seven of the fourteen theories on them
+correct an earlier account; one, `THEORY-070`, corrects two. Among them are
+`THEORY-001` → `THEORY-003` (batch normalization and internal covariate
+shift), `THEORY-017` → `THEORY-018` (influence functions), `THEORY-068` →
+`THEORY-067` (in-context learning as gradient descent) and `THEORY-079` →
+`THEORY-080` (cold diffusion).
+
+The lint's unbound findings now cover THEORY relations too. Today they
+report nothing new.

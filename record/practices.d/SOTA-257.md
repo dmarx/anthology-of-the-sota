@@ -17,12 +17,27 @@ consensus_note: >-
   than the underlying sweep — though the K=4 ensemble already beats the
   parameter-scaling limit without extrapolation.
 title: 'Spend surplus compute on an ensemble of independently seeded models and distil it, rather than on one larger model'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    LIT-tmpa3ip4 (Hinton et al. 2015) added as a second source, for the
+    distillation leg only. It independently measures a 10-member ensemble
+    distilling into one member-sized model and keeping 86% of the gain. It
+    uses a different method from LIT-441 (soft targets rather than
+    sequence-level), and it says nothing about the headline comparison
+    against one model of the same total size. Status and consensus are
+    unchanged.
 tags:
 - training-optimization
 date: '2026-09-19'
 source:
 - LIT-441
+# LIT-tmpa3ip4 supports the distillation leg only ("distil to pay for it once").
+# It never compares an ensemble with a single model of equal total size,
+# which is this practice's claim (ADR-030).
+- LIT-tmpa3ip4
 introduced_by:
 - LIT-441
 implementations: []
@@ -79,6 +94,13 @@ retains **about 83%** of the gain and still beats the parameter-scaling
 asymptote outright. Self-distillation — a 300M teacher into a 300M student of
 identical architecture — also improves on its teacher, which removes the
 large model from training as well as from serving.
+
+The distillation leg has a second, older measurement from a different
+method. Hinton et al. ([LIT-tmpa3ip4](../literature.d/LIT-tmpa3ip4.md)) distil a 10-member speech ensemble
+into one model the size of a member, using temperature-softened soft targets,
+and keep **86%** of the frame-accuracy gain. Kim et al. use sequence-level
+distillation. Two methods, a decade apart, land at about the same fraction.
+That strengthens this half and says nothing about the other.
 
 So the practice is the pair, not the ensemble alone: ensemble to extract the
 data efficiency, distil to pay for it once.

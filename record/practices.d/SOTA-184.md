@@ -29,7 +29,7 @@ summary: >-
 compared_against:
 - SOTA-329
 extended_by:
-- SOTA-tmppbzba
+- SOTA-426
 ---
 
 # SOTA-184: Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself

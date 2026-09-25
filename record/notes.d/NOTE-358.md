@@ -1,5 +1,8 @@
 ---
+number: 358
 status: Read
+formerly:
+- NOTE-tmpb6qj9
 paper: LIT-699
 title: 'Diffusion Models Beat GANs'
 version: 1
@@ -16,7 +19,7 @@ summary: >-
 
 <!-- inactive-ok-file: THEORY-109 — Proposed, and named here as the open question this paper's method is the subject of: this reading supplies evidence bearing on it and relies on no settled account from it. -->
 
-# NOTE-tmpb6qj9: Diffusion Models Beat GANs
+# NOTE-358: Diffusion Models Beat GANs
 
 Read in full from arXiv v4 (1 Jun 2021): the main text, all appendices A–M
 including the throughput and compute tables (A), the conditional-process proof

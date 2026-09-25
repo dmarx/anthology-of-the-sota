@@ -209,6 +209,8 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-643](../record/literature.d/LIT-643.md) — One-step Diffusion with Distribution Matching Distillation *(Active)*
       - [LIT-646](../record/literature.d/LIT-646.md) — Improved Distribution Matching Distillation for Fast Image Synthesis *(Active)*
         - [LIT-631](../record/literature.d/LIT-631.md) — From Slow Bidirectional to Fast Autoregressive Video Diffusion Models *(Active)* — also extends LIT-643
+    - [LIT-699](../record/literature.d/LIT-699.md) — Diffusion Models Beat GANs on Image Synthesis *(Active)* — also extends LIT-439
+      - [LIT-693](../record/literature.d/LIT-693.md) — Classifier-Free Diffusion Guidance *(Active)*
 - [LIT-448](../record/literature.d/LIT-448.md) — Scalable Diffusion Models with Transformers *(Active)*
   - [LIT-622](../record/literature.d/LIT-622.md) — CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer *(Active)* — also extends LIT-623
   - [LIT-624](../record/literature.d/LIT-624.md) — Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model *(Active)*
@@ -216,6 +218,9 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-658](../record/literature.d/LIT-658.md) — FiT: Flexible Vision Transformer for Diffusion Model *(Active)*
 - [LIT-553](../record/literature.d/LIT-553.md) — Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise *(Active)*
   - [LIT-555](../record/literature.d/LIT-555.md) — Warm Diffusion: Recipe for Blur-Noise Mixture Diffusion Models *(Active)*
+- [LIT-561](../record/literature.d/LIT-561.md) — A Style-Based Generator Architecture for Generative Adversarial Networks *(Active)*
+  - [LIT-560](../record/literature.d/LIT-560.md) — Analyzing and Improving the Image Quality of StyleGAN *(Active)*
+    - [LIT-559](../record/literature.d/LIT-559.md) — Alias-Free Generative Adversarial Networks *(Active)*
 - [LIT-623](../record/literature.d/LIT-623.md) — Language Model Beats Diffusion — Tokenizer is Key to Visual Generation *(Active)*
 - [LIT-630](../record/literature.d/LIT-630.md) — Flow Matching for Generative Modeling *(Active)*
 - [LIT-636](../record/literature.d/LIT-636.md) — Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow *(Active)*
@@ -234,6 +239,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-554](../record/literature.d/LIT-554.md) — Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion *(Active)*
 - alongside: [LIT-661](../record/literature.d/LIT-661.md) — Photorealistic Video Generation with Diffusion Models *(Active)*
 - alongside: [LIT-676](../record/literature.d/LIT-676.md) — DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models *(Active)*
+
+### From The Diffusion Duality
+
+- alongside: [LIT-479](../record/literature.d/LIT-479.md) — The Diffusion Duality *(Active)*
+- alongside: [LIT-701](../record/literature.d/LIT-701.md) — Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution *(Active)*
+- alongside: [LIT-702](../record/literature.d/LIT-702.md) — Simple and Effective Masked Diffusion Language Models *(Active)*
 
 ### From Denoising as Projection: Constrained Optimization with Gradient-Guided Diffusion
 
@@ -257,12 +268,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-563](../record/literature.d/LIT-563.md) — The Role of ImageNet Classes in Fréchet Inception Distance *(Active)*
     - [LIT-615](../record/literature.d/LIT-615.md) — Demystifying MMD GANs *(Active)*
 
-### From A Style-Based Generator Architecture for Generative Adversarial Networks
-
-- [LIT-561](../record/literature.d/LIT-561.md) — A Style-Based Generator Architecture for Generative Adversarial Networks *(Active)*
-  - [LIT-560](../record/literature.d/LIT-560.md) — Analyzing and Improving the Image Quality of StyleGAN *(Active)*
-    - [LIT-559](../record/literature.d/LIT-559.md) — Alias-Free Generative Adversarial Networks *(Active)*
-
 ### From Sequence Level Training with Recurrent Neural Networks
 
 - alongside: [LIT-647](../record/literature.d/LIT-647.md) — Sequence Level Training with Recurrent Neural Networks *(Active)*
@@ -284,6 +289,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-081](../record/literature.d/LIT-081.md) — GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers *(Active)*
   - [LIT-567](../record/literature.d/LIT-567.md) — MARLIN: Mixed-Precision Auto-Regressive Parallel Inference on Large Language Models *(Active)*
 - alongside: [LIT-585](../record/literature.d/LIT-585.md) — AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration *(Active)*
+
+### From The Diffusion Duality
+
+- alongside: [LIT-479](../record/literature.d/LIT-479.md) — The Diffusion Duality *(Active)*
+- alongside: [LIT-701](../record/literature.d/LIT-701.md) — Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution *(Active)*
+- alongside: [LIT-702](../record/literature.d/LIT-702.md) — Simple and Effective Masked Diffusion Language Models *(Active)*
 
 ### From Matryoshka Representation Learning
 
@@ -323,12 +334,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-430](../record/literature.d/LIT-430.md) — RWKV: Reinventing RNNs for the Transformer Era *(Active)*
       - [LIT-429](../record/literature.d/LIT-429.md) — Eagle and Finch: RWKV with Matrix-Valued States and Dynamic Recurrence *(Active)*
         - [LIT-173](../record/literature.d/LIT-173.md) — RWKV-7 "Goose" with Expressive Dynamic State Evolution *(Active)*
-
-### From A Style-Based Generator Architecture for Generative Adversarial Networks
-
-- [LIT-561](../record/literature.d/LIT-561.md) — A Style-Based Generator Architecture for Generative Adversarial Networks *(Active)*
-  - [LIT-560](../record/literature.d/LIT-560.md) — Analyzing and Improving the Image Quality of StyleGAN *(Active)*
-    - [LIT-559](../record/literature.d/LIT-559.md) — Alias-Free Generative Adversarial Networks *(Active)*
 
 ### From Where Did the Gap Go? Reassessing the Long-Range Graph Benchmark
 
@@ -564,6 +569,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-461](../record/literature.d/LIT-461.md) — Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability *(Active)*
   - [LIT-453](../record/literature.d/LIT-453.md) — Understanding Optimization in Deep Learning with Central Flows *(Active)*
+  - [LIT-700](../record/literature.d/LIT-700.md) — Non-Euclidean Gradient Descent Operates at the Edge of Stability *(Active)*
 
 ### From On Calibration of Modern Neural Networks
 
@@ -601,12 +607,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-216](../record/literature.d/LIT-216.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
   - [LIT-215](../record/literature.d/LIT-215.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*
 - alongside: [LIT-601](../record/literature.d/LIT-601.md) — Masked Autoencoders Are Scalable Vision Learners *(Active)*
-
-### From A Style-Based Generator Architecture for Generative Adversarial Networks
-
-- [LIT-561](../record/literature.d/LIT-561.md) — A Style-Based Generator Architecture for Generative Adversarial Networks *(Active)*
-  - [LIT-560](../record/literature.d/LIT-560.md) — Analyzing and Improving the Image Quality of StyleGAN *(Active)*
-    - [LIT-559](../record/literature.d/LIT-559.md) — Alias-Free Generative Adversarial Networks *(Active)*
 
 ### From An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
 

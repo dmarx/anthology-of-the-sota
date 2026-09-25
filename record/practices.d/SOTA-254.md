@@ -22,7 +22,7 @@ history:
   date: '2026-09-25'
   note: >-
     The inference-cost paragraph said the cost was "not accounted anywhere".
-    MDLM (LIT-tmptr16a) and SEDD (LIT-tmpfb0m4), filed today, report sampling
+    MDLM (LIT-702) and SEDD (LIT-701), filed today, report sampling
     wall-clock at small scale, so the sentence now says what is measured and
     what still is not. Neither paper is a source: neither varies the
     unique-token count. Recommendation, sources and `promote_when:`
@@ -123,9 +123,9 @@ there.
 autoregressive one does not, and the practitioner's real budget includes
 them. Whether the crossover survives at matched total cost is unmeasured.
 The record now holds only sampling-side numbers, at GPT-2 scale and apart
-from any data-constrained comparison. SEDD ([LIT-tmpfb0m4](../literature.d/LIT-tmpfb0m4.md)) matches
+from any data-constrained comparison. SEDD ([LIT-701](../literature.d/LIT-701.md)) matches
 autoregressive wall-clock at about 100 sampling steps in unoptimized code.
-MDLM ([LIT-tmptr16a](../literature.d/LIT-tmptr16a.md)) halves its own sampling time by caching a denoiser that
+MDLM ([LIT-702](../literature.d/LIT-702.md)) halves its own sampling time by caching a denoiser that
 ignores the timestep. Neither is a source here, since neither varies the
 unique-token count. MDLM's LM1B gap to AR narrows from 4.7 to 2.1 perplexity
 points between 33B and 327B tokens without crossing, which is the direction

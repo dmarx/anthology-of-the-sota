@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-126 of 356 NOTE documents. Back to the [full index](../README.md).
+128 of 361 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -134,3 +134,5 @@
 | [NOTE-329](../../../record/notes.d/NOTE-329.md) | Levy, Goldberg & Dagan: lessons from word embeddings | The prediction-over-count advantage for word embeddings came from design choices bundled with word2vec, not from the algorithm. Ported to PPMI and SVD and tuned alike across 672 representations, no method wins consistently, SGNS beats GloVe, and context-distribution smoothing is the only universally safe setting. Read in full. | Read |
 | [NOTE-330](../../../record/notes.d/NOTE-330.md) | Baroni, Dinu & Kruszewski: Don't count, predict! | 84 count and predict models on 14 lexical-semantics benchmarks from one 2.8B-token corpus. word2vec CBOW beats count vectors almost everywhere and is far more robust to bad settings. The count side lacked word2vec's smoothing and negative shift, which is how [LIT-607](../../../record/literature.d/LIT-607.md) later reversed the result. Read in full. | Read |
 | [NOTE-356](../../../record/notes.d/NOTE-356.md) | Rigor with Machine Learning from Field Theory to the Poincaré Conjecture | Stochastic, black-box ML can still yield rigorous results in mathematics and physics along two routes. The first is conjecture generation followed by human proof, or RL searches whose outputs can be checked exactly; this is how an RL/Bayesian-optimized ribbon verifier ruled out over 800 candidate counterexamples to the smooth 4D Poincaré conjecture. The second is importing ML theory, such as NNGP/NN-field-theory and gradient-descent metric flows that include Perelman's Ricci flow. | Skimmed |
+| [NOTE-358](../../../record/notes.d/NOTE-358.md) | Diffusion Models Beat GANs | An ablated U-Net (ADM) and a classifier-gradient scale that trades recall for precision take diffusion past BigGAN-deep on ImageNet FID. The architecture search is single-run; every guided number is the best of a small scale sweep scored on the metric it reports; and the trade is non-monotone — a scale of 1 makes an unconditional model's FID worse (26.21 → 33.03). The claim that large scales produce no adversarial examples is asserted in the introduction and checked only by eye and in Inception feature space. | Read |
+| [NOTE-359](../../../record/notes.d/NOTE-359.md) | Non-Euclidean Edge of Stability | Steepest descent under the ℓ∞, block and spectral norms, and SignGD and normalized Spectral GD, sharpen to `2/η` and train there — measured in the update's own norm, where the ordinary top Hessian eigenvalue stays far below the threshold. Reading it: the identity is exact and the empirics are consistent, but the sharpness is a Frank-Wolfe estimate, the divergence theorem covers one line of initializations, and everything is full-batch. | Read |

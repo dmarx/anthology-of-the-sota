@@ -1,5 +1,8 @@
 ---
+number: 426
 status: Proposed
+formerly:
+- SOTA-tmppbzba
 promote_when: >-
   An independent group restarting a low-rank adapter mid-training that runs the
   same three arms — restart with the optimizer reset and no re-warm, restart
@@ -42,7 +45,7 @@ extends:
 - SOTA-184
 ---
 
-# SOTA-tmppbzba: When you merge and reinitialise a low-rank adapter mid-training, prune the optimizer state and re-warm the learning rate from zero — both, not either
+# SOTA-426: When you merge and reinitialise a low-rank adapter mid-training, prune the optimizer state and re-warm the learning rate from zero — both, not either
 
 ## Source
 

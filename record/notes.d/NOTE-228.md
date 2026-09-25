@@ -10,7 +10,7 @@ history:
 - version: 2
   date: '2026-09-25'
   note: >-
-    MDLM and SEDD are now filed (LIT-tmptr16a, LIT-tmpfb0m4); the sentence
+    MDLM and SEDD are now filed (LIT-702, LIT-701); the sentence
     saying they are not in the record now says when that was true.
 date: '2026-09-21'
 summary: >-
@@ -130,7 +130,7 @@ evaluations (NFE) as the sampling budget.
   this paper builds. The bridge is the contribution; neither end is new.
 - MDLM and SEDD, the strongest baselines here, were **not in the record** when
   this was read; they arrived as table entries, the third family this session
-  to enter that way. Both are now filed and read ([LIT-tmptr16a](../literature.d/LIT-tmptr16a.md), [LIT-tmpfb0m4](../literature.d/LIT-tmpfb0m4.md)),
+  to enter that way. Both are now filed and read ([LIT-702](../literature.d/LIT-702.md), [LIT-701](../literature.d/LIT-701.md)),
   from the survey of skipped readings of 2026-09-25.
 
 ## Bearing on the record

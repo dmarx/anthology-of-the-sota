@@ -4,7 +4,7 @@
 
 **model-stability**.
 
-28 of 356 NOTE documents. Back to the [full index](../README.md).
+30 of 361 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -36,3 +36,5 @@
 | [NOTE-288](../../../record/notes.d/NOTE-288.md) | The transition the posterior makes and the transition SGD makes are not the same transition | Read for the distinction in its title, which the record needed and did not have. Bayesian phase transitions are changes in where the posterior concentrates as sample size grows, and are well defined; dynamical transitions are changes in the SGD trajectory, and are not. In the one model where both are computed, the sharpest Bayesian transition — predicted at `n_cr ≈ 600` and observed at 600–700 — has no dynamical counterpart at all. | Read |
 | [NOTE-292](../../../record/notes.d/NOTE-292.md) | Tensor Programs IV | Classifies width-scaling parametrizations (abc-parametrizations) and proves that every stable, nontrivial one either learns features in the wide limit or trains as a kernel, not both. The standard parametrization is stable only at an O(1/width) learning rate, which is the kernel side. Introduces µP as the unique member that updates every layer maximally. Read end to end through §10 and Appendices A, C.1 and D. The proofs in Appendix H were not checked line by line. | Read |
 | [NOTE-295](../../../record/notes.d/NOTE-295.md) | SIREN | Sine-activated MLPs whose derivatives are well behaved, trainable because weights U(±√(6/n)) keep pre-activations standard normal and outputs arcsine at every depth, with ω₀ = 30 on the first layer. They fit signals and derivatives that ReLU, tanh and positional encoding do not. Read §1–4.2 and supplement §1; the later experiments were skimmed. | Read |
+| [NOTE-359](../../../record/notes.d/NOTE-359.md) | Non-Euclidean Edge of Stability | Steepest descent under the ℓ∞, block and spectral norms, and SignGD and normalized Spectral GD, sharpen to `2/η` and train there — measured in the update's own norm, where the ordinary top Hessian eigenvalue stays far below the threshold. Reading it: the identity is exact and the empirics are consistent, but the sharpness is a Frank-Wolfe estimate, the divergence theorem covers one line of initializations, and everything is full-batch. | Read |
+| [NOTE-361](../../../record/notes.d/NOTE-361.md) | DeepSeek-V4 | Two MoE models (1.6T/49B and 284B/13B) reach a native 1M-token context by interleaving two compressed attentions — 4x-compressed KV with top-k sparse selection (CSA) and 128x-compressed dense KV (HCA), each with a 128-token sliding-window branch — at 27% of V3.2's per-token FLOPs and 10% of its KV cache for Pro at 1M. Multi-token prediction is kept "without modification" from V3 as a depth-1 training objective; the report never mentions speculative decoding or a draft model. | Read |

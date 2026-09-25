@@ -19,7 +19,7 @@ history:
   date: '2026-09-25'
   note: >-
     The open correction about LIT-139 is settled from DeepSeek-V4's full
-    report (NOTE-tmpr3mtt): it keeps MTP as a training objective and never
+    report (NOTE-361): it keeps MTP as a training objective and never
     mentions speculative decoding, so it is not an adopter here; LIT-185 is
     repaired to match.
 tags:
@@ -159,7 +159,7 @@ One correction while counting: [LIT-185](../literature.d/LIT-185.md)'s standing 
 [LIT-139](../literature.d/LIT-139.md) "ship the same arrangement". [LIT-135](../literature.d/LIT-135.md)'s note bears that out; [LIT-139](../literature.d/LIT-139.md)'s
 did not, and this document left it unrepaired rather than repair it from the
 same distance that produced it. **Settled by reading the full report**
-([NOTE-tmpr3mtt](../notes.d/NOTE-tmpr3mtt.md)): DeepSeek-V4 keeps V3's multi-token-prediction module
+([NOTE-361](../notes.d/NOTE-361.md)): DeepSeek-V4 keeps V3's multi-token-prediction module
 "without modification" as a depth-1 training objective, and the report never
 mentions a draft model, an acceptance rate or speculative decoding. It is not
 an adopter of this practice on its own evidence, is not counted above, and

@@ -1,6 +1,9 @@
 ---
+number: 357
 status: Read
-paper: LIT-tmpfb0m4
+formerly:
+- NOTE-tmp4bv79
+paper: LIT-701
 title: 'SEDD'
 version: 1
 date: '2026-09-25'
@@ -16,7 +19,7 @@ summary: >-
 <!-- inactive-ok-file: SOTA-157 — Proposed, and named as the practice this reading adds a corroborating source to, for one comparison only -->
 <!-- inactive-ok-file: SOTA-254 — Proposed, and named for the inference-cost figure this paper reports, not as a practice it sources -->
 
-# NOTE-tmp4bv79: SEDD
+# NOTE-357: SEDD
 
 ## Contribution
 
@@ -107,7 +110,7 @@ prompted positions.
 
 Generalizes Meng et al.'s concrete score matching; its implicit form
 coincides with Campbell et al.'s CTMC loss, and the ELBO follows Benton et
-al. MDLM ([LIT-tmptr16a](../literature.d/LIT-tmptr16a.md)) re-derives SEDD's ELBO explicitly (its Suppl. C.2,
+al. MDLM ([LIT-702](../literature.d/LIT-702.md)) re-derives SEDD's ELBO explicitly (its Suppl. C.2,
 noting SEDD cites rather than derives it), shows the masked-diffusion score can
 be extracted from a mean-prediction model, and beats SEDD at matched training
 on every likelihood table. [LIT-479](../literature.d/LIT-479.md) measures SEDD Uniform and SEDD Absorb as

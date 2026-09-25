@@ -15,7 +15,7 @@ history:
     initialisation, and the reset and re-warm were never ablated from a warm
     start. Added what v1 missed — Appendix A's hyperparameter guide,
     Appendix B's null in fine-tuning, Appendix E's 2K warm start — and R1 is
-    now filed, as SOTA-tmppbzba, which the v1 Bearing section said it would
+    now filed, as SOTA-426, which the v1 Bearing section said it would
     not be. LIT-104 is Active, so both inactive-ok directives naming it are removed.
 date: '2026-09-09'
 summary: >-
@@ -23,7 +23,7 @@ summary: >-
 ---
 
 # NOTE-024: ReLoRA: High-Rank Training Through Low-Rank Updates
-<!-- inactive-ok-file: SOTA-tmppbzba — Proposed, and named as where R1 was filed; its Proposed status is this reading's own verdict on the scope of Table 6 -->
+<!-- inactive-ok-file: SOTA-426 — Proposed, and named as where R1 was filed; its Proposed status is this reading's own verdict on the scope of Table 6 -->
 
 ## Contribution
 
@@ -154,7 +154,7 @@ the paper's own ablation makes that argument for it.
 
 ## Bearing on the record
 
-**R1 is filed as [SOTA-tmppbzba](../practices.d/SOTA-tmppbzba.md)** (2026-09-25), `Proposed`, sourced here. v1
+**R1 is filed as [SOTA-426](../practices.d/SOTA-426.md)** (2026-09-25), `Proposed`, sourced here. v1
 of this reading said it would not be — that R1 was "too narrow to matter
 outside this method" — and [#121](https://github.com/dmarx/anthology-of-the-sota/issues/121)'s audit then held it back on a scope question
 [ADR-042](../decisions.d/ADR-042.md) has since answered. It is narrow, and the practice says so: it is a

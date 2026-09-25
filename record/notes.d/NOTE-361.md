@@ -1,5 +1,8 @@
 ---
+number: 361
 status: Read
+formerly:
+- NOTE-tmpr3mtt
 paper: LIT-139
 title: 'DeepSeek-V4'
 version: 1
@@ -17,7 +20,7 @@ summary: >-
 <!-- inactive-ok-file: SOTA-148 — Proposed; V4's load-balancing settings are named against it in Bearing on the record -->
 <!-- inactive-ok-file: SOTA-229 — Proposed; named in Bearing on the record as a practice this report does not bear on -->
 
-# NOTE-tmpr3mtt: DeepSeek-V4
+# NOTE-361: DeepSeek-V4
 
 ## Contribution
 

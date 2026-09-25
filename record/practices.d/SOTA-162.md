@@ -17,7 +17,7 @@ history:
   date: '2026-09-25'
   note: >-
     Qualified "the adoption is overwhelming" for draft heads: DeepSeek-V4's
-    full report (NOTE-tmpr3mtt) keeps MTP only as a training objective and
+    full report (NOTE-361) keeps MTP only as a training objective and
     never mentions speculative decoding.
 tags:
 - training-optimization
@@ -81,7 +81,7 @@ the draft heads, the adoption is overwhelming and the training claim comes
 along for free either way.
 
 Overwhelming for the *head*, that is, not for its use as a draft. Not every
-adopter says it drafts with the head: DeepSeek-V4's full report ([NOTE-tmpr3mtt](../notes.d/NOTE-tmpr3mtt.md))
+adopter says it drafts with the head: DeepSeek-V4's full report ([NOTE-361](../notes.d/NOTE-361.md))
 keeps MTP only as an auxiliary loss, with its weight annealed from 0.3 to 0.1
 at learning-rate decay, and never mentions speculative decoding. Which
 of the other adopters' own texts state the inference use has not been

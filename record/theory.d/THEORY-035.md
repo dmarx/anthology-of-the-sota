@@ -9,7 +9,7 @@ history:
 - version: 2
   date: '2026-09-25'
   note: >-
-    Adds a section from Islamov et al. (LIT-tmp87rqx): the equilibrium
+    Adds a section from Islamov et al. (LIT-700): the equilibrium
     replicates for steepest descent under the spectral, l-infinity and block
     norms, but only when sharpness is measured in the update's own norm.
     The account's quantity, the top Hessian eigenvalue, is the right one for
@@ -90,7 +90,7 @@ an observation.
 
 ## Which sharpness: the account in other geometries
 
-*(Added at v2.)* Islamov et al., [LIT-tmp87rqx](../literature.d/LIT-tmp87rqx.md) — read as [NOTE-tmpf0zmh](../notes.d/NOTE-tmpf0zmh.md), and
+*(Added at v2.)* Islamov et al., [LIT-700](../literature.d/LIT-700.md) — read as [NOTE-359](../notes.d/NOTE-359.md), and
 with Cohen among the authors — run the same test on steepest descent under
 other norms: Spectral GD (the update underneath Muon), ℓ∞-descent, block
 coordinate descent, and the normalized forms SignGD and normalized Spectral
@@ -119,7 +119,7 @@ Because the claim is about a regime, not about a number, and the regime was
 tested where it could have failed: across architectures, tasks and a sweep of
 step sizes, with a prediction derived from it and confirmed. It has been
 built on since — [LIT-453](../literature.d/LIT-453.md) turns the oscillation into a quantitative
-model of the averaged trajectory, and [LIT-tmp87rqx](../literature.d/LIT-tmp87rqx.md) carries it to
+model of the averaged trajectory, and [LIT-700](../literature.d/LIT-700.md) carries it to
 non-Euclidean optimizers — and nothing in the record contests it.
 What is *not* established, and is marked above rather than smoothed over, is
 that any of it survives the move to stochastic gradients.

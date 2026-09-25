@@ -24,7 +24,8 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ### From Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself
 
-- alongside: [SOTA-184](../record/practices.d/SOTA-184.md) — Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself *(Active, universal)*
+- [SOTA-184](../record/practices.d/SOTA-184.md) — Adapt a pretrained model by training a low-rank update to each weight matrix, not the matrix itself *(Active, universal)*
+  - [SOTA-426](../record/practices.d/SOTA-426.md) — When you merge and reinitialise a low-rank adapter mid-training, prune the optimizer state and re-warm the learning rate from zero — both, not either *(Proposed, unreplicated)*
 - alongside: [SOTA-329](../record/practices.d/SOTA-329.md) — For short-output tasks, adapt a frozen model with a low-rank intervention on a few positions of the residual stream, not a weight adapter; do not use it for long chain-of-thought *(Proposed, unreplicated)*
 
 ## analysis-and-evaluation

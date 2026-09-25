@@ -32,7 +32,7 @@ history:
 - version: 3
   date: '2026-09-25'
   note: >-
-    MDLM (LIT-tmptr16a) and SEDD (LIT-tmpfb0m4) filed and added as
+    MDLM (LIT-702) and SEDD (LIT-701) filed and added as
     corroborating sources, for the *masked* in the title only: both show the
     absorbing process is the right discrete corruption, which LIT-217 does
     not test. Neither supports *rather than autoregressively*. MDLM's
@@ -53,8 +53,8 @@ source:
 # These two corroborate the other half — *masked* rather than another
 # discrete diffusion — and nothing else. On diffusion versus AR their
 # controlled numbers favour AR; see "What MDLM and SEDD support".
-- LIT-tmptr16a
-- LIT-tmpfb0m4
+- LIT-702
+- LIT-701
 introduced_by:
 - LIT-217
 implementations:
@@ -107,7 +107,7 @@ The practice's title makes two choices, and until 2026-09-25 the record held
 evidence for only one of them.
 
 **Masked, rather than another discrete diffusion.** Sahoo et al.,
-[LIT-tmptr16a](../literature.d/LIT-tmptr16a.md), and Lou et al., [LIT-tmpfb0m4](../literature.d/LIT-tmpfb0m4.md), are the evidence. SEDD trains
+[LIT-702](../literature.d/LIT-702.md), and Lou et al., [LIT-701](../literature.d/LIT-701.md), are the evidence. SEDD trains
 absorbing-state and uniform-state models on the same architecture and recipe,
 and absorbing wins on every table (LM1B ≤32.79 against ≤40.25). MDLM derives
 the masked-diffusion objective LLaDA trains with — a schedule-weighted average

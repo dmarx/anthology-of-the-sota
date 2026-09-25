@@ -1,6 +1,9 @@
 ---
+number: 360
 status: Read
-paper: LIT-tmptr16a
+formerly:
+- NOTE-tmpiht70
+paper: LIT-702
 title: 'MDLM'
 version: 1
 date: '2026-09-25'
@@ -15,7 +18,7 @@ summary: >-
 <!-- inactive-ok-file: SOTA-157 — Proposed, and named as the practice this reading adds a corroborating source to, and corrects on what that source does and does not show -->
 <!-- inactive-ok-file: SOTA-254 — Proposed, and named to say this reading does NOT source it -->
 
-# NOTE-tmpiht70: MDLM
+# NOTE-360: MDLM
 
 ## Contribution
 

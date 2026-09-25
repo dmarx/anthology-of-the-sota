@@ -4,7 +4,7 @@
 
 **systems-optimization**.
 
-9 of 356 NOTE documents. Back to the [full index](../README.md).
+10 of 361 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -17,3 +17,4 @@
 | [NOTE-260](../../../record/notes.d/NOTE-260.md) | Block coordinate descent: a smaller machine bought with three times the steps | Read from the [#180](https://github.com/dmarx/anthology-of-the-sota/issues/180) worklist as the last of the 5-revisit tier. The method is sound and the accounting needs separating: the headline 2.6% mixes the method with the price of a 4090, the same-device figure is 33%, and the iteration counts in the paper's own Table 2 show BCD paying about 3× the steps for the memory it saves. | Read |
 | [NOTE-294](../../../record/notes.d/NOTE-294.md) | XGrammar | Grammar-constrained decoding made nearly free. It splits the vocabulary into tokens whose validity depends only on the automaton's stack top, which are precomputed, and the under-1% that need the full stack, which are checked at runtime. The mask is built on the CPU during the forward pass. Each optimization is ablated. Output quality is measured only as syntactic validity. Read §1–6; the appendix was not read. | Read |
 | [NOTE-305](../../../record/notes.d/NOTE-305.md) | MARLIN | An FP16×INT4 GEMM kernel that stays memory-bound, and so near the 3.87× ideal 4-bit speed-up, up to batch 16–32 on a large layer, decaying toward 1.5× at 128. End-to-end in vLLM the same shape holds on four GPU classes (Table 2): 2.3–3.2× single-GPU at batch ≤16, 1.1–1.2× at 128, and much less when the model is sharded over eight A100s. The INT4 model it serves loses 3.3 points of mean accuracy (Table 1). | Read |
+| [NOTE-361](../../../record/notes.d/NOTE-361.md) | DeepSeek-V4 | Two MoE models (1.6T/49B and 284B/13B) reach a native 1M-token context by interleaving two compressed attentions — 4x-compressed KV with top-k sparse selection (CSA) and 128x-compressed dense KV (HCA), each with a 128-token sliding-window branch — at 27% of V3.2's per-token FLOPs and 10% of its KV cache for Pro at 1M. Multi-token prediction is kept "without modification" from V3 as a depth-1 training objective; the report never mentions speculative decoding or a draft model. | Read |

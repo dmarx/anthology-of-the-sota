@@ -1,6 +1,9 @@
 ---
+number: 359
 status: Read
-paper: LIT-tmp87rqx
+formerly:
+- NOTE-tmpf0zmh
+paper: LIT-700
 title: 'Non-Euclidean Edge of Stability'
 version: 1
 date: '2026-09-25'
@@ -15,7 +18,7 @@ summary: >-
 
 <!-- inactive-ok-file: THEORY-024 THEORY-030 THEORY-033 SOTA-272 — all Proposed, and named to say what this reading does not reach, not relied on -->
 
-# NOTE-tmpf0zmh: Non-Euclidean Edge of Stability
+# NOTE-359: Non-Euclidean Edge of Stability
 
 ## Contribution
 

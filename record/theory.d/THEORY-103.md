@@ -12,7 +12,20 @@ promote_when: >-
   second is not enough: that pattern is what this account predicts, and it was
   already observed before the account existed.
 title: 'A transformer stores a fact where it needed it, so two-hop composition generalizes only to facts it already saw as a second hop'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    Prices the fix. This account's evidence includes an intervention — sharing
+    the two halves of the stack unlocks out-of-distribution composition — and
+    LIT-tmp40orc measures the same intervention on natural text at BERT scale,
+    where sharing the feed-forward parameters is the expensive half (−1.4 to
+    −2.8 average, against +0.1 to −0.7 for sharing attention alone). Since the
+    per-layer store this account is about IS the feed-forward block, the cost
+    is not incidental to the fix. Also records that Universal Transformer, whose
+    scheme the source borrowed, reports the opposite sign from ALBERT on the
+    same intervention.
 tags:
 - model-architecture
 - analysis-and-evaluation
@@ -20,6 +33,7 @@ tags:
 date: '2026-09-25'
 source:
 - LIT-667
+- LIT-tmp40orc
 summary: >-
   Wang et al. (2024), [LIT-667](../literature.d/LIT-667.md). Composition and comparison are both
   two-fact tasks that both arrive by grokking, and only one of them
@@ -117,3 +131,31 @@ cannot compose over a long *context* in few layers because each position
 forgets what it forwarded. That is an expressivity bound on in-context
 composition. This is an incentive argument about parametric composition: the
 circuit exists and works, on the facts it was trained to work on.
+
+## What the fix costs
+
+The intervention above is cheap in the source's setting and is not cheap in
+general, and this account is the reason why.
+
+[LIT-tmp40orc](../literature.d/LIT-tmp40orc.md) ran the same change on natural text at BERT scale, for parameter
+efficiency rather than for systematicity, and split it: sharing every layer's
+**attention** parameters costs +0.1 to −0.7 average, while sharing the
+**feed-forward** parameters costs −1.4 to −2.8. The feed-forward block is
+precisely the per-layer store this account is about — a second copy of the
+atomic facts in the upper layers is feed-forward weights — so the half that has
+to be shared for the fix to do anything is the half that is expensive to share.
+The fix is not free, and it is not free *for the reason this account gives*.
+
+Which is a prediction nobody has tested: if the cost of sharing the FFN is the
+loss of per-layer storage, it should fall hardest on whatever the upper layers
+were storing separately, and a model whose upper layers had little of their own
+to store should share them cheaply. Neither paper measured that. It is filed
+here as an implication, not as evidence.
+
+**And the sign is not settled even for the intervention.** Dehghani et al.
+(2018), whose parameter-sharing scheme the source borrowed, report sharing as a
+*gain* over a standard transformer; Lan et al. report it as a loss and say so
+explicitly — *"Different from our observations"*. This record holds neither the
+Universal Transformer paper nor a reconciliation. What it holds is two
+measurements of opposite sign on the same knob, and one account that needs the
+knob turned.

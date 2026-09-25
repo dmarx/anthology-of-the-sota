@@ -7,7 +7,7 @@ history:
 - version: 2
   date: '2026-09-25'
   note: >-
-    LIT-tmp8bq22 (Porian et al.) added as a second source. It reproduces an
+    LIT-690 (Porian et al.) added as a second source. It reproduces an
     allocation exponent of 0.497 from 5M to 901M on two datasets, and lands
     within 15% of Chinchilla's model size at Chinchilla's compute. It
     measures the equal-proportion exponent directly. It does not pin the
@@ -18,9 +18,9 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-068
-# LIT-tmp8bq22 is an independent reproduction of the exponent (a ≈ 0.5), not
+# LIT-690 is an independent reproduction of the exponent (a ≈ 0.5), not
 # of the ratio "20", which it measures as 11–22 depending on data (ADR-030).
-- LIT-tmp8bq22
+- LIT-690
 introduced_by:
 - LIT-068
 summary: >-
@@ -29,7 +29,7 @@ implementations:
 - chinchilla
 - llama2
 explained_by:
-- THEORY-tmp9y82q
+- THEORY-108
 ---
 
 # SOTA-096: `num_tokens ~ 20 * num_params`

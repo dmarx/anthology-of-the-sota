@@ -74,7 +74,7 @@ summary: >-
 explained_by:
 - THEORY-106
 compared_against:
-- SOTA-tmpwowqa
+- SOTA-422
 ---
 
 # SOTA-266: Connect data and noise on a straight line, and sample the training timesteps from a logit-normal rather than uniformly

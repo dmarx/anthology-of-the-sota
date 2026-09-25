@@ -1,5 +1,8 @@
 ---
+number: 421
 status: Proposed
+formerly:
+- SOTA-tmpg915d
 consensus: emerging
 consensus_note: >-
   Per-size tuning before fitting is done by Porian et al., Pearce and Song
@@ -18,12 +21,12 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-25'
 source:
-- LIT-tmp8bq22
+- LIT-690
 introduced_by:
-- LIT-tmp8bq22
+- LIT-690
 implementations: []
 summary: >-
-  Porian et al. (NeurIPS 2024), [LIT-tmp8bq22](../literature.d/LIT-tmp8bq22.md). In a small-scale sweep that
+  Porian et al. (NeurIPS 2024), [LIT-690](../literature.d/LIT-690.md). In a small-scale sweep that
   will be fitted for `N*(C)`, a warmup longer than the smallest models'
   optimal runs moves the exponent by 0.10. So does one batch size, learning
   rate and β₂ shared across sizes. Tune them per size, with β₂ above 0.95 at
@@ -32,14 +35,14 @@ summary: >-
   at about half the cost of a per-budget cosine.
 ---
 
-<!-- inactive-ok-file: THEORY-tmp9y82q SOTA-141 — Proposed; the account this protocol rests on,
+<!-- inactive-ok-file: THEORY-108 SOTA-141 — Proposed; the account this protocol rests on,
      and the decay practice the final model should still follow -->
 
-# SOTA-tmpg915d: Before fitting a compute-optimal allocation law, tune learning rate, batch size and AdamW beta2 per model size and keep warmup short of the smallest run
+# SOTA-421: Before fitting a compute-optimal allocation law, tune learning rate, batch size and AdamW beta2 per model size and keep warmup short of the smallest run
 
 ## Source
 
-Porian, Wortsman, Jitsev, Schmidt and Carmon (2024), [LIT-tmp8bq22](../literature.d/LIT-tmp8bq22.md).
+Porian, Wortsman, Jitsev, Schmidt and Carmon (2024), [LIT-690](../literature.d/LIT-690.md).
 
 ## What to do
 
@@ -59,7 +62,7 @@ In a sweep meant to fit a compute-optimal allocation law:
 
 At small scale, fixed warmup and fixed hyperparameters penalize some sizes
 more than others. The penalty tilts the fitted slope toward parameters
-(`THEORY-tmp9y82q`).
+(`THEORY-108`).
 
 ## Conditions
 

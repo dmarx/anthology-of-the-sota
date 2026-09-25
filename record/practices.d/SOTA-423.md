@@ -1,5 +1,8 @@
 ---
+number: 423
 status: Proposed
+formerly:
+- SOTA-tmpzrrgi
 consensus: unreplicated
 consensus_note: >-
   One paper, with a qualitative sweep on three prompts. The setting is exposed
@@ -18,13 +21,13 @@ tags:
 - inference-optimization
 date: '2026-09-25'
 source:
-- LIT-tmp6c6lg
+- LIT-689
 introduced_by:
-- LIT-tmp6c6lg
+- LIT-689
 implementations:
 - 'diffusers (guidance_rescale)'
 summary: >-
-  Lin et al. (WACV 2024), [LIT-tmp6c6lg](../literature.d/LIT-tmp6c6lg.md). Compute `x_cfg` as usual, rescale it by
+  Lin et al. (WACV 2024), [LIT-689](../literature.d/LIT-689.md). Compute `x_cfg` as usual, rescale it by
   `std(x_pos)/std(x_cfg)`, and blend with weight `φ` back toward `x_cfg`. The
   source uses `φ ≈ 0.7` at `w = 7.5`. It is the latent-space counterpart of
   Imagen's dynamic thresholding, which needs a known pixel range. The
@@ -32,13 +35,13 @@ summary: >-
   effective guidance.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpwowqa — Proposed; named as the change that motivates this one -->
+<!-- inactive-ok-file: SOTA-422 — Proposed; named as the change that motivates this one -->
 
-# SOTA-tmpzrrgi: When classifier-free guidance over-exposes a latent diffusion model, rescale the guided prediction toward the conditional prediction's standard deviation
+# SOTA-423: When classifier-free guidance over-exposes a latent diffusion model, rescale the guided prediction toward the conditional prediction's standard deviation
 
 ## Source
 
-Lin, Liu, Li and Yang (2023; WACV 2024), [LIT-tmp6c6lg](../literature.d/LIT-tmp6c6lg.md), §3.4 and §5.3.
+Lin, Liu, Li and Yang (2023; WACV 2024), [LIT-689](../literature.d/LIT-689.md), §3.4 and §5.3.
 
 ## What to do
 
@@ -73,7 +76,7 @@ conditional prediction's own spread instead. "Inspired by" Imagen,
 - **Motivated by zero terminal SNR, not shown to need it.** The source says
   guidance "becomes very sensitive" as terminal SNR approaches zero. It never
   shows over-exposure, or the fix, on a model without it
-  ([SOTA-tmpwowqa](SOTA-tmpwowqa.md)).
+  ([SOTA-422](SOTA-422.md)).
 
 ## Known implementations
 

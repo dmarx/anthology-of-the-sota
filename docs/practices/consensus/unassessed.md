@@ -6,7 +6,7 @@
 
 **Not judged** — nobody has assessed where the field stands on this; the default, and true of most of the corpus.
 
-168 of 420 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
+168 of 423 SOTA documents — the default when `consensus:` is absent. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -102,7 +102,7 @@
 | [SOTA-093](../../../record/practices.d/SOTA-093.md) | larger batch sizes are beneficial later in training due to better gradient estimates | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
 | [SOTA-094](../../../record/practices.d/SOTA-094.md) | throughput (energy efficiency) wins out over theoretically optimal sample efficiency | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
 | [SOTA-095](../../../record/practices.d/SOTA-095.md) | consider rewinding to earlier checkpoint and skipping a few batches to mitigate unusual loss spikes | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
-| [SOTA-096](../../../record/practices.d/SOTA-096.md) | `num_tokens ~ 20 * num_params` | Hoffmann et al. (2022), [LIT-068](../../../record/literature.d/LIT-068.md) — [ARXIV-2203.15556](https://arxiv.org/abs/2203.15556). | Active |
+| [SOTA-096](../../../record/practices.d/SOTA-096.md) v2 | `num_tokens ~ 20 * num_params` | Hoffmann et al. (2022), [LIT-068](../../../record/literature.d/LIT-068.md) — [ARXIV-2203.15556](https://arxiv.org/abs/2203.15556). | Active |
 | [SOTA-097](../../../record/practices.d/SOTA-097.md) v4 | Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)` | Kaplan et al. (2020), [LIT-028](../../../record/literature.d/LIT-028.md) — [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361). Equation 1.7 gives B ∝ C^(α_C/α_B) = C^0.24, from α_C ≈ 0.050 and α_B ≈ 0.21. | Superseded — by [SOTA-258](../../../record/practices.d/SOTA-258.md); The exponent is a fit to a projection. Along the Chinchilla line `N` and `D` scale together, so `C = 6ND` moves with `D` and a power law in either describes the data; two independent groups measuring off that line find optimal and critical batch size scale in the token budget, not in compute. `Superseded` rather than `Rejected` because the fit is not an error and the quantity is real — the successor is [SOTA-258](../../../record/practices.d/SOTA-258.md), and [ADR-017](../../../record/decisions.d/ADR-017.md)'s corrective succession is the shape. |
 | [SOTA-098](../../../record/practices.d/SOTA-098.md) | Monitor validation loss for unexpected spikes during training | Chowdhery et al. (2022), [LIT-069](../../../record/literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311). | Active |
 | [SOTA-099](../../../record/practices.d/SOTA-099.md) | Track gradient norm statistics to detect training instabilities | Zeng et al. (2022), [LIT-054](../../../record/literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414). | Active |

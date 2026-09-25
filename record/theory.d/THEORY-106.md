@@ -9,7 +9,7 @@ history:
 - version: 2
   date: '2026-09-25'
   note: >-
-    Kingma and Gao (LIT-tmpqjbx0) filed and added as a source. It carries
+    Kingma and Gao (LIT-692) filed and added as a source. It carries
     the weighting identity, which is now scoped to the unshifted cosine and
     to uniform-t flow matching; its App. D.2.1, which claims otherwise, is
     wrong. Identity 4 is re-cited to its §3.2, because THEORY-027 covers
@@ -22,7 +22,7 @@ date: '2026-09-25'
 source:
 - LIT-678
 - LIT-630
-- LIT-tmpqjbx0
+- LIT-692
 extends:
 - THEORY-027
 explains:
@@ -54,7 +54,7 @@ Gao, Hoogeboom, Heek, De Bortoli, Murphy and Salimans (2024), [LIT-678](../liter
 a blog post that assembles derivations. Part of the account is already in
 [LIT-630](../literature.d/LIT-630.md), whose Theorem 3 and "diffusion is one choice of path"
 make the forward-process half. The weighting identity is derived in Kingma and
-Gao (2023), [LIT-tmpqjbx0](../literature.d/LIT-tmpqjbx0.md), App. D.3: "the CFM loss is equivalent to the
+Gao (2023), [LIT-692](../literature.d/LIT-692.md), App. D.3: "the CFM loss is equivalent to the
 v-prediction loss with cosine schedule".
 
 ## The account
@@ -76,7 +76,7 @@ Four identities, each a piece of algebra:
    EDM-style churn) are available to both.
 4. **Schedule.** Given the weighting, the training loss depends on the
    schedule only through its endpoints, and the schedule's shape sets only
-   the estimator's variance ([LIT-tmpqjbx0](../literature.d/LIT-tmpqjbx0.md), §3.2). [THEORY-027](THEORY-027.md)
+   the estimator's variance ([LIT-692](../literature.d/LIT-692.md), §3.2). [THEORY-027](THEORY-027.md)
    is the unweighted special case.
 
 **Consequence.** Pick a weighting, a network output and a sampling schedule,

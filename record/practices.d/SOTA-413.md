@@ -5,7 +5,7 @@ formerly:
 - SOTA-tmp7rph1
 consensus: emerging
 consensus_note: >-
-  Pearce and Song (LIT-688) and Porian et al. (LIT-tmp8bq22) independently find
+  Pearce and Song (LIT-688) and Porian et al. (LIT-690) independently find
   that the counting choice moves the allocation exponent. By Porian's reading,
   Chinchilla's Approaches 1–2 count roughly the head-inclusive `N`, and only
   Approach 3 counts embeddings. A named list of studies still uses
@@ -25,7 +25,7 @@ history:
   date: '2026-09-25'
   note: >-
     Active, on the second clause of its promote_when. Porian et al.
-    (LIT-tmp8bq22) is filed and was read next to LIT-688. It measures the
+    (LIT-690) is filed and was read next to LIT-688. It measures the
     counting effect at 5M–901M on two datasets with intervals, and its
     offset fit extrapolates to a held-out 901M run. The first clause, a
     head-to-head extrapolation test of the two conventions, is still unmet.
@@ -37,7 +37,7 @@ tags:
 date: '2026-09-25'
 source:
 - LIT-688
-- LIT-tmp8bq22
+- LIT-690
 introduced_by:
 - LIT-688
 implementations: []
@@ -49,10 +49,10 @@ summary: >-
   fit biases that exponent too. Do not compare exponents across studies that
   count differently.
 explained_by:
-- THEORY-tmp9y82q
+- THEORY-108
 ---
 
-<!-- inactive-ok-file: SOTA-tmpg915d — Proposed; named as the companion protocol for the non-counting factors -->
+<!-- inactive-ok-file: SOTA-421 — Proposed; named as the companion protocol for the non-counting factors -->
 
 # SOTA-413: In a scaling-law study, count the output head in parameters and FLOPs, and fit loss against compute with an irreducible-loss offset
 
@@ -87,9 +87,9 @@ exponent. Relabelling the same five runs changes the exponent from 0.49 to
   the head is a small share and the definitions converge.
 - **The source's evidence is small.** It is five runs at 0.8–4.6M with context
   16, plus a simulation from Chinchilla's own fit. Porian et al.
-  ([LIT-tmp8bq22](../literature.d/LIT-tmp8bq22.md)) is the large test. Counting the head's FLOPs takes 0.129
+  ([LIT-690](../literature.d/LIT-690.md)) is the large test. Counting the head's FLOPs takes 0.129
   off the exponent, and warmup and per-size tuning each take about as much
-  ([SOTA-tmpg915d](SOTA-tmpg915d.md)). This practice is the counting part only.
+  ([SOTA-421](SOTA-421.md)). This practice is the counting part only.
 - **Counting is not the whole Kaplan–Chinchilla gap.** Do not read this as
   "Kaplan was wrong because of embeddings".
 

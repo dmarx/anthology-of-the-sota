@@ -156,7 +156,7 @@ steps at inference. Guidance is ordered: image first, then text (App. Eq.
 ## Connections
 
 Builds on Emu (image) and Make-A-Video's temporal-layer design ([LIT-632](../literature.d/LIT-632.md)).
-It borrows zero terminal SNR from Lin et al. ([LIT-tmp6c6lg](../literature.d/LIT-tmp6c6lg.md)) and v-prediction from
+It borrows zero terminal SNR from Lin et al. ([LIT-689](../literature.d/LIT-689.md)) and v-prediction from
 [LIT-067](../literature.d/LIT-067.md). It names SVD ([LIT-625](../literature.d/LIT-625.md)) as concurrent with "similar factorization".
 Movie Gen ([LIT-626](../literature.d/LIT-626.md)) extends it.
 

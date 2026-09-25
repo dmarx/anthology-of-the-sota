@@ -5,9 +5,9 @@ formerly:
 - SOTA-tmpetg8o
 consensus: emerging
 consensus_note: >-
-  Two groups report the defect. LIT-tmp6c6lg (Lin et al.) diagnoses it and
+  Two groups report the defect. LIT-689 (Lin et al.) diagnoses it and
   shows it on one same-seed image, and LIT-687 measures its cost with
-  everything else fixed. Marigold's own authors (LIT-tmp96875) measured the
+  everything else fixed. Marigold's own authors (LIT-691) measured the
   leading arm without knowing it: about 34% NYUv2 AbsRel at one step. It is
   not the library default. diffusers' DDIMScheduler still defaults to
   leading (checked 2026-09-25), and adopters opt in per checkpoint (Marigold
@@ -39,13 +39,13 @@ tags:
 date: '2026-09-25'
 source:
 - LIT-687
-- LIT-tmp6c6lg
-# LIT-687 is the numeric single-variable measurement. LIT-tmp6c6lg states the
+- LIT-689
+# LIT-687 is the numeric single-variable measurement. LIT-689 states the
 # rule ("sample steps should always include the last timestep") and names
 # the three spacings; it credits the trailing discretization itself to
 # DPM-Solver (LIT-076), which was not checked (ADR-030).
 introduced_by:
-- LIT-tmp6c6lg
+- LIT-689
 implementations:
 - 'diffusers (timestep_spacing="trailing")'
 summary: >-
@@ -62,13 +62,13 @@ summary: >-
 ## Source
 
 Martin Garcia et al. (2024; WACV 2025), [LIT-687](../literature.d/LIT-687.md), measuring the
-rule Lin et al. (2023; WACV 2024), [LIT-tmp6c6lg](../literature.d/LIT-tmp6c6lg.md), stated: "sample steps
+rule Lin et al. (2023; WACV 2024), [LIT-689](../literature.d/LIT-689.md), stated: "sample steps
 should always include the last timestep t = T". Lin et al. named the leading,
 linspace and trailing spacings. They credit the trailing discretization itself
 to DPM-Solver ([LIT-076](../literature.d/LIT-076.md)), which this record has not checked.
 
 What it costs, measured before anyone knew: Marigold's authors report about
-34% NYUv2 AbsRel at one step ([LIT-tmp96875](../literature.d/LIT-tmp96875.md), Fig. 7) on weights that
+34% NYUv2 AbsRel at one step ([LIT-691](../literature.d/LIT-691.md), Fig. 7) on weights that
 reach 5.7 at one step once the spacing is trailing.
 
 ## What to do

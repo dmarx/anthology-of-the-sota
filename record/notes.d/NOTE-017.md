@@ -10,7 +10,7 @@ history:
 - version: 2
   date: '2026-09-25'
   note: >-
-    Two sentences corrected against Porian et al. (LIT-tmp8bq22): Chinchilla
+    Two sentences corrected against Porian et al. (LIT-690): Chinchilla
     proposed, and did not identify, the schedule as the cause, and only the
     warmup half of it is one. The old wording is kept in the marked notes.
 date: '2026-09-09'
@@ -44,7 +44,7 @@ The part that aged worst is inseparable from the part that aged best: the
 allocation is only as good as the fitting protocol. This one held a fixed
 warmup and fixed batch and learning rate that were wrong for small models, and
 did not count the output head's FLOPs (Porian et al.,
-[LIT-tmp8bq22](../literature.d/LIT-tmp8bq22.md)). Chinchilla's own suggestion, the decay schedule, turned out to
+[LIT-690](../literature.d/LIT-690.md)). Chinchilla's own suggestion, the decay schedule, turned out to
 matter little. *Corrected 2026-09-25. This read "Chinchilla later showed
 this one held the learning-rate schedule in a way that penalised long runs",
 and no source supports that.*

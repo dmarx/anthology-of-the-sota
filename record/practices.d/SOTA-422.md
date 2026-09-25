@@ -1,5 +1,8 @@
 ---
+number: 422
 status: Proposed
+formerly:
+- SOTA-tmpwowqa
 consensus: emerging
 consensus_note: >-
   Emu Video ran the only controlled comparison. CogVideoX and Marigold v1-1's
@@ -20,20 +23,20 @@ tags:
 - training-optimization
 date: '2026-09-25'
 source:
-- LIT-tmp6c6lg
+- LIT-689
 - LIT-635
-# LIT-tmp6c6lg introduces and argues the fix but measures it only bundled
+# LIT-689 introduces and argues the fix but measures it only bundled
 # with three others. LIT-635 is the controlled comparison (96.8 / 88.3 at
 # 512px video), which also switches to v-prediction in the same arm. That is
 # why the practice pairs the two (ADR-030).
 introduced_by:
-- LIT-tmp6c6lg
+- LIT-689
 compared_against:
 - SOTA-266
 implementations:
 - 'diffusers (rescale_betas_zero_snr=True)'
 summary: >-
-  Lin et al. (WACV 2024), [LIT-tmp6c6lg](../literature.d/LIT-tmp6c6lg.md), with Emu Video's comparison, [LIT-635](../literature.d/LIT-635.md).
+  Lin et al. (WACV 2024), [LIT-689](../literature.d/LIT-689.md), with Emu Video's comparison, [LIT-635](../literature.d/LIT-635.md).
   Common VP schedules leave signal at `t = T`. Stable Diffusion's leaves
   `√ᾱ_T = 0.068`. The model learns to keep the leaked channel mean, and
   pure-noise inference then limits brightness. Rescale `√ᾱ_t` so it reaches 0
@@ -42,13 +45,13 @@ summary: >-
   at zero SNR divides by zero.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpzrrgi — Proposed; named as the companion fix the source motivates -->
+<!-- inactive-ok-file: SOTA-423 — Proposed; named as the companion fix the source motivates -->
 
-# SOTA-tmpwowqa: Rescale the noise schedule so the last timestep is pure noise, and train with v-prediction so the model can learn there
+# SOTA-422: Rescale the noise schedule so the last timestep is pure noise, and train with v-prediction so the model can learn there
 
 ## Source
 
-Lin, Liu, Li and Yang (2023; WACV 2024), [LIT-tmp6c6lg](../literature.d/LIT-tmp6c6lg.md), with the controlled
+Lin, Liu, Li and Yang (2023; WACV 2024), [LIT-689](../literature.d/LIT-689.md), with the controlled
 comparison in Emu Video ([LIT-635](../literature.d/LIT-635.md)).
 
 ## What to do
@@ -88,7 +91,7 @@ rescale, so it is not cited for this practice alone.
   curve, and this fixes the endpoint. Nobody has compared them.
 - **Guidance may need rescaling afterwards.** The source reports that
   classifier-free guidance "becomes very sensitive" at zero terminal SNR. See
-  `SOTA-tmpzrrgi`.
+  `SOTA-423`.
 
 ## Known implementations
 

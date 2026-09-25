@@ -1,5 +1,8 @@
 ---
+number: 107
 status: Active
+formerly:
+- THEORY-tmp2ubdn
 title: 'A diffusion loss whose weighting falls monotonically with signal-to-noise is maximum likelihood on noise-augmented data; a non-monotone one is not a likelihood objective'
 version: 1
 tags:
@@ -7,7 +10,7 @@ tags:
 - training-optimization
 date: '2026-09-25'
 source:
-- LIT-tmpqjbx0
+- LIT-692
 extends:
 - THEORY-027
 promote_when: >-
@@ -16,7 +19,7 @@ promote_when: >-
   objective optimizes ranks models differently from the clean-data ELBO on
   held-out data. That is the use the source proposes and does not test.
 summary: >-
-  Kingma and Gao (NeurIPS 2023), [LIT-tmpqjbx0](../literature.d/LIT-tmpqjbx0.md). Every standard diffusion loss
+  Kingma and Gao (NeurIPS 2023), [LIT-692](../literature.d/LIT-692.md). Every standard diffusion loss
   is `½∫ w(λ) E‖ε̂ − ε‖² dλ` for an implied weighting. Integration by parts
   turns it into an expectation, over `p_w = dw/dt`, of the KL of the reverse
   process from time `t`. That is a distribution exactly when `w` decreases in
@@ -26,11 +29,11 @@ summary: >-
   ε-MSE with a cosine schedule, EDM, P2 and Min-SNR are not.
 ---
 
-# THEORY-tmp2ubdn: A diffusion loss whose weighting falls monotonically with signal-to-noise is maximum likelihood on noise-augmented data; a non-monotone one is not a likelihood objective
+# THEORY-107: A diffusion loss whose weighting falls monotonically with signal-to-noise is maximum likelihood on noise-augmented data; a non-monotone one is not a likelihood objective
 
 ## Source
 
-Kingma and Gao (2023), [LIT-tmpqjbx0](../literature.d/LIT-tmpqjbx0.md), §4 and Appendix C.
+Kingma and Gao (2023), [LIT-692](../literature.d/LIT-692.md), §4 and Appendix C.
 
 ## The account
 

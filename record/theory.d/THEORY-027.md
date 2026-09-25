@@ -34,7 +34,7 @@ summary: >-
   the same model up to a rescaling of the latents.
 extended_by:
 - THEORY-106
-- THEORY-tmp2ubdn
+- THEORY-107
 ---
 
 # THEORY-027: In continuous time the diffusion bound depends on the noise schedule only through its endpoints

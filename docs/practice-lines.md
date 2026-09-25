@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-49 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+50 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -126,6 +126,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [SOTA-264](../record/practices.d/SOTA-264.md) — Fix the noise schedule's endpoints against the bound and choose its shape to minimise the loss estimator's variance *(Proposed, unreplicated)*
 - alongside: [SOTA-412](../record/practices.d/SOTA-412.md) — When the target is likelihood, learn a per-dimension noise schedule conditioned on a learned latent; a scalar or unconditioned one buys nothing *(Proposed, unreplicated)*
+
+### From Connect data and noise on a straight line, and sample the training timesteps from a logit-normal rather than uniformly
+
+- alongside: [SOTA-266](../record/practices.d/SOTA-266.md) — Connect data and noise on a straight line, and sample the training timesteps from a logit-normal rather than uniformly *(Active, emerging)*
+- alongside: [SOTA-422](../record/practices.d/SOTA-422.md) — Rescale the noise schedule so the last timestep is pure noise, and train with v-prediction so the model can learn there *(Proposed, emerging)*
 
 ### From Report generative FID as an error bar over several training seeds, and treat any gap below about 2% of the mean as inconclusive
 

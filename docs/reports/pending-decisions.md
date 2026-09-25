@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**228 document(s) awaiting a decision.**
+**230 document(s) awaiting a decision.**
 
 ## SOTAs
 
-158 of the 228.
+159 of the 230.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -19,7 +19,7 @@
 | 2026-09-05 | Proposed | [SOTA-144](../../record/practices.d/SOTA-144.md) | 25 | 0 | Extend µP's transfer to depth with CompleteP so one sweep serves deeper models too |
 | 2026-09-05 | Proposed | [SOTA-125](../../record/practices.d/SOTA-125.md) | 17 | 0 | At a fixed tiny parameter budget, spend parameters on depth and SSM state width before MLP width |
 | 2026-09-05 | Proposed | [SOTA-122](../../record/practices.d/SOTA-122.md) | 16 | 0 | Attach learnable per-row and per-column multipliers to weight matrices so their norms are learned, not set by LR and WD |
-| 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 9 | 0 | Decay the learning rate linearly all the way to zero |
+| 2026-09-05 | Proposed | [SOTA-141](../../record/practices.d/SOTA-141.md) | 11 | 0 | Decay the learning rate linearly all the way to zero |
 | 2026-09-07 | Proposed | [SOTA-157](../../record/practices.d/SOTA-157.md) | 23 | 0 | Train the language model as a masked diffusion model rather than autoregressively |
 | 2026-09-07 | Proposed | [SOTA-155](../../record/practices.d/SOTA-155.md) | 15 | 0 | Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation |
 | 2026-09-07 | Proposed | [SOTA-156](../../record/practices.d/SOTA-156.md) | 10 | 0 | Train without a learning-rate schedule: average the iterates so no stopping time need be fixed |
@@ -72,11 +72,11 @@
 | 2026-09-19 | Proposed | [SOTA-251](../../record/practices.d/SOTA-251.md) | 6 | 0 | Train at low resolution and raise it only during the decay phase of a warmup-stable-decay schedule |
 | 2026-09-19 | Proposed | [SOTA-256](../../record/practices.d/SOTA-256.md) | 5 | 0 | Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget |
 | 2026-09-19 | Proposed | [SOTA-257](../../record/practices.d/SOTA-257.md) | 5 | 0 | Spend surplus compute on an ensemble of independently seeded models and distil it, rather than on one larger model |
+| 2026-09-20 | Proposed | [SOTA-264](../../record/practices.d/SOTA-264.md) | 7 | 0 | Fix the noise schedule's endpoints against the bound and choose its shape to minimise the loss estimator's variance |
+| 2026-09-20 | Proposed | [SOTA-260](../../record/practices.d/SOTA-260.md) | 5 | 0 | Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it |
 | 2026-09-20 | Proposed | [SOTA-261](../../record/practices.d/SOTA-261.md) | 5 | 0 | Set AdamW's weight decay by targeting a timescale that follows a power law in tokens-per-parameter |
 | 2026-09-20 | Proposed | [SOTA-274](../../record/practices.d/SOTA-274.md) | 5 | 0 | Before adopting a spectral optimizer, measure the stable rank of each block's incoming activations against its gradient's nuclear rank |
 | 2026-09-20 | Proposed | [SOTA-275](../../record/practices.d/SOTA-275.md) | 5 | 0 | Pick the depth parameterization from the residual branch: a Transformer branch has more than one transformation, so it needs the stricter rule |
-| 2026-09-20 | Proposed | [SOTA-260](../../record/practices.d/SOTA-260.md) | 4 | 0 | Use the smallest batch size that still saturates the device, and do not gradient-accumulate to avoid it |
-| 2026-09-20 | Proposed | [SOTA-264](../../record/practices.d/SOTA-264.md) | 4 | 0 | Fix the noise schedule's endpoints against the bound and choose its shape to minimise the loss estimator's variance |
 | 2026-09-20 | Proposed | [SOTA-268](../../record/practices.d/SOTA-268.md) | 3 | 0 | Do not transfer a data mixing ratio across model scales; the threshold where a domain starts being learned moves with size |
 | 2026-09-20 | Proposed | [SOTA-267](../../record/practices.d/SOTA-267.md) | 2 | 0 | Start the training distribution imbalanced and flatten it, rather than holding it uniform throughout |
 | 2026-09-20 | Proposed | [SOTA-271](../../record/practices.d/SOTA-271.md) | 2 | 0 | Train on a second modality even when the target is single-modality |
@@ -97,13 +97,13 @@
 | 2026-09-21 | Proposed | [SOTA-298](../../record/practices.d/SOTA-298.md) | 3 | 0 | Measure a writing assistant by the outcome it was deployed to improve, not by the text features that used to predict it |
 | 2026-09-21 | Proposed | [SOTA-277](../../record/practices.d/SOTA-277.md) | 2 | 0 | For a task that is a sequential composition, buy depth rather than width |
 | 2026-09-21 | Proposed | [SOTA-284](../../record/practices.d/SOTA-284.md) | 2 | 0 | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |
+| 2026-09-21 | Proposed | [SOTA-299](../../record/practices.d/SOTA-299.md) | 2 | 0 | Finetune the whole generative model, encoder and decoder, for a dense perception task instead of attaching a head to a backbone |
 | 2026-09-21 | Proposed | [SOTA-303](../../record/practices.d/SOTA-303.md) | 2 | 0 | Name the phase a time-saving tool accelerates before predicting what it will do to the quality of what people produce with it |
 | 2026-09-21 | Proposed | [SOTA-290](../../record/practices.d/SOTA-290.md) | 1 | 0 | To measure what a deployed recommender does, use sock-puppets that never interact, follow sets curated to your question, and exposure weighted by rank |
 | 2026-09-21 | Proposed | [SOTA-292](../../record/practices.d/SOTA-292.md) | 1 | 0 | Check industry ties yourself when reading a literature about deployed platforms — disclosure is unreliable and the ties are mechanically detectable |
 | 2026-09-21 | Proposed | [SOTA-294](../../record/practices.d/SOTA-294.md) | 1 | 0 | Fit the tokenizer to the corpus when the corpus is deliberately narrow |
 | 2026-09-21 | Proposed | [SOTA-296](../../record/practices.d/SOTA-296.md) | 1 | 0 | Add the parallel streams in a short final training stage, not from the start |
 | 2026-09-21 | Proposed | [SOTA-297](../../record/practices.d/SOTA-297.md) | 1 | 0 | Scale parallel computation with learnable input transforms, not parameters, when inference memory is the binding constraint |
-| 2026-09-21 | Proposed | [SOTA-299](../../record/practices.d/SOTA-299.md) | 1 | 0 | Finetune the whole generative model, encoder and decoder, for a dense perception task instead of attaching a head to a backbone |
 | 2026-09-21 | Proposed | [SOTA-302](../../record/practices.d/SOTA-302.md) | 1 | 0 | Steer a distilled generator by modulating its input noise, not by fine-tuning its weights |
 | 2026-09-21 | Proposed | [SOTA-287](../../record/practices.d/SOTA-287.md) | 0 | 0 | If you need to train without backpropagation, train each block to denoise a noisy label embedding conditioned on the raw input |
 | 2026-09-21 | Proposed | [SOTA-293](../../record/practices.d/SOTA-293.md) | 0 | 0 | Count embedding parameters when you report a tiny model's size |
@@ -159,22 +159,23 @@
 | 2026-09-25 | Proposed | [SOTA-404](../../record/practices.d/SOTA-404.md) | 2 | 0 | When you ablate an auxiliary loss, ablate the input construction that came with it, or the result is about both |
 | 2026-09-25 | Proposed | [SOTA-405](../../record/practices.d/SOTA-405.md) | 2 | 0 | Scale the masked-language-modelling rate with model size rather than holding it at 15% |
 | 2026-09-25 | Proposed | [SOTA-408](../../record/practices.d/SOTA-408.md) | 2 | 0 | Average the weights along the tail of training under a cyclical or high constant learning rate, then re-estimate the normalization statistics |
-| 2026-09-25 | Proposed | [SOTA-416](../../record/practices.d/SOTA-416.md) | 2 | 0 | When sampling a diffusion model in few steps, start at t = T: use trailing, not leading, timestep spacing |
+| 2026-09-25 | Proposed | [SOTA-414](../../record/practices.d/SOTA-414.md) | 2 | 0 | To make an image diffusion model a dense geometric predictor, fine-tune it end to end as a one-step model at t = T with a task loss |
 | 2026-09-25 | Proposed | [SOTA-418](../../record/practices.d/SOTA-418.md) | 2 | 0 | To drop the tokenizer without losing to BPE, use a two-stage hierarchy with learned chunk boundaries and SSM encoder and decoder layers, not an isotropic byte model |
 | 2026-09-25 | Proposed | [SOTA-419](../../record/practices.d/SOTA-419.md) | 2 | 0 | Under a fixed compute budget, change the architecture only where it cuts step time at constant parameter count |
 | 2026-09-25 | Proposed | [SOTA-420](../../record/practices.d/SOTA-420.md) | 2 | 0 | When distilling a classifier, match the teacher's temperature-softened outputs at the same temperature and keep a down-weighted hard-label term |
+| 2026-09-25 | Proposed | [SOTA-421](../../record/practices.d/SOTA-421.md) | 2 | 0 | Before fitting a compute-optimal allocation law, tune learning rate, batch size and AdamW beta2 per model size and keep warmup short of the smallest run |
+| 2026-09-25 | Proposed | [SOTA-422](../../record/practices.d/SOTA-422.md) | 2 | 0 | Rescale the noise schedule so the last timestep is pure noise, and train with v-prediction so the model can learn there |
+| 2026-09-25 | Proposed | [SOTA-423](../../record/practices.d/SOTA-423.md) | 2 | 0 | When classifier-free guidance over-exposes a latent diffusion model, rescale the guided prediction toward the conditional prediction's standard deviation |
 | 2026-09-25 | Proposed | [SOTA-402](../../record/practices.d/SOTA-402.md) | 1 | 0 | To teach a model to reason over facts it holds, spend added data on facts derived from other facts rather than on more atomic facts |
 | 2026-09-25 | Proposed | [SOTA-406](../../record/practices.d/SOTA-406.md) | 1 | 0 | Replace every masked token with [MASK]; drop BERT's 80-10-10 substitution rule |
 | 2026-09-25 | Proposed | [SOTA-411](../../record/practices.d/SOTA-411.md) | 1 | 0 | To let a model spend more compute at inference without more parameters, train a depth-recurrent core on a randomly sampled iteration count, re-injecting the input at every iteration |
 | 2026-09-25 | Proposed | [SOTA-412](../../record/practices.d/SOTA-412.md) | 1 | 0 | When the target is likelihood, learn a per-dimension noise schedule conditioned on a learned latent; a scalar or unconditioned one buys nothing |
-| 2026-09-25 | Proposed | [SOTA-413](../../record/practices.d/SOTA-413.md) | 1 | 0 | In a scaling-law study, count the output head in parameters and FLOPs, and fit loss against compute with an irreducible-loss offset |
-| 2026-09-25 | Proposed | [SOTA-414](../../record/practices.d/SOTA-414.md) | 1 | 0 | To make an image diffusion model a dense geometric predictor, fine-tune it end to end as a one-step model at t = T with a task loss |
 | 2026-09-25 | Proposed | [SOTA-415](../../record/practices.d/SOTA-415.md) | 1 | 0 | During a warmup-stable-decay run, estimate the annealed score from a uniform average of recent stable-phase checkpoints instead of launching a decay branch |
 | 2026-09-25 | Proposed | [SOTA-417](../../record/practices.d/SOTA-417.md) | 1 | 0 | Filter pretraining text by how well the tokenizer compresses it |
 
 ## THEORYs
 
-64 of the 228.
+65 of the 230.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -192,16 +193,16 @@
 | 2026-09-20 | Proposed | [THEORY-030](../../record/theory.d/THEORY-030.md) | 11 | 0 | Adaptive optimizers work by shaping the curvature they adapt to, and oscillation is how a first-order method sees curvature at all |
 | 2026-09-20 | Proposed | [THEORY-034](../../record/theory.d/THEORY-034.md) | 10 | 0 | Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations |
 | 2026-09-20 | Proposed | [THEORY-033](../../record/theory.d/THEORY-033.md) | 9 | 0 | What a spectral optimizer buys is a step size that stays optimal, not adherence to a target geometry |
-| 2026-09-20 | Proposed | [THEORY-026](../../record/theory.d/THEORY-026.md) | 4 | 0 | Critical batch size is set by how much data has been seen, not by how large the model is |
+| 2026-09-20 | Proposed | [THEORY-026](../../record/theory.d/THEORY-026.md) | 5 | 0 | Critical batch size is set by how much data has been seen, not by how large the model is |
 | 2026-09-20 | Proposed | [THEORY-036](../../record/theory.d/THEORY-036.md) | 4 | 0 | Representations converge across architectures, objectives and modalities, and the endpoint is a model of what generated the data |
 | 2026-09-20 | Proposed | [THEORY-029](../../record/theory.d/THEORY-029.md) | 3 | 0 | A model of bounded capacity allocates it across datasets like a knapsack, so the optimum jumps rather than sliding |
 | 2026-09-21 | Proposed | [THEORY-059](../../record/theory.d/THEORY-059.md) | 11 | 0 | A low-rank branch corrects quantization because weight spectra are steep and quantization-error spectra are flat |
 | 2026-09-21 | Proposed | [THEORY-060](../../record/theory.d/THEORY-060.md) | 9 | 0 | Calibration error and refinement error have separate minimizers during training, so the loss minimum is optimal for neither |
 | 2026-09-21 | Proposed | [THEORY-041](../../record/theory.d/THEORY-041.md) | 8 | 0 | Left unconstrained, a transformer's matrices drift into a badly conditioned, rank-deficient shape, and the norms are the part nothing was managing |
 | 2026-09-21 | Proposed | [THEORY-051](../../record/theory.d/THEORY-051.md) | 8 | 0 | A text feature predicts success partly by being uncommon, so a tool that gives it to everyone destroys its predictive value |
+| 2026-09-21 | Proposed | [THEORY-052](../../record/theory.d/THEORY-052.md) | 4 | 0 | Synthesis requires equivariant representations and discriminative pretraining rewards invariant ones, which is why a generative prior groups objects it was never shown |
 | 2026-09-21 | Proposed | [THEORY-058](../../record/theory.d/THEORY-058.md) | 4 | 0 | Apparent compression in the information plane is saturating activations collapsing into extreme bins, not information being discarded |
 | 2026-09-21 | Proposed | [THEORY-050](../../record/theory.d/THEORY-050.md) | 3 | 0 | Parameters carry memorization and parallel computation carries reasoning |
-| 2026-09-21 | Proposed | [THEORY-052](../../record/theory.d/THEORY-052.md) | 3 | 0 | Synthesis requires equivariant representations and discriminative pretraining rewards invariant ones, which is why a generative prior groups objects it was never shown |
 | 2026-09-21 | Proposed | [THEORY-056](../../record/theory.d/THEORY-056.md) | 3 | 0 | Distinct state machines agree at chance on long random inputs, so a learner that reads only statistics loses the signal as the sequences get longer |
 | 2026-09-21 | Proposed | [THEORY-045](../../record/theory.d/THEORY-045.md) | 2 | 0 | How much of parameter space behaves like your trained network is a description length, and the better-generalizing network occupies more of it |
 | 2026-09-21 | Proposed | [THEORY-057](../../record/theory.d/THEORY-057.md) | 2 | 0 | A corpus a model generates is narrower than the distribution it imitates, and the narrowing shows up as n-gram over-concentration |
@@ -240,12 +241,13 @@
 | 2026-09-24 | Proposed | [THEORY-097](../../record/theory.d/THEORY-097.md) | 3 | 0 | Attention is an approximation of Kanerva's sparse distributed memory, which is why it needs normalized vectors and a fitted temperature |
 | 2026-09-24 | Proposed | [THEORY-099](../../record/theory.d/THEORY-099.md) | 3 | 0 | Muon's update matches the outer-product structure of associative memories, which is why it learns tail classes that Adam under-trains |
 | 2026-09-25 | Proposed | [THEORY-103](../../record/theory.d/THEORY-103.md) | 7 | 0 | A transformer stores a fact where it needed it, so two-hop composition generalizes only to facts it already saw as a second hop |
+| 2026-09-25 | Proposed | [THEORY-108](../../record/theory.d/THEORY-108.md) | 4 | 0 | Kaplan's and Chinchilla's compute-optimal exponents differ because of how small-scale runs were counted, warmed up and tuned, not because of the learning-rate decay |
 | 2026-09-25 | Proposed | [THEORY-104](../../record/theory.d/THEORY-104.md) | 3 | 0 | A large guidance scale amplifies the model's derivatives, which narrows a high-order solver's convergence radius |
 | 2026-09-25 | Proposed | [THEORY-105](../../record/theory.d/THEORY-105.md) | 1 | 0 | Soft targets transfer the teacher's similarity structure over wrong classes, which carries more information per example than a hard label |
 
 ## LITs
 
-3 of the 228.
+3 of the 230.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -255,7 +257,7 @@
 
 ## ADRs
 
-3 of the 228.
+3 of the 230.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

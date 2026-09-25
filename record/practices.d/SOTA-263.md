@@ -36,7 +36,7 @@ history:
 - version: 4
   date: '2026-09-25'
   note: >-
-    The zero-terminal-SNR section now names its origin. LIT-tmp6c6lg (Lin et
+    The zero-terminal-SNR section now names its origin. LIT-689 (Lin et
     al.) introduced the fix for a leaked channel mean at any resolution, and
     Emu Video added the resolution argument. The recommendation is
     unchanged.
@@ -187,7 +187,7 @@ amount. The formula is a starting point, not an answer.
 
 ## Relation to zero terminal SNR
 
-The fix comes from Lin et al. ([LIT-tmp6c6lg](../literature.d/LIT-tmp6c6lg.md)), and their reason is not
+The fix comes from Lin et al. ([LIT-689](../literature.d/LIT-689.md)), and their reason is not
 resolution. It is the per-channel mean that leaks through Stable Diffusion's
 terminal SNR (`√ᾱ_T = 0.068`) at 512px. Emu Video ([LIT-635](../literature.d/LIT-635.md)) adds the
 resolution argument, "the residual signal is higher for high resolution video

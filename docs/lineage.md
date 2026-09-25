@@ -180,13 +180,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 ### From Denoising Diffusion Implicit Models
 
 - [LIT-038](../record/literature.d/LIT-038.md) — Denoising Diffusion Implicit Models *(Active)*
-  - [LIT-678](../record/literature.d/LIT-678.md) — Diffusion Meets Flow Matching: Two Sides of the Same Coin *(Active)* — also extends LIT-630
 - [LIT-062](../record/literature.d/LIT-062.md) — High-Resolution Image Synthesis with Latent Diffusion Models *(Active)*
   - [LIT-566](../record/literature.d/LIT-566.md) — SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis *(Active)*
   - [LIT-621](../record/literature.d/LIT-621.md) — Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models *(Active)*
     - [LIT-625](../record/literature.d/LIT-625.md) — Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets *(Active)* — also extends LIT-062
   - [LIT-633](../record/literature.d/LIT-633.md) — AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning *(Active)*
-  - [LIT-635](../record/literature.d/LIT-635.md) — Emu Video: Factorizing Text-to-Video Generation by Explicit Image Conditioning *(Active)*
+  - [LIT-635](../record/literature.d/LIT-635.md) — Emu Video: Factorizing Text-to-Video Generation by Explicit Image Conditioning *(Active)* — also extends LIT-689
 - [LIT-067](../record/literature.d/LIT-067.md) — Progressive Distillation for Fast Sampling of Diffusion Models *(Active)*
 - [LIT-070](../record/literature.d/LIT-070.md) — Hierarchical Text-Conditional Image Generation with CLIP Latents *(Active)*
   - [LIT-632](../record/literature.d/LIT-632.md) — Make-A-Video: Text-to-Video Generation without Text-Video Data *(Active)*
@@ -194,6 +193,17 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-036](../record/literature.d/LIT-036.md) — Denoising Diffusion Probabilistic Models *(Active)*
     - [LIT-446](../record/literature.d/LIT-446.md) — Variational Diffusion Models *(Active)*
       - [LIT-677](../record/literature.d/LIT-677.md) — Diffusion Models With Learned Adaptive Noise *(Active)*
+      - [LIT-692](../record/literature.d/LIT-692.md) — Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation *(Active)* — also extends LIT-660
+        - [LIT-449](../record/literature.d/LIT-449.md) — Scaling Rectified Flow Transformers for High-Resolution Image Synthesis *(Active)* — also extends LIT-447, LIT-636
+          - [LIT-573](../record/literature.d/LIT-573.md) — FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space *(Active)*
+            - [LIT-572](../record/literature.d/LIT-572.md) — FLUX.2: Analyzing and Enhancing the Latent Space of FLUX – Representation Comparison *(Active)*
+          - [LIT-618](../record/literature.d/LIT-618.md) — LTX-Video: Realtime Video Latent Diffusion *(Active)*
+          - [LIT-619](../record/literature.d/LIT-619.md) — Wan: Open and Advanced Large-Scale Video Generative Models *(Active)* — also extends LIT-448, LIT-623
+            - [LIT-629](../record/literature.d/LIT-629.md) — Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion *(Active)* — also extends LIT-631
+          - [LIT-620](../record/literature.d/LIT-620.md) — HunyuanVideo: A Systematic Framework For Large Video Generative Models *(Active)* — also extends LIT-623
+          - [LIT-626](../record/literature.d/LIT-626.md) — Movie Gen: A Cast of Media Foundation Models *(Active)* — also extends LIT-062, LIT-630, LIT-635
+          - [LIT-634](../record/literature.d/LIT-634.md) — Open-Sora 2.0: Training a Commercial-Level Video Generation Model in $200k *(Active)*
+        - [LIT-678](../record/literature.d/LIT-678.md) — Diffusion Meets Flow Matching: Two Sides of the Same Coin *(Active)* — also extends LIT-038, LIT-630
     - [LIT-627](../record/literature.d/LIT-627.md) — Video Diffusion Models *(Active)*
       - [LIT-637](../record/literature.d/LIT-637.md) — Imagen Video: High Definition Video Generation with Diffusion Models *(Active)* — also extends LIT-067
     - [LIT-643](../record/literature.d/LIT-643.md) — One-step Diffusion with Distribution Matching Distillation *(Active)*
@@ -212,16 +222,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-644](../record/literature.d/LIT-644.md) — Building Normalizing Flows with Stochastic Interpolants *(Active)*
   - [LIT-645](../record/literature.d/LIT-645.md) — Stochastic Interpolants: A Unifying Framework for Flows and Diffusions *(Active)*
     - [LIT-447](../record/literature.d/LIT-447.md) — SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers *(Active)* — also extends LIT-448
-      - [LIT-449](../record/literature.d/LIT-449.md) — Scaling Rectified Flow Transformers for High-Resolution Image Synthesis *(Active)* — also extends LIT-636
-        - [LIT-573](../record/literature.d/LIT-573.md) — FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space *(Active)*
-          - [LIT-572](../record/literature.d/LIT-572.md) — FLUX.2: Analyzing and Enhancing the Latent Space of FLUX – Representation Comparison *(Active)*
-        - [LIT-618](../record/literature.d/LIT-618.md) — LTX-Video: Realtime Video Latent Diffusion *(Active)*
-        - [LIT-619](../record/literature.d/LIT-619.md) — Wan: Open and Advanced Large-Scale Video Generative Models *(Active)* — also extends LIT-448, LIT-623
-          - [LIT-629](../record/literature.d/LIT-629.md) — Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion *(Active)* — also extends LIT-631
-        - [LIT-620](../record/literature.d/LIT-620.md) — HunyuanVideo: A Systematic Framework For Large Video Generative Models *(Active)* — also extends LIT-623
-        - [LIT-626](../record/literature.d/LIT-626.md) — Movie Gen: A Cast of Media Foundation Models *(Active)* — also extends LIT-062, LIT-630, LIT-635
-        - [LIT-634](../record/literature.d/LIT-634.md) — Open-Sora 2.0: Training a Commercial-Level Video Generation Model in $200k *(Active)*
 - [LIT-648](../record/literature.d/LIT-648.md) — Improving Image Generation with Better Captions *(Active)*
+- [LIT-660](../record/literature.d/LIT-660.md) — simple diffusion: End-to-end diffusion for high resolution images *(Active)*
+- [LIT-689](../record/literature.d/LIT-689.md) — Common Diffusion Noise Schedules and Sample Steps are Flawed *(Active)*
+  - [LIT-687](../record/literature.d/LIT-687.md) — Fine-Tuning Image-Conditional Diffusion Models is Easier than You Think *(Active)* — also extends LIT-691
+- [LIT-691](../record/literature.d/LIT-691.md) — Repurposing Diffusion-Based Image Generators for Monocular Depth Estimation *(Active)*
 - alongside: [LIT-075](../record/literature.d/LIT-075.md) — Elucidating the Design Space of Diffusion-Based Generative Models *(Active)*
 - alongside: [LIT-076](../record/literature.d/LIT-076.md) — DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps *(Active)*
 - alongside: [LIT-093](../record/literature.d/LIT-093.md) — Consistency Models *(Active)*
@@ -522,6 +527,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-443](../record/literature.d/LIT-443.md) — Power Lines: Scaling Laws for Weight Decay and Batch Size in LLM Pre-training *(Active)*
   - [LIT-445](../record/literature.d/LIT-445.md) — How Does Critical Batch Size Scale in Pre-training? *(Active)*
   - [LIT-688](../record/literature.d/LIT-688.md) — Reconciling Kaplan and Chinchilla Scaling Laws *(Active)* — also extends LIT-068
+  - [LIT-690](../record/literature.d/LIT-690.md) — Resolving Discrepancies in Compute-Optimal Scaling of Language Models *(Active)* — also extends LIT-068
 - [LIT-068](../record/literature.d/LIT-068.md) — Training Compute-Optimal Large Language Models *(Active)*
 - alongside: [LIT-617](../record/literature.d/LIT-617.md) — Scaling Language Models: Methods, Analysis & Insights from Training Gopher *(Active)*
 - alongside: [LIT-685](../record/literature.d/LIT-685.md) — Sub-Scaling Laws: On the Role of Data Density and Training Strategies in LLMs *(Active)*

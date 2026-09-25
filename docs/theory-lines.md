@@ -68,6 +68,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [THEORY-027](../record/theory.d/THEORY-027.md) — In continuous time the diffusion bound depends on the noise schedule only through its endpoints *(Active)*
   - [THEORY-106](../record/theory.d/THEORY-106.md) — Gaussian flow matching is a diffusion model; what separates the named recipes is loss weighting, network output and sampling schedule *(Active)*
+  - [THEORY-107](../record/theory.d/THEORY-107.md) — A diffusion loss whose weighting falls monotonically with signal-to-noise is maximum likelihood on noise-augmented data; a non-monotone one is not a likelihood objective *(Active)*
 
 ### From What makes a diffusion model generative is iterated restoration of any degradation, not Gaussian noise
 

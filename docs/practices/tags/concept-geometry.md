@@ -6,7 +6,7 @@
 
 **Concept geometry** — how concepts are laid out in a model's representation space — linear directions and the regions, lattices and spectra built from them, superposition and the dictionaries that pull it apart, reading concepts out with probes and writing them in with steering vectors, and whether different models arrive at the same geometry.
 
-4 of 420 SOTA documents. Back to the [full index](../README.md).
+4 of 423 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

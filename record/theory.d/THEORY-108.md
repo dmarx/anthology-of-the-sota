@@ -1,5 +1,8 @@
 ---
+number: 108
 status: Proposed
+formerly:
+- THEORY-tmp9y82q
 title: "Kaplan's and Chinchilla's compute-optimal exponents differ because of how small-scale runs were counted, warmed up and tuned, not because of the learning-rate decay"
 version: 1
 tags:
@@ -7,7 +10,7 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-25'
 source:
-- LIT-tmp8bq22
+- LIT-690
 - LIT-688
 explains:
 - SOTA-096
@@ -21,7 +24,7 @@ promote_when: >-
   once would not settle it, because that shows the endpoint and not the
   decomposition.
 summary: >-
-  Porian et al. (NeurIPS 2024), [LIT-tmp8bq22](../literature.d/LIT-tmp8bq22.md), reproduce Kaplan's `a ≈ 0.84–0.86`
+  Porian et al. (NeurIPS 2024), [LIT-690](../literature.d/LIT-690.md), reproduce Kaplan's `a ≈ 0.84–0.86`
   from 5M to 901M on two datasets, then remove it in steps. Counting the
   output head's FLOPs takes 0.13 off. A warmup short enough for small models
   takes 0.10. Tuning batch, learning rate and β₂ per size, at a constant
@@ -31,11 +34,11 @@ summary: >-
   suffices, at 0.8–4.6M.
 ---
 
-# THEORY-tmp9y82q: Kaplan's and Chinchilla's compute-optimal exponents differ because of how small-scale runs were counted, warmed up and tuned, not because of the learning-rate decay
+# THEORY-108: Kaplan's and Chinchilla's compute-optimal exponents differ because of how small-scale runs were counted, warmed up and tuned, not because of the learning-rate decay
 
 ## Source
 
-Porian et al. (2024), [LIT-tmp8bq22](../literature.d/LIT-tmp8bq22.md), primary. Pearce and Song (2024),
+Porian et al. (2024), [LIT-690](../literature.d/LIT-690.md), primary. Pearce and Song (2024),
 [LIT-688](../literature.d/LIT-688.md), corroborating on counting and on decay.
 
 ## The account

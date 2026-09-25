@@ -14,13 +14,6 @@ consensus_note: >-
 title: 'Shift the timestep schedule when the resolution changes, because more pixels need more noise'
 version: 4
 history:
-- version: 4
-  date: '2026-09-25'
-  note: >-
-    The zero-terminal-SNR section now names its origin. LIT-tmp6c6lg (Lin et
-    al.) introduced the fix for a leaked channel mean at any resolution, and
-    Emu Video added the resolution argument. The recommendation is
-    unchanged.
 - version: 2
   date: '2026-09-23'
   note: >-
@@ -40,6 +33,13 @@ history:
     for the log-SNR shift. The second clause, a report that says it
     shifted for this reason, was also met by LTX-Video and Open-Sora 2.0.
     It was not used, because per DP-005 it counts adoption.
+- version: 4
+  date: '2026-09-25'
+  note: >-
+    The zero-terminal-SNR section now names its origin. LIT-tmp6c6lg (Lin et
+    al.) introduced the fix for a leaked channel mean at any resolution, and
+    Emu Video added the resolution argument. The recommendation is
+    unchanged.
 tags:
 - generative-modeling
 - signal-structure

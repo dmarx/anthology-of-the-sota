@@ -38,9 +38,6 @@ summary: >-
   plain Stable Diffusion is nearly as good.
 ---
 
-<!-- inactive-ok-file: SOTA-416 — Proposed; named for the baseline comparison
-     only, which this practice does not depend on -->
-
 # SOTA-414: To make an image diffusion model a dense geometric predictor, fine-tune it end to end as a one-step model at t = T with a task loss
 
 ## Source

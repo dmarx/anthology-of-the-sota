@@ -15,9 +15,18 @@ consensus_note: >-
   One group, 2021, and the field went the other way — the diffusion practice
   the record holds concentrates training noise for perceptual reasons rather
   than learning a schedule for variance. That is a divergence of purpose
-  rather than a contradiction, and nobody has run the comparison.
+  rather than a contradiction. The same lab later ran the two together
+  (LIT-tmpqjbx0: a perceptual weighting with a variance-motivated adaptive
+  schedule, equal FID, faster in about half the runs). That is not the
+  second group the promote_when asks for.
 title: 'Fix the noise schedule''s endpoints against the bound and choose its shape to minimise the loss estimator''s variance'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    "Nobody has run the comparison" was no longer true once LIT-tmpqjbx0 was
+    filed. It is the same lab, so the consensus stays unreplicated.
 tags:
 - generative-modeling
 date: '2026-09-20'

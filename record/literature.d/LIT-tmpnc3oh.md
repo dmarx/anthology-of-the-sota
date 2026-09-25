@@ -118,17 +118,17 @@ paper tests a second implementation.
 ## Standing in the anthology
 
 Filed as `#290`'s promotion #1: a negative result about the entire class of
-architecture variants that the x-transformers catalogue lists (DP-005). It is
+architecture variants that the x-transformers catalogue lists ([DP-005](../../docs/design-principles.md#dp-5)). It is
 the record's only controlled, multi-task, shared-codebase audit of that
 class, and it bears on the practices whose sources it reimplemented:
-SOTA-034 (SwiGLU), SOTA-182 (RMSNorm), SOTA-150 (mixture of experts),
-SOTA-051 (ReZero), SOTA-403 (cross-layer sharing) and SOTA-190 (depth). Each
+[SOTA-034](../practices.d/SOTA-034.md) (SwiGLU), [SOTA-182](../practices.d/SOTA-182.md) (RMSNorm), [SOTA-150](../practices.d/SOTA-150.md) (mixture of experts),
+[SOTA-051](../practices.d/SOTA-051.md) (ReZero), [SOTA-403](../practices.d/SOTA-403.md) (cross-layer sharing) and [SOTA-190](../practices.d/SOTA-190.md) (depth). Each
 now says what this paper found.
 
 **Read the positive half with the codebase in mind.** The paper calls its
 winners minor changes, same-codebase inventions, or more expensive, and lists
 MoE, Switch and Synthesizer as the same-codebase ones. It does not say that
-GLU Variants (LIT-030) belongs on that list too, but LIT-030's §3.1 says it
+GLU Variants ([LIT-030](LIT-030.md)) belongs on that list too, but [LIT-030](LIT-030.md)'s §3.1 says it
 used "the same code base, model architecture, and training task as the base
 model from" T5 — the model this paper uses as its baseline. Noam Shazeer is an author of
 both. So SwiGLU's gain here is a re-run on four tasks with five seeds, not a
@@ -139,5 +139,5 @@ authors built has been given a fair chance.
 Two small inconsistencies in the text, recorded so nobody quotes them. §3.1
 gives the vanilla SuperGLUE score as 70.97, while Table 1 gives 71.66. And
 §3 calls pre-norm "unanimously adopted … because it leads to more effective
-training". That is an adoption claim (DP-005). Pre-norm is the baseline here
-and is never tested, so this paper is not evidence for SOTA-032.
+training". That is an adoption claim ([DP-005](../../docs/design-principles.md#dp-5)). Pre-norm is the baseline here
+and is never tested, so this paper is not evidence for [SOTA-032](../practices.d/SOTA-032.md).

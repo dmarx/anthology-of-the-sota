@@ -97,7 +97,7 @@ Bayesian optimization on validation log-likelihood.
 
 ## Connections
 
-It builds on Srivastava et al. (LIT-395), whose §7.5 had already compared
+It builds on Srivastava et al. ([LIT-395](../literature.d/LIT-395.md)), whose §7.5 had already compared
 Monte Carlo averaging with weight scaling empirically, and on the
 infinite-width network–GP correspondence (Neal, Williams). It cites Wang and
 Manning and Maeda as earlier Bayesian readings of dropout. Its comparison
@@ -122,17 +122,17 @@ methods, PBP and Graves' VI, are not in the record.
   50-unit networks. It does not compare against deep ensembles, and it does not
   measure calibration in the ECE sense. A practice resting on it would need
   that comparison from another paper.
-- **THEORY-016** and this paper name different targets for the test-time
-  average. THEORY-016 says weight scaling computes the normalized *geometric*
+- **[THEORY-016](../theory.d/THEORY-016.md)** and this paper name different targets for the test-time
+  average. [THEORY-016](../theory.d/THEORY-016.md) says weight scaling computes the normalized *geometric*
   mean exactly for logistic units. This paper treats the *arithmetic* mean of
   sampled passes as the target, and weight scaling as the approximation. Both
-  cite LIT-395 §7.5 as the check that the two agree in practice. The record
+  cite [LIT-395](../literature.d/LIT-395.md) §7.5 as the check that the two agree in practice. The record
   should not treat either as refuting the other. They answer "which average?"
   differently, and no number in either paper depends on the answer.
-- **THEORY-015** is not affected. This is a third account of what the
+- **[THEORY-015](../theory.d/THEORY-015.md)** is not affected. This is a third account of what the
   dropout objective *is*, and it does not bear on the data-dependent penalty
   result.
-- **SOTA-240** is not affected. Nothing here bears on whether to add dropout.
+- **[SOTA-240](../practices.d/SOTA-240.md)** is not affected. Nothing here bears on whether to add dropout.
 
 ## Limitations
 

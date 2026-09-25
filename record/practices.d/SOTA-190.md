@@ -141,7 +141,7 @@ that says what is.
 
 ## A same-lineage sweep at fixed parameters, and what it shows
 
-Narang et al. (LIT-tmpnc3oh) trade depth against feed-forward width and heads
+Narang et al. ([LIT-tmpnc3oh](../literature.d/LIT-tmpnc3oh.md)) trade depth against feed-forward width and heads
 at a fixed 223M in a T5 encoder-decoder, with hyperparameters fixed:
 
 | layers | final loss | steps/s |

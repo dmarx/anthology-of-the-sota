@@ -33,6 +33,8 @@ source:
 introduced_by:
 - LIT-601
 implementations: []
+extended_by:
+- SOTA-tmpfo9e5
 ---
 
 <!-- inactive-ok-file: SOTA-tmpfo9e5 — Proposed; named in the history as the practice whose relation prompted the retag -->

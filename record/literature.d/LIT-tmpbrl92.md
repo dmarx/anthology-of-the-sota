@@ -18,7 +18,7 @@ keywords:
 extends:
 - LIT-394
 summary: >-
-  Hara, Saitoh and Shouno (2017), ARXIV-1706.06859. In a teacher-student
+  Hara, Saitoh and Shouno (2017), [ARXIV-1706.06859](https://arxiv.org/abs/1706.06859). In a teacher-student
   soft-committee machine (erf units, N = 1000, 100 student units, one fixed
   set of N inputs reused), dropout at p = 0.5 reaches lower test MSE than an
   ensemble of two independently trained 50-unit halves. Its residual error is
@@ -29,7 +29,7 @@ summary: >-
 
 # LIT-tmpbrl92: Analysis of dropout learning regarded as ensemble learning
 
-Hara, Saitoh and Shouno (2017) — ARXIV-1706.06859
+Hara, Saitoh and Shouno (2017) — [ARXIV-1706.06859](https://arxiv.org/abs/1706.06859)
 
 ## Key takeaways
 
@@ -63,9 +63,9 @@ units and the student 100. Overfitting is induced by reusing a fixed set of
   `p = 0.5` is run.
 - **The L2 update as printed subtracts `α‖J‖²`, a scalar, from a vector.**
   Presumably `αJ` was meant. `α` is not reported.
-- **The "same as L2" result is not evidence against THEORY-015.** The inputs
+- **The "same as L2" result is not evidence against [THEORY-015](../theory.d/THEORY-015.md).** The inputs
   here are i.i.d. with unit variance. In that setting the data-scaled
-  penalties THEORY-015 collects (inputs scaled by magnitude or standard
+  penalties [THEORY-015](../theory.d/THEORY-015.md) collects (inputs scaled by magnitude or standard
   deviation) reduce to something close to plain L2. So this setup could not
   have told the two apart.
 
@@ -75,10 +75,10 @@ Filed so that the 09/17 dropout cluster is complete. The result is weak. It
 is one toy model with qualitative curves and no analytic content, and it
 sources nothing.
 
-It bears on THEORY-016, and the direction matters. THEORY-016 warns against
+It bears on [THEORY-016](../theory.d/THEORY-016.md), and the direction matters. [THEORY-016](../theory.d/THEORY-016.md) warns against
 reading "dropout is an ensemble" as the reason dropout helps. This paper's
 one clear finding points the same way: dropout beats the ensemble it is
 supposed to be. So the ensemble reading does not explain its advantage, which
 comes from the redrawn split. The paper does not identify a mechanism for
-that. It extends Hinton et al.'s 2012 proposal (LIT-394), which it cites as
+that. It extends Hinton et al.'s 2012 proposal ([LIT-394](LIT-394.md)), which it cites as
 the method.

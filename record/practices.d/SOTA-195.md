@@ -81,7 +81,7 @@ with an unweighted L2 loss picks the weighting for you.
 That is a cheap check and it is what would have caught this.
 
 **The weighting v picks for you is not the only one, and it has been beaten
-once.** Hang et al. (LIT-tmpjap5q) trained with both of `LIT-067`'s
+once.** Hang et al. ([LIT-tmpjap5q](../literature.d/LIT-tmpjap5q.md)) trained with both of `LIT-067`'s
 weightings and with a cap, `min(SNR, 5)` in x0-space. On a v loss the cap is
 `min(SNR, 5)/(SNR + 1)`. On ImageNet 256 latents with a ViT-B, the cap
 converged fastest under x0, ε and v prediction alike. `max(SNR, 1)` with an ε

@@ -22,7 +22,7 @@ implementations:
 - 'captum (README links it as a critique of methods captum ships)'
 summary: >-
   Adebayo, Gilmer, Muelly, Goodfellow, Hardt and Kim (NeurIPS 2018),
-  ARXIV-1810.03292. Two randomization tests for any explanation method. Compare
+  [ARXIV-1810.03292](https://arxiv.org/abs/1810.03292). Two randomization tests for any explanation method. Compare
   its maps on the trained model against the same architecture with weights
   re-initialized (top-down, or one layer at a time), and against a model
   trained on permuted labels. A method whose maps survive either cannot
@@ -40,7 +40,7 @@ summary: >-
 # LIT-tmpzf4pd: Sanity Checks for Saliency Maps
 
 Adebayo, Gilmer, Muelly, Goodfellow, Hardt and Kim (2018; NeurIPS 2018; v3,
-November 2020) — ARXIV-1810.03292
+November 2020) — [ARXIV-1810.03292](https://arxiv.org/abs/1810.03292)
 
 ## Key takeaways
 
@@ -118,18 +118,18 @@ absolute values, SSIM and HOG correlation:
 
 ## Standing in the anthology
 
-Filed on 2026-09-25 with LIT-tmpx7oed as the two openers `#290` promoted from
+Filed on 2026-09-25 with [LIT-tmpx7oed](LIT-tmpx7oed.md) as the two openers `#290` promoted from
 captum's reference list. captum's README links this paper, as a critique of
 methods captum ships, alongside `2106.07475` (*Investigating sanity checks for
 saliency maps*). That later paper is not held and would be the first thing to
 read against this one.
 
-It sources SOTA-tmpudd8t, filed `Proposed`: before trusting an attribution map for
+It sources [SOTA-tmpudd8t](../practices.d/SOTA-tmpudd8t.md), filed `Proposed`: before trusting an attribution map for
 debugging or for explaining what a model learned, run both randomization tests
 and do not validate the map by eye. The practice is general and the evidence
 is image classifiers only, and the practice says so.
 
-**No relation is declared to LIT-tmpx7oed**, although IG is one of the eight
+**No relation is declared to [LIT-tmpx7oed](LIT-tmpx7oed.md)**, although IG is one of the eight
 methods tested. `compared_against:` means this paper measured itself against
 that one, and it did not. It measured IG. It does not `extend` IG, and it
 never names a defect in IG as its motivation, so `corrects:` would claim more

@@ -22,7 +22,7 @@ implementations:
 - 'captum (IntegratedGradients)'
 - 'github.com/ankurtaly/Attributions'
 summary: >-
-  Sundararajan, Taly and Yan (ICML 2017), ARXIV-1703.01365. Integrated
+  Sundararajan, Taly and Yan (ICML 2017), [ARXIV-1703.01365](https://arxiv.org/abs/1703.01365). Integrated
   Gradients: attribute a prediction to input features by integrating the
   gradient along the straight line from a baseline `x′` to the input, times
   `(x − x′)`. Its case is axiomatic, not empirical. It satisfies Sensitivity
@@ -36,7 +36,7 @@ summary: >-
 
 # LIT-tmpx7oed: Axiomatic Attribution for Deep Networks
 
-Sundararajan, Taly and Yan (2017; ICML 2017, PMLR 70) — ARXIV-1703.01365
+Sundararajan, Taly and Yan (2017; ICML 2017, PMLR 70) — [ARXIV-1703.01365](https://arxiv.org/abs/1703.01365)
 
 ## Key takeaways
 
@@ -82,14 +82,14 @@ unique path method that preserves symmetry. IG is Aumann–Shapley cost sharing.
   demonstrations: one retinal image, a handful of questions, one sentence
   alignment and one molecule. The only comparison with another method is
   Figure 2, gradients×image against IG by eye ("better at reflecting distinctive
-  features"). Visual inspection is exactly the evaluation LIT-tmpzf4pd later shows
+  features"). Visual inspection is exactly the evaluation [LIT-tmpzf4pd](LIT-tmpzf4pd.md) later shows
   to be misleading.
 - **"The axiomatic approach rules out artifacts of the last type"** (§8, the
   method's own artefacts) is the most citable sentence here, and it says more
   than the axioms do. They rule out two named failures: attributions that
   depend on implementation, and zero attribution to a feature that mattered.
   They do not rule out a map dominated by the input's own structure. That is
-  the behaviour LIT-tmpzf4pd measures in IG after the weights are randomized.
+  the behaviour [LIT-tmpzf4pd](LIT-tmpzf4pd.md) measures in IG after the weights are randomized.
 - **The paper hedges its own uniqueness claim.** IG "certainly isn't the unique
   method" satisfying the two axioms (§4). Canonicity needs the extra axioms of
   Proposition 2 plus symmetry. Remark 5 concedes that Shapley–Shubik also
@@ -106,13 +106,13 @@ unique path method that preserves symmetry. IG is Aumann–Shapley cost sharing.
 
 Filed on 2026-09-25 as the first of the two openers `#290` promoted from captum's
 reference list. Fourteen further attribution methods from that list were
-declined behind this one and LIT-tmpzf4pd. Before this, the record held no paper on
+declined behind this one and [LIT-tmpzf4pd](LIT-tmpzf4pd.md). Before this, the record held no paper on
 attributing a prediction to its *input features*. It held only the
-training-data attribution line (influence functions, TracIn: LIT-400,
-LIT-401, LIT-402).
+training-data attribution line (influence functions, TracIn: [LIT-400](LIT-400.md),
+[LIT-401](LIT-401.md), [LIT-402](LIT-402.md)).
 
-LIT-tmpzf4pd runs IG through both of its randomization tests, but no lineage
-relation is declared between the two notes. LIT-tmpzf4pd does not build on IG or
+[LIT-tmpzf4pd](LIT-tmpzf4pd.md) runs IG through both of its randomization tests, but no lineage
+relation is declared between the two notes. [LIT-tmpzf4pd](LIT-tmpzf4pd.md) does not build on IG or
 measure itself against it, and it does not show a claim of IG's to be wrong: it
 evaluates IG as one subject among eight. What it finds about IG is written in
 both notes: rank correlation *with* absolute values stays high after
@@ -123,4 +123,4 @@ edge will find it in the prose, which is where the reasoning is.
 This paper sources no practice. Its advice to check completeness as the
 convergence test for the Riemann sum is sound and cheap, but the paper gives it
 no evidence beyond one sentence, and it is recorded as a recommendation in
-NOTE-tmp1z5qc rather than filed.
+[NOTE-tmp1z5qc](../notes.d/NOTE-tmp1z5qc.md) rather than filed.

@@ -107,9 +107,9 @@ normalized with constants from a different network.
 
 ## Connections
 
-It analyses the inverted form of dropout from Srivastava et al. (LIT-395) and
-the moving statistics of batch normalization (LIT-002). The paper builds Uout
-from LIT-395's Gaussian multiplicative variant, swapping the Gaussian for a
+It analyses the inverted form of dropout from Srivastava et al. ([LIT-395](../literature.d/LIT-395.md)) and
+the moving statistics of batch normalization ([LIT-002](../literature.d/LIT-002.md)). The paper builds Uout
+from [LIT-395](../literature.d/LIT-395.md)'s Gaussian multiplicative variant, swapping the Gaussian for a
 bounded uniform. It gives an account of why Wide ResNet's dropout helps where
 DenseNet's and ResNeXt's do not, which Zagoruyko and Komodakis reported without
 explaining.
@@ -123,7 +123,7 @@ explaining.
 - **R2** — If dropout is wanted, put it after the last BN, i.e. before the
   classifier. *Topic:* model-stability. *Status:* standard. *Strength:* weak for
   the gain, which is about 0.2 top-1. *Applies when:* the model is overfitting
-  enough to want dropout at all (SOTA-240).
+  enough to want dropout at all ([SOTA-240](../practices.d/SOTA-240.md)).
 - **R3** — If a model already has dropout upstream of BN, re-estimate the BN
   statistics in eval mode on training data before evaluating. *Topic:*
   model-stability. *Status:* experimental. *Strength:* moderate, since Table 3
@@ -134,20 +134,20 @@ explaining.
 
 - **Sources `SOTA-tmp0lvqr`** (R1 and R2), filed `Proposed` with
   `consensus: unreplicated`. The practice is stated so it rests on C1–C2, and
-  it says that C4 is small. It extends SOTA-240: this is where to put dropout
+  it says that C4 is small. It extends [SOTA-240](../practices.d/SOTA-240.md): this is where to put dropout
   once that practice says to use it.
-- **SOTA-005** ("Use running statistics for inference") gains a cause it does
+- **[SOTA-005](../practices.d/SOTA-005.md)** ("Use running statistics for inference") gains a cause it does
   not list. Its subtle direction is statistics that go stale because the data
   moved. Here they are wrong on the training data itself, because dropout
   changed the network between accumulating them and using them. R3 is the same
-  repair SOTA-005 implies, updating the statistics. It is **not** edited here.
-  The practice cross-references it instead, and whether SOTA-005 should name
+  repair [SOTA-005](../practices.d/SOTA-005.md) implies, updating the statistics. It is **not** edited here.
+  The practice cross-references it instead, and whether [SOTA-005](../practices.d/SOTA-005.md) should name
   this case is left to whoever next revises it.
-- **SOTA-240** is not contradicted. Wide ResNet's benefit from bottleneck dropout
+- **[SOTA-240](../practices.d/SOTA-240.md)** is not contradicted. Wide ResNet's benefit from bottleneck dropout
   is another data point on that practice's "can memorize" side, a 36M-parameter
   model on 50k images. This paper adds that architecture decides whether that
   benefit survives BN.
-- **THEORY-016** is not touched. This paper takes the geometric-mean reading
+- **[THEORY-016](../theory.d/THEORY-016.md)** is not touched. This paper takes the geometric-mean reading
   of test-time scaling for granted and is about the *variance*, which that
   account does not address.
 

@@ -37,7 +37,7 @@ a favourable exchange rate.
 ## Assumptions
 
 - **ViT image encoder**, because dropping patches only saves compute when the
-  encoder can process a variable set of tokens (MAE's design, LIT-601).
+  encoder can process a variable set of tokens (MAE's design, [LIT-601](../literature.d/LIT-601.md)).
 - **The image encoder dominates cost.** Text encoder at 4.4% of image-encoder
   compute here; that is why masking text is not worth it.
 - **Memory-bound batch.** The accuracy gain appears when the saved memory is
@@ -98,11 +98,11 @@ a favourable exchange rate.
 
 ## Connections
 
-Extends CLIP (LIT-588) — same objective, same evaluation, and the original
+Extends CLIP ([LIT-588](../literature.d/LIT-588.md)) — same objective, same evaluation, and the original
 checkpoints are re-evaluated with the paper's own code — and borrows MAE's
-(LIT-601) sparse encoder while dropping MAE's decoder and loss, which Table 1f
+([LIT-601](../literature.d/LIT-601.md)) sparse encoder while dropping MAE's decoder and loss, which Table 1f
 tests directly. Its batch findings are CLIP's "the batch is the negative set"
-(SOTA-359's Conditions) measured; SigLIP (LIT-605) later attacks the same
+([SOTA-359](../practices.d/SOTA-359.md)'s Conditions) measured; SigLIP ([LIT-605](../literature.d/LIT-605.md)) later attacks the same
 memory ceiling from the loss side rather than the input side.
 
 ## Recommendations
@@ -117,20 +117,20 @@ memory ceiling from the loss side rather than the input side.
 
 ## Bearing on the record
 
-- **Produces** SOTA-tmpfo9e5 (R1), `Proposed`, extending SOTA-359 and
-  SOTA-372. Written around Table 1b rather than the abstract: masking is how
+- **Produces** [SOTA-tmpfo9e5](../practices.d/SOTA-tmpfo9e5.md) (R1), `Proposed`, extending [SOTA-359](../practices.d/SOTA-359.md) and
+  [SOTA-372](../practices.d/SOTA-372.md). Written around Table 1b rather than the abstract: masking is how
   to *afford* the batch, not a better objective.
-- **SOTA-359** — confirmed in the one place it is measured. Its Conditions
+- **[SOTA-359](../practices.d/SOTA-359.md)** — confirmed in the one place it is measured. Its Conditions
   say batch size sets the task's difficulty; Table 1b is a four-point swing
   on batch alone. Not added as a source: the practice's claim is about the
   objective, which FLIP holds fixed.
-- **SOTA-376** (SigLIP) — the rival route around the same memory ceiling. No
+- **[SOTA-376](../practices.d/SOTA-376.md)** (SigLIP) — the rival route around the same memory ceiling. No
   one has run the two together or against each other in this record; no
   relation declared.
-- **SOTA-171** — R2 is consistent with it (2× epochs on 400M pairs bought
+- **[SOTA-171](../practices.d/SOTA-171.md)** — R2 is consistent with it (2× epochs on 400M pairs bought
   nothing past 32 epochs), in a different modality and far past its four-epoch
   horizon. Not a source.
-- **SOTA-196** — FLIP's robustness gains are real within LAION and small
+- **[SOTA-196](../practices.d/SOTA-196.md)** — FLIP's robustness gains are real within LAION and small
   against the WIT/LAION data gap; nothing here bears on the practice's
   zero-shot vs in-distribution conflict.
 
@@ -146,6 +146,6 @@ memory ceiling from the loss side rather than the input side.
 ## Open questions
 
 - Does the trade hold for a sigmoid loss, whose accuracy depends less on
-  batch size above 16k (LIT-605)? If the gain is the batch, it should shrink.
+  batch size above 16k ([LIT-605](../literature.d/LIT-605.md))? If the gain is the batch, it should shrink.
 - What masking ratio is optimal at ViT-B and below, where the encoder is
   cheaper relative to the text tower and data loading?

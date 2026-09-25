@@ -95,7 +95,7 @@ down-projection in a standard model, and `W_o` once the FFN is gone.
 
 ## Standing in the anthology
 
-Filed as `#290`'s promotion #14: "a controlled study, the evidence form DP-009
+Filed as `#290`'s promotion [#14](https://github.com/dmarx/anthology-of-the-sota/issues/14): "a controlled study, the evidence form [DP-009](../../docs/design-principles.md#dp-9)
 asks for". It is controlled in the ways that usually go missing. There are
 three matchings rather than one, a separate learning-rate sweep per arm, a
 calibrated noise floor, and a numerical prediction registered before its run,
@@ -107,12 +107,12 @@ costs about 2× the FLOPs per token at 2048 context, and every result is at 87M
 parameters or below on one synthetic corpus plus one web-text pair. Its
 bearing on the record is narrower:
 
-- **SOTA-192** gains a data point from outside the language-model line it was
+- **[SOTA-192](../practices.d/SOTA-192.md)** gains a data point from outside the language-model line it was
   filed from. QK-norm is what keeps a 20-layer attention-only stack from
   diverging, in one ablation run at one learning rate.
-- **SOTA-051**. The ReZero residual is neutral here, alongside the Narang
-  et al. result (LIT-tmpnc3oh) that ReZero *replacing* normalization is worse.
+- **[SOTA-051](../practices.d/SOTA-051.md)**. The ReZero residual is neutral here, alongside the Narang
+  et al. result ([LIT-tmpnc3oh](LIT-tmpnc3oh.md)) that ReZero *replacing* normalization is worse.
   The two do not conflict, because here normalization is kept.
-- **SOTA-403**'s unexplained asymmetry. This paper is causal evidence, by
+- **[SOTA-403](../practices.d/SOTA-403.md)**'s unexplained asymmetry. This paper is causal evidence, by
   deletion, that FFN capacity tends toward parametric recall. It deletes and
   does not share, so it does not test that practice's split.

@@ -34,7 +34,7 @@ extends:
 implementations:
 - 'SENet (ILSVRC 2017): its one dropout layer sits before the classifier, per LIT-tmp68jdl §5'
 summary: >-
-  Li et al. (2018; CVPR 2019), LIT-tmp68jdl. BN freezes a moving variance
+  Li et al. (2018; CVPR 2019), [LIT-tmp68jdl](../literature.d/LIT-tmp68jdl.md). BN freezes a moving variance
   accumulated while dropout was scaling activations. At test time dropout
   stops, the variance changes, and every later BN normalizes by the wrong
   constant. The cost is large: 77.42% → 68.55% on CIFAR-100 for DenseNet with
@@ -48,8 +48,8 @@ summary: >-
 
 ## Source
 
-Li, Chen, Hu and Yang (2018; CVPR 2019), LIT-tmp68jdl —
-ARXIV-1801.05134.
+Li, Chen, Hu and Yang (2018; CVPR 2019), [LIT-tmp68jdl](../literature.d/LIT-tmp68jdl.md) —
+[ARXIV-1801.05134](https://arxiv.org/abs/1801.05134).
 
 ## What to do
 
@@ -59,7 +59,7 @@ ARXIV-1801.05134.
    time dropout is the identity, so the variance BN sees is smaller, by a
    factor of `p` in the simplest case, and BN normalizes by a constant that no
    longer applies.
-2. **If the network needs dropout at all** (SOTA-240 is the
+2. **If the network needs dropout at all** ([SOTA-240](SOTA-240.md) is the
    test for that), put it after the last BN. In practice that means just
    before the classifier.
 3. **If dropout must sit inside BN blocks**, keep the rate low and expect the
@@ -96,7 +96,7 @@ top-1 (5 seeds, no spread reported). On CIFAR the changes are mostly under 0.3
 points, in both directions depending on network and rate. ResNeXt on CIFAR-100
 gets worse at every rate above 0.1. So the instruction rests on the cost it
 avoids, not on what dropout-after-BN adds. For a network that is not
-overfitting, SOTA-240 still says to leave dropout off.
+overfitting, [SOTA-240](SOTA-240.md) still says to leave dropout off.
 
 **Recalibration does not make upstream dropout safe.** Re-estimated statistics
 recover much of the loss but not all of it. Recalibrated case-(a) models stay
@@ -106,13 +106,13 @@ recalibration.
 
 **Anything without stored normalization statistics.** LayerNorm and RMSNorm
 compute their statistics per example at test time as in training, so the
-mismatch this practice avoids does not arise (SOTA-006). This
+mismatch this practice avoids does not arise ([SOTA-006](SOTA-006.md)). This
 practice is about BatchNorm, and every result behind it is a convolutional
 image classifier.
 
 ## Related
 
-This is a special case of SOTA-005's warning that running
+This is a special case of [SOTA-005](SOTA-005.md)'s warning that running
 statistics are only as good as what they averaged. There the data moved. Here
 the network that accumulated the statistics, with dropout active, is not the
 one evaluated.

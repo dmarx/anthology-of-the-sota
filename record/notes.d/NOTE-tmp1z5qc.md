@@ -111,7 +111,7 @@ the only path that treats symmetric inputs symmetrically.
   identical attributions.
 - **Completeness** — attributions sum to the output difference. The paper calls
   it "a sanity check that the attribution method is somewhat comprehensive".
-  That is a different use of "sanity check" from LIT-tmpzf4pd's.
+  That is a different use of "sanity check" from [LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md)'s.
 - **Path method** — attribution by integrating gradients along a monotone path
   from `x′` to `x`.
 
@@ -122,7 +122,7 @@ baseline idea of DeepLift and LRP, whose Implementation Invariance it shows
 failing. Its theory is Aumann–Shapley cost sharing, via Friedman. It sets
 itself apart from LIME (implementation-invariant but not sensitive) and from
 attention weights, which are an incomplete account of influence in an LSTM.
-LIT-tmpzf4pd later includes IG among the methods it randomizes.
+[LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md) later includes IG among the methods it randomizes.
 
 ## Recommendations
 
@@ -139,14 +139,14 @@ LIT-tmpzf4pd later includes IG among the methods it randomizes.
 - **R3** — Do not take the axioms as evidence that a map is faithful to the
   model. They exclude implementation dependence and dead-gradient zeros, and
   nothing else. *Topic:* analysis and evaluation. *Strength:* moderate, from
-  reading the axioms against LIT-tmpzf4pd.
+  reading the axioms against [LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md).
 
 ## Bearing on the record
 
 - No practice is sourced from this paper. R1 is sound and cheap, but it rests on
   a theorem plus one unmeasured sentence, and the record has no practice on
   computing attributions for it to belong to.
-- SOTA-tmpudd8t (from LIT-tmpzf4pd) is the practice this paper's argument sits
+- [SOTA-tmpudd8t](../practices.d/SOTA-tmpudd8t.md) (from [LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md)) is the practice this paper's argument sits
   against. Here, empirical evaluation is set aside as confounded. There, a
   specific empirical evaluation, randomization, is proposed because visual
   evaluation misleads. The two are compatible. This paper's objection is to
@@ -154,8 +154,8 @@ LIT-tmpzf4pd later includes IG among the methods it randomizes.
   from method artefacts. The randomization tests are built to separate exactly
   those.
 - The record's other attribution line is training-data attribution
-  (LIT-400, LIT-401, LIT-402), which asks a different question. NOTE-178's R3
-  and NOTE-179's R1, "validate an attribution method against the object it
+  ([LIT-400](../literature.d/LIT-400.md), [LIT-401](../literature.d/LIT-401.md), [LIT-402](../literature.d/LIT-402.md)), which asks a different question. [NOTE-178](NOTE-178.md)'s R3
+  and [NOTE-179](NOTE-179.md)'s R1, "validate an attribution method against the object it
   estimates", are the same instinct on that side.
 
 ## Limitations
@@ -170,7 +170,7 @@ LIT-tmpzf4pd later includes IG among the methods it randomizes.
 
 ## Open questions
 
-- Is IG faithful to the model in any measurable sense? LIT-tmpzf4pd's result
+- Is IG faithful to the model in any measurable sense? [LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md)'s result
   suggests its magnitudes are dominated by the input.
 - How much do attributions change across reasonable baselines (black, noise,
   blurred)?

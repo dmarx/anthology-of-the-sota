@@ -128,7 +128,7 @@ neither replacement has been checked against the other.
 
 ## Re-run with five seeds, in the same codebase
 
-Narang et al. (LIT-tmpnc3oh) ran about fifty published modifications through one
+Narang et al. ([LIT-tmpnc3oh](../literature.d/LIT-tmpnc3oh.md)) ran about fifty published modifications through one
 T5 codebase with every hyperparameter fixed, and most of them lost to the
 baseline. SwiGLU did not. On pre-training loss it scored **2.127 ± 0.003
 against 2.182 ± 0.005** over five seeds, and on final loss 1.789 against 1.838. It beat
@@ -137,7 +137,7 @@ rate. GeGLU scored within noise of it. The win also held when the baseline's
 relative position biases were swapped for learned absolute positions.
 
 This is weaker evidence than it looks, because it is not a transfer test.
-LIT-030 used "the same code base, model architecture, and training task as
+[LIT-030](../literature.d/LIT-030.md) used "the same code base, model architecture, and training task as
 the base model from" T5, and that is the baseline Narang et al. start from.
 Shazeer is an author of both. So the re-run confirms that the gain is real,
 survives seeds and holds on more task families. It does not show that the
@@ -146,7 +146,7 @@ asking. What carries that weight here is adoption, not measurement.
 
 ## Contested on quality too, by one figure
 
-The two objections above are about range. Primer (LIT-tmpiqgng, 2021)
+The two objections above are about range. Primer ([LIT-tmpiqgng](../literature.d/LIT-tmpiqgng.md), 2021)
 predates both, and its objection is about quality. In one comparison (C4,
 110M, T5 codebase, 525K steps) a **squared ReLU**, `max(x, 0)²`, reaches
 lower perplexity than SwiGLU and ReGLU, and it has no third matrix. Squared

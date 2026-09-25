@@ -21,7 +21,7 @@ summary: >-
 
 ## Contribution
 
-Two independent contributions on top of EDM (LIT-075). First, a redesign of
+Two independent contributions on top of EDM ([LIT-075](../literature.d/LIT-075.md)). First, a redesign of
 the ADM denoiser that makes every operation preserve the expected magnitude
 of activations, and keeps weight norms fixed during optimization so the
 effective learning rate is set by the schedule rather than by drift; it is a
@@ -158,25 +158,25 @@ chosen in advance is always a guess.
 
 ## Connections
 
-Extends EDM (LIT-075): same preconditioning, same sampler, same noise
+Extends EDM ([LIT-075](../literature.d/LIT-075.md)): same preconditioning, same sampler, same noise
 parameterization; the baseline is EDM's ImageNet-64 recipe transplanted to
 latents. It reports that EDM's loss weight, which equalises gradient
 magnitudes across noise levels at initialization, stops doing so as training
-proceeds — a correction to how SOTA-188 had described it.
+proceeds — a correction to how [SOTA-188](../practices.d/SOTA-188.md) had described it.
 
-Compared against ADM (LIT-699), DiT (LIT-448), simple diffusion / U-ViT
-(LIT-660) and VDM++ (LIT-692) in Tables 2–3, by quoting their published
+Compared against ADM ([LIT-699](../literature.d/LIT-699.md)), DiT ([LIT-448](../literature.d/LIT-448.md)), simple diffusion / U-ViT
+([LIT-660](../literature.d/LIT-660.md)) and VDM++ ([LIT-692](../literature.d/LIT-692.md)) in Tables 2–3, by quoting their published
 numbers; only EDM is re-run.
 
 The forced weight normalization is the image-diffusion precursor of the
-hypersphere constraint in nGPT (LIT-472, SOTA-282), ten months earlier:
+hypersphere constraint in nGPT ([LIT-472](../literature.d/LIT-472.md), [SOTA-282](../practices.d/SOTA-282.md)), ten months earlier:
 both re-project weights after every step and both delete most normalization
 layers. Nobody has compared them. The paper places itself in the
 weight-normalization lineage (Salimans and Kingma; van Laarhoven; NFNets;
 LARS and Fromage as optimizers aiming at the same relative-update effect),
 none of which the record holds.
 
-On averaging, it cites SWA (LIT-673) as model averaging and otherwise treats
+On averaging, it cites SWA ([LIT-673](../literature.d/LIT-673.md)) as model averaging and otherwise treats
 EMA of weights as given.
 
 ## Recommendations
@@ -201,32 +201,32 @@ EMA of weights as given.
 
 ## Bearing on the record
 
-- **Produces** SOTA-tmp9x33t (R1) and SOTA-tmpui8n0 (R2), both `Proposed`.
-  R3 is recorded in SOTA-424 rather than filed: one table, one model.
-- **SOTA-188** — not a new source, but one sentence was wrong. The practice
+- **Produces** [SOTA-tmp9x33t](../practices.d/SOTA-tmp9x33t.md) (R1) and [SOTA-tmpui8n0](../practices.d/SOTA-tmpui8n0.md) (R2), both `Proposed`.
+  R3 is recorded in [SOTA-424](../practices.d/SOTA-424.md) rather than filed: one table, one model.
+- **[SOTA-188](../practices.d/SOTA-188.md)** — not a new source, but one sentence was wrong. The practice
   said the loss weight "cancels `c_out`'s scaling so that every noise level
   contributes equally"; EDM2 shows that holds at initialization and drifts
   after, and replaces it with an adaptive weighting. It also confirms the
   practice's own Conditions: moving to VAE latents moved the useful noise
   region, and `P_mean, P_std` had to be refitted (−0.4, 1.0 against −1.2,
-  1.2). SOTA-188 is edited to say both.
-- **SOTA-424** — its "capacity question the paper does not answer" is half
+  1.2). [SOTA-188](../practices.d/SOTA-188.md) is edited to say both.
+- **[SOTA-424](../practices.d/SOTA-424.md)** — its "capacity question the paper does not answer" is half
   answered here: the unconditional score, at least, needs far less capacity
   than the conditional one. Its "pick the weight by which metric" rule gains
   a second instance (FID 1.4 vs FD_DINOv2 1.9). Edited as prose; not a source,
   because EDM2 does not train one network for both scores, which is what the
   practice recommends.
-- **SOTA-337** — relevant and not a source. The FID/FD_DINOv2 disagreement
+- **[SOTA-337](../practices.d/SOTA-337.md)** — relevant and not a source. The FID/FD_DINOv2 disagreement
   arises with **no ImageNet classifier anywhere in the pipeline**, from
   tuning EMA and guidance alone, which is outside that practice's stated
   condition. It suggests the condition may be too narrow: tuning a
   hyperparameter against FID is itself a way to fit its feature space. That
   is one figure, and is left here rather than widening the practice.
-- **SOTA-307** — EDM2 reports the minimum of three evaluations, which is a
+- **[SOTA-307](../practices.d/SOTA-307.md)** — EDM2 reports the minimum of three evaluations, which is a
   biased estimator, and states ±2% variation, which is that practice's
   threshold. The ladder's steps are far beyond it; the XL/XXL gaps (1.96 vs
   1.91, 1.85 vs 1.81) are at it.
-- **SOTA-408, SOTA-156** — the other averaging practices. Neither is sourced
+- **[SOTA-408](../practices.d/SOTA-408.md), [SOTA-156](../practices.d/SOTA-156.md)** — the other averaging practices. Neither is sourced
   by this paper; the post-hoc machinery would apply to any averaging profile,
   which the authors say and do not test.
 - **A trunk with no document.** No practice here says "sample from an average

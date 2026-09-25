@@ -104,9 +104,9 @@ path.
 
 It is the causal complement of the FFN-as-memory line (Geva, ROME and
 knowledge neurons, none held here) and the attention-only side of the
-MLP-Mixer/gMLP ablation. It uses QK-norm (LIT-640), ReZero-style residuals
-(LIT-047) and sandwich norm (NormFormer, not held), and it runs Muon against
-AdamW. The mechanistic attention-only models of LIT-543 are two-layer and
+MLP-Mixer/gMLP ablation. It uses QK-norm ([LIT-640](../literature.d/LIT-640.md)), ReZero-style residuals
+([LIT-047](../literature.d/LIT-047.md)) and sandwich norm (NormFormer, not held), and it runs Muon against
+AdamW. The mechanistic attention-only models of [LIT-543](../literature.d/LIT-543.md) are two-layer and
 analytic, while this study's run to 48 layers.
 
 ## Recommendations
@@ -122,18 +122,18 @@ analytic, while this study's run to 48 layers.
 
 ## Bearing on the record
 
-- **SOTA-192 (QK-norm).** Corroborates from a new architecture. It is one
+- **[SOTA-192](../practices.d/SOTA-192.md) (QK-norm).** Corroborates from a new architecture. It is one
   ablation run at one learning rate and ≤ 24M parameters, and it is recorded
   as a data point, not added as a source.
-- **SOTA-051 (zero-init residual branch).** The ReZero residual is neutral
+- **[SOTA-051](../practices.d/SOTA-051.md) (zero-init residual branch).** The ReZero residual is neutral
   here, with normalization kept. It does not contradict the practice. It
   shows that the scalar adds nothing measurable when normalization and
   `1/(2N)` output scaling are already present.
-- **SOTA-403 (share attention, not FFN).** Relevant only to its mechanism
+- **[SOTA-403](../practices.d/SOTA-403.md) (share attention, not FFN).** Relevant only to its mechanism
   paragraph. Deleting the FFN costs mostly parametric recall, which fits the
   storage account the practice calls a coincidence of premise. Deletion is
   not sharing, so the split is untested.
-- **SOTA-034 (SwiGLU).** Not bearing. The control arm uses SwiGLU and never
+- **[SOTA-034](../practices.d/SOTA-034.md) (SwiGLU).** Not bearing. The control arm uses SwiGLU and never
   varies the activation.
 - It does **not** support dropping FFNs in any practice. At matched parameters
   the SAN costs about 2× the FLOPs per token, and iso-FLOP favours the FFN by

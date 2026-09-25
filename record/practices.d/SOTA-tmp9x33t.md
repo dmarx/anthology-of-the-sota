@@ -23,7 +23,7 @@ introduced_by:
 implementations:
 - 'NVlabs/edm2'
 summary: >-
-  Karras et al. (2023), LIT-tmpzn7w1 — EDM2. Track two power-function
+  Karras et al. (2023), [LIT-tmpzn7w1](../literature.d/LIT-tmpzn7w1.md) — EDM2. Track two power-function
   averages of the weights (`σ_rel` 0.05 and 0.10), save both every few
   thousand steps, and synthesize any EMA length after the run from a small
   linear solve. Then choose it per configuration, per guidance weight and per
@@ -37,8 +37,8 @@ summary: >-
 
 ## Source
 
-Karras et al. (2023), LIT-tmpzn7w1 — ARXIV-2312.02696, §3, §4 and Appendix
-C; read as NOTE-tmpod74g.
+Karras et al. (2023), [LIT-tmpzn7w1](../literature.d/LIT-tmpzn7w1.md) — [ARXIV-2312.02696](https://arxiv.org/abs/2312.02696), §3, §4 and Appendix
+C; read as [NOTE-tmpod74g](../notes.d/NOTE-tmpod74g.md).
 
 ## What to do
 
@@ -106,8 +106,8 @@ paper's own values for its own models run from 2% to 19%.
 - **Choosing per metric is not choosing per taste.** Reporting FID at FID's
   optimum and FD_DINOv2 at its own is the honest protocol, and it means two
   "models" from one run. Say so when reporting — the same discipline as fixing
-  the guidance weight before comparing (SOTA-424), and a close cousin of
-  SOTA-337's reason for reporting a second Fréchet distance at all.
+  the guidance weight before comparing ([SOTA-424](SOTA-424.md)), and a close cousin of
+  [SOTA-337](SOTA-337.md)'s reason for reporting a second Fréchet distance at all.
 - **Storage is the cost.** Two copies of the weights per snapshot. At
   hundreds of snapshots that is real disk for a large model; the paper
   leaves the snapshot count/accuracy trade unstudied beyond "a few dozen is
@@ -119,8 +119,8 @@ paper's own values for its own models run from 2% to 19%.
 evaluating from an average of the weights, and the record holds no practice
 for that trunk: EDM2 calls model averaging "indispensable" in image synthesis
 and runs no arm without it. The neighbours that do exist average for other
-reasons — SOTA-408 averages the tail of a cyclical-LR run for flatter optima,
-SOTA-156 averages iterates to remove the schedule — and the post-hoc machinery
+reasons — [SOTA-408](SOTA-408.md) averages the tail of a cyclical-LR run for flatter optima,
+[SOTA-156](SOTA-156.md) averages iterates to remove the schedule — and the post-hoc machinery
 would apply to their profiles too, which the paper states and does not test.
 
 ## Known implementations

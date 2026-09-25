@@ -97,7 +97,7 @@ at small scale.
 
 ## A re-run at 223M, in the codebase it came from
 
-Narang et al. (LIT-tmpnc3oh) put about fifty transformer modifications through
+Narang et al. ([LIT-tmpnc3oh](../literature.d/LIT-tmpnc3oh.md)) put about fifty transformer modifications through
 one T5 setup with fixed hyperparameters, and most of them lost to the dense
 baseline. Sparse experts did not. Mixture of experts (648M total parameters)
 reached early loss **2.148** and Switch (1.1B) **2.135**, against **2.182 ±

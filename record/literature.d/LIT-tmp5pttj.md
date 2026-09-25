@@ -22,7 +22,7 @@ implementations:
 extends:
 - LIT-395
 summary: >-
-  Gal and Ghahramani (2015; ICML 2016), ARXIV-1506.02142. With dropout before
+  Gal and Ghahramani (2015; ICML 2016), [ARXIV-1506.02142](https://arxiv.org/abs/1506.02142). With dropout before
   every weight layer and L2 weight decay, the training objective is, for a
   suitable precision `τ` and length-scale `l`, a variational objective whose
   approximate posterior is Bernoulli-masked weight matrices under a deep
@@ -35,7 +35,7 @@ summary: >-
 
 # LIT-tmp5pttj: Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning
 
-Gal and Ghahramani (2015; ICML 2016) — ARXIV-1506.02142
+Gal and Ghahramani (2015; ICML 2016) — [ARXIV-1506.02142](https://arxiv.org/abs/1506.02142)
 
 ## Key takeaways
 
@@ -98,20 +98,20 @@ of standard dropout" only because the passes can be run concurrently.
 
 ## Standing in the anthology
 
-A third account of dropout, alongside THEORY-015 (a data-dependent
-penalty) and THEORY-016 (weight scaling computes a geometric-mean
+A third account of dropout, alongside [THEORY-015](../theory.d/THEORY-015.md) (a data-dependent
+penalty) and [THEORY-016](../theory.d/THEORY-016.md) (weight scaling computes a geometric-mean
 ensemble exactly for logistic units). It is not one more piece of evidence
 for either. It answers a different question: what the trained network's
-*distribution over outputs* means. It also disagrees with THEORY-016 on one
+*distribution over outputs* means. It also disagrees with [THEORY-016](../theory.d/THEORY-016.md) on one
 point. Here the Monte Carlo mean is the quantity that should be computed, and
 weight scaling approximates it. There, weight scaling computes a normalized
-geometric mean exactly, and the Monte Carlo comparison in LIT-395 §7.5 is
+geometric mean exactly, and the Monte Carlo comparison in [LIT-395](LIT-395.md) §7.5 is
 the empirical check that the two agree. The disagreement is about which
 average is the target, not about any number.
 
-This paper does not bear on SOTA-240. It says what to do with dropout that
+This paper does not bear on [SOTA-240](../practices.d/SOTA-240.md). It says what to do with dropout that
 is already there, not whether to add it. The practice it could source, using
 MC dropout for predictive uncertainty, is not filed. It would need a
 comparison against deep ensembles or a calibration measurement, and this paper
-has neither. It is the lineage LIT-486 names when it lists "Monte Carlo
+has neither. It is the lineage [LIT-486](LIT-486.md) names when it lists "Monte Carlo
 dropout" among parameter-sharing ensembles.

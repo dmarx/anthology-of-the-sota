@@ -113,7 +113,7 @@ is useful and says nothing about whether a larger model would prefer a different
 split, or whether the conditional score is worse than it would have been from a
 dedicated model.
 
-EDM2 (LIT-tmpzn7w1) answers the half of this that concerns the unconditional
+EDM2 ([LIT-tmpzn7w1](../literature.d/LIT-tmpzn7w1.md)) answers the half of this that concerns the unconditional
 score, from the other design: it trains the unconditional model **separately**,
 and an XS model (125M parameters) guides its XXL conditional model (1.5B) as
 well as any larger unconditional model did — "using a larger unconditional
@@ -128,7 +128,7 @@ EMA length depends "very strongly" on the guidance weight, and that FID and
 FD_DINOv2 disagree on the weight itself (1.4 against 1.9 in EDM2's convention,
 where 1 means no guidance — 0.4 against 0.9 on this practice's scale). A weight swept at one
 EMA length and reported at another is not the sweep it claims to be; the EMA
-side is SOTA-tmp9x33t.
+side is [SOTA-tmp9x33t](SOTA-tmp9x33t.md).
 
 **Diversity is what is being spent.** The paper is explicit that raising the
 weight decreases sample variety and increases individual fidelity. If your

@@ -67,9 +67,9 @@ is an ensemble" cannot by itself explain why dropout helps.
 
 ## Connections
 
-It builds on Hinton et al. 2012 (LIT-394) for the method and on Hara and
+It builds on Hinton et al. 2012 ([LIT-394](../literature.d/LIT-394.md)) for the method and on Hara and
 Okada's on-line ensemble-learning theory, which is not in the record. It cites
-Wager et al. (LIT-396) for the L2 comparison but does not engage with that
+Wager et al. ([LIT-396](../literature.d/LIT-396.md)) for the L2 comparison but does not engage with that
 paper's result that the penalty is data-dependent.
 
 ## Recommendations
@@ -80,12 +80,12 @@ None that this paper supports.
 
 - **No practice or theory is filed from it**, and it is not added as a
   source anywhere. Its evidence is too thin to carry a claim.
-- **THEORY-016**: consistent. That account says the ensemble reading explains
+- **[THEORY-016](../theory.d/THEORY-016.md)**: consistent. That account says the ensemble reading explains
   why the test-time rule is cheap, not why dropout generalizes. C2, weak as it
   is, points the same way. The advantage appears exactly where dropout departs
   from an ordinary ensemble.
-- **THEORY-015**: not contradicted. C3's "same as L2" was measured with
-  isotropic unit-variance inputs. There the data-scaled penalties THEORY-015
+- **[THEORY-015](../theory.d/THEORY-015.md)**: not contradicted. C3's "same as L2" was measured with
+  isotropic unit-variance inputs. There the data-scaled penalties [THEORY-015](../theory.d/THEORY-015.md)
   collects, such as Baldi and Sadowski's `Σ wᵢ² Iᵢ² Var(δ)`, reduce in
   expectation to an isotropic one. The experiment could not have separated
   them.

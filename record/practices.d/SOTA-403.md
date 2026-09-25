@@ -136,7 +136,7 @@ because the two are compatible — the question of whether sharing helps overall
 is open, and which half to share if you do is what got measured.
 
 **The Universal Transformer's gain did not reproduce, and neither did sharing in
-general.** Narang et al. (LIT-tmpnc3oh) reimplemented both in a 223M T5
+general.** Narang et al. ([LIT-tmpnc3oh](../literature.d/LIT-tmpnc3oh.md)) reimplemented both in a 223M T5
 encoder-decoder with hyperparameters fixed. The Universal Transformer reached
 early pre-training loss 2.40 against the vanilla 2.182, at about 4× the
 FLOPs. A 25-configuration sweep brought it to 2.265 and "we were ultimately
@@ -147,7 +147,7 @@ second measurement that sharing costs quality. It still does not test the
 split. No configuration there shares attention alone, so the asymmetry
 remains one group's result.
 
-**On the mechanism, one causal data point.** LIT-tmpbukux deletes the
+**On the mechanism, one causal data point.** [LIT-tmpbukux](../literature.d/LIT-tmpbukux.md) deletes the
 feed-forward layers from a small decoder and moves the parameters into
 attention depth. What is lost is almost entirely prediction on tokens the
 context cannot help with, which the authors call parametric recall. That fits

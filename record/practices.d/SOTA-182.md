@@ -51,7 +51,7 @@ the settings it measures.
 
 ## What an outside re-run found
 
-Narang et al. (LIT-tmpnc3oh) swapped LayerNorm for RMSNorm in a 223M T5
+Narang et al. ([LIT-tmpnc3oh](../literature.d/LIT-tmpnc3oh.md)) swapped LayerNorm for RMSNorm in a 223M T5
 encoder-decoder with every other hyperparameter fixed. RMSNorm was one of the
 few changes among about fifty that beat the baseline. Early loss was **2.167 ± 0.008 against 2.182 ±
 0.005** over five seeds, final loss 1.821 against 1.838, and it won on all
@@ -61,7 +61,7 @@ Two things came out smaller than the source claims:
 
 - **The speed saving is a few percent, not tens.** They measured 3.68
   against 3.50 steps per second, about 5%. With learned positions it was 3.99
-  against 3.90, about 2%. LIT-023's 7–64% was measured per model in its own
+  against 3.90, about 2%. [LIT-023](../literature.d/LIT-023.md)'s 7–64% was measured per model in its own
   implementations. In a TPU codebase where normalization is a small share of
   the step, expect the low end or below.
 - **The downstream gain is not robust to the position scheme.** With learned

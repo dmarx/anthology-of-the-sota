@@ -62,6 +62,7 @@ implementations:
 - Stable Diffusion 3
 extended_by:
 - SOTA-195
+- SOTA-tmpui8n0
 explained_by:
 - THEORY-027
 ---
@@ -158,7 +159,7 @@ choice is neutral with respect to what is optimised.
 
 ## The equal weighting holds only at the start
 
-EDM2 (LIT-tmpzn7w1), from the same group, reports what
+EDM2 ([LIT-tmpzn7w1](../literature.d/LIT-tmpzn7w1.md)), from the same group, reports what
 happens after initialization: the per-noise-level loss falls quickly in the
 middle of the range and hardly at all at the ends, so a static `λ(σ)` that
 balanced the gradients at step zero stops balancing them, and "no static

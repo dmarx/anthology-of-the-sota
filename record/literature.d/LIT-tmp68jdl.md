@@ -21,7 +21,7 @@ extends:
 compared_against:
 - LIT-395
 summary: >-
-  Li, Chen, Hu and Yang (2018; CVPR 2019), ARXIV-1801.05134. Dropout changes a
+  Li, Chen, Hu and Yang (2018; CVPR 2019), [ARXIV-1801.05134](https://arxiv.org/abs/1801.05134). Dropout changes a
   unit's variance between train and test mode, and a batch-norm layer
   downstream keeps normalizing by the train-mode variance. Dropout 0.5 in every
   DenseNet bottleneck costs 77.42% → 68.55% on CIFAR-100, and the model then
@@ -35,7 +35,7 @@ summary: >-
 
 # LIT-tmp68jdl: Understanding the Disharmony between Dropout and Batch Normalization by Variance Shift
 
-Li, Chen, Hu and Yang (2018; CVPR 2019) — ARXIV-1801.05134
+Li, Chen, Hu and Yang (2018; CVPR 2019) — [ARXIV-1801.05134](https://arxiv.org/abs/1801.05134)
 
 ## Key takeaways
 
@@ -92,7 +92,7 @@ against 4.72 on CIFAR-10.
   The conclusion "highly recommand[s]" both strategies as "nearly free". What
   the evidence supports well is *don't put dropout where BN will normalize its
   output*. That the relocated dropout then helps is a 0.2-point claim with no
-  error bars (DP-010).
+  error bars ([DP-010](../../docs/design-principles.md#dp-10)).
 - **The derivation assumes a linear regime, i.i.d. inputs with a common mean and
   variance, one shared correlation `ρ`, and weights "constant" late in
   training.** The experiments check the prediction, not those assumptions.
@@ -109,12 +109,12 @@ against 4.72 on CIFAR-10.
 One of three papers the 09/17 dropout entry left unfiled, and the one it
 said had a practice in it. It sources `SOTA-tmp0lvqr`, filed with it at
 `Proposed`: in a batch-normalized network, put dropout after the last BN
-layer, not upstream of one. It builds on Srivastava et al. (LIT-395), whose inverted-dropout
+layer, not upstream of one. It builds on Srivastava et al. ([LIT-395](LIT-395.md)), whose inverted-dropout
 form it analyses and runs as its baseline condition. It also builds on batch
-normalization (LIT-002), whose frozen moving variance is the other half
+normalization ([LIT-002](LIT-002.md)), whose frozen moving variance is the other half
 of the mismatch.
 
-It adds a cause to SOTA-005's "subtle direction". There, running
+It adds a cause to [SOTA-005](../practices.d/SOTA-005.md)'s "subtle direction". There, running
 statistics go wrong because the data moved. Here they are wrong on the
 training data itself, because the network the statistics were accumulated in
 (train-mode dropout) is not the one evaluated.

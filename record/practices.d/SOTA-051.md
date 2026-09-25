@@ -84,17 +84,17 @@ unnecessary rather than merely easier.
 
 ## What ReZero's scalar does not buy, measured outside its paper
 
-The sentence above is LIT-047's claim, and two outside tests bound it.
+The sentence above is [LIT-047](../literature.d/LIT-047.md)'s claim, and two outside tests bound it.
 
 - **As a replacement for normalization, it lost.** Narang et al.
-  (LIT-tmpnc3oh) ran ReZero in a 223M T5 encoder-decoder against a pre-norm
+  ([LIT-tmpnc3oh](../literature.d/LIT-tmpnc3oh.md)) ran ReZero in a 223M T5 encoder-decoder against a pre-norm
   LayerNorm baseline. Its early pre-training loss was **2.262 against 2.182 ±
   0.005** and its SuperGLUE 61.69 against 71.66. ReZero + LayerNorm scored
   2.223 and ReZero + RMSNorm 2.221, both still worse. The ReZero runs needed
   Adam with its own warmup, because they did worse still under the baseline's
   Adafactor. In that setting it did not make normalization or warmup
   unnecessary.
-- **Alongside normalization, it was neutral.** LIT-tmpbukux gives a
+- **Alongside normalization, it was neutral.** [LIT-tmpbukux](../literature.d/LIT-tmpbukux.md) gives a
   20-layer attention-only decoder a ReZero residual on top of pre-norm and
   `1/(2N)` output scaling. The result is +0.0032 nats against its gated
   baseline, and a plain residual scores −0.0013. Both are within a few

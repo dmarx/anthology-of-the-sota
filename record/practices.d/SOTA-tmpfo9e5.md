@@ -25,7 +25,7 @@ extends:
 implementations:
 - 'facebookresearch/flip'
 summary: >-
-  Li et al. (2022), LIT-tmparvj2 — FLIP. Remove 50% of image patches and run
+  Li et al. (2022), [LIT-tmparvj2](../literature.d/LIT-tmparvj2.md) — FLIP. Remove 50% of image patches and run
   the ViT on the rest, with CLIP's loss and nothing else. The saving buys a 2×
   larger batch at the same memory and 2× the samples per hour; ViT-L/16 on
   LAION-400M reaches its unmasked reproduction's accuracy more than 3× faster.
@@ -37,15 +37,15 @@ summary: >-
 
 ## Source
 
-Li, Fan, Hu, Feichtenhofer and He (2022), LIT-tmparvj2 — ARXIV-2212.00794;
-read as NOTE-tmpr24hg.
+Li, Fan, Hu, Feichtenhofer and He (2022), [LIT-tmparvj2](../literature.d/LIT-tmparvj2.md) — [ARXIV-2212.00794](https://arxiv.org/abs/2212.00794);
+read as [NOTE-tmpr24hg](../notes.d/NOTE-tmpr24hg.md).
 
 ## What to do
 
-In contrastive image-text pretraining (SOTA-359) with a ViT image encoder:
+In contrastive image-text pretraining ([SOTA-359](SOTA-359.md)) with a ViT image encoder:
 
 - **Randomly remove 50% of each image's patches** and run the encoder on the
-  visible ones only — MAE's encoder design (SOTA-372) without MAE's decoder or
+  visible ones only — MAE's encoder design ([SOTA-372](SOTA-372.md)) without MAE's decoder or
   loss. 75% also works and is faster, at some accuracy.
 - **Spend the saving.** Double the batch at the same memory, or train on
   more samples in the same time. This is not optional; it is where the gain
@@ -71,7 +71,7 @@ same paper says which of those is masking's doing. ViT-L/16, LAION-400M,
 | 50% | 64k | — | 70.4 |
 
 At equal batch, masking is parity; the gain appears when the memory it frees
-becomes batch. That is SOTA-359's own condition — in contrastive learning the
+becomes batch. That is [SOTA-359](SOTA-359.md)'s own condition — in contrastive learning the
 batch is the negative set — measured. So read this practice as *the cheapest
 way to afford the batch*, and expect it to matter less where batch is not the
 constraint.
@@ -92,7 +92,7 @@ constraint.
   and masking does not touch that gap.
 - **Robustness gains are real within LAION and unexplained.** The authors
   hypothesize masking acts as a regularizer; nothing tests it.
-- **Unknown under a sigmoid loss.** SOTA-376 removes the memory ceiling from
+- **Unknown under a sigmoid loss.** [SOTA-376](SOTA-376.md) removes the memory ceiling from
   the loss side and is least batch-sensitive above 16k; if FLIP's gain is the
   batch, it should shrink there. Nobody in this record has run the pair.
 

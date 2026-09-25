@@ -120,8 +120,8 @@ which is not held. Nie et al. had shown theoretically that Guided Backprop and
 DeconvNet do partial input recovery; this paper adds a test that anyone can run.
 It cites Ancona et al. for the equivalence of ε-LRP and DeepLift(Rescale) to
 input⊙gradient in bias-free ReLU networks, which is why it treats them as one
-family. IG (LIT-tmpx7oed) is one of the eight methods tested, and no lineage
-relation is declared (see LIT-tmpzf4pd).
+family. IG ([LIT-tmpx7oed](../literature.d/LIT-tmpx7oed.md)) is one of the eight methods tested, and no lineage
+relation is declared (see [LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md)).
 
 ## Recommendations
 
@@ -130,7 +130,7 @@ relation is declared (see LIT-tmpzf4pd).
   the method for that purpose if its maps survive. *Topic:* analysis and
   evaluation. *Status:* experimental. *Strength:* moderate. It is strong as a
   rejection rule and says nothing about sufficiency. *Applies when:* the task
-  depends on parameters or labels. Filed as SOTA-tmpudd8t.
+  depends on parameters or labels. Filed as [SOTA-tmpudd8t](../practices.d/SOTA-tmpudd8t.md).
 - **R2** — Report signed rank correlation alongside any absolute-value or
   perceptual similarity when comparing maps. The absolute-value measures hide
   the sign change that distinguishes IG on a trained model from IG on a random
@@ -140,11 +140,11 @@ relation is declared (see LIT-tmpzf4pd).
 
 ## Bearing on the record
 
-- **SOTA-tmpudd8t is filed from R1**, `Proposed`. The paper states the instruction
+- **[SOTA-tmpudd8t](../practices.d/SOTA-tmpudd8t.md) is filed from R1**, `Proposed`. The paper states the instruction
   outright ("sanity checks to perform before deploying a method in practice") and
   backs it with a broad sweep. It is one group, all image classifiers, and pass
   and fail are read from curves without thresholds. The practice says all three.
-- **Integrated Gradients (LIT-tmpx7oed).** This reading should stop the record
+- **Integrated Gradients ([LIT-tmpx7oed](../literature.d/LIT-tmpx7oed.md)).** This reading should stop the record
   citing either "IG passes" or "IG fails" the sanity checks. The paper puts IG
   in neither list, and the metrics disagree about it.
 - The four methods the paper gives verdicts on (gradient, GradCAM, Guided

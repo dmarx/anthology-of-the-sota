@@ -263,7 +263,7 @@ the cost separately.
 
 ## An ablation from a model with no feed-forward layers
 
-LIT-tmpbukux trains attention-only decoders, with every feed-forward layer
+[LIT-tmpbukux](../literature.d/LIT-tmpbukux.md) trains attention-only decoders, with every feed-forward layer
 deleted, to 48 layers and 105B tokens. It tested which component keeps them
 trainable. The authors expected residual gating. The answer was QK-norm.
 Removing it from the 20-layer, 24M-parameter model **diverged at the tuned
@@ -273,7 +273,7 @@ than 0.004 nats.
 
 It is one run at one rate under Muon, in an architecture nobody ships, and the
 authors scope the claim to that rate. It is not another arrival like the
-ones above, because the paper cites LIT-640 and LIT-088 and adopted QK-norm
+ones above, because the paper cites [LIT-640](../literature.d/LIT-640.md) and [LIT-088](../literature.d/LIT-088.md) and adopted QK-norm
 from them. It is a test. It took the component out of an otherwise fixed
 model, and the model failed. It does not say which of the failure modes
 above occurred, since the run reports no entropy or logit measurements.

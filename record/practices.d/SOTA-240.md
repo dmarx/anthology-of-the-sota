@@ -78,6 +78,8 @@ summary: >-
 explained_by:
 - THEORY-015
 - THEORY-016
+extended_by:
+- SOTA-tmp0lvqr
 ---
 
 <!-- inactive-ok-file: SOTA-285 — Proposed, and named as the boundary case

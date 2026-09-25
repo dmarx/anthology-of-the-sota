@@ -23,7 +23,7 @@ keywords:
 implementations:
 - 'NVlabs/edm2'
 summary: >-
-  Karras et al. (2023), ARXIV-2312.02696 — EDM2. Two contributions that do not
+  Karras et al. (2023), [ARXIV-2312.02696](https://arxiv.org/abs/2312.02696) — EDM2. Two contributions that do not
   depend on each other. Rebuilding the ADM U-Net so every layer preserves
   activation, weight and update magnitude takes ImageNet-512 FID from 8.00 to
   2.56 at equal compute, the largest single step (6.96 → 3.75) being weight
@@ -45,8 +45,8 @@ compared_against:
 <!-- inactive-ok-file: SOTA-tmp9x33t, SOTA-tmpui8n0 — Proposed practices this paper sources, named in its standing as what it produced -->
 # LIT-tmpzn7w1: Analyzing and Improving the Training Dynamics of Diffusion Models
 
-Karras et al. (2023) — ARXIV-2312.02696 (CVPR 2024). Read in full as
-NOTE-tmpod74g, appendices included.
+Karras et al. (2023) — [ARXIV-2312.02696](https://arxiv.org/abs/2312.02696) (CVPR 2024). Read in full as
+[NOTE-tmpod74g](../notes.d/NOTE-tmpod74g.md), appendices included.
 
 ## Key takeaways
 
@@ -109,19 +109,19 @@ NOTE-tmpod74g, appendices included.
 ## Standing in the anthology
 
 Filed from `#290`'s promoted list (item 10), and the curation entry that sent
-it here says why it was unforced: it is the successor of LIT-075, the source
-of SOTA-188, and **neither of its two contributions was anywhere in this
+it here says why it was unforced: it is the successor of [LIT-075](LIT-075.md), the source
+of [SOTA-188](../practices.d/SOTA-188.md), and **neither of its two contributions was anywhere in this
 record** — no file said "post-hoc EMA" or "magnitude-preserving".
 
-It now sources two practices of its own, both `Proposed`: SOTA-tmp9x33t
-(choose the EMA length after training) and SOTA-tmpui8n0 (magnitude-preserving
+It now sources two practices of its own, both `Proposed`: [SOTA-tmp9x33t](../practices.d/SOTA-tmp9x33t.md)
+(choose the EMA length after training) and [SOTA-tmpui8n0](../practices.d/SOTA-tmpui8n0.md) (magnitude-preserving
 layers with forced weight normalization). Neither is `Active`, for the same
 reason: one group, one architecture family, and the authors' own discussion
 asks whether the layer changes would help a DiT. It is **not** added as a
-source to SOTA-188, whose recommendation it does not test; it corrects one
+source to [SOTA-188](../practices.d/SOTA-188.md), whose recommendation it does not test; it corrects one
 sentence there instead — EDM's loss weighting equalises the noise levels at
 initialization only, and stops doing so as training proceeds. It also answers
-half of the capacity question SOTA-424 records as open.
+half of the capacity question [SOTA-424](../practices.d/SOTA-424.md) records as open.
 
 [DP-010](../../docs/design-principles.md#dp-10) applies to the headline in a specific way. "1.81" is guided and
 "1.91" is not, and the gap between them rests on an EMA length the paper
@@ -131,4 +131,4 @@ A.5, where the two Fréchet distances pick EMA lengths seven-fold apart.
 The record holds no practice for the thing post-hoc EMA refines — sample from
 an average of the weights at all. The paper calls it "indispensable" and
 supplies no arm without it, so it cannot source that trunk; the gap is written
-down in NOTE-tmpod74g rather than filled with adoption.
+down in [NOTE-tmpod74g](../notes.d/NOTE-tmpod74g.md) rather than filled with adoption.

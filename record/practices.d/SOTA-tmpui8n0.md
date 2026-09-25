@@ -25,7 +25,7 @@ extends:
 implementations:
 - 'NVlabs/edm2'
 summary: >-
-  Karras et al. (2023), LIT-tmpzn7w1 — EDM2. Normalize each output channel's
+  Karras et al. (2023), [LIT-tmpzn7w1](../literature.d/LIT-tmpzn7w1.md) — EDM2. Normalize each output channel's
   weight vector on use, re-normalize the stored weights after every step,
   scale every fixed operation to preserve unit magnitude, and drop the group
   norms. On the ADM U-Net at ImageNet-512 this takes FID from 6.96 to 2.56 at
@@ -39,8 +39,8 @@ summary: >-
 
 ## Source
 
-Karras et al. (2023), LIT-tmpzn7w1 — ARXIV-2312.02696, §2 and Appendix B;
-read as NOTE-tmpod74g.
+Karras et al. (2023), [LIT-tmpzn7w1](../literature.d/LIT-tmpzn7w1.md) — [ARXIV-2312.02696](https://arxiv.org/abs/2312.02696), §2 and Appendix B;
+read as [NOTE-tmpod74g](../notes.d/NOTE-tmpod74g.md).
 
 ## The problem it removes
 
@@ -94,9 +94,9 @@ Gflops are unchanged throughout. Scaled up, the same design sets records at
 ImageNet-512 (1.81 guided) and ImageNet-64 (1.33) with a deterministic
 63-evaluation sampler.
 
-## Why it extends SOTA-188
+## Why it extends [SOTA-188](SOTA-188.md)
 
-SOTA-188 asks for unit variance at the network's input and output, derived by
+[SOTA-188](SOTA-188.md) asks for unit variance at the network's input and output, derived by
 preconditioning. This carries the same requirement inside the network, layer
 by layer, and for the same reason: a network whose internal scales drift is
 solving a differently-sized problem at every point in training. EDM2 is
@@ -122,7 +122,7 @@ EDM's successor from the same group and presents it that way.
 
 ## Its neighbour on the language side
 
-SOTA-282 (nGPT) re-projects every weight matrix onto the unit sphere after
+[SOTA-282](SOTA-282.md) (nGPT) re-projects every weight matrix onto the unit sphere after
 each step and deletes the normalization layers — the same move, in decoder-only
 language models, ten months later. The two have
 never been run against each other, and they differ in what they keep: nGPT

@@ -21,7 +21,7 @@ keywords:
 implementations:
 - 'facebookresearch/flip'
 summary: >-
-  Li et al. (2022), ARXIV-2212.00794 — FLIP. Train CLIP with 50–75% of image
+  Li et al. (2022), [ARXIV-2212.00794](https://arxiv.org/abs/2212.00794) — FLIP. Train CLIP with 50–75% of image
   patches removed and the image encoder run on the rest: the saved compute
   buys more pairs per hour and a 2–4× larger batch at the same memory, which
   outweighs the information lost per image. ViT-L/16 on LAION-400M reaches its
@@ -38,15 +38,15 @@ compared_against:
 <!-- inactive-ok-file: SOTA-tmpfo9e5 — Proposed practice this paper sources, named in its standing as what it produced -->
 # LIT-tmparvj2: Scaling Language-Image Pre-training via Masking
 
-Li, Fan, Hu, Feichtenhofer and He (2022) — ARXIV-2212.00794 (CVPR 2023).
-Read in full as NOTE-tmpr24hg.
+Li, Fan, Hu, Feichtenhofer and He (2022) — [ARXIV-2212.00794](https://arxiv.org/abs/2212.00794) (CVPR 2023).
+Read in full as [NOTE-tmpr24hg](../notes.d/NOTE-tmpr24hg.md).
 
 ## Key takeaways
 
 - **The method is one line.** Randomly remove 50% (or 75%) of image patches
-  and run the ViT only on the visible ones, as MAE (LIT-601) does — but with
+  and run the ViT only on the visible ones, as MAE ([LIT-601](LIT-601.md)) does — but with
   no decoder and no reconstruction: the loss is CLIP's contrastive loss
-  (LIT-588) and nothing else. At inference the encoder sees the whole image,
+  ([LIT-588](LIT-588.md)) and nothing else. At inference the encoder sees the whole image,
   with no adaptation, and that works.
 - **What masking buys is sample throughput, and the paper says so.** It is a
   trade between "how carefully we look at a sample pair" and "how many sample
@@ -88,12 +88,12 @@ Read in full as NOTE-tmpr24hg.
 ## Standing in the anthology
 
 Filed from `#290`'s promoted list (item 21). The curation entry said it
-"opens a leaf": the record's CLIP cluster — SOTA-359 and the practices around
+"opens a leaf": the record's CLIP cluster — [SOTA-359](../practices.d/SOTA-359.md) and the practices around
 it — held nothing on cutting the cost of contrastive pretraining by masking,
-and the MAE practice SOTA-372 held the encoder design without its use outside
+and the MAE practice [SOTA-372](../practices.d/SOTA-372.md) held the encoder design without its use outside
 reconstruction.
 
-It sources SOTA-tmpfo9e5, `Proposed`, which extends both. The practice is
+It sources [SOTA-tmpfo9e5](../practices.d/SOTA-tmpfo9e5.md), `Proposed`, which extends both. The practice is
 written around the table above rather than the abstract, because the
 abstract's "improves both accuracy and speed" is true only when the saved
 compute is spent on batch or epochs, and false at B/16 — [DP-010](../../docs/design-principles.md#dp-10)'s shape, in

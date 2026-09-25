@@ -35,7 +35,7 @@ introduced_by:
 - LIT-tmpzf4pd
 implementations: []
 summary: >-
-  Adebayo et al. (2018), LIT-tmpzf4pd, read as NOTE-tmp5d8h0. An attribution map
+  Adebayo et al. (2018), [LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md), read as [NOTE-tmp5d8h0](../notes.d/NOTE-tmp5d8h0.md). An attribution map
   that survives re-initializing the model's weights, or retraining on permuted
   labels, cannot be telling you about the weights or the labels. Guided
   Backprop and Guided GradCAM survive the first above the lowest layers, and
@@ -49,8 +49,8 @@ summary: >-
 ## Source
 
 Adebayo, Gilmer, Muelly, Goodfellow, Hardt and Kim (2018; NeurIPS 2018),
-LIT-tmpzf4pd — ARXIV-1810.03292, read in full (v3, November 2020) as
-NOTE-tmp5d8h0. The instruction is the paper's own: "our tests can be thought of
+[LIT-tmpzf4pd](../literature.d/LIT-tmpzf4pd.md) — [ARXIV-1810.03292](https://arxiv.org/abs/1810.03292), read in full (v3, November 2020) as
+[NOTE-tmp5d8h0](../notes.d/NOTE-tmp5d8h0.md). The instruction is the paper's own: "our tests can be thought of
 as sanity checks to perform before deploying a method in practice."
 
 ## Do this
@@ -88,7 +88,7 @@ similar" to the trained network's.
 | Integrated Gradients, gradient⊙input | structure persists; sign decorrelates | sign changes; input structure "clearly prevalent" |
 
 The paper names gradients and GradCAM as passing and Guided Backprop and Guided
-GradCAM as failing. **It gives Integrated Gradients (LIT-tmpx7oed) no verdict**,
+GradCAM as failing. **It gives Integrated Gradients ([LIT-tmpx7oed](../literature.d/LIT-tmpx7oed.md)) no verdict**,
 and neither does this practice.
 
 ## What the evidence does not cover

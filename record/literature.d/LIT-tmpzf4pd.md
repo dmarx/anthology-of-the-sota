@@ -1,0 +1,138 @@
+---
+status: Active
+title: 'Sanity Checks for Saliency Maps'
+version: 1
+tags:
+- analysis-and-evaluation
+- vision-and-graphics
+date: '2026-09-25'
+published: '2018-10-08'
+arxiv: '1810.03292'
+first_author: 'Adebayo'
+keywords:
+- 'saliency-maps'
+- 'model-parameter-randomization'
+- 'data-randomization'
+- 'cascading-randomization'
+- 'guided-backpropagation'
+- 'gradcam'
+- 'integrated-gradients'
+- 'edge-detector'
+implementations:
+- 'captum (README links it as a critique of methods captum ships)'
+summary: >-
+  Adebayo, Gilmer, Muelly, Goodfellow, Hardt and Kim (NeurIPS 2018),
+  ARXIV-1810.03292. Two randomization tests for any explanation method. Compare
+  its maps on the trained model against the same architecture with weights
+  re-initialized (top-down, or one layer at a time), and against a model
+  trained on permuted labels. A method whose maps survive either cannot
+  support model debugging or explain what the model learned from data.
+  **Gradients and GradCAM pass. Guided Backprop and Guided GradCAM are
+  invariant to the higher layers' weights.** Integrated Gradients and
+  gradient⊙input get no verdict. Their maps keep the input's structure (rank
+  correlation with absolute values and SSIM stay high), while their sign
+  decorrelates at once. The lesson that travels is the negative one: judging
+  a saliency map by how it looks is not a test.
+---
+
+# LIT-tmpzf4pd: Sanity Checks for Saliency Maps
+
+Adebayo, Gilmer, Muelly, Goodfellow, Hardt and Kim (2018; NeurIPS 2018; v3,
+November 2020) — ARXIV-1810.03292
+
+## Key takeaways
+
+**The two tests.**
+- *Model parameter randomization.* Re-initialize the weights and compare the
+  maps. Cascading: the logits first, then each block down to the input. The
+  17 blocks of Inception v3 are randomized including biases and batch-norm
+  variables. Independent: one layer at a time with the rest trained. "If the
+  saliency method depends on the learned parameters of the model, we should
+  expect its output to differ substantially".
+- *Data randomization.* Permute all training labels and train the same
+  architecture to above 95% training accuracy. Test accuracy is at chance. A
+  map that does not change "cannot possibly explain mechanisms that depend on
+  the relationship between instances and labels".
+
+**What they found.** Across Inception v3 on ImageNet and a CNN and an MLP on
+MNIST and Fashion-MNIST, with Spearman rank correlation with and without
+absolute values, SSIM and HOG correlation:
+- **Gradients and SmoothGrad** change substantially under both tests.
+  **GradCAM** changes once the randomization reaches the last convolutional
+  layer.
+- **Guided Backprop and Guided GradCAM** are invariant to the weights above the
+  lowest layers. The maps change only when the layers nearest the input are
+  randomized, and even then "the resulting mask is still dominated by the input
+  structure". On random labels, Guided Backprop still assigns positive
+  relevance "across most of the digit".
+- **Integrated Gradients and gradient⊙input** fall between the two. The bird is
+  still visible after several blocks are randomized. SSIM and rank correlation
+  with absolute values stay high, while rank correlation *without* absolute
+  values "goes to zero … almost as soon as the top layers are randomized". On
+  random labels the sign changes, "the input structure is still clearly
+  prevalent", and "an analyst could confuse" the maps for legitimate ones.
+
+**Why, argued three ways.**
+- Multiplying the input by two independent random vectors gives products that
+  still look alike, because the input dominates any input×gradient method
+  (Figure 19).
+- In a one-layer convolution with sum-pooling, the gradient at a pixel is set
+  by the local ReLU activation pattern. That pattern changes at edges, so the
+  map is an edge map.
+- An untrained edge detector produces maps "strikingly similar" to several
+  methods' (Figure 1).
+
+## Traps
+
+- **The abstract overstates the paper's own corrected finding.** It says "some
+  existing saliency methods are independent both of the model and of the data
+  generating process." Footnote 5 of this version withdraws the strong form: "A
+  previous version of this work noted that Guided Backprop was entirely
+  invariant; however, this is not this case." The acknowledgements credit Leon
+  Sixt with the bug. What the body shows is invariance to the *higher-layer*
+  weights, and a visual change on random labels that stays plausible-looking.
+  Cite the body.
+- **IG is not in the pass list or the fail list.** Contribution 3 names four
+  methods and IG is not among them. "Integrated Gradients fails the sanity
+  checks" is a reading of the figures, and the figures support two readings.
+  Its magnitudes behave like Guided Backprop's and its signs like the
+  gradient's.
+- **"Pass" is judged by eye, from curves.** The paper calls these tests
+  randomization tests after the statistical kind, but it reports no threshold,
+  no p-value and no count of inputs for the main figures. The calibration is
+  the one check: 50 ImageNet images, where random masks score about 0 on every
+  metric. The metric decides the verdict, as the IG row shows.
+- **The linear-model derivation has an arithmetic slip.** §5.3 writes
+  `∫₀¹ wα dα = w/2`, so `E_IG = (x − x̄)⊙w/2`. The gradient of `w·x` is `w` at
+  every point on the path, so the integral is `w`, and completeness requires
+  `Σ (x − x̄)⊙w = f(x) − f(x̄)`. The conclusion drawn from it survives the slip:
+  on a linear model IG is gradient⊙input measured from the baseline.
+- **Every experiment is an image classifier.** The paper says the methodology
+  "applies in generality to any explanation approach". That is true of the
+  tests, which are defined for any method. It is not true of the findings.
+- The authors' own framing is a hedge worth carrying: "a stepping stone towards
+  a more rigorous evaluation of new explanation methods, rather than a verdict
+  on existing methods."
+
+## Standing in the anthology
+
+Filed on 2026-09-25 with LIT-tmpx7oed as the two openers `#290` promoted from
+captum's reference list. captum's README links this paper, as a critique of
+methods captum ships, alongside `2106.07475` (*Investigating sanity checks for
+saliency maps*). That later paper is not held and would be the first thing to
+read against this one.
+
+It sources SOTA-tmpudd8t, filed `Proposed`: before trusting an attribution map for
+debugging or for explaining what a model learned, run both randomization tests
+and do not validate the map by eye. The practice is general and the evidence
+is image classifiers only, and the practice says so.
+
+**No relation is declared to LIT-tmpx7oed**, although IG is one of the eight
+methods tested. `compared_against:` means this paper measured itself against
+that one, and it did not. It measured IG. It does not `extend` IG, and it
+never names a defect in IG as its motivation, so `corrects:` would claim more
+than the text does. The finding about IG is in both notes' prose.
+
+The data-randomization test takes its idea from Zhang et al.'s random-label
+experiment ("although we use the test for an entirely different purpose"),
+which is not held.

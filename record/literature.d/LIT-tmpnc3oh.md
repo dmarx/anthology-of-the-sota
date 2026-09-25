@@ -1,0 +1,140 @@
+---
+status: Active
+title: 'Do Transformer Modifications Transfer Across Implementations and Applications?'
+version: 1
+tags:
+- model-architecture
+- analysis-and-evaluation
+- model-stability
+- attention-techniques
+- representation-and-encoding
+date: '2026-09-25'
+published: '2021-02-23'
+arxiv: '2102.11972'
+first_author: 'Narang'
+keywords:
+- 'transformer-modifications'
+- 'reproducibility'
+- 'activation-functions'
+- 'normalization'
+- 'embedding-sharing'
+- 'parameter-sharing'
+- 'mixture-of-experts'
+- 'negative-result'
+implementations:
+- 'T5 / Mesh TensorFlow'
+summary: >-
+  Narang et al. (2021), [ARXIV-2102.11972](https://arxiv.org/abs/2102.11972). About fifty published transformer modifications
+  reimplemented in one codebase (T5 / Mesh TensorFlow, 223M encoder-decoder)
+  with hyperparameters held fixed, scored on C4 pre-training loss, SuperGLUE,
+  XSum, WebQuestions and WMT'14 En-De. **Most do not help.** The ones that do
+  are small (GLU-variant activations, RMSNorm, untied embeddings), cost
+  parameters or time (Switch/MoE, product-key memory, mixture of softmaxes), or
+  were invented in the same codebase. The Universal Transformer, ReZero, Fixup,
+  cross-layer sharing, the Evolved Transformer and lightweight/dynamic
+  convolutions all come out worse than the vanilla baseline. The caveat that
+  travels least: the positive results are also mostly same-codebase — GLU
+  Variants (LIT-030) was run in this codebase at this exact configuration — so
+  the paper is a strong negative test and a weak positive one.
+compared_against:
+- LIT-030
+- LIT-023
+- LIT-047
+- LIT-188
+- LIT-189
+- LIT-668
+- LIT-020
+---
+
+# LIT-tmpnc3oh: Do Transformer Modifications Transfer Across Implementations and Applications?
+
+Narang, Chung, Tay, Fedus, Fevry, Matena, Malkan, Fiedel, Shazeer, Lan, Zhou,
+Li, Ding, Marcus, Roberts and Raffel (2021) — [ARXIV-2102.11972](https://arxiv.org/abs/2102.11972)
+
+## Key takeaways
+
+**The protocol.** A 12+12-layer encoder-decoder (`d_model` 768, `d_ff` 3072, 12
+heads, 223M parameters), pre-norm and relative-position biases in the
+baseline. Each variant is held to the baseline's parameter count or FLOPs where
+possible, and **every hyperparameter is held fixed** — deliberately, on the
+argument that a useful modification should be reasonably
+hyperparameter-agnostic. C4 span-corruption pre-training for 524,288 steps,
+with five seeds to 65,536 steps for an early-loss mean ± std; fine-tuned on
+SuperGLUE, XSum and closed-book WebQuestions; and trained from scratch on
+WMT'14 En-De. Authors of 12 techniques were asked to review the
+reimplementation; 6 replied and all 6 confirmed it.
+
+**What helps (Table 1, early loss ± std over 5 seeds; baseline 2.182 ± 0.005,
+final 1.838).**
+
+| variant | early loss | final loss | SGLUE | WMT | note |
+| --- | --- | --- | --- | --- | --- |
+| SwiGLU | 2.127 ± 0.003 | 1.789 | 76.00 | 27.02 | no speed cost |
+| GeGLU | 2.130 ± 0.006 | 1.792 | 75.96 | 26.87 | |
+| RMS Norm | 2.167 ± 0.008 | 1.821 | 75.45 | 27.14 | 3.68 vs 3.50 steps/s |
+| Switch Transformer | 2.135 ± 0.007 | 1.758 | 75.38 | 26.81 | 1100M params |
+| Mixture of experts | 2.148 ± 0.006 | 1.785 | 74.55 | 26.94 | 648M params |
+| Mixture of softmaxes | 2.227 ± 0.017 | 1.821 | 76.77 | 26.82 | ~40% slower |
+
+**What does not (same table).** ReZero replacing LayerNorm 2.262 (SGLUE
+61.69); ReZero + LayerNorm 2.223; Fixup 2.382; full ALBERT-style block sharing
+2.497 at 65M parameters; encoder-only and decoder-only block sharing 2.298 and
+2.352; Universal Transformer 2.406 at ~4× the FLOPs; Evolved Transformer
+2.220; lightweight and dynamic convolution 2.370 and 2.403; adaptive softmax,
+adaptive inputs, Funnel, transparent attention and most Synthesizer variants
+all worse. ReZero and Fixup got one concession the others did not: they did
+so badly under Adafactor that they were switched to Adam with its own warmup,
+and the numbers above are after that switch. A 25-configuration hyperparameter sweep of the Universal
+Transformer took it from 2.40 to 2.265 and **still could not match the
+untuned vanilla baseline** (§3.2).
+
+**Depth at fixed parameters is not the clean win the prose says.** §3.1 says
+"deeper models tend to outperform shallower ones with a fixed parameter
+count". The final losses are 18 layers 1.831, the 12-layer baseline 1.838,
+24 layers 1.843, 8 layers 1.847, 6 layers 1.857 — non-monotone, with the
+deepest worse than the baseline, and every depth variant slower per step as it
+gets deeper. With learned positions (Table 2) every depth variant is worse than
+the baseline on both losses.
+
+**The robustness check the headline omits.** Appendix A reruns everything
+with learned absolute positions instead of relative biases. The GLU variants
+still win (SwiGLU 2.168 vs 2.245). RMSNorm still lowers loss (2.209 vs 2.245)
+but loses to the baseline on SuperGLUE (69.11 vs 69.72) and WebQuestions
+(23.55 vs 24.60). Relative attention beats learned absolute positions by a
+wide margin across architectures.
+
+**Pre-training loss predicts fine-tuning only moderately.** Spearman ρ 0.87
+(SuperGLUE), 0.80 (XSum), 0.69 (WebQuestions) across variants — weaker than
+the authors expected, and weakest on the knowledge-intensive task.
+
+**The paper's own conjecture is conjecture.** Of five explanations considered,
+the authors favour "modifications do not transfer across implementations and
+applications", supported by an argument from non-adoption. Nothing in the
+paper tests a second implementation.
+
+## Standing in the anthology
+
+Filed as `#290`'s promotion #1: a negative result about the entire class of
+architecture variants that the x-transformers catalogue lists (DP-005). It is
+the record's only controlled, multi-task, shared-codebase audit of that
+class, and it bears on the practices whose sources it reimplemented:
+SOTA-034 (SwiGLU), SOTA-182 (RMSNorm), SOTA-150 (mixture of experts),
+SOTA-051 (ReZero), SOTA-403 (cross-layer sharing) and SOTA-190 (depth). Each
+now says what this paper found.
+
+**Read the positive half with the codebase in mind.** The paper calls its
+winners minor changes, same-codebase inventions, or more expensive, and lists
+MoE, Switch and Synthesizer as the same-codebase ones. It does not say that
+GLU Variants (LIT-030) belongs on that list too, but LIT-030's §3.1 says it
+used "the same code base, model architecture, and training task as the base
+model from" T5 — the model this paper uses as its baseline. Noam Shazeer is an author of
+both. So SwiGLU's gain here is a re-run on four tasks with five seeds, not a
+test of whether it transfers to another implementation. The negative half has
+no such problem: a modification that fails in the codebase most of the
+authors built has been given a fair chance.
+
+Two small inconsistencies in the text, recorded so nobody quotes them. §3.1
+gives the vanilla SuperGLUE score as 70.97, while Table 1 gives 71.66. And
+§3 calls pre-norm "unanimously adopted … because it leads to more effective
+training". That is an adoption claim (DP-005). Pre-norm is the baseline here
+and is never tested, so this paper is not evidence for SOTA-032.

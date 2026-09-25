@@ -20,7 +20,7 @@ history:
   note: >-
     Adds the first measured counter-case this document has held. The consensus
     note said the evidence was one 2022 paper plus everything built on it
-    since; LIT-tmppwagl is a 2024 measurement on frontier models where
+    since; LIT-667 is a 2024 measurement on frontier models where
     eliciting verbalized reasoning *lowered* accuracy — Gemini-1.5-Pro 37.3%
     to 12.0% with retrieval, against 33.3% for chance — and where the failure
     is legible: 70.7% of the verbalized responses conclude the answer cannot
@@ -35,7 +35,7 @@ tags:
 date: '2026-09-21'
 source:
 - LIT-467
-- LIT-tmppwagl
+- LIT-667
 introduced_by:
 - LIT-467
 extends:
@@ -103,7 +103,7 @@ the trunk rather than one result among many:
   problems and does not price the ones it wins on. There is a regime where
   this loses on accuracy and cost at once.
 - **Search over a large in-context fact base is one such regime, measured on
-  2024 models.** [LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) gives frontier models 28.2K facts (or 5.4K
+  2024 models.** [LIT-667](../literature.d/LIT-667.md) gives frontier models 28.2K facts (or 5.4K
   retrieved, enough to deduce the answer) and asks a question whose proof needs
   two bridge entities found among them. Against 33.3% for chance,
   Gemini-1.5-Pro scores **28.7% answering directly and 11.3% when asked to
@@ -117,7 +117,7 @@ the trunk rather than one result among many:
 - **A correct chain is not guaranteed and a correct answer does not imply
   one.** Their own error analysis found two of fifty correct answers reached
   through incorrect reasoning. Reading a chain as an explanation of the
-  answer is a separate claim this does not support. [LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) makes that
+  answer is a separate claim this does not support. [LIT-667](../literature.d/LIT-667.md) makes that
   much worse on a task where the proofs are mechanically checkable: **most**
   of the rationales that reached the right answer were themselves wrong —
   hallucinated facts or logical errors. That figure is from inspection and

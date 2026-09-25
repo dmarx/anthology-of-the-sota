@@ -1,5 +1,8 @@
 ---
+number: 103
 status: Proposed
+formerly:
+- THEORY-tmp6pl9b
 promote_when: >-
   The layer asymmetry is measured on a model trained on natural text — the
   second-hop fact recoverable from the upper layers for compositions the model
@@ -16,9 +19,9 @@ tags:
 - capability-thresholds
 date: '2026-09-25'
 source:
-- LIT-tmppwagl
+- LIT-667
 summary: >-
-  Wang et al. (2024), [LIT-tmppwagl](../literature.d/LIT-tmppwagl.md). Composition and comparison are both
+  Wang et al. (2024), [LIT-667](../literature.d/LIT-667.md). Composition and comparison are both
   two-fact tasks that both arrive by grokking, and only one of them
   generalizes to facts held out of the training compositions. The difference
   is where the circuit keeps the facts: composition's is **sequential** and
@@ -29,11 +32,11 @@ summary: >-
   missing copy, and tying the two halves of the stack together unlocks it.
 ---
 
-# THEORY-tmp6pl9b: A transformer stores a fact where it needed it, so two-hop composition generalizes only to facts it already saw as a second hop
+# THEORY-103: A transformer stores a fact where it needed it, so two-hop composition generalizes only to facts it already saw as a second hop
 
 ## Source
 
-Wang, Yue, Su and Sun (2024), [LIT-tmppwagl](../literature.d/LIT-tmppwagl.md).
+Wang, Yue, Su and Sun (2024), [LIT-667](../literature.d/LIT-667.md).
 
 ## The account
 

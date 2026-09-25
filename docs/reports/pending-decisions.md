@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**209 document(s) awaiting a decision.**
+**211 document(s) awaiting a decision.**
 
 ## SOTAs
 
-142 of the 209.
+143 of the 211.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -155,10 +155,11 @@
 | 2026-09-24 | Proposed | [SOTA-393](../../record/practices.d/SOTA-393.md) | 0 | 0 | Freeze the image model's spatial layers when adding time if checkpoint compatibility matters; do not expect a quality gain from it |
 | 2026-09-24 | Proposed | [SOTA-396](../../record/practices.d/SOTA-396.md) | 0 | 0 | When a latent video model reuses an image autoencoder or upsampler, fine-tune them on video so they see time |
 | 2026-09-24 | Proposed | [SOTA-397](../../record/practices.d/SOTA-397.md) | 0 | 0 | To condition an unconditionally trained diffusion model on known frames, use reconstruction guidance, not replacement |
+| 2026-09-25 | Proposed | [SOTA-402](../../record/practices.d/SOTA-402.md) | 1 | 0 | To teach a model to reason over facts it holds, spend added data on facts derived from other facts rather than on more atomic facts |
 
 ## THEORYs
 
-61 of the 209.
+62 of the 211.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -172,7 +173,7 @@
 | 2026-09-17 | Proposed | [THEORY-023](../../record/theory.d/THEORY-023.md) | 2 | 0 | Depth-dependent computation in a transformer falls into four stages, of which detokenization is the first |
 | 2026-09-19 | Proposed | [THEORY-024](../../record/theory.d/THEORY-024.md) | 29 | 0 | Orthogonalising the update is dualising it, and muP and Shampoo are two partial approximations of the same duality map |
 | 2026-09-19 | Proposed | [THEORY-025](../../record/theory.d/THEORY-025.md) | 7 | 0 | A transformer holds about 3.6 bits per parameter, and generalization begins where the data outgrows that budget |
-| 2026-09-20 | Proposed | [THEORY-032](../../record/theory.d/THEORY-032.md) | 16 | 0 | A spectral update wins where the incoming activations are low stable rank and the gradient spectrum is spread out |
+| 2026-09-20 | Proposed | [THEORY-032](../../record/theory.d/THEORY-032.md) | 17 | 0 | A spectral update wins where the incoming activations are low stable rank and the gradient spectrum is spread out |
 | 2026-09-20 | Proposed | [THEORY-030](../../record/theory.d/THEORY-030.md) | 11 | 0 | Adaptive optimizers work by shaping the curvature they adapt to, and oscillation is how a first-order method sees curvature at all |
 | 2026-09-20 | Proposed | [THEORY-034](../../record/theory.d/THEORY-034.md) | 10 | 0 | Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations |
 | 2026-09-20 | Proposed | [THEORY-033](../../record/theory.d/THEORY-033.md) | 9 | 0 | What a spectral optimizer buys is a step size that stays optimal, not adherence to a target geometry |
@@ -197,8 +198,8 @@
 | 2026-09-21 | Proposed | [THEORY-054](../../record/theory.d/THEORY-054.md) | 1 | 0 | The regularizer that is intractable in data space is tractable in noise space, and bounds the data-space divergence |
 | 2026-09-21 | Proposed | [THEORY-055](../../record/theory.d/THEORY-055.md) | 1 | 0 | A producer's own rate of return is the price of their time, so making them faster raises the bar on every marginal hour of improvement |
 | 2026-09-22 | Proposed | [THEORY-062](../../record/theory.d/THEORY-062.md) | 12 | 0 | What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such |
+| 2026-09-22 | Proposed | [THEORY-071](../../record/theory.d/THEORY-071.md) | 11 | 0 | A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips when the data makes memorising more expensive |
 | 2026-09-22 | Proposed | [THEORY-061](../../record/theory.d/THEORY-061.md) | 9 | 0 | Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product |
-| 2026-09-22 | Proposed | [THEORY-071](../../record/theory.d/THEORY-071.md) | 6 | 0 | A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips at a critical dataset size |
 | 2026-09-22 | Proposed | [THEORY-072](../../record/theory.d/THEORY-072.md) | 6 | 0 | Training and test loss disagree as functions of weight norm, and shrinking the norm through the gap is what takes so long |
 | 2026-09-22 | Proposed | [THEORY-070](../../record/theory.d/THEORY-070.md) | 5 | 0 | Grokking is the transition from lazy to rich training dynamics |
 | 2026-09-22 | Proposed | [THEORY-074](../../record/theory.d/THEORY-074.md) | 4 | 0 | A phase transition of the Bayesian posterior and a transition in the training trajectory are different events, and only the first is well defined |
@@ -219,14 +220,15 @@
 | 2026-09-23 | Proposed | [THEORY-084](../../record/theory.d/THEORY-084.md) | 1 | 0 | AlphaFold 2 needs the sequence alignment to find a protein's coarse fold, not to refine it, so accuracy collapses below a minimum alignment depth and barely improves above it |
 | 2026-09-23 | Proposed | [THEORY-086](../../record/theory.d/THEORY-086.md) | 1 | 0 | A text document is better modelled as a mixture of several topics, each a distribution over words, than as a draw from a single topic |
 | 2026-09-23 | Proposed | [THEORY-094](../../record/theory.d/THEORY-094.md) | 1 | 0 | Word vectors approximate PMI in low dimensions, and relations appear as clean directions despite a noisy fit, because text behaves as if generated by a slowly drifting discourse over isotropic word vectors |
+| 2026-09-24 | Proposed | [THEORY-100](../../record/theory.d/THEORY-100.md) | 4 | 0 | Activation outliers are a product of pre-training optimization choices, not an emergent property of scale |
 | 2026-09-24 | Proposed | [THEORY-096](../../record/theory.d/THEORY-096.md) | 3 | 0 | A Pre-LN residual stream's per-layer change decays as one over root k, so deep blocks cannot refine the representation |
 | 2026-09-24 | Proposed | [THEORY-099](../../record/theory.d/THEORY-099.md) | 3 | 0 | Muon's update matches the outer-product structure of associative memories, which is why it learns tail classes that Adam under-trains |
 | 2026-09-24 | Proposed | [THEORY-097](../../record/theory.d/THEORY-097.md) | 2 | 0 | Attention is an approximation of Kanerva's sparse distributed memory, which is why it needs normalized vectors and a fitted temperature |
-| 2026-09-24 | Proposed | [THEORY-100](../../record/theory.d/THEORY-100.md) | 2 | 0 | Activation outliers are a product of pre-training optimization choices, not an emergent property of scale |
+| 2026-09-25 | Proposed | [THEORY-103](../../record/theory.d/THEORY-103.md) | 2 | 0 | A transformer stores a fact where it needed it, so two-hop composition generalizes only to facts it already saw as a second hop |
 
 ## LITs
 
-3 of the 209.
+3 of the 211.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -236,7 +238,7 @@
 
 ## ADRs
 
-3 of the 209.
+3 of the 211.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

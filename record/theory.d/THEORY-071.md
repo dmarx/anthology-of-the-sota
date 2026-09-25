@@ -9,7 +9,7 @@ history:
 - version: 2
   date: '2026-09-25'
   note: >-
-    The title said the flip happens "at a critical dataset size". LIT-tmppwagl
+    The title said the flip happens "at a critical dataset size". LIT-667
     is a named correction of exactly that: with the inferred/atomic ratio held
     fixed, scaling the training set changes nothing about the transition, and
     the paper proposes critical data *distribution* in its place. The crossover
@@ -28,13 +28,13 @@ date: '2026-09-22'
 source:
 - LIT-539
 - LIT-085
-- LIT-tmppwagl
+- LIT-667
 promote_when: >-
   The efficiency ordering is **measured** — parameter norm per unit logit, on
   the mixed networks that actually grok rather than on constructed
   `C_mem`-only and `C_gen`-only ones — and something accounts for the grokking
   LIT-537 reports with no weight decay at all. A third domain in which the
-  crossover's *consequences* show up is explicitly not it: LIT-tmppwagl
+  crossover's *consequences* show up is explicitly not it: LIT-667
   supplied one, and what it established was that the quantity the previous
   version of this field asked to be measured does not exist there.
 summary: >-
@@ -45,14 +45,14 @@ summary: >-
   Memorisation gets less efficient as the dataset grows and generalisation does
   not, so they cross at a critical dataset size `D_crit`. From that the paper
   derived **ungrokking** and **semi-grokking** and then observed both. What
-  crosses is not indexed on dataset size, though: LIT-tmppwagl holds the
+  crosses is not indexed on dataset size, though: LIT-667 holds the
   inferred/atomic ratio fixed, scales the data, and nothing happens.
   `Proposed`, on scope rather than on evidence: it needs weight decay, and
   LIT-537 groks without any.
 corrected_by:
 - THEORY-070
 explains:
-- SOTA-tmpvsnuz
+- SOTA-402
 ---
 
 # THEORY-071: A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips when the data makes memorising more expensive
@@ -86,7 +86,7 @@ cross at **`D_crit`**.
 
 ## The index is not dataset size
 
-That argument is about *examples*, and it is the part [LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) corrects by
+That argument is about *examples*, and it is the part [LIT-667](../literature.d/LIT-667.md) corrects by
 name. Wang et al. train on a mixture of atomic facts and facts deduced from
 them, and separate two knobs the algorithmic setting fuses:
 
@@ -150,7 +150,7 @@ training on random labels, `C_gen`-only from large datasets with a check that
 `> 95%` of logit norm lies in the trigonometric subspace. The efficiency curves
 are measured on these, not on the mixed networks that actually grok.
 
-[LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) does not close that. It traces a generalising circuit in a
+[LIT-667](../literature.d/LIT-667.md) does not close that. It traces a generalising circuit in a
 non-algorithmic setting, which the previous version of the `promote_when` asked
 for, and then argues the efficiency ordering by **counting facts** — how many
 each circuit must store — rather than by measuring norm per unit logit. A
@@ -162,7 +162,7 @@ asks for it in the setting the account was built in rather than somewhere else.
 The status is about scope. On evidential shape — risky predictions, made
 first, confirmed after — this is the best-supported account here, and
 [THEORY-070](THEORY-070.md), which contradicts it, leaves both of its novel phenomena
-unexplained. [LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) adds a second domain and a third confirmed
+unexplained. [LIT-667](../literature.d/LIT-667.md) adds a second domain and a third confirmed
 prediction of the same shape (raising weight decay accelerates grokking, which
 the efficiency story implies and the paper then measured), which is why the
 correction above is an amendment and not a demotion.

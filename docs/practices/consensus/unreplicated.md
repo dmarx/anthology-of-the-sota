@@ -6,7 +6,7 @@
 
 **One source** — one group, one result — nobody has agreed or disagreed yet, which is not the same as contested, where people looked and differed.
 
-118 of 401 SOTA documents. Back to the [full index](../README.md).
+119 of 402 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -128,3 +128,4 @@
 | [SOTA-398](../../../record/practices.d/SOTA-398.md) v2 | Pretrain a vision transformer on packed, aspect-preserved images at sampled resolutions, not on fixed square crops | Dehghani et al. (2023), [LIT-657](../../../record/literature.d/LIT-657.md). Do not resize or crop images to one square resolution. Keep each image's aspect ratio and sample its resolution per example, favouring small side lengths. Pack the patches into fixed-length sequences with per-example attention masks. At matched compute this beats square fixed-resolution ViT pretraining, and matches the best ViT with 4x less compute. Most of the gain is throughput. | Proposed |
 | [SOTA-399](../../../record/practices.d/SOTA-399.md) | Choose pre-training weight decay, dropout, clipping and precision for the quantization you intend to ship |  | Proposed |
 | [SOTA-401](../../../record/practices.d/SOTA-401.md) | Anchor the patch Gram matrix to an early teacher when training long, because dense features decay while global metrics improve |  | Proposed |
+| [SOTA-402](../../../record/practices.d/SOTA-402.md) | To teach a model to reason over facts it holds, spend added data on facts derived from other facts rather than on more atomic facts | Wang et al. (2024), [LIT-667](../../../record/literature.d/LIT-667.md). Two sweeps that separate what is normally varied together: with the inferred/atomic ratio `φ` fixed, scaling the training set changes nothing about how a transformer acquires a two-fact inference rule; with the size effect thus accounted for, raising `φ` moves the acquisition monotonically, and at `φ = 18.0` the delay is gone — 96.7% before training accuracy has even saturated. Synthetic knowledge graphs only, and it buys rule application on facts already seen in compositions, not systematicity. | Proposed |

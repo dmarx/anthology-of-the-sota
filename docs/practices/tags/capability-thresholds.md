@@ -6,10 +6,11 @@
 
 **Capability thresholds** — a capability that arrives abruptly rather than smoothly — emergence at scale, grokking after long training, phase transitions in learning — which axis it turns on, and whether the discontinuity is real or an artefact of how it was measured.
 
-3 of 401 SOTA documents. Back to the [full index](../README.md).
+4 of 402 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [SOTA-037](../../../record/practices.d/SOTA-037.md) | LM in-context learning emerges at scale | Brown et al. (2020), [LIT-035](../../../record/literature.d/LIT-035.md) — [ARXIV-2005.14165](https://arxiv.org/abs/2005.14165). | Active |
 | [SOTA-200](../../../record/practices.d/SOTA-200.md) v3 | Check whether an emergent capability is a metric artefact before believing it |  | Active |
-| [SOTA-279](../../../record/practices.d/SOTA-279.md) | Put worked reasoning steps in the few-shot exemplars when the task needs more than one step, and only once the model is large enough | Wei et al. (2022), [LIT-467](../../../record/literature.d/LIT-467.md) — eight exemplars carrying worked steps more than doubled PaLM 540B on GSM8K, beating a fine-tuned model with a verifier. Three ablations rule out the equation, the extra tokens and knowledge activation. Below ~100B it does nothing or hurts. | Active |
+| [SOTA-279](../../../record/practices.d/SOTA-279.md) v2 | Put worked reasoning steps in the few-shot exemplars when the task needs more than one step, and only once the model is large enough | Wei et al. (2022), [LIT-467](../../../record/literature.d/LIT-467.md) — eight exemplars carrying worked steps more than doubled PaLM 540B on GSM8K, beating a fine-tuned model with a verifier. Three ablations rule out the equation, the extra tokens and knowledge activation. Below ~100B it does nothing or hurts. | Active |
+| [SOTA-402](../../../record/practices.d/SOTA-402.md) | To teach a model to reason over facts it holds, spend added data on facts derived from other facts rather than on more atomic facts | Wang et al. (2024), [LIT-667](../../../record/literature.d/LIT-667.md). Two sweeps that separate what is normally varied together: with the inferred/atomic ratio `φ` fixed, scaling the training set changes nothing about how a transformer acquires a two-fact inference rule; with the size effect thus accounted for, raising `φ` moves the acquisition monotonically, and at `φ = 18.0` the delay is gone — 96.7% before training accuracy has even saturated. Synthetic knowledge graphs only, and it buys rule application on facts already seen in compositions, not systematicity. | Proposed |

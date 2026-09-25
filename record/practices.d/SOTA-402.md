@@ -1,5 +1,8 @@
 ---
+number: 402
 status: Proposed
+formerly:
+- SOTA-tmpvsnuz
 consensus: unreplicated
 consensus_note: >-
   One group, one result, and the group is the one that proposed the knob.
@@ -23,16 +26,16 @@ tags:
 - training-optimization
 date: '2026-09-25'
 source:
-- LIT-tmppwagl
+- LIT-667
 # Same code as `source:`. Wang et al. both measured the effect and drew the
 # recommendation from it — "our findings guide data and training setup to
 # better induce implicit reasoning" — so there is no earlier statement to
 # credit (ADR-030).
 introduced_by:
-- LIT-tmppwagl
+- LIT-667
 implementations: []
 summary: >-
-  Wang et al. (2024), [LIT-tmppwagl](../literature.d/LIT-tmppwagl.md). Two sweeps that separate what is normally
+  Wang et al. (2024), [LIT-667](../literature.d/LIT-667.md). Two sweeps that separate what is normally
   varied together: with the inferred/atomic ratio `φ` fixed, scaling the
   training set changes nothing about how a transformer acquires a two-fact
   inference rule; with the size effect thus accounted for, raising `φ` moves
@@ -44,16 +47,16 @@ explained_by:
 - THEORY-071
 ---
 
-# SOTA-tmpvsnuz: To teach a model to reason over facts it holds, spend added data on facts derived from other facts rather than on more atomic facts
+# SOTA-402: To teach a model to reason over facts it holds, spend added data on facts derived from other facts rather than on more atomic facts
 
-<!-- inactive-ok-file: THEORY-071 THEORY-tmp6pl9b — Proposed, and both named as the explanations of
+<!-- inactive-ok-file: THEORY-071 THEORY-103 — Proposed, and both named as the explanations of
      this practice rather than as evidence for it: one says why the ratio is the variable, the
      other says why the practice cannot buy systematicity. That they are open is the point being
      made where each is cited. -->
 
 ## Source
 
-Wang, Yue, Su and Sun (2024), [LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) — [ARXIV-2405.15071](https://arxiv.org/abs/2405.15071).
+Wang, Yue, Su and Sun (2024), [LIT-667](../literature.d/LIT-667.md) — [ARXIV-2405.15071](https://arxiv.org/abs/2405.15071).
 
 The setting is a transformer trained from scratch on a mixture of *atomic
 facts* — `(subject, relation, object)` edges of a random knowledge graph — and
@@ -88,7 +91,7 @@ Another million atomic facts buys the acquisition of the rule nothing.
 atomic facts that appeared in training only in atomic form — stayed at **zero,
 out to two million optimization steps**. Whatever this knob is for, it is not
 for getting a model to compose facts it has only ever seen stated alone. That
-limit has its own explanation in [THEORY-tmp6pl9b](../theory.d/THEORY-tmp6pl9b.md), and the fix
+limit has its own explanation in [THEORY-103](../theory.d/THEORY-103.md), and the fix
 there is architectural, not a data ratio.
 
 **It assumes you can tell derived from atomic.** The whole effect is indexed on

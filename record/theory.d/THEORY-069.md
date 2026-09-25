@@ -11,7 +11,7 @@ history:
   note: >-
     Qualifies the first of the three knobs. Every measurement behind
     "training-set size" varies the training *fraction* of a fixed universe of
-    examples, which moves size and composition with one knob. LIT-tmppwagl has
+    examples, which moves size and composition with one knob. LIT-667 has
     two knobs and turns them one at a time: with the inferred/atomic ratio
     fixed, scaling the training set changes nothing. That does not overturn the
     algorithmic measurements — a ratio is not defined there — but it does mean
@@ -31,7 +31,7 @@ source:
 - LIT-540
 - LIT-537
 - LIT-085
-- LIT-tmppwagl
+- LIT-667
 explains:
 - SOTA-200
 summary: >-
@@ -71,7 +71,7 @@ addition, grokking is gone and generalization is immediate.
 
 Both vary the *fraction* of a fixed universe of examples, which is one knob
 moving two things — how much data there is, and what proportion of the possible
-examples it covers. [LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) has two knobs and turns them separately: on
+examples it covers. [LIT-667](../literature.d/LIT-667.md) has two knobs and turns them separately: on
 knowledge-based reasoning, holding the inferred/atomic ratio fixed and scaling
 the training set changes **nothing**, while moving the ratio at fixed size moves
 grokking speed monotonically. A ratio of that kind is not defined on modular
@@ -106,7 +106,7 @@ hardest against the others.
 A claim that survives the disagreement of every account of the thing it
 describes is in a different evidential position from any of them.
 
-The fifth source is the exception that has to be stated. [LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) does not
+The fifth source is the exception that has to be stated. [LIT-667](../literature.d/LIT-667.md) does not
 disagree that the regime can be moved; it disagrees about what the first knob
 is, and unanimity among four papers that could not separate size from
 composition is not evidence about which of the two it was.
@@ -119,7 +119,7 @@ are real structure. The phenomenon happens; it happens in a regime.
 
 **Not "three knobs is the list".** Three are established. Weight decay strength
 changes the *timing* in two of the accounts without being one of these axes —
-[LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) measures that directly, and raising it accelerates grokking — and
+[LIT-667](../literature.d/LIT-667.md) measures that directly, and raising it accelerates grokking — and
 [LIT-538](../literature.d/LIT-538.md) reports operations that never generalize at any data fraction,
 which no knob here explains.
 
@@ -141,7 +141,7 @@ unbidden in an ordinary training run. Nothing in these five papers is that, and
 the one setting where it occurs unbidden is the small algorithmic dataset,
 which is itself a regime choice.
 
-[LIT-tmppwagl](../literature.d/LIT-tmppwagl.md) narrows what is left. An 8-layer GPT-2 at a standard
+[LIT-667](../literature.d/LIT-667.md) narrows what is left. An 8-layer GPT-2 at a standard
 initialization, AdamW at weight decay 0.1, nothing inflated and nothing
 constrained — and generalization arrives roughly **50× after** the training set
 is fit. The model and the optimizer are ordinary there. What is engineered is

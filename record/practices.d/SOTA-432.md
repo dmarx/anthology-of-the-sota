@@ -1,5 +1,8 @@
 ---
+number: 432
 status: Active
+formerly:
+- SOTA-tmp0s2gj
 consensus: unreplicated
 consensus_note: >-
   One group, one paper, one setting — ImageNet-512 diffusion with EDM2's own
@@ -23,13 +26,13 @@ tags:
 - model-stability
 date: '2026-09-25'
 source:
-- LIT-tmp7nrwv
+- LIT-720
 introduced_by:
-- LIT-tmp7nrwv
+- LIT-720
 implementations:
 - 'EDM2'
 summary: >-
-  Karras et al. (2023), [LIT-tmp7nrwv](../literature.d/LIT-tmp7nrwv.md). Keep two power-function averages of the
+  Karras et al. (2023), [LIT-720](../literature.d/LIT-720.md). Keep two power-function averages of the
   weights during training (`σ_rel` 0.05 and 0.10) and store both in each periodic
   snapshot; afterwards, reconstruct the average for any averaging length by a
   least-squares fit over the stored profiles, with error falling as `O(1/n⁴)` in
@@ -40,13 +43,13 @@ summary: >-
   is **within 10% of the optimum**.
 ---
 
-<!-- inactive-ok-file: SOTA-415, SOTA-408, SOTA-217, THEORY-tmpwhyfx — the neighbouring averaging practices, all Proposed, cited to be distinguished from this one rather than relied on; SOTA-415 is named for a justification this practice qualifies and SOTA-408 for a cost that does not transfer, so their not-being-in-force is beside the point. THEORY-tmpwhyfx is this practice's own account and Proposed for the reason stated there. -->
+<!-- inactive-ok-file: SOTA-415, SOTA-408, SOTA-217, THEORY-111 — the neighbouring averaging practices, all Proposed, cited to be distinguished from this one rather than relied on; SOTA-415 is named for a justification this practice qualifies and SOTA-408 for a cost that does not transfer, so their not-being-in-force is beside the point. THEORY-111 is this practice's own account and Proposed for the reason stated there. -->
 
-# SOTA-tmp0s2gj: Maintain two power-function weight averages during training and snapshot them, so the averaging length is a post-hoc sweep instead of a guess you have to make before the run
+# SOTA-432: Maintain two power-function weight averages during training and snapshot them, so the averaging length is a post-hoc sweep instead of a guess you have to make before the run
 
 ## Source
 
-Karras, Aittala, Lehtinen, Hellsten, Aila and Laine (2023), [LIT-tmp7nrwv](../literature.d/LIT-tmp7nrwv.md) —
+Karras, Aittala, Lehtinen, Hellsten, Aila and Laine (2023), [LIT-720](../literature.d/LIT-720.md) —
 [ARXIV-2312.02696](https://arxiv.org/abs/2312.02696).
 
 ## What to do
@@ -82,7 +85,7 @@ hyperparameters**:
 | `[30k, 160k]` | FID up to **72%** worse than optimum | all **within 10%** |
 
 So a run that reports "the learning-rate decay matters a lot" may be reporting a
-fact about the pair, not about the decay. [THEORY-tmpwhyfx](../theory.d/THEORY-tmpwhyfx.md) is that account, and
+fact about the pair, not about the decay. [THEORY-111](../theory.d/THEORY-111.md) is that account, and
 it is `Proposed` because this is one measurement.
 
 Three further reasons the length cannot be set once and reused:

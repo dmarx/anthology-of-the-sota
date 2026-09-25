@@ -28,7 +28,7 @@ history:
   date: '2026-09-25'
   note: >-
     Notes that this practice's compute charge is a property of its method rather
-    than of weight averaging. SOTA-tmp0s2gj accumulates its averages inside the
+    than of weight averaging. SOTA-432 accumulates its averages inside the
     run that was happening anyway, so the "extra epochs are real compute"
     objection does not transfer to it — and the averaging window this practice
     leaves implicit is, there, a post-hoc sweep. Recommendation, status and
@@ -98,7 +98,7 @@ ensemble's generalization without an ensemble's inference cost.
 ## Conditions
 
 **The compute charge belongs to this method, not to averaging.**
-[SOTA-tmp0s2gj](SOTA-tmp0s2gj.md) maintains its averages during the training run and stores two
+[SOTA-432](SOTA-432.md) maintains its averages during the training run and stores two
 parameter vectors per snapshot, so it pays storage instead of epochs, and the
 length of the average is chosen after the fact rather than by the cyclical
 schedule. Different cost structure for a related end, in a different setting

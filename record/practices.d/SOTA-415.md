@@ -25,7 +25,7 @@ history:
   note: >-
     Qualifies one of the two reasons given for uniform averaging. "It has no
     hyperparameter" was true as a description of uniform averaging and false as an
-    argument for it: LIT-tmp7nrwv shows the averaging length can be swept after
+    argument for it: LIT-720 shows the averaging length can be swept after
     the run from stored snapshots, so the hyperparameter is avoidable rather than
     unaffordable — and this practice's own next bullet is a heuristic for tuning a
     window, which is the hyperparameter it said there was not one of.
@@ -80,7 +80,7 @@ curve. Launch the actual decay for the model you release.
 - **The window is a hyperparameter, and it does not have to be guessed.** The
   bullet above is a heuristic for tuning one, so "uniform averaging has no
   hyperparameter" — this practice's v1 wording — was describing the *scheme*
-  rather than the choice. [SOTA-tmp0s2gj](SOTA-tmp0s2gj.md) is the alternative: keep two
+  rather than the choice. [SOTA-432](SOTA-432.md) is the alternative: keep two
   power-function averages during the run and reconstruct any window afterwards by
   least squares, which works retroactively from stored snapshots at reduced
   accuracy. That makes the window measurable on runs already finished instead of

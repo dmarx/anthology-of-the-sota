@@ -1,12 +1,15 @@
 ---
+number: 111
 status: Proposed
+formerly:
+- THEORY-tmpwhyfx
 promote_when: >-
   The same 2×2 — one hyperparameter swept against a frozen versus a swept
   averaging length — run outside diffusion, on a metric that is not FID. The
   record's own averaging practices point at the settings: a ResNet classification
   sweep (SOTA-408's regime), a fine-tuning sweep (SOTA-409's), or a language-model
   pretraining run with checkpoints kept (SOTA-415's). The retroactive
-  reconstruction in SOTA-tmp0s2gj means this can be measured on runs that already
+  reconstruction in SOTA-432 means this can be measured on runs that already
   happened, so the experiment costs storage and evaluation rather than training. A
   negative result — a knob whose sensitivity is unchanged by sweeping the average
   — would bound the claim usefully rather than refute it.
@@ -17,9 +20,9 @@ tags:
 - training-optimization
 date: '2026-09-25'
 source:
-- LIT-tmp7nrwv
+- LIT-720
 summary: >-
-  Karras et al. (2023), [LIT-tmp7nrwv](../literature.d/LIT-tmp7nrwv.md), measured on EDM2-S / ImageNet-512: with the
+  Karras et al. (2023), [LIT-720](../literature.d/LIT-720.md), measured on EDM2-S / ImageNet-512: with the
   weight-averaging length pinned at 13%, varying the learning-rate decay across
   `t_ref ∈ [30k, 160k]` moves FID **by up to 72%**; sweeping the averaging length
   post hoc puts the whole bracket **within 10% of the optimum**. The decay's
@@ -30,11 +33,11 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-415, SOTA-408 — Proposed, and named as the settings where this account's promote_when could be tested plus, for SOTA-415, a justification this account bears on. Neither is cited as support for the claim. -->
 
-# THEORY-tmpwhyfx: A hyperparameter can look important because it is entangled with an averaging length you froze, so sensitivity attributed to one knob may belong to the pair
+# THEORY-111: A hyperparameter can look important because it is entangled with an averaging length you froze, so sensitivity attributed to one knob may belong to the pair
 
 ## Source
 
-Karras, Aittala, Lehtinen, Hellsten, Aila and Laine (2023), [LIT-tmp7nrwv](../literature.d/LIT-tmp7nrwv.md),
+Karras, Aittala, Lehtinen, Hellsten, Aila and Laine (2023), [LIT-720](../literature.d/LIT-720.md),
 Figure 12 — reported as an aside about learning rates, not as a claim about
 methodology.
 
@@ -62,7 +65,7 @@ would conclude it is worth getting inside a factor of five. Most of what the fir
 row measures is the mismatch between a frozen average and the run it was frozen
 for.
 
-**Why the averaging length in particular.** [LIT-tmp7nrwv](../literature.d/LIT-tmp7nrwv.md) measures three things
+**Why the averaging length in particular.** [LIT-720](../literature.d/LIT-720.md) measures three things
 that make a single fixed value indefensible: the optimum "differs considerably
 between the configurations" of one model family; it *narrows* as the architecture
 improves, so a stale value is wrong by more; and it "slowly shifts towards
@@ -89,7 +92,7 @@ a minimum and the frozen one has the larger spread. In this paper it holds: 13% 
 the optimum at `t_ref = 70k`, the best setting.
 
 **It is cheap to check retroactively.** Because the reconstruction in
-[SOTA-tmp0s2gj](../practices.d/SOTA-tmp0s2gj.md) works from stored snapshots, the 2×2 can be run on training runs
+[SOTA-432](../practices.d/SOTA-432.md) works from stored snapshots, the 2×2 can be run on training runs
 that already finished, at the cost of storage and evaluation rather than compute.
 That is unusual for a methodological claim and is what the `promote_when` asks
 for.

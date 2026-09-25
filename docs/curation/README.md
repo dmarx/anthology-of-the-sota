@@ -8,6 +8,7 @@ Why things entered the anthology, and why they left.
 
 - [25 Sep 22:41 — Five boundary works from the survey of what this record set aside](2026-09.md#five-boundary-works-from-the-survey-of-what-this-record-set-aside)
 - [25 Sep 22:24 — The second wave: twelve papers the journal promised, and what each headline measured against](2026-09.md#the-second-wave-twelve-papers-the-journal-promised-and-what-each-headline-measured-against)
+- [25 Sep 22:21 — An absence read as low priority twice, next to six practices working around it](2026-09.md#an-absence-read-as-low-priority-twice-next-to-six-practices-working-around-it)
 - [25 Sep 21:50 — Filing the instrument found two wrong sentences about the instrument, both mine, both hours old](2026-09.md#filing-the-instrument-found-two-wrong-sentences-about-the-instrument-both-mine-both-hours-old)
 - [25 Sep 21:47 — Readings the journal promised and skipped, counted, and the first five taken](2026-09.md#readings-the-journal-promised-and-skipped-counted-and-the-first-five-taken)
 - [25 Sep 21:30 — A 62-second window on main, and three rebases spent blaming CI for it](2026-09.md#a-62-second-window-on-main-and-three-rebases-spent-blaming-ci-for-it)
@@ -249,9 +250,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-242 entries across 2 books, newest first.
+243 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 240 | 2026-09-05 | 2026-09-25 |
+| [2026-09](2026-09.md) | 241 | 2026-09-05 | 2026-09-25 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

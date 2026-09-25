@@ -5,7 +5,14 @@ formerly:
 - NOTE-tmp2ursz
 paper: LIT-301
 title: 'Products of indecomposable, aperiodic, stochastic matrices'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-25'
+  note: >-
+    One Related line corrected. It misattributed a scrambling-matrix,
+    spanning-tree argument to Jadbabaie, Lin and Morse (LIT-285), which uses
+    Wolfowitz directly on undirected, jointly connected graphs.
 date: '2026-09-15'
 summary: >-
   A finite collection of stochastic matrices all being primitive
@@ -129,10 +136,13 @@ product of finitely many such coefficients remains bounded away from 1.
 **Related.**
 
 - Coordination of Groups of Mobile Autonomous Agents (Jadbabaie, Lin, Morse
-  2003) — Jadbabaie et al.'s consensus proof for switching networks uses the
-  scrambling matrix argument that descends directly from Wolfowitz. The
-  union-spanning-tree condition is sufficient to ensure that long products
-  of F(G(t)) are scrambling, invoking Wolfowitz.
+  2003) ([LIT-285](../literature.d/LIT-285.md)) — Jadbabaie et al.'s consensus proof for switching
+  networks applies Wolfowitz's theorem on infinite products of ergodic
+  matrices directly. A connectivity lemma shows that products over jointly
+  connected intervals are ergodic. *Corrected 2026-09-25: this line said the
+  proof used a scrambling-matrix argument under a "union-spanning-tree"
+  condition. The paper uses neither. Its graphs are undirected and its
+  condition is joint connectivity.*
 - Consensus Over Random Networks (Tahbaz-Salehi & Jadbabaie 2008) — Tahbaz-
   Salehi/Jadbabaie extend from finitely many deterministic matrices
   (Wolfowitz) to IID random matrices. The ergodicity argument replaces

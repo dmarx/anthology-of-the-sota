@@ -6,7 +6,7 @@
 
 **Current practice** — what you should do today, and the reason is one click away.
 
-228 of 403 SOTA documents. Back to the [full index](../README.md).
+228 of 404 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -228,7 +228,7 @@
 | [SOTA-369](../../../record/practices.d/SOTA-369.md) | Curate a pretraining set by retrieving neighbours of curated seeds, rather than scaling the uncurated pool |  | Active |
 | [SOTA-370](../../../record/practices.d/SOTA-370.md) | Add many low-resolution views alongside the two full ones, because view count is what helps and resolution is what costs |  | Active |
 | [SOTA-372](../../../record/practices.d/SOTA-372.md) | Run the encoder on visible tokens only and push the mask tokens into a small decoder you discard |  | Active |
-| [SOTA-373](../../../record/practices.d/SOTA-373.md) | Set the masking ratio by the signal's redundancy, not by the ratio that worked on text |  | Active |
+| [SOTA-373](../../../record/practices.d/SOTA-373.md) v2 | Set the masking ratio by the signal's redundancy, not by the ratio that worked on text |  | Active |
 | [SOTA-374](../../../record/practices.d/SOTA-374.md) v4 | When learning embeddings from co-occurrence, subsample very frequent tokens, discarding each occurrence with probability 1 − √(t/f) with t around 10⁻⁵ | Mikolov et al. (2013), [LIT-603](../../../record/literature.d/LIT-603.md) — in a Zipfian corpus, the few most frequent words co-occur with everything and dominate the updates while teaching little. Discard each occurrence of word w with probability 1 − √(t/f(w)). This cut skip-gram training time by 2–3× and raised accuracy, only slightly for words (59 → 60% at NEG-5) but a lot for phrases (27 → 42% at NEG-15, 19 → 47% with hierarchical softmax). | Active |
 | [SOTA-376](../../../record/practices.d/SOTA-376.md) | Score each image-text pair independently with a sigmoid, so the loss needs no global normalization |  | Active |
 | [SOTA-377](../../../record/practices.d/SOTA-377.md) | Stop scaling the contrastive batch past about 32k, because the benefit saturates there |  | Active |

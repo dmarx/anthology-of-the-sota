@@ -1,5 +1,8 @@
 ---
+number: 404
 status: Proposed
+formerly:
+- SOTA-tmpvgm7o
 consensus: unassessed
 consensus_note: >-
   Nobody has assessed where the field stands on ablation design as such. What
@@ -19,16 +22,16 @@ tags:
 - training-optimization
 date: '2026-09-25'
 source:
-- LIT-tmpxixm3
+- LIT-671
 - LIT-667
 # Same code as `source:`'s first entry. Liu et al. both found the confound and
 # stated the corrective, though only for their own case; nobody has written it
 # as a rule, which is what this document is doing (ADR-030).
 introduced_by:
-- LIT-tmpxixm3
+- LIT-671
 implementations: []
 summary: >-
-  Liu et al. (2019), [LIT-tmpxixm3](../literature.d/LIT-tmpxixm3.md). BERT reported that removing next sentence
+  Liu et al. (2019), [LIT-671](../literature.d/LIT-671.md). BERT reported that removing next sentence
   prediction hurts; RoBERTa observed that the ablation had probably "only
   removed the loss term while still retaining the segment-pair input format",
   separated the two, and found **removing the loss matches or slightly
@@ -39,7 +42,7 @@ summary: >-
   time.
 ---
 
-# SOTA-tmpvgm7o: When you ablate an auxiliary loss, ablate the input construction that came with it, or the result is about both
+# SOTA-404: When you ablate an auxiliary loss, ablate the input construction that came with it, or the result is about both
 
 ## What to do
 
@@ -63,7 +66,7 @@ it has to say what happened to the losses that construction was serving.
 
 ## Where this comes from
 
-**The naming case.** BERT — [LIT-tmp4nnff](../literature.d/LIT-tmp4nnff.md) — reported that dropping next sentence
+**The naming case.** BERT — [LIT-670](../literature.d/LIT-670.md) — reported that dropping next sentence
 prediction "hurts performance significantly on QNLI, MNLI, and SQuAD 1.1",
 describing its `No NSP` condition only as a model "trained using the masked LM
 but without the next sentence prediction task". RoBERTa, a year later:

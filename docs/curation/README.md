@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [25 Sep 07:13 — The ratio that worked on text was never shown to work on text](2026-09.md#the-ratio-that-worked-on-text-was-never-shown-to-work-on-text)
 - [25 Sep 06:36 — Kanerva's review, read in full: two of LIT-641's three optimal radii are in it](2026-09.md#kanervas-review-read-in-full-two-of-lit-641s-three-optimal-radii-are-in-it)
 - [25 Sep 06:36 — The record was recommending an architecture change it held no paper on](2026-09.md#the-record-was-recommending-an-architecture-change-it-held-no-paper-on)
 - [25 Sep 04:05 — Kanerva's memory, filed as the source THEORY-097 was about](2026-09.md#kanervas-memory-filed-as-the-source-theory-097-was-about)
@@ -233,9 +234,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-226 entries across 2 books, newest first.
+227 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 224 | 2026-09-05 | 2026-09-25 |
+| [2026-09](2026-09.md) | 225 | 2026-09-05 | 2026-09-25 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

@@ -77,6 +77,9 @@
     "ARXIV/1706.03762": {
       "title": "Attention Is All You Need"
     },
+    "ARXIV/1706.08500": {
+      "title": "GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium"
+    },
     "ARXIV/1707.06347": {
       "title": "Proximal Policy Optimization Algorithms"
     },

@@ -2,7 +2,7 @@
 
 # Lines of work
 
-54 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+55 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -84,6 +84,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-574](../record/literature.d/LIT-574.md) — Does Localization Inform Editing? Surprising Differences in Causality-Based Localization vs. Knowledge Editing in Language Models *(Active)*
     - [LIT-576](../record/literature.d/LIT-576.md) — Mass-Editing Memory in a Transformer *(Active)*
 - alongside: [LIT-577](../record/literature.d/LIT-577.md) — Evaluating the Ripple Effects of Knowledge Editing in Language Models *(Active)*
+
+### From BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
+
+- alongside: [LIT-670](../record/literature.d/LIT-670.md) — BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding *(Active)*
+- alongside: [LIT-671](../record/literature.d/LIT-671.md) — RoBERTa: A Robustly Optimized BERT Pretraining Approach *(Active)*
 
 ## attention-techniques
 
@@ -436,6 +441,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-610](../record/literature.d/LIT-610.md) — Efficient Estimation of Word Representations in Vector Space *(Superseded)*
   - [LIT-609](../record/literature.d/LIT-609.md) — Distributed Representations of Words and Phrases and their Compositionality *(Superseded)*
+
+### From BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
+
+- alongside: [LIT-670](../record/literature.d/LIT-670.md) — BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding *(Active)*
+- alongside: [LIT-671](../record/literature.d/LIT-671.md) — RoBERTa: A Robustly Optimized BERT Pretraining Approach *(Active)*
 
 ## signal-structure
 

@@ -4,7 +4,7 @@ status: Active
 formerly:
 - SOTA-tmpm1xnl
 title: 'Parametrize the network so its prediction target has unit variance at every noise level, and sample training noise from a log-normal'
-version: 4
+version: 5
 history:
 - version: 2
   date: '2026-09-09'
@@ -33,6 +33,16 @@ history:
     that distribution is an optimisation decision rather than a change of
     model, which this practice had never answered. The recommendation is
     unchanged.
+- version: 5
+  date: '2026-09-25'
+  note: >-
+    Corrected against EDM2 (LIT-tmpzn7w1), the source's successor. The
+    body said the loss weight makes every noise level contribute equally;
+    that holds at initialization and drifts as training proceeds, which
+    EDM2 measures and replaces with an adaptive weighting. Also records
+    that EDM2 had to refit the log-normal for VAE latents, as this
+    practice's Conditions predicted. Not added as a source: EDM2 does not
+    test this recommendation. The recommendation is unchanged.
 tags:
 - training-optimization
 - generative-modeling
@@ -83,8 +93,9 @@ The paper's answer has two parts, and both are training-time:
   error as little as possible, and `c_noise` is, in the paper's words,
   "chosen empirically". A fifth term, the loss weight `λ(σ)`, cancels
   `c_out`'s scaling so that every noise level contributes equally to the
-  loss — which is what leaves the sampling distribution below as the only
-  thing deciding where training compute goes.
+  loss **at initialization** — which is what leaves the sampling
+  distribution below as the thing deciding where training compute goes.
+  It does not stay equal; see below.
 - **The training-noise distribution.** Sample the noise level from a
   log-normal concentrated on the middle of the range, rather than uniformly.
   The extremes teach little — the near-clean end is trivial and the near-pure-
@@ -145,6 +156,25 @@ that statement. What the theory establishes is that the schedule is the kind
 of thing one is free to choose; it does not establish that this particular
 choice is neutral with respect to what is optimised.
 
+## The equal weighting holds only at the start
+
+EDM2 (LIT-tmpzn7w1), from the same group, reports what
+happens after initialization: the per-noise-level loss falls quickly in the
+middle of the range and hardly at all at the ends, so a static `λ(σ)` that
+balanced the gradients at step zero stops balancing them, and "no static
+choice of `λ(σ)` is sufficient". It learns a per-noise-level log-variance
+`u(σ)` alongside the network — a continuous form of uncertainty-weighted
+multi-task loss — which amounts to dividing each level's loss by its own
+running value.
+
+Two limits on how far that goes. The adaptive weighting arrives in EDM2 bundled
+with retuned learning rate, batch and noise distribution, so its own
+contribution is not isolated. And it leaves this practice's recommendation
+where it was: the sampling distribution still decides where training effort
+goes, and the target still wants unit variance. What changes is the
+description of `λ(σ)`, from "equalises the noise levels" to "equalises them
+at initialization".
+
 ## Conditions
 
 The specific scalings and the log-normal's parameters are derived for the
@@ -157,6 +187,8 @@ sample where the learning is — is the point.
 The log-normal's parameters are tuned, not derived: `ln σ ~ N(−1.2, 1.2²)`
 for these datasets. The shape has an argument behind it and the numbers do
 not.
+EDM2 is the demonstration: in Stable Diffusion's VAE latents the useful
+region sits at higher noise, and it refits to `N(−0.4, 1.0²)`.
 
 Reported at image scale, on ImageNet-64 and CIFAR-10. It is not an
 autoregressive-language result and nothing in the record replicates it there,

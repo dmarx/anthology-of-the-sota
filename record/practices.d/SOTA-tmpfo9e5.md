@@ -1,91 +1,101 @@
 ---
-# Don't copy this file by hand — run `luria new sota`, which assigns the
-# number and fills in what a machine can compute.
-#
-# A practice is a claim about what you should do. State it as an instruction,
-# not as a topic: "Keep sequence lengths a multiple of 128" rather than
-# "sequence length considerations".
-
-# Active | Proposed | Deferred | Superseded | Rejected, optionally " — note".
-# What each one means here is in statuses.yaml, beside this file. When a
-# practice stops being right, change the status and leave the body — the
-# record is more useful for saying what it used to believe.
 status: Proposed
-
-# REQUIRED while the status is Proposed or Deferred; delete it when the
-# practice goes Active. What would settle this — and it must name a KIND of
-# result, not a quantity of them. "An independent result" is satisfiable by a
-# paper that mentions the work in passing; "an independent group training
-# under it and reporting X" is not. The test when writing one: could this be
-# met by a paper that would not actually change my confidence? (ADR-014)
 promote_when: >-
-  The kind of result that would settle this, stated so that the wrong kind
-  of result cannot satisfy it.
-
-# The claim. Repeat it as the body's `# SOTA-tmpfo9e5:` heading; the lint checks
-# that the two agree.
+  A group other than the authors trains a CLIP-style model with and without
+  image-patch masking on the same data and reports the pair at matched
+  wall-clock or accelerator budget, with the masked arm's saving spent on batch
+  or samples. A report that ships masked contrastive pretraining without the
+  unmasked arm does not settle it, and neither does a same-epoch comparison —
+  at equal epochs this paper's own ViT-B/16 result is a loss.
 title: 'Drop half the image patches when training a CLIP-style model, spend the saving on more pairs and a larger batch, and unmask only for a short final tune'
-
 version: 1
-
-# Exactly one of the thirteen in tags.yaml, enforced by luria.toml — the same
-# thirteen the reading list uses (ADR-026). Secondary tags beyond that are
-# unconstrained: add one when the practice genuinely belongs on a second page,
-# not to be thorough.
-#
-# Take a DOMAIN topic (`generative-modeling`, `vision-and-graphics`) only when
-# the claim is about that domain as such. A claim merely discovered there still
-# takes its kind — a preconditioning scheme found in diffusion is a
-# `training-optimization` practice.
 tags:
+- multimodal-learning
 - training-optimization
-
+- systems-optimization
+- vision-and-graphics
 date: '2026-09-25'
-
-# There is deliberately no `published:` line here. The practice's publication
-# date is DERIVED from the first entry in `source:` below — the primary source
-# — and writing it down is a lint violation, because the value has one home
-# and this is not it. To change it, change the source order.
-
-# REQUIRED, and a LIST. The reading notes this recommendation rests on. The
-# first is the primary source; the rest corroborate — a replication, the
-# production report that shipped it, the paper that argues the mechanism. A
-# recommendation with no paper behind it is an opinion, and the lint will
-# say so. If a paper isn't in the record yet, `luria new lit` first.
-#
-# One entry is fine. Writing it as a list anyway is the point: the practice
-# that later gains a replication has somewhere to put it (ADR-010).
 source:
-- LIT-000
-
-# The work that FIRST STATED the recommendation, which is frequently not the
-# work that produced the evidence for it (ADR-029). Usually this is the same
-# code as `source:` above, and writing it anyway is the point: the origin is
-# asserted rather than assumed. When they differ, say so in a comment here —
-# that difference is the whole reason the field exists.
+- LIT-tmparvj2
 introduced_by:
-- LIT-000
-
-# Optional. Models or codebases known to do this.
-implementations: []
-
-# What the index table shows. Provenance is the useful thing here, since the
-# title already carries the claim: who said it, and where. Prose, so bare
-# codes in it get linked by `luria link --fix`.
+- LIT-tmparvj2
+extends:
+- SOTA-359
+- SOTA-372
+implementations:
+- 'facebookresearch/flip'
+summary: >-
+  Li et al. (2022), LIT-tmparvj2 — FLIP. Remove 50% of image patches and run
+  the ViT on the rest, with CLIP's loss and nothing else. The saving buys a 2×
+  larger batch at the same memory and 2× the samples per hour; ViT-L/16 on
+  LAION-400M reaches its unmasked reproduction's accuracy more than 3× faster.
+  The accuracy comes from what the saving buys: at equal batch, masking is
+  parity.
 ---
-
-<!-- unresolved-ok-file: LIT-000 — the placeholder a new practice replaces -->
 
 # SOTA-tmpfo9e5: Drop half the image patches when training a CLIP-style model, spend the saving on more pairs and a larger batch, and unmask only for a short final tune
 
 ## Source
 
-Author et al. (YEAR), LIT-000 — [ARXIV-0000.00000](https://arxiv.org/abs/0000.00000).
+Li, Fan, Hu, Feichtenhofer and He (2022), LIT-tmparvj2 — ARXIV-2212.00794;
+read as NOTE-tmpr24hg.
 
-Anything the claim needs to be usable: the conditions it holds under, the
-hardware or scale it assumes, the thing it trades away. A practice stated
-without its conditions is the one people cargo-cult.
+## What to do
+
+In contrastive image-text pretraining (SOTA-359) with a ViT image encoder:
+
+- **Randomly remove 50% of each image's patches** and run the encoder on the
+  visible ones only — MAE's encoder design (SOTA-372) without MAE's decoder or
+  loss. 75% also works and is faster, at some accuracy.
+- **Spend the saving.** Double the batch at the same memory, or train on
+  more samples in the same time. This is not optional; it is where the gain
+  comes from.
+- **Do not add a reconstruction loss.** It bought nothing (−0.2 to −0.3).
+- **Do not mask the text.** The text encoder is a few percent of the compute;
+  masking it costs accuracy and saves almost nothing.
+- **Evaluate on the whole image** with no adaptation — that already works —
+  and, for the last point or so, **tune briefly with masking off** (a third of
+  an epoch: +0.5 at 50%, +1.3 at 75%).
+
+## Where the accuracy actually comes from
+
+The abstract says masking "improves both accuracy and speed". Table 1 of the
+same paper says which of those is masking's doing. ViT-L/16, LAION-400M,
+6.4 epochs, zero-shot ImageNet:
+
+| mask | batch | time | acc. |
+|---|---|---|--:|
+| 0% | 16k | 1.00× | 68.6 |
+| 50% | **16k** | — | 68.5 |
+| 50% | 32k | 0.50× | 69.6 |
+| 50% | 64k | — | 70.4 |
+
+At equal batch, masking is parity; the gain appears when the memory it frees
+becomes batch. That is SOTA-359's own condition — in contrastive learning the
+batch is the negative set — measured. So read this practice as *the cheapest
+way to afford the batch*, and expect it to matter less where batch is not the
+constraint.
+
+## Conditions
+
+- **The wall-clock claim is the strong one.** Fewer tokens through the image
+  encoder is arithmetic; >3× faster to the reproduction's accuracy at ViT-L/16
+  is measured. The accuracy claim at equal epochs is weaker: +1.5 to +1.9 at
+  ViT-L, and **−0.2 at ViT-B/16** (68.0 vs 68.2).
+- **The image encoder has to dominate the cost.** It does for ViT-L with a
+  CLIP-sized text tower. With a cheaper image encoder or an expensive data
+  pipeline the saving shrinks.
+- **A ViT, or anything that can drop tokens.** A convolutional encoder does
+  not get cheaper when half the image is blanked.
+- **All evidence is on LAION.** The paper's own comparison against WIT-trained
+  CLIP shows the data dominates several benchmarks — ImageNet-A by 20 points —
+  and masking does not touch that gap.
+- **Robustness gains are real within LAION and unexplained.** The authors
+  hypothesize masking acts as a regularizer; nothing tests it.
+- **Unknown under a sigmoid loss.** SOTA-376 removes the memory ceiling from
+  the loss side and is least batch-sensitive above 16k; if FLIP's gain is the
+  batch, it should shrink there. Nobody in this record has run the pair.
 
 ## Known implementations
 
-- 
+- `facebookresearch/flip`, the reference implementation.

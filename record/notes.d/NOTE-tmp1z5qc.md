@@ -12,6 +12,8 @@ summary: >-
   its one comparison with another method is by eye.
 ---
 
+<!-- inactive-ok-file: SOTA-tmpudd8t — Proposed; named as the practice this paper's argument sits against, not relied on as settled -->
+
 # NOTE-tmp1z5qc: Integrated Gradients
 
 ## Contribution

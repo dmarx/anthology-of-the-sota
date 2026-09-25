@@ -35,6 +35,8 @@ summary: >-
   a saliency map by how it looks is not a test.
 ---
 
+<!-- inactive-ok-file: SOTA-tmpudd8t — Proposed; the practice this paper sources, filed with it -->
+
 # LIT-tmpzf4pd: Sanity Checks for Saliency Maps
 
 Adebayo, Gilmer, Muelly, Goodfellow, Hardt and Kim (2018; NeurIPS 2018; v3,

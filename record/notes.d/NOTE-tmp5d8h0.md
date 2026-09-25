@@ -12,6 +12,8 @@ summary: >-
   these cases apart, and that is the paper's point.
 ---
 
+<!-- inactive-ok-file: SOTA-tmpudd8t — Proposed; the practice filed from this reading's R1 -->
+
 # NOTE-tmp5d8h0: Sanity Checks for Saliency Maps
 
 ## Contribution

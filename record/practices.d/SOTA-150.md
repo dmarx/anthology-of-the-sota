@@ -12,7 +12,7 @@ consensus_note: >-
   marginal because the people still training dense at this scale are doing it
   for reasons other than believing it wins on compute.
 title: 'Make the feed-forward layers a sparse mixture of experts once the model is large enough to be compute-bound'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -22,6 +22,14 @@ history:
     it is evidence about the field — where the consensus_note already
     counted it. `converged` is unaffected: it rests on four labs and every
     frontier model since 2024, all of which are adoption by design.
+- version: 3
+  date: '2026-09-25'
+  note: >-
+    Records a re-run. Narang et al. (LIT-tmpnc3oh) found MoE and Switch among
+    the few modifications that beat a dense baseline at roughly matched FLOPs.
+    The re-run was in the codebase both were built in, and it cost about 9%
+    in step rate. Recorded in the body and not added as a source. The
+    recommendation, status and consensus are unchanged.
 tags:
 - model-architecture
 date: '2026-09-07'
@@ -86,6 +94,23 @@ title.
 end: at a tiny parameter budget, spend on depth and state width, not on
 experts nobody can afford to hold in memory. Nothing here argues for sparsity
 at small scale.
+
+## A re-run at 223M, in the codebase it came from
+
+Narang et al. (LIT-tmpnc3oh) put about fifty transformer modifications through
+one T5 setup with fixed hyperparameters, and most of them lost to the dense
+baseline. Sparse experts did not. Mixture of experts (648M total parameters)
+reached early loss **2.148** and Switch (1.1B) **2.135**, against **2.182 ±
+0.005** dense, at about 11.7T against 11.1T operations. Switch had the best
+final loss in the whole table, 1.758 against 1.838.
+
+The paper files both under the codebase caveat itself: they "were originally
+invented in the Mesh TensorFlow codebase that we use". So this confirms the
+measurement at small scale and says nothing about transfer. It also measures a
+cost the FLOP match hides. Steps per second were 3.20 and 3.18 against 3.50,
+about 9% slower at equal FLOPs. A 223M model is at the small end of the
+scale range the title's condition excludes, so this is a cost measured where
+the practice does not apply, not a counterexample to it.
 
 ## Why this was not filed until now
 

@@ -1,91 +1,128 @@
 ---
-# Don't copy this file by hand — run `luria new sota`, which assigns the
-# number and fills in what a machine can compute.
-#
-# A practice is a claim about what you should do. State it as an instruction,
-# not as a topic: "Keep sequence lengths a multiple of 128" rather than
-# "sequence length considerations".
-
-# Active | Proposed | Deferred | Superseded | Rejected, optionally " — note".
-# What each one means here is in statuses.yaml, beside this file. When a
-# practice stops being right, change the status and leave the body — the
-# record is more useful for saying what it used to believe.
 status: Proposed
-
-# REQUIRED while the status is Proposed or Deferred; delete it when the
-# practice goes Active. What would settle this — and it must name a KIND of
-# result, not a quantity of them. "An independent result" is satisfiable by a
-# paper that mentions the work in passing; "an independent group training
-# under it and reporting X" is not. The test when writing one: could this be
-# met by a paper that would not actually change my confidence? (ADR-014)
 promote_when: >-
-  The kind of result that would settle this, stated so that the wrong kind
-  of result cannot satisfy it.
-
-# The claim. Repeat it as the body's `# SOTA-tmp9x33t:` heading; the lint checks
-# that the two agree.
+  A group outside NVIDIA, training something other than an ADM-style image
+  U-Net — a diffusion transformer, a video or audio model, a language model —
+  sweeps the averaging length post hoc and reports that the best length moves
+  with a variable it would otherwise have fixed in advance (guidance weight,
+  evaluation metric, learning-rate schedule) by enough to change a reported
+  comparison. A second paper confirming that the reconstruction is accurate is
+  not it: the mechanism is a least-squares fit and was never in doubt; what is
+  unreplicated is that the choice it frees you to make matters.
 title: 'Choose the EMA length after training: store two power-function averages at snapshots and reconstruct any length by least squares'
-
 version: 1
-
-# Exactly one of the thirteen in tags.yaml, enforced by luria.toml — the same
-# thirteen the reading list uses (ADR-026). Secondary tags beyond that are
-# unconstrained: add one when the practice genuinely belongs on a second page,
-# not to be thorough.
-#
-# Take a DOMAIN topic (`generative-modeling`, `vision-and-graphics`) only when
-# the claim is about that domain as such. A claim merely discovered there still
-# takes its kind — a preconditioning scheme found in diffusion is a
-# `training-optimization` practice.
 tags:
 - training-optimization
-
+- generative-modeling
+- analysis-and-evaluation
 date: '2026-09-25'
-
-# There is deliberately no `published:` line here. The practice's publication
-# date is DERIVED from the first entry in `source:` below — the primary source
-# — and writing it down is a lint violation, because the value has one home
-# and this is not it. To change it, change the source order.
-
-# REQUIRED, and a LIST. The reading notes this recommendation rests on. The
-# first is the primary source; the rest corroborate — a replication, the
-# production report that shipped it, the paper that argues the mechanism. A
-# recommendation with no paper behind it is an opinion, and the lint will
-# say so. If a paper isn't in the record yet, `luria new lit` first.
-#
-# One entry is fine. Writing it as a list anyway is the point: the practice
-# that later gains a replication has somewhere to put it (ADR-010).
 source:
-- LIT-000
-
-# The work that FIRST STATED the recommendation, which is frequently not the
-# work that produced the evidence for it (ADR-029). Usually this is the same
-# code as `source:` above, and writing it anyway is the point: the origin is
-# asserted rather than assumed. When they differ, say so in a comment here —
-# that difference is the whole reason the field exists.
+- LIT-tmpzn7w1
 introduced_by:
-- LIT-000
-
-# Optional. Models or codebases known to do this.
-implementations: []
-
-# What the index table shows. Provenance is the useful thing here, since the
-# title already carries the claim: who said it, and where. Prose, so bare
-# codes in it get linked by `luria link --fix`.
+- LIT-tmpzn7w1
+implementations:
+- 'NVlabs/edm2'
+summary: >-
+  Karras et al. (2023), LIT-tmpzn7w1 — EDM2. Track two power-function
+  averages of the weights (`σ_rel` 0.05 and 0.10), save both every few
+  thousand steps, and synthesize any EMA length after the run from a small
+  linear solve. Then choose it per configuration, per guidance weight and per
+  metric, because on ImageNet-512 the best length moves with all three — at
+  guidance 1.4, FID wants 2% and FD_DINOv2 wants 14%.
 ---
 
-<!-- unresolved-ok-file: LIT-000 — the placeholder a new practice replaces -->
+<!-- inactive-ok-file: SOTA-156 — Proposed; named as a neighbouring averaging practice this one does not rest on -->
 
 # SOTA-tmp9x33t: Choose the EMA length after training: store two power-function averages at snapshots and reconstruct any length by least squares
 
 ## Source
 
-Author et al. (YEAR), LIT-000 — [ARXIV-0000.00000](https://arxiv.org/abs/0000.00000).
+Karras et al. (2023), LIT-tmpzn7w1 — ARXIV-2312.02696, §3, §4 and Appendix
+C; read as NOTE-tmpod74g.
 
-Anything the claim needs to be usable: the conditions it holds under, the
-hardware or scale it assumes, the thing it trades away. A practice stated
-without its conditions is the one people cargo-cult.
+## What to do
+
+**During training**, keep two running averages of the weights with a
+**power-function** profile rather than an exponential one:
+
+    θ̂_γ(t) ← β_γ(t) · θ̂_γ(t−1) + (1 − β_γ(t)) · θ(t),   β_γ(t) = (1 − 1/t)^(γ+1)
+
+It is an EMA whose decay depends on the step. Two properties make it the
+right profile to store: the initial random weights get **zero** weight, and
+the profile **stretches with training length**, so "10%" means the same
+thing at every point in the run. Use `σ_rel` = 0.05 and 0.10
+(`γ` ≈ 16.97 and 6.94). Snapshot both every ~4k steps; fp16 is enough. The
+paper's runs stored 160–512 snapshots.
+
+**After training**, pick any target profile — any `σ_rel` in about
+[0.015, 0.25], at any point in the run — and solve `Ax = b` for the linear
+combination of stored snapshots whose averaging profile best matches it
+(closed-form inner products; Algorithm 3 in the paper is a dozen lines).
+Reconstruction error falls roughly as the fourth power of the snapshot count.
+
+**Then actually use the freedom**: sweep the length, and choose it
+separately for each thing you report.
+
+## Why the length has to be chosen late
+
+The mechanism is not the point; what it revealed is. With the length sweepable
+densely for the first time, on ImageNet-512:
+
+- **It depends on the architecture.** The optimum moves across every step of
+  the paper's ablation ladder, and a comparison of two architectures at one
+  shared EMA length is a comparison at one of them's wrong setting.
+- **It depends on the learning rate.** With the EMA re-chosen post hoc, a
+  learning-rate decay anywhere in a 5× bracket stays within 10% of the best
+  FID; with the EMA fixed at the overall optimum of 13%, the same bracket
+  costs up to **72%**. Much of what looks like learning-rate sensitivity is
+  EMA mismatch.
+- **It depends on guidance** — "very strongly". Guided sampling typically wants
+  a much shorter average. A model tuned unguided and then sampled guided, or
+  the reverse, is off-optimum in one of them; the authors suspect part of
+  the guided/unguided gap reported by earlier work is this.
+- **It depends on the metric.** Unguided, FID's optimum is 13% and
+  FD_DINOv2's is 19%. At guidance 1.4 it is **2% against 14%**, and each metric
+  rates the other's choice as terrible. There is no length that is best; there
+  is a length that is best *for the number you are about to report*.
+
+So the instruction is not "use a longer EMA" or any particular value. The
+paper's own values for its own models run from 2% to 19%.
+
+## Conditions
+
+- **Evidence is one group, one architecture family, image diffusion only.**
+  ADM-style U-Nets on ImageNet-512 latents and ImageNet-64 pixels. Nothing
+  here shows the length matters as much for a transformer denoiser or outside
+  diffusion, which is what `promote_when` waits on.
+- **The sensitivity is itself architecture-dependent.** In the paper's
+  baseline, individual weight tensors disagree about the best length, so the
+  global optimum is broad and forgiving; in its final architecture they agree
+  and the optimum is sharp. A reader with a well-conditioned architecture needs
+  this *more*, not less.
+- **Three of its observations are anecdotal by the authors' own label** —
+  that the optimal length scales as `1/(α_ref² t_ref)`, shortens with model
+  capacity, and shortens on simpler data. Use them as starting points for the
+  sweep, not as a rule.
+- **Choosing per metric is not choosing per taste.** Reporting FID at FID's
+  optimum and FD_DINOv2 at its own is the honest protocol, and it means two
+  "models" from one run. Say so when reporting — the same discipline as fixing
+  the guidance weight before comparing (SOTA-424), and a close cousin of
+  SOTA-337's reason for reporting a second Fréchet distance at all.
+- **Storage is the cost.** Two copies of the weights per snapshot. At
+  hundreds of snapshots that is real disk for a large model; the paper
+  leaves the snapshot count/accuracy trade unstudied beyond "a few dozen is
+  more than sufficient" for the profile fit.
+
+## What this does not cover
+
+**Whether to average weights at all.** This practice is a knob on
+evaluating from an average of the weights, and the record holds no practice
+for that trunk: EDM2 calls model averaging "indispensable" in image synthesis
+and runs no arm without it. The neighbours that do exist average for other
+reasons — SOTA-408 averages the tail of a cyclical-LR run for flatter optima,
+SOTA-156 averages iterates to remove the schedule — and the post-hoc machinery
+would apply to their profiles too, which the paper states and does not test.
 
 ## Known implementations
 
-- 
+- `NVlabs/edm2`, the reference implementation.

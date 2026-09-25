@@ -19,7 +19,7 @@ consensus_note: >-
   group tested deep-narrow at a one-GPU-day budget and found no gain. That is
   a different regime, and it bounds the claim rather than contesting it.
 title: 'Increase depth before any other dimension when scaling a transformer'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-25'
@@ -30,6 +30,15 @@ history:
     regime is not the one this practice's promote_when asks about, so status
     and consensus are unchanged. The section added says where the claim
     stops.
+- version: 3
+  date: '2026-09-25'
+  note: >-
+    Records the depth sweep in Narang et al. (LIT-tmpnc3oh): 6 to 24 layers at
+    a fixed 223M in the T5 codebase. Final loss is non-monotone in depth, and
+    step rate falls as depth rises. The paper's own sentence that deeper
+    models "tend to outperform" reads the table more generously than the
+    table does. Tay is an author of both papers, so this is not the outside
+    group promote_when asks for. Status and consensus are unchanged.
 tags:
 - model-architecture
 date: '2026-09-09'
@@ -129,3 +138,29 @@ the budget fixed at a scale four orders of magnitude smaller and runs once
 per variant. What it establishes is a boundary. At a small fixed budget,
 preferring depth is not a lever, and [SOTA-419](SOTA-419.md) is the practice
 that says what is.
+
+## A same-lineage sweep at fixed parameters, and what it shows
+
+Narang et al. (LIT-tmpnc3oh) trade depth against feed-forward width and heads
+at a fixed 223M in a T5 encoder-decoder, with hyperparameters fixed:
+
+| layers | final loss | steps/s |
+| --- | --- | --- |
+| 6 | 1.857 | 3.70 |
+| 8 | 1.847 | 3.69 |
+| 12 (baseline) | 1.838 | 3.50 |
+| 18 | **1.831** | 3.38 |
+| 24 | 1.843 | 3.33 |
+
+The paper's text says "deeper models tend to outperform shallower ones with a
+fixed parameter count". Its table has a peak at 18 layers, and 24 layers is
+worse than the 12-layer baseline. In its learned-position rerun, every depth
+variant loses to the baseline on both early and final loss. The throughput
+cost of depth does show up, and it rises steadily.
+
+That is compatible with this practice without confirming it. The practice's
+claim is about scaling at matched quality, not about reshaping at one fixed
+size. And the sweep is not independent, because Tay is an author of both
+papers and it ran in the same codebase. What it suggests, from one final-loss run per shape,
+is that at 223M depth past about 18 layers stopped paying, before
+parallelism was anywhere near binding.

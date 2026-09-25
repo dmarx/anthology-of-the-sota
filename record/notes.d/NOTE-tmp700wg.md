@@ -17,6 +17,8 @@ summary: >-
   encoder–decoder masked LM.
 ---
 
+<!-- inactive-ok-file: SOTA-158 — Proposed; named as the practice squared ReLU's unbounded range is in tension with, not relied on as settled -->
+
 # NOTE-tmp700wg: Primer
 
 Read in full from arXiv v2 (24 Jan 2022). That covers §§1–5 and Appendix A

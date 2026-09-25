@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**211 document(s) awaiting a decision.**
+**212 document(s) awaiting a decision.**
 
 ## SOTAs
 
-143 of the 211.
+144 of the 212.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -156,10 +156,11 @@
 | 2026-09-24 | Proposed | [SOTA-396](../../record/practices.d/SOTA-396.md) | 0 | 0 | When a latent video model reuses an image autoencoder or upsampler, fine-tune them on video so they see time |
 | 2026-09-24 | Proposed | [SOTA-397](../../record/practices.d/SOTA-397.md) | 0 | 0 | To condition an unconditionally trained diffusion model on known frames, use reconstruction guidance, not replacement |
 | 2026-09-25 | Proposed | [SOTA-402](../../record/practices.d/SOTA-402.md) | 1 | 0 | To teach a model to reason over facts it holds, spend added data on facts derived from other facts rather than on more atomic facts |
+| 2026-09-25 | Proposed | [SOTA-403](../../record/practices.d/SOTA-403.md) | 1 | 0 | Share the attention parameters across layers if you need to cut parameters; do not share the feed-forward ones |
 
 ## THEORYs
 
-62 of the 211.
+62 of the 212.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -202,12 +203,12 @@
 | 2026-09-22 | Proposed | [THEORY-061](../../record/theory.d/THEORY-061.md) | 9 | 0 | Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product |
 | 2026-09-22 | Proposed | [THEORY-072](../../record/theory.d/THEORY-072.md) | 6 | 0 | Training and test loss disagree as functions of weight norm, and shrinking the norm through the gap is what takes so long |
 | 2026-09-22 | Proposed | [THEORY-070](../../record/theory.d/THEORY-070.md) | 5 | 0 | Grokking is the transition from lazy to rich training dynamics |
+| 2026-09-22 | Proposed | [THEORY-066](../../record/theory.d/THEORY-066.md) | 4 | 0 | Pure self-attention collapses every token onto one, and skip connections prevent it by keeping short paths alive |
 | 2026-09-22 | Proposed | [THEORY-074](../../record/theory.d/THEORY-074.md) | 4 | 0 | A phase transition of the Bayesian posterior and a transition in the training trajectory are different events, and only the first is well defined |
 | 2026-09-22 | Proposed | [THEORY-063](../../record/theory.d/THEORY-063.md) | 3 | 0 | Contextual concept directions sit in the low-variance tail of the unembedding spectrum while vocabulary contrasts sit at the top |
 | 2026-09-22 | Proposed | [THEORY-064](../../record/theory.d/THEORY-064.md) | 3 | 0 | Transformers are biased toward low-sensitivity functions, and that bias is what their robustness is made of |
+| 2026-09-22 | Proposed | [THEORY-065](../../record/theory.d/THEORY-065.md) | 3 | 0 | Self-attention drives tokens into a few clusters, and the spectrum of the value matrix decides the geometry they land in |
 | 2026-09-22 | Proposed | [THEORY-073](../../record/theory.d/THEORY-073.md) | 3 | 0 | Training passes through stages marked by changes in loss-landscape degeneracy, and the loss curve does not show them |
-| 2026-09-22 | Proposed | [THEORY-065](../../record/theory.d/THEORY-065.md) | 2 | 0 | Self-attention drives tokens into a few clusters, and the spectrum of the value matrix decides the geometry they land in |
-| 2026-09-22 | Proposed | [THEORY-066](../../record/theory.d/THEORY-066.md) | 2 | 0 | Pure self-attention collapses every token onto one, and skip connections prevent it by keeping short paths alive |
 | 2026-09-23 | Proposed | [THEORY-089](../../record/theory.d/THEORY-089.md) | 12 | 0 | Word vectors trained on co-occurrence behave linearly because they encode log co-occurrence statistics: differences carry log ratios, which gives analogies, and sums carry products of context distributions, which gives composition |
 | 2026-09-23 | Proposed | [THEORY-081](../../record/theory.d/THEORY-081.md) | 10 | 0 | A transformer's feed-forward layers work as key-value memories: each hidden unit's input weights match input patterns, and its output weights promote the tokens that follow them |
 | 2026-09-23 | Deferred | [THEORY-087](../../record/theory.d/THEORY-087.md) | 10 | 0 | Why a negative-free siamese network avoids collapse is unsettled, and the three accounts contradict each other |
@@ -224,11 +225,11 @@
 | 2026-09-24 | Proposed | [THEORY-096](../../record/theory.d/THEORY-096.md) | 3 | 0 | A Pre-LN residual stream's per-layer change decays as one over root k, so deep blocks cannot refine the representation |
 | 2026-09-24 | Proposed | [THEORY-099](../../record/theory.d/THEORY-099.md) | 3 | 0 | Muon's update matches the outer-product structure of associative memories, which is why it learns tail classes that Adam under-trains |
 | 2026-09-24 | Proposed | [THEORY-097](../../record/theory.d/THEORY-097.md) | 2 | 0 | Attention is an approximation of Kanerva's sparse distributed memory, which is why it needs normalized vectors and a fitted temperature |
-| 2026-09-25 | Proposed | [THEORY-103](../../record/theory.d/THEORY-103.md) | 2 | 0 | A transformer stores a fact where it needed it, so two-hop composition generalizes only to facts it already saw as a second hop |
+| 2026-09-25 | Proposed | [THEORY-103](../../record/theory.d/THEORY-103.md) | 6 | 0 | A transformer stores a fact where it needed it, so two-hop composition generalizes only to facts it already saw as a second hop |
 
 ## LITs
 
-3 of the 211.
+3 of the 212.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -238,7 +239,7 @@
 
 ## ADRs
 
-3 of the 211.
+3 of the 212.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

@@ -1,5 +1,8 @@
 ---
+number: 403
 status: Proposed
+formerly:
+- SOTA-tmpgqcuy
 consensus: unreplicated
 consensus_note: >-
   One group, one result, and the group that proposed the technique. Nobody has
@@ -22,20 +25,20 @@ tags:
 - training-optimization
 date: '2026-09-25'
 source:
-- LIT-tmp40orc
+- LIT-668
 # Same code as `source:`, and the interesting part is who it is NOT. Cross-layer
 # sharing itself is Dehghani et al. 2018 (Universal Transformer), which this
 # record does not yet hold — but Universal Transformer shares everything and
 # reports a gain. The recommendation here is the SPLIT, which is Lan et al.'s
 # ablation and nobody else's (ADR-030).
 introduced_by:
-- LIT-tmp40orc
+- LIT-668
 # Deliberately empty. ALBERT ships ALL-shared, which is the configuration this
 # practice advises against — so listing it here would claim an adopter this
 # recommendation does not have.
 implementations: []
 summary: >-
-  Lan et al. (2019), [LIT-tmp40orc](../literature.d/LIT-tmp40orc.md). A transformer block has two halves and they
+  Lan et al. (2019), [LIT-668](../literature.d/LIT-668.md). A transformer block has two halves and they
   are not equally compressible across depth. On an ALBERT-base configuration at
   `E = 128`, sharing every layer's attention parameters scores **81.7 average
   against 81.6 for no sharing** while removing 89M parameters to 64M; sharing
@@ -44,7 +47,7 @@ summary: >-
   re-run it.
 ---
 
-# SOTA-tmpgqcuy: Share the attention parameters across layers if you need to cut parameters; do not share the feed-forward ones
+# SOTA-403: Share the attention parameters across layers if you need to cut parameters; do not share the feed-forward ones
 
 <!-- inactive-ok-file: THEORY-103 — Proposed, and cited to say that its premise would supply a
      mechanism for this asymmetry and that no document claims it yet. Open is exactly what is being
@@ -52,7 +55,7 @@ summary: >-
 
 ## Source
 
-Lan, Chen, Goodman, Gimpel, Sharma and Soricut (2019), [LIT-tmp40orc](../literature.d/LIT-tmp40orc.md) —
+Lan, Chen, Goodman, Gimpel, Sharma and Soricut (2019), [LIT-668](../literature.d/LIT-668.md) —
 [ARXIV-1909.11942](https://arxiv.org/abs/1909.11942).
 
 ## What to do

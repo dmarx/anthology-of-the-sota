@@ -6,7 +6,7 @@
 
 **One source** — one group, one result — nobody has agreed or disagreed yet, which is not the same as contested, where people looked and differed.
 
-119 of 402 SOTA documents. Back to the [full index](../README.md).
+120 of 403 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -129,3 +129,4 @@
 | [SOTA-399](../../../record/practices.d/SOTA-399.md) | Choose pre-training weight decay, dropout, clipping and precision for the quantization you intend to ship |  | Proposed |
 | [SOTA-401](../../../record/practices.d/SOTA-401.md) | Anchor the patch Gram matrix to an early teacher when training long, because dense features decay while global metrics improve |  | Proposed |
 | [SOTA-402](../../../record/practices.d/SOTA-402.md) | To teach a model to reason over facts it holds, spend added data on facts derived from other facts rather than on more atomic facts | Wang et al. (2024), [LIT-667](../../../record/literature.d/LIT-667.md). Two sweeps that separate what is normally varied together: with the inferred/atomic ratio `φ` fixed, scaling the training set changes nothing about how a transformer acquires a two-fact inference rule; with the size effect thus accounted for, raising `φ` moves the acquisition monotonically, and at `φ = 18.0` the delay is gone — 96.7% before training accuracy has even saturated. Synthetic knowledge graphs only, and it buys rule application on facts already seen in compositions, not systematicity. | Proposed |
+| [SOTA-403](../../../record/practices.d/SOTA-403.md) | Share the attention parameters across layers if you need to cut parameters; do not share the feed-forward ones | Lan et al. (2019), [LIT-668](../../../record/literature.d/LIT-668.md). A transformer block has two halves and they are not equally compressible across depth. On an ALBERT-base configuration at `E = 128`, sharing every layer's attention parameters scores **81.7 average against 81.6 for no sharing** while removing 89M parameters to 64M; sharing the feed-forward parameters instead scores **80.2**. At `E = 768` the same split reads −0.7 against −2.8. One paper, 2019, encoder-only, and nobody has re-run it. | Proposed |

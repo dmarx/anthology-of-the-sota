@@ -6,7 +6,7 @@
 
 **Model architecture** — architecture patterns, component design, structural choices, model families — how the network is shaped, not how many signals it takes in.
 
-47 of 402 SOTA documents. Back to the [full index](../README.md).
+48 of 403 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -57,3 +57,4 @@
 | [SOTA-362](../../../record/practices.d/SOTA-362.md) | Train through a projection head and then discard it, taking the layer before as the representation |  | Active |
 | [SOTA-365](../../../record/practices.d/SOTA-365.md) v2 | Learn without negatives by breaking the symmetry: a predictor on one branch and a stop-gradient on the other |  | Active |
 | [SOTA-400](../../../record/practices.d/SOTA-400.md) | Append a few register tokens to a ViT so it does not commandeer background patches for scratch space |  | Active |
+| [SOTA-403](../../../record/practices.d/SOTA-403.md) | Share the attention parameters across layers if you need to cut parameters; do not share the feed-forward ones | Lan et al. (2019), [LIT-668](../../../record/literature.d/LIT-668.md). A transformer block has two halves and they are not equally compressible across depth. On an ALBERT-base configuration at `E = 128`, sharing every layer's attention parameters scores **81.7 average against 81.6 for no sharing** while removing 89M parameters to 64M; sharing the feed-forward parameters instead scores **80.2**. At `E = 768` the same split reads −0.7 against −2.8. One paper, 2019, encoder-only, and nobody has re-run it. | Proposed |

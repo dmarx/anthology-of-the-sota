@@ -6,7 +6,7 @@
 
 **Multimodal learning** — what changes when one model has to take in more than one kind of signal — joint architectures and fusion, contrastive image-text training, cross-modal transfer, and what a second modality buys the first.
 
-15 of 602 LIT documents. Back to the [full index](../README.md).
+15 of 603 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

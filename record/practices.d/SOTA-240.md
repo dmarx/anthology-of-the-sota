@@ -11,7 +11,7 @@ consensus_note: >-
   whether the model can memorize what it is shown. The grounds are
   LIT-395 §7.4, which reports both edges of the sweet spot; LIT-119,
   which reaches for dropout in 2026 under exactly the condition the 2014 paper
-  predicts; and LIT-tmp40orc, which in 2019 removed dropout from a model that
+  predicts; and LIT-668, which in 2019 removed dropout from a model that
   would not overfit and gained on every task. No survey of current pretraining
   recipes supports the stronger reading, and this note is here so that the
   `converged` above is not read as covering it.
@@ -35,7 +35,7 @@ history:
     Converts this document's own admission into a reported result. v2 said that
     where the sweet-spot curve leaves large-scale pretraining "is an inference,
     not a reported result", and that the record had not confirmed why current
-    recipes set dropout to zero. LIT-tmp40orc is one confirmation, from 2019:
+    recipes set dropout to zero. LIT-668 is one confirmation, from 2019:
     ALBERT-xxlarge does not overfit after 1M steps, so dropout was removed, and
     MLM accuracy and every downstream task improve — 90.4 to 90.7 average. The
     authors claim priority for it and bound their own claim. The recommendation
@@ -52,7 +52,7 @@ date: '2026-09-17'
 source:
 - LIT-395
 - LIT-119
-- LIT-tmp40orc
+- LIT-668
 introduced_by:
 - LIT-394
 implementations:
@@ -113,7 +113,7 @@ claim, which is why this practice is stated as one.
 reported result behind it.** If a corpus is large enough that a model sees most
 of it once and cannot memorize it, the right edge of §7.4 predicts little to
 gain — against a cost the same paper measures at 2-3x training time.
-[LIT-tmp40orc](../literature.d/LIT-tmp40orc.md) reports the prediction coming true and gives the reason in the same
+[LIT-668](../literature.d/LIT-668.md) reports the prediction coming true and gives the reason in the same
 terms: after 1M steps ALBERT-xxlarge "still do[es] not overfit to [its] training
 data", so dropout was removed, and MLM accuracy rose along with every downstream
 task — **90.4 to 90.7 on average**, with SQuAD 1.1, SQuAD 2.0, MNLI, SST-2 and

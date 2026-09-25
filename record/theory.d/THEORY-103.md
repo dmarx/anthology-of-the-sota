@@ -19,7 +19,7 @@ history:
   note: >-
     Prices the fix. This account's evidence includes an intervention — sharing
     the two halves of the stack unlocks out-of-distribution composition — and
-    LIT-tmp40orc measures the same intervention on natural text at BERT scale,
+    LIT-668 measures the same intervention on natural text at BERT scale,
     where sharing the feed-forward parameters is the expensive half (−1.4 to
     −2.8 average, against +0.1 to −0.7 for sharing attention alone). Since the
     per-layer store this account is about IS the feed-forward block, the cost
@@ -33,7 +33,7 @@ tags:
 date: '2026-09-25'
 source:
 - LIT-667
-- LIT-tmp40orc
+- LIT-668
 summary: >-
   Wang et al. (2024), [LIT-667](../literature.d/LIT-667.md). Composition and comparison are both
   two-fact tasks that both arrive by grokking, and only one of them
@@ -137,7 +137,7 @@ circuit exists and works, on the facts it was trained to work on.
 The intervention above is cheap in the source's setting and is not cheap in
 general, and this account is the reason why.
 
-[LIT-tmp40orc](../literature.d/LIT-tmp40orc.md) ran the same change on natural text at BERT scale, for parameter
+[LIT-668](../literature.d/LIT-668.md) ran the same change on natural text at BERT scale, for parameter
 efficiency rather than for systematicity, and split it: sharing every layer's
 **attention** parameters costs +0.1 to −0.7 average, while sharing the
 **feed-forward** parameters costs −1.4 to −2.8. The feed-forward block is

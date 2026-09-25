@@ -4,7 +4,7 @@ status: Active
 formerly:
 - SOTA-tmprzpgu
 title: 'When an ImageNet classifier is anywhere in the pipeline — training the generator or steering its sampling — confirm FID gains with a Fréchet distance in a non-ImageNet feature space'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-25'
@@ -17,6 +17,15 @@ history:
     guidance maximises an ImageNet classifier's confidence during sampling, and
     that paper asserts it produces no adversarial examples without measuring it.
     Recommendation, status and consensus unchanged.
+- version: 3
+  date: '2026-09-25'
+  note: >-
+    v2's new Conditions bullet said precision and recall are "computed in the
+    same ImageNet feature space" as FID. Wrong in the detail: LIT-tmptzz06 uses
+    VGG-16 fc2 and FID uses Inception-v3. The conclusion the bullet drew survives
+    and is arguably stronger — two *different* ImageNet classifiers that agree
+    with each other is the situation this practice is about — but the stated
+    reason was false.
 tags:
 - analysis-and-evaluation
 - generative-modeling
@@ -91,8 +100,12 @@ practical case, Projected FastGAN matched StyleGAN2's FID (5.28 against
 - **Complements [SOTA-307](SOTA-307.md)**, which is about FID's variance across seeds. This
   practice is about its bias
 - **Says nothing about which side of a fidelity/diversity trade you are on.**
-  That is [SOTA-425](SOTA-425.md), and it uses precision and recall — which are computed
-  in the same ImageNet feature space, so they are subject to this practice too
+  That is [SOTA-425](SOTA-425.md), and precision and recall are subject to this practice too —
+  not because they share FID's feature space, which they do not (VGG-16 fc2
+  against Inception-v3, [LIT-tmptzz06](../literature.d/LIT-tmptzz06.md)), but because they are a *second* ImageNet
+  classifier, and their own paper reports that Inception features give
+  "substantially similar" results. Two ImageNet classifiers agreeing is not a
+  cross-check
 
 ## The sampling-loop case
 

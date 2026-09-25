@@ -1,0 +1,126 @@
+---
+status: Active
+title: 'Classifier-Free Diffusion Guidance'
+version: 1
+tags:
+- generative-modeling
+- analysis-and-evaluation
+- training-optimization
+date: '2026-09-25'
+published: '2022-07-26'
+arxiv: '2207.12598'
+first_author: 'Ho'
+keywords:
+- 'classifier-free-guidance'
+- 'guidance-scale'
+- 'fidelity-diversity-tradeoff'
+- 'fid'
+- 'inception-score'
+implementations:
+- 'Stable Diffusion'
+- 'Imagen'
+- 'diffusers'
+summary: >-
+  Ho and Salimans (2022), [ARXIV-2207.12598](https://arxiv.org/abs/2207.12598). The technique
+  SOTA-202, SOTA-203 and SOTA-410 all turn on, which this record had never
+  held. Drop the conditioning on a fraction of training examples and one network
+  learns both scores; at sampling, extrapolate away from the unconditional one.
+  The trade it buys is severe and measured: on ImageNet 64×64, `w` from 0.1 to
+  4.0 moves **FID from 1.55 to 26.22** while **IS goes 66.11 to 260.2**. Any FID
+  or IS comparison across guidance scales is therefore meaningless, which is the
+  missing source for SOTA-307's instruction to search the scale per cell.
+---
+
+<!-- inactive-ok-file: THEORY-tmpkf09c — Proposed, and this note is where it was filed from: both mentions name it as the open question this paper raises about its predecessor, not as a settled account being relied on. Its Proposed status is the point — the control the paper builds cannot size the artefact it rules out. -->
+# LIT-tmpy02tv: Classifier-Free Diffusion Guidance
+
+Ho and Salimans (2022) — [ARXIV-2207.12598](https://arxiv.org/abs/2207.12598)
+
+## Key takeaways
+
+**What it replaces.** Dhariwal & Nichol's classifier guidance mixes the
+diffusion model's score with the input gradient of a classifier's log
+probability, and sweeping the strength of that gradient trades Inception Score
+against FID much as BigGAN's truncation parameter does. It needs a second
+model, and the classifier has to be trained on noisy data, so a pre-trained one
+cannot be dropped in.
+
+**The method, which is a training change rather than a sampling one.** Replace
+the conditioning with a null token `∅` with probability `p_uncond` during
+training, so a single network learns the conditional score and the unconditional
+score at once. At sampling time combine them, extrapolating away from the
+unconditional estimate by a weight `w`. No classifier, no classifier gradients,
+no second model.
+
+**`p_uncond = 0.1` is the setting to take.** ImageNet 64×64 FID at the best
+guidance weight: **1.55** at `p_uncond = 0.1`, 1.62 at 0.2, 1.91 at 0.5. More
+unconditional training is worse, and the paper's own sweep is the evidence.
+
+**The trade, with the numbers, because the direction of the words is a trap.**
+ImageNet 64×64, `p_uncond = 0.1`, 50 000 samples per point:
+
+| `w` | FID ↓ | IS ↑ |
+| --- | --- | --- |
+| 0.0 (no guidance) | 1.80 | 53.71 |
+| **0.1** | **1.55** | 66.11 |
+| 0.3 | 3.03 | 92.80 |
+| 1.0 | 12.60 | 170.1 |
+| 2.0 | 21.03 | 225.5 |
+| **4.0** | 26.22 | **260.2** |
+
+FID degrades by roughly **17×** across that range while IS nearly **quintuples**.
+The paper writes this as "FID monotonically decreasing and IS monotonically
+increasing with `w`", which means the FID *quality* decreasing — the number
+rising. Read the sentence alone and you will get the sign backwards.
+
+The consequence for anybody comparing models: **FID and IS at different guidance
+weights are not comparable**, and a guidance sweep can manufacture either metric
+almost at will. Best FID needs `w ≈ 0.1–0.3`; best IS needs `w ≥ 4`; nothing is
+best at both.
+
+**And it beats the thing it replaces.** At `w = 0.3` on 128×128 ImageNet the FID
+outperforms the classifier-guided ADM-G, and at `w = 4.0` it outperforms
+BigGAN-deep on FID *and* IS with BigGAN evaluated at its best-IS truncation.
+
+**A suspicion it raises about its own predecessor, and the control it
+provides.** Classifier guidance steps along a classifier's input gradient, which
+the paper points out "can be interpreted as attempting to confuse an image
+classifier with a gradient-based adversarial attack" — and FID and IS are both
+computed with an Inception classifier. So: does classifier guidance improve
+those metrics because the samples are better, or because it is adversarial
+against the very network that scores them? Classifier-free guidance obtains the
+same trade-off with no classifier anywhere, which is the control. Filed as
+[THEORY-tmpkf09c](../theory.d/THEORY-tmpkf09c.md).
+
+**The visible artefact.** "Strongly guided samples such as these display
+saturated colors", at `w = 3.0`. That is the same excursion [SOTA-202](../practices.d/SOTA-202.md) is about —
+high guidance pushing predictions out of the training range — seen here as a
+reported side effect rather than as a bug to fix.
+
+## Standing in the anthology
+
+Filed because the dependency had become unavoidable. Three practices —
+[SOTA-202](../practices.d/SOTA-202.md), [SOTA-203](../practices.d/SOTA-203.md) and [SOTA-410](../practices.d/SOTA-410.md) — now turn on the guidance scale, the last
+two as of today, and [SOTA-307](../practices.d/SOTA-307.md) tells a reader to "search the scale per cell" and
+quantifies the noise ±0.05 on it injects. None of them could cite the technique.
+Nineteen other documents here name classifier-free guidance or the guidance
+scale: four literature notes, four practices, a theory and ten reading notes.
+
+What it supplies:
+
+- [SOTA-tmpfci2h](../practices.d/SOTA-tmpfci2h.md), the recipe and the weight-selection rule;
+- the missing source for [SOTA-307](../practices.d/SOTA-307.md)'s guidance items, and the measurement that
+  justifies them — a 17× FID swing is a much stronger reason to fix the scale
+  than "the metrics disagree";
+- [THEORY-tmpkf09c](../theory.d/THEORY-tmpkf09c.md), the adversarial-metric suspicion and its control;
+- and the context [SOTA-202](../practices.d/SOTA-202.md) was carrying implicitly: Imagen is where the
+  *thresholding fix* comes from, not where guidance comes from.
+
+**The antecedent is still unheld.** Dhariwal & Nichol (`2105.05233`) is the
+paper this one is named against, and this record already cites it four times as
+an instrument or an authority — `LIT-448` says they "ablated" a design choice,
+`NOTE-340` uses their U-Net and audits a throughput claim against their run,
+`LIT-630`'s controlled path comparison is run on the same U-Net, and
+[LIT-676](LIT-676.md)'s entire ImageNet table is run on their model. It is the next thing this line wants, and it is deliberately not in
+this unit: CFG's own account of it is detailed and fair, and filing them together
+would have let the sourcing of one rest on the other.

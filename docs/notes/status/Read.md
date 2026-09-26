@@ -6,7 +6,7 @@
 
 **Read** — the full text, closely enough to state its assumptions and results exactly — the only status that licenses a claims table.
 
-365 of 377 NOTE documents. Back to the [full index](../README.md).
+366 of 378 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -375,3 +375,4 @@
 | [NOTE-370](../../../record/notes.d/NOTE-370.md) | EDM2 | Magnitude-preserving layers plus forced weight normalization take the ADM U-Net from FID 8.00 to 2.56 on ImageNet-512 at equal compute, in a cumulative single-model ladder whose steps are all far larger than FID's noise. Post-hoc EMA reconstructs any averaging length from two stored power-function averages, and what it shows is that the best length depends on architecture, learning rate, guidance weight and the metric — the last by 2% against 14% under guidance. | Read |
 | [NOTE-371](../../../record/notes.d/NOTE-371.md) | FLIP | Removing 50% of image patches in CLIP training halves the image encoder's cost and lets the contrastive batch double at the same memory; ViT-L/16 on LAION-400M then matches its unmasked reproduction more than 3× faster and beats it by about a point at equal epochs. At equal batch the masking gains nothing, and at ViT-B/16 the full-schedule model is 0.2 behind — the improvement is the batch and the extra samples that masking pays for. | Read |
 | [NOTE-372](../../../record/notes.d/NOTE-372.md) | Dropout as a Bayesian approximation | Dropout before every weight layer, with L2, is shown to optimize (up to an approximated KL term) a variational objective for a deep Gaussian process, so running T stochastic forward passes at test time yields a predictive mean and variance for free. The evidence is qualitative figures, a UCI regression table on 50-unit one-layer networks, and one RL run; the MC-versus-weight-scaling comparison is stated without numbers. | Read |
+| [NOTE-378](../../../record/notes.d/NOTE-378.md) | Talagrand Meets Talagrand | Take a centered Gaussian process on a finite set T with max variance σ² and minimum separation a. The expected softmax-weighted average g(β) = E[Σ_t X_t e^{βX_t}/Z] satisfies g(β) ≤ √(2σ²·E D(ν_β‖ν₀)) for every β (Thm 1, D = KL from uniform). For β ≥ β*, g(β) ≥ c·a·√(E D(ν_β‖ν₀)), with c the Sudakov constant (1/17 via Marcus–Rosen) (Thm 2). For i.i.d. N(0,σ²) logits there is an exact identity, g(β) = βσ²(1 − E‖ν_β‖²₂) (Lemma 2). The quenched free energy is bounded above by √(2σ²·E D_{1/2}(ν_β‖ν₀)), with an i.i.d. lower bound of (cσ/2)√(E D_{1/2}) (Thms 4–5). | Read |

@@ -4,7 +4,7 @@
 
 **analysis-and-evaluation**.
 
-137 of 377 NOTE documents. Back to the [full index](../README.md).
+138 of 378 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -145,3 +145,4 @@
 | [NOTE-372](../../../record/notes.d/NOTE-372.md) | Dropout as a Bayesian approximation | Dropout before every weight layer, with L2, is shown to optimize (up to an approximated KL term) a variational objective for a deep Gaussian process, so running T stochastic forward passes at test time yields a predictive mean and variance for free. The evidence is qualitative figures, a UCI regression table on 50-unit one-layer networks, and one RL run; the MC-versus-weight-scaling comparison is stated without numbers. | Read |
 | [NOTE-373](../../../record/notes.d/NOTE-373.md) | Tiny RNNs discover cognitive strategies | GRUs with only 1–4 units predict individual animals' and humans' choices in six reward-learning tasks better than 30+ classical cognitive models of the same dimensionality. Because they are so small, they can be read as dynamical systems, exposing strategies (state-dependent learning rates, perseveration, reward-induced indifference) that no classical model contains. | Skimmed |
 | [NOTE-375](../../../record/notes.d/NOTE-375.md) | Burrell: automated decision-making as domination | Defining algorithmic injustice as allocative unfairness is a product of computer science's status and funding, not of the harms themselves. Redefining it as domination, following Iris Marion Young, widens the remedies from code fixes to law, participation, resistance and bans. | Skimmed |
+| [NOTE-378](../../../record/notes.d/NOTE-378.md) | Talagrand Meets Talagrand | Take a centered Gaussian process on a finite set T with max variance σ² and minimum separation a. The expected softmax-weighted average g(β) = E[Σ_t X_t e^{βX_t}/Z] satisfies g(β) ≤ √(2σ²·E D(ν_β‖ν₀)) for every β (Thm 1, D = KL from uniform). For β ≥ β*, g(β) ≥ c·a·√(E D(ν_β‖ν₀)), with c the Sudakov constant (1/17 via Marcus–Rosen) (Thm 2). For i.i.d. N(0,σ²) logits there is an exact identity, g(β) = βσ²(1 − E‖ν_β‖²₂) (Lemma 2). The quenched free energy is bounded above by √(2σ²·E D_{1/2}(ν_β‖ν₀)), with an i.i.d. lower bound of (cσ/2)√(E D_{1/2}) (Thms 4–5). | Read |

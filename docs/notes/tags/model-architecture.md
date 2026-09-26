@@ -4,7 +4,7 @@
 
 **model-architecture**.
 
-53 of 377 NOTE documents. Back to the [full index](../README.md).
+53 of 378 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

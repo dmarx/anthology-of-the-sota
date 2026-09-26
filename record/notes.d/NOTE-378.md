@@ -1,6 +1,9 @@
 ---
+number: 378
 status: Read
-paper: LIT-tmpnu5sc
+formerly:
+- NOTE-tmp1ybcq
+paper: LIT-726
 title: 'Talagrand Meets Talagrand'
 version: 1
 date: '2026-09-26'
@@ -18,7 +21,7 @@ summary: >-
 
 <!-- inactive-ok-file: THEORY-061 — Proposed; named in Bearing on the record as the neighbouring account -->
 
-# NOTE-tmp1ybcq: Talagrand Meets Talagrand
+# NOTE-378: Talagrand Meets Talagrand
 
 ## Contribution
 

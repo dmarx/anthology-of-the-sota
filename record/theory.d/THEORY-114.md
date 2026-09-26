@@ -1,5 +1,8 @@
 ---
+number: 114
 status: Active
+formerly:
+- THEORY-tmp8d1re
 title: 'A modified-backpropagation rule that keeps only non-negative relevance produces a matrix chain that converges to rank 1, so the later layers can only flip the map''s sign'
 version: 1
 tags:
@@ -7,11 +10,11 @@ tags:
 - representation-and-encoding
 date: '2026-09-26'
 source:
-- LIT-tmpo0kkk
+- LIT-729
 explains:
 - SOTA-430
 summary: >-
-  Sixt, Granz and Landgraf (2019), [LIT-tmpo0kkk](../literature.d/LIT-tmpo0kkk.md), Theorem 1. The `z⁺`-rule
+  Sixt, Granz and Landgraf (2019), [LIT-729](../literature.d/LIT-729.md), Theorem 1. The `z⁺`-rule
   backpropagates relevance through a product of non-negative matrices; such a
   product converges to a rank-1 matrix `C = c γᵀ`, and then `C v = λ c` for every
   `v`. So the relevance vector set at the output — the thing that carries which
@@ -25,11 +28,11 @@ summary: >-
 <!-- inactive-ok-file: SOTA-430 — Proposed, and declared in `explains:`; this account underwrites one family in that practice's verdict table and says explicitly which rows it does not reach. An account explaining a not-yet-in-force practice is the normal case. -->
 <!-- inactive-ok-file: THEORY-113 — Proposed, and cited only to draw the boundary between the two accounts: they cover disjoint method families and neither rests on the other. -->
 
-# THEORY-tmp8d1re: A modified-backpropagation rule that keeps only non-negative relevance produces a matrix chain that converges to rank 1, so the later layers can only flip the map's sign
+# THEORY-114: A modified-backpropagation rule that keeps only non-negative relevance produces a matrix chain that converges to rank 1, so the later layers can only flip the map's sign
 
 ## Source
 
-Sixt, Granz and Landgraf (2019), [LIT-tmpo0kkk](../literature.d/LIT-tmpo0kkk.md) — ICML 2020, §2 and §4.
+Sixt, Granz and Landgraf (2019), [LIT-729](../literature.d/LIT-729.md) — ICML 2020, §2 and §4.
 
 ## The account
 

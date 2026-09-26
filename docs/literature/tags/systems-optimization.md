@@ -6,7 +6,7 @@
 
 **Systems optimization** — hardware utilization, kernels, compilation, memory access patterns — how an operation is executed, not how many bits it is executed in.
 
-19 of 663 LIT documents. Back to the [full index](../README.md).
+19 of 664 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

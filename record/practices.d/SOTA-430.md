@@ -84,7 +84,7 @@ history:
     argues" why guided backprop fails; it is not — it measures guided backprop
     and hands the explanation to Nie, Zhang and Patel (2018), 1805.07039, because
     a ReLU on the gradient makes the backward pass non-linear. What 1912.09818
-    does supply is THEORY-tmp8d1re, the rank-1 convergence account for the z+
+    does supply is THEORY-114, the rank-1 convergence account for the z+
     family. So the cluster's failures now partition into three mechanisms, two
     held and one not, and this table's headline failure is the unheld one.
     Recommendation, status and consensus unchanged.
@@ -114,7 +114,7 @@ summary: >-
   classifiers only, and pass or fail is read from curves.
 explained_by:
 - THEORY-113
-- THEORY-tmp8d1re
+- THEORY-114
 extended_by:
 - SOTA-435
 ---
@@ -201,7 +201,7 @@ The cluster's failures partition into three mechanisms:
 | family | mechanism | held as |
 | --- | --- | --- |
 | Integrated Gradients, gradient⊙input, DeepLIFT | the model-independent input multiplier | [THEORY-113](../theory.d/THEORY-113.md) |
-| DTD, LRP-α1β0, Excitation BP, PatternAttribution | rank-1 convergence of a non-negative chain | [THEORY-tmp8d1re](../theory.d/THEORY-tmp8d1re.md) |
+| DTD, LRP-α1β0, Excitation BP, PatternAttribution | rank-1 convergence of a non-negative chain | [THEORY-114](../theory.d/THEORY-114.md) |
 | **Guided Backprop, Deconv, Guided GradCAM** | a third mechanism | **not held** — Nie, Zhang and Patel (2018), `1805.07039` |
 
 The middle row is new and covers no method in this table. The bottom row is this

@@ -20,7 +20,7 @@ history:
 - version: 2
   date: '2026-09-26'
   note: >-
-    States the boundary now that a second account is held. LIT-tmpo0kkk shows a
+    States the boundary now that a second account is held. LIT-729 shows a
     different mechanism — rank-1 convergence of a non-negative relevance chain —
     for the z+ family, and supports this account from outside by noting that
     methods relying on the gradient directly do not converge, so Integrated
@@ -83,10 +83,10 @@ partition three ways, and this document owns the first row:
 | family | mechanism | held as |
 | --- | --- | --- |
 | Integrated Gradients, InputXGradient, DeepLIFT, Gradient SHAP | **this account** — the model-independent input multiplier | here |
-| DTD, LRP-α1β0, Excitation BP, PatternAttribution | rank-1 convergence of a non-negative chain | [THEORY-tmp8d1re](THEORY-tmp8d1re.md) |
+| DTD, LRP-α1β0, Excitation BP, PatternAttribution | rank-1 convergence of a non-negative chain | [THEORY-114](THEORY-114.md) |
 | Guided Backprop, Deconv, RectGrad | a third mechanism | not held — `1805.07039` |
 
-[LIT-tmpo0kkk](../literature.d/LIT-tmpo0kkk.md) supports this account from outside its own subject: methods
+[LIT-729](../literature.d/LIT-729.md) supports this account from outside its own subject: methods
 that "rely on the gradient directly (Smilkov et al. 2017; Sundararajan et al.
 2017) ... [do] not converge", so Integrated Gradients' randomization behaviour is
 not the rank-1 mechanism, which is what leaves the multiplier as the explanation.

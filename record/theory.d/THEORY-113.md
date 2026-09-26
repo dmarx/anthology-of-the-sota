@@ -1,5 +1,8 @@
 ---
+number: 113
 status: Proposed
+formerly:
+- THEORY-tmp4cch6
 promote_when: >-
   A third group removes the input multiplier from a gradient attribution and
   re-runs a parameter-randomization test, in a setting neither Inception nor a
@@ -18,12 +21,12 @@ tags:
 - representation-and-encoding
 date: '2026-09-26'
 source:
-- LIT-tmp5z3a0
+- LIT-724
 - LIT-713
 explains:
 - SOTA-430
 summary: >-
-  Kokhlikyan et al. (2021), [LIT-tmp5z3a0](../literature.d/LIT-tmp5z3a0.md). Integrated Gradients and its
+  Kokhlikyan et al. (2021), [LIT-724](../literature.d/LIT-724.md). Integrated Gradients and its
   relatives multiply a path integral by `(x − x₀)`, which does not depend on
   the model. That factor carries the input's structure into the map, so the map
   keeps looking the same when the weights are destroyed. [LIT-713](../literature.d/LIT-713.md) suspected this
@@ -35,12 +38,12 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-430 — Proposed, and declared in `explains:`; the practice this account underwrites, cited to say which of its cautions survive. An account explaining a not-yet-in-force practice is the normal case, not a defect. -->
 
-# THEORY-tmp4cch6: A gradient attribution survives weight randomization because of its input multiplier, not because the attribution is insensitive to the weights
+# THEORY-113: A gradient attribution survives weight randomization because of its input multiplier, not because the attribution is insensitive to the weights
 
 ## Source
 
 Kokhlikyan, Miglani, Alsallakh, Martin and Reblitz-Richardson (2021),
-[LIT-tmp5z3a0](../literature.d/LIT-tmp5z3a0.md), §2–3 and Appendix A; with Adebayo et al. (2018),
+[LIT-724](../literature.d/LIT-724.md), §2–3 and Appendix A; with Adebayo et al. (2018),
 [LIT-713](../literature.d/LIT-713.md), which states the conjecture and declines to measure it.
 
 ## The account

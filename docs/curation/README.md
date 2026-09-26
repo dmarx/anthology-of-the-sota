@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [26 Sep 03:43 — Tier C was filed by accident while the issue said it was untouched, and the one thing it left behind](2026-09.md#tier-c-was-filed-by-accident-while-the-issue-said-it-was-untouched-and-the-one-thing-it-left-behind)
 - [26 Sep 03:23 — The paper that was ranked last nine times, and the benchmark that scored one design choice backwards](2026-09.md#the-paper-that-was-ranked-last-nine-times-and-the-benchmark-that-scored-one-design-choice-backwards)
 - [26 Sep 01:39 — The paper three notes were standing on, and a rejection that finally names what it rejects](2026-09.md#the-paper-three-notes-were-standing-on-and-a-rejection-that-finally-names-what-it-rejects)
 - [25 Sep 23:21 — The mechanism the guidance cluster was built without, and the check that would have caught yesterday's duplicate](2026-09.md#the-mechanism-the-guidance-cluster-was-built-without-and-the-check-that-would-have-caught-yesterdays-duplicate)
@@ -254,9 +255,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-247 entries across 2 books, newest first.
+248 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 245 | 2026-09-05 | 2026-09-26 |
+| [2026-09](2026-09.md) | 246 | 2026-09-05 | 2026-09-26 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

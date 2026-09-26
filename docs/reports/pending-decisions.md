@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**249 document(s) awaiting a decision.**
+**250 document(s) awaiting a decision.**
 
 ## SOTAs
 
-167 of the 249.
+167 of the 250.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -158,10 +158,10 @@
 | 2026-09-25 | Proposed | [SOTA-428](../../record/practices.d/SOTA-428.md) | 29 | 0 | Choose the EMA length after training: store two power-function averages at snapshots and reconstruct any length by least squares |
 | 2026-09-25 | Proposed | [SOTA-408](../../record/practices.d/SOTA-408.md) | 12 | 0 | Average the weights along the tail of training under a cyclical or high constant learning rate, then re-estimate the normalization statistics |
 | 2026-09-25 | Proposed | [SOTA-415](../../record/practices.d/SOTA-415.md) | 10 | 0 | During a warmup-stable-decay run, estimate the annealed score from a uniform average of recent stable-phase checkpoints instead of launching a decay branch |
+| 2026-09-25 | Proposed | [SOTA-430](../../record/practices.d/SOTA-430.md) | 8 | 0 | Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks |
 | 2026-09-25 | Proposed | [SOTA-403](../../record/practices.d/SOTA-403.md) | 6 | 0 | Share the attention parameters across layers if you need to cut parameters; do not share the feed-forward ones |
 | 2026-09-25 | Proposed | [SOTA-426](../../record/practices.d/SOTA-426.md) | 6 | 0 | When you merge and reinitialise a low-rank adapter mid-training, prune the optimizer state and re-warm the learning rate from zero — both, not either |
 | 2026-09-25 | Proposed | [SOTA-433](../../record/practices.d/SOTA-433.md) | 5 | 0 | Guide a diffusion model with a smaller, less-trained copy of itself rather than an unconditional model, and make sure the two models are degraded in the same way |
-| 2026-09-25 | Proposed | [SOTA-430](../../record/practices.d/SOTA-430.md) | 4 | 0 | Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks |
 | 2026-09-25 | Proposed | [SOTA-412](../../record/practices.d/SOTA-412.md) | 3 | 0 | When the target is likelihood, learn a per-dimension noise schedule conditioned on a learned latent; a scalar or unconditioned one buys nothing |
 | 2026-09-25 | Proposed | [SOTA-429](../../record/practices.d/SOTA-429.md) | 3 | 0 | Drop half the image patches when training a CLIP-style model, spend the saving on more pairs and a larger batch, and unmask only for a short final tune |
 | 2026-09-25 | Proposed | [SOTA-404](../../record/practices.d/SOTA-404.md) | 2 | 0 | When you ablate an auxiliary loss, ablate the input construction that came with it, or the result is about both |
@@ -183,7 +183,7 @@
 
 ## THEORYs
 
-68 of the 249.
+69 of the 250.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -255,10 +255,11 @@
 | 2026-09-25 | Proposed | [THEORY-108](../../record/theory.d/THEORY-108.md) | 4 | 0 | Kaplan's and Chinchilla's compute-optimal exponents differ because of how small-scale runs were counted, warmed up and tuned, not because of the learning-rate decay |
 | 2026-09-25 | Proposed | [THEORY-110](../../record/theory.d/THEORY-110.md) | 4 | 0 | FID is not neutral between fidelity and coverage: it weights coverage more, so optimizing it walks toward variety at the cost of per-sample quality |
 | 2026-09-25 | Proposed | [THEORY-105](../../record/theory.d/THEORY-105.md) | 1 | 0 | Soft targets transfer the teacher's similarity structure over wrong classes, which carries more information per example than a hard label |
+| 2026-09-26 | Proposed | [THEORY-113](../../record/theory.d/THEORY-113.md) | 4 | 0 | A gradient attribution survives weight randomization because of its input multiplier, not because the attribution is insensitive to the weights |
 
 ## LITs
 
-11 of the 249.
+11 of the 250.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -276,7 +277,7 @@
 
 ## ADRs
 
-3 of the 249.
+3 of the 250.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

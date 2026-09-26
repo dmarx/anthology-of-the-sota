@@ -11,7 +11,7 @@ history:
   date: '2026-09-26'
   note: >-
     One of this reading's open questions is answered by a paper the reading
-    itself named as unheld. LIT-tmp5z3a0 runs the parameter-randomization test
+    itself named as unheld. LIT-724 runs the parameter-randomization test
     on a BERT text classifier and the verdict on global Integrated Gradients
     reverses. The two bare-id mentions of that paper now name a document, and
     the answered question is struck through rather than deleted, because what
@@ -26,7 +26,7 @@ summary: >-
 ---
 
 <!-- inactive-ok-file: SOTA-430 — Proposed; the practice filed from this reading's R1 -->
-<!-- inactive-ok-file: THEORY-tmp4cch6 — Proposed, and filed from the critique this document pointed at; named to say where the mechanism behind its own headline failure is now written down. -->
+<!-- inactive-ok-file: THEORY-113 — Proposed, and filed from the critique this document pointed at; named to say where the mechanism behind its own headline failure is now written down. -->
 
 # NOTE-365: Sanity Checks for Saliency Maps
 
@@ -163,7 +163,7 @@ relation is declared (see [LIT-713](../literature.d/LIT-713.md)).
   in neither list, and the metrics disagree about it.
 - The four methods the paper gives verdicts on (gradient, GradCAM, Guided
   Backprop, Guided GradCAM) are not held as notes. The follow-up captum links
-  now is: [LIT-tmp5z3a0](../literature.d/LIT-tmp5z3a0.md).
+  now is: [LIT-724](../literature.d/LIT-724.md).
 
 ## Limitations
 
@@ -179,7 +179,7 @@ relation is declared (see [LIT-713](../literature.d/LIT-713.md)).
 ## Open questions
 
 - ~~Do the verdicts hold for transformers and for token attributions?~~
-  **Answered, and the answer is no.** [LIT-tmp5z3a0](../literature.d/LIT-tmp5z3a0.md) runs the
+  **Answered, and the answer is no.** [LIT-724](../literature.d/LIT-724.md) runs the
   parameter-randomization test on a BERT classifier on SST-2: global
   Integrated Gradients, which fails here, becomes parameter-sensitive there,
   because token scores are summed over embedding dimensions and the input
@@ -187,6 +187,6 @@ relation is declared (see [LIT-713](../literature.d/LIT-713.md)).
 - Can a threshold be set so that "passes" is a statistic rather than a
   judgement, and does IG pass it?
 - The later literature questions whether the randomization test measures what
-  it claims. One of it is now held — [LIT-tmp5z3a0](../literature.d/LIT-tmp5z3a0.md), which traces this paper's
-  own headline failure to the input multiplier ([THEORY-tmp4cch6](../theory.d/THEORY-tmp4cch6.md)) and finds a
+  it claims. One of it is now held — [LIT-724](../literature.d/LIT-724.md), which traces this paper's
+  own headline failure to the input multiplier ([THEORY-113](../theory.d/THEORY-113.md)) and finds a
   smoothness confound in the test. The rest is not.

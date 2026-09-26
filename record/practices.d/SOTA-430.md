@@ -14,7 +14,7 @@ promote_when: >-
   it: papers that run the tests on a new method and report that it passes,
   which is adoption (DP-005); or more image-classifier sweeps of the same kind,
   which are the result already held. The critique this field named first is now
-  held as LIT-tmp5z3a0, and it does not meet this bar — it supplies the
+  held as LIT-724, and it does not meet this bar — it supplies the
   non-image model and shows the verdict is metric- and modality-dependent,
   without ever putting a known dependence in front of the tests.
 consensus: contested
@@ -23,10 +23,10 @@ consensus_note: >-
   map by eye, so the trunk — check before you trust — is agreed. What they
   differ on is what a failure means. LIT-713 reads it as evidence that
   gradient-based methods are "inadequate tools for model explanation";
-  Kokhlikyan et al. (LIT-tmp5z3a0, the captum maintainers) read the same
+  Kokhlikyan et al. (LIT-724, the captum maintainers) read the same
   failure as an artefact of the input multiplier, a model-independent factor
   you can switch off, and show that the verdict reverses on text and depends on
-  whether you score with SSIM or Spearman. LIT-tmp5z3a0 is both `source:` and
+  whether you score with SSIM or Spearman. LIT-724 is both `source:` and
   `contested_by:` here, which is not a contradiction: it supplies step 4 and
   two of the conditions while disputing what its co-source concludes from a
   failure. Moved off `unassessed` because somebody has now looked, not because
@@ -37,7 +37,7 @@ history:
 - version: 2
   date: '2026-09-26'
   note: >-
-    Reads the critique this practice named twice as unread. LIT-tmp5z3a0 adds a
+    Reads the critique this practice named twice as unread. LIT-724 adds a
     fourth step — when a method fails, re-run it without the input multiplier,
     because that is where the failure has been traced — and two conditions: the
     verdict does not transfer from image to text, and the paper independently
@@ -50,9 +50,9 @@ tags:
 date: '2026-09-25'
 source:
 - LIT-713
-- LIT-tmp5z3a0
+- LIT-724
 contested_by:
-- LIT-tmp5z3a0
+- LIT-724
 # The same authors stated the parameter-sensitivity check first, in "Local
 # explanation methods for deep neural networks lack sensitivity to parameter
 # values" (Adebayo, Gilmer, Goodfellow and Kim, 2018; ICLR workshop), which this
@@ -70,10 +70,10 @@ summary: >-
   passing does not show a method is faithful. The evidence is image
   classifiers only, and pass or fail is read from curves.
 explained_by:
-- THEORY-tmp4cch6
+- THEORY-113
 ---
 
-<!-- inactive-ok-file: THEORY-tmp4cch6 — Proposed, and it is the account filed alongside this amendment; step 4 points at it for the mechanism, and the practice says in the same breath that it does not rehabilitate the method. -->
+<!-- inactive-ok-file: THEORY-113 — Proposed, and it is the account filed alongside this amendment; step 4 points at it for the mechanism, and the practice says in the same breath that it does not rehabilitate the method. -->
 
 # SOTA-430: Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks
 
@@ -106,11 +106,11 @@ On *your* model, with the attribution method you intend to use:
    concluding anything about the method.** Integrated Gradients,
    InputXGradient, DeepLift and Gradient SHAP all multiply a model-dependent
    quantity by `(x − x₀)`, which does not depend on the model at all.
-   [LIT-tmp5z3a0](../literature.d/LIT-tmp5z3a0.md) traced the failure to that factor: drop it and the
+   [LIT-724](../literature.d/LIT-724.md) traced the failure to that factor: drop it and the
    maps become parameter-sensitive, with SSIM for the local variant about half
    the global variant's on Inception. Their recommendation is to "compare
    their explanations with and without this multiplier in order to understand
-   the magnitude of these structural effects", and [THEORY-tmp4cch6](../theory.d/THEORY-tmp4cch6.md) is the
+   the magnitude of these structural effects", and [THEORY-113](../theory.d/THEORY-113.md) is the
    account. This does **not** rehabilitate the method — a pass is still not a
    certificate — but it tells you whether you have learned something about
    the attribution or about the picture.
@@ -150,7 +150,7 @@ and neither does this practice.
   The abstract's "independent both of the model and of the data generating
   process" is the pre-correction strength. Cite the body.
 - **The verdict does not transfer across modality, which is now measured
-  rather than suspected.** [LIT-tmp5z3a0](../literature.d/LIT-tmp5z3a0.md) runs the parameter-randomization
+  rather than suspected.** [LIT-724](../literature.d/LIT-724.md) runs the parameter-randomization
   test on a BERT classifier fine-tuned on SST-2 and finds that global
   Integrated Gradients — which fails on images — becomes parameter-sensitive
   there, because token scores are summed over embedding dimensions and the
@@ -177,7 +177,7 @@ and neither does this practice.
 - **Whether the model-randomization test measures what it claims is disputed,
   and the practice stays `Proposed` for it.** The dispute is now held rather
   than gestured at: see the `consensus_note` and
-  [LIT-tmp5z3a0](../literature.d/LIT-tmp5z3a0.md)'s standing section. What neither group has done —
+  [LIT-724](../literature.d/LIT-724.md)'s standing section. What neither group has done —
   and what the `promote_when` asks for — is run the tests where the true
   dependence of output on input is known by construction.
 

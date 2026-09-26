@@ -69,8 +69,8 @@ history:
   date: '2026-09-26'
   note: >-
     The two methods in the failing row get their defining papers. Guided
-    backprop is LIT-tmpw88iy §4.2 and the deconvnet it varies is
-    LIT-tmpwce9y, so the verdict table's headline failure can now be followed
+    backprop is LIT-727 §4.2 and the deconvnet it varies is
+    LIT-728, so the verdict table's headline failure can now be followed
     to a masking rule instead of stopping at a name. Nothing about the verdict
     or the recommendation changes. Third amendment today, and each was driven
     by a source arriving rather than by a rereading: v2 the critique, v3 the
@@ -176,10 +176,10 @@ GradCAM as failing. **It gives Integrated Gradients ([LIT-712](../literature.d/L
 and neither does this practice.
 
 **The failing row's methods are now held, and its rule is one sentence.**
-Guided backpropagation ([LIT-tmpw88iy](../literature.d/LIT-tmpw88iy.md), §4.2) zeroes the gradient at each
+Guided backpropagation ([LIT-727](../literature.d/LIT-727.md), §4.2) zeroes the gradient at each
 ReLU wherever *either* the top gradient or the bottom activation is negative —
 both masks at once, where plain backprop applies the second and the deconvnet
-([LIT-tmpwce9y](../literature.d/LIT-tmpwce9y.md)) applies the first. Its authors' stated reason is to
+([LIT-728](../literature.d/LIT-728.md)) applies the first. Its authors' stated reason is to
 "prevent backward flow of negative gradients".
 
 That is the rule, not the explanation. [LIT-725](../literature.d/LIT-725.md) says these two fail the

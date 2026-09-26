@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [26 Sep 04:36 — A method whose later defect is its original selling point, and the paper that would join the rule to the failure](2026-09.md#a-method-whose-later-defect-is-its-original-selling-point-and-the-paper-that-would-join-the-rule-to-the-failure)
 - [26 Sep 04:14 — Eight of fourteen declines reverse, and the experiment a promote_when wants is one table-join inside a published paper](2026-09.md#eight-of-fourteen-declines-reverse-and-the-experiment-a-promote_when-wants-is-one-table-join-inside-a-published-paper)
 - [26 Sep 03:43 — Tier C was filed by accident while the issue said it was untouched, and the one thing it left behind](2026-09.md#tier-c-was-filed-by-accident-while-the-issue-said-it-was-untouched-and-the-one-thing-it-left-behind)
 - [26 Sep 03:23 — The paper that was ranked last nine times, and the benchmark that scored one design choice backwards](2026-09.md#the-paper-that-was-ranked-last-nine-times-and-the-benchmark-that-scored-one-design-choice-backwards)
@@ -256,9 +257,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-249 entries across 2 books, newest first.
+250 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 247 | 2026-09-05 | 2026-09-26 |
+| [2026-09](2026-09.md) | 248 | 2026-09-05 | 2026-09-26 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

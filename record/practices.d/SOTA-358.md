@@ -13,7 +13,7 @@ consensus_note: >-
   architecture, so adopters below it inherit a choice the paper argues
   against. Read as of 2026-09.
 title: 'Drop the domain inductive bias once pre-training data is large enough, and keep it when it is not'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-24'
@@ -23,6 +23,19 @@ history:
     came from leaves 13.2 points unclaimed, so "despite tuned
     regularisation" cannot carry the argument. The JFT subset sweep is
     unaffected and the conclusion now rests on it. Status unchanged.
+- version: 3
+  date: '2026-09-26'
+  note: >-
+    Adds the task axis to Conditions. Every measurement behind this practice
+    scores image classification, and the threshold is stated as though data
+    scale were the only variable. LIT-tmpev8pm holds one architecture and one
+    recipe fixed and varies a translation-invariance prior — a relative
+    position bias against an absolute position embedding — across
+    classification, detection and segmentation, and the absolute term's sign
+    flips: +0.4 top-1, -0.2 box AP, -0.6 mIoU. That does not move the
+    threshold and is not a data-scale measurement; it says the threshold is
+    per-task, which this document did not say. Recommendation, status and
+    consensus unchanged.
 tags:
 - model-architecture
 - training-optimization
@@ -125,6 +138,27 @@ alone.
 - **It is about the architectural prior, not about pre-training being
   optional.** The supervised pre-training this rests on was not replaced by
   the paper's own self-supervised attempt, which landed 4 points behind.
+- **The threshold is per-task, and every measurement here is
+  classification.** The trade is stated on one axis — prior against data
+  volume — with the downstream task held fixed at image classification and
+  never named as a variable. [LIT-tmpev8pm](../literature.d/LIT-tmpev8pm.md) varies it: one backbone, one
+  recipe, and a translation-invariance prior swapped in and out (a relative
+  position bias against an absolute position embedding) across ImageNet,
+  COCO and ADE20K. The absolute term — the *less* invariant choice — is worth
+  **+0.4** top-1 and **−0.2** box AP and **−0.6** mIoU.
+
+  Three things that does **not** establish, because the temptation is to read
+  it as a refutation. It is not a data-scale sweep, so it says nothing about
+  where the crossover sits. It is a position encoding rather than convolution,
+  so it is one narrow expression of translation invariance. And Swin beating
+  ViT on benchmarks is *not* evidence here at all — those two differ in
+  everything at once, and the paper's own inductive-bias claim rests on its
+  ablation, not on its headline.
+
+  What it does establish is that the value of an invariance prior, measured
+  inside one model, depends on the task it is scored with, and can change
+  sign. So "find the crossover by sweeping pre-training set size" is
+  incomplete advice: the crossover you find belongs to the task you scored.
 
 ## Known implementations
 

@@ -1,0 +1,159 @@
+---
+status: Active
+title: 'Swin Transformer: Hierarchical Vision Transformer using Shifted Windows'
+version: 1
+tags:
+- model-architecture
+- vision-and-graphics
+- attention-techniques
+- representation-and-encoding
+date: '2026-09-26'
+published: '2021-03-25'
+arxiv: '2103.14030'
+first_author: 'Liu'
+keywords:
+- vision transformer
+- shifted windows
+- hierarchical backbone
+- relative position bias
+- dense prediction
+implementations:
+- 'Swin Transformer'
+- mmdetection
+- mmsegmentation
+summary: >-
+  Liu, Lin, Cao, Hu et al. (2021), [ARXIV-2103.14030](https://arxiv.org/abs/2103.14030). A vision transformer with
+  a hierarchical feature pyramid and self-attention confined to shifted local
+  windows, linear in image size rather than quadratic. Nine documents here run
+  experiments on it and none said what it is. Its ablation is the reason to
+  hold it: every design element is measured on **three** tasks, and the
+  absolute position embedding this record recommends elsewhere helps ImageNet
+  classification (+0.4 top-1) while hurting COCO detection (−0.2 box AP) and
+  ADE20K segmentation (−0.6 mIoU).
+---
+
+<!-- inactive-ok-file: SOTA-320, THEORY-044, THEORY-062 — all Proposed, and all cited from the Standing table for the same reason: they are the documents that run experiments *on* Swin, so what is being pointed at is their experimental roster, not their claims. Whether the no-warmup practice and the two accounts are in force is irrelevant to the fact that Swin is a row in each of their tables. -->
+<!-- inactive-ok-file: SOTA-tmp2g7eg — Proposed, and it is what this note introduces; a note naming the practice it filed is the introduction, not a citation of a settled recommendation. -->
+
+# LIT-tmpev8pm: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows
+
+Liu, Lin, Cao, Hu, Wei, Zhang, Lin and Guo (2021) —
+[ARXIV-2103.14030](https://arxiv.org/abs/2103.14030)
+
+## Key takeaways
+
+- **Two changes to ViT, both aimed at resolution.** Self-attention is computed
+  inside non-overlapping `M × M` windows (`M = 7`), which takes the cost from
+  `2(hw)²C` to `2M²hwC` — quadratic in the number of patches to linear. And
+  tokens are merged 2×2 between stages, so the backbone emits feature maps at
+  `H/4, H/8, H/16, H/32` instead of one low resolution. The second change is
+  what lets a detector or a segmentation head attach at all; the paper notes
+  that DeiT "only produces a single resolution of feature maps and cannot be
+  directly applied" and has to be retrofitted with deconvolutions for the
+  comparison.
+- **Shifting the window partition between consecutive blocks is how windows
+  talk to each other.** Alternate blocks displace the partition by
+  `(⌊M/2⌋, ⌊M/2⌋)`; a cyclic shift plus an attention mask keeps the batched
+  window count unchanged, so the connection is nearly free.
+- **The ablation is run on three tasks, which is the reason to hold this
+  paper.** Swin-T, one recipe, ImageNet-1K / COCO (Cascade Mask R-CNN) /
+  ADE20K (UperNet), Table 4:
+
+  | variant | ImageNet top-1 | COCO AP_box | COCO AP_mask | ADE20K mIoU |
+  |---|---|---|---|---|
+  | w/o shifting | 80.2 | 47.7 | 41.5 | 43.3 |
+  | **shifted windows** | **81.3** | **50.5** | **43.7** | **46.1** |
+  | no pos. | 80.1 | 49.2 | 42.6 | 43.8 |
+  | abs. pos. | 80.5 | 49.0 | 42.4 | 43.2 |
+  | abs. + rel. pos. | 81.3 | 50.2 | 43.4 | 44.0 |
+  | rel. pos. w/o app. | 79.3 | 48.2 | 41.9 | 44.1 |
+  | **rel. pos.** | **81.3** | **50.5** | **43.7** | **46.1** |
+
+- **One row changes sign with the task.** Against no position encoding at all,
+  the absolute position embedding is worth **+0.4** top-1 and **−0.2** box AP,
+  **−0.2** mask AP, **−0.6** mIoU. The paper states it plainly: adding absolute
+  position embedding "improves image classification accuracy (+0.4%)" but "harms
+  object detection and semantic segmentation". Adding it *on top of* the relative
+  bias is worse again on the dense tasks — 44.0 against 46.1 mIoU, a 2.1-point
+  penalty that the summarising sentence does not mention, though the table does.
+- **The relative position bias wins on every task.** `B ∈ ℝ^{M²×M²}` added
+  inside the softmax, parameterised by a `(2M−1) × (2M−1)` matrix since offsets
+  along each axis lie in `[−M+1, M−1]`. Against no encoding and against absolute:
+  +1.2/+0.8 top-1, +1.3/+1.5 box AP, +2.3/+2.9 mIoU.
+- **Shifted windows are a speed result, not a modelling one.** Table 6 compares
+  shifted against *sliding* windows on the same backbone: 81.4/50.2/43.5/45.8
+  versus 81.3/50.5/43.7/46.1 — the same accuracy to within noise. Table 5 is
+  where they differ: the shifted-window attention is 4.1×/1.5× faster overall on
+  Swin-T (naive/kernel sliding-window implementations), because all queries in a
+  window share one key set and a sliding window does not. So Table 4's
+  `w/o shifting` row shows **cross-window connection** matters; Table 6 shows
+  **how you obtain it** does not, except in latency.
+- **Headline numbers.** ImageNet-1K from scratch: Swin-T 81.3 against DeiT-S
+  79.8, Swin-B 83.3/84.5 against DeiT-B 81.8/83.1 at 224²/384². With
+  ImageNet-22K (14.2M images) pre-training, Swin-B 86.4 against 84.7 for ViT at
+  similar throughput and slightly lower FLOPs, and Swin-L 87.3. COCO test-dev
+  58.7 box AP / 51.1 mask AP (+2.7/+2.6 over the previous best); ADE20K val
+  53.5 mIoU (+3.2 over SETR).
+- **The paper's inductive-bias claim rests on the ablation, not on the
+  headline.** Its conclusion is that "inductive bias that encourages certain
+  translation invariance is still preferable for general-purpose visual
+  modeling, particularly for the dense prediction tasks". The evidence for that
+  is Table 4's position rows, where one architecture and one recipe are held
+  fixed. The benchmark wins over DeiT and ViT are not evidence for it: those
+  compare two architectures that differ in attention pattern, resolution
+  schedule, position encoding and training recipe at once, and on the dense
+  tasks the DeiT baseline is a retrofit.
+
+## Standing in the anthology
+
+**Nine documents run experiments on Swin and none of them said what it is.**
+
+| document | what it uses Swin for |
+| --- | --- |
+| [SOTA-320](../practices.d/SOTA-320.md), [LIT-521](LIT-521.md), [THEORY-062](../theory.d/THEORY-062.md) | Swin-S and Swin-B are two of the five models trained with no warmup at all |
+| [NOTE-224](../notes.d/NOTE-224.md), [LIT-475](LIT-475.md), [THEORY-044](../theory.d/THEORY-044.md) | Swin-F is a row in the early-dropout table (74.3 → 74.7/75.2) and in the −17.41% variance measurement |
+| [NOTE-047](../notes.d/NOTE-047.md), [LIT-107](LIT-107.md) | Swin and SwinV2 are two of the encoders MiDaS v3.1 swaps into a fixed depth architecture |
+| [NOTE-266](../notes.d/NOTE-266.md) | Swin-S/Swin-B columns in the entropy-collapse table |
+
+Every one of those is Swin as a **test subject** — a backbone in somebody
+else's ablation — which is exactly what `#290`'s triage recorded ("9 use it as
+an experimental backbone") and why it kept getting ranked last. The ranking was
+right about the dependence and wrong about what filing it buys. Two things
+follow from holding it:
+
+1. **The generality claims get a name.** `SOTA-320` and `THEORY-062` rest on
+   "ViT, Swin and GPT all behave this way". That is a strong sweep only if Swin
+   is architecturally far from ViT, and it is: different attention pattern,
+   different resolution schedule, different position encoding. The record
+   carried the witness without being able to say why it counted.
+2. **The position-encoding ablation is a defect finder.** It is filed as
+   [SOTA-tmp2g7eg](../practices.d/SOTA-tmp2g7eg.md), and it is why
+   [SOTA-388](../practices.d/SOTA-388.md) and [SOTA-358](../practices.d/SOTA-358.md) are amended in the same
+   contribution.
+
+**No theory is filed.** The paper's explanation for the sign flip — that dense
+prediction needs translation invariance and an absolute position embedding
+destroys it — is stated in one sentence and never isolated. Nothing here varies
+translation equivariance while holding the position encoding fixed, or the
+reverse, so the account and the measurement are the same observation told twice.
+The standard this record applied to autoguidance ([LIT-721](LIT-721.md)) — a mechanism
+claim earns its status when the experiment includes an arm the mechanism says
+must fail — is not met, and the honest note is that the sign flip is measured
+and unexplained.
+
+## Limitations
+
+- **One architecture, one recipe, one ablation.** Table 4 is Swin-T only. The
+  relative bias is defined *inside a 7×7 window*, which is not the same object
+  as a global relative encoding on a plain ViT.
+- **The comparisons across architectures are not controlled.** Swin against
+  DeiT and ViT varies everything at once, and the paper does not claim
+  otherwise; the DeiT dense-prediction baseline is built with deconvolution
+  layers it was not designed for.
+- **The ImageNet-22K result is not above the crossover it is sometimes read
+  against.** 14.2M images is roughly where [LIT-587](LIT-587.md)'s own JFT sweep puts the
+  transition, not comfortably past it, so "the prior still wins at scale" is
+  not what this measures.
+- **2021 hardware and 2021 baselines.** Table 5's speeds are V100, and the
+  sliding-window comparison predates the fused kernels that changed those
+  ratios.

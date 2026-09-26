@@ -15,7 +15,7 @@ promote_when: >-
   rather than a test of it; or a paper adopting the local variant because it
   passes, which is adoption (DP-005).
 title: 'A gradient attribution survives weight randomization because of its input multiplier, not because the attribution is insensitive to the weights'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-26'
@@ -28,6 +28,15 @@ history:
     guided backprop and deconv, as Nie et al. (2018), 1805.07039, unheld. The
     account itself is unchanged; what is new is that the cluster's failures now
     partition and this document says which part it owns.
+- version: 3
+  date: '2026-09-26'
+  note: >-
+    The third row of the partition is held. LIT-tmpbspyz proves guided
+    backpropagation recovers the input in a random CNN, so its family's failure is
+    partial image recovery (THEORY-tmpv7nad) rather than anything this account
+    covers. One table cell, and the reason it needed changing a day after being
+    written is worth noting: v2 put a "not held" row into four documents at once,
+    and all four went stale in the next unit.
 tags:
 - analysis-and-evaluation
 - representation-and-encoding
@@ -84,7 +93,7 @@ partition three ways, and this document owns the first row:
 | --- | --- | --- |
 | Integrated Gradients, InputXGradient, DeepLIFT, Gradient SHAP | **this account** — the model-independent input multiplier | here |
 | DTD, LRP-α1β0, Excitation BP, PatternAttribution | rank-1 convergence of a non-negative chain | [THEORY-114](THEORY-114.md) |
-| Guided Backprop, Deconv, RectGrad | a third mechanism | not held — `1805.07039` |
+| Guided Backprop, Deconv, RectGrad | partial image recovery | [THEORY-tmpv7nad](THEORY-tmpv7nad.md) |
 
 [LIT-729](../literature.d/LIT-729.md) supports this account from outside its own subject: methods
 that "rely on the gradient directly (Smilkov et al. 2017; Sundararajan et al.

@@ -39,7 +39,7 @@ consensus_note: >-
   failure. Moved off `unassessed` because somebody has now looked, not because
   the field agreed. Read as of 2026-09.
 title: 'Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks'
-version: 5
+version: 6
 history:
 - version: 2
   date: '2026-09-26'
@@ -88,6 +88,18 @@ history:
     family. So the cluster's failures now partition into three mechanisms, two
     held and one not, and this table's headline failure is the unheld one.
     Recommendation, status and consensus unchanged.
+- version: 6
+  date: '2026-09-26'
+  note: >-
+    The third row is held, so the partition is complete. LIT-tmpbspyz proves that
+    guided backpropagation recovers the input in a RANDOM three-layer CNN,
+    regardless of the class, and that the saliency map and DeconvNet in the same
+    network are noise — so the headline failure in the table below is a method
+    that was never about the weights. THEORY-tmpv7nad is the account. It also
+    supplies the mechanism behind this practice's own do-not-validate-by-eye
+    argument: the untrained edge detector matches these maps because partial
+    image recovery is what an edge detector approximates. Recommendation, status
+    and consensus unchanged.
 tags:
 - analysis-and-evaluation
 date: '2026-09-25'
@@ -115,6 +127,7 @@ summary: >-
 explained_by:
 - THEORY-113
 - THEORY-114
+- THEORY-tmpv7nad
 extended_by:
 - SOTA-435
 ---
@@ -202,10 +215,14 @@ The cluster's failures partition into three mechanisms:
 | --- | --- | --- |
 | Integrated Gradients, gradient⊙input, DeepLIFT | the model-independent input multiplier | [THEORY-113](../theory.d/THEORY-113.md) |
 | DTD, LRP-α1β0, Excitation BP, PatternAttribution | rank-1 convergence of a non-negative chain | [THEORY-114](../theory.d/THEORY-114.md) |
-| **Guided Backprop, Deconv, Guided GradCAM** | a third mechanism | **not held** — Nie, Zhang and Patel (2018), `1805.07039` |
+| **Guided Backprop, Deconv, Guided GradCAM** | **partial image recovery** — the map is an approximate reconstruction of the input, unrelated to the decision | [THEORY-tmpv7nad](../theory.d/THEORY-tmpv7nad.md) |
 
-The middle row is new and covers no method in this table. The bottom row is this
-table's headline failure and is the one still unexplained here. The
+The middle row covers no method in this table. **The bottom row is this table's
+headline failure and is now explained**: [LIT-tmpbspyz](../literature.d/LIT-tmpbspyz.md) proves
+`s_k^GBP(x) ≈ x` in a *random* three-layer CNN, regardless of the class, so the
+map's invariance to the weights is not a defect in an attribution — it is what an
+approximate image reconstruction looks like. That also explains the edge-detector
+comparison in this practice's negative half. The
 `1912.09818` reading is what settled which is which: it measures guided
 backprop and explicitly hands the explanation to Nie et al., because applying a
 ReLU to the gradient makes the backward pass non-linear so its own theorem does

@@ -17,7 +17,19 @@ consensus_note: >-
   cautions cost nothing to follow and the alternative is a comparison nobody
   can reproduce. Read as of 2026-09.
 title: 'Never rank attribution methods by a single faithfulness or stability score, and report the perturbation distribution when you report infidelity'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-26'
+  note: >-
+    Step 3's smoothing gains its parameters and their provenance. LIT-tmppqgo8 is
+    SmoothGrad's own paper: 10-20% input noise and about 50 samples, past which
+    "there was little apparent change" — chosen by looking at pictures, because
+    "quantitative evaluation of a map remains an unsolved problem". Worth
+    recording that this practice's support for smoothing comes from LIT-725's
+    Theorem 4.1 and its measured improvement, not from those figures, so the
+    parameters are the weakest thing in the step and now say so. Recommendation,
+    status and consensus unchanged.
 tags:
 - analysis-and-evaluation
 date: '2026-09-26'
@@ -83,6 +95,18 @@ NeurIPS 2019, §2–3.
    bounds the smoothed explanation's max-sensitivity by the kernel-average of
    the unsmoothed one's, and empirically "Smooth-Grad improves both sensitivity
    and infidelity for all base explanations across all datasets".
+
+   **The parameters, and how weak they are.** SmoothGrad is
+   [LIT-tmppqgo8](../literature.d/LIT-tmppqgo8.md): average the gradient over `n` copies of the input
+   perturbed with `N(0, σ²)`, at **10–20%** noise (`σ/(x_max − x_min)`) with
+   **`n ≈ 50`**, past which "there was little apparent change". Those numbers
+   were chosen by looking at pictures — "since quantitative evaluation of a map
+   remains an unsolved problem, we again focus on qualitative evaluation" — and
+   the paper adds that "the ideal noise level depends on the input". So treat them
+   as defaults to start from and re-select them on whichever measure you are
+   reporting. **This step's case for smoothing rests on the theorem and the
+   measurement above, not on those figures**, which is why the recommendation
+   survives its own source being qualitative.
 
 ## Why this is `Active` on one paper
 

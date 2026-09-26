@@ -15,7 +15,7 @@ promote_when: >-
   rather than a test of it; or a paper adopting the local variant because it
   passes, which is adoption (DP-005).
 title: 'A gradient attribution survives weight randomization because of its input multiplier, not because the attribution is insensitive to the weights'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-26'
@@ -37,6 +37,16 @@ history:
     covers. One table cell, and the reason it needed changing a day after being
     written is worth noting: v2 put a "not held" row into four documents at once,
     and all four went stale in the next unit.
+- version: 4
+  date: '2026-09-26'
+  note: >-
+    Names an earlier statement of this account. The record's history for it ran
+    LIT-713 (2018) suspects the multiplier and declines to measure it, LIT-725
+    (2021) measures it. LIT-tmppqgo8 says it informally in 2017 — multiplying by
+    the input can put the input's own edges into the map "even if the underlying
+    sensitivity map has no edges" — in a section about choosing colour scales,
+    which is why nobody cites it for mechanism. The account is unchanged; who
+    first wrote it down is not.
 tags:
 - analysis-and-evaluation
 - representation-and-encoding
@@ -80,6 +90,22 @@ model-independent picture of the input — and a similarity metric that reads
 spatial structure will report that the map is unchanged when the model is
 destroyed, because the part of it carrying the structure never depended on the
 model in the first place.
+
+**It was written down informally in 2017, in a visualization section.**
+[LIT-tmppqgo8](../literature.d/LIT-tmppqgo8.md) §3.1, on whether to multiply a gradient map by the input:
+the multiplication "does tend to produce visually simpler and sharper images,
+although it can be unclear how much of this can be attributed to sharpness in the
+original image itself. For example, a black/white edge in the input can lead to
+an edge-like structure on the final visualization **even if the underlying
+sensitivity map has no edges**." That is this account, a year before `LIT-713`
+suspected it and four before `LIT-725` measured it — filed as advice about colour
+scales rather than as a claim about faithfulness, which is why the record rebuilt
+it from the 2021 measurement.
+
+The same paper adds a structural objection the record had from nobody: under
+gradient⊙input, "pixels with values of 0 will never show up on the sensitivity
+map", so a correctly classified black ball on a white background is never
+highlighted if black encodes zero.
 
 The same factor appears in InputXGradient, DeepLift and Gradient SHAP, which is
 why they land in the same column of `LIT-713`'s verdicts. Guided Backprop and

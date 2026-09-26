@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-51 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+52 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -39,6 +39,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [SOTA-380](../record/practices.d/SOTA-380.md) — Use prediction-based word vectors rather than count-based distributional vectors *(Rejected, unassessed)*
   - [SOTA-379](../record/practices.d/SOTA-379.md) — Before crediting a word-embedding method over count-based ones, give the baselines the same design choices and tune every method alike *(Active, unreplicated)*
+
+### From Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks
+
+- [SOTA-430](../record/practices.d/SOTA-430.md) — Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks *(Proposed, contested)*
+  - [SOTA-435](../record/practices.d/SOTA-435.md) — Never rank attribution methods by a single faithfulness or stability score, and report the perturbation distribution when you report infidelity *(Active, unreplicated)*
 
 ## attention-techniques
 

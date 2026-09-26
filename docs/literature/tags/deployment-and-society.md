@@ -6,7 +6,7 @@
 
 **Deployment and society** — what a system does once it is running among people, and how anyone outside it could find out — audits of deployed platforms and recommenders, information ecosystems, moderation and governance, and the access problems and funding pressures of studying any of it from the outside.
 
-11 of 659 LIT documents. Back to the [full index](../README.md).
+11 of 660 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

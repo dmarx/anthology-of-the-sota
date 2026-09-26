@@ -17,7 +17,7 @@ promote_when: >-
   held as LIT-724, and it does not meet this bar — it supplies the
   non-image model and shows the verdict is metric- and modality-dependent,
   without ever putting a known dependence in front of the tests.
-  LIT-tmp0ve4d comes closest and still misses, in a way worth naming: it builds
+  LIT-725 comes closest and still misses, in a way worth naming: it builds
   the planted feature — a caption in one half of the image, with one model
   verified to use it and one verified not to — and it runs the randomization
   test, and the two are different experiments. The planted feature validates
@@ -56,7 +56,7 @@ history:
   date: '2026-09-26'
   note: >-
     Step 3's metric split gets a third independent source and the promote_when
-    gets sharper. LIT-tmp0ve4d reproduces the split on ResNet-50 — signed rank
+    gets sharper. LIT-725 reproduces the split on ResNet-50 — signed rank
     correlation 0.10–0.18 against absolute-value 0.57–0.62, same explanations,
     same randomization — so three groups on three model families now agree that
     the metric choice flips the verdict. The same paper builds the
@@ -92,7 +92,7 @@ summary: >-
 explained_by:
 - THEORY-113
 extended_by:
-- SOTA-tmp34edx
+- SOTA-435
 ---
 
 <!-- inactive-ok-file: THEORY-113 — Proposed, and it is the account filed alongside this amendment; step 4 points at it for the mechanism, and the practice says in the same breath that it does not rehabilitate the method. -->
@@ -128,7 +128,7 @@ On *your* model, with the attribution method you intend to use:
    **Three groups have now found this, on three model families.** `LIT-713`
    on Inception and MNIST; [LIT-724](../literature.d/LIT-724.md) on Inception and BERT, where SSIM
    calls global Integrated Gradients insensitive to randomization and Spearman
-   calls it sensitive; and [LIT-tmp0ve4d](../literature.d/LIT-tmp0ve4d.md) on ResNet-50, where signed rank
+   calls it sensitive; and [LIT-725](../literature.d/LIT-725.md) on ResNet-50, where signed rank
    correlation runs 0.10–0.18 across five explanations and the absolute-value
    correlation on the same explanations runs 0.57–0.62. This step is the
    best-supported thing in the practice.
@@ -203,8 +203,8 @@ and neither does this practice.
   randomization cascade. If you score a randomization test with a
   faithfulness metric rather than a similarity metric, some of the movement is
   quadrature error — and infidelity is a squared error between `Iᵀ Φ` and the
-  function difference ([LIT-tmp0ve4d](../literature.d/LIT-tmp0ve4d.md), Definition 2.1), so a degraded
-  approximation raises it by construction. [SOTA-tmp34edx](SOTA-tmp34edx.md) is the hygiene that
+  function difference ([LIT-725](../literature.d/LIT-725.md), Definition 2.1), so a degraded
+  approximation raises it by construction. [SOTA-435](SOTA-435.md) is the hygiene that
   goes with reporting either measure.
 
 - **Whether the model-randomization test measures what it claims is disputed,

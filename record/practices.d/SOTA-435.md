@@ -1,5 +1,8 @@
 ---
+number: 435
 status: Active
+formerly:
+- SOTA-tmp34edx
 consensus: unreplicated
 consensus_note: >-
   One group for both properties, and replication is the wrong test for most of
@@ -10,7 +13,7 @@ consensus_note: >-
   demonstrates that by construction rather than by sweeping it. The one part
   with independent support is the sibling claim this shares with SOTA-430 step
   3 — that a similarity metric's choice flips the verdict — which three groups
-  have now found (LIT-713, LIT-724, LIT-tmp0ve4d). `Active` because the
+  have now found (LIT-713, LIT-724, LIT-725). `Active` because the
   cautions cost nothing to follow and the alternative is a comparison nobody
   can reproduce. Read as of 2026-09.
 title: 'Never rank attribution methods by a single faithfulness or stability score, and report the perturbation distribution when you report infidelity'
@@ -19,14 +22,14 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-26'
 source:
-- LIT-tmp0ve4d
+- LIT-725
 introduced_by:
-- LIT-tmp0ve4d
+- LIT-725
 extends:
 - SOTA-430
 implementations: []
 summary: >-
-  Yeh et al. (2019), [LIT-tmp0ve4d](../literature.d/LIT-tmp0ve4d.md). **Max-sensitivity is minimised by a constant
+  Yeh et al. (2019), [LIT-725](../literature.d/LIT-725.md). **Max-sensitivity is minimised by a constant
   explanation** — an explanation that ignores the input entirely wins it — so it
   can never be a quality score on its own. **Infidelity is defined relative to a
   perturbation distribution** you choose, and Propositions 2.2–2.5 show several
@@ -37,11 +40,11 @@ summary: >-
 
 <!-- inactive-ok-file: SOTA-430 — Proposed, and declared in `extends:`; this practice is the same warning one level down, about the faithfulness metrics rather than the similarity metrics. Extending a not-yet-in-force practice is the normal case: what is Proposed there is the randomization recommendation, not the metric caution this builds on. -->
 
-# SOTA-tmp34edx: Never rank attribution methods by a single faithfulness or stability score, and report the perturbation distribution when you report infidelity
+# SOTA-435: Never rank attribution methods by a single faithfulness or stability score, and report the perturbation distribution when you report infidelity
 
 ## Source
 
-Yeh, Hsieh, Suggala, Inouye and Ravikumar (2019), [LIT-tmp0ve4d](../literature.d/LIT-tmp0ve4d.md) —
+Yeh, Hsieh, Suggala, Inouye and Ravikumar (2019), [LIT-725](../literature.d/LIT-725.md) —
 NeurIPS 2019, §2–3.
 
 ## Do this

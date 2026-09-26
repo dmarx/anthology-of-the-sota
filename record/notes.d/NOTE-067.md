@@ -131,7 +131,8 @@ The reading fixes the document, which was substantially about a **different
 paper**. Two of its four takeaways — *"continuous-time formulation of diffusion
 models"* and *"connection to SDE theory"* — describe Song et al.'s *Score-Based
 Generative Modeling through Stochastic Differential Equations*, a separate 2020
-paper. DDIM is a **discrete-time, non-Markovian** reformulation whose sampler
+paper — now held as [LIT-tmptxfkp](../literature.d/LIT-tmptxfkp.md), so the distinction this note draws is
+checkable against both documents rather than against one. DDIM is a **discrete-time, non-Markovian** reformulation whose sampler
 is deterministic; its only continuous connection is a subsection relating it to
 neural **ODEs**, not SDEs.
 

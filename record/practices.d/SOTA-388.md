@@ -4,7 +4,20 @@ status: Active
 formerly:
 - SOTA-tmp7zgk5
 title: 'Train a plain ViT on ImageNet-1k with average pooling, fixed 2D sin-cos positions, a 1024 batch and light augmentation'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-26'
+  note: >-
+    Names the task scope of the position-embedding item. Every number here
+    is ImageNet-1k top-1, and the sin-cos item is the smallest of the five
+    at 0.4 points. LIT-tmpev8pm measures an absolute position term at the
+    same +0.4 on classification and at -0.2 box AP and -0.6 mIoU on COCO
+    and ADE20K, in one architecture under one recipe. So the one item in
+    this recipe whose sign is task-dependent is also its smallest, and a
+    reader taking this baseline as a backbone recipe for dense downstream
+    work should not. Recommendation, status and consensus unchanged: this
+    is a classification baseline and says so.
 tags:
 - vision-and-graphics
 - training-optimization
@@ -36,6 +49,7 @@ summary: >-
 ---
 <!-- inactive-ok-file: THEORY-026 — Proposed; cited in the limitations as the account under SOTA-258, and stated there as explicitly NOT evidence for the 1024 figure -->
 <!-- inactive-ok-file: SOTA-260 — Proposed; cited in the limitations to say the batch-size reduction is unsurprising given what the record already holds, and stated there as explicitly NOT evidence for the 1024 figure -->
+<!-- inactive-ok-file: SOTA-tmp2g7eg — Proposed, and unreplicated on purpose: it is named in the limitations as where the task-dependence of this recipe's position item is written down, and its being not-yet-in-force is part of why this row is flagged for re-measurement rather than changed. -->
 
 # SOTA-388: Train a plain ViT on ImageNet-1k with average pooling, fixed 2D sin-cos positions, a 1024 batch and light augmentation
 
@@ -106,3 +120,14 @@ is done at 90 epochs and will conclude that longer training does not help.
   concurrent efforts reach comparable accuracy by other routes; that is what
   makes 80% credible and what makes "these five changes specifically" one
   group's finding.
+- **Every number here is ImageNet-1k top-1, and one of the five changes is
+  known to invert on other tasks.** [LIT-tmpev8pm](../literature.d/LIT-tmpev8pm.md) ablates an absolute
+  position embedding in a vision backbone against three benchmarks and gets
+  **+0.4** top-1, **−0.2** COCO box AP and **−0.6** ADE20K mIoU — the
+  classification gain is the same 0.4 points the sin-cos item is worth here,
+  and the dense-task scores move the other way. That is a different
+  architecture and a different encoding, so it does not refute this row. What
+  it does is mark this row as the one to re-measure if the baseline is being
+  used as a backbone for detection or segmentation rather than as the
+  classification baseline it is scoped to be. [SOTA-tmp2g7eg](SOTA-tmp2g7eg.md) is the
+  recommendation on that side.

@@ -18,7 +18,17 @@ consensus_note: >-
   Video LIT-635, SVD LIT-625). So this is a practice for when retraining is
   not an option. Read as of 2026-09.
 title: 'To condition an unconditionally trained diffusion model on known frames, use reconstruction guidance, not replacement'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-26'
+  note: >-
+    Names where replacement comes from. v1 rejected it without a citation, as
+    though it were folklore; it is LIT-tmptxfkp §I.2, and the paper is explicit
+    about the approximation that makes it wrong — it drops the conditioning on the
+    exact known values and keeps only the noised known dimensions. Quoting that
+    step turns "replacement loses coherence" from a measurement into a
+    measurement with a mechanism. Recommendation, status and consensus unchanged.
 tags:
 - generative-modeling
 - inference-optimization
@@ -53,6 +63,19 @@ overwrite the known frames' part of the sample with a correctly noised copy
 of the real frames, and let the model fill in the rest. That lets the known
 frames influence the new ones only through the model's joint prediction.
 The model is never told the new frames must agree with them.
+
+**Replacement is not folklore — it is [LIT-tmptxfkp](../literature.d/LIT-tmptxfkp.md) §I.2, and that paper shows
+you where it breaks.** Song et al. want `pₜ(z(t) | Ω(x(0)) = y)`, call it "in
+general intractable", and approximate
+
+    pₜ(z(t)|A) = 𝔼[pₜ(z(t)|Ω(x(t)), A)] ≈ 𝔼[pₜ(z(t)|Ω(x(t)))]
+
+dropping the conditioning on the *exact* known values at `t = 0` and keeping only
+the *noised* known dimensions at time `t`. The discarded term is precisely the
+requirement that the new content agree with the real frames rather than with a
+noisy copy of them. So the FVD gap below is not a mysterious empirical fact about
+splicing: it is the size of an approximation error whose derivation is written
+down in the source of the method being rejected.
 
 **Use reconstruction guidance instead.** At each step, add a gradient term
 that pushes the model's denoised estimate of the known frames toward the

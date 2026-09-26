@@ -122,11 +122,12 @@ commit. A branch carrying views is not more up to date, it is a conflict with
 every other branch. Run `make hooks` once per clone and the tracked
 `pre-commit` hook refuses them for you.
 
+<!-- unresolved-ok-block: LIT-tmpxxxxx — not a citation: the shape a temporary code takes, written generically so concretization cannot strand it. -->
 **Temporary codes land on `main` and are renamed a commit later, so wait for
 that commit before you branch.** `luria concretize` runs only where merges
 serialize — the push job on `main` — because that is the only place "the next
 free number" is a fact rather than a race, and a PR branch carrying
-`LIT-tmpy02tv` is therefore correct, not a mistake. The consequence is that
+`LIT-tmpxxxxx` is therefore correct, not a mistake. The consequence is that
 `main`'s tip is briefly inconsistent: the merge commit still holds the temp
 codes and the bot's next commit renames them. Measured on `#367`, that window
 was 62 seconds, and CI serialises runs, so a queue makes it minutes. Branch

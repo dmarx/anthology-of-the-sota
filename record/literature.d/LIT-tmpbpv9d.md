@@ -1,0 +1,142 @@
+---
+status: Active
+title: 'Guiding a Diffusion Model with a Bad Version of Itself'
+version: 1
+tags:
+- generative-modeling
+- analysis-and-evaluation
+- training-optimization
+date: '2026-09-25'
+published: '2024-06-04'
+arxiv: '2406.02507'
+first_author: 'Karras'
+keywords:
+- 'autoguidance'
+- 'classifier-free-guidance'
+- 'score-matching'
+- 'truncation'
+- 'imagenet'
+implementations:
+- 'EDM2'
+summary: >-
+  Karras, Aittala, Kynkäänniemi, Lehtinen, Aila and Laine (2024),
+  [ARXIV-2406.02507](https://arxiv.org/abs/2406.02507). **CFG's quality gain is not the class emphasis.** It comes
+  from the unconditional reference model being *worse* — a harder task on a
+  smaller training slice — so the density ratio `p₁/p₀` falls off away from the
+  manifold and guidance points inward. Replace the unconditional model with a
+  smaller, less-trained copy of the *same* conditional model and the quality gain
+  survives without the diversity loss: ImageNet-512 FID **2.56 → 1.34** on
+  EDM2-S, **1.25** on XXL, **1.01** at ImageNet-64, and unconditional EDM2-S
+  **11.67 → 3.86**, which CFG cannot do at all. The mechanism is tested with a
+  negative control: degrade the two models *differently* and guidance stops
+  helping entirely.
+---
+
+<!-- inactive-ok-file: SOTA-428, SOTA-tmpj70gp, THEORY-104, THEORY-109, THEORY-110, THEORY-tmput07n — the guidance cluster is Proposed throughout, and that is this note's subject rather than its support: THEORY-104 and THEORY-109 are named as the two things the record held *instead* of a mechanism, THEORY-110 as the neighbouring metric account, and SOTA-428 as a precondition for the method's best numbers. SOTA-tmpj70gp and THEORY-tmput07n are what this note introduces. -->
+
+# LIT-tmpbpv9d: Guiding a Diffusion Model with a Bad Version of Itself
+
+Karras, Aittala, Kynkäänniemi, Lehtinen, Aila and Laine (2024) —
+[ARXIV-2406.02507](https://arxiv.org/abs/2406.02507)
+
+## Key takeaways
+
+- **The question, and it is one the record had no answer to.** Why does CFG
+  improve *image quality* rather than only prompt alignment? Boosting the class
+  likelihood does not explain it: in the paper's 2D example, guided samples are
+  pulled toward the core of the manifold and away from low-probability
+  intermediate regions, which class emphasis alone would not do.
+- **The answer: the reference model is worse, and that asymmetry is the whole
+  effect.** The unconditional denoiser `D₀` "faces a more difficult task of the
+  two" — all classes at once — and "typically only a small slice of the training
+  budget", so it fits the data more loosely. Guidance pulls toward higher
+  `log[p₁(x|c;σ) / p₀(x|c;σ)]`, and because `p₀` is more spread out it falls off
+  *slower* than `p₁` away from the data, so the ratio's gradient points **inward**.
+  CFG is therefore "a form of adaptive truncation that identifies when a sample is
+  likely to be under-fit and pushes it towards the general direction of better
+  samples." Filed as [THEORY-tmput07n](../theory.d/THEORY-tmput07n.md).
+- **Where the bad samples come from in the first place.** Score matching is
+  closely related to maximum likelihood, which is "conservative": KL "incurs
+  extreme penalties if the model severely underestimates the likelihood of any
+  training sample", so the model covers the data's extremities it has not learned
+  accurately. Those are the broken images. Compounding it, the network "has only
+  seen real noisy images as inputs, and during sampling it may not be prepared to
+  deal with the unlikely samples it is handed down from the higher noise levels".
+- **The quality gap is large and nobody reports it.** EDM2-S on ImageNet-512:
+  FID **2.56** class-conditional against **11.67** unconditional. The paper's
+  aside is the useful part — "the unconditional case tends to work so poorly that
+  the corresponding quantitative numbers are hardly ever reported."
+- **The method.** Guide the good model `D₁` with a poor model `D₀` trained on
+  **the same task, conditioning and data distribution**, degraded by lower
+  capacity and/or less training. For EDM2-S: an XS guiding model at 1/16 of the
+  main model's iterations. Both degradations together beat either alone.
+- **The mechanism is tested with a negative control, which is the rare part.**
+  Synthetic corruptions applied post hoc to one base model (EDM2-S, FID 2.56):
+
+  | construction | `D₁` | `D₀` | autoguided |
+  | --- | --- | --- | --- |
+  | dropout 5% / 10% | 4.98 | 15.00 | **2.55** at `w = 2.25` |
+  | input noise +10% / +20% | 3.96 | 9.73 | **2.56** at `w = 2.00` |
+  | dropout vs input noise (mismatched) | — | — | **no improvement at any `w`** |
+
+  Compatible degradations let autoguidance "largely undo the damage". Mismatched
+  ones leave the optimum at `w = 1`, i.e. guidance switched off. The authors are
+  explicit that they do *not* recommend synthetic degradations in practice — a
+  real model will not have those particular defects.
+- **Results.** ImageNet-512: EDM2-S 2.56 → **1.34**, beating the concurrent
+  CFG + Guidance Interval's 1.68; EDM2-XXL → **1.25**. ImageNet-64: **1.01** FID
+  and 31.85 `FD_DINOv2`. `FD_DINOv2` record 29.16 → **24.18**.
+- **It works on unconditional models, which CFG structurally cannot.**
+  Unconditional EDM2-S: **11.67 → 3.86**. There is no condition to drop, and the
+  method does not need one.
+- **It depends on post-hoc EMA.** The main and guiding models want *independent*
+  EMA lengths; forcing them equal costs FID 1.34 → 1.53. So [SOTA-428](../practices.d/SOTA-428.md)'s machinery
+  is a precondition for getting the best out of this, not an optional extra.
+- **Naive truncation is the wrong shape, and the paper shows why.** Uniformly
+  lengthening the score vectors by `w > 1` — the GAN truncation trick's analogue —
+  concentrates samples "in an isotropic fashion that leaves the outer branches
+  empty", giving "reduced variation, oversimplified details, and monotone
+  texture". The density-ratio field is anisotropic and follows the manifold's
+  branching; a scalar does not.
+- **Two scope notes the authors volunteer.** Discriminator guidance is outside
+  the analysis, because there the discrimination is explicit rather than between
+  `p₁` and `p₀`. And noise-level-dependent guidance schedules exist mainly to
+  suppress CFG at high noise, where differently-conditioned distributions diverge;
+  autoguidance "is not expected to suffer from this problem at high noise levels,
+  as both models target the same distribution".
+- **The practical objection is theirs, not a reviewer's.** An early snapshot of a
+  smaller model is "easy to satisfy in principle, but these are not available for
+  current large-scale image generators in practice", and staged training with
+  changing data "would violate our assumptions".
+- **A cross-domain lead.** Autoguidance "bears conceptual similarity to
+  contrastive decoding used in large language models to reduce the repetitiveness
+  of generations". The record holds nothing on contrastive decoding.
+
+## Standing in the anthology
+
+Filed on request, and it lands on the premise of a cluster built over the past
+day rather than on a gap in it. [SOTA-424](../practices.d/SOTA-424.md), [SOTA-425](../practices.d/SOTA-425.md), [THEORY-110](../theory.d/THEORY-110.md) and the
+guidance-scale dependents [SOTA-202](../practices.d/SOTA-202.md), [SOTA-203](../practices.d/SOTA-203.md) and [SOTA-410](../practices.d/SOTA-410.md) all take CFG's
+fidelity-for-diversity trade as a given. This paper's claim is that the trade is
+**two phenomena stapled together** by the choice of reference model, and that one
+of them is what everybody wanted.
+
+What it supplies:
+
+- [THEORY-tmput07n](../theory.d/THEORY-tmput07n.md), the mechanism account — the record held `THEORY-104` (a
+  consequence of a large guidance scale, for solvers) and `THEORY-109` (a
+  suspicion about the metrics) and nothing about why guidance works;
+- [SOTA-tmpj70gp](../practices.d/SOTA-tmpj70gp.md), the recommendation, with a compatibility condition that has a
+  measured negative control behind it;
+- the correction to two of [SOTA-424](../practices.d/SOTA-424.md)'s Conditions — "conditional generation
+  only" and "diversity is what is being spent" are properties of CFG's reference
+  model, not of guidance.
+
+**What it does not settle, and the paper says so.** Whether diversity is really
+preserved rather than merely FID-neutral. Its own future work names the
+instrument: "it could also be interesting to further isolate the origin of the
+improvement using alternative metrics, such as precision and recall, Human
+Preference Score, or PickScore." That is [SOTA-425](../practices.d/SOTA-425.md)'s recommendation and part of
+[THEORY-109](../theory.d/THEORY-109.md)'s `promote_when`, asked for by the authors and not run — every number
+here is FID or `FD_DINOv2`, both Fréchet distances that mix fidelity and
+coverage.

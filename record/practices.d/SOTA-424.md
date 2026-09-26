@@ -13,7 +13,7 @@ consensus_note: >-
   acceptable is that the paper's own sweep is the thing being adopted, not a
   headline. Read as of 2026-09.
 title: 'Train one network for both conditional and unconditional scores by dropping the condition on 10% of examples, then pick the guidance weight by which metric you are willing to lose'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-25'
@@ -25,6 +25,18 @@ history:
     moves strongly with the guidance weight, and that FID and FD_DINOv2
     choose different weights. Not a source: EDM2 does not train one network
     for both scores. Recommendation, status and consensus unchanged.
+- version: 3
+  date: '2026-09-25'
+  note: >-
+    Bounds two Conditions that were written as properties of guidance and are
+    properties of *this* guidance. LIT-tmpbpv9d argues CFG's quality gain comes
+    from the unconditional reference being a worse model, not from the class
+    emphasis, and separates them: an unconditional model can be guided (11.67 to
+    3.86 FID, where this practice says there is nothing to do), and the diversity
+    loss goes with the class emphasis rather than with guidance. Recommendation,
+    status and consensus unchanged — this practice is still how you get a CFG
+    model — but "conditional generation only" and "diversity is what is being
+    spent" now say which of the two they belong to.
 tags:
 - generative-modeling
 - training-optimization
@@ -102,10 +114,15 @@ guided samples "display saturated colors" at `w = 3.0`. That is the excursion
 guidance the two practices are used together, and [SOTA-410](SOTA-410.md) is the sampler
 constraint that makes the clamp available.
 
-**Conditional generation only.** There has to be a condition to drop. Nothing
-<!-- inactive-ok: SOTA-397 — Proposed, and named as where the reader goes when this practice's precondition fails; a scope boundary is the one place a not-yet-in-force holding is the right thing to point at. -->
-here applies to an unconditional model, and [SOTA-397](SOTA-397.md) is the record's holding on
-conditioning a model that was trained without one.
+**Conditional generation only — for *this* recipe, not for guidance.** There has
+to be a condition to drop, so nothing in the training change above applies to an
+unconditional model.
+<!-- inactive-ok: SOTA-397, SOTA-tmpj70gp — both Proposed, named as the two places a reader goes when this practice's precondition fails; a scope boundary is where a not-yet-in-force holding is the right thing to point at. -->
+[SOTA-397](SOTA-397.md) is the record's holding on conditioning a
+<!-- inactive-ok: SOTA-tmpj70gp — Proposed, and named as the guidance that needs no condition, i.e. the far side of this practice's own scope boundary; not support for its recommendation. -->
+model trained without one, and [SOTA-tmpj70gp](SOTA-tmpj70gp.md) is guidance that needs no condition at
+all — it reaches unconditional EDM2-S from FID 11.67 to 3.86, a regime this
+practice excludes.
 
 **A capacity question the paper does not answer.** One network now represents two
 distributions. The sweep over `p_uncond` bounds how much unconditional training
@@ -130,10 +147,20 @@ where 1 means no guidance — 0.4 against 0.9 on this practice's scale). A weigh
 EMA length and reported at another is not the sweep it claims to be; the EMA
 side is [SOTA-428](SOTA-428.md).
 
-**Diversity is what is being spent.** The paper is explicit that raising the
-weight decreases sample variety and increases individual fidelity. If your
-application needs coverage — enumerating options, sampling for a dataset — the
-default high weights that consumer tools ship are the wrong end of the trade.
+**Diversity is what is being spent, and it is the class emphasis that spends
+it.** The paper is explicit that raising the weight decreases sample variety and
+increases individual fidelity, and for this recipe that trade is real: plan for it
+if your application needs coverage, because the default high weights consumer tools
+ship are the wrong end of it.
+
+What [LIT-tmpbpv9d](../literature.d/LIT-tmpbpv9d.md) adds is that the trade is **not a property of guidance**. It
+argues the quality gain comes from the unconditional reference model being a worse
+fit — a harder task on a smaller training budget — and the diversity loss from the
+class emphasis, and it separates them by swapping the reference for a degraded copy
+<!-- inactive-ok: THEORY-tmput07n — Proposed, cited as the account of why this practice's diversity cost belongs to the class emphasis rather than to guidance; its being an open account is why this practice's recommendation is unchanged. -->
+of the conditional model. [THEORY-tmput07n](../theory.d/THEORY-tmput07n.md) is the account. So the sentence to carry
+forward is not "guidance costs diversity" but "*this* reference model costs
+diversity".
 
 ## Known implementations
 

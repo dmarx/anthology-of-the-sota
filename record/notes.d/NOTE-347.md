@@ -141,7 +141,8 @@ the prediction (Eq. 8).
 
 It extends the Gaussian diffusion and classifier-free guidance line (it
 cites DDPM, VDM-Kingma and Ho & Salimans) directly to video. Reconstruction
-guidance corrects the imputation approach of Song et al.'s SDE paper. Its
+guidance corrects the imputation approach of Song et al.'s SDE paper
+([LIT-tmptxfkp](../literature.d/LIT-tmptxfkp.md), §I.2). Its
 factorized U-Net and joint training are what Make-A-Video ([LIT-632](../literature.d/LIT-632.md)) and
 Video LDM ([LIT-621](../literature.d/LIT-621.md)) build on and compare against. Make-A-Video's related
 work criticises VDM for sampling images "from random videos" rather than

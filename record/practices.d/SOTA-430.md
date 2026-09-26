@@ -39,7 +39,7 @@ consensus_note: >-
   failure. Moved off `unassessed` because somebody has now looked, not because
   the field agreed. Read as of 2026-09.
 title: 'Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks'
-version: 6
+version: 7
 history:
 - version: 2
   date: '2026-09-26'
@@ -100,6 +100,25 @@ history:
     argument: the untrained edge detector matches these maps because partial
     image recovery is what an edge detector approximates. Recommendation, status
     and consensus unchanged.
+- version: 7
+  date: '2026-09-26'
+  note: >-
+    Fixes the summary, which the six amendments above never read. "The evidence
+    is image classifiers only" was true at v1 and false from v2, when LIT-724
+    supplied a BERT text classifier and a Condition saying the verdict does not
+    transfer; and the summary still credited one source where `source:` now
+    names two. The index renders this field, so it is the most-read line in the
+    document and the only one an amendment never touches.
+
+    Also strengthens the negative half, which now has three groups and a
+    mechanism behind it rather than one paper's phrasing. And a correction of my
+    own reporting rather than of the practice: three earlier units described this
+    example as "leaning on a figure both Adebayo and Sixt amended". Re-reading
+    shows the practice was correctly scoped throughout — summary, verdict table
+    and negative half all state the narrowed "above the lowest layers" claim, not
+    the "entirely invariant" form LIT-713's footnote 5 withdrew. The defect was
+    smaller than three reports of it said. Recommendation, status and consensus
+    unchanged.
 tags:
 - analysis-and-evaluation
 date: '2026-09-25'
@@ -117,13 +136,15 @@ introduced_by:
 - LIT-713
 implementations: []
 summary: >-
-  Adebayo et al. (2018), [LIT-713](../literature.d/LIT-713.md), read as [NOTE-365](../notes.d/NOTE-365.md). An attribution map
-  that survives re-initializing the model's weights, or retraining on permuted
-  labels, cannot be telling you about the weights or the labels. Guided
-  Backprop and Guided GradCAM survive the first above the lowest layers, and
-  their maps look as convincing as ever. A rejection rule, not a certificate:
-  passing does not show a method is faithful. The evidence is image
-  classifiers only, and pass or fail is read from curves.
+  Adebayo et al. (2018), [LIT-713](../literature.d/LIT-713.md), read as [NOTE-365](../notes.d/NOTE-365.md), with
+  Kokhlikyan et al. (2021), [LIT-724](../literature.d/LIT-724.md). An attribution map that survives
+  re-initializing the model's weights, or retraining on permuted labels, cannot
+  be telling you about the weights or the labels. Guided Backprop and Guided
+  GradCAM survive the first above the lowest layers, and their maps look as
+  convincing as ever. A rejection rule, not a certificate: passing does not show
+  a method is faithful. **The verdict is per-modality** — the same test on a BERT
+  text classifier reverses it for global Integrated Gradients — and pass or fail
+  is read from curves with no threshold anywhere.
 explained_by:
 - THEORY-113
 - THEORY-114
@@ -184,9 +205,18 @@ On *your* model, with the attribution method you intend to use:
 
 And the negative half, which carries its own evidence: **do not accept a method
 because its maps look like the object.** An untrained edge detector produces
-maps "strikingly similar" to several methods'. Guided Backprop's maps on a
-network randomized above its lowest layers remain "visually and quantitatively
-similar" to the trained network's.
+maps "strikingly similar" to several methods' — and [THEORY-115](../theory.d/THEORY-115.md) now says why,
+because partial image recovery is what an edge detector approximates.
+
+Guided Backprop's maps survive randomizing the weights above the lowest layers,
+and **that verdict has three groups behind it and does not rest on anyone's
+figures**: [LIT-713](../literature.d/LIT-713.md) on Inception and MNIST, [LIT-724](../literature.d/LIT-724.md) on Inception and
+BERT, [LIT-729](../literature.d/LIT-729.md) on VGG-16 and ResNet-50, each by a similarity curve rather
+than by eye. Worth knowing while reading the first of them: its published
+Figure 2 for Guided Backprop is wrong, `LIT-729`'s authors confirmed the
+implementation bug, and `LIT-713`'s own footnote 5 withdrew the stronger
+"entirely invariant" claim. **The narrowed claim above is the one all three
+support**, and it is the one this practice has always stated.
 
 ## What the source found, which tells you what to expect
 

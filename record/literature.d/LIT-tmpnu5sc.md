@@ -1,0 +1,64 @@
+---
+status: Active
+title: 'Talagrand Meets Talagrand: Upper and Lower Bounds on Expected Soft Maxima of Gaussian Processes with Finite Index Sets'
+version: 1
+tags:
+- attention-techniques
+- analysis-and-evaluation
+date: '2026-09-26'
+published: '2025-02-10'
+arxiv: '2502.06709'
+first_author: 'Chu'
+keywords:
+- 'Gaussian processes'
+- 'soft maxima'
+- 'Gibbs variational principle'
+- 'Sudakov minoration'
+- 'quenched free energy'
+- 'Random Energy Model'
+implementations: []
+summary: >-
+  Chu et al. (2025), [ARXIV-2502.06709](https://arxiv.org/abs/2502.06709).
+  Take a centered Gaussian process on a finite set T with max variance σ²
+  and minimum separation a. The expected softmax-weighted average g(β) =
+  E[Σ_t X_t e^{βX_t}/Z] satisfies g(β) ≤ √(2σ²·E D(ν_β‖ν₀)) for every β
+  (Thm 1, D = KL from uniform). For β ≥ β*, g(β) ≥ c·a·√(E D(ν_β‖ν₀)),
+  with c the Sudakov constant (1/17 via Marcus–Rosen) (Thm 2). For i.i.d.
+  N(0,σ²) logits there is an exact identity, g(β) = βσ²(1 − E‖ν_β‖²₂)
+  (Lemma 2). The quenched free energy is bounded above by √(2σ²·E
+  D_{1/2}(ν_β‖ν₀)), with an i.i.d. lower bound of (cσ/2)√(E D_{1/2}) (Thms
+  4–5).
+---
+
+<!-- inactive-ok-file: THEORY-061 — Proposed; named as the neighbouring account this bears on -->
+
+# LIT-tmpnu5sc: Talagrand Meets Talagrand: Upper and Lower Bounds on Expected Soft Maxima of Gaussian Processes with Finite Index Sets
+
+Yifeng Chu & Maxim Raginsky (2025; accepted to ALT 2026) — [ARXIV-2502.06709](https://arxiv.org/abs/2502.06709)
+
+## Key takeaways
+
+- For a centered Gaussian process on a finite index set, the expected
+  softmax-weighted average g(β) = E[Σ X_t e^{βX_t}/Z] is bounded above by
+  √(2σ²·E D(ν_β‖ν₀)) at every temperature (Thm 1), and below by a
+  Sudakov-type bound at low temperature (Thm 2, above a threshold β* the
+  paper proves exists but never computes).
+- For i.i.d. N(0,σ²) logits there is an exact identity,
+  g(β) = βσ²(1 − E‖ν_β‖²₂) (Lemma 2): the expected softmax-weighted logit is
+  the score scale times one minus the expected collision probability.
+- The random-energy-model section it restates implies that softmax over
+  random scores stays spread out unless inverse temperature times score scale
+  grows like √(2 ln n).
+
+## Standing in the record
+
+A probability paper, filed here at the owner's request after a close reading
+in the catchall record, nucleation, where it was held first. It carries no
+ML claim and no instruction: "attention" does not appear in it. What it
+gives this record is exact Gaussian-score relations between softmax
+sharpness, entropy and score scale — the Gaussian counterpart of the
+dispersion argument of [THEORY-098](../theory.d/THEORY-098.md), and a neighbour of [THEORY-061](../theory.d/THEORY-061.md)'s entropy
+bound. It should be cited as supporting mathematics for an account of
+softmax temperature against sequence length, not as evidence that such a
+temperature schedule works. Theorem 3's stated constant is stronger than its
+proof, which gives only cσ/√2 (see the NOTE).

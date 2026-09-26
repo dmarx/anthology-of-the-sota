@@ -28,7 +28,7 @@ history:
   note: >-
     Adds the task axis to Conditions. Every measurement behind this practice
     scores image classification, and the threshold is stated as though data
-    scale were the only variable. LIT-tmpev8pm holds one architecture and one
+    scale were the only variable. LIT-723 holds one architecture and one
     recipe fixed and varies a translation-invariance prior — a relative
     position bias against an absolute position embedding — across
     classification, detection and segmentation, and the absolute term's sign
@@ -141,7 +141,7 @@ alone.
 - **The threshold is per-task, and every measurement here is
   classification.** The trade is stated on one axis — prior against data
   volume — with the downstream task held fixed at image classification and
-  never named as a variable. [LIT-tmpev8pm](../literature.d/LIT-tmpev8pm.md) varies it: one backbone, one
+  never named as a variable. [LIT-723](../literature.d/LIT-723.md) varies it: one backbone, one
   recipe, and a translation-invariance prior swapped in and out (a relative
   position bias against an absolute position embedding) across ImageNet,
   COCO and ADE20K. The absolute term — the *less* invariant choice — is worth

@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**248 document(s) awaiting a decision.**
+**249 document(s) awaiting a decision.**
 
 ## SOTAs
 
-166 of the 248.
+167 of the 249.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -115,9 +115,9 @@
 | 2026-09-22 | Proposed | [SOTA-328](../../record/practices.d/SOTA-328.md) | 4 | 0 | Train one nested model instead of a family of separately trained sizes, and extract the sizes you need from it |
 | 2026-09-22 | Proposed | [SOTA-329](../../record/practices.d/SOTA-329.md) | 4 | 0 | For short-output tasks, adapt a frozen model with a low-rank intervention on a few positions of the residual stream, not a weight adapter; do not use it for long chain-of-thought |
 | 2026-09-22 | Proposed | [SOTA-319](../../record/practices.d/SOTA-319.md) | 3 | 0 | Reparameterize every linear layer by its spectral norm with a learned scalar |
+| 2026-09-22 | Proposed | [SOTA-320](../../record/practices.d/SOTA-320.md) | 3 | 0 | Bound the learning rate by the ratio of the update's spectral norm to the weight's, and drop warmup |
 | 2026-09-22 | Proposed | [SOTA-327](../../record/practices.d/SOTA-327.md) | 3 | 0 | Train retrieval embeddings with nested losses, so a prefix of the vector can shortlist and the full vector re-rank |
 | 2026-09-22 | Proposed | [SOTA-324](../../record/practices.d/SOTA-324.md) | 2 | 0 | Separate rival accounts of an internal algorithm by convergence rate and conditioning, not by how well each fits the output |
-| 2026-09-22 | Proposed | [SOTA-320](../../record/practices.d/SOTA-320.md) | 1 | 0 | Bound the learning rate by the ratio of the update's spectral norm to the weight's, and drop warmup |
 | 2026-09-22 | Proposed | [SOTA-321](../../record/practices.d/SOTA-321.md) | 1 | 0 | Verify a model's lineage from the singular spectra of its attention products, which survive permutation and rescaling |
 | 2026-09-22 | Proposed | [SOTA-322](../../record/practices.d/SOTA-322.md) | 0 | 0 | Trade attention heads for depth: more heads conditions the attention block, and the layers you drop cost nothing |
 | 2026-09-23 | Proposed | [SOTA-333](../../record/practices.d/SOTA-333.md) | 41 | 0 | For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history |
@@ -179,10 +179,11 @@
 | 2026-09-25 | Proposed | [SOTA-406](../../record/practices.d/SOTA-406.md) | 1 | 0 | Replace every masked token with [MASK]; drop BERT's 80-10-10 substitution rule |
 | 2026-09-25 | Proposed | [SOTA-411](../../record/practices.d/SOTA-411.md) | 1 | 0 | To let a model spend more compute at inference without more parameters, train a depth-recurrent core on a randomly sampled iteration count, re-injecting the input at every iteration |
 | 2026-09-25 | Proposed | [SOTA-417](../../record/practices.d/SOTA-417.md) | 1 | 0 | Filter pretraining text by how well the tokenizer compresses it |
+| 2026-09-26 | Proposed | [SOTA-434](../../record/practices.d/SOTA-434.md) | 2 | 0 | In a vision backbone, carry position with a relative bias inside the attention window and do not add an absolute position embedding on top |
 
 ## THEORYs
 
-68 of the 248.
+68 of the 249.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -211,16 +212,16 @@
 | 2026-09-21 | Proposed | [THEORY-058](../../record/theory.d/THEORY-058.md) | 4 | 0 | Apparent compression in the information plane is saturating activations collapsing into extreme bins, not information being discarded |
 | 2026-09-21 | Proposed | [THEORY-050](../../record/theory.d/THEORY-050.md) | 3 | 0 | Parameters carry memorization and parallel computation carries reasoning |
 | 2026-09-21 | Proposed | [THEORY-056](../../record/theory.d/THEORY-056.md) | 3 | 0 | Distinct state machines agree at chance on long random inputs, so a learner that reads only statistics loses the signal as the sequences get longer |
+| 2026-09-21 | Proposed | [THEORY-044](../../record/theory.d/THEORY-044.md) | 2 | 0 | Dropout early in training buys a biased gradient estimate with much less directional variance, and the trade is favourable until it is not |
 | 2026-09-21 | Proposed | [THEORY-045](../../record/theory.d/THEORY-045.md) | 2 | 0 | How much of parameter space behaves like your trained network is a description length, and the better-generalizing network occupies more of it |
 | 2026-09-21 | Proposed | [THEORY-057](../../record/theory.d/THEORY-057.md) | 2 | 0 | A corpus a model generates is narrower than the distribution it imitates, and the narrowing shows up as n-gram over-concentration |
 | 2026-09-21 | Proposed | [THEORY-043](../../record/theory.d/THEORY-043.md) | 1 | 0 | Cross-entropy pays an unbounded price for mass a learner never had, and that price grows with sequence length — which is why it drifts from what post-training needs |
-| 2026-09-21 | Proposed | [THEORY-044](../../record/theory.d/THEORY-044.md) | 1 | 0 | Dropout early in training buys a biased gradient estimate with much less directional variance, and the trade is favourable until it is not |
 | 2026-09-21 | Proposed | [THEORY-047](../../record/theory.d/THEORY-047.md) | 1 | 0 | Personalizing a feed concentrates what it shows rather than broadening it, and a handful of moderate signals is enough to start |
 | 2026-09-21 | Proposed | [THEORY-049](../../record/theory.d/THEORY-049.md) | 1 | 0 | Modalities compete for the same feed-forward parameters, the competition is not symmetric between them, and that is where separating by modality pays |
 | 2026-09-21 | Proposed | [THEORY-053](../../record/theory.d/THEORY-053.md) | 1 | 0 | The Stein posterior-mean denoiser acts as an approximate projection onto the learned data geometry |
 | 2026-09-21 | Proposed | [THEORY-054](../../record/theory.d/THEORY-054.md) | 1 | 0 | The regularizer that is intractable in data space is tractable in noise space, and bounds the data-space divergence |
 | 2026-09-21 | Proposed | [THEORY-055](../../record/theory.d/THEORY-055.md) | 1 | 0 | A producer's own rate of return is the price of their time, so making them faster raises the bar on every marginal hour of improvement |
-| 2026-09-22 | Proposed | [THEORY-062](../../record/theory.d/THEORY-062.md) | 12 | 0 | What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such |
+| 2026-09-22 | Proposed | [THEORY-062](../../record/theory.d/THEORY-062.md) | 14 | 0 | What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such |
 | 2026-09-22 | Proposed | [THEORY-071](../../record/theory.d/THEORY-071.md) | 11 | 0 | A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips when the data makes memorising more expensive |
 | 2026-09-22 | Proposed | [THEORY-061](../../record/theory.d/THEORY-061.md) | 9 | 0 | Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product |
 | 2026-09-22 | Proposed | [THEORY-070](../../record/theory.d/THEORY-070.md) | 6 | 0 | Grokking is the transition from lazy to rich training dynamics |
@@ -257,7 +258,7 @@
 
 ## LITs
 
-11 of the 248.
+11 of the 249.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -275,7 +276,7 @@
 
 ## ADRs
 
-3 of the 248.
+3 of the 249.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

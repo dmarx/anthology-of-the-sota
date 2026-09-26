@@ -1,5 +1,8 @@
 ---
+number: 434
 status: Proposed
+formerly:
+- SOTA-tmp2g7eg
 promote_when: >-
   A second controlled measurement, in another vision backbone, of the same
   position-encoding variants scored on both a classification task and a dense
@@ -9,7 +12,7 @@ promote_when: >-
   7x7 window and that is the part least likely to transfer.
 consensus: unreplicated
 consensus_note: >-
-  One group, one architecture, one ablation table (LIT-tmpev8pm, Table 4,
+  One group, one architecture, one ablation table (LIT-723, Table 4,
   Swin-T). The relative position bias itself is widely adopted in the Swin
   lineage and in the window-attention backbones that followed it, but adoption
   is not a test (ADR-017) and nobody has re-run the three-task comparison. What
@@ -23,13 +26,13 @@ tags:
 - model-architecture
 date: '2026-09-26'
 source:
-- LIT-tmpev8pm
+- LIT-723
 introduced_by:
-- LIT-tmpev8pm
+- LIT-723
 implementations:
 - 'Swin Transformer'
 summary: >-
-  Liu et al. (2021), [LIT-tmpev8pm](../literature.d/LIT-tmpev8pm.md), Table 4. One architecture, one recipe, three
+  Liu et al. (2021), [LIT-723](../literature.d/LIT-723.md), Table 4. One architecture, one recipe, three
   tasks. A relative position bias inside the attention window is best or
   tied-best on all three. An absolute position embedding is worth **+0.4**
   ImageNet top-1 and **-0.2** COCO box AP and **-0.6** ADE20K mIoU, and adding
@@ -38,11 +41,11 @@ summary: >-
   choice in the table that a classification benchmark scores backwards.
 ---
 
-# SOTA-tmp2g7eg: In a vision backbone, carry position with a relative bias inside the attention window and do not add an absolute position embedding on top
+# SOTA-434: In a vision backbone, carry position with a relative bias inside the attention window and do not add an absolute position embedding on top
 
 ## Source
 
-Liu, Lin, Cao, Hu et al. (2021), [LIT-tmpev8pm](../literature.d/LIT-tmpev8pm.md) — Swin Transformer,
+Liu, Lin, Cao, Hu et al. (2021), [LIT-723](../literature.d/LIT-723.md) — Swin Transformer,
 §3.2 and Table 4.
 
 ## The claim
@@ -112,4 +115,4 @@ extra benchmark suites. Dropping the absolute term is free.
   learned bias, which is the opposite of what those two practices recommend.
 - **The mechanism is unexplained.** The paper attributes the flip to
   translation invariance mattering more for dense prediction, and runs no
-  experiment isolating that. No theory is filed; see [LIT-tmpev8pm](../literature.d/LIT-tmpev8pm.md).
+  experiment isolating that. No theory is filed; see [LIT-723](../literature.d/LIT-723.md).

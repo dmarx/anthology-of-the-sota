@@ -39,7 +39,7 @@ consensus_note: >-
   failure. Moved off `unassessed` because somebody has now looked, not because
   the field agreed. Read as of 2026-09.
 title: 'Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks'
-version: 4
+version: 5
 history:
 - version: 2
   date: '2026-09-26'
@@ -76,6 +76,18 @@ history:
     by a source arriving rather than by a rereading: v2 the critique, v3 the
     metric definitions, v4 the two referents. The churn is a fact about how
     fast this cluster filled, not about the practice being unstable.
+- version: 5
+  date: '2026-09-26'
+  note: >-
+    Corrects a false sentence v4 added hours earlier, and files the account for a
+    family this table does not cover. v4 said 1912.09818 "is the paper that
+    argues" why guided backprop fails; it is not — it measures guided backprop
+    and hands the explanation to Nie, Zhang and Patel (2018), 1805.07039, because
+    a ReLU on the gradient makes the backward pass non-linear. What 1912.09818
+    does supply is THEORY-tmp8d1re, the rank-1 convergence account for the z+
+    family. So the cluster's failures now partition into three mechanisms, two
+    held and one not, and this table's headline failure is the unheld one.
+    Recommendation, status and consensus unchanged.
 tags:
 - analysis-and-evaluation
 date: '2026-09-25'
@@ -102,6 +114,7 @@ summary: >-
   classifiers only, and pass or fail is read from curves.
 explained_by:
 - THEORY-113
+- THEORY-tmp8d1re
 extended_by:
 - SOTA-435
 ---
@@ -182,11 +195,27 @@ both masks at once, where plain backprop applies the second and the deconvnet
 ([LIT-728](../literature.d/LIT-728.md)) applies the first. Its authors' stated reason is to
 "prevent backward flow of negative gradients".
 
-That is the rule, not the explanation. [LIT-725](../literature.d/LIT-725.md) says these two fail the
-randomization tests "for different reasons" from the multiplier-carrying
-methods [THEORY-113](../theory.d/THEORY-113.md) covers, and the record holds no account of what those
-reasons are. Sixt, Granz and Landgraf (2020), *When Explanations Lie*,
-`1912.09818`, is the paper that argues it and is the next read here.
+That is the rule, not the explanation, and the explanation is still not held.
+The cluster's failures partition into three mechanisms:
+
+| family | mechanism | held as |
+| --- | --- | --- |
+| Integrated Gradients, gradient⊙input, DeepLIFT | the model-independent input multiplier | [THEORY-113](../theory.d/THEORY-113.md) |
+| DTD, LRP-α1β0, Excitation BP, PatternAttribution | rank-1 convergence of a non-negative chain | [THEORY-tmp8d1re](../theory.d/THEORY-tmp8d1re.md) |
+| **Guided Backprop, Deconv, Guided GradCAM** | a third mechanism | **not held** — Nie, Zhang and Patel (2018), `1805.07039` |
+
+The middle row is new and covers no method in this table. The bottom row is this
+table's headline failure and is the one still unexplained here. The
+`1912.09818` reading is what settled which is which: it measures guided
+backprop and explicitly hands the explanation to Nie et al., because applying a
+ReLU to the gradient makes the backward pass non-linear so its own theorem does
+not reach. **v4 of this practice said `1912.09818` was the paper that argues it.
+That was wrong**, written from [LIT-725](../literature.d/LIT-725.md)'s citation rather than from the
+paper.
+
+It also rules out the intuitive story by name: "Other than argued in (Gu et al.
+2018), the class insensitivity is not caused by missing ReLU masks and Pooling
+switches."
 
 ## What the evidence does not cover
 

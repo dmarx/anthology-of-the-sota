@@ -15,7 +15,19 @@ promote_when: >-
   rather than a test of it; or a paper adopting the local variant because it
   passes, which is adoption (DP-005).
 title: 'A gradient attribution survives weight randomization because of its input multiplier, not because the attribution is insensitive to the weights'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-26'
+  note: >-
+    States the boundary now that a second account is held. LIT-tmpo0kkk shows a
+    different mechanism — rank-1 convergence of a non-negative relevance chain —
+    for the z+ family, and supports this account from outside by noting that
+    methods relying on the gradient directly do not converge, so Integrated
+    Gradients' failure is not that one. It also names the third mechanism, for
+    guided backprop and deconv, as Nie et al. (2018), 1805.07039, unheld. The
+    account itself is unchanged; what is new is that the cluster's failures now
+    partition and this document says which part it owns.
 tags:
 - analysis-and-evaluation
 - representation-and-encoding
@@ -64,6 +76,23 @@ The same factor appears in InputXGradient, DeepLift and Gradient SHAP, which is
 why they land in the same column of `LIT-713`'s verdicts. Guided Backprop and
 Guided GradCAM are outside this account: they modify gradients during
 back-propagation and fail for a separate reason.
+
+**The boundary, now that a second account is held.** The cluster's failures
+partition three ways, and this document owns the first row:
+
+| family | mechanism | held as |
+| --- | --- | --- |
+| Integrated Gradients, InputXGradient, DeepLIFT, Gradient SHAP | **this account** — the model-independent input multiplier | here |
+| DTD, LRP-α1β0, Excitation BP, PatternAttribution | rank-1 convergence of a non-negative chain | [THEORY-tmp8d1re](THEORY-tmp8d1re.md) |
+| Guided Backprop, Deconv, RectGrad | a third mechanism | not held — `1805.07039` |
+
+[LIT-tmpo0kkk](../literature.d/LIT-tmpo0kkk.md) supports this account from outside its own subject: methods
+that "rely on the gradient directly (Smilkov et al. 2017; Sundararajan et al.
+2017) ... [do] not converge", so Integrated Gradients' randomization behaviour is
+not the rank-1 mechanism, which is what leaves the multiplier as the explanation.
+DeepLIFT sits in the first row and outside the second, which is not a
+contradiction: it carries an input multiplier *and* keeps negative contributions,
+so it has one of the two failure modes and escapes the other.
 
 ## Why this is an account rather than a restatement
 

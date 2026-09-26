@@ -1,0 +1,156 @@
+---
+status: Active
+title: 'When Explanations Lie: Why Many Modified BP Attributions Fail'
+version: 1
+tags:
+- analysis-and-evaluation
+- representation-and-encoding
+- model-architecture
+date: '2026-09-26'
+published: '2019-12-20'
+arxiv: '1912.09818'
+first_author: 'Sixt'
+keywords:
+- modified backpropagation
+- layer-wise relevance propagation
+- rank-1 convergence
+- cosine similarity convergence
+- class insensitivity
+- sanity checks
+implementations:
+- when-explanations-lie
+- innvestigate
+summary: >-
+  Sixt, Granz and Landgraf (2019), [ARXIV-1912.09818](https://arxiv.org/abs/1912.09818), ICML 2020. The account
+  [SOTA-430](../practices.d/SOTA-430.md)'s failing row was missing — for one family, and **not the family this
+  record said it was for**. Theorem 1: a backpropagation rule that keeps only
+  non-negative relevance gives a product of non-negative matrices, which
+  converges to a **rank-1** matrix, and `C v = c γᵀ v = λc` — once converged the
+  later layers can only change the map's sign. That covers DTD, LRP-α1β0,
+  Excitation BP and PatternAttribution. It explicitly does **not** cover Guided
+  Backprop or Deconv, whose ReLU on the gradient makes the backward pass
+  non-linear and which it defers to Nie et al. (2018), `1805.07039`.
+---
+
+<!-- inactive-ok-file: SOTA-430 — Proposed, and cited as the document this reading corrects: its v4 attributed guided backprop's account to this paper, which this paper declines. Pointing at a practice's error does not depend on the practice being in force. -->
+<!-- inactive-ok-file: THEORY-113 — Proposed, and cited for the boundary between two accounts: this paper excludes the gradient family from its own mechanism, which is what leaves THEORY-113's. Naming what an account does not cover, and being supported by exclusion, are both about its scope rather than its standing. -->
+
+# LIT-tmpo0kkk: When Explanations Lie: Why Many Modified BP Attributions Fail
+
+Sixt, Granz and Landgraf (2019) —
+[ARXIV-1912.09818](https://arxiv.org/abs/1912.09818)
+
+## Key takeaways
+
+- **Theorem 1, and it is the whole paper.** The `z⁺`-rule — used by Deep Taylor
+  Decomposition, LRP-α1β0 and Excitation BP — backpropagates relevance through
+  a chain of **non-negative** matrices, `C_k = ∏ Z⁺_l`. A product of
+  non-negative matrices converges to a **rank-1** matrix. If `C = c γᵀ`, then
+  for any vector `v`, `C v = c γᵀ v = λ c` — always the same direction. So once
+  the chain has converged, "the backpropagated vector can merely switch the sign
+  of the saliency map", and the relevance vector set at the final layer to the
+  explained logit stops mattering.
+- **Two consequences, and they are the two failures the record already holds.**
+  Class-insensitivity (the same map for "cat" and for "dog") and independence of
+  the later layers' parameters, which is Adebayo's randomization test. They are
+  the same fact seen from two directions.
+- **The arm the account says must behave differently, and it does.** DeepLIFT
+  is the one tested modified-BP method that does **not** converge, because its
+  linear-layer rule separates and intermixes positive and negative
+  contributions. Then the paper builds the arm deliberately: **DeepLIFT
+  Ablation** removes the intermixing, keeping `W⁺` for the positive rule and
+  `W⁻` for the negative, which decouples the chains — and "as predicted by the
+  theory, it converges". A published method that fails the prediction, plus a
+  constructed variant that satisfies it.
+- **PatternAttribution converges for a different reason**, closer to power
+  iteration: `σ₁/σ₂ > 6` for almost all VGG-16 patterns. Slower than the others
+  and still exponential.
+- **The measurement instrument is new and is the point.** Cosine similarity
+  convergence (CSC) traces, layer by layer, how far the chain has collapsed.
+  "Except for LRP z and DeepLIFT, all methods show convergence up to at least
+  0.99 cosine similarity" on VGG-16 and ResNet-50. LRP-α5β4 converges less on
+  VGG-16 "but also produces rather noisy saliency maps", which is the honest
+  form of that escape hatch.
+- **The two behavioural measurements separate the same two groups.** Random
+  logit: converging methods give "almost identical saliency maps, independently
+  of the output logit (SSIM very close to 1)", the rest land between 0.4 and
+  0.8. Sanity check, randomizing from the last layer down: the same clustering.
+  Three networks — a small CIFAR-10 net, VGG-16, ResNet-50 — 200 validation
+  images, 99% bootstrap intervals.
+- **What is *not* covered, stated by the authors.** "As a ReLU operation is
+  applied to the gradient, the backpropagation is no longer a linear function.
+  The ReLU also results in a **different failure** than before. (Nie et al.
+  2018) provides a theoretical analysis for GuidedBP. Our results align with
+  them." Guided Backprop, Deconv and RectGrad are measured here and explained
+  elsewhere.
+- **And a story the paper rules out by name.** "Other than argued in (Gu et al.
+  2018), the class insensitivity is **not** caused by missing ReLU masks and
+  Pooling switches."
+- **A negative result about a fourth instrument.** "The ROAR performance of
+  Int.Grad. and GuidedBP is equally bad, worse than a random baseline. Thus,
+  ROAR does not separate converging from non-converging methods."
+- **Sixt is already in this record's story twice over.** [LIT-713](LIT-713.md)'s
+  acknowledgements credit him with the bug report that made Adebayo et al.
+  withdraw "entirely invariant"; here the confirmation is stated from his side —
+  "We were able to confirm a bug in their implementation, resulting in saliency
+  maps of GuidedBP and Guided-GradCAM to remain identical for early layers" —
+  and the reported maps differ from that paper's Figure 2. The **verdict**
+  survives: this paper lists Guided BP among the methods independent of later
+  layers' parameters.
+
+## Standing in the anthology
+
+**It supplies the account the attribution cluster was missing, and it corrects
+this record about which methods that account covers.**
+
+[SOTA-430](../practices.d/SOTA-430.md) v4 and [LIT-727](LIT-727.md) both said, an hour before this reading, that
+`1912.09818` "is the paper that argues" why Guided Backprop fails. **That is
+wrong.** This paper measures Guided Backprop and explicitly hands its
+explanation to Nie, Zhang and Patel (2018), *A Theoretical Explanation for
+Perplexing Behaviors of Backpropagation-based Visualizations*, `1805.07039`
+(identifier resolved against arXiv, not recalled). Both documents are corrected
+in this contribution.
+
+The error came from [LIT-725](LIT-725.md)'s sentence — "Guided BackProp and Guided GradCAM,
+which modify the gradients during back-propagation, do not pass randomization
+tests for different reasons (Sixt et al. 2020)" — read as an attribution of the
+argument rather than of the observation. **A citation tells you who reported
+something, not who explained it**, and this is the third time this week that a
+claim about a paper's contents, written from its citation context rather than
+from the paper, turned out false.
+
+With this filed, the cluster's failures partition cleanly, which they did not
+before:
+
+| family | why it fails a randomization test | held as |
+| --- | --- | --- |
+| IG, InputXGradient, DeepLIFT, Gradient SHAP | the model-independent input multiplier | [THEORY-113](../theory.d/THEORY-113.md) |
+| DTD, LRP-α1β0, Excitation BP, PatternAttribution | rank-1 convergence of a non-negative chain | [THEORY-tmp8d1re](../theory.d/THEORY-tmp8d1re.md) |
+| Guided Backprop, Deconv, RectGrad | a third mechanism | **unheld** — `1805.07039` |
+
+The paper also supports `THEORY-113` from outside: methods that "rely on the
+gradient directly (Smilkov et al. 2017; Sundararajan et al. 2017)" do **not**
+converge, so SmoothGrad and Integrated Gradients are outside this account —
+which is where `THEORY-113` already puts their failure.
+
+**DeepLIFT appears in both rows and that is not a contradiction.** `LIT-725`
+places it with the multiplier-carrying methods because it "incorporate[s] the
+input multiplier"; this paper places it outside the convergence account because
+its linear-layer rule keeps negative contributions. Two different properties of
+one method, two different failure modes, one of which it has and one of which it
+escapes.
+
+## Limitations
+
+- **Vision classifiers, 2019.** A small CIFAR-10 net, VGG-16 and ResNet-50, all
+  with ReLU. Theorem 1 is about non-negative matrix products and is not
+  architecture-specific; the convergence *rates* are.
+- **200 images**, with bootstrap intervals given rather than a power analysis.
+- **SSIM again.** The behavioural measurements use SSIM, the metric
+  [SOTA-430](../practices.d/SOTA-430.md) step 3 warns can hand you either verdict; here it is used on
+  both the random-logit and randomization comparisons, with sign-inversion
+  handled by taking the maximum over the map and its negation. The CSC metric
+  is the part that does not depend on a similarity choice.
+- **"Converged" has no threshold either.** 0.99 cosine similarity is reported,
+  not argued for, and "sufficiently converged" carries the theorem's practical
+  weight.

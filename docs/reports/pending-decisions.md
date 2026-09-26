@@ -155,7 +155,7 @@
 | 2026-09-24 | Proposed | [SOTA-391](../../record/practices.d/SOTA-391.md) | 0 | 0 | Estimate attention resolution before training when choosing a position encoding, and measure it across the extrapolation boundary |
 | 2026-09-24 | Proposed | [SOTA-393](../../record/practices.d/SOTA-393.md) | 0 | 0 | Freeze the image model's spatial layers when adding time if checkpoint compatibility matters; do not expect a quality gain from it |
 | 2026-09-24 | Proposed | [SOTA-396](../../record/practices.d/SOTA-396.md) | 0 | 0 | When a latent video model reuses an image autoencoder or upsampler, fine-tune them on video so they see time |
-| 2026-09-25 | Proposed | [SOTA-430](../../record/practices.d/SOTA-430.md) | 32 | 0 | Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks |
+| 2026-09-25 | Proposed | [SOTA-430](../../record/practices.d/SOTA-430.md) | 35 | 0 | Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks |
 | 2026-09-25 | Proposed | [SOTA-428](../../record/practices.d/SOTA-428.md) | 29 | 0 | Choose the EMA length after training: store two power-function averages at snapshots and reconstruct any length by least squares |
 | 2026-09-25 | Proposed | [SOTA-408](../../record/practices.d/SOTA-408.md) | 12 | 0 | Average the weights along the tail of training under a cyclical or high constant learning rate, then re-estimate the normalization statistics |
 | 2026-09-25 | Proposed | [SOTA-415](../../record/practices.d/SOTA-415.md) | 10 | 0 | During a warmup-stable-decay run, estimate the annealed score from a uniform average of recent stable-phase checkpoints instead of launching a decay branch |
@@ -255,7 +255,7 @@
 | 2026-09-25 | Proposed | [THEORY-108](../../record/theory.d/THEORY-108.md) | 4 | 0 | Kaplan's and Chinchilla's compute-optimal exponents differ because of how small-scale runs were counted, warmed up and tuned, not because of the learning-rate decay |
 | 2026-09-25 | Proposed | [THEORY-110](../../record/theory.d/THEORY-110.md) | 4 | 0 | FID is not neutral between fidelity and coverage: it weights coverage more, so optimizing it walks toward variety at the cost of per-sample quality |
 | 2026-09-25 | Proposed | [THEORY-105](../../record/theory.d/THEORY-105.md) | 1 | 0 | Soft targets transfer the teacher's similarity structure over wrong classes, which carries more information per example than a hard label |
-| 2026-09-26 | Proposed | [THEORY-113](../../record/theory.d/THEORY-113.md) | 14 | 0 | A gradient attribution survives weight randomization because of its input multiplier, not because the attribution is insensitive to the weights |
+| 2026-09-26 | Proposed | [THEORY-113](../../record/theory.d/THEORY-113.md) | 19 | 0 | A gradient attribution survives weight randomization because of its input multiplier, not because the attribution is insensitive to the weights |
 
 ## LITs
 

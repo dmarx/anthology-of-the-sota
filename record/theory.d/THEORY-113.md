@@ -42,7 +42,7 @@ history:
   note: >-
     Names an earlier statement of this account. The record's history for it ran
     LIT-713 (2018) suspects the multiplier and declines to measure it, LIT-725
-    (2021) measures it. LIT-tmppqgo8 says it informally in 2017 — multiplying by
+    (2021) measures it. LIT-731 says it informally in 2017 — multiplying by
     the input can put the input's own edges into the map "even if the underlying
     sensitivity map has no edges" — in a section about choosing colour scales,
     which is why nobody cites it for mechanism. The account is unchanged; who
@@ -92,7 +92,7 @@ destroyed, because the part of it carrying the structure never depended on the
 model in the first place.
 
 **It was written down informally in 2017, in a visualization section.**
-[LIT-tmppqgo8](../literature.d/LIT-tmppqgo8.md) §3.1, on whether to multiply a gradient map by the input:
+[LIT-731](../literature.d/LIT-731.md) §3.1, on whether to multiply a gradient map by the input:
 the multiplication "does tend to produce visually simpler and sharper images,
 although it can be unclear how much of this can be attributed to sharpness in the
 original image itself. For example, a black/white edge in the input can lead to

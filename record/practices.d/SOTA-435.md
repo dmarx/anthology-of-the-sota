@@ -22,7 +22,7 @@ history:
 - version: 2
   date: '2026-09-26'
   note: >-
-    Step 3's smoothing gains its parameters and their provenance. LIT-tmppqgo8 is
+    Step 3's smoothing gains its parameters and their provenance. LIT-731 is
     SmoothGrad's own paper: 10-20% input noise and about 50 samples, past which
     "there was little apparent change" — chosen by looking at pictures, because
     "quantitative evaluation of a map remains an unsolved problem". Worth
@@ -97,7 +97,7 @@ NeurIPS 2019, §2–3.
    and infidelity for all base explanations across all datasets".
 
    **The parameters, and how weak they are.** SmoothGrad is
-   [LIT-tmppqgo8](../literature.d/LIT-tmppqgo8.md): average the gradient over `n` copies of the input
+   [LIT-731](../literature.d/LIT-731.md): average the gradient over `n` copies of the input
    perturbed with `N(0, σ²)`, at **10–20%** noise (`σ/(x_max − x_min)`) with
    **`n ≈ 50`**, past which "there was little apparent change". Those numbers
    were chosen by looking at pictures — "since quantitative evaluation of a map

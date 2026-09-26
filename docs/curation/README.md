@@ -6,6 +6,7 @@ Why things entered the anthology, and why they left.
 
 ## Currently — [September 2026](2026-09.md)
 
+- [26 Sep 05:55 — The one method nothing faults has the least evidence, and its colour-scale section held two accounts the record rebuilt](2026-09.md#the-one-method-nothing-faults-has-the-least-evidence-and-its-colour-scale-section-held-two-accounts-the-record-rebuilt)
 - [26 Sep 05:22 — The partition completes, and a table I copied into four documents went stale in one unit](2026-09.md#the-partition-completes-and-a-table-i-copied-into-four-documents-went-stale-in-one-unit)
 - [26 Sep 05:08 — A false sentence an hour old, and three mechanisms where the record had one](2026-09.md#a-false-sentence-an-hour-old-and-three-mechanisms-where-the-record-had-one)
 - [26 Sep 04:36 — A method whose later defect is its original selling point, and the paper that would join the rule to the failure](2026-09.md#a-method-whose-later-defect-is-its-original-selling-point-and-the-paper-that-would-join-the-rule-to-the-failure)
@@ -259,9 +260,9 @@ Why things entered the anthology, and why they left.
 
 ## All books
 
-252 entries across 2 books, newest first.
+253 entries across 2 books, newest first.
 
 | Book | Entries | First | Last |
 |---|--:|---|---|
-| [2026-09](2026-09.md) | 250 | 2026-09-05 | 2026-09-26 |
+| [2026-09](2026-09.md) | 251 | 2026-09-05 | 2026-09-26 |
 | [2026-08](2026-08.md) | 2 | 2026-08-24 | 2026-08-24 |

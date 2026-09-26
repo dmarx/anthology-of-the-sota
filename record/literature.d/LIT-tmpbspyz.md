@@ -1,0 +1,157 @@
+---
+status: Active
+title: 'A Theoretical Explanation for Perplexing Behaviors of Backpropagation-based Visualizations'
+version: 1
+tags:
+- analysis-and-evaluation
+- representation-and-encoding
+- vision-and-graphics
+date: '2026-09-26'
+published: '2018-05-18'
+arxiv: '1805.07039'
+first_author: 'Nie'
+keywords:
+- guided backpropagation
+- DeconvNet
+- saliency map
+- image recovery
+- backward ReLU
+- local connections
+implementations: []
+summary: >-
+  Nie, Zhang and Patel (2018), [ARXIV-1805.07039](https://arxiv.org/abs/1805.07039), ICML 2018. The third mechanism,
+  and the one [SOTA-430](../practices.d/SOTA-430.md)'s headline failure row needed. **Theorem 1:** in a
+  *random* three-layer CNN, guided backpropagation recovers the input,
+  `s_k^GBP(x) ≈ x`, regardless of the class label. **Theorem 2:** saliency map
+  and DeconvNet in the same network are `N(0, I)` — noise. So GBP and DeconvNet
+  are doing **(partial) image recovery**, "unrelated to the decision-making of
+  neural networks", and the two causes are the **backward ReLU** and a CNN's
+  **local connections**. Four arms test it, including removing local connections
+  and an adversarial attack that changes the class while barely changing the
+  input.
+---
+
+<!-- inactive-ok-file: SOTA-430 — Proposed, and this note is the account under its headline failure row: cited for the verdict it explains, for the edge-detector comparison it supplies the mechanism to, and for the by-eye caveat that applies to this paper's own figures. None of that depends on the recommendation being in force. -->
+<!-- inactive-ok-file: THEORY-113 — Proposed, and cited only to mark the partition: this paper covers a disjoint method family and neither account rests on the other. -->
+
+# LIT-tmpbspyz: A Theoretical Explanation for Perplexing Behaviors of Backpropagation-based Visualizations
+
+Nie, Zhang and Patel (2018) —
+[ARXIV-1805.07039](https://arxiv.org/abs/1805.07039)
+
+## Key takeaways
+
+- **The three methods differ only in which ReLU mask they apply**, which is what
+  makes them comparable at all. The saliency map masks on the **forward** ReLU
+  (the sign of the bottom data); DeconvNet masks on the **backward** ReLU (the
+  sign of the top gradient); GBP applies both. That is the same taxonomy
+  [LIT-727](LIT-727.md) states from the method's own side.
+- **Theorem 1.** In a random three-layer CNN with enough filters,
+
+      s_k^GBP(x) ≈ x
+
+  The input is recovered, **regardless of the class label** and with untrained
+  weights. The paper draws the consequence immediately: "according to the linear
+  model explanation, backpropagation-based methods are visualizing learned
+  weights, which should be random noise as they are all sampled from i.i.d
+  Gaussians. Obviously, it is inconsistent with the actual behavior of GBP."
+- **Theorem 2.** In the same random CNN, `s_k^Sal(x)` and `s_k^Deconv(x) ~ N(0, I)`.
+  Noise. So the backward ReLU alone does not produce recovery, and the plain
+  gradient does not either — the *combination* in GBP does.
+- **Local connections are the second cause, and they are quantified.** Filter
+  count needed scales as `Õ(p/ε²)` with `p` the filter size, so a 3×3×3 filter
+  needs at most `O(10³)` filters for estimation error under 0.1. Small filters
+  are what make the recovery cheap, and small filters are what local
+  connectivity means.
+- **DeconvNet is rescued by max-pooling, exactly as the account predicts.** Add
+  a max-pooling layer to the random CNN and DeconvNet goes from noise to
+  human-interpretable while GBP and the saliency map are unaffected. "Therefore,
+  adding the max-pooling makes the DeconvNet behave like GBP — doing nothing but
+  image recovery."
+- **Depth does not change it.** Proposition 1 shows the statistics of the deep
+  case match the three-layer case, so "the behaviors of these visualizations will
+  barely change when increasing the depth of neural networks."
+- **In a *trained* network the weights do something, and it is not class
+  selection.** "GBP and DeconvNet (with max-pooling) in a trained CNN are
+  actually doing the **partial** image recovery, where the trained weights
+  control which image patch could form an active path to the class logit. More
+  importantly, this filtering process is not class sensitive (e.g. the edge
+  detector)."
+- **Four arms, two of them architectural surgery.**
+
+  | arm | prediction | result |
+  | --- | --- | --- |
+  | random three-layer CNN | GBP recovers, saliency and DeconvNet do not | Figure 4 |
+  | **remove local connections** (FCN) | GBP fails too | all methods noise; even `N_h = 70000`, "definitely unrealistic", does not match a CNN with `N = 64` |
+  | **add max-pooling** to the random CNN | only DeconvNet changes | GBP and saliency unaffected; DeconvNet becomes interpretable |
+  | **adversarial attack**, FGSM panda → "busby" on VGG-16 | class-sensitive maps must change, recovery maps must not | saliency changes significantly; GBP and DeconvNet "remain almost unchanged" |
+
+  The adversarial arm is the cleanest of the four: the input barely moves, the
+  predicted class flips, so the two hypotheses make opposite predictions and both
+  hold.
+
+## Standing in the anthology
+
+**This closes the attribution cluster's last mechanism gap, and five documents
+were pointing at it by identifier.** [SOTA-430](../practices.d/SOTA-430.md), [LIT-727](LIT-727.md), [LIT-729](LIT-729.md),
+[THEORY-113](../theory.d/THEORY-113.md) and [THEORY-114](../theory.d/THEORY-114.md) each carried a table row reading "not held —
+`1805.07039`". All five are updated in this contribution; the account is filed as
+[THEORY-tmpv7nad](../theory.d/THEORY-tmpv7nad.md).
+
+The cluster's failures now partition with every row held:
+
+| family | mechanism | held as |
+| --- | --- | --- |
+| IG, InputXGradient, DeepLIFT, Gradient SHAP | the model-independent input multiplier | [THEORY-113](../theory.d/THEORY-113.md) |
+| DTD, LRP-α1β0, Excitation BP, PatternAttribution | rank-1 convergence of a non-negative chain | [THEORY-114](../theory.d/THEORY-114.md) |
+| **Guided Backprop, DeconvNet** | **partial image recovery** | [THEORY-tmpv7nad](../theory.d/THEORY-tmpv7nad.md) |
+
+**It settles a question [LIT-727](LIT-727.md) deliberately left open, and settles it in the
+direction that note declined to assert.** That note quotes Springenberg's
+explanation that "the bottom-up signal in form of the pattern of bottom ReLU
+activations substitutes the switches", and refused to conclude that the map's
+structure therefore comes from the input rather than the weights, on the ground
+that bottom ReLU activations are themselves computed by the network. **Theorem 1
+removes that objection by making the network random.** GBP recovers the image
+with i.i.d. Gaussian weights.
+
+So the restraint was right about the *argument* — Springenberg's sentence does
+not prove it — and the conclusion is true, for a reason that sentence does not
+contain. Worth separating, because the two are usually conflated and the note
+would read as timid rather than correct if they were not.
+
+**It also explains a measurement [LIT-713](LIT-713.md) made and could not account for.** That
+paper's negative half is that "an untrained edge detector produces maps
+'strikingly similar' to several methods'", which [SOTA-430](../practices.d/SOTA-430.md) carries as its
+do-not-validate-by-eye argument. Partial image recovery is what an edge detector
+approximates, and this paper says so in the trained-network passage above. A
+five-year-old rhetorical comparison turns out to be the mechanism.
+
+**On the apparent clash with [LIT-729](LIT-729.md), which is not one.** Sixt, Granz and
+Landgraf write that "the class insensitivity is not caused by missing ReLU masks
+and Pooling switches", and this paper finds max-pooling switches critical to
+DeconvNet's interpretability. Checked rather than assumed: the two claims are
+about different families and different properties. Sixt's sentence rejects
+Gu et al.'s account of class-insensitivity in the `z⁺` family, which his own
+theorem covers; this paper says the switches are what turn DeconvNet's output
+from noise into recovery, and recovery is *why* it is class-insensitive. Neither
+paper contradicts the other, and Sixt hands this family to this paper explicitly.
+
+## Limitations
+
+- **The theorems are for a random three-layer CNN.** Proposition 1 argues the
+  statistics carry to depth, and the trained-network case is handled by the
+  weaker "partial recovery" statement rather than by an approximation bound.
+- **`s_k^GBP(x) ≈ x` is asymptotic in filter count**, with the `Õ(p/ε²)` bound
+  as an upper bound and the 3×3×3 example as an illustration, not a measurement
+  on a real network.
+- **Qualitative figures carry several of the arms.** "Human-interpretable"
+  versus "random noise" is judged by eye in Figures 4, 5 and 6, which is the
+  thing [SOTA-430](../practices.d/SOTA-430.md) warns about — though here the claim being judged is whether
+  an image is recognisable, not whether two maps are similar.
+- **2018, image classifiers, ReLU CNNs.** The account is specific to a
+  rectifier and to local connectivity; it says nothing about transformers, and
+  the record's own [LIT-725](LIT-725.md) has already found that attribution verdicts can
+  reverse on text.
+- **The proofs were revised.** The arXiv comment on v4 records "We revised the
+  proofs of Theorem 1 and 2 in Appendix"; this reading is of that version.

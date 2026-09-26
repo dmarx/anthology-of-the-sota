@@ -91,11 +91,11 @@ history:
 - version: 6
   date: '2026-09-26'
   note: >-
-    The third row is held, so the partition is complete. LIT-tmpbspyz proves that
+    The third row is held, so the partition is complete. LIT-730 proves that
     guided backpropagation recovers the input in a RANDOM three-layer CNN,
     regardless of the class, and that the saliency map and DeconvNet in the same
     network are noise — so the headline failure in the table below is a method
-    that was never about the weights. THEORY-tmpv7nad is the account. It also
+    that was never about the weights. THEORY-115 is the account. It also
     supplies the mechanism behind this practice's own do-not-validate-by-eye
     argument: the untrained edge detector matches these maps because partial
     image recovery is what an edge detector approximates. Recommendation, status
@@ -127,7 +127,7 @@ summary: >-
 explained_by:
 - THEORY-113
 - THEORY-114
-- THEORY-tmpv7nad
+- THEORY-115
 extended_by:
 - SOTA-435
 ---
@@ -215,10 +215,10 @@ The cluster's failures partition into three mechanisms:
 | --- | --- | --- |
 | Integrated Gradients, gradient⊙input, DeepLIFT | the model-independent input multiplier | [THEORY-113](../theory.d/THEORY-113.md) |
 | DTD, LRP-α1β0, Excitation BP, PatternAttribution | rank-1 convergence of a non-negative chain | [THEORY-114](../theory.d/THEORY-114.md) |
-| **Guided Backprop, Deconv, Guided GradCAM** | **partial image recovery** — the map is an approximate reconstruction of the input, unrelated to the decision | [THEORY-tmpv7nad](../theory.d/THEORY-tmpv7nad.md) |
+| **Guided Backprop, Deconv, Guided GradCAM** | **partial image recovery** — the map is an approximate reconstruction of the input, unrelated to the decision | [THEORY-115](../theory.d/THEORY-115.md) |
 
 The middle row covers no method in this table. **The bottom row is this table's
-headline failure and is now explained**: [LIT-tmpbspyz](../literature.d/LIT-tmpbspyz.md) proves
+headline failure and is now explained**: [LIT-730](../literature.d/LIT-730.md) proves
 `s_k^GBP(x) ≈ x` in a *random* three-layer CNN, regardless of the class, so the
 map's invariance to the weights is not a defect in an attribution — it is what an
 approximate image reconstruction looks like. That also explains the edge-detector

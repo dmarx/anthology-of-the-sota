@@ -1,5 +1,8 @@
 ---
+number: 115
 status: Active
+formerly:
+- THEORY-tmpv7nad
 title: 'Guided backpropagation and DeconvNet do partial image recovery, not attribution: the backward ReLU plus a CNN''s local connections reconstruct the input regardless of the class or the weights'
 version: 1
 tags:
@@ -7,11 +10,11 @@ tags:
 - representation-and-encoding
 date: '2026-09-26'
 source:
-- LIT-tmpbspyz
+- LIT-730
 explains:
 - SOTA-430
 summary: >-
-  Nie, Zhang and Patel (2018), [LIT-tmpbspyz](../literature.d/LIT-tmpbspyz.md), Theorems 1 and 2. In a **random**
+  Nie, Zhang and Patel (2018), [LIT-730](../literature.d/LIT-730.md), Theorems 1 and 2. In a **random**
   three-layer CNN, `s_k^GBP(x) ≈ x` — guided backpropagation recovers the input,
   with untrained weights and regardless of the class — while the saliency map and
   DeconvNet are `N(0, I)`. The causes are the **backward ReLU** and the small
@@ -24,11 +27,11 @@ summary: >-
 <!-- inactive-ok-file: SOTA-430 — Proposed, and declared in `explains:`; this account underwrites the last unexplained row of that practice's verdict table and also supplies the mechanism behind its do-not-validate-by-eye argument. Explaining a not-yet-in-force practice is the normal case. -->
 <!-- inactive-ok-file: THEORY-113 — Proposed, and cited to draw the boundary between three accounts over disjoint method families; neither rests on the other. -->
 
-# THEORY-tmpv7nad: Guided backpropagation and DeconvNet do partial image recovery, not attribution: the backward ReLU plus a CNN's local connections reconstruct the input regardless of the class or the weights
+# THEORY-115: Guided backpropagation and DeconvNet do partial image recovery, not attribution: the backward ReLU plus a CNN's local connections reconstruct the input regardless of the class or the weights
 
 ## Source
 
-Nie, Zhang and Patel (2018), [LIT-tmpbspyz](../literature.d/LIT-tmpbspyz.md) — ICML 2018, §3 and §4.
+Nie, Zhang and Patel (2018), [LIT-730](../literature.d/LIT-730.md) — ICML 2018, §3 and §4.
 
 ## The account
 

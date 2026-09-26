@@ -9,8 +9,8 @@ history:
 - version: 2
   date: '2026-09-26'
   note: >-
-    The family this account hands off is now held. LIT-tmpbspyz supplies the
-    guided-backprop mechanism — partial image recovery, THEORY-tmpv7nad — which
+    The family this account hands off is now held. LIT-730 supplies the
+    guided-backprop mechanism — partial image recovery, THEORY-115 — which
     this document had named by identifier as unheld one unit earlier. The account
     itself is unchanged.
 tags:
@@ -100,8 +100,8 @@ behave differently, in both directions.
 - **Not Guided Backprop, Deconv or RectGrad.** They apply a ReLU to the
   gradient, so the backward pass is not a linear map at all and Theorem 1 does
   not apply. The paper says so and hands those to Nie, Zhang and Patel (2018),
-  `1805.07039`, now held as [LIT-tmpbspyz](../literature.d/LIT-tmpbspyz.md). Their failure is a **third**
-  mechanism — partial image recovery, [THEORY-tmpv7nad](THEORY-tmpv7nad.md) — and it is as far from this
+  `1805.07039`, now held as [LIT-730](../literature.d/LIT-730.md). Their failure is a **third**
+  mechanism — partial image recovery, [THEORY-115](THEORY-115.md) — and it is as far from this
   one as this one is from the multiplier: guided backprop recovers the input in a
   *random* CNN, where a converging chain would need trained weights to have
   collapsed at all.

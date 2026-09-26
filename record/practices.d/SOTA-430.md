@@ -17,6 +17,13 @@ promote_when: >-
   held as LIT-724, and it does not meet this bar — it supplies the
   non-image model and shows the verdict is metric- and modality-dependent,
   without ever putting a known dependence in front of the tests.
+  LIT-tmp0ve4d comes closest and still misses, in a way worth naming: it builds
+  the planted feature — a caption in one half of the image, with one model
+  verified to use it and one verified not to — and it runs the randomization
+  test, and the two are different experiments. The planted feature validates
+  infidelity against human judgement; the randomization test runs on ImageNet
+  with no ground truth. The experiment asked for here is a table-join away
+  inside a published paper.
 consensus: contested
 consensus_note: >-
   Two groups, and the fork is clean. Both run the tests and neither validates a
@@ -32,7 +39,7 @@ consensus_note: >-
   failure. Moved off `unassessed` because somebody has now looked, not because
   the field agreed. Read as of 2026-09.
 title: 'Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-26'
@@ -45,6 +52,19 @@ history:
     model. Consensus moves from `unassessed` to `contested`, because somebody
     has now looked and the two groups differ on what a failure means. The
     recommendation and the status are unchanged.
+- version: 3
+  date: '2026-09-26'
+  note: >-
+    Step 3's metric split gets a third independent source and the promote_when
+    gets sharper. LIT-tmp0ve4d reproduces the split on ResNet-50 — signed rank
+    correlation 0.10–0.18 against absolute-value 0.57–0.62, same explanations,
+    same randomization — so three groups on three model families now agree that
+    the metric choice flips the verdict. The same paper builds the
+    planted-feature setting this promote_when asks for and points it at
+    infidelity rather than at the randomization tests, so the bar is not met
+    and the reason it is not met is now specific. Its infidelity figures also
+    have a definition behind them at last. Recommendation, status and consensus
+    unchanged.
 tags:
 - analysis-and-evaluation
 date: '2026-09-25'
@@ -71,6 +91,8 @@ summary: >-
   classifiers only, and pass or fail is read from curves.
 explained_by:
 - THEORY-113
+extended_by:
+- SOTA-tmp34edx
 ---
 
 <!-- inactive-ok-file: THEORY-113 — Proposed, and it is the account filed alongside this amendment; step 4 points at it for the mechanism, and the practice says in the same breath that it does not rehabilitate the method. -->
@@ -102,6 +124,14 @@ On *your* model, with the attribution method you intend to use:
    gradient⊙input the absolute-value rank correlation and SSIM stay high after
    randomization, while the signed rank correlation drops to about zero at
    once. A single metric can hand you either verdict.
+
+   **Three groups have now found this, on three model families.** `LIT-713`
+   on Inception and MNIST; [LIT-724](../literature.d/LIT-724.md) on Inception and BERT, where SSIM
+   calls global Integrated Gradients insensitive to randomization and Spearman
+   calls it sensitive; and [LIT-tmp0ve4d](../literature.d/LIT-tmp0ve4d.md) on ResNet-50, where signed rank
+   correlation runs 0.10–0.18 across five explanations and the absolute-value
+   correlation on the same explanations runs 0.57–0.62. This step is the
+   best-supported thing in the practice.
 4. **If a method fails, re-run it without the input multiplier before
    concluding anything about the method.** Integrated Gradients,
    InputXGradient, DeepLift and Gradient SHAP all multiply a model-dependent
@@ -172,7 +202,10 @@ and neither does this practice.
   goes from 2.84 at the trained model to 1.27 × 10⁷ partway down the
   randomization cascade. If you score a randomization test with a
   faithfulness metric rather than a similarity metric, some of the movement is
-  quadrature error.
+  quadrature error — and infidelity is a squared error between `Iᵀ Φ` and the
+  function difference ([LIT-tmp0ve4d](../literature.d/LIT-tmp0ve4d.md), Definition 2.1), so a degraded
+  approximation raises it by construction. [SOTA-tmp34edx](SOTA-tmp34edx.md) is the hygiene that
+  goes with reporting either measure.
 
 - **Whether the model-randomization test measures what it claims is disputed,
   and the practice stays `Proposed` for it.** The dispute is now held rather

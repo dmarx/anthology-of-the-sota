@@ -12,23 +12,47 @@ promote_when: >-
   stated as a threshold on a named similarity metric, not read from curves, and
   the setting should include at least one non-image model. What would NOT meet
   it: papers that run the tests on a new method and report that it passes,
-  which is adoption (DP-005); more image-classifier sweeps of the same kind,
-  which are the result already held; or a critique of the test that the record
-  has not read in full (`2106.07475` is the first to read).
-consensus: unassessed
+  which is adoption (DP-005); or more image-classifier sweeps of the same kind,
+  which are the result already held. The critique this field named first is now
+  held as LIT-tmp5z3a0, and it does not meet this bar — it supplies the
+  non-image model and shows the verdict is metric- and modality-dependent,
+  without ever putting a known dependence in front of the tests.
+consensus: contested
 consensus_note: >-
-  Not judged. captum's README links the source as a critique of methods it
-  ships, which is adoption of the test as a reference and not evidence for it.
-  A follow-up literature exists that questions the model-randomization test
-  (captum also links `2106.07475`). The record holds none of it and has not
-  read it. Read as of 2026-09.
+  Two groups, and the fork is clean. Both run the tests and neither validates a
+  map by eye, so the trunk — check before you trust — is agreed. What they
+  differ on is what a failure means. LIT-713 reads it as evidence that
+  gradient-based methods are "inadequate tools for model explanation";
+  Kokhlikyan et al. (LIT-tmp5z3a0, the captum maintainers) read the same
+  failure as an artefact of the input multiplier, a model-independent factor
+  you can switch off, and show that the verdict reverses on text and depends on
+  whether you score with SSIM or Spearman. LIT-tmp5z3a0 is both `source:` and
+  `contested_by:` here, which is not a contradiction: it supplies step 4 and
+  two of the conditions while disputing what its co-source concludes from a
+  failure. Moved off `unassessed` because somebody has now looked, not because
+  the field agreed. Read as of 2026-09.
 title: 'Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-26'
+  note: >-
+    Reads the critique this practice named twice as unread. LIT-tmp5z3a0 adds a
+    fourth step — when a method fails, re-run it without the input multiplier,
+    because that is where the failure has been traced — and two conditions: the
+    verdict does not transfer from image to text, and the paper independently
+    reproduces the metric split step 3 already warned about, on a different
+    model. Consensus moves from `unassessed` to `contested`, because somebody
+    has now looked and the two groups differ on what a failure means. The
+    recommendation and the status are unchanged.
 tags:
 - analysis-and-evaluation
 date: '2026-09-25'
 source:
 - LIT-713
+- LIT-tmp5z3a0
+contested_by:
+- LIT-tmp5z3a0
 # The same authors stated the parameter-sensitivity check first, in "Local
 # explanation methods for deep neural networks lack sensitivity to parameter
 # values" (Adebayo, Gilmer, Goodfellow and Kim, 2018; ICLR workshop), which this
@@ -45,7 +69,11 @@ summary: >-
   their maps look as convincing as ever. A rejection rule, not a certificate:
   passing does not show a method is faithful. The evidence is image
   classifiers only, and pass or fail is read from curves.
+explained_by:
+- THEORY-tmp4cch6
 ---
+
+<!-- inactive-ok-file: THEORY-tmp4cch6 — Proposed, and it is the account filed alongside this amendment; step 4 points at it for the mechanism, and the practice says in the same breath that it does not rehabilitate the method. -->
 
 # SOTA-430: Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks
 
@@ -74,6 +102,18 @@ On *your* model, with the attribution method you intend to use:
    gradient⊙input the absolute-value rank correlation and SSIM stay high after
    randomization, while the signed rank correlation drops to about zero at
    once. A single metric can hand you either verdict.
+4. **If a method fails, re-run it without the input multiplier before
+   concluding anything about the method.** Integrated Gradients,
+   InputXGradient, DeepLift and Gradient SHAP all multiply a model-dependent
+   quantity by `(x − x₀)`, which does not depend on the model at all.
+   [LIT-tmp5z3a0](../literature.d/LIT-tmp5z3a0.md) traced the failure to that factor: drop it and the
+   maps become parameter-sensitive, with SSIM for the local variant about half
+   the global variant's on Inception. Their recommendation is to "compare
+   their explanations with and without this multiplier in order to understand
+   the magnitude of these structural effects", and [THEORY-tmp4cch6](../theory.d/THEORY-tmp4cch6.md) is the
+   account. This does **not** rehabilitate the method — a pass is still not a
+   certificate — but it tells you whether you have learned something about
+   the attribution or about the picture.
 
 And the negative half, which carries its own evidence: **do not accept a method
 because its maps look like the object.** An untrained edge detector produces
@@ -109,9 +149,37 @@ and neither does this practice.
   was *entirely* invariant. v3 withdraws that after a bug report (footnote 5).
   The abstract's "independent both of the model and of the data generating
   process" is the pre-correction strength. Cite the body.
-- **Whether the model-randomization test measures what it claims is itself
-  disputed** in a later literature the record does not hold. That is the reason
-  this practice is `Proposed`.
+- **The verdict does not transfer across modality, which is now measured
+  rather than suspected.** [LIT-tmp5z3a0](../literature.d/LIT-tmp5z3a0.md) runs the parameter-randomization
+  test on a BERT classifier fine-tuned on SST-2 and finds that global
+  Integrated Gradients — which fails on images — becomes parameter-sensitive
+  there, because token scores are summed over embedding dimensions and the
+  multiplier's structure does not survive the sum. So "run these tests" means
+  run them **in your modality**: a verdict imported from an image classifier
+  can be the wrong sign.
+
+- **A failure can be a fact about the similarity metric.** Step 3 above says
+  the metrics disagree, on this source's own data. A second group reproduces
+  the split on a different model: SSIM reports global IG insensitive to
+  cascading randomization while Spearman rank correlation reports both
+  variants sensitive, in the same experiment. That is the strongest
+  corroboration any part of this practice has, and it is corroboration of the
+  caveat rather than of the headline.
+
+- **Part of what the test moves is numerical, not explanatory.** Randomizing
+  weights makes the network less smooth, which makes gradients noisier and an
+  integral-based attribution's approximation worse. Infidelity on Inception
+  goes from 2.84 at the trained model to 1.27 × 10⁷ partway down the
+  randomization cascade. If you score a randomization test with a
+  faithfulness metric rather than a similarity metric, some of the movement is
+  quadrature error.
+
+- **Whether the model-randomization test measures what it claims is disputed,
+  and the practice stays `Proposed` for it.** The dispute is now held rather
+  than gestured at: see the `consensus_note` and
+  [LIT-tmp5z3a0](../literature.d/LIT-tmp5z3a0.md)'s standing section. What neither group has done —
+  and what the `promote_when` asks for — is run the tests where the true
+  dependence of output on input is known by construction.
 
 ## Where this does not apply
 

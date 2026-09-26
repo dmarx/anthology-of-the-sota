@@ -1,0 +1,137 @@
+---
+status: Active
+title: 'Investigating Sanity Checks for Saliency Maps with Image and Text Classification'
+version: 1
+tags:
+- analysis-and-evaluation
+- representation-and-encoding
+date: '2026-09-26'
+published: '2021-06-08'
+arxiv: '2106.07475'
+first_author: 'Kokhlikyan'
+keywords:
+- saliency maps
+- sanity checks
+- Integrated Gradients
+- input multiplier
+- infidelity
+- text classification
+implementations:
+- captum
+summary: >-
+  Kokhlikyan, Miglani, Alsallakh, Martin and Reblitz-Richardson (2021),
+  [ARXIV-2106.07475](https://arxiv.org/abs/2106.07475). The follow-up [SOTA-430](../practices.d/SOTA-430.md) and [NOTE-365](../notes.d/NOTE-365.md) both named as the first
+  thing to read against the sanity checks, unread until now. Three findings, all
+  narrowing what a failed randomization test means: the failure is attributable
+  to the **input multiplier** rather than to the attribution; the verdict does
+  not transfer from image to text, where global Integrated Gradients becomes
+  parameter-sensitive; and SSIM and Spearman rank correlation return **opposite
+  verdicts on the same experiment**.
+---
+
+<!-- inactive-ok-file: SOTA-430 — Proposed, and its being Proposed is this note's subject: the practice named this paper as the unread critique and stayed Proposed for it. Cited as the document this reading bears on, not as settled advice. -->
+<!-- inactive-ok-file: THEORY-tmp4cch6 — Proposed, and what this note introduces; a note naming the account it filed is the introduction. -->
+
+# LIT-tmp5z3a0: Investigating Sanity Checks for Saliency Maps with Image and Text Classification
+
+Kokhlikyan, Miglani, Alsallakh, Martin and Reblitz-Richardson (2021) —
+[ARXIV-2106.07475](https://arxiv.org/abs/2106.07475)
+
+## Key takeaways
+
+- **The failure has a named cause, and it is not the attribution method.**
+  Global Integrated Gradients multiplies the path integral by `(x − x₀)`, a
+  factor that does not depend on the model at all. Drop it — the "local"
+  variant — and on Inception under cascading parameter randomization the maps
+  *do* change: SSIM for the local variant is "almost half" the global
+  variant's. [LIT-713](LIT-713.md) suspected the multiplier and says so, but "do not measure
+  input multiplier's quantitative impact". This is that measurement. The same
+  reasoning covers InputXGradient, DeepLift and Gradient SHAP, which carry
+  the same multiplier; Guided Backprop and Guided GradCAM fail for a different
+  reason, modifying gradients during back-propagation.
+- **The verdict does not survive the change of modality.** On a BERT
+  classifier fine-tuned on SST-2, *both* local and global IG are sensitive to
+  cascading randomization — cosine-similarity medians near zero for both. The
+  mechanism offered is specific: token-level scores are obtained by summing
+  over the embedding dimensions, embedding dimensions carry no structural
+  pattern comparable to an image's contours, and the positive and negative
+  contributions of the multiplier cancel in that sum. **Global IG fails the
+  test on images and passes it on text.**
+- **SSIM and Spearman disagree about the same experiment, in this paper's own
+  data.** Appendix A: "Spearman correlation gets close to zero after the first
+  randomization attempt of the last layer and it remains that way... We observe
+  that behaviour both for local and global explanations." So on Inception,
+  SSIM says global IG is insensitive to randomization and Spearman says it is
+  sensitive. Two metrics, one experiment, opposite answers.
+- **The test has a confound that is not about explanation at all.**
+  Randomizing weights makes the network function less smooth, which makes the
+  gradients noisier and the IG integral approximation worse. Infidelity does
+  not drift, it explodes: Inception, averaged over ten samples, global
+  infidelity goes **2.84** at the original model to **1.23 × 10³** at Mixed_7
+  and **1.27 × 10⁷** at Mixed_6. The authors note this "depends on the
+  chosen randomization technique" — theirs is Xavier — and propose two
+  remedies, more integration steps or a smoother network.
+- **Smoothing the network improves the explanation metric.** Replacing ReLU
+  with Softplus and MaxPool with LogSumExp drops infidelity "significantly".
+- **What the authors actually recommend**, and it is one sentence: "we
+  recommend that users compare their explanations with and without this
+  multiplier in order to understand the magnitude of these structural
+  effects."
+
+## Standing in the anthology
+
+**This is the paper three documents pointed at and called unread.**
+[SOTA-430](../practices.d/SOTA-430.md) named it twice — in its `promote_when` ("`2106.07475` is the
+first to read") and in its `consensus_note` ("The record holds none of it and
+has not read it") — [NOTE-365](../notes.d/NOTE-365.md) named it in a takeaway and again in an open
+question, and [LIT-713](LIT-713.md) named it as "the first thing to read against this one".
+Five sites, one bare arXiv id, no document.
+
+It lands on two of `NOTE-365`'s open questions and answers one of them:
+
+| `NOTE-365` asked | this paper |
+| --- | --- |
+| "Do the verdicts hold for transformers and for token attributions?" | **No.** BERT on SST-2, token attributions: global IG becomes parameter-sensitive. |
+| "Can a threshold be set so that *passes* is a statistic rather than a judgement?" | Not answered — but it shows why the threshold has to name its metric, since SSIM and Spearman split. |
+
+`SOTA-430`'s third step already told a reader to compare signed rank
+correlation against absolute or perceptual similarity because "a single metric
+can hand you either verdict", on `LIT-713`'s own data. **A second group, a
+different model and a different question reproduces exactly that split**,
+which is the strongest corroboration any part of that practice has.
+
+It also settles the practice's `consensus`, which was `unassessed` because
+nobody had looked. Somebody has. The trunk is agreed — both groups run the
+tests and neither validates a map by eye — and the branch is not: `LIT-713`
+reads a failure as evidence that gradient methods are "inadequate tools for
+model explanation", and this paper reads the same failure as an artefact of a
+model-independent factor that you can simply remove.
+
+The input-multiplier finding is filed as [THEORY-tmp4cch6](../theory.d/THEORY-tmp4cch6.md), and the practice
+gains a fourth step from it: if a method fails, re-run it without the
+multiplier before concluding anything about the method — which is the
+authors' own recommendation, in their own sentence.
+
+**No practice is filed for the smoothing result.** Replacing ReLU with Softplus
+and MaxPool with LSE to get better infidelity scores is a recommendation to
+*change the model in order to explain it*, evidenced by one figure and one
+metric on one architecture. Whether the explanation then describes the model
+you ship is exactly the question, and the paper does not ask it.
+
+## Limitations
+
+- **One architecture per modality**: Inception for images, one BERT classifier
+  on SST-2 for text. The headline curves are single-sample, with ten-sample
+  averages in the appendices to show the shape is not an accident.
+- **No thresholds**, the same gap `NOTE-365` records for `LIT-713`. Verdicts
+  are read from boxplots.
+- **It is the captum maintainers' own paper.** captum implements Integrated
+  Gradients, and the finding is that IG's most-cited failure is attributable
+  to a factor its API lets you switch off. That does not make the measurement
+  wrong — the local-versus-global arm is a real control — but "captum links
+  this critique" is not third-party assessment, and the record should not read
+  it as such.
+- **The smoothness confound is diagnosed, not separated.** Infidelity rising
+  by seven orders of magnitude under randomization is attributed to integral
+  approximation error; no arm holds approximation quality fixed while varying
+  the weights.

@@ -53,7 +53,7 @@ reports for guided models is a point on that dial chosen by FID.
   what makes the conditional step a mean-shifted Gaussian.
 - **The DDIM variant is a score-substitution**, not the same derivation: Eq. 14
   replaces `ε` by `ε − √(1−ᾱ_t)∇log p(y|x_t)`, adapted from Song et al. —
-  [LIT-tmptxfkp](../literature.d/LIT-tmptxfkp.md), where the general form is the conditional reverse-time SDE.
+  [LIT-722](../literature.d/LIT-722.md), where the general form is the conditional reverse-time SDE.
 - **A classifier trained on the diffusion model's own noising distribution**,
   with random crops against overfitting. An off-the-shelf clean-image classifier
   is not what is used.

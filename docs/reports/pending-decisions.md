@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**246 document(s) awaiting a decision.**
+**248 document(s) awaiting a decision.**
 
 ## SOTAs
 
-165 of the 246.
+166 of the 248.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -144,23 +144,25 @@
 | 2026-09-24 | Proposed | [SOTA-390](../../record/practices.d/SOTA-390.md) | 27 | 0 | In a video diffusion transformer, attend over space and time jointly rather than factorizing, and budget for the cost |
 | 2026-09-24 | Proposed | [SOTA-389](../../record/practices.d/SOTA-389.md) | 26 | 0 | Caption training video with a model that watches the video, not with captions of its frames |
 | 2026-09-24 | Proposed | [SOTA-395](../../record/practices.d/SOTA-395.md) | 7 | 0 | Post-train an autoregressive video generator on its own rollouts, and score the whole rollout |
+| 2026-09-24 | Proposed | [SOTA-397](../../record/practices.d/SOTA-397.md) | 7 | 0 | To condition an unconditionally trained diffusion model on known frames, use reconstruction guidance, not replacement |
 | 2026-09-24 | Proposed | [SOTA-394](../../record/practices.d/SOTA-394.md) | 5 | 0 | When distilling a causal few-step video generator, take the teacher bidirectional, not causal |
 | 2026-09-24 | Proposed | [SOTA-398](../../record/practices.d/SOTA-398.md) | 4 | 0 | Pretrain a vision transformer on packed, aspect-preserved images at sampled resolutions, not on fixed square crops |
 | 2026-09-24 | Proposed | [SOTA-399](../../record/practices.d/SOTA-399.md) | 3 | 0 | Choose pre-training weight decay, dropout, clipping and precision for the quantization you intend to ship |
 | 2026-09-24 | Proposed | [SOTA-401](../../record/practices.d/SOTA-401.md) | 2 | 0 | Anchor the patch Gram matrix to an early teacher when training long, because dense features decay while global metrics improve |
 | 2026-09-24 | Proposed | [SOTA-392](../../record/practices.d/SOTA-392.md) | 1 | 0 | To get a one-step sampler from a rectified flow, distil it; treat reflow as an optional extra pass, and keep the pre-reflow model for many steps |
-| 2026-09-24 | Proposed | [SOTA-397](../../record/practices.d/SOTA-397.md) | 1 | 0 | To condition an unconditionally trained diffusion model on known frames, use reconstruction guidance, not replacement |
 | 2026-09-24 | Proposed | [SOTA-385](../../record/practices.d/SOTA-385.md) | 0 | 0 | Tighten the gradient-norm clip as the model grows rather than carrying one value across scales |
 | 2026-09-24 | Proposed | [SOTA-387](../../record/practices.d/SOTA-387.md) | 0 | 0 | Hold out a slice of the training set for model selection instead of selecting on the validation split |
 | 2026-09-24 | Proposed | [SOTA-391](../../record/practices.d/SOTA-391.md) | 0 | 0 | Estimate attention resolution before training when choosing a position encoding, and measure it across the extrapolation boundary |
 | 2026-09-24 | Proposed | [SOTA-393](../../record/practices.d/SOTA-393.md) | 0 | 0 | Freeze the image model's spatial layers when adding time if checkpoint compatibility matters; do not expect a quality gain from it |
 | 2026-09-24 | Proposed | [SOTA-396](../../record/practices.d/SOTA-396.md) | 0 | 0 | When a latent video model reuses an image autoencoder or upsampler, fine-tune them on video so they see time |
-| 2026-09-25 | Proposed | [SOTA-428](../../record/practices.d/SOTA-428.md) | 22 | 0 | Choose the EMA length after training: store two power-function averages at snapshots and reconstruct any length by least squares |
+| 2026-09-25 | Proposed | [SOTA-428](../../record/practices.d/SOTA-428.md) | 29 | 0 | Choose the EMA length after training: store two power-function averages at snapshots and reconstruct any length by least squares |
 | 2026-09-25 | Proposed | [SOTA-408](../../record/practices.d/SOTA-408.md) | 12 | 0 | Average the weights along the tail of training under a cyclical or high constant learning rate, then re-estimate the normalization statistics |
 | 2026-09-25 | Proposed | [SOTA-415](../../record/practices.d/SOTA-415.md) | 10 | 0 | During a warmup-stable-decay run, estimate the annealed score from a uniform average of recent stable-phase checkpoints instead of launching a decay branch |
 | 2026-09-25 | Proposed | [SOTA-403](../../record/practices.d/SOTA-403.md) | 6 | 0 | Share the attention parameters across layers if you need to cut parameters; do not share the feed-forward ones |
 | 2026-09-25 | Proposed | [SOTA-426](../../record/practices.d/SOTA-426.md) | 6 | 0 | When you merge and reinitialise a low-rank adapter mid-training, prune the optimizer state and re-warm the learning rate from zero — both, not either |
+| 2026-09-25 | Proposed | [SOTA-433](../../record/practices.d/SOTA-433.md) | 5 | 0 | Guide a diffusion model with a smaller, less-trained copy of itself rather than an unconditional model, and make sure the two models are degraded in the same way |
 | 2026-09-25 | Proposed | [SOTA-430](../../record/practices.d/SOTA-430.md) | 4 | 0 | Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks |
+| 2026-09-25 | Proposed | [SOTA-412](../../record/practices.d/SOTA-412.md) | 3 | 0 | When the target is likelihood, learn a per-dimension noise schedule conditioned on a learned latent; a scalar or unconditioned one buys nothing |
 | 2026-09-25 | Proposed | [SOTA-429](../../record/practices.d/SOTA-429.md) | 3 | 0 | Drop half the image patches when training a CLIP-style model, spend the saving on more pairs and a larger batch, and unmask only for a short final tune |
 | 2026-09-25 | Proposed | [SOTA-404](../../record/practices.d/SOTA-404.md) | 2 | 0 | When you ablate an auxiliary loss, ablate the input construction that came with it, or the result is about both |
 | 2026-09-25 | Proposed | [SOTA-405](../../record/practices.d/SOTA-405.md) | 2 | 0 | Scale the masked-language-modelling rate with model size rather than holding it at 15% |
@@ -176,12 +178,11 @@
 | 2026-09-25 | Proposed | [SOTA-402](../../record/practices.d/SOTA-402.md) | 1 | 0 | To teach a model to reason over facts it holds, spend added data on facts derived from other facts rather than on more atomic facts |
 | 2026-09-25 | Proposed | [SOTA-406](../../record/practices.d/SOTA-406.md) | 1 | 0 | Replace every masked token with [MASK]; drop BERT's 80-10-10 substitution rule |
 | 2026-09-25 | Proposed | [SOTA-411](../../record/practices.d/SOTA-411.md) | 1 | 0 | To let a model spend more compute at inference without more parameters, train a depth-recurrent core on a randomly sampled iteration count, re-injecting the input at every iteration |
-| 2026-09-25 | Proposed | [SOTA-412](../../record/practices.d/SOTA-412.md) | 1 | 0 | When the target is likelihood, learn a per-dimension noise schedule conditioned on a learned latent; a scalar or unconditioned one buys nothing |
 | 2026-09-25 | Proposed | [SOTA-417](../../record/practices.d/SOTA-417.md) | 1 | 0 | Filter pretraining text by how well the tokenizer compresses it |
 
 ## THEORYs
 
-67 of the 246.
+68 of the 248.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -246,16 +247,17 @@
 | 2026-09-24 | Proposed | [THEORY-096](../../record/theory.d/THEORY-096.md) | 3 | 0 | A Pre-LN residual stream's per-layer change decays as one over root k, so deep blocks cannot refine the representation |
 | 2026-09-24 | Proposed | [THEORY-097](../../record/theory.d/THEORY-097.md) | 3 | 0 | Attention is an approximation of Kanerva's sparse distributed memory, which is why it needs normalized vectors and a fitted temperature |
 | 2026-09-24 | Proposed | [THEORY-099](../../record/theory.d/THEORY-099.md) | 3 | 0 | Muon's update matches the outer-product structure of associative memories, which is why it learns tail classes that Adam under-trains |
-| 2026-09-25 | Proposed | [THEORY-109](../../record/theory.d/THEORY-109.md) | 8 | 0 | Classifier guidance may flatter classifier-based metrics because it steps along a classifier gradient, and guidance without a classifier is the control |
+| 2026-09-25 | Proposed | [THEORY-109](../../record/theory.d/THEORY-109.md) | 13 | 0 | Classifier guidance may flatter classifier-based metrics because it steps along a classifier gradient, and guidance without a classifier is the control |
 | 2026-09-25 | Proposed | [THEORY-103](../../record/theory.d/THEORY-103.md) | 7 | 0 | A transformer stores a fact where it needed it, so two-hop composition generalizes only to facts it already saw as a second hop |
+| 2026-09-25 | Proposed | [THEORY-104](../../record/theory.d/THEORY-104.md) | 7 | 0 | A large guidance scale amplifies the model's derivatives, which narrows a high-order solver's convergence radius |
+| 2026-09-25 | Proposed | [THEORY-112](../../record/theory.d/THEORY-112.md) | 6 | 0 | Classifier-free guidance improves image quality because its unconditional reference model is worse, not because it emphasizes the class, so guidance is adaptive truncation toward the better-fit density |
 | 2026-09-25 | Proposed | [THEORY-108](../../record/theory.d/THEORY-108.md) | 4 | 0 | Kaplan's and Chinchilla's compute-optimal exponents differ because of how small-scale runs were counted, warmed up and tuned, not because of the learning-rate decay |
-| 2026-09-25 | Proposed | [THEORY-104](../../record/theory.d/THEORY-104.md) | 3 | 0 | A large guidance scale amplifies the model's derivatives, which narrows a high-order solver's convergence radius |
-| 2026-09-25 | Proposed | [THEORY-110](../../record/theory.d/THEORY-110.md) | 2 | 0 | FID is not neutral between fidelity and coverage: it weights coverage more, so optimizing it walks toward variety at the cost of per-sample quality |
+| 2026-09-25 | Proposed | [THEORY-110](../../record/theory.d/THEORY-110.md) | 4 | 0 | FID is not neutral between fidelity and coverage: it weights coverage more, so optimizing it walks toward variety at the cost of per-sample quality |
 | 2026-09-25 | Proposed | [THEORY-105](../../record/theory.d/THEORY-105.md) | 1 | 0 | Soft targets transfer the teacher's similarity structure over wrong classes, which carries more information per example than a hard label |
 
 ## LITs
 
-11 of the 246.
+11 of the 248.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -273,7 +275,7 @@
 
 ## ADRs
 
-3 of the 246.
+3 of the 248.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

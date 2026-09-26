@@ -29,7 +29,7 @@ history:
   date: '2026-09-25'
   note: >-
     Bounds two Conditions that were written as properties of guidance and are
-    properties of *this* guidance. LIT-tmpbpv9d argues CFG's quality gain comes
+    properties of *this* guidance. LIT-721 argues CFG's quality gain comes
     from the unconditional reference being a worse model, not from the class
     emphasis, and separates them: an unconditional model can be guided (11.67 to
     3.86 FID, where this practice says there is nothing to do), and the diversity
@@ -117,10 +117,10 @@ constraint that makes the clamp available.
 **Conditional generation only — for *this* recipe, not for guidance.** There has
 to be a condition to drop, so nothing in the training change above applies to an
 unconditional model.
-<!-- inactive-ok: SOTA-397, SOTA-tmpj70gp — both Proposed, named as the two places a reader goes when this practice's precondition fails; a scope boundary is where a not-yet-in-force holding is the right thing to point at. -->
+<!-- inactive-ok: SOTA-397, SOTA-433 — both Proposed, named as the two places a reader goes when this practice's precondition fails; a scope boundary is where a not-yet-in-force holding is the right thing to point at. -->
 [SOTA-397](SOTA-397.md) is the record's holding on conditioning a
-<!-- inactive-ok: SOTA-tmpj70gp — Proposed, and named as the guidance that needs no condition, i.e. the far side of this practice's own scope boundary; not support for its recommendation. -->
-model trained without one, and [SOTA-tmpj70gp](SOTA-tmpj70gp.md) is guidance that needs no condition at
+<!-- inactive-ok: SOTA-433 — Proposed, and named as the guidance that needs no condition, i.e. the far side of this practice's own scope boundary; not support for its recommendation. -->
+model trained without one, and [SOTA-433](SOTA-433.md) is guidance that needs no condition at
 all — it reaches unconditional EDM2-S from FID 11.67 to 3.86, a regime this
 practice excludes.
 
@@ -153,12 +153,12 @@ increases individual fidelity, and for this recipe that trade is real: plan for 
 if your application needs coverage, because the default high weights consumer tools
 ship are the wrong end of it.
 
-What [LIT-tmpbpv9d](../literature.d/LIT-tmpbpv9d.md) adds is that the trade is **not a property of guidance**. It
+What [LIT-721](../literature.d/LIT-721.md) adds is that the trade is **not a property of guidance**. It
 argues the quality gain comes from the unconditional reference model being a worse
 fit — a harder task on a smaller training budget — and the diversity loss from the
 class emphasis, and it separates them by swapping the reference for a degraded copy
-<!-- inactive-ok: THEORY-tmput07n — Proposed, cited as the account of why this practice's diversity cost belongs to the class emphasis rather than to guidance; its being an open account is why this practice's recommendation is unchanged. -->
-of the conditional model. [THEORY-tmput07n](../theory.d/THEORY-tmput07n.md) is the account. So the sentence to carry
+<!-- inactive-ok: THEORY-112 — Proposed, cited as the account of why this practice's diversity cost belongs to the class emphasis rather than to guidance; its being an open account is why this practice's recommendation is unchanged. -->
+of the conditional model. [THEORY-112](../theory.d/THEORY-112.md) is the account. So the sentence to carry
 forward is not "guidance costs diversity" but "*this* reference model costs
 diversity".
 

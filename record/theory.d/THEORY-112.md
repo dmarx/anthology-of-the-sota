@@ -1,5 +1,8 @@
 ---
+number: 112
 status: Proposed
+formerly:
+- THEORY-tmput07n
 promote_when: >-
   **Precision and recall measured on autoguided against CFG-guided samples at
   matched FID** — the instrument SOTA-425 recommends, and the one this paper's own
@@ -18,9 +21,9 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-25'
 source:
-- LIT-tmpbpv9d
+- LIT-721
 summary: >-
-  Karras et al. (2024), [LIT-tmpbpv9d](../literature.d/LIT-tmpbpv9d.md). Guidance adds a force toward higher
+  Karras et al. (2024), [LIT-721](../literature.d/LIT-721.md). Guidance adds a force toward higher
   `log[p₁/p₀]`. The reference `p₀` is *more spread out* than `p₁` — a harder task
   on a smaller training slice — so it falls off slower away from the data and the
   ratio's gradient points inward, concentrating samples on the manifold. That, not
@@ -29,14 +32,14 @@ summary: >-
   degrade the two models *incompatibly* and guidance stops helping at any weight.
 ---
 
-<!-- inactive-ok-file: SOTA-tmpj70gp, THEORY-104, THEORY-109 — SOTA-tmpj70gp is the practice this account explains, THEORY-104 is cited to be distinguished from it (a consequence of a large scale, not a reason guidance helps), and THEORY-109 as the record's holding on the question this account does not address. Their Proposed status is the point in two of the three cases. -->
+<!-- inactive-ok-file: SOTA-433, THEORY-104, THEORY-109 — SOTA-433 is the practice this account explains, THEORY-104 is cited to be distinguished from it (a consequence of a large scale, not a reason guidance helps), and THEORY-109 as the record's holding on the question this account does not address. Their Proposed status is the point in two of the three cases. -->
 
-# THEORY-tmput07n: Classifier-free guidance improves image quality because its unconditional reference model is worse, not because it emphasizes the class, so guidance is adaptive truncation toward the better-fit density
+# THEORY-112: Classifier-free guidance improves image quality because its unconditional reference model is worse, not because it emphasizes the class, so guidance is adaptive truncation toward the better-fit density
 
 ## Source
 
 Karras, Aittala, Kynkäänniemi, Lehtinen, Aila and Laine (2024),
-[LIT-tmpbpv9d](../literature.d/LIT-tmpbpv9d.md) — [ARXIV-2406.02507](https://arxiv.org/abs/2406.02507).
+[LIT-721](../literature.d/LIT-721.md) — [ARXIV-2406.02507](https://arxiv.org/abs/2406.02507).
 
 ## The account
 
@@ -97,7 +100,7 @@ does not.
 staple is the choice of reference model. The quality gain comes from the quality
 gap; the diversity loss comes from the class emphasis. Replace the unconditional
 model with a degraded copy of the conditional one and you keep the first without
-the second — [SOTA-tmpj70gp](../practices.d/SOTA-tmpj70gp.md) — which is why [SOTA-424](../practices.d/SOTA-424.md)'s "diversity is what is being
+the second — [SOTA-433](../practices.d/SOTA-433.md) — which is why [SOTA-424](../practices.d/SOTA-424.md)'s "diversity is what is being
 spent" is a fact about CFG rather than about guidance.
 
 **Guidance needs no condition.** If the mechanism is a quality gap, an

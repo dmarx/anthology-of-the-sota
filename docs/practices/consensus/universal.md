@@ -6,7 +6,7 @@
 
 **Assumed** — not doing it is what needs justifying.
 
-14 of 432 SOTA documents. Back to the [full index](../README.md).
+14 of 433 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -23,4 +23,4 @@
 | [SOTA-360](../../../record/practices.d/SOTA-360.md) | Score a density ratio against sampled negatives instead of reconstructing the target |  | Active |
 | [SOTA-362](../../../record/practices.d/SOTA-362.md) | Train through a projection head and then discard it, taking the layer before as the representation |  | Active |
 | [SOTA-381](../../../record/practices.d/SOTA-381.md) v2 | Sample a handful of negatives instead of normalizing over the vocabulary, and let the count fall as the data grows |  | Active |
-| [SOTA-424](../../../record/practices.d/SOTA-424.md) v2 | Train one network for both conditional and unconditional scores by dropping the condition on 10% of examples, then pick the guidance weight by which metric you are willing to lose | Ho and Salimans (2022), [LIT-693](../../../record/literature.d/LIT-693.md). Replace the conditioning with a null token on a fraction of training examples — **0.1 is the measured best**, with 0.2 and 0.5 worse — so one network learns both scores, then extrapolate away from the unconditional estimate at sampling. The weight is not a quality dial: on ImageNet 64×64, `w` from 0.1 to 4.0 takes **FID from 1.55 to 26.22** and **IS from 66.11 to 260.2**. Choose it by which of those you are prepared to sacrifice, and never compare two models at different weights. | Active |
+| [SOTA-424](../../../record/practices.d/SOTA-424.md) v3 | Train one network for both conditional and unconditional scores by dropping the condition on 10% of examples, then pick the guidance weight by which metric you are willing to lose | Ho and Salimans (2022), [LIT-693](../../../record/literature.d/LIT-693.md). Replace the conditioning with a null token on a fraction of training examples — **0.1 is the measured best**, with 0.2 and 0.5 worse — so one network learns both scores, then extrapolate away from the unconditional estimate at sampling. The weight is not a quality dial: on ImageNet 64×64, `w` from 0.1 to 4.0 takes **FID from 1.55 to 26.22** and **IS from 66.11 to 260.2**. Choose it by which of those you are prepared to sacrifice, and never compare two models at different weights. | Active |

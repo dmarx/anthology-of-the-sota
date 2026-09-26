@@ -24,7 +24,7 @@ history:
   date: '2026-09-26'
   note: >-
     Names where replacement comes from. v1 rejected it without a citation, as
-    though it were folklore; it is LIT-tmptxfkp §I.2, and the paper is explicit
+    though it were folklore; it is LIT-722 §I.2, and the paper is explicit
     about the approximation that makes it wrong — it drops the conditioning on the
     exact known values and keeps only the noised known dimensions. Quoting that
     step turns "replacement loses coherence" from a measurement into a
@@ -64,7 +64,7 @@ of the real frames, and let the model fill in the rest. That lets the known
 frames influence the new ones only through the model's joint prediction.
 The model is never told the new frames must agree with them.
 
-**Replacement is not folklore — it is [LIT-tmptxfkp](../literature.d/LIT-tmptxfkp.md) §I.2, and that paper shows
+**Replacement is not folklore — it is [LIT-722](../literature.d/LIT-722.md) §I.2, and that paper shows
 you where it breaks.** Song et al. want `pₜ(z(t) | Ω(x(0)) = y)`, call it "in
 general intractable", and approximate
 

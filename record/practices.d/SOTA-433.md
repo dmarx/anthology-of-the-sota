@@ -1,5 +1,8 @@
 ---
+number: 433
 status: Proposed
+formerly:
+- SOTA-tmpj70gp
 promote_when: >-
   Two things, and they are independent. **Precision and recall, or a human
   preference study, on autoguided against CFG-guided samples at matched FID** —
@@ -33,13 +36,13 @@ tags:
 - analysis-and-evaluation
 date: '2026-09-25'
 source:
-- LIT-tmpbpv9d
+- LIT-721
 introduced_by:
-- LIT-tmpbpv9d
+- LIT-721
 implementations:
 - 'EDM2'
 summary: >-
-  Karras et al. (2024), [LIT-tmpbpv9d](../literature.d/LIT-tmpbpv9d.md). Replace classifier-free guidance's
+  Karras et al. (2024), [LIT-721](../literature.d/LIT-721.md). Replace classifier-free guidance's
   unconditional reference with a **degraded copy of the same conditional model** —
   smaller and under-trained, same task, same conditioning, same data. The quality
   gain survives and the diversity loss does not: ImageNet-512 FID **2.56 → 1.34**
@@ -49,15 +52,15 @@ summary: >-
   entirely.
 ---
 
-<!-- inactive-ok-file: SOTA-397, SOTA-428, THEORY-tmput07n — SOTA-428 is cited as a precondition measured in the source (equal EMA lengths cost FID 1.34 to 1.53), SOTA-397 as a neighbouring problem this practice is not solving, and THEORY-tmput07n as this practice's own account. All Proposed; none relied on as settled. -->
+<!-- inactive-ok-file: SOTA-397, SOTA-428, THEORY-112 — SOTA-428 is cited as a precondition measured in the source (equal EMA lengths cost FID 1.34 to 1.53), SOTA-397 as a neighbouring problem this practice is not solving, and THEORY-112 as this practice's own account. All Proposed; none relied on as settled. -->
 
-# SOTA-tmpj70gp: Guide a diffusion model with a smaller, less-trained copy of itself rather than an unconditional model, and make sure the two models are degraded in the same way
+# SOTA-433: Guide a diffusion model with a smaller, less-trained copy of itself rather than an unconditional model, and make sure the two models are degraded in the same way
 
 ## Source
 
 Karras, Aittala, Kynkäänniemi, Lehtinen, Aila and Laine (2024),
-[LIT-tmpbpv9d](../literature.d/LIT-tmpbpv9d.md) — [ARXIV-2406.02507](https://arxiv.org/abs/2406.02507).
-[THEORY-tmput07n](../theory.d/THEORY-tmput07n.md) is why it works.
+[LIT-721](../literature.d/LIT-721.md) — [ARXIV-2406.02507](https://arxiv.org/abs/2406.02507).
+[THEORY-112](../theory.d/THEORY-112.md) is why it works.
 
 ## What to do
 

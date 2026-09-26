@@ -39,7 +39,7 @@ consensus_note: >-
   failure. Moved off `unassessed` because somebody has now looked, not because
   the field agreed. Read as of 2026-09.
 title: 'Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-26'
@@ -65,6 +65,17 @@ history:
     and the reason it is not met is now specific. Its infidelity figures also
     have a definition behind them at last. Recommendation, status and consensus
     unchanged.
+- version: 4
+  date: '2026-09-26'
+  note: >-
+    The two methods in the failing row get their defining papers. Guided
+    backprop is LIT-tmpw88iy §4.2 and the deconvnet it varies is
+    LIT-tmpwce9y, so the verdict table's headline failure can now be followed
+    to a masking rule instead of stopping at a name. Nothing about the verdict
+    or the recommendation changes. Third amendment today, and each was driven
+    by a source arriving rather than by a rereading: v2 the critique, v3 the
+    metric definitions, v4 the two referents. The churn is a fact about how
+    fast this cluster filled, not about the practice being unstable.
 tags:
 - analysis-and-evaluation
 date: '2026-09-25'
@@ -163,6 +174,19 @@ similar" to the trained network's.
 The paper names gradients and GradCAM as passing and Guided Backprop and Guided
 GradCAM as failing. **It gives Integrated Gradients ([LIT-712](../literature.d/LIT-712.md)) no verdict**,
 and neither does this practice.
+
+**The failing row's methods are now held, and its rule is one sentence.**
+Guided backpropagation ([LIT-tmpw88iy](../literature.d/LIT-tmpw88iy.md), §4.2) zeroes the gradient at each
+ReLU wherever *either* the top gradient or the bottom activation is negative —
+both masks at once, where plain backprop applies the second and the deconvnet
+([LIT-tmpwce9y](../literature.d/LIT-tmpwce9y.md)) applies the first. Its authors' stated reason is to
+"prevent backward flow of negative gradients".
+
+That is the rule, not the explanation. [LIT-725](../literature.d/LIT-725.md) says these two fail the
+randomization tests "for different reasons" from the multiplier-carrying
+methods [THEORY-113](../theory.d/THEORY-113.md) covers, and the record holds no account of what those
+reasons are. Sixt, Granz and Landgraf (2020), *When Explanations Lie*,
+`1912.09818`, is the paper that argues it and is the next read here.
 
 ## What the evidence does not cover
 

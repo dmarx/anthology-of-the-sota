@@ -1,0 +1,123 @@
+---
+status: Active
+title: 'Striving for Simplicity: The All Convolutional Net'
+version: 1
+tags:
+- analysis-and-evaluation
+- model-architecture
+- vision-and-graphics
+date: '2026-09-26'
+published: '2014-12-21'
+arxiv: '1412.6806'
+first_author: 'Springenberg'
+keywords:
+- guided backpropagation
+- all convolutional net
+- feature visualization
+- strided convolution
+implementations:
+- 'captum (GuidedBackprop, GuidedGradCam)'
+- 'All-CNN'
+summary: >-
+  Springenberg, Dosovitskiy, Brox and Riedmiller (2014), [ARXIV-1412.6806](https://arxiv.org/abs/1412.6806),
+  ICLR 2015 workshop. **Guided backpropagation's defining paper**, and so the
+  referent for [SOTA-430](../practices.d/SOTA-430.md)'s headline failure case — the method whose maps stay
+  "visually and quantitatively similar" after the weights above the lowest
+  layers are destroyed. The masking rule is stated here in one sentence: zero
+  the gradient wherever *either* the top gradient or the bottom activation is
+  negative. The paper is about an architecture; guided backprop arrives in
+  §4.2 as a tool for analysing it, and the property later found to be its
+  defect is presented here as its advantage.
+---
+
+<!-- inactive-ok-file: SOTA-430 — Proposed, and the reason this paper is held: the practice's headline failure case is this method, so it is cited as the document whose verdict needed a referent, not as advice being relied on. -->
+<!-- inactive-ok-file: THEORY-113 — Proposed, and cited to say what it does NOT cover: it is the multiplier account, and guided backprop fails for a different reason that nothing here supplies. Naming the boundary of an account is not leaning on it. -->
+
+# LIT-tmpw88iy: Striving for Simplicity: The All Convolutional Net
+
+Springenberg, Dosovitskiy, Brox and Riedmiller (2014) —
+[ARXIV-1412.6806](https://arxiv.org/abs/1412.6806)
+
+## Key takeaways
+
+- **Guided backpropagation, defined exactly, in §4.2.** Three backward passes
+  differ only in how they handle the ReLU:
+
+  | method | what the gradient is masked on |
+  | --- | --- |
+  | plain backprop | the sign of the **bottom** input (the forward activation) |
+  | deconvnet ([LIT-tmpwce9y](LIT-tmpwce9y.md)) | the sign of the **top** gradient, "ignoring the bottom input" |
+  | **guided backprop** | **either being negative** — both masks applied |
+
+  The paper's own justification: "This prevents backward flow of negative
+  gradients, corresponding to the neurons which decrease the activation of the
+  higher layer unit we aim to visualize." The name is for that: "it adds an
+  additional guidance signal from the higher layers to usual backpropagation."
+
+- **The property that became its defect is reported here as its advantage.**
+  The deconvnet needs max-pooling "switches" recorded in a forward pass, and
+  the paper's architecture has no max-pooling, so it needed a version that
+  works without them. It found one: "unlike the 'deconvnet', guided
+  backpropagation works remarkably well without switches", while "the
+  'deconvnet' approach fails completely in the absence of switches." The
+  explanation offered is the sentence to keep: **"In a sense, the bottom-up
+  signal in form of the pattern of bottom ReLU activations substitutes the
+  switches."**
+
+- **The architecture, which is the paper's actual subject.** Max-pooling can be
+  replaced by a strided convolution "without loss in accuracy on several image
+  recognition benchmarks", and an all-convolutional net reaches 41.2% top-1 on
+  ILSVRC-2012 centre-crop with under 10M parameters — comparable to the 40.7%
+  of Krizhevsky et al. with six times fewer parameters, in about four days on
+  one Titan. The paper is careful that this is not a full analysis: "a more
+  thorough analysis is needed to precisely evaluate the effect of max-pooling
+  on ImageNet-scale networks."
+
+## Standing in the anthology
+
+Filed with [LIT-tmpwce9y](LIT-tmpwce9y.md), because guided backprop is defined here as a
+modification of that paper's deconvnet and neither is readable alone.
+
+**This is the referent under [SOTA-430](../practices.d/SOTA-430.md)'s headline example.** That practice
+exists because [LIT-713](LIT-713.md) found Guided Backprop's maps on a network randomized
+above its lowest layers "visually and quantitatively similar" to the trained
+network's, while looking as convincing as ever. Until now the record could
+state that verdict and not say what the method was.
+
+**What the record can now state, and what it still cannot.** It holds the
+masking rule (here), the measurement that the maps survive randomization
+([LIT-713](LIT-713.md)), and [LIT-725](LIT-725.md)'s statement that guided backprop and guided GradCAM
+"do not pass randomization tests for **different reasons**" from the
+multiplier-carrying methods [THEORY-113](../theory.d/THEORY-113.md) covers. It does **not** hold the
+argument that joins them.
+
+The temptation is to join them here, and the sentence above about the bottom
+ReLU pattern substituting for the switches makes it very tempting. It does not
+follow: bottom ReLU activations still depend on the weights, so "the structure
+comes from the input" is not what that sentence says. **No theory is filed, and
+the paper that would supply one is named rather than gestured at** — Sixt,
+Granz and Landgraf (2020), *When Explanations Lie: Why Many Modified BP
+Attributions Fail*, `1912.09818`, which `LIT-725` cites and this record does
+not hold. It is the next read in this cluster.
+
+**The architecture half is out of scope and is not a gap.** "Replace
+max-pooling with a strided convolution" is a 2014 recommendation the field
+adopted and then moved past; the record holds no practice it corrects, and
+adoption is not evidence ([ADR-017](../decisions.d/ADR-017.md)). It is recorded here because the
+paper's title is about it, and a reader who finds this note from `SOTA-430`
+should not be surprised.
+
+## Limitations
+
+- **The visualization comparison is qualitative.** Guided backprop against the
+  deconvnet is judged on "a striking difference in image quality" across
+  figures in the appendix, with no metric.
+- **The deconvnet is handicapped in that comparison and the paper says so.**
+  To get switches at all, max-pooling is inserted *after* training, replacing
+  the stride — "one potential reason why the 'deconvnet' underperforms in this
+  experiment is that max-pooling was only 'artificially' introduced after
+  training." A control on a model trained with max-pooling is offered, also
+  qualitative.
+- **2014, CIFAR and ImageNet classification, ReLU networks.** The masking rule
+  is specific to a rectifier; what it means in a network with smooth or signed
+  activations is not addressed.

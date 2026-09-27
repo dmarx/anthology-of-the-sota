@@ -1,0 +1,242 @@
+---
+status: Active
+title: 'Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization'
+version: 1
+tags:
+- analysis-and-evaluation
+- vision-and-graphics
+- multimodal-learning
+date: '2026-09-27'
+published: '2016-10-07'
+arxiv: '1610.02391'
+doi: '10.1007/s11263-019-01228-7'
+first_author: 'Selvaraju'
+keywords:
+- class activation mapping
+- visual explanations
+- weakly-supervised localization
+- class discrimination
+- visual question answering
+implementations:
+- 'captum (LayerGradCam, GuidedGradCam)'
+- 'grad-cam (ramprs)'
+compared_against:
+- LIT-727
+- LIT-728
+summary: >-
+  Selvaraju, Cogswell, Das, Vedantam, Parikh and Batra (2016; ICCV 2017, IJCV
+  2019), [ARXIV-1610.02391](https://arxiv.org/abs/1610.02391). **The referent behind both halves of
+  [SOTA-430](../practices.d/SOTA-430.md)'s verdict table** — GradCAM, which passes the randomization
+  test, and Guided GradCAM, which fails it, are both defined here, and the
+  second is *defined as the pointwise product of the first with guided
+  backpropagation*. Grad-CAM reads one layer: gradients of the class logit into
+  the last conv feature maps, global-average-pooled into per-channel weights.
+  Also carried: a 2016 human study in which **guided backprop, the
+  best-looking method, comes last of four** — 44.44% against Deconvolution's
+  53.33% — a number its authors did not gloss until v4 in December 2019,
+  fourteen months after [LIT-713](LIT-713.md) made the same point another way.
+---
+
+<!-- inactive-ok-file: SOTA-430 — Proposed, and the practice this paper supplies the referent for: it is cited as the document whose two verdict rows needed a subject, not as advice being relied on. -->
+<!-- inactive-ok-file: THEORY-113 — Proposed, and named only in the list of documents that carried a verdict about GradCAM before this paper was held. Counting a citing site is not leaning on the account; the account itself covers a family this paper's methods are not in. -->
+
+# LIT-tmp367ex: Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization
+
+Selvaraju, Cogswell, Das, Vedantam, Parikh and Batra (2016) —
+[ARXIV-1610.02391](https://arxiv.org/abs/1610.02391)
+
+## Key takeaways
+
+- **Grad-CAM, defined, in §3.** Take the gradient of the class score `y^c`
+  *before the softmax* with respect to the feature maps `A^k` of a
+  convolutional layer, global-average-pool it over the spatial dimensions to
+  get one weight per channel, combine the forward maps with those weights, and
+  ReLU the result:
+
+      α_k^c = (1/Z) Σ_i Σ_j ∂y^c/∂A_ij^k        L^c = ReLU( Σ_k α_k^c A^k )
+
+  The ReLU is there "because we are only interested in the features that have a
+  positive influence on the class of interest"; removing it costs 15.3 points
+  of top-1 localization error (Table 3, 74.98 against 59.65). The output is at
+  feature-map resolution — **14×14** for the last conv layer of VGG-16 — and
+  the paper reports that maps get "progressively worse as we move to earlier
+  convolutional layers".
+
+- **Guided Grad-CAM is a pointwise product, not a new method (§3.2).** Grad-CAM
+  "lacks the ability to highlight fine-grained details like pixel-space
+  gradient visualization methods", so the authors upsample the 14×14 map
+  bilinearly to input resolution and multiply it element-wise by a guided
+  backpropagation ([LIT-727](LIT-727.md)) map. Substituting the deconvnet
+  ([LIT-728](LIT-728.md)) "gives similar results", with more artifacts.
+  **Every pixel of fine structure in a Guided Grad-CAM image comes from the
+  guided backprop factor**; the Grad-CAM factor contributes a coarse envelope.
+
+- **Grad-CAM generalizes CAM, with a proof (§3.1).** For an architecture whose
+  head is global average pooling into one linear layer, `α_k^c` equals the
+  class-feature weight `w_k^c` up to the `1/Z` that normalization removes. So
+  Grad-CAM is CAM without the architecture change CAM requires — and CAM's
+  retraining costs 2.98 points of top-1 classification accuracy (Table 1)
+  while Grad-CAM costs none.
+
+- **The prettier method is the less discriminative one — measured in 2016.**
+  90 image-category pairs from PASCAL VOC 2007 val with exactly two annotated
+  categories, 9 ratings each from Amazon Mechanical Turk workers (v4 says 43;
+  v1 gives no count), asked which of the two categories a visualization
+  depicts:
+
+  | visualization | human classification accuracy |
+  | --- | --- |
+  | Guided Backpropagation | 44.44% |
+  | Deconvolution | 53.33% |
+  | Deconvolution Grad-CAM | 60.37% |
+  | Guided Grad-CAM | **61.23%** |
+
+  **Guided backprop, the method the field found most convincing to look at,
+  is last.** The gloss the authors eventually put on it is worth the version
+  numbers: *"Interestingly, our results indicate that Deconvolution is more
+  class-discriminative than Guided Backpropagation (53.33% vs. 44.44%),
+  although Guided Backpropagation is more aesthetically pleasing. To the best
+  of our knowledge, our evaluations are the first to quantify this subtle
+  difference."*
+
+- **Faithfulness, by the paper's own measures, is modest.** The reference is
+  an occlusion map — the rectified drop in class score when a patch is masked —
+  and the measure is rank correlation with it, averaged over 2510 PASCAL VOC
+  2007 val images. In v4: Grad-CAM 0.254, Guided Grad-CAM 0.261, c-MWP 0.220,
+  CAM 0.208, Guided Backprop 0.168. In v1 only the two-way comparison is there,
+  Guided Grad-CAM 0.261 against Guided Backprop 0.168. On VQA, Grad-CAM against
+  human attention maps over 1374 question-image pairs is **0.136** (v1), which
+  v1 calls "statistically higher than chance or random attention maps (zero
+  correlation)". Word-level pointing accuracy against COCO segmentations for
+  caption words is **30.0%** (v4). **These are the numbers behind
+  [SOTA-430](../practices.d/SOTA-430.md)'s sentence that passing the randomization test is not a
+  certificate**: the method the practice names as passing agrees with its own
+  chosen references at rank correlations between 0.14 and 0.26.
+
+- **Localization, where the numbers are strong.** ILSVRC-15 val top-1
+  localization error, VGG-16: Grad-CAM 56.51 against CAM 57.20, Simonyan
+  backprop 61.12 and c-MWP 70.92 — with classification error unchanged at
+  30.38 because nothing was retrained. Weakly-supervised segmentation: swapping
+  CAM seeds for Grad-CAM seeds in SEC raises PASCAL VOC 2012 IoU from 44.6 to
+  49.6. Modified pointing game with a rejection option: 70.58% against c-MWP's
+  60.30%.
+
+- **The modified-ReLU backward passes cost Grad-CAM accuracy (Table 3).**
+  Substituting the two rules the record holds as [LIT-727](LIT-727.md)'s and
+  [LIT-728](LIT-728.md)'s into Grad-CAM's own backward pass, on ILSVRC-15 val
+  top-1 localization error over 10 crops:
+
+  | Grad-CAM variant | top-1 loc error |
+  | --- | --- |
+  | actual gradients | 59.65 |
+  | Guided ReLU | 59.14 |
+  | absolute gradients | 58.19 |
+  | GMP instead of GAP | 59.96 |
+  | **Deconv ReLU** | **83.95** |
+
+  Guided ReLU localizes marginally better and is reported to lose
+  class-discriminativeness (Fig. 16); Deconv ReLU loses 24 points, which the
+  authors read as evidence that "negative gradients also carry important
+  information for class-discriminativeness".
+
+- **A worked debugging case with a downstream number (§6.3).** A VGG-16
+  finetuned on search-engine images for doctor-versus-nurse reached good
+  validation accuracy and 82% on a gender-balanced test set. Grad-CAM showed it
+  reading face and hairstyle. The search results were 78% men for "doctor" and
+  93% women for "nurse"; rebalancing the training set at constant size took
+  test accuracy to **90%**.
+
+- **Applicability beyond classification (§8).** Grad-CAM needs only a
+  differentiable `y^c`, so it runs on captioning (neuraltalk2, no attention
+  mechanism) and VQA without architectural change. Against DenseCap boxes the
+  inside-versus-outside mean activation ratio is 3.27 ± 0.18 for Grad-CAM and
+  6.38 ± 0.99 for Guided Grad-CAM, against 1.0 for a uniform map.
+
+- **What the authors call robustness (§6.2) is worth reading twice.** An
+  adversarial image drives VGG-16 to p > 0.9999 on "airliner" while "boxer"
+  falls to 1.1e-20; Grad-CAM asked for "boxer" still localizes the dog. The
+  paper reads this as Grad-CAM being "fairly robust to adversarial noise". It
+  is a map for a *requested* class rather than the predicted one, and Fig. 7
+  shows the map does change with the class requested — so this is not the
+  class-insensitivity [THEORY-115](../theory.d/THEORY-115.md) describes. Whether a map that barely
+  moves when the model's output is destroyed counts as robust or as
+  uninformative depends on what you wanted it for, and the paper does not ask.
+
+## Standing in the anthology
+
+**Eight live documents cited this paper before the record held it**, which is
+the fourth time this cluster has found that shape — a paper used as an
+instrument or an authority, repeatedly, with no referent. [LIT-563](LIT-563.md)
+adapts Grad-CAM to ask what FID looks at; [LIT-713](LIT-713.md), [LIT-724](LIT-724.md),
+[LIT-727](LIT-727.md), [LIT-729](LIT-729.md), [NOTE-365](../notes.d/NOTE-365.md), [SOTA-430](../practices.d/SOTA-430.md) and
+[THEORY-113](../theory.d/THEORY-113.md) each carry a verdict about GradCAM or Guided GradCAM.
+
+**It closes two of the four referents [NOTE-365](../notes.d/NOTE-365.md) named as missing**,
+because GradCAM and Guided GradCAM are one paper. Only the plain gradient
+(Simonyan, Vedaldi and Zisserman, `1312.6034`) is still unheld.
+
+**The verdict table's two rows are one construction.** [SOTA-430](../practices.d/SOTA-430.md) reports
+GradCAM as passing the parameter-randomization test and Guided GradCAM as
+failing it, from [LIT-713](LIT-713.md)'s curves. §3.2 says why they can differ:
+Guided GradCAM *is* Grad-CAM multiplied by guided backprop, so the composite
+inherits whatever the guided backprop factor does at the resolution a reader
+looks at. [LIT-713](LIT-713.md) states the construction too, in one clause — "for pixel
+level granularity GradCAM, can be combined with Guided Backpropagation through
+an element-wise product" — and neither paper draws the consequence, so **no
+theory is filed for it**. The derivation is short enough to state in the
+practice's prose and it is not an argument anybody published.
+
+**A citation that does not resolve where it looks like it does.**
+[LIT-713](LIT-713.md)'s bibliography cites GradCAM as Selvaraju et al., *"Grad-cam:
+Why did you say that?"*, [ARXIV-1611.07450](https://arxiv.org/abs/1611.07450) — the November 2016
+workshop note, not this paper. Same method, same group, different document;
+the author order differs too. This note is filed for `1610.02391` because that
+is the version carrying the evidence: the workshop note is 3,000 words, it has
+Guided Grad-CAM's 61.23% against Guided Backprop's 44.44% but **not
+Deconvolution's 53.33%** — so not the row that makes the finding above a
+finding — and none of Table 3's ablations or §4's localization numbers. It is
+also the id every downstream document means when it says "Grad-CAM".
+
+**The measurement is 2016 and the sentence reading it is 2019.** Table 2's four
+numbers, including Deconvolution's 53.33% beating Guided Backprop's 44.44%, are
+in arXiv v1, 7 October 2016. The sentence quoted above — the one that says the
+prettier method is the less discriminative one, and claims priority for
+quantifying it — appears in **v4, 3 December 2019**. It is not in v1, v2
+(30 December 2016) or v3 (21 March 2017), each of which was checked. Adebayo
+et al. is October 2018. So the authors held the number for three years and two
+months, and wrote down what it meant fourteen months after the paper that made
+the point famous made it by another route. **[SOTA-430](../practices.d/SOTA-430.md)'s negative half
+had a number behind it two years before the practice's source existed, and
+nobody had said so** — including, until v4, the people who measured it.
+
+**What this paper is not evidence for.** It is the method's own authors
+comparing it against alternatives, so its rankings are not
+[ADR-011](../decisions.d/ADR-011.md) comparisons for the purpose of recommending Grad-CAM over
+anything. Two results survive that discount because they cut against the
+authors' interest or are orthogonal to it: Deconvolution beating Guided
+Backprop (neither is theirs), and Grad-CAM's own agreement numbers being low
+in absolute terms.
+
+## Limitations
+
+- **One layer, coarse.** The map is a function of the last conv layer's
+  activations and the gradients into them, at that layer's resolution. The
+  paper reports earlier layers give worse localizations and does not quantify
+  it.
+- **No ground-truth faithfulness.** Every faithfulness number is agreement
+  with another proxy — occlusion maps, human attention, bounding boxes — and
+  the paper says outright that "there exists a trade-off between the
+  interpretability and faithfulness of a visualization" without measuring
+  against a known dependence. This is exactly the gap [SOTA-430](../practices.d/SOTA-430.md)'s
+  `promote_when` asks somebody to close.
+- **Human studies on two networks.** VGG-16 and AlexNet, PASCAL VOC 2007, 43
+  and 54 workers. No confidence intervals on Table 2.
+- **The version read is v4 (December 2019), and the note says so wherever it
+  matters.** Every claim this note dates to 2016 was checked against the v1
+  PDF, and the version each number comes from is marked where v1 and v4 differ.
+  Table 2's four accuracies and all of Table 3's ablation figures are in v1;
+  the localization table (56.51, 57.20, CAM's 2.98-point classification cost),
+  the segmentation IoUs, the pointing game, the doctor/nurse section, the
+  DenseCap ratios and the five-way occlusion comparison are not. What each
+  earlier version contained was read from the v1, v2 and v3 PDFs rather than
+  inferred from the version dates.

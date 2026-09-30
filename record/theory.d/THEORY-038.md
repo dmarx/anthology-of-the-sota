@@ -54,6 +54,12 @@ it exponentially smaller. Or let the model write its intermediate results
 into the context and read them back, which is what chain of thought is — and
 one layer plus `k` such steps suffices.
 
+The first of those is what [[explains::SOTA-277]] acts on. Its advice to spend
+a fixed decoder budget on layers rather than width for a sequential
+composition is this account read as a budget: each layer buys one round of
+forwarding, and width substitutes only by carrying enough bits per position to
+shortcut rounds, at an exponentially worse rate.
+
 ## What was actually shown
 
 An unconditional lower bound, which is the part that could not have been

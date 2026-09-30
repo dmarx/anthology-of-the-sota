@@ -94,7 +94,7 @@ mixture of experts", the question is open as
 [#17](https://github.com/dmarx/anthology-of-the-sota/issues/17), and this
 document does not settle it.
 
-That practice has since been filed: this one [[extends::SOTA-150]], which
+That practice has since been filed: this one extends [[extends::SOTA-150]], which
 recommends making the feed-forward layers a sparse mixture of experts once
 the model is compute-bound, and is the rule that only exists once that one is
 followed. The auxiliary balancing loss it replaces is the one that came with

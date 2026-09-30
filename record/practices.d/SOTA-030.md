@@ -30,7 +30,7 @@ Partitioning the parameters as well takes the per-rank cost to 16Ψ/N — a
 reduction that is linear in the number of ranks, with no floor. That is the
 stage that puts a model on a cluster that could not otherwise hold it.
 
-It [[extends::SOTA-029]] and is only reached through it: stage 3 keeps the
+It extends [[extends::SOTA-029]] and is only reached through it: stage 3 keeps the
 partitioned gradients and optimizer states of stage 2 and partitions the
 parameters on top, so the free reduction from that stage is already taken
 before this one charges for communication.

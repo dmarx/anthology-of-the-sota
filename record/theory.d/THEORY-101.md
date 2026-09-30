@@ -76,6 +76,12 @@ correlation consistent with it, which is the strongest form of evidence a
 mechanistic account of this kind can have, and it is why the status is
 `Active` on one paper.
 
+That intervention is [[explains::SOTA-400]], and this account is why it
+works: register tokens come from no patch, so they are scratch space the
+model can use without overwriting redundant background patches. It also
+says why the practice buys nothing below ViT-Large, where there is no spare
+capacity to find.
+
 **The measurements point the same way from four independent directions** —
 input-space similarity, two local probes, a global probe, and three sweeps over
 depth, training time and model size.

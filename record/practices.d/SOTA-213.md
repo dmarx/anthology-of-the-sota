@@ -69,6 +69,11 @@ which is what makes this a practice rather than an observation:
 - **Steps multiply it.** Which is why the temptation is to stop early, and
   why that turns out to be wrong.
 
+The drift is there only because [[extends::SOTA-154]]'s recommendation is being followed:
+fine-tuning with evolution strategies instead of policy-gradient RL is what
+moves the model orders of magnitude further than GRPO does, and that practice
+names this one as a condition on running it rather than a reason to retire it.
+
 ## Do not stop early — the dip usually recovers
 
 This is the correction, and it is the reason to read the sources rather than

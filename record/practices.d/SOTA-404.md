@@ -93,6 +93,11 @@ or slightly improves**. The loss was not carrying the result; the input
 construction was, and the original ablation could not have told them apart
 because it only ever moved one knob that held both.
 
+That makes Liu et al. both this practice's evidence and its first statement:
+[[source::LIT-671]]<!-- ref::introduced_by: LIT-671 --> found the confound,
+separated it into four conditions and stated the corrective — but only for
+NSP. The general rule is this document's, not theirs.
+
 **The independent case, in another literature.** [LIT-667](../literature.d/LIT-667.md)<!-- ref::source: LIT-667 --> reports the same
 defect on grokking. Four papers establish that the transition is controlled by
 dataset size; every one of them varies the *training fraction of a fixed

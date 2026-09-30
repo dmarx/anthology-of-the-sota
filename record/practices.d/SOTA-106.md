@@ -38,7 +38,7 @@ Not the algorithm. FlashAttention-2 computes the same exact attention by the
 same tiled, never-materialised route ([SOTA-087](SOTA-087.md)); what it rewrites is how the
 work is divided.
 
-So it [[extends::SOTA-085]] as a later version of the same kernel, not a
+So it extends [[extends::SOTA-085]] as a later version of the same kernel, not a
 rival to it: the exactness that lets that practice be unconditional, and the
 condition in its title about hardware and compiled paths, carry over
 unchanged, and this practice only says which version to run.

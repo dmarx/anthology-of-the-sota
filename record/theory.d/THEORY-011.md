@@ -29,6 +29,13 @@ summary: >-
 
 # THEORY-011: Skip connections make a deep network trainable by smoothing the loss surface, not by making it more expressive
 
+## Source
+
+Li et al. (2017), [[source::LIT-014]] — ARXIV-1712.09913. The paper reports
+that loss landscapes go from nearly convex to highly chaotic once a network is
+deep enough, and that skip connections prevent that transition; its filter
+normalization is what makes the with-and-without plots comparable at all.
+
 ## The claim
 
 Plot the loss of a deep network over a two-dimensional slice of parameter

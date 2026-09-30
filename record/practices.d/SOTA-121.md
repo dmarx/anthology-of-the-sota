@@ -76,6 +76,13 @@ leaving embeddings and the head to AdamW. It is a blog post rather than a
 paper, which is why the record holds it under a `url:` ([ADR-009](../decisions.d/ADR-009.md)), and it is
 what every practice in this line modifies.
 
+Muon is one member of the class [[extends::SOTA-165]] recommends: an
+optimizer that multiplies the gradient by a matrix, here by orthogonalising
+the momentum, rather than scaling each coordinate on its own. That practice
+is the claim that membership of the class is what buys the speed-up; this one
+picks the member the record has production evidence for, and has no case
+without it.
+
 Muon as modified in [ARXIV-2502.16982](https://arxiv.org/abs/2502.16982) ([LIT-122](../literature.d/LIT-122.md)<!-- ref::source: LIT-122 -->): weight decay applied to the
 orthogonalised update, and the update's RMS rescaled to match what AdamW
 would produce, so that the learning rate and weight decay tuned for AdamW

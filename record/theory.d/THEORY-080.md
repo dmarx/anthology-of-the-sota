@@ -54,6 +54,12 @@ the evidence is Bansal et al. (2022), [LIT-553](../literature.d/LIT-553.md)<!-- 
 
 ## The account
 
+It replaces [[corrects::THEORY-079]], which read Cold Diffusion as showing
+that noise is incidental and any degradation, iterated, generates. This
+account keeps the restore-and-redegrade procedure and gives noise the job
+that one denied it: keeping the reverse process where the forward process
+went.
+
 **Two degradations, two effects.** Noise hides information randomly and
 isotropically, and its forward marginals cover the space between data
 points. Blur deletes high frequencies deterministically, and its forward

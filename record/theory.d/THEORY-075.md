@@ -70,6 +70,13 @@ coefficient** — is the quantity that does the work:
 and the second derivatives live entirely in `c`. They do not enter `λ`, they do
 not enter the criterion, and they do not enter the generalisation rate.
 
+That is the whole of what [[explains::SOTA-325]] turns on. It says to measure
+the local learning coefficient rather than curvature once training loss has
+saturated; this account is why the choice is between an exponent and its
+prefactor rather than between two estimates of one thing, and why `λ` can
+still separate runs whose training losses agree — it sets the `λ/n`
+generalisation rate, which the loss at the optimum does not.
+
 ## Why `Active`
 
 **The mathematics is Watanabe's and is not in dispute.** What was in dispute is

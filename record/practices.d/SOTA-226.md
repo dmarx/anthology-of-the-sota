@@ -51,7 +51,7 @@ Do not use a ring, which is the easy default and the one this replaces.
 
 This is the second choice, and it only exists once the first has been made:
 having dropped the parameter server for gossip because the network is the
-bottleneck [[extends::SOTA-225]], the graph is the thing that practice
+bottleneck [SOTA-225](SOTA-225.md)<!-- ref::extends: SOTA-225 -->, the graph is the thing that practice
 explicitly leaves open, and its own source is where the ring's weakness is
 measured.
 

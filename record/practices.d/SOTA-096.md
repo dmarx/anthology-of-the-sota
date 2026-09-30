@@ -39,7 +39,7 @@ explained_by:
 
 Hoffmann et al. (2022), [LIT-068](../literature.d/LIT-068.md)<!-- ref::introduced_by: LIT-068 --><!-- ref::source: LIT-068 --> — [ARXIV-2203.15556](https://arxiv.org/abs/2203.15556).
 
-Porian et al. (2024), [[source::LIT-690]] — ARXIV-2406.19146. An independent,
+Porian et al. (2024), [LIT-690](../literature.d/LIT-690.md)<!-- ref::source: LIT-690 --> — [ARXIV-2406.19146](https://arxiv.org/abs/2406.19146). An independent,
 direct measurement of the equal-proportion allocation: once Kaplan's
 discrepancies are removed it lands on an exponent of 0.497 from 5M to 901M on
 two datasets, within 15% of Chinchilla's model size at Chinchilla's compute.

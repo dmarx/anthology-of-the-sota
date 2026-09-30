@@ -67,7 +67,7 @@ ordinary version buys memory with compute at a real cost in step time; here
 the recomputation is close to free, because the thing it avoids is the
 expensive one.
 
-It is still that trade's attention case [[extends::SOTA-249]]: the general
+It is still that trade's attention case [SOTA-249](SOTA-249.md)<!-- ref::extends: SOTA-249 -->: the general
 rule — store activations at a subset of checkpoints and recompute the rest in
 the backward pass when activation memory is what binds — is the instruction,
 and this practice applies it to the layer where it pays best and, with

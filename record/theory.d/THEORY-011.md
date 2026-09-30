@@ -31,7 +31,7 @@ summary: >-
 
 ## Source
 
-Li et al. (2017), [[source::LIT-014]] — ARXIV-1712.09913. The paper reports
+Li et al. (2017), [LIT-014](../literature.d/LIT-014.md)<!-- ref::source: LIT-014 --> — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). The paper reports
 that loss landscapes go from nearly convex to highly chaotic once a network is
 deep enough, and that skip connections prevent that transition; its filter
 normalization is what makes the with-and-without plots comparable at all.

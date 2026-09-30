@@ -167,7 +167,7 @@ which all four papers hold and none of them disputes.
 
 ## Sequence and siblings
 
-This is one branch of [[extends::SOTA-169]], the trunk practice of widening
+This is one branch of [SOTA-169](SOTA-169.md)<!-- ref::extends: SOTA-169 -->, the trunk practice of widening <!-- inactive-ok: SOTA-169 — Proposed, and the trunk this practice extends; the citation is the relation's explanation -->
 the residual stream and constraining the mixing: it keeps that practice's
 width and names the doubly-stochastic manifold as the constraint. Everything
 disputed here is the choice of constraint, so the trunk stands whatever this

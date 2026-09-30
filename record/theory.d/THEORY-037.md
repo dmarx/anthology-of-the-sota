@@ -50,7 +50,7 @@ In ordinary analysis that cross term is second order and negligible. Under
 muP it is not, and the reason is what muP is for. The maximal-update
 principle deliberately makes each update as large as stability permits, so
 `ΔW` is not small — it is exactly as large as the constraint allows. That
-principle is [[extends::THEORY-076]]'s account of width, where µP is the
+principle is [THEORY-076](THEORY-076.md)<!-- ref::extends: THEORY-076 -->'s account of width, where µP is the
 parametrization under which every layer's update contributes `Θ(1)`; this
 account takes the same bookkeeping and asks what it demands along depth. A
 product of two such terms is therefore the same order as the terms

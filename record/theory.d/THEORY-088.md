@@ -128,7 +128,7 @@ objective buys.
 ## Standing
 
 `Proposed` rather than `Active`: plausible, directionally useful, resting on
-evidence that is suggestive rather than settling. SOTA-373 is `Active`
+evidence that is suggestive rather than settling. [SOTA-373](../practices.d/SOTA-373.md)<!-- ref::explains: SOTA-373 --> is `Active`
 regardless, because the *practice* — derive the ratio from your signal rather
 than inheriting it — is right even if this explanation of why is wrong. That
 split is `ADR-031`'s, and this is a cleaner instance than usual: a wrong
@@ -137,6 +137,6 @@ an interpolator can solve your masked task" is an empirical procedure that
 needs no account of density at all.
 
 That prediction has now been tested. `LIT-672` damaged this account and
-left SOTA-373 standing: the practice was amended twice in one day and its
+left [SOTA-373](../practices.d/SOTA-373.md) standing: the practice was amended twice in one day and its
 recommendation never changed, while the explanation behind it lost a term. The
 split was doing exactly what it was built for.

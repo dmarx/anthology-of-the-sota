@@ -70,7 +70,7 @@ coefficient** — is the quantity that does the work:
 and the second derivatives live entirely in `c`. They do not enter `λ`, they do
 not enter the criterion, and they do not enter the generalisation rate.
 
-That is the whole of what [[explains::SOTA-325]] turns on. It says to measure
+That is the whole of what [SOTA-325](../practices.d/SOTA-325.md)<!-- ref::explains: SOTA-325 --> turns on. It says to measure <!-- inactive-ok: SOTA-325 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
 the local learning coefficient rather than curvature once training loss has
 saturated; this account is why the choice is between an exponent and its
 prefactor rather than between two estimates of one thing, and why `λ` can

@@ -55,7 +55,7 @@ they can steer through, and it scores as well as a natural one.
 
 ## What it explains
 
-The practice is [[explains::SOTA-309]], and this account explains both of
+The practice is [SOTA-309](../practices.d/SOTA-309.md)<!-- ref::explains: SOTA-309 -->, and this account explains both of <!-- inactive-ok: SOTA-309 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
 its instructions: why the score ranks interfaces with no labels, and why the
 horizon `Δ` has to be chosen deliberately, since it sets which states the
 operator's input is being credited with determining.

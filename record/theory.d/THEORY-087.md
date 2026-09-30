@@ -92,7 +92,7 @@ regularization generally leads to a trivial solution where all samples
 collapse into an unique representation". **A mechanism introduced to prevent
 collapse has a setting at which it causes it.**
 
-**DINOv2 declines to choose.** Oquab et al. (2023) [[source::LIT-599]] is a
+**DINOv2 declines to choose.** Oquab et al. (2023) [LIT-599](../literature.d/LIT-599.md)<!-- ref::source: LIT-599 --> is a
 source here not for an account but for its ablation table. Faced with five accounts, the strongest
 open-source model in this lineage stacks them: a **KoLeo** regulariser
 spreading features within a batch, in the spirit of the variance family,
@@ -113,7 +113,7 @@ and is a reasonable thing to do. It is not evidence for any account.
 - All four produce useful representations.
 
 So this document disputes the explanations, not the results — the
-distinction `ADR-031` exists for. SOTA-365 is `Active` while this is
+distinction `ADR-031` exists for. [SOTA-365](../practices.d/SOTA-365.md)<!-- ref::explains: SOTA-365 --> is `Active` while this is
 `Deferred`, and that pairing is deliberate.
 
 The status is `Deferred` rather than `Proposed` on the vocabulary's own

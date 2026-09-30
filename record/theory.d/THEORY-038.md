@@ -54,7 +54,7 @@ it exponentially smaller. Or let the model write its intermediate results
 into the context and read them back, which is what chain of thought is — and
 one layer plus `k` such steps suffices.
 
-The first of those is what [[explains::SOTA-277]] acts on. Its advice to spend
+The first of those is what [SOTA-277](../practices.d/SOTA-277.md)<!-- ref::explains: SOTA-277 --> acts on. Its advice to spend <!-- inactive-ok: SOTA-277 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
 a fixed decoder budget on layers rather than width for a sequential
 composition is this account read as a budget: each layer buys one round of
 forwarding, and width substitutes only by carrying enough bits per position to

@@ -73,7 +73,7 @@ gain, and RMSNorm ([SOTA-182](SOTA-182.md)) — now effectively universal — ke
 while dropping the *centering*, which is the opposite half from the one this
 paper calls expendable. Two papers, one conclusion each, pointing in
 different directions about which part of LayerNorm is load-bearing.
-The other paper is [[contested_by::LIT-023]], RMSNorm's source, the same year:
+The other paper is [LIT-023](../literature.d/LIT-023.md)<!-- ref::contested_by: LIT-023 -->, RMSNorm's source, the same year:
 it hypothesises that re-centering is dispensable and keeps the re-scaling,
 gain included, which disputes this practice's claim that the gain is the part
 to remove.

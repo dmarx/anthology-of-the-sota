@@ -38,7 +38,7 @@ implementations:
 
 ## Source
 
-Siméoni et al. (2025), LIT-663.
+Siméoni et al. (2025), [LIT-663](../literature.d/LIT-663.md)<!-- ref::introduced_by: LIT-663 --><!-- ref::source: LIT-663 -->.
 
 ## The problem this exists for, which is the part to read first
 

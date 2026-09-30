@@ -84,11 +84,11 @@ it raises the metric explanation itself and declines it for two stated
 reasons, one of which is still standing.
 
 The grokking line, for the third check: Power et al. (2022),
-LIT-538, which named the phenomenon and measured its data dependence;
-Liu, Michaud and Tegmark (2022), LIT-540, which induces it outside
+[LIT-538](../literature.d/LIT-538.md)<!-- ref::source: LIT-538 -->, which named the phenomenon and measured its data dependence;
+Liu, Michaud and Tegmark (2022), [LIT-540](../literature.d/LIT-540.md)<!-- ref::source: LIT-540 -->, which induces it outside
 algorithmic data and eliminates it on demand; Varma et al. (2023),
-LIT-539, which predicts and then observes ungrokking; and Kumar et al.
-(2023), LIT-537, which adds the kernel-alignment axis.
+[LIT-539](../literature.d/LIT-539.md)<!-- ref::source: LIT-539 -->, which predicts and then observes ungrokking; and Kumar et al.
+(2023), [LIT-537](../literature.d/LIT-537.md)<!-- ref::source: LIT-537 -->, which adds the kernel-alignment axis.
 
 ## The claim
 
@@ -118,19 +118,19 @@ made when it argued the metric explanation could not cover them.
 generalization long after memorization — is the most-cited mysterious training
 phenomenon of its period, and it is a regime a run is put into, not a fact
 about a task. `LIT-085` finds it **disappears above roughly 60% data** on
-modular addition; LIT-538, the paper that named it, already reported
+modular addition; [LIT-538](../literature.d/LIT-538.md), the paper that named it, already reported
 that converged accuracy is flat across a range of training fractions while the
 *time* to reach it explodes as the fraction falls. But data fraction is one
-axis of three. LIT-540 **induces** grokking on MNIST, IMDb and QM9 by
+axis of three. [LIT-540](../literature.d/LIT-540.md) **induces** grokking on MNIST, IMDb and QM9 by
 shrinking the training set *and* inflating the initialization scale — at
 standard initialization there is none on any of them — and **eliminates** it on
-algorithmic data by constraining the weight norm. LIT-537 adds a third
+algorithmic data by constraining the weight norm. [LIT-537](../literature.d/LIT-537.md) adds a third
 axis, the alignment between the initial neural tangent kernel and the target,
 which is computable on any task as centered kernel alignment. The full account
 is `THEORY-069`.
 
 So the check is not "was the data starved" but **move the regime and see
-whether the discontinuity moves with it**. LIT-539 supplies the sharpest
+whether the discontinuity moves with it**. [LIT-539](../literature.d/LIT-539.md) supplies the sharpest
 version: *ungrokking*, in which a network that has already grokked regresses to
 near-random test accuracy when trained on a smaller dataset, at a sharp
 threshold, with an endpoint independent of the weight decay. A capability a
@@ -170,10 +170,10 @@ with weight decay `λ = 1` — the authors call the generalisation to emergence 
 proof of concept" and it is nonetheless how the paper is usually cited.
 
 The grokking sources are narrow in a way the third check has to carry.
-LIT-538 and LIT-539 are algorithmic tasks throughout — modular
-arithmetic and binary operation tables — and LIT-539's circuits are
+[LIT-538](../literature.d/LIT-538.md) and [LIT-539](../literature.d/LIT-539.md) are algorithmic tasks throughout — modular
+arithmetic and binary operation tables — and [LIT-539](../literature.d/LIT-539.md)'s circuits are
 identified against a known trigonometric construction that no realistic task
-has. LIT-540's results outside algorithmic data change **two** things at
+has. [LIT-540](../literature.d/LIT-540.md)'s results outside algorithmic data change **two** things at
 once, a much smaller training set and an inflated initialization, so the axes
 are established jointly rather than separately, and every such signal is
 described by its authors as weaker than on algorithmic data. What the check

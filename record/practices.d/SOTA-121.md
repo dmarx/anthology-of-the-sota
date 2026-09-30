@@ -76,7 +76,7 @@ leaving embeddings and the head to AdamW. It is a blog post rather than a
 paper, which is why the record holds it under a `url:` ([ADR-009](../decisions.d/ADR-009.md)), and it is
 what every practice in this line modifies.
 
-Muon is one member of the class [[extends::SOTA-165]] recommends: an
+Muon is one member of the class [SOTA-165](SOTA-165.md)<!-- ref::extends: SOTA-165 --> recommends: an
 optimizer that multiplies the gradient by a matrix, here by orthogonalising
 the momentum, rather than scaling each coordinate on its own. That practice
 is the claim that membership of the class is what buys the speed-up; this one

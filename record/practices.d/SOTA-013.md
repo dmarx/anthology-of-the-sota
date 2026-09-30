@@ -64,7 +64,7 @@ more useful one.
 
 ## Conditions
 
-Loss scaling has no reason to exist apart from [[extends::SOTA-016]]: it is
+Loss scaling has no reason to exist apart from [SOTA-016](SOTA-016.md)<!-- ref::extends: SOTA-016 -->: it is
 the piece of [LIT-011](../literature.d/LIT-011.md)'s recipe that makes running the forward and backward
 passes in FP16 safe, by keeping gradients that would otherwise flush to zero
 inside the format's range. Follow that practice and this one comes with it;

@@ -42,8 +42,8 @@ summary: >-
 
 ## Source
 
-Kumar, Bordelon, Gershman and Pehlevan (2023), [[source::LIT-537]] —
-ARXIV-2310.06110, ICLR 2024. The account, both knobs, the three conditions
+Kumar, Bordelon, Gershman and Pehlevan (2023), [LIT-537](../literature.d/LIT-537.md)<!-- ref::source: LIT-537 --> —
+[ARXIV-2310.06110](https://arxiv.org/abs/2310.06110), ICLR 2024. The account, both knobs, the three conditions
 and the no-weight-decay counterexample below are all this paper's.
 
 ## The account

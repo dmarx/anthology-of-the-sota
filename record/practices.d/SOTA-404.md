@@ -94,7 +94,7 @@ construction was, and the original ablation could not have told them apart
 because it only ever moved one knob that held both.
 
 That makes Liu et al. both this practice's evidence and its first statement:
-[[source::LIT-671]]<!-- ref::introduced_by: LIT-671 --> found the confound,
+[LIT-671](../literature.d/LIT-671.md)<!-- ref::source: LIT-671 --><!-- ref::introduced_by: LIT-671 --> found the confound,
 separated it into four conditions and stated the corrective — but only for
 NSP. The general rule is this document's, not theirs.
 

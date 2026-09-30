@@ -41,7 +41,7 @@ summary: >-
 
 ## Source
 
-Chen et al. (2023), [[source::LIT-544]] — ARXIV-2310.06301. The distinction
+Chen et al. (2023), [LIT-544](../literature.d/LIT-544.md)<!-- ref::source: LIT-544 --> — [ARXIV-2310.06301](https://arxiv.org/abs/2310.06301). The distinction
 between the two kinds of transition, the `5 → 6` prediction and its
 observation in the Toy Model of Superposition, and the Bayesian Antecedent
 Hypothesis are all this paper's.
@@ -113,7 +113,7 @@ classification the paper declines to call exhaustive.
 down the weight norm), `THEORY-071` (norm moving from a memorising circuit
 to a more efficient one) and `THEORY-070` (leaving the lazy regime) are
 all claims about a trajectory, all `Proposed`, and none is general.
-`THEORY-073`'s stages are dynamical too. Everything THEORY-075
+`THEORY-073`'s stages are dynamical too. Everything [THEORY-075](THEORY-075.md)<!-- ref::extends: THEORY-075 -->
 supplies is Bayesian.
 
 Without this document the record would hold two literatures that use the same

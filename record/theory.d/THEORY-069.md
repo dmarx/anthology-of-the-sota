@@ -61,7 +61,7 @@ not a property of algorithmic datasets, and it is not a fundamental feature of
 overparameterized learning. Three separate knobs have been shown to control it,
 each demonstrated in both directions.
 
-This is what the third check in [[explains::SOTA-200]] rests on. Because the
+This is what the third check in [SOTA-200](../practices.d/SOTA-200.md)<!-- ref::explains: SOTA-200 --> rests on. Because the
 discontinuity is set by the regime rather than the task, moving any of these
 knobs and watching whether the jump moves with it tests whether a capability
 was acquired at a scale or produced by the run's conditions.

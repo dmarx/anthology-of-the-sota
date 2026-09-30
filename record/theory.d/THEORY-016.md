@@ -75,7 +75,7 @@ agrees.
 
 ## What this does not say
 
-**What it explains in [[explains::SOTA-240]] is the test-time half.** That
+**What it explains in [SOTA-240](../practices.d/SOTA-240.md)<!-- ref::explains: SOTA-240 --> is the test-time half.** That
 practice counts dropout's cost in training time alone, and this account is
 why inference adds none: the weight-scaled forward pass is the ensemble
 average, not an approximation to sampling one. The practice's condition,

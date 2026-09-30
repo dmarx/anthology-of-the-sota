@@ -78,7 +78,7 @@ mention rather than a citation.
 ## Consequences
 
 - `luria link --fix` wrote 1346 statements beside citations the prose already
-  made. The pin moved from luria 0.31.0 to 0.33.0 in the same contribution.
+  made. The pin moved from luria 0.31.0 to 0.33.1 in the same contribution (0.33.0 crashed on the DOI-labelled links in five notes; 0.33.1 is its fix).
 - 23 relations were cited only as backticked mentions: sources in recent
   practices and theories, and a few `explains`. They became citations.
 - The remaining 58 had no citation at all, and each got a sentence written

@@ -89,7 +89,7 @@ all — "high-order solvers may be unsuitable for large guidance scales, thus we
 mainly consider `k = 2`".
 
 So this account is the reason behind two of the three choices in the guided
-sampling practice [[explains::SOTA-410]]: stop at order 2, because
+sampling practice [SOTA-410](../practices.d/SOTA-410.md)<!-- ref::explains: SOTA-410 -->: stop at order 2, because
 sensitivity to the amplified derivatives grows with order, and go multistep,
 because a smaller effective step size keeps the solver inside its narrowed
 radius. The third choice, the data-prediction parameterization, answers the

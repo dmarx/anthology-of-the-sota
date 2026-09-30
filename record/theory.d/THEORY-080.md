@@ -54,7 +54,7 @@ the evidence is Bansal et al. (2022), [LIT-553](../literature.d/LIT-553.md)<!-- 
 
 ## The account
 
-It replaces [[corrects::THEORY-079]], which read Cold Diffusion as showing
+It replaces [THEORY-079](THEORY-079.md)<!-- ref::corrects: THEORY-079 -->, which read Cold Diffusion as showing <!-- inactive-ok: THEORY-079 — Rejected, and the account this one corrects; the citation is the correction's explanation -->
 that noise is incidental and any degradation, iterated, generates. This
 account keeps the restore-and-redegrade procedure and gives noise the job
 that one denied it: keeping the reverse process where the forward process

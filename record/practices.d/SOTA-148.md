@@ -89,16 +89,14 @@ parameters and 200B tokens, and [LIT-160](../literature.d/LIT-160.md)<!-- ref::s
 ## What this presumes, and does not argue
 
 It presumes you are training a mixture-of-experts. **It is not a
-recommendation to train one** — the record has no practice saying "use a
-mixture of experts", the question is open as
-[#17](https://github.com/dmarx/anthology-of-the-sota/issues/17), and this
-document does not settle it.
-
-That practice has since been filed: this one extends [[extends::SOTA-150]], which
-recommends making the feed-forward layers a sparse mixture of experts once
-the model is compute-bound; this is the rule that only exists once that one is
-followed. The auxiliary balancing loss it replaces is the one that came with
-the sparsely-gated layer at the start of that practice's line.
+recommendation to train one.** When this was filed the record had no practice
+saying "use a mixture of experts" (the question was open as
+[#17](https://github.com/dmarx/anthology-of-the-sota/issues/17)). That
+practice has since been filed, and this one extends [SOTA-150](SOTA-150.md)<!-- ref::extends: SOTA-150 -->,
+which recommends making the feed-forward layers a sparse mixture of experts
+once the model is compute-bound. This is the rule that only exists once that
+one is followed. The auxiliary balancing loss it replaces is the one that came
+with the sparsely-gated layer at the start of that practice's line.
 
 That separation is what makes this fileable on its own.
 [LIT-171](../literature.d/LIT-171.md)'s own standing section worried the opposite way — that a

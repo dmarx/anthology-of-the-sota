@@ -77,11 +77,11 @@ step most often skipped when this literature is summarized.
 
 That corollary is the reason behind two methodological practices. It
 explains why an expressivity claim and an emergence claim have to be tested
-on different models [[explains::SOTA-323]]: a construction or a
+on different models [SOTA-323](../practices.d/SOTA-323.md)<!-- ref::explains: SOTA-323 -->: a construction or a <!-- inactive-ok: SOTA-323 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
 purpose-trained model shows only what weights *exist*, and says nothing about
 what the pretraining objective produces. And it explains why rival accounts
 of the algorithm must be separated by convergence rate and conditioning
-rather than by output fit [[explains::SOTA-324]]: when the architecture
+rather than by output fit [SOTA-324](../practices.d/SOTA-324.md)<!-- ref::explains: SOTA-324 -->: when the architecture <!-- inactive-ok: SOTA-324 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
 admits gradient descent, ridge and Newton alike and all converge to the same
 answer, only a property on which they must differ can say which one a
 trained model runs.

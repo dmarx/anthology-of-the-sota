@@ -98,7 +98,7 @@ degenerate in a specific, provable way, and the spectral update is the one
 that does not care.
 
 That is an account of the positive half of the practice of preconditioning
-with matrices rather than entrywise [[explains::SOTA-165]]: why a member of
+with matrices rather than entrywise [SOTA-165](../practices.d/SOTA-165.md)<!-- ref::explains: SOTA-165 -->: why a member of
 the class that acts on the whole matrix, Muon's spectral step, should beat a
 per-coordinate one on transformers. It explains the Muon branch, not the
 whole class, and it sits awkwardly with that practice's one trend — the

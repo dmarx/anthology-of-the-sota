@@ -62,7 +62,7 @@ explains:
 
 ## Source
 
-Varma et al. (2023), [[source::LIT-539]] — ARXIV-2309.02390. The account is
+Varma et al. (2023), [LIT-539](../literature.d/LIT-539.md)<!-- ref::source: LIT-539 --> — [ARXIV-2309.02390](https://arxiv.org/abs/2309.02390). The account is
 this paper's: the three ingredients, the dataset-size argument for `D_crit`,
 and the ungrokking and semi-grokking predictions it derived and then observed.
 
@@ -115,7 +115,7 @@ whatever makes memorising dearer while leaving generalising alone — which is
 the training fraction in modular addition and the derived-fact ratio in a
 knowledge graph. Both are the same quantity seen through different data.
 
-This is the part of [[explains::SOTA-402]] the account explains: why added
+This is the part of [SOTA-402](../practices.d/SOTA-402.md)<!-- ref::explains: SOTA-402 --> the account explains: why added <!-- inactive-ok: SOTA-402 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
 data should go to derived facts rather than to more atomic ones. Raising `φ`
 makes `C_mem` store more while `C_gen`'s burden stays bounded, so the crossover
 comes sooner; adding atomic and derived facts together at fixed `φ` scales both

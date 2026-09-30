@@ -73,7 +73,7 @@ memory and nothing else about the model. That is unusual among the
 efficiency practices in this record and is why the title can be so
 unconditional.
 
-It is the case [[extends::SOTA-083]] keeps once its framing is corrected:
+It is the case [SOTA-083](SOTA-083.md)<!-- ref::extends: SOTA-083 --> keeps once its framing is corrected:
 an operation no compiler covers well, hand-written because the algorithm is
 different and not just the schedule. That practice's rule — hand-write the
 few critical operations where generated code falls materially short — is

@@ -51,6 +51,14 @@ will tolerate. A practitioner who halves the learning rate does not get the
 same landscape traversed more carefully — they get a different, sharper
 landscape, traversed at the new threshold.
 
+Both halves of [SOTA-272](../practices.d/SOTA-272.md) follow from this. Its prohibition on <!-- inactive-ok: SOTA-272 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
+setting the step size from a curvature bound is the direction of causation:
+a rule that anneals `eta` to the measured sharpness is chasing a quantity
+the step size is producing. Its instruction to tolerate a loss that bounces
+over short timescales is the instability half: at the equilibrium, the
+oscillation along the direction of greatest curvature is what keeps a fixed
+step size viable.
+
 ## What was actually shown
 
 Full-batch gradient descent, run at a range of step sizes across several

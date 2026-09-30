@@ -102,7 +102,7 @@ explained_by:
 ## Source
 
 Xiong et al. (2020), [LIT-114](../literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745), the mean-field
-analysis. Nguyen and Salazar (2019), `LIT-651`, the first systematic
+analysis. Nguyen and Salazar (2019), [LIT-651](../literature.d/LIT-651.md), the first systematic
 evaluation, four months earlier.
 
 <!-- inactive-ok-block: ADR-029 — Superseded by ADR-030, cited beside it
@@ -222,7 +222,7 @@ repeats the received view.**
 ## The regime where post-norm wins, and how much of the rest is initialisation
 
 Everything above is about stability and about low-resource or deep settings.
-`LIT-651` ran the comparison at **high resource** — base Transformer,
+[LIT-651](../literature.d/LIT-651.md) ran the comparison at **high resource** — base Transformer,
 WMT'14 English-German, `newstest2014`, tokenized BLEU — and the result goes
 the other way:
 

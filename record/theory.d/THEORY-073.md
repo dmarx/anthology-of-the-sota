@@ -41,7 +41,18 @@ summary: >-
      says the exponent moves in structured ways during training. Same
      mechanism, applied further. -->
 
+## Source
+
+Hoogland et al. (2024), [LIT-543](../literature.d/LIT-543.md) — [ARXIV-2402.02364](https://arxiv.org/abs/2402.02364). The method —
+estimate the local learning coefficient through training and take critical
+points of its curve as stage boundaries — and both case studies below are
+this paper's.
+
 ## The account
+
+`λ` is [THEORY-075](THEORY-075.md)'s exponent: that account establishes it as the
+right measure of effective complexity, as a statement about the Bayesian
+posterior, and this one tracks it through a training run.
 
 If `λ` measures how degenerate the loss landscape is around the current
 parameters, then watching `λ` through training watches something the loss does

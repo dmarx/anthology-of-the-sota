@@ -38,6 +38,10 @@ So the optimizer keeps an FP32 master copy, applies the update there, and
 casts down to FP16 for the next forward pass. The FP16 weights are a
 derived, disposable view of the FP32 ones.
 
+This practice exists only because [SOTA-016](SOTA-016.md) is followed: it is the
+second copy that makes FP16 forward and backward passes safe, and a run whose
+passes are already in FP32 has no rounded-away updates for it to rescue.
+
 ## Cost
 
 An extra 4 bytes per parameter on top of the 2-byte FP16 copy. With Adam's

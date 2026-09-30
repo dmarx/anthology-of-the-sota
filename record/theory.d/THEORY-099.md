@@ -42,7 +42,7 @@ summary: >-
 
 ## Source
 
-Wang, Zhang, Li, Du, Du, Pang, Yang, Hong and Tan (2025), `LIT-654`.
+Wang, Zhang, Li, Du, Du, Pang, Yang, Hong and Tan (2025), [LIT-654](../literature.d/LIT-654.md).
 
 ## The account, in three steps
 
@@ -76,6 +76,13 @@ grows.
 over `W_V` and `W_out` over `W_in`. This is a claim about where a spectral
 optimizer is worth its cost, and it is the first such claim in this record that
 names blocks rather than conditions.
+
+That is the part of [SOTA-121](../practices.d/SOTA-121.md) this account is about. The
+practice records the block ablation — VO and FFN nearly recover full Muon, QK
+contributes little, though the two are the same size — and this account says
+why: those are the associative-memory blocks. It says nothing about the
+decoupled weight decay or the AdamW-matched update RMS in that practice's
+title, which are there to carry AdamW's hyperparameters over.
 
 **That the gain is data-distribution-dependent.** On a balanced corpus the
 account predicts the advantage should shrink. Nobody has run that, and it is

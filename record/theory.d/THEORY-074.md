@@ -39,6 +39,13 @@ summary: >-
 <!-- inactive-ok-file: THEORY-070, THEORY-071, THEORY-072 — all Proposed, and named here as the three rival grokking mechanisms, every one of them a claim about a trajectory. That they are Proposed is the point being made when they are cited. -->
 <!-- inactive-ok-file: THEORY-073 — Proposed, filed in this same contribution as the stagewise account this one cautions; new, not retired. -->
 
+## Source
+
+Chen et al. (2023), [LIT-544](../literature.d/LIT-544.md) — [ARXIV-2310.06301](https://arxiv.org/abs/2310.06301). The distinction
+between the two kinds of transition, the `5 → 6` prediction and its
+observation in the Toy Model of Superposition, and the Bayesian Antecedent
+Hypothesis are all this paper's.
+
 ## The account
 
 Two things in this literature are called phase transitions and they are indexed
@@ -106,7 +113,7 @@ classification the paper declines to call exhaustive.
 down the weight norm), `THEORY-071` (norm moving from a memorising circuit
 to a more efficient one) and `THEORY-070` (leaving the lazy regime) are
 all claims about a trajectory, all `Proposed`, and none is general.
-`THEORY-073`'s stages are dynamical too. Everything `THEORY-075`
+`THEORY-073`'s stages are dynamical too. Everything [THEORY-075](THEORY-075.md)
 supplies is Bayesian.
 
 Without this document the record would hold two literatures that use the same

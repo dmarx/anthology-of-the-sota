@@ -68,6 +68,12 @@ adaptation does not degrade gracefully — perplexity goes to numbers
 comparable to an untrained model, and a question at position 3000 becomes
 unanswerable even from evidence at position 2900.
 
+That is the gap in [SOTA-063](SOTA-063.md): it recommends RoPE and says
+nothing about the window, and a RoPE model asked for more context than it
+was trained on is exactly where the encoding fails. This practice is the step
+such a model takes, and it means nothing for a model that did not follow
+that one.
+
 The remedy is to change the position indices rather than the weights. Scale
 them so the longest relative distance the model is asked about is one it
 already saw in pretraining, then fine-tune briefly to settle. Under 1000

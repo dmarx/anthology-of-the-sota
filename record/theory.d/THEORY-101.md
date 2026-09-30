@@ -30,7 +30,7 @@ summary: >-
 
 ## Source
 
-Darcet, Oquab, Mairal and Bojanowski (2023), `LIT-662`.
+Darcet, Oquab, Mairal and Bojanowski (2023), [LIT-662](../literature.d/LIT-662.md).
 
 ## The claim
 
@@ -75,6 +75,12 @@ That is a successful intervention derived from the hypothesis rather than a
 correlation consistent with it, which is the strongest form of evidence a
 mechanistic account of this kind can have, and it is why the status is
 `Active` on one paper.
+
+That intervention is [SOTA-400](../practices.d/SOTA-400.md), and this account is why it
+works: register tokens come from no patch, so they are scratch space the
+model can use without overwriting redundant background patches. It also
+says why the practice buys nothing below ViT-Large, where there is no spare
+capacity to find.
 
 **The measurements point the same way from four independent directions** —
 input-space similarity, two local probes, a global probe, and three sweeps over

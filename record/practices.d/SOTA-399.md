@@ -36,7 +36,7 @@ explained_by:
 
 ## Source
 
-Ahmadian et al. (2023), `LIT-656`.
+Ahmadian et al. (2023), [LIT-656](../literature.d/LIT-656.md).
 
 ## What to do
 
@@ -67,7 +67,7 @@ hyperparameter you were setting anyway.
 **The two halves of the trade are measurable at different times**, which is
 the awkward part. The cost of a higher weight decay or no dropout is paid
 during pre-training and shows up in the model you get; the benefit is paid at
-serving time, months later. `LIT-656` reports comparable pre-quantization
+serving time, months later. [LIT-656](../literature.d/LIT-656.md) reports comparable pre-quantization
 quality across its variants on its evaluations, which is the evidence that the
 cost is small — on one architecture family, on those evaluations.
 
@@ -96,6 +96,6 @@ worth having.
 
 ## Known implementations
 
-- None the record can name. `LIT-656`'s own 410M–52B models are the only
+- None the record can name. [LIT-656](../literature.d/LIT-656.md)'s own 410M–52B models are the only
   ones trained this way on purpose; BLOOM-176B's relative robustness is
   consistent with it (bf16) and was not a quantization decision.

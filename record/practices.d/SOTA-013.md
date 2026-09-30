@@ -64,6 +64,12 @@ more useful one.
 
 ## Conditions
 
+Loss scaling has no reason to exist apart from [SOTA-016](SOTA-016.md): it is
+the piece of [LIT-011](../literature.d/LIT-011.md)'s recipe that makes running the forward and backward
+passes in FP16 safe, by keeping gradients that would otherwise flush to zero
+inside the format's range. Follow that practice and this one comes with it;
+drop it, and there is nothing left for the scaler to do.
+
 The practice is conditional on the format, not on the model: it exists to
 work around FP16's exponent range, and bfloat16 removes the need for it
 altogether. A run in bf16 that still carries a loss scaler is carrying a

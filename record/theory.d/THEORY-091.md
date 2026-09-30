@@ -55,6 +55,11 @@ they can steer through, and it scores as well as a natural one.
 
 ## What it explains
 
+The practice is [SOTA-309](../practices.d/SOTA-309.md), and this account explains both of <!-- inactive-ok: SOTA-309 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
+its instructions: why the score ranks interfaces with no labels, and why the
+horizon `Δ` has to be chosen deliberately, since it sets which states the
+operator's input is being credited with determining.
+
 - **The bimodal convergence.** Over 12 users, learned cursor interfaces
   settle on no perturbation (`θ ≈ 0`) and on exact inversion (`θ ≈ π`).
   Both are consistent. Only one is intuitive. The score cannot prefer it,

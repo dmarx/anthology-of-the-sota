@@ -52,7 +52,10 @@ of local-update training is that it saves by communicating *rarely*. This says
 a large part of it is communicating *less*: an outer optimizer that has to be
 given consistent inner state is a much more expensive scheme at the same
 interval. That distinction is invisible from the practice this one extends,
-which states the structure without saying what crosses the boundary.
+[SOTA-155](SOTA-155.md), which states the structure — many inner steps, an <!-- inactive-ok: SOTA-155 — Proposed, and the practice this one extends; the citation is the relation's explanation -->
+outer momentum optimizer over the deltas — without saying what crosses the
+boundary. This is a design decision inside that scheme, and has no meaning
+outside it.
 
 **It reproduces outside the lab that published it.** [LIT-252](../literature.d/LIT-252.md) is an
 independent open implementation trained across continents at 90–95% compute

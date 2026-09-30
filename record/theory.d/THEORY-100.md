@@ -41,7 +41,7 @@ summary: >-
 ## Source
 
 Ahmadian, Dash, Chen, Venkitesh, Gou, Blunsom, Üstün and Hooker (2023),
-`LIT-656`.
+[LIT-656](../literature.d/LIT-656.md).
 
 ## The claim
 
@@ -58,7 +58,7 @@ pre-norm block it sets the spread of the activations entering the projections,
 its standard deviation is larger in the variants that degrade, and settings
 that keep weights small keep it small.
 
-The consequence for a practitioner is `SOTA-399`. The consequence for
+The consequence for a practitioner is [SOTA-399](../practices.d/SOTA-399.md). The consequence for
 the record is that a cliff attributed to scale had a second variable nobody
 was holding fixed — **the two public models the story was measured on differ
 in training dtype**, and one of them has its LayerNorm gains hardcoded.

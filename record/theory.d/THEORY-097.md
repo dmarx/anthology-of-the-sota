@@ -67,8 +67,8 @@ motivated by softmax saturation in low-resource translation, with no
 reference to associative memory. The theory arrives at the same prescription
 from a different direction and afterwards.
 
-That prescription is `SOTA-192`, which this account is declared to explain.
-The declaration is worth stating carefully: `SOTA-192` recommends the
+That prescription is [SOTA-192](../practices.d/SOTA-192.md), which this account is declared to explain.
+The declaration is worth stating carefully: [SOTA-192](../practices.d/SOTA-192.md) recommends the
 normalization for a reason this theory does not give — bounding logits that
 would otherwise saturate the softmax and kill the gradient — and that reason
 is better evidenced. What this account adds is why the *temperature* is a

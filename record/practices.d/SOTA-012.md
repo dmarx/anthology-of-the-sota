@@ -81,7 +81,7 @@ reparameterisation-invariant. There is a second objection it does not answer,
 and the record now holds it: **curvature may be the wrong quantity even when
 measured perfectly.**
 
-`LIT-541` makes the case. Neural networks are *singular* statistical
+[LIT-541](../literature.d/LIT-541.md) makes the case. Neural networks are *singular* statistical
 models — many parameters give the same function, so the set of optima is a
 variety rather than a point and the loss is not locally quadratic. In
 Watanabe's volume law `V(ε) ∝ ε^λ`, the quantity that enters the model-selection

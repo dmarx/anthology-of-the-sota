@@ -75,6 +75,13 @@ agrees.
 
 ## What this does not say
 
+**What it explains in [SOTA-240](../practices.d/SOTA-240.md) is the test-time half.** That
+practice counts dropout's cost in training time alone, and this account is
+why inference adds none: the weight-scaled forward pass is the ensemble
+average, not an approximation to sampling one. The practice's condition,
+whether the model can memorize what it is shown, is about training, and this
+account does not reach it.
+
 **It does not say dropout works because it is an ensemble.** This account
 explains why the *test-time procedure* is cheap and legitimate. It says
 nothing about why training under multiplicative noise generalizes better,

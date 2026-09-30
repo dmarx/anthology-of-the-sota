@@ -49,6 +49,11 @@ implementations:
 
 Rombach et al. (2022), [LIT-062](../literature.d/LIT-062.md) — [ARXIV-2112.10752](https://arxiv.org/abs/2112.10752), CVPR 2022.
 
+Ho et al. (2020), [LIT-036](../literature.d/LIT-036.md) — [ARXIV-2006.11239](https://arxiv.org/abs/2006.11239). Its §4.3 measures
+this practice's premise — that most of a pixel-space model's codelength
+describes imperceptible detail — two years before Rombach et al. act on it as
+an assumption.
+
 Split the problem in two. First train an autoencoder that compresses the
 signal to a lower-dimensional latent, keeping what a human would notice and
 discarding what they would not. Then train the generative model *in that

@@ -77,7 +77,11 @@ the mixture, and removing commonly used filters.
 
 [SOTA-124](SOTA-124.md) says the quantity governing safe repetition is not epoch *count*
 but epoch *size* relative to the model's memorization window, and on that
-basis Falcon-H1-Tiny repeated SFT sources a hundred times or more. This
+basis Falcon-H1-Tiny repeated SFT sources a hundred times or more. The
+dispute is published in the Falcon-H1-Tiny write-up [LIT-119](../literature.d/LIT-119.md),
+which reports Tulu3 and similar sources repeated 100 or more times across
+800 GT with no visible artefacts — a direct counterexample to a four-epoch
+ceiling, offered as implicit confirmation rather than a measurement. This
 practice says four, and it has 400 runs behind it where that one has one
 figure and an argument its own authors call early.
 

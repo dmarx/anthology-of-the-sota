@@ -75,6 +75,17 @@ proof that a transformer *can* implement algorithm `A` is therefore evidence
 about the architecture, not about any particular trained model — and it is the
 step most often skipped when this literature is summarized.
 
+That corollary is the reason behind two methodological practices. It
+explains why an expressivity claim and an emergence claim have to be tested
+on different models [SOTA-323](../practices.d/SOTA-323.md): a construction or a <!-- inactive-ok: SOTA-323 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
+purpose-trained model shows only what weights *exist*, and says nothing about
+what the pretraining objective produces. And it explains why rival accounts
+of the algorithm must be separated by convergence rate and conditioning
+rather than by output fit [SOTA-324](../practices.d/SOTA-324.md): when the architecture <!-- inactive-ok: SOTA-324 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
+admits gradient descent, ridge and Newton alike and all converge to the same
+answer, only a property on which they must differ can say which one a
+trained model runs.
+
 This is why the record files the identification separately, as
 [THEORY-068](THEORY-068.md), and why that document is `Rejected` while this one is
 `Active`. [ADR-031](../decisions.d/ADR-031.md): an account can be wrong about the reason while the thing it

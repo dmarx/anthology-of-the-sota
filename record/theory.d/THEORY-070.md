@@ -40,6 +40,12 @@ summary: >-
 <!-- inactive-ok-file: THEORY-071 — Proposed, and named here as one of the three rival mechanisms this cluster holds; Proposed is the record's judgement on its scope, which is the point being made when it is cited. -->
 <!-- inactive-ok-file: THEORY-072 — Proposed, and named here as one of the three rival mechanisms this cluster holds; Proposed is the record's judgement on its scope, which is the point being made when it is cited. -->
 
+## Source
+
+Kumar, Bordelon, Gershman and Pehlevan (2023), [LIT-537](../literature.d/LIT-537.md) —
+[ARXIV-2310.06110](https://arxiv.org/abs/2310.06110), ICLR 2024. The account, both knobs, the three conditions
+and the no-weight-decay counterexample below are all this paper's.
+
 ## The account
 
 In the lazy regime a network is well approximated by its linearisation around

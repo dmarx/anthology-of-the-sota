@@ -60,6 +60,12 @@ explains:
 <!-- inactive-ok-file: THEORY-070 — Proposed, and named here as one of the three rival mechanisms this cluster holds; Proposed is the record's judgement on its scope, which is the point being made when it is cited. -->
 <!-- inactive-ok-file: THEORY-032 — Proposed, and cited only for the shape of its v3 amendment: how its promotion condition failed, which is a fact about this record's editing rather than about the account. -->
 
+## Source
+
+Varma et al. (2023), [LIT-539](../literature.d/LIT-539.md) — [ARXIV-2309.02390](https://arxiv.org/abs/2309.02390). The account is
+this paper's: the three ingredients, the dataset-size argument for `D_crit`,
+and the ungrokking and semi-grokking predictions it derived and then observed.
+
 ## The account
 
 Three ingredients, claimed sufficient:
@@ -108,6 +114,14 @@ So this document's claim is now stated by what the crossover is indexed on —
 whatever makes memorising dearer while leaving generalising alone — which is
 the training fraction in modular addition and the derived-fact ratio in a
 knowledge graph. Both are the same quantity seen through different data.
+
+This is the part of [SOTA-402](../practices.d/SOTA-402.md) the account explains: why added <!-- inactive-ok: SOTA-402 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
+data should go to derived facts rather than to more atomic ones. Raising `φ`
+makes `C_mem` store more while `C_gen`'s burden stays bounded, so the crossover
+comes sooner; adding atomic and derived facts together at fixed `φ` scales both
+circuits' costs and leaves the ratio the regularizer sees where it was. It does
+not explain that practice's other limit — that no `φ` buys out-of-distribution
+composition — and it needs the weight decay that practice's setup includes.
 
 One caution, because it cuts the other way too: the reverse inference is not
 available. Modular addition has no atomic/inferred split, so `φ` is not defined

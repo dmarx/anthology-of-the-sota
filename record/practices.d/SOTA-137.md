@@ -38,6 +38,11 @@ laterally between streams. The motivation is the seesaw between vanishing
 gradients and representation collapse that fixed residual variants cannot
 escape; the paper shows consistent pretraining gains on dense and MoE models.
 
+This is the free-mixing branch of [SOTA-169](SOTA-169.md), the trunk that states <!-- inactive-ok: SOTA-169 — Proposed, and the trunk this practice extends; the citation is the relation's explanation -->
+what the whole line agrees on — widen the residual stream into several
+streams. The width is the part of this practice that survived; the free
+mixing is the part the trunk's constraint was written to rule out.
+
 ## Why this is superseded
 
 <!-- inactive-ok-block: SOTA-136 — the successor this retirement names -->

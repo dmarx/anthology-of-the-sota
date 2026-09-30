@@ -167,6 +167,12 @@ which all four papers hold and none of them disputes.
 
 ## Sequence and siblings
 
+This is one branch of [SOTA-169](SOTA-169.md), the trunk practice of widening <!-- inactive-ok: SOTA-169 — Proposed, and the trunk this practice extends; the citation is the relation's explanation -->
+the residual stream and constraining the mixing: it keeps that practice's
+width and names the doubly-stochastic manifold as the constraint. Everything
+disputed here is the choice of constraint, so the trunk stands whatever this
+branch's standing becomes, and this branch cannot stand without it.
+
 <!-- inactive-ok: SOTA-137 — a Superseded practice, named as the predecessor in the chain -->
 Residual connection → hyper-connections ([SOTA-137](SOTA-137.md), retired) → this. The sibling
 variation is Attention Residuals ([SOTA-133](SOTA-133.md), now Active): where mHC widens the stream and

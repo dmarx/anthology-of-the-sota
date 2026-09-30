@@ -97,6 +97,14 @@ network rather than in the norm the optimizer descends in. Transformers are
 degenerate in a specific, provable way, and the spectral update is the one
 that does not care.
 
+That is an account of the positive half of the practice of preconditioning
+with matrices rather than entrywise [SOTA-165](../practices.d/SOTA-165.md): why a member of
+the class that acts on the whole matrix, Muon's spectral step, should beat a
+per-coordinate one on transformers. It explains the Muon branch, not the
+whole class, and it sits awkwardly with that practice's one trend — the
+bound predicts an advantage widening with dimension, where the measured
+advantage shrinks from 1.4× at 0.1B to 1.1× at 1.2B.
+
 ## What was actually shown
 
 The inequality is derived, not measured — it is a comparison of *guaranteed*

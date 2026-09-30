@@ -69,3 +69,11 @@ prompt at inference:
   editors average 38–66, and in-context editing beats them
 - **Directional facts**, on GPT-J and GPT-NeoX-class models with ungated
   MLPs
+
+The dispute is [LIT-577](../literature.d/LIT-577.md) (RippleEdits), and it is not about
+whether MEMIT writes the edited triple — it does — but about whether that
+amounts to updating knowledge. Across 5K edits, MEMIT and the other weight
+editors leave the edit's implications (logical consequences, multi-hop
+compositions) mostly unchanged, with logical generalization as low as
+5.5–7.0 on popular subjects, and simply stating the new fact in the prompt
+scores better overall.

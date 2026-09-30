@@ -1,0 +1,100 @@
+---
+status: Active
+title: 'Relations a reader cannot weigh without prose must be explained in the body'
+version: 1
+tags:
+- record
+date: '2026-09-30'
+summary: >-
+  Ten reference fields declare `explain: cited` (luria 0.33.2): a practice's
+  and a theory's evidence, a practice's origin, a theory's `explains`, every
+  `corrects`, `contested_by`, and `extends` on practices and theories. Each
+  code they hold must be cited somewhere in the body. Rejected: `explain:
+  stated` (a `ref::` statement beside every citation: 1346 of them, restating
+  frontmatter next to sentences that already explain), every field (converse
+  back-references, `compared_against` and `NOTE.paper` are frontmatter facts,
+  ~700 findings of noise), and `LIT.extends` for now (84 uncited, follow-up).
+---
+
+# ADR-tmp7icjh: Relations a reader cannot weigh without prose must be explained in the body
+
+## Context
+
+A relation in frontmatter says *that* two documents are related, never *how*.
+`source: LIT-541` on a practice tells a reader which paper to blame and
+nothing about what the paper showed; `corrects: LIT-045` says a paper was
+wrong without saying about what. Until luria 0.33 nothing checked that the
+prose ever said it, and measuring showed the gap was real but narrow: with
+every reference field opted in on a scratch copy, practices already cited 575
+of their 590 sources in the body, while notes cited 40 of the 378 papers they
+are readings of.
+
+luria 0.33 added the check (`explain:` on a reference), and 0.33.2 gave it two
+strengths. `cited` (also spelled `true`) asks that the body cite each code the
+field holds somewhere, and takes the citation as serving the relation. `stated`
+also asks for a `ref::` statement of the relation beside each citation, which
+`luria link --fix` writes. At either strength a code the body never cites is
+`unexplained-relations`, which only a person can fix, by writing the sentence;
+a statement's `— reason` also counts as an explanation.
+
+## Decision
+
+`explain: cited` on ten fields, chosen by one test: **would a reader need
+prose to weigh this relation?**
+
+- **Evidence and origin.** `SOTA.source`, `SOTA.introduced_by`,
+  `THEORY.source`. A recommendation is only as good as what its paper showed,
+  and the body is where that is said.
+- **The explanation link.** `THEORY.explains`. Which part of the practice the
+  account explains is the claim itself.
+- **Disputes.** `corrects` on all three schemes and `SOTA.contested_by`. A
+  correction that does not say what was wrong cannot be checked.
+- **Lineage of claims.** `extends` on practices and theories: what the later
+  claim could not stand without.
+
+The explanation must be prose a reader sees. An HTML comment explaining a
+relation does not count, and neither does a code in backticks, which is a
+mention rather than a citation.
+
+## Alternatives considered
+
+- **`explain: stated`.** Tried first, when it was the only strength. The fixer
+  wrote 1346 statements into 554 files, each beside a citation whose sentence
+  already said what the relation was: the statement restated the frontmatter
+  in a comment no reader sees. It found nothing `cited` does not; the finding
+  that mattered was the 81 relations the prose never mentioned, and that is
+  the same at both strengths. The statements were removed.
+- **Every reference field.** It measured at 974 unexplained relations. Most
+  are on fields whose meaning is complete in frontmatter:
+  - the converse back-references `luria link --fix` writes (`extended_by`,
+    `corrected_by`, `explained_by`), whose other end carries the prose;
+  - `compared_against`, a symmetric fact that somebody ran a comparison
+    (280 uncited);
+  - `NOTE.paper`, where the note *is* the reading (338 uncited).
+
+  Making each of those a finding teaches people to ignore the class.
+- **`LIT.extends` now.** It passes the test, but 84 notes would need a
+  sentence each, and a paper note's lineage is read less than a practice's.
+  Left for a follow-up rather than filled with thin sentences to clear a count.
+- **Acknowledging the uncited ones with `— reason` statements instead of
+  prose.** That is legitimate where the relation needs no more than a clause.
+  It was not the default here: a reason hidden in a comment is exactly the
+  invisible explanation this decision exists to end.
+- **Status quo.** Every relation stays unexplained until someone happens to
+  write about it. That is how 81 of them accumulated.
+
+## Consequences
+
+- The pin moved from luria 0.31.0 to 0.33.2 in the same contribution. (0.33.0
+  crashed on the DOI-labelled links in five notes; 0.33.1 fixed that, and
+  0.33.2 added the `cited` strength.)
+- 23 relations were cited only as backticked mentions: sources in recent
+  practices and theories, and a few `explains`. They became citations.
+<!-- inactive-ok-block: THEORY-032 SOTA-137 SOTA-169 — named as the two partial fits the new prose flags, not cited as advice -->
+- The remaining 58 had no citation at all, and each got a sentence written
+  from what the two documents say. None was found unsupported. Two are stated
+  as partial fits in their own prose: [THEORY-032](../theory.d/THEORY-032.md) explains only the Muon branch
+  of [SOTA-165](../practices.d/SOTA-165.md), and [SOTA-137](../practices.d/SOTA-137.md) inherits [SOTA-169](../practices.d/SOTA-169.md)'s widening but not its
+  constraint.
+- From now on, a new practice or theory that names a source it never
+  discusses fails nothing, but it is reported, and the report names the file.

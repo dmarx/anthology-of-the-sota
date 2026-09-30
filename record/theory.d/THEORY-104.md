@@ -88,6 +88,13 @@ reaches 9.10 at 20 evaluations, and the authors decline to go past order 2 at
 all — "high-order solvers may be unsuitable for large guidance scales, thus we
 mainly consider `k = 2`".
 
+So this account is the reason behind two of the three choices in the guided
+sampling practice [SOTA-410](../practices.d/SOTA-410.md): stop at order 2, because
+sensitivity to the amplified derivatives grows with order, and go multistep,
+because a smaller effective step size keeps the solver inside its narrowed
+radius. The third choice, the data-prediction parameterization, answers the
+boundedness problem below, not this one.
+
 ## What this does not say
 
 **The mechanism is argued, not measured.** The paper says "intuitively" and

@@ -40,6 +40,14 @@ summary: >-
 
 # SOTA-223: Do not keep the gossip topology static: sample a fresh random neighbourhood every round
 
+## Source
+
+Vos et al. (2023), [LIT-315](../literature.d/LIT-315.md) — [ARXIV-2310.01972](https://arxiv.org/abs/2310.01972).
+Epidemic Learning is this paper's algorithm, and it supplies both halves of
+the claim: the `O(n^3/s^2)` transient-iteration bound, with the uncoordinated
+local variant matching the coordinated one, and the 1.7× measurement against a
+static 7-regular graph at equal communication.
+
 ## What to do
 
 Each round, have every node independently sample `s` peers uniformly at random
@@ -52,6 +60,11 @@ Sample **locally** — each node picks its own peers with no coordination. The
 paper's other variant coordinates the draw so that the round's graph is
 exactly `s`-regular, and reports the difference as negligible in both theory
 and experiment, so the coordination is not worth its cost.
+
+This is the topology question that [SOTA-225](SOTA-225.md) leaves open. That practice
+says to drop the parameter server for gossip once the network is the
+bottleneck and explicitly does not choose the graph; this one answers it by
+not choosing one at all, and applies only once that move has been made.
 
 ## Why
 

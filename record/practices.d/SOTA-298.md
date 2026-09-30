@@ -49,7 +49,7 @@ summary: >-
 
 ## Source
 
-Corpus et al. (2025), [LIT-487](../literature.d/LIT-487.md) — [ARXIV-2511.13949](https://arxiv.org/abs/2511.13949) — read as
+Corpus et al. (2025), [LIT-487](../literature.d/LIT-487.md)<!-- ref::introduced_by: LIT-487 --><!-- ref::source: LIT-487 --> — [ARXIV-2511.13949](https://arxiv.org/abs/2511.13949) — read as
 [NOTE-236](../notes.d/NOTE-236.md).
 
 ## What to do

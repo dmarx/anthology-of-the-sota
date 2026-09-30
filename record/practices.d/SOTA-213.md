@@ -52,9 +52,9 @@ explained_by:
 
 ## Source
 
-Schweighofer et al. (2026), [LIT-238](../literature.d/LIT-238.md) — [ARXIV-2605.30148](https://arxiv.org/abs/2605.30148); Hoy et al.
-(2026), [LIT-235](../literature.d/LIT-235.md) — [ARXIV-2604.01499](https://arxiv.org/abs/2604.01499); Abdi et al. (2026),
-[LIT-237](../literature.d/LIT-237.md) — [ARXIV-2601.20861](https://arxiv.org/abs/2601.20861).
+Schweighofer et al. (2026), [LIT-238](../literature.d/LIT-238.md)<!-- ref::introduced_by: LIT-238 --><!-- ref::source: LIT-238 --> — [ARXIV-2605.30148](https://arxiv.org/abs/2605.30148); Hoy et al.
+(2026), [LIT-235](../literature.d/LIT-235.md)<!-- ref::source: LIT-235 --> — [ARXIV-2604.01499](https://arxiv.org/abs/2604.01499); Abdi et al. (2026),
+[LIT-237](../literature.d/LIT-237.md)<!-- ref::source: LIT-237 --> — [ARXIV-2601.20861](https://arxiv.org/abs/2601.20861).
 
 ## What is being controlled, and why it has a knob
 
@@ -117,7 +117,7 @@ This practice says drift is not controlled by stopping early. That is not the
 same as saying never stop early, and the record should not be read as
 conflating the two.
 
-[LIT-236](../literature.d/LIT-236.md) reports **rise-then-decay**: under fixed hyperparameters the
+[LIT-236](../literature.d/LIT-236.md)<!-- ref::source: LIT-236 --> reports **rise-then-decay**: under fixed hyperparameters the
 *target* reward improves, peaks, and then degrades — in GRPO as well as ES. Its
 account is the same geometry from the other side. Stiff, curvature-active
 directions relax fast and pay out early; the near-zero bulk relaxes slowly and

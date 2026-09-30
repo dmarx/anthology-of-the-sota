@@ -47,7 +47,7 @@ summary: >-
 ## Source
 
 Giapitzakis, Fountoulakis, Nichani and Lee (2025),
-[LIT-495](../literature.d/LIT-495.md) — read as [NOTE-244](../notes.d/NOTE-244.md).
+[LIT-495](../literature.d/LIT-495.md)<!-- ref::source: LIT-495 --> — read as [NOTE-244](../notes.d/NOTE-244.md).
 
 ## The account
 

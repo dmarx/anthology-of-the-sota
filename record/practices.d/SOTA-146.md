@@ -41,14 +41,14 @@ summary: >-
 
 # SOTA-146: Correct the GRPO objective before running it — the published form has three independently identified defects
 
-[SOTA-145](SOTA-145.md) is what everyone kept. This is what
+[SOTA-145](SOTA-145.md)<!-- ref::corrects: SOTA-145 --> is what everyone kept. This is what
 everyone changed, and they did not change the same thing.
 
 | paper | the defect | the fix |
 |---|---|---|
-| [LIT-167](../literature.d/LIT-167.md) | an optimization bias that inflates response length, **especially on incorrect outputs** | Dr. GRPO removes the bias; token efficiency improves at held accuracy |
-| [LIT-168](../literature.d/LIT-168.md) | clipping range and sampling behaviour at scale | decoupled clip and dynamic sampling; 50 points on AIME 2024 from a Qwen2.5-32B base |
-| [LIT-180](../literature.d/LIT-180.md) | the importance ratio defined per token | define it on sequence likelihood; clip, reward and optimise at sequence level |
+| [LIT-167](../literature.d/LIT-167.md)<!-- ref::introduced_by: LIT-167 --><!-- ref::source: LIT-167 --> | an optimization bias that inflates response length, **especially on incorrect outputs** | Dr. GRPO removes the bias; token efficiency improves at held accuracy |
+| [LIT-168](../literature.d/LIT-168.md)<!-- ref::source: LIT-168 --> | clipping range and sampling behaviour at scale | decoupled clip and dynamic sampling; 50 points on AIME 2024 from a Qwen2.5-32B base |
+| [LIT-180](../literature.d/LIT-180.md)<!-- ref::source: LIT-180 --> | the importance ratio defined per token | define it on sequence likelihood; clip, reward and optimise at sequence level |
 
 ## Why this is `Proposed` and not `Active`
 

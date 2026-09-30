@@ -39,7 +39,7 @@ summary: >-
 
 ## Source
 
-Gan and Isola (2026), [LIT-233](../literature.d/LIT-233.md).
+Gan and Isola (2026), [LIT-233](../literature.d/LIT-233.md)<!-- ref::source: LIT-233 -->.
 
 ## What was actually shown
 
@@ -85,7 +85,7 @@ is about pretraining rather than about LLMs.
 ## What this explains, and how much
 
 It is an account of why the gradient-free post-training line works at all.
-[SOTA-154](../practices.d/SOTA-154.md) recommends evolution strategies over policy-gradient RL on the
+[SOTA-154](../practices.d/SOTA-154.md)<!-- ref::explains: SOTA-154 --> recommends evolution strategies over policy-gradient RL on the
 evidence that it wins a tilted comparison; nothing in the record said *why* a
 method with no gradient should be able to find anything in a billion
 dimensions. This says what property of the search space makes it possible,
@@ -97,7 +97,7 @@ of it.
 <!-- inactive-ok-block: SOTA-212 — Proposed, filed from the same paper
      in this same change; this paragraph is about how far the two should be
      held together, which is what the citation is for -->
-For [SOTA-212](../practices.d/SOTA-212.md) the relation is tighter, because the practice is the
+For [SOTA-212](../practices.d/SOTA-212.md)<!-- ref::explains: SOTA-212 --> the relation is tighter, because the practice is the
 account's own probe. Density is what makes guessing land on anything;
 diversity is what makes majority-voting the survivors better than taking the
 best one. The practice's two halves are the theory's two measurements, which
@@ -105,7 +105,7 @@ is a reason to hold the practice no more firmly than the account.
 
 ## What an independent group has and has not confirmed
 
-Ba et al. ([LIT-230](../literature.d/LIT-230.md)) cite this account by name and test a consequence of
+Ba et al. ([LIT-230](../literature.d/LIT-230.md)<!-- ref::source: LIT-230 -->) cite this account by name and test a consequence of
 it. Their reasoning: if larger models hold more performance-preserving
 coordinate subsets, task-improving perturbations are denser around the
 pretrained weights, so **fewer search directions should suffice at larger

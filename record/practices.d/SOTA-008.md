@@ -38,12 +38,12 @@ compared_against:
 
 ## Source
 
-You et al. (2017), [LIT-009](../literature.d/LIT-009.md) — [ARXIV-1708.03888](https://arxiv.org/abs/1708.03888).
+You et al. (2017), [LIT-009](../literature.d/LIT-009.md)<!-- ref::source: LIT-009 --> — [ARXIV-1708.03888](https://arxiv.org/abs/1708.03888).
 
 
 ## Whose recipe this is
 
-Warmup is **Goyal et al.** ([LIT-007](../literature.d/LIT-007.md)). Linear scaling of the learning rate
+Warmup is **Goyal et al.** ([LIT-007](../literature.d/LIT-007.md)<!-- ref::introduced_by: LIT-007 --><!-- ref::source: LIT-007 -->). Linear scaling of the learning rate
 with batch size makes early optimization harder and networks "may diverge
 especially during the initial phase"; their fix is to start at a small safe
 rate and raise it to the target over the first steps. With that, they trained

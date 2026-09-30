@@ -44,7 +44,7 @@ summary: >-
 
 ## Source
 
-Bondarenko et al. (2023), [LIT-414](../literature.d/LIT-414.md) —
+Bondarenko et al. (2023), [LIT-414](../literature.d/LIT-414.md)<!-- ref::introduced_by: LIT-414 --><!-- ref::source: LIT-414 --> —
 [ARXIV-2306.12929](https://arxiv.org/abs/2306.12929), NeurIPS 2023.
 
 The reason it works is [THEORY-019](../theory.d/THEORY-019.md): the

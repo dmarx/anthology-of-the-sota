@@ -30,8 +30,8 @@ summary: >-
 
 <!-- inactive-ok-block: THEORY-001 — Rejected, and named here as the
      account this one replaces; that is what the citation is for. -->
-Santurkar, Tsipras, Ilyas and Madry (2018), [LIT-223](../literature.d/LIT-223.md). The account it replaces
-is [THEORY-001](THEORY-001.md), published with the technique itself in [LIT-002](../literature.d/LIT-002.md).
+Santurkar, Tsipras, Ilyas and Madry (2018), [LIT-223](../literature.d/LIT-223.md)<!-- ref::source: LIT-223 -->. The account it replaces
+is [THEORY-001](THEORY-001.md)<!-- ref::corrects: THEORY-001 -->, published with the technique itself in [LIT-002](../literature.d/LIT-002.md)<!-- ref::source: LIT-002 -->.
 
 ## What was actually shown
 
@@ -55,12 +55,12 @@ produce comparable smoothing and comparable gains.
 
 ## What this explains, and how much
 
-It is the mechanism under [SOTA-020](../practices.d/SOTA-020.md). Bjorck et al.'s claim is that permitting
+It is the mechanism under [SOTA-020](../practices.d/SOTA-020.md)<!-- ref::explains: SOTA-020 -->. Bjorck et al.'s claim is that permitting
 a much larger learning rate is BN's central benefit; this says *why* a larger
 rate becomes usable, and the two are the same finding approached from the
 measurement and from the surface.
 
-It bears on [SOTA-006](../practices.d/SOTA-006.md) more weakly and the difference is worth being explicit
+It bears on [SOTA-006](../practices.d/SOTA-006.md)<!-- ref::explains: SOTA-006 --> more weakly and the difference is worth being explicit
 about. That practice's argument for LayerNorm in sequence models is about
 cross-example dependence and inference-time statistics, and stands on its own
 without any of this. What the third result adds is the reassurance the

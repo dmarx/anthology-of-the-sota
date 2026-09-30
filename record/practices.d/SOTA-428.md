@@ -40,7 +40,7 @@ summary: >-
 
 ## Source
 
-Karras et al. (2023), [LIT-714](../literature.d/LIT-714.md) — [ARXIV-2312.02696](https://arxiv.org/abs/2312.02696), §3, §4 and Appendix
+Karras et al. (2023), [LIT-714](../literature.d/LIT-714.md)<!-- ref::introduced_by: LIT-714 --><!-- ref::source: LIT-714 --> — [ARXIV-2312.02696](https://arxiv.org/abs/2312.02696), §3, §4 and Appendix
 C; read as [NOTE-370](../notes.d/NOTE-370.md).
 
 ## What to do

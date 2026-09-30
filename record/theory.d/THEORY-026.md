@@ -36,9 +36,9 @@ summary: >-
 
 ## Source
 
-Zhang et al. (2024), [LIT-445](../literature.d/LIT-445.md) — [ARXIV-2410.21676](https://arxiv.org/abs/2410.21676).
+Zhang et al. (2024), [LIT-445](../literature.d/LIT-445.md)<!-- ref::source: LIT-445 --> — [ARXIV-2410.21676](https://arxiv.org/abs/2410.21676).
 
-Bergsma et al. (2025), [LIT-443](../literature.d/LIT-443.md) — [ARXIV-2505.13738](https://arxiv.org/abs/2505.13738), for the
+Bergsma et al. (2025), [LIT-443](../literature.d/LIT-443.md)<!-- ref::source: LIT-443 --> — [ARXIV-2505.13738](https://arxiv.org/abs/2505.13738), for the
 independent measurement of the exponent.
 
 ## What was actually shown
@@ -114,6 +114,6 @@ independently. What is offered as explanation is one asymptotic argument about
 width that does not say where "past a certain width" begins, and one exact
 result in a setting several steps removed from the one measured.
 
-That is enough to explain [SOTA-258](../practices.d/SOTA-258.md) and to say why the old compute
+That is enough to explain [SOTA-258](../practices.d/SOTA-258.md)<!-- ref::explains: SOTA-258 --> and to say why the old compute
 exponent fitted a projection. It is not yet enough to predict the exponent,
 which is what would make this `Active`.

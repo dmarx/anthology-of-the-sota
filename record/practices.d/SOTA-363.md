@@ -32,11 +32,11 @@ implementations: []
 
 ## Source
 
-He et al. (2019), [LIT-590](../literature.d/LIT-590.md) — [ARXIV-1911.05722](https://arxiv.org/abs/1911.05722).
+He et al. (2019), [LIT-590](../literature.d/LIT-590.md)<!-- ref::introduced_by: LIT-590 --><!-- ref::source: LIT-590 --> — [ARXIV-1911.05722](https://arxiv.org/abs/1911.05722).
 
 ## The claim
 
-If the contrastive loss needs many negatives ([SOTA-360](SOTA-360.md)), the obvious move is
+If the contrastive loss needs many negatives ([SOTA-360](SOTA-360.md)<!-- ref::extends: SOTA-360 -->), the obvious move is
 a bigger batch, and the obvious move is expensive. Instead keep a **queue**
 of previously encoded keys — enqueue the current mini-batch, dequeue the
 oldest — and encode the keys with a **slowly moving copy** of the query

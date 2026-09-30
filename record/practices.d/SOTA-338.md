@@ -45,8 +45,8 @@ summary: >-
 
 ## Source
 
-Sauer et al. (2021), [LIT-562](../literature.d/LIT-562.md) — Projected GAN. Read as [NOTE-303](../notes.d/NOTE-303.md).
-Contested by [LIT-563](../literature.d/LIT-563.md).
+Sauer et al. (2021), [LIT-562](../literature.d/LIT-562.md)<!-- ref::introduced_by: LIT-562 --><!-- ref::source: LIT-562 --> — Projected GAN. Read as [NOTE-303](../notes.d/NOTE-303.md).
+Contested by [LIT-563](../literature.d/LIT-563.md)<!-- ref::contested_by: LIT-563 -->.
 
 ## The practice
 

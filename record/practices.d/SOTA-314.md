@@ -56,7 +56,7 @@ explained_by:
 ## Source
 
 Li, Lin, Zhang, Cai, Li, Guo, Xie, Meng, Zhu and Han (2024),
-[LIT-512](../literature.d/LIT-512.md) — read as [NOTE-257](../notes.d/NOTE-257.md).
+[LIT-512](../literature.d/LIT-512.md)<!-- ref::introduced_by: LIT-512 --><!-- ref::source: LIT-512 --> — read as [NOTE-257](../notes.d/NOTE-257.md).
 
 ## When this applies
 

@@ -45,7 +45,7 @@ summary: >-
 
 ## Source
 
-Akyürek et al. (2024), [LIT-379](../literature.d/LIT-379.md) — [ARXIV-2411.07279](https://arxiv.org/abs/2411.07279).
+Akyürek et al. (2024), [LIT-379](../literature.d/LIT-379.md)<!-- ref::introduced_by: LIT-379 --><!-- ref::source: LIT-379 --> — [ARXIV-2411.07279](https://arxiv.org/abs/2411.07279).
 
 ## The method
 

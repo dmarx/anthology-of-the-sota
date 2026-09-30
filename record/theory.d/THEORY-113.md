@@ -74,8 +74,8 @@ summary: >-
 ## Source
 
 Kokhlikyan, Miglani, Alsallakh, Martin and Reblitz-Richardson (2021),
-[LIT-724](../literature.d/LIT-724.md), §2–3 and Appendix A; with Adebayo et al. (2018),
-[LIT-713](../literature.d/LIT-713.md), which states the conjecture and declines to measure it.
+[LIT-724](../literature.d/LIT-724.md)<!-- ref::source: LIT-724 -->, §2–3 and Appendix A; with Adebayo et al. (2018),
+[LIT-713](../literature.d/LIT-713.md)<!-- ref::source: LIT-713 -->, which states the conjecture and declines to measure it.
 
 ## The account
 
@@ -165,7 +165,7 @@ explained the image result would be indistinguishable from the label
   randomization test's verdict is about the multiplier. It says nothing about
   whether the local variant is *faithful* — `LIT-713`'s tests are necessary
   conditions, and passing one is not a certificate. Every caution
-  [SOTA-430](../practices.d/SOTA-430.md) carries about that still holds.
+  [SOTA-430](../practices.d/SOTA-430.md)<!-- ref::explains: SOTA-430 --> carries about that still holds.
 - **It does not explain the metric split.** On the same Inception experiment,
   Spearman rank correlation drops to near zero for *both* variants while SSIM
   separates them. So SSIM is reading the structure this account is about and

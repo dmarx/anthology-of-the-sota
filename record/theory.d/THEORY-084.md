@@ -31,7 +31,7 @@ summary: >-
 
 ## Source
 
-Jumper et al. (2021), [LIT-583](../literature.d/LIT-583.md), "MSA depth and cross-chain contacts".
+Jumper et al. (2021), [LIT-583](../literature.d/LIT-583.md)<!-- ref::source: LIT-583 -->, "MSA depth and cross-chain contacts".
 Read as [NOTE-321](../notes.d/NOTE-321.md).
 
 ## The account

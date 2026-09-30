@@ -26,7 +26,7 @@ compared_against:
 
 ## Source
 
-Smith et al. (2017), [LIT-010](../literature.d/LIT-010.md) — [ARXIV-1708.07120](https://arxiv.org/abs/1708.07120).
+Smith et al. (2017), [LIT-010](../literature.d/LIT-010.md)<!-- ref::introduced_by: LIT-010 --><!-- ref::source: LIT-010 --> — [ARXIV-1708.07120](https://arxiv.org/abs/1708.07120).
 
 ## The shape, and what each part is doing
 

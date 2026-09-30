@@ -37,8 +37,8 @@ summary: >-
 
 ## Source
 
-Kynkäänniemi, Karras, Laine, Lehtinen and Aila (2019), [LIT-703](../literature.d/LIT-703.md), for the
-measurement and the mechanism. Dhariwal and Nichol (2021), [LIT-699](../literature.d/LIT-699.md), for an
+Kynkäänniemi, Karras, Laine, Lehtinen and Aila (2019), [LIT-703](../literature.d/LIT-703.md)<!-- ref::source: LIT-703 -->, for the
+measurement and the mechanism. Dhariwal and Nichol (2021), [LIT-699](../literature.d/LIT-699.md)<!-- ref::source: LIT-699 -->, for an
 instance in an unrelated model family.
 
 ## The account

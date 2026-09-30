@@ -27,9 +27,9 @@ summary: >-
 
 ## Source
 
-Baldi and Sadowski (2013), [LIT-393](../literature.d/LIT-393.md);
+Baldi and Sadowski (2013), [LIT-393](../literature.d/LIT-393.md)<!-- ref::source: LIT-393 -->;
 corroborated empirically by Srivastava et al. (2014),
-[LIT-395](../literature.d/LIT-395.md) §7.5.
+[LIT-395](../literature.d/LIT-395.md)<!-- ref::source: LIT-395 --> §7.5.
 
 ## What was actually shown
 

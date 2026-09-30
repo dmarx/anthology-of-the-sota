@@ -36,7 +36,7 @@ summary: >-
 
 ## Source
 
-Bavarian et al. (2022), [LIT-124](../literature.d/LIT-124.md) — [ARXIV-2207.14255](https://arxiv.org/abs/2207.14255).
+Bavarian et al. (2022), [LIT-124](../literature.d/LIT-124.md)<!-- ref::introduced_by: LIT-124 --><!-- ref::source: LIT-124 --> — [ARXIV-2207.14255](https://arxiv.org/abs/2207.14255).
 
 A data transformation, not an architecture: cut a document into prefix,
 middle and suffix, move the middle to the end with sentinel tokens, and the

@@ -29,7 +29,7 @@ summary: >-
 
 ## Source
 
-Shazeer (2019), [LIT-024](../literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150).
+Shazeer (2019), [LIT-024](../literature.d/LIT-024.md)<!-- ref::introduced_by: LIT-024 --><!-- ref::source: LIT-024 --> — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150).
 
 ## Superseded
 

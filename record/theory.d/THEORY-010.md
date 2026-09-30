@@ -41,8 +41,8 @@ solution's orbit and is not a solution at all — and the loss barrier along
 that path measures the mismatch in labelling rather than any disagreement
 about the function.
 
-Account for the permutation and the barrier is small. [LIT-251](../literature.d/LIT-251.md) conjectures
-this; [LIT-333](../literature.d/LIT-333.md) gives three algorithms for finding the permutation and
+Account for the permutation and the barrier is small. [LIT-251](../literature.d/LIT-251.md)<!-- ref::source: LIT-251 --> conjectures
+this; [LIT-333](../literature.d/LIT-333.md)<!-- ref::source: LIT-333 --> gives three algorithms for finding the permutation and
 demonstrates the barrier closing on real architectures, with activation
 matching on one to four samples nearly as good as solving the weight-matching
 assignment problem.
@@ -50,7 +50,7 @@ assignment problem.
 ## What rests on it
 
 <!-- inactive-ok: SOTA-217 — Proposed, and the practice this account exists to explain -->
-[SOTA-217](../practices.d/SOTA-217.md), directly: align before averaging. The wider consequence is
+[SOTA-217](../practices.d/SOTA-217.md)<!-- ref::explains: SOTA-217 -->, directly: align before averaging. The wider consequence is
 about the decentralized literature in this record. FedAvg, local SGD, DiLoCo
 and every gossip scheme here average weights or deltas across workers, and all
 of them work — because the workers share an initialization and do not drift

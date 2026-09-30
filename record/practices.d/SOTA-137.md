@@ -29,7 +29,7 @@ extends:
 ## Source
 
 <!-- inactive-ok: LIT-141 — the superseded paper, named as the predecessor in the chain -->
-Zhu et al. (2024), [LIT-141](../literature.d/LIT-141.md) — Hyper-Connections.
+Zhu et al. (2024), [LIT-141](../literature.d/LIT-141.md)<!-- ref::introduced_by: LIT-141 --><!-- ref::source: LIT-141 --> — Hyper-Connections.
 
 Replace the single residual stream with n parallel streams (n = 2 in most of
 the paper's runs) and learn the mixing between them, so that the network
@@ -37,6 +37,11 @@ can tune connection strength across depth and exchange information
 laterally between streams. The motivation is the seesaw between vanishing
 gradients and representation collapse that fixed residual variants cannot
 escape; the paper shows consistent pretraining gains on dense and MoE models.
+
+This is the free-mixing branch of [[extends::SOTA-169]], the trunk that states
+what the whole line agrees on — widen the residual stream into several
+streams. The width is the part of this practice that survived; the free
+mixing is the part the trunk's constraint was written to rule out.
 
 ## Why this is superseded
 

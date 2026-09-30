@@ -43,7 +43,7 @@ summary: >-
 ## Source
 
 Martin Garcia, Knaebel, Schmidt, de Geus, Hermans and Leibe (2024; WACV 2025),
-[LIT-687](../literature.d/LIT-687.md).
+[LIT-687](../literature.d/LIT-687.md)<!-- ref::introduced_by: LIT-687 --><!-- ref::source: LIT-687 -->.
 
 ## What to do
 

@@ -43,7 +43,7 @@ summary: >-
 ## Source
 
 Qi, He, Ye, Li, Zi, Dai, Zou and Xiao (2025),
-[LIT-521](../literature.d/LIT-521.md) — read as [NOTE-266](../notes.d/NOTE-266.md).
+[LIT-521](../literature.d/LIT-521.md)<!-- ref::source: LIT-521 --> — read as [NOTE-266](../notes.d/NOTE-266.md).
 Theorem 1, with the mode distinction in §3.3 and the discussion in the
 appendix.
 
@@ -51,7 +51,7 @@ appendix.
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-320](../practices.d/SOTA-320.md) | cap the step by `τ·σ₁(W_{t−1})/σ₁(∇W_t)` | Weyl's inequality makes that ratio the exact handle on how fast `σ₁` can grow, and it is the growth that concentrates the energy |
+| [SOTA-320](../practices.d/SOTA-320.md)<!-- ref::explains: SOTA-320 --> | cap the step by `τ·σ₁(W_{t−1})/σ₁(∇W_t)` | Weyl's inequality makes that ratio the exact handle on how fast `σ₁` can grow, and it is the growth that concentrates the energy |
 
 ## The account
 
@@ -82,7 +82,7 @@ lives in the weight matrix and the activations only carry it forward.
 
 ## What it corrects, and how much of it survives
 
-[THEORY-061](THEORY-061.md) says low attention entropy is what breaks
+[THEORY-061](THEORY-061.md)<!-- ref::corrects: THEORY-061 --> says low attention entropy is what breaks
 training, and proves a tight bound making low entropy inevitable once the
 spectral norm is large. **The bound is untouched.** What is replaced is the
 step from low entropy to instability: on this account there is a low-entropy

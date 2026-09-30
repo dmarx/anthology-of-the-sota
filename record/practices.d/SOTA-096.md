@@ -37,7 +37,14 @@ explained_by:
 
 ## Source
 
-Hoffmann et al. (2022), [LIT-068](../literature.d/LIT-068.md) — [ARXIV-2203.15556](https://arxiv.org/abs/2203.15556).
+Hoffmann et al. (2022), [LIT-068](../literature.d/LIT-068.md)<!-- ref::introduced_by: LIT-068 --><!-- ref::source: LIT-068 --> — [ARXIV-2203.15556](https://arxiv.org/abs/2203.15556).
+
+Porian et al. (2024), [[source::LIT-690]] — ARXIV-2406.19146. An independent,
+direct measurement of the equal-proportion allocation: once Kaplan's
+discrepancies are removed it lands on an exponent of 0.497 from 5M to 901M on
+two datasets, within 15% of Chinchilla's model size at Chinchilla's compute.
+It evidences the exponent, not the 20: its optimal ratio is 14–16 on
+RefinedWeb and 11–22 on OpenWebText2.
 
 ## The finding
 

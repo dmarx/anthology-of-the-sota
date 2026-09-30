@@ -41,7 +41,7 @@ summary: >-
 
 ## Source
 
-Abramson et al. (2024), [LIT-584](../literature.d/LIT-584.md). Read as [NOTE-320](../notes.d/NOTE-320.md).
+Abramson et al. (2024), [LIT-584](../literature.d/LIT-584.md)<!-- ref::introduced_by: LIT-584 --><!-- ref::source: LIT-584 -->. Read as [NOTE-320](../notes.d/NOTE-320.md).
 
 ## The practice
 

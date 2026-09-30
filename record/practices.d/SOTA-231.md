@@ -31,7 +31,7 @@ summary: >-
 
 ## Source
 
-Dettmers et al. (2023), [LIT-378](../literature.d/LIT-378.md) — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314).
+Dettmers et al. (2023), [LIT-378](../literature.d/LIT-378.md)<!-- ref::introduced_by: LIT-378 --><!-- ref::source: LIT-378 --> — [ARXIV-2305.14314](https://arxiv.org/abs/2305.14314).
 
 ## The claim
 

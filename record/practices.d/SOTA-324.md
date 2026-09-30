@@ -39,7 +39,7 @@ summary: >-
 
 ## Source
 
-Fu, Chen, Jia and Sharan (2023), [LIT-535](../literature.d/LIT-535.md) — NeurIPS 2024. Read as
+Fu, Chen, Jia and Sharan (2023), [LIT-535](../literature.d/LIT-535.md)<!-- ref::introduced_by: LIT-535 --><!-- ref::source: LIT-535 --> — NeurIPS 2024. Read as
 [NOTE-278](../notes.d/NOTE-278.md).
 
 ## The practice

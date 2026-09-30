@@ -51,7 +51,7 @@ explained_by:
 
 ## Source
 
-Zhu et al. (2024), [LIT-205](../literature.d/LIT-205.md) — [ARXIV-2412.14689](https://arxiv.org/abs/2412.14689).
+Zhu et al. (2024), [LIT-205](../literature.d/LIT-205.md)<!-- ref::introduced_by: LIT-205 --><!-- ref::source: LIT-205 --> — [ARXIV-2412.14689](https://arxiv.org/abs/2412.14689).
 
 The premise is not hypothetical. As AI output proliferates, future models
 will be trained on a blend of synthetic and human text whether or not anyone

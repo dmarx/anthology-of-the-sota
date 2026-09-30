@@ -39,7 +39,7 @@ summary: >-
 
 ## Source
 
-Lau, Furman, Wang, Murfet and Wei (2023), [LIT-542](../literature.d/LIT-542.md). Read as
+Lau, Furman, Wang, Murfet and Wei (2023), [LIT-542](../literature.d/LIT-542.md)<!-- ref::introduced_by: LIT-542 --><!-- ref::source: LIT-542 -->. Read as
 [NOTE-285](../notes.d/NOTE-285.md). Explained by [THEORY-075](../theory.d/THEORY-075.md).
 
 ## The practice

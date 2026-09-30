@@ -37,7 +37,7 @@ summary: >-
 
 ## Source
 
-Dao et al. (2023), [LIT-106](../literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691).
+Dao et al. (2023), [LIT-106](../literature.d/LIT-106.md)<!-- ref::introduced_by: LIT-106 --><!-- ref::source: LIT-106 --> — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691).
 
 ## The same block boundary, from the mask's side
 

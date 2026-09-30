@@ -26,7 +26,7 @@ summary: >-
 
 ## Source
 
-Zeng et al. (2022), [LIT-054](../literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414).
+Zeng et al. (2022), [LIT-054](../literature.d/LIT-054.md)<!-- ref::introduced_by: LIT-054 --><!-- ref::source: LIT-054 --> — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414).
 
 ## Overlap with [SOTA-070](SOTA-070.md), stated plainly
 

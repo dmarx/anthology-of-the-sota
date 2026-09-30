@@ -42,7 +42,7 @@ summary: >-
 
 ## Source
 
-Kim et al. (2025), [LIT-441](../literature.d/LIT-441.md) — [ARXIV-2509.14786](https://arxiv.org/abs/2509.14786).
+Kim et al. (2025), [LIT-441](../literature.d/LIT-441.md)<!-- ref::introduced_by: LIT-441 --><!-- ref::source: LIT-441 --> — [ARXIV-2509.14786](https://arxiv.org/abs/2509.14786).
 
 ## The argument
 

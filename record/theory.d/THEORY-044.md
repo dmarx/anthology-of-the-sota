@@ -37,14 +37,14 @@ summary: >-
 
 ## Source
 
-Liu, Xu, Jin, Shen and Darrell (2023), [LIT-475](../literature.d/LIT-475.md) §3 — read as
+Liu, Xu, Jin, Shen and Darrell (2023), [LIT-475](../literature.d/LIT-475.md)<!-- ref::source: LIT-475 --> §3 — read as
 [NOTE-224](../notes.d/NOTE-224.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-285](../practices.d/SOTA-285.md) | dropout at the start if the model underfits, at the end if it overfits | not two uses of a regularizer but two different operators, separated by whether the bias it introduces is cheaper than the variance it removes |
+| [SOTA-285](../practices.d/SOTA-285.md)<!-- ref::explains: SOTA-285 --> | dropout at the start if the model underfits, at the end if it overfits | not two uses of a regularizer but two different operators, separated by whether the bias it introduces is cheaper than the variance it removes |
 
 ## The account
 

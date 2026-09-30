@@ -30,7 +30,7 @@ summary: >-
 
 ## Source
 
-Darcet, Oquab, Mairal and Bojanowski (2023), `LIT-662`.
+Darcet, Oquab, Mairal and Bojanowski (2023), LIT-662.
 
 ## The claim
 

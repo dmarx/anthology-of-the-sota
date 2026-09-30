@@ -43,7 +43,7 @@ summary: >-
 
 ## Source
 
-Devvrit, Kudugunta, Kusupati et al. (2023), [LIT-546](../literature.d/LIT-546.md) — MatFormer. Read
+Devvrit, Kudugunta, Kusupati et al. (2023), [LIT-546](../literature.d/LIT-546.md)<!-- ref::introduced_by: LIT-546 --><!-- ref::source: LIT-546 --> — MatFormer. Read
 as [NOTE-289](../notes.d/NOTE-289.md).
 
 ## The practice

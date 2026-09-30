@@ -37,7 +37,7 @@ summary: >-
 ## Source
 
 Wu, Xiang, Tang, Chen, Zhang and Su (2026),
-[LIT-502](../literature.d/LIT-502.md) — read as [NOTE-249](../notes.d/NOTE-249.md).
+[LIT-502](../literature.d/LIT-502.md)<!-- ref::introduced_by: LIT-502 --><!-- ref::source: LIT-502 --> — read as [NOTE-249](../notes.d/NOTE-249.md).
 
 ## When this applies
 

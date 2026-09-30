@@ -37,13 +37,13 @@ implementations: []
 
 ## Source
 
-Borgeaud et al. (2021), [LIT-060](../literature.d/LIT-060.md) — Retro, which proposes "an evaluation aware
+Borgeaud et al. (2021), [LIT-060](../literature.d/LIT-060.md)<!-- ref::introduced_by: LIT-060 --><!-- ref::source: LIT-060 --> — Retro, which proposes "an evaluation aware
 of proximity of test documents with the training set".
 
-Srivastava et al. (2022), [LIT-077](../literature.d/LIT-077.md) — BIG-bench, which states its own exposure
+Srivastava et al. (2022), [LIT-077](../literature.d/LIT-077.md)<!-- ref::source: LIT-077 --> — BIG-bench, which states its own exposure
 and ships a probe for future models.
 
-Gemini Team, Google (2023), [LIT-510](../literature.d/LIT-510.md) — read as
+Gemini Team, Google (2023), [LIT-510](../literature.d/LIT-510.md)<!-- ref::source: LIT-510 --> — read as
 [NOTE-255](../notes.d/NOTE-255.md) — which does both and measures the size of the effect.
 
 ## What it is worth, measured

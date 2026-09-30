@@ -33,7 +33,7 @@ summary: >-
 
 ## Source
 
-Cohen et al. (2021), [LIT-461](../literature.d/LIT-461.md) — read as [NOTE-205](../notes.d/NOTE-205.md).
+Cohen et al. (2021), [LIT-461](../literature.d/LIT-461.md)<!-- ref::source: LIT-461 --> — read as [NOTE-205](../notes.d/NOTE-205.md).
 
 ## The account
 
@@ -50,6 +50,14 @@ chosen to suit the curvature; the curvature arrives at whatever the step size
 will tolerate. A practitioner who halves the learning rate does not get the
 same landscape traversed more carefully — they get a different, sharper
 landscape, traversed at the new threshold.
+
+Both halves of [[explains::SOTA-272]] follow from this. Its prohibition on
+setting the step size from a curvature bound is the direction of causation:
+a rule that anneals `eta` to the measured sharpness is chasing a quantity
+the step size is producing. Its instruction to tolerate a loss that bounces
+over short timescales is the instability half: at the equilibrium, the
+oscillation along the direction of greatest curvature is what keeps a fixed
+step size viable.
 
 ## What was actually shown
 

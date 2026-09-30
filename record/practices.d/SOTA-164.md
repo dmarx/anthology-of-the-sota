@@ -41,7 +41,7 @@ summary: >-
 
 ## Source
 
-Lee et al., Google Research (2021), [LIT-202](../literature.d/LIT-202.md) — [ARXIV-2107.06499](https://arxiv.org/abs/2107.06499).
+Lee et al., Google Research (2021), [LIT-202](../literature.d/LIT-202.md)<!-- ref::introduced_by: LIT-202 --><!-- ref::source: LIT-202 --> — [ARXIV-2107.06499](https://arxiv.org/abs/2107.06499).
 
 Run two passes, because they catch different things:
 

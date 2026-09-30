@@ -50,7 +50,7 @@ explained_by:
 
 ## Source
 
-Qiu et al. (2025), [LIT-138](../literature.d/LIT-138.md) — Gated Attention.
+Qiu et al. (2025), [LIT-138](../literature.d/LIT-138.md)<!-- ref::source: LIT-138 --> — Gated Attention.
 
 Multiply each head's attention output by a learned, input-dependent sigmoid
 gate before the output projection. In a controlled comparison of 30 ways to
@@ -77,7 +77,7 @@ attention *scores*, which is among the variants that did not help.
 
 This practice was filed crediting Qiu et al. (2025) with the recommendation.
 That is where the evidence at scale is and it is not where the recommendation
-was first stated. **Bondarenko et al. (2023), [LIT-414](../literature.d/LIT-414.md), equation 5, is this
+was first stated. **Bondarenko et al. (2023), [LIT-414](../literature.d/LIT-414.md)<!-- ref::introduced_by: LIT-414 --><!-- ref::source: LIT-414 -->, equation 5, is this
 gate** — `sigmoid(G(x)) ⊙ softmax(QKᵀ/√d)V`, with `G` defined per head and
 parameterized by a single linear layer — proposed two years earlier, for the
 same reason, and measured on BERT, OPT and ViT.
@@ -110,13 +110,13 @@ pattern and the massive activations that come with it", and the record
 described neither. Both now have notes, and read together they change what
 the claim means.
 
-An **attention sink** ([LIT-191](../literature.d/LIT-191.md)) is the consequence of a softmax that
+An **attention sink** ([LIT-191](../literature.d/LIT-191.md)<!-- ref::source: LIT-191 -->) is the consequence of a softmax that
 cannot output zeros. Its scores are normalised to sum to one, so a head with
 nothing it needs to attend to must still put its mass somewhere, and models
 learn to dump the surplus on whatever every query can see — under causal
 masking, the first few tokens, regardless of content. Replacing the first
 four tokens with linebreaks barely moves perplexity; it is the position that
-is doing the work. A **massive activation** ([LIT-190](../literature.d/LIT-190.md)) is how that gets
+is doing the work. A **massive activation** ([LIT-190](../literature.d/LIT-190.md)<!-- ref::source: LIT-190 -->) is how that gets
 implemented: a handful of scalars running ~100,000× the median, at fixed
 feature dimensions, behaving as constants rather than features — pin them at
 their mean and the model is fine, zero them and it collapses. They ride

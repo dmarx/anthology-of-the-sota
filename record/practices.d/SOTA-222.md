@@ -60,7 +60,7 @@ ordinary local SGD, which has to wait.
 ## Why
 
 **One step of slack is enough when the exchange has somewhere to go.** The
-condition [LIT-323](../literature.d/LIT-323.md) states is simply that the parallel communication time be
+condition [LIT-323](../literature.d/LIT-323.md)<!-- ref::introduced_by: LIT-323 --><!-- ref::source: LIT-323 --> states is simply that the parallel communication time be
 smaller than `tau` steps of computation; past that, the latency is completely
 hidden and more slack buys nothing while costing consensus. That is why the
 recommendation is a small number rather than the largest tolerable one, and it

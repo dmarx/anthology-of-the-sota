@@ -29,15 +29,15 @@ summary: >-
 
 ## Source
 
-Zheng et al. (2026), [LIT-462](../literature.d/LIT-462.md) — read as [NOTE-211](../notes.d/NOTE-211.md).
+Zheng et al. (2026), [LIT-462](../literature.d/LIT-462.md)<!-- ref::source: LIT-462 --> — read as [NOTE-211](../notes.d/NOTE-211.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-144](../practices.d/SOTA-144.md) | use CompleteP to transfer across depth | the `k ≥ 2` member of one family, not a rival parameterization |
-| [SOTA-275](../practices.d/SOTA-275.md) | pick the rule from the residual branch | the family is indexed by branch depth, and that is the whole index |
-| [SOTA-276](../practices.d/SOTA-276.md) | add one `1/L` multiplier to width muP | preconditioning removes the depth factor, so nothing else moves |
+| [SOTA-144](../practices.d/SOTA-144.md)<!-- ref::explains: SOTA-144 --> | use CompleteP to transfer across depth | the `k ≥ 2` member of one family, not a rival parameterization |
+| [SOTA-275](../practices.d/SOTA-275.md)<!-- ref::explains: SOTA-275 --> | pick the rule from the residual branch | the family is indexed by branch depth, and that is the whole index |
+| [SOTA-276](../practices.d/SOTA-276.md)<!-- ref::explains: SOTA-276 --> | add one `1/L` multiplier to width muP | preconditioning removes the depth factor, so nothing else moves |
 
 ## The account
 
@@ -49,7 +49,10 @@ holding two, there is also the term where *both* moved: the product
 In ordinary analysis that cross term is second order and negligible. Under
 muP it is not, and the reason is what muP is for. The maximal-update
 principle deliberately makes each update as large as stability permits, so
-`ΔW` is not small — it is exactly as large as the constraint allows. A
+`ΔW` is not small — it is exactly as large as the constraint allows. That
+principle is [[extends::THEORY-076]]'s account of width, where µP is the
+parametrization under which every layer's update contributes `Θ(1)`; this
+account takes the same bookkeeping and asks what it demands along depth. A
 product of two such terms is therefore the same order as the terms
 themselves, and it needs its own constraint.
 

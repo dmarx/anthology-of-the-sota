@@ -40,7 +40,7 @@ summary: >-
 
 ## Source
 
-Karras et al. (2019), [LIT-560](../literature.d/LIT-560.md) — StyleGAN2. Read as [NOTE-301](../notes.d/NOTE-301.md).
+Karras et al. (2019), [LIT-560](../literature.d/LIT-560.md)<!-- ref::introduced_by: LIT-560 --><!-- ref::source: LIT-560 --> — StyleGAN2. Read as [NOTE-301](../notes.d/NOTE-301.md).
 
 ## The practice
 

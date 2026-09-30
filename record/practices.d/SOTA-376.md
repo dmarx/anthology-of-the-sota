@@ -31,11 +31,11 @@ implementations: []
 
 ## Source
 
-Zhai et al. (2023), [LIT-605](../literature.d/LIT-605.md) — [ARXIV-2303.15343](https://arxiv.org/abs/2303.15343).
+Zhai et al. (2023), [LIT-605](../literature.d/LIT-605.md)<!-- ref::introduced_by: LIT-605 --><!-- ref::source: LIT-605 --> — [ARXIV-2303.15343](https://arxiv.org/abs/2303.15343).
 
 ## The claim
 
-Keep the supervision ([SOTA-359](SOTA-359.md)) and change the normalization. Instead of a
+Keep the supervision ([SOTA-359](SOTA-359.md)<!-- ref::extends: SOTA-359 -->) and change the normalization. Instead of a
 softmax over the batch, score each `(image, text)` pair with a **sigmoid**
 against a label that is `+1` for a true pair and `−1` otherwise.
 

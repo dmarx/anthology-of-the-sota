@@ -34,7 +34,7 @@ summary: >-
 
 ## Source
 
-Shchur et al. (2018), [LIT-581](../literature.d/LIT-581.md). Read as [NOTE-318](../notes.d/NOTE-318.md).
+Shchur et al. (2018), [LIT-581](../literature.d/LIT-581.md)<!-- ref::introduced_by: LIT-581 --><!-- ref::source: LIT-581 -->. Read as [NOTE-318](../notes.d/NOTE-318.md).
 
 ## The practice
 

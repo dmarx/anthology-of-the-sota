@@ -40,7 +40,7 @@ explained_by:
 
 ## Source
 
-Xu, Miikkulainen and Qiu (2026), [LIT-473](../literature.d/LIT-473.md) — read as
+Xu, Miikkulainen and Qiu (2026), [LIT-473](../literature.d/LIT-473.md)<!-- ref::introduced_by: LIT-473 --><!-- ref::source: LIT-473 --> — read as
 [NOTE-222](../notes.d/NOTE-222.md). Countdown, Qwen2.5 at 1.5B and 3B, INT4, INT8 and
 W8A8.
 
@@ -48,7 +48,7 @@ W8A8.
 
 Only when the model is quantized and you intend to keep it that way, and only
 when you are already fine-tuning with evolution strategies rather than
-policy-gradient RL — which is [SOTA-154](SOTA-154.md), and is what makes this a
+policy-gradient RL — which is [SOTA-154](SOTA-154.md)<!-- ref::extends: SOTA-154 -->, and is what makes this a
 descendant rather than a standalone recommendation. If you can hold FP16
 weights, this problem does not arise.
 

@@ -42,7 +42,7 @@ summary: >-
 
 ## Source
 
-Gong et al. (2024), [LIT-381](../literature.d/LIT-381.md) — [ARXIV-2410.17891](https://arxiv.org/abs/2410.17891).
+Gong et al. (2024), [LIT-381](../literature.d/LIT-381.md)<!-- ref::introduced_by: LIT-381 --><!-- ref::source: LIT-381 --> — [ARXIV-2410.17891](https://arxiv.org/abs/2410.17891).
 
 ## The claim
 

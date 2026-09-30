@@ -27,8 +27,8 @@ summary: >-
 
 ## Source
 
-Meng et al. (2022), [LIT-578](../literature.d/LIT-578.md), read as [NOTE-315](../notes.d/NOTE-315.md), for the account.
-Hase et al. (2023), [LIT-574](../literature.d/LIT-574.md), read as [NOTE-313](../notes.d/NOTE-313.md), for why it is
+Meng et al. (2022), [LIT-578](../literature.d/LIT-578.md)<!-- ref::source: LIT-578 -->, read as [NOTE-315](../notes.d/NOTE-315.md), for the account.
+Hase et al. (2023), [LIT-574](../literature.d/LIT-574.md)<!-- ref::source: LIT-574 -->, read as [NOTE-313](../notes.d/NOTE-313.md), for why it is
 filed already retired ([DP-003](../../docs/design-principles.md#dp-3)).
 
 ## The account

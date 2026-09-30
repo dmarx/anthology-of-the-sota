@@ -39,7 +39,7 @@ explained_by:
 
 ## Source
 
-Scherlis and Belrose (2025), [LIT-476](../literature.d/LIT-476.md) — read as
+Scherlis and Belrose (2025), [LIT-476](../literature.d/LIT-476.md)<!-- ref::introduced_by: LIT-476 --><!-- ref::source: LIT-476 --> — read as
 [NOTE-225](../notes.d/NOTE-225.md). A 4810-parameter MLP, a 3.4M-parameter ConvNeXt on
 CIFAR-10, and Pythia 31M.
 

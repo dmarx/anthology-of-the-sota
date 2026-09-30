@@ -25,7 +25,7 @@ summary: >-
 
 ## Source
 
-Lin et al. (2017), [LIT-056](../literature.d/LIT-056.md) — [ARXIV-1712.01887](https://arxiv.org/abs/1712.01887).
+Lin et al. (2017), [LIT-056](../literature.d/LIT-056.md)<!-- ref::introduced_by: LIT-056 --><!-- ref::source: LIT-056 --> — [ARXIV-1712.01887](https://arxiv.org/abs/1712.01887).
 
 ## The measurement the practice rests on
 

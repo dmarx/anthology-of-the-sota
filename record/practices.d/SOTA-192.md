@@ -111,7 +111,7 @@ explained_by:
 Henry, Dachapally, Pawar and Chen (2020), `LIT-640` — the paper that
 named the technique and first made the recommendation.
 
-Dehghani et al. (2023), [LIT-088](../literature.d/LIT-088.md) — ViT-22B, where the mechanism is diagnosed
+Dehghani et al. (2023), [LIT-088](../literature.d/LIT-088.md)<!-- ref::source: LIT-088 --> — ViT-22B, where the mechanism is diagnosed
 rather than only fixed, and the demonstration this document is built on.
 
 ## Two papers, one recommendation, three years apart
@@ -176,7 +176,7 @@ converging with it, everything else equal.
 
 ## Why `1/√d` is not enough
 
-[SOTA-050](SOTA-050.md) already divides by `√d_head`, and that is the right correction for a
+[SOTA-050](SOTA-050.md)<!-- ref::extends: SOTA-050 --> already divides by `√d_head`, and that is the right correction for a
 different problem: the dot product's variance grows with the **dimension**, so
 the scale factor removes the dimension's contribution. It does nothing about the
 **weights** growing during training. `1/√d` is a fix at initialisation;
@@ -273,7 +273,7 @@ than 0.004 nats.
 
 It is one run at one rate under Muon, in an architecture nobody ships, and the
 authors scope the claim to that rate. It is not another arrival like the
-ones above, because the paper cites [LIT-640](../literature.d/LIT-640.md) and [LIT-088](../literature.d/LIT-088.md) and adopted QK-norm
+ones above, because the paper cites [LIT-640](../literature.d/LIT-640.md)<!-- ref::introduced_by: LIT-640 --><!-- ref::source: LIT-640 --> and [LIT-088](../literature.d/LIT-088.md) and adopted QK-norm
 from them. It is a test. It took the component out of an otherwise fixed
 model, and the model failed. It does not say which of the failure modes
 above occurred, since the run reports no entropy or logit measurements.

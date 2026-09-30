@@ -20,7 +20,7 @@ implementations:
 
 ## Source
 
-Chowdhery et al. (2022), [LIT-069](../literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311).
+Chowdhery et al. (2022), [LIT-069](../literature.d/LIT-069.md)<!-- ref::introduced_by: LIT-069 --><!-- ref::source: LIT-069 --> — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311).
 
 ## Known implementations
 

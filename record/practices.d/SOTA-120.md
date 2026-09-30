@@ -35,7 +35,7 @@ summary: >-
 
 ## Source
 
-Loshchilov et al. (2017), [LIT-012](../literature.d/LIT-012.md) — [ARXIV-1711.05101](https://arxiv.org/abs/1711.05101).
+Loshchilov et al. (2017), [LIT-012](../literature.d/LIT-012.md)<!-- ref::introduced_by: LIT-012 --><!-- ref::source: LIT-012 --> — [ARXIV-1711.05101](https://arxiv.org/abs/1711.05101).
 
 ## How this stopped being deferred
 

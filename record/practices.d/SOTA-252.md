@@ -33,7 +33,7 @@ summary: >-
 
 ## Source
 
-Abdal et al. (2023), [LIT-113](../literature.d/LIT-113.md) — [ARXIV-2311.17857](https://arxiv.org/abs/2311.17857).
+Abdal et al. (2023), [LIT-113](../literature.d/LIT-113.md)<!-- ref::introduced_by: LIT-113 --><!-- ref::source: LIT-113 --> — [ARXIV-2311.17857](https://arxiv.org/abs/2311.17857).
 
 ## The rule
 

@@ -25,7 +25,7 @@ implementations:
 
 ## Source
 
-Ruiz et al. (2022), [LIT-079](../literature.d/LIT-079.md) — DreamBooth, which names the failure and supplies
+Ruiz et al. (2022), [LIT-079](../literature.d/LIT-079.md)<!-- ref::introduced_by: LIT-079 --><!-- ref::source: LIT-079 --> — DreamBooth, which names the failure and supplies
 the cheapest possible fix for it.
 
 ## The failure

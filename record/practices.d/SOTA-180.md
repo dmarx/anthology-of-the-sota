@@ -38,9 +38,9 @@ summary: >-
 
 ## Source
 
-Elango et al. (2026), [LIT-196](../literature.d/LIT-196.md) — [ARXIV-2601.18089](https://arxiv.org/abs/2601.18089).
+Elango et al. (2026), [LIT-196](../literature.d/LIT-196.md)<!-- ref::introduced_by: LIT-196 --><!-- ref::source: LIT-196 --> — [ARXIV-2601.18089](https://arxiv.org/abs/2601.18089).
 
-[SOTA-150](SOTA-150.md) answers *whether* the feed-forward layers should be sparse. This
+[SOTA-150](SOTA-150.md)<!-- ref::extends: SOTA-150 --> answers *whether* the feed-forward layers should be sparse. This
 answers *where the width should be*, and the premise underneath it is the
 part worth arguing about first.
 

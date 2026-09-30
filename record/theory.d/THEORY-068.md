@@ -35,8 +35,8 @@ corrected_by:
 A transformer given a prompt of `(x, y)` pairs and a query does not merely
 pattern-match; it *trains*. Specific weights make one linear-self-attention
 layer compute exactly one gradient-descent step on an implicit linear model
-([LIT-533](../literature.d/LIT-533.md), Proposition 1), a single trained layer approximately finds
-those weights, and stacking layers stacks steps. [LIT-532](../literature.d/LIT-532.md) arrives at a
+([LIT-533](../literature.d/LIT-533.md)<!-- ref::source: LIT-533 -->, Proposition 1), a single trained layer approximately finds
+those weights, and stacking layers stacks steps. [LIT-532](../literature.d/LIT-532.md)<!-- ref::source: LIT-532 --> arrives at a
 compatible construction independently, and reports that its shallowest trained
 learners sit nearest gradient descent among the reference predictors.
 

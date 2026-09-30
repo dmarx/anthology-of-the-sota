@@ -39,7 +39,7 @@ summary: >-
 
 ## Source
 
-Black Forest Labs (2025), [LIT-572](../literature.d/LIT-572.md). Read as [NOTE-311](../notes.d/NOTE-311.md).
+Black Forest Labs (2025), [LIT-572](../literature.d/LIT-572.md)<!-- ref::introduced_by: LIT-572 --><!-- ref::source: LIT-572 -->. Read as [NOTE-311](../notes.d/NOTE-311.md).
 
 ## The practice
 

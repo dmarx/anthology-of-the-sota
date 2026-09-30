@@ -53,7 +53,7 @@ extends:
 
 ## Source
 
-Dao et al. (2022), [LIT-074](../literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135).
+Dao et al. (2022), [LIT-074](../literature.d/LIT-074.md)<!-- ref::introduced_by: LIT-074 --><!-- ref::source: LIT-074 --> — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135).
 
 **`introduced_by` stays with `LIT-074`, and the reason is worth stating**
 because a predecessor now sits in the record. `#342` flagged this as a likely

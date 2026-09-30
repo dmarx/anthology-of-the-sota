@@ -44,7 +44,7 @@ summary: >-
 
 ## Source
 
-Wang, Ma, Xinyi and Li (2025), [LIT-524](../literature.d/LIT-524.md) — read as
+Wang, Ma, Xinyi and Li (2025), [LIT-524](../literature.d/LIT-524.md)<!-- ref::introduced_by: LIT-524 --><!-- ref::source: LIT-524 --> — read as
 [NOTE-268](../notes.d/NOTE-268.md). AAAI 2026.
 
 ## When this applies

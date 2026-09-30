@@ -50,7 +50,7 @@ summary: >-
 
 ## Source
 
-Chen et al. (2026), [LIT-175](../literature.d/LIT-175.md) — [ARXIV-2606.16246](https://arxiv.org/abs/2606.16246).
+Chen et al. (2026), [LIT-175](../literature.d/LIT-175.md)<!-- ref::introduced_by: LIT-175 --><!-- ref::source: LIT-175 --> — [ARXIV-2606.16246](https://arxiv.org/abs/2606.16246).
 
 The premise is the regime: compute capacity is outrunning the rate at which
 new high-quality text is produced, so pretraining is moving to a

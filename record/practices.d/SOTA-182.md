@@ -38,7 +38,7 @@ compared_against:
 
 ## Source
 
-Zhang and Sennrich (2019), [LIT-023](../literature.d/LIT-023.md) — [ARXIV-1910.07467](https://arxiv.org/abs/1910.07467).
+Zhang and Sennrich (2019), [LIT-023](../literature.d/LIT-023.md)<!-- ref::introduced_by: LIT-023 --><!-- ref::source: LIT-023 --> — [ARXIV-1910.07467](https://arxiv.org/abs/1910.07467).
 
 ## What it drops
 
@@ -51,7 +51,7 @@ the settings it measures.
 
 ## What an outside re-run found
 
-Narang et al. ([LIT-711](../literature.d/LIT-711.md)) swapped LayerNorm for RMSNorm in a 223M T5
+Narang et al. ([LIT-711](../literature.d/LIT-711.md)<!-- ref::source: LIT-711 -->) swapped LayerNorm for RMSNorm in a 223M T5
 encoder-decoder with every other hyperparameter fixed. RMSNorm was one of the
 few changes among about fifty that beat the baseline. Early loss was **2.167 ± 0.008 against 2.182 ±
 0.005** over five seeds, final loss 1.821 against 1.838, and it won on all

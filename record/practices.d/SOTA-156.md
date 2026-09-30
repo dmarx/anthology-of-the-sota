@@ -54,7 +54,7 @@ summary: >-
 
 ## Source
 
-Defazio et al. (2024), [LIT-213](../literature.d/LIT-213.md) — [ARXIV-2405.15682](https://arxiv.org/abs/2405.15682).
+Defazio et al. (2024), [LIT-213](../literature.d/LIT-213.md)<!-- ref::introduced_by: LIT-213 --><!-- ref::source: LIT-213 --> — [ARXIV-2405.15682](https://arxiv.org/abs/2405.15682).
 
 Every schedule in this record works around the same fact: a schedule that
 knows the stopping step T outperforms one that does not. Cosine handles it by
@@ -87,7 +87,7 @@ record trains under it.
 One comparison is specifically *not* established and should not be read in:
 whether Schedule-Free was measured against a tuned warmup-stable-decay arm.
 The paper's case is made against schedules that fix T; [SOTA-140](SOTA-140.md)'s case is
-that WSD does not have to. Both claim the open budget. [LIT-682](../literature.d/LIT-682.md) has
+that WSD does not have to. Both claim the open budget. [LIT-682](../literature.d/LIT-682.md)<!-- ref::source: LIT-682 --> has
 since run them against each other, from 120M to 2B, and WSD lost at every
 size. But the arm that won was ScheduleFree+, not Schedule-Free AdamW. It is
 a package with inner momentum, Polyak steps and AdamC weight decay, set

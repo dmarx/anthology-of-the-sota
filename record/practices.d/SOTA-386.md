@@ -79,8 +79,8 @@ implementations:
 
 ## Source
 
-Ho, Salimans et al. (2022), [LIT-627](../literature.d/LIT-627.md); Blattmann et al. (2023), [LIT-621](../literature.d/LIT-621.md);
-Blattmann, Dockhorn, Kulal et al. (2023), [LIT-625](../literature.d/LIT-625.md). All three were read in
+Ho, Salimans et al. (2022), [LIT-627](../literature.d/LIT-627.md)<!-- ref::introduced_by: LIT-627 --><!-- ref::source: LIT-627 -->; Blattmann et al. (2023), [LIT-621](../literature.d/LIT-621.md)<!-- ref::source: LIT-621 -->;
+Blattmann, Dockhorn, Kulal et al. (2023), [LIT-625](../literature.d/LIT-625.md)<!-- ref::source: LIT-625 -->. All three were read in
 full as [NOTE-347](../notes.d/NOTE-347.md), [NOTE-341](../notes.d/NOTE-341.md) and [NOTE-336](../notes.d/NOTE-336.md).
 
 ## The claim
@@ -109,7 +109,7 @@ none of them isolates the effect:
 - **Image-initialized against random spatial layers** ([LIT-625](../literature.d/LIT-625.md), Fig. 3a).
   Human raters prefer the image-initialized model. The figure gives no
   counts, and the text states neither its resolution nor its step count.
-- **A separate image corpus, on and off** ([LIT-661](../literature.d/LIT-661.md), W.A.L.T Table 5).
+- **A separate image corpus, on and off** ([LIT-661](../literature.d/LIT-661.md)<!-- ref::source: LIT-661 -->, W.A.L.T Table 5).
   Two 419M models trained with and without ~970M image-text pairs beside
   ~89M text-video pairs. Zero-shot UCF-101 FVD is 598.8 without images and
   344.5 with them. This is the only comparison that uses a separate image

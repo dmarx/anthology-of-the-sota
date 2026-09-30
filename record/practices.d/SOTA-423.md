@@ -41,7 +41,7 @@ summary: >-
 
 ## Source
 
-Lin, Liu, Li and Yang (2023; WACV 2024), [LIT-689](../literature.d/LIT-689.md), §3.4 and §5.3.
+Lin, Liu, Li and Yang (2023; WACV 2024), [LIT-689](../literature.d/LIT-689.md)<!-- ref::introduced_by: LIT-689 --><!-- ref::source: LIT-689 -->, §3.4 and §5.3.
 
 ## What to do
 

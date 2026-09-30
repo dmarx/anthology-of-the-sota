@@ -59,7 +59,7 @@ summary: >-
 ## Source
 
 Karras, Aittala, Kynkäänniemi, Lehtinen, Aila and Laine (2024),
-[LIT-721](../literature.d/LIT-721.md) — [ARXIV-2406.02507](https://arxiv.org/abs/2406.02507).
+[LIT-721](../literature.d/LIT-721.md)<!-- ref::introduced_by: LIT-721 --><!-- ref::source: LIT-721 --> — [ARXIV-2406.02507](https://arxiv.org/abs/2406.02507).
 [THEORY-112](../theory.d/THEORY-112.md) is why it works.
 
 ## What to do

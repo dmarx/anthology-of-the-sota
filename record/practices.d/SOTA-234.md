@@ -46,7 +46,7 @@ summary: >-
 
 ## Source
 
-Ma et al. (2024), [LIT-380](../literature.d/LIT-380.md) — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764).
+Ma et al. (2024), [LIT-380](../literature.d/LIT-380.md)<!-- ref::introduced_by: LIT-380 --><!-- ref::source: LIT-380 --> — [ARXIV-2402.17764](https://arxiv.org/abs/2402.17764).
 
 ## The claim
 

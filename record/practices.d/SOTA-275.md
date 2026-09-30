@@ -43,7 +43,7 @@ explained_by:
 
 ## Source
 
-Zheng et al. (2026), [LIT-462](../literature.d/LIT-462.md) — [ARXIV-2603.00541](https://arxiv.org/abs/2603.00541),
+Zheng et al. (2026), [LIT-462](../literature.d/LIT-462.md)<!-- ref::introduced_by: LIT-462 --><!-- ref::source: LIT-462 --> — [ARXIV-2603.00541](https://arxiv.org/abs/2603.00541),
 read as [NOTE-211](../notes.d/NOTE-211.md). Accounted for by [THEORY-037](../theory.d/THEORY-037.md).
 
 ## What to do
@@ -101,7 +101,7 @@ derivation.
 
 ## Relation to the neighbours
 
-[SOTA-144](../practices.d/SOTA-144.md) says to use CompleteP so one sweep serves deeper models.
+[SOTA-144](../practices.d/SOTA-144.md)<!-- ref::extends: SOTA-144 --> says to use CompleteP so one sweep serves deeper models.
 This says *which architectures need it and why*, and that the alternative
 fails on Transformers specifically — which `SOTA-144` does not claim, because
 [LIT-150](../literature.d/LIT-150.md) compared CompleteP against muP rather than against Depth-muP.

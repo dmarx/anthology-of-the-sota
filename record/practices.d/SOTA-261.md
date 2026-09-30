@@ -39,7 +39,7 @@ summary: >-
 
 ## Source
 
-Bergsma et al. (2025), [LIT-443](../literature.d/LIT-443.md) — [ARXIV-2505.13738](https://arxiv.org/abs/2505.13738).
+Bergsma et al. (2025), [LIT-443](../literature.d/LIT-443.md)<!-- ref::introduced_by: LIT-443 --><!-- ref::source: LIT-443 --> — [ARXIV-2505.13738](https://arxiv.org/abs/2505.13738).
 
 ## Why weight decay is the wrong thing to hold constant
 

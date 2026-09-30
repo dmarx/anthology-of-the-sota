@@ -36,7 +36,7 @@ summary: >-
 
 ## Source
 
-Gong et al. (2025), [LIT-126](../literature.d/LIT-126.md) — [ARXIV-2506.00204](https://arxiv.org/abs/2506.00204).
+Gong et al. (2025), [LIT-126](../literature.d/LIT-126.md)<!-- ref::introduced_by: LIT-126 --><!-- ref::source: LIT-126 --> — [ARXIV-2506.00204](https://arxiv.org/abs/2506.00204).
 
 Standard FIM treats code as text and masks random character spans. The
 objection is about what that trains for: a random span rarely corresponds to

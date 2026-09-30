@@ -48,7 +48,7 @@ summary: >-
 
 ## Source
 
-Khangaonkar and Pirsiavash (2025), [LIT-488](../literature.d/LIT-488.md) — [ARXIV-2505.15263](https://arxiv.org/abs/2505.15263) — read
+Khangaonkar and Pirsiavash (2025), [LIT-488](../literature.d/LIT-488.md)<!-- ref::introduced_by: LIT-488 --><!-- ref::source: LIT-488 --> — [ARXIV-2505.15263](https://arxiv.org/abs/2505.15263) — read
 as [NOTE-237](../notes.d/NOTE-237.md).
 
 ## What to do

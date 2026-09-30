@@ -63,7 +63,7 @@ summary: >-
 
 ## Source
 
-Olmo Team (2025), [LIT-130](../literature.d/LIT-130.md) — the Olmo 3 RL-Zero track.
+Olmo Team (2025), [LIT-130](../literature.d/LIT-130.md)<!-- ref::introduced_by: LIT-130 --><!-- ref::source: LIT-130 --> — the Olmo 3 RL-Zero track.
 
 ## What the track is
 
@@ -79,12 +79,12 @@ data on RL, can be studied from a clean start.
 The source itself calls the track experimental and positions
 it as a benchmark, and the Think models Olmo 3 actually ships go through the
 SFT stage ([SOTA-129](SOTA-129.md)). The idea predates Olmo 3: the "R1-Zero" style of training
-is where the name comes from, and that work is now filed ([LIT-164](../literature.d/LIT-164.md)).
+is where the name comes from, and that work is now filed ([LIT-164](../literature.d/LIT-164.md)<!-- ref::source: LIT-164 -->).
 Olmo 3 remains the source because it is the open, reproducible statement of
 the pathway.
 
 A second reason to stay *Proposed* arrived with the literature.
-[LIT-167](../literature.d/LIT-167.md) finds that DeepSeek-V3-Base already exhibits the "Aha moment"
+[LIT-167](../literature.d/LIT-167.md)<!-- ref::contested_by: LIT-167 --> finds that DeepSeek-V3-Base already exhibits the "Aha moment"
 before any RL, and that Qwen2.5 bases reason without a prompt template — so
 how much of the result belongs to skipping SFT, and how much to what the
 base model already carried, is unsettled. "Run RLVR directly on the base" is

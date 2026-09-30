@@ -25,16 +25,16 @@ summary: >-
 
 ## Source
 
-Hu and Frank (2024), [LIT-465](../literature.d/LIT-465.md) — read as [NOTE-215](../notes.d/NOTE-215.md) —
-with [LIT-463](../literature.d/LIT-463.md) ([NOTE-213](../notes.d/NOTE-213.md)) as the worked
+Hu and Frank (2024), [LIT-465](../literature.d/LIT-465.md)<!-- ref::source: LIT-465 --> — read as [NOTE-215](../notes.d/NOTE-215.md) —
+with [LIT-463](../literature.d/LIT-463.md)<!-- ref::source: LIT-463 --> ([NOTE-213](../notes.d/NOTE-213.md)) as the worked
 example in a case people argued about.
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-278](../practices.d/SOTA-278.md) | rule out the evaluation before reporting a limit | the demand gap is a known quantity with a known sign, so the check has a target |
-| [SOTA-200](../practices.d/SOTA-200.md) | check whether an emergent capability is a metric artefact | the same instrument problem with the sign reversed — scale paying down a demand looks like scale unlocking a capacity |
+| [SOTA-278](../practices.d/SOTA-278.md)<!-- ref::explains: SOTA-278 --> | rule out the evaluation before reporting a limit | the demand gap is a known quantity with a known sign, so the check has a target |
+| [SOTA-200](../practices.d/SOTA-200.md)<!-- ref::explains: SOTA-200 --> | check whether an emergent capability is a metric artefact | the same instrument problem with the sign reversed — scale paying down a demand looks like scale unlocking a capacity |
 
 ## The account
 

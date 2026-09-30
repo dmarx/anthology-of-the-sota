@@ -44,7 +44,7 @@ summary: >-
 
 ## Source
 
-Beyer, Zhai and Kolesnikov (2022), [LIT-628](../literature.d/LIT-628.md), §2.
+Beyer, Zhai and Kolesnikov (2022), [LIT-628](../literature.d/LIT-628.md)<!-- ref::introduced_by: LIT-628 --><!-- ref::source: LIT-628 -->, §2.
 
 ## When this applies
 

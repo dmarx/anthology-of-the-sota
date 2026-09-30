@@ -67,11 +67,17 @@ corrected_by:
 
 ## Source
 
-Kaplan et al. (2020), [LIT-028](../literature.d/LIT-028.md) — [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361).
+Kaplan et al. (2020), [LIT-028](../literature.d/LIT-028.md)<!-- ref::introduced_by: LIT-028 --><!-- ref::source: LIT-028 --> — [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361).
 
 Filed against Chinchilla ([LIT-068](../literature.d/LIT-068.md)) until version 2. Chinchilla fits model size
 and token count against compute and does not derive a batch-size exponent;
 Kaplan does, and this is his.
+
+McCandlish et al. (2018), [[source::LIT-017]] — ARXIV-1812.06162. Where the
+critical batch size Kaplan fits an exponent for is defined, as `E_min/S_min`
+off the steps/examples tradeoff, and given a measurement procedure; it also
+finds that model size affects the right batch size only through the loss
+reached, which is the property Figure 10 relies on.
 
 ## Where the exponent comes from
 

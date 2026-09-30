@@ -39,7 +39,7 @@ corrected_by:
 
 ## Source
 
-Su et al. (2021), [LIT-045](../literature.d/LIT-045.md) — [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864).
+Su et al. (2021), [LIT-045](../literature.d/LIT-045.md)<!-- ref::introduced_by: LIT-045 --><!-- ref::source: LIT-045 --> — [ARXIV-2104.09864](https://arxiv.org/abs/2104.09864).
 
 ## Where the line goes from here
 

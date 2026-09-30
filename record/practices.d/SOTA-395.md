@@ -44,7 +44,7 @@ summary: >-
 
 ## Source
 
-Huang et al. (2025), [LIT-629](../literature.d/LIT-629.md) — Self Forcing, Table 2.
+Huang et al. (2025), [LIT-629](../literature.d/LIT-629.md)<!-- ref::introduced_by: LIT-629 --><!-- ref::source: LIT-629 --> — Self Forcing, Table 2.
 
 ## The claim
 

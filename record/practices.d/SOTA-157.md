@@ -74,7 +74,7 @@ extended_by:
 
 ## Source
 
-Nie et al. (2025), [LIT-217](../literature.d/LIT-217.md) — [ARXIV-2502.09992](https://arxiv.org/abs/2502.09992).
+Nie et al. (2025), [LIT-217](../literature.d/LIT-217.md)<!-- ref::introduced_by: LIT-217 --><!-- ref::source: LIT-217 --> — [ARXIV-2502.09992](https://arxiv.org/abs/2502.09992).
 
 What is being challenged is an identification rather than a benchmark. The
 capabilities everyone attributes to LLMs — in-context learning, instruction
@@ -107,7 +107,7 @@ The practice's title makes two choices, and until 2026-09-25 the record held
 evidence for only one of them.
 
 **Masked, rather than another discrete diffusion.** Sahoo et al.,
-[LIT-702](../literature.d/LIT-702.md), and Lou et al., [LIT-701](../literature.d/LIT-701.md), are the evidence. SEDD trains
+[LIT-702](../literature.d/LIT-702.md)<!-- ref::source: LIT-702 -->, and Lou et al., [LIT-701](../literature.d/LIT-701.md)<!-- ref::source: LIT-701 -->, are the evidence. SEDD trains
 absorbing-state and uniform-state models on the same architecture and recipe,
 and absorbing wins on every table (LM1B ≤32.79 against ≤40.25). MDLM derives
 the masked-diffusion objective LLaDA trains with — a schedule-weighted average

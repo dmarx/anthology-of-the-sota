@@ -60,8 +60,8 @@ summary: >-
 
 ## Source
 
-Lu et al. (2022), [LIT-076](../literature.d/LIT-076.md) — DPM-Solver, which supplies the solver; and
-Song et al. (2020), [LIT-038](../literature.d/LIT-038.md) — DDIM, which supplies the permission to
+Lu et al. (2022), [LIT-076](../literature.d/LIT-076.md)<!-- ref::introduced_by: LIT-076 --><!-- ref::source: LIT-076 --> — DPM-Solver, which supplies the solver; and
+Song et al. (2020), [LIT-038](../literature.d/LIT-038.md)<!-- ref::source: LIT-038 --> — DDIM, which supplies the permission to
 change the sampler at all.
 
 ## Why this is available
@@ -112,7 +112,7 @@ what buys the step count.
 
 Everything above is measured **without** guidance. Guided sampling at a large
 scale is how conditional models are actually run — 7.5 is the recommended setting
-for Stable Diffusion — and there the recommendation inverts. [LIT-676](../literature.d/LIT-676.md),
+for Stable Diffusion — and there the recommendation inverts. [LIT-676](../literature.d/LIT-676.md)<!-- ref::source: LIT-676 -->,
 ImageNet 256×256 at classifier guidance 8.0, FID:
 
 | sampler | 10 NFE | 15 | 20 | 25 |

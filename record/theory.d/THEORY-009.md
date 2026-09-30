@@ -49,7 +49,7 @@ of the loss surface is a fact about a coordinate system in which a single
 function has `N!` representations.
 
 **The dimension of the problem stops growing with width.** The PDE does not
-depend on `N`. [LIT-271](../literature.d/LIT-271.md) bounds the gap between the finite-`N` optimum and
+depend on `N`. [LIT-271](../literature.d/LIT-271.md)<!-- ref::source: LIT-271 --> bounds the gap between the finite-`N` optimum and
 the measure optimum by `K/N`, and gives sample complexity independent of the
 number of hidden units.
 
@@ -71,10 +71,10 @@ around but the reason the coordinates mislead — which is the connection to
 ## Why it is `Active`
 
 **Four groups, four routes, about a year.** [LIT-271](../literature.d/LIT-271.md) reaches it through
-propagation of chaos and a direct PDE limit; [LIT-365](../literature.d/LIT-365.md) through an
+propagation of chaos and a direct PDE limit; [LIT-365](../literature.d/LIT-365.md)<!-- ref::source: LIT-365 --> through an
 interacting particle system, and adds that the approximation error scales as
-`O(1/n)` in width rather than `O(1/sqrt(n))`; [LIT-267](../literature.d/LIT-267.md) through a law of
-large numbers for the empirical measure; [LIT-298](../literature.d/LIT-298.md) through optimal
+`O(1/n)` in width rather than `O(1/sqrt(n))`; [LIT-267](../literature.d/LIT-267.md)<!-- ref::source: LIT-267 --> through a law of
+large numbers for the empirical measure; [LIT-298](../literature.d/LIT-298.md)<!-- ref::source: LIT-298 --> through optimal
 transport, with a global-convergence result under a separation condition on
 the initialization. Independent derivations of the same limit are the evidence
 this record asks for and rarely gets.

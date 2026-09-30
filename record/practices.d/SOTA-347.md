@@ -44,8 +44,8 @@ summary: >-
 
 ## Source
 
-Meng et al. (2023), [LIT-576](../literature.d/LIT-576.md), read as [NOTE-316](../notes.d/NOTE-316.md). Hase et al.
-(2023), [LIT-574](../literature.d/LIT-574.md), for how to choose layers.
+Meng et al. (2023), [LIT-576](../literature.d/LIT-576.md)<!-- ref::introduced_by: LIT-576 --><!-- ref::source: LIT-576 -->, read as [NOTE-316](../notes.d/NOTE-316.md). Hase et al.
+(2023), [LIT-574](../literature.d/LIT-574.md)<!-- ref::source: LIT-574 -->, for how to choose layers.
 
 ## The practice
 
@@ -69,3 +69,11 @@ prompt at inference:
   editors average 38–66, and in-context editing beats them
 - **Directional facts**, on GPT-J and GPT-NeoX-class models with ungated
   MLPs
+
+The dispute is [[contested_by::LIT-577]] (RippleEdits), and it is not about
+whether MEMIT writes the edited triple — it does — but about whether that
+amounts to updating knowledge. Across 5K edits, MEMIT and the other weight
+editors leave the edit's implications (logical consequences, multi-hop
+compositions) mostly unchanged, with logical generalization as low as
+5.5–7.0 on popular subjects, and simply stating the new fact in the prompt
+scores better overall.

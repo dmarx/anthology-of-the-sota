@@ -30,14 +30,14 @@ summary: >-
 
 ## Source
 
-Xu, Miikkulainen and Qiu (2026), [LIT-473](../literature.d/LIT-473.md) §5 — read as
+Xu, Miikkulainen and Qiu (2026), [LIT-473](../literature.d/LIT-473.md)<!-- ref::source: LIT-473 --> §5 — read as
 [NOTE-222](../notes.d/NOTE-222.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-283](../practices.d/SOTA-283.md) | bank the sub-lattice part of each update | not a refinement but the difference between moving and not moving, with a bound on how far the discrete path can drift |
+| [SOTA-283](../practices.d/SOTA-283.md)<!-- ref::explains: SOTA-283 --> | bank the sub-lattice part of each update | not a refinement but the difference between moving and not moving, with a bound on how far the discrete path can drift |
 
 ## The account
 

@@ -43,7 +43,7 @@ summary: >-
 
 ## Source
 
-Wu, Arora et al. (2024), [LIT-549](../literature.d/LIT-549.md) — ReFT. Read as [NOTE-290](../notes.d/NOTE-290.md).
+Wu, Arora et al. (2024), [LIT-549](../literature.d/LIT-549.md)<!-- ref::introduced_by: LIT-549 --><!-- ref::source: LIT-549 --> — ReFT. Read as [NOTE-290](../notes.d/NOTE-290.md).
 
 ## The practice
 

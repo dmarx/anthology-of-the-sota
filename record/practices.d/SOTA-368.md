@@ -35,7 +35,7 @@ summary: >-
 
 ## Source
 
-Chang et al. (2009), [LIT-597](../literature.d/LIT-597.md). Read as [NOTE-323](../notes.d/NOTE-323.md).
+Chang et al. (2009), [LIT-597](../literature.d/LIT-597.md)<!-- ref::introduced_by: LIT-597 --><!-- ref::source: LIT-597 -->. Read as [NOTE-323](../notes.d/NOTE-323.md).
 
 ## The practice
 

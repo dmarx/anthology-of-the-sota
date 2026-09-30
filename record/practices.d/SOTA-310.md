@@ -41,7 +41,7 @@ summary: >-
 
 ## Source
 
-Méloux, Maniu, Portet and Peyrard (2025), [LIT-504](../literature.d/LIT-504.md) —
+Méloux, Maniu, Portet and Peyrard (2025), [LIT-504](../literature.d/LIT-504.md)<!-- ref::introduced_by: LIT-504 --><!-- ref::source: LIT-504 --> —
 read as [NOTE-251](../notes.d/NOTE-251.md).
 
 ## When this applies

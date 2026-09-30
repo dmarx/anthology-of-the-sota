@@ -51,7 +51,7 @@ summary: >-
 
 ## Source
 
-Li, Chen, Hu and Yang (2018; CVPR 2019), [LIT-705](../literature.d/LIT-705.md) —
+Li, Chen, Hu and Yang (2018; CVPR 2019), [LIT-705](../literature.d/LIT-705.md)<!-- ref::introduced_by: LIT-705 --><!-- ref::source: LIT-705 --> —
 [ARXIV-1801.05134](https://arxiv.org/abs/1801.05134).
 
 ## What to do
@@ -62,7 +62,7 @@ Li, Chen, Hu and Yang (2018; CVPR 2019), [LIT-705](../literature.d/LIT-705.md) �
    time dropout is the identity, so the variance BN sees is smaller, by a
    factor of `p` in the simplest case, and BN normalizes by a constant that no
    longer applies.
-2. **If the network needs dropout at all** ([SOTA-240](SOTA-240.md) is the
+2. **If the network needs dropout at all** ([SOTA-240](SOTA-240.md)<!-- ref::extends: SOTA-240 --> is the
    test for that), put it after the last BN. In practice that means just
    before the classifier.
 3. **If dropout must sit inside BN blocks**, keep the rate low and expect the

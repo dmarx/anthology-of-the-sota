@@ -51,7 +51,7 @@ compared_against:
 
 ## Source
 
-Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
+Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md)<!-- ref::introduced_by: LIT-119 --><!-- ref::source: LIT-119 --> — the Falcon-H1-Tiny technical blogpost.
 
 ## The ablations
 
@@ -75,6 +75,6 @@ parameters between axes, on a STEM-heavy mix:
 
 The evidence is one architecture family, one scale, loss curves and noisy
 90M benchmarks. The depth finding echoes the
-authors' Falcon-H1-1.5B-Deep result at a larger scale ([LIT-120](../literature.d/LIT-120.md)). The trade the deep
+authors' Falcon-H1-1.5B-Deep result at a larger scale ([LIT-120](../literature.d/LIT-120.md)<!-- ref::source: LIT-120 -->). The trade the deep
 option loses on is throughput, which is the reason to state this as a
 parameter-budget rule rather than a compute-budget one.

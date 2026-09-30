@@ -31,7 +31,7 @@ summary: >-
 
 ## Source
 
-CoreWeave (2025), [LIT-222](../literature.d/LIT-222.md) — a benchmark report that fits a
+CoreWeave (2025), [LIT-222](../literature.d/LIT-222.md)<!-- ref::introduced_by: LIT-222 --><!-- ref::source: LIT-222 --> — a benchmark report that fits a
 right-censored exponential survival model to real job durations and
 interruptions.
 

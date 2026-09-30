@@ -39,9 +39,9 @@ summary: >-
 
 ## Source
 
-Li et al. (2026), [LIT-177](../literature.d/LIT-177.md) — [ARXIV-2606.26560](https://arxiv.org/abs/2606.26560).
+Li et al. (2026), [LIT-177](../literature.d/LIT-177.md)<!-- ref::introduced_by: LIT-177 --><!-- ref::source: LIT-177 --> — [ARXIV-2606.26560](https://arxiv.org/abs/2606.26560).
 
-[SOTA-135](SOTA-135.md) pairs a decay gate for erasure with a delta update for targeted
+[SOTA-135](SOTA-135.md)<!-- ref::extends: SOTA-135 --> pairs a decay gate for erasure with a delta update for targeted
 writes. This names a limitation in that pairing precisely enough to act on:
 **the delta rule corrects what is stored at the current write address before
 writing there.** The correction is anchored to the write. So stale

@@ -67,14 +67,14 @@ explained_by:
 
 ## Source
 
-Srivastava et al. (2022), [LIT-077](../literature.d/LIT-077.md) — BIG-bench, 204 tasks across three
+Srivastava et al. (2022), [LIT-077](../literature.d/LIT-077.md)<!-- ref::introduced_by: LIT-077 --><!-- ref::source: LIT-077 --> — BIG-bench, 204 tasks across three
 model families from millions to hundreds of billions of parameters, with expert
 human raters.
 
-Nanda et al. (2023), [LIT-085](../literature.d/LIT-085.md) — the grokking analysis, which reverse-engineers
+Nanda et al. (2023), [LIT-085](../literature.d/LIT-085.md)<!-- ref::source: LIT-085 --> — the grokking analysis, which reverse-engineers
 one network and recovers the continuous progress underneath its discontinuity.
 
-Schaeffer et al. (2023), [LIT-471](../literature.d/LIT-471.md) — read as [NOTE-220](../notes.d/NOTE-220.md) — the
+Schaeffer et al. (2023), [LIT-471](../literature.d/LIT-471.md)<!-- ref::source: LIT-471 --> — read as [NOTE-220](../notes.d/NOTE-220.md) — the
 direct argument, which rescores fixed model outputs, counts which metrics the
 published claims sit under, and then manufactures emergence on demand in
 vision models that had never shown it.
@@ -84,11 +84,11 @@ it raises the metric explanation itself and declines it for two stated
 reasons, one of which is still standing.
 
 The grokking line, for the third check: Power et al. (2022),
-`LIT-538`, which named the phenomenon and measured its data dependence;
-Liu, Michaud and Tegmark (2022), `LIT-540`, which induces it outside
+LIT-538, which named the phenomenon and measured its data dependence;
+Liu, Michaud and Tegmark (2022), LIT-540, which induces it outside
 algorithmic data and eliminates it on demand; Varma et al. (2023),
-`LIT-539`, which predicts and then observes ungrokking; and Kumar et al.
-(2023), `LIT-537`, which adds the kernel-alignment axis.
+LIT-539, which predicts and then observes ungrokking; and Kumar et al.
+(2023), LIT-537, which adds the kernel-alignment axis.
 
 ## The claim
 
@@ -118,19 +118,19 @@ made when it argued the metric explanation could not cover them.
 generalization long after memorization — is the most-cited mysterious training
 phenomenon of its period, and it is a regime a run is put into, not a fact
 about a task. `LIT-085` finds it **disappears above roughly 60% data** on
-modular addition; `LIT-538`, the paper that named it, already reported
+modular addition; LIT-538, the paper that named it, already reported
 that converged accuracy is flat across a range of training fractions while the
 *time* to reach it explodes as the fraction falls. But data fraction is one
-axis of three. `LIT-540` **induces** grokking on MNIST, IMDb and QM9 by
+axis of three. LIT-540 **induces** grokking on MNIST, IMDb and QM9 by
 shrinking the training set *and* inflating the initialization scale — at
 standard initialization there is none on any of them — and **eliminates** it on
-algorithmic data by constraining the weight norm. `LIT-537` adds a third
+algorithmic data by constraining the weight norm. LIT-537 adds a third
 axis, the alignment between the initial neural tangent kernel and the target,
 which is computable on any task as centered kernel alignment. The full account
 is `THEORY-069`.
 
 So the check is not "was the data starved" but **move the regime and see
-whether the discontinuity moves with it**. `LIT-539` supplies the sharpest
+whether the discontinuity moves with it**. LIT-539 supplies the sharpest
 version: *ungrokking*, in which a network that has already grokked regresses to
 near-random test accuracy when trained on a smaller dataset, at a sharp
 threshold, with an endpoint independent of the weight decay. A capability a
@@ -170,10 +170,10 @@ with weight decay `λ = 1` — the authors call the generalisation to emergence 
 proof of concept" and it is nonetheless how the paper is usually cited.
 
 The grokking sources are narrow in a way the third check has to carry.
-`LIT-538` and `LIT-539` are algorithmic tasks throughout — modular
-arithmetic and binary operation tables — and `LIT-539`'s circuits are
+LIT-538 and LIT-539 are algorithmic tasks throughout — modular
+arithmetic and binary operation tables — and LIT-539's circuits are
 identified against a known trigonometric construction that no realistic task
-has. `LIT-540`'s results outside algorithmic data change **two** things at
+has. LIT-540's results outside algorithmic data change **two** things at
 once, a much smaller training set and an inflated initialization, so the axes
 are established jointly rather than separately, and every such signal is
 described by its authors as weaker than on algorithmic data. What the check

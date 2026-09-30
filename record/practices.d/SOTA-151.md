@@ -57,8 +57,8 @@ summary: >-
 
 ## Source
 
-Chen et al. (2023), [LIT-192](../literature.d/LIT-192.md) — Position Interpolation. Peng et al. (2023),
-[LIT-193](../literature.d/LIT-193.md) — YaRN.
+Chen et al. (2023), [LIT-192](../literature.d/LIT-192.md)<!-- ref::introduced_by: LIT-192 --><!-- ref::source: LIT-192 --> — Position Interpolation. Peng et al. (2023),
+[LIT-193](../literature.d/LIT-193.md)<!-- ref::source: LIT-193 --> — YaRN.
 
 The problem is not that a longer window is expensive to train. It is that
 training it directly barely works: fine-tuning a pretrained LLaMA at the

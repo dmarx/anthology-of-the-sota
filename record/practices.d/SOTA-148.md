@@ -82,9 +82,9 @@ update each bias from that expert's recent load: overloaded experts get their
 bias lowered, idle ones raised. Routing changes. The loss does not.
 
 Because no interference gradient exists, this is not a better point on the
-balance/quality trade — it removes the trade. [LIT-171](../literature.d/LIT-171.md) reports better
+balance/quality trade — it removes the trade. [LIT-171](../literature.d/LIT-171.md)<!-- ref::introduced_by: LIT-171 --><!-- ref::source: LIT-171 --> reports better
 performance *and* better balance than an auxiliary-loss control at 3B
-parameters and 200B tokens, and [LIT-160](../literature.d/LIT-160.md) is DeepSeek-V3 running it at 671B.
+parameters and 200B tokens, and [LIT-160](../literature.d/LIT-160.md)<!-- ref::source: LIT-160 --> is DeepSeek-V3 running it at 671B.
 
 ## What this presumes, and does not argue
 
@@ -93,6 +93,12 @@ recommendation to train one** — the record has no practice saying "use a
 mixture of experts", the question is open as
 [#17](https://github.com/dmarx/anthology-of-the-sota/issues/17), and this
 document does not settle it.
+
+That practice has since been filed: this one [[extends::SOTA-150]], which
+recommends making the feed-forward layers a sparse mixture of experts once
+the model is compute-bound, and is the rule that only exists once that one is
+followed. The auxiliary balancing loss it replaces is the one that came with
+the sparsely-gated layer at the start of that practice's line.
 
 That separation is what makes this fileable on its own.
 [LIT-171](../literature.d/LIT-171.md)'s own standing section worried the opposite way — that a
@@ -106,7 +112,7 @@ other question being settled.
 
 ## Variations, and one qualification from the originating lab
 
-**Kimi K3 ([LIT-131](../literature.d/LIT-131.md)) keeps the recommendation and replaces the update
+**Kimi K3 ([LIT-131](../literature.d/LIT-131.md)<!-- ref::source: LIT-131 -->) keeps the recommendation and replaces the update
 rule.** At 896 routed experts per layer it reports that balancing "exceeds
 the regime in which existing auxiliary-loss-free bias updates remain well
 behaved": the fixed-step rule's step size trades slow adaptation against

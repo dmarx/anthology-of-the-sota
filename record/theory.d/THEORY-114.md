@@ -40,7 +40,7 @@ summary: >-
 
 ## Source
 
-Sixt, Granz and Landgraf (2019), [LIT-729](../literature.d/LIT-729.md) — ICML 2020, §2 and §4.
+Sixt, Granz and Landgraf (2019), [LIT-729](../literature.d/LIT-729.md)<!-- ref::source: LIT-729 --> — ICML 2020, §2 and §4.
 
 ## The account
 
@@ -118,6 +118,6 @@ behave differently, in both directions.
   Integrated Gradients and Guided Backprop "equally bad, worse than a random
   baseline", so ROAR "does not separate converging from non-converging methods".
   Escaping this mechanism is necessary, not sufficient — the same shape as
-  [SOTA-430](../practices.d/SOTA-430.md) being a rejection rule rather than a certificate.
+  [SOTA-430](../practices.d/SOTA-430.md)<!-- ref::explains: SOTA-430 --> being a rejection rule rather than a certificate.
 - **The threshold is reported, not derived.** "Sufficiently converged" carries
   the practical weight and 0.99 is where the measurements land, not a bound.

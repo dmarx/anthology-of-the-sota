@@ -34,7 +34,7 @@ corrected_by:
 
 ## Source
 
-Baroni, Dinu and Kruszewski (2014), [LIT-608](../literature.d/LIT-608.md), read as [NOTE-330](../notes.d/NOTE-330.md).
+Baroni, Dinu and Kruszewski (2014), [LIT-608](../literature.d/LIT-608.md)<!-- ref::introduced_by: LIT-608 --><!-- ref::source: LIT-608 -->, read as [NOTE-330](../notes.d/NOTE-330.md).
 
 ## What it said
 

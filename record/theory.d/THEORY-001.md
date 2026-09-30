@@ -25,7 +25,7 @@ corrected_by:
 
 ## Source
 
-Ioffe and Szegedy (2015), [LIT-002](../literature.d/LIT-002.md) — the paper that introduced the technique,
+Ioffe and Szegedy (2015), [LIT-002](../literature.d/LIT-002.md)<!-- ref::source: LIT-002 --> — the paper that introduced the technique,
 in which this account is not an aside but the title.
 
 ## The account, as it was stated

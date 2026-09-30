@@ -93,9 +93,9 @@ extended_by:
 
 ## Source
 
-Srivastava et al. (2014), [LIT-395](../literature.d/LIT-395.md) —
+Srivastava et al. (2014), [LIT-395](../literature.d/LIT-395.md)<!-- ref::source: LIT-395 --> —
 JMLR 15:1929-1958. Introduced by Hinton et al. (2012),
-[LIT-394](../literature.d/LIT-394.md) —
+[LIT-394](../literature.d/LIT-394.md)<!-- ref::introduced_by: LIT-394 --> —
 [ARXIV-1207.0580](https://arxiv.org/abs/1207.0580).
 
 The condition is in the first sentence of the 2012 paper and has been part of
@@ -125,7 +125,7 @@ claim, which is why this practice is stated as one.
 reported result behind it.** If a corpus is large enough that a model sees most
 of it once and cannot memorize it, the right edge of §7.4 predicts little to
 gain — against a cost the same paper measures at 2-3x training time.
-[LIT-668](../literature.d/LIT-668.md) reports the prediction coming true and gives the reason in the same
+[LIT-668](../literature.d/LIT-668.md)<!-- ref::source: LIT-668 --> reports the prediction coming true and gives the reason in the same
 terms: after 1M steps ALBERT-xxlarge "still do[es] not overfit to [its] training
 data", so dropout was removed, and MLM accuracy rose along with every downstream
 task — **90.4 to 90.7 on average**, with SQuAD 1.1, SQuAD 2.0, MNLI, SST-2 and
@@ -138,7 +138,7 @@ So the right edge holds on one language model, for the reason the 2014 curve
 gives. And 0.3 points of average on one configuration is a confirmation, not a
 large effect.
 
-[LIT-681](../literature.d/LIT-681.md) is the second, with an ordinary architecture. It is a
+[LIT-681](../literature.d/LIT-681.md)<!-- ref::source: LIT-681 --> is the second, with an ordinary architecture. It is a
 BERT-base-shaped MLM trained for 24 hours on one GPU over a single epoch, where
 "overfitting is not possible". Dropout is off in pretraining and back on at 0.1
 for fine-tuning. The one row that turns it on in pretraining gives **80.95
@@ -150,7 +150,7 @@ predicts. What is still not surveyed is *current* recipes. This record has
 two encoders, not a statement about why the field sets dropout to zero today.
 
 **The converse case is live and recent.**
-[LIT-119](../literature.d/LIT-119.md) reports dropout 0.1 after the linear
+[LIT-119](../literature.d/LIT-119.md)<!-- ref::source: LIT-119 --> reports dropout 0.1 after the linear
 projections recovering HumanEval-FIM "under the heavy repetition of a small
 FIM corpus" — a 2026 model report reaching for a 2012 technique under the
 condition the 2014 paper predicts it works in.

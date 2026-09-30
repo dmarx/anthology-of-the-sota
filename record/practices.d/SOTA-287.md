@@ -34,7 +34,7 @@ implementations: []
 
 ## Source
 
-Li, Teh and Pascanu (2025), [LIT-477](../literature.d/LIT-477.md) — read as
+Li, Teh and Pascanu (2025), [LIT-477](../literature.d/LIT-477.md)<!-- ref::introduced_by: LIT-477 --><!-- ref::source: LIT-477 --> — read as
 [NOTE-226](../notes.d/NOTE-226.md). MNIST, CIFAR-10 and CIFAR-100, no data
 augmentation, 3 seeds × 5 inference runs.
 

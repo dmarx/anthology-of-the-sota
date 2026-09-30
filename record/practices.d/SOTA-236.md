@@ -36,8 +36,8 @@ summary: >-
 
 ## Source
 
-Wang et al. (2023), [LIT-385](../literature.d/LIT-385.md) — [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132) (DUSt3R).
-Wang et al. (2025), [LIT-384](../literature.d/LIT-384.md) — [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651) (VGGT).
+Wang et al. (2023), [LIT-385](../literature.d/LIT-385.md)<!-- ref::introduced_by: LIT-385 --><!-- ref::source: LIT-385 --> — [ARXIV-2312.14132](https://arxiv.org/abs/2312.14132) (DUSt3R).
+Wang et al. (2025), [LIT-384](../literature.d/LIT-384.md)<!-- ref::source: LIT-384 --> — [ARXIV-2503.11651](https://arxiv.org/abs/2503.11651) (VGGT).
 
 ## The dependency being inverted
 

@@ -45,8 +45,8 @@ summary: >-
 ## Source
 
 Sun, Jiang, Chen, Zhang, Peng, Luo and Yuan (2024),
-[LIT-497](../literature.d/LIT-497.md) — whose Table 3 is the measurement — with
-Dong et al. (2025), [LIT-494](../literature.d/LIT-494.md) as the second case.
+[LIT-497](../literature.d/LIT-497.md)<!-- ref::introduced_by: LIT-497 --><!-- ref::source: LIT-497 --> — whose Table 3 is the measurement — with
+Dong et al. (2025), [LIT-494](../literature.d/LIT-494.md)<!-- ref::source: LIT-494 --> as the second case.
 
 ## When this applies
 

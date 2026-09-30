@@ -41,7 +41,7 @@ summary: >-
 
 ## Source
 
-Finke et al. (2025), [LIT-485](../literature.d/LIT-485.md) — [ARXIV-2504.09184](https://arxiv.org/abs/2504.09184) §3.5, read as
+Finke et al. (2025), [LIT-485](../literature.d/LIT-485.md)<!-- ref::introduced_by: LIT-485 --><!-- ref::source: LIT-485 --> — [ARXIV-2504.09184](https://arxiv.org/abs/2504.09184) §3.5, read as
 [NOTE-234](../notes.d/NOTE-234.md).
 
 ## What to do

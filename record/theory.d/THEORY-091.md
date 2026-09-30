@@ -36,7 +36,7 @@ summary: >-
 
 ## Source
 
-Reddy, Levine and Dragan (2022), [LIT-503](../literature.d/LIT-503.md), read as [NOTE-250](../notes.d/NOTE-250.md).
+Reddy, Levine and Dragan (2022), [LIT-503](../literature.d/LIT-503.md)<!-- ref::source: LIT-503 -->, read as [NOTE-250](../notes.d/NOTE-250.md).
 
 ## The account
 
@@ -54,6 +54,11 @@ operator adapts. A mapping they find unnatural but consistent becomes one
 they can steer through, and it scores as well as a natural one.
 
 ## What it explains
+
+The practice is [[explains::SOTA-309]], and this account explains both of
+its instructions: why the score ranks interfaces with no labels, and why the
+horizon `Δ` has to be chosen deliberately, since it sets which states the
+operator's input is being credited with determining.
 
 - **The bimodal convergence.** Over 12 users, learned cursor interfaces
   settle on no perturbation (`θ ≈ 0`) and on exact inversion (`θ ≈ π`).

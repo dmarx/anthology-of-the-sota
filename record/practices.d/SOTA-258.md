@@ -43,9 +43,9 @@ explained_by:
 
 ## Source
 
-Zhang et al. (2024), [LIT-445](../literature.d/LIT-445.md) — [ARXIV-2410.21676](https://arxiv.org/abs/2410.21676).
+Zhang et al. (2024), [LIT-445](../literature.d/LIT-445.md)<!-- ref::introduced_by: LIT-445 --><!-- ref::source: LIT-445 --> — [ARXIV-2410.21676](https://arxiv.org/abs/2410.21676).
 
-Bergsma et al. (2025), [LIT-443](../literature.d/LIT-443.md) — [ARXIV-2505.13738](https://arxiv.org/abs/2505.13738).
+Bergsma et al. (2025), [LIT-443](../literature.d/LIT-443.md)<!-- ref::source: LIT-443 --> — [ARXIV-2505.13738](https://arxiv.org/abs/2505.13738).
 
 Both are load-bearing and they are not the same evidence. Zhang et al. is the
 decoupling experiment — hold model size fixed, hold data fixed, see which one
@@ -72,7 +72,7 @@ protocol.
 
 ## What was wrong before, and it was not the fit
 
-[SOTA-097](SOTA-097.md) gave `B ∝ C^0.24` from Kaplan's equation 1.7. That fit is not bad
+[SOTA-097](SOTA-097.md)<!-- ref::corrects: SOTA-097 --> gave `B ∝ C^0.24` from Kaplan's equation 1.7. That fit is not bad
 arithmetic. Along the Chinchilla line `N` and `D` scale together, so `C ≈ 6ND`
 moves with `D`, and a power law in either describes the data. Kaplan measured
 a projection and reported it as the thing.
@@ -83,7 +83,7 @@ tokens-per-parameter — fall on parallel lines. That is the signature of a
 confounded variable, and it is only visible once you have runs off the
 Chinchilla line.
 
-[SOTA-062](SOTA-062.md) made the model-size version of the same error, from a 2021 heuristic.
+[SOTA-062](SOTA-062.md)<!-- ref::corrects: SOTA-062 --> made the model-size version of the same error, from a 2021 heuristic.
 Its own body said "a reader with a measurement should prefer it". This is the
 measurement.
 

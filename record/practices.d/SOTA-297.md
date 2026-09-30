@@ -53,7 +53,7 @@ summary: >-
 
 ## Source
 
-Chen et al. (2025), [LIT-486](../literature.d/LIT-486.md) — [ARXIV-2505.10475](https://arxiv.org/abs/2505.10475) — read as
+Chen et al. (2025), [LIT-486](../literature.d/LIT-486.md)<!-- ref::introduced_by: LIT-486 --><!-- ref::source: LIT-486 --> — [ARXIV-2505.10475](https://arxiv.org/abs/2505.10475) — read as
 [NOTE-235](../notes.d/NOTE-235.md).
 
 ## What to do

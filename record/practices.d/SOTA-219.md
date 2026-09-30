@@ -45,7 +45,7 @@ synchronisation boundary and does not reset or exchange them.
 **It is two thirds of the communication.** A model delta is one tensor the
 size of the parameters. Adam's moments are two more of the same size, so
 synchronising them is a 3x increase in what crosses the slow link — and
-[LIT-212](../literature.d/LIT-212.md) reports the quality gain from doing so as negligible.
+[LIT-212](../literature.d/LIT-212.md)<!-- ref::introduced_by: LIT-212 --><!-- ref::source: LIT-212 --> reports the quality gain from doing so as negligible.
 
 **It says something about where the saving comes from.** The obvious reading
 of local-update training is that it saves by communicating *rarely*. This says
@@ -54,7 +54,7 @@ given consistent inner state is a much more expensive scheme at the same
 interval. That distinction is invisible from the practice this one extends,
 which states the structure without saying what crosses the boundary.
 
-**It reproduces outside the lab that published it.** [LIT-252](../literature.d/LIT-252.md) is an
+**It reproduces outside the lab that published it.** [LIT-252](../literature.d/LIT-252.md)<!-- ref::source: LIT-252 --> is an
 independent open implementation trained across continents at 90–95% compute
 utilization, and it keeps the same structure.
 

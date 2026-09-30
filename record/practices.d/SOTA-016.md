@@ -22,7 +22,7 @@ extended_by:
 
 ## Source
 
-Micikevicius et al. (2017), [LIT-011](../literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740).
+Micikevicius et al. (2017), [LIT-011](../literature.d/LIT-011.md)<!-- ref::introduced_by: LIT-011 --><!-- ref::source: LIT-011 --> — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740).
 
 ## Why FP16 for the passes and not for everything
 

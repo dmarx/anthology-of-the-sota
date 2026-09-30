@@ -22,13 +22,13 @@ extended_by:
 
 ## Source
 
-Rajbhandari et al. (2020), [LIT-027](../literature.d/LIT-027.md) — [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054).
+Rajbhandari et al. (2020), [LIT-027](../literature.d/LIT-027.md)<!-- ref::introduced_by: LIT-027 --><!-- ref::source: LIT-027 --> — [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054).
 
 ## The next 2×, still at no extra communication
 
 A gradient, like an optimizer state, is only needed in full by the rank that
 updates that slice. Partitioning it too takes the per-rank cost from
-[SOTA-028](SOTA-028.md)'s 4Ψ + 12Ψ/N to 2Ψ + 14Ψ/N — about 8× below plain data parallelism
+[SOTA-028](SOTA-028.md)<!-- ref::extends: SOTA-028 -->'s 4Ψ + 12Ψ/N to 2Ψ + 14Ψ/N — about 8× below plain data parallelism
 at large N.
 
 The property that matters is the one it shares with ZeRO-1: **the

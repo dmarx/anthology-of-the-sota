@@ -42,7 +42,7 @@ summary: >-
 
 ## Source
 
-Wang, Zhang, Li, Du, Du, Pang, Yang, Hong and Tan (2025), `LIT-654`.
+Wang, Zhang, Li, Du, Du, Pang, Yang, Hong and Tan (2025), LIT-654.
 
 ## The account, in three steps
 

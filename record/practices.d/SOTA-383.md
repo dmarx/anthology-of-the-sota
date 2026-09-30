@@ -43,7 +43,7 @@ summary: >-
 
 ## Source
 
-Bińkowski, Sutherland, Arbel and Gretton (2018), [LIT-615](../literature.d/LIT-615.md). The account
+Bińkowski, Sutherland, Arbel and Gretton (2018), [LIT-615](../literature.d/LIT-615.md)<!-- ref::introduced_by: LIT-615 --><!-- ref::source: LIT-615 -->. The account
 of why is [THEORY-095](../theory.d/THEORY-095.md).
 
 ## When this applies
@@ -84,7 +84,7 @@ real one — it just has to be checked rather than assumed.
 ## Why this and not more error bars
 
 Because they answer different questions, and the record already recommends
-the other one. [SOTA-307](SOTA-307.md) says to report FID as an error bar over several
+the other one. [SOTA-307](SOTA-307.md)<!-- ref::extends: SOTA-307 --> says to report FID as an error bar over several
 training seeds and treat a gap below about 2% of the mean as inconclusive.
 That is the right response to seed noise, measured by [LIT-501](../literature.d/LIT-501.md) at ≈1.3%.
 It does not respond to this at all: seed variance is spread around the

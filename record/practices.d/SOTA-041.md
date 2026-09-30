@@ -36,7 +36,7 @@ summary: >-
 
 ## Source
 
-Kaplan et al. (2020), [LIT-028](../literature.d/LIT-028.md) — [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361).
+Kaplan et al. (2020), [LIT-028](../literature.d/LIT-028.md)<!-- ref::introduced_by: LIT-028 --><!-- ref::source: LIT-028 --> — [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361).
 
 ## Why this is rejected: the source says the reverse
 

@@ -37,7 +37,7 @@ summary: >-
 
 ## Source
 
-Arora, Li, Liang, Ma and Risteski (2016), [LIT-613](../literature.d/LIT-613.md).
+Arora, Li, Liang, Ma and Risteski (2016), [LIT-613](../literature.d/LIT-613.md)<!-- ref::source: LIT-613 -->.
 
 ## The account
 
@@ -52,7 +52,7 @@ discourse can be integrated out in closed form: two words close together
 share almost the same c, and averaging exp(⟨c, v_w + v_w'⟩) over the sphere
 gives exp(‖v_w + v_w'‖²/2d). Taking logs, PMI(w, w') ≈ ⟨v_w, v_w'⟩/d, up to
 a constant set by the window size. This holds at practical dimensions, which
-[THEORY-093](THEORY-093.md)'s argument could not reach.
+[THEORY-093](THEORY-093.md)<!-- ref::extends: THEORY-093 -->'s argument could not reach.
 
 **Why relations are lines despite error.** Each fitted inner product is
 noisy, with about 17% termwise error for PMI. That noise is larger than the
@@ -86,7 +86,7 @@ inner product is.
 - **The generative model is a caricature.** It has no word order and no
   syntax, and the most frequent words are down-weighted because they do not
   fit.
-- **Relations must satisfy the ratio premise** of [THEORY-089](THEORY-089.md), which is itself
+- **Relations must satisfy the ratio premise** of [THEORY-089](THEORY-089.md)<!-- ref::extends: THEORY-089 -->, which is itself
   assumed.
 
 ## Relation to other accounts

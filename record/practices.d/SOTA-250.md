@@ -35,7 +35,7 @@ summary: >-
 
 ## Source
 
-Assran et al. (2023), [LIT-216](../literature.d/LIT-216.md) — [ARXIV-2301.08243](https://arxiv.org/abs/2301.08243).
+Assran et al. (2023), [LIT-216](../literature.d/LIT-216.md)<!-- ref::introduced_by: LIT-216 --><!-- ref::source: LIT-216 --> — [ARXIV-2301.08243](https://arxiv.org/abs/2301.08243).
 
 ## The rule
 

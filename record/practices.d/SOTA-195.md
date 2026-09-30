@@ -38,7 +38,7 @@ implementations:
 
 ## Source
 
-Salimans and Ho (2022), [LIT-067](../literature.d/LIT-067.md) — Progressive Distillation, where
+Salimans and Ho (2022), [LIT-067](../literature.d/LIT-067.md)<!-- ref::introduced_by: LIT-067 --><!-- ref::source: LIT-067 --> — Progressive Distillation, where
 v-prediction is introduced and, more usefully, where the reason for it is
 diagnosed.
 
@@ -91,7 +91,7 @@ default with a measured alternative, from one group with single runs. For
 ε-prediction the gain was mostly early (UNet FID 8.55 → 7.32 at 200K, 4.21 →
 4.14 at 1M).
 
-## Relation to [SOTA-188](SOTA-188.md)
+## Relation to [SOTA-188](SOTA-188.md)<!-- ref::extends: SOTA-188 -->
 
 [SOTA-188](SOTA-188.md) is the derived statement of the same problem: parametrize so the
 prediction target has unit variance at every noise level, from EDM's

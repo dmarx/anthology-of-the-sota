@@ -51,11 +51,11 @@ inconsistent with the others**.
 
 | account | source | mechanism claimed | what it says is essential |
 | --- | --- | --- | --- |
-| no joint loss | [LIT-594](../literature.d/LIT-594.md) | the target's update is not a gradient of the loss, so there is no objective being jointly minimised — "similar to GANs" | predictor **and** EMA target |
-| alternating optimisation | [LIT-593](../literature.d/LIT-593.md) | an EM-like alternation over two variable sets, "analogous to k-means" | stop-gradient |
-| redundancy reduction | [LIT-596](../literature.d/LIT-596.md) | the off-diagonal cross-correlation penalty makes constant outputs unavailable | neither asymmetry nor negatives |
-| explicit variance | [LIT-595](../literature.d/LIT-595.md) | a hinge on per-dimension standard deviation forbids collapse arithmetically | none of the above |
-| equipartition | [LIT-598](../literature.d/LIT-598.md) | codes are constrained so that a batch is equally divided across prototypes, so two images cannot share one | neither asymmetry nor a term on the embedding |
+| no joint loss | [LIT-594](../literature.d/LIT-594.md)<!-- ref::source: LIT-594 --> | the target's update is not a gradient of the loss, so there is no objective being jointly minimised — "similar to GANs" | predictor **and** EMA target |
+| alternating optimisation | [LIT-593](../literature.d/LIT-593.md)<!-- ref::source: LIT-593 --> | an EM-like alternation over two variable sets, "analogous to k-means" | stop-gradient |
+| redundancy reduction | [LIT-596](../literature.d/LIT-596.md)<!-- ref::source: LIT-596 --> | the off-diagonal cross-correlation penalty makes constant outputs unavailable | neither asymmetry nor negatives |
+| explicit variance | [LIT-595](../literature.d/LIT-595.md)<!-- ref::source: LIT-595 --> | a hinge on per-dimension standard deviation forbids collapse arithmetically | none of the above |
+| equipartition | [LIT-598](../literature.d/LIT-598.md)<!-- ref::source: LIT-598 --> | codes are constrained so that a batch is equally divided across prototypes, so two images cannot share one | neither asymmetry nor a term on the embedding |
 
 ## Where they contradict
 
@@ -92,7 +92,8 @@ regularization generally leads to a trivial solution where all samples
 collapse into an unique representation". **A mechanism introduced to prevent
 collapse has a setting at which it causes it.**
 
-**DINOv2 declines to choose.** Faced with five accounts, the strongest
+**DINOv2 declines to choose.** Oquab et al. (2023) [[source::LIT-599]] is a
+source here not for an account but for its ablation table. Faced with five accounts, the strongest
 open-source model in this lineage stacks them: a **KoLeo** regulariser
 spreading features within a batch, in the spirit of the variance family,
 *and* **Sinkhorn-Knopp centering borrowed from SwAV**, in the spirit of the
@@ -112,7 +113,7 @@ and is a reasonable thing to do. It is not evidence for any account.
 - All four produce useful representations.
 
 So this document disputes the explanations, not the results — the
-distinction `ADR-031` exists for. `SOTA-365` is `Active` while this is
+distinction `ADR-031` exists for. SOTA-365 is `Active` while this is
 `Deferred`, and that pairing is deliberate.
 
 The status is `Deferred` rather than `Proposed` on the vocabulary's own

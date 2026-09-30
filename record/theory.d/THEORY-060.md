@@ -35,14 +35,14 @@ summary: >-
 
 ## Source
 
-Berta, Holzmüller, Jordan and Bach (2025), [LIT-514](../literature.d/LIT-514.md) — read as
+Berta, Holzmüller, Jordan and Bach (2025), [LIT-514](../literature.d/LIT-514.md)<!-- ref::source: LIT-514 --> — read as
 [NOTE-259](../notes.d/NOTE-259.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-315](../practices.d/SOTA-315.md) | stop and tune on validation loss after temperature scaling, then calibrate | the raw validation loss is a sum of two terms with different minima, so its own minimum is a compromise point nobody chose and neither term is at its best there |
+| [SOTA-315](../practices.d/SOTA-315.md)<!-- ref::explains: SOTA-315 --> | stop and tune on validation loss after temperature scaling, then calibrate | the raw validation loss is a sum of two terms with different minima, so its own minimum is a compromise point nobody chose and neither term is at its best there |
 
 ## The account
 

@@ -35,7 +35,7 @@ compared_against:
 
 ## Source
 
-Mohan et al. (2021), [LIT-059](../literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan.
+Mohan et al. (2021), [LIT-059](../literature.d/LIT-059.md)<!-- ref::introduced_by: LIT-059 --><!-- ref::source: LIT-059 --> — https://www.usenix.org/conference/fast21/presentation/mohan.
 
 ## What this is instead of
 
@@ -53,7 +53,7 @@ and it was not what the cited paper says. There is a defensible intuition
 behind it, since the value at risk grows as a run proceeds, but the paper's
 answer is to let the profiler and the overhead bound settle the interval
 <!-- inactive-ok: SOTA-055 — Rejected, named as the practice retired for the same reason this one was restated -->
-rather than any schedule. Restated to match its source; [SOTA-055](SOTA-055.md), which
+rather than any schedule. Restated to match its source; [SOTA-055](SOTA-055.md)<!-- ref::corrects: SOTA-055 -->, which
 proposed a closed-form epoch interval, is retired for the same reason.
 
 ## Conditions and cost

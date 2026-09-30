@@ -30,8 +30,8 @@ implementations: []
 
 ## Source
 
-He et al. (2019), [LIT-590](../literature.d/LIT-590.md) — [ARXIV-1911.05722](https://arxiv.org/abs/1911.05722), §3.3, and Chen et al.
-(2020), [LIT-591](../literature.d/LIT-591.md) — [ARXIV-2002.05709](https://arxiv.org/abs/2002.05709), §2.2. Two groups, three months
+He et al. (2019), [LIT-590](../literature.d/LIT-590.md)<!-- ref::introduced_by: LIT-590 --><!-- ref::source: LIT-590 --> — [ARXIV-1911.05722](https://arxiv.org/abs/1911.05722), §3.3, and Chen et al.
+(2020), [LIT-591](../literature.d/LIT-591.md)<!-- ref::source: LIT-591 --> — [ARXIV-2002.05709](https://arxiv.org/abs/2002.05709), §2.2. Two groups, three months
 apart, the same bug and two different fixes.
 
 ## The claim

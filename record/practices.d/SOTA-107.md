@@ -40,12 +40,12 @@ compared_against:
 
 ## Source
 
-Dao et al. (2023), [LIT-106](../literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691).
+Dao et al. (2023), [LIT-106](../literature.d/LIT-106.md)<!-- ref::introduced_by: LIT-106 --><!-- ref::source: LIT-106 --> — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691).
 
 ## Where the number comes from
 
 The kernel processes the sequence in blocks, and the block sizes are powers
-of two chosen against SRAM capacity ([SOTA-086](SOTA-086.md)) — typically 64 or 128 rows. A
+of two chosen against SRAM capacity ([SOTA-086](SOTA-086.md)<!-- ref::extends: SOTA-086 -->) — typically 64 or 128 rows. A
 sequence length that is not a multiple of the block size leaves a final
 partial block that is masked and computed anyway, so the cost is the same as
 a full one. At 2048 tokens with a 128-row block that is invisible; at 129

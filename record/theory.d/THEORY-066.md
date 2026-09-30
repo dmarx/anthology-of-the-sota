@@ -44,7 +44,7 @@ summary: >-
 
 ## Source
 
-Dong, Cordonnier and Loukas (2021), [LIT-530](../literature.d/LIT-530.md) — read as
+Dong, Cordonnier and Loukas (2021), [LIT-530](../literature.d/LIT-530.md)<!-- ref::source: LIT-530 --> — read as
 [NOTE-274](../notes.d/NOTE-274.md). ICML 2021.
 
 ## The account

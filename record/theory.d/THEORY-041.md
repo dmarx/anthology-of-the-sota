@@ -40,14 +40,14 @@ summary: >-
 
 ## Source
 
-Loshchilov, Hsieh, Sun and Ginsburg (2024), [LIT-472](../literature.d/LIT-472.md) — read as
+Loshchilov, Hsieh, Sun and Ginsburg (2024), [LIT-472](../literature.d/LIT-472.md)<!-- ref::source: LIT-472 --> — read as
 [NOTE-221](../notes.d/NOTE-221.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-282](../practices.d/SOTA-282.md) | put every matrix and hidden state on the unit hypersphere | removing a degree of freedom nothing was steering, which had been drifting somewhere bad |
+| [SOTA-282](../practices.d/SOTA-282.md)<!-- ref::explains: SOTA-282 --> | put every matrix and hidden state on the unit hypersphere | removing a degree of freedom nothing was steering, which had been drifting somewhere bad |
 
 ## The account
 

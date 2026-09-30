@@ -47,7 +47,7 @@ summary: >-
 
 ## Source
 
-Yin et al. (2024), [LIT-631](../literature.d/LIT-631.md) — CausVid, Table 4.
+Yin et al. (2024), [LIT-631](../literature.d/LIT-631.md)<!-- ref::introduced_by: LIT-631 --><!-- ref::source: LIT-631 --> — CausVid, Table 4.
 
 ## The claim
 

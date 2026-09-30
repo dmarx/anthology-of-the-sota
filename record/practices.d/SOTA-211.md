@@ -45,8 +45,8 @@ summary: >-
 
 ## Source
 
-Kaya and Hashemi (2026), [LIT-232](../literature.d/LIT-232.md) — [ARXIV-2609.10980](https://arxiv.org/abs/2609.10980); Ba et al.
-(2026), [LIT-230](../literature.d/LIT-230.md) — [ARXIV-2608.27351](https://arxiv.org/abs/2608.27351).
+Kaya and Hashemi (2026), [LIT-232](../literature.d/LIT-232.md)<!-- ref::introduced_by: LIT-232 --><!-- ref::source: LIT-232 --> — [ARXIV-2609.10980](https://arxiv.org/abs/2609.10980); Ba et al.
+(2026), [LIT-230](../literature.d/LIT-230.md)<!-- ref::source: LIT-230 --> — [ARXIV-2608.27351](https://arxiv.org/abs/2608.27351).
 
 ## What the antithetic pair was for, and why it stops paying here
 

@@ -38,7 +38,7 @@ summary: >-
 
 ## Source
 
-Peng et al. (2025), [LIT-173](../literature.d/LIT-173.md) — [ARXIV-2503.14456](https://arxiv.org/abs/2503.14456).
+Peng et al. (2025), [LIT-173](../literature.d/LIT-173.md)<!-- ref::introduced_by: LIT-173 --><!-- ref::source: LIT-173 --> — [ARXIV-2503.14456](https://arxiv.org/abs/2503.14456).
 
 A generalised delta rule with **vector-valued gating** and **in-context
 learning rates**, plus a relaxed value-replacement rule. Constant memory and

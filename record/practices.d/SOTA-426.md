@@ -49,14 +49,14 @@ extends:
 
 ## Source
 
-Lialin et al. (2023), [LIT-104](../literature.d/LIT-104.md) — [ARXIV-2307.05695](https://arxiv.org/abs/2307.05695),
+Lialin et al. (2023), [LIT-104](../literature.d/LIT-104.md)<!-- ref::introduced_by: LIT-104 --><!-- ref::source: LIT-104 --> — [ARXIV-2307.05695](https://arxiv.org/abs/2307.05695),
 read in full (v4, December 2023) as [NOTE-024](../notes.d/NOTE-024.md). The evidence is Table 6 and the
 paragraph under "Adding restarts and optimizer resets" in §4.2; the recipe is
 Algorithm 1 and Figure 2.
 
 ## When this applies
 
-You are training a low-rank adapter ([SOTA-184](SOTA-184.md)'s `W + s·W_A W_B`) with Adam, and
+You are training a low-rank adapter ([SOTA-184](SOTA-184.md)<!-- ref::extends: SOTA-184 -->'s `W + s·W_A W_B`) with Adam, and
 at some point **during** training you fold the adapter into the frozen weight
 and start a fresh one — `W ← W + s·W_A W_B`, `W_A` re-drawn (Kaiming), `W_B`
 zeroed — so that the next adapter can learn a direction the last one could not.

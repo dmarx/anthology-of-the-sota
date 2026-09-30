@@ -38,7 +38,7 @@ implementations:
 
 ## Source
 
-Siméoni et al. (2025), `LIT-663`.
+Siméoni et al. (2025), LIT-663.
 
 ## The problem this exists for, which is the part to read first
 

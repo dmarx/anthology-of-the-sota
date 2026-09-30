@@ -73,7 +73,7 @@ trained separately — different seeds, different shards, different workers
 that have drifted apart — find the per-layer permutation of hidden units that
 best matches one to the other, apply it, then average.
 
-Two methods, from [LIT-333](../literature.d/LIT-333.md). **Weight matching** solves a linear assignment
+Two methods, from [LIT-333](../literature.d/LIT-333.md)<!-- ref::source: LIT-333 -->. **Weight matching** solves a linear assignment
 problem per layer on the weights themselves. **Activation matching** correlates
 unit activations on a small reference batch — one to four samples — and is
 reported as nearly as good at much lower cost, which is what makes this
@@ -86,7 +86,7 @@ wherever the runs could have permuted independently.
 ## Why
 
 **The barrier between independently trained networks is largely bookkeeping.**
-[LIT-251](../literature.d/LIT-251.md)'s finding is that if the permutation symmetry is accounted for,
+[LIT-251](../literature.d/LIT-251.md)<!-- ref::introduced_by: LIT-251 --><!-- ref::source: LIT-251 -->'s finding is that if the permutation symmetry is accounted for,
 the loss barrier along the linear path between two SGD solutions is small —
 the two networks are near each other in function space and far apart in
 coordinates. [LIT-333](../literature.d/LIT-333.md) turns that from a conjecture into a procedure and

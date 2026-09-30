@@ -31,7 +31,7 @@ summary: >-
 
 ## Source
 
-Nie, Zhang and Patel (2018), [LIT-730](../literature.d/LIT-730.md) — ICML 2018, §3 and §4.
+Nie, Zhang and Patel (2018), [LIT-730](../literature.d/LIT-730.md)<!-- ref::source: LIT-730 --> — ICML 2018, §3 and §4.
 
 ## The account
 
@@ -90,7 +90,7 @@ the opposite direction from all the randomization work.
 ## What it explains that the record already held
 
 - **Why guided backprop survives weight randomization** ([LIT-713](../literature.d/LIT-713.md)'s headline
-  failure, carried in [SOTA-430](../practices.d/SOTA-430.md)'s verdict table): the map was never about the
+  failure, carried in [SOTA-430](../practices.d/SOTA-430.md)<!-- ref::explains: SOTA-430 -->'s verdict table): the map was never about the
   weights.
 - **Why an untrained edge detector matches these maps.** `LIT-713` uses that
   comparison rhetorically and `SOTA-430` carries it as the argument against

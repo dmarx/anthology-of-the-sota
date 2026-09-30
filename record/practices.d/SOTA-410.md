@@ -51,7 +51,7 @@ summary: >-
 
 ## Source
 
-Lu, Zhou, Bao, Chen, Li and Zhu (2022), [LIT-676](../literature.d/LIT-676.md) —
+Lu, Zhou, Bao, Chen, Li and Zhu (2022), [LIT-676](../literature.d/LIT-676.md)<!-- ref::introduced_by: LIT-676 --><!-- ref::source: LIT-676 --> —
 [ARXIV-2211.01095](https://arxiv.org/abs/2211.01095).
 
 ## What to do

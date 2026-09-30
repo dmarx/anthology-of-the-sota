@@ -37,7 +37,7 @@ summary: >-
 
 ## Source
 
-Acharya, Rimal and Dhakal (2026), [LIT-526](../literature.d/LIT-526.md) — read as
+Acharya, Rimal and Dhakal (2026), [LIT-526](../literature.d/LIT-526.md)<!-- ref::source: LIT-526 --> — read as
 [NOTE-270](../notes.d/NOTE-270.md).
 
 ## The account

@@ -39,7 +39,7 @@ summary: >-
 
 ## Source
 
-Gao et al. (2024), [LIT-571](../literature.d/LIT-571.md). Read as [NOTE-307](../notes.d/NOTE-307.md).
+Gao et al. (2024), [LIT-571](../literature.d/LIT-571.md)<!-- ref::introduced_by: LIT-571 --><!-- ref::source: LIT-571 -->. Read as [NOTE-307](../notes.d/NOTE-307.md).
 
 ## The practice
 

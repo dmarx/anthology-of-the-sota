@@ -25,7 +25,7 @@ summary: >-
 
 ## Source
 
-Micikevicius et al. (2017), [LIT-011](../literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740).
+Micikevicius et al. (2017), [LIT-011](../literature.d/LIT-011.md)<!-- ref::introduced_by: LIT-011 --><!-- ref::source: LIT-011 --> — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740).
 
 ## What the source actually prescribes, and what the title adds
 
@@ -44,7 +44,7 @@ run of successful ones.
 
 **The constants in the title are not the paper's, and they are not
 anonymous either.** They come from NVIDIA's *Train With Mixed Precision*
-guide, [LIT-221](../literature.d/LIT-221.md), whose dynamic-scaling section reports:
+guide, [LIT-221](../literature.d/LIT-221.md)<!-- ref::source: LIT-221 -->, whose dynamic-scaling section reports:
 
 > We successfully trained networks with N = 2000, increasing scaling factor
 > by 2, decreasing scaling factor by 0.5
@@ -63,6 +63,12 @@ what the library does. That is a weaker claim than the title makes, and a
 more useful one.
 
 ## Conditions
+
+Loss scaling has no reason to exist apart from [[extends::SOTA-016]]: it is
+the piece of [LIT-011](../literature.d/LIT-011.md)'s recipe that makes running the forward and backward
+passes in FP16 safe, by keeping gradients that would otherwise flush to zero
+inside the format's range. Follow that practice and this one comes with it;
+drop it, and there is nothing left for the scaler to do.
 
 The practice is conditional on the format, not on the model: it exists to
 work around FP16's exponent range, and bfloat16 removes the need for it

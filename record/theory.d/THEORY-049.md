@@ -31,14 +31,14 @@ summary: >-
 
 ## Source
 
-Liang, Yu, Luo, Iyer and colleagues (2024), [LIT-483](../literature.d/LIT-483.md) §3.5 and §4
+Liang, Yu, Luo, Iyer and colleagues (2024), [LIT-483](../literature.d/LIT-483.md)<!-- ref::source: LIT-483 --> §3.5 and §4
 — read as [NOTE-232](../notes.d/NOTE-232.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-262](../practices.d/SOTA-262.md) | give each modality its own weights and let the streams attend jointly | relief from a specific contention, located in a specific component — which is why the practice can now say *which* weights to untie and in what order |
+| [SOTA-262](../practices.d/SOTA-262.md)<!-- ref::explains: SOTA-262 --> | give each modality its own weights and let the streams attend jointly | relief from a specific contention, located in a specific component — which is why the practice can now say *which* weights to untie and in what order |
 
 ## The account
 

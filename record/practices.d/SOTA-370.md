@@ -28,7 +28,7 @@ implementations: []
 
 ## Source
 
-Caron et al. (2020), [LIT-598](../literature.d/LIT-598.md) — [ARXIV-2006.09882](https://arxiv.org/abs/2006.09882).
+Caron et al. (2020), [LIT-598](../literature.d/LIT-598.md)<!-- ref::introduced_by: LIT-598 --><!-- ref::source: LIT-598 --> — [ARXIV-2006.09882](https://arxiv.org/abs/2006.09882).
 
 ## The claim
 

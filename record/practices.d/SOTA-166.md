@@ -52,7 +52,7 @@ summary: >-
 
 ## Source
 
-Ye et al. (2024), [LIT-201](../literature.d/LIT-201.md) — [ARXIV-2403.16952](https://arxiv.org/abs/2403.16952).
+Ye et al. (2024), [LIT-201](../literature.d/LIT-201.md)<!-- ref::introduced_by: LIT-201 --><!-- ref::source: LIT-201 --> — [ARXIV-2403.16952](https://arxiv.org/abs/2403.16952).
 
 Pretraining corpora are mixtures of domains, the proportions matter a great
 deal, and they are set by heuristics and qualitative argument — not because
@@ -87,7 +87,7 @@ legible as the same idea.
 
 ## Contested: the fitted quantity may not be continuous in scale
 
-Gu et al., [LIT-451](../literature.d/LIT-451.md), measure knowledge acquisition from a
+Gu et al., [LIT-451](../literature.d/LIT-451.md)<!-- ref::contested_by: LIT-451 -->, measure knowledge acquisition from a
 knowledge-dense dataset mixed into web text, and find **thresholds rather
 than a curve**: below a critical model size, or a critical mixing ratio, the
 model acquires almost nothing however long it trains. The critical ratio

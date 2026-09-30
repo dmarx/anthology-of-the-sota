@@ -40,14 +40,14 @@ summary: >-
 
 ## Source
 
-Zhang, Zhang, Zardini, Amin and Ozdaglar (2026), [LIT-490](../literature.d/LIT-490.md) §§3–6 —
+Zhang, Zhang, Zardini, Amin and Ozdaglar (2026), [LIT-490](../literature.d/LIT-490.md)<!-- ref::source: LIT-490 --> §§3–6 —
 read as [NOTE-239](../notes.d/NOTE-239.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-301](../practices.d/SOTA-301.md) | apply the objective gradient before the denoiser, not after | you are not adding a prior to an optimizer, you are *running* an optimizer — the denoiser is the projection step, so the ordering is not a preference but the difference between projected and unprojected gradient descent |
+| [SOTA-301](../practices.d/SOTA-301.md)<!-- ref::explains: SOTA-301 --> | apply the objective gradient before the denoiser, not after | you are not adding a prior to an optimizer, you are *running* an optimizer — the denoiser is the projection step, so the ordering is not a preference but the difference between projected and unprojected gradient descent |
 
 ## The account
 

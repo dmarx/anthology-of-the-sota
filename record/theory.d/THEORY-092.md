@@ -41,7 +41,7 @@ summary: >-
 
 ## Source
 
-Levy, Goldberg and Dagan (2015), [LIT-607](../literature.d/LIT-607.md), §2.1, §3.2 and §6.2, read as
+Levy, Goldberg and Dagan (2015), [LIT-607](../literature.d/LIT-607.md)<!-- ref::source: LIT-607 -->, §2.1, §3.2 and §6.2, read as
 [NOTE-329](../notes.d/NOTE-329.md).
 
 ## The account
@@ -55,13 +55,13 @@ weakness: it overweights infrequent events.
 Smoothing replaces P(c) with count(c)^α / Σ count^α, for α < 1. Rare
 contexts gain probability relative to frequent ones, so their PMI falls. In
 SGNS the same exponent sets the distribution negatives are drawn from. Since
-SGNS implicitly factorizes shifted PMI ([THEORY-093](THEORY-093.md)), drawing negatives from count^0.75 is
+SGNS implicitly factorizes shifted PMI ([THEORY-093](THEORY-093.md)<!-- ref::extends: THEORY-093 -->), drawing negatives from count^0.75 is
 the same smoothing applied inside the objective.
 
 ## What it explains
 
 - **Why the 3/4 exponent helps word2vec**, a result its source asserted
-  without numbers ([SOTA-375](../practices.d/SOTA-375.md)).
+  without numbers ([SOTA-375](../practices.d/SOTA-375.md)<!-- ref::explains: SOTA-375 -->).
 - **Why smoothing helps PPMI most** (up to +9.2 on MSR analogies) and SGNS
   least (0 to +1.4). SGNS's sigmoid and frequency-weighted loss already damp
   extreme and rare cells, so it has less left to fix.

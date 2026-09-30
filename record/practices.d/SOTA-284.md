@@ -41,7 +41,7 @@ explained_by:
 ## Source
 
 Chen, Huang, Golowich, Malladi, Block, Ash, Krishnamurthy and Foster (2025),
-[LIT-474](../literature.d/LIT-474.md) — read as [NOTE-223](../notes.d/NOTE-223.md). Theory, with a
+[LIT-474](../literature.d/LIT-474.md)<!-- ref::introduced_by: LIT-474 --><!-- ref::source: LIT-474 --> — read as [NOTE-223](../notes.d/NOTE-223.md). Theory, with a
 graph-reasoning task as illustration.
 
 ## The claim

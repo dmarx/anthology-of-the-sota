@@ -52,7 +52,7 @@ summary: >-
 
 ## Source
 
-Dehghani, Mustafa et al. (2023), [LIT-657](../literature.d/LIT-657.md) — [ARXIV-2307.06304](https://arxiv.org/abs/2307.06304).
+Dehghani, Mustafa et al. (2023), [LIT-657](../literature.d/LIT-657.md)<!-- ref::introduced_by: LIT-657 --><!-- ref::source: LIT-657 --> — [ARXIV-2307.06304](https://arxiv.org/abs/2307.06304).
 
 ## The recipe
 

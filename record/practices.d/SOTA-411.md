@@ -43,7 +43,7 @@ summary: >-
 
 ## Source
 
-Geiping et al. (2025), [LIT-683](../literature.d/LIT-683.md).
+Geiping et al. (2025), [LIT-683](../literature.d/LIT-683.md)<!-- ref::introduced_by: LIT-683 --><!-- ref::source: LIT-683 -->.
 
 ## What to do
 

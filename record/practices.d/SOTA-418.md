@@ -40,7 +40,7 @@ summary: >-
 
 ## Source
 
-Hwang, Wang and Gu (2025), [LIT-679](../literature.d/LIT-679.md).
+Hwang, Wang and Gu (2025), [LIT-679](../literature.d/LIT-679.md)<!-- ref::introduced_by: LIT-679 --><!-- ref::source: LIT-679 -->.
 
 ## What to do
 

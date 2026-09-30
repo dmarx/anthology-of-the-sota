@@ -46,7 +46,7 @@ local gradient, and averages with its neighbours in a communication graph
 rather than with a central node.
 
 Where that point falls is a measurement on your cluster, not a constant.
-[LIT-302](../literature.d/LIT-302.md) establishes it by sweeping — one figure over `1/bandwidth` down to 1
+[LIT-302](../literature.d/LIT-302.md)<!-- ref::introduced_by: LIT-302 --><!-- ref::source: LIT-302 --> establishes it by sweeping — one figure over `1/bandwidth` down to 1
 Mbps, another over latency out to 140 ms — and its two illustrative
 configurations are **ResNet-20 on 7 GPUs at 10 Mbps** and the same at **5 ms
 latency**, where decentralized SGD is up to an order of magnitude faster than

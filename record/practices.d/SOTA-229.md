@@ -40,7 +40,7 @@ summary: >-
 
 ## What to do
 
-If you train your own draft model for speculative decoding ([SOTA-227](SOTA-227.md)), treat
+If you train your own draft model for speculative decoding ([SOTA-227](SOTA-227.md)<!-- ref::extends: SOTA-227 -->), treat
 its training data as a lever that keeps paying, and remove the thing that
 stops it paying:
 
@@ -49,7 +49,7 @@ stops it paying:
 - **Fuse features from several depths** of the target rather than reusing the
   top layer alone.
 - **Simulate the multi-step draft during training** — feed the draft's own
-  step-one output into step two — which [LIT-185](../literature.d/LIT-185.md) calls *training-time test* and
+  step-one output into step two — which [LIT-185](../literature.d/LIT-185.md)<!-- ref::introduced_by: LIT-185 --><!-- ref::source: LIT-185 --> calls *training-time test* and
   which is not optional once the feature loss is gone.
 
 Then scale the data. [LIT-185](../literature.d/LIT-185.md) uses roughly 8x EAGLE's and reports the speedup

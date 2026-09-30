@@ -39,14 +39,14 @@ summary: >-
 
 ## Source
 
-Khangaonkar and Pirsiavash (2025), [LIT-488](../literature.d/LIT-488.md) §4.3 — read as
+Khangaonkar and Pirsiavash (2025), [LIT-488](../literature.d/LIT-488.md)<!-- ref::source: LIT-488 --> §4.3 — read as
 [NOTE-237](../notes.d/NOTE-237.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-299](../practices.d/SOTA-299.md) | finetune the generative model end to end rather than putting a head on a backbone | the backbone is not merely weaker here, it was trained to discard exactly what the task needs — so the recipe is not "use a bigger prior" but "use a prior of the right kind" |
+| [SOTA-299](../practices.d/SOTA-299.md)<!-- ref::explains: SOTA-299 --> | finetune the generative model end to end rather than putting a head on a backbone | the backbone is not merely weaker here, it was trained to discard exactly what the task needs — so the recipe is not "use a bigger prior" but "use a prior of the right kind" |
 
 ## The account
 

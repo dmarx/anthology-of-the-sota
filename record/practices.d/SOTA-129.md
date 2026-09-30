@@ -43,9 +43,9 @@ compared_against:
 
 ## Source
 
-Olmo Team (2025), [LIT-130](../literature.d/LIT-130.md) — the Olmo 3 model flow. Lambert et al. (2024),
-[LIT-172](../literature.d/LIT-172.md) — Tulu 3, where the final stage was named. Falcon-LLM Team (2025),
-[LIT-128](../literature.d/LIT-128.md) — the same recipe on a different base.
+Olmo Team (2025), [LIT-130](../literature.d/LIT-130.md)<!-- ref::introduced_by: LIT-130 --><!-- ref::source: LIT-130 --> — the Olmo 3 model flow. Lambert et al. (2024),
+[LIT-172](../literature.d/LIT-172.md)<!-- ref::source: LIT-172 --> — Tulu 3, where the final stage was named. Falcon-LLM Team (2025),
+[LIT-128](../literature.d/LIT-128.md)<!-- ref::source: LIT-128 --> — the same recipe on a different base.
 
 The standard reasoning curriculum, stated as Olmo 3 runs it in the open: a
 base model pretrained on a general mixture; supervised fine-tuning on

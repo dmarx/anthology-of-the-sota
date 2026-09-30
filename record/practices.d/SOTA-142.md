@@ -41,11 +41,11 @@ summary: >-
 
 ## Source
 
-Shen et al. (2024), [LIT-146](../literature.d/LIT-146.md) — the Power scheduler.
+Shen et al. (2024), [LIT-146](../literature.d/LIT-146.md)<!-- ref::introduced_by: LIT-146 --><!-- ref::source: LIT-146 --> — the Power scheduler.
 
 ## The law
 
-Under a warmup-stable-decay schedule ([SOTA-140](SOTA-140.md)), the optimal learning rate
+Under a warmup-stable-decay schedule ([SOTA-140](SOTA-140.md)<!-- ref::extends: SOTA-140 -->), the optimal learning rate
 follows a power law in the number of training tokens and the batch size.
 The Power scheduler applies the law directly: the learning rate is a power
 of the tokens seen, capped at a maximum, with the WSD decay at the end. A

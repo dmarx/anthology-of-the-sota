@@ -39,7 +39,7 @@ summary: >-
 
 ## Source
 
-Dong et al. (2024), [LIT-552](../literature.d/LIT-552.md) — XGrammar. Read as [NOTE-294](../notes.d/NOTE-294.md).
+Dong et al. (2024), [LIT-552](../literature.d/LIT-552.md)<!-- ref::introduced_by: LIT-552 --><!-- ref::source: LIT-552 --> — XGrammar. Read as [NOTE-294](../notes.d/NOTE-294.md).
 
 ## The practice
 

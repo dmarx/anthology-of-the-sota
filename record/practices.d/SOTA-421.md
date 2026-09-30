@@ -42,7 +42,7 @@ summary: >-
 
 ## Source
 
-Porian, Wortsman, Jitsev, Schmidt and Carmon (2024), [LIT-690](../literature.d/LIT-690.md).
+Porian, Wortsman, Jitsev, Schmidt and Carmon (2024), [LIT-690](../literature.d/LIT-690.md)<!-- ref::introduced_by: LIT-690 --><!-- ref::source: LIT-690 -->.
 
 ## What to do
 

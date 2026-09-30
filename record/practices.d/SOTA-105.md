@@ -20,7 +20,7 @@ extended_by:
 
 ## Source
 
-Kwon et al. (2023), [LIT-112](../literature.d/LIT-112.md) — [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180).
+Kwon et al. (2023), [LIT-112](../literature.d/LIT-112.md)<!-- ref::introduced_by: LIT-112 --><!-- ref::source: LIT-112 --> — [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180).
 
 ## The fragmentation problem, and the borrowed idea
 

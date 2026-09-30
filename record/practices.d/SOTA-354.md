@@ -41,7 +41,7 @@ summary: >-
 
 ## Source
 
-Jumper et al. (2021), [LIT-583](../literature.d/LIT-583.md). Read as [NOTE-321](../notes.d/NOTE-321.md).
+Jumper et al. (2021), [LIT-583](../literature.d/LIT-583.md)<!-- ref::introduced_by: LIT-583 --><!-- ref::source: LIT-583 -->. Read as [NOTE-321](../notes.d/NOTE-321.md).
 
 ## The practice
 

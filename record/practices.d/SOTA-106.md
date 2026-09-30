@@ -30,13 +30,18 @@ summary: >-
 
 ## Source
 
-Dao et al. (2023), [LIT-106](../literature.d/LIT-106.md) — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691).
+Dao et al. (2023), [LIT-106](../literature.d/LIT-106.md)<!-- ref::introduced_by: LIT-106 --><!-- ref::source: LIT-106 --> — [ARXIV-2307.08691](https://arxiv.org/abs/2307.08691).
 
 ## What the second version changed
 
 Not the algorithm. FlashAttention-2 computes the same exact attention by the
 same tiled, never-materialised route ([SOTA-087](SOTA-087.md)); what it rewrites is how the
 work is divided.
+
+So it [[extends::SOTA-085]] as a later version of the same kernel, not a
+rival to it: the exactness that lets that practice be unconditional, and the
+condition in its title about hardware and compiled paths, carry over
+unchanged, and this practice only says which version to run.
 
 Three changes, and the first is the largest: the inner loop is restructured
 so that far fewer of the operations are *non*-matmul. GPUs run matmul on

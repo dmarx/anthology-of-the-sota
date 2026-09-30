@@ -70,7 +70,7 @@ summary: >-
 
 ## Source
 
-Izmailov, Podoprikhin, Garipov, Vetrov and Wilson (2018), [LIT-673](../literature.d/LIT-673.md) —
+Izmailov, Podoprikhin, Garipov, Vetrov and Wilson (2018), [LIT-673](../literature.d/LIT-673.md)<!-- ref::introduced_by: LIT-673 --><!-- ref::source: LIT-673 --> —
 [ARXIV-1803.05407](https://arxiv.org/abs/1803.05407).
 
 ## What to do

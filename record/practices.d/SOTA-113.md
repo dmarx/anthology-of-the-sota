@@ -36,14 +36,14 @@ extended_by:
 
 ## Source
 
-Kwon et al. (2023), [LIT-112](../literature.d/LIT-112.md) — [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180).
+Kwon et al. (2023), [LIT-112](../literature.d/LIT-112.md)<!-- ref::source: LIT-112 --> — [ARXIV-2309.06180](https://arxiv.org/abs/2309.06180).
 
 
 ## Where the technique comes from
 
 Two papers, and this practice used to name only the second.
 
-**Orca** ([LIT-224](../literature.d/LIT-224.md)) introduced **iteration-level scheduling**: invoke the
+**Orca** ([LIT-224](../literature.d/LIT-224.md)<!-- ref::introduced_by: LIT-224 --><!-- ref::source: LIT-224 -->) introduced **iteration-level scheduling**: invoke the
 engine for a *single iteration* of the model rather than for a whole request,
 then re-decide the batch. Requests that finish leave immediately instead of
 waiting for the slowest in their batch; requests that arrive join at the next
@@ -54,7 +54,7 @@ latency** on GPT-3 175B.
 
 **vLLM** ([LIT-112](../literature.d/LIT-112.md)) describes iteration-level scheduling in its *background*
 section and cites Orca for it. Its own contribution is PagedAttention
-([SOTA-105](SOTA-105.md)), and Orca is one of the two baselines it beats.
+([SOTA-105](SOTA-105.md)<!-- ref::extends: SOTA-105 -->), and Orca is one of the two baselines it beats.
 
 The name is why the citation drifted. "Continuous batching" is what the field
 settled on and appears in **neither** paper — Orca says iteration-level

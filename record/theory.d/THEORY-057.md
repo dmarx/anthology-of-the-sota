@@ -55,16 +55,16 @@ summary: >-
 
 ## Source
 
-Zhu et al. (2024), [LIT-205](../literature.d/LIT-205.md), and Finke et al. (2025),
-[LIT-485](../literature.d/LIT-485.md) — read as [NOTE-234](../notes.d/NOTE-234.md). Two groups, two
+Zhu et al. (2024), [LIT-205](../literature.d/LIT-205.md)<!-- ref::source: LIT-205 -->, and Finke et al. (2025),
+[LIT-485](../literature.d/LIT-485.md)<!-- ref::source: LIT-485 --> — read as [NOTE-234](../notes.d/NOTE-234.md). Two groups, two
 corpora, two instruments, no citation in either direction.
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-172](../practices.d/SOTA-172.md) | build synthetic pretraining data by editing human text at the token level, not by generating from scratch | editing keeps the corpus anchored to a distribution that was never passed through a generator, so there is nothing to concentrate |
-| [SOTA-295](../practices.d/SOTA-295.md) | parameterize the generating prompt above the word list, and constrain how each sample opens | if you must generate, the entropy has to be supplied from outside the model, because the model will not supply it itself |
+| [SOTA-172](../practices.d/SOTA-172.md)<!-- ref::explains: SOTA-172 --> | build synthetic pretraining data by editing human text at the token level, not by generating from scratch | editing keeps the corpus anchored to a distribution that was never passed through a generator, so there is nothing to concentrate |
+| [SOTA-295](../practices.d/SOTA-295.md)<!-- ref::explains: SOTA-295 --> | parameterize the generating prompt above the word list, and constrain how each sample opens | if you must generate, the entropy has to be supplied from outside the model, because the model will not supply it itself |
 
 The two practices disagree about the remedy and agree about the disease. That
 agreement is what this document is for: it was stated in prose in

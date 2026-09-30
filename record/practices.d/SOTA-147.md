@@ -72,7 +72,7 @@ recurrent state gives up exactness itself.
 
 ## The evidence
 
-Against the same team's dense 67B ([LIT-174](../literature.d/LIT-174.md)):
+Against the same team's dense 67B ([LIT-174](../literature.d/LIT-174.md)<!-- ref::introduced_by: LIT-174 --><!-- ref::source: LIT-174 -->):
 **93.3% smaller KV cache**, 5.76× maximum generation throughput, 42.5% lower
 training cost.
 

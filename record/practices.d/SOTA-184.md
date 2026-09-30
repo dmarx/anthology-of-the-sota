@@ -36,7 +36,7 @@ extended_by:
 
 ## Source
 
-Hu et al. (2021), [LIT-046](../literature.d/LIT-046.md) — [ARXIV-2106.09685](https://arxiv.org/abs/2106.09685).
+Hu et al. (2021), [LIT-046](../literature.d/LIT-046.md)<!-- ref::introduced_by: LIT-046 --><!-- ref::source: LIT-046 --> — [ARXIV-2106.09685](https://arxiv.org/abs/2106.09685).
 
 ## The method
 

@@ -41,7 +41,18 @@ summary: >-
      says the exponent moves in structured ways during training. Same
      mechanism, applied further. -->
 
+## Source
+
+Hoogland et al. (2024), [[source::LIT-543]] — ARXIV-2402.02364. The method —
+estimate the local learning coefficient through training and take critical
+points of its curve as stage boundaries — and both case studies below are
+this paper's.
+
 ## The account
+
+`λ` is [[extends::THEORY-075]]'s exponent: that account establishes it as the
+right measure of effective complexity, as a statement about the Bayesian
+posterior, and this one tracks it through a training run.
 
 If `λ` measures how degenerate the loss landscape is around the current
 parameters, then watching `λ` through training watches something the loss does
@@ -76,7 +87,7 @@ distribution, with layer-normalization weights collapsing to zero, all while
 the loss keeps falling.
 
 **In a toy model, the same structure is derived rather than observed.**
-[LIT-544](../literature.d/LIT-544.md) shows that in the Toy Model of Superposition the critical points
+[LIT-544](../literature.d/LIT-544.md)<!-- ref::source: LIT-544 --> shows that in the Toy Model of Superposition the critical points
 governing the posterior's phases are the same ones that explain SGD's plateaus
 — which is the closest thing to a mechanism this account has.
 

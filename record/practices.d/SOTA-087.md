@@ -47,7 +47,7 @@ summary: >-
 
 ## Source
 
-Dao et al. (2022), [LIT-074](../literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135).
+Dao et al. (2022), [LIT-074](../literature.d/LIT-074.md)<!-- ref::source: LIT-074 --> — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135).
 
 ## Why recomputation is cheaper here than storing
 
@@ -67,9 +67,15 @@ ordinary version buys memory with compute at a real cost in step time; here
 the recomputation is close to free, because the thing it avoids is the
 expensive one.
 
+It is still that trade's attention case [[extends::SOTA-249]]: the general
+rule — store activations at a subset of checkpoints and recompute the rest in
+the backward pass when activation memory is what binds — is the instruction,
+and this practice applies it to the layer where it pays best and, with
+blockwise kernels, costs least.
+
 ## Where the recommendation came from
 
-Child et al. (2019) recommends it three years earlier, in [LIT-225](../literature.d/LIT-225.md) §5.4 —
+Child et al. (2019) recommends it three years earlier, in [LIT-225](../literature.d/LIT-225.md)<!-- ref::introduced_by: LIT-225 --> §5.4 —
 *"we recompute the attention and feed-forward blocks during the backwards
 pass"* — and for a different reason: ordinary activation checkpointing pays
 compute for memory, and attention at long sequence length is where that trade
@@ -91,4 +97,4 @@ computable blockwise — the online, running-maximum formulation — so a varian
 that needs the whole row at once cannot be done this way.
 
 The saved memory is what makes the long-context regime affordable at all;
-[SOTA-086](SOTA-086.md) is the constraint on how the blocks are sized.
+[SOTA-086](SOTA-086.md)<!-- ref::extends: SOTA-086 --> is the constraint on how the blocks are sized.

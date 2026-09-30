@@ -40,14 +40,14 @@ summary: >-
 
 ## Source
 
-Chen et al. (2025), [LIT-486](../literature.d/LIT-486.md) §3.2 and §3.3 — read as
+Chen et al. (2025), [LIT-486](../literature.d/LIT-486.md)<!-- ref::source: LIT-486 --> §3.2 and §3.3 — read as
 [NOTE-235](../notes.d/NOTE-235.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-297](../practices.d/SOTA-297.md) | scale parallel computation instead of parameters when inference memory binds | you are buying one of the two things parameters buy, and not the other — which is why the practice's benefit is uneven across tasks rather than uniform, and why the decision is task-dependent rather than purely an efficiency calculation |
+| [SOTA-297](../practices.d/SOTA-297.md)<!-- ref::explains: SOTA-297 --> | scale parallel computation instead of parameters when inference memory binds | you are buying one of the two things parameters buy, and not the other — which is why the practice's benefit is uneven across tasks rather than uniform, and why the decision is task-dependent rather than purely an efficiency calculation |
 
 ## The account
 

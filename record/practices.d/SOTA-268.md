@@ -44,7 +44,7 @@ explained_by:
 
 ## Source
 
-Gu et al. (2025), [LIT-451](../literature.d/LIT-451.md) — [ARXIV-2505.18091](https://arxiv.org/abs/2505.18091).
+Gu et al. (2025), [LIT-451](../literature.d/LIT-451.md)<!-- ref::introduced_by: LIT-451 --><!-- ref::source: LIT-451 --> — [ARXIV-2505.18091](https://arxiv.org/abs/2505.18091).
 
 ## What breaks
 

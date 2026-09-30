@@ -46,7 +46,7 @@ explained_by:
 
 ## Source
 
-Reddy, Levine and Dragan (2022), [LIT-503](../literature.d/LIT-503.md) — read as
+Reddy, Levine and Dragan (2022), [LIT-503](../literature.d/LIT-503.md)<!-- ref::introduced_by: LIT-503 --><!-- ref::source: LIT-503 --> — read as
 [NOTE-250](../notes.d/NOTE-250.md).
 
 ## When this applies

@@ -34,7 +34,7 @@ summary: >-
 <!-- inactive-ok-file: SOTA-130 — Proposed, and named throughout as the practice this one rhymes with; the comparison IS the content, so every mention here is deliberate -->
 ## Source
 
-Kumar et al. (2024), [LIT-383](../literature.d/LIT-383.md) — [ARXIV-2409.12917](https://arxiv.org/abs/2409.12917).
+Kumar et al. (2024), [LIT-383](../literature.d/LIT-383.md)<!-- ref::introduced_by: LIT-383 --><!-- ref::source: LIT-383 --> — [ARXIV-2409.12917](https://arxiv.org/abs/2409.12917).
 
 ## Why not just ask
 

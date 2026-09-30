@@ -34,11 +34,11 @@ summary: >-
 ## What to do
 
 When running gradient sparsification, do not begin at the sparsity you intend
-to use. Ramp it up exponentially over the first few epochs. [LIT-056](../literature.d/LIT-056.md)'s schedule
+to use. Ramp it up exponentially over the first few epochs. [LIT-056](../literature.d/LIT-056.md)<!-- ref::introduced_by: LIT-056 --><!-- ref::source: LIT-056 -->'s schedule
 is 75%, 93.75%, 98.4375%, 99.6%, then 99.9%.
 
 This is one of two things [LIT-056](../literature.d/LIT-056.md) adds to plain sparsification, and the other
-one is already filed: [SOTA-214](SOTA-214.md) is the error-feedback requirement, without
+one is already filed: [SOTA-214](SOTA-214.md)<!-- ref::extends: SOTA-214 --> is the error-feedback requirement, without
 which high sparsity fails outright. This is the schedule on top of it.
 
 ## Why

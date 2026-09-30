@@ -43,7 +43,7 @@ summary: >-
 
 ## Source
 
-Xie et al. (2023), [LIT-087](../literature.d/LIT-087.md) — [ARXIV-2302.03169](https://arxiv.org/abs/2302.03169).
+Xie et al. (2023), [LIT-087](../literature.d/LIT-087.md)<!-- ref::introduced_by: LIT-087 --><!-- ref::source: LIT-087 --> — [ARXIV-2302.03169](https://arxiv.org/abs/2302.03169).
 
 ## The result this rests on is not the method
 

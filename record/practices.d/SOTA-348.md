@@ -34,7 +34,7 @@ summary: >-
 
 ## Source
 
-Cohen et al. (2023), [LIT-577](../literature.d/LIT-577.md). Read as [NOTE-314](../notes.d/NOTE-314.md).
+Cohen et al. (2023), [LIT-577](../literature.d/LIT-577.md)<!-- ref::introduced_by: LIT-577 --><!-- ref::source: LIT-577 -->. Read as [NOTE-314](../notes.d/NOTE-314.md).
 
 ## The practice
 

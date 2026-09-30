@@ -50,7 +50,7 @@ summary: >-
 
 ## Source
 
-Wang, Yue, Su and Sun (2024), [LIT-667](../literature.d/LIT-667.md).
+Wang, Yue, Su and Sun (2024), [LIT-667](../literature.d/LIT-667.md)<!-- ref::source: LIT-667 -->.
 
 ## The account
 
@@ -137,7 +137,7 @@ circuit exists and works, on the facts it was trained to work on.
 The intervention above is cheap in the source's setting and is not cheap in
 general, and this account is the reason why.
 
-[LIT-668](../literature.d/LIT-668.md) ran the same change on natural text at BERT scale, for parameter
+[LIT-668](../literature.d/LIT-668.md)<!-- ref::source: LIT-668 --> ran the same change on natural text at BERT scale, for parameter
 efficiency rather than for systematicity, and split it: sharing every layer's
 **attention** parameters costs +0.1 to −0.7 average, while sharing the
 **feed-forward** parameters costs −1.4 to −2.8. The feed-forward block is

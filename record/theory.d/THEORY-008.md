@@ -30,7 +30,7 @@ summary: >-
 
 ## Source
 
-Hoy et al. (2026), [LIT-235](../literature.d/LIT-235.md).
+Hoy et al. (2026), [LIT-235](../literature.d/LIT-235.md)<!-- ref::source: LIT-235 -->.
 
 ## What was actually shown
 
@@ -87,14 +87,14 @@ that instruction, and [LIT-235](../literature.d/LIT-235.md)'s own continual-lear
 is the first evidence it works.
 
 <!-- inactive-ok-block: THEORY-006 — Proposed, named as the adjacent account this one sits beside rather than relies on -->
-**On [SOTA-154](../practices.d/SOTA-154.md)** it supplies something the practice had been missing in a
+**On [SOTA-154](../practices.d/SOTA-154.md)<!-- ref::explains: SOTA-154 -->** it supplies something the practice had been missing in a
 different place from [THEORY-006](THEORY-006.md). That account says why there is anything
 worth finding near the pretrained weights; this says what the search does with
 the rest of the space while it looks.
 
 ## The confirmation that promoted this
 
-Schweighofer et al. ([LIT-238](../literature.d/LIT-238.md)) took the scaling as a prediction and
+Schweighofer et al. ([LIT-238](../literature.d/LIT-238.md)<!-- ref::source: LIT-238 -->) took the scaling as a prediction and
 tested the handle this account is most useful for. Raising the ES population
 from 30 to 128 **cuts the update norm by about half** — which is what an
 inverse dependence of the *squared* norm on `N` predicts for a 4.3× increase —

@@ -45,9 +45,9 @@ summary: >-
 
 ## Source
 
-Wettig, Gao, Zhong and Chen (2022), [LIT-672](../literature.d/LIT-672.md) —
+Wettig, Gao, Zhong and Chen (2022), [LIT-672](../literature.d/LIT-672.md)<!-- ref::introduced_by: LIT-672 --><!-- ref::source: LIT-672 --> —
 [ARXIV-2202.08005](https://arxiv.org/abs/2202.08005), measuring against the rule
-[LIT-670](../literature.d/LIT-670.md) introduced.
+[LIT-670](../literature.d/LIT-670.md)<!-- ref::source: LIT-670 --> introduced.
 
 ## What to do
 

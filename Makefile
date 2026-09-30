@@ -16,9 +16,9 @@ hooks:
 # BOTH `repair` and `link --fix` are needed and neither contains the other.
 # `repair` populates `created:` from a journal entry's path and retires stale
 # config references; `link --fix` writes the converse of a declared relation,
-# which `repair` does not. `index` is run for its side effect on the reports as
-# much as for the views: docs/reports/reference-status.md is what names the
-# citing sites an acknowledgement has to be written from.
+# which `repair` does not. `index` is run so the lint checks views that match
+# the sources; since luria 0.33 the lint names the citing sites an
+# acknowledgement has to be written from itself.
 check:
 	luria repair
 	luria link --fix

@@ -24,7 +24,7 @@ summary: >-
 
 ## Source
 
-Veličković, Perivolaropoulos, Barbero and Pascanu (2024), `LIT-653`.
+Veličković, Perivolaropoulos, Barbero and Pascanu (2024), LIT-653.
 
 ## The claim
 

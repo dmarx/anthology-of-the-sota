@@ -18,7 +18,7 @@ summary: >-
 
 ## Source
 
-Chen et al. (2018), [LIT-063](../literature.d/LIT-063.md) — [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799).
+Chen et al. (2018), [LIT-063](../literature.d/LIT-063.md)<!-- ref::introduced_by: LIT-063 --><!-- ref::source: LIT-063 --> — [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799).
 
 ## What "profile-guided" means when the compiler is doing it
 

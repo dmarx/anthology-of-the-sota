@@ -40,7 +40,7 @@ summary: >-
 
 ## Source
 
-Liu, Gong and Liu (2022), [LIT-636](../literature.d/LIT-636.md) — Rectified Flow, Table 1a.
+Liu, Gong and Liu (2022), [LIT-636](../literature.d/LIT-636.md)<!-- ref::introduced_by: LIT-636 --><!-- ref::source: LIT-636 --> — Rectified Flow, Table 1a.
 
 ## The claim
 

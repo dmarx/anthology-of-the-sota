@@ -46,7 +46,7 @@ summary: >-
 
 ## Source
 
-Jiang et al. (2026), [LIT-200](../literature.d/LIT-200.md) — [ARXIV-2605.25704](https://arxiv.org/abs/2605.25704), for PowLU and the
+Jiang et al. (2026), [LIT-200](../literature.d/LIT-200.md)<!-- ref::introduced_by: LIT-200 --><!-- ref::source: LIT-200 --> — [ARXIV-2605.25704](https://arxiv.org/abs/2605.25704), for PowLU and the
 evidence; Kimi K3 for the second, independent instance.
 
 The diagnosis is precise and it is about the same property twice. SwiGLU

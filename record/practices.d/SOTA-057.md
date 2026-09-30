@@ -18,7 +18,7 @@ summary: >-
 
 ## Source
 
-Mohan et al. (2021), [LIT-059](../literature.d/LIT-059.md) — https://www.usenix.org/conference/fast21/presentation/mohan.
+Mohan et al. (2021), [LIT-059](../literature.d/LIT-059.md)<!-- ref::introduced_by: LIT-059 --><!-- ref::source: LIT-059 --> — https://www.usenix.org/conference/fast21/presentation/mohan.
 
 ## What the practice means
 

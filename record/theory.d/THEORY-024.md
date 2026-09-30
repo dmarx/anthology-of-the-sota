@@ -57,9 +57,9 @@ Three practices the record recommends and could not account for:
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-121](../practices.d/SOTA-121.md) | use Muon — orthogonalise the update | applying the duality map for the spectral norm |
-| [SOTA-143](../practices.d/SOTA-143.md) | parameterize with muP | a partial approximation of that map |
-| [SOTA-168](../practices.d/SOTA-168.md) | run Adam in Shampoo's eigenbasis | the other partial approximation of it |
+| [SOTA-121](../practices.d/SOTA-121.md)<!-- ref::explains: SOTA-121 --> | use Muon — orthogonalise the update | applying the duality map for the spectral norm |
+| [SOTA-143](../practices.d/SOTA-143.md)<!-- ref::explains: SOTA-143 --> | parameterize with muP | a partial approximation of that map |
+| [SOTA-168](../practices.d/SOTA-168.md)<!-- ref::explains: SOTA-168 --> | run Adam in Shampoo's eigenbasis | the other partial approximation of it |
 
 ## The account
 
@@ -83,7 +83,7 @@ duality map for a particular norm, and the blog post that introduced it
 
 ## Why the unification is the load-bearing part
 
-[LIT-438](../literature.d/LIT-438.md) §4.1 shows that **maximal update parametrization and Shampoo
+[LIT-438](../literature.d/LIT-438.md)<!-- ref::source: LIT-438 --> §4.1 shows that **maximal update parametrization and Shampoo
 both emerge as partial approximations to a single duality map** — the one
 induced by the RMS–RMS operator norm. The paper's own framing is that these
 are "important and seemingly disparate" methods, one aimed at scalable
@@ -97,11 +97,11 @@ understands when they meet the second one.
 
 ## The supporting line
 
-- [LIT-437](../literature.d/LIT-437.md) — feature learning follows from scaling the **spectral**
+- [LIT-437](../literature.d/LIT-437.md)<!-- ref::source: LIT-437 --> — feature learning follows from scaling the **spectral**
   norm of weights and updates like `sqrt(fan-out/fan-in)`, not from Frobenius
   or entry-size heuristics, and muP falls out of it elementarily. This is why
   the spectral norm is the quantity in play at all
-- [LIT-436](../literature.d/LIT-436.md) — the **modular norm**, defined recursively alongside the
+- [LIT-436](../literature.d/LIT-436.md)<!-- ref::source: LIT-436 --> — the **modular norm**, defined recursively alongside the
   architecture, against which the dualization is performed. Normalising any
   base optimizer's updates in it makes the learning rate transferable across
   width *and* depth

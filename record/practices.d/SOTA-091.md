@@ -20,7 +20,7 @@ summary: >-
 
 ## Source
 
-Ivanov et al. (2020), [LIT-066](../literature.d/LIT-066.md) — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072).
+Ivanov et al. (2020), [LIT-066](../literature.d/LIT-066.md)<!-- ref::introduced_by: LIT-066 --><!-- ref::source: LIT-066 --> — [ARXIV-2007.00072](https://arxiv.org/abs/2007.00072).
 
 ## The claim this practice is the operational half of
 

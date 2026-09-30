@@ -56,7 +56,7 @@ summary: >-
 
 ## Source
 
-Dhariwal and Nichol (2021), [LIT-699](../literature.d/LIT-699.md) —
+Dhariwal and Nichol (2021), [LIT-699](../literature.d/LIT-699.md)<!-- ref::introduced_by: LIT-699 --><!-- ref::source: LIT-699 --> —
 [ARXIV-2105.05233](https://arxiv.org/abs/2105.05233). The recommendation comes
 from that paper's tables, not from the metric's definition.
 
@@ -120,7 +120,7 @@ sample count.
 **Precision and recall do not escape the feature space, and they are not
 computed in FID's.** Two separate facts, and v1 of this practice collapsed them
 into a false one. The metric's features are **VGG-16 activations after the second
-fully connected layer** ([LIT-703](../literature.d/LIT-703.md)); FID's are Inception-v3. So it is a
+fully connected layer** ([LIT-703](../literature.d/LIT-703.md)<!-- ref::source: LIT-703 -->); FID's are Inception-v3. So it is a
 *different* ImageNet classifier, not the same one — and it is still not a second
 opinion on FID's feature space, because that paper's Figure 3c finds Inception-v3
 features give "substantially similar" results. Two ImageNet classifiers agreeing

@@ -37,14 +37,14 @@ summary: >-
 
 ## Source
 
-Scherlis and Belrose (2025), [LIT-476](../literature.d/LIT-476.md) — read as
+Scherlis and Belrose (2025), [LIT-476](../literature.d/LIT-476.md)<!-- ref::source: LIT-476 --> — read as
 [NOTE-225](../notes.d/NOTE-225.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-286](../practices.d/SOTA-286.md) | estimate local volume on clean held-out data to catch a model that generalizes badly | reading a description length off the geometry, which is why it works where behavioural testing on the same data does not |
+| [SOTA-286](../practices.d/SOTA-286.md)<!-- ref::explains: SOTA-286 --> | estimate local volume on clean held-out data to catch a model that generalizes badly | reading a description length off the geometry, which is why it works where behavioural testing on the same data does not |
 
 ## The account
 

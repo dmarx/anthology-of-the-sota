@@ -24,12 +24,12 @@ summary: >-
 
 ## Source
 
-Evci, Ioannou, Keskin and Dauphin (2020), [LIT-039](../literature.d/LIT-039.md).
+Evci, Ioannou, Keskin and Dauphin (2020), [LIT-039](../literature.d/LIT-039.md)<!-- ref::source: LIT-039 -->.
 
 ## What was actually shown
 
 <!-- inactive-ok: THEORY-002 — Proposed, and this document is part of why: cited as the claim being qualified, not as a settled one. -->
-The question is the one [THEORY-002](THEORY-002.md) leaves open: why does a sparse
+The question is the one [THEORY-002](THEORY-002.md)<!-- ref::corrects: THEORY-002 --> leaves open: why does a sparse
 structure trained from a random initialization do worse than the same
 structure obtained by pruning a dense network? The answer offered is gradient
 flow — sparse networks at initialization have poor flow, and training from

@@ -28,7 +28,7 @@ summary: >-
 
 ## Source
 
-Ba et al. (2016), [LIT-005](../literature.d/LIT-005.md) — [ARXIV-1607.06450](https://arxiv.org/abs/1607.06450), where the bias is
+Ba et al. (2016), [LIT-005](../literature.d/LIT-005.md)<!-- ref::introduced_by: LIT-005 --><!-- ref::source: LIT-005 --> — [ARXIV-1607.06450](https://arxiv.org/abs/1607.06450), where the bias is
 introduced.
 
 ## Zero is the identity here too

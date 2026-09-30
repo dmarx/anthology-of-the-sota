@@ -45,7 +45,7 @@ summary: >-
 
 ## Source
 
-Herrmann, Csordás and Schmidhuber (2025), [LIT-489](../literature.d/LIT-489.md) —
+Herrmann, Csordás and Schmidhuber (2025), [LIT-489](../literature.d/LIT-489.md)<!-- ref::introduced_by: LIT-489 --><!-- ref::source: LIT-489 --> —
 [ARXIV-2503.13431](https://arxiv.org/abs/2503.13431) — read as [NOTE-238](../notes.d/NOTE-238.md).
 
 ## The problem with the obvious metric

@@ -62,7 +62,7 @@ summary: >-
 
 ## Source
 
-Xie et al. (2023), [LIT-391](../literature.d/LIT-391.md) — [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429).
+Xie et al. (2023), [LIT-391](../literature.d/LIT-391.md)<!-- ref::introduced_by: LIT-391 --><!-- ref::source: LIT-391 --> — [ARXIV-2305.10429](https://arxiv.org/abs/2305.10429).
 
 ## The method
 
@@ -113,7 +113,7 @@ is for.
 
 ## Contested: the proxy and the target may be in different regimes
 
-Gu et al., [LIT-451](../literature.d/LIT-451.md), find that knowledge acquisition from a
+Gu et al., [LIT-451](../literature.d/LIT-451.md)<!-- ref::contested_by: LIT-451 -->, find that knowledge acquisition from a
 knowledge-dense dataset mixed into web text has a **threshold in model
 size**: below it the model acquires almost nothing however long it trains,
 above it acquisition jumps. The threshold's location depends on the mixing

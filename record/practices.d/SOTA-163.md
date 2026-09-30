@@ -38,7 +38,7 @@ summary: >-
 
 ## Source
 
-Rouhani et al. (2023), [LIT-197](../literature.d/LIT-197.md) — [ARXIV-2310.10537](https://arxiv.org/abs/2310.10537).
+Rouhani et al. (2023), [LIT-197](../literature.d/LIT-197.md)<!-- ref::introduced_by: LIT-197 --><!-- ref::source: LIT-197 --> — [ARXIV-2310.10537](https://arxiv.org/abs/2310.10537).
 
 An MX block is a vector of k elements sharing one scale. The shipped formats
 use **block size 32** and an **E8M0** scale — eight bits of exponent, no

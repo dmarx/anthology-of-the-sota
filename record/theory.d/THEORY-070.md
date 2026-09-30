@@ -40,6 +40,12 @@ summary: >-
 <!-- inactive-ok-file: THEORY-071 — Proposed, and named here as one of the three rival mechanisms this cluster holds; Proposed is the record's judgement on its scope, which is the point being made when it is cited. -->
 <!-- inactive-ok-file: THEORY-072 — Proposed, and named here as one of the three rival mechanisms this cluster holds; Proposed is the record's judgement on its scope, which is the point being made when it is cited. -->
 
+## Source
+
+Kumar, Bordelon, Gershman and Pehlevan (2023), [[source::LIT-537]] —
+ARXIV-2310.06110, ICLR 2024. The account, both knobs, the three conditions
+and the no-weight-decay counterexample below are all this paper's.
+
 ## The account
 
 In the lazy regime a network is well approximated by its linearisation around
@@ -73,7 +79,7 @@ throughout; and the network starts lazy.
 decay: the model groks, and the parameter weight norm rises through the
 transition.** The polynomial-regression task behaves the same way.
 
-Both [THEORY-072](THEORY-072.md) and [THEORY-071](THEORY-071.md) explain grokking by a late *decrease*
+Both [THEORY-072](THEORY-072.md)<!-- ref::corrects: THEORY-072 --> and [THEORY-071](THEORY-071.md)<!-- ref::corrects: THEORY-071 --> explain grokking by a late *decrease*
 in weight norm — one as a walk down to the generalizing shell, the other as
 norm moving from the memorising circuit to the more efficient one. Neither can
 produce a run with no regularizer and a rising norm. That is why `corrects` is

@@ -39,7 +39,7 @@ explained_by:
 
 ## Source
 
-Loshchilov, Hsieh, Sun and Ginsburg (2024), [LIT-472](../literature.d/LIT-472.md) — read as
+Loshchilov, Hsieh, Sun and Ginsburg (2024), [LIT-472](../literature.d/LIT-472.md)<!-- ref::introduced_by: LIT-472 --><!-- ref::source: LIT-472 --> — read as
 [NOTE-221](../notes.d/NOTE-221.md). 0.5B and 1B decoder-only models on OpenWebText at
 1k, 4k and 8k context.
 

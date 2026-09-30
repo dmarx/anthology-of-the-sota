@@ -42,7 +42,7 @@ summary: >-
 
 ## Source
 
-Su et al. (2024), [LIT-178](../literature.d/LIT-178.md) — [ARXIV-2412.02595](https://arxiv.org/abs/2412.02595).
+Su et al. (2024), [LIT-178](../literature.d/LIT-178.md)<!-- ref::introduced_by: LIT-178 --><!-- ref::source: LIT-178 --> — [ARXIV-2412.02595](https://arxiv.org/abs/2412.02595).
 
 FineWeb-Edu ([LIT-184](../literature.d/LIT-184.md)) and DCLM ([LIT-398](../literature.d/LIT-398.md)) won benchmark gains through
 aggressive model-based filtering, **at the cost of removing 90% of the

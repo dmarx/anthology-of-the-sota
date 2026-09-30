@@ -38,7 +38,7 @@ explained_by:
 
 ## Source
 
-Narayanan et al. (2021), [LIT-043](../literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473).
+Narayanan et al. (2021), [LIT-043](../literature.d/LIT-043.md)<!-- ref::source: LIT-043 --> — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473).
 
 ## What the smaller variance is protecting against
 
@@ -53,7 +53,7 @@ That is the same reasoning that puts a 1/√(2·n_layers) factor on the output
 projections in GPT-2-style initialisations, and the same problem ReZero
 ([SOTA-051](SOTA-051.md)) attacks by starting the residual branch at literally zero.
 
-That factor has an author. Child et al. (2019), [LIT-225](../literature.d/LIT-225.md) §5.2, scales the
+That factor has an author. Child et al. (2019), [LIT-225](../literature.d/LIT-225.md)<!-- ref::introduced_by: LIT-225 --> §5.2, scales the
 initialisation of the two residual-output projections by exactly `1/sqrt(2N)`,
 and states the invariant it is protecting: **the ratio of input-embedding scale
 to residual-block scale, held constant across values of `N`**. The `2` is the

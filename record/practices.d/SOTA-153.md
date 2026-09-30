@@ -82,8 +82,8 @@ summary: >-
 
 ## Source
 
-Yang et al. (2025), [LIT-208](../literature.d/LIT-208.md) — RNoPE-SWA. Puvvada et al. (2025),
-[LIT-209](../literature.d/LIT-209.md) — SWAN-GPT. Kimi Team (2025), [LIT-133](../literature.d/LIT-133.md) — Kimi Linear.
+Yang et al. (2025), [LIT-208](../literature.d/LIT-208.md)<!-- ref::introduced_by: LIT-208 --><!-- ref::source: LIT-208 --> — RNoPE-SWA. Puvvada et al. (2025),
+[LIT-209](../literature.d/LIT-209.md)<!-- ref::source: LIT-209 --> — SWAN-GPT. Kimi Team (2025), [LIT-133](../literature.d/LIT-133.md)<!-- ref::source: LIT-133 --> — Kimi Linear.
 
 ## What to do
 
@@ -105,7 +105,7 @@ and locality are separable jobs, each layer type is bad at the other's, and
 the positional encoding is what makes a layer local. So a layer you want to
 retrieve over the whole sequence is a layer you should not make local.
 
-[LIT-207](../literature.d/LIT-207.md) is why this costs nothing: a decoder-only transformer without a
+[LIT-207](../literature.d/LIT-207.md)<!-- ref::source: LIT-207 --> is why this costs nothing: a decoder-only transformer without a
 positional encoding can represent absolute and relative position anyway, and
 in a hybrid it does not even have to, because a windowed layer or a decaying
 recurrence sitting beneath it already has.
@@ -115,7 +115,7 @@ recurrence sitting beneath it already has.
 ## Why a layer can go without an encoding at all
 
 This practice removes positional encoding from some layers, and the reason that
-is possible is not in the hybrid papers. Haviv et al. ([LIT-665](../literature.d/LIT-665.md)) showed
+is possible is not in the hybrid papers. Haviv et al. ([LIT-665](../literature.d/LIT-665.md)<!-- ref::source: LIT-665 -->) showed
 in 2022 that a decoder-only LM given **no** positional information is
 competitive — 0.05 perplexity from learned embeddings at 1.3B on the Pile —
 and probed where the position comes from: absent at layer 1, recovered

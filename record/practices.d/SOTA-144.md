@@ -57,11 +57,11 @@ extended_by:
 
 ## Source
 
-Dey et al. (2025), [LIT-150](../literature.d/LIT-150.md) — CompleteP.
+Dey et al. (2025), [LIT-150](../literature.d/LIT-150.md)<!-- ref::introduced_by: LIT-150 --><!-- ref::source: LIT-150 --> — CompleteP.
 
 ## What CompleteP changes
 
-µP ([SOTA-143](SOTA-143.md)) transfers hyperparameters across width; across depth, as
+µP ([SOTA-143](SOTA-143.md)<!-- ref::extends: SOTA-143 -->) transfers hyperparameters across width; across depth, as
 commonly used, it does not — the optimal base learning rate moves, and deep
 layers can learn lazily, barely leaving their initialisation. CompleteP, the
 parametrization with depth exponent α = 1, gives depth-wise transfer and

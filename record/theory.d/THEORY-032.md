@@ -65,7 +65,7 @@ summary: >-
 
 ## Source
 
-Davis and Drusvyatskiy (2025), [LIT-457](../literature.d/LIT-457.md) — read as
+Davis and Drusvyatskiy (2025), [LIT-457](../literature.d/LIT-457.md)<!-- ref::source: LIT-457 --> — read as
 [NOTE-209](../notes.d/NOTE-209.md).
 
 ## The account
@@ -97,6 +97,14 @@ network rather than in the norm the optimizer descends in. Transformers are
 degenerate in a specific, provable way, and the spectral update is the one
 that does not care.
 
+That is an account of the positive half of the practice of preconditioning
+with matrices rather than entrywise [[explains::SOTA-165]]: why a member of
+the class that acts on the whole matrix, Muon's spectral step, should beat a
+per-coordinate one on transformers. It explains the Muon branch, not the
+whole class, and it sits awkwardly with that practice's one trend — the
+bound predicts an advantage widening with dimension, where the measured
+advantage shrinks from 1.4× at 0.1B to 1.1× at 1.2B.
+
 ## What was actually shown
 
 The inequality is derived, not measured — it is a comparison of *guaranteed*
@@ -119,7 +127,7 @@ ratio, and the paper does not claim it does.
 
 **It does not tell you to route updates by block.** The rule of thumb is
 stated, and the ablation that would test it — spectral where the condition
-holds, Euclidean elsewhere — is not run. [SOTA-274](../practices.d/SOTA-274.md) is therefore a
+holds, Euclidean elsewhere — is not run. [SOTA-274](../practices.d/SOTA-274.md)<!-- ref::explains: SOTA-274 --> is therefore a
 measurement and not a routing recipe; that restraint is [ADR-017](../decisions.d/ADR-017.md)'s
 question about what a claim's source can carry.
 

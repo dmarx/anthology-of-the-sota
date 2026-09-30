@@ -76,7 +76,7 @@ determining per-token compute.
 
 The ratios are the right way to read the claim, because an efficiency result
 stated as a benchmark score hides what it cost
-([LIT-170](../literature.d/LIT-170.md)):
+([LIT-170](../literature.d/LIT-170.md)<!-- ref::source: LIT-170 -->):
 
 | | |
 |---|---|
@@ -162,9 +162,9 @@ first drafted:
 
 | | | |
 |---|---|---|
-| [LIT-188](../literature.d/LIT-188.md) | 2017 | the sparsely-gated layer itself, between LSTM layers, and the auxiliary balancing loss that came with it |
-| [LIT-187](../literature.d/LIT-187.md) | 2020 | into the transformer, sharded across 2048 TPUs; top-2 routing with a capacity factor |
-| [LIT-189](../literature.d/LIT-189.md) | 2021 | top-1 routing, a float32 router for stability, a trillion parameters |
+| [LIT-188](../literature.d/LIT-188.md)<!-- ref::introduced_by: LIT-188 --><!-- ref::source: LIT-188 --> | 2017 | the sparsely-gated layer itself, between LSTM layers, and the auxiliary balancing loss that came with it |
+| [LIT-187](../literature.d/LIT-187.md)<!-- ref::source: LIT-187 --> | 2020 | into the transformer, sharded across 2048 TPUs; top-2 routing with a capacity factor |
+| [LIT-189](../literature.d/LIT-189.md)<!-- ref::source: LIT-189 --> | 2021 | top-1 routing, a float32 router for stability, a trillion parameters |
 | [LIT-170](../literature.d/LIT-170.md) | 2024 | many small experts plus a shared one, and the dense comparisons above |
 | [LIT-160](../literature.d/LIT-160.md) | 2024 | the recipe at frontier scale — 671B total, 37B active, trained end to end and reported in full, which is what made the argument load-bearing rather than a scaling study |
 

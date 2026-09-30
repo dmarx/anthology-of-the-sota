@@ -30,7 +30,7 @@ corrected_by:
 
 ## Source
 
-Frankle and Carbin (2018), [LIT-019](../literature.d/LIT-019.md).
+Frankle and Carbin (2018), [LIT-019](../literature.d/LIT-019.md)<!-- ref::source: LIT-019 -->.
 
 ## What was actually shown
 

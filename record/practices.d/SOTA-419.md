@@ -53,8 +53,8 @@ summary: >-
 
 ## Source
 
-Geiping and Goldstein (ICML 2023), [LIT-681](../literature.d/LIT-681.md), on the premise
-Kaplan et al. measured in [LIT-028](../literature.d/LIT-028.md).
+Geiping and Goldstein (ICML 2023), [LIT-681](../literature.d/LIT-681.md)<!-- ref::introduced_by: LIT-681 --><!-- ref::source: LIT-681 -->, on the premise
+Kaplan et al. measured in [LIT-028](../literature.d/LIT-028.md)<!-- ref::source: LIT-028 -->.
 
 ## What to do
 

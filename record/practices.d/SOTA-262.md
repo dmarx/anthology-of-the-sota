@@ -59,9 +59,9 @@ summary: >-
 
 ## Source
 
-Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md) — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206).
+Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md)<!-- ref::introduced_by: LIT-449 --><!-- ref::source: LIT-449 --> — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206).
 
-Liang et al. (2024), [LIT-483](../literature.d/LIT-483.md) — [ARXIV-2411.04996](https://arxiv.org/abs/2411.04996) — read
+Liang et al. (2024), [LIT-483](../literature.d/LIT-483.md)<!-- ref::source: LIT-483 --> — [ARXIV-2411.04996](https://arxiv.org/abs/2411.04996) — read
 as [NOTE-232](../notes.d/NOTE-232.md).
 
 ## The shape of the recommendation

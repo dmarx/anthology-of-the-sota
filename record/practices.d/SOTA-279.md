@@ -56,7 +56,7 @@ extended_by:
 
 ## Source
 
-Wei et al. (2022), [LIT-467](../literature.d/LIT-467.md) — [ARXIV-2201.11903](https://arxiv.org/abs/2201.11903),
+Wei et al. (2022), [LIT-467](../literature.d/LIT-467.md)<!-- ref::introduced_by: LIT-467 --><!-- ref::source: LIT-467 --> — [ARXIV-2201.11903](https://arxiv.org/abs/2201.11903),
 read as [NOTE-216](../notes.d/NOTE-216.md).
 
 ## What to do
@@ -103,7 +103,7 @@ the trunk rather than one result among many:
   problems and does not price the ones it wins on. There is a regime where
   this loses on accuracy and cost at once.
 - **Search over a large in-context fact base is one such regime, measured on
-  2024 models.** [LIT-667](../literature.d/LIT-667.md) gives frontier models 28.2K facts (or 5.4K
+  2024 models.** [LIT-667](../literature.d/LIT-667.md)<!-- ref::source: LIT-667 --> gives frontier models 28.2K facts (or 5.4K
   retrieved, enough to deduce the answer) and asks a question whose proof needs
   two bridge entities found among them. Against 33.3% for chance,
   Gemini-1.5-Pro scores **28.7% answering directly and 11.3% when asked to
@@ -159,7 +159,7 @@ separate recommendation:
 
 ## Relation to the neighbours
 
-Extends [SOTA-038](../practices.d/SOTA-038.md), in-context few-shot adaptability, which is the
+Extends [SOTA-038](../practices.d/SOTA-038.md)<!-- ref::extends: SOTA-038 -->, in-context few-shot adaptability, which is the
 mechanism it modifies. [SOTA-127](../practices.d/SOTA-127.md) — filter chain-of-thought traces out
 of a tiny specialist's training data — is the other side of the scale
 threshold, and now has the paper explaining why small models' chains are bad

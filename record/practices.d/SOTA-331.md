@@ -42,8 +42,8 @@ explained_by:
 
 ## Source
 
-Tancik et al. (2020), [LIT-550](../literature.d/LIT-550.md) — read as [NOTE-296](../notes.d/NOTE-296.md). NeRF
-([LIT-435](../literature.d/LIT-435.md)), from an overlapping group and published first, is the ablation
+Tancik et al. (2020), [LIT-550](../literature.d/LIT-550.md)<!-- ref::introduced_by: LIT-550 --><!-- ref::source: LIT-550 --> — read as [NOTE-296](../notes.d/NOTE-296.md). NeRF
+([LIT-435](../literature.d/LIT-435.md)<!-- ref::source: LIT-435 -->), from an overlapping group and published first, is the ablation
 showing that the network without an encoding oversmooths. Explained by [THEORY-077](../theory.d/THEORY-077.md).
 
 ## The practice

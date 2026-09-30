@@ -40,7 +40,7 @@ summary: >-
 
 ## Source
 
-Blei, Ng and Jordan (2003), [LIT-592](../literature.d/LIT-592.md). Read as [NOTE-322](../notes.d/NOTE-322.md).
+Blei, Ng and Jordan (2003), [LIT-592](../literature.d/LIT-592.md)<!-- ref::source: LIT-592 -->. Read as [NOTE-322](../notes.d/NOTE-322.md).
 
 ## The account
 

@@ -44,7 +44,7 @@ summary: >-
 
 ## Source
 
-Blattmann et al. (2023), [LIT-621](../literature.d/LIT-621.md) — Video LDM, Tables 3 and 11.
+Blattmann et al. (2023), [LIT-621](../literature.d/LIT-621.md)<!-- ref::introduced_by: LIT-621 --><!-- ref::source: LIT-621 --> — Video LDM, Tables 3 and 11.
 
 ## The claim
 

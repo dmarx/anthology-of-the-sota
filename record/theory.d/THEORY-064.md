@@ -36,7 +36,7 @@ summary: >-
 ## Source
 
 Vasudeva, Fu, Zhou, Kau, Huang and Sharan (2024),
-[LIT-525](../literature.d/LIT-525.md) — read as [NOTE-271](../notes.d/NOTE-271.md).
+[LIT-525](../literature.d/LIT-525.md)<!-- ref::source: LIT-525 --> — read as [NOTE-271](../notes.d/NOTE-271.md).
 ICLR 2025.
 
 ## The account

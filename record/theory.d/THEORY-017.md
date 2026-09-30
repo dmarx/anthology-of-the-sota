@@ -29,7 +29,7 @@ summary: >-
 
 ## Source
 
-Koh and Liang (2017), [LIT-403](../literature.d/LIT-403.md). This is not an aside in that paper — the
+Koh and Liang (2017), [LIT-403](../literature.d/LIT-403.md)<!-- ref::source: LIT-403 -->. This is not an aside in that paper — the
 counterfactual is how the quantity is *defined*, and matching it against
 retraining is the experiment that validates the method.
 

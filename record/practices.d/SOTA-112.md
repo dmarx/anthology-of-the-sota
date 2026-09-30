@@ -46,7 +46,7 @@ summary: >-
 
 ## Source
 
-Fu et al. (2023), [LIT-115](../literature.d/LIT-115.md) — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109).
+Fu et al. (2023), [LIT-115](../literature.d/LIT-115.md)<!-- ref::introduced_by: LIT-115 --><!-- ref::source: LIT-115 --> — [ARXIV-2310.12109](https://arxiv.org/abs/2310.12109).
 
 ## Why this is rejected: the source argues the opposite
 

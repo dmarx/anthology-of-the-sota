@@ -40,15 +40,15 @@ summary: >-
 
 ## Source
 
-Li, Fan, Hu, Feichtenhofer and He (2022), [LIT-706](../literature.d/LIT-706.md) — [ARXIV-2212.00794](https://arxiv.org/abs/2212.00794);
+Li, Fan, Hu, Feichtenhofer and He (2022), [LIT-706](../literature.d/LIT-706.md)<!-- ref::introduced_by: LIT-706 --><!-- ref::source: LIT-706 --> — [ARXIV-2212.00794](https://arxiv.org/abs/2212.00794);
 read as [NOTE-371](../notes.d/NOTE-371.md).
 
 ## What to do
 
-In contrastive image-text pretraining ([SOTA-359](SOTA-359.md)) with a ViT image encoder:
+In contrastive image-text pretraining ([SOTA-359](SOTA-359.md)<!-- ref::extends: SOTA-359 -->) with a ViT image encoder:
 
 - **Randomly remove 50% of each image's patches** and run the encoder on the
-  visible ones only — MAE's encoder design ([SOTA-372](SOTA-372.md)) without MAE's decoder or
+  visible ones only — MAE's encoder design ([SOTA-372](SOTA-372.md)<!-- ref::extends: SOTA-372 -->) without MAE's decoder or
   loss. 75% also works and is faster, at some accuracy.
 - **Spend the saving.** Double the batch at the same memory, or train on
   more samples in the same time. This is not optional; it is where the gain

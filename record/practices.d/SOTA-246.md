@@ -45,9 +45,9 @@ explained_by:
 
 ## Source
 
-Koh and Liang (2017), [LIT-403](../literature.d/LIT-403.md) — the method and the dataset-repair
-experiment. Pruthi et al. (2020), [LIT-400](../literature.d/LIT-400.md) — the same recommendation from
-a different estimator, with the mechanism. Bae et al. (2022), [LIT-402](../literature.d/LIT-402.md) —
+Koh and Liang (2017), [LIT-403](../literature.d/LIT-403.md)<!-- ref::introduced_by: LIT-403 --><!-- ref::source: LIT-403 --> — the method and the dataset-repair
+experiment. Pruthi et al. (2020), [LIT-400](../literature.d/LIT-400.md)<!-- ref::source: LIT-400 --> — the same recommendation from
+a different estimator, with the mechanism. Bae et al. (2022), [LIT-402](../literature.d/LIT-402.md)<!-- ref::source: LIT-402 --> —
 the correction to what an influence estimate measures, in `source:` because
 without it this practice rests on an explanation the field abandoned.
 

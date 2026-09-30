@@ -27,7 +27,7 @@ summary: >-
 
 ## Source
 
-Kimi Team (2026), [LIT-134](../literature.d/LIT-134.md) — Attention Residuals.
+Kimi Team (2026), [LIT-134](../literature.d/LIT-134.md)<!-- ref::introduced_by: LIT-134 --><!-- ref::source: LIT-134 --> — Attention Residuals.
 
 A residual stream adds every earlier layer's output with equal weight.
 Attention Residuals give each layer one learned pseudo-query that attends
@@ -50,7 +50,7 @@ nobody has compared them.
 The condition this practice was filed under — "one group, one paper, one
 production model ... promote when an independent result lands" — is met.
 
-[LIT-152](../literature.d/LIT-152.md) is a different laboratory implementing Attention Residuals in its
+[LIT-152](../literature.d/LIT-152.md)<!-- ref::source: LIT-152 --> is a different laboratory implementing Attention Residuals in its
 own harness and measuring it against its own design. At 28 layers, Full
 AttnRes reaches 1.762 training loss against 1.789 for the pre-norm residual
 baseline, and lands **level with Qwen's Gated Residual**; the block-summarised

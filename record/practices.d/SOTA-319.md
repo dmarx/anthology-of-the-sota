@@ -54,7 +54,7 @@ summary: >-
 ## Source
 
 Zhai, Likhomanenko, Littwin, Busbridge, Ramapuram, Zhang, Gu and Susskind
-(2023), [LIT-523](../literature.d/LIT-523.md) — read as [NOTE-265](../notes.d/NOTE-265.md).
+(2023), [LIT-523](../literature.d/LIT-523.md)<!-- ref::introduced_by: LIT-523 --><!-- ref::source: LIT-523 --> — read as [NOTE-265](../notes.d/NOTE-265.md).
 
 ## Do this
 

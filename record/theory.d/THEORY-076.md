@@ -31,13 +31,13 @@ extended_by:
 
 ## Source
 
-Yang and Hu (2020), [LIT-548](../literature.d/LIT-548.md) — read as [NOTE-292](../notes.d/NOTE-292.md).
+Yang and Hu (2020), [LIT-548](../literature.d/LIT-548.md)<!-- ref::source: LIT-548 --> — read as [NOTE-292](../notes.d/NOTE-292.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-143](../practices.d/SOTA-143.md) | parametrize with µP, tune narrow, transfer across width | the parametrization whose maximum stable learning rate has no width exponent, so there is a width-free rate to transfer |
+| [SOTA-143](../practices.d/SOTA-143.md)<!-- ref::explains: SOTA-143 --> | parametrize with µP, tune narrow, transfer across width | the parametrization whose maximum stable learning rate has no width exponent, so there is a width-free rate to transfer |
 
 ## The account
 

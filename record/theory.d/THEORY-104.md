@@ -36,7 +36,7 @@ summary: >-
 
 ## Source
 
-Lu, Zhou, Bao, Chen, Li and Zhu (2022), [LIT-676](../literature.d/LIT-676.md).
+Lu, Zhou, Bao, Chen, Li and Zhu (2022), [LIT-676](../literature.d/LIT-676.md)<!-- ref::source: LIT-676 -->.
 
 ## The account
 
@@ -87,6 +87,13 @@ step size by going multistep, and stop raising the order. DPM-Solver++(2M)
 reaches 9.10 at 20 evaluations, and the authors decline to go past order 2 at
 all — "high-order solvers may be unsuitable for large guidance scales, thus we
 mainly consider `k = 2`".
+
+So this account is the reason behind two of the three choices in the guided
+sampling practice [[explains::SOTA-410]]: stop at order 2, because
+sensitivity to the amplified derivatives grows with order, and go multistep,
+because a smaller effective step size keeps the solver inside its narrowed
+radius. The third choice, the data-prediction parameterization, answers the
+boundedness problem below, not this one.
 
 ## What this does not say
 

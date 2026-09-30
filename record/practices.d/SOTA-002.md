@@ -26,7 +26,7 @@ summary: >-
 
 ## Source
 
-Kingma et al. (2014), [LIT-001](../literature.d/LIT-001.md) — [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980).
+Kingma et al. (2014), [LIT-001](../literature.d/LIT-001.md)<!-- ref::introduced_by: LIT-001 --><!-- ref::source: LIT-001 --> — [ARXIV-1412.6980](https://arxiv.org/abs/1412.6980).
 
 ## What the three numbers do
 

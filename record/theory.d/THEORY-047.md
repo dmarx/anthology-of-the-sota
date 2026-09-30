@@ -35,14 +35,14 @@ summary: >-
 
 ## Source
 
-Ye, Luceri and Ferrara (2024), [LIT-480](../literature.d/LIT-480.md) — read as
+Ye, Luceri and Ferrara (2024), [LIT-480](../literature.d/LIT-480.md)<!-- ref::source: LIT-480 --> — read as
 [NOTE-229](../notes.d/NOTE-229.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-290](../practices.d/SOTA-290.md) | include an arm that follows nobody | not a control that reports the null, but the arm that carries the finding — the ordering across arms is the measurement |
+| [SOTA-290](../practices.d/SOTA-290.md)<!-- ref::explains: SOTA-290 --> | include an arm that follows nobody | not a control that reports the null, but the arm that carries the finding — the ordering across arms is the measurement |
 
 ## The account
 

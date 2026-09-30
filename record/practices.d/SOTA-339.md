@@ -38,7 +38,7 @@ summary: >-
 
 ## Source
 
-Zhu et al. (2017), [LIT-564](../literature.d/LIT-564.md) — CycleGAN. Read as [NOTE-302](../notes.d/NOTE-302.md).
+Zhu et al. (2017), [LIT-564](../literature.d/LIT-564.md)<!-- ref::introduced_by: LIT-564 --><!-- ref::source: LIT-564 --> — CycleGAN. Read as [NOTE-302](../notes.d/NOTE-302.md).
 
 ## The practice
 

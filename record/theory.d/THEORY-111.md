@@ -49,7 +49,7 @@ summary: >-
 
 ## Source
 
-Karras, Aittala, Lehtinen, Hellsten, Aila and Laine (2023), [LIT-720](../literature.d/LIT-720.md),
+Karras, Aittala, Lehtinen, Hellsten, Aila and Laine (2023), [LIT-720](../literature.d/LIT-720.md)<!-- ref::source: LIT-720 -->,
 Figure 12 — reported as an aside about learning rates, not as a claim about
 methodology.
 

@@ -40,7 +40,7 @@ explained_by:
 
 ## Source
 
-Cohen et al. (2021), [LIT-461](../literature.d/LIT-461.md) — [ARXIV-2103.00065](https://arxiv.org/abs/2103.00065),
+Cohen et al. (2021), [LIT-461](../literature.d/LIT-461.md)<!-- ref::introduced_by: LIT-461 --><!-- ref::source: LIT-461 --> — [ARXIV-2103.00065](https://arxiv.org/abs/2103.00065),
 read as [NOTE-205](../notes.d/NOTE-205.md). Accounted for by
 [THEORY-035](../theory.d/THEORY-035.md).
 

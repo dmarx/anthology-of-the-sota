@@ -37,7 +37,7 @@ summary: >-
 
 ## Source
 
-Gao et al. (2024), [LIT-571](../literature.d/LIT-571.md), §4.1 and footnote 11. Read as
+Gao et al. (2024), [LIT-571](../literature.d/LIT-571.md)<!-- ref::introduced_by: LIT-571 --><!-- ref::source: LIT-571 -->, §4.1 and footnote 11. Read as
 [NOTE-307](../notes.d/NOTE-307.md).
 
 ## The practice

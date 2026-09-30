@@ -61,7 +61,7 @@ When comparing batch sizes — for a scaling study, a hardware decision, or a
 claim that large batches hurt generalization — tune the learning rate,
 momentum and the full schedule *independently at each batch size*. Do not
 transfer them by linear scaling, square-root scaling, or holding them fixed.
-[LIT-058](../literature.d/LIT-058.md) tuned the initial learning rate, the momentum, and both decay
+[LIT-058](../literature.d/LIT-058.md)<!-- ref::introduced_by: LIT-058 --><!-- ref::source: LIT-058 --> tuned the initial learning rate, the momentum, and both decay
 parameters by quasi-random search at every one of its 454 (workload, batch
 size) pairs, and that is the standard the claim is stated at.
 

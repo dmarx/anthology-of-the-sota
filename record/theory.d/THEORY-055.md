@@ -47,13 +47,13 @@ summary: >-
 ## Source
 
 Duede, Gross, Crockett and Bergstrom (2026),
-[LIT-492](../literature.d/LIT-492.md) — read as [NOTE-241](../notes.d/NOTE-241.md).
+[LIT-492](../literature.d/LIT-492.md)<!-- ref::source: LIT-492 --> — read as [NOTE-241](../notes.d/NOTE-241.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-303](../practices.d/SOTA-303.md) | attribute the phase a tool accelerates before predicting its effect on quality | not a caveat about tool quality but a consequence of the producer re-optimizing against a price that the tool itself moved |
+| [SOTA-303](../practices.d/SOTA-303.md)<!-- ref::explains: SOTA-303 --> | attribute the phase a tool accelerates before predicting its effect on quality | not a caveat about tool quality but a consequence of the producer re-optimizing against a price that the tool itself moved |
 
 ## The account
 

@@ -38,11 +38,11 @@ explained_by:
 
 ## Source
 
-Kangaslahti et al. (2025), [LIT-455](../literature.d/LIT-455.md) — [ARXIV-2506.15872](https://arxiv.org/abs/2506.15872). The
+Kangaslahti et al. (2025), [LIT-455](../literature.d/LIT-455.md)<!-- ref::introduced_by: LIT-455 --><!-- ref::source: LIT-455 --> — [ARXIV-2506.15872](https://arxiv.org/abs/2506.15872). The
 decomposition and the negative control.
 
-Cohen et al. (2024), [LIT-453](../literature.d/LIT-453.md) — [ARXIV-2410.24206](https://arxiv.org/abs/2410.24206), and Kunin et al.
-(2021), [LIT-454](../literature.d/LIT-454.md) — [ARXIV-2107.09133](https://arxiv.org/abs/2107.09133). The other two collapses; the
+Cohen et al. (2024), [LIT-453](../literature.d/LIT-453.md)<!-- ref::source: LIT-453 --> — [ARXIV-2410.24206](https://arxiv.org/abs/2410.24206), and Kunin et al.
+(2021), [LIT-454](../literature.d/LIT-454.md)<!-- ref::source: LIT-454 --> — [ARXIV-2107.09133](https://arxiv.org/abs/2107.09133). The other two collapses; the
 caution rests on all three and not on any one.
 
 ## The free half and the expensive half

@@ -18,7 +18,7 @@ summary: >-
 
 ## Source
 
-Narayanan et al. (2021), [LIT-043](../literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473).
+Narayanan et al. (2021), [LIT-043](../literature.d/LIT-043.md)<!-- ref::introduced_by: LIT-043 --><!-- ref::source: LIT-043 --> — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473).
 
 ## The same principle as [SOTA-047](SOTA-047.md), at a different layer
 

@@ -36,7 +36,7 @@ summary: >-
 
 ## Source
 
-Hinton, Vinyals and Dean (2015), [LIT-680](../literature.d/LIT-680.md), Introduction and §§3, 6.
+Hinton, Vinyals and Dean (2015), [LIT-680](../literature.d/LIT-680.md)<!-- ref::source: LIT-680 -->, Introduction and §§3, 6.
 
 ## The account
 
@@ -68,7 +68,7 @@ separation in either direction.
 
 ## What it explains
 
-Why [SOTA-420](../practices.d/SOTA-420.md) uses a raised temperature at all, and why
+Why [SOTA-420](../practices.d/SOTA-420.md)<!-- ref::explains: SOTA-420 --> uses a raised temperature at all, and why
 a starved student prefers a moderate one. Under this account a moderate `T`
 keeps the informative wrong-class ranking and drops the noise in very
 negative logits that a small model cannot fit anyway.

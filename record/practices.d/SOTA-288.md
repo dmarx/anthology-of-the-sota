@@ -34,7 +34,7 @@ implementations: []
 ## Source
 
 von Oswald, Kobayashi, Meulemans, Henning, Grewe and Sacramento (2020),
-[LIT-478](../literature.d/LIT-478.md) — read as [NOTE-227](../notes.d/NOTE-227.md). CIFAR-10/100,
+[LIT-478](../literature.d/LIT-478.md)<!-- ref::introduced_by: LIT-478 --><!-- ref::source: LIT-478 --> — read as [NOTE-227](../notes.d/NOTE-227.md). CIFAR-10/100,
 ImageNet fine-tuning, and an enwik8 LSTM, five seeds throughout.
 
 ## The claim

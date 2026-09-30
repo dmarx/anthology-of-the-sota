@@ -67,7 +67,7 @@ explained_by:
 
 ## Source
 
-Bachlechner et al. (2020), [LIT-047](../literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887).
+Bachlechner et al. (2020), [LIT-047](../literature.d/LIT-047.md)<!-- ref::introduced_by: LIT-047 --><!-- ref::source: LIT-047 --> — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887).
 
 ## Zero, not small
 
@@ -120,7 +120,7 @@ The identical argument governs a branch **attached to a frozen pretrained
 model**, where the stakes are higher: noise from an untrained adapter is being
 added to representations built from billions of examples.
 
-[LIT-089](../literature.d/LIT-089.md) (ControlNet) connects its trainable branch to the locked backbone
+[LIT-089](../literature.d/LIT-089.md)<!-- ref::source: LIT-089 --> (ControlNet) connects its trainable branch to the locked backbone
 through **zero convolutions** — convolution layers initialised to zero — so the
 adapter is an *exact* no-op at initialisation and its parameters "progressively
 grow from zero", ensuring "no harmful noise could affect the finetuning".

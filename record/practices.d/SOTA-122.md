@@ -44,11 +44,11 @@ summary: >-
 
 ## Source
 
-Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
+Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md)<!-- ref::source: LIT-119 --> — the Falcon-H1-Tiny technical blogpost.
 
 ## The claim
 
-From [ARXIV-2601.04890](https://arxiv.org/abs/2601.04890) ([LIT-121](../literature.d/LIT-121.md)) and validated in the blogpost at the 90M
+From [ARXIV-2601.04890](https://arxiv.org/abs/2601.04890) ([LIT-121](../literature.d/LIT-121.md)<!-- ref::introduced_by: LIT-121 --><!-- ref::source: LIT-121 -->) and validated in the blogpost at the 90M
 scale: under a decoupled weight decay, a matrix layer settles into an
 equilibrium norm determined by the learning rate and the weight decay
 coefficient rather than by the data. Attaching a learnable scalar multiplier

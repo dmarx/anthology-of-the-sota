@@ -59,7 +59,7 @@ summary: >-
 
 ## Source
 
-Wortsman et al. (2021), [LIT-674](../literature.d/LIT-674.md) —
+Wortsman et al. (2021), [LIT-674](../literature.d/LIT-674.md)<!-- ref::introduced_by: LIT-674 --><!-- ref::source: LIT-674 --> —
 [ARXIV-2109.01903](https://arxiv.org/abs/2109.01903).
 
 ## What to do

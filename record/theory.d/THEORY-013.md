@@ -43,13 +43,13 @@ fixed as anything else moves gives three scaling rules, the headline one being
     B_opt ~ eps*N
 
 — the optimal batch size is proportional to the learning rate **and to the
-size of the training set**. [LIT-305](../literature.d/LIT-305.md) verifies all three empirically.
+size of the training set**. [LIT-305](../literature.d/LIT-305.md)<!-- ref::source: LIT-305 --> verifies all three empirically.
 
 ## Why it is `Rejected`
 
 **The `N` half is contradicted by name, twice, by two different groups.**
 
-[LIT-017](../literature.d/LIT-017.md), two months later, says it outright: it cites this paper, notes that
+[LIT-017](../literature.d/LIT-017.md)<!-- ref::source: LIT-017 -->, two months later, says it outright: it cites this paper, notes that
 it "predict[s] a dependence on dataset size", and adds — *"which we do not
 observe"*. Its own noise scale is "independent of the size of the full
 training set" by construction, and its measurements across MNIST, SVHN,
@@ -57,7 +57,7 @@ CIFAR-10, ImageNet, Billion Word, Atari, Dota and an autoencoder find that
 more complex datasets have larger noise scales "in a way that is not directly
 determined by dataset size".
 
-[LIT-058](../literature.d/LIT-058.md), thirteen months later, tested the dependence the other way — by
+[LIT-058](../literature.d/LIT-058.md)<!-- ref::source: LIT-058 -->, thirteen months later, tested the dependence the other way — by
 subsampling MNIST and ImageNet and re-running — and reports that the effect of
 the data set "does not depend on data set size in any consistent way", and is
 smaller than the effects of the model and the optimizer.

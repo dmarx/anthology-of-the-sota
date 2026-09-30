@@ -51,7 +51,7 @@ compared_against:
 
 ## Source
 
-Kingma et al. (2021), [LIT-446](../literature.d/LIT-446.md) — [ARXIV-2107.00630](https://arxiv.org/abs/2107.00630).
+Kingma et al. (2021), [LIT-446](../literature.d/LIT-446.md)<!-- ref::introduced_by: LIT-446 --><!-- ref::source: LIT-446 --> — [ARXIV-2107.00630](https://arxiv.org/abs/2107.00630).
 
 ## The practice follows from the theorem
 

@@ -38,7 +38,7 @@ summary: >-
 
 ## Source
 
-Shen, Mishra and Khashabi (2023), [LIT-536](../literature.d/LIT-536.md) — ICML 2024. Read as
+Shen, Mishra and Khashabi (2023), [LIT-536](../literature.d/LIT-536.md)<!-- ref::introduced_by: LIT-536 --><!-- ref::source: LIT-536 --> — ICML 2024. Read as
 [NOTE-276](../notes.d/NOTE-276.md).
 
 ## The practice

@@ -43,7 +43,7 @@ explained_by:
 ## Source
 
 Sahoo, Deschenaux, Gokaslan, Wang, Chiu and Kuleshov (2025),
-[LIT-479](../literature.d/LIT-479.md) — read as [NOTE-228](../notes.d/NOTE-228.md). LM1B and
+[LIT-479](../literature.d/LIT-479.md)<!-- ref::introduced_by: LIT-479 --><!-- ref::source: LIT-479 --> — read as [NOTE-228](../notes.d/NOTE-228.md). LM1B and
 OpenWebText at GPT-2 scale.
 
 ## The claim, and the regime it is about

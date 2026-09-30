@@ -24,7 +24,7 @@ summary: >-
 
 ## Source
 
-Jiang et al. (2020), [LIT-051](../literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang.
+Jiang et al. (2020), [LIT-051](../literature.d/LIT-051.md)<!-- ref::introduced_by: LIT-051 --><!-- ref::source: LIT-051 --> — https://www.usenix.org/conference/osdi20/presentation/jiang.
 
 ## Not a recommendation, and not from this paper
 

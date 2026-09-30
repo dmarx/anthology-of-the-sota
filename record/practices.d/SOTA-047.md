@@ -51,7 +51,7 @@ parameter-server/all-reduce framework and a CPU-side Summation Service. That
 paper assumes overlap; it does not introduce it, and citing it here credited
 the wrong work.
 
-The source is now [LIT-219](../literature.d/LIT-219.md), the PyTorch `DistributedDataParallel` paper,
+The source is now [LIT-219](../literature.d/LIT-219.md)<!-- ref::introduced_by: LIT-219 --><!-- ref::source: LIT-219 -->, the PyTorch `DistributedDataParallel` paper,
 which names the technique in its abstract — "bucketing gradients, overlapping
 computation with communication, and skipping gradient synchronization" — and
 reports near-linear scalability on 256 GPUs with them.

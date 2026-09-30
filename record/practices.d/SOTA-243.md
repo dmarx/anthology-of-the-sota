@@ -52,8 +52,8 @@ summary: >-
 
 ## Source
 
-Sorscher et al. (2022), [LIT-399](../literature.d/LIT-399.md) — [ARXIV-2206.14486](https://arxiv.org/abs/2206.14486), for the
-inversion and the scaling result. Paul et al. (2021), [LIT-397](../literature.d/LIT-397.md) —
+Sorscher et al. (2022), [LIT-399](../literature.d/LIT-399.md)<!-- ref::introduced_by: LIT-399 --><!-- ref::source: LIT-399 --> — [ARXIV-2206.14486](https://arxiv.org/abs/2206.14486), for the
+inversion and the scaling result. Paul et al. (2021), [LIT-397](../literature.d/LIT-397.md)<!-- ref::source: LIT-397 --> —
 [ARXIV-2107.07075](https://arxiv.org/abs/2107.07075), for the upper cutoff in the Conditions below, which
 is a correction to this instruction rather than a separate one.
 

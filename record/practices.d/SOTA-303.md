@@ -59,7 +59,7 @@ summary: >-
 ## Source
 
 Duede, Gross, Crockett and Bergstrom (2026),
-[LIT-492](../literature.d/LIT-492.md) — read as [NOTE-241](../notes.d/NOTE-241.md).
+[LIT-492](../literature.d/LIT-492.md)<!-- ref::introduced_by: LIT-492 --><!-- ref::source: LIT-492 --> — read as [NOTE-241](../notes.d/NOTE-241.md).
 
 ## When this applies
 

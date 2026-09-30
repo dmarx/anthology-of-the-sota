@@ -25,7 +25,7 @@ summary: >-
 
 ## Source
 
-Chen et al. (2024), [LIT-464](../literature.d/LIT-464.md) — read as [NOTE-214](../notes.d/NOTE-214.md).
+Chen et al. (2024), [LIT-464](../literature.d/LIT-464.md)<!-- ref::source: LIT-464 --> — read as [NOTE-214](../notes.d/NOTE-214.md).
 
 ## The account
 

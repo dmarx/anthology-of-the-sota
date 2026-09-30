@@ -29,7 +29,7 @@ implementations: []
 
 ## Source
 
-Chen et al. (2020), [LIT-591](../literature.d/LIT-591.md) — [ARXIV-2002.05709](https://arxiv.org/abs/2002.05709).
+Chen et al. (2020), [LIT-591](../literature.d/LIT-591.md)<!-- ref::introduced_by: LIT-591 --><!-- ref::source: LIT-591 --> — [ARXIV-2002.05709](https://arxiv.org/abs/2002.05709).
 
 ## The claim
 

@@ -36,7 +36,7 @@ summary: >-
 
 ## Source
 
-Ding et al. (2024), [LIT-203](../literature.d/LIT-203.md) — Fewer Truncations Improve Language Modeling.
+Ding et al. (2024), [LIT-203](../literature.d/LIT-203.md)<!-- ref::introduced_by: LIT-203 --><!-- ref::source: LIT-203 --> — Fewer Truncations Improve Language Modeling.
 
 The universal default is to concatenate documents and split the stream at the
 sequence length. It wastes no tokens on padding, which is why everyone does

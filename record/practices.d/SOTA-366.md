@@ -28,7 +28,7 @@ implementations: []
 
 ## Source
 
-Chen & He (2020), [LIT-593](../literature.d/LIT-593.md) — [ARXIV-2011.10566](https://arxiv.org/abs/2011.10566), §4.1.
+Chen & He (2020), [LIT-593](../literature.d/LIT-593.md)<!-- ref::introduced_by: LIT-593 --><!-- ref::source: LIT-593 --> — [ARXIV-2011.10566](https://arxiv.org/abs/2011.10566), §4.1.
 
 ## The claim
 

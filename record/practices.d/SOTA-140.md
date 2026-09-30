@@ -67,7 +67,7 @@ extended_by:
 
 ## Source
 
-Hu et al. (2024), [LIT-144](../literature.d/LIT-144.md) — MiniCPM; Hägele et al. (2024), [LIT-145](../literature.d/LIT-145.md), for the
+Hu et al. (2024), [LIT-144](../literature.d/LIT-144.md)<!-- ref::introduced_by: LIT-144 --><!-- ref::source: LIT-144 --> — MiniCPM; Hägele et al. (2024), [LIT-145](../literature.d/LIT-145.md)<!-- ref::source: LIT-145 -->, for the
 comparison against cosine.
 
 Warm up, hold the learning rate at its peak for most of training, then
@@ -102,7 +102,7 @@ decay to a floor (Falcon-H1-Tiny: ×64 exponential over 100 GT of 800 GT).
 
 ## Contested
 
-Kimi K3 ([LIT-131](../literature.d/LIT-131.md)) ran the comparison again at 2.8T and came out the other
+Kimi K3 ([LIT-131](../literature.d/LIT-131.md)<!-- ref::contested_by: LIT-131 -->) ran the comparison again at 2.8T and came out the other
 way. Its argument is the same one [LIT-145](../literature.d/LIT-145.md) acted on: the two schedules'
 optimal peak learning rates and batch sizes differ substantially even at
 matched model size and token budget, so a shared hyperparameter setting

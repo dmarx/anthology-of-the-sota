@@ -48,8 +48,8 @@ summary: >-
 
 ## Source
 
-Hsueh et al. (2025), [LIT-555](../literature.d/LIT-555.md) — read as [NOTE-297](../notes.d/NOTE-297.md). The cold end of
-the evidence is Bansal et al. (2022), [LIT-553](../literature.d/LIT-553.md). Filed for `#163`'s
+Hsueh et al. (2025), [LIT-555](../literature.d/LIT-555.md)<!-- ref::source: LIT-555 --> — read as [NOTE-297](../notes.d/NOTE-297.md). The cold end of
+the evidence is Bansal et al. (2022), [LIT-553](../literature.d/LIT-553.md)<!-- ref::source: LIT-553 -->. Filed for `#163`'s
 "[theory] warm diffusion".
 
 ## The account

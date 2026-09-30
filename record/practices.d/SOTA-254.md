@@ -55,7 +55,7 @@ summary: >-
 
 ## Source
 
-Prabhudesai et al. (2025), [LIT-442](../literature.d/LIT-442.md) — [ARXIV-2507.15857](https://arxiv.org/abs/2507.15857).
+Prabhudesai et al. (2025), [LIT-442](../literature.d/LIT-442.md)<!-- ref::introduced_by: LIT-442 --><!-- ref::source: LIT-442 --> — [ARXIV-2507.15857](https://arxiv.org/abs/2507.15857).
 
 ## The recommendation is a conditional, and both arms of it are the practice
 
@@ -136,7 +136,7 @@ the one place it is tested — by giving the autoregressive arm explicit
 augmentation — it does not reproduce the benefit. So the *whether* is well
 measured and the *why* is open.
 
-## Relation to [SOTA-157](SOTA-157.md)
+## Relation to [SOTA-157](SOTA-157.md)<!-- ref::extends: SOTA-157 -->
 
 [SOTA-157](SOTA-157.md) says train as a masked diffusion model, full stop, on the strength
 of LLaDA's capability parity. This is that instruction with a condition and a

@@ -36,9 +36,9 @@ summary: >-
 
 ## Source
 
-Kaplan et al. (2024), [LIT-412](../literature.d/LIT-412.md), primary;
-with Feucht et al. (2024), [LIT-409](../literature.d/LIT-409.md), and
-Lad et al. (2024), [LIT-417](../literature.d/LIT-417.md).
+Kaplan et al. (2024), [LIT-412](../literature.d/LIT-412.md)<!-- ref::source: LIT-412 -->, primary;
+with Feucht et al. (2024), [LIT-409](../literature.d/LIT-409.md)<!-- ref::source: LIT-409 -->, and
+Lad et al. (2024), [LIT-417](../literature.d/LIT-417.md)<!-- ref::source: LIT-417 -->.
 
 ## What was actually shown
 
@@ -77,7 +77,7 @@ broken it. Both checks were run and both went the other way.
 
 **And it is constructive.** The representations support a vocabulary-expansion
 method that preserves the model's accuracy —
-[SOTA-247](../practices.d/SOTA-247.md) — which is a stronger test of
+[SOTA-247](../practices.d/SOTA-247.md)<!-- ref::explains: SOTA-247 --> — which is a stronger test of
 the account than any probe: a representation you can put back into the
 embedding matrix and have the frozen model use is one that was really there.
 

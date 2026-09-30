@@ -53,9 +53,9 @@ Read that way, the record's three prescriptions stop competing:
 
 | | interval | what happens at the sync | workload |
 |---|---|---|---|
-| [LIT-362](../literature.d/LIT-362.md) (2018) | `H` = 16–32 | parameters averaged | ResNet, CIFAR/ImageNet, `K` = 16 |
-| [LIT-373](../literature.d/LIT-373.md) (2019) | `tau` = 12–48 | averaged, then an outer momentum step | ImageNet, WMT |
-| [LIT-212](../literature.d/LIT-212.md) (2023) | `H` = 500 | Nesterov momentum over the deltas | 400M transformer, C4, `k` = 8 |
+| [LIT-362](../literature.d/LIT-362.md)<!-- ref::source: LIT-362 --> (2018) | `H` = 16–32 | parameters averaged | ResNet, CIFAR/ImageNet, `K` = 16 |
+| [LIT-373](../literature.d/LIT-373.md)<!-- ref::source: LIT-373 --> (2019) | `tau` = 12–48 | averaged, then an outer momentum step | ImageNet, WMT |
+| [LIT-212](../literature.d/LIT-212.md)<!-- ref::source: LIT-212 --> (2023) | `H` = 500 | Nesterov momentum over the deltas | 400M transformer, C4, `k` = 8 |
 
 The ordering is the wrong way round for a "correct value of `H`" story — the
 paper with an outer optimizer and the smallest interval sits between the two
@@ -95,13 +95,13 @@ numbers off the same axis, chosen against different objectives.
 
 ## What rests on it
 
-[SOTA-155](../practices.d/SOTA-155.md) prescribes many inner steps *and* an outer momentum optimizer, and
+[SOTA-155](../practices.d/SOTA-155.md)<!-- ref::explains: SOTA-155 --> prescribes many inner steps *and* an outer momentum optimizer, and
 the practice reads as though the first were the recommendation and the second
 a detail. It is the other way round. If this account is right, a reader who
 takes the interval and drops the outer optimizer has taken the part that does
 not work alone.
 
-[SOTA-216](../practices.d/SOTA-216.md) closes by naming [LIT-212](../literature.d/LIT-212.md)'s `H` = 500 as unreconciled with its own 16
+[SOTA-216](../practices.d/SOTA-216.md)<!-- ref::explains: SOTA-216 --> closes by naming [LIT-212](../literature.d/LIT-212.md)'s `H` = 500 as unreconciled with its own 16
 to 32. It is reconciled here: the two are measuring different things, and the
 gap is what the outer optimizer buys. What survives that reconciliation is
 [SOTA-216](../practices.d/SOTA-216.md)'s *other* claim — the switch at the first learning-rate decay — which

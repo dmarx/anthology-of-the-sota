@@ -54,9 +54,9 @@ compared_against:
 
 ## Source
 
-Kimi Team (2025), [LIT-132](../literature.d/LIT-132.md) — the Kimi K2 report.
+Kimi Team (2025), [LIT-132](../literature.d/LIT-132.md)<!-- ref::introduced_by: LIT-132 --><!-- ref::source: LIT-132 --> — the Kimi K2 report.
 
-Muon with weight decay and RMS-matched updates ([SOTA-121](SOTA-121.md)) is enough at small
+Muon with weight decay and RMS-matched updates ([SOTA-121](SOTA-121.md)<!-- ref::corrects: SOTA-121 -->) is enough at small
 scale. At a trillion parameters the K2 team found it drives the maximum
 attention logit past 1000 early in training, and logits of that size bring
 loss spikes and occasional divergence. QK-Clip is the addition: after each
@@ -66,7 +66,7 @@ weights, so the served model is unchanged, and it fires only where needed.
 With it, K2 trained on 15.5T tokens without a single loss spike; K3
 ([LIT-131](../literature.d/LIT-131.md)) keeps the same optimizer at 2.8T.
 
-Conditions: the failure this prevents is a large-scale one. [LIT-119](../literature.d/LIT-119.md) trained
+Conditions: the failure this prevents is a large-scale one. [LIT-119](../literature.d/LIT-119.md)<!-- ref::source: LIT-119 --> trained
 90M and 0.6B models with Muon and no clipping and reports stable runs, so
 the clip is insurance whose premium is a per-head max-logit check per step —
 cheap, but not free, and unnecessary until the logits say otherwise. The
@@ -108,7 +108,7 @@ Each step keeps the one before.
 ## Mechanism
 
 The failure QK-Clip answers is attention-logit growth, which
-[LIT-155](../literature.d/LIT-155.md) established as a distinct instability with a normalization
+[LIT-155](../literature.d/LIT-155.md)<!-- ref::source: LIT-155 --> established as a distinct instability with a normalization
 remedy, and — the useful part — reproducible in small models at high
 learning rate rather than only at the scale where it first cost someone a
 run. That is also why [LIT-139](../literature.d/LIT-139.md) can decline QK-Clip: an RMSNorm on the queries

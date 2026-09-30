@@ -18,7 +18,7 @@ summary: >-
 
 ## Source
 
-Gururangan et al. (2020), [LIT-034](../literature.d/LIT-034.md) — [ARXIV-2004.10964](https://arxiv.org/abs/2004.10964).
+Gururangan et al. (2020), [LIT-034](../literature.d/LIT-034.md)<!-- ref::introduced_by: LIT-034 --><!-- ref::source: LIT-034 --> — [ARXIV-2004.10964](https://arxiv.org/abs/2004.10964).
 
 ## The finding, more precisely than the title
 

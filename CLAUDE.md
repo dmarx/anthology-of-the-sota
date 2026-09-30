@@ -96,6 +96,14 @@ work perfectly well.
   resolves from.
 - **Retire by changing status, never by deleting.** `Rejected` is the attic;
   `Superseded` names its successor. The body stays.
+- **Some relations must be explained where they are held**
+  (ADR-tmp7icjh). A practice's or theory's `source`, a practice's `introduced_by`,
+  a theory's `explains`, every `corrects`, `contested_by`, and `extends` on
+  practices and theories: each code is cited in the body, in visible prose that
+  says what the relation means, and `luria link --fix` writes the `ref::`
+  statement beside the citation. Write `[[source::LIT-123]]` where you explain
+  it. A code in backticks is a mention and explains nothing. The lint reports
+  one never cited as `unexplained-relations`, a warning, not a failure.
 
 ## Working
 
@@ -116,9 +124,10 @@ where `link --fix` then wrote two back-references.
 Run all of them before pushing — then **do not commit what `luria index`
 regenerated.** Views land on `main` only: CI regenerates and commits them on
 the push, and a pull request writes none ([ADR-018](record/decisions.d/ADR-018.md)). Run `index` locally
-anyway, because `docs/reports/reference-status.md` is what tells you which
-citations the lint is about to flag; then `git checkout -- docs/` before you
-commit. A branch carrying views is not more up to date, it is a conflict with
+anyway, because the lint checks the views against the sources; then
+`git checkout -- docs/` before you commit. (Since luria 0.33 the lint lists
+every site of a retired or unresolved citation itself, so the reports are no
+longer the only place to find them.) A branch carrying views is not more up to date, it is a conflict with
 every other branch. Run `make hooks` once per clone and the tracked
 `pre-commit` hook refuses them for you.
 

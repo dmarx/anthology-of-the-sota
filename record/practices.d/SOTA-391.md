@@ -46,7 +46,7 @@ summary: >-
 
 ## Source
 
-Sun et al. (2022), [LIT-638](../literature.d/LIT-638.md), §3.1 and §4.3.
+Sun et al. (2022), [LIT-638](../literature.d/LIT-638.md)<!-- ref::introduced_by: LIT-638 --><!-- ref::source: LIT-638 -->, §3.1 and §4.3.
 
 ## When this applies
 

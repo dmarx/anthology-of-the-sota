@@ -52,7 +52,7 @@ summary: >-
 
 ## Source
 
-Muennighoff et al. (2023), [LIT-166](../literature.d/LIT-166.md) — [ARXIV-2305.16264](https://arxiv.org/abs/2305.16264).
+Muennighoff et al. (2023), [LIT-166](../literature.d/LIT-166.md)<!-- ref::introduced_by: LIT-166 --><!-- ref::source: LIT-166 --> — [ARXIV-2305.16264](https://arxiv.org/abs/2305.16264).
 
 The regime is the one the field has since entered: extrapolating the
 parameters-and-tokens trend runs into the amount of text that exists, so the
@@ -77,7 +77,11 @@ the mixture, and removing commonly used filters.
 
 [SOTA-124](SOTA-124.md) says the quantity governing safe repetition is not epoch *count*
 but epoch *size* relative to the model's memorization window, and on that
-basis Falcon-H1-Tiny repeated SFT sources a hundred times or more. This
+basis Falcon-H1-Tiny repeated SFT sources a hundred times or more. The
+dispute is published in the Falcon-H1-Tiny write-up [[contested_by::LIT-119]],
+which reports Tulu3 and similar sources repeated 100 or more times across
+800 GT with no visible artefacts — a direct counterexample to a four-epoch
+ceiling, offered as implicit confirmation rather than a measurement. This
 practice says four, and it has 400 runs behind it where that one has one
 figure and an argument its own authors call early.
 
@@ -88,7 +92,7 @@ mixture*, where a small share means a long delay between repeats. That
 distinction may dissolve the conflict — or it may be the mechanism by which a
 100× repetition quietly costs something nobody measured.
 
-[LIT-175](../literature.d/LIT-175.md) is a third position and the most useful of the three, because it
+[LIT-175](../literature.d/LIT-175.md)<!-- ref::contested_by: LIT-175 --> is a third position and the most useful of the three, because it
 makes the other two falsifiable in the same terms: it says repetition
 overfits severely *and* the overfitting is a property of the objective rather
 than of repetition, removable with augmentation. If that holds, a recipe

@@ -33,7 +33,7 @@ summary: >-
 
 ## Source
 
-Shumaylov et al. (2026), [LIT-456](../literature.d/LIT-456.md) — read as [NOTE-208](../notes.d/NOTE-208.md).
+Shumaylov et al. (2026), [LIT-456](../literature.d/LIT-456.md)<!-- ref::source: LIT-456 --> — read as [NOTE-208](../notes.d/NOTE-208.md).
 
 ## The account
 
@@ -81,7 +81,7 @@ explanatory work.
 ## What this does not say
 
 **It does not say Muon is a bad optimizer, or that the record should stop
-recommending it.** [SOTA-121](../practices.d/SOTA-121.md) and [SOTA-165](../practices.d/SOTA-165.md) are untouched: what
+recommending it.** [SOTA-121](../practices.d/SOTA-121.md)<!-- ref::explains: SOTA-121 --> and [SOTA-165](../practices.d/SOTA-165.md) are untouched: what
 is contested is the account, not the technique, which is the separation
 [ADR-031](../decisions.d/ADR-031.md) built this scheme for and [ADR-034](../decisions.d/ADR-034.md) restated. Read as
 an argument against using Muon, this document would be a misreading of both

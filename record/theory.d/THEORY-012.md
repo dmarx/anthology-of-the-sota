@@ -49,7 +49,7 @@ For an optimizer with one global step size, that bound is set by the
 worst-conditioned direction in the model: one layer whose curvature is far
 above the rest caps the step for every layer. For an optimizer that normalizes
 the update per layer, and again per coordinate within a layer, the bound is set
-by something closer to the average. [LIT-265](../literature.d/LIT-265.md)'s Theorem 1 is the formal shape of
+by something closer to the average. [LIT-265](../literature.d/LIT-265.md)<!-- ref::source: LIT-265 -->'s Theorem 1 is the formal shape of
 this — simplified LAMB converges at `O(1/sqrt(T))` with the constant carrying
 `L_avg`, the mean per-layer smoothness, where the corresponding SGD bound
 carries `L_inf`.
@@ -59,7 +59,7 @@ stops is where the optimizer's own bound stops moving proportionally. Read this
 way, the two results that look like a contradiction are the same result seen
 from either side:
 
-- **The negative half.** [LIT-058](../literature.d/LIT-058.md) swept 35 workloads with SGD, momentum and
+- **The negative half.** [LIT-058](../literature.d/LIT-058.md)<!-- ref::source: LIT-058 --> swept 35 workloads with SGD, momentum and
   Nesterov momentum — three optimizers, one family, one global step size — and
   found no heuristic that held across them. Its own summary is that it was
   "unable to find reliable support for any of the previously proposed
@@ -108,9 +108,9 @@ account needs.
 Two practices that read as a contradiction, and this is what lets them both
 stand.
 
-[SOTA-218](../practices.d/SOTA-218.md) — retune at every batch size you compare — is a rule about
+[SOTA-218](../practices.d/SOTA-218.md)<!-- ref::explains: SOTA-218 --> — retune at every batch size you compare — is a rule about
 *measurement*: a steps-to-target curve drawn with transferred metaparameters
-measures the heuristic, not the batch size. [SOTA-221](../practices.d/SOTA-221.md) — change the
+measures the heuristic, not the batch size. [SOTA-221](../practices.d/SOTA-221.md)<!-- ref::explains: SOTA-221 --> — change the
 optimizer's conditioning rather than the scaling rule — is a rule about
 *reaching a target*, and the no-retuning result it rests on is a claim about
 sufficiency for one target rather than about the rule being correct. [LIT-265](../literature.d/LIT-265.md)'s

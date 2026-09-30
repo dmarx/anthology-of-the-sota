@@ -51,7 +51,7 @@ summary: >-
 
 ## Source
 
-Dettmers et al. (2022), [LIT-586](../literature.d/LIT-586.md) — [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339).
+Dettmers et al. (2022), [LIT-586](../literature.d/LIT-586.md)<!-- ref::introduced_by: LIT-586 --><!-- ref::source: LIT-586 --> — [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339).
 
 ## Two conditions, one on the word in the title and one on step 2
 

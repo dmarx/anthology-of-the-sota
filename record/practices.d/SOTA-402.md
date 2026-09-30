@@ -56,7 +56,7 @@ explained_by:
 
 ## Source
 
-Wang, Yue, Su and Sun (2024), [LIT-667](../literature.d/LIT-667.md) — [ARXIV-2405.15071](https://arxiv.org/abs/2405.15071).
+Wang, Yue, Su and Sun (2024), [LIT-667](../literature.d/LIT-667.md)<!-- ref::introduced_by: LIT-667 --><!-- ref::source: LIT-667 --> — [ARXIV-2405.15071](https://arxiv.org/abs/2405.15071).
 
 The setting is a transformer trained from scratch on a mixture of *atomic
 facts* — `(subject, relation, object)` edges of a random knowledge graph — and

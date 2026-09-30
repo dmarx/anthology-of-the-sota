@@ -21,7 +21,7 @@ extended_by:
 
 ## Source
 
-Aizman et al. (2020), [LIT-053](../literature.d/LIT-053.md) — [ARXIV-2001.01858](https://arxiv.org/abs/2001.01858).
+Aizman et al. (2020), [LIT-053](../literature.d/LIT-053.md)<!-- ref::introduced_by: LIT-053 --><!-- ref::source: LIT-053 --> — [ARXIV-2001.01858](https://arxiv.org/abs/2001.01858).
 
 ## The access pattern, not the file format
 

@@ -58,7 +58,7 @@ explained_by:
 
 ## Source
 
-Pearce and Song (2024), [LIT-688](../literature.d/LIT-688.md), explaining the gap between
+Pearce and Song (2024), [LIT-688](../literature.d/LIT-688.md)<!-- ref::introduced_by: LIT-688 --><!-- ref::source: LIT-688 -->, explaining the gap between
 [LIT-028](../literature.d/LIT-028.md) and [LIT-068](../literature.d/LIT-068.md).
 
 ## What to do
@@ -87,7 +87,7 @@ exponent. Relabelling the same five runs changes the exponent from 0.49 to
   the head is a small share and the definitions converge.
 - **The source's evidence is small.** It is five runs at 0.8–4.6M with context
   16, plus a simulation from Chinchilla's own fit. Porian et al.
-  ([LIT-690](../literature.d/LIT-690.md)) is the large test. Counting the head's FLOPs takes 0.129
+  ([LIT-690](../literature.d/LIT-690.md)<!-- ref::source: LIT-690 -->) is the large test. Counting the head's FLOPs takes 0.129
   off the exponent, and warmup and per-size tuning each take about as much
   ([SOTA-421](SOTA-421.md)). This practice is the counting part only.
 - **Counting is not the whole Kaplan–Chinchilla gap.** Do not read this as

@@ -4,7 +4,17 @@ status: Active
 formerly:
 - THEORY-tmp8a4gm
 title: 'The plateau before factual recall is the formation of the attention circuit that recall needs'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-30'
+  note: >-
+    Plateau scaling corrected against the source's own fit, following a
+    re-reading of it done for the sibling record (nucleation's reading of the same paper): the
+    text says "almost linearly", the fit is 0.43·N^0.81, which is sublinear,
+    and the statistical-over-saddle reading rests on that scaling alone. The
+    circuit account itself is unchanged; the re-reading found it matches the
+    text. The old wording is kept in the marked note.
 tags:
 - training-optimization
 date: '2026-09-20'
@@ -34,7 +44,9 @@ Training on a factual-recall task passes through three phases: a short one
 learning generic attribute-value statistics, a long plateau sitting at
 exactly the loss an ideal model with no entity-specific knowledge would
 reach, and then the acquisition of entity-attribute associations. The
-plateau's length grows almost linearly with the number of entities.
+plateau's length grows with the number of entities — "almost linearly" in
+the source's words, fitted as `0.43·N^0.81` over 4k–256k entities, which is
+sublinear.
 
 The claim is that the plateau *is* the extraction circuit being built. Three
 pieces of evidence, and the first is an intervention:
@@ -56,9 +68,12 @@ it, the prediction error at the attribute token is spread across irrelevant
 positions instead of flowing back to the name tokens — so the key-value store
 in the MLPs gets no usable signal, and the loss sits still.
 
-The near-linear scaling of plateau length with population also supports a
-statistical reading over a pure saddle-point one: the model must see an
-entity several times to discover that attribute values are entity-specific.
+The growth of plateau length with population also supports, as the source
+argues it, a statistical reading over a pure saddle-point one: the model must
+see an entity several times to discover that attribute values are
+entity-specific. That reading rests on the scaling alone; no saddle model was
+fitted against it. *Corrected 2026-09-30; this read "The near-linear scaling
+of plateau length".*
 
 ## The picture it installs
 

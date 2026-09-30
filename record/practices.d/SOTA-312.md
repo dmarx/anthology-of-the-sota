@@ -13,7 +13,16 @@ consensus_note: >-
   planes mostly still do not say what binning they used. What is established
   is the finding, not the practice's currency.
 title: 'State the noise or binning assumption behind any mutual information you report for a deterministic network, and show the conclusion survives changing it'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-30'
+  note: >-
+    One table row corrected against the source's Fig. 15 caption, following
+    a re-reading of it done for the sibling record (nucleation's reading of the same paper):
+    binning at full machine precision pins most layers at log2(P), but the
+    highest, smallest tanh layers still compress near the end of training.
+    The row read "nothing moves".
 tags:
 - analysis-and-evaluation
 - representation-and-encoding
@@ -90,7 +99,7 @@ here are the demonstration:
 | | changed | result |
 |---|---|---|
 | [LIT-509](../literature.d/LIT-509.md) | `tanh` run, bins even in *net input* rather than in *activity* | the compression phase **disappears** |
-| [LIT-509](../literature.d/LIT-509.md) | binning at full machine precision | information pinned at `log₂(P)`, nothing moves |
+| [LIT-509](../literature.d/LIT-509.md) | binning at full machine precision | information pinned at `log₂(P)` in most layers; only the highest, smallest `tanh` layers compress, near the end of training |
 | [LIT-507](../literature.d/LIT-507.md) | ReLU run, adaptive per-layer bins rather than one global range | compression **appears** |
 
 Two groups, arguing against each other, each showing that the conclusion is

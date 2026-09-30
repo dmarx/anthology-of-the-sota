@@ -5,7 +5,7 @@ formerly:
 - NOTE-tmp5d8h0
 paper: LIT-713
 title: 'Sanity Checks for Saliency Maps'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-26'
@@ -16,6 +16,16 @@ history:
     reverses. The two bare-id mentions of that paper now name a document, and
     the answered question is struck through rather than deleted, because what
     the reading did not know is part of what it recorded.
+- version: 3
+  date: '2026-09-27'
+  note: >-
+    Three of the four missing referents this reading named are now held, and it
+    took two documents rather than four. GradCAM and Guided GradCAM are one
+    paper — Selvaraju et al. (2016) — and Guided GradCAM is defined there as
+    GradCAM multiplied element-wise by guided backprop, which is why C1 and C2
+    sit one factor apart rather than being two independent findings. Also
+    records that this paper's bibliography cites the November 2016 workshop note
+    for GradCAM rather than the paper everything downstream means.
 date: '2026-09-25'
 summary: >-
   Randomize the model's weights, or train it on permuted labels, and see
@@ -161,9 +171,24 @@ relation is declared (see [LIT-713](../literature.d/LIT-713.md)).
 - **Integrated Gradients ([LIT-712](../literature.d/LIT-712.md)).** This reading should stop the record
   citing either "IG passes" or "IG fails" the sanity checks. The paper puts IG
   in neither list, and the metrics disagree about it.
-- The four methods the paper gives verdicts on (gradient, GradCAM, Guided
-  Backprop, Guided GradCAM) are not held as notes. The follow-up captum links
-  now is: [LIT-724](../literature.d/LIT-724.md).
+- ~~The four methods the paper gives verdicts on (gradient, GradCAM, Guided
+  Backprop, Guided GradCAM) are not held as notes.~~ **Three of the four are
+  now held, and it took two documents rather than four.** Guided Backprop is
+  [LIT-727](../literature.d/LIT-727.md); GradCAM *and* Guided GradCAM are both
+  [LIT-tmp367ex](../literature.d/LIT-tmp367ex.md), because Guided GradCAM is defined there as
+  GradCAM's coarse map multiplied element-wise by a guided backprop map. **So
+  C1 and C2 are one factor apart** — the method C2 clears is one of the two
+  factors of a method C1 fails — which this reading could not have said while
+  neither was held. Only the plain gradient (Simonyan, Vedaldi and Zisserman,
+  `1312.6034`) is still unheld. The follow-up captum links now is:
+  [LIT-724](../literature.d/LIT-724.md).
+- **The bibliography's GradCAM citation is the workshop note, not the paper.**
+  This paper cites Selvaraju et al., *"Grad-cam: Why did you say that?"*,
+  [ARXIV-1611.07450](https://arxiv.org/abs/1611.07450) — November 2016, about 3,000 words — rather
+  than `1610.02391`. Same method and group; the shorter document lacks the
+  Deconvolution row of the human study and all of the ablations. None of this
+  reading's verdicts depend on which, but a reader following the citation lands
+  on the thinner paper.
 
 ## Limitations
 

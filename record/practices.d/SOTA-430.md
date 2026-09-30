@@ -39,7 +39,7 @@ consensus_note: >-
   failure. Moved off `unassessed` because somebody has now looked, not because
   the field agreed. Read as of 2026-09.
 title: 'Before using an attribution map to debug a model or explain what it learned, check that the map changes when the weights are randomized and when the labels are permuted — do not validate it by how it looks'
-version: 7
+version: 8
 history:
 - version: 2
   date: '2026-09-26'
@@ -119,6 +119,20 @@ history:
     the "entirely invariant" form LIT-713's footnote 5 withdrew. The defect was
     smaller than three reports of it said. Recommendation, status and consensus
     unchanged.
+- version: 8
+  date: '2026-09-27'
+  note: >-
+    Both rows of the verdict table finally have a subject. GradCAM and Guided
+    GradCAM are defined in one paper, Selvaraju et al. (2016), now held, and the
+    second is DEFINED as the pointwise product of the first with guided
+    backpropagation — so a row that passes and a row that fails are one factor
+    apart, which this practice had reported as two independent findings. The
+    negative half gains the thing it never had: a number. Its source paper's own
+    human study scores guided backprop LAST of four on class discrimination
+    while conceding it is the prettiest, measured in October 2016, two years
+    before the practice's source existed. And the sentence that passing is not a
+    certificate now carries the passing method's own agreement figures.
+    Recommendation, status and consensus unchanged.
 tags:
 - analysis-and-evaluation
 date: '2026-09-25'
@@ -142,7 +156,8 @@ summary: >-
   be telling you about the weights or the labels. Guided Backprop and Guided
   GradCAM survive the first above the lowest layers, and their maps look as
   convincing as ever. A rejection rule, not a certificate: passing does not show
-  a method is faithful. **The verdict is per-modality** — the same test on a BERT
+  a method is faithful — GradCAM passes and agrees with occlusion maps at rank
+  correlation 0.254. **The verdict is per-modality** — the same test on a BERT
   text classifier reverses it for global Integrated Gradients — and pass or fail
   is read from curves with no threshold anywhere.
 explained_by:
@@ -208,6 +223,32 @@ because its maps look like the object.** An untrained edge detector produces
 maps "strikingly similar" to several methods' — and [THEORY-115](../theory.d/THEORY-115.md) now says why,
 because partial image recovery is what an edge detector approximates.
 
+**This half has a number, and it is older than the practice.** Grad-CAM's own
+paper, [LIT-tmp367ex](../literature.d/LIT-tmp367ex.md), put four visualizations of the same image in front
+of Mechanical Turk workers and asked which of the image's two annotated
+categories was being shown — 90 image-category pairs, 9 ratings each:
+
+| visualization | humans identified the right class |
+| --- | --- |
+| Guided Backpropagation | 44.44% |
+| Deconvolution | 53.33% |
+| Deconvolution Grad-CAM | 60.37% |
+| Guided Grad-CAM | 61.23% |
+
+**Guided backprop is last.** The method this practice's source picked as its
+headline failure — the one whose maps "look as convincing as ever" after the
+weights are destroyed — is also the one humans read the class off least often,
+and its own authors' eventual gloss says so: Deconvolution is "more
+class-discriminative than Guided Backpropagation … although Guided
+Backpropagation is more aesthetically pleasing". Those four numbers are in the
+paper's arXiv v1, **7 October 2016**, two years before `LIT-713`. The sentence
+reading them is in **v4, 3 December 2019**, fourteen months after `LIT-713` made
+the point another way. So a measurement that the best-looking map was the least
+class-discriminative one sat published and unglossed for three years, by the
+people who took it. It is evidence for this half of the practice; it is not
+evidence that anybody acted on it, and it is a human-legibility result rather
+than a faithfulness one.
+
 Guided Backprop's maps survive randomizing the weights above the lowest layers,
 and **that verdict has three groups behind it and does not rest on anyone's
 figures**: [LIT-713](../literature.d/LIT-713.md) on Inception and MNIST, [LIT-724](../literature.d/LIT-724.md) on Inception and
@@ -230,6 +271,34 @@ support**, and it is the one this practice has always stated.
 The paper names gradients and GradCAM as passing and Guided Backprop and Guided
 GradCAM as failing. **It gives Integrated Gradients ([LIT-712](../literature.d/LIT-712.md)) no verdict**,
 and neither does this practice.
+
+**Rows two and three are one construction, and the table does not show it.**
+GradCAM and Guided GradCAM are both defined in [LIT-tmp367ex](../literature.d/LIT-tmp367ex.md), and Guided
+GradCAM *is* GradCAM's map — 14×14 at the last conv layer of VGG-16, upsampled
+bilinearly — multiplied element-wise by a guided backprop map. So the passing
+row and the failing row differ by one factor, and every pixel of fine structure
+a reader sees in a Guided GradCAM image comes from the failing one. `LIT-713`
+states the construction too, in a clause: "for pixel level granularity GradCAM,
+can be combined with Guided Backpropagation through an element-wise product."
+Neither paper draws the consequence, so **nothing is filed as a theory for
+it** — but it is why the two rows agree, and worth knowing before treating them
+as two results.
+
+That also bounds what GradCAM's pass buys you. It is a function of one layer's
+activations and the gradients into them, at that layer's resolution, and its own
+authors report the maps get "progressively worse as we move to earlier
+convolutional layers". Passing the randomization test and telling you something
+fine-grained are not the same property, and here they trade against each other.
+
+**And "passing is not a certificate" now has figures for the method that
+passes.** GradCAM's agreement with the references its own paper chose: rank
+correlation **0.254** with occlusion maps over 2510 images, **0.136** with
+human attention maps on VQA — which the paper reports as "statistically higher
+than chance or random attention maps (zero correlation)", the comparison being
+against zero rather than against a useful floor — and **30.0%** pointing
+accuracy for caption words against COCO segmentations. A method can clear both randomization tests and still agree with
+every independent proxy at a rank correlation under 0.3. That is the practice's
+own sentence, with the method it names as passing supplying the numbers.
 
 **The failing row's methods are now held, and its rule is one sentence.**
 Guided backpropagation ([LIT-727](../literature.d/LIT-727.md), §4.2) zeroes the gradient at each

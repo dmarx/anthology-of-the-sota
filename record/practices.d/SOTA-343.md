@@ -39,7 +39,7 @@ summary: >-
 
 ## Source
 
-Belrose et al. (2023), [LIT-569](../literature.d/LIT-569.md)<!-- ref::introduced_by: LIT-569 --><!-- ref::source: LIT-569 -->. Read as [NOTE-308](../notes.d/NOTE-308.md). It refines the
+Belrose et al. (2023), [LIT-569](../literature.d/LIT-569.md). Read as [NOTE-308](../notes.d/NOTE-308.md). It refines the
 logit lens, [LIT-570](../literature.d/LIT-570.md).
 
 ## The practice

@@ -60,7 +60,7 @@ summary: >-
 
 ## Source
 
-Bergsma et al. (2025), [LIT-147](../literature.d/LIT-147.md)<!-- ref::introduced_by: LIT-147 --><!-- ref::source: LIT-147 --> — Straight to Zero.
+Bergsma et al. (2025), [LIT-147](../literature.d/LIT-147.md) — Straight to Zero.
 
 ## The finding
 
@@ -78,8 +78,8 @@ must average over enough updates to cancel gradient noise, and a floor at
 
 This is one group's study, and the frontier recipes filed in the
 record still decay to a floor (Falcon-H1-Tiny's ×64 exponential decay,
-[LIT-119](../literature.d/LIT-119.md)). The claim is compatible with WSD ([SOTA-140](SOTA-140.md)<!-- ref::extends: SOTA-140 -->) — it is about the
-end of the decay, not its start — and [LIT-145](../literature.d/LIT-145.md)<!-- ref::source: LIT-145 -->'s cooldown to zero points the
+[LIT-119](../literature.d/LIT-119.md)). The claim is compatible with WSD ([SOTA-140](SOTA-140.md)) — it is about the
+end of the decay, not its start — and [LIT-145](../literature.d/LIT-145.md)'s cooldown to zero points the
 same way.
 
 ## Two reports that look decisive and are not

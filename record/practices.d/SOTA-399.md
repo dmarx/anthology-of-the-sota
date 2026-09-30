@@ -36,7 +36,7 @@ explained_by:
 
 ## Source
 
-Ahmadian et al. (2023), [LIT-656](../literature.d/LIT-656.md)<!-- ref::introduced_by: LIT-656 --><!-- ref::source: LIT-656 -->.
+Ahmadian et al. (2023), [LIT-656](../literature.d/LIT-656.md).
 
 ## What to do
 

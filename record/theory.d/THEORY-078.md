@@ -36,7 +36,7 @@ summary: >-
 
 ## Source
 
-Sitzmann et al. (2020), [LIT-551](../literature.d/LIT-551.md)<!-- ref::source: LIT-551 --> — read as [NOTE-295](../notes.d/NOTE-295.md). Filed for
+Sitzmann et al. (2020), [LIT-551](../literature.d/LIT-551.md) — read as [NOTE-295](../notes.d/NOTE-295.md). Filed for
 `#163`'s question: why did people struggle to get periodic activations to
 work?
 
@@ -44,7 +44,7 @@ work?
 
 | document | what it says | what this says it is |
 |---|---|---|
-| [SOTA-332](../practices.d/SOTA-332.md)<!-- ref::explains: SOTA-332 --> | use sine activations with the SIREN initialization | the initialization is what makes the architecture trainable |
+| [SOTA-332](../practices.d/SOTA-332.md) | use sine activations with the SIREN initialization | the initialization is what makes the architecture trainable |
 
 ## The account
 

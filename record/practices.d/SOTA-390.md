@@ -62,7 +62,7 @@ implementations:
 
 ## Source
 
-Yang, Teng et al. (2024), [LIT-622](../literature.d/LIT-622.md)<!-- ref::introduced_by: LIT-622 --><!-- ref::source: LIT-622 --> — CogVideoX.
+Yang, Teng et al. (2024), [LIT-622](../literature.d/LIT-622.md) — CogVideoX.
 
 ## The claim
 

@@ -44,7 +44,7 @@ summary: >-
 
 ## Source
 
-Rae et al. (2021), [LIT-617](../literature.d/LIT-617.md)<!-- ref::introduced_by: LIT-617 --><!-- ref::source: LIT-617 -->, §3.2.
+Rae et al. (2021), [LIT-617](../literature.d/LIT-617.md), §3.2.
 
 ## When this applies
 
@@ -60,7 +60,7 @@ orders of magnitude of parameters, introduced because the large runs needed
 it for stability.
 
 What makes this worth filing rather than noting: **three practices in this
-record tell you to clip and not one of them names a value.** [SOTA-035](SOTA-035.md)<!-- ref::extends: SOTA-035 --> says to
+record tell you to clip and not one of them names a value.** [SOTA-035](SOTA-035.md) says to
 clip, [SOTA-071](SOTA-071.md) says to use a dynamic threshold. A reader following them has
 to pick a number, and the number they will pick is a framework default set
 for models much smaller than the one they are training.

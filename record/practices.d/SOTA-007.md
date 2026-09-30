@@ -33,7 +33,7 @@ implementations:
 
 ## Source
 
-Sennrich et al. (2015), [LIT-003](../literature.d/LIT-003.md)<!-- ref::introduced_by: LIT-003 --><!-- ref::source: LIT-003 --> — [ARXIV-1508.07909](https://arxiv.org/abs/1508.07909).
+Sennrich et al. (2015), [LIT-003](../literature.d/LIT-003.md) — [ARXIV-1508.07909](https://arxiv.org/abs/1508.07909).
 
 ## Known implementations
 

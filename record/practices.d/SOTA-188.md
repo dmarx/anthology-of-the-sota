@@ -71,7 +71,7 @@ explained_by:
 
 ## Source
 
-Karras et al. (2022), [LIT-075](../literature.d/LIT-075.md)<!-- ref::introduced_by: LIT-075 --><!-- ref::source: LIT-075 --> — [ARXIV-2206.00364](https://arxiv.org/abs/2206.00364), NeurIPS 2022.
+Karras et al. (2022), [LIT-075](../literature.d/LIT-075.md) — [ARXIV-2206.00364](https://arxiv.org/abs/2206.00364), NeurIPS 2022.
 
 A denoiser is asked to do a different job at every noise level: at low noise
 it must pass the input through almost unchanged, at high noise it must
@@ -113,7 +113,7 @@ tuned without disturbing the others.
 
 ## The requirement has an empirical statement four months earlier
 
-[LIT-067](../literature.d/LIT-067.md)<!-- ref::source: LIT-067 --> (Progressive Distillation, February 2022) reaches the same
+[LIT-067](../literature.d/LIT-067.md) (Progressive Distillation, February 2022) reaches the same
 requirement from the other direction, by watching `ε`-prediction break. As the
 signal-to-noise ratio goes to zero, "the effect of small changes in the neural
 network output on the implied prediction in x-space is increasingly amplified" —

@@ -41,7 +41,7 @@ explained_by:
 
 ## Source
 
-Hinton, Vinyals and Dean (2015), [LIT-680](../literature.d/LIT-680.md)<!-- ref::introduced_by: LIT-680 --><!-- ref::source: LIT-680 -->.
+Hinton, Vinyals and Dean (2015), [LIT-680](../literature.d/LIT-680.md).
 
 ## What to do
 

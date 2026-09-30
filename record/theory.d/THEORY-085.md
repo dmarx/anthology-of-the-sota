@@ -19,7 +19,7 @@ explains:
 
 ## Source
 
-Oord et al. (2018), [LIT-589](../literature.d/LIT-589.md)<!-- ref::source: LIT-589 --> — [ARXIV-1807.03748](https://arxiv.org/abs/1807.03748), §2.3.
+Oord et al. (2018), [LIT-589](../literature.d/LIT-589.md) — [ARXIV-1807.03748](https://arxiv.org/abs/1807.03748), §2.3.
 
 ## The claim
 
@@ -60,7 +60,7 @@ about what the encoder has *learned*. So:
 
 ## Standing
 
-Filed as the account behind [SOTA-360](../practices.d/SOTA-360.md)<!-- ref::explains: SOTA-360 -->, and filed separately from it
+Filed as the account behind [SOTA-360](../practices.d/SOTA-360.md), and filed separately from it
 because it is the kind of claim `ADR-031` splits out: the practice can be
 right while this explanation is the wrong reason for it. A subsequent
 literature argues exactly that — that the MI framing is a poor account of why

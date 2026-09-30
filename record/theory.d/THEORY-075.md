@@ -70,7 +70,7 @@ coefficient** — is the quantity that does the work:
 and the second derivatives live entirely in `c`. They do not enter `λ`, they do
 not enter the criterion, and they do not enter the generalisation rate.
 
-That is the whole of what [SOTA-325](../practices.d/SOTA-325.md)<!-- ref::explains: SOTA-325 --> turns on. It says to measure <!-- inactive-ok: SOTA-325 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
+That is the whole of what [SOTA-325](../practices.d/SOTA-325.md) turns on. It says to measure <!-- inactive-ok: SOTA-325 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
 the local learning coefficient rather than curvature once training loss has
 saturated; this account is why the choice is between an exponent and its
 prefactor rather than between two estimates of one thing, and why `λ` can
@@ -80,7 +80,7 @@ generalisation rate, which the loss at the optimum does not.
 ## Why `Active`
 
 **The mathematics is Watanabe's and is not in dispute.** What was in dispute is
-whether it reaches practice, and [LIT-542](../literature.d/LIT-542.md)<!-- ref::source: LIT-542 --> answers the measurement half:
+whether it reaches practice, and [LIT-542](../literature.d/LIT-542.md) answers the measurement half:
 an SGLD estimator, `λ̂(w*) = n β* [E_{w|w*,β*,γ} L_n(w) − L_n(w*)]` at
 `β* = 1/log n`, reproduces known theoretical learning coefficients on deep
 linear networks **up to 100M parameters**, including when evaluated at an
@@ -115,5 +115,5 @@ in a realistic setting — the deep-linear validation is the only place both are
 available, and it is a setting chosen because it is tractable. Or a
 demonstration that the free energy and the generalisation error carry
 *different* learning coefficients under the approximate posteriors anyone can
-actually compute, which [LIT-541](../literature.d/LIT-541.md)<!-- ref::source: LIT-541 --> raises as a live concern, citing a
+actually compute, which [LIT-541](../literature.d/LIT-541.md) raises as a live concern, citing a
 one-hidden-layer counterexample from 2007.

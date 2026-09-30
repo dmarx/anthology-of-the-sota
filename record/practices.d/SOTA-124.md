@@ -65,11 +65,11 @@ summary: >-
 
 ## Source
 
-Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md)<!-- ref::introduced_by: LIT-119 --><!-- ref::source: LIT-119 --> — the Falcon-H1-Tiny technical blogpost.
+Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
 
 ## What the memorization window is
 
-A late checkpoint of FalconMamba-7B (Figure 9 of [LIT-120](../literature.d/LIT-120.md)<!-- ref::source: LIT-120 -->), shown training tokens it saw earlier,
+A late checkpoint of FalconMamba-7B (Figure 9 of [LIT-120](../literature.d/LIT-120.md)), shown training tokens it saw earlier,
 has a loss gap against fresh tokens from the same distribution that decays
 with how long ago the tokens were seen. The authors define the
 *memorization window* as the delay after which that gap has closed — around
@@ -93,14 +93,14 @@ The source is explicit that this is a hypothesis with one
 measurement behind it and that the systematic study is future work. It is
 filed because the recipes built on it are in the record and this is the
 reason they give. The standing guidance it argues with is now in the record:
-[LIT-166](../literature.d/LIT-166.md)<!-- ref::contested_by: LIT-166 --> finds four epochs nearly free and the value of added compute
+[LIT-166](../literature.d/LIT-166.md) finds four epochs nearly free and the value of added compute
 decaying to zero thereafter, across 400 runs. The claim here is that the
 relevant quantity is not epoch *count* but epoch *size* relative to the
 window — a distinction that may dissolve the conflict, since that sweep
 repeats a whole corpus at fixed compute while this is about one source
 inside a mixture. Nobody has run the experiment that separates them.
 
-[LIT-175](../literature.d/LIT-175.md)<!-- ref::contested_by: LIT-175 --> is a third position worth reading against both: that
+[LIT-175](../literature.d/LIT-175.md) is a third position worth reading against both: that
 autoregressive pretraining overfits severely under heavy repetition, and
 that the overfitting belongs to the objective rather than to repetition,
 removable with augmentation. If that is right, a recipe repeating a source a

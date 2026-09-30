@@ -32,7 +32,7 @@ compared_against:
 
 ## Source
 
-Fedus et al. (2021), [LIT-061](../literature.d/LIT-061.md)<!-- ref::introduced_by: LIT-061 --><!-- ref::source: LIT-061 --> — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684).
+Fedus et al. (2021), [LIT-061](../literature.d/LIT-061.md) — [ARXIV-2112.10684](https://arxiv.org/abs/2112.10684).
 
 ## The 80% is a stopping rule, not a measurement
 

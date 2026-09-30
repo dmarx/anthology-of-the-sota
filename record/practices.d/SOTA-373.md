@@ -66,7 +66,7 @@ explained_by:
 
 ## Source
 
-He et al. (2021), [LIT-601](../literature.d/LIT-601.md)<!-- ref::introduced_by: LIT-601 --><!-- ref::source: LIT-601 --> — [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377).
+He et al. (2021), [LIT-601](../literature.d/LIT-601.md) — [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377).
 
 ## The claim
 
@@ -85,7 +85,7 @@ task that cannot be easily solved by extrapolation from neighboring patches".
 **The text end of that contrast is weaker than it looks, and the difference
 matters to how this practice should be read.** BERT's own words are *"in all of
 our experiments, we mask 15% of all WordPiece tokens in each sequence at
-random"* — [LIT-670](../literature.d/LIT-670.md)<!-- ref::source: LIT-670 -->. There is no sweep of the rate in the paper. Its one
+random"* — [LIT-670](../literature.d/LIT-670.md). There is no sweep of the rate in the paper. Its one
 appendix table on masking is headed "Masking Rates" and varies the 80/10/10
 `[MASK]`/random/unchanged substitution mix at a fixed 15% selection, which is a
 different knob. RoBERTa — [LIT-671](../literature.d/LIT-671.md) — revisits BERT's recipe in detail and
@@ -98,7 +98,7 @@ inherit the number*. What it removes is the reading where 15% and 75% are two
 measured optima whose difference needs explaining. One of them is measured.
 
 **Swept, the text side comes out higher than 15% and depends on the model.**
-[LIT-672](../literature.d/LIT-672.md)<!-- ref::source: LIT-672 --> ran it: on average, 40% is optimal at 354M parameters, 20% at 124M
+[LIT-672](../literature.d/LIT-672.md) ran it: on average, 40% is optimal at 354M parameters, 20% at 124M
 and 15% at 51M. At 354M, 40% beats 15% on seven of nine GLUE-plus-SQuAD tasks and
 reaches the 15% model's QNLI and QQP scores in half the training time. So the
 five-fold gap this practice was explaining is nearer two-fold once both sides are

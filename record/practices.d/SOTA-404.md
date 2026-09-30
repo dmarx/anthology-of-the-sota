@@ -94,11 +94,11 @@ construction was, and the original ablation could not have told them apart
 because it only ever moved one knob that held both.
 
 That makes Liu et al. both this practice's evidence and its first statement:
-[LIT-671](../literature.d/LIT-671.md)<!-- ref::source: LIT-671 --><!-- ref::introduced_by: LIT-671 --> found the confound,
+[LIT-671](../literature.d/LIT-671.md) found the confound,
 separated it into four conditions and stated the corrective — but only for
 NSP. The general rule is this document's, not theirs.
 
-**The independent case, in another literature.** [LIT-667](../literature.d/LIT-667.md)<!-- ref::source: LIT-667 --> reports the same
+**The independent case, in another literature.** [LIT-667](../literature.d/LIT-667.md) reports the same
 defect on grokking. Four papers establish that the transition is controlled by
 dataset size; every one of them varies the *training fraction of a fixed
 universe of examples*, which moves how much data there is and what proportion
@@ -131,7 +131,7 @@ evidence is.
 
 ## The third case, which is the constructive one
 
-[LIT-672](../literature.d/LIT-672.md)<!-- ref::source: LIT-672 --> does not trip over the confound; it names it and builds around it. A
+[LIT-672](../literature.d/LIT-672.md) does not trip over the confound; it names it and builds around it. A
 masking rate sets a **corruption rate** — how much context is removed, which
 makes the task harder — and a **prediction rate** — how many positions are
 predicted, which gives more signal per step and helps optimization. Convention

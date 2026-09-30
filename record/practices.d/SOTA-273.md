@@ -42,7 +42,7 @@ summary: >-
 
 ## Source
 
-Zhai (2025), [LIT-459](../literature.d/LIT-459.md)<!-- ref::introduced_by: LIT-459 --><!-- ref::source: LIT-459 --> — [ARXIV-2504.19792](https://arxiv.org/abs/2504.19792), a CMU dissertation.
+Zhai (2025), [LIT-459](../literature.d/LIT-459.md) — [ARXIV-2504.19792](https://arxiv.org/abs/2504.19792), a CMU dissertation.
 
 **Read at summary level.** [NOTE-207](../notes.d/NOTE-207.md) is `Skimmed`, and the conditions
 below say what that costs this practice.

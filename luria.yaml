@@ -496,7 +496,7 @@ schemes:
     # widened residual stream, mixed how? — is structure rather than paragraphs.
     references:
       source:
-        explain: true   # ADR-tmp7icjh
+        explain: cited   # ADR-tmp7icjh
         label: Evidence
         blurb: >-
           the work that produced evidence about this claim. ADR-017's test
@@ -534,7 +534,7 @@ schemes:
       # — so with one field the record reads as though every practice began
       # with the paper it cites.
       introduced_by:
-        explain: true   # ADR-tmp7icjh
+        explain: cited   # ADR-tmp7icjh
         label: First stated by
         blurb: >-
           the work that first made this recommendation, which is frequently
@@ -571,7 +571,7 @@ schemes:
         many: true
         converse: explains
       extends:
-        explain: true   # ADR-tmp7icjh
+        explain: cited   # ADR-tmp7icjh
         label: Carries further
         blurb: >-
           the earlier practice this one builds on and could not stand without
@@ -611,7 +611,7 @@ schemes:
       # hyper-connections — is a different step from one that refines a predecessor
       # that works.
       corrects:
-        explain: true   # ADR-tmp7icjh
+        explain: cited   # ADR-tmp7icjh
         label: Corrects
         blurb: >-
           this practice fixes something the earlier one got wrong, rather than
@@ -643,7 +643,7 @@ schemes:
       # because the far side would be a list of practices on a NOTE, and a
       # note is a paper's standing rather than a docket of what it undercuts.
       contested_by:
-        explain: true   # ADR-tmp7icjh
+        explain: cited   # ADR-tmp7icjh
         label: Contested by
         blurb: >-
           the published work that disputes this practice. Required once
@@ -753,7 +753,7 @@ schemes:
       # The same rule as a practice, for the same reason: an explanation with
       # no paper behind it is a hunch.
       source:
-        explain: true   # ADR-tmp7icjh
+        explain: cited   # ADR-tmp7icjh
         label: Evidence
         blurb: >-
           the work this account comes from. Same test as a practice's: what
@@ -770,7 +770,7 @@ schemes:
       # finding, and requiring this would mean filing it nowhere — which is
       # the state this scheme exists to end.
       explains:
-        explain: true   # ADR-tmp7icjh
+        explain: cited   # ADR-tmp7icjh
         label: Explains
         blurb: >-
           the practice this account is about. An explanation may be `Rejected`
@@ -788,7 +788,7 @@ schemes:
       # documents there state comparisons; nothing here does, and a relation
       # nobody writes is a converse the fixer can never complete.
       extends:
-        explain: true   # ADR-tmp7icjh
+        explain: cited   # ADR-tmp7icjh
         label: Carries further
         blurb: >-
           the earlier account this one builds on — a refinement or a widening
@@ -806,7 +806,7 @@ schemes:
         many: true
         converse: extends
       corrects:
-        explain: true   # ADR-tmp7icjh
+        explain: cited   # ADR-tmp7icjh
         label: Corrects
         blurb: >-
           this account replaces the earlier one's reasoning. What the old
@@ -966,7 +966,7 @@ schemes:
       # together (LU-#211); the sign is which field the code sits in, which is what
       # keeps it an edge property without qualifying a reference (ADR-011).
       corrects:
-        explain: true   # ADR-tmp7icjh
+        explain: cited   # ADR-tmp7icjh
         label: Corrects
         blurb: >-
           this paper shows the earlier one wrong on something it claimed.

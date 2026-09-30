@@ -53,13 +53,13 @@ its own and the workers average every `H` steps, with `H` of 16 to 32 as the
 reported range.
 
 When choosing `H` from first principles rather than from that range,
-[LIT-361](../literature.d/LIT-361.md)<!-- ref::source: LIT-361 --> gives `H = O(sqrt(T/(Kb)))` for `T` total steps, `K` workers and
+[LIT-361](../literature.d/LIT-361.md) gives `H = O(sqrt(T/(Kb)))` for `T` total steps, `K` workers and
 local batch `b` — the largest interval that still preserves linear speedup.
 
 ## Why
 
 **The two methods are not competing; they are suited to different phases.**
-The argument in [LIT-362](../literature.d/LIT-362.md)<!-- ref::introduced_by: LIT-362 --><!-- ref::source: LIT-362 --> is that large-batch SGD loses generalization
+The argument in [LIT-362](../literature.d/LIT-362.md) is that large-batch SGD loses generalization
 because it loses gradient noise, and that this matters in the early phase,
 before the first decay, when the trajectory is still choosing a basin. After
 that decay the noise is no longer buying anything and per-step communication

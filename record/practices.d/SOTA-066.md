@@ -30,7 +30,7 @@ summary: >-
 
 ## Source
 
-Tay et al. (2021), [LIT-052](../literature.d/LIT-052.md)<!-- ref::introduced_by: LIT-052 --><!-- ref::source: LIT-052 --> — [ARXIV-2109.10686](https://arxiv.org/abs/2109.10686).
+Tay et al. (2021), [LIT-052](../literature.d/LIT-052.md) — [ARXIV-2109.10686](https://arxiv.org/abs/2109.10686).
 
 ## Why this is rejected
 

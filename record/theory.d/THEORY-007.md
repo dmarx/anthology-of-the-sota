@@ -34,7 +34,7 @@ summary: >-
 
 ## Source
 
-Liang et al. (2026), [LIT-236](../literature.d/LIT-236.md)<!-- ref::source: LIT-236 -->.
+Liang et al. (2026), [LIT-236](../literature.d/LIT-236.md).
 
 ## What was actually shown
 
@@ -85,7 +85,7 @@ in a *different optimizer* is the strongest thing here.
      account underwrites -->
 <!-- inactive-ok-block: THEORY-006 — Proposed, and named as the account this
      one gives a different answer from -->
-**It is why [SOTA-154](../practices.d/SOTA-154.md)<!-- ref::explains: SOTA-154 --> is possible at all**, and it is a different answer from
+**It is why [SOTA-154](../practices.d/SOTA-154.md) is possible at all**, and it is a different answer from
 [THEORY-006](THEORY-006.md)'s. That account says pretraining leaves the neighbourhood dense
 with task-improving perturbations, and the density grows with scale. This says
 the set of directions that matter is small and does not grow, so a fixed
@@ -93,7 +93,7 @@ population keeps hitting it however large the model gets.
 
 <!-- inactive-ok-block: SOTA-213 — Proposed, filed in this same change,
      and named as the practice this account's interventions section informs -->
-**And it separates two stopping questions [SOTA-213](../practices.d/SOTA-213.md)<!-- ref::explains: SOTA-213 --> had run
+**And it separates two stopping questions [SOTA-213](../practices.d/SOTA-213.md) had run
 together.** Rise-then-decay is degradation of the *target* reward under fixed
 hyperparameters, with a real peak worth stopping at. That is not the same as
 the prior-task drift the forgetting literature measures, which recovers. One

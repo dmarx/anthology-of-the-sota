@@ -22,7 +22,7 @@ summary: >-
 
 ## Source
 
-Jiang et al. (2020), [LIT-051](../literature.d/LIT-051.md)<!-- ref::introduced_by: LIT-051 --><!-- ref::source: LIT-051 --> — https://www.usenix.org/conference/osdi20/presentation/jiang.
+Jiang et al. (2020), [LIT-051](../literature.d/LIT-051.md) — https://www.usenix.org/conference/osdi20/presentation/jiang.
 
 <!-- inactive-ok: SOTA-073 — Rejected for the same reason as this one, and named as the pair -->
 ## The same gap as [SOTA-073](SOTA-073.md), one step further

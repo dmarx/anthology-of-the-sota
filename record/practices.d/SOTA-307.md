@@ -76,7 +76,7 @@ extended_by:
 
 ## Source
 
-Dufour, Efros and Pérez (2026), [LIT-501](../literature.d/LIT-501.md)<!-- ref::introduced_by: LIT-501 --><!-- ref::source: LIT-501 --> — read as
+Dufour, Efros and Pérez (2026), [LIT-501](../literature.d/LIT-501.md) — read as
 [NOTE-248](../notes.d/NOTE-248.md).
 
 ## When this applies
@@ -106,7 +106,7 @@ that differ by an order of magnitude.
    comparable to the whole within-seed floor.
 
    The record now holds the measurement that makes this non-negotiable rather
-   than fastidious. [LIT-693](../literature.d/LIT-693.md)<!-- ref::source: LIT-693 --> sweeps the guidance weight on ImageNet 64×64 and
+   than fastidious. [LIT-693](../literature.d/LIT-693.md) sweeps the guidance weight on ImageNet 64×64 and
    takes **FID from 1.55 to 26.22 while IS goes from 66.11 to 260.2** — a
    seventeen-fold swing in one metric and a near-quintupling of the other, from
    one checkpoint. Against that, a seed-noise floor is a rounding error: a
@@ -170,7 +170,7 @@ DINOv2 FID, precision, density, coverage — track Inception FID closely;
 to cover diversity metrics.
 
 **A second calibration point, and it is much larger.** The instruction
-above is to port the protocol and measure your own floor; [LIT-703](../literature.d/LIT-703.md)<!-- ref::source: LIT-703 --> is the one
+above is to port the protocol and measure your own floor; [LIT-703](../literature.d/LIT-703.md) is the one
 case in this record where somebody did. Training StyleGAN on FFHQ, they report
 FID varying "by up to **±14%** between consecutive training iterations" — quoted
 in passing, while explaining why they amortise over snapshots. That is a

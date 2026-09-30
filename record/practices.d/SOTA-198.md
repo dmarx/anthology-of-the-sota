@@ -46,10 +46,10 @@ implementations:
 
 ## Source
 
-McCandlish et al. (2018), [LIT-017](../literature.d/LIT-017.md)<!-- ref::introduced_by: LIT-017 --><!-- ref::source: LIT-017 --> — the paper that defines the gradient noise
+McCandlish et al. (2018), [LIT-017](../literature.d/LIT-017.md) — the paper that defines the gradient noise
 scale and, with it, critical batch size.
 
-Smith et al. (2022), [LIT-065](../literature.d/LIT-065.md)<!-- ref::source: LIT-065 --> — MT-NLG, which ramps its batch size in
+Smith et al. (2022), [LIT-065](../literature.d/LIT-065.md) — MT-NLG, which ramps its batch size in
 production for exactly the reason `LIT-017` predicts.
 
 ## The quantity
@@ -103,7 +103,7 @@ first.
 ## Relation to the scaling-law exponent
 
 <!-- inactive-ok-block: SOTA-097 — Superseded in this same change; this section exists to say what replaced it and why the instrument survives -->
-[SOTA-097](SOTA-097.md)<!-- ref::extends: SOTA-097 --> gave `B ∝ C^0.24` from Kaplan's equation 1.7 — a **prediction** from
+[SOTA-097](SOTA-097.md) gave `B ∝ C^0.24` from Kaplan's equation 1.7 — a **prediction** from
 compute budget, against this practice's **measurement** from the run in front
 of you. It is now `Superseded`, and by the better outcome: the disagreement
 was resolved rather than left open. The successor is [SOTA-258](SOTA-258.md), and the

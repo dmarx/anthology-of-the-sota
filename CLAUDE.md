@@ -99,11 +99,11 @@ work perfectly well.
 - **Some relations must be explained where they are held**
   ([ADR-tmp7icjh](record/decisions.d/ADR-tmp7icjh.md)). A practice's or theory's `source`, a practice's `introduced_by`,
   a theory's `explains`, every `corrects`, `contested_by`, and `extends` on
-  practices and theories: each code is cited in the body, in visible prose that
-  says what the relation means, and `luria link --fix` writes the `ref::`
-  statement beside the citation. Write `[[source::LIT-123]]` where you explain
-  it. A code in backticks is a mention and explains nothing. The lint reports
-  one never cited as `unexplained-relations`, a warning, not a failure.
+  practices and theories: each code is cited somewhere in the body, in visible
+  prose that says what the relation means (`explain: cited`). No `ref::`
+  statement is needed beside the citation; the sentence is the explanation. A
+  code in backticks is a mention and explains nothing. The lint reports one
+  never cited as `unexplained-relations`, a warning, not a failure.
 
 ## Working
 

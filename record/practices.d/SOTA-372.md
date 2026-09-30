@@ -42,7 +42,7 @@ extended_by:
 
 ## Source
 
-He et al. (2021), [LIT-601](../literature.d/LIT-601.md)<!-- ref::introduced_by: LIT-601 --><!-- ref::source: LIT-601 --> — [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377).
+He et al. (2021), [LIT-601](../literature.d/LIT-601.md) — [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377).
 
 ## The claim
 

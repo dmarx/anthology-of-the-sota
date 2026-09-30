@@ -63,7 +63,7 @@ summary: >-
 
 ## Source
 
-Ho and Salimans (2022), [LIT-693](../literature.d/LIT-693.md)<!-- ref::source: LIT-693 -->, who raise it about their predecessor
+Ho and Salimans (2022), [LIT-693](../literature.d/LIT-693.md), who raise it about their predecessor
 rather than about themselves.
 
 ## The account
@@ -114,7 +114,7 @@ Hence the `promote_when`: the question needs a metric with no classifier in it.
 
 ## What the antecedent says about it, which is less than it looks
 
-[LIT-699](../literature.d/LIT-699.md)<!-- ref::source: LIT-699 --> was read after this account was filed, and it changes the shape of
+[LIT-699](../literature.d/LIT-699.md) was read after this account was filed, and it changes the shape of
 the dispute rather than the verdict. **Dhariwal and Nichol got there first and
 did not measure it either.** Their introduction says the gradient scale can be
 raised

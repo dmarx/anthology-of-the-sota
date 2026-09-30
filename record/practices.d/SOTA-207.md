@@ -29,7 +29,7 @@ summary: >-
 
 ## Source
 
-Song et al. (2020), [LIT-038](../literature.d/LIT-038.md)<!-- ref::introduced_by: LIT-038 --><!-- ref::source: LIT-038 --> — DDIM.
+Song et al. (2020), [LIT-038](../literature.d/LIT-038.md) — DDIM.
 
 ## The claim
 

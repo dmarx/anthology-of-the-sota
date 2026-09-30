@@ -56,7 +56,7 @@ summary: >-
 
 ## Source
 
-Yeh, Hsieh, Suggala, Inouye and Ravikumar (2019), [LIT-725](../literature.d/LIT-725.md)<!-- ref::introduced_by: LIT-725 --><!-- ref::source: LIT-725 --> —
+Yeh, Hsieh, Suggala, Inouye and Ravikumar (2019), [LIT-725](../literature.d/LIT-725.md) —
 NeurIPS 2019, §2–3.
 
 ## Do this
@@ -118,7 +118,7 @@ is a comparison no one else can reproduce, or a score won by saying nothing.
 
 ## How this sits against what the record already holds
 
-[SOTA-430](SOTA-430.md)<!-- ref::extends: SOTA-430 --> says to run the randomization checks and, in step 3, to compare
+[SOTA-430](SOTA-430.md) says to run the randomization checks and, in step 3, to compare
 signed rank correlation against absolute or perceptual similarity because "a
 single metric can hand you either verdict". This practice is the same warning
 one level down, about the *faithfulness* metrics rather than the *similarity*

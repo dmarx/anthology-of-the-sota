@@ -57,7 +57,7 @@ summary: >-
 
 ## Source
 
-Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md)<!-- ref::introduced_by: LIT-603 --><!-- ref::source: LIT-603 -->. Read as [NOTE-326](../notes.d/NOTE-326.md).
+Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md). Read as [NOTE-326](../notes.d/NOTE-326.md).
 
 ## The practice
 
@@ -100,7 +100,7 @@ because its own occurrences survive while its neighbours' do not.
   structure, but that is not tested here
 - **Gains on word analogies were small or zero with enough negatives**
   (NEG-15: 61 → 61%)
-- **An independent ablation finds it hurts analogies.** [LIT-607](../literature.d/LIT-607.md)<!-- ref::contested_by: LIT-607 --> (Table
+- **An independent ablation finds it hurts analogies.** [LIT-607](../literature.d/LIT-607.md) (Table
   8b), at matched tuning on 1.5B tokens: SGNS similarity +0.1 to +2.2, and
   Google and MSR analogies −4.4 and −5.4. For PPMI the analogy losses are 5.0
   and 12.2. The best SGNS configuration used subsampling on 4 of 8 tasks. Use

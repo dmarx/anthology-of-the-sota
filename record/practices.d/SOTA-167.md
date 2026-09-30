@@ -38,7 +38,7 @@ summary: >-
 
 ## Source
 
-Lahoti et al. (2026), [LIT-165](../literature.d/LIT-165.md)<!-- ref::introduced_by: LIT-165 --><!-- ref::source: LIT-165 --> — [ARXIV-2603.15569](https://arxiv.org/abs/2603.15569).
+Lahoti et al. (2026), [LIT-165](../literature.d/LIT-165.md) — [ARXIV-2603.15569](https://arxiv.org/abs/2603.15569).
 
 The framing is inference-first and the critique is aimed at its own family:
 many recent linear models trade quality and capability for algorithmic

@@ -42,7 +42,7 @@ summary: >-
 
 ## Source
 
-Liu et al. (2025), [LIT-515](../literature.d/LIT-515.md)<!-- ref::introduced_by: LIT-515 --><!-- ref::source: LIT-515 --> — read as [NOTE-260](../notes.d/NOTE-260.md).
+Liu et al. (2025), [LIT-515](../literature.d/LIT-515.md) — read as [NOTE-260](../notes.d/NOTE-260.md).
 
 ## When this applies
 

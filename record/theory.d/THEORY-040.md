@@ -25,14 +25,14 @@ summary: >-
 
 ## Source
 
-Schaeffer, Miranda and Koyejo (2023), [LIT-471](../literature.d/LIT-471.md)<!-- ref::source: LIT-471 --> — read as
+Schaeffer, Miranda and Koyejo (2023), [LIT-471](../literature.d/LIT-471.md) — read as
 [NOTE-220](../notes.d/NOTE-220.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-200](../practices.d/SOTA-200.md)<!-- ref::explains: SOTA-200 --> | check whether an emergent capability is a metric artefact | the artefact has a closed form, so the check has an arithmetic target and a cheap positive test |
+| [SOTA-200](../practices.d/SOTA-200.md) | check whether an emergent capability is a metric artefact | the artefact has a closed form, so the check has an arithmetic target and a cheap positive test |
 
 ## The account
 

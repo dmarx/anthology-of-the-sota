@@ -32,7 +32,7 @@ summary: >-
 
 ## Source
 
-Xu et al. (2019), [LIT-025](../literature.d/LIT-025.md)<!-- ref::introduced_by: LIT-025 --><!-- ref::source: LIT-025 --> — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013).
+Xu et al. (2019), [LIT-025](../literature.d/LIT-025.md) — [ARXIV-1911.07013](https://arxiv.org/abs/1911.07013).
 
 ## Why the norm parameters might want a different rate
 

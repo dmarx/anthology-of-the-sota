@@ -39,7 +39,7 @@ summary: >-
 
 ## Source
 
-Karras et al. (2021), [LIT-559](../literature.d/LIT-559.md)<!-- ref::introduced_by: LIT-559 --><!-- ref::source: LIT-559 --> — StyleGAN3. Read as [NOTE-300](../notes.d/NOTE-300.md).
+Karras et al. (2021), [LIT-559](../literature.d/LIT-559.md) — StyleGAN3. Read as [NOTE-300](../notes.d/NOTE-300.md).
 Filed for `#163`'s "equivariant representation".
 
 ## The practice

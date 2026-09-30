@@ -61,8 +61,8 @@ summary: >-
 
 ## Source
 
-Martin Garcia et al. (2024; WACV 2025), [LIT-687](../literature.d/LIT-687.md)<!-- ref::source: LIT-687 -->, measuring the
-rule Lin et al. (2023; WACV 2024), [LIT-689](../literature.d/LIT-689.md)<!-- ref::introduced_by: LIT-689 --><!-- ref::source: LIT-689 -->, stated: "sample steps
+Martin Garcia et al. (2024; WACV 2025), [LIT-687](../literature.d/LIT-687.md), measuring the
+rule Lin et al. (2023; WACV 2024), [LIT-689](../literature.d/LIT-689.md), stated: "sample steps
 should always include the last timestep t = T". Lin et al. named the leading,
 linspace and trailing spacings. They credit the trailing discretization itself
 to DPM-Solver ([LIT-076](../literature.d/LIT-076.md)), which this record has not checked.

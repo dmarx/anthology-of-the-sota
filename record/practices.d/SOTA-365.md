@@ -49,8 +49,8 @@ explained_by:
 
 ## Source
 
-Grill et al. (2020), [LIT-594](../literature.d/LIT-594.md)<!-- ref::introduced_by: LIT-594 --><!-- ref::source: LIT-594 --> — [ARXIV-2006.07733](https://arxiv.org/abs/2006.07733), and Chen & He (2020),
-[LIT-593](../literature.d/LIT-593.md)<!-- ref::source: LIT-593 --> — [ARXIV-2011.10566](https://arxiv.org/abs/2011.10566).
+Grill et al. (2020), [LIT-594](../literature.d/LIT-594.md) — [ARXIV-2006.07733](https://arxiv.org/abs/2006.07733), and Chen & He (2020),
+[LIT-593](../literature.d/LIT-593.md) — [ARXIV-2011.10566](https://arxiv.org/abs/2011.10566).
 
 ## The claim
 

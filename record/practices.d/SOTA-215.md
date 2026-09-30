@@ -46,7 +46,7 @@ second-moment estimate** and treat it as a fixed preconditioner for the rest
 of training; compress what remains, which is a momentum SGD update under a
 constant diagonal scaling and does admit error compensation.
 
-Two settings, both from [LIT-278](../literature.d/LIT-278.md)<!-- ref::introduced_by: LIT-278 --><!-- ref::source: LIT-278 -->: the warmup must be at least as long as
+Two settings, both from [LIT-278](../literature.d/LIT-278.md): the warmup must be at least as long as
 the learning-rate warmup, and the variance-norm ratio
 `||v_t||_1 / ||v_{t-delta}||_1 >= 0.96` is usable as an automatic stopping
 criterion for it.
@@ -54,7 +54,7 @@ criterion for it.
 ## Why
 
 **The failure is about where the compressor sits, not how hard it squeezes.**
-Error feedback ([SOTA-214](SOTA-214.md)<!-- ref::extends: SOTA-214 -->) carries a residual forward on the assumption
+Error feedback ([SOTA-214](SOTA-214.md)) carries a residual forward on the assumption
 that adding it back next step undoes the loss. Adam divides by a running
 `sqrt(v)` that changes between those two steps, so the residual is added back
 under a different scaling than the one it was subtracted under, and the

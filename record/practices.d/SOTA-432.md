@@ -59,7 +59,7 @@ summary: >-
 
 ## Source
 
-Karras, Aittala, Lehtinen, Hellsten, Aila and Laine (2023), [LIT-720](../literature.d/LIT-720.md)<!-- ref::introduced_by: LIT-720 --><!-- ref::source: LIT-720 --> —
+Karras, Aittala, Lehtinen, Hellsten, Aila and Laine (2023), [LIT-720](../literature.d/LIT-720.md) —
 [ARXIV-2312.02696](https://arxiv.org/abs/2312.02696).
 
 ## What to do

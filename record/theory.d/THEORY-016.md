@@ -27,9 +27,9 @@ summary: >-
 
 ## Source
 
-Baldi and Sadowski (2013), [LIT-393](../literature.d/LIT-393.md)<!-- ref::source: LIT-393 -->;
+Baldi and Sadowski (2013), [LIT-393](../literature.d/LIT-393.md);
 corroborated empirically by Srivastava et al. (2014),
-[LIT-395](../literature.d/LIT-395.md)<!-- ref::source: LIT-395 --> §7.5.
+[LIT-395](../literature.d/LIT-395.md) §7.5.
 
 ## What was actually shown
 
@@ -75,7 +75,7 @@ agrees.
 
 ## What this does not say
 
-**What it explains in [SOTA-240](../practices.d/SOTA-240.md)<!-- ref::explains: SOTA-240 --> is the test-time half.** That
+**What it explains in [SOTA-240](../practices.d/SOTA-240.md) is the test-time half.** That
 practice counts dropout's cost in training time alone, and this account is
 why inference adds none: the weight-scaled forward pass is the ensemble
 average, not an approximation to sampling one. The practice's condition,

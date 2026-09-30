@@ -36,7 +36,7 @@ summary: >-
 
 ## Source
 
-Huh et al. (2024), [LIT-458](../literature.d/LIT-458.md)<!-- ref::source: LIT-458 --> — [ARXIV-2405.07987](https://arxiv.org/abs/2405.07987).
+Huh et al. (2024), [LIT-458](../literature.d/LIT-458.md) — [ARXIV-2405.07987](https://arxiv.org/abs/2405.07987).
 
 ## Two claims, and the record should keep them apart
 
@@ -103,7 +103,7 @@ its condition.
 
 ## What it underwrites
 
-[SOTA-271](../practices.d/SOTA-271.md)<!-- ref::explains: SOTA-271 --> — train on a second modality even when the target is
+[SOTA-271](../practices.d/SOTA-271.md) — train on a second modality even when the target is
 single-modality. That practice follows from the conjecture rather than from
 the measurement, which is why it is `Proposed` too, and why its conditions
 name this account's bijectivity assumption rather than hiding behind it.

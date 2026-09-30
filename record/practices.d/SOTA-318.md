@@ -48,7 +48,7 @@ summary: >-
 ## Source
 
 Jaiswal, Wang, Yin, Liu, Chen, Zhao, Grama, Tian and Wang (2024),
-[LIT-516](../literature.d/LIT-516.md)<!-- ref::introduced_by: LIT-516 --><!-- ref::source: LIT-516 --> — read as [NOTE-264](../notes.d/NOTE-264.md).
+[LIT-516](../literature.d/LIT-516.md) — read as [NOTE-264](../notes.d/NOTE-264.md).
 
 ## When this applies
 

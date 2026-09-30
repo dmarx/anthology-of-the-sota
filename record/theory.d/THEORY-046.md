@@ -30,13 +30,13 @@ summary: >-
 ## Source
 
 Sahoo, Deschenaux, Gokaslan, Wang, Chiu and Kuleshov (2025),
-[LIT-479](../literature.d/LIT-479.md)<!-- ref::source: LIT-479 --> §3 — read as [NOTE-228](../notes.d/NOTE-228.md).
+[LIT-479](../literature.d/LIT-479.md) §3 — read as [NOTE-228](../notes.d/NOTE-228.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-289](../practices.d/SOTA-289.md)<!-- ref::explains: SOTA-289 --> | for few-step generation, use uniform-state diffusion with consistency distillation | not a lucky transplant but a licensed one: the discrete process has a continuous preimage, so the continuous literature's methods have somewhere to land |
+| [SOTA-289](../practices.d/SOTA-289.md) | for few-step generation, use uniform-state diffusion with consistency distillation | not a lucky transplant but a licensed one: the discrete process has a continuous preimage, so the continuous literature's methods have somewhere to land |
 
 ## The account
 

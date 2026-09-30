@@ -67,14 +67,14 @@ explained_by:
 
 ## Source
 
-Srivastava et al. (2022), [LIT-077](../literature.d/LIT-077.md)<!-- ref::introduced_by: LIT-077 --><!-- ref::source: LIT-077 --> — BIG-bench, 204 tasks across three
+Srivastava et al. (2022), [LIT-077](../literature.d/LIT-077.md) — BIG-bench, 204 tasks across three
 model families from millions to hundreds of billions of parameters, with expert
 human raters.
 
-Nanda et al. (2023), [LIT-085](../literature.d/LIT-085.md)<!-- ref::source: LIT-085 --> — the grokking analysis, which reverse-engineers
+Nanda et al. (2023), [LIT-085](../literature.d/LIT-085.md) — the grokking analysis, which reverse-engineers
 one network and recovers the continuous progress underneath its discontinuity.
 
-Schaeffer et al. (2023), [LIT-471](../literature.d/LIT-471.md)<!-- ref::source: LIT-471 --> — read as [NOTE-220](../notes.d/NOTE-220.md) — the
+Schaeffer et al. (2023), [LIT-471](../literature.d/LIT-471.md) — read as [NOTE-220](../notes.d/NOTE-220.md) — the
 direct argument, which rescores fixed model outputs, counts which metrics the
 published claims sit under, and then manufactures emergence on demand in
 vision models that had never shown it.
@@ -84,11 +84,11 @@ it raises the metric explanation itself and declines it for two stated
 reasons, one of which is still standing.
 
 The grokking line, for the third check: Power et al. (2022),
-[LIT-538](../literature.d/LIT-538.md)<!-- ref::source: LIT-538 -->, which named the phenomenon and measured its data dependence;
-Liu, Michaud and Tegmark (2022), [LIT-540](../literature.d/LIT-540.md)<!-- ref::source: LIT-540 -->, which induces it outside
+[LIT-538](../literature.d/LIT-538.md), which named the phenomenon and measured its data dependence;
+Liu, Michaud and Tegmark (2022), [LIT-540](../literature.d/LIT-540.md), which induces it outside
 algorithmic data and eliminates it on demand; Varma et al. (2023),
-[LIT-539](../literature.d/LIT-539.md)<!-- ref::source: LIT-539 -->, which predicts and then observes ungrokking; and Kumar et al.
-(2023), [LIT-537](../literature.d/LIT-537.md)<!-- ref::source: LIT-537 -->, which adds the kernel-alignment axis.
+[LIT-539](../literature.d/LIT-539.md), which predicts and then observes ungrokking; and Kumar et al.
+(2023), [LIT-537](../literature.d/LIT-537.md), which adds the kernel-alignment axis.
 
 ## The claim
 

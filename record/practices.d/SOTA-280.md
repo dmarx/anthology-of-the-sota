@@ -32,7 +32,7 @@ summary: >-
 
 ## Source
 
-Wang et al. (2022), [LIT-468](../literature.d/LIT-468.md)<!-- ref::introduced_by: LIT-468 --><!-- ref::source: LIT-468 --> — [ARXIV-2203.11171](https://arxiv.org/abs/2203.11171),
+Wang et al. (2022), [LIT-468](../literature.d/LIT-468.md) — [ARXIV-2203.11171](https://arxiv.org/abs/2203.11171),
 read as [NOTE-217](../notes.d/NOTE-217.md).
 
 ## What to do
@@ -78,7 +78,7 @@ come from the answer distribution, not from the traces being any better.
 
 ## Relation to the neighbours
 
-Extends [SOTA-279](../practices.d/SOTA-279.md)<!-- ref::extends: SOTA-279 --> by changing how its output is read rather than what
+Extends [SOTA-279](../practices.d/SOTA-279.md) by changing how its output is read rather than what
 it is asked. Being a sampling algorithm, it also files under
 `inference-optimization`, whose blurb names them.
 

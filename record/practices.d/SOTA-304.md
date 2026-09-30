@@ -44,7 +44,7 @@ summary: >-
 ## Source
 
 Cheng, Clark and Richardson (2025),
-[LIT-493](../literature.d/LIT-493.md)<!-- ref::introduced_by: LIT-493 --><!-- ref::source: LIT-493 --> — read as [NOTE-242](../notes.d/NOTE-242.md).
+[LIT-493](../literature.d/LIT-493.md) — read as [NOTE-242](../notes.d/NOTE-242.md).
 
 ## When this applies
 

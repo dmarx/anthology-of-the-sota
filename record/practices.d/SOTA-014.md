@@ -23,7 +23,7 @@ extended_by:
 
 ## Source
 
-Micikevicius et al. (2017), [LIT-011](../literature.d/LIT-011.md)<!-- ref::introduced_by: LIT-011 --><!-- ref::source: LIT-011 --> — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740).
+Micikevicius et al. (2017), [LIT-011](../literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740).
 
 ## Why a second copy of the weights
 
@@ -38,7 +38,7 @@ So the optimizer keeps an FP32 master copy, applies the update there, and
 casts down to FP16 for the next forward pass. The FP16 weights are a
 derived, disposable view of the FP32 ones.
 
-This practice exists only because [SOTA-016](SOTA-016.md)<!-- ref::extends: SOTA-016 --> is followed: it is the
+This practice exists only because [SOTA-016](SOTA-016.md) is followed: it is the
 second copy that makes FP16 forward and backward passes safe, and a run whose
 passes are already in FP32 has no rounded-away updates for it to rescue.
 

@@ -42,8 +42,8 @@ summary: >-
 
 ## Source
 
-Jumper et al. (2021), [LIT-583](../literature.d/LIT-583.md)<!-- ref::introduced_by: LIT-583 --><!-- ref::source: LIT-583 -->, and Abramson et al. (2024),
-[LIT-584](../literature.d/LIT-584.md)<!-- ref::source: LIT-584 -->. Read as [NOTE-321](../notes.d/NOTE-321.md) and [NOTE-320](../notes.d/NOTE-320.md).
+Jumper et al. (2021), [LIT-583](../literature.d/LIT-583.md), and Abramson et al. (2024),
+[LIT-584](../literature.d/LIT-584.md). Read as [NOTE-321](../notes.d/NOTE-321.md) and [NOTE-320](../notes.d/NOTE-320.md).
 
 ## The practice
 

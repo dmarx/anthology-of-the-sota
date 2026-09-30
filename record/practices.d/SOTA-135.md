@@ -20,7 +20,7 @@ extended_by:
 
 ## Source
 
-Yang et al. (2024), [LIT-137](../literature.d/LIT-137.md)<!-- ref::introduced_by: LIT-137 --><!-- ref::source: LIT-137 --> — Gated DeltaNet.
+Yang et al. (2024), [LIT-137](../literature.d/LIT-137.md) — Gated DeltaNet.
 
 A linear-attention layer keeps a fixed-size state and has to manage it. A
 decay gate, as in Mamba2, lets the state forget fast; the delta rule, as in

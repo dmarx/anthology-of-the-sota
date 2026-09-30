@@ -38,7 +38,7 @@ summary: >-
 
 ## Source
 
-Paul et al. (2021), [LIT-397](../literature.d/LIT-397.md)<!-- ref::introduced_by: LIT-397 --><!-- ref::source: LIT-397 --> — [ARXIV-2107.07075](https://arxiv.org/abs/2107.07075).
+Paul et al. (2021), [LIT-397](../literature.d/LIT-397.md) — [ARXIV-2107.07075](https://arxiv.org/abs/2107.07075).
 
 ## What this replaces
 

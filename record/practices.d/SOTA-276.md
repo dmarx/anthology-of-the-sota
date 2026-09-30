@@ -39,7 +39,7 @@ explained_by:
 
 ## Source
 
-Zheng et al. (2026), [LIT-462](../literature.d/LIT-462.md)<!-- ref::introduced_by: LIT-462 --><!-- ref::source: LIT-462 --> — [ARXIV-2603.00541](https://arxiv.org/abs/2603.00541),
+Zheng et al. (2026), [LIT-462](../literature.d/LIT-462.md) — [ARXIV-2603.00541](https://arxiv.org/abs/2603.00541),
 read as [NOTE-211](../notes.d/NOTE-211.md), Takeaway 2. Accounted for by
 [THEORY-037](../theory.d/THEORY-037.md).
 

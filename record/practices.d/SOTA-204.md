@@ -29,7 +29,7 @@ summary: >-
 
 ## Source
 
-Song et al. (2023), [LIT-093](../literature.d/LIT-093.md)<!-- ref::introduced_by: LIT-093 --><!-- ref::source: LIT-093 --> — Consistency Models, where the schedules
+Song et al. (2023), [LIT-093](../literature.d/LIT-093.md) — Consistency Models, where the schedules
 `N(.)` and `mu(.)` are reported as necessary for good performance when training
 in isolation, with the bias/variance reasoning given explicitly (Fig. 3d,
 Appendix C).

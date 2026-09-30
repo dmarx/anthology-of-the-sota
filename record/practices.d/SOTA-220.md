@@ -55,7 +55,7 @@ trimmed mean's advantage is contingent on a number the deployer does not have.
 ## Why
 
 **The mean's breakdown point is zero, and cluster size does not help.**
-[LIT-344](../literature.d/LIT-344.md)<!-- ref::introduced_by: LIT-344 --><!-- ref::source: LIT-344 -->'s first result is the one that matters more than the algorithm it
+[LIT-344](../literature.d/LIT-344.md)'s first result is the one that matters more than the algorithm it
 proposes: a single Byzantine worker can drive the average to any value it
 likes, regardless of `n`, because the average is unbounded in each
 contribution. The intuition that a bad worker is diluted by many good ones is
@@ -63,7 +63,7 @@ wrong — dilution works on the *direction* of a bounded vector and not on an
 unbounded one.
 
 **The two aggregators differ in what they need to know, not just in rate.**
-[LIT-257](../literature.d/LIT-257.md)<!-- ref::source: LIT-257 --> gives order-optimal rates for the trimmed mean under
+[LIT-257](../literature.d/LIT-257.md) gives order-optimal rates for the trimmed mean under
 sub-exponential gradients, and near-optimal rates for the median under the
 weaker assumption of bounded skewness — crucially, *without* knowing `alpha`.
 An aggregator parameterized by a quantity you are trying to detect is not

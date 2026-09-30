@@ -31,8 +31,8 @@ implementations: []
 
 ## Source
 
-Bardes et al. (2021), [LIT-595](../literature.d/LIT-595.md)<!-- ref::source: LIT-595 --> — [ARXIV-2105.04906](https://arxiv.org/abs/2105.04906). Introduced by Zbontar
-et al. (2021), [LIT-596](../literature.d/LIT-596.md)<!-- ref::introduced_by: LIT-596 --><!-- ref::source: LIT-596 --> — [ARXIV-2103.03230](https://arxiv.org/abs/2103.03230), which stated the loss-side
+Bardes et al. (2021), [LIT-595](../literature.d/LIT-595.md) — [ARXIV-2105.04906](https://arxiv.org/abs/2105.04906). Introduced by Zbontar
+et al. (2021), [LIT-596](../literature.d/LIT-596.md) — [ARXIV-2103.03230](https://arxiv.org/abs/2103.03230), which stated the loss-side
 approach first in its cross-correlation form.
 
 ## The claim

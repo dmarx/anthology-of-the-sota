@@ -49,7 +49,7 @@ explained_by:
 
 ## Source
 
-Davis and Drusvyatskiy (2025), [LIT-457](../literature.d/LIT-457.md)<!-- ref::introduced_by: LIT-457 --><!-- ref::source: LIT-457 --> —
+Davis and Drusvyatskiy (2025), [LIT-457](../literature.d/LIT-457.md) —
 [ARXIV-2512.04299](https://arxiv.org/abs/2512.04299), read as [NOTE-209](../notes.d/NOTE-209.md).
 Accounted for by [THEORY-032](../theory.d/THEORY-032.md).
 

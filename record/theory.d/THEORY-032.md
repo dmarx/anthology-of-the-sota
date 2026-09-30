@@ -65,7 +65,7 @@ summary: >-
 
 ## Source
 
-Davis and Drusvyatskiy (2025), [LIT-457](../literature.d/LIT-457.md)<!-- ref::source: LIT-457 --> — read as
+Davis and Drusvyatskiy (2025), [LIT-457](../literature.d/LIT-457.md) — read as
 [NOTE-209](../notes.d/NOTE-209.md).
 
 ## The account
@@ -98,7 +98,7 @@ degenerate in a specific, provable way, and the spectral update is the one
 that does not care.
 
 That is an account of the positive half of the practice of preconditioning
-with matrices rather than entrywise [SOTA-165](../practices.d/SOTA-165.md)<!-- ref::explains: SOTA-165 -->: why a member of
+with matrices rather than entrywise [SOTA-165](../practices.d/SOTA-165.md): why a member of
 the class that acts on the whole matrix, Muon's spectral step, should beat a
 per-coordinate one on transformers. It explains the Muon branch, not the
 whole class, and it sits awkwardly with that practice's one trend — the
@@ -127,7 +127,7 @@ ratio, and the paper does not claim it does.
 
 **It does not tell you to route updates by block.** The rule of thumb is
 stated, and the ablation that would test it — spectral where the condition
-holds, Euclidean elsewhere — is not run. [SOTA-274](../practices.d/SOTA-274.md)<!-- ref::explains: SOTA-274 --> is therefore a
+holds, Euclidean elsewhere — is not run. [SOTA-274](../practices.d/SOTA-274.md) is therefore a
 measurement and not a routing recipe; that restraint is [ADR-017](../decisions.d/ADR-017.md)'s
 question about what a claim's source can carry.
 

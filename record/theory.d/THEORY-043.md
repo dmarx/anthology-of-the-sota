@@ -39,13 +39,13 @@ summary: >-
 ## Source
 
 Chen, Huang, Golowich, Malladi, Block, Ash, Krishnamurthy and Foster (2025),
-[LIT-474](../literature.d/LIT-474.md)<!-- ref::source: LIT-474 --> — read as [NOTE-223](../notes.d/NOTE-223.md).
+[LIT-474](../literature.d/LIT-474.md) — read as [NOTE-223](../notes.d/NOTE-223.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-284](../practices.d/SOTA-284.md)<!-- ref::explains: SOTA-284 --> | select the post-training checkpoint on coverage, not validation cross-entropy | two metrics that agree until missing mass and sequence length pull them apart, which is exactly where the interesting checkpoints are |
+| [SOTA-284](../practices.d/SOTA-284.md) | select the post-training checkpoint on coverage, not validation cross-entropy | two metrics that agree until missing mass and sequence length pull them apart, which is exactly where the interesting checkpoints are |
 | [SOTA-210](../practices.d/SOTA-210.md) | report pass@k as well as pass@1 | pass@k is an estimator of the quantity that actually gates post-training, and pass@1 is not |
 
 ## The account

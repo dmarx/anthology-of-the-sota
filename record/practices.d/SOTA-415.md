@@ -68,8 +68,8 @@ summary: >-
 
 ## Source
 
-Li et al. (2025), [LIT-684](../literature.d/LIT-684.md)<!-- ref::source: LIT-684 -->. The practice's idea is earlier,
-in Hägele et al. (2024), [LIT-145](../literature.d/LIT-145.md)<!-- ref::introduced_by: LIT-145 --><!-- ref::source: LIT-145 -->: averaging along a constant-LR
+Li et al. (2025), [LIT-684](../literature.d/LIT-684.md). The practice's idea is earlier,
+in Hägele et al. (2024), [LIT-145](../literature.d/LIT-145.md): averaging along a constant-LR
 trajectory improves the model at no training cost.
 
 ## What to do

@@ -39,7 +39,7 @@ implementations:
 
 ## Source
 
-Saharia et al. (2022), [LIT-073](../literature.d/LIT-073.md)<!-- ref::introduced_by: LIT-073 --><!-- ref::source: LIT-073 --> — Imagen, where high classifier-free guidance
+Saharia et al. (2022), [LIT-073](../literature.d/LIT-073.md) — Imagen, where high classifier-free guidance
 weights were destroying images and the cause turned out to be arithmetic rather
 than aesthetic.
 
@@ -75,7 +75,7 @@ there is an `x̂₀` to clamp. A diffusion ODE solver can be written on the **no
 prediction `ε̂` instead, and a high-order one then has intermediate stages where
 no data prediction exists — so the clamp has nowhere to attach.
 
-[LIT-676](../literature.d/LIT-676.md)<!-- ref::source: LIT-676 --> reaches this mechanism independently, from the solver side rather
+[LIT-676](../literature.d/LIT-676.md) reaches this mechanism independently, from the solver side rather
 than from Imagen's, and draws the design consequence: it solves the ODE for the
 data prediction model specifically because "thresholding methods are further
 available to keep the samples bounded". [SOTA-410](SOTA-410.md) is that recommendation.

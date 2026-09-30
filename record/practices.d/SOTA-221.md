@@ -58,7 +58,7 @@ explained_by:
 
 When a batch size stops reaching the target and you are looking for a bigger
 one, **spend the effort on the optimizer, not on the scaling heuristic.** The
-specific move [LIT-265](../literature.d/LIT-265.md)<!-- ref::introduced_by: LIT-265 --><!-- ref::source: LIT-265 --> supplies: take an Adam-style per-coordinate update `u`,
+specific move [LIT-265](../literature.d/LIT-265.md) supplies: take an Adam-style per-coordinate update `u`,
 then scale each layer's step by `phi(||x_layer||) / ||u_layer||`, with `phi`
 clipping the parameter norm into a fixed range so a degenerate layer cannot
 blow the ratio up. Two levels of normalization — per coordinate underneath, per
@@ -105,7 +105,7 @@ that the rule is right. [SOTA-218](SOTA-218.md) is about drawing a curve you int
 reason from, and a curve drawn this way is still not one. [THEORY-012](../theory.d/THEORY-012.md) is the
 account under both.
 
-**[LIT-265](../literature.d/LIT-265.md) agrees with [LIT-058](../literature.d/LIT-058.md)<!-- ref::source: LIT-058 --> and cites it saying so** — "learning rate
+**[LIT-265](../literature.d/LIT-265.md) agrees with [LIT-058](../literature.d/LIT-058.md) and cites it saying so** — "learning rate
 scaling heuristics with the batch size do not hold across all problems or
 across all batch sizes" is [LIT-265](../literature.d/LIT-265.md)'s own summary of it, in its related-work
 section, as motivation. The two papers were never in dispute. This record's

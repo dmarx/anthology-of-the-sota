@@ -52,7 +52,7 @@ explained_by:
 
 ## Source
 
-Zucchet et al. (2025), [LIT-450](../literature.d/LIT-450.md)<!-- ref::introduced_by: LIT-450 --><!-- ref::source: LIT-450 --> — [ARXIV-2503.21676](https://arxiv.org/abs/2503.21676).
+Zucchet et al. (2025), [LIT-450](../literature.d/LIT-450.md) — [ARXIV-2503.21676](https://arxiv.org/abs/2503.21676).
 
 ## The trade-off is the practice
 

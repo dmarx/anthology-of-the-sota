@@ -32,7 +32,7 @@ summary: >-
 
 ## Source
 
-Liu et al. (2023), [LIT-206](../literature.d/LIT-206.md)<!-- ref::introduced_by: LIT-206 --><!-- ref::source: LIT-206 --> — [ARXIV-2310.01889](https://arxiv.org/abs/2310.01889).
+Liu et al. (2023), [LIT-206](../literature.d/LIT-206.md) — [ARXIV-2310.01889](https://arxiv.org/abs/2310.01889).
 
 The constraint being removed is memory, not arithmetic: a transformer's
 memory demand is what caps sequence length on a given device. Memory-efficient

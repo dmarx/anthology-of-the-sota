@@ -33,7 +33,7 @@ summary: >-
 
 ## Source
 
-Kingma and Gao (2023), [LIT-692](../literature.d/LIT-692.md)<!-- ref::source: LIT-692 -->, §4 and Appendix C.
+Kingma and Gao (2023), [LIT-692](../literature.d/LIT-692.md), §4 and Appendix C.
 
 ## The account
 
@@ -60,7 +60,7 @@ of `z_t`, the data with Gaussian noise added at level `t`. So:
   table shows parity: EDM-monotonic 1.43 against EDM 1.43. SD3's non-monotone
   logit-normal won its 61-way sweep at scale. What the theorem gives is an
   interpretation, not a ranking.
-- **It carries [THEORY-027](THEORY-027.md)<!-- ref::extends: THEORY-027 --> into the weighted case.** Given `w`, the loss
+- **It carries [THEORY-027](THEORY-027.md) into the weighted case.** Given `w`, the loss
   depends on the schedule only through its endpoints, and the schedule's shape
   sets only the Monte Carlo variance. [THEORY-027](THEORY-027.md) is the unweighted special
   case, and it remains scoped to scalar schedules.

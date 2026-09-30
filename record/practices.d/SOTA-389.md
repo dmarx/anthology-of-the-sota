@@ -56,7 +56,7 @@ implementations:
 
 ## Source
 
-The Movie Gen team (2024), [LIT-626](../literature.d/LIT-626.md)<!-- ref::introduced_by: LIT-626 --><!-- ref::source: LIT-626 -->, Table 8b.
+The Movie Gen team (2024), [LIT-626](../literature.d/LIT-626.md), Table 8b.
 
 ## The claim
 

@@ -26,7 +26,7 @@ summary: >-
 
 ## Source
 
-Huang et al. (2018), [LIT-016](../literature.d/LIT-016.md)<!-- ref::introduced_by: LIT-016 --><!-- ref::source: LIT-016 --> — [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965).
+Huang et al. (2018), [LIT-016](../literature.d/LIT-016.md) — [ARXIV-1811.06965](https://arxiv.org/abs/1811.06965).
 
 ## Why balance matters more here than elsewhere
 

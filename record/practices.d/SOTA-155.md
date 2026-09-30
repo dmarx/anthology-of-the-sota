@@ -59,8 +59,8 @@ explained_by:
 
 ## Source
 
-Douillard et al. (2023), [LIT-212](../literature.d/LIT-212.md)<!-- ref::introduced_by: LIT-212 --><!-- ref::source: LIT-212 --> — DiLoCo; Douillard et al. (2025),
-[LIT-214](../literature.d/LIT-214.md)<!-- ref::source: LIT-214 --> — Streaming DiLoCo, for the bandwidth half.
+Douillard et al. (2023), [LIT-212](../literature.d/LIT-212.md) — DiLoCo; Douillard et al. (2025),
+[LIT-214](../literature.d/LIT-214.md) — Streaming DiLoCo, for the bandwidth half.
 
 The constraint being attacked is co-location, not bandwidth. Standard
 distributed training exchanges gradients every step, so every accelerator has
@@ -79,7 +79,7 @@ What you run:
   ablation reports outer SGD, which is plain averaging, and outer Adam both
   performing poorly at the same interval.
 
-  **This component is older than DiLoCo and was not its invention.** [LIT-373](../literature.d/LIT-373.md)<!-- ref::source: LIT-373 -->
+  **This component is older than DiLoCo and was not its invention.** [LIT-373](../literature.d/LIT-373.md)
   applied slow outer momentum to local SGD and to gossip optimizers in 2019,
   and [LIT-212](../literature.d/LIT-212.md)'s related work names it as having "extended [federated
   averaging] to more powerful outer optimizers", work that "inspired our use

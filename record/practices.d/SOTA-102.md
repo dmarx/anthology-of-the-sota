@@ -34,7 +34,7 @@ compared_against:
 
 ## Source
 
-Albalak et al. (2023), [LIT-117](../literature.d/LIT-117.md)<!-- ref::introduced_by: LIT-117 --><!-- ref::source: LIT-117 --> — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406).
+Albalak et al. (2023), [LIT-117](../literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406).
 
 ## The temperature is real, and it is inside the bandit
 

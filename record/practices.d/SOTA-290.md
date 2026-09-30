@@ -39,7 +39,7 @@ explained_by:
 
 ## Source
 
-Ye, Luceri and Ferrara (2024), [LIT-480](../literature.d/LIT-480.md)<!-- ref::introduced_by: LIT-480 --><!-- ref::source: LIT-480 --> — read as
+Ye, Luceri and Ferrara (2024), [LIT-480](../literature.d/LIT-480.md) — read as
 [NOTE-229](../notes.d/NOTE-229.md). 120 accounts, six weeks, 9.79M tweets from
 Twitter/X's "For You" timeline.
 

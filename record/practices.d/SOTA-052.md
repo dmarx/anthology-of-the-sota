@@ -18,7 +18,7 @@ summary: >-
 
 ## Source
 
-Wang et al. (2022), [LIT-084](../literature.d/LIT-084.md)<!-- ref::introduced_by: LIT-084 --><!-- ref::source: LIT-084 --> — [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555).
+Wang et al. (2022), [LIT-084](../literature.d/LIT-084.md) — [ARXIV-2203.00555](https://arxiv.org/abs/2203.00555).
 
 ## The dependence the title leaves out
 

@@ -39,7 +39,7 @@ summary: >-
 ## Source
 
 Karras, Aittala, Kynkäänniemi, Lehtinen, Aila and Laine (2024),
-[LIT-721](../literature.d/LIT-721.md)<!-- ref::source: LIT-721 --> — [ARXIV-2406.02507](https://arxiv.org/abs/2406.02507).
+[LIT-721](../literature.d/LIT-721.md) — [ARXIV-2406.02507](https://arxiv.org/abs/2406.02507).
 
 ## The account
 

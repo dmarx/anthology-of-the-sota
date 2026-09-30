@@ -20,11 +20,11 @@ summary: >-
 
 ## Source
 
-Aizman et al. (2020), [LIT-053](../literature.d/LIT-053.md)<!-- ref::introduced_by: LIT-053 --><!-- ref::source: LIT-053 --> — [ARXIV-2001.01858](https://arxiv.org/abs/2001.01858).
+Aizman et al. (2020), [LIT-053](../literature.d/LIT-053.md) — [ARXIV-2001.01858](https://arxiv.org/abs/2001.01858).
 
 ## What the buffer is for
 
-Reading tar shards sequentially ([SOTA-077](SOTA-077.md)<!-- ref::extends: SOTA-077 -->) gives up random access, so the
+Reading tar shards sequentially ([SOTA-077](SOTA-077.md)) gives up random access, so the
 shuffle has to be reconstructed. The sample buffer is half of that: fill it
 from the stream, yield a random element, refill from the stream. The larger
 it is, the further apart in the archive two samples in the same batch can be.

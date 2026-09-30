@@ -42,7 +42,7 @@ summary: >-
 
 ## Source
 
-Gloeckle et al., Meta (2024), [LIT-163](../literature.d/LIT-163.md)<!-- ref::introduced_by: LIT-163 --><!-- ref::source: LIT-163 --> — [ARXIV-2404.19737](https://arxiv.org/abs/2404.19737).
+Gloeckle et al., Meta (2024), [LIT-163](../literature.d/LIT-163.md) — [ARXIV-2404.19737](https://arxiv.org/abs/2404.19737).
 
 At each position, ask the model to predict the following **n** tokens through
 n independent output heads on a shared trunk. It is an *auxiliary* objective,

@@ -33,7 +33,7 @@ summary: >-
 
 ## Source
 
-Sun et al. (2022), [LIT-111](../literature.d/LIT-111.md)<!-- ref::introduced_by: LIT-111 --><!-- ref::source: LIT-111 --> — [ARXIV-2205.12257](https://arxiv.org/abs/2205.12257).
+Sun et al. (2022), [LIT-111](../literature.d/LIT-111.md) — [ARXIV-2205.12257](https://arxiv.org/abs/2205.12257).
 
 ## The rule
 

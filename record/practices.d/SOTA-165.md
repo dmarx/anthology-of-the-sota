@@ -44,9 +44,9 @@ explained_by:
 
 ## Source
 
-Wen et al. (2025), [LIT-156](../literature.d/LIT-156.md)<!-- ref::introduced_by: LIT-156 --><!-- ref::source: LIT-156 --> — [ARXIV-2509.02046](https://arxiv.org/abs/2509.02046), for the comparison;
-Vyas et al. (2024), [LIT-157](../literature.d/LIT-157.md)<!-- ref::source: LIT-157 -->, for the equivalence that says why the class is
-the right unit; Shi et al. (2023), [LIT-158](../literature.d/LIT-158.md)<!-- ref::source: LIT-158 -->, for the overhead budget.
+Wen et al. (2025), [LIT-156](../literature.d/LIT-156.md) — [ARXIV-2509.02046](https://arxiv.org/abs/2509.02046), for the comparison;
+Vyas et al. (2024), [LIT-157](../literature.d/LIT-157.md), for the equivalence that says why the class is
+the right unit; Shi et al. (2023), [LIT-158](../literature.d/LIT-158.md), for the overhead budget.
 
 AdamW scales each coordinate of the gradient by its own running statistic.
 The alternative is to multiply the gradient by a *matrix* — a preconditioner

@@ -36,7 +36,7 @@ explained_by:
 
 ## Source
 
-Darcet, Oquab, Mairal and Bojanowski (2023), [LIT-662](../literature.d/LIT-662.md)<!-- ref::introduced_by: LIT-662 --><!-- ref::source: LIT-662 -->.
+Darcet, Oquab, Mairal and Bojanowski (2023), [LIT-662](../literature.d/LIT-662.md).
 
 ## What to do
 

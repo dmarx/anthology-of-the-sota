@@ -46,7 +46,7 @@ summary: >-
 
 ## Source
 
-Sahoo, Gokaslan, De Sa and Kuleshov (2023; NeurIPS 2024), [LIT-677](../literature.d/LIT-677.md)<!-- ref::introduced_by: LIT-677 --><!-- ref::source: LIT-677 -->.
+Sahoo, Gokaslan, De Sa and Kuleshov (2023; NeurIPS 2024), [LIT-677](../literature.d/LIT-677.md).
 
 ## What to do
 

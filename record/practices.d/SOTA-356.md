@@ -33,7 +33,7 @@ summary: >-
 
 ## Source
 
-Lin et al. (2023), [LIT-585](../literature.d/LIT-585.md)<!-- ref::introduced_by: LIT-585 --><!-- ref::source: LIT-585 --> — [ARXIV-2306.00978](https://arxiv.org/abs/2306.00978).
+Lin et al. (2023), [LIT-585](../literature.d/LIT-585.md) — [ARXIV-2306.00978](https://arxiv.org/abs/2306.00978).
 
 ## What to do
 

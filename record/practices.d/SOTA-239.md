@@ -40,7 +40,7 @@ summary: >-
 
 ## Source
 
-Chen et al. (2023), [LIT-392](../literature.d/LIT-392.md)<!-- ref::introduced_by: LIT-392 --><!-- ref::source: LIT-392 --> — [ARXIV-2307.14430](https://arxiv.org/abs/2307.14430).
+Chen et al. (2023), [LIT-392](../literature.d/LIT-392.md) — [ARXIV-2307.14430](https://arxiv.org/abs/2307.14430).
 
 ## The claim
 

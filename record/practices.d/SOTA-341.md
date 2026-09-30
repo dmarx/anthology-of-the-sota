@@ -40,7 +40,7 @@ summary: >-
 
 ## Source
 
-Podell et al. (2023), [LIT-566](../literature.d/LIT-566.md)<!-- ref::introduced_by: LIT-566 --><!-- ref::source: LIT-566 --> — SDXL. Read as [NOTE-306](../notes.d/NOTE-306.md).
+Podell et al. (2023), [LIT-566](../literature.d/LIT-566.md) — SDXL. Read as [NOTE-306](../notes.d/NOTE-306.md).
 
 ## The practice
 

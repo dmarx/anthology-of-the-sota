@@ -47,7 +47,7 @@ summary: >-
 
 ## Source
 
-Staats, Thamm and Rosenow (2024), [LIT-517](../literature.d/LIT-517.md)<!-- ref::introduced_by: LIT-517 --><!-- ref::source: LIT-517 --> — read as
+Staats, Thamm and Rosenow (2024), [LIT-517](../literature.d/LIT-517.md) — read as
 [NOTE-263](../notes.d/NOTE-263.md).
 
 ## When this applies

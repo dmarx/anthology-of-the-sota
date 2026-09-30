@@ -43,7 +43,7 @@ summary: >-
 
 ## Source
 
-Levy, Goldberg and Dagan (2015), [LIT-607](../literature.d/LIT-607.md)<!-- ref::introduced_by: LIT-607 --><!-- ref::source: LIT-607 -->, read as [NOTE-329](../notes.d/NOTE-329.md).
+Levy, Goldberg and Dagan (2015), [LIT-607](../literature.d/LIT-607.md), read as [NOTE-329](../notes.d/NOTE-329.md).
 
 ## Do this
 
@@ -61,7 +61,7 @@ Levy, Goldberg and Dagan (2015), [LIT-607](../literature.d/LIT-607.md)<!-- ref::
 ## Why
 
 Baroni et al. (2014, [LIT-608](../literature.d/LIT-608.md)) found prediction-based embeddings well
-ahead, and recommended them ([SOTA-380](SOTA-380.md)<!-- ref::corrects: SOTA-380 -->, now `Rejected`; this practice
+ahead, and recommended them ([SOTA-380](SOTA-380.md), now `Rejected`; this practice
 `corrects` it). They had
 compared word2vec with its recommended settings against vanilla PPMI and SVD,
 with SVD at its worst setting. Equalizing the settings removes the

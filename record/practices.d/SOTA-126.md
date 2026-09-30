@@ -23,7 +23,7 @@ summary: >-
 
 ## Source
 
-Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md)<!-- ref::introduced_by: LIT-119 --><!-- ref::source: LIT-119 --> — the Falcon-H1-Tiny technical blogpost.
+Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
 
 DPO on a 90M SFT-pretrained checkpoint, cosine decay, LR sweep over 3e-7,
 1e-6, 3e-6, 1e-5. Trained for three epochs, every run degraded sharply on
@@ -34,7 +34,7 @@ over 65 with the other benchmarks preserved, and the same recipe applied to
 the curriculum-SFT model gave the same pattern (40.8 to 53.5). The
 multilingual 100M model showed the same: DPO was its main gain in
 instruction following. The prior the authors cite for DPO converging at
-this scale is [LIT-129](../literature.d/LIT-129.md)<!-- ref::source: LIT-129 -->: a 135M model taken through SFT, reasoning SFT and one
+this scale is [LIT-129](../literature.d/LIT-129.md): a 135M model taken through SFT, reasoning SFT and one
 epoch of DPO.
 
 Conditions: the epoch count interacts with the schedule — with cosine decay,
@@ -46,7 +46,7 @@ report that a short DPO stage has helped at every scale they have trained
 
 ## What DPO is
 
-Introduced in [LIT-169](../literature.d/LIT-169.md)<!-- ref::source: LIT-169 -->: reparameterise the reward so the optimal policy
+Introduced in [LIT-169](../literature.d/LIT-169.md): reparameterise the reward so the optimal policy
 has a closed form, and the whole RLHF apparatus — a fitted reward model, a
 sampling loop, an RL optimiser — collapses into one classification loss over
 preference pairs. That is why it is cheap enough to be worth running at 90M

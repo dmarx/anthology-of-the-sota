@@ -24,7 +24,7 @@ summary: >-
 
 ## Source
 
-Haviv, Ram, Press, Izsak and Levy (2022), [LIT-665](../literature.d/LIT-665.md)<!-- ref::source: LIT-665 -->.
+Haviv, Ram, Press, Izsak and Levy (2022), [LIT-665](../literature.d/LIT-665.md).
 
 ## The claim
 

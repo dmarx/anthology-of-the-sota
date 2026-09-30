@@ -64,7 +64,7 @@ summary: >-
 
 ## Source
 
-Ho and Salimans (2022), [LIT-693](../literature.d/LIT-693.md)<!-- ref::introduced_by: LIT-693 --><!-- ref::source: LIT-693 --> —
+Ho and Salimans (2022), [LIT-693](../literature.d/LIT-693.md) —
 [ARXIV-2207.12598](https://arxiv.org/abs/2207.12598).
 
 ## What to do

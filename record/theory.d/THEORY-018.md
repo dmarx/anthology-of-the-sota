@@ -30,8 +30,8 @@ summary: >-
 
 <!-- inactive-ok-block: THEORY-017 — Rejected, and named here as the
      account this one replaces; that is what the citation is for. -->
-Bae, Ng, Lo, Ghassemi and Grosse (2022), [LIT-402](../literature.d/LIT-402.md)<!-- ref::source: LIT-402 -->. The account it replaces
-is [THEORY-017](THEORY-017.md)<!-- ref::corrects: THEORY-017 -->, published with the method in [LIT-403](../literature.d/LIT-403.md)<!-- ref::source: LIT-403 -->.
+Bae, Ng, Lo, Ghassemi and Grosse (2022), [LIT-402](../literature.d/LIT-402.md). The account it replaces
+is [THEORY-017](THEORY-017.md), published with the method in [LIT-403](../literature.d/LIT-403.md).
 
 ## What was actually shown
 
@@ -77,7 +77,7 @@ PBRF for exactly this reason.
      about which practice the reinterpretation spares. -->
 **And the use cases survive**, which the paper says in as many words: the PBRF
 supports finding influential or mislabelled examples, and carrying out
-data-poisoning analysis. That is why [SOTA-246](../practices.d/SOTA-246.md)<!-- ref::explains: SOTA-246 --> is still a practice this
+data-poisoning analysis. That is why [SOTA-246](../practices.d/SOTA-246.md) is still a practice this
 record makes. It needs an ordering over training points; it never needed the
 counterfactual.
 

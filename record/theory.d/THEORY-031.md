@@ -28,11 +28,11 @@ summary: >-
 
 ## Source
 
-Kangaslahti et al. (2025), [LIT-455](../literature.d/LIT-455.md)<!-- ref::source: LIT-455 --> — [ARXIV-2506.15872](https://arxiv.org/abs/2506.15872).
+Kangaslahti et al. (2025), [LIT-455](../literature.d/LIT-455.md) — [ARXIV-2506.15872](https://arxiv.org/abs/2506.15872).
 
-Cohen et al. (2024), [LIT-453](../literature.d/LIT-453.md)<!-- ref::source: LIT-453 --> — [ARXIV-2410.24206](https://arxiv.org/abs/2410.24206).
+Cohen et al. (2024), [LIT-453](../literature.d/LIT-453.md) — [ARXIV-2410.24206](https://arxiv.org/abs/2410.24206).
 
-Kunin et al. (2021), [LIT-454](../literature.d/LIT-454.md)<!-- ref::source: LIT-454 --> — [ARXIV-2107.09133](https://arxiv.org/abs/2107.09133).
+Kunin et al. (2021), [LIT-454](../literature.d/LIT-454.md) — [ARXIV-2107.09133](https://arxiv.org/abs/2107.09133).
 
 **No one of these states the claim; the record does, from holding all three.**
 That is the kind of synthesis [DP-007](../principles.d/DP-007.md) says has no author and therefore no
@@ -72,7 +72,7 @@ recall circuit under construction, demonstrated by patching the circuit in
 and watching the plateau disappear. That was one transition made visible by
 an intervention. The first collapse above says the population is large.
 
-[SOTA-270](../practices.d/SOTA-270.md)<!-- ref::explains: SOTA-270 --> is the practice: do not read the curve as evidence about
+[SOTA-270](../practices.d/SOTA-270.md) is the practice: do not read the curve as evidence about
 the training, and decompose it when the answer matters.
 
 ## What this does not say

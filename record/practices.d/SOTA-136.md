@@ -75,10 +75,10 @@ explained_by:
 
 ## Source
 
-Xie et al. (2025), [LIT-140](../literature.d/LIT-140.md)<!-- ref::introduced_by: LIT-140 --><!-- ref::source: LIT-140 --> — mHC.
+Xie et al. (2025), [LIT-140](../literature.d/LIT-140.md) — mHC.
 
 <!-- inactive-ok: SOTA-137 — a Superseded practice, named as the predecessor in the chain -->
-Keep the wider residual stream of hyper-connections ([SOTA-137](SOTA-137.md)<!-- ref::corrects: SOTA-137 -->) but constrain how
+Keep the wider residual stream of hyper-connections ([SOTA-137](SOTA-137.md)) but constrain how
 the streams mix: the matrix that carries them from one layer to the next is
 projected onto the doubly-stochastic manifold with Sinkhorn-Knopp
 iterations — entries non-negative, rows and columns summing to one — which
@@ -93,7 +93,7 @@ stay distinct" and V4 is the production report at depth. **It does not
 answer the objection.** Its case for the constraint is numerical: projecting
 onto the doubly-stochastic manifold bounds the spectral norm at 1, so the
 residual transformation is non-expansive and both passes are more stable —
-which is the property [LIT-151](../literature.d/LIT-151.md)<!-- ref::contested_by: LIT-151 --> grants and then argues cuts the other way, since
+which is the property [LIT-151](../literature.d/LIT-151.md) grants and then argues cuts the other way, since
 a mapping that can only contract is a mapping that can only erode what
 distinguishes the streams. V4 measures no stream statistic, and the words
 homogenize, diversity and distinct do not appear in it. So the condition
@@ -103,7 +103,7 @@ will otherwise assume the question was settled by shipping.
 
 ## Construct the constraint, do not approximate it
 
-Yang (2026), [LIT-513](../literature.d/LIT-513.md)<!-- ref::source: LIT-513 --> — read as [NOTE-258](../notes.d/NOTE-258.md) — shows the
+Yang (2026), [LIT-513](../literature.d/LIT-513.md) — read as [NOTE-258](../notes.d/NOTE-258.md) — shows the
 Sinkhorn-Knopp projection does not arrive. Across SK inputs measured during
 training, about **27.9%** have relative range `1/ν ≥ 10¹³`, where 20
 iterations do not converge; a single residual matrix's column sum can be off
@@ -133,7 +133,7 @@ Why *Proposed*: **the condition this was filed under has been met, and is
 not being applied.** That is worth explaining rather than quietly leaving
 the status alone.
 
-The condition was "promote on an independent result". [LIT-152](../literature.d/LIT-152.md)<!-- ref::source: LIT-152 --> is one: a
+The condition was "promote on an independent result". [LIT-152](../literature.d/LIT-152.md) is one: a
 different laboratory ran mHC in its own harness and found it comparable to
 its own design. By the letter of the rule this should now be *Active*.
 
@@ -141,7 +141,7 @@ It is not, because two other independent results arrived at the same time
 and both attack the specific thing this practice recommends — the
 doubly-stochastic constraint. [LIT-151](../literature.d/LIT-151.md) proves the Birkhoff polytope is
 bounded above but not below, so the mixing can only shrink what
-distinguishes the streams and they homogenize with depth. [LIT-181](../literature.d/LIT-181.md)<!-- ref::contested_by: LIT-181 --> names
+distinguishes the streams and they homogenize with depth. [LIT-181](../literature.d/LIT-181.md) names
 three further defects: identity degeneration, an expressivity bottleneck
 from non-negativity forbidding subtractive interactions, and unstable
 Sinkhorn projection. Different arguments, opposite remedies, same verdict on
@@ -167,7 +167,7 @@ which all four papers hold and none of them disputes.
 
 ## Sequence and siblings
 
-This is one branch of [SOTA-169](SOTA-169.md)<!-- ref::extends: SOTA-169 -->, the trunk practice of widening <!-- inactive-ok: SOTA-169 — Proposed, and the trunk this practice extends; the citation is the relation's explanation -->
+This is one branch of [SOTA-169](SOTA-169.md), the trunk practice of widening <!-- inactive-ok: SOTA-169 — Proposed, and the trunk this practice extends; the citation is the relation's explanation -->
 the residual stream and constraining the mixing: it keeps that practice's
 width and names the doubly-stochastic manifold as the constraint. Everything
 disputed here is the choice of constraint, so the trunk stands whatever this

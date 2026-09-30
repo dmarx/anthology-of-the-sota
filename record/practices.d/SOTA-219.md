@@ -45,19 +45,19 @@ synchronisation boundary and does not reset or exchange them.
 **It is two thirds of the communication.** A model delta is one tensor the
 size of the parameters. Adam's moments are two more of the same size, so
 synchronising them is a 3x increase in what crosses the slow link — and
-[LIT-212](../literature.d/LIT-212.md)<!-- ref::introduced_by: LIT-212 --><!-- ref::source: LIT-212 --> reports the quality gain from doing so as negligible.
+[LIT-212](../literature.d/LIT-212.md) reports the quality gain from doing so as negligible.
 
 **It says something about where the saving comes from.** The obvious reading
 of local-update training is that it saves by communicating *rarely*. This says
 a large part of it is communicating *less*: an outer optimizer that has to be
 given consistent inner state is a much more expensive scheme at the same
 interval. That distinction is invisible from the practice this one extends,
-[SOTA-155](SOTA-155.md)<!-- ref::extends: SOTA-155 -->, which states the structure — many inner steps, an <!-- inactive-ok: SOTA-155 — Proposed, and the practice this one extends; the citation is the relation's explanation -->
+[SOTA-155](SOTA-155.md), which states the structure — many inner steps, an <!-- inactive-ok: SOTA-155 — Proposed, and the practice this one extends; the citation is the relation's explanation -->
 outer momentum optimizer over the deltas — without saying what crosses the
 boundary. This is a design decision inside that scheme, and has no meaning
 outside it.
 
-**It reproduces outside the lab that published it.** [LIT-252](../literature.d/LIT-252.md)<!-- ref::source: LIT-252 --> is an
+**It reproduces outside the lab that published it.** [LIT-252](../literature.d/LIT-252.md) is an
 independent open implementation trained across continents at 90–95% compute
 utilization, and it keeps the same structure.
 

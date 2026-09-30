@@ -68,7 +68,7 @@ compared_against:
 
 ## Source
 
-Shazeer et al. (2020), [LIT-030](../literature.d/LIT-030.md)<!-- ref::introduced_by: LIT-030 --><!-- ref::source: LIT-030 --> — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202).
+Shazeer et al. (2020), [LIT-030](../literature.d/LIT-030.md) — [ARXIV-2002.05202](https://arxiv.org/abs/2002.05202).
 
 ## Where the gate came from
 
@@ -91,7 +91,7 @@ numerical liability at frontier scale in low precision.
 
 ## Variations
 
-**SiTU-GLU** ([LIT-131](../literature.d/LIT-131.md)<!-- ref::contested_by: LIT-131 -->), the first replacement in the record. The
+**SiTU-GLU** ([LIT-131](../literature.d/LIT-131.md)), the first replacement in the record. The
 objection is about range, not quality: both of SwiGLU's multiplicative
 factors are unbounded, so coincident large coordinates produce activation
 outliers and raise the overflow risk in low-precision arithmetic. The
@@ -104,7 +104,7 @@ constant per branch. Kimi K3 ships it at 2.8T.
 One group, one model, no ablation: the report gives the motivation and the
 functional form and does not measure SiTU-GLU against SwiGLU anywhere.
 
-**PowLU** ([LIT-200](../literature.d/LIT-200.md)<!-- ref::contested_by: LIT-200 -->) is the other one, and it is the better-evidenced of
+**PowLU** ([LIT-200](../literature.d/LIT-200.md)) is the other one, and it is the better-evidenced of
 the pair. Same objection reached from a different angle: for large positive
 inputs SwiGLU approximates x², and that quadratic amplification is what
 enlarges the output range and produces the outliers. The remedy is a rational
@@ -128,7 +128,7 @@ neither replacement has been checked against the other.
 
 ## Re-run with five seeds, in the same codebase
 
-Narang et al. ([LIT-711](../literature.d/LIT-711.md)<!-- ref::source: LIT-711 -->) ran about fifty published modifications through one
+Narang et al. ([LIT-711](../literature.d/LIT-711.md)) ran about fifty published modifications through one
 T5 codebase with every hyperparameter fixed, and most of them lost to the
 baseline. SwiGLU did not. On pre-training loss it scored **2.127 ± 0.003
 against 2.182 ± 0.005** over five seeds, and on final loss 1.789 against 1.838. It beat
@@ -146,7 +146,7 @@ asking. What carries that weight here is adoption, not measurement.
 
 ## Contested on quality too, by one figure
 
-The two objections above are about range. Primer ([LIT-709](../literature.d/LIT-709.md)<!-- ref::contested_by: LIT-709 -->, 2021)
+The two objections above are about range. Primer ([LIT-709](../literature.d/LIT-709.md), 2021)
 predates both, and its objection is about quality. In one comparison (C4,
 110M, T5 codebase, 525K steps) a **squared ReLU**, `max(x, 0)²`, reaches
 lower perplexity than SwiGLU and ReGLU, and it has no third matrix. Squared

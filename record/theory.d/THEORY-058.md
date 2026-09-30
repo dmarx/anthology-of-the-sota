@@ -39,13 +39,13 @@ summary: >-
 ## Source
 
 Saxe, Bansal, Dapello, Advani, Kolchinsky, Tracey and Cox (2018),
-[LIT-509](../literature.d/LIT-509.md)<!-- ref::source: LIT-509 --> — read as [NOTE-253](../notes.d/NOTE-253.md).
+[LIT-509](../literature.d/LIT-509.md) — read as [NOTE-253](../notes.d/NOTE-253.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-312](../practices.d/SOTA-312.md)<!-- ref::explains: SOTA-312 --> | state the noise or binning assumption and show the conclusion survives changing it | there is a concrete, understood mechanism by which the assumption and the activation function jointly manufacture a phase that nothing in the learning corresponds to |
+| [SOTA-312](../practices.d/SOTA-312.md) | state the noise or binning assumption and show the conclusion survives changing it | there is a concrete, understood mechanism by which the assumption and the activation function jointly manufacture a phase that nothing in the learning corresponds to |
 
 ## The account
 

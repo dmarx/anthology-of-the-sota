@@ -52,7 +52,7 @@ implementations: []
 
 ## Source
 
-Dosovitskiy et al. (2020), [LIT-587](../literature.d/LIT-587.md)<!-- ref::introduced_by: LIT-587 --><!-- ref::source: LIT-587 --> — [ARXIV-2010.11929](https://arxiv.org/abs/2010.11929).
+Dosovitskiy et al. (2020), [LIT-587](../literature.d/LIT-587.md) — [ARXIV-2010.11929](https://arxiv.org/abs/2010.11929).
 
 ## The claim
 

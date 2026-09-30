@@ -61,8 +61,8 @@ summary: >-
 
 ## Source
 
-Ba et al. (2026), [LIT-230](../literature.d/LIT-230.md)<!-- ref::source: LIT-230 --> — [ARXIV-2608.27351](https://arxiv.org/abs/2608.27351); Hayes et al.
-(2026), [LIT-234](../literature.d/LIT-234.md)<!-- ref::introduced_by: LIT-234 --><!-- ref::source: LIT-234 --> — [ARXIV-2608.12679](https://arxiv.org/abs/2608.12679).
+Ba et al. (2026), [LIT-230](../literature.d/LIT-230.md) — [ARXIV-2608.27351](https://arxiv.org/abs/2608.27351); Hayes et al.
+(2026), [LIT-234](../literature.d/LIT-234.md) — [ARXIV-2608.12679](https://arxiv.org/abs/2608.12679).
 
 ## The measurement, and why one number hides it
 

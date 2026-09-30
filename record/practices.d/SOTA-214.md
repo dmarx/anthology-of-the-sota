@@ -51,8 +51,8 @@ momentum buffer, apply the correction to the buffer rather than to the raw
 gradient — sparsification delays the coordinates it drops, and delayed
 coordinates arrive with stale momentum already applied to them.
 
-Set the rank or ratio second. [LIT-337](../literature.d/LIT-337.md)<!-- ref::source: LIT-337 --> reports rank 2 sufficient for
-convolutional networks and rank 4 for LSTMs; [LIT-056](../literature.d/LIT-056.md)<!-- ref::introduced_by: LIT-056 --><!-- ref::source: LIT-056 --> reaches 99.9%
+Set the rank or ratio second. [LIT-337](../literature.d/LIT-337.md) reports rank 2 sufficient for
+convolutional networks and rank 4 for LSTMs; [LIT-056](../literature.d/LIT-056.md) reaches 99.9%
 sparsity. Neither number means anything without the residual.
 
 ## Why
@@ -64,7 +64,7 @@ uncompressed SGD with it. Sparsification: Deep Gradient Compression reports
 that at 99.9% sparsity, momentum SGD without momentum correction degrades
 significantly — because a coordinate held back for hundreds of steps is
 applied against a momentum buffer that has moved on. Sign-based compression
-with Adam: [LIT-278](../literature.d/LIT-278.md)<!-- ref::source: LIT-278 --> finds that applying error-compensated
+with Adam: [LIT-278](../literature.d/LIT-278.md) finds that applying error-compensated
 compression to Adam directly "corrupts error cancellation and severely harms
 convergence", because Adam's variance division is non-linear and the residual
 no longer means what the correction assumes.

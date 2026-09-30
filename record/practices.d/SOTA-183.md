@@ -24,7 +24,7 @@ summary: >-
 
 ## Source
 
-Bai et al. (2022), [LIT-082](../literature.d/LIT-082.md)<!-- ref::introduced_by: LIT-082 --><!-- ref::source: LIT-082 --> — [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073).
+Bai et al. (2022), [LIT-082](../literature.d/LIT-082.md) — [ARXIV-2212.08073](https://arxiv.org/abs/2212.08073).
 
 ## The method
 

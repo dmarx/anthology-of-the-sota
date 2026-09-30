@@ -34,7 +34,7 @@ implementations: []
 
 ## Source
 
-Minderer et al. (2022), [LIT-072](../literature.d/LIT-072.md)<!-- ref::introduced_by: LIT-072 --><!-- ref::source: LIT-072 --> — OWL-ViT, open-vocabulary detection from a
+Minderer et al. (2022), [LIT-072](../literature.d/LIT-072.md) — OWL-ViT, open-vocabulary detection from a
 contrastively pretrained image-text model.
 
 ## The claim
@@ -68,7 +68,7 @@ is silent: nothing in the training loop reports it.
 
 ## The same conflict, a year earlier and larger
 
-[LIT-588](../literature.d/LIT-588.md)<!-- ref::source: LIT-588 --> measures it on CLIP, and the numbers are bigger. Fitting a
+[LIT-588](../literature.d/LIT-588.md) measures it on CLIP, and the numbers are bigger. Fitting a
 supervised linear classifier on ImageNet features raises ImageNet accuracy by
 **9.2%** — which the authors put at "roughly 3 years of improvement in SOTA"
 — and produces **no improvement in average accuracy across seven natural

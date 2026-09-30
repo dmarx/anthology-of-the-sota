@@ -36,7 +36,7 @@ summary: >-
 
 ## Source
 
-Tönshoff et al. (2023), [LIT-579](../literature.d/LIT-579.md)<!-- ref::introduced_by: LIT-579 --><!-- ref::source: LIT-579 -->. Read as [NOTE-317](../notes.d/NOTE-317.md). The general
+Tönshoff et al. (2023), [LIT-579](../literature.d/LIT-579.md). Read as [NOTE-317](../notes.d/NOTE-317.md). The general
 form is [SOTA-350](SOTA-350.md).
 
 ## The practice

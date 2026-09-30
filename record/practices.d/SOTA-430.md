@@ -160,7 +160,7 @@ extended_by:
 ## Source
 
 Adebayo, Gilmer, Muelly, Goodfellow, Hardt and Kim (2018; NeurIPS 2018),
-[LIT-713](../literature.d/LIT-713.md)<!-- ref::introduced_by: LIT-713 --><!-- ref::source: LIT-713 --> — [ARXIV-1810.03292](https://arxiv.org/abs/1810.03292), read in full (v3, November 2020) as
+[LIT-713](../literature.d/LIT-713.md) — [ARXIV-1810.03292](https://arxiv.org/abs/1810.03292), read in full (v3, November 2020) as
 [NOTE-365](../notes.d/NOTE-365.md). The instruction is the paper's own: "our tests can be thought of
 as sanity checks to perform before deploying a method in practice."
 
@@ -184,7 +184,7 @@ On *your* model, with the attribution method you intend to use:
    once. A single metric can hand you either verdict.
 
    **Three groups have now found this, on three model families.** `LIT-713`
-   on Inception and MNIST; [LIT-724](../literature.d/LIT-724.md)<!-- ref::contested_by: LIT-724 --><!-- ref::source: LIT-724 --> on Inception and BERT, where SSIM
+   on Inception and MNIST; [LIT-724](../literature.d/LIT-724.md) on Inception and BERT, where SSIM
    calls global Integrated Gradients insensitive to randomization and Spearman
    calls it sensitive; and [LIT-725](../literature.d/LIT-725.md) on ResNet-50, where signed rank
    correlation runs 0.10–0.18 across five explanations and the absolute-value

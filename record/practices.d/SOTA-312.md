@@ -47,9 +47,9 @@ explained_by:
 ## Source
 
 Saxe, Bansal, Dapello, Advani, Kolchinsky, Tracey and Cox (2018),
-[LIT-509](../literature.d/LIT-509.md)<!-- ref::introduced_by: LIT-509 --><!-- ref::source: LIT-509 --> — read as [NOTE-253](../notes.d/NOTE-253.md).
+[LIT-509](../literature.d/LIT-509.md) — read as [NOTE-253](../notes.d/NOTE-253.md).
 
-Chelombiev, Houghton and O'Donnell (2019), [LIT-507](../literature.d/LIT-507.md)<!-- ref::source: LIT-507 --> — read as
+Chelombiev, Houghton and O'Donnell (2019), [LIT-507](../literature.d/LIT-507.md) — read as
 [NOTE-254](../notes.d/NOTE-254.md) — which argues against the first and demonstrates the
 same point in the opposite direction.
 

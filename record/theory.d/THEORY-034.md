@@ -41,7 +41,7 @@ summary: >-
 
 ## Source
 
-Xiong (2026), [LIT-460](../literature.d/LIT-460.md)<!-- ref::source: LIT-460 --> — [ARXIV-2603.01227](https://arxiv.org/abs/2603.01227).
+Xiong (2026), [LIT-460](../literature.d/LIT-460.md) — [ARXIV-2603.01227](https://arxiv.org/abs/2603.01227).
 
 ## What was actually shown
 
@@ -80,7 +80,7 @@ is not run.
 
 **It assumes the Linear Representation Hypothesis** and does not re-establish
 it. Everything here is downstream of that premise, which the record now
-holds as [THEORY-090](THEORY-090.md)<!-- ref::extends: THEORY-090 -->. That account's own evidence stops at the output
+holds as [THEORY-090](THEORY-090.md). That account's own evidence stops at the output
 space, and [LIT-526](../literature.d/LIT-526.md)'s null is against one of its uses.
 
 **Thresholds are assumed to exist and separate.** The soft version concedes

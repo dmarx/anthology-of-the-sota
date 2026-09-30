@@ -44,8 +44,8 @@ summary: >-
 
 ## Source
 
-Meng et al. (2023), [LIT-576](../literature.d/LIT-576.md)<!-- ref::introduced_by: LIT-576 --><!-- ref::source: LIT-576 -->, read as [NOTE-316](../notes.d/NOTE-316.md). Hase et al.
-(2023), [LIT-574](../literature.d/LIT-574.md)<!-- ref::source: LIT-574 -->, for how to choose layers.
+Meng et al. (2023), [LIT-576](../literature.d/LIT-576.md), read as [NOTE-316](../notes.d/NOTE-316.md). Hase et al.
+(2023), [LIT-574](../literature.d/LIT-574.md), for how to choose layers.
 
 ## The practice
 
@@ -70,7 +70,7 @@ prompt at inference:
 - **Directional facts**, on GPT-J and GPT-NeoX-class models with ungated
   MLPs
 
-The dispute is [LIT-577](../literature.d/LIT-577.md)<!-- ref::contested_by: LIT-577 --> (RippleEdits), and it is not about
+The dispute is [LIT-577](../literature.d/LIT-577.md) (RippleEdits), and it is not about
 whether MEMIT writes the edited triple — it does — but about whether that
 amounts to updating knowledge. Across 5K edits, MEMIT and the other weight
 editors leave the edit's implications (logical consequences, multi-hop

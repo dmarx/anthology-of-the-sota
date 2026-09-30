@@ -73,7 +73,7 @@ summary: >-
 
 ## Source
 
-Chen et al. (2024), [LIT-554](../literature.d/LIT-554.md)<!-- ref::introduced_by: LIT-554 --><!-- ref::source: LIT-554 --> — Diffusion Forcing. Read as [NOTE-298](../notes.d/NOTE-298.md).
+Chen et al. (2024), [LIT-554](../literature.d/LIT-554.md) — Diffusion Forcing. Read as [NOTE-298](../notes.d/NOTE-298.md).
 
 ## The practice
 
@@ -105,7 +105,7 @@ on:
 
 ## What has been measured since
 
-Self Forcing ([LIT-629](../literature.d/LIT-629.md)<!-- ref::contested_by: LIT-629 -->, Table 2) ran the first controlled comparison at
+Self Forcing ([LIT-629](../literature.d/LIT-629.md), Table 2) ran the first controlled comparison at
 transformer scale by a group other than the authors, on Wan2.1-1.3B with 5s
 clips scored by VBench total. The table is two matched pairs, not one
 setup. The many-step rows are 50×2-step models fine-tuned on 70K videos

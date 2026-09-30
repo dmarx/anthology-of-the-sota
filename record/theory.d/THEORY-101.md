@@ -30,7 +30,7 @@ summary: >-
 
 ## Source
 
-Darcet, Oquab, Mairal and Bojanowski (2023), [LIT-662](../literature.d/LIT-662.md)<!-- ref::source: LIT-662 -->.
+Darcet, Oquab, Mairal and Bojanowski (2023), [LIT-662](../literature.d/LIT-662.md).
 
 ## The claim
 
@@ -76,7 +76,7 @@ correlation consistent with it, which is the strongest form of evidence a
 mechanistic account of this kind can have, and it is why the status is
 `Active` on one paper.
 
-That intervention is [SOTA-400](../practices.d/SOTA-400.md)<!-- ref::explains: SOTA-400 -->, and this account is why it
+That intervention is [SOTA-400](../practices.d/SOTA-400.md), and this account is why it
 works: register tokens come from no patch, so they are scratch space the
 model can use without overwriting redundant background patches. It also
 says why the practice buys nothing below ViT-Large, where there is no spare

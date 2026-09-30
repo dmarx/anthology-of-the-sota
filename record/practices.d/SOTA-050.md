@@ -27,7 +27,7 @@ extended_by:
 
 ## Source
 
-Vaswani et al. (2017), [LIT-008](../literature.d/LIT-008.md)<!-- ref::introduced_by: LIT-008 --><!-- ref::source: LIT-008 --> — [ARXIV-1706.03762](https://arxiv.org/abs/1706.03762).
+Vaswani et al. (2017), [LIT-008](../literature.d/LIT-008.md) — [ARXIV-1706.03762](https://arxiv.org/abs/1706.03762).
 
 ## Why the square root, specifically
 

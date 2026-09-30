@@ -51,8 +51,8 @@ summary: >-
 
 ## Source
 
-Lin, Liu, Li and Yang (2023; WACV 2024), [LIT-689](../literature.d/LIT-689.md)<!-- ref::introduced_by: LIT-689 --><!-- ref::source: LIT-689 -->, with the controlled
-comparison in Emu Video ([LIT-635](../literature.d/LIT-635.md)<!-- ref::source: LIT-635 -->).
+Lin, Liu, Li and Yang (2023; WACV 2024), [LIT-689](../literature.d/LIT-689.md), with the controlled
+comparison in Emu Video ([LIT-635](../literature.d/LIT-635.md)).
 
 ## What to do
 

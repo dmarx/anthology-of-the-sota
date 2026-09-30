@@ -47,7 +47,7 @@ summary: >-
 
 ## Source
 
-Kusupati, Bhatt, Rege et al. (2022), [LIT-547](../literature.d/LIT-547.md)<!-- ref::introduced_by: LIT-547 --><!-- ref::source: LIT-547 --> — Matryoshka
+Kusupati, Bhatt, Rege et al. (2022), [LIT-547](../literature.d/LIT-547.md) — Matryoshka
 Representation Learning. Read as [NOTE-291](../notes.d/NOTE-291.md).
 
 ## The practice

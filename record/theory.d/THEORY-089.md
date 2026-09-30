@@ -51,8 +51,8 @@ extended_by:
 
 ## Source
 
-Pennington et al. (2014), [LIT-602](../literature.d/LIT-602.md)<!-- ref::source: LIT-602 -->, read as [NOTE-327](../notes.d/NOTE-327.md), for the ratio
-account. Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md)<!-- ref::source: LIT-603 -->, read as [NOTE-326](../notes.d/NOTE-326.md), for
+Pennington et al. (2014), [LIT-602](../literature.d/LIT-602.md), read as [NOTE-327](../notes.d/NOTE-327.md), for the ratio
+account. Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md), read as [NOTE-326](../notes.d/NOTE-326.md), for
 additive composition.
 
 ## The account
@@ -79,13 +79,13 @@ river → Volga River).
 ## What it rests on
 
 For skip-gram, the premise that dot products fit a log co-occurrence
-statistic is [THEORY-093](THEORY-093.md)<!-- ref::extends: THEORY-093 -->: SGNS's optimum is w·c = PMI(w, c) − log k.
+statistic is [THEORY-093](THEORY-093.md): SGNS's optimum is w·c = PMI(w, c) − log k.
 This account `extends` that one. It adds that ratios of those statistics
 become vector offsets.
 
 ## Support from a controlled comparison
 
-[LIT-607](../literature.d/LIT-607.md)<!-- ref::source: LIT-607 --> adds the test the two sources lacked. If count-based and
+[LIT-607](../literature.d/LIT-607.md) adds the test the two sources lacked. If count-based and
 prediction-based vectors fit the same statistics, they should converge once
 their design choices are aligned. Tuned alike, PPMI, SVD, SGNS and GloVe show
 no consistent winner, and the gaps change sign from task to task. That is

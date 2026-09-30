@@ -49,7 +49,7 @@ This practice has no source that argues for it, and its `introduced_by:` is
 empty rather than filled with the paper below. Both are deliberate, and the
 reasons are different from each other.
 
-Cheng, Clark and Richardson (2025), [LIT-493](../literature.d/LIT-493.md)<!-- ref::source: LIT-493 --> — read as
+Cheng, Clark and Richardson (2025), [LIT-493](../literature.d/LIT-493.md) — read as
 [NOTE-242](../notes.d/NOTE-242.md) — is cited as the **instance that made the gap visible**,
 not as evidence for the recommendation. Genesys does not recommend holding
 tasks out; it is a search that did not, and it published enough of its own

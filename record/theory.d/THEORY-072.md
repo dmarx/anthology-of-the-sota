@@ -36,7 +36,7 @@ corrected_by:
 
 ## Source
 
-Liu, Michaud and Tegmark (2022), [LIT-540](../literature.d/LIT-540.md)<!-- ref::source: LIT-540 --> — [ARXIV-2210.01117](https://arxiv.org/abs/2210.01117). The
+Liu, Michaud and Tegmark (2022), [LIT-540](../literature.d/LIT-540.md) — [ARXIV-2210.01117](https://arxiv.org/abs/2210.01117). The
 LU mechanism is this paper's: it defines the reduced landscape, derives the
 `γ`-dependence and measures it in the teacher–student model, and uses the
 picture to induce grokking on MNIST, IMDb and QM9.

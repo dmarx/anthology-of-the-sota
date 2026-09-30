@@ -32,7 +32,7 @@ implementations: []
 
 ## Source
 
-Bak-Coleman, West, O'Connor and Bergstrom (2026), [LIT-481](../literature.d/LIT-481.md)<!-- ref::introduced_by: LIT-481 --><!-- ref::source: LIT-481 --> — read
+Bak-Coleman, West, O'Connor and Bergstrom (2026), [LIT-481](../literature.d/LIT-481.md) — read
 as [NOTE-231](../notes.d/NOTE-231.md). 295 papers in *Science*, *Nature*, *PNAS* and
 their transfer journals, 1210 authors.
 

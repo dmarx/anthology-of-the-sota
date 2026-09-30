@@ -69,8 +69,8 @@ guarantee.
 matters and the one most summaries drop. You are not approximating the big
 model with the small one; you are using the small one to *propose* and the big
 one to *decide*, under a rule constructed so the composite sampler is unbiased.
-[LIT-375](../literature.d/LIT-375.md)<!-- ref::source: LIT-375 --> states the qualifier worth keeping — the guarantee holds "within
-hardware numerics" — and [LIT-376](../literature.d/LIT-376.md)<!-- ref::introduced_by: LIT-376 --><!-- ref::source: LIT-376 --> measures its results against **identical
+[LIT-375](../literature.d/LIT-375.md) states the qualifier worth keeping — the guarantee holds "within
+hardware numerics" — and [LIT-376](../literature.d/LIT-376.md) measures its results against **identical
 outputs**.
 
 **It cannot be slower in target evaluations.** Every parallel target pass

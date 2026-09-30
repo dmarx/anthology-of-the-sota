@@ -47,8 +47,8 @@ summary: >-
 
 ## Source
 
-Girdhar et al. (2023), [LIT-635](../literature.d/LIT-635.md)<!-- ref::source: LIT-635 --> — Emu Video, Table 1. Guo et al. (2023),
-[LIT-633](../literature.d/LIT-633.md) — AnimateDiff. Video LDM (Blattmann et al., 2023, [LIT-621](../literature.d/LIT-621.md)<!-- ref::introduced_by: LIT-621 -->) froze
+Girdhar et al. (2023), [LIT-635](../literature.d/LIT-635.md) — Emu Video, Table 1. Guo et al. (2023),
+[LIT-633](../literature.d/LIT-633.md) — AnimateDiff. Video LDM (Blattmann et al., 2023, [LIT-621](../literature.d/LIT-621.md)) froze
 the spatial layers first, and showed its temporal layers transferring to a
 DreamBooth checkpoint qualitatively.
 

@@ -36,9 +36,9 @@ summary: >-
 
 ## Source
 
-Xiao et al. (2023), [LIT-191](../literature.d/LIT-191.md)<!-- ref::source: LIT-191 --> —
+Xiao et al. (2023), [LIT-191](../literature.d/LIT-191.md) —
 [ARXIV-2309.17453](https://arxiv.org/abs/2309.17453); with Sun et al. (2024),
-[LIT-190](../literature.d/LIT-190.md)<!-- ref::source: LIT-190 -->.
+[LIT-190](../literature.d/LIT-190.md).
 
 ## What was actually shown
 
@@ -64,7 +64,7 @@ mechanism whose removal costs three orders of magnitude is not an artifact.
 **Two independent confirmations.** [LIT-190](../literature.d/LIT-190.md) finds
 the corresponding concentration on the activation side — massive activations
 at particular positions in the residual stream — from a different group and a
-different measurement. And [SOTA-134](../practices.d/SOTA-134.md)<!-- ref::explains: SOTA-134 -->'s
+different measurement. And [SOTA-134](../practices.d/SOTA-134.md)'s
 head-specific output gate **eliminates** the sink pattern rather than moving
 it elsewhere, which is exactly what this account predicts: give a head a way
 to scale its whole output down and it has no surplus mass to shed, so no sink

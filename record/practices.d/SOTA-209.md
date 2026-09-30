@@ -33,9 +33,9 @@ extends:
 
 ## Source
 
-Komatsuzaki et al. (2022), [LIT-227](../literature.d/LIT-227.md)<!-- ref::introduced_by: LIT-227 --><!-- ref::source: LIT-227 --> — Sparse Upcycling.
+Komatsuzaki et al. (2022), [LIT-227](../literature.d/LIT-227.md) — Sparse Upcycling.
 
-[SOTA-150](SOTA-150.md)<!-- ref::extends: SOTA-150 --> says make the feed-forward layers sparse. This says where the sparse
+[SOTA-150](SOTA-150.md) says make the feed-forward layers sparse. This says where the sparse
 model should start, and the answer is: from a dense one you have already
 trained.
 

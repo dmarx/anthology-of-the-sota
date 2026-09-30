@@ -101,8 +101,8 @@ explained_by:
 
 ## Source
 
-Xiong et al. (2020), [LIT-114](../literature.d/LIT-114.md)<!-- ref::source: LIT-114 --> — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745), the mean-field
-analysis. Nguyen and Salazar (2019), [LIT-651](../literature.d/LIT-651.md)<!-- ref::source: LIT-651 -->, the first systematic
+Xiong et al. (2020), [LIT-114](../literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745), the mean-field
+analysis. Nguyen and Salazar (2019), [LIT-651](../literature.d/LIT-651.md), the first systematic
 evaluation, four months earlier.
 
 <!-- inactive-ok-block: ADR-029 — Superseded by ADR-030, cited beside it

@@ -44,10 +44,10 @@ summary: >-
 
 ## Source
 
-Blake et al., Graphcore and Cerebras (2024; ICLR 2025), [LIT-149](../literature.d/LIT-149.md)<!-- ref::introduced_by: LIT-149 --><!-- ref::source: LIT-149 --> —
+Blake et al., Graphcore and Cerebras (2024; ICLR 2025), [LIT-149](../literature.d/LIT-149.md) —
 [ARXIV-2407.17465](https://arxiv.org/abs/2407.17465).
 
-[SOTA-143](SOTA-143.md)<!-- ref::extends: SOTA-143 --> gets the transfer: under µP the optimal learning rate stops moving
+[SOTA-143](SOTA-143.md) gets the transfer: under µP the optimal learning rate stops moving
 with width, so you tune small and transfer. What it does not get is the
 *scale* the tensors start at — µP makes activation scale independent of model
 size without saying what that size-independent scale should be.

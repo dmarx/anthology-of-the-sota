@@ -47,15 +47,15 @@ corrected_by:
 ## Source
 
 Zhai, Likhomanenko, Littwin, Busbridge, Ramapuram, Zhang, Gu and Susskind
-(2023), [LIT-523](../literature.d/LIT-523.md)<!-- ref::source: LIT-523 --> — read as [NOTE-265](../notes.d/NOTE-265.md).
+(2023), [LIT-523](../literature.d/LIT-523.md) — read as [NOTE-265](../notes.d/NOTE-265.md).
 Theorem 3.1 and Proposition 3.2, proved in the appendix.
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-192](../practices.d/SOTA-192.md)<!-- ref::explains: SOTA-192 --> | normalize queries and keys before the dot product | bounding the two vectors bounds `σ`, and `σ` is the quantity the entropy bound decays in |
-| [SOTA-319](../practices.d/SOTA-319.md)<!-- ref::explains: SOTA-319 --> | reparameterize every linear layer by its spectral norm | the same lever, applied to the matrix rather than the activations, with the growth rate decoupled from width |
+| [SOTA-192](../practices.d/SOTA-192.md) | normalize queries and keys before the dot product | bounding the two vectors bounds `σ`, and `σ` is the quantity the entropy bound decays in |
+| [SOTA-319](../practices.d/SOTA-319.md) | reparameterize every linear layer by its spectral norm | the same lever, applied to the matrix rather than the activations, with the growth rate decoupled from width |
 
 ## The account
 

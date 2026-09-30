@@ -57,9 +57,9 @@ explained_by:
 
 ## Source
 
-Zhu et al. (2024), [LIT-141](../literature.d/LIT-141.md)<!-- ref::introduced_by: LIT-141 --><!-- ref::source: LIT-141 --> — Hyper-Connections; then [LIT-140](../literature.d/LIT-140.md)<!-- ref::source: LIT-140 --> (mHC), [LIT-151](../literature.d/LIT-151.md)<!-- ref::source: LIT-151 -->
-(oHC) and [LIT-181](../literature.d/LIT-181.md)<!-- ref::source: LIT-181 --> (spectral-sphere), each proposing a different constraint;
-and [LIT-152](../literature.d/LIT-152.md)<!-- ref::source: LIT-152 -->, a third-party design study running mHC in its own harness.
+Zhu et al. (2024), [LIT-141](../literature.d/LIT-141.md) — Hyper-Connections; then [LIT-140](../literature.d/LIT-140.md) (mHC), [LIT-151](../literature.d/LIT-151.md)
+(oHC) and [LIT-181](../literature.d/LIT-181.md) (spectral-sphere), each proposing a different constraint;
+and [LIT-152](../literature.d/LIT-152.md), a third-party design study running mHC in its own harness.
 
 Replace the single residual stream with **n parallel streams** (n = 2 in most
 published runs) and learn the mixing between them, so the network can tune

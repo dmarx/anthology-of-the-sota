@@ -49,7 +49,7 @@ summary: >-
 
 ## Source
 
-Zhang, Zhang, Zardini, Amin and Ozdaglar (2026), [LIT-490](../literature.d/LIT-490.md)<!-- ref::introduced_by: LIT-490 --><!-- ref::source: LIT-490 --> —
+Zhang, Zhang, Zardini, Amin and Ozdaglar (2026), [LIT-490](../literature.d/LIT-490.md) —
 [ARXIV-2608.29507](https://arxiv.org/abs/2608.29507) — read as [NOTE-239](../notes.d/NOTE-239.md).
 
 ## What to do

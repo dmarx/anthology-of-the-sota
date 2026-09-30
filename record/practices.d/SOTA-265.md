@@ -47,13 +47,13 @@ summary: >-
 
 ## Source
 
-Albergo, Boffi and Vanden-Eijnden (2023), [LIT-645](../literature.d/LIT-645.md)<!-- ref::introduced_by: LIT-645 --><!-- ref::source: LIT-645 --> — [ARXIV-2303.08797](https://arxiv.org/abs/2303.08797).
+Albergo, Boffi and Vanden-Eijnden (2023), [LIT-645](../literature.d/LIT-645.md) — [ARXIV-2303.08797](https://arxiv.org/abs/2303.08797).
 The framework paper introduces it: one learned velocity and score give a
 family of SDEs sharing the interpolant's marginals, and its v1 abstract says
 the noise strength "can be tuned as model hyper-parameter after training".
 Its evidence is a 2-D checkerboard and a 128-D Gaussian mixture.
 
-Ma et al. (2024), [LIT-447](../literature.d/LIT-447.md)<!-- ref::source: LIT-447 --> — [ARXIV-2401.08740](https://arxiv.org/abs/2401.08740). Shares three
+Ma et al. (2024), [LIT-447](../literature.d/LIT-447.md) — [ARXIV-2401.08740](https://arxiv.org/abs/2401.08740). Shares three
 authors with the framework, takes its KL bound to derive a computable
 coefficient, and supplies the ImageNet measurement.
 

@@ -29,13 +29,13 @@ summary: >-
 
 ## Source
 
-Bińkowski, Sutherland, Arbel and Gretton (2018), [LIT-615](../literature.d/LIT-615.md)<!-- ref::source: LIT-615 -->, Appendix D.
+Bińkowski, Sutherland, Arbel and Gretton (2018), [LIT-615](../literature.d/LIT-615.md), Appendix D.
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-383](../practices.d/SOTA-383.md)<!-- ref::explains: SOTA-383 --> | fix n before comparing, and settle a close call with an unbiased estimator instead of a tighter error bar | the error bar is measuring the wrong thing — it reports the spread of a statistic that is not centred on the quantity, and the offset shrinks with n while the spread shrinks faster |
+| [SOTA-383](../practices.d/SOTA-383.md) | fix n before comparing, and settle a close call with an unbiased estimator instead of a tighter error bar | the error bar is measuring the wrong thing — it reports the spread of a statistic that is not centred on the quantity, and the offset shrinks with n while the spread shrinks faster |
 
 ## The account
 

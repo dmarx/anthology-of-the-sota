@@ -44,7 +44,7 @@ implementations: []
 
 ## Source
 
-Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md)<!-- ref::introduced_by: LIT-603 --><!-- ref::source: LIT-603 --> — [ARXIV-1310.4546](https://arxiv.org/abs/1310.4546), §2.3.
+Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md) — [ARXIV-1310.4546](https://arxiv.org/abs/1310.4546), §2.3.
 
 ## The claim
 

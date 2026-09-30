@@ -25,10 +25,10 @@ implementations: []
 
 ## Source
 
-Chen et al. (2022), [LIT-080](../literature.d/LIT-080.md)<!-- ref::introduced_by: LIT-080 --><!-- ref::source: LIT-080 --> — PaLI, whose ablation section is the worked
+Chen et al. (2022), [LIT-080](../literature.d/LIT-080.md) — PaLI, whose ablation section is the worked
 example.
 
-Anil et al. (2023), [LIT-099](../literature.d/LIT-099.md)<!-- ref::source: LIT-099 --> — PaLM 2, which ranks the data mixture above
+Anil et al. (2023), [LIT-099](../literature.d/LIT-099.md) — PaLM 2, which ranks the data mixture above
 architecture for final quality.
 
 ## The claim

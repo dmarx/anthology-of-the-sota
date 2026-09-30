@@ -23,7 +23,7 @@ summary: >-
 
 ## Source
 
-Agrawal et al. (2023), [LIT-103](../literature.d/LIT-103.md)<!-- ref::introduced_by: LIT-103 --><!-- ref::source: LIT-103 --> — [ARXIV-2308.16369](https://arxiv.org/abs/2308.16369).
+Agrawal et al. (2023), [LIT-103](../literature.d/LIT-103.md) — [ARXIV-2308.16369](https://arxiv.org/abs/2308.16369).
 
 ## The asymmetry, which is the whole reason
 
@@ -51,5 +51,5 @@ time-to-first-token alone.
 
 It also needs the scheduler to be doing this deliberately — chunk size against
 batch composition, per step — which is the same class of decision continuous
-batching introduced ([SOTA-113](SOTA-113.md)<!-- ref::extends: SOTA-113 -->) and the same reason serving systems differ from
+batching introduced ([SOTA-113](SOTA-113.md)) and the same reason serving systems differ from
 each other more than their model code does.

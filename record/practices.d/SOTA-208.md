@@ -34,7 +34,7 @@ summary: >-
 
 ## Source
 
-Child et al. (2019), [LIT-225](../literature.d/LIT-225.md)<!-- ref::introduced_by: LIT-225 --><!-- ref::source: LIT-225 --> — [ARXIV-1904.10509](https://arxiv.org/abs/1904.10509).
+Child et al. (2019), [LIT-225](../literature.d/LIT-225.md) — [ARXIV-1904.10509](https://arxiv.org/abs/1904.10509).
 
 Split causal attention across `p = 2` heads whose patterns, composed, connect
 every pair of positions within `p + 1` steps. The first head is a **local

@@ -21,13 +21,13 @@ extends:
 
 ## Source
 
-Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md)<!-- ref::introduced_by: LIT-119 --><!-- ref::source: LIT-119 --> — the Falcon-H1-Tiny technical blogpost.
+Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
 
 ## The comparison
 
 This is a knob on a practice already taken: it only arises once
 fill-in-the-middle is part of the training mix by default
-[SOTA-174](SOTA-174.md)<!-- ref::extends: SOTA-174 -->, and it settles the one question that practice's paper
+[SOTA-174](SOTA-174.md), and it settles the one question that practice's paper
 leaves open. Whether to mask the loss on the prefix and suffix of a FIM sample, as one
 would mask a prompt in SFT, is left unstated in [ARXIV-2207.14255](https://arxiv.org/abs/2207.14255) ([LIT-124](../literature.d/LIT-124.md)) and only
 implicit in [ARXIV-2409.12186](https://arxiv.org/abs/2409.12186) ([LIT-125](../literature.d/LIT-125.md)). Two 90M runs on the same mix (80% FIM, 10%

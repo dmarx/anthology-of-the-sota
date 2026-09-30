@@ -32,7 +32,7 @@ summary: >-
 
 ## Source
 
-Xu et al. (2019), [LIT-580](../literature.d/LIT-580.md)<!-- ref::introduced_by: LIT-580 --><!-- ref::source: LIT-580 -->. Read as [NOTE-319](../notes.d/NOTE-319.md). The reason is
+Xu et al. (2019), [LIT-580](../literature.d/LIT-580.md). Read as [NOTE-319](../notes.d/NOTE-319.md). The reason is
 [THEORY-083](../theory.d/THEORY-083.md).
 
 ## The practice

@@ -39,7 +39,7 @@ summary: >-
 
 ## Source
 
-Guo, Pleiss, Sun and Weinberger (2017), [LIT-616](../literature.d/LIT-616.md)<!-- ref::introduced_by: LIT-616 --><!-- ref::source: LIT-616 -->.
+Guo, Pleiss, Sun and Weinberger (2017), [LIT-616](../literature.d/LIT-616.md).
 
 ## When this applies
 

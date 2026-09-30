@@ -19,7 +19,7 @@ summary: >-
 
 ## Source
 
-Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md)<!-- ref::introduced_by: LIT-119 --><!-- ref::source: LIT-119 --> — the Falcon-H1-Tiny technical blogpost.
+Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
 
 ## The argument
 

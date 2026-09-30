@@ -42,7 +42,7 @@ summary: >-
 
 ## Source
 
-Karras et al. (2023), [LIT-714](../literature.d/LIT-714.md)<!-- ref::introduced_by: LIT-714 --><!-- ref::source: LIT-714 --> — [ARXIV-2312.02696](https://arxiv.org/abs/2312.02696), §2 and Appendix B;
+Karras et al. (2023), [LIT-714](../literature.d/LIT-714.md) — [ARXIV-2312.02696](https://arxiv.org/abs/2312.02696), §2 and Appendix B;
 read as [NOTE-370](../notes.d/NOTE-370.md).
 
 ## The problem it removes
@@ -97,7 +97,7 @@ Gflops are unchanged throughout. Scaled up, the same design sets records at
 ImageNet-512 (1.81 guided) and ImageNet-64 (1.33) with a deterministic
 63-evaluation sampler.
 
-## Why it extends [SOTA-188](SOTA-188.md)<!-- ref::extends: SOTA-188 -->
+## Why it extends [SOTA-188](SOTA-188.md)
 
 [SOTA-188](SOTA-188.md) asks for unit variance at the network's input and output, derived by
 preconditioning. This carries the same requirement inside the network, layer

@@ -32,7 +32,7 @@ summary: >-
 
 ## Source
 
-Geva et al. (2021), [LIT-575](../literature.d/LIT-575.md)<!-- ref::source: LIT-575 -->. Read as [NOTE-312](../notes.d/NOTE-312.md).
+Geva et al. (2021), [LIT-575](../literature.d/LIT-575.md). Read as [NOTE-312](../notes.d/NOTE-312.md).
 
 ## The account
 

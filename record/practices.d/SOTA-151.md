@@ -57,8 +57,8 @@ summary: >-
 
 ## Source
 
-Chen et al. (2023), [LIT-192](../literature.d/LIT-192.md)<!-- ref::introduced_by: LIT-192 --><!-- ref::source: LIT-192 --> — Position Interpolation. Peng et al. (2023),
-[LIT-193](../literature.d/LIT-193.md)<!-- ref::source: LIT-193 --> — YaRN.
+Chen et al. (2023), [LIT-192](../literature.d/LIT-192.md) — Position Interpolation. Peng et al. (2023),
+[LIT-193](../literature.d/LIT-193.md) — YaRN.
 
 The problem is not that a longer window is expensive to train. It is that
 training it directly barely works: fine-tuning a pretrained LLaMA at the
@@ -68,7 +68,7 @@ adaptation does not degrade gracefully — perplexity goes to numbers
 comparable to an untrained model, and a question at position 3000 becomes
 unanswerable even from evidence at position 2900.
 
-That is the gap in [SOTA-063](SOTA-063.md)<!-- ref::corrects: SOTA-063 -->: it recommends RoPE and says
+That is the gap in [SOTA-063](SOTA-063.md): it recommends RoPE and says
 nothing about the window, and a RoPE model asked for more context than it
 was trained on is exactly where the encoding fails. This practice is the step
 such a model takes, and it means nothing for a model that did not follow

@@ -55,7 +55,7 @@ summary: >-
 
 ## Source
 
-Eyring, Karthik, Dosovitskiy, Ruiz and Akata (2025), [LIT-491](../literature.d/LIT-491.md)<!-- ref::introduced_by: LIT-491 --><!-- ref::source: LIT-491 --> —
+Eyring, Karthik, Dosovitskiy, Ruiz and Akata (2025), [LIT-491](../literature.d/LIT-491.md) —
 [ARXIV-2508.09968](https://arxiv.org/abs/2508.09968) — read as [NOTE-240](../notes.d/NOTE-240.md).
 
 ## What to do

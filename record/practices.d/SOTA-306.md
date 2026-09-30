@@ -57,9 +57,9 @@ summary: >-
 ## Source
 
 Yu, Li, Koh, Zhang, Pang, Qin, Ku, Xu, Baldridge and Wu (2021),
-[LIT-500](../literature.d/LIT-500.md)<!-- ref::introduced_by: LIT-500 --><!-- ref::source: LIT-500 --> — read as [NOTE-247](../notes.d/NOTE-247.md).
-Confirmed independently by Sun et al. (2024), [LIT-497](../literature.d/LIT-497.md)<!-- ref::source: LIT-497 -->, which
-credits it, and by Dong et al. (2025), [LIT-494](../literature.d/LIT-494.md)<!-- ref::source: LIT-494 -->, which does not
+[LIT-500](../literature.d/LIT-500.md) — read as [NOTE-247](../notes.d/NOTE-247.md).
+Confirmed independently by Sun et al. (2024), [LIT-497](../literature.d/LIT-497.md), which
+credits it, and by Dong et al. (2025), [LIT-494](../literature.d/LIT-494.md), which does not
 cite either.
 
 ## When this applies

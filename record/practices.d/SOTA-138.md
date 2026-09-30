@@ -32,7 +32,7 @@ summary: >-
 
 ## Source
 
-DeepSeek-AI (2025), [LIT-142](../literature.d/LIT-142.md)<!-- ref::introduced_by: LIT-142 --><!-- ref::source: LIT-142 --> — DeepSeek-V3.2.
+DeepSeek-AI (2025), [LIT-142](../literature.d/LIT-142.md) — DeepSeek-V3.2.
 
 Make the sparsity a trained part of the model, not a serving-time
 approximation. A lightning indexer — few heads, FP8 — scores each query
@@ -46,7 +46,7 @@ entries, and warming up under dense attention for the first 1T tokens
 before introducing sparsity at the 64K stage.
 
 Conditions: two production generations from one laboratory, plus the
-from-scratch evidence of NSA ([LIT-143](../literature.d/LIT-143.md)<!-- ref::source: LIT-143 -->) that a natively trained sparse
+from-scratch evidence of NSA ([LIT-143](../literature.d/LIT-143.md)) that a natively trained sparse
 attention matches full attention. The warm-up matters because an
 uninitialised indexer selects noise; the length of the warm-up scaled from
 2.1B tokens for a retrofit to 1T for pretraining. Evaluated at 64K–1M

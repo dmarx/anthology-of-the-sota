@@ -51,7 +51,7 @@ Do not use a ring, which is the easy default and the one this replaces.
 
 This is the second choice, and it only exists once the first has been made:
 having dropped the parameter server for gossip because the network is the
-bottleneck [SOTA-225](SOTA-225.md)<!-- ref::extends: SOTA-225 -->, the graph is the thing that practice
+bottleneck [SOTA-225](SOTA-225.md), the graph is the thing that practice
 explicitly leaves open, and its own source is where the ring's weakness is
 measured.
 
@@ -68,7 +68,7 @@ and receives from exactly one, so out-degree and in-degree are both constant
 and the communication load is balanced. An undirected graph with the same
 diameter costs more per round.
 
-**And the consensus is exact rather than asymptotic.** [LIT-254](../literature.d/LIT-254.md)<!-- ref::introduced_by: LIT-254 --><!-- ref::source: LIT-254 --> shows that
+**And the consensus is exact rather than asymptotic.** [LIT-254](../literature.d/LIT-254.md) shows that
 after `k = floor(log2(n-1))` iterations of cycling deterministically through
 the neighbours, the second eigenvalue of the accumulated mixing matrix is
 exactly zero — every node holds the true average. For 32 nodes that is five

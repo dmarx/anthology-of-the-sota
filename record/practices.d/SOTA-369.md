@@ -30,7 +30,7 @@ implementations: []
 
 ## Source
 
-Oquab et al. (2023), [LIT-599](../literature.d/LIT-599.md)<!-- ref::introduced_by: LIT-599 --><!-- ref::source: LIT-599 --> — [ARXIV-2304.07193](https://arxiv.org/abs/2304.07193), §3.
+Oquab et al. (2023), [LIT-599](../literature.d/LIT-599.md) — [ARXIV-2304.07193](https://arxiv.org/abs/2304.07193), §3.
 
 ## The claim
 

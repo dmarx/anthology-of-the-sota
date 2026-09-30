@@ -28,13 +28,13 @@ summary: >-
 
 ## Source
 
-Tancik et al. (2020), [LIT-550](../literature.d/LIT-550.md)<!-- ref::source: LIT-550 --> — read as [NOTE-296](../notes.d/NOTE-296.md).
+Tancik et al. (2020), [LIT-550](../literature.d/LIT-550.md) — read as [NOTE-296](../notes.d/NOTE-296.md).
 
 ## What it explains
 
 | document | what it says | what this says it is |
 |---|---|---|
-| [SOTA-331](../practices.d/SOTA-331.md)<!-- ref::explains: SOTA-331 --> | encode coordinates with sampled sinusoids, tune the scale | choosing the composed kernel's bandwidth |
+| [SOTA-331](../practices.d/SOTA-331.md) | encode coordinates with sampled sinusoids, tune the scale | choosing the composed kernel's bandwidth |
 | [LIT-435](../literature.d/LIT-435.md) (NeRF) | without positional encoding the result is oversmoothed | the high-frequency eigen-directions never converge |
 
 ## The account

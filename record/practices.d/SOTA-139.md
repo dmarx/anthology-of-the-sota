@@ -19,7 +19,7 @@ summary: >-
 
 ## Source
 
-DeepSeek-AI (2026), [LIT-139](../literature.d/LIT-139.md)<!-- ref::introduced_by: LIT-139 --><!-- ref::source: LIT-139 --> — DeepSeek-V4.
+DeepSeek-AI (2026), [LIT-139](../literature.d/LIT-139.md) — DeepSeek-V4.
 
 ## The schedule
 

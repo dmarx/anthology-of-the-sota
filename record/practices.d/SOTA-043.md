@@ -19,7 +19,7 @@ summary: >-
 
 ## Source
 
-Mohan et al. (2020), [LIT-050](../literature.d/LIT-050.md)<!-- ref::introduced_by: LIT-050 --><!-- ref::source: LIT-050 --> — [ARXIV-2007.06775](https://arxiv.org/abs/2007.06775).
+Mohan et al. (2020), [LIT-050](../literature.d/LIT-050.md) — [ARXIV-2007.06775](https://arxiv.org/abs/2007.06775).
 
 ## What this practice would mean
 

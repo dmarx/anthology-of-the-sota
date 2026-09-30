@@ -41,7 +41,7 @@ summary: >-
 
 ## Source
 
-Frantar et al. (2024), [LIT-567](../literature.d/LIT-567.md)<!-- ref::introduced_by: LIT-567 --><!-- ref::source: LIT-567 --> — MARLIN. Read, as [NOTE-305](../notes.d/NOTE-305.md).
+Frantar et al. (2024), [LIT-567](../literature.d/LIT-567.md) — MARLIN. Read, as [NOTE-305](../notes.d/NOTE-305.md).
 The quantization itself is [SOTA-185](SOTA-185.md) (GPTQ).
 
 ## The practice

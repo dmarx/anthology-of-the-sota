@@ -83,8 +83,8 @@ compared_against:
 
 ## Source
 
-Liu, Gong and Liu (2022), [LIT-636](../literature.d/LIT-636.md)<!-- ref::introduced_by: LIT-636 -->, and Lipman et al. (2022),
-[LIT-630](../literature.d/LIT-630.md)<!-- ref::introduced_by: LIT-630 --><!-- ref::source: LIT-630 -->, introduced the straight path concurrently. Albergo and Vanden-Eijnden's
+Liu, Gong and Liu (2022), [LIT-636](../literature.d/LIT-636.md), and Lipman et al. (2022),
+[LIT-630](../literature.d/LIT-630.md), introduced the straight path concurrently. Albergo and Vanden-Eijnden's
 stochastic interpolants ([LIT-644](../literature.d/LIT-644.md)) are a concurrent origin of the
 simulation-free objective but not of the straight path: they use a
 trigonometric interpolant and credit the linear one to Liu et al. Flow Matching contributes the
@@ -93,9 +93,9 @@ give CIFAR-10 FID 6.35 on the straight path against 8.06 on the diffusion
 path (its Table 1). The same comparison holds at ImageNet-32 and
 ImageNet-64 in the same table. It trained with uniform timesteps.
 
-Ma et al. (2024), [LIT-447](../literature.d/LIT-447.md)<!-- ref::source: LIT-447 --> — [ARXIV-2401.08740](https://arxiv.org/abs/2401.08740).
+Ma et al. (2024), [LIT-447](../literature.d/LIT-447.md) — [ARXIV-2401.08740](https://arxiv.org/abs/2401.08740).
 
-Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md)<!-- ref::source: LIT-449 --> — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206).
+Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md) — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206).
 
 Both are load-bearing and they do different jobs. SiT is the controlled
 attribution: DiT's architecture, parameter count and GFLOPs held exactly
@@ -104,7 +104,7 @@ the breadth: 61 formulations ranked, then the winner taken to 8B
 text-to-image with weights released. A practice on either alone would be
 weaker — one would be a small-scale ablation, the other a leaderboard entry.
 
-The Movie Gen team (2024), [LIT-626](../literature.d/LIT-626.md)<!-- ref::source: LIT-626 -->, is the video evidence. At 5B, on video
+The Movie Gen team (2024), [LIT-626](../literature.d/LIT-626.md), is the video evidence. At 5B, on video
 at 352×192, it compares flow matching against v-prediction diffusion with
 zero terminal SNR, with everything else held constant. Flow matching wins
 by a net +16.5 on human-rated quality and +7.1 on text alignment (its Table

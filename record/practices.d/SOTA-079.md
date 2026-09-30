@@ -21,7 +21,7 @@ summary: >-
 
 ## Source
 
-Aizman et al. (2020), [LIT-053](../literature.d/LIT-053.md)<!-- ref::introduced_by: LIT-053 --><!-- ref::source: LIT-053 --> — [ARXIV-2001.01858](https://arxiv.org/abs/2001.01858).
+Aizman et al. (2020), [LIT-053](../literature.d/LIT-053.md) — [ARXIV-2001.01858](https://arxiv.org/abs/2001.01858).
 
 ## The other half of every overlap in this record
 
@@ -31,7 +31,7 @@ batch's read, decode and collation are exactly that, so a loader that starts
 them while the GPU is busy turns a serial fetch-then-compute loop into two
 overlapping ones.
 
-It is what makes a streaming format work at all ([SOTA-077](SOTA-077.md)<!-- ref::extends: SOTA-077 -->): sequential reads
+It is what makes a streaming format work at all ([SOTA-077](SOTA-077.md)): sequential reads
 are only fast if somebody is reading ahead.
 
 ## The parameter, and the cost that is easy to miss

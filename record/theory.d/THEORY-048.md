@@ -27,13 +27,13 @@ summary: >-
 ## Source
 
 Bak-Coleman, Lewandowsky, Lorenz-Spreen, Narayanan, Orben and Oswald (2025),
-[LIT-482](../literature.d/LIT-482.md)<!-- ref::source: LIT-482 --> — read as [NOTE-230](../notes.d/NOTE-230.md).
+[LIT-482](../literature.d/LIT-482.md) — read as [NOTE-230](../notes.d/NOTE-230.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says it is |
 |---|---|---|
-| [SOTA-291](../practices.d/SOTA-291.md)<!-- ref::explains: SOTA-291 --> | evaluate a specific intervention, not the net effect, and do not read an individual-level null as absence | not caution about noisy measurement but a mismatch between the design's estimand and the question's, with four separable causes |
+| [SOTA-291](../practices.d/SOTA-291.md) | evaluate a specific intervention, not the net effect, and do not read an individual-level null as absence | not caution about noisy measurement but a mismatch between the design's estimand and the question's, with four separable causes |
 
 ## The account
 

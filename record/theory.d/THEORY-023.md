@@ -35,7 +35,7 @@ summary: >-
 
 ## Source
 
-Lad et al. (2024), [LIT-417](../literature.d/LIT-417.md)<!-- ref::source: LIT-417 --> —
+Lad et al. (2024), [LIT-417](../literature.d/LIT-417.md) —
 [ARXIV-2406.19384](https://arxiv.org/abs/2406.19384).
 
 ## What the account says

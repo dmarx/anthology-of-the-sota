@@ -49,7 +49,7 @@ explained_by:
 ## Source
 
 Bak-Coleman, Lewandowsky, Lorenz-Spreen, Narayanan, Orben and Oswald (2025),
-[LIT-482](../literature.d/LIT-482.md)<!-- ref::introduced_by: LIT-482 --><!-- ref::source: LIT-482 --> — read as [NOTE-230](../notes.d/NOTE-230.md).
+[LIT-482](../literature.d/LIT-482.md) — read as [NOTE-230](../notes.d/NOTE-230.md).
 
 ## When this applies
 
@@ -105,7 +105,7 @@ rather than looking for a better trial.
 no new data. The negative half is strong because two of its four mechanisms
 are structural; the positive half is three stated advantages and a direction.
 
-**The positive programme has now been run once.** [LIT-487](../literature.d/LIT-487.md)<!-- ref::source: LIT-487 --> takes
+**The positive programme has now been run once.** [LIT-487](../literature.d/LIT-487.md) takes
 one affordance — Change.org's in-platform AI drafting tool — across a
 staggered rollout, and measures platform-level outcomes: the share of
 petitions clearing a signature threshold, inter-petition homogeneity, and

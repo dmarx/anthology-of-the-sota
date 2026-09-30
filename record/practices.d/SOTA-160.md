@@ -40,7 +40,7 @@ summary: >-
 
 ## Source
 
-Kumar et al. (2024), [LIT-186](../literature.d/LIT-186.md)<!-- ref::introduced_by: LIT-186 --><!-- ref::source: LIT-186 --> — [ARXIV-2411.04330](https://arxiv.org/abs/2411.04330).
+Kumar et al. (2024), [LIT-186](../literature.d/LIT-186.md) — [ARXIV-2411.04330](https://arxiv.org/abs/2411.04330).
 
 Standard scaling laws are silent about numerical precision, which is strange
 given that precision decides both training cost and serving cost. This fits

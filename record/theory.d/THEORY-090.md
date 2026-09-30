@@ -39,7 +39,7 @@ extended_by:
 
 ## Source
 
-Park, Choe and Veitch (2024), [LIT-606](../literature.d/LIT-606.md)<!-- ref::source: LIT-606 -->, read as [NOTE-328](../notes.d/NOTE-328.md).
+Park, Choe and Veitch (2024), [LIT-606](../literature.d/LIT-606.md), read as [NOTE-328](../notes.d/NOTE-328.md).
 
 ## The account
 
@@ -75,7 +75,7 @@ such product.
   it fails where the whitened product works.
 - Why a fitted probe can be less clean than the pair direction. The probe
   absorbs correlated off-target concepts, and the pair direction does not.
-- Why [SOTA-378](../practices.d/SOTA-378.md)<!-- ref::explains: SOTA-378 --> tells you to whiten before comparing concept <!-- inactive-ok: SOTA-378 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
+- Why [SOTA-378](../practices.d/SOTA-378.md) tells you to whiten before comparing concept <!-- inactive-ok: SOTA-378 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
   directions. Raw cosine is not identified, and the practice's product,
   `uᵀ Cov(γ)⁻¹ v`, is the member of the causal family this account names,
   under which separable concepts are orthogonal. Its steering direction

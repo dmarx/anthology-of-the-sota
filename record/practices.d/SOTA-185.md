@@ -27,7 +27,7 @@ compared_against:
 
 ## Source
 
-Frantar et al. (2022), [LIT-081](../literature.d/LIT-081.md)<!-- ref::introduced_by: LIT-081 --><!-- ref::source: LIT-081 --> — [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323).
+Frantar et al. (2022), [LIT-081](../literature.d/LIT-081.md) — [ARXIV-2210.17323](https://arxiv.org/abs/2210.17323).
 
 ## The mechanism
 

@@ -30,7 +30,7 @@ corrected_by:
 
 ## Source
 
-Bansal et al. (2022), [LIT-553](../literature.d/LIT-553.md)<!-- ref::source: LIT-553 --> — read as [NOTE-299](../notes.d/NOTE-299.md). Filed for
+Bansal et al. (2022), [LIT-553](../literature.d/LIT-553.md) — read as [NOTE-299](../notes.d/NOTE-299.md). Filed for
 `#163`'s "[theory] cold diffusion", and filed already retired, because the
 evidence against it was in hand when it was filed ([DP-003](../../docs/design-principles.md#dp-3)).
 

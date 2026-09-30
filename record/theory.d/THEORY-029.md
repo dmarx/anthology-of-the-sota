@@ -36,7 +36,7 @@ summary: >-
 
 ## Source
 
-Gu et al. (2025), [LIT-451](../literature.d/LIT-451.md)<!-- ref::source: LIT-451 --> — [ARXIV-2505.18091](https://arxiv.org/abs/2505.18091).
+Gu et al. (2025), [LIT-451](../literature.d/LIT-451.md) — [ARXIV-2505.18091](https://arxiv.org/abs/2505.18091).
 
 ## What was actually shown
 
@@ -64,7 +64,7 @@ data without risking anything.
 
 ## What this makes sense of
 
-**Why a mixing recipe does not transfer across scale** ([SOTA-268](../practices.d/SOTA-268.md)<!-- ref::explains: SOTA-268 -->).
+**Why a mixing recipe does not transfer across scale** ([SOTA-268](../practices.d/SOTA-268.md)).
 Not because small models are noisy estimates of large ones, but because the
 two can sit on opposite sides of a transition, so the small run is measuring
 a different regime's answer.

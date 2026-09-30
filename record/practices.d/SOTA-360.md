@@ -34,7 +34,7 @@ extended_by:
 
 ## Source
 
-Oord et al. (2018), [LIT-589](../literature.d/LIT-589.md)<!-- ref::introduced_by: LIT-589 --><!-- ref::source: LIT-589 --> — [ARXIV-1807.03748](https://arxiv.org/abs/1807.03748).
+Oord et al. (2018), [LIT-589](../literature.d/LIT-589.md) — [ARXIV-1807.03748](https://arxiv.org/abs/1807.03748).
 
 ## The claim
 

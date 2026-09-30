@@ -68,22 +68,22 @@ explained_by:
 
 ## Source
 
-Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md)<!-- ref::source: LIT-119 --> — the Falcon-H1-Tiny technical blogpost.
+Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost.
 
-Muon itself is Jordan et al. (2024), [LIT-159](../literature.d/LIT-159.md)<!-- ref::introduced_by: LIT-159 --><!-- ref::source: LIT-159 --> — an optimizer for the hidden
+Muon itself is Jordan et al. (2024), [LIT-159](../literature.d/LIT-159.md) — an optimizer for the hidden
 layers, orthogonalising the momentum update via Newton-Schulz iterations and
 leaving embeddings and the head to AdamW. It is a blog post rather than a
 paper, which is why the record holds it under a `url:` ([ADR-009](../decisions.d/ADR-009.md)), and it is
 what every practice in this line modifies.
 
-Muon is one member of the class [SOTA-165](SOTA-165.md)<!-- ref::extends: SOTA-165 --> recommends: an
+Muon is one member of the class [SOTA-165](SOTA-165.md) recommends: an
 optimizer that multiplies the gradient by a matrix, here by orthogonalising
 the momentum, rather than scaling each coordinate on its own. That practice
 is the claim that membership of the class is what buys the speed-up; this one
 picks the member the record has production evidence for, and has no case
 without it.
 
-Muon as modified in [ARXIV-2502.16982](https://arxiv.org/abs/2502.16982) ([LIT-122](../literature.d/LIT-122.md)<!-- ref::source: LIT-122 -->): weight decay applied to the
+Muon as modified in [ARXIV-2502.16982](https://arxiv.org/abs/2502.16982) ([LIT-122](../literature.d/LIT-122.md)): weight decay applied to the
 orthogonalised update, and the update's RMS rescaled to match what AdamW
 would produce, so that the learning rate and weight decay tuned for AdamW
 carry over. Under that recipe the authors saw stable training at nearly the
@@ -105,7 +105,7 @@ out there.
 Less than the record used to say, and the honest range is wide. [LIT-122](../literature.d/LIT-122.md)'s
 scaling-law runs report roughly 2× the compute efficiency of AdamW. An
 outside comparison tuning both optimizers separately and judging at the end
-of training rather than mid-run ([LIT-156](../literature.d/LIT-156.md)<!-- ref::source: LIT-156 -->) gets 1.4× at 0.1B, falling
+of training rather than mid-run ([LIT-156](../literature.d/LIT-156.md)) gets 1.4× at 0.1B, falling
 to **1.1× at 1.2B** — and finds that ranking two optimizers on intermediate
 checkpoints can reverse the answer, which is one way the larger figures were
 reached.
@@ -116,7 +116,7 @@ hyperparameter transferability are not what that study measures, and every
 frontier adopter in the record ([LIT-131](../literature.d/LIT-131.md), [LIT-132](../literature.d/LIT-132.md), [LIT-139](../literature.d/LIT-139.md)) trains far above
 its largest scale. What should not be quoted any more is the 2×.
 
-[LIT-153](../literature.d/LIT-153.md)<!-- ref::source: LIT-153 --> argues the shrinkage is not intrinsic but an artefact of
+[LIT-153](../literature.d/LIT-153.md) argues the shrinkage is not intrinsic but an artefact of
 constant decoupled weight decay fixing the equilibrium weight norm, and
 recovers 20–30% by pinning the norms instead. If that holds up outside its
 authors' group it changes this section again.

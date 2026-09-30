@@ -38,8 +38,8 @@ summary: >-
 
 ## Source
 
-Porian et al. (2024), [LIT-690](../literature.d/LIT-690.md)<!-- ref::source: LIT-690 -->, primary. Pearce and Song (2024),
-[LIT-688](../literature.d/LIT-688.md)<!-- ref::source: LIT-688 -->, corroborating on counting and on decay.
+Porian et al. (2024), [LIT-690](../literature.d/LIT-690.md), primary. Pearce and Song (2024),
+[LIT-688](../literature.d/LIT-688.md), corroborating on counting and on decay.
 
 ## The account
 
@@ -61,10 +61,10 @@ from about 0.84 to 0.5. The learning-rate *decay* moves it by 0.03.
 
 ## What it explains
 
-- **[SOTA-096](../practices.d/SOTA-096.md)<!-- ref::explains: SOTA-096 -->**: why 20:1, equal proportion, replaced
+- **[SOTA-096](../practices.d/SOTA-096.md)**: why 20:1, equal proportion, replaced
   Kaplan's parameter-heavy allocation. The earlier exponent was a small-scale
   measurement artefact, not a different law.
-- **[SOTA-413](../practices.d/SOTA-413.md)<!-- ref::explains: SOTA-413 -->**: why counting the head is a correction and
+- **[SOTA-413](../practices.d/SOTA-413.md)**: why counting the head is a correction and
   not a convention. The under-count is size-dependent.
 
 ## Where it stops

@@ -55,7 +55,7 @@ summary: >-
 
 ## Source
 
-Kim et al. (2025), [LIT-441](../literature.d/LIT-441.md)<!-- ref::introduced_by: LIT-441 --><!-- ref::source: LIT-441 --> — [ARXIV-2509.14786](https://arxiv.org/abs/2509.14786).
+Kim et al. (2025), [LIT-441](../literature.d/LIT-441.md) — [ARXIV-2509.14786](https://arxiv.org/abs/2509.14786).
 
 ## The claim, stated so the wrong version cannot be read into it
 
@@ -96,7 +96,7 @@ identical architecture — also improves on its teacher, which removes the
 large model from training as well as from serving.
 
 The distillation leg has a second, older measurement from a different
-method. Hinton et al. ([LIT-680](../literature.d/LIT-680.md)<!-- ref::source: LIT-680 -->) distil a 10-member speech ensemble
+method. Hinton et al. ([LIT-680](../literature.d/LIT-680.md)) distil a 10-member speech ensemble
 into one model the size of a member, using temperature-softened soft targets,
 and keep **86%** of the frame-accuracy gain. Kim et al. use sequence-level
 distillation. Two methods, a decade apart, land at about the same fraction.

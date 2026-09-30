@@ -40,7 +40,7 @@ summary: >-
 
 ## Source
 
-Assran et al. (2025), [LIT-215](../literature.d/LIT-215.md)<!-- ref::introduced_by: LIT-215 --><!-- ref::source: LIT-215 --> — [ARXIV-2506.09985](https://arxiv.org/abs/2506.09985).
+Assran et al. (2025), [LIT-215](../literature.d/LIT-215.md) — [ARXIV-2506.09985](https://arxiv.org/abs/2506.09985).
 
 ## The rule
 
@@ -56,7 +56,7 @@ GPU-days for a ViT-g.
 ## Why the decay phase specifically
 
 This is what makes it a rule rather than a trick, and it is why the practice
-extends [SOTA-140](SOTA-140.md)<!-- ref::extends: SOTA-140 --> rather than standing alone. A warmup-stable-decay schedule
+extends [SOTA-140](SOTA-140.md) rather than standing alone. A warmup-stable-decay schedule
 already concentrates the *learning-rate* commitment into a short final
 window: the constant phase explores, the decay converges. The observation
 here is that the decay phase is also the right place to pay for input

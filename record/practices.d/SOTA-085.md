@@ -53,7 +53,7 @@ extends:
 
 ## Source
 
-Dao et al. (2022), [LIT-074](../literature.d/LIT-074.md)<!-- ref::introduced_by: LIT-074 --><!-- ref::source: LIT-074 --> — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135).
+Dao et al. (2022), [LIT-074](../literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135).
 
 **`introduced_by` stays with `LIT-074`, and the reason is worth stating**
 because a predecessor now sits in the record. `#342` flagged this as a likely
@@ -73,7 +73,7 @@ memory and nothing else about the model. That is unusual among the
 efficiency practices in this record and is why the title can be so
 unconditional.
 
-It is the case [SOTA-083](SOTA-083.md)<!-- ref::extends: SOTA-083 --> keeps once its framing is corrected:
+It is the case [SOTA-083](SOTA-083.md) keeps once its framing is corrected:
 an operation no compiler covers well, hand-written because the algorithm is
 different and not just the schedule. That practice's rule — hand-write the
 few critical operations where generated code falls materially short — is

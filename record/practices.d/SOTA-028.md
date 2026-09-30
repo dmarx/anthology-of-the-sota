@@ -20,7 +20,7 @@ extended_by:
 
 ## Source
 
-Rajbhandari et al. (2020), [LIT-027](../literature.d/LIT-027.md)<!-- ref::introduced_by: LIT-027 --><!-- ref::source: LIT-027 --> — [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054).
+Rajbhandari et al. (2020), [LIT-027](../literature.d/LIT-027.md) — [ARXIV-1910.02054](https://arxiv.org/abs/1910.02054).
 
 ## What it partitions, and what it does not cost
 

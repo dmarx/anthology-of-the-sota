@@ -60,7 +60,7 @@ summary: >-
 
 ## Source
 
-Kynkäänniemi et al. (2022), [LIT-563](../literature.d/LIT-563.md)<!-- ref::introduced_by: LIT-563 --><!-- ref::source: LIT-563 -->. Read as [NOTE-304](../notes.d/NOTE-304.md).
+Kynkäänniemi et al. (2022), [LIT-563](../literature.d/LIT-563.md). Read as [NOTE-304](../notes.d/NOTE-304.md).
 
 ## The practice
 
@@ -109,7 +109,7 @@ practical case, Projected FastGAN matched StyleGAN2's FID (5.28 against
 
 ## The sampling-loop case
 
-Classifier guidance (Dhariwal and Nichol 2021, [LIT-699](../literature.d/LIT-699.md)<!-- ref::source: LIT-699 -->) is this practice's
+Classifier guidance (Dhariwal and Nichol 2021, [LIT-699](../literature.d/LIT-699.md)) is this practice's
 sharpest instance and the reason v2 widened the title. The method takes gradient
 steps that raise an ImageNet classifier's log-probability of the target class,
 during sampling, on every step. FID and Inception Score are computed by passing

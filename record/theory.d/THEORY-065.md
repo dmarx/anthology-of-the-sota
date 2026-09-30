@@ -37,7 +37,7 @@ summary: >-
 ## Source
 
 Geshkovski, Letrouit, Polyanskiy and Rigollet (2023),
-[LIT-528](../literature.d/LIT-528.md)<!-- ref::source: LIT-528 --> — read as [NOTE-272](../notes.d/NOTE-272.md).
+[LIT-528](../literature.d/LIT-528.md) — read as [NOTE-272](../notes.d/NOTE-272.md).
 NeurIPS 2023.
 
 ## The account

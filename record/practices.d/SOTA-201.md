@@ -25,7 +25,7 @@ implementations:
 
 ## Source
 
-Minderer et al. (2022), [LIT-072](../literature.d/LIT-072.md)<!-- ref::introduced_by: LIT-072 --><!-- ref::source: LIT-072 --> — OWL-ViT, fine-tuning a contrastively
+Minderer et al. (2022), [LIT-072](../literature.d/LIT-072.md) — OWL-ViT, fine-tuning a contrastively
 pretrained image-text model for open-vocabulary detection.
 
 ## The claim

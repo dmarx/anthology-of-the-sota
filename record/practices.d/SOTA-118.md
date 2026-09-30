@@ -21,7 +21,7 @@ summary: >-
 
 ## Source
 
-Zhao et al. (2022), [LIT-083](../literature.d/LIT-083.md)<!-- ref::introduced_by: LIT-083 --><!-- ref::source: LIT-083 --> — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277).
+Zhao et al. (2022), [LIT-083](../literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277).
 
 ## What this adds beyond the mixed-precision practices
 
@@ -29,7 +29,7 @@ The FP16/BF16 recipe in [SOTA-014](SOTA-014.md) and [SOTA-016](SOTA-016.md) is a
 arithmetic. Under sharding there is a second consumer: every parameter
 all-gather and gradient reduce-scatter moves *bytes over the network*, and
 halving the dtype halves them. On a job whose step time is the collectives —
-which is the job that reached for FSDP in the first place ([SOTA-116](SOTA-116.md)<!-- ref::extends: SOTA-116 -->) — that
+which is the job that reached for FSDP in the first place ([SOTA-116](SOTA-116.md)) — that
 is often the larger effect.
 
 ## The parameter worth naming

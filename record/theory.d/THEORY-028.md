@@ -26,7 +26,7 @@ summary: >-
 
 ## Source
 
-Zucchet et al. (2025), [LIT-450](../literature.d/LIT-450.md)<!-- ref::source: LIT-450 --> — [ARXIV-2503.21676](https://arxiv.org/abs/2503.21676).
+Zucchet et al. (2025), [LIT-450](../literature.d/LIT-450.md) — [ARXIV-2503.21676](https://arxiv.org/abs/2503.21676).
 
 ## What was actually shown
 
@@ -86,7 +86,7 @@ size is measured where population size is exactly known, which is what a
 synthetic setting buys and a natural corpus does not have.
 
 **It does not make the schedule free.** The practice it explains
-([SOTA-267](../practices.d/SOTA-267.md)<!-- ref::explains: SOTA-267 -->) follows from the mechanism, and the mechanism says nothing
+([SOTA-267](../practices.d/SOTA-267.md)) follows from the mechanism, and the mechanism says nothing
 about the out-of-distribution cost of training on a concentrated
 distribution — which the neighbouring literature says exists.
 

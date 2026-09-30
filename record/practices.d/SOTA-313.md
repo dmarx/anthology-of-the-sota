@@ -41,7 +41,7 @@ summary: >-
 
 ## Source
 
-Gemini Team, Google (2023), [LIT-510](../literature.d/LIT-510.md)<!-- ref::introduced_by: LIT-510 --><!-- ref::source: LIT-510 --> — read as
+Gemini Team, Google (2023), [LIT-510](../literature.d/LIT-510.md) — read as
 [NOTE-255](../notes.d/NOTE-255.md). Appendix 10.2.
 
 ## When this applies

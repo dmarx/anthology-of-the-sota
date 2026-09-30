@@ -42,7 +42,7 @@ summary: >-
 
 ## Source
 
-Wortsman et al. (2022), [LIT-675](../literature.d/LIT-675.md)<!-- ref::introduced_by: LIT-675 --><!-- ref::source: LIT-675 --> —
+Wortsman et al. (2022), [LIT-675](../literature.d/LIT-675.md) —
 [ARXIV-2203.05482](https://arxiv.org/abs/2203.05482).
 
 ## What to do

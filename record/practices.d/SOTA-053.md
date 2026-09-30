@@ -18,7 +18,7 @@ summary: >-
 
 ## Source
 
-Bachlechner et al. (2020), [LIT-047](../literature.d/LIT-047.md)<!-- ref::introduced_by: LIT-047 --><!-- ref::source: LIT-047 --> — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887).
+Bachlechner et al. (2020), [LIT-047](../literature.d/LIT-047.md) — [ARXIV-2003.04887](https://arxiv.org/abs/2003.04887).
 
 ## What is special about a gate
 

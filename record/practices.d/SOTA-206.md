@@ -29,7 +29,7 @@ summary: >-
 
 ## Source
 
-Song et al. (2023), [LIT-093](../literature.d/LIT-093.md)<!-- ref::introduced_by: LIT-093 --><!-- ref::source: LIT-093 --> — Consistency Models.
+Song et al. (2023), [LIT-093](../literature.d/LIT-093.md) — Consistency Models.
 
 ## The claim
 

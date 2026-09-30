@@ -43,7 +43,7 @@ explained_by:
 
 ## Source
 
-Huh et al. (2024), [LIT-458](../literature.d/LIT-458.md)<!-- ref::introduced_by: LIT-458 --><!-- ref::source: LIT-458 --> — [ARXIV-2405.07987](https://arxiv.org/abs/2405.07987).
+Huh et al. (2024), [LIT-458](../literature.d/LIT-458.md) — [ARXIV-2405.07987](https://arxiv.org/abs/2405.07987).
 
 ## The asymmetry is the recommendation
 

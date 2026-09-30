@@ -24,7 +24,7 @@ summary: >-
 
 ## Source
 
-Santurkar et al. (2018), [LIT-015](../literature.d/LIT-015.md)<!-- ref::introduced_by: LIT-015 --><!-- ref::source: LIT-015 --> — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375).
+Santurkar et al. (2018), [LIT-015](../literature.d/LIT-015.md) — [ARXIV-1806.02375](https://arxiv.org/abs/1806.02375).
 
 ## The same practice as [SOTA-004](SOTA-004.md)
 

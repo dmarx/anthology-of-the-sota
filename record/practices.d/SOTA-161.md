@@ -63,7 +63,7 @@ summary: >-
 
 ## Source
 
-Qiu et al. (2025), [LIT-198](../literature.d/LIT-198.md)<!-- ref::introduced_by: LIT-198 --><!-- ref::source: LIT-198 --> — [ARXIV-2510.04212](https://arxiv.org/abs/2510.04212).
+Qiu et al. (2025), [LIT-198](../literature.d/LIT-198.md) — [ARXIV-2510.04212](https://arxiv.org/abs/2510.04212).
 
 Industrial practice puts memory-bound operations like flash attention in
 BF16 while pushing compute-bound ones like the FFN to FP8. That configuration
@@ -110,7 +110,7 @@ worth carrying is that a loss spike is not a flake.
 
 ## What it qualifies
 
-[SOTA-085](SOTA-085.md)<!-- ref::extends: SOTA-085 --> says to use flash attention wherever the hardware supports it, because
+[SOTA-085](SOTA-085.md) says to use flash attention wherever the hardware supports it, because
 the result is exact. The one numerical change it names is the order of
 accumulation, and it points here for why that matters at scale. This practice
 extends it with that part, which turned out to be the part that matters.

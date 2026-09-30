@@ -44,7 +44,7 @@ tuned against the other.
 **Choose the partitioning layout from a cost model, not from habit or a
 search.** Express compute, memory reads and chip-to-chip communication as
 functions of batch, context, chip count and model dimensions, and pick the
-layout that minimises whatever the application is actually paying for. [LIT-110](../literature.d/LIT-110.md)<!-- ref::introduced_by: LIT-110 --><!-- ref::source: LIT-110 -->
+layout that minimises whatever the application is actually paying for. [LIT-110](../literature.d/LIT-110.md)
 shows this is tractable by hand, against prior work's black-box search over
 layouts.
 

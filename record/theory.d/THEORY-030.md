@@ -35,7 +35,7 @@ summary: >-
 
 ## Source
 
-Cohen et al. (2024), [LIT-453](../literature.d/LIT-453.md)<!-- ref::source: LIT-453 --> — [ARXIV-2410.24206](https://arxiv.org/abs/2410.24206).
+Cohen et al. (2024), [LIT-453](../literature.d/LIT-453.md) — [ARXIV-2410.24206](https://arxiv.org/abs/2410.24206).
 
 ## What was actually shown
 
@@ -73,7 +73,7 @@ predict the trajectories; the ablated flow could have matched the full one.
 
 ## What this makes sense of
 
-**Why [SOTA-001](../practices.d/SOTA-001.md)<!-- ref::explains: SOTA-001 --> is right.** The record recommends Adam as the default and
+**Why [SOTA-001](../practices.d/SOTA-001.md) is right.** The record recommends Adam as the default and
 records, honestly, that this is what papers depart from rather than argue
 for. The registry has never held an account of what adaptivity buys. This is
 one: not a better-scaled step, but an implicit preconditioner acquired by

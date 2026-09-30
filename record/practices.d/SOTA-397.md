@@ -52,7 +52,7 @@ summary: >-
 
 ## Source
 
-Ho, Salimans et al. (2022), [LIT-627](../literature.d/LIT-627.md)<!-- ref::introduced_by: LIT-627 --><!-- ref::source: LIT-627 --> — Video Diffusion Models, §3.1 and Table 6.
+Ho, Salimans et al. (2022), [LIT-627](../literature.d/LIT-627.md) — Video Diffusion Models, §3.1 and Table 6.
 
 ## The claim
 

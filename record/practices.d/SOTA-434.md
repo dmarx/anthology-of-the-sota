@@ -45,7 +45,7 @@ summary: >-
 
 ## Source
 
-Liu, Lin, Cao, Hu et al. (2021), [LIT-723](../literature.d/LIT-723.md)<!-- ref::introduced_by: LIT-723 --><!-- ref::source: LIT-723 --> — Swin Transformer,
+Liu, Lin, Cao, Hu et al. (2021), [LIT-723](../literature.d/LIT-723.md) — Swin Transformer,
 §3.2 and Table 4.
 
 ## The claim

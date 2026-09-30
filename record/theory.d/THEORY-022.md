@@ -40,7 +40,7 @@ summary: >-
 
 ## Source
 
-Goldberg and Shirtz (2025), [LIT-410](../literature.d/LIT-410.md)<!-- ref::source: LIT-410 --> —
+Goldberg and Shirtz (2025), [LIT-410](../literature.d/LIT-410.md) —
 *Language* 101(2):291-320.
 
 ## What was actually shown

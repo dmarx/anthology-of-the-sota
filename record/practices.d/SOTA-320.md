@@ -51,7 +51,7 @@ summary: >-
 ## Source
 
 Qi, He, Ye, Li, Zi, Dai, Zou and Xiao (2025),
-[LIT-521](../literature.d/LIT-521.md)<!-- ref::introduced_by: LIT-521 --><!-- ref::source: LIT-521 --> — read as [NOTE-266](../notes.d/NOTE-266.md). ICLR 2025.
+[LIT-521](../literature.d/LIT-521.md) — read as [NOTE-266](../notes.d/NOTE-266.md). ICLR 2025.
 
 ## Do this
 

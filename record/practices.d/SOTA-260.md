@@ -43,7 +43,7 @@ summary: >-
 
 ## Source
 
-Marek et al. (2025), [LIT-444](../literature.d/LIT-444.md)<!-- ref::introduced_by: LIT-444 --><!-- ref::source: LIT-444 --> — [ARXIV-2507.07101](https://arxiv.org/abs/2507.07101).
+Marek et al. (2025), [LIT-444](../literature.d/LIT-444.md) — [ARXIV-2507.07101](https://arxiv.org/abs/2507.07101).
 
 ## The recommendation, and the one it replaces
 

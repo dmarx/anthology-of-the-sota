@@ -34,7 +34,7 @@ summary: >-
 
 ## Source
 
-Chen et al. (2016), [LIT-004](../literature.d/LIT-004.md)<!-- ref::introduced_by: LIT-004 --><!-- ref::source: LIT-004 --> — [ARXIV-1604.06174](https://arxiv.org/abs/1604.06174).
+Chen et al. (2016), [LIT-004](../literature.d/LIT-004.md) — [ARXIV-1604.06174](https://arxiv.org/abs/1604.06174).
 
 ## The rule
 

@@ -49,7 +49,7 @@ explains:
 
 ## Source
 
-He et al. (2021), [LIT-601](../literature.d/LIT-601.md)<!-- ref::source: LIT-601 --> — [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377), §1.
+He et al. (2021), [LIT-601](../literature.d/LIT-601.md) — [ARXIV-2111.06377](https://arxiv.org/abs/2111.06377), §1.
 
 ## The account
 
@@ -99,7 +99,7 @@ means, and this one does not.
 
 ## What moves the optimum, measured within one signal
 
-The account says the optimum is a property of the signal. [LIT-672](../literature.d/LIT-672.md)<!-- ref::source: LIT-672 --> holds the
+The account says the optimum is a property of the signal. [LIT-672](../literature.d/LIT-672.md) holds the
 signal fixed — English text, one architecture family, one evaluation protocol —
 and moves the optimum anyway:
 
@@ -128,7 +128,7 @@ objective buys.
 ## Standing
 
 `Proposed` rather than `Active`: plausible, directionally useful, resting on
-evidence that is suggestive rather than settling. [SOTA-373](../practices.d/SOTA-373.md)<!-- ref::explains: SOTA-373 --> is `Active`
+evidence that is suggestive rather than settling. [SOTA-373](../practices.d/SOTA-373.md) is `Active`
 regardless, because the *practice* — derive the ratio from your signal rather
 than inheriting it — is right even if this explanation of why is wrong. That
 split is `ADR-031`'s, and this is a cleaner instance than usual: a wrong

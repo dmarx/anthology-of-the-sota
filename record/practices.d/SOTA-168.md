@@ -44,8 +44,8 @@ explained_by:
 
 ## Source
 
-Vyas et al. (2024), [LIT-157](../literature.d/LIT-157.md)<!-- ref::introduced_by: LIT-157 --><!-- ref::source: LIT-157 --> — [ARXIV-2409.11321](https://arxiv.org/abs/2409.11321); with the fair
-comparison in Wen et al. (2025), [LIT-156](../literature.d/LIT-156.md)<!-- ref::source: LIT-156 -->.
+Vyas et al. (2024), [LIT-157](../literature.d/LIT-157.md) — [ARXIV-2409.11321](https://arxiv.org/abs/2409.11321); with the fair
+comparison in Wen et al. (2025), [LIT-156](../literature.d/LIT-156.md).
 
 The result the method falls out of is an equivalence, not an analogy:
 **Shampoo implemented with the 1/2 power is exactly Adafactor run in the

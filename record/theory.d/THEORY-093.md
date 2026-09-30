@@ -29,7 +29,7 @@ extended_by:
 
 ## Source
 
-Levy and Goldberg (2014), [LIT-612](../literature.d/LIT-612.md)<!-- ref::source: LIT-612 -->, read as [NOTE-331](../notes.d/NOTE-331.md).
+Levy and Goldberg (2014), [LIT-612](../literature.d/LIT-612.md), read as [NOTE-331](../notes.d/NOTE-331.md).
 
 ## The account
 

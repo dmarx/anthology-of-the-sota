@@ -20,7 +20,7 @@ summary: >-
 
 ## Source
 
-Zhao et al. (2022), [LIT-083](../literature.d/LIT-083.md)<!-- ref::introduced_by: LIT-083 --><!-- ref::source: LIT-083 --> — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277).
+Zhao et al. (2022), [LIT-083](../literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277).
 
 ## What is being overlapped, and with what
 
@@ -38,7 +38,7 @@ forward's recorded sequence.
 
 Prefetching means two units' parameters are resident at once instead of one,
 so the peak footprint rises by roughly one unit. On a job that chose FSDP
-because it was out of memory ([SOTA-116](SOTA-116.md)<!-- ref::extends: SOTA-116 -->) that is not free, and the knob is the
+because it was out of memory ([SOTA-116](SOTA-116.md)) that is not free, and the knob is the
 first thing to turn off when the run OOMs near the peak rather than at the
 start.
 

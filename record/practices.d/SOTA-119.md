@@ -20,7 +20,7 @@ summary: >-
 
 ## Source
 
-Zhao et al. (2022), [LIT-083](../literature.d/LIT-083.md)<!-- ref::introduced_by: LIT-083 --><!-- ref::source: LIT-083 --> — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277).
+Zhao et al. (2022), [LIT-083](../literature.d/LIT-083.md) — [ARXIV-2304.11277](https://arxiv.org/abs/2304.11277).
 
 ## The dial between the two extremes
 
@@ -43,5 +43,5 @@ uniform fabric the argument for a group smaller than the world collapses to
 the memory question alone.
 
 Sizing it also needs the activation footprint, not just parameters and
-optimizer state: those are what [SOTA-116](SOTA-116.md)<!-- ref::extends: SOTA-116 -->'s threshold is really about, and
+optimizer state: those are what [SOTA-116](SOTA-116.md)'s threshold is really about, and
 they do not shard.

@@ -38,14 +38,14 @@ summary: >-
 
 ## Source
 
-Eyring, Karthik, Dosovitskiy, Ruiz and Akata (2025), [LIT-491](../literature.d/LIT-491.md)<!-- ref::source: LIT-491 --> §3.1
+Eyring, Karthik, Dosovitskiy, Ruiz and Akata (2025), [LIT-491](../literature.d/LIT-491.md) §3.1
 and Appendix A.4 — read as [NOTE-240](../notes.d/NOTE-240.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-302](../practices.d/SOTA-302.md)<!-- ref::explains: SOTA-302 --> | steer a distilled generator by modulating its input noise rather than fine-tuning its weights | the choice is not stylistic and not about parameter count — it is the difference between an objective whose anchoring term can be computed and one whose cannot, which is why the weight-space version reward-hacks |
+| [SOTA-302](../practices.d/SOTA-302.md) | steer a distilled generator by modulating its input noise rather than fine-tuning its weights | the choice is not stylistic and not about parameter count — it is the difference between an objective whose anchoring term can be computed and one whose cannot, which is why the weight-space version reward-hacks |
 
 ## The account
 

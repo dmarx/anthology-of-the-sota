@@ -30,11 +30,11 @@ summary: >-
 
 ## Source
 
-Micikevicius et al. (2017), [LIT-011](../literature.d/LIT-011.md)<!-- ref::introduced_by: LIT-011 --><!-- ref::source: LIT-011 --> — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740).
+Micikevicius et al. (2017), [LIT-011](../literature.d/LIT-011.md) — [ARXIV-1710.03740](https://arxiv.org/abs/1710.03740).
 
 ## Condition
 
-Same argument as [SOTA-014](SOTA-014.md)<!-- ref::extends: SOTA-014 -->, one level down: Adam's second moment is a running
+Same argument as [SOTA-014](SOTA-014.md), one level down: Adam's second moment is a running
 average of squared gradients, so it spans a far wider dynamic range than the
 weights do, and FP16 cannot hold it. The exponent range runs out before the
 mantissa does — small squared gradients flush to zero, ε stops doing its job,

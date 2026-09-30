@@ -46,7 +46,7 @@ extended_by:
 
 ## Source
 
-Radford et al. (2021), [LIT-588](../literature.d/LIT-588.md)<!-- ref::introduced_by: LIT-588 --><!-- ref::source: LIT-588 --> — [ARXIV-2103.00020](https://arxiv.org/abs/2103.00020).
+Radford et al. (2021), [LIT-588](../literature.d/LIT-588.md) — [ARXIV-2103.00020](https://arxiv.org/abs/2103.00020).
 
 ## The claim
 
@@ -64,7 +64,7 @@ maximise cosine similarity on the `N` true pairs, minimise it on the `N²−N`
 false ones, symmetric cross-entropy, learned temperature. Predicting the
 caption's actual words is a far harder task than the supervision requires.
 
-The second decision is [SOTA-360](SOTA-360.md)<!-- ref::extends: SOTA-360 --> applied to image-text pairs: the
+The second decision is [SOTA-360](SOTA-360.md) applied to image-text pairs: the
 caption is the positive, the batch's other captions are the sampled negatives,
 and the score replaces reconstructing the target. That is why the batch sets
 the task's difficulty below.

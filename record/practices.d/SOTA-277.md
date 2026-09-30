@@ -42,7 +42,7 @@ explained_by:
 
 ## Source
 
-Chen et al. (2024), [LIT-464](../literature.d/LIT-464.md)<!-- ref::introduced_by: LIT-464 --><!-- ref::source: LIT-464 --> — [ARXIV-2412.02975](https://arxiv.org/abs/2412.02975),
+Chen et al. (2024), [LIT-464](../literature.d/LIT-464.md) — [ARXIV-2412.02975](https://arxiv.org/abs/2412.02975),
 read as [NOTE-214](../notes.d/NOTE-214.md). Accounted for by [THEORY-038](../theory.d/THEORY-038.md).
 
 ## What to do

@@ -48,7 +48,7 @@ summary: >-
 
 ## Source
 
-Morris et al. (2025), [LIT-440](../literature.d/LIT-440.md)<!-- ref::source: LIT-440 --> — [ARXIV-2505.24832](https://arxiv.org/abs/2505.24832).
+Morris et al. (2025), [LIT-440](../literature.d/LIT-440.md) — [ARXIV-2505.24832](https://arxiv.org/abs/2505.24832).
 
 ## What was actually shown
 

@@ -47,16 +47,16 @@ different algorithms, by three groups working independently.
 
 ## What is established
 
-- **One gradient step per layer.** [LIT-533](../literature.d/LIT-533.md)<!-- ref::source: LIT-533 -->, Proposition 1: with
+- **One gradient step per layer.** [LIT-533](../literature.d/LIT-533.md), Proposition 1: with
   `W_K = W_Q = [[I_x, 0], [0, 0]]`, `W_V = [[0, 0], [W_0, −I_y]]` and
   `P = (η/N)I`, a linear self-attention step on every token is exactly the
   token change `(0, −ΔW x_j)` that one gradient-descent step on the regression
   loss induces.
-- **A closed-form ridge update.** [LIT-532](../literature.d/LIT-532.md)<!-- ref::source: LIT-532 -->, Theorem 2: a transformer
+- **A closed-form ridge update.** [LIT-532](../literature.d/LIT-532.md), Theorem 2: a transformer
   predicts according to a single Sherman–Morrison update with a constant number
   of layers and `O(d²)` hidden space. Theorem 1 gives the gradient step in
   `O(d)`.
-- **A second-order method.** [LIT-535](../literature.d/LIT-535.md)<!-- ref::source: LIT-535 -->, Theorem 5.1: for any `k` there exist
+- **A second-order method.** [LIT-535](../literature.d/LIT-535.md), Theorem 5.1: for any `k` there exist
   weights predicting `x_testᵀ ŵ_k^Newton` from
   `M_j = 2M_{j−1} − M_{j−1} S M_{j−1}`, `M_0 = αS`, `S = XᵀX`, in `k + 8`
   layers with `O(d)` hidden dimension.
@@ -77,17 +77,17 @@ step most often skipped when this literature is summarized.
 
 That corollary is the reason behind two methodological practices. It
 explains why an expressivity claim and an emergence claim have to be tested
-on different models [SOTA-323](../practices.d/SOTA-323.md)<!-- ref::explains: SOTA-323 -->: a construction or a <!-- inactive-ok: SOTA-323 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
+on different models [SOTA-323](../practices.d/SOTA-323.md): a construction or a <!-- inactive-ok: SOTA-323 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
 purpose-trained model shows only what weights *exist*, and says nothing about
 what the pretraining objective produces. And it explains why rival accounts
 of the algorithm must be separated by convergence rate and conditioning
-rather than by output fit [SOTA-324](../practices.d/SOTA-324.md)<!-- ref::explains: SOTA-324 -->: when the architecture <!-- inactive-ok: SOTA-324 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
+rather than by output fit [SOTA-324](../practices.d/SOTA-324.md): when the architecture <!-- inactive-ok: SOTA-324 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
 admits gradient descent, ridge and Newton alike and all converge to the same
 answer, only a property on which they must differ can say which one a
 trained model runs.
 
 This is why the record files the identification separately, as
-[THEORY-068](THEORY-068.md)<!-- ref::corrects: THEORY-068 -->, and why that document is `Rejected` while this one is
+[THEORY-068](THEORY-068.md), and why that document is `Rejected` while this one is
 `Active`. [ADR-031](../decisions.d/ADR-031.md): an account can be wrong about the reason while the thing it
 was invoked to explain goes on happening.
 

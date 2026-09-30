@@ -42,7 +42,7 @@ extended_by:
 
 ## Source
 
-Kingma et al. (2021), [LIT-446](../literature.d/LIT-446.md)<!-- ref::source: LIT-446 --> — [ARXIV-2107.00630](https://arxiv.org/abs/2107.00630).
+Kingma et al. (2021), [LIT-446](../literature.d/LIT-446.md) — [ARXIV-2107.00630](https://arxiv.org/abs/2107.00630).
 
 ## What was actually shown
 
@@ -75,9 +75,9 @@ literature had been settling empirically.
 
 A free parameter is only interesting once somebody spends it. The source
 spends the freed schedule shape on minimizing the variance of the loss
-estimator, which is [SOTA-264](../practices.d/SOTA-264.md)<!-- ref::explains: SOTA-264 -->. The field spent it differently — EDM
+estimator, which is [SOTA-264](../practices.d/SOTA-264.md). The field spent it differently — EDM
 and its successors concentrate training noise where the model has something
-to learn, which is [SOTA-188](../practices.d/SOTA-188.md)<!-- ref::explains: SOTA-188 -->.
+to learn, which is [SOTA-188](../practices.d/SOTA-188.md).
 
 **That second connection is why this document exists.** [SOTA-188](../practices.d/SOTA-188.md) tells a
 reader to change where along the noise axis they train, and the obvious
@@ -111,7 +111,7 @@ That is the only kind [LIT-446](../literature.d/LIT-446.md) considers, and the s
 that removes the schedule from the integrand relies on it. With a
 per-dimension schedule the bound becomes a line integral along a path in
 SNR-space, and many paths connect the same endpoints.
-[LIT-677](../literature.d/LIT-677.md)<!-- ref::source: LIT-677 --> (MuLAN) reports that such a schedule, conditioned on a
+[LIT-677](../literature.d/LIT-677.md) (MuLAN) reports that such a schedule, conditioned on a
 learned auxiliary latent, improves the bound at equal steps (2.65 → 2.60 on
 CIFAR-10). It also re-measures this account inside its scope. A scalar
 schedule conditioned on the input gives no advantage, and a trained MuLAN

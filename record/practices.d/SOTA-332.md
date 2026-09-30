@@ -47,7 +47,7 @@ explained_by:
 
 ## Source
 
-Sitzmann et al. (2020), [LIT-551](../literature.d/LIT-551.md)<!-- ref::introduced_by: LIT-551 --><!-- ref::source: LIT-551 --> — SIREN. Read as [NOTE-295](../notes.d/NOTE-295.md). The
+Sitzmann et al. (2020), [LIT-551](../literature.d/LIT-551.md) — SIREN. Read as [NOTE-295](../notes.d/NOTE-295.md). The
 initialization account is [THEORY-078](../theory.d/THEORY-078.md).
 
 ## The practice

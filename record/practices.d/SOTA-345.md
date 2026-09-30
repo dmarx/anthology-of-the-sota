@@ -33,7 +33,7 @@ summary: >-
 
 ## Source
 
-Kantamneni et al. (2025), [LIT-568](../literature.d/LIT-568.md)<!-- ref::introduced_by: LIT-568 --><!-- ref::source: LIT-568 -->. Read as [NOTE-309](../notes.d/NOTE-309.md).
+Kantamneni et al. (2025), [LIT-568](../literature.d/LIT-568.md). Read as [NOTE-309](../notes.d/NOTE-309.md).
 
 ## The practice
 

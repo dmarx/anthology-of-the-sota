@@ -51,7 +51,7 @@ summary: >-
 
 ## Source
 
-Li et al. (2017), [LIT-014](../literature.d/LIT-014.md)<!-- ref::introduced_by: LIT-014 --><!-- ref::source: LIT-014 --> — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913).
+Li et al. (2017), [LIT-014](../literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913).
 
 ## The correlation, and what it is not
 
@@ -81,7 +81,7 @@ reparameterisation-invariant. There is a second objection it does not answer,
 and the record now holds it: **curvature may be the wrong quantity even when
 measured perfectly.**
 
-[LIT-541](../literature.d/LIT-541.md)<!-- ref::source: LIT-541 --> makes the case. Neural networks are *singular* statistical
+[LIT-541](../literature.d/LIT-541.md) makes the case. Neural networks are *singular* statistical
 models — many parameters give the same function, so the set of optima is a
 variety rather than a point and the loss is not locally quadratic. In
 Watanabe's volume law `V(ε) ∝ ε^λ`, the quantity that enters the model-selection

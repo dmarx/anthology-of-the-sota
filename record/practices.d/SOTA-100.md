@@ -28,7 +28,7 @@ compared_against:
 
 ## Source
 
-Xiong et al. (2020), [LIT-114](../literature.d/LIT-114.md)<!-- ref::introduced_by: LIT-114 --><!-- ref::source: LIT-114 --> — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745).
+Xiong et al. (2020), [LIT-114](../literature.d/LIT-114.md) — [ARXIV-2002.04745](https://arxiv.org/abs/2002.04745).
 
 ## What warmup was compensating for
 

@@ -79,7 +79,7 @@ summary: >-
 
 ## Source
 
-Lan, Chen, Goodman, Gimpel, Sharma and Soricut (2019), [LIT-668](../literature.d/LIT-668.md)<!-- ref::introduced_by: LIT-668 --><!-- ref::source: LIT-668 --> —
+Lan, Chen, Goodman, Gimpel, Sharma and Soricut (2019), [LIT-668](../literature.d/LIT-668.md) —
 [ARXIV-1909.11942](https://arxiv.org/abs/1909.11942).
 
 ## What to do

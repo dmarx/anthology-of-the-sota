@@ -72,11 +72,11 @@ summary: >-
 
 ## Source
 
-Hoogeboom, Heek and Salimans (2023), [LIT-660](../literature.d/LIT-660.md)<!-- ref::introduced_by: LIT-660 --><!-- ref::source: LIT-660 --> — [ARXIV-2301.11093](https://arxiv.org/abs/2301.11093), and
-Chen (2023), [LIT-659](../literature.d/LIT-659.md)<!-- ref::introduced_by: LIT-659 --><!-- ref::source: LIT-659 --> — [ARXIV-2301.10972](https://arxiv.org/abs/2301.10972). They are concurrent, and each
+Hoogeboom, Heek and Salimans (2023), [LIT-660](../literature.d/LIT-660.md) — [ARXIV-2301.11093](https://arxiv.org/abs/2301.11093), and
+Chen (2023), [LIT-659](../literature.d/LIT-659.md) — [ARXIV-2301.10972](https://arxiv.org/abs/2301.10972). They are concurrent, and each
 cites the other.
 
-Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md)<!-- ref::source: LIT-449 --> — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206). SD3 derives the shift
+Esser et al. (2024), [LIT-449](../literature.d/LIT-449.md) — [ARXIV-2403.03206](https://arxiv.org/abs/2403.03206). SD3 derives the shift
 again for rectified flow, measures the sampling-time value by human
 preference, and notes that its shift is "similar to (Hoogeboom et al.,
 2023)".

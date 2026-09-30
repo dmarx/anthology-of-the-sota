@@ -52,7 +52,7 @@ summary: >-
 
 ## Source
 
-Kimi Team (2025), [LIT-133](../literature.d/LIT-133.md)<!-- ref::introduced_by: LIT-133 --><!-- ref::source: LIT-133 --> — Kimi Linear.
+Kimi Team (2025), [LIT-133](../literature.d/LIT-133.md) — Kimi Linear.
 
 Most layers carry a linear-attention module with a finite-state memory —
 here Kimi Delta Attention, a gated delta rule with a channel-wise forgetting
@@ -89,7 +89,7 @@ and the global layers are what keep exact retrieval intact, so they should
 not be removed to chase the throughput number.
 
 **This practice used to say the controlled comparison was one group's. It is
-not.** [LIT-195](../literature.d/LIT-195.md)<!-- ref::source: LIT-195 -->, filed via [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40), ran the experiment in 2024, two years
+not.** [LIT-195](../literature.d/LIT-195.md), filed via [#40](https://github.com/dmarx/anthology-of-the-sota/issues/40), ran the experiment in 2024, two years
 before the reports that made the layout visible here: DeltaNet interleaved
 with sliding-window attention every other layer, and DeltaNet with just two
 global attention layers (the second and the n/2-th), both beating a strong
@@ -120,7 +120,7 @@ attention preserves exact retrieval at arbitrary distance, which is the
 property the minority layers are here to protect. A reader taking "interleave
 at 3:1" from the earlier work would get the ratio and lose the reason.
 
-The Gated DeltaNet paper's own H1 and H2 hybrids ([LIT-137](../literature.d/LIT-137.md)<!-- ref::source: LIT-137 -->, 2024) → Qwen3-Next
+The Gated DeltaNet paper's own H1 and H2 hybrids ([LIT-137](../literature.d/LIT-137.md), 2024) → Qwen3-Next
 ships 3:1 Gated DeltaNet to gated attention in production ([LIT-136](../literature.d/LIT-136.md),
 September 2025) → Kimi Linear's fair comparison against full attention
 ([LIT-133](../literature.d/LIT-133.md), October 2025, this practice's source) → Qwen3.5, 3.6 and 3.8

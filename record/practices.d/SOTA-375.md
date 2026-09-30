@@ -49,7 +49,7 @@ explained_by:
 
 ## Source
 
-Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md)<!-- ref::introduced_by: LIT-603 --><!-- ref::source: LIT-603 -->. Read as [NOTE-326](../notes.d/NOTE-326.md).
+Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md). Read as [NOTE-326](../notes.d/NOTE-326.md).
 
 ## The practice
 
@@ -62,7 +62,7 @@ Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md)<!-- ref::introduced
 
 - **Mikolov et al. give none.** "Significantly" better "on every task we
   tried", with no table.
-- **Levy, Goldberg and Dagan measure it** ([LIT-607](../literature.d/LIT-607.md)<!-- ref::source: LIT-607 -->, Table 8d), as
+- **Levy, Goldberg and Dagan measure it** ([LIT-607](../literature.d/LIT-607.md), Table 8d), as
   context-distribution smoothing against α = 1, over 8 similarity and
   analogy datasets. SGNS gains 0 to +1.4 points and never loses. PPMI gains
   up to +9.2 and SVD up to +2.2. The authors call it the one setting that can

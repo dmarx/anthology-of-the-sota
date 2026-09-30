@@ -34,13 +34,13 @@ summary: >-
 
 ## Source
 
-Xie et al. (2023), [LIT-639](../literature.d/LIT-639.md)<!-- ref::source: LIT-639 -->, §3.2.
+Xie et al. (2023), [LIT-639](../literature.d/LIT-639.md), §3.2.
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-032](../practices.d/SOTA-032.md)<!-- ref::explains: SOTA-032 --> | put the normalisation inside the residual block, before the sublayer | the unnormalised residual stream is what bounds the gradients, and it is the same thing that makes later blocks' contributions a vanishing share of it |
+| [SOTA-032](../practices.d/SOTA-032.md) | put the normalisation inside the residual block, before the sublayer | the unnormalised residual stream is what bounds the gradients, and it is the same thing that makes later blocks' contributions a vanishing share of it |
 
 ## The account
 

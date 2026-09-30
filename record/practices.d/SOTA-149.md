@@ -41,7 +41,7 @@ explained_by:
 
 # SOTA-149: Build the sparse layers from many small experts plus an always-on shared one, not a few large ones
 
-[SOTA-150](SOTA-150.md)<!-- ref::extends: SOTA-150 --> says make the layer sparse. This says how to
+[SOTA-150](SOTA-150.md) says make the layer sparse. This says how to
 cut it up, and the diagnosis behind it is the interesting part.
 
 Conventional top-K-of-N routing does not actually deliver **expert
@@ -49,7 +49,7 @@ specialisation**. Experts end up holding overlapping knowledge rather than
 focused knowledge, which wastes the parameters sparsity was supposed to buy —
 you pay for capacity and get redundancy.
 
-[LIT-170](../literature.d/LIT-170.md)<!-- ref::introduced_by: LIT-170 --><!-- ref::source: LIT-170 --> attributes that to the granularity of the choice and changes it
+[LIT-170](../literature.d/LIT-170.md) attributes that to the granularity of the choice and changes it
 in two ways:
 
 - **Fine segmentation.** Split into `mN` smaller experts and activate `mK` of

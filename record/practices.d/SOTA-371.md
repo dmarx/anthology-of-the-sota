@@ -39,7 +39,7 @@ summary: >-
 
 ## Source
 
-Newman et al. (2010), [LIT-600](../literature.d/LIT-600.md)<!-- ref::introduced_by: LIT-600 --><!-- ref::source: LIT-600 -->. Read as [NOTE-324](../notes.d/NOTE-324.md).
+Newman et al. (2010), [LIT-600](../literature.d/LIT-600.md). Read as [NOTE-324](../notes.d/NOTE-324.md).
 
 ## The practice
 

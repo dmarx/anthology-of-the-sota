@@ -46,7 +46,7 @@ explained_by:
 
 ## Source
 
-Kaplan et al. (2024), [LIT-412](../literature.d/LIT-412.md)<!-- ref::introduced_by: LIT-412 --><!-- ref::source: LIT-412 --> —
+Kaplan et al. (2024), [LIT-412](../literature.d/LIT-412.md) —
 [ARXIV-2410.05864](https://arxiv.org/abs/2410.05864), ICLR 2025.
 
 The reason it works is [THEORY-021](../theory.d/THEORY-021.md): the

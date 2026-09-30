@@ -37,7 +37,7 @@ summary: >-
 
 ## Source
 
-Du et al. (2025), [LIT-176](../literature.d/LIT-176.md)<!-- ref::introduced_by: LIT-176 --><!-- ref::source: LIT-176 --> — [ARXIV-2510.07019](https://arxiv.org/abs/2510.07019).
+Du et al. (2025), [LIT-176](../literature.d/LIT-176.md) — [ARXIV-2510.07019](https://arxiv.org/abs/2510.07019).
 
 The trade-off is the record's own: full attention is quadratic, linear
 attention is efficient and compromises recall over long contexts. Every

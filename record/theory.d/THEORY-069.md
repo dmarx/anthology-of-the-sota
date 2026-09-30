@@ -61,22 +61,22 @@ not a property of algorithmic datasets, and it is not a fundamental feature of
 overparameterized learning. Three separate knobs have been shown to control it,
 each demonstrated in both directions.
 
-This is what the third check in [SOTA-200](../practices.d/SOTA-200.md)<!-- ref::explains: SOTA-200 --> rests on. Because the
+This is what the third check in [SOTA-200](../practices.d/SOTA-200.md) rests on. Because the
 discontinuity is set by the regime rather than the task, moving any of these
 knobs and watching whether the jump moves with it tests whether a capability
 was acquired at a scale or produced by the run's conditions.
 
-**Training-set size — or something fused with it.** [LIT-538](../literature.d/LIT-538.md)<!-- ref::source: LIT-538 --> measures it in
+**Training-set size — or something fused with it.** [LIT-538](../literature.d/LIT-538.md) measures it in
 the paper that named the phenomenon: converged accuracy is flat across a range
 of training fractions while the *time* to reach it explodes as the fraction
 falls — in the vicinity of 25–30% on `S₅`, removing 1% of the data raises
 median steps-to-generalize by 40–50%, while steps-to-fit stay at `10³`–`10⁴`.
-[LIT-085](../literature.d/LIT-085.md)<!-- ref::source: LIT-085 --> puts a threshold on it: above roughly 60% data on modular
+[LIT-085](../literature.d/LIT-085.md) puts a threshold on it: above roughly 60% data on modular
 addition, grokking is gone and generalization is immediate.
 
 Both vary the *fraction* of a fixed universe of examples, which is one knob
 moving two things — how much data there is, and what proportion of the possible
-examples it covers. [LIT-667](../literature.d/LIT-667.md)<!-- ref::source: LIT-667 --> has two knobs and turns them separately: on
+examples it covers. [LIT-667](../literature.d/LIT-667.md) has two knobs and turns them separately: on
 knowledge-based reasoning, holding the inferred/atomic ratio fixed and scaling
 the training set changes **nothing**, while moving the ratio at fixed size moves
 grokking speed monotonically. A ratio of that kind is not defined on modular
@@ -85,13 +85,13 @@ could not have told which of the two they were measuring. The knob is real. What
 it is a knob *on* is open.
 
 **Initialization scale relative to the generalizing weight norm.**
-[LIT-540](../literature.d/LIT-540.md)<!-- ref::source: LIT-540 --> induces grokking on **MNIST** (depth-3 MLP, 1k examples, Kaiming
+[LIT-540](../literature.d/LIT-540.md) induces grokking on **MNIST** (depth-3 MLP, 1k examples, Kaiming
 weights scaled by `α > 1`), on **IMDb** with an LSTM at `α = 6`, and on **QM9**
 with a GCNN at `α = 3`. At the standard initialization there is no grokking on
 any of them. Run the other way, constraining the model to a small-weight-norm
 sphere nearly eliminates grokking on algorithmic data.
 
-**Initial kernel–task alignment.** [LIT-537](../literature.d/LIT-537.md)<!-- ref::source: LIT-537 --> sweeps an output-scale
+**Initial kernel–task alignment.** [LIT-537](../literature.d/LIT-537.md) sweeps an output-scale
 parameter `α` and shows it makes grokking more dramatic or removes it entirely,
 and shows that worse alignment between the initial NTK's top eigenvectors and
 the labels produces more intense grokking — and, because feature learning is

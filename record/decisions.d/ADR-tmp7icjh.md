@@ -6,13 +6,14 @@ tags:
 - record
 date: '2026-09-30'
 summary: >-
-  Ten reference fields declare `explain: true` (luria 0.33): a practice's and
-  a theory's evidence, a practice's origin, a theory's `explains`, every
+  Ten reference fields declare `explain: cited` (luria 0.33.2): a practice's
+  and a theory's evidence, a practice's origin, a theory's `explains`, every
   `corrects`, `contested_by`, and `extends` on practices and theories. Each
-  code they hold must be cited in the body with the relation stated. Rejected:
-  every field (converse back-references, `compared_against` and `NOTE.paper`
-  are frontmatter facts, and together they would have been ~700 findings of
-  noise), and `LIT.extends` for now (84 uncited, left as follow-up).
+  code they hold must be cited somewhere in the body. Rejected: `explain:
+  stated` (a `ref::` statement beside every citation: 1346 of them, restating
+  frontmatter next to sentences that already explain), every field (converse
+  back-references, `compared_against` and `NOTE.paper` are frontmatter facts,
+  ~700 findings of noise), and `LIT.extends` for now (84 uncited, follow-up).
 ---
 
 # ADR-tmp7icjh: Relations a reader cannot weigh without prose must be explained in the body
@@ -28,16 +29,17 @@ every reference field opted in on a scratch copy, practices already cited 575
 of their 590 sources in the body, while notes cited 40 of the 378 papers they
 are readings of.
 
-luria 0.33 added the check (`explain: true` on a reference). A code the field
-holds must be cited in the body, and the citation carries a `ref::` statement
-of the relation. `luria link --fix` writes the statement beside an existing
-citation; a code the body never cites is `unexplained-relations`, which only
-a person can fix, by writing the sentence. A statement's `— reason` also counts
-as an explanation.
+luria 0.33 added the check (`explain:` on a reference), and 0.33.2 gave it two
+strengths. `cited` (also spelled `true`) asks that the body cite each code the
+field holds somewhere, and takes the citation as serving the relation. `stated`
+also asks for a `ref::` statement of the relation beside each citation, which
+`luria link --fix` writes. At either strength a code the body never cites is
+`unexplained-relations`, which only a person can fix, by writing the sentence;
+a statement's `— reason` also counts as an explanation.
 
 ## Decision
 
-`explain: true` on ten fields, chosen by one test: **would a reader need
+`explain: cited` on ten fields, chosen by one test: **would a reader need
 prose to weigh this relation?**
 
 - **Evidence and origin.** `SOTA.source`, `SOTA.introduced_by`,
@@ -56,6 +58,12 @@ mention rather than a citation.
 
 ## Alternatives considered
 
+- **`explain: stated`.** Tried first, when it was the only strength. The fixer
+  wrote 1346 statements into 554 files, each beside a citation whose sentence
+  already said what the relation was: the statement restated the frontmatter
+  in a comment no reader sees. It found nothing `cited` does not; the finding
+  that mattered was the 81 relations the prose never mentioned, and that is
+  the same at both strengths. The statements were removed.
 - **Every reference field.** It measured at 974 unexplained relations. Most
   are on fields whose meaning is complete in frontmatter:
   - the converse back-references `luria link --fix` writes (`extended_by`,
@@ -77,13 +85,16 @@ mention rather than a citation.
 
 ## Consequences
 
-- `luria link --fix` wrote 1346 statements beside citations the prose already
-  made. The pin moved from luria 0.31.0 to 0.33.1 in the same contribution (0.33.0 crashed on the DOI-labelled links in five notes; 0.33.1 is its fix).
+- The pin moved from luria 0.31.0 to 0.33.2 in the same contribution. (0.33.0
+  crashed on the DOI-labelled links in five notes; 0.33.1 fixed that, and
+  0.33.2 added the `cited` strength.)
 - 23 relations were cited only as backticked mentions: sources in recent
   practices and theories, and a few `explains`. They became citations.
+<!-- inactive-ok-block: THEORY-032 SOTA-137 SOTA-169 — named as the two partial fits the new prose flags, not cited as advice -->
 - The remaining 58 had no citation at all, and each got a sentence written
-  from what the two documents say. Relations whose documents did not support
-  them were not explained into existence. They are listed in the
-  contribution rather than papered over.
+  from what the two documents say. None was found unsupported. Two are stated
+  as partial fits in their own prose: [THEORY-032](../theory.d/THEORY-032.md) explains only the Muon branch
+  of [SOTA-165](../practices.d/SOTA-165.md), and [SOTA-137](../practices.d/SOTA-137.md) inherits [SOTA-169](../practices.d/SOTA-169.md)'s widening but not its
+  constraint.
 - From now on, a new practice or theory that names a source it never
   discusses fails nothing, but it is reported, and the report names the file.

@@ -36,7 +36,7 @@ summary: >-
 
 ## Source
 
-Reddy, Levine and Dragan (2022), [LIT-503](../literature.d/LIT-503.md)<!-- ref::source: LIT-503 -->, read as [NOTE-250](../notes.d/NOTE-250.md).
+Reddy, Levine and Dragan (2022), [LIT-503](../literature.d/LIT-503.md), read as [NOTE-250](../notes.d/NOTE-250.md).
 
 ## The account
 
@@ -55,7 +55,7 @@ they can steer through, and it scores as well as a natural one.
 
 ## What it explains
 
-The practice is [SOTA-309](../practices.d/SOTA-309.md)<!-- ref::explains: SOTA-309 -->, and this account explains both of <!-- inactive-ok: SOTA-309 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
+The practice is [SOTA-309](../practices.d/SOTA-309.md), and this account explains both of <!-- inactive-ok: SOTA-309 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
 its instructions: why the score ranks interfaces with no labels, and why the
 horizon `Δ` has to be chosen deliberately, since it sets which states the
 operator's input is being credited with determining.

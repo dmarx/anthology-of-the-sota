@@ -32,7 +32,7 @@ summary: >-
 
 ## Source
 
-Kojima et al. (2022), [LIT-469](../literature.d/LIT-469.md)<!-- ref::introduced_by: LIT-469 --><!-- ref::source: LIT-469 --> — [ARXIV-2205.11916](https://arxiv.org/abs/2205.11916),
+Kojima et al. (2022), [LIT-469](../literature.d/LIT-469.md) — [ARXIV-2205.11916](https://arxiv.org/abs/2205.11916),
 read as [NOTE-218](../notes.d/NOTE-218.md).
 
 ## What to do
@@ -51,7 +51,7 @@ the ordering is the point:
 | standard eight-shot prompting | worse |
 | standard zero-shot prompting | worst |
 
-This is the cheap baseline, not the better method. [SOTA-279](../practices.d/SOTA-279.md)<!-- ref::extends: SOTA-279 --> still
+This is the cheap baseline, not the better method. [SOTA-279](../practices.d/SOTA-279.md) still
 describes the stronger one. What this says is that the stronger one has a
 price and you should find out what it buys on your task before paying it.
 

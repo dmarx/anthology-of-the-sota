@@ -50,11 +50,11 @@ summary: >-
 
 ## Source
 
-Gao, Hoogeboom, Heek, De Bortoli, Murphy and Salimans (2024), [LIT-678](../literature.d/LIT-678.md)<!-- ref::source: LIT-678 -->,
+Gao, Hoogeboom, Heek, De Bortoli, Murphy and Salimans (2024), [LIT-678](../literature.d/LIT-678.md),
 a blog post that assembles derivations. Part of the account is already in
-[LIT-630](../literature.d/LIT-630.md)<!-- ref::source: LIT-630 -->, whose Theorem 3 and "diffusion is one choice of path"
+[LIT-630](../literature.d/LIT-630.md), whose Theorem 3 and "diffusion is one choice of path"
 make the forward-process half. The weighting identity is derived in Kingma and
-Gao (2023), [LIT-692](../literature.d/LIT-692.md)<!-- ref::source: LIT-692 -->, App. D.3: "the CFM loss is equivalent to the
+Gao (2023), [LIT-692](../literature.d/LIT-692.md), App. D.3: "the CFM loss is equivalent to the
 v-prediction loss with cosine schedule".
 
 ## The account
@@ -76,7 +76,7 @@ Four identities, each a piece of algebra:
    EDM-style churn) are available to both.
 4. **Schedule.** Given the weighting, the training loss depends on the
    schedule only through its endpoints, and the schedule's shape sets only
-   the estimator's variance ([LIT-692](../literature.d/LIT-692.md), §3.2). [THEORY-027](THEORY-027.md)<!-- ref::extends: THEORY-027 -->
+   the estimator's variance ([LIT-692](../literature.d/LIT-692.md), §3.2). [THEORY-027](THEORY-027.md)
    is the unweighted special case.
 
 **Consequence.** Pick a weighting, a network output and a sampling schedule,
@@ -93,7 +93,7 @@ for narrow ones.
 
 ## What it explains
 
-**[SOTA-266](../practices.d/SOTA-266.md)<!-- ref::explains: SOTA-266 -->'s result, as a decomposition, not an
+**[SOTA-266](../practices.d/SOTA-266.md)'s result, as a decomposition, not an
 intervention.** [SOTA-266](../practices.d/SOTA-266.md) recommends the straight-line path because controlled
 comparisons found it better, and its Conditions say "No mechanism has been
 isolated". This account says what those comparisons change. Moving from a

@@ -48,7 +48,7 @@ summary: >-
 
 ## Source
 
-Qiu et al. (2026), [LIT-152](../literature.d/LIT-152.md)<!-- ref::introduced_by: LIT-152 --><!-- ref::source: LIT-152 --> — §2.3, Tables 7–9. All runs at 300 tokens per
+Qiu et al. (2026), [LIT-152](../literature.d/LIT-152.md) — §2.3, Tables 7–9. All runs at 300 tokens per
 active parameter.
 
 ## The practice

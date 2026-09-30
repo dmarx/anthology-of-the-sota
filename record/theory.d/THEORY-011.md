@@ -31,7 +31,7 @@ summary: >-
 
 ## Source
 
-Li et al. (2017), [LIT-014](../literature.d/LIT-014.md)<!-- ref::source: LIT-014 --> — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). The paper reports
+Li et al. (2017), [LIT-014](../literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913). The paper reports
 that loss landscapes go from nearly convex to highly chaotic once a network is
 deep enough, and that skip connections prevent that transition; its filter
 normalization is what makes the with-and-without plots comparable at all.
@@ -57,11 +57,11 @@ in it.
 This is the account under every practice in the record about residual streams,
 and it is why none of them is about *whether* to have one:
 
-- Where to normalise relative to the identity path — [SOTA-032](../practices.d/SOTA-032.md)<!-- ref::explains: SOTA-032 -->.
-- How weakly to initialise the branch that joins it — [SOTA-051](../practices.d/SOTA-051.md)<!-- ref::explains: SOTA-051 -->, [SOTA-060](../practices.d/SOTA-060.md)<!-- ref::explains: SOTA-060 -->.
+- Where to normalise relative to the identity path — [SOTA-032](../practices.d/SOTA-032.md).
+- How weakly to initialise the branch that joins it — [SOTA-051](../practices.d/SOTA-051.md), [SOTA-060](../practices.d/SOTA-060.md).
 <!-- inactive-ok-block: SOTA-136, SOTA-169 — Proposed, and named as the open
      question this account underwrites rather than settles -->
-- How many streams to run, and how to mix them — [SOTA-136](../practices.d/SOTA-136.md)<!-- ref::explains: SOTA-136 -->, [SOTA-169](../practices.d/SOTA-169.md)<!-- ref::explains: SOTA-169 -->, both
+- How many streams to run, and how to mix them — [SOTA-136](../practices.d/SOTA-136.md), [SOTA-169](../practices.d/SOTA-169.md), both
   `Proposed`, and both open questions of the form *how far does the smoothing
   argument stretch?*
 

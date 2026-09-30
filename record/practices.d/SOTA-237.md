@@ -35,7 +35,7 @@ summary: >-
 
 ## Source
 
-Sun et al. (2021), [LIT-387](../literature.d/LIT-387.md)<!-- ref::introduced_by: LIT-387 --><!-- ref::source: LIT-387 --> — [ARXIV-2104.00680](https://arxiv.org/abs/2104.00680).
+Sun et al. (2021), [LIT-387](../literature.d/LIT-387.md) — [ARXIV-2104.00680](https://arxiv.org/abs/2104.00680).
 
 ## The claim
 

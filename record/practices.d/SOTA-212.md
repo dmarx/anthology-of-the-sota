@@ -63,13 +63,13 @@ explained_by:
 
 ## Source, and who is recommending this
 
-The evidence is Gan and Isola (2026), [LIT-233](../literature.d/LIT-233.md)<!-- ref::source: LIT-233 --> —
+The evidence is Gan and Isola (2026), [LIT-233](../literature.d/LIT-233.md) —
 [ARXIV-2603.12228](https://arxiv.org/abs/2603.12228). **The recommendation is not theirs.** That paper
 measures the method and declines to promote it, in as many words: "our goal
 is not to promote RandOpt as superior to alternative methods. Rather, we use
 it as a probe." The instruction — post-train by perturbing the weights and
 selecting among the results, rather than by following a gradient — was
-stated by Qiu et al. ([LIT-211](../literature.d/LIT-211.md)<!-- ref::introduced_by: LIT-211 -->), and this is that instruction with the
+stated by Qiu et al. ([LIT-211](../literature.d/LIT-211.md)), and this is that instruction with the
 iteration count set to one and an ensemble on the end. `introduced_by:` says
 so, which is the distinction [ADR-030](../decisions.d/ADR-030.md) requires every practice to make.
 
@@ -136,7 +136,7 @@ moved before believing a number.
 of the reasoning recipe, [SOTA-145](SOTA-145.md) recommends the group baseline inside it and
 [SOTA-146](SOTA-146.md) corrects the objective. All three assume the paradigm. This is the
 second practice in the record to reach the same goal from outside it, after
-[SOTA-154](SOTA-154.md)<!-- ref::extends: SOTA-154 --> — which it `extends:` rather than rivals. Both are gradient-free,
+[SOTA-154](SOTA-154.md) — which it `extends:` rather than rivals. Both are gradient-free,
 both perturb the full parameter space with Gaussian noise, and this one is ES
 with the iteration count set to one and an ensemble on the end.
 

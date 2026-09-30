@@ -39,7 +39,7 @@ summary: >-
 
 ## Source
 
-Grosse et al. (2023), [LIT-401](../literature.d/LIT-401.md)<!-- ref::introduced_by: LIT-401 --><!-- ref::source: LIT-401 --> — [ARXIV-2308.03296](https://arxiv.org/abs/2308.03296).
+Grosse et al. (2023), [LIT-401](../literature.d/LIT-401.md) — [ARXIV-2308.03296](https://arxiv.org/abs/2308.03296).
 
 ## What was measured
 

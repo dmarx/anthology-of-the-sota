@@ -55,7 +55,7 @@ explained_by:
 
 ## Source
 
-Berta, Holzmüller, Jordan and Bach (2025), [LIT-514](../literature.d/LIT-514.md)<!-- ref::introduced_by: LIT-514 --><!-- ref::source: LIT-514 --> — read as
+Berta, Holzmüller, Jordan and Bach (2025), [LIT-514](../literature.d/LIT-514.md) — read as
 [NOTE-259](../notes.d/NOTE-259.md). The account of why is [THEORY-060](../theory.d/THEORY-060.md).
 
 ## When this applies

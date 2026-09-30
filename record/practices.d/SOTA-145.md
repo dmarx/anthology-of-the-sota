@@ -63,7 +63,7 @@ expected. At LLM scale that critic is a second network of comparable size,
 trained alongside the policy, and it is the largest avoidable cost in the RL
 stage.
 
-GRPO ([LIT-127](../literature.d/LIT-127.md)<!-- ref::introduced_by: LIT-127 --><!-- ref::source: LIT-127 -->) removes it. Sample a group of
+GRPO ([LIT-127](../literature.d/LIT-127.md)) removes it. Sample a group of
 outputs for the same prompt, score them, and use the group's own statistics as
 the baseline: an output is good relative to its siblings rather than relative
 to a learned prediction. The critic disappears and the advantage estimate
@@ -74,13 +74,13 @@ becomes a within-group comparison.
 The record holds four papers that run or rework GRPO, and **all four keep the
 group baseline**:
 
-- [LIT-119](../literature.d/LIT-119.md)<!-- ref::source: LIT-119 --> runs it on a 0.6B reasoning model and reports it sensitive above
+- [LIT-119](../literature.d/LIT-119.md) runs it on a 0.6B reasoning model and reports it sensitive above
   all to the learning rate — a tuning finding, not an objection to the method.
-- [LIT-167](../literature.d/LIT-167.md)<!-- ref::source: LIT-167 --> identifies a length bias in the objective and publishes Dr. GRPO
+- [LIT-167](../literature.d/LIT-167.md) identifies a length bias in the objective and publishes Dr. GRPO
   to remove it. The group baseline stays.
-- [LIT-168](../literature.d/LIT-168.md)<!-- ref::source: LIT-168 --> decouples the clipping range and adds dynamic sampling. The group
+- [LIT-168](../literature.d/LIT-168.md) decouples the clipping range and adds dynamic sampling. The group
   baseline stays.
-- [LIT-180](../literature.d/LIT-180.md)<!-- ref::source: LIT-180 --> moves the importance ratio from token to sequence level. The
+- [LIT-180](../literature.d/LIT-180.md) moves the importance ratio from token to sequence level. The
   group baseline stays.
 
 Three independent groups examined this objective closely enough to publish a

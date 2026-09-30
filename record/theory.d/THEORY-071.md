@@ -62,7 +62,7 @@ explains:
 
 ## Source
 
-Varma et al. (2023), [LIT-539](../literature.d/LIT-539.md)<!-- ref::source: LIT-539 --> — [ARXIV-2309.02390](https://arxiv.org/abs/2309.02390). The account is
+Varma et al. (2023), [LIT-539](../literature.d/LIT-539.md) — [ARXIV-2309.02390](https://arxiv.org/abs/2309.02390). The account is
 this paper's: the three ingredients, the dataset-size argument for `D_crit`,
 and the ungrokking and semi-grokking predictions it derived and then observed.
 
@@ -92,7 +92,7 @@ cross at **`D_crit`**.
 
 ## The index is not dataset size
 
-That argument is about *examples*, and it is the part [LIT-667](../literature.d/LIT-667.md)<!-- ref::source: LIT-667 --> corrects by
+That argument is about *examples*, and it is the part [LIT-667](../literature.d/LIT-667.md) corrects by
 name. Wang et al. train on a mixture of atomic facts and facts deduced from
 them, and separate two knobs the algorithmic setting fuses:
 
@@ -115,7 +115,7 @@ whatever makes memorising dearer while leaving generalising alone — which is
 the training fraction in modular addition and the derived-fact ratio in a
 knowledge graph. Both are the same quantity seen through different data.
 
-This is the part of [SOTA-402](../practices.d/SOTA-402.md)<!-- ref::explains: SOTA-402 --> the account explains: why added <!-- inactive-ok: SOTA-402 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
+This is the part of [SOTA-402](../practices.d/SOTA-402.md) the account explains: why added <!-- inactive-ok: SOTA-402 — Proposed, and the practice this account explains; the citation is the relation's explanation -->
 data should go to derived facts rather than to more atomic ones. Raising `φ`
 makes `C_mem` store more while `C_gen`'s burden stays bounded, so the crossover
 comes sooner; adding atomic and derived facts together at fixed `φ` scales both
@@ -125,7 +125,7 @@ composition — and it needs the weight decay that practice's setup includes.
 
 One caution, because it cuts the other way too: the reverse inference is not
 available. Modular addition has no atomic/inferred split, so `φ` is not defined
-there, and nothing here shows that the size dependence [LIT-538](../literature.d/LIT-538.md) and [LIT-085](../literature.d/LIT-085.md)<!-- ref::source: LIT-085 -->
+there, and nothing here shows that the size dependence [LIT-538](../literature.d/LIT-538.md) and [LIT-085](../literature.d/LIT-085.md)
 measured was secretly a distribution effect. What it shows is that those
 experiments could not have told the difference, because they moved size and
 composition with one knob.

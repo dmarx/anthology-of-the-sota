@@ -46,7 +46,7 @@ explained_by:
 
 ## Source
 
-Park, Choe and Veitch (2024), [LIT-606](../literature.d/LIT-606.md)<!-- ref::introduced_by: LIT-606 --><!-- ref::source: LIT-606 --> — [ARXIV-2311.03658](https://arxiv.org/abs/2311.03658), §3.2 and
+Park, Choe and Veitch (2024), [LIT-606](../literature.d/LIT-606.md) — [ARXIV-2311.03658](https://arxiv.org/abs/2311.03658), §3.2 and
 App D.2. The account is [THEORY-090](../theory.d/THEORY-090.md).
 
 ## The claim
@@ -81,7 +81,7 @@ and each concept's probe and steering directions coincide.
 
 - **One source, qualitative, output space only.** Intermediate layers,
   where directions are usually taken, are untested in the source.
-- **[LIT-526](../literature.d/LIT-526.md)<!-- ref::contested_by: LIT-526 --> tested the obvious use and found nothing**: for cross-lingual
+- **[LIT-526](../literature.d/LIT-526.md) tested the obvious use and found nothing**: for cross-lingual
   concept transport, whitening adds nothing over spectral regularization
   across 17 models and four language pairs. It also finds contextual concept
   directions concentrated in the low-variance tail of this very covariance,

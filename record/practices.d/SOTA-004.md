@@ -20,7 +20,7 @@ compared_against:
 
 ## Source
 
-Ioffe et al. (2015), [LIT-002](../literature.d/LIT-002.md)<!-- ref::introduced_by: LIT-002 --><!-- ref::source: LIT-002 --> — [ARXIV-1502.03167](https://arxiv.org/abs/1502.03167).
+Ioffe et al. (2015), [LIT-002](../literature.d/LIT-002.md) — [ARXIV-1502.03167](https://arxiv.org/abs/1502.03167).
 
 ## Why before the activation
 

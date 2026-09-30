@@ -35,7 +35,7 @@ explained_by:
 
 ## Source
 
-Liu, Xu, Jin, Shen and Darrell (2023), [LIT-475](../literature.d/LIT-475.md)<!-- ref::introduced_by: LIT-475 --><!-- ref::source: LIT-475 --> — read as
+Liu, Xu, Jin, Shen and Darrell (2023), [LIT-475](../literature.d/LIT-475.md) — read as
 [NOTE-224](../notes.d/NOTE-224.md). ImageNet-1K, models from 5M to 86M parameters, three
 seeds.
 

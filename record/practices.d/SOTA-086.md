@@ -41,7 +41,7 @@ extended_by:
 
 ## Source
 
-Dao et al. (2022), [LIT-074](../literature.d/LIT-074.md)<!-- ref::introduced_by: LIT-074 --><!-- ref::source: LIT-074 --> — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135).
+Dao et al. (2022), [LIT-074](../literature.d/LIT-074.md) — [ARXIV-2205.14135](https://arxiv.org/abs/2205.14135).
 
 ## What the tiling is actually constrained by
 

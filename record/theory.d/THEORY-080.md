@@ -48,13 +48,13 @@ summary: >-
 
 ## Source
 
-Hsueh et al. (2025), [LIT-555](../literature.d/LIT-555.md)<!-- ref::source: LIT-555 --> — read as [NOTE-297](../notes.d/NOTE-297.md). The cold end of
-the evidence is Bansal et al. (2022), [LIT-553](../literature.d/LIT-553.md)<!-- ref::source: LIT-553 -->. Filed for `#163`'s
+Hsueh et al. (2025), [LIT-555](../literature.d/LIT-555.md) — read as [NOTE-297](../notes.d/NOTE-297.md). The cold end of
+the evidence is Bansal et al. (2022), [LIT-553](../literature.d/LIT-553.md). Filed for `#163`'s
 "[theory] warm diffusion".
 
 ## The account
 
-It replaces [THEORY-079](THEORY-079.md)<!-- ref::corrects: THEORY-079 -->, which read Cold Diffusion as showing <!-- inactive-ok: THEORY-079 — Rejected, and the account this one corrects; the citation is the correction's explanation -->
+It replaces [THEORY-079](THEORY-079.md), which read Cold Diffusion as showing <!-- inactive-ok: THEORY-079 — Rejected, and the account this one corrects; the citation is the correction's explanation -->
 that noise is incidental and any degradation, iterated, generates. This
 account keeps the restore-and-redegrade procedure and gives noise the job
 that one denied it: keeping the reverse process where the forward process

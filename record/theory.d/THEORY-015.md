@@ -29,10 +29,10 @@ summary: >-
 
 ## Source
 
-Wager et al. (2013), [LIT-396](../literature.d/LIT-396.md)<!-- ref::source: LIT-396 -->, with
+Wager et al. (2013), [LIT-396](../literature.d/LIT-396.md), with
 the same conclusion reached independently in Baldi and Sadowski (2013),
-[LIT-393](../literature.d/LIT-393.md)<!-- ref::source: LIT-393 --> §5, and in Srivastava et al.
-(2014), [LIT-395](../literature.d/LIT-395.md)<!-- ref::source: LIT-395 --> §9.1.
+[LIT-393](../literature.d/LIT-393.md) §5, and in Srivastava et al.
+(2014), [LIT-395](../literature.d/LIT-395.md) §9.1.
 
 ## What was actually shown
 
@@ -101,5 +101,5 @@ they are is one formalism answering two different questions.
 
 **It is not why dropout is used.** This says what dropout does to the
 objective. Whether doing that is worth 2-3x the training time, and in which
-data regime, is a practice question — [SOTA-240](../practices.d/SOTA-240.md)<!-- ref::explains: SOTA-240 --> — and the
+data regime, is a practice question — [SOTA-240](../practices.d/SOTA-240.md) — and the
 answer there is conditional in a way this document has nothing to say about.

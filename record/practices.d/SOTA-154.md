@@ -119,7 +119,7 @@ extended_by:
 
 ## Source
 
-Qiu et al. (2025), [LIT-211](../literature.d/LIT-211.md)<!-- ref::introduced_by: LIT-211 --><!-- ref::source: LIT-211 --> — [ARXIV-2509.24372](https://arxiv.org/abs/2509.24372).
+Qiu et al. (2025), [LIT-211](../literature.d/LIT-211.md) — [ARXIV-2509.24372](https://arxiv.org/abs/2509.24372).
 
 The assumption this overturns is that searching a billion-dimensional
 parameter space directly is hopeless, which is why prior ES work on LLMs
@@ -150,7 +150,7 @@ practice rests on.
 
 ## The replication, and why it counts
 
-Gan and Isola ([LIT-233](../literature.d/LIT-233.md)<!-- ref::source: LIT-233 -->) ran evolution strategies as a baseline in
+Gan and Isola ([LIT-233](../literature.d/LIT-233.md)) ran evolution strategies as a baseline in
 a paper about something else, and that is what makes it worth more than a
 friendly replication rather than less. Six tasks outside Countdown and the
 conciseness objective — GSM8K, MATH-500, OlympiadBench, MBPP, ROCStories,
@@ -169,9 +169,9 @@ asymmetry are real and the measurement is not in doubt — the classification
 was.
 
 **What carries the promotion instead**, identified after the fact: Hoy et al.
-([LIT-235](../literature.d/LIT-235.md)<!-- ref::source: LIT-235 -->), at 4B, four tasks, both arms hyperparameter-swept, ES
+([LIT-235](../literature.d/LIT-235.md)), at 4B, four tasks, both arms hyperparameter-swept, ES
 highest on all four — no author in common with [LIT-211](../literature.d/LIT-211.md). Then Ba et al.
-([LIT-230](../literature.d/LIT-230.md)<!-- ref::source: LIT-230 -->) on coverage, Sarkar et al. ([LIT-229](../literature.d/LIT-229.md)) on a recurrent
+([LIT-230](../literature.d/LIT-230.md)) on coverage, Sarkar et al. ([LIT-229](../literature.d/LIT-229.md)) on a recurrent
 architecture, and Sun et al. ([LIT-240](../literature.d/LIT-240.md)) at matched memory. The practice
 stays `Active` on those; it would not have been promoted on [LIT-233](../literature.d/LIT-233.md) alone
 had the authorship been checked.
@@ -183,7 +183,7 @@ account of why it works, in [THEORY-006](../theory.d/THEORY-006.md).
 
 ## What is contested, and what is not
 
-Gu et al. ([LIT-231](../literature.d/LIT-231.md)<!-- ref::contested_by: LIT-231 -->) disagree, in their own second sentence:
+Gu et al. ([LIT-231](../literature.d/LIT-231.md)) disagree, in their own second sentence:
 "directly applying ES to billion-parameter LLMs is highly ineffective",
 because almost all random perturbations in such a space are near-orthogonal
 to a useful descent direction. Their Hyper-ES replaces the search space
@@ -221,7 +221,7 @@ learning with verifiable rewards raises pass@1 and **lowers** pass@k, often
 below the base model's — GRPO finishes under its own base on both pass@16 and
 pass@32 in 15 of 18 comparisons ([LIT-230](../literature.d/LIT-230.md)), and across Qwen2.5, Qwen3
 and published RL checkpoints up to 32B the base model eventually overtakes the
-RL checkpoint ([LIT-234](../literature.d/LIT-234.md)<!-- ref::source: LIT-234 -->). Evolution strategies raise both, and never
+RL checkpoint ([LIT-234](../literature.d/LIT-234.md)). Evolution strategies raise both, and never
 fall below base at any `k` or scale tested.
 
 So the case for this practice is strongest exactly where test-time sampling is
@@ -245,7 +245,7 @@ set out to find:
 
 | Finding | Models | Source |
 |---|---|---|
-| GRPO ahead on 3 of 4 tasks | 1B, 1.5B | [LIT-237](../literature.d/LIT-237.md)<!-- ref::contested_by: LIT-237 --> |
+| GRPO ahead on 3 of 4 tasks | 1B, 1.5B | [LIT-237](../literature.d/LIT-237.md) |
 | Direct ES "highly ineffective" | 0.5B, 1.5B | [LIT-231](../literature.d/LIT-231.md) |
 | ES ahead in most cells | 1.5B–8B | [LIT-233](../literature.d/LIT-233.md) |
 | ES highest peak accuracy, 4 of 4 tasks | 4B | [LIT-235](../literature.d/LIT-235.md) |

@@ -41,7 +41,7 @@ summary: >-
 
 ## Source
 
-Geiping and Goldstein (ICML 2023), [LIT-681](../literature.d/LIT-681.md)<!-- ref::introduced_by: LIT-681 --><!-- ref::source: LIT-681 -->, §4.4 and Tables 2 and 7.
+Geiping and Goldstein (ICML 2023), [LIT-681](../literature.d/LIT-681.md), §4.4 and Tables 2 and 7.
 
 ## What to do
 

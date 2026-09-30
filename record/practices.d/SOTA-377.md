@@ -29,7 +29,7 @@ implementations: []
 
 ## Source
 
-Zhai et al. (2023), [LIT-605](../literature.d/LIT-605.md)<!-- ref::introduced_by: LIT-605 --><!-- ref::source: LIT-605 --> — [ARXIV-2303.15343](https://arxiv.org/abs/2303.15343), §4.
+Zhai et al. (2023), [LIT-605](../literature.d/LIT-605.md) — [ARXIV-2303.15343](https://arxiv.org/abs/2303.15343), §4.
 
 ## The claim
 

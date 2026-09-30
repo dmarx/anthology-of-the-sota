@@ -34,9 +34,9 @@ explained_by:
 
 ## Source
 
-Hu and Frank (2024), [LIT-465](../literature.d/LIT-465.md)<!-- ref::introduced_by: LIT-465 --><!-- ref::source: LIT-465 --> — [ARXIV-2404.02418](https://arxiv.org/abs/2404.02418),
+Hu and Frank (2024), [LIT-465](../literature.d/LIT-465.md) — [ARXIV-2404.02418](https://arxiv.org/abs/2404.02418),
 read as [NOTE-215](../notes.d/NOTE-215.md) — for the systematic evidence. Lawsen (2025),
-[LIT-463](../literature.d/LIT-463.md)<!-- ref::source: LIT-463 -->, for the worked example. Accounted for by
+[LIT-463](../literature.d/LIT-463.md), for the worked example. Accounted for by
 [THEORY-039](../theory.d/THEORY-039.md).
 
 ## What to check

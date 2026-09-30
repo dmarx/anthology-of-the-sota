@@ -55,13 +55,13 @@ summary: >-
 
 ## Source
 
-Corpus et al. (2025), [LIT-487](../literature.d/LIT-487.md)<!-- ref::source: LIT-487 --> — read as [NOTE-236](../notes.d/NOTE-236.md).
+Corpus et al. (2025), [LIT-487](../literature.d/LIT-487.md) — read as [NOTE-236](../notes.d/NOTE-236.md).
 
 ## What it explains
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-298](../practices.d/SOTA-298.md)<!-- ref::explains: SOTA-298 --> | measure a writing assistant by the outcome, not by the text features that used to predict it | the features are not a cheaper measurement of the same thing; their correlation with the outcome was partly a fact about the population, and the tool changes the population |
+| [SOTA-298](../practices.d/SOTA-298.md) | measure a writing assistant by the outcome, not by the text features that used to predict it | the features are not a cheaper measurement of the same thing; their correlation with the outcome was partly a fact about the population, and the tool changes the population |
 
 ## The account
 

@@ -42,7 +42,7 @@ summary: >-
 
 ## Source
 
-Kumar, Bordelon, Gershman and Pehlevan (2023), [LIT-537](../literature.d/LIT-537.md)<!-- ref::source: LIT-537 --> —
+Kumar, Bordelon, Gershman and Pehlevan (2023), [LIT-537](../literature.d/LIT-537.md) —
 [ARXIV-2310.06110](https://arxiv.org/abs/2310.06110), ICLR 2024. The account, both knobs, the three conditions
 and the no-weight-decay counterexample below are all this paper's.
 
@@ -79,7 +79,7 @@ throughout; and the network starts lazy.
 decay: the model groks, and the parameter weight norm rises through the
 transition.** The polynomial-regression task behaves the same way.
 
-Both [THEORY-072](THEORY-072.md)<!-- ref::corrects: THEORY-072 --> and [THEORY-071](THEORY-071.md)<!-- ref::corrects: THEORY-071 --> explain grokking by a late *decrease*
+Both [THEORY-072](THEORY-072.md) and [THEORY-071](THEORY-071.md) explain grokking by a late *decrease*
 in weight norm — one as a walk down to the generalizing shell, the other as
 norm moving from the memorising circuit to the more efficient one. Neither can
 produce a run with no regularizer and a rising norm. That is why `corrects` is

@@ -41,10 +41,10 @@ summary: >-
 
 ## Source
 
-Lu et al. (2024), [LIT-452](../literature.d/LIT-452.md)<!-- ref::introduced_by: LIT-452 --><!-- ref::source: LIT-452 --> — [ARXIV-2406.15720](https://arxiv.org/abs/2406.15720). The cost argument, and
+Lu et al. (2024), [LIT-452](../literature.d/LIT-452.md) — [ARXIV-2406.15720](https://arxiv.org/abs/2406.15720). The cost argument, and
 what this practice rests on.
 
-Borgeaud et al. (2021), [LIT-060](../literature.d/LIT-060.md)<!-- ref::source: LIT-060 --> — RETRO. Here because a recommendation to
+Borgeaud et al. (2021), [LIT-060](../literature.d/LIT-060.md) — RETRO. Here because a recommendation to
 do one thing instead of another needs the alternative to be viable, and this
 is the record's evidence that it is.
 

@@ -32,7 +32,7 @@ summary: >-
 
 ## Source
 
-Zhang et al. (2021), [LIT-226](../literature.d/LIT-226.md)<!-- ref::source: LIT-226 -->, and Zhang et al. (2023), [LIT-228](../literature.d/LIT-228.md)<!-- ref::source: LIT-228 -->.
+Zhang et al. (2021), [LIT-226](../literature.d/LIT-226.md), and Zhang et al. (2023), [LIT-228](../literature.d/LIT-228.md).
 
 ## What was actually shown
 
@@ -58,7 +58,7 @@ fine-grained neuron functions."
 
 ## What this explains
 
-It is the account under [SOTA-150](../practices.d/SOTA-150.md)<!-- ref::explains: SOTA-150 -->. Making the feed-forward layers a sparse
+It is the account under [SOTA-150](../practices.d/SOTA-150.md). Making the feed-forward layers a sparse
 mixture of experts is usually argued for on the economics — total parameters
 stop determining per-token compute — which says why you would *want* it to
 work and not why it *does*. This says why it does: the architecture is not
@@ -66,7 +66,7 @@ imposing a constraint the model must be coaxed into satisfying, it is
 declaring one dense training arrives at on its own. The router replaces an
 implicit selection with an explicit one.
 
-It also bears on [SOTA-149](../practices.d/SOTA-149.md)<!-- ref::explains: SOTA-149 -->, and more sharply than on [SOTA-150](../practices.d/SOTA-150.md). That practice's
+It also bears on [SOTA-149](../practices.d/SOTA-149.md), and more sharply than on [SOTA-150](../practices.d/SOTA-150.md). That practice's
 diagnosis is that conventional top-K-of-N routing fails to deliver expert
 specialisation, and that fine segmentation into many small experts fixes it.
 If specialisation in a dense model is a property of *neuron-level* clusters,

@@ -21,7 +21,7 @@ implementations:
 
 ## Source
 
-Kirillov et al. (2023), [LIT-096](../literature.d/LIT-096.md)<!-- ref::introduced_by: LIT-096 --><!-- ref::source: LIT-096 --> — [ARXIV-2304.02643](https://arxiv.org/abs/2304.02643), ICCV 2023.
+Kirillov et al. (2023), [LIT-096](../literature.d/LIT-096.md) — [ARXIV-2304.02643](https://arxiv.org/abs/2304.02643), ICCV 2023.
 
 The dataset and the model are built together, in three stages, and the
 staging is the practice:

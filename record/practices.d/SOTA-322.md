@@ -47,7 +47,7 @@ summary: >-
 
 ## Source
 
-Saratchandran, Teney and Lucey (2025), [LIT-527](../literature.d/LIT-527.md)<!-- ref::introduced_by: LIT-527 --><!-- ref::source: LIT-527 --> — read as
+Saratchandran, Teney and Lucey (2025), [LIT-527](../literature.d/LIT-527.md) — read as
 [NOTE-269](../notes.d/NOTE-269.md).
 
 ## Do this

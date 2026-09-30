@@ -38,7 +38,7 @@ explained_by:
 
 ## Source
 
-Yang and Hu (2022), [LIT-148](../literature.d/LIT-148.md)<!-- ref::introduced_by: LIT-148 --><!-- ref::source: LIT-148 --> — Tensor Programs V.
+Yang and Hu (2022), [LIT-148](../literature.d/LIT-148.md) — Tensor Programs V.
 
 Scale initialisation variances and per-layer learning rates with width the
 way the Maximal Update Parametrization prescribes, and the optimal
@@ -49,7 +49,7 @@ BERT-large from a 13M-parameter sweep, and the published GPT-3 6.7B from a
 40M-parameter sweep at about 7% of the large model's pretraining cost.
 
 **The optimum transfers as a window, not a point, and the width of that
-window has now been measured.** [LIT-501](../literature.d/LIT-501.md)<!-- ref::source: LIT-501 --> sweeps ten
+window has now been measured.** [LIT-501](../literature.d/LIT-501.md) sweeps ten
 µP-coordinated learning rates over `[5×10⁻⁵, 5×10⁻⁴]` across four SiT sizes
 with ten training seeds per cell. Under a per-cell tuned FID the valleys are
 flat-bottomed near `2–3×10⁻⁴` at every size, with the two rates flanking each

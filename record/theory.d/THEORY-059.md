@@ -58,12 +58,12 @@ summary: >-
 ## Source
 
 The account is Li, Lin, Zhang, Cai, Li, Guo, Xie, Meng, Zhu and Han (2024),
-[LIT-512](../literature.d/LIT-512.md)<!-- ref::source: LIT-512 --> — read as [NOTE-257](../notes.d/NOTE-257.md). Propositions 4.1
+[LIT-512](../literature.d/LIT-512.md) — read as [NOTE-257](../notes.d/NOTE-257.md). Propositions 4.1
 and 4.2, with proofs in the appendix.
 
 Its spectral premise is measured outside that paper's model class by Staats,
-Thamm and Rosenow (2024), [LIT-517](../literature.d/LIT-517.md)<!-- ref::source: LIT-517 -->, and Jaiswal et al.
-(2024), [LIT-516](../literature.d/LIT-516.md)<!-- ref::source: LIT-516 -->. Neither proposes this account; they are
+Thamm and Rosenow (2024), [LIT-517](../literature.d/LIT-517.md), and Jaiswal et al.
+(2024), [LIT-516](../literature.d/LIT-516.md). Neither proposes this account; they are
 cited as sources because what the account now claims — that this is how
 weight matrices behave, not how diffusion transformer weight matrices behave
 — rests on them.
@@ -72,7 +72,7 @@ weight matrices behave, not how diffusion transformer weight matrices behave
 
 | practice | what it says to do | what this says is going on |
 |---|---|---|
-| [SOTA-314](../practices.d/SOTA-314.md)<!-- ref::explains: SOTA-314 --> | absorb outliers into a high-precision low-rank branch taken from the weights, and fuse its kernels | the branch pays off because the weight matrix is nearly low-rank in its largest directions, and it would not pay off if applied one step later |
+| [SOTA-314](../practices.d/SOTA-314.md) | absorb outliers into a high-precision low-rank branch taken from the weights, and fuse its kernels | the branch pays off because the weight matrix is nearly low-rank in its largest directions, and it would not pay off if applied one step later |
 
 ## The account
 

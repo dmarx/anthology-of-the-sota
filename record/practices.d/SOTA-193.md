@@ -31,7 +31,7 @@ implementations:
 
 ## Source
 
-Smith et al. (2022), [LIT-065](../literature.d/LIT-065.md)<!-- ref::introduced_by: LIT-065 --><!-- ref::source: LIT-065 --> — the MT-NLG 530B training report, which states
+Smith et al. (2022), [LIT-065](../literature.d/LIT-065.md) — the MT-NLG 530B training report, which states
 it as an operational finding:
 
 > We also reduced β₂ from its standard value of 0.99 to reduce spikes in the

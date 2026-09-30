@@ -38,7 +38,7 @@ summary: >-
 
 ## Source
 
-Barbero et al. (2024), [LIT-210](../literature.d/LIT-210.md)<!-- ref::introduced_by: LIT-210 --><!-- ref::source: LIT-210 --> — [ARXIV-2410.06205](https://arxiv.org/abs/2410.06205).
+Barbero et al. (2024), [LIT-210](../literature.d/LIT-210.md) — [ARXIV-2410.06205](https://arxiv.org/abs/2410.06205).
 
 **The justification everyone repeats for RoPE is wrong.** The original
 argument was that the encoding helps because attention decays with relative

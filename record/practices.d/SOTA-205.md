@@ -52,15 +52,15 @@ summary: >-
 
 Four papers, converging from different directions:
 
-- Müller et al. (2022), [LIT-064](../literature.d/LIT-064.md)<!-- ref::introduced_by: LIT-064 --><!-- ref::source: LIT-064 --> — a **multiresolution hash grid**;
+- Müller et al. (2022), [LIT-064](../literature.d/LIT-064.md) — a **multiresolution hash grid**;
   training in seconds, rendering in tens of milliseconds.
-- Kerbl et al. (2023), [LIT-108](../literature.d/LIT-108.md)<!-- ref::source: LIT-108 --> — **anisotropic 3D Gaussians**; the first
+- Kerbl et al. (2023), [LIT-108](../literature.d/LIT-108.md) — **anisotropic 3D Gaussians**; the first
   real-time (>=30 fps) radiance-field rendering at 1080p.
-- Fridovich-Keil et al. (2023), [LIT-086](../literature.d/LIT-086.md)<!-- ref::source: LIT-086 --> — **planar factorisation**, and
+- Fridovich-Keil et al. (2023), [LIT-086](../literature.d/LIT-086.md) — **planar factorisation**, and
   the one that needs no custom kernels.
-- Wang et al. (2023), [LIT-109](../literature.d/LIT-109.md)<!-- ref::source: LIT-109 --> — the hash-encoding line applied to
+- Wang et al. (2023), [LIT-109](../literature.d/LIT-109.md) — the hash-encoding line applied to
   implicit **surfaces** rather than radiance fields.
-- Zhang et al. (2024), [LIT-511](../literature.d/LIT-511.md)<!-- ref::source: LIT-511 --> — read as [NOTE-256](../notes.d/NOTE-256.md) —
+- Zhang et al. (2024), [LIT-511](../literature.d/LIT-511.md) — read as [NOTE-256](../notes.d/NOTE-256.md) —
   **2D Gaussians for a single image**, and the first source here outside 3D.
 
 ## What it costs to decode, measured

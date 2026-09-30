@@ -224,7 +224,7 @@ maps "strikingly similar" to several methods' — and [THEORY-115](../theory.d/T
 because partial image recovery is what an edge detector approximates.
 
 **This half has a number, and it is older than the practice.** Grad-CAM's own
-paper, [LIT-tmp367ex](../literature.d/LIT-tmp367ex.md), put four visualizations of the same image in front
+paper, [LIT-732](../literature.d/LIT-732.md), put four visualizations of the same image in front
 of Mechanical Turk workers and asked which of the image's two annotated
 categories was being shown — 90 image-category pairs, 9 ratings each:
 
@@ -273,7 +273,7 @@ GradCAM as failing. **It gives Integrated Gradients ([LIT-712](../literature.d/L
 and neither does this practice.
 
 **Rows two and three are one construction, and the table does not show it.**
-GradCAM and Guided GradCAM are both defined in [LIT-tmp367ex](../literature.d/LIT-tmp367ex.md), and Guided
+GradCAM and Guided GradCAM are both defined in [LIT-732](../literature.d/LIT-732.md), and Guided
 GradCAM *is* GradCAM's map — 14×14 at the last conv layer of VGG-16, upsampled
 bilinearly — multiplied element-wise by a guided backprop map. So the passing
 row and the failing row differ by one factor, and every pixel of fine structure

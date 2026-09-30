@@ -83,6 +83,9 @@
     "ARXIV/1609.08326": {
       "title": "Asynchronous Stochastic Gradient Descent with Delay Compensation"
     },
+    "ARXIV/1610.02391": {
+      "title": "Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization"
+    },
     "ARXIV/1610.09038": {
       "title": "Professor Forcing: A New Algorithm for Training Recurrent Networks"
     },

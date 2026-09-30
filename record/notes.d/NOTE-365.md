@@ -175,7 +175,7 @@ relation is declared (see [LIT-713](../literature.d/LIT-713.md)).
   Backprop, Guided GradCAM) are not held as notes.~~ **Three of the four are
   now held, and it took two documents rather than four.** Guided Backprop is
   [LIT-727](../literature.d/LIT-727.md); GradCAM *and* Guided GradCAM are both
-  [LIT-tmp367ex](../literature.d/LIT-tmp367ex.md), because Guided GradCAM is defined there as
+  [LIT-732](../literature.d/LIT-732.md), because Guided GradCAM is defined there as
   GradCAM's coarse map multiplied element-wise by a guided backprop map. **So
   C1 and C2 are one factor apart** — the method C2 clears is one of the two
   factors of a method C1 fails — which this reading could not have said while

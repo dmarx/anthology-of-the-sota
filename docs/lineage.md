@@ -2,7 +2,7 @@
 
 # Lines of work
 
-57 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+58 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -108,6 +108,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-674](../record/literature.d/LIT-674.md) — Robust fine-tuning of zero-shot models *(Active)*
 - alongside: [LIT-675](../record/literature.d/LIT-675.md) — Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time *(Active)*
+
+### From Striving for Simplicity: The All Convolutional Net
+
+- alongside: [LIT-727](../record/literature.d/LIT-727.md) — Striving for Simplicity: The All Convolutional Net *(Active)*
+- alongside: [LIT-728](../record/literature.d/LIT-728.md) — Visualizing and Understanding Convolutional Networks *(Active)*
+- alongside: [LIT-732](../record/literature.d/LIT-732.md) — Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization *(Active)*
 
 ## attention-techniques
 
@@ -647,3 +653,9 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-662](../record/literature.d/LIT-662.md) — Vision Transformers Need Registers *(Active)*
 - alongside: [LIT-663](../record/literature.d/LIT-663.md) — DINOv3 *(Active)*
 - alongside: [LIT-664](../record/literature.d/LIT-664.md) — Emerging Properties in Self-Supervised Vision Transformers *(Active)*
+
+### From Striving for Simplicity: The All Convolutional Net
+
+- alongside: [LIT-727](../record/literature.d/LIT-727.md) — Striving for Simplicity: The All Convolutional Net *(Active)*
+- alongside: [LIT-728](../record/literature.d/LIT-728.md) — Visualizing and Understanding Convolutional Networks *(Active)*
+- alongside: [LIT-732](../record/literature.d/LIT-732.md) — Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization *(Active)*

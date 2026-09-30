@@ -97,7 +97,7 @@ work perfectly well.
 - **Retire by changing status, never by deleting.** `Rejected` is the attic;
   `Superseded` names its successor. The body stays.
 - **Some relations must be explained where they are held**
-  ([ADR-tmp7icjh](record/decisions.d/ADR-tmp7icjh.md)). A practice's or theory's `source`, a practice's `introduced_by`,
+  ([ADR-063](record/decisions.d/ADR-063.md)). A practice's or theory's `source`, a practice's `introduced_by`,
   a theory's `explains`, every `corrects`, `contested_by`, and `extends` on
   practices and theories: each code is cited somewhere in the body, in visible
   prose that says what the relation means (`explain: cited`). No `ref::`

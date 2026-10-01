@@ -90,6 +90,12 @@ For the feed-forward and attention projection matrices:
 
 More than 99.9% of values go through the 8-bit path.
 
+This is LIT-586's recipe, and the evidence for it is the same paper's.
+Dettmers et al. proposed vector-wise quantization plus the mixed-precision
+decomposition as LLM.int8(), and report that a 175B 16/32-bit checkpoint
+converted this way runs at half the memory with no degradation on their
+evaluations at any scale they tested up to 175B.
+
 ## Why the decomposition is the whole method
 
 Naive int8 works on small transformers and breaks on large ones, and for

@@ -41,6 +41,15 @@ form is [SOTA-350](SOTA-350.md).
 
 ## The practice
 
+The recommendation is LIT-579's. Tönshoff et al. re-ran the Long-Range Graph
+Benchmark with message-passing baselines tuned as carefully as the
+transformer, in the same 500k-parameter budget. Retuned GCN went from 0.593
+to 0.686 AP on Peptides-func and from 0.350 to 0.246 MAE on Peptides-struct,
+past GPS at 0.653 and 0.251, and the MLP head alone accounts for most of that
+gain. On PascalVOC-SP GPS still leads after tuning (F1 0.444 against
+GatedGCN's 0.388), and normalization is at least half of most models' gain
+there.
+
 - **Give the MPGNN an MLP readout.** A linear head on pooled node states was
   the largest single handicap on Peptides
 - **Treat positional or structural encodings** (none, LapPE, RWSE) as a

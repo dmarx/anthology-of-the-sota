@@ -45,6 +45,14 @@ Abramson et al. (2024), [LIT-584](../literature.d/LIT-584.md). Read as [NOTE-320
 
 ## The practice
 
+The recommendation originates in LIT-584. Abramson et al. found AlphaFold 3's
+diffusion head inventing compact structure in disordered regions, added
+AlphaFold-Multimer predictions to its training data, and report that this
+cross-distillation "greatly reduced" hallucination. The support is that
+phrase and an Extended Data figure this record has not read. What the main
+text does show is that the hallucinations which remain are low-confidence but
+not visibly disordered.
+
 - **Expect a generative head to fill gaps with plausible structure.** The
   data under-determines disordered regions, and a sampler resolves that by
   inventing structure

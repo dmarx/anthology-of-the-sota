@@ -43,6 +43,11 @@ changes.
 
 ## Why this is unusually well-evidenced for its size
 
+Multi-crop was proposed in LIT-598, Caron et al.'s SwAV paper, as a change to
+the augmentation separable from SwAV's swapped-prediction objective: two
+standard-resolution crops plus several smaller ones, so the number of views
+rises without a matching rise in compute or memory.
+
 The paper that introduced it **did not keep it**. Multi-crop was applied to
 **SimCLR, DeepCluster and DeepCluster-v2** — three methods with three
 different objectives, one of them contrastive with negatives and two

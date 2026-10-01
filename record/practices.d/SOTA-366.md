@@ -46,6 +46,10 @@ SimSiam's runs sit at `1/√d` with the stop-gradient and drop to `0` without
 it. A number that is neither is a partial collapse, and its distance from
 `1/√d` is roughly how much of the sphere is being used.
 
+The measure, its two reference values and the Gaussian derivation of `1/√d`
+are from SimSiam, LIT-593 §4.1, which introduced it to show that its
+no-stop-gradient variant had collapsed while the loss reported success.
+
 ## Why this rather than the loss
 
 **Because the loss endorses the failure.** Without the stop-gradient,

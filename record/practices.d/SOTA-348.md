@@ -38,6 +38,14 @@ Cohen et al. (2023), [LIT-577](../literature.d/LIT-577.md). Read as [NOTE-314](.
 
 ## The practice
 
+Cohen et al. introduced this evaluation in LIT-577, with RippleEdits, a
+benchmark of six criteria for what an edit should change besides the queried
+triple. Measured there, ROME, MEMIT and MEND average 38–66 across subsets and
+models. Logical generalization falls to 5.5–7.0 on the POPULAR subset for
+GPT-2 and GPT-J while subject aliasing scores 86–100, and in-context editing
+averages 81–83 on LLaMA-7B against ROME's 49–61. The first bullet answers the
+gap between aliases and consequences, and the third is the in-context result.
+
 - **Test the consequences.** For an edit (s, r, o → o′), query relations
   implied by it (inverse and symmetric relations), two-hop questions that
   pass through o′, the subject under its aliases, and s's other facts,

@@ -85,6 +85,11 @@ representation in the abstract. It is that the exact-words target is an
 expensive way to buy supervision that the matching target buys cheaply, and
 at fixed compute that difference is the result.
 
+Both decisions, and the ladder that justifies the second, are LIT-588's:
+CLIP trained an image and a text encoder on 400M web image-text pairs with
+the matching objective, and chose that objective over caption prediction on
+the strength of the 3× and 4× measurements above.
+
 ## What is deliberately absent
 
 The simplifications matter as much as the objective, because copying the

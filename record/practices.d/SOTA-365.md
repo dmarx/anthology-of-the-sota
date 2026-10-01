@@ -69,6 +69,13 @@ than the same weights — and reaches 74.3% ImageNet linear against SimSiam's
 67.7% at 100 epochs. The EMA helps. SimSiam's result is that it is not
 *required*.
 
+The recommendation starts with BYOL, LIT-594: an online network with a
+predictor regresses onto an EMA copy of itself under a different
+augmentation, with no negatives, and reaches 74.3% with a ResNet-50; its
+ablations supply the predictor and EMA findings below. SimSiam, LIT-593,
+removed the EMA from that design, showed that a shared encoder, a predictor
+and a stop-gradient still learn, and supplies the stop-gradient finding.
+
 ## What is load-bearing, as far as anyone has shown
 
 - **Stop-gradient is not optional.** Removing it, with everything else held

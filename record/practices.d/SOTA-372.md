@@ -61,6 +61,11 @@ Two asymmetries, and both matter:
   latent to the target, which is a lower-level task than recognition, so it
   does not need to be large and its weights are not what you keep.
 
+The design is LIT-601's: He et al. introduced it for MAE, with the encoder
+running on the visible quarter of the patches and a lightweight decoder taking
+the encoded patches plus a shared learned mask token to reconstruct pixels.
+Their measurement is the one this practice rests on.
+
 The measured result is **3× or more** faster pretraining and reduced memory,
 "without any specialized sparse operations".
 

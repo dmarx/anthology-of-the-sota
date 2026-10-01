@@ -51,6 +51,11 @@ The measurements, on ImageNet:
 The paper measures that ~5% as **equivalent to using 4× more compute** with
 the contextless method.
 
+The recommendation is CLIP's own: LIT-588 built its zero-shot classifiers
+this way, wrote the 80 ImageNet templates, measured each step above, and
+chose to average in embedding space rather than probability space precisely
+so that one cached set of class vectors would carry the whole ensemble.
+
 ## Why it is nearly free, which is the part that makes it a practice
 
 Averaging happens in the **embedding space**, not over softmax outputs. So

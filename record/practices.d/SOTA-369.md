@@ -51,6 +51,12 @@ two days to produce a 142M-image set.
 
 ## The comparison that makes it a practice rather than a preference
 
+Both the pipeline and the comparison are LIT-599's. Oquab et al. built
+LVD-142M this way to train DINOv2, and proposed curation by retrieval as the
+alternative to scaling the uncurated pool, on the thesis that existing
+self-supervised objectives already give general-purpose features "if trained
+on enough curated data from diverse sources".
+
 Against **142M images randomly sampled from the same source**, the curated
 set wins. That controls for volume, for the source distribution and for the
 crawl — the three confounds that make most data claims unfalsifiable — and

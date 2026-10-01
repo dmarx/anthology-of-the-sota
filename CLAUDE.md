@@ -98,7 +98,7 @@ work perfectly well.
   `Superseded` names its successor. The body stays.
 - **Some relations must be explained where they are held**
   ([ADR-063](record/decisions.d/ADR-063.md)). A practice's or theory's `source`, a practice's `introduced_by`,
-  a theory's `explains`, every `corrects`, `contested_by`, `extends` and
+  a theory's `explains`, every `corrects`, `contested_by`, `rivals`, `extends` and
   `compared_against`: each code is cited in the body, in visible prose that
   says what the relation means (`explain: cited`). No `ref::` statement is
   needed beside the citation; the sentence is the explanation. **The `##

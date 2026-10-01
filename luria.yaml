@@ -844,6 +844,34 @@ schemes:
         required: false
         many: true
         converse: corrects
+      # Contestation, added by ADR-tmpkrt96. `corrects` says an account has
+      # replaced another's reasoning; nothing said that an account is disputed
+      # and not yet replaced, which is the usual state of a Proposed theory.
+      # Two relations, because a theory is disputed in two ways: by evidence
+      # (a paper whose results cut against it, `contested_by`, scheme LIT and
+      # no converse, exactly as on SOTA) and by a rival account of the same
+      # phenomenon (`rivals`, symmetric, so it names itself as its converse).
+      contested_by:
+        explain: cited   # ADR-063
+        label: Contested by
+        blurb: >-
+          the published work whose evidence disputes this account. Not a
+          paper that merely proposes a different account: that is `rivals`,
+          between the two theories.
+        scheme: LIT
+        required: false
+        many: true
+      rivals:
+        explain: cited   # ADR-063
+        label: Rival account
+        blurb: >-
+          another account of the same phenomenon that cannot also be right,
+          where neither yet corrects the other. Settled, it becomes
+          `corrects` on the winner and a status on the loser.
+        scheme: THEORY
+        required: false
+        many: true
+        converse: rivals
     fields:
       # The same rule as the practice registry's (ADR-014), and if anything a
       # sharper one here: what distinguishes an explanation from a story is

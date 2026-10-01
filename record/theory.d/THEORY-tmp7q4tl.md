@@ -22,6 +22,8 @@ date: '2026-10-01'
 source:
 - LIT-tmp8tr17
 explains: []
+contested_by:
+- LIT-414
 summary: >-
   Chen et al. (2024), [LIT-tmp8tr17](../literature.d/LIT-tmp8tr17.md) — SepLLM. Attention in Llama-3-8B-Instruct
   concentrates on punctuation and whitespace, and the paper reads that as each

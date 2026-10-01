@@ -1,0 +1,99 @@
+---
+status: Active
+title: 'Theories can be contested: contested_by and rivals'
+version: 1
+tags:
+- taxonomy
+- record
+date: '2026-10-01'
+issue: '#397'
+summary: >-
+  The THEORY scheme gains two relations for an account that is disputed and
+  not yet replaced: `contested_by` (LIT, no converse), for a paper whose
+  evidence cuts against it, as on SOTA; and `rivals` (THEORY, symmetric), for
+  another account of the same phenomenon that cannot also be right. Both are
+  `explain: cited`. THEORY-070's `corrects` on the two weight-norm grokking
+  accounts becomes `rivals`, which is what its own `promote_when` already
+  said. Rejected: stretching `corrects` to cover disputes, and one combined
+  relation that takes either a paper or a theory.
+---
+<!-- inactive-ok-file: THEORY-024 THEORY-033 THEORY-070 THEORY-071 THEORY-072 THEORY-tmp7q4tl — Proposed; named because this decision changes their relations, and being disputed is why they are Proposed -->
+
+# ADR-tmpkrt96: Theories can be contested: contested_by and rivals
+
+## Context
+
+A practice could be contested from the start: SOTA has carried
+`contested_by:` since the schema was migrated. A theory could only be
+corrected. `corrects` says an account has *replaced* another's reasoning,
+and nothing in the THEORY scheme said that an account is disputed and
+nothing has replaced it yet, which is the ordinary state of a `Proposed`
+theory. The dispute lived in prose and in `inactive-ok` directives
+("one of the three rival mechanisms this cluster holds"), where nothing
+could check it and no view could show it.
+
+Two shapes of dispute were already in the record:
+
+- **By evidence.** THEORY-024 was demoted to `Proposed` because LIT-456's
+  geometry-free control matched Muon. THEORY-072 and THEORY-071 both cite
+  LIT-537's grokking run with no weight decay as the counterexample they cannot
+  absorb. The separator account filed on this branch, THEORY-tmp7q4tl, has
+  LIT-414's small value norms at `[SEP]` against it.
+- **By a rival account.** THEORY-070 was filed with `corrects` on THEORY-072 and
+  THEORY-071, and its own `promote_when` said it "corrects the weight-norm
+  accounts without replacing them". That is not what `corrects` means.
+  THEORY-033 says a spectral optimizer pays for its step size and not for its
+  geometry, where THEORY-024 says the geometry is why; neither has replaced the
+  other.
+
+The owner asked on #397 for contestation relations on the theory schema.
+
+## Decision
+
+Two relations on THEORY, both `explain: cited` (ADR-063):
+
+- **`contested_by`**, scheme `LIT`, no converse: the paper whose evidence
+  disputes the account. It mirrors SOTA's field exactly, including the
+  reason it has no converse: the far side would be a docket on a note.
+- **`rivals`**, scheme `THEORY`, its own converse: another account of the
+  same phenomenon that cannot also be right, where neither corrects the
+  other. Symmetric, like `compared_against` on LIT: the fact is one fact, so
+  `luria link --fix` writes the other side.
+
+When a dispute settles, `rivals` becomes `corrects` on the winner and a
+status on the loser. Two accounts that might both be true are not rivals:
+THEORY-032 and THEORY-033 locate the spectral optimizer's advantage in
+different places, and both documents say whether they are one mechanism is
+open, so they are left unrelated. Likewise THEORY-tmp7q4tl and the no-op
+reading it argues with are "not exclusive", so it takes `contested_by` and
+no `rivals`.
+
+Applied in this contribution:
+
+- THEORY-070: `corrects` → `rivals` on THEORY-072 and THEORY-071, at version 2.
+- THEORY-072 and THEORY-071: `contested_by: [LIT-537]`.
+- THEORY-024: `contested_by: [LIT-456]`, `rivals: [THEORY-033]`.
+- THEORY-tmp7q4tl: `contested_by: [LIT-414]`.
+
+## Alternatives considered
+
+- **Use `corrects` for disputes too.** That is what THEORY-070 did, and it
+  made `corrected_by` on the two weight-norm accounts read as if they had
+  been replaced, while the document doing the correcting said they had not.
+  A relation that means two things is checked as if it meant one.
+- **One `contested_by` accepting either a paper or a theory.** A paper's
+  evidence and a rival account are different kinds of dispute: one is
+  answered by a result, the other by a mechanism that explains more. A
+  rival is also symmetric and a paper's evidence is not, so one field
+  cannot declare the right converse for both.
+- **Status quo.** The disputes stay in prose and directives, invisible to
+  the views, and `corrects` keeps its second meaning.
+
+## Consequences
+
+- `CLAUDE.md`'s list of relations that must be explained in the body names
+  both.
+- A `rivals` relation needs a sentence on both sides, because the converse
+  is held too and is also `explain: cited`.
+- The three grokking accounts are now visibly a dispute rather than a chain
+  of corrections, which is what THEORY-069 says they are.

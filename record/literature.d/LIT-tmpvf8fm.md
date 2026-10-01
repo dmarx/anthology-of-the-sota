@@ -17,6 +17,9 @@ keywords:
 - 'knowledge-transfer'
 - 'pretraining-acceleration'
 implementations: []
+extends:
+- LIT-tmpqc73y
+- LIT-tmp9ul6p
 summary: >-
   Samragh et al. (2024), [ARXIV-2409.12903](https://arxiv.org/abs/2409.12903) — HyperCloning. Initialize a wider
   language model from a smaller pretrained one of the same depth by tiling
@@ -84,7 +87,13 @@ Samragh et al. (2024), Apple — [ARXIV-2409.12903](https://arxiv.org/abs/2409.1
 
 ## Standing in the anthology
 
-The record holds no model-growth paper; this is the first. Its nearest
+It says it builds on Net2Net ([LIT-tmpqc73y](LIT-tmpqc73y.md)), which introduced function-preserving
+width expansion for convolutional networks, and on bert2BERT ([LIT-tmp9ul6p](LIT-tmp9ul6p.md)), which
+carried it to BERT and GPT, and what it changes is their random replication of
+units, replaced by a symmetric tiling that copies every unit exactly n times so
+the function stays exact through layer norm.
+
+Its nearest
 neighbour is [SOTA-209](../practices.d/SOTA-209.md), which says to initialize a mixture-of-experts model
 from a dense checkpoint, on the evidence of [LIT-227](LIT-227.md)'s sparse upcycling.
 The two share a premise: a checkpoint you already paid for is a better

@@ -29,9 +29,13 @@ source:
 # float compression generally (its refs [58], [59]: Chen et al. 2006, MPC
 # 2015), and dietgpu, a code release with no paper, already offered
 # exponent-only coding. Delta compression against a stored base is credited to
-# Git-theta (arXiv 2306.04529), and the periodic full base is called
-# "customary". None is held. The recommendation as filed, applied to model
-# files and checkpoints with the LZ stage dropped, is stated first by the source.
+# Git-theta, now held (LIT-tmpumvqf) and read for this: it stores a model
+# version as typed updates against the previous one, but its deltas are sparse
+# or low-rank, a dense fine-tune is stored nearly whole, and it has no periodic
+# base. It is a precedent for part of step 4, not its origin; the periodic full
+# base is called "customary" and credited to nobody. The recommendation as
+# filed, applied to model files and checkpoints with the LZ stage dropped, is
+# stated first by the source.
 introduced_by:
 - LIT-tmpbjxkg
 implementations:
@@ -117,6 +121,22 @@ compression". It shows the same on the public Amber (BF16) and OLMo (FP32)
 checkpoint series. Those results are shown as figures, not tables. One
 number is given in the text, from three RoBERTa fine-tunes of one base: 83.7%
 standalone, 56% as pairwise deltas.
+
+**Where the delta half came from.** The source credits the idea of storing
+a base and then only differences to Git-Theta ([LIT-tmpumvqf](../literature.d/LIT-tmpumvqf.md)), a Git extension that
+versions a checkpoint per parameter group. Git-Theta does store a later
+version as a delta against an earlier one, restored by walking back through
+history, so the half of step 4 that says "store differences, not copies"
+originates there or earlier. The delta it stores is a different kind,
+though. It is typed by how the model was trained: indices and values for a
+sparse update, factors for a low-rank one, and the full new values for a
+dense one. In its one benchmark a LoRA commit took 0.27 GB against Git LFS's
+11.4, but dense fine-tunes of the same 3B model took 10.4–10.62 GB, nearly
+the whole checkpoint. It has no periodic base and bounds no chain. What
+this practice adds is a bytewise XOR delta of dense checkpoints,
+entropy-coded, against a base rewritten periodically. That is the source's,
+and it is what the checkpoint results above measure, so `introduced_by`
+stays with the source.
 
 **Training artifacts.** In one BF16 RoBERTa fine-tune, gradients compress to
 about 47% and optimizer state to about 54%, against about 66% for the

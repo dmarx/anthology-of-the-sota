@@ -30,8 +30,10 @@ source:
 # set to a small array. It argues that a stack of ISABs still scales with the
 # input at every layer, and that decoupling depth from input size with a
 # task-independent latent array is its own contribution. The Set Transformer is
-# not held. The recommendation as filed, a deep latent transformer behind a
-# cross-attention bottleneck, is stated first by the source.
+# now held (LIT-tmpt8znm) and was read for this: ISAB returns to the input size
+# after every block and PMA's output size is set by the task, so neither takes
+# the input out of depth. It is the origin of the primitive, not of the
+# recommendation, which is stated first by the source.
 introduced_by:
 - LIT-tmp7rvm6
 implementations:
@@ -128,6 +130,25 @@ anywhere.
 - **The original AudioSet numbers were wrong.** The first arXiv version
   reported higher mAPs because of a transposed score matrix (Appendix F). The
   numbers above are the corrected ones.
+
+## Where the primitive came from
+
+The cross-attention from a small learned array to a large input is older
+than the source. The Set Transformer ([LIT-tmpt8znm](../literature.d/LIT-tmpt8znm.md)) introduced it in two forms: an
+induced set attention block, in which `m` learned inducing points (16 in
+most of its runs) attend to an input set of `n` elements and the elements
+attend back, at `O(nm)` per block, and pooling by multihead attention, in which `k` learned
+seeds attend to the set to produce `k` outputs. With 16 inducing points it
+matched or beat full self-attention on amortized clustering, and on
+ModelNet40 it ran at 5,000 points where full attention was too slow. But
+neither block does what this practice asks. The induced block maps back to
+the input size, so a stack of them still pays for the whole input at every
+layer, and the pooling block's output size is fixed by the task, one seed
+for classification. The encoders it sets out are two blocks deep. The source makes the
+same comparison in its Appendix A and puts its contribution in the
+composition: a single large, task-independent latent array, and the depth
+placed behind it. So the Set Transformer supplies the mechanism and the
+Perceiver the recommendation, and `introduced_by` stays with the Perceiver.
 
 ## Beside the record's other practices
 

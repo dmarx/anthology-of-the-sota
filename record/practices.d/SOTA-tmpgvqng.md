@@ -13,8 +13,8 @@ promote_when: >-
 consensus: unreplicated
 consensus_note: >-
   One group, one paper, three model pairs, no seeds (LIT-tmpvf8fm). Width
-  growth from a trained model is older than this paper (Net2Net, bert2BERT;
-  neither held), but no independent group has re-run the symmetric
+  growth from a trained model is older than this paper (Net2Net, LIT-tmpqc73y;
+  bert2BERT, LIT-tmp9ul6p), but no independent group has re-run the symmetric
   construction on decoder language models. Read as of 2026-10.
 title: 'To pretrain a wider language model when a smaller pretrained one of the same depth exists, initialize it by function-preserving symmetric width expansion rather than at random'
 version: 1
@@ -24,13 +24,16 @@ tags:
 date: '2026-10-01'
 source:
 - LIT-tmpvf8fm
-# Function-preserving width growth is older. The source credits Chen et al.
-# 2015 (Net2Net, arXiv 1511.05641) for introducing width expansion, for CNNs,
-# and Chen et al. 2021 (bert2BERT, arXiv 2110.07143) for BERT-style encoders.
-# Neither is held, and neither uses the symmetric 1/n tiling. The instruction as
-# filed here, for decoder language models and with that construction, is stated
-# first by the source. Filing Net2Net would let this field name the older
-# origin of the general idea.
+# Kept on the source after both predecessors were filed and read. Net2Net
+# (LIT-tmpqc73y) introduced function-preserving width growth, for image CNNs.
+# bert2BERT (LIT-tmp9ul6p) first grew a pretrained language model wider at the
+# same depth instead of training from scratch, on BERT and on a GPT decoder, so
+# the source's "BERT-style" undersells it. Neither states this instruction.
+# Both replicate units by random sampling, which is only approximately
+# function-preserving through layer norm (bert2BERT measures the gap), and
+# bert2BERT's own recommendation is AKI, which drops preservation on purpose.
+# The symmetric tiling, every unit copied exactly n times and scaled by 1/n, is
+# what the practice tells the reader to do, and the source states it first.
 introduced_by:
 - LIT-tmpvf8fm
 implementations: []
@@ -68,6 +71,24 @@ To build a target `n` times wider than a pretrained source of the same depth:
 Then train with an unchanged loop. Depth stays fixed. The source presents
 width growth as complementary to depth stacking and does not combine them.
 
+The idea is older than this construction, and the source says it builds on
+two papers. Net2Net ([LIT-tmpqc73y](../literature.d/LIT-tmpqc73y.md)) introduced function-preserving width
+growth in 2015. It copied randomly chosen units and divided their outgoing
+weights by the number of copies, and on ImageNet Inception a widened network
+reached the from-scratch network's final accuracy roughly 2×10⁶ minibatches
+sooner. bert2BERT ([LIT-tmp9ul6p](../literature.d/LIT-tmp9ul6p.md)) carried that construction to Transformers in
+2021. Growing a 12-layer, width-512 BERT to width 768 saved 30.4% of
+pre-training FLOPs against training from scratch, and its non-preserving
+variant saved 47% on a GPT decoder. It was the first to recommend starting a
+wider language model from a smaller pretrained one. What the source adds,
+and what this practice instructs, is the symmetric tiling. Because every
+unit is copied the same number of times, the widened model computes exactly
+the small model's function, layer norm included. bert2BERT's random
+replication left a measured gap there: MLM loss 1.70 against the source's
+1.67. bert2BERT went the other way, deliberately breaking symmetry with the
+next layer's weights (AKI) and reporting that it helped. Nobody has run the
+two against each other.
+
 ## Evidence
 
 [LIT-tmpvf8fm](../literature.d/LIT-tmpvf8fm.md), which introduced this construction, ran it against random
@@ -99,8 +120,8 @@ budget trained. The same paper's ablations add three things:
   checkpoint already exists, start from it". It says nothing about whether
   training a small model in order to clone it beats training the large one
   directly.
-- **No other growth method is a baseline.** Net2Net, bert2BERT, LEMON and
-  depth stacking are discussed and not run. Only the diagonal variant comes
+- **No other growth method is a baseline.** Net2Net ([LIT-tmpqc73y](../literature.d/LIT-tmpqc73y.md)), bert2BERT
+  ([LIT-tmp9ul6p](../literature.d/LIT-tmp9ul6p.md)), LEMON and depth stacking are discussed and not run. Only the diagonal variant comes
   close to an external method. So the evidence is "better than random", not
   "better than other ways to grow".
 - **It forgets first.** Cloned models lose accuracy early in training, most

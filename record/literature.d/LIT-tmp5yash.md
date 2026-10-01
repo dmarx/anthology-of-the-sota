@@ -20,6 +20,10 @@ keywords:
 - '4d-generation'
 - 'latent-space-decoding'
 - 'synthetic-supervision'
+# Table 1 sets Lyra against Wonderland's reported numbers on its own
+# protocol; no code was available to rerun it, so the comparison is quoted.
+compared_against:
+- LIT-tmpnsayq
 summary: >-
   Bahmani et al. (2025), [ARXIV-2509.19296](https://arxiv.org/abs/2509.19296) — Lyra. Train a 3D Gaussian
   Splatting decoder on the latents of a frozen camera-controlled video
@@ -111,6 +115,13 @@ its source videos, and the distillation of video generators into few-step
 students ([SOTA-394](../practices.d/SOTA-394.md), [LIT-631](LIT-631.md)). Lyra's "self-distillation" is a different
 thing: distilling the model's implicit 3D into an explicit representation,
 not distilling its sampler.
+
+Its closest predecessor is Wonderland ([LIT-tmpnsayq](LIT-tmpnsayq.md)), the baseline it beats on DL3DV
+(20.09 against 16.64) and Tanks-and-Temples (19.24 against 15.90) using
+Wonderland's own reported numbers and evaluation protocol: Wonderland already
+decoded Gaussians from a camera-controlled video model's latents and already
+used that model's decoded frames as supervision, but only as a 20K-video
+supplement to captured data, where Lyra uses nothing else.
 
 The candidate claim, that a frozen camera-controlled video model can stand
 in for captured multi-view data when training a 3D reconstructor, rests on

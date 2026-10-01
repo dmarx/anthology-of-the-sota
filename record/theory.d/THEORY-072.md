@@ -30,6 +30,8 @@ summary: >-
   back down, which is slow — hence the delay. `Proposed`: it predicts the
   right dependence on weight decay, and [LIT-537](../literature.d/LIT-537.md) exhibits grokking in which
   the norm goes the other way.
+rivals:
+- THEORY-070
 ---
 <!-- inactive-ok-file: THEORY-070 — Proposed, and named here as the rival account of the same delay; that it is unsettled is the point -->
 
@@ -91,7 +93,7 @@ and if the norm increases the model is moving away from `w_c` rather than
 toward it. The account cannot be the general mechanism.
 
 That run is the paper's evidence for a rival account of the same delay,
-THEORY-070: grokking as the late end of lazy training, controlled by output scale
+[THEORY-070](THEORY-070.md): grokking as the late end of lazy training, controlled by output scale
 and kernel alignment rather than weight norm. The two cannot both be the
 general mechanism, and neither has absorbed the other: the record holds no
 lazy-to-rich account of the `γ`-dependence measured above, and this account

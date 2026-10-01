@@ -29,9 +29,12 @@ source:
 - LIT-tmp5yash
 # The source claims the idea as its own contribution ("eliminating the need
 # for captured multi-view real-world data") and names Wonderland as the
-# closest prior work, which uses a camera-controlled video model to generate
-# Gaussians feed-forward but is not described as dropping captured data.
-# Wonderland is not in the record either way.
+# closest prior work. Wonderland is now held (LIT-tmpnsayq) and was read for
+# this: it already supervised a latent-space 3DGS reconstructor with its video
+# model's decoded frames, but only as 20K generated videos added to captured
+# RealEstate10K, ACID and DL3DV in a second training stage, after a first stage
+# on captured data alone. The substitution this practice recommends is the
+# source's.
 introduced_by:
 - LIT-tmp5yash
 implementations:
@@ -108,6 +111,27 @@ scenes are bounded by the capacity of our camera-controlled video diffusion
 model". A student trained only on a teacher's frames inherits every 3D
 inconsistency in them; the depth loss exists because RGB supervision alone
 produced flat geometry.
+
+## What was already done before the source
+
+Wonderland ([LIT-tmpnsayq](../literature.d/LIT-tmpnsayq.md)) already supervised a feed-forward 3D reconstructor with a
+camera-controlled video model's outputs. Its reconstructor reads the video
+model's latents, as Lyra's does, and for the 20K videos it generated "the
+decoded video frames from these latents provide supervision views". So
+using a video model's renderings as training targets for a reconstructor
+is not new with the source. What Wonderland did not do is drop captured
+data. It trained 200K iterations on RealEstate10K, ACID and DL3DV first and
+added the generated videos only to the 100K-iteration high-resolution
+stage, mixed with the same captured sets. That is the opposite proportion
+from this practice, which is why `introduced_by` stays with the source.
+
+Wonderland's ablation of that addition (Table A3) is the record's only
+measurement, on real held-out views, of what generated supervision adds
+on top of captured supervision: PSNR 17.06 to 17.15 on RealEstate10K, 16.62
+to 16.64 on DL3DV and 15.85 to 15.90 on Tanks-and-Temples, one run each.
+That is near zero, and it answers a different question from the one the
+promotion condition asks. It says the generated videos did not hurt a model
+already trained on captured data. It does not say they can replace it.
 
 ## Conditions
 

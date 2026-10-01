@@ -12,12 +12,12 @@ summary: >-
   not yet replaced: `contested_by` (LIT, no converse), for a paper whose
   evidence cuts against it, as on SOTA; and `rivals` (THEORY, symmetric), for
   another account of the same phenomenon that cannot also be right. Both are
-  `explain: cited`. THEORY-070's `corrects` on the two weight-norm grokking
+  `explain: cited`. [THEORY-070](../theory.d/THEORY-070.md)'s `corrects` on the two weight-norm grokking
   accounts becomes `rivals`, which is what its own `promote_when` already
   said. Rejected: stretching `corrects` to cover disputes, and one combined
   relation that takes either a paper or a theory.
 ---
-<!-- inactive-ok-file: THEORY-024 THEORY-033 THEORY-070 THEORY-071 THEORY-072 THEORY-tmp7q4tl — Proposed; named because this decision changes their relations, and being disputed is why they are Proposed -->
+<!-- inactive-ok-file: THEORY-024 THEORY-032 THEORY-033 THEORY-070 THEORY-071 THEORY-072 THEORY-tmp7q4tl — Proposed; named because this decision changes their relations or, for THEORY-032, declines to; being disputed is why they are Proposed -->
 
 # ADR-tmpkrt96: Theories can be contested: contested_by and rivals
 
@@ -34,23 +34,23 @@ could check it and no view could show it.
 
 Two shapes of dispute were already in the record:
 
-- **By evidence.** THEORY-024 was demoted to `Proposed` because LIT-456's
-  geometry-free control matched Muon. THEORY-072 and THEORY-071 both cite
-  LIT-537's grokking run with no weight decay as the counterexample they cannot
-  absorb. The separator account filed on this branch, THEORY-tmp7q4tl, has
-  LIT-414's small value norms at `[SEP]` against it.
-- **By a rival account.** THEORY-070 was filed with `corrects` on THEORY-072 and
-  THEORY-071, and its own `promote_when` said it "corrects the weight-norm
+- **By evidence.** [THEORY-024](../theory.d/THEORY-024.md) was demoted to `Proposed` because [LIT-456](../literature.d/LIT-456.md)'s
+  geometry-free control matched Muon. [THEORY-072](../theory.d/THEORY-072.md) and [THEORY-071](../theory.d/THEORY-071.md) both cite
+  [LIT-537](../literature.d/LIT-537.md)'s grokking run with no weight decay as the counterexample they cannot
+  absorb. The separator account filed on this branch, [THEORY-tmp7q4tl](../theory.d/THEORY-tmp7q4tl.md), has
+  [LIT-414](../literature.d/LIT-414.md)'s small value norms at `[SEP]` against it.
+- **By a rival account.** [THEORY-070](../theory.d/THEORY-070.md) was filed with `corrects` on [THEORY-072](../theory.d/THEORY-072.md) and
+  [THEORY-071](../theory.d/THEORY-071.md), and its own `promote_when` said it "corrects the weight-norm
   accounts without replacing them". That is not what `corrects` means.
-  THEORY-033 says a spectral optimizer pays for its step size and not for its
-  geometry, where THEORY-024 says the geometry is why; neither has replaced the
+  [THEORY-033](../theory.d/THEORY-033.md) says a spectral optimizer pays for its step size and not for its
+  geometry, where [THEORY-024](../theory.d/THEORY-024.md) says the geometry is why; neither has replaced the
   other.
 
-The owner asked on #397 for contestation relations on the theory schema.
+The owner asked on [#397](https://github.com/dmarx/anthology-of-the-sota/issues/397) for contestation relations on the theory schema.
 
 ## Decision
 
-Two relations on THEORY, both `explain: cited` (ADR-063):
+Two relations on THEORY, both `explain: cited` ([ADR-063](ADR-063.md)):
 
 - **`contested_by`**, scheme `LIT`, no converse: the paper whose evidence
   disputes the account. It mirrors SOTA's field exactly, including the
@@ -62,22 +62,22 @@ Two relations on THEORY, both `explain: cited` (ADR-063):
 
 When a dispute settles, `rivals` becomes `corrects` on the winner and a
 status on the loser. Two accounts that might both be true are not rivals:
-THEORY-032 and THEORY-033 locate the spectral optimizer's advantage in
+[THEORY-032](../theory.d/THEORY-032.md) and [THEORY-033](../theory.d/THEORY-033.md) locate the spectral optimizer's advantage in
 different places, and both documents say whether they are one mechanism is
-open, so they are left unrelated. Likewise THEORY-tmp7q4tl and the no-op
+open, so they are left unrelated. Likewise [THEORY-tmp7q4tl](../theory.d/THEORY-tmp7q4tl.md) and the no-op
 reading it argues with are "not exclusive", so it takes `contested_by` and
 no `rivals`.
 
 Applied in this contribution:
 
-- THEORY-070: `corrects` → `rivals` on THEORY-072 and THEORY-071, at version 2.
-- THEORY-072 and THEORY-071: `contested_by: [LIT-537]`.
-- THEORY-024: `contested_by: [LIT-456]`, `rivals: [THEORY-033]`.
-- THEORY-tmp7q4tl: `contested_by: [LIT-414]`.
+- [THEORY-070](../theory.d/THEORY-070.md): `corrects` → `rivals` on [THEORY-072](../theory.d/THEORY-072.md) and [THEORY-071](../theory.d/THEORY-071.md), at version 2.
+- [THEORY-072](../theory.d/THEORY-072.md) and [THEORY-071](../theory.d/THEORY-071.md): `contested_by: [LIT-537]`.
+- [THEORY-024](../theory.d/THEORY-024.md): `contested_by: [LIT-456]`, `rivals: [THEORY-033]`.
+- [THEORY-tmp7q4tl](../theory.d/THEORY-tmp7q4tl.md): `contested_by: [LIT-414]`.
 
 ## Alternatives considered
 
-- **Use `corrects` for disputes too.** That is what THEORY-070 did, and it
+- **Use `corrects` for disputes too.** That is what [THEORY-070](../theory.d/THEORY-070.md) did, and it
   made `corrected_by` on the two weight-norm accounts read as if they had
   been replaced, while the document doing the correcting said they had not.
   A relation that means two things is checked as if it meant one.
@@ -96,4 +96,4 @@ Applied in this contribution:
 - A `rivals` relation needs a sentence on both sides, because the converse
   is held too and is also `explain: cited`.
 - The three grokking accounts are now visibly a dispute rather than a chain
-  of corrections, which is what THEORY-069 says they are.
+  of corrections, which is what [THEORY-069](../theory.d/THEORY-069.md) says they are.

@@ -53,6 +53,8 @@ summary: >-
   LIT-537 groks without any.
 explains:
 - SOTA-402
+rivals:
+- THEORY-070
 ---
 
 # THEORY-071: A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips when the data makes memorising more expensive

@@ -14,7 +14,7 @@ consensus_note: >-
   One group, one ablation table (LIT-tmp62ra1, Table 7, base model, six BEIR
   datasets). The mechanism itself is older and has been used before on
   generated query-passage pairs, where it was tuned and did not help everywhere
-  (Promptagator, arXiv 2209.11755, not held). Nobody in the record has re-run
+  (Promptagator, LIT-tmppempk). Nobody in the record has re-run
   it on a scraped corpus. Read as of 2026-10.
 title: 'When a web-scraped pair corpus is noisy, filter it by self-consistency: keep only the pairs whose passage a model trained on the noisy set ranks near the top'
 version: 1
@@ -23,16 +23,19 @@ tags:
 date: '2026-10-01'
 source:
 - LIT-tmp62ra1
-# E5 says it "propose[s]" the filter, and also cites Promptagator (Dai et al.
-# 2022, arXiv 2209.11755) for it. Promptagator trains a retriever on its own
-# LLM-generated queries and keeps a pair only if that retriever ranks the
-# source passage top-1. That is the same mechanism, applied to synthetic
-# pairs, and it credits round-trip consistency to Alberti et al. 2019
-# (1906.05416). Neither is held. What is first stated here is the use on a
-# scraped, not generated, corpus at web scale, as a filter for contrastive
-# pre-training. Filing Promptagator would let this field name the older origin.
+# Repointed from E5 (LIT-tmp62ra1) to Promptagator once it was filed.
+# Promptagator (Sept 2022) trains a retriever on its own noisy generated
+# pairs and keeps a pair only if that retriever ranks the source passage in
+# its top K. That is this practice's instruction, steps 1 to 4, made two
+# months before E5, and E5 cites it for its "consistency-based filter" even
+# while saying it "propose[s]" one. The scraped corpus is what E5 adds; it
+# changes where the noise comes from, not what the reader is told to do.
+# Promptagator credits round-trip consistency to Alberti et al. 2019
+# (1906.05416, not held), but that filter used an outside QA model trained
+# on labelled data, not a model trained on the noisy pairs themselves, so
+# it is not the origin of this instruction.
 introduced_by:
-- LIT-tmp62ra1
+- LIT-tmppempk
 implementations:
 - 'E5 (microsoft/unilm)'
 summary: >-
@@ -69,12 +72,16 @@ networks fit clean labels before they memorise noisy ones, so a model trained
 on the noisy set still agrees with the clean pairs and disagrees with many of
 the wrong ones. The paper gives that reason and does not test it.
 
-[LIT-tmp62ra1](../literature.d/LIT-tmp62ra1.md) is the first to recommend this filter for a scraped corpus,
-and it says it proposes the technique. It also cites Promptagator (arXiv
-2209.11755, not held), which trained a retriever on its own LLM-generated
-queries and kept a pair only if the retriever ranked the source passage
-top-1. That is the same mechanism applied to synthetic pairs. What E5 adds is
-its use on weak pairs mined from the web, at the scale of a billion pairs.
+The instruction is older than E5. Promptagator ([LIT-tmppempk](../literature.d/LIT-tmppempk.md)) first made it,
+for LLM-generated queries rather than scraped pairs. It trained a dual encoder
+on its generated (query, passage) pairs, kept a pair only if that encoder
+ranked the source passage top-1, and trained further on what was left. Across
+11 BEIR datasets the filter added 2.5 nDCG@10 points on average and helped 8.
+It lowered FiQA (−0.1), NFCorpus (−0.7) and SciFact (−1.4), and NFCorpus and
+SciFact were the two datasets with the fewest generated queries.
+[LIT-tmp62ra1](../literature.d/LIT-tmp62ra1.md) cites it for the filter, though it also says it proposes the
+technique. What E5 adds is the use on weak pairs mined from the web, at the
+scale of a billion pairs, as a filter for contrastive pre-training.
 
 ## Evidence
 
@@ -99,8 +106,8 @@ data.
 
 - **One cutoff, never varied.** E5 set `k = 2` "based on manual inspection of
   data quality". The paper offers no evidence about whether 1, 10 or 100
-  would do better or worse. Promptagator, which E5 cites for the technique,
-  tuned its cutoff on a validation set and chose top-1. That is a different
+  would do better or worse. Promptagator ([LIT-tmppempk](../literature.d/LIT-tmppempk.md)), which E5 cites for the
+  technique, tuned its cutoff on a validation set and chose top-1. That is a different
   corpus and different pairs, so it does not transfer either.
 - **The filtering run is not charged.** Step 1 is a full training run over
   the noisy corpus, and step 2 scores 1.3B pairs against a 1M pool. Table 7
@@ -112,8 +119,10 @@ data.
   average, or on MTEB, is not separated out.
 - **It can hurt where pairs are few.** In Promptagator's use of the same
   mechanism on generated queries, the filter improved 8 of 11 datasets but
-  lowered NFCorpus and SciFact, the two with the fewest generated queries.
-  In E5's run, those two datasets improved. The direction is therefore not
+  lowered FiQA slightly and NFCorpus and SciFact more, the last two being
+  the datasets with the fewest generated queries. Its authors guess that
+  further tuning on the smaller filtered set overfits, and do not test it.
+  In E5's run, NFCorpus and SciFact improved. The direction is therefore not
   settled across settings.
 - **It assumes the labels are what is noisy.** The filter keeps pairs that
   are easy for the model, which means it discards hard pairs as well as wrong

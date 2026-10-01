@@ -37,6 +37,7 @@ summary: >-
   ViT-B-16 and ResNet-50 given the same features fall to 61.7 and 39.4. The
   same architecture runs on audio, video and point clouds.
 ---
+<!-- inactive-ok-file: SOTA-tmp34072 — Proposed, filed from this paper in the same contribution -->
 <!-- inactive-ok-file: SOTA-403 — Proposed; named as neighbours this paper informs or tests, with their standing stated where they are cited -->
 
 # LIT-tmp7rvm6: Perceiver: General Perception with Iterative Attention
@@ -97,10 +98,15 @@ Jaegle et al., DeepMind (2021) — [ARXIV-2103.03206](https://arxiv.org/abs/2103
 
 ## Standing in the anthology
 
-The record holds no other cross-attention latent bottleneck: no Set
-Transformer, no Perceiver IO, no learned-query resampler. This note is the
-seed for that design, and its claim (attention through a small learned array
-removes the input-size term from depth) is not yet a practice.
+The primitive is older than this paper. The Set Transformer ([LIT-tmpt8znm](LIT-tmpt8znm.md))
+already had learned arrays cross-attend to a large input, and the Perceiver
+names it as the most closely related work; what it changes is the
+composition. The Set Transformer's induced block maps back to the input size,
+so a stack of them pays for the input at every layer, where the Perceiver
+keeps the latent array through depth. The record holds no Perceiver IO and
+no learned-query resampler. The claim this paper adds (attention through a
+small learned array removes the input-size term from depth) is filed as a
+practice, [SOTA-tmp34072](../practices.d/SOTA-tmp34072.md).
 
 The comparison it ran is with ViT ([LIT-587](LIT-587.md)), which the authors reimplemented
 with the Perceiver's own Fourier-feature inputs. On unpermuted ImageNet the

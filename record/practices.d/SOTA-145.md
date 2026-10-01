@@ -115,3 +115,13 @@ above, which is about what works that *run or rework GRPO* keep; it is
 evidence about whether to be in that family at all, at 8B and below and on
 two tasks. The practice stands, and the assumption underneath it is now a
 named rival with a promotion condition rather than an assumption.
+
+The second rival ran its comparison against this practice directly. RandOpt
+(SOTA-212) scores thousands of random weight perturbations in one parallel
+pass and majority-votes the best 50, and its paper matched it on training
+FLOPs against GRPO at 200 iterations across seven tasks at 0.5B–8B: it won
+most cells, 85.0% against GRPO's 68.5% on Countdown with OLMo3-7B-Instruct and
+87.1% against 83.2% on GSM8K with Qwen2.5-3B-Instruct. But GRPO answered with
+one sample against a 50-way ensemble, and the paper says so; the comparison is
+about whether to leave the family, not about whether to keep the group
+baseline inside it.

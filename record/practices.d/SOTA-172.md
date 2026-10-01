@@ -73,6 +73,11 @@ prevented by construction rather than by filtering harder afterwards.
 Validated on pretraining from scratch, continual pretraining and supervised
 fine-tuning.
 
+All of that is LIT-205: Zhu et al. measured the negative correlation,
+traced it to distributional shift and n-gram over-concentration, and proposed token-level editing of
+human text as the remedy, so the recommendation originates with the paper
+that measured the problem it answers.
+
 ## Both ends of the pipeline, and the record uses both without saying so
 
 <!-- inactive-ok-block: SOTA-124 — Proposed, named as the practice that leans

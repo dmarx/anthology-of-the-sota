@@ -38,6 +38,12 @@ laterally between streams. The motivation is the seesaw between vanishing
 gradients and representation collapse that fixed residual variants cannot
 escape; the paper shows consistent pretraining gains on dense and MoE models.
 
+The recommendation originates in LIT-141, which proposed hyper-connections
+as the escape from that seesaw: n parallel streams with learnable, possibly
+input-dependent mixing, so the network can adjust connection strength
+between depths and effectively rearrange layers, with consistent gains over
+standard residual connections in its dense and MoE pretraining runs.
+
 This is the free-mixing branch of [SOTA-169](SOTA-169.md), the trunk that states <!-- inactive-ok: SOTA-169 — Proposed, and the trunk this practice extends; the citation is the relation's explanation -->
 what the whole line agrees on — widen the residual stream into several
 streams. The width is the part of this practice that survived; the free

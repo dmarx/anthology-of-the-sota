@@ -87,6 +87,13 @@ free mixing gave up. The pre- and post-mixing maps stay non-negative. The
 paper reports the quality gains of hyper-connections at 6–7% training
 overhead across 3B, 9B and 27B, and DeepSeek-V4 ([LIT-139](../literature.d/LIT-139.md)) ships it at 1.6T.
 
+The constraint is LIT-140's proposal, made on its diagnosis that free
+mixing is what made hyper-connections unstable and hard to scale. Its own
+numbers are 6.7% additional training time for four streams (n = 4) at 27B
+after kernel fusion, recomputation and communication overlap, with the
+advantage over the residual holding across the 3B, 9B and 27B scaling study
+and a separate 3B run on 1T tokens.
+
 The V4 report was read in full for [#18](https://github.com/dmarx/anthology-of-the-sota/issues/18), because half this practice's
 promotion condition asks for "a production report at depth whose streams
 stay distinct" and V4 is the production report at depth. **It does not

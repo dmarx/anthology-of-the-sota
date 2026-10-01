@@ -72,6 +72,11 @@ Each individually delays overfitting and lowers validation loss against the
 baseline; combining categories lowers the minimum further. The claim is
 hundreds of productive epochs on the same data.
 
+The overfitting baseline, the three families and the claim all come from
+Chen et al. in LIT-175, which proposes augmenting the objective as the remedy
+— this practice is that paper's recommendation, and the only outside tests of
+it are the two recorded below.
+
 ## The reframing is worth more than the recipe
 
 The record now holds three positions on repetition and this is the third.

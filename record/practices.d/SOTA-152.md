@@ -58,6 +58,12 @@ by up to **58.3%**, which is the number that explains the rest — truncation
 removes the grounding a fact depends on, so a model trained on fragments
 learns to assert things its context does not support.
 
+Method, measurement and recommendation all come from LIT-203, which proposed
+Best-fit Packing as the replacement for concatenate-then-split and argued
+through a simplified model, before measuring it, that truncation harms
+learning. The 22-task comparison above is that paper's, run against
+concatenation at the same training efficiency.
+
 Conditions: one group, and the comparison is theirs. The gains are relative
 and concentrated in tasks that depend on complete context, so a workload
 dominated by short documents has less to gain — the effect is a function of

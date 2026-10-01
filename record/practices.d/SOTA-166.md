@@ -72,6 +72,10 @@ argument.
 
 ## What it bought
 
+The recommendation is LIT-201's: Ye et al. proposed the data mixing law,
+argued for fitting proportions instead of setting them by judgement, and
+validated it with the run below.
+
 Optimising the mixture for a 1B model over 100B RedPajama tokens reached
 performance comparable to the default mixture trained for **48% more steps**.
 Extended to continual training, the law predicts the critical proportion at

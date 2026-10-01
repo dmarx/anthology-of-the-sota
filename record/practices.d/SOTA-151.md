@@ -80,6 +80,13 @@ already saw in pretraining, then fine-tune briefly to settle. Under 1000
 steps takes LLaMA 7B–65B to 32768 tokens, a 16× extension, at a cost
 negligible against pretraining.
 
+The failed fine-tune, the remedy and the 16× result are all from Position
+Interpolation (LIT-192), which is where the recommendation to rescale rather
+than retrain starts: linearly down-scale the position indices by L/L' and
+apply RoPE unchanged. Its argument is a proven bound — between the integer
+positions pretraining fitted, a learned attention-score function stays close
+to their linear interpolation, while outside them nothing constrains it.
+
 **Scale by wavelength, not uniformly.** Stretching every RoPE dimension
 equally destroys the high-frequency components, and the effect compounds:
 uniform interpolation stalls around a scale factor of 8 even with

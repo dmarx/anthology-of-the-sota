@@ -117,7 +117,7 @@ two tasks. The practice stands, and the assumption underneath it is now a
 named rival with a promotion condition rather than an assumption.
 
 The second rival ran its comparison against this practice directly. RandOpt
-(SOTA-212) scores thousands of random weight perturbations in one parallel
+([SOTA-212](SOTA-212.md)) scores thousands of random weight perturbations in one parallel
 pass and majority-votes the best 50, and its paper matched it on training
 FLOPs against GRPO at 200 iterations across seven tasks at 0.5B–8B: it won
 most cells, 85.0% against GRPO's 68.5% on Countdown with OLMo3-7B-Instruct and

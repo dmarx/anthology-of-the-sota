@@ -72,7 +72,7 @@ argument.
 
 ## What it bought
 
-The recommendation is LIT-201's: Ye et al. proposed the data mixing law,
+The recommendation is [LIT-201](../literature.d/LIT-201.md)'s: Ye et al. proposed the data mixing law,
 argued for fitting proportions instead of setting them by judgement, and
 validated it with the run below.
 

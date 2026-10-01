@@ -65,7 +65,7 @@ iterate averaging as the same operation, and the averaged form is the one
 that does not need to know when it will stop.
 
 The unifying theory, the method and the recommendation to drop the schedule
-are all LIT-213's. It derives Schedule-Free from that theory, reports it
+are all [LIT-213](../literature.d/LIT-213.md)'s. It derives Schedule-Free from that theory, reports it
 matching schedules that do know T on problems from convex to large-scale deep
 learning, and supplies the one piece of outside evidence there is: Schedule-Free
 AdamW at the core of the winning AlgoPerf Self-Tuning entry.

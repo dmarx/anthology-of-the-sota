@@ -73,7 +73,7 @@ baseline; combining categories lowers the minimum further. The claim is
 hundreds of productive epochs on the same data.
 
 The overfitting baseline, the three families and the claim all come from
-Chen et al. in LIT-175, which proposes augmenting the objective as the remedy
+Chen et al. in [LIT-175](../literature.d/LIT-175.md), which proposes augmenting the objective as the remedy
 — this practice is that paper's recommendation, and the only outside tests of
 it are the two recorded below.
 

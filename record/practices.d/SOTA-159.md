@@ -57,7 +57,7 @@ training at a scale of one. Combined, the model is size-independent **and**
 well-scaled from the first step, and two things follow that neither gives
 alone.
 
-The combination, named u-µP, is LIT-149's, and so is every result below:
+The combination, named u-µP, is [LIT-149](../literature.d/LIT-149.md)'s, and so is every result below:
 Blake et al. propose it as the parametrization to train under and report it
 reaching lower loss than comparable µP models, training in FP8 without loss
 scaling, and getting near the optimum from a learning-rate sweep alone.

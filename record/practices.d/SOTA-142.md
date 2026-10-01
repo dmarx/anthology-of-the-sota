@@ -53,7 +53,7 @@ value found on a short run at one batch size then holds when the run is
 lengthened or the batch changed, and with µP ([SOTA-143](SOTA-143.md)) when the model is
 widened, so one sweep serves the whole family.
 
-The law and the scheduler built on it are LIT-146's. Its authors studied how
+The law and the scheduler built on it are [LIT-146](../literature.d/LIT-146.md)'s. Its authors studied how
 the optimal learning rate correlates with batch size and token count under
 WSD, found the power law, and trained their 3B dense and MoE models
 (PowerLM-3B and PowerMoE-3B) with the Power scheduler combined with µP, which

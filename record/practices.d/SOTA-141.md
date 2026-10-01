@@ -74,7 +74,7 @@ early training must move away from the initialisation while late training
 must average over enough updates to cancel gradient noise, and a floor at
 10% leaves noise in the final weights that a decay to zero averages out.
 
-The study and the recommendation are both LIT-147's: it is the paper that
+The study and the recommendation are both [LIT-147](../literature.d/LIT-147.md)'s: it is the paper that
 argues against the 10× decay and proposes decaying linearly to zero instead,
 and it reports the advantage growing with the token horizon, so the case is
 strongest for runs trained well past compute-optimal.

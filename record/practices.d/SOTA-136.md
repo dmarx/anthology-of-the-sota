@@ -87,7 +87,7 @@ free mixing gave up. The pre- and post-mixing maps stay non-negative. The
 paper reports the quality gains of hyper-connections at 6–7% training
 overhead across 3B, 9B and 27B, and DeepSeek-V4 ([LIT-139](../literature.d/LIT-139.md)) ships it at 1.6T.
 
-The constraint is LIT-140's proposal, made on its diagnosis that free
+The constraint is [LIT-140](../literature.d/LIT-140.md)'s proposal, made on its diagnosis that free
 mixing is what made hyper-connections unstable and hard to scale. Its own
 numbers are 6.7% additional training time for four streams (n = 4) at 27B
 after kernel fusion, recomputation and communication overlap, with the

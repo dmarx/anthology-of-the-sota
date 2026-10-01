@@ -23,7 +23,11 @@ Oord et al. (2018), [LIT-589](../literature.d/LIT-589.md) — [ARXIV-1807.03748]
 
 ## The claim
 
-The paper derives
+LIT-589 names InfoNCE and defines it as a classification loss: the
+cross-entropy of picking the one positive sample out of `N`, the other `N−1`
+drawn from the proposal distribution. It shows the optimal score is
+proportional to the density ratio `p(x_{t+k}|c_t) / p(x_{t+k})`, independent of `N`, and from
+there the paper derives
 
 > `I(x_{t+k}; c_t) ≥ log(N) − L_N`
 

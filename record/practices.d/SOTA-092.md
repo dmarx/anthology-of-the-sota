@@ -40,6 +40,13 @@ carries, so a small batch already points in nearly the right direction and a
 large one spends most of its samples confirming what the first few said. Loss
 per token seen therefore falls faster at small batch.
 
+LIT-069 states this rather than measuring it. It is half of PaLM's given
+reason for growing the batch during training — for the 540B model, 512
+sequences (1M tokens) until step 50k, 1024 until step 115k, then 2048 (4M
+tokens) to the end at step 255k — and the paper credits the observation to
+Smith et al. (2018) and McCandlish et al. (2018), not to an experiment of its
+own.
+
 The effect is real and it is transient: it is a statement about the
 signal-to-noise ratio of the gradient, which changes as the model gets
 better. [SOTA-093](SOTA-093.md) is the other end of the same curve.

@@ -42,6 +42,12 @@ More concurrent requests, which is the whole point: throughput at a given
 latency is set by how many sequences fit in memory at once, so recovering the
 waste converts almost directly into batch size ([SOTA-113](SOTA-113.md)).
 
+The technique and the recommendation both come from LIT-112, which introduced
+PagedAttention as the memory manager of vLLM. Against FasterTransformer and
+Orca it measured 2–4× throughput at the same latency, and the gain grew with
+longer sequences, larger models and more complex decoding — the cases where
+the cache is a larger share of memory or more duplicated.
+
 Two capabilities fall out of the indirection rather than being added: blocks
 can be **shared** between requests with a common prefix — a system prompt
 materialised once, not once per request — and copy-on-write makes parallel

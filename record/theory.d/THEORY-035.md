@@ -61,6 +61,10 @@ step size viable.
 
 ## What was actually shown
 
+The evidence is LIT-461's: it measures progressive sharpening and the
+`2/eta` ceiling empirically, and in Appendix F pits the `1/sharpness` rule
+against the fixed step `eta = 2/S0`.
+
 Full-batch gradient descent, run at a range of step sizes across several
 architectures and tasks, with the sharpness measured throughout. It could
 have come out otherwise in two visible ways and did not: the sharpness could

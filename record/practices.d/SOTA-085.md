@@ -73,6 +73,13 @@ memory and nothing else about the model. That is unusual among the
 efficiency practices in this record and is why the title can be so
 unconditional.
 
+Both the kernel and the recommendation to run it come from LIT-074. Its
+Theorem 1 shows the tiled algorithm returns exact softmax attention with the
+FLOP count unchanged at `O(N²d)` and only `O(N)` extra memory, and Proposition
+3 proves no exact algorithm needs asymptotically fewer HBM accesses across SRAM
+sizes from `d` to `Nd`. Measured on GPUs, that came to 15% over the MLPerf 1.1
+BERT-large training record, 3× on GPT-2 and 2.4× on long-range arena.
+
 It is the case [SOTA-083](SOTA-083.md) keeps once its framing is corrected:
 an operation no compiler covers well, hand-written because the algorithm is
 different and not just the schedule. That practice's rule — hand-write the

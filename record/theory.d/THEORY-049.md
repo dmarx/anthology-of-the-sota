@@ -48,8 +48,8 @@ signals. The claim is that they contend, and that the contention is located
 rather than diffuse.
 
 Both halves of the evidence come from LIT-483, the Mixture-of-Transformers
-paper (§3.5 and §4). Its component ablation unties feed-forward, attention projections
-and layer norms in turn at FLOPs matched to the dense model. Its
+paper (§3.5 and §4). Its component ablation unties feed-forward, attention
+projections and layer norms in turn at FLOPs matched to the dense model. Its
 leave-one-out study merges pairs of modalities from text, image and speech
 into one tower.
 

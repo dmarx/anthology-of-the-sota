@@ -71,6 +71,11 @@ than one, so every Transformer is in the tighter regime.
 
 ## What was actually shown
 
+Both the derivation and the test are LIT-462's: its Condition 3.1 adds the
+second-order constraint, and its Figure 2 sweeps depth from 4 to 256 under
+Muon-Kimi-AdamW and Muon-AdamW, with Shampoo-AdamW and Sophia in the
+appendix.
+
 The derivation is the argument, and the experiment is a prediction test
 rather than a demonstration. The theory says the `k = 1` rule should fail to
 transfer on architectures whose branches hold more than one transformation.

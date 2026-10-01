@@ -31,11 +31,20 @@ updates that slice. Partitioning it too takes the per-rank cost from
 [SOTA-028](SOTA-028.md)'s 4Ψ + 12Ψ/N to 2Ψ + 14Ψ/N — about 8× below plain data parallelism
 at large N.
 
+Both figures are from LIT-027, which introduces gradient partitioning as
+ZeRO-DP's second stage. In its worked example, a 7.5B-parameter model on
+64-way data parallelism, stage 2 takes model state to 16.6 GB per GPU,
+against 31.4 GB under stage 1 and 120 GB under plain data parallelism. It is
+also the stage the paper ran at scale: ZeRO-100B is stage 2 plus ZeRO-R, and
+trained models of up to 170B parameters on 400 GPUs.
+
 The property that matters is the one it shares with ZeRO-1: **the
 communication volume is unchanged.** The reduce-scatter that stage 1 already
 performs is exactly the operation that leaves each rank holding only its own
 gradient slice, so stage 2 is closer to declining to keep something than to
-doing extra work.
+doing extra work. LIT-027's communication analysis is the warrant: a
+reduce-scatter of the gradients and an all-gather of the updated parameters
+move Ψ + Ψ = 2Ψ per step, "exactly the same as the baseline DP".
 
 ## Condition
 

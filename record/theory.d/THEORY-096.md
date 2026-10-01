@@ -60,6 +60,12 @@ size `√k σ`. Writing the difference of consecutive normalised states,
 and per coordinate `E[|·|] ~ O(1/√k)`. The same argument at the output gives
 `O(1/√N)` for the effect of adding a block to an `N−1` block model.
 
+This is LIT-639's analysis: Theorem 3.3 gives `ω_k²` under the independence
+assumption, and Corollaries 3.4 and 3.5 give the `O(1/√k)` and `O(1/√N)`
+rates. The observation that later Pre-LN blocks contribute a shrinking share
+is older, and the paper credits it to Liu et al. (2020). What it adds is the
+rate.
+
 So the inputs the later blocks see become increasingly alike, and **the
 capacity of those blocks is not that it is unusable but that there is
 progressively less for it to act on.**

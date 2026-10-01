@@ -97,6 +97,12 @@ loss, not directly on the model size**, and approximately doubles for every
 13% decrease in loss. Two models of different sizes at the same loss want the
 same batch size.
 
+The recommendation starts in LIT-028. McCandlish et al. defined the critical
+batch size, but the step from it to a compute budget is Kaplan's: his fits of
+`B_crit` against loss and of loss against compute, on WebText2, combine in
+equation 1.7 into `B ∝ C^0.24`. Reading the paper in full confirmed the
+exponent as `0.050/0.21`.
+
 ## Conditions
 
 The exponent is small, which matters more than its exact value: a thousand-fold

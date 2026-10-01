@@ -28,6 +28,17 @@ search is guided by measurement: candidate schedules are run on the target
 hardware, and a learned cost model trained on those measurements proposes the
 next candidates.
 
+That design is LIT-063's, and the recommendation in the form this practice
+states it — let measurements on the target device steer a learned search over
+schedules — starts there; blackbox autotuning is older, and the paper measures
+itself against it. Its explorer runs simulated annealing over predicted costs,
+measures each round's most promising batch on the device, and retrains a
+gradient-boosted tree model on the results. The model predicts in 0.67 ms on
+average, thousands of times faster than a real measurement, and on a ResNet-18
+conv2d on a TITAN X it found better configurations much faster than genetic or
+random search. End to end, TVM reported 1.2× to 3.8× over frameworks backed by
+hand-optimised libraries.
+
 So this is not a human profiling hot paths and rewriting them. It is the
 optimiser itself being empirical, and the reason it works is that a cost model
 fitted to the real device beats an analytical model of an architecture nobody

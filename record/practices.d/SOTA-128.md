@@ -38,6 +38,11 @@ more tokens for the same budget, and conclude that for a fixed token and
 compute budget the unmasked data is the more efficient use of it — FIM
 samples serve both the infilling objective and next-token prediction.
 
+That pair of runs is LIT-119's, from the Falcon-H1-Tiny-Coder work, and it is
+where the recommendation is first stated outright; the earlier papers leave
+it to be inferred. The comparison is reported as a plot and a verdict
+("clearly better"), not as per-benchmark numbers, and it is one run per arm.
+
 ## Two details that travel with it
 
 From the same work:

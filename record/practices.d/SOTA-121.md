@@ -128,6 +128,14 @@ constant decoupled weight decay fixing the equilibrium weight norm, and
 recovers 20–30% by pinning the norms instead. If that holds up outside its
 authors' group it changes this section again.
 
+The same study is also the comparison with SOAP (SOTA-168), the other
+matrix preconditioner in the record. Tuning both separately, LIT-156 found
+Muon best at 1–4× the Chinchilla data-to-model ratio, but overtaken by SOAP
+(and Kron) at 8× on its 130M and 520M models and at 16× on 130M and 300M; at
+1.2B both fall to about 1.1× over AdamW. So the choice of Muon over SOAP here
+rests on production evidence at scale, not on that comparison, which favours
+SOAP as training runs further past Chinchilla.
+
 ## Which parameters the gain is actually paid on
 
 This practice says to use Muon in place of AdamW and does not say where the

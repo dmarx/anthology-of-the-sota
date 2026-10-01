@@ -40,6 +40,16 @@ batches into the same state and reproduce it; skipping alone would leave the
 damage already done to the weights and the optimizer moments in place. Both
 together are what makes the recovery reliable, and PaLM reports using it.
 
+The procedure is LIT-069's, reported as what worked rather than as a studied
+method. The 540B model spiked roughly 20 times despite gradient clipping, at
+irregular intervals and sometimes late, and never in the smaller models; the
+authors restarted from a checkpoint about 100 steps before each spike and
+skipped roughly 200–500 batches, after which the loss did not spike again at
+that point. Their ablation qualifies the reading above: the same batches
+replayed from a different, earlier checkpoint did not spike, so they put it
+down to particular data meeting a particular parameter state, not to bad data
+as such.
+
 ## What it depends on
 
 Three things the record now says elsewhere, and the practice is worth reading

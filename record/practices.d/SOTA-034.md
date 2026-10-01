@@ -114,6 +114,16 @@ experiments across sizes and results on the Ling architecture at 7.9B and
 clipping is the obvious cheap fix, and a bounded-activation paper that skips
 it has not isolated its own contribution.
 
+That measurement is the comparison SOTA-158, the bounded-activation practice
+drawn from LIT-200, holds against this one. Read in the paper, the
+SwiGLU-Clip arm is narrower than the sentence above makes it: only the 7.9B
+MoE model (600B tokens) carries all three, and there PowLU is ahead of SwiGLU
+on 14 of 17 benchmarks (MMLU 54.92 against 53.95, GSM8K 33.74 against
+30.40). The 124B model (800B tokens) is PowLU against SwiGLU alone, ahead on
+12 of 17. The stability evidence is FP8 loss curves in which SwiGLU spikes,
+SwiGLU-Clip delays the spike, and PowLU does not, with the bounded functions
+swapped in partway through training rather than trained from scratch.
+
 ## What this does and does not settle
 
 The recommendation stands at ordinary precision. Neither paper claims SwiGLU

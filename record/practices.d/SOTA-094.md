@@ -41,6 +41,16 @@ spends is accelerator-hours, and a batch size chosen to optimise sample
 efficiency can leave the hardware idle enough that the theoretically better
 schedule finishes later.
 
+LIT-069 gives the throughput side as the second reason for its batch ramp,
+beside the sample-efficiency one: larger batches mean larger matrix
+multiplications, which increases TPU efficiency. It does not rank the two
+reasons or measure the trade between them; that throughput "wins out" is this
+record's reading. The same pressure shows elsewhere in the paper — PaLM 540B
+rematerialises activations because the larger batch that permits gives higher
+training throughput, and the discussion notes that holding TPU efficiency at
+larger scale would need a drastic increase in batch size when 4M tokens is
+already of unclear sample efficiency.
+
 So the practice is an ordering rule between two metrics rather than a setting.
 Where they conflict, throughput wins, because the sample-efficiency advantage
 is bounded and small while the utilisation penalty is not.

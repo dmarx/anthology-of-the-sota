@@ -53,6 +53,13 @@ which matters exactly when batch × heads is too small to fill the GPU — long
 context, small batch, the regime the kernel exists for. The third is a better
 split of work between warps inside a block, cutting shared-memory traffic.
 
+The diagnosis, the changes and the recommendation are all LIT-106's. It
+measured FlashAttention at only 25–40% of theoretical peak FLOPs/s on an
+A100 and traced the gap to work partitioning rather than the algorithm; the
+three changes together gave about 2× and 50–73% of peak. The record's reading
+of the paper found no ablation separating them, so "the first is the
+largest" is an argument from the mechanism rather than a measured share.
+
 ## So the recommendation is nearly free, with one condition
 
 Same outputs, better occupancy: there is no accuracy argument to have and the

@@ -45,6 +45,12 @@ interface produces less noisy commands, so the mutual information
 `I(x_t, (s_t, s_{t+Δ}))` between command and induced state change rises with
 interface quality and needs no knowledge of the task.
 
+That is LIT-503's proposal, and the results this account rereads are its own.
+Offline, on 540K examples of keyboard and eye-gaze interfaces, the score
+predicted task reward in 4 of 5 domains at an average Spearman ρ = 0.43.
+Online, maximized by human-in-the-loop RL over an 8-parameter cursor interface
+with 12 users, it correlated with task reward at ρ = 0.87.
+
 **The version its results support.** The quantity measured is how much the
 operator's input determines the state `Δ` steps later: how reliable the
 channel from what they do to what happens is. That tracks task success

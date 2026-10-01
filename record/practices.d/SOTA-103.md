@@ -44,6 +44,12 @@ with a uniform distribution for exploration:
 
     πₜ(Dᵢ) = (1 − K·ℰₜ) · exp(ℰₜ₋₁·R̂ᵢ) / Σⱼ exp(ℰₜ₋₁·R̂ⱼ)  +  ℰₜ
 
+Set beside this policy, SOTA-102's "dynamic temperature scaling for mixing" is
+one term of it: the exploration rate `ℰₜ` multiplies the reward inside the
+exponent, so it acts as an inverse temperature that changes over training.
+That practice named a component of this method rather than a separate one,
+which is why it was superseded into this practice and not rejected.
+
 At 1B parameters over 50B tokens from 22 Pile domains: the next best method's
 final perplexity in **19% fewer iterations**, **+1.9% relative** on 5-shot
 MMLU, and negligible added wall-clock time.

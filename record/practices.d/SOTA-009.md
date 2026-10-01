@@ -37,7 +37,7 @@ to its noise, so a large step mostly moves the parameters around a basin
 rather than into it. Shrinking the rate turns the run from exploring to
 settling.
 
-The shape as one recommendation comes from LIT-010. Smith and Topin's "1cycle"
+The shape as one recommendation comes from [LIT-010](../literature.d/LIT-010.md). Smith and Topin's "1cycle"
 policy is a single cycle of rising then falling rate, shorter than the run.
 After it the rate falls "several orders of magnitude less than the initial
 learning rate" for the remaining iterations. On CIFAR-10 with a 56-layer
@@ -47,14 +47,14 @@ iterations, where piecewise-constant training peaked at 91.2% after about
 and Goyal et al. (2017), and treats it as a discretised version of a cyclical
 learning rate.
 
-SOTA-100 also puts a ramp at the start of training, and for a different
+[SOTA-100](SOTA-100.md) also puts a ramp at the start of training, and for a different
 reason: Post-LN transformers have large gradients near the output at
-initialisation. Its source, LIT-114, trained Post-LN baselines with a linear
+initialisation. Its source, [LIT-114](../literature.d/LIT-114.md), trained Post-LN baselines with a linear
 warmup followed by decay (inverse square root in its main experiments), which
 is this practice's shape. On IWSLT14 De-En the result was sensitive to the
 ramp's length: with
 T_warmup = 500, Adam reached only 31.16 and 2.77 BLEU at peak rates of 5e-4
-and 1e-3. Under Pre-LN the same paper drops warmup. So SOTA-100's
+and 1e-3. Under Pre-LN the same paper drops warmup. So [SOTA-100](SOTA-100.md)'s
 justification for the ramp lapses with the architecture, while this
 practice's justification for it does not.
 

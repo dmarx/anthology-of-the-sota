@@ -23,6 +23,7 @@ tags:
 date: '2026-10-01'
 source:
 - LIT-tmp62ra1
+- LIT-tmppempk
 # Repointed from E5 (LIT-tmp62ra1) to Promptagator once it was filed.
 # Promptagator (Sept 2022) trains a retriever on its own noisy generated
 # pairs and keeps a pair only if that retriever ranks the source passage in

@@ -93,7 +93,8 @@ pass". A gradient is a forward-backward pass, and this paper measures a
 Hessian-vector product at 4.5–5.5 of them in PyTorch on a 124M-parameter
 transformer, with 3–4.5× the memory. The practice's conclusion — a diagnostic
 run at intervals, not a per-step monitor — stands and is if anything
-strengthened; its per-product cost is off by a factor of four to five.
+strengthened; its per-product cost was off by a factor of four to five, and
+[SOTA-011](../practices.d/SOTA-011.md) is corrected from this measurement at its version 3.
 
 **It is infrastructure under the influence-function line.** [LIT-401](LIT-401.md)
 computes influence at scale with EK-FAC, and [LIT-403](LIT-403.md) introduced the method

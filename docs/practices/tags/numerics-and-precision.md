@@ -2,11 +2,11 @@
 
 # SOTAs with `tags` `numerics-and-precision`
 
-*Topics — The twenty-two kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-two for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
+*Topics — The twenty-six kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-six for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Numerics and precision** — how many bits, where, and what that costs — number formats, training precision and the failures it causes, post-training quantization, and the interaction between them.
 
-22 of 435 SOTA documents. Back to the [full index](../README.md).
+23 of 441 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -32,3 +32,4 @@
 | [SOTA-355](../../../record/practices.d/SOTA-355.md) v2 | Isolate the emergent outlier feature dimensions into 16-bit and quantize the rest to int8 | Dettmers et al. (2022), [ARXIV-2208.07339](https://arxiv.org/abs/2208.07339). Quantize the projections vector-wise to int8, but pull the handful of systematically large feature dimensions out into a separate 16-bit multiplication — 99.9% of values in 8-bit, no measured quality cost up to 175B. | Active |
 | [SOTA-356](../../../record/practices.d/SOTA-356.md) | Protect the salient weight channels by scaling them before rounding, choosing them from the activations rather than the weights | Lin et al. (2023), [ARXIV-2306.00978](https://arxiv.org/abs/2306.00978). Identify the ~1% of weight channels whose activations are largest, scale them up by an equivalent transformation before rounding, and quantize everything uniformly — rather than keeping the important channels in higher precision. | Active |
 | [SOTA-399](../../../record/practices.d/SOTA-399.md) | Choose pre-training weight decay, dropout, clipping and precision for the quantization you intend to ship |  | Proposed |
+| [SOTA-437](../../../record/practices.d/SOTA-437.md) | Store and move model checkpoints losslessly compressed: code the float exponent as its own stream with an entropy coder alone, and store successive checkpoints as deltas against a periodic full base | Hershcovitch et al. (2024), [LIT-750](../../../record/literature.d/LIT-750.md) — ZipNN. In regular trained weights only the float exponent is redundant: about 40 of its 256 values occur and it codes to about a third, while sign and mantissa barely compress. So split the exponent into its own stream and Huffman-code it without an LZ stage. Llama-3.1 BF16 goes to 66.4% against Zstd's 77.7%, and is faster in both directions. Between checkpoints, XOR deltas against a base up to 10 checkpoints back compress better than standalone files. Sizes and throughputs are measured. Stall time inside a training run is not. | Proposed |

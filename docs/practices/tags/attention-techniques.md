@@ -2,11 +2,11 @@
 
 # SOTAs with `tags` `attention-techniques`
 
-*Topics — The twenty-two kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-two for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
+*Topics — The twenty-six kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-six for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Attention techniques** — attention variants and alternative mechanisms, implementation optimizations, context length.
 
-28 of 435 SOTA documents. Back to the [full index](../README.md).
+29 of 441 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -38,3 +38,4 @@
 | [SOTA-322](../../../record/practices.d/SOTA-322.md) | Trade attention heads for depth: more heads conditions the attention block, and the layers you drop cost nothing | Saratchandran, Teney and Lucey (2025), [LIT-527](../../../record/literature.d/LIT-527.md) — more heads lower the condition number of the attention block, which is part of what depth was buying. In the five configurations where the MLP width is held fixed, raising head count and cutting layers holds or improves accuracy at **29–53% fewer parameters** — TNT-B goes 65.4M → 30.9M at identical Top-1. | Proposed |
 | [SOTA-390](../../../record/practices.d/SOTA-390.md) v3 | In a video diffusion transformer, attend over space and time jointly rather than factorizing, and budget for the cost |  | Proposed |
 | [SOTA-391](../../../record/practices.d/SOTA-391.md) | Estimate attention resolution before training when choosing a position encoding, and measure it across the extrapolation boundary | Sun et al. (2022), [LIT-638](../../../record/literature.d/LIT-638.md) — attention resolution scores how well an attention pattern distinguishes token distance, and is estimable from the encoding **before a run**. Measured at the training length and twice it: **RoPE 0.91 → 0.08, ALiBi 0.81 → 0.88.** The record has four practices about rotary encoding and held no measure of this. | Proposed |
+| [SOTA-436](../../../record/practices.d/SOTA-436.md) | Route a very large or non-grid input through cross-attention into a small learned latent array, so that depth no longer scales with input size | Jaegle et al. (2021), [LIT-747](../../../record/literature.d/LIT-747.md) — the Perceiver. A learned array of 512 latents cross-attends to all 50,176 ImageNet pixels, at a cost of O(MN) rather than O(M²), and a 48-block latent transformer then runs at a cost independent of input size. It matched ResNet-50 and ViT-B/16 at 78.0% top-1 without convolutions, did not beat them, and ran unchanged on audio, video and point clouds. The case for doing it is cost and modality-independence, not accuracy, and the cost advantage is argued from complexity, not measured against a baseline. | Proposed |

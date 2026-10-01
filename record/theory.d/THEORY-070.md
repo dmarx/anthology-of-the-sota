@@ -9,7 +9,7 @@ history:
 - version: 2
   date: '2026-10-01'
   note: >-
-    `corrects` on THEORY-072 and THEORY-071 became `rivals`, when ADR-tmpkrt96
+    `corrects` on THEORY-072 and THEORY-071 became `rivals`, when ADR-065
     gave the THEORY scheme a relation for an account that disputes another
     without replacing it. The document already said that was its position:
     its `promote_when` read "corrects the weight-norm accounts without

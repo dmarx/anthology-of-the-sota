@@ -17,7 +17,7 @@ history:
   date: '2026-10-01'
   note: >-
     The cost of a Hessian-vector product was stated as "roughly a
-    forward-backward pass". LIT-tmp7eqbw measures it at 4.5–5.5 gradients
+    forward-backward pass". LIT-746 measures it at 4.5–5.5 gradients
     of time and 3–4.5× a gradient's memory in PyTorch, so the sentence is
     corrected and the estimate of a useful run scaled with it. The
     conclusion, a diagnostic at intervals rather than a monitor, is
@@ -88,7 +88,7 @@ recommendation it needs a paper that makes it.
 The full Hessian is intractable at any interesting size. What is computed in
 practice is a few extreme eigenvalues by Lanczos or power iteration on
 Hessian-vector products. Each product costs several forward-backward passes,
-not one: [LIT-tmp7eqbw](../literature.d/LIT-tmp7eqbw.md) measured it at 4.5–5.5 gradients of time and 3–4.5× a
+not one: [LIT-746](../literature.d/LIT-746.md) measured it at 4.5–5.5 gradients of time and 3–4.5× a
 gradient's memory in PyTorch, on ResNet-50 and a 124M-parameter nanoGPT,
 consistent with the 4–5× other PyTorch measurements report; JAX with forward
 mode and compilation is cited at 2–4×. So a useful estimate, tens of

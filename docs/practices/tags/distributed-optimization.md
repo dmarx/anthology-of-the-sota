@@ -2,11 +2,11 @@
 
 # SOTAs with `tags` `distributed-optimization`
 
-*Topics — The twenty-two kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-two for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
+*Topics — The twenty-six kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-six for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Distributed optimization** — parallelism and sharding, communication, memory management, checkpointing.
 
-41 of 435 SOTA documents. Back to the [full index](../README.md).
+42 of 441 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -51,3 +51,4 @@
 | [SOTA-249](../../../record/practices.d/SOTA-249.md) | Recompute activations from a sqrt(n) subset of checkpoints when activation memory is the binding constraint | Chen et al. (2016), [LIT-004](../../../record/literature.d/LIT-004.md) — [ARXIV-1604.06174](https://arxiv.org/abs/1604.06174). Store activations at O(sqrt(n)) checkpoints and recompute the rest during the backward pass. The price is one extra forward pass per minibatch; the measured case is a 1000-layer ResNet at 48G to 7G for 30% more wall clock. | Active |
 | [SOTA-364](../../../record/practices.d/SOTA-364.md) | Break batch normalization's cross-sample leak before it solves your contrastive task for you |  | Active |
 | [SOTA-376](../../../record/practices.d/SOTA-376.md) | Score each image-text pair independently with a sigmoid, so the loss needs no global normalization |  | Active |
+| [SOTA-437](../../../record/practices.d/SOTA-437.md) | Store and move model checkpoints losslessly compressed: code the float exponent as its own stream with an entropy coder alone, and store successive checkpoints as deltas against a periodic full base | Hershcovitch et al. (2024), [LIT-750](../../../record/literature.d/LIT-750.md) — ZipNN. In regular trained weights only the float exponent is redundant: about 40 of its 256 values occur and it codes to about a third, while sign and mantissa barely compress. So split the exponent into its own stream and Huffman-code it without an LZ stage. Llama-3.1 BF16 goes to 66.4% against Zstd's 77.7%, and is faster in both directions. Between checkpoints, XOR deltas against a base up to 10 checkpoints back compress better than standalone files. Sizes and throughputs are measured. Stall time inside a training run is not. | Proposed |

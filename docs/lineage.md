@@ -2,7 +2,7 @@
 
 # Lines of work
 
-57 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+61 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -137,6 +137,16 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-165](../record/literature.d/LIT-165.md) — Mamba-3: Improved Sequence Modeling using State Space Principles *(Active)*
 - [LIT-195](../record/literature.d/LIT-195.md) — Parallelizing Linear Transformers with the Delta Rule over Sequence Length *(Active)*
 
+### From Efficient Streaming Language Models with Attention Sinks
+
+- [LIT-191](../record/literature.d/LIT-191.md) — Efficient Streaming Language Models with Attention Sinks *(Active)*
+  - [LIT-748](../record/literature.d/LIT-748.md) — SepLLM: Accelerate Large Language Models by Compressing One Segment into One Separator *(Active)*
+
+### From Swin Transformer: Hierarchical Vision Transformer using Shifted Windows
+
+- [LIT-723](../record/literature.d/LIT-723.md) — Swin Transformer: Hierarchical Vision Transformer using Shifted Windows *(Active)*
+  - [LIT-763](../record/literature.d/LIT-763.md) — Erwin: A Tree-based Hierarchical Transformer for Large-scale Physical Systems *(Active)*
+
 ## biomolecular-modeling
 
 ### From Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences
@@ -148,6 +158,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-583](../record/literature.d/LIT-583.md) — Highly accurate protein structure prediction with AlphaFold *(Active)*
   - [LIT-584](../record/literature.d/LIT-584.md) — Accurate structure prediction of biomolecular interactions with AlphaFold 3 *(Active)*
+  - [LIT-754](../record/literature.d/LIT-754.md) — Efficient AlphaFold2 Training using Parallel Evoformer and Branch Parallelism *(Active)*
 
 ## concept-geometry
 
@@ -174,6 +185,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-484](../record/literature.d/LIT-484.md) — TinyStories: How Small Can Language Models Be and Still Speak Coherent English? *(Active)*
   - [LIT-485](../record/literature.d/LIT-485.md) — Parameterized Synthetic Text Generation with SimpleStories *(Active)*
+
+### From Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation
+
+- alongside: [LIT-743](../record/literature.d/LIT-743.md) — Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation *(Active)*
+- alongside: [LIT-755](../record/literature.d/LIT-755.md) — Wonderland: Navigating 3D Scenes from a Single Image *(Active)*
 
 ## distributed-optimization
 
@@ -262,6 +278,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-498](../record/literature.d/LIT-498.md) — MaskGIT: Masked Generative Image Transformer *(Active)*
     - [LIT-500](../record/literature.d/LIT-500.md) — Vector-quantized Image Modeling with Improved VQGAN *(Active)*
       - [LIT-497](../record/literature.d/LIT-497.md) — Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation *(Active)* — also extends LIT-496
+- alongside: [LIT-751](../record/literature.d/LIT-751.md) — "Principal Components" Enable A New Language of Images *(Active)*
 
 ### From Improved Techniques for Training GANs
 
@@ -275,6 +292,20 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-647](../record/literature.d/LIT-647.md) — Sequence Level Training with Recurrent Neural Networks *(Active)*
 - alongside: [LIT-649](../record/literature.d/LIT-649.md) — Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks *(Active)*
+
+### From Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation
+
+- alongside: [LIT-743](../record/literature.d/LIT-743.md) — Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation *(Active)*
+- alongside: [LIT-755](../record/literature.d/LIT-755.md) — Wonderland: Navigating 3D Scenes from a Single Image *(Active)*
+
+## graphs-and-networks
+
+### From Where Did the Gap Go? Reassessing the Long-Range Graph Benchmark
+
+- alongside: [LIT-579](../record/literature.d/LIT-579.md) — Where Did the Gap Go? Reassessing the Long-Range Graph Benchmark *(Active)*
+- alongside: [LIT-580](../record/literature.d/LIT-580.md) — How Powerful are Graph Neural Networks? *(Active)*
+- alongside: [LIT-581](../record/literature.d/LIT-581.md) — Pitfalls of Graph Neural Network Evaluation *(Active)*
+- alongside: [LIT-582](../record/literature.d/LIT-582.md) — Semi-Supervised Classification with Graph Convolutional Networks *(Active)*
 
 ## in-context-learning
 
@@ -360,6 +391,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-583](../record/literature.d/LIT-583.md) — Highly accurate protein structure prediction with AlphaFold *(Active)*
   - [LIT-584](../record/literature.d/LIT-584.md) — Accurate structure prediction of biomolecular interactions with AlphaFold 3 *(Active)*
+  - [LIT-754](../record/literature.d/LIT-754.md) — Efficient AlphaFold2 Training using Parallel Evoformer and Branch Parallelism *(Active)*
+
+### From Swin Transformer: Hierarchical Vision Transformer using Shifted Windows
+
+- [LIT-723](../record/literature.d/LIT-723.md) — Swin Transformer: Hierarchical Vision Transformer using Shifted Windows *(Active)*
+  - [LIT-763](../record/literature.d/LIT-763.md) — Erwin: A Tree-based Hierarchical Transformer for Large-scale Physical Systems *(Active)*
 
 ## model-stability
 
@@ -379,11 +416,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [LIT-704](../record/literature.d/LIT-704.md) — Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning *(Active)*
   - [LIT-705](../record/literature.d/LIT-705.md) — Understanding the Disharmony between Dropout and Batch Normalization by Variance Shift *(Active)*
 
-### From Momentum Contrast for Unsupervised Visual Representation Learning
-
-- alongside: [LIT-590](../record/literature.d/LIT-590.md) — Momentum Contrast for Unsupervised Visual Representation Learning *(Active)*
-- alongside: [LIT-591](../record/literature.d/LIT-591.md) — A Simple Framework for Contrastive Learning of Visual Representations *(Active)*
-
 ### From Bootstrap your own latent: A new approach to self-supervised Learning
 
 - [LIT-594](../record/literature.d/LIT-594.md) — Bootstrap your own latent: A new approach to self-supervised Learning *(Active)*
@@ -398,6 +430,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-674](../record/literature.d/LIT-674.md) — Robust fine-tuning of zero-shot models *(Active)*
 - alongside: [LIT-675](../record/literature.d/LIT-675.md) — Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time *(Active)*
+
+### From Net2Net: Accelerating Learning via Knowledge Transfer
+
+- [LIT-758](../record/literature.d/LIT-758.md) — Net2Net: Accelerating Learning via Knowledge Transfer *(Active)*
+  - [LIT-749](../record/literature.d/LIT-749.md) — bert2BERT: Towards Reusable Pretrained Language Models *(Active)*
+    - [LIT-765](../record/literature.d/LIT-765.md) — Scaling Smart: Accelerating Large Language Model Pre-training with Small Model Initialization *(Active)* — also extends LIT-758
 
 ## numerics-and-precision
 
@@ -440,6 +478,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-498](../record/literature.d/LIT-498.md) — MaskGIT: Masked Generative Image Transformer *(Active)*
     - [LIT-500](../record/literature.d/LIT-500.md) — Vector-quantized Image Modeling with Improved VQGAN *(Active)*
       - [LIT-497](../record/literature.d/LIT-497.md) — Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation *(Active)* — also extends LIT-496
+- alongside: [LIT-751](../record/literature.d/LIT-751.md) — "Principal Components" Enable A New Language of Images *(Active)*
 
 ### From Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences
 
@@ -456,6 +495,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-590](../record/literature.d/LIT-590.md) — Momentum Contrast for Unsupervised Visual Representation Learning *(Active)*
 - alongside: [LIT-591](../record/literature.d/LIT-591.md) — A Simple Framework for Contrastive Learning of Visual Representations *(Active)*
+- alongside: [LIT-744](../record/literature.d/LIT-744.md) — Text Embeddings by Weakly-Supervised Contrastive Pre-training *(Active)*
 
 ### From Reading Tea Leaves: How Humans Interpret Topic Models
 
@@ -596,6 +636,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-647](../record/literature.d/LIT-647.md) — Sequence Level Training with Recurrent Neural Networks *(Active)*
 - alongside: [LIT-649](../record/literature.d/LIT-649.md) — Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks *(Active)*
 
+### From Net2Net: Accelerating Learning via Knowledge Transfer
+
+- [LIT-758](../record/literature.d/LIT-758.md) — Net2Net: Accelerating Learning via Knowledge Transfer *(Active)*
+  - [LIT-749](../record/literature.d/LIT-749.md) — bert2BERT: Towards Reusable Pretrained Language Models *(Active)*
+    - [LIT-765](../record/literature.d/LIT-765.md) — Scaling Smart: Accelerating Large Language Model Pre-training with Small Model Initialization *(Active)* — also extends LIT-758
+
 ## vision-and-graphics
 
 ### From NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis
@@ -619,18 +665,15 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-588](../record/literature.d/LIT-588.md) — Learning Transferable Visual Models From Natural Language Supervision *(Active)*
   - [LIT-706](../record/literature.d/LIT-706.md) — Scaling Language-Image Pre-training via Masking *(Active)* — also extends LIT-601
 - [LIT-601](../record/literature.d/LIT-601.md) — Masked Autoencoders Are Scalable Vision Learners *(Active)*
-- alongside: [LIT-605](../record/literature.d/LIT-605.md) — Sigmoid Loss for Language Image Pre-Training *(Active)*
+- [LIT-605](../record/literature.d/LIT-605.md) — Sigmoid Loss for Language Image Pre-Training *(Active)*
+  - [LIT-745](../record/literature.d/LIT-745.md) — SigLIP 2: Multilingual Vision-Language Encoders with Improved Semantic Understanding, Localization, and Dense Features *(Active)*
 
 ### From An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
 
 - [LIT-587](../record/literature.d/LIT-587.md) — An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale *(Active)*
   - [LIT-628](../record/literature.d/LIT-628.md) — Better plain ViT baselines for ImageNet-1k *(Active)*
   - [LIT-657](../record/literature.d/LIT-657.md) — Patch n' Pack: NaViT, a Vision Transformer for any Aspect Ratio and Resolution *(Active)*
-
-### From Momentum Contrast for Unsupervised Visual Representation Learning
-
-- alongside: [LIT-590](../record/literature.d/LIT-590.md) — Momentum Contrast for Unsupervised Visual Representation Learning *(Active)*
-- alongside: [LIT-591](../record/literature.d/LIT-591.md) — A Simple Framework for Contrastive Learning of Visual Representations *(Active)*
+- alongside: [LIT-747](../record/literature.d/LIT-747.md) — Perceiver: General Perception with Iterative Attention *(Active)*
 
 ### From Bootstrap your own latent: A new approach to self-supervised Learning
 
@@ -654,3 +697,8 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-727](../record/literature.d/LIT-727.md) — Striving for Simplicity: The All Convolutional Net *(Active)*
 - alongside: [LIT-728](../record/literature.d/LIT-728.md) — Visualizing and Understanding Convolutional Networks *(Active)*
 - alongside: [LIT-732](../record/literature.d/LIT-732.md) — Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization *(Active)*
+
+### From Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation
+
+- alongside: [LIT-743](../record/literature.d/LIT-743.md) — Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation *(Active)*
+- alongside: [LIT-755](../record/literature.d/LIT-755.md) — Wonderland: Navigating 3D Scenes from a Single Image *(Active)*

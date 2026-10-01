@@ -57,7 +57,7 @@ vocabularies:
   #   ADR-060  concept-geometry -- three documents about how concepts sit
   #            in representation space had each named the gap, from under a
   #            topic about input encoding
-  #   ADR-tmp56fu3 agents-and-environments, graphs-and-networks,
+  #   ADR-064 agents-and-environments, graphs-and-networks,
   #            physical-sciences, human-ai-interaction -- the #180 reading
   #            pass declined three papers and filed four more under the
   #            nearest wrong word; each reader named the missing topic
@@ -198,7 +198,7 @@ vocabularies:
       concept-geometry:
         label: Concept geometry
         blurb: how concepts are laid out in a model's representation space — linear directions and the regions, lattices and spectra built from them, superposition and the dictionaries that pull it apart, reading concepts out with probes and writing them in with steering vectors, and whether different models arrive at the same geometry
-      # The four below were added by ADR-tmp56fu3. Filing the reading feed's
+      # The four below were added by ADR-064. Filing the reading feed's
       # revisit list (#180), three papers were declined because no topic held
       # them and four more were filed under the nearest wrong word, each
       # saying so. Under ADR-059 that is the axis being short.
@@ -844,7 +844,7 @@ schemes:
         required: false
         many: true
         converse: corrects
-      # Contestation, added by ADR-tmpkrt96. `corrects` says an account has
+      # Contestation, added by ADR-065. `corrects` says an account has
       # replaced another's reasoning; nothing said that an account is disputed
       # and not yet replaced, which is the usual state of a Proposed theory.
       # Two relations, because a theory is disputed in two ways: by evidence

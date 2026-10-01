@@ -2,11 +2,11 @@
 
 # SOTAs with `tags` `adaptation-and-tuning`
 
-*Topics — The twenty-two kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-two for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
+*Topics — The twenty-six kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-six for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Adaptation and tuning** — taking a trained model somewhere new — fine-tuning and transfer, preference training and safety alignment, parameter-efficient adaptation, context extension.
 
-35 of 435 SOTA documents. Back to the [full index](../README.md).
+35 of 441 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

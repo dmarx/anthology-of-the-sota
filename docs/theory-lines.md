@@ -2,7 +2,7 @@
 
 # Lines of explanation
 
-12 lines, walked from `extends:` and `corrects:` on THEORY documents. Each step explains itself; this page is the order they came in.
+11 lines, walked from `extends:` and `corrects:` on THEORY documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -23,12 +23,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [THEORY-068](../record/theory.d/THEORY-068.md) — In-context learning is gradient descent on an implicit model *(Rejected)*
   - [THEORY-067](../record/theory.d/THEORY-067.md) — A transformer can run a learning algorithm on a model held in its activations, and the architecture admits several, so a construction identifies none *(Active)*
 
-### From A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips when the data makes memorising more expensive
-
-- [THEORY-071](../record/theory.d/THEORY-071.md) — A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips when the data makes memorising more expensive *(Proposed)*
-  - [THEORY-070](../record/theory.d/THEORY-070.md) — Grokking is the transition from lazy to rich training dynamics *(Proposed)* — also extends THEORY-072
-- [THEORY-072](../record/theory.d/THEORY-072.md) — Training and test loss disagree as functions of weight norm, and shrinking the norm through the gap is what takes so long *(Proposed)*
-
 ### From Neural networks are singular, so effective complexity is how the volume of near-optimal parameters scales, not how curved the optimum is
 
 - [THEORY-075](../record/theory.d/THEORY-075.md) — Neural networks are singular, so effective complexity is how the volume of near-optimal parameters scales, not how curved the optimum is *(Active)*
@@ -46,14 +40,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [THEORY-061](../record/theory.d/THEORY-061.md) — Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product *(Proposed)*
   - [THEORY-062](../record/theory.d/THEORY-062.md) — What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such *(Proposed)*
-
-## capability-thresholds
-
-### From A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips when the data makes memorising more expensive
-
-- [THEORY-071](../record/theory.d/THEORY-071.md) — A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips when the data makes memorising more expensive *(Proposed)*
-  - [THEORY-070](../record/theory.d/THEORY-070.md) — Grokking is the transition from lazy to rich training dynamics *(Proposed)* — also extends THEORY-072
-- [THEORY-072](../record/theory.d/THEORY-072.md) — Training and test loss disagree as functions of weight norm, and shrinking the norm through the gap is what takes so long *(Proposed)*
 
 ## concept-geometry
 
@@ -94,12 +80,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [THEORY-061](../record/theory.d/THEORY-061.md) — Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product *(Proposed)*
   - [THEORY-062](../record/theory.d/THEORY-062.md) — What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such *(Proposed)*
 
-### From A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips when the data makes memorising more expensive
-
-- [THEORY-071](../record/theory.d/THEORY-071.md) — A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips when the data makes memorising more expensive *(Proposed)*
-  - [THEORY-070](../record/theory.d/THEORY-070.md) — Grokking is the transition from lazy to rich training dynamics *(Proposed)* — also extends THEORY-072
-- [THEORY-072](../record/theory.d/THEORY-072.md) — Training and test loss disagree as functions of weight norm, and shrinking the norm through the gap is what takes so long *(Proposed)*
-
 ## representation-and-encoding
 
 ### From Skip-gram with negative sampling implicitly factorizes the word-context PMI matrix shifted by log k, weighting frequent pairs more heavily
@@ -124,12 +104,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [THEORY-076](../record/theory.d/THEORY-076.md) — Under the standard parametrization a learning rate that stays stable as width grows leaves the network training as a kernel, and µP is the parametrization that escapes this by updating every layer maximally *(Active)*
   - [THEORY-037](../record/theory.d/THEORY-037.md) — Residual-branch depth sets the depth scaling rule, because a branch with two transformations has a second-order update term that a branch with one does not *(Active)*
-
-### From A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips when the data makes memorising more expensive
-
-- [THEORY-071](../record/theory.d/THEORY-071.md) — A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips when the data makes memorising more expensive *(Proposed)*
-  - [THEORY-070](../record/theory.d/THEORY-070.md) — Grokking is the transition from lazy to rich training dynamics *(Proposed)* — also extends THEORY-072
-- [THEORY-072](../record/theory.d/THEORY-072.md) — Training and test loss disagree as functions of weight norm, and shrinking the norm through the gap is what takes so long *(Proposed)*
 
 ### From Neural networks are singular, so effective complexity is how the volume of near-optimal parameters scales, not how curved the optimum is
 

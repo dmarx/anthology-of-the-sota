@@ -67,7 +67,7 @@ corresponds to flatter minima. And on modular addition, sensitivity falls
 during the grokking plateau while the training loss does not, which makes it
 a progress measure for a transition the loss cannot see.
 
-All three parts come from LIT-525. It extends sensitivity from Boolean
+All three parts come from [LIT-525](../literature.d/LIT-525.md). It extends sensitivity from Boolean
 functions to real modalities (its Definition 4.1, with Gaussian noise per
 image patch and uniform replacement over the vocabulary for tokens). It proves
 the NTK-regime bias and the Boolean robustness implication, and it supplies

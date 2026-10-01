@@ -34,7 +34,7 @@ corresponding slice of the update.
 ZeRO-1 gives each of the N ranks 1/N of the optimizer state, taking the
 per-rank cost to 4Ψ + 12Ψ/N — approaching a 4× reduction as N grows.
 
-The stage and its arithmetic come from LIT-027, which introduces
+The stage and its arithmetic come from [LIT-027](../literature.d/LIT-027.md), which introduces
 optimizer-state partitioning as the first of ZeRO-DP's three stages. The
 paper counts mixed-precision Adam at K = 12 bytes of FP32 optimizer state per
 parameter, which is where the 12 above comes from, and in its worked example

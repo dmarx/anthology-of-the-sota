@@ -66,7 +66,7 @@ chance without changing anything else.
 
 ## What was actually shown
 
-The account, closed form included, is LIT-471's: it derives `p^L` from a
+The account, closed form included, is [LIT-471](../literature.d/LIT-471.md)'s: it derives `p^L` from a
 smoothly falling per-token cross entropy, then tests it on InstructGPT/GPT-3
 models from 350M to 175B parameters, whose 2-shot addition and multiplication
 outputs show emergence under Accuracy and smooth improvement under Token Edit

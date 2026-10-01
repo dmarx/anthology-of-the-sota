@@ -48,7 +48,7 @@ each pair is weighted by its counts, so frequent pairs are fitted better
 than rare ones. Changing the noise distribution to count^α changes the PMI's
 denominator the same way.
 
-The derivation is LIT-612's (its Eq. 6–7, with Eq. 8 giving the NCE form),
+The derivation is [LIT-612](../literature.d/LIT-612.md)'s (its Eq. 6–7, with Eq. 8 giving the NCE form),
 and the paper also measures how near real fits come to that optimum: shifted
 PPMI is within about 0.0001% of SGNS's optimal objective, while SGNS's own
 embeddings land 6–39% from it, closer as d grows (Table 1).

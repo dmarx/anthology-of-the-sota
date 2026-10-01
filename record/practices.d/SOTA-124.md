@@ -80,7 +80,7 @@ model overfitting to it, while one with a small epoch size will be memorised.
 The window is assumed to scale linearly with parameters, giving about 5 GT
 at 100M.
 
-The recommendation in the form stated here is LIT-119's, the Falcon-H1-Tiny
+The recommendation in the form stated here is [LIT-119](../literature.d/LIT-119.md)'s, the Falcon-H1-Tiny
 blogpost: it defines the window from the Falcon-H1 measurement, states the
 rule that a source can be repeated without limit when its epoch size exceeds
 it, scales the conservative 500 GT estimate linearly down to about 5 GT at

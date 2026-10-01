@@ -77,7 +77,7 @@ noise-space KL upper-bounds the data-space KL between the steered and base
 output distributions. Minimizing the computable thing therefore constrains
 the thing that was wanted.
 
-The derivation is LIT-491's, from §3.1 and Appendix A.4, and it is what makes
+The derivation is [LIT-491](../literature.d/LIT-491.md)'s, from §3.1 and Appendix A.4, and it is what makes
 its HyperNoise method trainable. A LoRA hypernetwork predicts the noise
 modulation and is trained against a reward plus this `L2` penalty. The
 weight-space alternative it compares against shows the anchor missing: on

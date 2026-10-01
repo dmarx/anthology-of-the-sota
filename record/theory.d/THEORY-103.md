@@ -82,7 +82,7 @@ the wrong half of the network.
 
 ## What was actually shown
 
-All of it is LIT-667's: an 8-layer GPT-2 trained from scratch on a synthetic
+All of it is [LIT-667](../literature.d/LIT-667.md)'s: an 8-layer GPT-2 trained from scratch on a synthetic
 knowledge graph, with atomic facts split into an in-distribution set and an
 out-of-distribution set that appears in training only atomically. Composition
 never generalized to the OOD set in two million optimization steps while

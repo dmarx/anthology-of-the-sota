@@ -45,7 +45,7 @@ Goldberg and Shirtz (2025), [LIT-410](../literature.d/LIT-410.md) —
 
 ## What was actually shown
 
-Everything below is from LIT-410: a distributional argument over COCA
+Everything below is from [LIT-410](../literature.d/LIT-410.md): a distributional argument over COCA
 attestations, and four preregistered surveys (685 participants, plus 70 for
 Study 4) whose effects held on high-frequency phrases alone.
 

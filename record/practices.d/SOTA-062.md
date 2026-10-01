@@ -72,8 +72,8 @@ going to measure. But a reader with a measurement should prefer it, and the
 practice should not be read as licensing a fixed batch-to-parameter ratio,
 which is the reading its title most invites.
 
-The alternative the record held beside it, SOTA-061, does not use model size
+The alternative the record held beside it, [SOTA-061](SOTA-061.md), does not use model size
 at all: it raises the batch while sample efficiency stays above 80% of its
 small-batch value and stops there. That rule asks for a measurement, where
 this one is a proxy for it. The proxy has since been shown to track the wrong
-variable (SOTA-258). No paper compared the two rules directly.
+variable ([SOTA-258](SOTA-258.md)). No paper compared the two rules directly.

@@ -55,7 +55,7 @@ that characterizes a discrete diffusion process. Satisfying that ODE is
 necessary and sufficient, so the discretized Gaussian process **is** a
 uniform-state discrete diffusion rather than something that resembles one.
 
-Both halves are derived in LIT-479 §3, which builds the marginal
+Both halves are derived in [LIT-479](../literature.d/LIT-479.md) §3, which builds the marginal
 transformation from the standard normal CDF, derives the transition ODE, and
 verifies one of the two numerically. It is the paper that then builds Duo on
 the result.

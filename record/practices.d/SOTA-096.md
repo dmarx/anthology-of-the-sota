@@ -55,7 +55,7 @@ found instead that **model size and training tokens should scale in equal
 proportion**: double the compute, double both. The ratio that falls out is
 about 20 tokens per parameter.
 
-Both the recommendation and the ratio come from LIT-068, though the paper
+Both the recommendation and the ratio come from [LIT-068](../literature.d/LIT-068.md), though the paper
 never writes the number 20. Its three fitting methods give exponents of 0.50,
 0.49 and 0.46 for `N_opt ∝ C^a`, against Kaplan et al.'s 0.73, and its Table 3
 projects compute-optimal training at 20.2B tokens for a 1B-parameter model,

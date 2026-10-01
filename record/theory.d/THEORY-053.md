@@ -63,7 +63,7 @@ nonsmooth), and a **compact smooth submanifold** (the generic
 low-dimensional-data story). In each it bounds the gap between `D` and the
 corresponding projector.
 
-The bounds and what follows from them are LIT-490's. It proves the
+The bounds and what follows from them are [LIT-490](../literature.d/LIT-490.md)'s. It proves the
 denoiser-to-projection bounds in all three settings for an exact Stein
 posterior-mean denoiser under deterministic DDIM, then derives finite-time
 rates for its gradient-then-denoise guidance (DCG). Its trajectory-tracking

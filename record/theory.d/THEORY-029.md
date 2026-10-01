@@ -40,7 +40,7 @@ Gu et al. (2025), [LIT-451](../literature.d/LIT-451.md) — [ARXIV-2505.18091](h
 
 ## What was actually shown
 
-Both halves are LIT-451's: the two phase transitions in knowledge acquisition
+Both halves are [LIT-451](../literature.d/LIT-451.md)'s: the two phase transitions in knowledge acquisition
 under mixing, and the knapsack account whose predicted power law for the
 critical ratio it then fits.
 

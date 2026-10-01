@@ -34,7 +34,7 @@ every frontier report in the record uses a stable-then-decay shape. The
 claim here was right that one cycle beats several; what moved is the shape
 of the one cycle.
 
-What LIT-035 reports is the recipe, not a comparison. All eight GPT-3 models,
+What [LIT-035](../literature.d/LIT-035.md) reports is the recipe, not a comparison. All eight GPT-3 models,
 125M to 175B, were trained with a linear warmup over the first 375 million
 tokens and a single cosine decay to 10% of the peak rate over 260 billion
 tokens, held at 10% for the rest of the 300 billion. No other schedule is run

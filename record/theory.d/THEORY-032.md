@@ -107,7 +107,7 @@ advantage shrinks from 1.4× at 0.1B to 1.1× at 1.2B.
 
 ## What was actually shown
 
-Each result is LIT-457's: the comparison of guaranteed decreases (its eq.
+Each result is [LIT-457](../literature.d/LIT-457.md)'s: the comparison of guaranteed decreases (its eq.
 1.1), the stable-rank propagation lemmas, the spiked random-feature scaling,
 and the NanoGPT measurement in its Figure 10.
 

@@ -79,7 +79,7 @@ every CFG deployment is that much worse than the model it is correcting.
 
 ## What makes this an account rather than a story
 
-The density-ratio reading is LIT-721's, which drew it from a 2D toy example where
+The density-ratio reading is [LIT-721](../literature.d/LIT-721.md)'s, which drew it from a 2D toy example where
 guided samples gathered on the manifold's core, and then tested it on EDM2-S
 with a synthetic-degradation experiment with a **negative control**, on one base
 model so the undamaged version grounds the comparison:

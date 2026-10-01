@@ -41,7 +41,7 @@ spends is accelerator-hours, and a batch size chosen to optimise sample
 efficiency can leave the hardware idle enough that the theoretically better
 schedule finishes later.
 
-LIT-069 gives the throughput side as the second reason for its batch ramp,
+[LIT-069](../literature.d/LIT-069.md) gives the throughput side as the second reason for its batch ramp,
 beside the sample-efficiency one: larger batches mean larger matrix
 multiplications, which increases TPU efficiency. It does not rank the two
 reasons or measure the trade between them; that throughput "wins out" is this

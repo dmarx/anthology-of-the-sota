@@ -49,7 +49,7 @@ and feature maps are that overwriting, seen from outside.
 
 ## What it explains, and each piece is measured
 
-Both the hypothesis and every measurement below are LIT-662's: it found the
+Both the hypothesis and every measurement below are [LIT-662](../literature.d/LIT-662.md)'s: it found the
 high-norm tokens (norm above 150, 2.37% of patch tokens in DINOv2 ViT-g),
 probed what they hold, and proposed the scratch-space reading quoted above.
 

@@ -55,13 +55,13 @@ The tensor-core tiles underneath want the same alignment, which is why the
 figure is usually stated as 128 rather than as "whatever the kernel's block
 size is".
 
-Set beside SOTA-089, "align tensor dimensions to hardware boundaries", this
-is that practice applied to one axis. SOTA-089 rests on Ivanov et al.'s
+Set beside [SOTA-089](SOTA-089.md), "align tensor dimensions to hardware boundaries", this
+is that practice applied to one axis. [SOTA-089](SOTA-089.md) rests on Ivanov et al.'s
 finding that transformer training is memory-bound, so a dimension off the
 hardware's unit wastes traffic, and it is explicit that the circulating
 constants (8, 64, 128) belong to particular hardware. This practice took one
 of them, a head dimension or block size in its source, and attached it to the
-sequence length; SOTA-089 names that transposition as the failure its own
+sequence length; [SOTA-089](SOTA-089.md) names that transposition as the failure its own
 constants should be checked for.
 
 ## Why this is rejected: the number is real and the axis is wrong

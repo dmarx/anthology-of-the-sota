@@ -34,7 +34,7 @@ Shazeer (2019), [LIT-024](../literature.d/LIT-024.md) — [ARXIV-1911.02150](htt
 ## What the paper showed
 
 Multi-query attention, and the advice to use it for decoding, come from
-LIT-024. Its argument starts from a diagnosis: incremental decoding cannot
+[LIT-024](../literature.d/LIT-024.md). Its argument starts from a diagnosis: incremental decoding cannot
 parallelise across positions the way training does, so its speed "is limited
 by the memory bandwidth necessary to reload the large keys and values
 tensors", not by arithmetic. Sharing one key/value head across all query heads

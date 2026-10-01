@@ -93,7 +93,7 @@ the producer is choosing.
   thoroughness. It is the case the paper proves and its own closing sentence
   forgets.
 
-All three cases are propositions in LIT-492, which applies Charnov's theorem
+All three cases are propositions in [LIT-492](../literature.d/LIT-492.md), which applies Charnov's theorem
 to research effort, with discovery as travel time between patches and
 discretionary development as the diminishing harvest. Shortening discovery
 raises the development threshold and lowers thoroughness (Props. 5–7), and

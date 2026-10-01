@@ -75,7 +75,7 @@ high-precision trajectory it would have followed, lagging by less than one
 grid cell and discharging that lag whenever the accumulated signal crosses a
 boundary.
 
-The three-way split is LIT-473's §5 derivation, written to justify its
+The three-way split is [LIT-473](../literature.d/LIT-473.md)'s §5 derivation, written to justify its
 quantized evolution-strategies method (QES): exact cancellation without a
 residual, a random walk with variance growing in `T` under stochastic
 rounding, and the `Δ/2` bound on the virtual parameters once the residual is

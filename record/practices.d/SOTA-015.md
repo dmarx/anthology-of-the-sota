@@ -40,7 +40,7 @@ weights do, and FP16 cannot hold it. The exponent range runs out before the
 mantissa does — small squared gradients flush to zero, ε stops doing its job,
 and the effective step size drifts.
 
-What LIT-011 itself showed is one level up, on the weights, and it is where
+What [LIT-011](../literature.d/LIT-011.md) itself showed is one level up, on the weights, and it is where
 the FP32 update path this practice extends was first recommended. Its case is
 that the update, not the forward pass, is where FP16 fails: about 5% of the
 Mandarin speech model's weight-gradient values had exponents below −24 and
@@ -50,7 +50,7 @@ directly cost 80% relative accuracy on that model, while updating an FP32
 master copy matched FP32 training. The paper's recipe is "single-precision
 master weights and updates"; it never names Adam's moments. Carrying the
 argument to them is this practice's step, and it is the accounting ZeRO
-(LIT-027) makes when it counts mixed-precision Adam at 12 bytes of FP32 state
+([LIT-027](../literature.d/LIT-027.md)) makes when it counts mixed-precision Adam at 12 bytes of FP32 state
 per parameter.
 
 ## Cost, and what has changed since

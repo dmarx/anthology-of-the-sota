@@ -80,7 +80,7 @@ empirical. A withdrawal study assumes a symmetry that a path-dependent system
 does not have, and a trial whose units interact is not estimating what its
 design says it estimates. Neither can be fixed by a larger sample.
 
-The four mechanisms, and the illustrations above, are LIT-482's. It is a
+The four mechanisms, and the illustrations above, are [LIT-482](../literature.d/LIT-482.md)'s. It is a
 review with no new data: it imports the mechanisms from the study of complex
 systems, gives each a physical and a social example, and re-reads published
 large-scale social-media experiments against them.

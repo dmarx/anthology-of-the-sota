@@ -83,7 +83,7 @@ better-generalizing network should have the larger neighbourhood, and local
 volume should fall through training as the network's description grows. Both
 hold.
 
-The framing, the estimator and both tests are LIT-476's. It finds each
+The framing, the estimator and both tests are [LIT-476](../literature.d/LIT-476.md)'s. It finds each
 neighbourhood's radius along sampled directions, aggregates by preconditioned
 importance sampling into a log-volume, and runs this on an MLP, a ConvNeXt
 and Pythia 31M checkpoints. For Pythia 31M, the probability of drawing the

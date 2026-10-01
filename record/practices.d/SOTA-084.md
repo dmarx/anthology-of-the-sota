@@ -28,7 +28,7 @@ search is guided by measurement: candidate schedules are run on the target
 hardware, and a learned cost model trained on those measurements proposes the
 next candidates.
 
-That design is LIT-063's, and the recommendation in the form this practice
+That design is [LIT-063](../literature.d/LIT-063.md)'s, and the recommendation in the form this practice
 states it — let measurements on the target device steer a learned search over
 schedules — starts there; blackbox autotuning is older, and the paper measures
 itself against it. Its explorer runs simulated annealing over predicted costs,

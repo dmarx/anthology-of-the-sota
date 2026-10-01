@@ -68,7 +68,7 @@ general knowledge. Separately, at the downstream level, a 1.6B model at
 baseline on general ones. A fitted constant and a benchmark table are
 different instruments, and they rank the two corpora the same way.
 
-Both are LIT-486's, from its ParScale experiments: Qwen-2.5-architecture
+Both are [LIT-486](../literature.d/LIT-486.md)'s, from its ParScale experiments: Qwen-2.5-architecture
 models from 0.5B to 4.4B pre-trained at `P = 1…8` on 42B tokens of each
 corpus, a scaling law fitted to them, and downstream scores of 39.1 against
 39.2 on coding and 55.7 against 55.2 on general tasks. The authors draw the

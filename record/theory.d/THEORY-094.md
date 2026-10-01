@@ -63,7 +63,7 @@ Isotropy makes that matrix well conditioned, so the regression averages the
 noise down by √(d/n). The offset comes out clean even though no individual
 inner product is.
 
-Both steps are proved in LIT-613 from the random-walk model: the nearly
+Both steps are proved in [LIT-613](../literature.d/LIT-613.md) from the random-walk model: the nearly
 constant partition function (Lemma 2.1), the PMI relation (Theorem 2.2), and
 the √(d/n) shrinkage of noise in a relation's offset (Theorem 4.1). Its check
 that real embeddings fit the model is the partition function concentrating

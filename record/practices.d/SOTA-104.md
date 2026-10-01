@@ -47,7 +47,7 @@ is *supposed* to move away from uniform coverage — that is what the bandit is
 for. A domain being under-sampled is the method working, not a condition to
 detect, so "coverage" is not even the right quantity to watch.
 
-What LIT-117 does report is the bandit itself: an Exp3 policy over the 22
+What [LIT-117](../literature.d/LIT-117.md) does report is the bandit itself: an Exp3 policy over the 22
 Pile domains, rewarded by per-domain training loss, which reaches the next
 best method's final perplexity in 19% fewer iterations at 1B parameters. It
 recommends no monitoring of any kind. The attribution came from a takeaway

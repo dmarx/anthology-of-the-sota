@@ -33,7 +33,7 @@ corroborated empirically by Srivastava et al. (2014),
 
 ## What was actually shown
 
-The derivation below is LIT-393's: the single-unit `NWGM` identity, its
+The derivation below is [LIT-393](../literature.d/LIT-393.md)'s: the single-unit `NWGM` identity, its
 converse, and the three recursive equations with the error of the one
 approximation characterized.
 

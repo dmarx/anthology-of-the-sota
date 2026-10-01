@@ -73,7 +73,7 @@ memory and nothing else about the model. That is unusual among the
 efficiency practices in this record and is why the title can be so
 unconditional.
 
-Both the kernel and the recommendation to run it come from LIT-074. Its
+Both the kernel and the recommendation to run it come from [LIT-074](../literature.d/LIT-074.md). Its
 Theorem 1 shows the tiled algorithm returns exact softmax attention with the
 FLOP count unchanged at `O(N²d)` and only `O(N)` extra memory, and Proposition
 3 proves no exact algorithm needs asymptotically fewer HBM accesses across SRAM

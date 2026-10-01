@@ -43,7 +43,7 @@ independent measurement of the exponent.
 
 ## What was actually shown
 
-Both halves are LIT-445's: it trains 85M–1.2B models on C4 with model size
+Both halves are [LIT-445](../literature.d/LIT-445.md)'s: it trains 85M–1.2B models on C4 with model size
 and token count varied separately, fits critical batch size as `D^0.462` in
 data and nearly flat in model size, and supplies the two theorems below.
 

@@ -62,7 +62,7 @@ block from Q, K and V — which is more FLOPs and less time, because the FLOPs
 were never the bottleneck. Memory falls from quadratic to linear in sequence
 length.
 
-The accounting is LIT-074's. Its Theorem 2 puts standard attention at
+The accounting is [LIT-074](../literature.d/LIT-074.md)'s. Its Theorem 2 puts standard attention at
 `Θ(Nd + N²)` HBM accesses against `Θ(N²d²M⁻¹)` for the tiled kernel, and with
 head dimensions of 64–128 and roughly 100KB of SRAM, `d²` is many times smaller
 than `M`. Its backward pass rebuilds each block from the running maximum and

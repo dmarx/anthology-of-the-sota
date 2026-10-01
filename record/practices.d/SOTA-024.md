@@ -33,7 +33,7 @@ Shazeer (2019), [LIT-024](../literature.d/LIT-024.md) — [ARXIV-1911.02150](htt
 
 ## What the paper showed
 
-This is the architecture LIT-024 introduced as multi-query attention: project
+This is the architecture [LIT-024](../literature.d/LIT-024.md) introduced as multi-query attention: project
 queries per head as usual, but project one set of keys and values shared by
 every head, so the decode-time cache holds a single K and V per layer instead
 of one per head. The paper's reason is bandwidth. Incremental decoding is

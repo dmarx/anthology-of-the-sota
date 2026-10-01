@@ -32,7 +32,7 @@ halving the dtype halves them. On a job whose step time is the collectives —
 which is the job that reached for FSDP in the first place ([SOTA-116](SOTA-116.md)) — that
 is often the larger effect.
 
-Both halves are in LIT-083's §4.4. Keeping a low-precision copy beside the
+Both halves are in [LIT-083](../literature.d/LIT-083.md)'s §4.4. Keeping a low-precision copy beside the
 full-precision one normally adds memory, but FSDP holds only the local shard
 in full precision and gathers the unsharded `FlatParameter` in low
 precision, so the peak term for the largest unit falls from full-precision

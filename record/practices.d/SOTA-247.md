@@ -90,6 +90,13 @@ entries, and it does not get worse on the old ones. Mean-embedding
 initialization fails both — it struggles to use the new tokens and degrades
 overall performance, badly on Arabic (0.211).
 
+Both the method and these measurements are LIT-412's. Kaplan et al. first
+showed that Llama2-7B builds a whole-word representation at a split word's
+last token (a probe there reaches 89% word-versus-nonword accuracy, against
+61% on the penultimate token), and then turned that finding into this
+vocabulary-expansion procedure, which reads the new embedding out of the
+model instead of averaging the word's sub-token embeddings.
+
 **Where to expect it to pay.** The motivation is that multilingual tokenizers
 produce sequences up to 13× longer for non-English text, and the Arabic result
 is where the method is most clearly worth it. On English the accuracy is

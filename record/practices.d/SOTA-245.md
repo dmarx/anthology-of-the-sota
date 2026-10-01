@@ -57,11 +57,12 @@ sequence containing no English at all. The signal from the reversed sequence
 is barely distinguishable from the signal from an unrelated one. Consistent
 across model sizes.
 
-The measurement is LIT-401's, and so is the instruction drawn from it here.
+The measurement is LIT-401's, and the practice is first drawn from it.
 Grosse et al. scaled influence functions to models of up to 52B parameters
 with an EK-FAC approximation, and ran this synthetic construction with the
-content held fixed so that only the order varied; the order effect is the
-most concrete of the generalization results they report.
+content held fixed so that only the order varied. They report the asymmetry
+as a finding about generalization; the corpus instruction is the record's
+reading of it, and nothing in the paper trains on a reordered corpus.
 
 ## Why the corpus is where this has to be fixed
 

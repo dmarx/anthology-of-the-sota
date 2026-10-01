@@ -75,6 +75,13 @@ Two things worth separating. INT8 post-training quantization goes from
 destroyed one. And the floating-point model gets slightly *better*, so the
 outliers were not carrying something the model needed.
 
+Clipped softmax originates in LIT-414, which is also where these numbers come
+from. Bondarenko et al. traced the outliers that break INT8 to heads trying to
+learn a no-op, proposed clipped softmax and gated attention as two
+architectural fixes for it, and measured both; on their summary comparison
+clipped softmax was the more consistent of the two (infinity-norm 21.5±1.5
+against 39.2±26.0 for gating).
+
 `γ < 0` is where essentially all of the improvement comes from; stretching
 only the top end (`ζ > 1`) does almost nothing. Reported across BERT-base
 (109M), OPT-125M and ViT-S/16 on ImageNet-1K, each trained twice with each

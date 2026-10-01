@@ -65,6 +65,12 @@ made from far too little data and the updates become erratic.
 previously published result showing small batches underperforming with fixed
 `beta_2`, applies the rule, and the deficit disappears with no other tuning.
 
+The rule originates in LIT-444. Marek et al. swept learning rate, `beta_1`,
+`beta_2` and `t_2` independently across batch sizes from 1 to 1024 on a 30M
+model and compared holding `beta_2` fixed with holding `t_2` fixed: only the
+second kept training stable down to batch size one, and `beta_1`'s usual
+default worked at every batch size.
+
 ## Why it is worth filing separately from the batch-size advice
 
 Because it is true independently of whether you take [SOTA-260](SOTA-260.md)'s advice

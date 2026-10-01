@@ -2,7 +2,7 @@
 number: 11
 status: 'Active'
 title: 'Map the Hessian ratio |lambda_min / lambda_max| to find where the loss surface is non-convex'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-09'
@@ -13,6 +13,15 @@ history:
     non-convexity measure. And the method that makes it affordable, an
     implicitly restarted Lanczos over Hessian-vector products, is now in the
     body. The recommendation is unchanged.
+- version: 3
+  date: '2026-10-01'
+  note: >-
+    The cost of a Hessian-vector product was stated as "roughly a
+    forward-backward pass". LIT-tmp7eqbw measures it at 4.5–5.5 gradients
+    of time and 3–4.5× a gradient's memory in PyTorch, so the sentence is
+    corrected and the estimate of a useful run scaled with it. The
+    conclusion, a diagnostic at intervals rather than a monitor, is
+    unchanged and stronger.
 tags:
 - training-optimization
 - analysis-and-evaluation
@@ -78,8 +87,13 @@ recommendation it needs a paper that makes it.
 
 The full Hessian is intractable at any interesting size. What is computed in
 practice is a few extreme eigenvalues by Lanczos or power iteration on
-Hessian-vector products, each of which costs roughly a forward-backward pass —
-so a useful estimate is tens of extra passes, periodically, not per step.
+Hessian-vector products. Each product costs several forward-backward passes,
+not one: [LIT-tmp7eqbw](../literature.d/LIT-tmp7eqbw.md) measured it at 4.5–5.5 gradients of time and 3–4.5× a
+gradient's memory in PyTorch, on ResNet-50 and a 124M-parameter nanoGPT,
+consistent with the 4–5× other PyTorch measurements report; JAX with forward
+mode and compilation is cited at 2–4×. So a useful estimate, tens of
+products, is on the order of a hundred extra passes, run periodically and not
+per step.
 
 Hence "over training" in the title should be read as *at intervals*, and the
 practice is a study one runs deliberately rather than a signal on a dashboard.

@@ -21,6 +21,8 @@ source:
 - LIT-456
 explains:
 - SOTA-121
+rivals:
+- THEORY-024
 summary: >-
   Shumaylov et al. (2026), [LIT-456](../literature.d/LIT-456.md) — an optimizer with random
   singular values matches Muon, so the target spectrum is not what pays.

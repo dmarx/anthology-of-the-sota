@@ -38,6 +38,10 @@ explains:
 - SOTA-121
 - SOTA-143
 - SOTA-168
+contested_by:
+- LIT-456
+rivals:
+- THEORY-033
 summary: >-
   Bernstein and Newhouse (2024), [LIT-438](../literature.d/LIT-438.md) — gradients are dual vectors
   and weights are primal, so the subtraction in gradient descent needs a

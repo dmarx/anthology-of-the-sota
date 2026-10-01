@@ -1,0 +1,118 @@
+---
+status: Active
+title: 'Promptagator: Few-shot Dense Retrieval From 8 Examples'
+version: 1
+tags:
+- data-pipeline
+- representation-and-encoding
+- in-context-learning
+- adaptation-and-tuning
+date: '2026-10-01'
+published: '2022-09-23'
+arxiv: '2209.11755'
+first_author: 'Dai'
+keywords:
+- 'few-shot-retrieval'
+- 'dense-retrieval'
+- 'query-generation'
+- 'prompt-based-query-generation'
+- 'consistency-filtering'
+- 'round-trip-consistency'
+- 'dual-encoder'
+- 'BEIR'
+implementations: []
+summary: >-
+  Dai et al. (2022), [ARXIV-2209.11755](https://arxiv.org/abs/2209.11755) — Promptagator. Prompt a 137B FLAN with
+  at most 8 examples from the target task to write queries for its corpus,
+  keep a generated pair only if a retriever trained on the generated pairs
+  ranks its source passage top-1, and train a 110M dual encoder on what is
+  left. On 11 BEIR datasets it averages 47.8 nDCG@10 against 46.6 for
+  SPLADE v2 and 46.2 for ColBERT v2, both trained on MS MARCO. The filter is
+  worth 2.5 points on average and lowers three of the eleven datasets.
+---
+<!-- inactive-ok-file: SOTA-tmpuqury SOTA-243 THEORY-057 — Proposed; SOTA-tmpuqury is the practice this paper originates, filed in the same contribution, and SOTA-243 and THEORY-057 are named as claims this paper bears on without testing -->
+
+# LIT-tmppempk: Promptagator: Few-shot Dense Retrieval From 8 Examples
+
+Dai et al. (2022), Google Research — [ARXIV-2209.11755](https://arxiv.org/abs/2209.11755)
+
+## Key takeaways
+
+- **The setting: a few examples per task instead of a large QA set.** Each
+  BEIR task gets a short prompt and 2 to 8 relevant (query, document) pairs.
+  The argument is that retrieval tasks differ in search intent and query
+  distribution, not only in corpus, so transfer from MS MARCO or NQ misses
+  what each task means by "relevant". Test-set examples used as prompts are
+  scored as failed retrievals.
+- **The method: generate, filter, train.** FLAN 137B is prompted with up to
+  8 task examples and writes 8 queries per document at temperature 0.7, for
+  up to 1M documents per corpus. A T5-base dual encoder (110M, after
+  Contriever-style cropping pre-training on C4) is fine-tuned on all the
+  generated pairs. That model then filters the same pairs. A pair is kept
+  only if its source document is in the retriever's top K for the generated
+  query, and the retriever is trained further on the kept pairs. K was tuned
+  on MS MARCO as a validation set and set to 1 for every dataset. There is no
+  hard-negative mining and no distillation.
+- **The filter's novelty is that it needs no outside model.** Round-trip
+  consistency is credited to Alberti et al. (2019), whose filter was a QA
+  model trained on existing labelled data. Here the filtering model is
+  trained on the noisy generated data it filters. The authors call this
+  "unintuitive" and give no account of why it works.
+- **Main result (Table 2, nDCG@10 on 11 BEIR datasets, NQ, Quora and
+  MS MARCO excluded).** Few-shot Promptagator averages 47.8, zero-shot 45.5,
+  SPLADE v2 46.6, ColBERT v2 46.2, GTR-XXL (6B) 44.9 and BM25 41.8. The
+  largest gains are on Touche-2020 and ArguAna, whose queries are least like
+  factoid questions. A 110M reranker trained on the same generated data,
+  Promptagator++, reaches 52.8 against 51.1 for monoT5-3B.
+- **The filter ablation (Figure 2a).** Filtering raises the average by 2.5
+  points and helps 8 of 11 datasets, by +7.3 on FEVER down to +1.2 on
+  ArguAna. It lowers FiQA (−0.1), NFCorpus (−0.7) and SciFact (−1.4).
+  NFCorpus and SciFact are the two datasets with the fewest generated
+  queries, and the authors conjecture that further tuning on the smaller
+  filtered set overfits. Reading the removed pairs by hand, most were
+  queries too general to pick out one document or with hallucinated content.
+  The filter also removed some good pairs because the retriever ranked other
+  documents higher, and the authors suggest per-query K without testing it.
+  Only K = 1 is reported on BEIR.
+- **The generator matters more than the recipe (Figure 2c).** With the same
+  filter, training and hyperparameters, an in-house T5 query generator
+  trained on NQ reaches 42.8 and zero-shot Promptagator 45.5. On MS MARCO, 8
+  examples plus the LLM roughly match a dual encoder trained on 50k labelled
+  pairs (Figure 2b).
+- **What is not controlled.** FLAN's instruction tuning included NQ and
+  Quora as QA tasks. A FLAN retrained without them lowers the average from
+  48.5 to 47.0 (Table 3), still above the MS MARCO retrievers. Batch size and
+  steps were set per corpus-size group, after finding that in-batch negatives
+  misbehave on corpora of a few thousand documents. No seeds or variance are
+  reported. The cost of the generator, 58.46M queries from a 137B model, is
+  stated but not charged against the baselines.
+
+## Standing in the anthology
+
+Filed as the earlier origin of the self-consistency filter in
+[SOTA-tmpuqury](../practices.d/SOTA-tmpuqury.md). That practice was filed from E5 ([LIT-tmp62ra1](LIT-tmp62ra1.md)), which cites
+this paper for its "consistency-based filter" and applies the same mechanism
+to about 1.3B pairs scraped from the web. A model trained on the noisy pairs
+ranks each pair's own passage against a pool, and the pair is kept only near
+the top. The two papers differ in where the noise comes from: here it is
+generated queries, there scraped pairs. They also differ in how the cutoff
+was set: here K = 1, tuned on a validation set; in E5 k = 2, by inspection.
+The outcomes differ as well. E5's filter improved all six BEIR datasets it
+was scored on, including NFCorpus and SciFact. This paper's filter lowered
+both.
+
+It bears on [SOTA-243](../practices.d/SOTA-243.md)'s Conditions in the same way E5 does. A filter that
+keeps only what the model already ranks first discards hard pairs along
+with wrong ones, and this paper's hand reading found both among the removed
+pairs. The datasets the filter hurt were the ones with the least generated
+data. That fits [SOTA-243](../practices.d/SOTA-243.md)'s claim that the cut should depend on how much
+data there is, but the paper offers overfitting as its own explanation and
+tests neither.
+
+The record holds no other dense-retrieval or query-generation paper. Its
+first-word analysis (few-shot queries resemble the gold queries, NQ-trained
+generators write questions) is a narrow, one-dataset observation beside
+[THEORY-057](../theory.d/THEORY-057.md)'s account of generated corpora narrowing. It does not test that
+account.
+
+Unread — no NOTE.

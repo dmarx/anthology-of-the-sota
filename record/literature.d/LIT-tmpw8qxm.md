@@ -1,0 +1,134 @@
+---
+status: Active
+title: 'Understanding Deep Learning via Notions of Rank'
+version: 1
+tags:
+- analysis-and-evaluation
+- model-stability
+- training-optimization
+- model-architecture
+- signal-structure
+date: '2026-10-01'
+# A PhD thesis (Tel Aviv University, supervised by Nadav Cohen) collecting
+# four conference papers: NeurIPS 2020, ICML 2021, ICML 2022, NeurIPS 2023.
+# v4 (2026-08-29) is the version read; published is v1.
+published: '2024-08-04'
+arxiv: '2408.02111'
+first_author: 'Razin'
+keywords:
+- 'implicit-regularization'
+- 'matrix-factorization'
+- 'tensor-factorization'
+- 'hierarchical-tensor-rank'
+- 'separation-rank'
+- 'graph-neural-networks'
+- 'expressiveness'
+- 'edge-sparsification'
+implementations:
+- 'noamrazin/imp_reg_dl_not_norms'
+- 'noamrazin/imp_reg_in_tf'
+- 'asafmaman101/imp_reg_htf'
+- 'noamrazin/gnn_interactions'
+summary: >-
+  Razin (2024), [ARXIV-2408.02111](https://arxiv.org/abs/2408.02111) — PhD thesis. Gradient descent's implicit
+  regularization is better read as rank minimization than norm minimization:
+  on a 2×2 matrix completion problem, a depth L ≥ 2 linear network trained by
+  gradient flow drives every norm and quasi-norm to infinity, with probability
+  at least 0.5 over arbitrarily small initialization, while rank falls to its
+  minimum. The same bias toward low (tensor, hierarchical-tensor) rank is
+  proved for polynomial-activation networks equivalent to tensor
+  factorizations; it predicts convolutional networks' locality, which a
+  regularizer derived from it partly undoes on long-range tasks.
+---
+<!-- inactive-ok-file: SOTA-325, THEORY-041, THEORY-045, THEORY-072 — Proposed; named as neighbours this paper informs or tests, with their standing stated where they are cited -->
+<!-- inactive-ok-file: LIT-695 — Deferred (unread); named as neighbours this paper informs or tests, with their standing stated where they are cited -->
+
+# LIT-tmpw8qxm: Understanding Deep Learning via Notions of Rank
+
+Razin (2024) — [ARXIV-2408.02111](https://arxiv.org/abs/2408.02111). PhD thesis; Parts II and III reprint
+Razin and Cohen (NeurIPS 2020), Razin, Maman and Cohen (ICML 2021, ICML 2022)
+and Razin, Verbin and Cohen (NeurIPS 2023).
+
+## Key takeaways
+
+- **Norms cannot be the implicit regularizer, by counterexample.** Complete a
+  2×2 matrix from three observed entries (`W₁₂ = 1`, `W₂₁ = 1`, `W₂₂ = 0`).
+  Any norm or quasi-norm is minimized with `W₁₁` in a bounded interval. Gradient
+  flow on a depth-`L ≥ 2` matrix factorization with balanced, near-zero
+  initialization instead sends `|W₁₁|` to infinity with probability at least
+  0.5, so **every norm and quasi-norm diverges together while the rank
+  approaches its minimum of 1**. This settles the open disagreement between
+  Gunasekar et al. (2017), who conjectured nuclear-norm minimization, and
+  Arora et al. (2019), who conjectured that no norm describes it, in favour of
+  the latter. Gradient descent with small step size
+  tracks the gradient-flow prediction in the experiments.
+- **The rank bias carries to non-linear networks with tensors in place of
+  matrices.** Tensor factorization is equivalent to a shallow convolutional
+  network with polynomial (multiplicative) non-linearity. A component's norm
+  moves slowly while small and fast once large, so from near-zero
+  initialization components stay near the origin, then grow quickly one after
+  another. Learning is incremental, and the result is a bias toward low tensor
+  rank, proved "under certain conditions" (Chapter 1). Hierarchical tensor
+  factorization is equivalent to a deep non-linear convolutional network and
+  shows the same incremental learning of *hierarchical* tensor rank
+  (Chapter 2). These are results for the equivalent models; ReLU networks are
+  not covered.
+- **Natural data is fit at very low tensor rank and random data is not.**
+  Each MNIST and Fashion-MNIST class, posed as a one-vs-all problem, was fit
+  by predictors of tensor rank 1 to 15. The real data reaches a low residual
+  at "extremely low" rank, far below what shuffled labels or noise images
+  need. The evidence is a
+  figure, offered as a reason to take rank seriously as the complexity
+  measure, not a generalization bound.
+- **Low hierarchical tensor rank means locality, and locality turns out to be
+  partly implicit regularization.** Low hierarchical tensor rank means weak
+  modelled interaction between distant input regions, as measured by
+  separation rank. The thesis derives a regularizer that penalizes the
+  cosine between `∇_{X_I} f` at an image and at a copy whose region `J` is
+  replaced from another image. On IsSameClass (two CIFAR-10 images placed
+  apart) and Pathfinder, test accuracy of ResNet18/34 degrades toward chance
+  as the dependency range grows, and the regularizer "significantly" raises
+  it without changing the architecture. The accuracies are reported only as
+  plots.
+- **GNN expressiveness via separation rank (Chapter 4).** For GNNs with
+  product aggregation, how strongly a vertex partition can interact is
+  governed by its *walk index*: the number of walks starting at the
+  partition's boundary. Walk Index Sparsification (WIS) removes edges to keep
+  walk indices high. On Cora, DBLP and OGBN-ArXiv with a depth-3 GCN it beats
+  random removal, spectral sparsification and an adaptation of UGS across
+  sparsity levels, again shown as plots over ten runs. 1-WIS is a cheap
+  approximation and matches 2-WIS on Cora.
+
+## Standing in the anthology
+
+The record's theory of generalization has been built from other
+complexity measures. [THEORY-045](../theory.d/THEORY-045.md) uses the volume of behaviourally equivalent
+parameter space, and [SOTA-325](../practices.d/SOTA-325.md) the local learning coefficient of [LIT-542](LIT-542.md), which
+ranks ResNet18 runs by implicit regularization after the training loss has
+saturated. [THEORY-072](../theory.d/THEORY-072.md) explains grokking through weight norm. This thesis is
+the record's first sustained argument that the implicit bias of gradient
+descent is not a norm at all. That bears on [THEORY-072](../theory.d/THEORY-072.md): the thesis does not
+contradict a norm-based account of a particular phenomenon, but it shows that
+"gradient descent minimizes some norm" fails as a general principle even in
+linear networks. It also informs [THEORY-041](../theory.d/THEORY-041.md), whose rank-deficient
+transformer matrices are the kind of outcome a rank bias would produce,
+although nothing here was measured on a transformer.
+
+[LIT-695](LIT-695.md) also models deep convolutional networks as tree-structured tensor
+networks, but argues from expressiveness: tree structure can carry
+long-range correlation and chain-structured models cannot. The thesis adds the
+other half. Within that family, what gradient descent actually finds is
+biased toward low hierarchical tensor rank, which means local interactions,
+even where the architecture could express long-range ones.
+
+The GNN chapter sits beside [THEORY-083](../theory.d/THEORY-083.md) (Xu et al., [LIT-580](LIT-580.md)), which bounds
+what message passing can *distinguish* by the 1-WL test. Separation rank asks
+a different question: how strongly a network can model interaction across a
+partition of the vertices. The two do not overlap.
+
+Nothing here is a practice yet. Two candidates are visible but untested
+outside these papers. One is the long-range regularizer for CNNs, measured
+on two synthetic tasks. The other is WIS for edge sparsification, measured
+with one group's GNNs.
+
+Unread — no NOTE.

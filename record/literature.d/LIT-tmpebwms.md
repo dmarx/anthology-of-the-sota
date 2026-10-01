@@ -1,0 +1,110 @@
+---
+status: Active
+title: 'Position: AI/ML Influencers Have a Place in the Academic Process'
+version: 1
+tags:
+- deployment-and-society
+- analysis-and-evaluation
+date: '2026-10-01'
+published: '2024-01-24'
+arxiv: '2401.13782'
+first_author: 'Weissburg'
+keywords:
+- 'social media'
+- 'influencers'
+- 'citation analysis'
+- 'scholarly communication'
+- 'causal inference'
+- 'negative outcome control'
+- 'geographic and gender diversity'
+implementations: []
+summary: >-
+  Weissburg, Arora, Wang, Pan and Wang (2024), ICML 2024 position paper.
+  Papers tweeted by the two ML paper-sharing accounts @_akhaliq and
+  @arankomatsuzaki have median citations of 24 and 31 against 14 and 12 for
+  controls matched on venue, year, topic embedding and author prominence,
+  while OpenReview scores of tweeted papers and their controls are
+  indistinguishable. A negative-outcome-control estimate keeps a positive
+  causal effect on being highly cited at every threshold tried, largest for
+  less-cited papers.
+---
+
+# LIT-tmpebwms: Position: AI/ML Influencers Have a Place in the Academic Process
+
+Weissburg, Arora, Wang, Pan and Wang (2024), ICML 2024 — [ARXIV-2401.13782](https://arxiv.org/abs/2401.13782)
+
+## Key takeaways
+
+- **Two curators, matched controls.** The "influencers" are exactly two X
+  accounts, AK (@_akhaliq) and Aran Komatsuzaki, the only ones meeting the
+  authors' criteria (share fresh arXiv preprints, post regularly, not
+  self-promotion, large audience). Tweets December 2018 to October 2023:
+  9,171 unique papers from AK and 1,273 from Komatsuzaki, of which 6,890 and
+  955 survive exact matching on year, venue, open access and binned author
+  count, h-index and citations, plus nearest-neighbour matching on a
+  SPECTER2 title-and-abstract embedding. Half the papers are tweeted within
+  24 hours of arXiv release, 95% within a week, and 65% of Komatsuzaki's are
+  also AK's.
+- **The citation gap.** Median citations 24 (95% CI 23–25) for AK-shared
+  papers against 14 (13–15) for controls; 31 (27–34) against 12 (10.5–13.5)
+  for Komatsuzaki. All three quartiles are higher, and Epps–Singleton,
+  Kolmogorov–Smirnov and Mann–Whitney U all give p < 0.0001.
+- **Quality looks matched.** Of 7,222 pairs, 939 have OpenReview scores;
+  tweeted and control papers' mean scores are not distinguishable (p > 0.2).
+  So the authors read the gap as visibility rather than quality: what
+  predicts citations here is being shared, not being well reviewed.
+- **Causal estimate.** With the review score as a negative control outcome
+  (assumed to share the unobserved confounders such as quality and hype,
+  but not to be caused by sharing), the unadjusted average treatment effect
+  on the treated for being above the 50th, 75th and 90th citation
+  percentile is 19% (15–24), 16% (13–20) and 9% (6–12). The adjusted
+  estimates are smaller but no interval contains zero, and the effect is
+  largest for papers at lower citation percentiles.
+- **Who gets shared.** From 2018 to 2021 both accounts' shares concentrate
+  on US-affiliated papers, with a small, roughly constant portion from
+  elsewhere, while the US share of AI repository
+  publications declines and China's rises (Stanford AI Index as reference).
+  Identifiable first authors are 80:20 (AK) and 81:19 (Komatsuzaki) male to
+  female, close to the Taulbee survey's 77:23 for computing PhD awardees.
+  The authors say explicitly that this does not show the influencers are
+  biased.
+- **What the position asks.** Influencers should hold a journalistic
+  standard and diversify the topics, authors and institutions they show.
+  Conferences should respond to a research cycle that outpaces them, through
+  work with program chairs, a workshop and a panel.
+- **Not settled by it.** The related work cites randomized trials that found
+  no citation effect from tweeting in other fields, including Branch et al.
+  (2023). This study is observational with two accounts. The negative
+  control assumes review scores are unaffected by sharing, but papers are
+  shared within days of arXiv release, often before review, which is my
+  reading and not a check the paper reports. Citations are a snapshot
+  without a fixed citation window.
+
+## Standing in the anthology
+
+It joins the `deployment-and-society` documents that treat the research
+literature itself as an information ecosystem rather than a platform's users. It
+sits beside [LIT-481](LIT-481.md), which found that 49% of high-profile social-media papers
+have a disclosable industry tie concentrated in 21% of authors. This paper
+finds a similar concentration one step later, in who decides what gets read:
+two accounts act as curators for a large part of the field, and their sharing
+moves citations at matched review quality. [LIT-481](LIT-481.md) is about who funds the studies and this paper is about
+who amplifies them. The two are independent groups and fields, so they are
+not one finding counted twice.
+
+It also gives [DP-005](../../docs/design-principles.md#dp-5) (adoption is not evidence) a measured instance from the
+other end. A citation count is often read as a paper's standing. Here,
+between papers with matched review scores, a large part of the count tracks
+whether two people tweeted it. Any practice that weighs "well-cited" as
+support inherits that confound. No practice in the record currently uses
+citation counts as evidence; `consensus:` counts adopters, which is a
+different thing.
+
+The record should say this plainly: its own intake is the owner's reading
+feed, and ML paper feeds are shaped by exactly these accounts. The paper
+describes a channel that this anthology's notes probably passed through.
+
+Nothing in `practices.d` or `theory.d` covers scholarly dissemination, so this
+note is a seed rather than a gap in the record.
+
+Unread — no NOTE.

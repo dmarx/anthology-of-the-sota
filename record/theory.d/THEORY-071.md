@@ -29,6 +29,8 @@ source:
 - LIT-539
 - LIT-085
 - LIT-667
+contested_by:
+- LIT-537
 promote_when: >-
   The efficiency ordering is **measured** — parameter norm per unit logit, on
   the mixed networks that actually grok rather than on constructed
@@ -49,10 +51,10 @@ summary: >-
   inferred/atomic ratio fixed, scales the data, and nothing happens.
   `Proposed`, on scope rather than on evidence: it needs weight decay, and
   LIT-537 groks without any.
-corrected_by:
-- THEORY-070
 explains:
 - SOTA-402
+rivals:
+- THEORY-070
 ---
 
 # THEORY-071: A memorising and a generalising circuit compete on logits per unit norm, and which one wins flips when the data makes memorising more expensive

@@ -6,6 +6,7 @@ formerly:
 title: 'Compare GNN architectures over many random data splits and seeds, with one shared training and hyperparameter-selection procedure for every model, never on a single fixed split'
 version: 1
 tags:
+- graphs-and-networks
 - analysis-and-evaluation
 - model-architecture
 date: '2026-09-23'

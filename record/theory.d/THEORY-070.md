@@ -4,7 +4,16 @@ status: Proposed
 formerly:
 - THEORY-tmplnntp
 title: 'Grokking is the transition from lazy to rich training dynamics'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-10-01'
+  note: >-
+    `corrects` on THEORY-072 and THEORY-071 became `rivals`, when ADR-tmpkrt96
+    gave the THEORY scheme a relation for an account that disputes another
+    without replacing it. The document already said that was its position:
+    its `promote_when` read "corrects the weight-norm accounts without
+    replacing them". No claim changed.
 tags:
 - training-optimization
 - analysis-and-evaluation
@@ -13,14 +22,14 @@ tags:
 date: '2026-09-22'
 source:
 - LIT-537
-corrects:
+rivals:
 - THEORY-072
 - THEORY-071
 promote_when: >-
   The account is extended to cover ungrokking — a grokked network regressing
   to near-random test accuracy at a sharp threshold in dataset size, with an
   endpoint independent of weight decay. Until something in the lazy-to-rich
-  picture produces that, this corrects the weight-norm accounts without
+  picture produces that, this disputes the weight-norm accounts without
   replacing them, and the record holds three partial explanations rather than
   one.
 summary: >-
@@ -30,9 +39,9 @@ summary: >-
   falls with no test improvement. Grokking is the late breakdown of that
   approximation as feature learning begins. Two knobs control it — an
   output-scale laziness parameter and the alignment between the initial neural
-  tangent kernel and the target — and neither is weight norm. Filed with
-  `corrects` on both weight-norm accounts, because the paper's §3 is an
-  explicit counterexample to them.
+  tangent kernel and the target — and neither is weight norm. Filed as a
+  rival to both weight-norm accounts, because the paper's §3 is an explicit
+  counterexample to them and it cannot reproduce what they predicted.
 ---
 
 # THEORY-070: Grokking is the transition from lazy to rich training dynamics
@@ -82,9 +91,12 @@ transition.** The polynomial-regression task behaves the same way.
 Both [THEORY-072](THEORY-072.md) and [THEORY-071](THEORY-071.md) explain grokking by a late *decrease*
 in weight norm — one as a walk down to the generalizing shell, the other as
 norm moving from the memorising circuit to the more efficient one. Neither can
-produce a run with no regularizer and a rising norm. That is why `corrects` is
-declared on both, and why the declaration is about the mechanism rather than
-about the experiments either paper reports.
+produce a run with no regularizer and a rising norm. That is why this account
+is declared a rival to both: it and they cannot all be right about the
+mechanism, and neither side yet explains everything the other does (below).
+The declaration is about the mechanism rather than about the experiments either
+paper reports. It was filed as `corrects` at v1, before the scheme had a word
+for a dispute that has not been settled.
 
 ## What it also gets
 
@@ -104,8 +116,9 @@ about the experiments either paper reports.
 [THEORY-071](THEORY-071.md) derived ungrokking and semi-grokking before anybody had seen
 them, and this account says nothing about a grokked network regressing at a
 sharp threshold in dataset size with a weight-decay-independent endpoint. A
-correction that cannot reproduce what it corrects has narrowed the earlier
-account's scope rather than replaced it, and the record files it that way.
+counterexample that cannot reproduce what it argues against has narrowed the
+earlier account's scope rather than replaced it, and the record files it that
+way: as a rival, not a correction.
 
 **The analysable setting is a two-layer network on polynomial regression**; the
 transformer and MNIST results are reported as consistent rather than derived.

@@ -89,6 +89,14 @@ That is the coverage principle: the objective is implicitly doing the right
 thing, and the number on the screen is measuring something else — something
 that inherits a penalty the objective's own generalization behaviour does not.
 
+Every step above is proved in LIT-474: that the coverage profile is necessary
+and sufficient for Best-of-N success, the lower bound making sequence-level KL
+linear in `H` for autoregressive linear models, and the coverage bound for
+the maximum-likelihood estimator with both terms tight. Its one experiment, a
+synthetic graph-reasoning task, shows KL at convergence growing linearly in
+`H` while coverage shows no `H` dependence, and KL improving through training
+while coverage degrades.
+
 ## Why `Proposed`
 
 Not because the theorems are in doubt. They are proved, with matching lower

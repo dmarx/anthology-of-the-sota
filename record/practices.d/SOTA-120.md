@@ -37,6 +37,20 @@ summary: >-
 
 Loshchilov et al. (2017), [LIT-012](../literature.d/LIT-012.md) — [ARXIV-1711.05101](https://arxiv.org/abs/1711.05101).
 
+## What the source showed
+
+The recommendation is LIT-012's: Loshchilov and Hutter showed that L2
+regularization and weight decay coincide for plain SGD (up to a
+learning-rate rescaling) but not for Adam, whose adaptive denominator
+rescales the L2 gradient so that parameters with large gradient histories get
+less decay, and they introduced AdamW to apply the decay to the weights
+outside that rescaling. They measured two consequences: the optimal weight
+decay decouples from the learning rate, turning a joint sweep into two
+one-dimensional ones, and Adam's generalization improves enough to compete
+with SGD with momentum on image classification, where it had been losing.
+That evidence is from image classification of 2017–2019; none of it is
+language-model training.
+
 ## How this stopped being deferred
 
 This practice was `Deferred` for sixteen days on a doubt carried over

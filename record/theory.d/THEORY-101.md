@@ -49,6 +49,10 @@ and feature maps are that overwriting, seen from outside.
 
 ## What it explains, and each piece is measured
 
+Both the hypothesis and every measurement below are LIT-662's: it found the
+high-norm tokens (norm above 150, 2.37% of patch tokens in DINOv2 ViT-g),
+probed what they hold, and proposed the scratch-space reading quoted above.
+
 - **Why the artifacts sit on background.** High-norm tokens have high cosine
   similarity to their four neighbours *at the patch embedding*, before any
   attention. The model is selecting redundancy, not creating it.

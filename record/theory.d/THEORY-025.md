@@ -52,6 +52,10 @@ Morris et al. (2025), [LIT-440](../literature.d/LIT-440.md) — [ARXIV-2505.2483
 
 ## What was actually shown
 
+The measurement and both findings below are LIT-440's: capacity of about 3.6
+bits per parameter, linear in parameter count, and double descent beginning
+where the dataset's information exceeds it.
+
 The measurement works by removing the thing that makes memorization hard to
 measure. Train on **uniformly sampled random bitstrings**, whose Shannon
 information is exactly computable and which contain no structure to

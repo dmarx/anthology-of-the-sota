@@ -40,6 +40,10 @@ Gu et al. (2025), [LIT-451](../literature.d/LIT-451.md) — [ARXIV-2505.18091](h
 
 ## What was actually shown
 
+Both halves are LIT-451's: the two phase transitions in knowledge acquisition
+under mixing, and the knapsack account whose predicted power law for the
+critical ratio it then fits.
+
 The empirical half is two thresholds, measured on Pythia models from 14M to
 6.9B with synthetic biographies mixed into FineWeb-Edu or the Pile. At a
 fixed mixing ratio, accuracy on the biographies stays at zero as the model

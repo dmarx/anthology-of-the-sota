@@ -35,6 +35,10 @@ structure obtained by pruning a dense network? The answer offered is gradient
 flow — sparse networks at initialization have poor flow, and training from
 scratch has to overcome that before it can make progress on the task.
 
+Both halves are LIT-039's: it attributes the from-scratch gap to poor
+gradient flow in sparse networks at initialization, and finds that a rewound
+ticket converges back to the solution of the dense run it was pruned from.
+
 The part that bears on the ticket is the deflation. A rewound ticket is
 followed and found to re-learn the solution its dense pruning run had already
 reached: it lands in the same basin rather than discovering, independently,

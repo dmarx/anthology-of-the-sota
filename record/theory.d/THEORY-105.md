@@ -50,6 +50,11 @@ much less data … and using a much higher learning rate."
 
 ## The evidence offered, and why it does not settle the account
 
+The account and both experiments offered for it are LIT-680's: the quotations
+above are its argument for raising the softmax temperature, and it supports
+them with an MNIST student trained without one digit class and a speech
+student trained on 3% of the data against a full-data teacher.
+
 - **The omitted-class transfer.** A student never shown a 3 gets 98.6% of test
   3s right, but only after the 3's bias is raised by 3.5, a value chosen
   because it "optimizes overall performance on the test set". Without that

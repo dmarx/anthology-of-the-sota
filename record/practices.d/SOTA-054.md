@@ -71,3 +71,13 @@ cannot hit it at any interval worth having.
 What the paper adds that this record still has no practice for: **resuming
 must restore the data loader's state**, or an epoch stops seeing each item
 exactly once. [LIT-059](../literature.d/LIT-059.md) says most implementations get that wrong.
+
+## The other half of the trade
+
+This practice settles the interval from the *cost* side: how much
+checkpointing overhead the run will tolerate. SOTA-189 settles it from the
+*risk* side: expected work lost to a failure is half the interval, and a job's
+mean time to failure falls linearly with its GPU count (3.66 days at 1,024
+GPUs on one fleet's measured rate), so an interval right for a small job is
+too long once it is resized. Neither source combines the two. Take the write
+cost from profiling as here, and the failure rate from the fleet as there.

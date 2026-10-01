@@ -39,6 +39,10 @@ Cohen et al. (2024), [LIT-453](../literature.d/LIT-453.md) — [ARXIV-2410.24206
 
 ## What was actually shown
 
+Everything in this section is from LIT-453, which derives central flows for
+gradient descent, Scalar RMSProp and RMSProp in full-batch training and tests
+them against real trajectories and against an ablated flow.
+
 The apparatus is a **central flow**: a differential equation modelling the
 time-averaged trajectory of an optimizer that is oscillating at the edge of
 stability. It earns its use empirically — integrating the flow predicts the

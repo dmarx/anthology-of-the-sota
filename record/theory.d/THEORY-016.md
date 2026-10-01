@@ -33,6 +33,10 @@ corroborated empirically by Srivastava et al. (2014),
 
 ## What was actually shown
 
+The derivation below is LIT-393's: the single-unit `NWGM` identity, its
+converse, and the three recursive equations with the error of the one
+approximation characterized.
+
 **The single-unit result is an identity, not a bound.** Let a unit's output
 under dropout configuration `i` be `Oᵢ`, occurring with probability `Pᵢ`.
 Define the weighted geometric mean `G = ∏ Oᵢ^Pᵢ`, the same over the

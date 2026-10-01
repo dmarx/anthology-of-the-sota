@@ -42,6 +42,10 @@ side). The claim is that this turns the backward pass into an approximate
 **inversion of the input**, and that the inversion has nothing to do with the
 decision.
 
+Both theorems below and all four arms are LIT-730's: it proved the recovery
+result for a random three-layer CNN with i.i.d. Gaussian weights, then tested it
+by removing local connections, adding max-pooling and attacking VGG-16 with FGSM.
+
 **Theorem 1.** In a random three-layer CNN with sufficiently many filters,
 
     s_k^GBP(x) ≈ x

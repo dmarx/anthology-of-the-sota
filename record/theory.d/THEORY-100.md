@@ -65,6 +65,12 @@ in training dtype**, and one of them has its LayerNorm gains hardcoded.
 
 ## What it is evidence for, and how strong
 
+The account comes from LIT-656's controlled study: one decoder architecture,
+weight decay, dropout, gradient clipping and fp16/bf16 varied one at a time at
+410M and 6B, and the best recipe then trained to convergence at 13B and 52B,
+with the LayerNorm gain spread measured across the variants as the proposed
+mechanism.
+
 The design is what makes it more than a demonstration: same architecture, one
 axis at a time, every variant from random initialization, and — the control
 that matters — **comparable pre-quantization quality across variants**. So the

@@ -90,6 +90,13 @@ carry over. Under that recipe the authors saw stable training at nearly the
 same optimal learning rate as AdamW and better downstream evaluations, and
 adopted it for every model in the series, at 90M and 0.6B.
 
+That observation is LIT-119's, and it is the whole of what the blogpost
+contributes to this practice: Muon with Liu et al.'s two modifications,
+tested against AdamW on Falcon-H1-Tiny, trained stably at nearly the same
+optimal learning rate and evaluated better. It is reported in a sentence, with
+no table or margin for the Muon-versus-AdamW comparison, which is why the size
+of the gain below comes from other sources.
+
 Conditions: the comparison here is at tiny scale with a µP-parameterised
 hybrid Mamba/attention model. The RMS matching is what makes the AdamW
 hyperparameters transferable; without it the learning rate has to be

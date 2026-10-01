@@ -43,6 +43,14 @@ is the factor that makes the initialisation-time variance independent of head
 dimension, which is why it is the same in every implementation and why nobody
 tunes it.
 
+The practice originates in LIT-008, which defines scaled dot-product attention
+as `softmax(QKᵀ/√d_k)V`, with the scaling part of the operation rather than a
+trick applied to it. Its footnote is the argument above: with `q` and `k`
+components independent, mean 0 and variance 1, `q·k` has variance `d_k`. The
+paper offers the saturation account as a suspicion ("we suspect"), backed by
+additive attention outperforming unscaled dot-product attention at larger
+`d_k`, not by a measurement of softmax gradients.
+
 ## Where it stops being sufficient
 
 At scale it does not hold on its own. Attention logits can still grow during

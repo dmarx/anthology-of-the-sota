@@ -57,6 +57,11 @@ geometry of the limit is a function of one thing: the spectrum of `V`.
 | paranormal | a polytope in the leading eigenspace, a subspace in the rest |
 | `−I_d` | one cluster, at the origin |
 
+The table is LIT-528's classification, proved there as four theorems, one per
+spectral regime of `V` (Theorems 3.1, 4.2, 5.2 and 8.5), for pure
+self-attention with `(Q, K, V)` fixed and the tokens rescaled by `e^{−tV}` in
+place of layer normalization.
+
 **Why the value matrix and not the others.** The assumptions on `V` are
 rigid and the assumptions on `Q, K` are not — numerically the clustering
 pattern survives violating `Qᵀ K ≻ 0`, and no regime survives the leading

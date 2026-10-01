@@ -30,6 +30,15 @@ DDP. Sharding within a node and replicating across nodes — hybrid sharding —
 puts the expensive collective on the fast intra-node links and leaves the
 slow inter-node path carrying one gradient reduction per step.
 
+The dial is LIT-083's own: Zhao et al. call the number of ranks parameters
+are sharded over the sharding factor `F`, where `F=1` reduces to DDP, `F=W`
+is full sharding with each device holding `1/W` of the model, and
+`1 < F < W` is hybrid sharding. The recommendation originates there too —
+choose `F` from what actually fits rather than defaulting to full sharding —
+but the paper gives the axis and not a rule for where to sit on it, and does
+not characterise how hybrid sharding interacts with topology; the argument
+about link speeds here is this practice's, not a measured result.
+
 That is why the choice is stated as a factor rather than a switch. The right
 value is the smallest group that makes the model fit, because everything
 beyond that buys memory nobody needs at the price of traffic on links that

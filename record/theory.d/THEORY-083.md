@@ -36,6 +36,12 @@ injective. Sum with an MLP is (Lemma 5, Corollary 6). Mean is not: two
 neighborhoods with the same feature proportions collide. Max is not either:
 the multiplicities vanish.
 
+The bound and the injectivity argument are LIT-580's, which also put them to
+a test: training accuracy ranks sum–MLP above sum with one layer above the
+mean and max variants (Figure 4), and on REDDIT-BINARY and MULTI-5K with no
+node features GIN-0 reaches 92.4 and 57.5 while the mean variants sit at
+chance, 50.0 and 20.0.
+
 ## What it explains
 
 - Why sum–MLP GNNs fit training sets that mean and max variants underfit

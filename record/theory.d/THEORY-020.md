@@ -41,6 +41,10 @@ Pythia models, scored two ways: KL divergence between the intervened and
 nominal output distributions, and the fraction of top-1 predictions that stay
 the same.
 
+This is the experiment LIT-417 ran, layer by layer, and the findings below
+are its: 72-95% top-1 retention overall, with the damage concentrated at the
+first and last layers.
+
 **Models retain 72-95% of their top-1 predictions.** For an architecture whose
 every layer is trained in place, in sequence, that is the result worth
 starting from.

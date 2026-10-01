@@ -40,6 +40,10 @@ Zucchet et al. (2025), [LIT-450](../literature.d/LIT-450.md) — [ARXIV-2503.216
 
 ## What was actually shown
 
+The phases, the plateau scaling and the patching intervention below are all
+LIT-450's, measured on a synthetic biography task with populations of 4k to
+256k individuals.
+
 Training on a factual-recall task passes through three phases: a short one
 learning generic attribute-value statistics, a long plateau sitting at
 exactly the loss an ideal model with no entity-specific knowledge would

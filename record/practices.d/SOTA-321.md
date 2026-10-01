@@ -79,7 +79,7 @@ model.
 
 ## What it buys
 
-LIT-524, which introduced the method as GhostSpec, scored it against prior
+[LIT-524](../literature.d/LIT-524.md), which introduced the method as GhostSpec, scored it against prior
 fingerprinting methods over 55 model pairs built from Llama-2-7b and Mistral-7B, spanning
 fine-tuning, 50%- and 70%-unstructured pruning, merging, expansion, and
 scaled and permuted adversarial transforms:

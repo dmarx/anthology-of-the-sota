@@ -104,11 +104,11 @@ the breadth: 61 formulations ranked, then the winner taken to 8B
 text-to-image with weights released. A practice on either alone would be
 weaker — one would be a small-scale ablation, the other a leaderboard entry.
 
-In SiT (LIT-447) the walk from DiT changes one thing at a time on DiT's
+In SiT ([LIT-447](../literature.d/LIT-447.md)) the walk from DiT changes one thing at a time on DiT's
 backbone, and replacing the variance-preserving interpolant with a linear or
 GVP one is a significant FID gain on its own, alongside velocity prediction.
 SiT-XL ends at FID-50K 2.06 on class-conditional ImageNet 256×256. In SD3
-(LIT-449) the 61 formulations are ranked on validation loss at matched
+([LIT-449](../literature.d/LIT-449.md)) the 61 formulations are ranked on validation loss at matched
 settings: rectified flow with logit-normal timesteps comes first, and the
 uniform-timestep variant does not beat tuned ε-prediction. That ranking is
 the source of the title's second half.
@@ -120,7 +120,7 @@ by a net +16.5 on human-rated quality and +7.1 on text alignment (its Table
 8a). That is the only controlled comparison of the objective in the video
 line. Every other video report adopts it.
 
-The diffusion arm Movie Gen beat is SOTA-422's recipe: v-prediction on a
+The diffusion arm Movie Gen beat is [SOTA-422](SOTA-422.md)'s recipe: v-prediction on a
 schedule rescaled to zero terminal SNR, the repair for signal leaked at the
 last timestep. For a VP model the choice is between that repair and the
 straight path, which has zero terminal SNR by construction. In this one 5B

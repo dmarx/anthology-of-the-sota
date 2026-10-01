@@ -71,7 +71,7 @@ also move:
 On language, Crammed BERT goes from 16 layers and 12 heads at 119M to 10
 layers and 24 heads at **84M**, with the GLUE average identical at 78.6.
 
-The recommendation is LIT-527's own: Saratchandran, Teney and Lucey proposed
+The recommendation is [LIT-527](../literature.d/LIT-527.md)'s own: Saratchandran, Teney and Lucey proposed
 buying back removed layers with extra heads and tested it by rebuilding twelve
 published architectures on ImageNet-1k. Every row above is theirs, and the
 five that hold the MLP width fixed all hold or improve Top-1 at 29–53% fewer
@@ -80,7 +80,7 @@ parameters, which is the whole of the vision evidence this practice stands on.
 ## Why it should work
 
 The condition number of a matrix is `σ₁/σ_k`, and a high one slows gradient
-descent. Theorem 3.2 of LIT-527 shows the attention block's condition number falls as the
+descent. Theorem 3.2 of [LIT-527](../literature.d/LIT-527.md) shows the attention block's condition number falls as the
 number of heads rises. So heads are doing optimization work and not only
 representational work — and if some of what depth was buying was
 easier optimization, heads can buy it more cheaply, because a head costs a

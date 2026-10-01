@@ -68,7 +68,7 @@ Lower estimator variance means faster optimization at the same bound.
 A low-discrepancy sequence for sampling the time variable, rather than i.i.d.
 uniform draws, cuts the variance further and costs nothing.
 
-The derivation and the recommendation are both Kingma et al.'s, in LIT-446.
+The derivation and the recommendation are both Kingma et al.'s, in [LIT-446](../literature.d/LIT-446.md).
 They parameterize the log-SNR as a monotone network, fit its endpoints to the
 VLB and its shape to the estimator's variance, and report markedly faster
 optimization at the same bound on CIFAR-10. The likelihoods they reach on
@@ -101,7 +101,7 @@ compute-allocating one land in the same place; two different arguments both
 conclude "spend effort in the middle", which is suggestive and is not a
 measurement.
 
-The one practice measured directly against this one is SOTA-412. MuLAN took
+The one practice measured directly against this one is [SOTA-412](SOTA-412.md). MuLAN took
 VDM's learned scalar schedule as its baseline, on likelihood, and a
 per-dimension schedule conditioned on a learned latent improved the bound at
 equal steps: 2.65 → 2.60 bits/dim on CIFAR-10 and 3.72 → 3.71 on ImageNet-32.

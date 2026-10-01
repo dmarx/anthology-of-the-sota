@@ -52,7 +52,7 @@ and the change is in **appearance** (style, colour, texture, season):
 
 ## What was measured
 
-The practice is Zhu et al.'s CycleGAN, LIT-564, which introduced the
+The practice is Zhu et al.'s CycleGAN, [LIT-564](../literature.d/LIT-564.md), which introduced the
 bidirectional cycle-consistency loss for unpaired translation and showed it
 across style transfer, object transfiguration, season transfer and photo
 enhancement. Its only quantitative ablation, on Cityscapes FCN scores, is

@@ -66,7 +66,7 @@ compute two numbers:
 A spectral update's guaranteed one-step decrease exceeds the Euclidean one
 by their ratio, so the spectral step is favoured on the blocks where the
 gradient's nuclear rank is the larger number. That inequality is Davis and
-Drusvyatskiy's (LIT-457), derived from the one-step descent bounds of their
+Drusvyatskiy's ([LIT-457](../literature.d/LIT-457.md)), derived from the one-step descent bounds of their
 §1.2, and the measurement originates there: in a NanoGPT run they track both
 quantities and find activations staying low stable rank and gradients keeping
 large nuclear-to-Frobenius ratios throughout training. In a transformer

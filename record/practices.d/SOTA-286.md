@@ -66,7 +66,7 @@ it fail on a held-out poison set — while keeping training loss low — has a
 **on clean held-out data**, where the two models behave alike, in a small
 number of forward passes. The poison set is not needed and neither are labels.
 
-Both the estimator and that measurement are LIT-476's. It adapts a fast
+Both the estimator and that measurement are [LIT-476](../literature.d/LIT-476.md)'s. It adapts a fast
 basin-volume estimator, improves its lower bound by importance sampling with
 optimizer gradient statistics, and proposes fast local-volume estimates as a
 practical metric of network complexity; the poisoned-versus-clean gap, which

@@ -53,7 +53,7 @@ as [NOTE-237](../notes.d/NOTE-237.md).
 
 ## What to do
 
-The recipe is LIT-488's (gen2seg): finetune Stable Diffusion or MAE end to
+The recipe is [LIT-488](../literature.d/LIT-488.md)'s (gen2seg): finetune Stable Diffusion or MAE end to
 end to paint instances as colours, on indoor furnishings and cars only, and it
 segments art, egocentric video and x-ray luggage, with the SimpleClick and
 DINO controls below attributing that to the generatively pretrained decoder

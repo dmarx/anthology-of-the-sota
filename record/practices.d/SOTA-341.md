@@ -60,7 +60,7 @@ size:
   only qualitatively
 
 Micro-conditioning on original size and crop was introduced in the SDXL
-report, LIT-566, to let the model train on all of a mixed-resolution
+report, [LIT-566](../literature.d/LIT-566.md), to let the model train on all of a mixed-resolution
 dataset without learning upsampling blur or cut-off subjects. Its one
 quantitative test of size conditioning is Table 2, a class-conditional
 ImageNet model at 512² scored by FID-5k: 43.84 discarding small images,

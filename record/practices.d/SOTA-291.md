@@ -104,7 +104,7 @@ rather than looking for a better trial.
 **Both halves are argument, not demonstration.** The source is a review with
 no new data. The negative half is strong because two of its four mechanisms
 are structural; the positive half is three stated advantages and a direction.
-Both halves originate in LIT-482: it imports four mechanisms from the study
+Both halves originate in [LIT-482](../literature.d/LIT-482.md): it imports four mechanisms from the study
 of complex systems — non-linearity across scale, hysteresis, feedback in
 time and SUTVA violation — and argues from them that individual-level trials
 of social media are bound to be of limited value for collective questions,

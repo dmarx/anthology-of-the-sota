@@ -63,7 +63,7 @@ Dataset held fixed, architecture held fixed, tokenizer varied: **+26.7
 coherence** and **+27.5 quality** on a 0–100 judged scale, with originality
 and grammar also up.
 
-That swap is the tokenizer ablation in LIT-485, which built this 4,096-token
+That swap is the tokenizer ablation in [LIT-485](../literature.d/LIT-485.md), which built this 4,096-token
 WordPiece vocabulary with affix seeding for its SimpleStories models; the
 claim originates there, the authors reading the ablation as confirming that
 "domain-optimized vocabulary with morphological awareness substantially

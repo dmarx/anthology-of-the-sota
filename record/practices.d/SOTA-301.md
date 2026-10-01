@@ -54,7 +54,7 @@ Zhang, Zhang, Zardini, Amin and Ozdaglar (2026), [LIT-490](../literature.d/LIT-4
 
 ## What to do
 
-The reordering is LIT-490's, which proposes it on the reading that the
+The reordering is [LIT-490](../literature.d/LIT-490.md)'s, which proposes it on the reading that the
 denoiser is an approximate projection onto the data support, proves
 finite-time guarantees for it in three geometries, and shows in
 double-integrator and unicycle tracking that the standard ordering's plans

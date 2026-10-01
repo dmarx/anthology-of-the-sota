@@ -61,7 +61,7 @@ State which of the two you are testing:
 Both are worth establishing. Only the second is usually what a reader takes
 away, and it is the one that almost never gets tested.
 
-The practice originates in LIT-536, which drew this line for in-context
+The practice originates in [LIT-536](../literature.d/LIT-536.md), which drew this line for in-context
 learning as its Hypothesis 2 (weights *exist* that make ICL equivalent to
 gradient descent) against Hypothesis 1 (weights *from pretraining* do), and
 showed the supporting experiments had trained on the very task family they

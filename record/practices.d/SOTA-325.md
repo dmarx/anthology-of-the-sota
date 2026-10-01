@@ -71,7 +71,7 @@ LLC can discern the implicit regularization pressure applied by various
 training heuristics."
 
 Both the estimator and the recommendation to read it once the loss has
-saturated come from LIT-542, which localised Watanabe's learning coefficient to
+saturated come from [LIT-542](../literature.d/LIT-542.md), which localised Watanabe's learning coefficient to
 a single minimum and made the ResNet18 sweep the demonstration that it
 separates configurations the training loss cannot.
 

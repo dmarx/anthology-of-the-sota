@@ -57,7 +57,7 @@ quantity being set. Run the rule and it anneals forever, chasing its own
 output. In a direct comparison it is beaten by a fixed step size that the
 rule itself calls impermissible.
 
-Both halves rest on Cohen et al., LIT-461. Under full-batch gradient descent,
+Both halves rest on Cohen et al., [LIT-461](../literature.d/LIT-461.md). Under full-batch gradient descent,
 on the vision architectures and the WikiText-2 Transformer they tested,
 sharpness rises until it reaches `2/eta`, then hovers there while the loss
 falls non-monotonically. In the head-to-head in their Appendix F, the

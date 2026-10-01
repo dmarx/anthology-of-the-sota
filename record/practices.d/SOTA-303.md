@@ -72,7 +72,7 @@ have exactly the work they have and no queue behind it — none of this binds.
 
 ## Do this
 
-The three-phase split is LIT-492's, and this practice starts there: the
+The three-phase split is [LIT-492](../literature.d/LIT-492.md)'s, and this practice starts there: the
 paper applies Charnov's marginal value theorem to research effort and proves
 that shortening discovery or the fixed minimum lowers the thoroughness of
 every developed project, while accelerating discretionary improvement raises

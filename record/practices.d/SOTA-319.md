@@ -58,7 +58,7 @@ Zhai, Likhomanenko, Littwin, Busbridge, Ramapuram, Zhang, Gu and Susskind
 
 ## Do this
 
-This is σReparam, introduced by LIT-523 after its Theorem 3.1 proved that the
+This is σReparam, introduced by [LIT-523](../literature.d/LIT-523.md) after its Theorem 3.1 proved that the
 lowest attainable attention entropy falls exponentially in the spectral norm
 of the query-key product, so a runaway spectral norm forces entropy collapse.
 

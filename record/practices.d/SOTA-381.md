@@ -48,7 +48,7 @@ And the part that gets dropped: **`k` is not a dial to turn up.** The paper's
 own guidance is `k` in **5–20** for small datasets and **2–5** for large
 ones — the number of negatives that helps *decreases* as the data grows.
 
-Both halves come from LIT-603, which introduced negative sampling in §2.2:
+Both halves come from [LIT-603](../literature.d/LIT-603.md), which introduced negative sampling in §2.2:
 logistic regression separating the observed context word from `k` words
 drawn from a noise distribution, needing only samples, where NCE also needs
 their probabilities. On the word analogies NEG-15 reached 61% against 47% for

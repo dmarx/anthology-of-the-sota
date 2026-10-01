@@ -39,7 +39,7 @@ Keep the supervision ([SOTA-359](SOTA-359.md)) and change the normalization. Ins
 softmax over the batch, score each `(image, text)` pair with a **sigmoid**
 against a label that is `+1` for a true pair and `−1` otherwise.
 
-This is LIT-605's reformulation. Zhai et al. introduced it as SigLIP, a
+This is [LIT-605](../literature.d/LIT-605.md)'s reformulation. Zhai et al. introduced it as SigLIP, a
 replacement for CLIP's batch softmax that leaves the rest of the recipe alone,
 and report that it "performs significantly better than the softmax loss when
 the batch size is smaller than 16k", with the gap closing above that.

@@ -78,6 +78,7 @@ STEM-heavy mix would lag on it anyway.
 
 ## Against depth-first scaling
 
+<!-- inactive-ok-block: SOTA-190 — Proposed, named as the practice stating the same preference -->
 [SOTA-190](SOTA-190.md) states the same preference from Tay et al.'s T5 experiments: at
 matched quality, deep-narrow configurations need fewer parameters and FLOPs
 (Small 16L comparable to Base at 134M against 223M parameters), with

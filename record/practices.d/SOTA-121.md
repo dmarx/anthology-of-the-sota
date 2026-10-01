@@ -128,6 +128,7 @@ constant decoupled weight decay fixing the equilibrium weight norm, and
 recovers 20–30% by pinning the norms instead. If that holds up outside its
 authors' group it changes this section again.
 
+<!-- inactive-ok-block: SOTA-168 — Proposed, named as the other side of the comparison -->
 The same study is also the comparison with SOAP ([SOTA-168](SOTA-168.md)), the other
 matrix preconditioner in the record. Tuning both separately, [LIT-156](../literature.d/LIT-156.md) found
 Muon best at 1–4× the Chinchilla data-to-model ratio, but overtaken by SOAP

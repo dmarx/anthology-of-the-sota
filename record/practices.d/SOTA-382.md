@@ -56,7 +56,7 @@ The result the paper reports is a pair, and the pair is the point:
 "significant speedup" **and** improved "accuracy of the representations of
 less frequent words".
 
-The rule and the measurement are LIT-603's (§2.3, Table 1): discard each
+The rule and the measurement are [LIT-603](../literature.d/LIT-603.md)'s (§2.3, Table 1): discard each
 occurrence of word w with probability 1 − √(t/f(w)) at t ≈ 10⁻⁵. On word
 analogies with 300-dimensional skip-gram, subsampling cut NEG-5 from 38 to 14
 minutes at 59 → 60%, NEG-15 from 97 to 36 minutes at 61 → 61%, and

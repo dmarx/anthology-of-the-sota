@@ -44,6 +44,7 @@ with a uniform distribution for exploration:
 
     πₜ(Dᵢ) = (1 − K·ℰₜ) · exp(ℰₜ₋₁·R̂ᵢ) / Σⱼ exp(ℰₜ₋₁·R̂ⱼ)  +  ℰₜ
 
+<!-- inactive-ok-block: SOTA-102 — Superseded, named as the policy this one is set beside -->
 Set beside this policy, [SOTA-102](SOTA-102.md)'s "dynamic temperature scaling for mixing" is
 one term of it: the exploration rate `ℰₜ` multiplies the reward inside the
 exponent, so it acts as an inverse temperature that changes over training.

@@ -78,7 +78,7 @@ ablation attributes to each at 300 epochs:
 
 Keep the architecture. Inception-style crop at 224², random horizontal flip.
 
-The recipe and every number in the table are LIT-628's. Beyer, Zhai and
+The recipe and every number in the table are [LIT-628](../literature.d/LIT-628.md)'s. Beyer, Zhai and
 Kolesnikov proposed it as the plain-ViT baseline for ImageNet-1k, and
 ablated it on ViT-S/16 by reverting one change at a time: at 300 epochs the
 full recipe scores 80.0%, reverting each change gives 73.7, 78.2, 78.6 and

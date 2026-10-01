@@ -38,6 +38,7 @@ laterally between streams. The motivation is the seesaw between vanishing
 gradients and representation collapse that fixed residual variants cannot
 escape; the paper shows consistent pretraining gains on dense and MoE models.
 
+<!-- inactive-ok-block: LIT-141 — Superseded by its own later version, but it is where the recommendation originates -->
 The recommendation originates in [LIT-141](../literature.d/LIT-141.md), which proposed hyper-connections
 as the escape from that seesaw: n parallel streams with learnable, possibly
 input-dependent mixing, so the network can adjust connection strength

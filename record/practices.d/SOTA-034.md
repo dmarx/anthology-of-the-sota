@@ -114,6 +114,7 @@ experiments across sizes and results on the Ling architecture at 7.9B and
 clipping is the obvious cheap fix, and a bounded-activation paper that skips
 it has not isolated its own contribution.
 
+<!-- inactive-ok-block: SOTA-158 — Proposed, named as the practice the measurement compares against -->
 That measurement is the comparison [SOTA-158](SOTA-158.md), the bounded-activation practice
 drawn from [LIT-200](../literature.d/LIT-200.md), holds against this one. Read in the paper, the
 SwiGLU-Clip arm is narrower than the sentence above makes it: only the 7.9B

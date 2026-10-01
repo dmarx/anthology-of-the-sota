@@ -101,6 +101,7 @@ compute-allocating one land in the same place; two different arguments both
 conclude "spend effort in the middle", which is suggestive and is not a
 measurement.
 
+<!-- inactive-ok-block: SOTA-412 — Proposed, named as the practice measured directly against this one -->
 The one practice measured directly against this one is [SOTA-412](SOTA-412.md). MuLAN took
 VDM's learned scalar schedule as its baseline, on likelihood, and a
 per-dimension schedule conditioned on a learned latent improved the bound at

@@ -79,7 +79,7 @@ unconditional training costs and does not buy.
 extrapolating away from the unconditional one by a weight `w`. There is no
 classifier and no second model.
 
-The recipe originates with LIT-693, which introduced it to replace Dhariwal
+The recipe originates with [LIT-693](../literature.d/LIT-693.md), which introduced it to replace Dhariwal
 and Nichol's classifier guidance: the same FID–IS trade without a second
 classifier trained on noisy data. On ImageNet 128×128 it beats the
 classifier-guided ADM-G on FID at `w = 0.3`, and at `w = 4.0` beats

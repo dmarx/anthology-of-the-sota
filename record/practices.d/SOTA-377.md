@@ -42,7 +42,7 @@ Trained from 512 up to **one million**, image-text contrastive performance
 as the sigmoid, so this is a property of the objective family rather than of
 either loss.
 
-The measurement is LIT-605's, a side result of the SigLIP paper. While
+The measurement is [LIT-605](../literature.d/LIT-605.md)'s, a side result of the SigLIP paper. While
 comparing their sigmoid loss with CLIP's softmax, Zhai et al. trained at batch
 size one million to find the limit and report that "to our surprise, the
 performance saturates at 32k batch size". The advice to stop near 32k starts

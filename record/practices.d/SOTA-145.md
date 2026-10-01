@@ -116,6 +116,7 @@ evidence about whether to be in that family at all, at 8B and below and on
 two tasks. The practice stands, and the assumption underneath it is now a
 named rival with a promotion condition rather than an assumption.
 
+<!-- inactive-ok-block: SOTA-212 — Proposed, named as the rival compared directly against this practice -->
 The second rival ran its comparison against this practice directly. RandOpt
 ([SOTA-212](SOTA-212.md)) scores thousands of random weight perturbations in one parallel
 pass and majority-votes the best 50, and its paper matched it on training

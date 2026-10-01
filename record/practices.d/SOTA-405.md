@@ -68,7 +68,7 @@ MRPC +1.0 — and loses on SST-2 (−0.2) and CoLA (−1.1). The efficiency numb
 the one to plan around: on QNLI and QQP, 40% reaches the 15% model's score in
 **half the training steps**.
 
-The sweep and the recommendation are both Wettig et al.'s, LIT-672: three model
+The sweep and the recommendation are both Wettig et al.'s, [LIT-672](../literature.d/LIT-672.md): three model
 sizes, rates from 15% to 50%, under one efficient recipe. They start from the
 observation that the rate had been held at 15% "regardless of model sizes or
 masking strategies" without ever being swept, and read the moving optimum as

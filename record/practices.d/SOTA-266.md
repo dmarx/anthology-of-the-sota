@@ -120,6 +120,7 @@ by a net +16.5 on human-rated quality and +7.1 on text alignment (its Table
 8a). That is the only controlled comparison of the objective in the video
 line. Every other video report adopts it.
 
+<!-- inactive-ok-block: SOTA-422 — Proposed, named as the recipe Movie Gen's comparison beat -->
 The diffusion arm Movie Gen beat is [SOTA-422](SOTA-422.md)'s recipe: v-prediction on a
 schedule rescaled to zero terminal SNR, the repair for signal leaked at the
 last timestep. For a VP model the choice is between that repair and the

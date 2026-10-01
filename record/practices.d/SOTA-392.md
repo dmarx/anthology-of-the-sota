@@ -56,7 +56,7 @@ architecture. FID at one Euler step:
 | 1-rectified flow (no reflow) | 378 | 6.18 |
 | 2-rectified flow (one reflow) | 12.21 | 4.85 |
 
-Both procedures, and the table, come from LIT-636, which proposes reflow
+Both procedures, and the table, come from [LIT-636](../literature.d/LIT-636.md), which proposes reflow
 as the way to straight paths and uses reflow followed by distillation for its
 headline one-step result. The ordering recommended here, distillation first
 and reflow optional, is a reading of that paper's Table 1a, not advice the

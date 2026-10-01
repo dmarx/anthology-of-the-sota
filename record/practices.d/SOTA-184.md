@@ -88,6 +88,7 @@ why to use a low-rank update, that one is where to put it.
 
 ## Against an intervention on hidden states
 
+<!-- inactive-ok-block: SOTA-329 — Proposed, named as the other side of the comparison -->
 ReFT ([LIT-549](../literature.d/LIT-549.md)) sets LoReFT, the low-rank edit to the hidden state at a few
 prompt positions that [SOTA-329](SOTA-329.md) recommends, against LoRA at 0.03% of the
 parameters to LoRA's 0.7–0.8%. LoReFT leads on eight commonsense tasks

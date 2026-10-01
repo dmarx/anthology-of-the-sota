@@ -81,7 +81,7 @@ consistent, so the bias does go away. In their d=2048 example it had gone by
 100,000 samples. This is the option that requires no new tooling and it is a
 real one — it just has to be checked rather than assumed.
 
-All four steps come from LIT-615. Bińkowski et al. measured the CIFAR-10
+All four steps come from [LIT-615](../literature.d/LIT-615.md). Bińkowski et al. measured the CIFAR-10
 train-against-test curve, where KID's estimate is essentially 0 by n=2,000
 and FID's is still about 8.1 at n=10,000, built the d=2048 reversal in
 Appendix D.2, and proved in Appendix D.3 that no estimator of FID is unbiased

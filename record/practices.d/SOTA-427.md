@@ -74,7 +74,7 @@ Li, Chen, Hu and Yang (2018; CVPR 2019), [LIT-705](../literature.d/LIT-705.md) â
 
 ## Why
 
-The rule originates with LIT-705, which named the mechanism "variance shift"
+The rule originates with [LIT-705](../literature.d/LIT-705.md), which named the mechanism "variance shift"
 and recommended placing dropout only after the last BN, just before the
 softmax. Its derivation gives a shift ratio equal to the retain ratio `p` when
 BN directly follows dropout on a zero-mean input, and its Figure 1 shows the

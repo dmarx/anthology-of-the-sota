@@ -57,7 +57,7 @@ If you want a tokenizer-free model:
    stage is where the gain appears: 0.715 against 0.730 bits/byte at 1.3B
    FLOPs.
 
-The recommendation originates with LIT-679, which introduced H-Net and its
+The recommendation originates with [LIT-679](../literature.d/LIT-679.md), which introduced H-Net and its
 two-stage learned chunking. Its evidence is a chain of baselines that each
 change one ingredient, all matched in bytes per batch and FLOPs per byte on a
 100B-token FineWeb-Edu subset. At the XL (1.3B) budget a GPT-2 BPE Transformer

@@ -53,7 +53,7 @@ Hinton, Vinyals and Dean (2015), [LIT-680](../literature.d/LIT-680.md).
 - **`T²`:** keep it. It holds the relative size of the two terms fixed as `T`
   changes, so a temperature sweep is not also a loss-weight sweep.
 
-All three instructions come from LIT-680, which introduced distillation
+All three instructions come from [LIT-680](../literature.d/LIT-680.md), which introduced distillation
 against a teacher's temperature-softened outputs. It trains the student at
 the teacher's `T`, adds the hard-label term at `T = 1` because "the best
 results were generally obtained" with a considerably lower weight on it, and

@@ -65,7 +65,7 @@ at token distance `n`:
 empirically it is estimated per layer as `ŝ[n] = 1/(N−n) · E[Σᵢ e_{i(i−n)}]`
 and averaged.
 
-The metric and the measurements below are from LIT-638, which defines
+The metric and the measurements below are from [LIT-638](../literature.d/LIT-638.md), which defines
 attention resolution (§3.1) while designing its own encoding, xPos, and notes
 that `s[n]` and `R(s)` can be estimated "when we design Transformers". It
 reports per-layer averages at the training length and at twice it, on a

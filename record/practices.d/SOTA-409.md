@@ -70,7 +70,7 @@ improving. The downside is bounded at zero on the selection metric and the cost
 is one averaging pass over weights you already have.
 
 The recipe, the guarantee and the measurements below are Wortsman et al.'s in
-LIT-675, which proposed souping sweep members on the observation that models
+[LIT-675](../literature.d/LIT-675.md), which proposed souping sweep members on the observation that models
 fine-tuned from the same pretrained weights "often appear to lie in a single low
 error basin", and which reports the uniform soup's failure alongside the greedy
 one's gain. With ViT-G the greedy soup reaches 90.94 on ImageNet against 90.78

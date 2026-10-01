@@ -106,9 +106,10 @@ work perfectly well.
   nothing about it, so the code has to appear again where the body says what
   the paper showed. A code in backticks is a mention and explains nothing
   either. The lint reports each one as `unexplained-relations`, a warning,
-  not a failure, with the line of the entry it found. There is a backlog of
-  them; work it down as you read a document, never by writing sentences to
-  clear the count.
+  not a failure, with the line of the entry it found. Clear one by reading:
+  the paper's note, its close reading if there is one, the paper itself if
+  neither says enough. Then write what it showed. A sentence that names the
+  paper and says nothing it showed passes the check and defeats the rule.
 
 ## Working
 

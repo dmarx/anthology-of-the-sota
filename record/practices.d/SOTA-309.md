@@ -21,6 +21,7 @@ consensus_note: >-
 title: "Score a control interface by the mutual information between the operator's command and the state change it induces, and choose the horizon of that state change deliberately"
 version: 1
 tags:
+- human-ai-interaction
 - training-optimization
 - analysis-and-evaluation
 - deployment-and-society

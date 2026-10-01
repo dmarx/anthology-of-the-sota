@@ -6,6 +6,7 @@ formerly:
 title: 'A message-passing GNN can distinguish no more graphs than the 1-WL test, and reaches that limit only if its neighbor aggregation is injective on multisets, as a sum followed by an MLP is and a mean or max is not'
 version: 1
 tags:
+- graphs-and-networks
 - model-architecture
 - analysis-and-evaluation
 date: '2026-09-23'

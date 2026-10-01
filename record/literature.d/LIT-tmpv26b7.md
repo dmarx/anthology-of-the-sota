@@ -5,6 +5,7 @@ version: 1
 tags:
 - attention-techniques
 - model-architecture
+- physical-sciences
 date: '2026-10-01'
 published: '2025-02-24'
 arxiv: '2502.17019'
@@ -118,11 +119,10 @@ passing misses; the cosmology baselines come from the benchmark's repository,
 and the paper states hyperparameter tuning for every model only for the MD
 task, which is exactly the situation that practice warns about.
 
-There is no topic for scientific or physical-system surrogates. The paper is
-filed on its kind of claim, an attention architecture, and that is
-appropriate for what it argues. But the record now holds a model whose whole
-evaluation is cosmology, polymer dynamics, PDE solving and fluid flow, and
-none of `vision-and-graphics`, `biomolecular-modeling` or `signal-structure`
-says that. Under [ADR-059](../decisions.d/ADR-059.md) this is a finding about the vocabulary.
+The paper is filed first on its kind of claim, an attention architecture,
+which is what it argues. Its whole evaluation is cosmology, polymer dynamics,
+PDE solving and fluid flow, so it also takes `physical-sciences`, the topic
+[ADR-tmp56fu3](../decisions.d/ADR-tmp56fu3.md) added after this note found the vocabulary had no word for
+learned surrogates of physical systems.
 
 Unread — no NOTE.

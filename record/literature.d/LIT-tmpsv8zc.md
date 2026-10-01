@@ -2,10 +2,10 @@
 status: Active
 title: 'From monoliths to modules: Decomposing transducers for efficient world modelling'
 version: 1
-# No topic names this paper's primary subject: world models as the
-# environments agents are trained in, and their factorization. The tags
-# below are true of it but secondary; see the standing section.
+# Filed first under model-architecture because no topic named its subject;
+# agents-and-environments was added for it and its neighbours (ADR-tmp56fu3).
 tags:
+- agents-and-environments
 - model-architecture
 - analysis-and-evaluation
 - concept-geometry
@@ -100,10 +100,10 @@ work is in the record, and filing it would be what turns §6 into something
 the concept-geometry shelf could use. That is the reason for the
 concept-geometry tag, and it is the weakest of the three.
 
-**The vocabulary has no topic for this paper's primary subject**: world
-models and environments for agents, and reinforcement learning generally.
-`model-architecture` is first because the paper's claim is about how a world
-model should be structured. It is the nearest true tag, not the right one,
-and under [ADR-059](../decisions.d/ADR-059.md) the gap belongs in the vocabulary, not in this note.
+**Its primary topic is `agents-and-environments`**, added for it and its
+neighbours by [ADR-tmp56fu3](../decisions.d/ADR-tmp56fu3.md): when it was filed the vocabulary had no word for
+world models and the environments agents act in, and it sat under
+`model-architecture`, which stays as a secondary tag because the paper's
+claim is about how a world model should be structured.
 
 Unread — no NOTE.

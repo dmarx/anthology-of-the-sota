@@ -6,6 +6,7 @@ formerly:
 title: 'In a message-passing GNN for graph-level tasks, aggregate neighbours by sum with an MLP update, not by mean or max, when graph structure rather than node features carries the signal'
 version: 1
 tags:
+- graphs-and-networks
 - model-architecture
 date: '2026-09-23'
 source:

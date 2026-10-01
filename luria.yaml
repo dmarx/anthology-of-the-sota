@@ -24,7 +24,7 @@
 # practice drawn from it still hold. Two schemes, two status fields, and the
 # relationship between them is a citation the lint can follow. See ADR-002.
 vocabularies:
-  # The twenty-two topics: the primary axis of both the practice registry and the
+  # The twenty-six topics: the primary axis of both the practice registry and the
   # reading list, in the order the indexes show them.
   #
   # The first seven are transcribed from the 2024 naming-conventions document;
@@ -57,6 +57,10 @@ vocabularies:
   #   ADR-060  concept-geometry -- three documents about how concepts sit
   #            in representation space had each named the gap, from under a
   #            topic about input encoding
+  #   ADR-tmp56fu3 agents-and-environments, graphs-and-networks,
+  #            physical-sciences, human-ai-interaction -- the #180 reading
+  #            pass declined three papers and filed four more under the
+  #            nearest wrong word; each reader named the missing topic
   #
   # Every one of those words was already in the LIT scheme, which has carried
   # them since ADR-003; the practice registry caught up one decision at a time.
@@ -78,9 +82,9 @@ vocabularies:
     # What the axis IS, which until luria 0.25.0 could only be said in a
     # comment no view could reach (LU-#279).
     blurb: >-
-      The twenty-two kinds of claim this anthology files against — the
+      The twenty-six kinds of claim this anthology files against — the
       primary axis of both the practice registry and the reading list, and the
-      same twenty-two for each (ADR-026). The filing rule is the point: take a domain
+      same twenty-six for each (ADR-026). The filing rule is the point: take a domain
       topic when the claim is ABOUT the domain; a claim merely discovered in
       one still takes its kind. The axis organizes the record, it does not
       bound it: content the list cannot place is evidence the list is short
@@ -194,6 +198,22 @@ vocabularies:
       concept-geometry:
         label: Concept geometry
         blurb: how concepts are laid out in a model's representation space — linear directions and the regions, lattices and spectra built from them, superposition and the dictionaries that pull it apart, reading concepts out with probes and writing them in with steering vectors, and whether different models arrive at the same geometry
+      # The four below were added by ADR-tmp56fu3. Filing the reading feed's
+      # revisit list (#180), three papers were declined because no topic held
+      # them and four more were filed under the nearest wrong word, each
+      # saying so. Under ADR-059 that is the axis being short.
+      agents-and-environments:
+        label: Agents and environments
+        blurb: systems that perceive, act and are changed by the consequences — percept–action loops, world models and the environments agents are trained in, multi-agent and collective behaviour, and what acting rather than only predicting changes about learning, memory and their costs
+      graphs-and-networks:
+        label: Graphs and networks
+        blurb: graph-structured data and the models that run on it — message passing and graph neural networks, how they are evaluated, graph curvature, rewiring and over-squashing, community structure and partitioning
+      physical-sciences:
+        label: Physical sciences
+        blurb: models whose data is the physical world — learned surrogates for simulation in fluids, PDEs, molecular dynamics and cosmology, foundation models for weather, climate and solar observation — what they are trusted to replace, what their benchmarks can show, and which of their methods travel to other domains
+      human-ai-interaction:
+        label: Human–AI interaction
+        blurb: how people work with a model through an interface — prompting and steering controls, editing and co-writing tools, assistive and co-adaptive interfaces, how such interfaces are scored, and what lab studies of them can and cannot show
       # ── Secondary-only words ─────────────────────────────────────────────
       # Declared so they have a label and a blurb rather than rendering as bare
       # strings, and so `closed: true` on SOTA, LIT and THEORY can require that

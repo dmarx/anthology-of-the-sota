@@ -14,6 +14,7 @@ promote_when: >-
 title: 'Command-to-outcome mutual information scores an interface because it measures how reliably the operator''s input determines what happens at the chosen horizon, which rewards a learnable channel rather than an intuitive one'
 version: 1
 tags:
+- human-ai-interaction
 - analysis-and-evaluation
 - deployment-and-society
 date: '2026-09-23'

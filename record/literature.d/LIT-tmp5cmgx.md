@@ -3,6 +3,7 @@ status: Active
 title: 'Textoshop: Interactions Inspired by Drawing Software to Facilitate Text Editing'
 version: 1
 tags:
+- human-ai-interaction
 - deployment-and-society
 - in-context-learning
 date: '2026-10-01'
@@ -86,13 +87,12 @@ Masson, Kim and Chevalier (2024) — [ARXIV-2409.17088](https://arxiv.org/abs/24
 
 ## Standing in the anthology
 
-Filed under `deployment-and-society` on the precedent of [LIT-503](LIT-503.md), an
-assistive-interface paper, and [LIT-717](LIT-717.md), which studies what an AI assistant
-does to people writing with it. The fit is loose. This is a lab usability
-study of a prototype. It is not an audit of a deployed system, and the
-record has no topic for human–AI interaction design. If more papers like
-this one are filed, that topic should be added under [ADR-059](../decisions.d/ADR-059.md), and this
-paper should then take it first.
+Filed first under `human-ai-interaction`, the topic [ADR-tmp56fu3](../decisions.d/ADR-tmp56fu3.md) added
+after this note found that `deployment-and-society`, its first home, did not
+fit: this is a lab usability study of a prototype, not an audit of a deployed
+system. [LIT-503](LIT-503.md), an assistive-interface paper, moved with it, and [LIT-717](LIT-717.md),
+which studies what an AI assistant does to people writing with it, takes the
+topic as well.
 
 Against the record's writing-assistant practices it is the kind of evidence
 they warn about. [SOTA-298](../practices.d/SOTA-298.md), drawn from [LIT-487](LIT-487.md), says to measure a writing

@@ -64,7 +64,7 @@ HumanEval and 17% more MBPP than comparable next-token models. Small
 algorithmic tasks suggest the mechanism: multi-token prediction favours
 induction heads.
 
-All of this is LIT-163's measurement, and the recommendation is its too: the
+All of this is [LIT-163](../literature.d/LIT-163.md)'s measurement, and the recommendation is its too: the
 paper proposes n heads on a shared trunk as an auxiliary loss for pretraining
 and reports the size-scaling, the multi-epoch result and the HumanEval and
 MBPP gains against next-token models it trained for comparison. The adopting

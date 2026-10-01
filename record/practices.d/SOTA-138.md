@@ -45,7 +45,7 @@ cache along the sequence first, running the indexer over the compressed
 entries, and warming up under dense attention for the first 1T tokens
 before introducing sparsity at the 64K stage.
 
-Both halves of the recipe come from LIT-142, which introduced DeepSeek
+Both halves of the recipe come from [LIT-142](../literature.d/LIT-142.md), which introduced DeepSeek
 Sparse Attention by retrofitting it onto the DeepSeek-V3.1-Terminus
 checkpoint, already extended to 128K, through continued pretraining: the
 indexer runs on MLA in its multi-query mode, and only after the 2.1B-token

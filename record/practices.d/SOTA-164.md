@@ -43,7 +43,7 @@ summary: >-
 
 Lee et al., Google Research (2021), [LIT-202](../literature.d/LIT-202.md) — [ARXIV-2107.06499](https://arxiv.org/abs/2107.06499).
 
-Lee et al. are where this practice starts: LIT-202 built and released both
+Lee et al. are where this practice starts: [LIT-202](../literature.d/LIT-202.md) built and released both
 tools below, and measured what deduplicating standard language-modelling
 corpora with them bought — the three results in the next section.
 

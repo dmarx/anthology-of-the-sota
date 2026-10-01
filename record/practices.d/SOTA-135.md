@@ -32,7 +32,7 @@ reasoning, in-context retrieval, length extrapolation and long-context
 understanding, and the paper's own hybrids with sliding-window attention or
 Mamba2 layers did better still.
 
-The gated delta rule is LIT-137's own proposal: it takes Mamba2's
+The gated delta rule is [LIT-137](../literature.d/LIT-137.md)'s own proposal: it takes Mamba2's
 data-dependent decay and DeltaNet's delta update with its WY-based chunkwise
 algorithm, extends that algorithm to carry the gate, and attributes the
 parents' failures in its single-needle tests to forgetting too fast (Mamba2

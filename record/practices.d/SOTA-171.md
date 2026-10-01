@@ -71,7 +71,7 @@ across a sweep up to 900B tokens and 9B parameters. 400 training runs, with
 models and datasets released.
 
 The four-epoch bound and the law that prices it are Muennighoff et al.'s own
-reading of that sweep in LIT-166, which is where this recommendation
+reading of that sweep in [LIT-166](../literature.d/LIT-166.md), which is where this recommendation
 originates.
 
 Two mitigations for data scarcity are tested alongside: adding code data to

@@ -59,7 +59,7 @@ additional pretraining data becomes **actively harmful** if the model will be
 quantized afterwards. More training makes a model less robust to being
 compressed.
 
-Both halves are LIT-186's fits, and the recommendation originates in its
+Both halves are [LIT-186](../literature.d/LIT-186.md)'s fits, and the recommendation originates in its
 inference result: fitting over 465 pretraining runs, the paper finds
 post-training quantization damage growing with training data and concludes
 that, for a model to be quantized, extra data past a locatable point is

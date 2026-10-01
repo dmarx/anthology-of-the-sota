@@ -62,7 +62,7 @@ and removed the attention-sink pattern and the massive activations that
 accompany it. The paper credits the non-linearity it inserts between the
 value and output projections and the sparsity it induces in the output.
 
-That 30-variant sweep is LIT-138's, and it is the evidence this practice
+That 30-variant sweep is [LIT-138](../literature.d/LIT-138.md)'s, and it is the evidence this practice
 rests on: the head-specific output gate is the variant it found to improve
 quality consistently at both the 15B MoE and the 1.7B dense scale, where
 gating the attention scores did not help.

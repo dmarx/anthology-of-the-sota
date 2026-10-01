@@ -27,6 +27,7 @@ summary: >-
   resource advantages being put to use. It is illustrated with golden
   shiners, ant nest-site choice and pigeon homing.
 ---
+<!-- inactive-ok-file: SOTA-257 — Proposed, named as an analogy the note labels as one -->
 
 # LIT-tmp5juts: The Computational Foundations of Collective Intelligence
 

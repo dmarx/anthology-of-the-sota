@@ -18,6 +18,7 @@ summary: >-
   `agents-and-environments` covers, and leaving the papers unfiled, which
   [ADR-059](ADR-059.md) rules out.
 ---
+<!-- inactive-ok-file: LIT-697, LIT-715, LIT-717, SOTA-298, SOTA-303, SOTA-309, THEORY-091 — Deferred or Proposed; named because this decision retags them or cites them as the evidence-quality warnings it relies on, not as settled claims -->
 
 # ADR-tmp56fu3: agents-and-environments, graphs-and-networks, physical-sciences, human-ai-interaction
 

@@ -31,6 +31,7 @@ summary: >-
   Tanks-and-Temples, and adding real multi-view data to the synthetic
   supervision does not help.
 ---
+<!-- inactive-ok-file: SOTA-tmpqmoen — Proposed, named as the practice filed from this paper, pending the comparison it asks for -->
 <!-- inactive-ok-file: SOTA-394 — Proposed; named as neighbours this paper informs or tests, with their standing stated where they are cited -->
 
 # LIT-tmp5yash: Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation
@@ -113,7 +114,8 @@ not distilling its sampler.
 
 The candidate claim, that a frozen camera-controlled video model can stand
 in for captured multi-view data when training a 3D reconstructor, rests on
-one ablation measured on the teacher's own distribution. It is not yet a
-practice.
+one ablation measured on the teacher's own distribution. It is filed as a
+Proposed practice, [SOTA-tmpqmoen](../practices.d/SOTA-tmpqmoen.md), whose promotion condition asks for that
+comparison scored on real held-out views.
 
 Unread — no NOTE.

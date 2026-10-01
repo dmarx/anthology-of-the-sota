@@ -37,6 +37,7 @@ summary: >-
   that way from scratch at 160M it reaches lower loss than full attention at
   equal FLOPs.
 ---
+<!-- inactive-ok-file: THEORY-tmp7q4tl — Proposed, named as the theory filed from this paper, which sets out both readings -->
 
 # LIT-tmp8tr17: SepLLM: Accelerate Large Language Models by Compressing One Segment into One Separator
 
@@ -106,13 +107,15 @@ explains the sink as a softmax with nothing to attend to dumping its mass on
 the positions every query can see. [LIT-414](LIT-414.md) extends the same diagnosis to
 content: heads learning a no-op land it on `[SEP]`, periods and commas. So the
 attention on separators that SepLLM starts from has a reading in the record
-already, and it is that the attention is a no-op, not a summary. The two
-readings make different predictions, and SepLLM's matched-budget comparisons
-are evidence for its own one: if separators were only sinks, the initial
-tokens would already supply the sink and keeping the separators would not buy
-seven GSM8K points over StreamingLLM, nor beat a fixed-interval selection.
-It does not show that separators carry *no* sink function. A probe of
-separator representations would settle what the masking results only imply.
+already, and it is that the attention is a no-op, not a summary. SepLLM's
+matched-budget comparisons do not decide between the two. Its seven GSM8K
+points over StreamingLLM and its win over fixed-interval selection are what
+the no-op reading predicts too: [LIT-414](LIT-414.md)'s heads park on punctuation
+specifically, so the initial tokens cannot stand in for them, and evicting
+the positions a head parks on disturbs its softmax whichever reading is
+right. The account is filed as a Proposed theory, [THEORY-tmp7q4tl](../theory.d/THEORY-tmp7q4tl.md), which sets
+out both readings; keeping the separators' keys while dropping their values,
+or probing their states, would decide it.
 
 For practice, it sits beside [SOTA-138](../practices.d/SOTA-138.md), which recommends sparse attention
 learned with an indexer. SepLLM's sparsity is fixed by the tokenizer, not

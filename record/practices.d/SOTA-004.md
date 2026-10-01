@@ -12,8 +12,6 @@ introduced_by:
 - LIT-002
 summary: >-
   Ioffe et al. (2015), [LIT-002](../literature.d/LIT-002.md) — [ARXIV-1502.03167](https://arxiv.org/abs/1502.03167).
-compared_against:
-- SOTA-006
 ---
 
 # SOTA-004: Place BatchNorm after linear/conv layers but before activation functions

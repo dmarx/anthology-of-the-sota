@@ -15,6 +15,11 @@ history:
 tags:
 - training-optimization
 date: '2026-08-24'
+# Kept on LIT-052 deliberately, not repointed. These two relations record
+# the attribution this practice was rejected over: it was filed from a
+# takeaway credited to Tay et al., and that paper never mentions warmup.
+# No paper in the record evidences the claim, so there is nothing to
+# repoint to, and moving the field would erase the record of what was wrong.
 source:
 - LIT-052
 introduced_by:
@@ -45,3 +50,15 @@ shortens with *width*. Read together they were the record's only statement
 about how warmup moves with scale, and they were two halves of a bullet list
 that came from nowhere. A reader who found one and not the other would have
 had no reason to doubt it.
+
+## Why the relations still name LIT-052
+
+Both `source` and `introduced_by` point at LIT-052 because that is the
+attribution this practice was filed under and rejected over, not because Tay
+et al. support it. Their paper is about model shape for downstream
+fine-tuning — the DeepNarrow strategy, which scales depth before any other
+dimension — and it says nothing about warmup at any width. The
+claim came from a takeaway that was credited to LIT-052 and belonged to no
+paper anyone has found. With no source to move to, the relation is kept as
+the record of the false attribution: a reader who meets the claim credited
+to Tay et al. elsewhere can find here that the paper does not make it.

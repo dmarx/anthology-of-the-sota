@@ -41,8 +41,8 @@ early part of training the interesting movements are small enough that either
 scale shows them.
 
 The practice belongs with the rest of [LIT-054](../literature.d/LIT-054.md)'s stability set — [SOTA-070](SOTA-070.md)'s
-per-layer gradient norms, [SOTA-071](SOTA-071.md)'s clipping, [SOTA-098](SOTA-098.md)'s validation-loss
-watch — and none of them is worth much alone. What the paper actually
+per-layer gradient norms, [SOTA-071](SOTA-071.md)'s clipping, [SOTA-098](SOTA-098.md)'s
+watch on the training loss for spikes — and none of them is worth much alone. What the paper actually
 describes is an operator watching several signals with a rehearsed response
 ([SOTA-095](SOTA-095.md)'s rewind), which is a *procedure*, and the record has it split into
 four monitoring bullets with the procedure missing.

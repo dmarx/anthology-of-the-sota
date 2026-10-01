@@ -1,0 +1,60 @@
+---
+status: Active
+title: '10Cache: Heterogeneous Resource-Aware Tensor Caching and Migration for LLM Training'
+version: 1
+tags:
+- distributed-optimization
+- systems-optimization
+date: '2026-10-01'
+published: '2025-11-18'
+arxiv: '2511.14124'
+first_author: 'Afroz'
+keywords:
+- 'tensor-caching'
+- 'tensor-migration'
+- 'memory-offloading'
+- 'pinned-memory'
+- 'LLM-training'
+implementations: []
+summary: >-
+  Afroz et al. (2025), [ARXIV-2511.14124](https://arxiv.org/abs/2511.14124) (SoCC '25). A tensor caching and
+  migration system for offloaded LLM training across GPU, CPU and NVMe,
+  reporting up to 2× faster training than prior offloading methods. Its
+  motivating measurement is the one the record uses: on an L40S over PCIe
+  4.0 ×16, a 16 MB FP32 host-to-device copy takes 1.65 ms (10.16 GB/s) from
+  pageable memory and 0.68 ms (24.74 GB/s) from pinned memory.
+---
+
+# LIT-tmpiutyj: 10Cache: Heterogeneous Resource-Aware Tensor Caching and Migration for LLM Training
+
+Afroz, Khan, Albahar, Han and Butt (2025) — [ARXIV-2511.14124](https://arxiv.org/abs/2511.14124) (SoCC '25)
+
+## Key takeaways
+
+- **Pinned against pageable, measured (§2.2, Table 2).** On an NVIDIA L40S
+  attached by PCIe 4.0 ×16, copying 16 MB of FP32 from host to device took
+  1.65 ms from pageable memory (10.16 GB/s) and 0.68 ms from pinned memory
+  (24.74 GB/s); 8 MB of FP16 took 0.78 ms against 0.34 ms. Device-to-host is
+  the same shape: 10.00 against 25.91 GB/s. Pinned is better than twice as
+  fast in every row.
+- The paper's account of why is the standard one, cited to NVIDIA's 2012
+  developer note: from pageable memory the driver first copies into a
+  temporary page-locked buffer and transfers from that, so a pinned source
+  skips a copy.
+- The cost it names is allocation: pinned memory is slower to allocate than
+  pageable, so 10Cache allocates its pinned buffers once, offline, sized from
+  the profiled tensor-size distribution, and reuses them rather than
+  allocating during training.
+- The system itself prefetches offloaded tensors in profiled execution order
+  across GPU, CPU and NVMe tiers. Against state-of-the-art offloading it
+  reports up to 2× training speedup, up to 86.6× higher GPU cache hit rate,
+  and up to 2.15× and 1.33× better CPU and GPU memory utilisation.
+
+## Standing in the anthology
+
+Filed as the evidence for [SOTA-044](../practices.d/SOTA-044.md), pin host memory for CPU-GPU transfers,
+which had cited a data-stall study that never discusses pinning. It is the
+only paper the record found that measures pinned against pageable transfer
+directly. The measurement is a microbenchmark taken to motivate an
+offloading system, not a study of input pipelines, and it reports bandwidth
+rather than overlap with compute; both limits are stated in the practice.

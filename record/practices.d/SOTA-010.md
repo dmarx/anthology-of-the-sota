@@ -60,7 +60,7 @@ practices whose titles state a behaviour rather than an instruction and left
 them in place pending a decision about what a vacated code should say;
 [ADR-034](../decisions.d/ADR-034.md) is that decision and this is its first application.
 
-The claim originates in LIT-014. Li et al. compared ResNet-56 with
+The claim originates in [LIT-014](../literature.d/LIT-014.md). Li et al. compared ResNet-56 with
 ResNet-56-noshort on CIFAR-scale data under filter-normalised loss-surface
 plots. As networks get deep, the landscape goes from nearly convex to
 chaotic, and that transition comes with worse generalisation and, eventually,

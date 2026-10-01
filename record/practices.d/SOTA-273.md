@@ -66,6 +66,12 @@ Then the useful contexts are the ones in the middle:
 can be *mixed*, which the source describes as an effortless way to build
 better contexts from ones you already have.
 
+Both the criterion and the mixing construction are Zhai's, in LIT-459. They
+follow from the dissertation's thesis that an encoder capturing the maximum
+information of the association, its contexture, is optimal on the tasks
+compatible with the context. The record has them from the source's summary
+of its results, not from its proofs.
+
 ## Why the record wants this even in its weak state
 
 Every objective practice the registry holds is filed on its own evidence —

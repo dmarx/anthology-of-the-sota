@@ -65,6 +65,12 @@ Two thresholds appear:
 what makes this a different phenomenon from slow learning, and it is the one
 a practitioner is most likely to misdiagnose.
 
+Both transitions are Gu et al.'s measurement, in LIT-451: synthetic
+biographies mixed into web text, Pythia models from 14M to 6.9B, with the
+same data trained alone recovering the smooth linear law as the control. The
+warning against carrying a ratio across scale is theirs too, drawn from the
+power-law fit for the critical ratio below.
+
 ## Why the ratio has to be re-chosen
 
 The critical mixing ratio follows a **power law in model size**. So the

@@ -71,6 +71,11 @@ competing for "the smallest model that outputs grammatical English" count
 every parameter. A leaderboard where one entry excludes embeddings and
 another does not is not a leaderboard.
 
+The recommendation is LIT-485's own, made in its §3.5 while reporting the
+SimpleStories model suite: it is where the TinyStories-33M figure and the
+65M-versus-35M tokenizer arithmetic above come from, and it argues the
+convention from the documented misreading rather than from any experiment.
+
 <!-- inactive-ok-block: SOTA-125 — Proposed, and cited for the fact that it
      states a parameter budget at a tiny scale, which is true of the document
      whatever its standing; nothing here depends on the trade it recommends

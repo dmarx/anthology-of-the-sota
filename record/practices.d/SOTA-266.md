@@ -104,12 +104,27 @@ the breadth: 61 formulations ranked, then the winner taken to 8B
 text-to-image with weights released. A practice on either alone would be
 weaker — one would be a small-scale ablation, the other a leaderboard entry.
 
+In SiT (LIT-447) the walk from DiT changes one thing at a time on DiT's
+backbone, and replacing the variance-preserving interpolant with a linear or
+GVP one is a significant FID gain on its own, alongside velocity prediction.
+SiT-XL ends at FID-50K 2.06 on class-conditional ImageNet 256×256. In SD3
+(LIT-449) the 61 formulations are ranked on validation loss at matched
+settings: rectified flow with logit-normal timesteps comes first, and the
+uniform-timestep variant does not beat tuned ε-prediction. That ranking is
+the source of the title's second half.
+
 The Movie Gen team (2024), [LIT-626](../literature.d/LIT-626.md), is the video evidence. At 5B, on video
 at 352×192, it compares flow matching against v-prediction diffusion with
 zero terminal SNR, with everything else held constant. Flow matching wins
 by a net +16.5 on human-rated quality and +7.1 on text alignment (its Table
 8a). That is the only controlled comparison of the objective in the video
 line. Every other video report adopts it.
+
+The diffusion arm Movie Gen beat is SOTA-422's recipe: v-prediction on a
+schedule rescaled to zero terminal SNR, the repair for signal leaked at the
+last timestep. For a VP model the choice is between that repair and the
+straight path, which has zero terminal SNR by construction. In this one 5B
+video comparison the straight path won.
 
 ## Both halves of the title are the practice
 

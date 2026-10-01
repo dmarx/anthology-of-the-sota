@@ -55,6 +55,13 @@ representation that both image and text data are projections of, then image
 data should help a language model find it — and the paper cites a case where
 training on images improved performance on text.
 
+The recommendation comes from LIT-458, as a consequence of the Platonic
+representation hypothesis. What Huh et al. measure is that vision and
+language models come to measure distance between datapoints more similarly
+as they grow, and that denser captions align better with the visual
+representation. The case of images improving text is quoted from prior work,
+not run.
+
 That asymmetry in current practice is itself weak evidence for the
 recommendation: the field adopted the direction that was convenient, not the
 direction an argument picked out.

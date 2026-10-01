@@ -65,6 +65,13 @@ Write the few-shot exemplars as `⟨input, worked steps, output⟩` rather than
 `⟨input, output⟩`. Eight is enough. Nothing else changes — no fine-tuning, no
 training data, no task-specific checkpoint.
 
+This is chain-of-thought prompting as LIT-467 introduced it, and the table
+below is its evidence: with eight such exemplars PaLM 540B reached the state
+of the art on GSM8K, beating a fine-tuned GPT-3 with a verifier, and the
+largest GPT and PaLM models more than doubled their GSM8K score — across
+LaMDA, GPT-3 and PaLM, and on commonsense and symbolic tasks as well as
+arithmetic.
+
 ## When it pays, and when it does not
 
 | condition | effect |

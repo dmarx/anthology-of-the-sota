@@ -41,6 +41,12 @@ Keep the chain-of-thought prompt exactly as it is. Change the decoding:
 sample several reasoning paths instead of taking the greedy one, extract each
 path's final answer, and return the most frequent.
 
+That procedure is self-consistency, which LIT-468 introduced as a drop-in
+replacement for greedy decoding under a chain-of-thought prompt. Across four
+model families (UL2, GPT-3/Codex, LaMDA-137B, PaLM-540B) it raised GSM8K by
+17.9 points, SVAMP by 11.0, AQuA by 12.2, StrategyQA by 6.4 and
+ARC-challenge by 3.9 over greedy chain-of-thought decoding.
+
 **Start at five or ten paths.** That is the authors' own guidance and it is
 the practical content — performance saturates quickly, so the marginal path
 stops paying well before the budget does.

@@ -103,6 +103,11 @@ just a smaller population in disguise: uniform training on a population of
 for the warm-up on 128k. The numbers are this setting's; the direction is
 the transferable part.
 
+The trade-off and the warm-up both originate in LIT-450. Zucchet et al.
+derive the trade-off from their account of the plateau, sweep fixed
+power-law distributions over several population sizes, and propose the
+subset-first warm-up as the schedule that takes each side where it is cheap.
+
 *Corrected 2026-09-30. This practice read "start the training distribution
 imbalanced and flatten it", said a schedule of that shape beat the best fixed
 choice, and gave the fixed optimum as "an inverse power law with exponent

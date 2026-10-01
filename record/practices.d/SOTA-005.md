@@ -31,6 +31,16 @@ prediction depend on the other examples it happened to be evaluated with.
 The running estimates accumulated during training stand in for the population
 statistics instead, which makes inference deterministic and per-example.
 
+Both halves of that are LIT-002's, which introduced the practice along with
+the method. Ioffe and Szegedy say in §3.1 that mini-batch-dependent
+normalisation "is neither necessary nor desirable during inference" because
+the output should depend only on the input, and they replace the batch
+statistics after training with population statistics: means and an unbiased
+variance estimate (the m/(m−1) correction) averaged over training mini-batches,
+with moving averages as the way to track them while training (Algorithm 2).
+With the statistics fixed, BN at inference is just a linear transform that can
+be folded into the learned scale and shift.
+
 ## The failure this prevents, and the one it causes
 
 Getting it wrong is not subtle in one direction and very subtle in the other.
@@ -43,7 +53,9 @@ pretraining carries stale statistics unless they are updated, and a model
 evaluated on a distribution the running averages never saw is normalising by
 the wrong constants — with no error, just worse predictions. This is the
 mechanism behind a familiar train/test gap that looks like overfitting and is
-not.
+not. LIT-002 anticipates the remedy without testing it: its conclusion lists as
+future work whether a network could adapt to a new data distribution "perhaps
+with just a recomputation of the population means and variances".
 
 It is also the reason this whole family of practices is less relevant to
 transformers: LayerNorm has no running statistics, computing over the feature

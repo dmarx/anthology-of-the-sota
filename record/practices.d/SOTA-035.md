@@ -33,6 +33,18 @@ the run survive *individual* anomalous batches, which is a narrower and more
 useful claim: one pathological sequence cannot take a step large enough to
 leave the basin the run is in and destroy hours of progress.
 
+The norm-rescaling form is LIT-037's (Algorithm 1): if the gradient's norm
+exceeds the threshold, scale it down to the threshold and keep its direction.
+The paper derives it from geometry. Where gradients explode the error surface
+has a steep wall, a full step at the wall throws the iterate across the
+valley, and a bounded step lands back in the smooth region beside it. It
+credits element-wise clipping to Mikolov and changes only the form, to keep
+the step a descent direction. On Penn Treebank character modelling, clipping
+took next-character entropy from 1.46 to 1.34 bits on train and 1.50 to 1.42
+on test, and the five-steps-ahead variant has results only with clipping.
+Train and test improving together is the paper's evidence that clipping fixes
+the optimisation rather than acting as a regulariser.
+
 That is why it is close to universal in large runs despite being crude. The
 expected cost is near zero when the threshold is above the typical norm, and
 the avoided cost is a rewind ([SOTA-095](SOTA-095.md)) or a dead run.
@@ -43,7 +55,10 @@ The threshold. Set above the typical norm it clips rarely and costs nothing;
 set below, it clips constantly and quietly changes the optimisation — every
 step is then rescaled, so the effective learning rate is set by the threshold
 rather than by the schedule, and the run trains slowly for a reason that looks
-like a bad learning rate.
+like a bad learning rate. LIT-037's heuristic is to set the threshold from
+the average gradient norm over a sufficiently large number of updates, and it
+found training "not very sensitive" to the choice for a given task and model
+size, at the scale of 2012 recurrent networks.
 
 Monitoring the *clip rate* is what distinguishes those, and it is the signal a
 fixed threshold needs, because gradient norms fall by orders of magnitude over

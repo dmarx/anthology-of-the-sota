@@ -62,7 +62,7 @@ paper's runs stored 160–512 snapshots.
 combination of stored snapshots whose averaging profile best matches it
 (closed-form inner products; Algorithm 3 in the paper is a dozen lines).
 Reconstruction error falls roughly as the fourth power of the snapshot count.
-Both the profile and the reconstruction originate in LIT-714 (EDM2), which
+Both the profile and the reconstruction originate in [LIT-714](../literature.d/LIT-714.md) (EDM2), which
 derives the fit in closed form and finds 160–512 fp16 snapshots enough for
 "nearly perfect" reconstruction over that range. Its dense sweeps, below, are
 the case for choosing the length late.

@@ -69,7 +69,7 @@ architecture run once through the core, or the recurrent model evaluated at
 
 The recipe as recommended here — prelude, re-injected core and coda, noise
 initial state, heavy-tailed random `r` with truncated backpropagation — is
-Geiping et al.'s, LIT-683, and so is the evidence. In their one controlled
+Geiping et al.'s, [LIT-683](../literature.d/LIT-683.md), and so is the evidence. In their one controlled
 comparison (180B tokens, same data) the single pass through the core scores
 73.20 on SciQ and 37.34 on HellaSwag against 80.60 and 48.80 at `r = 32`, and
 zero-shot accuracy rises with `r` until a task-dependent saturation: HellaSwag

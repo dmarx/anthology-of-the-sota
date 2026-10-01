@@ -64,7 +64,7 @@ At small scale, fixed warmup and fixed hyperparameters penalize some sizes
 more than others. The penalty tilts the fitted slope toward parameters
 (`THEORY-108`).
 
-The protocol is LIT-690's, which made this recommendation by attributing the
+The protocol is [LIT-690](../literature.d/LIT-690.md)'s, which made this recommendation by attributing the
 gap between Kaplan's and Chinchilla's exponents one step at a time on an
 OpenLM sweep from 5M to 901M. Reproducing Kaplan gives `a = 0.835`, counting
 the head's FLOPs 0.706, warmup tokens = N 0.602, and tuning learning rate,

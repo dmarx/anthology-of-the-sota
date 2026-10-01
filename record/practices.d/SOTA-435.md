@@ -110,7 +110,7 @@ NeurIPS 2019, §2–3.
 
 ## Why this is `Active` on one paper
 
-Both cautions originate in LIT-725, the paper that defined infidelity and
+Both cautions originate in [LIT-725](../literature.d/LIT-725.md), the paper that defined infidelity and
 max-sensitivity: it states the constant-explanation minimiser itself, proves in
 Propositions 2.2–2.5 that several published methods are each infidelity-optimal
 for some perturbation, and shows SHAP winning under SHAP's own perturbation.

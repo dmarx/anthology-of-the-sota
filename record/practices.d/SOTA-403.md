@@ -103,7 +103,7 @@ next increment is grouped sharing rather than all-sharing — divide `L` layers
 into groups of `M` and share within each, where the paper reports smaller `M` is
 strictly better.
 
-The table is Lan et al.'s cross-layer sharing ablation in LIT-668, and the split
+The table is Lan et al.'s cross-layer sharing ablation in [LIT-668](../literature.d/LIT-668.md), and the split
 as advice starts there: the paper reads its own numbers as *"most of the
 performance drop appears to come from sharing the FFN-layer parameters"*, which
 is the attention-yes, FFN-no rule this practice states — even though the

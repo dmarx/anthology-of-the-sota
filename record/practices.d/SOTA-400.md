@@ -57,7 +57,7 @@ DINOv2 ViT-g, holding little information about their own position or pixels and
 a lot about the image as a whole. Anything downstream that reads the feature
 map or the attention map as a spatial signal reads them as noise.
 
-Both the diagnosis and the remedy are LIT-662's. It finds the high-norm
+Both the diagnosis and the remedy are [LIT-662](../literature.d/LIT-662.md)'s. It finds the high-norm
 tokens only in ViT-Large and above, after about a third of training, on
 patches that are redundant with their neighbours, and shows that a linear
 probe recovers their position and pixels worse than normal tokens' and the

@@ -59,7 +59,7 @@ the pattern covers most long-lived public benchmarks.
 first 99% of ImageNet-1k and select on the remaining 1%. The reported numbers
 then come from a split nothing was chosen on.
 
-The convention is LIT-628's, stated in its setup rather than tested: Beyer,
+The convention is [LIT-628](../literature.d/LIT-628.md)'s, stated in its setup rather than tested: Beyer,
 Zhai and Kolesnikov keep the 1% minival "to encourage the community to stop
 selecting design choices on the validation (de-facto test) set." That
 sentence is both where the recommendation comes from and the whole of the

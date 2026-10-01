@@ -64,7 +64,7 @@ distribution. Almost every MLM since copied it.
 
 Two things undercut it.
 
-**The rule's own evidence was thin from the start.** The rule is BERT's, LIT-670, which
+**The rule's own evidence was thin from the start.** The rule is BERT's, [LIT-670](../literature.d/LIT-670.md), which
 adopted it to reduce the pretrain/fine-tune mismatch and fixed the selection
 rate at 15% without sweeping it. BERT's only ablation of it
 is Appendix C.2, whose table is headed "Masking Rates" and holds the selection
@@ -88,7 +88,7 @@ and the loss on randomly-substituted tokens is slightly *higher* than on
 corruption at all.
 
 The comparison and the recommendation to drop the mix both come from Wettig et
-al., LIT-672, who ran it at a 40% rate and explained it with their own
+al., [LIT-672](../literature.d/LIT-672.md), who ran it at a 40% rate and explained it with their own
 decomposition. BERT had tested the mix only at its 15% rate, where the two
 conditions were 0.1 apart.
 

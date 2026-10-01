@@ -76,7 +76,7 @@ ETH3D / ScanNet / DIODE, against 5.5 / 9.9 / 6.5 / 6.4 / 30.8 for Marigold at
 50 steps × 10. That is 1 network evaluation against 500. Starting from plain
 SD gives 5.4 / 9.6 / 6.4 / 5.8 / 30.3.
 
-The recipe and these numbers are Martin Garcia et al.'s, LIT-687, which arrived
+The recipe and these numbers are Martin Garcia et al.'s, [LIT-687](../literature.d/LIT-687.md), which arrived
 at end-to-end fine-tuning after finding that Marigold's single-step inference
 was broken by DDIM's leading timestep spacing. Fixing the spacing alone still
 leaves one step worse than the 50 × 10 ensemble on all five depth sets (5.7 /

@@ -60,7 +60,7 @@ Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md). Read as [NOTE-326]
 
 ## Evidence
 
-The recommendation starts in LIT-603, where Mikolov et al. defined negative
+The recommendation starts in [LIT-603](../literature.d/LIT-603.md), where Mikolov et al. defined negative
 sampling for skip-gram and chose U(w)^{3/4}/Z as its noise distribution. As
 evidence that paper offers only the assertion in the first bullet.
 

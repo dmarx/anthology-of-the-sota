@@ -68,7 +68,7 @@ with SVD at its worst setting. Equalizing the settings removes the
 consistent gap. GloVe's win over word2vec reverses the same way. Tuning is
 worth up to 15.7 points over vanilla, more than the gap between methods.
 
-The recommendation, and the evidence for it, are LIT-607's. Levy, Goldberg
+The recommendation, and the evidence for it, are [LIT-607](../literature.d/LIT-607.md)'s. Levy, Goldberg
 and Dagan named the choices bundled with word2vec and GloVe, ported them to
 PPMI and SVD, and tuned all four methods alike across 672 representations on
 8 similarity and analogy datasets. On similarity SVD matched or beat SGNS on

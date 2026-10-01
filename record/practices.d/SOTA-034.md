@@ -15,7 +15,7 @@ contested_by:
 - LIT-200
 - LIT-709
 title: 'Use SwiGLU activation for transformers'
-version: 5
+version: 6
 history:
 - version: 2
   date: '2026-09-07'
@@ -46,6 +46,13 @@ history:
     paper in the record that disputes SwiGLU's quality rather than its range.
     Squared ReLU wins its single 110M comparison. A new section sizes that
     evidence. The recommendation, status and consensus are unchanged.
+- version: 6
+  date: '2026-10-01'
+  note: >-
+    Corrects the PowLU paragraph, which said LIT-200 ran SwiGLU-Clip at 7.9B
+    and 124B. Its Tables 2–3 run SwiGLU-Clip at 7.9B only; at 124B PowLU is
+    compared against SwiGLU alone. The recommendation, status and consensus
+    are unchanged.
 tags:
 - model-architecture
 date: '2026-08-24'
@@ -110,18 +117,17 @@ inputs SwiGLU approximates x², and that quadratic amplification is what
 enlarges the output range and produces the outliers. The remedy is a rational
 power function — adaptive nonlinearity, bounded growth — with scaling-law
 experiments across sizes and results on the Ling architecture at 7.9B and
-124B against **SwiGLU-Clip as well as SwiGLU**. That control matters: hard
-clipping is the obvious cheap fix, and a bounded-activation paper that skips
-it has not isolated its own contribution.
+124B. Only the 7.9B MoE model (600B tokens) is also run with **SwiGLU-Clip**,
+and there PowLU is ahead of SwiGLU on 14 of 17 benchmarks (MMLU 54.92
+against 53.95, GSM8K 33.74 against 30.40) and of SwiGLU-Clip on 14 of 17 as
+well. The 124B model (800B tokens) is PowLU against SwiGLU alone, ahead on 12
+of 17. The 7.9B control matters: hard clipping is the obvious cheap fix, and
+a bounded-activation paper that skips it has not isolated its own
+contribution. At 124B the paper does not run it.
 
 <!-- inactive-ok-block: SOTA-158 — Proposed, named as the practice the measurement compares against -->
 That measurement is the comparison [SOTA-158](SOTA-158.md), the bounded-activation practice
-drawn from [LIT-200](../literature.d/LIT-200.md), holds against this one. Read in the paper, the
-SwiGLU-Clip arm is narrower than the sentence above makes it: only the 7.9B
-MoE model (600B tokens) carries all three, and there PowLU is ahead of SwiGLU
-on 14 of 17 benchmarks (MMLU 54.92 against 53.95, GSM8K 33.74 against
-30.40). The 124B model (800B tokens) is PowLU against SwiGLU alone, ahead on
-12 of 17. The stability evidence is FP8 loss curves in which SwiGLU spikes,
+drawn from [LIT-200](../literature.d/LIT-200.md), holds against this one. The stability evidence is FP8 loss curves in which SwiGLU spikes,
 SwiGLU-Clip delays the spike, and PowLU does not, with the bounded functions
 swapped in partway through training rather than trained from scratch.
 

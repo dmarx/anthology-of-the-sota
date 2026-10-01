@@ -8,9 +8,17 @@ tags:
 - attention-techniques
 date: '2026-09-05'
 source:
+# LIT-tmpkql17 (Shortformer) added in the correction pass: the only
+# controlled comparison against training at the target length throughout.
+# LIT-139 runs the schedule and does not ablate it (NOTE-361).
 - LIT-139
+- LIT-tmpkql17
 introduced_by:
-- LIT-139
+# Was LIT-139. DeepSeek-V4 runs the schedule and does not originate it.
+# BERT (LIT-670, Oct 2018) trained at 128 tokens for 90% of steps and 512 for
+# the rest, and Shortformer (LIT-tmpkql17) names BERT as where the routine
+# was first applied before testing it.
+- LIT-670
 summary: >-
   DeepSeek-AI (2026), [LIT-139](../literature.d/LIT-139.md) — 4K, then 16K, 64K and 1M over 32–33T tokens, with sparse attention introduced at the 64K stage; Kimi K3 ([LIT-131](../literature.d/LIT-131.md)) reaches 1M the same way.
 ---
@@ -20,6 +28,8 @@ summary: >-
 ## Source
 
 DeepSeek-AI (2026), [LIT-139](../literature.d/LIT-139.md) — DeepSeek-V4.
+
+Press, Smith and Lewis (2020), LIT-tmpkql17 — Shortformer.
 
 ## The schedule
 
@@ -38,12 +48,31 @@ after a short indexer warm-up, and the close reading ([NOTE-361](../notes.d/NOTE
 ablation of the staging. The outcome it reports is a working 1M window, with
 MRCR 1M at 83.5 for V4-Pro-Max and MRCR stable to 128K and degrading beyond.
 
+## Where it comes from, and the test the record holds
+
+The schedule is older than either frontier report. BERT, LIT-670, is where
+it was first run: pretraining at 128 tokens for 90% of the steps and 512 for
+the rest, because "longer sequences are disproportionately expensive because
+attention is quadratic to the sequence length", with the short final stage
+there "to learn the positional embeddings". That is both halves of the
+reasoning above, in 2018, and the record names BERT as the origin.
+
+BERT used it only for speed. Shortformer, LIT-tmpkql17, is what tested it
+against training at the target length throughout, crediting BERT for the
+routine. On WikiText-103 with a 247M model and a final length of 3,072,
+starting at 128 tokens for the first 50 of 205 epochs gave 17.52 dev
+perplexity against 18.65 for the baseline, in 87% of its training time, and
+every first stage of 1,024 tokens or less that switched by epoch 125 beat the
+baseline by a large margin. More than two stages, up to six, did no better.
+
 ## Conditions
 
-Both sources are frontier-scale reports rather than controlled
-comparisons against training at the target length throughout, and neither
-publishes the token split per stage in the material read here. The
-practice is stated because two independent laboratories converged on it
+The frontier reports are not controlled comparisons against training at the
+target length throughout, and neither publishes the token split per stage in
+the material read here; the controlled comparison the record holds, Shortformer's, is at
+3,072 tokens and 247M parameters, a long way from a million-token window and
+from a sparse-attention switch partway. The practice is stated because the
+small-scale test favours it and two independent laboratories converged on it
 for million-token contexts; the stage boundaries and what to switch on at
 each are the parts to tune.
 

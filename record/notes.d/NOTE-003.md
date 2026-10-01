@@ -69,7 +69,9 @@ operating conditions that bound the results:
   current `FlatParameter` blocks the `AllGather` for the next, which blocks
   the next gradient computation — two consecutive exposed communication calls
   on the critical path. FSDP issues the next `AllGather` **before** the
-  current `ReduceScatter` to avoid it.
+  current `ReduceScatter` to avoid it. Measured on its own in §5.2 (Fig.
+  6(b)): on GPT-175B, where communication weighs most, prefetching gives
+  about an 18% speedup that persists across GPU cluster sizes.
 - **Forward overlap.** Collective synchronisation operates on *streams*, not
   `Work` objects, so each `AllGather` can overlap the preceding computation.
   The outermost FSDP unit's parameters are deliberately kept resident, to
@@ -88,9 +90,9 @@ operating conditions that bound the results:
 |---|---|---|---|
 | C1 | Sharding strategies form a continuum parameterised by the sharding factor `F` | strong | definitional, and the implementation realises it |
 | C2 | FSDP matches DDP throughput while supporting much larger models | strong | the paper's headline experiments, up to 1T parameters |
-| C3 | Backward prefetching removes exposed communication from the critical path | strong | follows from the single-NCCL-stream analysis; measured |
+| C3 | Backward prefetching removes exposed communication from the critical path | strong | follows from the single-NCCL-stream analysis; ablated on GPT-175B, about 18% speedup across cluster sizes (§5.2, Fig. 6(b)) |
 | C4 | Scaling is near-linear in TFLOPS | moderate | measured on their hardware; "near-linear" is not quantified as a bound |
-| C5 | The caching allocator needs an explicit rate limiter under multi-stream FSDP | moderate | argued from allocator mechanics and addressed by the implementation |
+| C5 | The caching allocator needs an explicit rate limiter under multi-stream FSDP | moderate | argued from allocator mechanics; ablated in §5.3 (Fig. 6(c)) with inconsistent results — up to 5× on T5, nothing on RegNet, about 5% slower on DeepViT |
 | C6 | Mixed precision reduces memory and communication volume without a quality cost here | moderate | reported as a supported configuration rather than ablated |
 
 ## Method
@@ -173,9 +175,12 @@ what makes the choice describable at all.
 
 ## Limitations
 
-- No ablation isolating the contribution of each optimisation — prefetching,
-  rate limiting and the allocator work are presented as an engineering
-  package.
+- The two headline optimisations are each ablated, but once and narrowly:
+  backward prefetching on/off on GPT-175B (§5.2, Fig. 6(b), about 18%), and
+  the rate limiter on/off on T5, RegNet and DeepViT (§5.3, Fig. 6(c)), where
+  it helps, does nothing or costs about 5% depending on whether the
+  allocator was fragmenting. Forward prefetching, deferred initialisation
+  and the stream-based forward overlap are not ablated.
 - "Near-linear" scalability is not quantified as a bound, so C4 is a
   description of their curves rather than a claim that transfers.
 - The rate limiter addresses PyTorch's caching allocator specifically. How

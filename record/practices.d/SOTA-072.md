@@ -8,8 +8,19 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-054
+# CORRECTED. Was `introduced_by: LIT-054`, which passed only because it is
+# also the source. GLM-130B observes that a gradient-norm spike precedes the
+# NaN; it recommends no detector, and its response is embedding gradient
+# shrink. The check this practice means by "early" -- non-finite values caught
+# in the gradients before the update -- is stated in Mixed Precision Training
+# (2017) §3.2: overflow puts infinities and NaNs in the weight gradients that
+# "will irreversibly damage the weights after an update", it "can be
+# efficiently detected by inspecting the computed weight gradients", and the
+# update can be skipped. Not the origin either, as the record reads them:
+# PaLM (LIT-069, via SOTA-095) rewinds and skips batches after a spike, and
+# OPT-175B, as GLM-130B reports it, skipped data and adjusted hyperparameters.
 introduced_by:
-- LIT-054
+- LIT-011
 summary: >-
   Zeng et al. (2022), [LIT-054](../literature.d/LIT-054.md) — [ARXIV-2210.02414](https://arxiv.org/abs/2210.02414).
 ---
@@ -33,6 +44,17 @@ the mixed-precision loss scaler is already doing for its own purposes
 ([SOTA-013](SOTA-013.md)), and the cheapest place to reuse. A run in bf16 that dropped the
 scaler dropped that check with it, which is a real and easily-missed
 consequence of the switch.
+
+That check is where the practice starts, and it is older than the source.
+LIT-011, the mixed-precision training paper, names the hazard this section
+opens with: an overflow during backpropagation puts infinities and NaNs in the
+weight gradients, which "will irreversibly damage the weights after an
+update". Its answer is to inspect the weight gradients for overflow, which it
+says can be done efficiently, and skip the update when one is found; its
+conclusion suggests driving the loss scale from the same check, which is what
+dynamic loss scaling became. So detection at the gradient, before the
+step, was published five years before GLM-130B as part of making fp16
+training safe.
 
 The warning sign comes from [LIT-054](../literature.d/LIT-054.md). Training GLM-130B with FP16 mixed
 precision, the authors saw precision-related spikes, some of which "come with

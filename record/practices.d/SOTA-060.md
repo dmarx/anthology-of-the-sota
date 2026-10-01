@@ -2,8 +2,16 @@
 number: 60
 status: 'Active'
 title: 'Initialize layer norms with smaller variance (0.02) for stability'
-version: 2
+version: 3
 history:
+- version: 3
+  date: '2026-10-01'
+  note: >-
+    Re-sourced from LIT-043, which says nothing about initialization, to the
+    Megatron-LM paper that states the recipe (LIT-022). `introduced_by:`
+    moved from Child et al. to GPT-2, which stated the depth scaling two
+    months earlier. The claim, and the confusion flagged below, are
+    unchanged.
 - version: 2
   date: '2026-09-13'
   note: >-
@@ -18,14 +26,20 @@ tags:
 # which is where it was found rather than what it is about (ADR-026).
 - model-stability
 date: '2026-08-24'
+# Was LIT-043 (Narayanan et al. 2021), which says nothing about
+# initialization. The Megatron-LM paper that states this recipe is Shoeybi et
+# al. (2019), LIT-022: N(0, 0.02) with 1/sqrt(2N) on the weights before each
+# residual. It reports the recipe, not an ablation of it.
 source:
-- LIT-043
-# Megatron-LM is the evidence at scale; the factor itself is three years
-# older and the body was naming it without a citation (ADR-029).
+- LIT-022
+# Was LIT-225 (Child et al., April 2019). GPT-2 stated the same depth scaling
+# two months earlier, as 1/sqrt(N) over N residual layers, in a model it
+# says largely follows GPT, whose base initialization is N(0, 0.02)
+# (ADR-029).
 introduced_by:
-- LIT-225
+- LIT-tmp1dapl
 summary: >-
-  Narayanan et al. (2021), [LIT-043](../literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473).
+  Shoeybi et al. (2019), LIT-022 — ARXIV-1909.08053.
 compared_against:
 - SOTA-051
 explained_by:
@@ -38,7 +52,14 @@ explained_by:
 
 ## Source
 
-Narayanan et al. (2021), [LIT-043](../literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473).
+Shoeybi et al. (2019), LIT-022 — ARXIV-1909.08053.
+
+Megatron-LM, LIT-022, states the recipe in exactly this form: weights drawn
+from `N(0, 0.02)`, then the weights immediately before each residual scaled
+by `1/sqrt(2N)`, `N` the number of transformer layers — and trains GPT-2-style
+models to 8.3B parameters with it. That is a report of what was used, not a
+measurement of what it buys; the paper runs no arm without it. Narayanan et
+al. (LIT-043), cited here before, says nothing about initialization.
 
 ## What the smaller variance is protecting against
 
@@ -53,13 +74,19 @@ That is the same reasoning that puts a 1/√(2·n_layers) factor on the output
 projections in GPT-2-style initialisations, and the same problem ReZero
 ([SOTA-051](SOTA-051.md)) attacks by starting the residual branch at literally zero.
 
-That factor has an author. Child et al. (2019), [LIT-225](../literature.d/LIT-225.md) §5.2, scales the
-initialisation of the two residual-output projections by exactly `1/sqrt(2N)`,
-and states the invariant it is protecting: **the ratio of input-embedding scale
-to residual-block scale, held constant across values of `N`**. The `2` is the
-two residual functions per block, which is why it is `2N` here and `N` in the
-GPT-2 formulation this body reached for. Named in prose and cited nowhere until
-[ADR-029](../decisions.d/ADR-029.md) gave the record a field for it.
+That factor has an author, and it is GPT-2. Radford et al. (2019),
+LIT-tmp1dapl §2.3, uses "a modified initialization which accounts for the
+accumulation on the residual path with model depth", scaling the weights of
+residual layers by `1/sqrt(N)` with `N` the number of residual layers — the
+same quantity as `2·n_layers`, two residual layers per block. Child et al.
+(2019), [LIT-225](../literature.d/LIT-225.md) §5.2, two months later, writes it as `1/sqrt(2N)` over
+blocks and states the invariant it is protecting: **the ratio of
+input-embedding scale to residual-block scale, held constant across values of
+`N`**. Child's base initialisation is not 0.02. GPT-2 says it "largely
+follows" GPT, whose report initialises every weight from `N(0, 0.02)`, and
+Megatron-LM writes the two down together. Named in prose and cited nowhere
+until [ADR-029](../decisions.d/ADR-029.md) gave the record a field for it, and attributed to Child until
+the earlier report was checked.
 
 ## What the title gets wrong
 

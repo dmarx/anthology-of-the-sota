@@ -8,8 +8,16 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-002
+# CORRECTED. Was `introduced_by: LIT-002`, which passed only because it is
+# also the source. Ioffe and Szegedy recommend BatchNorm and list recurrent
+# networks as future work; they propose no alternative. Ba et al. (2016) do:
+# LayerNorm is introduced against BatchNorm's batch dependence, running
+# statistics and per-time-step statistics for variable-length sequences, and
+# compared with recurrent BatchNorm. That is this practice's argument; the
+# transformer, which adopted LayerNorm, came a year later and recommends
+# nothing about the choice.
 introduced_by:
-- LIT-002
+- LIT-005
 compared_against:
 - SOTA-004
 summary: >-
@@ -45,6 +53,19 @@ which came later.
 LayerNorm normalises across the feature dimension of a single example. No
 cross-example dependence, no running statistics, no train/eval divergence, and
 nothing that changes when the batch does.
+
+The recommendation to prefer it for sequence models is LIT-005's. Ba, Kiros
+and Hinton introduced LayerNorm as a transposition of batch normalisation
+that computes the statistics from one training case, so it "performs exactly
+the same computation at training and test times" and works at batch size one.
+They name the sequence problem directly: batch normalisation applied to an
+RNN needs separate statistics per time step, which breaks when a test
+sequence is longer than any training sequence. On an attentive reader trained
+on the CNN question-answering corpus, LayerNorm inside the LSTM trained faster
+and reached a better validation result than recurrent batch normalisation.
+That was 2016 and about recurrent networks; the transformer
+(LIT-008) adopted LayerNorm a year later without arguing the choice, and
+no source here argues it for transformers specifically.
 
 The practice this one sets itself against is [SOTA-004](SOTA-004.md), BatchNorm placed after
 the linear map and before the activation in convolutional networks. The

@@ -16,8 +16,16 @@ promote_when: >-
   is that the optimum *tracks* redundancy, which needs the correlation and not
   another point.
 title: 'Masked prediction transfers across modalities only after the masking ratio is rescaled to the signal''s information density'
-version: 2
+version: 3
 history:
+- version: 3
+  date: '2026-10-01'
+  note: >-
+    Corrected a misreading of LIT-601. The account said MAE documents linear
+    probing and fine-tuning putting the optimal ratio in different places. It
+    does not: its Figure 5 sweep finds 75% "good for both", and what differs
+    between the protocols is sensitivity — linear probing climbs steeply to
+    the optimum, fine-tuning is flat across 40–80%.
 - version: 2
   date: '2026-09-25'
   note: >-
@@ -98,10 +106,13 @@ protocols and different amounts of compute, and "information density" is
 invoked qualitatively — nothing here measures the redundancy of either
 signal, so the account and the observation cannot be separated.
 
-It is also entangled with a measurement problem that MAE itself documents:
-linear probing and fine-tuning put the optimal ratio in different places.
-Any account of where the optimum *should* be has to say which optimum it
-means, and this one does not.
+It is also entangled with a measurement problem that MAE itself documents.
+Its sweep finds 75% good under both linear probing and fine-tuning, but the
+two protocols are not equally sensitive: linear-probe accuracy climbs by up to
+19 points to reach the optimum, while fine-tuning works across 40–80%. An
+optimum that is sharp under one protocol and nearly flat under the other is
+weak evidence for any account of where it *should* sit, and this account does
+not say which protocol it is about.
 
 ## What moves the optimum, measured within one signal
 

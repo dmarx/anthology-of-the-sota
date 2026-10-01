@@ -25,7 +25,7 @@ tags:
 date: '2026-09-08'
 source:
 # LIT-200 is the one with the evidence: scaling-law experiments, 7.9B and
-# 124B, and a comparison against SwiGLU-Clip. Kimi K3's SiTU-GLU is the
+# 124B, and a comparison against SwiGLU-Clip at 7.9B. Kimi K3's SiTU-GLU is the
 # second group reaching the same conclusion, but its report ships the design
 # rather than testing the trade, so it is consensus data (ADR-017).
 - LIT-200
@@ -88,14 +88,18 @@ numerics rather than to retune the model.
 [SOTA-034](SOTA-034.md) recommends SwiGLU and is already `contested` on exactly these
 grounds. This is the positive statement of what the two objections agree on,
 and the relation is `compared_against` because [LIT-200](../literature.d/LIT-200.md) ran the comparison:
-PowLU against SwiGLU **and against SwiGLU-Clip**. That second arm is what
-makes the paper's contribution isolable — hard clipping is the obvious cheap
-fix, and a bounded-activation paper that skips it has not shown its function
-is doing anything a clamp would not.
+PowLU against SwiGLU **and, at 7.9B, against SwiGLU-Clip**. That second arm is
+what makes the paper's contribution isolable — hard clipping is the obvious
+cheap fix, and a bounded-activation paper that skips it has not shown its
+function is doing anything a clamp would not.
 
 The evidence is unusually complete for an activation paper: scaling-law
 experiments confirming consistency across model sizes, then the Ling
-architecture at 7.9B and 124B total parameters.
+architecture at 7.9B and 124B total parameters. The clip arm is the 7.9B
+model only (600B tokens, Table 2), where PowLU leads SwiGLU on 14 of 17
+benchmarks and SwiGLU-Clip on 14 of 17. The 124B model (800B tokens, Table 3)
+is PowLU against SwiGLU alone, ahead on 12 of 17, so at the larger scale the
+paper has not shown its function beats a clamp.
 
 ## Conditions, and why this is Proposed
 

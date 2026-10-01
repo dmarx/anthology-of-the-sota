@@ -1,0 +1,76 @@
+---
+status: Active
+title: 'Fine-Tuning Language Models from Human Preferences'
+version: 1
+tags:
+- adaptation-and-tuning
+- analysis-and-evaluation
+date: '2026-10-01'
+published: '2019-09-18'
+arxiv: '1909.08593'
+first_author: 'Ziegler'
+keywords:
+- 'rlhf'
+- 'reward-model'
+- 'human-preferences'
+- 'kl-penalty'
+- 'summarization'
+- 'stylistic-continuation'
+# Its reward model is fit to human choices between candidates "following
+# Christiano et al. [2017]"; the construction is LIT-434's, moved to text.
+extends:
+- LIT-434
+implementations: []
+summary: >-
+  Ziegler et al. (2019), ARXIV-1909.08593. The first time the
+  human-preference loop is run on a pretrained language model: a 774M GPT-2
+  fine-tuned with RL against a reward model fit to human choices, with a KL
+  penalty holding it near the pretrained model. On stylistic continuation,
+  5,000 comparisons give a policy humans prefer 86% of the time over
+  zero-shot. On TL;DR and CNN/DM summarization, 60,000 comparisons produce
+  "smart copiers" that labelers like but that may be exploiting the labelers'
+  heuristics, the problem LIT-433 set out to fix.
+---
+
+# LIT-tmp1vzo9: Fine-Tuning Language Models from Human Preferences
+
+Ziegler, Stiennon, Wu, Brown, Radford, Amodei, Christiano and Irving (2019) — ARXIV-1909.08593
+
+## Key takeaways
+
+- **The loop, moved onto a pretrained language model.** Human labelers pick
+  the best of four samples; a reward model initialised from the language
+  model is fit to those choices, as a separate network from the policy;
+  the policy is fine-tuned against it with
+  PPO. The comparison format is taken explicitly from Christiano et al.
+  (LIT-434), which had only been run in simulated environments: "Following
+  Christiano et al. [2017], we ask human labelers to pick which of several
+  values … is the best response to a given input". What it adds for
+  language is a KL penalty against the pretrained model, following Jaques et
+  al., which keeps the policy where the reward model is valid and, for the
+  style tasks, keeps samples coherent.
+- **Stylistic continuation works cheaply.** With 5,000 comparisons, the
+  fine-tuned model is preferred by humans 86% of the time against zero-shot
+  and 77% against fine-tuning to a supervised sentiment classifier.
+- **Summarization learns to copy.** With 60,000 comparisons on TL;DR and
+  CNN/Daily Mail, the models are "smart copiers": they copy whole sentences
+  from the input, skipping irrelevant preamble. Labelers prefer them to
+  supervised baselines and even to the human reference summaries, but not to
+  a lead-3 baseline, and the paper suspects the models exploit the fact that
+  labelers rely on simple heuristics. By ROUGE, RL fine-tuning is worse than
+  the supervised baseline in every case.
+- **The challenges section is a list of what went wrong.** Online data
+  collection was hard to run, sharing parameters between reward model and
+  policy caused overfitting, ambiguous tasks made labeling hard, and a refactor
+  that flipped the sign of both the reward and the KL penalty produced a
+  fluent model optimizing for exactly the content labelers had been told to
+  rate lowest.
+
+## Standing in the anthology
+
+The middle step of the post-training lineage: LIT-434 built the loop for
+control, this paper ran it on a language model, and Stiennon et al.
+(LIT-433), with four of the same authors, is the follow-up that says it is
+"most similar to" this one and fixes its failures — offline batches of
+comparisons instead of online collection, labelers checked for agreement
+with the researchers, separate policy and value networks, and larger models.

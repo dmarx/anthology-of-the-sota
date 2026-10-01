@@ -24,8 +24,18 @@ tags:
 date: '2026-09-24'
 source:
 - LIT-636
-introduced_by:
-- LIT-636
+# Was LIT-636 until the correction pass. Rectified Flow proposes reflow as
+# the way to straight paths and uses reflow-then-distil for its headline
+# result; "distil first, reflow optional" is this record's reading of its
+# Table 1a (NOTE-337, R2), not advice the paper gives. Searched and not
+# found: InstaFlow (arXiv 2309.06380) and Lee et al. 2024 (arXiv
+# 2405.20320, "Improving the Training of Rectified Flows") both keep reflow
+# — the first finds it critical for one-step Stable Diffusion, the second
+# argues one round suffices — and the distribution-matching distillers this
+# record holds (LIT-643, LIT-631, LIT-629) skip reflow without arguing
+# against it. Naming a paper that recommends distilling without reflow is
+# how a reader refutes this (ADR-053).
+introduced_by: []
 implementations:
 - 'InstaFlow'
 summary: >-
@@ -60,7 +70,10 @@ Both procedures, and the table, come from [LIT-636](../literature.d/LIT-636.md),
 as the way to straight paths and uses reflow followed by distillation for its
 headline one-step result. The ordering recommended here, distillation first
 and reflow optional, is a reading of that paper's Table 1a, not advice the
-paper gives.
+paper gives. That is why LIT-636 is this practice's source and not its
+origin: the paper supplies the numbers and argues for the opposite pipeline,
+and the record has found no paper that makes the recommendation, so
+`introduced_by` is left empty (ADR-053).
 
 **Distillation does most of the work.** It takes the base model from 378 to
 6.18 on its own. Reflow before distillation improves that to 4.85, at the

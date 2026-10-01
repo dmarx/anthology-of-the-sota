@@ -167,9 +167,9 @@ latents. It reports that EDM's loss weight, which equalises gradient
 magnitudes across noise levels at initialization, stops doing so as training
 proceeds — a correction to how [SOTA-188](../practices.d/SOTA-188.md) had described it.
 
-Compared against ADM ([LIT-699](../literature.d/LIT-699.md)), DiT ([LIT-448](../literature.d/LIT-448.md)), simple diffusion / U-ViT
-([LIT-660](../literature.d/LIT-660.md)) and VDM++ ([LIT-692](../literature.d/LIT-692.md)) in Tables 2–3, by quoting their published
-numbers; only EDM is re-run.
+Compared against ADM ([LIT-699](../literature.d/LIT-699.md)) and VDM++ ([LIT-692](../literature.d/LIT-692.md)) in Tables 2–3, and
+against DiT ([LIT-448](../literature.d/LIT-448.md)) and simple diffusion / U-ViT ([LIT-660](../literature.d/LIT-660.md)) in Table 2
+(ImageNet-512) only, by quoting their published numbers; only EDM is re-run.
 
 The forced weight normalization is the image-diffusion precursor of the
 hypersphere constraint in nGPT ([LIT-472](../literature.d/LIT-472.md), [SOTA-282](../practices.d/SOTA-282.md)), ten months earlier:

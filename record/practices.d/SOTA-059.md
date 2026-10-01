@@ -6,19 +6,41 @@ version: 1
 tags:
 - distributed-optimization
 date: '2026-08-24'
+# Was LIT-043 (Narayanan et al. 2021), which neither proposes nor measures
+# overlap; the word appears only where its related work describes ZeRO.
+# Jangda et al. (2021) is the earliest paper found that recommends and
+# measures overlap on the tensor- and pipeline-parallel axes of a Megatron
+# job. Searched for an earlier origin: PipeDream (arXiv 1806.03377, 2018)
+# claims overlap of pipeline communication with compute, but has no tensor
+# axis; the data-parallel case is SOTA-047's, from PyTorch DDP (LIT-219).
 source:
-- LIT-043
+- LIT-tmpcj65m
 introduced_by:
-- LIT-043
+- LIT-tmpcj65m
 summary: >-
-  Narayanan et al. (2021), [LIT-043](../literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473).
+  Jangda et al. (2021), LIT-tmpcj65m — ARXIV-2105.05720.
 ---
 
 # SOTA-059: Overlap communication with computation when possible
 
 ## Source
 
-Narayanan et al. (2021), [LIT-043](../literature.d/LIT-043.md) — [ARXIV-2104.04473](https://arxiv.org/abs/2104.04473).
+Jangda et al. (2021), LIT-tmpcj65m — ARXIV-2105.05720.
+
+CoCoNet, LIT-tmpcj65m, is where the move was made and measured on the axes
+this practice is about. On the tensor-parallel MatMul and the AllReduce that
+follows it, overlapping the two in chunks hides more than 80% of the MatMul
+and runs up to 1.36x faster than issuing them in sequence; in Megatron-LM the
+overlapped schedule cuts inference time of an 8.3B GPT-2 by 1.48x. On the
+pipeline axis its best schedule overlaps the ReduceScatter, the cross-node
+sends and the AllGather with each other, over NVLink and InfiniBand at once,
+which is the contention described below. Two limits: those tensor- and
+pipeline-parallel numbers are for inference, and the pipeline gain is
+reported jointly with slicing and fusion rather than for overlap alone.
+Training-side evidence on the tensor axis is narrower: Korthikanti et al.
+(LIT-tmpfktcz) overlap a backward-pass all-gather with the weight-gradient
+computation as part of sequence parallelism. Narayanan et al. (LIT-043), cited
+here before, does not propose or measure overlap.
 
 ## The same principle as [SOTA-047](SOTA-047.md), at a different layer
 

@@ -8,8 +8,16 @@ tags:
 date: '2026-08-24'
 source:
 - LIT-053
+# CORRECTED. Was `introduced_by: LIT-053`, which passed only because it is
+# also the source. Aizman et al. (2020) never vary or report a prefetch depth,
+# and their own note says the loader rules here are not their results;
+# prefetching was already in the PyTorch DataLoader and tf.data. The TensorFlow
+# white paper (2015) states it: queues "allow input data to be prefetched from
+# disk files while a previous batch of data is still being processed". It is
+# the earliest ML-framework paper found saying so; read-ahead itself is older
+# systems practice that the record names no paper for.
 introduced_by:
-- LIT-053
+- LIT-tmpta146
 extends:
 - SOTA-077
 # `compared_against: SOTA-047` removed -- see the note on SOTA-047.
@@ -33,6 +41,12 @@ overlapping ones.
 
 It is what makes a streaming format work at all ([SOTA-077](SOTA-077.md)): sequential reads
 are only fast if somebody is reading ahead.
+
+The recommendation is older than the source. The TensorFlow white paper,
+LIT-tmpta146, describes queues between graph stages and names this as their
+first use: input prefetched from disk while the previous batch is still being
+computed. It gives the mechanism and no measurement, so it is the origin and
+not evidence; the source below is cited for the pipeline the overlap runs in.
 
 What [LIT-053](../literature.d/LIT-053.md) supplies is the pipeline this overlap runs in, not a measurement
 of prefetching itself. Its design splits the input path into independently

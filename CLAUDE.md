@@ -98,12 +98,17 @@ work perfectly well.
   `Superseded` names its successor. The body stays.
 - **Some relations must be explained where they are held**
   ([ADR-063](record/decisions.d/ADR-063.md)). A practice's or theory's `source`, a practice's `introduced_by`,
-  a theory's `explains`, every `corrects`, `contested_by`, and `extends` on
-  practices and theories: each code is cited somewhere in the body, in visible
-  prose that says what the relation means (`explain: cited`). No `ref::`
-  statement is needed beside the citation; the sentence is the explanation. A
-  code in backticks is a mention and explains nothing. The lint reports one
-  never cited as `unexplained-relations`, a warning, not a failure.
+  a theory's `explains`, every `corrects`, `contested_by`, `extends` and
+  `compared_against`: each code is cited in the body, in visible prose that
+  says what the relation means (`explain: cited`). No `ref::` statement is
+  needed beside the citation; the sentence is the explanation. **The `##
+  Source` line does not count**: a reference entry names the paper and says
+  nothing about it, so the code has to appear again where the body says what
+  the paper showed. A code in backticks is a mention and explains nothing
+  either. The lint reports each one as `unexplained-relations`, a warning,
+  not a failure, with the line of the entry it found. There is a backlog of
+  them; work it down as you read a document, never by writing sentences to
+  clear the count.
 
 ## Working
 

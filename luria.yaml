@@ -596,6 +596,7 @@ schemes:
       # other side, so a comparison is stated once on whichever practice ran it
       # rather than on every member of the family (LU-ADR-084).
       compared_against:
+        explain: cited   # ADR-063
         label: Measured against
         blurb: >-
           this work evaluated itself against that one — somebody ran the
@@ -932,6 +933,7 @@ schemes:
     # production models are not a retirement.
     references:
       extends:
+        explain: cited   # ADR-063
         label: Carries further
         blurb: >-
           the earlier paper this one builds on and could not stand without.
@@ -951,6 +953,7 @@ schemes:
         many: true
         converse: extends
       compared_against:
+        explain: cited   # ADR-063
         label: Measured against
         blurb: >-
           this paper evaluated itself against that one. Somebody ran the

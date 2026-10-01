@@ -103,6 +103,15 @@ The paper's answer has two parts, and both are training-time:
   noise end is nearly unlearnable — so uniform sampling spends most of the
   compute where there is least to learn.
 
+Both halves originate in LIT-075, which derives `c_in` and `c_out` from the
+unit-variance requirement in its Appendix B.6 and fixes the log-normal at
+`P_mean = −1.2`, `P_std = 1.2`. Its evidence is a separate ablation of each
+change (Table 2, configs A–F) and the results they add up to: FID 1.79
+class-conditional and 1.97 unconditional on CIFAR-10 at 35 network
+evaluations, and an ImageNet-64 model taken from 2.07 to 1.55 by the sampler
+alone and to 1.36 once retrained with this preconditioning and noise
+distribution.
+
 Both are recorded here as `training-optimization` rather than as diffusion
 trivia because the shape generalizes: **when a network is conditioned on a
 variable that changes the difficulty of its task, normalize the target so the

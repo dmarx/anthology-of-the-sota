@@ -43,6 +43,11 @@ accuracy close to the uncompressed baseline, in around four GPU-hours — a
 one-shot procedure with no retraining and no gradient steps. Before this,
 getting to 4 bits at that scale meant quantization-aware training.
 
+The method and these figures are LIT-081's, and the recommendation starts
+there: Frantar et al. proposed column-wise rounding with Hessian-guided error
+compensation as the replacement for round-to-nearest, and reported the 3- and
+4-bit results up to 175B from a one-shot pass over a small calibration set.
+
 ## The scope worth holding onto
 
 This is **weight-only**, and the win is memory
@@ -61,6 +66,14 @@ quantization entries sit at different altitudes —
 [SOTA-160](SOTA-160.md) treats the
 quantization plan and the pretraining budget as one decision, and [SOTA-163](SOTA-163.md) is
 about the number format rather than the rounding procedure.
+
+The live alternative at the same altitude is SOTA-356 (AWQ), which protects
+activation-salient channels by scaling instead of compensating errors. Its
+authors ran the head-to-head against this method on LLaMA and Llama-2 at 7B
+to 70B and report lower perplexity than GPTQ with or without its reordering
+trick; and on OPT-6.7B at INT3-g128, calibrating on one Pile subset and
+evaluating on another cost GPTQ 2.3–4.9 perplexity against AWQ's 0.5–0.6.
+That is the calibration-distribution failure mode above, measured.
 
 ## Known implementations
 

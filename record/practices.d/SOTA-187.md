@@ -66,6 +66,15 @@ rewards. Moving to a perceptually-equivalent compressed space removes that
 spend before the expensive model ever sees the data, so the generative model
 works in a space whose dimensions it actually needs.
 
+The recommendation comes from LIT-062, which proposed the split for diffusion:
+an autoencoder with a perceptual objective is trained once and frozen, the
+diffusion model is trained on its latents with conditioning introduced into
+the latent-space denoiser, and the result was substantially cheaper training
+and sampling at a given resolution, making high-resolution synthesis
+practical. The same paper is where the condition comes from that the latent
+must be perceptually equivalent, since whatever the autoencoder discards the
+diffusion model can never recover.
+
 **The transferable claim is a compute-allocation one**, and it is why this is
 filed by the kind of claim rather than as a diffusion technique: when the
 expensive model's input carries structure a cheap model can strip, strip it

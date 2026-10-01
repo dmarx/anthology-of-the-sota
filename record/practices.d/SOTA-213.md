@@ -63,6 +63,13 @@ changes the loss and one that cannot, and the second is a random walk whose
 squared norm grows as `σ²dT/N`. Two of those four terms are budget decisions,
 which is what makes this a practice rather than an observation:
 
+The decomposition and the scaling are LIT-235's. Hoy et al. split the ES
+update into a loss-changing and a loss-invariant part, report the predicted
+`σ²dT/N` growth matching measured weight changes, and on Qwen3-4B across four
+sequential tasks see the ES update norm climb 87.28 → 173.00 while GRPO's goes
+1.00 → 1.84. Of the four terms, population size is the one that paper varied
+least, which is why the measurement below comes from elsewhere.
+
 - **Population size divides it.** Raising `N` from 30 to 128 cuts the update
   norm by about half, and prior-task degradation falls monotonically across
   30, 128 and 256 ([LIT-238](../literature.d/LIT-238.md), Table 1).

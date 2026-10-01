@@ -17,7 +17,7 @@ contested_by:
 - LIT-166
 - LIT-175
 title: 'Repeat high-quality data freely when its epoch size exceeds the model''s memorization window'
-version: 4
+version: 5
 history:
 - version: 2
   date: '2026-09-07'
@@ -44,6 +44,15 @@ history:
     figure. It is not the window itself, which is a token count, and nobody
     has done the conversion — so `promote_when:` stands as written and the
     status does not move.
+- version: 5
+  date: '2026-10-01'
+  note: >-
+    `introduced_by` moved from LIT-119 to LIT-120. Falcon-H1 already argues
+    for reusing high-quality data many times on the strength of the
+    memorization window it measured, and the Falcon-H1-Tiny blogpost says the
+    approach was explored there first; the blogpost is where the epoch-size
+    threshold and the linear scaling are stated. The recommendation is
+    unchanged.
 tags:
 - data-pipeline
 - tiny-models
@@ -56,7 +65,12 @@ source:
 - LIT-119
 - LIT-120
 introduced_by:
-- LIT-119
+# Was LIT-119 until the correction pass. LIT-120 (Falcon-H1, July 2025)
+# first makes the recommendation — up-sample high-quality sources by
+# multi-epoch training, judged safe by the measured memorization window —
+# and LIT-119 says so itself. LIT-119 sharpens it into the epoch-size rule
+# stated in the title; it stays the first source, not the origin.
+- LIT-120
 summary: >-
   Falcon-LLM Team (2026), [LIT-119](../literature.d/LIT-119.md) — the Falcon-H1-Tiny technical blogpost. Roughly 100–500 GT for a 7B model, scaling linearly; the authors call the understanding early.
 ---
@@ -87,7 +101,16 @@ it, scales the conservative 500 GT estimate linearly down to about 5 GT at
 100M, and calls the whole thing a hypothesis, with a deeper study of
 repetition and forgetting listed as future work. The blogpost itself says
 multi-epoch training guided by the window was already explored for Falcon-H1,
-so the repetition argument is older than the rule as written here.
+so the repetition argument is older than the rule as written here, and the
+record names Falcon-H1, [LIT-120](../literature.d/LIT-120.md), as its origin. That report already makes the
+recommendation in a looser form: it "employ[s] an aggressive up-sampling
+strategy enabled by multi-epoch training" so that scarce high-quality corpora
+keep their influence, defines an epoch per data source, and says that by
+estimating the memorization window "we found it possible to reuse
+high-quality samples multiple times without compromising generalization."
+What it does not state is the threshold — repeat without limit once the
+epoch size exceeds the window — or the linear scaling to small models; those
+are the blogpost's.
 
 This decouples the ceiling on the high-quality fraction of a mix from the
 total training length, which is what [SOTA-123](SOTA-123.md) relies on. Falcon-H1-Tiny is

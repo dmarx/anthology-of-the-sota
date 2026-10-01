@@ -30,8 +30,6 @@ summary: >-
   Zhang and Sennrich (2019), [LIT-023](../literature.d/LIT-023.md) — [ARXIV-1910.07467](https://arxiv.org/abs/1910.07467). Drop the mean
   subtraction from layer normalization and rescale by the root mean square
   alone.
-compared_against:
-- SOTA-191
 ---
 
 # SOTA-182: Compute the normalization statistic without centering (RMSNorm)

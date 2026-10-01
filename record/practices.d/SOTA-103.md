@@ -22,8 +22,6 @@ source:
 - LIT-117
 introduced_by:
 - LIT-117
-compared_against:
-- SOTA-102
 summary: >-
   Albalak et al. (2023), [LIT-117](../literature.d/LIT-117.md) — [ARXIV-2312.02406](https://arxiv.org/abs/2312.02406).
 ---

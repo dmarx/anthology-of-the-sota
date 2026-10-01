@@ -42,8 +42,8 @@ issues the next `AllGather` first, using the reverse of the forward order,
 re-recorded every iteration, as its guess at the backward order. On
 GPT-175B, where communication weighs most, prefetching gave about an 18%
 speedup that held across cluster sizes, and the authors leave it on for
-every later experiment. The record's reading ([NOTE-003](../notes.d/NOTE-003.md)) lists no ablation
-of prefetching alone; §5.2 and Figure 6(b) are one.
+every later experiment (§5.2, Figure 6(b)). The record's reading,
+[NOTE-003](../notes.d/NOTE-003.md), gives the same ablation.
 
 ## Cost
 

@@ -21,12 +21,11 @@ source:
 - LIT-014
 introduced_by:
 - LIT-014
-# `SOTA-010` is Superseded because it moved to the THEORY scheme, not
-# because the claim failed (ADR-034). The link stays: it records that
-# three readings of one figure were filed together.
-compared_against:
-- SOTA-010
-- SOTA-012
+# `compared_against: [SOTA-010, SOTA-012]` removed in the correction pass
+# after #395: nobody measured these readings of LIT-014 against each other,
+# and the field's blurb excludes a family resemblance. They are different
+# quantities from different figures (the sharpness plots and Fig. 7), not
+# "three readings of one figure" as the old comment said.
 summary: >-
   Li et al. (2017), [LIT-014](../literature.d/LIT-014.md) — [ARXIV-1712.09913](https://arxiv.org/abs/1712.09913).
 ---

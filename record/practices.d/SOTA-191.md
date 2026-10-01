@@ -37,8 +37,6 @@ introduced_by:
 # the one this paper calls expendable, and the reason `contested`.
 contested_by:
 - LIT-023
-compared_against:
-- SOTA-182
 summary: >-
   Xu et al. (2019), [LIT-025](../literature.d/LIT-025.md) — the bias and gain increase overfitting risk and "do not work in most cases"; LayerNorm-simple, with both removed, beats LayerNorm on four datasets and reaches state of the art on En-Vi.
 ---

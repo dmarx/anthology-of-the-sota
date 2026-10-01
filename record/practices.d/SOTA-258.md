@@ -93,7 +93,8 @@ tokens-per-parameter — fall on parallel lines. That is the signature of a
 confounded variable, and it is only visible once you have runs off the
 Chinchilla line.
 
-[SOTA-062](SOTA-062.md) made the model-size version of the same error, from a 2021 heuristic.
+[SOTA-062](SOTA-062.md) made the model-size version of the same error, from Kaplan et al.'s
+2020 allocation fit and the batch sizes GPT-3 tabulated from it.
 Its own body said "a reader with a measurement should prefer it". This is the
 measurement.
 

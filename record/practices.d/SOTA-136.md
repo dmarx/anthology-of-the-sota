@@ -17,7 +17,7 @@ consensus_note: >-
   implementation rather than its geometry (LIT-513) — which does not
   resolve the dispute and does not join either side of it.
 title: 'Widen the residual stream into several streams mixed by doubly-stochastic matrices (manifold-constrained hyper-connections)'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-07'
@@ -40,6 +40,12 @@ history:
     new source also makes the constraint EXACT, which is the condition under
     which LIT-151's objection should bite hardest, so the miss is recorded
     in the body rather than only in the note.
+- version: 4
+  date: '2026-10-01'
+  note: >-
+    Corrects the overhead claim. LIT-140 reports one figure, 6.7% for n = 4
+    in its large-scale training (the 27B system-level setting), not 6–7%
+    across 3B, 9B and 27B. The recommendation and status are unchanged.
 tags:
 - model-architecture
 date: '2026-09-05'
@@ -64,7 +70,7 @@ corrects:
 compared_against:
 - SOTA-133
 summary: >-
-  Xie et al. (2025), [LIT-140](../literature.d/LIT-140.md) — hyper-connections with the residual-mixing matrix constrained to be doubly stochastic, so identity mapping survives; 6–7% overhead at 3B–27B, shipped in DeepSeek-V4.
+  Xie et al. (2025), [LIT-140](../literature.d/LIT-140.md) — hyper-connections with the residual-mixing matrix constrained to be doubly stochastic, so identity mapping survives; 6.7% training overhead at n = 4 in large-scale training, shipped in DeepSeek-V4.
 extends:
 - SOTA-169
 explained_by:
@@ -84,15 +90,17 @@ projected onto the doubly-stochastic manifold with Sinkhorn-Knopp
 iterations — entries non-negative, rows and columns summing to one — which
 bounds its spectral norm and restores the identity-mapping property that
 free mixing gave up. The pre- and post-mixing maps stay non-negative. The
-paper reports the quality gains of hyper-connections at 6–7% training
-overhead across 3B, 9B and 27B, and DeepSeek-V4 ([LIT-139](../literature.d/LIT-139.md)) ships it at 1.6T.
+paper reports the quality gains of hyper-connections at 6.7% training
+overhead, and DeepSeek-V4 ([LIT-139](../literature.d/LIT-139.md)) ships it at 1.6T.
 
 The constraint is [LIT-140](../literature.d/LIT-140.md)'s proposal, made on its diagnosis that free
 mixing is what made hyper-connections unstable and hard to scale. Its own
-numbers are 6.7% additional training time for four streams (n = 4) at 27B
-after kernel fusion, recomputation and communication overlap, with the
-advantage over the residual holding across the 3B, 9B and 27B scaling study
-and a separate 3B run on 1T tokens.
+numbers are 6.7% additional training time for four streams (n = 4) after
+kernel fusion, recomputation and communication overlap. That is one figure,
+stated for its in-house large-scale training, whose system-level results are
+on the 27B model; no overhead is reported for 3B or 9B. The advantage over
+the residual holds across the 3B, 9B and 27B scaling study and a separate 3B
+run on 1T tokens.
 
 The V4 report was read in full for [#18](https://github.com/dmarx/anthology-of-the-sota/issues/18), because half this practice's
 promotion condition asks for "a production report at depth whose streams

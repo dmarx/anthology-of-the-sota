@@ -12,7 +12,7 @@ consensus_note: >-
   attributes to RLVR, and the source itself ships the SFT path for the
   models it releases.
 title: 'Skip the reasoning SFT stage and run RL with verifiable rewards directly on the base model'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-07'
@@ -33,6 +33,14 @@ history:
     mis-tag is why the relation could not be declared before: the chains
     hold `invariant = "primary_topic"`, so the wrong topic silently kept
     the edge out of the lineage. The recommendation is unchanged.
+- version: 4
+  date: '2026-10-01'
+  note: >-
+    `introduced_by` moved from LIT-130 to LIT-164. The body already said the
+    pathway predates Olmo 3 and comes from R1-Zero; R1 (January 2025) applies
+    RL directly to DeepSeek-V3-Base with rule-based rewards and no SFT stage,
+    and calls itself the first open research to validate it. The
+    recommendation is unchanged.
 tags:
 - adaptation-and-tuning
 date: '2026-09-05'
@@ -44,7 +52,11 @@ source:
 - LIT-130
 - LIT-164
 introduced_by:
-- LIT-130
+# Was LIT-130 until the correction pass. Olmo 3 is the open, reproducible
+# statement, not the first: DeepSeek-R1 (LIT-164, Jan 2025) applied RL
+# straight to the base with no SFT stage and claimed it as the first open
+# validation that reasoning can be incentivised that way.
+- LIT-164
 # The two pathways out of a pretrained base: SOTA-129 keeps the reasoning SFT
 # stage, this one removes it. Rivals judged against each other, which is what
 # the promotion condition asks someone to run.
@@ -88,8 +100,16 @@ The source itself calls the track experimental and positions
 it as a benchmark, and the Think models Olmo 3 actually ships go through the
 SFT stage ([SOTA-129](SOTA-129.md)). The idea predates Olmo 3: the "R1-Zero" style of training
 is where the name comes from, and that work is now filed ([LIT-164](../literature.d/LIT-164.md)).
-Olmo 3 remains the source because it is the open, reproducible statement of
-the pathway.
+DeepSeek-R1 is where the pathway was first stated, and the record names it as
+the origin: R1-Zero applies RL directly to DeepSeek-V3-Base "without relying
+on supervised fine-tuning (SFT) as a preliminary step", with a rule-based
+reward for accuracy and format, and the paper calls it the "first open
+research to validate that reasoning capabilities of LLMs can be incentivized
+purely through RL, without the need for SFT." It too ships the SFT path for
+its production model — R1 adds cold-start data before RL to fix R1-Zero's
+poor readability and language mixing — so neither the origin nor Olmo 3
+offers this as the recommended recipe. Olmo 3 remains the source because it
+is the open, reproducible statement of the pathway.
 
 A second reason to stay *Proposed* arrived with the literature.
 [LIT-167](../literature.d/LIT-167.md) finds that DeepSeek-V3-Base already exhibits the "Aha moment"

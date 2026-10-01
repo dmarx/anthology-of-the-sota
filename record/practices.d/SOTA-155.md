@@ -43,8 +43,6 @@ summary: >-
   deltas, synchronised rarely and in streamed subsets. 500× less
   communication at matched quality, then two more orders off the peak. Filed
   `Proposed`: one group, and no frontier report trains this way.
-compared_against:
-- SOTA-075
 extended_by:
 - SOTA-219
 explained_by:

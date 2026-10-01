@@ -1,0 +1,119 @@
+---
+status: Active
+title: 'A Diffusion Theory For Deep Learning Dynamics: Stochastic Gradient Descent Exponentially Favors Flat Minima'
+version: 1
+tags:
+- training-optimization
+- model-stability
+- analysis-and-evaluation
+date: '2026-10-01'
+published: '2020-02-10'
+arxiv: '2002.03495'
+first_author: 'Xie'
+keywords:
+- 'stochastic-gradient-noise'
+- 'diffusion-theory'
+- 'kramers-escape'
+- 'flat-minima'
+- 'hessian'
+- 'batch-size'
+- 'learning-rate'
+- 'sgld'
+implementations: []
+summary: >-
+  Xie et al. (2020), ARXIV-2002.03495 (ICLR 2021). Near a minimum, SGD's
+  gradient-noise covariance is approximately the Hessian divided by the batch
+  size; feed that into a Kramers escape-time calculation and the mean time
+  to leave a valley is exponential in B/η times the inverse Hessian
+  eigenvalue along the escape direction. So SGD favours flat minima
+  exponentially, where gradient descent with injected white noise favours
+  them only polynomially. Validated as escape rates on test functions and
+  networks of ten hidden units; generalization is not measured.
+---
+
+# LIT-tmpv58c2: A Diffusion Theory For Deep Learning Dynamics: Stochastic Gradient Descent Exponentially Favors Flat Minima
+
+Xie et al. (2020) — ARXIV-2002.03495
+
+## Key takeaways
+
+- **The noise model.** Near a critical point, the mini-batch gradient-noise
+  covariance is approximately `C ≈ FIM/B ≈ H/B` — the observed Fisher
+  standing in for the Hessian — so the diffusion matrix is
+  `D = (η/2B)·H`: anisotropic, parameter-dependent, and largest along the
+  sharp directions. Checked element-wise against the Hessian in its
+  eigenbasis for a small fully-connected network on MNIST (Pearson
+  correlation up to 0.999 when pretrained), and approximately even at
+  random initialization. The paper also argues mini-batch noise is close to
+  Gaussian rather than heavy-tailed for batch sizes of 16 and up, once it is
+  computed across mini-batches rather than across parameters.
+- **The escape-time result** (Theorem 3.2). Under a second-order Taylor
+  approximation, quasi-equilibrium inside valleys and low temperature, the
+  mean escape time from a valley is
+  `τ = 2π/|H_be| · exp[(2BΔL/η)(s/H_ae + (1−s)/|H_be|)]`, with `ΔL` the
+  barrier height and `H_ae`, `H_be` the Hessian eigenvalues along the escape
+  direction at the minimum and the saddle. Sharpness enters the exponent.
+  For white-noise Langevin dynamics (Theorem 3.1) the Hessian enters only
+  through a determinant prefactor, so the preference for flat minima is
+  polynomial.
+- **What "sharpness" means changes with the noise**: a determinant of the
+  Hessian for injected white noise, the top eigenvalue along the escape
+  direction for SGD. Near-zero eigenvalues produce no diffusion, so on this
+  account minima selection happens in the low-dimensional top eigenspace.
+- **Batch size and learning rate enter as B/η, exponentially.** A larger
+  batch or smaller learning rate needs exponentially more iterations to
+  escape. The paper reads that as why large-batch training gets stuck in
+  sharp minima and why raising the learning rate with the batch helps.
+- **What the experiments test, and what they do not.** Escape rates over 100
+  repeated runs on a 10-dimensional Styblinski–Tang function, logistic
+  regression, and fully-connected networks of one hidden layer with 10
+  units (and a depth-3 width-10 MLP) on four small UCI datasets, with
+  sharpness varied by rescaling the parameters. `−log γ` is linear in `1/k`,
+  `B` and `1/η` as predicted. **No experiment measures test error**: the
+  paper establishes which minima SGD prefers, and takes from prior work that
+  flat ones generalize. Hyperparameters were tuned per pretrained model to
+  exhibit the relations.
+
+## Standing in the anthology
+
+**It supplies a mechanism for one half of SOTA-012 and nothing for the
+other.** SOTA-012 holds, from LIT-014, that sharpness correlates with test
+error. This paper says why SGD might *arrive* at flat minima, and says
+nothing measured about whether they test better. A reader should not count
+it as support for the correlation.
+
+**It shares its central variable with THEORY-013, which is `Rejected`.**
+Smith and Le (LIT-305) set generalization by a noise scale `εN/B` and were
+rejected because Shallue et al. (LIT-058) found no evidence that larger
+batches degrade out-of-sample performance once the metaparameters are
+retuned. This paper cites Smith and Le and builds the batch-to-learning-rate ratio into an
+exponent. Its escape-time predictions are about dynamics and are not
+reached by that sweep. Its closing inference — that large-batch training
+"cannot search flat minima efficiently in a realistic computational time"
+and generalizes worse for it — explains the very gap LIT-058 found to be
+mostly a tuning artefact, and should be read with that in hand. What
+survives is the same thing that survives in THEORY-013: holding `B/η` fixed
+is linear scaling.
+
+**Two of its assumptions are things the record holds evidence against.**
+It assumes quasi-equilibrium inside a valley; LIT-454 finds that after
+the loss converges the weights keep moving with anomalous diffusion, driven
+by a modified loss and probability currents, and that the stationary
+distribution depends on how the noise covariance relates to the Hessian —
+the relation this paper fixes by assumption at `C ∝ H`. And it reasons from
+a quadratic expansion in which zero-eigenvalue directions can be dropped;
+THEORY-075, from LIT-541, holds that neural networks are singular, so the
+loss is not locally quadratic and curvature is the prefactor rather than
+what governs complexity. Neither refutes the escape-rate measurements, which
+are on models small enough for the assumptions to be checked; both bear on
+carrying them to large networks.
+
+**It is a small-step, SGD-only account.** THEORY-035 (from LIT-461) holds
+that full-batch gradient descent drives the top Hessian eigenvalue up to
+`2/η` and trains there — the step size sets the curvature. Here the
+curvature of a valley is given and the step size only sets a temperature in
+a continuous-time approximation; the two pictures are not reconciled by
+either paper. And it says nothing about the matrix-preconditioned optimizers of
+SOTA-165, which reshape exactly the noise covariance this theory is built on.
+
+Unread — no NOTE.

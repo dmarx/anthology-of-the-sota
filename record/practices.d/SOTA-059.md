@@ -53,7 +53,11 @@ all-gather can be started before the operation that consumes it.
 What makes it worth stating separately is that the three axes contend for the
 same links. A job running data, tensor and pipeline parallelism together has
 three families of collective in flight, and overlapping each with compute in
-isolation can still leave them serialised against each other.
+isolation can still leave them serialised against each other. That is this
+record's reasoning, not a measurement: no paper the record holds states it
+or tests overlap on all three axes at once in training. CoCoNet's
+pipeline schedule, which overlaps collectives across NVLink and InfiniBand
+at once, is the nearest thing, and it is an inference result.
 
 ## Where it stops being free
 

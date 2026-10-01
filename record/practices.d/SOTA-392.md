@@ -36,8 +36,6 @@ source:
 # against it. Naming a paper that recommends distilling without reflow is
 # how a reader refutes this (ADR-053).
 introduced_by: []
-implementations:
-- 'InstaFlow'
 summary: >-
   Liu, Gong and Liu (2022), [LIT-636](../literature.d/LIT-636.md). On CIFAR-10, one-step FID is 378 from
   the base model, 6.18 after distillation alone, 12.21 after one reflow, and
@@ -98,6 +96,14 @@ multi-step option in a few-step model.
 - **The distillation uses an LPIPS loss** for the one-step student (App. A).
   Whether the balance holds with other distillation objectives, such as the
   distribution matching the video line uses, is untested.
+- **At scale, the one published test points the other way, on a different
+  starting point.** InstaFlow (arXiv 2309.06380, not in the record) finds
+  that distilling Stable Diffusion directly to one step "fails, while reflow
+  + distillation succeeds" (§3.2), and builds its one-step model on reflow.
+  Its failed direct distillation starts from a diffusion model's curved
+  probability-flow ODE, not from a rectified flow, so it does not test this
+  practice's case. It was listed here as an implementation until the
+  correction pass after [#395](https://github.com/dmarx/anthology-of-the-sota/issues/395); it implements the opposite pipeline.
 - **The theory is about the reflowed coupling.** The straightness theorems
   apply to the model after reflow, not to the single-pass model most people
   train ([SOTA-266](SOTA-266.md)).

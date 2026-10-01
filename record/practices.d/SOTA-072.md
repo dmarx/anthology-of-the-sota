@@ -67,9 +67,9 @@ GLM-130B. That differs from how the next section reads.
 
 ## What "system" should mean here
 
-The detection is the easy half; the response is the practice. GLM-130B's
-answer is the rehearsed one — rewind to the last checkpoint and skip the
-batches ([SOTA-095](SOTA-095.md)) — which only works if checkpoints are frequent enough to
+The detection is the easy half; the response is the practice. The rehearsed
+answer is PaLM's, not GLM-130B's: rewind to the last checkpoint and skip the
+batches ([SOTA-095](SOTA-095.md)). It only works if checkpoints are frequent enough to
 lose little ([SOTA-054](SOTA-054.md)) and if the data loader's position is restorable,
 which the record still has no practice for.
 

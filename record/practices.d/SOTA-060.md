@@ -1,8 +1,8 @@
 ---
 number: 60
 status: 'Active'
-title: 'Initialize layer norms with smaller variance (0.02) for stability'
-version: 3
+title: 'Initialize weights from N(0, 0.02) and scale the residual-output projections by 1/sqrt(2N)'
+version: 4
 history:
 - version: 2
   date: '2026-09-13'
@@ -19,6 +19,16 @@ history:
     moved from Child et al. to GPT-2, which stated the depth scaling two
     months earlier. The claim, and the confusion flagged below, are
     unchanged.
+- version: 4
+  date: '2026-10-01'
+  note: >-
+    Retitled, resolving the confusion versions 2 and 3 flagged. The title
+    said "layer norms with smaller variance (0.02)", merging two conventions
+    and naming neither: LayerNorm's own parameters start at 1 and 0. The new
+    source settles which the practice is about, because Megatron-LM states
+    both as one recipe: every weight from N(0, 0.02), then the weights
+    immediately before each residual scaled by 1/sqrt(2N). That recipe is
+    now the title.
 tags:
 # Retagged from the report of unbound lineage. This is an initialization rule
 # for stability, and `model-stability` names initialization in its blurb. It
@@ -48,7 +58,7 @@ explained_by:
 
 <!-- inactive-ok-file: ADR-029 — Proposed. Every mention here names it as the decision that added `introduced_by:`, which is the field this document uses; the citation is to the reasoning, not a claim the decision is settled -->
 
-# SOTA-060: Initialize layer norms with smaller variance (0.02) for stability
+# SOTA-060: Initialize weights from N(0, 0.02) and scale the residual-output projections by 1/sqrt(2N)
 
 ## Source
 
@@ -88,9 +98,10 @@ Megatron-LM writes the two down together. Named in prose and cited nowhere
 until [ADR-029](../decisions.d/ADR-029.md) gave the record a field for it, and attributed to Child until
 the earlier report was checked.
 
-## What the title gets wrong
+## What the title used to get wrong
 
-It says "layer norms", and the initialisation that matters here is the
+Until version 4 it said "layer norms with smaller variance (0.02)", and the
+initialisation that matters here is the
 *output projections* of the attention and MLP blocks. LayerNorm's own
 parameters are conventionally initialised to weight 1 and bias 0 — which is
 what [SOTA-025](SOTA-025.md) and [SOTA-026](SOTA-026.md) say, and 0.02 is not that.
@@ -100,5 +111,9 @@ deviation of the normal distribution GPT-2 and its descendants use to
 initialise *all* weights, before the depth scaling is applied on top. Two
 distinct conventions have been merged into one sentence.
 
-Flagged rather than rewritten: fixing it means deciding which of the two the
-practice is about, which changes what it claims.
+This was flagged rather than rewritten for two versions, because fixing it
+meant deciding which of the two the practice is about. Megatron-LM
+([LIT-022](../literature.d/LIT-022.md)) decides it: it states both together, as one recipe, so the title
+now names both. Neither it nor GPT-2 ablates the recipe. The evidence for it
+is that it is the setup large runs report using, not a measurement that it
+beats an alternative.

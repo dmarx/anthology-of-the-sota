@@ -1,8 +1,18 @@
 ---
 number: 58
 status: 'Active'
-title: 'Use sequence parallelism for attention layers'
-version: 1
+title: 'Use sequence parallelism for the layer-norm and dropout regions that tensor parallelism leaves replicated'
+version: 2
+history:
+- version: 2
+  date: '2026-10-01'
+  note: >-
+    Retitled. It said "for attention layers", but sequence parallelism as
+    Korthikanti et al. introduced it splits the regions between the tensor-
+    parallel matmuls (layer norm, dropout, the residual add), which tensor
+    parallelism leaves replicated; attention itself stays tensor-parallel.
+    The body already described that scheme, so the claim is unchanged and
+    the title now says it.
 tags:
 - distributed-optimization
 date: '2026-08-24'
@@ -19,7 +29,7 @@ summary: >-
   Korthikanti et al. (2022), [LIT-tmpfktcz](../literature.d/LIT-tmpfktcz.md) — [ARXIV-2205.05198](https://arxiv.org/abs/2205.05198).
 ---
 
-# SOTA-058: Use sequence parallelism for attention layers
+# SOTA-058: Use sequence parallelism for the layer-norm and dropout regions that tensor parallelism leaves replicated
 
 ## Source
 

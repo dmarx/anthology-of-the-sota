@@ -66,6 +66,12 @@ weights, so the served model is unchanged, and it fires only where needed.
 With it, K2 trained on 15.5T tokens without a single loss spike; K3
 ([LIT-131](../literature.d/LIT-131.md)) keeps the same optimizer at 2.8T.
 
+QK-Clip is first proposed in the K2 report itself, LIT-132, as the fix for
+the max-logit blow-up it observed with vanilla Muon; the combined optimizer
+it calls MuonClip (Muon with weight decay, RMS-matched updates and QK-Clip)
+is what carried the 1T-parameter, 32B-active MoE through 15.5T tokens with
+no loss spike.
+
 Conditions: the failure this prevents is a large-scale one. [LIT-119](../literature.d/LIT-119.md) trained
 90M and 0.6B models with Muon and no clipping and reports stable runs, so
 the clip is insurance whose premium is a per-head max-logit check per step —

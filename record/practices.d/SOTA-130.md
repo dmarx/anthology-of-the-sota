@@ -74,6 +74,14 @@ LLM judge for general chat. Olmo 3 releases four such 7B series with their
 data and checkpoints so that RL algorithms, and the effect of pretraining
 data on RL, can be studied from a clean start.
 
+What the practice rests on is LIT-130's statement of the track rather than a
+measured win over the SFT path: Olmo 3 runs RLVR from the base in four
+domain-focused series (math, code, instruction following, general chat),
+decontaminates the RL-Zero data aggressively and checks it with negative
+controls trained against random rewards, and frames the result as an
+experimental pathway and an open benchmark for RL, not as its production
+recipe.
+
 ## Why this is Proposed
 
 The source itself calls the track experimental and positions

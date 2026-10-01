@@ -32,6 +32,12 @@ reasoning, in-context retrieval, length extrapolation and long-context
 understanding, and the paper's own hybrids with sliding-window attention or
 Mamba2 layers did better still.
 
+The gated delta rule is LIT-137's own proposal: it takes Mamba2's
+data-dependent decay and DeltaNet's delta update with its WY-based chunkwise
+algorithm, extends that algorithm to carry the gate, and attributes the
+parents' failures in its single-needle tests to forgetting too fast (Mamba2
+past 2K tokens) and clearing memory poorly (DeltaNet at longer lengths).
+
 Conditions: on its own the layer still trails full attention on exact
 retrieval, which is why every production use interleaves it with global
 attention ([SOTA-132](SOTA-132.md)). The paper's evidence is at 1.3B; the production

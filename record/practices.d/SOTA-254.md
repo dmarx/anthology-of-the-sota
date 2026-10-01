@@ -59,6 +59,13 @@ Prabhudesai et al. (2025), [LIT-442](../literature.d/LIT-442.md) — [ARXIV-2507
 
 ## The recommendation is a conditional, and both arms of it are the practice
 
+The recommendation and both of its arms come from LIT-442, which re-ran
+LIT-166's data-constrained scaling experiment on C4 with the objective swapped
+from autoregressive to masked diffusion — hundreds of models from 7M to 2.5B
+parameters, at 25M, 50M and 100M unique tokens and up to 800 epochs — and
+stated the result as a decision rule: compute-constrained, train
+autoregressively; data-constrained, train as diffusion.
+
 **Below the crossover, train autoregressively.** At the Chinchilla-optimal
 single-epoch point, masked diffusion is not slightly worse but badly worse —
 validation loss 10.65 against 7.07 in the 100M-unique-token regime. A reader

@@ -57,6 +57,13 @@ like the target**. That is classical importance resampling, and the paper
 makes it tractable by estimating the weights in a reduced feature space
 rather than over text.
 
+The frame is LIT-087's: Xie et al. pose data selection as matching a target
+you can sample from rather than as scoring quality, and implement it with
+importance weights estimated over unigrams and bigrams hashed into 10,000
+buckets. Selecting from the Pile this way, DSIR beats heuristic
+classification by 0.9% and is comparable to its top-`k` variant, the margin
+the conditions below turn on.
+
 ## Why the frame is the recommendation and the method is not
 
 A quality criterion is a claim about documents in the abstract, and it has to

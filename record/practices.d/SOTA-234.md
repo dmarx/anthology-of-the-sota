@@ -60,6 +60,13 @@ BitNet b1.58 does it with ternary weights, {-1, 0, +1}, 8-bit activations, and
 `BitLinear` in place of `nn.Linear`. At matched size and token budget it
 reaches FP16 perplexity and end-task accuracy **from 3B upward**.
 
+The branch enters the record with LIT-380, where Ma et al. trained BitNet
+b1.58 ternary from scratch against LLaMA at equal size and tokens and argued
+for fixing the format before the run rather than compressing after it. Its
+perplexity comparison is the evidence: 12.87 against 12.33 at 700M, 11.29
+against 11.25 at 1.3B, 9.91 against 10.04 at 3B, which is where the "from 3B"
+qualifier comes from.
+
 ## Why this is not just another compression ratio
 
 Two arguments, and they are worth separating because only one is measured on

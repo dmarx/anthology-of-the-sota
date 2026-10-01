@@ -104,6 +104,13 @@ Dropout is a treatment for a model with enough capacity to memorize what it
 is being shown. It is not a default to carry into a setting where that is not
 true, and it has never been presented as one.
 
+LIT-394 is where the practice starts: Hinton et al. first stated the
+procedure, randomly omitting half the feature detectors on each training case,
+and reported that it greatly reduces overfitting in that regime. The reason
+they gave is co-adaptation, a detector that is only useful alongside several
+specific others, which dropout breaks by making that company unreliable. The
+dataset-size evidence for the condition came two years later, in LIT-395.
+
 ## The sweet spot, and why both edges matter
 
 [LIT-395](../literature.d/LIT-395.md) §7.4 varies MNIST training

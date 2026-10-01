@@ -53,6 +53,11 @@ That is what makes this a reframing rather than a better solver: **regress the
 the output.** Everything the old order required in advance is available
 afterwards.
 
+The inversion is first made in LIT-385 (DUSt3R), which casts pairwise
+reconstruction as pointmap regression with no calibration or pose supplied,
+and shows pixel matches and relative and absolute camera being recovered from
+the regressed 3D output rather than demanded before it.
+
 Two things fall out that the classical framing cannot express. Monocular and
 multi-view reconstruction become the same problem with different amounts of
 evidence, rather than different problems — a single view has no baseline to
@@ -66,6 +71,12 @@ step once there are more than two images. VGGT removes it: one feed-forward
 pass, one to hundreds of views, producing camera parameters, point maps, depth
 maps and 3D point tracks together — **and beating methods that post-process
 with geometry optimisation**, in under a second.
+
+That second step is LIT-384: it reports state of the art across camera
+parameter estimation, multi-view depth, dense point cloud reconstruction and
+3D point tracking from the one network, and shows pretrained VGGT improving
+downstream non-rigid point tracking and feed-forward novel view synthesis
+when used as a backbone.
 
 That last part is the strong claim. The iterative refinement that justified
 the classical pipeline is not, on these benchmarks, buying what it was thought

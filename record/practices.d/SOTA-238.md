@@ -66,6 +66,11 @@ Xie et al. (2023), [LIT-391](../literature.d/LIT-391.md) — [ARXIV-2305.10429](
 
 ## The method
 
+This is DoReMi, and the recommendation originates with LIT-391: Xie et al.
+proposed producing domain weights with a small proxy trained under group DRO
+on excess loss, with no downstream task in the loop, and showed the weights
+transferring to a model 30x larger.
+
 Three steps. Train a small **reference** model on the default mixture. Train a
 small **proxy** under Group DRO over domains. Resample the corpus with the
 resulting weights and train the model you actually wanted.

@@ -56,6 +56,11 @@ The reported result is efficiency-flavoured: a 2.9B model setting the 3B
 state of the art on multilingual tasks and matching it in English, **while
 trained on dramatically fewer tokens** than what it is compared against.
 
+Both that result and the expressivity one below are LIT-173's, the RWKV-7
+paper that introduces the recurrence this practice recommends. Part of the
+low token count is that its 1.5B and 2.9B models were converted from RWKV-6
+checkpoints and trained on, not trained from scratch.
+
 The expressivity result is the one that cuts against an assumption the rest
 of the record makes. RWKV-7 can perform **state tracking and recognise all
 regular languages** while remaining parallelisable to train — which, under

@@ -38,7 +38,7 @@ Cohen et al. (2023), [LIT-577](../literature.d/LIT-577.md). Read as [NOTE-314](.
 
 ## The practice
 
-Cohen et al. introduced this evaluation in LIT-577, with RippleEdits, a
+Cohen et al. introduced this evaluation in [LIT-577](../literature.d/LIT-577.md), with RippleEdits, a
 benchmark of six criteria for what an edit should change besides the queried
 triple. Measured there, ROME, MEMIT and MEND average 38–66 across subsets and
 models. Logical generalization falls to 5.5–7.0 on the POPULAR subset for

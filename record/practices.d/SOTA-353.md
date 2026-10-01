@@ -47,10 +47,10 @@ Jumper et al. (2021), [LIT-583](../literature.d/LIT-583.md), and Abramson et al.
 
 ## The practice
 
-The practice starts with LIT-583. Jumper et al. trained AlphaFold 2 to regress
+The practice starts with [LIT-583](../literature.d/LIT-583.md). Jumper et al. trained AlphaFold 2 to regress
 the lDDT-Cα its own prediction would score (pLDDT) and the TM-score (pTM).
 Over 10,795 chains these track the truth at r = 0.76 and r = 0.85, and the
-same paper used the confidence to filter its self-distillation set. LIT-584
+same paper used the confidence to filter its self-distillation set. [LIT-584](../literature.d/LIT-584.md)
 carries the head into a generative model: AlphaFold 3 trains it on a cheap
 rollout of the diffusion sampler, ranks seeds by it, and antibody–antigen
 quality keeps rising with the number of seeds ranked by ipTM.

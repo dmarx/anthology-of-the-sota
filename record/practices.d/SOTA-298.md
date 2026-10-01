@@ -72,7 +72,7 @@ those features. Verify the text has them. Declare success.
 
 Every step of that worked on Change.org, and the outcome went the other way.
 
-That is what LIT-487 found, and the practice is drawn from it: a
+That is what [LIT-487](../literature.d/LIT-487.md) found, and the practice is drawn from it: a
 difference-in-differences over Change.org's country-by-country rollout of its
 built-in drafting tool, with Australia as the control, showing the text
 features move as intended while the ten-signature share fell. Its design,

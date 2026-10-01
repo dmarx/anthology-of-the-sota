@@ -50,7 +50,7 @@ metric that went up.
 **Report the precision side and the end-task number in the same table as the
 recall.** Retrieval quality is a pair, and improving one member is not
 improving the pair. The specific measurement that motivates this is the
-pilot study in LIT-502 (§3), which ran three published GraphRAG systems and
+pilot study in [LIT-502](../literature.d/LIT-502.md) (§3), which ran three published GraphRAG systems and
 vanilla RAG with the same embedder, generator and `k = 5`, on G-Medical:
 
 | | evidence recall | context relevance |
@@ -69,7 +69,7 @@ pipelines "expand the retrieval coverage at the cost of introducing excessive
 irrelevant information, which ultimately harms the QA performance" — and it
 cites two independent benchmarks that had already found advanced GraphRAG
 underperforming naive RAG on real-world QA. The recommendation starts in
-LIT-502: the paper draws the trade-off out of its own field's systems to
+[LIT-502](../literature.d/LIT-502.md): the paper draws the trade-off out of its own field's systems to
 motivate a better graph builder, and this practice is the reporting rule the
 record takes from that measurement rather than from the system it goes on to
 propose.

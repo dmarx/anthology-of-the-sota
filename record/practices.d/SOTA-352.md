@@ -45,7 +45,7 @@ Abramson et al. (2024), [LIT-584](../literature.d/LIT-584.md). Read as [NOTE-320
 
 ## The practice
 
-The recommendation originates in LIT-584. Abramson et al. found AlphaFold 3's
+The recommendation originates in [LIT-584](../literature.d/LIT-584.md). Abramson et al. found AlphaFold 3's
 diffusion head inventing compact structure in disordered regions, added
 AlphaFold-Multimer predictions to its training data, and report that this
 cross-distillation "greatly reduced" hallucination. The support is that

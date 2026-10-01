@@ -65,7 +65,7 @@ argument is task-independent: whatever they are trying to do, an interface
 they can use produces commands that explain the outcome, and one they cannot
 produces commands that do not.
 
-The objective and both uses of it come from LIT-503, which proposed it as
+The objective and both uses of it come from [LIT-503](../literature.d/LIT-503.md), which proposed it as
 MIMI (mutual information maximizing interfaces). It ranks existing interfaces
 offline (Spearman `ρ = 0.43` against ground-truth
 task completion across 540K examples), and it can be maximized directly:

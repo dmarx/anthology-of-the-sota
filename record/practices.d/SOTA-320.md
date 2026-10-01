@@ -55,7 +55,7 @@ Qi, He, Ye, Li, Zi, Dai, Zou and Xiao (2025),
 
 ## Do this
 
-The rule is LIT-521's: it argues that a run crashes when the spectral energy of
+The rule is [LIT-521](../literature.d/LIT-521.md)'s: it argues that a run crashes when the spectral energy of
 `W_q^T W_k` concentrates into a few directions (fewer than 10 in its crashed
 runs), derives this cap from Weyl's inequality to stop that, and calls the
 result AdamW².

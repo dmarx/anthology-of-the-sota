@@ -70,7 +70,7 @@ Helmholtz solve, or gradient-domain image editing:
 ## What was measured
 
 The architecture, the initialization and the recommendation to use them for
-derivative supervision all originate in LIT-551, SIREN. Besides the results
+derivative supervision all originate in [LIT-551](../literature.d/LIT-551.md), SIREN. Besides the results
 below, it checked that its initialization does what it derives: in 6- and
 50-layer SIRENs at initialization, pre-activations match N(0, 1) and sine
 outputs match the arcsine distribution layer by layer, with gradient

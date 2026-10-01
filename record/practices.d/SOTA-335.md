@@ -56,7 +56,7 @@ leak into it:
 - **Start from a Fourier-feature input** ([LIT-550](../literature.d/LIT-550.md)), not a learned constant,
   and drop per-pixel noise inputs, which are tied to pixel positions
 
-The recommendation originates with StyleGAN3, LIT-559, which traced
+The recommendation originates with StyleGAN3, [LIT-559](../literature.d/LIT-559.md), which traced
 texture sticking to aliasing in the generator and built this design to
 remove it. Its Figure 3 ablation on FFHQ-U at 256² is the evidence: both
 alias-free configurations reach high measured equivariance while matching

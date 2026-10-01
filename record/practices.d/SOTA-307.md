@@ -88,7 +88,7 @@ that differ by an order of magnitude.
 
 ## Do this
 
-The protocol comes from LIT-501, which trained several hundred SiT networks
+The protocol comes from [LIT-501](../literature.d/LIT-501.md), which trained several hundred SiT networks
 on class-conditional ImageNet as a panel of training seeds × sampling seeds
 and found the between-seed spread 3.2× the sampling spread, with a CoV that
 stays between 0.74% and 2.06% across four sizes and every checkpoint to 2M

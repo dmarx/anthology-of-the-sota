@@ -103,7 +103,7 @@ just a smaller population in disguise: uniform training on a population of
 for the warm-up on 128k. The numbers are this setting's; the direction is
 the transferable part.
 
-The trade-off and the warm-up both originate in LIT-450. Zucchet et al.
+The trade-off and the warm-up both originate in [LIT-450](../literature.d/LIT-450.md). Zucchet et al.
 derive the trade-off from their account of the plateau, sweep fixed
 power-law distributions over several population sizes, and propose the
 subset-first warm-up as the schedule that takes each side where it is cheap.

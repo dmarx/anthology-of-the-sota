@@ -41,7 +41,7 @@ Append a fixed, task-agnostic instruction to the question — "Let's think step
 by step" is the one measured — and extract the answer from the trace it
 produces. No exemplars, nothing task-specific in the trigger.
 
-The method is zero-shot chain of thought, introduced by LIT-469. On
+The method is zero-shot chain of thought, introduced by [LIT-469](../literature.d/LIT-469.md). On
 text-davinci-002 the trigger took MultiArith from 17.7% to 78.7% and GSM8K
 from 10.4% to 40.7% against plain zero-shot prompting, across 12 datasets and
 17 models; the same paper compares it with Wei et al.'s few-shot numbers and

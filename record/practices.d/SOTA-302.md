@@ -60,7 +60,7 @@ Eyring, Karthik, Dosovitskiy, Ruiz and Akata (2025), [LIT-491](../literature.d/L
 
 ## What to do
 
-This is LIT-491's noise hypernetwork (HyperNoise), and the recommendation
+This is [LIT-491](../literature.d/LIT-491.md)'s noise hypernetwork (HyperNoise), and the recommendation
 starts there: on SD-Turbo, SANA-Sprint and FLUX-schnell it raises GenEval by
 0.04–0.08 for about 0.1–0.2 s more per sample, while direct LoRA reward
 fine-tuning of the same SANA-Sprint model fell below the untouched base.

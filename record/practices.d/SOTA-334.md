@@ -59,7 +59,7 @@ When a per-sample style scales a convolution's input channels
 
 ## What was measured
 
-The diagnosis and the fix originate in LIT-560, StyleGAN2, which traced the
+The diagnosis and the fix originate in [LIT-560](../literature.d/LIT-560.md), StyleGAN2, which traced the
 droplets to instance normalization by showing that removing normalization
 removes them, then replaced it with demodulation to keep style mixing.
 Droplet artifacts disappear from images and from intermediate activations

@@ -37,7 +37,7 @@ Xu et al. (2019), [LIT-580](../literature.d/LIT-580.md). Read as [NOTE-319](../n
 
 ## The practice
 
-Xu et al. proposed this aggregator as GIN in LIT-580, with the proof that
+Xu et al. proposed this aggregator as GIN in [LIT-580](../literature.d/LIT-580.md), with the proof that
 message passing is bounded by 1-WL and that sum followed by an MLP reaches the
 bound where mean and max do not. On REDDIT-BINARY and REDDIT-MULTI-5K with no
 node features, GIN-0 scores 92.4 and 57.5 and the mean variants sit at

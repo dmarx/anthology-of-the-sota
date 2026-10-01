@@ -62,7 +62,7 @@ free improvement**. Above a pre-training scale you can measure, removing it
 and letting the model learn the structure wins. Below that scale, keeping it
 wins. Both halves are results in the same paper.
 
-That paper is LIT-587, which introduced the Vision Transformer and summarised
+That paper is [LIT-587](../literature.d/LIT-587.md), which introduced the Vision Transformer and summarised
 its own pre-training-scale experiments as "large scale training trumps
 inductive bias". The recommendation originates there, condition included: the
 crossover below is its measurement, and the half that says to keep the prior

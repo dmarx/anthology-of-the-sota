@@ -54,7 +54,7 @@ describe it as *the* mechanism.
 ## Do this
 
 **Say what else would have passed.** The criteria are satisfiability tests,
-not selection rules, and the satisfying set is large. LIT-504, where this
+not selection rules, and the satisfying set is large. [LIT-504](../literature.d/LIT-504.md), where this
 recommendation originates, showed it by training MLPs of shape `(2, k, k, n)`
 on two-input logic gates and enumerating every circuit and every causal
 alignment that met the criteria, which answered all four identifiability

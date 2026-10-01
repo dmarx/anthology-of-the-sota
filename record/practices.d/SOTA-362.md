@@ -47,7 +47,7 @@ Both halves are measured on the ImageNet linear probe:
   against having one.
 
 Both measurements, and the recommendation to ship `h` rather than `z`, come
-from SimCLR (LIT-591), whose framework introduced the nonlinear projection
+from SimCLR ([LIT-591](../literature.d/LIT-591.md)), whose framework introduced the nonlinear projection
 head between encoder and NT-Xent loss and then ablated it in §4.2.
 
 ## Why: the head is where the invariance gets absorbed

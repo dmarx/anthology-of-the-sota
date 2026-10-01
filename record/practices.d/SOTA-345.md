@@ -50,7 +50,7 @@ Kantamneni et al. (2025), [LIT-568](../literature.d/LIT-568.md). Read as [NOTE-3
   on test. Both of this paper's apparent SAE wins disappeared under those
   rules
 
-The recommendation comes from Kantamneni et al., LIT-568, who added SAE
+The recommendation comes from Kantamneni et al., [LIT-568](../literature.d/LIT-568.md), who added SAE
 probes to a toolkit of raw-activation probes and let validation AUC choose
 per task. On Gemma-2-9B layer 20 across 113 datasets, SAE probes were chosen
 for 14 tasks and changed mean test AUC by −0.003 ± 0.002 (Figure 4); under

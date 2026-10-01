@@ -66,7 +66,7 @@ that got.
 
 ## What to do
 
-The procedure is LIT-485's, which built SimpleStories with it after
+The procedure is [LIT-485](../literature.d/LIT-485.md)'s, which built SimpleStories with it after
 measuring that TinyStories' three-required-words mechanism had left 59.38% of
 its stories containing "once upon a time"; every number below is that
 paper's comparison of the two corpora.

@@ -41,7 +41,7 @@ form is [SOTA-350](SOTA-350.md).
 
 ## The practice
 
-The recommendation is LIT-579's. Tönshoff et al. re-ran the Long-Range Graph
+The recommendation is [LIT-579](../literature.d/LIT-579.md)'s. Tönshoff et al. re-ran the Long-Range Graph
 Benchmark with message-passing baselines tuned as carefully as the
 transformer, in the same 500k-parameter budget. Retuned GCN went from 0.593
 to 0.686 AP on Peptides-func and from 0.350 to 0.246 MAE on Peptides-struct,

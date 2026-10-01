@@ -71,7 +71,7 @@ competing for "the smallest model that outputs grammatical English" count
 every parameter. A leaderboard where one entry excludes embeddings and
 another does not is not a leaderboard.
 
-The recommendation is LIT-485's own, made in its §3.5 while reporting the
+The recommendation is [LIT-485](../literature.d/LIT-485.md)'s own, made in its §3.5 while reporting the
 SimpleStories model suite: it is where the TinyStories-33M figure and the
 65M-versus-35M tokenizer arithmetic above come from, and it argues the
 convention from the documented misreading — it cites Pearce and Song (2024)

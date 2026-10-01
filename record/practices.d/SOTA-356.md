@@ -49,7 +49,7 @@ Before quantizing a linear layer's weights to 4 bits:
 There is no backward pass and nothing is fitted to a reconstruction
 objective.
 
-The method is LIT-585's. Lin et al. proposed it as AWQ, reporting that
+The method is [LIT-585](../literature.d/LIT-585.md)'s. Lin et al. proposed it as AWQ, reporting that
 protecting roughly 1% of channels recovers most of the quantization error
 provided the channels are chosen from activations, and deriving the scaling
 as an equivalent transformation that cuts the salient channels' relative
@@ -91,7 +91,7 @@ reader choosing between them should be checking that claim, not the headline
 perplexity — and the record does not hold an independent test of it.
 
 What it does hold is the authors' own. Lin et al. ran the comparison with
-SOTA-185 in LIT-585, against GPTQ with and without its reordering trick.
+[SOTA-185](SOTA-185.md) in [LIT-585](../literature.d/LIT-585.md), against GPTQ with and without its reordering trick.
 Calibrating on one of PubMed or Enron and evaluating on the other costs AWQ
 0.5–0.6 perplexity and GPTQ 2.3–4.9, and AWQ does better with a calibration
 set ten times smaller. At a fixed width the gap is narrower: at INT3 with

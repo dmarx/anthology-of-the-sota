@@ -63,7 +63,7 @@ The quantization itself is [SOTA-185](SOTA-185.md) (GPTQ).
   gain that has shrunk to 1.2× at your serving batch may not be worth that
 
 The batch-size framing and the kernel both come from Frantar et al.'s
-MARLIN paper, LIT-567. Its layer benchmark (Figure 1, a 72k×18k layer on an
+MARLIN paper, [LIT-567](../literature.d/LIT-567.md). Its layer benchmark (Figure 1, a 72k×18k layer on an
 A10) holds close to the 3.87× ideal to batch 16–32 while ExLlamaV2, AWQ,
 bitsandbytes and torch kernels degrade quickly after batch 1, and its
 roofline (Figure 11) puts the crossover below batch 64. Its vLLM runs

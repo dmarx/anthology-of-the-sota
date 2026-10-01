@@ -58,7 +58,7 @@ Chen et al. (2025), [LIT-486](../literature.d/LIT-486.md) — [ARXIV-2505.10475]
 
 ## What to do
 
-This is LIT-486's method, ParScale, and the recommendation to buy capacity
+This is [LIT-486](../literature.d/LIT-486.md)'s method, ParScale, and the recommendation to buy capacity
 with parallel computation instead of parameters originates there: the paper
 fits `P` streams as worth `O(log P)` more parameters across 0.5B–4.4B on two
 corpora, and models the inference cost at batch size 1 as 22× less added

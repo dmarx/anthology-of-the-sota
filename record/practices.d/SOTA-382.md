@@ -56,6 +56,15 @@ The result the paper reports is a pair, and the pair is the point:
 "significant speedup" **and** improved "accuracy of the representations of
 less frequent words".
 
+The rule and the measurement are LIT-603's (§2.3, Table 1): discard each
+occurrence of word w with probability 1 − √(t/f(w)) at t ≈ 10⁻⁵. On word
+analogies with 300-dimensional skip-gram, subsampling cut NEG-5 from 38 to 14
+minutes at 59 → 60%, NEG-15 from 97 to 36 minutes at 61 → 61%, and
+hierarchical softmax from 41 to 21 minutes at 47 → 55%. The speedup is
+measured throughout; the accuracy gain is large for hierarchical softmax and
+phrases and about zero for NEG-15 on words, and the rare-word claim is stated
+rather than measured separately.
+
 ## Why both at once, which is the unusual part
 
 Most throughput interventions trade quality away. This one does not, because

@@ -68,6 +68,14 @@ and each concept's probe and steering directions coincide.
 
 ## Evidence
 
+The instruction and its derivation come from LIT-606. Park, Choe and Veitch
+show that the softmax is unchanged when unembeddings are multiplied by any
+invertible A and embeddings by A⁻ᵀ, so training fixes no inner product, and
+prove (Thm 3.4) that if a word drawn uniformly from the vocabulary has
+uncorrelated values on separable concepts, Cov(γ)⁻¹ is a causal inner product:
+one under which separable concepts are orthogonal and a concept's probe and
+steering directions coincide. Their empirical support is the following.
+
 - **LLaMA-2 7B, 27 concepts** (Fig 3, Fig 8). Whitened, separable concepts
   are near-orthogonal with interpretable blocks. Euclidean is "somewhat"
   orthogonal as well. The visible gains are frequent⇒infrequent, whose

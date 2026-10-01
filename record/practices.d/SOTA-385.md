@@ -65,6 +65,13 @@ clip, [SOTA-071](SOTA-071.md) says to use a dynamic threshold. A reader followin
 to pick a number, and the number they will pick is a framework default set
 for models much smaller than the one they are training.
 
+The values come from LIT-617's training setup (§3.2). Rae et al. trained six
+models from 44M to 280B on the same dataset for the same 300B tokens, clipped
+the global gradient norm at 1.0, and reduced it to 0.25 for the 7.1B and 280B
+models "for improved stability". The recommendation to treat the clip as
+scale-dependent is drawn from that configuration and originates there,
+though the paper reports the value rather than advising it.
+
 ## Why it is only `Proposed`
 
 The evidence is a reported configuration, not an ablation. Rae et al. state

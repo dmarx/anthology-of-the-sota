@@ -60,6 +60,12 @@ In contrastive image-text pretraining ([SOTA-359](SOTA-359.md)) with a ViT image
   and, for the last point or so, **tune briefly with masking off** (a third of
   an epoch: +0.5 at 50%, +1.3 at 75%).
 
+The recipe originates with LIT-706 (FLIP), which settled each instruction by
+ablation at ViT-L/16 on LAION-400M, 6.4 epochs: masking the text at 50% cost
+2.2 points, an added MAE reconstruction loss 0.2–0.3, and masked inference 3.2
+at 50%. Over 32 epochs it reached its CLIP reproduction's accuracy more than
+3× sooner in wall-clock.
+
 ## Where the accuracy actually comes from
 
 The abstract says masking "improves both accuracy and speed". Table 1 of the

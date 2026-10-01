@@ -79,6 +79,12 @@ unconditional training costs and does not buy.
 extrapolating away from the unconditional one by a weight `w`. There is no
 classifier and no second model.
 
+The recipe originates with LIT-693, which introduced it to replace Dhariwal
+and Nichol's classifier guidance: the same FID–IS trade without a second
+classifier trained on noisy data. On ImageNet 128×128 it beats the
+classifier-guided ADM-G on FID at `w = 0.3`, and at `w = 4.0` beats
+BigGAN-deep on both FID and IS.
+
 ## Choosing `w`, which is the part that is usually got wrong
 
 The weight is **not** a quality knob with a best setting. It is a position on a

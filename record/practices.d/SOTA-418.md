@@ -57,6 +57,15 @@ If you want a tokenizer-free model:
    stage is where the gain appears: 0.715 against 0.730 bits/byte at 1.3B
    FLOPs.
 
+The recommendation originates with LIT-679, which introduced H-Net and its
+two-stage learned chunking. Its evidence is a chain of baselines that each
+change one ingredient, all matched in bytes per batch and FLOPs per byte on a
+100B-token FineWeb-Edu subset. At the XL (1.3B) budget a GPT-2 BPE Transformer
+scores 0.730 bits/byte and 55.5 downstream average, whitespace chunking 0.726,
+one learned stage 0.728, and two stages 0.715 and 58.2. At Large, the
+isotropic LlamaByte scores 0.859 and 44.1 against the Transformer's 0.756 and
+53.3, which is the 9-point gap behind the first instruction.
+
 ## Why
 
 A fixed tokenizer commits to one segmentation before training, and it

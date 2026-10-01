@@ -43,6 +43,14 @@ co-occurrences and reweighting them. On one 2.8B-token corpus and 14
 lexical-semantics benchmarks, the predict models won most tasks by a wide
 margin and degraded far less under bad settings.
 
+The recommendation is Baroni, Dinu and Kruszewski's in LIT-608, which
+compared 36 count models with 48 word2vec CBOW models and told readers to "go
+for the predict models". With the best setting per task, predict beat count
+84 to 74 on rg, 75 to 62 on ws, 91 to 76 on TOEFL and 68 to 49 on the Google
+analogies, and tied only on selectional preference. The worst count model
+fell to 11 on rg and 1 on analogies, where the worst predict model kept 74 and
+27.
+
 ## Why it is retired
 
 **The comparison was not like for like.** word2vec ran with the settings its

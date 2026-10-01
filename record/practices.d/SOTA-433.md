@@ -100,6 +100,13 @@ defects.
 
 ## What it buys
 
+The recommendation originates in LIT-721, which proposed autoguidance (guiding
+the conditional model with a smaller, less-trained copy of itself where CFG uses
+an unconditional model) and argued that CFG's quality gain comes from the
+reference model being worse, not from class emphasis. All of its evidence is on
+EDM2 checkpoints and measured by Fréchet distances, which is where every number
+below comes from:
+
 | setting | baseline | autoguided |
 | --- | --- | --- |
 | ImageNet-512, EDM2-S | 2.56 | **1.34** |

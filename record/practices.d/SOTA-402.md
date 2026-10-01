@@ -77,7 +77,12 @@ size, which scales linearly with it — and **nothing qualitatively changes**,
 not the gap between the train and test curves, not the level of generalization
 reached. Then the `φ` sweep at fixed size moves grokking speed monotonically,
 and at **`φ = 18.0` the model reaches 96.7% before training accuracy has
-saturated** — the delay the phenomenon is named for is simply gone.
+saturated** — the delay the phenomenon is named for is simply gone. Both sweeps
+are Wang et al.'s, LIT-667, run on two-hop composition with the `φ` sweep at
+2,000 entities, and the recommendation originates with them too: they state the
+result as a correction to the critical-data-size hypothesis, name *critical data
+distribution* in its place, and offer it as guidance for setting up data "to
+better induce implicit reasoning".
 
 So the operational form of this is not "add data" and not "add less data". It
 is: **when you have a budget of additional examples and a model that already

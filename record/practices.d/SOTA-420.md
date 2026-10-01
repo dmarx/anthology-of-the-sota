@@ -53,6 +53,15 @@ Hinton, Vinyals and Dean (2015), [LIT-680](../literature.d/LIT-680.md).
 - **`T²`:** keep it. It holds the relative size of the two terms fixed as `T`
   changes, so a temperature sweep is not also a loss-weight sweep.
 
+All three instructions come from LIT-680, which introduced distillation
+against a teacher's temperature-softened outputs. It trains the student at
+the teacher's `T`, adds the hard-label term at `T = 1` because "the best
+results were generally obtained" with a considerably lower weight on it, and
+derives `T²` from the soft gradients' `1/T²` scaling. Its evidence is an
+acoustic model distilled from a 10× ensemble, reaching 60.8% test frame
+accuracy against the ensemble's 61.1% and the baseline's 58.9%, and an MNIST
+student that falls from 146 errors to 74 with soft targets at `T = 20`.
+
 ## Why
 
 The soft term's gradients scale as `1/T²`. Without the factor, raising `T`

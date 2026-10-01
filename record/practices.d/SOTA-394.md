@@ -57,7 +57,9 @@ to be causal. **Distil the causal student from a bidirectional teacher**,
 which sees the whole clip and generates it well, rather than first making
 the teacher causal.
 
-CausVid compares the two at the same ODE-regression initialization,
+The recommendation is CausVid's (LIT-631). Its method, asymmetric
+distillation, trains a block-causal 4-step student with distribution matching
+against a bidirectional teacher of the same architecture. It compares the two at the same ODE-regression initialization,
 architecture, data and 4 sampling steps (Table 4), scored as temporal
 quality / frame quality / text alignment:
 

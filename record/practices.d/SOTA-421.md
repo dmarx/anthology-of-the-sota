@@ -64,6 +64,15 @@ At small scale, fixed warmup and fixed hyperparameters penalize some sizes
 more than others. The penalty tilts the fitted slope toward parameters
 (`THEORY-108`).
 
+The protocol is LIT-690's, which made this recommendation by attributing the
+gap between Kaplan's and Chinchilla's exponents one step at a time on an
+OpenLM sweep from 5M to 901M. Reproducing Kaplan gives `a = 0.835`, counting
+the head's FLOPs 0.706, warmup tokens = N 0.602, and tuning learning rate,
+batch and β₂ per size with a constant learning rate 0.497, Chinchilla's
+equal-proportion allocation. A cosine decay matched to each run moved the
+exponent only 0.031, on a side branch, which is why the schedule item allows a
+constant rate.
+
 ## Conditions
 
 - **It matters below about 1B.** The source expects each factor to fade with

@@ -62,6 +62,13 @@ to the training range. A latent has no known range, so this rescales to the
 conditional prediction's own spread instead. "Inspired by" Imagen,
 "applicable to both image-space and latent-space models".
 
+The rescale is the fourth of LIT-689's fixes, introduced there with
+`w = 7.5, φ = 0.7` as the setting that "works great" and supported by a sweep
+of five `φ` values on three prompts. Its one number is COCO FID 21.66 against
+22.96 for the same data with no fixes (10k captions, DDIM 50 steps), and that
+gain bundles the rescale with zero terminal SNR, v-prediction and trailing
+steps.
+
 ## Conditions
 
 - **Never compared with [SOTA-202](SOTA-202.md).** The source cites dynamic thresholding

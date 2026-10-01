@@ -104,6 +104,11 @@ Preactivation ResNet-164, VGG-16 and Wide ResNet-28-10. The paper's framing is
 that this "approximates Fast Geometric Ensembling with a single model" — an
 ensemble's generalization without an ensemble's inference cost.
 
+The method and these measurements are Izmailov et al.'s, LIT-673, which
+introduced stochastic weight averaging: ten further epochs of averaging buy
+**+0.82** on ResNet-50 and **+0.63** on ResNet-152, and the batch-normalization
+re-estimation in step 3 is the paper's own instruction, not later folklore.
+
 ## Conditions
 
 **The compute charge belongs to this method, not to averaging.**

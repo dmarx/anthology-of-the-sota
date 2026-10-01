@@ -82,6 +82,11 @@ without anybody having scheduled it.
 
 ## What was measured
 
+The design originates with LIT-714 (EDM2), which introduced it as a drop-in
+redesign of the ADM U-Net and measured it as a cumulative ablation ladder, one
+run per step. The largest single step is on-use weight normalization, 6.96 to
+3.75 FID, a 46% change against the ±2% the paper gives for evaluation noise.
+
 ImageNet-512 latents, ~300M parameters, 2³¹ training images, FID without
 guidance, each config at its own best EMA length, cumulative:
 

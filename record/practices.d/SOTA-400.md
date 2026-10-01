@@ -57,6 +57,13 @@ DINOv2 ViT-g, holding little information about their own position or pixels and
 a lot about the image as a whole. Anything downstream that reads the feature
 map or the attention map as a spatial signal reads them as noise.
 
+Both the diagnosis and the remedy are LIT-662's. It finds the high-norm
+tokens only in ViT-Large and above, after about a third of training, on
+patches that are redundant with their neighbours, and shows that a linear
+probe recovers their position and pixels worse than normal tokens' and the
+image class better. It then proposes registers and reports that the artifacts
+disappear, with one register bringing most of the benefit.
+
 Registers give the model somewhere to put that state which nobody downstream
 is going to interpret as a patch.
 

@@ -68,6 +68,12 @@ Mikolov et al. (2013), [LIT-603](../literature.d/LIT-603.md). Read as [NOTE-326]
 - **Expect speed first and accuracy second.** The run time fell by 2–3×.
   Accuracy gains are largest for rare items and phrases
 
+The rule and these numbers are LIT-603's (§2.3, Table 1), where Mikolov et al.
+introduced it for skip-gram. On word analogies with 300-dimensional vectors,
+subsampling took NEG-5 from 38 to 14 minutes and 59 to 60%, and hierarchical
+softmax from 41 to 21 minutes and 47 to 55%. On phrase analogies it took NEG-15
+from 27 to 42% and hierarchical softmax from 19 to 47%.
+
 ## Why speed and accuracy move together, which is the unusual part
 
 Most throughput interventions trade quality away. The argument that this one

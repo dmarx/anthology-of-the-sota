@@ -85,6 +85,11 @@ fine-tuned model at `α = 0.5`, accuracy under six distribution shifts rises by
 distribution falls by **at most 0.3 pp** and frequently improves. On ImageNet
 plus five derived shifts the paper reports 4–6 pp better under shift than prior
 work *and* 1.6 pp better on ImageNet itself.
+These are Wortsman et al.'s measurements on CLIP-family models in LIT-674, which
+proposed the interpolation (released as WiSE-FT) and is where the `α = 0.5`
+default comes from: the paper recommends it when nothing is known about the
+deployment distribution, and also reports 0.8 to 3.3 pp over standard
+fine-tuning on seven transfer datasets.
 
 A method that dominates one of its endpoints and costs nothing is not a knob to
 consider; it is what to do unless something rules it out.

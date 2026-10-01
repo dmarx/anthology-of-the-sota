@@ -110,6 +110,13 @@ NeurIPS 2019, §2–3.
 
 ## Why this is `Active` on one paper
 
+Both cautions originate in LIT-725, the paper that defined infidelity and
+max-sensitivity: it states the constant-explanation minimiser itself, proves in
+Propositions 2.2–2.5 that several published methods are each infidelity-optimal
+for some perturbation, and shows SHAP winning under SHAP's own perturbation.
+Turning those properties into "report the pair, and name `μ_I`" is this
+practice's reading of them rather than a sentence the paper writes.
+
 Most of it is not the kind of claim replication tests. The constant-explanation
 minimiser falls out of max-sensitivity's definition, and the perturbation
 dependence is proved rather than measured. What it costs to follow is a

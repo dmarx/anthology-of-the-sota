@@ -65,6 +65,12 @@ at token distance `n`:
 empirically it is estimated per layer as `ŝ[n] = 1/(N−n) · E[Σᵢ e_{i(i−n)}]`
 and averaged.
 
+The metric and the measurements below are from LIT-638, which defines
+attention resolution (§3.1) while designing its own encoding, xPos, and notes
+that `s[n]` and `R(s)` can be estimated "when we design Transformers". It
+reports per-layer averages at the training length and at twice it, on a
+24-layer model trained on a Pile subset (§4.3).
+
 **Measure it at two lengths, not one.** The whole content of the measurement
 is in the pair. At the 1024 training length and at 2048:
 

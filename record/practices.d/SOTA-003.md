@@ -28,7 +28,7 @@ to a bound on the *relative* change per step. That is why a range this narrow
 transfers across problems at all — it is not a coincidence, and it is the main
 practical argument for adaptive methods.
 
-The argument is LIT-001's own. Kingma and Ba show in §2.1 that Adam's
+The argument is [LIT-001](../literature.d/LIT-001.md)'s own. Kingma and Ba show in §2.1 that Adam's
 effective step is approximately bounded by the stepsize α, which they read as
 a trust region around the current parameters, and that it is invariant to
 rescaling the gradients; from that they argue the right order of magnitude of

@@ -44,7 +44,7 @@ therefore bounded in **every** layer, whatever `n` is. The premise of the
 first step is not an assumption about a particular model — it is a
 consequence of tokenisation plus global attention.
 
-LIT-653 proves both steps: the cap is its Lemma 2.1 and the boundedness of
+[LIT-653](../literature.d/LIT-653.md) proves both steps: the cap is its Lemma 2.1 and the boundedness of
 the logits its Theorem 2.2. It then measures the consequence on one trained
 single-head max-retrieval model, trained at 16 items and read at larger sizes
 with no parameter changed: accuracy falls from 98.6% at 16 items to 53.8% at

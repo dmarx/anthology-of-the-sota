@@ -40,7 +40,7 @@ batches into the same state and reproduce it; skipping alone would leave the
 damage already done to the weights and the optimizer moments in place. Both
 together are what makes the recovery reliable, and PaLM reports using it.
 
-The procedure is LIT-069's, reported as what worked rather than as a studied
+The procedure is [LIT-069](../literature.d/LIT-069.md)'s, reported as what worked rather than as a studied
 method. The 540B model spiked roughly 20 times despite gradient clipping, at
 irregular intervals and sometimes late, and never in the smaller models; the
 authors restarted from a checkpoint about 100 steps before each spike and

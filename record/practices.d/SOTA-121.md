@@ -90,7 +90,7 @@ carry over. Under that recipe the authors saw stable training at nearly the
 same optimal learning rate as AdamW and better downstream evaluations, and
 adopted it for every model in the series, at 90M and 0.6B.
 
-That observation is LIT-119's, and it is the whole of what the blogpost
+That observation is [LIT-119](../literature.d/LIT-119.md)'s, and it is the whole of what the blogpost
 contributes to this practice: Muon with Liu et al.'s two modifications,
 tested against AdamW on Falcon-H1-Tiny, trained stably at nearly the same
 optimal learning rate and evaluated better. It is reported in a sentence, with
@@ -128,8 +128,8 @@ constant decoupled weight decay fixing the equilibrium weight norm, and
 recovers 20–30% by pinning the norms instead. If that holds up outside its
 authors' group it changes this section again.
 
-The same study is also the comparison with SOAP (SOTA-168), the other
-matrix preconditioner in the record. Tuning both separately, LIT-156 found
+The same study is also the comparison with SOAP ([SOTA-168](SOTA-168.md)), the other
+matrix preconditioner in the record. Tuning both separately, [LIT-156](../literature.d/LIT-156.md) found
 Muon best at 1–4× the Chinchilla data-to-model ratio, but overtaken by SOAP
 (and Kron) at 8× on its 130M and 520M models and at 16× on 130M and 300M; at
 1.2B both fall to about 1.1× over AdamW. So the choice of Muon over SOAP here

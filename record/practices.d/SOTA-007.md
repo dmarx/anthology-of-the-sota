@@ -46,7 +46,7 @@ unknown token and the model can neither read nor produce it — names, numbers,
 morphology, code, any language with productive compounding. A character-level
 vocabulary is open and pays for it in sequence length.
 
-The recommendation originates in LIT-003, written for neural machine
+The recommendation originates in [LIT-003](../literature.d/LIT-003.md), written for neural machine
 translation with RNN encoder-decoders on WMT tasks. There the standard fix for
 out-of-vocabulary words was to back off to a dictionary outside the model.
 Sennrich et al. instead encoded rare and unknown words as sequences of subword

@@ -73,7 +73,7 @@ exactly that: high masking "largely eliminates redundancy, thus creating a
 task that cannot be easily solved by extrapolation from neighboring patches".
 
 The diagnosis in three parts (architecture, information density, the
-decoder's role) is LIT-601's opening argument (§1), and the density part is
+decoder's role) is [LIT-601](../literature.d/LIT-601.md)'s opening argument (§1), and the density part is
 the reason it gives for an optimum of 75%, which it calls "surprisingly high"
 and which is five times BERT's 15%. The paper argues the link; it does not
 measure either signal's redundancy.

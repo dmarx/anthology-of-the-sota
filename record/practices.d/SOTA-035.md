@@ -33,7 +33,7 @@ the run survive *individual* anomalous batches, which is a narrower and more
 useful claim: one pathological sequence cannot take a step large enough to
 leave the basin the run is in and destroy hours of progress.
 
-The norm-rescaling form is LIT-037's (Algorithm 1): if the gradient's norm
+The norm-rescaling form is [LIT-037](../literature.d/LIT-037.md)'s (Algorithm 1): if the gradient's norm
 exceeds the threshold, scale it down to the threshold and keep its direction.
 The paper derives it from geometry. Where gradients explode the error surface
 has a steep wall, a full step at the wall throws the iterate across the
@@ -55,7 +55,7 @@ The threshold. Set above the typical norm it clips rarely and costs nothing;
 set below, it clips constantly and quietly changes the optimisation — every
 step is then rescaled, so the effective learning rate is set by the threshold
 rather than by the schedule, and the run trains slowly for a reason that looks
-like a bad learning rate. LIT-037's heuristic is to set the threshold from
+like a bad learning rate. [LIT-037](../literature.d/LIT-037.md)'s heuristic is to set the threshold from
 the average gradient norm over a sufficiently large number of updates, and it
 found training "not very sensitive" to the choice for a given task and model
 size, at the scale of 2012 recurrent networks.

@@ -59,7 +59,7 @@ implement beats an optimum you cannot.
 
 ## What was actually shown
 
-The controls are LIT-456's, run on NanoGPT and WikiText-2 at 118M tokens,
+The controls are [LIT-456](../literature.d/LIT-456.md)'s, run on NanoGPT and WikiText-2 at 118M tokens,
 alongside its theorems placing them outside the LMO framework and its
 random-feature analysis of optimal step sizes.
 

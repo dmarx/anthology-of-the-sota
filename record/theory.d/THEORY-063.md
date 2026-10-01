@@ -66,7 +66,7 @@ The reading the source offers is that transformers rotate semantic content
 vocabulary geometry and the geometry of what the model actually computes are
 different geometries, and the difference is the contextualization.
 
-Every number above is LIT-526's. Its instrument is the Spectral Center of
+Every number above is [LIT-526](../literature.d/LIT-526.md)'s. Its instrument is the Spectral Center of
 Mass, the fraction of eigendirections of `Σ` at which half a direction's mass
 has accumulated. The anti-concentration result has model-level `p = 3.8×10⁻⁹`
 against the uniform baseline, and the static contrasts concentrate at

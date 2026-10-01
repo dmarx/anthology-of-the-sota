@@ -71,14 +71,14 @@ parameters between axes, on a STEM-heavy mix:
 - KV heads: more KV heads, paid for out of the MLP, helped up to a point;
   the baseline remained best.
 
-These ablations, and the rule drawn from them, are LIT-119's. The depth
+These ablations, and the rule drawn from them, are [LIT-119](../literature.d/LIT-119.md)'s. The depth
 result was not unanimous there: BBH favoured the shallow configuration, and
 the authors chose to weight English commonsense (HellaSwag) because their
 STEM-heavy mix would lag on it anyway.
 
 ## Against depth-first scaling
 
-SOTA-190 states the same preference from Tay et al.'s T5 experiments: at
+[SOTA-190](SOTA-190.md) states the same preference from Tay et al.'s T5 experiments: at
 matched quality, deep-narrow configurations need fewer parameters and FLOPs
 (Small 16L comparable to Base at 134M against 223M parameters), with
 parallelism as the limit. Nobody ran the two side by side; they are separate

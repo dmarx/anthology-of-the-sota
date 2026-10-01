@@ -75,7 +75,7 @@ normalizing afterwards fixed the numbers, the constraint would just be
 changing what you measure. It does not, so the constraint is changing what
 gets learned.
 
-The measurements are LIT-472's, a by-product of its nGPT comparison: a
+The measurements are [LIT-472](../literature.d/LIT-472.md)'s, a by-product of its nGPT comparison: a
 post-hoc spectral inspection of the trained GPT baseline against the
 normalized model at matched parameter count, beside the headline result that
 nGPT reaches the same loss in 4×, 10× and 20× fewer tokens at 1k, 4k and 8k

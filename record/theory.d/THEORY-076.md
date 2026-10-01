@@ -75,7 +75,7 @@ move": the maximum stable learning rate's scaling exponent in width is zero.
 Under SP it is `−1`, so a rate at the edge of stability on the narrow model
 is above that edge on the wide one, by the width ratio.
 
-The whole of this is LIT-548's derivation: it defines the abc-family of
+The whole of this is [LIT-548](../literature.d/LIT-548.md)'s derivation: it defines the abc-family of
 parametrizations, proves the stability conditions (Theorem 3.3) and the
 Dynamical Dichotomy, shows SP needs an `O(1/n)` rate and is then a kernel
 (Theorem 4.1), and identifies µP as the unique stable member in which every

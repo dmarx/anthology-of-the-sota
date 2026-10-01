@@ -43,7 +43,7 @@ is the factor that makes the initialisation-time variance independent of head
 dimension, which is why it is the same in every implementation and why nobody
 tunes it.
 
-The practice originates in LIT-008, which defines scaled dot-product attention
+The practice originates in [LIT-008](../literature.d/LIT-008.md), which defines scaled dot-product attention
 as `softmax(QKᵀ/√d_k)V`, with the scaling part of the operation rather than a
 trick applied to it. Its footnote is the argument above: with `q` and `k`
 components independent, mean 0 and variance 1, `q·k` has variance `d_k`. The

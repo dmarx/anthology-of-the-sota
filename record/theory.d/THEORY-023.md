@@ -52,7 +52,7 @@ localized-sensitivity result in [THEORY-020](THEORY-020.md):
 4. **Residual sharpening** — irrelevant features are suppressed to finalize
    the output distribution.
 
-These are LIT-417's stages, proposed as its own interpretation of the
+These are [LIT-417](../literature.d/LIT-417.md)'s stages, proposed as its own interpretation of the
 layer-deletion and swap result, with only the last backed by a dedicated
 experiment of its own.
 

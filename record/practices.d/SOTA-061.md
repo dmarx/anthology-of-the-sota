@@ -47,12 +47,12 @@ the threshold is a *risk appetite* rather than an optimum. Nothing in
 across a smooth curve so that a decision can be made without re-deriving the
 curve each time.
 
-SOTA-062 answered the same question, how large a batch, from a different
+[SOTA-062](SOTA-062.md) answered the same question, how large a batch, from a different
 input: scale it with model size, sub-linearly. This practice reads the answer
 off measured sample efficiency instead, which is closer to the quantity that
 matters. The model-size rule is now superseded, because at a fixed token
 budget the dependence of critical batch size on model size very nearly
-vanishes (SOTA-258). No paper compared the two rules head to head; they are
+vanishes ([SOTA-258](SOTA-258.md)). No paper compared the two rules head to head; they are
 alternatives the record holds side by side.
 
 ## Cost and condition

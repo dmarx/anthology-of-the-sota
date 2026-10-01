@@ -58,7 +58,7 @@ SGNS the same exponent sets the distribution negatives are drawn from. Since
 SGNS implicitly factorizes shifted PMI ([THEORY-093](THEORY-093.md)), drawing negatives from count^0.75 is
 the same smoothing applied inside the objective.
 
-The rare-context argument is LIT-607's (§3.2), and the measurement beside it
+The rare-context argument is [LIT-607](../literature.d/LIT-607.md)'s (§3.2), and the measurement beside it
 is the paper's ablation of context-distribution smoothing, α = 0.75 against 1
 (Table 8d): PPMI gains between 0 and 9.2 points, SVD between −0.3 and +2.2,
 SGNS between 0 and 1.4.

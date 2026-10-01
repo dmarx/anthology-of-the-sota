@@ -42,7 +42,7 @@ More concurrent requests, which is the whole point: throughput at a given
 latency is set by how many sequences fit in memory at once, so recovering the
 waste converts almost directly into batch size ([SOTA-113](SOTA-113.md)).
 
-The technique and the recommendation both come from LIT-112, which introduced
+The technique and the recommendation both come from [LIT-112](../literature.d/LIT-112.md), which introduced
 PagedAttention as the memory manager of vLLM. Against FasterTransformer and
 Orca it measured 2–4× throughput at the same latency, and the gain grew with
 longer sequences, larger models and more complex decoding — the cases where

@@ -52,7 +52,7 @@ of `z_t`, the data with Gaussian noise added at level `t`. So:
 - **If not**, `p_w` changes sign. The objective is a signed mixture of ELBOs and
   is not a likelihood objective.
 
-The derivation is LIT-692's Theorem 1, proved in its Appendix C. The sorting of
+The derivation is [LIT-692](../literature.d/LIT-692.md)'s Theorem 1, proved in its Appendix C. The sorting of
 recipes into monotone and not comes from the same paper's Table 1, which
 derives the implied `w(λ)` of each common loss. That is how v-MSE with a cosine
 schedule and flow matching on the OT path both reduce to `e^{−λ/2}`, while EDM

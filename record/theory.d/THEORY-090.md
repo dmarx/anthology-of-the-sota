@@ -66,7 +66,7 @@ vector. If separable concepts are uncorrelated over words drawn uniformly
 from the vocabulary, the inverse covariance of the unembedding rows is one
 such product.
 
-Each step is a theorem in LIT-606: the probe identity (Theorem 2.2), the
+Each step is a theorem in [LIT-606](../literature.d/LIT-606.md): the probe identity (Theorem 2.2), the
 steering identity (Theorem 2.5), the map from one direction to the other under
 a causal inner product (Theorem 3.2), and the covariance form (Theorem 3.4,
 with `D = I` chosen). On LLaMA-2 7B, 26 of its 27 concepts show counterfactual

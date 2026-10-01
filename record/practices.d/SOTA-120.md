@@ -39,7 +39,7 @@ Loshchilov et al. (2017), [LIT-012](../literature.d/LIT-012.md) — [ARXIV-1711.
 
 ## What the source showed
 
-The recommendation is LIT-012's: Loshchilov and Hutter showed that L2
+The recommendation is [LIT-012](../literature.d/LIT-012.md)'s: Loshchilov and Hutter showed that L2
 regularization and weight decay coincide for plain SGD (up to a
 learning-rate rescaling) but not for Adam, whose adaptive denominator
 rescales the L2 gradient so that parameters with large gradient histories get

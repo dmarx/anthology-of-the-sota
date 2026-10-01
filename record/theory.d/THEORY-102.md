@@ -42,7 +42,7 @@ The paper's phrasing: *"the causal attention… allows them to predict the numbe
 of attendable tokens at each position."*
 
 The conjecture, the layer-by-layer probes and the MLM control below are all
-LIT-665's: it trained NoPos causal LMs against sinusoidal, learned and ALiBi
+[LIT-665](../literature.d/LIT-665.md)'s: it trained NoPos causal LMs against sinusoidal, learned and ALiBi
 encodings on WikiText-103 and the Pile, probed the 1.3B models for absolute
 position, and then removed the mask to see whether the mechanism went with it.
 

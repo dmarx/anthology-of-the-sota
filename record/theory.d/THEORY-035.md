@@ -61,7 +61,7 @@ step size viable.
 
 ## What was actually shown
 
-The evidence is LIT-461's: it measures progressive sharpening and the
+The evidence is [LIT-461](../literature.d/LIT-461.md)'s: it measures progressive sharpening and the
 `2/eta` ceiling empirically, and in Appendix F pits the `1/sharpness` rule
 against the fixed step `eta = 2/S0`.
 

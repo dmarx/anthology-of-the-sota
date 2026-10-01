@@ -45,7 +45,7 @@ Sixt, Granz and Landgraf (2019), [LIT-729](../literature.d/LIT-729.md) — ICML 
 ## The account
 
 The theorem, its geometric proof, the cosine-similarity-convergence measurement
-and both DeepLIFT arms are all LIT-729's. It proved the rank-1 result for the
+and both DeepLIFT arms are all [LIT-729](../literature.d/LIT-729.md)'s. It proved the rank-1 result for the
 `z⁺` family and traced the collapse layer by layer on a small CIFAR-10 net,
 VGG-16 and ResNet-50.
 

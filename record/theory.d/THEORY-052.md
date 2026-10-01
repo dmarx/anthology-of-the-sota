@@ -75,7 +75,7 @@ model "successfully activates on objects, but struggles to separate their
 instances," reaching 14.9 average against MAE-B's 21.6 on the same decoder
 and data.
 
-The control and the account are both LIT-488's. It finetunes Stable Diffusion
+The control and the account are both [LIT-488](../literature.d/LIT-488.md)'s. It finetunes Stable Diffusion
 and MAE end to end on masks of indoor furnishings and cars only, and they go
 on to segment people, animals, x-rays and paintings. Its §4.3 then puts DINO
 in place of the generative encoder in front of a frozen SD VAE decoder, which

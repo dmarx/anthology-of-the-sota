@@ -30,7 +30,7 @@ DDP. Sharding within a node and replicating across nodes — hybrid sharding —
 puts the expensive collective on the fast intra-node links and leaves the
 slow inter-node path carrying one gradient reduction per step.
 
-The dial is LIT-083's own: Zhao et al. call the number of ranks parameters
+The dial is [LIT-083](../literature.d/LIT-083.md)'s own: Zhao et al. call the number of ranks parameters
 are sharded over the sharding factor `F`, where `F=1` reduces to DDP, `F=W`
 is full sharding with each device holding `1/W` of the model, and
 `1 < F < W` is hybrid sharding. The recommendation originates there too —

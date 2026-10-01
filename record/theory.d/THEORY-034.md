@@ -45,7 +45,7 @@ Xiong (2026), [LIT-460](../literature.d/LIT-460.md) — [ARXIV-2603.01227](https
 
 ## What was actually shown
 
-The construction and its evidence are LIT-460's: it derives the half-space
+The construction and its evidence are [LIT-460](../literature.d/LIT-460.md)'s: it derives the half-space
 lattice, with meet and join, from linear attribute directions plus
 thresholds, and reports LLM embeddings encoding that lattice on WordNet
 sub-hierarchies.

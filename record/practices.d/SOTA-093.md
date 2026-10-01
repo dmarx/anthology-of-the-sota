@@ -41,7 +41,7 @@ it bought a redundant one. Past that point the larger batch is strictly
 better per step and the question becomes whether the extra samples are worth
 their wall-clock.
 
-In LIT-069 this is the second clause of the same sentence as SOTA-092:
+In [LIT-069](../literature.d/LIT-069.md) this is the second clause of the same sentence as [SOTA-092](SOTA-092.md):
 PaLM 540B's batch doubles at step 50k and again at step 115k, from 1M to 4M
 tokens, because larger batches are "beneficial later in training due to
 better gradient estimates". The paper cites Smith et al. (2018) and

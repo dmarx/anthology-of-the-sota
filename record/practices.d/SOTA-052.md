@@ -28,7 +28,7 @@ a variance slightly above unity per layer grows exponentially in depth, and
 slightly below shrinks to nothing. So the correction depth requires is a
 scaling *by depth*, not merely "smaller".
 
-The practice comes from LIT-084 (DeepNet), which derives that scaling from a
+The practice comes from [LIT-084](../literature.d/LIT-084.md) (DeepNet), which derives that scaling from a
 bound on the size of the model update rather than sweeping for it. Its
 residual is `LayerNorm(x·α + f(x))`, and the feed-forward, value and output
 projections are Xavier-initialised with gain `β`, which for a decoder-only

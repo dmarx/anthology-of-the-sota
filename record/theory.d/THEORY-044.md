@@ -65,7 +65,7 @@ measurements confirm it:
 The second is the one that matters, because the first alone would be
 consistent with consistently going the wrong way.
 
-Both statistics, and the paradox that opens the account, are LIT-475's §3
+Both statistics, and the paradox that opens the account, are [LIT-475](../literature.d/LIT-475.md)'s §3
 measurements on ViT-T on ImageNet-1K. They are offered there to explain its
 headline result: dropout switched off after the first stretch lowered ViT-T's
 training loss from 3.443 to 3.394, where standard dropout raised it to 3.885.

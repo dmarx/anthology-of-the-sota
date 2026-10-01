@@ -52,7 +52,7 @@ its probability collapse. Modelled as a mixture, each word can come from
 whichever topic suits it, and the document's topic proportions are a
 compact description of what it is about.
 
-LIT-592 derives the mixture rather than assuming it: words exchangeable within
+[LIT-592](../literature.d/LIT-592.md) derives the mixture rather than assuming it: words exchangeable within
 a document are, by de Finetti, conditionally i.i.d. given a latent parameter,
 which LDA takes to be the document's topic proportions. Its test is held-out
 perplexity, lowest for LDA at every number of topics on C. elegans abstracts

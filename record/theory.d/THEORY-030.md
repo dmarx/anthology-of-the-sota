@@ -39,7 +39,7 @@ Cohen et al. (2024), [LIT-453](../literature.d/LIT-453.md) — [ARXIV-2410.24206
 
 ## What was actually shown
 
-Everything in this section is from LIT-453, which derives central flows for
+Everything in this section is from [LIT-453](../literature.d/LIT-453.md), which derives central flows for
 gradient descent, Scalar RMSProp and RMSProp in full-batch training and tests
 them against real trajectories and against an ablated flow.
 

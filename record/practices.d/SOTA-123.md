@@ -32,7 +32,7 @@ from the other end ([SOTA-130](SOTA-130.md)). The argument: a model's memorizati
 than an SFT mix — so the constraint that forces SFT into a short final stage
 disappears, and the high-quality data can be present from the first token.
 
-The recipe originates in LIT-119, the Falcon-H1-Tiny blogpost, which
+The recipe originates in [LIT-119](../literature.d/LIT-119.md), the Falcon-H1-Tiny blogpost, which
 compared the two strategies head to head at 90M — SFT data mixed into
 pretraining from scratch against a base run followed by a separate SFT stage,
 and the same for reasoning traces — and adopted the from-scratch version for

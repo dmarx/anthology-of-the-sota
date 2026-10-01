@@ -41,7 +41,7 @@ Liang et al. (2026), [LIT-236](../literature.d/LIT-236.md).
 The claim has two halves and they are worth separating, because one is
 measured and the other is argued.
 
-Both come from LIT-236: the degeneracy construction is its derivation from a
+Both come from [LIT-236](../literature.d/LIT-236.md): the degeneracy construction is its derivation from a
 `k`-dimensional curvature-active subspace, and the accessibility result is its
 best-of-`N` measurement on Qwen2.5-Instruct from 0.5B to 7B.
 

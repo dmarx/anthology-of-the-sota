@@ -50,7 +50,7 @@ much less data … and using a much higher learning rate."
 
 ## The evidence offered, and why it does not settle the account
 
-The account and both experiments offered for it are LIT-680's: the quotations
+The account and both experiments offered for it are [LIT-680](../literature.d/LIT-680.md)'s: the quotations
 above are its argument for raising the softmax temperature, and it supports
 them with an MNIST student trained without one digit class and a speech
 student trained on 3% of the data against a full-data teacher.

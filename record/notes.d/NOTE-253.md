@@ -5,11 +5,27 @@ formerly:
 - NOTE-tmp11zjy
 paper: LIT-509
 title: 'The information-bottleneck rebuttal, and the assumption it makes visible'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-30'
+  note: >-
+    Corrected against both versions of the paper, following a re-reading done
+    for the sibling record (nucleation's reading of the same paper). An open route to the paper
+    exists (co-author Kolchinsky's publications page). The three-estimator
+    confirmation is qualified: Kraskov estimates only the layer entropy H(T),
+    on the original task only; softsign and softplus are shown with the KDE
+    only; the MNIST result is a single run. The linear "exact" MI is exact
+    given an imposed per-layer noise of variance 1, not noise-free. The
+    machine-precision control is not flat in the smallest tanh layers. Adds
+    the paper's own explanation of the gradient-SNR transition and the prior
+    work naming it, and the JSTAT version's differences. The old wording is
+    kept in the marked notes.
 date: '2026-09-21'
 summary: >-
-  Read from the ICLR 2018 version, supplied by the record's owner because no
-  open route to the paper exists. Three claims tested, none general. The
+  Read from the ICLR 2018 version, supplied by the record's owner; co-author
+  Kolchinsky's publications page also links it. Three claims tested, none
+  general. The
   finding worth more than the headline is in Appendix C: the same `tanh`
   network, binned evenly in *net input* instead of evenly in *activity*, shows
   **no compression** — because `I(h;X)` in a deterministic network is infinite
@@ -25,14 +41,26 @@ causes generalization, compression comes from SGD's diffusion — and tests each
 in the setting that produced them, using the original authors' released code.
 None survives as a general statement.
 
+Read from the ICLR version. The 2019 JSTAT version of record, which the
+record's DOI names, changes framing and not results: it says the IB claims
+"reflect assumptions made to compute a finite mutual information metric",
+separates the noise assumption from the choice of estimator, and softens
+"ReLUs do not compress in general" to "do not always compress" (see
+[LIT-509](../literature.d/LIT-509.md)).
+
 ## Key results
 
 **The compression phase tracks the nonlinearity, not the learning.**
 Replicating the original 12-10-7-5-4-3-2 network with `tanh` reproduces the
 two phases. Swapping to ReLU, everything else held, `I(X;T)` increases
-monotonically in every hidden layer. Confirmed across three estimators —
-binning, the Kolchinsky-Tracey kernel density estimator, and the Kraskov
-`k`-nearest-neighbour estimator — and across four activation functions:
+monotonically in every hidden layer. The same split appears under three
+estimators — binning, the Kolchinsky-Tracey kernel density estimator, and
+the Kraskov `k`-nearest-neighbour estimator — though less independently than
+that sounds: the Kraskov estimator is used only for the layer entropy `H(T)`
+(equal to `I(X;T)` up to a constant only under homoscedastic noise), only on
+the original task (App. B.3); the MNIST result is KDE from "a single training
+run" (App. B.1); and softsign and softplus are shown with the KDE alone. The
+four activation functions, on the original task:
 
 | activation | shape | compresses? |
 |---|---|---|
@@ -54,7 +82,11 @@ training a saturating network through a binning estimator looks like.
 `tanh` network and the same training run, with bin edges at
 `tanh(linspace(-50, 50, N))` — evenly spaced in *net input* rather than in
 *activity* — shows **no compression in most layers**. At full machine
-precision the information is pinned at `log₂(P) = 12` and barely moves.
+precision the information in most layers is pinned at `log₂(P) = 12`; only
+the highest, smallest `tanh` layers compress, near the very end of training,
+"when the saturation of tanh is strong enough to saturate machine precision"
+(Fig. 15). *Corrected 2026-09-30; this read "is pinned at `log₂(P) = 12` and
+barely moves".*
 
 The reason is stated plainly: in a deterministic network the continuous
 `I(h;X)` is **infinite**, since `H(h|X) = -∞`. A finite number requires
@@ -80,14 +112,26 @@ fails on architectures that compute the same function.
 | **does not compress** | Fig 1B ReLU; Fig 3 linear | Fig 4A-B, linear, `Ni = P = 100` |
 
 The linear student-teacher setting is what makes this clean: mutual
-information is computed in closed form with no binning at all.
+information is computed in closed form with no binning — but not without a
+noise model. The analysis adds Gaussian noise of variance `σ²_MI = 1` to each
+hidden layer (§3, eq. 6), absent in training and testing, so the linear MI is
+exact *given that noise*, and is subject to the same reparameterization
+objection as everything else here. *Corrected 2026-09-30; this read "with no
+binning at all" and left the noise unstated.*
 
 **Stochasticity is not the cause.** `tanh` networks compress as much under
 full-batch gradient descent as under SGD. The gradient signal-to-noise
 transition the original paper ties compression to appears in ReLU networks
 that never compress, on MNIST, and in a 1-1-1 linear network where
 compression is impossible by construction — so the two-phase gradient
-behaviour is general and unrelated.
+behaviour is general and unrelated. The paper explains it (App. I): weights
+start small and must all grow, so early gradients agree and the mean is
+large; near a minimum the mean gradient "by definition goes to zero" while
+the per-example spread stays finite. The same two phases were described
+earlier as "transient and stochastic" (Murata 1998) and "search and
+convergence" (Chee & Toulis 2017). The SNR is computed over all training
+samples, not minibatches, and for the 1-1-1 model is shown under full-batch
+training too (Fig. 21).
 
 There is also a theoretical objection: the maximum-entropy argument is about
 the distribution of weights *across training runs*, while `H(X|T)` is
@@ -105,9 +149,9 @@ information is what fails.
 
 | id | claim | strength | support |
 |---|---|---|---|
-| C1 | The compression phase is a property of double-saturating nonlinearities under a binning/noise assumption | strong | replication with original code, three estimators, four activations, exact minimal model |
+| C1 | The compression phase is a property of double-saturating nonlinearities under a binning/noise assumption | strong | replication with original code, three estimators (Kraskov for `H(T)` on the original task only; MNIST a single run), four activations, exact minimal model |
 | C2 | Any finite `I(X;T)` for a deterministic network is an artifact of the analyst's noise model | **strong, and analytic** | `H(h|X) = -∞`; two binning schemes give opposite conclusions on one run |
-| C3 | Compression and generalization are not causally linked | strong | four-cell dissociation, with exact MI in the linear cases |
+| C3 | Compression and generalization are not causally linked | strong | four-cell dissociation, with MI in the linear cases exact given an imposed noise `σ²_MI = 1` |
 | C4 | SGD stochasticity does not cause compression | strong | full-batch GD compresses; SNR transition without compression in three settings |
 
 ## Limitations

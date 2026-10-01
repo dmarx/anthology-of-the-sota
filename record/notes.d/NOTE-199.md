@@ -5,14 +5,30 @@ formerly:
 - NOTE-tmp7om7u
 paper: LIT-450
 title: 'How do language models learn facts?'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-09-30'
+  note: >-
+    Corrected against the full text, following the re-reading done for the
+    sibling record (nucleation's reading of the same paper). The "inverse power law with exponent
+    between 1 and 2, roughly independent of population size" is withdrawn:
+    the sweep stops at 1, the plateau-minimising exponent (0.6–0.8) is the
+    population-independent one, and the final-loss-minimising one grows with
+    population. The schedule tested is a uniform warm-up on a subset of
+    individuals, and R1 is restated to it. The most/least-common frequency
+    dependence is marked as argued, plateau growth given as the fitted
+    0.43·N^0.81, C3–C6 marked single-seed, R3 given the paper's
+    seen-individual counter-result, and R4 the hallucination timing and
+    confidence. The old wording is kept in the marked notes.
 date: '2026-09-20'
 summary: >-
   Factual recall is learned in three phases, and the plateau between generic
   statistics and individual knowledge is the attention recall circuit being
   built — patching in a trained model's attention patterns removes the
-  plateau. Imbalanced data shortens the plateau and slows acquisition after
-  it, so a schedule from imbalanced to uniform beats either fixed choice.
+  plateau. Imbalanced data shortens the plateau and, the paper argues, slows
+  acquisition after it; a warm-up on a subset of individuals before training
+  on all of them beat the fixed distributions tried, in single-seed runs.
 ---
 
 # NOTE-199: How do language models learn facts?
@@ -27,10 +43,11 @@ attention-based circuit that recall depends on; patching a reference model's
 attention patterns into a training model removes the plateau entirely, and
 patterns drawn from progressively later in the plateau work progressively
 better. From that mechanism the paper derives a data-distribution trade-off
-with opposite signs on either side of the plateau, and turns it into a
-schedule that beats every fixed distribution tested. It also reports that
-hallucinations begin at the same moment knowledge does, and that fine-tuning
-absorbs new facts slowly while corrupting old ones quickly.
+with opposite signs on either side of the plateau, and tests a schedule — a
+warm-up on a subset of individuals, then all of them — that beats the best
+fixed distribution tried. It also reports that hallucinations begin with
+knowledge, and that fine-tuning on new individuals absorbs their facts slowly
+while corrupting old ones quickly.
 
 ## Key insight
 
@@ -69,10 +86,13 @@ finished.
 
 - **Three phases**: generic attribute-value statistics (short), plateau at
   exactly the no-knowledge baseline, then individual-specific knowledge.
-  **Plateau length grows almost linearly with population size**, which
-  supports a statistical account — the model must see an individual several
-  times to learn that values are individual-specific — over a pure
-  saddle-point account.
+  **Plateau length grows with population size**: "almost linearly" in the
+  text, fitted as `0.43·N^0.81` (R² = 0.998, 4k–256k, five seeds), which is
+  sublinear. The authors read the growth as supporting a statistical account
+  — the model must see an individual several times to learn that values are
+  individual-specific — over a pure saddle-point account; that is argued, not
+  tested against a saddle model. *Corrected 2026-09-30; this read "grows
+  almost linearly".*
 - **Attention patching removes the plateau.** Patterns from later reference
   checkpoints are better; patterns from *very early* training are worse than
   the untrained ones, because the model is then attending to attribute-type
@@ -80,20 +100,44 @@ finished.
 - **Attention to name tokens rises through the plateau**, measured at the
   position that tests recall — the direct signature of the extraction circuit
   forming.
-- **The trade-off**: plateau length is governed by the frequency of the most
-  common individuals; post-plateau acquisition speed by the frequency of the
-  least common. So imbalance shortens the plateau and slows what follows.
-- **Optimal fixed imbalance** is an inverse power law with exponent between
-  1 and 2, roughly independent of population size, and the optimum shifts
-  toward more imbalance as the plateau takes a larger share of the budget —
-  larger populations or shorter runs.
-- **A dynamic schedule beats the best fixed distribution**, minimising
-  plateau length and maximising acquisition rate in turn.
-- **Hallucinations emerge simultaneously with knowledge** — overconfident
-  predictions on unseen individuals begin exactly when individual-specific
-  knowledge does.
-- **Fine-tuning is a poor knowledge-insertion mechanism**: slow to absorb,
-  fast to corrupt existing parametric memories.
+- **The trade-off, as argued**: plateau length is governed by the frequency
+  of the most common individuals; post-plateau acquisition speed by the
+  frequency of the least common. So imbalance shortens the plateau and slows
+  what follows. §3 opens by stating this as a finding, but §3.1 derives it
+  as an "intuition"; neither dependence is isolated
+  experimentally, and what was measured is its consequences, below.
+- **Imbalance, measured** (single seed): individuals sampled ∝ `i^(−α)` with
+  `α ∈ {0, 0.2, …, 1}`, `α = 1` being Zipf. The `α` minimising plateau
+  length lies between **0.6 and 0.8, irrespective of population size**;
+  beyond it, imbalance hurts, "likely due to overfitting". The `α` minimising
+  *final* attribute loss is a different optimum and is not
+  population-independent: it grows with population and as the step budget
+  shrinks. *Corrected 2026-09-30. This read "Optimal fixed imbalance is an
+  inverse power law with exponent between 1 and 2, roughly independent of
+  population size"; no exponent above 1 was tried, and the two optima were
+  conflated.*
+- **A warm-up schedule beats the best fixed distribution** (single seed):
+  train uniformly on a subset of individuals for a few epochs, then uniformly
+  on all of them. Gains are largest for large populations; for 128k
+  individuals the best grid cell lies at the grid's edge. A control argues it
+  is not just training on fewer individuals: uniform training on a population
+  of 83k scores 97.72% on it, which is 63.26% counted over 128k, against
+  94.92% for the warm-up on 128k (App. E.2). No skewed
+  distribution annealed toward flat was run. *Corrected 2026-09-30. This read
+  "A dynamic schedule … minimising plateau length and maximising acquisition
+  rate in turn."*
+- **Hallucinations emerge with knowledge** — overconfident predictions on
+  unseen individuals begin "simultaneously" with individual-specific
+  knowledge (§4.1), "shortly after the plateau phase" in App. F.2. They are
+  less confident than predictions on seen individuals, so "can be detected to
+  some extent" (Fig. M). *Corrected 2026-09-30; this read "begin exactly
+  when".*
+- **Fine-tuning on new individuals is a poor knowledge-insertion
+  mechanism**: slow to absorb, fast to corrupt existing parametric memories
+  (within a few hundred steps); replay only partially mitigates it. The
+  paper's counter-result: fine-tuning on rare individuals *seen in
+  pre-training* raises their accuracy from about 50% to close to 70% without
+  the collapse (App. F.3, Fig. P).
 
 ## Claims
 
@@ -101,10 +145,10 @@ finished.
 |---|---|---|---|
 | C1 | Knowledge acquisition has three phases with a plateau whose length scales with population | strong | measured across population sizes, five seeds |
 | C2 | The plateau is the attention recall circuit forming | strong | patching intervention removes the plateau; attention-to-name rises through it; two independent signatures |
-| C3 | Imbalanced distributions shorten the plateau and slow subsequent acquisition | strong | swept over an inverse-power-law exponent at several population sizes |
-| C4 | A dynamic data schedule beats any fixed distribution | moderate | demonstrated for this task; the schedule is tuned in the same setting it is evaluated in |
-| C5 | Hallucinations arrive with knowledge rather than after it | moderate | co-occurrence in this synthetic setting, where "unseen individual" is exactly definable |
-| C6 | Fine-tuning corrupts existing knowledge faster than it adds new | moderate | measured here; a familiar phenomenon given a quantitative form in a controlled setting |
+| C3 | Imbalanced distributions shorten the plateau (up to an optimum) and slow subsequent acquisition | moderate | plateau shortening measured over `α ∈ [0, 1]` at several population sizes, single seed; the slowing is argued and seen only through final loss |
+| C4 | A subset-first warm-up beats the best fixed distribution tried | moderate | demonstrated for this task, single seed; the schedule is tuned in the same setting it is evaluated in |
+| C5 | Hallucinations arrive with knowledge rather than after it | moderate | co-occurrence in this synthetic setting, where "unseen individual" is exactly definable; single seed |
+| C6 | Fine-tuning on new individuals corrupts existing knowledge faster than it adds new | moderate | measured here, single seed; a familiar phenomenon given a quantitative form in a controlled setting; not seen when fine-tuning on individuals seen in pre-training |
 
 ## Method
 
@@ -123,8 +167,11 @@ learned as a function of when the reference snapshot was taken. Separately,
 track attention paid to name tokens at the recall position across training.
 
 For the distribution results: set individual occurrence probability to an
-inverse power law with exponent `a`, sweep `a` at several population sizes
-under a fixed step budget, and then schedule `a` over training.
+inverse power law with exponent `α`, sweep `α ∈ [0, 1]` at several
+population sizes and step budgets, and separately train uniformly on a subset
+of individuals for a set number of epochs before switching to uniform on all
+of them. No schedule over `α` was run. Everything after the three-phase
+figure is a single seed (App. B.3).
 
 ## Concepts
 
@@ -155,18 +202,21 @@ the schedule.
 
 ## Recommendations
 
-- **R1** — Start the training distribution imbalanced and flatten it, rather
-  than holding it uniform. *Topic:* data schedule. *Status:* experimental.
-  *Strength:* moderate. *Applies when:* the knowledge to be acquired is
-  spread over many rarely-occurring entities, which is the pretraining case.
+- **R1** — Warm up on a subset of the entities before training on all of
+  them, rather than holding one distribution fixed. *Topic:* data schedule.
+  *Status:* experimental. *Strength:* moderate. *Applies when:* the knowledge
+  to be acquired is spread over many rarely-occurring entities, which is the
+  pretraining case. *Corrected 2026-09-30; this read "Start the training
+  distribution imbalanced and flatten it", which the paper did not test.*
 - **R2** — Expect a plateau proportional to the number of entities, and do not
   read it as the run having failed. *Topic:* training dynamics. *Status:*
   experimental. *Strength:* strong. *Applies when:* training on factual
   recall.
-- **R3** — Do not add knowledge by fine-tuning. It is absorbed slowly and it
-  corrupts what is already there quickly. *Topic:* adaptation. *Status:*
-  experimental. *Strength:* moderate. *Applies when:* the goal is new facts
-  rather than new behaviour.
+- **R3** — Do not add knowledge about new entities by fine-tuning. It is
+  absorbed slowly and it corrupts what is already there quickly. *Topic:*
+  adaptation. *Status:* experimental. *Strength:* moderate. *Applies when:*
+  the goal is new facts rather than new behaviour. Fine-tuning on entities
+  seen in pre-training but rare was net-positive in the paper.
 - **R4** — Expect hallucination to arrive with knowledge, not as a later
   defect to be trained out. *Topic:* evaluation. *Status:* experimental.
   *Strength:* moderate. *Applies when:* measuring factual reliability during
@@ -177,8 +227,8 @@ the schedule.
 - **Should produce a practice** for R1 and a theory for C2. The record holds
   several curriculum practices ([SOTA-129](../practices.d/SOTA-129.md), [SOTA-130](../practices.d/SOTA-130.md), [SOTA-123](../practices.d/SOTA-123.md)) and all of
   them are curricula over *task stages*. This is a curriculum over the
-  distribution within a stage, with two measured quantities moving in
-  opposite directions as its justification.
+  distribution within a stage, justified by two quantities argued to move in
+  opposite directions, whose consequences were measured.
 - **Gives the record a mechanism for plateaus.** Loss plateaus appear
   throughout its training material as phenomena to schedule around; this is
   the first account of one as a component under construction, with an
@@ -197,6 +247,9 @@ the schedule.
   also the limit: nothing here is measured on a natural corpus.
 - The schedule is tuned and evaluated in the same setting, so C4's margin is
   optimistic.
+- Only the three-phase figure uses five seeds; every curriculum,
+  hallucination and fine-tuning result is a single seed, and the robustness
+  ablations are one seed each and qualitative.
 - The paper's own cited neighbour (Park et al.) reports that low diversity
   shortens plateaus *and* costs out-of-distribution generalisation. The
   schedule is proposed as mitigating the overfitting cost, and the

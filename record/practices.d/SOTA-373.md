@@ -82,7 +82,7 @@ justification is not a sweep: images are natural signals with heavy spatial
 redundancy, so a high ratio "largely eliminates redundancy, thus creating a
 task that cannot be easily solved by extrapolation from neighboring patches".
 
-The recommendation starts in LIT-601. He et al. trace masked autoencoding's
+The recommendation starts in [LIT-601](../literature.d/LIT-601.md). He et al. trace masked autoencoding's
 slow start in vision partly to information density — language is "highly
 semantic and information-dense", images have heavy spatial redundancy — and
 prescribe a high ratio as the remedy. Their ablation over the ratio, discussed

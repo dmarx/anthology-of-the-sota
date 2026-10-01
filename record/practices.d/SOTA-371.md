@@ -58,7 +58,7 @@ Newman et al. (2010), [LIT-600](../literature.d/LIT-600.md). Read as [NOTE-324](
 
 ## Evidence
 
-The measure and its validation both come from LIT-600. Newman et al. had nine
+The measure and its validation both come from [LIT-600](../literature.d/LIT-600.md). Newman et al. had nine
 annotators rate 237 LDA topics from Gigaword news and Internet Archive books,
 then scored the same topics with WordNet, Wikipedia and Google measures. Mean
 PMI over Wikipedia in 10-word windows reached Spearman ρ = 0.77 against the

@@ -45,7 +45,7 @@ Jumper et al. (2021), [LIT-583](../literature.d/LIT-583.md). Read as [NOTE-321](
 
 ## The practice
 
-Jumper et al. introduced this recipe in LIT-583. AlphaFold 2 predicted
+Jumper et al. introduced this recipe in [LIT-583](../literature.d/LIT-583.md). AlphaFold 2 predicted
 structures for about 350,000 unlabelled sequences, kept the confident ones,
 and retrained from scratch on those plus the PDB, under cropping and
 alignment subsampling. Figure 4a shows the self-distilled network improving

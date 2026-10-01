@@ -47,7 +47,7 @@ it. A number that is neither is a partial collapse, and its distance from
 `1/√d` is roughly how much of the sphere is being used.
 
 The measure, its two reference values and the Gaussian derivation of `1/√d`
-are from SimSiam, LIT-593 §4.1, which introduced it to show that its
+are from SimSiam, [LIT-593](../literature.d/LIT-593.md) §4.1, which introduced it to show that its
 no-stop-gradient variant had collapsed while the loss reported success.
 
 ## Why this rather than the loss

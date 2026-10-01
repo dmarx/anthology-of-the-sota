@@ -38,7 +38,7 @@ of augmentations is the task specification**. Choosing it is not
 preprocessing hygiene; it is deciding what the model is asked to become
 invariant to, and therefore what it is allowed to throw away.
 
-The claim and both measurements below are SimCLR's, LIT-591: it stripped
+The claim and both measurements below are SimCLR's, [LIT-591](../literature.d/LIT-591.md): it stripped
 contrastive learning to augment, encode, project and NT-Xent, then ablated
 the augmentations under ImageNet linear evaluation and concluded that the
 augmentation composition is the pretext task.

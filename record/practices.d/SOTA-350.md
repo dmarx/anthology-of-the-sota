@@ -38,7 +38,7 @@ Shchur et al. (2018), [LIT-581](../literature.d/LIT-581.md). Read as [NOTE-318](
 
 ## The practice
 
-Shchur et al. made this recommendation in LIT-581, from a re-evaluation of
+Shchur et al. made this recommendation in [LIT-581](../literature.d/LIT-581.md), from a re-evaluation of
 four GNNs under one shared protocol. On the Planetoid split GAT wins Cora and
 Citeseer. On another split of the same sizes GCN wins both, and over 100
 splits × 20 seeds GCN has the best average rank (2.3, against 2.7 for MoNet

@@ -52,7 +52,7 @@ Chang et al. (2009), [LIT-597](../literature.d/LIT-597.md). Read as [NOTE-323](.
 - **Report both beside the likelihood**, per model and per number of
   components
 
-Both tasks come from LIT-597, which introduced them and ran them with
+Both tasks come from [LIT-597](../literature.d/LIT-597.md), which introduced them and ran them with
 Mechanical Turk subjects on pLSI, LDA and CTM at 50, 100 and 150 topics over
 NYT and Wikipedia. CTM had the best held-out likelihood and the worst word-
 and topic-intrusion scores, while LDA usually did best with people.

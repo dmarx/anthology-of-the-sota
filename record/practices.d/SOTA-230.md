@@ -41,7 +41,7 @@ Dettmers et al. (2023), [LIT-378](../literature.d/LIT-378.md) — [ARXIV-2305.14
 
 ## The method
 
-The recipe is QLoRA, and it starts with LIT-378: Dettmers et al. proposed
+The recipe is QLoRA, and it starts with [LIT-378](../literature.d/LIT-378.md): Dettmers et al. proposed
 backpropagating through a frozen 4-bit base into 16-bit LoRA adapters, and
 measured 65B fine-tuning falling from more than 780GB of GPU memory to under
 48GB without degrading runtime or predictive performance against a 16-bit

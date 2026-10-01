@@ -41,7 +41,7 @@ authors' explanation is that this
 > may help to prevent catastrophic forgetting of the wide knowledge the model
 > acquired during the contrastive pre-training stage
 
-The recommendation comes from LIT-072's Table 3, a sweep of the text
+The recommendation comes from [LIT-072](../literature.d/LIT-072.md)'s Table 3, a sweep of the text
 encoder's learning rate while fine-tuning a contrastively pretrained
 image-text ViT into the OWL-ViT detector, with zero-shot quality measured on
 LVIS v1.0 val's rare categories. The paper measured the asymmetry and both

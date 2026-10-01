@@ -55,7 +55,7 @@ performance across selection methods, including methods that use no n-grams
 at all, such as manual curation.**
 
 The proxy, and the suggestion to use it before training, both come from
-LIT-087: Xie et al. define KL reduction in the same 10,000-bucket hashed
+[LIT-087](../literature.d/LIT-087.md): Xie et al. define KL reduction in the same 10,000-bucket hashed
 unigram-and-bigram space DSIR selects in, and report it tracking downstream
 performance across the selection methods they compare. The correlation is
 measured across a handful of methods at small model scale, and it is the

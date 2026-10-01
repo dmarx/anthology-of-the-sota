@@ -62,7 +62,7 @@ from input data." Each word is load-bearing:
 
 ## What it buys
 
-Both the method and the case for it come from LIT-379. Akyürek et al. defined
+Both the method and the case for it come from [LIT-379](../literature.d/LIT-379.md). Akyürek et al. defined
 test-time training this way, built the per-instance loss from the prompt's own
 demonstrations, and measured it against fine-tuned baselines on ARC-AGI and
 against standard few-shot prompting on BIG-Bench Hard:

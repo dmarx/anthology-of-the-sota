@@ -51,7 +51,7 @@ So the fix is not a better upsampler. Making the native path affordable —
 here, Gaussians on articulable shells instead of volume rendering — removes
 the defect by removing the stage that caused it.
 
-The rule comes from LIT-113, Gaussian Shell Maps. Prior 3D GANs used volume
+The rule comes from [LIT-113](../literature.d/LIT-113.md), Gaussian Shell Maps. Prior 3D GANs used volume
 representations too slow to render at training resolution, so they rendered
 small and upsampled in 2D; the paper samples 3D Gaussians on articulable shells
 around a template body, renders natively at 512x512 with no 2D upsampler, and

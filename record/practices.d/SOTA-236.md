@@ -53,7 +53,7 @@ That is what makes this a reframing rather than a better solver: **regress the
 the output.** Everything the old order required in advance is available
 afterwards.
 
-The inversion is first made in LIT-385 (DUSt3R), which casts pairwise
+The inversion is first made in [LIT-385](../literature.d/LIT-385.md) (DUSt3R), which casts pairwise
 reconstruction as pointmap regression with no calibration or pose supplied,
 and shows pixel matches and relative and absolute camera being recovered from
 the regressed 3D output rather than demanded before it.
@@ -72,7 +72,7 @@ pass, one to hundreds of views, producing camera parameters, point maps, depth
 maps and 3D point tracks together — **and beating methods that post-process
 with geometry optimisation**, in under a second.
 
-That second step is LIT-384: it reports state of the art across camera
+That second step is [LIT-384](../literature.d/LIT-384.md): it reports state of the art across camera
 parameter estimation, multi-view depth, dense point cloud reconstruction and
 3D point tracking from the one network, and shows pretrained VGGT improving
 downstream non-rigid point tracking and feed-forward novel view synthesis

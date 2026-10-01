@@ -57,7 +57,7 @@ over a long context needs **polynomially many** parameters at constant depth
 and **polylogarithmically many** at `log k` depth. Width can substitute for
 depth here, and the exchange rate is exponentially bad.
 
-Both the bound and the advice come from LIT-464. Its Theorem 1.1 proves,
+Both the bound and the advice come from [LIT-464](../literature.d/LIT-464.md). Its Theorem 1.1 proves,
 with no complexity conjecture assumed, that a constant-depth decoder-only
 transformer small relative to the prompt cannot solve `k`-sequential function
 composition, and its Corollary 1.2 pairs that with a `log k`-layer

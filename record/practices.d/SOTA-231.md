@@ -44,7 +44,7 @@ the paper reaches is all the linear layers in the transformer block — not
 attention alone, and not attention plus a chosen few. In their words, LoRA on
 all linear transformer block layers is *required* to match full fine-tuning.
 
-The rule comes from LIT-378, the QLoRA paper, where it is a side result of
+The rule comes from [LIT-378](../literature.d/LIT-378.md), the QLoRA paper, where it is a side result of
 the adapter hyperparameter sweep rather than of the quantization: Dettmers et
 al. could not replicate full fine-tuning performance on large base models with
 query/value adapters, found the total number of adapters to be the most

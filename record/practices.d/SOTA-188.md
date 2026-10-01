@@ -103,7 +103,7 @@ The paper's answer has two parts, and both are training-time:
   noise end is nearly unlearnable — so uniform sampling spends most of the
   compute where there is least to learn.
 
-Both halves originate in LIT-075, which derives `c_in` and `c_out` from the
+Both halves originate in [LIT-075](../literature.d/LIT-075.md), which derives `c_in` and `c_out` from the
 unit-variance requirement in its Appendix B.6 and fixes the log-normal at
 `P_mean = −1.2`, `P_std = 1.2`. Its evidence is a separate ablation of each
 change (Table 2, configs A–F) and the results they add up to: FID 1.79

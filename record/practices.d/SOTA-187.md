@@ -66,7 +66,7 @@ rewards. Moving to a perceptually-equivalent compressed space removes that
 spend before the expensive model ever sees the data, so the generative model
 works in a space whose dimensions it actually needs.
 
-The recommendation comes from LIT-062, which proposed the split for diffusion:
+The recommendation comes from [LIT-062](../literature.d/LIT-062.md), which proposed the split for diffusion:
 an autoencoder with a perceptual objective is trained once and frozen, the
 diffusion model is trained on its latents with conditioning introduced into
 the latent-space denoiser, and the result was substantially cheaper training

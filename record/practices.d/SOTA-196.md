@@ -53,7 +53,7 @@ both encoders "results in a big drop in `AP_rare^LVIS`" — **and increases
 
 One sweep, two measures, opposite gradients.
 
-That sweep is Table 3 of LIT-072, run while fine-tuning OWL-ViT for
+That sweep is Table 3 of [LIT-072](../literature.d/LIT-072.md), run while fine-tuning OWL-ViT for
 open-vocabulary detection, with LVIS v1.0 val's rare categories as the
 zero-shot measure because of their long tail. The practice was filed from it:
 the paper's sentence quoted above is the conclusion, and reporting the two

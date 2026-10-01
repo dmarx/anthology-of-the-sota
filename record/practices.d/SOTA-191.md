@@ -66,7 +66,7 @@ on four of the datasets tried and reaches state of the art on En-Vi machine
 translation. The paper's own proposal, AdaNorm, replaces them with an
 input-dependent transformation and beats LayerNorm on seven of eight.
 
-Both halves of that come from LIT-025, and so does the recommendation. The
+Both halves of that come from [LIT-025](../literature.d/LIT-025.md), and so does the recommendation. The
 backward-pass account rests on its detaching experiment, which keeps the
 forward computation identical, removes only the mean and variance derivatives
 from the backward pass, and loses performance. The case for removal is

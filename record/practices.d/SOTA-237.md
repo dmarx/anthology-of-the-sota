@@ -54,7 +54,7 @@ touch this failure at all.
 So: establish dense matches at a coarse level, refine the good ones, and let
 attention rather than a cost volume do the work.
 
-That recipe, and the argument against the detector, are LIT-387's. Sun et al.
+That recipe, and the argument against the detector, are [LIT-387](../literature.d/LIT-387.md)'s. Sun et al.
 proposed LoFTR as detector-free matching, credited the Transformer's global
 receptive field for dense matches in low-texture areas, and reported it
 outperforming the prior state of the art by a large margin and ranking first

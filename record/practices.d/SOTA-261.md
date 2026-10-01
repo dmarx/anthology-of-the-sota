@@ -52,7 +52,7 @@ That is the quantity with a meaning. `λ = 0.1` is not a policy held fixed
 across scales; it is a policy that drifts with whatever `η` and `S` happen to
 be, which is why the inherited constant keeps needing a local sweep.
 
-The reframing and the law that makes it usable come from LIT-443, which first
+The reframing and the law that makes it usable come from [LIT-443](../literature.d/LIT-443.md), which first
 recommended setting `λ` through `τ̃`. Bergsma et al. trained hundreds of muP
 models over a grid of model size, token budget, batch size and weight decay,
 took the optimal `τ̃` in each cell, and found it falling as a power law in

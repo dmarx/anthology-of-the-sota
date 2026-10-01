@@ -59,8 +59,8 @@ Prabhudesai et al. (2025), [LIT-442](../literature.d/LIT-442.md) — [ARXIV-2507
 
 ## The recommendation is a conditional, and both arms of it are the practice
 
-The recommendation and both of its arms come from LIT-442, which re-ran
-LIT-166's data-constrained scaling experiment on C4 with the objective swapped
+The recommendation and both of its arms come from [LIT-442](../literature.d/LIT-442.md), which re-ran
+[LIT-166](../literature.d/LIT-166.md)'s data-constrained scaling experiment on C4 with the objective swapped
 from autoregressive to masked diffusion — hundreds of models from 7M to 2.5B
 parameters, at 25M, 50M and 100M unique tokens and up to 800 epochs — and
 stated the result as a decision rule: compute-constrained, train

@@ -64,7 +64,7 @@ At epoch 20 this prunes 50% of CIFAR-10 with test accuracy slightly improved,
 and 25% of CIFAR-100 for about a point. (The abstract says that second figure
 is free; the conclusion says it costs a point. Quote the conclusion.)
 
-Both scores and the recommendation to compute them early are LIT-397's. Paul
+Both scores and the recommendation to compute them early are [LIT-397](../literature.d/LIT-397.md)'s. Paul
 et al. derive GraNd's bound on the removal effect, show EL2N tracking it after
 a few epochs, and measure the pruning above with EL2N averaged over ten
 ResNet18s at epoch 20, against forgetting scores that need the full run.

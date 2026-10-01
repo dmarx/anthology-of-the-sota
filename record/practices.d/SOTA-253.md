@@ -52,7 +52,7 @@ object becomes a scan rather than a training run: no labels for it, no
 fine-tune, no risk to anything the network already does. "One-shot" here
 means one *construction*, not one example.
 
-The factoring originates in LIT-111, OnePose, which estimates object pose with
+The factoring originates in [LIT-111](../literature.d/LIT-111.md), OnePose, which estimates object pose with
 no CAD model and no instance- or category-specific training: everything about
 the object lives in an SfM point cloud built from one scanned video, and a
 generically trained graph attention network matches 2D interest points in the

@@ -66,7 +66,7 @@ Xie et al. (2023), [LIT-391](../literature.d/LIT-391.md) — [ARXIV-2305.10429](
 
 ## The method
 
-This is DoReMi, and the recommendation originates with LIT-391: Xie et al.
+This is DoReMi, and the recommendation originates with [LIT-391](../literature.d/LIT-391.md): Xie et al.
 proposed producing domain weights with a small proxy trained under group DRO
 on excess loss, with no downstream task in the loop, and showed the weights
 transferring to a model 30x larger.

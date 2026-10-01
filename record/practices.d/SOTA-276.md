@@ -72,7 +72,7 @@ has to be compensated.
 The practical consequence is that adopting depth scaling is a one-line change
 for most of the optimizers the record recommends, rather than a re-derivation.
 
-The simplification is LIT-462's Takeaway 2, and this recommendation starts
+The simplification is [LIT-462](../literature.d/LIT-462.md)'s Takeaway 2, and this recommendation starts
 there: having derived its width-depth condition per optimizer for nine of
 them, the paper observes that for every one except SGD the result is
 width-scaling muP plus `α_l = Θ(1/L)`, and gives SGD its extra

@@ -102,7 +102,7 @@ it, scales the conservative 500 GT estimate linearly down to about 5 GT at
 repetition and forgetting listed as future work. The blogpost itself says
 multi-epoch training guided by the window was already explored for Falcon-H1,
 so the repetition argument is older than the rule as written here, and the
-record names Falcon-H1, LIT-120, as its origin. That report already makes the
+record names Falcon-H1, [LIT-120](../literature.d/LIT-120.md), as its origin. That report already makes the
 recommendation in a looser form: it "employ[s] an aggressive up-sampling
 strategy enabled by multi-epoch training" so that scarce high-quality corpora
 keep their influence, defines an epoch per data source, and says that by

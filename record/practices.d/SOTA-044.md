@@ -38,9 +38,9 @@ summary: >-
 
 ## Source
 
-Afroz et al. (2025), LIT-tmpiutyj — [ARXIV-2511.14124](https://arxiv.org/abs/2511.14124).
+Afroz et al. (2025), [LIT-tmpiutyj](../literature.d/LIT-tmpiutyj.md) — [ARXIV-2511.14124](https://arxiv.org/abs/2511.14124).
 
-LIT-tmpiutyj measured the difference this practice rests on. On an NVIDIA
+[LIT-tmpiutyj](../literature.d/LIT-tmpiutyj.md) measured the difference this practice rests on. On an NVIDIA
 L40S over PCIe 4.0 ×16, a 16 MB FP32 copy from host to device took 1.65 ms
 from pageable memory and 0.68 ms from pinned memory — 10.16 against
 24.74 GB/s — and the 8 MB FP16 and device-to-host rows show the same

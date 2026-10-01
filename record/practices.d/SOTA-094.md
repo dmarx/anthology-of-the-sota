@@ -67,7 +67,7 @@ choice.
 
 Nor is PaLM where this comes from. It states the reason in a clause, uncited,
 as something its readers already know, and the record cannot name the work
-that first argued it — so `introduced_by` is left empty (ADR-053) rather than
+that first argued it — so `introduced_by` is left empty ([ADR-053](../decisions.d/ADR-053.md)) rather than
 crediting PaLM with an origin it does not claim.
 
 ## Where it stops holding

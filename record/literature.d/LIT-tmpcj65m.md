@@ -20,7 +20,7 @@ keywords:
 implementations:
 - 'CoCoNet'
 summary: >-
-  Jangda et al. (2021), ARXIV-2105.05720 — CoCoNet (ASPLOS 2022). A DSL and
+  Jangda et al. (2021), [ARXIV-2105.05720](https://arxiv.org/abs/2105.05720) — CoCoNet (ASPLOS 2022). A DSL and
   compiler that treat computation and collectives as one program, so they can
   be fused and overlapped. Overlapping a tensor-parallel MatMul with its
   AllReduce in fine-grained chunks hides over 80% of the MatMul and runs
@@ -32,7 +32,7 @@ summary: >-
 
 # LIT-tmpcj65m: Breaking the Computation and Communication Abstraction Barrier in Distributed Machine Learning Workloads
 
-Jangda et al. (2021) — ARXIV-2105.05720 (ASPLOS 2022)
+Jangda et al. (2021) — [ARXIV-2105.05720](https://arxiv.org/abs/2105.05720) (ASPLOS 2022)
 
 ## Key takeaways
 

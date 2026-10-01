@@ -16,16 +16,16 @@ source:
 introduced_by:
 - LIT-tmpfktcz
 summary: >-
-  Korthikanti et al. (2022), LIT-tmpfktcz — ARXIV-2205.05198.
+  Korthikanti et al. (2022), [LIT-tmpfktcz](../literature.d/LIT-tmpfktcz.md) — [ARXIV-2205.05198](https://arxiv.org/abs/2205.05198).
 ---
 
 # SOTA-058: Use sequence parallelism for attention layers
 
 ## Source
 
-Korthikanti et al. (2022), LIT-tmpfktcz — ARXIV-2205.05198.
+Korthikanti et al. (2022), [LIT-tmpfktcz](../literature.d/LIT-tmpfktcz.md) — [ARXIV-2205.05198](https://arxiv.org/abs/2205.05198).
 
-Korthikanti et al., LIT-tmpfktcz, introduced the scheme and measured it. In
+Korthikanti et al., [LIT-tmpfktcz](../literature.d/LIT-tmpfktcz.md), introduced the scheme and measured it. In
 their accounting the replicated layer norms and dropouts are the `10sbh` term
 of per-layer activation memory that tensor parallelism cannot divide; split
 along the sequence, every term divides by the tensor-parallel degree. They
@@ -34,7 +34,7 @@ activation memory roughly in half, about 5x together, and on one layer of a
 22B model sequence parallelism alone takes the forward pass from 7.7 to
 7.2 ms — a gain they note is smaller than it could be because a
 reduce-scatter plus an all-gather executes slower than one all-reduce, though
-it moves the same bytes. Narayanan et al. (LIT-043), cited here before, does
+it moves the same bytes. Narayanan et al. ([LIT-043](../literature.d/LIT-043.md)), cited here before, does
 not mention sequence parallelism.
 
 ## What it is that gets parallelised

@@ -18,14 +18,6 @@ promote_when: >-
 title: 'Masked prediction transfers across modalities only after the masking ratio is rescaled to the signal''s information density'
 version: 3
 history:
-- version: 3
-  date: '2026-10-01'
-  note: >-
-    Corrected a misreading of LIT-601. The account said MAE documents linear
-    probing and fine-tuning putting the optimal ratio in different places. It
-    does not: its Figure 5 sweep finds 75% "good for both", and what differs
-    between the protocols is sensitivity — linear probing climbs steeply to
-    the optimum, fine-tuning is flat across 40–80%.
 - version: 2
   date: '2026-09-25'
   note: >-
@@ -41,6 +33,14 @@ history:
     asked for a cross-modality correlation and has to ask for capacity and
     strategy to be held fixed as well, or the correlation it finds will be
     confounded.
+- version: 3
+  date: '2026-10-01'
+  note: >-
+    Corrected a misreading of LIT-601. The account said MAE documents linear
+    probing and fine-tuning putting the optimal ratio in different places. It
+    does not: its Figure 5 sweep finds 75% "good for both", and what differs
+    between the protocols is sensitivity — linear probing climbs steeply to
+    the optimum, fine-tuning is flat across 40–80%.
 tags:
 - signal-structure
 - representation-and-encoding

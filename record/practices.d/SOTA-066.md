@@ -51,14 +51,14 @@ about how warmup moves with scale, and they were two halves of a bullet list
 that came from nowhere. A reader who found one and not the other would have
 had no reason to doubt it.
 
-## Why the relations still name LIT-052
+## Why the relations still name [LIT-052](../literature.d/LIT-052.md)
 
-Both `source` and `introduced_by` point at LIT-052 because that is the
+Both `source` and `introduced_by` point at [LIT-052](../literature.d/LIT-052.md) because that is the
 attribution this practice was filed under and rejected over, not because Tay
 et al. support it. Their paper is about model shape for downstream
 fine-tuning — the DeepNarrow strategy, which scales depth before any other
 dimension — and it says nothing about warmup at any width. The
-claim came from a takeaway that was credited to LIT-052 and belonged to no
+claim came from a takeaway that was credited to [LIT-052](../literature.d/LIT-052.md) and belonged to no
 paper anyone has found. With no source to move to, the relation is kept as
 the record of the false attribution: a reader who meets the claim credited
 to Tay et al. elsewhere can find here that the paper does not make it.

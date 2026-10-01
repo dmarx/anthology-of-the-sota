@@ -19,7 +19,7 @@ keywords:
 implementations:
 - TensorFlow
 summary: >-
-  Abadi et al. (2016), ARXIV-1603.04467 — the TensorFlow white paper (dated
+  Abadi et al. (2016), [ARXIV-1603.04467](https://arxiv.org/abs/1603.04467) — the TensorFlow white paper (dated
   November 2015). Describes TensorFlow's dataflow-graph interface and its
   execution from a single device to clusters; among its graph features are
   input operations that read from storage directly and queues that let input
@@ -28,7 +28,7 @@ summary: >-
 
 # LIT-tmpta146: TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems
 
-Abadi et al. (2016) — ARXIV-1603.04467. The preliminary white paper is
+Abadi et al. (2016) — [ARXIV-1603.04467](https://arxiv.org/abs/1603.04467). The preliminary white paper is
 dated November 9, 2015; the arXiv v1 is March 2016.
 
 ## Key takeaways
@@ -50,8 +50,8 @@ dated November 9, 2015; the arXiv v1 is March 2016.
 
 ## Standing in the anthology
 
-Filed as the origin of SOTA-079 (prefetch the next batch during compute).
-That practice had been credited to LIT-053, which postdates this by four
+Filed as the origin of [SOTA-079](../practices.d/SOTA-079.md) (prefetch the next batch during compute).
+That practice had been credited to [LIT-053](LIT-053.md), which postdates this by four
 years and does not measure prefetching. This paper does not measure it
 either: it describes the mechanism as a use of a framework feature, with no
 experiment behind it. It is the earliest published statement in an ML

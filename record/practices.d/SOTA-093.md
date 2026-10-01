@@ -34,7 +34,7 @@ implementations:
 
 Chowdhery et al. (2022), [LIT-069](../literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311).
 
-McCandlish et al. (2018), LIT-017 — ARXIV-1812.06162.
+McCandlish et al. (2018), [LIT-017](../literature.d/LIT-017.md) — [ARXIV-1812.06162](https://arxiv.org/abs/1812.06162).
 
 ## Known implementations
 
@@ -54,7 +54,7 @@ tokens, because larger batches are "beneficial later in training due to
 better gradient estimates". The paper cites Smith et al. (2018) and
 McCandlish et al. (2018) for that and does not test it.
 
-The record names McCandlish et al., LIT-017, as the origin, and as the
+The record names McCandlish et al., [LIT-017](../literature.d/LIT-017.md), as the origin, and as the
 evidence. "Better gradient estimates" is their gradient noise scale: the
 ratio of the per-example gradient variance to the squared true gradient,
 which sets the batch size past which more samples stop speeding up training.

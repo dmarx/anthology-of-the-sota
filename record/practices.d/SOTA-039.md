@@ -52,7 +52,7 @@ trained every size; that it showed warm restarts unnecessary is the record's
 reading, not a result in the paper.
 
 <!-- inactive-ok: LIT-042 — the origin of the single cycle, Superseded as a recommendation of restarts -->
-The single cycle comes from the paper it is usually set against. LIT-042
+The single cycle comes from the paper it is usually set against. [LIT-042](../literature.d/LIT-042.md)
 introduced cosine annealing as the schedule inside each restart cycle, and
 on WRN-28-10 for CIFAR-10 and CIFAR-100 it also ran the case with no restart
 at all, one cosine anneal over the full 200 epochs. That run "shows the best

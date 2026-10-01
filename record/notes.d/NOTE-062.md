@@ -142,8 +142,8 @@ large-batch recipes: `LIT-007`'s linear scaling with warmup is what you do
 
 ## Bearing on the record
 
-**Little is sourced to this paper.** SOTA-092 and SOTA-093 (small batches
-early, large batches late) now are, since the correction pass after #395
+**Little is sourced to this paper.** [SOTA-092](../practices.d/SOTA-092.md) and [SOTA-093](../practices.d/SOTA-093.md) (small batches
+early, large batches late) now are, since the correction pass after [#395](https://github.com/dmarx/anthology-of-the-sota/issues/395)
 found PaLM citing it for exactly that. Otherwise the anthology carries the
 downstream consequences of the noise scale without carrying its origin. `B_crit` appears in the scaling-law practices as an
 inherited quantity, and this is where it is defined and given a measurement.

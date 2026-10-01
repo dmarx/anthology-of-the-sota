@@ -29,7 +29,7 @@ summary: >-
 
 DeepSeek-AI (2026), [LIT-139](../literature.d/LIT-139.md) — DeepSeek-V4.
 
-Press, Smith and Lewis (2020), LIT-tmpkql17 — Shortformer.
+Press, Smith and Lewis (2020), [LIT-tmpkql17](../literature.d/LIT-tmpkql17.md) — Shortformer.
 
 ## The schedule
 
@@ -50,14 +50,14 @@ MRCR 1M at 83.5 for V4-Pro-Max and MRCR stable to 128K and degrading beyond.
 
 ## Where it comes from, and the test the record holds
 
-The schedule is older than either frontier report. BERT, LIT-670, is where
+The schedule is older than either frontier report. BERT, [LIT-670](../literature.d/LIT-670.md), is where
 it was first run: pretraining at 128 tokens for 90% of the steps and 512 for
 the rest, because "longer sequences are disproportionately expensive because
 attention is quadratic to the sequence length", with the short final stage
 there "to learn the positional embeddings". That is both halves of the
 reasoning above, in 2018, and the record names BERT as the origin.
 
-BERT used it only for speed. Shortformer, LIT-tmpkql17, is what tested it
+BERT used it only for speed. Shortformer, [LIT-tmpkql17](../literature.d/LIT-tmpkql17.md), is what tested it
 against training at the target length throughout, crediting BERT for the
 routine. On WikiText-103 with a 247M model and a final length of 3,072,
 starting at 128 tokens for the first 50 of 205 epochs gave 17.52 dev

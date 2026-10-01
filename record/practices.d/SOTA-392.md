@@ -70,10 +70,10 @@ Both procedures, and the table, come from [LIT-636](../literature.d/LIT-636.md),
 as the way to straight paths and uses reflow followed by distillation for its
 headline one-step result. The ordering recommended here, distillation first
 and reflow optional, is a reading of that paper's Table 1a, not advice the
-paper gives. That is why LIT-636 is this practice's source and not its
+paper gives. That is why [LIT-636](../literature.d/LIT-636.md) is this practice's source and not its
 origin: the paper supplies the numbers and argues for the opposite pipeline,
 and the record has found no paper that makes the recommendation, so
-`introduced_by` is left empty (ADR-053).
+`introduced_by` is left empty ([ADR-053](../decisions.d/ADR-053.md)).
 
 **Distillation does most of the work.** It takes the base model from 378 to
 6.18 on its own. Reflow before distillation improves that to 4.85, at the

@@ -11,17 +11,6 @@ status_note: >-
 title: 'Scale batch size with model size but sub-linearly'
 version: 3
 history:
-- version: 3
-  date: '2026-10-01'
-  note: >-
-    Re-sourced. Both relations named LIT-061 (Artetxe et al.), whose §3.1
-    only sets batch size and learning rate "according to the model size
-    following Brown et al. (2020)" — a borrowed setting, with no finding and
-    nothing about sub-linearity. The evidence is Kaplan et al. (LIT-028),
-    whose compute-optimal allocation grows batch far more slowly than model
-    size, with McCandlish et al. (LIT-017) for the mechanism; GPT-3's
-    Table 2.1 is the setting LIT-061 borrowed. The rule's status is
-    unchanged.
 - version: 2
   date: '2026-09-20'
   note: >-
@@ -35,6 +24,17 @@ history:
     the model-architecture blurb covers it. It also happens to be what lets
     the correction edge be declared, and saying so is better than not
     (ADR-035).
+- version: 3
+  date: '2026-10-01'
+  note: >-
+    Re-sourced. Both relations named LIT-061 (Artetxe et al.), whose §3.1
+    only sets batch size and learning rate "according to the model size
+    following Brown et al. (2020)" — a borrowed setting, with no finding and
+    nothing about sub-linearity. The evidence is Kaplan et al. (LIT-028),
+    whose compute-optimal allocation grows batch far more slowly than model
+    size, with McCandlish et al. (LIT-017) for the mechanism; GPT-3's
+    Table 2.1 is the setting LIT-061 borrowed. The rule's status is
+    unchanged.
 tags:
 - training-optimization
 date: '2026-08-24'
@@ -69,11 +69,11 @@ corrected_by:
 
 ## Source
 
-Kaplan et al. (2020), LIT-028 — [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361).
+Kaplan et al. (2020), [LIT-028](../literature.d/LIT-028.md) — [ARXIV-2001.08361](https://arxiv.org/abs/2001.08361).
 
-McCandlish et al. (2018), LIT-017 — [ARXIV-1812.06162](https://arxiv.org/abs/1812.06162).
+McCandlish et al. (2018), [LIT-017](../literature.d/LIT-017.md) — [ARXIV-1812.06162](https://arxiv.org/abs/1812.06162).
 
-The sub-linearity is LIT-028's. Its compute-optimal allocation (Eq. 1.7)
+The sub-linearity is [LIT-028](../literature.d/LIT-028.md)'s. Its compute-optimal allocation (Eq. 1.7)
 grows the model as `C^0.73` and the batch as `C^0.24`, and its Figure 3
 draws what that means over a billion-fold increase in compute: more than
 1,000,000× in model size, about 100× in batch, under 10× in serial steps.
@@ -81,19 +81,19 @@ The same paper measured critical batch size against loss at 3M and 85M
 parameters (Figure 10) and found it depends on the loss, not directly on
 model size — and Figure 3's own caption says the batch increase is drawn
 from the increase in data. The model-size reading is a projection along that
-frontier, which is the reading SOTA-258 later took apart.
+frontier, which is the reading [SOTA-258](SOTA-258.md) later took apart.
 
-LIT-017 is the mechanism. The gradient noise scale that sets the useful
+[LIT-017](../literature.d/LIT-017.md) is the mechanism. The gradient noise scale that sets the useful
 batch rises as the loss falls, and on LSTM language models of several sizes
 it was roughly independent of model size at a fixed loss; larger models
 reach larger noise scales only because they reach lower loss.
 
-Origin and evidence are the same paper here: LIT-028 does not write batch as
+Origin and evidence are the same paper here: [LIT-028](../literature.d/LIT-028.md) does not write batch as
 a function of model size, but its allocation is where the pairing first
 appears, and GPT-3 credits it (with McCandlish) for "larger models can
-typically use a larger batch size". This practice previously credited Artetxe et al. (LIT-061), which only sets
+typically use a larger batch size". This practice previously credited Artetxe et al. ([LIT-061](../literature.d/LIT-061.md)), which only sets
 batch size by model size "following Brown et al. (2020)". That setting is
-GPT-3's Table 2.1 (LIT-035): from 125M to 175B parameters — about 1,400× —
+GPT-3's Table 2.1 ([LIT-035](../literature.d/LIT-035.md)): from 125M to 175B parameters — about 1,400× —
 the batch went from 0.5M to 3.2M tokens, about 6×, chosen with the gradient
 noise scale measured during training and justified by citing Kaplan and
 McCandlish.

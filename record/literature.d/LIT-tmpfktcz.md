@@ -19,7 +19,7 @@ implementations:
 - 'Megatron-LM'
 - 'NeMo-Megatron'
 summary: >-
-  Korthikanti et al. (2022), ARXIV-2205.05198. Introduces sequence
+  Korthikanti et al. (2022), [ARXIV-2205.05198](https://arxiv.org/abs/2205.05198). Introduces sequence
   parallelism: the layer norms and dropouts that tensor parallelism leaves
   replicated are split along the sequence dimension, and the tensor-parallel
   all-reduces become an all-gather and a reduce-scatter that move the same
@@ -31,7 +31,7 @@ summary: >-
 
 # LIT-tmpfktcz: Reducing Activation Recomputation in Large Transformer Models
 
-Korthikanti et al. (2022) — ARXIV-2205.05198
+Korthikanti et al. (2022) — [ARXIV-2205.05198](https://arxiv.org/abs/2205.05198)
 
 ## Key takeaways
 

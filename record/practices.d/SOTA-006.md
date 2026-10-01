@@ -52,7 +52,7 @@ LayerNorm normalises across the feature dimension of a single example. No
 cross-example dependence, no running statistics, no train/eval divergence, and
 nothing that changes when the batch does.
 
-The recommendation to prefer it for sequence models is LIT-005's. Ba, Kiros
+The recommendation to prefer it for sequence models is [LIT-005](../literature.d/LIT-005.md)'s. Ba, Kiros
 and Hinton introduced LayerNorm as a transposition of batch normalisation
 that computes the statistics from one training case, so it "performs exactly
 the same computation at training and test times" and works at batch size one.
@@ -62,7 +62,7 @@ sequence is longer than any training sequence. On an attentive reader trained
 on the CNN question-answering corpus, LayerNorm inside the LSTM trained faster
 and reached a better validation result than recurrent batch normalisation.
 That was 2016 and about recurrent networks; the transformer
-(LIT-008) adopted LayerNorm a year later without arguing the choice, and
+([LIT-008](../literature.d/LIT-008.md)) adopted LayerNorm a year later without arguing the choice, and
 no source here argues it for transformers specifically.
 
 The practice this one sets itself against is [SOTA-004](SOTA-004.md), BatchNorm placed after

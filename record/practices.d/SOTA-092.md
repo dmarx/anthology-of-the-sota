@@ -34,7 +34,7 @@ implementations:
 
 Chowdhery et al. (2022), [LIT-069](../literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311).
 
-McCandlish et al. (2018), LIT-017 — ARXIV-1812.06162.
+McCandlish et al. (2018), [LIT-017](../literature.d/LIT-017.md) — [ARXIV-1812.06162](https://arxiv.org/abs/1812.06162).
 
 ## Known implementations
 
@@ -54,7 +54,7 @@ tokens) to the end at step 255k — and the paper credits the observation to
 Smith et al. (2018) and McCandlish et al. (2018), not to an experiment of its
 own.
 
-Of those two, the statement is McCandlish et al.'s, LIT-017, and this record
+Of those two, the statement is McCandlish et al.'s, [LIT-017](../literature.d/LIT-017.md), and this record
 names it as the origin. Across eight tasks they found the critical batch
 size rising by an order of magnitude or more over a run, with the gradient
 noise scale tracking it, and their line-search experiment on SVHN puts it in nearly PaLM's words: "Early in

@@ -51,13 +51,13 @@ standard attention's `Θ(Nd + N²)`. Against standard PyTorch attention on an
 A100 it measures generally 2–4×, and more with dropout and masking, which
 the paper attributes to the fusion.
 
-The fusion itself is older than LIT-074, which says so. Its background
+The fusion itself is older than [LIT-074](../literature.d/LIT-074.md), which says so. Its background
 cites earlier work fusing the mask into the softmax, and its appendix
 names Apex FMHA, which already ran the matmul, mask, softmax, dropout and
 second matmul as one CUDA kernel but stored the attention matrix for the
 backward pass; FlashAttention started from that code and added tiling and
 recomputation. The first paper to recommend fusing attention's operations is
-LIT-066, two years earlier. Ivanov et al. fused the scaled softmax with its
+[LIT-066](../literature.d/LIT-066.md), two years earlier. Ivanov et al. fused the scaled softmax with its
 dropout into one kernel and the attention input biases into another, as part
 of fusing every elementwise and normalisation chain in a BERT layer. They
 stopped at the matmuls: fusing an elementwise operator into a CUTLASS batched

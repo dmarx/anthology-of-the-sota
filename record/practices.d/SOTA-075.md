@@ -10,6 +10,7 @@ source:
 - LIT-056
 introduced_by:
 - LIT-056
+# inactive-ok-block: SOTA-155 — Proposed, named only to record why the comparison edge was removed
 # `compared_against: [SOTA-155]` removed in the correction pass after #395.
 # SOTA-155 attacks the same problem (a slow interconnect) by reducing the
 # frequency of synchronisation rather than the volume of each one. That makes

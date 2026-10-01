@@ -22,19 +22,21 @@ extends:
 - LIT-434
 implementations: []
 summary: >-
-  Ziegler et al. (2019), ARXIV-1909.08593. The first time the
+  Ziegler et al. (2019), [ARXIV-1909.08593](https://arxiv.org/abs/1909.08593). The first time the
   human-preference loop is run on a pretrained language model: a 774M GPT-2
   fine-tuned with RL against a reward model fit to human choices, with a KL
   penalty holding it near the pretrained model. On stylistic continuation,
   5,000 comparisons give a policy humans prefer 86% of the time over
   zero-shot. On TL;DR and CNN/DM summarization, 60,000 comparisons produce
   "smart copiers" that labelers like but that may be exploiting the labelers'
-  heuristics, the problem LIT-433 set out to fix.
+  heuristics, the problem [LIT-433](LIT-433.md) set out to fix.
+extended_by:
+- LIT-433
 ---
 
 # LIT-tmp1vzo9: Fine-Tuning Language Models from Human Preferences
 
-Ziegler, Stiennon, Wu, Brown, Radford, Amodei, Christiano and Irving (2019) — ARXIV-1909.08593
+Ziegler, Stiennon, Wu, Brown, Radford, Amodei, Christiano and Irving (2019) — [ARXIV-1909.08593](https://arxiv.org/abs/1909.08593)
 
 ## Key takeaways
 
@@ -43,7 +45,7 @@ Ziegler, Stiennon, Wu, Brown, Radford, Amodei, Christiano and Irving (2019) — 
   model is fit to those choices, as a separate network from the policy;
   the policy is fine-tuned against it with
   PPO. The comparison format is taken explicitly from Christiano et al.
-  (LIT-434), which had only been run in simulated environments: "Following
+  ([LIT-434](LIT-434.md)), which had only been run in simulated environments: "Following
   Christiano et al. [2017], we ask human labelers to pick which of several
   values … is the best response to a given input". What it adds for
   language is a KL penalty against the pretrained model, following Jaques et
@@ -68,9 +70,9 @@ Ziegler, Stiennon, Wu, Brown, Radford, Amodei, Christiano and Irving (2019) — 
 
 ## Standing in the anthology
 
-The middle step of the post-training lineage: LIT-434 built the loop for
+The middle step of the post-training lineage: [LIT-434](LIT-434.md) built the loop for
 control, this paper ran it on a language model, and Stiennon et al.
-(LIT-433), with four of the same authors, is the follow-up that says it is
+([LIT-433](LIT-433.md)), with four of the same authors, is the follow-up that says it is
 "most similar to" this one and fixes its failures — offline batches of
 comparisons instead of online collection, labelers checked for agreement
 with the researchers, separate policy and value networks, and larger models.

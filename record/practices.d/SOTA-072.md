@@ -46,7 +46,7 @@ scaler dropped that check with it, which is a real and easily-missed
 consequence of the switch.
 
 That check is where the practice starts, and it is older than the source.
-LIT-011, the mixed-precision training paper, names the hazard this section
+[LIT-011](../literature.d/LIT-011.md), the mixed-precision training paper, names the hazard this section
 opens with: an overflow during backpropagation puts infinities and NaNs in the
 weight gradients, which "will irreversibly damage the weights after an
 update". Its answer is to inspect the weight gradients for overflow, which it

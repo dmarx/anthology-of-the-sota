@@ -47,7 +47,7 @@ summary: >-
 
 Chowdhery et al. (2022), [LIT-069](../literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311).
 
-LIT-069 is the report of the phenomenon at scale. Training the 540B PaLM
+[LIT-069](../literature.d/LIT-069.md) is the report of the phenomenon at scale. Training the 540B PaLM
 model, the authors saw spikes in the loss roughly 20 times, despite gradient
 clipping being on, at highly irregular intervals and sometimes late into
 training; the smaller models did not show them. They found no principled
@@ -86,7 +86,7 @@ wants — can blur exactly the onset the restart is keyed to. Two different
 consumers of the same number, and the one nobody configures for is the one
 that would have caught the problem.
 
-## Against SOTA-069
+## Against [SOTA-069](SOTA-069.md)
 
 [SOTA-069](SOTA-069.md) watches the same quantity on a different scale: `exp(loss)`, where
 a spike that is small on the log axis is visible. This practice is the
@@ -94,7 +94,7 @@ watch PaLM reports keeping and acting on; that one is a choice of axis that
 makes the same event easier to see. They are compatible, and neither paper
 compared them.
 
-What this practice used to add over SOTA-069 — a validation-loss watch, on
+What this practice used to add over [SOTA-069](SOTA-069.md) — a validation-loss watch, on
 the argument that a validation spike which does not recover separates
 damage from a bad batch — had no source. PaLM's own ablation argues against
 the bad-batch reading in any case: the batches around a spike, replayed from

@@ -4,6 +4,13 @@ status: 'Active'
 title: 'Initialize layer norms with smaller variance (0.02) for stability'
 version: 3
 history:
+- version: 2
+  date: '2026-09-13'
+  note: >-
+    The 1/sqrt(2N) factor this body names and did not cite is Child et al.
+    (2019) §5.2, now carried in `introduced_by:` under ADR-029. The
+    claim is unchanged and so is the confusion flagged below, which fixing
+    would change what the practice asserts.
 - version: 3
   date: '2026-10-01'
   note: >-
@@ -12,13 +19,6 @@ history:
     moved from Child et al. to GPT-2, which stated the depth scaling two
     months earlier. The claim, and the confusion flagged below, are
     unchanged.
-- version: 2
-  date: '2026-09-13'
-  note: >-
-    The 1/sqrt(2N) factor this body names and did not cite is Child et al.
-    (2019) §5.2, now carried in `introduced_by:` under ADR-029. The
-    claim is unchanged and so is the confusion flagged below, which fixing
-    would change what the practice asserts.
 tags:
 # Retagged from the report of unbound lineage. This is an initialization rule
 # for stability, and `model-stability` names initialization in its blurb. It
@@ -39,7 +39,7 @@ source:
 introduced_by:
 - LIT-tmp1dapl
 summary: >-
-  Shoeybi et al. (2019), LIT-022 — ARXIV-1909.08053.
+  Shoeybi et al. (2019), [LIT-022](../literature.d/LIT-022.md) — [ARXIV-1909.08053](https://arxiv.org/abs/1909.08053).
 compared_against:
 - SOTA-051
 explained_by:
@@ -52,14 +52,14 @@ explained_by:
 
 ## Source
 
-Shoeybi et al. (2019), LIT-022 — ARXIV-1909.08053.
+Shoeybi et al. (2019), [LIT-022](../literature.d/LIT-022.md) — [ARXIV-1909.08053](https://arxiv.org/abs/1909.08053).
 
-Megatron-LM, LIT-022, states the recipe in exactly this form: weights drawn
+Megatron-LM, [LIT-022](../literature.d/LIT-022.md), states the recipe in exactly this form: weights drawn
 from `N(0, 0.02)`, then the weights immediately before each residual scaled
 by `1/sqrt(2N)`, `N` the number of transformer layers — and trains GPT-2-style
 models to 8.3B parameters with it. That is a report of what was used, not a
 measurement of what it buys; the paper runs no arm without it. Narayanan et
-al. (LIT-043), cited here before, says nothing about initialization.
+al. ([LIT-043](../literature.d/LIT-043.md)), cited here before, says nothing about initialization.
 
 ## What the smaller variance is protecting against
 
@@ -75,7 +75,7 @@ projections in GPT-2-style initialisations, and the same problem ReZero
 ([SOTA-051](SOTA-051.md)) attacks by starting the residual branch at literally zero.
 
 That factor has an author, and it is GPT-2. Radford et al. (2019),
-LIT-tmp1dapl §2.3, uses "a modified initialization which accounts for the
+[LIT-tmp1dapl](../literature.d/LIT-tmp1dapl.md) §2.3, uses "a modified initialization which accounts for the
 accumulation on the residual path with model depth", scaling the weights of
 residual layers by `1/sqrt(N)` with `N` the number of residual layers — the
 same quantity as `2·n_layers`, two residual layers per block. Child et al.

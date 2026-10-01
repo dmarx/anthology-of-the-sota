@@ -43,7 +43,7 @@ It is what makes a streaming format work at all ([SOTA-077](SOTA-077.md)): seque
 are only fast if somebody is reading ahead.
 
 The recommendation is older than the source. The TensorFlow white paper,
-LIT-tmpta146, describes queues between graph stages and names this as their
+[LIT-tmpta146](../literature.d/LIT-tmpta146.md), describes queues between graph stages and names this as their
 first use: input prefetched from disk while the previous batch is still being
 computed. It gives the mechanism and no measurement, so it is the origin and
 not evidence; the source below is cited for the pipeline the overlap runs in.

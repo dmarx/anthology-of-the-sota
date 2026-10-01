@@ -40,6 +40,11 @@ Huh et al. (2024), [LIT-458](../literature.d/LIT-458.md) — [ARXIV-2405.07987](
 
 ## Two claims, and the record should keep them apart
 
+Both come from [LIT-458](../literature.d/LIT-458.md): the measurement that vision and language models
+measure distances between datapoints more alike as they grow, and the
+conjecture, proved only for bijective observations, that they converge on a
+model of what generated the data.
+
 **The convergence is measured.** Vision models and language models agree
 increasingly about pairwise distances between datapoints as they get larger,
 and the agreement spans architectures, objectives and datasets. Prior results

@@ -54,6 +54,12 @@ arithmetic intensity is low and expert computation sits in the
 not. Optimising accuracy per FLOP alone optimises for the case that is not
 the constraint.
 
+That roofline analysis, of serving Qwen3-235B-A22B, is [LIT-196](../literature.d/LIT-196.md)'s, the NVIDIA
+paper that introduces LatentMoE and the two-axis framing. The architecture
+below is its proposal, and the claim that the saved budget raises quality per
+parameter rests on its design-space exploration to 95B parameters over 1T
+tokens.
+
 ## What to build
 
 - **Down-project the token** into a latent space of width d_l before the

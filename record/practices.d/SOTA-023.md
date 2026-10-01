@@ -31,6 +31,18 @@ summary: >-
 
 Shazeer (2019), [LIT-024](../literature.d/LIT-024.md) — [ARXIV-1911.02150](https://arxiv.org/abs/1911.02150).
 
+## What the paper showed
+
+Multi-query attention, and the advice to use it for decoding, come from
+[LIT-024](../literature.d/LIT-024.md). Its argument starts from a diagnosis: incremental decoding cannot
+parallelise across positions the way training does, so its speed "is limited
+by the memory bandwidth necessary to reload the large keys and values
+tensors", not by arithmetic. Sharing one key/value head across all query heads
+shrinks those tensors by the head count, and the paper reports much faster
+decoding at "only minor quality degradation" from the multi-head baseline, a
+cost stated qualitatively rather than bounded, which is the room GQA later
+found.
+
 ## Superseded
 
 Grouped-query attention ([SOTA-109](SOTA-109.md)) replaced this. GQA gives each

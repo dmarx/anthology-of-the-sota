@@ -104,6 +104,13 @@ rather than looking for a better trial.
 **Both halves are argument, not demonstration.** The source is a review with
 no new data. The negative half is strong because two of its four mechanisms
 are structural; the positive half is three stated advantages and a direction.
+Both halves originate in [LIT-482](../literature.d/LIT-482.md): it imports four mechanisms from the study
+of complex systems — non-linearity across scale, hysteresis, feedback in
+time and SUTVA violation — and argues from them that individual-level trials
+of social media are bound to be of limited value for collective questions,
+then proposes evaluating specific interventions on specific affordances,
+continuously and by triangulation, as the replacement. Its power-grid example
+shows the same null arising from both sides of a real effect.
 
 **The positive programme has now been run once.** [LIT-487](../literature.d/LIT-487.md) takes
 one affordance — Change.org's in-platform AI drafting tool — across a

@@ -55,6 +55,12 @@ asked. The interesting quantity is *how good this recipe can get* — the limit
 of its loss as its scaling variable goes to infinity. Fit
 `L(x) = A/x^α + E` and compare `E`.
 
+This is [LIT-441](../literature.d/LIT-441.md)'s evaluation protocol, proposed there rather than measured:
+the paper fits `L(N) = A/N^α + E` to its regularized recipe and
+`L(K) = A/K^α + E` to its ensembles, and reports every comparison as the
+asymptote — about 3.43 for parameter scaling, 3.34 for ensembling and 3.13 for
+the two composed, against 3.75 for the unregularized baseline.
+
 ## Why it matters rather than being bookkeeping
 
 Because the two orderings disagree. In the source, the ensembling recipe

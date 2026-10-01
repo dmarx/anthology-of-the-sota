@@ -57,6 +57,16 @@ So the recommendation is to model the prerequisite structure and sample
 accordingly — online over skill mixtures, in continual pretraining where the
 goal is many skills, and in fine-tuning where it is one.
 
+The recommendation originates with [LIT-392](../literature.d/LIT-392.md), which proposes both the framing
+and the sampler, Skill-It, and measures it in both regimes. On the synthetic
+LEGO task in continual pretraining it is 36.5 points more accurate than random
+sampling. On Natural Instructions in fine-tuning it cuts validation loss on the
+target skill by 13.6% against training only on that skill's own data, which is
+the prerequisite claim in its plainest form. Applied to RedPajama to continue
+pretraining a 3B model, it beats uniform sampling over data sources at 3B
+tokens using 1B. These are the abstract's figures; the record has not read
+the body.
+
 ## The axis this adds
 
 The record's `data-pipeline` practices answer **what to include** and **in

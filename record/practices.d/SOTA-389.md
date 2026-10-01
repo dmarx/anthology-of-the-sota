@@ -65,6 +65,11 @@ captions it trains on. **Generate those captions with a captioner that sees
 the video**, not by captioning frames and rewriting the frame captions into
 a paragraph.
 
+The recommendation is Movie Gen's ([LIT-626](../literature.d/LIT-626.md)), and that report is the only
+controlled comparison of it in the record: its caption ablation (§3.6.2,
+Table 8b) is the evidence below. HunyuanVideo, Wan and Open-Sora 2.0 adopted
+video-native recaptioning without one.
+
 Movie Gen compares the two at 5B, with the generator, data and budget
 fixed. The baseline captions three frames and rewrites the frame captions
 into one caption:

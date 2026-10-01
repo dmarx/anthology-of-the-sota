@@ -45,6 +45,10 @@ Goldberg and Shirtz (2025), [LIT-410](../literature.d/LIT-410.md) —
 
 ## What was actually shown
 
+Everything below is from [LIT-410](../literature.d/LIT-410.md): a distributional argument over COCA
+attestations, and four preregistered surveys (685 participants, plus 70 for
+Study 4) whose effects held on high-frequency phrases alone.
+
 **The form.** A unit with the internal syntax of a phrase — up to a complete
 sentence — appears in a slot reserved for a word: `a trickle-down policy`, `an
 'I'm not a witch' moment`, `a 'take music for granted' attitude`. All attested

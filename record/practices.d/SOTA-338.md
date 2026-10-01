@@ -65,6 +65,14 @@ To make a GAN converge in a fraction of the usual training:
 - **Keep differentiable augmentation**, reported as required for the best
   results
 
+The design is Sauer et al.'s Projected GAN, [LIT-562](../literature.d/LIT-562.md), which proposed it. With
+a FastGAN generator it passed StyleGAN2's best LSUN-Church FID after 1.1M
+images against 88M (Figure 4), and reported lower FIDs than StyleGAN2-ADA on
+large datasets, 3.39 against 7.32 on FFHQ (Table 3). Its feature-network
+ablation on Church (Table 2) is the basis for preferring a compact network:
+EfficientNet-Lite1 reached 1.65 against 4.40 for ResNet-50 and 12.38 for a
+ViT. All of these are FID.
+
 ## What is contested
 
 Every number behind this practice is FID. The discriminator is itself

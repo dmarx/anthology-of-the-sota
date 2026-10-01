@@ -41,6 +41,11 @@ to be added, because the constraint is already positional information —
 The paper's phrasing: *"the causal attention… allows them to predict the number
 of attendable tokens at each position."*
 
+The conjecture, the layer-by-layer probes and the MLM control below are all
+[LIT-665](../literature.d/LIT-665.md)'s: it trained NoPos causal LMs against sinusoidal, learned and ALiBi
+encodings on WikiText-103 and the Pile, probed the 1.3B models for absolute
+position, and then removed the mask to see whether the mechanism went with it.
+
 ## What it explains
 
 **That NoPos models work at all**, which is otherwise surprising: gaps of 0.05

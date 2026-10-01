@@ -56,6 +56,9 @@ Three changes, each read off the state-space view of linear models:
 
 ## What it measured
 
+The three changes are proposed together as Mamba-3 in [LIT-165](../literature.d/LIT-165.md), and every
+number here is that paper's own measurement against its own baselines.
+
 At 1.5B, **+0.6** downstream accuracy over the next best model — named as
 Gated DeltaNet — and the MIMO variant **+1.2** further, for +1.8 total.
 Across state-size experiments it matches Mamba-2's perplexity at **half the

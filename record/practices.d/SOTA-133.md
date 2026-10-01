@@ -39,6 +39,11 @@ paper reports a 1.25× compute advantage on scaling laws and under 2%
 inference-latency overhead, with the largest gains on multi-step reasoning
 and code. Kimi K3 ([LIT-131](../literature.d/LIT-131.md)) adopts it at 2.8T.
 
+The design and the scaling-law result both originate in [LIT-134](../literature.d/LIT-134.md), which
+proposes Attention Residuals as the depth-wise dual of attention over time
+and reports its largest gains as GPQA-Diamond +7.5, Minerva Math +3.6 and
+HumanEval +3.1 at the 48B scale.
+
 <!-- inactive-ok: SOTA-136 — a Proposed practice, named as part of the residual chain -->
 The sibling variation is [SOTA-136](SOTA-136.md): where this keeps one stream and lets a
 layer attend over its predecessors, manifold-constrained hyper-connections

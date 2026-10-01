@@ -65,6 +65,13 @@ the excess agreement above chance is bounded by `(1 − 1/(2N))^T` after `T`
 symbols: it decays geometrically, and after about `N² ln N` symbols it is
 gone.
 
+That calculation is [LIT-495](../literature.d/LIT-495.md)'s. Its Theorem 4.1 shows the agreement
+probability is set by a single irreducible representation of `S_N × S_N`, and
+Lemma 5.1 bounds that block's spectral norm by `1 − 1/(2N)` for a family
+built from transpositions assigned by coin flip. Theorem 5.1 turns this into
+the bound above, and Theorem 5.2 shows the `N² ln N` mixing time cannot be
+beaten.
+
 **The consequence is what makes this worth filing.** A learner that sees only
 statistics of the data — expectations, averages, correlations — is reading
 exactly the quantity that is decaying. Longer sequences do not give it a

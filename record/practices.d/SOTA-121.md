@@ -90,6 +90,13 @@ carry over. Under that recipe the authors saw stable training at nearly the
 same optimal learning rate as AdamW and better downstream evaluations, and
 adopted it for every model in the series, at 90M and 0.6B.
 
+That observation is [LIT-119](../literature.d/LIT-119.md)'s, and it is the whole of what the blogpost
+contributes to this practice: Muon with Liu et al.'s two modifications,
+tested against AdamW on Falcon-H1-Tiny, trained stably at nearly the same
+optimal learning rate and evaluated better. It is reported in a sentence, with
+no table or margin for the Muon-versus-AdamW comparison, which is why the size
+of the gain below comes from other sources.
+
 Conditions: the comparison here is at tiny scale with a µP-parameterised
 hybrid Mamba/attention model. The RMS matching is what makes the AdamW
 hyperparameters transferable; without it the learning rate has to be
@@ -120,6 +127,15 @@ its largest scale. What should not be quoted any more is the 2×.
 constant decoupled weight decay fixing the equilibrium weight norm, and
 recovers 20–30% by pinning the norms instead. If that holds up outside its
 authors' group it changes this section again.
+
+<!-- inactive-ok-block: SOTA-168 — Proposed, named as the other side of the comparison -->
+The same study is also the comparison with SOAP ([SOTA-168](SOTA-168.md)), the other
+matrix preconditioner in the record. Tuning both separately, [LIT-156](../literature.d/LIT-156.md) found
+Muon best at 1–4× the Chinchilla data-to-model ratio, but overtaken by SOAP
+(and Kron) at 8× on its 130M and 520M models and at 16× on 130M and 300M; at
+1.2B both fall to about 1.1× over AdamW. So the choice of Muon over SOAP here
+rests on production evidence at scale, not on that comparison, which favours
+SOAP as training runs further past Chinchilla.
 
 ## Which parameters the gain is actually paid on
 

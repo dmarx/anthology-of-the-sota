@@ -37,6 +37,14 @@ Xu et al. (2019), [LIT-580](../literature.d/LIT-580.md). Read as [NOTE-319](../n
 
 ## The practice
 
+Xu et al. proposed this aggregator as GIN in [LIT-580](../literature.d/LIT-580.md), with the proof that
+message passing is bounded by 1-WL and that sum followed by an MLP reaches the
+bound where mean and max do not. On REDDIT-BINARY and REDDIT-MULTI-5K with no
+node features, GIN-0 scores 92.4 and 57.5 and the mean variants sit at
+chance (50.0 and 20.0). On the other seven datasets GIN is best or tied,
+mostly within one standard deviation, and mean–MLP beats it on PTC, which is
+the third bullet.
+
 - **Sum, then MLP.** `h_v ← MLP((1 + ε)·h_v + Σ_{u∈N(v)} h_u)`. Fix ε = 0
   (GIN-0), which fit as well as learned ε and generalized slightly better
 - **Read out by summing** node states from every layer, and concatenate the

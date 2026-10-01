@@ -40,6 +40,13 @@ partitioning ZeRO-3 describes ([SOTA-030](SOTA-030.md)); FSDP is its integration
 PyTorch, with the sharding expressed as a wrapping of module units rather
 than as a separate runtime.
 
+The recommendation and its threshold are [LIT-083](../literature.d/LIT-083.md)'s. Zhao et al. compared FSDP with DDP on
+T5 models: at 611M and 2.28B parameters the two performed about the
+same, DDP ran out of memory on anything larger, and FSDP trained the 11B
+model. Their sharding factor `F` makes the relation exact — `F = 1` is full
+replication and reduces to DDP — so the choice is a setting on one axis
+rather than a switch between systems.
+
 ## Cost, and why the title says "when" rather than "always"
 
 The parameters have to be gathered before each unit's forward and again for

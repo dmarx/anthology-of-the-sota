@@ -64,6 +64,12 @@ task), **64.6%** LibriSpeech phone classification against 39.7 for MFCCs,
 skip-thought-level sentence representations without a word-level decoder, and
 an improvement on 4 of 5 DeepMind Lab tasks as an auxiliary loss.
 
+All of this is from [LIT-589](../literature.d/LIT-589.md), where the recommendation originates: it names and
+derives InfoNCE, proves that the loss's optimal score is the density ratio,
+and reports those four results through a linear probe on a strided-convolution
+encoder and a GRU chosen to be uninteresting, so that the gains are the
+objective's.
+
 ## What the negatives are for, and what they are not for
 
 This is the part most often inverted, so state it twice:

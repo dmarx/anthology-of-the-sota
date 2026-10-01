@@ -55,6 +55,12 @@ released as DiffuGPT and DiffuLLaMA.
 The converted models beat earlier diffusion LMs and are competitive with the
 AR models they came from.
 
+The recommendation to convert rather than train starts with [LIT-381](../literature.d/LIT-381.md). Gong et
+al. framed it as a question of supply, adapting the abundant AR checkpoints
+because diffusion LMs are hard to train from scratch at scale, and reported
+DiffuGPT and DiffuLLaMA competitive with their AR originals on language
+modeling, reasoning and commonsense benchmarks while gaining infilling.
+
 ## Why do it at all
 
 Parity is not a reason. If the converted model only matched the original,

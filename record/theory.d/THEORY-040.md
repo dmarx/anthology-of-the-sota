@@ -66,6 +66,12 @@ chance without changing anything else.
 
 ## What was actually shown
 
+The account, closed form included, is [LIT-471](../literature.d/LIT-471.md)'s: it derives `p^L` from a
+smoothly falling per-token cross entropy, then tests it on InstructGPT/GPT-3
+models from 350M to 175B parameters, whose 2-shot addition and multiplication
+outputs show emergence under Accuracy and smooth improvement under Token Edit
+Distance with the outputs unchanged.
+
 The mechanism was demonstrated three ways, and the third is the one that
 settles it. Rescoring GPT-3's fixed arithmetic outputs with Token Edit
 Distance removed the emergence. Rescoring LaMDA under Brier Score removed it

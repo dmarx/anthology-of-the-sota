@@ -72,7 +72,11 @@ position. VDM ([LIT-627](../literature.d/LIT-627.md)), Video LDM ([LIT-621](../l
 ([LIT-632](../literature.d/LIT-632.md)) all do this. **In a transformer over a compressed latent,
 attend over all space-time tokens at once.**
 
-CogVideoX compares the two in its video DiT (Fig. 8). The text reports
+The recommendation comes from CogVideoX ([LIT-622](../literature.d/LIT-622.md)), which adopts full 3D
+attention on the argument that under factorized attention a moving object in
+one frame cannot attend directly to itself in the previous frame, only
+through other patches (Fig. 5). It compares the two in its video DiT
+(Fig. 8). The text reports
 the whole result in two sentences. With factorized 2D+1D attention, "the
 FVD will become much higher than 3D attention in early steps", and
 factorized attention "is unstable and prone to collapse". The only setup

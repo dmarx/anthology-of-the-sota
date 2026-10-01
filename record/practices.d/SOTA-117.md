@@ -34,6 +34,17 @@ is known — which is why the backward case is the one with a name: the order
 is discovered by autograd, so the prefetch has to predict it from the
 forward's recorded sequence.
 
+Backward prefetching is [LIT-083](../literature.d/LIT-083.md)'s, and §3.3.2 gives the specific reason for
+it. FSDP runs both collectives on one process group, so in the backward pass
+the `ReduceScatter` for the current `FlatParameter` blocks the `AllGather`
+for the next, putting two exposed collectives on the critical path; FSDP
+issues the next `AllGather` first, using the reverse of the forward order,
+re-recorded every iteration, as its guess at the backward order. On
+GPT-175B, where communication weighs most, prefetching gave about an 18%
+speedup that held across cluster sizes, and the authors leave it on for
+every later experiment. The record's reading ([NOTE-003](../notes.d/NOTE-003.md)) lists no ablation
+of prefetching alone; §5.2 and Figure 6(b) are one.
+
 ## Cost
 
 Prefetching means two units' parameters are resident at once instead of one,

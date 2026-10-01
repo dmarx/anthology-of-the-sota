@@ -72,6 +72,13 @@ those features. Verify the text has them. Declare success.
 
 Every step of that worked on Change.org, and the outcome went the other way.
 
+That is what [LIT-487](../literature.d/LIT-487.md) found, and the practice is drawn from it: a
+difference-in-differences over Change.org's country-by-country rollout of its
+built-in drafting tool, with Australia as the control, showing the text
+features move as intended while the ten-signature share fell. Its design,
+access rather than use as the treatment over a staggered rollout, is the one
+the corollary below recommends copying.
+
 - The features — lexical diversity, readability, length — were chosen
   *because* of their strong predictive relationship to petition outcomes
   before the tool existed.

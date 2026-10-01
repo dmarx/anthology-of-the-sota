@@ -48,6 +48,14 @@ to the full model without tuning it: the paper beats the published
 BERT-large from a 13M-parameter sweep, and the published GPT-3 6.7B from a
 40M-parameter sweep at about 7% of the large model's pretraining cost.
 
+Both demonstrations are [LIT-148](../literature.d/LIT-148.md)'s, and so is the recommendation: the paper
+proposes µTransfer — parametrize in µP, tune a narrow proxy, copy the values
+to the full width untuned — as the way to tune a large model. It takes µP
+itself from Tensor Programs IV; what it adds, and what this practice rests on,
+is the empirical claim that the *optimal* hyperparameters, not only the
+largest stable learning rate, hold still across width, carried to Adam and
+Transformers.
+
 **The optimum transfers as a window, not a point, and the width of that
 window has now been measured.** [LIT-501](../literature.d/LIT-501.md) sweeps ten
 µP-coordinated learning rates over `[5×10⁻⁵, 5×10⁻⁴]` across four SiT sizes

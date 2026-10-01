@@ -75,6 +75,13 @@ model "successfully activates on objects, but struggles to separate their
 instances," reaching 14.9 average against MAE-B's 21.6 on the same decoder
 and data.
 
+The control and the account are both [LIT-488](../literature.d/LIT-488.md)'s. It finetunes Stable Diffusion
+and MAE end to end on masks of indoor furnishings and cars only, and they go
+on to segment people, animals, x-rays and paintings. Its §4.3 then puts DINO
+in place of the generative encoder in front of a frozen SD VAE decoder, which
+reaches 14.9 against Stable Diffusion's 30.9, and offers the
+invariance/equivariance contrast as its hypothesis for the gap.
+
 It also explains why scale is not the lever. MAE on **unlabeled ImageNet-1K
 alone** generalizes to art and x-rays, while DINO — a strong, heavily
 validated representation — does not group. The difference between them is the

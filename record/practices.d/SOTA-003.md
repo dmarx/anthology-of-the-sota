@@ -28,6 +28,16 @@ to a bound on the *relative* change per step. That is why a range this narrow
 transfers across problems at all — it is not a coincidence, and it is the main
 practical argument for adaptive methods.
 
+The argument is [LIT-001](../literature.d/LIT-001.md)'s own. Kingma and Ba show in §2.1 that Adam's
+effective step is approximately bounded by the stepsize α, which they read as
+a trust region around the current parameters, and that it is invariant to
+rescaling the gradients; from that they argue the right order of magnitude of
+α can often be known in advance. The recommendation starts there too, but as a
+single value rather than a range: "good default settings for the tested
+machine learning problems are α = 0.001", with β₁ = 0.9, β₂ = 0.999 and
+ε = 10⁻⁸. So the top of this range is the paper's default, and the 1e-4 lower
+end does not come from it.
+
 ## Where it does not transfer, which is most of what this record is about
 
 The number depends on batch size, on the schedule, and above all on the

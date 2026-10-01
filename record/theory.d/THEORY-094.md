@@ -63,6 +63,12 @@ Isotropy makes that matrix well conditioned, so the regression averages the
 noise down by √(d/n). The offset comes out clean even though no individual
 inner product is.
 
+Both steps are proved in [LIT-613](../literature.d/LIT-613.md) from the random-walk model: the nearly
+constant partition function (Lemma 2.1), the PMI relation (Theorem 2.2), and
+the √(d/n) shrinkage of noise in a relation's offset (Theorem 4.1). Its check
+that real embeddings fit the model is the partition function concentrating
+mostly within [0.9, 1.1] of its mean for its own vectors, GloVe and CBOW.
+
 ## What it explains
 
 - **Self-normalization.** Log-linear language models work when the

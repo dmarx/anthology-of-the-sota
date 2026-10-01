@@ -64,7 +64,9 @@ distribution. Almost every MLM since copied it.
 
 Two things undercut it.
 
-**The rule's own evidence was thin from the start.** BERT's only ablation of it
+**The rule's own evidence was thin from the start.** The rule is BERT's, [LIT-670](../literature.d/LIT-670.md), which
+adopted it to reduce the pretrain/fine-tune mismatch and fixed the selection
+rate at 15% without sweeping it. BERT's only ablation of it
 is Appendix C.2, whose table is headed "Masking Rates" and holds the selection
 rate at 15% while varying the mix. The 80/10/10 row scores **84.2** on MNLI and
 the 100/0/0 row scores **84.3** — the all-`[MASK]` condition is *already ahead*,
@@ -84,6 +86,11 @@ corruption nor to the prediction" — they neither remove context nor teach much
 and the loss on randomly-substituted tokens is slightly *higher* than on
 `[MASK]`, because the model must also work out whether a given input token is a
 corruption at all.
+
+The comparison and the recommendation to drop the mix both come from Wettig et
+al., [LIT-672](../literature.d/LIT-672.md), who ran it at a 40% rate and explained it with their own
+decomposition. BERT had tested the mix only at its 15% rate, where the two
+conditions were 0.1 apart.
 
 ## Conditions
 

@@ -34,6 +34,13 @@ corresponding slice of the update.
 ZeRO-1 gives each of the N ranks 1/N of the optimizer state, taking the
 per-rank cost to 4Ψ + 12Ψ/N — approaching a 4× reduction as N grows.
 
+The stage and its arithmetic come from [LIT-027](../literature.d/LIT-027.md), which introduces
+optimizer-state partitioning as the first of ZeRO-DP's three stages. The
+paper counts mixed-precision Adam at K = 12 bytes of FP32 optimizer state per
+parameter, which is where the 12 above comes from, and in its worked example
+a 7.5B-parameter model on 64-way data parallelism falls from 120 GB of model
+state per GPU to 31.4 GB.
+
 The reason this is the first stage to reach for is that it is close to free.
 The update becomes a reduce-scatter followed by an all-gather of the updated
 weights, and the total volume moved is the same as the all-reduce it

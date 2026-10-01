@@ -63,6 +63,11 @@ midtraining matters more than the headline: a memory-management improvement
 that washes out once the model has seen long contexts would be measuring
 something else.
 
+These results are [LIT-177](../literature.d/LIT-177.md)'s, the paper that introduces EDA and first makes
+this recommendation: it names the write-anchored correction as the limitation
+and tests the decoupled erase against the plain delta rule at both scales,
+through the 80B-token midtraining.
+
 The analysis is the part worth reading. Update analysis and memory-state
 probes show EDA allocating its cleanup path most strongly **where passive
 decay is weak** — which is what the mechanism predicts, and is the kind of

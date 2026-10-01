@@ -49,6 +49,10 @@ sampling quality, across a wide range of scales. Infilling is therefore an
 added capability rather than a trade, and the paper's own recommendation is
 to train autoregressive models with FIM by default.
 
+Both the measurement and the default are [LIT-124](../literature.d/LIT-124.md)'s: Bavarian et al. ran the
+transformation across a range of model scales, found no loss in left-to-right
+perplexity or sampling quality, and proposed FIM-by-default on that basis.
+
 ## The knobs it settles, and the one it does not
 
 Ablated here:

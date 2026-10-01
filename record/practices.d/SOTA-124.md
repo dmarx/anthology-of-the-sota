@@ -80,6 +80,15 @@ model overfitting to it, while one with a small epoch size will be memorised.
 The window is assumed to scale linearly with parameters, giving about 5 GT
 at 100M.
 
+The recommendation in the form stated here is [LIT-119](../literature.d/LIT-119.md)'s, the Falcon-H1-Tiny
+blogpost: it defines the window from the Falcon-H1 measurement, states the
+rule that a source can be repeated without limit when its epoch size exceeds
+it, scales the conservative 500 GT estimate linearly down to about 5 GT at
+100M, and calls the whole thing a hypothesis, with a deeper study of
+repetition and forgetting listed as future work. The blogpost itself says
+multi-epoch training guided by the window was already explored for Falcon-H1,
+so the repetition argument is older than the rule as written here.
+
 This decouples the ceiling on the high-quality fraction of a mix from the
 total training length, which is what [SOTA-123](SOTA-123.md) relies on. Falcon-H1-Tiny is
 offered as an implicit confirmation: SFT sources such as Tulu3 were repeated

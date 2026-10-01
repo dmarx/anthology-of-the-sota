@@ -55,7 +55,10 @@ upsamples each frame on its own. Both introduce flicker that the temporal
 generator cannot remove. **Fine-tune the decoder on video, and make the
 upsampler temporal.**
 
-Video LDM measures both, with the rest of the pipeline held fixed.
+Both fine-tunings are part of Video LDM's ([LIT-621](../literature.d/LIT-621.md)) recipe for building a
+video model on an image LDM: it trains the decoder's added temporal layers
+with a 3D-convolutional discriminator and temporally aligns its diffusion
+upsampler. It measures both, with the rest of the pipeline held fixed.
 
 **The decoder**, fine-tuned on video with a video discriminator. Reconstruction
 FVD, before → after:

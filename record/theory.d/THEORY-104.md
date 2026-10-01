@@ -49,6 +49,9 @@ set by how large those derivatives are.
 Guided sampling breaks the condition. The guided prediction is the unconditional
 prediction plus `s` times the difference between conditional and unconditional,
 so a large `s` amplifies the function *and everything derived from it*. The
+argument is [LIT-676](../literature.d/LIT-676.md)'s, offered in its Section 3 to explain why the fast samplers
+it benchmarked under guidance fell behind first-order DDIM, and it is the
+reason that paper's DPM-Solver++ goes multistep and stops at order 2. The
 paper's statement:
 
 > large guidance scales may amplify both the output and the derivatives of the

@@ -32,6 +32,16 @@ halving the dtype halves them. On a job whose step time is the collectives —
 which is the job that reached for FSDP in the first place ([SOTA-116](SOTA-116.md)) — that
 is often the larger effect.
 
+Both halves are in [LIT-083](../literature.d/LIT-083.md)'s §4.4. Keeping a low-precision copy beside the
+full-precision one normally adds memory, but FSDP holds only the local shard
+in full precision and gathers the unsharded `FlatParameter` in low
+precision, so the peak term for the largest unit falls from full-precision
+to low-precision bytes; and it can run every collective in low precision,
+which the paper says saves communication volume. The parameter-side
+technique is the standard one, which the paper credits to Micikevicius et
+al.; what originates here is its form under sharding. In §5.2 the 11B T5
+model reached significantly higher TFLOPS with BF16 on.
+
 ## The parameter worth naming
 
 The reduction dtype is a separate choice from the compute dtype, and it is

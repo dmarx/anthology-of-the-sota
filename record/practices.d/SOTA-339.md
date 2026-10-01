@@ -52,7 +52,11 @@ and the change is in **appearance** (style, colour, texture, season):
 
 ## What was measured
 
-On Cityscapes labels → photo, GAN-only scores 0.51 / 0.11 / 0.08 (per-pixel
+The practice is Zhu et al.'s CycleGAN, [LIT-564](../literature.d/LIT-564.md), which introduced the
+bidirectional cycle-consistency loss for unpaired translation and showed it
+across style transfer, object transfiguration, season transfer and photo
+enhancement. Its only quantitative ablation, on Cityscapes FCN scores, is
+what supports the cycle term against GAN-only training. On Cityscapes labels → photo, GAN-only scores 0.51 / 0.11 / 0.08 (per-pixel
 / per-class / IoU) and the full model 0.52 / 0.17 / 0.11. On photo →
 labels, 0.53 / 0.11 / 0.07 against 0.58 / 0.22 / 0.16. A cycle loss alone,
 with no adversarial term, is far worse in both directions.

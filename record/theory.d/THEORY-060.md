@@ -60,6 +60,12 @@ than descending together. Plot both against epoch and the two minima sit at
 different places, so the validation-loss minimizer carries non-zero
 calibration error *and* is past or short of the best refinement.
 
+That plot is [LIT-514](../literature.d/LIT-514.md)'s, for a ResNet-18 on CIFAR-10. The paper's variational
+form of the decomposition makes both terms cheap to estimate. Its tabular
+benchmark, 196 datasets on XGBoost, an MLP and RealMLP, finds the separation
+across model families. The mechanism in the next paragraph is the one it
+offers.
+
 **The proposed mechanism is about what fitting demands.** As the training set
 becomes well separated, the model has to make very confident predictions to
 keep *training* calibration error small — confidence is what a correct,

@@ -43,6 +43,13 @@ physical regularities. Below a threshold, the contacts are too noisy to
 place the fold, and refinement has nothing correct to refine. The result is
 a threshold rather than a slope.
 
+The threshold is [LIT-583](../literature.d/LIT-583.md)'s measurement, from its analysis of MSA depth:
+accuracy drops sharply below a median alignment depth of about 30 sequences
+and gains little above about 100 (Figure 5a), and removing both metagenomic
+databases costs 6.1 GDT, mostly from a few targets losing more than 20. The
+two-stage reading is the authors' hypothesis for that shape, not a separate
+experiment.
+
 ## What it explains
 
 - The sharp drop below about 30 sequences and the plateau above about 100

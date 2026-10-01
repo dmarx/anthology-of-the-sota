@@ -79,6 +79,11 @@ ordering is the whole thing, and [THEORY-059](../theory.d/THEORY-059.md) is why:
 matrix has a steep spectrum so rank 32 removes a lot of magnitude, while a
 quantization error has a flat one so the same rank removes almost nothing.
 Doing it the other way round is a published method that underperforms.
+The ordering is [LIT-512](../literature.d/LIT-512.md)'s: SVDQuant introduced decompose-then-quantize for
+4-bit diffusion transformers, and its PixArt-Σ ablation used LoRC, which puts
+the low-rank branch on the quantization error, as the control — LoRC came out
+suboptimal, decompose-then-quantize much better, and smoothing on top better
+again.
 
 **Rank 32 at 4 bits, rank 16 at 8 bits**, per-group symmetric quantization on
 both sides, group size 64 with 16-bit scales for INT4, group size 16 with FP8
@@ -116,7 +121,7 @@ of the same bound.
 
 ## Why `Active` on one source
 
-Because the reason is proved, not only measured. Proposition 4.1 bounds the
+Because the reason is proved, not only measured. [LIT-512](../literature.d/LIT-512.md)'s Proposition 4.1 bounds the
 output error by the magnitudes of weights and activations as well as their
 rounding errors, and Proposition 4.2 bounds a matrix's rounding error by its
 magnitude; Eckart-Young then makes the truncated SVD the optimal rank-`r`

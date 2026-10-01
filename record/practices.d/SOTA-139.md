@@ -31,6 +31,13 @@ synthetic tasks that can only be solved by attending across the whole
 window. The short stages are where most tokens are cheapest to process; the
 long stages teach the position-dependent behaviour the target length needs.
 
+What [LIT-139](../literature.d/LIT-139.md) supplies is the schedule as run, not a test of it: §4.2.2 gives
+4K → 16K → 64K → 1M over 32–33T tokens, with dense attention for the first
+1T tokens on Flash (longer on Pro) and sparse attention switched on at 64K
+after a short indexer warm-up, and the close reading ([NOTE-361](../notes.d/NOTE-361.md)) finds no
+ablation of the staging. The outcome it reports is a working 1M window, with
+MRCR 1M at 83.5 for V4-Pro-Max and MRCR stable to 128K and degrading beyond.
+
 ## Conditions
 
 Both sources are frontier-scale reports rather than controlled

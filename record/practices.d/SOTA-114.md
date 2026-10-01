@@ -34,6 +34,21 @@ intermediates on chip.
 The win is bandwidth, not arithmetic, which is why it is worth doing even
 though the fused kernel does *more* FLOPs ([SOTA-087](SOTA-087.md)).
 
+[LIT-074](../literature.d/LIT-074.md) is the evidence that full fusion pays in training. Its background
+names the limit of naive fusion: the intermediates still have to be written
+to HBM for the backward pass. Tiling and recomputation remove that, so one
+CUDA kernel runs the matmul, softmax, optional mask and dropout, and the
+second matmul, and Theorem 2 puts its HBM accesses at `Θ(N²d²M⁻¹)` against
+standard attention's `Θ(Nd + N²)`. Against standard PyTorch attention on an
+A100 it measures generally 2–4×, and more with dropout and masking, which
+the paper attributes to the fusion.
+
+[SOTA-088](SOTA-088.md) is the same recommendation reached from a different source and at
+a different scope. Ivanov et al. measured that transformer training as a
+whole is memory-bound and fused the elementwise, normalisation and dropout
+operations between the matmuls; this practice confines fusion to the
+attention chain. The cost below is shared by both.
+
 ## Cost
 
 Fused kernels are rigid. Each supported combination of mask type, dropout,

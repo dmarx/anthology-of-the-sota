@@ -75,6 +75,11 @@ it. Validation perplexity on Wiki / FlanV2:
 
 The truncated row is best on both.
 
+The table and the analysis above are [LIT-210](../literature.d/LIT-210.md)'s, the paper that proposes
+p-RoPE and so where the recommendation begins: the counterexample to decay,
+the positional-head construction and Theorem 6.1 come from its analysis of a
+trained Gemma 7B, and the perplexities from its own 2B training runs.
+
 ## Why this is the practice and not the base-rescaling trick
 
 Raising θ from 10,000 to 500,000 — introduced by Code Llama, adopted by Llama

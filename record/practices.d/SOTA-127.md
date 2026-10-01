@@ -48,6 +48,12 @@ model learns the cheaper pattern, which is repetition. The same failure
 appeared in the 90M reasoning model, which is more prone to the repetition
 trap than the 0.6B one.
 
+The observation and the fix both come from [LIT-119](../literature.d/LIT-119.md), the Falcon-H1-Tiny
+blogpost, which states the lesson outright for its tool-calling model —
+chain-of-thought traces cause repetition loops rather than better reasoning at
+this scale, so train on pure function-calling data. It reports the loops and
+their disappearance qualitatively, not as a before-and-after score.
+
 ## Conditions
 
 This is about models around 100M trained for a structured

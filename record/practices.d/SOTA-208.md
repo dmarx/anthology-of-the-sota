@@ -50,6 +50,15 @@ window** — the previous `l` positions, with the stride `l` chosen close to
 Integrate them by alternating one pattern per residual block, by merging both
 into one head, or across the heads of a multi-head layer.
 
+This is [LIT-225](../literature.d/LIT-225.md)'s own recommendation, stated by the paper that introduced the
+factorization, and its experiments showed sparse attention cheaper than dense
+and, on two of three comparisons, slightly better on loss. On enwik8
+at 12,288 context the fixed pattern reached 0.99 bits per byte at 0.55 s/iter
+against dense attention's 1.00 at 1.31; on CIFAR-10 strided reached 2.80
+bits/dim at 0.38 s/iter against dense 2.82 at 0.54. The authors do not say
+whether that quality edge is an inductive bias or an optimisation problem in
+dense attention.
+
 ## The condition, which is the part worth keeping
 
 **The window is half of the design and the paper says so.** Its connectivity

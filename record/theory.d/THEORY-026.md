@@ -43,6 +43,10 @@ independent measurement of the exponent.
 
 ## What was actually shown
 
+Both halves are [LIT-445](../literature.d/LIT-445.md)'s: it trains 85M–1.2B models on C4 with model size
+and token count varied separately, fits critical batch size as `D^0.462` in
+data and nearly flat in model size, and supplies the two theorems below.
+
 **The empirical half is a decoupling.** Every previous measurement of
 critical batch size was made along the Chinchilla line, where model size and
 token budget grow together, so "it grows with scale" could not name which one

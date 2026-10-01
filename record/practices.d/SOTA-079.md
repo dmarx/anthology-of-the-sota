@@ -34,6 +34,16 @@ overlapping ones.
 It is what makes a streaming format work at all ([SOTA-077](SOTA-077.md)): sequential reads
 are only fast if somebody is reading ahead.
 
+What [LIT-053](../literature.d/LIT-053.md) supplies is the pipeline this overlap runs in, not a measurement
+of prefetching itself. Its design splits the input path into independently
+scalable stages — I/O, decoding, augmentation, training — and its benchmark
+metric is how fast a ResNet-50 loop consumes batches from the PyTorch
+DataLoader, run with five workers per GPU. On that metric, sharded data on 120
+hard drives matched local-SSD training rates, and AIStore and HDFS scaled
+alike, which the authors attribute to the compute-side client being the
+bottleneck. It never varies or reports a prefetch depth, so the parameter
+below is not its result.
+
 ## The parameter, and the cost that is easy to miss
 
 Depth. One batch ahead hides one batch's latency and no more, and a pipeline

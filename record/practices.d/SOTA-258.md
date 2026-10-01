@@ -63,6 +63,16 @@ At fixed token budget, the dependence on model size very nearly disappears.
 Models of different sizes trained on the same number of tokens have almost
 the same critical batch size.
 
+The fixed-data half is [LIT-445](../literature.d/LIT-445.md)'s, and the recommendation to scale batch size
+with tokens starts there. Zhang et al. measured critical batch size in three
+arrangements — model and data grown together, data fixed with model size
+varied, model size fixed with data varied — at 85M–1.2B on C4, found the
+curves for different model sizes at equal token count overlapping, and fitted
+the `D^0.462` law. [LIT-443](../literature.d/LIT-443.md) supplies the other two lines from a grid of muP runs
+on SlimPajama at 20–1280 tokens per parameter and up to 3.3B: critical batch
+size as `D^0.47`, optimal batch size as `D^0.38`, and the parallel lines at
+equal `D` described below.
+
 **What makes this strong is the disagreement in everything else.** The two
 groups differ in architecture, dataset, context length, parameterization,
 learning-rate schedule, whether weight decay was used, and hyperparameter

@@ -76,6 +76,11 @@ Dehghani, Mustafa et al. (2023), [LIT-657](../literature.d/LIT-657.md) — [ARXI
 | Aspect ratio | Native beats square resize at equal area in a linear fairness probe, p = 0.02 (Fig. 12 right) | Only at probe time, not in pretraining |
 | Throughput | About 5x more images seen at the same compute (Table 2) | The paper names this "the chief contributor" |
 
+The recipe and every row of the table are NaViT's ([LIT-657](../literature.d/LIT-657.md)). On JFT-4B it
+runs 12 compute-matched ViT budgets against the packed, aspect-preserved,
+resolution-sampled alternative it proposes, and attributes the gain chiefly to
+seeing about 5x more images, not to aspect ratio.
+
 So the recommendation holds as a package. Its title names aspect ratio
 because that is what the package lets you keep, but aspect ratio is not
 shown to be what makes it win.

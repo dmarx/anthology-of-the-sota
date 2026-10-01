@@ -69,7 +69,11 @@ Square matrices cannot produce that, and the two behave differently.
 **Measure damage per decile rather than assuming monotonicity.** Zero one
 decile of one matrix type across all blocks and evaluate. For square matrices
 the damage decreases monotonically from large to small. For non-square ones it
-does not.
+does not. The recommendation originates in [LIT-517](../literature.d/LIT-517.md), which used the
+Marchenko-Pastur law as a null for trained weights, found the small singular
+directions of non-square matrices overlapping the activation covariance far
+outside a 3σ random band, and then zeroed deciles to see what losing them
+costs:
 
 | Llama-3 8B, GSM8K 3-shot, 43.2% baseline | smallest decile removed |
 |---|---|

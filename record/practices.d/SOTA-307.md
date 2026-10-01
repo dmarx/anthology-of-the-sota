@@ -88,6 +88,12 @@ that differ by an order of magnitude.
 
 ## Do this
 
+The protocol comes from [LIT-501](../literature.d/LIT-501.md), which trained several hundred SiT networks
+on class-conditional ImageNet as a panel of training seeds × sampling seeds
+and found the between-seed spread 3.2× the sampling spread, with a CoV that
+stays between 0.74% and 2.06% across four sizes and every checkpoint to 2M
+steps — the basis for both the seed requirement and the ≈2% threshold.
+
 1. **Train several seeds and report the spread.** Three to five is enough to
    matter: with `N` seeds the resolvable gap scales as `2σ/√N`, so `N = 5`
    takes the threshold from ≈0.5–0.8 FID down to ≈0.25 on this family.

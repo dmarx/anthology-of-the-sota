@@ -54,6 +54,11 @@ a wider spectrum, faster convergence on detail, and past a point aliasing.
 That is a reconstruction-filter choice, the kind signal processing already
 knows how to make.
 
+Both steps are [LIT-550](../literature.d/LIT-550.md)'s. It derives the stationary composed kernel from the
+sinusoidal mapping (its Eq. 6–8), and it is the paper that turned "positional
+encoding helps" into "the mapping sets the kernel's bandwidth", with sampled
+Gaussian frequencies and one scale hyperparameter as the recipe that follows.
+
 ## What was actually shown
 
 The part that could have failed: Figure 3 predicts training and test loss

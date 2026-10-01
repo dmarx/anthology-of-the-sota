@@ -85,7 +85,9 @@ the point: the instruction is to measure, not to adopt the list.
 
 ## What it buys
 
-Against a single global rank at matched compression:
+[LIT-516](../literature.d/LIT-516.md) proposed per-matrix ranks after finding that Query, Key and MLP Gate
+go low rank in training while MLP Up, MLP Down and Value do not, and compared
+them against a single global rank at matched compression:
 
 | LLaMA-7B, 25% compression | factoid QA | multi-turn | summarization |
 |---|---|---|---|

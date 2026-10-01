@@ -49,6 +49,10 @@ dictionary must be **large** and **consistent**; a queue buys size, and
 without something to buy consistency the size is worthless, because keys
 written several hundred steps ago were written by a different model.
 
+Both pieces, and that framing, are MoCo's: [LIT-590](../literature.d/LIT-590.md) recast contrastive
+learning as dictionary look-up, introduced the queue and the momentum key
+encoder together to meet the two requirements, and ran the ablations below.
+
 ## The number that carries it
 
 | momentum `m` | 0 | 0.9 | 0.99 | 0.999 |

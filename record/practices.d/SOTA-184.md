@@ -52,6 +52,10 @@ state scales with the trainable count rather than the model. Quality is
 on-par with or better than full fine-tuning across RoBERTa, DeBERTa, GPT-2
 and GPT-3.
 
+These are [LIT-046](../literature.d/LIT-046.md)'s measurements. The paper that proposed LoRA states the
+low-intrinsic-rank hypothesis and supports it by training only the update and
+matching or beating full fine-tuning on all four models.
+
 ## Why it won rather than merely worked
 
 `BA` is the same shape
@@ -81,6 +85,19 @@ query/value alone does not replicate full fine-tuning; the number of adapted
 matrices is what closes it, and the rank — the hyperparameter people actually
 search — is flat across the sweep. Read the two together: this practice is
 why to use a low-rank update, that one is where to put it.
+
+## Against an intervention on hidden states
+
+<!-- inactive-ok-block: SOTA-329 — Proposed, named as the other side of the comparison -->
+ReFT ([LIT-549](../literature.d/LIT-549.md)) sets LoReFT, the low-rank edit to the hidden state at a few
+prompt positions that [SOTA-329](SOTA-329.md) recommends, against LoRA at 0.03% of the
+parameters to LoRA's 0.7–0.8%. LoReFT leads on eight commonsense tasks
+(LLaMA-7B 80.2 against 74.7) and on AlpacaEval (85.60 against 81.48), is level
+on GLUE (88.2 against 88.1 on RoBERTa-large), and trails on arithmetic chain of
+thought (42.6 against 46.9 at 7B; GSM8K 26.0 against 37.5). The LoRA numbers
+are copied from earlier papers, not re-run, so this is a cross-paper
+comparison, and it is no reason to leave LoRA for reasoning or long-form
+generation.
 
 ## Known implementations
 

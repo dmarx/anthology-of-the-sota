@@ -73,6 +73,13 @@ right, the gap is structural and more tuning would not close it.
 
 ## What was measured
 
+LoReFT and the recommendation to prefer it on short-output tasks originate in
+[LIT-549](../literature.d/LIT-549.md), ReFT, which ran it on four LLaMA-family decoders and RoBERTa with
+three seeds per ReFT result. Its comparison is against [SOTA-184](SOTA-184.md)'s low-rank
+weight update: LoReFT leads LoRA on commonsense QA and AlpacaEval, is level
+on GLUE and trails on arithmetic chain of thought, with LoRA's numbers taken
+from earlier papers rather than re-run.
+
 | suite | model | LoReFT | LoRA | notes |
 |---|---|--:|--:|---|
 | commonsense (8) | LLaMA-7B | 80.2 | 74.7 | DoRA 78.1; HellaSwag 93.1 against 78.1 |

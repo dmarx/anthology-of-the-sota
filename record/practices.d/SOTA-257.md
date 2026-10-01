@@ -64,6 +64,12 @@ is against one *member*. The claim here is against **the same total parameter
 count**: `K` models of size `N` against one model of size `K·N`, under a
 fixed corpus, with both recipes properly regularized first.
 
+The recommendation originates in [LIT-441](../literature.d/LIT-441.md). On a fixed 200M-token corpus it
+trained `K` models identical except for seed, averaged their logits, fitted a
+power law in `K` at four member sizes, and set the resulting asymptote against
+that of its own weight-decay-tuned parameter-scaling recipe; distilling the
+ensemble back into one model is its proposal for paying the inference cost.
+
 Two 300M models beat one 600M. In the limit, the ensembling asymptote (≈3.34)
 is below the parameter-scaling asymptote (≈3.43), and even a 4-member
 ensemble beats what parameter scaling reaches at infinity. The two compose:

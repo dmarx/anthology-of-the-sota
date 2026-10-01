@@ -56,6 +56,15 @@ Newman et al. (2010), [LIT-600](../literature.d/LIT-600.md). Read as [NOTE-324](
   Validate it against people on your own models before relying on it to
   choose between them
 
+## Evidence
+
+The measure and its validation both come from [LIT-600](../literature.d/LIT-600.md). Newman et al. had nine
+annotators rate 237 LDA topics from Gigaword news and Internet Archive books,
+then scored the same topics with WordNet, Wikipedia and Google measures. Mean
+PMI over Wikipedia in 10-word windows reached Spearman ρ = 0.77 against the
+human scores on both corpora, while the WordNet measures ranged from −0.31 to
+0.66 and Google title matches fell from 0.80 on news to 0.51 on books.
+
 ## Conditions
 
 - **Validated on LDA topics only**

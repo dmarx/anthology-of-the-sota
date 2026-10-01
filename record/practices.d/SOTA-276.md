@@ -72,6 +72,14 @@ has to be compensated.
 The practical consequence is that adopting depth scaling is a one-line change
 for most of the optimizers the record recommends, rather than a re-derivation.
 
+The simplification is [LIT-462](../literature.d/LIT-462.md)'s Takeaway 2, and this recommendation starts
+there: having derived its width-depth condition per optimizer for nine of
+them, the paper observes that for every one except SGD the result is
+width-scaling muP plus `α_l = Θ(1/L)`, and gives SGD its extra
+learning-rate rescaling. Its depth sweeps to 256 layers on GPT-2-style models
+(Muon-Kimi-AdamW, Muon-AdamW, Shampoo-AdamW, Sophia) are run with the rule
+implemented this way and show the optimal learning rate holding across depth.
+
 ## Conditions
 
 - **`Proposed`.** The rule is derived for nine named optimizers and four were

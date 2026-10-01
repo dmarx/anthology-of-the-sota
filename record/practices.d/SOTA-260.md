@@ -54,6 +54,12 @@ least a few hundred tokens per device, so memory bandwidth does not become
 the bottleneck, and raised again if a second-order optimizer's per-step
 overhead starts to cost more than the step buys.
 
+The recommendation is [LIT-444](../literature.d/LIT-444.md)'s. With the half-life rule applied, its batch-1
+runs held their own against batch 512: on GPT-2 124M, Adam and Adafactor
+matched AdamW after per-optimizer learning-rate tuning, and on a 1.3B GPT-3
+configuration vanilla SGD with no momentum matched Brown et al.'s AdamW
+baseline while Adam and Adafactor beat it.
+
 Gradient accumulation is then the wrong tool almost everywhere: it *increases*
 memory, because the accumulated gradient must be stored, and it trades away
 optimizer steps for a batch size the paper argues you did not want. The stated

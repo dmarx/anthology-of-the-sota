@@ -95,6 +95,11 @@ on:
 
 ## What was measured
 
+Both halves of the recipe originate in [LIT-554](../literature.d/LIT-554.md), Diffusion Forcing, which
+framed per-token noise as a continuous mask covering teacher forcing and
+full-sequence diffusion as special cases, and proposed the slightly noised
+history for long rollouts. Its evidence, all on a small convolutional RNN:
+
 - Minecraft and DMLab video: coherent to 1,000 frames, where teacher-forced
   and causal full-sequence baselines on the same RNN diverge. **Figure 3
   only, no metric**

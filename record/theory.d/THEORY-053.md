@@ -63,6 +63,14 @@ nonsmooth), and a **compact smooth submanifold** (the generic
 low-dimensional-data story). In each it bounds the gap between `D` and the
 corresponding projector.
 
+The bounds and what follows from them are [LIT-490](../literature.d/LIT-490.md)'s. It proves the
+denoiser-to-projection bounds in all three settings for an exact Stein
+posterior-mean denoiser under deterministic DDIM, then derives finite-time
+rates for its gradient-then-denoise guidance (DCG). Its trajectory-tracking
+experiments show the failure the account predicts: post-denoising guidance
+plans that track the reference closely and lose much of that advantage once
+rolled out through the true dynamics.
+
 **The consequence is a reclassification rather than a new algorithm.** With
 `D` read as an inexact projection, the guided reverse process is a
 time-varying inexact projected-gradient method, and the standard machinery

@@ -83,6 +83,13 @@ better-generalizing network should have the larger neighbourhood, and local
 volume should fall through training as the network's description grows. Both
 hold.
 
+The framing, the estimator and both tests are [LIT-476](../literature.d/LIT-476.md)'s. It finds each
+neighbourhood's radius along sampled directions, aggregates by preconditioned
+importance sampling into a log-volume, and runs this on an MLP, a ConvNeXt
+and Pythia 31M checkpoints. For Pythia 31M, the probability of drawing the
+trained network from its initialization distribution within a small KL ball
+comes out at about 10⁻³·⁶ˣ¹⁰⁸.
+
 ## What was found, including the part that complicates it
 
 A ConvNeXt trained with an added term making it generalize badly while keeping

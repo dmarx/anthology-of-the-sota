@@ -46,6 +46,10 @@ Ye, Luceri and Ferrara (2024), [LIT-480](../literature.d/LIT-480.md) — read as
 
 ## The account
 
+The measurement is [LIT-480](../literature.d/LIT-480.md)'s sock-puppet audit of Twitter/X's "For You"
+timeline: 120 accounts in four arms of 30 that never interacted, four timeline
+collections a day for six weeks, 9.79M tweets, with exposure weighted by rank.
+
 The audit ran four arms: accounts following nobody, accounts following ten
 moderate-to-strong media outlets and four political figures on the left, the
 same on the right, and a balanced set. Concentration of exposure was measured

@@ -84,6 +84,12 @@ update. Instead of cancelling over steps they compound into a systematic
 gradient bias, driving the spectral norm of weights and activations up until
 training derails.
 
+That account is [LIT-198](../literature.d/LIT-198.md)'s, and it is the first mechanistic one: the paper
+isolates the failure to biased BF16 rounding in flash attention and tests it
+causally, by de-biasing the rounding and watching training stabilise. The
+recommendation to fix the attention output's precision starts from that
+diagnosis; the FP32 form below is the one Kimi K3 adopted citing it.
+
 ## What to do
 
 Keep the attention output in FP32 during training. Kimi K3 does exactly this

@@ -48,6 +48,13 @@ minibatch**. The trade is continuous rather than binary: the same analysis
 gives `O(log n)` memory for `O(n log n)` extra forward computation, so the
 question is never *whether* to recompute but where on the curve to sit.
 
+The rule and both ends of that curve come from [LIT-004](../literature.d/LIT-004.md). Chen et al. framed
+memory as a choice of segmentation over the computation graph, derived the
+`O(sqrt(n))` bound at the cost of one extra forward pass and the `O(log n)`
+extreme, and measured the trade on the 1,000-layer ResNet below, in MXNet
+with static allocation, noting that it composes with CPU/GPU swapping and
+model parallelism without using the PCI-E link.
+
 ## When it applies
 
 **When activation memory is what stops you, and compute is not.** That is the

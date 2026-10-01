@@ -57,6 +57,12 @@ quantity being set. Run the rule and it anneals forever, chasing its own
 output. In a direct comparison it is beaten by a fixed step size that the
 rule itself calls impermissible.
 
+Both halves rest on Cohen et al., [LIT-461](../literature.d/LIT-461.md). Under full-batch gradient descent,
+on the vision architectures and the WikiText-2 Transformer they tested,
+sharpness rises until it reaches `2/eta`, then hovers there while the loss
+falls non-monotonically. In the head-to-head in their Appendix F, the
+`1/sharpness` rule loses to the fixed step `eta = 2/S0`.
+
 **When the loss bounces over short timescales while falling over long ones,
 that is not an instability to correct.** At any step size worth using,
 training sits where oscillation along the highest-curvature direction is

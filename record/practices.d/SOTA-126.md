@@ -37,6 +37,11 @@ instruction following. The prior the authors cite for DPO converging at
 this scale is [LIT-129](../literature.d/LIT-129.md): a 135M model taken through SFT, reasoning SFT and one
 epoch of DPO.
 
+Those runs, and the one-epoch rule drawn from them, are [LIT-119](../literature.d/LIT-119.md)'s: the
+Falcon-H1-Tiny team saw the post-first-epoch collapse on a three-epoch sweep,
+then fixed one epoch and used it for the released instruct models. The cliff
+is an observation from that one sweep at 90M, not a study of epoch count.
+
 Conditions: the epoch count interacts with the schedule — with cosine decay,
 changing the number of epochs changes the whole trajectory, which is why the
 authors fixed the epoch count and swept the rate rather than the reverse.

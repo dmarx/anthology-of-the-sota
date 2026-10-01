@@ -65,6 +65,12 @@ a much smaller claim than a fifth of the score, and it is the claim the
 blogpost makes. The authors then used LRMs for
 every model in the series.
 
+What [LIT-119](../literature.d/LIT-119.md) adds to [LIT-121](../literature.d/LIT-121.md)'s claim is that validation and nothing more:
+one pair of runs on the Falcon-H1-Tiny architecture, reported as improvements
+on most benchmarks with that one relative figure in the text, and a figure
+rather than a table of scores. The equilibrium argument and the larger-scale
+numbers are the preprint's.
+
 ## Why this is Proposed, and how the condition changed
 
 One team, one architecture family, and the

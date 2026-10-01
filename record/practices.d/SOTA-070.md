@@ -35,6 +35,22 @@ That distinction is what decides the response. A global spike is answered by
 clipping ([SOTA-071](SOTA-071.md)) or by rewinding ([SOTA-095](SOTA-095.md)); a single-layer anomaly is
 answered by looking at that layer.
 
+The practice is drawn from [LIT-054](../literature.d/LIT-054.md)'s account of training GLM-130B in FP16. The
+authors found that a training collapse usually lags a spike in gradient norm
+by a few steps, and that the spikes came mostly from the embedding layer,
+whose gradient norm was often several orders of magnitude larger than other
+layers' early in training. That per-layer comparison is what pointed them at
+the fix, shrinking the embedding gradient (α = 0.1), which removed most
+spikes. The paper reports the observation and the fix; "track the ratios" as
+a standing rule is the record's generalisation of it.
+
+[SOTA-099](SOTA-099.md) is the aggregate form of the same signal: the global norm, which
+clipping already computes and so costs nothing, against the per-layer pass
+here, which costs a reduction per tensor. Both come from that one section of
+[LIT-054](../literature.d/LIT-054.md). The global norm says *that* something is wrong, earliest as a trend;
+the ratio says *where*, which is what GLM-130B needed to find its embedding
+layer.
+
 ## Cost
 
 Per-layer norms are a reduction per parameter tensor per step. On a sharded

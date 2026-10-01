@@ -60,6 +60,11 @@ What to do instead, and it is three things together:
 
 ## The crossover, which is the whole argument
 
+Both arms come from one paper: [LIT-178](../literature.d/LIT-178.md) built Nemotron-CC to make this
+recommendation, and measured the short-horizon win for aggressive filtering
+and the long-horizon reversal in the same study, so the crossover is not
+stitched together from two sources.
+
 - **Short horizon.** A high-quality subset improves MMLU by **5.6 over DCLM**
   when training 8B models for 1T tokens. Aggressive filtering wins here, and
   the paper does not dispute it.

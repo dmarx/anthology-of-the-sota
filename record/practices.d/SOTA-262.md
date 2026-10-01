@@ -77,6 +77,10 @@ That is the distinction worth holding. Cross-attention conditioning, the
 prevailing alternative, lets image tokens read text and not the reverse. Here
 the text representation is itself updated by what the image is doing.
 
+The design and the recommendation are Esser et al.'s. [LIT-449](../literature.d/LIT-449.md) introduced it
+as MMDiT, the Stable Diffusion 3 backbone, and recommended it on a comparison
+against UViT and DiT backbones at matched budget, which it won.
+
 `LIT-483` puts the second half more precisely than the first source
 does. Global self-attention **normalizes attention weights across tokens of
 different modalities in one operation**; a cross-attention fusion design
@@ -132,6 +136,12 @@ about **one third** in the Transfusion setting, where a **760M model beats a
 1.4B dense baseline** on key image metrics. Measured in wall clock on A100s
 rather than only in FLOPs: dense image quality in **47.2%** of the time, text
 quality in **75.6%**.
+
+That is [LIT-483](../literature.d/LIT-483.md), Liang et al.'s Mixture-of-Transformers, which reached the
+same shape independently and held FLOPs identical to both baselines in all
+three settings. It is the second group that moved this practice to `Active`,
+and its component ablation is where the ordering in the section above comes
+from.
 
 The two results are in different objectives, different modalities' roles and
 different labs, and they agree.

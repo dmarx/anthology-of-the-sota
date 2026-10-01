@@ -67,6 +67,14 @@ extrapolation. Training at a single depth does not give this: the same
 architecture run once through the core, or the recurrent model evaluated at
 `r = 1`, is far below the recurrent model at `r = 32`.
 
+The recipe as recommended here — prelude, re-injected core and coda, noise
+initial state, heavy-tailed random `r` with truncated backpropagation — is
+Geiping et al.'s, [LIT-683](../literature.d/LIT-683.md), and so is the evidence. In their one controlled
+comparison (180B tokens, same data) the single pass through the core scores
+73.20 on SciQ and 37.34 on HellaSwag against 80.60 and 48.80 at `r = 32`, and
+zero-shot accuracy rises with `r` until a task-dependent saturation: HellaSwag
+is near its peak by 8 iterations, MMLU climbs from 23.39 at 4 to 31.38 at 32.
+
 ## Conditions
 
 - **Per parameter, not per FLOP.** The source shows accuracy per parameter.

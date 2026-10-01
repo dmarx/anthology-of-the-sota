@@ -34,6 +34,15 @@ the mixed-precision loss scaler is already doing for its own purposes
 scaler dropped that check with it, which is a real and easily-missed
 consequence of the switch.
 
+The warning sign comes from [LIT-054](../literature.d/LIT-054.md). Training GLM-130B with FP16 mixed
+precision, the authors saw precision-related spikes, some of which "come with
+a portent of suddenly soaring gradient norm and eventually a spike or even NaN
+in loss". They found a collapse usually lags a gradient-norm spike by a few
+training steps, so the gradient norm warns before the NaN appears. The paper
+does not prescribe a NaN detector as such. Its own response was to shrink the
+embedding-layer gradient, and it credits skipping data to OPT-175B, not to
+GLM-130B. That differs from how the next section reads.
+
 ## What "system" should mean here
 
 The detection is the easy half; the response is the practice. GLM-130B's

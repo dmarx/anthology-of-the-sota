@@ -52,6 +52,10 @@ localized-sensitivity result in [THEORY-020](THEORY-020.md):
 4. **Residual sharpening** — irrelevant features are suppressed to finalize
    the output distribution.
 
+These are [LIT-417](../literature.d/LIT-417.md)'s stages, proposed as its own interpretation of the
+layer-deletion and swap result, with only the last backed by a dedicated
+experiment of its own.
+
 The framework is offered as a resolution of a standing tension the paper names
 in its introduction: **iterative inference**, where every layer nudges the same
 distribution, against the **circuit hypothesis**, where components have

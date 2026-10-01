@@ -47,6 +47,10 @@ and the usual estimator plugs in the sample mean and sample covariance.
 Those plug-ins are each unbiased; the functional they are fed to is not
 linear, so the composition is not.
 
+Both halves of this are [LIT-615](../literature.d/LIT-615.md)'s. Appendix D.3 gives the non-existence
+argument, and Appendix D.2 constructs the measured instance below, which
+Appendix D.1 shows analytically for one-dimensional normals.
+
 **That much is ordinary, and it would be fixable.** What makes this a claim
 about the measure rather than about one formula is Appendix D.3, by the
 Bickel & Lehmann (1969) argument the same paper uses for squared MMD. Fix a

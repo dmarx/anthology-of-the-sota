@@ -69,6 +69,13 @@ Helmholtz solve, or gradient-domain image editing:
 
 ## What was measured
 
+The architecture, the initialization and the recommendation to use them for
+derivative supervision all originate in [LIT-551](../literature.d/LIT-551.md), SIREN. Besides the results
+below, it checked that its initialization does what it derives: in 6- and
+50-layer SIRENs at initialization, pre-activations match N(0, 1) and sine
+outputs match the arcsine distribution layer by layer, with gradient
+statistics constant across depth.
+
 - Image fitting (Figure 1): ReLU with positional encoding matches SIREN on
   the image and not on its gradient or Laplacian. ReLU, tanh and RBF-ReLU
   miss the image too

@@ -74,6 +74,11 @@ Llama-3.1 8B produced valid function-call JSON 62% of the time and valid XML
 End to end on Llama-3.1 8B (MLC-LLM), TPOT goes from 6.2 to 6.3 ms at
 batch 1 and from 9.0 to 9.2 ms at batch 16.
 
+The design and the table both come from [LIT-552](../literature.d/LIT-552.md), XGrammar, which introduced
+the split into context-independent tokens (all but 1,134 of Llama-3.1's 128k
+for JSON) cached per node, ablated each optimization in its Table 3, and
+measured the overlap's end-to-end cost in MLC-LLM in its Table 2.
+
 ## Conditions
 
 - **It guarantees syntax, not correctness.** The paper's "accuracy" is

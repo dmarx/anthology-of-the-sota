@@ -74,6 +74,13 @@ Li, Chen, Hu and Yang (2018; CVPR 2019), [LIT-705](../literature.d/LIT-705.md) â
 
 ## Why
 
+The rule originates with [LIT-705](../literature.d/LIT-705.md), which named the mechanism "variance shift"
+and recommended placing dropout only after the last BN, just before the
+softmax. Its derivation gives a shift ratio equal to the retain ratio `p` when
+BN directly follows dropout on a zero-mean input, and its Figure 1 shows the
+cost: DenseNet-BC on CIFAR-100 reaches 77.42% with no dropout and 68.55% with
+dropout 0.5 in each bottleneck.
+
 The mechanism is derived and then checked. The derivation assumes a linear
 regime and i.i.d. inputs. Four architectures on CIFAR-10 and CIFAR-100 then
 show three things:

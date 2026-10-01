@@ -60,6 +60,13 @@ practices whose titles state a behaviour rather than an instruction and left
 them in place pending a decision about what a vacated code should say;
 [ADR-034](../decisions.d/ADR-034.md) is that decision and this is its first application.
 
+The claim originates in [LIT-014](../literature.d/LIT-014.md). Li et al. compared ResNet-56 with
+ResNet-56-noshort on CIFAR-scale data under filter-normalised loss-surface
+plots. As networks get deep, the landscape goes from nearly convex to
+chaotic, and that transition comes with worse generalisation and, eventually,
+a loss of trainability. Skip connections prevent it and "promote flat
+minimizers", which the paper offers as why they are needed at extreme depth.
+
 **There is no practice under it.** The instruction the claim would imply — use
 skip connections — is trunk, and [DP-007](../../docs/design-principles.md#dp-7) keeps the agreed trunk unfiled. That
 is why this is a move rather than a split.

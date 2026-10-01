@@ -45,6 +45,13 @@ Jumper et al. (2021), [LIT-583](../literature.d/LIT-583.md). Read as [NOTE-321](
 
 ## The practice
 
+Jumper et al. introduced this recipe in [LIT-583](../literature.d/LIT-583.md). AlphaFold 2 predicted
+structures for about 350,000 unlabelled sequences, kept the confident ones,
+and retrained from scratch on those plus the PDB, under cropping and
+alignment subsampling. Figure 4a shows the self-distilled network improving
+on one trained without it, but gives the size only as a plot, against three
+seeds of the baseline.
+
 - **Label the unlabeled pool with the trained model**, and keep only
   predictions the model is confident in. This needs a confidence estimate
   that tracks accuracy ([SOTA-353](SOTA-353.md))

@@ -55,6 +55,13 @@ found instead that **model size and training tokens should scale in equal
 proportion**: double the compute, double both. The ratio that falls out is
 about 20 tokens per parameter.
 
+Both the recommendation and the ratio come from [LIT-068](../literature.d/LIT-068.md), though the paper
+never writes the number 20. Its three fitting methods give exponents of 0.50,
+0.49 and 0.46 for `N_opt ∝ C^a`, against Kaplan et al.'s 0.73, and its Table 3
+projects compute-optimal training at 20.2B tokens for a 1B-parameter model,
+205.1B for 10B and 1.5T for 67B: about 20 tokens per parameter, read off the
+table.
+
 The demonstration was the point. Chinchilla at 70B, trained on 1.4T tokens,
 outperformed Gopher at 280B trained on 300B tokens — a model four times
 smaller, on the same compute, beating it across the board. Gopher, GPT-3,

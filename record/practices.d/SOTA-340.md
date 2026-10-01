@@ -62,6 +62,14 @@ The quantization itself is [SOTA-185](SOTA-185.md) (GPTQ).
   loses 3.3 points of mean accuracy (4.3 on MMLU) against FP16 (Table 1). A
   gain that has shrunk to 1.2× at your serving batch may not be worth that
 
+The batch-size framing and the kernel both come from Frantar et al.'s
+MARLIN paper, [LIT-567](../literature.d/LIT-567.md). Its layer benchmark (Figure 1, a 72k×18k layer on an
+A10) holds close to the 3.87× ideal to batch 16–32 while ExLlamaV2, AWQ,
+bitsandbytes and torch kernels degrade quickly after batch 1, and its
+roofline (Figure 11) puts the crossover below batch 64. Its vLLM runs
+(Table 2) are the end-to-end numbers above: for Llama-2-7B on an A10, 2.93×
+at batch 1, 2.74× at 16 and 1.20× at 128.
+
 ## Conditions
 
 - **The crossover depends on GPU and layer shape.** The headline curve is

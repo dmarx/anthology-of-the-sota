@@ -71,6 +71,14 @@ here; it is sidestepped, because the proof uses the one thing an encoder does
 not have. The bound is a theorem about decoders specifically, and the reason
 it exists is the reason encoders escape it.
 
+The account is [LIT-464](../literature.d/LIT-464.md)'s proof read as a mechanism. Its Lemma 3.1 simulates a
+decoder-only transformer by an autoregressive communication protocol of
+forgetful players, with message size proportional to each player's input
+length; Theorem 1.1 proves in that model that a constant-depth decoder small
+relative to prompt length cannot do `k`-sequential composition, and the
+depth, encoder and chain-of-thought separations above are its Corollaries 1.2
+to 1.4.
+
 ## What this does not say
 
 **It does not say a trained model fails at composition.** This is a bound on

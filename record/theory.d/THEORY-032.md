@@ -107,6 +107,10 @@ advantage shrinks from 1.4× at 0.1B to 1.1× at 1.2B.
 
 ## What was actually shown
 
+Each result is [LIT-457](../literature.d/LIT-457.md)'s: the comparison of guaranteed decreases (its eq.
+1.1), the stable-rank propagation lemmas, the spiked random-feature scaling,
+and the NanoGPT measurement in its Figure 10.
+
 The inequality is derived, not measured — it is a comparison of *guaranteed*
 decreases from the one-step curvature bounds. The propagation results
 (Lemmas 2.9, 2.10, Proposition 2.14, Corollary 2.15) are theorems at Gaussian

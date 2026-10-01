@@ -79,7 +79,9 @@ down in the source of the method being rejected.
 
 **Use reconstruction guidance instead.** At each step, add a gradient term
 that pushes the model's denoised estimate of the known frames toward the
-real ones, and let that gradient flow into the unknown frames. VDM compares
+real ones, and let that gradient flow into the unknown frames. Reconstruction guidance
+is VDM's own proposal ([LIT-627](../literature.d/LIT-627.md), §3.1), made for exactly this use: extending a
+video with an unconditionally trained model. VDM compares
 the two with the model and guidance weight fixed, generating 64×64×64 video
 by extending 16-frame blocks (Table 6):
 

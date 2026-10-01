@@ -41,6 +41,12 @@ Dettmers et al. (2023), [LIT-378](../literature.d/LIT-378.md) — [ARXIV-2305.14
 
 ## The method
 
+The recipe is QLoRA, and it starts with [LIT-378](../literature.d/LIT-378.md): Dettmers et al. proposed
+backpropagating through a frozen 4-bit base into 16-bit LoRA adapters, and
+measured 65B fine-tuning falling from more than 780GB of GPU memory to under
+48GB without degrading runtime or predictive performance against a 16-bit
+fully fine-tuned baseline. Everything below is that paper's design.
+
 One storage type and one computation type. The frozen base is held in 4-bit
 NormalFloat; whenever a weight is used it is dequantized to BFloat16 and the
 multiply happens in 16 bits. Gradients pass through that dequantized base but

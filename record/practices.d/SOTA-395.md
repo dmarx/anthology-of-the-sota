@@ -54,7 +54,9 @@ every autoregressive step. **Close it in training.** Run the rollout during
 training, build the KV cache from the model's own outputs, and apply a loss
 to the generated clip as a whole.
 
-Self Forcing compares this against the alternatives on Wan2.1-1.3B, in two
+The recommendation is Self Forcing's ([LIT-629](../literature.d/LIT-629.md)). The paper proposes training
+the few-step causal model on its own autoregressive rollouts and scoring the
+generated clip as a whole with a distribution-level loss. It compares this against the alternatives on Wan2.1-1.3B, in two
 matched pairs (Table 2, VBench total, chunk-wise / frame-wise):
 
 | Training | Chunk-wise | Frame-wise |

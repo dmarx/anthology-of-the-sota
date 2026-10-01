@@ -63,6 +63,12 @@ directions Adam under-serves are exactly the rare ones. The prediction is that
 Muon should match Adam on frequent classes and beat it on rare ones — which is
 what the source measures, and the head–tail gap narrows accordingly.
 
+Steps one and two are [LIT-654](../literature.d/LIT-654.md)'s argument, and step three is its measurement.
+On a knowledge-intensive task with a deliberately imbalanced class
+distribution, Muon matched Adam on head classes and beat it substantially on
+tail classes, and the hybrid runs put the gain in VO and FFN: Muon on those
+gave the tail-class gain, Muon on QK alone gave little.
+
 The compressed version: **Adam's balance across facts depends on the geometry
 of the embeddings; Muon's does not.** The one-layer theorem makes that precise
 — for any embeddings satisfying their assumption, one step of Muon gives a

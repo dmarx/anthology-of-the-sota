@@ -61,7 +61,10 @@ memory and prefetched. Qwen3.8-Flash-Next holds 51B parameters this way,
 next to a 125B-A6B backbone.
 
 The report's ablations support three instructions, and they are the whole
-practice.
+practice. All three originate in [LIT-152](../literature.d/LIT-152.md)'s §2.3, where the Qwen team ablated
+table placement (Table 7), the trade against experts at a fixed total (Table
+8) and table size on top of the budget (Table 9) to justify Qwen3.8-Flash-Next's
+single 51B-parameter table at layer 2.
 
 **Use one table, and put it early.** At a fixed table budget (Table 7):
 

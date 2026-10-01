@@ -82,6 +82,13 @@ the wrong half of the network.
 
 ## What was actually shown
 
+All of it is [LIT-667](../literature.d/LIT-667.md)'s: an 8-layer GPT-2 trained from scratch on a synthetic
+knowledge graph, with atomic facts split into an in-distribution set and an
+out-of-distribution set that appears in training only atomically. Composition
+never generalized to the OOD set in two million optimization steps while
+comparison did, and the account above is the paper's explanation of that split
+from the circuits it traced.
+
 The circuits are traced, not assumed: causal tracing by same-type token
 replacement across checkpoints, with logit lens on the individual states. For
 composition the surviving graph is layers 0, 5 and 8, with the bridge entity

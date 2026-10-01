@@ -59,7 +59,9 @@ made for the kernels: most operators live entirely inside a layer, so freezing
 whole layers keeps the optimized paths intact. Partitioning *within* a layer —
 updating some fraction of each layer's parameters at once — keeps the same
 parameter count but loses the kernel, and the paper's Figure 1 is about
-exactly that.
+exactly that. The partition rule is [LIT-515](../literature.d/LIT-515.md)'s contribution, and this practice
+starts there: it adapts block coordinate descent to full-parameter LLM
+training by freezing all but one layer-aligned block and rotating.
 
 **Train the active block to local convergence, then rotate.** The optimizer
 inside a block is unchanged — SGD, AdamW, whatever you were using; the paper
@@ -71,7 +73,8 @@ memory freed is the optimizer state and gradients of the frozen blocks, which
 is where most of the `5.7W` of a full-parameter run goes.
 
 **Expect to pay in steps.** This is the part the abstract omits and the table
-states.
+states — [LIT-515](../literature.d/LIT-515.md)'s Table 2, full-parameter Adam against BCD-Adam with three
+submodels, one run per cell:
 
 | model / data | full-parameter Adam | BCD-Adam |
 |---|---|---|

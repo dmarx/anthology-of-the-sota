@@ -34,9 +34,25 @@ set of examples contributing to a position's statistics varies with the batch's
 padding, and at inference with batch size one there is nothing to normalise
 across.
 
+Both properties are stated in [LIT-002](../literature.d/LIT-002.md) itself, which is what this practice can
+take from it: Ioffe and Szegedy note that BN "does not independently process
+the activation in each training example" but depends on "the other examples in
+the mini-batch", and they need population statistics to make inference
+deterministic. The paper was about convolutional image classifiers; it lists
+recurrent networks only as future work, and it does not propose LayerNorm,
+which came later.
+
 LayerNorm normalises across the feature dimension of a single example. No
 cross-example dependence, no running statistics, no train/eval divergence, and
 nothing that changes when the batch does.
+
+The practice this one sets itself against is [SOTA-004](SOTA-004.md), BatchNorm placed after
+the linear map and before the activation in convolutional networks. The
+comparison is argued rather than measured in the record: no source here trains
+the same transformer under both. And the two do not trade like for like. Moving
+to LayerNorm does not carry [SOTA-004](SOTA-004.md)'s placement rule along; the placement
+question becomes whether normalisation sits inside or outside the residual
+branch.
 
 ## Where this has gone since
 

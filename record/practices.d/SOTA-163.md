@@ -54,6 +54,12 @@ and quantization outliers pose, met by shrinking the scope of the scale
 rather than by changing the model — which is why it composes with everything
 else instead of competing with it.
 
+The format and the evidence are both [LIT-197](../literature.d/LIT-197.md)'s: the paper specifies the MX
+formats and recommends them over per-tensor scaling on the strength of
+results across more than two dozen benchmarks, summarised by width in the
+table below, including what it claims as the first sub-8-bit training to FP32
+accuracy.
+
 ## What each width can bear, which is the part to read before choosing one
 
 | Width | Regime |

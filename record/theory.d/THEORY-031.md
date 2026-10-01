@@ -48,6 +48,9 @@ the path that gets plotted is the time-average of a path that is not smooth.
 This is not a rendering artifact — the oscillations do real work, implicitly
 triggering the curvature reduction that lets later steps be larger, and the
 time-average is a different curve from the one gradient flow would take.
+This leg is [LIT-453](../literature.d/LIT-453.md)'s: its central flows model that time-averaged path in
+full-batch training, and ablating the implicit curvature penalty in the flow
+makes the optimizer take smaller steps and optimise slower.
 
 **It averages over data and over directions.** Conceptual transitions are
 frequent, individually abrupt, and differently timed; their sum is smooth.
@@ -56,12 +59,18 @@ arithmetic, clustering exact per-example loss curves recovers digit position
 and *not* the carrying skill, at chance; decomposing the loss per example and
 along a curvature-derived basis recovers both. **Smoothness is what many
 breakthroughs look like when added up.**
+This leg is [LIT-455](../literature.d/LIT-455.md)'s POLCA decomposition: clustering exact loss curves
+reaches a carry fraction of only 0.514, chance, where clustering the POLCA
+curves recovers carrying.
 
 **It saturates before the weights do.** Long after the curve flattens,
 networks keep travelling, distance growing as a power law in updates with a
 non-trivial exponent. What drives that motion is not the plotted loss but a
 modified objective with a velocity term, and the motion is incoherent
 oscillation in the Hessian's top eigensubspace rather than a random walk.
+This leg is [LIT-454](../literature.d/LIT-454.md)'s: it measures the anomalous diffusion and derives the
+limiting dynamics via Fokker-Planck as that modified loss plus probability
+currents, with hyperparameter predictions reported to match empirics.
 
 ## What follows
 

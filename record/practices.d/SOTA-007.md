@@ -46,6 +46,14 @@ unknown token and the model can neither read nor produce it — names, numbers,
 morphology, code, any language with productive compounding. A character-level
 vocabulary is open and pays for it in sequence length.
 
+The recommendation originates in [LIT-003](../literature.d/LIT-003.md), written for neural machine
+translation with RNN encoder-decoders on WMT tasks. There the standard fix for
+out-of-vocabulary words was to back off to a dictionary outside the model.
+Sennrich et al. instead encoded rare and unknown words as sequences of subword
+units, adapting byte pair encoding from compression into segmentation. That
+made the model itself open-vocabulary, and it improved translation of rare
+words specifically.
+
 BPE takes the middle: start from characters, repeatedly merge the most
 frequent adjacent pair, stop at a chosen vocabulary size. Frequent words end
 up as single tokens, rare ones decompose into pieces, and **nothing is ever

@@ -69,6 +69,12 @@ layer's collapse accelerates the next one's: a cascade. The authors' scale:
 falling three orders of magnitude takes a linear rate about a dozen steps and a
 cubic rate two or three.
 
+The bound is [LIT-530](../literature.d/LIT-530.md)'s Theorem 2.2, derived from its path decomposition, and
+the paper sets it beside measurement: on BERT, ALBERT and XLNet, at
+initialization and pretrained, the relative residual plotted against layer
+falls rapidly for pure attention and stays flat once skip connections are
+restored.
+
 **Skip connections are what stands in the way.** The length-zero path carries
 the input through untouched, so there are infinitely many parameterizations
 with `‖res(X_L)‖ ≥ ‖res(X)‖` — holding as `L → ∞` and for `β` arbitrarily

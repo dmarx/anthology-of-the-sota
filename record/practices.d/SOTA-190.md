@@ -81,6 +81,12 @@ any uniform scaling of the other dimensions. Its Table 4:
 | Base 36L vs. Large | 16% saving | lower | outperforms |
 | XL 32L vs. XXL | ~33% | ~44% | outperforms, ~3× faster |
 
+The rule originates in [LIT-052](../literature.d/LIT-052.md), which named it DeepNarrow and measured it on
+encoder-decoder T5 pretrained on C4 and fine-tuned on GLUE, SuperGLUE and
+SQuAD, concluding from these comparisons that the canonical T5-Base and
+T5-Large shapes are Pareto-inefficient. Its one check outside language is a
+small-model Vision Transformer comparison on few-shot image recognition.
+
 ## What it trades, which is the reason it is not universal
 
 Depth is serial. Every layer waits for the one before it, so depth cannot be

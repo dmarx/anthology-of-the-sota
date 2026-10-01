@@ -101,6 +101,14 @@ recommendation resting on the first paper alone would be recommending
 something whose economic case is unmade. The second paper is filed as
 `corrects:` the first for exactly that reason ([ADR-017](../decisions.d/ADR-017.md)).
 
+[LIT-214](../literature.d/LIT-214.md) is that second paper, and the third bullet above is its design:
+synchronise fragments of the model in sequence so the peak drops, overlap each
+exchange with continued inner steps so latency is tolerated, and send the
+outer gradients in four bits with accumulation kept in FP32. Combined, it
+reports billion-scale training at quality comparable to data-parallel training
+with about 400× less bandwidth, which is the measurement the economic case
+rests on.
+
 ## Conditions, and what is not established
 
 Reported results: 500× less communication at matched quality on C4 with 8

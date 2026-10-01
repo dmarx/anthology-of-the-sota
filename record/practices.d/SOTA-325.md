@@ -70,6 +70,11 @@ authors' own framing: "Even though most training losses collapse to zero, the
 LLC can discern the implicit regularization pressure applied by various
 training heuristics."
 
+Both the estimator and the recommendation to read it once the loss has
+saturated come from [LIT-542](../literature.d/LIT-542.md), which localised Watanabe's learning coefficient to
+a single minimum and made the ResNet18 sweep the demonstration that it
+separates configurations the training loss cannot.
+
 The estimator's credibility rests on a separate experiment: on **deep linear
 networks up to 100M parameters** it reproduces Aoyagi (2024)'s theoretical
 learning coefficients, and keeps doing so when evaluated at an SGD-found

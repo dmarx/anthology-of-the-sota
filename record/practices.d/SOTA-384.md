@@ -62,6 +62,12 @@ about ten conjugate-gradient iterations, a fraction of a second — and in a
 framework it is a constant multiplier inserted between the logits and the
 softmax, set to 1 during training.
 
+The method and the recommendation are Guo et al.'s, in [LIT-616](../literature.d/LIT-616.md). They found
+typical ECE of 4–10% in modern convolutional, recurrent and deep-averaging
+networks, and temperature scaling beat vector scaling, matrix scaling,
+histogram binning, isotonic regression and BBQ, though the first two strictly
+contain it.
+
 **Note what it cannot do, because that is the reason to prefer it.** A single
 positive scalar does not move the argmax, so **accuracy is unchanged by
 construction**. Nothing has to be re-validated after applying it. The binning

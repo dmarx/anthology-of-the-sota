@@ -74,6 +74,13 @@ forward through recipe after recipe. Searched jointly with learning rate and
 epoch count by coordinate descent at each parameter count, the optimum for
 the most over-parameterized models is **roughly 30x that**.
 
+Both the failure and the fix come from [LIT-441](../literature.d/LIT-441.md), which first made this
+recommendation: on a fixed 200M-token corpus it showed the standard
+more-epochs-more-parameters recipe overfitting, then ran coordinate descent
+over weight decay, learning rate and epoch count at each parameter count until
+no single change helped. The regularized recipe it arrived at is reported as
+about 2.29x more data efficient than the standard one at that corpus size.
+
 With it, two things change:
 
 - Loss becomes **monotone in parameter count** — the turn upward disappears,

@@ -83,7 +83,12 @@ the hazard is the overlap with FID's features, not where the weights came from.
 
 ## What was measured
 
-With the generator fixed and only the selection of its samples changed:
+The practice is Kynkäänniemi et al.'s, [LIT-563](../literature.d/LIT-563.md): having shown that
+Inception-V3's pool3 features are one affine map from ImageNet logits, they
+recommend checking FID gains in a non-ImageNet space. Their resampling
+experiment holds a StyleGAN2 generator fixed and changes only the
+selection of its samples; across four datasets FID fell by 63–72% while
+CLIP-FD fell by 4–11%. On FFHQ:
 
 | FFHQ | FID | ResNet-50 FD | SwAV FD | CLIP FD |
 |---|--:|--:|--:|--:|

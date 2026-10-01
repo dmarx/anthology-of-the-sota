@@ -83,6 +83,12 @@ reconstruction error falls as `O(1/n⁴)` in the snapshot count and a few dozen
 snapshots is "virtually perfect". With one it still works, "albeit with much
 lower accuracy" — which is what makes the retroactive case possible.
 
+[LIT-720](../literature.d/LIT-720.md) (EDM2) introduced both the power-function profile and the
+least-squares reconstruction, and the error rate above is its measurement:
+reconstruction MSE "in the order of `O(1/n⁴)`" in the snapshot count. Its sweep
+of the learning-rate decay `t_ref` on ImageNet-512, below, is what the cost
+argument rests on.
+
 ## Why the pre-training guess costs more than it looks
 
 The averaging length has no obvious price: you pick a decay constant, the run

@@ -83,6 +83,11 @@ steps rather than 10M on CIFAR-10, and 1M rather than 2M on ImageNet-32.
 Moving a trained MuLAN denoiser back onto a scalar schedule returns exactly
 VDM's 2.65, which ties the gain to the schedule rather than the denoiser.
 
+The method and these numbers are Sahoo et al.'s, [LIT-677](../literature.d/LIT-677.md), which introduced
+MuLAN on VDM's own U-Net, settings and datasets (Table 1). The warning that
+either half alone does nothing comes from the same paper's ablation, which is
+one run each on CIFAR-10 at 2.5M steps and shown only as a figure.
+
 ## Conditions
 
 **Likelihood only, 32×32 only, VDM's U-Net only.** The source is explicit

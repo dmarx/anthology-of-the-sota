@@ -35,6 +35,11 @@ between response pairs using those same principles, train a preference model
 on the resulting comparisons, and optimize against it. Human labels remain in
 the loop for *helpfulness*; the harmlessness half is model-generated.
 
+This is the method of [LIT-082](../literature.d/LIT-082.md) (Constitutional AI), where the practice
+originates. Its reported result is a model both more harmless and less
+evasive than the RLHF baseline: it engages with a harmful request and explains
+its objection rather than refusing flatly.
+
 ## Why this is a training-data practice, not an alignment philosophy
 
 The

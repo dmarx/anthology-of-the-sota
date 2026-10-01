@@ -42,6 +42,12 @@ slot, its activation measures how well the current prefix matches a
 pattern, and its output row writes a vote for what comes next into the
 residual stream. The stream accumulates and refines those votes.
 
+The reading is [LIT-575](../literature.d/LIT-575.md)'s, and it was tested unit by unit: of 160 sampled keys
+most had a human-identifiable triggering pattern, shallow in layers 1–9 and
+semantic in 10–16, and projecting the values through the output embedding
+gave top-token agreement with the key's next token rising to 3.5% in the upper
+layers, against 0.0004% at random.
+
 ## What it explains
 
 - Why FFN units can be labeled by their triggering contexts and their

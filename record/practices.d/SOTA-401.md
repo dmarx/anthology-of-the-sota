@@ -59,6 +59,11 @@ through training (`SOTA-400` is still right and still worth doing). This
 is a different failure on a different axis — duration rather than size — and it
 needs its own remedy.
 
+Both the decline and the fix come from DINOv3 ([LIT-663](../literature.d/LIT-663.md)). It set out to train
+a 7B model for an extended duration, measured ImageNet linear-probe accuracy
+and VOC segmentation diverging in that run and in ViT-g, and introduced Gram
+anchoring to recover the dense features.
+
 ## What to do
 
 Keep a **Gram teacher**: an early checkpoint of the EMA teacher, from before

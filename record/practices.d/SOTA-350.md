@@ -38,6 +38,14 @@ Shchur et al. (2018), [LIT-581](../literature.d/LIT-581.md). Read as [NOTE-318](
 
 ## The practice
 
+Shchur et al. made this recommendation in [LIT-581](../literature.d/LIT-581.md), from a re-evaluation of
+four GNNs under one shared protocol. On the Planetoid split GAT wins Cora and
+Citeseer. On another split of the same sizes GCN wins both, and over 100
+splits × 20 seeds GCN has the best average rank (2.3, against 2.7 for MoNet
+and GraphSAGE-mean and 3.6 for GAT), with the four non-graph baselines at
+7.4–8.8. GAT fell below 40% in 138 of 2,000 runs on Amazon Photo, which is
+the third bullet.
+
 - **Many splits, many seeds.** The source used 100 random splits with the
   same label budget, and 20 initializations each. Report the mean and the
   distribution, not the best run

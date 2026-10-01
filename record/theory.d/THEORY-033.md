@@ -59,6 +59,10 @@ implement beats an optimum you cannot.
 
 ## What was actually shown
 
+The controls are [LIT-456](../literature.d/LIT-456.md)'s, run on NanoGPT and WikiText-2 at 118M tokens,
+alongside its theorems placing them outside the LMO framework and its
+random-feature analysis of optimal step sizes.
+
 Three controls, each of which could have come out the other way.
 
 **`TruncatedSGD`** zeroes the largest singular values, testing the simple

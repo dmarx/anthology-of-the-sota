@@ -59,6 +59,12 @@ So the claim is not that attention resembles a memory. It is that attention
 *is* an SDM read with a particular temperature, and that the temperature is a
 free parameter the architecture has to get right.
 
+The mapping and both of its conditions are derived in [LIT-641](../literature.d/LIT-641.md), which also
+supplies the check below. Trained QK-norm heads learn β ∈ [10, 25], a figure
+it obtained from the QK-norm authors in private correspondence. For GPT-2 an
+effective β inferred from query-key dot-product magnitudes is reported as
+"more approximate but... largely in agreement".
+
 ## What it predicts, and it is one thing
 
 **Attention should want `L²`-normalized queries and keys and a fitted β rather

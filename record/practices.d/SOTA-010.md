@@ -39,12 +39,10 @@ summary: >-
   statement about why deep networks became trainable, not an instruction, and
   belongs in the scheme [ADR-031](../decisions.d/ADR-031.md) created for exactly that. This code stays so
   links into it resolve.
-# Kept rather than moved: THEORY has no sibling relation, and these record
-# that three readings of one figure were filed together as practices, which is
-# history this code is the right place for ([ADR-034](../decisions.d/ADR-034.md)).
-compared_against:
-- SOTA-011
-- SOTA-012
+# `compared_against: [SOTA-011, SOTA-012]` removed in the correction pass
+# after #395. It recorded that sibling readings of LIT-014 were filed
+# together, but nobody measured them against each other, and the field's
+# blurb excludes a family resemblance.
 ---
 
 # SOTA-010: skip connections promote training stability by smoothing out the loss landscape

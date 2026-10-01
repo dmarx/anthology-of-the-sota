@@ -29,8 +29,6 @@ source:
 - LIT-676
 introduced_by:
 - LIT-073
-compared_against:
-- SOTA-035
 implementations:
 - Imagen
 ---

@@ -10,13 +10,11 @@ source:
 - LIT-056
 introduced_by:
 - LIT-056
-# inactive-ok-block: SOTA-155 — Proposed, and declared as a rival rather than
-# a replacement precisely because it is not yet in force
-# SOTA-155 attacks the same problem — a slow interconnect — by reducing the
-# frequency of synchronisation rather than the volume of each one. Rivals,
-# not lineage.
-compared_against:
-- SOTA-155
+# `compared_against: [SOTA-155]` removed in the correction pass after #395.
+# SOTA-155 attacks the same problem (a slow interconnect) by reducing the
+# frequency of synchronisation rather than the volume of each one. That makes
+# them rivals, but neither DiLoCo paper runs against deep gradient
+# compression, and the field records a comparison somebody ran.
 summary: >-
   Lin et al. (2017), [LIT-056](../literature.d/LIT-056.md) — [ARXIV-1712.01887](https://arxiv.org/abs/1712.01887).
 ---

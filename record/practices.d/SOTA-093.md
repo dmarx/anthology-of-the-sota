@@ -13,10 +13,6 @@ source:
 - LIT-069
 introduced_by:
 - LIT-069
-compared_against:
-- SOTA-092
-- SOTA-094
-- SOTA-031
 summary: >-
   Chowdhery et al. (2022), [LIT-069](../literature.d/LIT-069.md) — [ARXIV-2204.02311](https://arxiv.org/abs/2204.02311).
 implementations:

@@ -24,7 +24,7 @@ keywords:
 implementations:
 - 'google-research/big_vision'
 summary: >-
-  Tschannen et al. (2025), ARXIV-2502.14786. Keep SigLIP's architecture and
+  Tschannen et al. (2025), [ARXIV-2502.14786](https://arxiv.org/abs/2502.14786). Keep SigLIP's architecture and
   sigmoid loss, and add a captioning-and-grounding decoder loss (LocCa)
   throughout, self-distillation and masked prediction for the last 20% of
   training, a 90/10 English/multilingual mix with de-biasing filters, and
@@ -38,10 +38,11 @@ extends:
 compared_against:
 - LIT-605
 ---
+<!-- inactive-ok-file: SOTA-398 — Proposed; named as neighbours this paper informs or tests, with their standing stated where they are cited -->
 
 # LIT-tmp6b0jl: SigLIP 2: Multilingual Vision-Language Encoders with Improved Semantic Understanding, Localization, and Dense Features
 
-Tschannen et al. (2025) — ARXIV-2502.14786
+Tschannen et al. (2025) — [ARXIV-2502.14786](https://arxiv.org/abs/2502.14786)
 
 ## Key takeaways
 
@@ -100,18 +101,18 @@ Tschannen et al. (2025) — ARXIV-2502.14786
 
 ## Standing in the anthology
 
-It extends LIT-605, the original SigLIP. It keeps that paper's
+It extends [LIT-605](LIT-605.md), the original SigLIP. It keeps that paper's
 architecture and its pairwise sigmoid loss and calls it "the original
-implementation", so the loss SOTA-376 recommends is unchanged here. What
+implementation", so the loss [SOTA-376](../practices.d/SOTA-376.md) recommends is unchanged here. What
 the extension adds is the decoder and self-supervised terms described
-above. It is compared against LIT-605 throughout: released SigLIP
+above. It is compared against [LIT-605](LIT-605.md) throughout: released SigLIP
 checkpoints are evaluated at matched size and resolution in every table,
 and are run through the same downstream training for VLM transfer and
 open-vocabulary detection. SigLIP 2 wins on every axis, which is
 the point of the paper and also why it is weak as evidence for any single
 change.
 
-That weakness is SOTA-194's case. A new objective arrives with a new
+That weakness is [SOTA-194](../practices.d/SOTA-194.md)'s case. A new objective arrives with a new
 dataset, here a multilingual, de-biased mixture and a new tokenizer, and
 the improvement is reported against a predecessor that had neither. The
 paper itself offers a composition explanation for its one loss, to LocCa
@@ -119,15 +120,15 @@ on RefCOCO. Anything this paper might source would have to be a
 recommendation about the bundle; no single ingredient is isolated.
 
 Two smaller points of contact. It trains at batch 32k, the size at which
-LIT-605 found contrastive benefit saturating (SOTA-377). That is
-adoption by the same group, not new evidence (DP-005). NaFlex keeps
+[LIT-605](LIT-605.md) found contrastive benefit saturating ([SOTA-377](../practices.d/SOTA-377.md)). That is
+adoption by the same group, not new evidence ([DP-005](../../docs/design-principles.md#dp-5)). NaFlex keeps
 native aspect ratio and samples sequence length per batch in the spirit
-of LIT-657 and SOTA-398. It resizes and pads one image per sequence
+of [LIT-657](LIT-657.md) and [SOTA-398](../practices.d/SOTA-398.md). It resizes and pads one image per sequence
 rather than packing several, and it is reported against SigLIP 2's own
 square checkpoints, not against NaViT. The self-distillation and
 masked-prediction terms come from the DINO line the record holds as
-LIT-664 and LIT-599, by way of SILC and TIPS, which are not in the record.
-CLIP (LIT-588) appears in its tables, but this note does not establish
+[LIT-664](LIT-664.md) and [LIT-599](LIT-599.md), by way of SILC and TIPS, which are not in the record.
+CLIP ([LIT-588](LIT-588.md)) appears in its tables, but this note does not establish
 whether those numbers were rerun.
 
 Unread — no NOTE.

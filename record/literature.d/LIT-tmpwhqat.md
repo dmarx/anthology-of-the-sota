@@ -20,7 +20,7 @@ keywords:
 implementations:
 - 'f-dangel/kfac-tutorial'
 summary: >-
-  Dangel et al. (2025), ARXIV-2507.05127 — a tutorial, math and PyTorch side
+  Dangel et al. (2025), [ARXIV-2507.05127](https://arxiv.org/abs/2507.05127) — a tutorial, math and PyTorch side
   by side, for the original KFAC of Martens and Grosse: fully-connected
   layers, no weight sharing. One scaffold covers the GGN, the Monte-Carlo
   Fisher and the empirical Fisher, and the only thing that changes between
@@ -33,7 +33,7 @@ summary: >-
 
 # LIT-tmpwhqat: Kronecker-factored Approximate Curvature (KFAC) From Scratch
 
-Dangel et al. (2025) — ARXIV-2507.05127
+Dangel et al. (2025) — [ARXIV-2507.05127](https://arxiv.org/abs/2507.05127)
 
 ## Key takeaways
 
@@ -80,10 +80,10 @@ Dangel et al. (2025) — ARXIV-2507.05127
 ## Standing in the anthology
 
 **The elder of the matrix-preconditioner family, filed as background, not
-as evidence.** SOTA-165 recommends preconditioning with matrices rather than
-entrywise, and its members are Muon (SOTA-121) and Shampoo and SOAP
-(LIT-158, LIT-157). KFAC is the Kronecker-factored per-layer curvature
-approximation those sit beside, and LIT-158 describes Shampoo's own
+as evidence.** [SOTA-165](../practices.d/SOTA-165.md) recommends preconditioning with matrices rather than
+entrywise, and its members are Muon ([SOTA-121](../practices.d/SOTA-121.md)) and Shampoo and SOAP
+([LIT-158](LIT-158.md), [LIT-157](LIT-157.md)). KFAC is the Kronecker-factored per-layer curvature
+approximation those sit beside, and [LIT-158](LIT-158.md) describes Shampoo's own
 preconditioner as a Kronecker-product approximation, to full-matrix AdaGrad.
 The two factorizations are not the same object — KFAC's factors are input
 activations and backpropagated output gradients, Shampoo's are built from
@@ -92,10 +92,10 @@ or Muon, so it supplies no comparison. What it does supply is the vocabulary
 for the difference: which curvature matrix a preconditioner approximates
 (GGN, Fisher or empirical Fisher) is a choice, and those choices disagree.
 
-**It sits under the record's influence-function line.** LIT-401 (Grosse et
+**It sits under the record's influence-function line.** [LIT-401](LIT-401.md) (Grosse et
 al.) approximates the inverse-Hessian-vector product with EK-FAC at up to 52B
 parameters; this tutorial says the first step of EK-FAC is KFAC, and leaves
-the eigenvalue correction itself for a later version. LIT-476 found K-FAC
+the eigenvalue correction itself for a later version. [LIT-476](LIT-476.md) found K-FAC
 working about as well as Adam's second moment as a preconditioner for its
 volume estimates, and the full Fisher of the KL doing no better than none —
 an instance of this tutorial's point that the curvature matrices are not

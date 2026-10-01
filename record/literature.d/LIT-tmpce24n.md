@@ -21,7 +21,7 @@ keywords:
 - 'autoregressive-image-generation'
 - 'Semanticist'
 summary: >-
-  Wen, Zhao et al. (2025), ARXIV-2503.08685 — Semanticist. A ViT encoder
+  Wen, Zhao et al. (2025), [ARXIV-2503.08685](https://arxiv.org/abs/2503.08685) — Semanticist. A ViT encoder
   emits a causal 1D sequence of continuous tokens that conditions a DiT
   diffusion decoder. During training, every token after a uniformly sampled
   index is replaced by a learned null token ("nested CFG"), so earlier tokens
@@ -34,10 +34,11 @@ compared_against:
 - LIT-497
 - LIT-496
 ---
+<!-- inactive-ok-file: SOTA-327 — Proposed; named as neighbours this paper informs or tests, with their standing stated where they are cited -->
 
 # LIT-tmpce24n: "Principal Components" Enable A New Language of Images
 
-Wen, Zhao, Elezi, Deng and Qi (2025) — ARXIV-2503.08685 (v2 read).
+Wen, Zhao, Elezi, Deng and Qi (2025) — [ARXIV-2503.08685](https://arxiv.org/abs/2503.08685) (v2 read).
 Project page: visual-gen.github.io/semanticist.
 
 ## Key takeaways
@@ -85,24 +86,24 @@ Project page: visual-gen.github.io/semanticist.
 
 ## Standing in the anthology
 
-It belongs to the tokenizer trunk built on LIT-497, LIT-496 and LIT-499, and
-it bears on SOTA-305 in a specific way. The paper does state rate: it compares
+It belongs to the tokenizer trunk built on [LIT-497](LIT-497.md), [LIT-496](LIT-496.md) and [LIT-499](LIT-499.md), and
+it bears on [SOTA-305](../practices.d/SOTA-305.md) in a specific way. The paper does state rate: it compares
 at "similar-sized latent space (i.e., token count × token dimension)". But its
 tokens are continuous and the rows it beats are quantized, so equal float
 count is not equal rate. LlamaGen's 256×8 is 256 indices into a 16384-entry
-codebook. The 0.78-versus-0.80 headline would need SOTA-305's question asked
+codebook. The 0.78-versus-0.80 headline would need [SOTA-305](../practices.d/SOTA-305.md)'s question asked
 in bits before it means what it seems to.
 
 The comparisons are quoted from the original papers, except the spectrum
-analysis. LIT-497's LlamaGen is a Table 1 row: its VQ tokenizer at 2.19 rFID
+analysis. [LIT-497](LIT-497.md)'s LlamaGen is a Table 1 row: its VQ tokenizer at 2.19 rFID
 and 256×8, and LlamaGen-L's 3.80 gFID on 256 tokens. It is also the tokenizer
 whose PCA-decomposed latent Fig. 2 uses to show semantic-spectrum coupling,
-and the generator Semanticist's own ε-LlamaGen is built from. LIT-496's VQGAN
+and the generator Semanticist's own ε-LlamaGen is built from. [LIT-496](LIT-496.md)'s VQGAN
 is the 7.94 rFID / 5.20 gFID row. Neither is retrained.
 
-Nested CFG is the Matryoshka idea of LIT-547 (practice SOTA-327) moved from
+Nested CFG is the Matryoshka idea of [LIT-547](LIT-547.md) (practice [SOTA-327](../practices.d/SOTA-327.md)) moved from
 embedding dimensions to token positions, with prefix decoding in place of
 prefix retrieval. The paper credits it as inspiration and does not compare
-against it. The decoder is a DiT (LIT-448).
+against it. The decoder is a DiT ([LIT-448](LIT-448.md)).
 
 Unread — no NOTE.

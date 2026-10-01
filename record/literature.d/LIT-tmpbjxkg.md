@@ -23,7 +23,7 @@ keywords:
 implementations:
 - 'zipnn/zipnn'
 summary: >-
-  Hershcovitch et al. (2024), ARXIV-2411.05239. Losslessly compressing a
+  Hershcovitch et al. (2024), [ARXIV-2411.05239](https://arxiv.org/abs/2411.05239). Losslessly compressing a
   trained model's file works almost entirely through the float exponent:
   about 40 of 256 values occur, and the exponent stream codes to ~33% while
   sign and mantissa stay near 100%. Regular BF16 models therefore shrink to
@@ -35,7 +35,7 @@ summary: >-
 
 # LIT-tmpbjxkg: ZipNN: Lossless Compression for AI Models
 
-Hershcovitch et al. (2024), IBM Research and others — ARXIV-2411.05239
+Hershcovitch et al. (2024), IBM Research and others — [ARXIV-2411.05239](https://arxiv.org/abs/2411.05239)
 
 ## Key takeaways
 
@@ -107,16 +107,16 @@ the unmeasured skew explanation. Here it is filed for what it offers as
 practice.
 
 Nothing in the anthology covers lossless compression of model files. Its
-neighbours all trade accuracy for bits: GPTQ (LIT-081, source of
-SOTA-185) and AWQ (LIT-585) quantize, and LIT-197 and LIT-186 choose the
+neighbours all trade accuracy for bits: GPTQ ([LIT-081](LIT-081.md), source of
+[SOTA-185](../practices.d/SOTA-185.md)) and AWQ ([LIT-585](LIT-585.md)) quantize, and [LIT-197](LIT-197.md) and [LIT-186](LIT-186.md) choose the
 format. This paper takes the format as given and asks how many of its bits
 are redundant. Its answer, that only the exponent field is redundant,
 holds for regular trained weights. Its measurement that GPTQ- and
 AWQ-quantized checkpoints are still compressible is a small fact about
 those papers' output, not a test of their methods. Gradient compression
-for communication (LIT-056) is lossy and works on a different object.
+for communication ([LIT-056](LIT-056.md)) is lossy and works on a different object.
 
-The checkpoint results bear on SOTA-054, which sets the checkpoint
+The checkpoint results bear on [SOTA-054](../practices.d/SOTA-054.md), which sets the checkpoint
 interval against an overhead bound. Smaller checkpoints lower that
 overhead. The paper measures sizes and throughputs, though, not
 checkpoint stall time inside a training run, so it informs the

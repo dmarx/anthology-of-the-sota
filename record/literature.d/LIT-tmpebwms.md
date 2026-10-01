@@ -31,7 +31,7 @@ summary: >-
 
 # LIT-tmpebwms: Position: AI/ML Influencers Have a Place in the Academic Process
 
-Weissburg, Arora, Wang, Pan and Wang (2024), ICML 2024 — ARXIV-2401.13782
+Weissburg, Arora, Wang, Pan and Wang (2024), ICML 2024 — [ARXIV-2401.13782](https://arxiv.org/abs/2401.13782)
 
 ## Key takeaways
 
@@ -84,15 +84,15 @@ Weissburg, Arora, Wang, Pan and Wang (2024), ICML 2024 — ARXIV-2401.13782
 
 It joins the `deployment-and-society` documents that treat the research
 literature itself as an information ecosystem rather than a platform's users. It
-sits beside LIT-481, which found that 49% of high-profile social-media papers
+sits beside [LIT-481](LIT-481.md), which found that 49% of high-profile social-media papers
 have a disclosable industry tie concentrated in 21% of authors. This paper
 finds a similar concentration one step later, in who decides what gets read:
 two accounts act as curators for a large part of the field, and their sharing
-moves citations at matched review quality. LIT-481 is about who funds the studies and this paper is about
+moves citations at matched review quality. [LIT-481](LIT-481.md) is about who funds the studies and this paper is about
 who amplifies them. The two are independent groups and fields, so they are
 not one finding counted twice.
 
-It also gives DP-005 (adoption is not evidence) a measured instance from the
+It also gives [DP-005](../../docs/design-principles.md#dp-5) (adoption is not evidence) a measured instance from the
 other end. A citation count is often read as a paper's standing. Here,
 between papers with matched review scores, a large part of the count tracks
 whether two people tweeted it. Any practice that weighs "well-cited" as

@@ -21,7 +21,7 @@ keywords:
 - 'sgld'
 implementations: []
 summary: >-
-  Xie et al. (2020), ARXIV-2002.03495 (ICLR 2021). Near a minimum, SGD's
+  Xie et al. (2020), [ARXIV-2002.03495](https://arxiv.org/abs/2002.03495) (ICLR 2021). Near a minimum, SGD's
   gradient-noise covariance is approximately the Hessian divided by the batch
   size; feed that into a Kramers escape-time calculation and the mean time
   to leave a valley is exponential in B/η times the inverse Hessian
@@ -30,10 +30,11 @@ summary: >-
   them only polynomially. Validated as escape rates on test functions and
   networks of ten hidden units; generalization is not measured.
 ---
+<!-- inactive-ok-file: THEORY-013 — Rejected, named so this paper is not read as reviving it -->
 
 # LIT-tmpv58c2: A Diffusion Theory For Deep Learning Dynamics: Stochastic Gradient Descent Exponentially Favors Flat Minima
 
-Xie et al. (2020) — ARXIV-2002.03495
+Xie et al. (2020) — [ARXIV-2002.03495](https://arxiv.org/abs/2002.03495)
 
 ## Key takeaways
 
@@ -76,44 +77,44 @@ Xie et al. (2020) — ARXIV-2002.03495
 
 ## Standing in the anthology
 
-**It supplies a mechanism for one half of SOTA-012 and nothing for the
-other.** SOTA-012 holds, from LIT-014, that sharpness correlates with test
+**It supplies a mechanism for one half of [SOTA-012](../practices.d/SOTA-012.md) and nothing for the
+other.** [SOTA-012](../practices.d/SOTA-012.md) holds, from [LIT-014](LIT-014.md), that sharpness correlates with test
 error. This paper says why SGD might *arrive* at flat minima, and says
 nothing measured about whether they test better. A reader should not count
 it as support for the correlation.
 
-**It shares its central variable with THEORY-013, which is `Rejected`.**
-Smith and Le (LIT-305) set generalization by a noise scale `εN/B` and were
-rejected because Shallue et al. (LIT-058) found no evidence that larger
+**It shares its central variable with [THEORY-013](../theory.d/THEORY-013.md), which is `Rejected`.**
+Smith and Le ([LIT-305](LIT-305.md)) set generalization by a noise scale `εN/B` and were
+rejected because Shallue et al. ([LIT-058](LIT-058.md)) found no evidence that larger
 batches degrade out-of-sample performance once the metaparameters are
 retuned. This paper cites Smith and Le and builds the batch-to-learning-rate ratio into an
 exponent. Its escape-time predictions are about dynamics and are not
 reached by that sweep. Its closing inference — that large-batch training
 "cannot search flat minima efficiently in a realistic computational time"
-and generalizes worse for it — explains the very gap LIT-058 found to be
+and generalizes worse for it — explains the very gap [LIT-058](LIT-058.md) found to be
 mostly a tuning artefact, and should be read with that in hand. What
-survives is the same thing that survives in THEORY-013: holding `B/η` fixed
+survives is the same thing that survives in [THEORY-013](../theory.d/THEORY-013.md): holding `B/η` fixed
 is linear scaling.
 
 **Two of its assumptions are things the record holds evidence against.**
-It assumes quasi-equilibrium inside a valley; LIT-454 finds that after
+It assumes quasi-equilibrium inside a valley; [LIT-454](LIT-454.md) finds that after
 the loss converges the weights keep moving with anomalous diffusion, driven
 by a modified loss and probability currents, and that the stationary
 distribution depends on how the noise covariance relates to the Hessian —
 the relation this paper fixes by assumption at `C ∝ H`. And it reasons from
 a quadratic expansion in which zero-eigenvalue directions can be dropped;
-THEORY-075, from LIT-541, holds that neural networks are singular, so the
+[THEORY-075](../theory.d/THEORY-075.md), from [LIT-541](LIT-541.md), holds that neural networks are singular, so the
 loss is not locally quadratic and curvature is the prefactor rather than
 what governs complexity. Neither refutes the escape-rate measurements, which
 are on models small enough for the assumptions to be checked; both bear on
 carrying them to large networks.
 
-**It is a small-step, SGD-only account.** THEORY-035 (from LIT-461) holds
+**It is a small-step, SGD-only account.** [THEORY-035](../theory.d/THEORY-035.md) (from [LIT-461](LIT-461.md)) holds
 that full-batch gradient descent drives the top Hessian eigenvalue up to
 `2/η` and trains there — the step size sets the curvature. Here the
 curvature of a valley is given and the step size only sets a temperature in
 a continuous-time approximation; the two pictures are not reconciled by
 either paper. And it says nothing about the matrix-preconditioned optimizers of
-SOTA-165, which reshape exactly the noise covariance this theory is built on.
+[SOTA-165](../practices.d/SOTA-165.md), which reshape exactly the noise covariance this theory is built on.
 
 Unread — no NOTE.

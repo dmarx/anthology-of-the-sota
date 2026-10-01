@@ -22,7 +22,7 @@ keywords:
 implementations:
 - 'PaddlePaddle/PaddleFleetX'
 summary: >-
-  Wang et al. (2022), ARXIV-2211.00235. Move the Evoformer's outer product
+  Wang et al. (2022), [ARXIV-2211.00235](https://arxiv.org/abs/2211.00235). Move the Evoformer's outer product
   mean to the end of the block, so the MSA and pair stacks no longer depend
   on each other within a block; this matches the original block's accuracy
   and speed. Then put the two stacks on two GPUs. On a batch of one protein
@@ -34,10 +34,11 @@ extends:
 compared_against:
 - LIT-583
 ---
+<!-- inactive-ok-file: SOTA-353, SOTA-354, THEORY-084 — Proposed; named as neighbours this paper informs or tests, with their standing stated where they are cited -->
 
 # LIT-tmpjq8cb: Efficient AlphaFold2 Training using Parallel Evoformer and Branch Parallelism
 
-Wang et al. (2022), Baidu — ARXIV-2211.00235
+Wang et al. (2022), Baidu — [ARXIV-2211.00235](https://arxiv.org/abs/2211.00235)
 
 ## Key takeaways
 
@@ -84,30 +85,30 @@ Wang et al. (2022), Baidu — ARXIV-2211.00235
 
 ## Standing in the anthology
 
-It extends LIT-583, AlphaFold 2. It takes AlphaFold2's Evoformer block and
+It extends [LIT-583](LIT-583.md), AlphaFold 2. It takes AlphaFold2's Evoformer block and
 its training recipe unchanged and changes one thing: where the outer
 product mean sits, which removes the dependency between the two tracks. It
-is compared against LIT-583 in the sense that matters for that change: the
+is compared against [LIT-583](LIT-583.md) in the sense that matters for that change: the
 original Evoformer block was trained from scratch as one arm of the
 accuracy comparison and timed as one arm of the speed table, and it matched
 the parallel block on both. For end-to-end training time, though,
 AlphaFold2's own 128-TPUv3 figure is quoted rather than rerun. The record
-holds AlphaFold 2 for what it predicts and why (SOTA-353, SOTA-354,
-THEORY-084); this is the first paper in it on what AlphaFold costs to
+holds AlphaFold 2 for what it predicts and why ([SOTA-353](../practices.d/SOTA-353.md), [SOTA-354](../practices.d/SOTA-354.md),
+[THEORY-084](../theory.d/THEORY-084.md)); this is the first paper in it on what AlphaFold costs to
 train.
 
-The general lesson is the one in LIT-088, reached from another
+The general lesson is the one in [LIT-088](LIT-088.md), reached from another
 direction. ViT-22B, like PaLM, runs attention and MLP in parallel within a
 block so that their matrix multiplies fuse. This paper makes two branches
 parallel within a block so that they can run on different devices. In both
 cases a sequential dependency inside the block turns out to cost little or
 no accuracy, and removing it buys speed. The record has practices for the
 usual answers when one device is not enough, micro-batched pipelines
-(SOTA-017) and sequence parallelism beside tensor parallelism (SOTA-058).
+([SOTA-017](../practices.d/SOTA-017.md)) and sequence parallelism beside tensor parallelism ([SOTA-058](../practices.d/SOTA-058.md)).
 Those answers assume a batch or a layer large enough to split. Here the
 batch is one protein and the kernels are small, and the paper's DAP
 comparison shows what splitting activations costs in that regime. As
-ADR-059 directs for a method found in AlphaFold, it is filed by its kind
+[ADR-059](../decisions.d/ADR-059.md) directs for a method found in AlphaFold, it is filed by its kind
 (distributed training) first and under `biomolecular-modeling` as well.
 
 Unread — no NOTE.

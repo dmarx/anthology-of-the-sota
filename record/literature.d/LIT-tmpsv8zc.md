@@ -25,7 +25,7 @@ keywords:
 - 'coarse-graining'
 - 'AI-safety'
 summary: >-
-  Boyd et al. (2025), ARXIV-2512.02193 — a formal paper with no experiments.
+  Boyd et al. (2025), [ARXIV-2512.02193](https://arxiv.org/abs/2512.02193) — a formal paper with no experiments.
   A world model is a transducer (a stochastic input-output machine with
   latent memory, generalizing POMDPs), and composing transducers is a
   Kronecker product of their operators. The paper inverts this. Two
@@ -36,10 +36,11 @@ summary: >-
   inferred separately. Minimal predictive models (ε-transducers) are closed
   under composition.
 ---
+<!-- inactive-ok-file: LIT-031 — Superseded, named as the record's existing modularity work and marked superseded where cited -->
 
 # LIT-tmpsv8zc: From monoliths to modules: Decomposing transducers for efficient world modelling
 
-Boyd, Nowak, Hyland, Baltieri and Rosas (2025) — ARXIV-2512.02193.
+Boyd, Nowak, Hyland, Baltieri and Rosas (2025) — [ARXIV-2512.02193](https://arxiv.org/abs/2512.02193).
 
 ## Key takeaways
 
@@ -85,11 +86,11 @@ Boyd, Nowak, Hyland, Baltieri and Rosas (2025) — ARXIV-2512.02193.
 ## Standing in the anthology
 
 Nothing in the record connects to it directly, so it is a seed and not
-evidence for anything held. The nearest document is LIT-215 (V-JEPA 2),
+evidence for anything held. The nearest document is [LIT-215](LIT-215.md) (V-JEPA 2),
 whose action-conditioned world model is exactly the monolithic, single-latent
 kind this paper proposes to factor. The paper says nothing about learned
 latents of that sort and tests nothing on one. The modularity work in the
-record is about trained networks' weights (LIT-031, superseded), not about
+record is about trained networks' weights ([LIT-031](LIT-031.md), superseded), not about
 the environments they model.
 
 Its one claim about neural networks is in §6, and it is borrowed. The
@@ -103,6 +104,6 @@ concept-geometry tag, and it is the weakest of the three.
 models and environments for agents, and reinforcement learning generally.
 `model-architecture` is first because the paper's claim is about how a world
 model should be structured. It is the nearest true tag, not the right one,
-and under ADR-059 the gap belongs in the vocabulary, not in this note.
+and under [ADR-059](../decisions.d/ADR-059.md) the gap belongs in the vocabulary, not in this note.
 
 Unread — no NOTE.

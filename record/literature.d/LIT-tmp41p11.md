@@ -20,7 +20,7 @@ keywords:
 - 'self-awareness'
 implementations: []
 summary: >-
-  Shanahan, McDonell and Reynolds (2023), ARXIV-2305.16367 — a conceptual
+  Shanahan, McDonell and Reynolds (2023), [ARXIV-2305.16367](https://arxiv.org/abs/2305.16367) — a conceptual
   paper, with no experiments. A base LLM behind a dialogue prompt is best
   described as role-playing the character the context implies. More
   precisely, it keeps a superposition of characters consistent with the
@@ -31,10 +31,11 @@ summary: >-
   faith" errors do not, and "deliberate" deception shows when the same
   question is asked from different contexts.
 ---
+<!-- inactive-ok-file: THEORY-068 — Rejected, named as an adjacent account of in-context learning that does not cover what a prompt conditions a model to be -->
 
 # LIT-tmp41p11: Role-Play with Large Language Models
 
-Shanahan, McDonell and Reynolds (2023) — ARXIV-2305.16367. DeepMind,
+Shanahan, McDonell and Reynolds (2023) — [ARXIV-2305.16367](https://arxiv.org/abs/2305.16367). DeepMind,
 Imperial College London and EleutherAI.
 
 ## Key takeaways
@@ -80,14 +81,14 @@ Imperial College London and EleutherAI.
 
 ## Standing in the anthology
 
-The record holds this framing elsewhere only as a finding. LIT-401 (Grosse
+The record holds this framing elsewhere only as a finding. [LIT-401](LIT-401.md) (Grosse
 et al., later in 2023) traced role-play behaviour in pretrained models with
 influence functions. As that note records it, the behaviour is influenced
 mainly by descriptions and examples of similar behaviour in the training
 corpus, and not by anything that suggests planning. That is the evidence
 this paper asserts without having it: the characters come from the corpus.
 
-The regeneration diagnostic belongs beside SOTA-280. That practice samples
+The regeneration diagnostic belongs beside [SOTA-280](../practices.d/SOTA-280.md). That practice samples
 several paths and takes the majority for accuracy. This paper reads the
 spread of the same samples as evidence of *which kind* of error the model is
 making. The record has no practice or theory for using semantic variation
@@ -95,7 +96,7 @@ under resampling as a confabulation signal, and this paper gives no
 measurement to source one.
 
 The record holds no theory of what a dialogue prompt does to a base model.
-THEORY-068 and THEORY-067 concern how a transformer learns from context, not
+[THEORY-068](../theory.d/THEORY-068.md) and [THEORY-067](../theory.d/THEORY-067.md) concern how a transformer learns from context, not
 what it is conditioned to *be*. This is a seed rather than a gap.
 
 Unread — no NOTE.

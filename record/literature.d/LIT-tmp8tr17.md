@@ -28,7 +28,7 @@ keywords:
 implementations:
 - 'sepllm.github.io'
 summary: >-
-  Chen et al. (2024), ARXIV-2412.12094 — SepLLM. Let each token attend only
+  Chen et al. (2024), [ARXIV-2412.12094](https://arxiv.org/abs/2412.12094) — SepLLM. Let each token attend only
   to a few initial tokens, the previous n tokens, and every earlier separator
   token (punctuation and whitespace), on the hypothesis that a segment's
   content is condensed into the separator that ends it. Training-free on
@@ -40,7 +40,7 @@ summary: >-
 
 # LIT-tmp8tr17: SepLLM: Accelerate Large Language Models by Compressing One Segment into One Separator
 
-Chen et al., Huawei Noah's Ark Lab and The University of Hong Kong (2024) — ARXIV-2412.12094
+Chen et al., Huawei Noah's Ark Lab and The University of Hong Kong (2024) — [ARXIV-2412.12094](https://arxiv.org/abs/2412.12094)
 
 ## Key takeaways
 
@@ -90,7 +90,7 @@ Chen et al., Huawei Noah's Ark Lab and The University of Hong Kong (2024) — AR
 
 ## Standing in the anthology
 
-SepLLM extends StreamingLLM (LIT-191) by one cache. StreamingLLM keeps a
+SepLLM extends StreamingLLM ([LIT-191](LIT-191.md)) by one cache. StreamingLLM keeps a
 handful of initial tokens, because evicting the attention sink breaks the
 model, plus a rolling window, with positions assigned within the cache.
 SepLLM keeps all of that and adds the KV of every separator that has scrolled
@@ -98,12 +98,12 @@ out of the window. StreamingLLM is also the baseline in every experiment at a
 matched cache budget, and the comparison is consistently in SepLLM's favour:
 seven points on GSM8K-CoT at the same 47% of KV, lower perplexity at every
 streaming length to 4M, and a needle-in-a-haystack test StreamingLLM fails
-outright (Appendix F). The streaming ablation also reproduces LIT-191's own
+outright (Appendix F). The streaming ablation also reproduces [LIT-191](LIT-191.md)'s own
 finding that the initial tokens cannot be dropped.
 
-It bears on THEORY-019 in a way the record should register. That theory
+It bears on [THEORY-019](../theory.d/THEORY-019.md) in a way the record should register. That theory
 explains the sink as a softmax with nothing to attend to dumping its mass on
-the positions every query can see. LIT-414 extends the same diagnosis to
+the positions every query can see. [LIT-414](LIT-414.md) extends the same diagnosis to
 content: heads learning a no-op land it on `[SEP]`, periods and commas. So the
 attention on separators that SepLLM starts from has a reading in the record
 already, and it is that the attention is a no-op, not a summary. The two
@@ -114,10 +114,10 @@ seven GSM8K points over StreamingLLM, nor beat a fixed-interval selection.
 It does not show that separators carry *no* sink function. A probe of
 separator representations would settle what the masking results only imply.
 
-For practice, it sits beside SOTA-138, which recommends sparse attention
+For practice, it sits beside [SOTA-138](../practices.d/SOTA-138.md), which recommends sparse attention
 learned with an indexer. SepLLM's sparsity is fixed by the tokenizer, not
 learned, and needs no indexer. It also gains from keeping a full-attention
-first and last layer, the hybrid instinct of SOTA-132 in a different form.
+first and last layer, the hybrid instinct of [SOTA-132](../practices.d/SOTA-132.md) in a different form.
 No practice in the record recommends separator-based KV retention, and this
 single paper, with from-scratch evidence only at 160M, is not enough to
 file one.

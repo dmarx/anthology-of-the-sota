@@ -28,7 +28,7 @@ keywords:
 - 'audioset'
 - 'modelnet40'
 summary: >-
-  Jaegle et al. (2021), ARXIV-2103.03206 — the Perceiver. A learned latent
+  Jaegle et al. (2021), [ARXIV-2103.03206](https://arxiv.org/abs/2103.03206) — the Perceiver. A learned latent
   array of N=512 queries cross-attends to the raw input (50,176 ImageNet
   pixels), so attention costs O(MN) rather than O(M²), and a deep latent
   transformer then runs at O(N²) per layer, independent of input size. With
@@ -37,10 +37,11 @@ summary: >-
   ViT-B-16 and ResNet-50 given the same features fall to 61.7 and 39.4. The
   same architecture runs on audio, video and point clouds.
 ---
+<!-- inactive-ok-file: SOTA-403 — Proposed; named as neighbours this paper informs or tests, with their standing stated where they are cited -->
 
 # LIT-tmp7rvm6: Perceiver: General Perception with Iterative Attention
 
-Jaegle et al., DeepMind (2021) — ARXIV-2103.03206
+Jaegle et al., DeepMind (2021) — [ARXIV-2103.03206](https://arxiv.org/abs/2103.03206)
 
 ## Key takeaways
 
@@ -101,13 +102,13 @@ Transformer, no Perceiver IO, no learned-query resampler. This note is the
 seed for that design, and its claim (attention through a small learned array
 removes the input-size term from depth) is not yet a practice.
 
-The comparison it ran is with ViT (LIT-587), which the authors reimplemented
+The comparison it ran is with ViT ([LIT-587](LIT-587.md)), which the authors reimplemented
 with the Perceiver's own Fourier-feature inputs. On unpermuted ImageNet the
 two are within a point (78.0 against 76.7 for that reimplementation), and the
 paper does not claim otherwise. Where it separates them is on permuted
 pixels, where ViT's single patch convolution, a 256-pixel receptive field,
-costs it 15 points and the Perceiver nothing. That bears on SOTA-358 from an
-unusual side. SOTA-358 says to drop the domain prior once data is large
+costs it 15 points and the Perceiver nothing. That bears on [SOTA-358](../practices.d/SOTA-358.md) from an
+unusual side. [SOTA-358](../practices.d/SOTA-358.md) says to drop the domain prior once data is large
 enough; the Perceiver drops it entirely on ImageNet-1k alone, which is below
 the threshold that practice describes, and lands at ResNet-50's level rather
 than above it. It is consistent with the practice's caution rather than a
@@ -115,10 +116,10 @@ counterexample: removing the prior was affordable, not profitable, at that
 scale.
 
 Two smaller contacts. The Fourier position features are the encoding of
-Tancik et al. (LIT-550), reparameterised with linear rather than random or
+Tancik et al. ([LIT-550](LIT-550.md)), reparameterised with linear rather than random or
 power-of-two frequencies; the k=15 instability with NeRF's bands is a
-data point for SOTA-331's warning that frequency scale must be tuned. And the
-weight-sharing result touches SOTA-403, which recommends sharing attention but
+data point for [SOTA-331](../practices.d/SOTA-331.md)'s warning that frequency scale must be tuned. And the
+weight-sharing result touches [SOTA-403](../practices.d/SOTA-403.md), which recommends sharing attention but
 not feed-forward parameters across depth: the Perceiver shares both and gains
 five points, but its unshared baseline was overfitting badly and the paper
 does not separate the attention half from the feed-forward half, so it does

@@ -21,7 +21,7 @@ keywords:
 - 'latent-space-decoding'
 - 'synthetic-supervision'
 summary: >-
-  Bahmani et al. (2025), ARXIV-2509.19296 — Lyra. Train a 3D Gaussian
+  Bahmani et al. (2025), [ARXIV-2509.19296](https://arxiv.org/abs/2509.19296) — Lyra. Train a 3D Gaussian
   Splatting decoder on the latents of a frozen camera-controlled video
   diffusion model (GEN3C), supervised only by that model's own RGB decodings
   along six camera trajectories per image, with no real multi-view data.
@@ -31,10 +31,11 @@ summary: >-
   Tanks-and-Temples, and adding real multi-view data to the synthetic
   supervision does not help.
 ---
+<!-- inactive-ok-file: SOTA-394 — Proposed; named as neighbours this paper informs or tests, with their standing stated where they are cited -->
 
 # LIT-tmp5yash: Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation
 
-Bahmani et al., NVIDIA, University of Toronto, Vector Institute and Simon Fraser University (2025) — ARXIV-2509.19296
+Bahmani et al., NVIDIA, University of Toronto, Vector Institute and Simon Fraser University (2025) — [ARXIV-2509.19296](https://arxiv.org/abs/2509.19296)
 
 ## Key takeaways
 
@@ -88,25 +89,25 @@ Bahmani et al., NVIDIA, University of Toronto, Vector Institute and Simon Fraser
 
 ## Standing in the anthology
 
-The output representation is 3D Gaussian Splatting (LIT-108), which SOTA-205
+The output representation is 3D Gaussian Splatting ([LIT-108](LIT-108.md)), which [SOTA-205](../practices.d/SOTA-205.md)
 recommends as one of its compact explicit structures; Lyra is evidence that
 the structure can be predicted feed-forward at scene scale rather than fitted
-per scene. It sits beside SOTA-236 and its sources DUSt3R (LIT-385) and VGGT
-(LIT-384) in predicting geometry directly from images in one pass, but none of
+per scene. It sits beside [SOTA-236](../practices.d/SOTA-236.md) and its sources DUSt3R ([LIT-385](LIT-385.md)) and VGGT
+([LIT-384](LIT-384.md)) in predicting geometry directly from images in one pass, but none of
 those are compared against, and its supervision is a generator's output
 rather than captured scenes.
 
 The decoder's seven Mamba-2 layers per Transformer layer are a vision-side
-instance of the hybrid SOTA-132 recommends for language, at about three
+instance of the hybrid [SOTA-132](../practices.d/SOTA-132.md) recommends for language, at about three
 linear-attention layers per global one. The ablation agrees on the
 direction, near-equal quality for a large speed gain, at a ratio the
-practice does not discuss. The Mamba-2 layers are LIT-162's state-space
+practice does not discuss. The Mamba-2 layers are [LIT-162](LIT-162.md)'s state-space
 duality design, used here unmodified.
 
 For video diffusion the record's neighbours are about generating video, not
-consuming it: Wan (LIT-619), which the 4D data pipeline also uses to generate
+consuming it: Wan ([LIT-619](LIT-619.md)), which the 4D data pipeline also uses to generate
 its source videos, and the distillation of video generators into few-step
-students (SOTA-394, LIT-631). Lyra's "self-distillation" is a different
+students ([SOTA-394](../practices.d/SOTA-394.md), [LIT-631](LIT-631.md)). Lyra's "self-distillation" is a different
 thing: distilling the model's implicit 3D into an explicit representation,
 not distilling its sampler.
 

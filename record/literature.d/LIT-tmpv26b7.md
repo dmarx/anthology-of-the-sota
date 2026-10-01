@@ -28,7 +28,7 @@ keywords:
 implementations:
 - 'maxxxzdn/erwin'
 summary: >-
-  Zhdanov et al. (2025), ARXIV-2502.17019 — Erwin. Build a ball tree over an
+  Zhdanov et al. (2025), [ARXIV-2502.17019](https://arxiv.org/abs/2502.17019) — Erwin. Build a ball tree over an
   irregular point set so that every ball at a level holds the same number of
   points in contiguous memory, then run full self-attention inside each ball,
   coarsen and refine through the tree in a U-Net, and alternate with a tree
@@ -37,10 +37,11 @@ summary: >-
   turbulence (3× faster and 8× less memory than EAGLE's own model), and on
   ShapeNet-Car; a clear failure on the Airfoil PDE mesh.
 ---
+<!-- inactive-ok-file: SOTA-208 — Superseded, named for the lesson it kept that this paper meets another way -->
 
 # LIT-tmpv26b7: Erwin: A Tree-based Hierarchical Transformer for Large-scale Physical Systems
 
-Zhdanov, Welling and van de Meent, University of Amsterdam (2025) — ARXIV-2502.17019
+Zhdanov, Welling and van de Meent, University of Amsterdam (2025) — [ARXIV-2502.17019](https://arxiv.org/abs/2502.17019)
 
 ## Key takeaways
 
@@ -97,21 +98,21 @@ Zhdanov, Welling and van de Meent, University of Amsterdam (2025) — ARXIV-2502
 
 ## Standing in the anthology
 
-The direct ancestor in the record is Swin (LIT-723). Erwin takes Swin's
+The direct ancestor in the record is Swin ([LIT-723](LIT-723.md)). Erwin takes Swin's
 answer to windowed attention's isolation, a second partition offset from the
 first and alternated with it layer by layer, and transplants it from image
 grids to point sets, where a shift is not defined and a rotation of the
 input is. The ablation is the evidence the transplant works: removing the
 rotated tree roughly doubles ShapeNet-Car error. It is also the same
-connectivity requirement SOTA-208 kept as its surviving lesson, that a local
+connectivity requirement [SOTA-208](../practices.d/SOTA-208.md) kept as its surviving lesson, that a local
 window alone is not the design, met here with a second partition rather than
 a strided head.
 
-The cosmology sweep is a measurement SOTA-358 does not yet have outside
+The cosmology sweep is a measurement [SOTA-358](../practices.d/SOTA-358.md) does not yet have outside
 vision: graph models with built-in equivariance win at small data and are
 overtaken by attention models without it as the training set grows. It is a
 single benchmark and the crossover is read from a figure, so it informs
-rather than supports. SOTA-349 applies to how far it can be trusted. The
+rather than supports. [SOTA-349](../practices.d/SOTA-349.md) applies to how far it can be trusted. The
 paper credits attention with capturing long-range interactions that message
 passing misses; the cosmology baselines come from the benchmark's repository,
 and the paper states hyperparameter tuning for every model only for the MD
@@ -122,6 +123,6 @@ filed on its kind of claim, an attention architecture, and that is
 appropriate for what it argues. But the record now holds a model whose whole
 evaluation is cosmology, polymer dynamics, PDE solving and fluid flow, and
 none of `vision-and-graphics`, `biomolecular-modeling` or `signal-structure`
-says that. Under ADR-059 this is a finding about the vocabulary.
+says that. Under [ADR-059](../decisions.d/ADR-059.md) this is a finding about the vocabulary.
 
 Unread — no NOTE.

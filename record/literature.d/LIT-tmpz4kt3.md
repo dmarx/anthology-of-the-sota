@@ -29,7 +29,7 @@ keywords:
 - 'context-content-uncertainty-principle'
 implementations: []
 summary: >-
-  Li (2025), ARXIV-2506.20699. A theory paper with no experiments. It defines
+  Li (2025), [ARXIV-2506.20699](https://arxiv.org/abs/2506.20699). A theory paper with no experiments. It defines
   a problem's width, the minimum number of locally feasible contexts needed to
   cover it, and states that width is incomparable with VC dimension and that a
   learner with fewer contexts than the width has an error floor no amount of
@@ -41,10 +41,11 @@ summary: >-
   2026) replaced a v1 about a "Context-Content Uncertainty Principle" for
   brains and machines.
 ---
+<!-- inactive-ok-file: SOTA-148, THEORY-005, THEORY-070, THEORY-074 — Proposed; named as neighbours this paper informs or tests, with their standing stated where they are cited -->
 
 # LIT-tmpz4kt3: Structural Decoupling: A Scaffold-Flow Theory of Generalization and Alignment
 
-Li (2025) — ARXIV-2506.20699
+Li (2025) — [ARXIV-2506.20699](https://arxiv.org/abs/2506.20699)
 
 ## Key takeaways
 
@@ -60,7 +61,8 @@ dynamics. The v1 abstract mentions "computational simulations", but the v1
 body is lemmas, theorems and an appendix of proofs, with no
 simulation in it. v2 (8 June 2026) keeps the author and the arXiv id and
 replaces the content with Structural Learning Theory (StrLT). The rest of
-this note is about v2, the version the id now resolves to.
+this note is about v2, the version the id now resolves to. v1 is held, with a close reading, in the companion record nucleation, on the owner's instruction to file this
+paper in both (see [issue #180](https://github.com/dmarx/anthology-of-the-sota/issues/180)).
 
 - **Width as a second complexity axis.** A cell is feasible when one
   local predictor is both contractive and low-risk on it. Width is the
@@ -115,26 +117,26 @@ this note is about v2, the version the id now resolves to.
 What the record can use here is a framework and its predictions. The paper
 has no result, and nothing in the record depends on it.
 
-The nearest documents are the grokking theories. THEORY-069 holds that
+The nearest documents are the grokking theories. [THEORY-069](../theory.d/THEORY-069.md) holds that
 delayed generalization moves with training-set size, initialization scale
-and kernel alignment. THEORY-070 explains it as the lazy-to-rich
+and kernel alignment. [THEORY-070](../theory.d/THEORY-070.md) explains it as the lazy-to-rich
 transition. This paper uses grokking as a within-cell instance of its
 phase-transition shape and adds no mechanism to either account. Its width
 transition is a statement about how many contexts the learner has, and the
 error floor it predicts sits on that count, not on training time.
-THEORY-074 separates a well-defined Bayesian phase transition from a
+[THEORY-074](../theory.d/THEORY-074.md) separates a well-defined Bayesian phase transition from a
 trajectory transition. The width transition belongs to neither:
 Theorem III.3 is a capacity statement about the number of cells, and the
 paper does not connect it to either kind.
 
-On routing, THEORY-005 holds that dense feed-forward layers settle into an
+On routing, [THEORY-005](../theory.d/THEORY-005.md) holds that dense feed-forward layers settle into an
 expert partition early in pre-training, which bears on the paper's claim
 that structure and within-context prediction have different timescales.
-SOTA-148 balances mixture-of-experts load with a routing bias updated from
+[SOTA-148](../practices.d/SOTA-148.md) balances mixture-of-experts load with a routing bias updated from
 load rather than from a gradient on the loss. That is a step in the
 direction this paper's decoupling principle points, taken for a different
 reason (load balance, not structure), so it is a resonance and not
-support. On forgetting, LIT-237 measures a forgetting curve under evolution
+support. On forgetting, [LIT-237](LIT-237.md) measures a forgetting curve under evolution
 strategies. This paper offers a reading of such curves, structural
 under-resolution, and no measurement of one.
 

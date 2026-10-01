@@ -21,7 +21,7 @@ keywords:
 implementations:
 - 'curvlinops'
 summary: >-
-  Dangel et al. (2025), ARXIV-2501.19183 — a position paper with a library
+  Dangel et al. (2025), [ARXIV-2501.19183](https://arxiv.org/abs/2501.19183) — a position paper with a library
   behind it: expose the Hessian, GGN, Fisher flavours and (E)KFAC as linear
   operators, so applications ask only for matrix-vector products and the
   batching, scaling and determinism pitfalls live in one tested place. Its
@@ -33,7 +33,7 @@ summary: >-
 
 # LIT-tmp7eqbw: Position: Curvature Matrices Should Be Democratized via Linear Operators
 
-Dangel et al. (2025) — ARXIV-2501.19183
+Dangel et al. (2025) — [ARXIV-2501.19183](https://arxiv.org/abs/2501.19183)
 
 ## Key takeaways
 
@@ -86,7 +86,7 @@ Dangel et al. (2025) — ARXIV-2501.19183
 
 ## Standing in the anthology
 
-**It puts a number on a cost the record states loosely.** SOTA-011 says the
+**It puts a number on a cost the record states loosely.** [SOTA-011](../practices.d/SOTA-011.md) says the
 extreme Hessian eigenvalues are found by Lanczos or power iteration on
 Hessian-vector products, "each of which costs roughly a forward-backward
 pass". A gradient is a forward-backward pass, and this paper measures a
@@ -95,15 +95,15 @@ transformer, with 3–4.5× the memory. The practice's conclusion — a diagnost
 run at intervals, not a per-step monitor — stands and is if anything
 strengthened; its per-product cost is off by a factor of four to five.
 
-**It is infrastructure under the influence-function line.** LIT-401
-computes influence at scale with EK-FAC, and LIT-403 introduced the method
+**It is infrastructure under the influence-function line.** [LIT-401](LIT-401.md)
+computes influence at scale with EK-FAC, and [LIT-403](LIT-403.md) introduced the method
 with Hessian-vector products; this library offers both routes behind one
-interface, with the damping scheme LIT-401 used.
+interface, with the damping scheme [LIT-401](LIT-401.md) used.
 
-**It touches the Muon and Shampoo cluster only at the edge.** SOTA-165's
+**It touches the Muon and Shampoo cluster only at the edge.** [SOTA-165](../practices.d/SOTA-165.md)'s
 members precondition with matrices; this paper exposes the preconditioner of
 an inverse-free Shampoo variant as an operator and reports nothing about
 training with it. Its cost figures are for curvature *products*, not for an
-optimizer step, so they do not bear on LIT-158's 10% per-step overhead.
+optimizer step, so they do not bear on [LIT-158](LIT-158.md)'s 10% per-step overhead.
 
 Unread — no NOTE.

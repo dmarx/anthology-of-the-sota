@@ -18,7 +18,7 @@ keywords:
 implementations:
 - 'm-damien/Textoshop'
 summary: >-
-  Masson, Kim and Chevalier (2024), ARXIV-2409.17088 (CHI 2025). A
+  Masson, Kim and Chevalier (2024), [ARXIV-2409.17088](https://arxiv.org/abs/2409.17088) (CHI 2025). A
   GPT-4o-backed text editor that replaces typed prompts with drawing-software
   operations, each of which sends an engineered prompt. Resizing a selection
   shortens or expands it, rotating it reorders the words, a colour picker sets
@@ -28,10 +28,12 @@ summary: >-
   successful (4.6 vs 3.9), gave a SUS of 90 against 69, and finished tasks
   55 s faster. The quality of the resulting text was not measured.
 ---
+<!-- inactive-ok-file: LIT-717 — Deferred (unread); named as neighbours this paper informs or tests, with their standing stated where they are cited -->
+<!-- inactive-ok-file: SOTA-298, SOTA-303 — Proposed; named as neighbours this paper informs or tests, with their standing stated where they are cited -->
 
 # LIT-tmp5cmgx: Textoshop: Interactions Inspired by Drawing Software to Facilitate Text Editing
 
-Masson, Kim and Chevalier (2024) — ARXIV-2409.17088. Published at CHI 2025.
+Masson, Kim and Chevalier (2024) — [ARXIV-2409.17088](https://arxiv.org/abs/2409.17088). Published at CHI 2025.
 
 ## Key takeaways
 
@@ -84,22 +86,22 @@ Masson, Kim and Chevalier (2024) — ARXIV-2409.17088. Published at CHI 2025.
 
 ## Standing in the anthology
 
-Filed under `deployment-and-society` on the precedent of LIT-503, an
-assistive-interface paper, and LIT-717, which studies what an AI assistant
+Filed under `deployment-and-society` on the precedent of [LIT-503](LIT-503.md), an
+assistive-interface paper, and [LIT-717](LIT-717.md), which studies what an AI assistant
 does to people writing with it. The fit is loose. This is a lab usability
 study of a prototype. It is not an audit of a deployed system, and the
 record has no topic for human–AI interaction design. If more papers like
-this one are filed, that topic should be added under ADR-059, and this
+this one are filed, that topic should be added under [ADR-059](../decisions.d/ADR-059.md), and this
 paper should then take it first.
 
 Against the record's writing-assistant practices it is the kind of evidence
-they warn about. SOTA-298, drawn from LIT-487, says to measure a writing
+they warn about. [SOTA-298](../practices.d/SOTA-298.md), drawn from [LIT-487](LIT-487.md), says to measure a writing
 assistant by the outcome it was deployed to improve, and not by proxies.
 Textoshop measures neither outcome nor text. It measures perceived success,
-usability and time. SOTA-303 asks which phase a time-saving tool speeds up.
+usability and time. [SOTA-303](../practices.d/SOTA-303.md) asks which phase a time-saving tool speeds up.
 Here the phase is revision of text that already exists, and the paper
 observes, without measuring, that participants kept reorganising ideas
-after their drafts were finished. SOTA-291 asks for a specific affordance to
+after their drafts were finished. [SOTA-291](../practices.d/SOTA-291.md) asks for a specific affordance to
 be evaluated. Each task here isolates one, but only at individual level and
 over one session.
 

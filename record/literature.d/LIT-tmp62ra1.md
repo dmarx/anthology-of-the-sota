@@ -26,7 +26,7 @@ implementations:
 compared_against:
 - LIT-590
 summary: >-
-  Wang et al. (2022), ARXIV-2212.03533 — E5. A BERT-initialised bi-encoder
+  Wang et al. (2022), [ARXIV-2212.03533](https://arxiv.org/abs/2212.03533) — E5. A BERT-initialised bi-encoder
   trained with InfoNCE and in-batch negatives (batch 32,768) on ~270M web text
   pairs, cut from ~1.3B by a consistency filter that keeps a pair only if a
   model trained on the noisy set ranks its passage in the top 2 of 1M. With
@@ -35,10 +35,11 @@ summary: >-
   fine-tuning on MS-MARCO, NQ and NLI the 330M large model averages 61.4 on
   56 MTEB English datasets, above the 4.8B GTR-xxl and Sentence-T5-xxl.
 ---
+<!-- inactive-ok-file: SOTA-243, SOTA-327 — Proposed; named as neighbours this paper informs or tests, with their standing stated where they are cited -->
 
 # LIT-tmp62ra1: Text Embeddings by Weakly-Supervised Contrastive Pre-training
 
-Wang et al. (2022) — ARXIV-2212.03533 (v2, February 2024, corrects the
+Wang et al. (2022) — [ARXIV-2212.03533](https://arxiv.org/abs/2212.03533) (v2, February 2024, corrects the
 SummEval numbers).
 
 ## Key takeaways
@@ -101,36 +102,36 @@ SummEval numbers).
 
 This is the record's first text-embedding model. The objective is a
 neighbour of what the record already holds. The loss is InfoNCE with in-batch
-negatives, cited to SimCLR (LIT-591), and THEORY-085 bounds it at `log N`.
-At this paper's batch of 32,768 that bound is the same ~10.4 nats THEORY-085
+negatives, cited to SimCLR ([LIT-591](LIT-591.md)), and [THEORY-085](../theory.d/THEORY-085.md) bounds it at `log N`.
+At this paper's batch of 32,768 that bound is the same ~10.4 nats [THEORY-085](../theory.d/THEORY-085.md)
 computes for CLIP.
 
 On negatives, it bears on two practices:
 
-- **It supports SOTA-377 below the ceiling and does not test the ceiling.**
-  Each step up to 32k helps, and 32k is where both SOTA-377 and this paper
+- **It supports [SOTA-377](../practices.d/SOTA-377.md) below the ceiling and does not test the ceiling.**
+  Each step up to 32k helps, and 32k is where both [SOTA-377](../practices.d/SOTA-377.md) and this paper
   stop.
-- **It sits awkwardly beside SOTA-363 (MoCo, LIT-590).** In its Table 8 the
+- **It sits awkwardly beside [SOTA-363](../practices.d/SOTA-363.md) (MoCo, [LIT-590](LIT-590.md)).** In its Table 8 the
   paper ran MoCo's queue and momentum encoder in place of in-batch negatives
   in its own text pre-training. The queue was worse by 6.1 points on average
   even though it held four times as many negatives, and reusing negatives
   from earlier batches was worse still. That is the comparison recorded as
   `compared_against`. It is one tuning of MoCo, and the authors say more
   tuning could close the gap. What it shows is that at 32k the batch already
-  supplies enough negatives, so SOTA-363's reason for a queue does not come
+  supplies enough negatives, so [SOTA-363](../practices.d/SOTA-363.md)'s reason for a queue does not come
   up. It is not evidence that a queue is harmful.
 
 On data, the consistency filter is an extreme version of the upper cutoff in
-SOTA-243's Conditions, which come from LIT-397. SOTA-243 says that with
+[SOTA-243](../practices.d/SOTA-243.md)'s Conditions, which come from [LIT-397](LIT-397.md). [SOTA-243](../practices.d/SOTA-243.md) says that with
 abundant data you should keep the hard examples, and its Conditions add that
 the hardest examples and the mislabelled ones are the same examples. With
 1.3B weak pairs, E5 keeps only pairs a model ranks in the top 2 of 1M. That
 discards everything hard, on the theory that a hard pair in a scraped corpus
 is a wrong pair, and Table 7 shows it helped at both scales tried. The
-two do not conflict, because E5's labels are noisy and SOTA-243's are not.
+two do not conflict, because E5's labels are noisy and [SOTA-243](../practices.d/SOTA-243.md)'s are not.
 What a reader should take is that the noise rate decides which end to cut.
 
-SOTA-327 (Matryoshka embeddings) states that its source measured no text
+[SOTA-327](../practices.d/SOTA-327.md) (Matryoshka embeddings) states that its source measured no text
 retrieval. E5 is not Matryoshka-trained, so it does not fill that gap. It is
 the kind of model the gap is about.
 

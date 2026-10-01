@@ -30,7 +30,7 @@ implementations:
 - 'asafmaman101/imp_reg_htf'
 - 'noamrazin/gnn_interactions'
 summary: >-
-  Razin (2024), ARXIV-2408.02111 — PhD thesis. Gradient descent's implicit
+  Razin (2024), [ARXIV-2408.02111](https://arxiv.org/abs/2408.02111) — PhD thesis. Gradient descent's implicit
   regularization is better read as rank minimization than norm minimization:
   on a 2×2 matrix completion problem, a depth L ≥ 2 linear network trained by
   gradient flow drives every norm and quasi-norm to infinity, with probability
@@ -40,10 +40,12 @@ summary: >-
   factorizations; it predicts convolutional networks' locality, which a
   regularizer derived from it partly undoes on long-range tasks.
 ---
+<!-- inactive-ok-file: SOTA-325, THEORY-041, THEORY-045, THEORY-072 — Proposed; named as neighbours this paper informs or tests, with their standing stated where they are cited -->
+<!-- inactive-ok-file: LIT-695 — Deferred (unread); named as neighbours this paper informs or tests, with their standing stated where they are cited -->
 
 # LIT-tmpw8qxm: Understanding Deep Learning via Notions of Rank
 
-Razin (2024) — ARXIV-2408.02111. PhD thesis; Parts II and III reprint
+Razin (2024) — [ARXIV-2408.02111](https://arxiv.org/abs/2408.02111). PhD thesis; Parts II and III reprint
 Razin and Cohen (NeurIPS 2020), Razin, Maman and Cohen (ICML 2021, ICML 2022)
 and Razin, Verbin and Cohen (NeurIPS 2023).
 
@@ -100,26 +102,26 @@ and Razin, Verbin and Cohen (NeurIPS 2023).
 ## Standing in the anthology
 
 The record's theory of generalization has been built from other
-complexity measures. THEORY-045 uses the volume of behaviourally equivalent
-parameter space, and SOTA-325 the local learning coefficient of LIT-542, which
+complexity measures. [THEORY-045](../theory.d/THEORY-045.md) uses the volume of behaviourally equivalent
+parameter space, and [SOTA-325](../practices.d/SOTA-325.md) the local learning coefficient of [LIT-542](LIT-542.md), which
 ranks ResNet18 runs by implicit regularization after the training loss has
-saturated. THEORY-072 explains grokking through weight norm. This thesis is
+saturated. [THEORY-072](../theory.d/THEORY-072.md) explains grokking through weight norm. This thesis is
 the record's first sustained argument that the implicit bias of gradient
-descent is not a norm at all. That bears on THEORY-072: the thesis does not
+descent is not a norm at all. That bears on [THEORY-072](../theory.d/THEORY-072.md): the thesis does not
 contradict a norm-based account of a particular phenomenon, but it shows that
 "gradient descent minimizes some norm" fails as a general principle even in
-linear networks. It also informs THEORY-041, whose rank-deficient
+linear networks. It also informs [THEORY-041](../theory.d/THEORY-041.md), whose rank-deficient
 transformer matrices are the kind of outcome a rank bias would produce,
 although nothing here was measured on a transformer.
 
-LIT-695 also models deep convolutional networks as tree-structured tensor
+[LIT-695](LIT-695.md) also models deep convolutional networks as tree-structured tensor
 networks, but argues from expressiveness: tree structure can carry
 long-range correlation and chain-structured models cannot. The thesis adds the
 other half. Within that family, what gradient descent actually finds is
 biased toward low hierarchical tensor rank, which means local interactions,
 even where the architecture could express long-range ones.
 
-The GNN chapter sits beside THEORY-083 (Xu et al., LIT-580), which bounds
+The GNN chapter sits beside [THEORY-083](../theory.d/THEORY-083.md) (Xu et al., [LIT-580](LIT-580.md)), which bounds
 what message passing can *distinguish* by the 1-WL test. Separation rank asks
 a different question: how strongly a network can model interaction across a
 partition of the vertices. The two do not overlap.

@@ -20,7 +20,7 @@ keywords:
 - 'gradient-descent-dynamics'
 - 'momentum'
 summary: >-
-  Lee, Lee and Yi (2025), ARXIV-2503.08827 — a hep-th proposal with no
+  Lee, Lee and Yi (2025), [ARXIV-2503.08827](https://arxiv.org/abs/2503.08827) — a hep-th proposal with no
   experiments. Gradient descent with momentum, `Ẅ + γẆ + ∂C/∂W = 0`, follows
   from an action weighted by `e^{γt}`, the volume factor of de Sitter space
   with Hubble rate `H = γ/d`. Treat the weight indices as spatial coordinates
@@ -28,10 +28,12 @@ summary: >-
   data as external sources. Only toy networks give a local one: periodic,
   nearest-neighbour wiring with linear or quadratic activations.
 ---
+<!-- inactive-ok-file: THEORY-070 — Proposed; named as neighbours this paper informs or tests, with their standing stated where they are cited -->
+<!-- inactive-ok-file: LIT-694 — Deferred (unread); named as neighbours this paper informs or tests, with their standing stated where they are cited -->
 
 # LIT-tmptcoko: Synaptic Field Theory for Neural Networks
 
-Lee, Lee and Yi (2025) — ARXIV-2503.08827 (hep-th). First posted as "Neural
+Lee, Lee and Yi (2025) — [ARXIV-2503.08827](https://arxiv.org/abs/2503.08827) (hep-th). First posted as "Neural
 Network/de Sitter Space Correspondence".
 
 ## Key takeaways
@@ -67,23 +69,23 @@ Network/de Sitter Space Correspondence".
 
 ## Standing in the anthology
 
-The record's nearest neighbour is THEORY-009. It also replaces a network's
+The record's nearest neighbour is [THEORY-009](../theory.d/THEORY-009.md). It also replaces a network's
 weights with a continuum, but there the continuum is the empirical
 distribution of a wide two-layer network's neurons, following a gradient
-flow (LIT-271 among its sources). That replacement buys a theorem: the risk
+flow ([LIT-271](LIT-271.md) among its sources). That replacement buys a theorem: the risk
 is convex in the distribution. This paper's continuum is over weight indices
 and buys no consequence yet. It is a dictionary, offered as a way into
 field-theoretic tools.
 
 It also argues against relying on a constant tangent kernel. The paper's
 reason for working at the level of parameters is that the empirical NTK is
-constant "only in restricted cases". THEORY-070 and THEORY-076 make the same
+constant "only in restricted cases". [THEORY-070](../theory.d/THEORY-070.md) and [THEORY-076](../theory.d/THEORY-076.md) make the same
 point in their own terms, where the interesting dynamics are those that leave
 the kernel regime. The paper does not test that.
 
 Nothing in the record depends on it, and it does not inform a practice. It
 is filed as a seed for the analysis-and-evaluation shelf on training
 dynamics, and as a pointer to the physics-of-learning literature the record
-otherwise reaches only through LIT-694.
+otherwise reaches only through [LIT-694](LIT-694.md).
 
 Unread — no NOTE.

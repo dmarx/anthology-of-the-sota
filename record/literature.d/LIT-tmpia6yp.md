@@ -19,7 +19,7 @@ keywords:
 implementations:
 - 'SPOC-group/Rigorous-dynamical-mean-field-theory'
 summary: >-
-  Gerbelot et al. (2022), ARXIV-2210.06591 — a proof that the discrete-time
+  Gerbelot et al. (2022), [ARXIV-2210.06591](https://arxiv.org/abs/2210.06591) — a proof that the discrete-time
   dynamical mean-field equations of statistical physics are exact for a
   family of first-order methods (multi-pass SGD, heavy-ball and Nesterov
   momentum, Langevin noise, learning-rate schedules) learning a shallow
@@ -31,7 +31,7 @@ summary: >-
 
 # LIT-tmpia6yp: Rigorous dynamical mean field theory for stochastic gradient descent methods
 
-Gerbelot et al. (2022) — ARXIV-2210.06591
+Gerbelot et al. (2022) — [ARXIV-2210.06591](https://arxiv.org/abs/2210.06591)
 
 ## Key takeaways
 
@@ -66,22 +66,22 @@ Gerbelot et al. (2022) — ARXIV-2210.06591
 
 ## Standing in the anthology
 
-**A different exact limit from the ones the record holds.** THEORY-009,
-from LIT-271 and its neighbours, is also a "mean-field" account of SGD, but
+**A different exact limit from the ones the record holds.** [THEORY-009](../theory.d/THEORY-009.md),
+from [LIT-271](LIT-271.md) and its neighbours, is also a "mean-field" account of SGD, but
 of another limit: width goes to infinity and the object that moves is the
 distribution of neurons. Here width stays finite and it is the number of
-samples and the dimension that grow. LIT-454 derives SGD's limiting
+samples and the dimension that grow. [LIT-454](LIT-454.md) derives SGD's limiting
 dynamics as a Langevin equation, with an exact Ornstein–Uhlenbeck solution
 for linear regression. Neither connects to this paper's equations, and the
 record has no document that uses DMFT.
 
-**It does not bear on the optimizer cluster.** SOTA-121, SOTA-165 and the
+**It does not bear on the optimizer cluster.** [SOTA-121](../practices.d/SOTA-121.md), [SOTA-165](../practices.d/SOTA-165.md) and the
 theory around them concern matrix preconditioners on deep networks at scale.
 This paper covers first-order iterations with a scalar step size and
 momentum on Gaussian data and shallow models; whether its non-separable
 update functions could express a matrix preconditioner is not something it
-discusses. Its relation to the record's batch-size material (SOTA-198,
-LIT-058) is that batch size enters as a fraction of the dataset, which is
+discusses. Its relation to the record's batch-size material ([SOTA-198](../practices.d/SOTA-198.md),
+[LIT-058](LIT-058.md)) is that batch size enters as a fraction of the dataset, which is
 not the regime those practices are about.
 
 Filed as a seed: the rigorous end of SGD-dynamics theory, for when the

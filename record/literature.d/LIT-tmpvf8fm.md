@@ -18,7 +18,7 @@ keywords:
 - 'pretraining-acceleration'
 implementations: []
 summary: >-
-  Samragh et al. (2024), ARXIV-2409.12903 — HyperCloning. Initialize a wider
+  Samragh et al. (2024), [ARXIV-2409.12903](https://arxiv.org/abs/2409.12903) — HyperCloning. Initialize a wider
   language model from a smaller pretrained one of the same depth by tiling
   each weight matrix into n×n blocks scaled by 1/n, so every hidden vector
   is n stacked copies of the small model's and the logits match exactly.
@@ -27,10 +27,11 @@ summary: >-
   sooner and finish higher, on OPT, Pythia and OLMo targets of 1.3–2.9B.
   The small model's own pretraining is not charged to the comparison.
 ---
+<!-- inactive-ok-file: SOTA-209 — Proposed; named as neighbours this paper informs or tests, with their standing stated where they are cited -->
 
 # LIT-tmpvf8fm: Scaling Smart: Accelerating Large Language Model Pre-training with Small Model Initialization
 
-Samragh et al. (2024), Apple — ARXIV-2409.12903
+Samragh et al. (2024), Apple — [ARXIV-2409.12903](https://arxiv.org/abs/2409.12903)
 
 ## Key takeaways
 
@@ -84,23 +85,23 @@ Samragh et al. (2024), Apple — ARXIV-2409.12903
 ## Standing in the anthology
 
 The record holds no model-growth paper; this is the first. Its nearest
-neighbour is SOTA-209, which says to initialize a mixture-of-experts model
-from a dense checkpoint, on the evidence of LIT-227's sparse upcycling.
+neighbour is [SOTA-209](../practices.d/SOTA-209.md), which says to initialize a mixture-of-experts model
+from a dense checkpoint, on the evidence of [LIT-227](LIT-227.md)'s sparse upcycling.
 The two share a premise: a checkpoint you already paid for is a better
 starting point than noise for a larger model. HyperCloning makes the same
 move along a different axis, wider rather than sparser, and it preserves
 the function exactly where upcycling copies feed-forward weights into
 experts.
 
-The two papers differ in what they can support. LIT-227's claim rests on a
-comparison at matched total compute, and SOTA-209's `promote_when` asks for
+The two papers differ in what they can support. [LIT-227](LIT-227.md)'s claim rests on a
+comparison at matched total compute, and [SOTA-209](../practices.d/SOTA-209.md)'s `promote_when` asks for
 exactly that, dense pretraining included. This paper charges nothing for
 the source model, which for OLMo was a 2.4T-token run downloaded from
 Hugging Face. Its result therefore supports "reuse an existing smaller
 checkpoint when one exists". It says nothing about whether training a small
 model in order to clone it beats training the large one directly.
 
-It also bears, from the side, on LIT-519. That paper found that shaping an
+It also bears, from the side, on [LIT-519](LIT-519.md). That paper found that shaping an
 initialization to imitate a trained model's spectral profile changes the
 spectra and does not improve results. HyperCloning transfers the trained
 function itself, not a statistic of it, and does improve results.

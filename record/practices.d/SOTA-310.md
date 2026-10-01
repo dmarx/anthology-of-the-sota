@@ -54,7 +54,12 @@ describe it as *the* mechanism.
 ## Do this
 
 **Say what else would have passed.** The criteria are satisfiability tests,
-not selection rules, and the satisfying set is large:
+not selection rules, and the satisfying set is large. LIT-504, where this
+recommendation originates, showed it by training MLPs of shape `(2, k, k, n)`
+on two-input logic gates and enumerating every circuit and every causal
+alignment that met the criteria, which answered all four identifiability
+questions — which circuit, which interpretation, which algorithm, which
+subspace — in the negative:
 
 | | median explanations found |
 |---|---|

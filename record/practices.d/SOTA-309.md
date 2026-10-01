@@ -65,7 +65,9 @@ argument is task-independent: whatever they are trying to do, an interface
 they can use produces commands that explain the outcome, and one they cannot
 produces commands that do not.
 
-It ranks existing interfaces offline (Spearman `ρ = 0.43` against ground-truth
+The objective and both uses of it come from LIT-503, which proposed it as
+MIMI (mutual information maximizing interfaces). It ranks existing interfaces
+offline (Spearman `ρ = 0.43` against ground-truth
 task completion across 540K examples), and it can be maximized directly:
 randomly initialize the mapping, let the user attempt their own tasks,
 estimate the score, and update by reinforcement learning. In a 12-participant

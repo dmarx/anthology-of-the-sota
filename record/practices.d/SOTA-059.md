@@ -14,20 +14,20 @@ date: '2026-08-24'
 # claims overlap of pipeline communication with compute, but has no tensor
 # axis; the data-parallel case is SOTA-047's, from PyTorch DDP (LIT-219).
 source:
-- LIT-tmpcj65m
+- LIT-735
 introduced_by:
-- LIT-tmpcj65m
+- LIT-735
 summary: >-
-  Jangda et al. (2021), [LIT-tmpcj65m](../literature.d/LIT-tmpcj65m.md) — [ARXIV-2105.05720](https://arxiv.org/abs/2105.05720).
+  Jangda et al. (2021), [LIT-735](../literature.d/LIT-735.md) — [ARXIV-2105.05720](https://arxiv.org/abs/2105.05720).
 ---
 
 # SOTA-059: Overlap communication with computation when possible
 
 ## Source
 
-Jangda et al. (2021), [LIT-tmpcj65m](../literature.d/LIT-tmpcj65m.md) — [ARXIV-2105.05720](https://arxiv.org/abs/2105.05720).
+Jangda et al. (2021), [LIT-735](../literature.d/LIT-735.md) — [ARXIV-2105.05720](https://arxiv.org/abs/2105.05720).
 
-CoCoNet, [LIT-tmpcj65m](../literature.d/LIT-tmpcj65m.md), is where the move was made and measured on the axes
+CoCoNet, [LIT-735](../literature.d/LIT-735.md), is where the move was made and measured on the axes
 this practice is about. On the tensor-parallel MatMul and the AllReduce that
 follows it, overlapping the two in chunks hides more than 80% of the MatMul
 and runs up to 1.36x faster than issuing them in sequence; in Megatron-LM the
@@ -38,7 +38,7 @@ which is the contention described below. Two limits: those tensor- and
 pipeline-parallel numbers are for inference, and the pipeline gain is
 reported jointly with slicing and fusion rather than for overlap alone.
 Training-side evidence on the tensor axis is narrower: Korthikanti et al.
-([LIT-tmpfktcz](../literature.d/LIT-tmpfktcz.md)) overlap a backward-pass all-gather with the weight-gradient
+([LIT-736](../literature.d/LIT-736.md)) overlap a backward-pass all-gather with the weight-gradient
 computation as part of sequence parallelism. Narayanan et al. ([LIT-043](../literature.d/LIT-043.md)), cited
 here before, does not propose or measure overlap.
 

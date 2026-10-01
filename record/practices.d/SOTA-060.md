@@ -47,7 +47,7 @@ source:
 # says largely follows GPT, whose base initialization is N(0, 0.02)
 # (ADR-029).
 introduced_by:
-- LIT-tmp1dapl
+- LIT-733
 summary: >-
   Shoeybi et al. (2019), [LIT-022](../literature.d/LIT-022.md) — [ARXIV-1909.08053](https://arxiv.org/abs/1909.08053).
 compared_against:
@@ -85,7 +85,7 @@ projections in GPT-2-style initialisations, and the same problem ReZero
 ([SOTA-051](SOTA-051.md)) attacks by starting the residual branch at literally zero.
 
 That factor has an author, and it is GPT-2. Radford et al. (2019),
-[LIT-tmp1dapl](../literature.d/LIT-tmp1dapl.md) §2.3, uses "a modified initialization which accounts for the
+[LIT-733](../literature.d/LIT-733.md) §2.3, uses "a modified initialization which accounts for the
 accumulation on the residual path with model depth", scaling the weights of
 residual layers by `1/sqrt(N)` with `N` the number of residual layers — the
 same quantity as `2·n_layers`, two residual layers per block. Child et al.

@@ -6,10 +6,11 @@
 
 **Systems optimization** — hardware utilization, kernels, compilation, memory access patterns — how an operation is executed, not how many bits it is executed in.
 
-27 of 435 SOTA documents. Back to the [full index](../README.md).
+28 of 435 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
+| [SOTA-044](../../../record/practices.d/SOTA-044.md) | Pin memory for CPU-GPU transfers | Afroz et al. (2025), LIT-737 — [ARXIV-2511.14124](https://arxiv.org/abs/2511.14124). Host-to-device copies from pinned memory ran at 24.74 GB/s against 10.16 GB/s from pageable memory on PCIe 4.0; the advice itself is NVIDIA's, not a paper's. | Active |
 | [SOTA-081](../../../record/practices.d/SOTA-081.md) | Use operator fusion for small operations | Chen et al. (2018), [LIT-063](../../../record/literature.d/LIT-063.md) — [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799). | Active |
 | [SOTA-082](../../../record/practices.d/SOTA-082.md) | Optimize memory layout for hardware | Chen et al. (2018), [LIT-063](../../../record/literature.d/LIT-063.md) — [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799). | Active |
 | [SOTA-083](../../../record/practices.d/SOTA-083.md) v2 | Implement custom kernels for critical ops | Chen et al. (2018), [LIT-063](../../../record/literature.d/LIT-063.md) — [ARXIV-1802.04799](https://arxiv.org/abs/1802.04799). | Active |

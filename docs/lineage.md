@@ -2,7 +2,7 @@
 
 # Lines of work
 
-58 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+57 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -16,8 +16,9 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 ### From Deep reinforcement learning from human preferences
 
 - [LIT-434](../record/literature.d/LIT-434.md) — Deep reinforcement learning from human preferences *(Active)*
-  - [LIT-433](../record/literature.d/LIT-433.md) — Learning to summarize from human feedback *(Active)*
-    - [LIT-377](../record/literature.d/LIT-377.md) — Training language models to follow instructions with human feedback *(Active)*
+  - [LIT-734](../record/literature.d/LIT-734.md) — Fine-Tuning Language Models from Human Preferences *(Active)*
+    - [LIT-433](../record/literature.d/LIT-433.md) — Learning to summarize from human feedback *(Active)*
+      - [LIT-377](../record/literature.d/LIT-377.md) — Training language models to follow instructions with human feedback *(Active)*
 - alongside: [LIT-432](../record/literature.d/LIT-432.md) — Finetuned Language Models Are Zero-Shot Learners *(Active)*
 
 ### From Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences
@@ -243,7 +244,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-691](../record/literature.d/LIT-691.md) — Repurposing Diffusion-Based Image Generators for Monocular Depth Estimation *(Active)*
 - alongside: [LIT-076](../record/literature.d/LIT-076.md) — DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps *(Active)*
 - alongside: [LIT-093](../record/literature.d/LIT-093.md) — Consistency Models *(Active)*
-- alongside: [LIT-483](../record/literature.d/LIT-483.md) — Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models *(Active)*
 - alongside: [LIT-554](../record/literature.d/LIT-554.md) — Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion *(Active)*
 - alongside: [LIT-661](../record/literature.d/LIT-661.md) — Photorealistic Video Generation with Diffusion Models *(Active)*
 - alongside: [LIT-676](../record/literature.d/LIT-676.md) — DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models *(Active)*
@@ -253,11 +253,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-479](../record/literature.d/LIT-479.md) — The Diffusion Duality *(Active)*
 - alongside: [LIT-701](../record/literature.d/LIT-701.md) — Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution *(Active)*
 - alongside: [LIT-702](../record/literature.d/LIT-702.md) — Simple and Effective Masked Diffusion Language Models *(Active)*
-
-### From Denoising as Projection: Constrained Optimization with Gradient-Guided Diffusion
-
-- alongside: [LIT-490](../record/literature.d/LIT-490.md) — Denoising as Projection: Constrained Optimization with Gradient-Guided Diffusion *(Active)*
-- alongside: [LIT-491](../record/literature.d/LIT-491.md) — Noise Hypernetworks: Amortizing Test-Time Compute in Diffusion Models *(Active)*
 
 ### From Neural Discrete Representation Learning
 
@@ -346,13 +341,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-152](../record/literature.d/LIT-152.md) — On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability *(Active)*
 - alongside: [LIT-513](../record/literature.d/LIT-513.md) — mHC-lite: You Don't Need 20 Sinkhorn-Knopp Iterations *(Active)*
 
-### From Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention
+### From An Attention Free Transformer
 
-- [LIT-428](../record/literature.d/LIT-428.md) — Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention *(Active)*
-  - [LIT-431](../record/literature.d/LIT-431.md) — An Attention Free Transformer *(Active)*
-    - [LIT-430](../record/literature.d/LIT-430.md) — RWKV: Reinventing RNNs for the Transformer Era *(Active)*
-      - [LIT-429](../record/literature.d/LIT-429.md) — Eagle and Finch: RWKV with Matrix-Valued States and Dynamic Recurrence *(Active)*
-        - [LIT-173](../record/literature.d/LIT-173.md) — RWKV-7 "Goose" with Expressive Dynamic State Evolution *(Active)*
+- [LIT-431](../record/literature.d/LIT-431.md) — An Attention Free Transformer *(Active)*
+  - [LIT-430](../record/literature.d/LIT-430.md) — RWKV: Reinventing RNNs for the Transformer Era *(Active)*
+    - [LIT-429](../record/literature.d/LIT-429.md) — Eagle and Finch: RWKV with Matrix-Valued States and Dynamic Recurrence *(Active)*
+      - [LIT-173](../record/literature.d/LIT-173.md) — RWKV-7 "Goose" with Expressive Dynamic State Evolution *(Active)*
+- alongside: [LIT-428](../record/literature.d/LIT-428.md) — Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention *(Active)*
 
 ### From Where Did the Gap Go? Reassessing the Long-Range Graph Benchmark
 

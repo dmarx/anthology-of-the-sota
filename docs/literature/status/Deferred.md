@@ -6,7 +6,7 @@
 
 **Unreviewed** — in the corpus, not yet read closely enough to place.
 
-10 of 667 LIT documents. Back to the [full index](../README.md).
+10 of 674 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

@@ -8,15 +8,15 @@ tags:
 - attention-techniques
 date: '2026-09-05'
 source:
-# LIT-tmpkql17 (Shortformer) added in the correction pass: the only
+# LIT-738 (Shortformer) added in the correction pass: the only
 # controlled comparison against training at the target length throughout.
 # LIT-139 runs the schedule and does not ablate it (NOTE-361).
 - LIT-139
-- LIT-tmpkql17
+- LIT-738
 introduced_by:
 # Was LIT-139. DeepSeek-V4 runs the schedule and does not originate it.
 # BERT (LIT-670, Oct 2018) trained at 128 tokens for 90% of steps and 512 for
-# the rest, and Shortformer (LIT-tmpkql17) names BERT as where the routine
+# the rest, and Shortformer (LIT-738) names BERT as where the routine
 # was first applied before testing it.
 - LIT-670
 summary: >-
@@ -29,7 +29,7 @@ summary: >-
 
 DeepSeek-AI (2026), [LIT-139](../literature.d/LIT-139.md) — DeepSeek-V4.
 
-Press, Smith and Lewis (2020), [LIT-tmpkql17](../literature.d/LIT-tmpkql17.md) — Shortformer.
+Press, Smith and Lewis (2020), [LIT-738](../literature.d/LIT-738.md) — Shortformer.
 
 ## The schedule
 
@@ -57,7 +57,7 @@ attention is quadratic to the sequence length", with the short final stage
 there "to learn the positional embeddings". That is both halves of the
 reasoning above, in 2018, and the record names BERT as the origin.
 
-BERT used it only for speed. Shortformer, [LIT-tmpkql17](../literature.d/LIT-tmpkql17.md), is what tested it
+BERT used it only for speed. Shortformer, [LIT-738](../literature.d/LIT-738.md), is what tested it
 against training at the target length throughout, crediting BERT for the
 routine. On WikiText-103 with a 247M model and a final length of 3,072,
 starting at 128 tokens for the first 50 of 205 epochs gave 17.52 dev

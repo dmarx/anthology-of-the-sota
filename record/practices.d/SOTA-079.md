@@ -17,7 +17,7 @@ source:
 # the earliest ML-framework paper found saying so; read-ahead itself is older
 # systems practice that the record names no paper for.
 introduced_by:
-- LIT-tmpta146
+- LIT-739
 extends:
 - SOTA-077
 # `compared_against: SOTA-047` removed -- see the note on SOTA-047.
@@ -43,7 +43,7 @@ It is what makes a streaming format work at all ([SOTA-077](SOTA-077.md)): seque
 are only fast if somebody is reading ahead.
 
 The recommendation is older than the source. The TensorFlow white paper,
-[LIT-tmpta146](../literature.d/LIT-tmpta146.md), describes queues between graph stages and names this as their
+[LIT-739](../literature.d/LIT-739.md), describes queues between graph stages and names this as their
 first use: input prefetched from disk while the previous batch is still being
 computed. It gives the mechanism and no measurement, so it is the origin and
 not evidence; the source below is cited for the pipeline the overlap runs in.

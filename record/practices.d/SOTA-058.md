@@ -22,20 +22,20 @@ date: '2026-08-24'
 # the scheme this body describes. Li et al. (2021) used the name earlier for
 # a different scheme that replicates parameters on every device.
 source:
-- LIT-tmpfktcz
+- LIT-736
 introduced_by:
-- LIT-tmpfktcz
+- LIT-736
 summary: >-
-  Korthikanti et al. (2022), [LIT-tmpfktcz](../literature.d/LIT-tmpfktcz.md) — [ARXIV-2205.05198](https://arxiv.org/abs/2205.05198).
+  Korthikanti et al. (2022), [LIT-736](../literature.d/LIT-736.md) — [ARXIV-2205.05198](https://arxiv.org/abs/2205.05198).
 ---
 
 # SOTA-058: Use sequence parallelism for the layer-norm and dropout regions that tensor parallelism leaves replicated
 
 ## Source
 
-Korthikanti et al. (2022), [LIT-tmpfktcz](../literature.d/LIT-tmpfktcz.md) — [ARXIV-2205.05198](https://arxiv.org/abs/2205.05198).
+Korthikanti et al. (2022), [LIT-736](../literature.d/LIT-736.md) — [ARXIV-2205.05198](https://arxiv.org/abs/2205.05198).
 
-Korthikanti et al., [LIT-tmpfktcz](../literature.d/LIT-tmpfktcz.md), introduced the scheme and measured it. In
+Korthikanti et al., [LIT-736](../literature.d/LIT-736.md), introduced the scheme and measured it. In
 their accounting the replicated layer norms and dropouts are the `10sbh` term
 of per-layer activation memory that tensor parallelism cannot divide; split
 along the sequence, every term divides by the tensor-parallel degree. They

@@ -15,12 +15,12 @@ date: '2026-08-24'
 # caching, partitioned caching and coordinated prep. Moved to the paper that
 # measures pinned against pageable transfer.
 source:
-- LIT-tmpiutyj
+- LIT-737
 # Searched and not found: no paper this record can name FIRST MADE this
 # recommendation. Was LIT-050, which does not discuss it. The advice is
 # NVIDIA's — the CUDA C Programming Guide's page-locked host memory section
 # and the 2012 developer note "How to Optimize Data Transfers in CUDA C/C++",
-# which LIT-tmpiutyj itself cites for the mechanism — and it reached deep
+# which LIT-737 itself cites for the mechanism — and it reached deep
 # learning as a framework default: the PyTorch paper (arXiv 1912.01703)
 # says only that its DataLoader manages pinned CUDA memory "to improve
 # throughput", with no measurement, years after the CUDA docs. The origin is
@@ -29,7 +29,7 @@ source:
 # before the CUDA documentation did is how a reader refutes this (ADR-053 §2).
 introduced_by: []
 summary: >-
-  Afroz et al. (2025), LIT-tmpiutyj — [ARXIV-2511.14124](https://arxiv.org/abs/2511.14124). Host-to-device copies
+  Afroz et al. (2025), LIT-737 — [ARXIV-2511.14124](https://arxiv.org/abs/2511.14124). Host-to-device copies
   from pinned memory ran at 24.74 GB/s against 10.16 GB/s from pageable
   memory on PCIe 4.0; the advice itself is NVIDIA's, not a paper's.
 ---
@@ -38,9 +38,9 @@ summary: >-
 
 ## Source
 
-Afroz et al. (2025), [LIT-tmpiutyj](../literature.d/LIT-tmpiutyj.md) — [ARXIV-2511.14124](https://arxiv.org/abs/2511.14124).
+Afroz et al. (2025), [LIT-737](../literature.d/LIT-737.md) — [ARXIV-2511.14124](https://arxiv.org/abs/2511.14124).
 
-[LIT-tmpiutyj](../literature.d/LIT-tmpiutyj.md) measured the difference this practice rests on. On an NVIDIA
+[LIT-737](../literature.d/LIT-737.md) measured the difference this practice rests on. On an NVIDIA
 L40S over PCIe 4.0 ×16, a 16 MB FP32 copy from host to device took 1.65 ms
 from pageable memory and 0.68 ms from pinned memory — 10.16 against
 24.74 GB/s — and the 8 MB FP16 and device-to-host rows show the same

@@ -2,7 +2,7 @@
 
 # Lines of practice
 
-52 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
+45 lines, walked from `extends:` and `corrects:` on SOTA documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -65,11 +65,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [SOTA-078](../record/practices.d/SOTA-078.md) — Buffer size should be 2-3x batch size *(Active, unassessed)*
   - [SOTA-079](../record/practices.d/SOTA-079.md) — Pre-fetch next batch during compute *(Active, unassessed)*
 
-### From Implement dynamic temperature scaling for mixing
-
-- alongside: [SOTA-102](../record/practices.d/SOTA-102.md) — Implement dynamic temperature scaling for mixing *(Superseded, unassessed)*
-- alongside: [SOTA-103](../record/practices.d/SOTA-103.md) — Adjust data mixing proportions online from per-domain training loss *(Active, unassessed)*
-
 ### From Train autoregressive models with fill-in-the-middle by default: it is a data transformation, and it is free
 
 - [SOTA-174](../record/practices.d/SOTA-174.md) — Train autoregressive models with fill-in-the-middle by default: it is a data transformation, and it is free *(Active, converged)*
@@ -102,7 +97,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [SOTA-155](../record/practices.d/SOTA-155.md) — Train across poorly connected islands: many inner steps per worker, an outer momentum optimizer over the deltas, and a streamed synchronisation *(Proposed, unreplicated)*
   - [SOTA-219](../record/practices.d/SOTA-219.md) — Leave the inner optimizer state unsynchronised in local-update training *(Active, emerging)*
-- alongside: [SOTA-075](../record/practices.d/SOTA-075.md) — Use gradient compression for slow networks *(Active, unassessed)*
 
 ### From Pair any gradient compressor with error feedback, and correct the momentum it is applied under
 
@@ -205,11 +199,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ## model-stability
 
-### From Place BatchNorm after linear/conv layers but before activation functions
-
-- alongside: [SOTA-004](../record/practices.d/SOTA-004.md) — Place BatchNorm after linear/conv layers but before activation functions *(Active, unassessed)*
-- alongside: [SOTA-006](../record/practices.d/SOTA-006.md) — Consider alternatives like LayerNorm for transformers *(Active, unassessed)*
-
 ### From linear warmup of LR stabilizes early training with large batch size.
 
 - alongside: [SOTA-008](../record/practices.d/SOTA-008.md) — linear warmup of LR stabilizes early training with large batch size. *(Active, unassessed)*
@@ -221,22 +210,22 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [SOTA-025](../record/practices.d/SOTA-025.md) — Initialize the LayerNorm gain to 1 *(Active, unassessed)*
 - alongside: [SOTA-051](../record/practices.d/SOTA-051.md) — Initialize a residual or adapter branch to exactly zero, not merely near zero *(Active, unassessed)*
-- alongside: [SOTA-060](../record/practices.d/SOTA-060.md) — Initialize layer norms with smaller variance (0.02) for stability *(Active, unassessed)*
+- alongside: [SOTA-060](../record/practices.d/SOTA-060.md) — Initialize weights from N(0, 0.02) and scale the residual-output projections by 1/sqrt(2N) *(Active, unassessed)*
+
+### From use gradient clipping
+
+- [SOTA-035](../record/practices.d/SOTA-035.md) — use gradient clipping *(Active, unassessed)*
+  - [SOTA-385](../record/practices.d/SOTA-385.md) — Tighten the gradient-norm clip as the model grows rather than carrying one value across scales *(Proposed, unreplicated)*
 
 ### From Monitor exp(loss) for stability
 
 - alongside: [SOTA-069](../record/practices.d/SOTA-069.md) — Monitor exp(loss) for stability *(Active, unassessed)*
-- alongside: [SOTA-098](../record/practices.d/SOTA-098.md) — Monitor validation loss for unexpected spikes during training *(Active, unassessed)*
+- alongside: [SOTA-098](../record/practices.d/SOTA-098.md) — Monitor the training loss for unexpected spikes, for the whole run *(Active, unassessed)*
 
 ### From Track gradient norm ratios between layers
 
 - alongside: [SOTA-070](../record/practices.d/SOTA-070.md) — Track gradient norm ratios between layers *(Active, unassessed)*
 - alongside: [SOTA-099](../record/practices.d/SOTA-099.md) — Track gradient norm statistics to detect training instabilities *(Active, unassessed)*
-
-### From Compute the normalization statistic without centering (RMSNorm)
-
-- alongside: [SOTA-182](../record/practices.d/SOTA-182.md) — Compute the normalization statistic without centering (RMSNorm) *(Active, universal)*
-- alongside: [SOTA-191](../record/practices.d/SOTA-191.md) — Consider removing LayerNorm's learnable gain and bias rather than tuning them *(Proposed, contested)*
 
 ### From Apply dropout where the model can memorize what it is shown, and not where it cannot
 
@@ -278,11 +267,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [SOTA-088](../record/practices.d/SOTA-088.md) — Fuse small operations into larger kernels *(Active, unassessed)*
 - alongside: [SOTA-114](../record/practices.d/SOTA-114.md) — Fuse attention operations where possible *(Active, unassessed)*
 
-### From Optimize memory layout for hardware
-
-- alongside: [SOTA-082](../record/practices.d/SOTA-082.md) — Optimize memory layout for hardware *(Active, unassessed)*
-- alongside: [SOTA-090](../record/practices.d/SOTA-090.md) — Use hardware-specific memory layouts *(Active, unassessed)*
-
 ### From Implement custom kernels for critical ops
 
 - [SOTA-083](../record/practices.d/SOTA-083.md) — Implement custom kernels for critical ops *(Active, unassessed)*
@@ -296,16 +280,9 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [SOTA-087](../record/practices.d/SOTA-087.md) — Recompute attention during backward pass instead of storing it *(Active, unassessed)* — also extends SOTA-249
   - [SOTA-107](../record/practices.d/SOTA-107.md) — Keep sequence lengths multiple of 128 for best performance *(Rejected, unassessed)*
 - [SOTA-249](../record/practices.d/SOTA-249.md) — Recompute activations from a sqrt(n) subset of checkpoints when activation memory is the binding constraint *(Active, universal)*
-- alongside: [SOTA-089](../record/practices.d/SOTA-089.md) — Align tensor dimensions to hardware boundaries *(Active, unassessed)*
 - alongside: [SOTA-108](../record/practices.d/SOTA-108.md) — Pad attention masks to block boundaries for better hardware utilization *(Rejected, unassessed)*
 
 ## training-optimization
-
-### From skip connections promote training stability by smoothing out the loss landscape
-
-- alongside: [SOTA-010](../record/practices.d/SOTA-010.md) — skip connections promote training stability by smoothing out the loss landscape *(Superseded, unassessed)*
-- alongside: [SOTA-011](../record/practices.d/SOTA-011.md) — Map the Hessian ratio |lambda_min / lambda_max| to find where the loss surface is non-convex *(Active, unassessed)*
-- alongside: [SOTA-012](../record/practices.d/SOTA-012.md) — sharpness in the loss landscape correlates with test error *(Active, unassessed)*
 
 ### From Perform forward/backward passes in FP16
 
@@ -314,23 +291,10 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [SOTA-014](../record/practices.d/SOTA-014.md) — Maintain master weights in FP32 *(Active, unassessed)*
     - [SOTA-015](../record/practices.d/SOTA-015.md) — Store optimizer states in FP32 *(Active, unassessed)*
 
-### From Keep micro-batch size per GPU as large as memory allows
-
-- alongside: [SOTA-031](../record/practices.d/SOTA-031.md) — Keep micro-batch size per GPU as large as memory allows *(Active, unassessed)*
-- alongside: [SOTA-092](../record/practices.d/SOTA-092.md) — smaller batch sizes are more sample efficient (i.e., better loss as a function of tokens seen) earlier in training *(Active, unassessed)*
-- alongside: [SOTA-093](../record/practices.d/SOTA-093.md) — larger batch sizes are beneficial later in training due to better gradient estimates *(Active, unassessed)*
-- alongside: [SOTA-094](../record/practices.d/SOTA-094.md) — throughput (energy efficiency) wins out over theoretically optimal sample efficiency *(Active, unassessed)*
-
 ### From use gradient clipping
 
 - [SOTA-035](../record/practices.d/SOTA-035.md) — use gradient clipping *(Active, unassessed)*
   - [SOTA-385](../record/practices.d/SOTA-385.md) — Tighten the gradient-norm clip as the model grows rather than carrying one value across scales *(Proposed, unreplicated)*
-- alongside: [SOTA-202](../record/practices.d/SOTA-202.md) — Clamp the prediction to the training range at every step when sampling from a model's own output *(Active, converged)*
-
-### From larger models are more sample efficient
-
-- alongside: [SOTA-040](../record/practices.d/SOTA-040.md) — larger models are more sample efficient *(Active, unassessed)*
-- alongside: [SOTA-041](../record/practices.d/SOTA-041.md) — lr tuning less important for larger models *(Rejected, unassessed)*
 
 ### From Scale attention weights by 1/sqrt(head_dim)
 
@@ -347,7 +311,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [SOTA-258](../record/practices.d/SOTA-258.md) — Scale batch size with the token budget, not with compute or model size *(Active, emerging)* — also extends SOTA-097
 - [SOTA-097](../record/practices.d/SOTA-097.md) — Optimal batch size scales approximately with compute budget - `B ∝ C^(1/4)` *(Superseded, unassessed)*
   - [SOTA-198](../record/practices.d/SOTA-198.md) — Measure the gradient noise scale instead of sweeping batch size, and expect it to grow during the run *(Active, emerging)*
-- alongside: [SOTA-061](../record/practices.d/SOTA-061.md) — Use largest batch that maintains >80% sample efficiency *(Active, unassessed)*
 
 ### From Use a warmup-stable-decay schedule: hold the learning rate, then decay it sharply over the final 10–20% of tokens
 

@@ -55,6 +55,14 @@ Gao et al. (2024), [LIT-571](../literature.d/LIT-571.md), §4.1 and footnote 11.
   or a mean-ablation baseline, serves the same purpose where no
   compute-loss curve is available
 
+The critique and the replacement are both Gao et al.'s, LIT-571, which
+proposed the compute-equivalent framing. Their 16M-latent SAE on GPT-4
+scores 98.2% "loss recovered" against zero ablation, yet with its
+reconstruction substituted into GPT-4 the language-modelling loss equals
+that of a model trained on 10% of GPT-4's pretraining compute. They also
+found the downstream-loss gap between SAE architectures larger than the MSE
+gap (Figure 5a), which is the case for measuring downstream at all.
+
 ## Conditions
 
 - **The compute-equivalent figure needs a scaling curve** for the subject

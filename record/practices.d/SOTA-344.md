@@ -55,6 +55,13 @@ If you train an SAE on a model's activations:
 - **Scale the learning rate as 1/√(latents)**, the largest that converged
   in the paper
 
+The recipe is Gao et al.'s, LIT-571, which introduced TopK SAEs together
+with the dead-latent mitigations. At 32k latents TopK beat ReLU and ProLU
+SAEs and matched Gated on the MSE–L0 frontier, and at fixed L0 = 128 it
+scaled more steeply with size (Figure 2). Without mitigation up to 90% of
+latents died; with the transposed initialization and the auxiliary loss,
+7% did in their 16M-latent SAE on GPT-4.
+
 ## Conditions
 
 - **This says how to train an SAE, not whether to use one.** On probing,

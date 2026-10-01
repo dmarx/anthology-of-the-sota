@@ -75,7 +75,7 @@ Two things worth separating. INT8 post-training quantization goes from
 destroyed one. And the floating-point model gets slightly *better*, so the
 outliers were not carrying something the model needed.
 
-Clipped softmax originates in LIT-414, which is also where these numbers come
+Clipped softmax originates in [LIT-414](../literature.d/LIT-414.md), which is also where these numbers come
 from. Bondarenko et al. traced the outliers that break INT8 to heads trying to
 learn a no-op, proposed clipped softmax and gated attention as two
 architectural fixes for it, and measured both; on their summary comparison

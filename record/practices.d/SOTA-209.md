@@ -51,7 +51,7 @@ Same architecture, same total compute, different initialization — which is
 what makes it a recommendation about how to start rather than about what to
 build.
 
-Both comparisons, and the procedure, come from LIT-227, which proposed
+Both comparisons, and the procedure, come from [LIT-227](../literature.d/LIT-227.md), which proposed
 upcycling: the dense checkpoint's feed-forward weights seed the experts. It
 ran the comparison on T5 Base, Large and XL evaluated on SuperGLUE and on ViT
 Base and Large evaluated on ImageNet.

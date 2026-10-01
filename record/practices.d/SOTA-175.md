@@ -57,7 +57,7 @@ against itself.
 At 1B and 8B, AST-FIM outperforms random-character FIM by up to 5 points on
 standard FIM benchmarks, and is most useful on the real-world editing task.
 
-That comparison is where the recommendation starts. LIT-126 proposes AST-FIM,
+That comparison is where the recommendation starts. [LIT-126](../literature.d/LIT-126.md) proposes AST-FIM,
 builds Real-FIM-Eval to test it, and trains the same 1B and 8B models with
 each kind of masking: syntactic spans beat random character spans, by the
 widest margin on real edits.

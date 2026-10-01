@@ -56,7 +56,7 @@ Three details are load-bearing and the paper names all three:
   context and target encoders is what prevents representation collapse — the
   standing failure mode of joint-embedding architectures.
 
-The objective is LIT-216's: Assran et al. introduced I-JEPA as a third kind
+The objective is [LIT-216](../literature.d/LIT-216.md)'s: Assran et al. introduced I-JEPA as a third kind
 of self-supervised architecture, predicting the embedding of one part of an
 image from another rather than contrasting views or reconstructing pixels,
 and showed it transferring past classification to object counting and depth

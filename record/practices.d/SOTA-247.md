@@ -90,7 +90,7 @@ entries, and it does not get worse on the old ones. Mean-embedding
 initialization fails both — it struggles to use the new tokens and degrades
 overall performance, badly on Arabic (0.211).
 
-Both the method and these measurements are LIT-412's. Kaplan et al. first
+Both the method and these measurements are [LIT-412](../literature.d/LIT-412.md)'s. Kaplan et al. first
 showed that Llama2-7B builds a whole-word representation at a split word's
 last token (a probe there reaches 89% word-versus-nonword accuracy, against
 61% on the penultimate token), and then turned that finding into this

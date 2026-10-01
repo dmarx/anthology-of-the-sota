@@ -53,7 +53,7 @@ attention, held across more machines. Demonstrated on language modelling and
 reinforcement learning at million-token context.
 
 The method, the device-count scaling claim and those million-token runs are
-LIT-206's, the paper that introduced ring attention; the practice is its
+[LIT-206](../literature.d/LIT-206.md)'s, the paper that introduced ring attention; the practice is its
 proposal taken as written.
 
 ## Which long-context problem this solves, which is not the others

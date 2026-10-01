@@ -50,7 +50,7 @@ window** — the previous `l` positions, with the stride `l` chosen close to
 Integrate them by alternating one pattern per residual block, by merging both
 into one head, or across the heads of a multi-head layer.
 
-This is LIT-225's own recommendation, stated by the paper that introduced the
+This is [LIT-225](../literature.d/LIT-225.md)'s own recommendation, stated by the paper that introduced the
 factorization, and its experiments showed sparse attention cheaper than dense
 and, on two of three comparisons, slightly better on loss. On enwik8
 at 12,288 context the fixed pattern reached 0.99 bits per byte at 0.55 s/iter

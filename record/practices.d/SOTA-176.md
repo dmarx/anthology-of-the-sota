@@ -54,7 +54,7 @@ Inter-layer behaviour is then controlled by a single hyperparameter, the
 sliding-window size, which slides smoothly from purely linear to full
 attention while **every layer stays structurally identical**.
 
-The design and the case for it are LIT-176's, the paper that introduces
+The design and the case for it are [LIT-176](../literature.d/LIT-176.md)'s, the paper that introduces
 Native Hybrid Attention: it proposes the single-softmax layer and the
 window-size dial, and reports it beating Transformers and other hybrid
 baselines on recall-intensive and commonsense tasks.

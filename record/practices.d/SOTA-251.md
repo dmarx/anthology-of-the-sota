@@ -53,7 +53,7 @@ cooldown iterations at raised resolution.** Against the projected cost of
 training at full resolution throughout, that is **up to an 8x speedup** in
 GPU-days for a ViT-g.
 
-The schedule is LIT-215's, introduced as progressive-resolution training in
+The schedule is [LIT-215](../literature.d/LIT-215.md)'s, introduced as progressive-resolution training in
 the V-JEPA 2 recipe: Assran et al. ran it to pretrain a 1B-parameter video
 encoder on over a million hours of video, and report the 8x as a projection
 against full-resolution training rather than a head-to-head run to matched

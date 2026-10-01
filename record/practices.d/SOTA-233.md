@@ -75,7 +75,7 @@ quality.
 No second model, no stronger teacher, no additional supervision — which is
 what keeps this a training method rather than a distillation result.
 
-This is SCoRe, and the recommendation originates with LIT-383: Kumar et al.
+This is SCoRe, and the recommendation originates with [LIT-383](../literature.d/LIT-383.md): Kumar et al.
 took the negative result on prompted self-correction as given, diagnosed the
 two SFT failure modes above, and showed that multi-turn online RL on
 self-generated traces improves the base models' self-correction by 15.6% on

@@ -57,7 +57,7 @@ So the recommendation is to model the prerequisite structure and sample
 accordingly — online over skill mixtures, in continual pretraining where the
 goal is many skills, and in fine-tuning where it is one.
 
-The recommendation originates with LIT-392, which proposes both the framing
+The recommendation originates with [LIT-392](../literature.d/LIT-392.md), which proposes both the framing
 and the sampler, Skill-It, and measures it in both regimes. On the synthetic
 LEGO task in continual pretraining it is 36.5 points more accurate than random
 sampling. On Natural Instructions in fine-tuning it cuts validation loss on the

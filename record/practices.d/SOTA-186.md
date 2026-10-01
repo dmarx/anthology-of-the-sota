@@ -38,7 +38,7 @@ Retraining at each stage is what makes it work: the model that produced stage
 falls as the model improves on data it helped create. The reported outcome is
 about 1.1B masks over 11M images — a corpus no fully-manual budget reaches.
 
-The practice originates in LIT-096, which named this loop the *data engine*
+The practice originates in [LIT-096](../literature.d/LIT-096.md), which named this loop the *data engine*
 and presented it, rather than the mask count, as the method: the great
 majority of SA-1B's masks came from the fully automatic stage, and each stage
 was materially cheaper per label than the one before. What that paper shows

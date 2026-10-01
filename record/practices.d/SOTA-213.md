@@ -63,7 +63,7 @@ changes the loss and one that cannot, and the second is a random walk whose
 squared norm grows as `σ²dT/N`. Two of those four terms are budget decisions,
 which is what makes this a practice rather than an observation:
 
-The decomposition and the scaling are LIT-235's. Hoy et al. split the ES
+The decomposition and the scaling are [LIT-235](../literature.d/LIT-235.md)'s. Hoy et al. split the ES
 update into a loss-changing and a loss-invariant part, report the predicted
 `σ²dT/N` growth matching measured weight changes, and on Qwen3-4B across four
 sequential tasks see the ES update norm climb 87.28 → 173.00 while GRPO's goes

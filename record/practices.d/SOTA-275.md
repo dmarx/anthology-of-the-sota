@@ -68,7 +68,7 @@ conservative choice: in a depth sweep from 4 to 256 layers the optimal base
 learning rate drifts under `k = 1` and holds under `k ≥ 2`, for
 Muon-Kimi-AdamW, Muon-AdamW, Shampoo-AdamW and Sophia alike.
 
-The rule originates in LIT-462, which derives one muP spectral condition for
+The rule originates in [LIT-462](../literature.d/LIT-462.md), which derives one muP spectral condition for
 joint width-depth scaling, gets Depth-muP and CompleteP back as its `k = 1`
 and `k ≥ 2` cases, and so makes branch depth the thing that picks the rule.
 The sweep above is its head-to-head (Figure 2, GPT-2-style models on

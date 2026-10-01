@@ -57,7 +57,7 @@ sequence containing no English at all. The signal from the reversed sequence
 is barely distinguishable from the signal from an unrelated one. Consistent
 across model sizes.
 
-The measurement is LIT-401's, and the practice is first drawn from it.
+The measurement is [LIT-401](../literature.d/LIT-401.md)'s, and the practice is first drawn from it.
 Grosse et al. scaled influence functions to models of up to 52B parameters
 with an EK-FAC approximation, and ran this synthetic construction with the
 content held fixed so that only the order varied. They report the asymmetry

@@ -64,11 +64,12 @@ coherence** and **+27.5 quality** on a 0–100 judged scale, with originality
 and grammar also up.
 
 That swap is the tokenizer ablation in LIT-485, which built this 4,096-token
-WordPiece vocabulary with affix seeding for its SimpleStories models and is
-where fitting the tokenizer to a narrow corpus is first recommended. It is
-the one fully controlled comparison in the paper; the paper's headline
-comparison against TinyStories-33M changes dataset, tokenizer and
-architecture at once and does not bear on this practice.
+WordPiece vocabulary with affix seeding for its SimpleStories models; the
+claim originates there, the authors reading the ablation as confirming that
+"domain-optimized vocabulary with morphological awareness substantially
+improves model efficiency". It is the one fully controlled comparison in the
+paper; its headline comparison against TinyStories-33M changes dataset,
+tokenizer and architecture at once and does not bear on this practice.
 
 Two comparisons in the same figure say how large that is. Re-architecting the
 baseline to Llama style, with its tokenizer left alone, improves it — and

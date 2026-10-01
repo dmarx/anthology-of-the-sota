@@ -54,6 +54,13 @@ Zhang, Zhang, Zardini, Amin and Ozdaglar (2026), [LIT-490](../literature.d/LIT-4
 
 ## What to do
 
+The reordering is LIT-490's, which proposes it on the reading that the
+denoiser is an approximate projection onto the data support, proves
+finite-time guarantees for it in three geometries, and shows in
+double-integrator and unicycle tracking that the standard ordering's plans
+lose much of their advantage once rolled out through the true dynamics while
+the reordered ones do not.
+
 At each reverse step you have a noisy iterate, a pretrained denoiser, and a
 differentiable objective. The standard implementation denoises, then adds the
 gradient correction outside. **Reverse that:** apply `−η∇f` to the noisy

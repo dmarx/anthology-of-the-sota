@@ -60,6 +60,11 @@ Eyring, Karthik, Dosovitskiy, Ruiz and Akata (2025), [LIT-491](../literature.d/L
 
 ## What to do
 
+This is LIT-491's noise hypernetwork (HyperNoise), and the recommendation
+starts there: on SD-Turbo, SANA-Sprint and FLUX-schnell it raises GenEval by
+0.04–0.08 for about 0.1–0.2 s more per sample, while direct LoRA reward
+fine-tuning of the same SANA-Sprint model fell below the untouched base.
+
 Freeze the distilled generator. Train a lightweight network — LoRA over the
 generator's own architecture, so it inherits the inductive biases and the
 conditioning pathways — to map standard Gaussian noise to a modulated noise,

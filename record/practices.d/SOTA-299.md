@@ -53,6 +53,12 @@ as [NOTE-237](../notes.d/NOTE-237.md).
 
 ## What to do
 
+The recipe is LIT-488's (gen2seg): finetune Stable Diffusion or MAE end to
+end to paint instances as colours, on indoor furnishings and cars only, and it
+segments art, egocentric video and x-ray luggage, with the SimpleClick and
+DINO controls below attributing that to the generatively pretrained decoder
+and encoder rather than to the data.
+
 **Express the dense target in the pretrained model's own output space.** For
 instance segmentation that means an RGB image: one colour per instance, black
 background. The model then does the thing it was pretrained to do —

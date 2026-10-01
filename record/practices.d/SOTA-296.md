@@ -45,6 +45,11 @@ Chen et al. (2025), [LIT-486](../literature.d/LIT-486.md) — [ARXIV-2505.10475]
 
 ## What to do
 
+The schedule is LIT-486's own answer, in its §4, to the `P`× training cost
+of its method, and its 1.8B run is the whole of the evidence: streams switched
+on for the last 20B of 1T tokens recovered from the loss spike within 0.0002T
+tokens and still gave the `P = 1 → 8` gains listed below.
+
 Pretrain normally. Near the end, initialize the prefix embeddings and the
 aggregation MLP randomly — standard deviation 0.02 in the reported run — and
 continue on a small final slice of the token budget with the streams active.

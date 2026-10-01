@@ -58,6 +58,12 @@ Chen et al. (2025), [LIT-486](../literature.d/LIT-486.md) — [ARXIV-2505.10475]
 
 ## What to do
 
+This is LIT-486's method, ParScale, and the recommendation to buy capacity
+with parallel computation instead of parameters originates there: the paper
+fits `P` streams as worth `O(log P)` more parameters across 0.5B–4.4B on two
+corpora, and models the inference cost at batch size 1 as 22× less added
+memory and 6× less added latency than the parameter scaling that matches it.
+
 Prepend `P` different **learned prefixes** to the input — equivalently, keep
 `P` distinct KV-caches — run the backbone on all `P` in parallel, and combine
 the `P` output distributions with a **learned** dynamic weighted average from

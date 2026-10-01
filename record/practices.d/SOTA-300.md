@@ -65,6 +65,12 @@ something here" returns an answer to a different question.
 
 ## What to do instead
 
+The replacement is LIT-489's. It names this conflation and proposes the
+PHi layer against it, then shows the metric separating in-context automaton
+learning from memorization and noise on a Transformer and an LSTM, and
+tracking analytically computed automaton complexity within every
+next-token-loss bin.
+
 Split the model between two sequence layers and insert a **PHi layer**:
 
 1. A posterior encoder mapping the hidden state to a latent.

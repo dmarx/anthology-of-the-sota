@@ -68,6 +68,13 @@ intermediate resolution was once trained as the final output.
 
 In the main ablation this change takes FFHQ FID from 4.34 to 3.31.
 
+Both the diagnosis and the replacement come from StyleGAN2, LIT-560, which
+argued that progressive growing causes the phase artifacts and first
+recommended the fixed skip/residual topology in its place. The grid above is
+its Table 2, run with growing disabled; the 4.34 → 3.31 step is row E of its
+Table 1, where removing growing gave the largest single FID gain in the
+sequence of changes.
+
 ## Conditions
 
 - **StyleGAN's modulated generator.** The grid was run on it

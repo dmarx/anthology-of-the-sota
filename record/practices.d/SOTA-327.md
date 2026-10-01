@@ -58,6 +58,12 @@ dimensions in the paper), with a head per prefix or one tied head.
 Normalize each prefix separately if the representation is normalized. That
 is the only change.
 
+The objective and the shortlist-then-re-rank deployment both originate in
+LIT-547, Matryoshka Representation Learning. On ResNet50 ImageNet-1K each
+prefix there was at least as accurate as a separately trained model of that
+width in linear classification, and up to 3% better in retrieval mAP@10, while
+SVD and random features fell off sharply below 256 dimensions.
+
 **Then deploy one vector at several costs:**
 
 - **Store one database of full-width embeddings.** Do not keep one per width

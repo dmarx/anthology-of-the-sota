@@ -70,6 +70,12 @@ at FFN ratios {0.5, 1, 2, 4}, is what was tested.
 
 ## What the evidence is, exactly
 
+The recommendation, the one-granularity-per-step rule and the Mix'n'Match
+heuristic all originate in LIT-546, MatFormer, which trained 78M–850M decoder
+LMs and ViT-B/L this way; at 850M every trained granularity had lower
+validation loss and higher 1-shot accuracy across 25 tasks than its
+separately trained baseline.
+
 The comparison is **one nested run on `4X` tokens against four separate
 models on `X` tokens each**, so the total compute is the same. Inside the
 nested model, the smallest submodel's weights are updated at every step and

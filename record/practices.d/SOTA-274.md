@@ -69,8 +69,8 @@ gradient's nuclear rank is the larger number. That inequality is Davis and
 Drusvyatskiy's (LIT-457), derived from the one-step descent bounds of their
 §1.2, and the measurement originates there: in a NanoGPT run they track both
 quantities and find activations staying low stable rank and gradients keeping
-large nuclear-to-Frobenius ratios throughout training. In a transformer the incoming
-matrices are the token embeddings, the RMS-normalized hidden states entering
+large nuclear-to-Frobenius ratios throughout training. In a transformer
+the incoming matrices are the token embeddings, the RMS-normalized hidden states entering
 the attention projections, and the post-activations entering the second MLP
 matrix.
 

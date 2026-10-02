@@ -4,7 +4,7 @@ status: Active
 formerly:
 - SOTA-tmprzpgu
 title: 'When an ImageNet classifier is anywhere in the pipeline — training the generator or steering its sampling — confirm FID gains with a Fréchet distance in a non-ImageNet feature space'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-25'
@@ -26,6 +26,13 @@ history:
     and is arguably stronger — two *different* ImageNet classifiers that agree
     with each other is the situation this practice is about — but the stated
     reason was false.
+- version: 4
+  date: '2026-10-02'
+  note: >-
+    Adds DMAD (LIT-tmpv2jpm) as a 2026 instance: a diffusion distiller
+    whose best ImageNet-64 FID comes from an ImageNet-pretrained projected
+    discriminator and is reported in FID alone. Recommendation, status and
+    consensus unchanged.
 tags:
 - analysis-and-evaluation
 - generative-modeling
@@ -98,6 +105,14 @@ CLIP-FD fell by 4–11%. On FFHQ:
 The drop tracks how much ImageNet each feature space has seen. In the
 practical case, Projected FastGAN matched StyleGAN2's FID (5.28 against
 5.30) with CLIP-FD 4.67 against 2.76, and human raters preferred StyleGAN2.
+
+The same pattern continues in diffusion distillation. DMAD ([LIT-tmpv2jpm](../literature.d/LIT-tmpv2jpm.md))
+takes its best one-step ImageNet-64 FID from 1.24 to 1.04 by adding a
+projected discriminator on frozen ImageNet-pretrained VGG16-BN and
+EfficientNet-Lite0 features, and reports that gain in FID alone, with no
+non-ImageNet Fréchet distance and no precision or recall. It is an
+unchecked instance of exactly the case this practice is about, not evidence
+for or against it.
 
 ## Conditions
 

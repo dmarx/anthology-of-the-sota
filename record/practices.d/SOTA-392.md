@@ -14,10 +14,19 @@ consensus_note: >-
   One source, Rectified Flow (LIT-636, Table 1a), on CIFAR-10. The large
   video reports reach few steps by distillation without reflow: CausVid and
   Self Forcing use distribution matching (LIT-631, LIT-629), and
-  HunyuanVideo distils guidance (LIT-620). That fits the practice, but it is
-  adoption and not a test. Read as of 2026-09.
+  HunyuanVideo distils guidance (LIT-620). DMAD (LIT-tmpv2jpm) distils
+  the rectified-flow Wan2.1 to four steps by distribution matching with no
+  reflow. That fits the practice, but it is adoption and not a test. Read
+  as of 2026-10.
 title: 'To get a one-step sampler from a rectified flow, distil it; treat reflow as an optional extra pass, and keep the pre-reflow model for many steps'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-10-02'
+  note: >-
+    Adds DMAD (LIT-tmpv2jpm) to the consensus note as one more
+    distribution-matching distillation of a rectified-flow model without
+    reflow. Adoption, not a test; status and consensus unchanged.
 tags:
 - generative-modeling
 - inference-optimization

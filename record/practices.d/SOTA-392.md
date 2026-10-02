@@ -14,7 +14,7 @@ consensus_note: >-
   One source, Rectified Flow (LIT-636, Table 1a), on CIFAR-10. The large
   video reports reach few steps by distillation without reflow: CausVid and
   Self Forcing use distribution matching (LIT-631, LIT-629), and
-  HunyuanVideo distils guidance (LIT-620). DMAD (LIT-tmpv2jpm) distils
+  HunyuanVideo distils guidance (LIT-620). DMAD (LIT-770) distils
   the rectified-flow Wan2.1 to four steps by distribution matching with no
   reflow. That fits the practice, but it is adoption and not a test. Read
   as of 2026-10.
@@ -24,7 +24,7 @@ history:
 - version: 2
   date: '2026-10-02'
   note: >-
-    Adds DMAD (LIT-tmpv2jpm) to the consensus note as one more
+    Adds DMAD (LIT-770) to the consensus note as one more
     distribution-matching distillation of a rectified-flow model without
     reflow. Adoption, not a test; status and consensus unchanged.
 tags:

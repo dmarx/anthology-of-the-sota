@@ -121,7 +121,7 @@
 | 2026-09-22 | Proposed | [SOTA-321](../../record/practices.d/SOTA-321.md) | 1 | 0 | Verify a model's lineage from the singular spectra of its attention products, which survive permutation and rescaling |
 | 2026-09-22 | Proposed | [SOTA-322](../../record/practices.d/SOTA-322.md) | 0 | 0 | Trade attention heads for depth: more heads conditions the attention block, and the layers you drop cost nothing |
 | 2026-09-23 | Proposed | [SOTA-333](../../record/practices.d/SOTA-333.md) | 41 | 0 | For autoregressive generation of continuous sequences, train with an independent noise level per token and condition the rollout on slightly noised history |
-| 2026-09-23 | Proposed | [SOTA-338](../../record/practices.d/SOTA-338.md) | 7 | 0 | Train the GAN discriminator on frozen multi-scale pretrained features with fixed random channel and scale mixing |
+| 2026-09-23 | Proposed | [SOTA-338](../../record/practices.d/SOTA-338.md) | 8 | 0 | Train the GAN discriminator on frozen multi-scale pretrained features with fixed random channel and scale mixing |
 | 2026-09-23 | Proposed | [SOTA-353](../../record/practices.d/SOTA-353.md) | 5 | 0 | Train a head that predicts the model's own accuracy on each output, against the metric you care about, and use it to rank samples and filter predictions |
 | 2026-09-23 | Proposed | [SOTA-332](../../record/practices.d/SOTA-332.md) | 4 | 0 | When an implicit representation will be supervised through its derivatives, use sine activations with the SIREN initialization rather than a ReLU network |
 | 2026-09-23 | Proposed | [SOTA-335](../../record/practices.d/SOTA-335.md) | 4 | 0 | When generated content must move continuously, as in video or animation, build the generator alias-free: treat features as continuous signals and low-pass filter around every nonlinearity |
@@ -143,13 +143,13 @@
 | 2026-09-24 | Proposed | [SOTA-386](../../record/practices.d/SOTA-386.md) | 36 | 0 | Show a video diffusion model images before and alongside video |
 | 2026-09-24 | Proposed | [SOTA-390](../../record/practices.d/SOTA-390.md) | 27 | 0 | In a video diffusion transformer, attend over space and time jointly rather than factorizing, and budget for the cost |
 | 2026-09-24 | Proposed | [SOTA-389](../../record/practices.d/SOTA-389.md) | 26 | 0 | Caption training video with a model that watches the video, not with captions of its frames |
-| 2026-09-24 | Proposed | [SOTA-395](../../record/practices.d/SOTA-395.md) | 7 | 0 | Post-train an autoregressive video generator on its own rollouts, and score the whole rollout |
+| 2026-09-24 | Proposed | [SOTA-395](../../record/practices.d/SOTA-395.md) | 8 | 0 | Post-train an autoregressive video generator on its own rollouts, and score the whole rollout |
+| 2026-09-24 | Proposed | [SOTA-394](../../record/practices.d/SOTA-394.md) | 7 | 0 | When distilling a causal few-step video generator, take the teacher bidirectional, not causal |
 | 2026-09-24 | Proposed | [SOTA-397](../../record/practices.d/SOTA-397.md) | 7 | 0 | To condition an unconditionally trained diffusion model on known frames, use reconstruction guidance, not replacement |
-| 2026-09-24 | Proposed | [SOTA-394](../../record/practices.d/SOTA-394.md) | 6 | 0 | When distilling a causal few-step video generator, take the teacher bidirectional, not causal |
 | 2026-09-24 | Proposed | [SOTA-398](../../record/practices.d/SOTA-398.md) | 5 | 0 | Pretrain a vision transformer on packed, aspect-preserved images at sampled resolutions, not on fixed square crops |
 | 2026-09-24 | Proposed | [SOTA-399](../../record/practices.d/SOTA-399.md) | 3 | 0 | Choose pre-training weight decay, dropout, clipping and precision for the quantization you intend to ship |
+| 2026-09-24 | Proposed | [SOTA-392](../../record/practices.d/SOTA-392.md) | 2 | 0 | To get a one-step sampler from a rectified flow, distil it; treat reflow as an optional extra pass, and keep the pre-reflow model for many steps |
 | 2026-09-24 | Proposed | [SOTA-401](../../record/practices.d/SOTA-401.md) | 2 | 0 | Anchor the patch Gram matrix to an early teacher when training long, because dense features decay while global metrics improve |
-| 2026-09-24 | Proposed | [SOTA-392](../../record/practices.d/SOTA-392.md) | 1 | 0 | To get a one-step sampler from a rectified flow, distil it; treat reflow as an optional extra pass, and keep the pre-reflow model for many steps |
 | 2026-09-24 | Proposed | [SOTA-385](../../record/practices.d/SOTA-385.md) | 0 | 0 | Tighten the gradient-norm clip as the model grows rather than carrying one value across scales |
 | 2026-09-24 | Proposed | [SOTA-387](../../record/practices.d/SOTA-387.md) | 0 | 0 | Hold out a slice of the training set for model selection instead of selecting on the validation split |
 | 2026-09-24 | Proposed | [SOTA-391](../../record/practices.d/SOTA-391.md) | 0 | 0 | Estimate attention resolution before training when choosing a position encoding, and measure it across the extrapolation boundary |

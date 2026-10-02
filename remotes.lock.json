@@ -1936,6 +1936,9 @@
     },
     "ARXIV/2609.10980": {
       "title": "EGGROLL, Unrolled: Understanding and Improving Low-Rank Evolution Strategies at Scale"
+    },
+    "ARXIV/2610.02188": {
+      "title": "DMAD: Distribution Matching as Adversarial Distillation for Fast Visual Generation"
     }
   }
 }

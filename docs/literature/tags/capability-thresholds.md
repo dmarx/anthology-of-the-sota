@@ -6,7 +6,7 @@
 
 **Capability thresholds** — a capability that arrives abruptly rather than smoothly — emergence at scale, grokking after long training, phase transitions in learning — which axis it turns on, and whether the discontinuity is real or an artefact of how it was measured.
 
-13 of 704 LIT documents. Back to the [full index](../README.md).
+13 of 705 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

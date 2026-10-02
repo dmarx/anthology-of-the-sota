@@ -15,7 +15,7 @@ history:
 - version: 2
   date: '2026-10-02'
   note: >-
-    Notes DMAD (LIT-tmpv2jpm) as a 2026 adoption of the projected
+    Notes DMAD (LIT-770) as a 2026 adoption of the projected
     discriminator in diffusion distillation, measured only by FID. Adoption,
     not a test of what promote_when asks for; status and consensus unchanged.
 tags:
@@ -38,7 +38,7 @@ consensus_note: >-
   FFHQ. Their reading is that ImageNet pretraining in the discriminator
   leaks ImageNet-like statistics into the samples, which FID then rewards.
   The design has since been adopted outside GANs, again measured only by
-  FID: DMAD (LIT-tmpv2jpm) adds it to diffusion distillation and gets
+  FID: DMAD (LIT-770) adds it to diffusion distillation and gets
   ImageNet-64 from 1.24 to 1.04, with no non-ImageNet distance reported.
 implementations:
 - Projected GAN
@@ -93,7 +93,7 @@ space and with human raters. The speed-up in reaching a given FID is real.
 Whether it is a speed-up in quality is what is disputed. Evaluate with
 [SOTA-337](SOTA-337.md) before relying on it.
 
-Adoption has not settled it. DMAD ([LIT-tmpv2jpm](../literature.d/LIT-tmpv2jpm.md)) uses a projected
+Adoption has not settled it. DMAD ([LIT-770](../literature.d/LIT-770.md)) uses a projected
 discriminator on frozen VGG16-BN and EfficientNet-Lite0 features in
 one-step diffusion distillation, and its 1.04 ImageNet-64 FID, against
 1.24 without it, is the same kind of evidence: FID only, comparable only

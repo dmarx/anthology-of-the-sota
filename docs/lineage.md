@@ -234,6 +234,7 @@ Grouped by `tags`, which every line holds in common — a line about two things 
     - [LIT-643](../record/literature.d/LIT-643.md) — One-step Diffusion with Distribution Matching Distillation *(Active)*
       - [LIT-646](../record/literature.d/LIT-646.md) — Improved Distribution Matching Distillation for Fast Image Synthesis *(Active)*
         - [LIT-631](../record/literature.d/LIT-631.md) — From Slow Bidirectional to Fast Autoregressive Video Diffusion Models *(Active)* — also extends LIT-643
+      - [LIT-770](../record/literature.d/LIT-770.md) — DMAD: Distribution Matching as Adversarial Distillation for Fast Visual Generation *(Active)*
     - [LIT-699](../record/literature.d/LIT-699.md) — Diffusion Models Beat GANs on Image Synthesis *(Active)* — also extends LIT-439
       - [LIT-693](../record/literature.d/LIT-693.md) — Classifier-Free Diffusion Guidance *(Active)*
     - [LIT-710](../record/literature.d/LIT-710.md) — Efficient Diffusion Training via Min-SNR Weighting Strategy *(Active)*

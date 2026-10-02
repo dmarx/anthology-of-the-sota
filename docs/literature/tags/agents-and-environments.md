@@ -6,7 +6,7 @@
 
 **Agents and environments** — systems that perceive, act and are changed by the consequences — percept–action loops, world models and the environments agents are trained in, multi-agent and collective behaviour, and what acting rather than only predicting changes about learning, memory and their costs.
 
-5 of 704 LIT documents. Back to the [full index](../README.md).
+5 of 705 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

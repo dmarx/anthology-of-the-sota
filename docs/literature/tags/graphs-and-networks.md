@@ -6,7 +6,7 @@
 
 **Graphs and networks** — graph-structured data and the models that run on it — message passing and graph neural networks, how they are evaluated, graph curvature, rewiring and over-squashing, community structure and partitioning.
 
-6 of 704 LIT documents. Back to the [full index](../README.md).
+6 of 705 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

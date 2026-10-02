@@ -10,7 +10,14 @@ promote_when: >-
   preference study. FID or KID alone cannot settle it, because the
   discriminator's ImageNet pretraining is what distorts them.
 title: 'Train the GAN discriminator on frozen multi-scale pretrained features with fixed random channel and scale mixing'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-10-02'
+  note: >-
+    Notes DMAD (LIT-tmpv2jpm) as a 2026 adoption of the projected
+    discriminator in diffusion distillation, measured only by FID. Adoption,
+    not a test of what promote_when asks for; status and consensus unchanged.
 tags:
 - generative-modeling
 - training-optimization
@@ -30,6 +37,9 @@ consensus_note: >-
   StyleGAN2, which they say agrees with this paper's own human study on
   FFHQ. Their reading is that ImageNet pretraining in the discriminator
   leaks ImageNet-like statistics into the samples, which FID then rewards.
+  The design has since been adopted outside GANs, again measured only by
+  FID: DMAD (LIT-tmpv2jpm) adds it to diffusion distillation and gets
+  ImageNet-64 from 1.24 to 1.04, with no non-ImageNet distance reported.
 implementations:
 - Projected GAN
 summary: >-
@@ -82,6 +92,12 @@ classes that matching their statistics lowers FID without improving images
 space and with human raters. The speed-up in reaching a given FID is real.
 Whether it is a speed-up in quality is what is disputed. Evaluate with
 [SOTA-337](SOTA-337.md) before relying on it.
+
+Adoption has not settled it. DMAD ([LIT-tmpv2jpm](../literature.d/LIT-tmpv2jpm.md)) uses a projected
+discriminator on frozen VGG16-BN and EfficientNet-Lite0 features in
+one-step diffusion distillation, and its 1.04 ImageNet-64 FID, against
+1.24 without it, is the same kind of evidence: FID only, comparable only
+to a baseline that copies the same discriminator.
 
 ## Conditions
 

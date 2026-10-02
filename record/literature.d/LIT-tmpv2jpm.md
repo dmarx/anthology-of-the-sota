@@ -1,0 +1,239 @@
+---
+status: Active
+title: 'DMAD: Distribution Matching as Adversarial Distillation for Fast Visual Generation'
+version: 1
+tags:
+- generative-modeling
+- inference-optimization
+- vision-and-graphics
+- training-optimization
+- multimodal-learning
+date: '2026-10-02'
+published: '2026-10-01'
+arxiv: '2610.02188'
+first_author: 'Yu'
+keywords:
+- 'distribution-matching-distillation'
+- 'adversarial-distillation'
+- 'log-density-ratio'
+- 'linear-generator-loss'
+- 'gap-based-reweighting'
+- 'teacher-and-real-discriminator-heads'
+extends:
+- LIT-643
+compared_against:
+- LIT-075
+- LIT-093
+- LIT-566
+- LIT-619
+- LIT-646
+summary: >-
+  Yu et al., Texas A&M and ByteDance (2026), [ARXIV-2610.02188](https://arxiv.org/abs/2610.02188). DMAD replaces
+  DMD's fake-score critic with a discriminator and trains the student on a
+  linear loss on its logit. At the unrestricted discriminator optimum that
+  gradient equals DMD's idealized one (App. A, checked); nothing bounds it
+  off the optimum, where training runs with one discriminator step per
+  student step. One-step ImageNet-64 FID is 1.24 against DMD2's 1.28, at
+  570K iterations, and 1.04 with an ImageNet-pretrained discriminator scored
+  only by FID. Four-step SDXL reaches 14.47 FID at lower CLIP. Wan2.1 VBench
+  margins are 0.1–0.3 points. No diversity metric and no seeds are reported.
+---
+<!-- inactive-ok-file: SOTA-338, SOTA-392, SOTA-394, SOTA-395 — Proposed practices this paper bears on or is checked against; named as what the paper informs, not as settled advice -->
+
+# LIT-tmpv2jpm: DMAD: Distribution Matching as Adversarial Distillation for Fast Visual Generation
+
+Yu, Yuan, Yang, Qian, Wang, Wang, Yang, Liu, Li, Wang and Ma, Texas A&M
+University and ByteDance (2026) — [ARXIV-2610.02188](https://arxiv.org/abs/2610.02188). Read at v1 (1 Oct
+2026).
+
+## Key takeaways
+
+- **The critic becomes a classifier** (§3.1, Prop. 1). A discriminator
+  with logit h is trained by balanced BCE to tell noised target samples
+  from noised student samples. The student minimizes −E[h] (Eq. 4), a
+  linear loss on the logit. At the BCE optimum h* = log p_t − log p_θ,t, so
+  ∇h* is DMD's score difference and the generator gradient is DMD's
+  (Eq. 3). There is no fake diffusion model and no score fitting. Training
+  uses one discriminator update per generator update (App. B), against
+  DMD2's five.
+- **Two heads, two targets** (§3.2, Eqs. 5–6). A shared backbone feeds a
+  teacher head (teacher samples against student) and a real head (real
+  data against student). Teacher samples are generated once and cached,
+  so the teacher is never run during training. Removing the real head is
+  the largest single loss (Table 4): ImageNet 1.24 → 1.67 FID, four-step
+  SDXL 14.47 → 21.37. Removing the teacher head gives the best SDXL FID in
+  the table, 13.85, with the worst patch FID (26.03) and CLIP (0.312), and
+  drops Wan2.1-1.3B VBench semantic from 79.55 to 75.36.
+- **The headline numbers.** One-step ImageNet-64 from EDM: 1.24, and 1.04
+  with a projected discriminator on frozen ImageNet-pretrained VGG16-BN and
+  EfficientNet-Lite0 features (Table 1, App. B). Four-step SDXL on 10K COCO
+  prompts: FID 14.47, patch FID 19.88, CLIP 0.328; one step: 16.11, 32.42,
+  0.338 (Table 2). Four-step Wan2.1 VBench total: 84.70 at 1.3B and 85.15 at
+  14B (Table 3).
+- **The linear loss beats the non-saturating one, modestly** (Table 4,
+  Fig. 7b). The non-saturating loss multiplies each sample's gradient by
+  1 − D (App. A, Eq. 11). Swapping it in gives 1.31 against 1.24 on
+  ImageNet, 14.78 against 14.47 on SDXL, and 84.12 against 84.70 VBench
+  total. The full model first records ImageNet FID below 1.5 at 209K
+  iterations, against 354K for the non-saturating variant (§4.3).
+- **Gap-based reweighting is a heuristic, and it helps in every column
+  but one** (§3.3, Table 4). The real head's mean logit gap between real
+  and teacher samples is tracked per noise band (Eq. 7). Bands with a
+  smaller gap get more teacher weight through a sigmoid centred on the
+  median gap (Eq. 8). Disabling it gives ImageNet 1.33, SDXL 16.62 and
+  VBench total 83.56. Only VBench semantic improves without it (79.69
+  against 79.55). No argument is given for why a small gap should mean the
+  teacher is more useful. The temperature (0.5 for images, 2 for video) and
+  the normalization floor (10⁻³ for Wan, 10⁻⁴ for MiniMax-H3) differ by
+  setting (App. B, §3.3).
+- **Cheaper per update** (Table 5, H200, matched batch and shape). Per
+  generator update: ImageNet-64 0.496s against DMD2's 2.321s, Wan2.1-14B
+  38.50s against 162.9s, MiniMax-H3-33B 233.3s against 818.1s. Peak memory
+  falls by 5–16% (40.34 → 33.99, 131.04 → 124.56, 127.23 → 114.72 GiB/GPU).
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"We prove that at the discriminator optimum these losses recover the
+  distribution-matching gradient underlying DMD"** (abstract). The proof
+  (App. A) checks out. The pointwise BCE integrand is strictly convex in h,
+  so h* = log P/Q is the unique minimizer. The KL gradient's density term
+  vanishes because E[∇θ log p_θ,t] = 0. The chain rule then gives equal
+  generator gradients with h* held fixed. The paper is careful about what
+  this covers. It calls it "a local equality of generator gradients under
+  an optimal, fixed critic". It does not cover DMD's sample-dependent
+  normalization, and gap reweighting is held fixed during each update. What
+  it does not establish:
+  - **Nothing off the optimum.** The student follows ∇h_φ, and its error is
+    ∇(h_φ − h*). BCE controls the logit's value, not its input gradient, so
+    a near-optimal discriminator can still give a poor gradient. Nothing
+    bounds this.
+  - **The off-optimum evidence is one toy.** It is two fixed 2D
+    eight-component Gaussian mixtures, seed 0, one noise level (σ = 0.5),
+    after 1,000 adaptation updates from a shared pretrained init (§1,
+    App. B.2). NMSE is 0.144 for the logit gradient against 1.539 for the
+    fake-score difference. The student never moves.
+  - **The discriminator is never re-converged.** Training takes one
+    discriminator step per student step, the regime where DMD2 found its
+    critic lagging. DMAD's update ratio is never ablated.
+  - **It is the same target, not a better estimator.** DMD's fake score is
+    also exact only at its optimum. The proposition shows the two estimators
+    aim at the same quantity. Which one is closer in training rests on the
+    toy and the benchmarks.
+- **The two-head objective is not distillation to the teacher.** With
+  fixed weights, the optimum's gradient is that of a reverse KL to a
+  per-noise-level geometric mixture of the teacher and real marginals
+  (App. A, "Two fixed targets"). The authors note this need not match any
+  clean distribution. With gap reweighting on, it is no fixed objective at
+  all. The teacher head's target is also the cached sample set, not the
+  teacher. The paper gives neither the cache size for ImageNet and video
+  nor the guidance scale used to generate SDXL's teacher samples. The
+  generator's initialization is not stated.
+- **"The best values among … the multi-step teachers"** (abstract) holds
+  for the three numbers it names. Four-step SDXL CLIP is 0.328, below both
+  the cfg-6 teacher (0.332) and DMD2 (0.332). FID rewards matching
+  unguided real data: the no-teacher row gets the best SDXL FID and the
+  worst CLIP. On MiniMax-H3 the teacher scores 67.2 on AVGen-Bench against
+  DMAD's 65.4 (App. C, Table 6).
+- **"The best one-step FID and highest CLIP"** (§4.2). DMAD's one-step SDXL
+  patch FID is 32.42, worse than DMD2 (26.98), SDXL-Turbo (23.94) and
+  SDXL-Lightning (31.65) (Table 2). The text does not mention it.
+- **1.04 is an ImageNet-feature discriminator scored by an ImageNet-feature
+  metric.** The projected heads sit on frozen ImageNet-pretrained backbones
+  and the score is FID alone. No CLIP-space or other non-ImageNet distance
+  is reported.
+- **Diversity is not measured.** FID is the only coverage-sensitive number.
+  There is no precision, recall or LPIPS diversity, and the objective is
+  still a reverse KL. Every number is one run, with no seeds or intervals.
+- **79.1% and 84.6% exclude ties** (Fig. 6, App. B). The overall
+  win/tie/loss counts over 387 prompts are 204/129/54 against DMD2 and
+  247/95/45 against rCM. Counting ties as non-wins, DMAD wins 52.7% and
+  63.8% of prompts. Three annotators rated each pair, aggregated by majority
+  vote. Prompt-alignment preference is 54.3% and 61.1%, ties excluded.
+
+## Which comparisons are like for like
+
+- **ImageNet-64 (Table 1)** shares DMD2's EDM teacher and one step, but not
+  its budget. DMAD trains 570K iterations at batch 384 (App. B). DMD2's
+  1.51 is 200K at batch 280, and its 1.28 is the longer run. Fig. 7b puts
+  DMAD near 1.5 at about 200K iterations. Each DMAD iteration costs less (one
+  critic step, not five). Baseline rows are the original papers' numbers,
+  and DMD2's match its own Table 1. The 1.04 row compares fairly with D2O-F
+  (1.16), whose projected discriminator it copies, and not with DMD2.
+- **SDXL (Table 2)** shares DMD2's teacher, step counts and protocol (10K
+  COCO 2014 prompts). The DMD2 and teacher rows are DMD2's published
+  numbers. DMAD adds 500K LAION-Aesthetics images and their cached teacher
+  samples (§4.2), trained 17K iterations at batch 64.
+- **Wan2.1 (Table 3)** shares the teacher, four steps and rCM's augmented
+  prompts. Only the teacher row is marked as retested. The paper does not
+  say where the DMD2, sCM and rCM rows come from. The margins are 0.14
+  (1.3B, over DMD2) and 0.23 points (14B, over rCM). On semantics DMAD
+  trails both DMD2 and rCM at 1.3B (79.55 against 80.50 and 80.63), and rCM
+  at 14B (81.90 against 82.88).
+- **MiniMax-H3-33B** cannot be checked from the paper. The model is cited
+  only through a company blog post (ref. [28]). DMAD trains 800 iterations
+  with rank-128 LoRA (App. B), and no configuration is given for the DMD2 and
+  rCM students it is compared against. The human study and the AVGen-Bench
+  scores (judged by Qwen3-Omni-Thinking) cannot be rerun from the text. The
+  abstract points to a project page for code, and the reproducibility
+  statement says it "will" be released.
+- **The cost table (Table 5)** is per update. It leaves out generating the
+  teacher-sample cache, which DMAD needs and DMD2 does not, and the
+  iteration counts to convergence are not compared.
+
+## Standing in the anthology
+
+It extends DMD ([LIT-643](LIT-643.md)): it starts from the same reverse-KL gradient,
+DMD's Eq. 2 restated as Eq. 2 here, and replaces how the score difference is
+estimated. DMD subtracts an online fake diffusion model's score from the
+frozen teacher's. DMAD reads the difference off a classifier's input
+gradient, and the teacher only supplies samples.
+
+DMD2 ([LIT-646](LIT-646.md)) is its main comparison and its direct rival in method. DMAD
+keeps DMD2's real-data adversarial term, but as a head carrying the
+distribution-matching gradient rather than a GAN loss added to it. It drops
+the fake critic that DMD2's five-to-one update rule existed to keep current.
+Its ImageNet and SDXL protocols are DMD2's. Against DMD2 it scores 1.24
+against 1.28 FID on ImageNet-64, 14.47 against 19.32 on four-step SDXL, and
+84.70 against 84.56 VBench on Wan2.1-1.3B. It is preferred in 79.1% of
+non-tied MiniMax-H3 prompts. Both papers' SDXL ablations show the same
+thing. A real-data-only adversarial run gets the best FID and the worst CLIP
+(DMD2's Table 4: 13.77 and 0.307; here 13.85 and 0.312).
+
+The teachers it measures itself against are EDM ([LIT-075](LIT-075.md)) on ImageNet-64,
+1.24 against 2.32 (ODE) and 1.36 (SDE); SDXL ([LIT-566](LIT-566.md)) on COCO, 14.47
+against 19.36 at cfg 6; and Wan2.1 ([LIT-619](LIT-619.md)) at 1.3B and 14B, 84.70 and
+85.15 against the 50×2-step teacher's 83.02 and 83.59 as retested. Its
+ImageNet table also lists Consistency Models ([LIT-093](LIT-093.md)) at 6.20 in one step,
+a number copied from that line's papers rather than rerun.
+
+**It fails [SOTA-337](../practices.d/SOTA-337.md).** The 1.04 headline puts frozen ImageNet-pretrained
+features in the discriminator and reports only FID. That is the case
+[LIT-563](LIT-563.md) showed can move FID without moving images. The Projected GAN design
+it inherits through D2O-F is [LIT-562](LIT-562.md)'s, which [SOTA-338](../practices.d/SOTA-338.md) recommends with that
+caveat. The 1.24 result, with a diffusion-backbone discriminator, does not
+carry this concern. **It also reports no precision or recall**, which
+[SOTA-425](../practices.d/SOTA-425.md) asks for when a knob trades fidelity for diversity, as the
+teacher and real weights may here, and no seed spread. Its 1.24 against 1.28 is a 3% gap,
+close to the 1–2% seed variation [SOTA-307](../practices.d/SOTA-307.md) reports.
+
+On [SOTA-394](../practices.d/SOTA-394.md)'s diversity condition it adds nothing. The objective is still a
+reverse KL and nothing measures diversity. Its video students are
+bidirectional, so it does not bear on the causal-teacher question either.
+It does not touch [SOTA-395](../practices.d/SOTA-395.md)'s rollout training.
+
+On [SOTA-392](../practices.d/SOTA-392.md) it is adoption, not a test. Wan2.1 is a rectified-flow model,
+and DMAD distils it to four steps by distribution matching with no reflow.
+Like the other distribution-matching distillers, it neither argues about nor
+measures reflow.
+
+The two-time-scale rule it drops comes from Heusel et al. ([LIT-611](LIT-611.md)), whose
+FID it also reports. Its video EMA is EDM2's power-function average
+([LIT-714](LIT-714.md)).
+
+Filed without a `NOTE`: the takeaways come from one full reading done for
+this filing, of v1's main text and Appendices A–D, with the proof checked
+line by line. Tables 1, 2 and 4, Fig. 7 and App. B were checked against the
+rendered pages. Fig. 7's curves are read only where the text gives values.
+The demo videos were not viewed.

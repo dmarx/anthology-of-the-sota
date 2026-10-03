@@ -1,0 +1,168 @@
+---
+status: Active
+title: 'One Step Diffusion via Shortcut Models'
+version: 1
+tags:
+- generative-modeling
+- few-step-generation
+- flows-and-transport
+- inference-optimization
+- vision-and-graphics
+- agents-and-environments
+date: '2026-10-03'
+published: '2024-10-16'
+arxiv: '2410.12557'
+first_author: 'Frans'
+keywords:
+- 'shortcut-models'
+- 'step-size-conditioning'
+- 'self-consistency'
+- 'flow-matching'
+- 'end-to-end-one-step'
+- 'shortcut-policy'
+implementations:
+- 'kvfrans/shortcut-models'
+extends:
+- LIT-636
+compared_against:
+- LIT-067
+- LIT-093
+- LIT-448
+- LIT-636
+- LIT-tmp7ppws
+- LIT-tmpkkjv3
+summary: >-
+  Frans, Hafner, Levine and Abbeel, UC Berkeley (2024), [ARXIV-2410.12557](https://arxiv.org/abs/2410.12557). A
+  flow-matching network also conditioned on step size d, trained in one run:
+  the flow-matching loss at d = 0, and a target for step 2d built from two of
+  its own d-steps. On DiT-B at matched compute, one model gives 6.9 / 13.8 /
+  20.5 FID at 128 / 4 / 1 steps on CelebA-HQ-256 and 15.5 / 28.3 / 40.3 on
+  ImageNet-256. Progressive distillation is better at one step (14.8 and
+  35.6) and cannot sample at many. The re-run consistency baselines are far
+  below their published numbers. DiT-XL reaches 10.6 in one step. One run per
+  cell.
+---
+<!-- inactive-ok-file: SOTA-392 — Proposed; named as the practice this paper's reflow and progressive-distillation rows bear on, not as settled advice -->
+
+# LIT-tmpo7np5: One Step Diffusion via Shortcut Models
+
+Frans, Hafner, Levine and Abbeel, UC Berkeley (2024), ICLR 2025 —
+[ARXIV-2410.12557](https://arxiv.org/abs/2410.12557). Read at v3 (23 Jun 2025), main text and Appendices A–B;
+v1 is 16 Oct 2024.
+
+## Key takeaways
+
+- **One network, one run, a step-size input** (§3, Eqs. 3–5, Alg. 1). The
+  model s(x_t, t, d) predicts the normalized jump to x_{t+d}. At d = 0 it is
+  trained on the ordinary flow-matching target x₁ − x₀. For d > 0 the target
+  for a step of 2d is the mean of two consecutive d-steps taken by the model
+  itself, under stop-gradient and with EMA weights (§3.1). With M = 128 there
+  are eight step sizes, 1/128 to 1. A quarter of each batch carries
+  self-consistency targets. Counting a backward pass as two forwards, the
+  cost is about 16% over plain flow matching (§3.1, footnote 2).
+- **The argument for it is that flow matching cannot take big steps even at
+  its optimum** (§2, Fig. 2). The learned velocity at t = 0 points at the
+  dataset mean, so a one-step Euler jump collapses a multimodal target.
+  Plain flow matching scores 280.5 and 324.8 FID at one step (Table 1).
+- **The matched comparison** (Table 1, DiT-B, one codebase, "equal or
+  greater" compute, App. B.2). FID-50k at 128 / 4 / 1 steps:
+
+  | Method | CelebA-HQ-256 | ImageNet-256 |
+  |---|---|---|
+  | Flow matching | 7.3 / (63.3) / (280.5) | 17.3 / (108.2) / (324.8) |
+  | Reflow | 16.1 / 18.4 / 23.2 | 16.9 / 32.8 / 44.8 |
+  | Progressive distillation | (302.9) / (251.3) / 14.8 | (201.9) / (142.5) / 35.6 |
+  | Consistency distillation | 59.5 / 39.6 / 38.2 | 132.8 / 98.01 / 136.5 |
+  | Consistency training | 53.7 / 19.0 / 33.2 | 42.8 / 43.0 / 69.7 |
+  | Shortcut | 6.9 / 13.8 / 20.5 | 15.5 / 28.3 / 40.3 |
+
+  Parentheses mark step counts the method is not meant for.
+- **Stability comes from weight decay and EMA targets, not a schedule**
+  (§3.1, §6). Weight decay 0.1 is called "crucial", because early
+  self-generated targets are noise the model can latch onto. EMA weights
+  for the targets damp oscillation at d = 1. Guidance (CFG 1.5 on ImageNet)
+  is used only at d = 0 and fixed before training (§3.1, Fig. 9).
+- **At DiT-XL size**, 3.8 / 7.8 / 10.6 FID at 128 / 4 / 1 steps on
+  ImageNet-256 (Table 2). One-step FID falls with model size (Fig. 5, curve
+  only).
+- **Robot control in one call** (§5.5, Fig. 7). Swapping the diffusion
+  policy for a shortcut policy, with weight decay raised to 0.1, scores 0.87
+  on Push-T and 0.80 on Transport at one step. The 100-step diffusion policy
+  scores 0.95 and 1.00, and the same policy run at one step 0.12 and 0.00.
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"Shortcut models consistently produce higher quality samples than
+  previous approaches, such as consistency models and reflow"** (abstract).
+  True of every row in Table 1 except progressive distillation, which wins
+  at one step on both datasets (14.8 against 20.5, 35.6 against 40.3). §5.1
+  says so; the abstract does not.
+- **The consistency baselines are not the published methods at their
+  published strength.** Both are re-run in velocity space with an L2 loss
+  (App. B.2). Consistency training uses a binary-time schedule, not the
+  original's, and not the improved recipe of [LIT-tmpnrsms](LIT-tmpnrsms.md). Consistency
+  distillation scores 132.8 at 128 steps on ImageNet, worse than the
+  undistilled diffusion row. The table measures these methods as
+  implemented here.
+- **"Equal or greater" compute is asserted, not tabled** (App. B.2). The
+  two-stage methods distil a 400K-iteration flow-matching checkpoint for
+  another 400K iterations. Live reflow is said to take over four times the
+  compute. No run's FLOPs or wall-clock are reported.
+- **Table 2 says 250 epochs** for the XL model. Appendix B gives 800K
+  iterations at batch 256, about 160 passes over ImageNet's 1.28M images.
+  The gap is not explained.
+- **"A slightly better FID than a comparable flow-matching model"** (§5.1):
+  6.9 against 7.3 and 15.5 against 17.3, one run each. The authors offer
+  implicit regularization as a "blind hypothesis".
+- **One FID per cell**, no seeds, no precision or recall. The scaling result
+  is a figure without values.
+
+## Which comparisons are like for like
+
+- **Table 1** is the paper's controlled comparison: same DiT-B, same VAE
+  latents, same optimizer and constant learning rate, all methods trained
+  from scratch or from the same flow-matching teacher. Its weak point is the
+  consistency rows, as above.
+- **Table 2** sets the XL shortcut model against DiT-XL, ADM, LDM and GANs
+  at their own budgets. The caption says the budgets differ.
+
+## Standing in the anthology
+
+It extends Rectified Flow ([LIT-636](LIT-636.md)). The d = 0 term is that paper's
+straight-path velocity regression, which the authors adopt "for
+simplicity" (§2). The step-size input and self-consistency targets are
+added on top, so that one network learns both the flow and jumps along it.
+Reflow, Rectified Flow's own straightening procedure, is one of the Table 1
+baselines, trained on 50K and 1M teacher-generated pairs (App. B.2).
+
+The other baselines are re-implementations under Table 1's matched setup:
+progressive distillation ([LIT-067](LIT-067.md)), halving the step count in eight 50K
+phases; consistency distillation and consistency training after
+Consistency Models ([LIT-093](LIT-093.md)); and a DiT-B diffusion model following DiT
+([LIT-448](LIT-448.md)), 39.7 FID at 128 steps.
+
+**On [SOTA-206](../practices.d/SOTA-206.md) it is direct support.** One set of weights serves 1, 4 and
+128 steps, and many-step quality is not lost (6.9 against flow matching's
+7.3). §5.2 recommends the dial as a workflow: regenerate a one-step image
+from the same noise with more steps to refine it. Progressive distillation
+is the counter-case in the same table. It is the better one-step model and
+has no many-step mode. Keeping the dial cost 5.7 FID on CelebA-HQ and 4.7
+on ImageNet at one step here.
+
+**On [SOTA-392](../practices.d/SOTA-392.md) it is adjacent evidence, not the test that practice asks
+for.** The teacher is a flow-matching model, a 1-rectified flow. Distilling
+it progressively, with no reflow, beats one reflow at one step on both
+datasets (14.8 against 23.2, 35.6 against 44.8), at roughly matched compute
+and at 256 px. Reflow's many-step cost shows on CelebA-HQ (7.3 to 16.1) but
+not on ImageNet (17.3 to 16.9). Reflow followed by distillation, the arm
+[SOTA-392](../practices.d/SOTA-392.md) needs, is not run.
+
+MeanFlow ([LIT-tmpkkjv3](LIT-tmpkkjv3.md)) and Inductive Moment Matching ([LIT-tmp7ppws](LIT-tmp7ppws.md)) both
+compare against this paper's DiT-XL row, 10.60 at one step, and both
+condition on two times as it does.
+
+Filed without a NOTE: the takeaways come from one full reading done for
+this filing, of v3's main text and appendices. Fig. 4 and Fig. 5 are read
+only where the text gives numbers.

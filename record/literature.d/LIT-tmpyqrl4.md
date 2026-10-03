@@ -1,0 +1,169 @@
+---
+status: Active
+title: 'InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation'
+version: 1
+tags:
+- generative-modeling
+- few-step-generation
+- flows-and-transport
+- inference-optimization
+- vision-and-graphics
+- multimodal-learning
+date: '2026-10-03'
+published: '2023-09-12'
+arxiv: '2309.06380'
+first_author: 'Liu'
+keywords:
+- 'rectified-flow'
+- 'text-conditioned-reflow'
+- 'one-step-text-to-image'
+- 'distillation'
+- 'lpips-loss'
+- 'stacked-u-net'
+implementations:
+- 'InstaFlow-0.9B'
+- 'InstaFlow-1.7B'
+extends:
+- LIT-636
+compared_against:
+- LIT-062
+summary: >-
+  Liu, Zhang, Ma, Peng and Liu, UT Austin and Helixon (2023), [ARXIV-2309.06380](https://arxiv.org/abs/2309.06380).
+  Reflow Stable Diffusion once, then distil the reflowed model to one step
+  with an LPIPS regression. Against distilling SD 1.4 directly, at the same
+  100K steps and 3.2M generated pairs, reflow first gives one-step FID 31.0
+  against 40.9 on COCO-2017-5k and 20.0 against 34.6 on COCO-2014-30k. The
+  scaled model, InstaFlow-0.9B, scores 23.4 and 13.10. The teacher is a
+  diffusion model, not a rectified flow, and the distiller is a regression,
+  not distribution matching. One run per row.
+---
+<!-- inactive-ok-file: SOTA-392 — Proposed; this paper is the at-scale comparison that practice names and had not filed, and is named here as what it contests -->
+
+# LIT-tmpyqrl4: InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation
+
+Liu, Zhang, Ma, Peng and Liu, University of Texas at Austin and Helixon
+Research (2023), ICLR 2024 — [ARXIV-2309.06380](https://arxiv.org/abs/2309.06380). Read at v2 (23 Mar 2024),
+main text and Appendices A–E; v1 is 12 Sep 2023.
+
+## Key takeaways
+
+- **The pipeline is reflow, then distil** (§2.2, Algs. 1–2). "1-flow" is
+  Stable Diffusion's probability-flow ODE, sampled with 25-step DPM-Solver at
+  guidance 6 (later 5). Reflow trains a straight-path rectified flow on
+  (noise, SD output) pairs, giving 2-rectified flow (Eq. 5). Distillation
+  then regresses a single Euler step onto the reflowed model's ODE output
+  with an LPIPS loss (Eq. 6). The authors call reflow "an optional step
+  before distillation", and then say "in practice, we find that it is
+  essential" (§2.2).
+- **The controlled comparison** (§3.2, Table 1, App. C; SD 1.4, SD U-Net,
+  batch 32 on 8 A100s). Direct distillation of SD trains 100K steps on 3.2M
+  generated pairs. The reflow route trains 50K steps of reflow and 50K of
+  distillation on 1.6M pairs each. One-step FID on COCO-2017-5k: SD+Distill
+  40.9 (CLIP 0.255), 2-RF+Distill 31.0 (0.285), undistilled 2-RF 68.3. On
+  COCO-2014-30k: 34.6 against 20.0. The reflow route's cost is 24.65 A100
+  days by App. C.3's accounting, which counts pair generation.
+- **The scaled models** (§4, Table 2, App. D; SD 1.5). Reflow takes 75.2 A100
+  days, then distillation 108 more, at batch 1024 after gradient
+  accumulation, with L2 then LPIPS loss. InstaFlow-0.9B scores FID-5k 23.4
+  (CLIP 0.304) in 0.09 s and FID-30k 13.10, against StyleGAN-T's 13.90 and
+  one-step progressive distillation's 37.2. A 1.7B stacked U-Net distilled
+  from the same 2-RF scores 22.4 and 11.83. Total cost is 199 A100 days.
+- **Reflow costs some many-step quality** (Tables 2a, 4). At 25 steps,
+  2-RF scores FID-5k 21.5 against SD 1.5's 20.1. At the preliminary scale
+  it scores 22.1 against SD 1.4's 22.8, and 3-RF scores 23.6. The SD rows use
+  DPM-Solver and the RF rows Euler.
+- **A second reflow does not reliably help** (Table 4). 3-RF+Distill scores
+  29.3 against 2-RF+Distill's 31.0 on the U-Net, and 26.3 against 24.6 on the
+  stacked U-Net. The second reflow also needed its learning rate cut from
+  10⁻⁶ to 10⁻⁷ to train stably (App. C.2).
+- **Guidance trades FID for CLIP** (§4, Fig. 9B). Raising 2-RF's guidance α
+  from 1 to 4 raises both FID-5k and CLIP score. α = 1.5 is used for
+  distillation.
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"A straightforward distillation of SD leads to complete failure"**
+  (§1). The failed student scores FID-5k 40.9, close to progressive
+  distillation's 37.2 (Table 1a). The failure is relative: blurry images
+  (Figs. 18–21) and a 9.9-point gap to the reflow route.
+- **The direct-distillation row does not match its own grid.** App. C.1
+  searches learning rate × weight decay (Table 3). The best cell is 44.03,
+  but Table 1 reports 40.9. Neither text explains the difference, perhaps
+  checkpoint selection ("the model with the lowest FID", §3.2).
+- **Tuning favours the baseline, if anything.** Direct distillation gets a
+  nine-cell grid. The reflow route reports one reflow learning rate (10⁻⁶)
+  and no distillation learning rate. Learning rates of 10⁻⁴ and above
+  diverged for direct distillation.
+- **The teacher is a diffusion model.** SD is an ε-prediction latent
+  diffusion model sampled through its probability-flow ODE. "1-rectified
+  flow" here is that ODE, not a model trained with the straight-path
+  objective. The reflowed 2-RF is the first rectified flow in the pipeline.
+- **The distiller is a regression.** Eq. 6 matches one fixed teacher output
+  per noise under LPIPS. Distribution matching or adversarial distillation,
+  which the video line uses, is not tried. DMD is listed in App. A as
+  concurrent work.
+- **Abstract and body disagree by 0.1.** The abstract says FID 23.3, Table 2
+  and §1 say 23.4.
+- **One run per row, FID and CLIP only.** No seeds, no precision or recall,
+  no diversity measure. PD-SD numbers are read off a figure in Meng et al.
+  (§3.2), and the SD* FID-30k row (9.62) was measured by GigaGAN's authors.
+
+## Which comparisons are like for like
+
+- **SD+Distill against 2-RF+Distill (Table 1)** is the one controlled
+  comparison. Same teacher, architecture, batch, step count (100K) and
+  generated-pair count (3.2M). The reflow stage uses an L2 loss, cheaper per
+  step than LPIPS by App. C.3's rates, so the reflow route is if anything
+  slightly cheaper. It is one seed at 0.9B, on two COCO protocols.
+- **InstaFlow against PD-SD** shares SD as the teacher and roughly the
+  distillation cost (108 against a 108.8 lower bound), but not the method,
+  sampler or training data. The PD numbers come from another paper's figure.
+- **InstaFlow against StyleGAN-T and GigaGAN** (Table 2b) is a leaderboard.
+  Every row was trained differently.
+- **The 25-step rows** compare a DPM-Solver teacher with an Euler-sampled
+  2-RF, and the SD* row in Table 2b is a different sampler and step count
+  (2.9 s).
+
+## Standing in the anthology
+
+It extends Rectified Flow ([LIT-636](LIT-636.md)), by the same senior authors. It takes
+reflow and the reflow-then-distil pipeline from CIFAR-10 to text-to-image at
+0.9B, makes reflow text-conditioned (Eq. 5), and adds guidance to the
+reflowed velocity (Eq. 7). Rectified Flow's own Table 1a found distillation
+alone at 6.18 FID and reflow then distillation at 4.85. This paper finds the
+same ordering with a wider gap: 34.6 against 20.0 on COCO-30k.
+
+Its teacher and baseline is Stable Diffusion, the latent diffusion model of
+[LIT-062](LIT-062.md). The 25-step SD 1.4 and SD 1.5 rows of Tables 1 and 2 are the
+quality the one-step students are measured against. 2-RF matches SD 1.4 at
+25 steps (22.1 against 22.8) and trails SD 1.5 (21.5 against 20.1).
+
+**On [SOTA-392](../practices.d/SOTA-392.md) it contests, and it is the comparison that practice's
+promote_when describes, except for its starting point.** [SOTA-392](../practices.d/SOTA-392.md) says to
+distil a rectified flow to one step and treat reflow as optional. Here the
+budgets are matched: same steps, same generated-pair count, cost accounted
+in App. C.3. The scale is beyond CIFAR-10 (SD 1.4, 0.9B, COCO), and the
+reflowed model's many-step quality is reported (Tables 1a, 2a, 4). It finds
+reflow first better by 9.9 FID-5k and 14.6 FID-30k. Two things keep it from
+being a straight refutation, and both are already in the practice's
+Conditions. First, the starting point is a diffusion model's curved ODE, not
+a straight-path rectified flow. Second, the distiller is an LPIPS
+regression, the objective the practice's Conditions flag as untested beyond
+CIFAR. What it shows is that for regression distillation from a curved
+teacher at text-to-image scale, reflow is not optional. It does not test
+distribution matching, the method the large video systems use without
+reflow. It also supports the practice's last clause. The reflowed model
+loses a little 25-step quality (21.5 against 20.1), so keeping the
+pre-reflow model for many steps is still right.
+
+The record's Rectified Flow note ([LIT-636](LIT-636.md)) used to list InstaFlow among its
+implementations, while [SOTA-392](../practices.d/SOTA-392.md)'s comment said that listing had been
+removed. It has now been removed in this contribution: InstaFlow does not
+implement rectified flow so much as build on it, which is what its
+`extends` relation to [LIT-636](LIT-636.md) says.
+
+Filed without a NOTE: the takeaways come from one full reading of v2, main
+text and Appendices A–E. Table values were read from the text layer. Figures
+5, 6, 9 and 15–27 give no values beyond those quoted.

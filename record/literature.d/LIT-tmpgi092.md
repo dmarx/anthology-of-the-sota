@@ -1,0 +1,122 @@
+---
+status: Active
+title: 'Density estimation using Real NVP'
+version: 1
+tags:
+- generative-modeling
+- flows-and-transport
+- model-architecture
+date: '2026-10-03'
+published: '2016-05-27'
+arxiv: '1605.08803'
+first_author: 'Dinh'
+keywords:
+- 'normalizing-flow'
+- 'affine-coupling-layer'
+- 'change-of-variables'
+- 'multi-scale-architecture'
+- 'exact-log-likelihood'
+- 'checkerboard-and-channel-masking'
+implementations: []
+summary: >-
+  Dinh, Sohl-Dickstein and Bengio, Google Brain (2016), [ARXIV-1605.08803](https://arxiv.org/abs/1605.08803).
+  The affine coupling layer: half the dimensions pass through unchanged and
+  parameterize a scale and shift of the other half, so the Jacobian is
+  triangular, its log-determinant is a sum, and the inverse costs the same
+  as the forward pass whatever networks compute the scale and shift (§3.2–3.3).
+  Stacked with squeeze and factor-out in a multi-scale architecture, it gives
+  exact likelihood, exact latent inference and one-pass sampling. It does not
+  beat PixelRNN's likelihood on any dataset it shares with it (CIFAR-10 3.49
+  against 3.00 bits/dim, Table 1), and sample quality is shown, not measured.
+compared_against:
+- LIT-tmpezs1l
+extended_by:
+- LIT-tmp086g1
+---
+
+# LIT-tmpgi092: Density estimation using Real NVP
+
+Dinh, Sohl-Dickstein and Bengio, Montreal and Google Brain (2016) —
+[ARXIV-1605.08803](https://arxiv.org/abs/1605.08803). ICLR 2017. Read at v3 (27 Feb 2017).
+
+## Key takeaways
+
+- **Make the Jacobian triangular and the network inside it is free**
+  (§3.2–3.3, Eqs. 4–8). The affine coupling layer copies x₁:d and maps
+  x_d+1:D to x_d+1:D ⊙ exp(s(x₁:d)) + t(x₁:d). The Jacobian is lower
+  triangular, so its log-determinant is Σ s(x₁:d). Neither the determinant
+  nor the inverse needs the Jacobian or inverse of s and t. The paper makes
+  them deep residual convolutional networks.
+- **Masks alternate so nothing stays fixed** (§3.4–3.5, Fig. 3). Spatial
+  checkerboard masks come before each squeeze and channel masks after.
+  Successive layers swap which half is updated.
+- **The multi-scale architecture is the scaling device** (§3.6, Eqs.
+  13–16). Each scale runs three checkerboard couplings, a squeeze (s×s×c to
+  s/2×s/2×4c) and three channel couplings, then factors half the
+  dimensions out as Gaussian latents. This cuts compute and memory, and
+  spreads the loss through the network. Glow and FFJORD both keep it.
+- **Batch normalization goes inside the flow** (§3.7, Eqs. 17–18, App. E).
+  It is a per-dimension linear rescale, so its log-determinant is closed
+  form. A running-average variant handles small minibatches. The paper
+  credits it with allowing a deeper coupling stack and with damping the
+  instability of learning a scale parameter by gradient.
+- **The numbers** (Table 1, bits/dim). CIFAR-10 3.49; ImageNet 32×32 4.28;
+  ImageNet 64×64 3.98; LSUN bedroom, tower and church 2.72, 2.81 and 3.08;
+  CelebA 3.02. Data are modelled through a logit transform with α = 0.05
+  after uniform dequantization (§4.1).
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"Competitive with other generative methods"** (§4.2). PixelRNN is
+  better wherever both report: 3.00, 3.86 and 3.63 against 3.49, 4.28 and
+  3.98. Of the two VAE-family bounds, Real NVP beats Conv DRAW's (< 3.59,
+  < 4.40, < 4.10) and loses to IAF-VAE's on CIFAR-10 (< 3.28). Every
+  baseline row is quoted from its own paper.
+- **"Performance increases with the number of parameters"** (§4.2) is
+  stated, not shown. No sweep is reported.
+- **"Competitive performances, both in terms of sample quality and
+  log-likelihood"** (§5). No sample metric is reported. The sample-quality
+  evidence is Figs. 5–11. The paper itself says the model "outputs
+  sometimes highly improbable samples", especially on CelebA (§4.2), and
+  attributes it to maximum likelihood valuing diversity over quality at
+  limited capacity.
+- **The latent semantics are graphic, not conceptual** (App. D). The
+  authors' own reading of the resampling ablation is that the latents
+  carry "graphic level rather than higher level concept[s]", which they
+  attribute to the convolutional bias.
+- **One configuration per dataset, no seeds, no error bars.**
+
+## Which comparisons are like for like
+
+None. Table 1's baselines are copied from PixelRNN, Conv DRAW and IAF-VAE,
+with different architectures, budgets and (for the VAEs) a bound rather than
+an exact likelihood. Nothing is ablated: there is no run without the
+multi-scale factor-out, without batch normalization, or with additive
+coupling, so the paper does not show which of its parts carries the result.
+
+## Standing in the anthology
+
+This is the record's root for discrete normalizing flows, filed with the
+continuous and transformer flows that followed it. Glow ([LIT-tmp086g1](LIT-tmp086g1.md))
+extends it: it keeps the affine coupling and the multi-scale architecture,
+replaces the fixed channel reversal with a learned invertible 1×1
+convolution and batch normalization with actnorm, and reports lower
+bits/dim on all six datasets the two share. FFJORD ([LIT-tmpezs1l](LIT-tmpezs1l.md)) uses it as
+a baseline in its Table 2. TarFlow ([LIT-tmpvcmj8](LIT-tmpvcmj8.md)) keeps its noise
+dequantization and its non-volume-preserving form: TarFlow's own ablation
+finds the volume-preserving variant far worse (FID 51.0 against 5.7 at
+guidance 2, its Table 5).
+
+Dinh is also a co-author of STARFlow ([LIT-tmpnm3dm](LIT-tmpnm3dm.md)), whose blocks are still
+affine maps with a triangular Jacobian, now autoregressive over a latent
+sequence rather than coupled over a mask.
+
+The paper's dequantization (uniform noise of one bin width) is the default
+that TarFlow later found unusable for sampling and replaced with Gaussian
+noise twenty-five times larger in standard deviation.
+
+Filed without a `NOTE`: the takeaways come from one full reading of v3,
+appendices included, done for this filing. The sample figures were looked at
+only as the text describes them.

@@ -1,0 +1,165 @@
+---
+status: Active
+title: 'Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency'
+version: 1
+tags:
+- generative-modeling
+- few-step-generation
+- inference-optimization
+- vision-and-graphics
+- multimodal-learning
+- attention-techniques
+- distributed-optimization
+- numerics-and-precision
+date: '2026-10-03'
+published: '2025-10-09'
+arxiv: '2510.08431'
+first_author: 'Zheng'
+keywords:
+- 'rcm'
+- 'score-regularized-consistency'
+- 'continuous-time-consistency'
+- 'distribution-matching-regularizer'
+- 'flashattention-jvp'
+- 'video-distillation'
+- 'forward-and-reverse-divergence'
+implementations:
+- 'Cosmos-Predict2 + rCM'
+- 'Wan2.1 T2V + rCM'
+extends:
+- LIT-643
+- LIT-tmpt5h4h
+compared_against:
+- LIT-619
+- LIT-646
+- LIT-770
+summary: >-
+  Zheng et al., Tsinghua and NVIDIA (2025), [ARXIV-2510.08431](https://arxiv.org/abs/2510.08431). sCM made to run
+  on 14B text-to-image and text-to-video models, with a FlashAttention-2 JVP
+  kernel under FSDP and context parallelism. Pure sCM loses fine detail and
+  temporal coherence there. Adding a DMD loss at weight 0.01 (rCM) fixes it.
+  Four-step Wan2.1 VBench is 84.43 at 1.3B against a re-implemented DMD2's
+  84.56, and 84.92 at 14B; GenEval tracks the teacher at 1–4 steps. The
+  diversity advantage over DMD2 is shown in samples only. One run per row.
+---
+<!-- inactive-ok-file: SOTA-392, SOTA-394 — Proposed; named as practices this paper informs, not as settled advice -->
+
+# LIT-tmpkegvh: Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency
+
+Zheng, Wang, Ma, Chen, Zhang, Balaji, Chen, Liu, Zhu and Zhang, Tsinghua
+University and NVIDIA (2025), ICLR 2026 — [ARXIV-2510.08431](https://arxiv.org/abs/2510.08431). Known as "rCM".
+Read at v3 (6 May 2026), main text and Appendices A–F; v1 is 9 Oct 2025.
+
+## Key takeaways
+
+- **JVP at production scale** (§3.2, App. C). A Triton kernel computes
+  FlashAttention-2 and its Jacobian-vector product in one tiled pass, for
+  self- and cross-attention. Layers are refactored to carry tangents so
+  FSDP works, and Ulysses context parallelism distributes the QKV tangents
+  like QKV. This runs sCM on models over 10B parameters and on 5-second
+  video.
+- **Pure sCM fails at that scale on detail** (§3.3, Fig. 3, App. E). Images
+  are sharp and close to the teacher on ordinary prompts, but small text
+  breaks. In video, textures blur and objects interpenetrate across frames.
+  The authors attribute this to error accumulation. The JVP self-feedback
+  term dominates at large t, where teacher supervision vanishes (Eq. 5),
+  and BF16 JVP error is much larger than BF16 output error (Fig. 11).
+- **The fix is a reverse-divergence regularizer** (§4.1, Eq. 6). rCM adds
+  DMD's loss at λ = 0.01, on the student's own rollouts of a random 1–4
+  steps, with a fake-score network trained alongside. The fake score is
+  updated 5 times per student update, 10 at 14B (Table 4). A λ sweep on
+  Wan2.1-1.3B (10K iterations, batch 64) gives VBench 84.32, 84.57, 84.43
+  and 82.68 for λ = 1, 0.1, 0.01 and 0.001. The authors pick 0.01 as the
+  smallest weight that keeps quality, judged from five-seed samples
+  (Fig. 7).
+- **Two stabilizers for the time derivative** (§4.2). A finite difference
+  for ∂_t F with Δt = 10⁻⁴ works at 2B on images but not at 10B+ or on
+  video. There the full JVP is kept and the time-embedding layers run in
+  FP32.
+- **Results** (Tables 1–3). GenEval, Cosmos-Predict2: rCM at 4 steps 0.79,
+  0.81 and 0.83 for 0.6B, 2B and 14B, against teachers at 35 × 2 steps of
+  0.81, 0.83 and 0.84; DMD2 0.77 and 0.80. At one step: 0.78, 0.81, 0.82.
+  VBench, Wan2.1 480p: 1.3B rCM 84.43 at 4 steps, 84.09 at 2, 82.65 at 1,
+  against DMD2's 84.56 and the teacher's 83.02. 14B rCM: 84.92, 85.05 and
+  83.02 against the teacher's 83.58. 14.6 against 0.72 frames per second at
+  1.3B.
+- **Its MeanFlow-style variant did worse** (App. F.1, Fig. 10). Adding a
+  second time to sCM gives a continuous-time consistency trajectory model,
+  which MeanFlow is under the rectified-flow schedule. For distillation it
+  underperformed sCM on basic text-to-image prompts in quality and
+  diversity. This is one figure, run "without extensive hyperparameter
+  tuning".
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"Notable advantages in diversity"** (abstract). No diversity metric is
+  reported. The evidence is Fig. 1, five videos per method on one prompt
+  set, and Fig. 7's five seeds per λ. The forward/reverse-divergence account
+  (Fig. 2, §1) is the authors' framing, not something measured.
+- **"Matches the state-of-the-art distillation method DMD2"** (abstract).
+  The DMD2 rows are this paper's re-implementation, with a discriminator
+  taking one learnable token on the fake-score network's features, after
+  APT (§5.2). No configuration for it is given. At 1.3B on VBench DMD2 is
+  ahead, 84.56 against 84.43.
+- **"Without GAN tuning or extensive hyperparameter searches"** (abstract).
+  It drops the GAN. It keeps DMD2's fake-score network and its multiple
+  critic updates per student step (5 or 10, Table 4). Learning rates and the
+  sampling σ_max differ by model, 80 to 1,600, and σ_max is "in some cases"
+  raised "when computing metrics that emphasize high quality" (App. D).
+- **Beating the teacher on VBench** (Table 2). The authors say this "does
+  not imply that the distilled model is strictly superior to the teacher,
+  particularly in terms of diversity and physical consistency" (§5.2).
+- **No seeds.** GenEval repeats its 553 prompts four times; VBench uses
+  GPT-4o-augmented prompts.
+
+## Which comparisons are like for like
+
+- **rCM against sCM** (Fig. 3, App. E) shares teacher, data and
+  infrastructure. It is shown qualitatively, with no table.
+- **rCM against DMD2** shares teacher, step count and data, with DMD2 as
+  re-implemented here and its training budget not stated.
+- **Against other distilled image models** (Table 1: SDXL-DMD2,
+  FLUX.1-schnell, SANA-Sprint and others) the teachers, resolutions and
+  sizes differ. Those rows place rCM, they do not test it.
+
+## Standing in the anthology
+
+It extends sCM ([LIT-tmpt5h4h](LIT-tmpt5h4h.md)): the consistency term, tangent normalization,
+JVP rearrangement and TrigFlow wrapping are sCM's. sCM's adaptive weighting
+is dropped as unnecessary (§3.1). The fixes for pure sCM's failures are
+what is new. It also extends DMD ([LIT-643](LIT-643.md)). Eq. 6 is DMD's
+distribution-matching loss, normalized as DMD normalizes it, used as a
+long-skip regularizer on the student's rollouts.
+
+Its baselines are DMD2 ([LIT-646](LIT-646.md)), re-implemented, and Wan2.1 ([LIT-619](LIT-619.md)), the
+teacher on video. DMD2's backward simulation is adapted here with random
+step counts and times. DMD2 uses a fixed schedule (§4.1).
+
+DMAD ([LIT-770](LIT-770.md)) uses this paper's Wan2.1 rows as baselines. The numbers it
+gives, DMD2 at 84.56 total and 80.50 semantic at 1.3B, rCM at 80.63
+semantic at 1.3B and 84.92 total and 82.88 semantic at 14B, match Table 2
+here to two decimals. That answers [LIT-770](LIT-770.md)'s open question about where
+those rows came from. DMAD's human study prefers DMAD to rCM on 63.8% of
+MiniMax-H3 prompts, ties counted as non-wins.
+
+**On [SOTA-394](../practices.d/SOTA-394.md)'s diversity condition** it is the strongest claim in the
+record that reverse-KL distillation collapses diversity and a
+forward-divergence term restores it. The claim rests on samples alone. The
+measured counterpart is sCM's precision-recall figure ([LIT-tmpt5h4h](LIT-tmpt5h4h.md),
+Fig. 7). Its students are bidirectional, so it does not touch the
+causal-teacher question.
+
+**On [SOTA-392](../practices.d/SOTA-392.md) it is adoption.** Wan2.1 and Cosmos-Predict2 are
+rectified-flow models, distilled here to 1–4 steps with no reflow, and
+reflow is not discussed.
+
+**On [SOTA-206](../practices.d/SOTA-206.md) it is support with a modality limit.** One student serves 1,
+2 and 4 steps. Images hold up at one step (GenEval 0.82 at 14B). Video needs
+two: one-step video is blurry, and VBench falls to 82.65 at 1.3B (§5.2,
+Fig. 6).
+
+Filed without a NOTE: the takeaways come from one full reading of v3's main
+text and appendices. Figs. 1, 3, 7 and 10 were assessed from their captions
+and the text, as the videos and images were not viewed.

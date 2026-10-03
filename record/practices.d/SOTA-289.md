@@ -16,7 +16,17 @@ consensus_note: >-
   with several independent groups, but nobody outside this one has reported
   the few-step crossover, which is the claim.
 title: 'When the sampling budget is small, prefer uniform-state discrete diffusion with consistency distillation — masked diffusion cannot revise what it has already emitted'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-10-03'
+  note: >-
+    Mechanism refined after Discrete Flow Matching (LIT-tmpuuitp): its
+    corrector lets a masked path revise emitted tokens, so what cannot
+    revise is the plain masked sampler, not masked diffusion as such. Its
+    float64 rerun is added as a second lab's evidence for the measurement
+    condition. It does not test the crossover; status, consensus and
+    promote_when unchanged.
 tags:
 - generative-modeling
 - few-step-generation
@@ -75,6 +85,15 @@ This is a structural property of the two processes, not a tuning artefact,
 which is the reason to expect the crossover to survive where a tuned number
 would not.
 
+**What cannot revise is the plain masked sampler, not the masked path.**
+Discrete Flow Matching ([LIT-tmpuuitp](../literature.d/LIT-tmpuuitp.md), Thm. 4) adds a corrector to a
+masked-path model that re-masks already-emitted tokens and still samples the
+right marginals, at the price of extra steps. So revision is available to
+masked diffusion, and the source compares against masked diffusion sampled
+without it. Whether a corrector-equipped masked model beats distilled
+uniform-state diffusion at 8–16 steps is untested: that paper samples at 256
+NFE and above and does not distil.
+
 ## What it takes to get there
 
 **Distillation is not optional.** The 8- and 16-step results are *after*
@@ -104,6 +123,11 @@ by running every sampling experiment in double precision. It also reports
 entropy: MDLM distilled with SDTT matches an autoregressive model's Gen PPL at
 5.4 entropy against 5.6, a diversity loss the perplexity number alone hides.
 A comparison run without both of these is not evidence about this practice.
+A second lab measures the same effect. Discrete Flow Matching's float64
+rerun ([LIT-tmpuuitp](../literature.d/LIT-tmpuuitp.md), Table 5) raises every discrete model's generative
+perplexity 2–3.5 times over its float32 value, puts all of them at about
+twice the autoregressive baseline, and shows float32 entropy below the
+data's (7.2 against 7.7), the low-precision signature.
 
 **Scale.** LM1B and OpenWebText, GPT-2-sized models. A latency budget that
 makes few-step generation worth choosing is set at serving scale, and there is

@@ -4,7 +4,7 @@ status: Active
 formerly:
 - SOTA-tmphxjle
 title: 'Train the generative model in a learned compressed latent, not at full resolution'
-version: 4
+version: 5
 history:
 - version: 2
   date: '2026-09-10'
@@ -25,6 +25,14 @@ history:
     document is a property of the data: it rests on a property of images:
     most of a pixel-space model's bits describe imperceptible high-frequency
     detail.
+- version: 5
+  date: '2026-10-03'
+  note: >-
+    STARFlow (LIT-tmpnm3dm) added as a source: evidence from outside
+    diffusion, a normalizing flow moved from pixels to latents (ImageNet-256
+    FID 4.69 to 2.40, confounded with a decoder change). It is also added to
+    the Conditions as a visible decoder ceiling: its decoder's
+    reconstruction FID is worse than its generated FID. Consensus unchanged.
 tags:
 - representation-and-encoding
 - generative-modeling
@@ -37,6 +45,7 @@ source:
 # pixel-space model's capacity describes imperceptible detail -- two years
 # before LIT-062 acts on it as an assumption.
 - LIT-036
+- LIT-tmpnm3dm
 introduced_by:
 - LIT-062
 implementations:
@@ -53,6 +62,14 @@ Ho et al. (2020), [LIT-036](../literature.d/LIT-036.md) — [ARXIV-2006.11239](h
 this practice's premise — that most of a pixel-space model's codelength
 describes imperceptible detail — two years before Rombach et al. act on it as
 an assumption.
+
+Gu et al. (2025), [LIT-tmpnm3dm](../literature.d/LIT-tmpnm3dm.md) — STARFlow is evidence from outside
+diffusion. The same deep-shallow normalizing flow moved from pixels to
+SD-VAE latents goes from ImageNet-256 FID 4.69 to 2.40 (its Table 1). The
+input space, the patch size and the decoder change together, and the latent
+model decodes through a GAN-fine-tuned decoder, so the size of the gain is
+confounded. The direction is the one this practice predicts, for a
+likelihood model that is not a diffusion model.
 
 Split the problem in two. First train an autoencoder that compresses the
 signal to a lower-dimensional latent, keeping what a human would notice and
@@ -98,7 +115,11 @@ images at the scale it reports.
 
 It also introduces a dependency the single-stage version does not have. The
 generative model can only be as good as the decoder, and errors made in the
-first stage are invisible to the second stage's loss.
+first stage are invisible to the second stage's loss. STARFlow
+([LIT-tmpnm3dm](../literature.d/LIT-tmpnm3dm.md), App. B.3) shows the ceiling plainly: reconstructing 50K real
+images through its noisy-latent decoder gives rFID about 2.73, worse than
+the 2.40 its generator reaches. At that resolution the decoder, not the
+flow, sets the FID.
 
 Marked `universal` for the domain it was shown in: latent-space training is
 what essentially every deployed image and video generator does, and doing it

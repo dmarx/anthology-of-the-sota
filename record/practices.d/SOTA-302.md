@@ -20,7 +20,17 @@ consensus_note: >-
   reward adaptation of a distilled generator degrades it while input-space
   adaptation improves it, on the same model, reward and budget.
 title: 'Steer a distilled generator by modulating its input noise, not by fine-tuning its weights'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-10-03'
+  note: >-
+    Conditions refined with Flow-GRPO (LIT-tmpdktqx), the opposite case: a
+    multi-step flow sampled as an SDE has a closed-form per-step KL, and
+    LoRA reward tuning with that anchor kept quality as judged by reward
+    models. The weight-space failure is scoped to distilled generators. Not
+    a test of this practice; promote_when is not met and status is
+    unchanged.
 tags:
 - generative-modeling
 - adaptation-and-tuning
@@ -137,6 +147,18 @@ untested outside it.
 Whether it transfers to a different reward at inference is not examined, and
 nothing here addresses the ordinary problem of the reward being a poor proxy
 — this keeps you near the base distribution, not near the truth.
+
+**The weight-space failure is a property of distilled generators.**
+Flow-GRPO ([LIT-tmpdktqx](../literature.d/LIT-tmpdktqx.md)) is the opposite case, and it sharpens this
+condition rather than contesting it. For a multi-step flow sampled as an
+SDE, each step is a Gaussian, so the KL to the reference model is closed
+form per step. LoRA reward tuning with that anchor held quality on the
+other reward models it was checked against: DrawBench aesthetic 5.25 with
+the KL against 4.93 without, from a base of 5.39, on GenEval training.
+That is judged by reward models only, with no human evaluation, and nothing
+there tests a distilled model. So the argument here — the anchor is
+intractable in weight space — applies to step-distilled generators and does
+not extend to multi-step stochastic samplers.
 
 **The Lipschitz condition is engineered, not verified.** Zero initialization
 makes it hold at the start; nothing measures that it holds later, and the

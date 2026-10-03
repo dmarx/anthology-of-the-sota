@@ -28,7 +28,7 @@ history:
 - version: 5
   date: '2026-10-03'
   note: >-
-    STARFlow (LIT-tmpnm3dm) added as a source: evidence from outside
+    STARFlow (LIT-785) added as a source: evidence from outside
     diffusion, a normalizing flow moved from pixels to latents (ImageNet-256
     FID 4.69 to 2.40, confounded with a decoder change). It is also added to
     the Conditions as a visible decoder ceiling: its decoder's
@@ -45,7 +45,7 @@ source:
 # pixel-space model's capacity describes imperceptible detail -- two years
 # before LIT-062 acts on it as an assumption.
 - LIT-036
-- LIT-tmpnm3dm
+- LIT-785
 introduced_by:
 - LIT-062
 implementations:
@@ -63,7 +63,7 @@ this practice's premise — that most of a pixel-space model's codelength
 describes imperceptible detail — two years before Rombach et al. act on it as
 an assumption.
 
-Gu et al. (2025), [LIT-tmpnm3dm](../literature.d/LIT-tmpnm3dm.md) — STARFlow is evidence from outside
+Gu et al. (2025), [LIT-785](../literature.d/LIT-785.md) — STARFlow is evidence from outside
 diffusion. The same deep-shallow normalizing flow moved from pixels to
 SD-VAE latents goes from ImageNet-256 FID 4.69 to 2.40 (its Table 1). The
 input space, the patch size and the decoder change together, and the latent
@@ -116,7 +116,7 @@ images at the scale it reports.
 It also introduces a dependency the single-stage version does not have. The
 generative model can only be as good as the decoder, and errors made in the
 first stage are invisible to the second stage's loss. STARFlow
-([LIT-tmpnm3dm](../literature.d/LIT-tmpnm3dm.md), App. B.3) shows the ceiling plainly: reconstructing 50K real
+([LIT-785](../literature.d/LIT-785.md), App. B.3) shows the ceiling plainly: reconstructing 50K real
 images through its noisy-latent decoder gives rFID about 2.73, worse than
 the 2.40 its generator reaches. At that resolution the decoder, not the
 flow, sets the FID.

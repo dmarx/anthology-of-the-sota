@@ -2,11 +2,11 @@
 
 # THEORYs with `tags` `agents-and-environments`
 
-*Topics — The twenty-six kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-six for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
+*Topics — The twenty-eight kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-eight for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Agents and environments** — systems that perceive, act and are changed by the consequences — percept–action loops, world models and the environments agents are trained in, multi-agent and collective behaviour, and what acting rather than only predicting changes about learning, memory and their costs.
 
-0 of 117 THEORY documents. Back to the [full index](../README.md).
+0 of 125 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

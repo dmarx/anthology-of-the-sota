@@ -40,7 +40,7 @@ history:
 - version: 4
   date: '2026-10-03'
   note: >-
-    Pick-a-Pic (LIT-tmpjt45z) measures the same trade on text-to-image
+    Pick-a-Pic (LIT-782) measures the same trade on text-to-image
     against human preference: users prefer high guidance and FID ranks
     models backwards. Added beside the FID–IS sweep. Not a source;
     recommendation, status and consensus unchanged.
@@ -114,7 +114,7 @@ samples per point:
 - there is no setting that is best at both, and the paper does not claim one.
 
 On text-to-image with human judges, the trade runs against FID: Pick-a-Pic
-([LIT-tmpjt45z](../literature.d/LIT-tmpjt45z.md)) found users usually prefer guidance 9 to 3, and across nine
+([LIT-782](../literature.d/LIT-782.md)) found users usually prefer guidance 9 to 3, and across nine
 model–guidance settings on MS-COCO captions FID ranked models at Spearman
 −0.900 against expert preference. If the metric you keep is human
 preference, FID is the one you lose.

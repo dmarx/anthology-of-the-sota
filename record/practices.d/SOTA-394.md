@@ -26,7 +26,7 @@ history:
 - version: 3
   date: '2026-10-03'
   note: >-
-    The diversity condition gains sCM's Fig. 7 (LIT-tmpt5h4h): one-step
+    The diversity condition gains sCM's Fig. 7 (LIT-790): one-step
     VSD, DMD's objective, loses recall against sCD on one backbone, at
     one step as well as two and before guidance is raised. Curves only. The recommendation is
     unchanged.
@@ -93,7 +93,7 @@ without it: 94.7 / 64.4 / 30.1 against 93.4 / 60.6 / 29.4.
   in temporal flickering and output diversity" (§5.2), and the diversity loss
   is "characteristic of reverse KL" (§6). The practice picks the teacher. It
   does not make distillation free. The diversity cost now has one
-  measurement, from image distillation. sCM ([LIT-tmpt5h4h](../literature.d/LIT-tmpt5h4h.md), Fig. 7) runs
+  measurement, from image distillation. sCM ([LIT-790](../literature.d/LIT-790.md), Fig. 7) runs
   one-step VSD, which is DMD's distribution-matching gradient without its
   regression loss, against two-step sCD on one EDM2-M backbone at
   ImageNet-512. As guidance rises VSD's precision rises and its recall
@@ -102,7 +102,7 @@ without it: 94.7 / 64.4 / 30.1 against 93.4 / 60.6 / 29.4.
   one-step sCD, and at guidance 1.0 its recall is about 0.70 against
   VSD's 0.65, so part of the gap is the objective's, at matched step count
   and before guidance is raised; guidance widens it. rCM
-  ([LIT-tmpkegvh](../literature.d/LIT-tmpkegvh.md)) makes the same claim for video from samples only.
+  ([LIT-783](../literature.d/LIT-783.md)) makes the same claim for video from samples only.
 - **Distribution matching is the distillation method throughout.** DMD
   ([LIT-643](../literature.d/LIT-643.md)) and DMD2 ([LIT-646](../literature.d/LIT-646.md)) are its image-domain sources.
   Whether the result carries to other distillation

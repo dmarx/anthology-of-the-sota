@@ -46,7 +46,7 @@ summary: >-
   conditional path to one data point, not the marginal ODE a sampler
   integrates.
 extended_by:
-- THEORY-tmprwlgq
+- THEORY-123
 ---
 
 # THEORY-106: Gaussian flow matching is a diffusion model; what separates the named recipes is loss weighting, network output and sampling schedule

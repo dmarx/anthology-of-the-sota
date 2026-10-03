@@ -10,12 +10,12 @@ promote_when: >-
   bias/variance account tested rather than assumed.
 consensus: contested
 contested_by:
-- LIT-tmpt5h4h
+- LIT-790
 consensus_note: >-
-  Contested by sCM (LIT-tmpt5h4h). Its continuous-time consistency model
+  Contested by sCM (LIT-790). Its continuous-time consistency model
   removes the step count instead of scheduling it, and beats every fixed
   discretisation N it tried. That is one setting, distillation started from
-  a pretrained diffusion model. A second instance, iCT (LIT-tmpnrsms),
+  a pretrained diffusion model. A second instance, iCT (LIT-786),
   compares the doubling curriculum against constant N and four other shapes
   and finds it best. It shares the source's first author and method, so the
   practice is still one line's finding. Read as of 2026-10.
@@ -25,9 +25,9 @@ history:
 - version: 2
   date: '2026-10-03'
   note: >-
-    iCT (LIT-tmpnrsms) added as a second source: it runs the curriculum
+    iCT (LIT-786) added as a second source: it runs the curriculum
     against a constant step count and other shapes, which the original
-    lacked. sCM (LIT-tmpt5h4h) recorded under contested_by: continuous time
+    lacked. sCM (LIT-790) recorded under contested_by: continuous time
     beats every fixed N, so the count need not be scheduled at all.
     Consensus set to contested. promote_when is not met, because iCT is the
     same author and the same method. Status unchanged.
@@ -37,7 +37,7 @@ tags:
 date: '2026-09-10'
 source:
 - LIT-093
-- LIT-tmpnrsms
+- LIT-786
 introduced_by:
 - LIT-093
 summary: >-
@@ -86,7 +86,7 @@ method from the same author, so it still waits.
 
 ## The comparison it lacked, and a counter
 
-iCT ([LIT-tmpnrsms](../literature.d/LIT-tmpnrsms.md)) runs the comparison the source did not. In consistency
+iCT ([LIT-786](../literature.d/LIT-786.md)) runs the comparison the source did not. In consistency
 training from random weights on CIFAR-10, a curriculum that doubles N from
 10 to 1,280 at fixed intervals beats a constant N and four other shapes
 (square-root, linear, square and cosine) with the same endpoints (its Fig.
@@ -94,7 +94,7 @@ training from random weights on CIFAR-10, a curriculum that doubles N from
 curves, one run each, and its bias/variance reasoning is carried over from
 the source rather than tested. Song is first author of both.
 
-sCM ([LIT-tmpt5h4h](../literature.d/LIT-tmpt5h4h.md)) contests the premise. Its continuous-time consistency
+sCM ([LIT-790](../literature.d/LIT-790.md)) contests the premise. Its continuous-time consistency
 model removes the discretisation rather than annealing it. Discrete-time
 models improve as N rises to 1,024 and then degrade from numerical
 precision, and the continuous-time model beats every N tried (its Fig. 5c,

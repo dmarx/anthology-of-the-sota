@@ -2,11 +2,11 @@
 
 # SOTAs with `tags` `analysis-and-evaluation`
 
-*Topics — The twenty-six kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-six for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
+*Topics — The twenty-eight kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-eight for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Analysis and evaluation** — how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too.
 
-70 of 441 SOTA documents. Back to the [full index](../README.md).
+70 of 449 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -23,7 +23,7 @@
 | [SOTA-256](../../../record/practices.d/SOTA-256.md) | Judge a monotone scaling recipe by its asymptote, not by its loss at a compute budget | Kim et al. (2025), [LIT-441](../../../record/literature.d/LIT-441.md) — when compute is not the binding constraint, a recipe's loss at a chosen budget answers a question nobody asked. Fit the scaling law and compare the asymptote instead. The catch is that an asymptote is an extrapolation, and rankings at small scale can invert: the ensembling recipe wins on asymptote while losing at small member counts. | Proposed |
 | [SOTA-270](../../../record/practices.d/SOTA-270.md) | Do not read a smooth loss curve as evidence of smooth training; decompose it when the answer matters | Kangaslahti et al. (2025), [LIT-455](../../../record/literature.d/LIT-455.md), with Cohen et al. [LIT-453](../../../record/literature.d/LIT-453.md) and Kunin et al. [LIT-454](../../../record/literature.d/LIT-454.md) — the curve time-averages oscillation, sums over differently-timed abrupt transitions, and reads flat while the weights still travel. Smoothness is what many breakthroughs look like added up, so it is not evidence about the training. | Active |
 | [SOTA-278](../../../record/practices.d/SOTA-278.md) | Before reporting that a model cannot do something, rule out the evaluation | Hu and Frank (2024), [LIT-465](../../../record/literature.d/LIT-465.md) — the same capacity asked two ways scores differently, and the gap widens as the model weakens. Lawsen (2025), [LIT-463](../../../record/literature.d/LIT-463.md), is the worked example: an output cap, a scorer that cannot express refusal, and instances with no solution. | Active |
-| [SOTA-284](../../../record/practices.d/SOTA-284.md) | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |  | Proposed |
+| [SOTA-284](../../../record/practices.d/SOTA-284.md) v2 | Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy |  | Proposed |
 | [SOTA-286](../../../record/practices.d/SOTA-286.md) | To find a model that generalizes badly where its outputs look fine, measure how much of parameter space behaves the way it does |  | Proposed |
 | [SOTA-290](../../../record/practices.d/SOTA-290.md) | To measure what a deployed recommender does, use sock-puppets that never interact, follow sets curated to your question, and exposure weighted by rank |  | Proposed |
 | [SOTA-291](../../../record/practices.d/SOTA-291.md) v2 | Evaluate a specific intervention on a specific affordance rather than the net effect of the system, and never read an individual-level null as the absence of a collective effect |  | Active |

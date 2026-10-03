@@ -14,10 +14,10 @@ consensus_note: >-
   Movie Gen's Table 8a changes the path and the timestep distribution
   together, so it supports the combination and cannot separate the halves.
   The straight half now has support from outside the source groups. The
-  minibatch-OT paper (LIT-tmpzz36v, Mila), at a recipe that beats Flow
+  minibatch-OT paper (LIT-798, Mila), at a recipe that beats Flow
   Matching's own and with uniform timesteps, has the straight path ahead of
   VP on CIFAR-10: 4.640 against 7.772 at 100 Euler steps and 3.655 against
-  4.335 adaptive (its Table 5). Lee et al. (LIT-tmptpra5) mark a boundary
+  4.335 adaptive (its Table 5). Lee et al. (LIT-791) mark a boundary
   on the logit-normal half: a reflowed model's loss is largest at both ends
   of [0, 1], and a U-shaped distribution beats uniform for the reflow stage.
   They do not run a logit-normal, so the half is evidence for the base flow
@@ -57,9 +57,9 @@ history:
 - version: 5
   date: '2026-10-03'
   note: >-
-    Consensus note adds the minibatch-OT paper (LIT-tmpzz36v) as independent
+    Consensus note adds the minibatch-OT paper (LIT-798) as independent
     support for the straight half, from its controlled rerun of the path
-    comparison, and Lee et al. (LIT-tmptpra5) as a boundary on the
+    comparison, and Lee et al. (LIT-791) as a boundary on the
     logit-normal half: a reflowed model wants U-shaped timesteps. Conditions
     gain the reflow boundary. Consensus stays emerging; the logit-normal half
     still has one controlled source.
@@ -223,7 +223,7 @@ transfer.
 
 The logit-normal is for training the base flow. A reflowed model's hard
 cases are at the ends of [0, 1], not the middle, and Lee et al.
-([LIT-tmptpra5](../literature.d/LIT-tmptpra5.md)) train the reflow stage with a U-shaped distribution, which
+([LIT-791](../literature.d/LIT-791.md)) train the reflow stage with a U-shaped distribution, which
 beats uniform there (their Table 1); a logit-normal was not tried. Do not
 carry this half to reflow.
 

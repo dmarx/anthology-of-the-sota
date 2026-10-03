@@ -25,16 +25,16 @@ history:
 - version: 2
   date: '2026-10-03'
   note: >-
-    Conditions refined with Flow-GRPO (LIT-tmpdktqx), the opposite case: a
+    Conditions refined with Flow-GRPO (LIT-779), the opposite case: a
     multi-step flow sampled as an SDE has a closed-form per-step KL, and
     LoRA reward tuning with that anchor kept quality as judged by reward
     models. The weight-space failure is scoped to distilled generators. DDPO
-    (LIT-tmp7vihu), with no anchor, and Diffusion-DPO (LIT-tmp4m2nj), with
+    (LIT-776), with no anchor, and Diffusion-DPO (LIT-774), with
     an offline one, are added as the multi-step cases either side. DPOK
-    (LIT-tmp9ntgf), with a summed per-step KL, is a third multi-step case,
-    and Lee et al. (LIT-tmpznned) and ReFL (LIT-tmppb4sm), anchored by
+    (LIT-778), with a summed per-step KL, is a third multi-step case,
+    and Lee et al. (LIT-797) and ReFL (LIT-788), anchored by
     pre-training data, are two where selection at inference beat
-    fine-tuning under the same reward. Gao et al. (LIT-tmpylcrx) are cited
+    fine-tuning under the same reward. Gao et al. (LIT-795) are cited
     for the general case: true reward falls with distance from the base,
     and an explicit KL penalty acted like early stopping. Not a test of
     this practice; promote_when is not met and status is unchanged.
@@ -105,7 +105,7 @@ Because it makes things worse, measurably, and the paper ran the control.
 
 Aligning to a reward means learning a tilted distribution: upweight high
 reward, **stay near the base model**. Without that second term the result
-reward-hacks — high scores, off-manifold images. Gao et al. ([LIT-tmpylcrx](../literature.d/LIT-tmpylcrx.md))
+reward-hacks — high scores, off-manifold images. Gao et al. ([LIT-795](../literature.d/LIT-795.md))
 measured the general version in language-model RLHF: true reward rises then
 falls with KL from the starting policy, a larger reward model moves the turn
 later, and an explicit KL penalty did not change the gold reward reached at a
@@ -163,7 +163,7 @@ nothing here addresses the ordinary problem of the reward being a poor proxy
 — this keeps you near the base distribution, not near the truth.
 
 **The weight-space failure is a property of distilled generators.**
-Flow-GRPO ([LIT-tmpdktqx](../literature.d/LIT-tmpdktqx.md)) is the opposite case, and it sharpens this
+Flow-GRPO ([LIT-779](../literature.d/LIT-779.md)) is the opposite case, and it sharpens this
 condition rather than contesting it. For a multi-step flow sampled as an
 SDE, each step is a Gaussian, so the KL to the reference model is closed
 form per step. LoRA reward tuning with that anchor held quality on the
@@ -174,23 +174,23 @@ there tests a distilled model. So the argument here — the anchor is
 intractable in weight space — applies to step-distilled generators and does
 not extend to multi-step stochastic samplers.
 
-DDPO ([LIT-tmp7vihu](../literature.d/LIT-tmp7vihu.md)) shows what happens when the tractable anchor is not
+DDPO ([LIT-776](../literature.d/LIT-776.md)) shows what happens when the tractable anchor is not
 used: it has no KL term, over-optimizes (an incompressibility model decays
 to noise, and a model learns to write text that fools its LLaVA judge), and
 its checkpoints are picked by hand before quality deteriorates (its App. A).
-Diffusion-DPO ([LIT-tmp4m2nj](../literature.d/LIT-tmp4m2nj.md)) anchors offline instead, through β in a
+Diffusion-DPO ([LIT-774](../literature.d/LIT-774.md)) anchors offline instead, through β in a
 preference loss against the frozen reference. Neither tests a distilled
 model.
 
-DPOK ([LIT-tmp9ntgf](../literature.d/LIT-tmp9ntgf.md)) is a third multi-step case, the closest to Flow-GRPO. It
+DPOK ([LIT-778](../literature.d/LIT-778.md)) is a third multi-step case, the closest to Flow-GRPO. It
 LoRA-tunes Stable Diffusion v1.5 on ImageReward, anchored by the sum of
 per-step Gaussian KLs, which by the data processing inequality bounds the KL
 on the final image (its Lemma 4.2). On one prompt the run without the KL
 oversaturated and the run with it kept the held-out aesthetic score (its
 §5.3), on one aesthetic predictor and 50 samples. Two earlier papers anchor
 with pre-training data instead, and both trail selection at inference
-under the same reward, on fidelity or overall. Lee et al. ([LIT-tmpznned](../literature.d/LIT-tmpznned.md)) beat best-of-16 on
-alignment 20% to 10% and lose on fidelity 3% to 20%. ReFL ([LIT-tmppb4sm](../literature.d/LIT-tmppb4sm.md))
+under the same reward, on fidelity or overall. Lee et al. ([LIT-797](../literature.d/LIT-797.md)) beat best-of-16 on
+alignment 20% to 10% and lose on fidelity 3% to 20%. ReFL ([LIT-788](../literature.d/LIT-788.md))
 wins 58.38% against the base where best-of-64 wins 73.33%. That is this
 practice's amortized-against-per-sample trade, measured on multi-step
 models. None of the three tests a distilled generator.

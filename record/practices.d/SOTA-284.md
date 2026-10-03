@@ -23,7 +23,7 @@ history:
 - version: 2
   date: '2026-10-03'
   note: >-
-    A condition added from Gao et al. (LIT-tmpylcrx): with a learned scorer
+    A condition added from Gao et al. (LIT-795): with a learned scorer
     in place of an exact verifier, best-of-N overoptimizes as N grows.
     Recommendation and status unchanged.
 tags:
@@ -111,7 +111,7 @@ regularity that BoN predicts post-RL performance, and the source says the
 minimal conditions for RL are not known.
 
 **The verifier is assumed exact.** With a learned scorer choosing the best
-of N, Gao et al. ([LIT-tmpylcrx](../literature.d/LIT-tmpylcrx.md)) find true quality peaks and then falls as N
+of N, Gao et al. ([LIT-795](../literature.d/LIT-795.md)) find true quality peaks and then falls as N
 grows, at a point set by the scorer's size and data; coverage says nothing
 about that.
 

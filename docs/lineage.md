@@ -2,7 +2,7 @@
 
 # Lines of work
 
-61 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+55 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -12,14 +12,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-046](../record/literature.d/LIT-046.md) — LoRA: Low-Rank Adaptation of Large Language Models *(Active)*
 - alongside: [LIT-549](../record/literature.d/LIT-549.md) — ReFT: Representation Finetuning for Language Models *(Active)*
-
-### From Deep reinforcement learning from human preferences
-
-- [LIT-434](../record/literature.d/LIT-434.md) — Deep reinforcement learning from human preferences *(Active)*
-  - [LIT-734](../record/literature.d/LIT-734.md) — Fine-Tuning Language Models from Human Preferences *(Active)*
-    - [LIT-433](../record/literature.d/LIT-433.md) — Learning to summarize from human feedback *(Active)*
-      - [LIT-377](../record/literature.d/LIT-377.md) — Training language models to follow instructions with human feedback *(Active)*
-- alongside: [LIT-432](../record/literature.d/LIT-432.md) — Finetuned Language Models Are Zero-Shot Learners *(Active)*
 
 ### From Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences
 
@@ -67,14 +59,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-484](../record/literature.d/LIT-484.md) — TinyStories: How Small Can Language Models Be and Still Speak Coherent English? *(Active)*
   - [LIT-485](../record/literature.d/LIT-485.md) — Parameterized Synthetic Text Generation with SimpleStories *(Active)*
-
-### From Improved Techniques for Training GANs
-
-- [LIT-614](../record/literature.d/LIT-614.md) — Improved Techniques for Training GANs *(Active)*
-  - [LIT-611](../record/literature.d/LIT-611.md) — GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium *(Active)*
-    - [LIT-501](../record/literature.d/LIT-501.md) — The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation *(Active)*
-    - [LIT-563](../record/literature.d/LIT-563.md) — The Role of ImageNet Classes in Fréchet Inception Distance *(Active)*
-    - [LIT-615](../record/literature.d/LIT-615.md) — Demystifying MMD GANs *(Active)*
 
 ### From Adaptive Estimators Show Information Compression in Deep Neural Networks
 
@@ -200,95 +184,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ## generative-modeling
 
-### From Denoising Diffusion Implicit Models
-
-- [LIT-038](../record/literature.d/LIT-038.md) — Denoising Diffusion Implicit Models *(Active)*
-- [LIT-062](../record/literature.d/LIT-062.md) — High-Resolution Image Synthesis with Latent Diffusion Models *(Active)*
-  - [LIT-566](../record/literature.d/LIT-566.md) — SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis *(Active)*
-  - [LIT-621](../record/literature.d/LIT-621.md) — Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models *(Active)*
-    - [LIT-625](../record/literature.d/LIT-625.md) — Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets *(Active)* — also extends LIT-062
-  - [LIT-633](../record/literature.d/LIT-633.md) — AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning *(Active)*
-  - [LIT-635](../record/literature.d/LIT-635.md) — Emu Video: Factorizing Text-to-Video Generation by Explicit Image Conditioning *(Active)* — also extends LIT-689
-- [LIT-067](../record/literature.d/LIT-067.md) — Progressive Distillation for Fast Sampling of Diffusion Models *(Active)*
-- [LIT-070](../record/literature.d/LIT-070.md) — Hierarchical Text-Conditional Image Generation with CLIP Latents *(Active)*
-  - [LIT-632](../record/literature.d/LIT-632.md) — Make-A-Video: Text-to-Video Generation without Text-Video Data *(Active)*
-- [LIT-075](../record/literature.d/LIT-075.md) — Elucidating the Design Space of Diffusion-Based Generative Models *(Active)*
-  - [LIT-714](../record/literature.d/LIT-714.md) — Analyzing and Improving the Training Dynamics of Diffusion Models *(Active)*
-- [LIT-439](../record/literature.d/LIT-439.md) — Deep Unsupervised Learning using Nonequilibrium Thermodynamics *(Active)*
-  - [LIT-036](../record/literature.d/LIT-036.md) — Denoising Diffusion Probabilistic Models *(Active)*
-    - [LIT-446](../record/literature.d/LIT-446.md) — Variational Diffusion Models *(Active)*
-      - [LIT-677](../record/literature.d/LIT-677.md) — Diffusion Models With Learned Adaptive Noise *(Active)*
-      - [LIT-692](../record/literature.d/LIT-692.md) — Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation *(Active)* — also extends LIT-660
-        - [LIT-449](../record/literature.d/LIT-449.md) — Scaling Rectified Flow Transformers for High-Resolution Image Synthesis *(Active)* — also extends LIT-447, LIT-636
-          - [LIT-573](../record/literature.d/LIT-573.md) — FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space *(Active)*
-            - [LIT-572](../record/literature.d/LIT-572.md) — FLUX.2: Analyzing and Enhancing the Latent Space of FLUX – Representation Comparison *(Active)*
-          - [LIT-618](../record/literature.d/LIT-618.md) — LTX-Video: Realtime Video Latent Diffusion *(Active)*
-          - [LIT-619](../record/literature.d/LIT-619.md) — Wan: Open and Advanced Large-Scale Video Generative Models *(Active)* — also extends LIT-448, LIT-623
-            - [LIT-629](../record/literature.d/LIT-629.md) — Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion *(Active)* — also extends LIT-631
-          - [LIT-620](../record/literature.d/LIT-620.md) — HunyuanVideo: A Systematic Framework For Large Video Generative Models *(Active)* — also extends LIT-623
-          - [LIT-626](../record/literature.d/LIT-626.md) — Movie Gen: A Cast of Media Foundation Models *(Active)* — also extends LIT-062, LIT-630, LIT-635
-          - [LIT-634](../record/literature.d/LIT-634.md) — Open-Sora 2.0: Training a Commercial-Level Video Generation Model in $200k *(Active)*
-        - [LIT-678](../record/literature.d/LIT-678.md) — Diffusion Meets Flow Matching: Two Sides of the Same Coin *(Active)* — also extends LIT-038, LIT-630
-    - [LIT-627](../record/literature.d/LIT-627.md) — Video Diffusion Models *(Active)*
-      - [LIT-637](../record/literature.d/LIT-637.md) — Imagen Video: High Definition Video Generation with Diffusion Models *(Active)* — also extends LIT-067
-    - [LIT-643](../record/literature.d/LIT-643.md) — One-step Diffusion with Distribution Matching Distillation *(Active)*
-      - [LIT-646](../record/literature.d/LIT-646.md) — Improved Distribution Matching Distillation for Fast Image Synthesis *(Active)*
-        - [LIT-631](../record/literature.d/LIT-631.md) — From Slow Bidirectional to Fast Autoregressive Video Diffusion Models *(Active)* — also extends LIT-643
-      - [LIT-770](../record/literature.d/LIT-770.md) — DMAD: Distribution Matching as Adversarial Distillation for Fast Visual Generation *(Active)*
-    - [LIT-699](../record/literature.d/LIT-699.md) — Diffusion Models Beat GANs on Image Synthesis *(Active)* — also extends LIT-439
-      - [LIT-693](../record/literature.d/LIT-693.md) — Classifier-Free Diffusion Guidance *(Active)*
-    - [LIT-710](../record/literature.d/LIT-710.md) — Efficient Diffusion Training via Min-SNR Weighting Strategy *(Active)*
-- [LIT-448](../record/literature.d/LIT-448.md) — Scalable Diffusion Models with Transformers *(Active)*
-  - [LIT-622](../record/literature.d/LIT-622.md) — CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer *(Active)* — also extends LIT-623
-  - [LIT-624](../record/literature.d/LIT-624.md) — Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model *(Active)*
-  - [LIT-652](../record/literature.d/LIT-652.md) — Video generation models as world simulators *(Active)* — also extends LIT-648
-  - [LIT-658](../record/literature.d/LIT-658.md) — FiT: Flexible Vision Transformer for Diffusion Model *(Active)*
-- [LIT-553](../record/literature.d/LIT-553.md) — Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise *(Active)*
-  - [LIT-555](../record/literature.d/LIT-555.md) — Warm Diffusion: Recipe for Blur-Noise Mixture Diffusion Models *(Active)*
-- [LIT-561](../record/literature.d/LIT-561.md) — A Style-Based Generator Architecture for Generative Adversarial Networks *(Active)*
-  - [LIT-560](../record/literature.d/LIT-560.md) — Analyzing and Improving the Image Quality of StyleGAN *(Active)*
-    - [LIT-559](../record/literature.d/LIT-559.md) — Alias-Free Generative Adversarial Networks *(Active)*
-- [LIT-623](../record/literature.d/LIT-623.md) — Language Model Beats Diffusion — Tokenizer is Key to Visual Generation *(Active)*
-- [LIT-630](../record/literature.d/LIT-630.md) — Flow Matching for Generative Modeling *(Active)*
-- [LIT-636](../record/literature.d/LIT-636.md) — Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow *(Active)*
-- [LIT-644](../record/literature.d/LIT-644.md) — Building Normalizing Flows with Stochastic Interpolants *(Active)*
-  - [LIT-645](../record/literature.d/LIT-645.md) — Stochastic Interpolants: A Unifying Framework for Flows and Diffusions *(Active)*
-    - [LIT-447](../record/literature.d/LIT-447.md) — SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers *(Active)* — also extends LIT-448
-- [LIT-648](../record/literature.d/LIT-648.md) — Improving Image Generation with Better Captions *(Active)*
-- [LIT-660](../record/literature.d/LIT-660.md) — simple diffusion: End-to-end diffusion for high resolution images *(Active)*
-- [LIT-689](../record/literature.d/LIT-689.md) — Common Diffusion Noise Schedules and Sample Steps are Flawed *(Active)*
-  - [LIT-687](../record/literature.d/LIT-687.md) — Fine-Tuning Image-Conditional Diffusion Models is Easier than You Think *(Active)* — also extends LIT-691
-- [LIT-691](../record/literature.d/LIT-691.md) — Repurposing Diffusion-Based Image Generators for Monocular Depth Estimation *(Active)*
-- alongside: [LIT-076](../record/literature.d/LIT-076.md) — DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps *(Active)*
-- alongside: [LIT-093](../record/literature.d/LIT-093.md) — Consistency Models *(Active)*
-- alongside: [LIT-554](../record/literature.d/LIT-554.md) — Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion *(Active)*
-- alongside: [LIT-661](../record/literature.d/LIT-661.md) — Photorealistic Video Generation with Diffusion Models *(Active)*
-- alongside: [LIT-676](../record/literature.d/LIT-676.md) — DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models *(Active)*
-
-### From The Diffusion Duality
-
-- alongside: [LIT-479](../record/literature.d/LIT-479.md) — The Diffusion Duality *(Active)*
-- alongside: [LIT-701](../record/literature.d/LIT-701.md) — Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution *(Active)*
-- alongside: [LIT-702](../record/literature.d/LIT-702.md) — Simple and Effective Masked Diffusion Language Models *(Active)*
-
-### From Neural Discrete Representation Learning
-
-- [LIT-499](../record/literature.d/LIT-499.md) — Neural Discrete Representation Learning *(Active)*
-  - [LIT-496](../record/literature.d/LIT-496.md) — Taming Transformers for High-Resolution Image Synthesis *(Active)*
-    - [LIT-494](../record/literature.d/LIT-494.md) — GaussianToken: An Effective Image Tokenizer with 2D Gaussian Splatting *(Active)*
-    - [LIT-498](../record/literature.d/LIT-498.md) — MaskGIT: Masked Generative Image Transformer *(Active)*
-    - [LIT-500](../record/literature.d/LIT-500.md) — Vector-quantized Image Modeling with Improved VQGAN *(Active)*
-      - [LIT-497](../record/literature.d/LIT-497.md) — Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation *(Active)* — also extends LIT-496
-- alongside: [LIT-751](../record/literature.d/LIT-751.md) — "Principal Components" Enable A New Language of Images *(Active)*
-
-### From Improved Techniques for Training GANs
-
-- [LIT-614](../record/literature.d/LIT-614.md) — Improved Techniques for Training GANs *(Active)*
-  - [LIT-611](../record/literature.d/LIT-611.md) — GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium *(Active)*
-    - [LIT-501](../record/literature.d/LIT-501.md) — The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation *(Active)*
-    - [LIT-563](../record/literature.d/LIT-563.md) — The Role of ImageNet Classes in Fréchet Inception Distance *(Active)*
-    - [LIT-615](../record/literature.d/LIT-615.md) — Demystifying MMD GANs *(Active)*
-
 ### From Sequence Level Training with Recurrent Neural Networks
 
 - alongside: [LIT-647](../record/literature.d/LIT-647.md) — Sequence Level Training with Recurrent Neural Networks *(Active)*
@@ -324,12 +219,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-081](../record/literature.d/LIT-081.md) — GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers *(Active)*
   - [LIT-567](../record/literature.d/LIT-567.md) — MARLIN: Mixed-Precision Auto-Regressive Parallel Inference on Large Language Models *(Active)*
 - alongside: [LIT-585](../record/literature.d/LIT-585.md) — AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration *(Active)*
-
-### From The Diffusion Duality
-
-- alongside: [LIT-479](../record/literature.d/LIT-479.md) — The Diffusion Duality *(Active)*
-- alongside: [LIT-701](../record/literature.d/LIT-701.md) — Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution *(Active)*
-- alongside: [LIT-702](../record/literature.d/LIT-702.md) — Simple and Effective Masked Diffusion Language Models *(Active)*
 
 ### From Matryoshka Representation Learning
 
@@ -471,16 +360,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-048](../record/literature.d/LIT-048.md) — Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation *(Active)*
 - alongside: [LIT-665](../record/literature.d/LIT-665.md) — Transformer Language Models without Positional Encodings Still Learn Positional Information *(Active)*
 
-### From Neural Discrete Representation Learning
-
-- [LIT-499](../record/literature.d/LIT-499.md) — Neural Discrete Representation Learning *(Active)*
-  - [LIT-496](../record/literature.d/LIT-496.md) — Taming Transformers for High-Resolution Image Synthesis *(Active)*
-    - [LIT-494](../record/literature.d/LIT-494.md) — GaussianToken: An Effective Image Tokenizer with 2D Gaussian Splatting *(Active)*
-    - [LIT-498](../record/literature.d/LIT-498.md) — MaskGIT: Masked Generative Image Transformer *(Active)*
-    - [LIT-500](../record/literature.d/LIT-500.md) — Vector-quantized Image Modeling with Improved VQGAN *(Active)*
-      - [LIT-497](../record/literature.d/LIT-497.md) — Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation *(Active)* — also extends LIT-496
-- alongside: [LIT-751](../record/literature.d/LIT-751.md) — "Principal Components" Enable A New Language of Images *(Active)*
-
 ### From Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences
 
 - [LIT-505](../record/literature.d/LIT-505.md) — Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences *(Active)*
@@ -588,26 +467,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-617](../record/literature.d/LIT-617.md) — Scaling Language Models: Methods, Analysis & Insights from Training Gopher *(Active)*
 - alongside: [LIT-685](../record/literature.d/LIT-685.md) — Sub-Scaling Laws: On the Role of Data Density and Training Strategies in LLMs *(Active)*
 
-### From Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training
-
-- [LIT-235](../record/literature.d/LIT-235.md) — Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training *(Active)*
-- [LIT-236](../record/literature.d/LIT-236.md) — The Blessing of Dimensionality in LLM Fine-tuning: A Variance-Curvature Perspective *(Active)*
-  - [LIT-233](../record/literature.d/LIT-233.md) — Neural Thickets: Diverse Task Experts Are Dense Around Pretrained Weights *(Active)*
-- [LIT-241](../record/literature.d/LIT-241.md) — Proximal Policy Optimization Algorithms *(Active)*
-  - [LIT-127](../record/literature.d/LIT-127.md) — DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models *(Active)*
-- [LIT-242](../record/literature.d/LIT-242.md) — Evolution Strategies as a Scalable Alternative to Reinforcement Learning *(Active)*
-  - [LIT-211](../record/literature.d/LIT-211.md) — Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning *(Active)*
-    - [LIT-229](../record/literature.d/LIT-229.md) — Evolution Strategies at the Hyperscale *(Active)*
-      - [LIT-232](../record/literature.d/LIT-232.md) — EGGROLL, Unrolled: Understanding and Improving Low-Rank Evolution Strategies at Scale *(Active)*
-    - [LIT-231](../record/literature.d/LIT-231.md) — Hyper-ES: Effective Evolution Strategies for LLM Reasoning via Descent Direction Merging *(Active)*
-    - [LIT-234](../record/literature.d/LIT-234.md) — Beyond the Best Guess: Improving LLM Solution Coverage with Evolution Strategies *(Active)*
-    - [LIT-237](../record/literature.d/LIT-237.md) — Evolutionary Strategies lead to Catastrophic Forgetting in LLMs *(Active)*
-      - [LIT-238](../record/literature.d/LIT-238.md) — Overcoming Forgetting in LLM Fine-Tuning with Evolution Strategies *(Active)* — also extends LIT-235
-    - [LIT-240](../record/literature.d/LIT-240.md) — ESSAM: A Novel Competitive Evolution Strategies Approach to Reinforcement Learning for Memory Efficient LLMs Fine-Tuning *(Active)*
-    - [LIT-473](../record/literature.d/LIT-473.md) — Quantized Evolution Strategies: High-precision Fine-tuning of Quantized LLMs at Low-precision Cost *(Active)*
-- alongside: [LIT-230](../record/literature.d/LIT-230.md) — Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO *(Active)*
-- alongside: [LIT-239](../record/literature.d/LIT-239.md) — ESSA: Evolutionary Strategies for Scalable Alignment *(Active)*
-
 ### From Scaling Laws and Compute-Optimal Training Beyond Fixed Training Durations
 
 - [LIT-145](../record/literature.d/LIT-145.md) — Scaling Laws and Compute-Optimal Training Beyond Fixed Training Durations *(Active)*
@@ -659,16 +518,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-096](../record/literature.d/LIT-096.md) — Segment Anything *(Active)*
 - alongside: [LIT-488](../record/literature.d/LIT-488.md) — gen2seg: Generative Models Enable Generalizable Instance Segmentation *(Active)*
 
-### From Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture
-
-- [LIT-216](../record/literature.d/LIT-216.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
-  - [LIT-215](../record/literature.d/LIT-215.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*
-- [LIT-588](../record/literature.d/LIT-588.md) — Learning Transferable Visual Models From Natural Language Supervision *(Active)*
-  - [LIT-706](../record/literature.d/LIT-706.md) — Scaling Language-Image Pre-training via Masking *(Active)* — also extends LIT-601
-- [LIT-601](../record/literature.d/LIT-601.md) — Masked Autoencoders Are Scalable Vision Learners *(Active)*
-- [LIT-605](../record/literature.d/LIT-605.md) — Sigmoid Loss for Language Image Pre-Training *(Active)*
-  - [LIT-745](../record/literature.d/LIT-745.md) — SigLIP 2: Multilingual Vision-Language Encoders with Improved Semantic Understanding, Localization, and Dense Features *(Active)*
-
 ### From An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
 
 - [LIT-587](../record/literature.d/LIT-587.md) — An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale *(Active)*
@@ -703,3 +552,144 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-743](../record/literature.d/LIT-743.md) — Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation *(Active)*
 - alongside: [LIT-755](../record/literature.d/LIT-755.md) — Wonderland: Navigating 3D Scenes from a Single Image *(Active)*
+
+## Sharing no `tags`
+
+### From Denoising Diffusion Implicit Models
+
+- [LIT-038](../record/literature.d/LIT-038.md) — Denoising Diffusion Implicit Models *(Active)*
+- [LIT-062](../record/literature.d/LIT-062.md) — High-Resolution Image Synthesis with Latent Diffusion Models *(Active)*
+  - [LIT-566](../record/literature.d/LIT-566.md) — SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis *(Active)*
+  - [LIT-621](../record/literature.d/LIT-621.md) — Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models *(Active)*
+    - [LIT-625](../record/literature.d/LIT-625.md) — Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets *(Active)* — also extends LIT-062
+  - [LIT-633](../record/literature.d/LIT-633.md) — AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning *(Active)*
+  - [LIT-635](../record/literature.d/LIT-635.md) — Emu Video: Factorizing Text-to-Video Generation by Explicit Image Conditioning *(Active)* — also extends LIT-689
+- [LIT-067](../record/literature.d/LIT-067.md) — Progressive Distillation for Fast Sampling of Diffusion Models *(Active)*
+- [LIT-070](../record/literature.d/LIT-070.md) — Hierarchical Text-Conditional Image Generation with CLIP Latents *(Active)*
+  - [LIT-632](../record/literature.d/LIT-632.md) — Make-A-Video: Text-to-Video Generation without Text-Video Data *(Active)*
+- [LIT-075](../record/literature.d/LIT-075.md) — Elucidating the Design Space of Diffusion-Based Generative Models *(Active)*
+  - [LIT-714](../record/literature.d/LIT-714.md) — Analyzing and Improving the Training Dynamics of Diffusion Models *(Active)*
+- [LIT-093](../record/literature.d/LIT-093.md) — Consistency Models *(Active)*
+  - [LIT-786](../record/literature.d/LIT-786.md) — Improved Techniques for Training Consistency Models *(Active)*
+  - [LIT-790](../record/literature.d/LIT-790.md) — Simplifying, Stabilizing and Scaling Continuous-Time Consistency Models *(Active)*
+- [LIT-169](../record/literature.d/LIT-169.md) — Direct Preference Optimization: Your Language Model is Secretly a Reward Model *(Active)*
+  - [LIT-774](../record/literature.d/LIT-774.md) — Diffusion Model Alignment Using Direct Preference Optimization *(Active)*
+    - [LIT-624](../record/literature.d/LIT-624.md) — Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model *(Active)* — also extends LIT-448
+    - [LIT-773](../record/literature.d/LIT-773.md) — Improving Video Generation with Human Feedback *(Active)*
+- [LIT-216](../record/literature.d/LIT-216.md) — Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture *(Active)*
+  - [LIT-215](../record/literature.d/LIT-215.md) — V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning *(Active)*
+- [LIT-235](../record/literature.d/LIT-235.md) — Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training *(Active)*
+- [LIT-236](../record/literature.d/LIT-236.md) — The Blessing of Dimensionality in LLM Fine-tuning: A Variance-Curvature Perspective *(Active)*
+  - [LIT-233](../record/literature.d/LIT-233.md) — Neural Thickets: Diverse Task Experts Are Dense Around Pretrained Weights *(Active)*
+- [LIT-241](../record/literature.d/LIT-241.md) — Proximal Policy Optimization Algorithms *(Active)*
+  - [LIT-127](../record/literature.d/LIT-127.md) — DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models *(Active)*
+    - [LIT-779](../record/literature.d/LIT-779.md) — Flow-GRPO: Training Flow Matching Models via Online RL *(Active)*
+  - [LIT-776](../record/literature.d/LIT-776.md) — Training Diffusion Models with Reinforcement Learning *(Active)*
+- [LIT-242](../record/literature.d/LIT-242.md) — Evolution Strategies as a Scalable Alternative to Reinforcement Learning *(Active)*
+  - [LIT-211](../record/literature.d/LIT-211.md) — Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning *(Active)*
+    - [LIT-229](../record/literature.d/LIT-229.md) — Evolution Strategies at the Hyperscale *(Active)*
+      - [LIT-232](../record/literature.d/LIT-232.md) — EGGROLL, Unrolled: Understanding and Improving Low-Rank Evolution Strategies at Scale *(Active)*
+    - [LIT-231](../record/literature.d/LIT-231.md) — Hyper-ES: Effective Evolution Strategies for LLM Reasoning via Descent Direction Merging *(Active)*
+    - [LIT-234](../record/literature.d/LIT-234.md) — Beyond the Best Guess: Improving LLM Solution Coverage with Evolution Strategies *(Active)*
+    - [LIT-237](../record/literature.d/LIT-237.md) — Evolutionary Strategies lead to Catastrophic Forgetting in LLMs *(Active)*
+      - [LIT-238](../record/literature.d/LIT-238.md) — Overcoming Forgetting in LLM Fine-Tuning with Evolution Strategies *(Active)* — also extends LIT-235
+    - [LIT-240](../record/literature.d/LIT-240.md) — ESSAM: A Novel Competitive Evolution Strategies Approach to Reinforcement Learning for Memory Efficient LLMs Fine-Tuning *(Active)*
+    - [LIT-473](../record/literature.d/LIT-473.md) — Quantized Evolution Strategies: High-precision Fine-tuning of Quantized LLMs at Low-precision Cost *(Active)*
+- [LIT-434](../record/literature.d/LIT-434.md) — Deep reinforcement learning from human preferences *(Active)*
+  - [LIT-734](../record/literature.d/LIT-734.md) — Fine-Tuning Language Models from Human Preferences *(Active)*
+    - [LIT-433](../record/literature.d/LIT-433.md) — Learning to summarize from human feedback *(Active)*
+      - [LIT-377](../record/literature.d/LIT-377.md) — Training language models to follow instructions with human feedback *(Active)*
+        - [LIT-778](../record/literature.d/LIT-778.md) — DPOK: Reinforcement Learning for Fine-tuning Text-to-Image Diffusion Models *(Active)*
+        - [LIT-788](../record/literature.d/LIT-788.md) — ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation *(Active)*
+        - [LIT-795](../record/literature.d/LIT-795.md) — Scaling Laws for Reward Model Overoptimization *(Active)*
+        - [LIT-797](../record/literature.d/LIT-797.md) — Aligning Text-to-Image Models using Human Feedback *(Active)*
+- [LIT-439](../record/literature.d/LIT-439.md) — Deep Unsupervised Learning using Nonequilibrium Thermodynamics *(Active)*
+  - [LIT-036](../record/literature.d/LIT-036.md) — Denoising Diffusion Probabilistic Models *(Active)*
+    - [LIT-446](../record/literature.d/LIT-446.md) — Variational Diffusion Models *(Active)*
+      - [LIT-677](../record/literature.d/LIT-677.md) — Diffusion Models With Learned Adaptive Noise *(Active)*
+      - [LIT-692](../record/literature.d/LIT-692.md) — Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation *(Active)* — also extends LIT-660
+        - [LIT-449](../record/literature.d/LIT-449.md) — Scaling Rectified Flow Transformers for High-Resolution Image Synthesis *(Active)* — also extends LIT-447, LIT-636
+          - [LIT-573](../record/literature.d/LIT-573.md) — FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space *(Active)*
+            - [LIT-572](../record/literature.d/LIT-572.md) — FLUX.2: Analyzing and Enhancing the Latent Space of FLUX – Representation Comparison *(Active)*
+          - [LIT-618](../record/literature.d/LIT-618.md) — LTX-Video: Realtime Video Latent Diffusion *(Active)*
+          - [LIT-619](../record/literature.d/LIT-619.md) — Wan: Open and Advanced Large-Scale Video Generative Models *(Active)* — also extends LIT-448, LIT-623
+            - [LIT-629](../record/literature.d/LIT-629.md) — Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion *(Active)* — also extends LIT-631
+          - [LIT-620](../record/literature.d/LIT-620.md) — HunyuanVideo: A Systematic Framework For Large Video Generative Models *(Active)* — also extends LIT-623
+          - [LIT-626](../record/literature.d/LIT-626.md) — Movie Gen: A Cast of Media Foundation Models *(Active)* — also extends LIT-062, LIT-630, LIT-635
+          - [LIT-634](../record/literature.d/LIT-634.md) — Open-Sora 2.0: Training a Commercial-Level Video Generation Model in $200k *(Active)*
+        - [LIT-678](../record/literature.d/LIT-678.md) — Diffusion Meets Flow Matching: Two Sides of the Same Coin *(Active)* — also extends LIT-038, LIT-630
+    - [LIT-627](../record/literature.d/LIT-627.md) — Video Diffusion Models *(Active)*
+      - [LIT-637](../record/literature.d/LIT-637.md) — Imagen Video: High Definition Video Generation with Diffusion Models *(Active)* — also extends LIT-067
+    - [LIT-643](../record/literature.d/LIT-643.md) — One-step Diffusion with Distribution Matching Distillation *(Active)*
+      - [LIT-646](../record/literature.d/LIT-646.md) — Improved Distribution Matching Distillation for Fast Image Synthesis *(Active)*
+        - [LIT-631](../record/literature.d/LIT-631.md) — From Slow Bidirectional to Fast Autoregressive Video Diffusion Models *(Active)* — also extends LIT-643
+      - [LIT-770](../record/literature.d/LIT-770.md) — DMAD: Distribution Matching as Adversarial Distillation for Fast Visual Generation *(Active)*
+      - [LIT-783](../record/literature.d/LIT-783.md) — Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency *(Active)* — also extends LIT-790
+    - [LIT-699](../record/literature.d/LIT-699.md) — Diffusion Models Beat GANs on Image Synthesis *(Active)* — also extends LIT-439
+      - [LIT-693](../record/literature.d/LIT-693.md) — Classifier-Free Diffusion Guidance *(Active)*
+    - [LIT-710](../record/literature.d/LIT-710.md) — Efficient Diffusion Training via Min-SNR Weighting Strategy *(Active)*
+- [LIT-448](../record/literature.d/LIT-448.md) — Scalable Diffusion Models with Transformers *(Active)*
+  - [LIT-622](../record/literature.d/LIT-622.md) — CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer *(Active)* — also extends LIT-623
+  - [LIT-652](../record/literature.d/LIT-652.md) — Video generation models as world simulators *(Active)* — also extends LIT-648
+  - [LIT-658](../record/literature.d/LIT-658.md) — FiT: Flexible Vision Transformer for Diffusion Model *(Active)*
+- [LIT-499](../record/literature.d/LIT-499.md) — Neural Discrete Representation Learning *(Active)*
+  - [LIT-496](../record/literature.d/LIT-496.md) — Taming Transformers for High-Resolution Image Synthesis *(Active)*
+    - [LIT-494](../record/literature.d/LIT-494.md) — GaussianToken: An Effective Image Tokenizer with 2D Gaussian Splatting *(Active)*
+    - [LIT-498](../record/literature.d/LIT-498.md) — MaskGIT: Masked Generative Image Transformer *(Active)*
+    - [LIT-500](../record/literature.d/LIT-500.md) — Vector-quantized Image Modeling with Improved VQGAN *(Active)*
+      - [LIT-497](../record/literature.d/LIT-497.md) — Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation *(Active)* — also extends LIT-496
+- [LIT-553](../record/literature.d/LIT-553.md) — Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise *(Active)*
+  - [LIT-555](../record/literature.d/LIT-555.md) — Warm Diffusion: Recipe for Blur-Noise Mixture Diffusion Models *(Active)*
+- [LIT-561](../record/literature.d/LIT-561.md) — A Style-Based Generator Architecture for Generative Adversarial Networks *(Active)*
+  - [LIT-560](../record/literature.d/LIT-560.md) — Analyzing and Improving the Image Quality of StyleGAN *(Active)*
+    - [LIT-559](../record/literature.d/LIT-559.md) — Alias-Free Generative Adversarial Networks *(Active)*
+- [LIT-588](../record/literature.d/LIT-588.md) — Learning Transferable Visual Models From Natural Language Supervision *(Active)*
+  - [LIT-706](../record/literature.d/LIT-706.md) — Scaling Language-Image Pre-training via Masking *(Active)* — also extends LIT-601
+  - [LIT-782](../record/literature.d/LIT-782.md) — Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation *(Active)*
+- [LIT-601](../record/literature.d/LIT-601.md) — Masked Autoencoders Are Scalable Vision Learners *(Active)*
+- [LIT-605](../record/literature.d/LIT-605.md) — Sigmoid Loss for Language Image Pre-Training *(Active)*
+  - [LIT-745](../record/literature.d/LIT-745.md) — SigLIP 2: Multilingual Vision-Language Encoders with Improved Semantic Understanding, Localization, and Dense Features *(Active)*
+- [LIT-614](../record/literature.d/LIT-614.md) — Improved Techniques for Training GANs *(Active)*
+  - [LIT-611](../record/literature.d/LIT-611.md) — GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium *(Active)*
+    - [LIT-501](../record/literature.d/LIT-501.md) — The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation *(Active)*
+    - [LIT-563](../record/literature.d/LIT-563.md) — The Role of ImageNet Classes in Fréchet Inception Distance *(Active)*
+    - [LIT-615](../record/literature.d/LIT-615.md) — Demystifying MMD GANs *(Active)*
+- [LIT-623](../record/literature.d/LIT-623.md) — Language Model Beats Diffusion — Tokenizer is Key to Visual Generation *(Active)*
+- [LIT-630](../record/literature.d/LIT-630.md) — Flow Matching for Generative Modeling *(Active)*
+  - [LIT-784](../record/literature.d/LIT-784.md) — Mean Flows for One-step Generative Modeling *(Active)*
+  - [LIT-789](../record/literature.d/LIT-789.md) — Multisample Flow Matching: Straightening Flows with Minibatch Couplings *(Active)*
+  - [LIT-792](../record/literature.d/LIT-792.md) — Discrete Flow Matching *(Active)*
+  - [LIT-798](../record/literature.d/LIT-798.md) — Improving and generalizing flow-based generative models with minibatch optimal transport *(Active)*
+- [LIT-636](../record/literature.d/LIT-636.md) — Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow *(Active)*
+  - [LIT-787](../record/literature.d/LIT-787.md) — One Step Diffusion via Shortcut Models *(Active)*
+  - [LIT-791](../record/literature.d/LIT-791.md) — Improving the Training of Rectified Flows *(Active)*
+  - [LIT-796](../record/literature.d/LIT-796.md) — InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation *(Active)*
+- [LIT-644](../record/literature.d/LIT-644.md) — Building Normalizing Flows with Stochastic Interpolants *(Active)*
+  - [LIT-645](../record/literature.d/LIT-645.md) — Stochastic Interpolants: A Unifying Framework for Flows and Diffusions *(Active)*
+    - [LIT-447](../record/literature.d/LIT-447.md) — SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers *(Active)* — also extends LIT-448
+    - [LIT-775](../record/literature.d/LIT-775.md) — Inductive Moment Matching *(Active)*
+    - [LIT-793](../record/literature.d/LIT-793.md) — Flow map matching with stochastic interpolants: A mathematical framework for consistency models *(Active)*
+- [LIT-648](../record/literature.d/LIT-648.md) — Improving Image Generation with Better Captions *(Active)*
+- [LIT-660](../record/literature.d/LIT-660.md) — simple diffusion: End-to-end diffusion for high resolution images *(Active)*
+- [LIT-689](../record/literature.d/LIT-689.md) — Common Diffusion Noise Schedules and Sample Steps are Flawed *(Active)*
+  - [LIT-687](../record/literature.d/LIT-687.md) — Fine-Tuning Image-Conditional Diffusion Models is Easier than You Think *(Active)* — also extends LIT-691
+- [LIT-691](../record/literature.d/LIT-691.md) — Repurposing Diffusion-Based Image Generators for Monocular Depth Estimation *(Active)*
+- [LIT-772](../record/literature.d/LIT-772.md) — Neural Ordinary Differential Equations *(Active)*
+  - [LIT-780](../record/literature.d/LIT-780.md) — FFJORD: Free-form Continuous Dynamics for Scalable Reversible Generative Models *(Active)*
+- [LIT-781](../record/literature.d/LIT-781.md) — Density estimation using Real NVP *(Active)*
+  - [LIT-771](../record/literature.d/LIT-771.md) — Glow: Generative Flow with Invertible 1x1 Convolutions *(Active)*
+- [LIT-794](../record/literature.d/LIT-794.md) — Normalizing Flows are Capable Generative Models *(Active)*
+  - [LIT-785](../record/literature.d/LIT-785.md) — STARFlow: Scaling Latent Normalizing Flows for High-resolution Image Synthesis *(Active)*
+- alongside: [LIT-073](../record/literature.d/LIT-073.md) — Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding *(Active)*
+- alongside: [LIT-076](../record/literature.d/LIT-076.md) — DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps *(Active)*
+- alongside: [LIT-230](../record/literature.d/LIT-230.md) — Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO *(Active)*
+- alongside: [LIT-239](../record/literature.d/LIT-239.md) — ESSA: Evolutionary Strategies for Scalable Alignment *(Active)*
+- alongside: [LIT-432](../record/literature.d/LIT-432.md) — Finetuned Language Models Are Zero-Shot Learners *(Active)*
+- alongside: [LIT-479](../record/literature.d/LIT-479.md) — The Diffusion Duality *(Active)*
+- alongside: [LIT-554](../record/literature.d/LIT-554.md) — Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion *(Active)*
+- alongside: [LIT-661](../record/literature.d/LIT-661.md) — Photorealistic Video Generation with Diffusion Models *(Active)*
+- alongside: [LIT-676](../record/literature.d/LIT-676.md) — DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models *(Active)*
+- alongside: [LIT-701](../record/literature.d/LIT-701.md) — Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution *(Active)*
+- alongside: [LIT-702](../record/literature.d/LIT-702.md) — Simple and Effective Masked Diffusion Language Models *(Active)*
+- alongside: [LIT-722](../record/literature.d/LIT-722.md) — Score-Based Generative Modeling through Stochastic Differential Equations *(Active)*
+- alongside: [LIT-751](../record/literature.d/LIT-751.md) — "Principal Components" Enable A New Language of Images *(Active)*

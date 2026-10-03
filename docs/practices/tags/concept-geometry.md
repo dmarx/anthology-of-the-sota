@@ -2,11 +2,11 @@
 
 # SOTAs with `tags` `concept-geometry`
 
-*Topics — The twenty-six kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-six for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
+*Topics — The twenty-eight kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-eight for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Concept geometry** — how concepts are laid out in a model's representation space — linear directions and the regions, lattices and spectra built from them, superposition and the dictionaries that pull it apart, reading concepts out with probes and writing them in with steering vectors, and whether different models arrive at the same geometry.
 
-4 of 441 SOTA documents. Back to the [full index](../README.md).
+4 of 449 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

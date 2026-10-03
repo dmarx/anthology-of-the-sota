@@ -2,11 +2,11 @@
 
 # THEORYs with `tags` `signal-structure`
 
-*Topics — The twenty-six kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-six for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
+*Topics — The twenty-eight kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-eight for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Signal structure** — what the data itself is like, independent of any model — the statistics and structure of language, images and other signals that methods exploit or must respect, such as frequency spectra, heavy-tailed and Zipfian distributions, and what counts as a unit.
 
-12 of 117 THEORY documents. Back to the [full index](../README.md).
+12 of 125 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

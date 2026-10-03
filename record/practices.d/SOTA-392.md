@@ -11,21 +11,21 @@ promote_when: >-
   reported.
 consensus: contested
 contested_by:
-- LIT-tmpyqrl4
+- LIT-796
 consensus_note: >-
-  Contested at scale by InstaFlow (LIT-tmpyqrl4). On Stable Diffusion 1.4 at
+  Contested at scale by InstaFlow (LIT-796). On Stable Diffusion 1.4 at
   matched budget (100K steps, 3.2M generated pairs), reflow then
   distillation beats distilling directly: one-step FID-5k 31.0 against 40.9,
   FID-30k 20.0 against 34.6. Its teacher is a curved diffusion model and its
   distiller an LPIPS regression, so it narrows the practice to a teacher that
   is already a rectified flow rather than refuting that case. Lee et al.
-  (LIT-tmptpra5) refine reflow (one round, trained like a distillation) and
-  do not test the ordering. Shortcut Models (LIT-tmpo7np5) find progressive
+  (LIT-791) refine reflow (one round, trained like a distillation) and
+  do not test the ordering. Shortcut Models (LIT-787) find progressive
   distillation alone ahead of one reflow at one step from a flow-matching
   teacher, with no reflow-then-distil arm. The video line reaches few steps
   by distillation without reflow: CausVid and Self Forcing (LIT-631,
   LIT-629), HunyuanVideo's guidance distillation (LIT-620), DMAD (LIT-770)
-  and rCM (LIT-tmpkegvh) on the rectified-flow Wan2.1. That is adoption,
+  and rCM (LIT-783) on the rectified-flow Wan2.1. That is adoption,
   not a test. Read as of 2026-10.
 title: 'To get a one-step sampler from a rectified flow, distil it; treat reflow as an optional extra pass, and keep the pre-reflow model for many steps'
 version: 3
@@ -39,7 +39,7 @@ history:
 - version: 3
   date: '2026-10-03'
   note: >-
-    InstaFlow (LIT-tmpyqrl4) and Lee et al. (LIT-tmptpra5) are now filed.
+    InstaFlow (LIT-796) and Lee et al. (LIT-791) are now filed.
     InstaFlow is the at-scale, matched-budget comparison and finds reflow
     first better, from a diffusion teacher with regression distillation, so
     it is recorded as contesting the practice and consensus moves from
@@ -63,7 +63,7 @@ source:
 # the way to straight paths and uses reflow-then-distil for its headline
 # result; "distil first, reflow optional" is this record's reading of its
 # Table 1a (NOTE-337, R2), not advice the paper gives. InstaFlow
-# (LIT-tmpyqrl4) and Lee et al. 2024 (LIT-tmptpra5) were searched for here
+# (LIT-796) and Lee et al. 2024 (LIT-791) were searched for here
 # and are now filed. Both keep reflow: the first finds it essential for
 # one-step Stable Diffusion and is recorded under contested_by, the second
 # argues one round suffices. The distribution-matching distillers this
@@ -78,10 +78,10 @@ summary: >-
   4.85 after reflow and distillation (Table 1a). Distillation does most of
   the work. Reflow adds a further gain at the cost of a second training pass,
   and worsens many-step quality from 2.58 to 3.36. InstaFlow
-  (LIT-tmpyqrl4) contests it at text-to-image scale, starting from a
+  (LIT-796) contests it at text-to-image scale, starting from a
   diffusion model rather than a rectified flow.
 explained_by:
-- THEORY-tmprwlgq
+- THEORY-123
 ---
 
 # SOTA-392: To get a one-step sampler from a rectified flow, distil it; treat reflow as an optional extra pass, and keep the pre-reflow model for many steps
@@ -129,7 +129,7 @@ multi-step option in a few-step model.
 
 ## Contested at scale, from a different starting point
 
-InstaFlow ([LIT-tmpyqrl4](../literature.d/LIT-tmpyqrl4.md)) runs the comparison this practice's
+InstaFlow ([LIT-796](../literature.d/LIT-796.md)) runs the comparison this practice's
 promote_when describes, at text-to-image scale and matched budget, and finds
 the opposite order. On Stable Diffusion 1.4 with the same U-Net, batch,
 100K training steps and 3.2M generated pairs, distilling SD directly to one
@@ -154,7 +154,7 @@ the pre-reflow model for many steps still holds. A second reflow did not
 reliably help (its Table 4).
 
 **If you reflow, reflow once, and train it like a distillation.** Lee et al.
-([LIT-tmptpra5](../literature.d/LIT-tmptpra5.md)) refine the reflow stage rather than test the ordering.
+([LIT-791](../literature.d/LIT-791.md)) refine the reflow stage rather than test the ordering.
 Starting from EDM, one round trained with a U-shaped timestep distribution
 and an LPIPS-Huber loss reaches one-step FID 3.07 on CIFAR-10 and 4.31 on
 ImageNet-64 with no separate distillation stage, and they argue further
@@ -164,7 +164,7 @@ distillation-alone arm from the same teacher and no matched many-step
 comparison, so they do not meet promote_when.
 
 **Adjacent evidence for distilling without reflow.** Shortcut Models
-([LIT-tmpo7np5](../literature.d/LIT-tmpo7np5.md), Table 1) start from a flow-matching model, a 1-rectified
+([LIT-787](../literature.d/LIT-787.md), Table 1) start from a flow-matching model, a 1-rectified
 flow, on DiT-B at 256 px. Progressive distillation alone beats one reflow
 at one step on both datasets, 14.8 against 23.2 on CelebA-HQ and 35.6
 against 44.8 on ImageNet, at roughly matched compute. There is no
@@ -184,7 +184,7 @@ reflow without distillation, which is this practice's direction.
   uses LPIPS regression too.
 - **The teacher has to be a rectified flow already.** From a curved
   diffusion teacher with regression distillation, the one test at scale
-  finds reflow first better by 9.9 FID-5k ([LIT-tmpyqrl4](../literature.d/LIT-tmpyqrl4.md), above). The
+  finds reflow first better by 9.9 FID-5k ([LIT-796](../literature.d/LIT-796.md), above). The
   practice does not cover that case. InstaFlow was listed here as an
   implementation until the correction pass after [#395](https://github.com/dmarx/anthology-of-the-sota/issues/395), because it
   implements the opposite pipeline; it is now filed as the paper that

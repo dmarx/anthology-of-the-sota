@@ -31,12 +31,12 @@ history:
 - version: 4
   date: '2026-10-03'
   note: >-
-    Flow-GRPO (LIT-tmpdktqx) added as a source: the first evidence in the
+    Flow-GRPO (LIT-779) added as a source: the first evidence in the
     record from outside language, GRPO's group baseline run unchanged on a
     flow-matching image model. It carries a condition on group size (24
-    stable; 12 and 6 collapsed). DDPO (LIT-tmp7vihu) is noted as the
+    stable; 12 and 6 collapsed). DDPO (LIT-776) is noted as the
     earlier critic-free case, with a running per-prompt baseline rather
-    than a group. DPOK (LIT-tmp9ntgf) is noted as the opposite choice, a
+    than a group. DPOK (LIT-778) is noted as the opposite choice, a
     learned critic, compared only against no baseline. The recommendation
     and consensus are unchanged.
 tags:
@@ -51,7 +51,7 @@ source:
 - LIT-167
 - LIT-168
 - LIT-180
-- LIT-tmpdktqx
+- LIT-779
 introduced_by:
 - LIT-127
 implementations: []
@@ -102,7 +102,7 @@ people looked hard and changed something else.
 
 ## Outside language, and how big the group has to be
 
-Flow-GRPO ([LIT-tmpdktqx](../literature.d/LIT-tmpdktqx.md)) runs the group baseline on an image generator.
+Flow-GRPO ([LIT-779](../literature.d/LIT-779.md)) runs the group baseline on an image generator.
 GRPO's group-normalized advantage, clipped ratio and KL penalty are used
 unchanged on SD3.5-M with LoRA, after the flow model's sampler is turned
 into a same-marginal SDE so that each step is a Gaussian policy. There is
@@ -114,13 +114,13 @@ be large enough for the baseline to hold.** At 24 samples per prompt
 training was stable; at 12 and at 6 it collapsed on PickScore (its Fig. 5).
 One run per setting, on one task.
 
-DDPO ([LIT-tmp7vihu](../literature.d/LIT-tmp7vihu.md), App. D.3) is the earlier case, and a weaker one: it
+DDPO ([LIT-776](../literature.d/LIT-776.md), App. D.3) is the earlier case, and a weaker one: it
 also drops the critic, but its baseline is a running mean and standard
 deviation of each prompt's rewards across iterations, not a group sampled
 together, and it does not compare against a critic. Flow-GRPO's per-prompt
 group is the within-step version of the same idea.
 
-DPOK ([LIT-tmp9ntgf](../literature.d/LIT-tmp9ntgf.md), App. A.5) went the other way and trained a critic. A
+DPOK ([LIT-778](../literature.d/LIT-778.md), App. A.5) went the other way and trained a critic. A
 learned V(x_t, z) raised ImageReward on one prompt from 0.86 to 1.51
 against no baseline at all, and v3 uses it for multi-prompt training. That
 is a critic against nothing, not against a group or per-prompt baseline,

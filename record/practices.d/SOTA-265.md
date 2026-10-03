@@ -9,7 +9,7 @@ consensus_note: >-
   framework and SiT share authors), but the claim rests on an identity
   rather than on a sweep: the coefficient does not enter the velocity or the score, so
   it cannot be downstream of training. Nothing in the record contests it.
-  A second group now uses the freedom: Flow-GRPO (LIT-tmpdktqx) converts a
+  A second group now uses the freedom: Flow-GRPO (LIT-779) converts a
   trained flow-matching model's ODE sampler to a same-marginal SDE after
   training and sets the coefficient (a = 0.7) as an exploration knob for RL,
   chosen by how fast reward rises, not for sample quality, and reports no
@@ -32,7 +32,7 @@ history:
   date: '2026-10-03'
   note: >-
     The consensus note's "no second group has reported tuning it" is
-    amended. Flow-GRPO (LIT-tmpdktqx) is a second group choosing the
+    amended. Flow-GRPO (LIT-779) is a second group choosing the
     coefficient after training on a frozen flow model, but as an RL
     exploration knob rather than for sample quality, so it is not a second
     measurement of what tuning buys and is not added as a source. Consensus
@@ -129,7 +129,7 @@ integrate there — so "free to choose" is free within a range that the
 interpolant sets.
 
 The criterion can be something other than sample quality. Flow-GRPO
-([LIT-tmpdktqx](../literature.d/LIT-tmpdktqx.md)) sets the coefficient on a frozen flow-matching model to make
+([LIT-779](../literature.d/LIT-779.md)) sets the coefficient on a frozen flow-matching model to make
 its sampler a Gaussian policy that explores, and picks a = 0.7 by how fast an
 RL reward rises; too much noise drives images to zero reward. That uses the
 freedom this practice describes and measures nothing about what it buys in

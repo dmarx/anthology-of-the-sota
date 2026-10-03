@@ -10,9 +10,9 @@ history:
 - version: 2
   date: '2026-10-03'
   note: >-
-    Diffusion-DPO is now in the record (LIT-tmp4m2nj). Its plain-text
+    Diffusion-DPO is now in the record (LIT-774). Its plain-text
     mentions here are now citations of that note. R1 now cites Flow-DPO
-    (LIT-tmp3txak) as a reported case of lower β and higher learning rate.
+    (LIT-773) as a reported case of lower β and higher learning rate.
 date: '2026-09-24'
 summary: >-
   A 30B text-to-video DiT on a 16×16×8 VAE. By the authors' own benchmark
@@ -41,7 +41,7 @@ Four things, in order of how well each is supported:
   scale of thousands of H800s.
 - **A deep-compression video VAE**, 8×16×16 with a dual-path pixel-unshuffle
   and channel-averaging design.
-- **A video adaptation of Diffusion-DPO** ([LIT-tmp4m2nj](../literature.d/LIT-tmp4m2nj.md)).
+- **A video adaptation of Diffusion-DPO** ([LIT-774](../literature.d/LIT-774.md)).
 - **A 30B model and a 128-prompt Chinese benchmark**, Step-Video-T2V-Eval.
 
 The report is also unusually candid about what it does not know (§10).
@@ -158,7 +158,7 @@ inference clusters and stream latents to the DiT job (StepRPC, §6.3).
 
 ## Connections
 
-It extends Diffusion-DPO ([LIT-tmp4m2nj](../literature.d/LIT-tmp4m2nj.md)) and DPO ([LIT-169](../literature.d/LIT-169.md)) to flow
+It extends Diffusion-DPO ([LIT-774](../literature.d/LIT-774.md)) and DPO ([LIT-169](../literature.d/LIT-169.md)) to flow
 matching: §4.4 says its objective is "based on the DiffusionDPO method",
 extended "to the Flow Matching framework", though Eq. 8 is printed only in
 DPO's likelihood-ratio form. It cites DC-AE for the channel-averaging idea. HunyuanVideo
@@ -173,7 +173,7 @@ curation and checkpoint averaging.
   β = 5,000 and lr 10⁻⁸. Lower β and raise the learning rate, and fix the
   initial noise and timestep across each pair. *Topic:* adaptation-and-tuning.
   *Status:* experimental. *Strength:* weak. *Conditions:* the values used
-  are not reported. Flow-DPO ([LIT-tmp3txak](../literature.d/LIT-tmp3txak.md)) is a concrete case of the same direction: β = 500
+  are not reported. Flow-DPO ([LIT-773](../literature.d/LIT-773.md)) is a concrete case of the same direction: β = 500
   and learning rate 5·10⁻⁶ with LoRA rank 64 for one epoch on a 1B video
   flow model, where a constant β beat the exact β(1 − t)² form. The β values
   are not on one scale, because Diffusion-DPO folds the number of timesteps

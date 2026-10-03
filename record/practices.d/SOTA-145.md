@@ -34,8 +34,9 @@ history:
     Flow-GRPO (LIT-tmpdktqx) added as a source: the first evidence in the
     record from outside language, GRPO's group baseline run unchanged on a
     flow-matching image model. It carries a condition on group size (24
-    stable; 12 and 6 collapsed). The recommendation and consensus are
-    unchanged.
+    stable; 12 and 6 collapsed). DDPO (LIT-tmp7vihu) is noted as the
+    earlier critic-free case, with a running per-prompt baseline rather
+    than a group. The recommendation and consensus are unchanged.
 tags:
 - adaptation-and-tuning
 date: '2026-09-07'
@@ -110,6 +111,12 @@ It adds a condition the language papers did not state: **the group has to
 be large enough for the baseline to hold.** At 24 samples per prompt
 training was stable; at 12 and at 6 it collapsed on PickScore (its Fig. 5).
 One run per setting, on one task.
+
+DDPO ([LIT-tmp7vihu](../literature.d/LIT-tmp7vihu.md), App. D.3) is the earlier case, and a weaker one: it
+also drops the critic, but its baseline is a running mean and standard
+deviation of each prompt's rewards across iterations, not a group sampled
+together, and it does not compare against a critic. Flow-GRPO's per-prompt
+group is the within-step version of the same idea.
 
 ## What this does not say
 

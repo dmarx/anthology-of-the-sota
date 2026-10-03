@@ -1,7 +1,15 @@
 ---
 status: Active
 title: 'Flow-GRPO: Training Flow Matching Models via Online RL'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-10-03'
+  note: >-
+    DDPO (LIT-tmp7vihu) and Diffusion-DPO (LIT-tmp4m2nj) are now filed. The
+    Flow-DPO baselines are compared against Diffusion-DPO, whose loss they
+    use, rather than against DPO (LIT-169). DDPO, which Flow-GRPO reruns
+    in its Fig. 8, is declared as a comparison too.
 tags:
 - generative-modeling
 - flows-and-transport
@@ -23,7 +31,8 @@ extends:
 - LIT-127
 compared_against:
 - LIT-449
-- LIT-169
+- LIT-tmp4m2nj
+- LIT-tmp7vihu
 - LIT-566
 summary: >-
   Liu, Liu et al., CUHK, Tsinghua and Kuaishou (2025), [ARXIV-2505.05470](https://arxiv.org/abs/2505.05470). GRPO
@@ -36,6 +45,8 @@ summary: >-
   GenEval is trained on its own templates and scored by its own detector.
   Quality is judged only by reward models, and there is one run per setting.
 ---
+
+<!-- inactive-ok-file: SOTA-tmp6jbkw — Proposed practices this paper is the source of, named in its standing -->
 
 <!-- inactive-ok-file: SOTA-146, SOTA-302 — Proposed practices this paper bears on; named as what it informs, not as settled advice -->
 
@@ -144,6 +155,8 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
 
 ## Standing in the anthology
 
+Its recipe, a same-marginal SDE rollout anchored by a per-step KL, is [SOTA-tmp6jbkw](../practices.d/SOTA-tmp6jbkw.md).
+
 It extends GRPO ([LIT-127](LIT-127.md)). The group-normalized advantage (Eq. 4), the
 clipped ratio and the KL to a reference (Eq. 5) are DeepSeekMath's,
 unchanged. What Flow-GRPO adds is a way to make a deterministic generator
@@ -173,13 +186,27 @@ tuning it buys.
 
 The base model is SD3.5-Medium from the SD3 line ([LIT-449](LIT-449.md)), whose rectified
 flow transformer and published GenEval rows anchor Table 1, beside SDXL
-([LIT-566](LIT-566.md)) at 0.55. Its offline and online Flow-DPO baselines apply DPO
-([LIT-169](LIT-169.md)) through Diffusion-DPO's form. They improve with training and stay
-below Flow-GRPO.
+([LIT-566](LIT-566.md)) at 0.55. Its offline and online Flow-DPO baselines are
+Diffusion-DPO's loss ([LIT-tmp4m2nj](LIT-tmp4m2nj.md)): DPO ([LIT-169](LIT-169.md)) evaluated through
+denoising errors against a frozen reference, carried to flow matching by a
+later video paper. Each step's pair is the best and worst image of a group.
+They improve with training and stay below Flow-GRPO on GenEval (Fig. 4,
+App. C.1), and online beats offline, the direction Diffusion-DPO's own
+conclusion anticipated.
 
-**The record holds none of the RL-for-diffusion papers it builds on.** DDPO,
-DPOK, Diffusion-DPO, ReFL and ImageReward are cited here and not filed. The
-nearest filed relatives are Step-Video-T2V ([LIT-624](LIT-624.md)), which applies
+DDPO ([LIT-tmp7vihu](LIT-tmp7vihu.md)) is where Flow-GRPO's central move comes from: treat
+each denoising step as a Gaussian policy with an exact likelihood, and clip
+the ratio as PPO does. DDPO had a stochastic DDPM sampler. Flow-GRPO
+manufactures one from a deterministic flow, and adds a group baseline and a
+KL anchor, neither of which DDPO has. Flow-GRPO reruns DDPO through its own
+SDE on SD3.5-M with PickScore (Fig. 8). There DDPO's reward rises more
+slowly and "eventually collapses", and Flow-GRPO keeps improving. With
+DDPO's hyperparameters unreported, that compares update rules, not DDPO as
+published.
+
+**The record now holds the two roots of this line**, DDPO ([LIT-tmp7vihu](LIT-tmp7vihu.md))
+and Diffusion-DPO ([LIT-tmp4m2nj](LIT-tmp4m2nj.md)), discussed above. DPOK, ReFL and
+ImageReward are cited here and still not filed. The other filed relatives are Step-Video-T2V ([LIT-624](LIT-624.md)), which applies
 Diffusion-DPO to a video flow model and finds modest gains, and HyperNoise
 ([LIT-491](LIT-491.md)), which is what [SOTA-302](../practices.d/SOTA-302.md) rests on. That practice says to steer a
 *distilled* generator through its input noise, because the KL anchor that

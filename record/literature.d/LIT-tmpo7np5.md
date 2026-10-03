@@ -42,6 +42,8 @@ summary: >-
   below their published numbers. DiT-XL reaches 10.6 in one step. One run per
   cell.
 ---
+
+<!-- inactive-ok-file: SOTA-tmplxigi — Proposed practices this paper is the source of, named in its standing -->
 <!-- inactive-ok-file: SOTA-392 — Proposed; named as the practice this paper's reflow and progressive-distillation rows bear on, not as settled advice -->
 
 # LIT-tmpo7np5: One Step Diffusion via Shortcut Models
@@ -129,6 +131,8 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
   at their own budgets. The caption says the budgets differ.
 
 ## Standing in the anthology
+
+It takes its self-consistency targets from EMA weights, the opposite choice to [SOTA-tmplxigi](../practices.d/SOTA-tmplxigi.md), and does not ablate it.
 
 It extends Rectified Flow ([LIT-636](LIT-636.md)). The d = 0 term is that paper's
 straight-path velocity regression, which the authors adopt "for

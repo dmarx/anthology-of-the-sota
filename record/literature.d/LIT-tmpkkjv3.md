@@ -39,6 +39,8 @@ summary: >-
   at other budgets. Behind iCT on CIFAR-10. One run per row.
 ---
 
+<!-- inactive-ok-file: SOTA-tmpckzto SOTA-tmpqagel — Proposed practices this paper is the source of, named in its standing -->
+
 # LIT-tmpkkjv3: Mean Flows for One-step Generative Modeling
 
 Geng, Deng, Bai, Kolter and He, CMU and MIT (2025) — [ARXIV-2505.13447](https://arxiv.org/abs/2505.13447). Read
@@ -118,6 +120,8 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
   pretrained diffusion model.
 
 ## Standing in the anthology
+
+Its Table 2 comparison against the other from-scratch one-step models is the source of [SOTA-tmpqagel](../practices.d/SOTA-tmpqagel.md), and its adaptive loss weight (Table 1e) is the second group behind [SOTA-tmpckzto](../practices.d/SOTA-tmpckzto.md).
 
 It extends Flow Matching ([LIT-630](LIT-630.md)). The training target substitutes the
 conditional velocity for the marginal one, the step that makes flow

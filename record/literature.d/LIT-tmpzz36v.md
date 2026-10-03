@@ -37,6 +37,8 @@ summary: >-
   100 Euler steps (4.64 against 7.77).
 ---
 
+<!-- inactive-ok-file: SOTA-tmphvn35 — Proposed practices this paper is the source of, named in its standing -->
+
 # LIT-tmpzz36v: Improving and generalizing flow-based generative models with minibatch optimal transport
 
 Tong, Fatras, Malkin, Huguet, Zhang, Rector-Brooks, Wolf and Bengio, Mila
@@ -112,6 +114,8 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
   same 2-D tasks.
 
 ## Standing in the anthology
+
+With Multisample Flow Matching it is the source of [SOTA-tmphvn35](../practices.d/SOTA-tmphvn35.md), minibatch OT pairing for flows sampled with a coarse solver.
 
 It extends Flow Matching ([LIT-630](LIT-630.md)). The conditional objective becomes a
 statement about any coupling of the two endpoints, so the source can be data

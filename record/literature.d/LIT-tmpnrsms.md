@@ -38,6 +38,8 @@ summary: >-
   ImageNet-64, two-step 2.24 and 2.77, beating consistency distillation.
   Ablations are CIFAR-10 curves, one run each.
 ---
+
+<!-- inactive-ok-file: SOTA-tmpckzto SOTA-tmplxigi — Proposed practices this paper is the source of, named in its standing -->
 <!-- inactive-ok-file: SOTA-204 — Proposed; named as the practice this paper's curriculum ablation bears on, not as settled advice -->
 
 # LIT-tmpnrsms: Improved Techniques for Training Consistency Models
@@ -101,6 +103,8 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
   ImageNet-64.
 
 ## Standing in the anthology
+
+Two practices rest on it: the robust loss of §3.3 is [SOTA-tmpckzto](../practices.d/SOTA-tmpckzto.md), shared with MeanFlow, and the stop-gradient target of Prop. 1 is [SOTA-tmplxigi](../practices.d/SOTA-tmplxigi.md), which only this paper tests.
 
 It corrects Consistency Models ([LIT-093](LIT-093.md)). It keeps that paper's
 parameterization and consistency-training objective, and changes the

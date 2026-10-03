@@ -42,6 +42,8 @@ summary: >-
   84.56, and 84.92 at 14B; GenEval tracks the teacher at 1–4 steps. The
   diversity advantage over DMD2 is shown in samples only. One run per row.
 ---
+
+<!-- inactive-ok-file: SOTA-tmpp1pm2 — Proposed practices this paper is the source of, named in its standing -->
 <!-- inactive-ok-file: SOTA-392, SOTA-394 — Proposed; named as practices this paper informs, not as settled advice -->
 
 # LIT-tmpkegvh: Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency
@@ -125,6 +127,8 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
   sizes differ. Those rows place rCM, they do not test it.
 
 ## Standing in the anthology
+
+Its sCM-plus-DMD objective is [SOTA-tmpp1pm2](../practices.d/SOTA-tmpp1pm2.md).
 
 It extends sCM ([LIT-tmpt5h4h](LIT-tmpt5h4h.md)): the consistency term, tangent normalization,
 JVP rearrangement and TrigFlow wrapping are sCM's. sCM's adaptive weighting

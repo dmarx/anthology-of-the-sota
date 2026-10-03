@@ -45,6 +45,8 @@ summary: >-
 extended_by:
 - LIT-tmpkegvh
 ---
+
+<!-- inactive-ok-file: SOTA-tmpp1pm2 — Proposed practices this paper is the source of, named in its standing -->
 <!-- inactive-ok-file: SOTA-204 — Proposed; named as the practice this paper's continuous-time result argues against, not as settled advice -->
 
 # LIT-tmpt5h4h: Simplifying, Stabilizing and Scaling Continuous-Time Consistency Models
@@ -128,6 +130,8 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
   CD, PD and iCT rows.
 
 ## Standing in the anthology
+
+Its Fig. 7, where distribution matching alone loses recall, is why [SOTA-tmpp1pm2](../practices.d/SOTA-tmpp1pm2.md) keeps the consistency term primary.
 
 It extends Consistency Models ([LIT-093](LIT-093.md)), whose Remark 10 derived the
 continuous-time gradient this paper finally makes trainable (§2.2, Eq. 2).

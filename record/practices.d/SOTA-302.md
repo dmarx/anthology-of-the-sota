@@ -28,8 +28,10 @@ history:
     Conditions refined with Flow-GRPO (LIT-tmpdktqx), the opposite case: a
     multi-step flow sampled as an SDE has a closed-form per-step KL, and
     LoRA reward tuning with that anchor kept quality as judged by reward
-    models. The weight-space failure is scoped to distilled generators. Not
-    a test of this practice; promote_when is not met and status is
+    models. The weight-space failure is scoped to distilled generators. DDPO
+    (LIT-tmp7vihu), with no anchor, and Diffusion-DPO (LIT-tmp4m2nj), with
+    an offline one, are added as the multi-step cases either side. Not a
+    test of this practice; promote_when is not met and status is
     unchanged.
 tags:
 - generative-modeling
@@ -159,6 +161,14 @@ That is judged by reward models only, with no human evaluation, and nothing
 there tests a distilled model. So the argument here — the anchor is
 intractable in weight space — applies to step-distilled generators and does
 not extend to multi-step stochastic samplers.
+
+DDPO ([LIT-tmp7vihu](../literature.d/LIT-tmp7vihu.md)) shows what happens when the tractable anchor is not
+used: it has no KL term, over-optimizes (an incompressibility model decays
+to noise, and a model learns to write text that fools its LLaVA judge), and
+its checkpoints are picked by hand before quality deteriorates (its App. A).
+Diffusion-DPO ([LIT-tmp4m2nj](../literature.d/LIT-tmp4m2nj.md)) anchors offline instead, through β in a
+preference loss against the frozen reference. Neither tests a distilled
+model.
 
 **The Lipschitz condition is engineered, not verified.** Zero initialization
 makes it hold at the start; nothing measures that it holds later, and the

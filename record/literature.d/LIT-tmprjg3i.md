@@ -36,6 +36,8 @@ summary: >-
   numbers stay far from one-step quality: 38.86 FID at 4 Euler steps on
   ImageNet-32. One run per row.
 ---
+
+<!-- inactive-ok-file: SOTA-tmphvn35 — Proposed practices this paper is the source of, named in its standing -->
 <!-- inactive-ok-file: SOTA-392 — Proposed; named to say minibatch couplings are not an alternative to its few-step students -->
 
 # LIT-tmprjg3i: Multisample Flow Matching: Straightening Flows with Minibatch Couplings
@@ -111,6 +113,8 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
   same hyperparameters.
 
 ## Standing in the anthology
+
+It carries the image-scale evidence for [SOTA-tmphvn35](../practices.d/SOTA-tmphvn35.md), minibatch OT pairing for flows sampled with a coarse solver.
 
 It extends Flow Matching ([LIT-630](LIT-630.md)), which drew noise and data independently.
 This paper keeps the conditional straight path and changes only the pairing.

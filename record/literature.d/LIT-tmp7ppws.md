@@ -1,0 +1,164 @@
+---
+status: Active
+title: 'Inductive Moment Matching'
+version: 1
+tags:
+- generative-modeling
+- few-step-generation
+- flows-and-transport
+- inference-optimization
+- vision-and-graphics
+date: '2026-10-03'
+published: '2025-03-10'
+arxiv: '2503.07565'
+first_author: 'Zhou'
+keywords:
+- 'inductive-moment-matching'
+- 'maximum-mean-discrepancy'
+- 'marginal-preserving-interpolants'
+- 'ddim-interpolant'
+- 'few-step-from-scratch'
+- 'multi-particle-estimation'
+extends:
+- LIT-645
+compared_against:
+- LIT-093
+- LIT-447
+- LIT-448
+- LIT-643
+- LIT-tmpnrsms
+- LIT-tmpo7np5
+- LIT-tmpt5h4h
+- LIT-tmpkkjv3
+summary: >-
+  Zhou, Ermon and Song, Luma AI and Stanford (2025), [ARXIV-2503.07565](https://arxiv.org/abs/2503.07565). A
+  one-network, from-scratch few-step model that maps the interpolant's
+  marginal at t to the one at s < t. It is trained by matching, with MMD over
+  groups of samples, the distributions reached from t and from a nearby r.
+  Consistency models are its one-sample, first-moment case, and that case
+  collapses on ImageNet. ImageNet-256 FID is 8.05 at one step and 1.99 at
+  eight, with guidance at sampling time, so 16 evaluations. Training is 1.2M
+  steps at batch 4,096. CIFAR-10 2-step 1.98. One run per row.
+---
+
+# LIT-tmp7ppws: Inductive Moment Matching
+
+Zhou, Ermon and Song, Luma AI and Stanford (2025), ICML 2025 —
+[ARXIV-2503.07565](https://arxiv.org/abs/2503.07565). Read at v7 (14 May 2025), main text and Appendices A–J;
+v1 is 10 Mar 2025.
+
+## Key takeaways
+
+- **A sampler from any time to any earlier time** (§3.1, §4.1, Eq. 11). The
+  network g_θ(x_t, s, t) predicts a clean sample. One DDIM step from t to s
+  with that prediction gives x_s. The DDIM interpolant is self-consistent,
+  hence marginal-preserving (App. B.5, C.1), so iterating the map stays on
+  the data's interpolant marginals in principle.
+- **The loss compares distributions, not points** (§3.2, Eqs. 8, 12). For
+  s < r < t, samples pushed from t to s by the current weights are matched
+  to samples pushed from r to s by the stop-gradient weights. The divergence
+  is MMD with a Laplace kernel, estimated within groups of M samples that
+  share (s, r, t). Theorem 1 gives convergence in distribution if each
+  inductive stage is minimized exactly, with infinite data and capacity.
+- **Consistency models are its degenerate case** (§5, Lemma 1, App. G.1).
+  With one particle and the energy kernel −‖x − y‖², the loss reduces to
+  the consistency loss with L2. That estimator matches only the first
+  moment and drops MMD's repulsion term. iCT's Pseudo-Huber loss is a valid
+  kernel matching all moments (Lemma 2).
+- **More than two particles are needed** (Fig. 5). On ImageNet-256, training
+  collapses at M = 1, which is the consistency-model case, and at M = 2.
+  M = 4 gives the best FID per unit of compute. Larger M slows convergence,
+  because fewer (s, t) pairs fit in a batch.
+- **Results** (Tables 1, 2, 6). ImageNet-256, DiT-XL/2, guidance 1.5: FID
+  8.05, 3.99, 2.51 and 1.99 at 1, 2, 4 and 8 steps; 1.90 at 16 and 1.89 at
+  32. Guidance 1.25: 7.77 at one step. Without guidance, 6.69 at eight steps
+  (Table 5). Unconditional CIFAR-10: 3.20 at one step, 1.98 at two.
+- **Design choices that held at scale** (Table 3, Table 4, Fig. 11). The
+  linear flow-matching schedule with an Euler-style parameterization was
+  best on ImageNet (27.01 against 46–47 for the identity parameterization,
+  DiT-B, two steps). Constant decrements in η = σ/α for r(s, t) beat three
+  alternatives. Weighting by α_t and 1/(α_t² + σ_t²) on top of the ELBO
+  weight took FID from 96.43 to 27.43.
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"IMM surpasses diffusion models on ImageNet-256×256 with 1.99 FID using
+  only 8 inference steps"** (abstract). Guidance is applied at sampling time
+  as a weighted sum of conditional and unconditional outputs (Eq. 14), so
+  eight steps are 16 evaluations. DiT-XL/2 and SiT-XL/2 use the same
+  architecture at 250 × 2. The training budget is 1.2M iterations at batch
+  4,096 for every model size (Table 5), about 3,800 passes over ImageNet.
+  The paper does not compare it with the baselines' budgets.
+- **"Remains stable under various hyperparameters"** (abstract). The paper's
+  own figures show limits. It collapses at M ≤ 2 and is unstable at k = 14
+  for the r(s, t) gap (Fig. 10). FP16 needs a minimum t − r gap and a
+  different weighting exponent, and BF16 is advised against (App. I.6,
+  Table 8). The Fourier-embedding test against consistency models is on
+  CIFAR-10 only (Fig. 4).
+- **The iCT baseline on ImageNet is IMM's own**, using IMM's
+  parameterization and the Pseudo-Huber loss. It "often collapses" on IMM's
+  r(s, t) schedule and needed its gap hand-tuned (App. I.1). Its 34.24 and
+  20.3 are what that effort reached, and MeanFlow later copies them.
+- **"State-of-the-art 1.98 FID with 2-step generation … trained from
+  scratch"** (abstract). The nearest row, sCT at 2.06, is initialized from a
+  pretrained diffusion model ([LIT-tmpt5h4h](LIT-tmpt5h4h.md), App. G).
+- **Theorem 1 is about exact minimization**; practice takes one optimizer
+  step per inductive stage (§4.1). Nothing bounds the gap.
+- **Table 1 credits 2-Rectified Flow to Salimans & Ho (2022).** The 4.85 row
+  is Rectified Flow's.
+- **FID only, one run per row.** There is no precision, recall or diversity
+  measure.
+
+## Which comparisons are like for like
+
+- **ImageNet-256 against DiT and SiT** shares the DiT-XL/2 architecture,
+  with time s added (App. I.1), and the SD-VAE latent space. The training
+  budget is not matched, and guidance doubles IMM's evaluations as it does
+  theirs.
+- **Against Shortcut and iCT** the architecture is shared. Shortcut's rows
+  are copied from its paper, at batch 256 and 800K iterations. iCT's rows
+  are IMM's own run.
+- **The CIFAR-10 table** mixes copied rows from distillation and
+  from-scratch methods. Only IMM's rows are run here.
+
+## Standing in the anthology
+
+It extends the stochastic-interpolant framework ([LIT-645](LIT-645.md)) by generalizing
+the interpolant to one between data and any later point x_t, and asking
+that it preserve the marginals at each time (§3.1, Defs. 1–2). The training
+signal is a distribution distance between maps, not a velocity regression.
+
+That signal fixes less than a flow map does. The paper's own §3.1 says that
+matching the marginal at s "does not necessarily imply" the model's
+conditional equals the interpolant's, and that the minimizer "is not unique
+and, under mild assumptions, a deterministic minimizer exists" (App. B.1
+repeats it after Lemma 3, pointing to B.6). So IMM learns some marginal-preserving
+map from t to s, and nothing in the loss makes it the probability-flow
+ODE's. [THEORY-tmpjf41h](../theory.d/THEORY-tmpjf41h.md), which places consistency, shortcut, MeanFlow and
+progressive distillation as estimators of that one two-time flow map,
+treats IMM as the boundary of its account for this reason. The two meet
+only at IMM's one-particle case, which is a consistency model (Lemma 1).
+
+Its from-scratch comparisons are iCT ([LIT-tmpnrsms](LIT-tmpnrsms.md)), which it re-implements
+on ImageNet-256 (34.24 at one step against IMM's 7.77), Shortcut Models
+([LIT-tmpo7np5](LIT-tmpo7np5.md)) at 10.60, 7.80 and 3.80 for 1, 4 and 128 steps, and sCT
+([LIT-tmpt5h4h](LIT-tmpt5h4h.md)) at 2.06 on CIFAR-10 two-step against IMM's 1.98. Its
+many-step references are DiT-XL/2 ([LIT-448](LIT-448.md)) at 2.27 and SiT-XL/2 ([LIT-447](LIT-447.md))
+at 2.15, both at guidance 1.5. On CIFAR-10 it lists DMD ([LIT-643](LIT-643.md)) at 3.77
+and consistency distillation with LPIPS ([LIT-093](LIT-093.md)) at 2.93 in two steps,
+copied rows.
+
+MeanFlow ([LIT-tmpkkjv3](LIT-tmpkkjv3.md)) beats it at one and two evaluations two months
+later, at 240 epochs and batch 256.
+
+**On [SOTA-206](../practices.d/SOTA-206.md) it is the strongest support in this batch.** One model runs
+at 1, 2, 4, 8, 16 and 32 steps, and FID falls at each doubling until it
+saturates near 16. The same training run serves the whole range. Table 7
+shows the dial is not free: the weighting that gives the best eight-step
+FID (2.01) gives a slightly worse one-step FID (8.28 against 7.97).
+
+Filed without a NOTE: the takeaways come from one full reading of v7's main
+text and appendices. The proofs in Appendices B and H were followed, not
+checked. Figs. 5–11 are read through the text's description.

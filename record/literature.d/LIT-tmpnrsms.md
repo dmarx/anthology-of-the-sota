@@ -1,0 +1,157 @@
+---
+status: Active
+title: 'Improved Techniques for Training Consistency Models'
+version: 1
+tags:
+- generative-modeling
+- few-step-generation
+- model-stability
+- analysis-and-evaluation
+date: '2026-10-03'
+published: '2023-10-22'
+arxiv: '2310.14189'
+first_author: 'Song'
+keywords:
+- 'consistency-training'
+- 'improved-consistency-training'
+- 'pseudo-huber-loss'
+- 'ema-teacher'
+- 'discretization-curriculum'
+- 'lognormal-noise-schedule'
+corrects:
+- LIT-093
+compared_against:
+- LIT-067
+- LIT-075
+- LIT-093
+- LIT-722
+- LIT-tmp7ppws
+- LIT-tmpkkjv3
+- LIT-tmpt5h4h
+summary: >-
+  Song and Dhariwal, OpenAI (2023), [ARXIV-2310.14189](https://arxiv.org/abs/2310.14189). Consistency training
+  from random weights, without a teacher or LPIPS. The teacher network takes
+  no EMA, because with one the limiting objective carries no information
+  about the data. A Pseudo-Huber loss replaces LPIPS, whose ImageNet features
+  can leak into FID. The step count doubles on a schedule, and noise levels
+  are drawn log-normally. One-step FID is 2.51 on CIFAR-10 and 3.25 on
+  ImageNet-64, two-step 2.24 and 2.77, beating consistency distillation.
+  Ablations are CIFAR-10 curves, one run each.
+---
+
+<!-- inactive-ok-file: SOTA-tmpckzto SOTA-tmplxigi — Proposed practices this paper is the source of, named in its standing -->
+<!-- inactive-ok-file: SOTA-204 — Proposed; named as the practice this paper's curriculum ablation bears on, not as settled advice -->
+
+# LIT-tmpnrsms: Improved Techniques for Training Consistency Models
+
+Song and Dhariwal, OpenAI (2023), ICLR 2024 — [ARXIV-2310.14189](https://arxiv.org/abs/2310.14189). Known as
+"iCT". Read at v1 (22 Oct 2023), main text and Appendices A–B; no later
+version on arXiv.
+
+## Key takeaways
+
+- **The teacher in consistency training should be the student, not its
+  EMA** (§3.2, Prop. 1, Fig. 2a). Consistency Models justified training
+  with an EMA teacher by an asymptotic argument (Theorem 2 there). On a
+  one-point data distribution, the limiting objective with θ⁻ ≠ θ does not
+  depend on the data at all (Eq. 6), so it cannot learn. With θ⁻ = θ the
+  scaled gradient converges to a regression onto the data (Eq. 7). Setting
+  the teacher EMA rate to zero improves FID with both LPIPS and L2.
+- **Pseudo-Huber instead of LPIPS** (§3.3, Eq. 8, Fig. 2). LPIPS is trained
+  on ImageNet, as the Inception network that scores FID is, so it can
+  inflate FID. Pseudo-Huber, √(‖x − y‖² + c²) − c with c = 0.00054·√d,
+  reduces update variance against L2 (Fig. 6b). With a larger step-count
+  range it overtakes LPIPS on CIFAR-10.
+- **A doubling curriculum on the step count** (§3.4, Eq. 9, Fig. 3). FID
+  improves as a power law in N until it saturates, so N is capped at 1,281.
+  N doubles from 10 to 1,280 at fixed intervals. Against constant,
+  square-root, linear, square and cosine shapes with the same endpoints,
+  the exponential schedule gives the best FID (Fig. 3c).
+- **Smaller fixes that add up** (§3.1, §3.5). Weighting by
+  1/(σ_{i+1} − σ_i) favours low noise. Noise levels are drawn log-normally
+  (mean −1.1, std 2.0), not uniformly over the grid. Dropout of 0.3 on
+  CIFAR-10 helps, against the earlier choice of none. A Fourier embedding
+  scale of 0.02 instead of 16 lets continuous-time training converge from
+  random weights (Fig. 1b). AdaGN hurts and is removed (App. B).
+- **Results** (Tables 2–3). CIFAR-10, unconditional: iCT 2.83 / 2.46 and
+  iCT-deep 2.51 / 2.24 at one / two steps. ImageNet-64, class-conditional:
+  iCT 4.02 / 3.20 and iCT-deep 3.25 / 2.77, recall 0.63. Against
+  consistency distillation with LPIPS at 6.20 / 4.70, and the original
+  consistency training at 13.0 / 11.1.
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"Surpassing those obtained via distillation"** (abstract). The
+  distillation rows are consistency distillation and progressive
+  distillation as of 2023. Both progressive-distillation rows, 8.34 on
+  CIFAR-10 and 15.39 on ImageNet-64, are this paper's own re-implementation
+  (Tables 2–3, marked ∗). The same diffusion teachers do better with many
+  steps: EDM at 2.04 on CIFAR-10, and 2.44 at 79 steps on ImageNet-64
+  against iCT-deep's 2.77.
+- **Every ablation is on CIFAR-10, as curves** (Figs. 1–4). ImageNet is said
+  to show "similar improvements" (§3), with no numbers. Each curve is one
+  run.
+- **The budgets are large and unmatched.** ImageNet-64 models train 800K
+  iterations at batch 4,096, CIFAR-10 400K at 1,024 (App. B). Baseline rows
+  are copied, except those marked ∗.
+- **The EMA argument is proved on a point mass** (Prop. 1, App. A). It
+  refutes the general argument by counterexample. That a zero EMA is best
+  on real data rests on Fig. 2a.
+- **The c heuristic and the N cap are tuned on CIFAR-10** and carried to
+  ImageNet-64.
+
+## Standing in the anthology
+
+Two practices rest on it: the robust loss of §3.3 is [SOTA-tmpckzto](../practices.d/SOTA-tmpckzto.md), shared with MeanFlow, and the stop-gradient target of Prop. 1 is [SOTA-tmplxigi](../practices.d/SOTA-tmplxigi.md), which only this paper tests.
+
+It corrects Consistency Models ([LIT-093](LIT-093.md)). It keeps that paper's
+parameterization and consistency-training objective, and changes the
+teacher, metric, schedule and weighting. The original justified consistency
+training with an EMA teacher through two asymptotic arguments. §3.2 shows
+the first one fails whenever the teacher differs from the student, which
+an EMA teacher always does, and names that as the defect the paper
+removes. Consistency training's FID on ImageNet-64 goes from [LIT-093](LIT-093.md)'s 13.0
+to 3.25 in one step.
+
+Its tables set it against consistency distillation ([LIT-093](LIT-093.md)) and against
+progressive distillation ([LIT-067](LIT-067.md)), re-run here. The 15.39 ImageNet-64 row
+that DMD, DMD2 and DMAD later cite is this paper's re-implementation, which
+[LIT-067](LIT-067.md)'s note records only as "copied from earlier papers". Its reference
+diffusion models are EDM ([LIT-075](LIT-075.md)), re-run, and Score SDE ([LIT-722](LIT-722.md)).
+iCT-deep's two-step 2.24 on CIFAR-10 matches Score SDE's 2.20, with the
+same architecture and 2,000 steps.
+
+**On [SOTA-337](../practices.d/SOTA-337.md) it is an early instance of the concern, met the other
+way.** It cites the practice's source, Kynkäänniemi et al. ([LIT-563](LIT-563.md)), to
+drop LPIPS, an ImageNet-trained network in the training loss, rather than
+to check FID in another feature space. For the same reason it leaves
+FastGAN- and StyleGAN-XL-based baselines out of its tables (§4). It still
+reports FID, Inception score and precision and recall, all from
+ImageNet-trained networks.
+
+**On [SOTA-204](../practices.d/SOTA-204.md) it is a second instance, from the same author and the same
+method.** It runs the comparison that practice lacked: the step-count
+curriculum against a constant N and four other shapes at fixed endpoints
+(Fig. 3c), with the exponential shape best. Its bias/variance reasoning is
+the original's. The setting is still consistency training, and the
+promotion condition asks for another. sCM ([LIT-tmpt5h4h](LIT-tmpt5h4h.md)) later argues the
+other way: in continuous time there is no N to schedule.
+
+**On [SOTA-206](../practices.d/SOTA-206.md) it adds a measured case.** Two steps beat one in every row,
+by 0.27 to 0.82 FID.
+
+Its successors drop one choice and keep the rest. sCM takes the
+continuous-time limit this paper made converge from random weights, and
+then initializes from a diffusion model anyway. MeanFlow ([LIT-tmpkkjv3](LIT-tmpkkjv3.md))
+uses an adaptive weight close to Pseudo-Huber. Inductive Moment Matching
+([LIT-tmp7ppws](LIT-tmp7ppws.md)) shows Pseudo-Huber is a valid MMD kernel and re-runs iCT on
+ImageNet-256, where it reports frequent collapse. Shortcut Models
+([LIT-tmpo7np5](LIT-tmpo7np5.md)) takes its bootstrap targets from EMA weights, the opposite
+of this paper's finding. Its setting is different: a step-size-conditioned
+flow, not consistency training.
+
+Filed without a NOTE: the takeaways come from one full reading of v1,
+including the appendices and the proof of Prop. 1. Figs. 1–4 have no tabled
+values and are described, not quantified.

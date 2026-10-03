@@ -1,0 +1,169 @@
+---
+status: Active
+title: 'Normalizing Flows are Capable Generative Models'
+version: 1
+tags:
+- generative-modeling
+- flows-and-transport
+- model-architecture
+date: '2026-10-03'
+published: '2024-12-09'
+arxiv: '2412.06329'
+first_author: 'Zhai'
+keywords:
+- 'tarflow'
+- 'transformer-autoregressive-flow'
+- 'block-autoregressive-flow'
+- 'gaussian-noise-augmentation'
+- 'score-based-denoising'
+- 'guidance-for-normalizing-flows'
+implementations:
+- 'STARFlow'
+compared_against:
+- LIT-tmp086g1
+- LIT-630
+- LIT-075
+- LIT-699
+summary: >-
+  Zhai et al., Apple (2024), [ARXIV-2412.06329](https://arxiv.org/abs/2412.06329). TarFlow stacks causal
+  Transformers over image patches as affine autoregressive flows, reversing
+  the order between blocks, trained by exact maximum likelihood. A
+  likelihood model reaches 2.99 bits/dim on unconditional ImageNet 64×64,
+  below every diffusion and autoregressive number it quotes (Table 2).
+  Sampling needs three additions: Gaussian input noise about 25× the
+  dequantization noise, a Tweedie denoising step using the flow's own score,
+  and classifier-free guidance on the affine parameters. Best FIDs are 2.66
+  at ImageNet 64 and 5.03 at 128, against quoted 1.55 (EDM) and 1.94.
+  Sampling is sequential: 32 samples at 64×64 take about two minutes on one
+  A100.
+extended_by:
+- LIT-tmpnm3dm
+---
+
+<!-- inactive-ok-file: THEORY-tmpx14qc — Proposed theory this paper's ablation supports, named in its standing -->
+
+# LIT-tmpvcmj8: Normalizing Flows are Capable Generative Models
+
+Zhai, Zhang, Nakkiran, Berthelot, Gu, Zheng, Chen, Bautista, Jaitly and
+Susskind, Apple (2024) — [ARXIV-2412.06329](https://arxiv.org/abs/2412.06329). ICML 2025. Read at v3 (6 Jun
+2025); v1 is 9 Dec 2024.
+
+## Key takeaways
+
+- **The architecture is MAF with a Transformer and patches** (§2.2–2.3,
+  Eqs. 3–6, Fig. 2). The image becomes a sequence of N patches of dimension
+  D. Each of T flow blocks permutes the sequence (reversing it after the
+  first), runs a causal ViT to predict a shift μ and log-scale α for each
+  patch from the patches before it, and applies the affine map. The
+  log-determinant is −Σα, so the loss is ½‖z‖² plus a sum of linear terms.
+  Training is one parallel causal pass. Sampling inverts each block
+  patch by patch.
+- **Likelihood: 2.99 bits/dim on unconditional ImageNet 64×64** (§3.1,
+  Table 2). The quoted next best are NFDM 3.20, Flow Matching 3.31 and VDM
+  3.40 among diffusion and flow-matching models, and the Routing
+  Transformer's 3.43 among autoregressive ones. The model is 2-768-8-8,
+  trained 60 epochs at batch 384 on 32 A100s, in float32 because bfloat16
+  gave numerical problems (App. C, Table 7).
+- **Sampling needs Gaussian noise, not dequantization noise** (§2.4, §3.3,
+  Fig. 4). Training on uniform noise of one bin width gave samples with
+  "constant numerical issues" and nothing sensible. With pixels in
+  [−1, 1], the best Gaussian σ for sample quality is about 0.05, against
+  the dequantization noise's standard deviation of 0.002. Raw-sample FID
+  favours the smallest σ, and after denoising a moderate one wins.
+- **The flow denoises its own samples** (§2.5, Eqs. 7–8). Tweedie's
+  formula, x = y + σ²∇log p_model(y), with the score from backpropagating
+  through the model. It costs about two forward calls (App. D). The
+  authors read its success as showing that learning the noisy density
+  suffices to recover the score.
+- **Guidance works on a flow** (§2.6, Eqs. 9–10, App. B). Class-conditional
+  guidance extrapolates μ and α between conditional and unconditional
+  predictions, as classifier-free guidance does. Unconditional models are
+  guided against a copy with temperature-perturbed attention. FID falls
+  steeply with guidance weight (Fig. 5).
+- **Design ablations** (§3.5–3.6, Fig. 6, Table 5). At a fixed total of
+  T × K layers, loss and FID are U-shaped with the optimum near T = K. One
+  block (a single autoregressive pass) fails outright, at FID 267. Making
+  the flow volume-preserving gives FID 51.0 against 5.7 at guidance 2.
+  Removing the causal masks (channel coupling) gives 20.4. The authors say
+  all three train at similar cost.
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"Generates samples with quality and diversity comparable to diffusion
+  models, for the first time with a stand-alone NF model"** (abstract).
+  The FIDs trail every strong diffusion row the paper quotes:
+  - conditional ImageNet 64: **2.66** against EDM's 1.55 and ADM's 2.09
+    (Table 3);
+  - conditional ImageNet 128: **5.03** against Simple Diffusion's 1.94 and
+    ADM-G's 2.97 (Table 4);
+  - unconditional ImageNet 64: **18.42** against 13.93 quoted for Flow
+    Matching (Table 6).
+
+  It beats the GAN rows and iCT-deep's 3.25. "Comparable" rests on the
+  samples in Fig. 3 and on being "approaching" diffusion in §3.2.
+  Diversity is not measured apart from FID.
+- **The likelihood model and the sampling models are different models.**
+  The 2.99 comes from a run on uniform dequantization noise, which the
+  paper says cannot sample. Every FID comes from a model trained on
+  Gaussian σ = 0.05 or 0.15, whose likelihood is not reported.
+- **Guidance and attention temperature are searched per setting** (§3.2):
+  "we search for the best guidance weights (and attention temperature in
+  the unconditional case)". The noise level is searched as well (§3).
+- **The noise ablation is short.** Its models train 100 epochs at batch 512,
+  against 320 for the reported conditional runs (§3.3, Table 7).
+- **Sampling cost is reported once, and it is high** (App. D). A guided
+  batch of 32 at 64×64 from the 2-768-8-8 model takes about two minutes on
+  an A100 with a KV cache. Sampling is sequential over patches in every
+  block. No baseline's sampling time is given.
+- **One run per configuration, no seeds.** All jobs finished within 14
+  days, and the authors expect longer training to help (App. C).
+
+## Which comparisons are like for like
+
+- **The internal ablations are**: VP, channel coupling and TarFlow share
+  the architecture, noise and denoising (Table 5); the depth sweeps share
+  everything but T and K (Fig. 6).
+- **No external comparison is.** Every baseline row in Tables 2, 3, 4 and 6
+  is copied from its paper, with that paper's architecture, compute and
+  sampler. TarFlow's compute (up to 32 A100s for up to 14 days) is given;
+  none of the baselines' is set beside it. EDM's 1.55 is unguided, while
+  TarFlow's 2.66 uses a searched guidance weight, and 1.55 is not EDM's
+  best ImageNet 64 number: [LIT-075](LIT-075.md) records 1.36 after retraining.
+- **The Flow Matching unconditional FID does not match the record.** Table
+  6 quotes 13.93 for Flow Matching, cited to Lipman et al.; [LIT-630](LIT-630.md)
+  records 14.45 for FM-OT on ImageNet 64 from that paper's Table 1. The
+  source of 13.93 is not given.
+
+## Standing in the anthology
+
+Its one-block ablation (Fig. 6b, FID 267 at matched total layers) is part of the evidence for [THEORY-tmpx14qc](../theory.d/THEORY-tmpx14qc.md), that one affine autoregressive block cannot be universal.
+
+TarFlow puts exact-likelihood flows back in the comparison. On
+**likelihood** it wins: its Table 2 places it below Flow Matching ([LIT-630](LIT-630.md)),
+3.31, and below the coupling-flow reference Glow ([LIT-tmp086g1](LIT-tmp086g1.md)), 3.81. On
+**samples** it does not catch up, by its own tables. Its best conditional
+ImageNet 64 FID, 2.66, is behind EDM ([LIT-075](LIT-075.md)) at 1.55 and behind
+ADM ([LIT-699](LIT-699.md)) at 2.09, and at 128 ADM-G's 2.97 is still ahead of TarFlow's
+5.03. Those rows are quoted, not rerun, so they say nothing about matched
+compute. The paper's own claim is that NFs are "capable", which the
+numbers bear out, not that they are as good.
+
+What it takes to sample is the interesting part, because it moves a flow
+towards a diffusion model. Training on Gaussian-noised data and denoising by
+Tweedie's formula is the first step of a score model; guidance is borrowed
+from diffusion; and the appendix notes the block-by-block trajectories
+"highly resemble those from a Diffusion model" (App. D.1). The likelihood
+benchmark, meanwhile, is won by a model that cannot sample. The flow
+earns its place as a generator only after giving up the exact-likelihood
+setting that made it a flow.
+
+It descends from Real NVP ([LIT-tmpgi092](LIT-tmpgi092.md)) and Glow through MAF, which is not
+filed; its ablation keeps Real NVP's non-volume-preserving form and shows
+why. STARFlow ([LIT-tmpnm3dm](LIT-tmpnm3dm.md)) extends it to latents, and keeps the
+noise-augmented training.
+
+Filed without a `NOTE`: the takeaways come from one full reading of v3,
+appendices included, done for this filing. Figure values are read only
+where the text states them.

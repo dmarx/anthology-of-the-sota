@@ -24,7 +24,7 @@
 # practice drawn from it still hold. Two schemes, two status fields, and the
 # relationship between them is a citation the lint can follow. See ADR-002.
 vocabularies:
-  # The twenty-six topics: the primary axis of both the practice registry and the
+  # The twenty-eight topics: the primary axis of both the practice registry and the
   # reading list, in the order the indexes show them.
   #
   # The first seven are transcribed from the 2024 naming-conventions document;
@@ -82,9 +82,9 @@ vocabularies:
     # What the axis IS, which until luria 0.25.0 could only be said in a
     # comment no view could reach (LU-#279).
     blurb: >-
-      The twenty-six kinds of claim this anthology files against — the
+      The twenty-eight kinds of claim this anthology files against — the
       primary axis of both the practice registry and the reading list, and the
-      same twenty-six for each (ADR-026). The filing rule is the point: take a domain
+      same twenty-eight for each (ADR-026). The filing rule is the point: take a domain
       topic when the claim is ABOUT the domain; a claim merely discovered in
       one still takes its kind. The axis organizes the record, it does not
       bound it: content the list cannot place is evidence the list is short
@@ -240,6 +240,19 @@ vocabularies:
       capability-thresholds:
         label: Capability thresholds
         blurb: a capability that arrives abruptly rather than smoothly — emergence at scale, grokking after long training, phase transitions in learning — which axis it turns on, and whether the discontinuity is real or an artefact of how it was measured
+      # Subtopics, added by the decision that filed the flow-methods batch.
+      # `generative-modeling` was on 169 documents and `inference-optimization`
+      # on 89, and the flow and few-step work inside them could not be browsed
+      # apart from GANs, tokenizers, serving and speculative decoding. luria has
+      # no parent-child relation between terms short of promoting the
+      # vocabulary to a scheme, so these follow `tiny-models`: secondary-only
+      # words carried beside their parent topic, never instead of it.
+      flows-and-transport:
+        label: Flows and transport
+        blurb: generative models as learned transport between distributions — flow matching, rectified flow, stochastic interpolants, normalizing flows and neural ODEs, and the paths, couplings and time schedules they are trained on; Gaussian diffusion is the special case (THEORY-106). A subtopic, worn beside `generative-modeling`
+      few-step-generation:
+        label: Few-step generation
+        blurb: getting a sample in one or a few network evaluations — progressive, distribution-matching and adversarial distillation, consistency, flow-map, shortcut and mean-flow models, and fast ODE solvers. A subtopic, worn beside `generative-modeling` or `inference-optimization`
   # The old schema had three of these (`experimental`, `standard`,
   # `deprecated`) and used one: all 119 recommendations were `standard`,
   # because the two branches that could set the others read a field no

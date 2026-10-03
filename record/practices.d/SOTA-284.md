@@ -18,7 +18,14 @@ consensus_note: >-
   effect on two. What nobody has done is use a coverage criterion to choose,
   so the recommendation has evidence for its motivation and none for itself.
 title: 'Choose the checkpoint you post-train from by how much mass it puts on good rare responses, not by validation cross-entropy'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-10-03'
+  note: >-
+    A condition added from Gao et al. (LIT-tmpylcrx): with a learned scorer
+    in place of an exact verifier, best-of-N overoptimizes as N grows.
+    Recommendation and status unchanged.
 tags:
 - analysis-and-evaluation
 - adaptation-and-tuning
@@ -102,6 +109,11 @@ linear models for the optimizer results.
 necessary and sufficient for BoN. The step to RL is a cited empirical
 regularity that BoN predicts post-RL performance, and the source says the
 minimal conditions for RL are not known.
+
+**The verifier is assumed exact.** With a learned scorer choosing the best
+of N, Gao et al. ([LIT-tmpylcrx](../literature.d/LIT-tmpylcrx.md)) find true quality peaks and then falls as N
+grows, at a point set by the scorer's size and data; coverage says nothing
+about that.
 
 **Sequence-level, where reasoning wants answer-level.** For tasks that only
 need the right answer, the relevant quantity is weaker than the one analysed —

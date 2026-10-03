@@ -11,7 +11,7 @@ consensus_note: >-
   baseline while changing something else. The dissent is about the objective's
   details, not about dropping the critic.
 title: 'Estimate the RL baseline from a group of samples for the same prompt instead of training a critic'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-07'
@@ -28,6 +28,17 @@ history:
     policy-gradient RL is the right family. Evolution strategies at scale is
     a rival paradigm, now a Proposed practice of its own and recorded in
     `compared_against:`. The recommendation is unchanged.
+- version: 4
+  date: '2026-10-03'
+  note: >-
+    Flow-GRPO (LIT-tmpdktqx) added as a source: the first evidence in the
+    record from outside language, GRPO's group baseline run unchanged on a
+    flow-matching image model. It carries a condition on group size (24
+    stable; 12 and 6 collapsed). DDPO (LIT-tmp7vihu) is noted as the
+    earlier critic-free case, with a running per-prompt baseline rather
+    than a group. DPOK (LIT-tmp9ntgf) is noted as the opposite choice, a
+    learned critic, compared only against no baseline. The recommendation
+    and consensus are unchanged.
 tags:
 - adaptation-and-tuning
 date: '2026-09-07'
@@ -40,6 +51,7 @@ source:
 - LIT-167
 - LIT-168
 - LIT-180
+- LIT-tmpdktqx
 introduced_by:
 - LIT-127
 implementations: []
@@ -87,6 +99,34 @@ Three independent groups examined this objective closely enough to publish a
 correction to it, and none of them proposed bringing the critic back. That is
 what `converged` is recording here: not that nobody has looked, but that
 people looked hard and changed something else.
+
+## Outside language, and how big the group has to be
+
+Flow-GRPO ([LIT-tmpdktqx](../literature.d/LIT-tmpdktqx.md)) runs the group baseline on an image generator.
+GRPO's group-normalized advantage, clipped ratio and KL penalty are used
+unchanged on SD3.5-M with LoRA, after the flow model's sampler is turned
+into a same-marginal SDE so that each step is a Gaussian policy. There is
+still no critic. GenEval rises from 0.63 to 0.95 and OCR accuracy from 0.59
+to 0.92, on rewards it is also trained on.
+
+It adds a condition the language papers did not state: **the group has to
+be large enough for the baseline to hold.** At 24 samples per prompt
+training was stable; at 12 and at 6 it collapsed on PickScore (its Fig. 5).
+One run per setting, on one task.
+
+DDPO ([LIT-tmp7vihu](../literature.d/LIT-tmp7vihu.md), App. D.3) is the earlier case, and a weaker one: it
+also drops the critic, but its baseline is a running mean and standard
+deviation of each prompt's rewards across iterations, not a group sampled
+together, and it does not compare against a critic. Flow-GRPO's per-prompt
+group is the within-step version of the same idea.
+
+DPOK ([LIT-tmp9ntgf](../literature.d/LIT-tmp9ntgf.md), App. A.5) went the other way and trained a critic. A
+learned V(x_t, z) raised ImageReward on one prompt from 0.86 to 1.51
+against no baseline at all, and v3 uses it for multi-prompt training. That
+is a critic against nothing, not against a group or per-prompt baseline,
+so it does not bear on the choice this practice makes. Its v1 had reported
+the critic destabilizing multi-prompt training, and v3 dropped that
+without explanation.
 
 ## What this does not say
 

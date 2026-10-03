@@ -17,6 +17,7 @@ history:
     loss. The account is unchanged, and it stays Active.
 tags:
 - generative-modeling
+- flows-and-transport
 - training-optimization
 date: '2026-09-25'
 source:
@@ -44,6 +45,8 @@ summary: >-
   network output and the sampling schedule. "Straight" describes the
   conditional path to one data point, not the marginal ODE a sampler
   integrates.
+extended_by:
+- THEORY-tmprwlgq
 ---
 
 # THEORY-106: Gaussian flow matching is a diffusion model; what separates the named recipes is loss weighting, network output and sampling schedule

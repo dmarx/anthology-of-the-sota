@@ -9,11 +9,16 @@ consensus_note: >-
   framework and SiT share authors), but the claim rests on an identity
   rather than on a sweep: the coefficient does not enter the velocity or the score, so
   it cannot be downstream of training. Nothing in the record contests it.
-  `emerging` because no second group has reported tuning it, and because the
-  measured gain is on one dataset — the framework paper itself reports no
-  image metric.
+  A second group now uses the freedom: Flow-GRPO (LIT-tmpdktqx) converts a
+  trained flow-matching model's ODE sampler to a same-marginal SDE after
+  training and sets the coefficient (a = 0.7) as an exploration knob for RL,
+  chosen by how fast reward rises, not for sample quality, and reports no
+  quality metric against it. `emerging` because no second group has
+  reported tuning it for sample quality, and because the measured gain is on
+  one dataset — the framework paper itself reports no image metric. Read as
+  of 2026-10.
 title: 'Tune the stochastic sampler''s diffusion coefficient after training; it is not fixed by the forward process'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-24'
@@ -23,8 +28,18 @@ history:
     strength can be tuned after training, and SiT takes the result from it.
     SiT stays as a source, for the measurement. The recommendation is
     unchanged.
+- version: 3
+  date: '2026-10-03'
+  note: >-
+    The consensus note's "no second group has reported tuning it" is
+    amended. Flow-GRPO (LIT-tmpdktqx) is a second group choosing the
+    coefficient after training on a frozen flow model, but as an RL
+    exploration knob rather than for sample quality, so it is not a second
+    measurement of what tuning buys and is not added as a source. Consensus
+    stays emerging.
 tags:
 - generative-modeling
+- flows-and-transport
 date: '2026-09-20'
 source:
 - LIT-447
@@ -112,6 +127,13 @@ The coefficient may need regularizing near an endpoint for some interpolants
 — the linear and GVP interpolants carry a term that makes the SDE hard to
 integrate there — so "free to choose" is free within a range that the
 interpolant sets.
+
+The criterion can be something other than sample quality. Flow-GRPO
+([LIT-tmpdktqx](../literature.d/LIT-tmpdktqx.md)) sets the coefficient on a frozen flow-matching model to make
+its sampler a Gaussian policy that explores, and picks a = 0.7 by how fast an
+RL reward rises; too much noise drives images to zero reward. That uses the
+freedom this practice describes and measures nothing about what it buys in
+FID.
 
 Requires a stochastic sampler. A deterministic ODE sampler has no diffusion
 coefficient to tune, so this and [SOTA-207](SOTA-207.md) apply in different cases rather

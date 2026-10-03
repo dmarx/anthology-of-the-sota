@@ -9,17 +9,26 @@ promote_when: >-
   rectified-flow model, at matched total training compute and at a scale
   beyond CIFAR-10, with the many-step quality of the reflowed model also
   reported.
-consensus: unreplicated
+consensus: contested
+contested_by:
+- LIT-tmpyqrl4
 consensus_note: >-
-  One source, Rectified Flow (LIT-636, Table 1a), on CIFAR-10. The large
-  video reports reach few steps by distillation without reflow: CausVid and
-  Self Forcing use distribution matching (LIT-631, LIT-629), and
-  HunyuanVideo distils guidance (LIT-620). DMAD (LIT-770) distils
-  the rectified-flow Wan2.1 to four steps by distribution matching with no
-  reflow. That fits the practice, but it is adoption and not a test. Read
-  as of 2026-10.
+  Contested at scale by InstaFlow (LIT-tmpyqrl4). On Stable Diffusion 1.4 at
+  matched budget (100K steps, 3.2M generated pairs), reflow then
+  distillation beats distilling directly: one-step FID-5k 31.0 against 40.9,
+  FID-30k 20.0 against 34.6. Its teacher is a curved diffusion model and its
+  distiller an LPIPS regression, so it narrows the practice to a teacher that
+  is already a rectified flow rather than refuting that case. Lee et al.
+  (LIT-tmptpra5) refine reflow (one round, trained like a distillation) and
+  do not test the ordering. Shortcut Models (LIT-tmpo7np5) find progressive
+  distillation alone ahead of one reflow at one step from a flow-matching
+  teacher, with no reflow-then-distil arm. The video line reaches few steps
+  by distillation without reflow: CausVid and Self Forcing (LIT-631,
+  LIT-629), HunyuanVideo's guidance distillation (LIT-620), DMAD (LIT-770)
+  and rCM (LIT-tmpkegvh) on the rectified-flow Wan2.1. That is adoption,
+  not a test. Read as of 2026-10.
 title: 'To get a one-step sampler from a rectified flow, distil it; treat reflow as an optional extra pass, and keep the pre-reflow model for many steps'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-10-02'
@@ -27,8 +36,25 @@ history:
     Adds DMAD (LIT-770) to the consensus note as one more
     distribution-matching distillation of a rectified-flow model without
     reflow. Adoption, not a test; status and consensus unchanged.
+- version: 3
+  date: '2026-10-03'
+  note: >-
+    InstaFlow (LIT-tmpyqrl4) and Lee et al. (LIT-tmptpra5) are now filed.
+    InstaFlow is the at-scale, matched-budget comparison and finds reflow
+    first better, from a diffusion teacher with regression distillation, so
+    it is recorded as contesting the practice and consensus moves from
+    unreplicated to contested. The Conditions narrow the claim: for
+    regression distillation from a curved diffusion teacher, reflow is not
+    optional. Lee et al. are added as a refinement (if you reflow, once, with
+    U-shaped timesteps and LPIPS-Huber) and Shortcut Models' Table 1 as
+    adjacent evidence. The comment saying both papers were not in the record
+    is updated, and InstaFlow is removed from Rectified Flow's
+    implementations so the two documents agree. Status stays Proposed: no
+    comparison yet starts from a rectified flow at scale.
 tags:
 - generative-modeling
+- flows-and-transport
+- few-step-generation
 - inference-optimization
 date: '2026-09-24'
 source:
@@ -36,21 +62,26 @@ source:
 # Was LIT-636 until the correction pass. Rectified Flow proposes reflow as
 # the way to straight paths and uses reflow-then-distil for its headline
 # result; "distil first, reflow optional" is this record's reading of its
-# Table 1a (NOTE-337, R2), not advice the paper gives. Searched and not
-# found: InstaFlow (arXiv 2309.06380) and Lee et al. 2024 (arXiv
-# 2405.20320, "Improving the Training of Rectified Flows") both keep reflow
-# — the first finds it critical for one-step Stable Diffusion, the second
-# argues one round suffices — and the distribution-matching distillers this
+# Table 1a (NOTE-337, R2), not advice the paper gives. InstaFlow
+# (LIT-tmpyqrl4) and Lee et al. 2024 (LIT-tmptpra5) were searched for here
+# and are now filed. Both keep reflow: the first finds it essential for
+# one-step Stable Diffusion and is recorded under contested_by, the second
+# argues one round suffices. The distribution-matching distillers this
 # record holds (LIT-643, LIT-631, LIT-629) skip reflow without arguing
-# against it. Naming a paper that recommends distilling without reflow is
-# how a reader refutes this (ADR-053).
+# against it. Still searched and not found: a paper that recommends
+# distilling a rectified flow without reflow. Naming one is how a reader
+# would change introduced_by (ADR-053).
 introduced_by: []
 summary: >-
   Liu, Gong and Liu (2022), [LIT-636](../literature.d/LIT-636.md). On CIFAR-10, one-step FID is 378 from
   the base model, 6.18 after distillation alone, 12.21 after one reflow, and
   4.85 after reflow and distillation (Table 1a). Distillation does most of
   the work. Reflow adds a further gain at the cost of a second training pass,
-  and worsens many-step quality from 2.58 to 3.36.
+  and worsens many-step quality from 2.58 to 3.36. InstaFlow
+  (LIT-tmpyqrl4) contests it at text-to-image scale, starting from a
+  diffusion model rather than a rectified flow.
+explained_by:
+- THEORY-tmprwlgq
 ---
 
 # SOTA-392: To get a one-step sampler from a rectified flow, distil it; treat reflow as an optional extra pass, and keep the pre-reflow model for many steps
@@ -96,6 +127,51 @@ another training pass, and keep the pre-reflow model when you need
 many-step quality. That also follows [SOTA-206](SOTA-206.md), which says to keep a
 multi-step option in a few-step model.
 
+## Contested at scale, from a different starting point
+
+InstaFlow ([LIT-tmpyqrl4](../literature.d/LIT-tmpyqrl4.md)) runs the comparison this practice's
+promote_when describes, at text-to-image scale and matched budget, and finds
+the opposite order. On Stable Diffusion 1.4 with the same U-Net, batch,
+100K training steps and 3.2M generated pairs, distilling SD directly to one
+step reaches FID 40.9 on COCO-2017-5k and 34.6 on COCO-2014-30k. Spending
+half the budget on one reflow and half on distillation reaches 31.0 and
+20.0 (its Table 1, App. C). The tuning, if anything, favours the direct arm,
+which got a nine-cell learning-rate grid. It is one seed at 0.9B.
+
+It differs from this practice's case in two ways, and both are why it
+narrows the claim rather than refuting it. Its starting point is a diffusion
+model's curved probability-flow ODE, so the reflowed model is the first
+rectified flow in its pipeline. And its distiller is an LPIPS regression onto
+one teacher output per noise, not distribution matching. **For regression
+distillation from a curved teacher, reflow is not optional.** When the
+teacher is already a rectified flow, the only measurement is still
+Rectified Flow's CIFAR-10 table, where reflow adds 6.18 → 4.85 rather than
+deciding success.
+
+It agrees with the practice's last clause. Its reflowed model loses a little
+many-step quality, 21.5 against SD 1.5's 20.1 FID-5k at 25 steps, so keeping
+the pre-reflow model for many steps still holds. A second reflow did not
+reliably help (its Table 4).
+
+**If you reflow, reflow once, and train it like a distillation.** Lee et al.
+([LIT-tmptpra5](../literature.d/LIT-tmptpra5.md)) refine the reflow stage rather than test the ordering.
+Starting from EDM, one round trained with a U-shaped timestep distribution
+and an LPIPS-Huber loss reaches one-step FID 3.07 on CIFAR-10 and 4.31 on
+ImageNet-64 with no separate distillation stage, and they argue further
+rounds only add error. Their own table has DMD, a distribution-matching
+distiller with no reflow, ahead on ImageNet-64 at 2.62. They run no
+distillation-alone arm from the same teacher and no matched many-step
+comparison, so they do not meet promote_when.
+
+**Adjacent evidence for distilling without reflow.** Shortcut Models
+([LIT-tmpo7np5](../literature.d/LIT-tmpo7np5.md), Table 1) start from a flow-matching model, a 1-rectified
+flow, on DiT-B at 256 px. Progressive distillation alone beats one reflow
+at one step on both datasets, 14.8 against 23.2 on CelebA-HQ and 35.6
+against 44.8 on ImageNet, at roughly matched compute. There is no
+reflow-then-distil arm, so it does not test the ordering either. It does
+say that from a straight-path teacher, distillation without reflow beats
+reflow without distillation, which is this practice's direction.
+
 ## Conditions
 
 - **CIFAR-10 only.** The comparison is at 32×32 on one dataset. The paper's
@@ -104,15 +180,16 @@ multi-step option in a few-step model.
   training than distillation alone, and the table does not normalize for it.
 - **The distillation uses an LPIPS loss** for the one-step student (App. A).
   Whether the balance holds with other distillation objectives, such as the
-  distribution matching the video line uses, is untested.
-- **At scale, the one published test points the other way, on a different
-  starting point.** InstaFlow (arXiv 2309.06380, not in the record) finds
-  that distilling Stable Diffusion directly to one step "fails, while reflow
-  + distillation succeeds" (§3.2), and builds its one-step model on reflow.
-  Its failed direct distillation starts from a diffusion model's curved
-  probability-flow ODE, not from a rectified flow, so it does not test this
-  practice's case. It was listed here as an implementation until the
-  correction pass after [#395](https://github.com/dmarx/anthology-of-the-sota/issues/395); it implements the opposite pipeline.
+  distribution matching the video line uses, is untested. InstaFlow's test
+  uses LPIPS regression too.
+- **The teacher has to be a rectified flow already.** From a curved
+  diffusion teacher with regression distillation, the one test at scale
+  finds reflow first better by 9.9 FID-5k ([LIT-tmpyqrl4](../literature.d/LIT-tmpyqrl4.md), above). The
+  practice does not cover that case. InstaFlow was listed here as an
+  implementation until the correction pass after [#395](https://github.com/dmarx/anthology-of-the-sota/issues/395), because it
+  implements the opposite pipeline; it is now filed as the paper that
+  contests this one, and on 2026-10-03 its listing among Rectified Flow's
+  implementations was removed for the same reason.
 - **The theory is about the reflowed coupling.** The straightness theorems
   apply to the model after reflow, not to the single-pass model most people
   train ([SOTA-266](SOTA-266.md)).

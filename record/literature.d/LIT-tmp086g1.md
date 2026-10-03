@@ -1,0 +1,128 @@
+---
+status: Active
+title: 'Glow: Generative Flow with Invertible 1x1 Convolutions'
+version: 1
+tags:
+- generative-modeling
+- flows-and-transport
+- model-architecture
+date: '2026-10-03'
+published: '2018-07-09'
+arxiv: '1807.03039'
+first_author: 'Kingma'
+keywords:
+- 'normalizing-flow'
+- 'invertible-1x1-convolution'
+- 'actnorm'
+- 'affine-coupling-layer'
+- 'lu-decomposition'
+- 'reduced-temperature-sampling'
+implementations: []
+extends:
+- LIT-tmpgi092
+summary: >-
+  Kingma and Dhariwal, OpenAI (2018), [ARXIV-1807.03039](https://arxiv.org/abs/1807.03039). A flow step is
+  actnorm (a per-channel affine layer initialized from one batch), a
+  learned invertible 1×1 convolution in place of Real NVP's fixed channel
+  permutation, and an affine coupling layer. The 1×1 convolution is the one
+  controlled result: lower CIFAR-10 NLL than reversal or random permutation
+  with either coupling, three seeds, about 7% more wall-clock (Fig. 3).
+  Against Real NVP's published numbers it is lower on all six datasets
+  (CIFAR-10 3.35 against 3.49 bits/dim), with much larger models. The
+  256×256 faces are trained on 5-bit images and sampled at temperature 0.7.
+compared_against:
+- LIT-tmpezs1l
+- LIT-tmpvcmj8
+---
+
+# LIT-tmp086g1: Glow: Generative Flow with Invertible 1x1 Convolutions
+
+Kingma and Dhariwal, OpenAI (2018) — [ARXIV-1807.03039](https://arxiv.org/abs/1807.03039). NeurIPS 2018. Read at
+v2 (10 Jul 2018); v1 is the day before.
+
+## Key takeaways
+
+- **Three layers per step** (§3, Table 1, Fig. 2). Actnorm, then an
+  invertible 1×1 convolution, then an affine coupling layer, inside Real
+  NVP's multi-scale architecture with depth K per level and L levels. The
+  coupling splits on channels only; Real NVP's checkerboard split is
+  dropped. The last convolution of each coupling network is zero-initialized
+  so each layer starts as the identity (§3.3).
+- **Actnorm replaces batch normalization** (§3.1). Per-channel scale and bias,
+  initialized so the first minibatch's activations have zero mean and unit
+  variance, then trained as ordinary parameters. The reason is the
+  256×256 models train at minibatch 1 per GPU, where batch statistics are
+  noise.
+- **The learned 1×1 convolution beats a fixed permutation, controlled**
+  (§5, Fig. 3). With K = 32, L = 3 on CIFAR-10, three seeds each, it reaches
+  lower NLL and converges faster than both channel reversal and a random
+  permutation, with additive and with affine coupling. It adds 0.2% of
+  parameters and about 7% wall-clock. Its log-determinant is h·w·log|det W|
+  (Eq. 9); the LU parameterization makes it O(c) (Eqs. 10–11), though the
+  paper measured no large wall-clock difference at its widths.
+- **Bits/dim against Real NVP** (Table 2). CIFAR-10 3.35 against 3.49;
+  ImageNet 32×32 4.09 against 4.28; ImageNet 64×64 3.81 against 3.98; LSUN
+  bedroom, tower and church 2.38, 2.46 and 2.67 against 2.72, 2.81 and 3.08.
+- **Reduced temperature is the quality knob** (§6, Figs. 4, 8). Sampling
+  from p(x)^(T²) — for additive coupling, scaling the prior's standard
+  deviation by T — gives better-looking samples; T = 0.7 is chosen by eye as
+  the "sweet spot". Full temperature gives noisy images, which the paper
+  reads as the model overestimating the data's entropy.
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"The first likelihood-based model in the literature that can
+  efficiently synthesize high-resolution natural images"** (§7). The
+  256×256 model is CelebA-HQ, 30,000 faces, trained on **5-bit** images
+  "to improve visual quality at the cost of slight decrease in color
+  fidelity" (§6), with additive coupling (Table 5), and its samples are
+  shown at T = 0.7. No sample-quality metric is reported. The 5-bit test
+  likelihoods are in App. A (CelebA-HQ 1.03 bits/dim), with no baseline.
+- **"Significant improvement in log-likelihood"** (abstract) is against
+  Real NVP only. Glow does not beat the autoregressive models Real NVP
+  already trailed: PixelRNN's 3.00 on CIFAR-10 (quoted in [LIT-tmpgi092](LIT-tmpgi092.md)'s
+  Table 1) is below Glow's 3.35. Table 2 omits autoregressive rows, and
+  MAF is excluded from comparison because its sampling is sequential (§4).
+- **Temperature is a trade the paper does not measure.** Sampling at
+  T < 1 is sampling from a different distribution than the one whose
+  likelihood is reported. The trade between diversity and quality is judged
+  from Fig. 8 alone.
+- **Sampling is fast** — about 130 ms for one 256×256 image on a 1080 Ti
+  (§4, footnote 2) — and that, not likelihood, is the advantage over
+  autoregressive models the paper argues from.
+
+## Which comparisons are like for like
+
+- **The permutation ablation (Fig. 3) is controlled**: same architecture,
+  training conditions and three seeds, varying only the permutation.
+- **Table 2 is not.** Real NVP's numbers are quoted from [LIT-tmpgi092](LIT-tmpgi092.md). Glow
+  differs in more than the permutation — channel-only splits, actnorm,
+  zero initialization — and its models are far larger: K = 32 to 48 steps
+  per level, coupling networks with 512 hidden channels, minibatch 512 or
+  128 (App. C, Table 4). The paper says the comparison verifies that the
+  architecture "is overall competitive", which is what it can support.
+
+## Standing in the anthology
+
+It extends Real NVP ([LIT-tmpgi092](LIT-tmpgi092.md)): the affine coupling layer, the
+multi-scale squeeze-and-factor architecture and the dequantized objective
+(Eq. 2) are Real NVP's, and Glow changes the step inside them. Its Table 2
+is the head-to-head against Real NVP's published bits/dim, lower on all six
+shared datasets.
+
+FFJORD ([LIT-tmpezs1l](LIT-tmpezs1l.md)) compares against it in Table 2 and in a 2-D
+experiment against a 100-layer Glow. TarFlow ([LIT-tmpvcmj8](LIT-tmpvcmj8.md)) quotes its
+ImageNet 64×64 3.81 as the coupling-flow reference in its Table 2, and says
+low-temperature sampling applies only to volume-preserving flows and smooths
+the image; it replaces temperature with classifier-free guidance.
+
+Glow is also where the reduced-temperature trick enters the record. It is
+the flow-model ancestor of the guidance knobs the diffusion line uses now:
+both buy sample quality by sampling something sharper than the learned
+distribution, and in neither case does the reported likelihood describe
+what is sampled.
+
+Filed without a `NOTE`: the takeaways come from one full reading of v2,
+appendices included, done for this filing.

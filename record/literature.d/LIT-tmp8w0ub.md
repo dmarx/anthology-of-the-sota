@@ -1,0 +1,133 @@
+---
+status: Active
+title: 'Flow Matching Guide and Code'
+version: 1
+tags:
+- generative-modeling
+- flows-and-transport
+date: '2026-10-03'
+published: '2024-12-09'
+arxiv: '2412.06264'
+first_author: 'Lipman'
+keywords:
+- 'flow-matching'
+- 'conditional-flow-matching'
+- 'bregman-divergence'
+- 'affine-probability-paths'
+- 'riemannian-flow-matching'
+- 'discrete-flow-matching'
+- 'generator-matching'
+implementations:
+- 'facebookresearch/flow_matching'
+summary: >-
+  Lipman et al., FAIR, MIT and Weizmann (2024), [ARXIV-2412.06264](https://arxiv.org/abs/2412.06264). A tutorial
+  and PyTorch library, with no new experiments. It states flow matching as
+  "choose a path, regress its generator" across Euclidean, Riemannian,
+  discrete and general Markov-process state spaces. Its claims useful to
+  practice are proved or attributed. The straight conditional path minimizes
+  a bound on kinetic energy and is optimal transport only for a one-point
+  target. Every affine scheduler gives the same exact-ODE endpoint, so a
+  schedule matters only through training and discretization. Sampling t
+  beats weighting by t, citing SD3. It does not cover few-step generation.
+---
+
+# LIT-tmp8w0ub: Flow Matching Guide and Code
+
+Lipman, Havasi, Holderrieth, Shaul, Le, Karrer, Chen, Lopez-Paz, Ben-Hamu and
+Gat, FAIR at Meta, MIT CSAIL and Weizmann Institute (2024) —
+[ARXIV-2412.06264](https://arxiv.org/abs/2412.06264). Read at v1 (9 Dec 2024), the only version.
+
+What was read: §§1–2 in full; §3 (flow models, continuity equation) for its
+theorems, not every proof; §4 in full, the claim-making core (losses, paths,
+the OT bound, affine and Gaussian paths, scheduler change, couplings,
+guidance); §5 (Riemannian) in full; §§6–7 (CTMC and discrete flow matching)
+in full; §§8–9 (general Markov processes, Generator Matching) for
+statements, skimming the jump-process derivations; §10 (diffusion) in full;
+Appendix A's proofs not checked.
+
+## Key takeaways
+
+- **One loss family** (§4.5, Prop. 1, Thm. 4). The conditional loss has the
+  marginal loss's gradient for any Bregman divergence, not just squared
+  error, because the divergence's gradient is affine in its first argument.
+  That is what licenses KL losses for the discrete case (§7.5) and the
+  generalized KL that is also an ELBO (Shaul et al. 2024).
+- **"Sample t, don't weight by it"** (§4.5): mathematically equivalent, but
+  sampling t ∼ ω "leads to better performance than using weights ω(t) in
+  large scale image generation", citing SD3. This is an attribution, not a
+  result of the guide.
+- **What "OT" means for the straight path** (§4.7). The linear conditional
+  flow minimizes an upper bound on kinetic energy over all conditional flows
+  (Eqs. 4.46–4.48). It is the true OT solution only when the target is a
+  single point (Thm. 5). The marginal's kinetic energy is at most the
+  coupling's transport cost (Eq. 4.49), so a cheaper coupling gives a
+  cheaper flow (§4.9).
+- **Schedules are interchangeable after training** (§4.8.2). A velocity
+  trained under one affine scheduler converts in closed form to any other
+  with the same coupling, and in theory all schedulers reach the same
+  samples at t = 1 (Eq. 4.68, after Shaul et al. 2023). For Gaussian paths
+  the marginal velocity is a gradient, so it is kinetic-optimal for its own
+  marginal path (Eq. 4.78).
+- **Couplings** (§4.9). Paired data (masked image to full image) trains
+  inpainting or super-resolution as transport. Minibatch OT couplings lower
+  transport cost and straighten paths as the batch grows.
+- **Guidance** (§4.10). Classifier and classifier-free guidance carry over
+  to velocities through the score conversion. "The exact distribution which
+  CFG samples from is unknown."
+- **Other state spaces** (§§5–7, 9). Geodesic conditional flows train
+  simulation-free on manifolds with closed-form exp/log maps. Premetric
+  flows need simulation. Discrete flow matching uses factorized velocities
+  (d·K outputs, not K^d) and mixture paths, and a divergence-free term added
+  at sampling time leaves the marginals unchanged, which is what a corrector
+  is (§§6.3.1, 7.5).
+- **Diffusion is a case of it** (§10). Training a diffusion model is flow
+  matching with an affine-drift Gaussian path and score or ε
+  parameterization. The probability-flow ODE and the SDE family share
+  marginals. The backward-time reversal is not needed for generation.
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **No experiments.** Every claim is a derivation or an attribution. The
+  sentences that sound empirical are other papers' results: SD3 on timestep
+  sampling, EDM on the probability-flow ODE being "state-of-the-art for
+  sampling with a low number of neural network evaluations" (§10.5), Liu et
+  al. 2023 and Albergo et al. 2024 on paired-data couplings beating guided
+  diffusion.
+- **"State-of-the-art performance across various domains"** (abstract, §1)
+  is adoption: SD3, Movie Gen, speech, audio, proteins and π₀ are listed as
+  users, not tested against alternatives ([DP-005](../../docs/design-principles.md#dp-5)).
+- **The authors review their own line.** Flow Matching, Discrete Flow
+  Matching, Multisample Flow Matching, Riemannian Flow Matching and Generator
+  Matching are all by authors of this guide, and they get the most space.
+- **Manifold singularities** are dismissed as measure-zero, with "at-least
+  in use cases we are aware of" (§5.6).
+- **Nothing on few-step generation.** Reflow, distillation, consistency and
+  flow-map models are absent. Straightness appears only as a property that
+  makes ODE solving cheaper (§4.7).
+
+## Standing in the anthology
+
+It is the reference for Flow Matching ([LIT-630](LIT-630.md)) and its extensions as their
+authors frame them two years on. A reader of [LIT-630](LIT-630.md), of the minibatch-OT
+couplings ([LIT-tmprjg3i](LIT-tmprjg3i.md), [LIT-tmpzz36v](LIT-tmpzz36v.md)) or of Discrete Flow Matching
+([LIT-tmpuuitp](LIT-tmpuuitp.md)) can come here for the unified statement and the library. Rectified
+Flow ([LIT-636](LIT-636.md)) and the stochastic interpolants ([LIT-644](LIT-644.md), [LIT-645](LIT-645.md)) appear as
+concurrent origins and as the two-sided conditioning variant.
+
+**On [SOTA-266](../practices.d/SOTA-266.md) and [THEORY-106](../theory.d/THEORY-106.md) it sharpens what the straight path is.** §4.7
+proves what [THEORY-106](../theory.d/THEORY-106.md) says in prose: the line is optimal per pair and
+bounds the marginal's kinetic energy, but the marginal flow is OT only for a
+one-point target. §4.8.2 adds a reason the practice's "No mechanism has been
+isolated" is the right hedge. If every scheduler reaches the same endpoint
+under the exact ODE, a path's advantage has to come from what it does to
+training (loss weighting, target variance) and to discretization error. That
+is [THEORY-106](../theory.d/THEORY-106.md)'s decomposition. The guide's own recommendation is the
+cond-OT path, and it backs the logit-normal half only by citing SD3.
+
+It has no bearing on the practices about few-step students, because it
+does not cover them.
+
+Filed without a NOTE: the coverage is stated above. This is a reference
+text, and the note records what it asserts and on whose authority.

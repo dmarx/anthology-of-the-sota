@@ -13,9 +13,18 @@ consensus_note: >-
   2.0 and Wan state that they use it, and LTX-Video cites SD3's distribution.
   Movie Gen's Table 8a changes the path and the timestep distribution
   together, so it supports the combination and cannot separate the halves.
-  `emerging` stands because the practice is both halves together. Read as of 2026-09.
+  The straight half now has support from outside the source groups. The
+  minibatch-OT paper (LIT-tmpzz36v, Mila), at a recipe that beats Flow
+  Matching's own and with uniform timesteps, has the straight path ahead of
+  VP on CIFAR-10: 4.640 against 7.772 at 100 Euler steps and 3.655 against
+  4.335 adaptive (its Table 5). Lee et al. (LIT-tmptpra5) mark a boundary
+  on the logit-normal half: a reflowed model's loss is largest at both ends
+  of [0, 1], and a U-shaped distribution beats uniform for the reflow stage.
+  They do not run a logit-normal, so the half is evidence for the base flow
+  and does not carry to reflow. `emerging` stands because the practice is
+  both halves together. Read as of 2026-10.
 title: 'Connect data and noise on a straight line, and sample the training timesteps from a logit-normal rather than uniformly'
-version: 4
+version: 5
 history:
 - version: 2
   date: '2026-09-24'
@@ -45,8 +54,18 @@ history:
     interpolant and credits the linear path to Liu et al.; it is now filed and
     cited for what it did originate, the simulation-free interpolant objective.
     The recommendation is unchanged.
+- version: 5
+  date: '2026-10-03'
+  note: >-
+    Consensus note adds the minibatch-OT paper (LIT-tmpzz36v) as independent
+    support for the straight half, from its controlled rerun of the path
+    comparison, and Lee et al. (LIT-tmptpra5) as a boundary on the
+    logit-normal half: a reflowed model wants U-shaped timesteps. Conditions
+    gain the reflow boundary. Consensus stays emerging; the logit-normal half
+    still has one controlled source.
 tags:
 - generative-modeling
+- flows-and-transport
 date: '2026-09-20'
 source:
 - LIT-449
@@ -201,6 +220,12 @@ is under twice the annotation σ that Movie Gen reports elsewhere. Nothing
 here is about the diffusion *language* models the record also holds ([SOTA-157](SOTA-157.md), [SOTA-254](SOTA-254.md)), where the
 data is discrete and the straight-line construction does not obviously
 transfer.
+
+The logit-normal is for training the base flow. A reflowed model's hard
+cases are at the ends of [0, 1], not the middle, and Lee et al.
+([LIT-tmptpra5](../literature.d/LIT-tmptpra5.md)) train the reflow stage with a U-shaped distribution, which
+beats uniform there (their Table 1); a logit-normal was not tried. Do not
+carry this half to reflow.
 
 The logit-normal's parameters are tuned, as EDM's log-normal is. `(0.00,
 1.00)` is what SD3 reports for the variant that stays competitive at higher

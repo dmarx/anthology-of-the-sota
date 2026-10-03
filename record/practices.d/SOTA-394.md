@@ -16,15 +16,23 @@ consensus_note: >-
   distribution-matching teacher for a causal 1.3B student. That is adoption
   and not a second test. Read as of 2026-09.
 title: 'When distilling a causal few-step video generator, take the teacher bidirectional, not causal'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-24'
   note: >-
     DMD and DMD2 are now filed; the condition that said the record did not
     hold them cites them instead. The recommendation is unchanged.
+- version: 3
+  date: '2026-10-03'
+  note: >-
+    The diversity condition gains sCM's Fig. 7 (LIT-tmpt5h4h): one-step
+    VSD, DMD's objective, loses recall against sCD on one backbone, at
+    one step as well as two and before guidance is raised. Curves only. The recommendation is
+    unchanged.
 tags:
 - generative-modeling
+- few-step-generation
 - inference-optimization
 - vision-and-graphics
 date: '2026-09-24'
@@ -84,7 +92,17 @@ without it: 94.7 / 64.4 / 30.1 against 93.4 / 60.6 / 29.4.
 - **The student is worse than its teacher on two axes.** It "performs worse
   in temporal flickering and output diversity" (§5.2), and the diversity loss
   is "characteristic of reverse KL" (§6). The practice picks the teacher. It
-  does not make distillation free.
+  does not make distillation free. The diversity cost now has one
+  measurement, from image distillation. sCM ([LIT-tmpt5h4h](../literature.d/LIT-tmpt5h4h.md), Fig. 7) runs
+  one-step VSD, which is DMD's distribution-matching gradient without its
+  regression loss, against two-step sCD on one EDM2-M backbone at
+  ImageNet-512. As guidance rises VSD's precision rises and its recall
+  falls, ending in "severe mode collapse", while sCD stays close to the
+  teacher. It is curves with no tabled values. The figure also plots
+  one-step sCD, and at guidance 1.0 its recall is about 0.70 against
+  VSD's 0.65, so part of the gap is the objective's, at matched step count
+  and before guidance is raised; guidance widens it. rCM
+  ([LIT-tmpkegvh](../literature.d/LIT-tmpkegvh.md)) makes the same claim for video from samples only.
 - **Distribution matching is the distillation method throughout.** DMD
   ([LIT-643](../literature.d/LIT-643.md)) and DMD2 ([LIT-646](../literature.d/LIT-646.md)) are its image-domain sources.
   Whether the result carries to other distillation

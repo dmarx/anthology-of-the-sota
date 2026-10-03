@@ -112,6 +112,16 @@ stop-gradient, so there is no second-order backward pass. Measured cost is
   Inductive Moment Matching's re-implementation, which that paper says
   "often collapses" ([LIT-tmp7ppws](../literature.d/LIT-tmp7ppws.md)). iCT at its own recipe has never been
   run on ImageNet-256.
+- **It is a better estimator, not a different target.** [THEORY-tmpjf41h](../theory.d/THEORY-tmpjf41h.md)
+  places MeanFlow's identity as the Eulerian equation of the two-time flow
+  map of the probability-flow ODE, the same object a shortcut model trains
+  through composition and consistency training through the one-time
+  Eulerian form. So the lead in the table above is a difference of
+  estimator (identity, discretization, weighting and budget), not of what
+  is being learned. The account holds no position on which estimator wins
+  and does not explain this ranking; that still rests on the copied rows.
+  Inductive Moment Matching is outside it, because its minimizer need not
+  be the ODE's map.
 - **On CIFAR-10 it is second to iCT** (Table 3, one shared U-Net):
   MeanFlow 2.92 against iCT 2.83 in one step. It beats sCT's 2.97, but sCT
   starts from a pretrained diffusion model ([LIT-tmpt5h4h](../literature.d/LIT-tmpt5h4h.md), App. G), so that

@@ -36,7 +36,9 @@ history:
     flow-matching image model. It carries a condition on group size (24
     stable; 12 and 6 collapsed). DDPO (LIT-tmp7vihu) is noted as the
     earlier critic-free case, with a running per-prompt baseline rather
-    than a group. The recommendation and consensus are unchanged.
+    than a group. DPOK (LIT-tmp9ntgf) is noted as the opposite choice, a
+    learned critic, compared only against no baseline. The recommendation
+    and consensus are unchanged.
 tags:
 - adaptation-and-tuning
 date: '2026-09-07'
@@ -117,6 +119,14 @@ also drops the critic, but its baseline is a running mean and standard
 deviation of each prompt's rewards across iterations, not a group sampled
 together, and it does not compare against a critic. Flow-GRPO's per-prompt
 group is the within-step version of the same idea.
+
+DPOK ([LIT-tmp9ntgf](../literature.d/LIT-tmp9ntgf.md), App. A.5) went the other way and trained a critic. A
+learned V(x_t, z) raised ImageReward on one prompt from 0.86 to 1.51
+against no baseline at all, and v3 uses it for multi-prompt training. That
+is a critic against nothing, not against a group or per-prompt baseline,
+so it does not bear on the choice this practice makes. Its v1 had reported
+the critic destabilizing multi-prompt training, and v3 dropped that
+without explanation.
 
 ## What this does not say
 

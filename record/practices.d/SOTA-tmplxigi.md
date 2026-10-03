@@ -49,6 +49,7 @@ explained_by:
 ---
 
 <!-- inactive-ok-file: SOTA-tmpckzto — Proposed, filed in the same contribution; named as one of iCT's other stabilizing changes, not as settled advice -->
+<!-- inactive-ok-file: THEORY-tmpsem9v — Proposed, and the account declared in `explained_by:`; cited for its untested prediction about Shortcut Models, as the test that would settle a condition -->
 
 # SOTA-tmplxigi: In consistency training, take the target from the current weights under stop-gradient, not from an EMA teacher
 
@@ -111,8 +112,18 @@ changes at once, and the paper does not separate this one at ImageNet scale.
   report that variance in the flow-matching term causes large oscillations
   at d = 1 and that EMA targets damp them. That is a step-size-conditioned
   flow, not consistency training, and neither choice has an ablation table
-  behind it. It is the clearest place where the two choices could be
-  compared directly.
+  behind it. [THEORY-tmpsem9v](../theory.d/THEORY-tmpsem9v.md) predicts why Shortcut can tolerate EMA
+  targets: three quarters of each of its batches (k = 1/4, §3.1) is a
+  plain flow-matching regression that carries the data at full strength,
+  so a lagging bootstrap target only slows how that signal reaches larger
+  steps. In consistency training the data enter only through the gap
+  between adjacent noise levels, which a lagging target swamps. That
+  prediction is the test that would settle this condition: ablate EMA
+  against current-weight targets in both a shortcut model and consistency
+  training, in one codebase. If the EMA rate matters much less for the
+  shortcut model, Shortcut's choice is no counterexample to this practice;
+  if it matters as much, the practice's reach to consistency training alone
+  is the open question.
 - **Stability comes from elsewhere.** Without an EMA teacher, iCT relies on
   its other changes to train stably: the step-count curriculum, the loss
   weighting, and Pseudo-Huber ([SOTA-tmpckzto](SOTA-tmpckzto.md)). Shortcut Models puts its

@@ -68,9 +68,14 @@ Read at v2 (1 Mar 2025), main text and Appendices A–G; v1 is 14 Oct 2024.
   and "adaptive double normalization" in place of AdaGN.
 - **Controlling the gradient** (§4.2, Eq. 8, Fig. 5a–b). The tangent is
   normalized by ‖df/dt‖ + 0.1 (clipping works too). A learned per-time
-  weight, as in EDM2, replaces hand-set weighting. The tangent's unstable
-  term is warmed up over 10K iterations. Each change improves one- and
-  two-step FID in ImageNet-512 distillation curves.
+  weight, as in EDM2, replaces hand-set weighting. In ImageNet-512
+  distillation curves, normalization or clipping improves one- and two-step
+  FID well clear of raw tangents ("substantial improvements"; Fig. 5a). The
+  learned weight's gain shows at two steps, and its one-step curves nearly
+  coincide with the unweighted ones (Fig. 5b). The tangent's unstable term is
+  also warmed up over 10K iterations, an "optional technique" with no curve.
+  The sentence reporting its effect appears to name the wrong technique; see the
+  hedges.
 - **Continuous beats discrete** (Fig. 5c, App. E). Discrete-time models
   improve as the step count N rises to 1,024 and degrade beyond it, from
   numerical precision. The continuous-time model beats every N.
@@ -117,6 +122,14 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
   published EDM2 (1.80 against 1.85, 1.73 against 1.81). sCD students are
   conditioned on the guidance scale and scored "under optimal guidance
   scales", chosen per step count (Table 6).
+- **"The tangent normalization does not affect sample quality but may
+  reduce some gradient spikes"** (§4.2). The sentence closes the paragraph
+  on tangent *warmup*, and as written it contradicts the same section's
+  Fig. 5a, where normalization or clipping gives "substantial
+  improvements" in FID over raw tangents. It most likely means the warmup,
+  an optional addition that has no curve of its own. That reading is the
+  record's, not the paper's: the warmup's effect on sample quality rests on
+  that one sentence, and normalization's on Fig. 5a.
 - **Most ablations are curves on one setting** (Fig. 5, ImageNet-512
   distillation, 50K iterations). The positional-embedding and normalization
   fixes are shown through gradient norms on CIFAR-10 (Fig. 4), not FID.

@@ -7,8 +7,10 @@ promote_when: >-
   diversity measure on held-out prompts. It must report the run without the
   KL term as well. The source judged reward hacking only with other reward
   models, and the one task where reward and evaluation overlapped is where
-  its KL ablation is weakest. Another method that reports a higher GenEval
-  after training on GenEval's own templates does not count.
+  its KL ablation is weakest. It should also report quality against KL
+  distance from the reference, with and without the term. Another method
+  that reports a higher GenEval after training on GenEval's own templates
+  does not count.
 consensus: unreplicated
 consensus_note: >-
   One group, one paper (LIT-tmpdktqx, CUHK, Tsinghua and Kuaishou), one
@@ -17,8 +19,11 @@ consensus_note: >-
   language (SOTA-145), and the same-marginal SDE family is the
   stochastic-interpolant identity (SOTA-265). What is unreplicated is the
   combination on a flow model and the KL ablation that shows the anchor is
-  needed. The record holds none of the RL-for-diffusion papers it builds
-  on. Read as of 2026-10.
+  needed. The record now holds DDPO (LIT-tmp7vihu) and DPOK
+  (LIT-tmp9ntgf). DPOK anchored each denoising step of Stable Diffusion
+  with a per-step KL in 2023 and kept a held-out aesthetic score on one
+  prompt: earlier evidence for the anchor, on a diffusion sampler rather
+  than a flow. Read as of 2026-10.
 title: 'To RL-tune a flow-matching generator, roll it out as a same-marginal SDE built from its own velocity, and anchor each step with the closed-form KL to the reference'
 version: 1
 tags:
@@ -29,10 +34,12 @@ date: '2026-10-03'
 source:
 - LIT-tmpdktqx
 # Flow-GRPO cites concurrent GRPO on a flow-matching speech model (F5R-TTS)
-# and earlier online reward-weighted fine-tuning of flow matching (ORW), and
-# DDPO before it ran policy gradients on a diffusion model's stochastic
-# sampler. None is held. Among held work, Flow-GRPO is the first to state
-# the ODE-to-SDE conversion as the way to make a flow model an RL policy.
+# and earlier online reward-weighted fine-tuning of flow matching (ORW);
+# neither is held. DDPO (LIT-tmp7vihu) and DPOK (LIT-tmp9ntgf) ran policy
+# gradients on a diffusion model's stochastic sampler before it, and both are
+# held, but neither is about flow models. Among held work, Flow-GRPO is the
+# first to state the ODE-to-SDE conversion as the way to make a flow model an
+# RL policy.
 introduced_by:
 - LIT-tmpdktqx
 implementations:
@@ -120,7 +127,15 @@ group size 24 and KL weight β = 0.04 (0.01 for PickScore).
   no FID. Reward hacking is measured with other reward models on DrawBench,
   and on the PickScore task the reward and one evaluation metric are the same
   model. The paper says that overlap may be why quality looks intact without
-  KL there.
+  KL there. PickScore ([LIT-tmpjt45z](../literature.d/LIT-tmpjt45z.md)) was validated as a judge and a
+  best-of-100 ranker, not as an optimization target.
+- **The anchor's evidence is at equal reward, not at equal KL.** In
+  InstructGPT's setting with a synthetic gold reward, Gao et al.
+  ([LIT-tmpylcrx](../literature.d/LIT-tmpylcrx.md)) found a KL penalty did not raise gold reward at a given KL
+  from the start; it stopped the policy earlier. Flow-GRPO's runs with and
+  without its KL term are compared at equal training reward, judged by
+  other reward models, with no KL distances reported, so they do not
+  separate the anchor from a shorter effective run.
 - **GenEval 0.95 is in-distribution.** Training prompts come from GenEval's
   own templates and the reward is its detector. Out-of-template, on
   T2I-CompBench++, 2D-spatial rises 0.2850 → 0.5447 and texture falls
@@ -137,6 +152,10 @@ group size 24 and KL weight β = 0.04 (0.01 for PickScore).
   reward tuning there degrading the model. For those, [SOTA-302](SOTA-302.md) steers the
   input noise instead. The two practices split the case by whether the
   generator samples in many stochastic steps.
+- **The summed step KL is a bound on the image's KL.** DPOK
+  ([LIT-tmp9ntgf](../literature.d/LIT-tmp9ntgf.md), Lemma 4.2) shows it by the data processing inequality,
+  which is what makes a per-step anchor an anchor on the output. DPOK's own
+  gradient drops part of it (App. A.3).
 - **Expensive.** GenEval training to 0.95 takes several thousand GPU hours
   (Fig. 7a), on 24 A800s.
 
@@ -148,6 +167,11 @@ This practice uses that freedom for a different end: σ_t is set for
 exploration, by how fast reward rises, and the SDE is used only during
 training. Flow-GRPO measures nothing about what the coefficient does to
 sample quality.
+
+Flow-DPO ([LIT-tmp3txak](../literature.d/LIT-tmp3txak.md)) is the offline route on a flow video model: a
+constant-β preference loss against a frozen reference. It beat SFT and
+reward-weighted regression on its own reward model, people preferred it to
+the base 44% to 27%, and it found that longer training degraded quality.
 
 ## Known implementations
 

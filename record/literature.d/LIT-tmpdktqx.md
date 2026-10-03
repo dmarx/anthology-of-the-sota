@@ -9,7 +9,12 @@ history:
     DDPO (LIT-tmp7vihu) and Diffusion-DPO (LIT-tmp4m2nj) are now filed. The
     Flow-DPO baselines are compared against Diffusion-DPO, whose loss they
     use, rather than against DPO (LIT-169). DDPO, which Flow-GRPO reruns
-    in its Fig. 8, is declared as a comparison too.
+    in its Fig. 8, is declared as a comparison too. So is ReFL
+    (LIT-tmppb4sm), the other baseline in that figure, and DPOK
+    (LIT-tmp9ntgf) and ImageReward are now filed. The video paper whose
+    Flow-DPO and Flow-RWR are the baselines (LIT-tmp3txak) is filed and
+    declared as a comparison, and the KL takeaway names the
+    overoptimization study it argues against (LIT-tmpylcrx).
 tags:
 - generative-modeling
 - flows-and-transport
@@ -34,6 +39,8 @@ compared_against:
 - LIT-tmp4m2nj
 - LIT-tmp7vihu
 - LIT-566
+- LIT-tmppb4sm
+- LIT-tmp3txak
 summary: >-
   Liu, Liu et al., CUHK, Tsinghua and Kuaishou (2025), [ARXIV-2505.05470](https://arxiv.org/abs/2505.05470). GRPO
   on a flow-matching image model. The deterministic sampler is swapped for an
@@ -89,6 +96,10 @@ Tsinghua, Kuaishou (Kling), Nanjing University and Shanghai AI Laboratory
   quality metrics intact but collapses diversity: "different seeds
   producing nearly identical results". The KL run reaches the KL-free
   reward, only later. The paper's point is that this is not early stopping.
+  It does not cite Gao et al. ([LIT-tmpylcrx](LIT-tmpylcrx.md)), whose finding it answers, and
+  the two measure differently: Flow-GRPO compares at equal reward with
+  other reward models as judges, Gao et al. compare a gold reward at equal
+  KL.
 - **Group size and noise level matter** (Figs. 5, 7b). G = 12 and G = 6
   collapsed on PickScore and G = 24 did not. On OCR, a = 0.1 learns slowly,
   0.7 and 1.0 equally fast, and "too much noise" degrades images to zero
@@ -144,7 +155,7 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
   the group of samples per step; only the update rule differs. Fig. 8's
   caption says its x-axis counts training prompts because DPO's tuned batch
   size differs. Only online DPO's β is reported as searched.
-- **DDPO and ReFL (Fig. 8)** are run by the authors on SD3.5-M with
+- **DDPO and ReFL ([LIT-tmppb4sm](LIT-tmppb4sm.md)) (Fig. 8)** are run by the authors on SD3.5-M with
   PickScore. DDPO goes through Flow-GRPO's own SDE, so this compares the
   update rule rather than DDPO as published. Their hyperparameters are not
   given.
@@ -188,8 +199,11 @@ The base model is SD3.5-Medium from the SD3 line ([LIT-449](LIT-449.md)), whose 
 flow transformer and published GenEval rows anchor Table 1, beside SDXL
 ([LIT-566](LIT-566.md)) at 0.55. Its offline and online Flow-DPO baselines are
 Diffusion-DPO's loss ([LIT-tmp4m2nj](LIT-tmp4m2nj.md)): DPO ([LIT-169](LIT-169.md)) evaluated through
-denoising errors against a frozen reference, carried to flow matching by a
-later video paper. Each step's pair is the best and worst image of a group.
+denoising errors against a frozen reference, carried to flow matching by
+Flow-DPO ([LIT-tmp3txak](LIT-tmp3txak.md)), which drops the (1 − t)² weight the exact
+substitution produces. Its Flow-DPO and Flow-RWR baselines are those of
+[LIT-tmp3txak](LIT-tmp3txak.md), from an overlapping group; Flow-GRPO does not say whether its
+DPO keeps the (1 − t)² weight that paper drops. Each step's pair is the best and worst image of a group.
 They improve with training and stay below Flow-GRPO on GenEval (Fig. 4,
 App. C.1), and online beats offline, the direction Diffusion-DPO's own
 conclusion anticipated.
@@ -205,8 +219,9 @@ DDPO's hyperparameters unreported, that compares update rules, not DDPO as
 published.
 
 **The record now holds the two roots of this line**, DDPO ([LIT-tmp7vihu](LIT-tmp7vihu.md))
-and Diffusion-DPO ([LIT-tmp4m2nj](LIT-tmp4m2nj.md)), discussed above. DPOK, ReFL and
-ImageReward are cited here and still not filed. The other filed relatives are Step-Video-T2V ([LIT-624](LIT-624.md)), which applies
+and Diffusion-DPO ([LIT-tmp4m2nj](LIT-tmp4m2nj.md)), discussed above. DPOK ([LIT-tmp9ntgf](LIT-tmp9ntgf.md))
+and ImageReward with ReFL ([LIT-tmppb4sm](LIT-tmppb4sm.md)) are now filed. ReFL is a baseline
+here and ImageReward one of the quality metrics. The other filed relatives are Step-Video-T2V ([LIT-624](LIT-624.md)), which applies
 Diffusion-DPO to a video flow model and finds modest gains, and HyperNoise
 ([LIT-491](LIT-491.md)), which is what [SOTA-302](../practices.d/SOTA-302.md) rests on. That practice says to steer a
 *distilled* generator through its input noise, because the KL anchor that

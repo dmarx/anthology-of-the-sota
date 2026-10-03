@@ -41,6 +41,8 @@ summary: >-
   (STARFlow's schedule is 400M) with a stock decoder. Sampling is about 2.2 s per 256×256 image with guidance.
 ---
 
+<!-- inactive-ok-file: THEORY-tmpx14qc — Proposed; the account filed from this paper's Prop. 1, named in its standing -->
+
 # LIT-tmpnm3dm: STARFlow: Scaling Latent Normalizing Flows for High-resolution Image Synthesis
 
 Gu, Chen, Berthelot, Zheng, Wang, Zhang, Dinh, Bautista, Susskind and Zhai,
@@ -138,6 +140,11 @@ affine flow, the noise-augmented training is TarFlow's, and so is the
 guidance it starts from. STARFlow retrains TarFlow from the official code as
 its baseline. It changes three things, each with an ablation: where depth
 goes, which space is modelled, and how guidance is computed.
+
+Its Prop. 1 is filed as [THEORY-tmpx14qc](../theory.d/THEORY-tmpx14qc.md): one affine autoregressive block
+cannot represent a multimodal conditional, which is proved and matches
+TarFlow's one-block failure, while the claim that three blocks are
+universal rests on this paper's sketch.
 
 **On whether exact-likelihood flows have caught up.** With TarFlow, this is
 the record's answer, and it is "close at one resolution, not at matched

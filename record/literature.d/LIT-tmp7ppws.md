@@ -130,6 +130,17 @@ the interpolant to one between data and any later point x_t, and asking
 that it preserve the marginals at each time (§3.1, Defs. 1–2). The training
 signal is a distribution distance between maps, not a velocity regression.
 
+That signal fixes less than a flow map does. The paper's own §3.1 says that
+matching the marginal at s "does not necessarily imply" the model's
+conditional equals the interpolant's, and that the minimizer "is not unique
+and, under mild assumptions, a deterministic minimizer exists" (App. B.1
+repeats it after Lemma 3, pointing to B.6). So IMM learns some marginal-preserving
+map from t to s, and nothing in the loss makes it the probability-flow
+ODE's. [THEORY-tmpjf41h](../theory.d/THEORY-tmpjf41h.md), which places consistency, shortcut, MeanFlow and
+progressive distillation as estimators of that one two-time flow map,
+treats IMM as the boundary of its account for this reason. The two meet
+only at IMM's one-particle case, which is a consistency model (Lemma 1).
+
 Its from-scratch comparisons are iCT ([LIT-tmpnrsms](LIT-tmpnrsms.md)), which it re-implements
 on ImageNet-256 (34.24 at one step against IMM's 7.77), Shortcut Models
 ([LIT-tmpo7np5](LIT-tmpo7np5.md)) at 10.60, 7.80 and 3.80 for 1, 4 and 128 steps, and sCT

@@ -40,6 +40,8 @@ extended_by:
 - LIT-tmpnm3dm
 ---
 
+<!-- inactive-ok-file: THEORY-tmpx14qc — Proposed theory this paper's ablation supports, named in its standing -->
+
 # LIT-tmpvcmj8: Normalizing Flows are Capable Generative Models
 
 Zhai, Zhang, Nakkiran, Berthelot, Gu, Zheng, Chen, Bautista, Jaitly and
@@ -135,6 +137,8 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
   source of 13.93 is not given.
 
 ## Standing in the anthology
+
+Its one-block ablation (Fig. 6b, FID 267 at matched total layers) is part of the evidence for [THEORY-tmpx14qc](../theory.d/THEORY-tmpx14qc.md), that one affine autoregressive block cannot be universal.
 
 TarFlow puts exact-likelihood flows back in the comparison. On
 **likelihood** it wins: its Table 2 places it below Flow Matching ([LIT-630](LIT-630.md)),

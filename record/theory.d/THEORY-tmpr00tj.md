@@ -23,6 +23,7 @@ source:
 - LIT-tmpdktqx
 - LIT-tmp7vihu
 - LIT-645
+- LIT-tmp9ntgf
 explains:
 - SOTA-tmp6jbkw
 summary: >-
@@ -48,7 +49,8 @@ summary: >-
 
 Black, Janner, Du, Kostrikov and Levine (2023), [LIT-tmp7vihu](../literature.d/LIT-tmp7vihu.md), §4.2–4.3.
 Liu et al. (2025), [LIT-tmpdktqx](../literature.d/LIT-tmpdktqx.md), §4, Eqs. 6–9, and App. A. Albergo, Boffi
-and Vanden-Eijnden (2023), [LIT-645](../literature.d/LIT-645.md), Cors. 10 and 18.
+and Vanden-Eijnden (2023), [LIT-645](../literature.d/LIT-645.md), Cors. 10 and 18. Fan et al.
+(2023), [LIT-tmp9ntgf](../literature.d/LIT-tmp9ntgf.md), Lemmas 4.1–4.2, App. A.2–A.3.
 
 ## The account
 
@@ -88,6 +90,17 @@ between new and old weights is a density ratio of two Gaussians, and the
 KL between the tuned and reference policies at a step is the squared
 difference of their means over 2σ_t²Δt (§4).
 
+**Summed, the step KL bounds the KL on the sample.** DPOK ([LIT-tmp9ntgf](../literature.d/LIT-tmp9ntgf.md),
+Lemma 4.2) shows that the KL between the tuned and reference models' final
+images is at most the KL between their chains, by the data processing
+inequality, and the Markov property splits that into a sum of per-step KLs
+between Gaussians. So the closed-form step KL is computable and, summed,
+also bounds the divergence on what is actually sampled. DPOK's gradient
+drops the part that flows through earlier steps (App. A.3), so the bound is
+minimized approximately. Its Lemma 4.1 is the same per-step REINFORCE as
+DDPO's, derived concurrently. [THEORY-054](THEORY-054.md) uses the same inequality in noise
+space.
+
 ## What it explains
 
 **[SOTA-tmp6jbkw](../practices.d/SOTA-tmp6jbkw.md), all three of its clauses.** The practice says to roll the
@@ -114,12 +127,21 @@ quality.
   sampling starts, and the paper does not say how the first step is taken.
 - **Likelihood-ratio methods only.** Methods that differentiate a reward
   through the sampler, or that fit preferences through the diffusion loss
-  as Diffusion-DPO does ([LIT-tmp4m2nj](../literature.d/LIT-tmp4m2nj.md)), need no per-step policy density.
-  The account says nothing against them.
+  as Diffusion-DPO does ([LIT-tmp4m2nj](../literature.d/LIT-tmp4m2nj.md)) or Flow-DPO in velocity form
+  ([LIT-tmp3txak](../literature.d/LIT-tmp3txak.md)), need no per-step policy density.
+  The account says nothing against them. ReFL ([LIT-tmppb4sm](../literature.d/LIT-tmppb4sm.md)) is the
+  reward-gradient case. It backpropagates the reward through one late step
+  and needs no step density. Its stated reason for not using RLHF, that a
+  diffusion model "cannot yield likelihoods", is true of the whole chain and
+  not of a step.
 - **It does not say a KL anchor is enough.** It says the anchor is
   computable per step. Flow-GRPO's evidence that the anchor prevents reward
   hacking is measured with other reward models, and DDPO ran with no anchor
-  at all and degraded under over-optimization.
+  at all and degraded under over-optimization. DPOK's ablation
+  ([LIT-tmp9ntgf](../literature.d/LIT-tmp9ntgf.md), §5.3) is the same kind of evidence, one prompt, judged by
+  an aesthetic predictor. For a language model under PPO, Gao et al.
+  ([LIT-tmpylcrx](../literature.d/LIT-tmpylcrx.md)) found a KL penalty acted like early stopping rather than
+  improving true reward at a given distance.
 - **It does not reach a one-step generator.** A distilled one-step model
   has one deterministic step and no SDE family to swap in, so this
   construction gives it neither a policy density nor a tractable anchor.

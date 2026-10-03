@@ -24,6 +24,8 @@ extends:
 compared_against:
 - LIT-tmp4m2nj
 - LIT-tmpdktqx
+- LIT-tmp9ntgf
+- LIT-tmpznned
 summary: >-
   Black, Janner, Du, Kostrikov and Levine, UC Berkeley and MIT (2023),
   [ARXIV-2305.13301](https://arxiv.org/abs/2305.13301). Treat each denoising step of a stochastic sampler as an
@@ -39,6 +41,7 @@ summary: >-
 ---
 
 <!-- inactive-ok-file: SOTA-302 — Proposed; named as the practice this paper's missing anchor bears on, not as settled advice -->
+<!-- inactive-ok-file: SOTA-tmprz581 — Proposed; the practice filed from this paper's App. E.1, named in its standing -->
 
 # LIT-tmp7vihu: Training Diffusion Models with Reinforcement Learning
 
@@ -71,7 +74,12 @@ Black, Janner, Du, Kostrikov and Levine, UC Berkeley and MIT (2023) —
   objective with how on-policy the data is: RWR collects 10,000 samples per
   iteration, DDPO 256 (App. E.2). Fig. 11 varies RWR from 16,384 down to 256
   samples per iteration. More interleaving helps up to a point and then
-  hurts, and no setting reaches DDPO.
+  hurts, and no setting reaches DDPO. The RWR here generalizes Lee et al.
+  ([LIT-tmpznned](LIT-tmpznned.md)), which DDPO calls one iteration of it. Lee et al. weight
+  by a learned alignment reward, add a pre-training loss and run one round.
+  DDPO's RWR weights by exponentiated or thresholded reward, drops the
+  pre-training term and runs many rounds. Lee et al.'s single round is one
+  end of Fig. 11's sweep.
 - **Train the guided prediction, not the conditional one** (App. E.1,
   Fig. 10). Fine-tuning only the conditional ε-prediction degraded quickly
   after the first round, which the authors put down to the guidance weight
@@ -108,8 +116,10 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
   number, a typographic attack on the reward. The qualitative results use
   "the last checkpoint before a model began to deteriorate", identified
   manually for each method. The paper leaves over-optimization "for future
-  work" and cites the argument that a KL penalty may amount to early
-  stopping. v1 had this as a main-text subsection (§6.4). v4 moved it to
+  work" and cites Gao et al. ([LIT-tmpylcrx](LIT-tmpylcrx.md)) for the argument that a KL
+  penalty may amount to early stopping; that paper found it for a reward
+  penalty under PPO with a synthetic gold reward, and flagged it as
+  possibly hyperparameter-sensitive. v1 had this as a main-text subsection (§6.4). v4 moved it to
   App. A and added the manual checkpoint choice.
 - **The rewards are proxies, and no human looks.** The aesthetic reward is
   a linear head on CLIP embeddings trained on 176,000 ratings (§5.2). The
@@ -131,7 +141,7 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
   optimizer settings (App. D.5), but not the samples per iteration or the
   updates per iteration. Fig. 11 addresses the first. It keeps updates per
   iteration fixed, so more interleaving also means more updates per sample.
-- **DPOK (App. C, Fig. 8)** is not like for like. DPOK's numbers are copied
+- **DPOK ([LIT-tmp9ntgf](LIT-tmp9ntgf.md); App. C, Fig. 8)** is not like for like. DPOK's numbers are copied
   from its paper at the one point it reports, 20k reward queries. DDPO is
   rerun on SD v1.5 with LoRA ([LIT-046](LIT-046.md)) at a learning rate of 3·10⁻⁴, with
   its own hyperparameters rather than DPOK's. It trains one model for all
@@ -184,6 +194,10 @@ The missing KL anchor is what [SOTA-302](../practices.d/SOTA-302.md)'s argument 
 harmful because the anchor is intractable there. DDPO has a tractable
 per-step likelihood and still runs without an anchor. Its over-optimization
 examples are the failure that practice's condition is about.
+
+Its CFG-training finding (App. E.1, Fig. 10) is filed as [SOTA-tmprz581](../practices.d/SOTA-tmprz581.md):
+train the guided prediction at a fixed weight, not the conditional branch
+alone. It rests on one RWR curve, and nobody has repeated it.
 
 The other ingredients are already in the record. The base model is Stable
 Diffusion from the latent diffusion line ([LIT-062](LIT-062.md)). CFG training is about

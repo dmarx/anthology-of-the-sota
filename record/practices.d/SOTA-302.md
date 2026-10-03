@@ -30,9 +30,14 @@ history:
     LoRA reward tuning with that anchor kept quality as judged by reward
     models. The weight-space failure is scoped to distilled generators. DDPO
     (LIT-tmp7vihu), with no anchor, and Diffusion-DPO (LIT-tmp4m2nj), with
-    an offline one, are added as the multi-step cases either side. Not a
-    test of this practice; promote_when is not met and status is
-    unchanged.
+    an offline one, are added as the multi-step cases either side. DPOK
+    (LIT-tmp9ntgf), with a summed per-step KL, is a third multi-step case,
+    and Lee et al. (LIT-tmpznned) and ReFL (LIT-tmppb4sm), anchored by
+    pre-training data, are two where selection at inference beat
+    fine-tuning under the same reward. Gao et al. (LIT-tmpylcrx) are cited
+    for the general case: true reward falls with distance from the base,
+    and an explicit KL penalty acted like early stopping. Not a test of
+    this practice; promote_when is not met and status is unchanged.
 tags:
 - generative-modeling
 - adaptation-and-tuning
@@ -100,7 +105,14 @@ Because it makes things worse, measurably, and the paper ran the control.
 
 Aligning to a reward means learning a tilted distribution: upweight high
 reward, **stay near the base model**. Without that second term the result
-reward-hacks — high scores, off-manifold images. For a step-distilled
+reward-hacks — high scores, off-manifold images. Gao et al. ([LIT-tmpylcrx](../literature.d/LIT-tmpylcrx.md))
+measured the general version in language-model RLHF: true reward rises then
+falls with KL from the starting policy, a larger reward model moves the turn
+later, and an explicit KL penalty did not change the gold reward reached at a
+given distance; it stopped the policy earlier. What protects is staying near
+the base, by whatever means. That fits the argument here, and it means the
+LoRA control should be read with its stopping point in mind, which the
+source note does not give. For a step-distilled
 generator, the KL that enforces it needs a Jacobian determinant through the
 network and is intractable, so weight-space fine-tuning is optimizing the
 reward with a broken anchor.
@@ -169,6 +181,19 @@ its checkpoints are picked by hand before quality deteriorates (its App. A).
 Diffusion-DPO ([LIT-tmp4m2nj](../literature.d/LIT-tmp4m2nj.md)) anchors offline instead, through β in a
 preference loss against the frozen reference. Neither tests a distilled
 model.
+
+DPOK ([LIT-tmp9ntgf](../literature.d/LIT-tmp9ntgf.md)) is a third multi-step case, the closest to Flow-GRPO. It
+LoRA-tunes Stable Diffusion v1.5 on ImageReward, anchored by the sum of
+per-step Gaussian KLs, which by the data processing inequality bounds the KL
+on the final image (its Lemma 4.2). On one prompt the run without the KL
+oversaturated and the run with it kept the held-out aesthetic score (its
+§5.3), on one aesthetic predictor and 50 samples. Two earlier papers anchor
+with pre-training data instead, and both trail selection at inference
+under the same reward, on fidelity or overall. Lee et al. ([LIT-tmpznned](../literature.d/LIT-tmpznned.md)) beat best-of-16 on
+alignment 20% to 10% and lose on fidelity 3% to 20%. ReFL ([LIT-tmppb4sm](../literature.d/LIT-tmppb4sm.md))
+wins 58.38% against the base where best-of-64 wins 73.33%. That is this
+practice's amortized-against-per-sample trade, measured on multi-step
+models. None of the three tests a distilled generator.
 
 **The Lipschitz condition is engineered, not verified.** Zero initialization
 makes it hold at the start; nothing measures that it holds later, and the

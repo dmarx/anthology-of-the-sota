@@ -13,7 +13,7 @@ consensus_note: >-
   acceptable is that the paper's own sweep is the thing being adopted, not a
   headline. Read as of 2026-09.
 title: 'Train one network for both conditional and unconditional scores by dropping the condition on 10% of examples, then pick the guidance weight by which metric you are willing to lose'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-25'
@@ -37,6 +37,13 @@ history:
     status and consensus unchanged — this practice is still how you get a CFG
     model — but "conditional generation only" and "diversity is what is being
     spent" now say which of the two they belong to.
+- version: 4
+  date: '2026-10-03'
+  note: >-
+    Pick-a-Pic (LIT-tmpjt45z) measures the same trade on text-to-image
+    against human preference: users prefer high guidance and FID ranks
+    models backwards. Added beside the FID–IS sweep. Not a source;
+    recommendation, status and consensus unchanged.
 tags:
 - generative-modeling
 - training-optimization
@@ -105,6 +112,12 @@ samples per point:
 - want the best FID → `w` around **0.1 to 0.3**;
 - want the best IS, or visibly sharper individual images → `w ≥ 4`;
 - there is no setting that is best at both, and the paper does not claim one.
+
+On text-to-image with human judges, the trade runs against FID: Pick-a-Pic
+([LIT-tmpjt45z](../literature.d/LIT-tmpjt45z.md)) found users usually prefer guidance 9 to 3, and across nine
+model–guidance settings on MS-COCO captions FID ranked models at Spearman
+−0.900 against expert preference. If the metric you keep is human
+preference, FID is the one you lose.
 
 **Never compare two models at different `w`.** A guidance sweep can produce
 almost any FID or IS you like from one checkpoint, so a comparison that does not

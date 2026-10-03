@@ -47,6 +47,8 @@ explained_by:
 - THEORY-tmp2ixql
 ---
 
+<!-- inactive-ok-file: THEORY-tmp2ixql — Proposed, and the account declared in `explained_by:`; cited in Conditions for the gradient-shape relation it states, not as a settled result -->
+
 # SOTA-tmpckzto: Down-weight large residuals in consistency and MeanFlow training: use a Pseudo-Huber loss or an adaptive inverse-error weight, not plain squared L2
 
 ## Source
@@ -110,18 +112,30 @@ one line of work.
   (noise, teacher output) pairs. There, Pseudo-Huber beat squared L2 at batch
   128 on CIFAR-10, and at batch 512 it was even: 5.17 → 5.24 on CIFAR-10,
   6.81 → 7.06 on FFHQ-64, 9.03 → 8.20 on AFHQ-64. iCT's own CIFAR-10
-  ablations also ran at batch 512 and found a clear gain. One reading is that
-  robustness pays where the target is the model's own noisy output and
-  matters less when it is a fixed teacher sample. No paper tests that
-  reading.
+  ablations also ran at batch 512 and found a clear gain. [THEORY-tmp2ixql](../theory.d/THEORY-tmp2ixql.md)
+  draws the line by objective. In consistency and MeanFlow training the
+  residual is the network's own tangent along the ODE, a finite difference
+  of it in discrete time, and its large values come from the network's
+  time derivative. Down-weighting them is tangent normalization. A reflow
+  residual against a fixed teacher sample is not a tangent, and the account
+  gives no reason for the robust loss to pay there. That boundary is the
+  theory's, and no paper has run both objectives under both losses.
 - **In continuous time the variance is controlled elsewhere.** sCM
   ([LIT-tmpt5h4h](../literature.d/LIT-tmpt5h4h.md), §4.2, Fig. 5a) keeps squared L2. It divides the tangent in its
   target by ‖df/dt‖ + 0.1, or clips it, and both improve one- and two-step
   FID in ImageNet-512 distillation curves. rCM ([LIT-tmpkegvh](../literature.d/LIT-tmpkegvh.md), §3.1,
   footnote 4) keeps that normalization at 14B scale and states that
-  MeanFlow's p = 1 weight "is the same as tangent normalization". If you
-  train with sCM's normalized tangent, you already have the effect, and
-  adding Pseudo-Huber on top has not been tested.
+  MeanFlow's p = 1 weight "is the same as tangent normalization".
+  [THEORY-tmp2ixql](../theory.d/THEORY-tmp2ixql.md) checks the relation through the gradients' shape. The
+  adaptive weight held under stop-gradient makes the gradient the residual
+  divided by (‖Δ‖² + c)^p. At p = 1 that is rCM's normalized-tangent form,
+  divided by ‖g‖² + c. At p = 0.5 it is the residual over √(‖Δ‖² + c),
+  which is Pseudo-Huber's gradient and the near neighbour of sCM's own
+  division by ‖df/dt‖ + 0.1. All three are one per-sample rescaling of the
+  same update. So if you train with sCM's normalized tangent, you already
+  have the effect, and adding Pseudo-Huber on top would apply it twice. That
+  has not been tested, and nobody has run MeanFlow's weight against sCM's
+  normalization in one codebase.
 - **c and p were each tuned on one setting.** iCT chose c on CIFAR-10 and
   carried the √d heuristic to ImageNet-64 with no ablation there. MeanFlow
   chose p on a small model at 80 epochs and kept it for XL/2.

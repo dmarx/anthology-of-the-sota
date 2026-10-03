@@ -18,13 +18,6 @@ consensus_note: >-
 title: 'Keep a multi-step sampling option in a few-step generative model'
 version: 3
 history:
-- version: 3
-  date: '2026-10-03'
-  note: >-
-    Consensus moved from emerging to converged, on the owner's decision,
-    on the grounds v2 gave: Shortcut Models, Inductive Moment Matching and
-    rCM, three groups outside the source's line, each serve one model at
-    several step counts. Status and recommendation unchanged.
 - version: 2
   date: '2026-10-03'
   note: >-
@@ -35,6 +28,13 @@ history:
     left at emerging; a move to converged is proposed for the owner to
     decide, since three groups unconnected to the source now measure the
     property. Status unchanged.
+- version: 3
+  date: '2026-10-03'
+  note: >-
+    Consensus moved from emerging to converged, on the owner's decision,
+    on the grounds v2 gave: Shortcut Models, Inductive Moment Matching and
+    rCM, three groups outside the source's line, each serve one model at
+    several step counts. Status and recommendation unchanged.
 tags:
 - generative-modeling
 - few-step-generation

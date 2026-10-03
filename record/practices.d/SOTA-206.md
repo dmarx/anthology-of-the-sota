@@ -3,7 +3,7 @@ number: 206
 status: Active
 formerly:
 - SOTA-tmpo7on7
-consensus: emerging
+consensus: converged
 consensus_note: >-
   The few-step generative line has settled on models that expose a step count
   rather than on strictly one-step models, and the record's own fast-sampling
@@ -12,11 +12,19 @@ consensus_note: >-
   cases of one model serving several step counts from three groups outside
   the source's: Shortcut Models (LIT-tmpo7np5), Inductive Moment Matching
   (LIT-tmp7ppws) and rCM (LIT-tmpkegvh), besides iCT and sCM from the
-  source's own line (LIT-tmpnrsms, LIT-tmpt5h4h). Whether that makes it
-  converged is left to the owner. Read as of 2026-10.
+  source's own line (LIT-tmpnrsms, LIT-tmpt5h4h). Converged since v3, on the
+  owner's reading of that evidence: three groups unconnected to the source
+  now measure the property. Read as of 2026-10.
 title: 'Keep a multi-step sampling option in a few-step generative model'
-version: 2
+version: 3
 history:
+- version: 3
+  date: '2026-10-03'
+  note: >-
+    Consensus moved from emerging to converged, on the owner's decision,
+    on the grounds v2 gave: Shortcut Models, Inductive Moment Matching and
+    rCM, three groups outside the source's line, each serve one model at
+    several step counts. Status and recommendation unchanged.
 - version: 2
   date: '2026-10-03'
   note: >-

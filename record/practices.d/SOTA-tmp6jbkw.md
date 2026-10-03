@@ -45,6 +45,8 @@ summary: >-
   SD3.5-M, GenEval goes 0.63 → 0.95 either way. Without the KL term,
   DrawBench aesthetic falls to 4.93 from a base of 5.39, against 5.25 with
   it (Table 2). Quality is judged by reward models only, one run each.
+explained_by:
+- THEORY-tmpr00tj
 ---
 
 <!-- inactive-ok-file: SOTA-302 — Proposed; named as the opposite case, a distilled generator where this anchor is intractable, not cited as settled advice -->

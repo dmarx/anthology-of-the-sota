@@ -88,7 +88,12 @@ Read at v2 (1 Mar 2025), main text and Appendices A–G; v1 is 14 Oct 2024.
   lowers recall as guidance increases, ending in "severe mode collapse".
   VSD is the objective DMD descends.
   Two-step sCD's precision and recall stay close to the teacher's across
-  guidance scales. This is a figure without tabled values.
+  guidance scales.
+  Read from the plot (no values are tabled): one-step sCD is plotted too,
+  and at guidance 1.0 its recall is about 0.70 against about 0.65 for one-
+  step VSD, so the gap is there at matched step count and before guidance is
+  raised. The arm that sums the two losses at equal weight tracks VSD's
+  recall, not sCD's.
 - **Engineering for scale** (§5.1, App. F). The JVP is rearranged to avoid
   FP16 overflow near t = 0 and π/2. A Flash-Attention-style kernel computes
   attention and its JVP in one pass.
@@ -124,8 +129,9 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
   batch, initialized from it.
 - **The VSD comparison** (Fig. 7) is run here at EDM2-M size with tuned
   weighting and proposal distributions (§5.2). It is the paper's one
-  controlled comparison against another distillation method. VSD here is
-  one-step, sCD two-step.
+  controlled comparison against another distillation method. The text
+  contrasts one-step VSD with two-step sCD, but the figure also plots
+  one-step sCD, which is the like-for-like arm.
 - **Tables 1 and 2** are mostly copied rows, including DMD2 at 1.28 and the
   CD, PD and iCT rows.
 

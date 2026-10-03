@@ -53,6 +53,8 @@ summary: >-
   compute has no quality dial: whatever it produces is what you get. Consistency
   models trade compute for quality at inference without retraining, and that
   property is worth preserving by design.
+explained_by:
+- THEORY-tmpjf41h
 ---
 
 # SOTA-206: Keep a multi-step sampling option in a few-step generative model

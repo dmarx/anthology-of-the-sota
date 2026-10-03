@@ -44,6 +44,8 @@ summary: >-
   steps instead of 29, at equal likelihood and 4% more time per iteration.
   It lowers the step count of an ODE sampler. It does not make one: four-step
   FID stays near 39 on ImageNet-32. Unconditional, 64 px and below.
+explained_by:
+- THEORY-tmprwlgq
 ---
 
 <!-- inactive-ok-file: SOTA-392 — Proposed; named to say this coupling is not an alternative to its one-step students, not cited as settled advice -->

@@ -80,6 +80,8 @@ summary: >-
   and worsens many-step quality from 2.58 to 3.36. InstaFlow
   (LIT-tmpyqrl4) contests it at text-to-image scale, starting from a
   diffusion model rather than a rectified flow.
+explained_by:
+- THEORY-tmprwlgq
 ---
 
 # SOTA-392: To get a one-step sampler from a rectified flow, distil it; treat reflow as an optional extra pass, and keep the pre-reflow model for many steps

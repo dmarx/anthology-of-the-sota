@@ -46,6 +46,8 @@ summary: >-
   fixes it in samples. Four-step Wan2.1-1.3B VBench is 84.43 against a
   re-implemented DMD2's 84.56. sCM's own Fig. 7 ([LIT-tmpt5h4h](../literature.d/LIT-tmpt5h4h.md)) is why the
   consistency term stays primary: distribution matching alone loses recall.
+explained_by:
+- THEORY-tmpko5v1
 ---
 
 <!-- inactive-ok-file: SOTA-394 — Proposed; named for its diversity condition, which this practice responds to, not cited as settled advice -->
@@ -113,8 +115,9 @@ EDM2-M backbone at ImageNet-512, sCM ran one-step VSD, which is DMD's
 distribution-matching gradient without its regression loss, against
 two-step sCD. As guidance rises, VSD's precision rises and its recall falls,
 ending in "severe mode collapse". sCD's precision and recall stay close to
-the teacher's. This is the record's one measurement of the diversity
-argument, and it comes from a different group from rCM.
+the teacher's. Read from the plot (no values are tabled): one-step sCD is plotted too, and at guidance 1.0 its recall is about 0.70 against about 0.65 for one-step VSD, so the gap is there at matched step count and before guidance is raised. The arm that sums the two losses at equal weight tracks VSD's recall, not sCD's. That is the record's one measurement
+of the diversity argument, it comes from a different group from rCM, and
+it is why the DMD term is added with a small weight rather than at parity.
 
 The loss being added is DMD's ([LIT-643](../literature.d/LIT-643.md)): the gradient is a frozen real
 score minus an online fake score, evaluated on noised generator samples,
@@ -132,8 +135,8 @@ drops its GAN.
 - **The diversity claim is from samples.** rCM's "notable advantages in
   diversity" over DMD2 rest on five videos per method (Fig. 1) and five seeds
   per λ (Fig. 7). No diversity metric is reported. sCM's Fig. 7 is the
-  measured support for the direction, and it compares one-step VSD with
-  two-step sCD, with guidance a confound.
+  measured support for the direction, read from curves; its one-step sCD
+  arm makes the comparison like for like.
 - **The DMD2 baseline is a re-implementation**, with a discriminator
   branch on the fake-score network and no configuration or budget given. On
   1.3B VBench it is slightly ahead of rCM.

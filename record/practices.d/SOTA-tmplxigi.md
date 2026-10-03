@@ -44,6 +44,8 @@ summary: >-
   the teacher's EMA rate to zero improves CIFAR-10 FID with both LPIPS and
   squared L2 (Fig. 2a, curves). Keep an EMA of the weights for evaluation.
   Do not use it for the target.
+explained_by:
+- THEORY-tmpsem9v
 ---
 
 <!-- inactive-ok-file: SOTA-tmpckzto — Proposed, filed in the same contribution; named as one of iCT's other stabilizing changes, not as settled advice -->

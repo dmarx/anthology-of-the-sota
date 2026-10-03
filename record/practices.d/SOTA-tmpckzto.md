@@ -43,6 +43,8 @@ summary: >-
   curves). MeanFlow's adaptive weight 1/(‖Δ‖² + c)^p takes one-step
   ImageNet-256 FID from 79.75 at p = 0 to 61.06 at p = 1 (Table 1e). Two
   groups, small settings, one run per arm.
+explained_by:
+- THEORY-tmp2ixql
 ---
 
 # SOTA-tmpckzto: Down-weight large residuals in consistency and MeanFlow training: use a Pseudo-Huber loss or an adaptive inverse-error weight, not plain squared L2

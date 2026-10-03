@@ -42,6 +42,7 @@ history:
     unchanged.
 tags:
 - generative-modeling
+- flows-and-transport
 - signal-structure
 date: '2026-09-20'
 source:

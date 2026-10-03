@@ -29,6 +29,8 @@ history:
     reflow. Adoption, not a test; status and consensus unchanged.
 tags:
 - generative-modeling
+- flows-and-transport
+- few-step-generation
 - inference-optimization
 date: '2026-09-24'
 source:

@@ -25,6 +25,7 @@ history:
     hold them cites them instead. The recommendation is unchanged.
 tags:
 - generative-modeling
+- few-step-generation
 - inference-optimization
 - vision-and-graphics
 date: '2026-09-24'

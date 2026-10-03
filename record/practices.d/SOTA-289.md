@@ -19,6 +19,7 @@ title: 'When the sampling budget is small, prefer uniform-state discrete diffusi
 version: 1
 tags:
 - generative-modeling
+- few-step-generation
 - inference-optimization
 - model-architecture
 date: '2026-09-21'

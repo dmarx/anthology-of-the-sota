@@ -13,6 +13,7 @@ title: 'Keep a multi-step sampling option in a few-step generative model'
 version: 1
 tags:
 - generative-modeling
+- few-step-generation
 date: '2026-09-10'
 source:
 - LIT-093

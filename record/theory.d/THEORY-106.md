@@ -17,6 +17,7 @@ history:
     loss. The account is unchanged, and it stays Active.
 tags:
 - generative-modeling
+- flows-and-transport
 - training-optimization
 date: '2026-09-25'
 source:

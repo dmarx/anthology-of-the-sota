@@ -25,6 +25,7 @@ history:
     unchanged.
 tags:
 - generative-modeling
+- flows-and-transport
 date: '2026-09-20'
 source:
 - LIT-447

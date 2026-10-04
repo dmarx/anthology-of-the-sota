@@ -74,6 +74,9 @@
     "ARXIV/1604.06174": {
       "title": "Training Deep Nets with Sublinear Memory Cost"
     },
+    "ARXIV/1605.08803": {
+      "title": "Density estimation using Real NVP"
+    },
     "ARXIV/1606.03498": {
       "title": "Improved Techniques for Training GANs"
     },
@@ -236,8 +239,14 @@
     "ARXIV/1806.02375": {
       "title": "Understanding Batch Normalization"
     },
+    "ARXIV/1806.07366": {
+      "title": "Neural Ordinary Differential Equations"
+    },
     "ARXIV/1806.07572": {
       "title": "Neural Tangent Kernel: Convergence and Generalization in Neural Networks"
+    },
+    "ARXIV/1807.03039": {
+      "title": "Glow: Generative Flow with Invertible 1x1 Convolutions"
     },
     "ARXIV/1807.03748": {
       "title": "Representation Learning with Contrastive Predictive Coding"
@@ -253,6 +262,9 @@
     },
     "ARXIV/1810.00826": {
       "title": "How Powerful are Graph Neural Networks?"
+    },
+    "ARXIV/1810.01367": {
+      "title": "FFJORD: Free-form Continuous Dynamics for Scalable Reversible Generative Models"
     },
     "ARXIV/1810.03292": {
       "title": "Sanity Checks for Saliency Maps"
@@ -872,6 +884,9 @@
     "ARXIV/2210.09261": {
       "title": "Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can Solve Them"
     },
+    "ARXIV/2210.10760": {
+      "title": "Scaling Laws for Reward Model Overoptimization"
+    },
     "ARXIV/2210.14891": {
       "title": "Broken Neural Scaling Laws"
     },
@@ -944,6 +959,9 @@
     "ARXIV/2301.11913": {
       "title": "SWARM Parallelism: Training Large Models Can Be Surprisingly Communication-Efficient"
     },
+    "ARXIV/2302.00482": {
+      "title": "Improving and generalizing flow-based generative models with minibatch optimal transport"
+    },
     "ARXIV/2302.01318": {
       "title": "Accelerating Large Language Model Decoding with Speculative Sampling"
     },
@@ -961,6 +979,9 @@
     },
     "ARXIV/2302.08453": {
       "title": "T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models"
+    },
+    "ARXIV/2302.12192": {
+      "title": "Aligning Text-to-Image Models using Human Feedback"
     },
     "ARXIV/2303.00848": {
       "title": "Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation"
@@ -992,6 +1013,9 @@
     "ARXIV/2304.02643": {
       "title": "Segment Anything"
     },
+    "ARXIV/2304.05977": {
+      "title": "ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation"
+    },
     "ARXIV/2304.07193": {
       "title": "DINOv2: Learning Robust Visual Features without Supervision"
     },
@@ -1001,11 +1025,17 @@
     "ARXIV/2304.11277": {
       "title": "PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel"
     },
+    "ARXIV/2304.14772": {
+      "title": "Multisample Flow Matching: Straightening Flows with Minibatch Couplings"
+    },
     "ARXIV/2304.14802": {
       "title": "ResiDual: Transformer with Dual Residual Connections"
     },
     "ARXIV/2304.15004": {
       "title": "Are Emergent Abilities of Large Language Models a Mirage?"
+    },
+    "ARXIV/2305.01569": {
+      "title": "Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation"
     },
     "ARXIV/2305.05465": {
       "title": "The emergence of clusters in self-attention dynamics"
@@ -1031,6 +1061,9 @@
     "ARXIV/2305.13245": {
       "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints"
     },
+    "ARXIV/2305.13301": {
+      "title": "Training Diffusion Models with Reinforcement Learning"
+    },
     "ARXIV/2305.14314": {
       "title": "QLoRA: Efficient Finetuning of Quantized LLMs"
     },
@@ -1039,6 +1072,9 @@
     },
     "ARXIV/2305.16367": {
       "title": "Role-Play with Large Language Models"
+    },
+    "ARXIV/2305.16381": {
+      "title": "DPOK: Reinforcement Learning for Fine-tuning Text-to-Image Diffusion Models"
     },
     "ARXIV/2305.18290": {
       "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model"
@@ -1115,6 +1151,9 @@
     "ARXIV/2309.06180": {
       "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention"
     },
+    "ARXIV/2309.06380": {
+      "title": "InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation"
+    },
     "ARXIV/2309.06497": {
       "title": "A Distributed Data-Parallel PyTorch Implementation of the Distributed Shampoo Optimizer for Training Neural Networks At-Scale"
     },
@@ -1160,6 +1199,9 @@
     "ARXIV/2310.12802": {
       "title": "An effective theory of collective deep learning"
     },
+    "ARXIV/2310.14189": {
+      "title": "Improved Techniques for Training Consistency Models"
+    },
     "ARXIV/2310.16834": {
       "title": "Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution"
     },
@@ -1183,6 +1225,9 @@
     },
     "ARXIV/2311.12022": {
       "title": "GPQA: A Graduate-Level Google-Proof Q&A Benchmark"
+    },
+    "ARXIV/2311.12908": {
+      "title": "Diffusion Model Alignment Using Direct Preference Optimization"
     },
     "ARXIV/2311.15127": {
       "title": "Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets"
@@ -1310,6 +1355,9 @@
     "ARXIV/2405.18392": {
       "title": "Scaling Laws and Compute-Optimal Training Beyond Fixed Training Durations"
     },
+    "ARXIV/2405.20320": {
+      "title": "Improving the Training of Rectified Flows"
+    },
     "ARXIV/2405.21060": {
       "title": "Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality"
     },
@@ -1324,6 +1372,9 @@
     },
     "ARXIV/2406.06525": {
       "title": "Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation"
+    },
+    "ARXIV/2406.07507": {
+      "title": "Flow map matching with stochastic interpolants: A mathematical framework for consistency models"
     },
     "ARXIV/2406.07524": {
       "title": "Simple and Effective Masked Diffusion Language Models"
@@ -1360,6 +1411,9 @@
     },
     "ARXIV/2407.11239": {
       "title": "From Low Rank Gradient Subspace Stabilization to Low-Rank Weights: Observations, Theories, and Applications"
+    },
+    "ARXIV/2407.15595": {
+      "title": "Discrete Flow Matching"
     },
     "ARXIV/2407.17465": {
       "title": "u-$\u03bc$P: The Unit-Scaled Maximal Update Parametrization"
@@ -1421,6 +1475,12 @@
     "ARXIV/2410.06205": {
       "title": "Round and Round We Go! What makes Rotary Positional Encodings useful?"
     },
+    "ARXIV/2410.11081": {
+      "title": "Simplifying, Stabilizing and Scaling Continuous-Time Consistency Models"
+    },
+    "ARXIV/2410.12557": {
+      "title": "One Step Diffusion via Shortcut Models"
+    },
     "ARXIV/2410.13720": {
       "title": "Movie Gen: A Cast of Media Foundation Models"
     },
@@ -1478,6 +1538,9 @@
     "ARXIV/2412.06264": {
       "title": "Flow Matching Guide and Code"
     },
+    "ARXIV/2412.06329": {
+      "title": "Normalizing Flows are Capable Generative Models"
+    },
     "ARXIV/2412.06464": {
       "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule"
     },
@@ -1507,6 +1570,9 @@
     },
     "ARXIV/2501.12948": {
       "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
+    },
+    "ARXIV/2501.13918": {
+      "title": "Improving Video Generation with Human Feedback"
     },
     "ARXIV/2501.15619": {
       "title": "GaussianToken: An Effective Image Tokenizer with 2D Gaussian Splatting"
@@ -1568,6 +1634,9 @@
     "ARXIV/2503.01840": {
       "title": "EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test"
     },
+    "ARXIV/2503.07565": {
+      "title": "Inductive Moment Matching"
+    },
     "ARXIV/2503.08685": {
       "title": "\"Principal Components\" Enable A New Language of Images"
     },
@@ -1625,6 +1694,9 @@
     "ARXIV/2505.01618": {
       "title": "Don't be lazy: CompleteP enables compute-efficient deep transformers"
     },
+    "ARXIV/2505.05470": {
+      "title": "Flow-GRPO: Training Flow Matching Models via Online RL"
+    },
     "ARXIV/2505.06708": {
       "title": "Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free"
     },
@@ -1639,6 +1711,9 @@
     },
     "ARXIV/2505.12082": {
       "title": "Model Merging in Pre-training of Large Language Models"
+    },
+    "ARXIV/2505.13447": {
+      "title": "Mean Flows for One-step Generative Modeling"
     },
     "ARXIV/2505.13738": {
       "title": "Power Lines: Scaling Laws for Weight Decay and Batch Size in LLM Pre-training"
@@ -1663,6 +1738,9 @@
     },
     "ARXIV/2506.01260": {
       "title": "Subspace Networks: Scaling Decentralized Training with Communication-Efficient Model Parallelism"
+    },
+    "ARXIV/2506.06276": {
+      "title": "STARFlow: Scaling Latent Normalizing Flows for High-resolution Image Synthesis"
     },
     "ARXIV/2506.06941": {
       "title": "The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity"
@@ -1771,6 +1849,9 @@
     },
     "ARXIV/2510.07019": {
       "title": "Native Hybrid Attention for Efficient Sequence Modeling"
+    },
+    "ARXIV/2510.08431": {
+      "title": "Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency"
     },
     "ARXIV/2510.15020": {
       "title": "The Coverage Principle: How Pre-Training Enables Post-Training"

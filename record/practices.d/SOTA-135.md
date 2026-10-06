@@ -2,12 +2,28 @@
 number: 135
 status: Active
 title: 'Give linear-attention layers a gated delta rule: a decay gate for erasure plus a delta update for targeted writes'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-10-06'
+  note: >-
+    Adds Olmo Hybrid (LIT-tmpax1wi) to `source:`. It is an independent
+    test, from Ai2, of the gated delta rule against Mamba-2's decay-only
+    update under one recipe from 60M to 1B, pure and in a 3:1 hybrid, and
+    the gated delta rule wins at every scale. It does not test the delta
+    update without the gate, so it supports half of the original comparison.
+    Gated DeltaNet-2 (LIT-tmpsiw5k) joins the "where it is incomplete"
+    section as a channel-wise split of β that stacks with KDA's channel-wise
+    decay. The recommendation is unchanged.
 tags:
 - attention-techniques
 date: '2026-09-05'
 source:
+# LIT-tmpax1wi joined at v2: an independent comparison of the gated delta
+# rule against Mamba-2 at seven scales, pure and hybrid (its Table 5). It
+# does not run DeltaNet without the gate.
 - LIT-137
+- LIT-tmpax1wi
 introduced_by:
 - LIT-137
 summary: >-
@@ -37,6 +53,18 @@ data-dependent decay and DeltaNet's delta update with its WY-based chunkwise
 algorithm, extends that algorithm to carry the gate, and attributes the
 parents' failures in its single-needle tests to forgetting too fast (Mamba2
 past 2K tokens) and clearing memory poorly (DeltaNet at longer lengths).
+
+**An independent test, at small scale.** Olmo
+Hybrid ([LIT-tmpax1wi](../literature.d/LIT-tmpax1wi.md)) compared Gated DeltaNet with Mamba-2 as the recurrent
+layer under one recipe at seven sizes from 60M to 1B. Gated DeltaNet won
+every one of them, as a pure model (0.677 against 0.718 BPB at 1B) and in a
+3:1 hybrid (0.669 against 0.698). Pure Gated DeltaNet was also slightly
+ahead of the transformer (0.682). It then trained the hybrid to 7B and 6T
+tokens, with the negative-eigenvalue extension that lets the state
+transition take an eigenvalue of −1. Whether that extension matters for language modelling is open:
+the same ablations find positive eigenvalues scale about as well. The paper
+did not test the delta update without the gate, which is the other half of
+what this practice says.
 
 Conditions: on its own the layer still trails full attention on exact
 retrieval, which is why every production use interleaves it with global
@@ -72,8 +100,18 @@ gain persists through 80B tokens of long-context midtraining.
 
 [LIT-133](../literature.d/LIT-133.md)'s channel-wise forgetting gate is the other answer to the same
 pressure: finer *passive* decay rather than active removal. Nobody has
-compared them.
+compared them directly.
+
+Gated DeltaNet-2 ([LIT-tmpsiw5k](../literature.d/LIT-tmpsiw5k.md)) comes closest, from the group that made this
+recurrence. It keeps KDA's channel-wise decay and splits β into a
+channel-wise erase gate on the key and a channel-wise write gate on the
+value. The erased read then runs along a reweighted key rather than the key
+itself, which is a restricted form of the decoupled erase. At 1.3B / 100B
+tokens and matched state it averages 53.11 against 52.28 for KDA and 52.07
+for this practice's Gated DeltaNet. Most of the gain comes from the erase
+gate. That says the two remedies stack, in one run at one scale.
 
 ## Known implementations
 
 - Qwen3-Next, Qwen3.5, Qwen3.6-27B, Qwen3.8-27B (Gated DeltaNet); Kimi Linear, Kimi K3 (as KDA)
+- Olmo Hybrid 7B (Gated DeltaNet with negative eigenvalues)
